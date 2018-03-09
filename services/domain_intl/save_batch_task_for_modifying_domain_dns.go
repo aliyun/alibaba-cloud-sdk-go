@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SaveBatchTaskForModifyingDomainDns api with *SaveBatchTaskForModifyingDomainDnsRequest synchronously
+// SaveBatchTaskForModifyingDomainDns invokes the domain_intl.SaveBatchTaskForModifyingDomainDns API synchronously
 // api document: https://help.aliyun.com/api/domain-intl/savebatchtaskformodifyingdomaindns.html
 func (client *Client) SaveBatchTaskForModifyingDomainDns(request *SaveBatchTaskForModifyingDomainDnsRequest) (response *SaveBatchTaskForModifyingDomainDnsResponse, err error) {
 	response = CreateSaveBatchTaskForModifyingDomainDnsResponse()
@@ -28,7 +28,7 @@ func (client *Client) SaveBatchTaskForModifyingDomainDns(request *SaveBatchTaskF
 	return
 }
 
-// invoke SaveBatchTaskForModifyingDomainDns api with *SaveBatchTaskForModifyingDomainDnsRequest asynchronously
+// SaveBatchTaskForModifyingDomainDnsWithChan invokes the domain_intl.SaveBatchTaskForModifyingDomainDns API asynchronously
 // api document: https://help.aliyun.com/api/domain-intl/savebatchtaskformodifyingdomaindns.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveBatchTaskForModifyingDomainDnsWithChan(request *SaveBatchTaskForModifyingDomainDnsRequest) (<-chan *SaveBatchTaskForModifyingDomainDnsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SaveBatchTaskForModifyingDomainDnsWithChan(request *SaveBa
 	return responseChan, errChan
 }
 
-// invoke SaveBatchTaskForModifyingDomainDns api with *SaveBatchTaskForModifyingDomainDnsRequest asynchronously
+// SaveBatchTaskForModifyingDomainDnsWithCallback invokes the domain_intl.SaveBatchTaskForModifyingDomainDns API asynchronously
 // api document: https://help.aliyun.com/api/domain-intl/savebatchtaskformodifyingdomaindns.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveBatchTaskForModifyingDomainDnsWithCallback(request *SaveBatchTaskForModifyingDomainDnsRequest, callback func(response *SaveBatchTaskForModifyingDomainDnsResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SaveBatchTaskForModifyingDomainDnsWithCallback(request *Sa
 	return result
 }
 
+// SaveBatchTaskForModifyingDomainDnsRequest is the request struct for api SaveBatchTaskForModifyingDomainDns
 type SaveBatchTaskForModifyingDomainDnsRequest struct {
 	*requests.RpcRequest
 	UserClientIp     string           `position:"Query" name:"UserClientIp"`
@@ -82,14 +83,15 @@ type SaveBatchTaskForModifyingDomainDnsRequest struct {
 	DomainNameServer *[]string        `position:"Query" name:"DomainNameServer"  type:"Repeated"`
 }
 
+// SaveBatchTaskForModifyingDomainDnsResponse is the response struct for api SaveBatchTaskForModifyingDomainDns
 type SaveBatchTaskForModifyingDomainDnsResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	TaskNo    string `json:"TaskNo" xml:"TaskNo"`
 }
 
-// create a request to invoke SaveBatchTaskForModifyingDomainDns API
-func CreateSaveBatchTaskForModifyingDomainDnsRequest() (request *SaveBatchTaskForModifyingDomainDnsRequest) {
+// CreateSaveBatchTaskForModifyingDomainDnsRequest creates a request to invoke SaveBatchTaskForModifyingDomainDns API
+func CreateSaveBatchTaskForModifyingDomainDnsRequest(request *SaveBatchTaskForModifyingDomainDnsRequest) {
 	request = &SaveBatchTaskForModifyingDomainDnsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateSaveBatchTaskForModifyingDomainDnsRequest() (request *SaveBatchTaskFo
 	return
 }
 
-// create a response to parse from SaveBatchTaskForModifyingDomainDns response
+// CreateSaveBatchTaskForModifyingDomainDnsResponse creates a response to parse from SaveBatchTaskForModifyingDomainDns response
 func CreateSaveBatchTaskForModifyingDomainDnsResponse() (response *SaveBatchTaskForModifyingDomainDnsResponse) {
 	response = &SaveBatchTaskForModifyingDomainDnsResponse{
 		BaseResponse: &responses.BaseResponse{},

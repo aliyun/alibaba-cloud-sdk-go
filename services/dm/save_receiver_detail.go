@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SaveReceiverDetail api with *SaveReceiverDetailRequest synchronously
+// SaveReceiverDetail invokes the dm.SaveReceiverDetail API synchronously
 // api document: https://help.aliyun.com/api/dm/savereceiverdetail.html
 func (client *Client) SaveReceiverDetail(request *SaveReceiverDetailRequest) (response *SaveReceiverDetailResponse, err error) {
 	response = CreateSaveReceiverDetailResponse()
@@ -28,7 +28,7 @@ func (client *Client) SaveReceiverDetail(request *SaveReceiverDetailRequest) (re
 	return
 }
 
-// invoke SaveReceiverDetail api with *SaveReceiverDetailRequest asynchronously
+// SaveReceiverDetailWithChan invokes the dm.SaveReceiverDetail API asynchronously
 // api document: https://help.aliyun.com/api/dm/savereceiverdetail.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveReceiverDetailWithChan(request *SaveReceiverDetailRequest) (<-chan *SaveReceiverDetailResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SaveReceiverDetailWithChan(request *SaveReceiverDetailRequ
 	return responseChan, errChan
 }
 
-// invoke SaveReceiverDetail api with *SaveReceiverDetailRequest asynchronously
+// SaveReceiverDetailWithCallback invokes the dm.SaveReceiverDetail API asynchronously
 // api document: https://help.aliyun.com/api/dm/savereceiverdetail.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveReceiverDetailWithCallback(request *SaveReceiverDetailRequest, callback func(response *SaveReceiverDetailResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SaveReceiverDetailWithCallback(request *SaveReceiverDetail
 	return result
 }
 
+// SaveReceiverDetailRequest is the request struct for api SaveReceiverDetail
 type SaveReceiverDetailRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,6 +83,7 @@ type SaveReceiverDetailRequest struct {
 	Detail               string           `position:"Query" name:"Detail"`
 }
 
+// SaveReceiverDetailResponse is the response struct for api SaveReceiverDetail
 type SaveReceiverDetailResponse struct {
 	*responses.BaseResponse
 	RequestId    string                   `json:"RequestId" xml:"RequestId"`
@@ -90,8 +92,8 @@ type SaveReceiverDetailResponse struct {
 	Data         DataInSaveReceiverDetail `json:"Data" xml:"Data"`
 }
 
-// create a request to invoke SaveReceiverDetail API
-func CreateSaveReceiverDetailRequest() (request *SaveReceiverDetailRequest) {
+// CreateSaveReceiverDetailRequest creates a request to invoke SaveReceiverDetail API
+func CreateSaveReceiverDetailRequest(request *SaveReceiverDetailRequest) {
 	request = &SaveReceiverDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateSaveReceiverDetailRequest() (request *SaveReceiverDetailRequest) {
 	return
 }
 
-// create a response to parse from SaveReceiverDetail response
+// CreateSaveReceiverDetailResponse creates a response to parse from SaveReceiverDetail response
 func CreateSaveReceiverDetailResponse() (response *SaveReceiverDetailResponse) {
 	response = &SaveReceiverDetailResponse{
 		BaseResponse: &responses.BaseResponse{},

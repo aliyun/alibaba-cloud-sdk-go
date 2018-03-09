@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeSuspiciousEvents api with *DescribeSuspiciousEventsRequest synchronously
+// DescribeSuspiciousEvents invokes the aegis.DescribeSuspiciousEvents API synchronously
 // api document: https://help.aliyun.com/api/aegis/describesuspiciousevents.html
 func (client *Client) DescribeSuspiciousEvents(request *DescribeSuspiciousEventsRequest) (response *DescribeSuspiciousEventsResponse, err error) {
 	response = CreateDescribeSuspiciousEventsResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeSuspiciousEvents(request *DescribeSuspiciousEvents
 	return
 }
 
-// invoke DescribeSuspiciousEvents api with *DescribeSuspiciousEventsRequest asynchronously
+// DescribeSuspiciousEventsWithChan invokes the aegis.DescribeSuspiciousEvents API asynchronously
 // api document: https://help.aliyun.com/api/aegis/describesuspiciousevents.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSuspiciousEventsWithChan(request *DescribeSuspiciousEventsRequest) (<-chan *DescribeSuspiciousEventsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeSuspiciousEventsWithChan(request *DescribeSuspicio
 	return responseChan, errChan
 }
 
-// invoke DescribeSuspiciousEvents api with *DescribeSuspiciousEventsRequest asynchronously
+// DescribeSuspiciousEventsWithCallback invokes the aegis.DescribeSuspiciousEvents API asynchronously
 // api document: https://help.aliyun.com/api/aegis/describesuspiciousevents.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSuspiciousEventsWithCallback(request *DescribeSuspiciousEventsRequest, callback func(response *DescribeSuspiciousEventsResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeSuspiciousEventsWithCallback(request *DescribeSusp
 	return result
 }
 
+// DescribeSuspiciousEventsRequest is the request struct for api DescribeSuspiciousEvents
 type DescribeSuspiciousEventsRequest struct {
 	*requests.RpcRequest
 	SourceIp        string           `position:"Query" name:"SourceIp"`
@@ -86,6 +87,7 @@ type DescribeSuspiciousEventsRequest struct {
 	EventType       string           `position:"Query" name:"EventType"`
 }
 
+// DescribeSuspiciousEventsResponse is the response struct for api DescribeSuspiciousEvents
 type DescribeSuspiciousEventsResponse struct {
 	*responses.BaseResponse
 	RequestId   string        `json:"RequestId" xml:"RequestId"`
@@ -95,8 +97,8 @@ type DescribeSuspiciousEventsResponse struct {
 	LogList     []LogListItem `json:"LogList" xml:"LogList"`
 }
 
-// create a request to invoke DescribeSuspiciousEvents API
-func CreateDescribeSuspiciousEventsRequest() (request *DescribeSuspiciousEventsRequest) {
+// CreateDescribeSuspiciousEventsRequest creates a request to invoke DescribeSuspiciousEvents API
+func CreateDescribeSuspiciousEventsRequest(request *DescribeSuspiciousEventsRequest) {
 	request = &DescribeSuspiciousEventsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -104,7 +106,7 @@ func CreateDescribeSuspiciousEventsRequest() (request *DescribeSuspiciousEventsR
 	return
 }
 
-// create a response to parse from DescribeSuspiciousEvents response
+// CreateDescribeSuspiciousEventsResponse creates a response to parse from DescribeSuspiciousEvents response
 func CreateDescribeSuspiciousEventsResponse() (response *DescribeSuspiciousEventsResponse) {
 	response = &DescribeSuspiciousEventsResponse{
 		BaseResponse: &responses.BaseResponse{},

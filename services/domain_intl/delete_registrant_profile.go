@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteRegistrantProfile api with *DeleteRegistrantProfileRequest synchronously
+// DeleteRegistrantProfile invokes the domain_intl.DeleteRegistrantProfile API synchronously
 // api document: https://help.aliyun.com/api/domain-intl/deleteregistrantprofile.html
 func (client *Client) DeleteRegistrantProfile(request *DeleteRegistrantProfileRequest) (response *DeleteRegistrantProfileResponse, err error) {
 	response = CreateDeleteRegistrantProfileResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteRegistrantProfile(request *DeleteRegistrantProfileRe
 	return
 }
 
-// invoke DeleteRegistrantProfile api with *DeleteRegistrantProfileRequest asynchronously
+// DeleteRegistrantProfileWithChan invokes the domain_intl.DeleteRegistrantProfile API asynchronously
 // api document: https://help.aliyun.com/api/domain-intl/deleteregistrantprofile.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteRegistrantProfileWithChan(request *DeleteRegistrantProfileRequest) (<-chan *DeleteRegistrantProfileResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteRegistrantProfileWithChan(request *DeleteRegistrantP
 	return responseChan, errChan
 }
 
-// invoke DeleteRegistrantProfile api with *DeleteRegistrantProfileRequest asynchronously
+// DeleteRegistrantProfileWithCallback invokes the domain_intl.DeleteRegistrantProfile API asynchronously
 // api document: https://help.aliyun.com/api/domain-intl/deleteregistrantprofile.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteRegistrantProfileWithCallback(request *DeleteRegistrantProfileRequest, callback func(response *DeleteRegistrantProfileResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DeleteRegistrantProfileWithCallback(request *DeleteRegistr
 	return result
 }
 
+// DeleteRegistrantProfileRequest is the request struct for api DeleteRegistrantProfile
 type DeleteRegistrantProfileRequest struct {
 	*requests.RpcRequest
 	UserClientIp        string           `position:"Query" name:"UserClientIp"`
@@ -80,13 +81,14 @@ type DeleteRegistrantProfileRequest struct {
 	RegistrantProfileId requests.Integer `position:"Query" name:"RegistrantProfileId"`
 }
 
+// DeleteRegistrantProfileResponse is the response struct for api DeleteRegistrantProfile
 type DeleteRegistrantProfileResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DeleteRegistrantProfile API
-func CreateDeleteRegistrantProfileRequest() (request *DeleteRegistrantProfileRequest) {
+// CreateDeleteRegistrantProfileRequest creates a request to invoke DeleteRegistrantProfile API
+func CreateDeleteRegistrantProfileRequest(request *DeleteRegistrantProfileRequest) {
 	request = &DeleteRegistrantProfileRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -94,7 +96,7 @@ func CreateDeleteRegistrantProfileRequest() (request *DeleteRegistrantProfileReq
 	return
 }
 
-// create a response to parse from DeleteRegistrantProfile response
+// CreateDeleteRegistrantProfileResponse creates a response to parse from DeleteRegistrantProfile response
 func CreateDeleteRegistrantProfileResponse() (response *DeleteRegistrantProfileResponse) {
 	response = &DeleteRegistrantProfileResponse{
 		BaseResponse: &responses.BaseResponse{},

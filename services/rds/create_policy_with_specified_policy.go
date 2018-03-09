@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CreatePolicyWithSpecifiedPolicy api with *CreatePolicyWithSpecifiedPolicyRequest synchronously
+// CreatePolicyWithSpecifiedPolicy invokes the rds.CreatePolicyWithSpecifiedPolicy API synchronously
 // api document: https://help.aliyun.com/api/rds/createpolicywithspecifiedpolicy.html
 func (client *Client) CreatePolicyWithSpecifiedPolicy(request *CreatePolicyWithSpecifiedPolicyRequest) (response *CreatePolicyWithSpecifiedPolicyResponse, err error) {
 	response = CreateCreatePolicyWithSpecifiedPolicyResponse()
@@ -28,7 +28,7 @@ func (client *Client) CreatePolicyWithSpecifiedPolicy(request *CreatePolicyWithS
 	return
 }
 
-// invoke CreatePolicyWithSpecifiedPolicy api with *CreatePolicyWithSpecifiedPolicyRequest asynchronously
+// CreatePolicyWithSpecifiedPolicyWithChan invokes the rds.CreatePolicyWithSpecifiedPolicy API asynchronously
 // api document: https://help.aliyun.com/api/rds/createpolicywithspecifiedpolicy.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreatePolicyWithSpecifiedPolicyWithChan(request *CreatePolicyWithSpecifiedPolicyRequest) (<-chan *CreatePolicyWithSpecifiedPolicyResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CreatePolicyWithSpecifiedPolicyWithChan(request *CreatePol
 	return responseChan, errChan
 }
 
-// invoke CreatePolicyWithSpecifiedPolicy api with *CreatePolicyWithSpecifiedPolicyRequest asynchronously
+// CreatePolicyWithSpecifiedPolicyWithCallback invokes the rds.CreatePolicyWithSpecifiedPolicy API asynchronously
 // api document: https://help.aliyun.com/api/rds/createpolicywithspecifiedpolicy.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreatePolicyWithSpecifiedPolicyWithCallback(request *CreatePolicyWithSpecifiedPolicyRequest, callback func(response *CreatePolicyWithSpecifiedPolicyResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) CreatePolicyWithSpecifiedPolicyWithCallback(request *Creat
 	return result
 }
 
+// CreatePolicyWithSpecifiedPolicyRequest is the request struct for api CreatePolicyWithSpecifiedPolicy
 type CreatePolicyWithSpecifiedPolicyRequest struct {
 	*requests.RpcRequest
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
@@ -84,13 +85,14 @@ type CreatePolicyWithSpecifiedPolicyRequest struct {
 	PolicyId             string           `position:"Query" name:"PolicyId"`
 }
 
+// CreatePolicyWithSpecifiedPolicyResponse is the response struct for api CreatePolicyWithSpecifiedPolicy
 type CreatePolicyWithSpecifiedPolicyResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke CreatePolicyWithSpecifiedPolicy API
-func CreateCreatePolicyWithSpecifiedPolicyRequest() (request *CreatePolicyWithSpecifiedPolicyRequest) {
+// CreateCreatePolicyWithSpecifiedPolicyRequest creates a request to invoke CreatePolicyWithSpecifiedPolicy API
+func CreateCreatePolicyWithSpecifiedPolicyRequest(request *CreatePolicyWithSpecifiedPolicyRequest) {
 	request = &CreatePolicyWithSpecifiedPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateCreatePolicyWithSpecifiedPolicyRequest() (request *CreatePolicyWithSp
 	return
 }
 
-// create a response to parse from CreatePolicyWithSpecifiedPolicy response
+// CreateCreatePolicyWithSpecifiedPolicyResponse creates a response to parse from CreatePolicyWithSpecifiedPolicy response
 func CreateCreatePolicyWithSpecifiedPolicyResponse() (response *CreatePolicyWithSpecifiedPolicyResponse) {
 	response = &CreatePolicyWithSpecifiedPolicyResponse{
 		BaseResponse: &responses.BaseResponse{},

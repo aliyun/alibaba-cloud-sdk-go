@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ActivatePhotos api with *ActivatePhotosRequest synchronously
+// ActivatePhotos invokes the cloudphoto.ActivatePhotos API synchronously
 // api document: https://help.aliyun.com/api/cloudphoto/activatephotos.html
 func (client *Client) ActivatePhotos(request *ActivatePhotosRequest) (response *ActivatePhotosResponse, err error) {
 	response = CreateActivatePhotosResponse()
@@ -28,7 +28,7 @@ func (client *Client) ActivatePhotos(request *ActivatePhotosRequest) (response *
 	return
 }
 
-// invoke ActivatePhotos api with *ActivatePhotosRequest asynchronously
+// ActivatePhotosWithChan invokes the cloudphoto.ActivatePhotos API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/activatephotos.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ActivatePhotosWithChan(request *ActivatePhotosRequest) (<-chan *ActivatePhotosResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ActivatePhotosWithChan(request *ActivatePhotosRequest) (<-
 	return responseChan, errChan
 }
 
-// invoke ActivatePhotos api with *ActivatePhotosRequest asynchronously
+// ActivatePhotosWithCallback invokes the cloudphoto.ActivatePhotos API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/activatephotos.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ActivatePhotosWithCallback(request *ActivatePhotosRequest, callback func(response *ActivatePhotosResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ActivatePhotosWithCallback(request *ActivatePhotosRequest,
 	return result
 }
 
+// ActivatePhotosRequest is the request struct for api ActivatePhotos
 type ActivatePhotosRequest struct {
 	*requests.RpcRequest
 	PhotoId   *[]string `position:"Query" name:"PhotoId"  type:"Repeated"`
@@ -80,6 +81,7 @@ type ActivatePhotosRequest struct {
 	LibraryId string    `position:"Query" name:"LibraryId"`
 }
 
+// ActivatePhotosResponse is the response struct for api ActivatePhotos
 type ActivatePhotosResponse struct {
 	*responses.BaseResponse
 	Code      string   `json:"Code" xml:"Code"`
@@ -89,8 +91,8 @@ type ActivatePhotosResponse struct {
 	Results   []Result `json:"Results" xml:"Results"`
 }
 
-// create a request to invoke ActivatePhotos API
-func CreateActivatePhotosRequest() (request *ActivatePhotosRequest) {
+// CreateActivatePhotosRequest creates a request to invoke ActivatePhotos API
+func CreateActivatePhotosRequest(request *ActivatePhotosRequest) {
 	request = &ActivatePhotosRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateActivatePhotosRequest() (request *ActivatePhotosRequest) {
 	return
 }
 
-// create a response to parse from ActivatePhotos response
+// CreateActivatePhotosResponse creates a response to parse from ActivatePhotos response
 func CreateActivatePhotosResponse() (response *ActivatePhotosResponse) {
 	response = &ActivatePhotosResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ListCustomImages api with *ListCustomImagesRequest synchronously
+// ListCustomImages invokes the ehpc.ListCustomImages API synchronously
 // api document: https://help.aliyun.com/api/ehpc/listcustomimages.html
 func (client *Client) ListCustomImages(request *ListCustomImagesRequest) (response *ListCustomImagesResponse, err error) {
 	response = CreateListCustomImagesResponse()
@@ -28,7 +28,7 @@ func (client *Client) ListCustomImages(request *ListCustomImagesRequest) (respon
 	return
 }
 
-// invoke ListCustomImages api with *ListCustomImagesRequest asynchronously
+// ListCustomImagesWithChan invokes the ehpc.ListCustomImages API asynchronously
 // api document: https://help.aliyun.com/api/ehpc/listcustomimages.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListCustomImagesWithChan(request *ListCustomImagesRequest) (<-chan *ListCustomImagesResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ListCustomImagesWithChan(request *ListCustomImagesRequest)
 	return responseChan, errChan
 }
 
-// invoke ListCustomImages api with *ListCustomImagesRequest asynchronously
+// ListCustomImagesWithCallback invokes the ehpc.ListCustomImages API asynchronously
 // api document: https://help.aliyun.com/api/ehpc/listcustomimages.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListCustomImagesWithCallback(request *ListCustomImagesRequest, callback func(response *ListCustomImagesResponse, err error)) <-chan int {
@@ -73,20 +73,22 @@ func (client *Client) ListCustomImagesWithCallback(request *ListCustomImagesRequ
 	return result
 }
 
+// ListCustomImagesRequest is the request struct for api ListCustomImages
 type ListCustomImagesRequest struct {
 	*requests.RpcRequest
 	ImageOwnerAlias string `position:"Query" name:"ImageOwnerAlias"`
 	BaseOsTag       string `position:"Query" name:"BaseOsTag"`
 }
 
+// ListCustomImagesResponse is the response struct for api ListCustomImages
 type ListCustomImagesResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Images    Images `json:"Images" xml:"Images"`
 }
 
-// create a request to invoke ListCustomImages API
-func CreateListCustomImagesRequest() (request *ListCustomImagesRequest) {
+// CreateListCustomImagesRequest creates a request to invoke ListCustomImages API
+func CreateListCustomImagesRequest(request *ListCustomImagesRequest) {
 	request = &ListCustomImagesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -94,7 +96,7 @@ func CreateListCustomImagesRequest() (request *ListCustomImagesRequest) {
 	return
 }
 
-// create a response to parse from ListCustomImages response
+// CreateListCustomImagesResponse creates a response to parse from ListCustomImages response
 func CreateListCustomImagesResponse() (response *ListCustomImagesResponse) {
 	response = &ListCustomImagesResponse{
 		BaseResponse: &responses.BaseResponse{},

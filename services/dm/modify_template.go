@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifyTemplate api with *ModifyTemplateRequest synchronously
+// ModifyTemplate invokes the dm.ModifyTemplate API synchronously
 // api document: https://help.aliyun.com/api/dm/modifytemplate.html
 func (client *Client) ModifyTemplate(request *ModifyTemplateRequest) (response *ModifyTemplateResponse, err error) {
 	response = CreateModifyTemplateResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifyTemplate(request *ModifyTemplateRequest) (response *
 	return
 }
 
-// invoke ModifyTemplate api with *ModifyTemplateRequest asynchronously
+// ModifyTemplateWithChan invokes the dm.ModifyTemplate API asynchronously
 // api document: https://help.aliyun.com/api/dm/modifytemplate.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyTemplateWithChan(request *ModifyTemplateRequest) (<-chan *ModifyTemplateResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifyTemplateWithChan(request *ModifyTemplateRequest) (<-
 	return responseChan, errChan
 }
 
-// invoke ModifyTemplate api with *ModifyTemplateRequest asynchronously
+// ModifyTemplateWithCallback invokes the dm.ModifyTemplate API asynchronously
 // api document: https://help.aliyun.com/api/dm/modifytemplate.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyTemplateWithCallback(request *ModifyTemplateRequest, callback func(response *ModifyTemplateResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ModifyTemplateWithCallback(request *ModifyTemplateRequest,
 	return result
 }
 
+// ModifyTemplateRequest is the request struct for api ModifyTemplate
 type ModifyTemplateRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -89,13 +90,14 @@ type ModifyTemplateRequest struct {
 	FromType             requests.Integer `position:"Query" name:"FromType"`
 }
 
+// ModifyTemplateResponse is the response struct for api ModifyTemplate
 type ModifyTemplateResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ModifyTemplate API
-func CreateModifyTemplateRequest() (request *ModifyTemplateRequest) {
+// CreateModifyTemplateRequest creates a request to invoke ModifyTemplate API
+func CreateModifyTemplateRequest(request *ModifyTemplateRequest) {
 	request = &ModifyTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -103,7 +105,7 @@ func CreateModifyTemplateRequest() (request *ModifyTemplateRequest) {
 	return
 }
 
-// create a response to parse from ModifyTemplate response
+// CreateModifyTemplateResponse creates a response to parse from ModifyTemplate response
 func CreateModifyTemplateResponse() (response *ModifyTemplateResponse) {
 	response = &ModifyTemplateResponse{
 		BaseResponse: &responses.BaseResponse{},

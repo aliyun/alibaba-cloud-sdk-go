@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke AttachNetworkInterface api with *AttachNetworkInterfaceRequest synchronously
+// AttachNetworkInterface invokes the ecs.AttachNetworkInterface API synchronously
 // api document: https://help.aliyun.com/api/ecs/attachnetworkinterface.html
 func (client *Client) AttachNetworkInterface(request *AttachNetworkInterfaceRequest) (response *AttachNetworkInterfaceResponse, err error) {
 	response = CreateAttachNetworkInterfaceResponse()
@@ -28,7 +28,7 @@ func (client *Client) AttachNetworkInterface(request *AttachNetworkInterfaceRequ
 	return
 }
 
-// invoke AttachNetworkInterface api with *AttachNetworkInterfaceRequest asynchronously
+// AttachNetworkInterfaceWithChan invokes the ecs.AttachNetworkInterface API asynchronously
 // api document: https://help.aliyun.com/api/ecs/attachnetworkinterface.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AttachNetworkInterfaceWithChan(request *AttachNetworkInterfaceRequest) (<-chan *AttachNetworkInterfaceResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) AttachNetworkInterfaceWithChan(request *AttachNetworkInter
 	return responseChan, errChan
 }
 
-// invoke AttachNetworkInterface api with *AttachNetworkInterfaceRequest asynchronously
+// AttachNetworkInterfaceWithCallback invokes the ecs.AttachNetworkInterface API asynchronously
 // api document: https://help.aliyun.com/api/ecs/attachnetworkinterface.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AttachNetworkInterfaceWithCallback(request *AttachNetworkInterfaceRequest, callback func(response *AttachNetworkInterfaceResponse, err error)) <-chan int {
@@ -73,17 +73,19 @@ func (client *Client) AttachNetworkInterfaceWithCallback(request *AttachNetworkI
 	return result
 }
 
+// AttachNetworkInterfaceRequest is the request struct for api AttachNetworkInterface
 type AttachNetworkInterfaceRequest struct {
 	*requests.RpcRequest
 }
 
+// AttachNetworkInterfaceResponse is the response struct for api AttachNetworkInterface
 type AttachNetworkInterfaceResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke AttachNetworkInterface API
-func CreateAttachNetworkInterfaceRequest() (request *AttachNetworkInterfaceRequest) {
+// CreateAttachNetworkInterfaceRequest creates a request to invoke AttachNetworkInterface API
+func CreateAttachNetworkInterfaceRequest(request *AttachNetworkInterfaceRequest) {
 	request = &AttachNetworkInterfaceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -91,7 +93,7 @@ func CreateAttachNetworkInterfaceRequest() (request *AttachNetworkInterfaceReque
 	return
 }
 
-// create a response to parse from AttachNetworkInterface response
+// CreateAttachNetworkInterfaceResponse creates a response to parse from AttachNetworkInterface response
 func CreateAttachNetworkInterfaceResponse() (response *AttachNetworkInterfaceResponse) {
 	response = &AttachNetworkInterfaceResponse{
 		BaseResponse: &responses.BaseResponse{},

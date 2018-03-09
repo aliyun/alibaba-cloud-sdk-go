@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteHttpHeaderConfig api with *DeleteHttpHeaderConfigRequest synchronously
+// DeleteHttpHeaderConfig invokes the cdn.DeleteHttpHeaderConfig API synchronously
 // api document: https://help.aliyun.com/api/cdn/deletehttpheaderconfig.html
 func (client *Client) DeleteHttpHeaderConfig(request *DeleteHttpHeaderConfigRequest) (response *DeleteHttpHeaderConfigResponse, err error) {
 	response = CreateDeleteHttpHeaderConfigResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteHttpHeaderConfig(request *DeleteHttpHeaderConfigRequ
 	return
 }
 
-// invoke DeleteHttpHeaderConfig api with *DeleteHttpHeaderConfigRequest asynchronously
+// DeleteHttpHeaderConfigWithChan invokes the cdn.DeleteHttpHeaderConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/deletehttpheaderconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteHttpHeaderConfigWithChan(request *DeleteHttpHeaderConfigRequest) (<-chan *DeleteHttpHeaderConfigResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteHttpHeaderConfigWithChan(request *DeleteHttpHeaderCo
 	return responseChan, errChan
 }
 
-// invoke DeleteHttpHeaderConfig api with *DeleteHttpHeaderConfigRequest asynchronously
+// DeleteHttpHeaderConfigWithCallback invokes the cdn.DeleteHttpHeaderConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/deletehttpheaderconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteHttpHeaderConfigWithCallback(request *DeleteHttpHeaderConfigRequest, callback func(response *DeleteHttpHeaderConfigResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DeleteHttpHeaderConfigWithCallback(request *DeleteHttpHead
 	return result
 }
 
+// DeleteHttpHeaderConfigRequest is the request struct for api DeleteHttpHeaderConfig
 type DeleteHttpHeaderConfigRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -81,13 +82,14 @@ type DeleteHttpHeaderConfigRequest struct {
 	ConfigID      string           `position:"Query" name:"ConfigID"`
 }
 
+// DeleteHttpHeaderConfigResponse is the response struct for api DeleteHttpHeaderConfig
 type DeleteHttpHeaderConfigResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DeleteHttpHeaderConfig API
-func CreateDeleteHttpHeaderConfigRequest() (request *DeleteHttpHeaderConfigRequest) {
+// CreateDeleteHttpHeaderConfigRequest creates a request to invoke DeleteHttpHeaderConfig API
+func CreateDeleteHttpHeaderConfigRequest(request *DeleteHttpHeaderConfigRequest) {
 	request = &DeleteHttpHeaderConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateDeleteHttpHeaderConfigRequest() (request *DeleteHttpHeaderConfigReque
 	return
 }
 
-// create a response to parse from DeleteHttpHeaderConfig response
+// CreateDeleteHttpHeaderConfigResponse creates a response to parse from DeleteHttpHeaderConfig response
 func CreateDeleteHttpHeaderConfigResponse() (response *DeleteHttpHeaderConfigResponse) {
 	response = &DeleteHttpHeaderConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

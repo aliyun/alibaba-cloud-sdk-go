@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeCustomLogConfig api with *DescribeCustomLogConfigRequest synchronously
+// DescribeCustomLogConfig invokes the cdn.DescribeCustomLogConfig API synchronously
 // api document: https://help.aliyun.com/api/cdn/describecustomlogconfig.html
 func (client *Client) DescribeCustomLogConfig(request *DescribeCustomLogConfigRequest) (response *DescribeCustomLogConfigResponse, err error) {
 	response = CreateDescribeCustomLogConfigResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeCustomLogConfig(request *DescribeCustomLogConfigRe
 	return
 }
 
-// invoke DescribeCustomLogConfig api with *DescribeCustomLogConfigRequest asynchronously
+// DescribeCustomLogConfigWithChan invokes the cdn.DescribeCustomLogConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describecustomlogconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCustomLogConfigWithChan(request *DescribeCustomLogConfigRequest) (<-chan *DescribeCustomLogConfigResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeCustomLogConfigWithChan(request *DescribeCustomLog
 	return responseChan, errChan
 }
 
-// invoke DescribeCustomLogConfig api with *DescribeCustomLogConfigRequest asynchronously
+// DescribeCustomLogConfigWithCallback invokes the cdn.DescribeCustomLogConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describecustomlogconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCustomLogConfigWithCallback(request *DescribeCustomLogConfigRequest, callback func(response *DescribeCustomLogConfigResponse, err error)) <-chan int {
@@ -73,10 +73,12 @@ func (client *Client) DescribeCustomLogConfigWithCallback(request *DescribeCusto
 	return result
 }
 
+// DescribeCustomLogConfigRequest is the request struct for api DescribeCustomLogConfig
 type DescribeCustomLogConfigRequest struct {
 	*requests.RpcRequest
 }
 
+// DescribeCustomLogConfigResponse is the response struct for api DescribeCustomLogConfig
 type DescribeCustomLogConfigResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
@@ -85,8 +87,8 @@ type DescribeCustomLogConfigResponse struct {
 	Tag       string `json:"Tag" xml:"Tag"`
 }
 
-// create a request to invoke DescribeCustomLogConfig API
-func CreateDescribeCustomLogConfigRequest() (request *DescribeCustomLogConfigRequest) {
+// CreateDescribeCustomLogConfigRequest creates a request to invoke DescribeCustomLogConfig API
+func CreateDescribeCustomLogConfigRequest(request *DescribeCustomLogConfigRequest) {
 	request = &DescribeCustomLogConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -94,7 +96,7 @@ func CreateDescribeCustomLogConfigRequest() (request *DescribeCustomLogConfigReq
 	return
 }
 
-// create a response to parse from DescribeCustomLogConfig response
+// CreateDescribeCustomLogConfigResponse creates a response to parse from DescribeCustomLogConfig response
 func CreateDescribeCustomLogConfigResponse() (response *DescribeCustomLogConfigResponse) {
 	response = &DescribeCustomLogConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

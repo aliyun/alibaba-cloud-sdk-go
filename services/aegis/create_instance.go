@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CreateInstance api with *CreateInstanceRequest synchronously
+// CreateInstance invokes the aegis.CreateInstance API synchronously
 // api document: https://help.aliyun.com/api/aegis/createinstance.html
 func (client *Client) CreateInstance(request *CreateInstanceRequest) (response *CreateInstanceResponse, err error) {
 	response = CreateCreateInstanceResponse()
@@ -28,7 +28,7 @@ func (client *Client) CreateInstance(request *CreateInstanceRequest) (response *
 	return
 }
 
-// invoke CreateInstance api with *CreateInstanceRequest asynchronously
+// CreateInstanceWithChan invokes the aegis.CreateInstance API asynchronously
 // api document: https://help.aliyun.com/api/aegis/createinstance.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateInstanceWithChan(request *CreateInstanceRequest) (<-chan *CreateInstanceResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CreateInstanceWithChan(request *CreateInstanceRequest) (<-
 	return responseChan, errChan
 }
 
-// invoke CreateInstance api with *CreateInstanceRequest asynchronously
+// CreateInstanceWithCallback invokes the aegis.CreateInstance API asynchronously
 // api document: https://help.aliyun.com/api/aegis/createinstance.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateInstanceWithCallback(request *CreateInstanceRequest, callback func(response *CreateInstanceResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) CreateInstanceWithCallback(request *CreateInstanceRequest,
 	return result
 }
 
+// CreateInstanceRequest is the request struct for api CreateInstance
 type CreateInstanceRequest struct {
 	*requests.RpcRequest
 	OwnerId           requests.Integer `position:"Query" name:"OwnerId"`
@@ -85,6 +86,7 @@ type CreateInstanceRequest struct {
 	AutoRenewDuration requests.Integer `position:"Query" name:"AutoRenewDuration"`
 }
 
+// CreateInstanceResponse is the response struct for api CreateInstance
 type CreateInstanceResponse struct {
 	*responses.BaseResponse
 	OrderId    string `json:"OrderId" xml:"OrderId"`
@@ -92,8 +94,8 @@ type CreateInstanceResponse struct {
 	RequestId  string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke CreateInstance API
-func CreateCreateInstanceRequest() (request *CreateInstanceRequest) {
+// CreateCreateInstanceRequest creates a request to invoke CreateInstance API
+func CreateCreateInstanceRequest(request *CreateInstanceRequest) {
 	request = &CreateInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -101,7 +103,7 @@ func CreateCreateInstanceRequest() (request *CreateInstanceRequest) {
 	return
 }
 
-// create a response to parse from CreateInstance response
+// CreateCreateInstanceResponse creates a response to parse from CreateInstance response
 func CreateCreateInstanceResponse() (response *CreateInstanceResponse) {
 	response = &CreateInstanceResponse{
 		BaseResponse: &responses.BaseResponse{},

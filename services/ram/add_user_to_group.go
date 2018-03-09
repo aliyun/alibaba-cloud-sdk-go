@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke AddUserToGroup api with *AddUserToGroupRequest synchronously
+// AddUserToGroup invokes the ram.AddUserToGroup API synchronously
 // api document: https://help.aliyun.com/api/ram/addusertogroup.html
 func (client *Client) AddUserToGroup(request *AddUserToGroupRequest) (response *AddUserToGroupResponse, err error) {
 	response = CreateAddUserToGroupResponse()
@@ -28,7 +28,7 @@ func (client *Client) AddUserToGroup(request *AddUserToGroupRequest) (response *
 	return
 }
 
-// invoke AddUserToGroup api with *AddUserToGroupRequest asynchronously
+// AddUserToGroupWithChan invokes the ram.AddUserToGroup API asynchronously
 // api document: https://help.aliyun.com/api/ram/addusertogroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddUserToGroupWithChan(request *AddUserToGroupRequest) (<-chan *AddUserToGroupResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) AddUserToGroupWithChan(request *AddUserToGroupRequest) (<-
 	return responseChan, errChan
 }
 
-// invoke AddUserToGroup api with *AddUserToGroupRequest asynchronously
+// AddUserToGroupWithCallback invokes the ram.AddUserToGroup API asynchronously
 // api document: https://help.aliyun.com/api/ram/addusertogroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddUserToGroupWithCallback(request *AddUserToGroupRequest, callback func(response *AddUserToGroupResponse, err error)) <-chan int {
@@ -73,19 +73,21 @@ func (client *Client) AddUserToGroupWithCallback(request *AddUserToGroupRequest,
 	return result
 }
 
+// AddUserToGroupRequest is the request struct for api AddUserToGroup
 type AddUserToGroupRequest struct {
 	*requests.RpcRequest
 	UserName  string `position:"Query" name:"UserName"`
 	GroupName string `position:"Query" name:"GroupName"`
 }
 
+// AddUserToGroupResponse is the response struct for api AddUserToGroup
 type AddUserToGroupResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke AddUserToGroup API
-func CreateAddUserToGroupRequest() (request *AddUserToGroupRequest) {
+// CreateAddUserToGroupRequest creates a request to invoke AddUserToGroup API
+func CreateAddUserToGroupRequest(request *AddUserToGroupRequest) {
 	request = &AddUserToGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -93,7 +95,7 @@ func CreateAddUserToGroupRequest() (request *AddUserToGroupRequest) {
 	return
 }
 
-// create a response to parse from AddUserToGroup response
+// CreateAddUserToGroupResponse creates a response to parse from AddUserToGroup response
 func CreateAddUserToGroupResponse() (response *AddUserToGroupResponse) {
 	response = &AddUserToGroupResponse{
 		BaseResponse: &responses.BaseResponse{},

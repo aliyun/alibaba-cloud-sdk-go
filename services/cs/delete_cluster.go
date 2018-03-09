@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteCluster api with *DeleteClusterRequest synchronously
+// DeleteCluster invokes the cs.DeleteCluster API synchronously
 // api document: https://help.aliyun.com/api/cs/deletecluster.html
 func (client *Client) DeleteCluster(request *DeleteClusterRequest) (response *DeleteClusterResponse, err error) {
 	response = CreateDeleteClusterResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteCluster(request *DeleteClusterRequest) (response *De
 	return
 }
 
-// invoke DeleteCluster api with *DeleteClusterRequest asynchronously
+// DeleteClusterWithChan invokes the cs.DeleteCluster API asynchronously
 // api document: https://help.aliyun.com/api/cs/deletecluster.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteClusterWithChan(request *DeleteClusterRequest) (<-chan *DeleteClusterResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteClusterWithChan(request *DeleteClusterRequest) (<-ch
 	return responseChan, errChan
 }
 
-// invoke DeleteCluster api with *DeleteClusterRequest asynchronously
+// DeleteClusterWithCallback invokes the cs.DeleteCluster API asynchronously
 // api document: https://help.aliyun.com/api/cs/deletecluster.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteClusterWithCallback(request *DeleteClusterRequest, callback func(response *DeleteClusterResponse, err error)) <-chan int {
@@ -73,17 +73,19 @@ func (client *Client) DeleteClusterWithCallback(request *DeleteClusterRequest, c
 	return result
 }
 
+// DeleteClusterRequest is the request struct for api DeleteCluster
 type DeleteClusterRequest struct {
 	*requests.RoaRequest
 	ClusterId string `position:"Path" name:"ClusterId"`
 }
 
+// DeleteClusterResponse is the response struct for api DeleteCluster
 type DeleteClusterResponse struct {
 	*responses.BaseResponse
 }
 
-// create a request to invoke DeleteCluster API
-func CreateDeleteClusterRequest() (request *DeleteClusterRequest) {
+// CreateDeleteClusterRequest creates a request to invoke DeleteCluster API
+func CreateDeleteClusterRequest(request *DeleteClusterRequest) {
 	request = &DeleteClusterRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
@@ -92,7 +94,7 @@ func CreateDeleteClusterRequest() (request *DeleteClusterRequest) {
 	return
 }
 
-// create a response to parse from DeleteCluster response
+// CreateDeleteClusterResponse creates a response to parse from DeleteCluster response
 func CreateDeleteClusterResponse() (response *DeleteClusterResponse) {
 	response = &DeleteClusterResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteMyGroups api with *DeleteMyGroupsRequest synchronously
+// DeleteMyGroups invokes the cms.DeleteMyGroups API synchronously
 // api document: https://help.aliyun.com/api/cms/deletemygroups.html
 func (client *Client) DeleteMyGroups(request *DeleteMyGroupsRequest) (response *DeleteMyGroupsResponse, err error) {
 	response = CreateDeleteMyGroupsResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteMyGroups(request *DeleteMyGroupsRequest) (response *
 	return
 }
 
-// invoke DeleteMyGroups api with *DeleteMyGroupsRequest asynchronously
+// DeleteMyGroupsWithChan invokes the cms.DeleteMyGroups API asynchronously
 // api document: https://help.aliyun.com/api/cms/deletemygroups.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteMyGroupsWithChan(request *DeleteMyGroupsRequest) (<-chan *DeleteMyGroupsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteMyGroupsWithChan(request *DeleteMyGroupsRequest) (<-
 	return responseChan, errChan
 }
 
-// invoke DeleteMyGroups api with *DeleteMyGroupsRequest asynchronously
+// DeleteMyGroupsWithCallback invokes the cms.DeleteMyGroups API asynchronously
 // api document: https://help.aliyun.com/api/cms/deletemygroups.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteMyGroupsWithCallback(request *DeleteMyGroupsRequest, callback func(response *DeleteMyGroupsResponse, err error)) <-chan int {
@@ -73,11 +73,13 @@ func (client *Client) DeleteMyGroupsWithCallback(request *DeleteMyGroupsRequest,
 	return result
 }
 
+// DeleteMyGroupsRequest is the request struct for api DeleteMyGroups
 type DeleteMyGroupsRequest struct {
 	*requests.RpcRequest
 	GroupId requests.Integer `position:"Query" name:"GroupId"`
 }
 
+// DeleteMyGroupsResponse is the response struct for api DeleteMyGroups
 type DeleteMyGroupsResponse struct {
 	*responses.BaseResponse
 	RequestId    string                `json:"RequestId" xml:"RequestId"`
@@ -87,8 +89,8 @@ type DeleteMyGroupsResponse struct {
 	Group        GroupInDeleteMyGroups `json:"Group" xml:"Group"`
 }
 
-// create a request to invoke DeleteMyGroups API
-func CreateDeleteMyGroupsRequest() (request *DeleteMyGroupsRequest) {
+// CreateDeleteMyGroupsRequest creates a request to invoke DeleteMyGroups API
+func CreateDeleteMyGroupsRequest(request *DeleteMyGroupsRequest) {
 	request = &DeleteMyGroupsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -96,7 +98,7 @@ func CreateDeleteMyGroupsRequest() (request *DeleteMyGroupsRequest) {
 	return
 }
 
-// create a response to parse from DeleteMyGroups response
+// CreateDeleteMyGroupsResponse creates a response to parse from DeleteMyGroups response
 func CreateDeleteMyGroupsResponse() (response *DeleteMyGroupsResponse) {
 	response = &DeleteMyGroupsResponse{
 		BaseResponse: &responses.BaseResponse{},

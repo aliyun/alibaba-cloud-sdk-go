@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SubmitAnalysisJob api with *SubmitAnalysisJobRequest synchronously
+// SubmitAnalysisJob invokes the mts.SubmitAnalysisJob API synchronously
 // api document: https://help.aliyun.com/api/mts/submitanalysisjob.html
 func (client *Client) SubmitAnalysisJob(request *SubmitAnalysisJobRequest) (response *SubmitAnalysisJobResponse, err error) {
 	response = CreateSubmitAnalysisJobResponse()
@@ -28,7 +28,7 @@ func (client *Client) SubmitAnalysisJob(request *SubmitAnalysisJobRequest) (resp
 	return
 }
 
-// invoke SubmitAnalysisJob api with *SubmitAnalysisJobRequest asynchronously
+// SubmitAnalysisJobWithChan invokes the mts.SubmitAnalysisJob API asynchronously
 // api document: https://help.aliyun.com/api/mts/submitanalysisjob.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitAnalysisJobWithChan(request *SubmitAnalysisJobRequest) (<-chan *SubmitAnalysisJobResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SubmitAnalysisJobWithChan(request *SubmitAnalysisJobReques
 	return responseChan, errChan
 }
 
-// invoke SubmitAnalysisJob api with *SubmitAnalysisJobRequest asynchronously
+// SubmitAnalysisJobWithCallback invokes the mts.SubmitAnalysisJob API asynchronously
 // api document: https://help.aliyun.com/api/mts/submitanalysisjob.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitAnalysisJobWithCallback(request *SubmitAnalysisJobRequest, callback func(response *SubmitAnalysisJobResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SubmitAnalysisJobWithCallback(request *SubmitAnalysisJobRe
 	return result
 }
 
+// SubmitAnalysisJobRequest is the request struct for api SubmitAnalysisJob
 type SubmitAnalysisJobRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -86,14 +87,15 @@ type SubmitAnalysisJobRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// SubmitAnalysisJobResponse is the response struct for api SubmitAnalysisJob
 type SubmitAnalysisJobResponse struct {
 	*responses.BaseResponse
 	RequestId   string      `json:"RequestId" xml:"RequestId"`
 	AnalysisJob AnalysisJob `json:"AnalysisJob" xml:"AnalysisJob"`
 }
 
-// create a request to invoke SubmitAnalysisJob API
-func CreateSubmitAnalysisJobRequest() (request *SubmitAnalysisJobRequest) {
+// CreateSubmitAnalysisJobRequest creates a request to invoke SubmitAnalysisJob API
+func CreateSubmitAnalysisJobRequest(request *SubmitAnalysisJobRequest) {
 	request = &SubmitAnalysisJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -101,7 +103,7 @@ func CreateSubmitAnalysisJobRequest() (request *SubmitAnalysisJobRequest) {
 	return
 }
 
-// create a response to parse from SubmitAnalysisJob response
+// CreateSubmitAnalysisJobResponse creates a response to parse from SubmitAnalysisJob response
 func CreateSubmitAnalysisJobResponse() (response *SubmitAnalysisJobResponse) {
 	response = &SubmitAnalysisJobResponse{
 		BaseResponse: &responses.BaseResponse{},

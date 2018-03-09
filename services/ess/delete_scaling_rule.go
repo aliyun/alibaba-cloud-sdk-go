@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteScalingRule api with *DeleteScalingRuleRequest synchronously
+// DeleteScalingRule invokes the ess.DeleteScalingRule API synchronously
 // api document: https://help.aliyun.com/api/ess/deletescalingrule.html
 func (client *Client) DeleteScalingRule(request *DeleteScalingRuleRequest) (response *DeleteScalingRuleResponse, err error) {
 	response = CreateDeleteScalingRuleResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteScalingRule(request *DeleteScalingRuleRequest) (resp
 	return
 }
 
-// invoke DeleteScalingRule api with *DeleteScalingRuleRequest asynchronously
+// DeleteScalingRuleWithChan invokes the ess.DeleteScalingRule API asynchronously
 // api document: https://help.aliyun.com/api/ess/deletescalingrule.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteScalingRuleWithChan(request *DeleteScalingRuleRequest) (<-chan *DeleteScalingRuleResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteScalingRuleWithChan(request *DeleteScalingRuleReques
 	return responseChan, errChan
 }
 
-// invoke DeleteScalingRule api with *DeleteScalingRuleRequest asynchronously
+// DeleteScalingRuleWithCallback invokes the ess.DeleteScalingRule API asynchronously
 // api document: https://help.aliyun.com/api/ess/deletescalingrule.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteScalingRuleWithCallback(request *DeleteScalingRuleRequest, callback func(response *DeleteScalingRuleResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DeleteScalingRuleWithCallback(request *DeleteScalingRuleRe
 	return result
 }
 
+// DeleteScalingRuleRequest is the request struct for api DeleteScalingRule
 type DeleteScalingRuleRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -81,13 +82,14 @@ type DeleteScalingRuleRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// DeleteScalingRuleResponse is the response struct for api DeleteScalingRule
 type DeleteScalingRuleResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DeleteScalingRule API
-func CreateDeleteScalingRuleRequest() (request *DeleteScalingRuleRequest) {
+// CreateDeleteScalingRuleRequest creates a request to invoke DeleteScalingRule API
+func CreateDeleteScalingRuleRequest(request *DeleteScalingRuleRequest) {
 	request = &DeleteScalingRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateDeleteScalingRuleRequest() (request *DeleteScalingRuleRequest) {
 	return
 }
 
-// create a response to parse from DeleteScalingRule response
+// CreateDeleteScalingRuleResponse creates a response to parse from DeleteScalingRule response
 func CreateDeleteScalingRuleResponse() (response *DeleteScalingRuleResponse) {
 	response = &DeleteScalingRuleResponse{
 		BaseResponse: &responses.BaseResponse{},

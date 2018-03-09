@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeDBInstancesAsCsv api with *DescribeDBInstancesAsCsvRequest synchronously
+// DescribeDBInstancesAsCsv invokes the rds.DescribeDBInstancesAsCsv API synchronously
 // api document: https://help.aliyun.com/api/rds/describedbinstancesascsv.html
 func (client *Client) DescribeDBInstancesAsCsv(request *DescribeDBInstancesAsCsvRequest) (response *DescribeDBInstancesAsCsvResponse, err error) {
 	response = CreateDescribeDBInstancesAsCsvResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeDBInstancesAsCsv(request *DescribeDBInstancesAsCsv
 	return
 }
 
-// invoke DescribeDBInstancesAsCsv api with *DescribeDBInstancesAsCsvRequest asynchronously
+// DescribeDBInstancesAsCsvWithChan invokes the rds.DescribeDBInstancesAsCsv API asynchronously
 // api document: https://help.aliyun.com/api/rds/describedbinstancesascsv.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBInstancesAsCsvWithChan(request *DescribeDBInstancesAsCsvRequest) (<-chan *DescribeDBInstancesAsCsvResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeDBInstancesAsCsvWithChan(request *DescribeDBInstan
 	return responseChan, errChan
 }
 
-// invoke DescribeDBInstancesAsCsv api with *DescribeDBInstancesAsCsvRequest asynchronously
+// DescribeDBInstancesAsCsvWithCallback invokes the rds.DescribeDBInstancesAsCsv API asynchronously
 // api document: https://help.aliyun.com/api/rds/describedbinstancesascsv.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBInstancesAsCsvWithCallback(request *DescribeDBInstancesAsCsvRequest, callback func(response *DescribeDBInstancesAsCsvResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeDBInstancesAsCsvWithCallback(request *DescribeDBIn
 	return result
 }
 
+// DescribeDBInstancesAsCsvRequest is the request struct for api DescribeDBInstancesAsCsv
 type DescribeDBInstancesAsCsvRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -81,14 +82,15 @@ type DescribeDBInstancesAsCsvRequest struct {
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 }
 
+// DescribeDBInstancesAsCsvResponse is the response struct for api DescribeDBInstancesAsCsv
 type DescribeDBInstancesAsCsvResponse struct {
 	*responses.BaseResponse
 	RequestId string                          `json:"RequestId" xml:"RequestId"`
 	Items     ItemsInDescribeDBInstancesAsCsv `json:"Items" xml:"Items"`
 }
 
-// create a request to invoke DescribeDBInstancesAsCsv API
-func CreateDescribeDBInstancesAsCsvRequest() (request *DescribeDBInstancesAsCsvRequest) {
+// CreateDescribeDBInstancesAsCsvRequest creates a request to invoke DescribeDBInstancesAsCsv API
+func CreateDescribeDBInstancesAsCsvRequest(request *DescribeDBInstancesAsCsvRequest) {
 	request = &DescribeDBInstancesAsCsvRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -96,7 +98,7 @@ func CreateDescribeDBInstancesAsCsvRequest() (request *DescribeDBInstancesAsCsvR
 	return
 }
 
-// create a response to parse from DescribeDBInstancesAsCsv response
+// CreateDescribeDBInstancesAsCsvResponse creates a response to parse from DescribeDBInstancesAsCsv response
 func CreateDescribeDBInstancesAsCsvResponse() (response *DescribeDBInstancesAsCsvResponse) {
 	response = &DescribeDBInstancesAsCsvResponse{
 		BaseResponse: &responses.BaseResponse{},

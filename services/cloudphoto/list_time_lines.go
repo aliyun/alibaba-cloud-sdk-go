@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ListTimeLines api with *ListTimeLinesRequest synchronously
+// ListTimeLines invokes the cloudphoto.ListTimeLines API synchronously
 // api document: https://help.aliyun.com/api/cloudphoto/listtimelines.html
 func (client *Client) ListTimeLines(request *ListTimeLinesRequest) (response *ListTimeLinesResponse, err error) {
 	response = CreateListTimeLinesResponse()
@@ -28,7 +28,7 @@ func (client *Client) ListTimeLines(request *ListTimeLinesRequest) (response *Li
 	return
 }
 
-// invoke ListTimeLines api with *ListTimeLinesRequest asynchronously
+// ListTimeLinesWithChan invokes the cloudphoto.ListTimeLines API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/listtimelines.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListTimeLinesWithChan(request *ListTimeLinesRequest) (<-chan *ListTimeLinesResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ListTimeLinesWithChan(request *ListTimeLinesRequest) (<-ch
 	return responseChan, errChan
 }
 
-// invoke ListTimeLines api with *ListTimeLinesRequest asynchronously
+// ListTimeLinesWithCallback invokes the cloudphoto.ListTimeLines API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/listtimelines.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListTimeLinesWithCallback(request *ListTimeLinesRequest, callback func(response *ListTimeLinesResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ListTimeLinesWithCallback(request *ListTimeLinesRequest, c
 	return result
 }
 
+// ListTimeLinesRequest is the request struct for api ListTimeLines
 type ListTimeLinesRequest struct {
 	*requests.RpcRequest
 	Direction     string           `position:"Query" name:"Direction"`
@@ -86,6 +87,7 @@ type ListTimeLinesRequest struct {
 	LibraryId     string           `position:"Query" name:"LibraryId"`
 }
 
+// ListTimeLinesResponse is the response struct for api ListTimeLines
 type ListTimeLinesResponse struct {
 	*responses.BaseResponse
 	Code       string     `json:"Code" xml:"Code"`
@@ -96,8 +98,8 @@ type ListTimeLinesResponse struct {
 	TimeLines  []TimeLine `json:"TimeLines" xml:"TimeLines"`
 }
 
-// create a request to invoke ListTimeLines API
-func CreateListTimeLinesRequest() (request *ListTimeLinesRequest) {
+// CreateListTimeLinesRequest creates a request to invoke ListTimeLines API
+func CreateListTimeLinesRequest(request *ListTimeLinesRequest) {
 	request = &ListTimeLinesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -105,7 +107,7 @@ func CreateListTimeLinesRequest() (request *ListTimeLinesRequest) {
 	return
 }
 
-// create a response to parse from ListTimeLines response
+// CreateListTimeLinesResponse creates a response to parse from ListTimeLines response
 func CreateListTimeLinesResponse() (response *ListTimeLinesResponse) {
 	response = &ListTimeLinesResponse{
 		BaseResponse: &responses.BaseResponse{},

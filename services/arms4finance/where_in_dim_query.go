@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke WhereInDimQuery api with *WhereInDimQueryRequest synchronously
+// WhereInDimQuery invokes the arms4finance.WhereInDimQuery API synchronously
 // api document: https://help.aliyun.com/api/arms4finance/whereindimquery.html
 func (client *Client) WhereInDimQuery(request *WhereInDimQueryRequest) (response *WhereInDimQueryResponse, err error) {
 	response = CreateWhereInDimQueryResponse()
@@ -28,7 +28,7 @@ func (client *Client) WhereInDimQuery(request *WhereInDimQueryRequest) (response
 	return
 }
 
-// invoke WhereInDimQuery api with *WhereInDimQueryRequest asynchronously
+// WhereInDimQueryWithChan invokes the arms4finance.WhereInDimQuery API asynchronously
 // api document: https://help.aliyun.com/api/arms4finance/whereindimquery.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) WhereInDimQueryWithChan(request *WhereInDimQueryRequest) (<-chan *WhereInDimQueryResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) WhereInDimQueryWithChan(request *WhereInDimQueryRequest) (
 	return responseChan, errChan
 }
 
-// invoke WhereInDimQuery api with *WhereInDimQueryRequest asynchronously
+// WhereInDimQueryWithCallback invokes the arms4finance.WhereInDimQuery API asynchronously
 // api document: https://help.aliyun.com/api/arms4finance/whereindimquery.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) WhereInDimQueryWithCallback(request *WhereInDimQueryRequest, callback func(response *WhereInDimQueryResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) WhereInDimQueryWithCallback(request *WhereInDimQueryReques
 	return result
 }
 
+// WhereInDimQueryRequest is the request struct for api WhereInDimQuery
 type WhereInDimQueryRequest struct {
 	*requests.RpcRequest
 	DatasetId     requests.Integer             `position:"Query" name:"DatasetId"`
@@ -87,18 +88,20 @@ type WhereInDimQueryRequest struct {
 	IsDrillDown   requests.Boolean             `position:"Query" name:"IsDrillDown"`
 }
 
+// WhereInDimQueryDimensions is a repeated param struct in WhereInDimQueryRequest
 type WhereInDimQueryDimensions struct {
 	Key   string `name:"Key"`
 	Value string `name:"Value"`
 }
 
+// WhereInDimQueryResponse is the response struct for api WhereInDimQuery
 type WhereInDimQueryResponse struct {
 	*responses.BaseResponse
 	Data string `json:"Data" xml:"Data"`
 }
 
-// create a request to invoke WhereInDimQuery API
-func CreateWhereInDimQueryRequest() (request *WhereInDimQueryRequest) {
+// CreateWhereInDimQueryRequest creates a request to invoke WhereInDimQuery API
+func CreateWhereInDimQueryRequest(request *WhereInDimQueryRequest) {
 	request = &WhereInDimQueryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -106,7 +109,7 @@ func CreateWhereInDimQueryRequest() (request *WhereInDimQueryRequest) {
 	return
 }
 
-// create a response to parse from WhereInDimQuery response
+// CreateWhereInDimQueryResponse creates a response to parse from WhereInDimQuery response
 func CreateWhereInDimQueryResponse() (response *WhereInDimQueryResponse) {
 	response = &WhereInDimQueryResponse{
 		BaseResponse: &responses.BaseResponse{},

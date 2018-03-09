@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CheckReplyToMailAddress api with *CheckReplyToMailAddressRequest synchronously
+// CheckReplyToMailAddress invokes the dm.CheckReplyToMailAddress API synchronously
 // api document: https://help.aliyun.com/api/dm/checkreplytomailaddress.html
 func (client *Client) CheckReplyToMailAddress(request *CheckReplyToMailAddressRequest) (response *CheckReplyToMailAddressResponse, err error) {
 	response = CreateCheckReplyToMailAddressResponse()
@@ -28,7 +28,7 @@ func (client *Client) CheckReplyToMailAddress(request *CheckReplyToMailAddressRe
 	return
 }
 
-// invoke CheckReplyToMailAddress api with *CheckReplyToMailAddressRequest asynchronously
+// CheckReplyToMailAddressWithChan invokes the dm.CheckReplyToMailAddress API asynchronously
 // api document: https://help.aliyun.com/api/dm/checkreplytomailaddress.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckReplyToMailAddressWithChan(request *CheckReplyToMailAddressRequest) (<-chan *CheckReplyToMailAddressResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CheckReplyToMailAddressWithChan(request *CheckReplyToMailA
 	return responseChan, errChan
 }
 
-// invoke CheckReplyToMailAddress api with *CheckReplyToMailAddressRequest asynchronously
+// CheckReplyToMailAddressWithCallback invokes the dm.CheckReplyToMailAddress API asynchronously
 // api document: https://help.aliyun.com/api/dm/checkreplytomailaddress.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckReplyToMailAddressWithCallback(request *CheckReplyToMailAddressRequest, callback func(response *CheckReplyToMailAddressResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) CheckReplyToMailAddressWithCallback(request *CheckReplyToM
 	return result
 }
 
+// CheckReplyToMailAddressRequest is the request struct for api CheckReplyToMailAddress
 type CheckReplyToMailAddressRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -83,13 +84,14 @@ type CheckReplyToMailAddressRequest struct {
 	MailAddressId        requests.Integer `position:"Query" name:"MailAddressId"`
 }
 
+// CheckReplyToMailAddressResponse is the response struct for api CheckReplyToMailAddress
 type CheckReplyToMailAddressResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke CheckReplyToMailAddress API
-func CreateCheckReplyToMailAddressRequest() (request *CheckReplyToMailAddressRequest) {
+// CreateCheckReplyToMailAddressRequest creates a request to invoke CheckReplyToMailAddress API
+func CreateCheckReplyToMailAddressRequest(request *CheckReplyToMailAddressRequest) {
 	request = &CheckReplyToMailAddressRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateCheckReplyToMailAddressRequest() (request *CheckReplyToMailAddressReq
 	return
 }
 
-// create a response to parse from CheckReplyToMailAddress response
+// CreateCheckReplyToMailAddressResponse creates a response to parse from CheckReplyToMailAddress response
 func CreateCheckReplyToMailAddressResponse() (response *CheckReplyToMailAddressResponse) {
 	response = &CheckReplyToMailAddressResponse{
 		BaseResponse: &responses.BaseResponse{},

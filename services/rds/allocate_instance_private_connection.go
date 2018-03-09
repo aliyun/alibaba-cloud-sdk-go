@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke AllocateInstancePrivateConnection api with *AllocateInstancePrivateConnectionRequest synchronously
+// AllocateInstancePrivateConnection invokes the rds.AllocateInstancePrivateConnection API synchronously
 // api document: https://help.aliyun.com/api/rds/allocateinstanceprivateconnection.html
 func (client *Client) AllocateInstancePrivateConnection(request *AllocateInstancePrivateConnectionRequest) (response *AllocateInstancePrivateConnectionResponse, err error) {
 	response = CreateAllocateInstancePrivateConnectionResponse()
@@ -28,7 +28,7 @@ func (client *Client) AllocateInstancePrivateConnection(request *AllocateInstanc
 	return
 }
 
-// invoke AllocateInstancePrivateConnection api with *AllocateInstancePrivateConnectionRequest asynchronously
+// AllocateInstancePrivateConnectionWithChan invokes the rds.AllocateInstancePrivateConnection API asynchronously
 // api document: https://help.aliyun.com/api/rds/allocateinstanceprivateconnection.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AllocateInstancePrivateConnectionWithChan(request *AllocateInstancePrivateConnectionRequest) (<-chan *AllocateInstancePrivateConnectionResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) AllocateInstancePrivateConnectionWithChan(request *Allocat
 	return responseChan, errChan
 }
 
-// invoke AllocateInstancePrivateConnection api with *AllocateInstancePrivateConnectionRequest asynchronously
+// AllocateInstancePrivateConnectionWithCallback invokes the rds.AllocateInstancePrivateConnection API asynchronously
 // api document: https://help.aliyun.com/api/rds/allocateinstanceprivateconnection.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AllocateInstancePrivateConnectionWithCallback(request *AllocateInstancePrivateConnectionRequest, callback func(response *AllocateInstancePrivateConnectionResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) AllocateInstancePrivateConnectionWithCallback(request *All
 	return result
 }
 
+// AllocateInstancePrivateConnectionRequest is the request struct for api AllocateInstancePrivateConnection
 type AllocateInstancePrivateConnectionRequest struct {
 	*requests.RpcRequest
 	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,13 +85,14 @@ type AllocateInstancePrivateConnectionRequest struct {
 	OwnerAccount           string           `position:"Query" name:"OwnerAccount"`
 }
 
+// AllocateInstancePrivateConnectionResponse is the response struct for api AllocateInstancePrivateConnection
 type AllocateInstancePrivateConnectionResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke AllocateInstancePrivateConnection API
-func CreateAllocateInstancePrivateConnectionRequest() (request *AllocateInstancePrivateConnectionRequest) {
+// CreateAllocateInstancePrivateConnectionRequest creates a request to invoke AllocateInstancePrivateConnection API
+func CreateAllocateInstancePrivateConnectionRequest(request *AllocateInstancePrivateConnectionRequest) {
 	request = &AllocateInstancePrivateConnectionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateAllocateInstancePrivateConnectionRequest() (request *AllocateInstance
 	return
 }
 
-// create a response to parse from AllocateInstancePrivateConnection response
+// CreateAllocateInstancePrivateConnectionResponse creates a response to parse from AllocateInstancePrivateConnection response
 func CreateAllocateInstancePrivateConnectionResponse() (response *AllocateInstancePrivateConnectionResponse) {
 	response = &AllocateInstancePrivateConnectionResponse{
 		BaseResponse: &responses.BaseResponse{},

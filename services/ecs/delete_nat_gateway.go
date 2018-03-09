@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteNatGateway api with *DeleteNatGatewayRequest synchronously
+// DeleteNatGateway invokes the ecs.DeleteNatGateway API synchronously
 // api document: https://help.aliyun.com/api/ecs/deletenatgateway.html
 func (client *Client) DeleteNatGateway(request *DeleteNatGatewayRequest) (response *DeleteNatGatewayResponse, err error) {
 	response = CreateDeleteNatGatewayResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteNatGateway(request *DeleteNatGatewayRequest) (respon
 	return
 }
 
-// invoke DeleteNatGateway api with *DeleteNatGatewayRequest asynchronously
+// DeleteNatGatewayWithChan invokes the ecs.DeleteNatGateway API asynchronously
 // api document: https://help.aliyun.com/api/ecs/deletenatgateway.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteNatGatewayWithChan(request *DeleteNatGatewayRequest) (<-chan *DeleteNatGatewayResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteNatGatewayWithChan(request *DeleteNatGatewayRequest)
 	return responseChan, errChan
 }
 
-// invoke DeleteNatGateway api with *DeleteNatGatewayRequest asynchronously
+// DeleteNatGatewayWithCallback invokes the ecs.DeleteNatGateway API asynchronously
 // api document: https://help.aliyun.com/api/ecs/deletenatgateway.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteNatGatewayWithCallback(request *DeleteNatGatewayRequest, callback func(response *DeleteNatGatewayResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DeleteNatGatewayWithCallback(request *DeleteNatGatewayRequ
 	return result
 }
 
+// DeleteNatGatewayRequest is the request struct for api DeleteNatGateway
 type DeleteNatGatewayRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,13 +83,14 @@ type DeleteNatGatewayRequest struct {
 	NatGatewayId         string           `position:"Query" name:"NatGatewayId"`
 }
 
+// DeleteNatGatewayResponse is the response struct for api DeleteNatGateway
 type DeleteNatGatewayResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DeleteNatGateway API
-func CreateDeleteNatGatewayRequest() (request *DeleteNatGatewayRequest) {
+// CreateDeleteNatGatewayRequest creates a request to invoke DeleteNatGateway API
+func CreateDeleteNatGatewayRequest(request *DeleteNatGatewayRequest) {
 	request = &DeleteNatGatewayRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -96,7 +98,7 @@ func CreateDeleteNatGatewayRequest() (request *DeleteNatGatewayRequest) {
 	return
 }
 
-// create a response to parse from DeleteNatGateway response
+// CreateDeleteNatGatewayResponse creates a response to parse from DeleteNatGateway response
 func CreateDeleteNatGatewayResponse() (response *DeleteNatGatewayResponse) {
 	response = &DeleteNatGatewayResponse{
 		BaseResponse: &responses.BaseResponse{},

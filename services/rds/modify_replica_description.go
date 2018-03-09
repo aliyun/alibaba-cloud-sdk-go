@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifyReplicaDescription api with *ModifyReplicaDescriptionRequest synchronously
+// ModifyReplicaDescription invokes the rds.ModifyReplicaDescription API synchronously
 // api document: https://help.aliyun.com/api/rds/modifyreplicadescription.html
 func (client *Client) ModifyReplicaDescription(request *ModifyReplicaDescriptionRequest) (response *ModifyReplicaDescriptionResponse, err error) {
 	response = CreateModifyReplicaDescriptionResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifyReplicaDescription(request *ModifyReplicaDescription
 	return
 }
 
-// invoke ModifyReplicaDescription api with *ModifyReplicaDescriptionRequest asynchronously
+// ModifyReplicaDescriptionWithChan invokes the rds.ModifyReplicaDescription API asynchronously
 // api document: https://help.aliyun.com/api/rds/modifyreplicadescription.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyReplicaDescriptionWithChan(request *ModifyReplicaDescriptionRequest) (<-chan *ModifyReplicaDescriptionResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifyReplicaDescriptionWithChan(request *ModifyReplicaDes
 	return responseChan, errChan
 }
 
-// invoke ModifyReplicaDescription api with *ModifyReplicaDescriptionRequest asynchronously
+// ModifyReplicaDescriptionWithCallback invokes the rds.ModifyReplicaDescription API asynchronously
 // api document: https://help.aliyun.com/api/rds/modifyreplicadescription.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyReplicaDescriptionWithCallback(request *ModifyReplicaDescriptionRequest, callback func(response *ModifyReplicaDescriptionResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ModifyReplicaDescriptionWithCallback(request *ModifyReplic
 	return result
 }
 
+// ModifyReplicaDescriptionRequest is the request struct for api ModifyReplicaDescription
 type ModifyReplicaDescriptionRequest struct {
 	*requests.RpcRequest
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
@@ -84,13 +85,14 @@ type ModifyReplicaDescriptionRequest struct {
 	ReplicaDescription   string           `position:"Query" name:"ReplicaDescription"`
 }
 
+// ModifyReplicaDescriptionResponse is the response struct for api ModifyReplicaDescription
 type ModifyReplicaDescriptionResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ModifyReplicaDescription API
-func CreateModifyReplicaDescriptionRequest() (request *ModifyReplicaDescriptionRequest) {
+// CreateModifyReplicaDescriptionRequest creates a request to invoke ModifyReplicaDescription API
+func CreateModifyReplicaDescriptionRequest(request *ModifyReplicaDescriptionRequest) {
 	request = &ModifyReplicaDescriptionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateModifyReplicaDescriptionRequest() (request *ModifyReplicaDescriptionR
 	return
 }
 
-// create a response to parse from ModifyReplicaDescription response
+// CreateModifyReplicaDescriptionResponse creates a response to parse from ModifyReplicaDescription response
 func CreateModifyReplicaDescriptionResponse() (response *ModifyReplicaDescriptionResponse) {
 	response = &ModifyReplicaDescriptionResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteBgpNetwork api with *DeleteBgpNetworkRequest synchronously
+// DeleteBgpNetwork invokes the vpc.DeleteBgpNetwork API synchronously
 // api document: https://help.aliyun.com/api/vpc/deletebgpnetwork.html
 func (client *Client) DeleteBgpNetwork(request *DeleteBgpNetworkRequest) (response *DeleteBgpNetworkResponse, err error) {
 	response = CreateDeleteBgpNetworkResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteBgpNetwork(request *DeleteBgpNetworkRequest) (respon
 	return
 }
 
-// invoke DeleteBgpNetwork api with *DeleteBgpNetworkRequest asynchronously
+// DeleteBgpNetworkWithChan invokes the vpc.DeleteBgpNetwork API asynchronously
 // api document: https://help.aliyun.com/api/vpc/deletebgpnetwork.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteBgpNetworkWithChan(request *DeleteBgpNetworkRequest) (<-chan *DeleteBgpNetworkResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteBgpNetworkWithChan(request *DeleteBgpNetworkRequest)
 	return responseChan, errChan
 }
 
-// invoke DeleteBgpNetwork api with *DeleteBgpNetworkRequest asynchronously
+// DeleteBgpNetworkWithCallback invokes the vpc.DeleteBgpNetwork API asynchronously
 // api document: https://help.aliyun.com/api/vpc/deletebgpnetwork.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteBgpNetworkWithCallback(request *DeleteBgpNetworkRequest, callback func(response *DeleteBgpNetworkResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DeleteBgpNetworkWithCallback(request *DeleteBgpNetworkRequ
 	return result
 }
 
+// DeleteBgpNetworkRequest is the request struct for api DeleteBgpNetwork
 type DeleteBgpNetworkRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,13 +85,14 @@ type DeleteBgpNetworkRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// DeleteBgpNetworkResponse is the response struct for api DeleteBgpNetwork
 type DeleteBgpNetworkResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DeleteBgpNetwork API
-func CreateDeleteBgpNetworkRequest() (request *DeleteBgpNetworkRequest) {
+// CreateDeleteBgpNetworkRequest creates a request to invoke DeleteBgpNetwork API
+func CreateDeleteBgpNetworkRequest(request *DeleteBgpNetworkRequest) {
 	request = &DeleteBgpNetworkRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateDeleteBgpNetworkRequest() (request *DeleteBgpNetworkRequest) {
 	return
 }
 
-// create a response to parse from DeleteBgpNetwork response
+// CreateDeleteBgpNetworkResponse creates a response to parse from DeleteBgpNetwork response
 func CreateDeleteBgpNetworkResponse() (response *DeleteBgpNetworkResponse) {
 	response = &DeleteBgpNetworkResponse{
 		BaseResponse: &responses.BaseResponse{},

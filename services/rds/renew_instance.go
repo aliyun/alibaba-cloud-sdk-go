@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke RenewInstance api with *RenewInstanceRequest synchronously
+// RenewInstance invokes the rds.RenewInstance API synchronously
 // api document: https://help.aliyun.com/api/rds/renewinstance.html
 func (client *Client) RenewInstance(request *RenewInstanceRequest) (response *RenewInstanceResponse, err error) {
 	response = CreateRenewInstanceResponse()
@@ -28,7 +28,7 @@ func (client *Client) RenewInstance(request *RenewInstanceRequest) (response *Re
 	return
 }
 
-// invoke RenewInstance api with *RenewInstanceRequest asynchronously
+// RenewInstanceWithChan invokes the rds.RenewInstance API asynchronously
 // api document: https://help.aliyun.com/api/rds/renewinstance.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RenewInstanceWithChan(request *RenewInstanceRequest) (<-chan *RenewInstanceResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) RenewInstanceWithChan(request *RenewInstanceRequest) (<-ch
 	return responseChan, errChan
 }
 
-// invoke RenewInstance api with *RenewInstanceRequest asynchronously
+// RenewInstanceWithCallback invokes the rds.RenewInstance API asynchronously
 // api document: https://help.aliyun.com/api/rds/renewinstance.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RenewInstanceWithCallback(request *RenewInstanceRequest, callback func(response *RenewInstanceResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) RenewInstanceWithCallback(request *RenewInstanceRequest, c
 	return result
 }
 
+// RenewInstanceRequest is the request struct for api RenewInstance
 type RenewInstanceRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -85,14 +86,15 @@ type RenewInstanceRequest struct {
 	BusinessInfo         string           `position:"Query" name:"BusinessInfo"`
 }
 
+// RenewInstanceResponse is the response struct for api RenewInstance
 type RenewInstanceResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	OrderId   int    `json:"OrderId" xml:"OrderId"`
 }
 
-// create a request to invoke RenewInstance API
-func CreateRenewInstanceRequest() (request *RenewInstanceRequest) {
+// CreateRenewInstanceRequest creates a request to invoke RenewInstance API
+func CreateRenewInstanceRequest(request *RenewInstanceRequest) {
 	request = &RenewInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -100,7 +102,7 @@ func CreateRenewInstanceRequest() (request *RenewInstanceRequest) {
 	return
 }
 
-// create a response to parse from RenewInstance response
+// CreateRenewInstanceResponse creates a response to parse from RenewInstance response
 func CreateRenewInstanceResponse() (response *RenewInstanceResponse) {
 	response = &RenewInstanceResponse{
 		BaseResponse: &responses.BaseResponse{},

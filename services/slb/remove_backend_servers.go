@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke RemoveBackendServers api with *RemoveBackendServersRequest synchronously
+// RemoveBackendServers invokes the slb.RemoveBackendServers API synchronously
 // api document: https://help.aliyun.com/api/slb/removebackendservers.html
 func (client *Client) RemoveBackendServers(request *RemoveBackendServersRequest) (response *RemoveBackendServersResponse, err error) {
 	response = CreateRemoveBackendServersResponse()
@@ -28,7 +28,7 @@ func (client *Client) RemoveBackendServers(request *RemoveBackendServersRequest)
 	return
 }
 
-// invoke RemoveBackendServers api with *RemoveBackendServersRequest asynchronously
+// RemoveBackendServersWithChan invokes the slb.RemoveBackendServers API asynchronously
 // api document: https://help.aliyun.com/api/slb/removebackendservers.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveBackendServersWithChan(request *RemoveBackendServersRequest) (<-chan *RemoveBackendServersResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) RemoveBackendServersWithChan(request *RemoveBackendServers
 	return responseChan, errChan
 }
 
-// invoke RemoveBackendServers api with *RemoveBackendServersRequest asynchronously
+// RemoveBackendServersWithCallback invokes the slb.RemoveBackendServers API asynchronously
 // api document: https://help.aliyun.com/api/slb/removebackendservers.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveBackendServersWithCallback(request *RemoveBackendServersRequest, callback func(response *RemoveBackendServersResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) RemoveBackendServersWithCallback(request *RemoveBackendSer
 	return result
 }
 
+// RemoveBackendServersRequest is the request struct for api RemoveBackendServers
 type RemoveBackendServersRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -85,6 +86,7 @@ type RemoveBackendServersRequest struct {
 	Tags                 string           `position:"Query" name:"Tags"`
 }
 
+// RemoveBackendServersResponse is the response struct for api RemoveBackendServers
 type RemoveBackendServersResponse struct {
 	*responses.BaseResponse
 	RequestId      string                               `json:"RequestId" xml:"RequestId"`
@@ -92,8 +94,8 @@ type RemoveBackendServersResponse struct {
 	BackendServers BackendServersInRemoveBackendServers `json:"BackendServers" xml:"BackendServers"`
 }
 
-// create a request to invoke RemoveBackendServers API
-func CreateRemoveBackendServersRequest() (request *RemoveBackendServersRequest) {
+// CreateRemoveBackendServersRequest creates a request to invoke RemoveBackendServers API
+func CreateRemoveBackendServersRequest(request *RemoveBackendServersRequest) {
 	request = &RemoveBackendServersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -101,7 +103,7 @@ func CreateRemoveBackendServersRequest() (request *RemoveBackendServersRequest) 
 	return
 }
 
-// create a response to parse from RemoveBackendServers response
+// CreateRemoveBackendServersResponse creates a response to parse from RemoveBackendServers response
 func CreateRemoveBackendServersResponse() (response *RemoveBackendServersResponse) {
 	response = &RemoveBackendServersResponse{
 		BaseResponse: &responses.BaseResponse{},

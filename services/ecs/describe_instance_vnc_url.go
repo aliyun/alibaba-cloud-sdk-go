@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeInstanceVncUrl api with *DescribeInstanceVncUrlRequest synchronously
+// DescribeInstanceVncUrl invokes the ecs.DescribeInstanceVncUrl API synchronously
 // api document: https://help.aliyun.com/api/ecs/describeinstancevncurl.html
 func (client *Client) DescribeInstanceVncUrl(request *DescribeInstanceVncUrlRequest) (response *DescribeInstanceVncUrlResponse, err error) {
 	response = CreateDescribeInstanceVncUrlResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeInstanceVncUrl(request *DescribeInstanceVncUrlRequ
 	return
 }
 
-// invoke DescribeInstanceVncUrl api with *DescribeInstanceVncUrlRequest asynchronously
+// DescribeInstanceVncUrlWithChan invokes the ecs.DescribeInstanceVncUrl API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describeinstancevncurl.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceVncUrlWithChan(request *DescribeInstanceVncUrlRequest) (<-chan *DescribeInstanceVncUrlResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeInstanceVncUrlWithChan(request *DescribeInstanceVn
 	return responseChan, errChan
 }
 
-// invoke DescribeInstanceVncUrl api with *DescribeInstanceVncUrlRequest asynchronously
+// DescribeInstanceVncUrlWithCallback invokes the ecs.DescribeInstanceVncUrl API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describeinstancevncurl.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceVncUrlWithCallback(request *DescribeInstanceVncUrlRequest, callback func(response *DescribeInstanceVncUrlResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeInstanceVncUrlWithCallback(request *DescribeInstan
 	return result
 }
 
+// DescribeInstanceVncUrlRequest is the request struct for api DescribeInstanceVncUrl
 type DescribeInstanceVncUrlRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,14 +83,15 @@ type DescribeInstanceVncUrlRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// DescribeInstanceVncUrlResponse is the response struct for api DescribeInstanceVncUrl
 type DescribeInstanceVncUrlResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	VncUrl    string `json:"VncUrl" xml:"VncUrl"`
 }
 
-// create a request to invoke DescribeInstanceVncUrl API
-func CreateDescribeInstanceVncUrlRequest() (request *DescribeInstanceVncUrlRequest) {
+// CreateDescribeInstanceVncUrlRequest creates a request to invoke DescribeInstanceVncUrl API
+func CreateDescribeInstanceVncUrlRequest(request *DescribeInstanceVncUrlRequest) {
 	request = &DescribeInstanceVncUrlRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateDescribeInstanceVncUrlRequest() (request *DescribeInstanceVncUrlReque
 	return
 }
 
-// create a response to parse from DescribeInstanceVncUrl response
+// CreateDescribeInstanceVncUrlResponse creates a response to parse from DescribeInstanceVncUrl response
 func CreateDescribeInstanceVncUrlResponse() (response *DescribeInstanceVncUrlResponse) {
 	response = &DescribeInstanceVncUrlResponse{
 		BaseResponse: &responses.BaseResponse{},

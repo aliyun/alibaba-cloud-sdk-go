@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeLiveStreamsBlockList api with *DescribeLiveStreamsBlockListRequest synchronously
+// DescribeLiveStreamsBlockList invokes the cdn.DescribeLiveStreamsBlockList API synchronously
 // api document: https://help.aliyun.com/api/cdn/describelivestreamsblocklist.html
 func (client *Client) DescribeLiveStreamsBlockList(request *DescribeLiveStreamsBlockListRequest) (response *DescribeLiveStreamsBlockListResponse, err error) {
 	response = CreateDescribeLiveStreamsBlockListResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeLiveStreamsBlockList(request *DescribeLiveStreamsB
 	return
 }
 
-// invoke DescribeLiveStreamsBlockList api with *DescribeLiveStreamsBlockListRequest asynchronously
+// DescribeLiveStreamsBlockListWithChan invokes the cdn.DescribeLiveStreamsBlockList API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describelivestreamsblocklist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamsBlockListWithChan(request *DescribeLiveStreamsBlockListRequest) (<-chan *DescribeLiveStreamsBlockListResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeLiveStreamsBlockListWithChan(request *DescribeLive
 	return responseChan, errChan
 }
 
-// invoke DescribeLiveStreamsBlockList api with *DescribeLiveStreamsBlockListRequest asynchronously
+// DescribeLiveStreamsBlockListWithCallback invokes the cdn.DescribeLiveStreamsBlockList API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describelivestreamsblocklist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamsBlockListWithCallback(request *DescribeLiveStreamsBlockListRequest, callback func(response *DescribeLiveStreamsBlockListResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeLiveStreamsBlockListWithCallback(request *Describe
 	return result
 }
 
+// DescribeLiveStreamsBlockListRequest is the request struct for api DescribeLiveStreamsBlockList
 type DescribeLiveStreamsBlockListRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -80,6 +81,7 @@ type DescribeLiveStreamsBlockListRequest struct {
 	DomainName    string           `position:"Query" name:"DomainName"`
 }
 
+// DescribeLiveStreamsBlockListResponse is the response struct for api DescribeLiveStreamsBlockList
 type DescribeLiveStreamsBlockListResponse struct {
 	*responses.BaseResponse
 	RequestId  string     `json:"RequestId" xml:"RequestId"`
@@ -87,8 +89,8 @@ type DescribeLiveStreamsBlockListResponse struct {
 	StreamUrls StreamUrls `json:"StreamUrls" xml:"StreamUrls"`
 }
 
-// create a request to invoke DescribeLiveStreamsBlockList API
-func CreateDescribeLiveStreamsBlockListRequest() (request *DescribeLiveStreamsBlockListRequest) {
+// CreateDescribeLiveStreamsBlockListRequest creates a request to invoke DescribeLiveStreamsBlockList API
+func CreateDescribeLiveStreamsBlockListRequest(request *DescribeLiveStreamsBlockListRequest) {
 	request = &DescribeLiveStreamsBlockListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -96,7 +98,7 @@ func CreateDescribeLiveStreamsBlockListRequest() (request *DescribeLiveStreamsBl
 	return
 }
 
-// create a response to parse from DescribeLiveStreamsBlockList response
+// CreateDescribeLiveStreamsBlockListResponse creates a response to parse from DescribeLiveStreamsBlockList response
 func CreateDescribeLiveStreamsBlockListResponse() (response *DescribeLiveStreamsBlockListResponse) {
 	response = &DescribeLiveStreamsBlockListResponse{
 		BaseResponse: &responses.BaseResponse{},

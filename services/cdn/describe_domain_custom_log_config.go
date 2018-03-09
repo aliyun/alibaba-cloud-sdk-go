@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeDomainCustomLogConfig api with *DescribeDomainCustomLogConfigRequest synchronously
+// DescribeDomainCustomLogConfig invokes the cdn.DescribeDomainCustomLogConfig API synchronously
 // api document: https://help.aliyun.com/api/cdn/describedomaincustomlogconfig.html
 func (client *Client) DescribeDomainCustomLogConfig(request *DescribeDomainCustomLogConfigRequest) (response *DescribeDomainCustomLogConfigResponse, err error) {
 	response = CreateDescribeDomainCustomLogConfigResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeDomainCustomLogConfig(request *DescribeDomainCusto
 	return
 }
 
-// invoke DescribeDomainCustomLogConfig api with *DescribeDomainCustomLogConfigRequest asynchronously
+// DescribeDomainCustomLogConfigWithChan invokes the cdn.DescribeDomainCustomLogConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describedomaincustomlogconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainCustomLogConfigWithChan(request *DescribeDomainCustomLogConfigRequest) (<-chan *DescribeDomainCustomLogConfigResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeDomainCustomLogConfigWithChan(request *DescribeDom
 	return responseChan, errChan
 }
 
-// invoke DescribeDomainCustomLogConfig api with *DescribeDomainCustomLogConfigRequest asynchronously
+// DescribeDomainCustomLogConfigWithCallback invokes the cdn.DescribeDomainCustomLogConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describedomaincustomlogconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainCustomLogConfigWithCallback(request *DescribeDomainCustomLogConfigRequest, callback func(response *DescribeDomainCustomLogConfigResponse, err error)) <-chan int {
@@ -73,10 +73,12 @@ func (client *Client) DescribeDomainCustomLogConfigWithCallback(request *Describ
 	return result
 }
 
+// DescribeDomainCustomLogConfigRequest is the request struct for api DescribeDomainCustomLogConfig
 type DescribeDomainCustomLogConfigRequest struct {
 	*requests.RpcRequest
 }
 
+// DescribeDomainCustomLogConfigResponse is the response struct for api DescribeDomainCustomLogConfig
 type DescribeDomainCustomLogConfigResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
@@ -86,8 +88,8 @@ type DescribeDomainCustomLogConfigResponse struct {
 	Tag       string `json:"Tag" xml:"Tag"`
 }
 
-// create a request to invoke DescribeDomainCustomLogConfig API
-func CreateDescribeDomainCustomLogConfigRequest() (request *DescribeDomainCustomLogConfigRequest) {
+// CreateDescribeDomainCustomLogConfigRequest creates a request to invoke DescribeDomainCustomLogConfig API
+func CreateDescribeDomainCustomLogConfigRequest(request *DescribeDomainCustomLogConfigRequest) {
 	request = &DescribeDomainCustomLogConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateDescribeDomainCustomLogConfigRequest() (request *DescribeDomainCustom
 	return
 }
 
-// create a response to parse from DescribeDomainCustomLogConfig response
+// CreateDescribeDomainCustomLogConfigResponse creates a response to parse from DescribeDomainCustomLogConfig response
 func CreateDescribeDomainCustomLogConfigResponse() (response *DescribeDomainCustomLogConfigResponse) {
 	response = &DescribeDomainCustomLogConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

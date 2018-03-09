@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteMountTarget api with *DeleteMountTargetRequest synchronously
+// DeleteMountTarget invokes the nas.DeleteMountTarget API synchronously
 // api document: https://help.aliyun.com/api/nas/deletemounttarget.html
 func (client *Client) DeleteMountTarget(request *DeleteMountTargetRequest) (response *DeleteMountTargetResponse, err error) {
 	response = CreateDeleteMountTargetResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteMountTarget(request *DeleteMountTargetRequest) (resp
 	return
 }
 
-// invoke DeleteMountTarget api with *DeleteMountTargetRequest asynchronously
+// DeleteMountTargetWithChan invokes the nas.DeleteMountTarget API asynchronously
 // api document: https://help.aliyun.com/api/nas/deletemounttarget.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteMountTargetWithChan(request *DeleteMountTargetRequest) (<-chan *DeleteMountTargetResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteMountTargetWithChan(request *DeleteMountTargetReques
 	return responseChan, errChan
 }
 
-// invoke DeleteMountTarget api with *DeleteMountTargetRequest asynchronously
+// DeleteMountTargetWithCallback invokes the nas.DeleteMountTarget API asynchronously
 // api document: https://help.aliyun.com/api/nas/deletemounttarget.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteMountTargetWithCallback(request *DeleteMountTargetRequest, callback func(response *DeleteMountTargetResponse, err error)) <-chan int {
@@ -73,19 +73,21 @@ func (client *Client) DeleteMountTargetWithCallback(request *DeleteMountTargetRe
 	return result
 }
 
+// DeleteMountTargetRequest is the request struct for api DeleteMountTarget
 type DeleteMountTargetRequest struct {
 	*requests.RpcRequest
 	FileSystemId      string `position:"Query" name:"FileSystemId"`
 	MountTargetDomain string `position:"Query" name:"MountTargetDomain"`
 }
 
+// DeleteMountTargetResponse is the response struct for api DeleteMountTarget
 type DeleteMountTargetResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DeleteMountTarget API
-func CreateDeleteMountTargetRequest() (request *DeleteMountTargetRequest) {
+// CreateDeleteMountTargetRequest creates a request to invoke DeleteMountTarget API
+func CreateDeleteMountTargetRequest(request *DeleteMountTargetRequest) {
 	request = &DeleteMountTargetRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -93,7 +95,7 @@ func CreateDeleteMountTargetRequest() (request *DeleteMountTargetRequest) {
 	return
 }
 
-// create a response to parse from DeleteMountTarget response
+// CreateDeleteMountTargetResponse creates a response to parse from DeleteMountTarget response
 func CreateDeleteMountTargetResponse() (response *DeleteMountTargetResponse) {
 	response = &DeleteMountTargetResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeDomainFileSizeProportionData api with *DescribeDomainFileSizeProportionDataRequest synchronously
+// DescribeDomainFileSizeProportionData invokes the cdn.DescribeDomainFileSizeProportionData API synchronously
 // api document: https://help.aliyun.com/api/cdn/describedomainfilesizeproportiondata.html
 func (client *Client) DescribeDomainFileSizeProportionData(request *DescribeDomainFileSizeProportionDataRequest) (response *DescribeDomainFileSizeProportionDataResponse, err error) {
 	response = CreateDescribeDomainFileSizeProportionDataResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeDomainFileSizeProportionData(request *DescribeDoma
 	return
 }
 
-// invoke DescribeDomainFileSizeProportionData api with *DescribeDomainFileSizeProportionDataRequest asynchronously
+// DescribeDomainFileSizeProportionDataWithChan invokes the cdn.DescribeDomainFileSizeProportionData API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describedomainfilesizeproportiondata.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainFileSizeProportionDataWithChan(request *DescribeDomainFileSizeProportionDataRequest) (<-chan *DescribeDomainFileSizeProportionDataResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeDomainFileSizeProportionDataWithChan(request *Desc
 	return responseChan, errChan
 }
 
-// invoke DescribeDomainFileSizeProportionData api with *DescribeDomainFileSizeProportionDataRequest asynchronously
+// DescribeDomainFileSizeProportionDataWithCallback invokes the cdn.DescribeDomainFileSizeProportionData API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describedomainfilesizeproportiondata.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainFileSizeProportionDataWithCallback(request *DescribeDomainFileSizeProportionDataRequest, callback func(response *DescribeDomainFileSizeProportionDataResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeDomainFileSizeProportionDataWithCallback(request *
 	return result
 }
 
+// DescribeDomainFileSizeProportionDataRequest is the request struct for api DescribeDomainFileSizeProportionData
 type DescribeDomainFileSizeProportionDataRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,6 +83,7 @@ type DescribeDomainFileSizeProportionDataRequest struct {
 	EndTime       string           `position:"Query" name:"EndTime"`
 }
 
+// DescribeDomainFileSizeProportionDataResponse is the response struct for api DescribeDomainFileSizeProportionData
 type DescribeDomainFileSizeProportionDataResponse struct {
 	*responses.BaseResponse
 	RequestId                      string                         `json:"RequestId" xml:"RequestId"`
@@ -92,8 +94,8 @@ type DescribeDomainFileSizeProportionDataResponse struct {
 	FileSizeProportionDataInterval FileSizeProportionDataInterval `json:"FileSizeProportionDataInterval" xml:"FileSizeProportionDataInterval"`
 }
 
-// create a request to invoke DescribeDomainFileSizeProportionData API
-func CreateDescribeDomainFileSizeProportionDataRequest() (request *DescribeDomainFileSizeProportionDataRequest) {
+// CreateDescribeDomainFileSizeProportionDataRequest creates a request to invoke DescribeDomainFileSizeProportionData API
+func CreateDescribeDomainFileSizeProportionDataRequest(request *DescribeDomainFileSizeProportionDataRequest) {
 	request = &DescribeDomainFileSizeProportionDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -101,7 +103,7 @@ func CreateDescribeDomainFileSizeProportionDataRequest() (request *DescribeDomai
 	return
 }
 
-// create a response to parse from DescribeDomainFileSizeProportionData response
+// CreateDescribeDomainFileSizeProportionDataResponse creates a response to parse from DescribeDomainFileSizeProportionData response
 func CreateDescribeDomainFileSizeProportionDataResponse() (response *DescribeDomainFileSizeProportionDataResponse) {
 	response = &DescribeDomainFileSizeProportionDataResponse{
 		BaseResponse: &responses.BaseResponse{},

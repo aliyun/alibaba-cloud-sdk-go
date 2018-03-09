@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CreateMountTarget api with *CreateMountTargetRequest synchronously
+// CreateMountTarget invokes the nas.CreateMountTarget API synchronously
 // api document: https://help.aliyun.com/api/nas/createmounttarget.html
 func (client *Client) CreateMountTarget(request *CreateMountTargetRequest) (response *CreateMountTargetResponse, err error) {
 	response = CreateCreateMountTargetResponse()
@@ -28,7 +28,7 @@ func (client *Client) CreateMountTarget(request *CreateMountTargetRequest) (resp
 	return
 }
 
-// invoke CreateMountTarget api with *CreateMountTargetRequest asynchronously
+// CreateMountTargetWithChan invokes the nas.CreateMountTarget API asynchronously
 // api document: https://help.aliyun.com/api/nas/createmounttarget.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateMountTargetWithChan(request *CreateMountTargetRequest) (<-chan *CreateMountTargetResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CreateMountTargetWithChan(request *CreateMountTargetReques
 	return responseChan, errChan
 }
 
-// invoke CreateMountTarget api with *CreateMountTargetRequest asynchronously
+// CreateMountTargetWithCallback invokes the nas.CreateMountTarget API asynchronously
 // api document: https://help.aliyun.com/api/nas/createmounttarget.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateMountTargetWithCallback(request *CreateMountTargetRequest, callback func(response *CreateMountTargetResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) CreateMountTargetWithCallback(request *CreateMountTargetRe
 	return result
 }
 
+// CreateMountTargetRequest is the request struct for api CreateMountTarget
 type CreateMountTargetRequest struct {
 	*requests.RpcRequest
 	FileSystemId    string `position:"Query" name:"FileSystemId"`
@@ -82,14 +83,15 @@ type CreateMountTargetRequest struct {
 	VSwitchId       string `position:"Query" name:"VSwitchId"`
 }
 
+// CreateMountTargetResponse is the response struct for api CreateMountTarget
 type CreateMountTargetResponse struct {
 	*responses.BaseResponse
 	RequestId         string `json:"RequestId" xml:"RequestId"`
 	MountTargetDomain string `json:"MountTargetDomain" xml:"MountTargetDomain"`
 }
 
-// create a request to invoke CreateMountTarget API
-func CreateCreateMountTargetRequest() (request *CreateMountTargetRequest) {
+// CreateCreateMountTargetRequest creates a request to invoke CreateMountTarget API
+func CreateCreateMountTargetRequest(request *CreateMountTargetRequest) {
 	request = &CreateMountTargetRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateCreateMountTargetRequest() (request *CreateMountTargetRequest) {
 	return
 }
 
-// create a response to parse from CreateMountTarget response
+// CreateCreateMountTargetResponse creates a response to parse from CreateMountTarget response
 func CreateCreateMountTargetResponse() (response *CreateMountTargetResponse) {
 	response = &CreateMountTargetResponse{
 		BaseResponse: &responses.BaseResponse{},

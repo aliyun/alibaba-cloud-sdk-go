@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifySecurityGroupConfiguration api with *ModifySecurityGroupConfigurationRequest synchronously
+// ModifySecurityGroupConfiguration invokes the rds.ModifySecurityGroupConfiguration API synchronously
 // api document: https://help.aliyun.com/api/rds/modifysecuritygroupconfiguration.html
 func (client *Client) ModifySecurityGroupConfiguration(request *ModifySecurityGroupConfigurationRequest) (response *ModifySecurityGroupConfigurationResponse, err error) {
 	response = CreateModifySecurityGroupConfigurationResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifySecurityGroupConfiguration(request *ModifySecurityGr
 	return
 }
 
-// invoke ModifySecurityGroupConfiguration api with *ModifySecurityGroupConfigurationRequest asynchronously
+// ModifySecurityGroupConfigurationWithChan invokes the rds.ModifySecurityGroupConfiguration API asynchronously
 // api document: https://help.aliyun.com/api/rds/modifysecuritygroupconfiguration.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySecurityGroupConfigurationWithChan(request *ModifySecurityGroupConfigurationRequest) (<-chan *ModifySecurityGroupConfigurationResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifySecurityGroupConfigurationWithChan(request *ModifySe
 	return responseChan, errChan
 }
 
-// invoke ModifySecurityGroupConfiguration api with *ModifySecurityGroupConfigurationRequest asynchronously
+// ModifySecurityGroupConfigurationWithCallback invokes the rds.ModifySecurityGroupConfiguration API asynchronously
 // api document: https://help.aliyun.com/api/rds/modifysecuritygroupconfiguration.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySecurityGroupConfigurationWithCallback(request *ModifySecurityGroupConfigurationRequest, callback func(response *ModifySecurityGroupConfigurationResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ModifySecurityGroupConfigurationWithCallback(request *Modi
 	return result
 }
 
+// ModifySecurityGroupConfigurationRequest is the request struct for api ModifySecurityGroupConfiguration
 type ModifySecurityGroupConfigurationRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,6 +83,7 @@ type ModifySecurityGroupConfigurationRequest struct {
 	SecurityGroupId      string           `position:"Query" name:"SecurityGroupId"`
 }
 
+// ModifySecurityGroupConfigurationResponse is the response struct for api ModifySecurityGroupConfiguration
 type ModifySecurityGroupConfigurationResponse struct {
 	*responses.BaseResponse
 	RequestId      string                                  `json:"RequestId" xml:"RequestId"`
@@ -89,8 +91,8 @@ type ModifySecurityGroupConfigurationResponse struct {
 	Items          ItemsInModifySecurityGroupConfiguration `json:"Items" xml:"Items"`
 }
 
-// create a request to invoke ModifySecurityGroupConfiguration API
-func CreateModifySecurityGroupConfigurationRequest() (request *ModifySecurityGroupConfigurationRequest) {
+// CreateModifySecurityGroupConfigurationRequest creates a request to invoke ModifySecurityGroupConfiguration API
+func CreateModifySecurityGroupConfigurationRequest(request *ModifySecurityGroupConfigurationRequest) {
 	request = &ModifySecurityGroupConfigurationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateModifySecurityGroupConfigurationRequest() (request *ModifySecurityGro
 	return
 }
 
-// create a response to parse from ModifySecurityGroupConfiguration response
+// CreateModifySecurityGroupConfigurationResponse creates a response to parse from ModifySecurityGroupConfiguration response
 func CreateModifySecurityGroupConfigurationResponse() (response *ModifySecurityGroupConfigurationResponse) {
 	response = &ModifySecurityGroupConfigurationResponse{
 		BaseResponse: &responses.BaseResponse{},

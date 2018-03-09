@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeSQLInjectionInfos api with *DescribeSQLInjectionInfosRequest synchronously
+// DescribeSQLInjectionInfos invokes the rds.DescribeSQLInjectionInfos API synchronously
 // api document: https://help.aliyun.com/api/rds/describesqlinjectioninfos.html
 func (client *Client) DescribeSQLInjectionInfos(request *DescribeSQLInjectionInfosRequest) (response *DescribeSQLInjectionInfosResponse, err error) {
 	response = CreateDescribeSQLInjectionInfosResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeSQLInjectionInfos(request *DescribeSQLInjectionInf
 	return
 }
 
-// invoke DescribeSQLInjectionInfos api with *DescribeSQLInjectionInfosRequest asynchronously
+// DescribeSQLInjectionInfosWithChan invokes the rds.DescribeSQLInjectionInfos API asynchronously
 // api document: https://help.aliyun.com/api/rds/describesqlinjectioninfos.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSQLInjectionInfosWithChan(request *DescribeSQLInjectionInfosRequest) (<-chan *DescribeSQLInjectionInfosResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeSQLInjectionInfosWithChan(request *DescribeSQLInje
 	return responseChan, errChan
 }
 
-// invoke DescribeSQLInjectionInfos api with *DescribeSQLInjectionInfosRequest asynchronously
+// DescribeSQLInjectionInfosWithCallback invokes the rds.DescribeSQLInjectionInfos API asynchronously
 // api document: https://help.aliyun.com/api/rds/describesqlinjectioninfos.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSQLInjectionInfosWithCallback(request *DescribeSQLInjectionInfosRequest, callback func(response *DescribeSQLInjectionInfosResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeSQLInjectionInfosWithCallback(request *DescribeSQL
 	return result
 }
 
+// DescribeSQLInjectionInfosRequest is the request struct for api DescribeSQLInjectionInfos
 type DescribeSQLInjectionInfosRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -86,6 +87,7 @@ type DescribeSQLInjectionInfosRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// DescribeSQLInjectionInfosResponse is the response struct for api DescribeSQLInjectionInfos
 type DescribeSQLInjectionInfosResponse struct {
 	*responses.BaseResponse
 	RequestId        string                           `json:"RequestId" xml:"RequestId"`
@@ -96,8 +98,8 @@ type DescribeSQLInjectionInfosResponse struct {
 	Items            ItemsInDescribeSQLInjectionInfos `json:"Items" xml:"Items"`
 }
 
-// create a request to invoke DescribeSQLInjectionInfos API
-func CreateDescribeSQLInjectionInfosRequest() (request *DescribeSQLInjectionInfosRequest) {
+// CreateDescribeSQLInjectionInfosRequest creates a request to invoke DescribeSQLInjectionInfos API
+func CreateDescribeSQLInjectionInfosRequest(request *DescribeSQLInjectionInfosRequest) {
 	request = &DescribeSQLInjectionInfosRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -105,7 +107,7 @@ func CreateDescribeSQLInjectionInfosRequest() (request *DescribeSQLInjectionInfo
 	return
 }
 
-// create a response to parse from DescribeSQLInjectionInfos response
+// CreateDescribeSQLInjectionInfosResponse creates a response to parse from DescribeSQLInjectionInfos response
 func CreateDescribeSQLInjectionInfosResponse() (response *DescribeSQLInjectionInfosResponse) {
 	response = &DescribeSQLInjectionInfosResponse{
 		BaseResponse: &responses.BaseResponse{},

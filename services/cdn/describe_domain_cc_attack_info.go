@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeDomainCCAttackInfo api with *DescribeDomainCCAttackInfoRequest synchronously
+// DescribeDomainCCAttackInfo invokes the cdn.DescribeDomainCCAttackInfo API synchronously
 // api document: https://help.aliyun.com/api/cdn/describedomainccattackinfo.html
 func (client *Client) DescribeDomainCCAttackInfo(request *DescribeDomainCCAttackInfoRequest) (response *DescribeDomainCCAttackInfoResponse, err error) {
 	response = CreateDescribeDomainCCAttackInfoResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeDomainCCAttackInfo(request *DescribeDomainCCAttack
 	return
 }
 
-// invoke DescribeDomainCCAttackInfo api with *DescribeDomainCCAttackInfoRequest asynchronously
+// DescribeDomainCCAttackInfoWithChan invokes the cdn.DescribeDomainCCAttackInfo API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describedomainccattackinfo.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainCCAttackInfoWithChan(request *DescribeDomainCCAttackInfoRequest) (<-chan *DescribeDomainCCAttackInfoResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeDomainCCAttackInfoWithChan(request *DescribeDomain
 	return responseChan, errChan
 }
 
-// invoke DescribeDomainCCAttackInfo api with *DescribeDomainCCAttackInfoRequest asynchronously
+// DescribeDomainCCAttackInfoWithCallback invokes the cdn.DescribeDomainCCAttackInfo API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describedomainccattackinfo.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainCCAttackInfoWithCallback(request *DescribeDomainCCAttackInfoRequest, callback func(response *DescribeDomainCCAttackInfoResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeDomainCCAttackInfoWithCallback(request *DescribeDo
 	return result
 }
 
+// DescribeDomainCCAttackInfoRequest is the request struct for api DescribeDomainCCAttackInfo
 type DescribeDomainCCAttackInfoRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,6 +83,7 @@ type DescribeDomainCCAttackInfoRequest struct {
 	EndTime       string           `position:"Query" name:"EndTime"`
 }
 
+// DescribeDomainCCAttackInfoResponse is the response struct for api DescribeDomainCCAttackInfo
 type DescribeDomainCCAttackInfoResponse struct {
 	*responses.BaseResponse
 	RequestId           string              `json:"RequestId" xml:"RequestId"`
@@ -92,8 +94,8 @@ type DescribeDomainCCAttackInfoResponse struct {
 	AttackedUrlDataList AttackedUrlDataList `json:"AttackedUrlDataList" xml:"AttackedUrlDataList"`
 }
 
-// create a request to invoke DescribeDomainCCAttackInfo API
-func CreateDescribeDomainCCAttackInfoRequest() (request *DescribeDomainCCAttackInfoRequest) {
+// CreateDescribeDomainCCAttackInfoRequest creates a request to invoke DescribeDomainCCAttackInfo API
+func CreateDescribeDomainCCAttackInfoRequest(request *DescribeDomainCCAttackInfoRequest) {
 	request = &DescribeDomainCCAttackInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -101,7 +103,7 @@ func CreateDescribeDomainCCAttackInfoRequest() (request *DescribeDomainCCAttackI
 	return
 }
 
-// create a response to parse from DescribeDomainCCAttackInfo response
+// CreateDescribeDomainCCAttackInfoResponse creates a response to parse from DescribeDomainCCAttackInfo response
 func CreateDescribeDomainCCAttackInfoResponse() (response *DescribeDomainCCAttackInfoResponse) {
 	response = &DescribeDomainCCAttackInfoResponse{
 		BaseResponse: &responses.BaseResponse{},

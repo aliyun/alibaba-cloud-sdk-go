@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeSnapshotPackage api with *DescribeSnapshotPackageRequest synchronously
+// DescribeSnapshotPackage invokes the ecs.DescribeSnapshotPackage API synchronously
 // api document: https://help.aliyun.com/api/ecs/describesnapshotpackage.html
 func (client *Client) DescribeSnapshotPackage(request *DescribeSnapshotPackageRequest) (response *DescribeSnapshotPackageResponse, err error) {
 	response = CreateDescribeSnapshotPackageResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeSnapshotPackage(request *DescribeSnapshotPackageRe
 	return
 }
 
-// invoke DescribeSnapshotPackage api with *DescribeSnapshotPackageRequest asynchronously
+// DescribeSnapshotPackageWithChan invokes the ecs.DescribeSnapshotPackage API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describesnapshotpackage.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSnapshotPackageWithChan(request *DescribeSnapshotPackageRequest) (<-chan *DescribeSnapshotPackageResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeSnapshotPackageWithChan(request *DescribeSnapshotP
 	return responseChan, errChan
 }
 
-// invoke DescribeSnapshotPackage api with *DescribeSnapshotPackageRequest asynchronously
+// DescribeSnapshotPackageWithCallback invokes the ecs.DescribeSnapshotPackage API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describesnapshotpackage.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSnapshotPackageWithCallback(request *DescribeSnapshotPackageRequest, callback func(response *DescribeSnapshotPackageResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeSnapshotPackageWithCallback(request *DescribeSnaps
 	return result
 }
 
+// DescribeSnapshotPackageRequest is the request struct for api DescribeSnapshotPackage
 type DescribeSnapshotPackageRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -83,6 +84,7 @@ type DescribeSnapshotPackageRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// DescribeSnapshotPackageResponse is the response struct for api DescribeSnapshotPackage
 type DescribeSnapshotPackageResponse struct {
 	*responses.BaseResponse
 	RequestId        string           `json:"RequestId" xml:"RequestId"`
@@ -92,8 +94,8 @@ type DescribeSnapshotPackageResponse struct {
 	SnapshotPackages SnapshotPackages `json:"SnapshotPackages" xml:"SnapshotPackages"`
 }
 
-// create a request to invoke DescribeSnapshotPackage API
-func CreateDescribeSnapshotPackageRequest() (request *DescribeSnapshotPackageRequest) {
+// CreateDescribeSnapshotPackageRequest creates a request to invoke DescribeSnapshotPackage API
+func CreateDescribeSnapshotPackageRequest(request *DescribeSnapshotPackageRequest) {
 	request = &DescribeSnapshotPackageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -101,7 +103,7 @@ func CreateDescribeSnapshotPackageRequest() (request *DescribeSnapshotPackageReq
 	return
 }
 
-// create a response to parse from DescribeSnapshotPackage response
+// CreateDescribeSnapshotPackageResponse creates a response to parse from DescribeSnapshotPackage response
 func CreateDescribeSnapshotPackageResponse() (response *DescribeSnapshotPackageResponse) {
 	response = &DescribeSnapshotPackageResponse{
 		BaseResponse: &responses.BaseResponse{},

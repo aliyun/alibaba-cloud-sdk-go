@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ReportTagJobResult api with *ReportTagJobResultRequest synchronously
+// ReportTagJobResult invokes the mts.ReportTagJobResult API synchronously
 // api document: https://help.aliyun.com/api/mts/reporttagjobresult.html
 func (client *Client) ReportTagJobResult(request *ReportTagJobResultRequest) (response *ReportTagJobResultResponse, err error) {
 	response = CreateReportTagJobResultResponse()
@@ -28,7 +28,7 @@ func (client *Client) ReportTagJobResult(request *ReportTagJobResultRequest) (re
 	return
 }
 
-// invoke ReportTagJobResult api with *ReportTagJobResultRequest asynchronously
+// ReportTagJobResultWithChan invokes the mts.ReportTagJobResult API asynchronously
 // api document: https://help.aliyun.com/api/mts/reporttagjobresult.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReportTagJobResultWithChan(request *ReportTagJobResultRequest) (<-chan *ReportTagJobResultResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ReportTagJobResultWithChan(request *ReportTagJobResultRequ
 	return responseChan, errChan
 }
 
-// invoke ReportTagJobResult api with *ReportTagJobResultRequest asynchronously
+// ReportTagJobResultWithCallback invokes the mts.ReportTagJobResult API asynchronously
 // api document: https://help.aliyun.com/api/mts/reporttagjobresult.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReportTagJobResultWithCallback(request *ReportTagJobResultRequest, callback func(response *ReportTagJobResultResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ReportTagJobResultWithCallback(request *ReportTagJobResult
 	return result
 }
 
+// ReportTagJobResultRequest is the request struct for api ReportTagJobResult
 type ReportTagJobResultRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,14 +85,15 @@ type ReportTagJobResultRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// ReportTagJobResultResponse is the response struct for api ReportTagJobResult
 type ReportTagJobResultResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	JobId     string `json:"JobId" xml:"JobId"`
 }
 
-// create a request to invoke ReportTagJobResult API
-func CreateReportTagJobResultRequest() (request *ReportTagJobResultRequest) {
+// CreateReportTagJobResultRequest creates a request to invoke ReportTagJobResult API
+func CreateReportTagJobResultRequest(request *ReportTagJobResultRequest) {
 	request = &ReportTagJobResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateReportTagJobResultRequest() (request *ReportTagJobResultRequest) {
 	return
 }
 
-// create a response to parse from ReportTagJobResult response
+// CreateReportTagJobResultResponse creates a response to parse from ReportTagJobResult response
 func CreateReportTagJobResultResponse() (response *ReportTagJobResultResponse) {
 	response = &ReportTagJobResultResponse{
 		BaseResponse: &responses.BaseResponse{},

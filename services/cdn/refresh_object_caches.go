@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke RefreshObjectCaches api with *RefreshObjectCachesRequest synchronously
+// RefreshObjectCaches invokes the cdn.RefreshObjectCaches API synchronously
 // api document: https://help.aliyun.com/api/cdn/refreshobjectcaches.html
 func (client *Client) RefreshObjectCaches(request *RefreshObjectCachesRequest) (response *RefreshObjectCachesResponse, err error) {
 	response = CreateRefreshObjectCachesResponse()
@@ -28,7 +28,7 @@ func (client *Client) RefreshObjectCaches(request *RefreshObjectCachesRequest) (
 	return
 }
 
-// invoke RefreshObjectCaches api with *RefreshObjectCachesRequest asynchronously
+// RefreshObjectCachesWithChan invokes the cdn.RefreshObjectCaches API asynchronously
 // api document: https://help.aliyun.com/api/cdn/refreshobjectcaches.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RefreshObjectCachesWithChan(request *RefreshObjectCachesRequest) (<-chan *RefreshObjectCachesResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) RefreshObjectCachesWithChan(request *RefreshObjectCachesRe
 	return responseChan, errChan
 }
 
-// invoke RefreshObjectCaches api with *RefreshObjectCachesRequest asynchronously
+// RefreshObjectCachesWithCallback invokes the cdn.RefreshObjectCaches API asynchronously
 // api document: https://help.aliyun.com/api/cdn/refreshobjectcaches.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RefreshObjectCachesWithCallback(request *RefreshObjectCachesRequest, callback func(response *RefreshObjectCachesResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) RefreshObjectCachesWithCallback(request *RefreshObjectCach
 	return result
 }
 
+// RefreshObjectCachesRequest is the request struct for api RefreshObjectCaches
 type RefreshObjectCachesRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -81,14 +82,15 @@ type RefreshObjectCachesRequest struct {
 	ObjectType    string           `position:"Query" name:"ObjectType"`
 }
 
+// RefreshObjectCachesResponse is the response struct for api RefreshObjectCaches
 type RefreshObjectCachesResponse struct {
 	*responses.BaseResponse
 	RequestId     string `json:"RequestId" xml:"RequestId"`
 	RefreshTaskId string `json:"RefreshTaskId" xml:"RefreshTaskId"`
 }
 
-// create a request to invoke RefreshObjectCaches API
-func CreateRefreshObjectCachesRequest() (request *RefreshObjectCachesRequest) {
+// CreateRefreshObjectCachesRequest creates a request to invoke RefreshObjectCaches API
+func CreateRefreshObjectCachesRequest(request *RefreshObjectCachesRequest) {
 	request = &RefreshObjectCachesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -96,7 +98,7 @@ func CreateRefreshObjectCachesRequest() (request *RefreshObjectCachesRequest) {
 	return
 }
 
-// create a response to parse from RefreshObjectCaches response
+// CreateRefreshObjectCachesResponse creates a response to parse from RefreshObjectCaches response
 func CreateRefreshObjectCachesResponse() (response *RefreshObjectCachesResponse) {
 	response = &RefreshObjectCachesResponse{
 		BaseResponse: &responses.BaseResponse{},

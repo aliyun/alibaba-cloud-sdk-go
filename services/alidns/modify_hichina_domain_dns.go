@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifyHichinaDomainDNS api with *ModifyHichinaDomainDNSRequest synchronously
+// ModifyHichinaDomainDNS invokes the alidns.ModifyHichinaDomainDNS API synchronously
 // api document: https://help.aliyun.com/api/alidns/modifyhichinadomaindns.html
 func (client *Client) ModifyHichinaDomainDNS(request *ModifyHichinaDomainDNSRequest) (response *ModifyHichinaDomainDNSResponse, err error) {
 	response = CreateModifyHichinaDomainDNSResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifyHichinaDomainDNS(request *ModifyHichinaDomainDNSRequ
 	return
 }
 
-// invoke ModifyHichinaDomainDNS api with *ModifyHichinaDomainDNSRequest asynchronously
+// ModifyHichinaDomainDNSWithChan invokes the alidns.ModifyHichinaDomainDNS API asynchronously
 // api document: https://help.aliyun.com/api/alidns/modifyhichinadomaindns.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyHichinaDomainDNSWithChan(request *ModifyHichinaDomainDNSRequest) (<-chan *ModifyHichinaDomainDNSResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifyHichinaDomainDNSWithChan(request *ModifyHichinaDomai
 	return responseChan, errChan
 }
 
-// invoke ModifyHichinaDomainDNS api with *ModifyHichinaDomainDNSRequest asynchronously
+// ModifyHichinaDomainDNSWithCallback invokes the alidns.ModifyHichinaDomainDNS API asynchronously
 // api document: https://help.aliyun.com/api/alidns/modifyhichinadomaindns.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyHichinaDomainDNSWithCallback(request *ModifyHichinaDomainDNSRequest, callback func(response *ModifyHichinaDomainDNSResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ModifyHichinaDomainDNSWithCallback(request *ModifyHichinaD
 	return result
 }
 
+// ModifyHichinaDomainDNSRequest is the request struct for api ModifyHichinaDomainDNS
 type ModifyHichinaDomainDNSRequest struct {
 	*requests.RpcRequest
 	Lang         string `position:"Query" name:"Lang"`
@@ -80,6 +81,7 @@ type ModifyHichinaDomainDNSRequest struct {
 	DomainName   string `position:"Query" name:"DomainName"`
 }
 
+// ModifyHichinaDomainDNSResponse is the response struct for api ModifyHichinaDomainDNS
 type ModifyHichinaDomainDNSResponse struct {
 	*responses.BaseResponse
 	RequestId          string             `json:"RequestId" xml:"RequestId"`
@@ -87,8 +89,8 @@ type ModifyHichinaDomainDNSResponse struct {
 	NewDnsServers      NewDnsServers      `json:"NewDnsServers" xml:"NewDnsServers"`
 }
 
-// create a request to invoke ModifyHichinaDomainDNS API
-func CreateModifyHichinaDomainDNSRequest() (request *ModifyHichinaDomainDNSRequest) {
+// CreateModifyHichinaDomainDNSRequest creates a request to invoke ModifyHichinaDomainDNS API
+func CreateModifyHichinaDomainDNSRequest(request *ModifyHichinaDomainDNSRequest) {
 	request = &ModifyHichinaDomainDNSRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -96,7 +98,7 @@ func CreateModifyHichinaDomainDNSRequest() (request *ModifyHichinaDomainDNSReque
 	return
 }
 
-// create a response to parse from ModifyHichinaDomainDNS response
+// CreateModifyHichinaDomainDNSResponse creates a response to parse from ModifyHichinaDomainDNS response
 func CreateModifyHichinaDomainDNSResponse() (response *ModifyHichinaDomainDNSResponse) {
 	response = &ModifyHichinaDomainDNSResponse{
 		BaseResponse: &responses.BaseResponse{},

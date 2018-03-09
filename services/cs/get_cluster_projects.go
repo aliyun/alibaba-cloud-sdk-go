@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke GetClusterProjects api with *GetClusterProjectsRequest synchronously
+// GetClusterProjects invokes the cs.GetClusterProjects API synchronously
 // api document: https://help.aliyun.com/api/cs/getclusterprojects.html
 func (client *Client) GetClusterProjects(request *GetClusterProjectsRequest) (response *GetClusterProjectsResponse, err error) {
 	response = CreateGetClusterProjectsResponse()
@@ -28,7 +28,7 @@ func (client *Client) GetClusterProjects(request *GetClusterProjectsRequest) (re
 	return
 }
 
-// invoke GetClusterProjects api with *GetClusterProjectsRequest asynchronously
+// GetClusterProjectsWithChan invokes the cs.GetClusterProjects API asynchronously
 // api document: https://help.aliyun.com/api/cs/getclusterprojects.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetClusterProjectsWithChan(request *GetClusterProjectsRequest) (<-chan *GetClusterProjectsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) GetClusterProjectsWithChan(request *GetClusterProjectsRequ
 	return responseChan, errChan
 }
 
-// invoke GetClusterProjects api with *GetClusterProjectsRequest asynchronously
+// GetClusterProjectsWithCallback invokes the cs.GetClusterProjects API asynchronously
 // api document: https://help.aliyun.com/api/cs/getclusterprojects.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetClusterProjectsWithCallback(request *GetClusterProjectsRequest, callback func(response *GetClusterProjectsResponse, err error)) <-chan int {
@@ -73,17 +73,19 @@ func (client *Client) GetClusterProjectsWithCallback(request *GetClusterProjects
 	return result
 }
 
+// GetClusterProjectsRequest is the request struct for api GetClusterProjects
 type GetClusterProjectsRequest struct {
 	*requests.RoaRequest
 	ClusterId string `position:"Path" name:"ClusterId"`
 }
 
+// GetClusterProjectsResponse is the response struct for api GetClusterProjects
 type GetClusterProjectsResponse struct {
 	*responses.BaseResponse
 }
 
-// create a request to invoke GetClusterProjects API
-func CreateGetClusterProjectsRequest() (request *GetClusterProjectsRequest) {
+// CreateGetClusterProjectsRequest creates a request to invoke GetClusterProjects API
+func CreateGetClusterProjectsRequest(request *GetClusterProjectsRequest) {
 	request = &GetClusterProjectsRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
@@ -92,7 +94,7 @@ func CreateGetClusterProjectsRequest() (request *GetClusterProjectsRequest) {
 	return
 }
 
-// create a response to parse from GetClusterProjects response
+// CreateGetClusterProjectsResponse creates a response to parse from GetClusterProjects response
 func CreateGetClusterProjectsResponse() (response *GetClusterProjectsResponse) {
 	response = &GetClusterProjectsResponse{
 		BaseResponse: &responses.BaseResponse{},

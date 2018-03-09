@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CancelAgreement api with *CancelAgreementRequest synchronously
+// CancelAgreement invokes the ecs.CancelAgreement API synchronously
 // api document: https://help.aliyun.com/api/ecs/cancelagreement.html
 func (client *Client) CancelAgreement(request *CancelAgreementRequest) (response *CancelAgreementResponse, err error) {
 	response = CreateCancelAgreementResponse()
@@ -28,7 +28,7 @@ func (client *Client) CancelAgreement(request *CancelAgreementRequest) (response
 	return
 }
 
-// invoke CancelAgreement api with *CancelAgreementRequest asynchronously
+// CancelAgreementWithChan invokes the ecs.CancelAgreement API asynchronously
 // api document: https://help.aliyun.com/api/ecs/cancelagreement.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CancelAgreementWithChan(request *CancelAgreementRequest) (<-chan *CancelAgreementResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CancelAgreementWithChan(request *CancelAgreementRequest) (
 	return responseChan, errChan
 }
 
-// invoke CancelAgreement api with *CancelAgreementRequest asynchronously
+// CancelAgreementWithCallback invokes the ecs.CancelAgreement API asynchronously
 // api document: https://help.aliyun.com/api/ecs/cancelagreement.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CancelAgreementWithCallback(request *CancelAgreementRequest, callback func(response *CancelAgreementResponse, err error)) <-chan int {
@@ -73,17 +73,19 @@ func (client *Client) CancelAgreementWithCallback(request *CancelAgreementReques
 	return result
 }
 
+// CancelAgreementRequest is the request struct for api CancelAgreement
 type CancelAgreementRequest struct {
 	*requests.RpcRequest
 }
 
+// CancelAgreementResponse is the response struct for api CancelAgreement
 type CancelAgreementResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke CancelAgreement API
-func CreateCancelAgreementRequest() (request *CancelAgreementRequest) {
+// CreateCancelAgreementRequest creates a request to invoke CancelAgreement API
+func CreateCancelAgreementRequest(request *CancelAgreementRequest) {
 	request = &CancelAgreementRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -91,7 +93,7 @@ func CreateCancelAgreementRequest() (request *CancelAgreementRequest) {
 	return
 }
 
-// create a response to parse from CancelAgreement response
+// CreateCancelAgreementResponse creates a response to parse from CancelAgreement response
 func CreateCancelAgreementResponse() (response *CancelAgreementResponse) {
 	response = &CancelAgreementResponse{
 		BaseResponse: &responses.BaseResponse{},

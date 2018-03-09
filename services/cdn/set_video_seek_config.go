@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SetVideoSeekConfig api with *SetVideoSeekConfigRequest synchronously
+// SetVideoSeekConfig invokes the cdn.SetVideoSeekConfig API synchronously
 // api document: https://help.aliyun.com/api/cdn/setvideoseekconfig.html
 func (client *Client) SetVideoSeekConfig(request *SetVideoSeekConfigRequest) (response *SetVideoSeekConfigResponse, err error) {
 	response = CreateSetVideoSeekConfigResponse()
@@ -28,7 +28,7 @@ func (client *Client) SetVideoSeekConfig(request *SetVideoSeekConfigRequest) (re
 	return
 }
 
-// invoke SetVideoSeekConfig api with *SetVideoSeekConfigRequest asynchronously
+// SetVideoSeekConfigWithChan invokes the cdn.SetVideoSeekConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/setvideoseekconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetVideoSeekConfigWithChan(request *SetVideoSeekConfigRequest) (<-chan *SetVideoSeekConfigResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SetVideoSeekConfigWithChan(request *SetVideoSeekConfigRequ
 	return responseChan, errChan
 }
 
-// invoke SetVideoSeekConfig api with *SetVideoSeekConfigRequest asynchronously
+// SetVideoSeekConfigWithCallback invokes the cdn.SetVideoSeekConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/setvideoseekconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetVideoSeekConfigWithCallback(request *SetVideoSeekConfigRequest, callback func(response *SetVideoSeekConfigResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SetVideoSeekConfigWithCallback(request *SetVideoSeekConfig
 	return result
 }
 
+// SetVideoSeekConfigRequest is the request struct for api SetVideoSeekConfig
 type SetVideoSeekConfigRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -81,13 +82,14 @@ type SetVideoSeekConfigRequest struct {
 	Enable        string           `position:"Query" name:"Enable"`
 }
 
+// SetVideoSeekConfigResponse is the response struct for api SetVideoSeekConfig
 type SetVideoSeekConfigResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke SetVideoSeekConfig API
-func CreateSetVideoSeekConfigRequest() (request *SetVideoSeekConfigRequest) {
+// CreateSetVideoSeekConfigRequest creates a request to invoke SetVideoSeekConfig API
+func CreateSetVideoSeekConfigRequest(request *SetVideoSeekConfigRequest) {
 	request = &SetVideoSeekConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateSetVideoSeekConfigRequest() (request *SetVideoSeekConfigRequest) {
 	return
 }
 
-// create a response to parse from SetVideoSeekConfig response
+// CreateSetVideoSeekConfigResponse creates a response to parse from SetVideoSeekConfig response
 func CreateSetVideoSeekConfigResponse() (response *SetVideoSeekConfigResponse) {
 	response = &SetVideoSeekConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

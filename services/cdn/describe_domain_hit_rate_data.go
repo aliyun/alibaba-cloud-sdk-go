@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeDomainHitRateData api with *DescribeDomainHitRateDataRequest synchronously
+// DescribeDomainHitRateData invokes the cdn.DescribeDomainHitRateData API synchronously
 // api document: https://help.aliyun.com/api/cdn/describedomainhitratedata.html
 func (client *Client) DescribeDomainHitRateData(request *DescribeDomainHitRateDataRequest) (response *DescribeDomainHitRateDataResponse, err error) {
 	response = CreateDescribeDomainHitRateDataResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeDomainHitRateData(request *DescribeDomainHitRateDa
 	return
 }
 
-// invoke DescribeDomainHitRateData api with *DescribeDomainHitRateDataRequest asynchronously
+// DescribeDomainHitRateDataWithChan invokes the cdn.DescribeDomainHitRateData API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describedomainhitratedata.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainHitRateDataWithChan(request *DescribeDomainHitRateDataRequest) (<-chan *DescribeDomainHitRateDataResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeDomainHitRateDataWithChan(request *DescribeDomainH
 	return responseChan, errChan
 }
 
-// invoke DescribeDomainHitRateData api with *DescribeDomainHitRateDataRequest asynchronously
+// DescribeDomainHitRateDataWithCallback invokes the cdn.DescribeDomainHitRateData API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describedomainhitratedata.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainHitRateDataWithCallback(request *DescribeDomainHitRateDataRequest, callback func(response *DescribeDomainHitRateDataResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeDomainHitRateDataWithCallback(request *DescribeDom
 	return result
 }
 
+// DescribeDomainHitRateDataRequest is the request struct for api DescribeDomainHitRateData
 type DescribeDomainHitRateDataRequest struct {
 	*requests.RpcRequest
 	OwnerId        requests.Integer `position:"Query" name:"OwnerId"`
@@ -86,6 +87,7 @@ type DescribeDomainHitRateDataRequest struct {
 	Interval       string           `position:"Query" name:"Interval"`
 }
 
+// DescribeDomainHitRateDataResponse is the response struct for api DescribeDomainHitRateData
 type DescribeDomainHitRateDataResponse struct {
 	*responses.BaseResponse
 	RequestId       string          `json:"RequestId" xml:"RequestId"`
@@ -96,8 +98,8 @@ type DescribeDomainHitRateDataResponse struct {
 	HitRateInterval HitRateInterval `json:"HitRateInterval" xml:"HitRateInterval"`
 }
 
-// create a request to invoke DescribeDomainHitRateData API
-func CreateDescribeDomainHitRateDataRequest() (request *DescribeDomainHitRateDataRequest) {
+// CreateDescribeDomainHitRateDataRequest creates a request to invoke DescribeDomainHitRateData API
+func CreateDescribeDomainHitRateDataRequest(request *DescribeDomainHitRateDataRequest) {
 	request = &DescribeDomainHitRateDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -105,7 +107,7 @@ func CreateDescribeDomainHitRateDataRequest() (request *DescribeDomainHitRateDat
 	return
 }
 
-// create a response to parse from DescribeDomainHitRateData response
+// CreateDescribeDomainHitRateDataResponse creates a response to parse from DescribeDomainHitRateData response
 func CreateDescribeDomainHitRateDataResponse() (response *DescribeDomainHitRateDataResponse) {
 	response = &DescribeDomainHitRateDataResponse{
 		BaseResponse: &responses.BaseResponse{},

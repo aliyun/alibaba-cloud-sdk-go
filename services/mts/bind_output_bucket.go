@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke BindOutputBucket api with *BindOutputBucketRequest synchronously
+// BindOutputBucket invokes the mts.BindOutputBucket API synchronously
 // api document: https://help.aliyun.com/api/mts/bindoutputbucket.html
 func (client *Client) BindOutputBucket(request *BindOutputBucketRequest) (response *BindOutputBucketResponse, err error) {
 	response = CreateBindOutputBucketResponse()
@@ -28,7 +28,7 @@ func (client *Client) BindOutputBucket(request *BindOutputBucketRequest) (respon
 	return
 }
 
-// invoke BindOutputBucket api with *BindOutputBucketRequest asynchronously
+// BindOutputBucketWithChan invokes the mts.BindOutputBucket API asynchronously
 // api document: https://help.aliyun.com/api/mts/bindoutputbucket.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BindOutputBucketWithChan(request *BindOutputBucketRequest) (<-chan *BindOutputBucketResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) BindOutputBucketWithChan(request *BindOutputBucketRequest)
 	return responseChan, errChan
 }
 
-// invoke BindOutputBucket api with *BindOutputBucketRequest asynchronously
+// BindOutputBucketWithCallback invokes the mts.BindOutputBucket API asynchronously
 // api document: https://help.aliyun.com/api/mts/bindoutputbucket.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BindOutputBucketWithCallback(request *BindOutputBucketRequest, callback func(response *BindOutputBucketResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) BindOutputBucketWithCallback(request *BindOutputBucketRequ
 	return result
 }
 
+// BindOutputBucketRequest is the request struct for api BindOutputBucket
 type BindOutputBucketRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -83,13 +84,14 @@ type BindOutputBucketRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// BindOutputBucketResponse is the response struct for api BindOutputBucket
 type BindOutputBucketResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke BindOutputBucket API
-func CreateBindOutputBucketRequest() (request *BindOutputBucketRequest) {
+// CreateBindOutputBucketRequest creates a request to invoke BindOutputBucket API
+func CreateBindOutputBucketRequest(request *BindOutputBucketRequest) {
 	request = &BindOutputBucketRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateBindOutputBucketRequest() (request *BindOutputBucketRequest) {
 	return
 }
 
-// create a response to parse from BindOutputBucket response
+// CreateBindOutputBucketResponse creates a response to parse from BindOutputBucket response
 func CreateBindOutputBucketResponse() (response *BindOutputBucketResponse) {
 	response = &BindOutputBucketResponse{
 		BaseResponse: &responses.BaseResponse{},

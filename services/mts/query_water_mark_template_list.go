@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke QueryWaterMarkTemplateList api with *QueryWaterMarkTemplateListRequest synchronously
+// QueryWaterMarkTemplateList invokes the mts.QueryWaterMarkTemplateList API synchronously
 // api document: https://help.aliyun.com/api/mts/querywatermarktemplatelist.html
 func (client *Client) QueryWaterMarkTemplateList(request *QueryWaterMarkTemplateListRequest) (response *QueryWaterMarkTemplateListResponse, err error) {
 	response = CreateQueryWaterMarkTemplateListResponse()
@@ -28,7 +28,7 @@ func (client *Client) QueryWaterMarkTemplateList(request *QueryWaterMarkTemplate
 	return
 }
 
-// invoke QueryWaterMarkTemplateList api with *QueryWaterMarkTemplateListRequest asynchronously
+// QueryWaterMarkTemplateListWithChan invokes the mts.QueryWaterMarkTemplateList API asynchronously
 // api document: https://help.aliyun.com/api/mts/querywatermarktemplatelist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryWaterMarkTemplateListWithChan(request *QueryWaterMarkTemplateListRequest) (<-chan *QueryWaterMarkTemplateListResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) QueryWaterMarkTemplateListWithChan(request *QueryWaterMark
 	return responseChan, errChan
 }
 
-// invoke QueryWaterMarkTemplateList api with *QueryWaterMarkTemplateListRequest asynchronously
+// QueryWaterMarkTemplateListWithCallback invokes the mts.QueryWaterMarkTemplateList API asynchronously
 // api document: https://help.aliyun.com/api/mts/querywatermarktemplatelist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryWaterMarkTemplateListWithCallback(request *QueryWaterMarkTemplateListRequest, callback func(response *QueryWaterMarkTemplateListResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) QueryWaterMarkTemplateListWithCallback(request *QueryWater
 	return result
 }
 
+// QueryWaterMarkTemplateListRequest is the request struct for api QueryWaterMarkTemplateList
 type QueryWaterMarkTemplateListRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,6 +83,7 @@ type QueryWaterMarkTemplateListRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// QueryWaterMarkTemplateListResponse is the response struct for api QueryWaterMarkTemplateList
 type QueryWaterMarkTemplateListResponse struct {
 	*responses.BaseResponse
 	RequestId             string                                            `json:"RequestId" xml:"RequestId"`
@@ -89,8 +91,8 @@ type QueryWaterMarkTemplateListResponse struct {
 	WaterMarkTemplateList WaterMarkTemplateListInQueryWaterMarkTemplateList `json:"WaterMarkTemplateList" xml:"WaterMarkTemplateList"`
 }
 
-// create a request to invoke QueryWaterMarkTemplateList API
-func CreateQueryWaterMarkTemplateListRequest() (request *QueryWaterMarkTemplateListRequest) {
+// CreateQueryWaterMarkTemplateListRequest creates a request to invoke QueryWaterMarkTemplateList API
+func CreateQueryWaterMarkTemplateListRequest(request *QueryWaterMarkTemplateListRequest) {
 	request = &QueryWaterMarkTemplateListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateQueryWaterMarkTemplateListRequest() (request *QueryWaterMarkTemplateL
 	return
 }
 
-// create a response to parse from QueryWaterMarkTemplateList response
+// CreateQueryWaterMarkTemplateListResponse creates a response to parse from QueryWaterMarkTemplateList response
 func CreateQueryWaterMarkTemplateListResponse() (response *QueryWaterMarkTemplateListResponse) {
 	response = &QueryWaterMarkTemplateListResponse{
 		BaseResponse: &responses.BaseResponse{},

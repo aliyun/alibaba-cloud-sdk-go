@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifyDBInstanceMonitor api with *ModifyDBInstanceMonitorRequest synchronously
+// ModifyDBInstanceMonitor invokes the rds.ModifyDBInstanceMonitor API synchronously
 // api document: https://help.aliyun.com/api/rds/modifydbinstancemonitor.html
 func (client *Client) ModifyDBInstanceMonitor(request *ModifyDBInstanceMonitorRequest) (response *ModifyDBInstanceMonitorResponse, err error) {
 	response = CreateModifyDBInstanceMonitorResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifyDBInstanceMonitor(request *ModifyDBInstanceMonitorRe
 	return
 }
 
-// invoke ModifyDBInstanceMonitor api with *ModifyDBInstanceMonitorRequest asynchronously
+// ModifyDBInstanceMonitorWithChan invokes the rds.ModifyDBInstanceMonitor API asynchronously
 // api document: https://help.aliyun.com/api/rds/modifydbinstancemonitor.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDBInstanceMonitorWithChan(request *ModifyDBInstanceMonitorRequest) (<-chan *ModifyDBInstanceMonitorResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifyDBInstanceMonitorWithChan(request *ModifyDBInstanceM
 	return responseChan, errChan
 }
 
-// invoke ModifyDBInstanceMonitor api with *ModifyDBInstanceMonitorRequest asynchronously
+// ModifyDBInstanceMonitorWithCallback invokes the rds.ModifyDBInstanceMonitor API asynchronously
 // api document: https://help.aliyun.com/api/rds/modifydbinstancemonitor.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDBInstanceMonitorWithCallback(request *ModifyDBInstanceMonitorRequest, callback func(response *ModifyDBInstanceMonitorResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ModifyDBInstanceMonitorWithCallback(request *ModifyDBInsta
 	return result
 }
 
+// ModifyDBInstanceMonitorRequest is the request struct for api ModifyDBInstanceMonitor
 type ModifyDBInstanceMonitorRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,13 +85,14 @@ type ModifyDBInstanceMonitorRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// ModifyDBInstanceMonitorResponse is the response struct for api ModifyDBInstanceMonitor
 type ModifyDBInstanceMonitorResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ModifyDBInstanceMonitor API
-func CreateModifyDBInstanceMonitorRequest() (request *ModifyDBInstanceMonitorRequest) {
+// CreateModifyDBInstanceMonitorRequest creates a request to invoke ModifyDBInstanceMonitor API
+func CreateModifyDBInstanceMonitorRequest(request *ModifyDBInstanceMonitorRequest) {
 	request = &ModifyDBInstanceMonitorRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateModifyDBInstanceMonitorRequest() (request *ModifyDBInstanceMonitorReq
 	return
 }
 
-// create a response to parse from ModifyDBInstanceMonitor response
+// CreateModifyDBInstanceMonitorResponse creates a response to parse from ModifyDBInstanceMonitor response
 func CreateModifyDBInstanceMonitorResponse() (response *ModifyDBInstanceMonitorResponse) {
 	response = &ModifyDBInstanceMonitorResponse{
 		BaseResponse: &responses.BaseResponse{},

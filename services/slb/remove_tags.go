@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke RemoveTags api with *RemoveTagsRequest synchronously
+// RemoveTags invokes the slb.RemoveTags API synchronously
 // api document: https://help.aliyun.com/api/slb/removetags.html
 func (client *Client) RemoveTags(request *RemoveTagsRequest) (response *RemoveTagsResponse, err error) {
 	response = CreateRemoveTagsResponse()
@@ -28,7 +28,7 @@ func (client *Client) RemoveTags(request *RemoveTagsRequest) (response *RemoveTa
 	return
 }
 
-// invoke RemoveTags api with *RemoveTagsRequest asynchronously
+// RemoveTagsWithChan invokes the slb.RemoveTags API asynchronously
 // api document: https://help.aliyun.com/api/slb/removetags.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveTagsWithChan(request *RemoveTagsRequest) (<-chan *RemoveTagsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) RemoveTagsWithChan(request *RemoveTagsRequest) (<-chan *Re
 	return responseChan, errChan
 }
 
-// invoke RemoveTags api with *RemoveTagsRequest asynchronously
+// RemoveTagsWithCallback invokes the slb.RemoveTags API asynchronously
 // api document: https://help.aliyun.com/api/slb/removetags.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveTagsWithCallback(request *RemoveTagsRequest, callback func(response *RemoveTagsResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) RemoveTagsWithCallback(request *RemoveTagsRequest, callbac
 	return result
 }
 
+// RemoveTagsRequest is the request struct for api RemoveTags
 type RemoveTagsRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,13 +85,14 @@ type RemoveTagsRequest struct {
 	Tags                 string           `position:"Query" name:"Tags"`
 }
 
+// RemoveTagsResponse is the response struct for api RemoveTags
 type RemoveTagsResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke RemoveTags API
-func CreateRemoveTagsRequest() (request *RemoveTagsRequest) {
+// CreateRemoveTagsRequest creates a request to invoke RemoveTags API
+func CreateRemoveTagsRequest(request *RemoveTagsRequest) {
 	request = &RemoveTagsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateRemoveTagsRequest() (request *RemoveTagsRequest) {
 	return
 }
 
-// create a response to parse from RemoveTags response
+// CreateRemoveTagsResponse creates a response to parse from RemoveTags response
 func CreateRemoveTagsResponse() (response *RemoveTagsResponse) {
 	response = &RemoveTagsResponse{
 		BaseResponse: &responses.BaseResponse{},

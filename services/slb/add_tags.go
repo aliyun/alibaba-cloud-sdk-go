@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke AddTags api with *AddTagsRequest synchronously
+// AddTags invokes the slb.AddTags API synchronously
 // api document: https://help.aliyun.com/api/slb/addtags.html
 func (client *Client) AddTags(request *AddTagsRequest) (response *AddTagsResponse, err error) {
 	response = CreateAddTagsResponse()
@@ -28,7 +28,7 @@ func (client *Client) AddTags(request *AddTagsRequest) (response *AddTagsRespons
 	return
 }
 
-// invoke AddTags api with *AddTagsRequest asynchronously
+// AddTagsWithChan invokes the slb.AddTags API asynchronously
 // api document: https://help.aliyun.com/api/slb/addtags.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddTagsWithChan(request *AddTagsRequest) (<-chan *AddTagsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) AddTagsWithChan(request *AddTagsRequest) (<-chan *AddTagsR
 	return responseChan, errChan
 }
 
-// invoke AddTags api with *AddTagsRequest asynchronously
+// AddTagsWithCallback invokes the slb.AddTags API asynchronously
 // api document: https://help.aliyun.com/api/slb/addtags.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddTagsWithCallback(request *AddTagsRequest, callback func(response *AddTagsResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) AddTagsWithCallback(request *AddTagsRequest, callback func
 	return result
 }
 
+// AddTagsRequest is the request struct for api AddTags
 type AddTagsRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,13 +85,14 @@ type AddTagsRequest struct {
 	Tags                 string           `position:"Query" name:"Tags"`
 }
 
+// AddTagsResponse is the response struct for api AddTags
 type AddTagsResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke AddTags API
-func CreateAddTagsRequest() (request *AddTagsRequest) {
+// CreateAddTagsRequest creates a request to invoke AddTags API
+func CreateAddTagsRequest(request *AddTagsRequest) {
 	request = &AddTagsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateAddTagsRequest() (request *AddTagsRequest) {
 	return
 }
 
-// create a response to parse from AddTags response
+// CreateAddTagsResponse creates a response to parse from AddTags response
 func CreateAddTagsResponse() (response *AddTagsResponse) {
 	response = &AddTagsResponse{
 		BaseResponse: &responses.BaseResponse{},

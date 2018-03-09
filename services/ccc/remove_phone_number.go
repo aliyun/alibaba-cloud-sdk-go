@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke RemovePhoneNumber api with *RemovePhoneNumberRequest synchronously
+// RemovePhoneNumber invokes the ccc.RemovePhoneNumber API synchronously
 // api document: https://help.aliyun.com/api/ccc/removephonenumber.html
 func (client *Client) RemovePhoneNumber(request *RemovePhoneNumberRequest) (response *RemovePhoneNumberResponse, err error) {
 	response = CreateRemovePhoneNumberResponse()
@@ -28,7 +28,7 @@ func (client *Client) RemovePhoneNumber(request *RemovePhoneNumberRequest) (resp
 	return
 }
 
-// invoke RemovePhoneNumber api with *RemovePhoneNumberRequest asynchronously
+// RemovePhoneNumberWithChan invokes the ccc.RemovePhoneNumber API asynchronously
 // api document: https://help.aliyun.com/api/ccc/removephonenumber.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemovePhoneNumberWithChan(request *RemovePhoneNumberRequest) (<-chan *RemovePhoneNumberResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) RemovePhoneNumberWithChan(request *RemovePhoneNumberReques
 	return responseChan, errChan
 }
 
-// invoke RemovePhoneNumber api with *RemovePhoneNumberRequest asynchronously
+// RemovePhoneNumberWithCallback invokes the ccc.RemovePhoneNumber API asynchronously
 // api document: https://help.aliyun.com/api/ccc/removephonenumber.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemovePhoneNumberWithCallback(request *RemovePhoneNumberRequest, callback func(response *RemovePhoneNumberResponse, err error)) <-chan int {
@@ -73,12 +73,14 @@ func (client *Client) RemovePhoneNumberWithCallback(request *RemovePhoneNumberRe
 	return result
 }
 
+// RemovePhoneNumberRequest is the request struct for api RemovePhoneNumber
 type RemovePhoneNumberRequest struct {
 	*requests.RpcRequest
 	InstanceId    string `position:"Query" name:"InstanceId"`
 	PhoneNumberId string `position:"Query" name:"PhoneNumberId"`
 }
 
+// RemovePhoneNumberResponse is the response struct for api RemovePhoneNumber
 type RemovePhoneNumberResponse struct {
 	*responses.BaseResponse
 	RequestId      string `json:"RequestId" xml:"RequestId"`
@@ -88,8 +90,8 @@ type RemovePhoneNumberResponse struct {
 	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 }
 
-// create a request to invoke RemovePhoneNumber API
-func CreateRemovePhoneNumberRequest() (request *RemovePhoneNumberRequest) {
+// CreateRemovePhoneNumberRequest creates a request to invoke RemovePhoneNumber API
+func CreateRemovePhoneNumberRequest(request *RemovePhoneNumberRequest) {
 	request = &RemovePhoneNumberRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateRemovePhoneNumberRequest() (request *RemovePhoneNumberRequest) {
 	return
 }
 
-// create a response to parse from RemovePhoneNumber response
+// CreateRemovePhoneNumberResponse creates a response to parse from RemovePhoneNumber response
 func CreateRemovePhoneNumberResponse() (response *RemovePhoneNumberResponse) {
 	response = &RemovePhoneNumberResponse{
 		BaseResponse: &responses.BaseResponse{},

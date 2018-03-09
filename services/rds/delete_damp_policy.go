@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteDampPolicy api with *DeleteDampPolicyRequest synchronously
+// DeleteDampPolicy invokes the rds.DeleteDampPolicy API synchronously
 // api document: https://help.aliyun.com/api/rds/deletedamppolicy.html
 func (client *Client) DeleteDampPolicy(request *DeleteDampPolicyRequest) (response *DeleteDampPolicyResponse, err error) {
 	response = CreateDeleteDampPolicyResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteDampPolicy(request *DeleteDampPolicyRequest) (respon
 	return
 }
 
-// invoke DeleteDampPolicy api with *DeleteDampPolicyRequest asynchronously
+// DeleteDampPolicyWithChan invokes the rds.DeleteDampPolicy API asynchronously
 // api document: https://help.aliyun.com/api/rds/deletedamppolicy.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDampPolicyWithChan(request *DeleteDampPolicyRequest) (<-chan *DeleteDampPolicyResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteDampPolicyWithChan(request *DeleteDampPolicyRequest)
 	return responseChan, errChan
 }
 
-// invoke DeleteDampPolicy api with *DeleteDampPolicyRequest asynchronously
+// DeleteDampPolicyWithCallback invokes the rds.DeleteDampPolicy API asynchronously
 // api document: https://help.aliyun.com/api/rds/deletedamppolicy.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDampPolicyWithCallback(request *DeleteDampPolicyRequest, callback func(response *DeleteDampPolicyResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DeleteDampPolicyWithCallback(request *DeleteDampPolicyRequ
 	return result
 }
 
+// DeleteDampPolicyRequest is the request struct for api DeleteDampPolicy
 type DeleteDampPolicyRequest struct {
 	*requests.RpcRequest
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
@@ -84,13 +85,14 @@ type DeleteDampPolicyRequest struct {
 	PolicyName           string           `position:"Query" name:"PolicyName"`
 }
 
+// DeleteDampPolicyResponse is the response struct for api DeleteDampPolicy
 type DeleteDampPolicyResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DeleteDampPolicy API
-func CreateDeleteDampPolicyRequest() (request *DeleteDampPolicyRequest) {
+// CreateDeleteDampPolicyRequest creates a request to invoke DeleteDampPolicy API
+func CreateDeleteDampPolicyRequest(request *DeleteDampPolicyRequest) {
 	request = &DeleteDampPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateDeleteDampPolicyRequest() (request *DeleteDampPolicyRequest) {
 	return
 }
 
-// create a response to parse from DeleteDampPolicy response
+// CreateDeleteDampPolicyResponse creates a response to parse from DeleteDampPolicy response
 func CreateDeleteDampPolicyResponse() (response *DeleteDampPolicyResponse) {
 	response = &DeleteDampPolicyResponse{
 		BaseResponse: &responses.BaseResponse{},

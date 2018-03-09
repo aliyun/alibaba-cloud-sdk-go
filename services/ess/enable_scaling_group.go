@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke EnableScalingGroup api with *EnableScalingGroupRequest synchronously
+// EnableScalingGroup invokes the ess.EnableScalingGroup API synchronously
 // api document: https://help.aliyun.com/api/ess/enablescalinggroup.html
 func (client *Client) EnableScalingGroup(request *EnableScalingGroupRequest) (response *EnableScalingGroupResponse, err error) {
 	response = CreateEnableScalingGroupResponse()
@@ -28,7 +28,7 @@ func (client *Client) EnableScalingGroup(request *EnableScalingGroupRequest) (re
 	return
 }
 
-// invoke EnableScalingGroup api with *EnableScalingGroupRequest asynchronously
+// EnableScalingGroupWithChan invokes the ess.EnableScalingGroup API asynchronously
 // api document: https://help.aliyun.com/api/ess/enablescalinggroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EnableScalingGroupWithChan(request *EnableScalingGroupRequest) (<-chan *EnableScalingGroupResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) EnableScalingGroupWithChan(request *EnableScalingGroupRequ
 	return responseChan, errChan
 }
 
-// invoke EnableScalingGroup api with *EnableScalingGroupRequest asynchronously
+// EnableScalingGroupWithCallback invokes the ess.EnableScalingGroup API asynchronously
 // api document: https://help.aliyun.com/api/ess/enablescalinggroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EnableScalingGroupWithCallback(request *EnableScalingGroupRequest, callback func(response *EnableScalingGroupResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) EnableScalingGroupWithCallback(request *EnableScalingGroup
 	return result
 }
 
+// EnableScalingGroupRequest is the request struct for api EnableScalingGroup
 type EnableScalingGroupRequest struct {
 	*requests.RpcRequest
 	OwnerId                      requests.Integer `position:"Query" name:"OwnerId"`
@@ -123,13 +124,14 @@ type EnableScalingGroupRequest struct {
 	OwnerAccount                 string           `position:"Query" name:"OwnerAccount"`
 }
 
+// EnableScalingGroupResponse is the response struct for api EnableScalingGroup
 type EnableScalingGroupResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke EnableScalingGroup API
-func CreateEnableScalingGroupRequest() (request *EnableScalingGroupRequest) {
+// CreateEnableScalingGroupRequest creates a request to invoke EnableScalingGroup API
+func CreateEnableScalingGroupRequest(request *EnableScalingGroupRequest) {
 	request = &EnableScalingGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -137,7 +139,7 @@ func CreateEnableScalingGroupRequest() (request *EnableScalingGroupRequest) {
 	return
 }
 
-// create a response to parse from EnableScalingGroup response
+// CreateEnableScalingGroupResponse creates a response to parse from EnableScalingGroup response
 func CreateEnableScalingGroupResponse() (response *EnableScalingGroupResponse) {
 	response = &EnableScalingGroupResponse{
 		BaseResponse: &responses.BaseResponse{},

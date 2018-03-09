@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke BindTag api with *BindTagRequest synchronously
+// BindTag invokes the push.BindTag API synchronously
 // api document: https://help.aliyun.com/api/push/bindtag.html
 func (client *Client) BindTag(request *BindTagRequest) (response *BindTagResponse, err error) {
 	response = CreateBindTagResponse()
@@ -28,7 +28,7 @@ func (client *Client) BindTag(request *BindTagRequest) (response *BindTagRespons
 	return
 }
 
-// invoke BindTag api with *BindTagRequest asynchronously
+// BindTagWithChan invokes the push.BindTag API asynchronously
 // api document: https://help.aliyun.com/api/push/bindtag.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BindTagWithChan(request *BindTagRequest) (<-chan *BindTagResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) BindTagWithChan(request *BindTagRequest) (<-chan *BindTagR
 	return responseChan, errChan
 }
 
-// invoke BindTag api with *BindTagRequest asynchronously
+// BindTagWithCallback invokes the push.BindTag API asynchronously
 // api document: https://help.aliyun.com/api/push/bindtag.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BindTagWithCallback(request *BindTagRequest, callback func(response *BindTagResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) BindTagWithCallback(request *BindTagRequest, callback func
 	return result
 }
 
+// BindTagRequest is the request struct for api BindTag
 type BindTagRequest struct {
 	*requests.RpcRequest
 	AppKey    requests.Integer `position:"Query" name:"AppKey"`
@@ -81,13 +82,14 @@ type BindTagRequest struct {
 	TagName   string           `position:"Query" name:"TagName"`
 }
 
+// BindTagResponse is the response struct for api BindTag
 type BindTagResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke BindTag API
-func CreateBindTagRequest() (request *BindTagRequest) {
+// CreateBindTagRequest creates a request to invoke BindTag API
+func CreateBindTagRequest(request *BindTagRequest) {
 	request = &BindTagRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateBindTagRequest() (request *BindTagRequest) {
 	return
 }
 
-// create a response to parse from BindTag response
+// CreateBindTagResponse creates a response to parse from BindTag response
 func CreateBindTagResponse() (response *BindTagResponse) {
 	response = &BindTagResponse{
 		BaseResponse: &responses.BaseResponse{},

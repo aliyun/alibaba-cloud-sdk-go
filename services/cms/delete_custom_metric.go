@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteCustomMetric api with *DeleteCustomMetricRequest synchronously
+// DeleteCustomMetric invokes the cms.DeleteCustomMetric API synchronously
 // api document: https://help.aliyun.com/api/cms/deletecustommetric.html
 func (client *Client) DeleteCustomMetric(request *DeleteCustomMetricRequest) (response *DeleteCustomMetricResponse, err error) {
 	response = CreateDeleteCustomMetricResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteCustomMetric(request *DeleteCustomMetricRequest) (re
 	return
 }
 
-// invoke DeleteCustomMetric api with *DeleteCustomMetricRequest asynchronously
+// DeleteCustomMetricWithChan invokes the cms.DeleteCustomMetric API asynchronously
 // api document: https://help.aliyun.com/api/cms/deletecustommetric.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteCustomMetricWithChan(request *DeleteCustomMetricRequest) (<-chan *DeleteCustomMetricResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteCustomMetricWithChan(request *DeleteCustomMetricRequ
 	return responseChan, errChan
 }
 
-// invoke DeleteCustomMetric api with *DeleteCustomMetricRequest asynchronously
+// DeleteCustomMetricWithCallback invokes the cms.DeleteCustomMetric API asynchronously
 // api document: https://help.aliyun.com/api/cms/deletecustommetric.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteCustomMetricWithCallback(request *DeleteCustomMetricRequest, callback func(response *DeleteCustomMetricResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DeleteCustomMetricWithCallback(request *DeleteCustomMetric
 	return result
 }
 
+// DeleteCustomMetricRequest is the request struct for api DeleteCustomMetric
 type DeleteCustomMetricRequest struct {
 	*requests.RpcRequest
 	GroupId    string `position:"Query" name:"GroupId"`
@@ -81,6 +82,7 @@ type DeleteCustomMetricRequest struct {
 	UUID       string `position:"Query" name:"UUID"`
 }
 
+// DeleteCustomMetricResponse is the response struct for api DeleteCustomMetric
 type DeleteCustomMetricResponse struct {
 	*responses.BaseResponse
 	Code      string `json:"Code" xml:"Code"`
@@ -89,8 +91,8 @@ type DeleteCustomMetricResponse struct {
 	Result    string `json:"Result" xml:"Result"`
 }
 
-// create a request to invoke DeleteCustomMetric API
-func CreateDeleteCustomMetricRequest() (request *DeleteCustomMetricRequest) {
+// CreateDeleteCustomMetricRequest creates a request to invoke DeleteCustomMetric API
+func CreateDeleteCustomMetricRequest(request *DeleteCustomMetricRequest) {
 	request = &DeleteCustomMetricRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateDeleteCustomMetricRequest() (request *DeleteCustomMetricRequest) {
 	return
 }
 
-// create a response to parse from DeleteCustomMetric response
+// CreateDeleteCustomMetricResponse creates a response to parse from DeleteCustomMetric response
 func CreateDeleteCustomMetricResponse() (response *DeleteCustomMetricResponse) {
 	response = &DeleteCustomMetricResponse{
 		BaseResponse: &responses.BaseResponse{},

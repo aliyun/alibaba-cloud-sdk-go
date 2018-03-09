@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifyBgpGroupAttribute api with *ModifyBgpGroupAttributeRequest synchronously
+// ModifyBgpGroupAttribute invokes the vpc.ModifyBgpGroupAttribute API synchronously
 // api document: https://help.aliyun.com/api/vpc/modifybgpgroupattribute.html
 func (client *Client) ModifyBgpGroupAttribute(request *ModifyBgpGroupAttributeRequest) (response *ModifyBgpGroupAttributeResponse, err error) {
 	response = CreateModifyBgpGroupAttributeResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifyBgpGroupAttribute(request *ModifyBgpGroupAttributeRe
 	return
 }
 
-// invoke ModifyBgpGroupAttribute api with *ModifyBgpGroupAttributeRequest asynchronously
+// ModifyBgpGroupAttributeWithChan invokes the vpc.ModifyBgpGroupAttribute API asynchronously
 // api document: https://help.aliyun.com/api/vpc/modifybgpgroupattribute.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyBgpGroupAttributeWithChan(request *ModifyBgpGroupAttributeRequest) (<-chan *ModifyBgpGroupAttributeResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifyBgpGroupAttributeWithChan(request *ModifyBgpGroupAtt
 	return responseChan, errChan
 }
 
-// invoke ModifyBgpGroupAttribute api with *ModifyBgpGroupAttributeRequest asynchronously
+// ModifyBgpGroupAttributeWithCallback invokes the vpc.ModifyBgpGroupAttribute API asynchronously
 // api document: https://help.aliyun.com/api/vpc/modifybgpgroupattribute.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyBgpGroupAttributeWithCallback(request *ModifyBgpGroupAttributeRequest, callback func(response *ModifyBgpGroupAttributeResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ModifyBgpGroupAttributeWithCallback(request *ModifyBgpGrou
 	return result
 }
 
+// ModifyBgpGroupAttributeRequest is the request struct for api ModifyBgpGroupAttribute
 type ModifyBgpGroupAttributeRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -88,13 +89,14 @@ type ModifyBgpGroupAttributeRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// ModifyBgpGroupAttributeResponse is the response struct for api ModifyBgpGroupAttribute
 type ModifyBgpGroupAttributeResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ModifyBgpGroupAttribute API
-func CreateModifyBgpGroupAttributeRequest() (request *ModifyBgpGroupAttributeRequest) {
+// CreateModifyBgpGroupAttributeRequest creates a request to invoke ModifyBgpGroupAttribute API
+func CreateModifyBgpGroupAttributeRequest(request *ModifyBgpGroupAttributeRequest) {
 	request = &ModifyBgpGroupAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -102,7 +104,7 @@ func CreateModifyBgpGroupAttributeRequest() (request *ModifyBgpGroupAttributeReq
 	return
 }
 
-// create a response to parse from ModifyBgpGroupAttribute response
+// CreateModifyBgpGroupAttributeResponse creates a response to parse from ModifyBgpGroupAttribute response
 func CreateModifyBgpGroupAttributeResponse() (response *ModifyBgpGroupAttributeResponse) {
 	response = &ModifyBgpGroupAttributeResponse{
 		BaseResponse: &responses.BaseResponse{},

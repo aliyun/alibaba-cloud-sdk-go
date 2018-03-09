@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke AddMedia api with *AddMediaRequest synchronously
+// AddMedia invokes the mts.AddMedia API synchronously
 // api document: https://help.aliyun.com/api/mts/addmedia.html
 func (client *Client) AddMedia(request *AddMediaRequest) (response *AddMediaResponse, err error) {
 	response = CreateAddMediaResponse()
@@ -28,7 +28,7 @@ func (client *Client) AddMedia(request *AddMediaRequest) (response *AddMediaResp
 	return
 }
 
-// invoke AddMedia api with *AddMediaRequest asynchronously
+// AddMediaWithChan invokes the mts.AddMedia API asynchronously
 // api document: https://help.aliyun.com/api/mts/addmedia.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddMediaWithChan(request *AddMediaRequest) (<-chan *AddMediaResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) AddMediaWithChan(request *AddMediaRequest) (<-chan *AddMed
 	return responseChan, errChan
 }
 
-// invoke AddMedia api with *AddMediaRequest asynchronously
+// AddMediaWithCallback invokes the mts.AddMedia API asynchronously
 // api document: https://help.aliyun.com/api/mts/addmedia.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddMediaWithCallback(request *AddMediaRequest, callback func(response *AddMediaResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) AddMediaWithCallback(request *AddMediaRequest, callback fu
 	return result
 }
 
+// AddMediaRequest is the request struct for api AddMedia
 type AddMediaRequest struct {
 	*requests.RpcRequest
 	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
@@ -89,14 +90,15 @@ type AddMediaRequest struct {
 	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
 }
 
+// AddMediaResponse is the response struct for api AddMedia
 type AddMediaResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Media     Media  `json:"Media" xml:"Media"`
 }
 
-// create a request to invoke AddMedia API
-func CreateAddMediaRequest() (request *AddMediaRequest) {
+// CreateAddMediaRequest creates a request to invoke AddMedia API
+func CreateAddMediaRequest(request *AddMediaRequest) {
 	request = &AddMediaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -104,7 +106,7 @@ func CreateAddMediaRequest() (request *AddMediaRequest) {
 	return
 }
 
-// create a response to parse from AddMedia response
+// CreateAddMediaResponse creates a response to parse from AddMedia response
 func CreateAddMediaResponse() (response *AddMediaResponse) {
 	response = &AddMediaResponse{
 		BaseResponse: &responses.BaseResponse{},

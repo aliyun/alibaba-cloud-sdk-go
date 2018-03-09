@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CreateBlockhole api with *CreateBlockholeRequest synchronously
+// CreateBlockhole invokes the ddospro.CreateBlockhole API synchronously
 // api document: https://help.aliyun.com/api/ddospro/createblockhole.html
 func (client *Client) CreateBlockhole(request *CreateBlockholeRequest) (response *CreateBlockholeResponse, err error) {
 	response = CreateCreateBlockholeResponse()
@@ -28,7 +28,7 @@ func (client *Client) CreateBlockhole(request *CreateBlockholeRequest) (response
 	return
 }
 
-// invoke CreateBlockhole api with *CreateBlockholeRequest asynchronously
+// CreateBlockholeWithChan invokes the ddospro.CreateBlockhole API asynchronously
 // api document: https://help.aliyun.com/api/ddospro/createblockhole.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateBlockholeWithChan(request *CreateBlockholeRequest) (<-chan *CreateBlockholeResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CreateBlockholeWithChan(request *CreateBlockholeRequest) (
 	return responseChan, errChan
 }
 
-// invoke CreateBlockhole api with *CreateBlockholeRequest asynchronously
+// CreateBlockholeWithCallback invokes the ddospro.CreateBlockhole API asynchronously
 // api document: https://help.aliyun.com/api/ddospro/createblockhole.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateBlockholeWithCallback(request *CreateBlockholeRequest, callback func(response *CreateBlockholeResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) CreateBlockholeWithCallback(request *CreateBlockholeReques
 	return result
 }
 
+// CreateBlockholeRequest is the request struct for api CreateBlockhole
 type CreateBlockholeRequest struct {
 	*requests.RpcRequest
 	SourceIp        string           `position:"Query" name:"SourceIp"`
@@ -82,13 +83,14 @@ type CreateBlockholeRequest struct {
 	BlockTime       requests.Integer `position:"Query" name:"BlockTime"`
 }
 
+// CreateBlockholeResponse is the response struct for api CreateBlockhole
 type CreateBlockholeResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke CreateBlockhole API
-func CreateCreateBlockholeRequest() (request *CreateBlockholeRequest) {
+// CreateCreateBlockholeRequest creates a request to invoke CreateBlockhole API
+func CreateCreateBlockholeRequest(request *CreateBlockholeRequest) {
 	request = &CreateBlockholeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -96,7 +98,7 @@ func CreateCreateBlockholeRequest() (request *CreateBlockholeRequest) {
 	return
 }
 
-// create a response to parse from CreateBlockhole response
+// CreateCreateBlockholeResponse creates a response to parse from CreateBlockhole response
 func CreateCreateBlockholeResponse() (response *CreateBlockholeResponse) {
 	response = &CreateBlockholeResponse{
 		BaseResponse: &responses.BaseResponse{},

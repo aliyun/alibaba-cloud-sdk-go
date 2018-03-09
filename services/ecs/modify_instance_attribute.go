@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifyInstanceAttribute api with *ModifyInstanceAttributeRequest synchronously
+// ModifyInstanceAttribute invokes the ecs.ModifyInstanceAttribute API synchronously
 // api document: https://help.aliyun.com/api/ecs/modifyinstanceattribute.html
 func (client *Client) ModifyInstanceAttribute(request *ModifyInstanceAttributeRequest) (response *ModifyInstanceAttributeResponse, err error) {
 	response = CreateModifyInstanceAttributeResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifyInstanceAttribute(request *ModifyInstanceAttributeRe
 	return
 }
 
-// invoke ModifyInstanceAttribute api with *ModifyInstanceAttributeRequest asynchronously
+// ModifyInstanceAttributeWithChan invokes the ecs.ModifyInstanceAttribute API asynchronously
 // api document: https://help.aliyun.com/api/ecs/modifyinstanceattribute.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyInstanceAttributeWithChan(request *ModifyInstanceAttributeRequest) (<-chan *ModifyInstanceAttributeResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifyInstanceAttributeWithChan(request *ModifyInstanceAtt
 	return responseChan, errChan
 }
 
-// invoke ModifyInstanceAttribute api with *ModifyInstanceAttributeRequest asynchronously
+// ModifyInstanceAttributeWithCallback invokes the ecs.ModifyInstanceAttribute API asynchronously
 // api document: https://help.aliyun.com/api/ecs/modifyinstanceattribute.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyInstanceAttributeWithCallback(request *ModifyInstanceAttributeRequest, callback func(response *ModifyInstanceAttributeResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ModifyInstanceAttributeWithCallback(request *ModifyInstanc
 	return result
 }
 
+// ModifyInstanceAttributeRequest is the request struct for api ModifyInstanceAttribute
 type ModifyInstanceAttributeRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -88,13 +89,14 @@ type ModifyInstanceAttributeRequest struct {
 	Recyclable           requests.Boolean `position:"Query" name:"Recyclable"`
 }
 
+// ModifyInstanceAttributeResponse is the response struct for api ModifyInstanceAttribute
 type ModifyInstanceAttributeResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ModifyInstanceAttribute API
-func CreateModifyInstanceAttributeRequest() (request *ModifyInstanceAttributeRequest) {
+// CreateModifyInstanceAttributeRequest creates a request to invoke ModifyInstanceAttribute API
+func CreateModifyInstanceAttributeRequest(request *ModifyInstanceAttributeRequest) {
 	request = &ModifyInstanceAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -102,7 +104,7 @@ func CreateModifyInstanceAttributeRequest() (request *ModifyInstanceAttributeReq
 	return
 }
 
-// create a response to parse from ModifyInstanceAttribute response
+// CreateModifyInstanceAttributeResponse creates a response to parse from ModifyInstanceAttribute response
 func CreateModifyInstanceAttributeResponse() (response *ModifyInstanceAttributeResponse) {
 	response = &ModifyInstanceAttributeResponse{
 		BaseResponse: &responses.BaseResponse{},

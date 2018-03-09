@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke BatchDeleteWhiteList api with *BatchDeleteWhiteListRequest synchronously
+// BatchDeleteWhiteList invokes the aegis.BatchDeleteWhiteList API synchronously
 // api document: https://help.aliyun.com/api/aegis/batchdeletewhitelist.html
 func (client *Client) BatchDeleteWhiteList(request *BatchDeleteWhiteListRequest) (response *BatchDeleteWhiteListResponse, err error) {
 	response = CreateBatchDeleteWhiteListResponse()
@@ -28,7 +28,7 @@ func (client *Client) BatchDeleteWhiteList(request *BatchDeleteWhiteListRequest)
 	return
 }
 
-// invoke BatchDeleteWhiteList api with *BatchDeleteWhiteListRequest asynchronously
+// BatchDeleteWhiteListWithChan invokes the aegis.BatchDeleteWhiteList API asynchronously
 // api document: https://help.aliyun.com/api/aegis/batchdeletewhitelist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BatchDeleteWhiteListWithChan(request *BatchDeleteWhiteListRequest) (<-chan *BatchDeleteWhiteListResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) BatchDeleteWhiteListWithChan(request *BatchDeleteWhiteList
 	return responseChan, errChan
 }
 
-// invoke BatchDeleteWhiteList api with *BatchDeleteWhiteListRequest asynchronously
+// BatchDeleteWhiteListWithCallback invokes the aegis.BatchDeleteWhiteList API asynchronously
 // api document: https://help.aliyun.com/api/aegis/batchdeletewhitelist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BatchDeleteWhiteListWithCallback(request *BatchDeleteWhiteListRequest, callback func(response *BatchDeleteWhiteListResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) BatchDeleteWhiteListWithCallback(request *BatchDeleteWhite
 	return result
 }
 
+// BatchDeleteWhiteListRequest is the request struct for api BatchDeleteWhiteList
 type BatchDeleteWhiteListRequest struct {
 	*requests.RpcRequest
 	SourceIp        string           `position:"Query" name:"SourceIp"`
@@ -80,13 +81,14 @@ type BatchDeleteWhiteListRequest struct {
 	RiskIdList      string           `position:"Query" name:"RiskIdList"`
 }
 
+// BatchDeleteWhiteListResponse is the response struct for api BatchDeleteWhiteList
 type BatchDeleteWhiteListResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke BatchDeleteWhiteList API
-func CreateBatchDeleteWhiteListRequest() (request *BatchDeleteWhiteListRequest) {
+// CreateBatchDeleteWhiteListRequest creates a request to invoke BatchDeleteWhiteList API
+func CreateBatchDeleteWhiteListRequest(request *BatchDeleteWhiteListRequest) {
 	request = &BatchDeleteWhiteListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -94,7 +96,7 @@ func CreateBatchDeleteWhiteListRequest() (request *BatchDeleteWhiteListRequest) 
 	return
 }
 
-// create a response to parse from BatchDeleteWhiteList response
+// CreateBatchDeleteWhiteListResponse creates a response to parse from BatchDeleteWhiteList response
 func CreateBatchDeleteWhiteListResponse() (response *BatchDeleteWhiteListResponse) {
 	response = &BatchDeleteWhiteListResponse{
 		BaseResponse: &responses.BaseResponse{},

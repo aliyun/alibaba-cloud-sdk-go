@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SubmitJob api with *SubmitJobRequest synchronously
+// SubmitJob invokes the ehpc.SubmitJob API synchronously
 // api document: https://help.aliyun.com/api/ehpc/submitjob.html
 func (client *Client) SubmitJob(request *SubmitJobRequest) (response *SubmitJobResponse, err error) {
 	response = CreateSubmitJobResponse()
@@ -28,7 +28,7 @@ func (client *Client) SubmitJob(request *SubmitJobRequest) (response *SubmitJobR
 	return
 }
 
-// invoke SubmitJob api with *SubmitJobRequest asynchronously
+// SubmitJobWithChan invokes the ehpc.SubmitJob API asynchronously
 // api document: https://help.aliyun.com/api/ehpc/submitjob.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitJobWithChan(request *SubmitJobRequest) (<-chan *SubmitJobResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SubmitJobWithChan(request *SubmitJobRequest) (<-chan *Subm
 	return responseChan, errChan
 }
 
-// invoke SubmitJob api with *SubmitJobRequest asynchronously
+// SubmitJobWithCallback invokes the ehpc.SubmitJob API asynchronously
 // api document: https://help.aliyun.com/api/ehpc/submitjob.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitJobWithCallback(request *SubmitJobRequest, callback func(response *SubmitJobResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SubmitJobWithCallback(request *SubmitJobRequest, callback 
 	return result
 }
 
+// SubmitJobRequest is the request struct for api SubmitJob
 type SubmitJobRequest struct {
 	*requests.RpcRequest
 	ClusterId          string           `position:"Query" name:"ClusterId"`
@@ -89,14 +90,15 @@ type SubmitJobRequest struct {
 	Variables          string           `position:"Query" name:"Variables"`
 }
 
+// SubmitJobResponse is the response struct for api SubmitJob
 type SubmitJobResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	JobId     string `json:"JobId" xml:"JobId"`
 }
 
-// create a request to invoke SubmitJob API
-func CreateSubmitJobRequest() (request *SubmitJobRequest) {
+// CreateSubmitJobRequest creates a request to invoke SubmitJob API
+func CreateSubmitJobRequest(request *SubmitJobRequest) {
 	request = &SubmitJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -104,7 +106,7 @@ func CreateSubmitJobRequest() (request *SubmitJobRequest) {
 	return
 }
 
-// create a response to parse from SubmitJob response
+// CreateSubmitJobResponse creates a response to parse from SubmitJob response
 func CreateSubmitJobResponse() (response *SubmitJobResponse) {
 	response = &SubmitJobResponse{
 		BaseResponse: &responses.BaseResponse{},

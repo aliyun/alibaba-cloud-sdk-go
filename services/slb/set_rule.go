@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SetRule api with *SetRuleRequest synchronously
+// SetRule invokes the slb.SetRule API synchronously
 // api document: https://help.aliyun.com/api/slb/setrule.html
 func (client *Client) SetRule(request *SetRuleRequest) (response *SetRuleResponse, err error) {
 	response = CreateSetRuleResponse()
@@ -28,7 +28,7 @@ func (client *Client) SetRule(request *SetRuleRequest) (response *SetRuleRespons
 	return
 }
 
-// invoke SetRule api with *SetRuleRequest asynchronously
+// SetRuleWithChan invokes the slb.SetRule API asynchronously
 // api document: https://help.aliyun.com/api/slb/setrule.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetRuleWithChan(request *SetRuleRequest) (<-chan *SetRuleResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SetRuleWithChan(request *SetRuleRequest) (<-chan *SetRuleR
 	return responseChan, errChan
 }
 
-// invoke SetRule api with *SetRuleRequest asynchronously
+// SetRuleWithCallback invokes the slb.SetRule API asynchronously
 // api document: https://help.aliyun.com/api/slb/setrule.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetRuleWithCallback(request *SetRuleRequest, callback func(response *SetRuleResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SetRuleWithCallback(request *SetRuleRequest, callback func
 	return result
 }
 
+// SetRuleRequest is the request struct for api SetRule
 type SetRuleRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -85,13 +86,14 @@ type SetRuleRequest struct {
 	VServerGroupId       string           `position:"Query" name:"VServerGroupId"`
 }
 
+// SetRuleResponse is the response struct for api SetRule
 type SetRuleResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke SetRule API
-func CreateSetRuleRequest() (request *SetRuleRequest) {
+// CreateSetRuleRequest creates a request to invoke SetRule API
+func CreateSetRuleRequest(request *SetRuleRequest) {
 	request = &SetRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateSetRuleRequest() (request *SetRuleRequest) {
 	return
 }
 
-// create a response to parse from SetRule response
+// CreateSetRuleResponse creates a response to parse from SetRule response
 func CreateSetRuleResponse() (response *SetRuleResponse) {
 	response = &SetRuleResponse{
 		BaseResponse: &responses.BaseResponse{},

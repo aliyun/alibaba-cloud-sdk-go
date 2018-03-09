@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke EditPhotos api with *EditPhotosRequest synchronously
+// EditPhotos invokes the cloudphoto.EditPhotos API synchronously
 // api document: https://help.aliyun.com/api/cloudphoto/editphotos.html
 func (client *Client) EditPhotos(request *EditPhotosRequest) (response *EditPhotosResponse, err error) {
 	response = CreateEditPhotosResponse()
@@ -28,7 +28,7 @@ func (client *Client) EditPhotos(request *EditPhotosRequest) (response *EditPhot
 	return
 }
 
-// invoke EditPhotos api with *EditPhotosRequest asynchronously
+// EditPhotosWithChan invokes the cloudphoto.EditPhotos API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/editphotos.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EditPhotosWithChan(request *EditPhotosRequest) (<-chan *EditPhotosResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) EditPhotosWithChan(request *EditPhotosRequest) (<-chan *Ed
 	return responseChan, errChan
 }
 
-// invoke EditPhotos api with *EditPhotosRequest asynchronously
+// EditPhotosWithCallback invokes the cloudphoto.EditPhotos API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/editphotos.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EditPhotosWithCallback(request *EditPhotosRequest, callback func(response *EditPhotosResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) EditPhotosWithCallback(request *EditPhotosRequest, callbac
 	return result
 }
 
+// EditPhotosRequest is the request struct for api EditPhotos
 type EditPhotosRequest struct {
 	*requests.RpcRequest
 	PhotoId         *[]string        `position:"Query" name:"PhotoId"  type:"Repeated"`
@@ -83,6 +84,7 @@ type EditPhotosRequest struct {
 	LibraryId       string           `position:"Query" name:"LibraryId"`
 }
 
+// EditPhotosResponse is the response struct for api EditPhotos
 type EditPhotosResponse struct {
 	*responses.BaseResponse
 	Code      string   `json:"Code" xml:"Code"`
@@ -92,8 +94,8 @@ type EditPhotosResponse struct {
 	Results   []Result `json:"Results" xml:"Results"`
 }
 
-// create a request to invoke EditPhotos API
-func CreateEditPhotosRequest() (request *EditPhotosRequest) {
+// CreateEditPhotosRequest creates a request to invoke EditPhotos API
+func CreateEditPhotosRequest(request *EditPhotosRequest) {
 	request = &EditPhotosRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -101,7 +103,7 @@ func CreateEditPhotosRequest() (request *EditPhotosRequest) {
 	return
 }
 
-// create a response to parse from EditPhotos response
+// CreateEditPhotosResponse creates a response to parse from EditPhotos response
 func CreateEditPhotosResponse() (response *EditPhotosResponse) {
 	response = &EditPhotosResponse{
 		BaseResponse: &responses.BaseResponse{},

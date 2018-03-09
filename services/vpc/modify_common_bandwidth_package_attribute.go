@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifyCommonBandwidthPackageAttribute api with *ModifyCommonBandwidthPackageAttributeRequest synchronously
+// ModifyCommonBandwidthPackageAttribute invokes the vpc.ModifyCommonBandwidthPackageAttribute API synchronously
 // api document: https://help.aliyun.com/api/vpc/modifycommonbandwidthpackageattribute.html
 func (client *Client) ModifyCommonBandwidthPackageAttribute(request *ModifyCommonBandwidthPackageAttributeRequest) (response *ModifyCommonBandwidthPackageAttributeResponse, err error) {
 	response = CreateModifyCommonBandwidthPackageAttributeResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifyCommonBandwidthPackageAttribute(request *ModifyCommo
 	return
 }
 
-// invoke ModifyCommonBandwidthPackageAttribute api with *ModifyCommonBandwidthPackageAttributeRequest asynchronously
+// ModifyCommonBandwidthPackageAttributeWithChan invokes the vpc.ModifyCommonBandwidthPackageAttribute API asynchronously
 // api document: https://help.aliyun.com/api/vpc/modifycommonbandwidthpackageattribute.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyCommonBandwidthPackageAttributeWithChan(request *ModifyCommonBandwidthPackageAttributeRequest) (<-chan *ModifyCommonBandwidthPackageAttributeResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifyCommonBandwidthPackageAttributeWithChan(request *Mod
 	return responseChan, errChan
 }
 
-// invoke ModifyCommonBandwidthPackageAttribute api with *ModifyCommonBandwidthPackageAttributeRequest asynchronously
+// ModifyCommonBandwidthPackageAttributeWithCallback invokes the vpc.ModifyCommonBandwidthPackageAttribute API asynchronously
 // api document: https://help.aliyun.com/api/vpc/modifycommonbandwidthpackageattribute.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyCommonBandwidthPackageAttributeWithCallback(request *ModifyCommonBandwidthPackageAttributeRequest, callback func(response *ModifyCommonBandwidthPackageAttributeResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ModifyCommonBandwidthPackageAttributeWithCallback(request 
 	return result
 }
 
+// ModifyCommonBandwidthPackageAttributeRequest is the request struct for api ModifyCommonBandwidthPackageAttribute
 type ModifyCommonBandwidthPackageAttributeRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,13 +85,14 @@ type ModifyCommonBandwidthPackageAttributeRequest struct {
 	Description          string           `position:"Query" name:"Description"`
 }
 
+// ModifyCommonBandwidthPackageAttributeResponse is the response struct for api ModifyCommonBandwidthPackageAttribute
 type ModifyCommonBandwidthPackageAttributeResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ModifyCommonBandwidthPackageAttribute API
-func CreateModifyCommonBandwidthPackageAttributeRequest() (request *ModifyCommonBandwidthPackageAttributeRequest) {
+// CreateModifyCommonBandwidthPackageAttributeRequest creates a request to invoke ModifyCommonBandwidthPackageAttribute API
+func CreateModifyCommonBandwidthPackageAttributeRequest(request *ModifyCommonBandwidthPackageAttributeRequest) {
 	request = &ModifyCommonBandwidthPackageAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateModifyCommonBandwidthPackageAttributeRequest() (request *ModifyCommon
 	return
 }
 
-// create a response to parse from ModifyCommonBandwidthPackageAttribute response
+// CreateModifyCommonBandwidthPackageAttributeResponse creates a response to parse from ModifyCommonBandwidthPackageAttribute response
 func CreateModifyCommonBandwidthPackageAttributeResponse() (response *ModifyCommonBandwidthPackageAttributeResponse) {
 	response = &ModifyCommonBandwidthPackageAttributeResponse{
 		BaseResponse: &responses.BaseResponse{},

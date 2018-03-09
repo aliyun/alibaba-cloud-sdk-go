@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ListRegions api with *ListRegionsRequest synchronously
+// ListRegions invokes the ehpc.ListRegions API synchronously
 // api document: https://help.aliyun.com/api/ehpc/listregions.html
 func (client *Client) ListRegions(request *ListRegionsRequest) (response *ListRegionsResponse, err error) {
 	response = CreateListRegionsResponse()
@@ -28,7 +28,7 @@ func (client *Client) ListRegions(request *ListRegionsRequest) (response *ListRe
 	return
 }
 
-// invoke ListRegions api with *ListRegionsRequest asynchronously
+// ListRegionsWithChan invokes the ehpc.ListRegions API asynchronously
 // api document: https://help.aliyun.com/api/ehpc/listregions.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListRegionsWithChan(request *ListRegionsRequest) (<-chan *ListRegionsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ListRegionsWithChan(request *ListRegionsRequest) (<-chan *
 	return responseChan, errChan
 }
 
-// invoke ListRegions api with *ListRegionsRequest asynchronously
+// ListRegionsWithCallback invokes the ehpc.ListRegions API asynchronously
 // api document: https://help.aliyun.com/api/ehpc/listregions.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListRegionsWithCallback(request *ListRegionsRequest, callback func(response *ListRegionsResponse, err error)) <-chan int {
@@ -73,18 +73,20 @@ func (client *Client) ListRegionsWithCallback(request *ListRegionsRequest, callb
 	return result
 }
 
+// ListRegionsRequest is the request struct for api ListRegions
 type ListRegionsRequest struct {
 	*requests.RpcRequest
 }
 
+// ListRegionsResponse is the response struct for api ListRegions
 type ListRegionsResponse struct {
 	*responses.BaseResponse
 	RequestId string  `json:"RequestId" xml:"RequestId"`
 	Regions   Regions `json:"Regions" xml:"Regions"`
 }
 
-// create a request to invoke ListRegions API
-func CreateListRegionsRequest() (request *ListRegionsRequest) {
+// CreateListRegionsRequest creates a request to invoke ListRegions API
+func CreateListRegionsRequest(request *ListRegionsRequest) {
 	request = &ListRegionsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -92,7 +94,7 @@ func CreateListRegionsRequest() (request *ListRegionsRequest) {
 	return
 }
 
-// create a response to parse from ListRegions response
+// CreateListRegionsResponse creates a response to parse from ListRegions response
 func CreateListRegionsResponse() (response *ListRegionsResponse) {
 	response = &ListRegionsResponse{
 		BaseResponse: &responses.BaseResponse{},

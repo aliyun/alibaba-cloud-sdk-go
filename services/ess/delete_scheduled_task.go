@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteScheduledTask api with *DeleteScheduledTaskRequest synchronously
+// DeleteScheduledTask invokes the ess.DeleteScheduledTask API synchronously
 // api document: https://help.aliyun.com/api/ess/deletescheduledtask.html
 func (client *Client) DeleteScheduledTask(request *DeleteScheduledTaskRequest) (response *DeleteScheduledTaskResponse, err error) {
 	response = CreateDeleteScheduledTaskResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteScheduledTask(request *DeleteScheduledTaskRequest) (
 	return
 }
 
-// invoke DeleteScheduledTask api with *DeleteScheduledTaskRequest asynchronously
+// DeleteScheduledTaskWithChan invokes the ess.DeleteScheduledTask API asynchronously
 // api document: https://help.aliyun.com/api/ess/deletescheduledtask.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteScheduledTaskWithChan(request *DeleteScheduledTaskRequest) (<-chan *DeleteScheduledTaskResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteScheduledTaskWithChan(request *DeleteScheduledTaskRe
 	return responseChan, errChan
 }
 
-// invoke DeleteScheduledTask api with *DeleteScheduledTaskRequest asynchronously
+// DeleteScheduledTaskWithCallback invokes the ess.DeleteScheduledTask API asynchronously
 // api document: https://help.aliyun.com/api/ess/deletescheduledtask.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteScheduledTaskWithCallback(request *DeleteScheduledTaskRequest, callback func(response *DeleteScheduledTaskResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DeleteScheduledTaskWithCallback(request *DeleteScheduledTa
 	return result
 }
 
+// DeleteScheduledTaskRequest is the request struct for api DeleteScheduledTask
 type DeleteScheduledTaskRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -81,13 +82,14 @@ type DeleteScheduledTaskRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// DeleteScheduledTaskResponse is the response struct for api DeleteScheduledTask
 type DeleteScheduledTaskResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DeleteScheduledTask API
-func CreateDeleteScheduledTaskRequest() (request *DeleteScheduledTaskRequest) {
+// CreateDeleteScheduledTaskRequest creates a request to invoke DeleteScheduledTask API
+func CreateDeleteScheduledTaskRequest(request *DeleteScheduledTaskRequest) {
 	request = &DeleteScheduledTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateDeleteScheduledTaskRequest() (request *DeleteScheduledTaskRequest) {
 	return
 }
 
-// create a response to parse from DeleteScheduledTask response
+// CreateDeleteScheduledTaskResponse creates a response to parse from DeleteScheduledTask response
 func CreateDeleteScheduledTaskResponse() (response *DeleteScheduledTaskResponse) {
 	response = &DeleteScheduledTaskResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SubmitFacerecogJob api with *SubmitFacerecogJobRequest synchronously
+// SubmitFacerecogJob invokes the mts.SubmitFacerecogJob API synchronously
 // api document: https://help.aliyun.com/api/mts/submitfacerecogjob.html
 func (client *Client) SubmitFacerecogJob(request *SubmitFacerecogJobRequest) (response *SubmitFacerecogJobResponse, err error) {
 	response = CreateSubmitFacerecogJobResponse()
@@ -28,7 +28,7 @@ func (client *Client) SubmitFacerecogJob(request *SubmitFacerecogJobRequest) (re
 	return
 }
 
-// invoke SubmitFacerecogJob api with *SubmitFacerecogJobRequest asynchronously
+// SubmitFacerecogJobWithChan invokes the mts.SubmitFacerecogJob API asynchronously
 // api document: https://help.aliyun.com/api/mts/submitfacerecogjob.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitFacerecogJobWithChan(request *SubmitFacerecogJobRequest) (<-chan *SubmitFacerecogJobResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SubmitFacerecogJobWithChan(request *SubmitFacerecogJobRequ
 	return responseChan, errChan
 }
 
-// invoke SubmitFacerecogJob api with *SubmitFacerecogJobRequest asynchronously
+// SubmitFacerecogJobWithCallback invokes the mts.SubmitFacerecogJob API asynchronously
 // api document: https://help.aliyun.com/api/mts/submitfacerecogjob.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitFacerecogJobWithCallback(request *SubmitFacerecogJobRequest, callback func(response *SubmitFacerecogJobResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SubmitFacerecogJobWithCallback(request *SubmitFacerecogJob
 	return result
 }
 
+// SubmitFacerecogJobRequest is the request struct for api SubmitFacerecogJob
 type SubmitFacerecogJobRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -85,14 +86,15 @@ type SubmitFacerecogJobRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// SubmitFacerecogJobResponse is the response struct for api SubmitFacerecogJob
 type SubmitFacerecogJobResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	JobId     string `json:"JobId" xml:"JobId"`
 }
 
-// create a request to invoke SubmitFacerecogJob API
-func CreateSubmitFacerecogJobRequest() (request *SubmitFacerecogJobRequest) {
+// CreateSubmitFacerecogJobRequest creates a request to invoke SubmitFacerecogJob API
+func CreateSubmitFacerecogJobRequest(request *SubmitFacerecogJobRequest) {
 	request = &SubmitFacerecogJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -100,7 +102,7 @@ func CreateSubmitFacerecogJobRequest() (request *SubmitFacerecogJobRequest) {
 	return
 }
 
-// create a response to parse from SubmitFacerecogJob response
+// CreateSubmitFacerecogJobResponse creates a response to parse from SubmitFacerecogJob response
 func CreateSubmitFacerecogJobResponse() (response *SubmitFacerecogJobResponse) {
 	response = &SubmitFacerecogJobResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke OpenAccount api with *OpenAccountRequest synchronously
+// OpenAccount invokes the sls.OpenAccount API synchronously
 // api document: https://help.aliyun.com/api/sls/openaccount.html
 func (client *Client) OpenAccount(request *OpenAccountRequest) (response *OpenAccountResponse, err error) {
 	response = CreateOpenAccountResponse()
@@ -28,7 +28,7 @@ func (client *Client) OpenAccount(request *OpenAccountRequest) (response *OpenAc
 	return
 }
 
-// invoke OpenAccount api with *OpenAccountRequest asynchronously
+// OpenAccountWithChan invokes the sls.OpenAccount API asynchronously
 // api document: https://help.aliyun.com/api/sls/openaccount.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OpenAccountWithChan(request *OpenAccountRequest) (<-chan *OpenAccountResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) OpenAccountWithChan(request *OpenAccountRequest) (<-chan *
 	return responseChan, errChan
 }
 
-// invoke OpenAccount api with *OpenAccountRequest asynchronously
+// OpenAccountWithCallback invokes the sls.OpenAccount API asynchronously
 // api document: https://help.aliyun.com/api/sls/openaccount.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OpenAccountWithCallback(request *OpenAccountRequest, callback func(response *OpenAccountResponse, err error)) <-chan int {
@@ -73,19 +73,21 @@ func (client *Client) OpenAccountWithCallback(request *OpenAccountRequest, callb
 	return result
 }
 
+// OpenAccountRequest is the request struct for api OpenAccount
 type OpenAccountRequest struct {
 	*requests.RpcRequest
 	Bid    string           `position:"Query" name:"Bid"`
 	AliUid requests.Integer `position:"Query" name:"AliUid"`
 }
 
+// OpenAccountResponse is the response struct for api OpenAccount
 type OpenAccountResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke OpenAccount API
-func CreateOpenAccountRequest() (request *OpenAccountRequest) {
+// CreateOpenAccountRequest creates a request to invoke OpenAccount API
+func CreateOpenAccountRequest(request *OpenAccountRequest) {
 	request = &OpenAccountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -93,7 +95,7 @@ func CreateOpenAccountRequest() (request *OpenAccountRequest) {
 	return
 }
 
-// create a response to parse from OpenAccount response
+// CreateOpenAccountResponse creates a response to parse from OpenAccount response
 func CreateOpenAccountResponse() (response *OpenAccountResponse) {
 	response = &OpenAccountResponse{
 		BaseResponse: &responses.BaseResponse{},

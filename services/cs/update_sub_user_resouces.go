@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke UpdateSubUserResouces api with *UpdateSubUserResoucesRequest synchronously
+// UpdateSubUserResouces invokes the cs.UpdateSubUserResouces API synchronously
 // api document: https://help.aliyun.com/api/cs/updatesubuserresouces.html
 func (client *Client) UpdateSubUserResouces(request *UpdateSubUserResoucesRequest) (response *UpdateSubUserResoucesResponse, err error) {
 	response = CreateUpdateSubUserResoucesResponse()
@@ -28,7 +28,7 @@ func (client *Client) UpdateSubUserResouces(request *UpdateSubUserResoucesReques
 	return
 }
 
-// invoke UpdateSubUserResouces api with *UpdateSubUserResoucesRequest asynchronously
+// UpdateSubUserResoucesWithChan invokes the cs.UpdateSubUserResouces API asynchronously
 // api document: https://help.aliyun.com/api/cs/updatesubuserresouces.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateSubUserResoucesWithChan(request *UpdateSubUserResoucesRequest) (<-chan *UpdateSubUserResoucesResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) UpdateSubUserResoucesWithChan(request *UpdateSubUserResouc
 	return responseChan, errChan
 }
 
-// invoke UpdateSubUserResouces api with *UpdateSubUserResoucesRequest asynchronously
+// UpdateSubUserResoucesWithCallback invokes the cs.UpdateSubUserResouces API asynchronously
 // api document: https://help.aliyun.com/api/cs/updatesubuserresouces.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateSubUserResoucesWithCallback(request *UpdateSubUserResoucesRequest, callback func(response *UpdateSubUserResoucesResponse, err error)) <-chan int {
@@ -73,16 +73,18 @@ func (client *Client) UpdateSubUserResoucesWithCallback(request *UpdateSubUserRe
 	return result
 }
 
+// UpdateSubUserResoucesRequest is the request struct for api UpdateSubUserResouces
 type UpdateSubUserResoucesRequest struct {
 	*requests.RoaRequest
 }
 
+// UpdateSubUserResoucesResponse is the response struct for api UpdateSubUserResouces
 type UpdateSubUserResoucesResponse struct {
 	*responses.BaseResponse
 }
 
-// create a request to invoke UpdateSubUserResouces API
-func CreateUpdateSubUserResoucesRequest() (request *UpdateSubUserResoucesRequest) {
+// CreateUpdateSubUserResoucesRequest creates a request to invoke UpdateSubUserResouces API
+func CreateUpdateSubUserResoucesRequest(request *UpdateSubUserResoucesRequest) {
 	request = &UpdateSubUserResoucesRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
@@ -91,7 +93,7 @@ func CreateUpdateSubUserResoucesRequest() (request *UpdateSubUserResoucesRequest
 	return
 }
 
-// create a response to parse from UpdateSubUserResouces response
+// CreateUpdateSubUserResoucesResponse creates a response to parse from UpdateSubUserResouces response
 func CreateUpdateSubUserResoucesResponse() (response *UpdateSubUserResoucesResponse) {
 	response = &UpdateSubUserResoucesResponse{
 		BaseResponse: &responses.BaseResponse{},

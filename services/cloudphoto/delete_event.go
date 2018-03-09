@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteEvent api with *DeleteEventRequest synchronously
+// DeleteEvent invokes the cloudphoto.DeleteEvent API synchronously
 // api document: https://help.aliyun.com/api/cloudphoto/deleteevent.html
 func (client *Client) DeleteEvent(request *DeleteEventRequest) (response *DeleteEventResponse, err error) {
 	response = CreateDeleteEventResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteEvent(request *DeleteEventRequest) (response *Delete
 	return
 }
 
-// invoke DeleteEvent api with *DeleteEventRequest asynchronously
+// DeleteEventWithChan invokes the cloudphoto.DeleteEvent API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/deleteevent.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteEventWithChan(request *DeleteEventRequest) (<-chan *DeleteEventResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteEventWithChan(request *DeleteEventRequest) (<-chan *
 	return responseChan, errChan
 }
 
-// invoke DeleteEvent api with *DeleteEventRequest asynchronously
+// DeleteEventWithCallback invokes the cloudphoto.DeleteEvent API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/deleteevent.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteEventWithCallback(request *DeleteEventRequest, callback func(response *DeleteEventResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DeleteEventWithCallback(request *DeleteEventRequest, callb
 	return result
 }
 
+// DeleteEventRequest is the request struct for api DeleteEvent
 type DeleteEventRequest struct {
 	*requests.RpcRequest
 	EventId   requests.Integer `position:"Query" name:"EventId"`
@@ -80,6 +81,7 @@ type DeleteEventRequest struct {
 	LibraryId string           `position:"Query" name:"LibraryId"`
 }
 
+// DeleteEventResponse is the response struct for api DeleteEvent
 type DeleteEventResponse struct {
 	*responses.BaseResponse
 	Code      string `json:"Code" xml:"Code"`
@@ -88,8 +90,8 @@ type DeleteEventResponse struct {
 	Action    string `json:"Action" xml:"Action"`
 }
 
-// create a request to invoke DeleteEvent API
-func CreateDeleteEventRequest() (request *DeleteEventRequest) {
+// CreateDeleteEventRequest creates a request to invoke DeleteEvent API
+func CreateDeleteEventRequest(request *DeleteEventRequest) {
 	request = &DeleteEventRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateDeleteEventRequest() (request *DeleteEventRequest) {
 	return
 }
 
-// create a response to parse from DeleteEvent response
+// CreateDeleteEventResponse creates a response to parse from DeleteEvent response
 func CreateDeleteEventResponse() (response *DeleteEventResponse) {
 	response = &DeleteEventResponse{
 		BaseResponse: &responses.BaseResponse{},

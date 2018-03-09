@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke NodeProcessCreate api with *NodeProcessCreateRequest synchronously
+// NodeProcessCreate invokes the cms.NodeProcessCreate API synchronously
 // api document: https://help.aliyun.com/api/cms/nodeprocesscreate.html
 func (client *Client) NodeProcessCreate(request *NodeProcessCreateRequest) (response *NodeProcessCreateResponse, err error) {
 	response = CreateNodeProcessCreateResponse()
@@ -28,7 +28,7 @@ func (client *Client) NodeProcessCreate(request *NodeProcessCreateRequest) (resp
 	return
 }
 
-// invoke NodeProcessCreate api with *NodeProcessCreateRequest asynchronously
+// NodeProcessCreateWithChan invokes the cms.NodeProcessCreate API asynchronously
 // api document: https://help.aliyun.com/api/cms/nodeprocesscreate.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) NodeProcessCreateWithChan(request *NodeProcessCreateRequest) (<-chan *NodeProcessCreateResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) NodeProcessCreateWithChan(request *NodeProcessCreateReques
 	return responseChan, errChan
 }
 
-// invoke NodeProcessCreate api with *NodeProcessCreateRequest asynchronously
+// NodeProcessCreateWithCallback invokes the cms.NodeProcessCreate API asynchronously
 // api document: https://help.aliyun.com/api/cms/nodeprocesscreate.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) NodeProcessCreateWithCallback(request *NodeProcessCreateRequest, callback func(response *NodeProcessCreateResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) NodeProcessCreateWithCallback(request *NodeProcessCreateRe
 	return result
 }
 
+// NodeProcessCreateRequest is the request struct for api NodeProcessCreate
 type NodeProcessCreateRequest struct {
 	*requests.RpcRequest
 	InstanceId  string `position:"Query" name:"InstanceId"`
@@ -82,6 +83,7 @@ type NodeProcessCreateRequest struct {
 	Command     string `position:"Query" name:"Command"`
 }
 
+// NodeProcessCreateResponse is the response struct for api NodeProcessCreate
 type NodeProcessCreateResponse struct {
 	*responses.BaseResponse
 	ErrorCode    int    `json:"ErrorCode" xml:"ErrorCode"`
@@ -90,8 +92,8 @@ type NodeProcessCreateResponse struct {
 	RequestId    string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke NodeProcessCreate API
-func CreateNodeProcessCreateRequest() (request *NodeProcessCreateRequest) {
+// CreateNodeProcessCreateRequest creates a request to invoke NodeProcessCreate API
+func CreateNodeProcessCreateRequest(request *NodeProcessCreateRequest) {
 	request = &NodeProcessCreateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateNodeProcessCreateRequest() (request *NodeProcessCreateRequest) {
 	return
 }
 
-// create a response to parse from NodeProcessCreate response
+// CreateNodeProcessCreateResponse creates a response to parse from NodeProcessCreate response
 func CreateNodeProcessCreateResponse() (response *NodeProcessCreateResponse) {
 	response = &NodeProcessCreateResponse{
 		BaseResponse: &responses.BaseResponse{},

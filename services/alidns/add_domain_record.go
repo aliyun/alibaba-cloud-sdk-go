@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke AddDomainRecord api with *AddDomainRecordRequest synchronously
+// AddDomainRecord invokes the alidns.AddDomainRecord API synchronously
 // api document: https://help.aliyun.com/api/alidns/adddomainrecord.html
 func (client *Client) AddDomainRecord(request *AddDomainRecordRequest) (response *AddDomainRecordResponse, err error) {
 	response = CreateAddDomainRecordResponse()
@@ -28,7 +28,7 @@ func (client *Client) AddDomainRecord(request *AddDomainRecordRequest) (response
 	return
 }
 
-// invoke AddDomainRecord api with *AddDomainRecordRequest asynchronously
+// AddDomainRecordWithChan invokes the alidns.AddDomainRecord API asynchronously
 // api document: https://help.aliyun.com/api/alidns/adddomainrecord.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddDomainRecordWithChan(request *AddDomainRecordRequest) (<-chan *AddDomainRecordResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) AddDomainRecordWithChan(request *AddDomainRecordRequest) (
 	return responseChan, errChan
 }
 
-// invoke AddDomainRecord api with *AddDomainRecordRequest asynchronously
+// AddDomainRecordWithCallback invokes the alidns.AddDomainRecord API asynchronously
 // api document: https://help.aliyun.com/api/alidns/adddomainrecord.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddDomainRecordWithCallback(request *AddDomainRecordRequest, callback func(response *AddDomainRecordResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) AddDomainRecordWithCallback(request *AddDomainRecordReques
 	return result
 }
 
+// AddDomainRecordRequest is the request struct for api AddDomainRecord
 type AddDomainRecordRequest struct {
 	*requests.RpcRequest
 	Lang         string           `position:"Query" name:"Lang"`
@@ -86,14 +87,15 @@ type AddDomainRecordRequest struct {
 	Line         string           `position:"Query" name:"Line"`
 }
 
+// AddDomainRecordResponse is the response struct for api AddDomainRecord
 type AddDomainRecordResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	RecordId  string `json:"RecordId" xml:"RecordId"`
 }
 
-// create a request to invoke AddDomainRecord API
-func CreateAddDomainRecordRequest() (request *AddDomainRecordRequest) {
+// CreateAddDomainRecordRequest creates a request to invoke AddDomainRecord API
+func CreateAddDomainRecordRequest(request *AddDomainRecordRequest) {
 	request = &AddDomainRecordRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -101,7 +103,7 @@ func CreateAddDomainRecordRequest() (request *AddDomainRecordRequest) {
 	return
 }
 
-// create a response to parse from AddDomainRecord response
+// CreateAddDomainRecordResponse creates a response to parse from AddDomainRecord response
 func CreateAddDomainRecordResponse() (response *AddDomainRecordResponse) {
 	response = &AddDomainRecordResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifyDiskAttribute api with *ModifyDiskAttributeRequest synchronously
+// ModifyDiskAttribute invokes the ecs.ModifyDiskAttribute API synchronously
 // api document: https://help.aliyun.com/api/ecs/modifydiskattribute.html
 func (client *Client) ModifyDiskAttribute(request *ModifyDiskAttributeRequest) (response *ModifyDiskAttributeResponse, err error) {
 	response = CreateModifyDiskAttributeResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifyDiskAttribute(request *ModifyDiskAttributeRequest) (
 	return
 }
 
-// invoke ModifyDiskAttribute api with *ModifyDiskAttributeRequest asynchronously
+// ModifyDiskAttributeWithChan invokes the ecs.ModifyDiskAttribute API asynchronously
 // api document: https://help.aliyun.com/api/ecs/modifydiskattribute.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDiskAttributeWithChan(request *ModifyDiskAttributeRequest) (<-chan *ModifyDiskAttributeResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifyDiskAttributeWithChan(request *ModifyDiskAttributeRe
 	return responseChan, errChan
 }
 
-// invoke ModifyDiskAttribute api with *ModifyDiskAttributeRequest asynchronously
+// ModifyDiskAttributeWithCallback invokes the ecs.ModifyDiskAttribute API asynchronously
 // api document: https://help.aliyun.com/api/ecs/modifydiskattribute.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDiskAttributeWithCallback(request *ModifyDiskAttributeRequest, callback func(response *ModifyDiskAttributeResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ModifyDiskAttributeWithCallback(request *ModifyDiskAttribu
 	return result
 }
 
+// ModifyDiskAttributeRequest is the request struct for api ModifyDiskAttribute
 type ModifyDiskAttributeRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -87,13 +88,14 @@ type ModifyDiskAttributeRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// ModifyDiskAttributeResponse is the response struct for api ModifyDiskAttribute
 type ModifyDiskAttributeResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ModifyDiskAttribute API
-func CreateModifyDiskAttributeRequest() (request *ModifyDiskAttributeRequest) {
+// CreateModifyDiskAttributeRequest creates a request to invoke ModifyDiskAttribute API
+func CreateModifyDiskAttributeRequest(request *ModifyDiskAttributeRequest) {
 	request = &ModifyDiskAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -101,7 +103,7 @@ func CreateModifyDiskAttributeRequest() (request *ModifyDiskAttributeRequest) {
 	return
 }
 
-// create a response to parse from ModifyDiskAttribute response
+// CreateModifyDiskAttributeResponse creates a response to parse from ModifyDiskAttribute response
 func CreateModifyDiskAttributeResponse() (response *ModifyDiskAttributeResponse) {
 	response = &ModifyDiskAttributeResponse{
 		BaseResponse: &responses.BaseResponse{},

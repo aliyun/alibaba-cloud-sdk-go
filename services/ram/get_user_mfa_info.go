@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke GetUserMFAInfo api with *GetUserMFAInfoRequest synchronously
+// GetUserMFAInfo invokes the ram.GetUserMFAInfo API synchronously
 // api document: https://help.aliyun.com/api/ram/getusermfainfo.html
 func (client *Client) GetUserMFAInfo(request *GetUserMFAInfoRequest) (response *GetUserMFAInfoResponse, err error) {
 	response = CreateGetUserMFAInfoResponse()
@@ -28,7 +28,7 @@ func (client *Client) GetUserMFAInfo(request *GetUserMFAInfoRequest) (response *
 	return
 }
 
-// invoke GetUserMFAInfo api with *GetUserMFAInfoRequest asynchronously
+// GetUserMFAInfoWithChan invokes the ram.GetUserMFAInfo API asynchronously
 // api document: https://help.aliyun.com/api/ram/getusermfainfo.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetUserMFAInfoWithChan(request *GetUserMFAInfoRequest) (<-chan *GetUserMFAInfoResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) GetUserMFAInfoWithChan(request *GetUserMFAInfoRequest) (<-
 	return responseChan, errChan
 }
 
-// invoke GetUserMFAInfo api with *GetUserMFAInfoRequest asynchronously
+// GetUserMFAInfoWithCallback invokes the ram.GetUserMFAInfo API asynchronously
 // api document: https://help.aliyun.com/api/ram/getusermfainfo.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetUserMFAInfoWithCallback(request *GetUserMFAInfoRequest, callback func(response *GetUserMFAInfoResponse, err error)) <-chan int {
@@ -73,19 +73,21 @@ func (client *Client) GetUserMFAInfoWithCallback(request *GetUserMFAInfoRequest,
 	return result
 }
 
+// GetUserMFAInfoRequest is the request struct for api GetUserMFAInfo
 type GetUserMFAInfoRequest struct {
 	*requests.RpcRequest
 	UserName string `position:"Query" name:"UserName"`
 }
 
+// GetUserMFAInfoResponse is the response struct for api GetUserMFAInfo
 type GetUserMFAInfoResponse struct {
 	*responses.BaseResponse
 	RequestId string    `json:"RequestId" xml:"RequestId"`
 	MFADevice MFADevice `json:"MFADevice" xml:"MFADevice"`
 }
 
-// create a request to invoke GetUserMFAInfo API
-func CreateGetUserMFAInfoRequest() (request *GetUserMFAInfoRequest) {
+// CreateGetUserMFAInfoRequest creates a request to invoke GetUserMFAInfo API
+func CreateGetUserMFAInfoRequest(request *GetUserMFAInfoRequest) {
 	request = &GetUserMFAInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -93,7 +95,7 @@ func CreateGetUserMFAInfoRequest() (request *GetUserMFAInfoRequest) {
 	return
 }
 
-// create a response to parse from GetUserMFAInfo response
+// CreateGetUserMFAInfoResponse creates a response to parse from GetUserMFAInfo response
 func CreateGetUserMFAInfoResponse() (response *GetUserMFAInfoResponse) {
 	response = &GetUserMFAInfoResponse{
 		BaseResponse: &responses.BaseResponse{},

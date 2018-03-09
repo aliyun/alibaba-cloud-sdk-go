@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeFlowBlockholeStatus api with *DescribeFlowBlockholeStatusRequest synchronously
+// DescribeFlowBlockholeStatus invokes the ddospro.DescribeFlowBlockholeStatus API synchronously
 // api document: https://help.aliyun.com/api/ddospro/describeflowblockholestatus.html
 func (client *Client) DescribeFlowBlockholeStatus(request *DescribeFlowBlockholeStatusRequest) (response *DescribeFlowBlockholeStatusResponse, err error) {
 	response = CreateDescribeFlowBlockholeStatusResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeFlowBlockholeStatus(request *DescribeFlowBlockhole
 	return
 }
 
-// invoke DescribeFlowBlockholeStatus api with *DescribeFlowBlockholeStatusRequest asynchronously
+// DescribeFlowBlockholeStatusWithChan invokes the ddospro.DescribeFlowBlockholeStatus API asynchronously
 // api document: https://help.aliyun.com/api/ddospro/describeflowblockholestatus.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeFlowBlockholeStatusWithChan(request *DescribeFlowBlockholeStatusRequest) (<-chan *DescribeFlowBlockholeStatusResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeFlowBlockholeStatusWithChan(request *DescribeFlowB
 	return responseChan, errChan
 }
 
-// invoke DescribeFlowBlockholeStatus api with *DescribeFlowBlockholeStatusRequest asynchronously
+// DescribeFlowBlockholeStatusWithCallback invokes the ddospro.DescribeFlowBlockholeStatus API asynchronously
 // api document: https://help.aliyun.com/api/ddospro/describeflowblockholestatus.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeFlowBlockholeStatusWithCallback(request *DescribeFlowBlockholeStatusRequest, callback func(response *DescribeFlowBlockholeStatusResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeFlowBlockholeStatusWithCallback(request *DescribeF
 	return result
 }
 
+// DescribeFlowBlockholeStatusRequest is the request struct for api DescribeFlowBlockholeStatus
 type DescribeFlowBlockholeStatusRequest struct {
 	*requests.RpcRequest
 	SourceIp        string           `position:"Query" name:"SourceIp"`
@@ -80,14 +81,15 @@ type DescribeFlowBlockholeStatusRequest struct {
 	Vips            *[]string        `position:"Query" name:"Vips"  type:"Repeated"`
 }
 
+// DescribeFlowBlockholeStatusResponse is the response struct for api DescribeFlowBlockholeStatus
 type DescribeFlowBlockholeStatusResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Data      []Data `json:"Data" xml:"Data"`
 }
 
-// create a request to invoke DescribeFlowBlockholeStatus API
-func CreateDescribeFlowBlockholeStatusRequest() (request *DescribeFlowBlockholeStatusRequest) {
+// CreateDescribeFlowBlockholeStatusRequest creates a request to invoke DescribeFlowBlockholeStatus API
+func CreateDescribeFlowBlockholeStatusRequest(request *DescribeFlowBlockholeStatusRequest) {
 	request = &DescribeFlowBlockholeStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateDescribeFlowBlockholeStatusRequest() (request *DescribeFlowBlockholeS
 	return
 }
 
-// create a response to parse from DescribeFlowBlockholeStatus response
+// CreateDescribeFlowBlockholeStatusResponse creates a response to parse from DescribeFlowBlockholeStatus response
 func CreateDescribeFlowBlockholeStatusResponse() (response *DescribeFlowBlockholeStatusResponse) {
 	response = &DescribeFlowBlockholeStatusResponse{
 		BaseResponse: &responses.BaseResponse{},

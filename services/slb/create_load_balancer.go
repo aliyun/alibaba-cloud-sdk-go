@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CreateLoadBalancer api with *CreateLoadBalancerRequest synchronously
+// CreateLoadBalancer invokes the slb.CreateLoadBalancer API synchronously
 // api document: https://help.aliyun.com/api/slb/createloadbalancer.html
 func (client *Client) CreateLoadBalancer(request *CreateLoadBalancerRequest) (response *CreateLoadBalancerResponse, err error) {
 	response = CreateCreateLoadBalancerResponse()
@@ -28,7 +28,7 @@ func (client *Client) CreateLoadBalancer(request *CreateLoadBalancerRequest) (re
 	return
 }
 
-// invoke CreateLoadBalancer api with *CreateLoadBalancerRequest asynchronously
+// CreateLoadBalancerWithChan invokes the slb.CreateLoadBalancer API asynchronously
 // api document: https://help.aliyun.com/api/slb/createloadbalancer.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateLoadBalancerWithChan(request *CreateLoadBalancerRequest) (<-chan *CreateLoadBalancerResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CreateLoadBalancerWithChan(request *CreateLoadBalancerRequ
 	return responseChan, errChan
 }
 
-// invoke CreateLoadBalancer api with *CreateLoadBalancerRequest asynchronously
+// CreateLoadBalancerWithCallback invokes the slb.CreateLoadBalancer API asynchronously
 // api document: https://help.aliyun.com/api/slb/createloadbalancer.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateLoadBalancerWithCallback(request *CreateLoadBalancerRequest, callback func(response *CreateLoadBalancerResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) CreateLoadBalancerWithCallback(request *CreateLoadBalancer
 	return result
 }
 
+// CreateLoadBalancerRequest is the request struct for api CreateLoadBalancer
 type CreateLoadBalancerRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -99,6 +100,7 @@ type CreateLoadBalancerRequest struct {
 	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`
 }
 
+// CreateLoadBalancerResponse is the response struct for api CreateLoadBalancer
 type CreateLoadBalancerResponse struct {
 	*responses.BaseResponse
 	RequestId        string `json:"RequestId" xml:"RequestId"`
@@ -112,8 +114,8 @@ type CreateLoadBalancerResponse struct {
 	OrderId          int    `json:"OrderId" xml:"OrderId"`
 }
 
-// create a request to invoke CreateLoadBalancer API
-func CreateCreateLoadBalancerRequest() (request *CreateLoadBalancerRequest) {
+// CreateCreateLoadBalancerRequest creates a request to invoke CreateLoadBalancer API
+func CreateCreateLoadBalancerRequest(request *CreateLoadBalancerRequest) {
 	request = &CreateLoadBalancerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -121,7 +123,7 @@ func CreateCreateLoadBalancerRequest() (request *CreateLoadBalancerRequest) {
 	return
 }
 
-// create a response to parse from CreateLoadBalancer response
+// CreateCreateLoadBalancerResponse creates a response to parse from CreateLoadBalancer response
 func CreateCreateLoadBalancerResponse() (response *CreateLoadBalancerResponse) {
 	response = &CreateLoadBalancerResponse{
 		BaseResponse: &responses.BaseResponse{},

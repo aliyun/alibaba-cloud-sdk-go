@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DownloadClusterNodeCerts api with *DownloadClusterNodeCertsRequest synchronously
+// DownloadClusterNodeCerts invokes the cs.DownloadClusterNodeCerts API synchronously
 // api document: https://help.aliyun.com/api/cs/downloadclusternodecerts.html
 func (client *Client) DownloadClusterNodeCerts(request *DownloadClusterNodeCertsRequest) (response *DownloadClusterNodeCertsResponse, err error) {
 	response = CreateDownloadClusterNodeCertsResponse()
@@ -28,7 +28,7 @@ func (client *Client) DownloadClusterNodeCerts(request *DownloadClusterNodeCerts
 	return
 }
 
-// invoke DownloadClusterNodeCerts api with *DownloadClusterNodeCertsRequest asynchronously
+// DownloadClusterNodeCertsWithChan invokes the cs.DownloadClusterNodeCerts API asynchronously
 // api document: https://help.aliyun.com/api/cs/downloadclusternodecerts.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DownloadClusterNodeCertsWithChan(request *DownloadClusterNodeCertsRequest) (<-chan *DownloadClusterNodeCertsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DownloadClusterNodeCertsWithChan(request *DownloadClusterN
 	return responseChan, errChan
 }
 
-// invoke DownloadClusterNodeCerts api with *DownloadClusterNodeCertsRequest asynchronously
+// DownloadClusterNodeCertsWithCallback invokes the cs.DownloadClusterNodeCerts API asynchronously
 // api document: https://help.aliyun.com/api/cs/downloadclusternodecerts.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DownloadClusterNodeCertsWithCallback(request *DownloadClusterNodeCertsRequest, callback func(response *DownloadClusterNodeCertsResponse, err error)) <-chan int {
@@ -73,18 +73,20 @@ func (client *Client) DownloadClusterNodeCertsWithCallback(request *DownloadClus
 	return result
 }
 
+// DownloadClusterNodeCertsRequest is the request struct for api DownloadClusterNodeCerts
 type DownloadClusterNodeCertsRequest struct {
 	*requests.RoaRequest
 	Token  string `position:"Path" name:"Token"`
 	NodeId string `position:"Path" name:"NodeId"`
 }
 
+// DownloadClusterNodeCertsResponse is the response struct for api DownloadClusterNodeCerts
 type DownloadClusterNodeCertsResponse struct {
 	*responses.BaseResponse
 }
 
-// create a request to invoke DownloadClusterNodeCerts API
-func CreateDownloadClusterNodeCertsRequest() (request *DownloadClusterNodeCertsRequest) {
+// CreateDownloadClusterNodeCertsRequest creates a request to invoke DownloadClusterNodeCerts API
+func CreateDownloadClusterNodeCertsRequest(request *DownloadClusterNodeCertsRequest) {
 	request = &DownloadClusterNodeCertsRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
@@ -93,7 +95,7 @@ func CreateDownloadClusterNodeCertsRequest() (request *DownloadClusterNodeCertsR
 	return
 }
 
-// create a response to parse from DownloadClusterNodeCerts response
+// CreateDownloadClusterNodeCertsResponse creates a response to parse from DownloadClusterNodeCerts response
 func CreateDownloadClusterNodeCertsResponse() (response *DownloadClusterNodeCertsResponse) {
 	response = &DownloadClusterNodeCertsResponse{
 		BaseResponse: &responses.BaseResponse{},

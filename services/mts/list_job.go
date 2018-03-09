@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ListJob api with *ListJobRequest synchronously
+// ListJob invokes the mts.ListJob API synchronously
 // api document: https://help.aliyun.com/api/mts/listjob.html
 func (client *Client) ListJob(request *ListJobRequest) (response *ListJobResponse, err error) {
 	response = CreateListJobResponse()
@@ -28,7 +28,7 @@ func (client *Client) ListJob(request *ListJobRequest) (response *ListJobRespons
 	return
 }
 
-// invoke ListJob api with *ListJobRequest asynchronously
+// ListJobWithChan invokes the mts.ListJob API asynchronously
 // api document: https://help.aliyun.com/api/mts/listjob.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListJobWithChan(request *ListJobRequest) (<-chan *ListJobResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ListJobWithChan(request *ListJobRequest) (<-chan *ListJobR
 	return responseChan, errChan
 }
 
-// invoke ListJob api with *ListJobRequest asynchronously
+// ListJobWithCallback invokes the mts.ListJob API asynchronously
 // api document: https://help.aliyun.com/api/mts/listjob.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListJobWithCallback(request *ListJobRequest, callback func(response *ListJobResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ListJobWithCallback(request *ListJobRequest, callback func
 	return result
 }
 
+// ListJobRequest is the request struct for api ListJob
 type ListJobRequest struct {
 	*requests.RpcRequest
 	OwnerId                    requests.Integer `position:"Query" name:"OwnerId"`
@@ -87,6 +88,7 @@ type ListJobRequest struct {
 	OwnerAccount               string           `position:"Query" name:"OwnerAccount"`
 }
 
+// ListJobResponse is the response struct for api ListJob
 type ListJobResponse struct {
 	*responses.BaseResponse
 	RequestId     string           `json:"RequestId" xml:"RequestId"`
@@ -94,8 +96,8 @@ type ListJobResponse struct {
 	JobList       JobListInListJob `json:"JobList" xml:"JobList"`
 }
 
-// create a request to invoke ListJob API
-func CreateListJobRequest() (request *ListJobRequest) {
+// CreateListJobRequest creates a request to invoke ListJob API
+func CreateListJobRequest(request *ListJobRequest) {
 	request = &ListJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -103,7 +105,7 @@ func CreateListJobRequest() (request *ListJobRequest) {
 	return
 }
 
-// create a response to parse from ListJob response
+// CreateListJobResponse creates a response to parse from ListJob response
 func CreateListJobResponse() (response *ListJobResponse) {
 	response = &ListJobResponse{
 		BaseResponse: &responses.BaseResponse{},

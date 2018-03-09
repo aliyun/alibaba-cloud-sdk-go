@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeImageSharePermission api with *DescribeImageSharePermissionRequest synchronously
+// DescribeImageSharePermission invokes the ecs.DescribeImageSharePermission API synchronously
 // api document: https://help.aliyun.com/api/ecs/describeimagesharepermission.html
 func (client *Client) DescribeImageSharePermission(request *DescribeImageSharePermissionRequest) (response *DescribeImageSharePermissionResponse, err error) {
 	response = CreateDescribeImageSharePermissionResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeImageSharePermission(request *DescribeImageSharePe
 	return
 }
 
-// invoke DescribeImageSharePermission api with *DescribeImageSharePermissionRequest asynchronously
+// DescribeImageSharePermissionWithChan invokes the ecs.DescribeImageSharePermission API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describeimagesharepermission.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeImageSharePermissionWithChan(request *DescribeImageSharePermissionRequest) (<-chan *DescribeImageSharePermissionResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeImageSharePermissionWithChan(request *DescribeImag
 	return responseChan, errChan
 }
 
-// invoke DescribeImageSharePermission api with *DescribeImageSharePermissionRequest asynchronously
+// DescribeImageSharePermissionWithCallback invokes the ecs.DescribeImageSharePermission API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describeimagesharepermission.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeImageSharePermissionWithCallback(request *DescribeImageSharePermissionRequest, callback func(response *DescribeImageSharePermissionResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeImageSharePermissionWithCallback(request *Describe
 	return result
 }
 
+// DescribeImageSharePermissionRequest is the request struct for api DescribeImageSharePermission
 type DescribeImageSharePermissionRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,6 +85,7 @@ type DescribeImageSharePermissionRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// DescribeImageSharePermissionResponse is the response struct for api DescribeImageSharePermission
 type DescribeImageSharePermissionResponse struct {
 	*responses.BaseResponse
 	RequestId   string      `json:"RequestId" xml:"RequestId"`
@@ -96,8 +98,8 @@ type DescribeImageSharePermissionResponse struct {
 	Accounts    Accounts    `json:"Accounts" xml:"Accounts"`
 }
 
-// create a request to invoke DescribeImageSharePermission API
-func CreateDescribeImageSharePermissionRequest() (request *DescribeImageSharePermissionRequest) {
+// CreateDescribeImageSharePermissionRequest creates a request to invoke DescribeImageSharePermission API
+func CreateDescribeImageSharePermissionRequest(request *DescribeImageSharePermissionRequest) {
 	request = &DescribeImageSharePermissionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -105,7 +107,7 @@ func CreateDescribeImageSharePermissionRequest() (request *DescribeImageSharePer
 	return
 }
 
-// create a response to parse from DescribeImageSharePermission response
+// CreateDescribeImageSharePermissionResponse creates a response to parse from DescribeImageSharePermission response
 func CreateDescribeImageSharePermissionResponse() (response *DescribeImageSharePermissionResponse) {
 	response = &DescribeImageSharePermissionResponse{
 		BaseResponse: &responses.BaseResponse{},

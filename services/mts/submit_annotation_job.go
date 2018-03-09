@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SubmitAnnotationJob api with *SubmitAnnotationJobRequest synchronously
+// SubmitAnnotationJob invokes the mts.SubmitAnnotationJob API synchronously
 // api document: https://help.aliyun.com/api/mts/submitannotationjob.html
 func (client *Client) SubmitAnnotationJob(request *SubmitAnnotationJobRequest) (response *SubmitAnnotationJobResponse, err error) {
 	response = CreateSubmitAnnotationJobResponse()
@@ -28,7 +28,7 @@ func (client *Client) SubmitAnnotationJob(request *SubmitAnnotationJobRequest) (
 	return
 }
 
-// invoke SubmitAnnotationJob api with *SubmitAnnotationJobRequest asynchronously
+// SubmitAnnotationJobWithChan invokes the mts.SubmitAnnotationJob API asynchronously
 // api document: https://help.aliyun.com/api/mts/submitannotationjob.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitAnnotationJobWithChan(request *SubmitAnnotationJobRequest) (<-chan *SubmitAnnotationJobResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SubmitAnnotationJobWithChan(request *SubmitAnnotationJobRe
 	return responseChan, errChan
 }
 
-// invoke SubmitAnnotationJob api with *SubmitAnnotationJobRequest asynchronously
+// SubmitAnnotationJobWithCallback invokes the mts.SubmitAnnotationJob API asynchronously
 // api document: https://help.aliyun.com/api/mts/submitannotationjob.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitAnnotationJobWithCallback(request *SubmitAnnotationJobRequest, callback func(response *SubmitAnnotationJobResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SubmitAnnotationJobWithCallback(request *SubmitAnnotationJ
 	return result
 }
 
+// SubmitAnnotationJobRequest is the request struct for api SubmitAnnotationJob
 type SubmitAnnotationJobRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -85,14 +86,15 @@ type SubmitAnnotationJobRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// SubmitAnnotationJobResponse is the response struct for api SubmitAnnotationJob
 type SubmitAnnotationJobResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	JobId     string `json:"JobId" xml:"JobId"`
 }
 
-// create a request to invoke SubmitAnnotationJob API
-func CreateSubmitAnnotationJobRequest() (request *SubmitAnnotationJobRequest) {
+// CreateSubmitAnnotationJobRequest creates a request to invoke SubmitAnnotationJob API
+func CreateSubmitAnnotationJobRequest(request *SubmitAnnotationJobRequest) {
 	request = &SubmitAnnotationJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -100,7 +102,7 @@ func CreateSubmitAnnotationJobRequest() (request *SubmitAnnotationJobRequest) {
 	return
 }
 
-// create a response to parse from SubmitAnnotationJob response
+// CreateSubmitAnnotationJobResponse creates a response to parse from SubmitAnnotationJob response
 func CreateSubmitAnnotationJobResponse() (response *SubmitAnnotationJobResponse) {
 	response = &SubmitAnnotationJobResponse{
 		BaseResponse: &responses.BaseResponse{},

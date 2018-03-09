@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeScalingConfigurations api with *DescribeScalingConfigurationsRequest synchronously
+// DescribeScalingConfigurations invokes the ess.DescribeScalingConfigurations API synchronously
 // api document: https://help.aliyun.com/api/ess/describescalingconfigurations.html
 func (client *Client) DescribeScalingConfigurations(request *DescribeScalingConfigurationsRequest) (response *DescribeScalingConfigurationsResponse, err error) {
 	response = CreateDescribeScalingConfigurationsResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeScalingConfigurations(request *DescribeScalingConf
 	return
 }
 
-// invoke DescribeScalingConfigurations api with *DescribeScalingConfigurationsRequest asynchronously
+// DescribeScalingConfigurationsWithChan invokes the ess.DescribeScalingConfigurations API asynchronously
 // api document: https://help.aliyun.com/api/ess/describescalingconfigurations.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeScalingConfigurationsWithChan(request *DescribeScalingConfigurationsRequest) (<-chan *DescribeScalingConfigurationsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeScalingConfigurationsWithChan(request *DescribeSca
 	return responseChan, errChan
 }
 
-// invoke DescribeScalingConfigurations api with *DescribeScalingConfigurationsRequest asynchronously
+// DescribeScalingConfigurationsWithCallback invokes the ess.DescribeScalingConfigurations API asynchronously
 // api document: https://help.aliyun.com/api/ess/describescalingconfigurations.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeScalingConfigurationsWithCallback(request *DescribeScalingConfigurationsRequest, callback func(response *DescribeScalingConfigurationsResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeScalingConfigurationsWithCallback(request *Describ
 	return result
 }
 
+// DescribeScalingConfigurationsRequest is the request struct for api DescribeScalingConfigurations
 type DescribeScalingConfigurationsRequest struct {
 	*requests.RpcRequest
 	OwnerId                    requests.Integer `position:"Query" name:"OwnerId"`
@@ -104,6 +105,7 @@ type DescribeScalingConfigurationsRequest struct {
 	OwnerAccount               string           `position:"Query" name:"OwnerAccount"`
 }
 
+// DescribeScalingConfigurationsResponse is the response struct for api DescribeScalingConfigurations
 type DescribeScalingConfigurationsResponse struct {
 	*responses.BaseResponse
 	TotalCount            int                   `json:"TotalCount" xml:"TotalCount"`
@@ -113,8 +115,8 @@ type DescribeScalingConfigurationsResponse struct {
 	ScalingConfigurations ScalingConfigurations `json:"ScalingConfigurations" xml:"ScalingConfigurations"`
 }
 
-// create a request to invoke DescribeScalingConfigurations API
-func CreateDescribeScalingConfigurationsRequest() (request *DescribeScalingConfigurationsRequest) {
+// CreateDescribeScalingConfigurationsRequest creates a request to invoke DescribeScalingConfigurations API
+func CreateDescribeScalingConfigurationsRequest(request *DescribeScalingConfigurationsRequest) {
 	request = &DescribeScalingConfigurationsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -122,7 +124,7 @@ func CreateDescribeScalingConfigurationsRequest() (request *DescribeScalingConfi
 	return
 }
 
-// create a response to parse from DescribeScalingConfigurations response
+// CreateDescribeScalingConfigurationsResponse creates a response to parse from DescribeScalingConfigurations response
 func CreateDescribeScalingConfigurationsResponse() (response *DescribeScalingConfigurationsResponse) {
 	response = &DescribeScalingConfigurationsResponse{
 		BaseResponse: &responses.BaseResponse{},

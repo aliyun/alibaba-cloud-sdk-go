@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeletePublicKey api with *DeletePublicKeyRequest synchronously
+// DeletePublicKey invokes the ram.DeletePublicKey API synchronously
 // api document: https://help.aliyun.com/api/ram/deletepublickey.html
 func (client *Client) DeletePublicKey(request *DeletePublicKeyRequest) (response *DeletePublicKeyResponse, err error) {
 	response = CreateDeletePublicKeyResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeletePublicKey(request *DeletePublicKeyRequest) (response
 	return
 }
 
-// invoke DeletePublicKey api with *DeletePublicKeyRequest asynchronously
+// DeletePublicKeyWithChan invokes the ram.DeletePublicKey API asynchronously
 // api document: https://help.aliyun.com/api/ram/deletepublickey.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeletePublicKeyWithChan(request *DeletePublicKeyRequest) (<-chan *DeletePublicKeyResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeletePublicKeyWithChan(request *DeletePublicKeyRequest) (
 	return responseChan, errChan
 }
 
-// invoke DeletePublicKey api with *DeletePublicKeyRequest asynchronously
+// DeletePublicKeyWithCallback invokes the ram.DeletePublicKey API asynchronously
 // api document: https://help.aliyun.com/api/ram/deletepublickey.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeletePublicKeyWithCallback(request *DeletePublicKeyRequest, callback func(response *DeletePublicKeyResponse, err error)) <-chan int {
@@ -73,19 +73,21 @@ func (client *Client) DeletePublicKeyWithCallback(request *DeletePublicKeyReques
 	return result
 }
 
+// DeletePublicKeyRequest is the request struct for api DeletePublicKey
 type DeletePublicKeyRequest struct {
 	*requests.RpcRequest
 	UserName        string `position:"Query" name:"UserName"`
 	UserPublicKeyId string `position:"Query" name:"UserPublicKeyId"`
 }
 
+// DeletePublicKeyResponse is the response struct for api DeletePublicKey
 type DeletePublicKeyResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DeletePublicKey API
-func CreateDeletePublicKeyRequest() (request *DeletePublicKeyRequest) {
+// CreateDeletePublicKeyRequest creates a request to invoke DeletePublicKey API
+func CreateDeletePublicKeyRequest(request *DeletePublicKeyRequest) {
 	request = &DeletePublicKeyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -93,7 +95,7 @@ func CreateDeletePublicKeyRequest() (request *DeletePublicKeyRequest) {
 	return
 }
 
-// create a response to parse from DeletePublicKey response
+// CreateDeletePublicKeyResponse creates a response to parse from DeletePublicKey response
 func CreateDeletePublicKeyResponse() (response *DeletePublicKeyResponse) {
 	response = &DeletePublicKeyResponse{
 		BaseResponse: &responses.BaseResponse{},

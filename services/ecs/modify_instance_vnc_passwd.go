@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifyInstanceVncPasswd api with *ModifyInstanceVncPasswdRequest synchronously
+// ModifyInstanceVncPasswd invokes the ecs.ModifyInstanceVncPasswd API synchronously
 // api document: https://help.aliyun.com/api/ecs/modifyinstancevncpasswd.html
 func (client *Client) ModifyInstanceVncPasswd(request *ModifyInstanceVncPasswdRequest) (response *ModifyInstanceVncPasswdResponse, err error) {
 	response = CreateModifyInstanceVncPasswdResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifyInstanceVncPasswd(request *ModifyInstanceVncPasswdRe
 	return
 }
 
-// invoke ModifyInstanceVncPasswd api with *ModifyInstanceVncPasswdRequest asynchronously
+// ModifyInstanceVncPasswdWithChan invokes the ecs.ModifyInstanceVncPasswd API asynchronously
 // api document: https://help.aliyun.com/api/ecs/modifyinstancevncpasswd.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyInstanceVncPasswdWithChan(request *ModifyInstanceVncPasswdRequest) (<-chan *ModifyInstanceVncPasswdResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifyInstanceVncPasswdWithChan(request *ModifyInstanceVnc
 	return responseChan, errChan
 }
 
-// invoke ModifyInstanceVncPasswd api with *ModifyInstanceVncPasswdRequest asynchronously
+// ModifyInstanceVncPasswdWithCallback invokes the ecs.ModifyInstanceVncPasswd API asynchronously
 // api document: https://help.aliyun.com/api/ecs/modifyinstancevncpasswd.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyInstanceVncPasswdWithCallback(request *ModifyInstanceVncPasswdRequest, callback func(response *ModifyInstanceVncPasswdResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ModifyInstanceVncPasswdWithCallback(request *ModifyInstanc
 	return result
 }
 
+// ModifyInstanceVncPasswdRequest is the request struct for api ModifyInstanceVncPasswd
 type ModifyInstanceVncPasswdRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -83,13 +84,14 @@ type ModifyInstanceVncPasswdRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// ModifyInstanceVncPasswdResponse is the response struct for api ModifyInstanceVncPasswd
 type ModifyInstanceVncPasswdResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ModifyInstanceVncPasswd API
-func CreateModifyInstanceVncPasswdRequest() (request *ModifyInstanceVncPasswdRequest) {
+// CreateModifyInstanceVncPasswdRequest creates a request to invoke ModifyInstanceVncPasswd API
+func CreateModifyInstanceVncPasswdRequest(request *ModifyInstanceVncPasswdRequest) {
 	request = &ModifyInstanceVncPasswdRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateModifyInstanceVncPasswdRequest() (request *ModifyInstanceVncPasswdReq
 	return
 }
 
-// create a response to parse from ModifyInstanceVncPasswd response
+// CreateModifyInstanceVncPasswdResponse creates a response to parse from ModifyInstanceVncPasswd response
 func CreateModifyInstanceVncPasswdResponse() (response *ModifyInstanceVncPasswdResponse) {
 	response = &ModifyInstanceVncPasswdResponse{
 		BaseResponse: &responses.BaseResponse{},

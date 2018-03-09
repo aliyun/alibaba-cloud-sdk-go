@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeactivateMediaWorkflow api with *DeactivateMediaWorkflowRequest synchronously
+// DeactivateMediaWorkflow invokes the mts.DeactivateMediaWorkflow API synchronously
 // api document: https://help.aliyun.com/api/mts/deactivatemediaworkflow.html
 func (client *Client) DeactivateMediaWorkflow(request *DeactivateMediaWorkflowRequest) (response *DeactivateMediaWorkflowResponse, err error) {
 	response = CreateDeactivateMediaWorkflowResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeactivateMediaWorkflow(request *DeactivateMediaWorkflowRe
 	return
 }
 
-// invoke DeactivateMediaWorkflow api with *DeactivateMediaWorkflowRequest asynchronously
+// DeactivateMediaWorkflowWithChan invokes the mts.DeactivateMediaWorkflow API asynchronously
 // api document: https://help.aliyun.com/api/mts/deactivatemediaworkflow.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeactivateMediaWorkflowWithChan(request *DeactivateMediaWorkflowRequest) (<-chan *DeactivateMediaWorkflowResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeactivateMediaWorkflowWithChan(request *DeactivateMediaWo
 	return responseChan, errChan
 }
 
-// invoke DeactivateMediaWorkflow api with *DeactivateMediaWorkflowRequest asynchronously
+// DeactivateMediaWorkflowWithCallback invokes the mts.DeactivateMediaWorkflow API asynchronously
 // api document: https://help.aliyun.com/api/mts/deactivatemediaworkflow.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeactivateMediaWorkflowWithCallback(request *DeactivateMediaWorkflowRequest, callback func(response *DeactivateMediaWorkflowResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DeactivateMediaWorkflowWithCallback(request *DeactivateMed
 	return result
 }
 
+// DeactivateMediaWorkflowRequest is the request struct for api DeactivateMediaWorkflow
 type DeactivateMediaWorkflowRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,14 +83,15 @@ type DeactivateMediaWorkflowRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// DeactivateMediaWorkflowResponse is the response struct for api DeactivateMediaWorkflow
 type DeactivateMediaWorkflowResponse struct {
 	*responses.BaseResponse
 	RequestId     string        `json:"RequestId" xml:"RequestId"`
 	MediaWorkflow MediaWorkflow `json:"MediaWorkflow" xml:"MediaWorkflow"`
 }
 
-// create a request to invoke DeactivateMediaWorkflow API
-func CreateDeactivateMediaWorkflowRequest() (request *DeactivateMediaWorkflowRequest) {
+// CreateDeactivateMediaWorkflowRequest creates a request to invoke DeactivateMediaWorkflow API
+func CreateDeactivateMediaWorkflowRequest(request *DeactivateMediaWorkflowRequest) {
 	request = &DeactivateMediaWorkflowRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateDeactivateMediaWorkflowRequest() (request *DeactivateMediaWorkflowReq
 	return
 }
 
-// create a response to parse from DeactivateMediaWorkflow response
+// CreateDeactivateMediaWorkflowResponse creates a response to parse from DeactivateMediaWorkflow response
 func CreateDeactivateMediaWorkflowResponse() (response *DeactivateMediaWorkflowResponse) {
 	response = &DeactivateMediaWorkflowResponse{
 		BaseResponse: &responses.BaseResponse{},

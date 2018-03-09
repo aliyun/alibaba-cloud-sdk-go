@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ListAllCategory api with *ListAllCategoryRequest synchronously
+// ListAllCategory invokes the mts.ListAllCategory API synchronously
 // api document: https://help.aliyun.com/api/mts/listallcategory.html
 func (client *Client) ListAllCategory(request *ListAllCategoryRequest) (response *ListAllCategoryResponse, err error) {
 	response = CreateListAllCategoryResponse()
@@ -28,7 +28,7 @@ func (client *Client) ListAllCategory(request *ListAllCategoryRequest) (response
 	return
 }
 
-// invoke ListAllCategory api with *ListAllCategoryRequest asynchronously
+// ListAllCategoryWithChan invokes the mts.ListAllCategory API asynchronously
 // api document: https://help.aliyun.com/api/mts/listallcategory.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAllCategoryWithChan(request *ListAllCategoryRequest) (<-chan *ListAllCategoryResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ListAllCategoryWithChan(request *ListAllCategoryRequest) (
 	return responseChan, errChan
 }
 
-// invoke ListAllCategory api with *ListAllCategoryRequest asynchronously
+// ListAllCategoryWithCallback invokes the mts.ListAllCategory API asynchronously
 // api document: https://help.aliyun.com/api/mts/listallcategory.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAllCategoryWithCallback(request *ListAllCategoryRequest, callback func(response *ListAllCategoryResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ListAllCategoryWithCallback(request *ListAllCategoryReques
 	return result
 }
 
+// ListAllCategoryRequest is the request struct for api ListAllCategory
 type ListAllCategoryRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -81,14 +82,15 @@ type ListAllCategoryRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// ListAllCategoryResponse is the response struct for api ListAllCategory
 type ListAllCategoryResponse struct {
 	*responses.BaseResponse
 	RequestId    string       `json:"RequestId" xml:"RequestId"`
 	CategoryList CategoryList `json:"CategoryList" xml:"CategoryList"`
 }
 
-// create a request to invoke ListAllCategory API
-func CreateListAllCategoryRequest() (request *ListAllCategoryRequest) {
+// CreateListAllCategoryRequest creates a request to invoke ListAllCategory API
+func CreateListAllCategoryRequest(request *ListAllCategoryRequest) {
 	request = &ListAllCategoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -96,7 +98,7 @@ func CreateListAllCategoryRequest() (request *ListAllCategoryRequest) {
 	return
 }
 
-// create a response to parse from ListAllCategory response
+// CreateListAllCategoryResponse creates a response to parse from ListAllCategory response
 func CreateListAllCategoryResponse() (response *ListAllCategoryResponse) {
 	response = &ListAllCategoryResponse{
 		BaseResponse: &responses.BaseResponse{},

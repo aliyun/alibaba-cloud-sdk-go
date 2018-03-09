@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke UpgradeClusterComponents api with *UpgradeClusterComponentsRequest synchronously
+// UpgradeClusterComponents invokes the cs.UpgradeClusterComponents API synchronously
 // api document: https://help.aliyun.com/api/cs/upgradeclustercomponents.html
 func (client *Client) UpgradeClusterComponents(request *UpgradeClusterComponentsRequest) (response *UpgradeClusterComponentsResponse, err error) {
 	response = CreateUpgradeClusterComponentsResponse()
@@ -28,7 +28,7 @@ func (client *Client) UpgradeClusterComponents(request *UpgradeClusterComponents
 	return
 }
 
-// invoke UpgradeClusterComponents api with *UpgradeClusterComponentsRequest asynchronously
+// UpgradeClusterComponentsWithChan invokes the cs.UpgradeClusterComponents API asynchronously
 // api document: https://help.aliyun.com/api/cs/upgradeclustercomponents.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpgradeClusterComponentsWithChan(request *UpgradeClusterComponentsRequest) (<-chan *UpgradeClusterComponentsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) UpgradeClusterComponentsWithChan(request *UpgradeClusterCo
 	return responseChan, errChan
 }
 
-// invoke UpgradeClusterComponents api with *UpgradeClusterComponentsRequest asynchronously
+// UpgradeClusterComponentsWithCallback invokes the cs.UpgradeClusterComponents API asynchronously
 // api document: https://help.aliyun.com/api/cs/upgradeclustercomponents.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpgradeClusterComponentsWithCallback(request *UpgradeClusterComponentsRequest, callback func(response *UpgradeClusterComponentsResponse, err error)) <-chan int {
@@ -73,18 +73,20 @@ func (client *Client) UpgradeClusterComponentsWithCallback(request *UpgradeClust
 	return result
 }
 
+// UpgradeClusterComponentsRequest is the request struct for api UpgradeClusterComponents
 type UpgradeClusterComponentsRequest struct {
 	*requests.RoaRequest
 	ClusterId   string `position:"Path" name:"ClusterId"`
 	ComponentId string `position:"Path" name:"ComponentId"`
 }
 
+// UpgradeClusterComponentsResponse is the response struct for api UpgradeClusterComponents
 type UpgradeClusterComponentsResponse struct {
 	*responses.BaseResponse
 }
 
-// create a request to invoke UpgradeClusterComponents API
-func CreateUpgradeClusterComponentsRequest() (request *UpgradeClusterComponentsRequest) {
+// CreateUpgradeClusterComponentsRequest creates a request to invoke UpgradeClusterComponents API
+func CreateUpgradeClusterComponentsRequest(request *UpgradeClusterComponentsRequest) {
 	request = &UpgradeClusterComponentsRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
@@ -93,7 +95,7 @@ func CreateUpgradeClusterComponentsRequest() (request *UpgradeClusterComponentsR
 	return
 }
 
-// create a response to parse from UpgradeClusterComponents response
+// CreateUpgradeClusterComponentsResponse creates a response to parse from UpgradeClusterComponents response
 func CreateUpgradeClusterComponentsResponse() (response *UpgradeClusterComponentsResponse) {
 	response = &UpgradeClusterComponentsResponse{
 		BaseResponse: &responses.BaseResponse{},

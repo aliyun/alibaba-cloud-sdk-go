@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke GetAccountList api with *GetAccountListRequest synchronously
+// GetAccountList invokes the dm.GetAccountList API synchronously
 // api document: https://help.aliyun.com/api/dm/getaccountlist.html
 func (client *Client) GetAccountList(request *GetAccountListRequest) (response *GetAccountListResponse, err error) {
 	response = CreateGetAccountListResponse()
@@ -28,7 +28,7 @@ func (client *Client) GetAccountList(request *GetAccountListRequest) (response *
 	return
 }
 
-// invoke GetAccountList api with *GetAccountListRequest asynchronously
+// GetAccountListWithChan invokes the dm.GetAccountList API asynchronously
 // api document: https://help.aliyun.com/api/dm/getaccountlist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetAccountListWithChan(request *GetAccountListRequest) (<-chan *GetAccountListResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) GetAccountListWithChan(request *GetAccountListRequest) (<-
 	return responseChan, errChan
 }
 
-// invoke GetAccountList api with *GetAccountListRequest asynchronously
+// GetAccountListWithCallback invokes the dm.GetAccountList API asynchronously
 // api document: https://help.aliyun.com/api/dm/getaccountlist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetAccountListWithCallback(request *GetAccountListRequest, callback func(response *GetAccountListResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) GetAccountListWithCallback(request *GetAccountListRequest,
 	return result
 }
 
+// GetAccountListRequest is the request struct for api GetAccountList
 type GetAccountListRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -86,6 +87,7 @@ type GetAccountListRequest struct {
 	PageNumber           string           `position:"Query" name:"PageNumber"`
 }
 
+// GetAccountListResponse is the response struct for api GetAccountList
 type GetAccountListResponse struct {
 	*responses.BaseResponse
 	RequestId string               `json:"RequestId" xml:"RequestId"`
@@ -95,8 +97,8 @@ type GetAccountListResponse struct {
 	Data      DataInGetAccountList `json:"data" xml:"data"`
 }
 
-// create a request to invoke GetAccountList API
-func CreateGetAccountListRequest() (request *GetAccountListRequest) {
+// CreateGetAccountListRequest creates a request to invoke GetAccountList API
+func CreateGetAccountListRequest(request *GetAccountListRequest) {
 	request = &GetAccountListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -104,7 +106,7 @@ func CreateGetAccountListRequest() (request *GetAccountListRequest) {
 	return
 }
 
-// create a response to parse from GetAccountList response
+// CreateGetAccountListResponse creates a response to parse from GetAccountList response
 func CreateGetAccountListResponse() (response *GetAccountListResponse) {
 	response = &GetAccountListResponse{
 		BaseResponse: &responses.BaseResponse{},

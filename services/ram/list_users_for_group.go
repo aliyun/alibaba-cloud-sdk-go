@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ListUsersForGroup api with *ListUsersForGroupRequest synchronously
+// ListUsersForGroup invokes the ram.ListUsersForGroup API synchronously
 // api document: https://help.aliyun.com/api/ram/listusersforgroup.html
 func (client *Client) ListUsersForGroup(request *ListUsersForGroupRequest) (response *ListUsersForGroupResponse, err error) {
 	response = CreateListUsersForGroupResponse()
@@ -28,7 +28,7 @@ func (client *Client) ListUsersForGroup(request *ListUsersForGroupRequest) (resp
 	return
 }
 
-// invoke ListUsersForGroup api with *ListUsersForGroupRequest asynchronously
+// ListUsersForGroupWithChan invokes the ram.ListUsersForGroup API asynchronously
 // api document: https://help.aliyun.com/api/ram/listusersforgroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListUsersForGroupWithChan(request *ListUsersForGroupRequest) (<-chan *ListUsersForGroupResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ListUsersForGroupWithChan(request *ListUsersForGroupReques
 	return responseChan, errChan
 }
 
-// invoke ListUsersForGroup api with *ListUsersForGroupRequest asynchronously
+// ListUsersForGroupWithCallback invokes the ram.ListUsersForGroup API asynchronously
 // api document: https://help.aliyun.com/api/ram/listusersforgroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListUsersForGroupWithCallback(request *ListUsersForGroupRequest, callback func(response *ListUsersForGroupResponse, err error)) <-chan int {
@@ -73,19 +73,21 @@ func (client *Client) ListUsersForGroupWithCallback(request *ListUsersForGroupRe
 	return result
 }
 
+// ListUsersForGroupRequest is the request struct for api ListUsersForGroup
 type ListUsersForGroupRequest struct {
 	*requests.RpcRequest
 	GroupName string `position:"Query" name:"GroupName"`
 }
 
+// ListUsersForGroupResponse is the response struct for api ListUsersForGroup
 type ListUsersForGroupResponse struct {
 	*responses.BaseResponse
 	RequestId string                   `json:"RequestId" xml:"RequestId"`
 	Users     UsersInListUsersForGroup `json:"Users" xml:"Users"`
 }
 
-// create a request to invoke ListUsersForGroup API
-func CreateListUsersForGroupRequest() (request *ListUsersForGroupRequest) {
+// CreateListUsersForGroupRequest creates a request to invoke ListUsersForGroup API
+func CreateListUsersForGroupRequest(request *ListUsersForGroupRequest) {
 	request = &ListUsersForGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -93,7 +95,7 @@ func CreateListUsersForGroupRequest() (request *ListUsersForGroupRequest) {
 	return
 }
 
-// create a response to parse from ListUsersForGroup response
+// CreateListUsersForGroupResponse creates a response to parse from ListUsersForGroup response
 func CreateListUsersForGroupResponse() (response *ListUsersForGroupResponse) {
 	response = &ListUsersForGroupResponse{
 		BaseResponse: &responses.BaseResponse{},

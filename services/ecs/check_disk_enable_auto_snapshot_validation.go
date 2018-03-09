@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CheckDiskEnableAutoSnapshotValidation api with *CheckDiskEnableAutoSnapshotValidationRequest synchronously
+// CheckDiskEnableAutoSnapshotValidation invokes the ecs.CheckDiskEnableAutoSnapshotValidation API synchronously
 // api document: https://help.aliyun.com/api/ecs/checkdiskenableautosnapshotvalidation.html
 func (client *Client) CheckDiskEnableAutoSnapshotValidation(request *CheckDiskEnableAutoSnapshotValidationRequest) (response *CheckDiskEnableAutoSnapshotValidationResponse, err error) {
 	response = CreateCheckDiskEnableAutoSnapshotValidationResponse()
@@ -28,7 +28,7 @@ func (client *Client) CheckDiskEnableAutoSnapshotValidation(request *CheckDiskEn
 	return
 }
 
-// invoke CheckDiskEnableAutoSnapshotValidation api with *CheckDiskEnableAutoSnapshotValidationRequest asynchronously
+// CheckDiskEnableAutoSnapshotValidationWithChan invokes the ecs.CheckDiskEnableAutoSnapshotValidation API asynchronously
 // api document: https://help.aliyun.com/api/ecs/checkdiskenableautosnapshotvalidation.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckDiskEnableAutoSnapshotValidationWithChan(request *CheckDiskEnableAutoSnapshotValidationRequest) (<-chan *CheckDiskEnableAutoSnapshotValidationResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CheckDiskEnableAutoSnapshotValidationWithChan(request *Che
 	return responseChan, errChan
 }
 
-// invoke CheckDiskEnableAutoSnapshotValidation api with *CheckDiskEnableAutoSnapshotValidationRequest asynchronously
+// CheckDiskEnableAutoSnapshotValidationWithCallback invokes the ecs.CheckDiskEnableAutoSnapshotValidation API asynchronously
 // api document: https://help.aliyun.com/api/ecs/checkdiskenableautosnapshotvalidation.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckDiskEnableAutoSnapshotValidationWithCallback(request *CheckDiskEnableAutoSnapshotValidationRequest, callback func(response *CheckDiskEnableAutoSnapshotValidationResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) CheckDiskEnableAutoSnapshotValidationWithCallback(request 
 	return result
 }
 
+// CheckDiskEnableAutoSnapshotValidationRequest is the request struct for api CheckDiskEnableAutoSnapshotValidation
 type CheckDiskEnableAutoSnapshotValidationRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,6 +83,7 @@ type CheckDiskEnableAutoSnapshotValidationRequest struct {
 	DiskIds              string           `position:"Query" name:"DiskIds"`
 }
 
+// CheckDiskEnableAutoSnapshotValidationResponse is the response struct for api CheckDiskEnableAutoSnapshotValidation
 type CheckDiskEnableAutoSnapshotValidationResponse struct {
 	*responses.BaseResponse
 	RequestId              string `json:"RequestId" xml:"RequestId"`
@@ -89,8 +91,8 @@ type CheckDiskEnableAutoSnapshotValidationResponse struct {
 	AutoSnapshotOccupation int    `json:"AutoSnapshotOccupation" xml:"AutoSnapshotOccupation"`
 }
 
-// create a request to invoke CheckDiskEnableAutoSnapshotValidation API
-func CreateCheckDiskEnableAutoSnapshotValidationRequest() (request *CheckDiskEnableAutoSnapshotValidationRequest) {
+// CreateCheckDiskEnableAutoSnapshotValidationRequest creates a request to invoke CheckDiskEnableAutoSnapshotValidation API
+func CreateCheckDiskEnableAutoSnapshotValidationRequest(request *CheckDiskEnableAutoSnapshotValidationRequest) {
 	request = &CheckDiskEnableAutoSnapshotValidationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateCheckDiskEnableAutoSnapshotValidationRequest() (request *CheckDiskEna
 	return
 }
 
-// create a response to parse from CheckDiskEnableAutoSnapshotValidation response
+// CreateCheckDiskEnableAutoSnapshotValidationResponse creates a response to parse from CheckDiskEnableAutoSnapshotValidation response
 func CreateCheckDiskEnableAutoSnapshotValidationResponse() (response *CheckDiskEnableAutoSnapshotValidationResponse) {
 	response = &CheckDiskEnableAutoSnapshotValidationResponse{
 		BaseResponse: &responses.BaseResponse{},

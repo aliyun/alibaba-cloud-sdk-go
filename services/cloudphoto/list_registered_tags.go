@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ListRegisteredTags api with *ListRegisteredTagsRequest synchronously
+// ListRegisteredTags invokes the cloudphoto.ListRegisteredTags API synchronously
 // api document: https://help.aliyun.com/api/cloudphoto/listregisteredtags.html
 func (client *Client) ListRegisteredTags(request *ListRegisteredTagsRequest) (response *ListRegisteredTagsResponse, err error) {
 	response = CreateListRegisteredTagsResponse()
@@ -28,7 +28,7 @@ func (client *Client) ListRegisteredTags(request *ListRegisteredTagsRequest) (re
 	return
 }
 
-// invoke ListRegisteredTags api with *ListRegisteredTagsRequest asynchronously
+// ListRegisteredTagsWithChan invokes the cloudphoto.ListRegisteredTags API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/listregisteredtags.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListRegisteredTagsWithChan(request *ListRegisteredTagsRequest) (<-chan *ListRegisteredTagsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ListRegisteredTagsWithChan(request *ListRegisteredTagsRequ
 	return responseChan, errChan
 }
 
-// invoke ListRegisteredTags api with *ListRegisteredTagsRequest asynchronously
+// ListRegisteredTagsWithCallback invokes the cloudphoto.ListRegisteredTags API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/listregisteredtags.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListRegisteredTagsWithCallback(request *ListRegisteredTagsRequest, callback func(response *ListRegisteredTagsResponse, err error)) <-chan int {
@@ -73,12 +73,14 @@ func (client *Client) ListRegisteredTagsWithCallback(request *ListRegisteredTags
 	return result
 }
 
+// ListRegisteredTagsRequest is the request struct for api ListRegisteredTags
 type ListRegisteredTagsRequest struct {
 	*requests.RpcRequest
 	StoreName string    `position:"Query" name:"StoreName"`
 	Lang      *[]string `position:"Query" name:"Lang"  type:"Repeated"`
 }
 
+// ListRegisteredTagsResponse is the response struct for api ListRegisteredTags
 type ListRegisteredTagsResponse struct {
 	*responses.BaseResponse
 	Code           string          `json:"Code" xml:"Code"`
@@ -88,8 +90,8 @@ type ListRegisteredTagsResponse struct {
 	RegisteredTags []RegisteredTag `json:"RegisteredTags" xml:"RegisteredTags"`
 }
 
-// create a request to invoke ListRegisteredTags API
-func CreateListRegisteredTagsRequest() (request *ListRegisteredTagsRequest) {
+// CreateListRegisteredTagsRequest creates a request to invoke ListRegisteredTags API
+func CreateListRegisteredTagsRequest(request *ListRegisteredTagsRequest) {
 	request = &ListRegisteredTagsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateListRegisteredTagsRequest() (request *ListRegisteredTagsRequest) {
 	return
 }
 
-// create a response to parse from ListRegisteredTags response
+// CreateListRegisteredTagsResponse creates a response to parse from ListRegisteredTags response
 func CreateListRegisteredTagsResponse() (response *ListRegisteredTagsResponse) {
 	response = &ListRegisteredTagsResponse{
 		BaseResponse: &responses.BaseResponse{},

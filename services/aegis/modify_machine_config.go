@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifyMachineConfig api with *ModifyMachineConfigRequest synchronously
+// ModifyMachineConfig invokes the aegis.ModifyMachineConfig API synchronously
 // api document: https://help.aliyun.com/api/aegis/modifymachineconfig.html
 func (client *Client) ModifyMachineConfig(request *ModifyMachineConfigRequest) (response *ModifyMachineConfigResponse, err error) {
 	response = CreateModifyMachineConfigResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifyMachineConfig(request *ModifyMachineConfigRequest) (
 	return
 }
 
-// invoke ModifyMachineConfig api with *ModifyMachineConfigRequest asynchronously
+// ModifyMachineConfigWithChan invokes the aegis.ModifyMachineConfig API asynchronously
 // api document: https://help.aliyun.com/api/aegis/modifymachineconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyMachineConfigWithChan(request *ModifyMachineConfigRequest) (<-chan *ModifyMachineConfigResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifyMachineConfigWithChan(request *ModifyMachineConfigRe
 	return responseChan, errChan
 }
 
-// invoke ModifyMachineConfig api with *ModifyMachineConfigRequest asynchronously
+// ModifyMachineConfigWithCallback invokes the aegis.ModifyMachineConfig API asynchronously
 // api document: https://help.aliyun.com/api/aegis/modifymachineconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyMachineConfigWithCallback(request *ModifyMachineConfigRequest, callback func(response *ModifyMachineConfigResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ModifyMachineConfigWithCallback(request *ModifyMachineConf
 	return result
 }
 
+// ModifyMachineConfigRequest is the request struct for api ModifyMachineConfig
 type ModifyMachineConfigRequest struct {
 	*requests.RpcRequest
 	SourceIp        string           `position:"Query" name:"SourceIp"`
@@ -85,13 +86,14 @@ type ModifyMachineConfigRequest struct {
 	PageSize        requests.Integer `position:"Query" name:"PageSize"`
 }
 
+// ModifyMachineConfigResponse is the response struct for api ModifyMachineConfig
 type ModifyMachineConfigResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ModifyMachineConfig API
-func CreateModifyMachineConfigRequest() (request *ModifyMachineConfigRequest) {
+// CreateModifyMachineConfigRequest creates a request to invoke ModifyMachineConfig API
+func CreateModifyMachineConfigRequest(request *ModifyMachineConfigRequest) {
 	request = &ModifyMachineConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateModifyMachineConfigRequest() (request *ModifyMachineConfigRequest) {
 	return
 }
 
-// create a response to parse from ModifyMachineConfig response
+// CreateModifyMachineConfigResponse creates a response to parse from ModifyMachineConfig response
 func CreateModifyMachineConfigResponse() (response *ModifyMachineConfigResponse) {
 	response = &ModifyMachineConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

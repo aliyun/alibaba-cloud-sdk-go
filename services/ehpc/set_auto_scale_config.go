@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SetAutoScaleConfig api with *SetAutoScaleConfigRequest synchronously
+// SetAutoScaleConfig invokes the ehpc.SetAutoScaleConfig API synchronously
 // api document: https://help.aliyun.com/api/ehpc/setautoscaleconfig.html
 func (client *Client) SetAutoScaleConfig(request *SetAutoScaleConfigRequest) (response *SetAutoScaleConfigResponse, err error) {
 	response = CreateSetAutoScaleConfigResponse()
@@ -28,7 +28,7 @@ func (client *Client) SetAutoScaleConfig(request *SetAutoScaleConfigRequest) (re
 	return
 }
 
-// invoke SetAutoScaleConfig api with *SetAutoScaleConfigRequest asynchronously
+// SetAutoScaleConfigWithChan invokes the ehpc.SetAutoScaleConfig API asynchronously
 // api document: https://help.aliyun.com/api/ehpc/setautoscaleconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetAutoScaleConfigWithChan(request *SetAutoScaleConfigRequest) (<-chan *SetAutoScaleConfigResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SetAutoScaleConfigWithChan(request *SetAutoScaleConfigRequ
 	return responseChan, errChan
 }
 
-// invoke SetAutoScaleConfig api with *SetAutoScaleConfigRequest asynchronously
+// SetAutoScaleConfigWithCallback invokes the ehpc.SetAutoScaleConfig API asynchronously
 // api document: https://help.aliyun.com/api/ehpc/setautoscaleconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetAutoScaleConfigWithCallback(request *SetAutoScaleConfigRequest, callback func(response *SetAutoScaleConfigResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SetAutoScaleConfigWithCallback(request *SetAutoScaleConfig
 	return result
 }
 
+// SetAutoScaleConfigRequest is the request struct for api SetAutoScaleConfig
 type SetAutoScaleConfigRequest struct {
 	*requests.RpcRequest
 	ClusterId               string           `position:"Query" name:"ClusterId"`
@@ -88,13 +89,14 @@ type SetAutoScaleConfigRequest struct {
 	ExcludeNodes            string           `position:"Query" name:"ExcludeNodes"`
 }
 
+// SetAutoScaleConfigResponse is the response struct for api SetAutoScaleConfig
 type SetAutoScaleConfigResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke SetAutoScaleConfig API
-func CreateSetAutoScaleConfigRequest() (request *SetAutoScaleConfigRequest) {
+// CreateSetAutoScaleConfigRequest creates a request to invoke SetAutoScaleConfig API
+func CreateSetAutoScaleConfigRequest(request *SetAutoScaleConfigRequest) {
 	request = &SetAutoScaleConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -102,7 +104,7 @@ func CreateSetAutoScaleConfigRequest() (request *SetAutoScaleConfigRequest) {
 	return
 }
 
-// create a response to parse from SetAutoScaleConfig response
+// CreateSetAutoScaleConfigResponse creates a response to parse from SetAutoScaleConfig response
 func CreateSetAutoScaleConfigResponse() (response *SetAutoScaleConfigResponse) {
 	response = &SetAutoScaleConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeDomainsBySource api with *DescribeDomainsBySourceRequest synchronously
+// DescribeDomainsBySource invokes the cdn.DescribeDomainsBySource API synchronously
 // api document: https://help.aliyun.com/api/cdn/describedomainsbysource.html
 func (client *Client) DescribeDomainsBySource(request *DescribeDomainsBySourceRequest) (response *DescribeDomainsBySourceResponse, err error) {
 	response = CreateDescribeDomainsBySourceResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeDomainsBySource(request *DescribeDomainsBySourceRe
 	return
 }
 
-// invoke DescribeDomainsBySource api with *DescribeDomainsBySourceRequest asynchronously
+// DescribeDomainsBySourceWithChan invokes the cdn.DescribeDomainsBySource API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describedomainsbysource.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainsBySourceWithChan(request *DescribeDomainsBySourceRequest) (<-chan *DescribeDomainsBySourceResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeDomainsBySourceWithChan(request *DescribeDomainsBy
 	return responseChan, errChan
 }
 
-// invoke DescribeDomainsBySource api with *DescribeDomainsBySourceRequest asynchronously
+// DescribeDomainsBySourceWithCallback invokes the cdn.DescribeDomainsBySource API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describedomainsbysource.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainsBySourceWithCallback(request *DescribeDomainsBySourceRequest, callback func(response *DescribeDomainsBySourceResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeDomainsBySourceWithCallback(request *DescribeDomai
 	return result
 }
 
+// DescribeDomainsBySourceRequest is the request struct for api DescribeDomainsBySource
 type DescribeDomainsBySourceRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -80,6 +81,7 @@ type DescribeDomainsBySourceRequest struct {
 	Sources       string           `position:"Query" name:"Sources"`
 }
 
+// DescribeDomainsBySourceResponse is the response struct for api DescribeDomainsBySource
 type DescribeDomainsBySourceResponse struct {
 	*responses.BaseResponse
 	RequestId   string      `json:"RequestId" xml:"RequestId"`
@@ -87,8 +89,8 @@ type DescribeDomainsBySourceResponse struct {
 	DomainsList DomainsList `json:"DomainsList" xml:"DomainsList"`
 }
 
-// create a request to invoke DescribeDomainsBySource API
-func CreateDescribeDomainsBySourceRequest() (request *DescribeDomainsBySourceRequest) {
+// CreateDescribeDomainsBySourceRequest creates a request to invoke DescribeDomainsBySource API
+func CreateDescribeDomainsBySourceRequest(request *DescribeDomainsBySourceRequest) {
 	request = &DescribeDomainsBySourceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -96,7 +98,7 @@ func CreateDescribeDomainsBySourceRequest() (request *DescribeDomainsBySourceReq
 	return
 }
 
-// create a response to parse from DescribeDomainsBySource response
+// CreateDescribeDomainsBySourceResponse creates a response to parse from DescribeDomainsBySource response
 func CreateDescribeDomainsBySourceResponse() (response *DescribeDomainsBySourceResponse) {
 	response = &DescribeDomainsBySourceResponse{
 		BaseResponse: &responses.BaseResponse{},

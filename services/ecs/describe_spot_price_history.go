@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeSpotPriceHistory api with *DescribeSpotPriceHistoryRequest synchronously
+// DescribeSpotPriceHistory invokes the ecs.DescribeSpotPriceHistory API synchronously
 // api document: https://help.aliyun.com/api/ecs/describespotpricehistory.html
 func (client *Client) DescribeSpotPriceHistory(request *DescribeSpotPriceHistoryRequest) (response *DescribeSpotPriceHistoryResponse, err error) {
 	response = CreateDescribeSpotPriceHistoryResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeSpotPriceHistory(request *DescribeSpotPriceHistory
 	return
 }
 
-// invoke DescribeSpotPriceHistory api with *DescribeSpotPriceHistoryRequest asynchronously
+// DescribeSpotPriceHistoryWithChan invokes the ecs.DescribeSpotPriceHistory API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describespotpricehistory.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSpotPriceHistoryWithChan(request *DescribeSpotPriceHistoryRequest) (<-chan *DescribeSpotPriceHistoryResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeSpotPriceHistoryWithChan(request *DescribeSpotPric
 	return responseChan, errChan
 }
 
-// invoke DescribeSpotPriceHistory api with *DescribeSpotPriceHistoryRequest asynchronously
+// DescribeSpotPriceHistoryWithCallback invokes the ecs.DescribeSpotPriceHistory API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describespotpricehistory.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSpotPriceHistoryWithCallback(request *DescribeSpotPriceHistoryRequest, callback func(response *DescribeSpotPriceHistoryResponse, err error)) <-chan int {
@@ -73,10 +73,12 @@ func (client *Client) DescribeSpotPriceHistoryWithCallback(request *DescribeSpot
 	return result
 }
 
+// DescribeSpotPriceHistoryRequest is the request struct for api DescribeSpotPriceHistory
 type DescribeSpotPriceHistoryRequest struct {
 	*requests.RpcRequest
 }
 
+// DescribeSpotPriceHistoryResponse is the response struct for api DescribeSpotPriceHistory
 type DescribeSpotPriceHistoryResponse struct {
 	*responses.BaseResponse
 	RequestId  string     `json:"RequestId" xml:"RequestId"`
@@ -85,8 +87,8 @@ type DescribeSpotPriceHistoryResponse struct {
 	SpotPrices SpotPrices `json:"SpotPrices" xml:"SpotPrices"`
 }
 
-// create a request to invoke DescribeSpotPriceHistory API
-func CreateDescribeSpotPriceHistoryRequest() (request *DescribeSpotPriceHistoryRequest) {
+// CreateDescribeSpotPriceHistoryRequest creates a request to invoke DescribeSpotPriceHistory API
+func CreateDescribeSpotPriceHistoryRequest(request *DescribeSpotPriceHistoryRequest) {
 	request = &DescribeSpotPriceHistoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -94,7 +96,7 @@ func CreateDescribeSpotPriceHistoryRequest() (request *DescribeSpotPriceHistoryR
 	return
 }
 
-// create a response to parse from DescribeSpotPriceHistory response
+// CreateDescribeSpotPriceHistoryResponse creates a response to parse from DescribeSpotPriceHistory response
 func CreateDescribeSpotPriceHistoryResponse() (response *DescribeSpotPriceHistoryResponse) {
 	response = &DescribeSpotPriceHistoryResponse{
 		BaseResponse: &responses.BaseResponse{},

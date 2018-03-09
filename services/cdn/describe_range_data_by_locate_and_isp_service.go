@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeRangeDataByLocateAndIspService api with *DescribeRangeDataByLocateAndIspServiceRequest synchronously
+// DescribeRangeDataByLocateAndIspService invokes the cdn.DescribeRangeDataByLocateAndIspService API synchronously
 // api document: https://help.aliyun.com/api/cdn/describerangedatabylocateandispservice.html
 func (client *Client) DescribeRangeDataByLocateAndIspService(request *DescribeRangeDataByLocateAndIspServiceRequest) (response *DescribeRangeDataByLocateAndIspServiceResponse, err error) {
 	response = CreateDescribeRangeDataByLocateAndIspServiceResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeRangeDataByLocateAndIspService(request *DescribeRa
 	return
 }
 
-// invoke DescribeRangeDataByLocateAndIspService api with *DescribeRangeDataByLocateAndIspServiceRequest asynchronously
+// DescribeRangeDataByLocateAndIspServiceWithChan invokes the cdn.DescribeRangeDataByLocateAndIspService API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describerangedatabylocateandispservice.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRangeDataByLocateAndIspServiceWithChan(request *DescribeRangeDataByLocateAndIspServiceRequest) (<-chan *DescribeRangeDataByLocateAndIspServiceResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeRangeDataByLocateAndIspServiceWithChan(request *De
 	return responseChan, errChan
 }
 
-// invoke DescribeRangeDataByLocateAndIspService api with *DescribeRangeDataByLocateAndIspServiceRequest asynchronously
+// DescribeRangeDataByLocateAndIspServiceWithCallback invokes the cdn.DescribeRangeDataByLocateAndIspService API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describerangedatabylocateandispservice.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRangeDataByLocateAndIspServiceWithCallback(request *DescribeRangeDataByLocateAndIspServiceRequest, callback func(response *DescribeRangeDataByLocateAndIspServiceResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeRangeDataByLocateAndIspServiceWithCallback(request
 	return result
 }
 
+// DescribeRangeDataByLocateAndIspServiceRequest is the request struct for api DescribeRangeDataByLocateAndIspService
 type DescribeRangeDataByLocateAndIspServiceRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,14 +85,15 @@ type DescribeRangeDataByLocateAndIspServiceRequest struct {
 	EndTime       string           `position:"Query" name:"EndTime"`
 }
 
+// DescribeRangeDataByLocateAndIspServiceResponse is the response struct for api DescribeRangeDataByLocateAndIspService
 type DescribeRangeDataByLocateAndIspServiceResponse struct {
 	*responses.BaseResponse
 	RequestId  string `json:"RequestId" xml:"RequestId"`
 	JsonResult string `json:"JsonResult" xml:"JsonResult"`
 }
 
-// create a request to invoke DescribeRangeDataByLocateAndIspService API
-func CreateDescribeRangeDataByLocateAndIspServiceRequest() (request *DescribeRangeDataByLocateAndIspServiceRequest) {
+// CreateDescribeRangeDataByLocateAndIspServiceRequest creates a request to invoke DescribeRangeDataByLocateAndIspService API
+func CreateDescribeRangeDataByLocateAndIspServiceRequest(request *DescribeRangeDataByLocateAndIspServiceRequest) {
 	request = &DescribeRangeDataByLocateAndIspServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateDescribeRangeDataByLocateAndIspServiceRequest() (request *DescribeRan
 	return
 }
 
-// create a response to parse from DescribeRangeDataByLocateAndIspService response
+// CreateDescribeRangeDataByLocateAndIspServiceResponse creates a response to parse from DescribeRangeDataByLocateAndIspService response
 func CreateDescribeRangeDataByLocateAndIspServiceResponse() (response *DescribeRangeDataByLocateAndIspServiceResponse) {
 	response = &DescribeRangeDataByLocateAndIspServiceResponse{
 		BaseResponse: &responses.BaseResponse{},

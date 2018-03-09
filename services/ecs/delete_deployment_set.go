@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteDeploymentSet api with *DeleteDeploymentSetRequest synchronously
+// DeleteDeploymentSet invokes the ecs.DeleteDeploymentSet API synchronously
 // api document: https://help.aliyun.com/api/ecs/deletedeploymentset.html
 func (client *Client) DeleteDeploymentSet(request *DeleteDeploymentSetRequest) (response *DeleteDeploymentSetResponse, err error) {
 	response = CreateDeleteDeploymentSetResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteDeploymentSet(request *DeleteDeploymentSetRequest) (
 	return
 }
 
-// invoke DeleteDeploymentSet api with *DeleteDeploymentSetRequest asynchronously
+// DeleteDeploymentSetWithChan invokes the ecs.DeleteDeploymentSet API asynchronously
 // api document: https://help.aliyun.com/api/ecs/deletedeploymentset.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDeploymentSetWithChan(request *DeleteDeploymentSetRequest) (<-chan *DeleteDeploymentSetResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteDeploymentSetWithChan(request *DeleteDeploymentSetRe
 	return responseChan, errChan
 }
 
-// invoke DeleteDeploymentSet api with *DeleteDeploymentSetRequest asynchronously
+// DeleteDeploymentSetWithCallback invokes the ecs.DeleteDeploymentSet API asynchronously
 // api document: https://help.aliyun.com/api/ecs/deletedeploymentset.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDeploymentSetWithCallback(request *DeleteDeploymentSetRequest, callback func(response *DeleteDeploymentSetResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DeleteDeploymentSetWithCallback(request *DeleteDeploymentS
 	return result
 }
 
+// DeleteDeploymentSetRequest is the request struct for api DeleteDeploymentSet
 type DeleteDeploymentSetRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,13 +83,14 @@ type DeleteDeploymentSetRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// DeleteDeploymentSetResponse is the response struct for api DeleteDeploymentSet
 type DeleteDeploymentSetResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DeleteDeploymentSet API
-func CreateDeleteDeploymentSetRequest() (request *DeleteDeploymentSetRequest) {
+// CreateDeleteDeploymentSetRequest creates a request to invoke DeleteDeploymentSet API
+func CreateDeleteDeploymentSetRequest(request *DeleteDeploymentSetRequest) {
 	request = &DeleteDeploymentSetRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -96,7 +98,7 @@ func CreateDeleteDeploymentSetRequest() (request *DeleteDeploymentSetRequest) {
 	return
 }
 
-// create a response to parse from DeleteDeploymentSet response
+// CreateDeleteDeploymentSetResponse creates a response to parse from DeleteDeploymentSet response
 func CreateDeleteDeploymentSetResponse() (response *DeleteDeploymentSetResponse) {
 	response = &DeleteDeploymentSetResponse{
 		BaseResponse: &responses.BaseResponse{},

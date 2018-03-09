@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeLiveStreamFrameLossRatio api with *DescribeLiveStreamFrameLossRatioRequest synchronously
+// DescribeLiveStreamFrameLossRatio invokes the cdn.DescribeLiveStreamFrameLossRatio API synchronously
 // api document: https://help.aliyun.com/api/cdn/describelivestreamframelossratio.html
 func (client *Client) DescribeLiveStreamFrameLossRatio(request *DescribeLiveStreamFrameLossRatioRequest) (response *DescribeLiveStreamFrameLossRatioResponse, err error) {
 	response = CreateDescribeLiveStreamFrameLossRatioResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeLiveStreamFrameLossRatio(request *DescribeLiveStre
 	return
 }
 
-// invoke DescribeLiveStreamFrameLossRatio api with *DescribeLiveStreamFrameLossRatioRequest asynchronously
+// DescribeLiveStreamFrameLossRatioWithChan invokes the cdn.DescribeLiveStreamFrameLossRatio API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describelivestreamframelossratio.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamFrameLossRatioWithChan(request *DescribeLiveStreamFrameLossRatioRequest) (<-chan *DescribeLiveStreamFrameLossRatioResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeLiveStreamFrameLossRatioWithChan(request *Describe
 	return responseChan, errChan
 }
 
-// invoke DescribeLiveStreamFrameLossRatio api with *DescribeLiveStreamFrameLossRatioRequest asynchronously
+// DescribeLiveStreamFrameLossRatioWithCallback invokes the cdn.DescribeLiveStreamFrameLossRatio API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describelivestreamframelossratio.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamFrameLossRatioWithCallback(request *DescribeLiveStreamFrameLossRatioRequest, callback func(response *DescribeLiveStreamFrameLossRatioResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeLiveStreamFrameLossRatioWithCallback(request *Desc
 	return result
 }
 
+// DescribeLiveStreamFrameLossRatioRequest is the request struct for api DescribeLiveStreamFrameLossRatio
 type DescribeLiveStreamFrameLossRatioRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,14 +85,15 @@ type DescribeLiveStreamFrameLossRatioRequest struct {
 	EndTime       string           `position:"Query" name:"EndTime"`
 }
 
+// DescribeLiveStreamFrameLossRatioResponse is the response struct for api DescribeLiveStreamFrameLossRatio
 type DescribeLiveStreamFrameLossRatioResponse struct {
 	*responses.BaseResponse
 	RequestId           string              `json:"RequestId" xml:"RequestId"`
 	FrameLossRatioInfos FrameLossRatioInfos `json:"FrameLossRatioInfos" xml:"FrameLossRatioInfos"`
 }
 
-// create a request to invoke DescribeLiveStreamFrameLossRatio API
-func CreateDescribeLiveStreamFrameLossRatioRequest() (request *DescribeLiveStreamFrameLossRatioRequest) {
+// CreateDescribeLiveStreamFrameLossRatioRequest creates a request to invoke DescribeLiveStreamFrameLossRatio API
+func CreateDescribeLiveStreamFrameLossRatioRequest(request *DescribeLiveStreamFrameLossRatioRequest) {
 	request = &DescribeLiveStreamFrameLossRatioRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateDescribeLiveStreamFrameLossRatioRequest() (request *DescribeLiveStrea
 	return
 }
 
-// create a response to parse from DescribeLiveStreamFrameLossRatio response
+// CreateDescribeLiveStreamFrameLossRatioResponse creates a response to parse from DescribeLiveStreamFrameLossRatio response
 func CreateDescribeLiveStreamFrameLossRatioResponse() (response *DescribeLiveStreamFrameLossRatioResponse) {
 	response = &DescribeLiveStreamFrameLossRatioResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifyRouterInterfaceAttribute api with *ModifyRouterInterfaceAttributeRequest synchronously
+// ModifyRouterInterfaceAttribute invokes the vpc.ModifyRouterInterfaceAttribute API synchronously
 // api document: https://help.aliyun.com/api/vpc/modifyrouterinterfaceattribute.html
 func (client *Client) ModifyRouterInterfaceAttribute(request *ModifyRouterInterfaceAttributeRequest) (response *ModifyRouterInterfaceAttributeResponse, err error) {
 	response = CreateModifyRouterInterfaceAttributeResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifyRouterInterfaceAttribute(request *ModifyRouterInterf
 	return
 }
 
-// invoke ModifyRouterInterfaceAttribute api with *ModifyRouterInterfaceAttributeRequest asynchronously
+// ModifyRouterInterfaceAttributeWithChan invokes the vpc.ModifyRouterInterfaceAttribute API asynchronously
 // api document: https://help.aliyun.com/api/vpc/modifyrouterinterfaceattribute.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyRouterInterfaceAttributeWithChan(request *ModifyRouterInterfaceAttributeRequest) (<-chan *ModifyRouterInterfaceAttributeResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifyRouterInterfaceAttributeWithChan(request *ModifyRout
 	return responseChan, errChan
 }
 
-// invoke ModifyRouterInterfaceAttribute api with *ModifyRouterInterfaceAttributeRequest asynchronously
+// ModifyRouterInterfaceAttributeWithCallback invokes the vpc.ModifyRouterInterfaceAttribute API asynchronously
 // api document: https://help.aliyun.com/api/vpc/modifyrouterinterfaceattribute.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyRouterInterfaceAttributeWithCallback(request *ModifyRouterInterfaceAttributeRequest, callback func(response *ModifyRouterInterfaceAttributeResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ModifyRouterInterfaceAttributeWithCallback(request *Modify
 	return result
 }
 
+// ModifyRouterInterfaceAttributeRequest is the request struct for api ModifyRouterInterfaceAttribute
 type ModifyRouterInterfaceAttributeRequest struct {
 	*requests.RpcRequest
 	OwnerId                  requests.Integer `position:"Query" name:"OwnerId"`
@@ -90,13 +91,14 @@ type ModifyRouterInterfaceAttributeRequest struct {
 	DeleteHealthCheckIp      requests.Boolean `position:"Query" name:"DeleteHealthCheckIp"`
 }
 
+// ModifyRouterInterfaceAttributeResponse is the response struct for api ModifyRouterInterfaceAttribute
 type ModifyRouterInterfaceAttributeResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ModifyRouterInterfaceAttribute API
-func CreateModifyRouterInterfaceAttributeRequest() (request *ModifyRouterInterfaceAttributeRequest) {
+// CreateModifyRouterInterfaceAttributeRequest creates a request to invoke ModifyRouterInterfaceAttribute API
+func CreateModifyRouterInterfaceAttributeRequest(request *ModifyRouterInterfaceAttributeRequest) {
 	request = &ModifyRouterInterfaceAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -104,7 +106,7 @@ func CreateModifyRouterInterfaceAttributeRequest() (request *ModifyRouterInterfa
 	return
 }
 
-// create a response to parse from ModifyRouterInterfaceAttribute response
+// CreateModifyRouterInterfaceAttributeResponse creates a response to parse from ModifyRouterInterfaceAttribute response
 func CreateModifyRouterInterfaceAttributeResponse() (response *ModifyRouterInterfaceAttributeResponse) {
 	response = &ModifyRouterInterfaceAttributeResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeIpInfo api with *DescribeIpInfoRequest synchronously
+// DescribeIpInfo invokes the cdn.DescribeIpInfo API synchronously
 // api document: https://help.aliyun.com/api/cdn/describeipinfo.html
 func (client *Client) DescribeIpInfo(request *DescribeIpInfoRequest) (response *DescribeIpInfoResponse, err error) {
 	response = CreateDescribeIpInfoResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeIpInfo(request *DescribeIpInfoRequest) (response *
 	return
 }
 
-// invoke DescribeIpInfo api with *DescribeIpInfoRequest asynchronously
+// DescribeIpInfoWithChan invokes the cdn.DescribeIpInfo API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describeipinfo.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeIpInfoWithChan(request *DescribeIpInfoRequest) (<-chan *DescribeIpInfoResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeIpInfoWithChan(request *DescribeIpInfoRequest) (<-
 	return responseChan, errChan
 }
 
-// invoke DescribeIpInfo api with *DescribeIpInfoRequest asynchronously
+// DescribeIpInfoWithCallback invokes the cdn.DescribeIpInfo API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describeipinfo.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeIpInfoWithCallback(request *DescribeIpInfoRequest, callback func(response *DescribeIpInfoResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeIpInfoWithCallback(request *DescribeIpInfoRequest,
 	return result
 }
 
+// DescribeIpInfoRequest is the request struct for api DescribeIpInfo
 type DescribeIpInfoRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -80,6 +81,7 @@ type DescribeIpInfoRequest struct {
 	IP            string           `position:"Query" name:"IP"`
 }
 
+// DescribeIpInfoResponse is the response struct for api DescribeIpInfo
 type DescribeIpInfoResponse struct {
 	*responses.BaseResponse
 	RequestId   string `json:"RequestId" xml:"RequestId"`
@@ -90,8 +92,8 @@ type DescribeIpInfoResponse struct {
 	RegionEname string `json:"RegionEname" xml:"RegionEname"`
 }
 
-// create a request to invoke DescribeIpInfo API
-func CreateDescribeIpInfoRequest() (request *DescribeIpInfoRequest) {
+// CreateDescribeIpInfoRequest creates a request to invoke DescribeIpInfo API
+func CreateDescribeIpInfoRequest(request *DescribeIpInfoRequest) {
 	request = &DescribeIpInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateDescribeIpInfoRequest() (request *DescribeIpInfoRequest) {
 	return
 }
 
-// create a response to parse from DescribeIpInfo response
+// CreateDescribeIpInfoResponse creates a response to parse from DescribeIpInfo response
 func CreateDescribeIpInfoResponse() (response *DescribeIpInfoResponse) {
 	response = &DescribeIpInfoResponse{
 		BaseResponse: &responses.BaseResponse{},

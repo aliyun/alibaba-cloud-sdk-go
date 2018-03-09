@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CancelImport api with *CancelImportRequest synchronously
+// CancelImport invokes the rds.CancelImport API synchronously
 // api document: https://help.aliyun.com/api/rds/cancelimport.html
 func (client *Client) CancelImport(request *CancelImportRequest) (response *CancelImportResponse, err error) {
 	response = CreateCancelImportResponse()
@@ -28,7 +28,7 @@ func (client *Client) CancelImport(request *CancelImportRequest) (response *Canc
 	return
 }
 
-// invoke CancelImport api with *CancelImportRequest asynchronously
+// CancelImportWithChan invokes the rds.CancelImport API asynchronously
 // api document: https://help.aliyun.com/api/rds/cancelimport.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CancelImportWithChan(request *CancelImportRequest) (<-chan *CancelImportResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CancelImportWithChan(request *CancelImportRequest) (<-chan
 	return responseChan, errChan
 }
 
-// invoke CancelImport api with *CancelImportRequest asynchronously
+// CancelImportWithCallback invokes the rds.CancelImport API asynchronously
 // api document: https://help.aliyun.com/api/rds/cancelimport.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CancelImportWithCallback(request *CancelImportRequest, callback func(response *CancelImportResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) CancelImportWithCallback(request *CancelImportRequest, cal
 	return result
 }
 
+// CancelImportRequest is the request struct for api CancelImport
 type CancelImportRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -83,13 +84,14 @@ type CancelImportRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// CancelImportResponse is the response struct for api CancelImport
 type CancelImportResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke CancelImport API
-func CreateCancelImportRequest() (request *CancelImportRequest) {
+// CreateCancelImportRequest creates a request to invoke CancelImport API
+func CreateCancelImportRequest(request *CancelImportRequest) {
 	request = &CancelImportRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateCancelImportRequest() (request *CancelImportRequest) {
 	return
 }
 
-// create a response to parse from CancelImport response
+// CreateCancelImportResponse creates a response to parse from CancelImport response
 func CreateCancelImportResponse() (response *CancelImportResponse) {
 	response = &CancelImportResponse{
 		BaseResponse: &responses.BaseResponse{},

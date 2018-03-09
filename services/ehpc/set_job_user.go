@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SetJobUser api with *SetJobUserRequest synchronously
+// SetJobUser invokes the ehpc.SetJobUser API synchronously
 // api document: https://help.aliyun.com/api/ehpc/setjobuser.html
 func (client *Client) SetJobUser(request *SetJobUserRequest) (response *SetJobUserResponse, err error) {
 	response = CreateSetJobUserResponse()
@@ -28,7 +28,7 @@ func (client *Client) SetJobUser(request *SetJobUserRequest) (response *SetJobUs
 	return
 }
 
-// invoke SetJobUser api with *SetJobUserRequest asynchronously
+// SetJobUserWithChan invokes the ehpc.SetJobUser API asynchronously
 // api document: https://help.aliyun.com/api/ehpc/setjobuser.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetJobUserWithChan(request *SetJobUserRequest) (<-chan *SetJobUserResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SetJobUserWithChan(request *SetJobUserRequest) (<-chan *Se
 	return responseChan, errChan
 }
 
-// invoke SetJobUser api with *SetJobUserRequest asynchronously
+// SetJobUserWithCallback invokes the ehpc.SetJobUser API asynchronously
 // api document: https://help.aliyun.com/api/ehpc/setjobuser.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetJobUserWithCallback(request *SetJobUserRequest, callback func(response *SetJobUserResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SetJobUserWithCallback(request *SetJobUserRequest, callbac
 	return result
 }
 
+// SetJobUserRequest is the request struct for api SetJobUser
 type SetJobUserRequest struct {
 	*requests.RpcRequest
 	ClusterId         string `position:"Query" name:"ClusterId"`
@@ -80,13 +81,14 @@ type SetJobUserRequest struct {
 	RunasUserPassword string `position:"Query" name:"RunasUserPassword"`
 }
 
+// SetJobUserResponse is the response struct for api SetJobUser
 type SetJobUserResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke SetJobUser API
-func CreateSetJobUserRequest() (request *SetJobUserRequest) {
+// CreateSetJobUserRequest creates a request to invoke SetJobUser API
+func CreateSetJobUserRequest(request *SetJobUserRequest) {
 	request = &SetJobUserRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -94,7 +96,7 @@ func CreateSetJobUserRequest() (request *SetJobUserRequest) {
 	return
 }
 
-// create a response to parse from SetJobUser response
+// CreateSetJobUserResponse creates a response to parse from SetJobUser response
 func CreateSetJobUserResponse() (response *SetJobUserResponse) {
 	response = &SetJobUserResponse{
 		BaseResponse: &responses.BaseResponse{},

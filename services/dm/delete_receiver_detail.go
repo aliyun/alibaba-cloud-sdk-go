@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteReceiverDetail api with *DeleteReceiverDetailRequest synchronously
+// DeleteReceiverDetail invokes the dm.DeleteReceiverDetail API synchronously
 // api document: https://help.aliyun.com/api/dm/deletereceiverdetail.html
 func (client *Client) DeleteReceiverDetail(request *DeleteReceiverDetailRequest) (response *DeleteReceiverDetailResponse, err error) {
 	response = CreateDeleteReceiverDetailResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteReceiverDetail(request *DeleteReceiverDetailRequest)
 	return
 }
 
-// invoke DeleteReceiverDetail api with *DeleteReceiverDetailRequest asynchronously
+// DeleteReceiverDetailWithChan invokes the dm.DeleteReceiverDetail API asynchronously
 // api document: https://help.aliyun.com/api/dm/deletereceiverdetail.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteReceiverDetailWithChan(request *DeleteReceiverDetailRequest) (<-chan *DeleteReceiverDetailResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteReceiverDetailWithChan(request *DeleteReceiverDetail
 	return responseChan, errChan
 }
 
-// invoke DeleteReceiverDetail api with *DeleteReceiverDetailRequest asynchronously
+// DeleteReceiverDetailWithCallback invokes the dm.DeleteReceiverDetail API asynchronously
 // api document: https://help.aliyun.com/api/dm/deletereceiverdetail.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteReceiverDetailWithCallback(request *DeleteReceiverDetailRequest, callback func(response *DeleteReceiverDetailResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DeleteReceiverDetailWithCallback(request *DeleteReceiverDe
 	return result
 }
 
+// DeleteReceiverDetailRequest is the request struct for api DeleteReceiverDetail
 type DeleteReceiverDetailRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,13 +83,14 @@ type DeleteReceiverDetailRequest struct {
 	Email                string           `position:"Query" name:"Email"`
 }
 
+// DeleteReceiverDetailResponse is the response struct for api DeleteReceiverDetail
 type DeleteReceiverDetailResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DeleteReceiverDetail API
-func CreateDeleteReceiverDetailRequest() (request *DeleteReceiverDetailRequest) {
+// CreateDeleteReceiverDetailRequest creates a request to invoke DeleteReceiverDetail API
+func CreateDeleteReceiverDetailRequest(request *DeleteReceiverDetailRequest) {
 	request = &DeleteReceiverDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -96,7 +98,7 @@ func CreateDeleteReceiverDetailRequest() (request *DeleteReceiverDetailRequest) 
 	return
 }
 
-// create a response to parse from DeleteReceiverDetail response
+// CreateDeleteReceiverDetailResponse creates a response to parse from DeleteReceiverDetail response
 func CreateDeleteReceiverDetailResponse() (response *DeleteReceiverDetailResponse) {
 	response = &DeleteReceiverDetailResponse{
 		BaseResponse: &responses.BaseResponse{},

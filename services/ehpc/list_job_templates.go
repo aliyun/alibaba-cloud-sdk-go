@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ListJobTemplates api with *ListJobTemplatesRequest synchronously
+// ListJobTemplates invokes the ehpc.ListJobTemplates API synchronously
 // api document: https://help.aliyun.com/api/ehpc/listjobtemplates.html
 func (client *Client) ListJobTemplates(request *ListJobTemplatesRequest) (response *ListJobTemplatesResponse, err error) {
 	response = CreateListJobTemplatesResponse()
@@ -28,7 +28,7 @@ func (client *Client) ListJobTemplates(request *ListJobTemplatesRequest) (respon
 	return
 }
 
-// invoke ListJobTemplates api with *ListJobTemplatesRequest asynchronously
+// ListJobTemplatesWithChan invokes the ehpc.ListJobTemplates API asynchronously
 // api document: https://help.aliyun.com/api/ehpc/listjobtemplates.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListJobTemplatesWithChan(request *ListJobTemplatesRequest) (<-chan *ListJobTemplatesResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ListJobTemplatesWithChan(request *ListJobTemplatesRequest)
 	return responseChan, errChan
 }
 
-// invoke ListJobTemplates api with *ListJobTemplatesRequest asynchronously
+// ListJobTemplatesWithCallback invokes the ehpc.ListJobTemplates API asynchronously
 // api document: https://help.aliyun.com/api/ehpc/listjobtemplates.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListJobTemplatesWithCallback(request *ListJobTemplatesRequest, callback func(response *ListJobTemplatesResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ListJobTemplatesWithCallback(request *ListJobTemplatesRequ
 	return result
 }
 
+// ListJobTemplatesRequest is the request struct for api ListJobTemplates
 type ListJobTemplatesRequest struct {
 	*requests.RpcRequest
 	Name       string           `position:"Query" name:"Name"`
@@ -80,6 +81,7 @@ type ListJobTemplatesRequest struct {
 	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 }
 
+// ListJobTemplatesResponse is the response struct for api ListJobTemplates
 type ListJobTemplatesResponse struct {
 	*responses.BaseResponse
 	RequestId  string    `json:"RequestId" xml:"RequestId"`
@@ -89,8 +91,8 @@ type ListJobTemplatesResponse struct {
 	Templates  Templates `json:"Templates" xml:"Templates"`
 }
 
-// create a request to invoke ListJobTemplates API
-func CreateListJobTemplatesRequest() (request *ListJobTemplatesRequest) {
+// CreateListJobTemplatesRequest creates a request to invoke ListJobTemplates API
+func CreateListJobTemplatesRequest(request *ListJobTemplatesRequest) {
 	request = &ListJobTemplatesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateListJobTemplatesRequest() (request *ListJobTemplatesRequest) {
 	return
 }
 
-// create a response to parse from ListJobTemplates response
+// CreateListJobTemplatesResponse creates a response to parse from ListJobTemplates response
 func CreateListJobTemplatesResponse() (response *ListJobTemplatesResponse) {
 	response = &ListJobTemplatesResponse{
 		BaseResponse: &responses.BaseResponse{},

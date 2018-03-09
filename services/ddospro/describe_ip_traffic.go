@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeIpTraffic api with *DescribeIpTrafficRequest synchronously
+// DescribeIpTraffic invokes the ddospro.DescribeIpTraffic API synchronously
 // api document: https://help.aliyun.com/api/ddospro/describeiptraffic.html
 func (client *Client) DescribeIpTraffic(request *DescribeIpTrafficRequest) (response *DescribeIpTrafficResponse, err error) {
 	response = CreateDescribeIpTrafficResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeIpTraffic(request *DescribeIpTrafficRequest) (resp
 	return
 }
 
-// invoke DescribeIpTraffic api with *DescribeIpTrafficRequest asynchronously
+// DescribeIpTrafficWithChan invokes the ddospro.DescribeIpTraffic API asynchronously
 // api document: https://help.aliyun.com/api/ddospro/describeiptraffic.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeIpTrafficWithChan(request *DescribeIpTrafficRequest) (<-chan *DescribeIpTrafficResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeIpTrafficWithChan(request *DescribeIpTrafficReques
 	return responseChan, errChan
 }
 
-// invoke DescribeIpTraffic api with *DescribeIpTrafficRequest asynchronously
+// DescribeIpTrafficWithCallback invokes the ddospro.DescribeIpTraffic API asynchronously
 // api document: https://help.aliyun.com/api/ddospro/describeiptraffic.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeIpTrafficWithCallback(request *DescribeIpTrafficRequest, callback func(response *DescribeIpTrafficResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeIpTrafficWithCallback(request *DescribeIpTrafficRe
 	return result
 }
 
+// DescribeIpTrafficRequest is the request struct for api DescribeIpTraffic
 type DescribeIpTrafficRequest struct {
 	*requests.RpcRequest
 	Ip              string           `position:"Query" name:"Ip"`
@@ -80,6 +81,7 @@ type DescribeIpTrafficRequest struct {
 	EndDateMillis   requests.Integer `position:"Query" name:"EndDateMillis"`
 }
 
+// DescribeIpTrafficResponse is the response struct for api DescribeIpTraffic
 type DescribeIpTrafficResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
@@ -89,8 +91,8 @@ type DescribeIpTrafficResponse struct {
 	Data      Data   `json:"Data" xml:"Data"`
 }
 
-// create a request to invoke DescribeIpTraffic API
-func CreateDescribeIpTrafficRequest() (request *DescribeIpTrafficRequest) {
+// CreateDescribeIpTrafficRequest creates a request to invoke DescribeIpTraffic API
+func CreateDescribeIpTrafficRequest(request *DescribeIpTrafficRequest) {
 	request = &DescribeIpTrafficRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateDescribeIpTrafficRequest() (request *DescribeIpTrafficRequest) {
 	return
 }
 
-// create a response to parse from DescribeIpTraffic response
+// CreateDescribeIpTrafficResponse creates a response to parse from DescribeIpTraffic response
 func CreateDescribeIpTrafficResponse() (response *DescribeIpTrafficResponse) {
 	response = &DescribeIpTrafficResponse{
 		BaseResponse: &responses.BaseResponse{},

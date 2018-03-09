@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SaveBatchTaskForCreatingOrderRenew api with *SaveBatchTaskForCreatingOrderRenewRequest synchronously
+// SaveBatchTaskForCreatingOrderRenew invokes the domain_intl.SaveBatchTaskForCreatingOrderRenew API synchronously
 // api document: https://help.aliyun.com/api/domain-intl/savebatchtaskforcreatingorderrenew.html
 func (client *Client) SaveBatchTaskForCreatingOrderRenew(request *SaveBatchTaskForCreatingOrderRenewRequest) (response *SaveBatchTaskForCreatingOrderRenewResponse, err error) {
 	response = CreateSaveBatchTaskForCreatingOrderRenewResponse()
@@ -28,7 +28,7 @@ func (client *Client) SaveBatchTaskForCreatingOrderRenew(request *SaveBatchTaskF
 	return
 }
 
-// invoke SaveBatchTaskForCreatingOrderRenew api with *SaveBatchTaskForCreatingOrderRenewRequest asynchronously
+// SaveBatchTaskForCreatingOrderRenewWithChan invokes the domain_intl.SaveBatchTaskForCreatingOrderRenew API asynchronously
 // api document: https://help.aliyun.com/api/domain-intl/savebatchtaskforcreatingorderrenew.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveBatchTaskForCreatingOrderRenewWithChan(request *SaveBatchTaskForCreatingOrderRenewRequest) (<-chan *SaveBatchTaskForCreatingOrderRenewResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SaveBatchTaskForCreatingOrderRenewWithChan(request *SaveBa
 	return responseChan, errChan
 }
 
-// invoke SaveBatchTaskForCreatingOrderRenew api with *SaveBatchTaskForCreatingOrderRenewRequest asynchronously
+// SaveBatchTaskForCreatingOrderRenewWithCallback invokes the domain_intl.SaveBatchTaskForCreatingOrderRenew API asynchronously
 // api document: https://help.aliyun.com/api/domain-intl/savebatchtaskforcreatingorderrenew.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveBatchTaskForCreatingOrderRenewWithCallback(request *SaveBatchTaskForCreatingOrderRenewRequest, callback func(response *SaveBatchTaskForCreatingOrderRenewResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SaveBatchTaskForCreatingOrderRenewWithCallback(request *Sa
 	return result
 }
 
+// SaveBatchTaskForCreatingOrderRenewRequest is the request struct for api SaveBatchTaskForCreatingOrderRenew
 type SaveBatchTaskForCreatingOrderRenewRequest struct {
 	*requests.RpcRequest
 	UserClientIp    string                                               `position:"Query" name:"UserClientIp"`
@@ -80,20 +81,22 @@ type SaveBatchTaskForCreatingOrderRenewRequest struct {
 	OrderRenewParam *[]SaveBatchTaskForCreatingOrderRenewOrderRenewParam `position:"Query" name:"OrderRenewParam"  type:"Repeated"`
 }
 
+// SaveBatchTaskForCreatingOrderRenewOrderRenewParam is a repeated param struct in SaveBatchTaskForCreatingOrderRenewRequest
 type SaveBatchTaskForCreatingOrderRenewOrderRenewParam struct {
 	DomainName            string `name:"DomainName"`
 	CurrentExpirationDate string `name:"CurrentExpirationDate"`
 	SubscriptionDuration  string `name:"SubscriptionDuration"`
 }
 
+// SaveBatchTaskForCreatingOrderRenewResponse is the response struct for api SaveBatchTaskForCreatingOrderRenew
 type SaveBatchTaskForCreatingOrderRenewResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	TaskNo    string `json:"TaskNo" xml:"TaskNo"`
 }
 
-// create a request to invoke SaveBatchTaskForCreatingOrderRenew API
-func CreateSaveBatchTaskForCreatingOrderRenewRequest() (request *SaveBatchTaskForCreatingOrderRenewRequest) {
+// CreateSaveBatchTaskForCreatingOrderRenewRequest creates a request to invoke SaveBatchTaskForCreatingOrderRenew API
+func CreateSaveBatchTaskForCreatingOrderRenewRequest(request *SaveBatchTaskForCreatingOrderRenewRequest) {
 	request = &SaveBatchTaskForCreatingOrderRenewRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -101,7 +104,7 @@ func CreateSaveBatchTaskForCreatingOrderRenewRequest() (request *SaveBatchTaskFo
 	return
 }
 
-// create a response to parse from SaveBatchTaskForCreatingOrderRenew response
+// CreateSaveBatchTaskForCreatingOrderRenewResponse creates a response to parse from SaveBatchTaskForCreatingOrderRenew response
 func CreateSaveBatchTaskForCreatingOrderRenewResponse() (response *SaveBatchTaskForCreatingOrderRenewResponse) {
 	response = &SaveBatchTaskForCreatingOrderRenewResponse{
 		BaseResponse: &responses.BaseResponse{},

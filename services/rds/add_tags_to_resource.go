@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke AddTagsToResource api with *AddTagsToResourceRequest synchronously
+// AddTagsToResource invokes the rds.AddTagsToResource API synchronously
 // api document: https://help.aliyun.com/api/rds/addtagstoresource.html
 func (client *Client) AddTagsToResource(request *AddTagsToResourceRequest) (response *AddTagsToResourceResponse, err error) {
 	response = CreateAddTagsToResourceResponse()
@@ -28,7 +28,7 @@ func (client *Client) AddTagsToResource(request *AddTagsToResourceRequest) (resp
 	return
 }
 
-// invoke AddTagsToResource api with *AddTagsToResourceRequest asynchronously
+// AddTagsToResourceWithChan invokes the rds.AddTagsToResource API asynchronously
 // api document: https://help.aliyun.com/api/rds/addtagstoresource.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddTagsToResourceWithChan(request *AddTagsToResourceRequest) (<-chan *AddTagsToResourceResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) AddTagsToResourceWithChan(request *AddTagsToResourceReques
 	return responseChan, errChan
 }
 
-// invoke AddTagsToResource api with *AddTagsToResourceRequest asynchronously
+// AddTagsToResourceWithCallback invokes the rds.AddTagsToResource API asynchronously
 // api document: https://help.aliyun.com/api/rds/addtagstoresource.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddTagsToResourceWithCallback(request *AddTagsToResourceRequest, callback func(response *AddTagsToResourceResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) AddTagsToResourceWithCallback(request *AddTagsToResourceRe
 	return result
 }
 
+// AddTagsToResourceRequest is the request struct for api AddTagsToResource
 type AddTagsToResourceRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -95,13 +96,14 @@ type AddTagsToResourceRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// AddTagsToResourceResponse is the response struct for api AddTagsToResource
 type AddTagsToResourceResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke AddTagsToResource API
-func CreateAddTagsToResourceRequest() (request *AddTagsToResourceRequest) {
+// CreateAddTagsToResourceRequest creates a request to invoke AddTagsToResource API
+func CreateAddTagsToResourceRequest(request *AddTagsToResourceRequest) {
 	request = &AddTagsToResourceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -109,7 +111,7 @@ func CreateAddTagsToResourceRequest() (request *AddTagsToResourceRequest) {
 	return
 }
 
-// create a response to parse from AddTagsToResource response
+// CreateAddTagsToResourceResponse creates a response to parse from AddTagsToResource response
 func CreateAddTagsToResourceResponse() (response *AddTagsToResourceResponse) {
 	response = &AddTagsToResourceResponse{
 		BaseResponse: &responses.BaseResponse{},

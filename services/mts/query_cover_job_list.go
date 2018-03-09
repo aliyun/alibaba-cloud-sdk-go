@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke QueryCoverJobList api with *QueryCoverJobListRequest synchronously
+// QueryCoverJobList invokes the mts.QueryCoverJobList API synchronously
 // api document: https://help.aliyun.com/api/mts/querycoverjoblist.html
 func (client *Client) QueryCoverJobList(request *QueryCoverJobListRequest) (response *QueryCoverJobListResponse, err error) {
 	response = CreateQueryCoverJobListResponse()
@@ -28,7 +28,7 @@ func (client *Client) QueryCoverJobList(request *QueryCoverJobListRequest) (resp
 	return
 }
 
-// invoke QueryCoverJobList api with *QueryCoverJobListRequest asynchronously
+// QueryCoverJobListWithChan invokes the mts.QueryCoverJobList API asynchronously
 // api document: https://help.aliyun.com/api/mts/querycoverjoblist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryCoverJobListWithChan(request *QueryCoverJobListRequest) (<-chan *QueryCoverJobListResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) QueryCoverJobListWithChan(request *QueryCoverJobListReques
 	return responseChan, errChan
 }
 
-// invoke QueryCoverJobList api with *QueryCoverJobListRequest asynchronously
+// QueryCoverJobListWithCallback invokes the mts.QueryCoverJobList API asynchronously
 // api document: https://help.aliyun.com/api/mts/querycoverjoblist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryCoverJobListWithCallback(request *QueryCoverJobListRequest, callback func(response *QueryCoverJobListResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) QueryCoverJobListWithCallback(request *QueryCoverJobListRe
 	return result
 }
 
+// QueryCoverJobListRequest is the request struct for api QueryCoverJobList
 type QueryCoverJobListRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,6 +83,7 @@ type QueryCoverJobListRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// QueryCoverJobListResponse is the response struct for api QueryCoverJobList
 type QueryCoverJobListResponse struct {
 	*responses.BaseResponse
 	RequestId    string                         `json:"RequestId" xml:"RequestId"`
@@ -89,8 +91,8 @@ type QueryCoverJobListResponse struct {
 	CoverJobList CoverJobList                   `json:"CoverJobList" xml:"CoverJobList"`
 }
 
-// create a request to invoke QueryCoverJobList API
-func CreateQueryCoverJobListRequest() (request *QueryCoverJobListRequest) {
+// CreateQueryCoverJobListRequest creates a request to invoke QueryCoverJobList API
+func CreateQueryCoverJobListRequest(request *QueryCoverJobListRequest) {
 	request = &QueryCoverJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateQueryCoverJobListRequest() (request *QueryCoverJobListRequest) {
 	return
 }
 
-// create a response to parse from QueryCoverJobList response
+// CreateQueryCoverJobListResponse creates a response to parse from QueryCoverJobList response
 func CreateQueryCoverJobListResponse() (response *QueryCoverJobListResponse) {
 	response = &QueryCoverJobListResponse{
 		BaseResponse: &responses.BaseResponse{},

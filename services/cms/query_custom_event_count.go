@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke QueryCustomEventCount api with *QueryCustomEventCountRequest synchronously
+// QueryCustomEventCount invokes the cms.QueryCustomEventCount API synchronously
 // api document: https://help.aliyun.com/api/cms/querycustomeventcount.html
 func (client *Client) QueryCustomEventCount(request *QueryCustomEventCountRequest) (response *QueryCustomEventCountResponse, err error) {
 	response = CreateQueryCustomEventCountResponse()
@@ -28,7 +28,7 @@ func (client *Client) QueryCustomEventCount(request *QueryCustomEventCountReques
 	return
 }
 
-// invoke QueryCustomEventCount api with *QueryCustomEventCountRequest asynchronously
+// QueryCustomEventCountWithChan invokes the cms.QueryCustomEventCount API asynchronously
 // api document: https://help.aliyun.com/api/cms/querycustomeventcount.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryCustomEventCountWithChan(request *QueryCustomEventCountRequest) (<-chan *QueryCustomEventCountResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) QueryCustomEventCountWithChan(request *QueryCustomEventCou
 	return responseChan, errChan
 }
 
-// invoke QueryCustomEventCount api with *QueryCustomEventCountRequest asynchronously
+// QueryCustomEventCountWithCallback invokes the cms.QueryCustomEventCount API asynchronously
 // api document: https://help.aliyun.com/api/cms/querycustomeventcount.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryCustomEventCountWithCallback(request *QueryCustomEventCountRequest, callback func(response *QueryCustomEventCountResponse, err error)) <-chan int {
@@ -73,11 +73,13 @@ func (client *Client) QueryCustomEventCountWithCallback(request *QueryCustomEven
 	return result
 }
 
+// QueryCustomEventCountRequest is the request struct for api QueryCustomEventCount
 type QueryCustomEventCountRequest struct {
 	*requests.RpcRequest
 	QueryJson string `position:"Query" name:"QueryJson"`
 }
 
+// QueryCustomEventCountResponse is the response struct for api QueryCustomEventCount
 type QueryCustomEventCountResponse struct {
 	*responses.BaseResponse
 	Code    string `json:"Code" xml:"Code"`
@@ -85,8 +87,8 @@ type QueryCustomEventCountResponse struct {
 	Data    string `json:"Data" xml:"Data"`
 }
 
-// create a request to invoke QueryCustomEventCount API
-func CreateQueryCustomEventCountRequest() (request *QueryCustomEventCountRequest) {
+// CreateQueryCustomEventCountRequest creates a request to invoke QueryCustomEventCount API
+func CreateQueryCustomEventCountRequest(request *QueryCustomEventCountRequest) {
 	request = &QueryCustomEventCountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -94,7 +96,7 @@ func CreateQueryCustomEventCountRequest() (request *QueryCustomEventCountRequest
 	return
 }
 
-// create a response to parse from QueryCustomEventCount response
+// CreateQueryCustomEventCountResponse creates a response to parse from QueryCustomEventCount response
 func CreateQueryCustomEventCountResponse() (response *QueryCustomEventCountResponse) {
 	response = &QueryCustomEventCountResponse{
 		BaseResponse: &responses.BaseResponse{},

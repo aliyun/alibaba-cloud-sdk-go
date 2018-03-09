@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke InvokeCommand api with *InvokeCommandRequest synchronously
+// InvokeCommand invokes the ecs.InvokeCommand API synchronously
 // api document: https://help.aliyun.com/api/ecs/invokecommand.html
 func (client *Client) InvokeCommand(request *InvokeCommandRequest) (response *InvokeCommandResponse, err error) {
 	response = CreateInvokeCommandResponse()
@@ -28,7 +28,7 @@ func (client *Client) InvokeCommand(request *InvokeCommandRequest) (response *In
 	return
 }
 
-// invoke InvokeCommand api with *InvokeCommandRequest asynchronously
+// InvokeCommandWithChan invokes the ecs.InvokeCommand API asynchronously
 // api document: https://help.aliyun.com/api/ecs/invokecommand.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) InvokeCommandWithChan(request *InvokeCommandRequest) (<-chan *InvokeCommandResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) InvokeCommandWithChan(request *InvokeCommandRequest) (<-ch
 	return responseChan, errChan
 }
 
-// invoke InvokeCommand api with *InvokeCommandRequest asynchronously
+// InvokeCommandWithCallback invokes the ecs.InvokeCommand API asynchronously
 // api document: https://help.aliyun.com/api/ecs/invokecommand.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) InvokeCommandWithCallback(request *InvokeCommandRequest, callback func(response *InvokeCommandResponse, err error)) <-chan int {
@@ -73,18 +73,20 @@ func (client *Client) InvokeCommandWithCallback(request *InvokeCommandRequest, c
 	return result
 }
 
+// InvokeCommandRequest is the request struct for api InvokeCommand
 type InvokeCommandRequest struct {
 	*requests.RpcRequest
 }
 
+// InvokeCommandResponse is the response struct for api InvokeCommand
 type InvokeCommandResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	InvokeId  string `json:"InvokeId" xml:"InvokeId"`
 }
 
-// create a request to invoke InvokeCommand API
-func CreateInvokeCommandRequest() (request *InvokeCommandRequest) {
+// CreateInvokeCommandRequest creates a request to invoke InvokeCommand API
+func CreateInvokeCommandRequest(request *InvokeCommandRequest) {
 	request = &InvokeCommandRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -92,7 +94,7 @@ func CreateInvokeCommandRequest() (request *InvokeCommandRequest) {
 	return
 }
 
-// create a response to parse from InvokeCommand response
+// CreateInvokeCommandResponse creates a response to parse from InvokeCommand response
 func CreateInvokeCommandResponse() (response *InvokeCommandResponse) {
 	response = &InvokeCommandResponse{
 		BaseResponse: &responses.BaseResponse{},

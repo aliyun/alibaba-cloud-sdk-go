@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SaveSingleTaskForUpdateProhibitionLock api with *SaveSingleTaskForUpdateProhibitionLockRequest synchronously
+// SaveSingleTaskForUpdateProhibitionLock invokes the domain_intl.SaveSingleTaskForUpdateProhibitionLock API synchronously
 // api document: https://help.aliyun.com/api/domain-intl/savesingletaskforupdateprohibitionlock.html
 func (client *Client) SaveSingleTaskForUpdateProhibitionLock(request *SaveSingleTaskForUpdateProhibitionLockRequest) (response *SaveSingleTaskForUpdateProhibitionLockResponse, err error) {
 	response = CreateSaveSingleTaskForUpdateProhibitionLockResponse()
@@ -28,7 +28,7 @@ func (client *Client) SaveSingleTaskForUpdateProhibitionLock(request *SaveSingle
 	return
 }
 
-// invoke SaveSingleTaskForUpdateProhibitionLock api with *SaveSingleTaskForUpdateProhibitionLockRequest asynchronously
+// SaveSingleTaskForUpdateProhibitionLockWithChan invokes the domain_intl.SaveSingleTaskForUpdateProhibitionLock API asynchronously
 // api document: https://help.aliyun.com/api/domain-intl/savesingletaskforupdateprohibitionlock.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveSingleTaskForUpdateProhibitionLockWithChan(request *SaveSingleTaskForUpdateProhibitionLockRequest) (<-chan *SaveSingleTaskForUpdateProhibitionLockResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SaveSingleTaskForUpdateProhibitionLockWithChan(request *Sa
 	return responseChan, errChan
 }
 
-// invoke SaveSingleTaskForUpdateProhibitionLock api with *SaveSingleTaskForUpdateProhibitionLockRequest asynchronously
+// SaveSingleTaskForUpdateProhibitionLockWithCallback invokes the domain_intl.SaveSingleTaskForUpdateProhibitionLock API asynchronously
 // api document: https://help.aliyun.com/api/domain-intl/savesingletaskforupdateprohibitionlock.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveSingleTaskForUpdateProhibitionLockWithCallback(request *SaveSingleTaskForUpdateProhibitionLockRequest, callback func(response *SaveSingleTaskForUpdateProhibitionLockResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SaveSingleTaskForUpdateProhibitionLockWithCallback(request
 	return result
 }
 
+// SaveSingleTaskForUpdateProhibitionLockRequest is the request struct for api SaveSingleTaskForUpdateProhibitionLock
 type SaveSingleTaskForUpdateProhibitionLockRequest struct {
 	*requests.RpcRequest
 	UserClientIp string           `position:"Query" name:"UserClientIp"`
@@ -81,14 +82,15 @@ type SaveSingleTaskForUpdateProhibitionLockRequest struct {
 	Status       requests.Boolean `position:"Query" name:"Status"`
 }
 
+// SaveSingleTaskForUpdateProhibitionLockResponse is the response struct for api SaveSingleTaskForUpdateProhibitionLock
 type SaveSingleTaskForUpdateProhibitionLockResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	TaskNo    string `json:"TaskNo" xml:"TaskNo"`
 }
 
-// create a request to invoke SaveSingleTaskForUpdateProhibitionLock API
-func CreateSaveSingleTaskForUpdateProhibitionLockRequest() (request *SaveSingleTaskForUpdateProhibitionLockRequest) {
+// CreateSaveSingleTaskForUpdateProhibitionLockRequest creates a request to invoke SaveSingleTaskForUpdateProhibitionLock API
+func CreateSaveSingleTaskForUpdateProhibitionLockRequest(request *SaveSingleTaskForUpdateProhibitionLockRequest) {
 	request = &SaveSingleTaskForUpdateProhibitionLockRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -96,7 +98,7 @@ func CreateSaveSingleTaskForUpdateProhibitionLockRequest() (request *SaveSingleT
 	return
 }
 
-// create a response to parse from SaveSingleTaskForUpdateProhibitionLock response
+// CreateSaveSingleTaskForUpdateProhibitionLockResponse creates a response to parse from SaveSingleTaskForUpdateProhibitionLock response
 func CreateSaveSingleTaskForUpdateProhibitionLockResponse() (response *SaveSingleTaskForUpdateProhibitionLockResponse) {
 	response = &SaveSingleTaskForUpdateProhibitionLockResponse{
 		BaseResponse: &responses.BaseResponse{},

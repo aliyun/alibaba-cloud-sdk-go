@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CreateImage api with *CreateImageRequest synchronously
+// CreateImage invokes the ecs.CreateImage API synchronously
 // api document: https://help.aliyun.com/api/ecs/createimage.html
 func (client *Client) CreateImage(request *CreateImageRequest) (response *CreateImageResponse, err error) {
 	response = CreateCreateImageResponse()
@@ -28,7 +28,7 @@ func (client *Client) CreateImage(request *CreateImageRequest) (response *Create
 	return
 }
 
-// invoke CreateImage api with *CreateImageRequest asynchronously
+// CreateImageWithChan invokes the ecs.CreateImage API asynchronously
 // api document: https://help.aliyun.com/api/ecs/createimage.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateImageWithChan(request *CreateImageRequest) (<-chan *CreateImageResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CreateImageWithChan(request *CreateImageRequest) (<-chan *
 	return responseChan, errChan
 }
 
-// invoke CreateImage api with *CreateImageRequest asynchronously
+// CreateImageWithCallback invokes the ecs.CreateImage API asynchronously
 // api document: https://help.aliyun.com/api/ecs/createimage.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateImageWithCallback(request *CreateImageRequest, callback func(response *CreateImageResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) CreateImageWithCallback(request *CreateImageRequest, callb
 	return result
 }
 
+// CreateImageRequest is the request struct for api CreateImage
 type CreateImageRequest struct {
 	*requests.RpcRequest
 	DiskDeviceMapping    *[]CreateImageDiskDeviceMapping `position:"Query" name:"DiskDeviceMapping"  type:"Repeated"`
@@ -100,6 +101,7 @@ type CreateImageRequest struct {
 	Tag5Value            string                          `position:"Query" name:"Tag.5.Value"`
 }
 
+// CreateImageDiskDeviceMapping is a repeated param struct in CreateImageRequest
 type CreateImageDiskDeviceMapping struct {
 	Size       string `name:"Size"`
 	SnapshotId string `name:"SnapshotId"`
@@ -107,14 +109,15 @@ type CreateImageDiskDeviceMapping struct {
 	DiskType   string `name:"DiskType"`
 }
 
+// CreateImageResponse is the response struct for api CreateImage
 type CreateImageResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	ImageId   string `json:"ImageId" xml:"ImageId"`
 }
 
-// create a request to invoke CreateImage API
-func CreateCreateImageRequest() (request *CreateImageRequest) {
+// CreateCreateImageRequest creates a request to invoke CreateImage API
+func CreateCreateImageRequest(request *CreateImageRequest) {
 	request = &CreateImageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -122,7 +125,7 @@ func CreateCreateImageRequest() (request *CreateImageRequest) {
 	return
 }
 
-// create a response to parse from CreateImage response
+// CreateCreateImageResponse creates a response to parse from CreateImage response
 func CreateCreateImageResponse() (response *CreateImageResponse) {
 	response = &CreateImageResponse{
 		BaseResponse: &responses.BaseResponse{},

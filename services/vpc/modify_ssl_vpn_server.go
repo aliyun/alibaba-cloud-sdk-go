@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifySslVpnServer api with *ModifySslVpnServerRequest synchronously
+// ModifySslVpnServer invokes the vpc.ModifySslVpnServer API synchronously
 // api document: https://help.aliyun.com/api/vpc/modifysslvpnserver.html
 func (client *Client) ModifySslVpnServer(request *ModifySslVpnServerRequest) (response *ModifySslVpnServerResponse, err error) {
 	response = CreateModifySslVpnServerResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifySslVpnServer(request *ModifySslVpnServerRequest) (re
 	return
 }
 
-// invoke ModifySslVpnServer api with *ModifySslVpnServerRequest asynchronously
+// ModifySslVpnServerWithChan invokes the vpc.ModifySslVpnServer API asynchronously
 // api document: https://help.aliyun.com/api/vpc/modifysslvpnserver.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySslVpnServerWithChan(request *ModifySslVpnServerRequest) (<-chan *ModifySslVpnServerResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifySslVpnServerWithChan(request *ModifySslVpnServerRequ
 	return responseChan, errChan
 }
 
-// invoke ModifySslVpnServer api with *ModifySslVpnServerRequest asynchronously
+// ModifySslVpnServerWithCallback invokes the vpc.ModifySslVpnServer API asynchronously
 // api document: https://help.aliyun.com/api/vpc/modifysslvpnserver.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySslVpnServerWithCallback(request *ModifySslVpnServerRequest, callback func(response *ModifySslVpnServerResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ModifySslVpnServerWithCallback(request *ModifySslVpnServer
 	return result
 }
 
+// ModifySslVpnServerRequest is the request struct for api ModifySslVpnServer
 type ModifySslVpnServerRequest struct {
 	*requests.RpcRequest
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
@@ -90,6 +91,7 @@ type ModifySslVpnServerRequest struct {
 	Compress             requests.Boolean `position:"Query" name:"Compress"`
 }
 
+// ModifySslVpnServerResponse is the response struct for api ModifySslVpnServer
 type ModifySslVpnServerResponse struct {
 	*responses.BaseResponse
 	RequestId      string `json:"RequestId" xml:"RequestId"`
@@ -109,8 +111,8 @@ type ModifySslVpnServerResponse struct {
 	InternetIp     string `json:"InternetIp" xml:"InternetIp"`
 }
 
-// create a request to invoke ModifySslVpnServer API
-func CreateModifySslVpnServerRequest() (request *ModifySslVpnServerRequest) {
+// CreateModifySslVpnServerRequest creates a request to invoke ModifySslVpnServer API
+func CreateModifySslVpnServerRequest(request *ModifySslVpnServerRequest) {
 	request = &ModifySslVpnServerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -118,7 +120,7 @@ func CreateModifySslVpnServerRequest() (request *ModifySslVpnServerRequest) {
 	return
 }
 
-// create a response to parse from ModifySslVpnServer response
+// CreateModifySslVpnServerResponse creates a response to parse from ModifySslVpnServer response
 func CreateModifySslVpnServerResponse() (response *ModifySslVpnServerResponse) {
 	response = &ModifySslVpnServerResponse{
 		BaseResponse: &responses.BaseResponse{},

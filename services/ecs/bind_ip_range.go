@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke BindIpRange api with *BindIpRangeRequest synchronously
+// BindIpRange invokes the ecs.BindIpRange API synchronously
 // api document: https://help.aliyun.com/api/ecs/bindiprange.html
 func (client *Client) BindIpRange(request *BindIpRangeRequest) (response *BindIpRangeResponse, err error) {
 	response = CreateBindIpRangeResponse()
@@ -28,7 +28,7 @@ func (client *Client) BindIpRange(request *BindIpRangeRequest) (response *BindIp
 	return
 }
 
-// invoke BindIpRange api with *BindIpRangeRequest asynchronously
+// BindIpRangeWithChan invokes the ecs.BindIpRange API asynchronously
 // api document: https://help.aliyun.com/api/ecs/bindiprange.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BindIpRangeWithChan(request *BindIpRangeRequest) (<-chan *BindIpRangeResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) BindIpRangeWithChan(request *BindIpRangeRequest) (<-chan *
 	return responseChan, errChan
 }
 
-// invoke BindIpRange api with *BindIpRangeRequest asynchronously
+// BindIpRangeWithCallback invokes the ecs.BindIpRange API asynchronously
 // api document: https://help.aliyun.com/api/ecs/bindiprange.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BindIpRangeWithCallback(request *BindIpRangeRequest, callback func(response *BindIpRangeResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) BindIpRangeWithCallback(request *BindIpRangeRequest, callb
 	return result
 }
 
+// BindIpRangeRequest is the request struct for api BindIpRange
 type BindIpRangeRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -83,13 +84,14 @@ type BindIpRangeRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// BindIpRangeResponse is the response struct for api BindIpRange
 type BindIpRangeResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke BindIpRange API
-func CreateBindIpRangeRequest() (request *BindIpRangeRequest) {
+// CreateBindIpRangeRequest creates a request to invoke BindIpRange API
+func CreateBindIpRangeRequest(request *BindIpRangeRequest) {
 	request = &BindIpRangeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateBindIpRangeRequest() (request *BindIpRangeRequest) {
 	return
 }
 
-// create a response to parse from BindIpRange response
+// CreateBindIpRangeResponse creates a response to parse from BindIpRange response
 func CreateBindIpRangeResponse() (response *BindIpRangeResponse) {
 	response = &BindIpRangeResponse{
 		BaseResponse: &responses.BaseResponse{},

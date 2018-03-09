@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke GetMyGroups api with *GetMyGroupsRequest synchronously
+// GetMyGroups invokes the cms.GetMyGroups API synchronously
 // api document: https://help.aliyun.com/api/cms/getmygroups.html
 func (client *Client) GetMyGroups(request *GetMyGroupsRequest) (response *GetMyGroupsResponse, err error) {
 	response = CreateGetMyGroupsResponse()
@@ -28,7 +28,7 @@ func (client *Client) GetMyGroups(request *GetMyGroupsRequest) (response *GetMyG
 	return
 }
 
-// invoke GetMyGroups api with *GetMyGroupsRequest asynchronously
+// GetMyGroupsWithChan invokes the cms.GetMyGroups API asynchronously
 // api document: https://help.aliyun.com/api/cms/getmygroups.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetMyGroupsWithChan(request *GetMyGroupsRequest) (<-chan *GetMyGroupsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) GetMyGroupsWithChan(request *GetMyGroupsRequest) (<-chan *
 	return responseChan, errChan
 }
 
-// invoke GetMyGroups api with *GetMyGroupsRequest asynchronously
+// GetMyGroupsWithCallback invokes the cms.GetMyGroups API asynchronously
 // api document: https://help.aliyun.com/api/cms/getmygroups.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetMyGroupsWithCallback(request *GetMyGroupsRequest, callback func(response *GetMyGroupsResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) GetMyGroupsWithCallback(request *GetMyGroupsRequest, callb
 	return result
 }
 
+// GetMyGroupsRequest is the request struct for api GetMyGroups
 type GetMyGroupsRequest struct {
 	*requests.RpcRequest
 	GroupId             requests.Integer `position:"Query" name:"GroupId"`
@@ -83,6 +84,7 @@ type GetMyGroupsRequest struct {
 	GroupName           string           `position:"Query" name:"GroupName"`
 }
 
+// GetMyGroupsResponse is the response struct for api GetMyGroups
 type GetMyGroupsResponse struct {
 	*responses.BaseResponse
 	RequestId    string `json:"RequestId" xml:"RequestId"`
@@ -92,8 +94,8 @@ type GetMyGroupsResponse struct {
 	Group        Group  `json:"Group" xml:"Group"`
 }
 
-// create a request to invoke GetMyGroups API
-func CreateGetMyGroupsRequest() (request *GetMyGroupsRequest) {
+// CreateGetMyGroupsRequest creates a request to invoke GetMyGroups API
+func CreateGetMyGroupsRequest(request *GetMyGroupsRequest) {
 	request = &GetMyGroupsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -101,7 +103,7 @@ func CreateGetMyGroupsRequest() (request *GetMyGroupsRequest) {
 	return
 }
 
-// create a response to parse from GetMyGroups response
+// CreateGetMyGroupsResponse creates a response to parse from GetMyGroups response
 func CreateGetMyGroupsResponse() (response *GetMyGroupsResponse) {
 	response = &GetMyGroupsResponse{
 		BaseResponse: &responses.BaseResponse{},

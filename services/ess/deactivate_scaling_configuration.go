@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeactivateScalingConfiguration api with *DeactivateScalingConfigurationRequest synchronously
+// DeactivateScalingConfiguration invokes the ess.DeactivateScalingConfiguration API synchronously
 // api document: https://help.aliyun.com/api/ess/deactivatescalingconfiguration.html
 func (client *Client) DeactivateScalingConfiguration(request *DeactivateScalingConfigurationRequest) (response *DeactivateScalingConfigurationResponse, err error) {
 	response = CreateDeactivateScalingConfigurationResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeactivateScalingConfiguration(request *DeactivateScalingC
 	return
 }
 
-// invoke DeactivateScalingConfiguration api with *DeactivateScalingConfigurationRequest asynchronously
+// DeactivateScalingConfigurationWithChan invokes the ess.DeactivateScalingConfiguration API asynchronously
 // api document: https://help.aliyun.com/api/ess/deactivatescalingconfiguration.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeactivateScalingConfigurationWithChan(request *DeactivateScalingConfigurationRequest) (<-chan *DeactivateScalingConfigurationResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeactivateScalingConfigurationWithChan(request *Deactivate
 	return responseChan, errChan
 }
 
-// invoke DeactivateScalingConfiguration api with *DeactivateScalingConfigurationRequest asynchronously
+// DeactivateScalingConfigurationWithCallback invokes the ess.DeactivateScalingConfiguration API asynchronously
 // api document: https://help.aliyun.com/api/ess/deactivatescalingconfiguration.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeactivateScalingConfigurationWithCallback(request *DeactivateScalingConfigurationRequest, callback func(response *DeactivateScalingConfigurationResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DeactivateScalingConfigurationWithCallback(request *Deacti
 	return result
 }
 
+// DeactivateScalingConfigurationRequest is the request struct for api DeactivateScalingConfiguration
 type DeactivateScalingConfigurationRequest struct {
 	*requests.RpcRequest
 	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
@@ -81,13 +82,14 @@ type DeactivateScalingConfigurationRequest struct {
 	OwnerAccount           string           `position:"Query" name:"OwnerAccount"`
 }
 
+// DeactivateScalingConfigurationResponse is the response struct for api DeactivateScalingConfiguration
 type DeactivateScalingConfigurationResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DeactivateScalingConfiguration API
-func CreateDeactivateScalingConfigurationRequest() (request *DeactivateScalingConfigurationRequest) {
+// CreateDeactivateScalingConfigurationRequest creates a request to invoke DeactivateScalingConfiguration API
+func CreateDeactivateScalingConfigurationRequest(request *DeactivateScalingConfigurationRequest) {
 	request = &DeactivateScalingConfigurationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateDeactivateScalingConfigurationRequest() (request *DeactivateScalingCo
 	return
 }
 
-// create a response to parse from DeactivateScalingConfiguration response
+// CreateDeactivateScalingConfigurationResponse creates a response to parse from DeactivateScalingConfiguration response
 func CreateDeactivateScalingConfigurationResponse() (response *DeactivateScalingConfigurationResponse) {
 	response = &DeactivateScalingConfigurationResponse{
 		BaseResponse: &responses.BaseResponse{},

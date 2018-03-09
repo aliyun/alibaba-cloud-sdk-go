@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke PushMessageToiOS api with *PushMessageToiOSRequest synchronously
+// PushMessageToiOS invokes the push.PushMessageToiOS API synchronously
 // api document: https://help.aliyun.com/api/push/pushmessagetoios.html
 func (client *Client) PushMessageToiOS(request *PushMessageToiOSRequest) (response *PushMessageToiOSResponse, err error) {
 	response = CreatePushMessageToiOSResponse()
@@ -28,7 +28,7 @@ func (client *Client) PushMessageToiOS(request *PushMessageToiOSRequest) (respon
 	return
 }
 
-// invoke PushMessageToiOS api with *PushMessageToiOSRequest asynchronously
+// PushMessageToiOSWithChan invokes the push.PushMessageToiOS API asynchronously
 // api document: https://help.aliyun.com/api/push/pushmessagetoios.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PushMessageToiOSWithChan(request *PushMessageToiOSRequest) (<-chan *PushMessageToiOSResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) PushMessageToiOSWithChan(request *PushMessageToiOSRequest)
 	return responseChan, errChan
 }
 
-// invoke PushMessageToiOS api with *PushMessageToiOSRequest asynchronously
+// PushMessageToiOSWithCallback invokes the push.PushMessageToiOS API asynchronously
 // api document: https://help.aliyun.com/api/push/pushmessagetoios.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PushMessageToiOSWithCallback(request *PushMessageToiOSRequest, callback func(response *PushMessageToiOSResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) PushMessageToiOSWithCallback(request *PushMessageToiOSRequ
 	return result
 }
 
+// PushMessageToiOSRequest is the request struct for api PushMessageToiOS
 type PushMessageToiOSRequest struct {
 	*requests.RpcRequest
 	AppKey      requests.Integer `position:"Query" name:"AppKey"`
@@ -83,14 +84,15 @@ type PushMessageToiOSRequest struct {
 	JobKey      string           `position:"Query" name:"JobKey"`
 }
 
+// PushMessageToiOSResponse is the response struct for api PushMessageToiOS
 type PushMessageToiOSResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	MessageId string `json:"MessageId" xml:"MessageId"`
 }
 
-// create a request to invoke PushMessageToiOS API
-func CreatePushMessageToiOSRequest() (request *PushMessageToiOSRequest) {
+// CreatePushMessageToiOSRequest creates a request to invoke PushMessageToiOS API
+func CreatePushMessageToiOSRequest(request *PushMessageToiOSRequest) {
 	request = &PushMessageToiOSRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreatePushMessageToiOSRequest() (request *PushMessageToiOSRequest) {
 	return
 }
 
-// create a response to parse from PushMessageToiOS response
+// CreatePushMessageToiOSResponse creates a response to parse from PushMessageToiOS response
 func CreatePushMessageToiOSResponse() (response *PushMessageToiOSResponse) {
 	response = &PushMessageToiOSResponse{
 		BaseResponse: &responses.BaseResponse{},

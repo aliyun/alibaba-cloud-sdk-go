@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CreateVSwitch api with *CreateVSwitchRequest synchronously
+// CreateVSwitch invokes the vpc.CreateVSwitch API synchronously
 // api document: https://help.aliyun.com/api/vpc/createvswitch.html
 func (client *Client) CreateVSwitch(request *CreateVSwitchRequest) (response *CreateVSwitchResponse, err error) {
 	response = CreateCreateVSwitchResponse()
@@ -28,7 +28,7 @@ func (client *Client) CreateVSwitch(request *CreateVSwitchRequest) (response *Cr
 	return
 }
 
-// invoke CreateVSwitch api with *CreateVSwitchRequest asynchronously
+// CreateVSwitchWithChan invokes the vpc.CreateVSwitch API asynchronously
 // api document: https://help.aliyun.com/api/vpc/createvswitch.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateVSwitchWithChan(request *CreateVSwitchRequest) (<-chan *CreateVSwitchResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CreateVSwitchWithChan(request *CreateVSwitchRequest) (<-ch
 	return responseChan, errChan
 }
 
-// invoke CreateVSwitch api with *CreateVSwitchRequest asynchronously
+// CreateVSwitchWithCallback invokes the vpc.CreateVSwitch API asynchronously
 // api document: https://help.aliyun.com/api/vpc/createvswitch.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateVSwitchWithCallback(request *CreateVSwitchRequest, callback func(response *CreateVSwitchResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) CreateVSwitchWithCallback(request *CreateVSwitchRequest, c
 	return result
 }
 
+// CreateVSwitchRequest is the request struct for api CreateVSwitch
 type CreateVSwitchRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -87,14 +88,15 @@ type CreateVSwitchRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// CreateVSwitchResponse is the response struct for api CreateVSwitch
 type CreateVSwitchResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	VSwitchId string `json:"VSwitchId" xml:"VSwitchId"`
 }
 
-// create a request to invoke CreateVSwitch API
-func CreateCreateVSwitchRequest() (request *CreateVSwitchRequest) {
+// CreateCreateVSwitchRequest creates a request to invoke CreateVSwitch API
+func CreateCreateVSwitchRequest(request *CreateVSwitchRequest) {
 	request = &CreateVSwitchRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -102,7 +104,7 @@ func CreateCreateVSwitchRequest() (request *CreateVSwitchRequest) {
 	return
 }
 
-// create a response to parse from CreateVSwitch response
+// CreateCreateVSwitchResponse creates a response to parse from CreateVSwitch response
 func CreateCreateVSwitchResponse() (response *CreateVSwitchResponse) {
 	response = &CreateVSwitchResponse{
 		BaseResponse: &responses.BaseResponse{},

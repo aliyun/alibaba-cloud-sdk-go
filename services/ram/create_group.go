@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CreateGroup api with *CreateGroupRequest synchronously
+// CreateGroup invokes the ram.CreateGroup API synchronously
 // api document: https://help.aliyun.com/api/ram/creategroup.html
 func (client *Client) CreateGroup(request *CreateGroupRequest) (response *CreateGroupResponse, err error) {
 	response = CreateCreateGroupResponse()
@@ -28,7 +28,7 @@ func (client *Client) CreateGroup(request *CreateGroupRequest) (response *Create
 	return
 }
 
-// invoke CreateGroup api with *CreateGroupRequest asynchronously
+// CreateGroupWithChan invokes the ram.CreateGroup API asynchronously
 // api document: https://help.aliyun.com/api/ram/creategroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateGroupWithChan(request *CreateGroupRequest) (<-chan *CreateGroupResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CreateGroupWithChan(request *CreateGroupRequest) (<-chan *
 	return responseChan, errChan
 }
 
-// invoke CreateGroup api with *CreateGroupRequest asynchronously
+// CreateGroupWithCallback invokes the ram.CreateGroup API asynchronously
 // api document: https://help.aliyun.com/api/ram/creategroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateGroupWithCallback(request *CreateGroupRequest, callback func(response *CreateGroupResponse, err error)) <-chan int {
@@ -73,20 +73,22 @@ func (client *Client) CreateGroupWithCallback(request *CreateGroupRequest, callb
 	return result
 }
 
+// CreateGroupRequest is the request struct for api CreateGroup
 type CreateGroupRequest struct {
 	*requests.RpcRequest
 	GroupName string `position:"Query" name:"GroupName"`
 	Comments  string `position:"Query" name:"Comments"`
 }
 
+// CreateGroupResponse is the response struct for api CreateGroup
 type CreateGroupResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Group     Group  `json:"Group" xml:"Group"`
 }
 
-// create a request to invoke CreateGroup API
-func CreateCreateGroupRequest() (request *CreateGroupRequest) {
+// CreateCreateGroupRequest creates a request to invoke CreateGroup API
+func CreateCreateGroupRequest(request *CreateGroupRequest) {
 	request = &CreateGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -94,7 +96,7 @@ func CreateCreateGroupRequest() (request *CreateGroupRequest) {
 	return
 }
 
-// create a response to parse from CreateGroup response
+// CreateCreateGroupResponse creates a response to parse from CreateGroup response
 func CreateCreateGroupResponse() (response *CreateGroupResponse) {
 	response = &CreateGroupResponse{
 		BaseResponse: &responses.BaseResponse{},

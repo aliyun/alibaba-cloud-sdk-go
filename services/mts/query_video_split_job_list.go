@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke QueryVideoSplitJobList api with *QueryVideoSplitJobListRequest synchronously
+// QueryVideoSplitJobList invokes the mts.QueryVideoSplitJobList API synchronously
 // api document: https://help.aliyun.com/api/mts/queryvideosplitjoblist.html
 func (client *Client) QueryVideoSplitJobList(request *QueryVideoSplitJobListRequest) (response *QueryVideoSplitJobListResponse, err error) {
 	response = CreateQueryVideoSplitJobListResponse()
@@ -28,7 +28,7 @@ func (client *Client) QueryVideoSplitJobList(request *QueryVideoSplitJobListRequ
 	return
 }
 
-// invoke QueryVideoSplitJobList api with *QueryVideoSplitJobListRequest asynchronously
+// QueryVideoSplitJobListWithChan invokes the mts.QueryVideoSplitJobList API asynchronously
 // api document: https://help.aliyun.com/api/mts/queryvideosplitjoblist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryVideoSplitJobListWithChan(request *QueryVideoSplitJobListRequest) (<-chan *QueryVideoSplitJobListResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) QueryVideoSplitJobListWithChan(request *QueryVideoSplitJob
 	return responseChan, errChan
 }
 
-// invoke QueryVideoSplitJobList api with *QueryVideoSplitJobListRequest asynchronously
+// QueryVideoSplitJobListWithCallback invokes the mts.QueryVideoSplitJobList API asynchronously
 // api document: https://help.aliyun.com/api/mts/queryvideosplitjoblist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryVideoSplitJobListWithCallback(request *QueryVideoSplitJobListRequest, callback func(response *QueryVideoSplitJobListResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) QueryVideoSplitJobListWithCallback(request *QueryVideoSpli
 	return result
 }
 
+// QueryVideoSplitJobListRequest is the request struct for api QueryVideoSplitJobList
 type QueryVideoSplitJobListRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,6 +83,7 @@ type QueryVideoSplitJobListRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// QueryVideoSplitJobListResponse is the response struct for api QueryVideoSplitJobList
 type QueryVideoSplitJobListResponse struct {
 	*responses.BaseResponse
 	RequestId   string                              `json:"RequestId" xml:"RequestId"`
@@ -89,8 +91,8 @@ type QueryVideoSplitJobListResponse struct {
 	JobList     JobListInQueryVideoSplitJobList     `json:"JobList" xml:"JobList"`
 }
 
-// create a request to invoke QueryVideoSplitJobList API
-func CreateQueryVideoSplitJobListRequest() (request *QueryVideoSplitJobListRequest) {
+// CreateQueryVideoSplitJobListRequest creates a request to invoke QueryVideoSplitJobList API
+func CreateQueryVideoSplitJobListRequest(request *QueryVideoSplitJobListRequest) {
 	request = &QueryVideoSplitJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateQueryVideoSplitJobListRequest() (request *QueryVideoSplitJobListReque
 	return
 }
 
-// create a response to parse from QueryVideoSplitJobList response
+// CreateQueryVideoSplitJobListResponse creates a response to parse from QueryVideoSplitJobList response
 func CreateQueryVideoSplitJobListResponse() (response *QueryVideoSplitJobListResponse) {
 	response = &QueryVideoSplitJobListResponse{
 		BaseResponse: &responses.BaseResponse{},

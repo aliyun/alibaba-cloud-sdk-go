@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifyLoadBalancerPayType api with *ModifyLoadBalancerPayTypeRequest synchronously
+// ModifyLoadBalancerPayType invokes the slb.ModifyLoadBalancerPayType API synchronously
 // api document: https://help.aliyun.com/api/slb/modifyloadbalancerpaytype.html
 func (client *Client) ModifyLoadBalancerPayType(request *ModifyLoadBalancerPayTypeRequest) (response *ModifyLoadBalancerPayTypeResponse, err error) {
 	response = CreateModifyLoadBalancerPayTypeResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifyLoadBalancerPayType(request *ModifyLoadBalancerPayTy
 	return
 }
 
-// invoke ModifyLoadBalancerPayType api with *ModifyLoadBalancerPayTypeRequest asynchronously
+// ModifyLoadBalancerPayTypeWithChan invokes the slb.ModifyLoadBalancerPayType API asynchronously
 // api document: https://help.aliyun.com/api/slb/modifyloadbalancerpaytype.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyLoadBalancerPayTypeWithChan(request *ModifyLoadBalancerPayTypeRequest) (<-chan *ModifyLoadBalancerPayTypeResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifyLoadBalancerPayTypeWithChan(request *ModifyLoadBalan
 	return responseChan, errChan
 }
 
-// invoke ModifyLoadBalancerPayType api with *ModifyLoadBalancerPayTypeRequest asynchronously
+// ModifyLoadBalancerPayTypeWithCallback invokes the slb.ModifyLoadBalancerPayType API asynchronously
 // api document: https://help.aliyun.com/api/slb/modifyloadbalancerpaytype.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyLoadBalancerPayTypeWithCallback(request *ModifyLoadBalancerPayTypeRequest, callback func(response *ModifyLoadBalancerPayTypeResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ModifyLoadBalancerPayTypeWithCallback(request *ModifyLoadB
 	return result
 }
 
+// ModifyLoadBalancerPayTypeRequest is the request struct for api ModifyLoadBalancerPayType
 type ModifyLoadBalancerPayTypeRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -88,14 +89,15 @@ type ModifyLoadBalancerPayTypeRequest struct {
 	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`
 }
 
+// ModifyLoadBalancerPayTypeResponse is the response struct for api ModifyLoadBalancerPayType
 type ModifyLoadBalancerPayTypeResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	OrderId   int    `json:"OrderId" xml:"OrderId"`
 }
 
-// create a request to invoke ModifyLoadBalancerPayType API
-func CreateModifyLoadBalancerPayTypeRequest() (request *ModifyLoadBalancerPayTypeRequest) {
+// CreateModifyLoadBalancerPayTypeRequest creates a request to invoke ModifyLoadBalancerPayType API
+func CreateModifyLoadBalancerPayTypeRequest(request *ModifyLoadBalancerPayTypeRequest) {
 	request = &ModifyLoadBalancerPayTypeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -103,7 +105,7 @@ func CreateModifyLoadBalancerPayTypeRequest() (request *ModifyLoadBalancerPayTyp
 	return
 }
 
-// create a response to parse from ModifyLoadBalancerPayType response
+// CreateModifyLoadBalancerPayTypeResponse creates a response to parse from ModifyLoadBalancerPayType response
 func CreateModifyLoadBalancerPayTypeResponse() (response *ModifyLoadBalancerPayTypeResponse) {
 	response = &ModifyLoadBalancerPayTypeResponse{
 		BaseResponse: &responses.BaseResponse{},

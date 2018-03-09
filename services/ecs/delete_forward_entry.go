@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteForwardEntry api with *DeleteForwardEntryRequest synchronously
+// DeleteForwardEntry invokes the ecs.DeleteForwardEntry API synchronously
 // api document: https://help.aliyun.com/api/ecs/deleteforwardentry.html
 func (client *Client) DeleteForwardEntry(request *DeleteForwardEntryRequest) (response *DeleteForwardEntryResponse, err error) {
 	response = CreateDeleteForwardEntryResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteForwardEntry(request *DeleteForwardEntryRequest) (re
 	return
 }
 
-// invoke DeleteForwardEntry api with *DeleteForwardEntryRequest asynchronously
+// DeleteForwardEntryWithChan invokes the ecs.DeleteForwardEntry API asynchronously
 // api document: https://help.aliyun.com/api/ecs/deleteforwardentry.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteForwardEntryWithChan(request *DeleteForwardEntryRequest) (<-chan *DeleteForwardEntryResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteForwardEntryWithChan(request *DeleteForwardEntryRequ
 	return responseChan, errChan
 }
 
-// invoke DeleteForwardEntry api with *DeleteForwardEntryRequest asynchronously
+// DeleteForwardEntryWithCallback invokes the ecs.DeleteForwardEntry API asynchronously
 // api document: https://help.aliyun.com/api/ecs/deleteforwardentry.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteForwardEntryWithCallback(request *DeleteForwardEntryRequest, callback func(response *DeleteForwardEntryResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DeleteForwardEntryWithCallback(request *DeleteForwardEntry
 	return result
 }
 
+// DeleteForwardEntryRequest is the request struct for api DeleteForwardEntry
 type DeleteForwardEntryRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -83,13 +84,14 @@ type DeleteForwardEntryRequest struct {
 	ForwardEntryId       string           `position:"Query" name:"ForwardEntryId"`
 }
 
+// DeleteForwardEntryResponse is the response struct for api DeleteForwardEntry
 type DeleteForwardEntryResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DeleteForwardEntry API
-func CreateDeleteForwardEntryRequest() (request *DeleteForwardEntryRequest) {
+// CreateDeleteForwardEntryRequest creates a request to invoke DeleteForwardEntry API
+func CreateDeleteForwardEntryRequest(request *DeleteForwardEntryRequest) {
 	request = &DeleteForwardEntryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateDeleteForwardEntryRequest() (request *DeleteForwardEntryRequest) {
 	return
 }
 
-// create a response to parse from DeleteForwardEntry response
+// CreateDeleteForwardEntryResponse creates a response to parse from DeleteForwardEntry response
 func CreateDeleteForwardEntryResponse() (response *DeleteForwardEntryResponse) {
 	response = &DeleteForwardEntryResponse{
 		BaseResponse: &responses.BaseResponse{},

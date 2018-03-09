@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeLoadBalancerUDPListenerAttribute api with *DescribeLoadBalancerUDPListenerAttributeRequest synchronously
+// DescribeLoadBalancerUDPListenerAttribute invokes the slb.DescribeLoadBalancerUDPListenerAttribute API synchronously
 // api document: https://help.aliyun.com/api/slb/describeloadbalancerudplistenerattribute.html
 func (client *Client) DescribeLoadBalancerUDPListenerAttribute(request *DescribeLoadBalancerUDPListenerAttributeRequest) (response *DescribeLoadBalancerUDPListenerAttributeResponse, err error) {
 	response = CreateDescribeLoadBalancerUDPListenerAttributeResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeLoadBalancerUDPListenerAttribute(request *Describe
 	return
 }
 
-// invoke DescribeLoadBalancerUDPListenerAttribute api with *DescribeLoadBalancerUDPListenerAttributeRequest asynchronously
+// DescribeLoadBalancerUDPListenerAttributeWithChan invokes the slb.DescribeLoadBalancerUDPListenerAttribute API asynchronously
 // api document: https://help.aliyun.com/api/slb/describeloadbalancerudplistenerattribute.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLoadBalancerUDPListenerAttributeWithChan(request *DescribeLoadBalancerUDPListenerAttributeRequest) (<-chan *DescribeLoadBalancerUDPListenerAttributeResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeLoadBalancerUDPListenerAttributeWithChan(request *
 	return responseChan, errChan
 }
 
-// invoke DescribeLoadBalancerUDPListenerAttribute api with *DescribeLoadBalancerUDPListenerAttributeRequest asynchronously
+// DescribeLoadBalancerUDPListenerAttributeWithCallback invokes the slb.DescribeLoadBalancerUDPListenerAttribute API asynchronously
 // api document: https://help.aliyun.com/api/slb/describeloadbalancerudplistenerattribute.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLoadBalancerUDPListenerAttributeWithCallback(request *DescribeLoadBalancerUDPListenerAttributeRequest, callback func(response *DescribeLoadBalancerUDPListenerAttributeResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeLoadBalancerUDPListenerAttributeWithCallback(reque
 	return result
 }
 
+// DescribeLoadBalancerUDPListenerAttributeRequest is the request struct for api DescribeLoadBalancerUDPListenerAttribute
 type DescribeLoadBalancerUDPListenerAttributeRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -85,6 +86,7 @@ type DescribeLoadBalancerUDPListenerAttributeRequest struct {
 	Tags                 string           `position:"Query" name:"Tags"`
 }
 
+// DescribeLoadBalancerUDPListenerAttributeResponse is the response struct for api DescribeLoadBalancerUDPListenerAttribute
 type DescribeLoadBalancerUDPListenerAttributeResponse struct {
 	*responses.BaseResponse
 	RequestId                 string `json:"RequestId" xml:"RequestId"`
@@ -107,8 +109,8 @@ type DescribeLoadBalancerUDPListenerAttributeResponse struct {
 	MasterSlaveServerGroupId  string `json:"MasterSlaveServerGroupId" xml:"MasterSlaveServerGroupId"`
 }
 
-// create a request to invoke DescribeLoadBalancerUDPListenerAttribute API
-func CreateDescribeLoadBalancerUDPListenerAttributeRequest() (request *DescribeLoadBalancerUDPListenerAttributeRequest) {
+// CreateDescribeLoadBalancerUDPListenerAttributeRequest creates a request to invoke DescribeLoadBalancerUDPListenerAttribute API
+func CreateDescribeLoadBalancerUDPListenerAttributeRequest(request *DescribeLoadBalancerUDPListenerAttributeRequest) {
 	request = &DescribeLoadBalancerUDPListenerAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -116,7 +118,7 @@ func CreateDescribeLoadBalancerUDPListenerAttributeRequest() (request *DescribeL
 	return
 }
 
-// create a response to parse from DescribeLoadBalancerUDPListenerAttribute response
+// CreateDescribeLoadBalancerUDPListenerAttributeResponse creates a response to parse from DescribeLoadBalancerUDPListenerAttribute response
 func CreateDescribeLoadBalancerUDPListenerAttributeResponse() (response *DescribeLoadBalancerUDPListenerAttributeResponse) {
 	response = &DescribeLoadBalancerUDPListenerAttributeResponse{
 		BaseResponse: &responses.BaseResponse{},

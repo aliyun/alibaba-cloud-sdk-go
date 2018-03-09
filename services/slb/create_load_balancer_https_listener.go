@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CreateLoadBalancerHTTPSListener api with *CreateLoadBalancerHTTPSListenerRequest synchronously
+// CreateLoadBalancerHTTPSListener invokes the slb.CreateLoadBalancerHTTPSListener API synchronously
 // api document: https://help.aliyun.com/api/slb/createloadbalancerhttpslistener.html
 func (client *Client) CreateLoadBalancerHTTPSListener(request *CreateLoadBalancerHTTPSListenerRequest) (response *CreateLoadBalancerHTTPSListenerResponse, err error) {
 	response = CreateCreateLoadBalancerHTTPSListenerResponse()
@@ -28,7 +28,7 @@ func (client *Client) CreateLoadBalancerHTTPSListener(request *CreateLoadBalance
 	return
 }
 
-// invoke CreateLoadBalancerHTTPSListener api with *CreateLoadBalancerHTTPSListenerRequest asynchronously
+// CreateLoadBalancerHTTPSListenerWithChan invokes the slb.CreateLoadBalancerHTTPSListener API asynchronously
 // api document: https://help.aliyun.com/api/slb/createloadbalancerhttpslistener.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateLoadBalancerHTTPSListenerWithChan(request *CreateLoadBalancerHTTPSListenerRequest) (<-chan *CreateLoadBalancerHTTPSListenerResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CreateLoadBalancerHTTPSListenerWithChan(request *CreateLoa
 	return responseChan, errChan
 }
 
-// invoke CreateLoadBalancerHTTPSListener api with *CreateLoadBalancerHTTPSListenerRequest asynchronously
+// CreateLoadBalancerHTTPSListenerWithCallback invokes the slb.CreateLoadBalancerHTTPSListener API asynchronously
 // api document: https://help.aliyun.com/api/slb/createloadbalancerhttpslistener.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateLoadBalancerHTTPSListenerWithCallback(request *CreateLoadBalancerHTTPSListenerRequest, callback func(response *CreateLoadBalancerHTTPSListenerResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) CreateLoadBalancerHTTPSListenerWithCallback(request *Creat
 	return result
 }
 
+// CreateLoadBalancerHTTPSListenerRequest is the request struct for api CreateLoadBalancerHTTPSListener
 type CreateLoadBalancerHTTPSListenerRequest struct {
 	*requests.RpcRequest
 	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
@@ -110,13 +111,14 @@ type CreateLoadBalancerHTTPSListenerRequest struct {
 	Gzip                   string           `position:"Query" name:"Gzip"`
 }
 
+// CreateLoadBalancerHTTPSListenerResponse is the response struct for api CreateLoadBalancerHTTPSListener
 type CreateLoadBalancerHTTPSListenerResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke CreateLoadBalancerHTTPSListener API
-func CreateCreateLoadBalancerHTTPSListenerRequest() (request *CreateLoadBalancerHTTPSListenerRequest) {
+// CreateCreateLoadBalancerHTTPSListenerRequest creates a request to invoke CreateLoadBalancerHTTPSListener API
+func CreateCreateLoadBalancerHTTPSListenerRequest(request *CreateLoadBalancerHTTPSListenerRequest) {
 	request = &CreateLoadBalancerHTTPSListenerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -124,7 +126,7 @@ func CreateCreateLoadBalancerHTTPSListenerRequest() (request *CreateLoadBalancer
 	return
 }
 
-// create a response to parse from CreateLoadBalancerHTTPSListener response
+// CreateCreateLoadBalancerHTTPSListenerResponse creates a response to parse from CreateLoadBalancerHTTPSListener response
 func CreateCreateLoadBalancerHTTPSListenerResponse() (response *CreateLoadBalancerHTTPSListenerResponse) {
 	response = &CreateLoadBalancerHTTPSListenerResponse{
 		BaseResponse: &responses.BaseResponse{},

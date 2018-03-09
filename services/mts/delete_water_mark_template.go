@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteWaterMarkTemplate api with *DeleteWaterMarkTemplateRequest synchronously
+// DeleteWaterMarkTemplate invokes the mts.DeleteWaterMarkTemplate API synchronously
 // api document: https://help.aliyun.com/api/mts/deletewatermarktemplate.html
 func (client *Client) DeleteWaterMarkTemplate(request *DeleteWaterMarkTemplateRequest) (response *DeleteWaterMarkTemplateResponse, err error) {
 	response = CreateDeleteWaterMarkTemplateResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteWaterMarkTemplate(request *DeleteWaterMarkTemplateRe
 	return
 }
 
-// invoke DeleteWaterMarkTemplate api with *DeleteWaterMarkTemplateRequest asynchronously
+// DeleteWaterMarkTemplateWithChan invokes the mts.DeleteWaterMarkTemplate API asynchronously
 // api document: https://help.aliyun.com/api/mts/deletewatermarktemplate.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteWaterMarkTemplateWithChan(request *DeleteWaterMarkTemplateRequest) (<-chan *DeleteWaterMarkTemplateResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteWaterMarkTemplateWithChan(request *DeleteWaterMarkTe
 	return responseChan, errChan
 }
 
-// invoke DeleteWaterMarkTemplate api with *DeleteWaterMarkTemplateRequest asynchronously
+// DeleteWaterMarkTemplateWithCallback invokes the mts.DeleteWaterMarkTemplate API asynchronously
 // api document: https://help.aliyun.com/api/mts/deletewatermarktemplate.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteWaterMarkTemplateWithCallback(request *DeleteWaterMarkTemplateRequest, callback func(response *DeleteWaterMarkTemplateResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DeleteWaterMarkTemplateWithCallback(request *DeleteWaterMa
 	return result
 }
 
+// DeleteWaterMarkTemplateRequest is the request struct for api DeleteWaterMarkTemplate
 type DeleteWaterMarkTemplateRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,14 +83,15 @@ type DeleteWaterMarkTemplateRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// DeleteWaterMarkTemplateResponse is the response struct for api DeleteWaterMarkTemplate
 type DeleteWaterMarkTemplateResponse struct {
 	*responses.BaseResponse
 	RequestId           string `json:"RequestId" xml:"RequestId"`
 	WaterMarkTemplateId string `json:"WaterMarkTemplateId" xml:"WaterMarkTemplateId"`
 }
 
-// create a request to invoke DeleteWaterMarkTemplate API
-func CreateDeleteWaterMarkTemplateRequest() (request *DeleteWaterMarkTemplateRequest) {
+// CreateDeleteWaterMarkTemplateRequest creates a request to invoke DeleteWaterMarkTemplate API
+func CreateDeleteWaterMarkTemplateRequest(request *DeleteWaterMarkTemplateRequest) {
 	request = &DeleteWaterMarkTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateDeleteWaterMarkTemplateRequest() (request *DeleteWaterMarkTemplateReq
 	return
 }
 
-// create a response to parse from DeleteWaterMarkTemplate response
+// CreateDeleteWaterMarkTemplateResponse creates a response to parse from DeleteWaterMarkTemplate response
 func CreateDeleteWaterMarkTemplateResponse() (response *DeleteWaterMarkTemplateResponse) {
 	response = &DeleteWaterMarkTemplateResponse{
 		BaseResponse: &responses.BaseResponse{},

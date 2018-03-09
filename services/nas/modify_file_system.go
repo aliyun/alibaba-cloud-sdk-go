@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifyFileSystem api with *ModifyFileSystemRequest synchronously
+// ModifyFileSystem invokes the nas.ModifyFileSystem API synchronously
 // api document: https://help.aliyun.com/api/nas/modifyfilesystem.html
 func (client *Client) ModifyFileSystem(request *ModifyFileSystemRequest) (response *ModifyFileSystemResponse, err error) {
 	response = CreateModifyFileSystemResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifyFileSystem(request *ModifyFileSystemRequest) (respon
 	return
 }
 
-// invoke ModifyFileSystem api with *ModifyFileSystemRequest asynchronously
+// ModifyFileSystemWithChan invokes the nas.ModifyFileSystem API asynchronously
 // api document: https://help.aliyun.com/api/nas/modifyfilesystem.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyFileSystemWithChan(request *ModifyFileSystemRequest) (<-chan *ModifyFileSystemResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifyFileSystemWithChan(request *ModifyFileSystemRequest)
 	return responseChan, errChan
 }
 
-// invoke ModifyFileSystem api with *ModifyFileSystemRequest asynchronously
+// ModifyFileSystemWithCallback invokes the nas.ModifyFileSystem API asynchronously
 // api document: https://help.aliyun.com/api/nas/modifyfilesystem.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyFileSystemWithCallback(request *ModifyFileSystemRequest, callback func(response *ModifyFileSystemResponse, err error)) <-chan int {
@@ -73,19 +73,21 @@ func (client *Client) ModifyFileSystemWithCallback(request *ModifyFileSystemRequ
 	return result
 }
 
+// ModifyFileSystemRequest is the request struct for api ModifyFileSystem
 type ModifyFileSystemRequest struct {
 	*requests.RpcRequest
 	FileSystemId string `position:"Query" name:"FileSystemId"`
 	Description  string `position:"Query" name:"Description"`
 }
 
+// ModifyFileSystemResponse is the response struct for api ModifyFileSystem
 type ModifyFileSystemResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ModifyFileSystem API
-func CreateModifyFileSystemRequest() (request *ModifyFileSystemRequest) {
+// CreateModifyFileSystemRequest creates a request to invoke ModifyFileSystem API
+func CreateModifyFileSystemRequest(request *ModifyFileSystemRequest) {
 	request = &ModifyFileSystemRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -93,7 +95,7 @@ func CreateModifyFileSystemRequest() (request *ModifyFileSystemRequest) {
 	return
 }
 
-// create a response to parse from ModifyFileSystem response
+// CreateModifyFileSystemResponse creates a response to parse from ModifyFileSystem response
 func CreateModifyFileSystemResponse() (response *ModifyFileSystemResponse) {
 	response = &ModifyFileSystemResponse{
 		BaseResponse: &responses.BaseResponse{},

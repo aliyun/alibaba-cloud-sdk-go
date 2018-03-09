@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeLiveStreamRecordIndexFiles api with *DescribeLiveStreamRecordIndexFilesRequest synchronously
+// DescribeLiveStreamRecordIndexFiles invokes the cdn.DescribeLiveStreamRecordIndexFiles API synchronously
 // api document: https://help.aliyun.com/api/cdn/describelivestreamrecordindexfiles.html
 func (client *Client) DescribeLiveStreamRecordIndexFiles(request *DescribeLiveStreamRecordIndexFilesRequest) (response *DescribeLiveStreamRecordIndexFilesResponse, err error) {
 	response = CreateDescribeLiveStreamRecordIndexFilesResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeLiveStreamRecordIndexFiles(request *DescribeLiveSt
 	return
 }
 
-// invoke DescribeLiveStreamRecordIndexFiles api with *DescribeLiveStreamRecordIndexFilesRequest asynchronously
+// DescribeLiveStreamRecordIndexFilesWithChan invokes the cdn.DescribeLiveStreamRecordIndexFiles API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describelivestreamrecordindexfiles.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamRecordIndexFilesWithChan(request *DescribeLiveStreamRecordIndexFilesRequest) (<-chan *DescribeLiveStreamRecordIndexFilesResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeLiveStreamRecordIndexFilesWithChan(request *Descri
 	return responseChan, errChan
 }
 
-// invoke DescribeLiveStreamRecordIndexFiles api with *DescribeLiveStreamRecordIndexFilesRequest asynchronously
+// DescribeLiveStreamRecordIndexFilesWithCallback invokes the cdn.DescribeLiveStreamRecordIndexFiles API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describelivestreamrecordindexfiles.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamRecordIndexFilesWithCallback(request *DescribeLiveStreamRecordIndexFilesRequest, callback func(response *DescribeLiveStreamRecordIndexFilesResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeLiveStreamRecordIndexFilesWithCallback(request *De
 	return result
 }
 
+// DescribeLiveStreamRecordIndexFilesRequest is the request struct for api DescribeLiveStreamRecordIndexFiles
 type DescribeLiveStreamRecordIndexFilesRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,14 +85,15 @@ type DescribeLiveStreamRecordIndexFilesRequest struct {
 	EndTime       string           `position:"Query" name:"EndTime"`
 }
 
+// DescribeLiveStreamRecordIndexFilesResponse is the response struct for api DescribeLiveStreamRecordIndexFiles
 type DescribeLiveStreamRecordIndexFilesResponse struct {
 	*responses.BaseResponse
 	RequestId           string              `json:"RequestId" xml:"RequestId"`
 	RecordIndexInfoList RecordIndexInfoList `json:"RecordIndexInfoList" xml:"RecordIndexInfoList"`
 }
 
-// create a request to invoke DescribeLiveStreamRecordIndexFiles API
-func CreateDescribeLiveStreamRecordIndexFilesRequest() (request *DescribeLiveStreamRecordIndexFilesRequest) {
+// CreateDescribeLiveStreamRecordIndexFilesRequest creates a request to invoke DescribeLiveStreamRecordIndexFiles API
+func CreateDescribeLiveStreamRecordIndexFilesRequest(request *DescribeLiveStreamRecordIndexFilesRequest) {
 	request = &DescribeLiveStreamRecordIndexFilesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateDescribeLiveStreamRecordIndexFilesRequest() (request *DescribeLiveStr
 	return
 }
 
-// create a response to parse from DescribeLiveStreamRecordIndexFiles response
+// CreateDescribeLiveStreamRecordIndexFilesResponse creates a response to parse from DescribeLiveStreamRecordIndexFiles response
 func CreateDescribeLiveStreamRecordIndexFilesResponse() (response *DescribeLiveStreamRecordIndexFilesResponse) {
 	response = &DescribeLiveStreamRecordIndexFilesResponse{
 		BaseResponse: &responses.BaseResponse{},

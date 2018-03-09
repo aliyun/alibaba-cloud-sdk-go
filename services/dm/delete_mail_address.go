@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteMailAddress api with *DeleteMailAddressRequest synchronously
+// DeleteMailAddress invokes the dm.DeleteMailAddress API synchronously
 // api document: https://help.aliyun.com/api/dm/deletemailaddress.html
 func (client *Client) DeleteMailAddress(request *DeleteMailAddressRequest) (response *DeleteMailAddressResponse, err error) {
 	response = CreateDeleteMailAddressResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteMailAddress(request *DeleteMailAddressRequest) (resp
 	return
 }
 
-// invoke DeleteMailAddress api with *DeleteMailAddressRequest asynchronously
+// DeleteMailAddressWithChan invokes the dm.DeleteMailAddress API asynchronously
 // api document: https://help.aliyun.com/api/dm/deletemailaddress.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteMailAddressWithChan(request *DeleteMailAddressRequest) (<-chan *DeleteMailAddressResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteMailAddressWithChan(request *DeleteMailAddressReques
 	return responseChan, errChan
 }
 
-// invoke DeleteMailAddress api with *DeleteMailAddressRequest asynchronously
+// DeleteMailAddressWithCallback invokes the dm.DeleteMailAddress API asynchronously
 // api document: https://help.aliyun.com/api/dm/deletemailaddress.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteMailAddressWithCallback(request *DeleteMailAddressRequest, callback func(response *DeleteMailAddressResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DeleteMailAddressWithCallback(request *DeleteMailAddressRe
 	return result
 }
 
+// DeleteMailAddressRequest is the request struct for api DeleteMailAddress
 type DeleteMailAddressRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -81,13 +82,14 @@ type DeleteMailAddressRequest struct {
 	MailAddressId        requests.Integer `position:"Query" name:"MailAddressId"`
 }
 
+// DeleteMailAddressResponse is the response struct for api DeleteMailAddress
 type DeleteMailAddressResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DeleteMailAddress API
-func CreateDeleteMailAddressRequest() (request *DeleteMailAddressRequest) {
+// CreateDeleteMailAddressRequest creates a request to invoke DeleteMailAddress API
+func CreateDeleteMailAddressRequest(request *DeleteMailAddressRequest) {
 	request = &DeleteMailAddressRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateDeleteMailAddressRequest() (request *DeleteMailAddressRequest) {
 	return
 }
 
-// create a response to parse from DeleteMailAddress response
+// CreateDeleteMailAddressResponse creates a response to parse from DeleteMailAddress response
 func CreateDeleteMailAddressResponse() (response *DeleteMailAddressResponse) {
 	response = &DeleteMailAddressResponse{
 		BaseResponse: &responses.BaseResponse{},

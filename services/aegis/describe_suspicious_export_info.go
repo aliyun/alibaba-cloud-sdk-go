@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeSuspiciousExportInfo api with *DescribeSuspiciousExportInfoRequest synchronously
+// DescribeSuspiciousExportInfo invokes the aegis.DescribeSuspiciousExportInfo API synchronously
 // api document: https://help.aliyun.com/api/aegis/describesuspiciousexportinfo.html
 func (client *Client) DescribeSuspiciousExportInfo(request *DescribeSuspiciousExportInfoRequest) (response *DescribeSuspiciousExportInfoResponse, err error) {
 	response = CreateDescribeSuspiciousExportInfoResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeSuspiciousExportInfo(request *DescribeSuspiciousEx
 	return
 }
 
-// invoke DescribeSuspiciousExportInfo api with *DescribeSuspiciousExportInfoRequest asynchronously
+// DescribeSuspiciousExportInfoWithChan invokes the aegis.DescribeSuspiciousExportInfo API asynchronously
 // api document: https://help.aliyun.com/api/aegis/describesuspiciousexportinfo.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSuspiciousExportInfoWithChan(request *DescribeSuspiciousExportInfoRequest) (<-chan *DescribeSuspiciousExportInfoResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeSuspiciousExportInfoWithChan(request *DescribeSusp
 	return responseChan, errChan
 }
 
-// invoke DescribeSuspiciousExportInfo api with *DescribeSuspiciousExportInfoRequest asynchronously
+// DescribeSuspiciousExportInfoWithCallback invokes the aegis.DescribeSuspiciousExportInfo API asynchronously
 // api document: https://help.aliyun.com/api/aegis/describesuspiciousexportinfo.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSuspiciousExportInfoWithCallback(request *DescribeSuspiciousExportInfoRequest, callback func(response *DescribeSuspiciousExportInfoResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeSuspiciousExportInfoWithCallback(request *Describe
 	return result
 }
 
+// DescribeSuspiciousExportInfoRequest is the request struct for api DescribeSuspiciousExportInfo
 type DescribeSuspiciousExportInfoRequest struct {
 	*requests.RpcRequest
 	SourceIp        string           `position:"Query" name:"SourceIp"`
@@ -80,6 +81,7 @@ type DescribeSuspiciousExportInfoRequest struct {
 	ExportId        requests.Integer `position:"Query" name:"ExportId"`
 }
 
+// DescribeSuspiciousExportInfoResponse is the response struct for api DescribeSuspiciousExportInfo
 type DescribeSuspiciousExportInfoResponse struct {
 	*responses.BaseResponse
 	RequestId    string `json:"RequestId" xml:"RequestId"`
@@ -94,8 +96,8 @@ type DescribeSuspiciousExportInfoResponse struct {
 	Link         string `json:"Link" xml:"Link"`
 }
 
-// create a request to invoke DescribeSuspiciousExportInfo API
-func CreateDescribeSuspiciousExportInfoRequest() (request *DescribeSuspiciousExportInfoRequest) {
+// CreateDescribeSuspiciousExportInfoRequest creates a request to invoke DescribeSuspiciousExportInfo API
+func CreateDescribeSuspiciousExportInfoRequest(request *DescribeSuspiciousExportInfoRequest) {
 	request = &DescribeSuspiciousExportInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -103,7 +105,7 @@ func CreateDescribeSuspiciousExportInfoRequest() (request *DescribeSuspiciousExp
 	return
 }
 
-// create a response to parse from DescribeSuspiciousExportInfo response
+// CreateDescribeSuspiciousExportInfoResponse creates a response to parse from DescribeSuspiciousExportInfo response
 func CreateDescribeSuspiciousExportInfoResponse() (response *DescribeSuspiciousExportInfoResponse) {
 	response = &DescribeSuspiciousExportInfoResponse{
 		BaseResponse: &responses.BaseResponse{},

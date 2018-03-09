@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CheckDBNameAvailable api with *CheckDBNameAvailableRequest synchronously
+// CheckDBNameAvailable invokes the rds.CheckDBNameAvailable API synchronously
 // api document: https://help.aliyun.com/api/rds/checkdbnameavailable.html
 func (client *Client) CheckDBNameAvailable(request *CheckDBNameAvailableRequest) (response *CheckDBNameAvailableResponse, err error) {
 	response = CreateCheckDBNameAvailableResponse()
@@ -28,7 +28,7 @@ func (client *Client) CheckDBNameAvailable(request *CheckDBNameAvailableRequest)
 	return
 }
 
-// invoke CheckDBNameAvailable api with *CheckDBNameAvailableRequest asynchronously
+// CheckDBNameAvailableWithChan invokes the rds.CheckDBNameAvailable API asynchronously
 // api document: https://help.aliyun.com/api/rds/checkdbnameavailable.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckDBNameAvailableWithChan(request *CheckDBNameAvailableRequest) (<-chan *CheckDBNameAvailableResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CheckDBNameAvailableWithChan(request *CheckDBNameAvailable
 	return responseChan, errChan
 }
 
-// invoke CheckDBNameAvailable api with *CheckDBNameAvailableRequest asynchronously
+// CheckDBNameAvailableWithCallback invokes the rds.CheckDBNameAvailable API asynchronously
 // api document: https://help.aliyun.com/api/rds/checkdbnameavailable.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckDBNameAvailableWithCallback(request *CheckDBNameAvailableRequest, callback func(response *CheckDBNameAvailableResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) CheckDBNameAvailableWithCallback(request *CheckDBNameAvail
 	return result
 }
 
+// CheckDBNameAvailableRequest is the request struct for api CheckDBNameAvailable
 type CheckDBNameAvailableRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,13 +85,14 @@ type CheckDBNameAvailableRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// CheckDBNameAvailableResponse is the response struct for api CheckDBNameAvailable
 type CheckDBNameAvailableResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke CheckDBNameAvailable API
-func CreateCheckDBNameAvailableRequest() (request *CheckDBNameAvailableRequest) {
+// CreateCheckDBNameAvailableRequest creates a request to invoke CheckDBNameAvailable API
+func CreateCheckDBNameAvailableRequest(request *CheckDBNameAvailableRequest) {
 	request = &CheckDBNameAvailableRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateCheckDBNameAvailableRequest() (request *CheckDBNameAvailableRequest) 
 	return
 }
 
-// create a response to parse from CheckDBNameAvailable response
+// CreateCheckDBNameAvailableResponse creates a response to parse from CheckDBNameAvailable response
 func CreateCheckDBNameAvailableResponse() (response *CheckDBNameAvailableResponse) {
 	response = &CheckDBNameAvailableResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke RemoveListenerWhiteListItem api with *RemoveListenerWhiteListItemRequest synchronously
+// RemoveListenerWhiteListItem invokes the slb.RemoveListenerWhiteListItem API synchronously
 // api document: https://help.aliyun.com/api/slb/removelistenerwhitelistitem.html
 func (client *Client) RemoveListenerWhiteListItem(request *RemoveListenerWhiteListItemRequest) (response *RemoveListenerWhiteListItemResponse, err error) {
 	response = CreateRemoveListenerWhiteListItemResponse()
@@ -28,7 +28,7 @@ func (client *Client) RemoveListenerWhiteListItem(request *RemoveListenerWhiteLi
 	return
 }
 
-// invoke RemoveListenerWhiteListItem api with *RemoveListenerWhiteListItemRequest asynchronously
+// RemoveListenerWhiteListItemWithChan invokes the slb.RemoveListenerWhiteListItem API asynchronously
 // api document: https://help.aliyun.com/api/slb/removelistenerwhitelistitem.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveListenerWhiteListItemWithChan(request *RemoveListenerWhiteListItemRequest) (<-chan *RemoveListenerWhiteListItemResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) RemoveListenerWhiteListItemWithChan(request *RemoveListene
 	return responseChan, errChan
 }
 
-// invoke RemoveListenerWhiteListItem api with *RemoveListenerWhiteListItemRequest asynchronously
+// RemoveListenerWhiteListItemWithCallback invokes the slb.RemoveListenerWhiteListItem API asynchronously
 // api document: https://help.aliyun.com/api/slb/removelistenerwhitelistitem.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveListenerWhiteListItemWithCallback(request *RemoveListenerWhiteListItemRequest, callback func(response *RemoveListenerWhiteListItemResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) RemoveListenerWhiteListItemWithCallback(request *RemoveLis
 	return result
 }
 
+// RemoveListenerWhiteListItemRequest is the request struct for api RemoveListenerWhiteListItem
 type RemoveListenerWhiteListItemRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -86,13 +87,14 @@ type RemoveListenerWhiteListItemRequest struct {
 	Tags                 string           `position:"Query" name:"Tags"`
 }
 
+// RemoveListenerWhiteListItemResponse is the response struct for api RemoveListenerWhiteListItem
 type RemoveListenerWhiteListItemResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke RemoveListenerWhiteListItem API
-func CreateRemoveListenerWhiteListItemRequest() (request *RemoveListenerWhiteListItemRequest) {
+// CreateRemoveListenerWhiteListItemRequest creates a request to invoke RemoveListenerWhiteListItem API
+func CreateRemoveListenerWhiteListItemRequest(request *RemoveListenerWhiteListItemRequest) {
 	request = &RemoveListenerWhiteListItemRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -100,7 +102,7 @@ func CreateRemoveListenerWhiteListItemRequest() (request *RemoveListenerWhiteLis
 	return
 }
 
-// create a response to parse from RemoveListenerWhiteListItem response
+// CreateRemoveListenerWhiteListItemResponse creates a response to parse from RemoveListenerWhiteListItem response
 func CreateRemoveListenerWhiteListItemResponse() (response *RemoveListenerWhiteListItemResponse) {
 	response = &RemoveListenerWhiteListItemResponse{
 		BaseResponse: &responses.BaseResponse{},

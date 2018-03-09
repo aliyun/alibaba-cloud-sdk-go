@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke UpdateTemplate api with *UpdateTemplateRequest synchronously
+// UpdateTemplate invokes the mts.UpdateTemplate API synchronously
 // api document: https://help.aliyun.com/api/mts/updatetemplate.html
 func (client *Client) UpdateTemplate(request *UpdateTemplateRequest) (response *UpdateTemplateResponse, err error) {
 	response = CreateUpdateTemplateResponse()
@@ -28,7 +28,7 @@ func (client *Client) UpdateTemplate(request *UpdateTemplateRequest) (response *
 	return
 }
 
-// invoke UpdateTemplate api with *UpdateTemplateRequest asynchronously
+// UpdateTemplateWithChan invokes the mts.UpdateTemplate API asynchronously
 // api document: https://help.aliyun.com/api/mts/updatetemplate.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateTemplateWithChan(request *UpdateTemplateRequest) (<-chan *UpdateTemplateResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) UpdateTemplateWithChan(request *UpdateTemplateRequest) (<-
 	return responseChan, errChan
 }
 
-// invoke UpdateTemplate api with *UpdateTemplateRequest asynchronously
+// UpdateTemplateWithCallback invokes the mts.UpdateTemplate API asynchronously
 // api document: https://help.aliyun.com/api/mts/updatetemplate.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateTemplateWithCallback(request *UpdateTemplateRequest, callback func(response *UpdateTemplateResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) UpdateTemplateWithCallback(request *UpdateTemplateRequest,
 	return result
 }
 
+// UpdateTemplateRequest is the request struct for api UpdateTemplate
 type UpdateTemplateRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -88,14 +89,15 @@ type UpdateTemplateRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// UpdateTemplateResponse is the response struct for api UpdateTemplate
 type UpdateTemplateResponse struct {
 	*responses.BaseResponse
 	RequestId string   `json:"RequestId" xml:"RequestId"`
 	Template  Template `json:"Template" xml:"Template"`
 }
 
-// create a request to invoke UpdateTemplate API
-func CreateUpdateTemplateRequest() (request *UpdateTemplateRequest) {
+// CreateUpdateTemplateRequest creates a request to invoke UpdateTemplate API
+func CreateUpdateTemplateRequest(request *UpdateTemplateRequest) {
 	request = &UpdateTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -103,7 +105,7 @@ func CreateUpdateTemplateRequest() (request *UpdateTemplateRequest) {
 	return
 }
 
-// create a response to parse from UpdateTemplate response
+// CreateUpdateTemplateResponse creates a response to parse from UpdateTemplate response
 func CreateUpdateTemplateResponse() (response *UpdateTemplateResponse) {
 	response = &UpdateTemplateResponse{
 		BaseResponse: &responses.BaseResponse{},

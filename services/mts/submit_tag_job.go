@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SubmitTagJob api with *SubmitTagJobRequest synchronously
+// SubmitTagJob invokes the mts.SubmitTagJob API synchronously
 // api document: https://help.aliyun.com/api/mts/submittagjob.html
 func (client *Client) SubmitTagJob(request *SubmitTagJobRequest) (response *SubmitTagJobResponse, err error) {
 	response = CreateSubmitTagJobResponse()
@@ -28,7 +28,7 @@ func (client *Client) SubmitTagJob(request *SubmitTagJobRequest) (response *Subm
 	return
 }
 
-// invoke SubmitTagJob api with *SubmitTagJobRequest asynchronously
+// SubmitTagJobWithChan invokes the mts.SubmitTagJob API asynchronously
 // api document: https://help.aliyun.com/api/mts/submittagjob.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitTagJobWithChan(request *SubmitTagJobRequest) (<-chan *SubmitTagJobResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SubmitTagJobWithChan(request *SubmitTagJobRequest) (<-chan
 	return responseChan, errChan
 }
 
-// invoke SubmitTagJob api with *SubmitTagJobRequest asynchronously
+// SubmitTagJobWithCallback invokes the mts.SubmitTagJob API asynchronously
 // api document: https://help.aliyun.com/api/mts/submittagjob.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitTagJobWithCallback(request *SubmitTagJobRequest, callback func(response *SubmitTagJobResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SubmitTagJobWithCallback(request *SubmitTagJobRequest, cal
 	return result
 }
 
+// SubmitTagJobRequest is the request struct for api SubmitTagJob
 type SubmitTagJobRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -85,14 +86,15 @@ type SubmitTagJobRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// SubmitTagJobResponse is the response struct for api SubmitTagJob
 type SubmitTagJobResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	JobId     string `json:"JobId" xml:"JobId"`
 }
 
-// create a request to invoke SubmitTagJob API
-func CreateSubmitTagJobRequest() (request *SubmitTagJobRequest) {
+// CreateSubmitTagJobRequest creates a request to invoke SubmitTagJob API
+func CreateSubmitTagJobRequest(request *SubmitTagJobRequest) {
 	request = &SubmitTagJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -100,7 +102,7 @@ func CreateSubmitTagJobRequest() (request *SubmitTagJobRequest) {
 	return
 }
 
-// create a response to parse from SubmitTagJob response
+// CreateSubmitTagJobResponse creates a response to parse from SubmitTagJob response
 func CreateSubmitTagJobResponse() (response *SubmitTagJobResponse) {
 	response = &SubmitTagJobResponse{
 		BaseResponse: &responses.BaseResponse{},

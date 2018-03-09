@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke QueryLoginEvent api with *QueryLoginEventRequest synchronously
+// QueryLoginEvent invokes the aegis.QueryLoginEvent API synchronously
 // api document: https://help.aliyun.com/api/aegis/queryloginevent.html
 func (client *Client) QueryLoginEvent(request *QueryLoginEventRequest) (response *QueryLoginEventResponse, err error) {
 	response = CreateQueryLoginEventResponse()
@@ -28,7 +28,7 @@ func (client *Client) QueryLoginEvent(request *QueryLoginEventRequest) (response
 	return
 }
 
-// invoke QueryLoginEvent api with *QueryLoginEventRequest asynchronously
+// QueryLoginEventWithChan invokes the aegis.QueryLoginEvent API asynchronously
 // api document: https://help.aliyun.com/api/aegis/queryloginevent.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryLoginEventWithChan(request *QueryLoginEventRequest) (<-chan *QueryLoginEventResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) QueryLoginEventWithChan(request *QueryLoginEventRequest) (
 	return responseChan, errChan
 }
 
-// invoke QueryLoginEvent api with *QueryLoginEventRequest asynchronously
+// QueryLoginEventWithCallback invokes the aegis.QueryLoginEvent API asynchronously
 // api document: https://help.aliyun.com/api/aegis/queryloginevent.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryLoginEventWithCallback(request *QueryLoginEventRequest, callback func(response *QueryLoginEventResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) QueryLoginEventWithCallback(request *QueryLoginEventReques
 	return result
 }
 
+// QueryLoginEventRequest is the request struct for api QueryLoginEvent
 type QueryLoginEventRequest struct {
 	*requests.RpcRequest
 	Uuid        string           `position:"Query" name:"Uuid"`
@@ -82,6 +83,7 @@ type QueryLoginEventRequest struct {
 	EndTime     string           `position:"Query" name:"EndTime"`
 }
 
+// QueryLoginEventResponse is the response struct for api QueryLoginEvent
 type QueryLoginEventResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"requestId" xml:"requestId"`
@@ -91,8 +93,8 @@ type QueryLoginEventResponse struct {
 	Data      Data   `json:"Data" xml:"Data"`
 }
 
-// create a request to invoke QueryLoginEvent API
-func CreateQueryLoginEventRequest() (request *QueryLoginEventRequest) {
+// CreateQueryLoginEventRequest creates a request to invoke QueryLoginEvent API
+func CreateQueryLoginEventRequest(request *QueryLoginEventRequest) {
 	request = &QueryLoginEventRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -100,7 +102,7 @@ func CreateQueryLoginEventRequest() (request *QueryLoginEventRequest) {
 	return
 }
 
-// create a response to parse from QueryLoginEvent response
+// CreateQueryLoginEventResponse creates a response to parse from QueryLoginEvent response
 func CreateQueryLoginEventResponse() (response *QueryLoginEventResponse) {
 	response = &QueryLoginEventResponse{
 		BaseResponse: &responses.BaseResponse{},

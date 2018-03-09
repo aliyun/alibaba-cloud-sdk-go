@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeDBInstanceAttribute api with *DescribeDBInstanceAttributeRequest synchronously
+// DescribeDBInstanceAttribute invokes the rds.DescribeDBInstanceAttribute API synchronously
 // api document: https://help.aliyun.com/api/rds/describedbinstanceattribute.html
 func (client *Client) DescribeDBInstanceAttribute(request *DescribeDBInstanceAttributeRequest) (response *DescribeDBInstanceAttributeResponse, err error) {
 	response = CreateDescribeDBInstanceAttributeResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeDBInstanceAttribute(request *DescribeDBInstanceAtt
 	return
 }
 
-// invoke DescribeDBInstanceAttribute api with *DescribeDBInstanceAttributeRequest asynchronously
+// DescribeDBInstanceAttributeWithChan invokes the rds.DescribeDBInstanceAttribute API asynchronously
 // api document: https://help.aliyun.com/api/rds/describedbinstanceattribute.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBInstanceAttributeWithChan(request *DescribeDBInstanceAttributeRequest) (<-chan *DescribeDBInstanceAttributeResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeDBInstanceAttributeWithChan(request *DescribeDBIns
 	return responseChan, errChan
 }
 
-// invoke DescribeDBInstanceAttribute api with *DescribeDBInstanceAttributeRequest asynchronously
+// DescribeDBInstanceAttributeWithCallback invokes the rds.DescribeDBInstanceAttribute API asynchronously
 // api document: https://help.aliyun.com/api/rds/describedbinstanceattribute.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBInstanceAttributeWithCallback(request *DescribeDBInstanceAttributeRequest, callback func(response *DescribeDBInstanceAttributeResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeDBInstanceAttributeWithCallback(request *DescribeD
 	return result
 }
 
+// DescribeDBInstanceAttributeRequest is the request struct for api DescribeDBInstanceAttribute
 type DescribeDBInstanceAttributeRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -83,14 +84,15 @@ type DescribeDBInstanceAttributeRequest struct {
 	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 }
 
+// DescribeDBInstanceAttributeResponse is the response struct for api DescribeDBInstanceAttribute
 type DescribeDBInstanceAttributeResponse struct {
 	*responses.BaseResponse
 	RequestId string                             `json:"RequestId" xml:"RequestId"`
 	Items     ItemsInDescribeDBInstanceAttribute `json:"Items" xml:"Items"`
 }
 
-// create a request to invoke DescribeDBInstanceAttribute API
-func CreateDescribeDBInstanceAttributeRequest() (request *DescribeDBInstanceAttributeRequest) {
+// CreateDescribeDBInstanceAttributeRequest creates a request to invoke DescribeDBInstanceAttribute API
+func CreateDescribeDBInstanceAttributeRequest(request *DescribeDBInstanceAttributeRequest) {
 	request = &DescribeDBInstanceAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateDescribeDBInstanceAttributeRequest() (request *DescribeDBInstanceAttr
 	return
 }
 
-// create a response to parse from DescribeDBInstanceAttribute response
+// CreateDescribeDBInstanceAttributeResponse creates a response to parse from DescribeDBInstanceAttribute response
 func CreateDescribeDBInstanceAttributeResponse() (response *DescribeDBInstanceAttributeResponse) {
 	response = &DescribeDBInstanceAttributeResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeClusterHosts api with *DescribeClusterHostsRequest synchronously
+// DescribeClusterHosts invokes the cs.DescribeClusterHosts API synchronously
 // api document: https://help.aliyun.com/api/cs/describeclusterhosts.html
 func (client *Client) DescribeClusterHosts(request *DescribeClusterHostsRequest) (response *DescribeClusterHostsResponse, err error) {
 	response = CreateDescribeClusterHostsResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeClusterHosts(request *DescribeClusterHostsRequest)
 	return
 }
 
-// invoke DescribeClusterHosts api with *DescribeClusterHostsRequest asynchronously
+// DescribeClusterHostsWithChan invokes the cs.DescribeClusterHosts API asynchronously
 // api document: https://help.aliyun.com/api/cs/describeclusterhosts.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeClusterHostsWithChan(request *DescribeClusterHostsRequest) (<-chan *DescribeClusterHostsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeClusterHostsWithChan(request *DescribeClusterHosts
 	return responseChan, errChan
 }
 
-// invoke DescribeClusterHosts api with *DescribeClusterHostsRequest asynchronously
+// DescribeClusterHostsWithCallback invokes the cs.DescribeClusterHosts API asynchronously
 // api document: https://help.aliyun.com/api/cs/describeclusterhosts.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeClusterHostsWithCallback(request *DescribeClusterHostsRequest, callback func(response *DescribeClusterHostsResponse, err error)) <-chan int {
@@ -73,17 +73,19 @@ func (client *Client) DescribeClusterHostsWithCallback(request *DescribeClusterH
 	return result
 }
 
+// DescribeClusterHostsRequest is the request struct for api DescribeClusterHosts
 type DescribeClusterHostsRequest struct {
 	*requests.RoaRequest
 	ClusterId string `position:"Path" name:"ClusterId"`
 }
 
+// DescribeClusterHostsResponse is the response struct for api DescribeClusterHosts
 type DescribeClusterHostsResponse struct {
 	*responses.BaseResponse
 }
 
-// create a request to invoke DescribeClusterHosts API
-func CreateDescribeClusterHostsRequest() (request *DescribeClusterHostsRequest) {
+// CreateDescribeClusterHostsRequest creates a request to invoke DescribeClusterHosts API
+func CreateDescribeClusterHostsRequest(request *DescribeClusterHostsRequest) {
 	request = &DescribeClusterHostsRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
@@ -92,7 +94,7 @@ func CreateDescribeClusterHostsRequest() (request *DescribeClusterHostsRequest) 
 	return
 }
 
-// create a response to parse from DescribeClusterHosts response
+// CreateDescribeClusterHostsResponse creates a response to parse from DescribeClusterHosts response
 func CreateDescribeClusterHostsResponse() (response *DescribeClusterHostsResponse) {
 	response = &DescribeClusterHostsResponse{
 		BaseResponse: &responses.BaseResponse{},

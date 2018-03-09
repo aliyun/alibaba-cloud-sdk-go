@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CreateWebLogDownloadTask api with *CreateWebLogDownloadTaskRequest synchronously
+// CreateWebLogDownloadTask invokes the ddospro.CreateWebLogDownloadTask API synchronously
 // api document: https://help.aliyun.com/api/ddospro/createweblogdownloadtask.html
 func (client *Client) CreateWebLogDownloadTask(request *CreateWebLogDownloadTaskRequest) (response *CreateWebLogDownloadTaskResponse, err error) {
 	response = CreateCreateWebLogDownloadTaskResponse()
@@ -28,7 +28,7 @@ func (client *Client) CreateWebLogDownloadTask(request *CreateWebLogDownloadTask
 	return
 }
 
-// invoke CreateWebLogDownloadTask api with *CreateWebLogDownloadTaskRequest asynchronously
+// CreateWebLogDownloadTaskWithChan invokes the ddospro.CreateWebLogDownloadTask API asynchronously
 // api document: https://help.aliyun.com/api/ddospro/createweblogdownloadtask.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateWebLogDownloadTaskWithChan(request *CreateWebLogDownloadTaskRequest) (<-chan *CreateWebLogDownloadTaskResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CreateWebLogDownloadTaskWithChan(request *CreateWebLogDown
 	return responseChan, errChan
 }
 
-// invoke CreateWebLogDownloadTask api with *CreateWebLogDownloadTaskRequest asynchronously
+// CreateWebLogDownloadTaskWithCallback invokes the ddospro.CreateWebLogDownloadTask API asynchronously
 // api document: https://help.aliyun.com/api/ddospro/createweblogdownloadtask.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateWebLogDownloadTaskWithCallback(request *CreateWebLogDownloadTaskRequest, callback func(response *CreateWebLogDownloadTaskResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) CreateWebLogDownloadTaskWithCallback(request *CreateWebLog
 	return result
 }
 
+// CreateWebLogDownloadTaskRequest is the request struct for api CreateWebLogDownloadTask
 type CreateWebLogDownloadTaskRequest struct {
 	*requests.RpcRequest
 	SourceIp        string           `position:"Query" name:"SourceIp"`
@@ -84,13 +85,14 @@ type CreateWebLogDownloadTaskRequest struct {
 	CurrentPage     requests.Integer `position:"Query" name:"CurrentPage"`
 }
 
+// CreateWebLogDownloadTaskResponse is the response struct for api CreateWebLogDownloadTask
 type CreateWebLogDownloadTaskResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke CreateWebLogDownloadTask API
-func CreateCreateWebLogDownloadTaskRequest() (request *CreateWebLogDownloadTaskRequest) {
+// CreateCreateWebLogDownloadTaskRequest creates a request to invoke CreateWebLogDownloadTask API
+func CreateCreateWebLogDownloadTaskRequest(request *CreateWebLogDownloadTaskRequest) {
 	request = &CreateWebLogDownloadTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateCreateWebLogDownloadTaskRequest() (request *CreateWebLogDownloadTaskR
 	return
 }
 
-// create a response to parse from CreateWebLogDownloadTask response
+// CreateCreateWebLogDownloadTaskResponse creates a response to parse from CreateWebLogDownloadTask response
 func CreateCreateWebLogDownloadTaskResponse() (response *CreateWebLogDownloadTaskResponse) {
 	response = &CreateWebLogDownloadTaskResponse{
 		BaseResponse: &responses.BaseResponse{},

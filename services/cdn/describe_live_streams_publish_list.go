@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeLiveStreamsPublishList api with *DescribeLiveStreamsPublishListRequest synchronously
+// DescribeLiveStreamsPublishList invokes the cdn.DescribeLiveStreamsPublishList API synchronously
 // api document: https://help.aliyun.com/api/cdn/describelivestreamspublishlist.html
 func (client *Client) DescribeLiveStreamsPublishList(request *DescribeLiveStreamsPublishListRequest) (response *DescribeLiveStreamsPublishListResponse, err error) {
 	response = CreateDescribeLiveStreamsPublishListResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeLiveStreamsPublishList(request *DescribeLiveStream
 	return
 }
 
-// invoke DescribeLiveStreamsPublishList api with *DescribeLiveStreamsPublishListRequest asynchronously
+// DescribeLiveStreamsPublishListWithChan invokes the cdn.DescribeLiveStreamsPublishList API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describelivestreamspublishlist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamsPublishListWithChan(request *DescribeLiveStreamsPublishListRequest) (<-chan *DescribeLiveStreamsPublishListResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeLiveStreamsPublishListWithChan(request *DescribeLi
 	return responseChan, errChan
 }
 
-// invoke DescribeLiveStreamsPublishList api with *DescribeLiveStreamsPublishListRequest asynchronously
+// DescribeLiveStreamsPublishListWithCallback invokes the cdn.DescribeLiveStreamsPublishList API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describelivestreamspublishlist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamsPublishListWithCallback(request *DescribeLiveStreamsPublishListRequest, callback func(response *DescribeLiveStreamsPublishListResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeLiveStreamsPublishListWithCallback(request *Descri
 	return result
 }
 
+// DescribeLiveStreamsPublishListRequest is the request struct for api DescribeLiveStreamsPublishList
 type DescribeLiveStreamsPublishListRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -86,14 +87,15 @@ type DescribeLiveStreamsPublishListRequest struct {
 	PageNumber    requests.Integer `position:"Query" name:"PageNumber"`
 }
 
+// DescribeLiveStreamsPublishListResponse is the response struct for api DescribeLiveStreamsPublishList
 type DescribeLiveStreamsPublishListResponse struct {
 	*responses.BaseResponse
 	RequestId   string      `json:"RequestId" xml:"RequestId"`
 	PublishInfo PublishInfo `json:"PublishInfo" xml:"PublishInfo"`
 }
 
-// create a request to invoke DescribeLiveStreamsPublishList API
-func CreateDescribeLiveStreamsPublishListRequest() (request *DescribeLiveStreamsPublishListRequest) {
+// CreateDescribeLiveStreamsPublishListRequest creates a request to invoke DescribeLiveStreamsPublishList API
+func CreateDescribeLiveStreamsPublishListRequest(request *DescribeLiveStreamsPublishListRequest) {
 	request = &DescribeLiveStreamsPublishListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -101,7 +103,7 @@ func CreateDescribeLiveStreamsPublishListRequest() (request *DescribeLiveStreams
 	return
 }
 
-// create a response to parse from DescribeLiveStreamsPublishList response
+// CreateDescribeLiveStreamsPublishListResponse creates a response to parse from DescribeLiveStreamsPublishList response
 func CreateDescribeLiveStreamsPublishListResponse() (response *DescribeLiveStreamsPublishListResponse) {
 	response = &DescribeLiveStreamsPublishListResponse{
 		BaseResponse: &responses.BaseResponse{},

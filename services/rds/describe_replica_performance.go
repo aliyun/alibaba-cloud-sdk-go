@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeReplicaPerformance api with *DescribeReplicaPerformanceRequest synchronously
+// DescribeReplicaPerformance invokes the rds.DescribeReplicaPerformance API synchronously
 // api document: https://help.aliyun.com/api/rds/describereplicaperformance.html
 func (client *Client) DescribeReplicaPerformance(request *DescribeReplicaPerformanceRequest) (response *DescribeReplicaPerformanceResponse, err error) {
 	response = CreateDescribeReplicaPerformanceResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeReplicaPerformance(request *DescribeReplicaPerform
 	return
 }
 
-// invoke DescribeReplicaPerformance api with *DescribeReplicaPerformanceRequest asynchronously
+// DescribeReplicaPerformanceWithChan invokes the rds.DescribeReplicaPerformance API asynchronously
 // api document: https://help.aliyun.com/api/rds/describereplicaperformance.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeReplicaPerformanceWithChan(request *DescribeReplicaPerformanceRequest) (<-chan *DescribeReplicaPerformanceResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeReplicaPerformanceWithChan(request *DescribeReplic
 	return responseChan, errChan
 }
 
-// invoke DescribeReplicaPerformance api with *DescribeReplicaPerformanceRequest asynchronously
+// DescribeReplicaPerformanceWithCallback invokes the rds.DescribeReplicaPerformance API asynchronously
 // api document: https://help.aliyun.com/api/rds/describereplicaperformance.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeReplicaPerformanceWithCallback(request *DescribeReplicaPerformanceRequest, callback func(response *DescribeReplicaPerformanceResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeReplicaPerformanceWithCallback(request *DescribeRe
 	return result
 }
 
+// DescribeReplicaPerformanceRequest is the request struct for api DescribeReplicaPerformance
 type DescribeReplicaPerformanceRequest struct {
 	*requests.RpcRequest
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
@@ -87,6 +88,7 @@ type DescribeReplicaPerformanceRequest struct {
 	EndTime              string           `position:"Query" name:"EndTime"`
 }
 
+// DescribeReplicaPerformanceResponse is the response struct for api DescribeReplicaPerformance
 type DescribeReplicaPerformanceResponse struct {
 	*responses.BaseResponse
 	RequestId       string          `json:"RequestId" xml:"RequestId"`
@@ -96,8 +98,8 @@ type DescribeReplicaPerformanceResponse struct {
 	PerformanceKeys PerformanceKeys `json:"PerformanceKeys" xml:"PerformanceKeys"`
 }
 
-// create a request to invoke DescribeReplicaPerformance API
-func CreateDescribeReplicaPerformanceRequest() (request *DescribeReplicaPerformanceRequest) {
+// CreateDescribeReplicaPerformanceRequest creates a request to invoke DescribeReplicaPerformance API
+func CreateDescribeReplicaPerformanceRequest(request *DescribeReplicaPerformanceRequest) {
 	request = &DescribeReplicaPerformanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -105,7 +107,7 @@ func CreateDescribeReplicaPerformanceRequest() (request *DescribeReplicaPerforma
 	return
 }
 
-// create a response to parse from DescribeReplicaPerformance response
+// CreateDescribeReplicaPerformanceResponse creates a response to parse from DescribeReplicaPerformance response
 func CreateDescribeReplicaPerformanceResponse() (response *DescribeReplicaPerformanceResponse) {
 	response = &DescribeReplicaPerformanceResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke BindInputBucket api with *BindInputBucketRequest synchronously
+// BindInputBucket invokes the mts.BindInputBucket API synchronously
 // api document: https://help.aliyun.com/api/mts/bindinputbucket.html
 func (client *Client) BindInputBucket(request *BindInputBucketRequest) (response *BindInputBucketResponse, err error) {
 	response = CreateBindInputBucketResponse()
@@ -28,7 +28,7 @@ func (client *Client) BindInputBucket(request *BindInputBucketRequest) (response
 	return
 }
 
-// invoke BindInputBucket api with *BindInputBucketRequest asynchronously
+// BindInputBucketWithChan invokes the mts.BindInputBucket API asynchronously
 // api document: https://help.aliyun.com/api/mts/bindinputbucket.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BindInputBucketWithChan(request *BindInputBucketRequest) (<-chan *BindInputBucketResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) BindInputBucketWithChan(request *BindInputBucketRequest) (
 	return responseChan, errChan
 }
 
-// invoke BindInputBucket api with *BindInputBucketRequest asynchronously
+// BindInputBucketWithCallback invokes the mts.BindInputBucket API asynchronously
 // api document: https://help.aliyun.com/api/mts/bindinputbucket.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BindInputBucketWithCallback(request *BindInputBucketRequest, callback func(response *BindInputBucketResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) BindInputBucketWithCallback(request *BindInputBucketReques
 	return result
 }
 
+// BindInputBucketRequest is the request struct for api BindInputBucket
 type BindInputBucketRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -83,13 +84,14 @@ type BindInputBucketRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// BindInputBucketResponse is the response struct for api BindInputBucket
 type BindInputBucketResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke BindInputBucket API
-func CreateBindInputBucketRequest() (request *BindInputBucketRequest) {
+// CreateBindInputBucketRequest creates a request to invoke BindInputBucket API
+func CreateBindInputBucketRequest(request *BindInputBucketRequest) {
 	request = &BindInputBucketRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateBindInputBucketRequest() (request *BindInputBucketRequest) {
 	return
 }
 
-// create a response to parse from BindInputBucket response
+// CreateBindInputBucketResponse creates a response to parse from BindInputBucket response
 func CreateBindInputBucketResponse() (response *BindInputBucketResponse) {
 	response = &BindInputBucketResponse{
 		BaseResponse: &responses.BaseResponse{},

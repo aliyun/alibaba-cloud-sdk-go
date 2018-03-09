@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeVpcs api with *DescribeVpcsRequest synchronously
+// DescribeVpcs invokes the vpc.DescribeVpcs API synchronously
 // api document: https://help.aliyun.com/api/vpc/describevpcs.html
 func (client *Client) DescribeVpcs(request *DescribeVpcsRequest) (response *DescribeVpcsResponse, err error) {
 	response = CreateDescribeVpcsResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeVpcs(request *DescribeVpcsRequest) (response *Desc
 	return
 }
 
-// invoke DescribeVpcs api with *DescribeVpcsRequest asynchronously
+// DescribeVpcsWithChan invokes the vpc.DescribeVpcs API asynchronously
 // api document: https://help.aliyun.com/api/vpc/describevpcs.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeVpcsWithChan(request *DescribeVpcsRequest) (<-chan *DescribeVpcsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeVpcsWithChan(request *DescribeVpcsRequest) (<-chan
 	return responseChan, errChan
 }
 
-// invoke DescribeVpcs api with *DescribeVpcsRequest asynchronously
+// DescribeVpcsWithCallback invokes the vpc.DescribeVpcs API asynchronously
 // api document: https://help.aliyun.com/api/vpc/describevpcs.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeVpcsWithCallback(request *DescribeVpcsRequest, callback func(response *DescribeVpcsResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeVpcsWithCallback(request *DescribeVpcsRequest, cal
 	return result
 }
 
+// DescribeVpcsRequest is the request struct for api DescribeVpcs
 type DescribeVpcsRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -87,6 +88,7 @@ type DescribeVpcsRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// DescribeVpcsResponse is the response struct for api DescribeVpcs
 type DescribeVpcsResponse struct {
 	*responses.BaseResponse
 	RequestId  string `json:"RequestId" xml:"RequestId"`
@@ -96,8 +98,8 @@ type DescribeVpcsResponse struct {
 	Vpcs       Vpcs   `json:"Vpcs" xml:"Vpcs"`
 }
 
-// create a request to invoke DescribeVpcs API
-func CreateDescribeVpcsRequest() (request *DescribeVpcsRequest) {
+// CreateDescribeVpcsRequest creates a request to invoke DescribeVpcs API
+func CreateDescribeVpcsRequest(request *DescribeVpcsRequest) {
 	request = &DescribeVpcsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -105,7 +107,7 @@ func CreateDescribeVpcsRequest() (request *DescribeVpcsRequest) {
 	return
 }
 
-// create a response to parse from DescribeVpcs response
+// CreateDescribeVpcsResponse creates a response to parse from DescribeVpcs response
 func CreateDescribeVpcsResponse() (response *DescribeVpcsResponse) {
 	response = &DescribeVpcsResponse{
 		BaseResponse: &responses.BaseResponse{},

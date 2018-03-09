@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeReplicaUsage api with *DescribeReplicaUsageRequest synchronously
+// DescribeReplicaUsage invokes the rds.DescribeReplicaUsage API synchronously
 // api document: https://help.aliyun.com/api/rds/describereplicausage.html
 func (client *Client) DescribeReplicaUsage(request *DescribeReplicaUsageRequest) (response *DescribeReplicaUsageResponse, err error) {
 	response = CreateDescribeReplicaUsageResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeReplicaUsage(request *DescribeReplicaUsageRequest)
 	return
 }
 
-// invoke DescribeReplicaUsage api with *DescribeReplicaUsageRequest asynchronously
+// DescribeReplicaUsageWithChan invokes the rds.DescribeReplicaUsage API asynchronously
 // api document: https://help.aliyun.com/api/rds/describereplicausage.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeReplicaUsageWithChan(request *DescribeReplicaUsageRequest) (<-chan *DescribeReplicaUsageResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeReplicaUsageWithChan(request *DescribeReplicaUsage
 	return responseChan, errChan
 }
 
-// invoke DescribeReplicaUsage api with *DescribeReplicaUsageRequest asynchronously
+// DescribeReplicaUsageWithCallback invokes the rds.DescribeReplicaUsage API asynchronously
 // api document: https://help.aliyun.com/api/rds/describereplicausage.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeReplicaUsageWithCallback(request *DescribeReplicaUsageRequest, callback func(response *DescribeReplicaUsageResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeReplicaUsageWithCallback(request *DescribeReplicaU
 	return result
 }
 
+// DescribeReplicaUsageRequest is the request struct for api DescribeReplicaUsage
 type DescribeReplicaUsageRequest struct {
 	*requests.RpcRequest
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
@@ -84,6 +85,7 @@ type DescribeReplicaUsageRequest struct {
 	SourceDBInstanceId   string           `position:"Query" name:"SourceDBInstanceId"`
 }
 
+// DescribeReplicaUsageResponse is the response struct for api DescribeReplicaUsage
 type DescribeReplicaUsageResponse struct {
 	*responses.BaseResponse
 	RequestId       string          `json:"RequestId" xml:"RequestId"`
@@ -93,8 +95,8 @@ type DescribeReplicaUsageResponse struct {
 	PerformanceKeys PerformanceKeys `json:"PerformanceKeys" xml:"PerformanceKeys"`
 }
 
-// create a request to invoke DescribeReplicaUsage API
-func CreateDescribeReplicaUsageRequest() (request *DescribeReplicaUsageRequest) {
+// CreateDescribeReplicaUsageRequest creates a request to invoke DescribeReplicaUsage API
+func CreateDescribeReplicaUsageRequest(request *DescribeReplicaUsageRequest) {
 	request = &DescribeReplicaUsageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -102,7 +104,7 @@ func CreateDescribeReplicaUsageRequest() (request *DescribeReplicaUsageRequest) 
 	return
 }
 
-// create a response to parse from DescribeReplicaUsage response
+// CreateDescribeReplicaUsageResponse creates a response to parse from DescribeReplicaUsage response
 func CreateDescribeReplicaUsageResponse() (response *DescribeReplicaUsageResponse) {
 	response = &DescribeReplicaUsageResponse{
 		BaseResponse: &responses.BaseResponse{},

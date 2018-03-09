@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke GetPolicyVersion api with *GetPolicyVersionRequest synchronously
+// GetPolicyVersion invokes the ram.GetPolicyVersion API synchronously
 // api document: https://help.aliyun.com/api/ram/getpolicyversion.html
 func (client *Client) GetPolicyVersion(request *GetPolicyVersionRequest) (response *GetPolicyVersionResponse, err error) {
 	response = CreateGetPolicyVersionResponse()
@@ -28,7 +28,7 @@ func (client *Client) GetPolicyVersion(request *GetPolicyVersionRequest) (respon
 	return
 }
 
-// invoke GetPolicyVersion api with *GetPolicyVersionRequest asynchronously
+// GetPolicyVersionWithChan invokes the ram.GetPolicyVersion API asynchronously
 // api document: https://help.aliyun.com/api/ram/getpolicyversion.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetPolicyVersionWithChan(request *GetPolicyVersionRequest) (<-chan *GetPolicyVersionResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) GetPolicyVersionWithChan(request *GetPolicyVersionRequest)
 	return responseChan, errChan
 }
 
-// invoke GetPolicyVersion api with *GetPolicyVersionRequest asynchronously
+// GetPolicyVersionWithCallback invokes the ram.GetPolicyVersion API asynchronously
 // api document: https://help.aliyun.com/api/ram/getpolicyversion.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetPolicyVersionWithCallback(request *GetPolicyVersionRequest, callback func(response *GetPolicyVersionResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) GetPolicyVersionWithCallback(request *GetPolicyVersionRequ
 	return result
 }
 
+// GetPolicyVersionRequest is the request struct for api GetPolicyVersion
 type GetPolicyVersionRequest struct {
 	*requests.RpcRequest
 	PolicyType string `position:"Query" name:"PolicyType"`
@@ -80,14 +81,15 @@ type GetPolicyVersionRequest struct {
 	VersionId  string `position:"Query" name:"VersionId"`
 }
 
+// GetPolicyVersionResponse is the response struct for api GetPolicyVersion
 type GetPolicyVersionResponse struct {
 	*responses.BaseResponse
 	RequestId     string        `json:"RequestId" xml:"RequestId"`
 	PolicyVersion PolicyVersion `json:"PolicyVersion" xml:"PolicyVersion"`
 }
 
-// create a request to invoke GetPolicyVersion API
-func CreateGetPolicyVersionRequest() (request *GetPolicyVersionRequest) {
+// CreateGetPolicyVersionRequest creates a request to invoke GetPolicyVersion API
+func CreateGetPolicyVersionRequest(request *GetPolicyVersionRequest) {
 	request = &GetPolicyVersionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateGetPolicyVersionRequest() (request *GetPolicyVersionRequest) {
 	return
 }
 
-// create a response to parse from GetPolicyVersion response
+// CreateGetPolicyVersionResponse creates a response to parse from GetPolicyVersion response
 func CreateGetPolicyVersionResponse() (response *GetPolicyVersionResponse) {
 	response = &GetPolicyVersionResponse{
 		BaseResponse: &responses.BaseResponse{},

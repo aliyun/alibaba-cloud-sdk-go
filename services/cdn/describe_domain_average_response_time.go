@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeDomainAverageResponseTime api with *DescribeDomainAverageResponseTimeRequest synchronously
+// DescribeDomainAverageResponseTime invokes the cdn.DescribeDomainAverageResponseTime API synchronously
 // api document: https://help.aliyun.com/api/cdn/describedomainaverageresponsetime.html
 func (client *Client) DescribeDomainAverageResponseTime(request *DescribeDomainAverageResponseTimeRequest) (response *DescribeDomainAverageResponseTimeResponse, err error) {
 	response = CreateDescribeDomainAverageResponseTimeResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeDomainAverageResponseTime(request *DescribeDomainA
 	return
 }
 
-// invoke DescribeDomainAverageResponseTime api with *DescribeDomainAverageResponseTimeRequest asynchronously
+// DescribeDomainAverageResponseTimeWithChan invokes the cdn.DescribeDomainAverageResponseTime API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describedomainaverageresponsetime.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainAverageResponseTimeWithChan(request *DescribeDomainAverageResponseTimeRequest) (<-chan *DescribeDomainAverageResponseTimeResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeDomainAverageResponseTimeWithChan(request *Describ
 	return responseChan, errChan
 }
 
-// invoke DescribeDomainAverageResponseTime api with *DescribeDomainAverageResponseTimeRequest asynchronously
+// DescribeDomainAverageResponseTimeWithCallback invokes the cdn.DescribeDomainAverageResponseTime API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describedomainaverageresponsetime.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainAverageResponseTimeWithCallback(request *DescribeDomainAverageResponseTimeRequest, callback func(response *DescribeDomainAverageResponseTimeResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeDomainAverageResponseTimeWithCallback(request *Des
 	return result
 }
 
+// DescribeDomainAverageResponseTimeRequest is the request struct for api DescribeDomainAverageResponseTime
 type DescribeDomainAverageResponseTimeRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,6 +85,7 @@ type DescribeDomainAverageResponseTimeRequest struct {
 	Interval      string           `position:"Query" name:"Interval"`
 }
 
+// DescribeDomainAverageResponseTimeResponse is the response struct for api DescribeDomainAverageResponseTime
 type DescribeDomainAverageResponseTimeResponse struct {
 	*responses.BaseResponse
 	RequestId        string           `json:"RequestId" xml:"RequestId"`
@@ -94,8 +96,8 @@ type DescribeDomainAverageResponseTimeResponse struct {
 	AvgRTPerInterval AvgRTPerInterval `json:"AvgRTPerInterval" xml:"AvgRTPerInterval"`
 }
 
-// create a request to invoke DescribeDomainAverageResponseTime API
-func CreateDescribeDomainAverageResponseTimeRequest() (request *DescribeDomainAverageResponseTimeRequest) {
+// CreateDescribeDomainAverageResponseTimeRequest creates a request to invoke DescribeDomainAverageResponseTime API
+func CreateDescribeDomainAverageResponseTimeRequest(request *DescribeDomainAverageResponseTimeRequest) {
 	request = &DescribeDomainAverageResponseTimeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -103,7 +105,7 @@ func CreateDescribeDomainAverageResponseTimeRequest() (request *DescribeDomainAv
 	return
 }
 
-// create a response to parse from DescribeDomainAverageResponseTime response
+// CreateDescribeDomainAverageResponseTimeResponse creates a response to parse from DescribeDomainAverageResponseTime response
 func CreateDescribeDomainAverageResponseTimeResponse() (response *DescribeDomainAverageResponseTimeResponse) {
 	response = &DescribeDomainAverageResponseTimeResponse{
 		BaseResponse: &responses.BaseResponse{},

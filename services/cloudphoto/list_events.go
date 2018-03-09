@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ListEvents api with *ListEventsRequest synchronously
+// ListEvents invokes the cloudphoto.ListEvents API synchronously
 // api document: https://help.aliyun.com/api/cloudphoto/listevents.html
 func (client *Client) ListEvents(request *ListEventsRequest) (response *ListEventsResponse, err error) {
 	response = CreateListEventsResponse()
@@ -28,7 +28,7 @@ func (client *Client) ListEvents(request *ListEventsRequest) (response *ListEven
 	return
 }
 
-// invoke ListEvents api with *ListEventsRequest asynchronously
+// ListEventsWithChan invokes the cloudphoto.ListEvents API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/listevents.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListEventsWithChan(request *ListEventsRequest) (<-chan *ListEventsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ListEventsWithChan(request *ListEventsRequest) (<-chan *Li
 	return responseChan, errChan
 }
 
-// invoke ListEvents api with *ListEventsRequest asynchronously
+// ListEventsWithCallback invokes the cloudphoto.ListEvents API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/listevents.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListEventsWithCallback(request *ListEventsRequest, callback func(response *ListEventsResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ListEventsWithCallback(request *ListEventsRequest, callbac
 	return result
 }
 
+// ListEventsRequest is the request struct for api ListEvents
 type ListEventsRequest struct {
 	*requests.RpcRequest
 	Direction string           `position:"Query" name:"Direction"`
@@ -82,6 +83,7 @@ type ListEventsRequest struct {
 	StoreName string           `position:"Query" name:"StoreName"`
 }
 
+// ListEventsResponse is the response struct for api ListEvents
 type ListEventsResponse struct {
 	*responses.BaseResponse
 	Code       string  `json:"Code" xml:"Code"`
@@ -93,8 +95,8 @@ type ListEventsResponse struct {
 	Events     []Event `json:"Events" xml:"Events"`
 }
 
-// create a request to invoke ListEvents API
-func CreateListEventsRequest() (request *ListEventsRequest) {
+// CreateListEventsRequest creates a request to invoke ListEvents API
+func CreateListEventsRequest(request *ListEventsRequest) {
 	request = &ListEventsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -102,7 +104,7 @@ func CreateListEventsRequest() (request *ListEventsRequest) {
 	return
 }
 
-// create a response to parse from ListEvents response
+// CreateListEventsResponse creates a response to parse from ListEvents response
 func CreateListEventsResponse() (response *ListEventsResponse) {
 	response = &ListEventsResponse{
 		BaseResponse: &responses.BaseResponse{},

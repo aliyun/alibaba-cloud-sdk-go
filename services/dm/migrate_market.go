@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke MigrateMarket api with *MigrateMarketRequest synchronously
+// MigrateMarket invokes the dm.MigrateMarket API synchronously
 // api document: https://help.aliyun.com/api/dm/migratemarket.html
 func (client *Client) MigrateMarket(request *MigrateMarketRequest) (response *MigrateMarketResponse, err error) {
 	response = CreateMigrateMarketResponse()
@@ -28,7 +28,7 @@ func (client *Client) MigrateMarket(request *MigrateMarketRequest) (response *Mi
 	return
 }
 
-// invoke MigrateMarket api with *MigrateMarketRequest asynchronously
+// MigrateMarketWithChan invokes the dm.MigrateMarket API asynchronously
 // api document: https://help.aliyun.com/api/dm/migratemarket.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) MigrateMarketWithChan(request *MigrateMarketRequest) (<-chan *MigrateMarketResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) MigrateMarketWithChan(request *MigrateMarketRequest) (<-ch
 	return responseChan, errChan
 }
 
-// invoke MigrateMarket api with *MigrateMarketRequest asynchronously
+// MigrateMarketWithCallback invokes the dm.MigrateMarket API asynchronously
 // api document: https://help.aliyun.com/api/dm/migratemarket.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) MigrateMarketWithCallback(request *MigrateMarketRequest, callback func(response *MigrateMarketResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) MigrateMarketWithCallback(request *MigrateMarketRequest, c
 	return result
 }
 
+// MigrateMarketRequest is the request struct for api MigrateMarket
 type MigrateMarketRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,13 +83,14 @@ type MigrateMarketRequest struct {
 	FromType             requests.Integer `position:"Query" name:"FromType"`
 }
 
+// MigrateMarketResponse is the response struct for api MigrateMarket
 type MigrateMarketResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke MigrateMarket API
-func CreateMigrateMarketRequest() (request *MigrateMarketRequest) {
+// CreateMigrateMarketRequest creates a request to invoke MigrateMarket API
+func CreateMigrateMarketRequest(request *MigrateMarketRequest) {
 	request = &MigrateMarketRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -96,7 +98,7 @@ func CreateMigrateMarketRequest() (request *MigrateMarketRequest) {
 	return
 }
 
-// create a response to parse from MigrateMarket response
+// CreateMigrateMarketResponse creates a response to parse from MigrateMarket response
 func CreateMigrateMarketResponse() (response *MigrateMarketResponse) {
 	response = &MigrateMarketResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeVpcAttribute api with *DescribeVpcAttributeRequest synchronously
+// DescribeVpcAttribute invokes the vpc.DescribeVpcAttribute API synchronously
 // api document: https://help.aliyun.com/api/vpc/describevpcattribute.html
 func (client *Client) DescribeVpcAttribute(request *DescribeVpcAttributeRequest) (response *DescribeVpcAttributeResponse, err error) {
 	response = CreateDescribeVpcAttributeResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeVpcAttribute(request *DescribeVpcAttributeRequest)
 	return
 }
 
-// invoke DescribeVpcAttribute api with *DescribeVpcAttributeRequest asynchronously
+// DescribeVpcAttributeWithChan invokes the vpc.DescribeVpcAttribute API asynchronously
 // api document: https://help.aliyun.com/api/vpc/describevpcattribute.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeVpcAttributeWithChan(request *DescribeVpcAttributeRequest) (<-chan *DescribeVpcAttributeResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeVpcAttributeWithChan(request *DescribeVpcAttribute
 	return responseChan, errChan
 }
 
-// invoke DescribeVpcAttribute api with *DescribeVpcAttributeRequest asynchronously
+// DescribeVpcAttributeWithCallback invokes the vpc.DescribeVpcAttribute API asynchronously
 // api document: https://help.aliyun.com/api/vpc/describevpcattribute.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeVpcAttributeWithCallback(request *DescribeVpcAttributeRequest, callback func(response *DescribeVpcAttributeResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeVpcAttributeWithCallback(request *DescribeVpcAttri
 	return result
 }
 
+// DescribeVpcAttributeRequest is the request struct for api DescribeVpcAttribute
 type DescribeVpcAttributeRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -83,6 +84,7 @@ type DescribeVpcAttributeRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// DescribeVpcAttributeResponse is the response struct for api DescribeVpcAttribute
 type DescribeVpcAttributeResponse struct {
 	*responses.BaseResponse
 	RequestId          string                               `json:"RequestId" xml:"RequestId"`
@@ -103,8 +105,8 @@ type DescribeVpcAttributeResponse struct {
 	CloudResources     CloudResourcesInDescribeVpcAttribute `json:"CloudResources" xml:"CloudResources"`
 }
 
-// create a request to invoke DescribeVpcAttribute API
-func CreateDescribeVpcAttributeRequest() (request *DescribeVpcAttributeRequest) {
+// CreateDescribeVpcAttributeRequest creates a request to invoke DescribeVpcAttribute API
+func CreateDescribeVpcAttributeRequest(request *DescribeVpcAttributeRequest) {
 	request = &DescribeVpcAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -112,7 +114,7 @@ func CreateDescribeVpcAttributeRequest() (request *DescribeVpcAttributeRequest) 
 	return
 }
 
-// create a response to parse from DescribeVpcAttribute response
+// CreateDescribeVpcAttributeResponse creates a response to parse from DescribeVpcAttribute response
 func CreateDescribeVpcAttributeResponse() (response *DescribeVpcAttributeResponse) {
 	response = &DescribeVpcAttributeResponse{
 		BaseResponse: &responses.BaseResponse{},

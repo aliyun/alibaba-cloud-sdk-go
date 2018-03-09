@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke AddMediaTag api with *AddMediaTagRequest synchronously
+// AddMediaTag invokes the mts.AddMediaTag API synchronously
 // api document: https://help.aliyun.com/api/mts/addmediatag.html
 func (client *Client) AddMediaTag(request *AddMediaTagRequest) (response *AddMediaTagResponse, err error) {
 	response = CreateAddMediaTagResponse()
@@ -28,7 +28,7 @@ func (client *Client) AddMediaTag(request *AddMediaTagRequest) (response *AddMed
 	return
 }
 
-// invoke AddMediaTag api with *AddMediaTagRequest asynchronously
+// AddMediaTagWithChan invokes the mts.AddMediaTag API asynchronously
 // api document: https://help.aliyun.com/api/mts/addmediatag.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddMediaTagWithChan(request *AddMediaTagRequest) (<-chan *AddMediaTagResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) AddMediaTagWithChan(request *AddMediaTagRequest) (<-chan *
 	return responseChan, errChan
 }
 
-// invoke AddMediaTag api with *AddMediaTagRequest asynchronously
+// AddMediaTagWithCallback invokes the mts.AddMediaTag API asynchronously
 // api document: https://help.aliyun.com/api/mts/addmediatag.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddMediaTagWithCallback(request *AddMediaTagRequest, callback func(response *AddMediaTagResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) AddMediaTagWithCallback(request *AddMediaTagRequest, callb
 	return result
 }
 
+// AddMediaTagRequest is the request struct for api AddMediaTag
 type AddMediaTagRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -83,13 +84,14 @@ type AddMediaTagRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// AddMediaTagResponse is the response struct for api AddMediaTag
 type AddMediaTagResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke AddMediaTag API
-func CreateAddMediaTagRequest() (request *AddMediaTagRequest) {
+// CreateAddMediaTagRequest creates a request to invoke AddMediaTag API
+func CreateAddMediaTagRequest(request *AddMediaTagRequest) {
 	request = &AddMediaTagRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateAddMediaTagRequest() (request *AddMediaTagRequest) {
 	return
 }
 
-// create a response to parse from AddMediaTag response
+// CreateAddMediaTagResponse creates a response to parse from AddMediaTag response
 func CreateAddMediaTagResponse() (response *AddMediaTagResponse) {
 	response = &AddMediaTagResponse{
 		BaseResponse: &responses.BaseResponse{},

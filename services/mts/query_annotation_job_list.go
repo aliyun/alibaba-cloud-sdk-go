@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke QueryAnnotationJobList api with *QueryAnnotationJobListRequest synchronously
+// QueryAnnotationJobList invokes the mts.QueryAnnotationJobList API synchronously
 // api document: https://help.aliyun.com/api/mts/queryannotationjoblist.html
 func (client *Client) QueryAnnotationJobList(request *QueryAnnotationJobListRequest) (response *QueryAnnotationJobListResponse, err error) {
 	response = CreateQueryAnnotationJobListResponse()
@@ -28,7 +28,7 @@ func (client *Client) QueryAnnotationJobList(request *QueryAnnotationJobListRequ
 	return
 }
 
-// invoke QueryAnnotationJobList api with *QueryAnnotationJobListRequest asynchronously
+// QueryAnnotationJobListWithChan invokes the mts.QueryAnnotationJobList API asynchronously
 // api document: https://help.aliyun.com/api/mts/queryannotationjoblist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryAnnotationJobListWithChan(request *QueryAnnotationJobListRequest) (<-chan *QueryAnnotationJobListResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) QueryAnnotationJobListWithChan(request *QueryAnnotationJob
 	return responseChan, errChan
 }
 
-// invoke QueryAnnotationJobList api with *QueryAnnotationJobListRequest asynchronously
+// QueryAnnotationJobListWithCallback invokes the mts.QueryAnnotationJobList API asynchronously
 // api document: https://help.aliyun.com/api/mts/queryannotationjoblist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryAnnotationJobListWithCallback(request *QueryAnnotationJobListRequest, callback func(response *QueryAnnotationJobListResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) QueryAnnotationJobListWithCallback(request *QueryAnnotatio
 	return result
 }
 
+// QueryAnnotationJobListRequest is the request struct for api QueryAnnotationJobList
 type QueryAnnotationJobListRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,6 +83,7 @@ type QueryAnnotationJobListRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// QueryAnnotationJobListResponse is the response struct for api QueryAnnotationJobList
 type QueryAnnotationJobListResponse struct {
 	*responses.BaseResponse
 	RequestId         string                              `json:"RequestId" xml:"RequestId"`
@@ -89,8 +91,8 @@ type QueryAnnotationJobListResponse struct {
 	AnnotationJobList AnnotationJobList                   `json:"AnnotationJobList" xml:"AnnotationJobList"`
 }
 
-// create a request to invoke QueryAnnotationJobList API
-func CreateQueryAnnotationJobListRequest() (request *QueryAnnotationJobListRequest) {
+// CreateQueryAnnotationJobListRequest creates a request to invoke QueryAnnotationJobList API
+func CreateQueryAnnotationJobListRequest(request *QueryAnnotationJobListRequest) {
 	request = &QueryAnnotationJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateQueryAnnotationJobListRequest() (request *QueryAnnotationJobListReque
 	return
 }
 
-// create a response to parse from QueryAnnotationJobList response
+// CreateQueryAnnotationJobListResponse creates a response to parse from QueryAnnotationJobList response
 func CreateQueryAnnotationJobListResponse() (response *QueryAnnotationJobListResponse) {
 	response = &QueryAnnotationJobListResponse{
 		BaseResponse: &responses.BaseResponse{},

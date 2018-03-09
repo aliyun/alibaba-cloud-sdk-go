@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeInstanceHistoryEvents api with *DescribeInstanceHistoryEventsRequest synchronously
+// DescribeInstanceHistoryEvents invokes the ecs.DescribeInstanceHistoryEvents API synchronously
 // api document: https://help.aliyun.com/api/ecs/describeinstancehistoryevents.html
 func (client *Client) DescribeInstanceHistoryEvents(request *DescribeInstanceHistoryEventsRequest) (response *DescribeInstanceHistoryEventsResponse, err error) {
 	response = CreateDescribeInstanceHistoryEventsResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeInstanceHistoryEvents(request *DescribeInstanceHis
 	return
 }
 
-// invoke DescribeInstanceHistoryEvents api with *DescribeInstanceHistoryEventsRequest asynchronously
+// DescribeInstanceHistoryEventsWithChan invokes the ecs.DescribeInstanceHistoryEvents API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describeinstancehistoryevents.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceHistoryEventsWithChan(request *DescribeInstanceHistoryEventsRequest) (<-chan *DescribeInstanceHistoryEventsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeInstanceHistoryEventsWithChan(request *DescribeIns
 	return responseChan, errChan
 }
 
-// invoke DescribeInstanceHistoryEvents api with *DescribeInstanceHistoryEventsRequest asynchronously
+// DescribeInstanceHistoryEventsWithCallback invokes the ecs.DescribeInstanceHistoryEvents API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describeinstancehistoryevents.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceHistoryEventsWithCallback(request *DescribeInstanceHistoryEventsRequest, callback func(response *DescribeInstanceHistoryEventsResponse, err error)) <-chan int {
@@ -73,10 +73,12 @@ func (client *Client) DescribeInstanceHistoryEventsWithCallback(request *Describ
 	return result
 }
 
+// DescribeInstanceHistoryEventsRequest is the request struct for api DescribeInstanceHistoryEvents
 type DescribeInstanceHistoryEventsRequest struct {
 	*requests.RpcRequest
 }
 
+// DescribeInstanceHistoryEventsResponse is the response struct for api DescribeInstanceHistoryEvents
 type DescribeInstanceHistoryEventsResponse struct {
 	*responses.BaseResponse
 	RequestId              string                 `json:"RequestId" xml:"RequestId"`
@@ -86,8 +88,8 @@ type DescribeInstanceHistoryEventsResponse struct {
 	InstanceSystemEventSet InstanceSystemEventSet `json:"InstanceSystemEventSet" xml:"InstanceSystemEventSet"`
 }
 
-// create a request to invoke DescribeInstanceHistoryEvents API
-func CreateDescribeInstanceHistoryEventsRequest() (request *DescribeInstanceHistoryEventsRequest) {
+// CreateDescribeInstanceHistoryEventsRequest creates a request to invoke DescribeInstanceHistoryEvents API
+func CreateDescribeInstanceHistoryEventsRequest(request *DescribeInstanceHistoryEventsRequest) {
 	request = &DescribeInstanceHistoryEventsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateDescribeInstanceHistoryEventsRequest() (request *DescribeInstanceHist
 	return
 }
 
-// create a response to parse from DescribeInstanceHistoryEvents response
+// CreateDescribeInstanceHistoryEventsResponse creates a response to parse from DescribeInstanceHistoryEvents response
 func CreateDescribeInstanceHistoryEventsResponse() (response *DescribeInstanceHistoryEventsResponse) {
 	response = &DescribeInstanceHistoryEventsResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ListAlbumPhotos api with *ListAlbumPhotosRequest synchronously
+// ListAlbumPhotos invokes the cloudphoto.ListAlbumPhotos API synchronously
 // api document: https://help.aliyun.com/api/cloudphoto/listalbumphotos.html
 func (client *Client) ListAlbumPhotos(request *ListAlbumPhotosRequest) (response *ListAlbumPhotosResponse, err error) {
 	response = CreateListAlbumPhotosResponse()
@@ -28,7 +28,7 @@ func (client *Client) ListAlbumPhotos(request *ListAlbumPhotosRequest) (response
 	return
 }
 
-// invoke ListAlbumPhotos api with *ListAlbumPhotosRequest asynchronously
+// ListAlbumPhotosWithChan invokes the cloudphoto.ListAlbumPhotos API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/listalbumphotos.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAlbumPhotosWithChan(request *ListAlbumPhotosRequest) (<-chan *ListAlbumPhotosResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ListAlbumPhotosWithChan(request *ListAlbumPhotosRequest) (
 	return responseChan, errChan
 }
 
-// invoke ListAlbumPhotos api with *ListAlbumPhotosRequest asynchronously
+// ListAlbumPhotosWithCallback invokes the cloudphoto.ListAlbumPhotos API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/listalbumphotos.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAlbumPhotosWithCallback(request *ListAlbumPhotosRequest, callback func(response *ListAlbumPhotosResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ListAlbumPhotosWithCallback(request *ListAlbumPhotosReques
 	return result
 }
 
+// ListAlbumPhotosRequest is the request struct for api ListAlbumPhotos
 type ListAlbumPhotosRequest struct {
 	*requests.RpcRequest
 	AlbumId   requests.Integer `position:"Query" name:"AlbumId"`
@@ -84,6 +85,7 @@ type ListAlbumPhotosRequest struct {
 	LibraryId string           `position:"Query" name:"LibraryId"`
 }
 
+// ListAlbumPhotosResponse is the response struct for api ListAlbumPhotos
 type ListAlbumPhotosResponse struct {
 	*responses.BaseResponse
 	Code       string   `json:"Code" xml:"Code"`
@@ -95,8 +97,8 @@ type ListAlbumPhotosResponse struct {
 	Results    []Result `json:"Results" xml:"Results"`
 }
 
-// create a request to invoke ListAlbumPhotos API
-func CreateListAlbumPhotosRequest() (request *ListAlbumPhotosRequest) {
+// CreateListAlbumPhotosRequest creates a request to invoke ListAlbumPhotos API
+func CreateListAlbumPhotosRequest(request *ListAlbumPhotosRequest) {
 	request = &ListAlbumPhotosRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -104,7 +106,7 @@ func CreateListAlbumPhotosRequest() (request *ListAlbumPhotosRequest) {
 	return
 }
 
-// create a response to parse from ListAlbumPhotos response
+// CreateListAlbumPhotosResponse creates a response to parse from ListAlbumPhotos response
 func CreateListAlbumPhotosResponse() (response *ListAlbumPhotosResponse) {
 	response = &ListAlbumPhotosResponse{
 		BaseResponse: &responses.BaseResponse{},

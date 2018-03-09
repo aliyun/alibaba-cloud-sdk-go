@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ListCensorPipeline api with *ListCensorPipelineRequest synchronously
+// ListCensorPipeline invokes the mts.ListCensorPipeline API synchronously
 // api document: https://help.aliyun.com/api/mts/listcensorpipeline.html
 func (client *Client) ListCensorPipeline(request *ListCensorPipelineRequest) (response *ListCensorPipelineResponse, err error) {
 	response = CreateListCensorPipelineResponse()
@@ -28,7 +28,7 @@ func (client *Client) ListCensorPipeline(request *ListCensorPipelineRequest) (re
 	return
 }
 
-// invoke ListCensorPipeline api with *ListCensorPipelineRequest asynchronously
+// ListCensorPipelineWithChan invokes the mts.ListCensorPipeline API asynchronously
 // api document: https://help.aliyun.com/api/mts/listcensorpipeline.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListCensorPipelineWithChan(request *ListCensorPipelineRequest) (<-chan *ListCensorPipelineResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ListCensorPipelineWithChan(request *ListCensorPipelineRequ
 	return responseChan, errChan
 }
 
-// invoke ListCensorPipeline api with *ListCensorPipelineRequest asynchronously
+// ListCensorPipelineWithCallback invokes the mts.ListCensorPipeline API asynchronously
 // api document: https://help.aliyun.com/api/mts/listcensorpipeline.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListCensorPipelineWithCallback(request *ListCensorPipelineRequest, callback func(response *ListCensorPipelineResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ListCensorPipelineWithCallback(request *ListCensorPipeline
 	return result
 }
 
+// ListCensorPipelineRequest is the request struct for api ListCensorPipeline
 type ListCensorPipelineRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,6 +85,7 @@ type ListCensorPipelineRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// ListCensorPipelineResponse is the response struct for api ListCensorPipeline
 type ListCensorPipelineResponse struct {
 	*responses.BaseResponse
 	RequestId    string                           `json:"RequestId" xml:"RequestId"`
@@ -93,8 +95,8 @@ type ListCensorPipelineResponse struct {
 	PipelineList PipelineListInListCensorPipeline `json:"PipelineList" xml:"PipelineList"`
 }
 
-// create a request to invoke ListCensorPipeline API
-func CreateListCensorPipelineRequest() (request *ListCensorPipelineRequest) {
+// CreateListCensorPipelineRequest creates a request to invoke ListCensorPipeline API
+func CreateListCensorPipelineRequest(request *ListCensorPipelineRequest) {
 	request = &ListCensorPipelineRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -102,7 +104,7 @@ func CreateListCensorPipelineRequest() (request *ListCensorPipelineRequest) {
 	return
 }
 
-// create a response to parse from ListCensorPipeline response
+// CreateListCensorPipelineResponse creates a response to parse from ListCensorPipeline response
 func CreateListCensorPipelineResponse() (response *ListCensorPipelineResponse) {
 	response = &ListCensorPipelineResponse{
 		BaseResponse: &responses.BaseResponse{},

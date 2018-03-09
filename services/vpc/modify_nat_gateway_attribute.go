@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifyNatGatewayAttribute api with *ModifyNatGatewayAttributeRequest synchronously
+// ModifyNatGatewayAttribute invokes the vpc.ModifyNatGatewayAttribute API synchronously
 // api document: https://help.aliyun.com/api/vpc/modifynatgatewayattribute.html
 func (client *Client) ModifyNatGatewayAttribute(request *ModifyNatGatewayAttributeRequest) (response *ModifyNatGatewayAttributeResponse, err error) {
 	response = CreateModifyNatGatewayAttributeResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifyNatGatewayAttribute(request *ModifyNatGatewayAttribu
 	return
 }
 
-// invoke ModifyNatGatewayAttribute api with *ModifyNatGatewayAttributeRequest asynchronously
+// ModifyNatGatewayAttributeWithChan invokes the vpc.ModifyNatGatewayAttribute API asynchronously
 // api document: https://help.aliyun.com/api/vpc/modifynatgatewayattribute.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyNatGatewayAttributeWithChan(request *ModifyNatGatewayAttributeRequest) (<-chan *ModifyNatGatewayAttributeResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifyNatGatewayAttributeWithChan(request *ModifyNatGatewa
 	return responseChan, errChan
 }
 
-// invoke ModifyNatGatewayAttribute api with *ModifyNatGatewayAttributeRequest asynchronously
+// ModifyNatGatewayAttributeWithCallback invokes the vpc.ModifyNatGatewayAttribute API asynchronously
 // api document: https://help.aliyun.com/api/vpc/modifynatgatewayattribute.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyNatGatewayAttributeWithCallback(request *ModifyNatGatewayAttributeRequest, callback func(response *ModifyNatGatewayAttributeResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ModifyNatGatewayAttributeWithCallback(request *ModifyNatGa
 	return result
 }
 
+// ModifyNatGatewayAttributeRequest is the request struct for api ModifyNatGatewayAttribute
 type ModifyNatGatewayAttributeRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,13 +85,14 @@ type ModifyNatGatewayAttributeRequest struct {
 	Description          string           `position:"Query" name:"Description"`
 }
 
+// ModifyNatGatewayAttributeResponse is the response struct for api ModifyNatGatewayAttribute
 type ModifyNatGatewayAttributeResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ModifyNatGatewayAttribute API
-func CreateModifyNatGatewayAttributeRequest() (request *ModifyNatGatewayAttributeRequest) {
+// CreateModifyNatGatewayAttributeRequest creates a request to invoke ModifyNatGatewayAttribute API
+func CreateModifyNatGatewayAttributeRequest(request *ModifyNatGatewayAttributeRequest) {
 	request = &ModifyNatGatewayAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateModifyNatGatewayAttributeRequest() (request *ModifyNatGatewayAttribut
 	return
 }
 
-// create a response to parse from ModifyNatGatewayAttribute response
+// CreateModifyNatGatewayAttributeResponse creates a response to parse from ModifyNatGatewayAttribute response
 func CreateModifyNatGatewayAttributeResponse() (response *ModifyNatGatewayAttributeResponse) {
 	response = &ModifyNatGatewayAttributeResponse{
 		BaseResponse: &responses.BaseResponse{},

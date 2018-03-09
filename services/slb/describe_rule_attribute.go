@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeRuleAttribute api with *DescribeRuleAttributeRequest synchronously
+// DescribeRuleAttribute invokes the slb.DescribeRuleAttribute API synchronously
 // api document: https://help.aliyun.com/api/slb/describeruleattribute.html
 func (client *Client) DescribeRuleAttribute(request *DescribeRuleAttributeRequest) (response *DescribeRuleAttributeResponse, err error) {
 	response = CreateDescribeRuleAttributeResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeRuleAttribute(request *DescribeRuleAttributeReques
 	return
 }
 
-// invoke DescribeRuleAttribute api with *DescribeRuleAttributeRequest asynchronously
+// DescribeRuleAttributeWithChan invokes the slb.DescribeRuleAttribute API asynchronously
 // api document: https://help.aliyun.com/api/slb/describeruleattribute.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRuleAttributeWithChan(request *DescribeRuleAttributeRequest) (<-chan *DescribeRuleAttributeResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeRuleAttributeWithChan(request *DescribeRuleAttribu
 	return responseChan, errChan
 }
 
-// invoke DescribeRuleAttribute api with *DescribeRuleAttributeRequest asynchronously
+// DescribeRuleAttributeWithCallback invokes the slb.DescribeRuleAttribute API asynchronously
 // api document: https://help.aliyun.com/api/slb/describeruleattribute.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRuleAttributeWithCallback(request *DescribeRuleAttributeRequest, callback func(response *DescribeRuleAttributeResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeRuleAttributeWithCallback(request *DescribeRuleAtt
 	return result
 }
 
+// DescribeRuleAttributeRequest is the request struct for api DescribeRuleAttribute
 type DescribeRuleAttributeRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,6 +85,7 @@ type DescribeRuleAttributeRequest struct {
 	RuleId               string           `position:"Query" name:"RuleId"`
 }
 
+// DescribeRuleAttributeResponse is the response struct for api DescribeRuleAttribute
 type DescribeRuleAttributeResponse struct {
 	*responses.BaseResponse
 	RequestId      string `json:"RequestId" xml:"RequestId"`
@@ -95,8 +97,8 @@ type DescribeRuleAttributeResponse struct {
 	VServerGroupId string `json:"VServerGroupId" xml:"VServerGroupId"`
 }
 
-// create a request to invoke DescribeRuleAttribute API
-func CreateDescribeRuleAttributeRequest() (request *DescribeRuleAttributeRequest) {
+// CreateDescribeRuleAttributeRequest creates a request to invoke DescribeRuleAttribute API
+func CreateDescribeRuleAttributeRequest(request *DescribeRuleAttributeRequest) {
 	request = &DescribeRuleAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -104,7 +106,7 @@ func CreateDescribeRuleAttributeRequest() (request *DescribeRuleAttributeRequest
 	return
 }
 
-// create a response to parse from DescribeRuleAttribute response
+// CreateDescribeRuleAttributeResponse creates a response to parse from DescribeRuleAttribute response
 func CreateDescribeRuleAttributeResponse() (response *DescribeRuleAttributeResponse) {
 	response = &DescribeRuleAttributeResponse{
 		BaseResponse: &responses.BaseResponse{},

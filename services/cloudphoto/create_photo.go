@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CreatePhoto api with *CreatePhotoRequest synchronously
+// CreatePhoto invokes the cloudphoto.CreatePhoto API synchronously
 // api document: https://help.aliyun.com/api/cloudphoto/createphoto.html
 func (client *Client) CreatePhoto(request *CreatePhotoRequest) (response *CreatePhotoResponse, err error) {
 	response = CreateCreatePhotoResponse()
@@ -28,7 +28,7 @@ func (client *Client) CreatePhoto(request *CreatePhotoRequest) (response *Create
 	return
 }
 
-// invoke CreatePhoto api with *CreatePhotoRequest asynchronously
+// CreatePhotoWithChan invokes the cloudphoto.CreatePhoto API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/createphoto.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreatePhotoWithChan(request *CreatePhotoRequest) (<-chan *CreatePhotoResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CreatePhotoWithChan(request *CreatePhotoRequest) (<-chan *
 	return responseChan, errChan
 }
 
-// invoke CreatePhoto api with *CreatePhotoRequest asynchronously
+// CreatePhotoWithCallback invokes the cloudphoto.CreatePhoto API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/createphoto.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreatePhotoWithCallback(request *CreatePhotoRequest, callback func(response *CreatePhotoResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) CreatePhotoWithCallback(request *CreatePhotoRequest, callb
 	return result
 }
 
+// CreatePhotoRequest is the request struct for api CreatePhoto
 type CreatePhotoRequest struct {
 	*requests.RpcRequest
 	FileId          string           `position:"Query" name:"FileId"`
@@ -86,6 +87,7 @@ type CreatePhotoRequest struct {
 	ShareExpireTime requests.Integer `position:"Query" name:"ShareExpireTime"`
 }
 
+// CreatePhotoResponse is the response struct for api CreatePhoto
 type CreatePhotoResponse struct {
 	*responses.BaseResponse
 	Code      string `json:"Code" xml:"Code"`
@@ -95,8 +97,8 @@ type CreatePhotoResponse struct {
 	Photo     Photo  `json:"Photo" xml:"Photo"`
 }
 
-// create a request to invoke CreatePhoto API
-func CreateCreatePhotoRequest() (request *CreatePhotoRequest) {
+// CreateCreatePhotoRequest creates a request to invoke CreatePhoto API
+func CreateCreatePhotoRequest(request *CreatePhotoRequest) {
 	request = &CreatePhotoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -104,7 +106,7 @@ func CreateCreatePhotoRequest() (request *CreatePhotoRequest) {
 	return
 }
 
-// create a response to parse from CreatePhoto response
+// CreateCreatePhotoResponse creates a response to parse from CreatePhoto response
 func CreateCreatePhotoResponse() (response *CreatePhotoResponse) {
 	response = &CreatePhotoResponse{
 		BaseResponse: &responses.BaseResponse{},

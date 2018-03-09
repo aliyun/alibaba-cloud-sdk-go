@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke BatchDescribeDomainBpsData api with *BatchDescribeDomainBpsDataRequest synchronously
+// BatchDescribeDomainBpsData invokes the cdn.BatchDescribeDomainBpsData API synchronously
 // api document: https://help.aliyun.com/api/cdn/batchdescribedomainbpsdata.html
 func (client *Client) BatchDescribeDomainBpsData(request *BatchDescribeDomainBpsDataRequest) (response *BatchDescribeDomainBpsDataResponse, err error) {
 	response = CreateBatchDescribeDomainBpsDataResponse()
@@ -28,7 +28,7 @@ func (client *Client) BatchDescribeDomainBpsData(request *BatchDescribeDomainBps
 	return
 }
 
-// invoke BatchDescribeDomainBpsData api with *BatchDescribeDomainBpsDataRequest asynchronously
+// BatchDescribeDomainBpsDataWithChan invokes the cdn.BatchDescribeDomainBpsData API asynchronously
 // api document: https://help.aliyun.com/api/cdn/batchdescribedomainbpsdata.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BatchDescribeDomainBpsDataWithChan(request *BatchDescribeDomainBpsDataRequest) (<-chan *BatchDescribeDomainBpsDataResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) BatchDescribeDomainBpsDataWithChan(request *BatchDescribeD
 	return responseChan, errChan
 }
 
-// invoke BatchDescribeDomainBpsData api with *BatchDescribeDomainBpsDataRequest asynchronously
+// BatchDescribeDomainBpsDataWithCallback invokes the cdn.BatchDescribeDomainBpsData API asynchronously
 // api document: https://help.aliyun.com/api/cdn/batchdescribedomainbpsdata.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BatchDescribeDomainBpsDataWithCallback(request *BatchDescribeDomainBpsDataRequest, callback func(response *BatchDescribeDomainBpsDataResponse, err error)) <-chan int {
@@ -73,10 +73,12 @@ func (client *Client) BatchDescribeDomainBpsDataWithCallback(request *BatchDescr
 	return result
 }
 
+// BatchDescribeDomainBpsDataRequest is the request struct for api BatchDescribeDomainBpsData
 type BatchDescribeDomainBpsDataRequest struct {
 	*requests.RpcRequest
 }
 
+// BatchDescribeDomainBpsDataResponse is the response struct for api BatchDescribeDomainBpsData
 type BatchDescribeDomainBpsDataResponse struct {
 	*responses.BaseResponse
 	RequestId  string                               `json:"RequestId" xml:"RequestId"`
@@ -86,8 +88,8 @@ type BatchDescribeDomainBpsDataResponse struct {
 	BpsDatas   BpsDatasInBatchDescribeDomainBpsData `json:"BpsDatas" xml:"BpsDatas"`
 }
 
-// create a request to invoke BatchDescribeDomainBpsData API
-func CreateBatchDescribeDomainBpsDataRequest() (request *BatchDescribeDomainBpsDataRequest) {
+// CreateBatchDescribeDomainBpsDataRequest creates a request to invoke BatchDescribeDomainBpsData API
+func CreateBatchDescribeDomainBpsDataRequest(request *BatchDescribeDomainBpsDataRequest) {
 	request = &BatchDescribeDomainBpsDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateBatchDescribeDomainBpsDataRequest() (request *BatchDescribeDomainBpsD
 	return
 }
 
-// create a response to parse from BatchDescribeDomainBpsData response
+// CreateBatchDescribeDomainBpsDataResponse creates a response to parse from BatchDescribeDomainBpsData response
 func CreateBatchDescribeDomainBpsDataResponse() (response *BatchDescribeDomainBpsDataResponse) {
 	response = &BatchDescribeDomainBpsDataResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeCdnMonitorData api with *DescribeCdnMonitorDataRequest synchronously
+// DescribeCdnMonitorData invokes the cdn.DescribeCdnMonitorData API synchronously
 // api document: https://help.aliyun.com/api/cdn/describecdnmonitordata.html
 func (client *Client) DescribeCdnMonitorData(request *DescribeCdnMonitorDataRequest) (response *DescribeCdnMonitorDataResponse, err error) {
 	response = CreateDescribeCdnMonitorDataResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeCdnMonitorData(request *DescribeCdnMonitorDataRequ
 	return
 }
 
-// invoke DescribeCdnMonitorData api with *DescribeCdnMonitorDataRequest asynchronously
+// DescribeCdnMonitorDataWithChan invokes the cdn.DescribeCdnMonitorData API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describecdnmonitordata.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCdnMonitorDataWithChan(request *DescribeCdnMonitorDataRequest) (<-chan *DescribeCdnMonitorDataResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeCdnMonitorDataWithChan(request *DescribeCdnMonitor
 	return responseChan, errChan
 }
 
-// invoke DescribeCdnMonitorData api with *DescribeCdnMonitorDataRequest asynchronously
+// DescribeCdnMonitorDataWithCallback invokes the cdn.DescribeCdnMonitorData API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describecdnmonitordata.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCdnMonitorDataWithCallback(request *DescribeCdnMonitorDataRequest, callback func(response *DescribeCdnMonitorDataResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeCdnMonitorDataWithCallback(request *DescribeCdnMon
 	return result
 }
 
+// DescribeCdnMonitorDataRequest is the request struct for api DescribeCdnMonitorData
 type DescribeCdnMonitorDataRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -83,6 +84,7 @@ type DescribeCdnMonitorDataRequest struct {
 	Interval      string           `position:"Query" name:"Interval"`
 }
 
+// DescribeCdnMonitorDataResponse is the response struct for api DescribeCdnMonitorData
 type DescribeCdnMonitorDataResponse struct {
 	*responses.BaseResponse
 	RequestId       string       `json:"RequestId" xml:"RequestId"`
@@ -93,8 +95,8 @@ type DescribeCdnMonitorDataResponse struct {
 	MonitorDatas    MonitorDatas `json:"MonitorDatas" xml:"MonitorDatas"`
 }
 
-// create a request to invoke DescribeCdnMonitorData API
-func CreateDescribeCdnMonitorDataRequest() (request *DescribeCdnMonitorDataRequest) {
+// CreateDescribeCdnMonitorDataRequest creates a request to invoke DescribeCdnMonitorData API
+func CreateDescribeCdnMonitorDataRequest(request *DescribeCdnMonitorDataRequest) {
 	request = &DescribeCdnMonitorDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -102,7 +104,7 @@ func CreateDescribeCdnMonitorDataRequest() (request *DescribeCdnMonitorDataReque
 	return
 }
 
-// create a response to parse from DescribeCdnMonitorData response
+// CreateDescribeCdnMonitorDataResponse creates a response to parse from DescribeCdnMonitorData response
 func CreateDescribeCdnMonitorDataResponse() (response *DescribeCdnMonitorDataResponse) {
 	response = &DescribeCdnMonitorDataResponse{
 		BaseResponse: &responses.BaseResponse{},

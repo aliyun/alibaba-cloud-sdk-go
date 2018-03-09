@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ProfileGet api with *ProfileGetRequest synchronously
+// ProfileGet invokes the cms.ProfileGet API synchronously
 // api document: https://help.aliyun.com/api/cms/profileget.html
 func (client *Client) ProfileGet(request *ProfileGetRequest) (response *ProfileGetResponse, err error) {
 	response = CreateProfileGetResponse()
@@ -28,7 +28,7 @@ func (client *Client) ProfileGet(request *ProfileGetRequest) (response *ProfileG
 	return
 }
 
-// invoke ProfileGet api with *ProfileGetRequest asynchronously
+// ProfileGetWithChan invokes the cms.ProfileGet API asynchronously
 // api document: https://help.aliyun.com/api/cms/profileget.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ProfileGetWithChan(request *ProfileGetRequest) (<-chan *ProfileGetResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ProfileGetWithChan(request *ProfileGetRequest) (<-chan *Pr
 	return responseChan, errChan
 }
 
-// invoke ProfileGet api with *ProfileGetRequest asynchronously
+// ProfileGetWithCallback invokes the cms.ProfileGet API asynchronously
 // api document: https://help.aliyun.com/api/cms/profileget.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ProfileGetWithCallback(request *ProfileGetRequest, callback func(response *ProfileGetResponse, err error)) <-chan int {
@@ -73,11 +73,13 @@ func (client *Client) ProfileGetWithCallback(request *ProfileGetRequest, callbac
 	return result
 }
 
+// ProfileGetRequest is the request struct for api ProfileGet
 type ProfileGetRequest struct {
 	*requests.RpcRequest
 	UserId requests.Integer `position:"Query" name:"UserId"`
 }
 
+// ProfileGetResponse is the response struct for api ProfileGet
 type ProfileGetResponse struct {
 	*responses.BaseResponse
 	ErrorCode                int    `json:"ErrorCode" xml:"ErrorCode"`
@@ -90,8 +92,8 @@ type ProfileGetResponse struct {
 	EnableActiveAlert        string `json:"EnableActiveAlert" xml:"EnableActiveAlert"`
 }
 
-// create a request to invoke ProfileGet API
-func CreateProfileGetRequest() (request *ProfileGetRequest) {
+// CreateProfileGetRequest creates a request to invoke ProfileGet API
+func CreateProfileGetRequest(request *ProfileGetRequest) {
 	request = &ProfileGetRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateProfileGetRequest() (request *ProfileGetRequest) {
 	return
 }
 
-// create a response to parse from ProfileGet response
+// CreateProfileGetResponse creates a response to parse from ProfileGet response
 func CreateProfileGetResponse() (response *ProfileGetResponse) {
 	response = &ProfileGetResponse{
 		BaseResponse: &responses.BaseResponse{},

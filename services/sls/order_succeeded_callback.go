@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke OrderSucceededCallback api with *OrderSucceededCallbackRequest synchronously
+// OrderSucceededCallback invokes the sls.OrderSucceededCallback API synchronously
 // api document: https://help.aliyun.com/api/sls/ordersucceededcallback.html
 func (client *Client) OrderSucceededCallback(request *OrderSucceededCallbackRequest) (response *OrderSucceededCallbackResponse, err error) {
 	response = CreateOrderSucceededCallbackResponse()
@@ -28,7 +28,7 @@ func (client *Client) OrderSucceededCallback(request *OrderSucceededCallbackRequ
 	return
 }
 
-// invoke OrderSucceededCallback api with *OrderSucceededCallbackRequest asynchronously
+// OrderSucceededCallbackWithChan invokes the sls.OrderSucceededCallback API asynchronously
 // api document: https://help.aliyun.com/api/sls/ordersucceededcallback.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OrderSucceededCallbackWithChan(request *OrderSucceededCallbackRequest) (<-chan *OrderSucceededCallbackResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) OrderSucceededCallbackWithChan(request *OrderSucceededCall
 	return responseChan, errChan
 }
 
-// invoke OrderSucceededCallback api with *OrderSucceededCallbackRequest asynchronously
+// OrderSucceededCallbackWithCallback invokes the sls.OrderSucceededCallback API asynchronously
 // api document: https://help.aliyun.com/api/sls/ordersucceededcallback.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OrderSucceededCallbackWithCallback(request *OrderSucceededCallbackRequest, callback func(response *OrderSucceededCallbackResponse, err error)) <-chan int {
@@ -73,11 +73,13 @@ func (client *Client) OrderSucceededCallbackWithCallback(request *OrderSucceeded
 	return result
 }
 
+// OrderSucceededCallbackRequest is the request struct for api OrderSucceededCallback
 type OrderSucceededCallbackRequest struct {
 	*requests.RpcRequest
 	Data string `position:"Body" name:"data"`
 }
 
+// OrderSucceededCallbackResponse is the response struct for api OrderSucceededCallback
 type OrderSucceededCallbackResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"requestId" xml:"requestId"`
@@ -86,8 +88,8 @@ type OrderSucceededCallbackResponse struct {
 	Synchro   bool   `json:"synchro" xml:"synchro"`
 }
 
-// create a request to invoke OrderSucceededCallback API
-func CreateOrderSucceededCallbackRequest() (request *OrderSucceededCallbackRequest) {
+// CreateOrderSucceededCallbackRequest creates a request to invoke OrderSucceededCallback API
+func CreateOrderSucceededCallbackRequest(request *OrderSucceededCallbackRequest) {
 	request = &OrderSucceededCallbackRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateOrderSucceededCallbackRequest() (request *OrderSucceededCallbackReque
 	return
 }
 
-// create a response to parse from OrderSucceededCallback response
+// CreateOrderSucceededCallbackResponse creates a response to parse from OrderSucceededCallback response
 func CreateOrderSucceededCallbackResponse() (response *OrderSucceededCallbackResponse) {
 	response = &OrderSucceededCallbackResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeDomainMax95BpsData api with *DescribeDomainMax95BpsDataRequest synchronously
+// DescribeDomainMax95BpsData invokes the cdn.DescribeDomainMax95BpsData API synchronously
 // api document: https://help.aliyun.com/api/cdn/describedomainmax95bpsdata.html
 func (client *Client) DescribeDomainMax95BpsData(request *DescribeDomainMax95BpsDataRequest) (response *DescribeDomainMax95BpsDataResponse, err error) {
 	response = CreateDescribeDomainMax95BpsDataResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeDomainMax95BpsData(request *DescribeDomainMax95Bps
 	return
 }
 
-// invoke DescribeDomainMax95BpsData api with *DescribeDomainMax95BpsDataRequest asynchronously
+// DescribeDomainMax95BpsDataWithChan invokes the cdn.DescribeDomainMax95BpsData API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describedomainmax95bpsdata.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainMax95BpsDataWithChan(request *DescribeDomainMax95BpsDataRequest) (<-chan *DescribeDomainMax95BpsDataResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeDomainMax95BpsDataWithChan(request *DescribeDomain
 	return responseChan, errChan
 }
 
-// invoke DescribeDomainMax95BpsData api with *DescribeDomainMax95BpsDataRequest asynchronously
+// DescribeDomainMax95BpsDataWithCallback invokes the cdn.DescribeDomainMax95BpsData API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describedomainmax95bpsdata.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainMax95BpsDataWithCallback(request *DescribeDomainMax95BpsDataRequest, callback func(response *DescribeDomainMax95BpsDataResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeDomainMax95BpsDataWithCallback(request *DescribeDo
 	return result
 }
 
+// DescribeDomainMax95BpsDataRequest is the request struct for api DescribeDomainMax95BpsData
 type DescribeDomainMax95BpsDataRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,6 +83,7 @@ type DescribeDomainMax95BpsDataRequest struct {
 	EndTime       string           `position:"Query" name:"EndTime"`
 }
 
+// DescribeDomainMax95BpsDataResponse is the response struct for api DescribeDomainMax95BpsData
 type DescribeDomainMax95BpsDataResponse struct {
 	*responses.BaseResponse
 	RequestId        string `json:"RequestId" xml:"RequestId"`
@@ -93,8 +95,8 @@ type DescribeDomainMax95BpsDataResponse struct {
 	OverseasMax95Bps string `json:"OverseasMax95Bps" xml:"OverseasMax95Bps"`
 }
 
-// create a request to invoke DescribeDomainMax95BpsData API
-func CreateDescribeDomainMax95BpsDataRequest() (request *DescribeDomainMax95BpsDataRequest) {
+// CreateDescribeDomainMax95BpsDataRequest creates a request to invoke DescribeDomainMax95BpsData API
+func CreateDescribeDomainMax95BpsDataRequest(request *DescribeDomainMax95BpsDataRequest) {
 	request = &DescribeDomainMax95BpsDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -102,7 +104,7 @@ func CreateDescribeDomainMax95BpsDataRequest() (request *DescribeDomainMax95BpsD
 	return
 }
 
-// create a response to parse from DescribeDomainMax95BpsData response
+// CreateDescribeDomainMax95BpsDataResponse creates a response to parse from DescribeDomainMax95BpsData response
 func CreateDescribeDomainMax95BpsDataResponse() (response *DescribeDomainMax95BpsDataResponse) {
 	response = &DescribeDomainMax95BpsDataResponse{
 		BaseResponse: &responses.BaseResponse{},

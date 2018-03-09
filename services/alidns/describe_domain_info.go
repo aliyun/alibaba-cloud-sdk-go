@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeDomainInfo api with *DescribeDomainInfoRequest synchronously
+// DescribeDomainInfo invokes the alidns.DescribeDomainInfo API synchronously
 // api document: https://help.aliyun.com/api/alidns/describedomaininfo.html
 func (client *Client) DescribeDomainInfo(request *DescribeDomainInfoRequest) (response *DescribeDomainInfoResponse, err error) {
 	response = CreateDescribeDomainInfoResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeDomainInfo(request *DescribeDomainInfoRequest) (re
 	return
 }
 
-// invoke DescribeDomainInfo api with *DescribeDomainInfoRequest asynchronously
+// DescribeDomainInfoWithChan invokes the alidns.DescribeDomainInfo API asynchronously
 // api document: https://help.aliyun.com/api/alidns/describedomaininfo.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainInfoWithChan(request *DescribeDomainInfoRequest) (<-chan *DescribeDomainInfoResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeDomainInfoWithChan(request *DescribeDomainInfoRequ
 	return responseChan, errChan
 }
 
-// invoke DescribeDomainInfo api with *DescribeDomainInfoRequest asynchronously
+// DescribeDomainInfoWithCallback invokes the alidns.DescribeDomainInfo API asynchronously
 // api document: https://help.aliyun.com/api/alidns/describedomaininfo.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainInfoWithCallback(request *DescribeDomainInfoRequest, callback func(response *DescribeDomainInfoResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeDomainInfoWithCallback(request *DescribeDomainInfo
 	return result
 }
 
+// DescribeDomainInfoRequest is the request struct for api DescribeDomainInfo
 type DescribeDomainInfoRequest struct {
 	*requests.RpcRequest
 	Lang                 string           `position:"Query" name:"Lang"`
@@ -81,6 +82,7 @@ type DescribeDomainInfoRequest struct {
 	NeedDetailAttributes requests.Boolean `position:"Query" name:"NeedDetailAttributes"`
 }
 
+// DescribeDomainInfoResponse is the response struct for api DescribeDomainInfo
 type DescribeDomainInfoResponse struct {
 	*responses.BaseResponse
 	RequestId          string                          `json:"RequestId" xml:"RequestId"`
@@ -103,8 +105,8 @@ type DescribeDomainInfoResponse struct {
 	RecordLines        RecordLinesInDescribeDomainInfo `json:"RecordLines" xml:"RecordLines"`
 }
 
-// create a request to invoke DescribeDomainInfo API
-func CreateDescribeDomainInfoRequest() (request *DescribeDomainInfoRequest) {
+// CreateDescribeDomainInfoRequest creates a request to invoke DescribeDomainInfo API
+func CreateDescribeDomainInfoRequest(request *DescribeDomainInfoRequest) {
 	request = &DescribeDomainInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -112,7 +114,7 @@ func CreateDescribeDomainInfoRequest() (request *DescribeDomainInfoRequest) {
 	return
 }
 
-// create a response to parse from DescribeDomainInfo response
+// CreateDescribeDomainInfoResponse creates a response to parse from DescribeDomainInfo response
 func CreateDescribeDomainInfoResponse() (response *DescribeDomainInfoResponse) {
 	response = &DescribeDomainInfoResponse{
 		BaseResponse: &responses.BaseResponse{},

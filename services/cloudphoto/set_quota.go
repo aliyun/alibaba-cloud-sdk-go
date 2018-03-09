@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SetQuota api with *SetQuotaRequest synchronously
+// SetQuota invokes the cloudphoto.SetQuota API synchronously
 // api document: https://help.aliyun.com/api/cloudphoto/setquota.html
 func (client *Client) SetQuota(request *SetQuotaRequest) (response *SetQuotaResponse, err error) {
 	response = CreateSetQuotaResponse()
@@ -28,7 +28,7 @@ func (client *Client) SetQuota(request *SetQuotaRequest) (response *SetQuotaResp
 	return
 }
 
-// invoke SetQuota api with *SetQuotaRequest asynchronously
+// SetQuotaWithChan invokes the cloudphoto.SetQuota API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/setquota.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetQuotaWithChan(request *SetQuotaRequest) (<-chan *SetQuotaResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SetQuotaWithChan(request *SetQuotaRequest) (<-chan *SetQuo
 	return responseChan, errChan
 }
 
-// invoke SetQuota api with *SetQuotaRequest asynchronously
+// SetQuotaWithCallback invokes the cloudphoto.SetQuota API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/setquota.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetQuotaWithCallback(request *SetQuotaRequest, callback func(response *SetQuotaResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SetQuotaWithCallback(request *SetQuotaRequest, callback fu
 	return result
 }
 
+// SetQuotaRequest is the request struct for api SetQuota
 type SetQuotaRequest struct {
 	*requests.RpcRequest
 	TotalQuota requests.Integer `position:"Query" name:"TotalQuota"`
@@ -80,6 +81,7 @@ type SetQuotaRequest struct {
 	LibraryId  string           `position:"Query" name:"LibraryId"`
 }
 
+// SetQuotaResponse is the response struct for api SetQuota
 type SetQuotaResponse struct {
 	*responses.BaseResponse
 	Code      string `json:"Code" xml:"Code"`
@@ -88,8 +90,8 @@ type SetQuotaResponse struct {
 	Action    string `json:"Action" xml:"Action"`
 }
 
-// create a request to invoke SetQuota API
-func CreateSetQuotaRequest() (request *SetQuotaRequest) {
+// CreateSetQuotaRequest creates a request to invoke SetQuota API
+func CreateSetQuotaRequest(request *SetQuotaRequest) {
 	request = &SetQuotaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateSetQuotaRequest() (request *SetQuotaRequest) {
 	return
 }
 
-// create a response to parse from SetQuota response
+// CreateSetQuotaResponse creates a response to parse from SetQuota response
 func CreateSetQuotaResponse() (response *SetQuotaResponse) {
 	response = &SetQuotaResponse{
 		BaseResponse: &responses.BaseResponse{},

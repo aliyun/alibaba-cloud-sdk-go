@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteInvalidAddress api with *DeleteInvalidAddressRequest synchronously
+// DeleteInvalidAddress invokes the dm.DeleteInvalidAddress API synchronously
 // api document: https://help.aliyun.com/api/dm/deleteinvalidaddress.html
 func (client *Client) DeleteInvalidAddress(request *DeleteInvalidAddressRequest) (response *DeleteInvalidAddressResponse, err error) {
 	response = CreateDeleteInvalidAddressResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteInvalidAddress(request *DeleteInvalidAddressRequest)
 	return
 }
 
-// invoke DeleteInvalidAddress api with *DeleteInvalidAddressRequest asynchronously
+// DeleteInvalidAddressWithChan invokes the dm.DeleteInvalidAddress API asynchronously
 // api document: https://help.aliyun.com/api/dm/deleteinvalidaddress.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteInvalidAddressWithChan(request *DeleteInvalidAddressRequest) (<-chan *DeleteInvalidAddressResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteInvalidAddressWithChan(request *DeleteInvalidAddress
 	return responseChan, errChan
 }
 
-// invoke DeleteInvalidAddress api with *DeleteInvalidAddressRequest asynchronously
+// DeleteInvalidAddressWithCallback invokes the dm.DeleteInvalidAddress API asynchronously
 // api document: https://help.aliyun.com/api/dm/deleteinvalidaddress.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteInvalidAddressWithCallback(request *DeleteInvalidAddressRequest, callback func(response *DeleteInvalidAddressResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DeleteInvalidAddressWithCallback(request *DeleteInvalidAdd
 	return result
 }
 
+// DeleteInvalidAddressRequest is the request struct for api DeleteInvalidAddress
 type DeleteInvalidAddressRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -81,13 +82,14 @@ type DeleteInvalidAddressRequest struct {
 	ToAddress            string           `position:"Query" name:"ToAddress"`
 }
 
+// DeleteInvalidAddressResponse is the response struct for api DeleteInvalidAddress
 type DeleteInvalidAddressResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DeleteInvalidAddress API
-func CreateDeleteInvalidAddressRequest() (request *DeleteInvalidAddressRequest) {
+// CreateDeleteInvalidAddressRequest creates a request to invoke DeleteInvalidAddress API
+func CreateDeleteInvalidAddressRequest(request *DeleteInvalidAddressRequest) {
 	request = &DeleteInvalidAddressRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateDeleteInvalidAddressRequest() (request *DeleteInvalidAddressRequest) 
 	return
 }
 
-// create a response to parse from DeleteInvalidAddress response
+// CreateDeleteInvalidAddressResponse creates a response to parse from DeleteInvalidAddress response
 func CreateDeleteInvalidAddressResponse() (response *DeleteInvalidAddressResponse) {
 	response = &DeleteInvalidAddressResponse{
 		BaseResponse: &responses.BaseResponse{},

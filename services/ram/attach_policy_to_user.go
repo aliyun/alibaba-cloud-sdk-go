@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke AttachPolicyToUser api with *AttachPolicyToUserRequest synchronously
+// AttachPolicyToUser invokes the ram.AttachPolicyToUser API synchronously
 // api document: https://help.aliyun.com/api/ram/attachpolicytouser.html
 func (client *Client) AttachPolicyToUser(request *AttachPolicyToUserRequest) (response *AttachPolicyToUserResponse, err error) {
 	response = CreateAttachPolicyToUserResponse()
@@ -28,7 +28,7 @@ func (client *Client) AttachPolicyToUser(request *AttachPolicyToUserRequest) (re
 	return
 }
 
-// invoke AttachPolicyToUser api with *AttachPolicyToUserRequest asynchronously
+// AttachPolicyToUserWithChan invokes the ram.AttachPolicyToUser API asynchronously
 // api document: https://help.aliyun.com/api/ram/attachpolicytouser.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AttachPolicyToUserWithChan(request *AttachPolicyToUserRequest) (<-chan *AttachPolicyToUserResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) AttachPolicyToUserWithChan(request *AttachPolicyToUserRequ
 	return responseChan, errChan
 }
 
-// invoke AttachPolicyToUser api with *AttachPolicyToUserRequest asynchronously
+// AttachPolicyToUserWithCallback invokes the ram.AttachPolicyToUser API asynchronously
 // api document: https://help.aliyun.com/api/ram/attachpolicytouser.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AttachPolicyToUserWithCallback(request *AttachPolicyToUserRequest, callback func(response *AttachPolicyToUserResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) AttachPolicyToUserWithCallback(request *AttachPolicyToUser
 	return result
 }
 
+// AttachPolicyToUserRequest is the request struct for api AttachPolicyToUser
 type AttachPolicyToUserRequest struct {
 	*requests.RpcRequest
 	PolicyType string `position:"Query" name:"PolicyType"`
@@ -80,13 +81,14 @@ type AttachPolicyToUserRequest struct {
 	UserName   string `position:"Query" name:"UserName"`
 }
 
+// AttachPolicyToUserResponse is the response struct for api AttachPolicyToUser
 type AttachPolicyToUserResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke AttachPolicyToUser API
-func CreateAttachPolicyToUserRequest() (request *AttachPolicyToUserRequest) {
+// CreateAttachPolicyToUserRequest creates a request to invoke AttachPolicyToUser API
+func CreateAttachPolicyToUserRequest(request *AttachPolicyToUserRequest) {
 	request = &AttachPolicyToUserRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -94,7 +96,7 @@ func CreateAttachPolicyToUserRequest() (request *AttachPolicyToUserRequest) {
 	return
 }
 
-// create a response to parse from AttachPolicyToUser response
+// CreateAttachPolicyToUserResponse creates a response to parse from AttachPolicyToUser response
 func CreateAttachPolicyToUserResponse() (response *AttachPolicyToUserResponse) {
 	response = &AttachPolicyToUserResponse{
 		BaseResponse: &responses.BaseResponse{},

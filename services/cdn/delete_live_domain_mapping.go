@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteLiveDomainMapping api with *DeleteLiveDomainMappingRequest synchronously
+// DeleteLiveDomainMapping invokes the cdn.DeleteLiveDomainMapping API synchronously
 // api document: https://help.aliyun.com/api/cdn/deletelivedomainmapping.html
 func (client *Client) DeleteLiveDomainMapping(request *DeleteLiveDomainMappingRequest) (response *DeleteLiveDomainMappingResponse, err error) {
 	response = CreateDeleteLiveDomainMappingResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteLiveDomainMapping(request *DeleteLiveDomainMappingRe
 	return
 }
 
-// invoke DeleteLiveDomainMapping api with *DeleteLiveDomainMappingRequest asynchronously
+// DeleteLiveDomainMappingWithChan invokes the cdn.DeleteLiveDomainMapping API asynchronously
 // api document: https://help.aliyun.com/api/cdn/deletelivedomainmapping.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteLiveDomainMappingWithChan(request *DeleteLiveDomainMappingRequest) (<-chan *DeleteLiveDomainMappingResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteLiveDomainMappingWithChan(request *DeleteLiveDomainM
 	return responseChan, errChan
 }
 
-// invoke DeleteLiveDomainMapping api with *DeleteLiveDomainMappingRequest asynchronously
+// DeleteLiveDomainMappingWithCallback invokes the cdn.DeleteLiveDomainMapping API asynchronously
 // api document: https://help.aliyun.com/api/cdn/deletelivedomainmapping.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteLiveDomainMappingWithCallback(request *DeleteLiveDomainMappingRequest, callback func(response *DeleteLiveDomainMappingResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DeleteLiveDomainMappingWithCallback(request *DeleteLiveDom
 	return result
 }
 
+// DeleteLiveDomainMappingRequest is the request struct for api DeleteLiveDomainMapping
 type DeleteLiveDomainMappingRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -81,13 +82,14 @@ type DeleteLiveDomainMappingRequest struct {
 	PullDomain    string           `position:"Query" name:"PullDomain"`
 }
 
+// DeleteLiveDomainMappingResponse is the response struct for api DeleteLiveDomainMapping
 type DeleteLiveDomainMappingResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DeleteLiveDomainMapping API
-func CreateDeleteLiveDomainMappingRequest() (request *DeleteLiveDomainMappingRequest) {
+// CreateDeleteLiveDomainMappingRequest creates a request to invoke DeleteLiveDomainMapping API
+func CreateDeleteLiveDomainMappingRequest(request *DeleteLiveDomainMappingRequest) {
 	request = &DeleteLiveDomainMappingRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateDeleteLiveDomainMappingRequest() (request *DeleteLiveDomainMappingReq
 	return
 }
 
-// create a response to parse from DeleteLiveDomainMapping response
+// CreateDeleteLiveDomainMappingResponse creates a response to parse from DeleteLiveDomainMapping response
 func CreateDeleteLiveDomainMappingResponse() (response *DeleteLiveDomainMappingResponse) {
 	response = &DeleteLiveDomainMappingResponse{
 		BaseResponse: &responses.BaseResponse{},

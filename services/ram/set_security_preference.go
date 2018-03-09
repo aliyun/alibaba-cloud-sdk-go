@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SetSecurityPreference api with *SetSecurityPreferenceRequest synchronously
+// SetSecurityPreference invokes the ram.SetSecurityPreference API synchronously
 // api document: https://help.aliyun.com/api/ram/setsecuritypreference.html
 func (client *Client) SetSecurityPreference(request *SetSecurityPreferenceRequest) (response *SetSecurityPreferenceResponse, err error) {
 	response = CreateSetSecurityPreferenceResponse()
@@ -28,7 +28,7 @@ func (client *Client) SetSecurityPreference(request *SetSecurityPreferenceReques
 	return
 }
 
-// invoke SetSecurityPreference api with *SetSecurityPreferenceRequest asynchronously
+// SetSecurityPreferenceWithChan invokes the ram.SetSecurityPreference API asynchronously
 // api document: https://help.aliyun.com/api/ram/setsecuritypreference.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetSecurityPreferenceWithChan(request *SetSecurityPreferenceRequest) (<-chan *SetSecurityPreferenceResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SetSecurityPreferenceWithChan(request *SetSecurityPreferen
 	return responseChan, errChan
 }
 
-// invoke SetSecurityPreference api with *SetSecurityPreferenceRequest asynchronously
+// SetSecurityPreferenceWithCallback invokes the ram.SetSecurityPreference API asynchronously
 // api document: https://help.aliyun.com/api/ram/setsecuritypreference.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetSecurityPreferenceWithCallback(request *SetSecurityPreferenceRequest, callback func(response *SetSecurityPreferenceResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SetSecurityPreferenceWithCallback(request *SetSecurityPref
 	return result
 }
 
+// SetSecurityPreferenceRequest is the request struct for api SetSecurityPreference
 type SetSecurityPreferenceRequest struct {
 	*requests.RpcRequest
 	EnableSaveMFATicket         requests.Boolean `position:"Query" name:"EnableSaveMFATicket"`
@@ -84,14 +85,15 @@ type SetSecurityPreferenceRequest struct {
 	LoginNetworkMasks           string           `position:"Query" name:"LoginNetworkMasks"`
 }
 
+// SetSecurityPreferenceResponse is the response struct for api SetSecurityPreference
 type SetSecurityPreferenceResponse struct {
 	*responses.BaseResponse
 	RequestId          string             `json:"RequestId" xml:"RequestId"`
 	SecurityPreference SecurityPreference `json:"SecurityPreference" xml:"SecurityPreference"`
 }
 
-// create a request to invoke SetSecurityPreference API
-func CreateSetSecurityPreferenceRequest() (request *SetSecurityPreferenceRequest) {
+// CreateSetSecurityPreferenceRequest creates a request to invoke SetSecurityPreference API
+func CreateSetSecurityPreferenceRequest(request *SetSecurityPreferenceRequest) {
 	request = &SetSecurityPreferenceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateSetSecurityPreferenceRequest() (request *SetSecurityPreferenceRequest
 	return
 }
 
-// create a response to parse from SetSecurityPreference response
+// CreateSetSecurityPreferenceResponse creates a response to parse from SetSecurityPreference response
 func CreateSetSecurityPreferenceResponse() (response *SetSecurityPreferenceResponse) {
 	response = &SetSecurityPreferenceResponse{
 		BaseResponse: &responses.BaseResponse{},

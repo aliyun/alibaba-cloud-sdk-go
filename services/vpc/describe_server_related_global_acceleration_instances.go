@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeServerRelatedGlobalAccelerationInstances api with *DescribeServerRelatedGlobalAccelerationInstancesRequest synchronously
+// DescribeServerRelatedGlobalAccelerationInstances invokes the vpc.DescribeServerRelatedGlobalAccelerationInstances API synchronously
 // api document: https://help.aliyun.com/api/vpc/describeserverrelatedglobalaccelerationinstances.html
 func (client *Client) DescribeServerRelatedGlobalAccelerationInstances(request *DescribeServerRelatedGlobalAccelerationInstancesRequest) (response *DescribeServerRelatedGlobalAccelerationInstancesResponse, err error) {
 	response = CreateDescribeServerRelatedGlobalAccelerationInstancesResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeServerRelatedGlobalAccelerationInstances(request *
 	return
 }
 
-// invoke DescribeServerRelatedGlobalAccelerationInstances api with *DescribeServerRelatedGlobalAccelerationInstancesRequest asynchronously
+// DescribeServerRelatedGlobalAccelerationInstancesWithChan invokes the vpc.DescribeServerRelatedGlobalAccelerationInstances API asynchronously
 // api document: https://help.aliyun.com/api/vpc/describeserverrelatedglobalaccelerationinstances.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeServerRelatedGlobalAccelerationInstancesWithChan(request *DescribeServerRelatedGlobalAccelerationInstancesRequest) (<-chan *DescribeServerRelatedGlobalAccelerationInstancesResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeServerRelatedGlobalAccelerationInstancesWithChan(r
 	return responseChan, errChan
 }
 
-// invoke DescribeServerRelatedGlobalAccelerationInstances api with *DescribeServerRelatedGlobalAccelerationInstancesRequest asynchronously
+// DescribeServerRelatedGlobalAccelerationInstancesWithCallback invokes the vpc.DescribeServerRelatedGlobalAccelerationInstances API asynchronously
 // api document: https://help.aliyun.com/api/vpc/describeserverrelatedglobalaccelerationinstances.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeServerRelatedGlobalAccelerationInstancesWithCallback(request *DescribeServerRelatedGlobalAccelerationInstancesRequest, callback func(response *DescribeServerRelatedGlobalAccelerationInstancesResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeServerRelatedGlobalAccelerationInstancesWithCallba
 	return result
 }
 
+// DescribeServerRelatedGlobalAccelerationInstancesRequest is the request struct for api DescribeServerRelatedGlobalAccelerationInstances
 type DescribeServerRelatedGlobalAccelerationInstancesRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -83,14 +84,15 @@ type DescribeServerRelatedGlobalAccelerationInstancesRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// DescribeServerRelatedGlobalAccelerationInstancesResponse is the response struct for api DescribeServerRelatedGlobalAccelerationInstances
 type DescribeServerRelatedGlobalAccelerationInstancesResponse struct {
 	*responses.BaseResponse
 	RequestId                   string                                                                        `json:"RequestId" xml:"RequestId"`
 	GlobalAccelerationInstances GlobalAccelerationInstancesInDescribeServerRelatedGlobalAccelerationInstances `json:"GlobalAccelerationInstances" xml:"GlobalAccelerationInstances"`
 }
 
-// create a request to invoke DescribeServerRelatedGlobalAccelerationInstances API
-func CreateDescribeServerRelatedGlobalAccelerationInstancesRequest() (request *DescribeServerRelatedGlobalAccelerationInstancesRequest) {
+// CreateDescribeServerRelatedGlobalAccelerationInstancesRequest creates a request to invoke DescribeServerRelatedGlobalAccelerationInstances API
+func CreateDescribeServerRelatedGlobalAccelerationInstancesRequest(request *DescribeServerRelatedGlobalAccelerationInstancesRequest) {
 	request = &DescribeServerRelatedGlobalAccelerationInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateDescribeServerRelatedGlobalAccelerationInstancesRequest() (request *D
 	return
 }
 
-// create a response to parse from DescribeServerRelatedGlobalAccelerationInstances response
+// CreateDescribeServerRelatedGlobalAccelerationInstancesResponse creates a response to parse from DescribeServerRelatedGlobalAccelerationInstances response
 func CreateDescribeServerRelatedGlobalAccelerationInstancesResponse() (response *DescribeServerRelatedGlobalAccelerationInstancesResponse) {
 	response = &DescribeServerRelatedGlobalAccelerationInstancesResponse{
 		BaseResponse: &responses.BaseResponse{},

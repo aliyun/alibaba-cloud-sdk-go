@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CreateVirtualMFADevice api with *CreateVirtualMFADeviceRequest synchronously
+// CreateVirtualMFADevice invokes the ram.CreateVirtualMFADevice API synchronously
 // api document: https://help.aliyun.com/api/ram/createvirtualmfadevice.html
 func (client *Client) CreateVirtualMFADevice(request *CreateVirtualMFADeviceRequest) (response *CreateVirtualMFADeviceResponse, err error) {
 	response = CreateCreateVirtualMFADeviceResponse()
@@ -28,7 +28,7 @@ func (client *Client) CreateVirtualMFADevice(request *CreateVirtualMFADeviceRequ
 	return
 }
 
-// invoke CreateVirtualMFADevice api with *CreateVirtualMFADeviceRequest asynchronously
+// CreateVirtualMFADeviceWithChan invokes the ram.CreateVirtualMFADevice API asynchronously
 // api document: https://help.aliyun.com/api/ram/createvirtualmfadevice.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateVirtualMFADeviceWithChan(request *CreateVirtualMFADeviceRequest) (<-chan *CreateVirtualMFADeviceResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CreateVirtualMFADeviceWithChan(request *CreateVirtualMFADe
 	return responseChan, errChan
 }
 
-// invoke CreateVirtualMFADevice api with *CreateVirtualMFADeviceRequest asynchronously
+// CreateVirtualMFADeviceWithCallback invokes the ram.CreateVirtualMFADevice API asynchronously
 // api document: https://help.aliyun.com/api/ram/createvirtualmfadevice.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateVirtualMFADeviceWithCallback(request *CreateVirtualMFADeviceRequest, callback func(response *CreateVirtualMFADeviceResponse, err error)) <-chan int {
@@ -73,19 +73,21 @@ func (client *Client) CreateVirtualMFADeviceWithCallback(request *CreateVirtualM
 	return result
 }
 
+// CreateVirtualMFADeviceRequest is the request struct for api CreateVirtualMFADevice
 type CreateVirtualMFADeviceRequest struct {
 	*requests.RpcRequest
 	VirtualMFADeviceName string `position:"Query" name:"VirtualMFADeviceName"`
 }
 
+// CreateVirtualMFADeviceResponse is the response struct for api CreateVirtualMFADevice
 type CreateVirtualMFADeviceResponse struct {
 	*responses.BaseResponse
 	RequestId        string           `json:"RequestId" xml:"RequestId"`
 	VirtualMFADevice VirtualMFADevice `json:"VirtualMFADevice" xml:"VirtualMFADevice"`
 }
 
-// create a request to invoke CreateVirtualMFADevice API
-func CreateCreateVirtualMFADeviceRequest() (request *CreateVirtualMFADeviceRequest) {
+// CreateCreateVirtualMFADeviceRequest creates a request to invoke CreateVirtualMFADevice API
+func CreateCreateVirtualMFADeviceRequest(request *CreateVirtualMFADeviceRequest) {
 	request = &CreateVirtualMFADeviceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -93,7 +95,7 @@ func CreateCreateVirtualMFADeviceRequest() (request *CreateVirtualMFADeviceReque
 	return
 }
 
-// create a response to parse from CreateVirtualMFADevice response
+// CreateCreateVirtualMFADeviceResponse creates a response to parse from CreateVirtualMFADevice response
 func CreateCreateVirtualMFADeviceResponse() (response *CreateVirtualMFADeviceResponse) {
 	response = &CreateVirtualMFADeviceResponse{
 		BaseResponse: &responses.BaseResponse{},

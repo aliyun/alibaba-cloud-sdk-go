@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke AssociateGlobalAccelerationInstance api with *AssociateGlobalAccelerationInstanceRequest synchronously
+// AssociateGlobalAccelerationInstance invokes the vpc.AssociateGlobalAccelerationInstance API synchronously
 // api document: https://help.aliyun.com/api/vpc/associateglobalaccelerationinstance.html
 func (client *Client) AssociateGlobalAccelerationInstance(request *AssociateGlobalAccelerationInstanceRequest) (response *AssociateGlobalAccelerationInstanceResponse, err error) {
 	response = CreateAssociateGlobalAccelerationInstanceResponse()
@@ -28,7 +28,7 @@ func (client *Client) AssociateGlobalAccelerationInstance(request *AssociateGlob
 	return
 }
 
-// invoke AssociateGlobalAccelerationInstance api with *AssociateGlobalAccelerationInstanceRequest asynchronously
+// AssociateGlobalAccelerationInstanceWithChan invokes the vpc.AssociateGlobalAccelerationInstance API asynchronously
 // api document: https://help.aliyun.com/api/vpc/associateglobalaccelerationinstance.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AssociateGlobalAccelerationInstanceWithChan(request *AssociateGlobalAccelerationInstanceRequest) (<-chan *AssociateGlobalAccelerationInstanceResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) AssociateGlobalAccelerationInstanceWithChan(request *Assoc
 	return responseChan, errChan
 }
 
-// invoke AssociateGlobalAccelerationInstance api with *AssociateGlobalAccelerationInstanceRequest asynchronously
+// AssociateGlobalAccelerationInstanceWithCallback invokes the vpc.AssociateGlobalAccelerationInstance API asynchronously
 // api document: https://help.aliyun.com/api/vpc/associateglobalaccelerationinstance.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AssociateGlobalAccelerationInstanceWithCallback(request *AssociateGlobalAccelerationInstanceRequest, callback func(response *AssociateGlobalAccelerationInstanceResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) AssociateGlobalAccelerationInstanceWithCallback(request *A
 	return result
 }
 
+// AssociateGlobalAccelerationInstanceRequest is the request struct for api AssociateGlobalAccelerationInstance
 type AssociateGlobalAccelerationInstanceRequest struct {
 	*requests.RpcRequest
 	OwnerId                      requests.Integer `position:"Query" name:"OwnerId"`
@@ -85,13 +86,14 @@ type AssociateGlobalAccelerationInstanceRequest struct {
 	BackendServerType            string           `position:"Query" name:"BackendServerType"`
 }
 
+// AssociateGlobalAccelerationInstanceResponse is the response struct for api AssociateGlobalAccelerationInstance
 type AssociateGlobalAccelerationInstanceResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke AssociateGlobalAccelerationInstance API
-func CreateAssociateGlobalAccelerationInstanceRequest() (request *AssociateGlobalAccelerationInstanceRequest) {
+// CreateAssociateGlobalAccelerationInstanceRequest creates a request to invoke AssociateGlobalAccelerationInstance API
+func CreateAssociateGlobalAccelerationInstanceRequest(request *AssociateGlobalAccelerationInstanceRequest) {
 	request = &AssociateGlobalAccelerationInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateAssociateGlobalAccelerationInstanceRequest() (request *AssociateGloba
 	return
 }
 
-// create a response to parse from AssociateGlobalAccelerationInstance response
+// CreateAssociateGlobalAccelerationInstanceResponse creates a response to parse from AssociateGlobalAccelerationInstance response
 func CreateAssociateGlobalAccelerationInstanceResponse() (response *AssociateGlobalAccelerationInstanceResponse) {
 	response = &AssociateGlobalAccelerationInstanceResponse{
 		BaseResponse: &responses.BaseResponse{},

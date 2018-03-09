@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SubmitTerrorismJob api with *SubmitTerrorismJobRequest synchronously
+// SubmitTerrorismJob invokes the mts.SubmitTerrorismJob API synchronously
 // api document: https://help.aliyun.com/api/mts/submitterrorismjob.html
 func (client *Client) SubmitTerrorismJob(request *SubmitTerrorismJobRequest) (response *SubmitTerrorismJobResponse, err error) {
 	response = CreateSubmitTerrorismJobResponse()
@@ -28,7 +28,7 @@ func (client *Client) SubmitTerrorismJob(request *SubmitTerrorismJobRequest) (re
 	return
 }
 
-// invoke SubmitTerrorismJob api with *SubmitTerrorismJobRequest asynchronously
+// SubmitTerrorismJobWithChan invokes the mts.SubmitTerrorismJob API asynchronously
 // api document: https://help.aliyun.com/api/mts/submitterrorismjob.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitTerrorismJobWithChan(request *SubmitTerrorismJobRequest) (<-chan *SubmitTerrorismJobResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SubmitTerrorismJobWithChan(request *SubmitTerrorismJobRequ
 	return responseChan, errChan
 }
 
-// invoke SubmitTerrorismJob api with *SubmitTerrorismJobRequest asynchronously
+// SubmitTerrorismJobWithCallback invokes the mts.SubmitTerrorismJob API asynchronously
 // api document: https://help.aliyun.com/api/mts/submitterrorismjob.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitTerrorismJobWithCallback(request *SubmitTerrorismJobRequest, callback func(response *SubmitTerrorismJobResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SubmitTerrorismJobWithCallback(request *SubmitTerrorismJob
 	return result
 }
 
+// SubmitTerrorismJobRequest is the request struct for api SubmitTerrorismJob
 type SubmitTerrorismJobRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -85,14 +86,15 @@ type SubmitTerrorismJobRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// SubmitTerrorismJobResponse is the response struct for api SubmitTerrorismJob
 type SubmitTerrorismJobResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	JobId     string `json:"JobId" xml:"JobId"`
 }
 
-// create a request to invoke SubmitTerrorismJob API
-func CreateSubmitTerrorismJobRequest() (request *SubmitTerrorismJobRequest) {
+// CreateSubmitTerrorismJobRequest creates a request to invoke SubmitTerrorismJob API
+func CreateSubmitTerrorismJobRequest(request *SubmitTerrorismJobRequest) {
 	request = &SubmitTerrorismJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -100,7 +102,7 @@ func CreateSubmitTerrorismJobRequest() (request *SubmitTerrorismJobRequest) {
 	return
 }
 
-// create a response to parse from SubmitTerrorismJob response
+// CreateSubmitTerrorismJobResponse creates a response to parse from SubmitTerrorismJob response
 func CreateSubmitTerrorismJobResponse() (response *SubmitTerrorismJobResponse) {
 	response = &SubmitTerrorismJobResponse{
 		BaseResponse: &responses.BaseResponse{},

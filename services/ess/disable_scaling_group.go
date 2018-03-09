@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DisableScalingGroup api with *DisableScalingGroupRequest synchronously
+// DisableScalingGroup invokes the ess.DisableScalingGroup API synchronously
 // api document: https://help.aliyun.com/api/ess/disablescalinggroup.html
 func (client *Client) DisableScalingGroup(request *DisableScalingGroupRequest) (response *DisableScalingGroupResponse, err error) {
 	response = CreateDisableScalingGroupResponse()
@@ -28,7 +28,7 @@ func (client *Client) DisableScalingGroup(request *DisableScalingGroupRequest) (
 	return
 }
 
-// invoke DisableScalingGroup api with *DisableScalingGroupRequest asynchronously
+// DisableScalingGroupWithChan invokes the ess.DisableScalingGroup API asynchronously
 // api document: https://help.aliyun.com/api/ess/disablescalinggroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DisableScalingGroupWithChan(request *DisableScalingGroupRequest) (<-chan *DisableScalingGroupResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DisableScalingGroupWithChan(request *DisableScalingGroupRe
 	return responseChan, errChan
 }
 
-// invoke DisableScalingGroup api with *DisableScalingGroupRequest asynchronously
+// DisableScalingGroupWithCallback invokes the ess.DisableScalingGroup API asynchronously
 // api document: https://help.aliyun.com/api/ess/disablescalinggroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DisableScalingGroupWithCallback(request *DisableScalingGroupRequest, callback func(response *DisableScalingGroupResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DisableScalingGroupWithCallback(request *DisableScalingGro
 	return result
 }
 
+// DisableScalingGroupRequest is the request struct for api DisableScalingGroup
 type DisableScalingGroupRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,13 +83,14 @@ type DisableScalingGroupRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// DisableScalingGroupResponse is the response struct for api DisableScalingGroup
 type DisableScalingGroupResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DisableScalingGroup API
-func CreateDisableScalingGroupRequest() (request *DisableScalingGroupRequest) {
+// CreateDisableScalingGroupRequest creates a request to invoke DisableScalingGroup API
+func CreateDisableScalingGroupRequest(request *DisableScalingGroupRequest) {
 	request = &DisableScalingGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -96,7 +98,7 @@ func CreateDisableScalingGroupRequest() (request *DisableScalingGroupRequest) {
 	return
 }
 
-// create a response to parse from DisableScalingGroup response
+// CreateDisableScalingGroupResponse creates a response to parse from DisableScalingGroup response
 func CreateDisableScalingGroupResponse() (response *DisableScalingGroupResponse) {
 	response = &DisableScalingGroupResponse{
 		BaseResponse: &responses.BaseResponse{},

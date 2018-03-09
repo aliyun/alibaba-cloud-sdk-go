@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeMacConfig api with *DescribeMacConfigRequest synchronously
+// DescribeMacConfig invokes the aegis.DescribeMacConfig API synchronously
 // api document: https://help.aliyun.com/api/aegis/describemacconfig.html
 func (client *Client) DescribeMacConfig(request *DescribeMacConfigRequest) (response *DescribeMacConfigResponse, err error) {
 	response = CreateDescribeMacConfigResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeMacConfig(request *DescribeMacConfigRequest) (resp
 	return
 }
 
-// invoke DescribeMacConfig api with *DescribeMacConfigRequest asynchronously
+// DescribeMacConfigWithChan invokes the aegis.DescribeMacConfig API asynchronously
 // api document: https://help.aliyun.com/api/aegis/describemacconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeMacConfigWithChan(request *DescribeMacConfigRequest) (<-chan *DescribeMacConfigResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeMacConfigWithChan(request *DescribeMacConfigReques
 	return responseChan, errChan
 }
 
-// invoke DescribeMacConfig api with *DescribeMacConfigRequest asynchronously
+// DescribeMacConfigWithCallback invokes the aegis.DescribeMacConfig API asynchronously
 // api document: https://help.aliyun.com/api/aegis/describemacconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeMacConfigWithCallback(request *DescribeMacConfigRequest, callback func(response *DescribeMacConfigResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeMacConfigWithCallback(request *DescribeMacConfigRe
 	return result
 }
 
+// DescribeMacConfigRequest is the request struct for api DescribeMacConfig
 type DescribeMacConfigRequest struct {
 	*requests.RpcRequest
 	SourceIp        string           `position:"Query" name:"SourceIp"`
@@ -84,6 +85,7 @@ type DescribeMacConfigRequest struct {
 	Extern          string           `position:"Query" name:"Extern"`
 }
 
+// DescribeMacConfigResponse is the response struct for api DescribeMacConfig
 type DescribeMacConfigResponse struct {
 	*responses.BaseResponse
 	RequestId   string   `json:"RequestId" xml:"RequestId"`
@@ -94,8 +96,8 @@ type DescribeMacConfigResponse struct {
 	Configs     []Config `json:"Configs" xml:"Configs"`
 }
 
-// create a request to invoke DescribeMacConfig API
-func CreateDescribeMacConfigRequest() (request *DescribeMacConfigRequest) {
+// CreateDescribeMacConfigRequest creates a request to invoke DescribeMacConfig API
+func CreateDescribeMacConfigRequest(request *DescribeMacConfigRequest) {
 	request = &DescribeMacConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -103,7 +105,7 @@ func CreateDescribeMacConfigRequest() (request *DescribeMacConfigRequest) {
 	return
 }
 
-// create a response to parse from DescribeMacConfig response
+// CreateDescribeMacConfigResponse creates a response to parse from DescribeMacConfig response
 func CreateDescribeMacConfigResponse() (response *DescribeMacConfigResponse) {
 	response = &DescribeMacConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

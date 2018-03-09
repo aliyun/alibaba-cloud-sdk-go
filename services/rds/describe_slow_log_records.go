@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeSlowLogRecords api with *DescribeSlowLogRecordsRequest synchronously
+// DescribeSlowLogRecords invokes the rds.DescribeSlowLogRecords API synchronously
 // api document: https://help.aliyun.com/api/rds/describeslowlogrecords.html
 func (client *Client) DescribeSlowLogRecords(request *DescribeSlowLogRecordsRequest) (response *DescribeSlowLogRecordsResponse, err error) {
 	response = CreateDescribeSlowLogRecordsResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeSlowLogRecords(request *DescribeSlowLogRecordsRequ
 	return
 }
 
-// invoke DescribeSlowLogRecords api with *DescribeSlowLogRecordsRequest asynchronously
+// DescribeSlowLogRecordsWithChan invokes the rds.DescribeSlowLogRecords API asynchronously
 // api document: https://help.aliyun.com/api/rds/describeslowlogrecords.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSlowLogRecordsWithChan(request *DescribeSlowLogRecordsRequest) (<-chan *DescribeSlowLogRecordsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeSlowLogRecordsWithChan(request *DescribeSlowLogRec
 	return responseChan, errChan
 }
 
-// invoke DescribeSlowLogRecords api with *DescribeSlowLogRecordsRequest asynchronously
+// DescribeSlowLogRecordsWithCallback invokes the rds.DescribeSlowLogRecords API asynchronously
 // api document: https://help.aliyun.com/api/rds/describeslowlogrecords.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSlowLogRecordsWithCallback(request *DescribeSlowLogRecordsRequest, callback func(response *DescribeSlowLogRecordsResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeSlowLogRecordsWithCallback(request *DescribeSlowLo
 	return result
 }
 
+// DescribeSlowLogRecordsRequest is the request struct for api DescribeSlowLogRecords
 type DescribeSlowLogRecordsRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -88,6 +89,7 @@ type DescribeSlowLogRecordsRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// DescribeSlowLogRecordsResponse is the response struct for api DescribeSlowLogRecords
 type DescribeSlowLogRecordsResponse struct {
 	*responses.BaseResponse
 	RequestId        string                        `json:"RequestId" xml:"RequestId"`
@@ -98,8 +100,8 @@ type DescribeSlowLogRecordsResponse struct {
 	Items            ItemsInDescribeSlowLogRecords `json:"Items" xml:"Items"`
 }
 
-// create a request to invoke DescribeSlowLogRecords API
-func CreateDescribeSlowLogRecordsRequest() (request *DescribeSlowLogRecordsRequest) {
+// CreateDescribeSlowLogRecordsRequest creates a request to invoke DescribeSlowLogRecords API
+func CreateDescribeSlowLogRecordsRequest(request *DescribeSlowLogRecordsRequest) {
 	request = &DescribeSlowLogRecordsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -107,7 +109,7 @@ func CreateDescribeSlowLogRecordsRequest() (request *DescribeSlowLogRecordsReque
 	return
 }
 
-// create a response to parse from DescribeSlowLogRecords response
+// CreateDescribeSlowLogRecordsResponse creates a response to parse from DescribeSlowLogRecords response
 func CreateDescribeSlowLogRecordsResponse() (response *DescribeSlowLogRecordsResponse) {
 	response = &DescribeSlowLogRecordsResponse{
 		BaseResponse: &responses.BaseResponse{},

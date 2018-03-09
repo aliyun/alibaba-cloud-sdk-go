@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ReportAnnotationJobResult api with *ReportAnnotationJobResultRequest synchronously
+// ReportAnnotationJobResult invokes the mts.ReportAnnotationJobResult API synchronously
 // api document: https://help.aliyun.com/api/mts/reportannotationjobresult.html
 func (client *Client) ReportAnnotationJobResult(request *ReportAnnotationJobResultRequest) (response *ReportAnnotationJobResultResponse, err error) {
 	response = CreateReportAnnotationJobResultResponse()
@@ -28,7 +28,7 @@ func (client *Client) ReportAnnotationJobResult(request *ReportAnnotationJobResu
 	return
 }
 
-// invoke ReportAnnotationJobResult api with *ReportAnnotationJobResultRequest asynchronously
+// ReportAnnotationJobResultWithChan invokes the mts.ReportAnnotationJobResult API asynchronously
 // api document: https://help.aliyun.com/api/mts/reportannotationjobresult.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReportAnnotationJobResultWithChan(request *ReportAnnotationJobResultRequest) (<-chan *ReportAnnotationJobResultResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ReportAnnotationJobResultWithChan(request *ReportAnnotatio
 	return responseChan, errChan
 }
 
-// invoke ReportAnnotationJobResult api with *ReportAnnotationJobResultRequest asynchronously
+// ReportAnnotationJobResultWithCallback invokes the mts.ReportAnnotationJobResult API asynchronously
 // api document: https://help.aliyun.com/api/mts/reportannotationjobresult.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReportAnnotationJobResultWithCallback(request *ReportAnnotationJobResultRequest, callback func(response *ReportAnnotationJobResultResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ReportAnnotationJobResultWithCallback(request *ReportAnnot
 	return result
 }
 
+// ReportAnnotationJobResultRequest is the request struct for api ReportAnnotationJobResult
 type ReportAnnotationJobResultRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,14 +85,15 @@ type ReportAnnotationJobResultRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// ReportAnnotationJobResultResponse is the response struct for api ReportAnnotationJobResult
 type ReportAnnotationJobResultResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	JobId     string `json:"JobId" xml:"JobId"`
 }
 
-// create a request to invoke ReportAnnotationJobResult API
-func CreateReportAnnotationJobResultRequest() (request *ReportAnnotationJobResultRequest) {
+// CreateReportAnnotationJobResultRequest creates a request to invoke ReportAnnotationJobResult API
+func CreateReportAnnotationJobResultRequest(request *ReportAnnotationJobResultRequest) {
 	request = &ReportAnnotationJobResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateReportAnnotationJobResultRequest() (request *ReportAnnotationJobResul
 	return
 }
 
-// create a response to parse from ReportAnnotationJobResult response
+// CreateReportAnnotationJobResultResponse creates a response to parse from ReportAnnotationJobResult response
 func CreateReportAnnotationJobResultResponse() (response *ReportAnnotationJobResultResponse) {
 	response = &ReportAnnotationJobResultResponse{
 		BaseResponse: &responses.BaseResponse{},

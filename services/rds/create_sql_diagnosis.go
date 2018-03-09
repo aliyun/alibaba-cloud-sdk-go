@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CreateSQLDiagnosis api with *CreateSQLDiagnosisRequest synchronously
+// CreateSQLDiagnosis invokes the rds.CreateSQLDiagnosis API synchronously
 // api document: https://help.aliyun.com/api/rds/createsqldiagnosis.html
 func (client *Client) CreateSQLDiagnosis(request *CreateSQLDiagnosisRequest) (response *CreateSQLDiagnosisResponse, err error) {
 	response = CreateCreateSQLDiagnosisResponse()
@@ -28,7 +28,7 @@ func (client *Client) CreateSQLDiagnosis(request *CreateSQLDiagnosisRequest) (re
 	return
 }
 
-// invoke CreateSQLDiagnosis api with *CreateSQLDiagnosisRequest asynchronously
+// CreateSQLDiagnosisWithChan invokes the rds.CreateSQLDiagnosis API asynchronously
 // api document: https://help.aliyun.com/api/rds/createsqldiagnosis.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateSQLDiagnosisWithChan(request *CreateSQLDiagnosisRequest) (<-chan *CreateSQLDiagnosisResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CreateSQLDiagnosisWithChan(request *CreateSQLDiagnosisRequ
 	return responseChan, errChan
 }
 
-// invoke CreateSQLDiagnosis api with *CreateSQLDiagnosisRequest asynchronously
+// CreateSQLDiagnosisWithCallback invokes the rds.CreateSQLDiagnosis API asynchronously
 // api document: https://help.aliyun.com/api/rds/createsqldiagnosis.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateSQLDiagnosisWithCallback(request *CreateSQLDiagnosisRequest, callback func(response *CreateSQLDiagnosisResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) CreateSQLDiagnosisWithCallback(request *CreateSQLDiagnosis
 	return result
 }
 
+// CreateSQLDiagnosisRequest is the request struct for api CreateSQLDiagnosis
 type CreateSQLDiagnosisRequest struct {
 	*requests.RpcRequest
 	DBInstanceId string `position:"Query" name:"DBInstanceId"`
@@ -80,14 +81,15 @@ type CreateSQLDiagnosisRequest struct {
 	EndTime      string `position:"Query" name:"EndTime"`
 }
 
+// CreateSQLDiagnosisResponse is the response struct for api CreateSQLDiagnosis
 type CreateSQLDiagnosisResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	SQLDiagId string `json:"SQLDiagId" xml:"SQLDiagId"`
 }
 
-// create a request to invoke CreateSQLDiagnosis API
-func CreateCreateSQLDiagnosisRequest() (request *CreateSQLDiagnosisRequest) {
+// CreateCreateSQLDiagnosisRequest creates a request to invoke CreateSQLDiagnosis API
+func CreateCreateSQLDiagnosisRequest(request *CreateSQLDiagnosisRequest) {
 	request = &CreateSQLDiagnosisRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateCreateSQLDiagnosisRequest() (request *CreateSQLDiagnosisRequest) {
 	return
 }
 
-// create a response to parse from CreateSQLDiagnosis response
+// CreateCreateSQLDiagnosisResponse creates a response to parse from CreateSQLDiagnosis response
 func CreateCreateSQLDiagnosisResponse() (response *CreateSQLDiagnosisResponse) {
 	response = &CreateSQLDiagnosisResponse{
 		BaseResponse: &responses.BaseResponse{},

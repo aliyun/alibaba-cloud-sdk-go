@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SetRemoveQueryStringConfig api with *SetRemoveQueryStringConfigRequest synchronously
+// SetRemoveQueryStringConfig invokes the cdn.SetRemoveQueryStringConfig API synchronously
 // api document: https://help.aliyun.com/api/cdn/setremovequerystringconfig.html
 func (client *Client) SetRemoveQueryStringConfig(request *SetRemoveQueryStringConfigRequest) (response *SetRemoveQueryStringConfigResponse, err error) {
 	response = CreateSetRemoveQueryStringConfigResponse()
@@ -28,7 +28,7 @@ func (client *Client) SetRemoveQueryStringConfig(request *SetRemoveQueryStringCo
 	return
 }
 
-// invoke SetRemoveQueryStringConfig api with *SetRemoveQueryStringConfigRequest asynchronously
+// SetRemoveQueryStringConfigWithChan invokes the cdn.SetRemoveQueryStringConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/setremovequerystringconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetRemoveQueryStringConfigWithChan(request *SetRemoveQueryStringConfigRequest) (<-chan *SetRemoveQueryStringConfigResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SetRemoveQueryStringConfigWithChan(request *SetRemoveQuery
 	return responseChan, errChan
 }
 
-// invoke SetRemoveQueryStringConfig api with *SetRemoveQueryStringConfigRequest asynchronously
+// SetRemoveQueryStringConfigWithCallback invokes the cdn.SetRemoveQueryStringConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/setremovequerystringconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetRemoveQueryStringConfigWithCallback(request *SetRemoveQueryStringConfigRequest, callback func(response *SetRemoveQueryStringConfigResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SetRemoveQueryStringConfigWithCallback(request *SetRemoveQ
 	return result
 }
 
+// SetRemoveQueryStringConfigRequest is the request struct for api SetRemoveQueryStringConfig
 type SetRemoveQueryStringConfigRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,13 +83,14 @@ type SetRemoveQueryStringConfigRequest struct {
 	KeepOssArgs   string           `position:"Query" name:"KeepOssArgs"`
 }
 
+// SetRemoveQueryStringConfigResponse is the response struct for api SetRemoveQueryStringConfig
 type SetRemoveQueryStringConfigResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke SetRemoveQueryStringConfig API
-func CreateSetRemoveQueryStringConfigRequest() (request *SetRemoveQueryStringConfigRequest) {
+// CreateSetRemoveQueryStringConfigRequest creates a request to invoke SetRemoveQueryStringConfig API
+func CreateSetRemoveQueryStringConfigRequest(request *SetRemoveQueryStringConfigRequest) {
 	request = &SetRemoveQueryStringConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -96,7 +98,7 @@ func CreateSetRemoveQueryStringConfigRequest() (request *SetRemoveQueryStringCon
 	return
 }
 
-// create a response to parse from SetRemoveQueryStringConfig response
+// CreateSetRemoveQueryStringConfigResponse creates a response to parse from SetRemoveQueryStringConfig response
 func CreateSetRemoveQueryStringConfigResponse() (response *SetRemoveQueryStringConfigResponse) {
 	response = &SetRemoveQueryStringConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

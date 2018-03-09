@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SetIpBlackListConfig api with *SetIpBlackListConfigRequest synchronously
+// SetIpBlackListConfig invokes the cdn.SetIpBlackListConfig API synchronously
 // api document: https://help.aliyun.com/api/cdn/setipblacklistconfig.html
 func (client *Client) SetIpBlackListConfig(request *SetIpBlackListConfigRequest) (response *SetIpBlackListConfigResponse, err error) {
 	response = CreateSetIpBlackListConfigResponse()
@@ -28,7 +28,7 @@ func (client *Client) SetIpBlackListConfig(request *SetIpBlackListConfigRequest)
 	return
 }
 
-// invoke SetIpBlackListConfig api with *SetIpBlackListConfigRequest asynchronously
+// SetIpBlackListConfigWithChan invokes the cdn.SetIpBlackListConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/setipblacklistconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetIpBlackListConfigWithChan(request *SetIpBlackListConfigRequest) (<-chan *SetIpBlackListConfigResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SetIpBlackListConfigWithChan(request *SetIpBlackListConfig
 	return responseChan, errChan
 }
 
-// invoke SetIpBlackListConfig api with *SetIpBlackListConfigRequest asynchronously
+// SetIpBlackListConfigWithCallback invokes the cdn.SetIpBlackListConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/setipblacklistconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetIpBlackListConfigWithCallback(request *SetIpBlackListConfigRequest, callback func(response *SetIpBlackListConfigResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SetIpBlackListConfigWithCallback(request *SetIpBlackListCo
 	return result
 }
 
+// SetIpBlackListConfigRequest is the request struct for api SetIpBlackListConfig
 type SetIpBlackListConfigRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -81,13 +82,14 @@ type SetIpBlackListConfigRequest struct {
 	BlockIps      string           `position:"Query" name:"BlockIps"`
 }
 
+// SetIpBlackListConfigResponse is the response struct for api SetIpBlackListConfig
 type SetIpBlackListConfigResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke SetIpBlackListConfig API
-func CreateSetIpBlackListConfigRequest() (request *SetIpBlackListConfigRequest) {
+// CreateSetIpBlackListConfigRequest creates a request to invoke SetIpBlackListConfig API
+func CreateSetIpBlackListConfigRequest(request *SetIpBlackListConfigRequest) {
 	request = &SetIpBlackListConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateSetIpBlackListConfigRequest() (request *SetIpBlackListConfigRequest) 
 	return
 }
 
-// create a response to parse from SetIpBlackListConfig response
+// CreateSetIpBlackListConfigResponse creates a response to parse from SetIpBlackListConfig response
 func CreateSetIpBlackListConfigResponse() (response *SetIpBlackListConfigResponse) {
 	response = &SetIpBlackListConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

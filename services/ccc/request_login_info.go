@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke RequestLoginInfo api with *RequestLoginInfoRequest synchronously
+// RequestLoginInfo invokes the ccc.RequestLoginInfo API synchronously
 // api document: https://help.aliyun.com/api/ccc/requestlogininfo.html
 func (client *Client) RequestLoginInfo(request *RequestLoginInfoRequest) (response *RequestLoginInfoResponse, err error) {
 	response = CreateRequestLoginInfoResponse()
@@ -28,7 +28,7 @@ func (client *Client) RequestLoginInfo(request *RequestLoginInfoRequest) (respon
 	return
 }
 
-// invoke RequestLoginInfo api with *RequestLoginInfoRequest asynchronously
+// RequestLoginInfoWithChan invokes the ccc.RequestLoginInfo API asynchronously
 // api document: https://help.aliyun.com/api/ccc/requestlogininfo.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RequestLoginInfoWithChan(request *RequestLoginInfoRequest) (<-chan *RequestLoginInfoResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) RequestLoginInfoWithChan(request *RequestLoginInfoRequest)
 	return responseChan, errChan
 }
 
-// invoke RequestLoginInfo api with *RequestLoginInfoRequest asynchronously
+// RequestLoginInfoWithCallback invokes the ccc.RequestLoginInfo API asynchronously
 // api document: https://help.aliyun.com/api/ccc/requestlogininfo.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RequestLoginInfoWithCallback(request *RequestLoginInfoRequest, callback func(response *RequestLoginInfoResponse, err error)) <-chan int {
@@ -73,11 +73,13 @@ func (client *Client) RequestLoginInfoWithCallback(request *RequestLoginInfoRequ
 	return result
 }
 
+// RequestLoginInfoRequest is the request struct for api RequestLoginInfo
 type RequestLoginInfoRequest struct {
 	*requests.RpcRequest
 	InstanceId string `position:"Query" name:"InstanceId"`
 }
 
+// RequestLoginInfoResponse is the response struct for api RequestLoginInfo
 type RequestLoginInfoResponse struct {
 	*responses.BaseResponse
 	RequestId      string    `json:"RequestId" xml:"RequestId"`
@@ -88,8 +90,8 @@ type RequestLoginInfoResponse struct {
 	LoginInfo      LoginInfo `json:"LoginInfo" xml:"LoginInfo"`
 }
 
-// create a request to invoke RequestLoginInfo API
-func CreateRequestLoginInfoRequest() (request *RequestLoginInfoRequest) {
+// CreateRequestLoginInfoRequest creates a request to invoke RequestLoginInfo API
+func CreateRequestLoginInfoRequest(request *RequestLoginInfoRequest) {
 	request = &RequestLoginInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateRequestLoginInfoRequest() (request *RequestLoginInfoRequest) {
 	return
 }
 
-// create a response to parse from RequestLoginInfo response
+// CreateRequestLoginInfoResponse creates a response to parse from RequestLoginInfo response
 func CreateRequestLoginInfoResponse() (response *RequestLoginInfoResponse) {
 	response = &RequestLoginInfoResponse{
 		BaseResponse: &responses.BaseResponse{},

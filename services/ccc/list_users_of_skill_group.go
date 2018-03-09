@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ListUsersOfSkillGroup api with *ListUsersOfSkillGroupRequest synchronously
+// ListUsersOfSkillGroup invokes the ccc.ListUsersOfSkillGroup API synchronously
 // api document: https://help.aliyun.com/api/ccc/listusersofskillgroup.html
 func (client *Client) ListUsersOfSkillGroup(request *ListUsersOfSkillGroupRequest) (response *ListUsersOfSkillGroupResponse, err error) {
 	response = CreateListUsersOfSkillGroupResponse()
@@ -28,7 +28,7 @@ func (client *Client) ListUsersOfSkillGroup(request *ListUsersOfSkillGroupReques
 	return
 }
 
-// invoke ListUsersOfSkillGroup api with *ListUsersOfSkillGroupRequest asynchronously
+// ListUsersOfSkillGroupWithChan invokes the ccc.ListUsersOfSkillGroup API asynchronously
 // api document: https://help.aliyun.com/api/ccc/listusersofskillgroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListUsersOfSkillGroupWithChan(request *ListUsersOfSkillGroupRequest) (<-chan *ListUsersOfSkillGroupResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ListUsersOfSkillGroupWithChan(request *ListUsersOfSkillGro
 	return responseChan, errChan
 }
 
-// invoke ListUsersOfSkillGroup api with *ListUsersOfSkillGroupRequest asynchronously
+// ListUsersOfSkillGroupWithCallback invokes the ccc.ListUsersOfSkillGroup API asynchronously
 // api document: https://help.aliyun.com/api/ccc/listusersofskillgroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListUsersOfSkillGroupWithCallback(request *ListUsersOfSkillGroupRequest, callback func(response *ListUsersOfSkillGroupResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ListUsersOfSkillGroupWithCallback(request *ListUsersOfSkil
 	return result
 }
 
+// ListUsersOfSkillGroupRequest is the request struct for api ListUsersOfSkillGroup
 type ListUsersOfSkillGroupRequest struct {
 	*requests.RpcRequest
 	InstanceId   string           `position:"Query" name:"InstanceId"`
@@ -81,6 +82,7 @@ type ListUsersOfSkillGroupRequest struct {
 	PageSize     requests.Integer `position:"Query" name:"PageSize"`
 }
 
+// ListUsersOfSkillGroupResponse is the response struct for api ListUsersOfSkillGroup
 type ListUsersOfSkillGroupResponse struct {
 	*responses.BaseResponse
 	RequestId      string `json:"RequestId" xml:"RequestId"`
@@ -91,8 +93,8 @@ type ListUsersOfSkillGroupResponse struct {
 	Users          Users  `json:"Users" xml:"Users"`
 }
 
-// create a request to invoke ListUsersOfSkillGroup API
-func CreateListUsersOfSkillGroupRequest() (request *ListUsersOfSkillGroupRequest) {
+// CreateListUsersOfSkillGroupRequest creates a request to invoke ListUsersOfSkillGroup API
+func CreateListUsersOfSkillGroupRequest(request *ListUsersOfSkillGroupRequest) {
 	request = &ListUsersOfSkillGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -100,7 +102,7 @@ func CreateListUsersOfSkillGroupRequest() (request *ListUsersOfSkillGroupRequest
 	return
 }
 
-// create a response to parse from ListUsersOfSkillGroup response
+// CreateListUsersOfSkillGroupResponse creates a response to parse from ListUsersOfSkillGroup response
 func CreateListUsersOfSkillGroupResponse() (response *ListUsersOfSkillGroupResponse) {
 	response = &ListUsersOfSkillGroupResponse{
 		BaseResponse: &responses.BaseResponse{},

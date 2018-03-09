@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeClusterServices api with *DescribeClusterServicesRequest synchronously
+// DescribeClusterServices invokes the cs.DescribeClusterServices API synchronously
 // api document: https://help.aliyun.com/api/cs/describeclusterservices.html
 func (client *Client) DescribeClusterServices(request *DescribeClusterServicesRequest) (response *DescribeClusterServicesResponse, err error) {
 	response = CreateDescribeClusterServicesResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeClusterServices(request *DescribeClusterServicesRe
 	return
 }
 
-// invoke DescribeClusterServices api with *DescribeClusterServicesRequest asynchronously
+// DescribeClusterServicesWithChan invokes the cs.DescribeClusterServices API asynchronously
 // api document: https://help.aliyun.com/api/cs/describeclusterservices.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeClusterServicesWithChan(request *DescribeClusterServicesRequest) (<-chan *DescribeClusterServicesResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeClusterServicesWithChan(request *DescribeClusterSe
 	return responseChan, errChan
 }
 
-// invoke DescribeClusterServices api with *DescribeClusterServicesRequest asynchronously
+// DescribeClusterServicesWithCallback invokes the cs.DescribeClusterServices API asynchronously
 // api document: https://help.aliyun.com/api/cs/describeclusterservices.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeClusterServicesWithCallback(request *DescribeClusterServicesRequest, callback func(response *DescribeClusterServicesResponse, err error)) <-chan int {
@@ -73,17 +73,19 @@ func (client *Client) DescribeClusterServicesWithCallback(request *DescribeClust
 	return result
 }
 
+// DescribeClusterServicesRequest is the request struct for api DescribeClusterServices
 type DescribeClusterServicesRequest struct {
 	*requests.RoaRequest
 	ClusterId string `position:"Path" name:"ClusterId"`
 }
 
+// DescribeClusterServicesResponse is the response struct for api DescribeClusterServices
 type DescribeClusterServicesResponse struct {
 	*responses.BaseResponse
 }
 
-// create a request to invoke DescribeClusterServices API
-func CreateDescribeClusterServicesRequest() (request *DescribeClusterServicesRequest) {
+// CreateDescribeClusterServicesRequest creates a request to invoke DescribeClusterServices API
+func CreateDescribeClusterServicesRequest(request *DescribeClusterServicesRequest) {
 	request = &DescribeClusterServicesRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
@@ -92,7 +94,7 @@ func CreateDescribeClusterServicesRequest() (request *DescribeClusterServicesReq
 	return
 }
 
-// create a response to parse from DescribeClusterServices response
+// CreateDescribeClusterServicesResponse creates a response to parse from DescribeClusterServices response
 func CreateDescribeClusterServicesResponse() (response *DescribeClusterServicesResponse) {
 	response = &DescribeClusterServicesResponse{
 		BaseResponse: &responses.BaseResponse{},

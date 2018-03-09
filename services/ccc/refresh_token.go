@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke RefreshToken api with *RefreshTokenRequest synchronously
+// RefreshToken invokes the ccc.RefreshToken API synchronously
 // api document: https://help.aliyun.com/api/ccc/refreshtoken.html
 func (client *Client) RefreshToken(request *RefreshTokenRequest) (response *RefreshTokenResponse, err error) {
 	response = CreateRefreshTokenResponse()
@@ -28,7 +28,7 @@ func (client *Client) RefreshToken(request *RefreshTokenRequest) (response *Refr
 	return
 }
 
-// invoke RefreshToken api with *RefreshTokenRequest asynchronously
+// RefreshTokenWithChan invokes the ccc.RefreshToken API asynchronously
 // api document: https://help.aliyun.com/api/ccc/refreshtoken.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RefreshTokenWithChan(request *RefreshTokenRequest) (<-chan *RefreshTokenResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) RefreshTokenWithChan(request *RefreshTokenRequest) (<-chan
 	return responseChan, errChan
 }
 
-// invoke RefreshToken api with *RefreshTokenRequest asynchronously
+// RefreshTokenWithCallback invokes the ccc.RefreshToken API asynchronously
 // api document: https://help.aliyun.com/api/ccc/refreshtoken.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RefreshTokenWithCallback(request *RefreshTokenRequest, callback func(response *RefreshTokenResponse, err error)) <-chan int {
@@ -73,11 +73,13 @@ func (client *Client) RefreshTokenWithCallback(request *RefreshTokenRequest, cal
 	return result
 }
 
+// RefreshTokenRequest is the request struct for api RefreshToken
 type RefreshTokenRequest struct {
 	*requests.RpcRequest
 	InstanceId string `position:"Query" name:"InstanceId"`
 }
 
+// RefreshTokenResponse is the response struct for api RefreshToken
 type RefreshTokenResponse struct {
 	*responses.BaseResponse
 	RequestId      string `json:"RequestId" xml:"RequestId"`
@@ -88,8 +90,8 @@ type RefreshTokenResponse struct {
 	Token          Token  `json:"Token" xml:"Token"`
 }
 
-// create a request to invoke RefreshToken API
-func CreateRefreshTokenRequest() (request *RefreshTokenRequest) {
+// CreateRefreshTokenRequest creates a request to invoke RefreshToken API
+func CreateRefreshTokenRequest(request *RefreshTokenRequest) {
 	request = &RefreshTokenRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateRefreshTokenRequest() (request *RefreshTokenRequest) {
 	return
 }
 
-// create a response to parse from RefreshToken response
+// CreateRefreshTokenResponse creates a response to parse from RefreshToken response
 func CreateRefreshTokenResponse() (response *RefreshTokenResponse) {
 	response = &RefreshTokenResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifyHaVipAttribute api with *ModifyHaVipAttributeRequest synchronously
+// ModifyHaVipAttribute invokes the ecs.ModifyHaVipAttribute API synchronously
 // api document: https://help.aliyun.com/api/ecs/modifyhavipattribute.html
 func (client *Client) ModifyHaVipAttribute(request *ModifyHaVipAttributeRequest) (response *ModifyHaVipAttributeResponse, err error) {
 	response = CreateModifyHaVipAttributeResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifyHaVipAttribute(request *ModifyHaVipAttributeRequest)
 	return
 }
 
-// invoke ModifyHaVipAttribute api with *ModifyHaVipAttributeRequest asynchronously
+// ModifyHaVipAttributeWithChan invokes the ecs.ModifyHaVipAttribute API asynchronously
 // api document: https://help.aliyun.com/api/ecs/modifyhavipattribute.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyHaVipAttributeWithChan(request *ModifyHaVipAttributeRequest) (<-chan *ModifyHaVipAttributeResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifyHaVipAttributeWithChan(request *ModifyHaVipAttribute
 	return responseChan, errChan
 }
 
-// invoke ModifyHaVipAttribute api with *ModifyHaVipAttributeRequest asynchronously
+// ModifyHaVipAttributeWithCallback invokes the ecs.ModifyHaVipAttribute API asynchronously
 // api document: https://help.aliyun.com/api/ecs/modifyhavipattribute.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyHaVipAttributeWithCallback(request *ModifyHaVipAttributeRequest, callback func(response *ModifyHaVipAttributeResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ModifyHaVipAttributeWithCallback(request *ModifyHaVipAttri
 	return result
 }
 
+// ModifyHaVipAttributeRequest is the request struct for api ModifyHaVipAttribute
 type ModifyHaVipAttributeRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,13 +85,14 @@ type ModifyHaVipAttributeRequest struct {
 	Description          string           `position:"Query" name:"Description"`
 }
 
+// ModifyHaVipAttributeResponse is the response struct for api ModifyHaVipAttribute
 type ModifyHaVipAttributeResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ModifyHaVipAttribute API
-func CreateModifyHaVipAttributeRequest() (request *ModifyHaVipAttributeRequest) {
+// CreateModifyHaVipAttributeRequest creates a request to invoke ModifyHaVipAttribute API
+func CreateModifyHaVipAttributeRequest(request *ModifyHaVipAttributeRequest) {
 	request = &ModifyHaVipAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateModifyHaVipAttributeRequest() (request *ModifyHaVipAttributeRequest) 
 	return
 }
 
-// create a response to parse from ModifyHaVipAttribute response
+// CreateModifyHaVipAttributeResponse creates a response to parse from ModifyHaVipAttribute response
 func CreateModifyHaVipAttributeResponse() (response *ModifyHaVipAttributeResponse) {
 	response = &ModifyHaVipAttributeResponse{
 		BaseResponse: &responses.BaseResponse{},

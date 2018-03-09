@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifyBatchIgnoreVul api with *ModifyBatchIgnoreVulRequest synchronously
+// ModifyBatchIgnoreVul invokes the aegis.ModifyBatchIgnoreVul API synchronously
 // api document: https://help.aliyun.com/api/aegis/modifybatchignorevul.html
 func (client *Client) ModifyBatchIgnoreVul(request *ModifyBatchIgnoreVulRequest) (response *ModifyBatchIgnoreVulResponse, err error) {
 	response = CreateModifyBatchIgnoreVulResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifyBatchIgnoreVul(request *ModifyBatchIgnoreVulRequest)
 	return
 }
 
-// invoke ModifyBatchIgnoreVul api with *ModifyBatchIgnoreVulRequest asynchronously
+// ModifyBatchIgnoreVulWithChan invokes the aegis.ModifyBatchIgnoreVul API asynchronously
 // api document: https://help.aliyun.com/api/aegis/modifybatchignorevul.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyBatchIgnoreVulWithChan(request *ModifyBatchIgnoreVulRequest) (<-chan *ModifyBatchIgnoreVulResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifyBatchIgnoreVulWithChan(request *ModifyBatchIgnoreVul
 	return responseChan, errChan
 }
 
-// invoke ModifyBatchIgnoreVul api with *ModifyBatchIgnoreVulRequest asynchronously
+// ModifyBatchIgnoreVulWithCallback invokes the aegis.ModifyBatchIgnoreVul API asynchronously
 // api document: https://help.aliyun.com/api/aegis/modifybatchignorevul.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyBatchIgnoreVulWithCallback(request *ModifyBatchIgnoreVulRequest, callback func(response *ModifyBatchIgnoreVulResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ModifyBatchIgnoreVulWithCallback(request *ModifyBatchIgnor
 	return result
 }
 
+// ModifyBatchIgnoreVulRequest is the request struct for api ModifyBatchIgnoreVul
 type ModifyBatchIgnoreVulRequest struct {
 	*requests.RpcRequest
 	SourceIp        string           `position:"Query" name:"SourceIp"`
@@ -81,6 +82,7 @@ type ModifyBatchIgnoreVulRequest struct {
 	Info            string           `position:"Query" name:"Info"`
 }
 
+// ModifyBatchIgnoreVulResponse is the response struct for api ModifyBatchIgnoreVul
 type ModifyBatchIgnoreVulResponse struct {
 	*responses.BaseResponse
 	RequestId      string `json:"RequestId" xml:"RequestId"`
@@ -88,8 +90,8 @@ type ModifyBatchIgnoreVulResponse struct {
 	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 }
 
-// create a request to invoke ModifyBatchIgnoreVul API
-func CreateModifyBatchIgnoreVulRequest() (request *ModifyBatchIgnoreVulRequest) {
+// CreateModifyBatchIgnoreVulRequest creates a request to invoke ModifyBatchIgnoreVul API
+func CreateModifyBatchIgnoreVulRequest(request *ModifyBatchIgnoreVulRequest) {
 	request = &ModifyBatchIgnoreVulRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateModifyBatchIgnoreVulRequest() (request *ModifyBatchIgnoreVulRequest) 
 	return
 }
 
-// create a response to parse from ModifyBatchIgnoreVul response
+// CreateModifyBatchIgnoreVulResponse creates a response to parse from ModifyBatchIgnoreVul response
 func CreateModifyBatchIgnoreVulResponse() (response *ModifyBatchIgnoreVulResponse) {
 	response = &ModifyBatchIgnoreVulResponse{
 		BaseResponse: &responses.BaseResponse{},

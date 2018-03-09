@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke Action api with *ActionRequest synchronously
+// Action invokes the tesladam.Action API synchronously
 // api document: https://help.aliyun.com/api/tesladam/action.html
 func (client *Client) Action(request *ActionRequest) (response *ActionResponse, err error) {
 	response = CreateActionResponse()
@@ -28,7 +28,7 @@ func (client *Client) Action(request *ActionRequest) (response *ActionResponse, 
 	return
 }
 
-// invoke Action api with *ActionRequest asynchronously
+// ActionWithChan invokes the tesladam.Action API asynchronously
 // api document: https://help.aliyun.com/api/tesladam/action.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ActionWithChan(request *ActionRequest) (<-chan *ActionResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ActionWithChan(request *ActionRequest) (<-chan *ActionResp
 	return responseChan, errChan
 }
 
-// invoke Action api with *ActionRequest asynchronously
+// ActionWithCallback invokes the tesladam.Action API asynchronously
 // api document: https://help.aliyun.com/api/tesladam/action.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ActionWithCallback(request *ActionRequest, callback func(response *ActionResponse, err error)) <-chan int {
@@ -73,12 +73,14 @@ func (client *Client) ActionWithCallback(request *ActionRequest, callback func(r
 	return result
 }
 
+// ActionRequest is the request struct for api Action
 type ActionRequest struct {
 	*requests.RpcRequest
 	OrderId  requests.Integer `position:"Query" name:"OrderId"`
 	StepCode string           `position:"Query" name:"StepCode"`
 }
 
+// ActionResponse is the response struct for api Action
 type ActionResponse struct {
 	*responses.BaseResponse
 	Status  bool   `json:"Status" xml:"Status"`
@@ -86,8 +88,8 @@ type ActionResponse struct {
 	Result  string `json:"Result" xml:"Result"`
 }
 
-// create a request to invoke Action API
-func CreateActionRequest() (request *ActionRequest) {
+// CreateActionRequest creates a request to invoke Action API
+func CreateActionRequest(request *ActionRequest) {
 	request = &ActionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateActionRequest() (request *ActionRequest) {
 	return
 }
 
-// create a response to parse from Action response
+// CreateActionResponse creates a response to parse from Action response
 func CreateActionResponse() (response *ActionResponse) {
 	response = &ActionResponse{
 		BaseResponse: &responses.BaseResponse{},

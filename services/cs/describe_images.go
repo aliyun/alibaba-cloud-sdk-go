@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeImages api with *DescribeImagesRequest synchronously
+// DescribeImages invokes the cs.DescribeImages API synchronously
 // api document: https://help.aliyun.com/api/cs/describeimages.html
 func (client *Client) DescribeImages(request *DescribeImagesRequest) (response *DescribeImagesResponse, err error) {
 	response = CreateDescribeImagesResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeImages(request *DescribeImagesRequest) (response *
 	return
 }
 
-// invoke DescribeImages api with *DescribeImagesRequest asynchronously
+// DescribeImagesWithChan invokes the cs.DescribeImages API asynchronously
 // api document: https://help.aliyun.com/api/cs/describeimages.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeImagesWithChan(request *DescribeImagesRequest) (<-chan *DescribeImagesResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeImagesWithChan(request *DescribeImagesRequest) (<-
 	return responseChan, errChan
 }
 
-// invoke DescribeImages api with *DescribeImagesRequest asynchronously
+// DescribeImagesWithCallback invokes the cs.DescribeImages API asynchronously
 // api document: https://help.aliyun.com/api/cs/describeimages.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeImagesWithCallback(request *DescribeImagesRequest, callback func(response *DescribeImagesResponse, err error)) <-chan int {
@@ -73,18 +73,20 @@ func (client *Client) DescribeImagesWithCallback(request *DescribeImagesRequest,
 	return result
 }
 
+// DescribeImagesRequest is the request struct for api DescribeImages
 type DescribeImagesRequest struct {
 	*requests.RoaRequest
 	DockerVersion string `position:"Query" name:"DockerVersion"`
 	ImageName     string `position:"Query" name:"ImageName"`
 }
 
+// DescribeImagesResponse is the response struct for api DescribeImages
 type DescribeImagesResponse struct {
 	*responses.BaseResponse
 }
 
-// create a request to invoke DescribeImages API
-func CreateDescribeImagesRequest() (request *DescribeImagesRequest) {
+// CreateDescribeImagesRequest creates a request to invoke DescribeImages API
+func CreateDescribeImagesRequest(request *DescribeImagesRequest) {
 	request = &DescribeImagesRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
@@ -93,7 +95,7 @@ func CreateDescribeImagesRequest() (request *DescribeImagesRequest) {
 	return
 }
 
-// create a response to parse from DescribeImages response
+// CreateDescribeImagesResponse creates a response to parse from DescribeImages response
 func CreateDescribeImagesResponse() (response *DescribeImagesResponse) {
 	response = &DescribeImagesResponse{
 		BaseResponse: &responses.BaseResponse{},

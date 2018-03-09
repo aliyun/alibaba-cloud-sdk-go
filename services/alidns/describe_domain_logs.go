@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeDomainLogs api with *DescribeDomainLogsRequest synchronously
+// DescribeDomainLogs invokes the alidns.DescribeDomainLogs API synchronously
 // api document: https://help.aliyun.com/api/alidns/describedomainlogs.html
 func (client *Client) DescribeDomainLogs(request *DescribeDomainLogsRequest) (response *DescribeDomainLogsResponse, err error) {
 	response = CreateDescribeDomainLogsResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeDomainLogs(request *DescribeDomainLogsRequest) (re
 	return
 }
 
-// invoke DescribeDomainLogs api with *DescribeDomainLogsRequest asynchronously
+// DescribeDomainLogsWithChan invokes the alidns.DescribeDomainLogs API asynchronously
 // api document: https://help.aliyun.com/api/alidns/describedomainlogs.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainLogsWithChan(request *DescribeDomainLogsRequest) (<-chan *DescribeDomainLogsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeDomainLogsWithChan(request *DescribeDomainLogsRequ
 	return responseChan, errChan
 }
 
-// invoke DescribeDomainLogs api with *DescribeDomainLogsRequest asynchronously
+// DescribeDomainLogsWithCallback invokes the alidns.DescribeDomainLogs API asynchronously
 // api document: https://help.aliyun.com/api/alidns/describedomainlogs.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainLogsWithCallback(request *DescribeDomainLogsRequest, callback func(response *DescribeDomainLogsResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeDomainLogsWithCallback(request *DescribeDomainLogs
 	return result
 }
 
+// DescribeDomainLogsRequest is the request struct for api DescribeDomainLogs
 type DescribeDomainLogsRequest struct {
 	*requests.RpcRequest
 	Lang         string           `position:"Query" name:"Lang"`
@@ -85,6 +86,7 @@ type DescribeDomainLogsRequest struct {
 	EndDate      string           `position:"Query" name:"endDate"`
 }
 
+// DescribeDomainLogsResponse is the response struct for api DescribeDomainLogs
 type DescribeDomainLogsResponse struct {
 	*responses.BaseResponse
 	RequestId  string     `json:"RequestId" xml:"RequestId"`
@@ -94,8 +96,8 @@ type DescribeDomainLogsResponse struct {
 	DomainLogs DomainLogs `json:"DomainLogs" xml:"DomainLogs"`
 }
 
-// create a request to invoke DescribeDomainLogs API
-func CreateDescribeDomainLogsRequest() (request *DescribeDomainLogsRequest) {
+// CreateDescribeDomainLogsRequest creates a request to invoke DescribeDomainLogs API
+func CreateDescribeDomainLogsRequest(request *DescribeDomainLogsRequest) {
 	request = &DescribeDomainLogsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -103,7 +105,7 @@ func CreateDescribeDomainLogsRequest() (request *DescribeDomainLogsRequest) {
 	return
 }
 
-// create a response to parse from DescribeDomainLogs response
+// CreateDescribeDomainLogsResponse creates a response to parse from DescribeDomainLogs response
 func CreateDescribeDomainLogsResponse() (response *DescribeDomainLogsResponse) {
 	response = &DescribeDomainLogsResponse{
 		BaseResponse: &responses.BaseResponse{},

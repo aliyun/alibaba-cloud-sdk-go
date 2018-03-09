@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeDisksFullStatus api with *DescribeDisksFullStatusRequest synchronously
+// DescribeDisksFullStatus invokes the ecs.DescribeDisksFullStatus API synchronously
 // api document: https://help.aliyun.com/api/ecs/describedisksfullstatus.html
 func (client *Client) DescribeDisksFullStatus(request *DescribeDisksFullStatusRequest) (response *DescribeDisksFullStatusResponse, err error) {
 	response = CreateDescribeDisksFullStatusResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeDisksFullStatus(request *DescribeDisksFullStatusRe
 	return
 }
 
-// invoke DescribeDisksFullStatus api with *DescribeDisksFullStatusRequest asynchronously
+// DescribeDisksFullStatusWithChan invokes the ecs.DescribeDisksFullStatus API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describedisksfullstatus.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDisksFullStatusWithChan(request *DescribeDisksFullStatusRequest) (<-chan *DescribeDisksFullStatusResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeDisksFullStatusWithChan(request *DescribeDisksFull
 	return responseChan, errChan
 }
 
-// invoke DescribeDisksFullStatus api with *DescribeDisksFullStatusRequest asynchronously
+// DescribeDisksFullStatusWithCallback invokes the ecs.DescribeDisksFullStatus API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describedisksfullstatus.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDisksFullStatusWithCallback(request *DescribeDisksFullStatusRequest, callback func(response *DescribeDisksFullStatusResponse, err error)) <-chan int {
@@ -73,10 +73,12 @@ func (client *Client) DescribeDisksFullStatusWithCallback(request *DescribeDisks
 	return result
 }
 
+// DescribeDisksFullStatusRequest is the request struct for api DescribeDisksFullStatus
 type DescribeDisksFullStatusRequest struct {
 	*requests.RpcRequest
 }
 
+// DescribeDisksFullStatusResponse is the response struct for api DescribeDisksFullStatus
 type DescribeDisksFullStatusResponse struct {
 	*responses.BaseResponse
 	RequestId         string            `json:"RequestId" xml:"RequestId"`
@@ -86,8 +88,8 @@ type DescribeDisksFullStatusResponse struct {
 	DiskFullStatusSet DiskFullStatusSet `json:"DiskFullStatusSet" xml:"DiskFullStatusSet"`
 }
 
-// create a request to invoke DescribeDisksFullStatus API
-func CreateDescribeDisksFullStatusRequest() (request *DescribeDisksFullStatusRequest) {
+// CreateDescribeDisksFullStatusRequest creates a request to invoke DescribeDisksFullStatus API
+func CreateDescribeDisksFullStatusRequest(request *DescribeDisksFullStatusRequest) {
 	request = &DescribeDisksFullStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateDescribeDisksFullStatusRequest() (request *DescribeDisksFullStatusReq
 	return
 }
 
-// create a response to parse from DescribeDisksFullStatus response
+// CreateDescribeDisksFullStatusResponse creates a response to parse from DescribeDisksFullStatus response
 func CreateDescribeDisksFullStatusResponse() (response *DescribeDisksFullStatusResponse) {
 	response = &DescribeDisksFullStatusResponse{
 		BaseResponse: &responses.BaseResponse{},

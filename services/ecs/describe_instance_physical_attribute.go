@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeInstancePhysicalAttribute api with *DescribeInstancePhysicalAttributeRequest synchronously
+// DescribeInstancePhysicalAttribute invokes the ecs.DescribeInstancePhysicalAttribute API synchronously
 // api document: https://help.aliyun.com/api/ecs/describeinstancephysicalattribute.html
 func (client *Client) DescribeInstancePhysicalAttribute(request *DescribeInstancePhysicalAttributeRequest) (response *DescribeInstancePhysicalAttributeResponse, err error) {
 	response = CreateDescribeInstancePhysicalAttributeResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeInstancePhysicalAttribute(request *DescribeInstanc
 	return
 }
 
-// invoke DescribeInstancePhysicalAttribute api with *DescribeInstancePhysicalAttributeRequest asynchronously
+// DescribeInstancePhysicalAttributeWithChan invokes the ecs.DescribeInstancePhysicalAttribute API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describeinstancephysicalattribute.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstancePhysicalAttributeWithChan(request *DescribeInstancePhysicalAttributeRequest) (<-chan *DescribeInstancePhysicalAttributeResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeInstancePhysicalAttributeWithChan(request *Describ
 	return responseChan, errChan
 }
 
-// invoke DescribeInstancePhysicalAttribute api with *DescribeInstancePhysicalAttributeRequest asynchronously
+// DescribeInstancePhysicalAttributeWithCallback invokes the ecs.DescribeInstancePhysicalAttribute API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describeinstancephysicalattribute.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstancePhysicalAttributeWithCallback(request *DescribeInstancePhysicalAttributeRequest, callback func(response *DescribeInstancePhysicalAttributeResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeInstancePhysicalAttributeWithCallback(request *Des
 	return result
 }
 
+// DescribeInstancePhysicalAttributeRequest is the request struct for api DescribeInstancePhysicalAttribute
 type DescribeInstancePhysicalAttributeRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,6 +83,7 @@ type DescribeInstancePhysicalAttributeRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// DescribeInstancePhysicalAttributeResponse is the response struct for api DescribeInstancePhysicalAttribute
 type DescribeInstancePhysicalAttributeResponse struct {
 	*responses.BaseResponse
 	RequestId        string `json:"RequestId" xml:"RequestId"`
@@ -91,8 +93,8 @@ type DescribeInstancePhysicalAttributeResponse struct {
 	RackId           string `json:"RackId" xml:"RackId"`
 }
 
-// create a request to invoke DescribeInstancePhysicalAttribute API
-func CreateDescribeInstancePhysicalAttributeRequest() (request *DescribeInstancePhysicalAttributeRequest) {
+// CreateDescribeInstancePhysicalAttributeRequest creates a request to invoke DescribeInstancePhysicalAttribute API
+func CreateDescribeInstancePhysicalAttributeRequest(request *DescribeInstancePhysicalAttributeRequest) {
 	request = &DescribeInstancePhysicalAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -100,7 +102,7 @@ func CreateDescribeInstancePhysicalAttributeRequest() (request *DescribeInstance
 	return
 }
 
-// create a response to parse from DescribeInstancePhysicalAttribute response
+// CreateDescribeInstancePhysicalAttributeResponse creates a response to parse from DescribeInstancePhysicalAttribute response
 func CreateDescribeInstancePhysicalAttributeResponse() (response *DescribeInstancePhysicalAttributeResponse) {
 	response = &DescribeInstancePhysicalAttributeResponse{
 		BaseResponse: &responses.BaseResponse{},

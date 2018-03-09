@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SetForceRedirectConfig api with *SetForceRedirectConfigRequest synchronously
+// SetForceRedirectConfig invokes the cdn.SetForceRedirectConfig API synchronously
 // api document: https://help.aliyun.com/api/cdn/setforceredirectconfig.html
 func (client *Client) SetForceRedirectConfig(request *SetForceRedirectConfigRequest) (response *SetForceRedirectConfigResponse, err error) {
 	response = CreateSetForceRedirectConfigResponse()
@@ -28,7 +28,7 @@ func (client *Client) SetForceRedirectConfig(request *SetForceRedirectConfigRequ
 	return
 }
 
-// invoke SetForceRedirectConfig api with *SetForceRedirectConfigRequest asynchronously
+// SetForceRedirectConfigWithChan invokes the cdn.SetForceRedirectConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/setforceredirectconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetForceRedirectConfigWithChan(request *SetForceRedirectConfigRequest) (<-chan *SetForceRedirectConfigResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SetForceRedirectConfigWithChan(request *SetForceRedirectCo
 	return responseChan, errChan
 }
 
-// invoke SetForceRedirectConfig api with *SetForceRedirectConfigRequest asynchronously
+// SetForceRedirectConfigWithCallback invokes the cdn.SetForceRedirectConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/setforceredirectconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetForceRedirectConfigWithCallback(request *SetForceRedirectConfigRequest, callback func(response *SetForceRedirectConfigResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SetForceRedirectConfigWithCallback(request *SetForceRedire
 	return result
 }
 
+// SetForceRedirectConfigRequest is the request struct for api SetForceRedirectConfig
 type SetForceRedirectConfigRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -81,13 +82,14 @@ type SetForceRedirectConfigRequest struct {
 	RedirectType  string           `position:"Query" name:"RedirectType"`
 }
 
+// SetForceRedirectConfigResponse is the response struct for api SetForceRedirectConfig
 type SetForceRedirectConfigResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke SetForceRedirectConfig API
-func CreateSetForceRedirectConfigRequest() (request *SetForceRedirectConfigRequest) {
+// CreateSetForceRedirectConfigRequest creates a request to invoke SetForceRedirectConfig API
+func CreateSetForceRedirectConfigRequest(request *SetForceRedirectConfigRequest) {
 	request = &SetForceRedirectConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateSetForceRedirectConfigRequest() (request *SetForceRedirectConfigReque
 	return
 }
 
-// create a response to parse from SetForceRedirectConfig response
+// CreateSetForceRedirectConfigResponse creates a response to parse from SetForceRedirectConfig response
 func CreateSetForceRedirectConfigResponse() (response *SetForceRedirectConfigResponse) {
 	response = &SetForceRedirectConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

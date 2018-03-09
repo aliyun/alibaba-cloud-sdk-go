@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke AddPhoneNumber api with *AddPhoneNumberRequest synchronously
+// AddPhoneNumber invokes the ccc.AddPhoneNumber API synchronously
 // api document: https://help.aliyun.com/api/ccc/addphonenumber.html
 func (client *Client) AddPhoneNumber(request *AddPhoneNumberRequest) (response *AddPhoneNumberResponse, err error) {
 	response = CreateAddPhoneNumberResponse()
@@ -28,7 +28,7 @@ func (client *Client) AddPhoneNumber(request *AddPhoneNumberRequest) (response *
 	return
 }
 
-// invoke AddPhoneNumber api with *AddPhoneNumberRequest asynchronously
+// AddPhoneNumberWithChan invokes the ccc.AddPhoneNumber API asynchronously
 // api document: https://help.aliyun.com/api/ccc/addphonenumber.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddPhoneNumberWithChan(request *AddPhoneNumberRequest) (<-chan *AddPhoneNumberResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) AddPhoneNumberWithChan(request *AddPhoneNumberRequest) (<-
 	return responseChan, errChan
 }
 
-// invoke AddPhoneNumber api with *AddPhoneNumberRequest asynchronously
+// AddPhoneNumberWithCallback invokes the ccc.AddPhoneNumber API asynchronously
 // api document: https://help.aliyun.com/api/ccc/addphonenumber.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddPhoneNumberWithCallback(request *AddPhoneNumberRequest, callback func(response *AddPhoneNumberResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) AddPhoneNumberWithCallback(request *AddPhoneNumberRequest,
 	return result
 }
 
+// AddPhoneNumberRequest is the request struct for api AddPhoneNumber
 type AddPhoneNumberRequest struct {
 	*requests.RpcRequest
 	InstanceId    string `position:"Query" name:"InstanceId"`
@@ -81,6 +82,7 @@ type AddPhoneNumberRequest struct {
 	ContactFlowId string `position:"Query" name:"ContactFlowId"`
 }
 
+// AddPhoneNumberResponse is the response struct for api AddPhoneNumber
 type AddPhoneNumberResponse struct {
 	*responses.BaseResponse
 	RequestId      string      `json:"RequestId" xml:"RequestId"`
@@ -91,8 +93,8 @@ type AddPhoneNumberResponse struct {
 	PhoneNumber    PhoneNumber `json:"PhoneNumber" xml:"PhoneNumber"`
 }
 
-// create a request to invoke AddPhoneNumber API
-func CreateAddPhoneNumberRequest() (request *AddPhoneNumberRequest) {
+// CreateAddPhoneNumberRequest creates a request to invoke AddPhoneNumber API
+func CreateAddPhoneNumberRequest(request *AddPhoneNumberRequest) {
 	request = &AddPhoneNumberRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -100,7 +102,7 @@ func CreateAddPhoneNumberRequest() (request *AddPhoneNumberRequest) {
 	return
 }
 
-// create a response to parse from AddPhoneNumber response
+// CreateAddPhoneNumberResponse creates a response to parse from AddPhoneNumber response
 func CreateAddPhoneNumberResponse() (response *AddPhoneNumberResponse) {
 	response = &AddPhoneNumberResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke GetGroup api with *GetGroupRequest synchronously
+// GetGroup invokes the ram.GetGroup API synchronously
 // api document: https://help.aliyun.com/api/ram/getgroup.html
 func (client *Client) GetGroup(request *GetGroupRequest) (response *GetGroupResponse, err error) {
 	response = CreateGetGroupResponse()
@@ -28,7 +28,7 @@ func (client *Client) GetGroup(request *GetGroupRequest) (response *GetGroupResp
 	return
 }
 
-// invoke GetGroup api with *GetGroupRequest asynchronously
+// GetGroupWithChan invokes the ram.GetGroup API asynchronously
 // api document: https://help.aliyun.com/api/ram/getgroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetGroupWithChan(request *GetGroupRequest) (<-chan *GetGroupResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) GetGroupWithChan(request *GetGroupRequest) (<-chan *GetGro
 	return responseChan, errChan
 }
 
-// invoke GetGroup api with *GetGroupRequest asynchronously
+// GetGroupWithCallback invokes the ram.GetGroup API asynchronously
 // api document: https://help.aliyun.com/api/ram/getgroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetGroupWithCallback(request *GetGroupRequest, callback func(response *GetGroupResponse, err error)) <-chan int {
@@ -73,19 +73,21 @@ func (client *Client) GetGroupWithCallback(request *GetGroupRequest, callback fu
 	return result
 }
 
+// GetGroupRequest is the request struct for api GetGroup
 type GetGroupRequest struct {
 	*requests.RpcRequest
 	GroupName string `position:"Query" name:"GroupName"`
 }
 
+// GetGroupResponse is the response struct for api GetGroup
 type GetGroupResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Group     Group  `json:"Group" xml:"Group"`
 }
 
-// create a request to invoke GetGroup API
-func CreateGetGroupRequest() (request *GetGroupRequest) {
+// CreateGetGroupRequest creates a request to invoke GetGroup API
+func CreateGetGroupRequest(request *GetGroupRequest) {
 	request = &GetGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -93,7 +95,7 @@ func CreateGetGroupRequest() (request *GetGroupRequest) {
 	return
 }
 
-// create a response to parse from GetGroup response
+// CreateGetGroupResponse creates a response to parse from GetGroup response
 func CreateGetGroupResponse() (response *GetGroupResponse) {
 	response = &GetGroupResponse{
 		BaseResponse: &responses.BaseResponse{},

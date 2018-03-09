@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke EipFillParams api with *EipFillParamsRequest synchronously
+// EipFillParams invokes the ecs.EipFillParams API synchronously
 // api document: https://help.aliyun.com/api/ecs/eipfillparams.html
 func (client *Client) EipFillParams(request *EipFillParamsRequest) (response *EipFillParamsResponse, err error) {
 	response = CreateEipFillParamsResponse()
@@ -28,7 +28,7 @@ func (client *Client) EipFillParams(request *EipFillParamsRequest) (response *Ei
 	return
 }
 
-// invoke EipFillParams api with *EipFillParamsRequest asynchronously
+// EipFillParamsWithChan invokes the ecs.EipFillParams API asynchronously
 // api document: https://help.aliyun.com/api/ecs/eipfillparams.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EipFillParamsWithChan(request *EipFillParamsRequest) (<-chan *EipFillParamsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) EipFillParamsWithChan(request *EipFillParamsRequest) (<-ch
 	return responseChan, errChan
 }
 
-// invoke EipFillParams api with *EipFillParamsRequest asynchronously
+// EipFillParamsWithCallback invokes the ecs.EipFillParams API asynchronously
 // api document: https://help.aliyun.com/api/ecs/eipfillparams.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EipFillParamsWithCallback(request *EipFillParamsRequest, callback func(response *EipFillParamsResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) EipFillParamsWithCallback(request *EipFillParamsRequest, c
 	return result
 }
 
+// EipFillParamsRequest is the request struct for api EipFillParams
 type EipFillParamsRequest struct {
 	*requests.RpcRequest
 	Data                 string           `position:"Query" name:"data"`
@@ -84,6 +85,7 @@ type EipFillParamsRequest struct {
 	UserCidr             string           `position:"Query" name:"UserCidr"`
 }
 
+// EipFillParamsResponse is the response struct for api EipFillParams
 type EipFillParamsResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"requestId" xml:"requestId"`
@@ -93,8 +95,8 @@ type EipFillParamsResponse struct {
 	Message   string `json:"message" xml:"message"`
 }
 
-// create a request to invoke EipFillParams API
-func CreateEipFillParamsRequest() (request *EipFillParamsRequest) {
+// CreateEipFillParamsRequest creates a request to invoke EipFillParams API
+func CreateEipFillParamsRequest(request *EipFillParamsRequest) {
 	request = &EipFillParamsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -102,7 +104,7 @@ func CreateEipFillParamsRequest() (request *EipFillParamsRequest) {
 	return
 }
 
-// create a response to parse from EipFillParams response
+// CreateEipFillParamsResponse creates a response to parse from EipFillParams response
 func CreateEipFillParamsResponse() (response *EipFillParamsResponse) {
 	response = &EipFillParamsResponse{
 		BaseResponse: &responses.BaseResponse{},

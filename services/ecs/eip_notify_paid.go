@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke EipNotifyPaid api with *EipNotifyPaidRequest synchronously
+// EipNotifyPaid invokes the ecs.EipNotifyPaid API synchronously
 // api document: https://help.aliyun.com/api/ecs/eipnotifypaid.html
 func (client *Client) EipNotifyPaid(request *EipNotifyPaidRequest) (response *EipNotifyPaidResponse, err error) {
 	response = CreateEipNotifyPaidResponse()
@@ -28,7 +28,7 @@ func (client *Client) EipNotifyPaid(request *EipNotifyPaidRequest) (response *Ei
 	return
 }
 
-// invoke EipNotifyPaid api with *EipNotifyPaidRequest asynchronously
+// EipNotifyPaidWithChan invokes the ecs.EipNotifyPaid API asynchronously
 // api document: https://help.aliyun.com/api/ecs/eipnotifypaid.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EipNotifyPaidWithChan(request *EipNotifyPaidRequest) (<-chan *EipNotifyPaidResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) EipNotifyPaidWithChan(request *EipNotifyPaidRequest) (<-ch
 	return responseChan, errChan
 }
 
-// invoke EipNotifyPaid api with *EipNotifyPaidRequest asynchronously
+// EipNotifyPaidWithCallback invokes the ecs.EipNotifyPaid API asynchronously
 // api document: https://help.aliyun.com/api/ecs/eipnotifypaid.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EipNotifyPaidWithCallback(request *EipNotifyPaidRequest, callback func(response *EipNotifyPaidResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) EipNotifyPaidWithCallback(request *EipNotifyPaidRequest, c
 	return result
 }
 
+// EipNotifyPaidRequest is the request struct for api EipNotifyPaid
 type EipNotifyPaidRequest struct {
 	*requests.RpcRequest
 	Data                 string           `position:"Query" name:"data"`
@@ -84,6 +85,7 @@ type EipNotifyPaidRequest struct {
 	UserCidr             string           `position:"Query" name:"UserCidr"`
 }
 
+// EipNotifyPaidResponse is the response struct for api EipNotifyPaid
 type EipNotifyPaidResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"requestId" xml:"requestId"`
@@ -93,8 +95,8 @@ type EipNotifyPaidResponse struct {
 	Success   bool   `json:"success" xml:"success"`
 }
 
-// create a request to invoke EipNotifyPaid API
-func CreateEipNotifyPaidRequest() (request *EipNotifyPaidRequest) {
+// CreateEipNotifyPaidRequest creates a request to invoke EipNotifyPaid API
+func CreateEipNotifyPaidRequest(request *EipNotifyPaidRequest) {
 	request = &EipNotifyPaidRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -102,7 +104,7 @@ func CreateEipNotifyPaidRequest() (request *EipNotifyPaidRequest) {
 	return
 }
 
-// create a response to parse from EipNotifyPaid response
+// CreateEipNotifyPaidResponse creates a response to parse from EipNotifyPaid response
 func CreateEipNotifyPaidResponse() (response *EipNotifyPaidResponse) {
 	response = &EipNotifyPaidResponse{
 		BaseResponse: &responses.BaseResponse{},

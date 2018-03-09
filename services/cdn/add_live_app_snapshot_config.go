@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke AddLiveAppSnapshotConfig api with *AddLiveAppSnapshotConfigRequest synchronously
+// AddLiveAppSnapshotConfig invokes the cdn.AddLiveAppSnapshotConfig API synchronously
 // api document: https://help.aliyun.com/api/cdn/addliveappsnapshotconfig.html
 func (client *Client) AddLiveAppSnapshotConfig(request *AddLiveAppSnapshotConfigRequest) (response *AddLiveAppSnapshotConfigResponse, err error) {
 	response = CreateAddLiveAppSnapshotConfigResponse()
@@ -28,7 +28,7 @@ func (client *Client) AddLiveAppSnapshotConfig(request *AddLiveAppSnapshotConfig
 	return
 }
 
-// invoke AddLiveAppSnapshotConfig api with *AddLiveAppSnapshotConfigRequest asynchronously
+// AddLiveAppSnapshotConfigWithChan invokes the cdn.AddLiveAppSnapshotConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/addliveappsnapshotconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddLiveAppSnapshotConfigWithChan(request *AddLiveAppSnapshotConfigRequest) (<-chan *AddLiveAppSnapshotConfigResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) AddLiveAppSnapshotConfigWithChan(request *AddLiveAppSnapsh
 	return responseChan, errChan
 }
 
-// invoke AddLiveAppSnapshotConfig api with *AddLiveAppSnapshotConfigRequest asynchronously
+// AddLiveAppSnapshotConfigWithCallback invokes the cdn.AddLiveAppSnapshotConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/addliveappsnapshotconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddLiveAppSnapshotConfigWithCallback(request *AddLiveAppSnapshotConfigRequest, callback func(response *AddLiveAppSnapshotConfigResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) AddLiveAppSnapshotConfigWithCallback(request *AddLiveAppSn
 	return result
 }
 
+// AddLiveAppSnapshotConfigRequest is the request struct for api AddLiveAppSnapshotConfig
 type AddLiveAppSnapshotConfigRequest struct {
 	*requests.RpcRequest
 	OwnerId            requests.Integer `position:"Query" name:"OwnerId"`
@@ -86,13 +87,14 @@ type AddLiveAppSnapshotConfigRequest struct {
 	SequenceOssObject  string           `position:"Query" name:"SequenceOssObject"`
 }
 
+// AddLiveAppSnapshotConfigResponse is the response struct for api AddLiveAppSnapshotConfig
 type AddLiveAppSnapshotConfigResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke AddLiveAppSnapshotConfig API
-func CreateAddLiveAppSnapshotConfigRequest() (request *AddLiveAppSnapshotConfigRequest) {
+// CreateAddLiveAppSnapshotConfigRequest creates a request to invoke AddLiveAppSnapshotConfig API
+func CreateAddLiveAppSnapshotConfigRequest(request *AddLiveAppSnapshotConfigRequest) {
 	request = &AddLiveAppSnapshotConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -100,7 +102,7 @@ func CreateAddLiveAppSnapshotConfigRequest() (request *AddLiveAppSnapshotConfigR
 	return
 }
 
-// create a response to parse from AddLiveAppSnapshotConfig response
+// CreateAddLiveAppSnapshotConfigResponse creates a response to parse from AddLiveAppSnapshotConfig response
 func CreateAddLiveAppSnapshotConfigResponse() (response *AddLiveAppSnapshotConfigResponse) {
 	response = &AddLiveAppSnapshotConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

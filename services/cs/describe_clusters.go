@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeClusters api with *DescribeClustersRequest synchronously
+// DescribeClusters invokes the cs.DescribeClusters API synchronously
 // api document: https://help.aliyun.com/api/cs/describeclusters.html
 func (client *Client) DescribeClusters(request *DescribeClustersRequest) (response *DescribeClustersResponse, err error) {
 	response = CreateDescribeClustersResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeClusters(request *DescribeClustersRequest) (respon
 	return
 }
 
-// invoke DescribeClusters api with *DescribeClustersRequest asynchronously
+// DescribeClustersWithChan invokes the cs.DescribeClusters API asynchronously
 // api document: https://help.aliyun.com/api/cs/describeclusters.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeClustersWithChan(request *DescribeClustersRequest) (<-chan *DescribeClustersResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeClustersWithChan(request *DescribeClustersRequest)
 	return responseChan, errChan
 }
 
-// invoke DescribeClusters api with *DescribeClustersRequest asynchronously
+// DescribeClustersWithCallback invokes the cs.DescribeClusters API asynchronously
 // api document: https://help.aliyun.com/api/cs/describeclusters.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeClustersWithCallback(request *DescribeClustersRequest, callback func(response *DescribeClustersResponse, err error)) <-chan int {
@@ -73,18 +73,20 @@ func (client *Client) DescribeClustersWithCallback(request *DescribeClustersRequ
 	return result
 }
 
+// DescribeClustersRequest is the request struct for api DescribeClusters
 type DescribeClustersRequest struct {
 	*requests.RoaRequest
 	Name        string `position:"Query" name:"Name"`
 	ClusterType string `position:"Query" name:"clusterType"`
 }
 
+// DescribeClustersResponse is the response struct for api DescribeClusters
 type DescribeClustersResponse struct {
 	*responses.BaseResponse
 }
 
-// create a request to invoke DescribeClusters API
-func CreateDescribeClustersRequest() (request *DescribeClustersRequest) {
+// CreateDescribeClustersRequest creates a request to invoke DescribeClusters API
+func CreateDescribeClustersRequest(request *DescribeClustersRequest) {
 	request = &DescribeClustersRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
@@ -93,7 +95,7 @@ func CreateDescribeClustersRequest() (request *DescribeClustersRequest) {
 	return
 }
 
-// create a response to parse from DescribeClusters response
+// CreateDescribeClustersResponse creates a response to parse from DescribeClusters response
 func CreateDescribeClustersResponse() (response *DescribeClustersResponse) {
 	response = &DescribeClustersResponse{
 		BaseResponse: &responses.BaseResponse{},

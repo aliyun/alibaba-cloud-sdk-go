@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteImage api with *DeleteImageRequest synchronously
+// DeleteImage invokes the ecs.DeleteImage API synchronously
 // api document: https://help.aliyun.com/api/ecs/deleteimage.html
 func (client *Client) DeleteImage(request *DeleteImageRequest) (response *DeleteImageResponse, err error) {
 	response = CreateDeleteImageResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteImage(request *DeleteImageRequest) (response *Delete
 	return
 }
 
-// invoke DeleteImage api with *DeleteImageRequest asynchronously
+// DeleteImageWithChan invokes the ecs.DeleteImage API asynchronously
 // api document: https://help.aliyun.com/api/ecs/deleteimage.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteImageWithChan(request *DeleteImageRequest) (<-chan *DeleteImageResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteImageWithChan(request *DeleteImageRequest) (<-chan *
 	return responseChan, errChan
 }
 
-// invoke DeleteImage api with *DeleteImageRequest asynchronously
+// DeleteImageWithCallback invokes the ecs.DeleteImage API asynchronously
 // api document: https://help.aliyun.com/api/ecs/deleteimage.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteImageWithCallback(request *DeleteImageRequest, callback func(response *DeleteImageResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DeleteImageWithCallback(request *DeleteImageRequest, callb
 	return result
 }
 
+// DeleteImageRequest is the request struct for api DeleteImage
 type DeleteImageRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -83,13 +84,14 @@ type DeleteImageRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// DeleteImageResponse is the response struct for api DeleteImage
 type DeleteImageResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DeleteImage API
-func CreateDeleteImageRequest() (request *DeleteImageRequest) {
+// CreateDeleteImageRequest creates a request to invoke DeleteImage API
+func CreateDeleteImageRequest(request *DeleteImageRequest) {
 	request = &DeleteImageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateDeleteImageRequest() (request *DeleteImageRequest) {
 	return
 }
 
-// create a response to parse from DeleteImage response
+// CreateDeleteImageResponse creates a response to parse from DeleteImage response
 func CreateDeleteImageResponse() (response *DeleteImageResponse) {
 	response = &DeleteImageResponse{
 		BaseResponse: &responses.BaseResponse{},

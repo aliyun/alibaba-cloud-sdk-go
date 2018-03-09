@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ListEmailVerification api with *ListEmailVerificationRequest synchronously
+// ListEmailVerification invokes the domain_intl.ListEmailVerification API synchronously
 // api document: https://help.aliyun.com/api/domain-intl/listemailverification.html
 func (client *Client) ListEmailVerification(request *ListEmailVerificationRequest) (response *ListEmailVerificationResponse, err error) {
 	response = CreateListEmailVerificationResponse()
@@ -28,7 +28,7 @@ func (client *Client) ListEmailVerification(request *ListEmailVerificationReques
 	return
 }
 
-// invoke ListEmailVerification api with *ListEmailVerificationRequest asynchronously
+// ListEmailVerificationWithChan invokes the domain_intl.ListEmailVerification API asynchronously
 // api document: https://help.aliyun.com/api/domain-intl/listemailverification.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListEmailVerificationWithChan(request *ListEmailVerificationRequest) (<-chan *ListEmailVerificationResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ListEmailVerificationWithChan(request *ListEmailVerificati
 	return responseChan, errChan
 }
 
-// invoke ListEmailVerification api with *ListEmailVerificationRequest asynchronously
+// ListEmailVerificationWithCallback invokes the domain_intl.ListEmailVerification API asynchronously
 // api document: https://help.aliyun.com/api/domain-intl/listemailverification.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListEmailVerificationWithCallback(request *ListEmailVerificationRequest, callback func(response *ListEmailVerificationResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ListEmailVerificationWithCallback(request *ListEmailVerifi
 	return result
 }
 
+// ListEmailVerificationRequest is the request struct for api ListEmailVerification
 type ListEmailVerificationRequest struct {
 	*requests.RpcRequest
 	Lang               string           `position:"Query" name:"Lang"`
@@ -84,6 +85,7 @@ type ListEmailVerificationRequest struct {
 	PageSize           requests.Integer `position:"Query" name:"PageSize"`
 }
 
+// ListEmailVerificationResponse is the response struct for api ListEmailVerification
 type ListEmailVerificationResponse struct {
 	*responses.BaseResponse
 	RequestId      string              `json:"RequestId" xml:"RequestId"`
@@ -96,8 +98,8 @@ type ListEmailVerificationResponse struct {
 	Data           []EmailVerification `json:"Data" xml:"Data"`
 }
 
-// create a request to invoke ListEmailVerification API
-func CreateListEmailVerificationRequest() (request *ListEmailVerificationRequest) {
+// CreateListEmailVerificationRequest creates a request to invoke ListEmailVerification API
+func CreateListEmailVerificationRequest(request *ListEmailVerificationRequest) {
 	request = &ListEmailVerificationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -105,7 +107,7 @@ func CreateListEmailVerificationRequest() (request *ListEmailVerificationRequest
 	return
 }
 
-// create a response to parse from ListEmailVerification response
+// CreateListEmailVerificationResponse creates a response to parse from ListEmailVerification response
 func CreateListEmailVerificationResponse() (response *ListEmailVerificationResponse) {
 	response = &ListEmailVerificationResponse{
 		BaseResponse: &responses.BaseResponse{},

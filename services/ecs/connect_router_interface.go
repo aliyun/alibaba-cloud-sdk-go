@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ConnectRouterInterface api with *ConnectRouterInterfaceRequest synchronously
+// ConnectRouterInterface invokes the ecs.ConnectRouterInterface API synchronously
 // api document: https://help.aliyun.com/api/ecs/connectrouterinterface.html
 func (client *Client) ConnectRouterInterface(request *ConnectRouterInterfaceRequest) (response *ConnectRouterInterfaceResponse, err error) {
 	response = CreateConnectRouterInterfaceResponse()
@@ -28,7 +28,7 @@ func (client *Client) ConnectRouterInterface(request *ConnectRouterInterfaceRequ
 	return
 }
 
-// invoke ConnectRouterInterface api with *ConnectRouterInterfaceRequest asynchronously
+// ConnectRouterInterfaceWithChan invokes the ecs.ConnectRouterInterface API asynchronously
 // api document: https://help.aliyun.com/api/ecs/connectrouterinterface.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ConnectRouterInterfaceWithChan(request *ConnectRouterInterfaceRequest) (<-chan *ConnectRouterInterfaceResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ConnectRouterInterfaceWithChan(request *ConnectRouterInter
 	return responseChan, errChan
 }
 
-// invoke ConnectRouterInterface api with *ConnectRouterInterfaceRequest asynchronously
+// ConnectRouterInterfaceWithCallback invokes the ecs.ConnectRouterInterface API asynchronously
 // api document: https://help.aliyun.com/api/ecs/connectrouterinterface.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ConnectRouterInterfaceWithCallback(request *ConnectRouterInterfaceRequest, callback func(response *ConnectRouterInterfaceResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ConnectRouterInterfaceWithCallback(request *ConnectRouterI
 	return result
 }
 
+// ConnectRouterInterfaceRequest is the request struct for api ConnectRouterInterface
 type ConnectRouterInterfaceRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -81,13 +82,14 @@ type ConnectRouterInterfaceRequest struct {
 	RouterInterfaceId    string           `position:"Query" name:"RouterInterfaceId"`
 }
 
+// ConnectRouterInterfaceResponse is the response struct for api ConnectRouterInterface
 type ConnectRouterInterfaceResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ConnectRouterInterface API
-func CreateConnectRouterInterfaceRequest() (request *ConnectRouterInterfaceRequest) {
+// CreateConnectRouterInterfaceRequest creates a request to invoke ConnectRouterInterface API
+func CreateConnectRouterInterfaceRequest(request *ConnectRouterInterfaceRequest) {
 	request = &ConnectRouterInterfaceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateConnectRouterInterfaceRequest() (request *ConnectRouterInterfaceReque
 	return
 }
 
-// create a response to parse from ConnectRouterInterface response
+// CreateConnectRouterInterfaceResponse creates a response to parse from ConnectRouterInterface response
 func CreateConnectRouterInterfaceResponse() (response *ConnectRouterInterfaceResponse) {
 	response = &ConnectRouterInterfaceResponse{
 		BaseResponse: &responses.BaseResponse{},

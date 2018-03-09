@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeDomainPathData api with *DescribeDomainPathDataRequest synchronously
+// DescribeDomainPathData invokes the cdn.DescribeDomainPathData API synchronously
 // api document: https://help.aliyun.com/api/cdn/describedomainpathdata.html
 func (client *Client) DescribeDomainPathData(request *DescribeDomainPathDataRequest) (response *DescribeDomainPathDataResponse, err error) {
 	response = CreateDescribeDomainPathDataResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeDomainPathData(request *DescribeDomainPathDataRequ
 	return
 }
 
-// invoke DescribeDomainPathData api with *DescribeDomainPathDataRequest asynchronously
+// DescribeDomainPathDataWithChan invokes the cdn.DescribeDomainPathData API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describedomainpathdata.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainPathDataWithChan(request *DescribeDomainPathDataRequest) (<-chan *DescribeDomainPathDataResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeDomainPathDataWithChan(request *DescribeDomainPath
 	return responseChan, errChan
 }
 
-// invoke DescribeDomainPathData api with *DescribeDomainPathDataRequest asynchronously
+// DescribeDomainPathDataWithCallback invokes the cdn.DescribeDomainPathData API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describedomainpathdata.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainPathDataWithCallback(request *DescribeDomainPathDataRequest, callback func(response *DescribeDomainPathDataResponse, err error)) <-chan int {
@@ -73,10 +73,12 @@ func (client *Client) DescribeDomainPathDataWithCallback(request *DescribeDomain
 	return result
 }
 
+// DescribeDomainPathDataRequest is the request struct for api DescribeDomainPathData
 type DescribeDomainPathDataRequest struct {
 	*requests.RpcRequest
 }
 
+// DescribeDomainPathDataResponse is the response struct for api DescribeDomainPathData
 type DescribeDomainPathDataResponse struct {
 	*responses.BaseResponse
 	DomainName          string              `json:"DomainName" xml:"DomainName"`
@@ -89,8 +91,8 @@ type DescribeDomainPathDataResponse struct {
 	PathDataPerInterval PathDataPerInterval `json:"PathDataPerInterval" xml:"PathDataPerInterval"`
 }
 
-// create a request to invoke DescribeDomainPathData API
-func CreateDescribeDomainPathDataRequest() (request *DescribeDomainPathDataRequest) {
+// CreateDescribeDomainPathDataRequest creates a request to invoke DescribeDomainPathData API
+func CreateDescribeDomainPathDataRequest(request *DescribeDomainPathDataRequest) {
 	request = &DescribeDomainPathDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateDescribeDomainPathDataRequest() (request *DescribeDomainPathDataReque
 	return
 }
 
-// create a response to parse from DescribeDomainPathData response
+// CreateDescribeDomainPathDataResponse creates a response to parse from DescribeDomainPathData response
 func CreateDescribeDomainPathDataResponse() (response *DescribeDomainPathDataResponse) {
 	response = &DescribeDomainPathDataResponse{
 		BaseResponse: &responses.BaseResponse{},

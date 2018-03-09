@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CreateReceiver api with *CreateReceiverRequest synchronously
+// CreateReceiver invokes the dm.CreateReceiver API synchronously
 // api document: https://help.aliyun.com/api/dm/createreceiver.html
 func (client *Client) CreateReceiver(request *CreateReceiverRequest) (response *CreateReceiverResponse, err error) {
 	response = CreateCreateReceiverResponse()
@@ -28,7 +28,7 @@ func (client *Client) CreateReceiver(request *CreateReceiverRequest) (response *
 	return
 }
 
-// invoke CreateReceiver api with *CreateReceiverRequest asynchronously
+// CreateReceiverWithChan invokes the dm.CreateReceiver API asynchronously
 // api document: https://help.aliyun.com/api/dm/createreceiver.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateReceiverWithChan(request *CreateReceiverRequest) (<-chan *CreateReceiverResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CreateReceiverWithChan(request *CreateReceiverRequest) (<-
 	return responseChan, errChan
 }
 
-// invoke CreateReceiver api with *CreateReceiverRequest asynchronously
+// CreateReceiverWithCallback invokes the dm.CreateReceiver API asynchronously
 // api document: https://help.aliyun.com/api/dm/createreceiver.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateReceiverWithCallback(request *CreateReceiverRequest, callback func(response *CreateReceiverResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) CreateReceiverWithCallback(request *CreateReceiverRequest,
 	return result
 }
 
+// CreateReceiverRequest is the request struct for api CreateReceiver
 type CreateReceiverRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -83,13 +84,14 @@ type CreateReceiverRequest struct {
 	Desc                 string           `position:"Query" name:"Desc"`
 }
 
+// CreateReceiverResponse is the response struct for api CreateReceiver
 type CreateReceiverResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke CreateReceiver API
-func CreateCreateReceiverRequest() (request *CreateReceiverRequest) {
+// CreateCreateReceiverRequest creates a request to invoke CreateReceiver API
+func CreateCreateReceiverRequest(request *CreateReceiverRequest) {
 	request = &CreateReceiverRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateCreateReceiverRequest() (request *CreateReceiverRequest) {
 	return
 }
 
-// create a response to parse from CreateReceiver response
+// CreateCreateReceiverResponse creates a response to parse from CreateReceiver response
 func CreateCreateReceiverResponse() (response *CreateReceiverResponse) {
 	response = &CreateReceiverResponse{
 		BaseResponse: &responses.BaseResponse{},

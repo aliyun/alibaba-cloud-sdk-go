@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteAlarm api with *DeleteAlarmRequest synchronously
+// DeleteAlarm invokes the cms.DeleteAlarm API synchronously
 // api document: https://help.aliyun.com/api/cms/deletealarm.html
 func (client *Client) DeleteAlarm(request *DeleteAlarmRequest) (response *DeleteAlarmResponse, err error) {
 	response = CreateDeleteAlarmResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteAlarm(request *DeleteAlarmRequest) (response *Delete
 	return
 }
 
-// invoke DeleteAlarm api with *DeleteAlarmRequest asynchronously
+// DeleteAlarmWithChan invokes the cms.DeleteAlarm API asynchronously
 // api document: https://help.aliyun.com/api/cms/deletealarm.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteAlarmWithChan(request *DeleteAlarmRequest) (<-chan *DeleteAlarmResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteAlarmWithChan(request *DeleteAlarmRequest) (<-chan *
 	return responseChan, errChan
 }
 
-// invoke DeleteAlarm api with *DeleteAlarmRequest asynchronously
+// DeleteAlarmWithCallback invokes the cms.DeleteAlarm API asynchronously
 // api document: https://help.aliyun.com/api/cms/deletealarm.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteAlarmWithCallback(request *DeleteAlarmRequest, callback func(response *DeleteAlarmResponse, err error)) <-chan int {
@@ -73,12 +73,14 @@ func (client *Client) DeleteAlarmWithCallback(request *DeleteAlarmRequest, callb
 	return result
 }
 
+// DeleteAlarmRequest is the request struct for api DeleteAlarm
 type DeleteAlarmRequest struct {
 	*requests.RpcRequest
 	CallbyCmsOwner string `position:"Query" name:"callby_cms_owner"`
 	Id             string `position:"Query" name:"Id"`
 }
 
+// DeleteAlarmResponse is the response struct for api DeleteAlarm
 type DeleteAlarmResponse struct {
 	*responses.BaseResponse
 	Success   bool   `json:"Success" xml:"Success"`
@@ -87,8 +89,8 @@ type DeleteAlarmResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DeleteAlarm API
-func CreateDeleteAlarmRequest() (request *DeleteAlarmRequest) {
+// CreateDeleteAlarmRequest creates a request to invoke DeleteAlarm API
+func CreateDeleteAlarmRequest(request *DeleteAlarmRequest) {
 	request = &DeleteAlarmRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -96,7 +98,7 @@ func CreateDeleteAlarmRequest() (request *DeleteAlarmRequest) {
 	return
 }
 
-// create a response to parse from DeleteAlarm response
+// CreateDeleteAlarmResponse creates a response to parse from DeleteAlarm response
 func CreateDeleteAlarmResponse() (response *DeleteAlarmResponse) {
 	response = &DeleteAlarmResponse{
 		BaseResponse: &responses.BaseResponse{},

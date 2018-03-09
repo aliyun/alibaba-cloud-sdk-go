@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeIpAttackEvent api with *DescribeIpAttackEventRequest synchronously
+// DescribeIpAttackEvent invokes the ddospro.DescribeIpAttackEvent API synchronously
 // api document: https://help.aliyun.com/api/ddospro/describeipattackevent.html
 func (client *Client) DescribeIpAttackEvent(request *DescribeIpAttackEventRequest) (response *DescribeIpAttackEventResponse, err error) {
 	response = CreateDescribeIpAttackEventResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeIpAttackEvent(request *DescribeIpAttackEventReques
 	return
 }
 
-// invoke DescribeIpAttackEvent api with *DescribeIpAttackEventRequest asynchronously
+// DescribeIpAttackEventWithChan invokes the ddospro.DescribeIpAttackEvent API asynchronously
 // api document: https://help.aliyun.com/api/ddospro/describeipattackevent.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeIpAttackEventWithChan(request *DescribeIpAttackEventRequest) (<-chan *DescribeIpAttackEventResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeIpAttackEventWithChan(request *DescribeIpAttackEve
 	return responseChan, errChan
 }
 
-// invoke DescribeIpAttackEvent api with *DescribeIpAttackEventRequest asynchronously
+// DescribeIpAttackEventWithCallback invokes the ddospro.DescribeIpAttackEvent API asynchronously
 // api document: https://help.aliyun.com/api/ddospro/describeipattackevent.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeIpAttackEventWithCallback(request *DescribeIpAttackEventRequest, callback func(response *DescribeIpAttackEventResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeIpAttackEventWithCallback(request *DescribeIpAttac
 	return result
 }
 
+// DescribeIpAttackEventRequest is the request struct for api DescribeIpAttackEvent
 type DescribeIpAttackEventRequest struct {
 	*requests.RpcRequest
 	StartDateMillis requests.Integer `position:"Query" name:"StartDateMillis"`
@@ -82,6 +83,7 @@ type DescribeIpAttackEventRequest struct {
 	Ip              string           `position:"Query" name:"Ip"`
 }
 
+// DescribeIpAttackEventResponse is the response struct for api DescribeIpAttackEvent
 type DescribeIpAttackEventResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
@@ -91,8 +93,8 @@ type DescribeIpAttackEventResponse struct {
 	Data      Data   `json:"Data" xml:"Data"`
 }
 
-// create a request to invoke DescribeIpAttackEvent API
-func CreateDescribeIpAttackEventRequest() (request *DescribeIpAttackEventRequest) {
+// CreateDescribeIpAttackEventRequest creates a request to invoke DescribeIpAttackEvent API
+func CreateDescribeIpAttackEventRequest(request *DescribeIpAttackEventRequest) {
 	request = &DescribeIpAttackEventRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -100,7 +102,7 @@ func CreateDescribeIpAttackEventRequest() (request *DescribeIpAttackEventRequest
 	return
 }
 
-// create a response to parse from DescribeIpAttackEvent response
+// CreateDescribeIpAttackEventResponse creates a response to parse from DescribeIpAttackEvent response
 func CreateDescribeIpAttackEventResponse() (response *DescribeIpAttackEventResponse) {
 	response = &DescribeIpAttackEventResponse{
 		BaseResponse: &responses.BaseResponse{},

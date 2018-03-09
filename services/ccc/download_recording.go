@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DownloadRecording api with *DownloadRecordingRequest synchronously
+// DownloadRecording invokes the ccc.DownloadRecording API synchronously
 // api document: https://help.aliyun.com/api/ccc/downloadrecording.html
 func (client *Client) DownloadRecording(request *DownloadRecordingRequest) (response *DownloadRecordingResponse, err error) {
 	response = CreateDownloadRecordingResponse()
@@ -28,7 +28,7 @@ func (client *Client) DownloadRecording(request *DownloadRecordingRequest) (resp
 	return
 }
 
-// invoke DownloadRecording api with *DownloadRecordingRequest asynchronously
+// DownloadRecordingWithChan invokes the ccc.DownloadRecording API asynchronously
 // api document: https://help.aliyun.com/api/ccc/downloadrecording.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DownloadRecordingWithChan(request *DownloadRecordingRequest) (<-chan *DownloadRecordingResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DownloadRecordingWithChan(request *DownloadRecordingReques
 	return responseChan, errChan
 }
 
-// invoke DownloadRecording api with *DownloadRecordingRequest asynchronously
+// DownloadRecordingWithCallback invokes the ccc.DownloadRecording API asynchronously
 // api document: https://help.aliyun.com/api/ccc/downloadrecording.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DownloadRecordingWithCallback(request *DownloadRecordingRequest, callback func(response *DownloadRecordingResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DownloadRecordingWithCallback(request *DownloadRecordingRe
 	return result
 }
 
+// DownloadRecordingRequest is the request struct for api DownloadRecording
 type DownloadRecordingRequest struct {
 	*requests.RpcRequest
 	InstanceId string `position:"Query" name:"InstanceId"`
@@ -80,6 +81,7 @@ type DownloadRecordingRequest struct {
 	Channel    string `position:"Query" name:"Channel"`
 }
 
+// DownloadRecordingResponse is the response struct for api DownloadRecording
 type DownloadRecordingResponse struct {
 	*responses.BaseResponse
 	RequestId          string             `json:"RequestId" xml:"RequestId"`
@@ -90,8 +92,8 @@ type DownloadRecordingResponse struct {
 	MediaDownloadParam MediaDownloadParam `json:"MediaDownloadParam" xml:"MediaDownloadParam"`
 }
 
-// create a request to invoke DownloadRecording API
-func CreateDownloadRecordingRequest() (request *DownloadRecordingRequest) {
+// CreateDownloadRecordingRequest creates a request to invoke DownloadRecording API
+func CreateDownloadRecordingRequest(request *DownloadRecordingRequest) {
 	request = &DownloadRecordingRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateDownloadRecordingRequest() (request *DownloadRecordingRequest) {
 	return
 }
 
-// create a response to parse from DownloadRecording response
+// CreateDownloadRecordingResponse creates a response to parse from DownloadRecording response
 func CreateDownloadRecordingResponse() (response *DownloadRecordingResponse) {
 	response = &DownloadRecordingResponse{
 		BaseResponse: &responses.BaseResponse{},

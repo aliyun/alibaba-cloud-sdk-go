@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifySecurityGroupAttribute api with *ModifySecurityGroupAttributeRequest synchronously
+// ModifySecurityGroupAttribute invokes the ecs.ModifySecurityGroupAttribute API synchronously
 // api document: https://help.aliyun.com/api/ecs/modifysecuritygroupattribute.html
 func (client *Client) ModifySecurityGroupAttribute(request *ModifySecurityGroupAttributeRequest) (response *ModifySecurityGroupAttributeResponse, err error) {
 	response = CreateModifySecurityGroupAttributeResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifySecurityGroupAttribute(request *ModifySecurityGroupA
 	return
 }
 
-// invoke ModifySecurityGroupAttribute api with *ModifySecurityGroupAttributeRequest asynchronously
+// ModifySecurityGroupAttributeWithChan invokes the ecs.ModifySecurityGroupAttribute API asynchronously
 // api document: https://help.aliyun.com/api/ecs/modifysecuritygroupattribute.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySecurityGroupAttributeWithChan(request *ModifySecurityGroupAttributeRequest) (<-chan *ModifySecurityGroupAttributeResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifySecurityGroupAttributeWithChan(request *ModifySecuri
 	return responseChan, errChan
 }
 
-// invoke ModifySecurityGroupAttribute api with *ModifySecurityGroupAttributeRequest asynchronously
+// ModifySecurityGroupAttributeWithCallback invokes the ecs.ModifySecurityGroupAttribute API asynchronously
 // api document: https://help.aliyun.com/api/ecs/modifysecuritygroupattribute.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySecurityGroupAttributeWithCallback(request *ModifySecurityGroupAttributeRequest, callback func(response *ModifySecurityGroupAttributeResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ModifySecurityGroupAttributeWithCallback(request *ModifySe
 	return result
 }
 
+// ModifySecurityGroupAttributeRequest is the request struct for api ModifySecurityGroupAttribute
 type ModifySecurityGroupAttributeRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,13 +85,14 @@ type ModifySecurityGroupAttributeRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// ModifySecurityGroupAttributeResponse is the response struct for api ModifySecurityGroupAttribute
 type ModifySecurityGroupAttributeResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ModifySecurityGroupAttribute API
-func CreateModifySecurityGroupAttributeRequest() (request *ModifySecurityGroupAttributeRequest) {
+// CreateModifySecurityGroupAttributeRequest creates a request to invoke ModifySecurityGroupAttribute API
+func CreateModifySecurityGroupAttributeRequest(request *ModifySecurityGroupAttributeRequest) {
 	request = &ModifySecurityGroupAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateModifySecurityGroupAttributeRequest() (request *ModifySecurityGroupAt
 	return
 }
 
-// create a response to parse from ModifySecurityGroupAttribute response
+// CreateModifySecurityGroupAttributeResponse creates a response to parse from ModifySecurityGroupAttribute response
 func CreateModifySecurityGroupAttributeResponse() (response *ModifySecurityGroupAttributeResponse) {
 	response = &ModifySecurityGroupAttributeResponse{
 		BaseResponse: &responses.BaseResponse{},

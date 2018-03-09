@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteBlockhole api with *DeleteBlockholeRequest synchronously
+// DeleteBlockhole invokes the ddospro.DeleteBlockhole API synchronously
 // api document: https://help.aliyun.com/api/ddospro/deleteblockhole.html
 func (client *Client) DeleteBlockhole(request *DeleteBlockholeRequest) (response *DeleteBlockholeResponse, err error) {
 	response = CreateDeleteBlockholeResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteBlockhole(request *DeleteBlockholeRequest) (response
 	return
 }
 
-// invoke DeleteBlockhole api with *DeleteBlockholeRequest asynchronously
+// DeleteBlockholeWithChan invokes the ddospro.DeleteBlockhole API asynchronously
 // api document: https://help.aliyun.com/api/ddospro/deleteblockhole.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteBlockholeWithChan(request *DeleteBlockholeRequest) (<-chan *DeleteBlockholeResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteBlockholeWithChan(request *DeleteBlockholeRequest) (
 	return responseChan, errChan
 }
 
-// invoke DeleteBlockhole api with *DeleteBlockholeRequest asynchronously
+// DeleteBlockholeWithCallback invokes the ddospro.DeleteBlockhole API asynchronously
 // api document: https://help.aliyun.com/api/ddospro/deleteblockhole.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteBlockholeWithCallback(request *DeleteBlockholeRequest, callback func(response *DeleteBlockholeResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DeleteBlockholeWithCallback(request *DeleteBlockholeReques
 	return result
 }
 
+// DeleteBlockholeRequest is the request struct for api DeleteBlockhole
 type DeleteBlockholeRequest struct {
 	*requests.RpcRequest
 	SourceIp        string           `position:"Query" name:"SourceIp"`
@@ -80,13 +81,14 @@ type DeleteBlockholeRequest struct {
 	Vip             string           `position:"Query" name:"Vip"`
 }
 
+// DeleteBlockholeResponse is the response struct for api DeleteBlockhole
 type DeleteBlockholeResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DeleteBlockhole API
-func CreateDeleteBlockholeRequest() (request *DeleteBlockholeRequest) {
+// CreateDeleteBlockholeRequest creates a request to invoke DeleteBlockhole API
+func CreateDeleteBlockholeRequest(request *DeleteBlockholeRequest) {
 	request = &DeleteBlockholeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -94,7 +96,7 @@ func CreateDeleteBlockholeRequest() (request *DeleteBlockholeRequest) {
 	return
 }
 
-// create a response to parse from DeleteBlockhole response
+// CreateDeleteBlockholeResponse creates a response to parse from DeleteBlockhole response
 func CreateDeleteBlockholeResponse() (response *DeleteBlockholeResponse) {
 	response = &DeleteBlockholeResponse{
 		BaseResponse: &responses.BaseResponse{},

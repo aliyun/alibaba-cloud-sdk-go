@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke BindAlias api with *BindAliasRequest synchronously
+// BindAlias invokes the push.BindAlias API synchronously
 // api document: https://help.aliyun.com/api/push/bindalias.html
 func (client *Client) BindAlias(request *BindAliasRequest) (response *BindAliasResponse, err error) {
 	response = CreateBindAliasResponse()
@@ -28,7 +28,7 @@ func (client *Client) BindAlias(request *BindAliasRequest) (response *BindAliasR
 	return
 }
 
-// invoke BindAlias api with *BindAliasRequest asynchronously
+// BindAliasWithChan invokes the push.BindAlias API asynchronously
 // api document: https://help.aliyun.com/api/push/bindalias.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BindAliasWithChan(request *BindAliasRequest) (<-chan *BindAliasResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) BindAliasWithChan(request *BindAliasRequest) (<-chan *Bind
 	return responseChan, errChan
 }
 
-// invoke BindAlias api with *BindAliasRequest asynchronously
+// BindAliasWithCallback invokes the push.BindAlias API asynchronously
 // api document: https://help.aliyun.com/api/push/bindalias.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BindAliasWithCallback(request *BindAliasRequest, callback func(response *BindAliasResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) BindAliasWithCallback(request *BindAliasRequest, callback 
 	return result
 }
 
+// BindAliasRequest is the request struct for api BindAlias
 type BindAliasRequest struct {
 	*requests.RpcRequest
 	AppKey    requests.Integer `position:"Query" name:"AppKey"`
@@ -80,13 +81,14 @@ type BindAliasRequest struct {
 	AliasName string           `position:"Query" name:"AliasName"`
 }
 
+// BindAliasResponse is the response struct for api BindAlias
 type BindAliasResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke BindAlias API
-func CreateBindAliasRequest() (request *BindAliasRequest) {
+// CreateBindAliasRequest creates a request to invoke BindAlias API
+func CreateBindAliasRequest(request *BindAliasRequest) {
 	request = &BindAliasRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -94,7 +96,7 @@ func CreateBindAliasRequest() (request *BindAliasRequest) {
 	return
 }
 
-// create a response to parse from BindAlias response
+// CreateBindAliasResponse creates a response to parse from BindAlias response
 func CreateBindAliasResponse() (response *BindAliasResponse) {
 	response = &BindAliasResponse{
 		BaseResponse: &responses.BaseResponse{},

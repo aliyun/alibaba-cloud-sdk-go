@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteCdnDomain api with *DeleteCdnDomainRequest synchronously
+// DeleteCdnDomain invokes the cdn.DeleteCdnDomain API synchronously
 // api document: https://help.aliyun.com/api/cdn/deletecdndomain.html
 func (client *Client) DeleteCdnDomain(request *DeleteCdnDomainRequest) (response *DeleteCdnDomainResponse, err error) {
 	response = CreateDeleteCdnDomainResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteCdnDomain(request *DeleteCdnDomainRequest) (response
 	return
 }
 
-// invoke DeleteCdnDomain api with *DeleteCdnDomainRequest asynchronously
+// DeleteCdnDomainWithChan invokes the cdn.DeleteCdnDomain API asynchronously
 // api document: https://help.aliyun.com/api/cdn/deletecdndomain.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteCdnDomainWithChan(request *DeleteCdnDomainRequest) (<-chan *DeleteCdnDomainResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteCdnDomainWithChan(request *DeleteCdnDomainRequest) (
 	return responseChan, errChan
 }
 
-// invoke DeleteCdnDomain api with *DeleteCdnDomainRequest asynchronously
+// DeleteCdnDomainWithCallback invokes the cdn.DeleteCdnDomain API asynchronously
 // api document: https://help.aliyun.com/api/cdn/deletecdndomain.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteCdnDomainWithCallback(request *DeleteCdnDomainRequest, callback func(response *DeleteCdnDomainResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DeleteCdnDomainWithCallback(request *DeleteCdnDomainReques
 	return result
 }
 
+// DeleteCdnDomainRequest is the request struct for api DeleteCdnDomain
 type DeleteCdnDomainRequest struct {
 	*requests.RpcRequest
 	OwnerId         requests.Integer `position:"Query" name:"OwnerId"`
@@ -81,13 +82,14 @@ type DeleteCdnDomainRequest struct {
 	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
 }
 
+// DeleteCdnDomainResponse is the response struct for api DeleteCdnDomain
 type DeleteCdnDomainResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DeleteCdnDomain API
-func CreateDeleteCdnDomainRequest() (request *DeleteCdnDomainRequest) {
+// CreateDeleteCdnDomainRequest creates a request to invoke DeleteCdnDomain API
+func CreateDeleteCdnDomainRequest(request *DeleteCdnDomainRequest) {
 	request = &DeleteCdnDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateDeleteCdnDomainRequest() (request *DeleteCdnDomainRequest) {
 	return
 }
 
-// create a response to parse from DeleteCdnDomain response
+// CreateDeleteCdnDomainResponse creates a response to parse from DeleteCdnDomain response
 func CreateDeleteCdnDomainResponse() (response *DeleteCdnDomainResponse) {
 	response = &DeleteCdnDomainResponse{
 		BaseResponse: &responses.BaseResponse{},

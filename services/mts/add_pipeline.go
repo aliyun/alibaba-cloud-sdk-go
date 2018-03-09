@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke AddPipeline api with *AddPipelineRequest synchronously
+// AddPipeline invokes the mts.AddPipeline API synchronously
 // api document: https://help.aliyun.com/api/mts/addpipeline.html
 func (client *Client) AddPipeline(request *AddPipelineRequest) (response *AddPipelineResponse, err error) {
 	response = CreateAddPipelineResponse()
@@ -28,7 +28,7 @@ func (client *Client) AddPipeline(request *AddPipelineRequest) (response *AddPip
 	return
 }
 
-// invoke AddPipeline api with *AddPipelineRequest asynchronously
+// AddPipelineWithChan invokes the mts.AddPipeline API asynchronously
 // api document: https://help.aliyun.com/api/mts/addpipeline.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddPipelineWithChan(request *AddPipelineRequest) (<-chan *AddPipelineResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) AddPipelineWithChan(request *AddPipelineRequest) (<-chan *
 	return responseChan, errChan
 }
 
-// invoke AddPipeline api with *AddPipelineRequest asynchronously
+// AddPipelineWithCallback invokes the mts.AddPipeline API asynchronously
 // api document: https://help.aliyun.com/api/mts/addpipeline.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddPipelineWithCallback(request *AddPipelineRequest, callback func(response *AddPipelineResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) AddPipelineWithCallback(request *AddPipelineRequest, callb
 	return result
 }
 
+// AddPipelineRequest is the request struct for api AddPipeline
 type AddPipelineRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -86,14 +87,15 @@ type AddPipelineRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// AddPipelineResponse is the response struct for api AddPipeline
 type AddPipelineResponse struct {
 	*responses.BaseResponse
 	RequestId string   `json:"RequestId" xml:"RequestId"`
 	Pipeline  Pipeline `json:"Pipeline" xml:"Pipeline"`
 }
 
-// create a request to invoke AddPipeline API
-func CreateAddPipelineRequest() (request *AddPipelineRequest) {
+// CreateAddPipelineRequest creates a request to invoke AddPipeline API
+func CreateAddPipelineRequest(request *AddPipelineRequest) {
 	request = &AddPipelineRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -101,7 +103,7 @@ func CreateAddPipelineRequest() (request *AddPipelineRequest) {
 	return
 }
 
-// create a response to parse from AddPipeline response
+// CreateAddPipelineResponse creates a response to parse from AddPipeline response
 func CreateAddPipelineResponse() (response *AddPipelineResponse) {
 	response = &AddPipelineResponse{
 		BaseResponse: &responses.BaseResponse{},

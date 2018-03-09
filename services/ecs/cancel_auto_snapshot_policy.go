@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CancelAutoSnapshotPolicy api with *CancelAutoSnapshotPolicyRequest synchronously
+// CancelAutoSnapshotPolicy invokes the ecs.CancelAutoSnapshotPolicy API synchronously
 // api document: https://help.aliyun.com/api/ecs/cancelautosnapshotpolicy.html
 func (client *Client) CancelAutoSnapshotPolicy(request *CancelAutoSnapshotPolicyRequest) (response *CancelAutoSnapshotPolicyResponse, err error) {
 	response = CreateCancelAutoSnapshotPolicyResponse()
@@ -28,7 +28,7 @@ func (client *Client) CancelAutoSnapshotPolicy(request *CancelAutoSnapshotPolicy
 	return
 }
 
-// invoke CancelAutoSnapshotPolicy api with *CancelAutoSnapshotPolicyRequest asynchronously
+// CancelAutoSnapshotPolicyWithChan invokes the ecs.CancelAutoSnapshotPolicy API asynchronously
 // api document: https://help.aliyun.com/api/ecs/cancelautosnapshotpolicy.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CancelAutoSnapshotPolicyWithChan(request *CancelAutoSnapshotPolicyRequest) (<-chan *CancelAutoSnapshotPolicyResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CancelAutoSnapshotPolicyWithChan(request *CancelAutoSnapsh
 	return responseChan, errChan
 }
 
-// invoke CancelAutoSnapshotPolicy api with *CancelAutoSnapshotPolicyRequest asynchronously
+// CancelAutoSnapshotPolicyWithCallback invokes the ecs.CancelAutoSnapshotPolicy API asynchronously
 // api document: https://help.aliyun.com/api/ecs/cancelautosnapshotpolicy.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CancelAutoSnapshotPolicyWithCallback(request *CancelAutoSnapshotPolicyRequest, callback func(response *CancelAutoSnapshotPolicyResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) CancelAutoSnapshotPolicyWithCallback(request *CancelAutoSn
 	return result
 }
 
+// CancelAutoSnapshotPolicyRequest is the request struct for api CancelAutoSnapshotPolicy
 type CancelAutoSnapshotPolicyRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -81,13 +82,14 @@ type CancelAutoSnapshotPolicyRequest struct {
 	DiskIds              string           `position:"Query" name:"diskIds"`
 }
 
+// CancelAutoSnapshotPolicyResponse is the response struct for api CancelAutoSnapshotPolicy
 type CancelAutoSnapshotPolicyResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke CancelAutoSnapshotPolicy API
-func CreateCancelAutoSnapshotPolicyRequest() (request *CancelAutoSnapshotPolicyRequest) {
+// CreateCancelAutoSnapshotPolicyRequest creates a request to invoke CancelAutoSnapshotPolicy API
+func CreateCancelAutoSnapshotPolicyRequest(request *CancelAutoSnapshotPolicyRequest) {
 	request = &CancelAutoSnapshotPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateCancelAutoSnapshotPolicyRequest() (request *CancelAutoSnapshotPolicyR
 	return
 }
 
-// create a response to parse from CancelAutoSnapshotPolicy response
+// CreateCancelAutoSnapshotPolicyResponse creates a response to parse from CancelAutoSnapshotPolicy response
 func CreateCancelAutoSnapshotPolicyResponse() (response *CancelAutoSnapshotPolicyResponse) {
 	response = &CancelAutoSnapshotPolicyResponse{
 		BaseResponse: &responses.BaseResponse{},

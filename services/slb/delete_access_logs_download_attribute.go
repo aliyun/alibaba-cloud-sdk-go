@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteAccessLogsDownloadAttribute api with *DeleteAccessLogsDownloadAttributeRequest synchronously
+// DeleteAccessLogsDownloadAttribute invokes the slb.DeleteAccessLogsDownloadAttribute API synchronously
 // api document: https://help.aliyun.com/api/slb/deleteaccesslogsdownloadattribute.html
 func (client *Client) DeleteAccessLogsDownloadAttribute(request *DeleteAccessLogsDownloadAttributeRequest) (response *DeleteAccessLogsDownloadAttributeResponse, err error) {
 	response = CreateDeleteAccessLogsDownloadAttributeResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteAccessLogsDownloadAttribute(request *DeleteAccessLog
 	return
 }
 
-// invoke DeleteAccessLogsDownloadAttribute api with *DeleteAccessLogsDownloadAttributeRequest asynchronously
+// DeleteAccessLogsDownloadAttributeWithChan invokes the slb.DeleteAccessLogsDownloadAttribute API asynchronously
 // api document: https://help.aliyun.com/api/slb/deleteaccesslogsdownloadattribute.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteAccessLogsDownloadAttributeWithChan(request *DeleteAccessLogsDownloadAttributeRequest) (<-chan *DeleteAccessLogsDownloadAttributeResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteAccessLogsDownloadAttributeWithChan(request *DeleteA
 	return responseChan, errChan
 }
 
-// invoke DeleteAccessLogsDownloadAttribute api with *DeleteAccessLogsDownloadAttributeRequest asynchronously
+// DeleteAccessLogsDownloadAttributeWithCallback invokes the slb.DeleteAccessLogsDownloadAttribute API asynchronously
 // api document: https://help.aliyun.com/api/slb/deleteaccesslogsdownloadattribute.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteAccessLogsDownloadAttributeWithCallback(request *DeleteAccessLogsDownloadAttributeRequest, callback func(response *DeleteAccessLogsDownloadAttributeResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DeleteAccessLogsDownloadAttributeWithCallback(request *Del
 	return result
 }
 
+// DeleteAccessLogsDownloadAttributeRequest is the request struct for api DeleteAccessLogsDownloadAttribute
 type DeleteAccessLogsDownloadAttributeRequest struct {
 	*requests.RpcRequest
 	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
@@ -85,13 +86,14 @@ type DeleteAccessLogsDownloadAttributeRequest struct {
 	LogsDownloadAttributes string           `position:"Query" name:"LogsDownloadAttributes"`
 }
 
+// DeleteAccessLogsDownloadAttributeResponse is the response struct for api DeleteAccessLogsDownloadAttribute
 type DeleteAccessLogsDownloadAttributeResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DeleteAccessLogsDownloadAttribute API
-func CreateDeleteAccessLogsDownloadAttributeRequest() (request *DeleteAccessLogsDownloadAttributeRequest) {
+// CreateDeleteAccessLogsDownloadAttributeRequest creates a request to invoke DeleteAccessLogsDownloadAttribute API
+func CreateDeleteAccessLogsDownloadAttributeRequest(request *DeleteAccessLogsDownloadAttributeRequest) {
 	request = &DeleteAccessLogsDownloadAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateDeleteAccessLogsDownloadAttributeRequest() (request *DeleteAccessLogs
 	return
 }
 
-// create a response to parse from DeleteAccessLogsDownloadAttribute response
+// CreateDeleteAccessLogsDownloadAttributeResponse creates a response to parse from DeleteAccessLogsDownloadAttribute response
 func CreateDeleteAccessLogsDownloadAttributeResponse() (response *DeleteAccessLogsDownloadAttributeResponse) {
 	response = &DeleteAccessLogsDownloadAttributeResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeOssDownloadsForSQLServer api with *DescribeOssDownloadsForSQLServerRequest synchronously
+// DescribeOssDownloadsForSQLServer invokes the rds.DescribeOssDownloadsForSQLServer API synchronously
 // api document: https://help.aliyun.com/api/rds/describeossdownloadsforsqlserver.html
 func (client *Client) DescribeOssDownloadsForSQLServer(request *DescribeOssDownloadsForSQLServerRequest) (response *DescribeOssDownloadsForSQLServerResponse, err error) {
 	response = CreateDescribeOssDownloadsForSQLServerResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeOssDownloadsForSQLServer(request *DescribeOssDownl
 	return
 }
 
-// invoke DescribeOssDownloadsForSQLServer api with *DescribeOssDownloadsForSQLServerRequest asynchronously
+// DescribeOssDownloadsForSQLServerWithChan invokes the rds.DescribeOssDownloadsForSQLServer API asynchronously
 // api document: https://help.aliyun.com/api/rds/describeossdownloadsforsqlserver.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeOssDownloadsForSQLServerWithChan(request *DescribeOssDownloadsForSQLServerRequest) (<-chan *DescribeOssDownloadsForSQLServerResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeOssDownloadsForSQLServerWithChan(request *Describe
 	return responseChan, errChan
 }
 
-// invoke DescribeOssDownloadsForSQLServer api with *DescribeOssDownloadsForSQLServerRequest asynchronously
+// DescribeOssDownloadsForSQLServerWithCallback invokes the rds.DescribeOssDownloadsForSQLServer API asynchronously
 // api document: https://help.aliyun.com/api/rds/describeossdownloadsforsqlserver.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeOssDownloadsForSQLServerWithCallback(request *DescribeOssDownloadsForSQLServerRequest, callback func(response *DescribeOssDownloadsForSQLServerResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeOssDownloadsForSQLServerWithCallback(request *Desc
 	return result
 }
 
+// DescribeOssDownloadsForSQLServerRequest is the request struct for api DescribeOssDownloadsForSQLServer
 type DescribeOssDownloadsForSQLServerRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,6 +83,7 @@ type DescribeOssDownloadsForSQLServerRequest struct {
 	MigrateTaskId        string           `position:"Query" name:"MigrateTaskId"`
 }
 
+// DescribeOssDownloadsForSQLServerResponse is the response struct for api DescribeOssDownloadsForSQLServer
 type DescribeOssDownloadsForSQLServerResponse struct {
 	*responses.BaseResponse
 	RequestId      string                                  `json:"RequestId" xml:"RequestId"`
@@ -90,8 +92,8 @@ type DescribeOssDownloadsForSQLServerResponse struct {
 	Items          ItemsInDescribeOssDownloadsForSQLServer `json:"Items" xml:"Items"`
 }
 
-// create a request to invoke DescribeOssDownloadsForSQLServer API
-func CreateDescribeOssDownloadsForSQLServerRequest() (request *DescribeOssDownloadsForSQLServerRequest) {
+// CreateDescribeOssDownloadsForSQLServerRequest creates a request to invoke DescribeOssDownloadsForSQLServer API
+func CreateDescribeOssDownloadsForSQLServerRequest(request *DescribeOssDownloadsForSQLServerRequest) {
 	request = &DescribeOssDownloadsForSQLServerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateDescribeOssDownloadsForSQLServerRequest() (request *DescribeOssDownlo
 	return
 }
 
-// create a response to parse from DescribeOssDownloadsForSQLServer response
+// CreateDescribeOssDownloadsForSQLServerResponse creates a response to parse from DescribeOssDownloadsForSQLServer response
 func CreateDescribeOssDownloadsForSQLServerResponse() (response *DescribeOssDownloadsForSQLServerResponse) {
 	response = &DescribeOssDownloadsForSQLServerResponse{
 		BaseResponse: &responses.BaseResponse{},

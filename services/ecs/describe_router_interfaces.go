@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeRouterInterfaces api with *DescribeRouterInterfacesRequest synchronously
+// DescribeRouterInterfaces invokes the ecs.DescribeRouterInterfaces API synchronously
 // api document: https://help.aliyun.com/api/ecs/describerouterinterfaces.html
 func (client *Client) DescribeRouterInterfaces(request *DescribeRouterInterfacesRequest) (response *DescribeRouterInterfacesResponse, err error) {
 	response = CreateDescribeRouterInterfacesResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeRouterInterfaces(request *DescribeRouterInterfaces
 	return
 }
 
-// invoke DescribeRouterInterfaces api with *DescribeRouterInterfacesRequest asynchronously
+// DescribeRouterInterfacesWithChan invokes the ecs.DescribeRouterInterfaces API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describerouterinterfaces.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRouterInterfacesWithChan(request *DescribeRouterInterfacesRequest) (<-chan *DescribeRouterInterfacesResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeRouterInterfacesWithChan(request *DescribeRouterIn
 	return responseChan, errChan
 }
 
-// invoke DescribeRouterInterfaces api with *DescribeRouterInterfacesRequest asynchronously
+// DescribeRouterInterfacesWithCallback invokes the ecs.DescribeRouterInterfaces API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describerouterinterfaces.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRouterInterfacesWithCallback(request *DescribeRouterInterfacesRequest, callback func(response *DescribeRouterInterfacesResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeRouterInterfacesWithCallback(request *DescribeRout
 	return result
 }
 
+// DescribeRouterInterfacesRequest is the request struct for api DescribeRouterInterfaces
 type DescribeRouterInterfacesRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer                  `position:"Query" name:"OwnerId"`
@@ -83,11 +84,13 @@ type DescribeRouterInterfacesRequest struct {
 	Filter               *[]DescribeRouterInterfacesFilter `position:"Query" name:"Filter"  type:"Repeated"`
 }
 
+// DescribeRouterInterfacesFilter is a repeated param struct in DescribeRouterInterfacesRequest
 type DescribeRouterInterfacesFilter struct {
 	Key   string    `name:"Key"`
 	Value *[]string `name:"Value" type:"Repeated"`
 }
 
+// DescribeRouterInterfacesResponse is the response struct for api DescribeRouterInterfaces
 type DescribeRouterInterfacesResponse struct {
 	*responses.BaseResponse
 	RequestId          string             `json:"RequestId" xml:"RequestId"`
@@ -97,8 +100,8 @@ type DescribeRouterInterfacesResponse struct {
 	RouterInterfaceSet RouterInterfaceSet `json:"RouterInterfaceSet" xml:"RouterInterfaceSet"`
 }
 
-// create a request to invoke DescribeRouterInterfaces API
-func CreateDescribeRouterInterfacesRequest() (request *DescribeRouterInterfacesRequest) {
+// CreateDescribeRouterInterfacesRequest creates a request to invoke DescribeRouterInterfaces API
+func CreateDescribeRouterInterfacesRequest(request *DescribeRouterInterfacesRequest) {
 	request = &DescribeRouterInterfacesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -106,7 +109,7 @@ func CreateDescribeRouterInterfacesRequest() (request *DescribeRouterInterfacesR
 	return
 }
 
-// create a response to parse from DescribeRouterInterfaces response
+// CreateDescribeRouterInterfacesResponse creates a response to parse from DescribeRouterInterfaces response
 func CreateDescribeRouterInterfacesResponse() (response *DescribeRouterInterfacesResponse) {
 	response = &DescribeRouterInterfacesResponse{
 		BaseResponse: &responses.BaseResponse{},

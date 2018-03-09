@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SetUserBlackList api with *SetUserBlackListRequest synchronously
+// SetUserBlackList invokes the cdn.SetUserBlackList API synchronously
 // api document: https://help.aliyun.com/api/cdn/setuserblacklist.html
 func (client *Client) SetUserBlackList(request *SetUserBlackListRequest) (response *SetUserBlackListResponse, err error) {
 	response = CreateSetUserBlackListResponse()
@@ -28,7 +28,7 @@ func (client *Client) SetUserBlackList(request *SetUserBlackListRequest) (respon
 	return
 }
 
-// invoke SetUserBlackList api with *SetUserBlackListRequest asynchronously
+// SetUserBlackListWithChan invokes the cdn.SetUserBlackList API asynchronously
 // api document: https://help.aliyun.com/api/cdn/setuserblacklist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetUserBlackListWithChan(request *SetUserBlackListRequest) (<-chan *SetUserBlackListResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SetUserBlackListWithChan(request *SetUserBlackListRequest)
 	return responseChan, errChan
 }
 
-// invoke SetUserBlackList api with *SetUserBlackListRequest asynchronously
+// SetUserBlackListWithCallback invokes the cdn.SetUserBlackList API asynchronously
 // api document: https://help.aliyun.com/api/cdn/setuserblacklist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetUserBlackListWithCallback(request *SetUserBlackListRequest, callback func(response *SetUserBlackListResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SetUserBlackListWithCallback(request *SetUserBlackListRequ
 	return result
 }
 
+// SetUserBlackListRequest is the request struct for api SetUserBlackList
 type SetUserBlackListRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -81,13 +82,14 @@ type SetUserBlackListRequest struct {
 	ConfigUrl     string           `position:"Query" name:"ConfigUrl"`
 }
 
+// SetUserBlackListResponse is the response struct for api SetUserBlackList
 type SetUserBlackListResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke SetUserBlackList API
-func CreateSetUserBlackListRequest() (request *SetUserBlackListRequest) {
+// CreateSetUserBlackListRequest creates a request to invoke SetUserBlackList API
+func CreateSetUserBlackListRequest(request *SetUserBlackListRequest) {
 	request = &SetUserBlackListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateSetUserBlackListRequest() (request *SetUserBlackListRequest) {
 	return
 }
 
-// create a response to parse from SetUserBlackList response
+// CreateSetUserBlackListResponse creates a response to parse from SetUserBlackList response
 func CreateSetUserBlackListResponse() (response *SetUserBlackListResponse) {
 	response = &SetUserBlackListResponse{
 		BaseResponse: &responses.BaseResponse{},

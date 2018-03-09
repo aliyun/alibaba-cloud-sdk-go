@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke QueryDeviceInfo api with *QueryDeviceInfoRequest synchronously
+// QueryDeviceInfo invokes the push.QueryDeviceInfo API synchronously
 // api document: https://help.aliyun.com/api/push/querydeviceinfo.html
 func (client *Client) QueryDeviceInfo(request *QueryDeviceInfoRequest) (response *QueryDeviceInfoResponse, err error) {
 	response = CreateQueryDeviceInfoResponse()
@@ -28,7 +28,7 @@ func (client *Client) QueryDeviceInfo(request *QueryDeviceInfoRequest) (response
 	return
 }
 
-// invoke QueryDeviceInfo api with *QueryDeviceInfoRequest asynchronously
+// QueryDeviceInfoWithChan invokes the push.QueryDeviceInfo API asynchronously
 // api document: https://help.aliyun.com/api/push/querydeviceinfo.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryDeviceInfoWithChan(request *QueryDeviceInfoRequest) (<-chan *QueryDeviceInfoResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) QueryDeviceInfoWithChan(request *QueryDeviceInfoRequest) (
 	return responseChan, errChan
 }
 
-// invoke QueryDeviceInfo api with *QueryDeviceInfoRequest asynchronously
+// QueryDeviceInfoWithCallback invokes the push.QueryDeviceInfo API asynchronously
 // api document: https://help.aliyun.com/api/push/querydeviceinfo.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryDeviceInfoWithCallback(request *QueryDeviceInfoRequest, callback func(response *QueryDeviceInfoResponse, err error)) <-chan int {
@@ -73,20 +73,22 @@ func (client *Client) QueryDeviceInfoWithCallback(request *QueryDeviceInfoReques
 	return result
 }
 
+// QueryDeviceInfoRequest is the request struct for api QueryDeviceInfo
 type QueryDeviceInfoRequest struct {
 	*requests.RpcRequest
 	AppKey   requests.Integer `position:"Query" name:"AppKey"`
 	DeviceId string           `position:"Query" name:"DeviceId"`
 }
 
+// QueryDeviceInfoResponse is the response struct for api QueryDeviceInfo
 type QueryDeviceInfoResponse struct {
 	*responses.BaseResponse
 	RequestId  string     `json:"RequestId" xml:"RequestId"`
 	DeviceInfo DeviceInfo `json:"DeviceInfo" xml:"DeviceInfo"`
 }
 
-// create a request to invoke QueryDeviceInfo API
-func CreateQueryDeviceInfoRequest() (request *QueryDeviceInfoRequest) {
+// CreateQueryDeviceInfoRequest creates a request to invoke QueryDeviceInfo API
+func CreateQueryDeviceInfoRequest(request *QueryDeviceInfoRequest) {
 	request = &QueryDeviceInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -94,7 +96,7 @@ func CreateQueryDeviceInfoRequest() (request *QueryDeviceInfoRequest) {
 	return
 }
 
-// create a response to parse from QueryDeviceInfo response
+// CreateQueryDeviceInfoResponse creates a response to parse from QueryDeviceInfo response
 func CreateQueryDeviceInfoResponse() (response *QueryDeviceInfoResponse) {
 	response = &QueryDeviceInfoResponse{
 		BaseResponse: &responses.BaseResponse{},

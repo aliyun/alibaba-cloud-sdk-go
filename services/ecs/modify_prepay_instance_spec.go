@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifyPrepayInstanceSpec api with *ModifyPrepayInstanceSpecRequest synchronously
+// ModifyPrepayInstanceSpec invokes the ecs.ModifyPrepayInstanceSpec API synchronously
 // api document: https://help.aliyun.com/api/ecs/modifyprepayinstancespec.html
 func (client *Client) ModifyPrepayInstanceSpec(request *ModifyPrepayInstanceSpecRequest) (response *ModifyPrepayInstanceSpecResponse, err error) {
 	response = CreateModifyPrepayInstanceSpecResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifyPrepayInstanceSpec(request *ModifyPrepayInstanceSpec
 	return
 }
 
-// invoke ModifyPrepayInstanceSpec api with *ModifyPrepayInstanceSpecRequest asynchronously
+// ModifyPrepayInstanceSpecWithChan invokes the ecs.ModifyPrepayInstanceSpec API asynchronously
 // api document: https://help.aliyun.com/api/ecs/modifyprepayinstancespec.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyPrepayInstanceSpecWithChan(request *ModifyPrepayInstanceSpecRequest) (<-chan *ModifyPrepayInstanceSpecResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifyPrepayInstanceSpecWithChan(request *ModifyPrepayInst
 	return responseChan, errChan
 }
 
-// invoke ModifyPrepayInstanceSpec api with *ModifyPrepayInstanceSpecRequest asynchronously
+// ModifyPrepayInstanceSpecWithCallback invokes the ecs.ModifyPrepayInstanceSpec API asynchronously
 // api document: https://help.aliyun.com/api/ecs/modifyprepayinstancespec.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyPrepayInstanceSpecWithCallback(request *ModifyPrepayInstanceSpecRequest, callback func(response *ModifyPrepayInstanceSpecResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ModifyPrepayInstanceSpecWithCallback(request *ModifyPrepay
 	return result
 }
 
+// ModifyPrepayInstanceSpecRequest is the request struct for api ModifyPrepayInstanceSpec
 type ModifyPrepayInstanceSpecRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -86,14 +87,15 @@ type ModifyPrepayInstanceSpecRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// ModifyPrepayInstanceSpecResponse is the response struct for api ModifyPrepayInstanceSpec
 type ModifyPrepayInstanceSpecResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	OrderId   string `json:"OrderId" xml:"OrderId"`
 }
 
-// create a request to invoke ModifyPrepayInstanceSpec API
-func CreateModifyPrepayInstanceSpecRequest() (request *ModifyPrepayInstanceSpecRequest) {
+// CreateModifyPrepayInstanceSpecRequest creates a request to invoke ModifyPrepayInstanceSpec API
+func CreateModifyPrepayInstanceSpecRequest(request *ModifyPrepayInstanceSpecRequest) {
 	request = &ModifyPrepayInstanceSpecRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -101,7 +103,7 @@ func CreateModifyPrepayInstanceSpecRequest() (request *ModifyPrepayInstanceSpecR
 	return
 }
 
-// create a response to parse from ModifyPrepayInstanceSpec response
+// CreateModifyPrepayInstanceSpecResponse creates a response to parse from ModifyPrepayInstanceSpec response
 func CreateModifyPrepayInstanceSpecResponse() (response *ModifyPrepayInstanceSpecResponse) {
 	response = &ModifyPrepayInstanceSpecResponse{
 		BaseResponse: &responses.BaseResponse{},

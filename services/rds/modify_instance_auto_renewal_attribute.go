@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifyInstanceAutoRenewalAttribute api with *ModifyInstanceAutoRenewalAttributeRequest synchronously
+// ModifyInstanceAutoRenewalAttribute invokes the rds.ModifyInstanceAutoRenewalAttribute API synchronously
 // api document: https://help.aliyun.com/api/rds/modifyinstanceautorenewalattribute.html
 func (client *Client) ModifyInstanceAutoRenewalAttribute(request *ModifyInstanceAutoRenewalAttributeRequest) (response *ModifyInstanceAutoRenewalAttributeResponse, err error) {
 	response = CreateModifyInstanceAutoRenewalAttributeResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifyInstanceAutoRenewalAttribute(request *ModifyInstance
 	return
 }
 
-// invoke ModifyInstanceAutoRenewalAttribute api with *ModifyInstanceAutoRenewalAttributeRequest asynchronously
+// ModifyInstanceAutoRenewalAttributeWithChan invokes the rds.ModifyInstanceAutoRenewalAttribute API asynchronously
 // api document: https://help.aliyun.com/api/rds/modifyinstanceautorenewalattribute.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyInstanceAutoRenewalAttributeWithChan(request *ModifyInstanceAutoRenewalAttributeRequest) (<-chan *ModifyInstanceAutoRenewalAttributeResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifyInstanceAutoRenewalAttributeWithChan(request *Modify
 	return responseChan, errChan
 }
 
-// invoke ModifyInstanceAutoRenewalAttribute api with *ModifyInstanceAutoRenewalAttributeRequest asynchronously
+// ModifyInstanceAutoRenewalAttributeWithCallback invokes the rds.ModifyInstanceAutoRenewalAttribute API asynchronously
 // api document: https://help.aliyun.com/api/rds/modifyinstanceautorenewalattribute.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyInstanceAutoRenewalAttributeWithCallback(request *ModifyInstanceAutoRenewalAttributeRequest, callback func(response *ModifyInstanceAutoRenewalAttributeResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ModifyInstanceAutoRenewalAttributeWithCallback(request *Mo
 	return result
 }
 
+// ModifyInstanceAutoRenewalAttributeRequest is the request struct for api ModifyInstanceAutoRenewalAttribute
 type ModifyInstanceAutoRenewalAttributeRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -85,13 +86,14 @@ type ModifyInstanceAutoRenewalAttributeRequest struct {
 	AutoRenew            string           `position:"Query" name:"AutoRenew"`
 }
 
+// ModifyInstanceAutoRenewalAttributeResponse is the response struct for api ModifyInstanceAutoRenewalAttribute
 type ModifyInstanceAutoRenewalAttributeResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ModifyInstanceAutoRenewalAttribute API
-func CreateModifyInstanceAutoRenewalAttributeRequest() (request *ModifyInstanceAutoRenewalAttributeRequest) {
+// CreateModifyInstanceAutoRenewalAttributeRequest creates a request to invoke ModifyInstanceAutoRenewalAttribute API
+func CreateModifyInstanceAutoRenewalAttributeRequest(request *ModifyInstanceAutoRenewalAttributeRequest) {
 	request = &ModifyInstanceAutoRenewalAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateModifyInstanceAutoRenewalAttributeRequest() (request *ModifyInstanceA
 	return
 }
 
-// create a response to parse from ModifyInstanceAutoRenewalAttribute response
+// CreateModifyInstanceAutoRenewalAttributeResponse creates a response to parse from ModifyInstanceAutoRenewalAttribute response
 func CreateModifyInstanceAutoRenewalAttributeResponse() (response *ModifyInstanceAutoRenewalAttributeResponse) {
 	response = &ModifyInstanceAutoRenewalAttributeResponse{
 		BaseResponse: &responses.BaseResponse{},

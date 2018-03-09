@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifyAccountNotification api with *ModifyAccountNotificationRequest synchronously
+// ModifyAccountNotification invokes the dm.ModifyAccountNotification API synchronously
 // api document: https://help.aliyun.com/api/dm/modifyaccountnotification.html
 func (client *Client) ModifyAccountNotification(request *ModifyAccountNotificationRequest) (response *ModifyAccountNotificationResponse, err error) {
 	response = CreateModifyAccountNotificationResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifyAccountNotification(request *ModifyAccountNotificati
 	return
 }
 
-// invoke ModifyAccountNotification api with *ModifyAccountNotificationRequest asynchronously
+// ModifyAccountNotificationWithChan invokes the dm.ModifyAccountNotification API asynchronously
 // api document: https://help.aliyun.com/api/dm/modifyaccountnotification.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyAccountNotificationWithChan(request *ModifyAccountNotificationRequest) (<-chan *ModifyAccountNotificationResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifyAccountNotificationWithChan(request *ModifyAccountNo
 	return responseChan, errChan
 }
 
-// invoke ModifyAccountNotification api with *ModifyAccountNotificationRequest asynchronously
+// ModifyAccountNotificationWithCallback invokes the dm.ModifyAccountNotification API asynchronously
 // api document: https://help.aliyun.com/api/dm/modifyaccountnotification.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyAccountNotificationWithCallback(request *ModifyAccountNotificationRequest, callback func(response *ModifyAccountNotificationResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ModifyAccountNotificationWithCallback(request *ModifyAccou
 	return result
 }
 
+// ModifyAccountNotificationRequest is the request struct for api ModifyAccountNotification
 type ModifyAccountNotificationRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,13 +83,14 @@ type ModifyAccountNotificationRequest struct {
 	Status               string           `position:"Query" name:"Status"`
 }
 
+// ModifyAccountNotificationResponse is the response struct for api ModifyAccountNotification
 type ModifyAccountNotificationResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ModifyAccountNotification API
-func CreateModifyAccountNotificationRequest() (request *ModifyAccountNotificationRequest) {
+// CreateModifyAccountNotificationRequest creates a request to invoke ModifyAccountNotification API
+func CreateModifyAccountNotificationRequest(request *ModifyAccountNotificationRequest) {
 	request = &ModifyAccountNotificationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -96,7 +98,7 @@ func CreateModifyAccountNotificationRequest() (request *ModifyAccountNotificatio
 	return
 }
 
-// create a response to parse from ModifyAccountNotification response
+// CreateModifyAccountNotificationResponse creates a response to parse from ModifyAccountNotification response
 func CreateModifyAccountNotificationResponse() (response *ModifyAccountNotificationResponse) {
 	response = &ModifyAccountNotificationResponse{
 		BaseResponse: &responses.BaseResponse{},

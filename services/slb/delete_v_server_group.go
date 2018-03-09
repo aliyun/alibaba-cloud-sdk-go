@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteVServerGroup api with *DeleteVServerGroupRequest synchronously
+// DeleteVServerGroup invokes the slb.DeleteVServerGroup API synchronously
 // api document: https://help.aliyun.com/api/slb/deletevservergroup.html
 func (client *Client) DeleteVServerGroup(request *DeleteVServerGroupRequest) (response *DeleteVServerGroupResponse, err error) {
 	response = CreateDeleteVServerGroupResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteVServerGroup(request *DeleteVServerGroupRequest) (re
 	return
 }
 
-// invoke DeleteVServerGroup api with *DeleteVServerGroupRequest asynchronously
+// DeleteVServerGroupWithChan invokes the slb.DeleteVServerGroup API asynchronously
 // api document: https://help.aliyun.com/api/slb/deletevservergroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteVServerGroupWithChan(request *DeleteVServerGroupRequest) (<-chan *DeleteVServerGroupResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteVServerGroupWithChan(request *DeleteVServerGroupRequ
 	return responseChan, errChan
 }
 
-// invoke DeleteVServerGroup api with *DeleteVServerGroupRequest asynchronously
+// DeleteVServerGroupWithCallback invokes the slb.DeleteVServerGroup API asynchronously
 // api document: https://help.aliyun.com/api/slb/deletevservergroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteVServerGroupWithCallback(request *DeleteVServerGroupRequest, callback func(response *DeleteVServerGroupResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DeleteVServerGroupWithCallback(request *DeleteVServerGroup
 	return result
 }
 
+// DeleteVServerGroupRequest is the request struct for api DeleteVServerGroup
 type DeleteVServerGroupRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,13 +85,14 @@ type DeleteVServerGroupRequest struct {
 	VServerGroupId       string           `position:"Query" name:"VServerGroupId"`
 }
 
+// DeleteVServerGroupResponse is the response struct for api DeleteVServerGroup
 type DeleteVServerGroupResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DeleteVServerGroup API
-func CreateDeleteVServerGroupRequest() (request *DeleteVServerGroupRequest) {
+// CreateDeleteVServerGroupRequest creates a request to invoke DeleteVServerGroup API
+func CreateDeleteVServerGroupRequest(request *DeleteVServerGroupRequest) {
 	request = &DeleteVServerGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateDeleteVServerGroupRequest() (request *DeleteVServerGroupRequest) {
 	return
 }
 
-// create a response to parse from DeleteVServerGroup response
+// CreateDeleteVServerGroupResponse creates a response to parse from DeleteVServerGroup response
 func CreateDeleteVServerGroupResponse() (response *DeleteVServerGroupResponse) {
 	response = &DeleteVServerGroupResponse{
 		BaseResponse: &responses.BaseResponse{},

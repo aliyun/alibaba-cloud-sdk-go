@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeDeploymentSets api with *DescribeDeploymentSetsRequest synchronously
+// DescribeDeploymentSets invokes the ecs.DescribeDeploymentSets API synchronously
 // api document: https://help.aliyun.com/api/ecs/describedeploymentsets.html
 func (client *Client) DescribeDeploymentSets(request *DescribeDeploymentSetsRequest) (response *DescribeDeploymentSetsResponse, err error) {
 	response = CreateDescribeDeploymentSetsResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeDeploymentSets(request *DescribeDeploymentSetsRequ
 	return
 }
 
-// invoke DescribeDeploymentSets api with *DescribeDeploymentSetsRequest asynchronously
+// DescribeDeploymentSetsWithChan invokes the ecs.DescribeDeploymentSets API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describedeploymentsets.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDeploymentSetsWithChan(request *DescribeDeploymentSetsRequest) (<-chan *DescribeDeploymentSetsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeDeploymentSetsWithChan(request *DescribeDeployment
 	return responseChan, errChan
 }
 
-// invoke DescribeDeploymentSets api with *DescribeDeploymentSetsRequest asynchronously
+// DescribeDeploymentSetsWithCallback invokes the ecs.DescribeDeploymentSets API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describedeploymentsets.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDeploymentSetsWithCallback(request *DescribeDeploymentSetsRequest, callback func(response *DescribeDeploymentSetsResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeDeploymentSetsWithCallback(request *DescribeDeploy
 	return result
 }
 
+// DescribeDeploymentSetsRequest is the request struct for api DescribeDeploymentSets
 type DescribeDeploymentSetsRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -89,6 +90,7 @@ type DescribeDeploymentSetsRequest struct {
 	Domain               string           `position:"Query" name:"Domain"`
 }
 
+// DescribeDeploymentSetsResponse is the response struct for api DescribeDeploymentSets
 type DescribeDeploymentSetsResponse struct {
 	*responses.BaseResponse
 	RequestId      string         `json:"RequestId" xml:"RequestId"`
@@ -99,8 +101,8 @@ type DescribeDeploymentSetsResponse struct {
 	DeploymentSets DeploymentSets `json:"DeploymentSets" xml:"DeploymentSets"`
 }
 
-// create a request to invoke DescribeDeploymentSets API
-func CreateDescribeDeploymentSetsRequest() (request *DescribeDeploymentSetsRequest) {
+// CreateDescribeDeploymentSetsRequest creates a request to invoke DescribeDeploymentSets API
+func CreateDescribeDeploymentSetsRequest(request *DescribeDeploymentSetsRequest) {
 	request = &DescribeDeploymentSetsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -108,7 +110,7 @@ func CreateDescribeDeploymentSetsRequest() (request *DescribeDeploymentSetsReque
 	return
 }
 
-// create a response to parse from DescribeDeploymentSets response
+// CreateDescribeDeploymentSetsResponse creates a response to parse from DescribeDeploymentSets response
 func CreateDescribeDeploymentSetsResponse() (response *DescribeDeploymentSetsResponse) {
 	response = &DescribeDeploymentSetsResponse{
 		BaseResponse: &responses.BaseResponse{},

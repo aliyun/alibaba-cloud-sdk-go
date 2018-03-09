@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke UpdateIpProtection api with *UpdateIpProtectionRequest synchronously
+// UpdateIpProtection invokes the dm.UpdateIpProtection API synchronously
 // api document: https://help.aliyun.com/api/dm/updateipprotection.html
 func (client *Client) UpdateIpProtection(request *UpdateIpProtectionRequest) (response *UpdateIpProtectionResponse, err error) {
 	response = CreateUpdateIpProtectionResponse()
@@ -28,7 +28,7 @@ func (client *Client) UpdateIpProtection(request *UpdateIpProtectionRequest) (re
 	return
 }
 
-// invoke UpdateIpProtection api with *UpdateIpProtectionRequest asynchronously
+// UpdateIpProtectionWithChan invokes the dm.UpdateIpProtection API asynchronously
 // api document: https://help.aliyun.com/api/dm/updateipprotection.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateIpProtectionWithChan(request *UpdateIpProtectionRequest) (<-chan *UpdateIpProtectionResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) UpdateIpProtectionWithChan(request *UpdateIpProtectionRequ
 	return responseChan, errChan
 }
 
-// invoke UpdateIpProtection api with *UpdateIpProtectionRequest asynchronously
+// UpdateIpProtectionWithCallback invokes the dm.UpdateIpProtection API asynchronously
 // api document: https://help.aliyun.com/api/dm/updateipprotection.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateIpProtectionWithCallback(request *UpdateIpProtectionRequest, callback func(response *UpdateIpProtectionResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) UpdateIpProtectionWithCallback(request *UpdateIpProtection
 	return result
 }
 
+// UpdateIpProtectionRequest is the request struct for api UpdateIpProtection
 type UpdateIpProtectionRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -81,13 +82,14 @@ type UpdateIpProtectionRequest struct {
 	IpProtection         string           `position:"Query" name:"IpProtection"`
 }
 
+// UpdateIpProtectionResponse is the response struct for api UpdateIpProtection
 type UpdateIpProtectionResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke UpdateIpProtection API
-func CreateUpdateIpProtectionRequest() (request *UpdateIpProtectionRequest) {
+// CreateUpdateIpProtectionRequest creates a request to invoke UpdateIpProtection API
+func CreateUpdateIpProtectionRequest(request *UpdateIpProtectionRequest) {
 	request = &UpdateIpProtectionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateUpdateIpProtectionRequest() (request *UpdateIpProtectionRequest) {
 	return
 }
 
-// create a response to parse from UpdateIpProtection response
+// CreateUpdateIpProtectionResponse creates a response to parse from UpdateIpProtection response
 func CreateUpdateIpProtectionResponse() (response *UpdateIpProtectionResponse) {
 	response = &UpdateIpProtectionResponse{
 		BaseResponse: &responses.BaseResponse{},

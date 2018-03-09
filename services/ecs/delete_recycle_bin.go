@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteRecycleBin api with *DeleteRecycleBinRequest synchronously
+// DeleteRecycleBin invokes the ecs.DeleteRecycleBin API synchronously
 // api document: https://help.aliyun.com/api/ecs/deleterecyclebin.html
 func (client *Client) DeleteRecycleBin(request *DeleteRecycleBinRequest) (response *DeleteRecycleBinResponse, err error) {
 	response = CreateDeleteRecycleBinResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteRecycleBin(request *DeleteRecycleBinRequest) (respon
 	return
 }
 
-// invoke DeleteRecycleBin api with *DeleteRecycleBinRequest asynchronously
+// DeleteRecycleBinWithChan invokes the ecs.DeleteRecycleBin API asynchronously
 // api document: https://help.aliyun.com/api/ecs/deleterecyclebin.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteRecycleBinWithChan(request *DeleteRecycleBinRequest) (<-chan *DeleteRecycleBinResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteRecycleBinWithChan(request *DeleteRecycleBinRequest)
 	return responseChan, errChan
 }
 
-// invoke DeleteRecycleBin api with *DeleteRecycleBinRequest asynchronously
+// DeleteRecycleBinWithCallback invokes the ecs.DeleteRecycleBin API asynchronously
 // api document: https://help.aliyun.com/api/ecs/deleterecyclebin.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteRecycleBinWithCallback(request *DeleteRecycleBinRequest, callback func(response *DeleteRecycleBinResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DeleteRecycleBinWithCallback(request *DeleteRecycleBinRequ
 	return result
 }
 
+// DeleteRecycleBinRequest is the request struct for api DeleteRecycleBin
 type DeleteRecycleBinRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,13 +83,14 @@ type DeleteRecycleBinRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// DeleteRecycleBinResponse is the response struct for api DeleteRecycleBin
 type DeleteRecycleBinResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DeleteRecycleBin API
-func CreateDeleteRecycleBinRequest() (request *DeleteRecycleBinRequest) {
+// CreateDeleteRecycleBinRequest creates a request to invoke DeleteRecycleBin API
+func CreateDeleteRecycleBinRequest(request *DeleteRecycleBinRequest) {
 	request = &DeleteRecycleBinRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -96,7 +98,7 @@ func CreateDeleteRecycleBinRequest() (request *DeleteRecycleBinRequest) {
 	return
 }
 
-// create a response to parse from DeleteRecycleBin response
+// CreateDeleteRecycleBinResponse creates a response to parse from DeleteRecycleBin response
 func CreateDeleteRecycleBinResponse() (response *DeleteRecycleBinResponse) {
 	response = &DeleteRecycleBinResponse{
 		BaseResponse: &responses.BaseResponse{},

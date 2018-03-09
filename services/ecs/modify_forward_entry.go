@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifyForwardEntry api with *ModifyForwardEntryRequest synchronously
+// ModifyForwardEntry invokes the ecs.ModifyForwardEntry API synchronously
 // api document: https://help.aliyun.com/api/ecs/modifyforwardentry.html
 func (client *Client) ModifyForwardEntry(request *ModifyForwardEntryRequest) (response *ModifyForwardEntryResponse, err error) {
 	response = CreateModifyForwardEntryResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifyForwardEntry(request *ModifyForwardEntryRequest) (re
 	return
 }
 
-// invoke ModifyForwardEntry api with *ModifyForwardEntryRequest asynchronously
+// ModifyForwardEntryWithChan invokes the ecs.ModifyForwardEntry API asynchronously
 // api document: https://help.aliyun.com/api/ecs/modifyforwardentry.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyForwardEntryWithChan(request *ModifyForwardEntryRequest) (<-chan *ModifyForwardEntryResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifyForwardEntryWithChan(request *ModifyForwardEntryRequ
 	return responseChan, errChan
 }
 
-// invoke ModifyForwardEntry api with *ModifyForwardEntryRequest asynchronously
+// ModifyForwardEntryWithCallback invokes the ecs.ModifyForwardEntry API asynchronously
 // api document: https://help.aliyun.com/api/ecs/modifyforwardentry.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyForwardEntryWithCallback(request *ModifyForwardEntryRequest, callback func(response *ModifyForwardEntryResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ModifyForwardEntryWithCallback(request *ModifyForwardEntry
 	return result
 }
 
+// ModifyForwardEntryRequest is the request struct for api ModifyForwardEntry
 type ModifyForwardEntryRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -88,13 +89,14 @@ type ModifyForwardEntryRequest struct {
 	IpProtocol           string           `position:"Query" name:"IpProtocol"`
 }
 
+// ModifyForwardEntryResponse is the response struct for api ModifyForwardEntry
 type ModifyForwardEntryResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ModifyForwardEntry API
-func CreateModifyForwardEntryRequest() (request *ModifyForwardEntryRequest) {
+// CreateModifyForwardEntryRequest creates a request to invoke ModifyForwardEntry API
+func CreateModifyForwardEntryRequest(request *ModifyForwardEntryRequest) {
 	request = &ModifyForwardEntryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -102,7 +104,7 @@ func CreateModifyForwardEntryRequest() (request *ModifyForwardEntryRequest) {
 	return
 }
 
-// create a response to parse from ModifyForwardEntry response
+// CreateModifyForwardEntryResponse creates a response to parse from ModifyForwardEntry response
 func CreateModifyForwardEntryResponse() (response *ModifyForwardEntryResponse) {
 	response = &ModifyForwardEntryResponse{
 		BaseResponse: &responses.BaseResponse{},

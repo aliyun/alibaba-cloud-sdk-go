@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke StopLoadBalancerListener api with *StopLoadBalancerListenerRequest synchronously
+// StopLoadBalancerListener invokes the slb.StopLoadBalancerListener API synchronously
 // api document: https://help.aliyun.com/api/slb/stoploadbalancerlistener.html
 func (client *Client) StopLoadBalancerListener(request *StopLoadBalancerListenerRequest) (response *StopLoadBalancerListenerResponse, err error) {
 	response = CreateStopLoadBalancerListenerResponse()
@@ -28,7 +28,7 @@ func (client *Client) StopLoadBalancerListener(request *StopLoadBalancerListener
 	return
 }
 
-// invoke StopLoadBalancerListener api with *StopLoadBalancerListenerRequest asynchronously
+// StopLoadBalancerListenerWithChan invokes the slb.StopLoadBalancerListener API asynchronously
 // api document: https://help.aliyun.com/api/slb/stoploadbalancerlistener.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StopLoadBalancerListenerWithChan(request *StopLoadBalancerListenerRequest) (<-chan *StopLoadBalancerListenerResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) StopLoadBalancerListenerWithChan(request *StopLoadBalancer
 	return responseChan, errChan
 }
 
-// invoke StopLoadBalancerListener api with *StopLoadBalancerListenerRequest asynchronously
+// StopLoadBalancerListenerWithCallback invokes the slb.StopLoadBalancerListener API asynchronously
 // api document: https://help.aliyun.com/api/slb/stoploadbalancerlistener.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StopLoadBalancerListenerWithCallback(request *StopLoadBalancerListenerRequest, callback func(response *StopLoadBalancerListenerResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) StopLoadBalancerListenerWithCallback(request *StopLoadBala
 	return result
 }
 
+// StopLoadBalancerListenerRequest is the request struct for api StopLoadBalancerListener
 type StopLoadBalancerListenerRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -85,13 +86,14 @@ type StopLoadBalancerListenerRequest struct {
 	Tags                 string           `position:"Query" name:"Tags"`
 }
 
+// StopLoadBalancerListenerResponse is the response struct for api StopLoadBalancerListener
 type StopLoadBalancerListenerResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke StopLoadBalancerListener API
-func CreateStopLoadBalancerListenerRequest() (request *StopLoadBalancerListenerRequest) {
+// CreateStopLoadBalancerListenerRequest creates a request to invoke StopLoadBalancerListener API
+func CreateStopLoadBalancerListenerRequest(request *StopLoadBalancerListenerRequest) {
 	request = &StopLoadBalancerListenerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateStopLoadBalancerListenerRequest() (request *StopLoadBalancerListenerR
 	return
 }
 
-// create a response to parse from StopLoadBalancerListener response
+// CreateStopLoadBalancerListenerResponse creates a response to parse from StopLoadBalancerListener response
 func CreateStopLoadBalancerListenerResponse() (response *StopLoadBalancerListenerResponse) {
 	response = &StopLoadBalancerListenerResponse{
 		BaseResponse: &responses.BaseResponse{},

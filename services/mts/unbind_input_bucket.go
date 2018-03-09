@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke UnbindInputBucket api with *UnbindInputBucketRequest synchronously
+// UnbindInputBucket invokes the mts.UnbindInputBucket API synchronously
 // api document: https://help.aliyun.com/api/mts/unbindinputbucket.html
 func (client *Client) UnbindInputBucket(request *UnbindInputBucketRequest) (response *UnbindInputBucketResponse, err error) {
 	response = CreateUnbindInputBucketResponse()
@@ -28,7 +28,7 @@ func (client *Client) UnbindInputBucket(request *UnbindInputBucketRequest) (resp
 	return
 }
 
-// invoke UnbindInputBucket api with *UnbindInputBucketRequest asynchronously
+// UnbindInputBucketWithChan invokes the mts.UnbindInputBucket API asynchronously
 // api document: https://help.aliyun.com/api/mts/unbindinputbucket.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnbindInputBucketWithChan(request *UnbindInputBucketRequest) (<-chan *UnbindInputBucketResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) UnbindInputBucketWithChan(request *UnbindInputBucketReques
 	return responseChan, errChan
 }
 
-// invoke UnbindInputBucket api with *UnbindInputBucketRequest asynchronously
+// UnbindInputBucketWithCallback invokes the mts.UnbindInputBucket API asynchronously
 // api document: https://help.aliyun.com/api/mts/unbindinputbucket.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnbindInputBucketWithCallback(request *UnbindInputBucketRequest, callback func(response *UnbindInputBucketResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) UnbindInputBucketWithCallback(request *UnbindInputBucketRe
 	return result
 }
 
+// UnbindInputBucketRequest is the request struct for api UnbindInputBucket
 type UnbindInputBucketRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -83,13 +84,14 @@ type UnbindInputBucketRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// UnbindInputBucketResponse is the response struct for api UnbindInputBucket
 type UnbindInputBucketResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke UnbindInputBucket API
-func CreateUnbindInputBucketRequest() (request *UnbindInputBucketRequest) {
+// CreateUnbindInputBucketRequest creates a request to invoke UnbindInputBucket API
+func CreateUnbindInputBucketRequest(request *UnbindInputBucketRequest) {
 	request = &UnbindInputBucketRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateUnbindInputBucketRequest() (request *UnbindInputBucketRequest) {
 	return
 }
 
-// create a response to parse from UnbindInputBucket response
+// CreateUnbindInputBucketResponse creates a response to parse from UnbindInputBucket response
 func CreateUnbindInputBucketResponse() (response *UnbindInputBucketResponse) {
 	response = &UnbindInputBucketResponse{
 		BaseResponse: &responses.BaseResponse{},

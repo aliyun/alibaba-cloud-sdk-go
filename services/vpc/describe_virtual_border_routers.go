@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeVirtualBorderRouters api with *DescribeVirtualBorderRoutersRequest synchronously
+// DescribeVirtualBorderRouters invokes the vpc.DescribeVirtualBorderRouters API synchronously
 // api document: https://help.aliyun.com/api/vpc/describevirtualborderrouters.html
 func (client *Client) DescribeVirtualBorderRouters(request *DescribeVirtualBorderRoutersRequest) (response *DescribeVirtualBorderRoutersResponse, err error) {
 	response = CreateDescribeVirtualBorderRoutersResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeVirtualBorderRouters(request *DescribeVirtualBorde
 	return
 }
 
-// invoke DescribeVirtualBorderRouters api with *DescribeVirtualBorderRoutersRequest asynchronously
+// DescribeVirtualBorderRoutersWithChan invokes the vpc.DescribeVirtualBorderRouters API asynchronously
 // api document: https://help.aliyun.com/api/vpc/describevirtualborderrouters.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeVirtualBorderRoutersWithChan(request *DescribeVirtualBorderRoutersRequest) (<-chan *DescribeVirtualBorderRoutersResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeVirtualBorderRoutersWithChan(request *DescribeVirt
 	return responseChan, errChan
 }
 
-// invoke DescribeVirtualBorderRouters api with *DescribeVirtualBorderRoutersRequest asynchronously
+// DescribeVirtualBorderRoutersWithCallback invokes the vpc.DescribeVirtualBorderRouters API asynchronously
 // api document: https://help.aliyun.com/api/vpc/describevirtualborderrouters.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeVirtualBorderRoutersWithCallback(request *DescribeVirtualBorderRoutersRequest, callback func(response *DescribeVirtualBorderRoutersResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeVirtualBorderRoutersWithCallback(request *Describe
 	return result
 }
 
+// DescribeVirtualBorderRoutersRequest is the request struct for api DescribeVirtualBorderRouters
 type DescribeVirtualBorderRoutersRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer                      `position:"Query" name:"OwnerId"`
@@ -83,11 +84,13 @@ type DescribeVirtualBorderRoutersRequest struct {
 	Filter               *[]DescribeVirtualBorderRoutersFilter `position:"Query" name:"Filter"  type:"Repeated"`
 }
 
+// DescribeVirtualBorderRoutersFilter is a repeated param struct in DescribeVirtualBorderRoutersRequest
 type DescribeVirtualBorderRoutersFilter struct {
 	Key   string    `name:"Key"`
 	Value *[]string `name:"Value" type:"Repeated"`
 }
 
+// DescribeVirtualBorderRoutersResponse is the response struct for api DescribeVirtualBorderRouters
 type DescribeVirtualBorderRoutersResponse struct {
 	*responses.BaseResponse
 	RequestId              string                 `json:"RequestId" xml:"RequestId"`
@@ -97,8 +100,8 @@ type DescribeVirtualBorderRoutersResponse struct {
 	VirtualBorderRouterSet VirtualBorderRouterSet `json:"VirtualBorderRouterSet" xml:"VirtualBorderRouterSet"`
 }
 
-// create a request to invoke DescribeVirtualBorderRouters API
-func CreateDescribeVirtualBorderRoutersRequest() (request *DescribeVirtualBorderRoutersRequest) {
+// CreateDescribeVirtualBorderRoutersRequest creates a request to invoke DescribeVirtualBorderRouters API
+func CreateDescribeVirtualBorderRoutersRequest(request *DescribeVirtualBorderRoutersRequest) {
 	request = &DescribeVirtualBorderRoutersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -106,7 +109,7 @@ func CreateDescribeVirtualBorderRoutersRequest() (request *DescribeVirtualBorder
 	return
 }
 
-// create a response to parse from DescribeVirtualBorderRouters response
+// CreateDescribeVirtualBorderRoutersResponse creates a response to parse from DescribeVirtualBorderRouters response
 func CreateDescribeVirtualBorderRoutersResponse() (response *DescribeVirtualBorderRoutersResponse) {
 	response = &DescribeVirtualBorderRoutersResponse{
 		BaseResponse: &responses.BaseResponse{},

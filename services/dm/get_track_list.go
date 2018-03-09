@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke GetTrackList api with *GetTrackListRequest synchronously
+// GetTrackList invokes the dm.GetTrackList API synchronously
 // api document: https://help.aliyun.com/api/dm/gettracklist.html
 func (client *Client) GetTrackList(request *GetTrackListRequest) (response *GetTrackListResponse, err error) {
 	response = CreateGetTrackListResponse()
@@ -28,7 +28,7 @@ func (client *Client) GetTrackList(request *GetTrackListRequest) (response *GetT
 	return
 }
 
-// invoke GetTrackList api with *GetTrackListRequest asynchronously
+// GetTrackListWithChan invokes the dm.GetTrackList API asynchronously
 // api document: https://help.aliyun.com/api/dm/gettracklist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetTrackListWithChan(request *GetTrackListRequest) (<-chan *GetTrackListResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) GetTrackListWithChan(request *GetTrackListRequest) (<-chan
 	return responseChan, errChan
 }
 
-// invoke GetTrackList api with *GetTrackListRequest asynchronously
+// GetTrackListWithCallback invokes the dm.GetTrackList API asynchronously
 // api document: https://help.aliyun.com/api/dm/gettracklist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetTrackListWithCallback(request *GetTrackListRequest, callback func(response *GetTrackListResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) GetTrackListWithCallback(request *GetTrackListRequest, cal
 	return result
 }
 
+// GetTrackListRequest is the request struct for api GetTrackList
 type GetTrackListRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -88,6 +89,7 @@ type GetTrackListRequest struct {
 	PageNumber           string           `position:"Query" name:"PageNumber"`
 }
 
+// GetTrackListResponse is the response struct for api GetTrackList
 type GetTrackListResponse struct {
 	*responses.BaseResponse
 	RequestId            string             `json:"RequestId" xml:"RequestId"`
@@ -99,8 +101,8 @@ type GetTrackListResponse struct {
 	Data                 DataInGetTrackList `json:"data" xml:"data"`
 }
 
-// create a request to invoke GetTrackList API
-func CreateGetTrackListRequest() (request *GetTrackListRequest) {
+// CreateGetTrackListRequest creates a request to invoke GetTrackList API
+func CreateGetTrackListRequest(request *GetTrackListRequest) {
 	request = &GetTrackListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -108,7 +110,7 @@ func CreateGetTrackListRequest() (request *GetTrackListRequest) {
 	return
 }
 
-// create a response to parse from GetTrackList response
+// CreateGetTrackListResponse creates a response to parse from GetTrackList response
 func CreateGetTrackListResponse() (response *GetTrackListResponse) {
 	response = &GetTrackListResponse{
 		BaseResponse: &responses.BaseResponse{},

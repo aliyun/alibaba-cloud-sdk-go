@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke StartArchiveSQLLog api with *StartArchiveSQLLogRequest synchronously
+// StartArchiveSQLLog invokes the rds.StartArchiveSQLLog API synchronously
 // api document: https://help.aliyun.com/api/rds/startarchivesqllog.html
 func (client *Client) StartArchiveSQLLog(request *StartArchiveSQLLogRequest) (response *StartArchiveSQLLogResponse, err error) {
 	response = CreateStartArchiveSQLLogResponse()
@@ -28,7 +28,7 @@ func (client *Client) StartArchiveSQLLog(request *StartArchiveSQLLogRequest) (re
 	return
 }
 
-// invoke StartArchiveSQLLog api with *StartArchiveSQLLogRequest asynchronously
+// StartArchiveSQLLogWithChan invokes the rds.StartArchiveSQLLog API asynchronously
 // api document: https://help.aliyun.com/api/rds/startarchivesqllog.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StartArchiveSQLLogWithChan(request *StartArchiveSQLLogRequest) (<-chan *StartArchiveSQLLogResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) StartArchiveSQLLogWithChan(request *StartArchiveSQLLogRequ
 	return responseChan, errChan
 }
 
-// invoke StartArchiveSQLLog api with *StartArchiveSQLLogRequest asynchronously
+// StartArchiveSQLLogWithCallback invokes the rds.StartArchiveSQLLog API asynchronously
 // api document: https://help.aliyun.com/api/rds/startarchivesqllog.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StartArchiveSQLLogWithCallback(request *StartArchiveSQLLogRequest, callback func(response *StartArchiveSQLLogResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) StartArchiveSQLLogWithCallback(request *StartArchiveSQLLog
 	return result
 }
 
+// StartArchiveSQLLogRequest is the request struct for api StartArchiveSQLLog
 type StartArchiveSQLLogRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -87,13 +88,14 @@ type StartArchiveSQLLogRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// StartArchiveSQLLogResponse is the response struct for api StartArchiveSQLLog
 type StartArchiveSQLLogResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke StartArchiveSQLLog API
-func CreateStartArchiveSQLLogRequest() (request *StartArchiveSQLLogRequest) {
+// CreateStartArchiveSQLLogRequest creates a request to invoke StartArchiveSQLLog API
+func CreateStartArchiveSQLLogRequest(request *StartArchiveSQLLogRequest) {
 	request = &StartArchiveSQLLogRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -101,7 +103,7 @@ func CreateStartArchiveSQLLogRequest() (request *StartArchiveSQLLogRequest) {
 	return
 }
 
-// create a response to parse from StartArchiveSQLLog response
+// CreateStartArchiveSQLLogResponse creates a response to parse from StartArchiveSQLLog response
 func CreateStartArchiveSQLLogResponse() (response *StartArchiveSQLLogResponse) {
 	response = &StartArchiveSQLLogResponse{
 		BaseResponse: &responses.BaseResponse{},

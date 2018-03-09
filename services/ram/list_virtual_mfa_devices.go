@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ListVirtualMFADevices api with *ListVirtualMFADevicesRequest synchronously
+// ListVirtualMFADevices invokes the ram.ListVirtualMFADevices API synchronously
 // api document: https://help.aliyun.com/api/ram/listvirtualmfadevices.html
 func (client *Client) ListVirtualMFADevices(request *ListVirtualMFADevicesRequest) (response *ListVirtualMFADevicesResponse, err error) {
 	response = CreateListVirtualMFADevicesResponse()
@@ -28,7 +28,7 @@ func (client *Client) ListVirtualMFADevices(request *ListVirtualMFADevicesReques
 	return
 }
 
-// invoke ListVirtualMFADevices api with *ListVirtualMFADevicesRequest asynchronously
+// ListVirtualMFADevicesWithChan invokes the ram.ListVirtualMFADevices API asynchronously
 // api document: https://help.aliyun.com/api/ram/listvirtualmfadevices.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListVirtualMFADevicesWithChan(request *ListVirtualMFADevicesRequest) (<-chan *ListVirtualMFADevicesResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ListVirtualMFADevicesWithChan(request *ListVirtualMFADevic
 	return responseChan, errChan
 }
 
-// invoke ListVirtualMFADevices api with *ListVirtualMFADevicesRequest asynchronously
+// ListVirtualMFADevicesWithCallback invokes the ram.ListVirtualMFADevices API asynchronously
 // api document: https://help.aliyun.com/api/ram/listvirtualmfadevices.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListVirtualMFADevicesWithCallback(request *ListVirtualMFADevicesRequest, callback func(response *ListVirtualMFADevicesResponse, err error)) <-chan int {
@@ -73,18 +73,20 @@ func (client *Client) ListVirtualMFADevicesWithCallback(request *ListVirtualMFAD
 	return result
 }
 
+// ListVirtualMFADevicesRequest is the request struct for api ListVirtualMFADevices
 type ListVirtualMFADevicesRequest struct {
 	*requests.RpcRequest
 }
 
+// ListVirtualMFADevicesResponse is the response struct for api ListVirtualMFADevices
 type ListVirtualMFADevicesResponse struct {
 	*responses.BaseResponse
 	RequestId         string            `json:"RequestId" xml:"RequestId"`
 	VirtualMFADevices VirtualMFADevices `json:"VirtualMFADevices" xml:"VirtualMFADevices"`
 }
 
-// create a request to invoke ListVirtualMFADevices API
-func CreateListVirtualMFADevicesRequest() (request *ListVirtualMFADevicesRequest) {
+// CreateListVirtualMFADevicesRequest creates a request to invoke ListVirtualMFADevices API
+func CreateListVirtualMFADevicesRequest(request *ListVirtualMFADevicesRequest) {
 	request = &ListVirtualMFADevicesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -92,7 +94,7 @@ func CreateListVirtualMFADevicesRequest() (request *ListVirtualMFADevicesRequest
 	return
 }
 
-// create a response to parse from ListVirtualMFADevices response
+// CreateListVirtualMFADevicesResponse creates a response to parse from ListVirtualMFADevices response
 func CreateListVirtualMFADevicesResponse() (response *ListVirtualMFADevicesResponse) {
 	response = &ListVirtualMFADevicesResponse{
 		BaseResponse: &responses.BaseResponse{},

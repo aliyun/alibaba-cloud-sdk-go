@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ListContactFlows api with *ListContactFlowsRequest synchronously
+// ListContactFlows invokes the ccc.ListContactFlows API synchronously
 // api document: https://help.aliyun.com/api/ccc/listcontactflows.html
 func (client *Client) ListContactFlows(request *ListContactFlowsRequest) (response *ListContactFlowsResponse, err error) {
 	response = CreateListContactFlowsResponse()
@@ -28,7 +28,7 @@ func (client *Client) ListContactFlows(request *ListContactFlowsRequest) (respon
 	return
 }
 
-// invoke ListContactFlows api with *ListContactFlowsRequest asynchronously
+// ListContactFlowsWithChan invokes the ccc.ListContactFlows API asynchronously
 // api document: https://help.aliyun.com/api/ccc/listcontactflows.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListContactFlowsWithChan(request *ListContactFlowsRequest) (<-chan *ListContactFlowsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ListContactFlowsWithChan(request *ListContactFlowsRequest)
 	return responseChan, errChan
 }
 
-// invoke ListContactFlows api with *ListContactFlowsRequest asynchronously
+// ListContactFlowsWithCallback invokes the ccc.ListContactFlows API asynchronously
 // api document: https://help.aliyun.com/api/ccc/listcontactflows.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListContactFlowsWithCallback(request *ListContactFlowsRequest, callback func(response *ListContactFlowsResponse, err error)) <-chan int {
@@ -73,11 +73,13 @@ func (client *Client) ListContactFlowsWithCallback(request *ListContactFlowsRequ
 	return result
 }
 
+// ListContactFlowsRequest is the request struct for api ListContactFlows
 type ListContactFlowsRequest struct {
 	*requests.RpcRequest
 	InstanceId string `position:"Query" name:"InstanceId"`
 }
 
+// ListContactFlowsResponse is the response struct for api ListContactFlows
 type ListContactFlowsResponse struct {
 	*responses.BaseResponse
 	RequestId      string       `json:"RequestId" xml:"RequestId"`
@@ -88,8 +90,8 @@ type ListContactFlowsResponse struct {
 	ContactFlows   ContactFlows `json:"ContactFlows" xml:"ContactFlows"`
 }
 
-// create a request to invoke ListContactFlows API
-func CreateListContactFlowsRequest() (request *ListContactFlowsRequest) {
+// CreateListContactFlowsRequest creates a request to invoke ListContactFlows API
+func CreateListContactFlowsRequest(request *ListContactFlowsRequest) {
 	request = &ListContactFlowsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateListContactFlowsRequest() (request *ListContactFlowsRequest) {
 	return
 }
 
-// create a response to parse from ListContactFlows response
+// CreateListContactFlowsResponse creates a response to parse from ListContactFlows response
 func CreateListContactFlowsResponse() (response *ListContactFlowsResponse) {
 	response = &ListContactFlowsResponse{
 		BaseResponse: &responses.BaseResponse{},

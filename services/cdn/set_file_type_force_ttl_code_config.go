@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SetFileTypeForceTtlCodeConfig api with *SetFileTypeForceTtlCodeConfigRequest synchronously
+// SetFileTypeForceTtlCodeConfig invokes the cdn.SetFileTypeForceTtlCodeConfig API synchronously
 // api document: https://help.aliyun.com/api/cdn/setfiletypeforcettlcodeconfig.html
 func (client *Client) SetFileTypeForceTtlCodeConfig(request *SetFileTypeForceTtlCodeConfigRequest) (response *SetFileTypeForceTtlCodeConfigResponse, err error) {
 	response = CreateSetFileTypeForceTtlCodeConfigResponse()
@@ -28,7 +28,7 @@ func (client *Client) SetFileTypeForceTtlCodeConfig(request *SetFileTypeForceTtl
 	return
 }
 
-// invoke SetFileTypeForceTtlCodeConfig api with *SetFileTypeForceTtlCodeConfigRequest asynchronously
+// SetFileTypeForceTtlCodeConfigWithChan invokes the cdn.SetFileTypeForceTtlCodeConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/setfiletypeforcettlcodeconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetFileTypeForceTtlCodeConfigWithChan(request *SetFileTypeForceTtlCodeConfigRequest) (<-chan *SetFileTypeForceTtlCodeConfigResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SetFileTypeForceTtlCodeConfigWithChan(request *SetFileType
 	return responseChan, errChan
 }
 
-// invoke SetFileTypeForceTtlCodeConfig api with *SetFileTypeForceTtlCodeConfigRequest asynchronously
+// SetFileTypeForceTtlCodeConfigWithCallback invokes the cdn.SetFileTypeForceTtlCodeConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/setfiletypeforcettlcodeconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetFileTypeForceTtlCodeConfigWithCallback(request *SetFileTypeForceTtlCodeConfigRequest, callback func(response *SetFileTypeForceTtlCodeConfigResponse, err error)) <-chan int {
@@ -73,17 +73,19 @@ func (client *Client) SetFileTypeForceTtlCodeConfigWithCallback(request *SetFile
 	return result
 }
 
+// SetFileTypeForceTtlCodeConfigRequest is the request struct for api SetFileTypeForceTtlCodeConfig
 type SetFileTypeForceTtlCodeConfigRequest struct {
 	*requests.RpcRequest
 }
 
+// SetFileTypeForceTtlCodeConfigResponse is the response struct for api SetFileTypeForceTtlCodeConfig
 type SetFileTypeForceTtlCodeConfigResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke SetFileTypeForceTtlCodeConfig API
-func CreateSetFileTypeForceTtlCodeConfigRequest() (request *SetFileTypeForceTtlCodeConfigRequest) {
+// CreateSetFileTypeForceTtlCodeConfigRequest creates a request to invoke SetFileTypeForceTtlCodeConfig API
+func CreateSetFileTypeForceTtlCodeConfigRequest(request *SetFileTypeForceTtlCodeConfigRequest) {
 	request = &SetFileTypeForceTtlCodeConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -91,7 +93,7 @@ func CreateSetFileTypeForceTtlCodeConfigRequest() (request *SetFileTypeForceTtlC
 	return
 }
 
-// create a response to parse from SetFileTypeForceTtlCodeConfig response
+// CreateSetFileTypeForceTtlCodeConfigResponse creates a response to parse from SetFileTypeForceTtlCodeConfig response
 func CreateSetFileTypeForceTtlCodeConfigResponse() (response *SetFileTypeForceTtlCodeConfigResponse) {
 	response = &SetFileTypeForceTtlCodeConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

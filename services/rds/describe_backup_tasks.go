@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeBackupTasks api with *DescribeBackupTasksRequest synchronously
+// DescribeBackupTasks invokes the rds.DescribeBackupTasks API synchronously
 // api document: https://help.aliyun.com/api/rds/describebackuptasks.html
 func (client *Client) DescribeBackupTasks(request *DescribeBackupTasksRequest) (response *DescribeBackupTasksResponse, err error) {
 	response = CreateDescribeBackupTasksResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeBackupTasks(request *DescribeBackupTasksRequest) (
 	return
 }
 
-// invoke DescribeBackupTasks api with *DescribeBackupTasksRequest asynchronously
+// DescribeBackupTasksWithChan invokes the rds.DescribeBackupTasks API asynchronously
 // api document: https://help.aliyun.com/api/rds/describebackuptasks.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBackupTasksWithChan(request *DescribeBackupTasksRequest) (<-chan *DescribeBackupTasksResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeBackupTasksWithChan(request *DescribeBackupTasksRe
 	return responseChan, errChan
 }
 
-// invoke DescribeBackupTasks api with *DescribeBackupTasksRequest asynchronously
+// DescribeBackupTasksWithCallback invokes the rds.DescribeBackupTasks API asynchronously
 // api document: https://help.aliyun.com/api/rds/describebackuptasks.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBackupTasksWithCallback(request *DescribeBackupTasksRequest, callback func(response *DescribeBackupTasksResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeBackupTasksWithCallback(request *DescribeBackupTas
 	return result
 }
 
+// DescribeBackupTasksRequest is the request struct for api DescribeBackupTasks
 type DescribeBackupTasksRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -87,14 +88,15 @@ type DescribeBackupTasksRequest struct {
 	BackupJobStatus      string           `position:"Query" name:"BackupJobStatus"`
 }
 
+// DescribeBackupTasksResponse is the response struct for api DescribeBackupTasks
 type DescribeBackupTasksResponse struct {
 	*responses.BaseResponse
 	RequestId string                     `json:"RequestId" xml:"RequestId"`
 	Items     ItemsInDescribeBackupTasks `json:"Items" xml:"Items"`
 }
 
-// create a request to invoke DescribeBackupTasks API
-func CreateDescribeBackupTasksRequest() (request *DescribeBackupTasksRequest) {
+// CreateDescribeBackupTasksRequest creates a request to invoke DescribeBackupTasks API
+func CreateDescribeBackupTasksRequest(request *DescribeBackupTasksRequest) {
 	request = &DescribeBackupTasksRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -102,7 +104,7 @@ func CreateDescribeBackupTasksRequest() (request *DescribeBackupTasksRequest) {
 	return
 }
 
-// create a response to parse from DescribeBackupTasks response
+// CreateDescribeBackupTasksResponse creates a response to parse from DescribeBackupTasks response
 func CreateDescribeBackupTasksResponse() (response *DescribeBackupTasksResponse) {
 	response = &DescribeBackupTasksResponse{
 		BaseResponse: &responses.BaseResponse{},

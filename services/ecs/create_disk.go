@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CreateDisk api with *CreateDiskRequest synchronously
+// CreateDisk invokes the ecs.CreateDisk API synchronously
 // api document: https://help.aliyun.com/api/ecs/createdisk.html
 func (client *Client) CreateDisk(request *CreateDiskRequest) (response *CreateDiskResponse, err error) {
 	response = CreateCreateDiskResponse()
@@ -28,7 +28,7 @@ func (client *Client) CreateDisk(request *CreateDiskRequest) (response *CreateDi
 	return
 }
 
-// invoke CreateDisk api with *CreateDiskRequest asynchronously
+// CreateDiskWithChan invokes the ecs.CreateDisk API asynchronously
 // api document: https://help.aliyun.com/api/ecs/createdisk.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateDiskWithChan(request *CreateDiskRequest) (<-chan *CreateDiskResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CreateDiskWithChan(request *CreateDiskRequest) (<-chan *Cr
 	return responseChan, errChan
 }
 
-// invoke CreateDisk api with *CreateDiskRequest asynchronously
+// CreateDiskWithCallback invokes the ecs.CreateDisk API asynchronously
 // api document: https://help.aliyun.com/api/ecs/createdisk.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateDiskWithCallback(request *CreateDiskRequest, callback func(response *CreateDiskResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) CreateDiskWithCallback(request *CreateDiskRequest, callbac
 	return result
 }
 
+// CreateDiskRequest is the request struct for api CreateDisk
 type CreateDiskRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -100,14 +101,15 @@ type CreateDiskRequest struct {
 	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 }
 
+// CreateDiskResponse is the response struct for api CreateDisk
 type CreateDiskResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	DiskId    string `json:"DiskId" xml:"DiskId"`
 }
 
-// create a request to invoke CreateDisk API
-func CreateCreateDiskRequest() (request *CreateDiskRequest) {
+// CreateCreateDiskRequest creates a request to invoke CreateDisk API
+func CreateCreateDiskRequest(request *CreateDiskRequest) {
 	request = &CreateDiskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -115,7 +117,7 @@ func CreateCreateDiskRequest() (request *CreateDiskRequest) {
 	return
 }
 
-// create a response to parse from CreateDisk response
+// CreateCreateDiskResponse creates a response to parse from CreateDisk response
 func CreateCreateDiskResponse() (response *CreateDiskResponse) {
 	response = &CreateDiskResponse{
 		BaseResponse: &responses.BaseResponse{},

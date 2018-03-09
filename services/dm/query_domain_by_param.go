@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke QueryDomainByParam api with *QueryDomainByParamRequest synchronously
+// QueryDomainByParam invokes the dm.QueryDomainByParam API synchronously
 // api document: https://help.aliyun.com/api/dm/querydomainbyparam.html
 func (client *Client) QueryDomainByParam(request *QueryDomainByParamRequest) (response *QueryDomainByParamResponse, err error) {
 	response = CreateQueryDomainByParamResponse()
@@ -28,7 +28,7 @@ func (client *Client) QueryDomainByParam(request *QueryDomainByParamRequest) (re
 	return
 }
 
-// invoke QueryDomainByParam api with *QueryDomainByParamRequest asynchronously
+// QueryDomainByParamWithChan invokes the dm.QueryDomainByParam API asynchronously
 // api document: https://help.aliyun.com/api/dm/querydomainbyparam.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryDomainByParamWithChan(request *QueryDomainByParamRequest) (<-chan *QueryDomainByParamResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) QueryDomainByParamWithChan(request *QueryDomainByParamRequ
 	return responseChan, errChan
 }
 
-// invoke QueryDomainByParam api with *QueryDomainByParamRequest asynchronously
+// QueryDomainByParamWithCallback invokes the dm.QueryDomainByParam API asynchronously
 // api document: https://help.aliyun.com/api/dm/querydomainbyparam.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryDomainByParamWithCallback(request *QueryDomainByParamRequest, callback func(response *QueryDomainByParamResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) QueryDomainByParamWithCallback(request *QueryDomainByParam
 	return result
 }
 
+// QueryDomainByParamRequest is the request struct for api QueryDomainByParam
 type QueryDomainByParamRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,6 +85,7 @@ type QueryDomainByParamRequest struct {
 	Status               requests.Integer `position:"Query" name:"Status"`
 }
 
+// QueryDomainByParamResponse is the response struct for api QueryDomainByParam
 type QueryDomainByParamResponse struct {
 	*responses.BaseResponse
 	RequestId  string                   `json:"RequestId" xml:"RequestId"`
@@ -93,8 +95,8 @@ type QueryDomainByParamResponse struct {
 	Data       DataInQueryDomainByParam `json:"data" xml:"data"`
 }
 
-// create a request to invoke QueryDomainByParam API
-func CreateQueryDomainByParamRequest() (request *QueryDomainByParamRequest) {
+// CreateQueryDomainByParamRequest creates a request to invoke QueryDomainByParam API
+func CreateQueryDomainByParamRequest(request *QueryDomainByParamRequest) {
 	request = &QueryDomainByParamRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -102,7 +104,7 @@ func CreateQueryDomainByParamRequest() (request *QueryDomainByParamRequest) {
 	return
 }
 
-// create a response to parse from QueryDomainByParam response
+// CreateQueryDomainByParamResponse creates a response to parse from QueryDomainByParam response
 func CreateQueryDomainByParamResponse() (response *QueryDomainByParamResponse) {
 	response = &QueryDomainByParamResponse{
 		BaseResponse: &responses.BaseResponse{},

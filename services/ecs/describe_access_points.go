@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeAccessPoints api with *DescribeAccessPointsRequest synchronously
+// DescribeAccessPoints invokes the ecs.DescribeAccessPoints API synchronously
 // api document: https://help.aliyun.com/api/ecs/describeaccesspoints.html
 func (client *Client) DescribeAccessPoints(request *DescribeAccessPointsRequest) (response *DescribeAccessPointsResponse, err error) {
 	response = CreateDescribeAccessPointsResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeAccessPoints(request *DescribeAccessPointsRequest)
 	return
 }
 
-// invoke DescribeAccessPoints api with *DescribeAccessPointsRequest asynchronously
+// DescribeAccessPointsWithChan invokes the ecs.DescribeAccessPoints API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describeaccesspoints.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAccessPointsWithChan(request *DescribeAccessPointsRequest) (<-chan *DescribeAccessPointsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeAccessPointsWithChan(request *DescribeAccessPoints
 	return responseChan, errChan
 }
 
-// invoke DescribeAccessPoints api with *DescribeAccessPointsRequest asynchronously
+// DescribeAccessPointsWithCallback invokes the ecs.DescribeAccessPoints API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describeaccesspoints.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAccessPointsWithCallback(request *DescribeAccessPointsRequest, callback func(response *DescribeAccessPointsResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeAccessPointsWithCallback(request *DescribeAccessPo
 	return result
 }
 
+// DescribeAccessPointsRequest is the request struct for api DescribeAccessPoints
 type DescribeAccessPointsRequest struct {
 	*requests.RpcRequest
 	Filter               *[]DescribeAccessPointsFilter `position:"Query" name:"Filter"  type:"Repeated"`
@@ -84,11 +85,13 @@ type DescribeAccessPointsRequest struct {
 	PageSize             requests.Integer              `position:"Query" name:"PageSize"`
 }
 
+// DescribeAccessPointsFilter is a repeated param struct in DescribeAccessPointsRequest
 type DescribeAccessPointsFilter struct {
 	Key   string    `name:"Key"`
 	Value *[]string `name:"Value" type:"Repeated"`
 }
 
+// DescribeAccessPointsResponse is the response struct for api DescribeAccessPoints
 type DescribeAccessPointsResponse struct {
 	*responses.BaseResponse
 	RequestId      string         `json:"RequestId" xml:"RequestId"`
@@ -98,8 +101,8 @@ type DescribeAccessPointsResponse struct {
 	AccessPointSet AccessPointSet `json:"AccessPointSet" xml:"AccessPointSet"`
 }
 
-// create a request to invoke DescribeAccessPoints API
-func CreateDescribeAccessPointsRequest() (request *DescribeAccessPointsRequest) {
+// CreateDescribeAccessPointsRequest creates a request to invoke DescribeAccessPoints API
+func CreateDescribeAccessPointsRequest(request *DescribeAccessPointsRequest) {
 	request = &DescribeAccessPointsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -107,7 +110,7 @@ func CreateDescribeAccessPointsRequest() (request *DescribeAccessPointsRequest) 
 	return
 }
 
-// create a response to parse from DescribeAccessPoints response
+// CreateDescribeAccessPointsResponse creates a response to parse from DescribeAccessPoints response
 func CreateDescribeAccessPointsResponse() (response *DescribeAccessPointsResponse) {
 	response = &DescribeAccessPointsResponse{
 		BaseResponse: &responses.BaseResponse{},

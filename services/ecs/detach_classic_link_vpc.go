@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DetachClassicLinkVpc api with *DetachClassicLinkVpcRequest synchronously
+// DetachClassicLinkVpc invokes the ecs.DetachClassicLinkVpc API synchronously
 // api document: https://help.aliyun.com/api/ecs/detachclassiclinkvpc.html
 func (client *Client) DetachClassicLinkVpc(request *DetachClassicLinkVpcRequest) (response *DetachClassicLinkVpcResponse, err error) {
 	response = CreateDetachClassicLinkVpcResponse()
@@ -28,7 +28,7 @@ func (client *Client) DetachClassicLinkVpc(request *DetachClassicLinkVpcRequest)
 	return
 }
 
-// invoke DetachClassicLinkVpc api with *DetachClassicLinkVpcRequest asynchronously
+// DetachClassicLinkVpcWithChan invokes the ecs.DetachClassicLinkVpc API asynchronously
 // api document: https://help.aliyun.com/api/ecs/detachclassiclinkvpc.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetachClassicLinkVpcWithChan(request *DetachClassicLinkVpcRequest) (<-chan *DetachClassicLinkVpcResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DetachClassicLinkVpcWithChan(request *DetachClassicLinkVpc
 	return responseChan, errChan
 }
 
-// invoke DetachClassicLinkVpc api with *DetachClassicLinkVpcRequest asynchronously
+// DetachClassicLinkVpcWithCallback invokes the ecs.DetachClassicLinkVpc API asynchronously
 // api document: https://help.aliyun.com/api/ecs/detachclassiclinkvpc.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetachClassicLinkVpcWithCallback(request *DetachClassicLinkVpcRequest, callback func(response *DetachClassicLinkVpcResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DetachClassicLinkVpcWithCallback(request *DetachClassicLin
 	return result
 }
 
+// DetachClassicLinkVpcRequest is the request struct for api DetachClassicLinkVpc
 type DetachClassicLinkVpcRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,13 +83,14 @@ type DetachClassicLinkVpcRequest struct {
 	VpcId                string           `position:"Query" name:"VpcId"`
 }
 
+// DetachClassicLinkVpcResponse is the response struct for api DetachClassicLinkVpc
 type DetachClassicLinkVpcResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DetachClassicLinkVpc API
-func CreateDetachClassicLinkVpcRequest() (request *DetachClassicLinkVpcRequest) {
+// CreateDetachClassicLinkVpcRequest creates a request to invoke DetachClassicLinkVpc API
+func CreateDetachClassicLinkVpcRequest(request *DetachClassicLinkVpcRequest) {
 	request = &DetachClassicLinkVpcRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -96,7 +98,7 @@ func CreateDetachClassicLinkVpcRequest() (request *DetachClassicLinkVpcRequest) 
 	return
 }
 
-// create a response to parse from DetachClassicLinkVpc response
+// CreateDetachClassicLinkVpcResponse creates a response to parse from DetachClassicLinkVpc response
 func CreateDetachClassicLinkVpcResponse() (response *DetachClassicLinkVpcResponse) {
 	response = &DetachClassicLinkVpcResponse{
 		BaseResponse: &responses.BaseResponse{},

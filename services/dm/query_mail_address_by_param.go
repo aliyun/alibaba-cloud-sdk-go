@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke QueryMailAddressByParam api with *QueryMailAddressByParamRequest synchronously
+// QueryMailAddressByParam invokes the dm.QueryMailAddressByParam API synchronously
 // api document: https://help.aliyun.com/api/dm/querymailaddressbyparam.html
 func (client *Client) QueryMailAddressByParam(request *QueryMailAddressByParamRequest) (response *QueryMailAddressByParamResponse, err error) {
 	response = CreateQueryMailAddressByParamResponse()
@@ -28,7 +28,7 @@ func (client *Client) QueryMailAddressByParam(request *QueryMailAddressByParamRe
 	return
 }
 
-// invoke QueryMailAddressByParam api with *QueryMailAddressByParamRequest asynchronously
+// QueryMailAddressByParamWithChan invokes the dm.QueryMailAddressByParam API asynchronously
 // api document: https://help.aliyun.com/api/dm/querymailaddressbyparam.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryMailAddressByParamWithChan(request *QueryMailAddressByParamRequest) (<-chan *QueryMailAddressByParamResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) QueryMailAddressByParamWithChan(request *QueryMailAddressB
 	return responseChan, errChan
 }
 
-// invoke QueryMailAddressByParam api with *QueryMailAddressByParamRequest asynchronously
+// QueryMailAddressByParamWithCallback invokes the dm.QueryMailAddressByParam API asynchronously
 // api document: https://help.aliyun.com/api/dm/querymailaddressbyparam.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryMailAddressByParamWithCallback(request *QueryMailAddressByParamRequest, callback func(response *QueryMailAddressByParamResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) QueryMailAddressByParamWithCallback(request *QueryMailAddr
 	return result
 }
 
+// QueryMailAddressByParamRequest is the request struct for api QueryMailAddressByParam
 type QueryMailAddressByParamRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,6 +85,7 @@ type QueryMailAddressByParamRequest struct {
 	Sendtype             string           `position:"Query" name:"Sendtype"`
 }
 
+// QueryMailAddressByParamResponse is the response struct for api QueryMailAddressByParam
 type QueryMailAddressByParamResponse struct {
 	*responses.BaseResponse
 	RequestId  string                        `json:"RequestId" xml:"RequestId"`
@@ -93,8 +95,8 @@ type QueryMailAddressByParamResponse struct {
 	Data       DataInQueryMailAddressByParam `json:"data" xml:"data"`
 }
 
-// create a request to invoke QueryMailAddressByParam API
-func CreateQueryMailAddressByParamRequest() (request *QueryMailAddressByParamRequest) {
+// CreateQueryMailAddressByParamRequest creates a request to invoke QueryMailAddressByParam API
+func CreateQueryMailAddressByParamRequest(request *QueryMailAddressByParamRequest) {
 	request = &QueryMailAddressByParamRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -102,7 +104,7 @@ func CreateQueryMailAddressByParamRequest() (request *QueryMailAddressByParamReq
 	return
 }
 
-// create a response to parse from QueryMailAddressByParam response
+// CreateQueryMailAddressByParamResponse creates a response to parse from QueryMailAddressByParam response
 func CreateQueryMailAddressByParamResponse() (response *QueryMailAddressByParamResponse) {
 	response = &QueryMailAddressByParamResponse{
 		BaseResponse: &responses.BaseResponse{},

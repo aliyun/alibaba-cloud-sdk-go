@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteDisk api with *DeleteDiskRequest synchronously
+// DeleteDisk invokes the ecs.DeleteDisk API synchronously
 // api document: https://help.aliyun.com/api/ecs/deletedisk.html
 func (client *Client) DeleteDisk(request *DeleteDiskRequest) (response *DeleteDiskResponse, err error) {
 	response = CreateDeleteDiskResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteDisk(request *DeleteDiskRequest) (response *DeleteDi
 	return
 }
 
-// invoke DeleteDisk api with *DeleteDiskRequest asynchronously
+// DeleteDiskWithChan invokes the ecs.DeleteDisk API asynchronously
 // api document: https://help.aliyun.com/api/ecs/deletedisk.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDiskWithChan(request *DeleteDiskRequest) (<-chan *DeleteDiskResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteDiskWithChan(request *DeleteDiskRequest) (<-chan *De
 	return responseChan, errChan
 }
 
-// invoke DeleteDisk api with *DeleteDiskRequest asynchronously
+// DeleteDiskWithCallback invokes the ecs.DeleteDisk API asynchronously
 // api document: https://help.aliyun.com/api/ecs/deletedisk.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDiskWithCallback(request *DeleteDiskRequest, callback func(response *DeleteDiskResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DeleteDiskWithCallback(request *DeleteDiskRequest, callbac
 	return result
 }
 
+// DeleteDiskRequest is the request struct for api DeleteDisk
 type DeleteDiskRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,13 +83,14 @@ type DeleteDiskRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// DeleteDiskResponse is the response struct for api DeleteDisk
 type DeleteDiskResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DeleteDisk API
-func CreateDeleteDiskRequest() (request *DeleteDiskRequest) {
+// CreateDeleteDiskRequest creates a request to invoke DeleteDisk API
+func CreateDeleteDiskRequest(request *DeleteDiskRequest) {
 	request = &DeleteDiskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -96,7 +98,7 @@ func CreateDeleteDiskRequest() (request *DeleteDiskRequest) {
 	return
 }
 
-// create a response to parse from DeleteDisk response
+// CreateDeleteDiskResponse creates a response to parse from DeleteDisk response
 func CreateDeleteDiskResponse() (response *DeleteDiskResponse) {
 	response = &DeleteDiskResponse{
 		BaseResponse: &responses.BaseResponse{},

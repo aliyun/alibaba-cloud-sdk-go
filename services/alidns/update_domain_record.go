@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke UpdateDomainRecord api with *UpdateDomainRecordRequest synchronously
+// UpdateDomainRecord invokes the alidns.UpdateDomainRecord API synchronously
 // api document: https://help.aliyun.com/api/alidns/updatedomainrecord.html
 func (client *Client) UpdateDomainRecord(request *UpdateDomainRecordRequest) (response *UpdateDomainRecordResponse, err error) {
 	response = CreateUpdateDomainRecordResponse()
@@ -28,7 +28,7 @@ func (client *Client) UpdateDomainRecord(request *UpdateDomainRecordRequest) (re
 	return
 }
 
-// invoke UpdateDomainRecord api with *UpdateDomainRecordRequest asynchronously
+// UpdateDomainRecordWithChan invokes the alidns.UpdateDomainRecord API asynchronously
 // api document: https://help.aliyun.com/api/alidns/updatedomainrecord.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateDomainRecordWithChan(request *UpdateDomainRecordRequest) (<-chan *UpdateDomainRecordResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) UpdateDomainRecordWithChan(request *UpdateDomainRecordRequ
 	return responseChan, errChan
 }
 
-// invoke UpdateDomainRecord api with *UpdateDomainRecordRequest asynchronously
+// UpdateDomainRecordWithCallback invokes the alidns.UpdateDomainRecord API asynchronously
 // api document: https://help.aliyun.com/api/alidns/updatedomainrecord.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateDomainRecordWithCallback(request *UpdateDomainRecordRequest, callback func(response *UpdateDomainRecordResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) UpdateDomainRecordWithCallback(request *UpdateDomainRecord
 	return result
 }
 
+// UpdateDomainRecordRequest is the request struct for api UpdateDomainRecord
 type UpdateDomainRecordRequest struct {
 	*requests.RpcRequest
 	Lang         string           `position:"Query" name:"Lang"`
@@ -86,14 +87,15 @@ type UpdateDomainRecordRequest struct {
 	Line         string           `position:"Query" name:"Line"`
 }
 
+// UpdateDomainRecordResponse is the response struct for api UpdateDomainRecord
 type UpdateDomainRecordResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	RecordId  string `json:"RecordId" xml:"RecordId"`
 }
 
-// create a request to invoke UpdateDomainRecord API
-func CreateUpdateDomainRecordRequest() (request *UpdateDomainRecordRequest) {
+// CreateUpdateDomainRecordRequest creates a request to invoke UpdateDomainRecord API
+func CreateUpdateDomainRecordRequest(request *UpdateDomainRecordRequest) {
 	request = &UpdateDomainRecordRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -101,7 +103,7 @@ func CreateUpdateDomainRecordRequest() (request *UpdateDomainRecordRequest) {
 	return
 }
 
-// create a response to parse from UpdateDomainRecord response
+// CreateUpdateDomainRecordResponse creates a response to parse from UpdateDomainRecord response
 func CreateUpdateDomainRecordResponse() (response *UpdateDomainRecordResponse) {
 	response = &UpdateDomainRecordResponse{
 		BaseResponse: &responses.BaseResponse{},

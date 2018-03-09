@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CreateUser api with *CreateUserRequest synchronously
+// CreateUser invokes the ccc.CreateUser API synchronously
 // api document: https://help.aliyun.com/api/ccc/createuser.html
 func (client *Client) CreateUser(request *CreateUserRequest) (response *CreateUserResponse, err error) {
 	response = CreateCreateUserResponse()
@@ -28,7 +28,7 @@ func (client *Client) CreateUser(request *CreateUserRequest) (response *CreateUs
 	return
 }
 
-// invoke CreateUser api with *CreateUserRequest asynchronously
+// CreateUserWithChan invokes the ccc.CreateUser API asynchronously
 // api document: https://help.aliyun.com/api/ccc/createuser.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateUserWithChan(request *CreateUserRequest) (<-chan *CreateUserResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CreateUserWithChan(request *CreateUserRequest) (<-chan *Cr
 	return responseChan, errChan
 }
 
-// invoke CreateUser api with *CreateUserRequest asynchronously
+// CreateUserWithCallback invokes the ccc.CreateUser API asynchronously
 // api document: https://help.aliyun.com/api/ccc/createuser.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateUserWithCallback(request *CreateUserRequest, callback func(response *CreateUserResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) CreateUserWithCallback(request *CreateUserRequest, callbac
 	return result
 }
 
+// CreateUserRequest is the request struct for api CreateUser
 type CreateUserRequest struct {
 	*requests.RpcRequest
 	InstanceId   string    `position:"Query" name:"InstanceId"`
@@ -85,6 +86,7 @@ type CreateUserRequest struct {
 	SkillLevel   *[]string `position:"Query" name:"SkillLevel"  type:"Repeated"`
 }
 
+// CreateUserResponse is the response struct for api CreateUser
 type CreateUserResponse struct {
 	*responses.BaseResponse
 	RequestId      string `json:"RequestId" xml:"RequestId"`
@@ -95,8 +97,8 @@ type CreateUserResponse struct {
 	UserId         string `json:"UserId" xml:"UserId"`
 }
 
-// create a request to invoke CreateUser API
-func CreateCreateUserRequest() (request *CreateUserRequest) {
+// CreateCreateUserRequest creates a request to invoke CreateUser API
+func CreateCreateUserRequest(request *CreateUserRequest) {
 	request = &CreateUserRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -104,7 +106,7 @@ func CreateCreateUserRequest() (request *CreateUserRequest) {
 	return
 }
 
-// create a response to parse from CreateUser response
+// CreateCreateUserResponse creates a response to parse from CreateUser response
 func CreateCreateUserResponse() (response *CreateUserResponse) {
 	response = &CreateUserResponse{
 		BaseResponse: &responses.BaseResponse{},

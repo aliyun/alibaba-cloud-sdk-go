@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ClearUserBlackList api with *ClearUserBlackListRequest synchronously
+// ClearUserBlackList invokes the cdn.ClearUserBlackList API synchronously
 // api document: https://help.aliyun.com/api/cdn/clearuserblacklist.html
 func (client *Client) ClearUserBlackList(request *ClearUserBlackListRequest) (response *ClearUserBlackListResponse, err error) {
 	response = CreateClearUserBlackListResponse()
@@ -28,7 +28,7 @@ func (client *Client) ClearUserBlackList(request *ClearUserBlackListRequest) (re
 	return
 }
 
-// invoke ClearUserBlackList api with *ClearUserBlackListRequest asynchronously
+// ClearUserBlackListWithChan invokes the cdn.ClearUserBlackList API asynchronously
 // api document: https://help.aliyun.com/api/cdn/clearuserblacklist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ClearUserBlackListWithChan(request *ClearUserBlackListRequest) (<-chan *ClearUserBlackListResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ClearUserBlackListWithChan(request *ClearUserBlackListRequ
 	return responseChan, errChan
 }
 
-// invoke ClearUserBlackList api with *ClearUserBlackListRequest asynchronously
+// ClearUserBlackListWithCallback invokes the cdn.ClearUserBlackList API asynchronously
 // api document: https://help.aliyun.com/api/cdn/clearuserblacklist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ClearUserBlackListWithCallback(request *ClearUserBlackListRequest, callback func(response *ClearUserBlackListResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ClearUserBlackListWithCallback(request *ClearUserBlackList
 	return result
 }
 
+// ClearUserBlackListRequest is the request struct for api ClearUserBlackList
 type ClearUserBlackListRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -80,13 +81,14 @@ type ClearUserBlackListRequest struct {
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
+// ClearUserBlackListResponse is the response struct for api ClearUserBlackList
 type ClearUserBlackListResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ClearUserBlackList API
-func CreateClearUserBlackListRequest() (request *ClearUserBlackListRequest) {
+// CreateClearUserBlackListRequest creates a request to invoke ClearUserBlackList API
+func CreateClearUserBlackListRequest(request *ClearUserBlackListRequest) {
 	request = &ClearUserBlackListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -94,7 +96,7 @@ func CreateClearUserBlackListRequest() (request *ClearUserBlackListRequest) {
 	return
 }
 
-// create a response to parse from ClearUserBlackList response
+// CreateClearUserBlackListResponse creates a response to parse from ClearUserBlackList response
 func CreateClearUserBlackListResponse() (response *ClearUserBlackListResponse) {
 	response = &ClearUserBlackListResponse{
 		BaseResponse: &responses.BaseResponse{},

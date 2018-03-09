@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteDomain api with *DeleteDomainRequest synchronously
+// DeleteDomain invokes the dm.DeleteDomain API synchronously
 // api document: https://help.aliyun.com/api/dm/deletedomain.html
 func (client *Client) DeleteDomain(request *DeleteDomainRequest) (response *DeleteDomainResponse, err error) {
 	response = CreateDeleteDomainResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteDomain(request *DeleteDomainRequest) (response *Dele
 	return
 }
 
-// invoke DeleteDomain api with *DeleteDomainRequest asynchronously
+// DeleteDomainWithChan invokes the dm.DeleteDomain API asynchronously
 // api document: https://help.aliyun.com/api/dm/deletedomain.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDomainWithChan(request *DeleteDomainRequest) (<-chan *DeleteDomainResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteDomainWithChan(request *DeleteDomainRequest) (<-chan
 	return responseChan, errChan
 }
 
-// invoke DeleteDomain api with *DeleteDomainRequest asynchronously
+// DeleteDomainWithCallback invokes the dm.DeleteDomain API asynchronously
 // api document: https://help.aliyun.com/api/dm/deletedomain.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDomainWithCallback(request *DeleteDomainRequest, callback func(response *DeleteDomainResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DeleteDomainWithCallback(request *DeleteDomainRequest, cal
 	return result
 }
 
+// DeleteDomainRequest is the request struct for api DeleteDomain
 type DeleteDomainRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -81,13 +82,14 @@ type DeleteDomainRequest struct {
 	DomainId             requests.Integer `position:"Query" name:"DomainId"`
 }
 
+// DeleteDomainResponse is the response struct for api DeleteDomain
 type DeleteDomainResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DeleteDomain API
-func CreateDeleteDomainRequest() (request *DeleteDomainRequest) {
+// CreateDeleteDomainRequest creates a request to invoke DeleteDomain API
+func CreateDeleteDomainRequest(request *DeleteDomainRequest) {
 	request = &DeleteDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateDeleteDomainRequest() (request *DeleteDomainRequest) {
 	return
 }
 
-// create a response to parse from DeleteDomain response
+// CreateDeleteDomainResponse creates a response to parse from DeleteDomain response
 func CreateDeleteDomainResponse() (response *DeleteDomainResponse) {
 	response = &DeleteDomainResponse{
 		BaseResponse: &responses.BaseResponse{},

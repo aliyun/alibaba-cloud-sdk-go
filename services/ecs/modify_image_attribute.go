@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifyImageAttribute api with *ModifyImageAttributeRequest synchronously
+// ModifyImageAttribute invokes the ecs.ModifyImageAttribute API synchronously
 // api document: https://help.aliyun.com/api/ecs/modifyimageattribute.html
 func (client *Client) ModifyImageAttribute(request *ModifyImageAttributeRequest) (response *ModifyImageAttributeResponse, err error) {
 	response = CreateModifyImageAttributeResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifyImageAttribute(request *ModifyImageAttributeRequest)
 	return
 }
 
-// invoke ModifyImageAttribute api with *ModifyImageAttributeRequest asynchronously
+// ModifyImageAttributeWithChan invokes the ecs.ModifyImageAttribute API asynchronously
 // api document: https://help.aliyun.com/api/ecs/modifyimageattribute.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyImageAttributeWithChan(request *ModifyImageAttributeRequest) (<-chan *ModifyImageAttributeResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifyImageAttributeWithChan(request *ModifyImageAttribute
 	return responseChan, errChan
 }
 
-// invoke ModifyImageAttribute api with *ModifyImageAttributeRequest asynchronously
+// ModifyImageAttributeWithCallback invokes the ecs.ModifyImageAttribute API asynchronously
 // api document: https://help.aliyun.com/api/ecs/modifyimageattribute.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyImageAttributeWithCallback(request *ModifyImageAttributeRequest, callback func(response *ModifyImageAttributeResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ModifyImageAttributeWithCallback(request *ModifyImageAttri
 	return result
 }
 
+// ModifyImageAttributeRequest is the request struct for api ModifyImageAttribute
 type ModifyImageAttributeRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,13 +85,14 @@ type ModifyImageAttributeRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// ModifyImageAttributeResponse is the response struct for api ModifyImageAttribute
 type ModifyImageAttributeResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ModifyImageAttribute API
-func CreateModifyImageAttributeRequest() (request *ModifyImageAttributeRequest) {
+// CreateModifyImageAttributeRequest creates a request to invoke ModifyImageAttribute API
+func CreateModifyImageAttributeRequest(request *ModifyImageAttributeRequest) {
 	request = &ModifyImageAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateModifyImageAttributeRequest() (request *ModifyImageAttributeRequest) 
 	return
 }
 
-// create a response to parse from ModifyImageAttribute response
+// CreateModifyImageAttributeResponse creates a response to parse from ModifyImageAttribute response
 func CreateModifyImageAttributeResponse() (response *ModifyImageAttributeResponse) {
 	response = &ModifyImageAttributeResponse{
 		BaseResponse: &responses.BaseResponse{},

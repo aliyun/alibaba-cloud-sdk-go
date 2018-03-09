@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke GetCallerIdentity api with *GetCallerIdentityRequest synchronously
+// GetCallerIdentity invokes the sts.GetCallerIdentity API synchronously
 // api document: https://help.aliyun.com/api/sts/getcalleridentity.html
 func (client *Client) GetCallerIdentity(request *GetCallerIdentityRequest) (response *GetCallerIdentityResponse, err error) {
 	response = CreateGetCallerIdentityResponse()
@@ -28,7 +28,7 @@ func (client *Client) GetCallerIdentity(request *GetCallerIdentityRequest) (resp
 	return
 }
 
-// invoke GetCallerIdentity api with *GetCallerIdentityRequest asynchronously
+// GetCallerIdentityWithChan invokes the sts.GetCallerIdentity API asynchronously
 // api document: https://help.aliyun.com/api/sts/getcalleridentity.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetCallerIdentityWithChan(request *GetCallerIdentityRequest) (<-chan *GetCallerIdentityResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) GetCallerIdentityWithChan(request *GetCallerIdentityReques
 	return responseChan, errChan
 }
 
-// invoke GetCallerIdentity api with *GetCallerIdentityRequest asynchronously
+// GetCallerIdentityWithCallback invokes the sts.GetCallerIdentity API asynchronously
 // api document: https://help.aliyun.com/api/sts/getcalleridentity.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetCallerIdentityWithCallback(request *GetCallerIdentityRequest, callback func(response *GetCallerIdentityResponse, err error)) <-chan int {
@@ -73,10 +73,12 @@ func (client *Client) GetCallerIdentityWithCallback(request *GetCallerIdentityRe
 	return result
 }
 
+// GetCallerIdentityRequest is the request struct for api GetCallerIdentity
 type GetCallerIdentityRequest struct {
 	*requests.RpcRequest
 }
 
+// GetCallerIdentityResponse is the response struct for api GetCallerIdentity
 type GetCallerIdentityResponse struct {
 	*responses.BaseResponse
 	AccountId    string `json:"AccountId" xml:"AccountId"`
@@ -88,8 +90,8 @@ type GetCallerIdentityResponse struct {
 	RequestId    string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke GetCallerIdentity API
-func CreateGetCallerIdentityRequest() (request *GetCallerIdentityRequest) {
+// CreateGetCallerIdentityRequest creates a request to invoke GetCallerIdentity API
+func CreateGetCallerIdentityRequest(request *GetCallerIdentityRequest) {
 	request = &GetCallerIdentityRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateGetCallerIdentityRequest() (request *GetCallerIdentityRequest) {
 	return
 }
 
-// create a response to parse from GetCallerIdentity response
+// CreateGetCallerIdentityResponse creates a response to parse from GetCallerIdentity response
 func CreateGetCallerIdentityResponse() (response *GetCallerIdentityResponse) {
 	response = &GetCallerIdentityResponse{
 		BaseResponse: &responses.BaseResponse{},

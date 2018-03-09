@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke GetPhotosByMd5s api with *GetPhotosByMd5sRequest synchronously
+// GetPhotosByMd5s invokes the cloudphoto.GetPhotosByMd5s API synchronously
 // api document: https://help.aliyun.com/api/cloudphoto/getphotosbymd5s.html
 func (client *Client) GetPhotosByMd5s(request *GetPhotosByMd5sRequest) (response *GetPhotosByMd5sResponse, err error) {
 	response = CreateGetPhotosByMd5sResponse()
@@ -28,7 +28,7 @@ func (client *Client) GetPhotosByMd5s(request *GetPhotosByMd5sRequest) (response
 	return
 }
 
-// invoke GetPhotosByMd5s api with *GetPhotosByMd5sRequest asynchronously
+// GetPhotosByMd5sWithChan invokes the cloudphoto.GetPhotosByMd5s API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/getphotosbymd5s.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetPhotosByMd5sWithChan(request *GetPhotosByMd5sRequest) (<-chan *GetPhotosByMd5sResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) GetPhotosByMd5sWithChan(request *GetPhotosByMd5sRequest) (
 	return responseChan, errChan
 }
 
-// invoke GetPhotosByMd5s api with *GetPhotosByMd5sRequest asynchronously
+// GetPhotosByMd5sWithCallback invokes the cloudphoto.GetPhotosByMd5s API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/getphotosbymd5s.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetPhotosByMd5sWithCallback(request *GetPhotosByMd5sRequest, callback func(response *GetPhotosByMd5sResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) GetPhotosByMd5sWithCallback(request *GetPhotosByMd5sReques
 	return result
 }
 
+// GetPhotosByMd5sRequest is the request struct for api GetPhotosByMd5s
 type GetPhotosByMd5sRequest struct {
 	*requests.RpcRequest
 	Md5       *[]string `position:"Query" name:"Md5"  type:"Repeated"`
@@ -81,6 +82,7 @@ type GetPhotosByMd5sRequest struct {
 	LibraryId string    `position:"Query" name:"LibraryId"`
 }
 
+// GetPhotosByMd5sResponse is the response struct for api GetPhotosByMd5s
 type GetPhotosByMd5sResponse struct {
 	*responses.BaseResponse
 	Code      string  `json:"Code" xml:"Code"`
@@ -90,8 +92,8 @@ type GetPhotosByMd5sResponse struct {
 	Photos    []Photo `json:"Photos" xml:"Photos"`
 }
 
-// create a request to invoke GetPhotosByMd5s API
-func CreateGetPhotosByMd5sRequest() (request *GetPhotosByMd5sRequest) {
+// CreateGetPhotosByMd5sRequest creates a request to invoke GetPhotosByMd5s API
+func CreateGetPhotosByMd5sRequest(request *GetPhotosByMd5sRequest) {
 	request = &GetPhotosByMd5sRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateGetPhotosByMd5sRequest() (request *GetPhotosByMd5sRequest) {
 	return
 }
 
-// create a response to parse from GetPhotosByMd5s response
+// CreateGetPhotosByMd5sResponse creates a response to parse from GetPhotosByMd5s response
 func CreateGetPhotosByMd5sResponse() (response *GetPhotosByMd5sResponse) {
 	response = &GetPhotosByMd5sResponse{
 		BaseResponse: &responses.BaseResponse{},

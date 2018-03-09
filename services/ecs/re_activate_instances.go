@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ReActivateInstances api with *ReActivateInstancesRequest synchronously
+// ReActivateInstances invokes the ecs.ReActivateInstances API synchronously
 // api document: https://help.aliyun.com/api/ecs/reactivateinstances.html
 func (client *Client) ReActivateInstances(request *ReActivateInstancesRequest) (response *ReActivateInstancesResponse, err error) {
 	response = CreateReActivateInstancesResponse()
@@ -28,7 +28,7 @@ func (client *Client) ReActivateInstances(request *ReActivateInstancesRequest) (
 	return
 }
 
-// invoke ReActivateInstances api with *ReActivateInstancesRequest asynchronously
+// ReActivateInstancesWithChan invokes the ecs.ReActivateInstances API asynchronously
 // api document: https://help.aliyun.com/api/ecs/reactivateinstances.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReActivateInstancesWithChan(request *ReActivateInstancesRequest) (<-chan *ReActivateInstancesResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ReActivateInstancesWithChan(request *ReActivateInstancesRe
 	return responseChan, errChan
 }
 
-// invoke ReActivateInstances api with *ReActivateInstancesRequest asynchronously
+// ReActivateInstancesWithCallback invokes the ecs.ReActivateInstances API asynchronously
 // api document: https://help.aliyun.com/api/ecs/reactivateinstances.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReActivateInstancesWithCallback(request *ReActivateInstancesRequest, callback func(response *ReActivateInstancesResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ReActivateInstancesWithCallback(request *ReActivateInstanc
 	return result
 }
 
+// ReActivateInstancesRequest is the request struct for api ReActivateInstances
 type ReActivateInstancesRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,13 +83,14 @@ type ReActivateInstancesRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// ReActivateInstancesResponse is the response struct for api ReActivateInstances
 type ReActivateInstancesResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ReActivateInstances API
-func CreateReActivateInstancesRequest() (request *ReActivateInstancesRequest) {
+// CreateReActivateInstancesRequest creates a request to invoke ReActivateInstances API
+func CreateReActivateInstancesRequest(request *ReActivateInstancesRequest) {
 	request = &ReActivateInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -96,7 +98,7 @@ func CreateReActivateInstancesRequest() (request *ReActivateInstancesRequest) {
 	return
 }
 
-// create a response to parse from ReActivateInstances response
+// CreateReActivateInstancesResponse creates a response to parse from ReActivateInstances response
 func CreateReActivateInstancesResponse() (response *ReActivateInstancesResponse) {
 	response = &ReActivateInstancesResponse{
 		BaseResponse: &responses.BaseResponse{},

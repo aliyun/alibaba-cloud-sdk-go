@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeLiveStreamStreamStatus api with *DescribeLiveStreamStreamStatusRequest synchronously
+// DescribeLiveStreamStreamStatus invokes the cdn.DescribeLiveStreamStreamStatus API synchronously
 // api document: https://help.aliyun.com/api/cdn/describelivestreamstreamstatus.html
 func (client *Client) DescribeLiveStreamStreamStatus(request *DescribeLiveStreamStreamStatusRequest) (response *DescribeLiveStreamStreamStatusResponse, err error) {
 	response = CreateDescribeLiveStreamStreamStatusResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeLiveStreamStreamStatus(request *DescribeLiveStream
 	return
 }
 
-// invoke DescribeLiveStreamStreamStatus api with *DescribeLiveStreamStreamStatusRequest asynchronously
+// DescribeLiveStreamStreamStatusWithChan invokes the cdn.DescribeLiveStreamStreamStatus API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describelivestreamstreamstatus.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamStreamStatusWithChan(request *DescribeLiveStreamStreamStatusRequest) (<-chan *DescribeLiveStreamStreamStatusResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeLiveStreamStreamStatusWithChan(request *DescribeLi
 	return responseChan, errChan
 }
 
-// invoke DescribeLiveStreamStreamStatus api with *DescribeLiveStreamStreamStatusRequest asynchronously
+// DescribeLiveStreamStreamStatusWithCallback invokes the cdn.DescribeLiveStreamStreamStatus API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describelivestreamstreamstatus.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamStreamStatusWithCallback(request *DescribeLiveStreamStreamStatusRequest, callback func(response *DescribeLiveStreamStreamStatusResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeLiveStreamStreamStatusWithCallback(request *Descri
 	return result
 }
 
+// DescribeLiveStreamStreamStatusRequest is the request struct for api DescribeLiveStreamStreamStatus
 type DescribeLiveStreamStreamStatusRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,14 +83,15 @@ type DescribeLiveStreamStreamStatusRequest struct {
 	StreamName    string           `position:"Query" name:"StreamName"`
 }
 
+// DescribeLiveStreamStreamStatusResponse is the response struct for api DescribeLiveStreamStreamStatus
 type DescribeLiveStreamStreamStatusResponse struct {
 	*responses.BaseResponse
 	RequestId    string `json:"RequestId" xml:"RequestId"`
 	StreamStatus string `json:"StreamStatus" xml:"StreamStatus"`
 }
 
-// create a request to invoke DescribeLiveStreamStreamStatus API
-func CreateDescribeLiveStreamStreamStatusRequest() (request *DescribeLiveStreamStreamStatusRequest) {
+// CreateDescribeLiveStreamStreamStatusRequest creates a request to invoke DescribeLiveStreamStreamStatus API
+func CreateDescribeLiveStreamStreamStatusRequest(request *DescribeLiveStreamStreamStatusRequest) {
 	request = &DescribeLiveStreamStreamStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateDescribeLiveStreamStreamStatusRequest() (request *DescribeLiveStreamS
 	return
 }
 
-// create a response to parse from DescribeLiveStreamStreamStatus response
+// CreateDescribeLiveStreamStreamStatusResponse creates a response to parse from DescribeLiveStreamStreamStatus response
 func CreateDescribeLiveStreamStreamStatusResponse() (response *DescribeLiveStreamStreamStatusResponse) {
 	response = &DescribeLiveStreamStreamStatusResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifyDiskChargeType api with *ModifyDiskChargeTypeRequest synchronously
+// ModifyDiskChargeType invokes the ecs.ModifyDiskChargeType API synchronously
 // api document: https://help.aliyun.com/api/ecs/modifydiskchargetype.html
 func (client *Client) ModifyDiskChargeType(request *ModifyDiskChargeTypeRequest) (response *ModifyDiskChargeTypeResponse, err error) {
 	response = CreateModifyDiskChargeTypeResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifyDiskChargeType(request *ModifyDiskChargeTypeRequest)
 	return
 }
 
-// invoke ModifyDiskChargeType api with *ModifyDiskChargeTypeRequest asynchronously
+// ModifyDiskChargeTypeWithChan invokes the ecs.ModifyDiskChargeType API asynchronously
 // api document: https://help.aliyun.com/api/ecs/modifydiskchargetype.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDiskChargeTypeWithChan(request *ModifyDiskChargeTypeRequest) (<-chan *ModifyDiskChargeTypeResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifyDiskChargeTypeWithChan(request *ModifyDiskChargeType
 	return responseChan, errChan
 }
 
-// invoke ModifyDiskChargeType api with *ModifyDiskChargeTypeRequest asynchronously
+// ModifyDiskChargeTypeWithCallback invokes the ecs.ModifyDiskChargeType API asynchronously
 // api document: https://help.aliyun.com/api/ecs/modifydiskchargetype.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDiskChargeTypeWithCallback(request *ModifyDiskChargeTypeRequest, callback func(response *ModifyDiskChargeTypeResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ModifyDiskChargeTypeWithCallback(request *ModifyDiskCharge
 	return result
 }
 
+// ModifyDiskChargeTypeRequest is the request struct for api ModifyDiskChargeType
 type ModifyDiskChargeTypeRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -85,14 +86,15 @@ type ModifyDiskChargeTypeRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// ModifyDiskChargeTypeResponse is the response struct for api ModifyDiskChargeType
 type ModifyDiskChargeTypeResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	OrderId   string `json:"OrderId" xml:"OrderId"`
 }
 
-// create a request to invoke ModifyDiskChargeType API
-func CreateModifyDiskChargeTypeRequest() (request *ModifyDiskChargeTypeRequest) {
+// CreateModifyDiskChargeTypeRequest creates a request to invoke ModifyDiskChargeType API
+func CreateModifyDiskChargeTypeRequest(request *ModifyDiskChargeTypeRequest) {
 	request = &ModifyDiskChargeTypeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -100,7 +102,7 @@ func CreateModifyDiskChargeTypeRequest() (request *ModifyDiskChargeTypeRequest) 
 	return
 }
 
-// create a response to parse from ModifyDiskChargeType response
+// CreateModifyDiskChargeTypeResponse creates a response to parse from ModifyDiskChargeType response
 func CreateModifyDiskChargeTypeResponse() (response *ModifyDiskChargeTypeResponse) {
 	response = &ModifyDiskChargeTypeResponse{
 		BaseResponse: &responses.BaseResponse{},

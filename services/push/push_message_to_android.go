@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke PushMessageToAndroid api with *PushMessageToAndroidRequest synchronously
+// PushMessageToAndroid invokes the push.PushMessageToAndroid API synchronously
 // api document: https://help.aliyun.com/api/push/pushmessagetoandroid.html
 func (client *Client) PushMessageToAndroid(request *PushMessageToAndroidRequest) (response *PushMessageToAndroidResponse, err error) {
 	response = CreatePushMessageToAndroidResponse()
@@ -28,7 +28,7 @@ func (client *Client) PushMessageToAndroid(request *PushMessageToAndroidRequest)
 	return
 }
 
-// invoke PushMessageToAndroid api with *PushMessageToAndroidRequest asynchronously
+// PushMessageToAndroidWithChan invokes the push.PushMessageToAndroid API asynchronously
 // api document: https://help.aliyun.com/api/push/pushmessagetoandroid.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PushMessageToAndroidWithChan(request *PushMessageToAndroidRequest) (<-chan *PushMessageToAndroidResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) PushMessageToAndroidWithChan(request *PushMessageToAndroid
 	return responseChan, errChan
 }
 
-// invoke PushMessageToAndroid api with *PushMessageToAndroidRequest asynchronously
+// PushMessageToAndroidWithCallback invokes the push.PushMessageToAndroid API asynchronously
 // api document: https://help.aliyun.com/api/push/pushmessagetoandroid.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PushMessageToAndroidWithCallback(request *PushMessageToAndroidRequest, callback func(response *PushMessageToAndroidResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) PushMessageToAndroidWithCallback(request *PushMessageToAnd
 	return result
 }
 
+// PushMessageToAndroidRequest is the request struct for api PushMessageToAndroid
 type PushMessageToAndroidRequest struct {
 	*requests.RpcRequest
 	AppKey      requests.Integer `position:"Query" name:"AppKey"`
@@ -83,14 +84,15 @@ type PushMessageToAndroidRequest struct {
 	JobKey      string           `position:"Query" name:"JobKey"`
 }
 
+// PushMessageToAndroidResponse is the response struct for api PushMessageToAndroid
 type PushMessageToAndroidResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	MessageId string `json:"MessageId" xml:"MessageId"`
 }
 
-// create a request to invoke PushMessageToAndroid API
-func CreatePushMessageToAndroidRequest() (request *PushMessageToAndroidRequest) {
+// CreatePushMessageToAndroidRequest creates a request to invoke PushMessageToAndroid API
+func CreatePushMessageToAndroidRequest(request *PushMessageToAndroidRequest) {
 	request = &PushMessageToAndroidRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreatePushMessageToAndroidRequest() (request *PushMessageToAndroidRequest) 
 	return
 }
 
-// create a response to parse from PushMessageToAndroid response
+// CreatePushMessageToAndroidResponse creates a response to parse from PushMessageToAndroid response
 func CreatePushMessageToAndroidResponse() (response *PushMessageToAndroidResponse) {
 	response = &PushMessageToAndroidResponse{
 		BaseResponse: &responses.BaseResponse{},

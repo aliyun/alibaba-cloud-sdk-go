@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SetWaitingRoomConfig api with *SetWaitingRoomConfigRequest synchronously
+// SetWaitingRoomConfig invokes the cdn.SetWaitingRoomConfig API synchronously
 // api document: https://help.aliyun.com/api/cdn/setwaitingroomconfig.html
 func (client *Client) SetWaitingRoomConfig(request *SetWaitingRoomConfigRequest) (response *SetWaitingRoomConfigResponse, err error) {
 	response = CreateSetWaitingRoomConfigResponse()
@@ -28,7 +28,7 @@ func (client *Client) SetWaitingRoomConfig(request *SetWaitingRoomConfigRequest)
 	return
 }
 
-// invoke SetWaitingRoomConfig api with *SetWaitingRoomConfigRequest asynchronously
+// SetWaitingRoomConfigWithChan invokes the cdn.SetWaitingRoomConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/setwaitingroomconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetWaitingRoomConfigWithChan(request *SetWaitingRoomConfigRequest) (<-chan *SetWaitingRoomConfigResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SetWaitingRoomConfigWithChan(request *SetWaitingRoomConfig
 	return responseChan, errChan
 }
 
-// invoke SetWaitingRoomConfig api with *SetWaitingRoomConfigRequest asynchronously
+// SetWaitingRoomConfigWithCallback invokes the cdn.SetWaitingRoomConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/setwaitingroomconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetWaitingRoomConfigWithCallback(request *SetWaitingRoomConfigRequest, callback func(response *SetWaitingRoomConfigResponse, err error)) <-chan int {
@@ -73,17 +73,19 @@ func (client *Client) SetWaitingRoomConfigWithCallback(request *SetWaitingRoomCo
 	return result
 }
 
+// SetWaitingRoomConfigRequest is the request struct for api SetWaitingRoomConfig
 type SetWaitingRoomConfigRequest struct {
 	*requests.RpcRequest
 }
 
+// SetWaitingRoomConfigResponse is the response struct for api SetWaitingRoomConfig
 type SetWaitingRoomConfigResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke SetWaitingRoomConfig API
-func CreateSetWaitingRoomConfigRequest() (request *SetWaitingRoomConfigRequest) {
+// CreateSetWaitingRoomConfigRequest creates a request to invoke SetWaitingRoomConfig API
+func CreateSetWaitingRoomConfigRequest(request *SetWaitingRoomConfigRequest) {
 	request = &SetWaitingRoomConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -91,7 +93,7 @@ func CreateSetWaitingRoomConfigRequest() (request *SetWaitingRoomConfigRequest) 
 	return
 }
 
-// create a response to parse from SetWaitingRoomConfig response
+// CreateSetWaitingRoomConfigResponse creates a response to parse from SetWaitingRoomConfig response
 func CreateSetWaitingRoomConfigResponse() (response *SetWaitingRoomConfigResponse) {
 	response = &SetWaitingRoomConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

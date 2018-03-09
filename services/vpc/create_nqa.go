@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CreateNqa api with *CreateNqaRequest synchronously
+// CreateNqa invokes the vpc.CreateNqa API synchronously
 // api document: https://help.aliyun.com/api/vpc/createnqa.html
 func (client *Client) CreateNqa(request *CreateNqaRequest) (response *CreateNqaResponse, err error) {
 	response = CreateCreateNqaResponse()
@@ -28,7 +28,7 @@ func (client *Client) CreateNqa(request *CreateNqaRequest) (response *CreateNqaR
 	return
 }
 
-// invoke CreateNqa api with *CreateNqaRequest asynchronously
+// CreateNqaWithChan invokes the vpc.CreateNqa API asynchronously
 // api document: https://help.aliyun.com/api/vpc/createnqa.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateNqaWithChan(request *CreateNqaRequest) (<-chan *CreateNqaResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CreateNqaWithChan(request *CreateNqaRequest) (<-chan *Crea
 	return responseChan, errChan
 }
 
-// invoke CreateNqa api with *CreateNqaRequest asynchronously
+// CreateNqaWithCallback invokes the vpc.CreateNqa API asynchronously
 // api document: https://help.aliyun.com/api/vpc/createnqa.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateNqaWithCallback(request *CreateNqaRequest, callback func(response *CreateNqaResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) CreateNqaWithCallback(request *CreateNqaRequest, callback 
 	return result
 }
 
+// CreateNqaRequest is the request struct for api CreateNqa
 type CreateNqaRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,14 +85,15 @@ type CreateNqaRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// CreateNqaResponse is the response struct for api CreateNqa
 type CreateNqaResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	NqaId     string `json:"NqaId" xml:"NqaId"`
 }
 
-// create a request to invoke CreateNqa API
-func CreateCreateNqaRequest() (request *CreateNqaRequest) {
+// CreateCreateNqaRequest creates a request to invoke CreateNqa API
+func CreateCreateNqaRequest(request *CreateNqaRequest) {
 	request = &CreateNqaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateCreateNqaRequest() (request *CreateNqaRequest) {
 	return
 }
 
-// create a response to parse from CreateNqa response
+// CreateCreateNqaResponse creates a response to parse from CreateNqa response
 func CreateCreateNqaResponse() (response *CreateNqaResponse) {
 	response = &CreateNqaResponse{
 		BaseResponse: &responses.BaseResponse{},

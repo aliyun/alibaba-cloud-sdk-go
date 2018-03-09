@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke StopMixStreamsService api with *StopMixStreamsServiceRequest synchronously
+// StopMixStreamsService invokes the cdn.StopMixStreamsService API synchronously
 // api document: https://help.aliyun.com/api/cdn/stopmixstreamsservice.html
 func (client *Client) StopMixStreamsService(request *StopMixStreamsServiceRequest) (response *StopMixStreamsServiceResponse, err error) {
 	response = CreateStopMixStreamsServiceResponse()
@@ -28,7 +28,7 @@ func (client *Client) StopMixStreamsService(request *StopMixStreamsServiceReques
 	return
 }
 
-// invoke StopMixStreamsService api with *StopMixStreamsServiceRequest asynchronously
+// StopMixStreamsServiceWithChan invokes the cdn.StopMixStreamsService API asynchronously
 // api document: https://help.aliyun.com/api/cdn/stopmixstreamsservice.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StopMixStreamsServiceWithChan(request *StopMixStreamsServiceRequest) (<-chan *StopMixStreamsServiceResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) StopMixStreamsServiceWithChan(request *StopMixStreamsServi
 	return responseChan, errChan
 }
 
-// invoke StopMixStreamsService api with *StopMixStreamsServiceRequest asynchronously
+// StopMixStreamsServiceWithCallback invokes the cdn.StopMixStreamsService API asynchronously
 // api document: https://help.aliyun.com/api/cdn/stopmixstreamsservice.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StopMixStreamsServiceWithCallback(request *StopMixStreamsServiceRequest, callback func(response *StopMixStreamsServiceResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) StopMixStreamsServiceWithCallback(request *StopMixStreamsS
 	return result
 }
 
+// StopMixStreamsServiceRequest is the request struct for api StopMixStreamsService
 type StopMixStreamsServiceRequest struct {
 	*requests.RpcRequest
 	OwnerId        requests.Integer `position:"Query" name:"OwnerId"`
@@ -85,14 +86,15 @@ type StopMixStreamsServiceRequest struct {
 	MixStreamName  string           `position:"Query" name:"MixStreamName"`
 }
 
+// StopMixStreamsServiceResponse is the response struct for api StopMixStreamsService
 type StopMixStreamsServiceResponse struct {
 	*responses.BaseResponse
 	RequestId          string                                    `json:"RequestId" xml:"RequestId"`
 	MixStreamsInfoList MixStreamsInfoListInStopMixStreamsService `json:"MixStreamsInfoList" xml:"MixStreamsInfoList"`
 }
 
-// create a request to invoke StopMixStreamsService API
-func CreateStopMixStreamsServiceRequest() (request *StopMixStreamsServiceRequest) {
+// CreateStopMixStreamsServiceRequest creates a request to invoke StopMixStreamsService API
+func CreateStopMixStreamsServiceRequest(request *StopMixStreamsServiceRequest) {
 	request = &StopMixStreamsServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -100,7 +102,7 @@ func CreateStopMixStreamsServiceRequest() (request *StopMixStreamsServiceRequest
 	return
 }
 
-// create a response to parse from StopMixStreamsService response
+// CreateStopMixStreamsServiceResponse creates a response to parse from StopMixStreamsService response
 func CreateStopMixStreamsServiceResponse() (response *StopMixStreamsServiceResponse) {
 	response = &StopMixStreamsServiceResponse{
 		BaseResponse: &responses.BaseResponse{},

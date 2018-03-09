@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeDiskMonitorData api with *DescribeDiskMonitorDataRequest synchronously
+// DescribeDiskMonitorData invokes the ecs.DescribeDiskMonitorData API synchronously
 // api document: https://help.aliyun.com/api/ecs/describediskmonitordata.html
 func (client *Client) DescribeDiskMonitorData(request *DescribeDiskMonitorDataRequest) (response *DescribeDiskMonitorDataResponse, err error) {
 	response = CreateDescribeDiskMonitorDataResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeDiskMonitorData(request *DescribeDiskMonitorDataRe
 	return
 }
 
-// invoke DescribeDiskMonitorData api with *DescribeDiskMonitorDataRequest asynchronously
+// DescribeDiskMonitorDataWithChan invokes the ecs.DescribeDiskMonitorData API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describediskmonitordata.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDiskMonitorDataWithChan(request *DescribeDiskMonitorDataRequest) (<-chan *DescribeDiskMonitorDataResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeDiskMonitorDataWithChan(request *DescribeDiskMonit
 	return responseChan, errChan
 }
 
-// invoke DescribeDiskMonitorData api with *DescribeDiskMonitorDataRequest asynchronously
+// DescribeDiskMonitorDataWithCallback invokes the ecs.DescribeDiskMonitorData API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describediskmonitordata.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDiskMonitorDataWithCallback(request *DescribeDiskMonitorDataRequest, callback func(response *DescribeDiskMonitorDataResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeDiskMonitorDataWithCallback(request *DescribeDiskM
 	return result
 }
 
+// DescribeDiskMonitorDataRequest is the request struct for api DescribeDiskMonitorData
 type DescribeDiskMonitorDataRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -85,6 +86,7 @@ type DescribeDiskMonitorDataRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// DescribeDiskMonitorDataResponse is the response struct for api DescribeDiskMonitorData
 type DescribeDiskMonitorDataResponse struct {
 	*responses.BaseResponse
 	RequestId   string                               `json:"RequestId" xml:"RequestId"`
@@ -92,8 +94,8 @@ type DescribeDiskMonitorDataResponse struct {
 	MonitorData MonitorDataInDescribeDiskMonitorData `json:"MonitorData" xml:"MonitorData"`
 }
 
-// create a request to invoke DescribeDiskMonitorData API
-func CreateDescribeDiskMonitorDataRequest() (request *DescribeDiskMonitorDataRequest) {
+// CreateDescribeDiskMonitorDataRequest creates a request to invoke DescribeDiskMonitorData API
+func CreateDescribeDiskMonitorDataRequest(request *DescribeDiskMonitorDataRequest) {
 	request = &DescribeDiskMonitorDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -101,7 +103,7 @@ func CreateDescribeDiskMonitorDataRequest() (request *DescribeDiskMonitorDataReq
 	return
 }
 
-// create a response to parse from DescribeDiskMonitorData response
+// CreateDescribeDiskMonitorDataResponse creates a response to parse from DescribeDiskMonitorData response
 func CreateDescribeDiskMonitorDataResponse() (response *DescribeDiskMonitorDataResponse) {
 	response = &DescribeDiskMonitorDataResponse{
 		BaseResponse: &responses.BaseResponse{},

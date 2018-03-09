@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke MoveResourceGroup api with *MoveResourceGroupRequest synchronously
+// MoveResourceGroup invokes the slb.MoveResourceGroup API synchronously
 // api document: https://help.aliyun.com/api/slb/moveresourcegroup.html
 func (client *Client) MoveResourceGroup(request *MoveResourceGroupRequest) (response *MoveResourceGroupResponse, err error) {
 	response = CreateMoveResourceGroupResponse()
@@ -28,7 +28,7 @@ func (client *Client) MoveResourceGroup(request *MoveResourceGroupRequest) (resp
 	return
 }
 
-// invoke MoveResourceGroup api with *MoveResourceGroupRequest asynchronously
+// MoveResourceGroupWithChan invokes the slb.MoveResourceGroup API asynchronously
 // api document: https://help.aliyun.com/api/slb/moveresourcegroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) MoveResourceGroupWithChan(request *MoveResourceGroupRequest) (<-chan *MoveResourceGroupResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) MoveResourceGroupWithChan(request *MoveResourceGroupReques
 	return responseChan, errChan
 }
 
-// invoke MoveResourceGroup api with *MoveResourceGroupRequest asynchronously
+// MoveResourceGroupWithCallback invokes the slb.MoveResourceGroup API asynchronously
 // api document: https://help.aliyun.com/api/slb/moveresourcegroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) MoveResourceGroupWithCallback(request *MoveResourceGroupRequest, callback func(response *MoveResourceGroupResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) MoveResourceGroupWithCallback(request *MoveResourceGroupRe
 	return result
 }
 
+// MoveResourceGroupRequest is the request struct for api MoveResourceGroup
 type MoveResourceGroupRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -87,13 +88,14 @@ type MoveResourceGroupRequest struct {
 	Tags                 string           `position:"Query" name:"Tags"`
 }
 
+// MoveResourceGroupResponse is the response struct for api MoveResourceGroup
 type MoveResourceGroupResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke MoveResourceGroup API
-func CreateMoveResourceGroupRequest() (request *MoveResourceGroupRequest) {
+// CreateMoveResourceGroupRequest creates a request to invoke MoveResourceGroup API
+func CreateMoveResourceGroupRequest(request *MoveResourceGroupRequest) {
 	request = &MoveResourceGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -101,7 +103,7 @@ func CreateMoveResourceGroupRequest() (request *MoveResourceGroupRequest) {
 	return
 }
 
-// create a response to parse from MoveResourceGroup response
+// CreateMoveResourceGroupResponse creates a response to parse from MoveResourceGroup response
 func CreateMoveResourceGroupResponse() (response *MoveResourceGroupResponse) {
 	response = &MoveResourceGroupResponse{
 		BaseResponse: &responses.BaseResponse{},

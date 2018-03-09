@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeIntranetAttributeKb api with *DescribeIntranetAttributeKbRequest synchronously
+// DescribeIntranetAttributeKb invokes the ecs.DescribeIntranetAttributeKb API synchronously
 // api document: https://help.aliyun.com/api/ecs/describeintranetattributekb.html
 func (client *Client) DescribeIntranetAttributeKb(request *DescribeIntranetAttributeKbRequest) (response *DescribeIntranetAttributeKbResponse, err error) {
 	response = CreateDescribeIntranetAttributeKbResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeIntranetAttributeKb(request *DescribeIntranetAttri
 	return
 }
 
-// invoke DescribeIntranetAttributeKb api with *DescribeIntranetAttributeKbRequest asynchronously
+// DescribeIntranetAttributeKbWithChan invokes the ecs.DescribeIntranetAttributeKb API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describeintranetattributekb.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeIntranetAttributeKbWithChan(request *DescribeIntranetAttributeKbRequest) (<-chan *DescribeIntranetAttributeKbResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeIntranetAttributeKbWithChan(request *DescribeIntra
 	return responseChan, errChan
 }
 
-// invoke DescribeIntranetAttributeKb api with *DescribeIntranetAttributeKbRequest asynchronously
+// DescribeIntranetAttributeKbWithCallback invokes the ecs.DescribeIntranetAttributeKb API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describeintranetattributekb.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeIntranetAttributeKbWithCallback(request *DescribeIntranetAttributeKbRequest, callback func(response *DescribeIntranetAttributeKbResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeIntranetAttributeKbWithCallback(request *DescribeI
 	return result
 }
 
+// DescribeIntranetAttributeKbRequest is the request struct for api DescribeIntranetAttributeKb
 type DescribeIntranetAttributeKbRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,6 +83,7 @@ type DescribeIntranetAttributeKbRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// DescribeIntranetAttributeKbResponse is the response struct for api DescribeIntranetAttributeKb
 type DescribeIntranetAttributeKbResponse struct {
 	*responses.BaseResponse
 	RequestId               string `json:"RequestId" xml:"RequestId"`
@@ -92,8 +94,8 @@ type DescribeIntranetAttributeKbResponse struct {
 	IntranetMaxBandwidthOut int    `json:"IntranetMaxBandwidthOut" xml:"IntranetMaxBandwidthOut"`
 }
 
-// create a request to invoke DescribeIntranetAttributeKb API
-func CreateDescribeIntranetAttributeKbRequest() (request *DescribeIntranetAttributeKbRequest) {
+// CreateDescribeIntranetAttributeKbRequest creates a request to invoke DescribeIntranetAttributeKb API
+func CreateDescribeIntranetAttributeKbRequest(request *DescribeIntranetAttributeKbRequest) {
 	request = &DescribeIntranetAttributeKbRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -101,7 +103,7 @@ func CreateDescribeIntranetAttributeKbRequest() (request *DescribeIntranetAttrib
 	return
 }
 
-// create a response to parse from DescribeIntranetAttributeKb response
+// CreateDescribeIntranetAttributeKbResponse creates a response to parse from DescribeIntranetAttributeKb response
 func CreateDescribeIntranetAttributeKbResponse() (response *DescribeIntranetAttributeKbResponse) {
 	response = &DescribeIntranetAttributeKbResponse{
 		BaseResponse: &responses.BaseResponse{},

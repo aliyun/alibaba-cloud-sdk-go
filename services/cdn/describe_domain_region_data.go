@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeDomainRegionData api with *DescribeDomainRegionDataRequest synchronously
+// DescribeDomainRegionData invokes the cdn.DescribeDomainRegionData API synchronously
 // api document: https://help.aliyun.com/api/cdn/describedomainregiondata.html
 func (client *Client) DescribeDomainRegionData(request *DescribeDomainRegionDataRequest) (response *DescribeDomainRegionDataResponse, err error) {
 	response = CreateDescribeDomainRegionDataResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeDomainRegionData(request *DescribeDomainRegionData
 	return
 }
 
-// invoke DescribeDomainRegionData api with *DescribeDomainRegionDataRequest asynchronously
+// DescribeDomainRegionDataWithChan invokes the cdn.DescribeDomainRegionData API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describedomainregiondata.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainRegionDataWithChan(request *DescribeDomainRegionDataRequest) (<-chan *DescribeDomainRegionDataResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeDomainRegionDataWithChan(request *DescribeDomainRe
 	return responseChan, errChan
 }
 
-// invoke DescribeDomainRegionData api with *DescribeDomainRegionDataRequest asynchronously
+// DescribeDomainRegionDataWithCallback invokes the cdn.DescribeDomainRegionData API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describedomainregiondata.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainRegionDataWithCallback(request *DescribeDomainRegionDataRequest, callback func(response *DescribeDomainRegionDataResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeDomainRegionDataWithCallback(request *DescribeDoma
 	return result
 }
 
+// DescribeDomainRegionDataRequest is the request struct for api DescribeDomainRegionData
 type DescribeDomainRegionDataRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,6 +83,7 @@ type DescribeDomainRegionDataRequest struct {
 	EndTime       string           `position:"Query" name:"EndTime"`
 }
 
+// DescribeDomainRegionDataResponse is the response struct for api DescribeDomainRegionData
 type DescribeDomainRegionDataResponse struct {
 	*responses.BaseResponse
 	RequestId    string                          `json:"RequestId" xml:"RequestId"`
@@ -92,8 +94,8 @@ type DescribeDomainRegionDataResponse struct {
 	Value        ValueInDescribeDomainRegionData `json:"Value" xml:"Value"`
 }
 
-// create a request to invoke DescribeDomainRegionData API
-func CreateDescribeDomainRegionDataRequest() (request *DescribeDomainRegionDataRequest) {
+// CreateDescribeDomainRegionDataRequest creates a request to invoke DescribeDomainRegionData API
+func CreateDescribeDomainRegionDataRequest(request *DescribeDomainRegionDataRequest) {
 	request = &DescribeDomainRegionDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -101,7 +103,7 @@ func CreateDescribeDomainRegionDataRequest() (request *DescribeDomainRegionDataR
 	return
 }
 
-// create a response to parse from DescribeDomainRegionData response
+// CreateDescribeDomainRegionDataResponse creates a response to parse from DescribeDomainRegionData response
 func CreateDescribeDomainRegionDataResponse() (response *DescribeDomainRegionDataResponse) {
 	response = &DescribeDomainRegionDataResponse{
 		BaseResponse: &responses.BaseResponse{},

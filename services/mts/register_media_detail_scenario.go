@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke RegisterMediaDetailScenario api with *RegisterMediaDetailScenarioRequest synchronously
+// RegisterMediaDetailScenario invokes the mts.RegisterMediaDetailScenario API synchronously
 // api document: https://help.aliyun.com/api/mts/registermediadetailscenario.html
 func (client *Client) RegisterMediaDetailScenario(request *RegisterMediaDetailScenarioRequest) (response *RegisterMediaDetailScenarioResponse, err error) {
 	response = CreateRegisterMediaDetailScenarioResponse()
@@ -28,7 +28,7 @@ func (client *Client) RegisterMediaDetailScenario(request *RegisterMediaDetailSc
 	return
 }
 
-// invoke RegisterMediaDetailScenario api with *RegisterMediaDetailScenarioRequest asynchronously
+// RegisterMediaDetailScenarioWithChan invokes the mts.RegisterMediaDetailScenario API asynchronously
 // api document: https://help.aliyun.com/api/mts/registermediadetailscenario.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RegisterMediaDetailScenarioWithChan(request *RegisterMediaDetailScenarioRequest) (<-chan *RegisterMediaDetailScenarioResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) RegisterMediaDetailScenarioWithChan(request *RegisterMedia
 	return responseChan, errChan
 }
 
-// invoke RegisterMediaDetailScenario api with *RegisterMediaDetailScenarioRequest asynchronously
+// RegisterMediaDetailScenarioWithCallback invokes the mts.RegisterMediaDetailScenario API asynchronously
 // api document: https://help.aliyun.com/api/mts/registermediadetailscenario.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RegisterMediaDetailScenarioWithCallback(request *RegisterMediaDetailScenarioRequest, callback func(response *RegisterMediaDetailScenarioResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) RegisterMediaDetailScenarioWithCallback(request *RegisterM
 	return result
 }
 
+// RegisterMediaDetailScenarioRequest is the request struct for api RegisterMediaDetailScenario
 type RegisterMediaDetailScenarioRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,14 +85,15 @@ type RegisterMediaDetailScenarioRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// RegisterMediaDetailScenarioResponse is the response struct for api RegisterMediaDetailScenario
 type RegisterMediaDetailScenarioResponse struct {
 	*responses.BaseResponse
 	RequestId  string `json:"RequestId" xml:"RequestId"`
 	ScenarioId string `json:"ScenarioId" xml:"ScenarioId"`
 }
 
-// create a request to invoke RegisterMediaDetailScenario API
-func CreateRegisterMediaDetailScenarioRequest() (request *RegisterMediaDetailScenarioRequest) {
+// CreateRegisterMediaDetailScenarioRequest creates a request to invoke RegisterMediaDetailScenario API
+func CreateRegisterMediaDetailScenarioRequest(request *RegisterMediaDetailScenarioRequest) {
 	request = &RegisterMediaDetailScenarioRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateRegisterMediaDetailScenarioRequest() (request *RegisterMediaDetailSce
 	return
 }
 
-// create a response to parse from RegisterMediaDetailScenario response
+// CreateRegisterMediaDetailScenarioResponse creates a response to parse from RegisterMediaDetailScenario response
 func CreateRegisterMediaDetailScenarioResponse() (response *RegisterMediaDetailScenarioResponse) {
 	response = &RegisterMediaDetailScenarioResponse{
 		BaseResponse: &responses.BaseResponse{},

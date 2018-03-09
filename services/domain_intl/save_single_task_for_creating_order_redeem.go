@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SaveSingleTaskForCreatingOrderRedeem api with *SaveSingleTaskForCreatingOrderRedeemRequest synchronously
+// SaveSingleTaskForCreatingOrderRedeem invokes the domain_intl.SaveSingleTaskForCreatingOrderRedeem API synchronously
 // api document: https://help.aliyun.com/api/domain-intl/savesingletaskforcreatingorderredeem.html
 func (client *Client) SaveSingleTaskForCreatingOrderRedeem(request *SaveSingleTaskForCreatingOrderRedeemRequest) (response *SaveSingleTaskForCreatingOrderRedeemResponse, err error) {
 	response = CreateSaveSingleTaskForCreatingOrderRedeemResponse()
@@ -28,7 +28,7 @@ func (client *Client) SaveSingleTaskForCreatingOrderRedeem(request *SaveSingleTa
 	return
 }
 
-// invoke SaveSingleTaskForCreatingOrderRedeem api with *SaveSingleTaskForCreatingOrderRedeemRequest asynchronously
+// SaveSingleTaskForCreatingOrderRedeemWithChan invokes the domain_intl.SaveSingleTaskForCreatingOrderRedeem API asynchronously
 // api document: https://help.aliyun.com/api/domain-intl/savesingletaskforcreatingorderredeem.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveSingleTaskForCreatingOrderRedeemWithChan(request *SaveSingleTaskForCreatingOrderRedeemRequest) (<-chan *SaveSingleTaskForCreatingOrderRedeemResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SaveSingleTaskForCreatingOrderRedeemWithChan(request *Save
 	return responseChan, errChan
 }
 
-// invoke SaveSingleTaskForCreatingOrderRedeem api with *SaveSingleTaskForCreatingOrderRedeemRequest asynchronously
+// SaveSingleTaskForCreatingOrderRedeemWithCallback invokes the domain_intl.SaveSingleTaskForCreatingOrderRedeem API asynchronously
 // api document: https://help.aliyun.com/api/domain-intl/savesingletaskforcreatingorderredeem.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveSingleTaskForCreatingOrderRedeemWithCallback(request *SaveSingleTaskForCreatingOrderRedeemRequest, callback func(response *SaveSingleTaskForCreatingOrderRedeemResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SaveSingleTaskForCreatingOrderRedeemWithCallback(request *
 	return result
 }
 
+// SaveSingleTaskForCreatingOrderRedeemRequest is the request struct for api SaveSingleTaskForCreatingOrderRedeem
 type SaveSingleTaskForCreatingOrderRedeemRequest struct {
 	*requests.RpcRequest
 	UserClientIp          string           `position:"Query" name:"UserClientIp"`
@@ -81,14 +82,15 @@ type SaveSingleTaskForCreatingOrderRedeemRequest struct {
 	CurrentExpirationDate requests.Integer `position:"Query" name:"CurrentExpirationDate"`
 }
 
+// SaveSingleTaskForCreatingOrderRedeemResponse is the response struct for api SaveSingleTaskForCreatingOrderRedeem
 type SaveSingleTaskForCreatingOrderRedeemResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	TaskNo    string `json:"TaskNo" xml:"TaskNo"`
 }
 
-// create a request to invoke SaveSingleTaskForCreatingOrderRedeem API
-func CreateSaveSingleTaskForCreatingOrderRedeemRequest() (request *SaveSingleTaskForCreatingOrderRedeemRequest) {
+// CreateSaveSingleTaskForCreatingOrderRedeemRequest creates a request to invoke SaveSingleTaskForCreatingOrderRedeem API
+func CreateSaveSingleTaskForCreatingOrderRedeemRequest(request *SaveSingleTaskForCreatingOrderRedeemRequest) {
 	request = &SaveSingleTaskForCreatingOrderRedeemRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -96,7 +98,7 @@ func CreateSaveSingleTaskForCreatingOrderRedeemRequest() (request *SaveSingleTas
 	return
 }
 
-// create a response to parse from SaveSingleTaskForCreatingOrderRedeem response
+// CreateSaveSingleTaskForCreatingOrderRedeemResponse creates a response to parse from SaveSingleTaskForCreatingOrderRedeem response
 func CreateSaveSingleTaskForCreatingOrderRedeemResponse() (response *SaveSingleTaskForCreatingOrderRedeemResponse) {
 	response = &SaveSingleTaskForCreatingOrderRedeemResponse{
 		BaseResponse: &responses.BaseResponse{},

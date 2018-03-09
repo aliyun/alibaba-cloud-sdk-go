@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeDomainRealTimeQpsData api with *DescribeDomainRealTimeQpsDataRequest synchronously
+// DescribeDomainRealTimeQpsData invokes the cdn.DescribeDomainRealTimeQpsData API synchronously
 // api document: https://help.aliyun.com/api/cdn/describedomainrealtimeqpsdata.html
 func (client *Client) DescribeDomainRealTimeQpsData(request *DescribeDomainRealTimeQpsDataRequest) (response *DescribeDomainRealTimeQpsDataResponse, err error) {
 	response = CreateDescribeDomainRealTimeQpsDataResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeDomainRealTimeQpsData(request *DescribeDomainRealT
 	return
 }
 
-// invoke DescribeDomainRealTimeQpsData api with *DescribeDomainRealTimeQpsDataRequest asynchronously
+// DescribeDomainRealTimeQpsDataWithChan invokes the cdn.DescribeDomainRealTimeQpsData API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describedomainrealtimeqpsdata.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainRealTimeQpsDataWithChan(request *DescribeDomainRealTimeQpsDataRequest) (<-chan *DescribeDomainRealTimeQpsDataResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeDomainRealTimeQpsDataWithChan(request *DescribeDom
 	return responseChan, errChan
 }
 
-// invoke DescribeDomainRealTimeQpsData api with *DescribeDomainRealTimeQpsDataRequest asynchronously
+// DescribeDomainRealTimeQpsDataWithCallback invokes the cdn.DescribeDomainRealTimeQpsData API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describedomainrealtimeqpsdata.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainRealTimeQpsDataWithCallback(request *DescribeDomainRealTimeQpsDataRequest, callback func(response *DescribeDomainRealTimeQpsDataResponse, err error)) <-chan int {
@@ -73,18 +73,20 @@ func (client *Client) DescribeDomainRealTimeQpsDataWithCallback(request *Describ
 	return result
 }
 
+// DescribeDomainRealTimeQpsDataRequest is the request struct for api DescribeDomainRealTimeQpsData
 type DescribeDomainRealTimeQpsDataRequest struct {
 	*requests.RpcRequest
 }
 
+// DescribeDomainRealTimeQpsDataResponse is the response struct for api DescribeDomainRealTimeQpsData
 type DescribeDomainRealTimeQpsDataResponse struct {
 	*responses.BaseResponse
 	RequestId string                              `json:"RequestId" xml:"RequestId"`
 	Data      DataInDescribeDomainRealTimeQpsData `json:"Data" xml:"Data"`
 }
 
-// create a request to invoke DescribeDomainRealTimeQpsData API
-func CreateDescribeDomainRealTimeQpsDataRequest() (request *DescribeDomainRealTimeQpsDataRequest) {
+// CreateDescribeDomainRealTimeQpsDataRequest creates a request to invoke DescribeDomainRealTimeQpsData API
+func CreateDescribeDomainRealTimeQpsDataRequest(request *DescribeDomainRealTimeQpsDataRequest) {
 	request = &DescribeDomainRealTimeQpsDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -92,7 +94,7 @@ func CreateDescribeDomainRealTimeQpsDataRequest() (request *DescribeDomainRealTi
 	return
 }
 
-// create a response to parse from DescribeDomainRealTimeQpsData response
+// CreateDescribeDomainRealTimeQpsDataResponse creates a response to parse from DescribeDomainRealTimeQpsData response
 func CreateDescribeDomainRealTimeQpsDataResponse() (response *DescribeDomainRealTimeQpsDataResponse) {
 	response = &DescribeDomainRealTimeQpsDataResponse{
 		BaseResponse: &responses.BaseResponse{},

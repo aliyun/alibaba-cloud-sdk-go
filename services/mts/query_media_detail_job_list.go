@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke QueryMediaDetailJobList api with *QueryMediaDetailJobListRequest synchronously
+// QueryMediaDetailJobList invokes the mts.QueryMediaDetailJobList API synchronously
 // api document: https://help.aliyun.com/api/mts/querymediadetailjoblist.html
 func (client *Client) QueryMediaDetailJobList(request *QueryMediaDetailJobListRequest) (response *QueryMediaDetailJobListResponse, err error) {
 	response = CreateQueryMediaDetailJobListResponse()
@@ -28,7 +28,7 @@ func (client *Client) QueryMediaDetailJobList(request *QueryMediaDetailJobListRe
 	return
 }
 
-// invoke QueryMediaDetailJobList api with *QueryMediaDetailJobListRequest asynchronously
+// QueryMediaDetailJobListWithChan invokes the mts.QueryMediaDetailJobList API asynchronously
 // api document: https://help.aliyun.com/api/mts/querymediadetailjoblist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryMediaDetailJobListWithChan(request *QueryMediaDetailJobListRequest) (<-chan *QueryMediaDetailJobListResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) QueryMediaDetailJobListWithChan(request *QueryMediaDetailJ
 	return responseChan, errChan
 }
 
-// invoke QueryMediaDetailJobList api with *QueryMediaDetailJobListRequest asynchronously
+// QueryMediaDetailJobListWithCallback invokes the mts.QueryMediaDetailJobList API asynchronously
 // api document: https://help.aliyun.com/api/mts/querymediadetailjoblist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryMediaDetailJobListWithCallback(request *QueryMediaDetailJobListRequest, callback func(response *QueryMediaDetailJobListResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) QueryMediaDetailJobListWithCallback(request *QueryMediaDet
 	return result
 }
 
+// QueryMediaDetailJobListRequest is the request struct for api QueryMediaDetailJobList
 type QueryMediaDetailJobListRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,6 +83,7 @@ type QueryMediaDetailJobListRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// QueryMediaDetailJobListResponse is the response struct for api QueryMediaDetailJobList
 type QueryMediaDetailJobListResponse struct {
 	*responses.BaseResponse
 	RequestId   string                               `json:"RequestId" xml:"RequestId"`
@@ -89,8 +91,8 @@ type QueryMediaDetailJobListResponse struct {
 	JobList     JobListInQueryMediaDetailJobList     `json:"JobList" xml:"JobList"`
 }
 
-// create a request to invoke QueryMediaDetailJobList API
-func CreateQueryMediaDetailJobListRequest() (request *QueryMediaDetailJobListRequest) {
+// CreateQueryMediaDetailJobListRequest creates a request to invoke QueryMediaDetailJobList API
+func CreateQueryMediaDetailJobListRequest(request *QueryMediaDetailJobListRequest) {
 	request = &QueryMediaDetailJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateQueryMediaDetailJobListRequest() (request *QueryMediaDetailJobListReq
 	return
 }
 
-// create a response to parse from QueryMediaDetailJobList response
+// CreateQueryMediaDetailJobListResponse creates a response to parse from QueryMediaDetailJobList response
 func CreateQueryMediaDetailJobListResponse() (response *QueryMediaDetailJobListResponse) {
 	response = &QueryMediaDetailJobListResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeLiveStreamsControlHistory api with *DescribeLiveStreamsControlHistoryRequest synchronously
+// DescribeLiveStreamsControlHistory invokes the cdn.DescribeLiveStreamsControlHistory API synchronously
 // api document: https://help.aliyun.com/api/cdn/describelivestreamscontrolhistory.html
 func (client *Client) DescribeLiveStreamsControlHistory(request *DescribeLiveStreamsControlHistoryRequest) (response *DescribeLiveStreamsControlHistoryResponse, err error) {
 	response = CreateDescribeLiveStreamsControlHistoryResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeLiveStreamsControlHistory(request *DescribeLiveStr
 	return
 }
 
-// invoke DescribeLiveStreamsControlHistory api with *DescribeLiveStreamsControlHistoryRequest asynchronously
+// DescribeLiveStreamsControlHistoryWithChan invokes the cdn.DescribeLiveStreamsControlHistory API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describelivestreamscontrolhistory.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamsControlHistoryWithChan(request *DescribeLiveStreamsControlHistoryRequest) (<-chan *DescribeLiveStreamsControlHistoryResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeLiveStreamsControlHistoryWithChan(request *Describ
 	return responseChan, errChan
 }
 
-// invoke DescribeLiveStreamsControlHistory api with *DescribeLiveStreamsControlHistoryRequest asynchronously
+// DescribeLiveStreamsControlHistoryWithCallback invokes the cdn.DescribeLiveStreamsControlHistory API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describelivestreamscontrolhistory.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamsControlHistoryWithCallback(request *DescribeLiveStreamsControlHistoryRequest, callback func(response *DescribeLiveStreamsControlHistoryResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeLiveStreamsControlHistoryWithCallback(request *Des
 	return result
 }
 
+// DescribeLiveStreamsControlHistoryRequest is the request struct for api DescribeLiveStreamsControlHistory
 type DescribeLiveStreamsControlHistoryRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -83,14 +84,15 @@ type DescribeLiveStreamsControlHistoryRequest struct {
 	EndTime       string           `position:"Query" name:"EndTime"`
 }
 
+// DescribeLiveStreamsControlHistoryResponse is the response struct for api DescribeLiveStreamsControlHistory
 type DescribeLiveStreamsControlHistoryResponse struct {
 	*responses.BaseResponse
 	RequestId   string      `json:"RequestId" xml:"RequestId"`
 	ControlInfo ControlInfo `json:"ControlInfo" xml:"ControlInfo"`
 }
 
-// create a request to invoke DescribeLiveStreamsControlHistory API
-func CreateDescribeLiveStreamsControlHistoryRequest() (request *DescribeLiveStreamsControlHistoryRequest) {
+// CreateDescribeLiveStreamsControlHistoryRequest creates a request to invoke DescribeLiveStreamsControlHistory API
+func CreateDescribeLiveStreamsControlHistoryRequest(request *DescribeLiveStreamsControlHistoryRequest) {
 	request = &DescribeLiveStreamsControlHistoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateDescribeLiveStreamsControlHistoryRequest() (request *DescribeLiveStre
 	return
 }
 
-// create a response to parse from DescribeLiveStreamsControlHistory response
+// CreateDescribeLiveStreamsControlHistoryResponse creates a response to parse from DescribeLiveStreamsControlHistory response
 func CreateDescribeLiveStreamsControlHistoryResponse() (response *DescribeLiveStreamsControlHistoryResponse) {
 	response = &DescribeLiveStreamsControlHistoryResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke UpdateAlarm api with *UpdateAlarmRequest synchronously
+// UpdateAlarm invokes the cms.UpdateAlarm API synchronously
 // api document: https://help.aliyun.com/api/cms/updatealarm.html
 func (client *Client) UpdateAlarm(request *UpdateAlarmRequest) (response *UpdateAlarmResponse, err error) {
 	response = CreateUpdateAlarmResponse()
@@ -28,7 +28,7 @@ func (client *Client) UpdateAlarm(request *UpdateAlarmRequest) (response *Update
 	return
 }
 
-// invoke UpdateAlarm api with *UpdateAlarmRequest asynchronously
+// UpdateAlarmWithChan invokes the cms.UpdateAlarm API asynchronously
 // api document: https://help.aliyun.com/api/cms/updatealarm.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateAlarmWithChan(request *UpdateAlarmRequest) (<-chan *UpdateAlarmResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) UpdateAlarmWithChan(request *UpdateAlarmRequest) (<-chan *
 	return responseChan, errChan
 }
 
-// invoke UpdateAlarm api with *UpdateAlarmRequest asynchronously
+// UpdateAlarmWithCallback invokes the cms.UpdateAlarm API asynchronously
 // api document: https://help.aliyun.com/api/cms/updatealarm.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateAlarmWithCallback(request *UpdateAlarmRequest, callback func(response *UpdateAlarmResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) UpdateAlarmWithCallback(request *UpdateAlarmRequest, callb
 	return result
 }
 
+// UpdateAlarmRequest is the request struct for api UpdateAlarm
 type UpdateAlarmRequest struct {
 	*requests.RpcRequest
 	CallbyCmsOwner     string           `position:"Query" name:"callby_cms_owner"`
@@ -91,6 +92,7 @@ type UpdateAlarmRequest struct {
 	Webhook            string           `position:"Query" name:"Webhook"`
 }
 
+// UpdateAlarmResponse is the response struct for api UpdateAlarm
 type UpdateAlarmResponse struct {
 	*responses.BaseResponse
 	Success   bool   `json:"Success" xml:"Success"`
@@ -99,8 +101,8 @@ type UpdateAlarmResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke UpdateAlarm API
-func CreateUpdateAlarmRequest() (request *UpdateAlarmRequest) {
+// CreateUpdateAlarmRequest creates a request to invoke UpdateAlarm API
+func CreateUpdateAlarmRequest(request *UpdateAlarmRequest) {
 	request = &UpdateAlarmRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -108,7 +110,7 @@ func CreateUpdateAlarmRequest() (request *UpdateAlarmRequest) {
 	return
 }
 
-// create a response to parse from UpdateAlarm response
+// CreateUpdateAlarmResponse creates a response to parse from UpdateAlarm response
 func CreateUpdateAlarmResponse() (response *UpdateAlarmResponse) {
 	response = &UpdateAlarmResponse{
 		BaseResponse: &responses.BaseResponse{},

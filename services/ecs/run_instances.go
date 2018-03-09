@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke RunInstances api with *RunInstancesRequest synchronously
+// RunInstances invokes the ecs.RunInstances API synchronously
 // api document: https://help.aliyun.com/api/ecs/runinstances.html
 func (client *Client) RunInstances(request *RunInstancesRequest) (response *RunInstancesResponse, err error) {
 	response = CreateRunInstancesResponse()
@@ -28,7 +28,7 @@ func (client *Client) RunInstances(request *RunInstancesRequest) (response *RunI
 	return
 }
 
-// invoke RunInstances api with *RunInstancesRequest asynchronously
+// RunInstancesWithChan invokes the ecs.RunInstances API asynchronously
 // api document: https://help.aliyun.com/api/ecs/runinstances.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RunInstancesWithChan(request *RunInstancesRequest) (<-chan *RunInstancesResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) RunInstancesWithChan(request *RunInstancesRequest) (<-chan
 	return responseChan, errChan
 }
 
-// invoke RunInstances api with *RunInstancesRequest asynchronously
+// RunInstancesWithCallback invokes the ecs.RunInstances API asynchronously
 // api document: https://help.aliyun.com/api/ecs/runinstances.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RunInstancesWithCallback(request *RunInstancesRequest, callback func(response *RunInstancesResponse, err error)) <-chan int {
@@ -73,18 +73,20 @@ func (client *Client) RunInstancesWithCallback(request *RunInstancesRequest, cal
 	return result
 }
 
+// RunInstancesRequest is the request struct for api RunInstances
 type RunInstancesRequest struct {
 	*requests.RpcRequest
 }
 
+// RunInstancesResponse is the response struct for api RunInstances
 type RunInstancesResponse struct {
 	*responses.BaseResponse
 	RequestId      string         `json:"RequestId" xml:"RequestId"`
 	InstanceIdSets InstanceIdSets `json:"InstanceIdSets" xml:"InstanceIdSets"`
 }
 
-// create a request to invoke RunInstances API
-func CreateRunInstancesRequest() (request *RunInstancesRequest) {
+// CreateRunInstancesRequest creates a request to invoke RunInstances API
+func CreateRunInstancesRequest(request *RunInstancesRequest) {
 	request = &RunInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -92,7 +94,7 @@ func CreateRunInstancesRequest() (request *RunInstancesRequest) {
 	return
 }
 
-// create a response to parse from RunInstances response
+// CreateRunInstancesResponse creates a response to parse from RunInstances response
 func CreateRunInstancesResponse() (response *RunInstancesResponse) {
 	response = &RunInstancesResponse{
 		BaseResponse: &responses.BaseResponse{},

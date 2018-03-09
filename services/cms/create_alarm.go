@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CreateAlarm api with *CreateAlarmRequest synchronously
+// CreateAlarm invokes the cms.CreateAlarm API synchronously
 // api document: https://help.aliyun.com/api/cms/createalarm.html
 func (client *Client) CreateAlarm(request *CreateAlarmRequest) (response *CreateAlarmResponse, err error) {
 	response = CreateCreateAlarmResponse()
@@ -28,7 +28,7 @@ func (client *Client) CreateAlarm(request *CreateAlarmRequest) (response *Create
 	return
 }
 
-// invoke CreateAlarm api with *CreateAlarmRequest asynchronously
+// CreateAlarmWithChan invokes the cms.CreateAlarm API asynchronously
 // api document: https://help.aliyun.com/api/cms/createalarm.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateAlarmWithChan(request *CreateAlarmRequest) (<-chan *CreateAlarmResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CreateAlarmWithChan(request *CreateAlarmRequest) (<-chan *
 	return responseChan, errChan
 }
 
-// invoke CreateAlarm api with *CreateAlarmRequest asynchronously
+// CreateAlarmWithCallback invokes the cms.CreateAlarm API asynchronously
 // api document: https://help.aliyun.com/api/cms/createalarm.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateAlarmWithCallback(request *CreateAlarmRequest, callback func(response *CreateAlarmResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) CreateAlarmWithCallback(request *CreateAlarmRequest, callb
 	return result
 }
 
+// CreateAlarmRequest is the request struct for api CreateAlarm
 type CreateAlarmRequest struct {
 	*requests.RpcRequest
 	Name               string           `position:"Query" name:"Name"`
@@ -93,6 +94,7 @@ type CreateAlarmRequest struct {
 	Webhook            string           `position:"Query" name:"Webhook"`
 }
 
+// CreateAlarmResponse is the response struct for api CreateAlarm
 type CreateAlarmResponse struct {
 	*responses.BaseResponse
 	Success   bool   `json:"Success" xml:"Success"`
@@ -102,8 +104,8 @@ type CreateAlarmResponse struct {
 	Data      string `json:"Data" xml:"Data"`
 }
 
-// create a request to invoke CreateAlarm API
-func CreateCreateAlarmRequest() (request *CreateAlarmRequest) {
+// CreateCreateAlarmRequest creates a request to invoke CreateAlarm API
+func CreateCreateAlarmRequest(request *CreateAlarmRequest) {
 	request = &CreateAlarmRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -111,7 +113,7 @@ func CreateCreateAlarmRequest() (request *CreateAlarmRequest) {
 	return
 }
 
-// create a response to parse from CreateAlarm response
+// CreateCreateAlarmResponse creates a response to parse from CreateAlarm response
 func CreateCreateAlarmResponse() (response *CreateAlarmResponse) {
 	response = &CreateAlarmResponse{
 		BaseResponse: &responses.BaseResponse{},

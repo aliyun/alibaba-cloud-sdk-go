@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeSnapshotMonitorData api with *DescribeSnapshotMonitorDataRequest synchronously
+// DescribeSnapshotMonitorData invokes the ecs.DescribeSnapshotMonitorData API synchronously
 // api document: https://help.aliyun.com/api/ecs/describesnapshotmonitordata.html
 func (client *Client) DescribeSnapshotMonitorData(request *DescribeSnapshotMonitorDataRequest) (response *DescribeSnapshotMonitorDataResponse, err error) {
 	response = CreateDescribeSnapshotMonitorDataResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeSnapshotMonitorData(request *DescribeSnapshotMonit
 	return
 }
 
-// invoke DescribeSnapshotMonitorData api with *DescribeSnapshotMonitorDataRequest asynchronously
+// DescribeSnapshotMonitorDataWithChan invokes the ecs.DescribeSnapshotMonitorData API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describesnapshotmonitordata.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSnapshotMonitorDataWithChan(request *DescribeSnapshotMonitorDataRequest) (<-chan *DescribeSnapshotMonitorDataResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeSnapshotMonitorDataWithChan(request *DescribeSnaps
 	return responseChan, errChan
 }
 
-// invoke DescribeSnapshotMonitorData api with *DescribeSnapshotMonitorDataRequest asynchronously
+// DescribeSnapshotMonitorDataWithCallback invokes the ecs.DescribeSnapshotMonitorData API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describesnapshotmonitordata.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSnapshotMonitorDataWithCallback(request *DescribeSnapshotMonitorDataRequest, callback func(response *DescribeSnapshotMonitorDataResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeSnapshotMonitorDataWithCallback(request *DescribeS
 	return result
 }
 
+// DescribeSnapshotMonitorDataRequest is the request struct for api DescribeSnapshotMonitorData
 type DescribeSnapshotMonitorDataRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,14 +85,15 @@ type DescribeSnapshotMonitorDataRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// DescribeSnapshotMonitorDataResponse is the response struct for api DescribeSnapshotMonitorData
 type DescribeSnapshotMonitorDataResponse struct {
 	*responses.BaseResponse
 	RequestId   string                                   `json:"RequestId" xml:"RequestId"`
 	MonitorData MonitorDataInDescribeSnapshotMonitorData `json:"MonitorData" xml:"MonitorData"`
 }
 
-// create a request to invoke DescribeSnapshotMonitorData API
-func CreateDescribeSnapshotMonitorDataRequest() (request *DescribeSnapshotMonitorDataRequest) {
+// CreateDescribeSnapshotMonitorDataRequest creates a request to invoke DescribeSnapshotMonitorData API
+func CreateDescribeSnapshotMonitorDataRequest(request *DescribeSnapshotMonitorDataRequest) {
 	request = &DescribeSnapshotMonitorDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateDescribeSnapshotMonitorDataRequest() (request *DescribeSnapshotMonito
 	return
 }
 
-// create a response to parse from DescribeSnapshotMonitorData response
+// CreateDescribeSnapshotMonitorDataResponse creates a response to parse from DescribeSnapshotMonitorData response
 func CreateDescribeSnapshotMonitorDataResponse() (response *DescribeSnapshotMonitorDataResponse) {
 	response = &DescribeSnapshotMonitorDataResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke GetDownloadUrl api with *GetDownloadUrlRequest synchronously
+// GetDownloadUrl invokes the cloudphoto.GetDownloadUrl API synchronously
 // api document: https://help.aliyun.com/api/cloudphoto/getdownloadurl.html
 func (client *Client) GetDownloadUrl(request *GetDownloadUrlRequest) (response *GetDownloadUrlResponse, err error) {
 	response = CreateGetDownloadUrlResponse()
@@ -28,7 +28,7 @@ func (client *Client) GetDownloadUrl(request *GetDownloadUrlRequest) (response *
 	return
 }
 
-// invoke GetDownloadUrl api with *GetDownloadUrlRequest asynchronously
+// GetDownloadUrlWithChan invokes the cloudphoto.GetDownloadUrl API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/getdownloadurl.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetDownloadUrlWithChan(request *GetDownloadUrlRequest) (<-chan *GetDownloadUrlResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) GetDownloadUrlWithChan(request *GetDownloadUrlRequest) (<-
 	return responseChan, errChan
 }
 
-// invoke GetDownloadUrl api with *GetDownloadUrlRequest asynchronously
+// GetDownloadUrlWithCallback invokes the cloudphoto.GetDownloadUrl API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/getdownloadurl.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetDownloadUrlWithCallback(request *GetDownloadUrlRequest, callback func(response *GetDownloadUrlResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) GetDownloadUrlWithCallback(request *GetDownloadUrlRequest,
 	return result
 }
 
+// GetDownloadUrlRequest is the request struct for api GetDownloadUrl
 type GetDownloadUrlRequest struct {
 	*requests.RpcRequest
 	PhotoId   requests.Integer `position:"Query" name:"PhotoId"`
@@ -80,6 +81,7 @@ type GetDownloadUrlRequest struct {
 	LibraryId string           `position:"Query" name:"LibraryId"`
 }
 
+// GetDownloadUrlResponse is the response struct for api GetDownloadUrl
 type GetDownloadUrlResponse struct {
 	*responses.BaseResponse
 	Code        string `json:"Code" xml:"Code"`
@@ -89,8 +91,8 @@ type GetDownloadUrlResponse struct {
 	Action      string `json:"Action" xml:"Action"`
 }
 
-// create a request to invoke GetDownloadUrl API
-func CreateGetDownloadUrlRequest() (request *GetDownloadUrlRequest) {
+// CreateGetDownloadUrlRequest creates a request to invoke GetDownloadUrl API
+func CreateGetDownloadUrlRequest(request *GetDownloadUrlRequest) {
 	request = &GetDownloadUrlRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateGetDownloadUrlRequest() (request *GetDownloadUrlRequest) {
 	return
 }
 
-// create a response to parse from GetDownloadUrl response
+// CreateGetDownloadUrlResponse creates a response to parse from GetDownloadUrl response
 func CreateGetDownloadUrlResponse() (response *GetDownloadUrlResponse) {
 	response = &GetDownloadUrlResponse{
 		BaseResponse: &responses.BaseResponse{},

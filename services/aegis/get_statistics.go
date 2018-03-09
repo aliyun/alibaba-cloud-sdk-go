@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke GetStatistics api with *GetStatisticsRequest synchronously
+// GetStatistics invokes the aegis.GetStatistics API synchronously
 // api document: https://help.aliyun.com/api/aegis/getstatistics.html
 func (client *Client) GetStatistics(request *GetStatisticsRequest) (response *GetStatisticsResponse, err error) {
 	response = CreateGetStatisticsResponse()
@@ -28,7 +28,7 @@ func (client *Client) GetStatistics(request *GetStatisticsRequest) (response *Ge
 	return
 }
 
-// invoke GetStatistics api with *GetStatisticsRequest asynchronously
+// GetStatisticsWithChan invokes the aegis.GetStatistics API asynchronously
 // api document: https://help.aliyun.com/api/aegis/getstatistics.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetStatisticsWithChan(request *GetStatisticsRequest) (<-chan *GetStatisticsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) GetStatisticsWithChan(request *GetStatisticsRequest) (<-ch
 	return responseChan, errChan
 }
 
-// invoke GetStatistics api with *GetStatisticsRequest asynchronously
+// GetStatisticsWithCallback invokes the aegis.GetStatistics API asynchronously
 // api document: https://help.aliyun.com/api/aegis/getstatistics.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetStatisticsWithCallback(request *GetStatisticsRequest, callback func(response *GetStatisticsResponse, err error)) <-chan int {
@@ -73,12 +73,14 @@ func (client *Client) GetStatisticsWithCallback(request *GetStatisticsRequest, c
 	return result
 }
 
+// GetStatisticsRequest is the request struct for api GetStatistics
 type GetStatisticsRequest struct {
 	*requests.RpcRequest
 	StartTime string `position:"Query" name:"StartTime"`
 	EndTime   string `position:"Query" name:"EndTime"`
 }
 
+// GetStatisticsResponse is the response struct for api GetStatistics
 type GetStatisticsResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"requestId" xml:"requestId"`
@@ -88,8 +90,8 @@ type GetStatisticsResponse struct {
 	Data      Data   `json:"Data" xml:"Data"`
 }
 
-// create a request to invoke GetStatistics API
-func CreateGetStatisticsRequest() (request *GetStatisticsRequest) {
+// CreateGetStatisticsRequest creates a request to invoke GetStatistics API
+func CreateGetStatisticsRequest(request *GetStatisticsRequest) {
 	request = &GetStatisticsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateGetStatisticsRequest() (request *GetStatisticsRequest) {
 	return
 }
 
-// create a response to parse from GetStatistics response
+// CreateGetStatisticsResponse creates a response to parse from GetStatistics response
 func CreateGetStatisticsResponse() (response *GetStatisticsResponse) {
 	response = &GetStatisticsResponse{
 		BaseResponse: &responses.BaseResponse{},

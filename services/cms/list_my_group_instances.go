@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ListMyGroupInstances api with *ListMyGroupInstancesRequest synchronously
+// ListMyGroupInstances invokes the cms.ListMyGroupInstances API synchronously
 // api document: https://help.aliyun.com/api/cms/listmygroupinstances.html
 func (client *Client) ListMyGroupInstances(request *ListMyGroupInstancesRequest) (response *ListMyGroupInstancesResponse, err error) {
 	response = CreateListMyGroupInstancesResponse()
@@ -28,7 +28,7 @@ func (client *Client) ListMyGroupInstances(request *ListMyGroupInstancesRequest)
 	return
 }
 
-// invoke ListMyGroupInstances api with *ListMyGroupInstancesRequest asynchronously
+// ListMyGroupInstancesWithChan invokes the cms.ListMyGroupInstances API asynchronously
 // api document: https://help.aliyun.com/api/cms/listmygroupinstances.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListMyGroupInstancesWithChan(request *ListMyGroupInstancesRequest) (<-chan *ListMyGroupInstancesResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ListMyGroupInstancesWithChan(request *ListMyGroupInstances
 	return responseChan, errChan
 }
 
-// invoke ListMyGroupInstances api with *ListMyGroupInstancesRequest asynchronously
+// ListMyGroupInstancesWithCallback invokes the cms.ListMyGroupInstances API asynchronously
 // api document: https://help.aliyun.com/api/cms/listmygroupinstances.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListMyGroupInstancesWithCallback(request *ListMyGroupInstancesRequest, callback func(response *ListMyGroupInstancesResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ListMyGroupInstancesWithCallback(request *ListMyGroupInsta
 	return result
 }
 
+// ListMyGroupInstancesRequest is the request struct for api ListMyGroupInstances
 type ListMyGroupInstancesRequest struct {
 	*requests.RpcRequest
 	Total      requests.Boolean `position:"Query" name:"Total"`
@@ -82,6 +83,7 @@ type ListMyGroupInstancesRequest struct {
 	Category   string           `position:"Query" name:"Category"`
 }
 
+// ListMyGroupInstancesResponse is the response struct for api ListMyGroupInstances
 type ListMyGroupInstancesResponse struct {
 	*responses.BaseResponse
 	RequestId    string                          `json:"RequestId" xml:"RequestId"`
@@ -94,8 +96,8 @@ type ListMyGroupInstancesResponse struct {
 	Resources    ResourcesInListMyGroupInstances `json:"Resources" xml:"Resources"`
 }
 
-// create a request to invoke ListMyGroupInstances API
-func CreateListMyGroupInstancesRequest() (request *ListMyGroupInstancesRequest) {
+// CreateListMyGroupInstancesRequest creates a request to invoke ListMyGroupInstances API
+func CreateListMyGroupInstancesRequest(request *ListMyGroupInstancesRequest) {
 	request = &ListMyGroupInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -103,7 +105,7 @@ func CreateListMyGroupInstancesRequest() (request *ListMyGroupInstancesRequest) 
 	return
 }
 
-// create a response to parse from ListMyGroupInstances response
+// CreateListMyGroupInstancesResponse creates a response to parse from ListMyGroupInstances response
 func CreateListMyGroupInstancesResponse() (response *ListMyGroupInstancesResponse) {
 	response = &ListMyGroupInstancesResponse{
 		BaseResponse: &responses.BaseResponse{},

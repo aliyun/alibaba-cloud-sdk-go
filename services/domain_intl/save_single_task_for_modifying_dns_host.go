@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SaveSingleTaskForModifyingDnsHost api with *SaveSingleTaskForModifyingDnsHostRequest synchronously
+// SaveSingleTaskForModifyingDnsHost invokes the domain_intl.SaveSingleTaskForModifyingDnsHost API synchronously
 // api document: https://help.aliyun.com/api/domain-intl/savesingletaskformodifyingdnshost.html
 func (client *Client) SaveSingleTaskForModifyingDnsHost(request *SaveSingleTaskForModifyingDnsHostRequest) (response *SaveSingleTaskForModifyingDnsHostResponse, err error) {
 	response = CreateSaveSingleTaskForModifyingDnsHostResponse()
@@ -28,7 +28,7 @@ func (client *Client) SaveSingleTaskForModifyingDnsHost(request *SaveSingleTaskF
 	return
 }
 
-// invoke SaveSingleTaskForModifyingDnsHost api with *SaveSingleTaskForModifyingDnsHostRequest asynchronously
+// SaveSingleTaskForModifyingDnsHostWithChan invokes the domain_intl.SaveSingleTaskForModifyingDnsHost API asynchronously
 // api document: https://help.aliyun.com/api/domain-intl/savesingletaskformodifyingdnshost.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveSingleTaskForModifyingDnsHostWithChan(request *SaveSingleTaskForModifyingDnsHostRequest) (<-chan *SaveSingleTaskForModifyingDnsHostResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SaveSingleTaskForModifyingDnsHostWithChan(request *SaveSin
 	return responseChan, errChan
 }
 
-// invoke SaveSingleTaskForModifyingDnsHost api with *SaveSingleTaskForModifyingDnsHostRequest asynchronously
+// SaveSingleTaskForModifyingDnsHostWithCallback invokes the domain_intl.SaveSingleTaskForModifyingDnsHost API asynchronously
 // api document: https://help.aliyun.com/api/domain-intl/savesingletaskformodifyingdnshost.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveSingleTaskForModifyingDnsHostWithCallback(request *SaveSingleTaskForModifyingDnsHostRequest, callback func(response *SaveSingleTaskForModifyingDnsHostResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SaveSingleTaskForModifyingDnsHostWithCallback(request *Sav
 	return result
 }
 
+// SaveSingleTaskForModifyingDnsHostRequest is the request struct for api SaveSingleTaskForModifyingDnsHost
 type SaveSingleTaskForModifyingDnsHostRequest struct {
 	*requests.RpcRequest
 	InstanceId string    `position:"Query" name:"InstanceId"`
@@ -81,14 +82,15 @@ type SaveSingleTaskForModifyingDnsHostRequest struct {
 	Ip         *[]string `position:"Query" name:"Ip"  type:"Repeated"`
 }
 
+// SaveSingleTaskForModifyingDnsHostResponse is the response struct for api SaveSingleTaskForModifyingDnsHost
 type SaveSingleTaskForModifyingDnsHostResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	TaskNo    string `json:"TaskNo" xml:"TaskNo"`
 }
 
-// create a request to invoke SaveSingleTaskForModifyingDnsHost API
-func CreateSaveSingleTaskForModifyingDnsHostRequest() (request *SaveSingleTaskForModifyingDnsHostRequest) {
+// CreateSaveSingleTaskForModifyingDnsHostRequest creates a request to invoke SaveSingleTaskForModifyingDnsHost API
+func CreateSaveSingleTaskForModifyingDnsHostRequest(request *SaveSingleTaskForModifyingDnsHostRequest) {
 	request = &SaveSingleTaskForModifyingDnsHostRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -96,7 +98,7 @@ func CreateSaveSingleTaskForModifyingDnsHostRequest() (request *SaveSingleTaskFo
 	return
 }
 
-// create a response to parse from SaveSingleTaskForModifyingDnsHost response
+// CreateSaveSingleTaskForModifyingDnsHostResponse creates a response to parse from SaveSingleTaskForModifyingDnsHost response
 func CreateSaveSingleTaskForModifyingDnsHostResponse() (response *SaveSingleTaskForModifyingDnsHostResponse) {
 	response = &SaveSingleTaskForModifyingDnsHostResponse{
 		BaseResponse: &responses.BaseResponse{},

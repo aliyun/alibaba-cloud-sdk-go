@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ListContactGroup api with *ListContactGroupRequest synchronously
+// ListContactGroup invokes the cms.ListContactGroup API synchronously
 // api document: https://help.aliyun.com/api/cms/listcontactgroup.html
 func (client *Client) ListContactGroup(request *ListContactGroupRequest) (response *ListContactGroupResponse, err error) {
 	response = CreateListContactGroupResponse()
@@ -28,7 +28,7 @@ func (client *Client) ListContactGroup(request *ListContactGroupRequest) (respon
 	return
 }
 
-// invoke ListContactGroup api with *ListContactGroupRequest asynchronously
+// ListContactGroupWithChan invokes the cms.ListContactGroup API asynchronously
 // api document: https://help.aliyun.com/api/cms/listcontactgroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListContactGroupWithChan(request *ListContactGroupRequest) (<-chan *ListContactGroupResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ListContactGroupWithChan(request *ListContactGroupRequest)
 	return responseChan, errChan
 }
 
-// invoke ListContactGroup api with *ListContactGroupRequest asynchronously
+// ListContactGroupWithCallback invokes the cms.ListContactGroup API asynchronously
 // api document: https://help.aliyun.com/api/cms/listcontactgroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListContactGroupWithCallback(request *ListContactGroupRequest, callback func(response *ListContactGroupResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ListContactGroupWithCallback(request *ListContactGroupRequ
 	return result
 }
 
+// ListContactGroupRequest is the request struct for api ListContactGroup
 type ListContactGroupRequest struct {
 	*requests.RpcRequest
 	CallbyCmsOwner string           `position:"Query" name:"callby_cms_owner"`
@@ -80,6 +81,7 @@ type ListContactGroupRequest struct {
 	PageSize       requests.Integer `position:"Query" name:"PageSize"`
 }
 
+// ListContactGroupResponse is the response struct for api ListContactGroup
 type ListContactGroupResponse struct {
 	*responses.BaseResponse
 	Success       bool                            `json:"Success" xml:"Success"`
@@ -91,8 +93,8 @@ type ListContactGroupResponse struct {
 	ContactGroups ContactGroupsInListContactGroup `json:"ContactGroups" xml:"ContactGroups"`
 }
 
-// create a request to invoke ListContactGroup API
-func CreateListContactGroupRequest() (request *ListContactGroupRequest) {
+// CreateListContactGroupRequest creates a request to invoke ListContactGroup API
+func CreateListContactGroupRequest(request *ListContactGroupRequest) {
 	request = &ListContactGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -100,7 +102,7 @@ func CreateListContactGroupRequest() (request *ListContactGroupRequest) {
 	return
 }
 
-// create a response to parse from ListContactGroup response
+// CreateListContactGroupResponse creates a response to parse from ListContactGroup response
 func CreateListContactGroupResponse() (response *ListContactGroupResponse) {
 	response = &ListContactGroupResponse{
 		BaseResponse: &responses.BaseResponse{},

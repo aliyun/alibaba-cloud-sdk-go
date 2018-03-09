@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeLiveStreamRelayPushErrors api with *DescribeLiveStreamRelayPushErrorsRequest synchronously
+// DescribeLiveStreamRelayPushErrors invokes the cdn.DescribeLiveStreamRelayPushErrors API synchronously
 // api document: https://help.aliyun.com/api/cdn/describelivestreamrelaypusherrors.html
 func (client *Client) DescribeLiveStreamRelayPushErrors(request *DescribeLiveStreamRelayPushErrorsRequest) (response *DescribeLiveStreamRelayPushErrorsResponse, err error) {
 	response = CreateDescribeLiveStreamRelayPushErrorsResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeLiveStreamRelayPushErrors(request *DescribeLiveStr
 	return
 }
 
-// invoke DescribeLiveStreamRelayPushErrors api with *DescribeLiveStreamRelayPushErrorsRequest asynchronously
+// DescribeLiveStreamRelayPushErrorsWithChan invokes the cdn.DescribeLiveStreamRelayPushErrors API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describelivestreamrelaypusherrors.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamRelayPushErrorsWithChan(request *DescribeLiveStreamRelayPushErrorsRequest) (<-chan *DescribeLiveStreamRelayPushErrorsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeLiveStreamRelayPushErrorsWithChan(request *Describ
 	return responseChan, errChan
 }
 
-// invoke DescribeLiveStreamRelayPushErrors api with *DescribeLiveStreamRelayPushErrorsRequest asynchronously
+// DescribeLiveStreamRelayPushErrorsWithCallback invokes the cdn.DescribeLiveStreamRelayPushErrors API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describelivestreamrelaypusherrors.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamRelayPushErrorsWithCallback(request *DescribeLiveStreamRelayPushErrorsRequest, callback func(response *DescribeLiveStreamRelayPushErrorsResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeLiveStreamRelayPushErrorsWithCallback(request *Des
 	return result
 }
 
+// DescribeLiveStreamRelayPushErrorsRequest is the request struct for api DescribeLiveStreamRelayPushErrors
 type DescribeLiveStreamRelayPushErrorsRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,14 +83,15 @@ type DescribeLiveStreamRelayPushErrorsRequest struct {
 	EndTime       string           `position:"Query" name:"EndTime"`
 }
 
+// DescribeLiveStreamRelayPushErrorsResponse is the response struct for api DescribeLiveStreamRelayPushErrors
 type DescribeLiveStreamRelayPushErrorsResponse struct {
 	*responses.BaseResponse
 	RequestId                string                   `json:"RequestId" xml:"RequestId"`
 	RelayPushErrorsModelList RelayPushErrorsModelList `json:"RelayPushErrorsModelList" xml:"RelayPushErrorsModelList"`
 }
 
-// create a request to invoke DescribeLiveStreamRelayPushErrors API
-func CreateDescribeLiveStreamRelayPushErrorsRequest() (request *DescribeLiveStreamRelayPushErrorsRequest) {
+// CreateDescribeLiveStreamRelayPushErrorsRequest creates a request to invoke DescribeLiveStreamRelayPushErrors API
+func CreateDescribeLiveStreamRelayPushErrorsRequest(request *DescribeLiveStreamRelayPushErrorsRequest) {
 	request = &DescribeLiveStreamRelayPushErrorsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateDescribeLiveStreamRelayPushErrorsRequest() (request *DescribeLiveStre
 	return
 }
 
-// create a response to parse from DescribeLiveStreamRelayPushErrors response
+// CreateDescribeLiveStreamRelayPushErrorsResponse creates a response to parse from DescribeLiveStreamRelayPushErrors response
 func CreateDescribeLiveStreamRelayPushErrorsResponse() (response *DescribeLiveStreamRelayPushErrorsResponse) {
 	response = &DescribeLiveStreamRelayPushErrorsResponse{
 		BaseResponse: &responses.BaseResponse{},

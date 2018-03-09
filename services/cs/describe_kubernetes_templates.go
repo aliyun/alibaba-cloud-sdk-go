@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeKubernetesTemplates api with *DescribeKubernetesTemplatesRequest synchronously
+// DescribeKubernetesTemplates invokes the cs.DescribeKubernetesTemplates API synchronously
 // api document: https://help.aliyun.com/api/cs/describekubernetestemplates.html
 func (client *Client) DescribeKubernetesTemplates(request *DescribeKubernetesTemplatesRequest) (response *DescribeKubernetesTemplatesResponse, err error) {
 	response = CreateDescribeKubernetesTemplatesResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeKubernetesTemplates(request *DescribeKubernetesTem
 	return
 }
 
-// invoke DescribeKubernetesTemplates api with *DescribeKubernetesTemplatesRequest asynchronously
+// DescribeKubernetesTemplatesWithChan invokes the cs.DescribeKubernetesTemplates API asynchronously
 // api document: https://help.aliyun.com/api/cs/describekubernetestemplates.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeKubernetesTemplatesWithChan(request *DescribeKubernetesTemplatesRequest) (<-chan *DescribeKubernetesTemplatesResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeKubernetesTemplatesWithChan(request *DescribeKuber
 	return responseChan, errChan
 }
 
-// invoke DescribeKubernetesTemplates api with *DescribeKubernetesTemplatesRequest asynchronously
+// DescribeKubernetesTemplatesWithCallback invokes the cs.DescribeKubernetesTemplates API asynchronously
 // api document: https://help.aliyun.com/api/cs/describekubernetestemplates.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeKubernetesTemplatesWithCallback(request *DescribeKubernetesTemplatesRequest, callback func(response *DescribeKubernetesTemplatesResponse, err error)) <-chan int {
@@ -73,18 +73,20 @@ func (client *Client) DescribeKubernetesTemplatesWithCallback(request *DescribeK
 	return result
 }
 
+// DescribeKubernetesTemplatesRequest is the request struct for api DescribeKubernetesTemplates
 type DescribeKubernetesTemplatesRequest struct {
 	*requests.RoaRequest
 	KubernetesVersion string `position:"Query" name:"KubernetesVersion"`
 	Region            string `position:"Query" name:"Region"`
 }
 
+// DescribeKubernetesTemplatesResponse is the response struct for api DescribeKubernetesTemplates
 type DescribeKubernetesTemplatesResponse struct {
 	*responses.BaseResponse
 }
 
-// create a request to invoke DescribeKubernetesTemplates API
-func CreateDescribeKubernetesTemplatesRequest() (request *DescribeKubernetesTemplatesRequest) {
+// CreateDescribeKubernetesTemplatesRequest creates a request to invoke DescribeKubernetesTemplates API
+func CreateDescribeKubernetesTemplatesRequest(request *DescribeKubernetesTemplatesRequest) {
 	request = &DescribeKubernetesTemplatesRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
@@ -93,7 +95,7 @@ func CreateDescribeKubernetesTemplatesRequest() (request *DescribeKubernetesTemp
 	return
 }
 
-// create a response to parse from DescribeKubernetesTemplates response
+// CreateDescribeKubernetesTemplatesResponse creates a response to parse from DescribeKubernetesTemplates response
 func CreateDescribeKubernetesTemplatesResponse() (response *DescribeKubernetesTemplatesResponse) {
 	response = &DescribeKubernetesTemplatesResponse{
 		BaseResponse: &responses.BaseResponse{},

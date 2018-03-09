@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke NodeProcesses api with *NodeProcessesRequest synchronously
+// NodeProcesses invokes the cms.NodeProcesses API synchronously
 // api document: https://help.aliyun.com/api/cms/nodeprocesses.html
 func (client *Client) NodeProcesses(request *NodeProcessesRequest) (response *NodeProcessesResponse, err error) {
 	response = CreateNodeProcessesResponse()
@@ -28,7 +28,7 @@ func (client *Client) NodeProcesses(request *NodeProcessesRequest) (response *No
 	return
 }
 
-// invoke NodeProcesses api with *NodeProcessesRequest asynchronously
+// NodeProcessesWithChan invokes the cms.NodeProcesses API asynchronously
 // api document: https://help.aliyun.com/api/cms/nodeprocesses.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) NodeProcessesWithChan(request *NodeProcessesRequest) (<-chan *NodeProcessesResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) NodeProcessesWithChan(request *NodeProcessesRequest) (<-ch
 	return responseChan, errChan
 }
 
-// invoke NodeProcesses api with *NodeProcessesRequest asynchronously
+// NodeProcessesWithCallback invokes the cms.NodeProcesses API asynchronously
 // api document: https://help.aliyun.com/api/cms/nodeprocesses.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) NodeProcessesWithCallback(request *NodeProcessesRequest, callback func(response *NodeProcessesResponse, err error)) <-chan int {
@@ -73,11 +73,13 @@ func (client *Client) NodeProcessesWithCallback(request *NodeProcessesRequest, c
 	return result
 }
 
+// NodeProcessesRequest is the request struct for api NodeProcesses
 type NodeProcessesRequest struct {
 	*requests.RpcRequest
 	InstanceId string `position:"Query" name:"InstanceId"`
 }
 
+// NodeProcessesResponse is the response struct for api NodeProcesses
 type NodeProcessesResponse struct {
 	*responses.BaseResponse
 	ErrorCode     int           `json:"ErrorCode" xml:"ErrorCode"`
@@ -87,8 +89,8 @@ type NodeProcessesResponse struct {
 	NodeProcesses NodeProcesses `json:"NodeProcesses" xml:"NodeProcesses"`
 }
 
-// create a request to invoke NodeProcesses API
-func CreateNodeProcessesRequest() (request *NodeProcessesRequest) {
+// CreateNodeProcessesRequest creates a request to invoke NodeProcesses API
+func CreateNodeProcessesRequest(request *NodeProcessesRequest) {
 	request = &NodeProcessesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -96,7 +98,7 @@ func CreateNodeProcessesRequest() (request *NodeProcessesRequest) {
 	return
 }
 
-// create a response to parse from NodeProcesses response
+// CreateNodeProcessesResponse creates a response to parse from NodeProcesses response
 func CreateNodeProcessesResponse() (response *NodeProcessesResponse) {
 	response = &NodeProcessesResponse{
 		BaseResponse: &responses.BaseResponse{},

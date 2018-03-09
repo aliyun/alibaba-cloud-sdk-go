@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke QueryTerrorismJobList api with *QueryTerrorismJobListRequest synchronously
+// QueryTerrorismJobList invokes the mts.QueryTerrorismJobList API synchronously
 // api document: https://help.aliyun.com/api/mts/queryterrorismjoblist.html
 func (client *Client) QueryTerrorismJobList(request *QueryTerrorismJobListRequest) (response *QueryTerrorismJobListResponse, err error) {
 	response = CreateQueryTerrorismJobListResponse()
@@ -28,7 +28,7 @@ func (client *Client) QueryTerrorismJobList(request *QueryTerrorismJobListReques
 	return
 }
 
-// invoke QueryTerrorismJobList api with *QueryTerrorismJobListRequest asynchronously
+// QueryTerrorismJobListWithChan invokes the mts.QueryTerrorismJobList API asynchronously
 // api document: https://help.aliyun.com/api/mts/queryterrorismjoblist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryTerrorismJobListWithChan(request *QueryTerrorismJobListRequest) (<-chan *QueryTerrorismJobListResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) QueryTerrorismJobListWithChan(request *QueryTerrorismJobLi
 	return responseChan, errChan
 }
 
-// invoke QueryTerrorismJobList api with *QueryTerrorismJobListRequest asynchronously
+// QueryTerrorismJobListWithCallback invokes the mts.QueryTerrorismJobList API asynchronously
 // api document: https://help.aliyun.com/api/mts/queryterrorismjoblist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryTerrorismJobListWithCallback(request *QueryTerrorismJobListRequest, callback func(response *QueryTerrorismJobListResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) QueryTerrorismJobListWithCallback(request *QueryTerrorismJ
 	return result
 }
 
+// QueryTerrorismJobListRequest is the request struct for api QueryTerrorismJobList
 type QueryTerrorismJobListRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,6 +83,7 @@ type QueryTerrorismJobListRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// QueryTerrorismJobListResponse is the response struct for api QueryTerrorismJobList
 type QueryTerrorismJobListResponse struct {
 	*responses.BaseResponse
 	RequestId        string                             `json:"RequestId" xml:"RequestId"`
@@ -89,8 +91,8 @@ type QueryTerrorismJobListResponse struct {
 	TerrorismJobList TerrorismJobList                   `json:"TerrorismJobList" xml:"TerrorismJobList"`
 }
 
-// create a request to invoke QueryTerrorismJobList API
-func CreateQueryTerrorismJobListRequest() (request *QueryTerrorismJobListRequest) {
+// CreateQueryTerrorismJobListRequest creates a request to invoke QueryTerrorismJobList API
+func CreateQueryTerrorismJobListRequest(request *QueryTerrorismJobListRequest) {
 	request = &QueryTerrorismJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateQueryTerrorismJobListRequest() (request *QueryTerrorismJobListRequest
 	return
 }
 
-// create a response to parse from QueryTerrorismJobList response
+// CreateQueryTerrorismJobListResponse creates a response to parse from QueryTerrorismJobList response
 func CreateQueryTerrorismJobListResponse() (response *QueryTerrorismJobListResponse) {
 	response = &QueryTerrorismJobListResponse{
 		BaseResponse: &responses.BaseResponse{},

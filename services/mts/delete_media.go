@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteMedia api with *DeleteMediaRequest synchronously
+// DeleteMedia invokes the mts.DeleteMedia API synchronously
 // api document: https://help.aliyun.com/api/mts/deletemedia.html
 func (client *Client) DeleteMedia(request *DeleteMediaRequest) (response *DeleteMediaResponse, err error) {
 	response = CreateDeleteMediaResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteMedia(request *DeleteMediaRequest) (response *Delete
 	return
 }
 
-// invoke DeleteMedia api with *DeleteMediaRequest asynchronously
+// DeleteMediaWithChan invokes the mts.DeleteMedia API asynchronously
 // api document: https://help.aliyun.com/api/mts/deletemedia.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteMediaWithChan(request *DeleteMediaRequest) (<-chan *DeleteMediaResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteMediaWithChan(request *DeleteMediaRequest) (<-chan *
 	return responseChan, errChan
 }
 
-// invoke DeleteMedia api with *DeleteMediaRequest asynchronously
+// DeleteMediaWithCallback invokes the mts.DeleteMedia API asynchronously
 // api document: https://help.aliyun.com/api/mts/deletemedia.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteMediaWithCallback(request *DeleteMediaRequest, callback func(response *DeleteMediaResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DeleteMediaWithCallback(request *DeleteMediaRequest, callb
 	return result
 }
 
+// DeleteMediaRequest is the request struct for api DeleteMedia
 type DeleteMediaRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,13 +83,14 @@ type DeleteMediaRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// DeleteMediaResponse is the response struct for api DeleteMedia
 type DeleteMediaResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DeleteMedia API
-func CreateDeleteMediaRequest() (request *DeleteMediaRequest) {
+// CreateDeleteMediaRequest creates a request to invoke DeleteMedia API
+func CreateDeleteMediaRequest(request *DeleteMediaRequest) {
 	request = &DeleteMediaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -96,7 +98,7 @@ func CreateDeleteMediaRequest() (request *DeleteMediaRequest) {
 	return
 }
 
-// create a response to parse from DeleteMedia response
+// CreateDeleteMediaResponse creates a response to parse from DeleteMedia response
 func CreateDeleteMediaResponse() (response *DeleteMediaResponse) {
 	response = &DeleteMediaResponse{
 		BaseResponse: &responses.BaseResponse{},

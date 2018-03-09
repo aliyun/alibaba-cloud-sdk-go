@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CreateForwardEntry api with *CreateForwardEntryRequest synchronously
+// CreateForwardEntry invokes the ecs.CreateForwardEntry API synchronously
 // api document: https://help.aliyun.com/api/ecs/createforwardentry.html
 func (client *Client) CreateForwardEntry(request *CreateForwardEntryRequest) (response *CreateForwardEntryResponse, err error) {
 	response = CreateCreateForwardEntryResponse()
@@ -28,7 +28,7 @@ func (client *Client) CreateForwardEntry(request *CreateForwardEntryRequest) (re
 	return
 }
 
-// invoke CreateForwardEntry api with *CreateForwardEntryRequest asynchronously
+// CreateForwardEntryWithChan invokes the ecs.CreateForwardEntry API asynchronously
 // api document: https://help.aliyun.com/api/ecs/createforwardentry.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateForwardEntryWithChan(request *CreateForwardEntryRequest) (<-chan *CreateForwardEntryResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CreateForwardEntryWithChan(request *CreateForwardEntryRequ
 	return responseChan, errChan
 }
 
-// invoke CreateForwardEntry api with *CreateForwardEntryRequest asynchronously
+// CreateForwardEntryWithCallback invokes the ecs.CreateForwardEntry API asynchronously
 // api document: https://help.aliyun.com/api/ecs/createforwardentry.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateForwardEntryWithCallback(request *CreateForwardEntryRequest, callback func(response *CreateForwardEntryResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) CreateForwardEntryWithCallback(request *CreateForwardEntry
 	return result
 }
 
+// CreateForwardEntryRequest is the request struct for api CreateForwardEntry
 type CreateForwardEntryRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -87,14 +88,15 @@ type CreateForwardEntryRequest struct {
 	IpProtocol           string           `position:"Query" name:"IpProtocol"`
 }
 
+// CreateForwardEntryResponse is the response struct for api CreateForwardEntry
 type CreateForwardEntryResponse struct {
 	*responses.BaseResponse
 	RequestId      string `json:"RequestId" xml:"RequestId"`
 	ForwardEntryId string `json:"ForwardEntryId" xml:"ForwardEntryId"`
 }
 
-// create a request to invoke CreateForwardEntry API
-func CreateCreateForwardEntryRequest() (request *CreateForwardEntryRequest) {
+// CreateCreateForwardEntryRequest creates a request to invoke CreateForwardEntry API
+func CreateCreateForwardEntryRequest(request *CreateForwardEntryRequest) {
 	request = &CreateForwardEntryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -102,7 +104,7 @@ func CreateCreateForwardEntryRequest() (request *CreateForwardEntryRequest) {
 	return
 }
 
-// create a response to parse from CreateForwardEntry response
+// CreateCreateForwardEntryResponse creates a response to parse from CreateForwardEntry response
 func CreateCreateForwardEntryResponse() (response *CreateForwardEntryResponse) {
 	response = &CreateForwardEntryResponse{
 		BaseResponse: &responses.BaseResponse{},

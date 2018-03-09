@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SetPathForceTtlCodeConfig api with *SetPathForceTtlCodeConfigRequest synchronously
+// SetPathForceTtlCodeConfig invokes the cdn.SetPathForceTtlCodeConfig API synchronously
 // api document: https://help.aliyun.com/api/cdn/setpathforcettlcodeconfig.html
 func (client *Client) SetPathForceTtlCodeConfig(request *SetPathForceTtlCodeConfigRequest) (response *SetPathForceTtlCodeConfigResponse, err error) {
 	response = CreateSetPathForceTtlCodeConfigResponse()
@@ -28,7 +28,7 @@ func (client *Client) SetPathForceTtlCodeConfig(request *SetPathForceTtlCodeConf
 	return
 }
 
-// invoke SetPathForceTtlCodeConfig api with *SetPathForceTtlCodeConfigRequest asynchronously
+// SetPathForceTtlCodeConfigWithChan invokes the cdn.SetPathForceTtlCodeConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/setpathforcettlcodeconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetPathForceTtlCodeConfigWithChan(request *SetPathForceTtlCodeConfigRequest) (<-chan *SetPathForceTtlCodeConfigResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SetPathForceTtlCodeConfigWithChan(request *SetPathForceTtl
 	return responseChan, errChan
 }
 
-// invoke SetPathForceTtlCodeConfig api with *SetPathForceTtlCodeConfigRequest asynchronously
+// SetPathForceTtlCodeConfigWithCallback invokes the cdn.SetPathForceTtlCodeConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/setpathforcettlcodeconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetPathForceTtlCodeConfigWithCallback(request *SetPathForceTtlCodeConfigRequest, callback func(response *SetPathForceTtlCodeConfigResponse, err error)) <-chan int {
@@ -73,17 +73,19 @@ func (client *Client) SetPathForceTtlCodeConfigWithCallback(request *SetPathForc
 	return result
 }
 
+// SetPathForceTtlCodeConfigRequest is the request struct for api SetPathForceTtlCodeConfig
 type SetPathForceTtlCodeConfigRequest struct {
 	*requests.RpcRequest
 }
 
+// SetPathForceTtlCodeConfigResponse is the response struct for api SetPathForceTtlCodeConfig
 type SetPathForceTtlCodeConfigResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke SetPathForceTtlCodeConfig API
-func CreateSetPathForceTtlCodeConfigRequest() (request *SetPathForceTtlCodeConfigRequest) {
+// CreateSetPathForceTtlCodeConfigRequest creates a request to invoke SetPathForceTtlCodeConfig API
+func CreateSetPathForceTtlCodeConfigRequest(request *SetPathForceTtlCodeConfigRequest) {
 	request = &SetPathForceTtlCodeConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -91,7 +93,7 @@ func CreateSetPathForceTtlCodeConfigRequest() (request *SetPathForceTtlCodeConfi
 	return
 }
 
-// create a response to parse from SetPathForceTtlCodeConfig response
+// CreateSetPathForceTtlCodeConfigResponse creates a response to parse from SetPathForceTtlCodeConfig response
 func CreateSetPathForceTtlCodeConfigResponse() (response *SetPathForceTtlCodeConfigResponse) {
 	response = &SetPathForceTtlCodeConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

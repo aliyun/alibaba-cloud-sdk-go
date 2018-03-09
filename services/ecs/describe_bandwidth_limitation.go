@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeBandwidthLimitation api with *DescribeBandwidthLimitationRequest synchronously
+// DescribeBandwidthLimitation invokes the ecs.DescribeBandwidthLimitation API synchronously
 // api document: https://help.aliyun.com/api/ecs/describebandwidthlimitation.html
 func (client *Client) DescribeBandwidthLimitation(request *DescribeBandwidthLimitationRequest) (response *DescribeBandwidthLimitationResponse, err error) {
 	response = CreateDescribeBandwidthLimitationResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeBandwidthLimitation(request *DescribeBandwidthLimi
 	return
 }
 
-// invoke DescribeBandwidthLimitation api with *DescribeBandwidthLimitationRequest asynchronously
+// DescribeBandwidthLimitationWithChan invokes the ecs.DescribeBandwidthLimitation API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describebandwidthlimitation.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBandwidthLimitationWithChan(request *DescribeBandwidthLimitationRequest) (<-chan *DescribeBandwidthLimitationResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeBandwidthLimitationWithChan(request *DescribeBandw
 	return responseChan, errChan
 }
 
-// invoke DescribeBandwidthLimitation api with *DescribeBandwidthLimitationRequest asynchronously
+// DescribeBandwidthLimitationWithCallback invokes the ecs.DescribeBandwidthLimitation API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describebandwidthlimitation.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBandwidthLimitationWithCallback(request *DescribeBandwidthLimitationRequest, callback func(response *DescribeBandwidthLimitationResponse, err error)) <-chan int {
@@ -73,18 +73,20 @@ func (client *Client) DescribeBandwidthLimitationWithCallback(request *DescribeB
 	return result
 }
 
+// DescribeBandwidthLimitationRequest is the request struct for api DescribeBandwidthLimitation
 type DescribeBandwidthLimitationRequest struct {
 	*requests.RpcRequest
 }
 
+// DescribeBandwidthLimitationResponse is the response struct for api DescribeBandwidthLimitation
 type DescribeBandwidthLimitationResponse struct {
 	*responses.BaseResponse
 	RequestId  string     `json:"RequestId" xml:"RequestId"`
 	Bandwidths Bandwidths `json:"Bandwidths" xml:"Bandwidths"`
 }
 
-// create a request to invoke DescribeBandwidthLimitation API
-func CreateDescribeBandwidthLimitationRequest() (request *DescribeBandwidthLimitationRequest) {
+// CreateDescribeBandwidthLimitationRequest creates a request to invoke DescribeBandwidthLimitation API
+func CreateDescribeBandwidthLimitationRequest(request *DescribeBandwidthLimitationRequest) {
 	request = &DescribeBandwidthLimitationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -92,7 +94,7 @@ func CreateDescribeBandwidthLimitationRequest() (request *DescribeBandwidthLimit
 	return
 }
 
-// create a response to parse from DescribeBandwidthLimitation response
+// CreateDescribeBandwidthLimitationResponse creates a response to parse from DescribeBandwidthLimitation response
 func CreateDescribeBandwidthLimitationResponse() (response *DescribeBandwidthLimitationResponse) {
 	response = &DescribeBandwidthLimitationResponse{
 		BaseResponse: &responses.BaseResponse{},

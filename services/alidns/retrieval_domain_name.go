@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke RetrievalDomainName api with *RetrievalDomainNameRequest synchronously
+// RetrievalDomainName invokes the alidns.RetrievalDomainName API synchronously
 // api document: https://help.aliyun.com/api/alidns/retrievaldomainname.html
 func (client *Client) RetrievalDomainName(request *RetrievalDomainNameRequest) (response *RetrievalDomainNameResponse, err error) {
 	response = CreateRetrievalDomainNameResponse()
@@ -28,7 +28,7 @@ func (client *Client) RetrievalDomainName(request *RetrievalDomainNameRequest) (
 	return
 }
 
-// invoke RetrievalDomainName api with *RetrievalDomainNameRequest asynchronously
+// RetrievalDomainNameWithChan invokes the alidns.RetrievalDomainName API asynchronously
 // api document: https://help.aliyun.com/api/alidns/retrievaldomainname.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RetrievalDomainNameWithChan(request *RetrievalDomainNameRequest) (<-chan *RetrievalDomainNameResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) RetrievalDomainNameWithChan(request *RetrievalDomainNameRe
 	return responseChan, errChan
 }
 
-// invoke RetrievalDomainName api with *RetrievalDomainNameRequest asynchronously
+// RetrievalDomainNameWithCallback invokes the alidns.RetrievalDomainName API asynchronously
 // api document: https://help.aliyun.com/api/alidns/retrievaldomainname.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RetrievalDomainNameWithCallback(request *RetrievalDomainNameRequest, callback func(response *RetrievalDomainNameResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) RetrievalDomainNameWithCallback(request *RetrievalDomainNa
 	return result
 }
 
+// RetrievalDomainNameRequest is the request struct for api RetrievalDomainName
 type RetrievalDomainNameRequest struct {
 	*requests.RpcRequest
 	Lang         string `position:"Query" name:"Lang"`
@@ -80,6 +81,7 @@ type RetrievalDomainNameRequest struct {
 	DomainName   string `position:"Query" name:"DomainName"`
 }
 
+// RetrievalDomainNameResponse is the response struct for api RetrievalDomainName
 type RetrievalDomainNameResponse struct {
 	*responses.BaseResponse
 	RequestId  string `json:"RequestId" xml:"RequestId"`
@@ -87,8 +89,8 @@ type RetrievalDomainNameResponse struct {
 	WhoisEmail string `json:"WhoisEmail" xml:"WhoisEmail"`
 }
 
-// create a request to invoke RetrievalDomainName API
-func CreateRetrievalDomainNameRequest() (request *RetrievalDomainNameRequest) {
+// CreateRetrievalDomainNameRequest creates a request to invoke RetrievalDomainName API
+func CreateRetrievalDomainNameRequest(request *RetrievalDomainNameRequest) {
 	request = &RetrievalDomainNameRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -96,7 +98,7 @@ func CreateRetrievalDomainNameRequest() (request *RetrievalDomainNameRequest) {
 	return
 }
 
-// create a response to parse from RetrievalDomainName response
+// CreateRetrievalDomainNameResponse creates a response to parse from RetrievalDomainName response
 func CreateRetrievalDomainNameResponse() (response *RetrievalDomainNameResponse) {
 	response = &RetrievalDomainNameResponse{
 		BaseResponse: &responses.BaseResponse{},

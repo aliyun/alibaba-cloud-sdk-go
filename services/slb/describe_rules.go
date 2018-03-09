@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeRules api with *DescribeRulesRequest synchronously
+// DescribeRules invokes the slb.DescribeRules API synchronously
 // api document: https://help.aliyun.com/api/slb/describerules.html
 func (client *Client) DescribeRules(request *DescribeRulesRequest) (response *DescribeRulesResponse, err error) {
 	response = CreateDescribeRulesResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeRules(request *DescribeRulesRequest) (response *De
 	return
 }
 
-// invoke DescribeRules api with *DescribeRulesRequest asynchronously
+// DescribeRulesWithChan invokes the slb.DescribeRules API asynchronously
 // api document: https://help.aliyun.com/api/slb/describerules.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRulesWithChan(request *DescribeRulesRequest) (<-chan *DescribeRulesResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeRulesWithChan(request *DescribeRulesRequest) (<-ch
 	return responseChan, errChan
 }
 
-// invoke DescribeRules api with *DescribeRulesRequest asynchronously
+// DescribeRulesWithCallback invokes the slb.DescribeRules API asynchronously
 // api document: https://help.aliyun.com/api/slb/describerules.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRulesWithCallback(request *DescribeRulesRequest, callback func(response *DescribeRulesResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeRulesWithCallback(request *DescribeRulesRequest, c
 	return result
 }
 
+// DescribeRulesRequest is the request struct for api DescribeRules
 type DescribeRulesRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -85,14 +86,15 @@ type DescribeRulesRequest struct {
 	ListenerPort         requests.Integer `position:"Query" name:"ListenerPort"`
 }
 
+// DescribeRulesResponse is the response struct for api DescribeRules
 type DescribeRulesResponse struct {
 	*responses.BaseResponse
 	RequestId string               `json:"RequestId" xml:"RequestId"`
 	Rules     RulesInDescribeRules `json:"Rules" xml:"Rules"`
 }
 
-// create a request to invoke DescribeRules API
-func CreateDescribeRulesRequest() (request *DescribeRulesRequest) {
+// CreateDescribeRulesRequest creates a request to invoke DescribeRules API
+func CreateDescribeRulesRequest(request *DescribeRulesRequest) {
 	request = &DescribeRulesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -100,7 +102,7 @@ func CreateDescribeRulesRequest() (request *DescribeRulesRequest) {
 	return
 }
 
-// create a response to parse from DescribeRules response
+// CreateDescribeRulesResponse creates a response to parse from DescribeRules response
 func CreateDescribeRulesResponse() (response *DescribeRulesResponse) {
 	response = &DescribeRulesResponse{
 		BaseResponse: &responses.BaseResponse{},

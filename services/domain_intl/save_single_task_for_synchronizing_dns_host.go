@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SaveSingleTaskForSynchronizingDnsHost api with *SaveSingleTaskForSynchronizingDnsHostRequest synchronously
+// SaveSingleTaskForSynchronizingDnsHost invokes the domain_intl.SaveSingleTaskForSynchronizingDnsHost API synchronously
 // api document: https://help.aliyun.com/api/domain-intl/savesingletaskforsynchronizingdnshost.html
 func (client *Client) SaveSingleTaskForSynchronizingDnsHost(request *SaveSingleTaskForSynchronizingDnsHostRequest) (response *SaveSingleTaskForSynchronizingDnsHostResponse, err error) {
 	response = CreateSaveSingleTaskForSynchronizingDnsHostResponse()
@@ -28,7 +28,7 @@ func (client *Client) SaveSingleTaskForSynchronizingDnsHost(request *SaveSingleT
 	return
 }
 
-// invoke SaveSingleTaskForSynchronizingDnsHost api with *SaveSingleTaskForSynchronizingDnsHostRequest asynchronously
+// SaveSingleTaskForSynchronizingDnsHostWithChan invokes the domain_intl.SaveSingleTaskForSynchronizingDnsHost API asynchronously
 // api document: https://help.aliyun.com/api/domain-intl/savesingletaskforsynchronizingdnshost.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveSingleTaskForSynchronizingDnsHostWithChan(request *SaveSingleTaskForSynchronizingDnsHostRequest) (<-chan *SaveSingleTaskForSynchronizingDnsHostResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SaveSingleTaskForSynchronizingDnsHostWithChan(request *Sav
 	return responseChan, errChan
 }
 
-// invoke SaveSingleTaskForSynchronizingDnsHost api with *SaveSingleTaskForSynchronizingDnsHostRequest asynchronously
+// SaveSingleTaskForSynchronizingDnsHostWithCallback invokes the domain_intl.SaveSingleTaskForSynchronizingDnsHost API asynchronously
 // api document: https://help.aliyun.com/api/domain-intl/savesingletaskforsynchronizingdnshost.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveSingleTaskForSynchronizingDnsHostWithCallback(request *SaveSingleTaskForSynchronizingDnsHostRequest, callback func(response *SaveSingleTaskForSynchronizingDnsHostResponse, err error)) <-chan int {
@@ -73,20 +73,22 @@ func (client *Client) SaveSingleTaskForSynchronizingDnsHostWithCallback(request 
 	return result
 }
 
+// SaveSingleTaskForSynchronizingDnsHostRequest is the request struct for api SaveSingleTaskForSynchronizingDnsHost
 type SaveSingleTaskForSynchronizingDnsHostRequest struct {
 	*requests.RpcRequest
 	InstanceId string `position:"Query" name:"InstanceId"`
 	Lang       string `position:"Query" name:"Lang"`
 }
 
+// SaveSingleTaskForSynchronizingDnsHostResponse is the response struct for api SaveSingleTaskForSynchronizingDnsHost
 type SaveSingleTaskForSynchronizingDnsHostResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	TaskNo    string `json:"TaskNo" xml:"TaskNo"`
 }
 
-// create a request to invoke SaveSingleTaskForSynchronizingDnsHost API
-func CreateSaveSingleTaskForSynchronizingDnsHostRequest() (request *SaveSingleTaskForSynchronizingDnsHostRequest) {
+// CreateSaveSingleTaskForSynchronizingDnsHostRequest creates a request to invoke SaveSingleTaskForSynchronizingDnsHost API
+func CreateSaveSingleTaskForSynchronizingDnsHostRequest(request *SaveSingleTaskForSynchronizingDnsHostRequest) {
 	request = &SaveSingleTaskForSynchronizingDnsHostRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -94,7 +96,7 @@ func CreateSaveSingleTaskForSynchronizingDnsHostRequest() (request *SaveSingleTa
 	return
 }
 
-// create a response to parse from SaveSingleTaskForSynchronizingDnsHost response
+// CreateSaveSingleTaskForSynchronizingDnsHostResponse creates a response to parse from SaveSingleTaskForSynchronizingDnsHost response
 func CreateSaveSingleTaskForSynchronizingDnsHostResponse() (response *SaveSingleTaskForSynchronizingDnsHostResponse) {
 	response = &SaveSingleTaskForSynchronizingDnsHostResponse{
 		BaseResponse: &responses.BaseResponse{},

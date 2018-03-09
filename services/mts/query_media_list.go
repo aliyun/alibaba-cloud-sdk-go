@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke QueryMediaList api with *QueryMediaListRequest synchronously
+// QueryMediaList invokes the mts.QueryMediaList API synchronously
 // api document: https://help.aliyun.com/api/mts/querymedialist.html
 func (client *Client) QueryMediaList(request *QueryMediaListRequest) (response *QueryMediaListResponse, err error) {
 	response = CreateQueryMediaListResponse()
@@ -28,7 +28,7 @@ func (client *Client) QueryMediaList(request *QueryMediaListRequest) (response *
 	return
 }
 
-// invoke QueryMediaList api with *QueryMediaListRequest asynchronously
+// QueryMediaListWithChan invokes the mts.QueryMediaList API asynchronously
 // api document: https://help.aliyun.com/api/mts/querymedialist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryMediaListWithChan(request *QueryMediaListRequest) (<-chan *QueryMediaListResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) QueryMediaListWithChan(request *QueryMediaListRequest) (<-
 	return responseChan, errChan
 }
 
-// invoke QueryMediaList api with *QueryMediaListRequest asynchronously
+// QueryMediaListWithCallback invokes the mts.QueryMediaList API asynchronously
 // api document: https://help.aliyun.com/api/mts/querymedialist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryMediaListWithCallback(request *QueryMediaListRequest, callback func(response *QueryMediaListResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) QueryMediaListWithCallback(request *QueryMediaListRequest,
 	return result
 }
 
+// QueryMediaListRequest is the request struct for api QueryMediaList
 type QueryMediaListRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -86,6 +87,7 @@ type QueryMediaListRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// QueryMediaListResponse is the response struct for api QueryMediaList
 type QueryMediaListResponse struct {
 	*responses.BaseResponse
 	RequestId        string                    `json:"RequestId" xml:"RequestId"`
@@ -93,8 +95,8 @@ type QueryMediaListResponse struct {
 	MediaList        MediaListInQueryMediaList `json:"MediaList" xml:"MediaList"`
 }
 
-// create a request to invoke QueryMediaList API
-func CreateQueryMediaListRequest() (request *QueryMediaListRequest) {
+// CreateQueryMediaListRequest creates a request to invoke QueryMediaList API
+func CreateQueryMediaListRequest(request *QueryMediaListRequest) {
 	request = &QueryMediaListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -102,7 +104,7 @@ func CreateQueryMediaListRequest() (request *QueryMediaListRequest) {
 	return
 }
 
-// create a response to parse from QueryMediaList response
+// CreateQueryMediaListResponse creates a response to parse from QueryMediaList response
 func CreateQueryMediaListResponse() (response *QueryMediaListResponse) {
 	response = &QueryMediaListResponse{
 		BaseResponse: &responses.BaseResponse{},

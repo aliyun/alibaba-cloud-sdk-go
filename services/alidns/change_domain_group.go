@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ChangeDomainGroup api with *ChangeDomainGroupRequest synchronously
+// ChangeDomainGroup invokes the alidns.ChangeDomainGroup API synchronously
 // api document: https://help.aliyun.com/api/alidns/changedomaingroup.html
 func (client *Client) ChangeDomainGroup(request *ChangeDomainGroupRequest) (response *ChangeDomainGroupResponse, err error) {
 	response = CreateChangeDomainGroupResponse()
@@ -28,7 +28,7 @@ func (client *Client) ChangeDomainGroup(request *ChangeDomainGroupRequest) (resp
 	return
 }
 
-// invoke ChangeDomainGroup api with *ChangeDomainGroupRequest asynchronously
+// ChangeDomainGroupWithChan invokes the alidns.ChangeDomainGroup API asynchronously
 // api document: https://help.aliyun.com/api/alidns/changedomaingroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ChangeDomainGroupWithChan(request *ChangeDomainGroupRequest) (<-chan *ChangeDomainGroupResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ChangeDomainGroupWithChan(request *ChangeDomainGroupReques
 	return responseChan, errChan
 }
 
-// invoke ChangeDomainGroup api with *ChangeDomainGroupRequest asynchronously
+// ChangeDomainGroupWithCallback invokes the alidns.ChangeDomainGroup API asynchronously
 // api document: https://help.aliyun.com/api/alidns/changedomaingroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ChangeDomainGroupWithCallback(request *ChangeDomainGroupRequest, callback func(response *ChangeDomainGroupResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ChangeDomainGroupWithCallback(request *ChangeDomainGroupRe
 	return result
 }
 
+// ChangeDomainGroupRequest is the request struct for api ChangeDomainGroup
 type ChangeDomainGroupRequest struct {
 	*requests.RpcRequest
 	Lang         string `position:"Query" name:"Lang"`
@@ -81,6 +82,7 @@ type ChangeDomainGroupRequest struct {
 	GroupId      string `position:"Query" name:"GroupId"`
 }
 
+// ChangeDomainGroupResponse is the response struct for api ChangeDomainGroup
 type ChangeDomainGroupResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
@@ -88,8 +90,8 @@ type ChangeDomainGroupResponse struct {
 	GroupName string `json:"GroupName" xml:"GroupName"`
 }
 
-// create a request to invoke ChangeDomainGroup API
-func CreateChangeDomainGroupRequest() (request *ChangeDomainGroupRequest) {
+// CreateChangeDomainGroupRequest creates a request to invoke ChangeDomainGroup API
+func CreateChangeDomainGroupRequest(request *ChangeDomainGroupRequest) {
 	request = &ChangeDomainGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateChangeDomainGroupRequest() (request *ChangeDomainGroupRequest) {
 	return
 }
 
-// create a response to parse from ChangeDomainGroup response
+// CreateChangeDomainGroupResponse creates a response to parse from ChangeDomainGroup response
 func CreateChangeDomainGroupResponse() (response *ChangeDomainGroupResponse) {
 	response = &ChangeDomainGroupResponse{
 		BaseResponse: &responses.BaseResponse{},

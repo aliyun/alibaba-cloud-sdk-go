@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeParameterTemplates api with *DescribeParameterTemplatesRequest synchronously
+// DescribeParameterTemplates invokes the rds.DescribeParameterTemplates API synchronously
 // api document: https://help.aliyun.com/api/rds/describeparametertemplates.html
 func (client *Client) DescribeParameterTemplates(request *DescribeParameterTemplatesRequest) (response *DescribeParameterTemplatesResponse, err error) {
 	response = CreateDescribeParameterTemplatesResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeParameterTemplates(request *DescribeParameterTempl
 	return
 }
 
-// invoke DescribeParameterTemplates api with *DescribeParameterTemplatesRequest asynchronously
+// DescribeParameterTemplatesWithChan invokes the rds.DescribeParameterTemplates API asynchronously
 // api document: https://help.aliyun.com/api/rds/describeparametertemplates.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeParameterTemplatesWithChan(request *DescribeParameterTemplatesRequest) (<-chan *DescribeParameterTemplatesResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeParameterTemplatesWithChan(request *DescribeParame
 	return responseChan, errChan
 }
 
-// invoke DescribeParameterTemplates api with *DescribeParameterTemplatesRequest asynchronously
+// DescribeParameterTemplatesWithCallback invokes the rds.DescribeParameterTemplates API asynchronously
 // api document: https://help.aliyun.com/api/rds/describeparametertemplates.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeParameterTemplatesWithCallback(request *DescribeParameterTemplatesRequest, callback func(response *DescribeParameterTemplatesResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeParameterTemplatesWithCallback(request *DescribePa
 	return result
 }
 
+// DescribeParameterTemplatesRequest is the request struct for api DescribeParameterTemplates
 type DescribeParameterTemplatesRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,6 +85,7 @@ type DescribeParameterTemplatesRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// DescribeParameterTemplatesResponse is the response struct for api DescribeParameterTemplates
 type DescribeParameterTemplatesResponse struct {
 	*responses.BaseResponse
 	RequestId      string     `json:"RequestId" xml:"RequestId"`
@@ -93,8 +95,8 @@ type DescribeParameterTemplatesResponse struct {
 	Parameters     Parameters `json:"Parameters" xml:"Parameters"`
 }
 
-// create a request to invoke DescribeParameterTemplates API
-func CreateDescribeParameterTemplatesRequest() (request *DescribeParameterTemplatesRequest) {
+// CreateDescribeParameterTemplatesRequest creates a request to invoke DescribeParameterTemplates API
+func CreateDescribeParameterTemplatesRequest(request *DescribeParameterTemplatesRequest) {
 	request = &DescribeParameterTemplatesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -102,7 +104,7 @@ func CreateDescribeParameterTemplatesRequest() (request *DescribeParameterTempla
 	return
 }
 
-// create a response to parse from DescribeParameterTemplates response
+// CreateDescribeParameterTemplatesResponse creates a response to parse from DescribeParameterTemplates response
 func CreateDescribeParameterTemplatesResponse() (response *DescribeParameterTemplatesResponse) {
 	response = &DescribeParameterTemplatesResponse{
 		BaseResponse: &responses.BaseResponse{},

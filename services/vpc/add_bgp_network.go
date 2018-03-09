@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke AddBgpNetwork api with *AddBgpNetworkRequest synchronously
+// AddBgpNetwork invokes the vpc.AddBgpNetwork API synchronously
 // api document: https://help.aliyun.com/api/vpc/addbgpnetwork.html
 func (client *Client) AddBgpNetwork(request *AddBgpNetworkRequest) (response *AddBgpNetworkResponse, err error) {
 	response = CreateAddBgpNetworkResponse()
@@ -28,7 +28,7 @@ func (client *Client) AddBgpNetwork(request *AddBgpNetworkRequest) (response *Ad
 	return
 }
 
-// invoke AddBgpNetwork api with *AddBgpNetworkRequest asynchronously
+// AddBgpNetworkWithChan invokes the vpc.AddBgpNetwork API asynchronously
 // api document: https://help.aliyun.com/api/vpc/addbgpnetwork.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddBgpNetworkWithChan(request *AddBgpNetworkRequest) (<-chan *AddBgpNetworkResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) AddBgpNetworkWithChan(request *AddBgpNetworkRequest) (<-ch
 	return responseChan, errChan
 }
 
-// invoke AddBgpNetwork api with *AddBgpNetworkRequest asynchronously
+// AddBgpNetworkWithCallback invokes the vpc.AddBgpNetwork API asynchronously
 // api document: https://help.aliyun.com/api/vpc/addbgpnetwork.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddBgpNetworkWithCallback(request *AddBgpNetworkRequest, callback func(response *AddBgpNetworkResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) AddBgpNetworkWithCallback(request *AddBgpNetworkRequest, c
 	return result
 }
 
+// AddBgpNetworkRequest is the request struct for api AddBgpNetwork
 type AddBgpNetworkRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -85,13 +86,14 @@ type AddBgpNetworkRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// AddBgpNetworkResponse is the response struct for api AddBgpNetwork
 type AddBgpNetworkResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke AddBgpNetwork API
-func CreateAddBgpNetworkRequest() (request *AddBgpNetworkRequest) {
+// CreateAddBgpNetworkRequest creates a request to invoke AddBgpNetwork API
+func CreateAddBgpNetworkRequest(request *AddBgpNetworkRequest) {
 	request = &AddBgpNetworkRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateAddBgpNetworkRequest() (request *AddBgpNetworkRequest) {
 	return
 }
 
-// create a response to parse from AddBgpNetwork response
+// CreateAddBgpNetworkResponse creates a response to parse from AddBgpNetwork response
 func CreateAddBgpNetworkResponse() (response *AddBgpNetworkResponse) {
 	response = &AddBgpNetworkResponse{
 		BaseResponse: &responses.BaseResponse{},

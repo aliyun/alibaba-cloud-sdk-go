@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke NodeStatus api with *NodeStatusRequest synchronously
+// NodeStatus invokes the cms.NodeStatus API synchronously
 // api document: https://help.aliyun.com/api/cms/nodestatus.html
 func (client *Client) NodeStatus(request *NodeStatusRequest) (response *NodeStatusResponse, err error) {
 	response = CreateNodeStatusResponse()
@@ -28,7 +28,7 @@ func (client *Client) NodeStatus(request *NodeStatusRequest) (response *NodeStat
 	return
 }
 
-// invoke NodeStatus api with *NodeStatusRequest asynchronously
+// NodeStatusWithChan invokes the cms.NodeStatus API asynchronously
 // api document: https://help.aliyun.com/api/cms/nodestatus.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) NodeStatusWithChan(request *NodeStatusRequest) (<-chan *NodeStatusResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) NodeStatusWithChan(request *NodeStatusRequest) (<-chan *No
 	return responseChan, errChan
 }
 
-// invoke NodeStatus api with *NodeStatusRequest asynchronously
+// NodeStatusWithCallback invokes the cms.NodeStatus API asynchronously
 // api document: https://help.aliyun.com/api/cms/nodestatus.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) NodeStatusWithCallback(request *NodeStatusRequest, callback func(response *NodeStatusResponse, err error)) <-chan int {
@@ -73,11 +73,13 @@ func (client *Client) NodeStatusWithCallback(request *NodeStatusRequest, callbac
 	return result
 }
 
+// NodeStatusRequest is the request struct for api NodeStatus
 type NodeStatusRequest struct {
 	*requests.RpcRequest
 	InstanceId string `position:"Query" name:"InstanceId"`
 }
 
+// NodeStatusResponse is the response struct for api NodeStatus
 type NodeStatusResponse struct {
 	*responses.BaseResponse
 	ErrorCode    int    `json:"ErrorCode" xml:"ErrorCode"`
@@ -89,8 +91,8 @@ type NodeStatusResponse struct {
 	Status       string `json:"Status" xml:"Status"`
 }
 
-// create a request to invoke NodeStatus API
-func CreateNodeStatusRequest() (request *NodeStatusRequest) {
+// CreateNodeStatusRequest creates a request to invoke NodeStatus API
+func CreateNodeStatusRequest(request *NodeStatusRequest) {
 	request = &NodeStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateNodeStatusRequest() (request *NodeStatusRequest) {
 	return
 }
 
-// create a response to parse from NodeStatus response
+// CreateNodeStatusResponse creates a response to parse from NodeStatus response
 func CreateNodeStatusResponse() (response *NodeStatusResponse) {
 	response = &NodeStatusResponse{
 		BaseResponse: &responses.BaseResponse{},

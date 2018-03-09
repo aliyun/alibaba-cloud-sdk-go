@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CreateCluster api with *CreateClusterRequest synchronously
+// CreateCluster invokes the ehpc.CreateCluster API synchronously
 // api document: https://help.aliyun.com/api/ehpc/createcluster.html
 func (client *Client) CreateCluster(request *CreateClusterRequest) (response *CreateClusterResponse, err error) {
 	response = CreateCreateClusterResponse()
@@ -28,7 +28,7 @@ func (client *Client) CreateCluster(request *CreateClusterRequest) (response *Cr
 	return
 }
 
-// invoke CreateCluster api with *CreateClusterRequest asynchronously
+// CreateClusterWithChan invokes the ehpc.CreateCluster API asynchronously
 // api document: https://help.aliyun.com/api/ehpc/createcluster.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateClusterWithChan(request *CreateClusterRequest) (<-chan *CreateClusterResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CreateClusterWithChan(request *CreateClusterRequest) (<-ch
 	return responseChan, errChan
 }
 
-// invoke CreateCluster api with *CreateClusterRequest asynchronously
+// CreateClusterWithCallback invokes the ehpc.CreateCluster API asynchronously
 // api document: https://help.aliyun.com/api/ehpc/createcluster.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateClusterWithCallback(request *CreateClusterRequest, callback func(response *CreateClusterResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) CreateClusterWithCallback(request *CreateClusterRequest, c
 	return result
 }
 
+// CreateClusterRequest is the request struct for api CreateCluster
 type CreateClusterRequest struct {
 	*requests.RpcRequest
 	ZoneId                      string                      `position:"Query" name:"ZoneId"`
@@ -108,18 +109,20 @@ type CreateClusterRequest struct {
 	Application                 *[]CreateClusterApplication `position:"Query" name:"Application"  type:"Repeated"`
 }
 
+// CreateClusterApplication is a repeated param struct in CreateClusterRequest
 type CreateClusterApplication struct {
 	Tag string `name:"Tag"`
 }
 
+// CreateClusterResponse is the response struct for api CreateCluster
 type CreateClusterResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	ClusterId string `json:"ClusterId" xml:"ClusterId"`
 }
 
-// create a request to invoke CreateCluster API
-func CreateCreateClusterRequest() (request *CreateClusterRequest) {
+// CreateCreateClusterRequest creates a request to invoke CreateCluster API
+func CreateCreateClusterRequest(request *CreateClusterRequest) {
 	request = &CreateClusterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -127,7 +130,7 @@ func CreateCreateClusterRequest() (request *CreateClusterRequest) {
 	return
 }
 
-// create a response to parse from CreateCluster response
+// CreateCreateClusterResponse creates a response to parse from CreateCluster response
 func CreateCreateClusterResponse() (response *CreateClusterResponse) {
 	response = &CreateClusterResponse{
 		BaseResponse: &responses.BaseResponse{},

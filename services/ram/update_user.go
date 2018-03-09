@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke UpdateUser api with *UpdateUserRequest synchronously
+// UpdateUser invokes the ram.UpdateUser API synchronously
 // api document: https://help.aliyun.com/api/ram/updateuser.html
 func (client *Client) UpdateUser(request *UpdateUserRequest) (response *UpdateUserResponse, err error) {
 	response = CreateUpdateUserResponse()
@@ -28,7 +28,7 @@ func (client *Client) UpdateUser(request *UpdateUserRequest) (response *UpdateUs
 	return
 }
 
-// invoke UpdateUser api with *UpdateUserRequest asynchronously
+// UpdateUserWithChan invokes the ram.UpdateUser API asynchronously
 // api document: https://help.aliyun.com/api/ram/updateuser.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateUserWithChan(request *UpdateUserRequest) (<-chan *UpdateUserResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) UpdateUserWithChan(request *UpdateUserRequest) (<-chan *Up
 	return responseChan, errChan
 }
 
-// invoke UpdateUser api with *UpdateUserRequest asynchronously
+// UpdateUserWithCallback invokes the ram.UpdateUser API asynchronously
 // api document: https://help.aliyun.com/api/ram/updateuser.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateUserWithCallback(request *UpdateUserRequest, callback func(response *UpdateUserResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) UpdateUserWithCallback(request *UpdateUserRequest, callbac
 	return result
 }
 
+// UpdateUserRequest is the request struct for api UpdateUser
 type UpdateUserRequest struct {
 	*requests.RpcRequest
 	UserName       string `position:"Query" name:"UserName"`
@@ -83,14 +84,15 @@ type UpdateUserRequest struct {
 	NewComments    string `position:"Query" name:"NewComments"`
 }
 
+// UpdateUserResponse is the response struct for api UpdateUser
 type UpdateUserResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	User      User   `json:"User" xml:"User"`
 }
 
-// create a request to invoke UpdateUser API
-func CreateUpdateUserRequest() (request *UpdateUserRequest) {
+// CreateUpdateUserRequest creates a request to invoke UpdateUser API
+func CreateUpdateUserRequest(request *UpdateUserRequest) {
 	request = &UpdateUserRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateUpdateUserRequest() (request *UpdateUserRequest) {
 	return
 }
 
-// create a response to parse from UpdateUser response
+// CreateUpdateUserResponse creates a response to parse from UpdateUser response
 func CreateUpdateUserResponse() (response *UpdateUserResponse) {
 	response = &UpdateUserResponse{
 		BaseResponse: &responses.BaseResponse{},

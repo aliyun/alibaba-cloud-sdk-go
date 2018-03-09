@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeCluster api with *DescribeClusterRequest synchronously
+// DescribeCluster invokes the ehpc.DescribeCluster API synchronously
 // api document: https://help.aliyun.com/api/ehpc/describecluster.html
 func (client *Client) DescribeCluster(request *DescribeClusterRequest) (response *DescribeClusterResponse, err error) {
 	response = CreateDescribeClusterResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeCluster(request *DescribeClusterRequest) (response
 	return
 }
 
-// invoke DescribeCluster api with *DescribeClusterRequest asynchronously
+// DescribeClusterWithChan invokes the ehpc.DescribeCluster API asynchronously
 // api document: https://help.aliyun.com/api/ehpc/describecluster.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeClusterWithChan(request *DescribeClusterRequest) (<-chan *DescribeClusterResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeClusterWithChan(request *DescribeClusterRequest) (
 	return responseChan, errChan
 }
 
-// invoke DescribeCluster api with *DescribeClusterRequest asynchronously
+// DescribeClusterWithCallback invokes the ehpc.DescribeCluster API asynchronously
 // api document: https://help.aliyun.com/api/ehpc/describecluster.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeClusterWithCallback(request *DescribeClusterRequest, callback func(response *DescribeClusterResponse, err error)) <-chan int {
@@ -73,19 +73,21 @@ func (client *Client) DescribeClusterWithCallback(request *DescribeClusterReques
 	return result
 }
 
+// DescribeClusterRequest is the request struct for api DescribeCluster
 type DescribeClusterRequest struct {
 	*requests.RpcRequest
 	ClusterId string `position:"Query" name:"ClusterId"`
 }
 
+// DescribeClusterResponse is the response struct for api DescribeCluster
 type DescribeClusterResponse struct {
 	*responses.BaseResponse
 	RequestId   string      `json:"RequestId" xml:"RequestId"`
 	ClusterInfo ClusterInfo `json:"ClusterInfo" xml:"ClusterInfo"`
 }
 
-// create a request to invoke DescribeCluster API
-func CreateDescribeClusterRequest() (request *DescribeClusterRequest) {
+// CreateDescribeClusterRequest creates a request to invoke DescribeCluster API
+func CreateDescribeClusterRequest(request *DescribeClusterRequest) {
 	request = &DescribeClusterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -93,7 +95,7 @@ func CreateDescribeClusterRequest() (request *DescribeClusterRequest) {
 	return
 }
 
-// create a response to parse from DescribeCluster response
+// CreateDescribeClusterResponse creates a response to parse from DescribeCluster response
 func CreateDescribeClusterResponse() (response *DescribeClusterResponse) {
 	response = &DescribeClusterResponse{
 		BaseResponse: &responses.BaseResponse{},

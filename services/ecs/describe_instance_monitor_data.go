@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeInstanceMonitorData api with *DescribeInstanceMonitorDataRequest synchronously
+// DescribeInstanceMonitorData invokes the ecs.DescribeInstanceMonitorData API synchronously
 // api document: https://help.aliyun.com/api/ecs/describeinstancemonitordata.html
 func (client *Client) DescribeInstanceMonitorData(request *DescribeInstanceMonitorDataRequest) (response *DescribeInstanceMonitorDataResponse, err error) {
 	response = CreateDescribeInstanceMonitorDataResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeInstanceMonitorData(request *DescribeInstanceMonit
 	return
 }
 
-// invoke DescribeInstanceMonitorData api with *DescribeInstanceMonitorDataRequest asynchronously
+// DescribeInstanceMonitorDataWithChan invokes the ecs.DescribeInstanceMonitorData API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describeinstancemonitordata.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceMonitorDataWithChan(request *DescribeInstanceMonitorDataRequest) (<-chan *DescribeInstanceMonitorDataResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeInstanceMonitorDataWithChan(request *DescribeInsta
 	return responseChan, errChan
 }
 
-// invoke DescribeInstanceMonitorData api with *DescribeInstanceMonitorDataRequest asynchronously
+// DescribeInstanceMonitorDataWithCallback invokes the ecs.DescribeInstanceMonitorData API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describeinstancemonitordata.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceMonitorDataWithCallback(request *DescribeInstanceMonitorDataRequest, callback func(response *DescribeInstanceMonitorDataResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeInstanceMonitorDataWithCallback(request *DescribeI
 	return result
 }
 
+// DescribeInstanceMonitorDataRequest is the request struct for api DescribeInstanceMonitorData
 type DescribeInstanceMonitorDataRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -85,14 +86,15 @@ type DescribeInstanceMonitorDataRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// DescribeInstanceMonitorDataResponse is the response struct for api DescribeInstanceMonitorData
 type DescribeInstanceMonitorDataResponse struct {
 	*responses.BaseResponse
 	RequestId   string                                   `json:"RequestId" xml:"RequestId"`
 	MonitorData MonitorDataInDescribeInstanceMonitorData `json:"MonitorData" xml:"MonitorData"`
 }
 
-// create a request to invoke DescribeInstanceMonitorData API
-func CreateDescribeInstanceMonitorDataRequest() (request *DescribeInstanceMonitorDataRequest) {
+// CreateDescribeInstanceMonitorDataRequest creates a request to invoke DescribeInstanceMonitorData API
+func CreateDescribeInstanceMonitorDataRequest(request *DescribeInstanceMonitorDataRequest) {
 	request = &DescribeInstanceMonitorDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -100,7 +102,7 @@ func CreateDescribeInstanceMonitorDataRequest() (request *DescribeInstanceMonito
 	return
 }
 
-// create a response to parse from DescribeInstanceMonitorData response
+// CreateDescribeInstanceMonitorDataResponse creates a response to parse from DescribeInstanceMonitorData response
 func CreateDescribeInstanceMonitorDataResponse() (response *DescribeInstanceMonitorDataResponse) {
 	response = &DescribeInstanceMonitorDataResponse{
 		BaseResponse: &responses.BaseResponse{},

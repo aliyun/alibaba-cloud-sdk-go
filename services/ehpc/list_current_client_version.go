@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ListCurrentClientVersion api with *ListCurrentClientVersionRequest synchronously
+// ListCurrentClientVersion invokes the ehpc.ListCurrentClientVersion API synchronously
 // api document: https://help.aliyun.com/api/ehpc/listcurrentclientversion.html
 func (client *Client) ListCurrentClientVersion(request *ListCurrentClientVersionRequest) (response *ListCurrentClientVersionResponse, err error) {
 	response = CreateListCurrentClientVersionResponse()
@@ -28,7 +28,7 @@ func (client *Client) ListCurrentClientVersion(request *ListCurrentClientVersion
 	return
 }
 
-// invoke ListCurrentClientVersion api with *ListCurrentClientVersionRequest asynchronously
+// ListCurrentClientVersionWithChan invokes the ehpc.ListCurrentClientVersion API asynchronously
 // api document: https://help.aliyun.com/api/ehpc/listcurrentclientversion.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListCurrentClientVersionWithChan(request *ListCurrentClientVersionRequest) (<-chan *ListCurrentClientVersionResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ListCurrentClientVersionWithChan(request *ListCurrentClien
 	return responseChan, errChan
 }
 
-// invoke ListCurrentClientVersion api with *ListCurrentClientVersionRequest asynchronously
+// ListCurrentClientVersionWithCallback invokes the ehpc.ListCurrentClientVersion API asynchronously
 // api document: https://help.aliyun.com/api/ehpc/listcurrentclientversion.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListCurrentClientVersionWithCallback(request *ListCurrentClientVersionRequest, callback func(response *ListCurrentClientVersionResponse, err error)) <-chan int {
@@ -73,18 +73,20 @@ func (client *Client) ListCurrentClientVersionWithCallback(request *ListCurrentC
 	return result
 }
 
+// ListCurrentClientVersionRequest is the request struct for api ListCurrentClientVersion
 type ListCurrentClientVersionRequest struct {
 	*requests.RpcRequest
 }
 
+// ListCurrentClientVersionResponse is the response struct for api ListCurrentClientVersion
 type ListCurrentClientVersionResponse struct {
 	*responses.BaseResponse
 	RequestId     string `json:"RequestId" xml:"RequestId"`
 	ClientVersion string `json:"ClientVersion" xml:"ClientVersion"`
 }
 
-// create a request to invoke ListCurrentClientVersion API
-func CreateListCurrentClientVersionRequest() (request *ListCurrentClientVersionRequest) {
+// CreateListCurrentClientVersionRequest creates a request to invoke ListCurrentClientVersion API
+func CreateListCurrentClientVersionRequest(request *ListCurrentClientVersionRequest) {
 	request = &ListCurrentClientVersionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -92,7 +94,7 @@ func CreateListCurrentClientVersionRequest() (request *ListCurrentClientVersionR
 	return
 }
 
-// create a response to parse from ListCurrentClientVersion response
+// CreateListCurrentClientVersionResponse creates a response to parse from ListCurrentClientVersion response
 func CreateListCurrentClientVersionResponse() (response *ListCurrentClientVersionResponse) {
 	response = &ListCurrentClientVersionResponse{
 		BaseResponse: &responses.BaseResponse{},

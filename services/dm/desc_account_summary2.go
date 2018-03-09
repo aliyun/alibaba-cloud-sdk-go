@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescAccountSummary2 api with *DescAccountSummary2Request synchronously
+// DescAccountSummary2 invokes the dm.DescAccountSummary2 API synchronously
 // api document: https://help.aliyun.com/api/dm/descaccountsummary2.html
 func (client *Client) DescAccountSummary2(request *DescAccountSummary2Request) (response *DescAccountSummary2Response, err error) {
 	response = CreateDescAccountSummary2Response()
@@ -28,7 +28,7 @@ func (client *Client) DescAccountSummary2(request *DescAccountSummary2Request) (
 	return
 }
 
-// invoke DescAccountSummary2 api with *DescAccountSummary2Request asynchronously
+// DescAccountSummary2WithChan invokes the dm.DescAccountSummary2 API asynchronously
 // api document: https://help.aliyun.com/api/dm/descaccountsummary2.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescAccountSummary2WithChan(request *DescAccountSummary2Request) (<-chan *DescAccountSummary2Response, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescAccountSummary2WithChan(request *DescAccountSummary2Re
 	return responseChan, errChan
 }
 
-// invoke DescAccountSummary2 api with *DescAccountSummary2Request asynchronously
+// DescAccountSummary2WithCallback invokes the dm.DescAccountSummary2 API asynchronously
 // api document: https://help.aliyun.com/api/dm/descaccountsummary2.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescAccountSummary2WithCallback(request *DescAccountSummary2Request, callback func(response *DescAccountSummary2Response, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescAccountSummary2WithCallback(request *DescAccountSummar
 	return result
 }
 
+// DescAccountSummary2Request is the request struct for api DescAccountSummary2
 type DescAccountSummary2Request struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -81,6 +82,7 @@ type DescAccountSummary2Request struct {
 	FromType             requests.Integer `position:"Query" name:"FromType"`
 }
 
+// DescAccountSummary2Response is the response struct for api DescAccountSummary2
 type DescAccountSummary2Response struct {
 	*responses.BaseResponse
 	RequestId         string `json:"RequestId" xml:"RequestId"`
@@ -89,8 +91,8 @@ type DescAccountSummary2Response struct {
 	MnsBag            int    `json:"MnsBag" xml:"MnsBag"`
 }
 
-// create a request to invoke DescAccountSummary2 API
-func CreateDescAccountSummary2Request() (request *DescAccountSummary2Request) {
+// CreateDescAccountSummary2Request creates a request to invoke DescAccountSummary2 API
+func CreateDescAccountSummary2Request(request *DescAccountSummary2Request) {
 	request = &DescAccountSummary2Request{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateDescAccountSummary2Request() (request *DescAccountSummary2Request) {
 	return
 }
 
-// create a response to parse from DescAccountSummary2 response
+// CreateDescAccountSummary2Response creates a response to parse from DescAccountSummary2 response
 func CreateDescAccountSummary2Response() (response *DescAccountSummary2Response) {
 	response = &DescAccountSummary2Response{
 		BaseResponse: &responses.BaseResponse{},

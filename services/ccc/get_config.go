@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke GetConfig api with *GetConfigRequest synchronously
+// GetConfig invokes the ccc.GetConfig API synchronously
 // api document: https://help.aliyun.com/api/ccc/getconfig.html
 func (client *Client) GetConfig(request *GetConfigRequest) (response *GetConfigResponse, err error) {
 	response = CreateGetConfigResponse()
@@ -28,7 +28,7 @@ func (client *Client) GetConfig(request *GetConfigRequest) (response *GetConfigR
 	return
 }
 
-// invoke GetConfig api with *GetConfigRequest asynchronously
+// GetConfigWithChan invokes the ccc.GetConfig API asynchronously
 // api document: https://help.aliyun.com/api/ccc/getconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetConfigWithChan(request *GetConfigRequest) (<-chan *GetConfigResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) GetConfigWithChan(request *GetConfigRequest) (<-chan *GetC
 	return responseChan, errChan
 }
 
-// invoke GetConfig api with *GetConfigRequest asynchronously
+// GetConfigWithCallback invokes the ccc.GetConfig API asynchronously
 // api document: https://help.aliyun.com/api/ccc/getconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetConfigWithCallback(request *GetConfigRequest, callback func(response *GetConfigResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) GetConfigWithCallback(request *GetConfigRequest, callback 
 	return result
 }
 
+// GetConfigRequest is the request struct for api GetConfig
 type GetConfigRequest struct {
 	*requests.RpcRequest
 	InstanceId string `position:"Query" name:"InstanceId"`
@@ -81,6 +82,7 @@ type GetConfigRequest struct {
 	ObjectType string `position:"Query" name:"ObjectType"`
 }
 
+// GetConfigResponse is the response struct for api GetConfig
 type GetConfigResponse struct {
 	*responses.BaseResponse
 	RequestId      string     `json:"RequestId" xml:"RequestId"`
@@ -91,8 +93,8 @@ type GetConfigResponse struct {
 	ConfigItem     ConfigItem `json:"ConfigItem" xml:"ConfigItem"`
 }
 
-// create a request to invoke GetConfig API
-func CreateGetConfigRequest() (request *GetConfigRequest) {
+// CreateGetConfigRequest creates a request to invoke GetConfig API
+func CreateGetConfigRequest(request *GetConfigRequest) {
 	request = &GetConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -100,7 +102,7 @@ func CreateGetConfigRequest() (request *GetConfigRequest) {
 	return
 }
 
-// create a response to parse from GetConfig response
+// CreateGetConfigResponse creates a response to parse from GetConfig response
 func CreateGetConfigResponse() (response *GetConfigResponse) {
 	response = &GetConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

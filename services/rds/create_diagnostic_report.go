@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CreateDiagnosticReport api with *CreateDiagnosticReportRequest synchronously
+// CreateDiagnosticReport invokes the rds.CreateDiagnosticReport API synchronously
 // api document: https://help.aliyun.com/api/rds/creatediagnosticreport.html
 func (client *Client) CreateDiagnosticReport(request *CreateDiagnosticReportRequest) (response *CreateDiagnosticReportResponse, err error) {
 	response = CreateCreateDiagnosticReportResponse()
@@ -28,7 +28,7 @@ func (client *Client) CreateDiagnosticReport(request *CreateDiagnosticReportRequ
 	return
 }
 
-// invoke CreateDiagnosticReport api with *CreateDiagnosticReportRequest asynchronously
+// CreateDiagnosticReportWithChan invokes the rds.CreateDiagnosticReport API asynchronously
 // api document: https://help.aliyun.com/api/rds/creatediagnosticreport.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateDiagnosticReportWithChan(request *CreateDiagnosticReportRequest) (<-chan *CreateDiagnosticReportResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CreateDiagnosticReportWithChan(request *CreateDiagnosticRe
 	return responseChan, errChan
 }
 
-// invoke CreateDiagnosticReport api with *CreateDiagnosticReportRequest asynchronously
+// CreateDiagnosticReportWithCallback invokes the rds.CreateDiagnosticReport API asynchronously
 // api document: https://help.aliyun.com/api/rds/creatediagnosticreport.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateDiagnosticReportWithCallback(request *CreateDiagnosticReportRequest, callback func(response *CreateDiagnosticReportResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) CreateDiagnosticReportWithCallback(request *CreateDiagnost
 	return result
 }
 
+// CreateDiagnosticReportRequest is the request struct for api CreateDiagnosticReport
 type CreateDiagnosticReportRequest struct {
 	*requests.RpcRequest
 	DBInstanceId string `position:"Query" name:"DBInstanceId"`
@@ -80,14 +81,15 @@ type CreateDiagnosticReportRequest struct {
 	EndTime      string `position:"Query" name:"EndTime"`
 }
 
+// CreateDiagnosticReportResponse is the response struct for api CreateDiagnosticReport
 type CreateDiagnosticReportResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	ReportId  string `json:"ReportId" xml:"ReportId"`
 }
 
-// create a request to invoke CreateDiagnosticReport API
-func CreateCreateDiagnosticReportRequest() (request *CreateDiagnosticReportRequest) {
+// CreateCreateDiagnosticReportRequest creates a request to invoke CreateDiagnosticReport API
+func CreateCreateDiagnosticReportRequest(request *CreateDiagnosticReportRequest) {
 	request = &CreateDiagnosticReportRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateCreateDiagnosticReportRequest() (request *CreateDiagnosticReportReque
 	return
 }
 
-// create a response to parse from CreateDiagnosticReport response
+// CreateCreateDiagnosticReportResponse creates a response to parse from CreateDiagnosticReport response
 func CreateCreateDiagnosticReportResponse() (response *CreateDiagnosticReportResponse) {
 	response = &CreateDiagnosticReportResponse{
 		BaseResponse: &responses.BaseResponse{},

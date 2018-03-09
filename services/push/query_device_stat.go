@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke QueryDeviceStat api with *QueryDeviceStatRequest synchronously
+// QueryDeviceStat invokes the push.QueryDeviceStat API synchronously
 // api document: https://help.aliyun.com/api/push/querydevicestat.html
 func (client *Client) QueryDeviceStat(request *QueryDeviceStatRequest) (response *QueryDeviceStatResponse, err error) {
 	response = CreateQueryDeviceStatResponse()
@@ -28,7 +28,7 @@ func (client *Client) QueryDeviceStat(request *QueryDeviceStatRequest) (response
 	return
 }
 
-// invoke QueryDeviceStat api with *QueryDeviceStatRequest asynchronously
+// QueryDeviceStatWithChan invokes the push.QueryDeviceStat API asynchronously
 // api document: https://help.aliyun.com/api/push/querydevicestat.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryDeviceStatWithChan(request *QueryDeviceStatRequest) (<-chan *QueryDeviceStatResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) QueryDeviceStatWithChan(request *QueryDeviceStatRequest) (
 	return responseChan, errChan
 }
 
-// invoke QueryDeviceStat api with *QueryDeviceStatRequest asynchronously
+// QueryDeviceStatWithCallback invokes the push.QueryDeviceStat API asynchronously
 // api document: https://help.aliyun.com/api/push/querydevicestat.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryDeviceStatWithCallback(request *QueryDeviceStatRequest, callback func(response *QueryDeviceStatResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) QueryDeviceStatWithCallback(request *QueryDeviceStatReques
 	return result
 }
 
+// QueryDeviceStatRequest is the request struct for api QueryDeviceStat
 type QueryDeviceStatRequest struct {
 	*requests.RpcRequest
 	AppKey     requests.Integer `position:"Query" name:"AppKey"`
@@ -82,14 +83,15 @@ type QueryDeviceStatRequest struct {
 	QueryType  string           `position:"Query" name:"QueryType"`
 }
 
+// QueryDeviceStatResponse is the response struct for api QueryDeviceStat
 type QueryDeviceStatResponse struct {
 	*responses.BaseResponse
 	RequestId      string                          `json:"RequestId" xml:"RequestId"`
 	AppDeviceStats AppDeviceStatsInQueryDeviceStat `json:"AppDeviceStats" xml:"AppDeviceStats"`
 }
 
-// create a request to invoke QueryDeviceStat API
-func CreateQueryDeviceStatRequest() (request *QueryDeviceStatRequest) {
+// CreateQueryDeviceStatRequest creates a request to invoke QueryDeviceStat API
+func CreateQueryDeviceStatRequest(request *QueryDeviceStatRequest) {
 	request = &QueryDeviceStatRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateQueryDeviceStatRequest() (request *QueryDeviceStatRequest) {
 	return
 }
 
-// create a response to parse from QueryDeviceStat response
+// CreateQueryDeviceStatResponse creates a response to parse from QueryDeviceStat response
 func CreateQueryDeviceStatResponse() (response *QueryDeviceStatResponse) {
 	response = &QueryDeviceStatResponse{
 		BaseResponse: &responses.BaseResponse{},

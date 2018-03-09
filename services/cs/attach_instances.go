@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke AttachInstances api with *AttachInstancesRequest synchronously
+// AttachInstances invokes the cs.AttachInstances API synchronously
 // api document: https://help.aliyun.com/api/cs/attachinstances.html
 func (client *Client) AttachInstances(request *AttachInstancesRequest) (response *AttachInstancesResponse, err error) {
 	response = CreateAttachInstancesResponse()
@@ -28,7 +28,7 @@ func (client *Client) AttachInstances(request *AttachInstancesRequest) (response
 	return
 }
 
-// invoke AttachInstances api with *AttachInstancesRequest asynchronously
+// AttachInstancesWithChan invokes the cs.AttachInstances API asynchronously
 // api document: https://help.aliyun.com/api/cs/attachinstances.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AttachInstancesWithChan(request *AttachInstancesRequest) (<-chan *AttachInstancesResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) AttachInstancesWithChan(request *AttachInstancesRequest) (
 	return responseChan, errChan
 }
 
-// invoke AttachInstances api with *AttachInstancesRequest asynchronously
+// AttachInstancesWithCallback invokes the cs.AttachInstances API asynchronously
 // api document: https://help.aliyun.com/api/cs/attachinstances.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AttachInstancesWithCallback(request *AttachInstancesRequest, callback func(response *AttachInstancesResponse, err error)) <-chan int {
@@ -73,17 +73,19 @@ func (client *Client) AttachInstancesWithCallback(request *AttachInstancesReques
 	return result
 }
 
+// AttachInstancesRequest is the request struct for api AttachInstances
 type AttachInstancesRequest struct {
 	*requests.RoaRequest
 	ClusterId string `position:"Path" name:"ClusterId"`
 }
 
+// AttachInstancesResponse is the response struct for api AttachInstances
 type AttachInstancesResponse struct {
 	*responses.BaseResponse
 }
 
-// create a request to invoke AttachInstances API
-func CreateAttachInstancesRequest() (request *AttachInstancesRequest) {
+// CreateAttachInstancesRequest creates a request to invoke AttachInstances API
+func CreateAttachInstancesRequest(request *AttachInstancesRequest) {
 	request = &AttachInstancesRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
@@ -92,7 +94,7 @@ func CreateAttachInstancesRequest() (request *AttachInstancesRequest) {
 	return
 }
 
-// create a response to parse from AttachInstances response
+// CreateAttachInstancesResponse creates a response to parse from AttachInstances response
 func CreateAttachInstancesResponse() (response *AttachInstancesResponse) {
 	response = &AttachInstancesResponse{
 		BaseResponse: &responses.BaseResponse{},

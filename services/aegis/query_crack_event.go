@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke QueryCrackEvent api with *QueryCrackEventRequest synchronously
+// QueryCrackEvent invokes the aegis.QueryCrackEvent API synchronously
 // api document: https://help.aliyun.com/api/aegis/querycrackevent.html
 func (client *Client) QueryCrackEvent(request *QueryCrackEventRequest) (response *QueryCrackEventResponse, err error) {
 	response = CreateQueryCrackEventResponse()
@@ -28,7 +28,7 @@ func (client *Client) QueryCrackEvent(request *QueryCrackEventRequest) (response
 	return
 }
 
-// invoke QueryCrackEvent api with *QueryCrackEventRequest asynchronously
+// QueryCrackEventWithChan invokes the aegis.QueryCrackEvent API asynchronously
 // api document: https://help.aliyun.com/api/aegis/querycrackevent.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryCrackEventWithChan(request *QueryCrackEventRequest) (<-chan *QueryCrackEventResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) QueryCrackEventWithChan(request *QueryCrackEventRequest) (
 	return responseChan, errChan
 }
 
-// invoke QueryCrackEvent api with *QueryCrackEventRequest asynchronously
+// QueryCrackEventWithCallback invokes the aegis.QueryCrackEvent API asynchronously
 // api document: https://help.aliyun.com/api/aegis/querycrackevent.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryCrackEventWithCallback(request *QueryCrackEventRequest, callback func(response *QueryCrackEventResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) QueryCrackEventWithCallback(request *QueryCrackEventReques
 	return result
 }
 
+// QueryCrackEventRequest is the request struct for api QueryCrackEvent
 type QueryCrackEventRequest struct {
 	*requests.RpcRequest
 	Uuid        string           `position:"Query" name:"Uuid"`
@@ -82,6 +83,7 @@ type QueryCrackEventRequest struct {
 	EndTime     string           `position:"Query" name:"EndTime"`
 }
 
+// QueryCrackEventResponse is the response struct for api QueryCrackEvent
 type QueryCrackEventResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"requestId" xml:"requestId"`
@@ -91,8 +93,8 @@ type QueryCrackEventResponse struct {
 	Data      Data   `json:"Data" xml:"Data"`
 }
 
-// create a request to invoke QueryCrackEvent API
-func CreateQueryCrackEventRequest() (request *QueryCrackEventRequest) {
+// CreateQueryCrackEventRequest creates a request to invoke QueryCrackEvent API
+func CreateQueryCrackEventRequest(request *QueryCrackEventRequest) {
 	request = &QueryCrackEventRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -100,7 +102,7 @@ func CreateQueryCrackEventRequest() (request *QueryCrackEventRequest) {
 	return
 }
 
-// create a response to parse from QueryCrackEvent response
+// CreateQueryCrackEventResponse creates a response to parse from QueryCrackEvent response
 func CreateQueryCrackEventResponse() (response *QueryCrackEventResponse) {
 	response = &QueryCrackEventResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteNqa api with *DeleteNqaRequest synchronously
+// DeleteNqa invokes the vpc.DeleteNqa API synchronously
 // api document: https://help.aliyun.com/api/vpc/deletenqa.html
 func (client *Client) DeleteNqa(request *DeleteNqaRequest) (response *DeleteNqaResponse, err error) {
 	response = CreateDeleteNqaResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteNqa(request *DeleteNqaRequest) (response *DeleteNqaR
 	return
 }
 
-// invoke DeleteNqa api with *DeleteNqaRequest asynchronously
+// DeleteNqaWithChan invokes the vpc.DeleteNqa API asynchronously
 // api document: https://help.aliyun.com/api/vpc/deletenqa.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteNqaWithChan(request *DeleteNqaRequest) (<-chan *DeleteNqaResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteNqaWithChan(request *DeleteNqaRequest) (<-chan *Dele
 	return responseChan, errChan
 }
 
-// invoke DeleteNqa api with *DeleteNqaRequest asynchronously
+// DeleteNqaWithCallback invokes the vpc.DeleteNqa API asynchronously
 // api document: https://help.aliyun.com/api/vpc/deletenqa.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteNqaWithCallback(request *DeleteNqaRequest, callback func(response *DeleteNqaResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DeleteNqaWithCallback(request *DeleteNqaRequest, callback 
 	return result
 }
 
+// DeleteNqaRequest is the request struct for api DeleteNqa
 type DeleteNqaRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -83,13 +84,14 @@ type DeleteNqaRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// DeleteNqaResponse is the response struct for api DeleteNqa
 type DeleteNqaResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DeleteNqa API
-func CreateDeleteNqaRequest() (request *DeleteNqaRequest) {
+// CreateDeleteNqaRequest creates a request to invoke DeleteNqa API
+func CreateDeleteNqaRequest(request *DeleteNqaRequest) {
 	request = &DeleteNqaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateDeleteNqaRequest() (request *DeleteNqaRequest) {
 	return
 }
 
-// create a response to parse from DeleteNqa response
+// CreateDeleteNqaResponse creates a response to parse from DeleteNqa response
 func CreateDeleteNqaResponse() (response *DeleteNqaResponse) {
 	response = &DeleteNqaResponse{
 		BaseResponse: &responses.BaseResponse{},

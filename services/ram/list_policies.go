@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ListPolicies api with *ListPoliciesRequest synchronously
+// ListPolicies invokes the ram.ListPolicies API synchronously
 // api document: https://help.aliyun.com/api/ram/listpolicies.html
 func (client *Client) ListPolicies(request *ListPoliciesRequest) (response *ListPoliciesResponse, err error) {
 	response = CreateListPoliciesResponse()
@@ -28,7 +28,7 @@ func (client *Client) ListPolicies(request *ListPoliciesRequest) (response *List
 	return
 }
 
-// invoke ListPolicies api with *ListPoliciesRequest asynchronously
+// ListPoliciesWithChan invokes the ram.ListPolicies API asynchronously
 // api document: https://help.aliyun.com/api/ram/listpolicies.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListPoliciesWithChan(request *ListPoliciesRequest) (<-chan *ListPoliciesResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ListPoliciesWithChan(request *ListPoliciesRequest) (<-chan
 	return responseChan, errChan
 }
 
-// invoke ListPolicies api with *ListPoliciesRequest asynchronously
+// ListPoliciesWithCallback invokes the ram.ListPolicies API asynchronously
 // api document: https://help.aliyun.com/api/ram/listpolicies.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListPoliciesWithCallback(request *ListPoliciesRequest, callback func(response *ListPoliciesResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ListPoliciesWithCallback(request *ListPoliciesRequest, cal
 	return result
 }
 
+// ListPoliciesRequest is the request struct for api ListPolicies
 type ListPoliciesRequest struct {
 	*requests.RpcRequest
 	PolicyType string           `position:"Query" name:"PolicyType"`
@@ -80,6 +81,7 @@ type ListPoliciesRequest struct {
 	MaxItems   requests.Integer `position:"Query" name:"MaxItems"`
 }
 
+// ListPoliciesResponse is the response struct for api ListPolicies
 type ListPoliciesResponse struct {
 	*responses.BaseResponse
 	RequestId   string                 `json:"RequestId" xml:"RequestId"`
@@ -88,8 +90,8 @@ type ListPoliciesResponse struct {
 	Policies    PoliciesInListPolicies `json:"Policies" xml:"Policies"`
 }
 
-// create a request to invoke ListPolicies API
-func CreateListPoliciesRequest() (request *ListPoliciesRequest) {
+// CreateListPoliciesRequest creates a request to invoke ListPolicies API
+func CreateListPoliciesRequest(request *ListPoliciesRequest) {
 	request = &ListPoliciesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateListPoliciesRequest() (request *ListPoliciesRequest) {
 	return
 }
 
-// create a response to parse from ListPolicies response
+// CreateListPoliciesResponse creates a response to parse from ListPolicies response
 func CreateListPoliciesResponse() (response *ListPoliciesResponse) {
 	response = &ListPoliciesResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeDiagnosticReportList api with *DescribeDiagnosticReportListRequest synchronously
+// DescribeDiagnosticReportList invokes the rds.DescribeDiagnosticReportList API synchronously
 // api document: https://help.aliyun.com/api/rds/describediagnosticreportlist.html
 func (client *Client) DescribeDiagnosticReportList(request *DescribeDiagnosticReportListRequest) (response *DescribeDiagnosticReportListResponse, err error) {
 	response = CreateDescribeDiagnosticReportListResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeDiagnosticReportList(request *DescribeDiagnosticRe
 	return
 }
 
-// invoke DescribeDiagnosticReportList api with *DescribeDiagnosticReportListRequest asynchronously
+// DescribeDiagnosticReportListWithChan invokes the rds.DescribeDiagnosticReportList API asynchronously
 // api document: https://help.aliyun.com/api/rds/describediagnosticreportlist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDiagnosticReportListWithChan(request *DescribeDiagnosticReportListRequest) (<-chan *DescribeDiagnosticReportListResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeDiagnosticReportListWithChan(request *DescribeDiag
 	return responseChan, errChan
 }
 
-// invoke DescribeDiagnosticReportList api with *DescribeDiagnosticReportListRequest asynchronously
+// DescribeDiagnosticReportListWithCallback invokes the rds.DescribeDiagnosticReportList API asynchronously
 // api document: https://help.aliyun.com/api/rds/describediagnosticreportlist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDiagnosticReportListWithCallback(request *DescribeDiagnosticReportListRequest, callback func(response *DescribeDiagnosticReportListResponse, err error)) <-chan int {
@@ -73,19 +73,21 @@ func (client *Client) DescribeDiagnosticReportListWithCallback(request *Describe
 	return result
 }
 
+// DescribeDiagnosticReportListRequest is the request struct for api DescribeDiagnosticReportList
 type DescribeDiagnosticReportListRequest struct {
 	*requests.RpcRequest
 	DBInstanceId string `position:"Query" name:"DBInstanceId"`
 }
 
+// DescribeDiagnosticReportListResponse is the response struct for api DescribeDiagnosticReportList
 type DescribeDiagnosticReportListResponse struct {
 	*responses.BaseResponse
 	RequestId  string   `json:"RequestId" xml:"RequestId"`
 	ReportList []Report `json:"ReportList" xml:"ReportList"`
 }
 
-// create a request to invoke DescribeDiagnosticReportList API
-func CreateDescribeDiagnosticReportListRequest() (request *DescribeDiagnosticReportListRequest) {
+// CreateDescribeDiagnosticReportListRequest creates a request to invoke DescribeDiagnosticReportList API
+func CreateDescribeDiagnosticReportListRequest(request *DescribeDiagnosticReportListRequest) {
 	request = &DescribeDiagnosticReportListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -93,7 +95,7 @@ func CreateDescribeDiagnosticReportListRequest() (request *DescribeDiagnosticRep
 	return
 }
 
-// create a response to parse from DescribeDiagnosticReportList response
+// CreateDescribeDiagnosticReportListResponse creates a response to parse from DescribeDiagnosticReportList response
 func CreateDescribeDiagnosticReportListResponse() (response *DescribeDiagnosticReportListResponse) {
 	response = &DescribeDiagnosticReportListResponse{
 		BaseResponse: &responses.BaseResponse{},

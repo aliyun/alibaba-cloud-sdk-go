@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke AddUsers api with *AddUsersRequest synchronously
+// AddUsers invokes the ehpc.AddUsers API synchronously
 // api document: https://help.aliyun.com/api/ehpc/addusers.html
 func (client *Client) AddUsers(request *AddUsersRequest) (response *AddUsersResponse, err error) {
 	response = CreateAddUsersResponse()
@@ -28,7 +28,7 @@ func (client *Client) AddUsers(request *AddUsersRequest) (response *AddUsersResp
 	return
 }
 
-// invoke AddUsers api with *AddUsersRequest asynchronously
+// AddUsersWithChan invokes the ehpc.AddUsers API asynchronously
 // api document: https://help.aliyun.com/api/ehpc/addusers.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddUsersWithChan(request *AddUsersRequest) (<-chan *AddUsersResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) AddUsersWithChan(request *AddUsersRequest) (<-chan *AddUse
 	return responseChan, errChan
 }
 
-// invoke AddUsers api with *AddUsersRequest asynchronously
+// AddUsersWithCallback invokes the ehpc.AddUsers API asynchronously
 // api document: https://help.aliyun.com/api/ehpc/addusers.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddUsersWithCallback(request *AddUsersRequest, callback func(response *AddUsersResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) AddUsersWithCallback(request *AddUsersRequest, callback fu
 	return result
 }
 
+// AddUsersRequest is the request struct for api AddUsers
 type AddUsersRequest struct {
 	*requests.RpcRequest
 	ClusterId       string           `position:"Query" name:"ClusterId"`
@@ -80,19 +81,21 @@ type AddUsersRequest struct {
 	ReleaseInstance requests.Boolean `position:"Query" name:"ReleaseInstance"`
 }
 
+// AddUsersUser is a repeated param struct in AddUsersRequest
 type AddUsersUser struct {
 	Name     string `name:"Name"`
 	Group    string `name:"Group"`
 	Password string `name:"Password"`
 }
 
+// AddUsersResponse is the response struct for api AddUsers
 type AddUsersResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke AddUsers API
-func CreateAddUsersRequest() (request *AddUsersRequest) {
+// CreateAddUsersRequest creates a request to invoke AddUsers API
+func CreateAddUsersRequest(request *AddUsersRequest) {
 	request = &AddUsersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -100,7 +103,7 @@ func CreateAddUsersRequest() (request *AddUsersRequest) {
 	return
 }
 
-// create a response to parse from AddUsers response
+// CreateAddUsersResponse creates a response to parse from AddUsers response
 func CreateAddUsersResponse() (response *AddUsersResponse) {
 	response = &AddUsersResponse{
 		BaseResponse: &responses.BaseResponse{},

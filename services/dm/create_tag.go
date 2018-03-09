@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CreateTag api with *CreateTagRequest synchronously
+// CreateTag invokes the dm.CreateTag API synchronously
 // api document: https://help.aliyun.com/api/dm/createtag.html
 func (client *Client) CreateTag(request *CreateTagRequest) (response *CreateTagResponse, err error) {
 	response = CreateCreateTagResponse()
@@ -28,7 +28,7 @@ func (client *Client) CreateTag(request *CreateTagRequest) (response *CreateTagR
 	return
 }
 
-// invoke CreateTag api with *CreateTagRequest asynchronously
+// CreateTagWithChan invokes the dm.CreateTag API asynchronously
 // api document: https://help.aliyun.com/api/dm/createtag.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateTagWithChan(request *CreateTagRequest) (<-chan *CreateTagResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CreateTagWithChan(request *CreateTagRequest) (<-chan *Crea
 	return responseChan, errChan
 }
 
-// invoke CreateTag api with *CreateTagRequest asynchronously
+// CreateTagWithCallback invokes the dm.CreateTag API asynchronously
 // api document: https://help.aliyun.com/api/dm/createtag.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateTagWithCallback(request *CreateTagRequest, callback func(response *CreateTagResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) CreateTagWithCallback(request *CreateTagRequest, callback 
 	return result
 }
 
+// CreateTagRequest is the request struct for api CreateTag
 type CreateTagRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -81,13 +82,14 @@ type CreateTagRequest struct {
 	TagName              string           `position:"Query" name:"TagName"`
 }
 
+// CreateTagResponse is the response struct for api CreateTag
 type CreateTagResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke CreateTag API
-func CreateCreateTagRequest() (request *CreateTagRequest) {
+// CreateCreateTagRequest creates a request to invoke CreateTag API
+func CreateCreateTagRequest(request *CreateTagRequest) {
 	request = &CreateTagRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateCreateTagRequest() (request *CreateTagRequest) {
 	return
 }
 
-// create a response to parse from CreateTag response
+// CreateCreateTagResponse creates a response to parse from CreateTag response
 func CreateCreateTagResponse() (response *CreateTagResponse) {
 	response = &CreateTagResponse{
 		BaseResponse: &responses.BaseResponse{},

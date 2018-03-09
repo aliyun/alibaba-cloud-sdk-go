@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeSnapshots api with *DescribeSnapshotsRequest synchronously
+// DescribeSnapshots invokes the ecs.DescribeSnapshots API synchronously
 // api document: https://help.aliyun.com/api/ecs/describesnapshots.html
 func (client *Client) DescribeSnapshots(request *DescribeSnapshotsRequest) (response *DescribeSnapshotsResponse, err error) {
 	response = CreateDescribeSnapshotsResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeSnapshots(request *DescribeSnapshotsRequest) (resp
 	return
 }
 
-// invoke DescribeSnapshots api with *DescribeSnapshotsRequest asynchronously
+// DescribeSnapshotsWithChan invokes the ecs.DescribeSnapshots API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describesnapshots.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSnapshotsWithChan(request *DescribeSnapshotsRequest) (<-chan *DescribeSnapshotsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeSnapshotsWithChan(request *DescribeSnapshotsReques
 	return responseChan, errChan
 }
 
-// invoke DescribeSnapshots api with *DescribeSnapshotsRequest asynchronously
+// DescribeSnapshotsWithCallback invokes the ecs.DescribeSnapshots API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describesnapshots.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSnapshotsWithCallback(request *DescribeSnapshotsRequest, callback func(response *DescribeSnapshotsResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeSnapshotsWithCallback(request *DescribeSnapshotsRe
 	return result
 }
 
+// DescribeSnapshotsRequest is the request struct for api DescribeSnapshots
 type DescribeSnapshotsRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -108,6 +109,7 @@ type DescribeSnapshotsRequest struct {
 	DryRun               requests.Boolean `position:"Query" name:"DryRun"`
 }
 
+// DescribeSnapshotsResponse is the response struct for api DescribeSnapshots
 type DescribeSnapshotsResponse struct {
 	*responses.BaseResponse
 	RequestId  string    `json:"RequestId" xml:"RequestId"`
@@ -117,8 +119,8 @@ type DescribeSnapshotsResponse struct {
 	Snapshots  Snapshots `json:"Snapshots" xml:"Snapshots"`
 }
 
-// create a request to invoke DescribeSnapshots API
-func CreateDescribeSnapshotsRequest() (request *DescribeSnapshotsRequest) {
+// CreateDescribeSnapshotsRequest creates a request to invoke DescribeSnapshots API
+func CreateDescribeSnapshotsRequest(request *DescribeSnapshotsRequest) {
 	request = &DescribeSnapshotsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -126,7 +128,7 @@ func CreateDescribeSnapshotsRequest() (request *DescribeSnapshotsRequest) {
 	return
 }
 
-// create a response to parse from DescribeSnapshots response
+// CreateDescribeSnapshotsResponse creates a response to parse from DescribeSnapshots response
 func CreateDescribeSnapshotsResponse() (response *DescribeSnapshotsResponse) {
 	response = &DescribeSnapshotsResponse{
 		BaseResponse: &responses.BaseResponse{},

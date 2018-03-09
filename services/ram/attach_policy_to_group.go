@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke AttachPolicyToGroup api with *AttachPolicyToGroupRequest synchronously
+// AttachPolicyToGroup invokes the ram.AttachPolicyToGroup API synchronously
 // api document: https://help.aliyun.com/api/ram/attachpolicytogroup.html
 func (client *Client) AttachPolicyToGroup(request *AttachPolicyToGroupRequest) (response *AttachPolicyToGroupResponse, err error) {
 	response = CreateAttachPolicyToGroupResponse()
@@ -28,7 +28,7 @@ func (client *Client) AttachPolicyToGroup(request *AttachPolicyToGroupRequest) (
 	return
 }
 
-// invoke AttachPolicyToGroup api with *AttachPolicyToGroupRequest asynchronously
+// AttachPolicyToGroupWithChan invokes the ram.AttachPolicyToGroup API asynchronously
 // api document: https://help.aliyun.com/api/ram/attachpolicytogroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AttachPolicyToGroupWithChan(request *AttachPolicyToGroupRequest) (<-chan *AttachPolicyToGroupResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) AttachPolicyToGroupWithChan(request *AttachPolicyToGroupRe
 	return responseChan, errChan
 }
 
-// invoke AttachPolicyToGroup api with *AttachPolicyToGroupRequest asynchronously
+// AttachPolicyToGroupWithCallback invokes the ram.AttachPolicyToGroup API asynchronously
 // api document: https://help.aliyun.com/api/ram/attachpolicytogroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AttachPolicyToGroupWithCallback(request *AttachPolicyToGroupRequest, callback func(response *AttachPolicyToGroupResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) AttachPolicyToGroupWithCallback(request *AttachPolicyToGro
 	return result
 }
 
+// AttachPolicyToGroupRequest is the request struct for api AttachPolicyToGroup
 type AttachPolicyToGroupRequest struct {
 	*requests.RpcRequest
 	PolicyType string `position:"Query" name:"PolicyType"`
@@ -80,13 +81,14 @@ type AttachPolicyToGroupRequest struct {
 	GroupName  string `position:"Query" name:"GroupName"`
 }
 
+// AttachPolicyToGroupResponse is the response struct for api AttachPolicyToGroup
 type AttachPolicyToGroupResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke AttachPolicyToGroup API
-func CreateAttachPolicyToGroupRequest() (request *AttachPolicyToGroupRequest) {
+// CreateAttachPolicyToGroupRequest creates a request to invoke AttachPolicyToGroup API
+func CreateAttachPolicyToGroupRequest(request *AttachPolicyToGroupRequest) {
 	request = &AttachPolicyToGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -94,7 +96,7 @@ func CreateAttachPolicyToGroupRequest() (request *AttachPolicyToGroupRequest) {
 	return
 }
 
-// create a response to parse from AttachPolicyToGroup response
+// CreateAttachPolicyToGroupResponse creates a response to parse from AttachPolicyToGroup response
 func CreateAttachPolicyToGroupResponse() (response *AttachPolicyToGroupResponse) {
 	response = &AttachPolicyToGroupResponse{
 		BaseResponse: &responses.BaseResponse{},

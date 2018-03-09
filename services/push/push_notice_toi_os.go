@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke PushNoticeToiOS api with *PushNoticeToiOSRequest synchronously
+// PushNoticeToiOS invokes the push.PushNoticeToiOS API synchronously
 // api document: https://help.aliyun.com/api/push/pushnoticetoios.html
 func (client *Client) PushNoticeToiOS(request *PushNoticeToiOSRequest) (response *PushNoticeToiOSResponse, err error) {
 	response = CreatePushNoticeToiOSResponse()
@@ -28,7 +28,7 @@ func (client *Client) PushNoticeToiOS(request *PushNoticeToiOSRequest) (response
 	return
 }
 
-// invoke PushNoticeToiOS api with *PushNoticeToiOSRequest asynchronously
+// PushNoticeToiOSWithChan invokes the push.PushNoticeToiOS API asynchronously
 // api document: https://help.aliyun.com/api/push/pushnoticetoios.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PushNoticeToiOSWithChan(request *PushNoticeToiOSRequest) (<-chan *PushNoticeToiOSResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) PushNoticeToiOSWithChan(request *PushNoticeToiOSRequest) (
 	return responseChan, errChan
 }
 
-// invoke PushNoticeToiOS api with *PushNoticeToiOSRequest asynchronously
+// PushNoticeToiOSWithCallback invokes the push.PushNoticeToiOS API asynchronously
 // api document: https://help.aliyun.com/api/push/pushnoticetoios.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PushNoticeToiOSWithCallback(request *PushNoticeToiOSRequest, callback func(response *PushNoticeToiOSResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) PushNoticeToiOSWithCallback(request *PushNoticeToiOSReques
 	return result
 }
 
+// PushNoticeToiOSRequest is the request struct for api PushNoticeToiOS
 type PushNoticeToiOSRequest struct {
 	*requests.RpcRequest
 	AppKey        requests.Integer `position:"Query" name:"AppKey"`
@@ -85,14 +86,15 @@ type PushNoticeToiOSRequest struct {
 	ExtParameters string           `position:"Query" name:"ExtParameters"`
 }
 
+// PushNoticeToiOSResponse is the response struct for api PushNoticeToiOS
 type PushNoticeToiOSResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	MessageId string `json:"MessageId" xml:"MessageId"`
 }
 
-// create a request to invoke PushNoticeToiOS API
-func CreatePushNoticeToiOSRequest() (request *PushNoticeToiOSRequest) {
+// CreatePushNoticeToiOSRequest creates a request to invoke PushNoticeToiOS API
+func CreatePushNoticeToiOSRequest(request *PushNoticeToiOSRequest) {
 	request = &PushNoticeToiOSRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -100,7 +102,7 @@ func CreatePushNoticeToiOSRequest() (request *PushNoticeToiOSRequest) {
 	return
 }
 
-// create a response to parse from PushNoticeToiOS response
+// CreatePushNoticeToiOSResponse creates a response to parse from PushNoticeToiOS response
 func CreatePushNoticeToiOSResponse() (response *PushNoticeToiOSResponse) {
 	response = &PushNoticeToiOSResponse{
 		BaseResponse: &responses.BaseResponse{},

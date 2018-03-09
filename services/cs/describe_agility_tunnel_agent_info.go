@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeAgilityTunnelAgentInfo api with *DescribeAgilityTunnelAgentInfoRequest synchronously
+// DescribeAgilityTunnelAgentInfo invokes the cs.DescribeAgilityTunnelAgentInfo API synchronously
 // api document: https://help.aliyun.com/api/cs/describeagilitytunnelagentinfo.html
 func (client *Client) DescribeAgilityTunnelAgentInfo(request *DescribeAgilityTunnelAgentInfoRequest) (response *DescribeAgilityTunnelAgentInfoResponse, err error) {
 	response = CreateDescribeAgilityTunnelAgentInfoResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeAgilityTunnelAgentInfo(request *DescribeAgilityTun
 	return
 }
 
-// invoke DescribeAgilityTunnelAgentInfo api with *DescribeAgilityTunnelAgentInfoRequest asynchronously
+// DescribeAgilityTunnelAgentInfoWithChan invokes the cs.DescribeAgilityTunnelAgentInfo API asynchronously
 // api document: https://help.aliyun.com/api/cs/describeagilitytunnelagentinfo.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAgilityTunnelAgentInfoWithChan(request *DescribeAgilityTunnelAgentInfoRequest) (<-chan *DescribeAgilityTunnelAgentInfoResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeAgilityTunnelAgentInfoWithChan(request *DescribeAg
 	return responseChan, errChan
 }
 
-// invoke DescribeAgilityTunnelAgentInfo api with *DescribeAgilityTunnelAgentInfoRequest asynchronously
+// DescribeAgilityTunnelAgentInfoWithCallback invokes the cs.DescribeAgilityTunnelAgentInfo API asynchronously
 // api document: https://help.aliyun.com/api/cs/describeagilitytunnelagentinfo.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAgilityTunnelAgentInfoWithCallback(request *DescribeAgilityTunnelAgentInfoRequest, callback func(response *DescribeAgilityTunnelAgentInfoResponse, err error)) <-chan int {
@@ -73,17 +73,19 @@ func (client *Client) DescribeAgilityTunnelAgentInfoWithCallback(request *Descri
 	return result
 }
 
+// DescribeAgilityTunnelAgentInfoRequest is the request struct for api DescribeAgilityTunnelAgentInfo
 type DescribeAgilityTunnelAgentInfoRequest struct {
 	*requests.RoaRequest
 	Token string `position:"Path" name:"Token"`
 }
 
+// DescribeAgilityTunnelAgentInfoResponse is the response struct for api DescribeAgilityTunnelAgentInfo
 type DescribeAgilityTunnelAgentInfoResponse struct {
 	*responses.BaseResponse
 }
 
-// create a request to invoke DescribeAgilityTunnelAgentInfo API
-func CreateDescribeAgilityTunnelAgentInfoRequest() (request *DescribeAgilityTunnelAgentInfoRequest) {
+// CreateDescribeAgilityTunnelAgentInfoRequest creates a request to invoke DescribeAgilityTunnelAgentInfo API
+func CreateDescribeAgilityTunnelAgentInfoRequest(request *DescribeAgilityTunnelAgentInfoRequest) {
 	request = &DescribeAgilityTunnelAgentInfoRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
@@ -92,7 +94,7 @@ func CreateDescribeAgilityTunnelAgentInfoRequest() (request *DescribeAgilityTunn
 	return
 }
 
-// create a response to parse from DescribeAgilityTunnelAgentInfo response
+// CreateDescribeAgilityTunnelAgentInfoResponse creates a response to parse from DescribeAgilityTunnelAgentInfo response
 func CreateDescribeAgilityTunnelAgentInfoResponse() (response *DescribeAgilityTunnelAgentInfoResponse) {
 	response = &DescribeAgilityTunnelAgentInfoResponse{
 		BaseResponse: &responses.BaseResponse{},

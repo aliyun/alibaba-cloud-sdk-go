@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeLiveStreamRecordContent api with *DescribeLiveStreamRecordContentRequest synchronously
+// DescribeLiveStreamRecordContent invokes the cdn.DescribeLiveStreamRecordContent API synchronously
 // api document: https://help.aliyun.com/api/cdn/describelivestreamrecordcontent.html
 func (client *Client) DescribeLiveStreamRecordContent(request *DescribeLiveStreamRecordContentRequest) (response *DescribeLiveStreamRecordContentResponse, err error) {
 	response = CreateDescribeLiveStreamRecordContentResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeLiveStreamRecordContent(request *DescribeLiveStrea
 	return
 }
 
-// invoke DescribeLiveStreamRecordContent api with *DescribeLiveStreamRecordContentRequest asynchronously
+// DescribeLiveStreamRecordContentWithChan invokes the cdn.DescribeLiveStreamRecordContent API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describelivestreamrecordcontent.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamRecordContentWithChan(request *DescribeLiveStreamRecordContentRequest) (<-chan *DescribeLiveStreamRecordContentResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeLiveStreamRecordContentWithChan(request *DescribeL
 	return responseChan, errChan
 }
 
-// invoke DescribeLiveStreamRecordContent api with *DescribeLiveStreamRecordContentRequest asynchronously
+// DescribeLiveStreamRecordContentWithCallback invokes the cdn.DescribeLiveStreamRecordContent API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describelivestreamrecordcontent.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamRecordContentWithCallback(request *DescribeLiveStreamRecordContentRequest, callback func(response *DescribeLiveStreamRecordContentResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeLiveStreamRecordContentWithCallback(request *Descr
 	return result
 }
 
+// DescribeLiveStreamRecordContentRequest is the request struct for api DescribeLiveStreamRecordContent
 type DescribeLiveStreamRecordContentRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,14 +85,15 @@ type DescribeLiveStreamRecordContentRequest struct {
 	EndTime       string           `position:"Query" name:"EndTime"`
 }
 
+// DescribeLiveStreamRecordContentResponse is the response struct for api DescribeLiveStreamRecordContent
 type DescribeLiveStreamRecordContentResponse struct {
 	*responses.BaseResponse
 	RequestId             string                `json:"RequestId" xml:"RequestId"`
 	RecordContentInfoList RecordContentInfoList `json:"RecordContentInfoList" xml:"RecordContentInfoList"`
 }
 
-// create a request to invoke DescribeLiveStreamRecordContent API
-func CreateDescribeLiveStreamRecordContentRequest() (request *DescribeLiveStreamRecordContentRequest) {
+// CreateDescribeLiveStreamRecordContentRequest creates a request to invoke DescribeLiveStreamRecordContent API
+func CreateDescribeLiveStreamRecordContentRequest(request *DescribeLiveStreamRecordContentRequest) {
 	request = &DescribeLiveStreamRecordContentRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateDescribeLiveStreamRecordContentRequest() (request *DescribeLiveStream
 	return
 }
 
-// create a response to parse from DescribeLiveStreamRecordContent response
+// CreateDescribeLiveStreamRecordContentResponse creates a response to parse from DescribeLiveStreamRecordContent response
 func CreateDescribeLiveStreamRecordContentResponse() (response *DescribeLiveStreamRecordContentResponse) {
 	response = &DescribeLiveStreamRecordContentResponse{
 		BaseResponse: &responses.BaseResponse{},

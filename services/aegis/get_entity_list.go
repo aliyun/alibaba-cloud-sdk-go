@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke GetEntityList api with *GetEntityListRequest synchronously
+// GetEntityList invokes the aegis.GetEntityList API synchronously
 // api document: https://help.aliyun.com/api/aegis/getentitylist.html
 func (client *Client) GetEntityList(request *GetEntityListRequest) (response *GetEntityListResponse, err error) {
 	response = CreateGetEntityListResponse()
@@ -28,7 +28,7 @@ func (client *Client) GetEntityList(request *GetEntityListRequest) (response *Ge
 	return
 }
 
-// invoke GetEntityList api with *GetEntityListRequest asynchronously
+// GetEntityListWithChan invokes the aegis.GetEntityList API asynchronously
 // api document: https://help.aliyun.com/api/aegis/getentitylist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetEntityListWithChan(request *GetEntityListRequest) (<-chan *GetEntityListResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) GetEntityListWithChan(request *GetEntityListRequest) (<-ch
 	return responseChan, errChan
 }
 
-// invoke GetEntityList api with *GetEntityListRequest asynchronously
+// GetEntityListWithCallback invokes the aegis.GetEntityList API asynchronously
 // api document: https://help.aliyun.com/api/aegis/getentitylist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetEntityListWithCallback(request *GetEntityListRequest, callback func(response *GetEntityListResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) GetEntityListWithCallback(request *GetEntityListRequest, c
 	return result
 }
 
+// GetEntityListRequest is the request struct for api GetEntityList
 type GetEntityListRequest struct {
 	*requests.RpcRequest
 	GroupId     requests.Integer `position:"Query" name:"GroupId"`
@@ -83,6 +84,7 @@ type GetEntityListRequest struct {
 	PageSize    requests.Integer `position:"Query" name:"PageSize"`
 }
 
+// GetEntityListResponse is the response struct for api GetEntityList
 type GetEntityListResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"requestId" xml:"requestId"`
@@ -92,8 +94,8 @@ type GetEntityListResponse struct {
 	Data      Data   `json:"Data" xml:"Data"`
 }
 
-// create a request to invoke GetEntityList API
-func CreateGetEntityListRequest() (request *GetEntityListRequest) {
+// CreateGetEntityListRequest creates a request to invoke GetEntityList API
+func CreateGetEntityListRequest(request *GetEntityListRequest) {
 	request = &GetEntityListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -101,7 +103,7 @@ func CreateGetEntityListRequest() (request *GetEntityListRequest) {
 	return
 }
 
-// create a response to parse from GetEntityList response
+// CreateGetEntityListResponse creates a response to parse from GetEntityList response
 func CreateGetEntityListResponse() (response *GetEntityListResponse) {
 	response = &GetEntityListResponse{
 		BaseResponse: &responses.BaseResponse{},

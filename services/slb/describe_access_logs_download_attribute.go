@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeAccessLogsDownloadAttribute api with *DescribeAccessLogsDownloadAttributeRequest synchronously
+// DescribeAccessLogsDownloadAttribute invokes the slb.DescribeAccessLogsDownloadAttribute API synchronously
 // api document: https://help.aliyun.com/api/slb/describeaccesslogsdownloadattribute.html
 func (client *Client) DescribeAccessLogsDownloadAttribute(request *DescribeAccessLogsDownloadAttributeRequest) (response *DescribeAccessLogsDownloadAttributeResponse, err error) {
 	response = CreateDescribeAccessLogsDownloadAttributeResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeAccessLogsDownloadAttribute(request *DescribeAcces
 	return
 }
 
-// invoke DescribeAccessLogsDownloadAttribute api with *DescribeAccessLogsDownloadAttributeRequest asynchronously
+// DescribeAccessLogsDownloadAttributeWithChan invokes the slb.DescribeAccessLogsDownloadAttribute API asynchronously
 // api document: https://help.aliyun.com/api/slb/describeaccesslogsdownloadattribute.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAccessLogsDownloadAttributeWithChan(request *DescribeAccessLogsDownloadAttributeRequest) (<-chan *DescribeAccessLogsDownloadAttributeResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeAccessLogsDownloadAttributeWithChan(request *Descr
 	return responseChan, errChan
 }
 
-// invoke DescribeAccessLogsDownloadAttribute api with *DescribeAccessLogsDownloadAttributeRequest asynchronously
+// DescribeAccessLogsDownloadAttributeWithCallback invokes the slb.DescribeAccessLogsDownloadAttribute API asynchronously
 // api document: https://help.aliyun.com/api/slb/describeaccesslogsdownloadattribute.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAccessLogsDownloadAttributeWithCallback(request *DescribeAccessLogsDownloadAttributeRequest, callback func(response *DescribeAccessLogsDownloadAttributeResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeAccessLogsDownloadAttributeWithCallback(request *D
 	return result
 }
 
+// DescribeAccessLogsDownloadAttributeRequest is the request struct for api DescribeAccessLogsDownloadAttribute
 type DescribeAccessLogsDownloadAttributeRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -87,6 +88,7 @@ type DescribeAccessLogsDownloadAttributeRequest struct {
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 }
 
+// DescribeAccessLogsDownloadAttributeResponse is the response struct for api DescribeAccessLogsDownloadAttribute
 type DescribeAccessLogsDownloadAttributeResponse struct {
 	*responses.BaseResponse
 	RequestId              string                 `json:"RequestId" xml:"RequestId"`
@@ -97,8 +99,8 @@ type DescribeAccessLogsDownloadAttributeResponse struct {
 	LogsDownloadAttributes LogsDownloadAttributes `json:"LogsDownloadAttributes" xml:"LogsDownloadAttributes"`
 }
 
-// create a request to invoke DescribeAccessLogsDownloadAttribute API
-func CreateDescribeAccessLogsDownloadAttributeRequest() (request *DescribeAccessLogsDownloadAttributeRequest) {
+// CreateDescribeAccessLogsDownloadAttributeRequest creates a request to invoke DescribeAccessLogsDownloadAttribute API
+func CreateDescribeAccessLogsDownloadAttributeRequest(request *DescribeAccessLogsDownloadAttributeRequest) {
 	request = &DescribeAccessLogsDownloadAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -106,7 +108,7 @@ func CreateDescribeAccessLogsDownloadAttributeRequest() (request *DescribeAccess
 	return
 }
 
-// create a response to parse from DescribeAccessLogsDownloadAttribute response
+// CreateDescribeAccessLogsDownloadAttributeResponse creates a response to parse from DescribeAccessLogsDownloadAttribute response
 func CreateDescribeAccessLogsDownloadAttributeResponse() (response *DescribeAccessLogsDownloadAttributeResponse) {
 	response = &DescribeAccessLogsDownloadAttributeResponse{
 		BaseResponse: &responses.BaseResponse{},

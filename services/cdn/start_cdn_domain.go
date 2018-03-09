@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke StartCdnDomain api with *StartCdnDomainRequest synchronously
+// StartCdnDomain invokes the cdn.StartCdnDomain API synchronously
 // api document: https://help.aliyun.com/api/cdn/startcdndomain.html
 func (client *Client) StartCdnDomain(request *StartCdnDomainRequest) (response *StartCdnDomainResponse, err error) {
 	response = CreateStartCdnDomainResponse()
@@ -28,7 +28,7 @@ func (client *Client) StartCdnDomain(request *StartCdnDomainRequest) (response *
 	return
 }
 
-// invoke StartCdnDomain api with *StartCdnDomainRequest asynchronously
+// StartCdnDomainWithChan invokes the cdn.StartCdnDomain API asynchronously
 // api document: https://help.aliyun.com/api/cdn/startcdndomain.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StartCdnDomainWithChan(request *StartCdnDomainRequest) (<-chan *StartCdnDomainResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) StartCdnDomainWithChan(request *StartCdnDomainRequest) (<-
 	return responseChan, errChan
 }
 
-// invoke StartCdnDomain api with *StartCdnDomainRequest asynchronously
+// StartCdnDomainWithCallback invokes the cdn.StartCdnDomain API asynchronously
 // api document: https://help.aliyun.com/api/cdn/startcdndomain.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StartCdnDomainWithCallback(request *StartCdnDomainRequest, callback func(response *StartCdnDomainResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) StartCdnDomainWithCallback(request *StartCdnDomainRequest,
 	return result
 }
 
+// StartCdnDomainRequest is the request struct for api StartCdnDomain
 type StartCdnDomainRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -80,13 +81,14 @@ type StartCdnDomainRequest struct {
 	DomainName    string           `position:"Query" name:"DomainName"`
 }
 
+// StartCdnDomainResponse is the response struct for api StartCdnDomain
 type StartCdnDomainResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke StartCdnDomain API
-func CreateStartCdnDomainRequest() (request *StartCdnDomainRequest) {
+// CreateStartCdnDomainRequest creates a request to invoke StartCdnDomain API
+func CreateStartCdnDomainRequest(request *StartCdnDomainRequest) {
 	request = &StartCdnDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -94,7 +96,7 @@ func CreateStartCdnDomainRequest() (request *StartCdnDomainRequest) {
 	return
 }
 
-// create a response to parse from StartCdnDomain response
+// CreateStartCdnDomainResponse creates a response to parse from StartCdnDomain response
 func CreateStartCdnDomainResponse() (response *StartCdnDomainResponse) {
 	response = &StartCdnDomainResponse{
 		BaseResponse: &responses.BaseResponse{},

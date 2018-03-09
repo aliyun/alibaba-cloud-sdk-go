@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeDomainQoSRt api with *DescribeDomainQoSRtRequest synchronously
+// DescribeDomainQoSRt invokes the cdn.DescribeDomainQoSRt API synchronously
 // api document: https://help.aliyun.com/api/cdn/describedomainqosrt.html
 func (client *Client) DescribeDomainQoSRt(request *DescribeDomainQoSRtRequest) (response *DescribeDomainQoSRtResponse, err error) {
 	response = CreateDescribeDomainQoSRtResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeDomainQoSRt(request *DescribeDomainQoSRtRequest) (
 	return
 }
 
-// invoke DescribeDomainQoSRt api with *DescribeDomainQoSRtRequest asynchronously
+// DescribeDomainQoSRtWithChan invokes the cdn.DescribeDomainQoSRt API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describedomainqosrt.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainQoSRtWithChan(request *DescribeDomainQoSRtRequest) (<-chan *DescribeDomainQoSRtResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeDomainQoSRtWithChan(request *DescribeDomainQoSRtRe
 	return responseChan, errChan
 }
 
-// invoke DescribeDomainQoSRt api with *DescribeDomainQoSRtRequest asynchronously
+// DescribeDomainQoSRtWithCallback invokes the cdn.DescribeDomainQoSRt API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describedomainqosrt.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainQoSRtWithCallback(request *DescribeDomainQoSRtRequest, callback func(response *DescribeDomainQoSRtResponse, err error)) <-chan int {
@@ -73,10 +73,12 @@ func (client *Client) DescribeDomainQoSRtWithCallback(request *DescribeDomainQoS
 	return result
 }
 
+// DescribeDomainQoSRtRequest is the request struct for api DescribeDomainQoSRt
 type DescribeDomainQoSRtRequest struct {
 	*requests.RpcRequest
 }
 
+// DescribeDomainQoSRtResponse is the response struct for api DescribeDomainQoSRt
 type DescribeDomainQoSRtResponse struct {
 	*responses.BaseResponse
 	DomainName string  `json:"DomainName" xml:"DomainName"`
@@ -86,8 +88,8 @@ type DescribeDomainQoSRtResponse struct {
 	Content    Content `json:"Content" xml:"Content"`
 }
 
-// create a request to invoke DescribeDomainQoSRt API
-func CreateDescribeDomainQoSRtRequest() (request *DescribeDomainQoSRtRequest) {
+// CreateDescribeDomainQoSRtRequest creates a request to invoke DescribeDomainQoSRt API
+func CreateDescribeDomainQoSRtRequest(request *DescribeDomainQoSRtRequest) {
 	request = &DescribeDomainQoSRtRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateDescribeDomainQoSRtRequest() (request *DescribeDomainQoSRtRequest) {
 	return
 }
 
-// create a response to parse from DescribeDomainQoSRt response
+// CreateDescribeDomainQoSRtResponse creates a response to parse from DescribeDomainQoSRt response
 func CreateDescribeDomainQoSRtResponse() (response *DescribeDomainQoSRtResponse) {
 	response = &DescribeDomainQoSRtResponse{
 		BaseResponse: &responses.BaseResponse{},

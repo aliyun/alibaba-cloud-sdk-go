@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeLiveSnapshotConfig api with *DescribeLiveSnapshotConfigRequest synchronously
+// DescribeLiveSnapshotConfig invokes the cdn.DescribeLiveSnapshotConfig API synchronously
 // api document: https://help.aliyun.com/api/cdn/describelivesnapshotconfig.html
 func (client *Client) DescribeLiveSnapshotConfig(request *DescribeLiveSnapshotConfigRequest) (response *DescribeLiveSnapshotConfigResponse, err error) {
 	response = CreateDescribeLiveSnapshotConfigResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeLiveSnapshotConfig(request *DescribeLiveSnapshotCo
 	return
 }
 
-// invoke DescribeLiveSnapshotConfig api with *DescribeLiveSnapshotConfigRequest asynchronously
+// DescribeLiveSnapshotConfigWithChan invokes the cdn.DescribeLiveSnapshotConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describelivesnapshotconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveSnapshotConfigWithChan(request *DescribeLiveSnapshotConfigRequest) (<-chan *DescribeLiveSnapshotConfigResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeLiveSnapshotConfigWithChan(request *DescribeLiveSn
 	return responseChan, errChan
 }
 
-// invoke DescribeLiveSnapshotConfig api with *DescribeLiveSnapshotConfigRequest asynchronously
+// DescribeLiveSnapshotConfigWithCallback invokes the cdn.DescribeLiveSnapshotConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describelivesnapshotconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveSnapshotConfigWithCallback(request *DescribeLiveSnapshotConfigRequest, callback func(response *DescribeLiveSnapshotConfigResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeLiveSnapshotConfigWithCallback(request *DescribeLi
 	return result
 }
 
+// DescribeLiveSnapshotConfigRequest is the request struct for api DescribeLiveSnapshotConfig
 type DescribeLiveSnapshotConfigRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -85,6 +86,7 @@ type DescribeLiveSnapshotConfigRequest struct {
 	Order         string           `position:"Query" name:"Order"`
 }
 
+// DescribeLiveSnapshotConfigResponse is the response struct for api DescribeLiveSnapshotConfig
 type DescribeLiveSnapshotConfigResponse struct {
 	*responses.BaseResponse
 	RequestId                    string                       `json:"RequestId" xml:"RequestId"`
@@ -96,8 +98,8 @@ type DescribeLiveSnapshotConfigResponse struct {
 	LiveStreamSnapshotConfigList LiveStreamSnapshotConfigList `json:"LiveStreamSnapshotConfigList" xml:"LiveStreamSnapshotConfigList"`
 }
 
-// create a request to invoke DescribeLiveSnapshotConfig API
-func CreateDescribeLiveSnapshotConfigRequest() (request *DescribeLiveSnapshotConfigRequest) {
+// CreateDescribeLiveSnapshotConfigRequest creates a request to invoke DescribeLiveSnapshotConfig API
+func CreateDescribeLiveSnapshotConfigRequest(request *DescribeLiveSnapshotConfigRequest) {
 	request = &DescribeLiveSnapshotConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -105,7 +107,7 @@ func CreateDescribeLiveSnapshotConfigRequest() (request *DescribeLiveSnapshotCon
 	return
 }
 
-// create a response to parse from DescribeLiveSnapshotConfig response
+// CreateDescribeLiveSnapshotConfigResponse creates a response to parse from DescribeLiveSnapshotConfig response
 func CreateDescribeLiveSnapshotConfigResponse() (response *DescribeLiveSnapshotConfigResponse) {
 	response = &DescribeLiveSnapshotConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

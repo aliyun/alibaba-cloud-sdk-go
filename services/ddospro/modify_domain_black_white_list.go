@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifyDomainBlackWhiteList api with *ModifyDomainBlackWhiteListRequest synchronously
+// ModifyDomainBlackWhiteList invokes the ddospro.ModifyDomainBlackWhiteList API synchronously
 // api document: https://help.aliyun.com/api/ddospro/modifydomainblackwhitelist.html
 func (client *Client) ModifyDomainBlackWhiteList(request *ModifyDomainBlackWhiteListRequest) (response *ModifyDomainBlackWhiteListResponse, err error) {
 	response = CreateModifyDomainBlackWhiteListResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifyDomainBlackWhiteList(request *ModifyDomainBlackWhite
 	return
 }
 
-// invoke ModifyDomainBlackWhiteList api with *ModifyDomainBlackWhiteListRequest asynchronously
+// ModifyDomainBlackWhiteListWithChan invokes the ddospro.ModifyDomainBlackWhiteList API asynchronously
 // api document: https://help.aliyun.com/api/ddospro/modifydomainblackwhitelist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDomainBlackWhiteListWithChan(request *ModifyDomainBlackWhiteListRequest) (<-chan *ModifyDomainBlackWhiteListResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifyDomainBlackWhiteListWithChan(request *ModifyDomainBl
 	return responseChan, errChan
 }
 
-// invoke ModifyDomainBlackWhiteList api with *ModifyDomainBlackWhiteListRequest asynchronously
+// ModifyDomainBlackWhiteListWithCallback invokes the ddospro.ModifyDomainBlackWhiteList API asynchronously
 // api document: https://help.aliyun.com/api/ddospro/modifydomainblackwhitelist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDomainBlackWhiteListWithCallback(request *ModifyDomainBlackWhiteListRequest, callback func(response *ModifyDomainBlackWhiteListResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ModifyDomainBlackWhiteListWithCallback(request *ModifyDoma
 	return result
 }
 
+// ModifyDomainBlackWhiteListRequest is the request struct for api ModifyDomainBlackWhiteList
 type ModifyDomainBlackWhiteListRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
@@ -81,13 +82,14 @@ type ModifyDomainBlackWhiteListRequest struct {
 	White           *[]string        `position:"Query" name:"White"  type:"Repeated"`
 }
 
+// ModifyDomainBlackWhiteListResponse is the response struct for api ModifyDomainBlackWhiteList
 type ModifyDomainBlackWhiteListResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ModifyDomainBlackWhiteList API
-func CreateModifyDomainBlackWhiteListRequest() (request *ModifyDomainBlackWhiteListRequest) {
+// CreateModifyDomainBlackWhiteListRequest creates a request to invoke ModifyDomainBlackWhiteList API
+func CreateModifyDomainBlackWhiteListRequest(request *ModifyDomainBlackWhiteListRequest) {
 	request = &ModifyDomainBlackWhiteListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateModifyDomainBlackWhiteListRequest() (request *ModifyDomainBlackWhiteL
 	return
 }
 
-// create a response to parse from ModifyDomainBlackWhiteList response
+// CreateModifyDomainBlackWhiteListResponse creates a response to parse from ModifyDomainBlackWhiteList response
 func CreateModifyDomainBlackWhiteListResponse() (response *ModifyDomainBlackWhiteListResponse) {
 	response = &ModifyDomainBlackWhiteListResponse{
 		BaseResponse: &responses.BaseResponse{},

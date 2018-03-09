@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke UpdateAsrPipeline api with *UpdateAsrPipelineRequest synchronously
+// UpdateAsrPipeline invokes the mts.UpdateAsrPipeline API synchronously
 // api document: https://help.aliyun.com/api/mts/updateasrpipeline.html
 func (client *Client) UpdateAsrPipeline(request *UpdateAsrPipelineRequest) (response *UpdateAsrPipelineResponse, err error) {
 	response = CreateUpdateAsrPipelineResponse()
@@ -28,7 +28,7 @@ func (client *Client) UpdateAsrPipeline(request *UpdateAsrPipelineRequest) (resp
 	return
 }
 
-// invoke UpdateAsrPipeline api with *UpdateAsrPipelineRequest asynchronously
+// UpdateAsrPipelineWithChan invokes the mts.UpdateAsrPipeline API asynchronously
 // api document: https://help.aliyun.com/api/mts/updateasrpipeline.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateAsrPipelineWithChan(request *UpdateAsrPipelineRequest) (<-chan *UpdateAsrPipelineResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) UpdateAsrPipelineWithChan(request *UpdateAsrPipelineReques
 	return responseChan, errChan
 }
 
-// invoke UpdateAsrPipeline api with *UpdateAsrPipelineRequest asynchronously
+// UpdateAsrPipelineWithCallback invokes the mts.UpdateAsrPipeline API asynchronously
 // api document: https://help.aliyun.com/api/mts/updateasrpipeline.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateAsrPipelineWithCallback(request *UpdateAsrPipelineRequest, callback func(response *UpdateAsrPipelineResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) UpdateAsrPipelineWithCallback(request *UpdateAsrPipelineRe
 	return result
 }
 
+// UpdateAsrPipelineRequest is the request struct for api UpdateAsrPipeline
 type UpdateAsrPipelineRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -86,14 +87,15 @@ type UpdateAsrPipelineRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// UpdateAsrPipelineResponse is the response struct for api UpdateAsrPipeline
 type UpdateAsrPipelineResponse struct {
 	*responses.BaseResponse
 	RequestId string   `json:"RequestId" xml:"RequestId"`
 	Pipeline  Pipeline `json:"Pipeline" xml:"Pipeline"`
 }
 
-// create a request to invoke UpdateAsrPipeline API
-func CreateUpdateAsrPipelineRequest() (request *UpdateAsrPipelineRequest) {
+// CreateUpdateAsrPipelineRequest creates a request to invoke UpdateAsrPipeline API
+func CreateUpdateAsrPipelineRequest(request *UpdateAsrPipelineRequest) {
 	request = &UpdateAsrPipelineRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -101,7 +103,7 @@ func CreateUpdateAsrPipelineRequest() (request *UpdateAsrPipelineRequest) {
 	return
 }
 
-// create a response to parse from UpdateAsrPipeline response
+// CreateUpdateAsrPipelineResponse creates a response to parse from UpdateAsrPipeline response
 func CreateUpdateAsrPipelineResponse() (response *UpdateAsrPipelineResponse) {
 	response = &UpdateAsrPipelineResponse{
 		BaseResponse: &responses.BaseResponse{},

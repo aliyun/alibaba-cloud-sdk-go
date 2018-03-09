@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeDBInstanceTDE api with *DescribeDBInstanceTDERequest synchronously
+// DescribeDBInstanceTDE invokes the rds.DescribeDBInstanceTDE API synchronously
 // api document: https://help.aliyun.com/api/rds/describedbinstancetde.html
 func (client *Client) DescribeDBInstanceTDE(request *DescribeDBInstanceTDERequest) (response *DescribeDBInstanceTDEResponse, err error) {
 	response = CreateDescribeDBInstanceTDEResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeDBInstanceTDE(request *DescribeDBInstanceTDEReques
 	return
 }
 
-// invoke DescribeDBInstanceTDE api with *DescribeDBInstanceTDERequest asynchronously
+// DescribeDBInstanceTDEWithChan invokes the rds.DescribeDBInstanceTDE API asynchronously
 // api document: https://help.aliyun.com/api/rds/describedbinstancetde.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBInstanceTDEWithChan(request *DescribeDBInstanceTDERequest) (<-chan *DescribeDBInstanceTDEResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeDBInstanceTDEWithChan(request *DescribeDBInstanceT
 	return responseChan, errChan
 }
 
-// invoke DescribeDBInstanceTDE api with *DescribeDBInstanceTDERequest asynchronously
+// DescribeDBInstanceTDEWithCallback invokes the rds.DescribeDBInstanceTDE API asynchronously
 // api document: https://help.aliyun.com/api/rds/describedbinstancetde.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBInstanceTDEWithCallback(request *DescribeDBInstanceTDERequest, callback func(response *DescribeDBInstanceTDEResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeDBInstanceTDEWithCallback(request *DescribeDBInsta
 	return result
 }
 
+// DescribeDBInstanceTDERequest is the request struct for api DescribeDBInstanceTDE
 type DescribeDBInstanceTDERequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,6 +83,7 @@ type DescribeDBInstanceTDERequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// DescribeDBInstanceTDEResponse is the response struct for api DescribeDBInstanceTDE
 type DescribeDBInstanceTDEResponse struct {
 	*responses.BaseResponse
 	RequestId string                           `json:"RequestId" xml:"RequestId"`
@@ -89,8 +91,8 @@ type DescribeDBInstanceTDEResponse struct {
 	Databases DatabasesInDescribeDBInstanceTDE `json:"Databases" xml:"Databases"`
 }
 
-// create a request to invoke DescribeDBInstanceTDE API
-func CreateDescribeDBInstanceTDERequest() (request *DescribeDBInstanceTDERequest) {
+// CreateDescribeDBInstanceTDERequest creates a request to invoke DescribeDBInstanceTDE API
+func CreateDescribeDBInstanceTDERequest(request *DescribeDBInstanceTDERequest) {
 	request = &DescribeDBInstanceTDERequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateDescribeDBInstanceTDERequest() (request *DescribeDBInstanceTDERequest
 	return
 }
 
-// create a response to parse from DescribeDBInstanceTDE response
+// CreateDescribeDBInstanceTDEResponse creates a response to parse from DescribeDBInstanceTDE response
 func CreateDescribeDBInstanceTDEResponse() (response *DescribeDBInstanceTDEResponse) {
 	response = &DescribeDBInstanceTDEResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteFileSystem api with *DeleteFileSystemRequest synchronously
+// DeleteFileSystem invokes the nas.DeleteFileSystem API synchronously
 // api document: https://help.aliyun.com/api/nas/deletefilesystem.html
 func (client *Client) DeleteFileSystem(request *DeleteFileSystemRequest) (response *DeleteFileSystemResponse, err error) {
 	response = CreateDeleteFileSystemResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteFileSystem(request *DeleteFileSystemRequest) (respon
 	return
 }
 
-// invoke DeleteFileSystem api with *DeleteFileSystemRequest asynchronously
+// DeleteFileSystemWithChan invokes the nas.DeleteFileSystem API asynchronously
 // api document: https://help.aliyun.com/api/nas/deletefilesystem.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteFileSystemWithChan(request *DeleteFileSystemRequest) (<-chan *DeleteFileSystemResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteFileSystemWithChan(request *DeleteFileSystemRequest)
 	return responseChan, errChan
 }
 
-// invoke DeleteFileSystem api with *DeleteFileSystemRequest asynchronously
+// DeleteFileSystemWithCallback invokes the nas.DeleteFileSystem API asynchronously
 // api document: https://help.aliyun.com/api/nas/deletefilesystem.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteFileSystemWithCallback(request *DeleteFileSystemRequest, callback func(response *DeleteFileSystemResponse, err error)) <-chan int {
@@ -73,18 +73,20 @@ func (client *Client) DeleteFileSystemWithCallback(request *DeleteFileSystemRequ
 	return result
 }
 
+// DeleteFileSystemRequest is the request struct for api DeleteFileSystem
 type DeleteFileSystemRequest struct {
 	*requests.RpcRequest
 	FileSystemId string `position:"Query" name:"FileSystemId"`
 }
 
+// DeleteFileSystemResponse is the response struct for api DeleteFileSystem
 type DeleteFileSystemResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DeleteFileSystem API
-func CreateDeleteFileSystemRequest() (request *DeleteFileSystemRequest) {
+// CreateDeleteFileSystemRequest creates a request to invoke DeleteFileSystem API
+func CreateDeleteFileSystemRequest(request *DeleteFileSystemRequest) {
 	request = &DeleteFileSystemRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -92,7 +94,7 @@ func CreateDeleteFileSystemRequest() (request *DeleteFileSystemRequest) {
 	return
 }
 
-// create a response to parse from DeleteFileSystem response
+// CreateDeleteFileSystemResponse creates a response to parse from DeleteFileSystem response
 func CreateDeleteFileSystemResponse() (response *DeleteFileSystemResponse) {
 	response = &DeleteFileSystemResponse{
 		BaseResponse: &responses.BaseResponse{},

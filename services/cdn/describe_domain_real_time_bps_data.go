@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeDomainRealTimeBpsData api with *DescribeDomainRealTimeBpsDataRequest synchronously
+// DescribeDomainRealTimeBpsData invokes the cdn.DescribeDomainRealTimeBpsData API synchronously
 // api document: https://help.aliyun.com/api/cdn/describedomainrealtimebpsdata.html
 func (client *Client) DescribeDomainRealTimeBpsData(request *DescribeDomainRealTimeBpsDataRequest) (response *DescribeDomainRealTimeBpsDataResponse, err error) {
 	response = CreateDescribeDomainRealTimeBpsDataResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeDomainRealTimeBpsData(request *DescribeDomainRealT
 	return
 }
 
-// invoke DescribeDomainRealTimeBpsData api with *DescribeDomainRealTimeBpsDataRequest asynchronously
+// DescribeDomainRealTimeBpsDataWithChan invokes the cdn.DescribeDomainRealTimeBpsData API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describedomainrealtimebpsdata.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainRealTimeBpsDataWithChan(request *DescribeDomainRealTimeBpsDataRequest) (<-chan *DescribeDomainRealTimeBpsDataResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeDomainRealTimeBpsDataWithChan(request *DescribeDom
 	return responseChan, errChan
 }
 
-// invoke DescribeDomainRealTimeBpsData api with *DescribeDomainRealTimeBpsDataRequest asynchronously
+// DescribeDomainRealTimeBpsDataWithCallback invokes the cdn.DescribeDomainRealTimeBpsData API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describedomainrealtimebpsdata.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainRealTimeBpsDataWithCallback(request *DescribeDomainRealTimeBpsDataRequest, callback func(response *DescribeDomainRealTimeBpsDataResponse, err error)) <-chan int {
@@ -73,18 +73,20 @@ func (client *Client) DescribeDomainRealTimeBpsDataWithCallback(request *Describ
 	return result
 }
 
+// DescribeDomainRealTimeBpsDataRequest is the request struct for api DescribeDomainRealTimeBpsData
 type DescribeDomainRealTimeBpsDataRequest struct {
 	*requests.RpcRequest
 }
 
+// DescribeDomainRealTimeBpsDataResponse is the response struct for api DescribeDomainRealTimeBpsData
 type DescribeDomainRealTimeBpsDataResponse struct {
 	*responses.BaseResponse
 	RequestId string                              `json:"RequestId" xml:"RequestId"`
 	Data      DataInDescribeDomainRealTimeBpsData `json:"Data" xml:"Data"`
 }
 
-// create a request to invoke DescribeDomainRealTimeBpsData API
-func CreateDescribeDomainRealTimeBpsDataRequest() (request *DescribeDomainRealTimeBpsDataRequest) {
+// CreateDescribeDomainRealTimeBpsDataRequest creates a request to invoke DescribeDomainRealTimeBpsData API
+func CreateDescribeDomainRealTimeBpsDataRequest(request *DescribeDomainRealTimeBpsDataRequest) {
 	request = &DescribeDomainRealTimeBpsDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -92,7 +94,7 @@ func CreateDescribeDomainRealTimeBpsDataRequest() (request *DescribeDomainRealTi
 	return
 }
 
-// create a response to parse from DescribeDomainRealTimeBpsData response
+// CreateDescribeDomainRealTimeBpsDataResponse creates a response to parse from DescribeDomainRealTimeBpsData response
 func CreateDescribeDomainRealTimeBpsDataResponse() (response *DescribeDomainRealTimeBpsDataResponse) {
 	response = &DescribeDomainRealTimeBpsDataResponse{
 		BaseResponse: &responses.BaseResponse{},

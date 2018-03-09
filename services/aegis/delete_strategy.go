@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteStrategy api with *DeleteStrategyRequest synchronously
+// DeleteStrategy invokes the aegis.DeleteStrategy API synchronously
 // api document: https://help.aliyun.com/api/aegis/deletestrategy.html
 func (client *Client) DeleteStrategy(request *DeleteStrategyRequest) (response *DeleteStrategyResponse, err error) {
 	response = CreateDeleteStrategyResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteStrategy(request *DeleteStrategyRequest) (response *
 	return
 }
 
-// invoke DeleteStrategy api with *DeleteStrategyRequest asynchronously
+// DeleteStrategyWithChan invokes the aegis.DeleteStrategy API asynchronously
 // api document: https://help.aliyun.com/api/aegis/deletestrategy.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteStrategyWithChan(request *DeleteStrategyRequest) (<-chan *DeleteStrategyResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteStrategyWithChan(request *DeleteStrategyRequest) (<-
 	return responseChan, errChan
 }
 
-// invoke DeleteStrategy api with *DeleteStrategyRequest asynchronously
+// DeleteStrategyWithCallback invokes the aegis.DeleteStrategy API asynchronously
 // api document: https://help.aliyun.com/api/aegis/deletestrategy.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteStrategyWithCallback(request *DeleteStrategyRequest, callback func(response *DeleteStrategyResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DeleteStrategyWithCallback(request *DeleteStrategyRequest,
 	return result
 }
 
+// DeleteStrategyRequest is the request struct for api DeleteStrategy
 type DeleteStrategyRequest struct {
 	*requests.RpcRequest
 	SourceIp        string           `position:"Query" name:"SourceIp"`
@@ -80,13 +81,14 @@ type DeleteStrategyRequest struct {
 	Id              string           `position:"Query" name:"Id"`
 }
 
+// DeleteStrategyResponse is the response struct for api DeleteStrategy
 type DeleteStrategyResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DeleteStrategy API
-func CreateDeleteStrategyRequest() (request *DeleteStrategyRequest) {
+// CreateDeleteStrategyRequest creates a request to invoke DeleteStrategy API
+func CreateDeleteStrategyRequest(request *DeleteStrategyRequest) {
 	request = &DeleteStrategyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -94,7 +96,7 @@ func CreateDeleteStrategyRequest() (request *DeleteStrategyRequest) {
 	return
 }
 
-// create a response to parse from DeleteStrategy response
+// CreateDeleteStrategyResponse creates a response to parse from DeleteStrategy response
 func CreateDeleteStrategyResponse() (response *DeleteStrategyResponse) {
 	response = &DeleteStrategyResponse{
 		BaseResponse: &responses.BaseResponse{},

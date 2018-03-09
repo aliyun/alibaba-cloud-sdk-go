@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ConvertNatPublicIpToEip api with *ConvertNatPublicIpToEipRequest synchronously
+// ConvertNatPublicIpToEip invokes the ecs.ConvertNatPublicIpToEip API synchronously
 // api document: https://help.aliyun.com/api/ecs/convertnatpubliciptoeip.html
 func (client *Client) ConvertNatPublicIpToEip(request *ConvertNatPublicIpToEipRequest) (response *ConvertNatPublicIpToEipResponse, err error) {
 	response = CreateConvertNatPublicIpToEipResponse()
@@ -28,7 +28,7 @@ func (client *Client) ConvertNatPublicIpToEip(request *ConvertNatPublicIpToEipRe
 	return
 }
 
-// invoke ConvertNatPublicIpToEip api with *ConvertNatPublicIpToEipRequest asynchronously
+// ConvertNatPublicIpToEipWithChan invokes the ecs.ConvertNatPublicIpToEip API asynchronously
 // api document: https://help.aliyun.com/api/ecs/convertnatpubliciptoeip.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ConvertNatPublicIpToEipWithChan(request *ConvertNatPublicIpToEipRequest) (<-chan *ConvertNatPublicIpToEipResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ConvertNatPublicIpToEipWithChan(request *ConvertNatPublicI
 	return responseChan, errChan
 }
 
-// invoke ConvertNatPublicIpToEip api with *ConvertNatPublicIpToEipRequest asynchronously
+// ConvertNatPublicIpToEipWithCallback invokes the ecs.ConvertNatPublicIpToEip API asynchronously
 // api document: https://help.aliyun.com/api/ecs/convertnatpubliciptoeip.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ConvertNatPublicIpToEipWithCallback(request *ConvertNatPublicIpToEipRequest, callback func(response *ConvertNatPublicIpToEipResponse, err error)) <-chan int {
@@ -73,17 +73,19 @@ func (client *Client) ConvertNatPublicIpToEipWithCallback(request *ConvertNatPub
 	return result
 }
 
+// ConvertNatPublicIpToEipRequest is the request struct for api ConvertNatPublicIpToEip
 type ConvertNatPublicIpToEipRequest struct {
 	*requests.RpcRequest
 }
 
+// ConvertNatPublicIpToEipResponse is the response struct for api ConvertNatPublicIpToEip
 type ConvertNatPublicIpToEipResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ConvertNatPublicIpToEip API
-func CreateConvertNatPublicIpToEipRequest() (request *ConvertNatPublicIpToEipRequest) {
+// CreateConvertNatPublicIpToEipRequest creates a request to invoke ConvertNatPublicIpToEip API
+func CreateConvertNatPublicIpToEipRequest(request *ConvertNatPublicIpToEipRequest) {
 	request = &ConvertNatPublicIpToEipRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -91,7 +93,7 @@ func CreateConvertNatPublicIpToEipRequest() (request *ConvertNatPublicIpToEipReq
 	return
 }
 
-// create a response to parse from ConvertNatPublicIpToEip response
+// CreateConvertNatPublicIpToEipResponse creates a response to parse from ConvertNatPublicIpToEip response
 func CreateConvertNatPublicIpToEipResponse() (response *ConvertNatPublicIpToEipResponse) {
 	response = &ConvertNatPublicIpToEipResponse{
 		BaseResponse: &responses.BaseResponse{},

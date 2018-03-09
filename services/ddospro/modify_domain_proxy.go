@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifyDomainProxy api with *ModifyDomainProxyRequest synchronously
+// ModifyDomainProxy invokes the ddospro.ModifyDomainProxy API synchronously
 // api document: https://help.aliyun.com/api/ddospro/modifydomainproxy.html
 func (client *Client) ModifyDomainProxy(request *ModifyDomainProxyRequest) (response *ModifyDomainProxyResponse, err error) {
 	response = CreateModifyDomainProxyResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifyDomainProxy(request *ModifyDomainProxyRequest) (resp
 	return
 }
 
-// invoke ModifyDomainProxy api with *ModifyDomainProxyRequest asynchronously
+// ModifyDomainProxyWithChan invokes the ddospro.ModifyDomainProxy API asynchronously
 // api document: https://help.aliyun.com/api/ddospro/modifydomainproxy.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDomainProxyWithChan(request *ModifyDomainProxyRequest) (<-chan *ModifyDomainProxyResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifyDomainProxyWithChan(request *ModifyDomainProxyReques
 	return responseChan, errChan
 }
 
-// invoke ModifyDomainProxy api with *ModifyDomainProxyRequest asynchronously
+// ModifyDomainProxyWithCallback invokes the ddospro.ModifyDomainProxy API asynchronously
 // api document: https://help.aliyun.com/api/ddospro/modifydomainproxy.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDomainProxyWithCallback(request *ModifyDomainProxyRequest, callback func(response *ModifyDomainProxyResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ModifyDomainProxyWithCallback(request *ModifyDomainProxyRe
 	return result
 }
 
+// ModifyDomainProxyRequest is the request struct for api ModifyDomainProxy
 type ModifyDomainProxyRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
@@ -80,13 +81,14 @@ type ModifyDomainProxyRequest struct {
 	ProxyType       *[]string        `position:"Query" name:"ProxyType"  type:"Repeated"`
 }
 
+// ModifyDomainProxyResponse is the response struct for api ModifyDomainProxy
 type ModifyDomainProxyResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ModifyDomainProxy API
-func CreateModifyDomainProxyRequest() (request *ModifyDomainProxyRequest) {
+// CreateModifyDomainProxyRequest creates a request to invoke ModifyDomainProxy API
+func CreateModifyDomainProxyRequest(request *ModifyDomainProxyRequest) {
 	request = &ModifyDomainProxyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -94,7 +96,7 @@ func CreateModifyDomainProxyRequest() (request *ModifyDomainProxyRequest) {
 	return
 }
 
-// create a response to parse from ModifyDomainProxy response
+// CreateModifyDomainProxyResponse creates a response to parse from ModifyDomainProxy response
 func CreateModifyDomainProxyResponse() (response *ModifyDomainProxyResponse) {
 	response = &ModifyDomainProxyResponse{
 		BaseResponse: &responses.BaseResponse{},

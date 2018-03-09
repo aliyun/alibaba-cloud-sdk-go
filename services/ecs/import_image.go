@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ImportImage api with *ImportImageRequest synchronously
+// ImportImage invokes the ecs.ImportImage API synchronously
 // api document: https://help.aliyun.com/api/ecs/importimage.html
 func (client *Client) ImportImage(request *ImportImageRequest) (response *ImportImageResponse, err error) {
 	response = CreateImportImageResponse()
@@ -28,7 +28,7 @@ func (client *Client) ImportImage(request *ImportImageRequest) (response *Import
 	return
 }
 
-// invoke ImportImage api with *ImportImageRequest asynchronously
+// ImportImageWithChan invokes the ecs.ImportImage API asynchronously
 // api document: https://help.aliyun.com/api/ecs/importimage.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ImportImageWithChan(request *ImportImageRequest) (<-chan *ImportImageResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ImportImageWithChan(request *ImportImageRequest) (<-chan *
 	return responseChan, errChan
 }
 
-// invoke ImportImage api with *ImportImageRequest asynchronously
+// ImportImageWithCallback invokes the ecs.ImportImage API asynchronously
 // api document: https://help.aliyun.com/api/ecs/importimage.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ImportImageWithCallback(request *ImportImageRequest, callback func(response *ImportImageResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ImportImageWithCallback(request *ImportImageRequest, callb
 	return result
 }
 
+// ImportImageRequest is the request struct for api ImportImage
 type ImportImageRequest struct {
 	*requests.RpcRequest
 	DiskDeviceMapping    *[]ImportImageDiskDeviceMapping `position:"Query" name:"DiskDeviceMapping"  type:"Repeated"`
@@ -87,6 +88,7 @@ type ImportImageRequest struct {
 	RoleName             string                          `position:"Query" name:"RoleName"`
 }
 
+// ImportImageDiskDeviceMapping is a repeated param struct in ImportImageRequest
 type ImportImageDiskDeviceMapping struct {
 	Format        string `name:"Format"`
 	OSSBucket     string `name:"OSSBucket"`
@@ -96,6 +98,7 @@ type ImportImageDiskDeviceMapping struct {
 	Device        string `name:"Device"`
 }
 
+// ImportImageResponse is the response struct for api ImportImage
 type ImportImageResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
@@ -104,8 +107,8 @@ type ImportImageResponse struct {
 	ImageId   string `json:"ImageId" xml:"ImageId"`
 }
 
-// create a request to invoke ImportImage API
-func CreateImportImageRequest() (request *ImportImageRequest) {
+// CreateImportImageRequest creates a request to invoke ImportImage API
+func CreateImportImageRequest(request *ImportImageRequest) {
 	request = &ImportImageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -113,7 +116,7 @@ func CreateImportImageRequest() (request *ImportImageRequest) {
 	return
 }
 
-// create a response to parse from ImportImage response
+// CreateImportImageResponse creates a response to parse from ImportImage response
 func CreateImportImageResponse() (response *ImportImageResponse) {
 	response = &ImportImageResponse{
 		BaseResponse: &responses.BaseResponse{},

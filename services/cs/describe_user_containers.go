@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeUserContainers api with *DescribeUserContainersRequest synchronously
+// DescribeUserContainers invokes the cs.DescribeUserContainers API synchronously
 // api document: https://help.aliyun.com/api/cs/describeusercontainers.html
 func (client *Client) DescribeUserContainers(request *DescribeUserContainersRequest) (response *DescribeUserContainersResponse, err error) {
 	response = CreateDescribeUserContainersResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeUserContainers(request *DescribeUserContainersRequ
 	return
 }
 
-// invoke DescribeUserContainers api with *DescribeUserContainersRequest asynchronously
+// DescribeUserContainersWithChan invokes the cs.DescribeUserContainers API asynchronously
 // api document: https://help.aliyun.com/api/cs/describeusercontainers.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUserContainersWithChan(request *DescribeUserContainersRequest) (<-chan *DescribeUserContainersResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeUserContainersWithChan(request *DescribeUserContai
 	return responseChan, errChan
 }
 
-// invoke DescribeUserContainers api with *DescribeUserContainersRequest asynchronously
+// DescribeUserContainersWithCallback invokes the cs.DescribeUserContainers API asynchronously
 // api document: https://help.aliyun.com/api/cs/describeusercontainers.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUserContainersWithCallback(request *DescribeUserContainersRequest, callback func(response *DescribeUserContainersResponse, err error)) <-chan int {
@@ -73,17 +73,19 @@ func (client *Client) DescribeUserContainersWithCallback(request *DescribeUserCo
 	return result
 }
 
+// DescribeUserContainersRequest is the request struct for api DescribeUserContainers
 type DescribeUserContainersRequest struct {
 	*requests.RoaRequest
 	ServiceId string `position:"Query" name:"ServiceId"`
 }
 
+// DescribeUserContainersResponse is the response struct for api DescribeUserContainers
 type DescribeUserContainersResponse struct {
 	*responses.BaseResponse
 }
 
-// create a request to invoke DescribeUserContainers API
-func CreateDescribeUserContainersRequest() (request *DescribeUserContainersRequest) {
+// CreateDescribeUserContainersRequest creates a request to invoke DescribeUserContainers API
+func CreateDescribeUserContainersRequest(request *DescribeUserContainersRequest) {
 	request = &DescribeUserContainersRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
@@ -92,7 +94,7 @@ func CreateDescribeUserContainersRequest() (request *DescribeUserContainersReque
 	return
 }
 
-// create a response to parse from DescribeUserContainers response
+// CreateDescribeUserContainersResponse creates a response to parse from DescribeUserContainers response
 func CreateDescribeUserContainersResponse() (response *DescribeUserContainersResponse) {
 	response = &DescribeUserContainersResponse{
 		BaseResponse: &responses.BaseResponse{},

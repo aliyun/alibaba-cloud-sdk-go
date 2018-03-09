@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CreateCommand api with *CreateCommandRequest synchronously
+// CreateCommand invokes the ecs.CreateCommand API synchronously
 // api document: https://help.aliyun.com/api/ecs/createcommand.html
 func (client *Client) CreateCommand(request *CreateCommandRequest) (response *CreateCommandResponse, err error) {
 	response = CreateCreateCommandResponse()
@@ -28,7 +28,7 @@ func (client *Client) CreateCommand(request *CreateCommandRequest) (response *Cr
 	return
 }
 
-// invoke CreateCommand api with *CreateCommandRequest asynchronously
+// CreateCommandWithChan invokes the ecs.CreateCommand API asynchronously
 // api document: https://help.aliyun.com/api/ecs/createcommand.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateCommandWithChan(request *CreateCommandRequest) (<-chan *CreateCommandResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CreateCommandWithChan(request *CreateCommandRequest) (<-ch
 	return responseChan, errChan
 }
 
-// invoke CreateCommand api with *CreateCommandRequest asynchronously
+// CreateCommandWithCallback invokes the ecs.CreateCommand API asynchronously
 // api document: https://help.aliyun.com/api/ecs/createcommand.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateCommandWithCallback(request *CreateCommandRequest, callback func(response *CreateCommandResponse, err error)) <-chan int {
@@ -73,18 +73,20 @@ func (client *Client) CreateCommandWithCallback(request *CreateCommandRequest, c
 	return result
 }
 
+// CreateCommandRequest is the request struct for api CreateCommand
 type CreateCommandRequest struct {
 	*requests.RpcRequest
 }
 
+// CreateCommandResponse is the response struct for api CreateCommand
 type CreateCommandResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	CommandId string `json:"CommandId" xml:"CommandId"`
 }
 
-// create a request to invoke CreateCommand API
-func CreateCreateCommandRequest() (request *CreateCommandRequest) {
+// CreateCreateCommandRequest creates a request to invoke CreateCommand API
+func CreateCreateCommandRequest(request *CreateCommandRequest) {
 	request = &CreateCommandRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -92,7 +94,7 @@ func CreateCreateCommandRequest() (request *CreateCommandRequest) {
 	return
 }
 
-// create a response to parse from CreateCommand response
+// CreateCreateCommandResponse creates a response to parse from CreateCommand response
 func CreateCreateCommandResponse() (response *CreateCommandResponse) {
 	response = &CreateCommandResponse{
 		BaseResponse: &responses.BaseResponse{},

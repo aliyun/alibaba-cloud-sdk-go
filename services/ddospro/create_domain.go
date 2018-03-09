@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CreateDomain api with *CreateDomainRequest synchronously
+// CreateDomain invokes the ddospro.CreateDomain API synchronously
 // api document: https://help.aliyun.com/api/ddospro/createdomain.html
 func (client *Client) CreateDomain(request *CreateDomainRequest) (response *CreateDomainResponse, err error) {
 	response = CreateCreateDomainResponse()
@@ -28,7 +28,7 @@ func (client *Client) CreateDomain(request *CreateDomainRequest) (response *Crea
 	return
 }
 
-// invoke CreateDomain api with *CreateDomainRequest asynchronously
+// CreateDomainWithChan invokes the ddospro.CreateDomain API asynchronously
 // api document: https://help.aliyun.com/api/ddospro/createdomain.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateDomainWithChan(request *CreateDomainRequest) (<-chan *CreateDomainResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CreateDomainWithChan(request *CreateDomainRequest) (<-chan
 	return responseChan, errChan
 }
 
-// invoke CreateDomain api with *CreateDomainRequest asynchronously
+// CreateDomainWithCallback invokes the ddospro.CreateDomain API asynchronously
 // api document: https://help.aliyun.com/api/ddospro/createdomain.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateDomainWithCallback(request *CreateDomainRequest, callback func(response *CreateDomainResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) CreateDomainWithCallback(request *CreateDomainRequest, cal
 	return result
 }
 
+// CreateDomainRequest is the request struct for api CreateDomain
 type CreateDomainRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
@@ -84,13 +85,14 @@ type CreateDomainRequest struct {
 	ProxyType       *[]string        `position:"Query" name:"ProxyType"  type:"Repeated"`
 }
 
+// CreateDomainResponse is the response struct for api CreateDomain
 type CreateDomainResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke CreateDomain API
-func CreateCreateDomainRequest() (request *CreateDomainRequest) {
+// CreateCreateDomainRequest creates a request to invoke CreateDomain API
+func CreateCreateDomainRequest(request *CreateDomainRequest) {
 	request = &CreateDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateCreateDomainRequest() (request *CreateDomainRequest) {
 	return
 }
 
-// create a response to parse from CreateDomain response
+// CreateCreateDomainResponse creates a response to parse from CreateDomain response
 func CreateCreateDomainResponse() (response *CreateDomainResponse) {
 	response = &CreateDomainResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeDomainRealTimeData api with *DescribeDomainRealTimeDataRequest synchronously
+// DescribeDomainRealTimeData invokes the cdn.DescribeDomainRealTimeData API synchronously
 // api document: https://help.aliyun.com/api/cdn/describedomainrealtimedata.html
 func (client *Client) DescribeDomainRealTimeData(request *DescribeDomainRealTimeDataRequest) (response *DescribeDomainRealTimeDataResponse, err error) {
 	response = CreateDescribeDomainRealTimeDataResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeDomainRealTimeData(request *DescribeDomainRealTime
 	return
 }
 
-// invoke DescribeDomainRealTimeData api with *DescribeDomainRealTimeDataRequest asynchronously
+// DescribeDomainRealTimeDataWithChan invokes the cdn.DescribeDomainRealTimeData API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describedomainrealtimedata.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainRealTimeDataWithChan(request *DescribeDomainRealTimeDataRequest) (<-chan *DescribeDomainRealTimeDataResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeDomainRealTimeDataWithChan(request *DescribeDomain
 	return responseChan, errChan
 }
 
-// invoke DescribeDomainRealTimeData api with *DescribeDomainRealTimeDataRequest asynchronously
+// DescribeDomainRealTimeDataWithCallback invokes the cdn.DescribeDomainRealTimeData API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describedomainrealtimedata.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainRealTimeDataWithCallback(request *DescribeDomainRealTimeDataRequest, callback func(response *DescribeDomainRealTimeDataResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeDomainRealTimeDataWithCallback(request *DescribeDo
 	return result
 }
 
+// DescribeDomainRealTimeDataRequest is the request struct for api DescribeDomainRealTimeData
 type DescribeDomainRealTimeDataRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -83,6 +84,7 @@ type DescribeDomainRealTimeDataRequest struct {
 	Field         string           `position:"Query" name:"Field"`
 }
 
+// DescribeDomainRealTimeDataResponse is the response struct for api DescribeDomainRealTimeData
 type DescribeDomainRealTimeDataResponse struct {
 	*responses.BaseResponse
 	RequestId       string                                      `json:"RequestId" xml:"RequestId"`
@@ -93,8 +95,8 @@ type DescribeDomainRealTimeDataResponse struct {
 	DataPerInterval DataPerIntervalInDescribeDomainRealTimeData `json:"DataPerInterval" xml:"DataPerInterval"`
 }
 
-// create a request to invoke DescribeDomainRealTimeData API
-func CreateDescribeDomainRealTimeDataRequest() (request *DescribeDomainRealTimeDataRequest) {
+// CreateDescribeDomainRealTimeDataRequest creates a request to invoke DescribeDomainRealTimeData API
+func CreateDescribeDomainRealTimeDataRequest(request *DescribeDomainRealTimeDataRequest) {
 	request = &DescribeDomainRealTimeDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -102,7 +104,7 @@ func CreateDescribeDomainRealTimeDataRequest() (request *DescribeDomainRealTimeD
 	return
 }
 
-// create a response to parse from DescribeDomainRealTimeData response
+// CreateDescribeDomainRealTimeDataResponse creates a response to parse from DescribeDomainRealTimeData response
 func CreateDescribeDomainRealTimeDataResponse() (response *DescribeDomainRealTimeDataResponse) {
 	response = &DescribeDomainRealTimeDataResponse{
 		BaseResponse: &responses.BaseResponse{},

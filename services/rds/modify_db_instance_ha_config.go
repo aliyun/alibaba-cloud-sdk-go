@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifyDBInstanceHAConfig api with *ModifyDBInstanceHAConfigRequest synchronously
+// ModifyDBInstanceHAConfig invokes the rds.ModifyDBInstanceHAConfig API synchronously
 // api document: https://help.aliyun.com/api/rds/modifydbinstancehaconfig.html
 func (client *Client) ModifyDBInstanceHAConfig(request *ModifyDBInstanceHAConfigRequest) (response *ModifyDBInstanceHAConfigResponse, err error) {
 	response = CreateModifyDBInstanceHAConfigResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifyDBInstanceHAConfig(request *ModifyDBInstanceHAConfig
 	return
 }
 
-// invoke ModifyDBInstanceHAConfig api with *ModifyDBInstanceHAConfigRequest asynchronously
+// ModifyDBInstanceHAConfigWithChan invokes the rds.ModifyDBInstanceHAConfig API asynchronously
 // api document: https://help.aliyun.com/api/rds/modifydbinstancehaconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDBInstanceHAConfigWithChan(request *ModifyDBInstanceHAConfigRequest) (<-chan *ModifyDBInstanceHAConfigResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifyDBInstanceHAConfigWithChan(request *ModifyDBInstance
 	return responseChan, errChan
 }
 
-// invoke ModifyDBInstanceHAConfig api with *ModifyDBInstanceHAConfigRequest asynchronously
+// ModifyDBInstanceHAConfigWithCallback invokes the rds.ModifyDBInstanceHAConfig API asynchronously
 // api document: https://help.aliyun.com/api/rds/modifydbinstancehaconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDBInstanceHAConfigWithCallback(request *ModifyDBInstanceHAConfigRequest, callback func(response *ModifyDBInstanceHAConfigResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ModifyDBInstanceHAConfigWithCallback(request *ModifyDBInst
 	return result
 }
 
+// ModifyDBInstanceHAConfigRequest is the request struct for api ModifyDBInstanceHAConfig
 type ModifyDBInstanceHAConfigRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,13 +85,14 @@ type ModifyDBInstanceHAConfigRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// ModifyDBInstanceHAConfigResponse is the response struct for api ModifyDBInstanceHAConfig
 type ModifyDBInstanceHAConfigResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ModifyDBInstanceHAConfig API
-func CreateModifyDBInstanceHAConfigRequest() (request *ModifyDBInstanceHAConfigRequest) {
+// CreateModifyDBInstanceHAConfigRequest creates a request to invoke ModifyDBInstanceHAConfig API
+func CreateModifyDBInstanceHAConfigRequest(request *ModifyDBInstanceHAConfigRequest) {
 	request = &ModifyDBInstanceHAConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateModifyDBInstanceHAConfigRequest() (request *ModifyDBInstanceHAConfigR
 	return
 }
 
-// create a response to parse from ModifyDBInstanceHAConfig response
+// CreateModifyDBInstanceHAConfigResponse creates a response to parse from ModifyDBInstanceHAConfig response
 func CreateModifyDBInstanceHAConfigResponse() (response *ModifyDBInstanceHAConfigResponse) {
 	response = &ModifyDBInstanceHAConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeSslVpnClientCert api with *DescribeSslVpnClientCertRequest synchronously
+// DescribeSslVpnClientCert invokes the vpc.DescribeSslVpnClientCert API synchronously
 // api document: https://help.aliyun.com/api/vpc/describesslvpnclientcert.html
 func (client *Client) DescribeSslVpnClientCert(request *DescribeSslVpnClientCertRequest) (response *DescribeSslVpnClientCertResponse, err error) {
 	response = CreateDescribeSslVpnClientCertResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeSslVpnClientCert(request *DescribeSslVpnClientCert
 	return
 }
 
-// invoke DescribeSslVpnClientCert api with *DescribeSslVpnClientCertRequest asynchronously
+// DescribeSslVpnClientCertWithChan invokes the vpc.DescribeSslVpnClientCert API asynchronously
 // api document: https://help.aliyun.com/api/vpc/describesslvpnclientcert.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSslVpnClientCertWithChan(request *DescribeSslVpnClientCertRequest) (<-chan *DescribeSslVpnClientCertResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeSslVpnClientCertWithChan(request *DescribeSslVpnCl
 	return responseChan, errChan
 }
 
-// invoke DescribeSslVpnClientCert api with *DescribeSslVpnClientCertRequest asynchronously
+// DescribeSslVpnClientCertWithCallback invokes the vpc.DescribeSslVpnClientCert API asynchronously
 // api document: https://help.aliyun.com/api/vpc/describesslvpnclientcert.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSslVpnClientCertWithCallback(request *DescribeSslVpnClientCertRequest, callback func(response *DescribeSslVpnClientCertResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeSslVpnClientCertWithCallback(request *DescribeSslV
 	return result
 }
 
+// DescribeSslVpnClientCertRequest is the request struct for api DescribeSslVpnClientCert
 type DescribeSslVpnClientCertRequest struct {
 	*requests.RpcRequest
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
@@ -82,6 +83,7 @@ type DescribeSslVpnClientCertRequest struct {
 	SslVpnClientCertId   string           `position:"Query" name:"SslVpnClientCertId"`
 }
 
+// DescribeSslVpnClientCertResponse is the response struct for api DescribeSslVpnClientCert
 type DescribeSslVpnClientCertResponse struct {
 	*responses.BaseResponse
 	RequestId          string `json:"RequestId" xml:"RequestId"`
@@ -98,8 +100,8 @@ type DescribeSslVpnClientCertResponse struct {
 	Status             string `json:"Status" xml:"Status"`
 }
 
-// create a request to invoke DescribeSslVpnClientCert API
-func CreateDescribeSslVpnClientCertRequest() (request *DescribeSslVpnClientCertRequest) {
+// CreateDescribeSslVpnClientCertRequest creates a request to invoke DescribeSslVpnClientCert API
+func CreateDescribeSslVpnClientCertRequest(request *DescribeSslVpnClientCertRequest) {
 	request = &DescribeSslVpnClientCertRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -107,7 +109,7 @@ func CreateDescribeSslVpnClientCertRequest() (request *DescribeSslVpnClientCertR
 	return
 }
 
-// create a response to parse from DescribeSslVpnClientCert response
+// CreateDescribeSslVpnClientCertResponse creates a response to parse from DescribeSslVpnClientCert response
 func CreateDescribeSslVpnClientCertResponse() (response *DescribeSslVpnClientCertResponse) {
 	response = &DescribeSslVpnClientCertResponse{
 		BaseResponse: &responses.BaseResponse{},

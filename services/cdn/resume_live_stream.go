@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ResumeLiveStream api with *ResumeLiveStreamRequest synchronously
+// ResumeLiveStream invokes the cdn.ResumeLiveStream API synchronously
 // api document: https://help.aliyun.com/api/cdn/resumelivestream.html
 func (client *Client) ResumeLiveStream(request *ResumeLiveStreamRequest) (response *ResumeLiveStreamResponse, err error) {
 	response = CreateResumeLiveStreamResponse()
@@ -28,7 +28,7 @@ func (client *Client) ResumeLiveStream(request *ResumeLiveStreamRequest) (respon
 	return
 }
 
-// invoke ResumeLiveStream api with *ResumeLiveStreamRequest asynchronously
+// ResumeLiveStreamWithChan invokes the cdn.ResumeLiveStream API asynchronously
 // api document: https://help.aliyun.com/api/cdn/resumelivestream.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResumeLiveStreamWithChan(request *ResumeLiveStreamRequest) (<-chan *ResumeLiveStreamResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ResumeLiveStreamWithChan(request *ResumeLiveStreamRequest)
 	return responseChan, errChan
 }
 
-// invoke ResumeLiveStream api with *ResumeLiveStreamRequest asynchronously
+// ResumeLiveStreamWithCallback invokes the cdn.ResumeLiveStream API asynchronously
 // api document: https://help.aliyun.com/api/cdn/resumelivestream.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResumeLiveStreamWithCallback(request *ResumeLiveStreamRequest, callback func(response *ResumeLiveStreamResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ResumeLiveStreamWithCallback(request *ResumeLiveStreamRequ
 	return result
 }
 
+// ResumeLiveStreamRequest is the request struct for api ResumeLiveStream
 type ResumeLiveStreamRequest struct {
 	*requests.RpcRequest
 	OwnerId        requests.Integer `position:"Query" name:"OwnerId"`
@@ -83,13 +84,14 @@ type ResumeLiveStreamRequest struct {
 	StreamName     string           `position:"Query" name:"StreamName"`
 }
 
+// ResumeLiveStreamResponse is the response struct for api ResumeLiveStream
 type ResumeLiveStreamResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ResumeLiveStream API
-func CreateResumeLiveStreamRequest() (request *ResumeLiveStreamRequest) {
+// CreateResumeLiveStreamRequest creates a request to invoke ResumeLiveStream API
+func CreateResumeLiveStreamRequest(request *ResumeLiveStreamRequest) {
 	request = &ResumeLiveStreamRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateResumeLiveStreamRequest() (request *ResumeLiveStreamRequest) {
 	return
 }
 
-// create a response to parse from ResumeLiveStream response
+// CreateResumeLiveStreamResponse creates a response to parse from ResumeLiveStream response
 func CreateResumeLiveStreamResponse() (response *ResumeLiveStreamResponse) {
 	response = &ResumeLiveStreamResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke InactivatePhotos api with *InactivatePhotosRequest synchronously
+// InactivatePhotos invokes the cloudphoto.InactivatePhotos API synchronously
 // api document: https://help.aliyun.com/api/cloudphoto/inactivatephotos.html
 func (client *Client) InactivatePhotos(request *InactivatePhotosRequest) (response *InactivatePhotosResponse, err error) {
 	response = CreateInactivatePhotosResponse()
@@ -28,7 +28,7 @@ func (client *Client) InactivatePhotos(request *InactivatePhotosRequest) (respon
 	return
 }
 
-// invoke InactivatePhotos api with *InactivatePhotosRequest asynchronously
+// InactivatePhotosWithChan invokes the cloudphoto.InactivatePhotos API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/inactivatephotos.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) InactivatePhotosWithChan(request *InactivatePhotosRequest) (<-chan *InactivatePhotosResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) InactivatePhotosWithChan(request *InactivatePhotosRequest)
 	return responseChan, errChan
 }
 
-// invoke InactivatePhotos api with *InactivatePhotosRequest asynchronously
+// InactivatePhotosWithCallback invokes the cloudphoto.InactivatePhotos API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/inactivatephotos.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) InactivatePhotosWithCallback(request *InactivatePhotosRequest, callback func(response *InactivatePhotosResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) InactivatePhotosWithCallback(request *InactivatePhotosRequ
 	return result
 }
 
+// InactivatePhotosRequest is the request struct for api InactivatePhotos
 type InactivatePhotosRequest struct {
 	*requests.RpcRequest
 	PhotoId      *[]string        `position:"Query" name:"PhotoId"  type:"Repeated"`
@@ -81,6 +82,7 @@ type InactivatePhotosRequest struct {
 	InactiveTime requests.Integer `position:"Query" name:"InactiveTime"`
 }
 
+// InactivatePhotosResponse is the response struct for api InactivatePhotos
 type InactivatePhotosResponse struct {
 	*responses.BaseResponse
 	Code      string   `json:"Code" xml:"Code"`
@@ -90,8 +92,8 @@ type InactivatePhotosResponse struct {
 	Results   []Result `json:"Results" xml:"Results"`
 }
 
-// create a request to invoke InactivatePhotos API
-func CreateInactivatePhotosRequest() (request *InactivatePhotosRequest) {
+// CreateInactivatePhotosRequest creates a request to invoke InactivatePhotos API
+func CreateInactivatePhotosRequest(request *InactivatePhotosRequest) {
 	request = &InactivatePhotosRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateInactivatePhotosRequest() (request *InactivatePhotosRequest) {
 	return
 }
 
-// create a response to parse from InactivatePhotos response
+// CreateInactivatePhotosResponse creates a response to parse from InactivatePhotos response
 func CreateInactivatePhotosResponse() (response *InactivatePhotosResponse) {
 	response = &InactivatePhotosResponse{
 		BaseResponse: &responses.BaseResponse{},

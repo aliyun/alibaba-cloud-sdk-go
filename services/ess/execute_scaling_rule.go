@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ExecuteScalingRule api with *ExecuteScalingRuleRequest synchronously
+// ExecuteScalingRule invokes the ess.ExecuteScalingRule API synchronously
 // api document: https://help.aliyun.com/api/ess/executescalingrule.html
 func (client *Client) ExecuteScalingRule(request *ExecuteScalingRuleRequest) (response *ExecuteScalingRuleResponse, err error) {
 	response = CreateExecuteScalingRuleResponse()
@@ -28,7 +28,7 @@ func (client *Client) ExecuteScalingRule(request *ExecuteScalingRuleRequest) (re
 	return
 }
 
-// invoke ExecuteScalingRule api with *ExecuteScalingRuleRequest asynchronously
+// ExecuteScalingRuleWithChan invokes the ess.ExecuteScalingRule API asynchronously
 // api document: https://help.aliyun.com/api/ess/executescalingrule.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ExecuteScalingRuleWithChan(request *ExecuteScalingRuleRequest) (<-chan *ExecuteScalingRuleResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ExecuteScalingRuleWithChan(request *ExecuteScalingRuleRequ
 	return responseChan, errChan
 }
 
-// invoke ExecuteScalingRule api with *ExecuteScalingRuleRequest asynchronously
+// ExecuteScalingRuleWithCallback invokes the ess.ExecuteScalingRule API asynchronously
 // api document: https://help.aliyun.com/api/ess/executescalingrule.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ExecuteScalingRuleWithCallback(request *ExecuteScalingRuleRequest, callback func(response *ExecuteScalingRuleResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ExecuteScalingRuleWithCallback(request *ExecuteScalingRule
 	return result
 }
 
+// ExecuteScalingRuleRequest is the request struct for api ExecuteScalingRule
 type ExecuteScalingRuleRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -83,14 +84,15 @@ type ExecuteScalingRuleRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// ExecuteScalingRuleResponse is the response struct for api ExecuteScalingRule
 type ExecuteScalingRuleResponse struct {
 	*responses.BaseResponse
 	ScalingActivityId string `json:"ScalingActivityId" xml:"ScalingActivityId"`
 	RequestId         string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ExecuteScalingRule API
-func CreateExecuteScalingRuleRequest() (request *ExecuteScalingRuleRequest) {
+// CreateExecuteScalingRuleRequest creates a request to invoke ExecuteScalingRule API
+func CreateExecuteScalingRuleRequest(request *ExecuteScalingRuleRequest) {
 	request = &ExecuteScalingRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateExecuteScalingRuleRequest() (request *ExecuteScalingRuleRequest) {
 	return
 }
 
-// create a response to parse from ExecuteScalingRule response
+// CreateExecuteScalingRuleResponse creates a response to parse from ExecuteScalingRule response
 func CreateExecuteScalingRuleResponse() (response *ExecuteScalingRuleResponse) {
 	response = &ExecuteScalingRuleResponse{
 		BaseResponse: &responses.BaseResponse{},

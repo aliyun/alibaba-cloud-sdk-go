@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke GetStatisticsByUuid api with *GetStatisticsByUuidRequest synchronously
+// GetStatisticsByUuid invokes the aegis.GetStatisticsByUuid API synchronously
 // api document: https://help.aliyun.com/api/aegis/getstatisticsbyuuid.html
 func (client *Client) GetStatisticsByUuid(request *GetStatisticsByUuidRequest) (response *GetStatisticsByUuidResponse, err error) {
 	response = CreateGetStatisticsByUuidResponse()
@@ -28,7 +28,7 @@ func (client *Client) GetStatisticsByUuid(request *GetStatisticsByUuidRequest) (
 	return
 }
 
-// invoke GetStatisticsByUuid api with *GetStatisticsByUuidRequest asynchronously
+// GetStatisticsByUuidWithChan invokes the aegis.GetStatisticsByUuid API asynchronously
 // api document: https://help.aliyun.com/api/aegis/getstatisticsbyuuid.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetStatisticsByUuidWithChan(request *GetStatisticsByUuidRequest) (<-chan *GetStatisticsByUuidResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) GetStatisticsByUuidWithChan(request *GetStatisticsByUuidRe
 	return responseChan, errChan
 }
 
-// invoke GetStatisticsByUuid api with *GetStatisticsByUuidRequest asynchronously
+// GetStatisticsByUuidWithCallback invokes the aegis.GetStatisticsByUuid API asynchronously
 // api document: https://help.aliyun.com/api/aegis/getstatisticsbyuuid.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetStatisticsByUuidWithCallback(request *GetStatisticsByUuidRequest, callback func(response *GetStatisticsByUuidResponse, err error)) <-chan int {
@@ -73,11 +73,13 @@ func (client *Client) GetStatisticsByUuidWithCallback(request *GetStatisticsByUu
 	return result
 }
 
+// GetStatisticsByUuidRequest is the request struct for api GetStatisticsByUuid
 type GetStatisticsByUuidRequest struct {
 	*requests.RpcRequest
 	Uuid string `position:"Query" name:"Uuid"`
 }
 
+// GetStatisticsByUuidResponse is the response struct for api GetStatisticsByUuid
 type GetStatisticsByUuidResponse struct {
 	*responses.BaseResponse
 	RequestId string                    `json:"requestId" xml:"requestId"`
@@ -87,8 +89,8 @@ type GetStatisticsByUuidResponse struct {
 	Data      DataInGetStatisticsByUuid `json:"Data" xml:"Data"`
 }
 
-// create a request to invoke GetStatisticsByUuid API
-func CreateGetStatisticsByUuidRequest() (request *GetStatisticsByUuidRequest) {
+// CreateGetStatisticsByUuidRequest creates a request to invoke GetStatisticsByUuid API
+func CreateGetStatisticsByUuidRequest(request *GetStatisticsByUuidRequest) {
 	request = &GetStatisticsByUuidRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -96,7 +98,7 @@ func CreateGetStatisticsByUuidRequest() (request *GetStatisticsByUuidRequest) {
 	return
 }
 
-// create a response to parse from GetStatisticsByUuid response
+// CreateGetStatisticsByUuidResponse creates a response to parse from GetStatisticsByUuid response
 func CreateGetStatisticsByUuidResponse() (response *GetStatisticsByUuidResponse) {
 	response = &GetStatisticsByUuidResponse{
 		BaseResponse: &responses.BaseResponse{},

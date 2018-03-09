@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CreateUploadPathForSQLServer api with *CreateUploadPathForSQLServerRequest synchronously
+// CreateUploadPathForSQLServer invokes the rds.CreateUploadPathForSQLServer API synchronously
 // api document: https://help.aliyun.com/api/rds/createuploadpathforsqlserver.html
 func (client *Client) CreateUploadPathForSQLServer(request *CreateUploadPathForSQLServerRequest) (response *CreateUploadPathForSQLServerResponse, err error) {
 	response = CreateCreateUploadPathForSQLServerResponse()
@@ -28,7 +28,7 @@ func (client *Client) CreateUploadPathForSQLServer(request *CreateUploadPathForS
 	return
 }
 
-// invoke CreateUploadPathForSQLServer api with *CreateUploadPathForSQLServerRequest asynchronously
+// CreateUploadPathForSQLServerWithChan invokes the rds.CreateUploadPathForSQLServer API asynchronously
 // api document: https://help.aliyun.com/api/rds/createuploadpathforsqlserver.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateUploadPathForSQLServerWithChan(request *CreateUploadPathForSQLServerRequest) (<-chan *CreateUploadPathForSQLServerResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CreateUploadPathForSQLServerWithChan(request *CreateUpload
 	return responseChan, errChan
 }
 
-// invoke CreateUploadPathForSQLServer api with *CreateUploadPathForSQLServerRequest asynchronously
+// CreateUploadPathForSQLServerWithCallback invokes the rds.CreateUploadPathForSQLServer API asynchronously
 // api document: https://help.aliyun.com/api/rds/createuploadpathforsqlserver.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateUploadPathForSQLServerWithCallback(request *CreateUploadPathForSQLServerRequest, callback func(response *CreateUploadPathForSQLServerResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) CreateUploadPathForSQLServerWithCallback(request *CreateUp
 	return result
 }
 
+// CreateUploadPathForSQLServerRequest is the request struct for api CreateUploadPathForSQLServer
 type CreateUploadPathForSQLServerRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -83,6 +84,7 @@ type CreateUploadPathForSQLServerRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// CreateUploadPathForSQLServerResponse is the response struct for api CreateUploadPathForSQLServer
 type CreateUploadPathForSQLServerResponse struct {
 	*responses.BaseResponse
 	RequestId         string `json:"RequestId" xml:"RequestId"`
@@ -95,8 +97,8 @@ type CreateUploadPathForSQLServerResponse struct {
 	FileName          string `json:"FileName" xml:"FileName"`
 }
 
-// create a request to invoke CreateUploadPathForSQLServer API
-func CreateCreateUploadPathForSQLServerRequest() (request *CreateUploadPathForSQLServerRequest) {
+// CreateCreateUploadPathForSQLServerRequest creates a request to invoke CreateUploadPathForSQLServer API
+func CreateCreateUploadPathForSQLServerRequest(request *CreateUploadPathForSQLServerRequest) {
 	request = &CreateUploadPathForSQLServerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -104,7 +106,7 @@ func CreateCreateUploadPathForSQLServerRequest() (request *CreateUploadPathForSQ
 	return
 }
 
-// create a response to parse from CreateUploadPathForSQLServer response
+// CreateCreateUploadPathForSQLServerResponse creates a response to parse from CreateUploadPathForSQLServer response
 func CreateCreateUploadPathForSQLServerResponse() (response *CreateUploadPathForSQLServerResponse) {
 	response = &CreateUploadPathForSQLServerResponse{
 		BaseResponse: &responses.BaseResponse{},

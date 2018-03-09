@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke QueryTaskInfoHistory api with *QueryTaskInfoHistoryRequest synchronously
+// QueryTaskInfoHistory invokes the domain_intl.QueryTaskInfoHistory API synchronously
 // api document: https://help.aliyun.com/api/domain-intl/querytaskinfohistory.html
 func (client *Client) QueryTaskInfoHistory(request *QueryTaskInfoHistoryRequest) (response *QueryTaskInfoHistoryResponse, err error) {
 	response = CreateQueryTaskInfoHistoryResponse()
@@ -28,7 +28,7 @@ func (client *Client) QueryTaskInfoHistory(request *QueryTaskInfoHistoryRequest)
 	return
 }
 
-// invoke QueryTaskInfoHistory api with *QueryTaskInfoHistoryRequest asynchronously
+// QueryTaskInfoHistoryWithChan invokes the domain_intl.QueryTaskInfoHistory API asynchronously
 // api document: https://help.aliyun.com/api/domain-intl/querytaskinfohistory.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryTaskInfoHistoryWithChan(request *QueryTaskInfoHistoryRequest) (<-chan *QueryTaskInfoHistoryResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) QueryTaskInfoHistoryWithChan(request *QueryTaskInfoHistory
 	return responseChan, errChan
 }
 
-// invoke QueryTaskInfoHistory api with *QueryTaskInfoHistoryRequest asynchronously
+// QueryTaskInfoHistoryWithCallback invokes the domain_intl.QueryTaskInfoHistory API asynchronously
 // api document: https://help.aliyun.com/api/domain-intl/querytaskinfohistory.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryTaskInfoHistoryWithCallback(request *QueryTaskInfoHistoryRequest, callback func(response *QueryTaskInfoHistoryResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) QueryTaskInfoHistoryWithCallback(request *QueryTaskInfoHis
 	return result
 }
 
+// QueryTaskInfoHistoryRequest is the request struct for api QueryTaskInfoHistory
 type QueryTaskInfoHistoryRequest struct {
 	*requests.RpcRequest
 	UserClientIp     string           `position:"Query" name:"UserClientIp"`
@@ -84,6 +85,7 @@ type QueryTaskInfoHistoryRequest struct {
 	TaskNoCursor     string           `position:"Query" name:"TaskNoCursor"`
 }
 
+// QueryTaskInfoHistoryResponse is the response struct for api QueryTaskInfoHistory
 type QueryTaskInfoHistoryResponse struct {
 	*responses.BaseResponse
 	RequestId         string            `json:"RequestId" xml:"RequestId"`
@@ -94,8 +96,8 @@ type QueryTaskInfoHistoryResponse struct {
 	Objects           []TaskInfoHistory `json:"Objects" xml:"Objects"`
 }
 
-// create a request to invoke QueryTaskInfoHistory API
-func CreateQueryTaskInfoHistoryRequest() (request *QueryTaskInfoHistoryRequest) {
+// CreateQueryTaskInfoHistoryRequest creates a request to invoke QueryTaskInfoHistory API
+func CreateQueryTaskInfoHistoryRequest(request *QueryTaskInfoHistoryRequest) {
 	request = &QueryTaskInfoHistoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -103,7 +105,7 @@ func CreateQueryTaskInfoHistoryRequest() (request *QueryTaskInfoHistoryRequest) 
 	return
 }
 
-// create a response to parse from QueryTaskInfoHistory response
+// CreateQueryTaskInfoHistoryResponse creates a response to parse from QueryTaskInfoHistory response
 func CreateQueryTaskInfoHistoryResponse() (response *QueryTaskInfoHistoryResponse) {
 	response = &QueryTaskInfoHistoryResponse{
 		BaseResponse: &responses.BaseResponse{},

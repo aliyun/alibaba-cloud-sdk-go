@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ListClusters api with *ListClustersRequest synchronously
+// ListClusters invokes the ehpc.ListClusters API synchronously
 // api document: https://help.aliyun.com/api/ehpc/listclusters.html
 func (client *Client) ListClusters(request *ListClustersRequest) (response *ListClustersResponse, err error) {
 	response = CreateListClustersResponse()
@@ -28,7 +28,7 @@ func (client *Client) ListClusters(request *ListClustersRequest) (response *List
 	return
 }
 
-// invoke ListClusters api with *ListClustersRequest asynchronously
+// ListClustersWithChan invokes the ehpc.ListClusters API asynchronously
 // api document: https://help.aliyun.com/api/ehpc/listclusters.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListClustersWithChan(request *ListClustersRequest) (<-chan *ListClustersResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ListClustersWithChan(request *ListClustersRequest) (<-chan
 	return responseChan, errChan
 }
 
-// invoke ListClusters api with *ListClustersRequest asynchronously
+// ListClustersWithCallback invokes the ehpc.ListClusters API asynchronously
 // api document: https://help.aliyun.com/api/ehpc/listclusters.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListClustersWithCallback(request *ListClustersRequest, callback func(response *ListClustersResponse, err error)) <-chan int {
@@ -73,12 +73,14 @@ func (client *Client) ListClustersWithCallback(request *ListClustersRequest, cal
 	return result
 }
 
+// ListClustersRequest is the request struct for api ListClusters
 type ListClustersRequest struct {
 	*requests.RpcRequest
 	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
 	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 }
 
+// ListClustersResponse is the response struct for api ListClusters
 type ListClustersResponse struct {
 	*responses.BaseResponse
 	RequestId  string   `json:"RequestId" xml:"RequestId"`
@@ -88,8 +90,8 @@ type ListClustersResponse struct {
 	Clusters   Clusters `json:"Clusters" xml:"Clusters"`
 }
 
-// create a request to invoke ListClusters API
-func CreateListClustersRequest() (request *ListClustersRequest) {
+// CreateListClustersRequest creates a request to invoke ListClusters API
+func CreateListClustersRequest(request *ListClustersRequest) {
 	request = &ListClustersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateListClustersRequest() (request *ListClustersRequest) {
 	return
 }
 
-// create a response to parse from ListClusters response
+// CreateListClustersResponse creates a response to parse from ListClusters response
 func CreateListClustersResponse() (response *ListClustersResponse) {
 	response = &ListClustersResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke EnableActiveAlert api with *EnableActiveAlertRequest synchronously
+// EnableActiveAlert invokes the cms.EnableActiveAlert API synchronously
 // api document: https://help.aliyun.com/api/cms/enableactivealert.html
 func (client *Client) EnableActiveAlert(request *EnableActiveAlertRequest) (response *EnableActiveAlertResponse, err error) {
 	response = CreateEnableActiveAlertResponse()
@@ -28,7 +28,7 @@ func (client *Client) EnableActiveAlert(request *EnableActiveAlertRequest) (resp
 	return
 }
 
-// invoke EnableActiveAlert api with *EnableActiveAlertRequest asynchronously
+// EnableActiveAlertWithChan invokes the cms.EnableActiveAlert API asynchronously
 // api document: https://help.aliyun.com/api/cms/enableactivealert.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EnableActiveAlertWithChan(request *EnableActiveAlertRequest) (<-chan *EnableActiveAlertResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) EnableActiveAlertWithChan(request *EnableActiveAlertReques
 	return responseChan, errChan
 }
 
-// invoke EnableActiveAlert api with *EnableActiveAlertRequest asynchronously
+// EnableActiveAlertWithCallback invokes the cms.EnableActiveAlert API asynchronously
 // api document: https://help.aliyun.com/api/cms/enableactivealert.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EnableActiveAlertWithCallback(request *EnableActiveAlertRequest, callback func(response *EnableActiveAlertResponse, err error)) <-chan int {
@@ -73,12 +73,14 @@ func (client *Client) EnableActiveAlertWithCallback(request *EnableActiveAlertRe
 	return result
 }
 
+// EnableActiveAlertRequest is the request struct for api EnableActiveAlert
 type EnableActiveAlertRequest struct {
 	*requests.RpcRequest
 	Product string `position:"Query" name:"Product"`
 	UserId  string `position:"Query" name:"UserId"`
 }
 
+// EnableActiveAlertResponse is the response struct for api EnableActiveAlert
 type EnableActiveAlertResponse struct {
 	*responses.BaseResponse
 	Success bool   `json:"Success" xml:"Success"`
@@ -86,8 +88,8 @@ type EnableActiveAlertResponse struct {
 	Message string `json:"Message" xml:"Message"`
 }
 
-// create a request to invoke EnableActiveAlert API
-func CreateEnableActiveAlertRequest() (request *EnableActiveAlertRequest) {
+// CreateEnableActiveAlertRequest creates a request to invoke EnableActiveAlert API
+func CreateEnableActiveAlertRequest(request *EnableActiveAlertRequest) {
 	request = &EnableActiveAlertRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateEnableActiveAlertRequest() (request *EnableActiveAlertRequest) {
 	return
 }
 
-// create a response to parse from EnableActiveAlert response
+// CreateEnableActiveAlertResponse creates a response to parse from EnableActiveAlert response
 func CreateEnableActiveAlertResponse() (response *EnableActiveAlertResponse) {
 	response = &EnableActiveAlertResponse{
 		BaseResponse: &responses.BaseResponse{},

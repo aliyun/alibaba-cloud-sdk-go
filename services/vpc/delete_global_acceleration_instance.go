@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteGlobalAccelerationInstance api with *DeleteGlobalAccelerationInstanceRequest synchronously
+// DeleteGlobalAccelerationInstance invokes the vpc.DeleteGlobalAccelerationInstance API synchronously
 // api document: https://help.aliyun.com/api/vpc/deleteglobalaccelerationinstance.html
 func (client *Client) DeleteGlobalAccelerationInstance(request *DeleteGlobalAccelerationInstanceRequest) (response *DeleteGlobalAccelerationInstanceResponse, err error) {
 	response = CreateDeleteGlobalAccelerationInstanceResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteGlobalAccelerationInstance(request *DeleteGlobalAcce
 	return
 }
 
-// invoke DeleteGlobalAccelerationInstance api with *DeleteGlobalAccelerationInstanceRequest asynchronously
+// DeleteGlobalAccelerationInstanceWithChan invokes the vpc.DeleteGlobalAccelerationInstance API asynchronously
 // api document: https://help.aliyun.com/api/vpc/deleteglobalaccelerationinstance.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteGlobalAccelerationInstanceWithChan(request *DeleteGlobalAccelerationInstanceRequest) (<-chan *DeleteGlobalAccelerationInstanceResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteGlobalAccelerationInstanceWithChan(request *DeleteGl
 	return responseChan, errChan
 }
 
-// invoke DeleteGlobalAccelerationInstance api with *DeleteGlobalAccelerationInstanceRequest asynchronously
+// DeleteGlobalAccelerationInstanceWithCallback invokes the vpc.DeleteGlobalAccelerationInstance API asynchronously
 // api document: https://help.aliyun.com/api/vpc/deleteglobalaccelerationinstance.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteGlobalAccelerationInstanceWithCallback(request *DeleteGlobalAccelerationInstanceRequest, callback func(response *DeleteGlobalAccelerationInstanceResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DeleteGlobalAccelerationInstanceWithCallback(request *Dele
 	return result
 }
 
+// DeleteGlobalAccelerationInstanceRequest is the request struct for api DeleteGlobalAccelerationInstance
 type DeleteGlobalAccelerationInstanceRequest struct {
 	*requests.RpcRequest
 	OwnerId                      requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,13 +83,14 @@ type DeleteGlobalAccelerationInstanceRequest struct {
 	OwnerAccount                 string           `position:"Query" name:"OwnerAccount"`
 }
 
+// DeleteGlobalAccelerationInstanceResponse is the response struct for api DeleteGlobalAccelerationInstance
 type DeleteGlobalAccelerationInstanceResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DeleteGlobalAccelerationInstance API
-func CreateDeleteGlobalAccelerationInstanceRequest() (request *DeleteGlobalAccelerationInstanceRequest) {
+// CreateDeleteGlobalAccelerationInstanceRequest creates a request to invoke DeleteGlobalAccelerationInstance API
+func CreateDeleteGlobalAccelerationInstanceRequest(request *DeleteGlobalAccelerationInstanceRequest) {
 	request = &DeleteGlobalAccelerationInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -96,7 +98,7 @@ func CreateDeleteGlobalAccelerationInstanceRequest() (request *DeleteGlobalAccel
 	return
 }
 
-// create a response to parse from DeleteGlobalAccelerationInstance response
+// CreateDeleteGlobalAccelerationInstanceResponse creates a response to parse from DeleteGlobalAccelerationInstance response
 func CreateDeleteGlobalAccelerationInstanceResponse() (response *DeleteGlobalAccelerationInstanceResponse) {
 	response = &DeleteGlobalAccelerationInstanceResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SetLocationAccessRestriction api with *SetLocationAccessRestrictionRequest synchronously
+// SetLocationAccessRestriction invokes the cdn.SetLocationAccessRestriction API synchronously
 // api document: https://help.aliyun.com/api/cdn/setlocationaccessrestriction.html
 func (client *Client) SetLocationAccessRestriction(request *SetLocationAccessRestrictionRequest) (response *SetLocationAccessRestrictionResponse, err error) {
 	response = CreateSetLocationAccessRestrictionResponse()
@@ -28,7 +28,7 @@ func (client *Client) SetLocationAccessRestriction(request *SetLocationAccessRes
 	return
 }
 
-// invoke SetLocationAccessRestriction api with *SetLocationAccessRestrictionRequest asynchronously
+// SetLocationAccessRestrictionWithChan invokes the cdn.SetLocationAccessRestriction API asynchronously
 // api document: https://help.aliyun.com/api/cdn/setlocationaccessrestriction.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetLocationAccessRestrictionWithChan(request *SetLocationAccessRestrictionRequest) (<-chan *SetLocationAccessRestrictionResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SetLocationAccessRestrictionWithChan(request *SetLocationA
 	return responseChan, errChan
 }
 
-// invoke SetLocationAccessRestriction api with *SetLocationAccessRestrictionRequest asynchronously
+// SetLocationAccessRestrictionWithCallback invokes the cdn.SetLocationAccessRestriction API asynchronously
 // api document: https://help.aliyun.com/api/cdn/setlocationaccessrestriction.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetLocationAccessRestrictionWithCallback(request *SetLocationAccessRestrictionRequest, callback func(response *SetLocationAccessRestrictionResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SetLocationAccessRestrictionWithCallback(request *SetLocat
 	return result
 }
 
+// SetLocationAccessRestrictionRequest is the request struct for api SetLocationAccessRestriction
 type SetLocationAccessRestrictionRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,13 +83,14 @@ type SetLocationAccessRestrictionRequest struct {
 	Type          string           `position:"Query" name:"Type"`
 }
 
+// SetLocationAccessRestrictionResponse is the response struct for api SetLocationAccessRestriction
 type SetLocationAccessRestrictionResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke SetLocationAccessRestriction API
-func CreateSetLocationAccessRestrictionRequest() (request *SetLocationAccessRestrictionRequest) {
+// CreateSetLocationAccessRestrictionRequest creates a request to invoke SetLocationAccessRestriction API
+func CreateSetLocationAccessRestrictionRequest(request *SetLocationAccessRestrictionRequest) {
 	request = &SetLocationAccessRestrictionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -96,7 +98,7 @@ func CreateSetLocationAccessRestrictionRequest() (request *SetLocationAccessRest
 	return
 }
 
-// create a response to parse from SetLocationAccessRestriction response
+// CreateSetLocationAccessRestrictionResponse creates a response to parse from SetLocationAccessRestriction response
 func CreateSetLocationAccessRestrictionResponse() (response *SetLocationAccessRestrictionResponse) {
 	response = &SetLocationAccessRestrictionResponse{
 		BaseResponse: &responses.BaseResponse{},

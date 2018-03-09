@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeVpnConnectionLogs api with *DescribeVpnConnectionLogsRequest synchronously
+// DescribeVpnConnectionLogs invokes the vpc.DescribeVpnConnectionLogs API synchronously
 // api document: https://help.aliyun.com/api/vpc/describevpnconnectionlogs.html
 func (client *Client) DescribeVpnConnectionLogs(request *DescribeVpnConnectionLogsRequest) (response *DescribeVpnConnectionLogsResponse, err error) {
 	response = CreateDescribeVpnConnectionLogsResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeVpnConnectionLogs(request *DescribeVpnConnectionLo
 	return
 }
 
-// invoke DescribeVpnConnectionLogs api with *DescribeVpnConnectionLogsRequest asynchronously
+// DescribeVpnConnectionLogsWithChan invokes the vpc.DescribeVpnConnectionLogs API asynchronously
 // api document: https://help.aliyun.com/api/vpc/describevpnconnectionlogs.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeVpnConnectionLogsWithChan(request *DescribeVpnConnectionLogsRequest) (<-chan *DescribeVpnConnectionLogsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeVpnConnectionLogsWithChan(request *DescribeVpnConn
 	return responseChan, errChan
 }
 
-// invoke DescribeVpnConnectionLogs api with *DescribeVpnConnectionLogsRequest asynchronously
+// DescribeVpnConnectionLogsWithCallback invokes the vpc.DescribeVpnConnectionLogs API asynchronously
 // api document: https://help.aliyun.com/api/vpc/describevpnconnectionlogs.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeVpnConnectionLogsWithCallback(request *DescribeVpnConnectionLogsRequest, callback func(response *DescribeVpnConnectionLogsResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeVpnConnectionLogsWithCallback(request *DescribeVpn
 	return result
 }
 
+// DescribeVpnConnectionLogsRequest is the request struct for api DescribeVpnConnectionLogs
 type DescribeVpnConnectionLogsRequest struct {
 	*requests.RpcRequest
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
@@ -87,6 +88,7 @@ type DescribeVpnConnectionLogsRequest struct {
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 }
 
+// DescribeVpnConnectionLogsResponse is the response struct for api DescribeVpnConnectionLogs
 type DescribeVpnConnectionLogsResponse struct {
 	*responses.BaseResponse
 	RequestId   string `json:"RequestId" xml:"RequestId"`
@@ -97,8 +99,8 @@ type DescribeVpnConnectionLogsResponse struct {
 	Data        Data   `json:"Data" xml:"Data"`
 }
 
-// create a request to invoke DescribeVpnConnectionLogs API
-func CreateDescribeVpnConnectionLogsRequest() (request *DescribeVpnConnectionLogsRequest) {
+// CreateDescribeVpnConnectionLogsRequest creates a request to invoke DescribeVpnConnectionLogs API
+func CreateDescribeVpnConnectionLogsRequest(request *DescribeVpnConnectionLogsRequest) {
 	request = &DescribeVpnConnectionLogsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -106,7 +108,7 @@ func CreateDescribeVpnConnectionLogsRequest() (request *DescribeVpnConnectionLog
 	return
 }
 
-// create a response to parse from DescribeVpnConnectionLogs response
+// CreateDescribeVpnConnectionLogsResponse creates a response to parse from DescribeVpnConnectionLogs response
 func CreateDescribeVpnConnectionLogsResponse() (response *DescribeVpnConnectionLogsResponse) {
 	response = &DescribeVpnConnectionLogsResponse{
 		BaseResponse: &responses.BaseResponse{},

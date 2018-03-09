@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SubmitCensorJob api with *SubmitCensorJobRequest synchronously
+// SubmitCensorJob invokes the mts.SubmitCensorJob API synchronously
 // api document: https://help.aliyun.com/api/mts/submitcensorjob.html
 func (client *Client) SubmitCensorJob(request *SubmitCensorJobRequest) (response *SubmitCensorJobResponse, err error) {
 	response = CreateSubmitCensorJobResponse()
@@ -28,7 +28,7 @@ func (client *Client) SubmitCensorJob(request *SubmitCensorJobRequest) (response
 	return
 }
 
-// invoke SubmitCensorJob api with *SubmitCensorJobRequest asynchronously
+// SubmitCensorJobWithChan invokes the mts.SubmitCensorJob API asynchronously
 // api document: https://help.aliyun.com/api/mts/submitcensorjob.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitCensorJobWithChan(request *SubmitCensorJobRequest) (<-chan *SubmitCensorJobResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SubmitCensorJobWithChan(request *SubmitCensorJobRequest) (
 	return responseChan, errChan
 }
 
-// invoke SubmitCensorJob api with *SubmitCensorJobRequest asynchronously
+// SubmitCensorJobWithCallback invokes the mts.SubmitCensorJob API asynchronously
 // api document: https://help.aliyun.com/api/mts/submitcensorjob.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitCensorJobWithCallback(request *SubmitCensorJobRequest, callback func(response *SubmitCensorJobResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SubmitCensorJobWithCallback(request *SubmitCensorJobReques
 	return result
 }
 
+// SubmitCensorJobRequest is the request struct for api SubmitCensorJob
 type SubmitCensorJobRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -85,14 +86,15 @@ type SubmitCensorJobRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// SubmitCensorJobResponse is the response struct for api SubmitCensorJob
 type SubmitCensorJobResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	JobId     string `json:"JobId" xml:"JobId"`
 }
 
-// create a request to invoke SubmitCensorJob API
-func CreateSubmitCensorJobRequest() (request *SubmitCensorJobRequest) {
+// CreateSubmitCensorJobRequest creates a request to invoke SubmitCensorJob API
+func CreateSubmitCensorJobRequest(request *SubmitCensorJobRequest) {
 	request = &SubmitCensorJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -100,7 +102,7 @@ func CreateSubmitCensorJobRequest() (request *SubmitCensorJobRequest) {
 	return
 }
 
-// create a response to parse from SubmitCensorJob response
+// CreateSubmitCensorJobResponse creates a response to parse from SubmitCensorJob response
 func CreateSubmitCensorJobResponse() (response *SubmitCensorJobResponse) {
 	response = &SubmitCensorJobResponse{
 		BaseResponse: &responses.BaseResponse{},

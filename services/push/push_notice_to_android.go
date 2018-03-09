@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke PushNoticeToAndroid api with *PushNoticeToAndroidRequest synchronously
+// PushNoticeToAndroid invokes the push.PushNoticeToAndroid API synchronously
 // api document: https://help.aliyun.com/api/push/pushnoticetoandroid.html
 func (client *Client) PushNoticeToAndroid(request *PushNoticeToAndroidRequest) (response *PushNoticeToAndroidResponse, err error) {
 	response = CreatePushNoticeToAndroidResponse()
@@ -28,7 +28,7 @@ func (client *Client) PushNoticeToAndroid(request *PushNoticeToAndroidRequest) (
 	return
 }
 
-// invoke PushNoticeToAndroid api with *PushNoticeToAndroidRequest asynchronously
+// PushNoticeToAndroidWithChan invokes the push.PushNoticeToAndroid API asynchronously
 // api document: https://help.aliyun.com/api/push/pushnoticetoandroid.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PushNoticeToAndroidWithChan(request *PushNoticeToAndroidRequest) (<-chan *PushNoticeToAndroidResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) PushNoticeToAndroidWithChan(request *PushNoticeToAndroidRe
 	return responseChan, errChan
 }
 
-// invoke PushNoticeToAndroid api with *PushNoticeToAndroidRequest asynchronously
+// PushNoticeToAndroidWithCallback invokes the push.PushNoticeToAndroid API asynchronously
 // api document: https://help.aliyun.com/api/push/pushnoticetoandroid.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PushNoticeToAndroidWithCallback(request *PushNoticeToAndroidRequest, callback func(response *PushNoticeToAndroidResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) PushNoticeToAndroidWithCallback(request *PushNoticeToAndro
 	return result
 }
 
+// PushNoticeToAndroidRequest is the request struct for api PushNoticeToAndroid
 type PushNoticeToAndroidRequest struct {
 	*requests.RpcRequest
 	AppKey        requests.Integer `position:"Query" name:"AppKey"`
@@ -84,14 +85,15 @@ type PushNoticeToAndroidRequest struct {
 	ExtParameters string           `position:"Query" name:"ExtParameters"`
 }
 
+// PushNoticeToAndroidResponse is the response struct for api PushNoticeToAndroid
 type PushNoticeToAndroidResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	MessageId string `json:"MessageId" xml:"MessageId"`
 }
 
-// create a request to invoke PushNoticeToAndroid API
-func CreatePushNoticeToAndroidRequest() (request *PushNoticeToAndroidRequest) {
+// CreatePushNoticeToAndroidRequest creates a request to invoke PushNoticeToAndroid API
+func CreatePushNoticeToAndroidRequest(request *PushNoticeToAndroidRequest) {
 	request = &PushNoticeToAndroidRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreatePushNoticeToAndroidRequest() (request *PushNoticeToAndroidRequest) {
 	return
 }
 
-// create a response to parse from PushNoticeToAndroid response
+// CreatePushNoticeToAndroidResponse creates a response to parse from PushNoticeToAndroid response
 func CreatePushNoticeToAndroidResponse() (response *PushNoticeToAndroidResponse) {
 	response = &PushNoticeToAndroidResponse{
 		BaseResponse: &responses.BaseResponse{},

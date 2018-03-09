@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke QueryPornJobList api with *QueryPornJobListRequest synchronously
+// QueryPornJobList invokes the mts.QueryPornJobList API synchronously
 // api document: https://help.aliyun.com/api/mts/querypornjoblist.html
 func (client *Client) QueryPornJobList(request *QueryPornJobListRequest) (response *QueryPornJobListResponse, err error) {
 	response = CreateQueryPornJobListResponse()
@@ -28,7 +28,7 @@ func (client *Client) QueryPornJobList(request *QueryPornJobListRequest) (respon
 	return
 }
 
-// invoke QueryPornJobList api with *QueryPornJobListRequest asynchronously
+// QueryPornJobListWithChan invokes the mts.QueryPornJobList API asynchronously
 // api document: https://help.aliyun.com/api/mts/querypornjoblist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryPornJobListWithChan(request *QueryPornJobListRequest) (<-chan *QueryPornJobListResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) QueryPornJobListWithChan(request *QueryPornJobListRequest)
 	return responseChan, errChan
 }
 
-// invoke QueryPornJobList api with *QueryPornJobListRequest asynchronously
+// QueryPornJobListWithCallback invokes the mts.QueryPornJobList API asynchronously
 // api document: https://help.aliyun.com/api/mts/querypornjoblist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryPornJobListWithCallback(request *QueryPornJobListRequest, callback func(response *QueryPornJobListResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) QueryPornJobListWithCallback(request *QueryPornJobListRequ
 	return result
 }
 
+// QueryPornJobListRequest is the request struct for api QueryPornJobList
 type QueryPornJobListRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,6 +83,7 @@ type QueryPornJobListRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// QueryPornJobListResponse is the response struct for api QueryPornJobList
 type QueryPornJobListResponse struct {
 	*responses.BaseResponse
 	RequestId   string                        `json:"RequestId" xml:"RequestId"`
@@ -89,8 +91,8 @@ type QueryPornJobListResponse struct {
 	PornJobList PornJobList                   `json:"PornJobList" xml:"PornJobList"`
 }
 
-// create a request to invoke QueryPornJobList API
-func CreateQueryPornJobListRequest() (request *QueryPornJobListRequest) {
+// CreateQueryPornJobListRequest creates a request to invoke QueryPornJobList API
+func CreateQueryPornJobListRequest(request *QueryPornJobListRequest) {
 	request = &QueryPornJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateQueryPornJobListRequest() (request *QueryPornJobListRequest) {
 	return
 }
 
-// create a response to parse from QueryPornJobList response
+// CreateQueryPornJobListResponse creates a response to parse from QueryPornJobList response
 func CreateQueryPornJobListResponse() (response *QueryPornJobListResponse) {
 	response = &QueryPornJobListResponse{
 		BaseResponse: &responses.BaseResponse{},

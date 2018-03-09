@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifyReadWriteSplittingConnection api with *ModifyReadWriteSplittingConnectionRequest synchronously
+// ModifyReadWriteSplittingConnection invokes the rds.ModifyReadWriteSplittingConnection API synchronously
 // api document: https://help.aliyun.com/api/rds/modifyreadwritesplittingconnection.html
 func (client *Client) ModifyReadWriteSplittingConnection(request *ModifyReadWriteSplittingConnectionRequest) (response *ModifyReadWriteSplittingConnectionResponse, err error) {
 	response = CreateModifyReadWriteSplittingConnectionResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifyReadWriteSplittingConnection(request *ModifyReadWrit
 	return
 }
 
-// invoke ModifyReadWriteSplittingConnection api with *ModifyReadWriteSplittingConnectionRequest asynchronously
+// ModifyReadWriteSplittingConnectionWithChan invokes the rds.ModifyReadWriteSplittingConnection API asynchronously
 // api document: https://help.aliyun.com/api/rds/modifyreadwritesplittingconnection.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyReadWriteSplittingConnectionWithChan(request *ModifyReadWriteSplittingConnectionRequest) (<-chan *ModifyReadWriteSplittingConnectionResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifyReadWriteSplittingConnectionWithChan(request *Modify
 	return responseChan, errChan
 }
 
-// invoke ModifyReadWriteSplittingConnection api with *ModifyReadWriteSplittingConnectionRequest asynchronously
+// ModifyReadWriteSplittingConnectionWithCallback invokes the rds.ModifyReadWriteSplittingConnection API asynchronously
 // api document: https://help.aliyun.com/api/rds/modifyreadwritesplittingconnection.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyReadWriteSplittingConnectionWithCallback(request *ModifyReadWriteSplittingConnectionRequest, callback func(response *ModifyReadWriteSplittingConnectionResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ModifyReadWriteSplittingConnectionWithCallback(request *Mo
 	return result
 }
 
+// ModifyReadWriteSplittingConnectionRequest is the request struct for api ModifyReadWriteSplittingConnection
 type ModifyReadWriteSplittingConnectionRequest struct {
 	*requests.RpcRequest
 	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
@@ -87,13 +88,14 @@ type ModifyReadWriteSplittingConnectionRequest struct {
 	Weight                 string           `position:"Query" name:"Weight"`
 }
 
+// ModifyReadWriteSplittingConnectionResponse is the response struct for api ModifyReadWriteSplittingConnection
 type ModifyReadWriteSplittingConnectionResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ModifyReadWriteSplittingConnection API
-func CreateModifyReadWriteSplittingConnectionRequest() (request *ModifyReadWriteSplittingConnectionRequest) {
+// CreateModifyReadWriteSplittingConnectionRequest creates a request to invoke ModifyReadWriteSplittingConnection API
+func CreateModifyReadWriteSplittingConnectionRequest(request *ModifyReadWriteSplittingConnectionRequest) {
 	request = &ModifyReadWriteSplittingConnectionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -101,7 +103,7 @@ func CreateModifyReadWriteSplittingConnectionRequest() (request *ModifyReadWrite
 	return
 }
 
-// create a response to parse from ModifyReadWriteSplittingConnection response
+// CreateModifyReadWriteSplittingConnectionResponse creates a response to parse from ModifyReadWriteSplittingConnection response
 func CreateModifyReadWriteSplittingConnectionResponse() (response *ModifyReadWriteSplittingConnectionResponse) {
 	response = &ModifyReadWriteSplittingConnectionResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke LoginDBInstancefromCloudDBA api with *LoginDBInstancefromCloudDBARequest synchronously
+// LoginDBInstancefromCloudDBA invokes the rds.LoginDBInstancefromCloudDBA API synchronously
 // api document: https://help.aliyun.com/api/rds/logindbinstancefromclouddba.html
 func (client *Client) LoginDBInstancefromCloudDBA(request *LoginDBInstancefromCloudDBARequest) (response *LoginDBInstancefromCloudDBAResponse, err error) {
 	response = CreateLoginDBInstancefromCloudDBAResponse()
@@ -28,7 +28,7 @@ func (client *Client) LoginDBInstancefromCloudDBA(request *LoginDBInstancefromCl
 	return
 }
 
-// invoke LoginDBInstancefromCloudDBA api with *LoginDBInstancefromCloudDBARequest asynchronously
+// LoginDBInstancefromCloudDBAWithChan invokes the rds.LoginDBInstancefromCloudDBA API asynchronously
 // api document: https://help.aliyun.com/api/rds/logindbinstancefromclouddba.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) LoginDBInstancefromCloudDBAWithChan(request *LoginDBInstancefromCloudDBARequest) (<-chan *LoginDBInstancefromCloudDBAResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) LoginDBInstancefromCloudDBAWithChan(request *LoginDBInstan
 	return responseChan, errChan
 }
 
-// invoke LoginDBInstancefromCloudDBA api with *LoginDBInstancefromCloudDBARequest asynchronously
+// LoginDBInstancefromCloudDBAWithCallback invokes the rds.LoginDBInstancefromCloudDBA API asynchronously
 // api document: https://help.aliyun.com/api/rds/logindbinstancefromclouddba.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) LoginDBInstancefromCloudDBAWithCallback(request *LoginDBInstancefromCloudDBARequest, callback func(response *LoginDBInstancefromCloudDBAResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) LoginDBInstancefromCloudDBAWithCallback(request *LoginDBIn
 	return result
 }
 
+// LoginDBInstancefromCloudDBARequest is the request struct for api LoginDBInstancefromCloudDBA
 type LoginDBInstancefromCloudDBARequest struct {
 	*requests.RpcRequest
 	DBInstanceId        string `position:"Query" name:"DBInstanceId"`
@@ -80,6 +81,7 @@ type LoginDBInstancefromCloudDBARequest struct {
 	ServiceRequestParam string `position:"Query" name:"ServiceRequestParam"`
 }
 
+// LoginDBInstancefromCloudDBAResponse is the response struct for api LoginDBInstancefromCloudDBA
 type LoginDBInstancefromCloudDBAResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
@@ -87,8 +89,8 @@ type LoginDBInstancefromCloudDBAResponse struct {
 	AttrData  string `json:"AttrData" xml:"AttrData"`
 }
 
-// create a request to invoke LoginDBInstancefromCloudDBA API
-func CreateLoginDBInstancefromCloudDBARequest() (request *LoginDBInstancefromCloudDBARequest) {
+// CreateLoginDBInstancefromCloudDBARequest creates a request to invoke LoginDBInstancefromCloudDBA API
+func CreateLoginDBInstancefromCloudDBARequest(request *LoginDBInstancefromCloudDBARequest) {
 	request = &LoginDBInstancefromCloudDBARequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -96,7 +98,7 @@ func CreateLoginDBInstancefromCloudDBARequest() (request *LoginDBInstancefromClo
 	return
 }
 
-// create a response to parse from LoginDBInstancefromCloudDBA response
+// CreateLoginDBInstancefromCloudDBAResponse creates a response to parse from LoginDBInstancefromCloudDBA response
 func CreateLoginDBInstancefromCloudDBAResponse() (response *LoginDBInstancefromCloudDBAResponse) {
 	response = &LoginDBInstancefromCloudDBAResponse{
 		BaseResponse: &responses.BaseResponse{},

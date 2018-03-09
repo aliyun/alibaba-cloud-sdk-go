@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeDomainCname api with *DescribeDomainCnameRequest synchronously
+// DescribeDomainCname invokes the cdn.DescribeDomainCname API synchronously
 // api document: https://help.aliyun.com/api/cdn/describedomaincname.html
 func (client *Client) DescribeDomainCname(request *DescribeDomainCnameRequest) (response *DescribeDomainCnameResponse, err error) {
 	response = CreateDescribeDomainCnameResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeDomainCname(request *DescribeDomainCnameRequest) (
 	return
 }
 
-// invoke DescribeDomainCname api with *DescribeDomainCnameRequest asynchronously
+// DescribeDomainCnameWithChan invokes the cdn.DescribeDomainCname API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describedomaincname.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainCnameWithChan(request *DescribeDomainCnameRequest) (<-chan *DescribeDomainCnameResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeDomainCnameWithChan(request *DescribeDomainCnameRe
 	return responseChan, errChan
 }
 
-// invoke DescribeDomainCname api with *DescribeDomainCnameRequest asynchronously
+// DescribeDomainCnameWithCallback invokes the cdn.DescribeDomainCname API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describedomaincname.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainCnameWithCallback(request *DescribeDomainCnameRequest, callback func(response *DescribeDomainCnameResponse, err error)) <-chan int {
@@ -73,18 +73,20 @@ func (client *Client) DescribeDomainCnameWithCallback(request *DescribeDomainCna
 	return result
 }
 
+// DescribeDomainCnameRequest is the request struct for api DescribeDomainCname
 type DescribeDomainCnameRequest struct {
 	*requests.RpcRequest
 }
 
+// DescribeDomainCnameResponse is the response struct for api DescribeDomainCname
 type DescribeDomainCnameResponse struct {
 	*responses.BaseResponse
 	RequestId  string     `json:"RequestId" xml:"RequestId"`
 	CnameDatas CnameDatas `json:"CnameDatas" xml:"CnameDatas"`
 }
 
-// create a request to invoke DescribeDomainCname API
-func CreateDescribeDomainCnameRequest() (request *DescribeDomainCnameRequest) {
+// CreateDescribeDomainCnameRequest creates a request to invoke DescribeDomainCname API
+func CreateDescribeDomainCnameRequest(request *DescribeDomainCnameRequest) {
 	request = &DescribeDomainCnameRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -92,7 +94,7 @@ func CreateDescribeDomainCnameRequest() (request *DescribeDomainCnameRequest) {
 	return
 }
 
-// create a response to parse from DescribeDomainCname response
+// CreateDescribeDomainCnameResponse creates a response to parse from DescribeDomainCname response
 func CreateDescribeDomainCnameResponse() (response *DescribeDomainCnameResponse) {
 	response = &DescribeDomainCnameResponse{
 		BaseResponse: &responses.BaseResponse{},

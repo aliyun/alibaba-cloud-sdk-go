@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke QuerySystemEventDetail api with *QuerySystemEventDetailRequest synchronously
+// QuerySystemEventDetail invokes the cms.QuerySystemEventDetail API synchronously
 // api document: https://help.aliyun.com/api/cms/querysystemeventdetail.html
 func (client *Client) QuerySystemEventDetail(request *QuerySystemEventDetailRequest) (response *QuerySystemEventDetailResponse, err error) {
 	response = CreateQuerySystemEventDetailResponse()
@@ -28,7 +28,7 @@ func (client *Client) QuerySystemEventDetail(request *QuerySystemEventDetailRequ
 	return
 }
 
-// invoke QuerySystemEventDetail api with *QuerySystemEventDetailRequest asynchronously
+// QuerySystemEventDetailWithChan invokes the cms.QuerySystemEventDetail API asynchronously
 // api document: https://help.aliyun.com/api/cms/querysystemeventdetail.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QuerySystemEventDetailWithChan(request *QuerySystemEventDetailRequest) (<-chan *QuerySystemEventDetailResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) QuerySystemEventDetailWithChan(request *QuerySystemEventDe
 	return responseChan, errChan
 }
 
-// invoke QuerySystemEventDetail api with *QuerySystemEventDetailRequest asynchronously
+// QuerySystemEventDetailWithCallback invokes the cms.QuerySystemEventDetail API asynchronously
 // api document: https://help.aliyun.com/api/cms/querysystemeventdetail.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QuerySystemEventDetailWithCallback(request *QuerySystemEventDetailRequest, callback func(response *QuerySystemEventDetailResponse, err error)) <-chan int {
@@ -73,11 +73,13 @@ func (client *Client) QuerySystemEventDetailWithCallback(request *QuerySystemEve
 	return result
 }
 
+// QuerySystemEventDetailRequest is the request struct for api QuerySystemEventDetail
 type QuerySystemEventDetailRequest struct {
 	*requests.RpcRequest
 	QueryJson string `position:"Query" name:"QueryJson"`
 }
 
+// QuerySystemEventDetailResponse is the response struct for api QuerySystemEventDetail
 type QuerySystemEventDetailResponse struct {
 	*responses.BaseResponse
 	Code    string `json:"Code" xml:"Code"`
@@ -85,8 +87,8 @@ type QuerySystemEventDetailResponse struct {
 	Data    string `json:"Data" xml:"Data"`
 }
 
-// create a request to invoke QuerySystemEventDetail API
-func CreateQuerySystemEventDetailRequest() (request *QuerySystemEventDetailRequest) {
+// CreateQuerySystemEventDetailRequest creates a request to invoke QuerySystemEventDetail API
+func CreateQuerySystemEventDetailRequest(request *QuerySystemEventDetailRequest) {
 	request = &QuerySystemEventDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -94,7 +96,7 @@ func CreateQuerySystemEventDetailRequest() (request *QuerySystemEventDetailReque
 	return
 }
 
-// create a response to parse from QuerySystemEventDetail response
+// CreateQuerySystemEventDetailResponse creates a response to parse from QuerySystemEventDetail response
 func CreateQuerySystemEventDetailResponse() (response *QuerySystemEventDetailResponse) {
 	response = &QuerySystemEventDetailResponse{
 		BaseResponse: &responses.BaseResponse{},

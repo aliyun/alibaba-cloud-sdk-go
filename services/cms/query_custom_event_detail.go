@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke QueryCustomEventDetail api with *QueryCustomEventDetailRequest synchronously
+// QueryCustomEventDetail invokes the cms.QueryCustomEventDetail API synchronously
 // api document: https://help.aliyun.com/api/cms/querycustomeventdetail.html
 func (client *Client) QueryCustomEventDetail(request *QueryCustomEventDetailRequest) (response *QueryCustomEventDetailResponse, err error) {
 	response = CreateQueryCustomEventDetailResponse()
@@ -28,7 +28,7 @@ func (client *Client) QueryCustomEventDetail(request *QueryCustomEventDetailRequ
 	return
 }
 
-// invoke QueryCustomEventDetail api with *QueryCustomEventDetailRequest asynchronously
+// QueryCustomEventDetailWithChan invokes the cms.QueryCustomEventDetail API asynchronously
 // api document: https://help.aliyun.com/api/cms/querycustomeventdetail.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryCustomEventDetailWithChan(request *QueryCustomEventDetailRequest) (<-chan *QueryCustomEventDetailResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) QueryCustomEventDetailWithChan(request *QueryCustomEventDe
 	return responseChan, errChan
 }
 
-// invoke QueryCustomEventDetail api with *QueryCustomEventDetailRequest asynchronously
+// QueryCustomEventDetailWithCallback invokes the cms.QueryCustomEventDetail API asynchronously
 // api document: https://help.aliyun.com/api/cms/querycustomeventdetail.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryCustomEventDetailWithCallback(request *QueryCustomEventDetailRequest, callback func(response *QueryCustomEventDetailResponse, err error)) <-chan int {
@@ -73,11 +73,13 @@ func (client *Client) QueryCustomEventDetailWithCallback(request *QueryCustomEve
 	return result
 }
 
+// QueryCustomEventDetailRequest is the request struct for api QueryCustomEventDetail
 type QueryCustomEventDetailRequest struct {
 	*requests.RpcRequest
 	QueryJson string `position:"Query" name:"QueryJson"`
 }
 
+// QueryCustomEventDetailResponse is the response struct for api QueryCustomEventDetail
 type QueryCustomEventDetailResponse struct {
 	*responses.BaseResponse
 	Code    string `json:"Code" xml:"Code"`
@@ -85,8 +87,8 @@ type QueryCustomEventDetailResponse struct {
 	Data    string `json:"Data" xml:"Data"`
 }
 
-// create a request to invoke QueryCustomEventDetail API
-func CreateQueryCustomEventDetailRequest() (request *QueryCustomEventDetailRequest) {
+// CreateQueryCustomEventDetailRequest creates a request to invoke QueryCustomEventDetail API
+func CreateQueryCustomEventDetailRequest(request *QueryCustomEventDetailRequest) {
 	request = &QueryCustomEventDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -94,7 +96,7 @@ func CreateQueryCustomEventDetailRequest() (request *QueryCustomEventDetailReque
 	return
 }
 
-// create a response to parse from QueryCustomEventDetail response
+// CreateQueryCustomEventDetailResponse creates a response to parse from QueryCustomEventDetail response
 func CreateQueryCustomEventDetailResponse() (response *QueryCustomEventDetailResponse) {
 	response = &QueryCustomEventDetailResponse{
 		BaseResponse: &responses.BaseResponse{},

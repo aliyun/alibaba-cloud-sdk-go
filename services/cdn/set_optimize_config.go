@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SetOptimizeConfig api with *SetOptimizeConfigRequest synchronously
+// SetOptimizeConfig invokes the cdn.SetOptimizeConfig API synchronously
 // api document: https://help.aliyun.com/api/cdn/setoptimizeconfig.html
 func (client *Client) SetOptimizeConfig(request *SetOptimizeConfigRequest) (response *SetOptimizeConfigResponse, err error) {
 	response = CreateSetOptimizeConfigResponse()
@@ -28,7 +28,7 @@ func (client *Client) SetOptimizeConfig(request *SetOptimizeConfigRequest) (resp
 	return
 }
 
-// invoke SetOptimizeConfig api with *SetOptimizeConfigRequest asynchronously
+// SetOptimizeConfigWithChan invokes the cdn.SetOptimizeConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/setoptimizeconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetOptimizeConfigWithChan(request *SetOptimizeConfigRequest) (<-chan *SetOptimizeConfigResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SetOptimizeConfigWithChan(request *SetOptimizeConfigReques
 	return responseChan, errChan
 }
 
-// invoke SetOptimizeConfig api with *SetOptimizeConfigRequest asynchronously
+// SetOptimizeConfigWithCallback invokes the cdn.SetOptimizeConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/setoptimizeconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetOptimizeConfigWithCallback(request *SetOptimizeConfigRequest, callback func(response *SetOptimizeConfigResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SetOptimizeConfigWithCallback(request *SetOptimizeConfigRe
 	return result
 }
 
+// SetOptimizeConfigRequest is the request struct for api SetOptimizeConfig
 type SetOptimizeConfigRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -81,13 +82,14 @@ type SetOptimizeConfigRequest struct {
 	Enable        string           `position:"Query" name:"Enable"`
 }
 
+// SetOptimizeConfigResponse is the response struct for api SetOptimizeConfig
 type SetOptimizeConfigResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke SetOptimizeConfig API
-func CreateSetOptimizeConfigRequest() (request *SetOptimizeConfigRequest) {
+// CreateSetOptimizeConfigRequest creates a request to invoke SetOptimizeConfig API
+func CreateSetOptimizeConfigRequest(request *SetOptimizeConfigRequest) {
 	request = &SetOptimizeConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateSetOptimizeConfigRequest() (request *SetOptimizeConfigRequest) {
 	return
 }
 
-// create a response to parse from SetOptimizeConfig response
+// CreateSetOptimizeConfigResponse creates a response to parse from SetOptimizeConfig response
 func CreateSetOptimizeConfigResponse() (response *SetOptimizeConfigResponse) {
 	response = &SetOptimizeConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ListRoles api with *ListRolesRequest synchronously
+// ListRoles invokes the ccc.ListRoles API synchronously
 // api document: https://help.aliyun.com/api/ccc/listroles.html
 func (client *Client) ListRoles(request *ListRolesRequest) (response *ListRolesResponse, err error) {
 	response = CreateListRolesResponse()
@@ -28,7 +28,7 @@ func (client *Client) ListRoles(request *ListRolesRequest) (response *ListRolesR
 	return
 }
 
-// invoke ListRoles api with *ListRolesRequest asynchronously
+// ListRolesWithChan invokes the ccc.ListRoles API asynchronously
 // api document: https://help.aliyun.com/api/ccc/listroles.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListRolesWithChan(request *ListRolesRequest) (<-chan *ListRolesResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ListRolesWithChan(request *ListRolesRequest) (<-chan *List
 	return responseChan, errChan
 }
 
-// invoke ListRoles api with *ListRolesRequest asynchronously
+// ListRolesWithCallback invokes the ccc.ListRoles API asynchronously
 // api document: https://help.aliyun.com/api/ccc/listroles.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListRolesWithCallback(request *ListRolesRequest, callback func(response *ListRolesResponse, err error)) <-chan int {
@@ -73,11 +73,13 @@ func (client *Client) ListRolesWithCallback(request *ListRolesRequest, callback 
 	return result
 }
 
+// ListRolesRequest is the request struct for api ListRoles
 type ListRolesRequest struct {
 	*requests.RpcRequest
 	InstanceId string `position:"Query" name:"InstanceId"`
 }
 
+// ListRolesResponse is the response struct for api ListRoles
 type ListRolesResponse struct {
 	*responses.BaseResponse
 	RequestId      string           `json:"RequestId" xml:"RequestId"`
@@ -88,8 +90,8 @@ type ListRolesResponse struct {
 	Roles          RolesInListRoles `json:"Roles" xml:"Roles"`
 }
 
-// create a request to invoke ListRoles API
-func CreateListRolesRequest() (request *ListRolesRequest) {
+// CreateListRolesRequest creates a request to invoke ListRoles API
+func CreateListRolesRequest(request *ListRolesRequest) {
 	request = &ListRolesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateListRolesRequest() (request *ListRolesRequest) {
 	return
 }
 
-// create a response to parse from ListRoles response
+// CreateListRolesResponse creates a response to parse from ListRoles response
 func CreateListRolesResponse() (response *ListRolesResponse) {
 	response = &ListRolesResponse{
 		BaseResponse: &responses.BaseResponse{},

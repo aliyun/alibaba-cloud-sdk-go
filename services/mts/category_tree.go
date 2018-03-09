@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CategoryTree api with *CategoryTreeRequest synchronously
+// CategoryTree invokes the mts.CategoryTree API synchronously
 // api document: https://help.aliyun.com/api/mts/categorytree.html
 func (client *Client) CategoryTree(request *CategoryTreeRequest) (response *CategoryTreeResponse, err error) {
 	response = CreateCategoryTreeResponse()
@@ -28,7 +28,7 @@ func (client *Client) CategoryTree(request *CategoryTreeRequest) (response *Cate
 	return
 }
 
-// invoke CategoryTree api with *CategoryTreeRequest asynchronously
+// CategoryTreeWithChan invokes the mts.CategoryTree API asynchronously
 // api document: https://help.aliyun.com/api/mts/categorytree.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CategoryTreeWithChan(request *CategoryTreeRequest) (<-chan *CategoryTreeResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CategoryTreeWithChan(request *CategoryTreeRequest) (<-chan
 	return responseChan, errChan
 }
 
-// invoke CategoryTree api with *CategoryTreeRequest asynchronously
+// CategoryTreeWithCallback invokes the mts.CategoryTree API asynchronously
 // api document: https://help.aliyun.com/api/mts/categorytree.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CategoryTreeWithCallback(request *CategoryTreeRequest, callback func(response *CategoryTreeResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) CategoryTreeWithCallback(request *CategoryTreeRequest, cal
 	return result
 }
 
+// CategoryTreeRequest is the request struct for api CategoryTree
 type CategoryTreeRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -81,14 +82,15 @@ type CategoryTreeRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// CategoryTreeResponse is the response struct for api CategoryTree
 type CategoryTreeResponse struct {
 	*responses.BaseResponse
 	RequestId    string `json:"RequestId" xml:"RequestId"`
 	CategoryTree string `json:"CategoryTree" xml:"CategoryTree"`
 }
 
-// create a request to invoke CategoryTree API
-func CreateCategoryTreeRequest() (request *CategoryTreeRequest) {
+// CreateCategoryTreeRequest creates a request to invoke CategoryTree API
+func CreateCategoryTreeRequest(request *CategoryTreeRequest) {
 	request = &CategoryTreeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -96,7 +98,7 @@ func CreateCategoryTreeRequest() (request *CategoryTreeRequest) {
 	return
 }
 
-// create a response to parse from CategoryTree response
+// CreateCategoryTreeResponse creates a response to parse from CategoryTree response
 func CreateCategoryTreeResponse() (response *CategoryTreeResponse) {
 	response = &CategoryTreeResponse{
 		BaseResponse: &responses.BaseResponse{},

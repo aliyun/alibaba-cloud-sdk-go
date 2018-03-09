@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeletePhotoStore api with *DeletePhotoStoreRequest synchronously
+// DeletePhotoStore invokes the cloudphoto.DeletePhotoStore API synchronously
 // api document: https://help.aliyun.com/api/cloudphoto/deletephotostore.html
 func (client *Client) DeletePhotoStore(request *DeletePhotoStoreRequest) (response *DeletePhotoStoreResponse, err error) {
 	response = CreateDeletePhotoStoreResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeletePhotoStore(request *DeletePhotoStoreRequest) (respon
 	return
 }
 
-// invoke DeletePhotoStore api with *DeletePhotoStoreRequest asynchronously
+// DeletePhotoStoreWithChan invokes the cloudphoto.DeletePhotoStore API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/deletephotostore.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeletePhotoStoreWithChan(request *DeletePhotoStoreRequest) (<-chan *DeletePhotoStoreResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeletePhotoStoreWithChan(request *DeletePhotoStoreRequest)
 	return responseChan, errChan
 }
 
-// invoke DeletePhotoStore api with *DeletePhotoStoreRequest asynchronously
+// DeletePhotoStoreWithCallback invokes the cloudphoto.DeletePhotoStore API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/deletephotostore.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeletePhotoStoreWithCallback(request *DeletePhotoStoreRequest, callback func(response *DeletePhotoStoreResponse, err error)) <-chan int {
@@ -73,11 +73,13 @@ func (client *Client) DeletePhotoStoreWithCallback(request *DeletePhotoStoreRequ
 	return result
 }
 
+// DeletePhotoStoreRequest is the request struct for api DeletePhotoStore
 type DeletePhotoStoreRequest struct {
 	*requests.RpcRequest
 	StoreName string `position:"Query" name:"StoreName"`
 }
 
+// DeletePhotoStoreResponse is the response struct for api DeletePhotoStore
 type DeletePhotoStoreResponse struct {
 	*responses.BaseResponse
 	Code      string `json:"Code" xml:"Code"`
@@ -86,8 +88,8 @@ type DeletePhotoStoreResponse struct {
 	Action    string `json:"Action" xml:"Action"`
 }
 
-// create a request to invoke DeletePhotoStore API
-func CreateDeletePhotoStoreRequest() (request *DeletePhotoStoreRequest) {
+// CreateDeletePhotoStoreRequest creates a request to invoke DeletePhotoStore API
+func CreateDeletePhotoStoreRequest(request *DeletePhotoStoreRequest) {
 	request = &DeletePhotoStoreRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateDeletePhotoStoreRequest() (request *DeletePhotoStoreRequest) {
 	return
 }
 
-// create a response to parse from DeletePhotoStore response
+// CreateDeletePhotoStoreResponse creates a response to parse from DeletePhotoStore response
 func CreateDeletePhotoStoreResponse() (response *DeletePhotoStoreResponse) {
 	response = &DeletePhotoStoreResponse{
 		BaseResponse: &responses.BaseResponse{},

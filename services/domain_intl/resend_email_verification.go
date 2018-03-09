@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ResendEmailVerification api with *ResendEmailVerificationRequest synchronously
+// ResendEmailVerification invokes the domain_intl.ResendEmailVerification API synchronously
 // api document: https://help.aliyun.com/api/domain-intl/resendemailverification.html
 func (client *Client) ResendEmailVerification(request *ResendEmailVerificationRequest) (response *ResendEmailVerificationResponse, err error) {
 	response = CreateResendEmailVerificationResponse()
@@ -28,7 +28,7 @@ func (client *Client) ResendEmailVerification(request *ResendEmailVerificationRe
 	return
 }
 
-// invoke ResendEmailVerification api with *ResendEmailVerificationRequest asynchronously
+// ResendEmailVerificationWithChan invokes the domain_intl.ResendEmailVerification API asynchronously
 // api document: https://help.aliyun.com/api/domain-intl/resendemailverification.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResendEmailVerificationWithChan(request *ResendEmailVerificationRequest) (<-chan *ResendEmailVerificationResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ResendEmailVerificationWithChan(request *ResendEmailVerifi
 	return responseChan, errChan
 }
 
-// invoke ResendEmailVerification api with *ResendEmailVerificationRequest asynchronously
+// ResendEmailVerificationWithCallback invokes the domain_intl.ResendEmailVerification API asynchronously
 // api document: https://help.aliyun.com/api/domain-intl/resendemailverification.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResendEmailVerificationWithCallback(request *ResendEmailVerificationRequest, callback func(response *ResendEmailVerificationResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ResendEmailVerificationWithCallback(request *ResendEmailVe
 	return result
 }
 
+// ResendEmailVerificationRequest is the request struct for api ResendEmailVerification
 type ResendEmailVerificationRequest struct {
 	*requests.RpcRequest
 	Lang         string `position:"Query" name:"Lang"`
@@ -80,6 +81,7 @@ type ResendEmailVerificationRequest struct {
 	UserClientIp string `position:"Query" name:"UserClientIp"`
 }
 
+// ResendEmailVerificationResponse is the response struct for api ResendEmailVerification
 type ResendEmailVerificationResponse struct {
 	*responses.BaseResponse
 	RequestId   string       `json:"RequestId" xml:"RequestId"`
@@ -87,8 +89,8 @@ type ResendEmailVerificationResponse struct {
 	FailList    []SendResult `json:"FailList" xml:"FailList"`
 }
 
-// create a request to invoke ResendEmailVerification API
-func CreateResendEmailVerificationRequest() (request *ResendEmailVerificationRequest) {
+// CreateResendEmailVerificationRequest creates a request to invoke ResendEmailVerification API
+func CreateResendEmailVerificationRequest(request *ResendEmailVerificationRequest) {
 	request = &ResendEmailVerificationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -96,7 +98,7 @@ func CreateResendEmailVerificationRequest() (request *ResendEmailVerificationReq
 	return
 }
 
-// create a response to parse from ResendEmailVerification response
+// CreateResendEmailVerificationResponse creates a response to parse from ResendEmailVerification response
 func CreateResendEmailVerificationResponse() (response *ResendEmailVerificationResponse) {
 	response = &ResendEmailVerificationResponse{
 		BaseResponse: &responses.BaseResponse{},

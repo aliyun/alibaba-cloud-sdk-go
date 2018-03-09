@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CallbackClusterToken api with *CallbackClusterTokenRequest synchronously
+// CallbackClusterToken invokes the cs.CallbackClusterToken API synchronously
 // api document: https://help.aliyun.com/api/cs/callbackclustertoken.html
 func (client *Client) CallbackClusterToken(request *CallbackClusterTokenRequest) (response *CallbackClusterTokenResponse, err error) {
 	response = CreateCallbackClusterTokenResponse()
@@ -28,7 +28,7 @@ func (client *Client) CallbackClusterToken(request *CallbackClusterTokenRequest)
 	return
 }
 
-// invoke CallbackClusterToken api with *CallbackClusterTokenRequest asynchronously
+// CallbackClusterTokenWithChan invokes the cs.CallbackClusterToken API asynchronously
 // api document: https://help.aliyun.com/api/cs/callbackclustertoken.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CallbackClusterTokenWithChan(request *CallbackClusterTokenRequest) (<-chan *CallbackClusterTokenResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CallbackClusterTokenWithChan(request *CallbackClusterToken
 	return responseChan, errChan
 }
 
-// invoke CallbackClusterToken api with *CallbackClusterTokenRequest asynchronously
+// CallbackClusterTokenWithCallback invokes the cs.CallbackClusterToken API asynchronously
 // api document: https://help.aliyun.com/api/cs/callbackclustertoken.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CallbackClusterTokenWithCallback(request *CallbackClusterTokenRequest, callback func(response *CallbackClusterTokenResponse, err error)) <-chan int {
@@ -73,18 +73,20 @@ func (client *Client) CallbackClusterTokenWithCallback(request *CallbackClusterT
 	return result
 }
 
+// CallbackClusterTokenRequest is the request struct for api CallbackClusterToken
 type CallbackClusterTokenRequest struct {
 	*requests.RoaRequest
 	Token   string `position:"Path" name:"Token"`
 	ReqOnce string `position:"Path" name:"ReqOnce"`
 }
 
+// CallbackClusterTokenResponse is the response struct for api CallbackClusterToken
 type CallbackClusterTokenResponse struct {
 	*responses.BaseResponse
 }
 
-// create a request to invoke CallbackClusterToken API
-func CreateCallbackClusterTokenRequest() (request *CallbackClusterTokenRequest) {
+// CreateCallbackClusterTokenRequest creates a request to invoke CallbackClusterToken API
+func CreateCallbackClusterTokenRequest(request *CallbackClusterTokenRequest) {
 	request = &CallbackClusterTokenRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
@@ -93,7 +95,7 @@ func CreateCallbackClusterTokenRequest() (request *CallbackClusterTokenRequest) 
 	return
 }
 
-// create a response to parse from CallbackClusterToken response
+// CreateCallbackClusterTokenResponse creates a response to parse from CallbackClusterToken response
 func CreateCallbackClusterTokenResponse() (response *CallbackClusterTokenResponse) {
 	response = &CallbackClusterTokenResponse{
 		BaseResponse: &responses.BaseResponse{},

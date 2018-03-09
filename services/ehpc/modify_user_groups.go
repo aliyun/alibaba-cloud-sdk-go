@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifyUserGroups api with *ModifyUserGroupsRequest synchronously
+// ModifyUserGroups invokes the ehpc.ModifyUserGroups API synchronously
 // api document: https://help.aliyun.com/api/ehpc/modifyusergroups.html
 func (client *Client) ModifyUserGroups(request *ModifyUserGroupsRequest) (response *ModifyUserGroupsResponse, err error) {
 	response = CreateModifyUserGroupsResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifyUserGroups(request *ModifyUserGroupsRequest) (respon
 	return
 }
 
-// invoke ModifyUserGroups api with *ModifyUserGroupsRequest asynchronously
+// ModifyUserGroupsWithChan invokes the ehpc.ModifyUserGroups API asynchronously
 // api document: https://help.aliyun.com/api/ehpc/modifyusergroups.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyUserGroupsWithChan(request *ModifyUserGroupsRequest) (<-chan *ModifyUserGroupsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifyUserGroupsWithChan(request *ModifyUserGroupsRequest)
 	return responseChan, errChan
 }
 
-// invoke ModifyUserGroups api with *ModifyUserGroupsRequest asynchronously
+// ModifyUserGroupsWithCallback invokes the ehpc.ModifyUserGroups API asynchronously
 // api document: https://help.aliyun.com/api/ehpc/modifyusergroups.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyUserGroupsWithCallback(request *ModifyUserGroupsRequest, callback func(response *ModifyUserGroupsResponse, err error)) <-chan int {
@@ -73,24 +73,27 @@ func (client *Client) ModifyUserGroupsWithCallback(request *ModifyUserGroupsRequ
 	return result
 }
 
+// ModifyUserGroupsRequest is the request struct for api ModifyUserGroups
 type ModifyUserGroupsRequest struct {
 	*requests.RpcRequest
 	ClusterId string                  `position:"Query" name:"ClusterId"`
 	User      *[]ModifyUserGroupsUser `position:"Query" name:"User"  type:"Repeated"`
 }
 
+// ModifyUserGroupsUser is a repeated param struct in ModifyUserGroupsRequest
 type ModifyUserGroupsUser struct {
 	Name  string `name:"Name"`
 	Group string `name:"Group"`
 }
 
+// ModifyUserGroupsResponse is the response struct for api ModifyUserGroups
 type ModifyUserGroupsResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ModifyUserGroups API
-func CreateModifyUserGroupsRequest() (request *ModifyUserGroupsRequest) {
+// CreateModifyUserGroupsRequest creates a request to invoke ModifyUserGroups API
+func CreateModifyUserGroupsRequest(request *ModifyUserGroupsRequest) {
 	request = &ModifyUserGroupsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +101,7 @@ func CreateModifyUserGroupsRequest() (request *ModifyUserGroupsRequest) {
 	return
 }
 
-// create a response to parse from ModifyUserGroups response
+// CreateModifyUserGroupsResponse creates a response to parse from ModifyUserGroups response
 func CreateModifyUserGroupsResponse() (response *ModifyUserGroupsResponse) {
 	response = &ModifyUserGroupsResponse{
 		BaseResponse: &responses.BaseResponse{},

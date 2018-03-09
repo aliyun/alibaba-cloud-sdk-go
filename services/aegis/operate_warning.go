@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke OperateWarning api with *OperateWarningRequest synchronously
+// OperateWarning invokes the aegis.OperateWarning API synchronously
 // api document: https://help.aliyun.com/api/aegis/operatewarning.html
 func (client *Client) OperateWarning(request *OperateWarningRequest) (response *OperateWarningResponse, err error) {
 	response = CreateOperateWarningResponse()
@@ -28,7 +28,7 @@ func (client *Client) OperateWarning(request *OperateWarningRequest) (response *
 	return
 }
 
-// invoke OperateWarning api with *OperateWarningRequest asynchronously
+// OperateWarningWithChan invokes the aegis.OperateWarning API asynchronously
 // api document: https://help.aliyun.com/api/aegis/operatewarning.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OperateWarningWithChan(request *OperateWarningRequest) (<-chan *OperateWarningResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) OperateWarningWithChan(request *OperateWarningRequest) (<-
 	return responseChan, errChan
 }
 
-// invoke OperateWarning api with *OperateWarningRequest asynchronously
+// OperateWarningWithCallback invokes the aegis.OperateWarning API asynchronously
 // api document: https://help.aliyun.com/api/aegis/operatewarning.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OperateWarningWithCallback(request *OperateWarningRequest, callback func(response *OperateWarningResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) OperateWarningWithCallback(request *OperateWarningRequest,
 	return result
 }
 
+// OperateWarningRequest is the request struct for api OperateWarning
 type OperateWarningRequest struct {
 	*requests.RpcRequest
 	SourceIp        string           `position:"Query" name:"SourceIp"`
@@ -83,13 +84,14 @@ type OperateWarningRequest struct {
 	Reason          string           `position:"Query" name:"Reason"`
 }
 
+// OperateWarningResponse is the response struct for api OperateWarning
 type OperateWarningResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke OperateWarning API
-func CreateOperateWarningRequest() (request *OperateWarningRequest) {
+// CreateOperateWarningRequest creates a request to invoke OperateWarning API
+func CreateOperateWarningRequest(request *OperateWarningRequest) {
 	request = &OperateWarningRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateOperateWarningRequest() (request *OperateWarningRequest) {
 	return
 }
 
-// create a response to parse from OperateWarning response
+// CreateOperateWarningResponse creates a response to parse from OperateWarning response
 func CreateOperateWarningResponse() (response *OperateWarningResponse) {
 	response = &OperateWarningResponse{
 		BaseResponse: &responses.BaseResponse{},

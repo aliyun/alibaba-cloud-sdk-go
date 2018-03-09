@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeScalingGroups api with *DescribeScalingGroupsRequest synchronously
+// DescribeScalingGroups invokes the ess.DescribeScalingGroups API synchronously
 // api document: https://help.aliyun.com/api/ess/describescalinggroups.html
 func (client *Client) DescribeScalingGroups(request *DescribeScalingGroupsRequest) (response *DescribeScalingGroupsResponse, err error) {
 	response = CreateDescribeScalingGroupsResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeScalingGroups(request *DescribeScalingGroupsReques
 	return
 }
 
-// invoke DescribeScalingGroups api with *DescribeScalingGroupsRequest asynchronously
+// DescribeScalingGroupsWithChan invokes the ess.DescribeScalingGroups API asynchronously
 // api document: https://help.aliyun.com/api/ess/describescalinggroups.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeScalingGroupsWithChan(request *DescribeScalingGroupsRequest) (<-chan *DescribeScalingGroupsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeScalingGroupsWithChan(request *DescribeScalingGrou
 	return responseChan, errChan
 }
 
-// invoke DescribeScalingGroups api with *DescribeScalingGroupsRequest asynchronously
+// DescribeScalingGroupsWithCallback invokes the ess.DescribeScalingGroups API asynchronously
 // api document: https://help.aliyun.com/api/ess/describescalinggroups.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeScalingGroupsWithCallback(request *DescribeScalingGroupsRequest, callback func(response *DescribeScalingGroupsResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeScalingGroupsWithCallback(request *DescribeScaling
 	return result
 }
 
+// DescribeScalingGroupsRequest is the request struct for api DescribeScalingGroups
 type DescribeScalingGroupsRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -123,6 +124,7 @@ type DescribeScalingGroupsRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// DescribeScalingGroupsResponse is the response struct for api DescribeScalingGroups
 type DescribeScalingGroupsResponse struct {
 	*responses.BaseResponse
 	TotalCount    int           `json:"TotalCount" xml:"TotalCount"`
@@ -132,8 +134,8 @@ type DescribeScalingGroupsResponse struct {
 	ScalingGroups ScalingGroups `json:"ScalingGroups" xml:"ScalingGroups"`
 }
 
-// create a request to invoke DescribeScalingGroups API
-func CreateDescribeScalingGroupsRequest() (request *DescribeScalingGroupsRequest) {
+// CreateDescribeScalingGroupsRequest creates a request to invoke DescribeScalingGroups API
+func CreateDescribeScalingGroupsRequest(request *DescribeScalingGroupsRequest) {
 	request = &DescribeScalingGroupsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -141,7 +143,7 @@ func CreateDescribeScalingGroupsRequest() (request *DescribeScalingGroupsRequest
 	return
 }
 
-// create a response to parse from DescribeScalingGroups response
+// CreateDescribeScalingGroupsResponse creates a response to parse from DescribeScalingGroups response
 func CreateDescribeScalingGroupsResponse() (response *DescribeScalingGroupsResponse) {
 	response = &DescribeScalingGroupsResponse{
 		BaseResponse: &responses.BaseResponse{},

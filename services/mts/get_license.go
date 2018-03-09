@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke GetLicense api with *GetLicenseRequest synchronously
+// GetLicense invokes the mts.GetLicense API synchronously
 // api document: https://help.aliyun.com/api/mts/getlicense.html
 func (client *Client) GetLicense(request *GetLicenseRequest) (response *GetLicenseResponse, err error) {
 	response = CreateGetLicenseResponse()
@@ -28,7 +28,7 @@ func (client *Client) GetLicense(request *GetLicenseRequest) (response *GetLicen
 	return
 }
 
-// invoke GetLicense api with *GetLicenseRequest asynchronously
+// GetLicenseWithChan invokes the mts.GetLicense API asynchronously
 // api document: https://help.aliyun.com/api/mts/getlicense.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetLicenseWithChan(request *GetLicenseRequest) (<-chan *GetLicenseResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) GetLicenseWithChan(request *GetLicenseRequest) (<-chan *Ge
 	return responseChan, errChan
 }
 
-// invoke GetLicense api with *GetLicenseRequest asynchronously
+// GetLicenseWithCallback invokes the mts.GetLicense API asynchronously
 // api document: https://help.aliyun.com/api/mts/getlicense.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetLicenseWithCallback(request *GetLicenseRequest, callback func(response *GetLicenseResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) GetLicenseWithCallback(request *GetLicenseRequest, callbac
 	return result
 }
 
+// GetLicenseRequest is the request struct for api GetLicense
 type GetLicenseRequest struct {
 	*requests.RpcRequest
 	OwnerId              string `position:"Query" name:"OwnerId"`
@@ -84,14 +85,15 @@ type GetLicenseRequest struct {
 	MediaId              string `position:"Query" name:"MediaId"`
 }
 
+// GetLicenseResponse is the response struct for api GetLicense
 type GetLicenseResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	License   string `json:"License" xml:"License"`
 }
 
-// create a request to invoke GetLicense API
-func CreateGetLicenseRequest() (request *GetLicenseRequest) {
+// CreateGetLicenseRequest creates a request to invoke GetLicense API
+func CreateGetLicenseRequest(request *GetLicenseRequest) {
 	request = &GetLicenseRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateGetLicenseRequest() (request *GetLicenseRequest) {
 	return
 }
 
-// create a response to parse from GetLicense response
+// CreateGetLicenseResponse creates a response to parse from GetLicense response
 func CreateGetLicenseResponse() (response *GetLicenseResponse) {
 	response = &GetLicenseResponse{
 		BaseResponse: &responses.BaseResponse{},

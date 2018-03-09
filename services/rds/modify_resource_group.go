@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifyResourceGroup api with *ModifyResourceGroupRequest synchronously
+// ModifyResourceGroup invokes the rds.ModifyResourceGroup API synchronously
 // api document: https://help.aliyun.com/api/rds/modifyresourcegroup.html
 func (client *Client) ModifyResourceGroup(request *ModifyResourceGroupRequest) (response *ModifyResourceGroupResponse, err error) {
 	response = CreateModifyResourceGroupResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifyResourceGroup(request *ModifyResourceGroupRequest) (
 	return
 }
 
-// invoke ModifyResourceGroup api with *ModifyResourceGroupRequest asynchronously
+// ModifyResourceGroupWithChan invokes the rds.ModifyResourceGroup API asynchronously
 // api document: https://help.aliyun.com/api/rds/modifyresourcegroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyResourceGroupWithChan(request *ModifyResourceGroupRequest) (<-chan *ModifyResourceGroupResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifyResourceGroupWithChan(request *ModifyResourceGroupRe
 	return responseChan, errChan
 }
 
-// invoke ModifyResourceGroup api with *ModifyResourceGroupRequest asynchronously
+// ModifyResourceGroupWithCallback invokes the rds.ModifyResourceGroup API asynchronously
 // api document: https://help.aliyun.com/api/rds/modifyresourcegroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyResourceGroupWithCallback(request *ModifyResourceGroupRequest, callback func(response *ModifyResourceGroupResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ModifyResourceGroupWithCallback(request *ModifyResourceGro
 	return result
 }
 
+// ModifyResourceGroupRequest is the request struct for api ModifyResourceGroup
 type ModifyResourceGroupRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,13 +85,14 @@ type ModifyResourceGroupRequest struct {
 	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 }
 
+// ModifyResourceGroupResponse is the response struct for api ModifyResourceGroup
 type ModifyResourceGroupResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ModifyResourceGroup API
-func CreateModifyResourceGroupRequest() (request *ModifyResourceGroupRequest) {
+// CreateModifyResourceGroupRequest creates a request to invoke ModifyResourceGroup API
+func CreateModifyResourceGroupRequest(request *ModifyResourceGroupRequest) {
 	request = &ModifyResourceGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateModifyResourceGroupRequest() (request *ModifyResourceGroupRequest) {
 	return
 }
 
-// create a response to parse from ModifyResourceGroup response
+// CreateModifyResourceGroupResponse creates a response to parse from ModifyResourceGroup response
 func CreateModifyResourceGroupResponse() (response *ModifyResourceGroupResponse) {
 	response = &ModifyResourceGroupResponse{
 		BaseResponse: &responses.BaseResponse{},

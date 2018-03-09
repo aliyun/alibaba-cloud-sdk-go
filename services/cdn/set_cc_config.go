@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SetCcConfig api with *SetCcConfigRequest synchronously
+// SetCcConfig invokes the cdn.SetCcConfig API synchronously
 // api document: https://help.aliyun.com/api/cdn/setccconfig.html
 func (client *Client) SetCcConfig(request *SetCcConfigRequest) (response *SetCcConfigResponse, err error) {
 	response = CreateSetCcConfigResponse()
@@ -28,7 +28,7 @@ func (client *Client) SetCcConfig(request *SetCcConfigRequest) (response *SetCcC
 	return
 }
 
-// invoke SetCcConfig api with *SetCcConfigRequest asynchronously
+// SetCcConfigWithChan invokes the cdn.SetCcConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/setccconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetCcConfigWithChan(request *SetCcConfigRequest) (<-chan *SetCcConfigResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SetCcConfigWithChan(request *SetCcConfigRequest) (<-chan *
 	return responseChan, errChan
 }
 
-// invoke SetCcConfig api with *SetCcConfigRequest asynchronously
+// SetCcConfigWithCallback invokes the cdn.SetCcConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/setccconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetCcConfigWithCallback(request *SetCcConfigRequest, callback func(response *SetCcConfigResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SetCcConfigWithCallback(request *SetCcConfigRequest, callb
 	return result
 }
 
+// SetCcConfigRequest is the request struct for api SetCcConfig
 type SetCcConfigRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,13 +83,14 @@ type SetCcConfigRequest struct {
 	BlockIps      string           `position:"Query" name:"BlockIps"`
 }
 
+// SetCcConfigResponse is the response struct for api SetCcConfig
 type SetCcConfigResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke SetCcConfig API
-func CreateSetCcConfigRequest() (request *SetCcConfigRequest) {
+// CreateSetCcConfigRequest creates a request to invoke SetCcConfig API
+func CreateSetCcConfigRequest(request *SetCcConfigRequest) {
 	request = &SetCcConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -96,7 +98,7 @@ func CreateSetCcConfigRequest() (request *SetCcConfigRequest) {
 	return
 }
 
-// create a response to parse from SetCcConfig response
+// CreateSetCcConfigResponse creates a response to parse from SetCcConfig response
 func CreateSetCcConfigResponse() (response *SetCcConfigResponse) {
 	response = &SetCcConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

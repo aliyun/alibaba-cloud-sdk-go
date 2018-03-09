@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeMountTargets api with *DescribeMountTargetsRequest synchronously
+// DescribeMountTargets invokes the nas.DescribeMountTargets API synchronously
 // api document: https://help.aliyun.com/api/nas/describemounttargets.html
 func (client *Client) DescribeMountTargets(request *DescribeMountTargetsRequest) (response *DescribeMountTargetsResponse, err error) {
 	response = CreateDescribeMountTargetsResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeMountTargets(request *DescribeMountTargetsRequest)
 	return
 }
 
-// invoke DescribeMountTargets api with *DescribeMountTargetsRequest asynchronously
+// DescribeMountTargetsWithChan invokes the nas.DescribeMountTargets API asynchronously
 // api document: https://help.aliyun.com/api/nas/describemounttargets.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeMountTargetsWithChan(request *DescribeMountTargetsRequest) (<-chan *DescribeMountTargetsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeMountTargetsWithChan(request *DescribeMountTargets
 	return responseChan, errChan
 }
 
-// invoke DescribeMountTargets api with *DescribeMountTargetsRequest asynchronously
+// DescribeMountTargetsWithCallback invokes the nas.DescribeMountTargets API asynchronously
 // api document: https://help.aliyun.com/api/nas/describemounttargets.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeMountTargetsWithCallback(request *DescribeMountTargetsRequest, callback func(response *DescribeMountTargetsResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeMountTargetsWithCallback(request *DescribeMountTar
 	return result
 }
 
+// DescribeMountTargetsRequest is the request struct for api DescribeMountTargets
 type DescribeMountTargetsRequest struct {
 	*requests.RpcRequest
 	FileSystemId      string           `position:"Query" name:"FileSystemId"`
@@ -81,6 +82,7 @@ type DescribeMountTargetsRequest struct {
 	PageNumber        requests.Integer `position:"Query" name:"PageNumber"`
 }
 
+// DescribeMountTargetsResponse is the response struct for api DescribeMountTargets
 type DescribeMountTargetsResponse struct {
 	*responses.BaseResponse
 	RequestId    string                             `json:"RequestId" xml:"RequestId"`
@@ -90,8 +92,8 @@ type DescribeMountTargetsResponse struct {
 	MountTargets MountTargetsInDescribeMountTargets `json:"MountTargets" xml:"MountTargets"`
 }
 
-// create a request to invoke DescribeMountTargets API
-func CreateDescribeMountTargetsRequest() (request *DescribeMountTargetsRequest) {
+// CreateDescribeMountTargetsRequest creates a request to invoke DescribeMountTargets API
+func CreateDescribeMountTargetsRequest(request *DescribeMountTargetsRequest) {
 	request = &DescribeMountTargetsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateDescribeMountTargetsRequest() (request *DescribeMountTargetsRequest) 
 	return
 }
 
-// create a response to parse from DescribeMountTargets response
+// CreateDescribeMountTargetsResponse creates a response to parse from DescribeMountTargets response
 func CreateDescribeMountTargetsResponse() (response *DescribeMountTargetsResponse) {
 	response = &DescribeMountTargetsResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ResetAccount api with *ResetAccountRequest synchronously
+// ResetAccount invokes the rds.ResetAccount API synchronously
 // api document: https://help.aliyun.com/api/rds/resetaccount.html
 func (client *Client) ResetAccount(request *ResetAccountRequest) (response *ResetAccountResponse, err error) {
 	response = CreateResetAccountResponse()
@@ -28,7 +28,7 @@ func (client *Client) ResetAccount(request *ResetAccountRequest) (response *Rese
 	return
 }
 
-// invoke ResetAccount api with *ResetAccountRequest asynchronously
+// ResetAccountWithChan invokes the rds.ResetAccount API asynchronously
 // api document: https://help.aliyun.com/api/rds/resetaccount.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResetAccountWithChan(request *ResetAccountRequest) (<-chan *ResetAccountResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ResetAccountWithChan(request *ResetAccountRequest) (<-chan
 	return responseChan, errChan
 }
 
-// invoke ResetAccount api with *ResetAccountRequest asynchronously
+// ResetAccountWithCallback invokes the rds.ResetAccount API asynchronously
 // api document: https://help.aliyun.com/api/rds/resetaccount.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResetAccountWithCallback(request *ResetAccountRequest, callback func(response *ResetAccountResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ResetAccountWithCallback(request *ResetAccountRequest, cal
 	return result
 }
 
+// ResetAccountRequest is the request struct for api ResetAccount
 type ResetAccountRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,13 +85,14 @@ type ResetAccountRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// ResetAccountResponse is the response struct for api ResetAccount
 type ResetAccountResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ResetAccount API
-func CreateResetAccountRequest() (request *ResetAccountRequest) {
+// CreateResetAccountRequest creates a request to invoke ResetAccount API
+func CreateResetAccountRequest(request *ResetAccountRequest) {
 	request = &ResetAccountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateResetAccountRequest() (request *ResetAccountRequest) {
 	return
 }
 
-// create a response to parse from ResetAccount response
+// CreateResetAccountResponse creates a response to parse from ResetAccount response
 func CreateResetAccountResponse() (response *ResetAccountResponse) {
 	response = &ResetAccountResponse{
 		BaseResponse: &responses.BaseResponse{},

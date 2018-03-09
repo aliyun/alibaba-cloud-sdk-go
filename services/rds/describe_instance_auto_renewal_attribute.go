@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeInstanceAutoRenewalAttribute api with *DescribeInstanceAutoRenewalAttributeRequest synchronously
+// DescribeInstanceAutoRenewalAttribute invokes the rds.DescribeInstanceAutoRenewalAttribute API synchronously
 // api document: https://help.aliyun.com/api/rds/describeinstanceautorenewalattribute.html
 func (client *Client) DescribeInstanceAutoRenewalAttribute(request *DescribeInstanceAutoRenewalAttributeRequest) (response *DescribeInstanceAutoRenewalAttributeResponse, err error) {
 	response = CreateDescribeInstanceAutoRenewalAttributeResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeInstanceAutoRenewalAttribute(request *DescribeInst
 	return
 }
 
-// invoke DescribeInstanceAutoRenewalAttribute api with *DescribeInstanceAutoRenewalAttributeRequest asynchronously
+// DescribeInstanceAutoRenewalAttributeWithChan invokes the rds.DescribeInstanceAutoRenewalAttribute API asynchronously
 // api document: https://help.aliyun.com/api/rds/describeinstanceautorenewalattribute.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceAutoRenewalAttributeWithChan(request *DescribeInstanceAutoRenewalAttributeRequest) (<-chan *DescribeInstanceAutoRenewalAttributeResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeInstanceAutoRenewalAttributeWithChan(request *Desc
 	return responseChan, errChan
 }
 
-// invoke DescribeInstanceAutoRenewalAttribute api with *DescribeInstanceAutoRenewalAttributeRequest asynchronously
+// DescribeInstanceAutoRenewalAttributeWithCallback invokes the rds.DescribeInstanceAutoRenewalAttribute API asynchronously
 // api document: https://help.aliyun.com/api/rds/describeinstanceautorenewalattribute.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceAutoRenewalAttributeWithCallback(request *DescribeInstanceAutoRenewalAttributeRequest, callback func(response *DescribeInstanceAutoRenewalAttributeResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeInstanceAutoRenewalAttributeWithCallback(request *
 	return result
 }
 
+// DescribeInstanceAutoRenewalAttributeRequest is the request struct for api DescribeInstanceAutoRenewalAttribute
 type DescribeInstanceAutoRenewalAttributeRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -86,6 +87,7 @@ type DescribeInstanceAutoRenewalAttributeRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// DescribeInstanceAutoRenewalAttributeResponse is the response struct for api DescribeInstanceAutoRenewalAttribute
 type DescribeInstanceAutoRenewalAttributeResponse struct {
 	*responses.BaseResponse
 	RequestId        string                                      `json:"RequestId" xml:"RequestId"`
@@ -95,8 +97,8 @@ type DescribeInstanceAutoRenewalAttributeResponse struct {
 	Items            ItemsInDescribeInstanceAutoRenewalAttribute `json:"Items" xml:"Items"`
 }
 
-// create a request to invoke DescribeInstanceAutoRenewalAttribute API
-func CreateDescribeInstanceAutoRenewalAttributeRequest() (request *DescribeInstanceAutoRenewalAttributeRequest) {
+// CreateDescribeInstanceAutoRenewalAttributeRequest creates a request to invoke DescribeInstanceAutoRenewalAttribute API
+func CreateDescribeInstanceAutoRenewalAttributeRequest(request *DescribeInstanceAutoRenewalAttributeRequest) {
 	request = &DescribeInstanceAutoRenewalAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -104,7 +106,7 @@ func CreateDescribeInstanceAutoRenewalAttributeRequest() (request *DescribeInsta
 	return
 }
 
-// create a response to parse from DescribeInstanceAutoRenewalAttribute response
+// CreateDescribeInstanceAutoRenewalAttributeResponse creates a response to parse from DescribeInstanceAutoRenewalAttribute response
 func CreateDescribeInstanceAutoRenewalAttributeResponse() (response *DescribeInstanceAutoRenewalAttributeResponse) {
 	response = &DescribeInstanceAutoRenewalAttributeResponse{
 		BaseResponse: &responses.BaseResponse{},

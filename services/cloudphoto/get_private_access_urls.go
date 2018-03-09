@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke GetPrivateAccessUrls api with *GetPrivateAccessUrlsRequest synchronously
+// GetPrivateAccessUrls invokes the cloudphoto.GetPrivateAccessUrls API synchronously
 // api document: https://help.aliyun.com/api/cloudphoto/getprivateaccessurls.html
 func (client *Client) GetPrivateAccessUrls(request *GetPrivateAccessUrlsRequest) (response *GetPrivateAccessUrlsResponse, err error) {
 	response = CreateGetPrivateAccessUrlsResponse()
@@ -28,7 +28,7 @@ func (client *Client) GetPrivateAccessUrls(request *GetPrivateAccessUrlsRequest)
 	return
 }
 
-// invoke GetPrivateAccessUrls api with *GetPrivateAccessUrlsRequest asynchronously
+// GetPrivateAccessUrlsWithChan invokes the cloudphoto.GetPrivateAccessUrls API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/getprivateaccessurls.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetPrivateAccessUrlsWithChan(request *GetPrivateAccessUrlsRequest) (<-chan *GetPrivateAccessUrlsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) GetPrivateAccessUrlsWithChan(request *GetPrivateAccessUrls
 	return responseChan, errChan
 }
 
-// invoke GetPrivateAccessUrls api with *GetPrivateAccessUrlsRequest asynchronously
+// GetPrivateAccessUrlsWithCallback invokes the cloudphoto.GetPrivateAccessUrls API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/getprivateaccessurls.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetPrivateAccessUrlsWithCallback(request *GetPrivateAccessUrlsRequest, callback func(response *GetPrivateAccessUrlsResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) GetPrivateAccessUrlsWithCallback(request *GetPrivateAccess
 	return result
 }
 
+// GetPrivateAccessUrlsRequest is the request struct for api GetPrivateAccessUrls
 type GetPrivateAccessUrlsRequest struct {
 	*requests.RpcRequest
 	PhotoId   *[]string `position:"Query" name:"PhotoId"  type:"Repeated"`
@@ -81,6 +82,7 @@ type GetPrivateAccessUrlsRequest struct {
 	LibraryId string    `position:"Query" name:"LibraryId"`
 }
 
+// GetPrivateAccessUrlsResponse is the response struct for api GetPrivateAccessUrls
 type GetPrivateAccessUrlsResponse struct {
 	*responses.BaseResponse
 	Code      string   `json:"Code" xml:"Code"`
@@ -90,8 +92,8 @@ type GetPrivateAccessUrlsResponse struct {
 	Results   []Result `json:"Results" xml:"Results"`
 }
 
-// create a request to invoke GetPrivateAccessUrls API
-func CreateGetPrivateAccessUrlsRequest() (request *GetPrivateAccessUrlsRequest) {
+// CreateGetPrivateAccessUrlsRequest creates a request to invoke GetPrivateAccessUrls API
+func CreateGetPrivateAccessUrlsRequest(request *GetPrivateAccessUrlsRequest) {
 	request = &GetPrivateAccessUrlsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateGetPrivateAccessUrlsRequest() (request *GetPrivateAccessUrlsRequest) 
 	return
 }
 
-// create a response to parse from GetPrivateAccessUrls response
+// CreateGetPrivateAccessUrlsResponse creates a response to parse from GetPrivateAccessUrls response
 func CreateGetPrivateAccessUrlsResponse() (response *GetPrivateAccessUrlsResponse) {
 	response = &GetPrivateAccessUrlsResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeInstancePage api with *DescribeInstancePageRequest synchronously
+// DescribeInstancePage invokes the ddospro.DescribeInstancePage API synchronously
 // api document: https://help.aliyun.com/api/ddospro/describeinstancepage.html
 func (client *Client) DescribeInstancePage(request *DescribeInstancePageRequest) (response *DescribeInstancePageResponse, err error) {
 	response = CreateDescribeInstancePageResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeInstancePage(request *DescribeInstancePageRequest)
 	return
 }
 
-// invoke DescribeInstancePage api with *DescribeInstancePageRequest asynchronously
+// DescribeInstancePageWithChan invokes the ddospro.DescribeInstancePage API asynchronously
 // api document: https://help.aliyun.com/api/ddospro/describeinstancepage.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstancePageWithChan(request *DescribeInstancePageRequest) (<-chan *DescribeInstancePageResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeInstancePageWithChan(request *DescribeInstancePage
 	return responseChan, errChan
 }
 
-// invoke DescribeInstancePage api with *DescribeInstancePageRequest asynchronously
+// DescribeInstancePageWithCallback invokes the ddospro.DescribeInstancePage API asynchronously
 // api document: https://help.aliyun.com/api/ddospro/describeinstancepage.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstancePageWithCallback(request *DescribeInstancePageRequest, callback func(response *DescribeInstancePageResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeInstancePageWithCallback(request *DescribeInstance
 	return result
 }
 
+// DescribeInstancePageRequest is the request struct for api DescribeInstancePage
 type DescribeInstancePageRequest struct {
 	*requests.RpcRequest
 	SourceIp        string           `position:"Query" name:"SourceIp"`
@@ -83,6 +84,7 @@ type DescribeInstancePageRequest struct {
 	IpList          *[]string        `position:"Query" name:"IpList"  type:"Repeated"`
 }
 
+// DescribeInstancePageResponse is the response struct for api DescribeInstancePage
 type DescribeInstancePageResponse struct {
 	*responses.BaseResponse
 	RequestId    string         `json:"RequestId" xml:"RequestId"`
@@ -90,8 +92,8 @@ type DescribeInstancePageResponse struct {
 	InstanceList []InstanceInfo `json:"InstanceList" xml:"InstanceList"`
 }
 
-// create a request to invoke DescribeInstancePage API
-func CreateDescribeInstancePageRequest() (request *DescribeInstancePageRequest) {
+// CreateDescribeInstancePageRequest creates a request to invoke DescribeInstancePage API
+func CreateDescribeInstancePageRequest(request *DescribeInstancePageRequest) {
 	request = &DescribeInstancePageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateDescribeInstancePageRequest() (request *DescribeInstancePageRequest) 
 	return
 }
 
-// create a response to parse from DescribeInstancePage response
+// CreateDescribeInstancePageResponse creates a response to parse from DescribeInstancePage response
 func CreateDescribeInstancePageResponse() (response *DescribeInstancePageResponse) {
 	response = &DescribeInstancePageResponse{
 		BaseResponse: &responses.BaseResponse{},

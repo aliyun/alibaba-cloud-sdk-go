@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CreateScalingConfiguration api with *CreateScalingConfigurationRequest synchronously
+// CreateScalingConfiguration invokes the ess.CreateScalingConfiguration API synchronously
 // api document: https://help.aliyun.com/api/ess/createscalingconfiguration.html
 func (client *Client) CreateScalingConfiguration(request *CreateScalingConfigurationRequest) (response *CreateScalingConfigurationResponse, err error) {
 	response = CreateCreateScalingConfigurationResponse()
@@ -28,7 +28,7 @@ func (client *Client) CreateScalingConfiguration(request *CreateScalingConfigura
 	return
 }
 
-// invoke CreateScalingConfiguration api with *CreateScalingConfigurationRequest asynchronously
+// CreateScalingConfigurationWithChan invokes the ess.CreateScalingConfiguration API asynchronously
 // api document: https://help.aliyun.com/api/ess/createscalingconfiguration.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateScalingConfigurationWithChan(request *CreateScalingConfigurationRequest) (<-chan *CreateScalingConfigurationResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CreateScalingConfigurationWithChan(request *CreateScalingC
 	return responseChan, errChan
 }
 
-// invoke CreateScalingConfiguration api with *CreateScalingConfigurationRequest asynchronously
+// CreateScalingConfigurationWithCallback invokes the ess.CreateScalingConfiguration API asynchronously
 // api document: https://help.aliyun.com/api/ess/createscalingconfiguration.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateScalingConfigurationWithCallback(request *CreateScalingConfigurationRequest, callback func(response *CreateScalingConfigurationResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) CreateScalingConfigurationWithCallback(request *CreateScal
 	return result
 }
 
+// CreateScalingConfigurationRequest is the request struct for api CreateScalingConfiguration
 type CreateScalingConfigurationRequest struct {
 	*requests.RpcRequest
 	OwnerId                     requests.Integer `position:"Query" name:"OwnerId"`
@@ -119,14 +120,15 @@ type CreateScalingConfigurationRequest struct {
 	InstanceName                string           `position:"Query" name:"InstanceName"`
 }
 
+// CreateScalingConfigurationResponse is the response struct for api CreateScalingConfiguration
 type CreateScalingConfigurationResponse struct {
 	*responses.BaseResponse
 	ScalingConfigurationId string `json:"ScalingConfigurationId" xml:"ScalingConfigurationId"`
 	RequestId              string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke CreateScalingConfiguration API
-func CreateCreateScalingConfigurationRequest() (request *CreateScalingConfigurationRequest) {
+// CreateCreateScalingConfigurationRequest creates a request to invoke CreateScalingConfiguration API
+func CreateCreateScalingConfigurationRequest(request *CreateScalingConfigurationRequest) {
 	request = &CreateScalingConfigurationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -134,7 +136,7 @@ func CreateCreateScalingConfigurationRequest() (request *CreateScalingConfigurat
 	return
 }
 
-// create a response to parse from CreateScalingConfiguration response
+// CreateCreateScalingConfigurationResponse creates a response to parse from CreateScalingConfiguration response
 func CreateCreateScalingConfigurationResponse() (response *CreateScalingConfigurationResponse) {
 	response = &CreateScalingConfigurationResponse{
 		BaseResponse: &responses.BaseResponse{},

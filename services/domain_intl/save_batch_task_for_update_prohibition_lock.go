@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SaveBatchTaskForUpdateProhibitionLock api with *SaveBatchTaskForUpdateProhibitionLockRequest synchronously
+// SaveBatchTaskForUpdateProhibitionLock invokes the domain_intl.SaveBatchTaskForUpdateProhibitionLock API synchronously
 // api document: https://help.aliyun.com/api/domain-intl/savebatchtaskforupdateprohibitionlock.html
 func (client *Client) SaveBatchTaskForUpdateProhibitionLock(request *SaveBatchTaskForUpdateProhibitionLockRequest) (response *SaveBatchTaskForUpdateProhibitionLockResponse, err error) {
 	response = CreateSaveBatchTaskForUpdateProhibitionLockResponse()
@@ -28,7 +28,7 @@ func (client *Client) SaveBatchTaskForUpdateProhibitionLock(request *SaveBatchTa
 	return
 }
 
-// invoke SaveBatchTaskForUpdateProhibitionLock api with *SaveBatchTaskForUpdateProhibitionLockRequest asynchronously
+// SaveBatchTaskForUpdateProhibitionLockWithChan invokes the domain_intl.SaveBatchTaskForUpdateProhibitionLock API asynchronously
 // api document: https://help.aliyun.com/api/domain-intl/savebatchtaskforupdateprohibitionlock.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveBatchTaskForUpdateProhibitionLockWithChan(request *SaveBatchTaskForUpdateProhibitionLockRequest) (<-chan *SaveBatchTaskForUpdateProhibitionLockResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SaveBatchTaskForUpdateProhibitionLockWithChan(request *Sav
 	return responseChan, errChan
 }
 
-// invoke SaveBatchTaskForUpdateProhibitionLock api with *SaveBatchTaskForUpdateProhibitionLockRequest asynchronously
+// SaveBatchTaskForUpdateProhibitionLockWithCallback invokes the domain_intl.SaveBatchTaskForUpdateProhibitionLock API asynchronously
 // api document: https://help.aliyun.com/api/domain-intl/savebatchtaskforupdateprohibitionlock.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveBatchTaskForUpdateProhibitionLockWithCallback(request *SaveBatchTaskForUpdateProhibitionLockRequest, callback func(response *SaveBatchTaskForUpdateProhibitionLockResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SaveBatchTaskForUpdateProhibitionLockWithCallback(request 
 	return result
 }
 
+// SaveBatchTaskForUpdateProhibitionLockRequest is the request struct for api SaveBatchTaskForUpdateProhibitionLock
 type SaveBatchTaskForUpdateProhibitionLockRequest struct {
 	*requests.RpcRequest
 	UserClientIp string           `position:"Query" name:"UserClientIp"`
@@ -81,14 +82,15 @@ type SaveBatchTaskForUpdateProhibitionLockRequest struct {
 	Status       requests.Boolean `position:"Query" name:"Status"`
 }
 
+// SaveBatchTaskForUpdateProhibitionLockResponse is the response struct for api SaveBatchTaskForUpdateProhibitionLock
 type SaveBatchTaskForUpdateProhibitionLockResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	TaskNo    string `json:"TaskNo" xml:"TaskNo"`
 }
 
-// create a request to invoke SaveBatchTaskForUpdateProhibitionLock API
-func CreateSaveBatchTaskForUpdateProhibitionLockRequest() (request *SaveBatchTaskForUpdateProhibitionLockRequest) {
+// CreateSaveBatchTaskForUpdateProhibitionLockRequest creates a request to invoke SaveBatchTaskForUpdateProhibitionLock API
+func CreateSaveBatchTaskForUpdateProhibitionLockRequest(request *SaveBatchTaskForUpdateProhibitionLockRequest) {
 	request = &SaveBatchTaskForUpdateProhibitionLockRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -96,7 +98,7 @@ func CreateSaveBatchTaskForUpdateProhibitionLockRequest() (request *SaveBatchTas
 	return
 }
 
-// create a response to parse from SaveBatchTaskForUpdateProhibitionLock response
+// CreateSaveBatchTaskForUpdateProhibitionLockResponse creates a response to parse from SaveBatchTaskForUpdateProhibitionLock response
 func CreateSaveBatchTaskForUpdateProhibitionLockResponse() (response *SaveBatchTaskForUpdateProhibitionLockResponse) {
 	response = &SaveBatchTaskForUpdateProhibitionLockResponse{
 		BaseResponse: &responses.BaseResponse{},

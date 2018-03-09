@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeDomainUpstreamOfCenter api with *DescribeDomainUpstreamOfCenterRequest synchronously
+// DescribeDomainUpstreamOfCenter invokes the cdn.DescribeDomainUpstreamOfCenter API synchronously
 // api document: https://help.aliyun.com/api/cdn/describedomainupstreamofcenter.html
 func (client *Client) DescribeDomainUpstreamOfCenter(request *DescribeDomainUpstreamOfCenterRequest) (response *DescribeDomainUpstreamOfCenterResponse, err error) {
 	response = CreateDescribeDomainUpstreamOfCenterResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeDomainUpstreamOfCenter(request *DescribeDomainUpst
 	return
 }
 
-// invoke DescribeDomainUpstreamOfCenter api with *DescribeDomainUpstreamOfCenterRequest asynchronously
+// DescribeDomainUpstreamOfCenterWithChan invokes the cdn.DescribeDomainUpstreamOfCenter API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describedomainupstreamofcenter.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainUpstreamOfCenterWithChan(request *DescribeDomainUpstreamOfCenterRequest) (<-chan *DescribeDomainUpstreamOfCenterResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeDomainUpstreamOfCenterWithChan(request *DescribeDo
 	return responseChan, errChan
 }
 
-// invoke DescribeDomainUpstreamOfCenter api with *DescribeDomainUpstreamOfCenterRequest asynchronously
+// DescribeDomainUpstreamOfCenterWithCallback invokes the cdn.DescribeDomainUpstreamOfCenter API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describedomainupstreamofcenter.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainUpstreamOfCenterWithCallback(request *DescribeDomainUpstreamOfCenterRequest, callback func(response *DescribeDomainUpstreamOfCenterResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeDomainUpstreamOfCenterWithCallback(request *Descri
 	return result
 }
 
+// DescribeDomainUpstreamOfCenterRequest is the request struct for api DescribeDomainUpstreamOfCenter
 type DescribeDomainUpstreamOfCenterRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,14 +83,15 @@ type DescribeDomainUpstreamOfCenterRequest struct {
 	EndTime       string           `position:"Query" name:"EndTime"`
 }
 
+// DescribeDomainUpstreamOfCenterResponse is the response struct for api DescribeDomainUpstreamOfCenter
 type DescribeDomainUpstreamOfCenterResponse struct {
 	*responses.BaseResponse
 	RequestId string                                   `json:"RequestId" xml:"RequestId"`
 	BpsDatas  BpsDatasInDescribeDomainUpstreamOfCenter `json:"BpsDatas" xml:"BpsDatas"`
 }
 
-// create a request to invoke DescribeDomainUpstreamOfCenter API
-func CreateDescribeDomainUpstreamOfCenterRequest() (request *DescribeDomainUpstreamOfCenterRequest) {
+// CreateDescribeDomainUpstreamOfCenterRequest creates a request to invoke DescribeDomainUpstreamOfCenter API
+func CreateDescribeDomainUpstreamOfCenterRequest(request *DescribeDomainUpstreamOfCenterRequest) {
 	request = &DescribeDomainUpstreamOfCenterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateDescribeDomainUpstreamOfCenterRequest() (request *DescribeDomainUpstr
 	return
 }
 
-// create a response to parse from DescribeDomainUpstreamOfCenter response
+// CreateDescribeDomainUpstreamOfCenterResponse creates a response to parse from DescribeDomainUpstreamOfCenter response
 func CreateDescribeDomainUpstreamOfCenterResponse() (response *DescribeDomainUpstreamOfCenterResponse) {
 	response = &DescribeDomainUpstreamOfCenterResponse{
 		BaseResponse: &responses.BaseResponse{},

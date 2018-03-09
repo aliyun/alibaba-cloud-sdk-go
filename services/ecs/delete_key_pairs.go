@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteKeyPairs api with *DeleteKeyPairsRequest synchronously
+// DeleteKeyPairs invokes the ecs.DeleteKeyPairs API synchronously
 // api document: https://help.aliyun.com/api/ecs/deletekeypairs.html
 func (client *Client) DeleteKeyPairs(request *DeleteKeyPairsRequest) (response *DeleteKeyPairsResponse, err error) {
 	response = CreateDeleteKeyPairsResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteKeyPairs(request *DeleteKeyPairsRequest) (response *
 	return
 }
 
-// invoke DeleteKeyPairs api with *DeleteKeyPairsRequest asynchronously
+// DeleteKeyPairsWithChan invokes the ecs.DeleteKeyPairs API asynchronously
 // api document: https://help.aliyun.com/api/ecs/deletekeypairs.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteKeyPairsWithChan(request *DeleteKeyPairsRequest) (<-chan *DeleteKeyPairsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteKeyPairsWithChan(request *DeleteKeyPairsRequest) (<-
 	return responseChan, errChan
 }
 
-// invoke DeleteKeyPairs api with *DeleteKeyPairsRequest asynchronously
+// DeleteKeyPairsWithCallback invokes the ecs.DeleteKeyPairs API asynchronously
 // api document: https://help.aliyun.com/api/ecs/deletekeypairs.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteKeyPairsWithCallback(request *DeleteKeyPairsRequest, callback func(response *DeleteKeyPairsResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DeleteKeyPairsWithCallback(request *DeleteKeyPairsRequest,
 	return result
 }
 
+// DeleteKeyPairsRequest is the request struct for api DeleteKeyPairs
 type DeleteKeyPairsRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -81,13 +82,14 @@ type DeleteKeyPairsRequest struct {
 	KeyPairNames         string           `position:"Query" name:"KeyPairNames"`
 }
 
+// DeleteKeyPairsResponse is the response struct for api DeleteKeyPairs
 type DeleteKeyPairsResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DeleteKeyPairs API
-func CreateDeleteKeyPairsRequest() (request *DeleteKeyPairsRequest) {
+// CreateDeleteKeyPairsRequest creates a request to invoke DeleteKeyPairs API
+func CreateDeleteKeyPairsRequest(request *DeleteKeyPairsRequest) {
 	request = &DeleteKeyPairsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateDeleteKeyPairsRequest() (request *DeleteKeyPairsRequest) {
 	return
 }
 
-// create a response to parse from DeleteKeyPairs response
+// CreateDeleteKeyPairsResponse creates a response to parse from DeleteKeyPairs response
 func CreateDeleteKeyPairsResponse() (response *DeleteKeyPairsResponse) {
 	response = &DeleteKeyPairsResponse{
 		BaseResponse: &responses.BaseResponse{},

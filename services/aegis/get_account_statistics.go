@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke GetAccountStatistics api with *GetAccountStatisticsRequest synchronously
+// GetAccountStatistics invokes the aegis.GetAccountStatistics API synchronously
 // api document: https://help.aliyun.com/api/aegis/getaccountstatistics.html
 func (client *Client) GetAccountStatistics(request *GetAccountStatisticsRequest) (response *GetAccountStatisticsResponse, err error) {
 	response = CreateGetAccountStatisticsResponse()
@@ -28,7 +28,7 @@ func (client *Client) GetAccountStatistics(request *GetAccountStatisticsRequest)
 	return
 }
 
-// invoke GetAccountStatistics api with *GetAccountStatisticsRequest asynchronously
+// GetAccountStatisticsWithChan invokes the aegis.GetAccountStatistics API asynchronously
 // api document: https://help.aliyun.com/api/aegis/getaccountstatistics.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetAccountStatisticsWithChan(request *GetAccountStatisticsRequest) (<-chan *GetAccountStatisticsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) GetAccountStatisticsWithChan(request *GetAccountStatistics
 	return responseChan, errChan
 }
 
-// invoke GetAccountStatistics api with *GetAccountStatisticsRequest asynchronously
+// GetAccountStatisticsWithCallback invokes the aegis.GetAccountStatistics API asynchronously
 // api document: https://help.aliyun.com/api/aegis/getaccountstatistics.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetAccountStatisticsWithCallback(request *GetAccountStatisticsRequest, callback func(response *GetAccountStatisticsResponse, err error)) <-chan int {
@@ -73,12 +73,14 @@ func (client *Client) GetAccountStatisticsWithCallback(request *GetAccountStatis
 	return result
 }
 
+// GetAccountStatisticsRequest is the request struct for api GetAccountStatistics
 type GetAccountStatisticsRequest struct {
 	*requests.RpcRequest
 	StartTime string `position:"Query" name:"StartTime"`
 	EndTime   string `position:"Query" name:"EndTime"`
 }
 
+// GetAccountStatisticsResponse is the response struct for api GetAccountStatistics
 type GetAccountStatisticsResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"requestId" xml:"requestId"`
@@ -88,8 +90,8 @@ type GetAccountStatisticsResponse struct {
 	Data      Data   `json:"Data" xml:"Data"`
 }
 
-// create a request to invoke GetAccountStatistics API
-func CreateGetAccountStatisticsRequest() (request *GetAccountStatisticsRequest) {
+// CreateGetAccountStatisticsRequest creates a request to invoke GetAccountStatistics API
+func CreateGetAccountStatisticsRequest(request *GetAccountStatisticsRequest) {
 	request = &GetAccountStatisticsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateGetAccountStatisticsRequest() (request *GetAccountStatisticsRequest) 
 	return
 }
 
-// create a response to parse from GetAccountStatistics response
+// CreateGetAccountStatisticsResponse creates a response to parse from GetAccountStatistics response
 func CreateGetAccountStatisticsResponse() (response *GetAccountStatisticsResponse) {
 	response = &GetAccountStatisticsResponse{
 		BaseResponse: &responses.BaseResponse{},

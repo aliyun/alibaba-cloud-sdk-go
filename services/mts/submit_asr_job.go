@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SubmitAsrJob api with *SubmitAsrJobRequest synchronously
+// SubmitAsrJob invokes the mts.SubmitAsrJob API synchronously
 // api document: https://help.aliyun.com/api/mts/submitasrjob.html
 func (client *Client) SubmitAsrJob(request *SubmitAsrJobRequest) (response *SubmitAsrJobResponse, err error) {
 	response = CreateSubmitAsrJobResponse()
@@ -28,7 +28,7 @@ func (client *Client) SubmitAsrJob(request *SubmitAsrJobRequest) (response *Subm
 	return
 }
 
-// invoke SubmitAsrJob api with *SubmitAsrJobRequest asynchronously
+// SubmitAsrJobWithChan invokes the mts.SubmitAsrJob API asynchronously
 // api document: https://help.aliyun.com/api/mts/submitasrjob.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitAsrJobWithChan(request *SubmitAsrJobRequest) (<-chan *SubmitAsrJobResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SubmitAsrJobWithChan(request *SubmitAsrJobRequest) (<-chan
 	return responseChan, errChan
 }
 
-// invoke SubmitAsrJob api with *SubmitAsrJobRequest asynchronously
+// SubmitAsrJobWithCallback invokes the mts.SubmitAsrJob API asynchronously
 // api document: https://help.aliyun.com/api/mts/submitasrjob.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitAsrJobWithCallback(request *SubmitAsrJobRequest, callback func(response *SubmitAsrJobResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SubmitAsrJobWithCallback(request *SubmitAsrJobRequest, cal
 	return result
 }
 
+// SubmitAsrJobRequest is the request struct for api SubmitAsrJob
 type SubmitAsrJobRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -85,14 +86,15 @@ type SubmitAsrJobRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// SubmitAsrJobResponse is the response struct for api SubmitAsrJob
 type SubmitAsrJobResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	JobId     string `json:"JobId" xml:"JobId"`
 }
 
-// create a request to invoke SubmitAsrJob API
-func CreateSubmitAsrJobRequest() (request *SubmitAsrJobRequest) {
+// CreateSubmitAsrJobRequest creates a request to invoke SubmitAsrJob API
+func CreateSubmitAsrJobRequest(request *SubmitAsrJobRequest) {
 	request = &SubmitAsrJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -100,7 +102,7 @@ func CreateSubmitAsrJobRequest() (request *SubmitAsrJobRequest) {
 	return
 }
 
-// create a response to parse from SubmitAsrJob response
+// CreateSubmitAsrJobResponse creates a response to parse from SubmitAsrJob response
 func CreateSubmitAsrJobResponse() (response *SubmitAsrJobResponse) {
 	response = &SubmitAsrJobResponse{
 		BaseResponse: &responses.BaseResponse{},

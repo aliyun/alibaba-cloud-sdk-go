@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeAgilityTunnelCerts api with *DescribeAgilityTunnelCertsRequest synchronously
+// DescribeAgilityTunnelCerts invokes the cs.DescribeAgilityTunnelCerts API synchronously
 // api document: https://help.aliyun.com/api/cs/describeagilitytunnelcerts.html
 func (client *Client) DescribeAgilityTunnelCerts(request *DescribeAgilityTunnelCertsRequest) (response *DescribeAgilityTunnelCertsResponse, err error) {
 	response = CreateDescribeAgilityTunnelCertsResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeAgilityTunnelCerts(request *DescribeAgilityTunnelC
 	return
 }
 
-// invoke DescribeAgilityTunnelCerts api with *DescribeAgilityTunnelCertsRequest asynchronously
+// DescribeAgilityTunnelCertsWithChan invokes the cs.DescribeAgilityTunnelCerts API asynchronously
 // api document: https://help.aliyun.com/api/cs/describeagilitytunnelcerts.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAgilityTunnelCertsWithChan(request *DescribeAgilityTunnelCertsRequest) (<-chan *DescribeAgilityTunnelCertsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeAgilityTunnelCertsWithChan(request *DescribeAgilit
 	return responseChan, errChan
 }
 
-// invoke DescribeAgilityTunnelCerts api with *DescribeAgilityTunnelCertsRequest asynchronously
+// DescribeAgilityTunnelCertsWithCallback invokes the cs.DescribeAgilityTunnelCerts API asynchronously
 // api document: https://help.aliyun.com/api/cs/describeagilitytunnelcerts.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAgilityTunnelCertsWithCallback(request *DescribeAgilityTunnelCertsRequest, callback func(response *DescribeAgilityTunnelCertsResponse, err error)) <-chan int {
@@ -73,17 +73,19 @@ func (client *Client) DescribeAgilityTunnelCertsWithCallback(request *DescribeAg
 	return result
 }
 
+// DescribeAgilityTunnelCertsRequest is the request struct for api DescribeAgilityTunnelCerts
 type DescribeAgilityTunnelCertsRequest struct {
 	*requests.RoaRequest
 	Token string `position:"Path" name:"Token"`
 }
 
+// DescribeAgilityTunnelCertsResponse is the response struct for api DescribeAgilityTunnelCerts
 type DescribeAgilityTunnelCertsResponse struct {
 	*responses.BaseResponse
 }
 
-// create a request to invoke DescribeAgilityTunnelCerts API
-func CreateDescribeAgilityTunnelCertsRequest() (request *DescribeAgilityTunnelCertsRequest) {
+// CreateDescribeAgilityTunnelCertsRequest creates a request to invoke DescribeAgilityTunnelCerts API
+func CreateDescribeAgilityTunnelCertsRequest(request *DescribeAgilityTunnelCertsRequest) {
 	request = &DescribeAgilityTunnelCertsRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
@@ -92,7 +94,7 @@ func CreateDescribeAgilityTunnelCertsRequest() (request *DescribeAgilityTunnelCe
 	return
 }
 
-// create a response to parse from DescribeAgilityTunnelCerts response
+// CreateDescribeAgilityTunnelCertsResponse creates a response to parse from DescribeAgilityTunnelCerts response
 func CreateDescribeAgilityTunnelCertsResponse() (response *DescribeAgilityTunnelCertsResponse) {
 	response = &DescribeAgilityTunnelCertsResponse{
 		BaseResponse: &responses.BaseResponse{},

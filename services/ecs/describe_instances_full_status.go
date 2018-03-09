@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeInstancesFullStatus api with *DescribeInstancesFullStatusRequest synchronously
+// DescribeInstancesFullStatus invokes the ecs.DescribeInstancesFullStatus API synchronously
 // api document: https://help.aliyun.com/api/ecs/describeinstancesfullstatus.html
 func (client *Client) DescribeInstancesFullStatus(request *DescribeInstancesFullStatusRequest) (response *DescribeInstancesFullStatusResponse, err error) {
 	response = CreateDescribeInstancesFullStatusResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeInstancesFullStatus(request *DescribeInstancesFull
 	return
 }
 
-// invoke DescribeInstancesFullStatus api with *DescribeInstancesFullStatusRequest asynchronously
+// DescribeInstancesFullStatusWithChan invokes the ecs.DescribeInstancesFullStatus API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describeinstancesfullstatus.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstancesFullStatusWithChan(request *DescribeInstancesFullStatusRequest) (<-chan *DescribeInstancesFullStatusResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeInstancesFullStatusWithChan(request *DescribeInsta
 	return responseChan, errChan
 }
 
-// invoke DescribeInstancesFullStatus api with *DescribeInstancesFullStatusRequest asynchronously
+// DescribeInstancesFullStatusWithCallback invokes the ecs.DescribeInstancesFullStatus API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describeinstancesfullstatus.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstancesFullStatusWithCallback(request *DescribeInstancesFullStatusRequest, callback func(response *DescribeInstancesFullStatusResponse, err error)) <-chan int {
@@ -73,10 +73,12 @@ func (client *Client) DescribeInstancesFullStatusWithCallback(request *DescribeI
 	return result
 }
 
+// DescribeInstancesFullStatusRequest is the request struct for api DescribeInstancesFullStatus
 type DescribeInstancesFullStatusRequest struct {
 	*requests.RpcRequest
 }
 
+// DescribeInstancesFullStatusResponse is the response struct for api DescribeInstancesFullStatus
 type DescribeInstancesFullStatusResponse struct {
 	*responses.BaseResponse
 	RequestId             string                `json:"RequestId" xml:"RequestId"`
@@ -86,8 +88,8 @@ type DescribeInstancesFullStatusResponse struct {
 	InstanceFullStatusSet InstanceFullStatusSet `json:"InstanceFullStatusSet" xml:"InstanceFullStatusSet"`
 }
 
-// create a request to invoke DescribeInstancesFullStatus API
-func CreateDescribeInstancesFullStatusRequest() (request *DescribeInstancesFullStatusRequest) {
+// CreateDescribeInstancesFullStatusRequest creates a request to invoke DescribeInstancesFullStatus API
+func CreateDescribeInstancesFullStatusRequest(request *DescribeInstancesFullStatusRequest) {
 	request = &DescribeInstancesFullStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateDescribeInstancesFullStatusRequest() (request *DescribeInstancesFullS
 	return
 }
 
-// create a response to parse from DescribeInstancesFullStatus response
+// CreateDescribeInstancesFullStatusResponse creates a response to parse from DescribeInstancesFullStatus response
 func CreateDescribeInstancesFullStatusResponse() (response *DescribeInstancesFullStatusResponse) {
 	response = &DescribeInstancesFullStatusResponse{
 		BaseResponse: &responses.BaseResponse{},

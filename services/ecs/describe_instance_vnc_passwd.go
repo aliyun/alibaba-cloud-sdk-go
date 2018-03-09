@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeInstanceVncPasswd api with *DescribeInstanceVncPasswdRequest synchronously
+// DescribeInstanceVncPasswd invokes the ecs.DescribeInstanceVncPasswd API synchronously
 // api document: https://help.aliyun.com/api/ecs/describeinstancevncpasswd.html
 func (client *Client) DescribeInstanceVncPasswd(request *DescribeInstanceVncPasswdRequest) (response *DescribeInstanceVncPasswdResponse, err error) {
 	response = CreateDescribeInstanceVncPasswdResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeInstanceVncPasswd(request *DescribeInstanceVncPass
 	return
 }
 
-// invoke DescribeInstanceVncPasswd api with *DescribeInstanceVncPasswdRequest asynchronously
+// DescribeInstanceVncPasswdWithChan invokes the ecs.DescribeInstanceVncPasswd API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describeinstancevncpasswd.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceVncPasswdWithChan(request *DescribeInstanceVncPasswdRequest) (<-chan *DescribeInstanceVncPasswdResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeInstanceVncPasswdWithChan(request *DescribeInstanc
 	return responseChan, errChan
 }
 
-// invoke DescribeInstanceVncPasswd api with *DescribeInstanceVncPasswdRequest asynchronously
+// DescribeInstanceVncPasswdWithCallback invokes the ecs.DescribeInstanceVncPasswd API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describeinstancevncpasswd.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceVncPasswdWithCallback(request *DescribeInstanceVncPasswdRequest, callback func(response *DescribeInstanceVncPasswdResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeInstanceVncPasswdWithCallback(request *DescribeIns
 	return result
 }
 
+// DescribeInstanceVncPasswdRequest is the request struct for api DescribeInstanceVncPasswd
 type DescribeInstanceVncPasswdRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,14 +83,15 @@ type DescribeInstanceVncPasswdRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// DescribeInstanceVncPasswdResponse is the response struct for api DescribeInstanceVncPasswd
 type DescribeInstanceVncPasswdResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	VncPasswd string `json:"VncPasswd" xml:"VncPasswd"`
 }
 
-// create a request to invoke DescribeInstanceVncPasswd API
-func CreateDescribeInstanceVncPasswdRequest() (request *DescribeInstanceVncPasswdRequest) {
+// CreateDescribeInstanceVncPasswdRequest creates a request to invoke DescribeInstanceVncPasswd API
+func CreateDescribeInstanceVncPasswdRequest(request *DescribeInstanceVncPasswdRequest) {
 	request = &DescribeInstanceVncPasswdRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateDescribeInstanceVncPasswdRequest() (request *DescribeInstanceVncPassw
 	return
 }
 
-// create a response to parse from DescribeInstanceVncPasswd response
+// CreateDescribeInstanceVncPasswdResponse creates a response to parse from DescribeInstanceVncPasswd response
 func CreateDescribeInstanceVncPasswdResponse() (response *DescribeInstanceVncPasswdResponse) {
 	response = &DescribeInstanceVncPasswdResponse{
 		BaseResponse: &responses.BaseResponse{},

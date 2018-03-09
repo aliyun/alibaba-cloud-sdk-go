@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke QueryAuthConfig api with *QueryAuthConfigRequest synchronously
+// QueryAuthConfig invokes the mts.QueryAuthConfig API synchronously
 // api document: https://help.aliyun.com/api/mts/queryauthconfig.html
 func (client *Client) QueryAuthConfig(request *QueryAuthConfigRequest) (response *QueryAuthConfigResponse, err error) {
 	response = CreateQueryAuthConfigResponse()
@@ -28,7 +28,7 @@ func (client *Client) QueryAuthConfig(request *QueryAuthConfigRequest) (response
 	return
 }
 
-// invoke QueryAuthConfig api with *QueryAuthConfigRequest asynchronously
+// QueryAuthConfigWithChan invokes the mts.QueryAuthConfig API asynchronously
 // api document: https://help.aliyun.com/api/mts/queryauthconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryAuthConfigWithChan(request *QueryAuthConfigRequest) (<-chan *QueryAuthConfigResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) QueryAuthConfigWithChan(request *QueryAuthConfigRequest) (
 	return responseChan, errChan
 }
 
-// invoke QueryAuthConfig api with *QueryAuthConfigRequest asynchronously
+// QueryAuthConfigWithCallback invokes the mts.QueryAuthConfig API asynchronously
 // api document: https://help.aliyun.com/api/mts/queryauthconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryAuthConfigWithCallback(request *QueryAuthConfigRequest, callback func(response *QueryAuthConfigResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) QueryAuthConfigWithCallback(request *QueryAuthConfigReques
 	return result
 }
 
+// QueryAuthConfigRequest is the request struct for api QueryAuthConfig
 type QueryAuthConfigRequest struct {
 	*requests.RpcRequest
 	OwnerId              string `position:"Query" name:"OwnerId"`
@@ -81,6 +82,7 @@ type QueryAuthConfigRequest struct {
 	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
 }
 
+// QueryAuthConfigResponse is the response struct for api QueryAuthConfig
 type QueryAuthConfigResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
@@ -88,8 +90,8 @@ type QueryAuthConfigResponse struct {
 	Key2      string `json:"Key2" xml:"Key2"`
 }
 
-// create a request to invoke QueryAuthConfig API
-func CreateQueryAuthConfigRequest() (request *QueryAuthConfigRequest) {
+// CreateQueryAuthConfigRequest creates a request to invoke QueryAuthConfig API
+func CreateQueryAuthConfigRequest(request *QueryAuthConfigRequest) {
 	request = &QueryAuthConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateQueryAuthConfigRequest() (request *QueryAuthConfigRequest) {
 	return
 }
 
-// create a response to parse from QueryAuthConfig response
+// CreateQueryAuthConfigResponse creates a response to parse from QueryAuthConfig response
 func CreateQueryAuthConfigResponse() (response *QueryAuthConfigResponse) {
 	response = &QueryAuthConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

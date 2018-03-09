@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifyMountTarget api with *ModifyMountTargetRequest synchronously
+// ModifyMountTarget invokes the nas.ModifyMountTarget API synchronously
 // api document: https://help.aliyun.com/api/nas/modifymounttarget.html
 func (client *Client) ModifyMountTarget(request *ModifyMountTargetRequest) (response *ModifyMountTargetResponse, err error) {
 	response = CreateModifyMountTargetResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifyMountTarget(request *ModifyMountTargetRequest) (resp
 	return
 }
 
-// invoke ModifyMountTarget api with *ModifyMountTargetRequest asynchronously
+// ModifyMountTargetWithChan invokes the nas.ModifyMountTarget API asynchronously
 // api document: https://help.aliyun.com/api/nas/modifymounttarget.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyMountTargetWithChan(request *ModifyMountTargetRequest) (<-chan *ModifyMountTargetResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifyMountTargetWithChan(request *ModifyMountTargetReques
 	return responseChan, errChan
 }
 
-// invoke ModifyMountTarget api with *ModifyMountTargetRequest asynchronously
+// ModifyMountTargetWithCallback invokes the nas.ModifyMountTarget API asynchronously
 // api document: https://help.aliyun.com/api/nas/modifymounttarget.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyMountTargetWithCallback(request *ModifyMountTargetRequest, callback func(response *ModifyMountTargetResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ModifyMountTargetWithCallback(request *ModifyMountTargetRe
 	return result
 }
 
+// ModifyMountTargetRequest is the request struct for api ModifyMountTarget
 type ModifyMountTargetRequest struct {
 	*requests.RpcRequest
 	FileSystemId      string `position:"Query" name:"FileSystemId"`
@@ -81,13 +82,14 @@ type ModifyMountTargetRequest struct {
 	Status            string `position:"Query" name:"Status"`
 }
 
+// ModifyMountTargetResponse is the response struct for api ModifyMountTarget
 type ModifyMountTargetResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ModifyMountTarget API
-func CreateModifyMountTargetRequest() (request *ModifyMountTargetRequest) {
+// CreateModifyMountTargetRequest creates a request to invoke ModifyMountTarget API
+func CreateModifyMountTargetRequest(request *ModifyMountTargetRequest) {
 	request = &ModifyMountTargetRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateModifyMountTargetRequest() (request *ModifyMountTargetRequest) {
 	return
 }
 
-// create a response to parse from ModifyMountTarget response
+// CreateModifyMountTargetResponse creates a response to parse from ModifyMountTarget response
 func CreateModifyMountTargetResponse() (response *ModifyMountTargetResponse) {
 	response = &ModifyMountTargetResponse{
 		BaseResponse: &responses.BaseResponse{},

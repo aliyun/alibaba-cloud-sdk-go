@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CreateScalingGroup api with *CreateScalingGroupRequest synchronously
+// CreateScalingGroup invokes the ess.CreateScalingGroup API synchronously
 // api document: https://help.aliyun.com/api/ess/createscalinggroup.html
 func (client *Client) CreateScalingGroup(request *CreateScalingGroupRequest) (response *CreateScalingGroupResponse, err error) {
 	response = CreateCreateScalingGroupResponse()
@@ -28,7 +28,7 @@ func (client *Client) CreateScalingGroup(request *CreateScalingGroupRequest) (re
 	return
 }
 
-// invoke CreateScalingGroup api with *CreateScalingGroupRequest asynchronously
+// CreateScalingGroupWithChan invokes the ess.CreateScalingGroup API asynchronously
 // api document: https://help.aliyun.com/api/ess/createscalinggroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateScalingGroupWithChan(request *CreateScalingGroupRequest) (<-chan *CreateScalingGroupResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CreateScalingGroupWithChan(request *CreateScalingGroupRequ
 	return responseChan, errChan
 }
 
-// invoke CreateScalingGroup api with *CreateScalingGroupRequest asynchronously
+// CreateScalingGroupWithCallback invokes the ess.CreateScalingGroup API asynchronously
 // api document: https://help.aliyun.com/api/ess/createscalinggroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateScalingGroupWithCallback(request *CreateScalingGroupRequest, callback func(response *CreateScalingGroupResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) CreateScalingGroupWithCallback(request *CreateScalingGroup
 	return result
 }
 
+// CreateScalingGroupRequest is the request struct for api CreateScalingGroup
 type CreateScalingGroupRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -90,14 +91,15 @@ type CreateScalingGroupRequest struct {
 	VSwitchIds           *[]string        `position:"Query" name:"VSwitchIds"  type:"Repeated"`
 }
 
+// CreateScalingGroupResponse is the response struct for api CreateScalingGroup
 type CreateScalingGroupResponse struct {
 	*responses.BaseResponse
 	ScalingGroupId string `json:"ScalingGroupId" xml:"ScalingGroupId"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke CreateScalingGroup API
-func CreateCreateScalingGroupRequest() (request *CreateScalingGroupRequest) {
+// CreateCreateScalingGroupRequest creates a request to invoke CreateScalingGroup API
+func CreateCreateScalingGroupRequest(request *CreateScalingGroupRequest) {
 	request = &CreateScalingGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -105,7 +107,7 @@ func CreateCreateScalingGroupRequest() (request *CreateScalingGroupRequest) {
 	return
 }
 
-// create a response to parse from CreateScalingGroup response
+// CreateCreateScalingGroupResponse creates a response to parse from CreateScalingGroup response
 func CreateCreateScalingGroupResponse() (response *CreateScalingGroupResponse) {
 	response = &CreateScalingGroupResponse{
 		BaseResponse: &responses.BaseResponse{},

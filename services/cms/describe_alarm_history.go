@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeAlarmHistory api with *DescribeAlarmHistoryRequest synchronously
+// DescribeAlarmHistory invokes the cms.DescribeAlarmHistory API synchronously
 // api document: https://help.aliyun.com/api/cms/describealarmhistory.html
 func (client *Client) DescribeAlarmHistory(request *DescribeAlarmHistoryRequest) (response *DescribeAlarmHistoryResponse, err error) {
 	response = CreateDescribeAlarmHistoryResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeAlarmHistory(request *DescribeAlarmHistoryRequest)
 	return
 }
 
-// invoke DescribeAlarmHistory api with *DescribeAlarmHistoryRequest asynchronously
+// DescribeAlarmHistoryWithChan invokes the cms.DescribeAlarmHistory API asynchronously
 // api document: https://help.aliyun.com/api/cms/describealarmhistory.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAlarmHistoryWithChan(request *DescribeAlarmHistoryRequest) (<-chan *DescribeAlarmHistoryResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeAlarmHistoryWithChan(request *DescribeAlarmHistory
 	return responseChan, errChan
 }
 
-// invoke DescribeAlarmHistory api with *DescribeAlarmHistoryRequest asynchronously
+// DescribeAlarmHistoryWithCallback invokes the cms.DescribeAlarmHistory API asynchronously
 // api document: https://help.aliyun.com/api/cms/describealarmhistory.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAlarmHistoryWithCallback(request *DescribeAlarmHistoryRequest, callback func(response *DescribeAlarmHistoryResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeAlarmHistoryWithCallback(request *DescribeAlarmHis
 	return result
 }
 
+// DescribeAlarmHistoryRequest is the request struct for api DescribeAlarmHistory
 type DescribeAlarmHistoryRequest struct {
 	*requests.RpcRequest
 	AlertName  string           `position:"Query" name:"AlertName"`
@@ -90,6 +91,7 @@ type DescribeAlarmHistoryRequest struct {
 	Page       requests.Integer `position:"Query" name:"Page"`
 }
 
+// DescribeAlarmHistoryResponse is the response struct for api DescribeAlarmHistory
 type DescribeAlarmHistoryResponse struct {
 	*responses.BaseResponse
 	Success          bool                                   `json:"Success" xml:"Success"`
@@ -100,8 +102,8 @@ type DescribeAlarmHistoryResponse struct {
 	AlarmHistoryList AlarmHistoryListInDescribeAlarmHistory `json:"AlarmHistoryList" xml:"AlarmHistoryList"`
 }
 
-// create a request to invoke DescribeAlarmHistory API
-func CreateDescribeAlarmHistoryRequest() (request *DescribeAlarmHistoryRequest) {
+// CreateDescribeAlarmHistoryRequest creates a request to invoke DescribeAlarmHistory API
+func CreateDescribeAlarmHistoryRequest(request *DescribeAlarmHistoryRequest) {
 	request = &DescribeAlarmHistoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -109,7 +111,7 @@ func CreateDescribeAlarmHistoryRequest() (request *DescribeAlarmHistoryRequest) 
 	return
 }
 
-// create a response to parse from DescribeAlarmHistory response
+// CreateDescribeAlarmHistoryResponse creates a response to parse from DescribeAlarmHistory response
 func CreateDescribeAlarmHistoryResponse() (response *DescribeAlarmHistoryResponse) {
 	response = &DescribeAlarmHistoryResponse{
 		BaseResponse: &responses.BaseResponse{},

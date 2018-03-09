@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke QueryReceiverDetail api with *QueryReceiverDetailRequest synchronously
+// QueryReceiverDetail invokes the dm.QueryReceiverDetail API synchronously
 // api document: https://help.aliyun.com/api/dm/queryreceiverdetail.html
 func (client *Client) QueryReceiverDetail(request *QueryReceiverDetailRequest) (response *QueryReceiverDetailResponse, err error) {
 	response = CreateQueryReceiverDetailResponse()
@@ -28,7 +28,7 @@ func (client *Client) QueryReceiverDetail(request *QueryReceiverDetailRequest) (
 	return
 }
 
-// invoke QueryReceiverDetail api with *QueryReceiverDetailRequest asynchronously
+// QueryReceiverDetailWithChan invokes the dm.QueryReceiverDetail API asynchronously
 // api document: https://help.aliyun.com/api/dm/queryreceiverdetail.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryReceiverDetailWithChan(request *QueryReceiverDetailRequest) (<-chan *QueryReceiverDetailResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) QueryReceiverDetailWithChan(request *QueryReceiverDetailRe
 	return responseChan, errChan
 }
 
-// invoke QueryReceiverDetail api with *QueryReceiverDetailRequest asynchronously
+// QueryReceiverDetailWithCallback invokes the dm.QueryReceiverDetail API asynchronously
 // api document: https://help.aliyun.com/api/dm/queryreceiverdetail.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryReceiverDetailWithCallback(request *QueryReceiverDetailRequest, callback func(response *QueryReceiverDetailResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) QueryReceiverDetailWithCallback(request *QueryReceiverDeta
 	return result
 }
 
+// QueryReceiverDetailRequest is the request struct for api QueryReceiverDetail
 type QueryReceiverDetailRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,6 +85,7 @@ type QueryReceiverDetailRequest struct {
 	NextStart            string           `position:"Query" name:"NextStart"`
 }
 
+// QueryReceiverDetailResponse is the response struct for api QueryReceiverDetail
 type QueryReceiverDetailResponse struct {
 	*responses.BaseResponse
 	RequestId  string                    `json:"RequestId" xml:"RequestId"`
@@ -93,8 +95,8 @@ type QueryReceiverDetailResponse struct {
 	Data       DataInQueryReceiverDetail `json:"data" xml:"data"`
 }
 
-// create a request to invoke QueryReceiverDetail API
-func CreateQueryReceiverDetailRequest() (request *QueryReceiverDetailRequest) {
+// CreateQueryReceiverDetailRequest creates a request to invoke QueryReceiverDetail API
+func CreateQueryReceiverDetailRequest(request *QueryReceiverDetailRequest) {
 	request = &QueryReceiverDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -102,7 +104,7 @@ func CreateQueryReceiverDetailRequest() (request *QueryReceiverDetailRequest) {
 	return
 }
 
-// create a response to parse from QueryReceiverDetail response
+// CreateQueryReceiverDetailResponse creates a response to parse from QueryReceiverDetail response
 func CreateQueryReceiverDetailResponse() (response *QueryReceiverDetailResponse) {
 	response = &QueryReceiverDetailResponse{
 		BaseResponse: &responses.BaseResponse{},

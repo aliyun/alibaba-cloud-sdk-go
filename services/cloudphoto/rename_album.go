@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke RenameAlbum api with *RenameAlbumRequest synchronously
+// RenameAlbum invokes the cloudphoto.RenameAlbum API synchronously
 // api document: https://help.aliyun.com/api/cloudphoto/renamealbum.html
 func (client *Client) RenameAlbum(request *RenameAlbumRequest) (response *RenameAlbumResponse, err error) {
 	response = CreateRenameAlbumResponse()
@@ -28,7 +28,7 @@ func (client *Client) RenameAlbum(request *RenameAlbumRequest) (response *Rename
 	return
 }
 
-// invoke RenameAlbum api with *RenameAlbumRequest asynchronously
+// RenameAlbumWithChan invokes the cloudphoto.RenameAlbum API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/renamealbum.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RenameAlbumWithChan(request *RenameAlbumRequest) (<-chan *RenameAlbumResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) RenameAlbumWithChan(request *RenameAlbumRequest) (<-chan *
 	return responseChan, errChan
 }
 
-// invoke RenameAlbum api with *RenameAlbumRequest asynchronously
+// RenameAlbumWithCallback invokes the cloudphoto.RenameAlbum API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/renamealbum.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RenameAlbumWithCallback(request *RenameAlbumRequest, callback func(response *RenameAlbumResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) RenameAlbumWithCallback(request *RenameAlbumRequest, callb
 	return result
 }
 
+// RenameAlbumRequest is the request struct for api RenameAlbum
 type RenameAlbumRequest struct {
 	*requests.RpcRequest
 	AlbumId   requests.Integer `position:"Query" name:"AlbumId"`
@@ -81,6 +82,7 @@ type RenameAlbumRequest struct {
 	LibraryId string           `position:"Query" name:"LibraryId"`
 }
 
+// RenameAlbumResponse is the response struct for api RenameAlbum
 type RenameAlbumResponse struct {
 	*responses.BaseResponse
 	Code      string `json:"Code" xml:"Code"`
@@ -89,8 +91,8 @@ type RenameAlbumResponse struct {
 	Action    string `json:"Action" xml:"Action"`
 }
 
-// create a request to invoke RenameAlbum API
-func CreateRenameAlbumRequest() (request *RenameAlbumRequest) {
+// CreateRenameAlbumRequest creates a request to invoke RenameAlbum API
+func CreateRenameAlbumRequest(request *RenameAlbumRequest) {
 	request = &RenameAlbumRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateRenameAlbumRequest() (request *RenameAlbumRequest) {
 	return
 }
 
-// create a response to parse from RenameAlbum response
+// CreateRenameAlbumResponse creates a response to parse from RenameAlbum response
 func CreateRenameAlbumResponse() (response *RenameAlbumResponse) {
 	response = &RenameAlbumResponse{
 		BaseResponse: &responses.BaseResponse{},

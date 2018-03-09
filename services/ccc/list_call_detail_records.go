@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ListCallDetailRecords api with *ListCallDetailRecordsRequest synchronously
+// ListCallDetailRecords invokes the ccc.ListCallDetailRecords API synchronously
 // api document: https://help.aliyun.com/api/ccc/listcalldetailrecords.html
 func (client *Client) ListCallDetailRecords(request *ListCallDetailRecordsRequest) (response *ListCallDetailRecordsResponse, err error) {
 	response = CreateListCallDetailRecordsResponse()
@@ -28,7 +28,7 @@ func (client *Client) ListCallDetailRecords(request *ListCallDetailRecordsReques
 	return
 }
 
-// invoke ListCallDetailRecords api with *ListCallDetailRecordsRequest asynchronously
+// ListCallDetailRecordsWithChan invokes the ccc.ListCallDetailRecords API asynchronously
 // api document: https://help.aliyun.com/api/ccc/listcalldetailrecords.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListCallDetailRecordsWithChan(request *ListCallDetailRecordsRequest) (<-chan *ListCallDetailRecordsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ListCallDetailRecordsWithChan(request *ListCallDetailRecor
 	return responseChan, errChan
 }
 
-// invoke ListCallDetailRecords api with *ListCallDetailRecordsRequest asynchronously
+// ListCallDetailRecordsWithCallback invokes the ccc.ListCallDetailRecords API asynchronously
 // api document: https://help.aliyun.com/api/ccc/listcalldetailrecords.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListCallDetailRecordsWithCallback(request *ListCallDetailRecordsRequest, callback func(response *ListCallDetailRecordsResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ListCallDetailRecordsWithCallback(request *ListCallDetailR
 	return result
 }
 
+// ListCallDetailRecordsRequest is the request struct for api ListCallDetailRecords
 type ListCallDetailRecordsRequest struct {
 	*requests.RpcRequest
 	InstanceId         string           `position:"Query" name:"InstanceId"`
@@ -87,6 +88,7 @@ type ListCallDetailRecordsRequest struct {
 	PageSize           requests.Integer `position:"Query" name:"PageSize"`
 }
 
+// ListCallDetailRecordsResponse is the response struct for api ListCallDetailRecords
 type ListCallDetailRecordsResponse struct {
 	*responses.BaseResponse
 	RequestId         string            `json:"RequestId" xml:"RequestId"`
@@ -97,8 +99,8 @@ type ListCallDetailRecordsResponse struct {
 	CallDetailRecords CallDetailRecords `json:"CallDetailRecords" xml:"CallDetailRecords"`
 }
 
-// create a request to invoke ListCallDetailRecords API
-func CreateListCallDetailRecordsRequest() (request *ListCallDetailRecordsRequest) {
+// CreateListCallDetailRecordsRequest creates a request to invoke ListCallDetailRecords API
+func CreateListCallDetailRecordsRequest(request *ListCallDetailRecordsRequest) {
 	request = &ListCallDetailRecordsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -106,7 +108,7 @@ func CreateListCallDetailRecordsRequest() (request *ListCallDetailRecordsRequest
 	return
 }
 
-// create a response to parse from ListCallDetailRecords response
+// CreateListCallDetailRecordsResponse creates a response to parse from ListCallDetailRecords response
 func CreateListCallDetailRecordsResponse() (response *ListCallDetailRecordsResponse) {
 	response = &ListCallDetailRecordsResponse{
 		BaseResponse: &responses.BaseResponse{},

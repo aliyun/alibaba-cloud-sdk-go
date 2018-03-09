@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke StartInstance api with *StartInstanceRequest synchronously
+// StartInstance invokes the ecs.StartInstance API synchronously
 // api document: https://help.aliyun.com/api/ecs/startinstance.html
 func (client *Client) StartInstance(request *StartInstanceRequest) (response *StartInstanceResponse, err error) {
 	response = CreateStartInstanceResponse()
@@ -28,7 +28,7 @@ func (client *Client) StartInstance(request *StartInstanceRequest) (response *St
 	return
 }
 
-// invoke StartInstance api with *StartInstanceRequest asynchronously
+// StartInstanceWithChan invokes the ecs.StartInstance API asynchronously
 // api document: https://help.aliyun.com/api/ecs/startinstance.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StartInstanceWithChan(request *StartInstanceRequest) (<-chan *StartInstanceResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) StartInstanceWithChan(request *StartInstanceRequest) (<-ch
 	return responseChan, errChan
 }
 
-// invoke StartInstance api with *StartInstanceRequest asynchronously
+// StartInstanceWithCallback invokes the ecs.StartInstance API asynchronously
 // api document: https://help.aliyun.com/api/ecs/startinstance.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StartInstanceWithCallback(request *StartInstanceRequest, callback func(response *StartInstanceResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) StartInstanceWithCallback(request *StartInstanceRequest, c
 	return result
 }
 
+// StartInstanceRequest is the request struct for api StartInstance
 type StartInstanceRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -83,13 +84,14 @@ type StartInstanceRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// StartInstanceResponse is the response struct for api StartInstance
 type StartInstanceResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke StartInstance API
-func CreateStartInstanceRequest() (request *StartInstanceRequest) {
+// CreateStartInstanceRequest creates a request to invoke StartInstance API
+func CreateStartInstanceRequest(request *StartInstanceRequest) {
 	request = &StartInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateStartInstanceRequest() (request *StartInstanceRequest) {
 	return
 }
 
-// create a response to parse from StartInstance response
+// CreateStartInstanceResponse creates a response to parse from StartInstance response
 func CreateStartInstanceResponse() (response *StartInstanceResponse) {
 	response = &StartInstanceResponse{
 		BaseResponse: &responses.BaseResponse{},

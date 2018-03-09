@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke UpdateMediaCategory api with *UpdateMediaCategoryRequest synchronously
+// UpdateMediaCategory invokes the mts.UpdateMediaCategory API synchronously
 // api document: https://help.aliyun.com/api/mts/updatemediacategory.html
 func (client *Client) UpdateMediaCategory(request *UpdateMediaCategoryRequest) (response *UpdateMediaCategoryResponse, err error) {
 	response = CreateUpdateMediaCategoryResponse()
@@ -28,7 +28,7 @@ func (client *Client) UpdateMediaCategory(request *UpdateMediaCategoryRequest) (
 	return
 }
 
-// invoke UpdateMediaCategory api with *UpdateMediaCategoryRequest asynchronously
+// UpdateMediaCategoryWithChan invokes the mts.UpdateMediaCategory API asynchronously
 // api document: https://help.aliyun.com/api/mts/updatemediacategory.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateMediaCategoryWithChan(request *UpdateMediaCategoryRequest) (<-chan *UpdateMediaCategoryResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) UpdateMediaCategoryWithChan(request *UpdateMediaCategoryRe
 	return responseChan, errChan
 }
 
-// invoke UpdateMediaCategory api with *UpdateMediaCategoryRequest asynchronously
+// UpdateMediaCategoryWithCallback invokes the mts.UpdateMediaCategory API asynchronously
 // api document: https://help.aliyun.com/api/mts/updatemediacategory.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateMediaCategoryWithCallback(request *UpdateMediaCategoryRequest, callback func(response *UpdateMediaCategoryResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) UpdateMediaCategoryWithCallback(request *UpdateMediaCatego
 	return result
 }
 
+// UpdateMediaCategoryRequest is the request struct for api UpdateMediaCategory
 type UpdateMediaCategoryRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -83,13 +84,14 @@ type UpdateMediaCategoryRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// UpdateMediaCategoryResponse is the response struct for api UpdateMediaCategory
 type UpdateMediaCategoryResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke UpdateMediaCategory API
-func CreateUpdateMediaCategoryRequest() (request *UpdateMediaCategoryRequest) {
+// CreateUpdateMediaCategoryRequest creates a request to invoke UpdateMediaCategory API
+func CreateUpdateMediaCategoryRequest(request *UpdateMediaCategoryRequest) {
 	request = &UpdateMediaCategoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateUpdateMediaCategoryRequest() (request *UpdateMediaCategoryRequest) {
 	return
 }
 
-// create a response to parse from UpdateMediaCategory response
+// CreateUpdateMediaCategoryResponse creates a response to parse from UpdateMediaCategory response
 func CreateUpdateMediaCategoryResponse() (response *UpdateMediaCategoryResponse) {
 	response = &UpdateMediaCategoryResponse{
 		BaseResponse: &responses.BaseResponse{},

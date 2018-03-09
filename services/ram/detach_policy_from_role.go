@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DetachPolicyFromRole api with *DetachPolicyFromRoleRequest synchronously
+// DetachPolicyFromRole invokes the ram.DetachPolicyFromRole API synchronously
 // api document: https://help.aliyun.com/api/ram/detachpolicyfromrole.html
 func (client *Client) DetachPolicyFromRole(request *DetachPolicyFromRoleRequest) (response *DetachPolicyFromRoleResponse, err error) {
 	response = CreateDetachPolicyFromRoleResponse()
@@ -28,7 +28,7 @@ func (client *Client) DetachPolicyFromRole(request *DetachPolicyFromRoleRequest)
 	return
 }
 
-// invoke DetachPolicyFromRole api with *DetachPolicyFromRoleRequest asynchronously
+// DetachPolicyFromRoleWithChan invokes the ram.DetachPolicyFromRole API asynchronously
 // api document: https://help.aliyun.com/api/ram/detachpolicyfromrole.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetachPolicyFromRoleWithChan(request *DetachPolicyFromRoleRequest) (<-chan *DetachPolicyFromRoleResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DetachPolicyFromRoleWithChan(request *DetachPolicyFromRole
 	return responseChan, errChan
 }
 
-// invoke DetachPolicyFromRole api with *DetachPolicyFromRoleRequest asynchronously
+// DetachPolicyFromRoleWithCallback invokes the ram.DetachPolicyFromRole API asynchronously
 // api document: https://help.aliyun.com/api/ram/detachpolicyfromrole.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetachPolicyFromRoleWithCallback(request *DetachPolicyFromRoleRequest, callback func(response *DetachPolicyFromRoleResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DetachPolicyFromRoleWithCallback(request *DetachPolicyFrom
 	return result
 }
 
+// DetachPolicyFromRoleRequest is the request struct for api DetachPolicyFromRole
 type DetachPolicyFromRoleRequest struct {
 	*requests.RpcRequest
 	PolicyType string `position:"Query" name:"PolicyType"`
@@ -80,13 +81,14 @@ type DetachPolicyFromRoleRequest struct {
 	RoleName   string `position:"Query" name:"RoleName"`
 }
 
+// DetachPolicyFromRoleResponse is the response struct for api DetachPolicyFromRole
 type DetachPolicyFromRoleResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DetachPolicyFromRole API
-func CreateDetachPolicyFromRoleRequest() (request *DetachPolicyFromRoleRequest) {
+// CreateDetachPolicyFromRoleRequest creates a request to invoke DetachPolicyFromRole API
+func CreateDetachPolicyFromRoleRequest(request *DetachPolicyFromRoleRequest) {
 	request = &DetachPolicyFromRoleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -94,7 +96,7 @@ func CreateDetachPolicyFromRoleRequest() (request *DetachPolicyFromRoleRequest) 
 	return
 }
 
-// create a response to parse from DetachPolicyFromRole response
+// CreateDetachPolicyFromRoleResponse creates a response to parse from DetachPolicyFromRole response
 func CreateDetachPolicyFromRoleResponse() (response *DetachPolicyFromRoleResponse) {
 	response = &DetachPolicyFromRoleResponse{
 		BaseResponse: &responses.BaseResponse{},

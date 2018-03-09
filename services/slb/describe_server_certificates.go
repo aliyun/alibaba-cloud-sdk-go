@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeServerCertificates api with *DescribeServerCertificatesRequest synchronously
+// DescribeServerCertificates invokes the slb.DescribeServerCertificates API synchronously
 // api document: https://help.aliyun.com/api/slb/describeservercertificates.html
 func (client *Client) DescribeServerCertificates(request *DescribeServerCertificatesRequest) (response *DescribeServerCertificatesResponse, err error) {
 	response = CreateDescribeServerCertificatesResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeServerCertificates(request *DescribeServerCertific
 	return
 }
 
-// invoke DescribeServerCertificates api with *DescribeServerCertificatesRequest asynchronously
+// DescribeServerCertificatesWithChan invokes the slb.DescribeServerCertificates API asynchronously
 // api document: https://help.aliyun.com/api/slb/describeservercertificates.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeServerCertificatesWithChan(request *DescribeServerCertificatesRequest) (<-chan *DescribeServerCertificatesResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeServerCertificatesWithChan(request *DescribeServer
 	return responseChan, errChan
 }
 
-// invoke DescribeServerCertificates api with *DescribeServerCertificatesRequest asynchronously
+// DescribeServerCertificatesWithCallback invokes the slb.DescribeServerCertificates API asynchronously
 // api document: https://help.aliyun.com/api/slb/describeservercertificates.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeServerCertificatesWithCallback(request *DescribeServerCertificatesRequest, callback func(response *DescribeServerCertificatesResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeServerCertificatesWithCallback(request *DescribeSe
 	return result
 }
 
+// DescribeServerCertificatesRequest is the request struct for api DescribeServerCertificates
 type DescribeServerCertificatesRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -85,14 +86,15 @@ type DescribeServerCertificatesRequest struct {
 	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 }
 
+// DescribeServerCertificatesResponse is the response struct for api DescribeServerCertificates
 type DescribeServerCertificatesResponse struct {
 	*responses.BaseResponse
 	RequestId          string             `json:"RequestId" xml:"RequestId"`
 	ServerCertificates ServerCertificates `json:"ServerCertificates" xml:"ServerCertificates"`
 }
 
-// create a request to invoke DescribeServerCertificates API
-func CreateDescribeServerCertificatesRequest() (request *DescribeServerCertificatesRequest) {
+// CreateDescribeServerCertificatesRequest creates a request to invoke DescribeServerCertificates API
+func CreateDescribeServerCertificatesRequest(request *DescribeServerCertificatesRequest) {
 	request = &DescribeServerCertificatesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -100,7 +102,7 @@ func CreateDescribeServerCertificatesRequest() (request *DescribeServerCertifica
 	return
 }
 
-// create a response to parse from DescribeServerCertificates response
+// CreateDescribeServerCertificatesResponse creates a response to parse from DescribeServerCertificates response
 func CreateDescribeServerCertificatesResponse() (response *DescribeServerCertificatesResponse) {
 	response = &DescribeServerCertificatesResponse{
 		BaseResponse: &responses.BaseResponse{},

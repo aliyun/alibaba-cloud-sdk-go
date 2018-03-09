@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeDnsProductInstance api with *DescribeDnsProductInstanceRequest synchronously
+// DescribeDnsProductInstance invokes the alidns.DescribeDnsProductInstance API synchronously
 // api document: https://help.aliyun.com/api/alidns/describednsproductinstance.html
 func (client *Client) DescribeDnsProductInstance(request *DescribeDnsProductInstanceRequest) (response *DescribeDnsProductInstanceResponse, err error) {
 	response = CreateDescribeDnsProductInstanceResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeDnsProductInstance(request *DescribeDnsProductInst
 	return
 }
 
-// invoke DescribeDnsProductInstance api with *DescribeDnsProductInstanceRequest asynchronously
+// DescribeDnsProductInstanceWithChan invokes the alidns.DescribeDnsProductInstance API asynchronously
 // api document: https://help.aliyun.com/api/alidns/describednsproductinstance.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDnsProductInstanceWithChan(request *DescribeDnsProductInstanceRequest) (<-chan *DescribeDnsProductInstanceResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeDnsProductInstanceWithChan(request *DescribeDnsPro
 	return responseChan, errChan
 }
 
-// invoke DescribeDnsProductInstance api with *DescribeDnsProductInstanceRequest asynchronously
+// DescribeDnsProductInstanceWithCallback invokes the alidns.DescribeDnsProductInstance API asynchronously
 // api document: https://help.aliyun.com/api/alidns/describednsproductinstance.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDnsProductInstanceWithCallback(request *DescribeDnsProductInstanceRequest, callback func(response *DescribeDnsProductInstanceResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeDnsProductInstanceWithCallback(request *DescribeDn
 	return result
 }
 
+// DescribeDnsProductInstanceRequest is the request struct for api DescribeDnsProductInstance
 type DescribeDnsProductInstanceRequest struct {
 	*requests.RpcRequest
 	Lang         string `position:"Query" name:"Lang"`
@@ -80,6 +81,7 @@ type DescribeDnsProductInstanceRequest struct {
 	InstanceId   string `position:"Query" name:"InstanceId"`
 }
 
+// DescribeDnsProductInstanceResponse is the response struct for api DescribeDnsProductInstance
 type DescribeDnsProductInstanceResponse struct {
 	*responses.BaseResponse
 	RequestId             string                                 `json:"RequestId" xml:"RequestId"`
@@ -114,8 +116,8 @@ type DescribeDnsProductInstanceResponse struct {
 	DnsServers            DnsServersInDescribeDnsProductInstance `json:"DnsServers" xml:"DnsServers"`
 }
 
-// create a request to invoke DescribeDnsProductInstance API
-func CreateDescribeDnsProductInstanceRequest() (request *DescribeDnsProductInstanceRequest) {
+// CreateDescribeDnsProductInstanceRequest creates a request to invoke DescribeDnsProductInstance API
+func CreateDescribeDnsProductInstanceRequest(request *DescribeDnsProductInstanceRequest) {
 	request = &DescribeDnsProductInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -123,7 +125,7 @@ func CreateDescribeDnsProductInstanceRequest() (request *DescribeDnsProductInsta
 	return
 }
 
-// create a response to parse from DescribeDnsProductInstance response
+// CreateDescribeDnsProductInstanceResponse creates a response to parse from DescribeDnsProductInstance response
 func CreateDescribeDnsProductInstanceResponse() (response *DescribeDnsProductInstanceResponse) {
 	response = &DescribeDnsProductInstanceResponse{
 		BaseResponse: &responses.BaseResponse{},

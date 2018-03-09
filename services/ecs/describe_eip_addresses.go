@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeEipAddresses api with *DescribeEipAddressesRequest synchronously
+// DescribeEipAddresses invokes the ecs.DescribeEipAddresses API synchronously
 // api document: https://help.aliyun.com/api/ecs/describeeipaddresses.html
 func (client *Client) DescribeEipAddresses(request *DescribeEipAddressesRequest) (response *DescribeEipAddressesResponse, err error) {
 	response = CreateDescribeEipAddressesResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeEipAddresses(request *DescribeEipAddressesRequest)
 	return
 }
 
-// invoke DescribeEipAddresses api with *DescribeEipAddressesRequest asynchronously
+// DescribeEipAddressesWithChan invokes the ecs.DescribeEipAddresses API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describeeipaddresses.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeEipAddressesWithChan(request *DescribeEipAddressesRequest) (<-chan *DescribeEipAddressesResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeEipAddressesWithChan(request *DescribeEipAddresses
 	return responseChan, errChan
 }
 
-// invoke DescribeEipAddresses api with *DescribeEipAddressesRequest asynchronously
+// DescribeEipAddressesWithCallback invokes the ecs.DescribeEipAddresses API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describeeipaddresses.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeEipAddressesWithCallback(request *DescribeEipAddressesRequest, callback func(response *DescribeEipAddressesResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeEipAddressesWithCallback(request *DescribeEipAddre
 	return result
 }
 
+// DescribeEipAddressesRequest is the request struct for api DescribeEipAddresses
 type DescribeEipAddressesRequest struct {
 	*requests.RpcRequest
 	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
@@ -94,6 +95,7 @@ type DescribeEipAddressesRequest struct {
 	ChargeType             string           `position:"Query" name:"ChargeType"`
 }
 
+// DescribeEipAddressesResponse is the response struct for api DescribeEipAddresses
 type DescribeEipAddressesResponse struct {
 	*responses.BaseResponse
 	RequestId    string       `json:"RequestId" xml:"RequestId"`
@@ -103,8 +105,8 @@ type DescribeEipAddressesResponse struct {
 	EipAddresses EipAddresses `json:"EipAddresses" xml:"EipAddresses"`
 }
 
-// create a request to invoke DescribeEipAddresses API
-func CreateDescribeEipAddressesRequest() (request *DescribeEipAddressesRequest) {
+// CreateDescribeEipAddressesRequest creates a request to invoke DescribeEipAddresses API
+func CreateDescribeEipAddressesRequest(request *DescribeEipAddressesRequest) {
 	request = &DescribeEipAddressesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -112,7 +114,7 @@ func CreateDescribeEipAddressesRequest() (request *DescribeEipAddressesRequest) 
 	return
 }
 
-// create a response to parse from DescribeEipAddresses response
+// CreateDescribeEipAddressesResponse creates a response to parse from DescribeEipAddresses response
 func CreateDescribeEipAddressesResponse() (response *DescribeEipAddressesResponse) {
 	response = &DescribeEipAddressesResponse{
 		BaseResponse: &responses.BaseResponse{},

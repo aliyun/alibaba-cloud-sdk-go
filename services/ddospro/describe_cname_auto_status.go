@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeCnameAutoStatus api with *DescribeCnameAutoStatusRequest synchronously
+// DescribeCnameAutoStatus invokes the ddospro.DescribeCnameAutoStatus API synchronously
 // api document: https://help.aliyun.com/api/ddospro/describecnameautostatus.html
 func (client *Client) DescribeCnameAutoStatus(request *DescribeCnameAutoStatusRequest) (response *DescribeCnameAutoStatusResponse, err error) {
 	response = CreateDescribeCnameAutoStatusResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeCnameAutoStatus(request *DescribeCnameAutoStatusRe
 	return
 }
 
-// invoke DescribeCnameAutoStatus api with *DescribeCnameAutoStatusRequest asynchronously
+// DescribeCnameAutoStatusWithChan invokes the ddospro.DescribeCnameAutoStatus API asynchronously
 // api document: https://help.aliyun.com/api/ddospro/describecnameautostatus.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCnameAutoStatusWithChan(request *DescribeCnameAutoStatusRequest) (<-chan *DescribeCnameAutoStatusResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeCnameAutoStatusWithChan(request *DescribeCnameAuto
 	return responseChan, errChan
 }
 
-// invoke DescribeCnameAutoStatus api with *DescribeCnameAutoStatusRequest asynchronously
+// DescribeCnameAutoStatusWithCallback invokes the ddospro.DescribeCnameAutoStatus API asynchronously
 // api document: https://help.aliyun.com/api/ddospro/describecnameautostatus.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCnameAutoStatusWithCallback(request *DescribeCnameAutoStatusRequest, callback func(response *DescribeCnameAutoStatusResponse, err error)) <-chan int {
@@ -73,20 +73,22 @@ func (client *Client) DescribeCnameAutoStatusWithCallback(request *DescribeCname
 	return result
 }
 
+// DescribeCnameAutoStatusRequest is the request struct for api DescribeCnameAutoStatus
 type DescribeCnameAutoStatusRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	Domain          string           `position:"Query" name:"Domain"`
 }
 
+// DescribeCnameAutoStatusResponse is the response struct for api DescribeCnameAutoStatus
 type DescribeCnameAutoStatusResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Status    bool   `json:"Status" xml:"Status"`
 }
 
-// create a request to invoke DescribeCnameAutoStatus API
-func CreateDescribeCnameAutoStatusRequest() (request *DescribeCnameAutoStatusRequest) {
+// CreateDescribeCnameAutoStatusRequest creates a request to invoke DescribeCnameAutoStatus API
+func CreateDescribeCnameAutoStatusRequest(request *DescribeCnameAutoStatusRequest) {
 	request = &DescribeCnameAutoStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -94,7 +96,7 @@ func CreateDescribeCnameAutoStatusRequest() (request *DescribeCnameAutoStatusReq
 	return
 }
 
-// create a response to parse from DescribeCnameAutoStatus response
+// CreateDescribeCnameAutoStatusResponse creates a response to parse from DescribeCnameAutoStatus response
 func CreateDescribeCnameAutoStatusResponse() (response *DescribeCnameAutoStatusResponse) {
 	response = &DescribeCnameAutoStatusResponse{
 		BaseResponse: &responses.BaseResponse{},

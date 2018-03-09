@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifySecurityGroupRule api with *ModifySecurityGroupRuleRequest synchronously
+// ModifySecurityGroupRule invokes the ecs.ModifySecurityGroupRule API synchronously
 // api document: https://help.aliyun.com/api/ecs/modifysecuritygrouprule.html
 func (client *Client) ModifySecurityGroupRule(request *ModifySecurityGroupRuleRequest) (response *ModifySecurityGroupRuleResponse, err error) {
 	response = CreateModifySecurityGroupRuleResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifySecurityGroupRule(request *ModifySecurityGroupRuleRe
 	return
 }
 
-// invoke ModifySecurityGroupRule api with *ModifySecurityGroupRuleRequest asynchronously
+// ModifySecurityGroupRuleWithChan invokes the ecs.ModifySecurityGroupRule API asynchronously
 // api document: https://help.aliyun.com/api/ecs/modifysecuritygrouprule.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySecurityGroupRuleWithChan(request *ModifySecurityGroupRuleRequest) (<-chan *ModifySecurityGroupRuleResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifySecurityGroupRuleWithChan(request *ModifySecurityGro
 	return responseChan, errChan
 }
 
-// invoke ModifySecurityGroupRule api with *ModifySecurityGroupRuleRequest asynchronously
+// ModifySecurityGroupRuleWithCallback invokes the ecs.ModifySecurityGroupRule API asynchronously
 // api document: https://help.aliyun.com/api/ecs/modifysecuritygrouprule.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySecurityGroupRuleWithCallback(request *ModifySecurityGroupRuleRequest, callback func(response *ModifySecurityGroupRuleResponse, err error)) <-chan int {
@@ -73,17 +73,19 @@ func (client *Client) ModifySecurityGroupRuleWithCallback(request *ModifySecurit
 	return result
 }
 
+// ModifySecurityGroupRuleRequest is the request struct for api ModifySecurityGroupRule
 type ModifySecurityGroupRuleRequest struct {
 	*requests.RpcRequest
 }
 
+// ModifySecurityGroupRuleResponse is the response struct for api ModifySecurityGroupRule
 type ModifySecurityGroupRuleResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ModifySecurityGroupRule API
-func CreateModifySecurityGroupRuleRequest() (request *ModifySecurityGroupRuleRequest) {
+// CreateModifySecurityGroupRuleRequest creates a request to invoke ModifySecurityGroupRule API
+func CreateModifySecurityGroupRuleRequest(request *ModifySecurityGroupRuleRequest) {
 	request = &ModifySecurityGroupRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -91,7 +93,7 @@ func CreateModifySecurityGroupRuleRequest() (request *ModifySecurityGroupRuleReq
 	return
 }
 
-// create a response to parse from ModifySecurityGroupRule response
+// CreateModifySecurityGroupRuleResponse creates a response to parse from ModifySecurityGroupRule response
 func CreateModifySecurityGroupRuleResponse() (response *ModifySecurityGroupRuleResponse) {
 	response = &ModifySecurityGroupRuleResponse{
 		BaseResponse: &responses.BaseResponse{},

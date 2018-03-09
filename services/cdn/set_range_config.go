@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SetRangeConfig api with *SetRangeConfigRequest synchronously
+// SetRangeConfig invokes the cdn.SetRangeConfig API synchronously
 // api document: https://help.aliyun.com/api/cdn/setrangeconfig.html
 func (client *Client) SetRangeConfig(request *SetRangeConfigRequest) (response *SetRangeConfigResponse, err error) {
 	response = CreateSetRangeConfigResponse()
@@ -28,7 +28,7 @@ func (client *Client) SetRangeConfig(request *SetRangeConfigRequest) (response *
 	return
 }
 
-// invoke SetRangeConfig api with *SetRangeConfigRequest asynchronously
+// SetRangeConfigWithChan invokes the cdn.SetRangeConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/setrangeconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetRangeConfigWithChan(request *SetRangeConfigRequest) (<-chan *SetRangeConfigResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SetRangeConfigWithChan(request *SetRangeConfigRequest) (<-
 	return responseChan, errChan
 }
 
-// invoke SetRangeConfig api with *SetRangeConfigRequest asynchronously
+// SetRangeConfigWithCallback invokes the cdn.SetRangeConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/setrangeconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetRangeConfigWithCallback(request *SetRangeConfigRequest, callback func(response *SetRangeConfigResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SetRangeConfigWithCallback(request *SetRangeConfigRequest,
 	return result
 }
 
+// SetRangeConfigRequest is the request struct for api SetRangeConfig
 type SetRangeConfigRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -81,13 +82,14 @@ type SetRangeConfigRequest struct {
 	Enable        string           `position:"Query" name:"Enable"`
 }
 
+// SetRangeConfigResponse is the response struct for api SetRangeConfig
 type SetRangeConfigResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke SetRangeConfig API
-func CreateSetRangeConfigRequest() (request *SetRangeConfigRequest) {
+// CreateSetRangeConfigRequest creates a request to invoke SetRangeConfig API
+func CreateSetRangeConfigRequest(request *SetRangeConfigRequest) {
 	request = &SetRangeConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateSetRangeConfigRequest() (request *SetRangeConfigRequest) {
 	return
 }
 
-// create a response to parse from SetRangeConfig response
+// CreateSetRangeConfigResponse creates a response to parse from SetRangeConfig response
 func CreateSetRangeConfigResponse() (response *SetRangeConfigResponse) {
 	response = &SetRangeConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

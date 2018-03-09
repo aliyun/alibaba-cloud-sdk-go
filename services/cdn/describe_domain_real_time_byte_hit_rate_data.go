@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeDomainRealTimeByteHitRateData api with *DescribeDomainRealTimeByteHitRateDataRequest synchronously
+// DescribeDomainRealTimeByteHitRateData invokes the cdn.DescribeDomainRealTimeByteHitRateData API synchronously
 // api document: https://help.aliyun.com/api/cdn/describedomainrealtimebytehitratedata.html
 func (client *Client) DescribeDomainRealTimeByteHitRateData(request *DescribeDomainRealTimeByteHitRateDataRequest) (response *DescribeDomainRealTimeByteHitRateDataResponse, err error) {
 	response = CreateDescribeDomainRealTimeByteHitRateDataResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeDomainRealTimeByteHitRateData(request *DescribeDom
 	return
 }
 
-// invoke DescribeDomainRealTimeByteHitRateData api with *DescribeDomainRealTimeByteHitRateDataRequest asynchronously
+// DescribeDomainRealTimeByteHitRateDataWithChan invokes the cdn.DescribeDomainRealTimeByteHitRateData API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describedomainrealtimebytehitratedata.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainRealTimeByteHitRateDataWithChan(request *DescribeDomainRealTimeByteHitRateDataRequest) (<-chan *DescribeDomainRealTimeByteHitRateDataResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeDomainRealTimeByteHitRateDataWithChan(request *Des
 	return responseChan, errChan
 }
 
-// invoke DescribeDomainRealTimeByteHitRateData api with *DescribeDomainRealTimeByteHitRateDataRequest asynchronously
+// DescribeDomainRealTimeByteHitRateDataWithCallback invokes the cdn.DescribeDomainRealTimeByteHitRateData API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describedomainrealtimebytehitratedata.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainRealTimeByteHitRateDataWithCallback(request *DescribeDomainRealTimeByteHitRateDataRequest, callback func(response *DescribeDomainRealTimeByteHitRateDataResponse, err error)) <-chan int {
@@ -73,18 +73,20 @@ func (client *Client) DescribeDomainRealTimeByteHitRateDataWithCallback(request 
 	return result
 }
 
+// DescribeDomainRealTimeByteHitRateDataRequest is the request struct for api DescribeDomainRealTimeByteHitRateData
 type DescribeDomainRealTimeByteHitRateDataRequest struct {
 	*requests.RpcRequest
 }
 
+// DescribeDomainRealTimeByteHitRateDataResponse is the response struct for api DescribeDomainRealTimeByteHitRateData
 type DescribeDomainRealTimeByteHitRateDataResponse struct {
 	*responses.BaseResponse
 	RequestId string                                      `json:"RequestId" xml:"RequestId"`
 	Data      DataInDescribeDomainRealTimeByteHitRateData `json:"Data" xml:"Data"`
 }
 
-// create a request to invoke DescribeDomainRealTimeByteHitRateData API
-func CreateDescribeDomainRealTimeByteHitRateDataRequest() (request *DescribeDomainRealTimeByteHitRateDataRequest) {
+// CreateDescribeDomainRealTimeByteHitRateDataRequest creates a request to invoke DescribeDomainRealTimeByteHitRateData API
+func CreateDescribeDomainRealTimeByteHitRateDataRequest(request *DescribeDomainRealTimeByteHitRateDataRequest) {
 	request = &DescribeDomainRealTimeByteHitRateDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -92,7 +94,7 @@ func CreateDescribeDomainRealTimeByteHitRateDataRequest() (request *DescribeDoma
 	return
 }
 
-// create a response to parse from DescribeDomainRealTimeByteHitRateData response
+// CreateDescribeDomainRealTimeByteHitRateDataResponse creates a response to parse from DescribeDomainRealTimeByteHitRateData response
 func CreateDescribeDomainRealTimeByteHitRateDataResponse() (response *DescribeDomainRealTimeByteHitRateDataResponse) {
 	response = &DescribeDomainRealTimeByteHitRateDataResponse{
 		BaseResponse: &responses.BaseResponse{},

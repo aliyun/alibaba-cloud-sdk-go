@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ListPublicKeys api with *ListPublicKeysRequest synchronously
+// ListPublicKeys invokes the ram.ListPublicKeys API synchronously
 // api document: https://help.aliyun.com/api/ram/listpublickeys.html
 func (client *Client) ListPublicKeys(request *ListPublicKeysRequest) (response *ListPublicKeysResponse, err error) {
 	response = CreateListPublicKeysResponse()
@@ -28,7 +28,7 @@ func (client *Client) ListPublicKeys(request *ListPublicKeysRequest) (response *
 	return
 }
 
-// invoke ListPublicKeys api with *ListPublicKeysRequest asynchronously
+// ListPublicKeysWithChan invokes the ram.ListPublicKeys API asynchronously
 // api document: https://help.aliyun.com/api/ram/listpublickeys.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListPublicKeysWithChan(request *ListPublicKeysRequest) (<-chan *ListPublicKeysResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ListPublicKeysWithChan(request *ListPublicKeysRequest) (<-
 	return responseChan, errChan
 }
 
-// invoke ListPublicKeys api with *ListPublicKeysRequest asynchronously
+// ListPublicKeysWithCallback invokes the ram.ListPublicKeys API asynchronously
 // api document: https://help.aliyun.com/api/ram/listpublickeys.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListPublicKeysWithCallback(request *ListPublicKeysRequest, callback func(response *ListPublicKeysResponse, err error)) <-chan int {
@@ -73,19 +73,21 @@ func (client *Client) ListPublicKeysWithCallback(request *ListPublicKeysRequest,
 	return result
 }
 
+// ListPublicKeysRequest is the request struct for api ListPublicKeys
 type ListPublicKeysRequest struct {
 	*requests.RpcRequest
 	UserName string `position:"Query" name:"UserName"`
 }
 
+// ListPublicKeysResponse is the response struct for api ListPublicKeys
 type ListPublicKeysResponse struct {
 	*responses.BaseResponse
 	RequestId  string     `json:"RequestId" xml:"RequestId"`
 	PublicKeys PublicKeys `json:"PublicKeys" xml:"PublicKeys"`
 }
 
-// create a request to invoke ListPublicKeys API
-func CreateListPublicKeysRequest() (request *ListPublicKeysRequest) {
+// CreateListPublicKeysRequest creates a request to invoke ListPublicKeys API
+func CreateListPublicKeysRequest(request *ListPublicKeysRequest) {
 	request = &ListPublicKeysRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -93,7 +95,7 @@ func CreateListPublicKeysRequest() (request *ListPublicKeysRequest) {
 	return
 }
 
-// create a response to parse from ListPublicKeys response
+// CreateListPublicKeysResponse creates a response to parse from ListPublicKeys response
 func CreateListPublicKeysResponse() (response *ListPublicKeysResponse) {
 	response = &ListPublicKeysResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeRisks api with *DescribeRisksRequest synchronously
+// DescribeRisks invokes the aegis.DescribeRisks API synchronously
 // api document: https://help.aliyun.com/api/aegis/describerisks.html
 func (client *Client) DescribeRisks(request *DescribeRisksRequest) (response *DescribeRisksResponse, err error) {
 	response = CreateDescribeRisksResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeRisks(request *DescribeRisksRequest) (response *De
 	return
 }
 
-// invoke DescribeRisks api with *DescribeRisksRequest asynchronously
+// DescribeRisksWithChan invokes the aegis.DescribeRisks API asynchronously
 // api document: https://help.aliyun.com/api/aegis/describerisks.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRisksWithChan(request *DescribeRisksRequest) (<-chan *DescribeRisksResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeRisksWithChan(request *DescribeRisksRequest) (<-ch
 	return responseChan, errChan
 }
 
-// invoke DescribeRisks api with *DescribeRisksRequest asynchronously
+// DescribeRisksWithCallback invokes the aegis.DescribeRisks API asynchronously
 // api document: https://help.aliyun.com/api/aegis/describerisks.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRisksWithCallback(request *DescribeRisksRequest, callback func(response *DescribeRisksResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeRisksWithCallback(request *DescribeRisksRequest, c
 	return result
 }
 
+// DescribeRisksRequest is the request struct for api DescribeRisks
 type DescribeRisksRequest struct {
 	*requests.RpcRequest
 	SourceIp        string           `position:"Query" name:"SourceIp"`
@@ -82,6 +83,7 @@ type DescribeRisksRequest struct {
 	Limit           requests.Integer `position:"Query" name:"Limit"`
 }
 
+// DescribeRisksResponse is the response struct for api DescribeRisks
 type DescribeRisksResponse struct {
 	*responses.BaseResponse
 	RequestId  string `json:"RequestId" xml:"RequestId"`
@@ -89,8 +91,8 @@ type DescribeRisksResponse struct {
 	Risks      []Risk `json:"Risks" xml:"Risks"`
 }
 
-// create a request to invoke DescribeRisks API
-func CreateDescribeRisksRequest() (request *DescribeRisksRequest) {
+// CreateDescribeRisksRequest creates a request to invoke DescribeRisks API
+func CreateDescribeRisksRequest(request *DescribeRisksRequest) {
 	request = &DescribeRisksRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateDescribeRisksRequest() (request *DescribeRisksRequest) {
 	return
 }
 
-// create a response to parse from DescribeRisks response
+// CreateDescribeRisksResponse creates a response to parse from DescribeRisks response
 func CreateDescribeRisksResponse() (response *DescribeRisksResponse) {
 	response = &DescribeRisksResponse{
 		BaseResponse: &responses.BaseResponse{},

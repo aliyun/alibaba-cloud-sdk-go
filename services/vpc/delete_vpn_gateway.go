@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteVpnGateway api with *DeleteVpnGatewayRequest synchronously
+// DeleteVpnGateway invokes the vpc.DeleteVpnGateway API synchronously
 // api document: https://help.aliyun.com/api/vpc/deletevpngateway.html
 func (client *Client) DeleteVpnGateway(request *DeleteVpnGatewayRequest) (response *DeleteVpnGatewayResponse, err error) {
 	response = CreateDeleteVpnGatewayResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteVpnGateway(request *DeleteVpnGatewayRequest) (respon
 	return
 }
 
-// invoke DeleteVpnGateway api with *DeleteVpnGatewayRequest asynchronously
+// DeleteVpnGatewayWithChan invokes the vpc.DeleteVpnGateway API asynchronously
 // api document: https://help.aliyun.com/api/vpc/deletevpngateway.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteVpnGatewayWithChan(request *DeleteVpnGatewayRequest) (<-chan *DeleteVpnGatewayResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteVpnGatewayWithChan(request *DeleteVpnGatewayRequest)
 	return responseChan, errChan
 }
 
-// invoke DeleteVpnGateway api with *DeleteVpnGatewayRequest asynchronously
+// DeleteVpnGatewayWithCallback invokes the vpc.DeleteVpnGateway API asynchronously
 // api document: https://help.aliyun.com/api/vpc/deletevpngateway.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteVpnGatewayWithCallback(request *DeleteVpnGatewayRequest, callback func(response *DeleteVpnGatewayResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DeleteVpnGatewayWithCallback(request *DeleteVpnGatewayRequ
 	return result
 }
 
+// DeleteVpnGatewayRequest is the request struct for api DeleteVpnGateway
 type DeleteVpnGatewayRequest struct {
 	*requests.RpcRequest
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
@@ -83,13 +84,14 @@ type DeleteVpnGatewayRequest struct {
 	VpnGatewayId         string           `position:"Query" name:"VpnGatewayId"`
 }
 
+// DeleteVpnGatewayResponse is the response struct for api DeleteVpnGateway
 type DeleteVpnGatewayResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DeleteVpnGateway API
-func CreateDeleteVpnGatewayRequest() (request *DeleteVpnGatewayRequest) {
+// CreateDeleteVpnGatewayRequest creates a request to invoke DeleteVpnGateway API
+func CreateDeleteVpnGatewayRequest(request *DeleteVpnGatewayRequest) {
 	request = &DeleteVpnGatewayRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateDeleteVpnGatewayRequest() (request *DeleteVpnGatewayRequest) {
 	return
 }
 
-// create a response to parse from DeleteVpnGateway response
+// CreateDeleteVpnGatewayResponse creates a response to parse from DeleteVpnGateway response
 func CreateDeleteVpnGatewayResponse() (response *DeleteVpnGatewayResponse) {
 	response = &DeleteVpnGatewayResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CreateAccessKey api with *CreateAccessKeyRequest synchronously
+// CreateAccessKey invokes the ram.CreateAccessKey API synchronously
 // api document: https://help.aliyun.com/api/ram/createaccesskey.html
 func (client *Client) CreateAccessKey(request *CreateAccessKeyRequest) (response *CreateAccessKeyResponse, err error) {
 	response = CreateCreateAccessKeyResponse()
@@ -28,7 +28,7 @@ func (client *Client) CreateAccessKey(request *CreateAccessKeyRequest) (response
 	return
 }
 
-// invoke CreateAccessKey api with *CreateAccessKeyRequest asynchronously
+// CreateAccessKeyWithChan invokes the ram.CreateAccessKey API asynchronously
 // api document: https://help.aliyun.com/api/ram/createaccesskey.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateAccessKeyWithChan(request *CreateAccessKeyRequest) (<-chan *CreateAccessKeyResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CreateAccessKeyWithChan(request *CreateAccessKeyRequest) (
 	return responseChan, errChan
 }
 
-// invoke CreateAccessKey api with *CreateAccessKeyRequest asynchronously
+// CreateAccessKeyWithCallback invokes the ram.CreateAccessKey API asynchronously
 // api document: https://help.aliyun.com/api/ram/createaccesskey.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateAccessKeyWithCallback(request *CreateAccessKeyRequest, callback func(response *CreateAccessKeyResponse, err error)) <-chan int {
@@ -73,19 +73,21 @@ func (client *Client) CreateAccessKeyWithCallback(request *CreateAccessKeyReques
 	return result
 }
 
+// CreateAccessKeyRequest is the request struct for api CreateAccessKey
 type CreateAccessKeyRequest struct {
 	*requests.RpcRequest
 	UserName string `position:"Query" name:"UserName"`
 }
 
+// CreateAccessKeyResponse is the response struct for api CreateAccessKey
 type CreateAccessKeyResponse struct {
 	*responses.BaseResponse
 	RequestId string    `json:"RequestId" xml:"RequestId"`
 	AccessKey AccessKey `json:"AccessKey" xml:"AccessKey"`
 }
 
-// create a request to invoke CreateAccessKey API
-func CreateCreateAccessKeyRequest() (request *CreateAccessKeyRequest) {
+// CreateCreateAccessKeyRequest creates a request to invoke CreateAccessKey API
+func CreateCreateAccessKeyRequest(request *CreateAccessKeyRequest) {
 	request = &CreateAccessKeyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -93,7 +95,7 @@ func CreateCreateAccessKeyRequest() (request *CreateAccessKeyRequest) {
 	return
 }
 
-// create a response to parse from CreateAccessKey response
+// CreateCreateAccessKeyResponse creates a response to parse from CreateAccessKey response
 func CreateCreateAccessKeyResponse() (response *CreateAccessKeyResponse) {
 	response = &CreateAccessKeyResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SaveBatchTaskForCreatingOrderRedeem api with *SaveBatchTaskForCreatingOrderRedeemRequest synchronously
+// SaveBatchTaskForCreatingOrderRedeem invokes the domain_intl.SaveBatchTaskForCreatingOrderRedeem API synchronously
 // api document: https://help.aliyun.com/api/domain-intl/savebatchtaskforcreatingorderredeem.html
 func (client *Client) SaveBatchTaskForCreatingOrderRedeem(request *SaveBatchTaskForCreatingOrderRedeemRequest) (response *SaveBatchTaskForCreatingOrderRedeemResponse, err error) {
 	response = CreateSaveBatchTaskForCreatingOrderRedeemResponse()
@@ -28,7 +28,7 @@ func (client *Client) SaveBatchTaskForCreatingOrderRedeem(request *SaveBatchTask
 	return
 }
 
-// invoke SaveBatchTaskForCreatingOrderRedeem api with *SaveBatchTaskForCreatingOrderRedeemRequest asynchronously
+// SaveBatchTaskForCreatingOrderRedeemWithChan invokes the domain_intl.SaveBatchTaskForCreatingOrderRedeem API asynchronously
 // api document: https://help.aliyun.com/api/domain-intl/savebatchtaskforcreatingorderredeem.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveBatchTaskForCreatingOrderRedeemWithChan(request *SaveBatchTaskForCreatingOrderRedeemRequest) (<-chan *SaveBatchTaskForCreatingOrderRedeemResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SaveBatchTaskForCreatingOrderRedeemWithChan(request *SaveB
 	return responseChan, errChan
 }
 
-// invoke SaveBatchTaskForCreatingOrderRedeem api with *SaveBatchTaskForCreatingOrderRedeemRequest asynchronously
+// SaveBatchTaskForCreatingOrderRedeemWithCallback invokes the domain_intl.SaveBatchTaskForCreatingOrderRedeem API asynchronously
 // api document: https://help.aliyun.com/api/domain-intl/savebatchtaskforcreatingorderredeem.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveBatchTaskForCreatingOrderRedeemWithCallback(request *SaveBatchTaskForCreatingOrderRedeemRequest, callback func(response *SaveBatchTaskForCreatingOrderRedeemResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SaveBatchTaskForCreatingOrderRedeemWithCallback(request *S
 	return result
 }
 
+// SaveBatchTaskForCreatingOrderRedeemRequest is the request struct for api SaveBatchTaskForCreatingOrderRedeem
 type SaveBatchTaskForCreatingOrderRedeemRequest struct {
 	*requests.RpcRequest
 	UserClientIp     string                                                 `position:"Query" name:"UserClientIp"`
@@ -80,19 +81,21 @@ type SaveBatchTaskForCreatingOrderRedeemRequest struct {
 	OrderRedeemParam *[]SaveBatchTaskForCreatingOrderRedeemOrderRedeemParam `position:"Query" name:"OrderRedeemParam"  type:"Repeated"`
 }
 
+// SaveBatchTaskForCreatingOrderRedeemOrderRedeemParam is a repeated param struct in SaveBatchTaskForCreatingOrderRedeemRequest
 type SaveBatchTaskForCreatingOrderRedeemOrderRedeemParam struct {
 	DomainName            string `name:"DomainName"`
 	CurrentExpirationDate string `name:"CurrentExpirationDate"`
 }
 
+// SaveBatchTaskForCreatingOrderRedeemResponse is the response struct for api SaveBatchTaskForCreatingOrderRedeem
 type SaveBatchTaskForCreatingOrderRedeemResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	TaskNo    string `json:"TaskNo" xml:"TaskNo"`
 }
 
-// create a request to invoke SaveBatchTaskForCreatingOrderRedeem API
-func CreateSaveBatchTaskForCreatingOrderRedeemRequest() (request *SaveBatchTaskForCreatingOrderRedeemRequest) {
+// CreateSaveBatchTaskForCreatingOrderRedeemRequest creates a request to invoke SaveBatchTaskForCreatingOrderRedeem API
+func CreateSaveBatchTaskForCreatingOrderRedeemRequest(request *SaveBatchTaskForCreatingOrderRedeemRequest) {
 	request = &SaveBatchTaskForCreatingOrderRedeemRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -100,7 +103,7 @@ func CreateSaveBatchTaskForCreatingOrderRedeemRequest() (request *SaveBatchTaskF
 	return
 }
 
-// create a response to parse from SaveBatchTaskForCreatingOrderRedeem response
+// CreateSaveBatchTaskForCreatingOrderRedeemResponse creates a response to parse from SaveBatchTaskForCreatingOrderRedeem response
 func CreateSaveBatchTaskForCreatingOrderRedeemResponse() (response *SaveBatchTaskForCreatingOrderRedeemResponse) {
 	response = &SaveBatchTaskForCreatingOrderRedeemResponse{
 		BaseResponse: &responses.BaseResponse{},

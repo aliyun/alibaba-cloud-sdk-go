@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke QueryCustomMetricList api with *QueryCustomMetricListRequest synchronously
+// QueryCustomMetricList invokes the cms.QueryCustomMetricList API synchronously
 // api document: https://help.aliyun.com/api/cms/querycustommetriclist.html
 func (client *Client) QueryCustomMetricList(request *QueryCustomMetricListRequest) (response *QueryCustomMetricListResponse, err error) {
 	response = CreateQueryCustomMetricListResponse()
@@ -28,7 +28,7 @@ func (client *Client) QueryCustomMetricList(request *QueryCustomMetricListReques
 	return
 }
 
-// invoke QueryCustomMetricList api with *QueryCustomMetricListRequest asynchronously
+// QueryCustomMetricListWithChan invokes the cms.QueryCustomMetricList API asynchronously
 // api document: https://help.aliyun.com/api/cms/querycustommetriclist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryCustomMetricListWithChan(request *QueryCustomMetricListRequest) (<-chan *QueryCustomMetricListResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) QueryCustomMetricListWithChan(request *QueryCustomMetricLi
 	return responseChan, errChan
 }
 
-// invoke QueryCustomMetricList api with *QueryCustomMetricListRequest asynchronously
+// QueryCustomMetricListWithCallback invokes the cms.QueryCustomMetricList API asynchronously
 // api document: https://help.aliyun.com/api/cms/querycustommetriclist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryCustomMetricListWithCallback(request *QueryCustomMetricListRequest, callback func(response *QueryCustomMetricListResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) QueryCustomMetricListWithCallback(request *QueryCustomMetr
 	return result
 }
 
+// QueryCustomMetricListRequest is the request struct for api QueryCustomMetricList
 type QueryCustomMetricListRequest struct {
 	*requests.RpcRequest
 	GroupId    string `position:"Query" name:"GroupId"`
@@ -84,6 +85,7 @@ type QueryCustomMetricListRequest struct {
 	Size       string `position:"Query" name:"Size"`
 }
 
+// QueryCustomMetricListResponse is the response struct for api QueryCustomMetricList
 type QueryCustomMetricListResponse struct {
 	*responses.BaseResponse
 	Code      string `json:"Code" xml:"Code"`
@@ -92,8 +94,8 @@ type QueryCustomMetricListResponse struct {
 	Result    string `json:"Result" xml:"Result"`
 }
 
-// create a request to invoke QueryCustomMetricList API
-func CreateQueryCustomMetricListRequest() (request *QueryCustomMetricListRequest) {
+// CreateQueryCustomMetricListRequest creates a request to invoke QueryCustomMetricList API
+func CreateQueryCustomMetricListRequest(request *QueryCustomMetricListRequest) {
 	request = &QueryCustomMetricListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -101,7 +103,7 @@ func CreateQueryCustomMetricListRequest() (request *QueryCustomMetricListRequest
 	return
 }
 
-// create a response to parse from QueryCustomMetricList response
+// CreateQueryCustomMetricListResponse creates a response to parse from QueryCustomMetricList response
 func CreateQueryCustomMetricListResponse() (response *QueryCustomMetricListResponse) {
 	response = &QueryCustomMetricListResponse{
 		BaseResponse: &responses.BaseResponse{},

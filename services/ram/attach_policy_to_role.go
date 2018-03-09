@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke AttachPolicyToRole api with *AttachPolicyToRoleRequest synchronously
+// AttachPolicyToRole invokes the ram.AttachPolicyToRole API synchronously
 // api document: https://help.aliyun.com/api/ram/attachpolicytorole.html
 func (client *Client) AttachPolicyToRole(request *AttachPolicyToRoleRequest) (response *AttachPolicyToRoleResponse, err error) {
 	response = CreateAttachPolicyToRoleResponse()
@@ -28,7 +28,7 @@ func (client *Client) AttachPolicyToRole(request *AttachPolicyToRoleRequest) (re
 	return
 }
 
-// invoke AttachPolicyToRole api with *AttachPolicyToRoleRequest asynchronously
+// AttachPolicyToRoleWithChan invokes the ram.AttachPolicyToRole API asynchronously
 // api document: https://help.aliyun.com/api/ram/attachpolicytorole.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AttachPolicyToRoleWithChan(request *AttachPolicyToRoleRequest) (<-chan *AttachPolicyToRoleResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) AttachPolicyToRoleWithChan(request *AttachPolicyToRoleRequ
 	return responseChan, errChan
 }
 
-// invoke AttachPolicyToRole api with *AttachPolicyToRoleRequest asynchronously
+// AttachPolicyToRoleWithCallback invokes the ram.AttachPolicyToRole API asynchronously
 // api document: https://help.aliyun.com/api/ram/attachpolicytorole.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AttachPolicyToRoleWithCallback(request *AttachPolicyToRoleRequest, callback func(response *AttachPolicyToRoleResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) AttachPolicyToRoleWithCallback(request *AttachPolicyToRole
 	return result
 }
 
+// AttachPolicyToRoleRequest is the request struct for api AttachPolicyToRole
 type AttachPolicyToRoleRequest struct {
 	*requests.RpcRequest
 	PolicyType string `position:"Query" name:"PolicyType"`
@@ -80,13 +81,14 @@ type AttachPolicyToRoleRequest struct {
 	RoleName   string `position:"Query" name:"RoleName"`
 }
 
+// AttachPolicyToRoleResponse is the response struct for api AttachPolicyToRole
 type AttachPolicyToRoleResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke AttachPolicyToRole API
-func CreateAttachPolicyToRoleRequest() (request *AttachPolicyToRoleRequest) {
+// CreateAttachPolicyToRoleRequest creates a request to invoke AttachPolicyToRole API
+func CreateAttachPolicyToRoleRequest(request *AttachPolicyToRoleRequest) {
 	request = &AttachPolicyToRoleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -94,7 +96,7 @@ func CreateAttachPolicyToRoleRequest() (request *AttachPolicyToRoleRequest) {
 	return
 }
 
-// create a response to parse from AttachPolicyToRole response
+// CreateAttachPolicyToRoleResponse creates a response to parse from AttachPolicyToRole response
 func CreateAttachPolicyToRoleResponse() (response *AttachPolicyToRoleResponse) {
 	response = &AttachPolicyToRoleResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ClearUserDomainBlackList api with *ClearUserDomainBlackListRequest synchronously
+// ClearUserDomainBlackList invokes the cdn.ClearUserDomainBlackList API synchronously
 // api document: https://help.aliyun.com/api/cdn/clearuserdomainblacklist.html
 func (client *Client) ClearUserDomainBlackList(request *ClearUserDomainBlackListRequest) (response *ClearUserDomainBlackListResponse, err error) {
 	response = CreateClearUserDomainBlackListResponse()
@@ -28,7 +28,7 @@ func (client *Client) ClearUserDomainBlackList(request *ClearUserDomainBlackList
 	return
 }
 
-// invoke ClearUserDomainBlackList api with *ClearUserDomainBlackListRequest asynchronously
+// ClearUserDomainBlackListWithChan invokes the cdn.ClearUserDomainBlackList API asynchronously
 // api document: https://help.aliyun.com/api/cdn/clearuserdomainblacklist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ClearUserDomainBlackListWithChan(request *ClearUserDomainBlackListRequest) (<-chan *ClearUserDomainBlackListResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ClearUserDomainBlackListWithChan(request *ClearUserDomainB
 	return responseChan, errChan
 }
 
-// invoke ClearUserDomainBlackList api with *ClearUserDomainBlackListRequest asynchronously
+// ClearUserDomainBlackListWithCallback invokes the cdn.ClearUserDomainBlackList API asynchronously
 // api document: https://help.aliyun.com/api/cdn/clearuserdomainblacklist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ClearUserDomainBlackListWithCallback(request *ClearUserDomainBlackListRequest, callback func(response *ClearUserDomainBlackListResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ClearUserDomainBlackListWithCallback(request *ClearUserDom
 	return result
 }
 
+// ClearUserDomainBlackListRequest is the request struct for api ClearUserDomainBlackList
 type ClearUserDomainBlackListRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -81,13 +82,14 @@ type ClearUserDomainBlackListRequest struct {
 	DomainName    string           `position:"Query" name:"DomainName"`
 }
 
+// ClearUserDomainBlackListResponse is the response struct for api ClearUserDomainBlackList
 type ClearUserDomainBlackListResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ClearUserDomainBlackList API
-func CreateClearUserDomainBlackListRequest() (request *ClearUserDomainBlackListRequest) {
+// CreateClearUserDomainBlackListRequest creates a request to invoke ClearUserDomainBlackList API
+func CreateClearUserDomainBlackListRequest(request *ClearUserDomainBlackListRequest) {
 	request = &ClearUserDomainBlackListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateClearUserDomainBlackListRequest() (request *ClearUserDomainBlackListR
 	return
 }
 
-// create a response to parse from ClearUserDomainBlackList response
+// CreateClearUserDomainBlackListResponse creates a response to parse from ClearUserDomainBlackList response
 func CreateClearUserDomainBlackListResponse() (response *ClearUserDomainBlackListResponse) {
 	response = &ClearUserDomainBlackListResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteIpfilterByEdmId api with *DeleteIpfilterByEdmIdRequest synchronously
+// DeleteIpfilterByEdmId invokes the dm.DeleteIpfilterByEdmId API synchronously
 // api document: https://help.aliyun.com/api/dm/deleteipfilterbyedmid.html
 func (client *Client) DeleteIpfilterByEdmId(request *DeleteIpfilterByEdmIdRequest) (response *DeleteIpfilterByEdmIdResponse, err error) {
 	response = CreateDeleteIpfilterByEdmIdResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteIpfilterByEdmId(request *DeleteIpfilterByEdmIdReques
 	return
 }
 
-// invoke DeleteIpfilterByEdmId api with *DeleteIpfilterByEdmIdRequest asynchronously
+// DeleteIpfilterByEdmIdWithChan invokes the dm.DeleteIpfilterByEdmId API asynchronously
 // api document: https://help.aliyun.com/api/dm/deleteipfilterbyedmid.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteIpfilterByEdmIdWithChan(request *DeleteIpfilterByEdmIdRequest) (<-chan *DeleteIpfilterByEdmIdResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteIpfilterByEdmIdWithChan(request *DeleteIpfilterByEdm
 	return responseChan, errChan
 }
 
-// invoke DeleteIpfilterByEdmId api with *DeleteIpfilterByEdmIdRequest asynchronously
+// DeleteIpfilterByEdmIdWithCallback invokes the dm.DeleteIpfilterByEdmId API asynchronously
 // api document: https://help.aliyun.com/api/dm/deleteipfilterbyedmid.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteIpfilterByEdmIdWithCallback(request *DeleteIpfilterByEdmIdRequest, callback func(response *DeleteIpfilterByEdmIdResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DeleteIpfilterByEdmIdWithCallback(request *DeleteIpfilterB
 	return result
 }
 
+// DeleteIpfilterByEdmIdRequest is the request struct for api DeleteIpfilterByEdmId
 type DeleteIpfilterByEdmIdRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,13 +83,14 @@ type DeleteIpfilterByEdmIdRequest struct {
 	Id                   string           `position:"Query" name:"Id"`
 }
 
+// DeleteIpfilterByEdmIdResponse is the response struct for api DeleteIpfilterByEdmId
 type DeleteIpfilterByEdmIdResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DeleteIpfilterByEdmId API
-func CreateDeleteIpfilterByEdmIdRequest() (request *DeleteIpfilterByEdmIdRequest) {
+// CreateDeleteIpfilterByEdmIdRequest creates a request to invoke DeleteIpfilterByEdmId API
+func CreateDeleteIpfilterByEdmIdRequest(request *DeleteIpfilterByEdmIdRequest) {
 	request = &DeleteIpfilterByEdmIdRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -96,7 +98,7 @@ func CreateDeleteIpfilterByEdmIdRequest() (request *DeleteIpfilterByEdmIdRequest
 	return
 }
 
-// create a response to parse from DeleteIpfilterByEdmId response
+// CreateDeleteIpfilterByEdmIdResponse creates a response to parse from DeleteIpfilterByEdmId response
 func CreateDeleteIpfilterByEdmIdResponse() (response *DeleteIpfilterByEdmIdResponse) {
 	response = &DeleteIpfilterByEdmIdResponse{
 		BaseResponse: &responses.BaseResponse{},

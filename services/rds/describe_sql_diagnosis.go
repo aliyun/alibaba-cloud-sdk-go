@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeSQLDiagnosis api with *DescribeSQLDiagnosisRequest synchronously
+// DescribeSQLDiagnosis invokes the rds.DescribeSQLDiagnosis API synchronously
 // api document: https://help.aliyun.com/api/rds/describesqldiagnosis.html
 func (client *Client) DescribeSQLDiagnosis(request *DescribeSQLDiagnosisRequest) (response *DescribeSQLDiagnosisResponse, err error) {
 	response = CreateDescribeSQLDiagnosisResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeSQLDiagnosis(request *DescribeSQLDiagnosisRequest)
 	return
 }
 
-// invoke DescribeSQLDiagnosis api with *DescribeSQLDiagnosisRequest asynchronously
+// DescribeSQLDiagnosisWithChan invokes the rds.DescribeSQLDiagnosis API asynchronously
 // api document: https://help.aliyun.com/api/rds/describesqldiagnosis.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSQLDiagnosisWithChan(request *DescribeSQLDiagnosisRequest) (<-chan *DescribeSQLDiagnosisResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeSQLDiagnosisWithChan(request *DescribeSQLDiagnosis
 	return responseChan, errChan
 }
 
-// invoke DescribeSQLDiagnosis api with *DescribeSQLDiagnosisRequest asynchronously
+// DescribeSQLDiagnosisWithCallback invokes the rds.DescribeSQLDiagnosis API asynchronously
 // api document: https://help.aliyun.com/api/rds/describesqldiagnosis.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSQLDiagnosisWithCallback(request *DescribeSQLDiagnosisRequest, callback func(response *DescribeSQLDiagnosisResponse, err error)) <-chan int {
@@ -73,20 +73,22 @@ func (client *Client) DescribeSQLDiagnosisWithCallback(request *DescribeSQLDiagn
 	return result
 }
 
+// DescribeSQLDiagnosisRequest is the request struct for api DescribeSQLDiagnosis
 type DescribeSQLDiagnosisRequest struct {
 	*requests.RpcRequest
 	DBInstanceId string `position:"Query" name:"DBInstanceId"`
 	SQLDiagId    string `position:"Query" name:"SQLDiagId"`
 }
 
+// DescribeSQLDiagnosisResponse is the response struct for api DescribeSQLDiagnosis
 type DescribeSQLDiagnosisResponse struct {
 	*responses.BaseResponse
 	RequestId string   `json:"RequestId" xml:"RequestId"`
 	SQLList   []string `json:"SQLList" xml:"SQLList"`
 }
 
-// create a request to invoke DescribeSQLDiagnosis API
-func CreateDescribeSQLDiagnosisRequest() (request *DescribeSQLDiagnosisRequest) {
+// CreateDescribeSQLDiagnosisRequest creates a request to invoke DescribeSQLDiagnosis API
+func CreateDescribeSQLDiagnosisRequest(request *DescribeSQLDiagnosisRequest) {
 	request = &DescribeSQLDiagnosisRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -94,7 +96,7 @@ func CreateDescribeSQLDiagnosisRequest() (request *DescribeSQLDiagnosisRequest) 
 	return
 }
 
-// create a response to parse from DescribeSQLDiagnosis response
+// CreateDescribeSQLDiagnosisResponse creates a response to parse from DescribeSQLDiagnosis response
 func CreateDescribeSQLDiagnosisResponse() (response *DescribeSQLDiagnosisResponse) {
 	response = &DescribeSQLDiagnosisResponse{
 		BaseResponse: &responses.BaseResponse{},

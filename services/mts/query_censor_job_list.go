@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke QueryCensorJobList api with *QueryCensorJobListRequest synchronously
+// QueryCensorJobList invokes the mts.QueryCensorJobList API synchronously
 // api document: https://help.aliyun.com/api/mts/querycensorjoblist.html
 func (client *Client) QueryCensorJobList(request *QueryCensorJobListRequest) (response *QueryCensorJobListResponse, err error) {
 	response = CreateQueryCensorJobListResponse()
@@ -28,7 +28,7 @@ func (client *Client) QueryCensorJobList(request *QueryCensorJobListRequest) (re
 	return
 }
 
-// invoke QueryCensorJobList api with *QueryCensorJobListRequest asynchronously
+// QueryCensorJobListWithChan invokes the mts.QueryCensorJobList API asynchronously
 // api document: https://help.aliyun.com/api/mts/querycensorjoblist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryCensorJobListWithChan(request *QueryCensorJobListRequest) (<-chan *QueryCensorJobListResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) QueryCensorJobListWithChan(request *QueryCensorJobListRequ
 	return responseChan, errChan
 }
 
-// invoke QueryCensorJobList api with *QueryCensorJobListRequest asynchronously
+// QueryCensorJobListWithCallback invokes the mts.QueryCensorJobList API asynchronously
 // api document: https://help.aliyun.com/api/mts/querycensorjoblist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryCensorJobListWithCallback(request *QueryCensorJobListRequest, callback func(response *QueryCensorJobListResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) QueryCensorJobListWithCallback(request *QueryCensorJobList
 	return result
 }
 
+// QueryCensorJobListRequest is the request struct for api QueryCensorJobList
 type QueryCensorJobListRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,6 +83,7 @@ type QueryCensorJobListRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// QueryCensorJobListResponse is the response struct for api QueryCensorJobList
 type QueryCensorJobListResponse struct {
 	*responses.BaseResponse
 	RequestId     string                          `json:"RequestId" xml:"RequestId"`
@@ -89,8 +91,8 @@ type QueryCensorJobListResponse struct {
 	CensorJobList CensorJobList                   `json:"CensorJobList" xml:"CensorJobList"`
 }
 
-// create a request to invoke QueryCensorJobList API
-func CreateQueryCensorJobListRequest() (request *QueryCensorJobListRequest) {
+// CreateQueryCensorJobListRequest creates a request to invoke QueryCensorJobList API
+func CreateQueryCensorJobListRequest(request *QueryCensorJobListRequest) {
 	request = &QueryCensorJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateQueryCensorJobListRequest() (request *QueryCensorJobListRequest) {
 	return
 }
 
-// create a response to parse from QueryCensorJobList response
+// CreateQueryCensorJobListResponse creates a response to parse from QueryCensorJobList response
 func CreateQueryCensorJobListResponse() (response *QueryCensorJobListResponse) {
 	response = &QueryCensorJobListResponse{
 		BaseResponse: &responses.BaseResponse{},

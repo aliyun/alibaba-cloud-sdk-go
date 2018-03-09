@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifyReplicaMode api with *ModifyReplicaModeRequest synchronously
+// ModifyReplicaMode invokes the rds.ModifyReplicaMode API synchronously
 // api document: https://help.aliyun.com/api/rds/modifyreplicamode.html
 func (client *Client) ModifyReplicaMode(request *ModifyReplicaModeRequest) (response *ModifyReplicaModeResponse, err error) {
 	response = CreateModifyReplicaModeResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifyReplicaMode(request *ModifyReplicaModeRequest) (resp
 	return
 }
 
-// invoke ModifyReplicaMode api with *ModifyReplicaModeRequest asynchronously
+// ModifyReplicaModeWithChan invokes the rds.ModifyReplicaMode API asynchronously
 // api document: https://help.aliyun.com/api/rds/modifyreplicamode.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyReplicaModeWithChan(request *ModifyReplicaModeRequest) (<-chan *ModifyReplicaModeResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifyReplicaModeWithChan(request *ModifyReplicaModeReques
 	return responseChan, errChan
 }
 
-// invoke ModifyReplicaMode api with *ModifyReplicaModeRequest asynchronously
+// ModifyReplicaModeWithCallback invokes the rds.ModifyReplicaMode API asynchronously
 // api document: https://help.aliyun.com/api/rds/modifyreplicamode.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyReplicaModeWithCallback(request *ModifyReplicaModeRequest, callback func(response *ModifyReplicaModeResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ModifyReplicaModeWithCallback(request *ModifyReplicaModeRe
 	return result
 }
 
+// ModifyReplicaModeRequest is the request struct for api ModifyReplicaMode
 type ModifyReplicaModeRequest struct {
 	*requests.RpcRequest
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
@@ -86,13 +87,14 @@ type ModifyReplicaModeRequest struct {
 	DomainMode           string           `position:"Query" name:"DomainMode"`
 }
 
+// ModifyReplicaModeResponse is the response struct for api ModifyReplicaMode
 type ModifyReplicaModeResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ModifyReplicaMode API
-func CreateModifyReplicaModeRequest() (request *ModifyReplicaModeRequest) {
+// CreateModifyReplicaModeRequest creates a request to invoke ModifyReplicaMode API
+func CreateModifyReplicaModeRequest(request *ModifyReplicaModeRequest) {
 	request = &ModifyReplicaModeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -100,7 +102,7 @@ func CreateModifyReplicaModeRequest() (request *ModifyReplicaModeRequest) {
 	return
 }
 
-// create a response to parse from ModifyReplicaMode response
+// CreateModifyReplicaModeResponse creates a response to parse from ModifyReplicaMode response
 func CreateModifyReplicaModeResponse() (response *ModifyReplicaModeResponse) {
 	response = &ModifyReplicaModeResponse{
 		BaseResponse: &responses.BaseResponse{},

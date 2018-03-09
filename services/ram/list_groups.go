@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ListGroups api with *ListGroupsRequest synchronously
+// ListGroups invokes the ram.ListGroups API synchronously
 // api document: https://help.aliyun.com/api/ram/listgroups.html
 func (client *Client) ListGroups(request *ListGroupsRequest) (response *ListGroupsResponse, err error) {
 	response = CreateListGroupsResponse()
@@ -28,7 +28,7 @@ func (client *Client) ListGroups(request *ListGroupsRequest) (response *ListGrou
 	return
 }
 
-// invoke ListGroups api with *ListGroupsRequest asynchronously
+// ListGroupsWithChan invokes the ram.ListGroups API asynchronously
 // api document: https://help.aliyun.com/api/ram/listgroups.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListGroupsWithChan(request *ListGroupsRequest) (<-chan *ListGroupsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ListGroupsWithChan(request *ListGroupsRequest) (<-chan *Li
 	return responseChan, errChan
 }
 
-// invoke ListGroups api with *ListGroupsRequest asynchronously
+// ListGroupsWithCallback invokes the ram.ListGroups API asynchronously
 // api document: https://help.aliyun.com/api/ram/listgroups.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListGroupsWithCallback(request *ListGroupsRequest, callback func(response *ListGroupsResponse, err error)) <-chan int {
@@ -73,12 +73,14 @@ func (client *Client) ListGroupsWithCallback(request *ListGroupsRequest, callbac
 	return result
 }
 
+// ListGroupsRequest is the request struct for api ListGroups
 type ListGroupsRequest struct {
 	*requests.RpcRequest
 	Marker   string           `position:"Query" name:"Marker"`
 	MaxItems requests.Integer `position:"Query" name:"MaxItems"`
 }
 
+// ListGroupsResponse is the response struct for api ListGroups
 type ListGroupsResponse struct {
 	*responses.BaseResponse
 	RequestId   string             `json:"RequestId" xml:"RequestId"`
@@ -87,8 +89,8 @@ type ListGroupsResponse struct {
 	Groups      GroupsInListGroups `json:"Groups" xml:"Groups"`
 }
 
-// create a request to invoke ListGroups API
-func CreateListGroupsRequest() (request *ListGroupsRequest) {
+// CreateListGroupsRequest creates a request to invoke ListGroups API
+func CreateListGroupsRequest(request *ListGroupsRequest) {
 	request = &ListGroupsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -96,7 +98,7 @@ func CreateListGroupsRequest() (request *ListGroupsRequest) {
 	return
 }
 
-// create a response to parse from ListGroups response
+// CreateListGroupsResponse creates a response to parse from ListGroups response
 func CreateListGroupsResponse() (response *ListGroupsResponse) {
 	response = &ListGroupsResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke RemoveFacePhotos api with *RemoveFacePhotosRequest synchronously
+// RemoveFacePhotos invokes the cloudphoto.RemoveFacePhotos API synchronously
 // api document: https://help.aliyun.com/api/cloudphoto/removefacephotos.html
 func (client *Client) RemoveFacePhotos(request *RemoveFacePhotosRequest) (response *RemoveFacePhotosResponse, err error) {
 	response = CreateRemoveFacePhotosResponse()
@@ -28,7 +28,7 @@ func (client *Client) RemoveFacePhotos(request *RemoveFacePhotosRequest) (respon
 	return
 }
 
-// invoke RemoveFacePhotos api with *RemoveFacePhotosRequest asynchronously
+// RemoveFacePhotosWithChan invokes the cloudphoto.RemoveFacePhotos API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/removefacephotos.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveFacePhotosWithChan(request *RemoveFacePhotosRequest) (<-chan *RemoveFacePhotosResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) RemoveFacePhotosWithChan(request *RemoveFacePhotosRequest)
 	return responseChan, errChan
 }
 
-// invoke RemoveFacePhotos api with *RemoveFacePhotosRequest asynchronously
+// RemoveFacePhotosWithCallback invokes the cloudphoto.RemoveFacePhotos API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/removefacephotos.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveFacePhotosWithCallback(request *RemoveFacePhotosRequest, callback func(response *RemoveFacePhotosResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) RemoveFacePhotosWithCallback(request *RemoveFacePhotosRequ
 	return result
 }
 
+// RemoveFacePhotosRequest is the request struct for api RemoveFacePhotos
 type RemoveFacePhotosRequest struct {
 	*requests.RpcRequest
 	FaceId    requests.Integer `position:"Query" name:"FaceId"`
@@ -81,6 +82,7 @@ type RemoveFacePhotosRequest struct {
 	LibraryId string           `position:"Query" name:"LibraryId"`
 }
 
+// RemoveFacePhotosResponse is the response struct for api RemoveFacePhotos
 type RemoveFacePhotosResponse struct {
 	*responses.BaseResponse
 	Code      string   `json:"Code" xml:"Code"`
@@ -90,8 +92,8 @@ type RemoveFacePhotosResponse struct {
 	Results   []Result `json:"Results" xml:"Results"`
 }
 
-// create a request to invoke RemoveFacePhotos API
-func CreateRemoveFacePhotosRequest() (request *RemoveFacePhotosRequest) {
+// CreateRemoveFacePhotosRequest creates a request to invoke RemoveFacePhotos API
+func CreateRemoveFacePhotosRequest(request *RemoveFacePhotosRequest) {
 	request = &RemoveFacePhotosRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateRemoveFacePhotosRequest() (request *RemoveFacePhotosRequest) {
 	return
 }
 
-// create a response to parse from RemoveFacePhotos response
+// CreateRemoveFacePhotosResponse creates a response to parse from RemoveFacePhotos response
 func CreateRemoveFacePhotosResponse() (response *RemoveFacePhotosResponse) {
 	response = &RemoveFacePhotosResponse{
 		BaseResponse: &responses.BaseResponse{},

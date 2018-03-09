@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke RemoveUsers api with *RemoveUsersRequest synchronously
+// RemoveUsers invokes the ccc.RemoveUsers API synchronously
 // api document: https://help.aliyun.com/api/ccc/removeusers.html
 func (client *Client) RemoveUsers(request *RemoveUsersRequest) (response *RemoveUsersResponse, err error) {
 	response = CreateRemoveUsersResponse()
@@ -28,7 +28,7 @@ func (client *Client) RemoveUsers(request *RemoveUsersRequest) (response *Remove
 	return
 }
 
-// invoke RemoveUsers api with *RemoveUsersRequest asynchronously
+// RemoveUsersWithChan invokes the ccc.RemoveUsers API asynchronously
 // api document: https://help.aliyun.com/api/ccc/removeusers.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveUsersWithChan(request *RemoveUsersRequest) (<-chan *RemoveUsersResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) RemoveUsersWithChan(request *RemoveUsersRequest) (<-chan *
 	return responseChan, errChan
 }
 
-// invoke RemoveUsers api with *RemoveUsersRequest asynchronously
+// RemoveUsersWithCallback invokes the ccc.RemoveUsers API asynchronously
 // api document: https://help.aliyun.com/api/ccc/removeusers.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveUsersWithCallback(request *RemoveUsersRequest, callback func(response *RemoveUsersResponse, err error)) <-chan int {
@@ -73,12 +73,14 @@ func (client *Client) RemoveUsersWithCallback(request *RemoveUsersRequest, callb
 	return result
 }
 
+// RemoveUsersRequest is the request struct for api RemoveUsers
 type RemoveUsersRequest struct {
 	*requests.RpcRequest
 	InstanceId string    `position:"Query" name:"InstanceId"`
 	UserId     *[]string `position:"Query" name:"UserId"  type:"Repeated"`
 }
 
+// RemoveUsersResponse is the response struct for api RemoveUsers
 type RemoveUsersResponse struct {
 	*responses.BaseResponse
 	RequestId      string `json:"RequestId" xml:"RequestId"`
@@ -88,8 +90,8 @@ type RemoveUsersResponse struct {
 	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 }
 
-// create a request to invoke RemoveUsers API
-func CreateRemoveUsersRequest() (request *RemoveUsersRequest) {
+// CreateRemoveUsersRequest creates a request to invoke RemoveUsers API
+func CreateRemoveUsersRequest(request *RemoveUsersRequest) {
 	request = &RemoveUsersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateRemoveUsersRequest() (request *RemoveUsersRequest) {
 	return
 }
 
-// create a response to parse from RemoveUsers response
+// CreateRemoveUsersResponse creates a response to parse from RemoveUsers response
 func CreateRemoveUsersResponse() (response *RemoveUsersResponse) {
 	response = &RemoveUsersResponse{
 		BaseResponse: &responses.BaseResponse{},

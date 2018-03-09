@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke GetFramedPhotoUrls api with *GetFramedPhotoUrlsRequest synchronously
+// GetFramedPhotoUrls invokes the cloudphoto.GetFramedPhotoUrls API synchronously
 // api document: https://help.aliyun.com/api/cloudphoto/getframedphotourls.html
 func (client *Client) GetFramedPhotoUrls(request *GetFramedPhotoUrlsRequest) (response *GetFramedPhotoUrlsResponse, err error) {
 	response = CreateGetFramedPhotoUrlsResponse()
@@ -28,7 +28,7 @@ func (client *Client) GetFramedPhotoUrls(request *GetFramedPhotoUrlsRequest) (re
 	return
 }
 
-// invoke GetFramedPhotoUrls api with *GetFramedPhotoUrlsRequest asynchronously
+// GetFramedPhotoUrlsWithChan invokes the cloudphoto.GetFramedPhotoUrls API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/getframedphotourls.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetFramedPhotoUrlsWithChan(request *GetFramedPhotoUrlsRequest) (<-chan *GetFramedPhotoUrlsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) GetFramedPhotoUrlsWithChan(request *GetFramedPhotoUrlsRequ
 	return responseChan, errChan
 }
 
-// invoke GetFramedPhotoUrls api with *GetFramedPhotoUrlsRequest asynchronously
+// GetFramedPhotoUrlsWithCallback invokes the cloudphoto.GetFramedPhotoUrls API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/getframedphotourls.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetFramedPhotoUrlsWithCallback(request *GetFramedPhotoUrlsRequest, callback func(response *GetFramedPhotoUrlsResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) GetFramedPhotoUrlsWithCallback(request *GetFramedPhotoUrls
 	return result
 }
 
+// GetFramedPhotoUrlsRequest is the request struct for api GetFramedPhotoUrls
 type GetFramedPhotoUrlsRequest struct {
 	*requests.RpcRequest
 	PhotoId   *[]string `position:"Query" name:"PhotoId"  type:"Repeated"`
@@ -81,6 +82,7 @@ type GetFramedPhotoUrlsRequest struct {
 	LibraryId string    `position:"Query" name:"LibraryId"`
 }
 
+// GetFramedPhotoUrlsResponse is the response struct for api GetFramedPhotoUrls
 type GetFramedPhotoUrlsResponse struct {
 	*responses.BaseResponse
 	Code      string                      `json:"Code" xml:"Code"`
@@ -90,8 +92,8 @@ type GetFramedPhotoUrlsResponse struct {
 	Results   ResultsInGetFramedPhotoUrls `json:"Results" xml:"Results"`
 }
 
-// create a request to invoke GetFramedPhotoUrls API
-func CreateGetFramedPhotoUrlsRequest() (request *GetFramedPhotoUrlsRequest) {
+// CreateGetFramedPhotoUrlsRequest creates a request to invoke GetFramedPhotoUrls API
+func CreateGetFramedPhotoUrlsRequest(request *GetFramedPhotoUrlsRequest) {
 	request = &GetFramedPhotoUrlsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateGetFramedPhotoUrlsRequest() (request *GetFramedPhotoUrlsRequest) {
 	return
 }
 
-// create a response to parse from GetFramedPhotoUrls response
+// CreateGetFramedPhotoUrlsResponse creates a response to parse from GetFramedPhotoUrls response
 func CreateGetFramedPhotoUrlsResponse() (response *GetFramedPhotoUrlsResponse) {
 	response = &GetFramedPhotoUrlsResponse{
 		BaseResponse: &responses.BaseResponse{},

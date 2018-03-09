@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke GetPackage api with *GetPackageRequest synchronously
+// GetPackage invokes the mts.GetPackage API synchronously
 // api document: https://help.aliyun.com/api/mts/getpackage.html
 func (client *Client) GetPackage(request *GetPackageRequest) (response *GetPackageResponse, err error) {
 	response = CreateGetPackageResponse()
@@ -28,7 +28,7 @@ func (client *Client) GetPackage(request *GetPackageRequest) (response *GetPacka
 	return
 }
 
-// invoke GetPackage api with *GetPackageRequest asynchronously
+// GetPackageWithChan invokes the mts.GetPackage API asynchronously
 // api document: https://help.aliyun.com/api/mts/getpackage.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetPackageWithChan(request *GetPackageRequest) (<-chan *GetPackageResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) GetPackageWithChan(request *GetPackageRequest) (<-chan *Ge
 	return responseChan, errChan
 }
 
-// invoke GetPackage api with *GetPackageRequest asynchronously
+// GetPackageWithCallback invokes the mts.GetPackage API asynchronously
 // api document: https://help.aliyun.com/api/mts/getpackage.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetPackageWithCallback(request *GetPackageRequest, callback func(response *GetPackageResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) GetPackageWithCallback(request *GetPackageRequest, callbac
 	return result
 }
 
+// GetPackageRequest is the request struct for api GetPackage
 type GetPackageRequest struct {
 	*requests.RpcRequest
 	OwnerId              string `position:"Query" name:"OwnerId"`
@@ -82,14 +83,15 @@ type GetPackageRequest struct {
 	Data                 string `position:"Query" name:"Data"`
 }
 
+// GetPackageResponse is the response struct for api GetPackage
 type GetPackageResponse struct {
 	*responses.BaseResponse
 	RequestId   string `json:"RequestId" xml:"RequestId"`
 	CertPackage string `json:"CertPackage" xml:"CertPackage"`
 }
 
-// create a request to invoke GetPackage API
-func CreateGetPackageRequest() (request *GetPackageRequest) {
+// CreateGetPackageRequest creates a request to invoke GetPackage API
+func CreateGetPackageRequest(request *GetPackageRequest) {
 	request = &GetPackageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateGetPackageRequest() (request *GetPackageRequest) {
 	return
 }
 
-// create a response to parse from GetPackage response
+// CreateGetPackageResponse creates a response to parse from GetPackage response
 func CreateGetPackageResponse() (response *GetPackageResponse) {
 	response = &GetPackageResponse{
 		BaseResponse: &responses.BaseResponse{},

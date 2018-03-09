@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke QueryInvalidAddress api with *QueryInvalidAddressRequest synchronously
+// QueryInvalidAddress invokes the dm.QueryInvalidAddress API synchronously
 // api document: https://help.aliyun.com/api/dm/queryinvalidaddress.html
 func (client *Client) QueryInvalidAddress(request *QueryInvalidAddressRequest) (response *QueryInvalidAddressResponse, err error) {
 	response = CreateQueryInvalidAddressResponse()
@@ -28,7 +28,7 @@ func (client *Client) QueryInvalidAddress(request *QueryInvalidAddressRequest) (
 	return
 }
 
-// invoke QueryInvalidAddress api with *QueryInvalidAddressRequest asynchronously
+// QueryInvalidAddressWithChan invokes the dm.QueryInvalidAddress API asynchronously
 // api document: https://help.aliyun.com/api/dm/queryinvalidaddress.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryInvalidAddressWithChan(request *QueryInvalidAddressRequest) (<-chan *QueryInvalidAddressResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) QueryInvalidAddressWithChan(request *QueryInvalidAddressRe
 	return responseChan, errChan
 }
 
-// invoke QueryInvalidAddress api with *QueryInvalidAddressRequest asynchronously
+// QueryInvalidAddressWithCallback invokes the dm.QueryInvalidAddress API asynchronously
 // api document: https://help.aliyun.com/api/dm/queryinvalidaddress.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryInvalidAddressWithCallback(request *QueryInvalidAddressRequest, callback func(response *QueryInvalidAddressResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) QueryInvalidAddressWithCallback(request *QueryInvalidAddre
 	return result
 }
 
+// QueryInvalidAddressRequest is the request struct for api QueryInvalidAddress
 type QueryInvalidAddressRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -85,6 +86,7 @@ type QueryInvalidAddressRequest struct {
 	NextStart            string           `position:"Query" name:"NextStart"`
 }
 
+// QueryInvalidAddressResponse is the response struct for api QueryInvalidAddress
 type QueryInvalidAddressResponse struct {
 	*responses.BaseResponse
 	RequestId  string                    `json:"RequestId" xml:"RequestId"`
@@ -93,8 +95,8 @@ type QueryInvalidAddressResponse struct {
 	Data       DataInQueryInvalidAddress `json:"data" xml:"data"`
 }
 
-// create a request to invoke QueryInvalidAddress API
-func CreateQueryInvalidAddressRequest() (request *QueryInvalidAddressRequest) {
+// CreateQueryInvalidAddressRequest creates a request to invoke QueryInvalidAddress API
+func CreateQueryInvalidAddressRequest(request *QueryInvalidAddressRequest) {
 	request = &QueryInvalidAddressRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -102,7 +104,7 @@ func CreateQueryInvalidAddressRequest() (request *QueryInvalidAddressRequest) {
 	return
 }
 
-// create a response to parse from QueryInvalidAddress response
+// CreateQueryInvalidAddressResponse creates a response to parse from QueryInvalidAddress response
 func CreateQueryInvalidAddressResponse() (response *QueryInvalidAddressResponse) {
 	response = &QueryInvalidAddressResponse{
 		BaseResponse: &responses.BaseResponse{},

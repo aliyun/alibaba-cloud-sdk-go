@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke AddBatchDomainRecords api with *AddBatchDomainRecordsRequest synchronously
+// AddBatchDomainRecords invokes the alidns.AddBatchDomainRecords API synchronously
 // api document: https://help.aliyun.com/api/alidns/addbatchdomainrecords.html
 func (client *Client) AddBatchDomainRecords(request *AddBatchDomainRecordsRequest) (response *AddBatchDomainRecordsResponse, err error) {
 	response = CreateAddBatchDomainRecordsResponse()
@@ -28,7 +28,7 @@ func (client *Client) AddBatchDomainRecords(request *AddBatchDomainRecordsReques
 	return
 }
 
-// invoke AddBatchDomainRecords api with *AddBatchDomainRecordsRequest asynchronously
+// AddBatchDomainRecordsWithChan invokes the alidns.AddBatchDomainRecords API asynchronously
 // api document: https://help.aliyun.com/api/alidns/addbatchdomainrecords.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddBatchDomainRecordsWithChan(request *AddBatchDomainRecordsRequest) (<-chan *AddBatchDomainRecordsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) AddBatchDomainRecordsWithChan(request *AddBatchDomainRecor
 	return responseChan, errChan
 }
 
-// invoke AddBatchDomainRecords api with *AddBatchDomainRecordsRequest asynchronously
+// AddBatchDomainRecordsWithCallback invokes the alidns.AddBatchDomainRecords API asynchronously
 // api document: https://help.aliyun.com/api/alidns/addbatchdomainrecords.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddBatchDomainRecordsWithCallback(request *AddBatchDomainRecordsRequest, callback func(response *AddBatchDomainRecordsResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) AddBatchDomainRecordsWithCallback(request *AddBatchDomainR
 	return result
 }
 
+// AddBatchDomainRecordsRequest is the request struct for api AddBatchDomainRecords
 type AddBatchDomainRecordsRequest struct {
 	*requests.RpcRequest
 	Lang         string `position:"Query" name:"Lang"`
@@ -80,14 +81,15 @@ type AddBatchDomainRecordsRequest struct {
 	Records      string `position:"Query" name:"Records"`
 }
 
+// AddBatchDomainRecordsResponse is the response struct for api AddBatchDomainRecords
 type AddBatchDomainRecordsResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	TraceId   string `json:"TraceId" xml:"TraceId"`
 }
 
-// create a request to invoke AddBatchDomainRecords API
-func CreateAddBatchDomainRecordsRequest() (request *AddBatchDomainRecordsRequest) {
+// CreateAddBatchDomainRecordsRequest creates a request to invoke AddBatchDomainRecords API
+func CreateAddBatchDomainRecordsRequest(request *AddBatchDomainRecordsRequest) {
 	request = &AddBatchDomainRecordsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateAddBatchDomainRecordsRequest() (request *AddBatchDomainRecordsRequest
 	return
 }
 
-// create a response to parse from AddBatchDomainRecords response
+// CreateAddBatchDomainRecordsResponse creates a response to parse from AddBatchDomainRecords response
 func CreateAddBatchDomainRecordsResponse() (response *AddBatchDomainRecordsResponse) {
 	response = &AddBatchDomainRecordsResponse{
 		BaseResponse: &responses.BaseResponse{},

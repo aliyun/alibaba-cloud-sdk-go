@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke StartMixStreamsService api with *StartMixStreamsServiceRequest synchronously
+// StartMixStreamsService invokes the cdn.StartMixStreamsService API synchronously
 // api document: https://help.aliyun.com/api/cdn/startmixstreamsservice.html
 func (client *Client) StartMixStreamsService(request *StartMixStreamsServiceRequest) (response *StartMixStreamsServiceResponse, err error) {
 	response = CreateStartMixStreamsServiceResponse()
@@ -28,7 +28,7 @@ func (client *Client) StartMixStreamsService(request *StartMixStreamsServiceRequ
 	return
 }
 
-// invoke StartMixStreamsService api with *StartMixStreamsServiceRequest asynchronously
+// StartMixStreamsServiceWithChan invokes the cdn.StartMixStreamsService API asynchronously
 // api document: https://help.aliyun.com/api/cdn/startmixstreamsservice.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StartMixStreamsServiceWithChan(request *StartMixStreamsServiceRequest) (<-chan *StartMixStreamsServiceResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) StartMixStreamsServiceWithChan(request *StartMixStreamsSer
 	return responseChan, errChan
 }
 
-// invoke StartMixStreamsService api with *StartMixStreamsServiceRequest asynchronously
+// StartMixStreamsServiceWithCallback invokes the cdn.StartMixStreamsService API asynchronously
 // api document: https://help.aliyun.com/api/cdn/startmixstreamsservice.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StartMixStreamsServiceWithCallback(request *StartMixStreamsServiceRequest, callback func(response *StartMixStreamsServiceResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) StartMixStreamsServiceWithCallback(request *StartMixStream
 	return result
 }
 
+// StartMixStreamsServiceRequest is the request struct for api StartMixStreamsService
 type StartMixStreamsServiceRequest struct {
 	*requests.RpcRequest
 	OwnerId        requests.Integer `position:"Query" name:"OwnerId"`
@@ -87,14 +88,15 @@ type StartMixStreamsServiceRequest struct {
 	MixType        string           `position:"Query" name:"MixType"`
 }
 
+// StartMixStreamsServiceResponse is the response struct for api StartMixStreamsService
 type StartMixStreamsServiceResponse struct {
 	*responses.BaseResponse
 	RequestId          string                                     `json:"RequestId" xml:"RequestId"`
 	MixStreamsInfoList MixStreamsInfoListInStartMixStreamsService `json:"MixStreamsInfoList" xml:"MixStreamsInfoList"`
 }
 
-// create a request to invoke StartMixStreamsService API
-func CreateStartMixStreamsServiceRequest() (request *StartMixStreamsServiceRequest) {
+// CreateStartMixStreamsServiceRequest creates a request to invoke StartMixStreamsService API
+func CreateStartMixStreamsServiceRequest(request *StartMixStreamsServiceRequest) {
 	request = &StartMixStreamsServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -102,7 +104,7 @@ func CreateStartMixStreamsServiceRequest() (request *StartMixStreamsServiceReque
 	return
 }
 
-// create a response to parse from StartMixStreamsService response
+// CreateStartMixStreamsServiceResponse creates a response to parse from StartMixStreamsService response
 func CreateStartMixStreamsServiceResponse() (response *StartMixStreamsServiceResponse) {
 	response = &StartMixStreamsServiceResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeInstanceStatus api with *DescribeInstanceStatusRequest synchronously
+// DescribeInstanceStatus invokes the ecs.DescribeInstanceStatus API synchronously
 // api document: https://help.aliyun.com/api/ecs/describeinstancestatus.html
 func (client *Client) DescribeInstanceStatus(request *DescribeInstanceStatusRequest) (response *DescribeInstanceStatusResponse, err error) {
 	response = CreateDescribeInstanceStatusResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeInstanceStatus(request *DescribeInstanceStatusRequ
 	return
 }
 
-// invoke DescribeInstanceStatus api with *DescribeInstanceStatusRequest asynchronously
+// DescribeInstanceStatusWithChan invokes the ecs.DescribeInstanceStatus API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describeinstancestatus.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceStatusWithChan(request *DescribeInstanceStatusRequest) (<-chan *DescribeInstanceStatusResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeInstanceStatusWithChan(request *DescribeInstanceSt
 	return responseChan, errChan
 }
 
-// invoke DescribeInstanceStatus api with *DescribeInstanceStatusRequest asynchronously
+// DescribeInstanceStatusWithCallback invokes the ecs.DescribeInstanceStatus API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describeinstancestatus.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceStatusWithCallback(request *DescribeInstanceStatusRequest, callback func(response *DescribeInstanceStatusResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeInstanceStatusWithCallback(request *DescribeInstan
 	return result
 }
 
+// DescribeInstanceStatusRequest is the request struct for api DescribeInstanceStatus
 type DescribeInstanceStatusRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -85,6 +86,7 @@ type DescribeInstanceStatusRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// DescribeInstanceStatusResponse is the response struct for api DescribeInstanceStatus
 type DescribeInstanceStatusResponse struct {
 	*responses.BaseResponse
 	RequestId        string           `json:"RequestId" xml:"RequestId"`
@@ -94,8 +96,8 @@ type DescribeInstanceStatusResponse struct {
 	InstanceStatuses InstanceStatuses `json:"InstanceStatuses" xml:"InstanceStatuses"`
 }
 
-// create a request to invoke DescribeInstanceStatus API
-func CreateDescribeInstanceStatusRequest() (request *DescribeInstanceStatusRequest) {
+// CreateDescribeInstanceStatusRequest creates a request to invoke DescribeInstanceStatus API
+func CreateDescribeInstanceStatusRequest(request *DescribeInstanceStatusRequest) {
 	request = &DescribeInstanceStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -103,7 +105,7 @@ func CreateDescribeInstanceStatusRequest() (request *DescribeInstanceStatusReque
 	return
 }
 
-// create a response to parse from DescribeInstanceStatus response
+// CreateDescribeInstanceStatusResponse creates a response to parse from DescribeInstanceStatus response
 func CreateDescribeInstanceStatusResponse() (response *DescribeInstanceStatusResponse) {
 	response = &DescribeInstanceStatusResponse{
 		BaseResponse: &responses.BaseResponse{},

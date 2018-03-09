@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeactivateRouterInterface api with *DeactivateRouterInterfaceRequest synchronously
+// DeactivateRouterInterface invokes the ecs.DeactivateRouterInterface API synchronously
 // api document: https://help.aliyun.com/api/ecs/deactivaterouterinterface.html
 func (client *Client) DeactivateRouterInterface(request *DeactivateRouterInterfaceRequest) (response *DeactivateRouterInterfaceResponse, err error) {
 	response = CreateDeactivateRouterInterfaceResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeactivateRouterInterface(request *DeactivateRouterInterfa
 	return
 }
 
-// invoke DeactivateRouterInterface api with *DeactivateRouterInterfaceRequest asynchronously
+// DeactivateRouterInterfaceWithChan invokes the ecs.DeactivateRouterInterface API asynchronously
 // api document: https://help.aliyun.com/api/ecs/deactivaterouterinterface.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeactivateRouterInterfaceWithChan(request *DeactivateRouterInterfaceRequest) (<-chan *DeactivateRouterInterfaceResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeactivateRouterInterfaceWithChan(request *DeactivateRoute
 	return responseChan, errChan
 }
 
-// invoke DeactivateRouterInterface api with *DeactivateRouterInterfaceRequest asynchronously
+// DeactivateRouterInterfaceWithCallback invokes the ecs.DeactivateRouterInterface API asynchronously
 // api document: https://help.aliyun.com/api/ecs/deactivaterouterinterface.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeactivateRouterInterfaceWithCallback(request *DeactivateRouterInterfaceRequest, callback func(response *DeactivateRouterInterfaceResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DeactivateRouterInterfaceWithCallback(request *DeactivateR
 	return result
 }
 
+// DeactivateRouterInterfaceRequest is the request struct for api DeactivateRouterInterface
 type DeactivateRouterInterfaceRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -81,13 +82,14 @@ type DeactivateRouterInterfaceRequest struct {
 	RouterInterfaceId    string           `position:"Query" name:"RouterInterfaceId"`
 }
 
+// DeactivateRouterInterfaceResponse is the response struct for api DeactivateRouterInterface
 type DeactivateRouterInterfaceResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DeactivateRouterInterface API
-func CreateDeactivateRouterInterfaceRequest() (request *DeactivateRouterInterfaceRequest) {
+// CreateDeactivateRouterInterfaceRequest creates a request to invoke DeactivateRouterInterface API
+func CreateDeactivateRouterInterfaceRequest(request *DeactivateRouterInterfaceRequest) {
 	request = &DeactivateRouterInterfaceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateDeactivateRouterInterfaceRequest() (request *DeactivateRouterInterfac
 	return
 }
 
-// create a response to parse from DeactivateRouterInterface response
+// CreateDeactivateRouterInterfaceResponse creates a response to parse from DeactivateRouterInterface response
 func CreateDeactivateRouterInterfaceResponse() (response *DeactivateRouterInterfaceResponse) {
 	response = &DeactivateRouterInterfaceResponse{
 		BaseResponse: &responses.BaseResponse{},

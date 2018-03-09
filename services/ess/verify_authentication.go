@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke VerifyAuthentication api with *VerifyAuthenticationRequest synchronously
+// VerifyAuthentication invokes the ess.VerifyAuthentication API synchronously
 // api document: https://help.aliyun.com/api/ess/verifyauthentication.html
 func (client *Client) VerifyAuthentication(request *VerifyAuthenticationRequest) (response *VerifyAuthenticationResponse, err error) {
 	response = CreateVerifyAuthenticationResponse()
@@ -28,7 +28,7 @@ func (client *Client) VerifyAuthentication(request *VerifyAuthenticationRequest)
 	return
 }
 
-// invoke VerifyAuthentication api with *VerifyAuthenticationRequest asynchronously
+// VerifyAuthenticationWithChan invokes the ess.VerifyAuthentication API asynchronously
 // api document: https://help.aliyun.com/api/ess/verifyauthentication.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) VerifyAuthenticationWithChan(request *VerifyAuthenticationRequest) (<-chan *VerifyAuthenticationResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) VerifyAuthenticationWithChan(request *VerifyAuthentication
 	return responseChan, errChan
 }
 
-// invoke VerifyAuthentication api with *VerifyAuthenticationRequest asynchronously
+// VerifyAuthenticationWithCallback invokes the ess.VerifyAuthentication API asynchronously
 // api document: https://help.aliyun.com/api/ess/verifyauthentication.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) VerifyAuthenticationWithCallback(request *VerifyAuthenticationRequest, callback func(response *VerifyAuthenticationResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) VerifyAuthenticationWithCallback(request *VerifyAuthentica
 	return result
 }
 
+// VerifyAuthenticationRequest is the request struct for api VerifyAuthentication
 type VerifyAuthenticationRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -81,13 +82,14 @@ type VerifyAuthenticationRequest struct {
 	Uid                  requests.Integer `position:"Query" name:"Uid"`
 }
 
+// VerifyAuthenticationResponse is the response struct for api VerifyAuthentication
 type VerifyAuthenticationResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke VerifyAuthentication API
-func CreateVerifyAuthenticationRequest() (request *VerifyAuthenticationRequest) {
+// CreateVerifyAuthenticationRequest creates a request to invoke VerifyAuthentication API
+func CreateVerifyAuthenticationRequest(request *VerifyAuthenticationRequest) {
 	request = &VerifyAuthenticationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateVerifyAuthenticationRequest() (request *VerifyAuthenticationRequest) 
 	return
 }
 
-// create a response to parse from VerifyAuthentication response
+// CreateVerifyAuthenticationResponse creates a response to parse from VerifyAuthentication response
 func CreateVerifyAuthenticationResponse() (response *VerifyAuthenticationResponse) {
 	response = &VerifyAuthenticationResponse{
 		BaseResponse: &responses.BaseResponse{},

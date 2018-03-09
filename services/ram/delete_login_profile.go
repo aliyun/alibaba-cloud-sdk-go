@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteLoginProfile api with *DeleteLoginProfileRequest synchronously
+// DeleteLoginProfile invokes the ram.DeleteLoginProfile API synchronously
 // api document: https://help.aliyun.com/api/ram/deleteloginprofile.html
 func (client *Client) DeleteLoginProfile(request *DeleteLoginProfileRequest) (response *DeleteLoginProfileResponse, err error) {
 	response = CreateDeleteLoginProfileResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteLoginProfile(request *DeleteLoginProfileRequest) (re
 	return
 }
 
-// invoke DeleteLoginProfile api with *DeleteLoginProfileRequest asynchronously
+// DeleteLoginProfileWithChan invokes the ram.DeleteLoginProfile API asynchronously
 // api document: https://help.aliyun.com/api/ram/deleteloginprofile.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteLoginProfileWithChan(request *DeleteLoginProfileRequest) (<-chan *DeleteLoginProfileResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteLoginProfileWithChan(request *DeleteLoginProfileRequ
 	return responseChan, errChan
 }
 
-// invoke DeleteLoginProfile api with *DeleteLoginProfileRequest asynchronously
+// DeleteLoginProfileWithCallback invokes the ram.DeleteLoginProfile API asynchronously
 // api document: https://help.aliyun.com/api/ram/deleteloginprofile.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteLoginProfileWithCallback(request *DeleteLoginProfileRequest, callback func(response *DeleteLoginProfileResponse, err error)) <-chan int {
@@ -73,18 +73,20 @@ func (client *Client) DeleteLoginProfileWithCallback(request *DeleteLoginProfile
 	return result
 }
 
+// DeleteLoginProfileRequest is the request struct for api DeleteLoginProfile
 type DeleteLoginProfileRequest struct {
 	*requests.RpcRequest
 	UserName string `position:"Query" name:"UserName"`
 }
 
+// DeleteLoginProfileResponse is the response struct for api DeleteLoginProfile
 type DeleteLoginProfileResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DeleteLoginProfile API
-func CreateDeleteLoginProfileRequest() (request *DeleteLoginProfileRequest) {
+// CreateDeleteLoginProfileRequest creates a request to invoke DeleteLoginProfile API
+func CreateDeleteLoginProfileRequest(request *DeleteLoginProfileRequest) {
 	request = &DeleteLoginProfileRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -92,7 +94,7 @@ func CreateDeleteLoginProfileRequest() (request *DeleteLoginProfileRequest) {
 	return
 }
 
-// create a response to parse from DeleteLoginProfile response
+// CreateDeleteLoginProfileResponse creates a response to parse from DeleteLoginProfile response
 func CreateDeleteLoginProfileResponse() (response *DeleteLoginProfileResponse) {
 	response = &DeleteLoginProfileResponse{
 		BaseResponse: &responses.BaseResponse{},

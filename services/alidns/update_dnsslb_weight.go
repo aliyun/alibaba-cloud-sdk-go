@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke UpdateDNSSLBWeight api with *UpdateDNSSLBWeightRequest synchronously
+// UpdateDNSSLBWeight invokes the alidns.UpdateDNSSLBWeight API synchronously
 // api document: https://help.aliyun.com/api/alidns/updatednsslbweight.html
 func (client *Client) UpdateDNSSLBWeight(request *UpdateDNSSLBWeightRequest) (response *UpdateDNSSLBWeightResponse, err error) {
 	response = CreateUpdateDNSSLBWeightResponse()
@@ -28,7 +28,7 @@ func (client *Client) UpdateDNSSLBWeight(request *UpdateDNSSLBWeightRequest) (re
 	return
 }
 
-// invoke UpdateDNSSLBWeight api with *UpdateDNSSLBWeightRequest asynchronously
+// UpdateDNSSLBWeightWithChan invokes the alidns.UpdateDNSSLBWeight API asynchronously
 // api document: https://help.aliyun.com/api/alidns/updatednsslbweight.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateDNSSLBWeightWithChan(request *UpdateDNSSLBWeightRequest) (<-chan *UpdateDNSSLBWeightResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) UpdateDNSSLBWeightWithChan(request *UpdateDNSSLBWeightRequ
 	return responseChan, errChan
 }
 
-// invoke UpdateDNSSLBWeight api with *UpdateDNSSLBWeightRequest asynchronously
+// UpdateDNSSLBWeightWithCallback invokes the alidns.UpdateDNSSLBWeight API asynchronously
 // api document: https://help.aliyun.com/api/alidns/updatednsslbweight.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateDNSSLBWeightWithCallback(request *UpdateDNSSLBWeightRequest, callback func(response *UpdateDNSSLBWeightResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) UpdateDNSSLBWeightWithCallback(request *UpdateDNSSLBWeight
 	return result
 }
 
+// UpdateDNSSLBWeightRequest is the request struct for api UpdateDNSSLBWeight
 type UpdateDNSSLBWeightRequest struct {
 	*requests.RpcRequest
 	Lang         string           `position:"Query" name:"Lang"`
@@ -81,6 +82,7 @@ type UpdateDNSSLBWeightRequest struct {
 	Weight       requests.Integer `position:"Query" name:"Weight"`
 }
 
+// UpdateDNSSLBWeightResponse is the response struct for api UpdateDNSSLBWeight
 type UpdateDNSSLBWeightResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
@@ -88,8 +90,8 @@ type UpdateDNSSLBWeightResponse struct {
 	Weight    int    `json:"Weight" xml:"Weight"`
 }
 
-// create a request to invoke UpdateDNSSLBWeight API
-func CreateUpdateDNSSLBWeightRequest() (request *UpdateDNSSLBWeightRequest) {
+// CreateUpdateDNSSLBWeightRequest creates a request to invoke UpdateDNSSLBWeight API
+func CreateUpdateDNSSLBWeightRequest(request *UpdateDNSSLBWeightRequest) {
 	request = &UpdateDNSSLBWeightRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateUpdateDNSSLBWeightRequest() (request *UpdateDNSSLBWeightRequest) {
 	return
 }
 
-// create a response to parse from UpdateDNSSLBWeight response
+// CreateUpdateDNSSLBWeightResponse creates a response to parse from UpdateDNSSLBWeight response
 func CreateUpdateDNSSLBWeightResponse() (response *UpdateDNSSLBWeightResponse) {
 	response = &UpdateDNSSLBWeightResponse{
 		BaseResponse: &responses.BaseResponse{},

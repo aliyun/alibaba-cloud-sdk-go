@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SetOssLogConfig api with *SetOssLogConfigRequest synchronously
+// SetOssLogConfig invokes the cdn.SetOssLogConfig API synchronously
 // api document: https://help.aliyun.com/api/cdn/setosslogconfig.html
 func (client *Client) SetOssLogConfig(request *SetOssLogConfigRequest) (response *SetOssLogConfigResponse, err error) {
 	response = CreateSetOssLogConfigResponse()
@@ -28,7 +28,7 @@ func (client *Client) SetOssLogConfig(request *SetOssLogConfigRequest) (response
 	return
 }
 
-// invoke SetOssLogConfig api with *SetOssLogConfigRequest asynchronously
+// SetOssLogConfigWithChan invokes the cdn.SetOssLogConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/setosslogconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetOssLogConfigWithChan(request *SetOssLogConfigRequest) (<-chan *SetOssLogConfigResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SetOssLogConfigWithChan(request *SetOssLogConfigRequest) (
 	return responseChan, errChan
 }
 
-// invoke SetOssLogConfig api with *SetOssLogConfigRequest asynchronously
+// SetOssLogConfigWithCallback invokes the cdn.SetOssLogConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/setosslogconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetOssLogConfigWithCallback(request *SetOssLogConfigRequest, callback func(response *SetOssLogConfigResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SetOssLogConfigWithCallback(request *SetOssLogConfigReques
 	return result
 }
 
+// SetOssLogConfigRequest is the request struct for api SetOssLogConfig
 type SetOssLogConfigRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,13 +83,14 @@ type SetOssLogConfigRequest struct {
 	Prefix        string           `position:"Query" name:"Prefix"`
 }
 
+// SetOssLogConfigResponse is the response struct for api SetOssLogConfig
 type SetOssLogConfigResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke SetOssLogConfig API
-func CreateSetOssLogConfigRequest() (request *SetOssLogConfigRequest) {
+// CreateSetOssLogConfigRequest creates a request to invoke SetOssLogConfig API
+func CreateSetOssLogConfigRequest(request *SetOssLogConfigRequest) {
 	request = &SetOssLogConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -96,7 +98,7 @@ func CreateSetOssLogConfigRequest() (request *SetOssLogConfigRequest) {
 	return
 }
 
-// create a response to parse from SetOssLogConfig response
+// CreateSetOssLogConfigResponse creates a response to parse from SetOssLogConfig response
 func CreateSetOssLogConfigResponse() (response *SetOssLogConfigResponse) {
 	response = &SetOssLogConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

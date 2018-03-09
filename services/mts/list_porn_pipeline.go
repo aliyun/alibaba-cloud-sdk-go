@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ListPornPipeline api with *ListPornPipelineRequest synchronously
+// ListPornPipeline invokes the mts.ListPornPipeline API synchronously
 // api document: https://help.aliyun.com/api/mts/listpornpipeline.html
 func (client *Client) ListPornPipeline(request *ListPornPipelineRequest) (response *ListPornPipelineResponse, err error) {
 	response = CreateListPornPipelineResponse()
@@ -28,7 +28,7 @@ func (client *Client) ListPornPipeline(request *ListPornPipelineRequest) (respon
 	return
 }
 
-// invoke ListPornPipeline api with *ListPornPipelineRequest asynchronously
+// ListPornPipelineWithChan invokes the mts.ListPornPipeline API asynchronously
 // api document: https://help.aliyun.com/api/mts/listpornpipeline.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListPornPipelineWithChan(request *ListPornPipelineRequest) (<-chan *ListPornPipelineResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ListPornPipelineWithChan(request *ListPornPipelineRequest)
 	return responseChan, errChan
 }
 
-// invoke ListPornPipeline api with *ListPornPipelineRequest asynchronously
+// ListPornPipelineWithCallback invokes the mts.ListPornPipeline API asynchronously
 // api document: https://help.aliyun.com/api/mts/listpornpipeline.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListPornPipelineWithCallback(request *ListPornPipelineRequest, callback func(response *ListPornPipelineResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ListPornPipelineWithCallback(request *ListPornPipelineRequ
 	return result
 }
 
+// ListPornPipelineRequest is the request struct for api ListPornPipeline
 type ListPornPipelineRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,6 +85,7 @@ type ListPornPipelineRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// ListPornPipelineResponse is the response struct for api ListPornPipeline
 type ListPornPipelineResponse struct {
 	*responses.BaseResponse
 	RequestId    string                         `json:"RequestId" xml:"RequestId"`
@@ -93,8 +95,8 @@ type ListPornPipelineResponse struct {
 	PipelineList PipelineListInListPornPipeline `json:"PipelineList" xml:"PipelineList"`
 }
 
-// create a request to invoke ListPornPipeline API
-func CreateListPornPipelineRequest() (request *ListPornPipelineRequest) {
+// CreateListPornPipelineRequest creates a request to invoke ListPornPipeline API
+func CreateListPornPipelineRequest(request *ListPornPipelineRequest) {
 	request = &ListPornPipelineRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -102,7 +104,7 @@ func CreateListPornPipelineRequest() (request *ListPornPipelineRequest) {
 	return
 }
 
-// create a response to parse from ListPornPipeline response
+// CreateListPornPipelineResponse creates a response to parse from ListPornPipeline response
 func CreateListPornPipelineResponse() (response *ListPornPipelineResponse) {
 	response = &ListPornPipelineResponse{
 		BaseResponse: &responses.BaseResponse{},

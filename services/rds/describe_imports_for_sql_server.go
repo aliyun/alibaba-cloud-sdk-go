@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeImportsForSQLServer api with *DescribeImportsForSQLServerRequest synchronously
+// DescribeImportsForSQLServer invokes the rds.DescribeImportsForSQLServer API synchronously
 // api document: https://help.aliyun.com/api/rds/describeimportsforsqlserver.html
 func (client *Client) DescribeImportsForSQLServer(request *DescribeImportsForSQLServerRequest) (response *DescribeImportsForSQLServerResponse, err error) {
 	response = CreateDescribeImportsForSQLServerResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeImportsForSQLServer(request *DescribeImportsForSQL
 	return
 }
 
-// invoke DescribeImportsForSQLServer api with *DescribeImportsForSQLServerRequest asynchronously
+// DescribeImportsForSQLServerWithChan invokes the rds.DescribeImportsForSQLServer API asynchronously
 // api document: https://help.aliyun.com/api/rds/describeimportsforsqlserver.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeImportsForSQLServerWithChan(request *DescribeImportsForSQLServerRequest) (<-chan *DescribeImportsForSQLServerResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeImportsForSQLServerWithChan(request *DescribeImpor
 	return responseChan, errChan
 }
 
-// invoke DescribeImportsForSQLServer api with *DescribeImportsForSQLServerRequest asynchronously
+// DescribeImportsForSQLServerWithCallback invokes the rds.DescribeImportsForSQLServer API asynchronously
 // api document: https://help.aliyun.com/api/rds/describeimportsforsqlserver.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeImportsForSQLServerWithCallback(request *DescribeImportsForSQLServerRequest, callback func(response *DescribeImportsForSQLServerResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeImportsForSQLServerWithCallback(request *DescribeI
 	return result
 }
 
+// DescribeImportsForSQLServerRequest is the request struct for api DescribeImportsForSQLServer
 type DescribeImportsForSQLServerRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -87,6 +88,7 @@ type DescribeImportsForSQLServerRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// DescribeImportsForSQLServerResponse is the response struct for api DescribeImportsForSQLServer
 type DescribeImportsForSQLServerResponse struct {
 	*responses.BaseResponse
 	RequestId         string                             `json:"RequestId" xml:"RequestId"`
@@ -96,8 +98,8 @@ type DescribeImportsForSQLServerResponse struct {
 	Items             ItemsInDescribeImportsForSQLServer `json:"Items" xml:"Items"`
 }
 
-// create a request to invoke DescribeImportsForSQLServer API
-func CreateDescribeImportsForSQLServerRequest() (request *DescribeImportsForSQLServerRequest) {
+// CreateDescribeImportsForSQLServerRequest creates a request to invoke DescribeImportsForSQLServer API
+func CreateDescribeImportsForSQLServerRequest(request *DescribeImportsForSQLServerRequest) {
 	request = &DescribeImportsForSQLServerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -105,7 +107,7 @@ func CreateDescribeImportsForSQLServerRequest() (request *DescribeImportsForSQLS
 	return
 }
 
-// create a response to parse from DescribeImportsForSQLServer response
+// CreateDescribeImportsForSQLServerResponse creates a response to parse from DescribeImportsForSQLServer response
 func CreateDescribeImportsForSQLServerResponse() (response *DescribeImportsForSQLServerResponse) {
 	response = &DescribeImportsForSQLServerResponse{
 		BaseResponse: &responses.BaseResponse{},

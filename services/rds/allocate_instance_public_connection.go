@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke AllocateInstancePublicConnection api with *AllocateInstancePublicConnectionRequest synchronously
+// AllocateInstancePublicConnection invokes the rds.AllocateInstancePublicConnection API synchronously
 // api document: https://help.aliyun.com/api/rds/allocateinstancepublicconnection.html
 func (client *Client) AllocateInstancePublicConnection(request *AllocateInstancePublicConnectionRequest) (response *AllocateInstancePublicConnectionResponse, err error) {
 	response = CreateAllocateInstancePublicConnectionResponse()
@@ -28,7 +28,7 @@ func (client *Client) AllocateInstancePublicConnection(request *AllocateInstance
 	return
 }
 
-// invoke AllocateInstancePublicConnection api with *AllocateInstancePublicConnectionRequest asynchronously
+// AllocateInstancePublicConnectionWithChan invokes the rds.AllocateInstancePublicConnection API asynchronously
 // api document: https://help.aliyun.com/api/rds/allocateinstancepublicconnection.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AllocateInstancePublicConnectionWithChan(request *AllocateInstancePublicConnectionRequest) (<-chan *AllocateInstancePublicConnectionResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) AllocateInstancePublicConnectionWithChan(request *Allocate
 	return responseChan, errChan
 }
 
-// invoke AllocateInstancePublicConnection api with *AllocateInstancePublicConnectionRequest asynchronously
+// AllocateInstancePublicConnectionWithCallback invokes the rds.AllocateInstancePublicConnection API asynchronously
 // api document: https://help.aliyun.com/api/rds/allocateinstancepublicconnection.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AllocateInstancePublicConnectionWithCallback(request *AllocateInstancePublicConnectionRequest, callback func(response *AllocateInstancePublicConnectionResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) AllocateInstancePublicConnectionWithCallback(request *Allo
 	return result
 }
 
+// AllocateInstancePublicConnectionRequest is the request struct for api AllocateInstancePublicConnection
 type AllocateInstancePublicConnectionRequest struct {
 	*requests.RpcRequest
 	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,13 +85,14 @@ type AllocateInstancePublicConnectionRequest struct {
 	OwnerAccount           string           `position:"Query" name:"OwnerAccount"`
 }
 
+// AllocateInstancePublicConnectionResponse is the response struct for api AllocateInstancePublicConnection
 type AllocateInstancePublicConnectionResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke AllocateInstancePublicConnection API
-func CreateAllocateInstancePublicConnectionRequest() (request *AllocateInstancePublicConnectionRequest) {
+// CreateAllocateInstancePublicConnectionRequest creates a request to invoke AllocateInstancePublicConnection API
+func CreateAllocateInstancePublicConnectionRequest(request *AllocateInstancePublicConnectionRequest) {
 	request = &AllocateInstancePublicConnectionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateAllocateInstancePublicConnectionRequest() (request *AllocateInstanceP
 	return
 }
 
-// create a response to parse from AllocateInstancePublicConnection response
+// CreateAllocateInstancePublicConnectionResponse creates a response to parse from AllocateInstancePublicConnection response
 func CreateAllocateInstancePublicConnectionResponse() (response *AllocateInstancePublicConnectionResponse) {
 	response = &AllocateInstancePublicConnectionResponse{
 		BaseResponse: &responses.BaseResponse{},

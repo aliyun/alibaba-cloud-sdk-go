@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DetachInstanceRamRole api with *DetachInstanceRamRoleRequest synchronously
+// DetachInstanceRamRole invokes the ecs.DetachInstanceRamRole API synchronously
 // api document: https://help.aliyun.com/api/ecs/detachinstanceramrole.html
 func (client *Client) DetachInstanceRamRole(request *DetachInstanceRamRoleRequest) (response *DetachInstanceRamRoleResponse, err error) {
 	response = CreateDetachInstanceRamRoleResponse()
@@ -28,7 +28,7 @@ func (client *Client) DetachInstanceRamRole(request *DetachInstanceRamRoleReques
 	return
 }
 
-// invoke DetachInstanceRamRole api with *DetachInstanceRamRoleRequest asynchronously
+// DetachInstanceRamRoleWithChan invokes the ecs.DetachInstanceRamRole API asynchronously
 // api document: https://help.aliyun.com/api/ecs/detachinstanceramrole.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetachInstanceRamRoleWithChan(request *DetachInstanceRamRoleRequest) (<-chan *DetachInstanceRamRoleResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DetachInstanceRamRoleWithChan(request *DetachInstanceRamRo
 	return responseChan, errChan
 }
 
-// invoke DetachInstanceRamRole api with *DetachInstanceRamRoleRequest asynchronously
+// DetachInstanceRamRoleWithCallback invokes the ecs.DetachInstanceRamRole API asynchronously
 // api document: https://help.aliyun.com/api/ecs/detachinstanceramrole.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetachInstanceRamRoleWithCallback(request *DetachInstanceRamRoleRequest, callback func(response *DetachInstanceRamRoleResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DetachInstanceRamRoleWithCallback(request *DetachInstanceR
 	return result
 }
 
+// DetachInstanceRamRoleRequest is the request struct for api DetachInstanceRamRole
 type DetachInstanceRamRoleRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,6 +83,7 @@ type DetachInstanceRamRoleRequest struct {
 	InstanceIds          string           `position:"Query" name:"InstanceIds"`
 }
 
+// DetachInstanceRamRoleResponse is the response struct for api DetachInstanceRamRole
 type DetachInstanceRamRoleResponse struct {
 	*responses.BaseResponse
 	RequestId                    string                       `json:"RequestId" xml:"RequestId"`
@@ -91,8 +93,8 @@ type DetachInstanceRamRoleResponse struct {
 	DetachInstanceRamRoleResults DetachInstanceRamRoleResults `json:"DetachInstanceRamRoleResults" xml:"DetachInstanceRamRoleResults"`
 }
 
-// create a request to invoke DetachInstanceRamRole API
-func CreateDetachInstanceRamRoleRequest() (request *DetachInstanceRamRoleRequest) {
+// CreateDetachInstanceRamRoleRequest creates a request to invoke DetachInstanceRamRole API
+func CreateDetachInstanceRamRoleRequest(request *DetachInstanceRamRoleRequest) {
 	request = &DetachInstanceRamRoleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -100,7 +102,7 @@ func CreateDetachInstanceRamRoleRequest() (request *DetachInstanceRamRoleRequest
 	return
 }
 
-// create a response to parse from DetachInstanceRamRole response
+// CreateDetachInstanceRamRoleResponse creates a response to parse from DetachInstanceRamRole response
 func CreateDetachInstanceRamRoleResponse() (response *DetachInstanceRamRoleResponse) {
 	response = &DetachInstanceRamRoleResponse{
 		BaseResponse: &responses.BaseResponse{},

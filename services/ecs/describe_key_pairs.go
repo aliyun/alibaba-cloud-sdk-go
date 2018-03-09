@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeKeyPairs api with *DescribeKeyPairsRequest synchronously
+// DescribeKeyPairs invokes the ecs.DescribeKeyPairs API synchronously
 // api document: https://help.aliyun.com/api/ecs/describekeypairs.html
 func (client *Client) DescribeKeyPairs(request *DescribeKeyPairsRequest) (response *DescribeKeyPairsResponse, err error) {
 	response = CreateDescribeKeyPairsResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeKeyPairs(request *DescribeKeyPairsRequest) (respon
 	return
 }
 
-// invoke DescribeKeyPairs api with *DescribeKeyPairsRequest asynchronously
+// DescribeKeyPairsWithChan invokes the ecs.DescribeKeyPairs API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describekeypairs.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeKeyPairsWithChan(request *DescribeKeyPairsRequest) (<-chan *DescribeKeyPairsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeKeyPairsWithChan(request *DescribeKeyPairsRequest)
 	return responseChan, errChan
 }
 
-// invoke DescribeKeyPairs api with *DescribeKeyPairsRequest asynchronously
+// DescribeKeyPairsWithCallback invokes the ecs.DescribeKeyPairs API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describekeypairs.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeKeyPairsWithCallback(request *DescribeKeyPairsRequest, callback func(response *DescribeKeyPairsResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeKeyPairsWithCallback(request *DescribeKeyPairsRequ
 	return result
 }
 
+// DescribeKeyPairsRequest is the request struct for api DescribeKeyPairs
 type DescribeKeyPairsRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,6 +85,7 @@ type DescribeKeyPairsRequest struct {
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 }
 
+// DescribeKeyPairsResponse is the response struct for api DescribeKeyPairs
 type DescribeKeyPairsResponse struct {
 	*responses.BaseResponse
 	RequestId  string   `json:"RequestId" xml:"RequestId"`
@@ -93,8 +95,8 @@ type DescribeKeyPairsResponse struct {
 	KeyPairs   KeyPairs `json:"KeyPairs" xml:"KeyPairs"`
 }
 
-// create a request to invoke DescribeKeyPairs API
-func CreateDescribeKeyPairsRequest() (request *DescribeKeyPairsRequest) {
+// CreateDescribeKeyPairsRequest creates a request to invoke DescribeKeyPairs API
+func CreateDescribeKeyPairsRequest(request *DescribeKeyPairsRequest) {
 	request = &DescribeKeyPairsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -102,7 +104,7 @@ func CreateDescribeKeyPairsRequest() (request *DescribeKeyPairsRequest) {
 	return
 }
 
-// create a response to parse from DescribeKeyPairs response
+// CreateDescribeKeyPairsResponse creates a response to parse from DescribeKeyPairs response
 func CreateDescribeKeyPairsResponse() (response *DescribeKeyPairsResponse) {
 	response = &DescribeKeyPairsResponse{
 		BaseResponse: &responses.BaseResponse{},

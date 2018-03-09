@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeOptimizeAdviceOnExcessIndex api with *DescribeOptimizeAdviceOnExcessIndexRequest synchronously
+// DescribeOptimizeAdviceOnExcessIndex invokes the rds.DescribeOptimizeAdviceOnExcessIndex API synchronously
 // api document: https://help.aliyun.com/api/rds/describeoptimizeadviceonexcessindex.html
 func (client *Client) DescribeOptimizeAdviceOnExcessIndex(request *DescribeOptimizeAdviceOnExcessIndexRequest) (response *DescribeOptimizeAdviceOnExcessIndexResponse, err error) {
 	response = CreateDescribeOptimizeAdviceOnExcessIndexResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeOptimizeAdviceOnExcessIndex(request *DescribeOptim
 	return
 }
 
-// invoke DescribeOptimizeAdviceOnExcessIndex api with *DescribeOptimizeAdviceOnExcessIndexRequest asynchronously
+// DescribeOptimizeAdviceOnExcessIndexWithChan invokes the rds.DescribeOptimizeAdviceOnExcessIndex API asynchronously
 // api document: https://help.aliyun.com/api/rds/describeoptimizeadviceonexcessindex.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeOptimizeAdviceOnExcessIndexWithChan(request *DescribeOptimizeAdviceOnExcessIndexRequest) (<-chan *DescribeOptimizeAdviceOnExcessIndexResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeOptimizeAdviceOnExcessIndexWithChan(request *Descr
 	return responseChan, errChan
 }
 
-// invoke DescribeOptimizeAdviceOnExcessIndex api with *DescribeOptimizeAdviceOnExcessIndexRequest asynchronously
+// DescribeOptimizeAdviceOnExcessIndexWithCallback invokes the rds.DescribeOptimizeAdviceOnExcessIndex API asynchronously
 // api document: https://help.aliyun.com/api/rds/describeoptimizeadviceonexcessindex.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeOptimizeAdviceOnExcessIndexWithCallback(request *DescribeOptimizeAdviceOnExcessIndexRequest, callback func(response *DescribeOptimizeAdviceOnExcessIndexResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeOptimizeAdviceOnExcessIndexWithCallback(request *D
 	return result
 }
 
+// DescribeOptimizeAdviceOnExcessIndexRequest is the request struct for api DescribeOptimizeAdviceOnExcessIndex
 type DescribeOptimizeAdviceOnExcessIndexRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,6 +85,7 @@ type DescribeOptimizeAdviceOnExcessIndexRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// DescribeOptimizeAdviceOnExcessIndexResponse is the response struct for api DescribeOptimizeAdviceOnExcessIndex
 type DescribeOptimizeAdviceOnExcessIndexResponse struct {
 	*responses.BaseResponse
 	RequestId         string                                     `json:"RequestId" xml:"RequestId"`
@@ -93,8 +95,8 @@ type DescribeOptimizeAdviceOnExcessIndexResponse struct {
 	Items             ItemsInDescribeOptimizeAdviceOnExcessIndex `json:"Items" xml:"Items"`
 }
 
-// create a request to invoke DescribeOptimizeAdviceOnExcessIndex API
-func CreateDescribeOptimizeAdviceOnExcessIndexRequest() (request *DescribeOptimizeAdviceOnExcessIndexRequest) {
+// CreateDescribeOptimizeAdviceOnExcessIndexRequest creates a request to invoke DescribeOptimizeAdviceOnExcessIndex API
+func CreateDescribeOptimizeAdviceOnExcessIndexRequest(request *DescribeOptimizeAdviceOnExcessIndexRequest) {
 	request = &DescribeOptimizeAdviceOnExcessIndexRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -102,7 +104,7 @@ func CreateDescribeOptimizeAdviceOnExcessIndexRequest() (request *DescribeOptimi
 	return
 }
 
-// create a response to parse from DescribeOptimizeAdviceOnExcessIndex response
+// CreateDescribeOptimizeAdviceOnExcessIndexResponse creates a response to parse from DescribeOptimizeAdviceOnExcessIndex response
 func CreateDescribeOptimizeAdviceOnExcessIndexResponse() (response *DescribeOptimizeAdviceOnExcessIndexResponse) {
 	response = &DescribeOptimizeAdviceOnExcessIndexResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ListDomainsByLogConfigId api with *ListDomainsByLogConfigIdRequest synchronously
+// ListDomainsByLogConfigId invokes the cdn.ListDomainsByLogConfigId API synchronously
 // api document: https://help.aliyun.com/api/cdn/listdomainsbylogconfigid.html
 func (client *Client) ListDomainsByLogConfigId(request *ListDomainsByLogConfigIdRequest) (response *ListDomainsByLogConfigIdResponse, err error) {
 	response = CreateListDomainsByLogConfigIdResponse()
@@ -28,7 +28,7 @@ func (client *Client) ListDomainsByLogConfigId(request *ListDomainsByLogConfigId
 	return
 }
 
-// invoke ListDomainsByLogConfigId api with *ListDomainsByLogConfigIdRequest asynchronously
+// ListDomainsByLogConfigIdWithChan invokes the cdn.ListDomainsByLogConfigId API asynchronously
 // api document: https://help.aliyun.com/api/cdn/listdomainsbylogconfigid.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListDomainsByLogConfigIdWithChan(request *ListDomainsByLogConfigIdRequest) (<-chan *ListDomainsByLogConfigIdResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ListDomainsByLogConfigIdWithChan(request *ListDomainsByLog
 	return responseChan, errChan
 }
 
-// invoke ListDomainsByLogConfigId api with *ListDomainsByLogConfigIdRequest asynchronously
+// ListDomainsByLogConfigIdWithCallback invokes the cdn.ListDomainsByLogConfigId API asynchronously
 // api document: https://help.aliyun.com/api/cdn/listdomainsbylogconfigid.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListDomainsByLogConfigIdWithCallback(request *ListDomainsByLogConfigIdRequest, callback func(response *ListDomainsByLogConfigIdResponse, err error)) <-chan int {
@@ -73,18 +73,20 @@ func (client *Client) ListDomainsByLogConfigIdWithCallback(request *ListDomainsB
 	return result
 }
 
+// ListDomainsByLogConfigIdRequest is the request struct for api ListDomainsByLogConfigId
 type ListDomainsByLogConfigIdRequest struct {
 	*requests.RpcRequest
 }
 
+// ListDomainsByLogConfigIdResponse is the response struct for api ListDomainsByLogConfigId
 type ListDomainsByLogConfigIdResponse struct {
 	*responses.BaseResponse
 	RequestId string                            `json:"RequestId" xml:"RequestId"`
 	Domains   DomainsInListDomainsByLogConfigId `json:"Domains" xml:"Domains"`
 }
 
-// create a request to invoke ListDomainsByLogConfigId API
-func CreateListDomainsByLogConfigIdRequest() (request *ListDomainsByLogConfigIdRequest) {
+// CreateListDomainsByLogConfigIdRequest creates a request to invoke ListDomainsByLogConfigId API
+func CreateListDomainsByLogConfigIdRequest(request *ListDomainsByLogConfigIdRequest) {
 	request = &ListDomainsByLogConfigIdRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -92,7 +94,7 @@ func CreateListDomainsByLogConfigIdRequest() (request *ListDomainsByLogConfigIdR
 	return
 }
 
-// create a response to parse from ListDomainsByLogConfigId response
+// CreateListDomainsByLogConfigIdResponse creates a response to parse from ListDomainsByLogConfigId response
 func CreateListDomainsByLogConfigIdResponse() (response *ListDomainsByLogConfigIdResponse) {
 	response = &ListDomainsByLogConfigIdResponse{
 		BaseResponse: &responses.BaseResponse{},

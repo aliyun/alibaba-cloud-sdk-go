@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeReplicas api with *DescribeReplicasRequest synchronously
+// DescribeReplicas invokes the rds.DescribeReplicas API synchronously
 // api document: https://help.aliyun.com/api/rds/describereplicas.html
 func (client *Client) DescribeReplicas(request *DescribeReplicasRequest) (response *DescribeReplicasResponse, err error) {
 	response = CreateDescribeReplicasResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeReplicas(request *DescribeReplicasRequest) (respon
 	return
 }
 
-// invoke DescribeReplicas api with *DescribeReplicasRequest asynchronously
+// DescribeReplicasWithChan invokes the rds.DescribeReplicas API asynchronously
 // api document: https://help.aliyun.com/api/rds/describereplicas.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeReplicasWithChan(request *DescribeReplicasRequest) (<-chan *DescribeReplicasResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeReplicasWithChan(request *DescribeReplicasRequest)
 	return responseChan, errChan
 }
 
-// invoke DescribeReplicas api with *DescribeReplicasRequest asynchronously
+// DescribeReplicasWithCallback invokes the rds.DescribeReplicas API asynchronously
 // api document: https://help.aliyun.com/api/rds/describereplicas.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeReplicasWithCallback(request *DescribeReplicasRequest, callback func(response *DescribeReplicasResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeReplicasWithCallback(request *DescribeReplicasRequ
 	return result
 }
 
+// DescribeReplicasRequest is the request struct for api DescribeReplicas
 type DescribeReplicasRequest struct {
 	*requests.RpcRequest
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
@@ -85,6 +86,7 @@ type DescribeReplicasRequest struct {
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 }
 
+// DescribeReplicasResponse is the response struct for api DescribeReplicas
 type DescribeReplicasResponse struct {
 	*responses.BaseResponse
 	RequestId        string  `json:"RequestId" xml:"RequestId"`
@@ -94,8 +96,8 @@ type DescribeReplicasResponse struct {
 	Replicas         []Items `json:"Replicas" xml:"Replicas"`
 }
 
-// create a request to invoke DescribeReplicas API
-func CreateDescribeReplicasRequest() (request *DescribeReplicasRequest) {
+// CreateDescribeReplicasRequest creates a request to invoke DescribeReplicas API
+func CreateDescribeReplicasRequest(request *DescribeReplicasRequest) {
 	request = &DescribeReplicasRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -103,7 +105,7 @@ func CreateDescribeReplicasRequest() (request *DescribeReplicasRequest) {
 	return
 }
 
-// create a response to parse from DescribeReplicas response
+// CreateDescribeReplicasResponse creates a response to parse from DescribeReplicas response
 func CreateDescribeReplicasResponse() (response *DescribeReplicasResponse) {
 	response = &DescribeReplicasResponse{
 		BaseResponse: &responses.BaseResponse{},

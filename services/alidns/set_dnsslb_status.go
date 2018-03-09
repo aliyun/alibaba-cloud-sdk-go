@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SetDNSSLBStatus api with *SetDNSSLBStatusRequest synchronously
+// SetDNSSLBStatus invokes the alidns.SetDNSSLBStatus API synchronously
 // api document: https://help.aliyun.com/api/alidns/setdnsslbstatus.html
 func (client *Client) SetDNSSLBStatus(request *SetDNSSLBStatusRequest) (response *SetDNSSLBStatusResponse, err error) {
 	response = CreateSetDNSSLBStatusResponse()
@@ -28,7 +28,7 @@ func (client *Client) SetDNSSLBStatus(request *SetDNSSLBStatusRequest) (response
 	return
 }
 
-// invoke SetDNSSLBStatus api with *SetDNSSLBStatusRequest asynchronously
+// SetDNSSLBStatusWithChan invokes the alidns.SetDNSSLBStatus API asynchronously
 // api document: https://help.aliyun.com/api/alidns/setdnsslbstatus.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetDNSSLBStatusWithChan(request *SetDNSSLBStatusRequest) (<-chan *SetDNSSLBStatusResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SetDNSSLBStatusWithChan(request *SetDNSSLBStatusRequest) (
 	return responseChan, errChan
 }
 
-// invoke SetDNSSLBStatus api with *SetDNSSLBStatusRequest asynchronously
+// SetDNSSLBStatusWithCallback invokes the alidns.SetDNSSLBStatus API asynchronously
 // api document: https://help.aliyun.com/api/alidns/setdnsslbstatus.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetDNSSLBStatusWithCallback(request *SetDNSSLBStatusRequest, callback func(response *SetDNSSLBStatusResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SetDNSSLBStatusWithCallback(request *SetDNSSLBStatusReques
 	return result
 }
 
+// SetDNSSLBStatusRequest is the request struct for api SetDNSSLBStatus
 type SetDNSSLBStatusRequest struct {
 	*requests.RpcRequest
 	Lang         string           `position:"Query" name:"Lang"`
@@ -81,6 +82,7 @@ type SetDNSSLBStatusRequest struct {
 	Open         requests.Boolean `position:"Query" name:"Open"`
 }
 
+// SetDNSSLBStatusResponse is the response struct for api SetDNSSLBStatus
 type SetDNSSLBStatusResponse struct {
 	*responses.BaseResponse
 	RequestId   string `json:"RequestId" xml:"RequestId"`
@@ -88,8 +90,8 @@ type SetDNSSLBStatusResponse struct {
 	Open        bool   `json:"Open" xml:"Open"`
 }
 
-// create a request to invoke SetDNSSLBStatus API
-func CreateSetDNSSLBStatusRequest() (request *SetDNSSLBStatusRequest) {
+// CreateSetDNSSLBStatusRequest creates a request to invoke SetDNSSLBStatus API
+func CreateSetDNSSLBStatusRequest(request *SetDNSSLBStatusRequest) {
 	request = &SetDNSSLBStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateSetDNSSLBStatusRequest() (request *SetDNSSLBStatusRequest) {
 	return
 }
 
-// create a response to parse from SetDNSSLBStatus response
+// CreateSetDNSSLBStatusResponse creates a response to parse from SetDNSSLBStatus response
 func CreateSetDNSSLBStatusResponse() (response *SetDNSSLBStatusResponse) {
 	response = &SetDNSSLBStatusResponse{
 		BaseResponse: &responses.BaseResponse{},

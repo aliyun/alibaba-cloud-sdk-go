@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke QueryMetricList api with *QueryMetricListRequest synchronously
+// QueryMetricList invokes the cms.QueryMetricList API synchronously
 // api document: https://help.aliyun.com/api/cms/querymetriclist.html
 func (client *Client) QueryMetricList(request *QueryMetricListRequest) (response *QueryMetricListResponse, err error) {
 	response = CreateQueryMetricListResponse()
@@ -28,7 +28,7 @@ func (client *Client) QueryMetricList(request *QueryMetricListRequest) (response
 	return
 }
 
-// invoke QueryMetricList api with *QueryMetricListRequest asynchronously
+// QueryMetricListWithChan invokes the cms.QueryMetricList API asynchronously
 // api document: https://help.aliyun.com/api/cms/querymetriclist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryMetricListWithChan(request *QueryMetricListRequest) (<-chan *QueryMetricListResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) QueryMetricListWithChan(request *QueryMetricListRequest) (
 	return responseChan, errChan
 }
 
-// invoke QueryMetricList api with *QueryMetricListRequest asynchronously
+// QueryMetricListWithCallback invokes the cms.QueryMetricList API asynchronously
 // api document: https://help.aliyun.com/api/cms/querymetriclist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryMetricListWithCallback(request *QueryMetricListRequest, callback func(response *QueryMetricListResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) QueryMetricListWithCallback(request *QueryMetricListReques
 	return result
 }
 
+// QueryMetricListRequest is the request struct for api QueryMetricList
 type QueryMetricListRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
@@ -89,6 +90,7 @@ type QueryMetricListRequest struct {
 	Express         string           `position:"Query" name:"Express"`
 }
 
+// QueryMetricListResponse is the response struct for api QueryMetricList
 type QueryMetricListResponse struct {
 	*responses.BaseResponse
 	Code       string `json:"Code" xml:"Code"`
@@ -100,8 +102,8 @@ type QueryMetricListResponse struct {
 	Period     string `json:"Period" xml:"Period"`
 }
 
-// create a request to invoke QueryMetricList API
-func CreateQueryMetricListRequest() (request *QueryMetricListRequest) {
+// CreateQueryMetricListRequest creates a request to invoke QueryMetricList API
+func CreateQueryMetricListRequest(request *QueryMetricListRequest) {
 	request = &QueryMetricListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -109,7 +111,7 @@ func CreateQueryMetricListRequest() (request *QueryMetricListRequest) {
 	return
 }
 
-// create a response to parse from QueryMetricList response
+// CreateQueryMetricListResponse creates a response to parse from QueryMetricList response
 func CreateQueryMetricListResponse() (response *QueryMetricListResponse) {
 	response = &QueryMetricListResponse{
 		BaseResponse: &responses.BaseResponse{},

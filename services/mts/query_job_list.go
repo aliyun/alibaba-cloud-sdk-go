@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke QueryJobList api with *QueryJobListRequest synchronously
+// QueryJobList invokes the mts.QueryJobList API synchronously
 // api document: https://help.aliyun.com/api/mts/queryjoblist.html
 func (client *Client) QueryJobList(request *QueryJobListRequest) (response *QueryJobListResponse, err error) {
 	response = CreateQueryJobListResponse()
@@ -28,7 +28,7 @@ func (client *Client) QueryJobList(request *QueryJobListRequest) (response *Quer
 	return
 }
 
-// invoke QueryJobList api with *QueryJobListRequest asynchronously
+// QueryJobListWithChan invokes the mts.QueryJobList API asynchronously
 // api document: https://help.aliyun.com/api/mts/queryjoblist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryJobListWithChan(request *QueryJobListRequest) (<-chan *QueryJobListResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) QueryJobListWithChan(request *QueryJobListRequest) (<-chan
 	return responseChan, errChan
 }
 
-// invoke QueryJobList api with *QueryJobListRequest asynchronously
+// QueryJobListWithCallback invokes the mts.QueryJobList API asynchronously
 // api document: https://help.aliyun.com/api/mts/queryjoblist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryJobListWithCallback(request *QueryJobListRequest, callback func(response *QueryJobListResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) QueryJobListWithCallback(request *QueryJobListRequest, cal
 	return result
 }
 
+// QueryJobListRequest is the request struct for api QueryJobList
 type QueryJobListRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,6 +83,7 @@ type QueryJobListRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// QueryJobListResponse is the response struct for api QueryJobList
 type QueryJobListResponse struct {
 	*responses.BaseResponse
 	RequestId      string                       `json:"RequestId" xml:"RequestId"`
@@ -89,8 +91,8 @@ type QueryJobListResponse struct {
 	JobList        JobListInQueryJobList        `json:"JobList" xml:"JobList"`
 }
 
-// create a request to invoke QueryJobList API
-func CreateQueryJobListRequest() (request *QueryJobListRequest) {
+// CreateQueryJobListRequest creates a request to invoke QueryJobList API
+func CreateQueryJobListRequest(request *QueryJobListRequest) {
 	request = &QueryJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateQueryJobListRequest() (request *QueryJobListRequest) {
 	return
 }
 
-// create a response to parse from QueryJobList response
+// CreateQueryJobListResponse creates a response to parse from QueryJobList response
 func CreateQueryJobListResponse() (response *QueryJobListResponse) {
 	response = &QueryJobListResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke PreCheckBeforeImportData api with *PreCheckBeforeImportDataRequest synchronously
+// PreCheckBeforeImportData invokes the rds.PreCheckBeforeImportData API synchronously
 // api document: https://help.aliyun.com/api/rds/precheckbeforeimportdata.html
 func (client *Client) PreCheckBeforeImportData(request *PreCheckBeforeImportDataRequest) (response *PreCheckBeforeImportDataResponse, err error) {
 	response = CreatePreCheckBeforeImportDataResponse()
@@ -28,7 +28,7 @@ func (client *Client) PreCheckBeforeImportData(request *PreCheckBeforeImportData
 	return
 }
 
-// invoke PreCheckBeforeImportData api with *PreCheckBeforeImportDataRequest asynchronously
+// PreCheckBeforeImportDataWithChan invokes the rds.PreCheckBeforeImportData API asynchronously
 // api document: https://help.aliyun.com/api/rds/precheckbeforeimportdata.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PreCheckBeforeImportDataWithChan(request *PreCheckBeforeImportDataRequest) (<-chan *PreCheckBeforeImportDataResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) PreCheckBeforeImportDataWithChan(request *PreCheckBeforeIm
 	return responseChan, errChan
 }
 
-// invoke PreCheckBeforeImportData api with *PreCheckBeforeImportDataRequest asynchronously
+// PreCheckBeforeImportDataWithCallback invokes the rds.PreCheckBeforeImportData API asynchronously
 // api document: https://help.aliyun.com/api/rds/precheckbeforeimportdata.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PreCheckBeforeImportDataWithCallback(request *PreCheckBeforeImportDataRequest, callback func(response *PreCheckBeforeImportDataResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) PreCheckBeforeImportDataWithCallback(request *PreCheckBefo
 	return result
 }
 
+// PreCheckBeforeImportDataRequest is the request struct for api PreCheckBeforeImportData
 type PreCheckBeforeImportDataRequest struct {
 	*requests.RpcRequest
 	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
@@ -89,14 +90,15 @@ type PreCheckBeforeImportDataRequest struct {
 	OwnerAccount           string           `position:"Query" name:"OwnerAccount"`
 }
 
+// PreCheckBeforeImportDataResponse is the response struct for api PreCheckBeforeImportData
 type PreCheckBeforeImportDataResponse struct {
 	*responses.BaseResponse
 	RequestId  string `json:"RequestId" xml:"RequestId"`
 	PreCheckId string `json:"PreCheckId" xml:"PreCheckId"`
 }
 
-// create a request to invoke PreCheckBeforeImportData API
-func CreatePreCheckBeforeImportDataRequest() (request *PreCheckBeforeImportDataRequest) {
+// CreatePreCheckBeforeImportDataRequest creates a request to invoke PreCheckBeforeImportData API
+func CreatePreCheckBeforeImportDataRequest(request *PreCheckBeforeImportDataRequest) {
 	request = &PreCheckBeforeImportDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -104,7 +106,7 @@ func CreatePreCheckBeforeImportDataRequest() (request *PreCheckBeforeImportDataR
 	return
 }
 
-// create a response to parse from PreCheckBeforeImportData response
+// CreatePreCheckBeforeImportDataResponse creates a response to parse from PreCheckBeforeImportData response
 func CreatePreCheckBeforeImportDataResponse() (response *PreCheckBeforeImportDataResponse) {
 	response = &PreCheckBeforeImportDataResponse{
 		BaseResponse: &responses.BaseResponse{},

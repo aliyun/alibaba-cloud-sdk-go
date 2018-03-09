@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeDomainQpsData api with *DescribeDomainQpsDataRequest synchronously
+// DescribeDomainQpsData invokes the cdn.DescribeDomainQpsData API synchronously
 // api document: https://help.aliyun.com/api/cdn/describedomainqpsdata.html
 func (client *Client) DescribeDomainQpsData(request *DescribeDomainQpsDataRequest) (response *DescribeDomainQpsDataResponse, err error) {
 	response = CreateDescribeDomainQpsDataResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeDomainQpsData(request *DescribeDomainQpsDataReques
 	return
 }
 
-// invoke DescribeDomainQpsData api with *DescribeDomainQpsDataRequest asynchronously
+// DescribeDomainQpsDataWithChan invokes the cdn.DescribeDomainQpsData API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describedomainqpsdata.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainQpsDataWithChan(request *DescribeDomainQpsDataRequest) (<-chan *DescribeDomainQpsDataResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeDomainQpsDataWithChan(request *DescribeDomainQpsDa
 	return responseChan, errChan
 }
 
-// invoke DescribeDomainQpsData api with *DescribeDomainQpsDataRequest asynchronously
+// DescribeDomainQpsDataWithCallback invokes the cdn.DescribeDomainQpsData API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describedomainqpsdata.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainQpsDataWithCallback(request *DescribeDomainQpsDataRequest, callback func(response *DescribeDomainQpsDataResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeDomainQpsDataWithCallback(request *DescribeDomainQ
 	return result
 }
 
+// DescribeDomainQpsDataRequest is the request struct for api DescribeDomainQpsData
 type DescribeDomainQpsDataRequest struct {
 	*requests.RpcRequest
 	OwnerId        requests.Integer `position:"Query" name:"OwnerId"`
@@ -88,6 +89,7 @@ type DescribeDomainQpsDataRequest struct {
 	FixTimeGap     string           `position:"Query" name:"FixTimeGap"`
 }
 
+// DescribeDomainQpsDataResponse is the response struct for api DescribeDomainQpsData
 type DescribeDomainQpsDataResponse struct {
 	*responses.BaseResponse
 	RequestId       string          `json:"RequestId" xml:"RequestId"`
@@ -98,8 +100,8 @@ type DescribeDomainQpsDataResponse struct {
 	QpsDataInterval QpsDataInterval `json:"QpsDataInterval" xml:"QpsDataInterval"`
 }
 
-// create a request to invoke DescribeDomainQpsData API
-func CreateDescribeDomainQpsDataRequest() (request *DescribeDomainQpsDataRequest) {
+// CreateDescribeDomainQpsDataRequest creates a request to invoke DescribeDomainQpsData API
+func CreateDescribeDomainQpsDataRequest(request *DescribeDomainQpsDataRequest) {
 	request = &DescribeDomainQpsDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -107,7 +109,7 @@ func CreateDescribeDomainQpsDataRequest() (request *DescribeDomainQpsDataRequest
 	return
 }
 
-// create a response to parse from DescribeDomainQpsData response
+// CreateDescribeDomainQpsDataResponse creates a response to parse from DescribeDomainQpsData response
 func CreateDescribeDomainQpsDataResponse() (response *DescribeDomainQpsDataResponse) {
 	response = &DescribeDomainQpsDataResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke StopSyncing api with *StopSyncingRequest synchronously
+// StopSyncing invokes the rds.StopSyncing API synchronously
 // api document: https://help.aliyun.com/api/rds/stopsyncing.html
 func (client *Client) StopSyncing(request *StopSyncingRequest) (response *StopSyncingResponse, err error) {
 	response = CreateStopSyncingResponse()
@@ -28,7 +28,7 @@ func (client *Client) StopSyncing(request *StopSyncingRequest) (response *StopSy
 	return
 }
 
-// invoke StopSyncing api with *StopSyncingRequest asynchronously
+// StopSyncingWithChan invokes the rds.StopSyncing API asynchronously
 // api document: https://help.aliyun.com/api/rds/stopsyncing.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StopSyncingWithChan(request *StopSyncingRequest) (<-chan *StopSyncingResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) StopSyncingWithChan(request *StopSyncingRequest) (<-chan *
 	return responseChan, errChan
 }
 
-// invoke StopSyncing api with *StopSyncingRequest asynchronously
+// StopSyncingWithCallback invokes the rds.StopSyncing API asynchronously
 // api document: https://help.aliyun.com/api/rds/stopsyncing.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StopSyncingWithCallback(request *StopSyncingRequest, callback func(response *StopSyncingResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) StopSyncingWithCallback(request *StopSyncingRequest, callb
 	return result
 }
 
+// StopSyncingRequest is the request struct for api StopSyncing
 type StopSyncingRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,13 +85,14 @@ type StopSyncingRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// StopSyncingResponse is the response struct for api StopSyncing
 type StopSyncingResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke StopSyncing API
-func CreateStopSyncingRequest() (request *StopSyncingRequest) {
+// CreateStopSyncingRequest creates a request to invoke StopSyncing API
+func CreateStopSyncingRequest(request *StopSyncingRequest) {
 	request = &StopSyncingRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateStopSyncingRequest() (request *StopSyncingRequest) {
 	return
 }
 
-// create a response to parse from StopSyncing response
+// CreateStopSyncingResponse creates a response to parse from StopSyncing response
 func CreateStopSyncingResponse() (response *StopSyncingResponse) {
 	response = &StopSyncingResponse{
 		BaseResponse: &responses.BaseResponse{},

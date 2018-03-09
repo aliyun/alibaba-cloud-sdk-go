@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke UnbindPhone api with *UnbindPhoneRequest synchronously
+// UnbindPhone invokes the push.UnbindPhone API synchronously
 // api document: https://help.aliyun.com/api/push/unbindphone.html
 func (client *Client) UnbindPhone(request *UnbindPhoneRequest) (response *UnbindPhoneResponse, err error) {
 	response = CreateUnbindPhoneResponse()
@@ -28,7 +28,7 @@ func (client *Client) UnbindPhone(request *UnbindPhoneRequest) (response *Unbind
 	return
 }
 
-// invoke UnbindPhone api with *UnbindPhoneRequest asynchronously
+// UnbindPhoneWithChan invokes the push.UnbindPhone API asynchronously
 // api document: https://help.aliyun.com/api/push/unbindphone.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnbindPhoneWithChan(request *UnbindPhoneRequest) (<-chan *UnbindPhoneResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) UnbindPhoneWithChan(request *UnbindPhoneRequest) (<-chan *
 	return responseChan, errChan
 }
 
-// invoke UnbindPhone api with *UnbindPhoneRequest asynchronously
+// UnbindPhoneWithCallback invokes the push.UnbindPhone API asynchronously
 // api document: https://help.aliyun.com/api/push/unbindphone.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnbindPhoneWithCallback(request *UnbindPhoneRequest, callback func(response *UnbindPhoneResponse, err error)) <-chan int {
@@ -73,19 +73,21 @@ func (client *Client) UnbindPhoneWithCallback(request *UnbindPhoneRequest, callb
 	return result
 }
 
+// UnbindPhoneRequest is the request struct for api UnbindPhone
 type UnbindPhoneRequest struct {
 	*requests.RpcRequest
 	AppKey   requests.Integer `position:"Query" name:"AppKey"`
 	DeviceId string           `position:"Query" name:"DeviceId"`
 }
 
+// UnbindPhoneResponse is the response struct for api UnbindPhone
 type UnbindPhoneResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke UnbindPhone API
-func CreateUnbindPhoneRequest() (request *UnbindPhoneRequest) {
+// CreateUnbindPhoneRequest creates a request to invoke UnbindPhone API
+func CreateUnbindPhoneRequest(request *UnbindPhoneRequest) {
 	request = &UnbindPhoneRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -93,7 +95,7 @@ func CreateUnbindPhoneRequest() (request *UnbindPhoneRequest) {
 	return
 }
 
-// create a response to parse from UnbindPhone response
+// CreateUnbindPhoneResponse creates a response to parse from UnbindPhone response
 func CreateUnbindPhoneResponse() (response *UnbindPhoneResponse) {
 	response = &UnbindPhoneResponse{
 		BaseResponse: &responses.BaseResponse{},

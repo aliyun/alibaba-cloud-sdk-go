@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ChangePassword api with *ChangePasswordRequest synchronously
+// ChangePassword invokes the ram.ChangePassword API synchronously
 // api document: https://help.aliyun.com/api/ram/changepassword.html
 func (client *Client) ChangePassword(request *ChangePasswordRequest) (response *ChangePasswordResponse, err error) {
 	response = CreateChangePasswordResponse()
@@ -28,7 +28,7 @@ func (client *Client) ChangePassword(request *ChangePasswordRequest) (response *
 	return
 }
 
-// invoke ChangePassword api with *ChangePasswordRequest asynchronously
+// ChangePasswordWithChan invokes the ram.ChangePassword API asynchronously
 // api document: https://help.aliyun.com/api/ram/changepassword.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ChangePasswordWithChan(request *ChangePasswordRequest) (<-chan *ChangePasswordResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ChangePasswordWithChan(request *ChangePasswordRequest) (<-
 	return responseChan, errChan
 }
 
-// invoke ChangePassword api with *ChangePasswordRequest asynchronously
+// ChangePasswordWithCallback invokes the ram.ChangePassword API asynchronously
 // api document: https://help.aliyun.com/api/ram/changepassword.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ChangePasswordWithCallback(request *ChangePasswordRequest, callback func(response *ChangePasswordResponse, err error)) <-chan int {
@@ -73,19 +73,21 @@ func (client *Client) ChangePasswordWithCallback(request *ChangePasswordRequest,
 	return result
 }
 
+// ChangePasswordRequest is the request struct for api ChangePassword
 type ChangePasswordRequest struct {
 	*requests.RpcRequest
 	OldPassword string `position:"Query" name:"OldPassword"`
 	NewPassword string `position:"Query" name:"NewPassword"`
 }
 
+// ChangePasswordResponse is the response struct for api ChangePassword
 type ChangePasswordResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ChangePassword API
-func CreateChangePasswordRequest() (request *ChangePasswordRequest) {
+// CreateChangePasswordRequest creates a request to invoke ChangePassword API
+func CreateChangePasswordRequest(request *ChangePasswordRequest) {
 	request = &ChangePasswordRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -93,7 +95,7 @@ func CreateChangePasswordRequest() (request *ChangePasswordRequest) {
 	return
 }
 
-// create a response to parse from ChangePassword response
+// CreateChangePasswordResponse creates a response to parse from ChangePassword response
 func CreateChangePasswordResponse() (response *ChangePasswordResponse) {
 	response = &ChangePasswordResponse{
 		BaseResponse: &responses.BaseResponse{},

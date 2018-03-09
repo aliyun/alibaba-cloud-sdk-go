@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke EditJobTemplate api with *EditJobTemplateRequest synchronously
+// EditJobTemplate invokes the ehpc.EditJobTemplate API synchronously
 // api document: https://help.aliyun.com/api/ehpc/editjobtemplate.html
 func (client *Client) EditJobTemplate(request *EditJobTemplateRequest) (response *EditJobTemplateResponse, err error) {
 	response = CreateEditJobTemplateResponse()
@@ -28,7 +28,7 @@ func (client *Client) EditJobTemplate(request *EditJobTemplateRequest) (response
 	return
 }
 
-// invoke EditJobTemplate api with *EditJobTemplateRequest asynchronously
+// EditJobTemplateWithChan invokes the ehpc.EditJobTemplate API asynchronously
 // api document: https://help.aliyun.com/api/ehpc/editjobtemplate.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EditJobTemplateWithChan(request *EditJobTemplateRequest) (<-chan *EditJobTemplateResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) EditJobTemplateWithChan(request *EditJobTemplateRequest) (
 	return responseChan, errChan
 }
 
-// invoke EditJobTemplate api with *EditJobTemplateRequest asynchronously
+// EditJobTemplateWithCallback invokes the ehpc.EditJobTemplate API asynchronously
 // api document: https://help.aliyun.com/api/ehpc/editjobtemplate.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EditJobTemplateWithCallback(request *EditJobTemplateRequest, callback func(response *EditJobTemplateResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) EditJobTemplateWithCallback(request *EditJobTemplateReques
 	return result
 }
 
+// EditJobTemplateRequest is the request struct for api EditJobTemplate
 type EditJobTemplateRequest struct {
 	*requests.RpcRequest
 	TemplateId         string           `position:"Query" name:"TemplateId"`
@@ -88,14 +89,15 @@ type EditJobTemplateRequest struct {
 	Variables          string           `position:"Query" name:"Variables"`
 }
 
+// EditJobTemplateResponse is the response struct for api EditJobTemplate
 type EditJobTemplateResponse struct {
 	*responses.BaseResponse
 	RequestId  string `json:"RequestId" xml:"RequestId"`
 	TemplateId string `json:"TemplateId" xml:"TemplateId"`
 }
 
-// create a request to invoke EditJobTemplate API
-func CreateEditJobTemplateRequest() (request *EditJobTemplateRequest) {
+// CreateEditJobTemplateRequest creates a request to invoke EditJobTemplate API
+func CreateEditJobTemplateRequest(request *EditJobTemplateRequest) {
 	request = &EditJobTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -103,7 +105,7 @@ func CreateEditJobTemplateRequest() (request *EditJobTemplateRequest) {
 	return
 }
 
-// create a response to parse from EditJobTemplate response
+// CreateEditJobTemplateResponse creates a response to parse from EditJobTemplate response
 func CreateEditJobTemplateResponse() (response *EditJobTemplateResponse) {
 	response = &EditJobTemplateResponse{
 		BaseResponse: &responses.BaseResponse{},

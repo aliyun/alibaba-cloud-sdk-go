@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ReportCoverJobResult api with *ReportCoverJobResultRequest synchronously
+// ReportCoverJobResult invokes the mts.ReportCoverJobResult API synchronously
 // api document: https://help.aliyun.com/api/mts/reportcoverjobresult.html
 func (client *Client) ReportCoverJobResult(request *ReportCoverJobResultRequest) (response *ReportCoverJobResultResponse, err error) {
 	response = CreateReportCoverJobResultResponse()
@@ -28,7 +28,7 @@ func (client *Client) ReportCoverJobResult(request *ReportCoverJobResultRequest)
 	return
 }
 
-// invoke ReportCoverJobResult api with *ReportCoverJobResultRequest asynchronously
+// ReportCoverJobResultWithChan invokes the mts.ReportCoverJobResult API asynchronously
 // api document: https://help.aliyun.com/api/mts/reportcoverjobresult.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReportCoverJobResultWithChan(request *ReportCoverJobResultRequest) (<-chan *ReportCoverJobResultResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ReportCoverJobResultWithChan(request *ReportCoverJobResult
 	return responseChan, errChan
 }
 
-// invoke ReportCoverJobResult api with *ReportCoverJobResultRequest asynchronously
+// ReportCoverJobResultWithCallback invokes the mts.ReportCoverJobResult API asynchronously
 // api document: https://help.aliyun.com/api/mts/reportcoverjobresult.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReportCoverJobResultWithCallback(request *ReportCoverJobResultRequest, callback func(response *ReportCoverJobResultResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ReportCoverJobResultWithCallback(request *ReportCoverJobRe
 	return result
 }
 
+// ReportCoverJobResultRequest is the request struct for api ReportCoverJobResult
 type ReportCoverJobResultRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -83,14 +84,15 @@ type ReportCoverJobResultRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// ReportCoverJobResultResponse is the response struct for api ReportCoverJobResult
 type ReportCoverJobResultResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	JobId     string `json:"JobId" xml:"JobId"`
 }
 
-// create a request to invoke ReportCoverJobResult API
-func CreateReportCoverJobResultRequest() (request *ReportCoverJobResultRequest) {
+// CreateReportCoverJobResultRequest creates a request to invoke ReportCoverJobResult API
+func CreateReportCoverJobResultRequest(request *ReportCoverJobResultRequest) {
 	request = &ReportCoverJobResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateReportCoverJobResultRequest() (request *ReportCoverJobResultRequest) 
 	return
 }
 
-// create a response to parse from ReportCoverJobResult response
+// CreateReportCoverJobResultResponse creates a response to parse from ReportCoverJobResult response
 func CreateReportCoverJobResultResponse() (response *ReportCoverJobResultResponse) {
 	response = &ReportCoverJobResultResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke UpdatePublicKey api with *UpdatePublicKeyRequest synchronously
+// UpdatePublicKey invokes the ram.UpdatePublicKey API synchronously
 // api document: https://help.aliyun.com/api/ram/updatepublickey.html
 func (client *Client) UpdatePublicKey(request *UpdatePublicKeyRequest) (response *UpdatePublicKeyResponse, err error) {
 	response = CreateUpdatePublicKeyResponse()
@@ -28,7 +28,7 @@ func (client *Client) UpdatePublicKey(request *UpdatePublicKeyRequest) (response
 	return
 }
 
-// invoke UpdatePublicKey api with *UpdatePublicKeyRequest asynchronously
+// UpdatePublicKeyWithChan invokes the ram.UpdatePublicKey API asynchronously
 // api document: https://help.aliyun.com/api/ram/updatepublickey.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdatePublicKeyWithChan(request *UpdatePublicKeyRequest) (<-chan *UpdatePublicKeyResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) UpdatePublicKeyWithChan(request *UpdatePublicKeyRequest) (
 	return responseChan, errChan
 }
 
-// invoke UpdatePublicKey api with *UpdatePublicKeyRequest asynchronously
+// UpdatePublicKeyWithCallback invokes the ram.UpdatePublicKey API asynchronously
 // api document: https://help.aliyun.com/api/ram/updatepublickey.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdatePublicKeyWithCallback(request *UpdatePublicKeyRequest, callback func(response *UpdatePublicKeyResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) UpdatePublicKeyWithCallback(request *UpdatePublicKeyReques
 	return result
 }
 
+// UpdatePublicKeyRequest is the request struct for api UpdatePublicKey
 type UpdatePublicKeyRequest struct {
 	*requests.RpcRequest
 	UserName        string `position:"Query" name:"UserName"`
@@ -80,13 +81,14 @@ type UpdatePublicKeyRequest struct {
 	Status          string `position:"Query" name:"Status"`
 }
 
+// UpdatePublicKeyResponse is the response struct for api UpdatePublicKey
 type UpdatePublicKeyResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke UpdatePublicKey API
-func CreateUpdatePublicKeyRequest() (request *UpdatePublicKeyRequest) {
+// CreateUpdatePublicKeyRequest creates a request to invoke UpdatePublicKey API
+func CreateUpdatePublicKeyRequest(request *UpdatePublicKeyRequest) {
 	request = &UpdatePublicKeyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -94,7 +96,7 @@ func CreateUpdatePublicKeyRequest() (request *UpdatePublicKeyRequest) {
 	return
 }
 
-// create a response to parse from UpdatePublicKey response
+// CreateUpdatePublicKeyResponse creates a response to parse from UpdatePublicKey response
 func CreateUpdatePublicKeyResponse() (response *UpdatePublicKeyResponse) {
 	response = &UpdatePublicKeyResponse{
 		BaseResponse: &responses.BaseResponse{},

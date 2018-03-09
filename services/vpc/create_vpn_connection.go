@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CreateVpnConnection api with *CreateVpnConnectionRequest synchronously
+// CreateVpnConnection invokes the vpc.CreateVpnConnection API synchronously
 // api document: https://help.aliyun.com/api/vpc/createvpnconnection.html
 func (client *Client) CreateVpnConnection(request *CreateVpnConnectionRequest) (response *CreateVpnConnectionResponse, err error) {
 	response = CreateCreateVpnConnectionResponse()
@@ -28,7 +28,7 @@ func (client *Client) CreateVpnConnection(request *CreateVpnConnectionRequest) (
 	return
 }
 
-// invoke CreateVpnConnection api with *CreateVpnConnectionRequest asynchronously
+// CreateVpnConnectionWithChan invokes the vpc.CreateVpnConnection API asynchronously
 // api document: https://help.aliyun.com/api/vpc/createvpnconnection.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateVpnConnectionWithChan(request *CreateVpnConnectionRequest) (<-chan *CreateVpnConnectionResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CreateVpnConnectionWithChan(request *CreateVpnConnectionRe
 	return responseChan, errChan
 }
 
-// invoke CreateVpnConnection api with *CreateVpnConnectionRequest asynchronously
+// CreateVpnConnectionWithCallback invokes the vpc.CreateVpnConnection API asynchronously
 // api document: https://help.aliyun.com/api/vpc/createvpnconnection.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateVpnConnectionWithCallback(request *CreateVpnConnectionRequest, callback func(response *CreateVpnConnectionResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) CreateVpnConnectionWithCallback(request *CreateVpnConnecti
 	return result
 }
 
+// CreateVpnConnectionRequest is the request struct for api CreateVpnConnection
 type CreateVpnConnectionRequest struct {
 	*requests.RpcRequest
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
@@ -90,6 +91,7 @@ type CreateVpnConnectionRequest struct {
 	IpsecConfig          string           `position:"Query" name:"IpsecConfig"`
 }
 
+// CreateVpnConnectionResponse is the response struct for api CreateVpnConnection
 type CreateVpnConnectionResponse struct {
 	*responses.BaseResponse
 	RequestId       string `json:"RequestId" xml:"RequestId"`
@@ -98,8 +100,8 @@ type CreateVpnConnectionResponse struct {
 	CreateTime      int    `json:"CreateTime" xml:"CreateTime"`
 }
 
-// create a request to invoke CreateVpnConnection API
-func CreateCreateVpnConnectionRequest() (request *CreateVpnConnectionRequest) {
+// CreateCreateVpnConnectionRequest creates a request to invoke CreateVpnConnection API
+func CreateCreateVpnConnectionRequest(request *CreateVpnConnectionRequest) {
 	request = &CreateVpnConnectionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -107,7 +109,7 @@ func CreateCreateVpnConnectionRequest() (request *CreateVpnConnectionRequest) {
 	return
 }
 
-// create a response to parse from CreateVpnConnection response
+// CreateCreateVpnConnectionResponse creates a response to parse from CreateVpnConnection response
 func CreateCreateVpnConnectionResponse() (response *CreateVpnConnectionResponse) {
 	response = &CreateVpnConnectionResponse{
 		BaseResponse: &responses.BaseResponse{},

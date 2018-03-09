@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke QueryTags api with *QueryTagsRequest synchronously
+// QueryTags invokes the push.QueryTags API synchronously
 // api document: https://help.aliyun.com/api/push/querytags.html
 func (client *Client) QueryTags(request *QueryTagsRequest) (response *QueryTagsResponse, err error) {
 	response = CreateQueryTagsResponse()
@@ -28,7 +28,7 @@ func (client *Client) QueryTags(request *QueryTagsRequest) (response *QueryTagsR
 	return
 }
 
-// invoke QueryTags api with *QueryTagsRequest asynchronously
+// QueryTagsWithChan invokes the push.QueryTags API asynchronously
 // api document: https://help.aliyun.com/api/push/querytags.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryTagsWithChan(request *QueryTagsRequest) (<-chan *QueryTagsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) QueryTagsWithChan(request *QueryTagsRequest) (<-chan *Quer
 	return responseChan, errChan
 }
 
-// invoke QueryTags api with *QueryTagsRequest asynchronously
+// QueryTagsWithCallback invokes the push.QueryTags API asynchronously
 // api document: https://help.aliyun.com/api/push/querytags.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryTagsWithCallback(request *QueryTagsRequest, callback func(response *QueryTagsResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) QueryTagsWithCallback(request *QueryTagsRequest, callback 
 	return result
 }
 
+// QueryTagsRequest is the request struct for api QueryTags
 type QueryTagsRequest struct {
 	*requests.RpcRequest
 	AppKey    requests.Integer `position:"Query" name:"AppKey"`
@@ -80,14 +81,15 @@ type QueryTagsRequest struct {
 	KeyType   string           `position:"Query" name:"KeyType"`
 }
 
+// QueryTagsResponse is the response struct for api QueryTags
 type QueryTagsResponse struct {
 	*responses.BaseResponse
 	RequestId string              `json:"RequestId" xml:"RequestId"`
 	TagInfos  TagInfosInQueryTags `json:"TagInfos" xml:"TagInfos"`
 }
 
-// create a request to invoke QueryTags API
-func CreateQueryTagsRequest() (request *QueryTagsRequest) {
+// CreateQueryTagsRequest creates a request to invoke QueryTags API
+func CreateQueryTagsRequest(request *QueryTagsRequest) {
 	request = &QueryTagsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateQueryTagsRequest() (request *QueryTagsRequest) {
 	return
 }
 
-// create a response to parse from QueryTags response
+// CreateQueryTagsResponse creates a response to parse from QueryTags response
 func CreateQueryTagsResponse() (response *QueryTagsResponse) {
 	response = &QueryTagsResponse{
 		BaseResponse: &responses.BaseResponse{},

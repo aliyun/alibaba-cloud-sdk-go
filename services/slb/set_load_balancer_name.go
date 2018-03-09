@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SetLoadBalancerName api with *SetLoadBalancerNameRequest synchronously
+// SetLoadBalancerName invokes the slb.SetLoadBalancerName API synchronously
 // api document: https://help.aliyun.com/api/slb/setloadbalancername.html
 func (client *Client) SetLoadBalancerName(request *SetLoadBalancerNameRequest) (response *SetLoadBalancerNameResponse, err error) {
 	response = CreateSetLoadBalancerNameResponse()
@@ -28,7 +28,7 @@ func (client *Client) SetLoadBalancerName(request *SetLoadBalancerNameRequest) (
 	return
 }
 
-// invoke SetLoadBalancerName api with *SetLoadBalancerNameRequest asynchronously
+// SetLoadBalancerNameWithChan invokes the slb.SetLoadBalancerName API asynchronously
 // api document: https://help.aliyun.com/api/slb/setloadbalancername.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetLoadBalancerNameWithChan(request *SetLoadBalancerNameRequest) (<-chan *SetLoadBalancerNameResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SetLoadBalancerNameWithChan(request *SetLoadBalancerNameRe
 	return responseChan, errChan
 }
 
-// invoke SetLoadBalancerName api with *SetLoadBalancerNameRequest asynchronously
+// SetLoadBalancerNameWithCallback invokes the slb.SetLoadBalancerName API asynchronously
 // api document: https://help.aliyun.com/api/slb/setloadbalancername.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetLoadBalancerNameWithCallback(request *SetLoadBalancerNameRequest, callback func(response *SetLoadBalancerNameResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SetLoadBalancerNameWithCallback(request *SetLoadBalancerNa
 	return result
 }
 
+// SetLoadBalancerNameRequest is the request struct for api SetLoadBalancerName
 type SetLoadBalancerNameRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -85,13 +86,14 @@ type SetLoadBalancerNameRequest struct {
 	Tags                 string           `position:"Query" name:"Tags"`
 }
 
+// SetLoadBalancerNameResponse is the response struct for api SetLoadBalancerName
 type SetLoadBalancerNameResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke SetLoadBalancerName API
-func CreateSetLoadBalancerNameRequest() (request *SetLoadBalancerNameRequest) {
+// CreateSetLoadBalancerNameRequest creates a request to invoke SetLoadBalancerName API
+func CreateSetLoadBalancerNameRequest(request *SetLoadBalancerNameRequest) {
 	request = &SetLoadBalancerNameRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateSetLoadBalancerNameRequest() (request *SetLoadBalancerNameRequest) {
 	return
 }
 
-// create a response to parse from SetLoadBalancerName response
+// CreateSetLoadBalancerNameResponse creates a response to parse from SetLoadBalancerName response
 func CreateSetLoadBalancerNameResponse() (response *SetLoadBalancerNameResponse) {
 	response = &SetLoadBalancerNameResponse{
 		BaseResponse: &responses.BaseResponse{},

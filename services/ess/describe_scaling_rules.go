@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeScalingRules api with *DescribeScalingRulesRequest synchronously
+// DescribeScalingRules invokes the ess.DescribeScalingRules API synchronously
 // api document: https://help.aliyun.com/api/ess/describescalingrules.html
 func (client *Client) DescribeScalingRules(request *DescribeScalingRulesRequest) (response *DescribeScalingRulesResponse, err error) {
 	response = CreateDescribeScalingRulesResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeScalingRules(request *DescribeScalingRulesRequest)
 	return
 }
 
-// invoke DescribeScalingRules api with *DescribeScalingRulesRequest asynchronously
+// DescribeScalingRulesWithChan invokes the ess.DescribeScalingRules API asynchronously
 // api document: https://help.aliyun.com/api/ess/describescalingrules.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeScalingRulesWithChan(request *DescribeScalingRulesRequest) (<-chan *DescribeScalingRulesResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeScalingRulesWithChan(request *DescribeScalingRules
 	return responseChan, errChan
 }
 
-// invoke DescribeScalingRules api with *DescribeScalingRulesRequest asynchronously
+// DescribeScalingRulesWithCallback invokes the ess.DescribeScalingRules API asynchronously
 // api document: https://help.aliyun.com/api/ess/describescalingrules.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeScalingRulesWithCallback(request *DescribeScalingRulesRequest, callback func(response *DescribeScalingRulesResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeScalingRulesWithCallback(request *DescribeScalingR
 	return result
 }
 
+// DescribeScalingRulesRequest is the request struct for api DescribeScalingRules
 type DescribeScalingRulesRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -114,6 +115,7 @@ type DescribeScalingRulesRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// DescribeScalingRulesResponse is the response struct for api DescribeScalingRules
 type DescribeScalingRulesResponse struct {
 	*responses.BaseResponse
 	TotalCount   int          `json:"TotalCount" xml:"TotalCount"`
@@ -123,8 +125,8 @@ type DescribeScalingRulesResponse struct {
 	ScalingRules ScalingRules `json:"ScalingRules" xml:"ScalingRules"`
 }
 
-// create a request to invoke DescribeScalingRules API
-func CreateDescribeScalingRulesRequest() (request *DescribeScalingRulesRequest) {
+// CreateDescribeScalingRulesRequest creates a request to invoke DescribeScalingRules API
+func CreateDescribeScalingRulesRequest(request *DescribeScalingRulesRequest) {
 	request = &DescribeScalingRulesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -132,7 +134,7 @@ func CreateDescribeScalingRulesRequest() (request *DescribeScalingRulesRequest) 
 	return
 }
 
-// create a response to parse from DescribeScalingRules response
+// CreateDescribeScalingRulesResponse creates a response to parse from DescribeScalingRules response
 func CreateDescribeScalingRulesResponse() (response *DescribeScalingRulesResponse) {
 	response = &DescribeScalingRulesResponse{
 		BaseResponse: &responses.BaseResponse{},

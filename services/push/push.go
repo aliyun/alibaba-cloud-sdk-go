@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke Push api with *PushRequest synchronously
+// Push invokes the push.Push API synchronously
 // api document: https://help.aliyun.com/api/push/push.html
 func (client *Client) Push(request *PushRequest) (response *PushResponse, err error) {
 	response = CreatePushResponse()
@@ -28,7 +28,7 @@ func (client *Client) Push(request *PushRequest) (response *PushResponse, err er
 	return
 }
 
-// invoke Push api with *PushRequest asynchronously
+// PushWithChan invokes the push.Push API asynchronously
 // api document: https://help.aliyun.com/api/push/push.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PushWithChan(request *PushRequest) (<-chan *PushResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) PushWithChan(request *PushRequest) (<-chan *PushResponse, 
 	return responseChan, errChan
 }
 
-// invoke Push api with *PushRequest asynchronously
+// PushWithCallback invokes the push.Push API asynchronously
 // api document: https://help.aliyun.com/api/push/push.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PushWithCallback(request *PushRequest, callback func(response *PushResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) PushWithCallback(request *PushRequest, callback func(respo
 	return result
 }
 
+// PushRequest is the request struct for api Push
 type PushRequest struct {
 	*requests.RpcRequest
 	AppKey                         requests.Integer `position:"Query" name:"AppKey"`
@@ -121,14 +122,15 @@ type PushRequest struct {
 	SmsSendPolicy                  requests.Integer `position:"Query" name:"SmsSendPolicy"`
 }
 
+// PushResponse is the response struct for api Push
 type PushResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	MessageId string `json:"MessageId" xml:"MessageId"`
 }
 
-// create a request to invoke Push API
-func CreatePushRequest() (request *PushRequest) {
+// CreatePushRequest creates a request to invoke Push API
+func CreatePushRequest(request *PushRequest) {
 	request = &PushRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -136,7 +138,7 @@ func CreatePushRequest() (request *PushRequest) {
 	return
 }
 
-// create a response to parse from Push response
+// CreatePushResponse creates a response to parse from Push response
 func CreatePushResponse() (response *PushResponse) {
 	response = &PushResponse{
 		BaseResponse: &responses.BaseResponse{},

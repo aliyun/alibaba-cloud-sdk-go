@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CreateDeploymentSet api with *CreateDeploymentSetRequest synchronously
+// CreateDeploymentSet invokes the ecs.CreateDeploymentSet API synchronously
 // api document: https://help.aliyun.com/api/ecs/createdeploymentset.html
 func (client *Client) CreateDeploymentSet(request *CreateDeploymentSetRequest) (response *CreateDeploymentSetResponse, err error) {
 	response = CreateCreateDeploymentSetResponse()
@@ -28,7 +28,7 @@ func (client *Client) CreateDeploymentSet(request *CreateDeploymentSetRequest) (
 	return
 }
 
-// invoke CreateDeploymentSet api with *CreateDeploymentSetRequest asynchronously
+// CreateDeploymentSetWithChan invokes the ecs.CreateDeploymentSet API asynchronously
 // api document: https://help.aliyun.com/api/ecs/createdeploymentset.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateDeploymentSetWithChan(request *CreateDeploymentSetRequest) (<-chan *CreateDeploymentSetResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CreateDeploymentSetWithChan(request *CreateDeploymentSetRe
 	return responseChan, errChan
 }
 
-// invoke CreateDeploymentSet api with *CreateDeploymentSetRequest asynchronously
+// CreateDeploymentSetWithCallback invokes the ecs.CreateDeploymentSet API asynchronously
 // api document: https://help.aliyun.com/api/ecs/createdeploymentset.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateDeploymentSetWithCallback(request *CreateDeploymentSetRequest, callback func(response *CreateDeploymentSetResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) CreateDeploymentSetWithCallback(request *CreateDeploymentS
 	return result
 }
 
+// CreateDeploymentSetRequest is the request struct for api CreateDeploymentSet
 type CreateDeploymentSetRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -88,14 +89,15 @@ type CreateDeploymentSetRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// CreateDeploymentSetResponse is the response struct for api CreateDeploymentSet
 type CreateDeploymentSetResponse struct {
 	*responses.BaseResponse
 	RequestId       string `json:"RequestId" xml:"RequestId"`
 	DeploymentSetId string `json:"DeploymentSetId" xml:"DeploymentSetId"`
 }
 
-// create a request to invoke CreateDeploymentSet API
-func CreateCreateDeploymentSetRequest() (request *CreateDeploymentSetRequest) {
+// CreateCreateDeploymentSetRequest creates a request to invoke CreateDeploymentSet API
+func CreateCreateDeploymentSetRequest(request *CreateDeploymentSetRequest) {
 	request = &CreateDeploymentSetRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -103,7 +105,7 @@ func CreateCreateDeploymentSetRequest() (request *CreateDeploymentSetRequest) {
 	return
 }
 
-// create a response to parse from CreateDeploymentSet response
+// CreateCreateDeploymentSetResponse creates a response to parse from CreateDeploymentSet response
 func CreateCreateDeploymentSetResponse() (response *CreateDeploymentSetResponse) {
 	response = &CreateDeploymentSetResponse{
 		BaseResponse: &responses.BaseResponse{},

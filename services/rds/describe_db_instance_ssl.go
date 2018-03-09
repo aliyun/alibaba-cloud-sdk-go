@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeDBInstanceSSL api with *DescribeDBInstanceSSLRequest synchronously
+// DescribeDBInstanceSSL invokes the rds.DescribeDBInstanceSSL API synchronously
 // api document: https://help.aliyun.com/api/rds/describedbinstancessl.html
 func (client *Client) DescribeDBInstanceSSL(request *DescribeDBInstanceSSLRequest) (response *DescribeDBInstanceSSLResponse, err error) {
 	response = CreateDescribeDBInstanceSSLResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeDBInstanceSSL(request *DescribeDBInstanceSSLReques
 	return
 }
 
-// invoke DescribeDBInstanceSSL api with *DescribeDBInstanceSSLRequest asynchronously
+// DescribeDBInstanceSSLWithChan invokes the rds.DescribeDBInstanceSSL API asynchronously
 // api document: https://help.aliyun.com/api/rds/describedbinstancessl.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBInstanceSSLWithChan(request *DescribeDBInstanceSSLRequest) (<-chan *DescribeDBInstanceSSLResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeDBInstanceSSLWithChan(request *DescribeDBInstanceS
 	return responseChan, errChan
 }
 
-// invoke DescribeDBInstanceSSL api with *DescribeDBInstanceSSLRequest asynchronously
+// DescribeDBInstanceSSLWithCallback invokes the rds.DescribeDBInstanceSSL API asynchronously
 // api document: https://help.aliyun.com/api/rds/describedbinstancessl.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBInstanceSSLWithCallback(request *DescribeDBInstanceSSLRequest, callback func(response *DescribeDBInstanceSSLResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeDBInstanceSSLWithCallback(request *DescribeDBInsta
 	return result
 }
 
+// DescribeDBInstanceSSLRequest is the request struct for api DescribeDBInstanceSSL
 type DescribeDBInstanceSSLRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,6 +83,7 @@ type DescribeDBInstanceSSLRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// DescribeDBInstanceSSLResponse is the response struct for api DescribeDBInstanceSSL
 type DescribeDBInstanceSSLResponse struct {
 	*responses.BaseResponse
 	RequestId           string `json:"RequestId" xml:"RequestId"`
@@ -91,8 +93,8 @@ type DescribeDBInstanceSSLResponse struct {
 	RequireUpdateReason string `json:"RequireUpdateReason" xml:"RequireUpdateReason"`
 }
 
-// create a request to invoke DescribeDBInstanceSSL API
-func CreateDescribeDBInstanceSSLRequest() (request *DescribeDBInstanceSSLRequest) {
+// CreateDescribeDBInstanceSSLRequest creates a request to invoke DescribeDBInstanceSSL API
+func CreateDescribeDBInstanceSSLRequest(request *DescribeDBInstanceSSLRequest) {
 	request = &DescribeDBInstanceSSLRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -100,7 +102,7 @@ func CreateDescribeDBInstanceSSLRequest() (request *DescribeDBInstanceSSLRequest
 	return
 }
 
-// create a response to parse from DescribeDBInstanceSSL response
+// CreateDescribeDBInstanceSSLResponse creates a response to parse from DescribeDBInstanceSSL response
 func CreateDescribeDBInstanceSSLResponse() (response *DescribeDBInstanceSSLResponse) {
 	response = &DescribeDBInstanceSSLResponse{
 		BaseResponse: &responses.BaseResponse{},

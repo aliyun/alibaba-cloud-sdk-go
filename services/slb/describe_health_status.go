@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeHealthStatus api with *DescribeHealthStatusRequest synchronously
+// DescribeHealthStatus invokes the slb.DescribeHealthStatus API synchronously
 // api document: https://help.aliyun.com/api/slb/describehealthstatus.html
 func (client *Client) DescribeHealthStatus(request *DescribeHealthStatusRequest) (response *DescribeHealthStatusResponse, err error) {
 	response = CreateDescribeHealthStatusResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeHealthStatus(request *DescribeHealthStatusRequest)
 	return
 }
 
-// invoke DescribeHealthStatus api with *DescribeHealthStatusRequest asynchronously
+// DescribeHealthStatusWithChan invokes the slb.DescribeHealthStatus API asynchronously
 // api document: https://help.aliyun.com/api/slb/describehealthstatus.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeHealthStatusWithChan(request *DescribeHealthStatusRequest) (<-chan *DescribeHealthStatusResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeHealthStatusWithChan(request *DescribeHealthStatus
 	return responseChan, errChan
 }
 
-// invoke DescribeHealthStatus api with *DescribeHealthStatusRequest asynchronously
+// DescribeHealthStatusWithCallback invokes the slb.DescribeHealthStatus API asynchronously
 // api document: https://help.aliyun.com/api/slb/describehealthstatus.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeHealthStatusWithCallback(request *DescribeHealthStatusRequest, callback func(response *DescribeHealthStatusResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeHealthStatusWithCallback(request *DescribeHealthSt
 	return result
 }
 
+// DescribeHealthStatusRequest is the request struct for api DescribeHealthStatus
 type DescribeHealthStatusRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -85,14 +86,15 @@ type DescribeHealthStatusRequest struct {
 	Tags                 string           `position:"Query" name:"Tags"`
 }
 
+// DescribeHealthStatusResponse is the response struct for api DescribeHealthStatus
 type DescribeHealthStatusResponse struct {
 	*responses.BaseResponse
 	RequestId      string                               `json:"RequestId" xml:"RequestId"`
 	BackendServers BackendServersInDescribeHealthStatus `json:"BackendServers" xml:"BackendServers"`
 }
 
-// create a request to invoke DescribeHealthStatus API
-func CreateDescribeHealthStatusRequest() (request *DescribeHealthStatusRequest) {
+// CreateDescribeHealthStatusRequest creates a request to invoke DescribeHealthStatus API
+func CreateDescribeHealthStatusRequest(request *DescribeHealthStatusRequest) {
 	request = &DescribeHealthStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -100,7 +102,7 @@ func CreateDescribeHealthStatusRequest() (request *DescribeHealthStatusRequest) 
 	return
 }
 
-// create a response to parse from DescribeHealthStatus response
+// CreateDescribeHealthStatusResponse creates a response to parse from DescribeHealthStatus response
 func CreateDescribeHealthStatusResponse() (response *DescribeHealthStatusResponse) {
 	response = &DescribeHealthStatusResponse{
 		BaseResponse: &responses.BaseResponse{},

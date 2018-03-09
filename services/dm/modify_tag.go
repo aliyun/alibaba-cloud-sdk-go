@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifyTag api with *ModifyTagRequest synchronously
+// ModifyTag invokes the dm.ModifyTag API synchronously
 // api document: https://help.aliyun.com/api/dm/modifytag.html
 func (client *Client) ModifyTag(request *ModifyTagRequest) (response *ModifyTagResponse, err error) {
 	response = CreateModifyTagResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifyTag(request *ModifyTagRequest) (response *ModifyTagR
 	return
 }
 
-// invoke ModifyTag api with *ModifyTagRequest asynchronously
+// ModifyTagWithChan invokes the dm.ModifyTag API asynchronously
 // api document: https://help.aliyun.com/api/dm/modifytag.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyTagWithChan(request *ModifyTagRequest) (<-chan *ModifyTagResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifyTagWithChan(request *ModifyTagRequest) (<-chan *Modi
 	return responseChan, errChan
 }
 
-// invoke ModifyTag api with *ModifyTagRequest asynchronously
+// ModifyTagWithCallback invokes the dm.ModifyTag API asynchronously
 // api document: https://help.aliyun.com/api/dm/modifytag.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyTagWithCallback(request *ModifyTagRequest, callback func(response *ModifyTagResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ModifyTagWithCallback(request *ModifyTagRequest, callback 
 	return result
 }
 
+// ModifyTagRequest is the request struct for api ModifyTag
 type ModifyTagRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,13 +83,14 @@ type ModifyTagRequest struct {
 	TagName              string           `position:"Query" name:"TagName"`
 }
 
+// ModifyTagResponse is the response struct for api ModifyTag
 type ModifyTagResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ModifyTag API
-func CreateModifyTagRequest() (request *ModifyTagRequest) {
+// CreateModifyTagRequest creates a request to invoke ModifyTag API
+func CreateModifyTagRequest(request *ModifyTagRequest) {
 	request = &ModifyTagRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -96,7 +98,7 @@ func CreateModifyTagRequest() (request *ModifyTagRequest) {
 	return
 }
 
-// create a response to parse from ModifyTag response
+// CreateModifyTagResponse creates a response to parse from ModifyTag response
 func CreateModifyTagResponse() (response *ModifyTagResponse) {
 	response = &ModifyTagResponse{
 		BaseResponse: &responses.BaseResponse{},

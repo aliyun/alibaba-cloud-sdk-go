@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke GetThumbnails api with *GetThumbnailsRequest synchronously
+// GetThumbnails invokes the cloudphoto.GetThumbnails API synchronously
 // api document: https://help.aliyun.com/api/cloudphoto/getthumbnails.html
 func (client *Client) GetThumbnails(request *GetThumbnailsRequest) (response *GetThumbnailsResponse, err error) {
 	response = CreateGetThumbnailsResponse()
@@ -28,7 +28,7 @@ func (client *Client) GetThumbnails(request *GetThumbnailsRequest) (response *Ge
 	return
 }
 
-// invoke GetThumbnails api with *GetThumbnailsRequest asynchronously
+// GetThumbnailsWithChan invokes the cloudphoto.GetThumbnails API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/getthumbnails.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetThumbnailsWithChan(request *GetThumbnailsRequest) (<-chan *GetThumbnailsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) GetThumbnailsWithChan(request *GetThumbnailsRequest) (<-ch
 	return responseChan, errChan
 }
 
-// invoke GetThumbnails api with *GetThumbnailsRequest asynchronously
+// GetThumbnailsWithCallback invokes the cloudphoto.GetThumbnails API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/getthumbnails.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetThumbnailsWithCallback(request *GetThumbnailsRequest, callback func(response *GetThumbnailsResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) GetThumbnailsWithCallback(request *GetThumbnailsRequest, c
 	return result
 }
 
+// GetThumbnailsRequest is the request struct for api GetThumbnails
 type GetThumbnailsRequest struct {
 	*requests.RpcRequest
 	PhotoId   *[]string `position:"Query" name:"PhotoId"  type:"Repeated"`
@@ -81,6 +82,7 @@ type GetThumbnailsRequest struct {
 	LibraryId string    `position:"Query" name:"LibraryId"`
 }
 
+// GetThumbnailsResponse is the response struct for api GetThumbnails
 type GetThumbnailsResponse struct {
 	*responses.BaseResponse
 	Code      string                 `json:"Code" xml:"Code"`
@@ -90,8 +92,8 @@ type GetThumbnailsResponse struct {
 	Results   ResultsInGetThumbnails `json:"Results" xml:"Results"`
 }
 
-// create a request to invoke GetThumbnails API
-func CreateGetThumbnailsRequest() (request *GetThumbnailsRequest) {
+// CreateGetThumbnailsRequest creates a request to invoke GetThumbnails API
+func CreateGetThumbnailsRequest(request *GetThumbnailsRequest) {
 	request = &GetThumbnailsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateGetThumbnailsRequest() (request *GetThumbnailsRequest) {
 	return
 }
 
-// create a response to parse from GetThumbnails response
+// CreateGetThumbnailsResponse creates a response to parse from GetThumbnails response
 func CreateGetThumbnailsResponse() (response *GetThumbnailsResponse) {
 	response = &GetThumbnailsResponse{
 		BaseResponse: &responses.BaseResponse{},

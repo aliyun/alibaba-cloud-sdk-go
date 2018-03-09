@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CreateRole api with *CreateRoleRequest synchronously
+// CreateRole invokes the ram.CreateRole API synchronously
 // api document: https://help.aliyun.com/api/ram/createrole.html
 func (client *Client) CreateRole(request *CreateRoleRequest) (response *CreateRoleResponse, err error) {
 	response = CreateCreateRoleResponse()
@@ -28,7 +28,7 @@ func (client *Client) CreateRole(request *CreateRoleRequest) (response *CreateRo
 	return
 }
 
-// invoke CreateRole api with *CreateRoleRequest asynchronously
+// CreateRoleWithChan invokes the ram.CreateRole API asynchronously
 // api document: https://help.aliyun.com/api/ram/createrole.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateRoleWithChan(request *CreateRoleRequest) (<-chan *CreateRoleResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CreateRoleWithChan(request *CreateRoleRequest) (<-chan *Cr
 	return responseChan, errChan
 }
 
-// invoke CreateRole api with *CreateRoleRequest asynchronously
+// CreateRoleWithCallback invokes the ram.CreateRole API asynchronously
 // api document: https://help.aliyun.com/api/ram/createrole.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateRoleWithCallback(request *CreateRoleRequest, callback func(response *CreateRoleResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) CreateRoleWithCallback(request *CreateRoleRequest, callbac
 	return result
 }
 
+// CreateRoleRequest is the request struct for api CreateRole
 type CreateRoleRequest struct {
 	*requests.RpcRequest
 	RoleName                 string `position:"Query" name:"RoleName"`
@@ -80,14 +81,15 @@ type CreateRoleRequest struct {
 	AssumeRolePolicyDocument string `position:"Query" name:"AssumeRolePolicyDocument"`
 }
 
+// CreateRoleResponse is the response struct for api CreateRole
 type CreateRoleResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Role      Role   `json:"Role" xml:"Role"`
 }
 
-// create a request to invoke CreateRole API
-func CreateCreateRoleRequest() (request *CreateRoleRequest) {
+// CreateCreateRoleRequest creates a request to invoke CreateRole API
+func CreateCreateRoleRequest(request *CreateRoleRequest) {
 	request = &CreateRoleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateCreateRoleRequest() (request *CreateRoleRequest) {
 	return
 }
 
-// create a response to parse from CreateRole response
+// CreateCreateRoleResponse creates a response to parse from CreateRole response
 func CreateCreateRoleResponse() (response *CreateRoleResponse) {
 	response = &CreateRoleResponse{
 		BaseResponse: &responses.BaseResponse{},

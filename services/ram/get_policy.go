@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke GetPolicy api with *GetPolicyRequest synchronously
+// GetPolicy invokes the ram.GetPolicy API synchronously
 // api document: https://help.aliyun.com/api/ram/getpolicy.html
 func (client *Client) GetPolicy(request *GetPolicyRequest) (response *GetPolicyResponse, err error) {
 	response = CreateGetPolicyResponse()
@@ -28,7 +28,7 @@ func (client *Client) GetPolicy(request *GetPolicyRequest) (response *GetPolicyR
 	return
 }
 
-// invoke GetPolicy api with *GetPolicyRequest asynchronously
+// GetPolicyWithChan invokes the ram.GetPolicy API asynchronously
 // api document: https://help.aliyun.com/api/ram/getpolicy.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetPolicyWithChan(request *GetPolicyRequest) (<-chan *GetPolicyResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) GetPolicyWithChan(request *GetPolicyRequest) (<-chan *GetP
 	return responseChan, errChan
 }
 
-// invoke GetPolicy api with *GetPolicyRequest asynchronously
+// GetPolicyWithCallback invokes the ram.GetPolicy API asynchronously
 // api document: https://help.aliyun.com/api/ram/getpolicy.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetPolicyWithCallback(request *GetPolicyRequest, callback func(response *GetPolicyResponse, err error)) <-chan int {
@@ -73,20 +73,22 @@ func (client *Client) GetPolicyWithCallback(request *GetPolicyRequest, callback 
 	return result
 }
 
+// GetPolicyRequest is the request struct for api GetPolicy
 type GetPolicyRequest struct {
 	*requests.RpcRequest
 	PolicyType string `position:"Query" name:"PolicyType"`
 	PolicyName string `position:"Query" name:"PolicyName"`
 }
 
+// GetPolicyResponse is the response struct for api GetPolicy
 type GetPolicyResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Policy    Policy `json:"Policy" xml:"Policy"`
 }
 
-// create a request to invoke GetPolicy API
-func CreateGetPolicyRequest() (request *GetPolicyRequest) {
+// CreateGetPolicyRequest creates a request to invoke GetPolicy API
+func CreateGetPolicyRequest(request *GetPolicyRequest) {
 	request = &GetPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -94,7 +96,7 @@ func CreateGetPolicyRequest() (request *GetPolicyRequest) {
 	return
 }
 
-// create a response to parse from GetPolicy response
+// CreateGetPolicyResponse creates a response to parse from GetPolicy response
 func CreateGetPolicyResponse() (response *GetPolicyResponse) {
 	response = &GetPolicyResponse{
 		BaseResponse: &responses.BaseResponse{},

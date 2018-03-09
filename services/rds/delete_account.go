@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteAccount api with *DeleteAccountRequest synchronously
+// DeleteAccount invokes the rds.DeleteAccount API synchronously
 // api document: https://help.aliyun.com/api/rds/deleteaccount.html
 func (client *Client) DeleteAccount(request *DeleteAccountRequest) (response *DeleteAccountResponse, err error) {
 	response = CreateDeleteAccountResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteAccount(request *DeleteAccountRequest) (response *De
 	return
 }
 
-// invoke DeleteAccount api with *DeleteAccountRequest asynchronously
+// DeleteAccountWithChan invokes the rds.DeleteAccount API asynchronously
 // api document: https://help.aliyun.com/api/rds/deleteaccount.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteAccountWithChan(request *DeleteAccountRequest) (<-chan *DeleteAccountResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteAccountWithChan(request *DeleteAccountRequest) (<-ch
 	return responseChan, errChan
 }
 
-// invoke DeleteAccount api with *DeleteAccountRequest asynchronously
+// DeleteAccountWithCallback invokes the rds.DeleteAccount API asynchronously
 // api document: https://help.aliyun.com/api/rds/deleteaccount.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteAccountWithCallback(request *DeleteAccountRequest, callback func(response *DeleteAccountResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DeleteAccountWithCallback(request *DeleteAccountRequest, c
 	return result
 }
 
+// DeleteAccountRequest is the request struct for api DeleteAccount
 type DeleteAccountRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -83,13 +84,14 @@ type DeleteAccountRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// DeleteAccountResponse is the response struct for api DeleteAccount
 type DeleteAccountResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DeleteAccount API
-func CreateDeleteAccountRequest() (request *DeleteAccountRequest) {
+// CreateDeleteAccountRequest creates a request to invoke DeleteAccount API
+func CreateDeleteAccountRequest(request *DeleteAccountRequest) {
 	request = &DeleteAccountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateDeleteAccountRequest() (request *DeleteAccountRequest) {
 	return
 }
 
-// create a response to parse from DeleteAccount response
+// CreateDeleteAccountResponse creates a response to parse from DeleteAccount response
 func CreateDeleteAccountResponse() (response *DeleteAccountResponse) {
 	response = &DeleteAccountResponse{
 		BaseResponse: &responses.BaseResponse{},

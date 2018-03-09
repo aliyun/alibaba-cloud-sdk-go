@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke QueryPushStatByMsg api with *QueryPushStatByMsgRequest synchronously
+// QueryPushStatByMsg invokes the push.QueryPushStatByMsg API synchronously
 // api document: https://help.aliyun.com/api/push/querypushstatbymsg.html
 func (client *Client) QueryPushStatByMsg(request *QueryPushStatByMsgRequest) (response *QueryPushStatByMsgResponse, err error) {
 	response = CreateQueryPushStatByMsgResponse()
@@ -28,7 +28,7 @@ func (client *Client) QueryPushStatByMsg(request *QueryPushStatByMsgRequest) (re
 	return
 }
 
-// invoke QueryPushStatByMsg api with *QueryPushStatByMsgRequest asynchronously
+// QueryPushStatByMsgWithChan invokes the push.QueryPushStatByMsg API asynchronously
 // api document: https://help.aliyun.com/api/push/querypushstatbymsg.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryPushStatByMsgWithChan(request *QueryPushStatByMsgRequest) (<-chan *QueryPushStatByMsgResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) QueryPushStatByMsgWithChan(request *QueryPushStatByMsgRequ
 	return responseChan, errChan
 }
 
-// invoke QueryPushStatByMsg api with *QueryPushStatByMsgRequest asynchronously
+// QueryPushStatByMsgWithCallback invokes the push.QueryPushStatByMsg API asynchronously
 // api document: https://help.aliyun.com/api/push/querypushstatbymsg.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryPushStatByMsgWithCallback(request *QueryPushStatByMsgRequest, callback func(response *QueryPushStatByMsgResponse, err error)) <-chan int {
@@ -73,20 +73,22 @@ func (client *Client) QueryPushStatByMsgWithCallback(request *QueryPushStatByMsg
 	return result
 }
 
+// QueryPushStatByMsgRequest is the request struct for api QueryPushStatByMsg
 type QueryPushStatByMsgRequest struct {
 	*requests.RpcRequest
 	AppKey    requests.Integer `position:"Query" name:"AppKey"`
 	MessageId requests.Integer `position:"Query" name:"MessageId"`
 }
 
+// QueryPushStatByMsgResponse is the response struct for api QueryPushStatByMsg
 type QueryPushStatByMsgResponse struct {
 	*responses.BaseResponse
 	RequestId string    `json:"RequestId" xml:"RequestId"`
 	PushStats PushStats `json:"PushStats" xml:"PushStats"`
 }
 
-// create a request to invoke QueryPushStatByMsg API
-func CreateQueryPushStatByMsgRequest() (request *QueryPushStatByMsgRequest) {
+// CreateQueryPushStatByMsgRequest creates a request to invoke QueryPushStatByMsg API
+func CreateQueryPushStatByMsgRequest(request *QueryPushStatByMsgRequest) {
 	request = &QueryPushStatByMsgRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -94,7 +96,7 @@ func CreateQueryPushStatByMsgRequest() (request *QueryPushStatByMsgRequest) {
 	return
 }
 
-// create a response to parse from QueryPushStatByMsg response
+// CreateQueryPushStatByMsgResponse creates a response to parse from QueryPushStatByMsg response
 func CreateQueryPushStatByMsgResponse() (response *QueryPushStatByMsgResponse) {
 	response = &QueryPushStatByMsgResponse{
 		BaseResponse: &responses.BaseResponse{},

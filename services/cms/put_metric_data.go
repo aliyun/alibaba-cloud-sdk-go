@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke PutMetricData api with *PutMetricDataRequest synchronously
+// PutMetricData invokes the cms.PutMetricData API synchronously
 // api document: https://help.aliyun.com/api/cms/putmetricdata.html
 func (client *Client) PutMetricData(request *PutMetricDataRequest) (response *PutMetricDataResponse, err error) {
 	response = CreatePutMetricDataResponse()
@@ -28,7 +28,7 @@ func (client *Client) PutMetricData(request *PutMetricDataRequest) (response *Pu
 	return
 }
 
-// invoke PutMetricData api with *PutMetricDataRequest asynchronously
+// PutMetricDataWithChan invokes the cms.PutMetricData API asynchronously
 // api document: https://help.aliyun.com/api/cms/putmetricdata.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PutMetricDataWithChan(request *PutMetricDataRequest) (<-chan *PutMetricDataResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) PutMetricDataWithChan(request *PutMetricDataRequest) (<-ch
 	return responseChan, errChan
 }
 
-// invoke PutMetricData api with *PutMetricDataRequest asynchronously
+// PutMetricDataWithCallback invokes the cms.PutMetricData API asynchronously
 // api document: https://help.aliyun.com/api/cms/putmetricdata.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PutMetricDataWithCallback(request *PutMetricDataRequest, callback func(response *PutMetricDataResponse, err error)) <-chan int {
@@ -73,12 +73,14 @@ func (client *Client) PutMetricDataWithCallback(request *PutMetricDataRequest, c
 	return result
 }
 
+// PutMetricDataRequest is the request struct for api PutMetricData
 type PutMetricDataRequest struct {
 	*requests.RpcRequest
 	CallbyCmsOwner string `position:"Query" name:"callby_cms_owner"`
 	Body           string `position:"Query" name:"Body"`
 }
 
+// PutMetricDataResponse is the response struct for api PutMetricData
 type PutMetricDataResponse struct {
 	*responses.BaseResponse
 	Code      string `json:"Code" xml:"Code"`
@@ -87,8 +89,8 @@ type PutMetricDataResponse struct {
 	Success   bool   `json:"Success" xml:"Success"`
 }
 
-// create a request to invoke PutMetricData API
-func CreatePutMetricDataRequest() (request *PutMetricDataRequest) {
+// CreatePutMetricDataRequest creates a request to invoke PutMetricData API
+func CreatePutMetricDataRequest(request *PutMetricDataRequest) {
 	request = &PutMetricDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -96,7 +98,7 @@ func CreatePutMetricDataRequest() (request *PutMetricDataRequest) {
 	return
 }
 
-// create a response to parse from PutMetricData response
+// CreatePutMetricDataResponse creates a response to parse from PutMetricData response
 func CreatePutMetricDataResponse() (response *PutMetricDataResponse) {
 	response = &PutMetricDataResponse{
 		BaseResponse: &responses.BaseResponse{},

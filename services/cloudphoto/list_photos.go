@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ListPhotos api with *ListPhotosRequest synchronously
+// ListPhotos invokes the cloudphoto.ListPhotos API synchronously
 // api document: https://help.aliyun.com/api/cloudphoto/listphotos.html
 func (client *Client) ListPhotos(request *ListPhotosRequest) (response *ListPhotosResponse, err error) {
 	response = CreateListPhotosResponse()
@@ -28,7 +28,7 @@ func (client *Client) ListPhotos(request *ListPhotosRequest) (response *ListPhot
 	return
 }
 
-// invoke ListPhotos api with *ListPhotosRequest asynchronously
+// ListPhotosWithChan invokes the cloudphoto.ListPhotos API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/listphotos.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListPhotosWithChan(request *ListPhotosRequest) (<-chan *ListPhotosResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ListPhotosWithChan(request *ListPhotosRequest) (<-chan *Li
 	return responseChan, errChan
 }
 
-// invoke ListPhotos api with *ListPhotosRequest asynchronously
+// ListPhotosWithCallback invokes the cloudphoto.ListPhotos API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/listphotos.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListPhotosWithCallback(request *ListPhotosRequest, callback func(response *ListPhotosResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ListPhotosWithCallback(request *ListPhotosRequest, callbac
 	return result
 }
 
+// ListPhotosRequest is the request struct for api ListPhotos
 type ListPhotosRequest struct {
 	*requests.RpcRequest
 	Direction string           `position:"Query" name:"Direction"`
@@ -83,6 +84,7 @@ type ListPhotosRequest struct {
 	LibraryId string           `position:"Query" name:"LibraryId"`
 }
 
+// ListPhotosResponse is the response struct for api ListPhotos
 type ListPhotosResponse struct {
 	*responses.BaseResponse
 	Code       string  `json:"Code" xml:"Code"`
@@ -94,8 +96,8 @@ type ListPhotosResponse struct {
 	Photos     []Photo `json:"Photos" xml:"Photos"`
 }
 
-// create a request to invoke ListPhotos API
-func CreateListPhotosRequest() (request *ListPhotosRequest) {
+// CreateListPhotosRequest creates a request to invoke ListPhotos API
+func CreateListPhotosRequest(request *ListPhotosRequest) {
 	request = &ListPhotosRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -103,7 +105,7 @@ func CreateListPhotosRequest() (request *ListPhotosRequest) {
 	return
 }
 
-// create a response to parse from ListPhotos response
+// CreateListPhotosResponse creates a response to parse from ListPhotos response
 func CreateListPhotosResponse() (response *ListPhotosResponse) {
 	response = &ListPhotosResponse{
 		BaseResponse: &responses.BaseResponse{},

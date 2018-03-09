@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke UpdatePipeline api with *UpdatePipelineRequest synchronously
+// UpdatePipeline invokes the mts.UpdatePipeline API synchronously
 // api document: https://help.aliyun.com/api/mts/updatepipeline.html
 func (client *Client) UpdatePipeline(request *UpdatePipelineRequest) (response *UpdatePipelineResponse, err error) {
 	response = CreateUpdatePipelineResponse()
@@ -28,7 +28,7 @@ func (client *Client) UpdatePipeline(request *UpdatePipelineRequest) (response *
 	return
 }
 
-// invoke UpdatePipeline api with *UpdatePipelineRequest asynchronously
+// UpdatePipelineWithChan invokes the mts.UpdatePipeline API asynchronously
 // api document: https://help.aliyun.com/api/mts/updatepipeline.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdatePipelineWithChan(request *UpdatePipelineRequest) (<-chan *UpdatePipelineResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) UpdatePipelineWithChan(request *UpdatePipelineRequest) (<-
 	return responseChan, errChan
 }
 
-// invoke UpdatePipeline api with *UpdatePipelineRequest asynchronously
+// UpdatePipelineWithCallback invokes the mts.UpdatePipeline API asynchronously
 // api document: https://help.aliyun.com/api/mts/updatepipeline.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdatePipelineWithCallback(request *UpdatePipelineRequest, callback func(response *UpdatePipelineResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) UpdatePipelineWithCallback(request *UpdatePipelineRequest,
 	return result
 }
 
+// UpdatePipelineRequest is the request struct for api UpdatePipeline
 type UpdatePipelineRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -86,14 +87,15 @@ type UpdatePipelineRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// UpdatePipelineResponse is the response struct for api UpdatePipeline
 type UpdatePipelineResponse struct {
 	*responses.BaseResponse
 	RequestId string   `json:"RequestId" xml:"RequestId"`
 	Pipeline  Pipeline `json:"Pipeline" xml:"Pipeline"`
 }
 
-// create a request to invoke UpdatePipeline API
-func CreateUpdatePipelineRequest() (request *UpdatePipelineRequest) {
+// CreateUpdatePipelineRequest creates a request to invoke UpdatePipeline API
+func CreateUpdatePipelineRequest(request *UpdatePipelineRequest) {
 	request = &UpdatePipelineRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -101,7 +103,7 @@ func CreateUpdatePipelineRequest() (request *UpdatePipelineRequest) {
 	return
 }
 
-// create a response to parse from UpdatePipeline response
+// CreateUpdatePipelineResponse creates a response to parse from UpdatePipeline response
 func CreateUpdatePipelineResponse() (response *UpdatePipelineResponse) {
 	response = &UpdatePipelineResponse{
 		BaseResponse: &responses.BaseResponse{},

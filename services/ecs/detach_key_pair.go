@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DetachKeyPair api with *DetachKeyPairRequest synchronously
+// DetachKeyPair invokes the ecs.DetachKeyPair API synchronously
 // api document: https://help.aliyun.com/api/ecs/detachkeypair.html
 func (client *Client) DetachKeyPair(request *DetachKeyPairRequest) (response *DetachKeyPairResponse, err error) {
 	response = CreateDetachKeyPairResponse()
@@ -28,7 +28,7 @@ func (client *Client) DetachKeyPair(request *DetachKeyPairRequest) (response *De
 	return
 }
 
-// invoke DetachKeyPair api with *DetachKeyPairRequest asynchronously
+// DetachKeyPairWithChan invokes the ecs.DetachKeyPair API asynchronously
 // api document: https://help.aliyun.com/api/ecs/detachkeypair.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetachKeyPairWithChan(request *DetachKeyPairRequest) (<-chan *DetachKeyPairResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DetachKeyPairWithChan(request *DetachKeyPairRequest) (<-ch
 	return responseChan, errChan
 }
 
-// invoke DetachKeyPair api with *DetachKeyPairRequest asynchronously
+// DetachKeyPairWithCallback invokes the ecs.DetachKeyPair API asynchronously
 // api document: https://help.aliyun.com/api/ecs/detachkeypair.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetachKeyPairWithCallback(request *DetachKeyPairRequest, callback func(response *DetachKeyPairResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DetachKeyPairWithCallback(request *DetachKeyPairRequest, c
 	return result
 }
 
+// DetachKeyPairRequest is the request struct for api DetachKeyPair
 type DetachKeyPairRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,6 +83,7 @@ type DetachKeyPairRequest struct {
 	InstanceIds          string           `position:"Query" name:"InstanceIds"`
 }
 
+// DetachKeyPairResponse is the response struct for api DetachKeyPair
 type DetachKeyPairResponse struct {
 	*responses.BaseResponse
 	RequestId   string                 `json:"RequestId" xml:"RequestId"`
@@ -91,8 +93,8 @@ type DetachKeyPairResponse struct {
 	Results     ResultsInDetachKeyPair `json:"Results" xml:"Results"`
 }
 
-// create a request to invoke DetachKeyPair API
-func CreateDetachKeyPairRequest() (request *DetachKeyPairRequest) {
+// CreateDetachKeyPairRequest creates a request to invoke DetachKeyPair API
+func CreateDetachKeyPairRequest(request *DetachKeyPairRequest) {
 	request = &DetachKeyPairRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -100,7 +102,7 @@ func CreateDetachKeyPairRequest() (request *DetachKeyPairRequest) {
 	return
 }
 
-// create a response to parse from DetachKeyPair response
+// CreateDetachKeyPairResponse creates a response to parse from DetachKeyPair response
 func CreateDetachKeyPairResponse() (response *DetachKeyPairResponse) {
 	response = &DetachKeyPairResponse{
 		BaseResponse: &responses.BaseResponse{},

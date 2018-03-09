@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke QueryDomainList api with *QueryDomainListRequest synchronously
+// QueryDomainList invokes the domain_intl.QueryDomainList API synchronously
 // api document: https://help.aliyun.com/api/domain-intl/querydomainlist.html
 func (client *Client) QueryDomainList(request *QueryDomainListRequest) (response *QueryDomainListResponse, err error) {
 	response = CreateQueryDomainListResponse()
@@ -28,7 +28,7 @@ func (client *Client) QueryDomainList(request *QueryDomainListRequest) (response
 	return
 }
 
-// invoke QueryDomainList api with *QueryDomainListRequest asynchronously
+// QueryDomainListWithChan invokes the domain_intl.QueryDomainList API asynchronously
 // api document: https://help.aliyun.com/api/domain-intl/querydomainlist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryDomainListWithChan(request *QueryDomainListRequest) (<-chan *QueryDomainListResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) QueryDomainListWithChan(request *QueryDomainListRequest) (
 	return responseChan, errChan
 }
 
-// invoke QueryDomainList api with *QueryDomainListRequest asynchronously
+// QueryDomainListWithCallback invokes the domain_intl.QueryDomainList API asynchronously
 // api document: https://help.aliyun.com/api/domain-intl/querydomainlist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryDomainListWithCallback(request *QueryDomainListRequest, callback func(response *QueryDomainListResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) QueryDomainListWithCallback(request *QueryDomainListReques
 	return result
 }
 
+// QueryDomainListRequest is the request struct for api QueryDomainList
 type QueryDomainListRequest struct {
 	*requests.RpcRequest
 	StartExpirationDate   requests.Integer `position:"Query" name:"StartExpirationDate"`
@@ -90,6 +91,7 @@ type QueryDomainListRequest struct {
 	PageSize              requests.Integer `position:"Query" name:"PageSize"`
 }
 
+// QueryDomainListResponse is the response struct for api QueryDomainList
 type QueryDomainListResponse struct {
 	*responses.BaseResponse
 	RequestId      string                `json:"RequestId" xml:"RequestId"`
@@ -102,8 +104,8 @@ type QueryDomainListResponse struct {
 	Data           DataInQueryDomainList `json:"Data" xml:"Data"`
 }
 
-// create a request to invoke QueryDomainList API
-func CreateQueryDomainListRequest() (request *QueryDomainListRequest) {
+// CreateQueryDomainListRequest creates a request to invoke QueryDomainList API
+func CreateQueryDomainListRequest(request *QueryDomainListRequest) {
 	request = &QueryDomainListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -111,7 +113,7 @@ func CreateQueryDomainListRequest() (request *QueryDomainListRequest) {
 	return
 }
 
-// create a response to parse from QueryDomainList response
+// CreateQueryDomainListResponse creates a response to parse from QueryDomainList response
 func CreateQueryDomainListResponse() (response *QueryDomainListResponse) {
 	response = &QueryDomainListResponse{
 		BaseResponse: &responses.BaseResponse{},

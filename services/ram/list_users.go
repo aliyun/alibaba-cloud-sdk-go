@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ListUsers api with *ListUsersRequest synchronously
+// ListUsers invokes the ram.ListUsers API synchronously
 // api document: https://help.aliyun.com/api/ram/listusers.html
 func (client *Client) ListUsers(request *ListUsersRequest) (response *ListUsersResponse, err error) {
 	response = CreateListUsersResponse()
@@ -28,7 +28,7 @@ func (client *Client) ListUsers(request *ListUsersRequest) (response *ListUsersR
 	return
 }
 
-// invoke ListUsers api with *ListUsersRequest asynchronously
+// ListUsersWithChan invokes the ram.ListUsers API asynchronously
 // api document: https://help.aliyun.com/api/ram/listusers.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListUsersWithChan(request *ListUsersRequest) (<-chan *ListUsersResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ListUsersWithChan(request *ListUsersRequest) (<-chan *List
 	return responseChan, errChan
 }
 
-// invoke ListUsers api with *ListUsersRequest asynchronously
+// ListUsersWithCallback invokes the ram.ListUsers API asynchronously
 // api document: https://help.aliyun.com/api/ram/listusers.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListUsersWithCallback(request *ListUsersRequest, callback func(response *ListUsersResponse, err error)) <-chan int {
@@ -73,12 +73,14 @@ func (client *Client) ListUsersWithCallback(request *ListUsersRequest, callback 
 	return result
 }
 
+// ListUsersRequest is the request struct for api ListUsers
 type ListUsersRequest struct {
 	*requests.RpcRequest
 	Marker   string           `position:"Query" name:"Marker"`
 	MaxItems requests.Integer `position:"Query" name:"MaxItems"`
 }
 
+// ListUsersResponse is the response struct for api ListUsers
 type ListUsersResponse struct {
 	*responses.BaseResponse
 	RequestId   string           `json:"RequestId" xml:"RequestId"`
@@ -87,8 +89,8 @@ type ListUsersResponse struct {
 	Users       UsersInListUsers `json:"Users" xml:"Users"`
 }
 
-// create a request to invoke ListUsers API
-func CreateListUsersRequest() (request *ListUsersRequest) {
+// CreateListUsersRequest creates a request to invoke ListUsers API
+func CreateListUsersRequest(request *ListUsersRequest) {
 	request = &ListUsersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -96,7 +98,7 @@ func CreateListUsersRequest() (request *ListUsersRequest) {
 	return
 }
 
-// create a response to parse from ListUsers response
+// CreateListUsersResponse creates a response to parse from ListUsers response
 func CreateListUsersResponse() (response *ListUsersResponse) {
 	response = &ListUsersResponse{
 		BaseResponse: &responses.BaseResponse{},

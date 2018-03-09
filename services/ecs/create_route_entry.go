@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CreateRouteEntry api with *CreateRouteEntryRequest synchronously
+// CreateRouteEntry invokes the ecs.CreateRouteEntry API synchronously
 // api document: https://help.aliyun.com/api/ecs/createrouteentry.html
 func (client *Client) CreateRouteEntry(request *CreateRouteEntryRequest) (response *CreateRouteEntryResponse, err error) {
 	response = CreateCreateRouteEntryResponse()
@@ -28,7 +28,7 @@ func (client *Client) CreateRouteEntry(request *CreateRouteEntryRequest) (respon
 	return
 }
 
-// invoke CreateRouteEntry api with *CreateRouteEntryRequest asynchronously
+// CreateRouteEntryWithChan invokes the ecs.CreateRouteEntry API asynchronously
 // api document: https://help.aliyun.com/api/ecs/createrouteentry.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateRouteEntryWithChan(request *CreateRouteEntryRequest) (<-chan *CreateRouteEntryResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CreateRouteEntryWithChan(request *CreateRouteEntryRequest)
 	return responseChan, errChan
 }
 
-// invoke CreateRouteEntry api with *CreateRouteEntryRequest asynchronously
+// CreateRouteEntryWithCallback invokes the ecs.CreateRouteEntry API asynchronously
 // api document: https://help.aliyun.com/api/ecs/createrouteentry.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateRouteEntryWithCallback(request *CreateRouteEntryRequest, callback func(response *CreateRouteEntryResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) CreateRouteEntryWithCallback(request *CreateRouteEntryRequ
 	return result
 }
 
+// CreateRouteEntryRequest is the request struct for api CreateRouteEntry
 type CreateRouteEntryRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer               `position:"Query" name:"OwnerId"`
@@ -87,18 +88,20 @@ type CreateRouteEntryRequest struct {
 	NextHopList          *[]CreateRouteEntryNextHopList `position:"Query" name:"NextHopList"  type:"Repeated"`
 }
 
+// CreateRouteEntryNextHopList is a repeated param struct in CreateRouteEntryRequest
 type CreateRouteEntryNextHopList struct {
 	NextHopType string `name:"NextHopType"`
 	NextHopId   string `name:"NextHopId"`
 }
 
+// CreateRouteEntryResponse is the response struct for api CreateRouteEntry
 type CreateRouteEntryResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke CreateRouteEntry API
-func CreateCreateRouteEntryRequest() (request *CreateRouteEntryRequest) {
+// CreateCreateRouteEntryRequest creates a request to invoke CreateRouteEntry API
+func CreateCreateRouteEntryRequest(request *CreateRouteEntryRequest) {
 	request = &CreateRouteEntryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -106,7 +109,7 @@ func CreateCreateRouteEntryRequest() (request *CreateRouteEntryRequest) {
 	return
 }
 
-// create a response to parse from CreateRouteEntry response
+// CreateCreateRouteEntryResponse creates a response to parse from CreateRouteEntry response
 func CreateCreateRouteEntryResponse() (response *CreateRouteEntryResponse) {
 	response = &CreateRouteEntryResponse{
 		BaseResponse: &responses.BaseResponse{},

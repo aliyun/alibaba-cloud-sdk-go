@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke UpdatePornPipeline api with *UpdatePornPipelineRequest synchronously
+// UpdatePornPipeline invokes the mts.UpdatePornPipeline API synchronously
 // api document: https://help.aliyun.com/api/mts/updatepornpipeline.html
 func (client *Client) UpdatePornPipeline(request *UpdatePornPipelineRequest) (response *UpdatePornPipelineResponse, err error) {
 	response = CreateUpdatePornPipelineResponse()
@@ -28,7 +28,7 @@ func (client *Client) UpdatePornPipeline(request *UpdatePornPipelineRequest) (re
 	return
 }
 
-// invoke UpdatePornPipeline api with *UpdatePornPipelineRequest asynchronously
+// UpdatePornPipelineWithChan invokes the mts.UpdatePornPipeline API asynchronously
 // api document: https://help.aliyun.com/api/mts/updatepornpipeline.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdatePornPipelineWithChan(request *UpdatePornPipelineRequest) (<-chan *UpdatePornPipelineResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) UpdatePornPipelineWithChan(request *UpdatePornPipelineRequ
 	return responseChan, errChan
 }
 
-// invoke UpdatePornPipeline api with *UpdatePornPipelineRequest asynchronously
+// UpdatePornPipelineWithCallback invokes the mts.UpdatePornPipeline API asynchronously
 // api document: https://help.aliyun.com/api/mts/updatepornpipeline.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdatePornPipelineWithCallback(request *UpdatePornPipelineRequest, callback func(response *UpdatePornPipelineResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) UpdatePornPipelineWithCallback(request *UpdatePornPipeline
 	return result
 }
 
+// UpdatePornPipelineRequest is the request struct for api UpdatePornPipeline
 type UpdatePornPipelineRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -86,14 +87,15 @@ type UpdatePornPipelineRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// UpdatePornPipelineResponse is the response struct for api UpdatePornPipeline
 type UpdatePornPipelineResponse struct {
 	*responses.BaseResponse
 	RequestId string   `json:"RequestId" xml:"RequestId"`
 	Pipeline  Pipeline `json:"Pipeline" xml:"Pipeline"`
 }
 
-// create a request to invoke UpdatePornPipeline API
-func CreateUpdatePornPipelineRequest() (request *UpdatePornPipelineRequest) {
+// CreateUpdatePornPipelineRequest creates a request to invoke UpdatePornPipeline API
+func CreateUpdatePornPipelineRequest(request *UpdatePornPipelineRequest) {
 	request = &UpdatePornPipelineRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -101,7 +103,7 @@ func CreateUpdatePornPipelineRequest() (request *UpdatePornPipelineRequest) {
 	return
 }
 
-// create a response to parse from UpdatePornPipeline response
+// CreateUpdatePornPipelineResponse creates a response to parse from UpdatePornPipeline response
 func CreateUpdatePornPipelineResponse() (response *UpdatePornPipelineResponse) {
 	response = &UpdatePornPipelineResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeLivePullStreamConfig api with *DescribeLivePullStreamConfigRequest synchronously
+// DescribeLivePullStreamConfig invokes the cdn.DescribeLivePullStreamConfig API synchronously
 // api document: https://help.aliyun.com/api/cdn/describelivepullstreamconfig.html
 func (client *Client) DescribeLivePullStreamConfig(request *DescribeLivePullStreamConfigRequest) (response *DescribeLivePullStreamConfigResponse, err error) {
 	response = CreateDescribeLivePullStreamConfigResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeLivePullStreamConfig(request *DescribeLivePullStre
 	return
 }
 
-// invoke DescribeLivePullStreamConfig api with *DescribeLivePullStreamConfigRequest asynchronously
+// DescribeLivePullStreamConfigWithChan invokes the cdn.DescribeLivePullStreamConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describelivepullstreamconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLivePullStreamConfigWithChan(request *DescribeLivePullStreamConfigRequest) (<-chan *DescribeLivePullStreamConfigResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeLivePullStreamConfigWithChan(request *DescribeLive
 	return responseChan, errChan
 }
 
-// invoke DescribeLivePullStreamConfig api with *DescribeLivePullStreamConfigRequest asynchronously
+// DescribeLivePullStreamConfigWithCallback invokes the cdn.DescribeLivePullStreamConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describelivepullstreamconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLivePullStreamConfigWithCallback(request *DescribeLivePullStreamConfigRequest, callback func(response *DescribeLivePullStreamConfigResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeLivePullStreamConfigWithCallback(request *Describe
 	return result
 }
 
+// DescribeLivePullStreamConfigRequest is the request struct for api DescribeLivePullStreamConfig
 type DescribeLivePullStreamConfigRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -80,14 +81,15 @@ type DescribeLivePullStreamConfigRequest struct {
 	DomainName    string           `position:"Query" name:"DomainName"`
 }
 
+// DescribeLivePullStreamConfigResponse is the response struct for api DescribeLivePullStreamConfig
 type DescribeLivePullStreamConfigResponse struct {
 	*responses.BaseResponse
 	RequestId         string                                          `json:"RequestId" xml:"RequestId"`
 	LiveAppRecordList LiveAppRecordListInDescribeLivePullStreamConfig `json:"LiveAppRecordList" xml:"LiveAppRecordList"`
 }
 
-// create a request to invoke DescribeLivePullStreamConfig API
-func CreateDescribeLivePullStreamConfigRequest() (request *DescribeLivePullStreamConfigRequest) {
+// CreateDescribeLivePullStreamConfigRequest creates a request to invoke DescribeLivePullStreamConfig API
+func CreateDescribeLivePullStreamConfigRequest(request *DescribeLivePullStreamConfigRequest) {
 	request = &DescribeLivePullStreamConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateDescribeLivePullStreamConfigRequest() (request *DescribeLivePullStrea
 	return
 }
 
-// create a response to parse from DescribeLivePullStreamConfig response
+// CreateDescribeLivePullStreamConfigResponse creates a response to parse from DescribeLivePullStreamConfig response
 func CreateDescribeLivePullStreamConfigResponse() (response *DescribeLivePullStreamConfigResponse) {
 	response = &DescribeLivePullStreamConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

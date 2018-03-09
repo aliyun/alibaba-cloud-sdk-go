@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ImportDataFromDatabase api with *ImportDataFromDatabaseRequest synchronously
+// ImportDataFromDatabase invokes the rds.ImportDataFromDatabase API synchronously
 // api document: https://help.aliyun.com/api/rds/importdatafromdatabase.html
 func (client *Client) ImportDataFromDatabase(request *ImportDataFromDatabaseRequest) (response *ImportDataFromDatabaseResponse, err error) {
 	response = CreateImportDataFromDatabaseResponse()
@@ -28,7 +28,7 @@ func (client *Client) ImportDataFromDatabase(request *ImportDataFromDatabaseRequ
 	return
 }
 
-// invoke ImportDataFromDatabase api with *ImportDataFromDatabaseRequest asynchronously
+// ImportDataFromDatabaseWithChan invokes the rds.ImportDataFromDatabase API asynchronously
 // api document: https://help.aliyun.com/api/rds/importdatafromdatabase.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ImportDataFromDatabaseWithChan(request *ImportDataFromDatabaseRequest) (<-chan *ImportDataFromDatabaseResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ImportDataFromDatabaseWithChan(request *ImportDataFromData
 	return responseChan, errChan
 }
 
-// invoke ImportDataFromDatabase api with *ImportDataFromDatabaseRequest asynchronously
+// ImportDataFromDatabaseWithCallback invokes the rds.ImportDataFromDatabase API asynchronously
 // api document: https://help.aliyun.com/api/rds/importdatafromdatabase.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ImportDataFromDatabaseWithCallback(request *ImportDataFromDatabaseRequest, callback func(response *ImportDataFromDatabaseResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ImportDataFromDatabaseWithCallback(request *ImportDataFrom
 	return result
 }
 
+// ImportDataFromDatabaseRequest is the request struct for api ImportDataFromDatabase
 type ImportDataFromDatabaseRequest struct {
 	*requests.RpcRequest
 	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
@@ -89,14 +90,15 @@ type ImportDataFromDatabaseRequest struct {
 	OwnerAccount           string           `position:"Query" name:"OwnerAccount"`
 }
 
+// ImportDataFromDatabaseResponse is the response struct for api ImportDataFromDatabase
 type ImportDataFromDatabaseResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	ImportId  int    `json:"ImportId" xml:"ImportId"`
 }
 
-// create a request to invoke ImportDataFromDatabase API
-func CreateImportDataFromDatabaseRequest() (request *ImportDataFromDatabaseRequest) {
+// CreateImportDataFromDatabaseRequest creates a request to invoke ImportDataFromDatabase API
+func CreateImportDataFromDatabaseRequest(request *ImportDataFromDatabaseRequest) {
 	request = &ImportDataFromDatabaseRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -104,7 +106,7 @@ func CreateImportDataFromDatabaseRequest() (request *ImportDataFromDatabaseReque
 	return
 }
 
-// create a response to parse from ImportDataFromDatabase response
+// CreateImportDataFromDatabaseResponse creates a response to parse from ImportDataFromDatabase response
 func CreateImportDataFromDatabaseResponse() (response *ImportDataFromDatabaseResponse) {
 	response = &ImportDataFromDatabaseResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeUserCustomLogConfig api with *DescribeUserCustomLogConfigRequest synchronously
+// DescribeUserCustomLogConfig invokes the cdn.DescribeUserCustomLogConfig API synchronously
 // api document: https://help.aliyun.com/api/cdn/describeusercustomlogconfig.html
 func (client *Client) DescribeUserCustomLogConfig(request *DescribeUserCustomLogConfigRequest) (response *DescribeUserCustomLogConfigResponse, err error) {
 	response = CreateDescribeUserCustomLogConfigResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeUserCustomLogConfig(request *DescribeUserCustomLog
 	return
 }
 
-// invoke DescribeUserCustomLogConfig api with *DescribeUserCustomLogConfigRequest asynchronously
+// DescribeUserCustomLogConfigWithChan invokes the cdn.DescribeUserCustomLogConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describeusercustomlogconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUserCustomLogConfigWithChan(request *DescribeUserCustomLogConfigRequest) (<-chan *DescribeUserCustomLogConfigResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeUserCustomLogConfigWithChan(request *DescribeUserC
 	return responseChan, errChan
 }
 
-// invoke DescribeUserCustomLogConfig api with *DescribeUserCustomLogConfigRequest asynchronously
+// DescribeUserCustomLogConfigWithCallback invokes the cdn.DescribeUserCustomLogConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describeusercustomlogconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUserCustomLogConfigWithCallback(request *DescribeUserCustomLogConfigRequest, callback func(response *DescribeUserCustomLogConfigResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeUserCustomLogConfigWithCallback(request *DescribeU
 	return result
 }
 
+// DescribeUserCustomLogConfigRequest is the request struct for api DescribeUserCustomLogConfig
 type DescribeUserCustomLogConfigRequest struct {
 	*requests.RpcRequest
 	Version       string           `position:"Query" name:"Version"`
@@ -80,14 +81,15 @@ type DescribeUserCustomLogConfigRequest struct {
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
+// DescribeUserCustomLogConfigResponse is the response struct for api DescribeUserCustomLogConfig
 type DescribeUserCustomLogConfigResponse struct {
 	*responses.BaseResponse
 	RequestId string    `json:"RequestId" xml:"RequestId"`
 	ConfigIds ConfigIds `json:"ConfigIds" xml:"ConfigIds"`
 }
 
-// create a request to invoke DescribeUserCustomLogConfig API
-func CreateDescribeUserCustomLogConfigRequest() (request *DescribeUserCustomLogConfigRequest) {
+// CreateDescribeUserCustomLogConfigRequest creates a request to invoke DescribeUserCustomLogConfig API
+func CreateDescribeUserCustomLogConfigRequest(request *DescribeUserCustomLogConfigRequest) {
 	request = &DescribeUserCustomLogConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateDescribeUserCustomLogConfigRequest() (request *DescribeUserCustomLogC
 	return
 }
 
-// create a response to parse from DescribeUserCustomLogConfig response
+// CreateDescribeUserCustomLogConfigResponse creates a response to parse from DescribeUserCustomLogConfig response
 func CreateDescribeUserCustomLogConfigResponse() (response *DescribeUserCustomLogConfigResponse) {
 	response = &DescribeUserCustomLogConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke QueryPipelineList api with *QueryPipelineListRequest synchronously
+// QueryPipelineList invokes the mts.QueryPipelineList API synchronously
 // api document: https://help.aliyun.com/api/mts/querypipelinelist.html
 func (client *Client) QueryPipelineList(request *QueryPipelineListRequest) (response *QueryPipelineListResponse, err error) {
 	response = CreateQueryPipelineListResponse()
@@ -28,7 +28,7 @@ func (client *Client) QueryPipelineList(request *QueryPipelineListRequest) (resp
 	return
 }
 
-// invoke QueryPipelineList api with *QueryPipelineListRequest asynchronously
+// QueryPipelineListWithChan invokes the mts.QueryPipelineList API asynchronously
 // api document: https://help.aliyun.com/api/mts/querypipelinelist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryPipelineListWithChan(request *QueryPipelineListRequest) (<-chan *QueryPipelineListResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) QueryPipelineListWithChan(request *QueryPipelineListReques
 	return responseChan, errChan
 }
 
-// invoke QueryPipelineList api with *QueryPipelineListRequest asynchronously
+// QueryPipelineListWithCallback invokes the mts.QueryPipelineList API asynchronously
 // api document: https://help.aliyun.com/api/mts/querypipelinelist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryPipelineListWithCallback(request *QueryPipelineListRequest, callback func(response *QueryPipelineListResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) QueryPipelineListWithCallback(request *QueryPipelineListRe
 	return result
 }
 
+// QueryPipelineListRequest is the request struct for api QueryPipelineList
 type QueryPipelineListRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,6 +83,7 @@ type QueryPipelineListRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// QueryPipelineListResponse is the response struct for api QueryPipelineList
 type QueryPipelineListResponse struct {
 	*responses.BaseResponse
 	RequestId    string                          `json:"RequestId" xml:"RequestId"`
@@ -89,8 +91,8 @@ type QueryPipelineListResponse struct {
 	PipelineList PipelineListInQueryPipelineList `json:"PipelineList" xml:"PipelineList"`
 }
 
-// create a request to invoke QueryPipelineList API
-func CreateQueryPipelineListRequest() (request *QueryPipelineListRequest) {
+// CreateQueryPipelineListRequest creates a request to invoke QueryPipelineList API
+func CreateQueryPipelineListRequest(request *QueryPipelineListRequest) {
 	request = &QueryPipelineListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateQueryPipelineListRequest() (request *QueryPipelineListRequest) {
 	return
 }
 
-// create a response to parse from QueryPipelineList response
+// CreateQueryPipelineListResponse creates a response to parse from QueryPipelineList response
 func CreateQueryPipelineListResponse() (response *QueryPipelineListResponse) {
 	response = &QueryPipelineListResponse{
 		BaseResponse: &responses.BaseResponse{},

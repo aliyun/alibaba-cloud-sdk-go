@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CreateNetworkInterface api with *CreateNetworkInterfaceRequest synchronously
+// CreateNetworkInterface invokes the ecs.CreateNetworkInterface API synchronously
 // api document: https://help.aliyun.com/api/ecs/createnetworkinterface.html
 func (client *Client) CreateNetworkInterface(request *CreateNetworkInterfaceRequest) (response *CreateNetworkInterfaceResponse, err error) {
 	response = CreateCreateNetworkInterfaceResponse()
@@ -28,7 +28,7 @@ func (client *Client) CreateNetworkInterface(request *CreateNetworkInterfaceRequ
 	return
 }
 
-// invoke CreateNetworkInterface api with *CreateNetworkInterfaceRequest asynchronously
+// CreateNetworkInterfaceWithChan invokes the ecs.CreateNetworkInterface API asynchronously
 // api document: https://help.aliyun.com/api/ecs/createnetworkinterface.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateNetworkInterfaceWithChan(request *CreateNetworkInterfaceRequest) (<-chan *CreateNetworkInterfaceResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CreateNetworkInterfaceWithChan(request *CreateNetworkInter
 	return responseChan, errChan
 }
 
-// invoke CreateNetworkInterface api with *CreateNetworkInterfaceRequest asynchronously
+// CreateNetworkInterfaceWithCallback invokes the ecs.CreateNetworkInterface API asynchronously
 // api document: https://help.aliyun.com/api/ecs/createnetworkinterface.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateNetworkInterfaceWithCallback(request *CreateNetworkInterfaceRequest, callback func(response *CreateNetworkInterfaceResponse, err error)) <-chan int {
@@ -73,18 +73,20 @@ func (client *Client) CreateNetworkInterfaceWithCallback(request *CreateNetworkI
 	return result
 }
 
+// CreateNetworkInterfaceRequest is the request struct for api CreateNetworkInterface
 type CreateNetworkInterfaceRequest struct {
 	*requests.RpcRequest
 }
 
+// CreateNetworkInterfaceResponse is the response struct for api CreateNetworkInterface
 type CreateNetworkInterfaceResponse struct {
 	*responses.BaseResponse
 	RequestId          string `json:"RequestId" xml:"RequestId"`
 	NetworkInterfaceId string `json:"NetworkInterfaceId" xml:"NetworkInterfaceId"`
 }
 
-// create a request to invoke CreateNetworkInterface API
-func CreateCreateNetworkInterfaceRequest() (request *CreateNetworkInterfaceRequest) {
+// CreateCreateNetworkInterfaceRequest creates a request to invoke CreateNetworkInterface API
+func CreateCreateNetworkInterfaceRequest(request *CreateNetworkInterfaceRequest) {
 	request = &CreateNetworkInterfaceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -92,7 +94,7 @@ func CreateCreateNetworkInterfaceRequest() (request *CreateNetworkInterfaceReque
 	return
 }
 
-// create a response to parse from CreateNetworkInterface response
+// CreateCreateNetworkInterfaceResponse creates a response to parse from CreateNetworkInterface response
 func CreateCreateNetworkInterfaceResponse() (response *CreateNetworkInterfaceResponse) {
 	response = &CreateNetworkInterfaceResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CheckDomainRecord api with *CheckDomainRecordRequest synchronously
+// CheckDomainRecord invokes the alidns.CheckDomainRecord API synchronously
 // api document: https://help.aliyun.com/api/alidns/checkdomainrecord.html
 func (client *Client) CheckDomainRecord(request *CheckDomainRecordRequest) (response *CheckDomainRecordResponse, err error) {
 	response = CreateCheckDomainRecordResponse()
@@ -28,7 +28,7 @@ func (client *Client) CheckDomainRecord(request *CheckDomainRecordRequest) (resp
 	return
 }
 
-// invoke CheckDomainRecord api with *CheckDomainRecordRequest asynchronously
+// CheckDomainRecordWithChan invokes the alidns.CheckDomainRecord API asynchronously
 // api document: https://help.aliyun.com/api/alidns/checkdomainrecord.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckDomainRecordWithChan(request *CheckDomainRecordRequest) (<-chan *CheckDomainRecordResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CheckDomainRecordWithChan(request *CheckDomainRecordReques
 	return responseChan, errChan
 }
 
-// invoke CheckDomainRecord api with *CheckDomainRecordRequest asynchronously
+// CheckDomainRecordWithCallback invokes the alidns.CheckDomainRecord API asynchronously
 // api document: https://help.aliyun.com/api/alidns/checkdomainrecord.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckDomainRecordWithCallback(request *CheckDomainRecordRequest, callback func(response *CheckDomainRecordResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) CheckDomainRecordWithCallback(request *CheckDomainRecordRe
 	return result
 }
 
+// CheckDomainRecordRequest is the request struct for api CheckDomainRecord
 type CheckDomainRecordRequest struct {
 	*requests.RpcRequest
 	Lang         string `position:"Query" name:"Lang"`
@@ -83,14 +84,15 @@ type CheckDomainRecordRequest struct {
 	Value        string `position:"Query" name:"Value"`
 }
 
+// CheckDomainRecordResponse is the response struct for api CheckDomainRecord
 type CheckDomainRecordResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	IsExist   bool   `json:"IsExist" xml:"IsExist"`
 }
 
-// create a request to invoke CheckDomainRecord API
-func CreateCheckDomainRecordRequest() (request *CheckDomainRecordRequest) {
+// CreateCheckDomainRecordRequest creates a request to invoke CheckDomainRecord API
+func CreateCheckDomainRecordRequest(request *CheckDomainRecordRequest) {
 	request = &CheckDomainRecordRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateCheckDomainRecordRequest() (request *CheckDomainRecordRequest) {
 	return
 }
 
-// create a response to parse from CheckDomainRecord response
+// CreateCheckDomainRecordResponse creates a response to parse from CheckDomainRecord response
 func CreateCheckDomainRecordResponse() (response *CheckDomainRecordResponse) {
 	response = &CheckDomainRecordResponse{
 		BaseResponse: &responses.BaseResponse{},

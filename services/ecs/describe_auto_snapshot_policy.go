@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeAutoSnapshotPolicy api with *DescribeAutoSnapshotPolicyRequest synchronously
+// DescribeAutoSnapshotPolicy invokes the ecs.DescribeAutoSnapshotPolicy API synchronously
 // api document: https://help.aliyun.com/api/ecs/describeautosnapshotpolicy.html
 func (client *Client) DescribeAutoSnapshotPolicy(request *DescribeAutoSnapshotPolicyRequest) (response *DescribeAutoSnapshotPolicyResponse, err error) {
 	response = CreateDescribeAutoSnapshotPolicyResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeAutoSnapshotPolicy(request *DescribeAutoSnapshotPo
 	return
 }
 
-// invoke DescribeAutoSnapshotPolicy api with *DescribeAutoSnapshotPolicyRequest asynchronously
+// DescribeAutoSnapshotPolicyWithChan invokes the ecs.DescribeAutoSnapshotPolicy API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describeautosnapshotpolicy.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAutoSnapshotPolicyWithChan(request *DescribeAutoSnapshotPolicyRequest) (<-chan *DescribeAutoSnapshotPolicyResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeAutoSnapshotPolicyWithChan(request *DescribeAutoSn
 	return responseChan, errChan
 }
 
-// invoke DescribeAutoSnapshotPolicy api with *DescribeAutoSnapshotPolicyRequest asynchronously
+// DescribeAutoSnapshotPolicyWithCallback invokes the ecs.DescribeAutoSnapshotPolicy API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describeautosnapshotpolicy.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAutoSnapshotPolicyWithCallback(request *DescribeAutoSnapshotPolicyRequest, callback func(response *DescribeAutoSnapshotPolicyResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeAutoSnapshotPolicyWithCallback(request *DescribeAu
 	return result
 }
 
+// DescribeAutoSnapshotPolicyRequest is the request struct for api DescribeAutoSnapshotPolicy
 type DescribeAutoSnapshotPolicyRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -81,6 +82,7 @@ type DescribeAutoSnapshotPolicyRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// DescribeAutoSnapshotPolicyResponse is the response struct for api DescribeAutoSnapshotPolicy
 type DescribeAutoSnapshotPolicyResponse struct {
 	*responses.BaseResponse
 	RequestId                  string                     `json:"RequestId" xml:"RequestId"`
@@ -89,8 +91,8 @@ type DescribeAutoSnapshotPolicyResponse struct {
 	AutoSnapshotExcutionStatus AutoSnapshotExcutionStatus `json:"AutoSnapshotExcutionStatus" xml:"AutoSnapshotExcutionStatus"`
 }
 
-// create a request to invoke DescribeAutoSnapshotPolicy API
-func CreateDescribeAutoSnapshotPolicyRequest() (request *DescribeAutoSnapshotPolicyRequest) {
+// CreateDescribeAutoSnapshotPolicyRequest creates a request to invoke DescribeAutoSnapshotPolicy API
+func CreateDescribeAutoSnapshotPolicyRequest(request *DescribeAutoSnapshotPolicyRequest) {
 	request = &DescribeAutoSnapshotPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateDescribeAutoSnapshotPolicyRequest() (request *DescribeAutoSnapshotPol
 	return
 }
 
-// create a response to parse from DescribeAutoSnapshotPolicy response
+// CreateDescribeAutoSnapshotPolicyResponse creates a response to parse from DescribeAutoSnapshotPolicy response
 func CreateDescribeAutoSnapshotPolicyResponse() (response *DescribeAutoSnapshotPolicyResponse) {
 	response = &DescribeAutoSnapshotPolicyResponse{
 		BaseResponse: &responses.BaseResponse{},

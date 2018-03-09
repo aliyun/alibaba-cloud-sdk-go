@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifySnatEntry api with *ModifySnatEntryRequest synchronously
+// ModifySnatEntry invokes the vpc.ModifySnatEntry API synchronously
 // api document: https://help.aliyun.com/api/vpc/modifysnatentry.html
 func (client *Client) ModifySnatEntry(request *ModifySnatEntryRequest) (response *ModifySnatEntryResponse, err error) {
 	response = CreateModifySnatEntryResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifySnatEntry(request *ModifySnatEntryRequest) (response
 	return
 }
 
-// invoke ModifySnatEntry api with *ModifySnatEntryRequest asynchronously
+// ModifySnatEntryWithChan invokes the vpc.ModifySnatEntry API asynchronously
 // api document: https://help.aliyun.com/api/vpc/modifysnatentry.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySnatEntryWithChan(request *ModifySnatEntryRequest) (<-chan *ModifySnatEntryResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifySnatEntryWithChan(request *ModifySnatEntryRequest) (
 	return responseChan, errChan
 }
 
-// invoke ModifySnatEntry api with *ModifySnatEntryRequest asynchronously
+// ModifySnatEntryWithCallback invokes the vpc.ModifySnatEntry API asynchronously
 // api document: https://help.aliyun.com/api/vpc/modifysnatentry.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySnatEntryWithCallback(request *ModifySnatEntryRequest, callback func(response *ModifySnatEntryResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ModifySnatEntryWithCallback(request *ModifySnatEntryReques
 	return result
 }
 
+// ModifySnatEntryRequest is the request struct for api ModifySnatEntry
 type ModifySnatEntryRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,13 +85,14 @@ type ModifySnatEntryRequest struct {
 	SnatIp               string           `position:"Query" name:"SnatIp"`
 }
 
+// ModifySnatEntryResponse is the response struct for api ModifySnatEntry
 type ModifySnatEntryResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ModifySnatEntry API
-func CreateModifySnatEntryRequest() (request *ModifySnatEntryRequest) {
+// CreateModifySnatEntryRequest creates a request to invoke ModifySnatEntry API
+func CreateModifySnatEntryRequest(request *ModifySnatEntryRequest) {
 	request = &ModifySnatEntryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateModifySnatEntryRequest() (request *ModifySnatEntryRequest) {
 	return
 }
 
-// create a response to parse from ModifySnatEntry response
+// CreateModifySnatEntryResponse creates a response to parse from ModifySnatEntry response
 func CreateModifySnatEntryResponse() (response *ModifySnatEntryResponse) {
 	response = &ModifySnatEntryResponse{
 		BaseResponse: &responses.BaseResponse{},

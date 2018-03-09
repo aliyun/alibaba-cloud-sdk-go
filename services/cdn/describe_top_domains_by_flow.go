@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeTopDomainsByFlow api with *DescribeTopDomainsByFlowRequest synchronously
+// DescribeTopDomainsByFlow invokes the cdn.DescribeTopDomainsByFlow API synchronously
 // api document: https://help.aliyun.com/api/cdn/describetopdomainsbyflow.html
 func (client *Client) DescribeTopDomainsByFlow(request *DescribeTopDomainsByFlowRequest) (response *DescribeTopDomainsByFlowResponse, err error) {
 	response = CreateDescribeTopDomainsByFlowResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeTopDomainsByFlow(request *DescribeTopDomainsByFlow
 	return
 }
 
-// invoke DescribeTopDomainsByFlow api with *DescribeTopDomainsByFlowRequest asynchronously
+// DescribeTopDomainsByFlowWithChan invokes the cdn.DescribeTopDomainsByFlow API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describetopdomainsbyflow.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeTopDomainsByFlowWithChan(request *DescribeTopDomainsByFlowRequest) (<-chan *DescribeTopDomainsByFlowResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeTopDomainsByFlowWithChan(request *DescribeTopDomai
 	return responseChan, errChan
 }
 
-// invoke DescribeTopDomainsByFlow api with *DescribeTopDomainsByFlowRequest asynchronously
+// DescribeTopDomainsByFlowWithCallback invokes the cdn.DescribeTopDomainsByFlow API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describetopdomainsbyflow.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeTopDomainsByFlowWithCallback(request *DescribeTopDomainsByFlowRequest, callback func(response *DescribeTopDomainsByFlowResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeTopDomainsByFlowWithCallback(request *DescribeTopD
 	return result
 }
 
+// DescribeTopDomainsByFlowRequest is the request struct for api DescribeTopDomainsByFlow
 type DescribeTopDomainsByFlowRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,6 +83,7 @@ type DescribeTopDomainsByFlowRequest struct {
 	Limit         requests.Integer `position:"Query" name:"Limit"`
 }
 
+// DescribeTopDomainsByFlowResponse is the response struct for api DescribeTopDomainsByFlow
 type DescribeTopDomainsByFlowResponse struct {
 	*responses.BaseResponse
 	RequestId         string     `json:"RequestId" xml:"RequestId"`
@@ -92,8 +94,8 @@ type DescribeTopDomainsByFlowResponse struct {
 	TopDomains        TopDomains `json:"TopDomains" xml:"TopDomains"`
 }
 
-// create a request to invoke DescribeTopDomainsByFlow API
-func CreateDescribeTopDomainsByFlowRequest() (request *DescribeTopDomainsByFlowRequest) {
+// CreateDescribeTopDomainsByFlowRequest creates a request to invoke DescribeTopDomainsByFlow API
+func CreateDescribeTopDomainsByFlowRequest(request *DescribeTopDomainsByFlowRequest) {
 	request = &DescribeTopDomainsByFlowRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -101,7 +103,7 @@ func CreateDescribeTopDomainsByFlowRequest() (request *DescribeTopDomainsByFlowR
 	return
 }
 
-// create a response to parse from DescribeTopDomainsByFlow response
+// CreateDescribeTopDomainsByFlowResponse creates a response to parse from DescribeTopDomainsByFlow response
 func CreateDescribeTopDomainsByFlowResponse() (response *DescribeTopDomainsByFlowResponse) {
 	response = &DescribeTopDomainsByFlowResponse{
 		BaseResponse: &responses.BaseResponse{},

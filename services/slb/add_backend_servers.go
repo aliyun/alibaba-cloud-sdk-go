@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke AddBackendServers api with *AddBackendServersRequest synchronously
+// AddBackendServers invokes the slb.AddBackendServers API synchronously
 // api document: https://help.aliyun.com/api/slb/addbackendservers.html
 func (client *Client) AddBackendServers(request *AddBackendServersRequest) (response *AddBackendServersResponse, err error) {
 	response = CreateAddBackendServersResponse()
@@ -28,7 +28,7 @@ func (client *Client) AddBackendServers(request *AddBackendServersRequest) (resp
 	return
 }
 
-// invoke AddBackendServers api with *AddBackendServersRequest asynchronously
+// AddBackendServersWithChan invokes the slb.AddBackendServers API asynchronously
 // api document: https://help.aliyun.com/api/slb/addbackendservers.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddBackendServersWithChan(request *AddBackendServersRequest) (<-chan *AddBackendServersResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) AddBackendServersWithChan(request *AddBackendServersReques
 	return responseChan, errChan
 }
 
-// invoke AddBackendServers api with *AddBackendServersRequest asynchronously
+// AddBackendServersWithCallback invokes the slb.AddBackendServers API asynchronously
 // api document: https://help.aliyun.com/api/slb/addbackendservers.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddBackendServersWithCallback(request *AddBackendServersRequest, callback func(response *AddBackendServersResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) AddBackendServersWithCallback(request *AddBackendServersRe
 	return result
 }
 
+// AddBackendServersRequest is the request struct for api AddBackendServers
 type AddBackendServersRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -85,6 +86,7 @@ type AddBackendServersRequest struct {
 	Tags                 string           `position:"Query" name:"Tags"`
 }
 
+// AddBackendServersResponse is the response struct for api AddBackendServers
 type AddBackendServersResponse struct {
 	*responses.BaseResponse
 	RequestId      string                            `json:"RequestId" xml:"RequestId"`
@@ -92,8 +94,8 @@ type AddBackendServersResponse struct {
 	BackendServers BackendServersInAddBackendServers `json:"BackendServers" xml:"BackendServers"`
 }
 
-// create a request to invoke AddBackendServers API
-func CreateAddBackendServersRequest() (request *AddBackendServersRequest) {
+// CreateAddBackendServersRequest creates a request to invoke AddBackendServers API
+func CreateAddBackendServersRequest(request *AddBackendServersRequest) {
 	request = &AddBackendServersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -101,7 +103,7 @@ func CreateAddBackendServersRequest() (request *AddBackendServersRequest) {
 	return
 }
 
-// create a response to parse from AddBackendServers response
+// CreateAddBackendServersResponse creates a response to parse from AddBackendServers response
 func CreateAddBackendServersResponse() (response *AddBackendServersResponse) {
 	response = &AddBackendServersResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteMediaTag api with *DeleteMediaTagRequest synchronously
+// DeleteMediaTag invokes the mts.DeleteMediaTag API synchronously
 // api document: https://help.aliyun.com/api/mts/deletemediatag.html
 func (client *Client) DeleteMediaTag(request *DeleteMediaTagRequest) (response *DeleteMediaTagResponse, err error) {
 	response = CreateDeleteMediaTagResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteMediaTag(request *DeleteMediaTagRequest) (response *
 	return
 }
 
-// invoke DeleteMediaTag api with *DeleteMediaTagRequest asynchronously
+// DeleteMediaTagWithChan invokes the mts.DeleteMediaTag API asynchronously
 // api document: https://help.aliyun.com/api/mts/deletemediatag.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteMediaTagWithChan(request *DeleteMediaTagRequest) (<-chan *DeleteMediaTagResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteMediaTagWithChan(request *DeleteMediaTagRequest) (<-
 	return responseChan, errChan
 }
 
-// invoke DeleteMediaTag api with *DeleteMediaTagRequest asynchronously
+// DeleteMediaTagWithCallback invokes the mts.DeleteMediaTag API asynchronously
 // api document: https://help.aliyun.com/api/mts/deletemediatag.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteMediaTagWithCallback(request *DeleteMediaTagRequest, callback func(response *DeleteMediaTagResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DeleteMediaTagWithCallback(request *DeleteMediaTagRequest,
 	return result
 }
 
+// DeleteMediaTagRequest is the request struct for api DeleteMediaTag
 type DeleteMediaTagRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -83,13 +84,14 @@ type DeleteMediaTagRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// DeleteMediaTagResponse is the response struct for api DeleteMediaTag
 type DeleteMediaTagResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DeleteMediaTag API
-func CreateDeleteMediaTagRequest() (request *DeleteMediaTagRequest) {
+// CreateDeleteMediaTagRequest creates a request to invoke DeleteMediaTag API
+func CreateDeleteMediaTagRequest(request *DeleteMediaTagRequest) {
 	request = &DeleteMediaTagRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateDeleteMediaTagRequest() (request *DeleteMediaTagRequest) {
 	return
 }
 
-// create a response to parse from DeleteMediaTag response
+// CreateDeleteMediaTagResponse creates a response to parse from DeleteMediaTag response
 func CreateDeleteMediaTagResponse() (response *DeleteMediaTagResponse) {
 	response = &DeleteMediaTagResponse{
 		BaseResponse: &responses.BaseResponse{},

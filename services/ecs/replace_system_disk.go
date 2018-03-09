@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ReplaceSystemDisk api with *ReplaceSystemDiskRequest synchronously
+// ReplaceSystemDisk invokes the ecs.ReplaceSystemDisk API synchronously
 // api document: https://help.aliyun.com/api/ecs/replacesystemdisk.html
 func (client *Client) ReplaceSystemDisk(request *ReplaceSystemDiskRequest) (response *ReplaceSystemDiskResponse, err error) {
 	response = CreateReplaceSystemDiskResponse()
@@ -28,7 +28,7 @@ func (client *Client) ReplaceSystemDisk(request *ReplaceSystemDiskRequest) (resp
 	return
 }
 
-// invoke ReplaceSystemDisk api with *ReplaceSystemDiskRequest asynchronously
+// ReplaceSystemDiskWithChan invokes the ecs.ReplaceSystemDisk API asynchronously
 // api document: https://help.aliyun.com/api/ecs/replacesystemdisk.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReplaceSystemDiskWithChan(request *ReplaceSystemDiskRequest) (<-chan *ReplaceSystemDiskResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ReplaceSystemDiskWithChan(request *ReplaceSystemDiskReques
 	return responseChan, errChan
 }
 
-// invoke ReplaceSystemDisk api with *ReplaceSystemDiskRequest asynchronously
+// ReplaceSystemDiskWithCallback invokes the ecs.ReplaceSystemDisk API asynchronously
 // api document: https://help.aliyun.com/api/ecs/replacesystemdisk.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReplaceSystemDiskWithCallback(request *ReplaceSystemDiskRequest, callback func(response *ReplaceSystemDiskResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ReplaceSystemDiskWithCallback(request *ReplaceSystemDiskRe
 	return result
 }
 
+// ReplaceSystemDiskRequest is the request struct for api ReplaceSystemDisk
 type ReplaceSystemDiskRequest struct {
 	*requests.RpcRequest
 	OwnerId                     requests.Integer `position:"Query" name:"OwnerId"`
@@ -92,14 +93,15 @@ type ReplaceSystemDiskRequest struct {
 	SecurityEnhancementStrategy string           `position:"Query" name:"SecurityEnhancementStrategy"`
 }
 
+// ReplaceSystemDiskResponse is the response struct for api ReplaceSystemDisk
 type ReplaceSystemDiskResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	DiskId    string `json:"DiskId" xml:"DiskId"`
 }
 
-// create a request to invoke ReplaceSystemDisk API
-func CreateReplaceSystemDiskRequest() (request *ReplaceSystemDiskRequest) {
+// CreateReplaceSystemDiskRequest creates a request to invoke ReplaceSystemDisk API
+func CreateReplaceSystemDiskRequest(request *ReplaceSystemDiskRequest) {
 	request = &ReplaceSystemDiskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -107,7 +109,7 @@ func CreateReplaceSystemDiskRequest() (request *ReplaceSystemDiskRequest) {
 	return
 }
 
-// create a response to parse from ReplaceSystemDisk response
+// CreateReplaceSystemDiskResponse creates a response to parse from ReplaceSystemDisk response
 func CreateReplaceSystemDiskResponse() (response *ReplaceSystemDiskResponse) {
 	response = &ReplaceSystemDiskResponse{
 		BaseResponse: &responses.BaseResponse{},

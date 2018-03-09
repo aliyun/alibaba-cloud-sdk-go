@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeBandwidthPackages api with *DescribeBandwidthPackagesRequest synchronously
+// DescribeBandwidthPackages invokes the ecs.DescribeBandwidthPackages API synchronously
 // api document: https://help.aliyun.com/api/ecs/describebandwidthpackages.html
 func (client *Client) DescribeBandwidthPackages(request *DescribeBandwidthPackagesRequest) (response *DescribeBandwidthPackagesResponse, err error) {
 	response = CreateDescribeBandwidthPackagesResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeBandwidthPackages(request *DescribeBandwidthPackag
 	return
 }
 
-// invoke DescribeBandwidthPackages api with *DescribeBandwidthPackagesRequest asynchronously
+// DescribeBandwidthPackagesWithChan invokes the ecs.DescribeBandwidthPackages API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describebandwidthpackages.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBandwidthPackagesWithChan(request *DescribeBandwidthPackagesRequest) (<-chan *DescribeBandwidthPackagesResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeBandwidthPackagesWithChan(request *DescribeBandwid
 	return responseChan, errChan
 }
 
-// invoke DescribeBandwidthPackages api with *DescribeBandwidthPackagesRequest asynchronously
+// DescribeBandwidthPackagesWithCallback invokes the ecs.DescribeBandwidthPackages API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describebandwidthpackages.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBandwidthPackagesWithCallback(request *DescribeBandwidthPackagesRequest, callback func(response *DescribeBandwidthPackagesResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeBandwidthPackagesWithCallback(request *DescribeBan
 	return result
 }
 
+// DescribeBandwidthPackagesRequest is the request struct for api DescribeBandwidthPackages
 type DescribeBandwidthPackagesRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -85,6 +86,7 @@ type DescribeBandwidthPackagesRequest struct {
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 }
 
+// DescribeBandwidthPackagesResponse is the response struct for api DescribeBandwidthPackages
 type DescribeBandwidthPackagesResponse struct {
 	*responses.BaseResponse
 	RequestId         string            `json:"RequestId" xml:"RequestId"`
@@ -94,8 +96,8 @@ type DescribeBandwidthPackagesResponse struct {
 	BandwidthPackages BandwidthPackages `json:"BandwidthPackages" xml:"BandwidthPackages"`
 }
 
-// create a request to invoke DescribeBandwidthPackages API
-func CreateDescribeBandwidthPackagesRequest() (request *DescribeBandwidthPackagesRequest) {
+// CreateDescribeBandwidthPackagesRequest creates a request to invoke DescribeBandwidthPackages API
+func CreateDescribeBandwidthPackagesRequest(request *DescribeBandwidthPackagesRequest) {
 	request = &DescribeBandwidthPackagesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -103,7 +105,7 @@ func CreateDescribeBandwidthPackagesRequest() (request *DescribeBandwidthPackage
 	return
 }
 
-// create a response to parse from DescribeBandwidthPackages response
+// CreateDescribeBandwidthPackagesResponse creates a response to parse from DescribeBandwidthPackages response
 func CreateDescribeBandwidthPackagesResponse() (response *DescribeBandwidthPackagesResponse) {
 	response = &DescribeBandwidthPackagesResponse{
 		BaseResponse: &responses.BaseResponse{},

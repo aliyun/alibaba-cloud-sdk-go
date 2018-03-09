@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ReInitDisk api with *ReInitDiskRequest synchronously
+// ReInitDisk invokes the ecs.ReInitDisk API synchronously
 // api document: https://help.aliyun.com/api/ecs/reinitdisk.html
 func (client *Client) ReInitDisk(request *ReInitDiskRequest) (response *ReInitDiskResponse, err error) {
 	response = CreateReInitDiskResponse()
@@ -28,7 +28,7 @@ func (client *Client) ReInitDisk(request *ReInitDiskRequest) (response *ReInitDi
 	return
 }
 
-// invoke ReInitDisk api with *ReInitDiskRequest asynchronously
+// ReInitDiskWithChan invokes the ecs.ReInitDisk API asynchronously
 // api document: https://help.aliyun.com/api/ecs/reinitdisk.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReInitDiskWithChan(request *ReInitDiskRequest) (<-chan *ReInitDiskResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ReInitDiskWithChan(request *ReInitDiskRequest) (<-chan *Re
 	return responseChan, errChan
 }
 
-// invoke ReInitDisk api with *ReInitDiskRequest asynchronously
+// ReInitDiskWithCallback invokes the ecs.ReInitDisk API asynchronously
 // api document: https://help.aliyun.com/api/ecs/reinitdisk.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReInitDiskWithCallback(request *ReInitDiskRequest, callback func(response *ReInitDiskResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ReInitDiskWithCallback(request *ReInitDiskRequest, callbac
 	return result
 }
 
+// ReInitDiskRequest is the request struct for api ReInitDisk
 type ReInitDiskRequest struct {
 	*requests.RpcRequest
 	OwnerId                     requests.Integer `position:"Query" name:"OwnerId"`
@@ -86,13 +87,14 @@ type ReInitDiskRequest struct {
 	SecurityEnhancementStrategy string           `position:"Query" name:"SecurityEnhancementStrategy"`
 }
 
+// ReInitDiskResponse is the response struct for api ReInitDisk
 type ReInitDiskResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ReInitDisk API
-func CreateReInitDiskRequest() (request *ReInitDiskRequest) {
+// CreateReInitDiskRequest creates a request to invoke ReInitDisk API
+func CreateReInitDiskRequest(request *ReInitDiskRequest) {
 	request = &ReInitDiskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -100,7 +102,7 @@ func CreateReInitDiskRequest() (request *ReInitDiskRequest) {
 	return
 }
 
-// create a response to parse from ReInitDisk response
+// CreateReInitDiskResponse creates a response to parse from ReInitDisk response
 func CreateReInitDiskResponse() (response *ReInitDiskResponse) {
 	response = &ReInitDiskResponse{
 		BaseResponse: &responses.BaseResponse{},

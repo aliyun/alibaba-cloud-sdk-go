@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeCdnDomainLogs api with *DescribeCdnDomainLogsRequest synchronously
+// DescribeCdnDomainLogs invokes the cdn.DescribeCdnDomainLogs API synchronously
 // api document: https://help.aliyun.com/api/cdn/describecdndomainlogs.html
 func (client *Client) DescribeCdnDomainLogs(request *DescribeCdnDomainLogsRequest) (response *DescribeCdnDomainLogsResponse, err error) {
 	response = CreateDescribeCdnDomainLogsResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeCdnDomainLogs(request *DescribeCdnDomainLogsReques
 	return
 }
 
-// invoke DescribeCdnDomainLogs api with *DescribeCdnDomainLogsRequest asynchronously
+// DescribeCdnDomainLogsWithChan invokes the cdn.DescribeCdnDomainLogs API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describecdndomainlogs.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCdnDomainLogsWithChan(request *DescribeCdnDomainLogsRequest) (<-chan *DescribeCdnDomainLogsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeCdnDomainLogsWithChan(request *DescribeCdnDomainLo
 	return responseChan, errChan
 }
 
-// invoke DescribeCdnDomainLogs api with *DescribeCdnDomainLogsRequest asynchronously
+// DescribeCdnDomainLogsWithCallback invokes the cdn.DescribeCdnDomainLogs API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describecdndomainlogs.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCdnDomainLogsWithCallback(request *DescribeCdnDomainLogsRequest, callback func(response *DescribeCdnDomainLogsResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeCdnDomainLogsWithCallback(request *DescribeCdnDoma
 	return result
 }
 
+// DescribeCdnDomainLogsRequest is the request struct for api DescribeCdnDomainLogs
 type DescribeCdnDomainLogsRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -85,6 +86,7 @@ type DescribeCdnDomainLogsRequest struct {
 	EndTime       string           `position:"Query" name:"EndTime"`
 }
 
+// DescribeCdnDomainLogsResponse is the response struct for api DescribeCdnDomainLogs
 type DescribeCdnDomainLogsResponse struct {
 	*responses.BaseResponse
 	RequestId      string         `json:"RequestId" xml:"RequestId"`
@@ -94,8 +96,8 @@ type DescribeCdnDomainLogsResponse struct {
 	DomainLogModel DomainLogModel `json:"DomainLogModel" xml:"DomainLogModel"`
 }
 
-// create a request to invoke DescribeCdnDomainLogs API
-func CreateDescribeCdnDomainLogsRequest() (request *DescribeCdnDomainLogsRequest) {
+// CreateDescribeCdnDomainLogsRequest creates a request to invoke DescribeCdnDomainLogs API
+func CreateDescribeCdnDomainLogsRequest(request *DescribeCdnDomainLogsRequest) {
 	request = &DescribeCdnDomainLogsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -103,7 +105,7 @@ func CreateDescribeCdnDomainLogsRequest() (request *DescribeCdnDomainLogsRequest
 	return
 }
 
-// create a response to parse from DescribeCdnDomainLogs response
+// CreateDescribeCdnDomainLogsResponse creates a response to parse from DescribeCdnDomainLogs response
 func CreateDescribeCdnDomainLogsResponse() (response *DescribeCdnDomainLogsResponse) {
 	response = &DescribeCdnDomainLogsResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CreateTransaction api with *CreateTransactionRequest synchronously
+// CreateTransaction invokes the cloudphoto.CreateTransaction API synchronously
 // api document: https://help.aliyun.com/api/cloudphoto/createtransaction.html
 func (client *Client) CreateTransaction(request *CreateTransactionRequest) (response *CreateTransactionResponse, err error) {
 	response = CreateCreateTransactionResponse()
@@ -28,7 +28,7 @@ func (client *Client) CreateTransaction(request *CreateTransactionRequest) (resp
 	return
 }
 
-// invoke CreateTransaction api with *CreateTransactionRequest asynchronously
+// CreateTransactionWithChan invokes the cloudphoto.CreateTransaction API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/createtransaction.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateTransactionWithChan(request *CreateTransactionRequest) (<-chan *CreateTransactionResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CreateTransactionWithChan(request *CreateTransactionReques
 	return responseChan, errChan
 }
 
-// invoke CreateTransaction api with *CreateTransactionRequest asynchronously
+// CreateTransactionWithCallback invokes the cloudphoto.CreateTransaction API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/createtransaction.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateTransactionWithCallback(request *CreateTransactionRequest, callback func(response *CreateTransactionResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) CreateTransactionWithCallback(request *CreateTransactionRe
 	return result
 }
 
+// CreateTransactionRequest is the request struct for api CreateTransaction
 type CreateTransactionRequest struct {
 	*requests.RpcRequest
 	Size      requests.Integer `position:"Query" name:"Size"`
@@ -83,6 +84,7 @@ type CreateTransactionRequest struct {
 	LibraryId string           `position:"Query" name:"LibraryId"`
 }
 
+// CreateTransactionResponse is the response struct for api CreateTransaction
 type CreateTransactionResponse struct {
 	*responses.BaseResponse
 	Code        string      `json:"Code" xml:"Code"`
@@ -92,8 +94,8 @@ type CreateTransactionResponse struct {
 	Transaction Transaction `json:"Transaction" xml:"Transaction"`
 }
 
-// create a request to invoke CreateTransaction API
-func CreateCreateTransactionRequest() (request *CreateTransactionRequest) {
+// CreateCreateTransactionRequest creates a request to invoke CreateTransaction API
+func CreateCreateTransactionRequest(request *CreateTransactionRequest) {
 	request = &CreateTransactionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -101,7 +103,7 @@ func CreateCreateTransactionRequest() (request *CreateTransactionRequest) {
 	return
 }
 
-// create a response to parse from CreateTransaction response
+// CreateCreateTransactionResponse creates a response to parse from CreateTransaction response
 func CreateCreateTransactionResponse() (response *CreateTransactionResponse) {
 	response = &CreateTransactionResponse{
 		BaseResponse: &responses.BaseResponse{},

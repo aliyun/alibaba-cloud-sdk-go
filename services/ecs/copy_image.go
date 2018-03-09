@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CopyImage api with *CopyImageRequest synchronously
+// CopyImage invokes the ecs.CopyImage API synchronously
 // api document: https://help.aliyun.com/api/ecs/copyimage.html
 func (client *Client) CopyImage(request *CopyImageRequest) (response *CopyImageResponse, err error) {
 	response = CreateCopyImageResponse()
@@ -28,7 +28,7 @@ func (client *Client) CopyImage(request *CopyImageRequest) (response *CopyImageR
 	return
 }
 
-// invoke CopyImage api with *CopyImageRequest asynchronously
+// CopyImageWithChan invokes the ecs.CopyImage API asynchronously
 // api document: https://help.aliyun.com/api/ecs/copyimage.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CopyImageWithChan(request *CopyImageRequest) (<-chan *CopyImageResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CopyImageWithChan(request *CopyImageRequest) (<-chan *Copy
 	return responseChan, errChan
 }
 
-// invoke CopyImage api with *CopyImageRequest asynchronously
+// CopyImageWithCallback invokes the ecs.CopyImage API asynchronously
 // api document: https://help.aliyun.com/api/ecs/copyimage.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CopyImageWithCallback(request *CopyImageRequest, callback func(response *CopyImageResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) CopyImageWithCallback(request *CopyImageRequest, callback 
 	return result
 }
 
+// CopyImageRequest is the request struct for api CopyImage
 type CopyImageRequest struct {
 	*requests.RpcRequest
 	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
@@ -96,14 +97,15 @@ type CopyImageRequest struct {
 	Encrypted              requests.Boolean `position:"Query" name:"Encrypted"`
 }
 
+// CopyImageResponse is the response struct for api CopyImage
 type CopyImageResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	ImageId   string `json:"ImageId" xml:"ImageId"`
 }
 
-// create a request to invoke CopyImage API
-func CreateCopyImageRequest() (request *CopyImageRequest) {
+// CreateCopyImageRequest creates a request to invoke CopyImage API
+func CreateCopyImageRequest(request *CopyImageRequest) {
 	request = &CopyImageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -111,7 +113,7 @@ func CreateCopyImageRequest() (request *CopyImageRequest) {
 	return
 }
 
-// create a response to parse from CopyImage response
+// CreateCopyImageResponse creates a response to parse from CopyImage response
 func CreateCopyImageResponse() (response *CopyImageResponse) {
 	response = &CopyImageResponse{
 		BaseResponse: &responses.BaseResponse{},

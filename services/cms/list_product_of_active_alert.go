@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ListProductOfActiveAlert api with *ListProductOfActiveAlertRequest synchronously
+// ListProductOfActiveAlert invokes the cms.ListProductOfActiveAlert API synchronously
 // api document: https://help.aliyun.com/api/cms/listproductofactivealert.html
 func (client *Client) ListProductOfActiveAlert(request *ListProductOfActiveAlertRequest) (response *ListProductOfActiveAlertResponse, err error) {
 	response = CreateListProductOfActiveAlertResponse()
@@ -28,7 +28,7 @@ func (client *Client) ListProductOfActiveAlert(request *ListProductOfActiveAlert
 	return
 }
 
-// invoke ListProductOfActiveAlert api with *ListProductOfActiveAlertRequest asynchronously
+// ListProductOfActiveAlertWithChan invokes the cms.ListProductOfActiveAlert API asynchronously
 // api document: https://help.aliyun.com/api/cms/listproductofactivealert.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListProductOfActiveAlertWithChan(request *ListProductOfActiveAlertRequest) (<-chan *ListProductOfActiveAlertResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ListProductOfActiveAlertWithChan(request *ListProductOfAct
 	return responseChan, errChan
 }
 
-// invoke ListProductOfActiveAlert api with *ListProductOfActiveAlertRequest asynchronously
+// ListProductOfActiveAlertWithCallback invokes the cms.ListProductOfActiveAlert API asynchronously
 // api document: https://help.aliyun.com/api/cms/listproductofactivealert.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListProductOfActiveAlertWithCallback(request *ListProductOfActiveAlertRequest, callback func(response *ListProductOfActiveAlertResponse, err error)) <-chan int {
@@ -73,11 +73,13 @@ func (client *Client) ListProductOfActiveAlertWithCallback(request *ListProductO
 	return result
 }
 
+// ListProductOfActiveAlertRequest is the request struct for api ListProductOfActiveAlert
 type ListProductOfActiveAlertRequest struct {
 	*requests.RpcRequest
 	UserId string `position:"Query" name:"UserId"`
 }
 
+// ListProductOfActiveAlertResponse is the response struct for api ListProductOfActiveAlert
 type ListProductOfActiveAlertResponse struct {
 	*responses.BaseResponse
 	RequestId  string `json:"RequestId" xml:"RequestId"`
@@ -87,8 +89,8 @@ type ListProductOfActiveAlertResponse struct {
 	Datapoints string `json:"Datapoints" xml:"Datapoints"`
 }
 
-// create a request to invoke ListProductOfActiveAlert API
-func CreateListProductOfActiveAlertRequest() (request *ListProductOfActiveAlertRequest) {
+// CreateListProductOfActiveAlertRequest creates a request to invoke ListProductOfActiveAlert API
+func CreateListProductOfActiveAlertRequest(request *ListProductOfActiveAlertRequest) {
 	request = &ListProductOfActiveAlertRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -96,7 +98,7 @@ func CreateListProductOfActiveAlertRequest() (request *ListProductOfActiveAlertR
 	return
 }
 
-// create a response to parse from ListProductOfActiveAlert response
+// CreateListProductOfActiveAlertResponse creates a response to parse from ListProductOfActiveAlert response
 func CreateListProductOfActiveAlertResponse() (response *ListProductOfActiveAlertResponse) {
 	response = &ListProductOfActiveAlertResponse{
 		BaseResponse: &responses.BaseResponse{},

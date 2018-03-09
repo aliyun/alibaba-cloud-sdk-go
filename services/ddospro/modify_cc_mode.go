@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifyCcMode api with *ModifyCcModeRequest synchronously
+// ModifyCcMode invokes the ddospro.ModifyCcMode API synchronously
 // api document: https://help.aliyun.com/api/ddospro/modifyccmode.html
 func (client *Client) ModifyCcMode(request *ModifyCcModeRequest) (response *ModifyCcModeResponse, err error) {
 	response = CreateModifyCcModeResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifyCcMode(request *ModifyCcModeRequest) (response *Modi
 	return
 }
 
-// invoke ModifyCcMode api with *ModifyCcModeRequest asynchronously
+// ModifyCcModeWithChan invokes the ddospro.ModifyCcMode API asynchronously
 // api document: https://help.aliyun.com/api/ddospro/modifyccmode.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyCcModeWithChan(request *ModifyCcModeRequest) (<-chan *ModifyCcModeResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifyCcModeWithChan(request *ModifyCcModeRequest) (<-chan
 	return responseChan, errChan
 }
 
-// invoke ModifyCcMode api with *ModifyCcModeRequest asynchronously
+// ModifyCcModeWithCallback invokes the ddospro.ModifyCcMode API asynchronously
 // api document: https://help.aliyun.com/api/ddospro/modifyccmode.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyCcModeWithCallback(request *ModifyCcModeRequest, callback func(response *ModifyCcModeResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ModifyCcModeWithCallback(request *ModifyCcModeRequest, cal
 	return result
 }
 
+// ModifyCcModeRequest is the request struct for api ModifyCcMode
 type ModifyCcModeRequest struct {
 	*requests.RpcRequest
 	SourceIp        string           `position:"Query" name:"SourceIp"`
@@ -81,14 +82,15 @@ type ModifyCcModeRequest struct {
 	CcMode          string           `position:"Query" name:"CcMode"`
 }
 
+// ModifyCcModeResponse is the response struct for api ModifyCcMode
 type ModifyCcModeResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Data      string `json:"data" xml:"data"`
 }
 
-// create a request to invoke ModifyCcMode API
-func CreateModifyCcModeRequest() (request *ModifyCcModeRequest) {
+// CreateModifyCcModeRequest creates a request to invoke ModifyCcMode API
+func CreateModifyCcModeRequest(request *ModifyCcModeRequest) {
 	request = &ModifyCcModeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -96,7 +98,7 @@ func CreateModifyCcModeRequest() (request *ModifyCcModeRequest) {
 	return
 }
 
-// create a response to parse from ModifyCcMode response
+// CreateModifyCcModeResponse creates a response to parse from ModifyCcMode response
 func CreateModifyCcModeResponse() (response *ModifyCcModeResponse) {
 	response = &ModifyCcModeResponse{
 		BaseResponse: &responses.BaseResponse{},

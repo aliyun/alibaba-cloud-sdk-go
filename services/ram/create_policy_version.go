@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CreatePolicyVersion api with *CreatePolicyVersionRequest synchronously
+// CreatePolicyVersion invokes the ram.CreatePolicyVersion API synchronously
 // api document: https://help.aliyun.com/api/ram/createpolicyversion.html
 func (client *Client) CreatePolicyVersion(request *CreatePolicyVersionRequest) (response *CreatePolicyVersionResponse, err error) {
 	response = CreateCreatePolicyVersionResponse()
@@ -28,7 +28,7 @@ func (client *Client) CreatePolicyVersion(request *CreatePolicyVersionRequest) (
 	return
 }
 
-// invoke CreatePolicyVersion api with *CreatePolicyVersionRequest asynchronously
+// CreatePolicyVersionWithChan invokes the ram.CreatePolicyVersion API asynchronously
 // api document: https://help.aliyun.com/api/ram/createpolicyversion.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreatePolicyVersionWithChan(request *CreatePolicyVersionRequest) (<-chan *CreatePolicyVersionResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CreatePolicyVersionWithChan(request *CreatePolicyVersionRe
 	return responseChan, errChan
 }
 
-// invoke CreatePolicyVersion api with *CreatePolicyVersionRequest asynchronously
+// CreatePolicyVersionWithCallback invokes the ram.CreatePolicyVersion API asynchronously
 // api document: https://help.aliyun.com/api/ram/createpolicyversion.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreatePolicyVersionWithCallback(request *CreatePolicyVersionRequest, callback func(response *CreatePolicyVersionResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) CreatePolicyVersionWithCallback(request *CreatePolicyVersi
 	return result
 }
 
+// CreatePolicyVersionRequest is the request struct for api CreatePolicyVersion
 type CreatePolicyVersionRequest struct {
 	*requests.RpcRequest
 	PolicyName     string           `position:"Query" name:"PolicyName"`
@@ -80,14 +81,15 @@ type CreatePolicyVersionRequest struct {
 	SetAsDefault   requests.Boolean `position:"Query" name:"SetAsDefault"`
 }
 
+// CreatePolicyVersionResponse is the response struct for api CreatePolicyVersion
 type CreatePolicyVersionResponse struct {
 	*responses.BaseResponse
 	RequestId     string        `json:"RequestId" xml:"RequestId"`
 	PolicyVersion PolicyVersion `json:"PolicyVersion" xml:"PolicyVersion"`
 }
 
-// create a request to invoke CreatePolicyVersion API
-func CreateCreatePolicyVersionRequest() (request *CreatePolicyVersionRequest) {
+// CreateCreatePolicyVersionRequest creates a request to invoke CreatePolicyVersion API
+func CreateCreatePolicyVersionRequest(request *CreatePolicyVersionRequest) {
 	request = &CreatePolicyVersionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateCreatePolicyVersionRequest() (request *CreatePolicyVersionRequest) {
 	return
 }
 
-// create a response to parse from CreatePolicyVersion response
+// CreateCreatePolicyVersionResponse creates a response to parse from CreatePolicyVersion response
 func CreateCreatePolicyVersionResponse() (response *CreatePolicyVersionResponse) {
 	response = &CreatePolicyVersionResponse{
 		BaseResponse: &responses.BaseResponse{},

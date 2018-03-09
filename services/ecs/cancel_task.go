@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CancelTask api with *CancelTaskRequest synchronously
+// CancelTask invokes the ecs.CancelTask API synchronously
 // api document: https://help.aliyun.com/api/ecs/canceltask.html
 func (client *Client) CancelTask(request *CancelTaskRequest) (response *CancelTaskResponse, err error) {
 	response = CreateCancelTaskResponse()
@@ -28,7 +28,7 @@ func (client *Client) CancelTask(request *CancelTaskRequest) (response *CancelTa
 	return
 }
 
-// invoke CancelTask api with *CancelTaskRequest asynchronously
+// CancelTaskWithChan invokes the ecs.CancelTask API asynchronously
 // api document: https://help.aliyun.com/api/ecs/canceltask.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CancelTaskWithChan(request *CancelTaskRequest) (<-chan *CancelTaskResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CancelTaskWithChan(request *CancelTaskRequest) (<-chan *Ca
 	return responseChan, errChan
 }
 
-// invoke CancelTask api with *CancelTaskRequest asynchronously
+// CancelTaskWithCallback invokes the ecs.CancelTask API asynchronously
 // api document: https://help.aliyun.com/api/ecs/canceltask.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CancelTaskWithCallback(request *CancelTaskRequest, callback func(response *CancelTaskResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) CancelTaskWithCallback(request *CancelTaskRequest, callbac
 	return result
 }
 
+// CancelTaskRequest is the request struct for api CancelTask
 type CancelTaskRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -81,13 +82,14 @@ type CancelTaskRequest struct {
 	TaskId               string           `position:"Query" name:"TaskId"`
 }
 
+// CancelTaskResponse is the response struct for api CancelTask
 type CancelTaskResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke CancelTask API
-func CreateCancelTaskRequest() (request *CancelTaskRequest) {
+// CreateCancelTaskRequest creates a request to invoke CancelTask API
+func CreateCancelTaskRequest(request *CancelTaskRequest) {
 	request = &CancelTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateCancelTaskRequest() (request *CancelTaskRequest) {
 	return
 }
 
-// create a response to parse from CancelTask response
+// CreateCancelTaskResponse creates a response to parse from CancelTask response
 func CreateCancelTaskResponse() (response *CancelTaskResponse) {
 	response = &CancelTaskResponse{
 		BaseResponse: &responses.BaseResponse{},

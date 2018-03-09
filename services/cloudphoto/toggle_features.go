@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ToggleFeatures api with *ToggleFeaturesRequest synchronously
+// ToggleFeatures invokes the cloudphoto.ToggleFeatures API synchronously
 // api document: https://help.aliyun.com/api/cloudphoto/togglefeatures.html
 func (client *Client) ToggleFeatures(request *ToggleFeaturesRequest) (response *ToggleFeaturesResponse, err error) {
 	response = CreateToggleFeaturesResponse()
@@ -28,7 +28,7 @@ func (client *Client) ToggleFeatures(request *ToggleFeaturesRequest) (response *
 	return
 }
 
-// invoke ToggleFeatures api with *ToggleFeaturesRequest asynchronously
+// ToggleFeaturesWithChan invokes the cloudphoto.ToggleFeatures API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/togglefeatures.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ToggleFeaturesWithChan(request *ToggleFeaturesRequest) (<-chan *ToggleFeaturesResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ToggleFeaturesWithChan(request *ToggleFeaturesRequest) (<-
 	return responseChan, errChan
 }
 
-// invoke ToggleFeatures api with *ToggleFeaturesRequest asynchronously
+// ToggleFeaturesWithCallback invokes the cloudphoto.ToggleFeatures API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/togglefeatures.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ToggleFeaturesWithCallback(request *ToggleFeaturesRequest, callback func(response *ToggleFeaturesResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ToggleFeaturesWithCallback(request *ToggleFeaturesRequest,
 	return result
 }
 
+// ToggleFeaturesRequest is the request struct for api ToggleFeatures
 type ToggleFeaturesRequest struct {
 	*requests.RpcRequest
 	StoreName        string    `position:"Query" name:"StoreName"`
@@ -80,6 +81,7 @@ type ToggleFeaturesRequest struct {
 	DisabledFeatures *[]string `position:"Query" name:"DisabledFeatures"  type:"Repeated"`
 }
 
+// ToggleFeaturesResponse is the response struct for api ToggleFeatures
 type ToggleFeaturesResponse struct {
 	*responses.BaseResponse
 	Code      string `json:"Code" xml:"Code"`
@@ -88,8 +90,8 @@ type ToggleFeaturesResponse struct {
 	Action    string `json:"Action" xml:"Action"`
 }
 
-// create a request to invoke ToggleFeatures API
-func CreateToggleFeaturesRequest() (request *ToggleFeaturesRequest) {
+// CreateToggleFeaturesRequest creates a request to invoke ToggleFeatures API
+func CreateToggleFeaturesRequest(request *ToggleFeaturesRequest) {
 	request = &ToggleFeaturesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateToggleFeaturesRequest() (request *ToggleFeaturesRequest) {
 	return
 }
 
-// create a response to parse from ToggleFeatures response
+// CreateToggleFeaturesResponse creates a response to parse from ToggleFeatures response
 func CreateToggleFeaturesResponse() (response *ToggleFeaturesResponse) {
 	response = &ToggleFeaturesResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ReleaseInstance api with *ReleaseInstanceRequest synchronously
+// ReleaseInstance invokes the aegis.ReleaseInstance API synchronously
 // api document: https://help.aliyun.com/api/aegis/releaseinstance.html
 func (client *Client) ReleaseInstance(request *ReleaseInstanceRequest) (response *ReleaseInstanceResponse, err error) {
 	response = CreateReleaseInstanceResponse()
@@ -28,7 +28,7 @@ func (client *Client) ReleaseInstance(request *ReleaseInstanceRequest) (response
 	return
 }
 
-// invoke ReleaseInstance api with *ReleaseInstanceRequest asynchronously
+// ReleaseInstanceWithChan invokes the aegis.ReleaseInstance API asynchronously
 // api document: https://help.aliyun.com/api/aegis/releaseinstance.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReleaseInstanceWithChan(request *ReleaseInstanceRequest) (<-chan *ReleaseInstanceResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ReleaseInstanceWithChan(request *ReleaseInstanceRequest) (
 	return responseChan, errChan
 }
 
-// invoke ReleaseInstance api with *ReleaseInstanceRequest asynchronously
+// ReleaseInstanceWithCallback invokes the aegis.ReleaseInstance API asynchronously
 // api document: https://help.aliyun.com/api/aegis/releaseinstance.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReleaseInstanceWithCallback(request *ReleaseInstanceRequest, callback func(response *ReleaseInstanceResponse, err error)) <-chan int {
@@ -73,19 +73,21 @@ func (client *Client) ReleaseInstanceWithCallback(request *ReleaseInstanceReques
 	return result
 }
 
+// ReleaseInstanceRequest is the request struct for api ReleaseInstance
 type ReleaseInstanceRequest struct {
 	*requests.RpcRequest
 	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
 	InstanceId string           `position:"Query" name:"InstanceId"`
 }
 
+// ReleaseInstanceResponse is the response struct for api ReleaseInstance
 type ReleaseInstanceResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ReleaseInstance API
-func CreateReleaseInstanceRequest() (request *ReleaseInstanceRequest) {
+// CreateReleaseInstanceRequest creates a request to invoke ReleaseInstance API
+func CreateReleaseInstanceRequest(request *ReleaseInstanceRequest) {
 	request = &ReleaseInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -93,7 +95,7 @@ func CreateReleaseInstanceRequest() (request *ReleaseInstanceRequest) {
 	return
 }
 
-// create a response to parse from ReleaseInstance response
+// CreateReleaseInstanceResponse creates a response to parse from ReleaseInstance response
 func CreateReleaseInstanceResponse() (response *ReleaseInstanceResponse) {
 	response = &ReleaseInstanceResponse{
 		BaseResponse: &responses.BaseResponse{},

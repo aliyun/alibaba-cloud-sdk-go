@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke QueryCustomEventHistogram api with *QueryCustomEventHistogramRequest synchronously
+// QueryCustomEventHistogram invokes the cms.QueryCustomEventHistogram API synchronously
 // api document: https://help.aliyun.com/api/cms/querycustomeventhistogram.html
 func (client *Client) QueryCustomEventHistogram(request *QueryCustomEventHistogramRequest) (response *QueryCustomEventHistogramResponse, err error) {
 	response = CreateQueryCustomEventHistogramResponse()
@@ -28,7 +28,7 @@ func (client *Client) QueryCustomEventHistogram(request *QueryCustomEventHistogr
 	return
 }
 
-// invoke QueryCustomEventHistogram api with *QueryCustomEventHistogramRequest asynchronously
+// QueryCustomEventHistogramWithChan invokes the cms.QueryCustomEventHistogram API asynchronously
 // api document: https://help.aliyun.com/api/cms/querycustomeventhistogram.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryCustomEventHistogramWithChan(request *QueryCustomEventHistogramRequest) (<-chan *QueryCustomEventHistogramResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) QueryCustomEventHistogramWithChan(request *QueryCustomEven
 	return responseChan, errChan
 }
 
-// invoke QueryCustomEventHistogram api with *QueryCustomEventHistogramRequest asynchronously
+// QueryCustomEventHistogramWithCallback invokes the cms.QueryCustomEventHistogram API asynchronously
 // api document: https://help.aliyun.com/api/cms/querycustomeventhistogram.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryCustomEventHistogramWithCallback(request *QueryCustomEventHistogramRequest, callback func(response *QueryCustomEventHistogramResponse, err error)) <-chan int {
@@ -73,11 +73,13 @@ func (client *Client) QueryCustomEventHistogramWithCallback(request *QueryCustom
 	return result
 }
 
+// QueryCustomEventHistogramRequest is the request struct for api QueryCustomEventHistogram
 type QueryCustomEventHistogramRequest struct {
 	*requests.RpcRequest
 	QueryJson string `position:"Query" name:"QueryJson"`
 }
 
+// QueryCustomEventHistogramResponse is the response struct for api QueryCustomEventHistogram
 type QueryCustomEventHistogramResponse struct {
 	*responses.BaseResponse
 	Code    string `json:"Code" xml:"Code"`
@@ -85,8 +87,8 @@ type QueryCustomEventHistogramResponse struct {
 	Data    string `json:"Data" xml:"Data"`
 }
 
-// create a request to invoke QueryCustomEventHistogram API
-func CreateQueryCustomEventHistogramRequest() (request *QueryCustomEventHistogramRequest) {
+// CreateQueryCustomEventHistogramRequest creates a request to invoke QueryCustomEventHistogram API
+func CreateQueryCustomEventHistogramRequest(request *QueryCustomEventHistogramRequest) {
 	request = &QueryCustomEventHistogramRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -94,7 +96,7 @@ func CreateQueryCustomEventHistogramRequest() (request *QueryCustomEventHistogra
 	return
 }
 
-// create a response to parse from QueryCustomEventHistogram response
+// CreateQueryCustomEventHistogramResponse creates a response to parse from QueryCustomEventHistogram response
 func CreateQueryCustomEventHistogramResponse() (response *QueryCustomEventHistogramResponse) {
 	response = &QueryCustomEventHistogramResponse{
 		BaseResponse: &responses.BaseResponse{},

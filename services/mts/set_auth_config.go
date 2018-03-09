@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SetAuthConfig api with *SetAuthConfigRequest synchronously
+// SetAuthConfig invokes the mts.SetAuthConfig API synchronously
 // api document: https://help.aliyun.com/api/mts/setauthconfig.html
 func (client *Client) SetAuthConfig(request *SetAuthConfigRequest) (response *SetAuthConfigResponse, err error) {
 	response = CreateSetAuthConfigResponse()
@@ -28,7 +28,7 @@ func (client *Client) SetAuthConfig(request *SetAuthConfigRequest) (response *Se
 	return
 }
 
-// invoke SetAuthConfig api with *SetAuthConfigRequest asynchronously
+// SetAuthConfigWithChan invokes the mts.SetAuthConfig API asynchronously
 // api document: https://help.aliyun.com/api/mts/setauthconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetAuthConfigWithChan(request *SetAuthConfigRequest) (<-chan *SetAuthConfigResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SetAuthConfigWithChan(request *SetAuthConfigRequest) (<-ch
 	return responseChan, errChan
 }
 
-// invoke SetAuthConfig api with *SetAuthConfigRequest asynchronously
+// SetAuthConfigWithCallback invokes the mts.SetAuthConfig API asynchronously
 // api document: https://help.aliyun.com/api/mts/setauthconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetAuthConfigWithCallback(request *SetAuthConfigRequest, callback func(response *SetAuthConfigResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SetAuthConfigWithCallback(request *SetAuthConfigRequest, c
 	return result
 }
 
+// SetAuthConfigRequest is the request struct for api SetAuthConfig
 type SetAuthConfigRequest struct {
 	*requests.RpcRequest
 	OwnerId              string `position:"Query" name:"OwnerId"`
@@ -83,6 +84,7 @@ type SetAuthConfigRequest struct {
 	Key2                 string `position:"Query" name:"Key2"`
 }
 
+// SetAuthConfigResponse is the response struct for api SetAuthConfig
 type SetAuthConfigResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
@@ -90,8 +92,8 @@ type SetAuthConfigResponse struct {
 	Key2      string `json:"Key2" xml:"Key2"`
 }
 
-// create a request to invoke SetAuthConfig API
-func CreateSetAuthConfigRequest() (request *SetAuthConfigRequest) {
+// CreateSetAuthConfigRequest creates a request to invoke SetAuthConfig API
+func CreateSetAuthConfigRequest(request *SetAuthConfigRequest) {
 	request = &SetAuthConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateSetAuthConfigRequest() (request *SetAuthConfigRequest) {
 	return
 }
 
-// create a response to parse from SetAuthConfig response
+// CreateSetAuthConfigResponse creates a response to parse from SetAuthConfig response
 func CreateSetAuthConfigResponse() (response *SetAuthConfigResponse) {
 	response = &SetAuthConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

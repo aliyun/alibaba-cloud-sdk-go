@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ClearAccountAlias api with *ClearAccountAliasRequest synchronously
+// ClearAccountAlias invokes the ram.ClearAccountAlias API synchronously
 // api document: https://help.aliyun.com/api/ram/clearaccountalias.html
 func (client *Client) ClearAccountAlias(request *ClearAccountAliasRequest) (response *ClearAccountAliasResponse, err error) {
 	response = CreateClearAccountAliasResponse()
@@ -28,7 +28,7 @@ func (client *Client) ClearAccountAlias(request *ClearAccountAliasRequest) (resp
 	return
 }
 
-// invoke ClearAccountAlias api with *ClearAccountAliasRequest asynchronously
+// ClearAccountAliasWithChan invokes the ram.ClearAccountAlias API asynchronously
 // api document: https://help.aliyun.com/api/ram/clearaccountalias.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ClearAccountAliasWithChan(request *ClearAccountAliasRequest) (<-chan *ClearAccountAliasResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ClearAccountAliasWithChan(request *ClearAccountAliasReques
 	return responseChan, errChan
 }
 
-// invoke ClearAccountAlias api with *ClearAccountAliasRequest asynchronously
+// ClearAccountAliasWithCallback invokes the ram.ClearAccountAlias API asynchronously
 // api document: https://help.aliyun.com/api/ram/clearaccountalias.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ClearAccountAliasWithCallback(request *ClearAccountAliasRequest, callback func(response *ClearAccountAliasResponse, err error)) <-chan int {
@@ -73,17 +73,19 @@ func (client *Client) ClearAccountAliasWithCallback(request *ClearAccountAliasRe
 	return result
 }
 
+// ClearAccountAliasRequest is the request struct for api ClearAccountAlias
 type ClearAccountAliasRequest struct {
 	*requests.RpcRequest
 }
 
+// ClearAccountAliasResponse is the response struct for api ClearAccountAlias
 type ClearAccountAliasResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ClearAccountAlias API
-func CreateClearAccountAliasRequest() (request *ClearAccountAliasRequest) {
+// CreateClearAccountAliasRequest creates a request to invoke ClearAccountAlias API
+func CreateClearAccountAliasRequest(request *ClearAccountAliasRequest) {
 	request = &ClearAccountAliasRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -91,7 +93,7 @@ func CreateClearAccountAliasRequest() (request *ClearAccountAliasRequest) {
 	return
 }
 
-// create a response to parse from ClearAccountAlias response
+// CreateClearAccountAliasResponse creates a response to parse from ClearAccountAlias response
 func CreateClearAccountAliasResponse() (response *ClearAccountAliasResponse) {
 	response = &ClearAccountAliasResponse{
 		BaseResponse: &responses.BaseResponse{},

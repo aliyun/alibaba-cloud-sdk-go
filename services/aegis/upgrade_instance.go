@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke UpgradeInstance api with *UpgradeInstanceRequest synchronously
+// UpgradeInstance invokes the aegis.UpgradeInstance API synchronously
 // api document: https://help.aliyun.com/api/aegis/upgradeinstance.html
 func (client *Client) UpgradeInstance(request *UpgradeInstanceRequest) (response *UpgradeInstanceResponse, err error) {
 	response = CreateUpgradeInstanceResponse()
@@ -28,7 +28,7 @@ func (client *Client) UpgradeInstance(request *UpgradeInstanceRequest) (response
 	return
 }
 
-// invoke UpgradeInstance api with *UpgradeInstanceRequest asynchronously
+// UpgradeInstanceWithChan invokes the aegis.UpgradeInstance API asynchronously
 // api document: https://help.aliyun.com/api/aegis/upgradeinstance.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpgradeInstanceWithChan(request *UpgradeInstanceRequest) (<-chan *UpgradeInstanceResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) UpgradeInstanceWithChan(request *UpgradeInstanceRequest) (
 	return responseChan, errChan
 }
 
-// invoke UpgradeInstance api with *UpgradeInstanceRequest asynchronously
+// UpgradeInstanceWithCallback invokes the aegis.UpgradeInstance API asynchronously
 // api document: https://help.aliyun.com/api/aegis/upgradeinstance.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpgradeInstanceWithCallback(request *UpgradeInstanceRequest, callback func(response *UpgradeInstanceResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) UpgradeInstanceWithCallback(request *UpgradeInstanceReques
 	return result
 }
 
+// UpgradeInstanceRequest is the request struct for api UpgradeInstance
 type UpgradeInstanceRequest struct {
 	*requests.RpcRequest
 	OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,14 +83,15 @@ type UpgradeInstanceRequest struct {
 	VmNumber    requests.Integer `position:"Query" name:"VmNumber"`
 }
 
+// UpgradeInstanceResponse is the response struct for api UpgradeInstance
 type UpgradeInstanceResponse struct {
 	*responses.BaseResponse
 	OrderId   string `json:"OrderId" xml:"OrderId"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke UpgradeInstance API
-func CreateUpgradeInstanceRequest() (request *UpgradeInstanceRequest) {
+// CreateUpgradeInstanceRequest creates a request to invoke UpgradeInstance API
+func CreateUpgradeInstanceRequest(request *UpgradeInstanceRequest) {
 	request = &UpgradeInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateUpgradeInstanceRequest() (request *UpgradeInstanceRequest) {
 	return
 }
 
-// create a response to parse from UpgradeInstance response
+// CreateUpgradeInstanceResponse creates a response to parse from UpgradeInstance response
 func CreateUpgradeInstanceResponse() (response *UpgradeInstanceResponse) {
 	response = &UpgradeInstanceResponse{
 		BaseResponse: &responses.BaseResponse{},

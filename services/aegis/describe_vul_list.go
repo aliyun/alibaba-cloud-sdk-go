@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeVulList api with *DescribeVulListRequest synchronously
+// DescribeVulList invokes the aegis.DescribeVulList API synchronously
 // api document: https://help.aliyun.com/api/aegis/describevullist.html
 func (client *Client) DescribeVulList(request *DescribeVulListRequest) (response *DescribeVulListResponse, err error) {
 	response = CreateDescribeVulListResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeVulList(request *DescribeVulListRequest) (response
 	return
 }
 
-// invoke DescribeVulList api with *DescribeVulListRequest asynchronously
+// DescribeVulListWithChan invokes the aegis.DescribeVulList API asynchronously
 // api document: https://help.aliyun.com/api/aegis/describevullist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeVulListWithChan(request *DescribeVulListRequest) (<-chan *DescribeVulListResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeVulListWithChan(request *DescribeVulListRequest) (
 	return responseChan, errChan
 }
 
-// invoke DescribeVulList api with *DescribeVulListRequest asynchronously
+// DescribeVulListWithCallback invokes the aegis.DescribeVulList API asynchronously
 // api document: https://help.aliyun.com/api/aegis/describevullist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeVulListWithCallback(request *DescribeVulListRequest, callback func(response *DescribeVulListResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeVulListWithCallback(request *DescribeVulListReques
 	return result
 }
 
+// DescribeVulListRequest is the request struct for api DescribeVulList
 type DescribeVulListRequest struct {
 	*requests.RpcRequest
 	SourceIp    string           `position:"Query" name:"SourceIp"`
@@ -87,6 +88,7 @@ type DescribeVulListRequest struct {
 	PageSize    requests.Integer `position:"Query" name:"PageSize"`
 }
 
+// DescribeVulListResponse is the response struct for api DescribeVulList
 type DescribeVulListResponse struct {
 	*responses.BaseResponse
 	RequestId   string           `json:"RequestId" xml:"RequestId"`
@@ -96,8 +98,8 @@ type DescribeVulListResponse struct {
 	VulRecords  []VulRecordsItem `json:"VulRecords" xml:"VulRecords"`
 }
 
-// create a request to invoke DescribeVulList API
-func CreateDescribeVulListRequest() (request *DescribeVulListRequest) {
+// CreateDescribeVulListRequest creates a request to invoke DescribeVulList API
+func CreateDescribeVulListRequest(request *DescribeVulListRequest) {
 	request = &DescribeVulListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -105,7 +107,7 @@ func CreateDescribeVulListRequest() (request *DescribeVulListRequest) {
 	return
 }
 
-// create a response to parse from DescribeVulList response
+// CreateDescribeVulListResponse creates a response to parse from DescribeVulList response
 func CreateDescribeVulListResponse() (response *DescribeVulListResponse) {
 	response = &DescribeVulListResponse{
 		BaseResponse: &responses.BaseResponse{},

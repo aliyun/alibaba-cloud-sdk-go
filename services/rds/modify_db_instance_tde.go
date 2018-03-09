@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifyDBInstanceTDE api with *ModifyDBInstanceTDERequest synchronously
+// ModifyDBInstanceTDE invokes the rds.ModifyDBInstanceTDE API synchronously
 // api document: https://help.aliyun.com/api/rds/modifydbinstancetde.html
 func (client *Client) ModifyDBInstanceTDE(request *ModifyDBInstanceTDERequest) (response *ModifyDBInstanceTDEResponse, err error) {
 	response = CreateModifyDBInstanceTDEResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifyDBInstanceTDE(request *ModifyDBInstanceTDERequest) (
 	return
 }
 
-// invoke ModifyDBInstanceTDE api with *ModifyDBInstanceTDERequest asynchronously
+// ModifyDBInstanceTDEWithChan invokes the rds.ModifyDBInstanceTDE API asynchronously
 // api document: https://help.aliyun.com/api/rds/modifydbinstancetde.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDBInstanceTDEWithChan(request *ModifyDBInstanceTDERequest) (<-chan *ModifyDBInstanceTDEResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifyDBInstanceTDEWithChan(request *ModifyDBInstanceTDERe
 	return responseChan, errChan
 }
 
-// invoke ModifyDBInstanceTDE api with *ModifyDBInstanceTDERequest asynchronously
+// ModifyDBInstanceTDEWithCallback invokes the rds.ModifyDBInstanceTDE API asynchronously
 // api document: https://help.aliyun.com/api/rds/modifydbinstancetde.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDBInstanceTDEWithCallback(request *ModifyDBInstanceTDERequest, callback func(response *ModifyDBInstanceTDEResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ModifyDBInstanceTDEWithCallback(request *ModifyDBInstanceT
 	return result
 }
 
+// ModifyDBInstanceTDERequest is the request struct for api ModifyDBInstanceTDE
 type ModifyDBInstanceTDERequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,13 +85,14 @@ type ModifyDBInstanceTDERequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// ModifyDBInstanceTDEResponse is the response struct for api ModifyDBInstanceTDE
 type ModifyDBInstanceTDEResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ModifyDBInstanceTDE API
-func CreateModifyDBInstanceTDERequest() (request *ModifyDBInstanceTDERequest) {
+// CreateModifyDBInstanceTDERequest creates a request to invoke ModifyDBInstanceTDE API
+func CreateModifyDBInstanceTDERequest(request *ModifyDBInstanceTDERequest) {
 	request = &ModifyDBInstanceTDERequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateModifyDBInstanceTDERequest() (request *ModifyDBInstanceTDERequest) {
 	return
 }
 
-// create a response to parse from ModifyDBInstanceTDE response
+// CreateModifyDBInstanceTDEResponse creates a response to parse from ModifyDBInstanceTDE response
 func CreateModifyDBInstanceTDEResponse() (response *ModifyDBInstanceTDEResponse) {
 	response = &ModifyDBInstanceTDEResponse{
 		BaseResponse: &responses.BaseResponse{},

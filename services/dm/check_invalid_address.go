@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CheckInvalidAddress api with *CheckInvalidAddressRequest synchronously
+// CheckInvalidAddress invokes the dm.CheckInvalidAddress API synchronously
 // api document: https://help.aliyun.com/api/dm/checkinvalidaddress.html
 func (client *Client) CheckInvalidAddress(request *CheckInvalidAddressRequest) (response *CheckInvalidAddressResponse, err error) {
 	response = CreateCheckInvalidAddressResponse()
@@ -28,7 +28,7 @@ func (client *Client) CheckInvalidAddress(request *CheckInvalidAddressRequest) (
 	return
 }
 
-// invoke CheckInvalidAddress api with *CheckInvalidAddressRequest asynchronously
+// CheckInvalidAddressWithChan invokes the dm.CheckInvalidAddress API asynchronously
 // api document: https://help.aliyun.com/api/dm/checkinvalidaddress.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckInvalidAddressWithChan(request *CheckInvalidAddressRequest) (<-chan *CheckInvalidAddressResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CheckInvalidAddressWithChan(request *CheckInvalidAddressRe
 	return responseChan, errChan
 }
 
-// invoke CheckInvalidAddress api with *CheckInvalidAddressRequest asynchronously
+// CheckInvalidAddressWithCallback invokes the dm.CheckInvalidAddress API asynchronously
 // api document: https://help.aliyun.com/api/dm/checkinvalidaddress.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckInvalidAddressWithCallback(request *CheckInvalidAddressRequest, callback func(response *CheckInvalidAddressResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) CheckInvalidAddressWithCallback(request *CheckInvalidAddre
 	return result
 }
 
+// CheckInvalidAddressRequest is the request struct for api CheckInvalidAddress
 type CheckInvalidAddressRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -81,13 +82,14 @@ type CheckInvalidAddressRequest struct {
 	ToAddress            string           `position:"Query" name:"ToAddress"`
 }
 
+// CheckInvalidAddressResponse is the response struct for api CheckInvalidAddress
 type CheckInvalidAddressResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke CheckInvalidAddress API
-func CreateCheckInvalidAddressRequest() (request *CheckInvalidAddressRequest) {
+// CreateCheckInvalidAddressRequest creates a request to invoke CheckInvalidAddress API
+func CreateCheckInvalidAddressRequest(request *CheckInvalidAddressRequest) {
 	request = &CheckInvalidAddressRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateCheckInvalidAddressRequest() (request *CheckInvalidAddressRequest) {
 	return
 }
 
-// create a response to parse from CheckInvalidAddress response
+// CreateCheckInvalidAddressResponse creates a response to parse from CheckInvalidAddress response
 func CreateCheckInvalidAddressResponse() (response *CheckInvalidAddressResponse) {
 	response = &CheckInvalidAddressResponse{
 		BaseResponse: &responses.BaseResponse{},

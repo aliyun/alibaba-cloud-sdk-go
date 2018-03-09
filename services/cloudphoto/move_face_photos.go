@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke MoveFacePhotos api with *MoveFacePhotosRequest synchronously
+// MoveFacePhotos invokes the cloudphoto.MoveFacePhotos API synchronously
 // api document: https://help.aliyun.com/api/cloudphoto/movefacephotos.html
 func (client *Client) MoveFacePhotos(request *MoveFacePhotosRequest) (response *MoveFacePhotosResponse, err error) {
 	response = CreateMoveFacePhotosResponse()
@@ -28,7 +28,7 @@ func (client *Client) MoveFacePhotos(request *MoveFacePhotosRequest) (response *
 	return
 }
 
-// invoke MoveFacePhotos api with *MoveFacePhotosRequest asynchronously
+// MoveFacePhotosWithChan invokes the cloudphoto.MoveFacePhotos API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/movefacephotos.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) MoveFacePhotosWithChan(request *MoveFacePhotosRequest) (<-chan *MoveFacePhotosResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) MoveFacePhotosWithChan(request *MoveFacePhotosRequest) (<-
 	return responseChan, errChan
 }
 
-// invoke MoveFacePhotos api with *MoveFacePhotosRequest asynchronously
+// MoveFacePhotosWithCallback invokes the cloudphoto.MoveFacePhotos API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/movefacephotos.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) MoveFacePhotosWithCallback(request *MoveFacePhotosRequest, callback func(response *MoveFacePhotosResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) MoveFacePhotosWithCallback(request *MoveFacePhotosRequest,
 	return result
 }
 
+// MoveFacePhotosRequest is the request struct for api MoveFacePhotos
 type MoveFacePhotosRequest struct {
 	*requests.RpcRequest
 	SourceFaceId requests.Integer `position:"Query" name:"SourceFaceId"`
@@ -82,6 +83,7 @@ type MoveFacePhotosRequest struct {
 	LibraryId    string           `position:"Query" name:"LibraryId"`
 }
 
+// MoveFacePhotosResponse is the response struct for api MoveFacePhotos
 type MoveFacePhotosResponse struct {
 	*responses.BaseResponse
 	Code      string   `json:"Code" xml:"Code"`
@@ -91,8 +93,8 @@ type MoveFacePhotosResponse struct {
 	Results   []Result `json:"Results" xml:"Results"`
 }
 
-// create a request to invoke MoveFacePhotos API
-func CreateMoveFacePhotosRequest() (request *MoveFacePhotosRequest) {
+// CreateMoveFacePhotosRequest creates a request to invoke MoveFacePhotos API
+func CreateMoveFacePhotosRequest(request *MoveFacePhotosRequest) {
 	request = &MoveFacePhotosRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -100,7 +102,7 @@ func CreateMoveFacePhotosRequest() (request *MoveFacePhotosRequest) {
 	return
 }
 
-// create a response to parse from MoveFacePhotos response
+// CreateMoveFacePhotosResponse creates a response to parse from MoveFacePhotos response
 func CreateMoveFacePhotosResponse() (response *MoveFacePhotosResponse) {
 	response = &MoveFacePhotosResponse{
 		BaseResponse: &responses.BaseResponse{},

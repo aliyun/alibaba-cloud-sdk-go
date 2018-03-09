@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke JoinSecurityGroup api with *JoinSecurityGroupRequest synchronously
+// JoinSecurityGroup invokes the ecs.JoinSecurityGroup API synchronously
 // api document: https://help.aliyun.com/api/ecs/joinsecuritygroup.html
 func (client *Client) JoinSecurityGroup(request *JoinSecurityGroupRequest) (response *JoinSecurityGroupResponse, err error) {
 	response = CreateJoinSecurityGroupResponse()
@@ -28,7 +28,7 @@ func (client *Client) JoinSecurityGroup(request *JoinSecurityGroupRequest) (resp
 	return
 }
 
-// invoke JoinSecurityGroup api with *JoinSecurityGroupRequest asynchronously
+// JoinSecurityGroupWithChan invokes the ecs.JoinSecurityGroup API asynchronously
 // api document: https://help.aliyun.com/api/ecs/joinsecuritygroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) JoinSecurityGroupWithChan(request *JoinSecurityGroupRequest) (<-chan *JoinSecurityGroupResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) JoinSecurityGroupWithChan(request *JoinSecurityGroupReques
 	return responseChan, errChan
 }
 
-// invoke JoinSecurityGroup api with *JoinSecurityGroupRequest asynchronously
+// JoinSecurityGroupWithCallback invokes the ecs.JoinSecurityGroup API asynchronously
 // api document: https://help.aliyun.com/api/ecs/joinsecuritygroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) JoinSecurityGroupWithCallback(request *JoinSecurityGroupRequest, callback func(response *JoinSecurityGroupResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) JoinSecurityGroupWithCallback(request *JoinSecurityGroupRe
 	return result
 }
 
+// JoinSecurityGroupRequest is the request struct for api JoinSecurityGroup
 type JoinSecurityGroupRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -83,13 +84,14 @@ type JoinSecurityGroupRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// JoinSecurityGroupResponse is the response struct for api JoinSecurityGroup
 type JoinSecurityGroupResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke JoinSecurityGroup API
-func CreateJoinSecurityGroupRequest() (request *JoinSecurityGroupRequest) {
+// CreateJoinSecurityGroupRequest creates a request to invoke JoinSecurityGroup API
+func CreateJoinSecurityGroupRequest(request *JoinSecurityGroupRequest) {
 	request = &JoinSecurityGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateJoinSecurityGroupRequest() (request *JoinSecurityGroupRequest) {
 	return
 }
 
-// create a response to parse from JoinSecurityGroup response
+// CreateJoinSecurityGroupResponse creates a response to parse from JoinSecurityGroup response
 func CreateJoinSecurityGroupResponse() (response *JoinSecurityGroupResponse) {
 	response = &JoinSecurityGroupResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ListPoliciesForGroup api with *ListPoliciesForGroupRequest synchronously
+// ListPoliciesForGroup invokes the ram.ListPoliciesForGroup API synchronously
 // api document: https://help.aliyun.com/api/ram/listpoliciesforgroup.html
 func (client *Client) ListPoliciesForGroup(request *ListPoliciesForGroupRequest) (response *ListPoliciesForGroupResponse, err error) {
 	response = CreateListPoliciesForGroupResponse()
@@ -28,7 +28,7 @@ func (client *Client) ListPoliciesForGroup(request *ListPoliciesForGroupRequest)
 	return
 }
 
-// invoke ListPoliciesForGroup api with *ListPoliciesForGroupRequest asynchronously
+// ListPoliciesForGroupWithChan invokes the ram.ListPoliciesForGroup API asynchronously
 // api document: https://help.aliyun.com/api/ram/listpoliciesforgroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListPoliciesForGroupWithChan(request *ListPoliciesForGroupRequest) (<-chan *ListPoliciesForGroupResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ListPoliciesForGroupWithChan(request *ListPoliciesForGroup
 	return responseChan, errChan
 }
 
-// invoke ListPoliciesForGroup api with *ListPoliciesForGroupRequest asynchronously
+// ListPoliciesForGroupWithCallback invokes the ram.ListPoliciesForGroup API asynchronously
 // api document: https://help.aliyun.com/api/ram/listpoliciesforgroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListPoliciesForGroupWithCallback(request *ListPoliciesForGroupRequest, callback func(response *ListPoliciesForGroupResponse, err error)) <-chan int {
@@ -73,19 +73,21 @@ func (client *Client) ListPoliciesForGroupWithCallback(request *ListPoliciesForG
 	return result
 }
 
+// ListPoliciesForGroupRequest is the request struct for api ListPoliciesForGroup
 type ListPoliciesForGroupRequest struct {
 	*requests.RpcRequest
 	GroupName string `position:"Query" name:"GroupName"`
 }
 
+// ListPoliciesForGroupResponse is the response struct for api ListPoliciesForGroup
 type ListPoliciesForGroupResponse struct {
 	*responses.BaseResponse
 	RequestId string                         `json:"RequestId" xml:"RequestId"`
 	Policies  PoliciesInListPoliciesForGroup `json:"Policies" xml:"Policies"`
 }
 
-// create a request to invoke ListPoliciesForGroup API
-func CreateListPoliciesForGroupRequest() (request *ListPoliciesForGroupRequest) {
+// CreateListPoliciesForGroupRequest creates a request to invoke ListPoliciesForGroup API
+func CreateListPoliciesForGroupRequest(request *ListPoliciesForGroupRequest) {
 	request = &ListPoliciesForGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -93,7 +95,7 @@ func CreateListPoliciesForGroupRequest() (request *ListPoliciesForGroupRequest) 
 	return
 }
 
-// create a response to parse from ListPoliciesForGroup response
+// CreateListPoliciesForGroupResponse creates a response to parse from ListPoliciesForGroup response
 func CreateListPoliciesForGroupResponse() (response *ListPoliciesForGroupResponse) {
 	response = &ListPoliciesForGroupResponse{
 		BaseResponse: &responses.BaseResponse{},

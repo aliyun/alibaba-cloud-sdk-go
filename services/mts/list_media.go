@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ListMedia api with *ListMediaRequest synchronously
+// ListMedia invokes the mts.ListMedia API synchronously
 // api document: https://help.aliyun.com/api/mts/listmedia.html
 func (client *Client) ListMedia(request *ListMediaRequest) (response *ListMediaResponse, err error) {
 	response = CreateListMediaResponse()
@@ -28,7 +28,7 @@ func (client *Client) ListMedia(request *ListMediaRequest) (response *ListMediaR
 	return
 }
 
-// invoke ListMedia api with *ListMediaRequest asynchronously
+// ListMediaWithChan invokes the mts.ListMedia API asynchronously
 // api document: https://help.aliyun.com/api/mts/listmedia.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListMediaWithChan(request *ListMediaRequest) (<-chan *ListMediaResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ListMediaWithChan(request *ListMediaRequest) (<-chan *List
 	return responseChan, errChan
 }
 
-// invoke ListMedia api with *ListMediaRequest asynchronously
+// ListMediaWithCallback invokes the mts.ListMedia API asynchronously
 // api document: https://help.aliyun.com/api/mts/listmedia.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListMediaWithCallback(request *ListMediaRequest, callback func(response *ListMediaResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ListMediaWithCallback(request *ListMediaRequest, callback 
 	return result
 }
 
+// ListMediaRequest is the request struct for api ListMedia
 type ListMediaRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -85,6 +86,7 @@ type ListMediaRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// ListMediaResponse is the response struct for api ListMedia
 type ListMediaResponse struct {
 	*responses.BaseResponse
 	RequestId     string               `json:"RequestId" xml:"RequestId"`
@@ -92,8 +94,8 @@ type ListMediaResponse struct {
 	MediaList     MediaListInListMedia `json:"MediaList" xml:"MediaList"`
 }
 
-// create a request to invoke ListMedia API
-func CreateListMediaRequest() (request *ListMediaRequest) {
+// CreateListMediaRequest creates a request to invoke ListMedia API
+func CreateListMediaRequest(request *ListMediaRequest) {
 	request = &ListMediaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -101,7 +103,7 @@ func CreateListMediaRequest() (request *ListMediaRequest) {
 	return
 }
 
-// create a response to parse from ListMedia response
+// CreateListMediaResponse creates a response to parse from ListMedia response
 func CreateListMediaResponse() (response *ListMediaResponse) {
 	response = &ListMediaResponse{
 		BaseResponse: &responses.BaseResponse{},

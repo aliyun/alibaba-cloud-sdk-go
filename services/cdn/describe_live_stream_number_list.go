@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeLiveStreamNumberList api with *DescribeLiveStreamNumberListRequest synchronously
+// DescribeLiveStreamNumberList invokes the cdn.DescribeLiveStreamNumberList API synchronously
 // api document: https://help.aliyun.com/api/cdn/describelivestreamnumberlist.html
 func (client *Client) DescribeLiveStreamNumberList(request *DescribeLiveStreamNumberListRequest) (response *DescribeLiveStreamNumberListResponse, err error) {
 	response = CreateDescribeLiveStreamNumberListResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeLiveStreamNumberList(request *DescribeLiveStreamNu
 	return
 }
 
-// invoke DescribeLiveStreamNumberList api with *DescribeLiveStreamNumberListRequest asynchronously
+// DescribeLiveStreamNumberListWithChan invokes the cdn.DescribeLiveStreamNumberList API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describelivestreamnumberlist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamNumberListWithChan(request *DescribeLiveStreamNumberListRequest) (<-chan *DescribeLiveStreamNumberListResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeLiveStreamNumberListWithChan(request *DescribeLive
 	return responseChan, errChan
 }
 
-// invoke DescribeLiveStreamNumberList api with *DescribeLiveStreamNumberListRequest asynchronously
+// DescribeLiveStreamNumberListWithCallback invokes the cdn.DescribeLiveStreamNumberList API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describelivestreamnumberlist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamNumberListWithCallback(request *DescribeLiveStreamNumberListRequest, callback func(response *DescribeLiveStreamNumberListResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeLiveStreamNumberListWithCallback(request *Describe
 	return result
 }
 
+// DescribeLiveStreamNumberListRequest is the request struct for api DescribeLiveStreamNumberList
 type DescribeLiveStreamNumberListRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -83,6 +84,7 @@ type DescribeLiveStreamNumberListRequest struct {
 	EndTime       string           `position:"Query" name:"EndTime"`
 }
 
+// DescribeLiveStreamNumberListResponse is the response struct for api DescribeLiveStreamNumberList
 type DescribeLiveStreamNumberListResponse struct {
 	*responses.BaseResponse
 	RequestId         string            `json:"RequestId" xml:"RequestId"`
@@ -90,8 +92,8 @@ type DescribeLiveStreamNumberListResponse struct {
 	StreamNumberInfos StreamNumberInfos `json:"StreamNumberInfos" xml:"StreamNumberInfos"`
 }
 
-// create a request to invoke DescribeLiveStreamNumberList API
-func CreateDescribeLiveStreamNumberListRequest() (request *DescribeLiveStreamNumberListRequest) {
+// CreateDescribeLiveStreamNumberListRequest creates a request to invoke DescribeLiveStreamNumberList API
+func CreateDescribeLiveStreamNumberListRequest(request *DescribeLiveStreamNumberListRequest) {
 	request = &DescribeLiveStreamNumberListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateDescribeLiveStreamNumberListRequest() (request *DescribeLiveStreamNum
 	return
 }
 
-// create a response to parse from DescribeLiveStreamNumberList response
+// CreateDescribeLiveStreamNumberListResponse creates a response to parse from DescribeLiveStreamNumberList response
 func CreateDescribeLiveStreamNumberListResponse() (response *DescribeLiveStreamNumberListResponse) {
 	response = &DescribeLiveStreamNumberListResponse{
 		BaseResponse: &responses.BaseResponse{},

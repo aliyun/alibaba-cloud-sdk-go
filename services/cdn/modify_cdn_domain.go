@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifyCdnDomain api with *ModifyCdnDomainRequest synchronously
+// ModifyCdnDomain invokes the cdn.ModifyCdnDomain API synchronously
 // api document: https://help.aliyun.com/api/cdn/modifycdndomain.html
 func (client *Client) ModifyCdnDomain(request *ModifyCdnDomainRequest) (response *ModifyCdnDomainResponse, err error) {
 	response = CreateModifyCdnDomainResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifyCdnDomain(request *ModifyCdnDomainRequest) (response
 	return
 }
 
-// invoke ModifyCdnDomain api with *ModifyCdnDomainRequest asynchronously
+// ModifyCdnDomainWithChan invokes the cdn.ModifyCdnDomain API asynchronously
 // api document: https://help.aliyun.com/api/cdn/modifycdndomain.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyCdnDomainWithChan(request *ModifyCdnDomainRequest) (<-chan *ModifyCdnDomainResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifyCdnDomainWithChan(request *ModifyCdnDomainRequest) (
 	return responseChan, errChan
 }
 
-// invoke ModifyCdnDomain api with *ModifyCdnDomainRequest asynchronously
+// ModifyCdnDomainWithCallback invokes the cdn.ModifyCdnDomain API asynchronously
 // api document: https://help.aliyun.com/api/cdn/modifycdndomain.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyCdnDomainWithCallback(request *ModifyCdnDomainRequest, callback func(response *ModifyCdnDomainResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ModifyCdnDomainWithCallback(request *ModifyCdnDomainReques
 	return result
 }
 
+// ModifyCdnDomainRequest is the request struct for api ModifyCdnDomain
 type ModifyCdnDomainRequest struct {
 	*requests.RpcRequest
 	OwnerId         requests.Integer `position:"Query" name:"OwnerId"`
@@ -86,13 +87,14 @@ type ModifyCdnDomainRequest struct {
 	TopLevelDomain  string           `position:"Query" name:"TopLevelDomain"`
 }
 
+// ModifyCdnDomainResponse is the response struct for api ModifyCdnDomain
 type ModifyCdnDomainResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ModifyCdnDomain API
-func CreateModifyCdnDomainRequest() (request *ModifyCdnDomainRequest) {
+// CreateModifyCdnDomainRequest creates a request to invoke ModifyCdnDomain API
+func CreateModifyCdnDomainRequest(request *ModifyCdnDomainRequest) {
 	request = &ModifyCdnDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -100,7 +102,7 @@ func CreateModifyCdnDomainRequest() (request *ModifyCdnDomainRequest) {
 	return
 }
 
-// create a response to parse from ModifyCdnDomain response
+// CreateModifyCdnDomainResponse creates a response to parse from ModifyCdnDomain response
 func CreateModifyCdnDomainResponse() (response *ModifyCdnDomainResponse) {
 	response = &ModifyCdnDomainResponse{
 		BaseResponse: &responses.BaseResponse{},

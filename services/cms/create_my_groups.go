@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CreateMyGroups api with *CreateMyGroupsRequest synchronously
+// CreateMyGroups invokes the cms.CreateMyGroups API synchronously
 // api document: https://help.aliyun.com/api/cms/createmygroups.html
 func (client *Client) CreateMyGroups(request *CreateMyGroupsRequest) (response *CreateMyGroupsResponse, err error) {
 	response = CreateCreateMyGroupsResponse()
@@ -28,7 +28,7 @@ func (client *Client) CreateMyGroups(request *CreateMyGroupsRequest) (response *
 	return
 }
 
-// invoke CreateMyGroups api with *CreateMyGroupsRequest asynchronously
+// CreateMyGroupsWithChan invokes the cms.CreateMyGroups API asynchronously
 // api document: https://help.aliyun.com/api/cms/createmygroups.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateMyGroupsWithChan(request *CreateMyGroupsRequest) (<-chan *CreateMyGroupsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CreateMyGroupsWithChan(request *CreateMyGroupsRequest) (<-
 	return responseChan, errChan
 }
 
-// invoke CreateMyGroups api with *CreateMyGroupsRequest asynchronously
+// CreateMyGroupsWithCallback invokes the cms.CreateMyGroups API asynchronously
 // api document: https://help.aliyun.com/api/cms/createmygroups.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateMyGroupsWithCallback(request *CreateMyGroupsRequest, callback func(response *CreateMyGroupsResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) CreateMyGroupsWithCallback(request *CreateMyGroupsRequest,
 	return result
 }
 
+// CreateMyGroupsRequest is the request struct for api CreateMyGroups
 type CreateMyGroupsRequest struct {
 	*requests.RpcRequest
 	GroupName     string           `position:"Query" name:"GroupName"`
@@ -82,6 +83,7 @@ type CreateMyGroupsRequest struct {
 	ContactGroups string           `position:"Query" name:"ContactGroups"`
 }
 
+// CreateMyGroupsResponse is the response struct for api CreateMyGroups
 type CreateMyGroupsResponse struct {
 	*responses.BaseResponse
 	RequestId    string `json:"RequestId" xml:"RequestId"`
@@ -91,8 +93,8 @@ type CreateMyGroupsResponse struct {
 	GroupId      int    `json:"GroupId" xml:"GroupId"`
 }
 
-// create a request to invoke CreateMyGroups API
-func CreateCreateMyGroupsRequest() (request *CreateMyGroupsRequest) {
+// CreateCreateMyGroupsRequest creates a request to invoke CreateMyGroups API
+func CreateCreateMyGroupsRequest(request *CreateMyGroupsRequest) {
 	request = &CreateMyGroupsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -100,7 +102,7 @@ func CreateCreateMyGroupsRequest() (request *CreateMyGroupsRequest) {
 	return
 }
 
-// create a response to parse from CreateMyGroups response
+// CreateCreateMyGroupsResponse creates a response to parse from CreateMyGroups response
 func CreateCreateMyGroupsResponse() (response *CreateMyGroupsResponse) {
 	response = &CreateMyGroupsResponse{
 		BaseResponse: &responses.BaseResponse{},

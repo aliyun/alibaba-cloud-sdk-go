@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifyUserCustomLogConfig api with *ModifyUserCustomLogConfigRequest synchronously
+// ModifyUserCustomLogConfig invokes the cdn.ModifyUserCustomLogConfig API synchronously
 // api document: https://help.aliyun.com/api/cdn/modifyusercustomlogconfig.html
 func (client *Client) ModifyUserCustomLogConfig(request *ModifyUserCustomLogConfigRequest) (response *ModifyUserCustomLogConfigResponse, err error) {
 	response = CreateModifyUserCustomLogConfigResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifyUserCustomLogConfig(request *ModifyUserCustomLogConf
 	return
 }
 
-// invoke ModifyUserCustomLogConfig api with *ModifyUserCustomLogConfigRequest asynchronously
+// ModifyUserCustomLogConfigWithChan invokes the cdn.ModifyUserCustomLogConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/modifyusercustomlogconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyUserCustomLogConfigWithChan(request *ModifyUserCustomLogConfigRequest) (<-chan *ModifyUserCustomLogConfigResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifyUserCustomLogConfigWithChan(request *ModifyUserCusto
 	return responseChan, errChan
 }
 
-// invoke ModifyUserCustomLogConfig api with *ModifyUserCustomLogConfigRequest asynchronously
+// ModifyUserCustomLogConfigWithCallback invokes the cdn.ModifyUserCustomLogConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/modifyusercustomlogconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyUserCustomLogConfigWithCallback(request *ModifyUserCustomLogConfigRequest, callback func(response *ModifyUserCustomLogConfigResponse, err error)) <-chan int {
@@ -73,17 +73,19 @@ func (client *Client) ModifyUserCustomLogConfigWithCallback(request *ModifyUserC
 	return result
 }
 
+// ModifyUserCustomLogConfigRequest is the request struct for api ModifyUserCustomLogConfig
 type ModifyUserCustomLogConfigRequest struct {
 	*requests.RpcRequest
 }
 
+// ModifyUserCustomLogConfigResponse is the response struct for api ModifyUserCustomLogConfig
 type ModifyUserCustomLogConfigResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ModifyUserCustomLogConfig API
-func CreateModifyUserCustomLogConfigRequest() (request *ModifyUserCustomLogConfigRequest) {
+// CreateModifyUserCustomLogConfigRequest creates a request to invoke ModifyUserCustomLogConfig API
+func CreateModifyUserCustomLogConfigRequest(request *ModifyUserCustomLogConfigRequest) {
 	request = &ModifyUserCustomLogConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -91,7 +93,7 @@ func CreateModifyUserCustomLogConfigRequest() (request *ModifyUserCustomLogConfi
 	return
 }
 
-// create a response to parse from ModifyUserCustomLogConfig response
+// CreateModifyUserCustomLogConfigResponse creates a response to parse from ModifyUserCustomLogConfig response
 func CreateModifyUserCustomLogConfigResponse() (response *ModifyUserCustomLogConfigResponse) {
 	response = &ModifyUserCustomLogConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

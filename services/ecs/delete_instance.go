@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteInstance api with *DeleteInstanceRequest synchronously
+// DeleteInstance invokes the ecs.DeleteInstance API synchronously
 // api document: https://help.aliyun.com/api/ecs/deleteinstance.html
 func (client *Client) DeleteInstance(request *DeleteInstanceRequest) (response *DeleteInstanceResponse, err error) {
 	response = CreateDeleteInstanceResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteInstance(request *DeleteInstanceRequest) (response *
 	return
 }
 
-// invoke DeleteInstance api with *DeleteInstanceRequest asynchronously
+// DeleteInstanceWithChan invokes the ecs.DeleteInstance API asynchronously
 // api document: https://help.aliyun.com/api/ecs/deleteinstance.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteInstanceWithChan(request *DeleteInstanceRequest) (<-chan *DeleteInstanceResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteInstanceWithChan(request *DeleteInstanceRequest) (<-
 	return responseChan, errChan
 }
 
-// invoke DeleteInstance api with *DeleteInstanceRequest asynchronously
+// DeleteInstanceWithCallback invokes the ecs.DeleteInstance API asynchronously
 // api document: https://help.aliyun.com/api/ecs/deleteinstance.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteInstanceWithCallback(request *DeleteInstanceRequest, callback func(response *DeleteInstanceResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DeleteInstanceWithCallback(request *DeleteInstanceRequest,
 	return result
 }
 
+// DeleteInstanceRequest is the request struct for api DeleteInstance
 type DeleteInstanceRequest struct {
 	*requests.RpcRequest
 	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,13 +85,14 @@ type DeleteInstanceRequest struct {
 	TerminateSubscription requests.Boolean `position:"Query" name:"TerminateSubscription"`
 }
 
+// DeleteInstanceResponse is the response struct for api DeleteInstance
 type DeleteInstanceResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DeleteInstance API
-func CreateDeleteInstanceRequest() (request *DeleteInstanceRequest) {
+// CreateDeleteInstanceRequest creates a request to invoke DeleteInstance API
+func CreateDeleteInstanceRequest(request *DeleteInstanceRequest) {
 	request = &DeleteInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateDeleteInstanceRequest() (request *DeleteInstanceRequest) {
 	return
 }
 
-// create a response to parse from DeleteInstance response
+// CreateDeleteInstanceResponse creates a response to parse from DeleteInstance response
 func CreateDeleteInstanceResponse() (response *DeleteInstanceResponse) {
 	response = &DeleteInstanceResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke GetSenderAddressList api with *GetSenderAddressListRequest synchronously
+// GetSenderAddressList invokes the dm.GetSenderAddressList API synchronously
 // api document: https://help.aliyun.com/api/dm/getsenderaddresslist.html
 func (client *Client) GetSenderAddressList(request *GetSenderAddressListRequest) (response *GetSenderAddressListResponse, err error) {
 	response = CreateGetSenderAddressListResponse()
@@ -28,7 +28,7 @@ func (client *Client) GetSenderAddressList(request *GetSenderAddressListRequest)
 	return
 }
 
-// invoke GetSenderAddressList api with *GetSenderAddressListRequest asynchronously
+// GetSenderAddressListWithChan invokes the dm.GetSenderAddressList API asynchronously
 // api document: https://help.aliyun.com/api/dm/getsenderaddresslist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetSenderAddressListWithChan(request *GetSenderAddressListRequest) (<-chan *GetSenderAddressListResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) GetSenderAddressListWithChan(request *GetSenderAddressList
 	return responseChan, errChan
 }
 
-// invoke GetSenderAddressList api with *GetSenderAddressListRequest asynchronously
+// GetSenderAddressListWithCallback invokes the dm.GetSenderAddressList API asynchronously
 // api document: https://help.aliyun.com/api/dm/getsenderaddresslist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetSenderAddressListWithCallback(request *GetSenderAddressListRequest, callback func(response *GetSenderAddressListResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) GetSenderAddressListWithCallback(request *GetSenderAddress
 	return result
 }
 
+// GetSenderAddressListRequest is the request struct for api GetSenderAddressList
 type GetSenderAddressListRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -86,6 +87,7 @@ type GetSenderAddressListRequest struct {
 	NotifyUrl            string           `position:"Query" name:"NotifyUrl"`
 }
 
+// GetSenderAddressListResponse is the response struct for api GetSenderAddressList
 type GetSenderAddressListResponse struct {
 	*responses.BaseResponse
 	RequestId string                     `json:"RequestId" xml:"RequestId"`
@@ -95,8 +97,8 @@ type GetSenderAddressListResponse struct {
 	Data      DataInGetSenderAddressList `json:"data" xml:"data"`
 }
 
-// create a request to invoke GetSenderAddressList API
-func CreateGetSenderAddressListRequest() (request *GetSenderAddressListRequest) {
+// CreateGetSenderAddressListRequest creates a request to invoke GetSenderAddressList API
+func CreateGetSenderAddressListRequest(request *GetSenderAddressListRequest) {
 	request = &GetSenderAddressListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -104,7 +106,7 @@ func CreateGetSenderAddressListRequest() (request *GetSenderAddressListRequest) 
 	return
 }
 
-// create a response to parse from GetSenderAddressList response
+// CreateGetSenderAddressListResponse creates a response to parse from GetSenderAddressList response
 func CreateGetSenderAddressListResponse() (response *GetSenderAddressListResponse) {
 	response = &GetSenderAddressListResponse{
 		BaseResponse: &responses.BaseResponse{},

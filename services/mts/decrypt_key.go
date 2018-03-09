@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DecryptKey api with *DecryptKeyRequest synchronously
+// DecryptKey invokes the mts.DecryptKey API synchronously
 // api document: https://help.aliyun.com/api/mts/decryptkey.html
 func (client *Client) DecryptKey(request *DecryptKeyRequest) (response *DecryptKeyResponse, err error) {
 	response = CreateDecryptKeyResponse()
@@ -28,7 +28,7 @@ func (client *Client) DecryptKey(request *DecryptKeyRequest) (response *DecryptK
 	return
 }
 
-// invoke DecryptKey api with *DecryptKeyRequest asynchronously
+// DecryptKeyWithChan invokes the mts.DecryptKey API asynchronously
 // api document: https://help.aliyun.com/api/mts/decryptkey.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DecryptKeyWithChan(request *DecryptKeyRequest) (<-chan *DecryptKeyResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DecryptKeyWithChan(request *DecryptKeyRequest) (<-chan *De
 	return responseChan, errChan
 }
 
-// invoke DecryptKey api with *DecryptKeyRequest asynchronously
+// DecryptKeyWithCallback invokes the mts.DecryptKey API asynchronously
 // api document: https://help.aliyun.com/api/mts/decryptkey.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DecryptKeyWithCallback(request *DecryptKeyRequest, callback func(response *DecryptKeyResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DecryptKeyWithCallback(request *DecryptKeyRequest, callbac
 	return result
 }
 
+// DecryptKeyRequest is the request struct for api DecryptKey
 type DecryptKeyRequest struct {
 	*requests.RpcRequest
 	OwnerId              string `position:"Query" name:"OwnerId"`
@@ -83,6 +84,7 @@ type DecryptKeyRequest struct {
 	Rand                 string `position:"Query" name:"Rand"`
 }
 
+// DecryptKeyResponse is the response struct for api DecryptKey
 type DecryptKeyResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
@@ -90,8 +92,8 @@ type DecryptKeyResponse struct {
 	Rand      string `json:"Rand" xml:"Rand"`
 }
 
-// create a request to invoke DecryptKey API
-func CreateDecryptKeyRequest() (request *DecryptKeyRequest) {
+// CreateDecryptKeyRequest creates a request to invoke DecryptKey API
+func CreateDecryptKeyRequest(request *DecryptKeyRequest) {
 	request = &DecryptKeyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateDecryptKeyRequest() (request *DecryptKeyRequest) {
 	return
 }
 
-// create a response to parse from DecryptKey response
+// CreateDecryptKeyResponse creates a response to parse from DecryptKey response
 func CreateDecryptKeyResponse() (response *DecryptKeyResponse) {
 	response = &DecryptKeyResponse{
 		BaseResponse: &responses.BaseResponse{},

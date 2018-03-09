@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeDomainRecordInfo api with *DescribeDomainRecordInfoRequest synchronously
+// DescribeDomainRecordInfo invokes the alidns.DescribeDomainRecordInfo API synchronously
 // api document: https://help.aliyun.com/api/alidns/describedomainrecordinfo.html
 func (client *Client) DescribeDomainRecordInfo(request *DescribeDomainRecordInfoRequest) (response *DescribeDomainRecordInfoResponse, err error) {
 	response = CreateDescribeDomainRecordInfoResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeDomainRecordInfo(request *DescribeDomainRecordInfo
 	return
 }
 
-// invoke DescribeDomainRecordInfo api with *DescribeDomainRecordInfoRequest asynchronously
+// DescribeDomainRecordInfoWithChan invokes the alidns.DescribeDomainRecordInfo API asynchronously
 // api document: https://help.aliyun.com/api/alidns/describedomainrecordinfo.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainRecordInfoWithChan(request *DescribeDomainRecordInfoRequest) (<-chan *DescribeDomainRecordInfoResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeDomainRecordInfoWithChan(request *DescribeDomainRe
 	return responseChan, errChan
 }
 
-// invoke DescribeDomainRecordInfo api with *DescribeDomainRecordInfoRequest asynchronously
+// DescribeDomainRecordInfoWithCallback invokes the alidns.DescribeDomainRecordInfo API asynchronously
 // api document: https://help.aliyun.com/api/alidns/describedomainrecordinfo.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainRecordInfoWithCallback(request *DescribeDomainRecordInfoRequest, callback func(response *DescribeDomainRecordInfoResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeDomainRecordInfoWithCallback(request *DescribeDoma
 	return result
 }
 
+// DescribeDomainRecordInfoRequest is the request struct for api DescribeDomainRecordInfo
 type DescribeDomainRecordInfoRequest struct {
 	*requests.RpcRequest
 	Lang         string `position:"Query" name:"Lang"`
@@ -80,6 +81,7 @@ type DescribeDomainRecordInfoRequest struct {
 	RecordId     string `position:"Query" name:"RecordId"`
 }
 
+// DescribeDomainRecordInfoResponse is the response struct for api DescribeDomainRecordInfo
 type DescribeDomainRecordInfoResponse struct {
 	*responses.BaseResponse
 	RequestId  string `json:"RequestId" xml:"RequestId"`
@@ -99,8 +101,8 @@ type DescribeDomainRecordInfoResponse struct {
 	Locked     bool   `json:"Locked" xml:"Locked"`
 }
 
-// create a request to invoke DescribeDomainRecordInfo API
-func CreateDescribeDomainRecordInfoRequest() (request *DescribeDomainRecordInfoRequest) {
+// CreateDescribeDomainRecordInfoRequest creates a request to invoke DescribeDomainRecordInfo API
+func CreateDescribeDomainRecordInfoRequest(request *DescribeDomainRecordInfoRequest) {
 	request = &DescribeDomainRecordInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -108,7 +110,7 @@ func CreateDescribeDomainRecordInfoRequest() (request *DescribeDomainRecordInfoR
 	return
 }
 
-// create a response to parse from DescribeDomainRecordInfo response
+// CreateDescribeDomainRecordInfoResponse creates a response to parse from DescribeDomainRecordInfo response
 func CreateDescribeDomainRecordInfoResponse() (response *DescribeDomainRecordInfoResponse) {
 	response = &DescribeDomainRecordInfoResponse{
 		BaseResponse: &responses.BaseResponse{},

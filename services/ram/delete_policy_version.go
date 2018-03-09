@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeletePolicyVersion api with *DeletePolicyVersionRequest synchronously
+// DeletePolicyVersion invokes the ram.DeletePolicyVersion API synchronously
 // api document: https://help.aliyun.com/api/ram/deletepolicyversion.html
 func (client *Client) DeletePolicyVersion(request *DeletePolicyVersionRequest) (response *DeletePolicyVersionResponse, err error) {
 	response = CreateDeletePolicyVersionResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeletePolicyVersion(request *DeletePolicyVersionRequest) (
 	return
 }
 
-// invoke DeletePolicyVersion api with *DeletePolicyVersionRequest asynchronously
+// DeletePolicyVersionWithChan invokes the ram.DeletePolicyVersion API asynchronously
 // api document: https://help.aliyun.com/api/ram/deletepolicyversion.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeletePolicyVersionWithChan(request *DeletePolicyVersionRequest) (<-chan *DeletePolicyVersionResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeletePolicyVersionWithChan(request *DeletePolicyVersionRe
 	return responseChan, errChan
 }
 
-// invoke DeletePolicyVersion api with *DeletePolicyVersionRequest asynchronously
+// DeletePolicyVersionWithCallback invokes the ram.DeletePolicyVersion API asynchronously
 // api document: https://help.aliyun.com/api/ram/deletepolicyversion.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeletePolicyVersionWithCallback(request *DeletePolicyVersionRequest, callback func(response *DeletePolicyVersionResponse, err error)) <-chan int {
@@ -73,19 +73,21 @@ func (client *Client) DeletePolicyVersionWithCallback(request *DeletePolicyVersi
 	return result
 }
 
+// DeletePolicyVersionRequest is the request struct for api DeletePolicyVersion
 type DeletePolicyVersionRequest struct {
 	*requests.RpcRequest
 	PolicyName string `position:"Query" name:"PolicyName"`
 	VersionId  string `position:"Query" name:"VersionId"`
 }
 
+// DeletePolicyVersionResponse is the response struct for api DeletePolicyVersion
 type DeletePolicyVersionResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DeletePolicyVersion API
-func CreateDeletePolicyVersionRequest() (request *DeletePolicyVersionRequest) {
+// CreateDeletePolicyVersionRequest creates a request to invoke DeletePolicyVersion API
+func CreateDeletePolicyVersionRequest(request *DeletePolicyVersionRequest) {
 	request = &DeletePolicyVersionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -93,7 +95,7 @@ func CreateDeletePolicyVersionRequest() (request *DeletePolicyVersionRequest) {
 	return
 }
 
-// create a response to parse from DeletePolicyVersion response
+// CreateDeletePolicyVersionResponse creates a response to parse from DeletePolicyVersion response
 func CreateDeletePolicyVersionResponse() (response *DeletePolicyVersionResponse) {
 	response = &DeletePolicyVersionResponse{
 		BaseResponse: &responses.BaseResponse{},

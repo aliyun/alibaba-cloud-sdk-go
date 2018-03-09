@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ReportTerrorismJobResult api with *ReportTerrorismJobResultRequest synchronously
+// ReportTerrorismJobResult invokes the mts.ReportTerrorismJobResult API synchronously
 // api document: https://help.aliyun.com/api/mts/reportterrorismjobresult.html
 func (client *Client) ReportTerrorismJobResult(request *ReportTerrorismJobResultRequest) (response *ReportTerrorismJobResultResponse, err error) {
 	response = CreateReportTerrorismJobResultResponse()
@@ -28,7 +28,7 @@ func (client *Client) ReportTerrorismJobResult(request *ReportTerrorismJobResult
 	return
 }
 
-// invoke ReportTerrorismJobResult api with *ReportTerrorismJobResultRequest asynchronously
+// ReportTerrorismJobResultWithChan invokes the mts.ReportTerrorismJobResult API asynchronously
 // api document: https://help.aliyun.com/api/mts/reportterrorismjobresult.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReportTerrorismJobResultWithChan(request *ReportTerrorismJobResultRequest) (<-chan *ReportTerrorismJobResultResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ReportTerrorismJobResultWithChan(request *ReportTerrorismJ
 	return responseChan, errChan
 }
 
-// invoke ReportTerrorismJobResult api with *ReportTerrorismJobResultRequest asynchronously
+// ReportTerrorismJobResultWithCallback invokes the mts.ReportTerrorismJobResult API asynchronously
 // api document: https://help.aliyun.com/api/mts/reportterrorismjobresult.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReportTerrorismJobResultWithCallback(request *ReportTerrorismJobResultRequest, callback func(response *ReportTerrorismJobResultResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ReportTerrorismJobResultWithCallback(request *ReportTerror
 	return result
 }
 
+// ReportTerrorismJobResultRequest is the request struct for api ReportTerrorismJobResult
 type ReportTerrorismJobResultRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,14 +85,15 @@ type ReportTerrorismJobResultRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// ReportTerrorismJobResultResponse is the response struct for api ReportTerrorismJobResult
 type ReportTerrorismJobResultResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	JobId     string `json:"JobId" xml:"JobId"`
 }
 
-// create a request to invoke ReportTerrorismJobResult API
-func CreateReportTerrorismJobResultRequest() (request *ReportTerrorismJobResultRequest) {
+// CreateReportTerrorismJobResultRequest creates a request to invoke ReportTerrorismJobResult API
+func CreateReportTerrorismJobResultRequest(request *ReportTerrorismJobResultRequest) {
 	request = &ReportTerrorismJobResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateReportTerrorismJobResultRequest() (request *ReportTerrorismJobResultR
 	return
 }
 
-// create a response to parse from ReportTerrorismJobResult response
+// CreateReportTerrorismJobResultResponse creates a response to parse from ReportTerrorismJobResult response
 func CreateReportTerrorismJobResultResponse() (response *ReportTerrorismJobResultResponse) {
 	response = &ReportTerrorismJobResultResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke QueryPushDetail api with *QueryPushDetailRequest synchronously
+// QueryPushDetail invokes the push.QueryPushDetail API synchronously
 // api document: https://help.aliyun.com/api/push/querypushdetail.html
 func (client *Client) QueryPushDetail(request *QueryPushDetailRequest) (response *QueryPushDetailResponse, err error) {
 	response = CreateQueryPushDetailResponse()
@@ -28,7 +28,7 @@ func (client *Client) QueryPushDetail(request *QueryPushDetailRequest) (response
 	return
 }
 
-// invoke QueryPushDetail api with *QueryPushDetailRequest asynchronously
+// QueryPushDetailWithChan invokes the push.QueryPushDetail API asynchronously
 // api document: https://help.aliyun.com/api/push/querypushdetail.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryPushDetailWithChan(request *QueryPushDetailRequest) (<-chan *QueryPushDetailResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) QueryPushDetailWithChan(request *QueryPushDetailRequest) (
 	return responseChan, errChan
 }
 
-// invoke QueryPushDetail api with *QueryPushDetailRequest asynchronously
+// QueryPushDetailWithCallback invokes the push.QueryPushDetail API asynchronously
 // api document: https://help.aliyun.com/api/push/querypushdetail.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryPushDetailWithCallback(request *QueryPushDetailRequest, callback func(response *QueryPushDetailResponse, err error)) <-chan int {
@@ -73,12 +73,14 @@ func (client *Client) QueryPushDetailWithCallback(request *QueryPushDetailReques
 	return result
 }
 
+// QueryPushDetailRequest is the request struct for api QueryPushDetail
 type QueryPushDetailRequest struct {
 	*requests.RpcRequest
 	AppKey    requests.Integer `position:"Query" name:"AppKey"`
 	MessageId string           `position:"Query" name:"MessageId"`
 }
 
+// QueryPushDetailResponse is the response struct for api QueryPushDetail
 type QueryPushDetailResponse struct {
 	*responses.BaseResponse
 	RequestId                      string `json:"RequestId" xml:"RequestId"`
@@ -126,8 +128,8 @@ type QueryPushDetailResponse struct {
 	SmsSendPolicy                  int    `json:"SmsSendPolicy" xml:"SmsSendPolicy"`
 }
 
-// create a request to invoke QueryPushDetail API
-func CreateQueryPushDetailRequest() (request *QueryPushDetailRequest) {
+// CreateQueryPushDetailRequest creates a request to invoke QueryPushDetail API
+func CreateQueryPushDetailRequest(request *QueryPushDetailRequest) {
 	request = &QueryPushDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -135,7 +137,7 @@ func CreateQueryPushDetailRequest() (request *QueryPushDetailRequest) {
 	return
 }
 
-// create a response to parse from QueryPushDetail response
+// CreateQueryPushDetailResponse creates a response to parse from QueryPushDetail response
 func CreateQueryPushDetailResponse() (response *QueryPushDetailResponse) {
 	response = &QueryPushDetailResponse{
 		BaseResponse: &responses.BaseResponse{},

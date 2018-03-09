@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SetLoadBalancerHTTPListenerAttribute api with *SetLoadBalancerHTTPListenerAttributeRequest synchronously
+// SetLoadBalancerHTTPListenerAttribute invokes the slb.SetLoadBalancerHTTPListenerAttribute API synchronously
 // api document: https://help.aliyun.com/api/slb/setloadbalancerhttplistenerattribute.html
 func (client *Client) SetLoadBalancerHTTPListenerAttribute(request *SetLoadBalancerHTTPListenerAttributeRequest) (response *SetLoadBalancerHTTPListenerAttributeResponse, err error) {
 	response = CreateSetLoadBalancerHTTPListenerAttributeResponse()
@@ -28,7 +28,7 @@ func (client *Client) SetLoadBalancerHTTPListenerAttribute(request *SetLoadBalan
 	return
 }
 
-// invoke SetLoadBalancerHTTPListenerAttribute api with *SetLoadBalancerHTTPListenerAttributeRequest asynchronously
+// SetLoadBalancerHTTPListenerAttributeWithChan invokes the slb.SetLoadBalancerHTTPListenerAttribute API asynchronously
 // api document: https://help.aliyun.com/api/slb/setloadbalancerhttplistenerattribute.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetLoadBalancerHTTPListenerAttributeWithChan(request *SetLoadBalancerHTTPListenerAttributeRequest) (<-chan *SetLoadBalancerHTTPListenerAttributeResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SetLoadBalancerHTTPListenerAttributeWithChan(request *SetL
 	return responseChan, errChan
 }
 
-// invoke SetLoadBalancerHTTPListenerAttribute api with *SetLoadBalancerHTTPListenerAttributeRequest asynchronously
+// SetLoadBalancerHTTPListenerAttributeWithCallback invokes the slb.SetLoadBalancerHTTPListenerAttribute API asynchronously
 // api document: https://help.aliyun.com/api/slb/setloadbalancerhttplistenerattribute.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetLoadBalancerHTTPListenerAttributeWithCallback(request *SetLoadBalancerHTTPListenerAttributeRequest, callback func(response *SetLoadBalancerHTTPListenerAttributeResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SetLoadBalancerHTTPListenerAttributeWithCallback(request *
 	return result
 }
 
+// SetLoadBalancerHTTPListenerAttributeRequest is the request struct for api SetLoadBalancerHTTPListenerAttribute
 type SetLoadBalancerHTTPListenerAttributeRequest struct {
 	*requests.RpcRequest
 	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
@@ -108,13 +109,14 @@ type SetLoadBalancerHTTPListenerAttributeRequest struct {
 	Gzip                   string           `position:"Query" name:"Gzip"`
 }
 
+// SetLoadBalancerHTTPListenerAttributeResponse is the response struct for api SetLoadBalancerHTTPListenerAttribute
 type SetLoadBalancerHTTPListenerAttributeResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke SetLoadBalancerHTTPListenerAttribute API
-func CreateSetLoadBalancerHTTPListenerAttributeRequest() (request *SetLoadBalancerHTTPListenerAttributeRequest) {
+// CreateSetLoadBalancerHTTPListenerAttributeRequest creates a request to invoke SetLoadBalancerHTTPListenerAttribute API
+func CreateSetLoadBalancerHTTPListenerAttributeRequest(request *SetLoadBalancerHTTPListenerAttributeRequest) {
 	request = &SetLoadBalancerHTTPListenerAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -122,7 +124,7 @@ func CreateSetLoadBalancerHTTPListenerAttributeRequest() (request *SetLoadBalanc
 	return
 }
 
-// create a response to parse from SetLoadBalancerHTTPListenerAttribute response
+// CreateSetLoadBalancerHTTPListenerAttributeResponse creates a response to parse from SetLoadBalancerHTTPListenerAttribute response
 func CreateSetLoadBalancerHTTPListenerAttributeResponse() (response *SetLoadBalancerHTTPListenerAttributeResponse) {
 	response = &SetLoadBalancerHTTPListenerAttributeResponse{
 		BaseResponse: &responses.BaseResponse{},

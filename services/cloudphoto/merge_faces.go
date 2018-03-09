@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke MergeFaces api with *MergeFacesRequest synchronously
+// MergeFaces invokes the cloudphoto.MergeFaces API synchronously
 // api document: https://help.aliyun.com/api/cloudphoto/mergefaces.html
 func (client *Client) MergeFaces(request *MergeFacesRequest) (response *MergeFacesResponse, err error) {
 	response = CreateMergeFacesResponse()
@@ -28,7 +28,7 @@ func (client *Client) MergeFaces(request *MergeFacesRequest) (response *MergeFac
 	return
 }
 
-// invoke MergeFaces api with *MergeFacesRequest asynchronously
+// MergeFacesWithChan invokes the cloudphoto.MergeFaces API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/mergefaces.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) MergeFacesWithChan(request *MergeFacesRequest) (<-chan *MergeFacesResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) MergeFacesWithChan(request *MergeFacesRequest) (<-chan *Me
 	return responseChan, errChan
 }
 
-// invoke MergeFaces api with *MergeFacesRequest asynchronously
+// MergeFacesWithCallback invokes the cloudphoto.MergeFaces API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/mergefaces.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) MergeFacesWithCallback(request *MergeFacesRequest, callback func(response *MergeFacesResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) MergeFacesWithCallback(request *MergeFacesRequest, callbac
 	return result
 }
 
+// MergeFacesRequest is the request struct for api MergeFaces
 type MergeFacesRequest struct {
 	*requests.RpcRequest
 	FaceId       *[]string        `position:"Query" name:"FaceId"  type:"Repeated"`
@@ -81,6 +82,7 @@ type MergeFacesRequest struct {
 	LibraryId    string           `position:"Query" name:"LibraryId"`
 }
 
+// MergeFacesResponse is the response struct for api MergeFaces
 type MergeFacesResponse struct {
 	*responses.BaseResponse
 	Code      string              `json:"Code" xml:"Code"`
@@ -90,8 +92,8 @@ type MergeFacesResponse struct {
 	Results   ResultsInMergeFaces `json:"Results" xml:"Results"`
 }
 
-// create a request to invoke MergeFaces API
-func CreateMergeFacesRequest() (request *MergeFacesRequest) {
+// CreateMergeFacesRequest creates a request to invoke MergeFaces API
+func CreateMergeFacesRequest(request *MergeFacesRequest) {
 	request = &MergeFacesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateMergeFacesRequest() (request *MergeFacesRequest) {
 	return
 }
 
-// create a response to parse from MergeFaces response
+// CreateMergeFacesResponse creates a response to parse from MergeFaces response
 func CreateMergeFacesResponse() (response *MergeFacesResponse) {
 	response = &MergeFacesResponse{
 		BaseResponse: &responses.BaseResponse{},

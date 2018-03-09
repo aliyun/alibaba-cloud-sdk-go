@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeAlertConfig api with *DescribeAlertConfigRequest synchronously
+// DescribeAlertConfig invokes the ess.DescribeAlertConfig API synchronously
 // api document: https://help.aliyun.com/api/ess/describealertconfig.html
 func (client *Client) DescribeAlertConfig(request *DescribeAlertConfigRequest) (response *DescribeAlertConfigResponse, err error) {
 	response = CreateDescribeAlertConfigResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeAlertConfig(request *DescribeAlertConfigRequest) (
 	return
 }
 
-// invoke DescribeAlertConfig api with *DescribeAlertConfigRequest asynchronously
+// DescribeAlertConfigWithChan invokes the ess.DescribeAlertConfig API asynchronously
 // api document: https://help.aliyun.com/api/ess/describealertconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAlertConfigWithChan(request *DescribeAlertConfigRequest) (<-chan *DescribeAlertConfigResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeAlertConfigWithChan(request *DescribeAlertConfigRe
 	return responseChan, errChan
 }
 
-// invoke DescribeAlertConfig api with *DescribeAlertConfigRequest asynchronously
+// DescribeAlertConfigWithCallback invokes the ess.DescribeAlertConfig API asynchronously
 // api document: https://help.aliyun.com/api/ess/describealertconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAlertConfigWithCallback(request *DescribeAlertConfigRequest, callback func(response *DescribeAlertConfigResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeAlertConfigWithCallback(request *DescribeAlertConf
 	return result
 }
 
+// DescribeAlertConfigRequest is the request struct for api DescribeAlertConfig
 type DescribeAlertConfigRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -80,6 +81,7 @@ type DescribeAlertConfigRequest struct {
 	ScalingGroupId       string           `position:"Query" name:"ScalingGroupId"`
 }
 
+// DescribeAlertConfigResponse is the response struct for api DescribeAlertConfig
 type DescribeAlertConfigResponse struct {
 	*responses.BaseResponse
 	SuccessConfig int    `json:"SuccessConfig" xml:"SuccessConfig"`
@@ -88,8 +90,8 @@ type DescribeAlertConfigResponse struct {
 	RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DescribeAlertConfig API
-func CreateDescribeAlertConfigRequest() (request *DescribeAlertConfigRequest) {
+// CreateDescribeAlertConfigRequest creates a request to invoke DescribeAlertConfig API
+func CreateDescribeAlertConfigRequest(request *DescribeAlertConfigRequest) {
 	request = &DescribeAlertConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateDescribeAlertConfigRequest() (request *DescribeAlertConfigRequest) {
 	return
 }
 
-// create a response to parse from DescribeAlertConfig response
+// CreateDescribeAlertConfigResponse creates a response to parse from DescribeAlertConfig response
 func CreateDescribeAlertConfigResponse() (response *DescribeAlertConfigResponse) {
 	response = &DescribeAlertConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

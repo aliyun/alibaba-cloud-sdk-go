@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke QueryMediaListByURL api with *QueryMediaListByURLRequest synchronously
+// QueryMediaListByURL invokes the mts.QueryMediaListByURL API synchronously
 // api document: https://help.aliyun.com/api/mts/querymedialistbyurl.html
 func (client *Client) QueryMediaListByURL(request *QueryMediaListByURLRequest) (response *QueryMediaListByURLResponse, err error) {
 	response = CreateQueryMediaListByURLResponse()
@@ -28,7 +28,7 @@ func (client *Client) QueryMediaListByURL(request *QueryMediaListByURLRequest) (
 	return
 }
 
-// invoke QueryMediaListByURL api with *QueryMediaListByURLRequest asynchronously
+// QueryMediaListByURLWithChan invokes the mts.QueryMediaListByURL API asynchronously
 // api document: https://help.aliyun.com/api/mts/querymedialistbyurl.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryMediaListByURLWithChan(request *QueryMediaListByURLRequest) (<-chan *QueryMediaListByURLResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) QueryMediaListByURLWithChan(request *QueryMediaListByURLRe
 	return responseChan, errChan
 }
 
-// invoke QueryMediaListByURL api with *QueryMediaListByURLRequest asynchronously
+// QueryMediaListByURLWithCallback invokes the mts.QueryMediaListByURL API asynchronously
 // api document: https://help.aliyun.com/api/mts/querymedialistbyurl.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryMediaListByURLWithCallback(request *QueryMediaListByURLRequest, callback func(response *QueryMediaListByURLResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) QueryMediaListByURLWithCallback(request *QueryMediaListByU
 	return result
 }
 
+// QueryMediaListByURLRequest is the request struct for api QueryMediaListByURL
 type QueryMediaListByURLRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -86,6 +87,7 @@ type QueryMediaListByURLRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// QueryMediaListByURLResponse is the response struct for api QueryMediaListByURL
 type QueryMediaListByURLResponse struct {
 	*responses.BaseResponse
 	RequestId        string                         `json:"RequestId" xml:"RequestId"`
@@ -93,8 +95,8 @@ type QueryMediaListByURLResponse struct {
 	MediaList        MediaListInQueryMediaListByURL `json:"MediaList" xml:"MediaList"`
 }
 
-// create a request to invoke QueryMediaListByURL API
-func CreateQueryMediaListByURLRequest() (request *QueryMediaListByURLRequest) {
+// CreateQueryMediaListByURLRequest creates a request to invoke QueryMediaListByURL API
+func CreateQueryMediaListByURLRequest(request *QueryMediaListByURLRequest) {
 	request = &QueryMediaListByURLRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -102,7 +104,7 @@ func CreateQueryMediaListByURLRequest() (request *QueryMediaListByURLRequest) {
 	return
 }
 
-// create a response to parse from QueryMediaListByURL response
+// CreateQueryMediaListByURLResponse creates a response to parse from QueryMediaListByURL response
 func CreateQueryMediaListByURLResponse() (response *QueryMediaListByURLResponse) {
 	response = &QueryMediaListByURLResponse{
 		BaseResponse: &responses.BaseResponse{},

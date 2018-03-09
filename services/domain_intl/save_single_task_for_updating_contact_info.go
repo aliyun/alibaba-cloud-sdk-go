@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SaveSingleTaskForUpdatingContactInfo api with *SaveSingleTaskForUpdatingContactInfoRequest synchronously
+// SaveSingleTaskForUpdatingContactInfo invokes the domain_intl.SaveSingleTaskForUpdatingContactInfo API synchronously
 // api document: https://help.aliyun.com/api/domain-intl/savesingletaskforupdatingcontactinfo.html
 func (client *Client) SaveSingleTaskForUpdatingContactInfo(request *SaveSingleTaskForUpdatingContactInfoRequest) (response *SaveSingleTaskForUpdatingContactInfoResponse, err error) {
 	response = CreateSaveSingleTaskForUpdatingContactInfoResponse()
@@ -28,7 +28,7 @@ func (client *Client) SaveSingleTaskForUpdatingContactInfo(request *SaveSingleTa
 	return
 }
 
-// invoke SaveSingleTaskForUpdatingContactInfo api with *SaveSingleTaskForUpdatingContactInfoRequest asynchronously
+// SaveSingleTaskForUpdatingContactInfoWithChan invokes the domain_intl.SaveSingleTaskForUpdatingContactInfo API asynchronously
 // api document: https://help.aliyun.com/api/domain-intl/savesingletaskforupdatingcontactinfo.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveSingleTaskForUpdatingContactInfoWithChan(request *SaveSingleTaskForUpdatingContactInfoRequest) (<-chan *SaveSingleTaskForUpdatingContactInfoResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SaveSingleTaskForUpdatingContactInfoWithChan(request *Save
 	return responseChan, errChan
 }
 
-// invoke SaveSingleTaskForUpdatingContactInfo api with *SaveSingleTaskForUpdatingContactInfoRequest asynchronously
+// SaveSingleTaskForUpdatingContactInfoWithCallback invokes the domain_intl.SaveSingleTaskForUpdatingContactInfo API asynchronously
 // api document: https://help.aliyun.com/api/domain-intl/savesingletaskforupdatingcontactinfo.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveSingleTaskForUpdatingContactInfoWithCallback(request *SaveSingleTaskForUpdatingContactInfoRequest, callback func(response *SaveSingleTaskForUpdatingContactInfoResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SaveSingleTaskForUpdatingContactInfoWithCallback(request *
 	return result
 }
 
+// SaveSingleTaskForUpdatingContactInfoRequest is the request struct for api SaveSingleTaskForUpdatingContactInfo
 type SaveSingleTaskForUpdatingContactInfoRequest struct {
 	*requests.RpcRequest
 	UserClientIp        string           `position:"Query" name:"UserClientIp"`
@@ -84,14 +85,15 @@ type SaveSingleTaskForUpdatingContactInfoRequest struct {
 	AddTransferLock     requests.Boolean `position:"Query" name:"AddTransferLock"`
 }
 
+// SaveSingleTaskForUpdatingContactInfoResponse is the response struct for api SaveSingleTaskForUpdatingContactInfo
 type SaveSingleTaskForUpdatingContactInfoResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	TaskNo    string `json:"TaskNo" xml:"TaskNo"`
 }
 
-// create a request to invoke SaveSingleTaskForUpdatingContactInfo API
-func CreateSaveSingleTaskForUpdatingContactInfoRequest() (request *SaveSingleTaskForUpdatingContactInfoRequest) {
+// CreateSaveSingleTaskForUpdatingContactInfoRequest creates a request to invoke SaveSingleTaskForUpdatingContactInfo API
+func CreateSaveSingleTaskForUpdatingContactInfoRequest(request *SaveSingleTaskForUpdatingContactInfoRequest) {
 	request = &SaveSingleTaskForUpdatingContactInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateSaveSingleTaskForUpdatingContactInfoRequest() (request *SaveSingleTas
 	return
 }
 
-// create a response to parse from SaveSingleTaskForUpdatingContactInfo response
+// CreateSaveSingleTaskForUpdatingContactInfoResponse creates a response to parse from SaveSingleTaskForUpdatingContactInfo response
 func CreateSaveSingleTaskForUpdatingContactInfoResponse() (response *SaveSingleTaskForUpdatingContactInfoResponse) {
 	response = &SaveSingleTaskForUpdatingContactInfoResponse{
 		BaseResponse: &responses.BaseResponse{},

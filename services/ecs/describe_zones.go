@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeZones api with *DescribeZonesRequest synchronously
+// DescribeZones invokes the ecs.DescribeZones API synchronously
 // api document: https://help.aliyun.com/api/ecs/describezones.html
 func (client *Client) DescribeZones(request *DescribeZonesRequest) (response *DescribeZonesResponse, err error) {
 	response = CreateDescribeZonesResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeZones(request *DescribeZonesRequest) (response *De
 	return
 }
 
-// invoke DescribeZones api with *DescribeZonesRequest asynchronously
+// DescribeZonesWithChan invokes the ecs.DescribeZones API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describezones.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeZonesWithChan(request *DescribeZonesRequest) (<-chan *DescribeZonesResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeZonesWithChan(request *DescribeZonesRequest) (<-ch
 	return responseChan, errChan
 }
 
-// invoke DescribeZones api with *DescribeZonesRequest asynchronously
+// DescribeZonesWithCallback invokes the ecs.DescribeZones API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describezones.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeZonesWithCallback(request *DescribeZonesRequest, callback func(response *DescribeZonesResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeZonesWithCallback(request *DescribeZonesRequest, c
 	return result
 }
 
+// DescribeZonesRequest is the request struct for api DescribeZones
 type DescribeZonesRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,14 +85,15 @@ type DescribeZonesRequest struct {
 	SpotStrategy         string           `position:"Query" name:"SpotStrategy"`
 }
 
+// DescribeZonesResponse is the response struct for api DescribeZones
 type DescribeZonesResponse struct {
 	*responses.BaseResponse
 	RequestId string               `json:"RequestId" xml:"RequestId"`
 	Zones     ZonesInDescribeZones `json:"Zones" xml:"Zones"`
 }
 
-// create a request to invoke DescribeZones API
-func CreateDescribeZonesRequest() (request *DescribeZonesRequest) {
+// CreateDescribeZonesRequest creates a request to invoke DescribeZones API
+func CreateDescribeZonesRequest(request *DescribeZonesRequest) {
 	request = &DescribeZonesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateDescribeZonesRequest() (request *DescribeZonesRequest) {
 	return
 }
 
-// create a response to parse from DescribeZones response
+// CreateDescribeZonesResponse creates a response to parse from DescribeZones response
 func CreateDescribeZonesResponse() (response *DescribeZonesResponse) {
 	response = &DescribeZonesResponse{
 		BaseResponse: &responses.BaseResponse{},

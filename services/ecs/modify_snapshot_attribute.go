@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifySnapshotAttribute api with *ModifySnapshotAttributeRequest synchronously
+// ModifySnapshotAttribute invokes the ecs.ModifySnapshotAttribute API synchronously
 // api document: https://help.aliyun.com/api/ecs/modifysnapshotattribute.html
 func (client *Client) ModifySnapshotAttribute(request *ModifySnapshotAttributeRequest) (response *ModifySnapshotAttributeResponse, err error) {
 	response = CreateModifySnapshotAttributeResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifySnapshotAttribute(request *ModifySnapshotAttributeRe
 	return
 }
 
-// invoke ModifySnapshotAttribute api with *ModifySnapshotAttributeRequest asynchronously
+// ModifySnapshotAttributeWithChan invokes the ecs.ModifySnapshotAttribute API asynchronously
 // api document: https://help.aliyun.com/api/ecs/modifysnapshotattribute.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySnapshotAttributeWithChan(request *ModifySnapshotAttributeRequest) (<-chan *ModifySnapshotAttributeResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifySnapshotAttributeWithChan(request *ModifySnapshotAtt
 	return responseChan, errChan
 }
 
-// invoke ModifySnapshotAttribute api with *ModifySnapshotAttributeRequest asynchronously
+// ModifySnapshotAttributeWithCallback invokes the ecs.ModifySnapshotAttribute API asynchronously
 // api document: https://help.aliyun.com/api/ecs/modifysnapshotattribute.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySnapshotAttributeWithCallback(request *ModifySnapshotAttributeRequest, callback func(response *ModifySnapshotAttributeResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ModifySnapshotAttributeWithCallback(request *ModifySnapsho
 	return result
 }
 
+// ModifySnapshotAttributeRequest is the request struct for api ModifySnapshotAttribute
 type ModifySnapshotAttributeRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,13 +85,14 @@ type ModifySnapshotAttributeRequest struct {
 	Description          string           `position:"Query" name:"Description"`
 }
 
+// ModifySnapshotAttributeResponse is the response struct for api ModifySnapshotAttribute
 type ModifySnapshotAttributeResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ModifySnapshotAttribute API
-func CreateModifySnapshotAttributeRequest() (request *ModifySnapshotAttributeRequest) {
+// CreateModifySnapshotAttributeRequest creates a request to invoke ModifySnapshotAttribute API
+func CreateModifySnapshotAttributeRequest(request *ModifySnapshotAttributeRequest) {
 	request = &ModifySnapshotAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateModifySnapshotAttributeRequest() (request *ModifySnapshotAttributeReq
 	return
 }
 
-// create a response to parse from ModifySnapshotAttribute response
+// CreateModifySnapshotAttributeResponse creates a response to parse from ModifySnapshotAttribute response
 func CreateModifySnapshotAttributeResponse() (response *ModifySnapshotAttributeResponse) {
 	response = &ModifySnapshotAttributeResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifyClusterAttributes api with *ModifyClusterAttributesRequest synchronously
+// ModifyClusterAttributes invokes the ehpc.ModifyClusterAttributes API synchronously
 // api document: https://help.aliyun.com/api/ehpc/modifyclusterattributes.html
 func (client *Client) ModifyClusterAttributes(request *ModifyClusterAttributesRequest) (response *ModifyClusterAttributesResponse, err error) {
 	response = CreateModifyClusterAttributesResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifyClusterAttributes(request *ModifyClusterAttributesRe
 	return
 }
 
-// invoke ModifyClusterAttributes api with *ModifyClusterAttributesRequest asynchronously
+// ModifyClusterAttributesWithChan invokes the ehpc.ModifyClusterAttributes API asynchronously
 // api document: https://help.aliyun.com/api/ehpc/modifyclusterattributes.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyClusterAttributesWithChan(request *ModifyClusterAttributesRequest) (<-chan *ModifyClusterAttributesResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifyClusterAttributesWithChan(request *ModifyClusterAttr
 	return responseChan, errChan
 }
 
-// invoke ModifyClusterAttributes api with *ModifyClusterAttributesRequest asynchronously
+// ModifyClusterAttributesWithCallback invokes the ehpc.ModifyClusterAttributes API asynchronously
 // api document: https://help.aliyun.com/api/ehpc/modifyclusterattributes.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyClusterAttributesWithCallback(request *ModifyClusterAttributesRequest, callback func(response *ModifyClusterAttributesResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ModifyClusterAttributesWithCallback(request *ModifyCluster
 	return result
 }
 
+// ModifyClusterAttributesRequest is the request struct for api ModifyClusterAttributes
 type ModifyClusterAttributesRequest struct {
 	*requests.RpcRequest
 	ClusterId   string `position:"Query" name:"ClusterId"`
@@ -80,13 +81,14 @@ type ModifyClusterAttributesRequest struct {
 	Description string `position:"Query" name:"Description"`
 }
 
+// ModifyClusterAttributesResponse is the response struct for api ModifyClusterAttributes
 type ModifyClusterAttributesResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ModifyClusterAttributes API
-func CreateModifyClusterAttributesRequest() (request *ModifyClusterAttributesRequest) {
+// CreateModifyClusterAttributesRequest creates a request to invoke ModifyClusterAttributes API
+func CreateModifyClusterAttributesRequest(request *ModifyClusterAttributesRequest) {
 	request = &ModifyClusterAttributesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -94,7 +96,7 @@ func CreateModifyClusterAttributesRequest() (request *ModifyClusterAttributesReq
 	return
 }
 
-// create a response to parse from ModifyClusterAttributes response
+// CreateModifyClusterAttributesResponse creates a response to parse from ModifyClusterAttributes response
 func CreateModifyClusterAttributesResponse() (response *ModifyClusterAttributesResponse) {
 	response = &ModifyClusterAttributesResponse{
 		BaseResponse: &responses.BaseResponse{},

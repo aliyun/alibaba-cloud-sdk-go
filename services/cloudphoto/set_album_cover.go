@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SetAlbumCover api with *SetAlbumCoverRequest synchronously
+// SetAlbumCover invokes the cloudphoto.SetAlbumCover API synchronously
 // api document: https://help.aliyun.com/api/cloudphoto/setalbumcover.html
 func (client *Client) SetAlbumCover(request *SetAlbumCoverRequest) (response *SetAlbumCoverResponse, err error) {
 	response = CreateSetAlbumCoverResponse()
@@ -28,7 +28,7 @@ func (client *Client) SetAlbumCover(request *SetAlbumCoverRequest) (response *Se
 	return
 }
 
-// invoke SetAlbumCover api with *SetAlbumCoverRequest asynchronously
+// SetAlbumCoverWithChan invokes the cloudphoto.SetAlbumCover API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/setalbumcover.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetAlbumCoverWithChan(request *SetAlbumCoverRequest) (<-chan *SetAlbumCoverResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SetAlbumCoverWithChan(request *SetAlbumCoverRequest) (<-ch
 	return responseChan, errChan
 }
 
-// invoke SetAlbumCover api with *SetAlbumCoverRequest asynchronously
+// SetAlbumCoverWithCallback invokes the cloudphoto.SetAlbumCover API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/setalbumcover.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetAlbumCoverWithCallback(request *SetAlbumCoverRequest, callback func(response *SetAlbumCoverResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SetAlbumCoverWithCallback(request *SetAlbumCoverRequest, c
 	return result
 }
 
+// SetAlbumCoverRequest is the request struct for api SetAlbumCover
 type SetAlbumCoverRequest struct {
 	*requests.RpcRequest
 	AlbumId   requests.Integer `position:"Query" name:"AlbumId"`
@@ -81,6 +82,7 @@ type SetAlbumCoverRequest struct {
 	LibraryId string           `position:"Query" name:"LibraryId"`
 }
 
+// SetAlbumCoverResponse is the response struct for api SetAlbumCover
 type SetAlbumCoverResponse struct {
 	*responses.BaseResponse
 	Code      string `json:"Code" xml:"Code"`
@@ -89,8 +91,8 @@ type SetAlbumCoverResponse struct {
 	Action    string `json:"Action" xml:"Action"`
 }
 
-// create a request to invoke SetAlbumCover API
-func CreateSetAlbumCoverRequest() (request *SetAlbumCoverRequest) {
+// CreateSetAlbumCoverRequest creates a request to invoke SetAlbumCover API
+func CreateSetAlbumCoverRequest(request *SetAlbumCoverRequest) {
 	request = &SetAlbumCoverRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateSetAlbumCoverRequest() (request *SetAlbumCoverRequest) {
 	return
 }
 
-// create a response to parse from SetAlbumCover response
+// CreateSetAlbumCoverResponse creates a response to parse from SetAlbumCover response
 func CreateSetAlbumCoverResponse() (response *SetAlbumCoverResponse) {
 	response = &SetAlbumCoverResponse{
 		BaseResponse: &responses.BaseResponse{},

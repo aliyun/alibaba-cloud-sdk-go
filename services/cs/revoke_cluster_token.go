@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke RevokeClusterToken api with *RevokeClusterTokenRequest synchronously
+// RevokeClusterToken invokes the cs.RevokeClusterToken API synchronously
 // api document: https://help.aliyun.com/api/cs/revokeclustertoken.html
 func (client *Client) RevokeClusterToken(request *RevokeClusterTokenRequest) (response *RevokeClusterTokenResponse, err error) {
 	response = CreateRevokeClusterTokenResponse()
@@ -28,7 +28,7 @@ func (client *Client) RevokeClusterToken(request *RevokeClusterTokenRequest) (re
 	return
 }
 
-// invoke RevokeClusterToken api with *RevokeClusterTokenRequest asynchronously
+// RevokeClusterTokenWithChan invokes the cs.RevokeClusterToken API asynchronously
 // api document: https://help.aliyun.com/api/cs/revokeclustertoken.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RevokeClusterTokenWithChan(request *RevokeClusterTokenRequest) (<-chan *RevokeClusterTokenResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) RevokeClusterTokenWithChan(request *RevokeClusterTokenRequ
 	return responseChan, errChan
 }
 
-// invoke RevokeClusterToken api with *RevokeClusterTokenRequest asynchronously
+// RevokeClusterTokenWithCallback invokes the cs.RevokeClusterToken API asynchronously
 // api document: https://help.aliyun.com/api/cs/revokeclustertoken.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RevokeClusterTokenWithCallback(request *RevokeClusterTokenRequest, callback func(response *RevokeClusterTokenResponse, err error)) <-chan int {
@@ -73,17 +73,19 @@ func (client *Client) RevokeClusterTokenWithCallback(request *RevokeClusterToken
 	return result
 }
 
+// RevokeClusterTokenRequest is the request struct for api RevokeClusterToken
 type RevokeClusterTokenRequest struct {
 	*requests.RoaRequest
 	Token string `position:"Path" name:"Token"`
 }
 
+// RevokeClusterTokenResponse is the response struct for api RevokeClusterToken
 type RevokeClusterTokenResponse struct {
 	*responses.BaseResponse
 }
 
-// create a request to invoke RevokeClusterToken API
-func CreateRevokeClusterTokenRequest() (request *RevokeClusterTokenRequest) {
+// CreateRevokeClusterTokenRequest creates a request to invoke RevokeClusterToken API
+func CreateRevokeClusterTokenRequest(request *RevokeClusterTokenRequest) {
 	request = &RevokeClusterTokenRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
@@ -92,7 +94,7 @@ func CreateRevokeClusterTokenRequest() (request *RevokeClusterTokenRequest) {
 	return
 }
 
-// create a response to parse from RevokeClusterToken response
+// CreateRevokeClusterTokenResponse creates a response to parse from RevokeClusterToken response
 func CreateRevokeClusterTokenResponse() (response *RevokeClusterTokenResponse) {
 	response = &RevokeClusterTokenResponse{
 		BaseResponse: &responses.BaseResponse{},

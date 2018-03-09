@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke TerminatePhysicalConnection api with *TerminatePhysicalConnectionRequest synchronously
+// TerminatePhysicalConnection invokes the vpc.TerminatePhysicalConnection API synchronously
 // api document: https://help.aliyun.com/api/vpc/terminatephysicalconnection.html
 func (client *Client) TerminatePhysicalConnection(request *TerminatePhysicalConnectionRequest) (response *TerminatePhysicalConnectionResponse, err error) {
 	response = CreateTerminatePhysicalConnectionResponse()
@@ -28,7 +28,7 @@ func (client *Client) TerminatePhysicalConnection(request *TerminatePhysicalConn
 	return
 }
 
-// invoke TerminatePhysicalConnection api with *TerminatePhysicalConnectionRequest asynchronously
+// TerminatePhysicalConnectionWithChan invokes the vpc.TerminatePhysicalConnection API asynchronously
 // api document: https://help.aliyun.com/api/vpc/terminatephysicalconnection.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) TerminatePhysicalConnectionWithChan(request *TerminatePhysicalConnectionRequest) (<-chan *TerminatePhysicalConnectionResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) TerminatePhysicalConnectionWithChan(request *TerminatePhys
 	return responseChan, errChan
 }
 
-// invoke TerminatePhysicalConnection api with *TerminatePhysicalConnectionRequest asynchronously
+// TerminatePhysicalConnectionWithCallback invokes the vpc.TerminatePhysicalConnection API asynchronously
 // api document: https://help.aliyun.com/api/vpc/terminatephysicalconnection.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) TerminatePhysicalConnectionWithCallback(request *TerminatePhysicalConnectionRequest, callback func(response *TerminatePhysicalConnectionResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) TerminatePhysicalConnectionWithCallback(request *Terminate
 	return result
 }
 
+// TerminatePhysicalConnectionRequest is the request struct for api TerminatePhysicalConnection
 type TerminatePhysicalConnectionRequest struct {
 	*requests.RpcRequest
 	PhysicalConnectionId string           `position:"Query" name:"PhysicalConnectionId"`
@@ -83,13 +84,14 @@ type TerminatePhysicalConnectionRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// TerminatePhysicalConnectionResponse is the response struct for api TerminatePhysicalConnection
 type TerminatePhysicalConnectionResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke TerminatePhysicalConnection API
-func CreateTerminatePhysicalConnectionRequest() (request *TerminatePhysicalConnectionRequest) {
+// CreateTerminatePhysicalConnectionRequest creates a request to invoke TerminatePhysicalConnection API
+func CreateTerminatePhysicalConnectionRequest(request *TerminatePhysicalConnectionRequest) {
 	request = &TerminatePhysicalConnectionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateTerminatePhysicalConnectionRequest() (request *TerminatePhysicalConne
 	return
 }
 
-// create a response to parse from TerminatePhysicalConnection response
+// CreateTerminatePhysicalConnectionResponse creates a response to parse from TerminatePhysicalConnection response
 func CreateTerminatePhysicalConnectionResponse() (response *TerminatePhysicalConnectionResponse) {
 	response = &TerminatePhysicalConnectionResponse{
 		BaseResponse: &responses.BaseResponse{},

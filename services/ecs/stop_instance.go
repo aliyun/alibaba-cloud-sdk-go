@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke StopInstance api with *StopInstanceRequest synchronously
+// StopInstance invokes the ecs.StopInstance API synchronously
 // api document: https://help.aliyun.com/api/ecs/stopinstance.html
 func (client *Client) StopInstance(request *StopInstanceRequest) (response *StopInstanceResponse, err error) {
 	response = CreateStopInstanceResponse()
@@ -28,7 +28,7 @@ func (client *Client) StopInstance(request *StopInstanceRequest) (response *Stop
 	return
 }
 
-// invoke StopInstance api with *StopInstanceRequest asynchronously
+// StopInstanceWithChan invokes the ecs.StopInstance API asynchronously
 // api document: https://help.aliyun.com/api/ecs/stopinstance.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StopInstanceWithChan(request *StopInstanceRequest) (<-chan *StopInstanceResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) StopInstanceWithChan(request *StopInstanceRequest) (<-chan
 	return responseChan, errChan
 }
 
-// invoke StopInstance api with *StopInstanceRequest asynchronously
+// StopInstanceWithCallback invokes the ecs.StopInstance API asynchronously
 // api document: https://help.aliyun.com/api/ecs/stopinstance.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StopInstanceWithCallback(request *StopInstanceRequest, callback func(response *StopInstanceResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) StopInstanceWithCallback(request *StopInstanceRequest, cal
 	return result
 }
 
+// StopInstanceRequest is the request struct for api StopInstance
 type StopInstanceRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -85,13 +86,14 @@ type StopInstanceRequest struct {
 	StoppedMode          string           `position:"Query" name:"StoppedMode"`
 }
 
+// StopInstanceResponse is the response struct for api StopInstance
 type StopInstanceResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke StopInstance API
-func CreateStopInstanceRequest() (request *StopInstanceRequest) {
+// CreateStopInstanceRequest creates a request to invoke StopInstance API
+func CreateStopInstanceRequest(request *StopInstanceRequest) {
 	request = &StopInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateStopInstanceRequest() (request *StopInstanceRequest) {
 	return
 }
 
-// create a response to parse from StopInstance response
+// CreateStopInstanceResponse creates a response to parse from StopInstance response
 func CreateStopInstanceResponse() (response *StopInstanceResponse) {
 	response = &StopInstanceResponse{
 		BaseResponse: &responses.BaseResponse{},

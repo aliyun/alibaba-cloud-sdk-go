@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeMachineConfig api with *DescribeMachineConfigRequest synchronously
+// DescribeMachineConfig invokes the aegis.DescribeMachineConfig API synchronously
 // api document: https://help.aliyun.com/api/aegis/describemachineconfig.html
 func (client *Client) DescribeMachineConfig(request *DescribeMachineConfigRequest) (response *DescribeMachineConfigResponse, err error) {
 	response = CreateDescribeMachineConfigResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeMachineConfig(request *DescribeMachineConfigReques
 	return
 }
 
-// invoke DescribeMachineConfig api with *DescribeMachineConfigRequest asynchronously
+// DescribeMachineConfigWithChan invokes the aegis.DescribeMachineConfig API asynchronously
 // api document: https://help.aliyun.com/api/aegis/describemachineconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeMachineConfigWithChan(request *DescribeMachineConfigRequest) (<-chan *DescribeMachineConfigResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeMachineConfigWithChan(request *DescribeMachineConf
 	return responseChan, errChan
 }
 
-// invoke DescribeMachineConfig api with *DescribeMachineConfigRequest asynchronously
+// DescribeMachineConfigWithCallback invokes the aegis.DescribeMachineConfig API asynchronously
 // api document: https://help.aliyun.com/api/aegis/describemachineconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeMachineConfigWithCallback(request *DescribeMachineConfigRequest, callback func(response *DescribeMachineConfigResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeMachineConfigWithCallback(request *DescribeMachine
 	return result
 }
 
+// DescribeMachineConfigRequest is the request struct for api DescribeMachineConfig
 type DescribeMachineConfigRequest struct {
 	*requests.RpcRequest
 	SourceIp        string           `position:"Query" name:"SourceIp"`
@@ -86,6 +87,7 @@ type DescribeMachineConfigRequest struct {
 	PageSize        requests.Integer `position:"Query" name:"PageSize"`
 }
 
+// DescribeMachineConfigResponse is the response struct for api DescribeMachineConfig
 type DescribeMachineConfigResponse struct {
 	*responses.BaseResponse
 	RequestId     string         `json:"RequestId" xml:"RequestId"`
@@ -93,8 +95,8 @@ type DescribeMachineConfigResponse struct {
 	ConfigTargets []ConfigTarget `json:"ConfigTargets" xml:"ConfigTargets"`
 }
 
-// create a request to invoke DescribeMachineConfig API
-func CreateDescribeMachineConfigRequest() (request *DescribeMachineConfigRequest) {
+// CreateDescribeMachineConfigRequest creates a request to invoke DescribeMachineConfig API
+func CreateDescribeMachineConfigRequest(request *DescribeMachineConfigRequest) {
 	request = &DescribeMachineConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -102,7 +104,7 @@ func CreateDescribeMachineConfigRequest() (request *DescribeMachineConfigRequest
 	return
 }
 
-// create a response to parse from DescribeMachineConfig response
+// CreateDescribeMachineConfigResponse creates a response to parse from DescribeMachineConfig response
 func CreateDescribeMachineConfigResponse() (response *DescribeMachineConfigResponse) {
 	response = &DescribeMachineConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

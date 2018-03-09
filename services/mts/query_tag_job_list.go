@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke QueryTagJobList api with *QueryTagJobListRequest synchronously
+// QueryTagJobList invokes the mts.QueryTagJobList API synchronously
 // api document: https://help.aliyun.com/api/mts/querytagjoblist.html
 func (client *Client) QueryTagJobList(request *QueryTagJobListRequest) (response *QueryTagJobListResponse, err error) {
 	response = CreateQueryTagJobListResponse()
@@ -28,7 +28,7 @@ func (client *Client) QueryTagJobList(request *QueryTagJobListRequest) (response
 	return
 }
 
-// invoke QueryTagJobList api with *QueryTagJobListRequest asynchronously
+// QueryTagJobListWithChan invokes the mts.QueryTagJobList API asynchronously
 // api document: https://help.aliyun.com/api/mts/querytagjoblist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryTagJobListWithChan(request *QueryTagJobListRequest) (<-chan *QueryTagJobListResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) QueryTagJobListWithChan(request *QueryTagJobListRequest) (
 	return responseChan, errChan
 }
 
-// invoke QueryTagJobList api with *QueryTagJobListRequest asynchronously
+// QueryTagJobListWithCallback invokes the mts.QueryTagJobList API asynchronously
 // api document: https://help.aliyun.com/api/mts/querytagjoblist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryTagJobListWithCallback(request *QueryTagJobListRequest, callback func(response *QueryTagJobListResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) QueryTagJobListWithCallback(request *QueryTagJobListReques
 	return result
 }
 
+// QueryTagJobListRequest is the request struct for api QueryTagJobList
 type QueryTagJobListRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,6 +83,7 @@ type QueryTagJobListRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// QueryTagJobListResponse is the response struct for api QueryTagJobList
 type QueryTagJobListResponse struct {
 	*responses.BaseResponse
 	RequestId   string                       `json:"RequestId" xml:"RequestId"`
@@ -89,8 +91,8 @@ type QueryTagJobListResponse struct {
 	TagJobList  TagJobList                   `json:"TagJobList" xml:"TagJobList"`
 }
 
-// create a request to invoke QueryTagJobList API
-func CreateQueryTagJobListRequest() (request *QueryTagJobListRequest) {
+// CreateQueryTagJobListRequest creates a request to invoke QueryTagJobList API
+func CreateQueryTagJobListRequest(request *QueryTagJobListRequest) {
 	request = &QueryTagJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateQueryTagJobListRequest() (request *QueryTagJobListRequest) {
 	return
 }
 
-// create a response to parse from QueryTagJobList response
+// CreateQueryTagJobListResponse creates a response to parse from QueryTagJobList response
 func CreateQueryTagJobListResponse() (response *QueryTagJobListResponse) {
 	response = &QueryTagJobListResponse{
 		BaseResponse: &responses.BaseResponse{},

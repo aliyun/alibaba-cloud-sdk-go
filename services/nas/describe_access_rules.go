@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeAccessRules api with *DescribeAccessRulesRequest synchronously
+// DescribeAccessRules invokes the nas.DescribeAccessRules API synchronously
 // api document: https://help.aliyun.com/api/nas/describeaccessrules.html
 func (client *Client) DescribeAccessRules(request *DescribeAccessRulesRequest) (response *DescribeAccessRulesResponse, err error) {
 	response = CreateDescribeAccessRulesResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeAccessRules(request *DescribeAccessRulesRequest) (
 	return
 }
 
-// invoke DescribeAccessRules api with *DescribeAccessRulesRequest asynchronously
+// DescribeAccessRulesWithChan invokes the nas.DescribeAccessRules API asynchronously
 // api document: https://help.aliyun.com/api/nas/describeaccessrules.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAccessRulesWithChan(request *DescribeAccessRulesRequest) (<-chan *DescribeAccessRulesResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeAccessRulesWithChan(request *DescribeAccessRulesRe
 	return responseChan, errChan
 }
 
-// invoke DescribeAccessRules api with *DescribeAccessRulesRequest asynchronously
+// DescribeAccessRulesWithCallback invokes the nas.DescribeAccessRules API asynchronously
 // api document: https://help.aliyun.com/api/nas/describeaccessrules.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAccessRulesWithCallback(request *DescribeAccessRulesRequest, callback func(response *DescribeAccessRulesResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeAccessRulesWithCallback(request *DescribeAccessRul
 	return result
 }
 
+// DescribeAccessRulesRequest is the request struct for api DescribeAccessRules
 type DescribeAccessRulesRequest struct {
 	*requests.RpcRequest
 	AccessGroupName string           `position:"Query" name:"AccessGroupName"`
@@ -81,6 +82,7 @@ type DescribeAccessRulesRequest struct {
 	PageNumber      requests.Integer `position:"Query" name:"PageNumber"`
 }
 
+// DescribeAccessRulesResponse is the response struct for api DescribeAccessRules
 type DescribeAccessRulesResponse struct {
 	*responses.BaseResponse
 	RequestId   string      `json:"RequestId" xml:"RequestId"`
@@ -90,8 +92,8 @@ type DescribeAccessRulesResponse struct {
 	AccessRules AccessRules `json:"AccessRules" xml:"AccessRules"`
 }
 
-// create a request to invoke DescribeAccessRules API
-func CreateDescribeAccessRulesRequest() (request *DescribeAccessRulesRequest) {
+// CreateDescribeAccessRulesRequest creates a request to invoke DescribeAccessRules API
+func CreateDescribeAccessRulesRequest(request *DescribeAccessRulesRequest) {
 	request = &DescribeAccessRulesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateDescribeAccessRulesRequest() (request *DescribeAccessRulesRequest) {
 	return
 }
 
-// create a response to parse from DescribeAccessRules response
+// CreateDescribeAccessRulesResponse creates a response to parse from DescribeAccessRules response
 func CreateDescribeAccessRulesResponse() (response *DescribeAccessRulesResponse) {
 	response = &DescribeAccessRulesResponse{
 		BaseResponse: &responses.BaseResponse{},

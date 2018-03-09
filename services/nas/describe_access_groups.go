@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeAccessGroups api with *DescribeAccessGroupsRequest synchronously
+// DescribeAccessGroups invokes the nas.DescribeAccessGroups API synchronously
 // api document: https://help.aliyun.com/api/nas/describeaccessgroups.html
 func (client *Client) DescribeAccessGroups(request *DescribeAccessGroupsRequest) (response *DescribeAccessGroupsResponse, err error) {
 	response = CreateDescribeAccessGroupsResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeAccessGroups(request *DescribeAccessGroupsRequest)
 	return
 }
 
-// invoke DescribeAccessGroups api with *DescribeAccessGroupsRequest asynchronously
+// DescribeAccessGroupsWithChan invokes the nas.DescribeAccessGroups API asynchronously
 // api document: https://help.aliyun.com/api/nas/describeaccessgroups.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAccessGroupsWithChan(request *DescribeAccessGroupsRequest) (<-chan *DescribeAccessGroupsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeAccessGroupsWithChan(request *DescribeAccessGroups
 	return responseChan, errChan
 }
 
-// invoke DescribeAccessGroups api with *DescribeAccessGroupsRequest asynchronously
+// DescribeAccessGroupsWithCallback invokes the nas.DescribeAccessGroups API asynchronously
 // api document: https://help.aliyun.com/api/nas/describeaccessgroups.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAccessGroupsWithCallback(request *DescribeAccessGroupsRequest, callback func(response *DescribeAccessGroupsResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeAccessGroupsWithCallback(request *DescribeAccessGr
 	return result
 }
 
+// DescribeAccessGroupsRequest is the request struct for api DescribeAccessGroups
 type DescribeAccessGroupsRequest struct {
 	*requests.RpcRequest
 	AccessGroupName string           `position:"Query" name:"AccessGroupName"`
@@ -80,6 +81,7 @@ type DescribeAccessGroupsRequest struct {
 	PageNumber      requests.Integer `position:"Query" name:"PageNumber"`
 }
 
+// DescribeAccessGroupsResponse is the response struct for api DescribeAccessGroups
 type DescribeAccessGroupsResponse struct {
 	*responses.BaseResponse
 	RequestId    string       `json:"RequestId" xml:"RequestId"`
@@ -89,8 +91,8 @@ type DescribeAccessGroupsResponse struct {
 	AccessGroups AccessGroups `json:"AccessGroups" xml:"AccessGroups"`
 }
 
-// create a request to invoke DescribeAccessGroups API
-func CreateDescribeAccessGroupsRequest() (request *DescribeAccessGroupsRequest) {
+// CreateDescribeAccessGroupsRequest creates a request to invoke DescribeAccessGroups API
+func CreateDescribeAccessGroupsRequest(request *DescribeAccessGroupsRequest) {
 	request = &DescribeAccessGroupsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateDescribeAccessGroupsRequest() (request *DescribeAccessGroupsRequest) 
 	return
 }
 
-// create a response to parse from DescribeAccessGroups response
+// CreateDescribeAccessGroupsResponse creates a response to parse from DescribeAccessGroups response
 func CreateDescribeAccessGroupsResponse() (response *DescribeAccessGroupsResponse) {
 	response = &DescribeAccessGroupsResponse{
 		BaseResponse: &responses.BaseResponse{},

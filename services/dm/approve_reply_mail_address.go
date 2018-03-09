@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ApproveReplyMailAddress api with *ApproveReplyMailAddressRequest synchronously
+// ApproveReplyMailAddress invokes the dm.ApproveReplyMailAddress API synchronously
 // api document: https://help.aliyun.com/api/dm/approvereplymailaddress.html
 func (client *Client) ApproveReplyMailAddress(request *ApproveReplyMailAddressRequest) (response *ApproveReplyMailAddressResponse, err error) {
 	response = CreateApproveReplyMailAddressResponse()
@@ -28,7 +28,7 @@ func (client *Client) ApproveReplyMailAddress(request *ApproveReplyMailAddressRe
 	return
 }
 
-// invoke ApproveReplyMailAddress api with *ApproveReplyMailAddressRequest asynchronously
+// ApproveReplyMailAddressWithChan invokes the dm.ApproveReplyMailAddress API asynchronously
 // api document: https://help.aliyun.com/api/dm/approvereplymailaddress.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ApproveReplyMailAddressWithChan(request *ApproveReplyMailAddressRequest) (<-chan *ApproveReplyMailAddressResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ApproveReplyMailAddressWithChan(request *ApproveReplyMailA
 	return responseChan, errChan
 }
 
-// invoke ApproveReplyMailAddress api with *ApproveReplyMailAddressRequest asynchronously
+// ApproveReplyMailAddressWithCallback invokes the dm.ApproveReplyMailAddress API asynchronously
 // api document: https://help.aliyun.com/api/dm/approvereplymailaddress.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ApproveReplyMailAddressWithCallback(request *ApproveReplyMailAddressRequest, callback func(response *ApproveReplyMailAddressResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ApproveReplyMailAddressWithCallback(request *ApproveReplyM
 	return result
 }
 
+// ApproveReplyMailAddressRequest is the request struct for api ApproveReplyMailAddress
 type ApproveReplyMailAddressRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -81,13 +82,14 @@ type ApproveReplyMailAddressRequest struct {
 	Ticket               string           `position:"Query" name:"Ticket"`
 }
 
+// ApproveReplyMailAddressResponse is the response struct for api ApproveReplyMailAddress
 type ApproveReplyMailAddressResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ApproveReplyMailAddress API
-func CreateApproveReplyMailAddressRequest() (request *ApproveReplyMailAddressRequest) {
+// CreateApproveReplyMailAddressRequest creates a request to invoke ApproveReplyMailAddress API
+func CreateApproveReplyMailAddressRequest(request *ApproveReplyMailAddressRequest) {
 	request = &ApproveReplyMailAddressRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateApproveReplyMailAddressRequest() (request *ApproveReplyMailAddressReq
 	return
 }
 
-// create a response to parse from ApproveReplyMailAddress response
+// CreateApproveReplyMailAddressResponse creates a response to parse from ApproveReplyMailAddress response
 func CreateApproveReplyMailAddressResponse() (response *ApproveReplyMailAddressResponse) {
 	response = &ApproveReplyMailAddressResponse{
 		BaseResponse: &responses.BaseResponse{},

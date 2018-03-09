@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke AddNodes api with *AddNodesRequest synchronously
+// AddNodes invokes the ehpc.AddNodes API synchronously
 // api document: https://help.aliyun.com/api/ehpc/addnodes.html
 func (client *Client) AddNodes(request *AddNodesRequest) (response *AddNodesResponse, err error) {
 	response = CreateAddNodesResponse()
@@ -28,7 +28,7 @@ func (client *Client) AddNodes(request *AddNodesRequest) (response *AddNodesResp
 	return
 }
 
-// invoke AddNodes api with *AddNodesRequest asynchronously
+// AddNodesWithChan invokes the ehpc.AddNodes API asynchronously
 // api document: https://help.aliyun.com/api/ehpc/addnodes.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddNodesWithChan(request *AddNodesRequest) (<-chan *AddNodesResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) AddNodesWithChan(request *AddNodesRequest) (<-chan *AddNod
 	return responseChan, errChan
 }
 
-// invoke AddNodes api with *AddNodesRequest asynchronously
+// AddNodesWithCallback invokes the ehpc.AddNodes API asynchronously
 // api document: https://help.aliyun.com/api/ehpc/addnodes.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddNodesWithCallback(request *AddNodesRequest, callback func(response *AddNodesResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) AddNodesWithCallback(request *AddNodesRequest, callback fu
 	return result
 }
 
+// AddNodesRequest is the request struct for api AddNodes
 type AddNodesRequest struct {
 	*requests.RpcRequest
 	ClusterId             string           `position:"Query" name:"ClusterId"`
@@ -83,14 +84,15 @@ type AddNodesRequest struct {
 	ComputeSpotPriceLimit string           `position:"Query" name:"ComputeSpotPriceLimit"`
 }
 
+// AddNodesResponse is the response struct for api AddNodes
 type AddNodesResponse struct {
 	*responses.BaseResponse
 	RequestId   string      `json:"RequestId" xml:"RequestId"`
 	InstanceIds InstanceIds `json:"InstanceIds" xml:"InstanceIds"`
 }
 
-// create a request to invoke AddNodes API
-func CreateAddNodesRequest() (request *AddNodesRequest) {
+// CreateAddNodesRequest creates a request to invoke AddNodes API
+func CreateAddNodesRequest(request *AddNodesRequest) {
 	request = &AddNodesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateAddNodesRequest() (request *AddNodesRequest) {
 	return
 }
 
-// create a response to parse from AddNodes response
+// CreateAddNodesResponse creates a response to parse from AddNodes response
 func CreateAddNodesResponse() (response *AddNodesResponse) {
 	response = &AddNodesResponse{
 		BaseResponse: &responses.BaseResponse{},

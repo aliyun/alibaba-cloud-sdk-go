@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ListAsrPipeline api with *ListAsrPipelineRequest synchronously
+// ListAsrPipeline invokes the mts.ListAsrPipeline API synchronously
 // api document: https://help.aliyun.com/api/mts/listasrpipeline.html
 func (client *Client) ListAsrPipeline(request *ListAsrPipelineRequest) (response *ListAsrPipelineResponse, err error) {
 	response = CreateListAsrPipelineResponse()
@@ -28,7 +28,7 @@ func (client *Client) ListAsrPipeline(request *ListAsrPipelineRequest) (response
 	return
 }
 
-// invoke ListAsrPipeline api with *ListAsrPipelineRequest asynchronously
+// ListAsrPipelineWithChan invokes the mts.ListAsrPipeline API asynchronously
 // api document: https://help.aliyun.com/api/mts/listasrpipeline.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAsrPipelineWithChan(request *ListAsrPipelineRequest) (<-chan *ListAsrPipelineResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ListAsrPipelineWithChan(request *ListAsrPipelineRequest) (
 	return responseChan, errChan
 }
 
-// invoke ListAsrPipeline api with *ListAsrPipelineRequest asynchronously
+// ListAsrPipelineWithCallback invokes the mts.ListAsrPipeline API asynchronously
 // api document: https://help.aliyun.com/api/mts/listasrpipeline.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAsrPipelineWithCallback(request *ListAsrPipelineRequest, callback func(response *ListAsrPipelineResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ListAsrPipelineWithCallback(request *ListAsrPipelineReques
 	return result
 }
 
+// ListAsrPipelineRequest is the request struct for api ListAsrPipeline
 type ListAsrPipelineRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,6 +85,7 @@ type ListAsrPipelineRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// ListAsrPipelineResponse is the response struct for api ListAsrPipeline
 type ListAsrPipelineResponse struct {
 	*responses.BaseResponse
 	RequestId    string                        `json:"RequestId" xml:"RequestId"`
@@ -93,8 +95,8 @@ type ListAsrPipelineResponse struct {
 	PipelineList PipelineListInListAsrPipeline `json:"PipelineList" xml:"PipelineList"`
 }
 
-// create a request to invoke ListAsrPipeline API
-func CreateListAsrPipelineRequest() (request *ListAsrPipelineRequest) {
+// CreateListAsrPipelineRequest creates a request to invoke ListAsrPipeline API
+func CreateListAsrPipelineRequest(request *ListAsrPipelineRequest) {
 	request = &ListAsrPipelineRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -102,7 +104,7 @@ func CreateListAsrPipelineRequest() (request *ListAsrPipelineRequest) {
 	return
 }
 
-// create a response to parse from ListAsrPipeline response
+// CreateListAsrPipelineResponse creates a response to parse from ListAsrPipeline response
 func CreateListAsrPipelineResponse() (response *ListAsrPipelineResponse) {
 	response = &ListAsrPipelineResponse{
 		BaseResponse: &responses.BaseResponse{},

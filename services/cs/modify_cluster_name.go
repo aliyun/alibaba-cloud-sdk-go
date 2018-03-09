@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifyClusterName api with *ModifyClusterNameRequest synchronously
+// ModifyClusterName invokes the cs.ModifyClusterName API synchronously
 // api document: https://help.aliyun.com/api/cs/modifyclustername.html
 func (client *Client) ModifyClusterName(request *ModifyClusterNameRequest) (response *ModifyClusterNameResponse, err error) {
 	response = CreateModifyClusterNameResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifyClusterName(request *ModifyClusterNameRequest) (resp
 	return
 }
 
-// invoke ModifyClusterName api with *ModifyClusterNameRequest asynchronously
+// ModifyClusterNameWithChan invokes the cs.ModifyClusterName API asynchronously
 // api document: https://help.aliyun.com/api/cs/modifyclustername.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyClusterNameWithChan(request *ModifyClusterNameRequest) (<-chan *ModifyClusterNameResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifyClusterNameWithChan(request *ModifyClusterNameReques
 	return responseChan, errChan
 }
 
-// invoke ModifyClusterName api with *ModifyClusterNameRequest asynchronously
+// ModifyClusterNameWithCallback invokes the cs.ModifyClusterName API asynchronously
 // api document: https://help.aliyun.com/api/cs/modifyclustername.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyClusterNameWithCallback(request *ModifyClusterNameRequest, callback func(response *ModifyClusterNameResponse, err error)) <-chan int {
@@ -73,16 +73,18 @@ func (client *Client) ModifyClusterNameWithCallback(request *ModifyClusterNameRe
 	return result
 }
 
+// ModifyClusterNameRequest is the request struct for api ModifyClusterName
 type ModifyClusterNameRequest struct {
 	*requests.RoaRequest
 }
 
+// ModifyClusterNameResponse is the response struct for api ModifyClusterName
 type ModifyClusterNameResponse struct {
 	*responses.BaseResponse
 }
 
-// create a request to invoke ModifyClusterName API
-func CreateModifyClusterNameRequest() (request *ModifyClusterNameRequest) {
+// CreateModifyClusterNameRequest creates a request to invoke ModifyClusterName API
+func CreateModifyClusterNameRequest(request *ModifyClusterNameRequest) {
 	request = &ModifyClusterNameRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
@@ -91,7 +93,7 @@ func CreateModifyClusterNameRequest() (request *ModifyClusterNameRequest) {
 	return
 }
 
-// create a response to parse from ModifyClusterName response
+// CreateModifyClusterNameResponse creates a response to parse from ModifyClusterName response
 func CreateModifyClusterNameResponse() (response *ModifyClusterNameResponse) {
 	response = &ModifyClusterNameResponse{
 		BaseResponse: &responses.BaseResponse{},

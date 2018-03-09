@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DetachPolicyFromGroup api with *DetachPolicyFromGroupRequest synchronously
+// DetachPolicyFromGroup invokes the ram.DetachPolicyFromGroup API synchronously
 // api document: https://help.aliyun.com/api/ram/detachpolicyfromgroup.html
 func (client *Client) DetachPolicyFromGroup(request *DetachPolicyFromGroupRequest) (response *DetachPolicyFromGroupResponse, err error) {
 	response = CreateDetachPolicyFromGroupResponse()
@@ -28,7 +28,7 @@ func (client *Client) DetachPolicyFromGroup(request *DetachPolicyFromGroupReques
 	return
 }
 
-// invoke DetachPolicyFromGroup api with *DetachPolicyFromGroupRequest asynchronously
+// DetachPolicyFromGroupWithChan invokes the ram.DetachPolicyFromGroup API asynchronously
 // api document: https://help.aliyun.com/api/ram/detachpolicyfromgroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetachPolicyFromGroupWithChan(request *DetachPolicyFromGroupRequest) (<-chan *DetachPolicyFromGroupResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DetachPolicyFromGroupWithChan(request *DetachPolicyFromGro
 	return responseChan, errChan
 }
 
-// invoke DetachPolicyFromGroup api with *DetachPolicyFromGroupRequest asynchronously
+// DetachPolicyFromGroupWithCallback invokes the ram.DetachPolicyFromGroup API asynchronously
 // api document: https://help.aliyun.com/api/ram/detachpolicyfromgroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetachPolicyFromGroupWithCallback(request *DetachPolicyFromGroupRequest, callback func(response *DetachPolicyFromGroupResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DetachPolicyFromGroupWithCallback(request *DetachPolicyFro
 	return result
 }
 
+// DetachPolicyFromGroupRequest is the request struct for api DetachPolicyFromGroup
 type DetachPolicyFromGroupRequest struct {
 	*requests.RpcRequest
 	PolicyType string `position:"Query" name:"PolicyType"`
@@ -80,13 +81,14 @@ type DetachPolicyFromGroupRequest struct {
 	GroupName  string `position:"Query" name:"GroupName"`
 }
 
+// DetachPolicyFromGroupResponse is the response struct for api DetachPolicyFromGroup
 type DetachPolicyFromGroupResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DetachPolicyFromGroup API
-func CreateDetachPolicyFromGroupRequest() (request *DetachPolicyFromGroupRequest) {
+// CreateDetachPolicyFromGroupRequest creates a request to invoke DetachPolicyFromGroup API
+func CreateDetachPolicyFromGroupRequest(request *DetachPolicyFromGroupRequest) {
 	request = &DetachPolicyFromGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -94,7 +96,7 @@ func CreateDetachPolicyFromGroupRequest() (request *DetachPolicyFromGroupRequest
 	return
 }
 
-// create a response to parse from DetachPolicyFromGroup response
+// CreateDetachPolicyFromGroupResponse creates a response to parse from DetachPolicyFromGroup response
 func CreateDetachPolicyFromGroupResponse() (response *DetachPolicyFromGroupResponse) {
 	response = &DetachPolicyFromGroupResponse{
 		BaseResponse: &responses.BaseResponse{},

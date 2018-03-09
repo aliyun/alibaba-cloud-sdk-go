@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeDNSSLBSubDomains api with *DescribeDNSSLBSubDomainsRequest synchronously
+// DescribeDNSSLBSubDomains invokes the alidns.DescribeDNSSLBSubDomains API synchronously
 // api document: https://help.aliyun.com/api/alidns/describednsslbsubdomains.html
 func (client *Client) DescribeDNSSLBSubDomains(request *DescribeDNSSLBSubDomainsRequest) (response *DescribeDNSSLBSubDomainsResponse, err error) {
 	response = CreateDescribeDNSSLBSubDomainsResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeDNSSLBSubDomains(request *DescribeDNSSLBSubDomains
 	return
 }
 
-// invoke DescribeDNSSLBSubDomains api with *DescribeDNSSLBSubDomainsRequest asynchronously
+// DescribeDNSSLBSubDomainsWithChan invokes the alidns.DescribeDNSSLBSubDomains API asynchronously
 // api document: https://help.aliyun.com/api/alidns/describednsslbsubdomains.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDNSSLBSubDomainsWithChan(request *DescribeDNSSLBSubDomainsRequest) (<-chan *DescribeDNSSLBSubDomainsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeDNSSLBSubDomainsWithChan(request *DescribeDNSSLBSu
 	return responseChan, errChan
 }
 
-// invoke DescribeDNSSLBSubDomains api with *DescribeDNSSLBSubDomainsRequest asynchronously
+// DescribeDNSSLBSubDomainsWithCallback invokes the alidns.DescribeDNSSLBSubDomains API asynchronously
 // api document: https://help.aliyun.com/api/alidns/describednsslbsubdomains.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDNSSLBSubDomainsWithCallback(request *DescribeDNSSLBSubDomainsRequest, callback func(response *DescribeDNSSLBSubDomainsResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeDNSSLBSubDomainsWithCallback(request *DescribeDNSS
 	return result
 }
 
+// DescribeDNSSLBSubDomainsRequest is the request struct for api DescribeDNSSLBSubDomains
 type DescribeDNSSLBSubDomainsRequest struct {
 	*requests.RpcRequest
 	Lang         string           `position:"Query" name:"Lang"`
@@ -82,6 +83,7 @@ type DescribeDNSSLBSubDomainsRequest struct {
 	PageSize     requests.Integer `position:"Query" name:"PageSize"`
 }
 
+// DescribeDNSSLBSubDomainsResponse is the response struct for api DescribeDNSSLBSubDomains
 type DescribeDNSSLBSubDomainsResponse struct {
 	*responses.BaseResponse
 	RequestId     string        `json:"RequestId" xml:"RequestId"`
@@ -91,8 +93,8 @@ type DescribeDNSSLBSubDomainsResponse struct {
 	SlbSubDomains SlbSubDomains `json:"SlbSubDomains" xml:"SlbSubDomains"`
 }
 
-// create a request to invoke DescribeDNSSLBSubDomains API
-func CreateDescribeDNSSLBSubDomainsRequest() (request *DescribeDNSSLBSubDomainsRequest) {
+// CreateDescribeDNSSLBSubDomainsRequest creates a request to invoke DescribeDNSSLBSubDomains API
+func CreateDescribeDNSSLBSubDomainsRequest(request *DescribeDNSSLBSubDomainsRequest) {
 	request = &DescribeDNSSLBSubDomainsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -100,7 +102,7 @@ func CreateDescribeDNSSLBSubDomainsRequest() (request *DescribeDNSSLBSubDomainsR
 	return
 }
 
-// create a response to parse from DescribeDNSSLBSubDomains response
+// CreateDescribeDNSSLBSubDomainsResponse creates a response to parse from DescribeDNSSLBSubDomains response
 func CreateDescribeDNSSLBSubDomainsResponse() (response *DescribeDNSSLBSubDomainsResponse) {
 	response = &DescribeDNSSLBSubDomainsResponse{
 		BaseResponse: &responses.BaseResponse{},

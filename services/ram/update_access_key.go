@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke UpdateAccessKey api with *UpdateAccessKeyRequest synchronously
+// UpdateAccessKey invokes the ram.UpdateAccessKey API synchronously
 // api document: https://help.aliyun.com/api/ram/updateaccesskey.html
 func (client *Client) UpdateAccessKey(request *UpdateAccessKeyRequest) (response *UpdateAccessKeyResponse, err error) {
 	response = CreateUpdateAccessKeyResponse()
@@ -28,7 +28,7 @@ func (client *Client) UpdateAccessKey(request *UpdateAccessKeyRequest) (response
 	return
 }
 
-// invoke UpdateAccessKey api with *UpdateAccessKeyRequest asynchronously
+// UpdateAccessKeyWithChan invokes the ram.UpdateAccessKey API asynchronously
 // api document: https://help.aliyun.com/api/ram/updateaccesskey.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateAccessKeyWithChan(request *UpdateAccessKeyRequest) (<-chan *UpdateAccessKeyResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) UpdateAccessKeyWithChan(request *UpdateAccessKeyRequest) (
 	return responseChan, errChan
 }
 
-// invoke UpdateAccessKey api with *UpdateAccessKeyRequest asynchronously
+// UpdateAccessKeyWithCallback invokes the ram.UpdateAccessKey API asynchronously
 // api document: https://help.aliyun.com/api/ram/updateaccesskey.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateAccessKeyWithCallback(request *UpdateAccessKeyRequest, callback func(response *UpdateAccessKeyResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) UpdateAccessKeyWithCallback(request *UpdateAccessKeyReques
 	return result
 }
 
+// UpdateAccessKeyRequest is the request struct for api UpdateAccessKey
 type UpdateAccessKeyRequest struct {
 	*requests.RpcRequest
 	UserName        string `position:"Query" name:"UserName"`
@@ -80,13 +81,14 @@ type UpdateAccessKeyRequest struct {
 	Status          string `position:"Query" name:"Status"`
 }
 
+// UpdateAccessKeyResponse is the response struct for api UpdateAccessKey
 type UpdateAccessKeyResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke UpdateAccessKey API
-func CreateUpdateAccessKeyRequest() (request *UpdateAccessKeyRequest) {
+// CreateUpdateAccessKeyRequest creates a request to invoke UpdateAccessKey API
+func CreateUpdateAccessKeyRequest(request *UpdateAccessKeyRequest) {
 	request = &UpdateAccessKeyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -94,7 +96,7 @@ func CreateUpdateAccessKeyRequest() (request *UpdateAccessKeyRequest) {
 	return
 }
 
-// create a response to parse from UpdateAccessKey response
+// CreateUpdateAccessKeyResponse creates a response to parse from UpdateAccessKey response
 func CreateUpdateAccessKeyResponse() (response *UpdateAccessKeyResponse) {
 	response = &UpdateAccessKeyResponse{
 		BaseResponse: &responses.BaseResponse{},

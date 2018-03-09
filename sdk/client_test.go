@@ -325,6 +325,7 @@ func getFtTestRpcRequestForEndpointLocation() (request *requests.RpcRequest) {
 	request.InitWithApiInfo("Ft", "2016-01-01", "TestRpcApi", "ft", "openAPI")
 	request.RegionId = "ft-cn-hangzhou"
 	request.QueryParams["QueryParam"] = "QueryParamValue"
+	request.Domain = "ft.aliyuncs.com"
 	return
 }
 
@@ -333,6 +334,7 @@ func getFtTestRpcRequestForEndpointXml() (request *requests.RpcRequest) {
 	request.InitWithApiInfo("Ft", "2016-01-01", "TestRpcApi", "", "")
 	request.RegionId = "cn-hangzhou"
 	request.QueryParams["QueryParam"] = "QueryParamValue"
+	request.Domain = "ft.aliyuncs.com"
 	return
 }
 

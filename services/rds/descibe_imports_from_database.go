@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescibeImportsFromDatabase api with *DescibeImportsFromDatabaseRequest synchronously
+// DescibeImportsFromDatabase invokes the rds.DescibeImportsFromDatabase API synchronously
 // api document: https://help.aliyun.com/api/rds/descibeimportsfromdatabase.html
 func (client *Client) DescibeImportsFromDatabase(request *DescibeImportsFromDatabaseRequest) (response *DescibeImportsFromDatabaseResponse, err error) {
 	response = CreateDescibeImportsFromDatabaseResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescibeImportsFromDatabase(request *DescibeImportsFromData
 	return
 }
 
-// invoke DescibeImportsFromDatabase api with *DescibeImportsFromDatabaseRequest asynchronously
+// DescibeImportsFromDatabaseWithChan invokes the rds.DescibeImportsFromDatabase API asynchronously
 // api document: https://help.aliyun.com/api/rds/descibeimportsfromdatabase.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescibeImportsFromDatabaseWithChan(request *DescibeImportsFromDatabaseRequest) (<-chan *DescibeImportsFromDatabaseResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescibeImportsFromDatabaseWithChan(request *DescibeImports
 	return responseChan, errChan
 }
 
-// invoke DescibeImportsFromDatabase api with *DescibeImportsFromDatabaseRequest asynchronously
+// DescibeImportsFromDatabaseWithCallback invokes the rds.DescibeImportsFromDatabase API asynchronously
 // api document: https://help.aliyun.com/api/rds/descibeimportsfromdatabase.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescibeImportsFromDatabaseWithCallback(request *DescibeImportsFromDatabaseRequest, callback func(response *DescibeImportsFromDatabaseResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescibeImportsFromDatabaseWithCallback(request *DescibeImp
 	return result
 }
 
+// DescibeImportsFromDatabaseRequest is the request struct for api DescibeImportsFromDatabase
 type DescibeImportsFromDatabaseRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -89,6 +90,7 @@ type DescibeImportsFromDatabaseRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// DescibeImportsFromDatabaseResponse is the response struct for api DescibeImportsFromDatabase
 type DescibeImportsFromDatabaseResponse struct {
 	*responses.BaseResponse
 	RequestId        string                            `json:"RequestId" xml:"RequestId"`
@@ -98,8 +100,8 @@ type DescibeImportsFromDatabaseResponse struct {
 	Items            ItemsInDescibeImportsFromDatabase `json:"Items" xml:"Items"`
 }
 
-// create a request to invoke DescibeImportsFromDatabase API
-func CreateDescibeImportsFromDatabaseRequest() (request *DescibeImportsFromDatabaseRequest) {
+// CreateDescibeImportsFromDatabaseRequest creates a request to invoke DescibeImportsFromDatabase API
+func CreateDescibeImportsFromDatabaseRequest(request *DescibeImportsFromDatabaseRequest) {
 	request = &DescibeImportsFromDatabaseRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -107,7 +109,7 @@ func CreateDescibeImportsFromDatabaseRequest() (request *DescibeImportsFromDatab
 	return
 }
 
-// create a response to parse from DescibeImportsFromDatabase response
+// CreateDescibeImportsFromDatabaseResponse creates a response to parse from DescibeImportsFromDatabase response
 func CreateDescibeImportsFromDatabaseResponse() (response *DescibeImportsFromDatabaseResponse) {
 	response = &DescibeImportsFromDatabaseResponse{
 		BaseResponse: &responses.BaseResponse{},

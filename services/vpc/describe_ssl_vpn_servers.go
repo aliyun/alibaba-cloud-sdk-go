@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeSslVpnServers api with *DescribeSslVpnServersRequest synchronously
+// DescribeSslVpnServers invokes the vpc.DescribeSslVpnServers API synchronously
 // api document: https://help.aliyun.com/api/vpc/describesslvpnservers.html
 func (client *Client) DescribeSslVpnServers(request *DescribeSslVpnServersRequest) (response *DescribeSslVpnServersResponse, err error) {
 	response = CreateDescribeSslVpnServersResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeSslVpnServers(request *DescribeSslVpnServersReques
 	return
 }
 
-// invoke DescribeSslVpnServers api with *DescribeSslVpnServersRequest asynchronously
+// DescribeSslVpnServersWithChan invokes the vpc.DescribeSslVpnServers API asynchronously
 // api document: https://help.aliyun.com/api/vpc/describesslvpnservers.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSslVpnServersWithChan(request *DescribeSslVpnServersRequest) (<-chan *DescribeSslVpnServersResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeSslVpnServersWithChan(request *DescribeSslVpnServe
 	return responseChan, errChan
 }
 
-// invoke DescribeSslVpnServers api with *DescribeSslVpnServersRequest asynchronously
+// DescribeSslVpnServersWithCallback invokes the vpc.DescribeSslVpnServers API asynchronously
 // api document: https://help.aliyun.com/api/vpc/describesslvpnservers.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSslVpnServersWithCallback(request *DescribeSslVpnServersRequest, callback func(response *DescribeSslVpnServersResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeSslVpnServersWithCallback(request *DescribeSslVpnS
 	return result
 }
 
+// DescribeSslVpnServersRequest is the request struct for api DescribeSslVpnServers
 type DescribeSslVpnServersRequest struct {
 	*requests.RpcRequest
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
@@ -86,6 +87,7 @@ type DescribeSslVpnServersRequest struct {
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 }
 
+// DescribeSslVpnServersResponse is the response struct for api DescribeSslVpnServers
 type DescribeSslVpnServersResponse struct {
 	*responses.BaseResponse
 	RequestId     string        `json:"RequestId" xml:"RequestId"`
@@ -95,8 +97,8 @@ type DescribeSslVpnServersResponse struct {
 	SslVpnServers SslVpnServers `json:"SslVpnServers" xml:"SslVpnServers"`
 }
 
-// create a request to invoke DescribeSslVpnServers API
-func CreateDescribeSslVpnServersRequest() (request *DescribeSslVpnServersRequest) {
+// CreateDescribeSslVpnServersRequest creates a request to invoke DescribeSslVpnServers API
+func CreateDescribeSslVpnServersRequest(request *DescribeSslVpnServersRequest) {
 	request = &DescribeSslVpnServersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -104,7 +106,7 @@ func CreateDescribeSslVpnServersRequest() (request *DescribeSslVpnServersRequest
 	return
 }
 
-// create a response to parse from DescribeSslVpnServers response
+// CreateDescribeSslVpnServersResponse creates a response to parse from DescribeSslVpnServers response
 func CreateDescribeSslVpnServersResponse() (response *DescribeSslVpnServersResponse) {
 	response = &DescribeSslVpnServersResponse{
 		BaseResponse: &responses.BaseResponse{},

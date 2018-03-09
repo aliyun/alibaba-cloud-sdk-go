@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CreateScheduledTask api with *CreateScheduledTaskRequest synchronously
+// CreateScheduledTask invokes the ess.CreateScheduledTask API synchronously
 // api document: https://help.aliyun.com/api/ess/createscheduledtask.html
 func (client *Client) CreateScheduledTask(request *CreateScheduledTaskRequest) (response *CreateScheduledTaskResponse, err error) {
 	response = CreateCreateScheduledTaskResponse()
@@ -28,7 +28,7 @@ func (client *Client) CreateScheduledTask(request *CreateScheduledTaskRequest) (
 	return
 }
 
-// invoke CreateScheduledTask api with *CreateScheduledTaskRequest asynchronously
+// CreateScheduledTaskWithChan invokes the ess.CreateScheduledTask API asynchronously
 // api document: https://help.aliyun.com/api/ess/createscheduledtask.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateScheduledTaskWithChan(request *CreateScheduledTaskRequest) (<-chan *CreateScheduledTaskResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CreateScheduledTaskWithChan(request *CreateScheduledTaskRe
 	return responseChan, errChan
 }
 
-// invoke CreateScheduledTask api with *CreateScheduledTaskRequest asynchronously
+// CreateScheduledTaskWithCallback invokes the ess.CreateScheduledTask API asynchronously
 // api document: https://help.aliyun.com/api/ess/createscheduledtask.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateScheduledTaskWithCallback(request *CreateScheduledTaskRequest, callback func(response *CreateScheduledTaskResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) CreateScheduledTaskWithCallback(request *CreateScheduledTa
 	return result
 }
 
+// CreateScheduledTaskRequest is the request struct for api CreateScheduledTask
 type CreateScheduledTaskRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -89,14 +90,15 @@ type CreateScheduledTaskRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// CreateScheduledTaskResponse is the response struct for api CreateScheduledTask
 type CreateScheduledTaskResponse struct {
 	*responses.BaseResponse
 	ScheduledTaskId string `json:"ScheduledTaskId" xml:"ScheduledTaskId"`
 	RequestId       string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke CreateScheduledTask API
-func CreateCreateScheduledTaskRequest() (request *CreateScheduledTaskRequest) {
+// CreateCreateScheduledTaskRequest creates a request to invoke CreateScheduledTask API
+func CreateCreateScheduledTaskRequest(request *CreateScheduledTaskRequest) {
 	request = &CreateScheduledTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -104,7 +106,7 @@ func CreateCreateScheduledTaskRequest() (request *CreateScheduledTaskRequest) {
 	return
 }
 
-// create a response to parse from CreateScheduledTask response
+// CreateCreateScheduledTaskResponse creates a response to parse from CreateScheduledTask response
 func CreateCreateScheduledTaskResponse() (response *CreateScheduledTaskResponse) {
 	response = &CreateScheduledTaskResponse{
 		BaseResponse: &responses.BaseResponse{},

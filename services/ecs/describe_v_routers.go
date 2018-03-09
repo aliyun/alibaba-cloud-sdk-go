@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeVRouters api with *DescribeVRoutersRequest synchronously
+// DescribeVRouters invokes the ecs.DescribeVRouters API synchronously
 // api document: https://help.aliyun.com/api/ecs/describevrouters.html
 func (client *Client) DescribeVRouters(request *DescribeVRoutersRequest) (response *DescribeVRoutersResponse, err error) {
 	response = CreateDescribeVRoutersResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeVRouters(request *DescribeVRoutersRequest) (respon
 	return
 }
 
-// invoke DescribeVRouters api with *DescribeVRoutersRequest asynchronously
+// DescribeVRoutersWithChan invokes the ecs.DescribeVRouters API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describevrouters.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeVRoutersWithChan(request *DescribeVRoutersRequest) (<-chan *DescribeVRoutersResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeVRoutersWithChan(request *DescribeVRoutersRequest)
 	return responseChan, errChan
 }
 
-// invoke DescribeVRouters api with *DescribeVRoutersRequest asynchronously
+// DescribeVRoutersWithCallback invokes the ecs.DescribeVRouters API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describevrouters.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeVRoutersWithCallback(request *DescribeVRoutersRequest, callback func(response *DescribeVRoutersResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeVRoutersWithCallback(request *DescribeVRoutersRequ
 	return result
 }
 
+// DescribeVRoutersRequest is the request struct for api DescribeVRouters
 type DescribeVRoutersRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,6 +85,7 @@ type DescribeVRoutersRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// DescribeVRoutersResponse is the response struct for api DescribeVRouters
 type DescribeVRoutersResponse struct {
 	*responses.BaseResponse
 	RequestId  string   `json:"RequestId" xml:"RequestId"`
@@ -93,8 +95,8 @@ type DescribeVRoutersResponse struct {
 	VRouters   VRouters `json:"VRouters" xml:"VRouters"`
 }
 
-// create a request to invoke DescribeVRouters API
-func CreateDescribeVRoutersRequest() (request *DescribeVRoutersRequest) {
+// CreateDescribeVRoutersRequest creates a request to invoke DescribeVRouters API
+func CreateDescribeVRoutersRequest(request *DescribeVRoutersRequest) {
 	request = &DescribeVRoutersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -102,7 +104,7 @@ func CreateDescribeVRoutersRequest() (request *DescribeVRoutersRequest) {
 	return
 }
 
-// create a response to parse from DescribeVRouters response
+// CreateDescribeVRoutersResponse creates a response to parse from DescribeVRouters response
 func CreateDescribeVRoutersResponse() (response *DescribeVRoutersResponse) {
 	response = &DescribeVRoutersResponse{
 		BaseResponse: &responses.BaseResponse{},

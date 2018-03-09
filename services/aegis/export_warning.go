@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ExportWarning api with *ExportWarningRequest synchronously
+// ExportWarning invokes the aegis.ExportWarning API synchronously
 // api document: https://help.aliyun.com/api/aegis/exportwarning.html
 func (client *Client) ExportWarning(request *ExportWarningRequest) (response *ExportWarningResponse, err error) {
 	response = CreateExportWarningResponse()
@@ -28,7 +28,7 @@ func (client *Client) ExportWarning(request *ExportWarningRequest) (response *Ex
 	return
 }
 
-// invoke ExportWarning api with *ExportWarningRequest asynchronously
+// ExportWarningWithChan invokes the aegis.ExportWarning API asynchronously
 // api document: https://help.aliyun.com/api/aegis/exportwarning.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ExportWarningWithChan(request *ExportWarningRequest) (<-chan *ExportWarningResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ExportWarningWithChan(request *ExportWarningRequest) (<-ch
 	return responseChan, errChan
 }
 
-// invoke ExportWarning api with *ExportWarningRequest asynchronously
+// ExportWarningWithCallback invokes the aegis.ExportWarning API asynchronously
 // api document: https://help.aliyun.com/api/aegis/exportwarning.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ExportWarningWithCallback(request *ExportWarningRequest, callback func(response *ExportWarningResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ExportWarningWithCallback(request *ExportWarningRequest, c
 	return result
 }
 
+// ExportWarningRequest is the request struct for api ExportWarning
 type ExportWarningRequest struct {
 	*requests.RpcRequest
 	SourceIp        string           `position:"Query" name:"SourceIp"`
@@ -88,6 +89,7 @@ type ExportWarningRequest struct {
 	StrategyId      requests.Integer `position:"Query" name:"StrategyId"`
 }
 
+// ExportWarningResponse is the response struct for api ExportWarning
 type ExportWarningResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
@@ -95,8 +97,8 @@ type ExportWarningResponse struct {
 	FileName  string `json:"FileName" xml:"FileName"`
 }
 
-// create a request to invoke ExportWarning API
-func CreateExportWarningRequest() (request *ExportWarningRequest) {
+// CreateExportWarningRequest creates a request to invoke ExportWarning API
+func CreateExportWarningRequest(request *ExportWarningRequest) {
 	request = &ExportWarningRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -104,7 +106,7 @@ func CreateExportWarningRequest() (request *ExportWarningRequest) {
 	return
 }
 
-// create a response to parse from ExportWarning response
+// CreateExportWarningResponse creates a response to parse from ExportWarning response
 func CreateExportWarningResponse() (response *ExportWarningResponse) {
 	response = &ExportWarningResponse{
 		BaseResponse: &responses.BaseResponse{},

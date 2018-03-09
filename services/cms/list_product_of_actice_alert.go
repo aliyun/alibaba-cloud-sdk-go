@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ListProductOfActiceAlert api with *ListProductOfActiceAlertRequest synchronously
+// ListProductOfActiceAlert invokes the cms.ListProductOfActiceAlert API synchronously
 // api document: https://help.aliyun.com/api/cms/listproductofacticealert.html
 func (client *Client) ListProductOfActiceAlert(request *ListProductOfActiceAlertRequest) (response *ListProductOfActiceAlertResponse, err error) {
 	response = CreateListProductOfActiceAlertResponse()
@@ -28,7 +28,7 @@ func (client *Client) ListProductOfActiceAlert(request *ListProductOfActiceAlert
 	return
 }
 
-// invoke ListProductOfActiceAlert api with *ListProductOfActiceAlertRequest asynchronously
+// ListProductOfActiceAlertWithChan invokes the cms.ListProductOfActiceAlert API asynchronously
 // api document: https://help.aliyun.com/api/cms/listproductofacticealert.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListProductOfActiceAlertWithChan(request *ListProductOfActiceAlertRequest) (<-chan *ListProductOfActiceAlertResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ListProductOfActiceAlertWithChan(request *ListProductOfAct
 	return responseChan, errChan
 }
 
-// invoke ListProductOfActiceAlert api with *ListProductOfActiceAlertRequest asynchronously
+// ListProductOfActiceAlertWithCallback invokes the cms.ListProductOfActiceAlert API asynchronously
 // api document: https://help.aliyun.com/api/cms/listproductofacticealert.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListProductOfActiceAlertWithCallback(request *ListProductOfActiceAlertRequest, callback func(response *ListProductOfActiceAlertResponse, err error)) <-chan int {
@@ -73,11 +73,13 @@ func (client *Client) ListProductOfActiceAlertWithCallback(request *ListProductO
 	return result
 }
 
+// ListProductOfActiceAlertRequest is the request struct for api ListProductOfActiceAlert
 type ListProductOfActiceAlertRequest struct {
 	*requests.RpcRequest
 	UserId string `position:"Query" name:"UserId"`
 }
 
+// ListProductOfActiceAlertResponse is the response struct for api ListProductOfActiceAlert
 type ListProductOfActiceAlertResponse struct {
 	*responses.BaseResponse
 	RequestId  string `json:"RequestId" xml:"RequestId"`
@@ -87,8 +89,8 @@ type ListProductOfActiceAlertResponse struct {
 	Datapoints string `json:"Datapoints" xml:"Datapoints"`
 }
 
-// create a request to invoke ListProductOfActiceAlert API
-func CreateListProductOfActiceAlertRequest() (request *ListProductOfActiceAlertRequest) {
+// CreateListProductOfActiceAlertRequest creates a request to invoke ListProductOfActiceAlert API
+func CreateListProductOfActiceAlertRequest(request *ListProductOfActiceAlertRequest) {
 	request = &ListProductOfActiceAlertRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -96,7 +98,7 @@ func CreateListProductOfActiceAlertRequest() (request *ListProductOfActiceAlertR
 	return
 }
 
-// create a response to parse from ListProductOfActiceAlert response
+// CreateListProductOfActiceAlertResponse creates a response to parse from ListProductOfActiceAlert response
 func CreateListProductOfActiceAlertResponse() (response *ListProductOfActiceAlertResponse) {
 	response = &ListProductOfActiceAlertResponse{
 		BaseResponse: &responses.BaseResponse{},

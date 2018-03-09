@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SubmitEmailVerification api with *SubmitEmailVerificationRequest synchronously
+// SubmitEmailVerification invokes the domain_intl.SubmitEmailVerification API synchronously
 // api document: https://help.aliyun.com/api/domain-intl/submitemailverification.html
 func (client *Client) SubmitEmailVerification(request *SubmitEmailVerificationRequest) (response *SubmitEmailVerificationResponse, err error) {
 	response = CreateSubmitEmailVerificationResponse()
@@ -28,7 +28,7 @@ func (client *Client) SubmitEmailVerification(request *SubmitEmailVerificationRe
 	return
 }
 
-// invoke SubmitEmailVerification api with *SubmitEmailVerificationRequest asynchronously
+// SubmitEmailVerificationWithChan invokes the domain_intl.SubmitEmailVerification API asynchronously
 // api document: https://help.aliyun.com/api/domain-intl/submitemailverification.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitEmailVerificationWithChan(request *SubmitEmailVerificationRequest) (<-chan *SubmitEmailVerificationResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SubmitEmailVerificationWithChan(request *SubmitEmailVerifi
 	return responseChan, errChan
 }
 
-// invoke SubmitEmailVerification api with *SubmitEmailVerificationRequest asynchronously
+// SubmitEmailVerificationWithCallback invokes the domain_intl.SubmitEmailVerification API asynchronously
 // api document: https://help.aliyun.com/api/domain-intl/submitemailverification.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitEmailVerificationWithCallback(request *SubmitEmailVerificationRequest, callback func(response *SubmitEmailVerificationResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SubmitEmailVerificationWithCallback(request *SubmitEmailVe
 	return result
 }
 
+// SubmitEmailVerificationRequest is the request struct for api SubmitEmailVerification
 type SubmitEmailVerificationRequest struct {
 	*requests.RpcRequest
 	Lang         string           `position:"Query" name:"Lang"`
@@ -81,6 +82,7 @@ type SubmitEmailVerificationRequest struct {
 	UserClientIp string           `position:"Query" name:"UserClientIp"`
 }
 
+// SubmitEmailVerificationResponse is the response struct for api SubmitEmailVerification
 type SubmitEmailVerificationResponse struct {
 	*responses.BaseResponse
 	RequestId   string       `json:"RequestId" xml:"RequestId"`
@@ -89,8 +91,8 @@ type SubmitEmailVerificationResponse struct {
 	ExistList   []SendResult `json:"ExistList" xml:"ExistList"`
 }
 
-// create a request to invoke SubmitEmailVerification API
-func CreateSubmitEmailVerificationRequest() (request *SubmitEmailVerificationRequest) {
+// CreateSubmitEmailVerificationRequest creates a request to invoke SubmitEmailVerification API
+func CreateSubmitEmailVerificationRequest(request *SubmitEmailVerificationRequest) {
 	request = &SubmitEmailVerificationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateSubmitEmailVerificationRequest() (request *SubmitEmailVerificationReq
 	return
 }
 
-// create a response to parse from SubmitEmailVerification response
+// CreateSubmitEmailVerificationResponse creates a response to parse from SubmitEmailVerification response
 func CreateSubmitEmailVerificationResponse() (response *SubmitEmailVerificationResponse) {
 	response = &SubmitEmailVerificationResponse{
 		BaseResponse: &responses.BaseResponse{},

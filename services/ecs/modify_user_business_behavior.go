@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifyUserBusinessBehavior api with *ModifyUserBusinessBehaviorRequest synchronously
+// ModifyUserBusinessBehavior invokes the ecs.ModifyUserBusinessBehavior API synchronously
 // api document: https://help.aliyun.com/api/ecs/modifyuserbusinessbehavior.html
 func (client *Client) ModifyUserBusinessBehavior(request *ModifyUserBusinessBehaviorRequest) (response *ModifyUserBusinessBehaviorResponse, err error) {
 	response = CreateModifyUserBusinessBehaviorResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifyUserBusinessBehavior(request *ModifyUserBusinessBeha
 	return
 }
 
-// invoke ModifyUserBusinessBehavior api with *ModifyUserBusinessBehaviorRequest asynchronously
+// ModifyUserBusinessBehaviorWithChan invokes the ecs.ModifyUserBusinessBehavior API asynchronously
 // api document: https://help.aliyun.com/api/ecs/modifyuserbusinessbehavior.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyUserBusinessBehaviorWithChan(request *ModifyUserBusinessBehaviorRequest) (<-chan *ModifyUserBusinessBehaviorResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifyUserBusinessBehaviorWithChan(request *ModifyUserBusi
 	return responseChan, errChan
 }
 
-// invoke ModifyUserBusinessBehavior api with *ModifyUserBusinessBehaviorRequest asynchronously
+// ModifyUserBusinessBehaviorWithCallback invokes the ecs.ModifyUserBusinessBehavior API asynchronously
 // api document: https://help.aliyun.com/api/ecs/modifyuserbusinessbehavior.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyUserBusinessBehaviorWithCallback(request *ModifyUserBusinessBehaviorRequest, callback func(response *ModifyUserBusinessBehaviorResponse, err error)) <-chan int {
@@ -73,17 +73,19 @@ func (client *Client) ModifyUserBusinessBehaviorWithCallback(request *ModifyUser
 	return result
 }
 
+// ModifyUserBusinessBehaviorRequest is the request struct for api ModifyUserBusinessBehavior
 type ModifyUserBusinessBehaviorRequest struct {
 	*requests.RpcRequest
 }
 
+// ModifyUserBusinessBehaviorResponse is the response struct for api ModifyUserBusinessBehavior
 type ModifyUserBusinessBehaviorResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ModifyUserBusinessBehavior API
-func CreateModifyUserBusinessBehaviorRequest() (request *ModifyUserBusinessBehaviorRequest) {
+// CreateModifyUserBusinessBehaviorRequest creates a request to invoke ModifyUserBusinessBehavior API
+func CreateModifyUserBusinessBehaviorRequest(request *ModifyUserBusinessBehaviorRequest) {
 	request = &ModifyUserBusinessBehaviorRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -91,7 +93,7 @@ func CreateModifyUserBusinessBehaviorRequest() (request *ModifyUserBusinessBehav
 	return
 }
 
-// create a response to parse from ModifyUserBusinessBehavior response
+// CreateModifyUserBusinessBehaviorResponse creates a response to parse from ModifyUserBusinessBehavior response
 func CreateModifyUserBusinessBehaviorResponse() (response *ModifyUserBusinessBehaviorResponse) {
 	response = &ModifyUserBusinessBehaviorResponse{
 		BaseResponse: &responses.BaseResponse{},

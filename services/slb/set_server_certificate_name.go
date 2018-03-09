@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SetServerCertificateName api with *SetServerCertificateNameRequest synchronously
+// SetServerCertificateName invokes the slb.SetServerCertificateName API synchronously
 // api document: https://help.aliyun.com/api/slb/setservercertificatename.html
 func (client *Client) SetServerCertificateName(request *SetServerCertificateNameRequest) (response *SetServerCertificateNameResponse, err error) {
 	response = CreateSetServerCertificateNameResponse()
@@ -28,7 +28,7 @@ func (client *Client) SetServerCertificateName(request *SetServerCertificateName
 	return
 }
 
-// invoke SetServerCertificateName api with *SetServerCertificateNameRequest asynchronously
+// SetServerCertificateNameWithChan invokes the slb.SetServerCertificateName API asynchronously
 // api document: https://help.aliyun.com/api/slb/setservercertificatename.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetServerCertificateNameWithChan(request *SetServerCertificateNameRequest) (<-chan *SetServerCertificateNameResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SetServerCertificateNameWithChan(request *SetServerCertifi
 	return responseChan, errChan
 }
 
-// invoke SetServerCertificateName api with *SetServerCertificateNameRequest asynchronously
+// SetServerCertificateNameWithCallback invokes the slb.SetServerCertificateName API asynchronously
 // api document: https://help.aliyun.com/api/slb/setservercertificatename.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetServerCertificateNameWithCallback(request *SetServerCertificateNameRequest, callback func(response *SetServerCertificateNameResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SetServerCertificateNameWithCallback(request *SetServerCer
 	return result
 }
 
+// SetServerCertificateNameRequest is the request struct for api SetServerCertificateName
 type SetServerCertificateNameRequest struct {
 	*requests.RpcRequest
 	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
@@ -85,13 +86,14 @@ type SetServerCertificateNameRequest struct {
 	Tags                  string           `position:"Query" name:"Tags"`
 }
 
+// SetServerCertificateNameResponse is the response struct for api SetServerCertificateName
 type SetServerCertificateNameResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke SetServerCertificateName API
-func CreateSetServerCertificateNameRequest() (request *SetServerCertificateNameRequest) {
+// CreateSetServerCertificateNameRequest creates a request to invoke SetServerCertificateName API
+func CreateSetServerCertificateNameRequest(request *SetServerCertificateNameRequest) {
 	request = &SetServerCertificateNameRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateSetServerCertificateNameRequest() (request *SetServerCertificateNameR
 	return
 }
 
-// create a response to parse from SetServerCertificateName response
+// CreateSetServerCertificateNameResponse creates a response to parse from SetServerCertificateName response
 func CreateSetServerCertificateNameResponse() (response *SetServerCertificateNameResponse) {
 	response = &SetServerCertificateNameResponse{
 		BaseResponse: &responses.BaseResponse{},

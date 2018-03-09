@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SingleSendSms api with *SingleSendSmsRequest synchronously
+// SingleSendSms invokes the dm.SingleSendSms API synchronously
 // api document: https://help.aliyun.com/api/dm/singlesendsms.html
 func (client *Client) SingleSendSms(request *SingleSendSmsRequest) (response *SingleSendSmsResponse, err error) {
 	response = CreateSingleSendSmsResponse()
@@ -28,7 +28,7 @@ func (client *Client) SingleSendSms(request *SingleSendSmsRequest) (response *Si
 	return
 }
 
-// invoke SingleSendSms api with *SingleSendSmsRequest asynchronously
+// SingleSendSmsWithChan invokes the dm.SingleSendSms API asynchronously
 // api document: https://help.aliyun.com/api/dm/singlesendsms.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SingleSendSmsWithChan(request *SingleSendSmsRequest) (<-chan *SingleSendSmsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SingleSendSmsWithChan(request *SingleSendSmsRequest) (<-ch
 	return responseChan, errChan
 }
 
-// invoke SingleSendSms api with *SingleSendSmsRequest asynchronously
+// SingleSendSmsWithCallback invokes the dm.SingleSendSms API asynchronously
 // api document: https://help.aliyun.com/api/dm/singlesendsms.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SingleSendSmsWithCallback(request *SingleSendSmsRequest, callback func(response *SingleSendSmsResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SingleSendSmsWithCallback(request *SingleSendSmsRequest, c
 	return result
 }
 
+// SingleSendSmsRequest is the request struct for api SingleSendSms
 type SingleSendSmsRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -85,13 +86,14 @@ type SingleSendSmsRequest struct {
 	Version              string           `position:"Query" name:"Version"`
 }
 
+// SingleSendSmsResponse is the response struct for api SingleSendSms
 type SingleSendSmsResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke SingleSendSms API
-func CreateSingleSendSmsRequest() (request *SingleSendSmsRequest) {
+// CreateSingleSendSmsRequest creates a request to invoke SingleSendSms API
+func CreateSingleSendSmsRequest(request *SingleSendSmsRequest) {
 	request = &SingleSendSmsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateSingleSendSmsRequest() (request *SingleSendSmsRequest) {
 	return
 }
 
-// create a response to parse from SingleSendSms response
+// CreateSingleSendSmsResponse creates a response to parse from SingleSendSms response
 func CreateSingleSendSmsResponse() (response *SingleSendSmsResponse) {
 	response = &SingleSendSmsResponse{
 		BaseResponse: &responses.BaseResponse{},

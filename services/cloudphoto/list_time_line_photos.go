@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ListTimeLinePhotos api with *ListTimeLinePhotosRequest synchronously
+// ListTimeLinePhotos invokes the cloudphoto.ListTimeLinePhotos API synchronously
 // api document: https://help.aliyun.com/api/cloudphoto/listtimelinephotos.html
 func (client *Client) ListTimeLinePhotos(request *ListTimeLinePhotosRequest) (response *ListTimeLinePhotosResponse, err error) {
 	response = CreateListTimeLinePhotosResponse()
@@ -28,7 +28,7 @@ func (client *Client) ListTimeLinePhotos(request *ListTimeLinePhotosRequest) (re
 	return
 }
 
-// invoke ListTimeLinePhotos api with *ListTimeLinePhotosRequest asynchronously
+// ListTimeLinePhotosWithChan invokes the cloudphoto.ListTimeLinePhotos API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/listtimelinephotos.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListTimeLinePhotosWithChan(request *ListTimeLinePhotosRequest) (<-chan *ListTimeLinePhotosResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ListTimeLinePhotosWithChan(request *ListTimeLinePhotosRequ
 	return responseChan, errChan
 }
 
-// invoke ListTimeLinePhotos api with *ListTimeLinePhotosRequest asynchronously
+// ListTimeLinePhotosWithCallback invokes the cloudphoto.ListTimeLinePhotos API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/listtimelinephotos.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListTimeLinePhotosWithCallback(request *ListTimeLinePhotosRequest, callback func(response *ListTimeLinePhotosResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ListTimeLinePhotosWithCallback(request *ListTimeLinePhotos
 	return result
 }
 
+// ListTimeLinePhotosRequest is the request struct for api ListTimeLinePhotos
 type ListTimeLinePhotosRequest struct {
 	*requests.RpcRequest
 	Direction string           `position:"Query" name:"Direction"`
@@ -86,6 +87,7 @@ type ListTimeLinePhotosRequest struct {
 	LibraryId string           `position:"Query" name:"LibraryId"`
 }
 
+// ListTimeLinePhotosResponse is the response struct for api ListTimeLinePhotos
 type ListTimeLinePhotosResponse struct {
 	*responses.BaseResponse
 	Code       string  `json:"Code" xml:"Code"`
@@ -96,8 +98,8 @@ type ListTimeLinePhotosResponse struct {
 	Photos     []Photo `json:"Photos" xml:"Photos"`
 }
 
-// create a request to invoke ListTimeLinePhotos API
-func CreateListTimeLinePhotosRequest() (request *ListTimeLinePhotosRequest) {
+// CreateListTimeLinePhotosRequest creates a request to invoke ListTimeLinePhotos API
+func CreateListTimeLinePhotosRequest(request *ListTimeLinePhotosRequest) {
 	request = &ListTimeLinePhotosRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -105,7 +107,7 @@ func CreateListTimeLinePhotosRequest() (request *ListTimeLinePhotosRequest) {
 	return
 }
 
-// create a response to parse from ListTimeLinePhotos response
+// CreateListTimeLinePhotosResponse creates a response to parse from ListTimeLinePhotos response
 func CreateListTimeLinePhotosResponse() (response *ListTimeLinePhotosResponse) {
 	response = &ListTimeLinePhotosResponse{
 		BaseResponse: &responses.BaseResponse{},

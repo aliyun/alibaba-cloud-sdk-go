@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke QuerySnapshotJobList api with *QuerySnapshotJobListRequest synchronously
+// QuerySnapshotJobList invokes the mts.QuerySnapshotJobList API synchronously
 // api document: https://help.aliyun.com/api/mts/querysnapshotjoblist.html
 func (client *Client) QuerySnapshotJobList(request *QuerySnapshotJobListRequest) (response *QuerySnapshotJobListResponse, err error) {
 	response = CreateQuerySnapshotJobListResponse()
@@ -28,7 +28,7 @@ func (client *Client) QuerySnapshotJobList(request *QuerySnapshotJobListRequest)
 	return
 }
 
-// invoke QuerySnapshotJobList api with *QuerySnapshotJobListRequest asynchronously
+// QuerySnapshotJobListWithChan invokes the mts.QuerySnapshotJobList API asynchronously
 // api document: https://help.aliyun.com/api/mts/querysnapshotjoblist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QuerySnapshotJobListWithChan(request *QuerySnapshotJobListRequest) (<-chan *QuerySnapshotJobListResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) QuerySnapshotJobListWithChan(request *QuerySnapshotJobList
 	return responseChan, errChan
 }
 
-// invoke QuerySnapshotJobList api with *QuerySnapshotJobListRequest asynchronously
+// QuerySnapshotJobListWithCallback invokes the mts.QuerySnapshotJobList API asynchronously
 // api document: https://help.aliyun.com/api/mts/querysnapshotjoblist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QuerySnapshotJobListWithCallback(request *QuerySnapshotJobListRequest, callback func(response *QuerySnapshotJobListResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) QuerySnapshotJobListWithCallback(request *QuerySnapshotJob
 	return result
 }
 
+// QuerySnapshotJobListRequest is the request struct for api QuerySnapshotJobList
 type QuerySnapshotJobListRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,6 +83,7 @@ type QuerySnapshotJobListRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// QuerySnapshotJobListResponse is the response struct for api QuerySnapshotJobList
 type QuerySnapshotJobListResponse struct {
 	*responses.BaseResponse
 	RequestId              string                 `json:"RequestId" xml:"RequestId"`
@@ -89,8 +91,8 @@ type QuerySnapshotJobListResponse struct {
 	SnapshotJobList        SnapshotJobList        `json:"SnapshotJobList" xml:"SnapshotJobList"`
 }
 
-// create a request to invoke QuerySnapshotJobList API
-func CreateQuerySnapshotJobListRequest() (request *QuerySnapshotJobListRequest) {
+// CreateQuerySnapshotJobListRequest creates a request to invoke QuerySnapshotJobList API
+func CreateQuerySnapshotJobListRequest(request *QuerySnapshotJobListRequest) {
 	request = &QuerySnapshotJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateQuerySnapshotJobListRequest() (request *QuerySnapshotJobListRequest) 
 	return
 }
 
-// create a response to parse from QuerySnapshotJobList response
+// CreateQuerySnapshotJobListResponse creates a response to parse from QuerySnapshotJobList response
 func CreateQuerySnapshotJobListResponse() (response *QuerySnapshotJobListResponse) {
 	response = &QuerySnapshotJobListResponse{
 		BaseResponse: &responses.BaseResponse{},

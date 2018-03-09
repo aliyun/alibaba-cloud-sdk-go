@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeDomainBpsDataByTimeStamp api with *DescribeDomainBpsDataByTimeStampRequest synchronously
+// DescribeDomainBpsDataByTimeStamp invokes the cdn.DescribeDomainBpsDataByTimeStamp API synchronously
 // api document: https://help.aliyun.com/api/cdn/describedomainbpsdatabytimestamp.html
 func (client *Client) DescribeDomainBpsDataByTimeStamp(request *DescribeDomainBpsDataByTimeStampRequest) (response *DescribeDomainBpsDataByTimeStampResponse, err error) {
 	response = CreateDescribeDomainBpsDataByTimeStampResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeDomainBpsDataByTimeStamp(request *DescribeDomainBp
 	return
 }
 
-// invoke DescribeDomainBpsDataByTimeStamp api with *DescribeDomainBpsDataByTimeStampRequest asynchronously
+// DescribeDomainBpsDataByTimeStampWithChan invokes the cdn.DescribeDomainBpsDataByTimeStamp API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describedomainbpsdatabytimestamp.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainBpsDataByTimeStampWithChan(request *DescribeDomainBpsDataByTimeStampRequest) (<-chan *DescribeDomainBpsDataByTimeStampResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeDomainBpsDataByTimeStampWithChan(request *Describe
 	return responseChan, errChan
 }
 
-// invoke DescribeDomainBpsDataByTimeStamp api with *DescribeDomainBpsDataByTimeStampRequest asynchronously
+// DescribeDomainBpsDataByTimeStampWithCallback invokes the cdn.DescribeDomainBpsDataByTimeStamp API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describedomainbpsdatabytimestamp.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainBpsDataByTimeStampWithCallback(request *DescribeDomainBpsDataByTimeStampRequest, callback func(response *DescribeDomainBpsDataByTimeStampResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeDomainBpsDataByTimeStampWithCallback(request *Desc
 	return result
 }
 
+// DescribeDomainBpsDataByTimeStampRequest is the request struct for api DescribeDomainBpsDataByTimeStamp
 type DescribeDomainBpsDataByTimeStampRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -83,6 +84,7 @@ type DescribeDomainBpsDataByTimeStampRequest struct {
 	TimePoint     string           `position:"Query" name:"TimePoint"`
 }
 
+// DescribeDomainBpsDataByTimeStampResponse is the response struct for api DescribeDomainBpsDataByTimeStamp
 type DescribeDomainBpsDataByTimeStampResponse struct {
 	*responses.BaseResponse
 	RequestId   string      `json:"RequestId" xml:"RequestId"`
@@ -91,8 +93,8 @@ type DescribeDomainBpsDataByTimeStampResponse struct {
 	BpsDataList BpsDataList `json:"BpsDataList" xml:"BpsDataList"`
 }
 
-// create a request to invoke DescribeDomainBpsDataByTimeStamp API
-func CreateDescribeDomainBpsDataByTimeStampRequest() (request *DescribeDomainBpsDataByTimeStampRequest) {
+// CreateDescribeDomainBpsDataByTimeStampRequest creates a request to invoke DescribeDomainBpsDataByTimeStamp API
+func CreateDescribeDomainBpsDataByTimeStampRequest(request *DescribeDomainBpsDataByTimeStampRequest) {
 	request = &DescribeDomainBpsDataByTimeStampRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -100,7 +102,7 @@ func CreateDescribeDomainBpsDataByTimeStampRequest() (request *DescribeDomainBps
 	return
 }
 
-// create a response to parse from DescribeDomainBpsDataByTimeStamp response
+// CreateDescribeDomainBpsDataByTimeStampResponse creates a response to parse from DescribeDomainBpsDataByTimeStamp response
 func CreateDescribeDomainBpsDataByTimeStampResponse() (response *DescribeDomainBpsDataByTimeStampResponse) {
 	response = &DescribeDomainBpsDataByTimeStampResponse{
 		BaseResponse: &responses.BaseResponse{},

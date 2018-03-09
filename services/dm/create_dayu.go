@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CreateDayu api with *CreateDayuRequest synchronously
+// CreateDayu invokes the dm.CreateDayu API synchronously
 // api document: https://help.aliyun.com/api/dm/createdayu.html
 func (client *Client) CreateDayu(request *CreateDayuRequest) (response *CreateDayuResponse, err error) {
 	response = CreateCreateDayuResponse()
@@ -28,7 +28,7 @@ func (client *Client) CreateDayu(request *CreateDayuRequest) (response *CreateDa
 	return
 }
 
-// invoke CreateDayu api with *CreateDayuRequest asynchronously
+// CreateDayuWithChan invokes the dm.CreateDayu API asynchronously
 // api document: https://help.aliyun.com/api/dm/createdayu.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateDayuWithChan(request *CreateDayuRequest) (<-chan *CreateDayuResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CreateDayuWithChan(request *CreateDayuRequest) (<-chan *Cr
 	return responseChan, errChan
 }
 
-// invoke CreateDayu api with *CreateDayuRequest asynchronously
+// CreateDayuWithCallback invokes the dm.CreateDayu API asynchronously
 // api document: https://help.aliyun.com/api/dm/createdayu.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateDayuWithCallback(request *CreateDayuRequest, callback func(response *CreateDayuResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) CreateDayuWithCallback(request *CreateDayuRequest, callbac
 	return result
 }
 
+// CreateDayuRequest is the request struct for api CreateDayu
 type CreateDayuRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -81,13 +82,14 @@ type CreateDayuRequest struct {
 	AccountType          requests.Integer `position:"Query" name:"AccountType"`
 }
 
+// CreateDayuResponse is the response struct for api CreateDayu
 type CreateDayuResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke CreateDayu API
-func CreateCreateDayuRequest() (request *CreateDayuRequest) {
+// CreateCreateDayuRequest creates a request to invoke CreateDayu API
+func CreateCreateDayuRequest(request *CreateDayuRequest) {
 	request = &CreateDayuRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateCreateDayuRequest() (request *CreateDayuRequest) {
 	return
 }
 
-// create a response to parse from CreateDayu response
+// CreateCreateDayuResponse creates a response to parse from CreateDayu response
 func CreateCreateDayuResponse() (response *CreateDayuResponse) {
 	response = &CreateDayuResponse{
 		BaseResponse: &responses.BaseResponse{},

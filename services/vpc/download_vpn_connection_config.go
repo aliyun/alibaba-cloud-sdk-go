@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DownloadVpnConnectionConfig api with *DownloadVpnConnectionConfigRequest synchronously
+// DownloadVpnConnectionConfig invokes the vpc.DownloadVpnConnectionConfig API synchronously
 // api document: https://help.aliyun.com/api/vpc/downloadvpnconnectionconfig.html
 func (client *Client) DownloadVpnConnectionConfig(request *DownloadVpnConnectionConfigRequest) (response *DownloadVpnConnectionConfigResponse, err error) {
 	response = CreateDownloadVpnConnectionConfigResponse()
@@ -28,7 +28,7 @@ func (client *Client) DownloadVpnConnectionConfig(request *DownloadVpnConnection
 	return
 }
 
-// invoke DownloadVpnConnectionConfig api with *DownloadVpnConnectionConfigRequest asynchronously
+// DownloadVpnConnectionConfigWithChan invokes the vpc.DownloadVpnConnectionConfig API asynchronously
 // api document: https://help.aliyun.com/api/vpc/downloadvpnconnectionconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DownloadVpnConnectionConfigWithChan(request *DownloadVpnConnectionConfigRequest) (<-chan *DownloadVpnConnectionConfigResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DownloadVpnConnectionConfigWithChan(request *DownloadVpnCo
 	return responseChan, errChan
 }
 
-// invoke DownloadVpnConnectionConfig api with *DownloadVpnConnectionConfigRequest asynchronously
+// DownloadVpnConnectionConfigWithCallback invokes the vpc.DownloadVpnConnectionConfig API asynchronously
 // api document: https://help.aliyun.com/api/vpc/downloadvpnconnectionconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DownloadVpnConnectionConfigWithCallback(request *DownloadVpnConnectionConfigRequest, callback func(response *DownloadVpnConnectionConfigResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DownloadVpnConnectionConfigWithCallback(request *DownloadV
 	return result
 }
 
+// DownloadVpnConnectionConfigRequest is the request struct for api DownloadVpnConnectionConfig
 type DownloadVpnConnectionConfigRequest struct {
 	*requests.RpcRequest
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
@@ -82,14 +83,15 @@ type DownloadVpnConnectionConfigRequest struct {
 	VpnConnectionId      string           `position:"Query" name:"VpnConnectionId"`
 }
 
+// DownloadVpnConnectionConfigResponse is the response struct for api DownloadVpnConnectionConfig
 type DownloadVpnConnectionConfigResponse struct {
 	*responses.BaseResponse
 	RequestId           string              `json:"RequestId" xml:"RequestId"`
 	VpnConnectionConfig VpnConnectionConfig `json:"VpnConnectionConfig" xml:"VpnConnectionConfig"`
 }
 
-// create a request to invoke DownloadVpnConnectionConfig API
-func CreateDownloadVpnConnectionConfigRequest() (request *DownloadVpnConnectionConfigRequest) {
+// CreateDownloadVpnConnectionConfigRequest creates a request to invoke DownloadVpnConnectionConfig API
+func CreateDownloadVpnConnectionConfigRequest(request *DownloadVpnConnectionConfigRequest) {
 	request = &DownloadVpnConnectionConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateDownloadVpnConnectionConfigRequest() (request *DownloadVpnConnectionC
 	return
 }
 
-// create a response to parse from DownloadVpnConnectionConfig response
+// CreateDownloadVpnConnectionConfigResponse creates a response to parse from DownloadVpnConnectionConfig response
 func CreateDownloadVpnConnectionConfigResponse() (response *DownloadVpnConnectionConfigResponse) {
 	response = &DownloadVpnConnectionConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

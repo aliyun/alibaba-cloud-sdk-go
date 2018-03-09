@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke TagPhoto api with *TagPhotoRequest synchronously
+// TagPhoto invokes the cloudphoto.TagPhoto API synchronously
 // api document: https://help.aliyun.com/api/cloudphoto/tagphoto.html
 func (client *Client) TagPhoto(request *TagPhotoRequest) (response *TagPhotoResponse, err error) {
 	response = CreateTagPhotoResponse()
@@ -28,7 +28,7 @@ func (client *Client) TagPhoto(request *TagPhotoRequest) (response *TagPhotoResp
 	return
 }
 
-// invoke TagPhoto api with *TagPhotoRequest asynchronously
+// TagPhotoWithChan invokes the cloudphoto.TagPhoto API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/tagphoto.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) TagPhotoWithChan(request *TagPhotoRequest) (<-chan *TagPhotoResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) TagPhotoWithChan(request *TagPhotoRequest) (<-chan *TagPho
 	return responseChan, errChan
 }
 
-// invoke TagPhoto api with *TagPhotoRequest asynchronously
+// TagPhotoWithCallback invokes the cloudphoto.TagPhoto API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/tagphoto.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) TagPhotoWithCallback(request *TagPhotoRequest, callback func(response *TagPhotoResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) TagPhotoWithCallback(request *TagPhotoRequest, callback fu
 	return result
 }
 
+// TagPhotoRequest is the request struct for api TagPhoto
 type TagPhotoRequest struct {
 	*requests.RpcRequest
 	StoreName  string           `position:"Query" name:"StoreName"`
@@ -82,6 +83,7 @@ type TagPhotoRequest struct {
 	PhotoId    requests.Integer `position:"Query" name:"PhotoId"`
 }
 
+// TagPhotoResponse is the response struct for api TagPhoto
 type TagPhotoResponse struct {
 	*responses.BaseResponse
 	Code      string `json:"Code" xml:"Code"`
@@ -90,8 +92,8 @@ type TagPhotoResponse struct {
 	Action    string `json:"Action" xml:"Action"`
 }
 
-// create a request to invoke TagPhoto API
-func CreateTagPhotoRequest() (request *TagPhotoRequest) {
+// CreateTagPhotoRequest creates a request to invoke TagPhoto API
+func CreateTagPhotoRequest(request *TagPhotoRequest) {
 	request = &TagPhotoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateTagPhotoRequest() (request *TagPhotoRequest) {
 	return
 }
 
-// create a response to parse from TagPhoto response
+// CreateTagPhotoResponse creates a response to parse from TagPhoto response
 func CreateTagPhotoResponse() (response *TagPhotoResponse) {
 	response = &TagPhotoResponse{
 		BaseResponse: &responses.BaseResponse{},

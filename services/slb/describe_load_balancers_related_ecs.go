@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeLoadBalancersRelatedEcs api with *DescribeLoadBalancersRelatedEcsRequest synchronously
+// DescribeLoadBalancersRelatedEcs invokes the slb.DescribeLoadBalancersRelatedEcs API synchronously
 // api document: https://help.aliyun.com/api/slb/describeloadbalancersrelatedecs.html
 func (client *Client) DescribeLoadBalancersRelatedEcs(request *DescribeLoadBalancersRelatedEcsRequest) (response *DescribeLoadBalancersRelatedEcsResponse, err error) {
 	response = CreateDescribeLoadBalancersRelatedEcsResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeLoadBalancersRelatedEcs(request *DescribeLoadBalan
 	return
 }
 
-// invoke DescribeLoadBalancersRelatedEcs api with *DescribeLoadBalancersRelatedEcsRequest asynchronously
+// DescribeLoadBalancersRelatedEcsWithChan invokes the slb.DescribeLoadBalancersRelatedEcs API asynchronously
 // api document: https://help.aliyun.com/api/slb/describeloadbalancersrelatedecs.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLoadBalancersRelatedEcsWithChan(request *DescribeLoadBalancersRelatedEcsRequest) (<-chan *DescribeLoadBalancersRelatedEcsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeLoadBalancersRelatedEcsWithChan(request *DescribeL
 	return responseChan, errChan
 }
 
-// invoke DescribeLoadBalancersRelatedEcs api with *DescribeLoadBalancersRelatedEcsRequest asynchronously
+// DescribeLoadBalancersRelatedEcsWithCallback invokes the slb.DescribeLoadBalancersRelatedEcs API asynchronously
 // api document: https://help.aliyun.com/api/slb/describeloadbalancersrelatedecs.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLoadBalancersRelatedEcsWithCallback(request *DescribeLoadBalancersRelatedEcsRequest, callback func(response *DescribeLoadBalancersRelatedEcsResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeLoadBalancersRelatedEcsWithCallback(request *Descr
 	return result
 }
 
+// DescribeLoadBalancersRelatedEcsRequest is the request struct for api DescribeLoadBalancersRelatedEcs
 type DescribeLoadBalancersRelatedEcsRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,6 +85,7 @@ type DescribeLoadBalancersRelatedEcsRequest struct {
 	LoadBalancerId       string           `position:"Query" name:"LoadBalancerId"`
 }
 
+// DescribeLoadBalancersRelatedEcsResponse is the response struct for api DescribeLoadBalancersRelatedEcs
 type DescribeLoadBalancersRelatedEcsResponse struct {
 	*responses.BaseResponse
 	Message       string                                         `json:"Message" xml:"Message"`
@@ -92,8 +94,8 @@ type DescribeLoadBalancersRelatedEcsResponse struct {
 	LoadBalancers LoadBalancersInDescribeLoadBalancersRelatedEcs `json:"LoadBalancers" xml:"LoadBalancers"`
 }
 
-// create a request to invoke DescribeLoadBalancersRelatedEcs API
-func CreateDescribeLoadBalancersRelatedEcsRequest() (request *DescribeLoadBalancersRelatedEcsRequest) {
+// CreateDescribeLoadBalancersRelatedEcsRequest creates a request to invoke DescribeLoadBalancersRelatedEcs API
+func CreateDescribeLoadBalancersRelatedEcsRequest(request *DescribeLoadBalancersRelatedEcsRequest) {
 	request = &DescribeLoadBalancersRelatedEcsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -101,7 +103,7 @@ func CreateDescribeLoadBalancersRelatedEcsRequest() (request *DescribeLoadBalanc
 	return
 }
 
-// create a response to parse from DescribeLoadBalancersRelatedEcs response
+// CreateDescribeLoadBalancersRelatedEcsResponse creates a response to parse from DescribeLoadBalancersRelatedEcs response
 func CreateDescribeLoadBalancersRelatedEcsResponse() (response *DescribeLoadBalancersRelatedEcsResponse) {
 	response = &DescribeLoadBalancersRelatedEcsResponse{
 		BaseResponse: &responses.BaseResponse{},

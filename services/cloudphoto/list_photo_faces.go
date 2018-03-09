@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ListPhotoFaces api with *ListPhotoFacesRequest synchronously
+// ListPhotoFaces invokes the cloudphoto.ListPhotoFaces API synchronously
 // api document: https://help.aliyun.com/api/cloudphoto/listphotofaces.html
 func (client *Client) ListPhotoFaces(request *ListPhotoFacesRequest) (response *ListPhotoFacesResponse, err error) {
 	response = CreateListPhotoFacesResponse()
@@ -28,7 +28,7 @@ func (client *Client) ListPhotoFaces(request *ListPhotoFacesRequest) (response *
 	return
 }
 
-// invoke ListPhotoFaces api with *ListPhotoFacesRequest asynchronously
+// ListPhotoFacesWithChan invokes the cloudphoto.ListPhotoFaces API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/listphotofaces.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListPhotoFacesWithChan(request *ListPhotoFacesRequest) (<-chan *ListPhotoFacesResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ListPhotoFacesWithChan(request *ListPhotoFacesRequest) (<-
 	return responseChan, errChan
 }
 
-// invoke ListPhotoFaces api with *ListPhotoFacesRequest asynchronously
+// ListPhotoFacesWithCallback invokes the cloudphoto.ListPhotoFaces API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/listphotofaces.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListPhotoFacesWithCallback(request *ListPhotoFacesRequest, callback func(response *ListPhotoFacesResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ListPhotoFacesWithCallback(request *ListPhotoFacesRequest,
 	return result
 }
 
+// ListPhotoFacesRequest is the request struct for api ListPhotoFaces
 type ListPhotoFacesRequest struct {
 	*requests.RpcRequest
 	PhotoId   requests.Integer `position:"Query" name:"PhotoId"`
@@ -80,6 +81,7 @@ type ListPhotoFacesRequest struct {
 	LibraryId string           `position:"Query" name:"LibraryId"`
 }
 
+// ListPhotoFacesResponse is the response struct for api ListPhotoFaces
 type ListPhotoFacesResponse struct {
 	*responses.BaseResponse
 	Code      string `json:"Code" xml:"Code"`
@@ -89,8 +91,8 @@ type ListPhotoFacesResponse struct {
 	Faces     []Face `json:"Faces" xml:"Faces"`
 }
 
-// create a request to invoke ListPhotoFaces API
-func CreateListPhotoFacesRequest() (request *ListPhotoFacesRequest) {
+// CreateListPhotoFacesRequest creates a request to invoke ListPhotoFaces API
+func CreateListPhotoFacesRequest(request *ListPhotoFacesRequest) {
 	request = &ListPhotoFacesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateListPhotoFacesRequest() (request *ListPhotoFacesRequest) {
 	return
 }
 
-// create a response to parse from ListPhotoFaces response
+// CreateListPhotoFacesResponse creates a response to parse from ListPhotoFaces response
 func CreateListPhotoFacesResponse() (response *ListPhotoFacesResponse) {
 	response = &ListPhotoFacesResponse{
 		BaseResponse: &responses.BaseResponse{},

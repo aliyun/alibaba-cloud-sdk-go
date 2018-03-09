@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke QuerySystemEventHistogram api with *QuerySystemEventHistogramRequest synchronously
+// QuerySystemEventHistogram invokes the cms.QuerySystemEventHistogram API synchronously
 // api document: https://help.aliyun.com/api/cms/querysystemeventhistogram.html
 func (client *Client) QuerySystemEventHistogram(request *QuerySystemEventHistogramRequest) (response *QuerySystemEventHistogramResponse, err error) {
 	response = CreateQuerySystemEventHistogramResponse()
@@ -28,7 +28,7 @@ func (client *Client) QuerySystemEventHistogram(request *QuerySystemEventHistogr
 	return
 }
 
-// invoke QuerySystemEventHistogram api with *QuerySystemEventHistogramRequest asynchronously
+// QuerySystemEventHistogramWithChan invokes the cms.QuerySystemEventHistogram API asynchronously
 // api document: https://help.aliyun.com/api/cms/querysystemeventhistogram.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QuerySystemEventHistogramWithChan(request *QuerySystemEventHistogramRequest) (<-chan *QuerySystemEventHistogramResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) QuerySystemEventHistogramWithChan(request *QuerySystemEven
 	return responseChan, errChan
 }
 
-// invoke QuerySystemEventHistogram api with *QuerySystemEventHistogramRequest asynchronously
+// QuerySystemEventHistogramWithCallback invokes the cms.QuerySystemEventHistogram API asynchronously
 // api document: https://help.aliyun.com/api/cms/querysystemeventhistogram.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QuerySystemEventHistogramWithCallback(request *QuerySystemEventHistogramRequest, callback func(response *QuerySystemEventHistogramResponse, err error)) <-chan int {
@@ -73,11 +73,13 @@ func (client *Client) QuerySystemEventHistogramWithCallback(request *QuerySystem
 	return result
 }
 
+// QuerySystemEventHistogramRequest is the request struct for api QuerySystemEventHistogram
 type QuerySystemEventHistogramRequest struct {
 	*requests.RpcRequest
 	QueryJson string `position:"Query" name:"QueryJson"`
 }
 
+// QuerySystemEventHistogramResponse is the response struct for api QuerySystemEventHistogram
 type QuerySystemEventHistogramResponse struct {
 	*responses.BaseResponse
 	Code    string `json:"Code" xml:"Code"`
@@ -85,8 +87,8 @@ type QuerySystemEventHistogramResponse struct {
 	Data    string `json:"Data" xml:"Data"`
 }
 
-// create a request to invoke QuerySystemEventHistogram API
-func CreateQuerySystemEventHistogramRequest() (request *QuerySystemEventHistogramRequest) {
+// CreateQuerySystemEventHistogramRequest creates a request to invoke QuerySystemEventHistogram API
+func CreateQuerySystemEventHistogramRequest(request *QuerySystemEventHistogramRequest) {
 	request = &QuerySystemEventHistogramRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -94,7 +96,7 @@ func CreateQuerySystemEventHistogramRequest() (request *QuerySystemEventHistogra
 	return
 }
 
-// create a response to parse from QuerySystemEventHistogram response
+// CreateQuerySystemEventHistogramResponse creates a response to parse from QuerySystemEventHistogram response
 func CreateQuerySystemEventHistogramResponse() (response *QuerySystemEventHistogramResponse) {
 	response = &QuerySystemEventHistogramResponse{
 		BaseResponse: &responses.BaseResponse{},

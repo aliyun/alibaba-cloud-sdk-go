@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke AddCdnDomain api with *AddCdnDomainRequest synchronously
+// AddCdnDomain invokes the cdn.AddCdnDomain API synchronously
 // api document: https://help.aliyun.com/api/cdn/addcdndomain.html
 func (client *Client) AddCdnDomain(request *AddCdnDomainRequest) (response *AddCdnDomainResponse, err error) {
 	response = CreateAddCdnDomainResponse()
@@ -28,7 +28,7 @@ func (client *Client) AddCdnDomain(request *AddCdnDomainRequest) (response *AddC
 	return
 }
 
-// invoke AddCdnDomain api with *AddCdnDomainRequest asynchronously
+// AddCdnDomainWithChan invokes the cdn.AddCdnDomain API asynchronously
 // api document: https://help.aliyun.com/api/cdn/addcdndomain.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddCdnDomainWithChan(request *AddCdnDomainRequest) (<-chan *AddCdnDomainResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) AddCdnDomainWithChan(request *AddCdnDomainRequest) (<-chan
 	return responseChan, errChan
 }
 
-// invoke AddCdnDomain api with *AddCdnDomainRequest asynchronously
+// AddCdnDomainWithCallback invokes the cdn.AddCdnDomain API asynchronously
 // api document: https://help.aliyun.com/api/cdn/addcdndomain.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddCdnDomainWithCallback(request *AddCdnDomainRequest, callback func(response *AddCdnDomainResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) AddCdnDomainWithCallback(request *AddCdnDomainRequest, cal
 	return result
 }
 
+// AddCdnDomainRequest is the request struct for api AddCdnDomain
 type AddCdnDomainRequest struct {
 	*requests.RpcRequest
 	OwnerId         requests.Integer `position:"Query" name:"OwnerId"`
@@ -92,13 +93,14 @@ type AddCdnDomainRequest struct {
 	Priorities      string           `position:"Query" name:"Priorities"`
 }
 
+// AddCdnDomainResponse is the response struct for api AddCdnDomain
 type AddCdnDomainResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke AddCdnDomain API
-func CreateAddCdnDomainRequest() (request *AddCdnDomainRequest) {
+// CreateAddCdnDomainRequest creates a request to invoke AddCdnDomain API
+func CreateAddCdnDomainRequest(request *AddCdnDomainRequest) {
 	request = &AddCdnDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -106,7 +108,7 @@ func CreateAddCdnDomainRequest() (request *AddCdnDomainRequest) {
 	return
 }
 
-// create a response to parse from AddCdnDomain response
+// CreateAddCdnDomainResponse creates a response to parse from AddCdnDomain response
 func CreateAddCdnDomainResponse() (response *AddCdnDomainResponse) {
 	response = &AddCdnDomainResponse{
 		BaseResponse: &responses.BaseResponse{},

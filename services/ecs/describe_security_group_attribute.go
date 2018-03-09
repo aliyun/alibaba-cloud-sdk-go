@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeSecurityGroupAttribute api with *DescribeSecurityGroupAttributeRequest synchronously
+// DescribeSecurityGroupAttribute invokes the ecs.DescribeSecurityGroupAttribute API synchronously
 // api document: https://help.aliyun.com/api/ecs/describesecuritygroupattribute.html
 func (client *Client) DescribeSecurityGroupAttribute(request *DescribeSecurityGroupAttributeRequest) (response *DescribeSecurityGroupAttributeResponse, err error) {
 	response = CreateDescribeSecurityGroupAttributeResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeSecurityGroupAttribute(request *DescribeSecurityGr
 	return
 }
 
-// invoke DescribeSecurityGroupAttribute api with *DescribeSecurityGroupAttributeRequest asynchronously
+// DescribeSecurityGroupAttributeWithChan invokes the ecs.DescribeSecurityGroupAttribute API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describesecuritygroupattribute.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSecurityGroupAttributeWithChan(request *DescribeSecurityGroupAttributeRequest) (<-chan *DescribeSecurityGroupAttributeResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeSecurityGroupAttributeWithChan(request *DescribeSe
 	return responseChan, errChan
 }
 
-// invoke DescribeSecurityGroupAttribute api with *DescribeSecurityGroupAttributeRequest asynchronously
+// DescribeSecurityGroupAttributeWithCallback invokes the ecs.DescribeSecurityGroupAttribute API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describesecuritygroupattribute.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSecurityGroupAttributeWithCallback(request *DescribeSecurityGroupAttributeRequest, callback func(response *DescribeSecurityGroupAttributeResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeSecurityGroupAttributeWithCallback(request *Descri
 	return result
 }
 
+// DescribeSecurityGroupAttributeRequest is the request struct for api DescribeSecurityGroupAttribute
 type DescribeSecurityGroupAttributeRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,6 +85,7 @@ type DescribeSecurityGroupAttributeRequest struct {
 	Direction            string           `position:"Query" name:"Direction"`
 }
 
+// DescribeSecurityGroupAttributeResponse is the response struct for api DescribeSecurityGroupAttribute
 type DescribeSecurityGroupAttributeResponse struct {
 	*responses.BaseResponse
 	RequestId         string      `json:"RequestId" xml:"RequestId"`
@@ -96,8 +98,8 @@ type DescribeSecurityGroupAttributeResponse struct {
 	Permissions       Permissions `json:"Permissions" xml:"Permissions"`
 }
 
-// create a request to invoke DescribeSecurityGroupAttribute API
-func CreateDescribeSecurityGroupAttributeRequest() (request *DescribeSecurityGroupAttributeRequest) {
+// CreateDescribeSecurityGroupAttributeRequest creates a request to invoke DescribeSecurityGroupAttribute API
+func CreateDescribeSecurityGroupAttributeRequest(request *DescribeSecurityGroupAttributeRequest) {
 	request = &DescribeSecurityGroupAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -105,7 +107,7 @@ func CreateDescribeSecurityGroupAttributeRequest() (request *DescribeSecurityGro
 	return
 }
 
-// create a response to parse from DescribeSecurityGroupAttribute response
+// CreateDescribeSecurityGroupAttributeResponse creates a response to parse from DescribeSecurityGroupAttribute response
 func CreateDescribeSecurityGroupAttributeResponse() (response *DescribeSecurityGroupAttributeResponse) {
 	response = &DescribeSecurityGroupAttributeResponse{
 		BaseResponse: &responses.BaseResponse{},

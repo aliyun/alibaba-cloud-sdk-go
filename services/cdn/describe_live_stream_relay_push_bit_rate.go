@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeLiveStreamRelayPushBitRate api with *DescribeLiveStreamRelayPushBitRateRequest synchronously
+// DescribeLiveStreamRelayPushBitRate invokes the cdn.DescribeLiveStreamRelayPushBitRate API synchronously
 // api document: https://help.aliyun.com/api/cdn/describelivestreamrelaypushbitrate.html
 func (client *Client) DescribeLiveStreamRelayPushBitRate(request *DescribeLiveStreamRelayPushBitRateRequest) (response *DescribeLiveStreamRelayPushBitRateResponse, err error) {
 	response = CreateDescribeLiveStreamRelayPushBitRateResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeLiveStreamRelayPushBitRate(request *DescribeLiveSt
 	return
 }
 
-// invoke DescribeLiveStreamRelayPushBitRate api with *DescribeLiveStreamRelayPushBitRateRequest asynchronously
+// DescribeLiveStreamRelayPushBitRateWithChan invokes the cdn.DescribeLiveStreamRelayPushBitRate API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describelivestreamrelaypushbitrate.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamRelayPushBitRateWithChan(request *DescribeLiveStreamRelayPushBitRateRequest) (<-chan *DescribeLiveStreamRelayPushBitRateResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeLiveStreamRelayPushBitRateWithChan(request *Descri
 	return responseChan, errChan
 }
 
-// invoke DescribeLiveStreamRelayPushBitRate api with *DescribeLiveStreamRelayPushBitRateRequest asynchronously
+// DescribeLiveStreamRelayPushBitRateWithCallback invokes the cdn.DescribeLiveStreamRelayPushBitRate API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describelivestreamrelaypushbitrate.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamRelayPushBitRateWithCallback(request *DescribeLiveStreamRelayPushBitRateRequest, callback func(response *DescribeLiveStreamRelayPushBitRateResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeLiveStreamRelayPushBitRateWithCallback(request *De
 	return result
 }
 
+// DescribeLiveStreamRelayPushBitRateRequest is the request struct for api DescribeLiveStreamRelayPushBitRate
 type DescribeLiveStreamRelayPushBitRateRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,14 +83,15 @@ type DescribeLiveStreamRelayPushBitRateRequest struct {
 	StreamName    string           `position:"Query" name:"StreamName"`
 }
 
+// DescribeLiveStreamRelayPushBitRateResponse is the response struct for api DescribeLiveStreamRelayPushBitRate
 type DescribeLiveStreamRelayPushBitRateResponse struct {
 	*responses.BaseResponse
 	RequestId                 string                    `json:"RequestId" xml:"RequestId"`
 	RelayPushBitRateModelList RelayPushBitRateModelList `json:"RelayPushBitRateModelList" xml:"RelayPushBitRateModelList"`
 }
 
-// create a request to invoke DescribeLiveStreamRelayPushBitRate API
-func CreateDescribeLiveStreamRelayPushBitRateRequest() (request *DescribeLiveStreamRelayPushBitRateRequest) {
+// CreateDescribeLiveStreamRelayPushBitRateRequest creates a request to invoke DescribeLiveStreamRelayPushBitRate API
+func CreateDescribeLiveStreamRelayPushBitRateRequest(request *DescribeLiveStreamRelayPushBitRateRequest) {
 	request = &DescribeLiveStreamRelayPushBitRateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateDescribeLiveStreamRelayPushBitRateRequest() (request *DescribeLiveStr
 	return
 }
 
-// create a response to parse from DescribeLiveStreamRelayPushBitRate response
+// CreateDescribeLiveStreamRelayPushBitRateResponse creates a response to parse from DescribeLiveStreamRelayPushBitRate response
 func CreateDescribeLiveStreamRelayPushBitRateResponse() (response *DescribeLiveStreamRelayPushBitRateResponse) {
 	response = &DescribeLiveStreamRelayPushBitRateResponse{
 		BaseResponse: &responses.BaseResponse{},

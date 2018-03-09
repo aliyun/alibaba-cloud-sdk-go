@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeInstanceRamRole api with *DescribeInstanceRamRoleRequest synchronously
+// DescribeInstanceRamRole invokes the ecs.DescribeInstanceRamRole API synchronously
 // api document: https://help.aliyun.com/api/ecs/describeinstanceramrole.html
 func (client *Client) DescribeInstanceRamRole(request *DescribeInstanceRamRoleRequest) (response *DescribeInstanceRamRoleResponse, err error) {
 	response = CreateDescribeInstanceRamRoleResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeInstanceRamRole(request *DescribeInstanceRamRoleRe
 	return
 }
 
-// invoke DescribeInstanceRamRole api with *DescribeInstanceRamRoleRequest asynchronously
+// DescribeInstanceRamRoleWithChan invokes the ecs.DescribeInstanceRamRole API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describeinstanceramrole.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceRamRoleWithChan(request *DescribeInstanceRamRoleRequest) (<-chan *DescribeInstanceRamRoleResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeInstanceRamRoleWithChan(request *DescribeInstanceR
 	return responseChan, errChan
 }
 
-// invoke DescribeInstanceRamRole api with *DescribeInstanceRamRoleRequest asynchronously
+// DescribeInstanceRamRoleWithCallback invokes the ecs.DescribeInstanceRamRole API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describeinstanceramrole.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceRamRoleWithCallback(request *DescribeInstanceRamRoleRequest, callback func(response *DescribeInstanceRamRoleResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeInstanceRamRoleWithCallback(request *DescribeInsta
 	return result
 }
 
+// DescribeInstanceRamRoleRequest is the request struct for api DescribeInstanceRamRole
 type DescribeInstanceRamRoleRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,6 +85,7 @@ type DescribeInstanceRamRoleRequest struct {
 	RamRoleName          string           `position:"Query" name:"RamRoleName"`
 }
 
+// DescribeInstanceRamRoleResponse is the response struct for api DescribeInstanceRamRole
 type DescribeInstanceRamRoleResponse struct {
 	*responses.BaseResponse
 	RequestId           string                                       `json:"RequestId" xml:"RequestId"`
@@ -92,8 +94,8 @@ type DescribeInstanceRamRoleResponse struct {
 	InstanceRamRoleSets InstanceRamRoleSetsInDescribeInstanceRamRole `json:"InstanceRamRoleSets" xml:"InstanceRamRoleSets"`
 }
 
-// create a request to invoke DescribeInstanceRamRole API
-func CreateDescribeInstanceRamRoleRequest() (request *DescribeInstanceRamRoleRequest) {
+// CreateDescribeInstanceRamRoleRequest creates a request to invoke DescribeInstanceRamRole API
+func CreateDescribeInstanceRamRoleRequest(request *DescribeInstanceRamRoleRequest) {
 	request = &DescribeInstanceRamRoleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -101,7 +103,7 @@ func CreateDescribeInstanceRamRoleRequest() (request *DescribeInstanceRamRoleReq
 	return
 }
 
-// create a response to parse from DescribeInstanceRamRole response
+// CreateDescribeInstanceRamRoleResponse creates a response to parse from DescribeInstanceRamRole response
 func CreateDescribeInstanceRamRoleResponse() (response *DescribeInstanceRamRoleResponse) {
 	response = &DescribeInstanceRamRoleResponse{
 		BaseResponse: &responses.BaseResponse{},

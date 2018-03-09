@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke GrantAccountPrivilege api with *GrantAccountPrivilegeRequest synchronously
+// GrantAccountPrivilege invokes the rds.GrantAccountPrivilege API synchronously
 // api document: https://help.aliyun.com/api/rds/grantaccountprivilege.html
 func (client *Client) GrantAccountPrivilege(request *GrantAccountPrivilegeRequest) (response *GrantAccountPrivilegeResponse, err error) {
 	response = CreateGrantAccountPrivilegeResponse()
@@ -28,7 +28,7 @@ func (client *Client) GrantAccountPrivilege(request *GrantAccountPrivilegeReques
 	return
 }
 
-// invoke GrantAccountPrivilege api with *GrantAccountPrivilegeRequest asynchronously
+// GrantAccountPrivilegeWithChan invokes the rds.GrantAccountPrivilege API asynchronously
 // api document: https://help.aliyun.com/api/rds/grantaccountprivilege.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GrantAccountPrivilegeWithChan(request *GrantAccountPrivilegeRequest) (<-chan *GrantAccountPrivilegeResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) GrantAccountPrivilegeWithChan(request *GrantAccountPrivile
 	return responseChan, errChan
 }
 
-// invoke GrantAccountPrivilege api with *GrantAccountPrivilegeRequest asynchronously
+// GrantAccountPrivilegeWithCallback invokes the rds.GrantAccountPrivilege API asynchronously
 // api document: https://help.aliyun.com/api/rds/grantaccountprivilege.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GrantAccountPrivilegeWithCallback(request *GrantAccountPrivilegeRequest, callback func(response *GrantAccountPrivilegeResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) GrantAccountPrivilegeWithCallback(request *GrantAccountPri
 	return result
 }
 
+// GrantAccountPrivilegeRequest is the request struct for api GrantAccountPrivilege
 type GrantAccountPrivilegeRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -85,13 +86,14 @@ type GrantAccountPrivilegeRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// GrantAccountPrivilegeResponse is the response struct for api GrantAccountPrivilege
 type GrantAccountPrivilegeResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke GrantAccountPrivilege API
-func CreateGrantAccountPrivilegeRequest() (request *GrantAccountPrivilegeRequest) {
+// CreateGrantAccountPrivilegeRequest creates a request to invoke GrantAccountPrivilege API
+func CreateGrantAccountPrivilegeRequest(request *GrantAccountPrivilegeRequest) {
 	request = &GrantAccountPrivilegeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateGrantAccountPrivilegeRequest() (request *GrantAccountPrivilegeRequest
 	return
 }
 
-// create a response to parse from GrantAccountPrivilege response
+// CreateGrantAccountPrivilegeResponse creates a response to parse from GrantAccountPrivilege response
 func CreateGrantAccountPrivilegeResponse() (response *GrantAccountPrivilegeResponse) {
 	response = &GrantAccountPrivilegeResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescTemplate api with *DescTemplateRequest synchronously
+// DescTemplate invokes the dm.DescTemplate API synchronously
 // api document: https://help.aliyun.com/api/dm/desctemplate.html
 func (client *Client) DescTemplate(request *DescTemplateRequest) (response *DescTemplateResponse, err error) {
 	response = CreateDescTemplateResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescTemplate(request *DescTemplateRequest) (response *Desc
 	return
 }
 
-// invoke DescTemplate api with *DescTemplateRequest asynchronously
+// DescTemplateWithChan invokes the dm.DescTemplate API asynchronously
 // api document: https://help.aliyun.com/api/dm/desctemplate.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescTemplateWithChan(request *DescTemplateRequest) (<-chan *DescTemplateResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescTemplateWithChan(request *DescTemplateRequest) (<-chan
 	return responseChan, errChan
 }
 
-// invoke DescTemplate api with *DescTemplateRequest asynchronously
+// DescTemplateWithCallback invokes the dm.DescTemplate API asynchronously
 // api document: https://help.aliyun.com/api/dm/desctemplate.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescTemplateWithCallback(request *DescTemplateRequest, callback func(response *DescTemplateResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescTemplateWithCallback(request *DescTemplateRequest, cal
 	return result
 }
 
+// DescTemplateRequest is the request struct for api DescTemplate
 type DescTemplateRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,6 +83,7 @@ type DescTemplateRequest struct {
 	FromType             requests.Integer `position:"Query" name:"FromType"`
 }
 
+// DescTemplateResponse is the response struct for api DescTemplate
 type DescTemplateResponse struct {
 	*responses.BaseResponse
 	RequestId        string `json:"RequestId" xml:"RequestId"`
@@ -97,8 +99,8 @@ type DescTemplateResponse struct {
 	Remark           string `json:"Remark" xml:"Remark"`
 }
 
-// create a request to invoke DescTemplate API
-func CreateDescTemplateRequest() (request *DescTemplateRequest) {
+// CreateDescTemplateRequest creates a request to invoke DescTemplate API
+func CreateDescTemplateRequest(request *DescTemplateRequest) {
 	request = &DescTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -106,7 +108,7 @@ func CreateDescTemplateRequest() (request *DescTemplateRequest) {
 	return
 }
 
-// create a response to parse from DescTemplate response
+// CreateDescTemplateResponse creates a response to parse from DescTemplate response
 func CreateDescTemplateResponse() (response *DescTemplateResponse) {
 	response = &DescTemplateResponse{
 		BaseResponse: &responses.BaseResponse{},

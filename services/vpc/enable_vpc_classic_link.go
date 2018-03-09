@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke EnableVpcClassicLink api with *EnableVpcClassicLinkRequest synchronously
+// EnableVpcClassicLink invokes the vpc.EnableVpcClassicLink API synchronously
 // api document: https://help.aliyun.com/api/vpc/enablevpcclassiclink.html
 func (client *Client) EnableVpcClassicLink(request *EnableVpcClassicLinkRequest) (response *EnableVpcClassicLinkResponse, err error) {
 	response = CreateEnableVpcClassicLinkResponse()
@@ -28,7 +28,7 @@ func (client *Client) EnableVpcClassicLink(request *EnableVpcClassicLinkRequest)
 	return
 }
 
-// invoke EnableVpcClassicLink api with *EnableVpcClassicLinkRequest asynchronously
+// EnableVpcClassicLinkWithChan invokes the vpc.EnableVpcClassicLink API asynchronously
 // api document: https://help.aliyun.com/api/vpc/enablevpcclassiclink.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EnableVpcClassicLinkWithChan(request *EnableVpcClassicLinkRequest) (<-chan *EnableVpcClassicLinkResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) EnableVpcClassicLinkWithChan(request *EnableVpcClassicLink
 	return responseChan, errChan
 }
 
-// invoke EnableVpcClassicLink api with *EnableVpcClassicLinkRequest asynchronously
+// EnableVpcClassicLinkWithCallback invokes the vpc.EnableVpcClassicLink API asynchronously
 // api document: https://help.aliyun.com/api/vpc/enablevpcclassiclink.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EnableVpcClassicLinkWithCallback(request *EnableVpcClassicLinkRequest, callback func(response *EnableVpcClassicLinkResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) EnableVpcClassicLinkWithCallback(request *EnableVpcClassic
 	return result
 }
 
+// EnableVpcClassicLinkRequest is the request struct for api EnableVpcClassicLink
 type EnableVpcClassicLinkRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -83,13 +84,14 @@ type EnableVpcClassicLinkRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// EnableVpcClassicLinkResponse is the response struct for api EnableVpcClassicLink
 type EnableVpcClassicLinkResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke EnableVpcClassicLink API
-func CreateEnableVpcClassicLinkRequest() (request *EnableVpcClassicLinkRequest) {
+// CreateEnableVpcClassicLinkRequest creates a request to invoke EnableVpcClassicLink API
+func CreateEnableVpcClassicLinkRequest(request *EnableVpcClassicLinkRequest) {
 	request = &EnableVpcClassicLinkRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateEnableVpcClassicLinkRequest() (request *EnableVpcClassicLinkRequest) 
 	return
 }
 
-// create a response to parse from EnableVpcClassicLink response
+// CreateEnableVpcClassicLinkResponse creates a response to parse from EnableVpcClassicLink response
 func CreateEnableVpcClassicLinkResponse() (response *EnableVpcClassicLinkResponse) {
 	response = &EnableVpcClassicLinkResponse{
 		BaseResponse: &responses.BaseResponse{},

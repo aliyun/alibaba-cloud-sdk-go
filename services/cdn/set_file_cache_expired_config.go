@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SetFileCacheExpiredConfig api with *SetFileCacheExpiredConfigRequest synchronously
+// SetFileCacheExpiredConfig invokes the cdn.SetFileCacheExpiredConfig API synchronously
 // api document: https://help.aliyun.com/api/cdn/setfilecacheexpiredconfig.html
 func (client *Client) SetFileCacheExpiredConfig(request *SetFileCacheExpiredConfigRequest) (response *SetFileCacheExpiredConfigResponse, err error) {
 	response = CreateSetFileCacheExpiredConfigResponse()
@@ -28,7 +28,7 @@ func (client *Client) SetFileCacheExpiredConfig(request *SetFileCacheExpiredConf
 	return
 }
 
-// invoke SetFileCacheExpiredConfig api with *SetFileCacheExpiredConfigRequest asynchronously
+// SetFileCacheExpiredConfigWithChan invokes the cdn.SetFileCacheExpiredConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/setfilecacheexpiredconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetFileCacheExpiredConfigWithChan(request *SetFileCacheExpiredConfigRequest) (<-chan *SetFileCacheExpiredConfigResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SetFileCacheExpiredConfigWithChan(request *SetFileCacheExp
 	return responseChan, errChan
 }
 
-// invoke SetFileCacheExpiredConfig api with *SetFileCacheExpiredConfigRequest asynchronously
+// SetFileCacheExpiredConfigWithCallback invokes the cdn.SetFileCacheExpiredConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/setfilecacheexpiredconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetFileCacheExpiredConfigWithCallback(request *SetFileCacheExpiredConfigRequest, callback func(response *SetFileCacheExpiredConfigResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SetFileCacheExpiredConfigWithCallback(request *SetFileCach
 	return result
 }
 
+// SetFileCacheExpiredConfigRequest is the request struct for api SetFileCacheExpiredConfig
 type SetFileCacheExpiredConfigRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -83,13 +84,14 @@ type SetFileCacheExpiredConfigRequest struct {
 	Weight        string           `position:"Query" name:"Weight"`
 }
 
+// SetFileCacheExpiredConfigResponse is the response struct for api SetFileCacheExpiredConfig
 type SetFileCacheExpiredConfigResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke SetFileCacheExpiredConfig API
-func CreateSetFileCacheExpiredConfigRequest() (request *SetFileCacheExpiredConfigRequest) {
+// CreateSetFileCacheExpiredConfigRequest creates a request to invoke SetFileCacheExpiredConfig API
+func CreateSetFileCacheExpiredConfigRequest(request *SetFileCacheExpiredConfigRequest) {
 	request = &SetFileCacheExpiredConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateSetFileCacheExpiredConfigRequest() (request *SetFileCacheExpiredConfi
 	return
 }
 
-// create a response to parse from SetFileCacheExpiredConfig response
+// CreateSetFileCacheExpiredConfigResponse creates a response to parse from SetFileCacheExpiredConfig response
 func CreateSetFileCacheExpiredConfigResponse() (response *SetFileCacheExpiredConfigResponse) {
 	response = &SetFileCacheExpiredConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

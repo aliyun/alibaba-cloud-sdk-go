@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeRiskWhiteList api with *DescribeRiskWhiteListRequest synchronously
+// DescribeRiskWhiteList invokes the aegis.DescribeRiskWhiteList API synchronously
 // api document: https://help.aliyun.com/api/aegis/describeriskwhitelist.html
 func (client *Client) DescribeRiskWhiteList(request *DescribeRiskWhiteListRequest) (response *DescribeRiskWhiteListResponse, err error) {
 	response = CreateDescribeRiskWhiteListResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeRiskWhiteList(request *DescribeRiskWhiteListReques
 	return
 }
 
-// invoke DescribeRiskWhiteList api with *DescribeRiskWhiteListRequest asynchronously
+// DescribeRiskWhiteListWithChan invokes the aegis.DescribeRiskWhiteList API asynchronously
 // api document: https://help.aliyun.com/api/aegis/describeriskwhitelist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRiskWhiteListWithChan(request *DescribeRiskWhiteListRequest) (<-chan *DescribeRiskWhiteListResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeRiskWhiteListWithChan(request *DescribeRiskWhiteLi
 	return responseChan, errChan
 }
 
-// invoke DescribeRiskWhiteList api with *DescribeRiskWhiteListRequest asynchronously
+// DescribeRiskWhiteListWithCallback invokes the aegis.DescribeRiskWhiteList API asynchronously
 // api document: https://help.aliyun.com/api/aegis/describeriskwhitelist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRiskWhiteListWithCallback(request *DescribeRiskWhiteListRequest, callback func(response *DescribeRiskWhiteListResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeRiskWhiteListWithCallback(request *DescribeRiskWhi
 	return result
 }
 
+// DescribeRiskWhiteListRequest is the request struct for api DescribeRiskWhiteList
 type DescribeRiskWhiteListRequest struct {
 	*requests.RpcRequest
 	SourceIp        string           `position:"Query" name:"SourceIp"`
@@ -82,6 +83,7 @@ type DescribeRiskWhiteListRequest struct {
 	CurrentPage     requests.Integer `position:"Query" name:"CurrentPage"`
 }
 
+// DescribeRiskWhiteListResponse is the response struct for api DescribeRiskWhiteList
 type DescribeRiskWhiteListResponse struct {
 	*responses.BaseResponse
 	RequestId   string      `json:"RequestId" xml:"RequestId"`
@@ -92,8 +94,8 @@ type DescribeRiskWhiteListResponse struct {
 	WhiteLists  []WhiteList `json:"WhiteLists" xml:"WhiteLists"`
 }
 
-// create a request to invoke DescribeRiskWhiteList API
-func CreateDescribeRiskWhiteListRequest() (request *DescribeRiskWhiteListRequest) {
+// CreateDescribeRiskWhiteListRequest creates a request to invoke DescribeRiskWhiteList API
+func CreateDescribeRiskWhiteListRequest(request *DescribeRiskWhiteListRequest) {
 	request = &DescribeRiskWhiteListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -101,7 +103,7 @@ func CreateDescribeRiskWhiteListRequest() (request *DescribeRiskWhiteListRequest
 	return
 }
 
-// create a response to parse from DescribeRiskWhiteList response
+// CreateDescribeRiskWhiteListResponse creates a response to parse from DescribeRiskWhiteList response
 func CreateDescribeRiskWhiteListResponse() (response *DescribeRiskWhiteListResponse) {
 	response = &DescribeRiskWhiteListResponse{
 		BaseResponse: &responses.BaseResponse{},

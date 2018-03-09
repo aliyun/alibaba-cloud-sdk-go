@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke QueryMediaWorkflowList api with *QueryMediaWorkflowListRequest synchronously
+// QueryMediaWorkflowList invokes the mts.QueryMediaWorkflowList API synchronously
 // api document: https://help.aliyun.com/api/mts/querymediaworkflowlist.html
 func (client *Client) QueryMediaWorkflowList(request *QueryMediaWorkflowListRequest) (response *QueryMediaWorkflowListResponse, err error) {
 	response = CreateQueryMediaWorkflowListResponse()
@@ -28,7 +28,7 @@ func (client *Client) QueryMediaWorkflowList(request *QueryMediaWorkflowListRequ
 	return
 }
 
-// invoke QueryMediaWorkflowList api with *QueryMediaWorkflowListRequest asynchronously
+// QueryMediaWorkflowListWithChan invokes the mts.QueryMediaWorkflowList API asynchronously
 // api document: https://help.aliyun.com/api/mts/querymediaworkflowlist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryMediaWorkflowListWithChan(request *QueryMediaWorkflowListRequest) (<-chan *QueryMediaWorkflowListResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) QueryMediaWorkflowListWithChan(request *QueryMediaWorkflow
 	return responseChan, errChan
 }
 
-// invoke QueryMediaWorkflowList api with *QueryMediaWorkflowListRequest asynchronously
+// QueryMediaWorkflowListWithCallback invokes the mts.QueryMediaWorkflowList API asynchronously
 // api document: https://help.aliyun.com/api/mts/querymediaworkflowlist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryMediaWorkflowListWithCallback(request *QueryMediaWorkflowListRequest, callback func(response *QueryMediaWorkflowListResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) QueryMediaWorkflowListWithCallback(request *QueryMediaWork
 	return result
 }
 
+// QueryMediaWorkflowListRequest is the request struct for api QueryMediaWorkflowList
 type QueryMediaWorkflowListRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,6 +83,7 @@ type QueryMediaWorkflowListRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// QueryMediaWorkflowListResponse is the response struct for api QueryMediaWorkflowList
 type QueryMediaWorkflowListResponse struct {
 	*responses.BaseResponse
 	RequestId                string                                    `json:"RequestId" xml:"RequestId"`
@@ -89,8 +91,8 @@ type QueryMediaWorkflowListResponse struct {
 	MediaWorkflowList        MediaWorkflowListInQueryMediaWorkflowList `json:"MediaWorkflowList" xml:"MediaWorkflowList"`
 }
 
-// create a request to invoke QueryMediaWorkflowList API
-func CreateQueryMediaWorkflowListRequest() (request *QueryMediaWorkflowListRequest) {
+// CreateQueryMediaWorkflowListRequest creates a request to invoke QueryMediaWorkflowList API
+func CreateQueryMediaWorkflowListRequest(request *QueryMediaWorkflowListRequest) {
 	request = &QueryMediaWorkflowListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateQueryMediaWorkflowListRequest() (request *QueryMediaWorkflowListReque
 	return
 }
 
-// create a response to parse from QueryMediaWorkflowList response
+// CreateQueryMediaWorkflowListResponse creates a response to parse from QueryMediaWorkflowList response
 func CreateQueryMediaWorkflowListResponse() (response *QueryMediaWorkflowListResponse) {
 	response = &QueryMediaWorkflowListResponse{
 		BaseResponse: &responses.BaseResponse{},

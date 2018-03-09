@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CreateKeyPair api with *CreateKeyPairRequest synchronously
+// CreateKeyPair invokes the ecs.CreateKeyPair API synchronously
 // api document: https://help.aliyun.com/api/ecs/createkeypair.html
 func (client *Client) CreateKeyPair(request *CreateKeyPairRequest) (response *CreateKeyPairResponse, err error) {
 	response = CreateCreateKeyPairResponse()
@@ -28,7 +28,7 @@ func (client *Client) CreateKeyPair(request *CreateKeyPairRequest) (response *Cr
 	return
 }
 
-// invoke CreateKeyPair api with *CreateKeyPairRequest asynchronously
+// CreateKeyPairWithChan invokes the ecs.CreateKeyPair API asynchronously
 // api document: https://help.aliyun.com/api/ecs/createkeypair.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateKeyPairWithChan(request *CreateKeyPairRequest) (<-chan *CreateKeyPairResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CreateKeyPairWithChan(request *CreateKeyPairRequest) (<-ch
 	return responseChan, errChan
 }
 
-// invoke CreateKeyPair api with *CreateKeyPairRequest asynchronously
+// CreateKeyPairWithCallback invokes the ecs.CreateKeyPair API asynchronously
 // api document: https://help.aliyun.com/api/ecs/createkeypair.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateKeyPairWithCallback(request *CreateKeyPairRequest, callback func(response *CreateKeyPairResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) CreateKeyPairWithCallback(request *CreateKeyPairRequest, c
 	return result
 }
 
+// CreateKeyPairRequest is the request struct for api CreateKeyPair
 type CreateKeyPairRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -81,6 +82,7 @@ type CreateKeyPairRequest struct {
 	KeyPairName          string           `position:"Query" name:"KeyPairName"`
 }
 
+// CreateKeyPairResponse is the response struct for api CreateKeyPair
 type CreateKeyPairResponse struct {
 	*responses.BaseResponse
 	RequestId          string `json:"RequestId" xml:"RequestId"`
@@ -89,8 +91,8 @@ type CreateKeyPairResponse struct {
 	PrivateKeyBody     string `json:"PrivateKeyBody" xml:"PrivateKeyBody"`
 }
 
-// create a request to invoke CreateKeyPair API
-func CreateCreateKeyPairRequest() (request *CreateKeyPairRequest) {
+// CreateCreateKeyPairRequest creates a request to invoke CreateKeyPair API
+func CreateCreateKeyPairRequest(request *CreateKeyPairRequest) {
 	request = &CreateKeyPairRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateCreateKeyPairRequest() (request *CreateKeyPairRequest) {
 	return
 }
 
-// create a response to parse from CreateKeyPair response
+// CreateCreateKeyPairResponse creates a response to parse from CreateKeyPair response
 func CreateCreateKeyPairResponse() (response *CreateKeyPairResponse) {
 	response = &CreateKeyPairResponse{
 		BaseResponse: &responses.BaseResponse{},

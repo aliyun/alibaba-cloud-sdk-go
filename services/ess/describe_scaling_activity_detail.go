@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeScalingActivityDetail api with *DescribeScalingActivityDetailRequest synchronously
+// DescribeScalingActivityDetail invokes the ess.DescribeScalingActivityDetail API synchronously
 // api document: https://help.aliyun.com/api/ess/describescalingactivitydetail.html
 func (client *Client) DescribeScalingActivityDetail(request *DescribeScalingActivityDetailRequest) (response *DescribeScalingActivityDetailResponse, err error) {
 	response = CreateDescribeScalingActivityDetailResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeScalingActivityDetail(request *DescribeScalingActi
 	return
 }
 
-// invoke DescribeScalingActivityDetail api with *DescribeScalingActivityDetailRequest asynchronously
+// DescribeScalingActivityDetailWithChan invokes the ess.DescribeScalingActivityDetail API asynchronously
 // api document: https://help.aliyun.com/api/ess/describescalingactivitydetail.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeScalingActivityDetailWithChan(request *DescribeScalingActivityDetailRequest) (<-chan *DescribeScalingActivityDetailResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeScalingActivityDetailWithChan(request *DescribeSca
 	return responseChan, errChan
 }
 
-// invoke DescribeScalingActivityDetail api with *DescribeScalingActivityDetailRequest asynchronously
+// DescribeScalingActivityDetailWithCallback invokes the ess.DescribeScalingActivityDetail API asynchronously
 // api document: https://help.aliyun.com/api/ess/describescalingactivitydetail.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeScalingActivityDetailWithCallback(request *DescribeScalingActivityDetailRequest, callback func(response *DescribeScalingActivityDetailResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeScalingActivityDetailWithCallback(request *Describ
 	return result
 }
 
+// DescribeScalingActivityDetailRequest is the request struct for api DescribeScalingActivityDetail
 type DescribeScalingActivityDetailRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -81,14 +82,15 @@ type DescribeScalingActivityDetailRequest struct {
 	ScalingActivityId    string           `position:"Query" name:"ScalingActivityId"`
 }
 
+// DescribeScalingActivityDetailResponse is the response struct for api DescribeScalingActivityDetail
 type DescribeScalingActivityDetailResponse struct {
 	*responses.BaseResponse
 	ScalingActivityId string `json:"ScalingActivityId" xml:"ScalingActivityId"`
 	Detail            string `json:"Detail" xml:"Detail"`
 }
 
-// create a request to invoke DescribeScalingActivityDetail API
-func CreateDescribeScalingActivityDetailRequest() (request *DescribeScalingActivityDetailRequest) {
+// CreateDescribeScalingActivityDetailRequest creates a request to invoke DescribeScalingActivityDetail API
+func CreateDescribeScalingActivityDetailRequest(request *DescribeScalingActivityDetailRequest) {
 	request = &DescribeScalingActivityDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -96,7 +98,7 @@ func CreateDescribeScalingActivityDetailRequest() (request *DescribeScalingActiv
 	return
 }
 
-// create a response to parse from DescribeScalingActivityDetail response
+// CreateDescribeScalingActivityDetailResponse creates a response to parse from DescribeScalingActivityDetail response
 func CreateDescribeScalingActivityDetailResponse() (response *DescribeScalingActivityDetailResponse) {
 	response = &DescribeScalingActivityDetailResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SetL2OssKeyConfig api with *SetL2OssKeyConfigRequest synchronously
+// SetL2OssKeyConfig invokes the cdn.SetL2OssKeyConfig API synchronously
 // api document: https://help.aliyun.com/api/cdn/setl2osskeyconfig.html
 func (client *Client) SetL2OssKeyConfig(request *SetL2OssKeyConfigRequest) (response *SetL2OssKeyConfigResponse, err error) {
 	response = CreateSetL2OssKeyConfigResponse()
@@ -28,7 +28,7 @@ func (client *Client) SetL2OssKeyConfig(request *SetL2OssKeyConfigRequest) (resp
 	return
 }
 
-// invoke SetL2OssKeyConfig api with *SetL2OssKeyConfigRequest asynchronously
+// SetL2OssKeyConfigWithChan invokes the cdn.SetL2OssKeyConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/setl2osskeyconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetL2OssKeyConfigWithChan(request *SetL2OssKeyConfigRequest) (<-chan *SetL2OssKeyConfigResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SetL2OssKeyConfigWithChan(request *SetL2OssKeyConfigReques
 	return responseChan, errChan
 }
 
-// invoke SetL2OssKeyConfig api with *SetL2OssKeyConfigRequest asynchronously
+// SetL2OssKeyConfigWithCallback invokes the cdn.SetL2OssKeyConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/setl2osskeyconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetL2OssKeyConfigWithCallback(request *SetL2OssKeyConfigRequest, callback func(response *SetL2OssKeyConfigResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SetL2OssKeyConfigWithCallback(request *SetL2OssKeyConfigRe
 	return result
 }
 
+// SetL2OssKeyConfigRequest is the request struct for api SetL2OssKeyConfig
 type SetL2OssKeyConfigRequest struct {
 	*requests.RpcRequest
 	OwnerId        requests.Integer `position:"Query" name:"OwnerId"`
@@ -81,13 +82,14 @@ type SetL2OssKeyConfigRequest struct {
 	PrivateOssAuth string           `position:"Query" name:"PrivateOssAuth"`
 }
 
+// SetL2OssKeyConfigResponse is the response struct for api SetL2OssKeyConfig
 type SetL2OssKeyConfigResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke SetL2OssKeyConfig API
-func CreateSetL2OssKeyConfigRequest() (request *SetL2OssKeyConfigRequest) {
+// CreateSetL2OssKeyConfigRequest creates a request to invoke SetL2OssKeyConfig API
+func CreateSetL2OssKeyConfigRequest(request *SetL2OssKeyConfigRequest) {
 	request = &SetL2OssKeyConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateSetL2OssKeyConfigRequest() (request *SetL2OssKeyConfigRequest) {
 	return
 }
 
-// create a response to parse from SetL2OssKeyConfig response
+// CreateSetL2OssKeyConfigResponse creates a response to parse from SetL2OssKeyConfig response
 func CreateSetL2OssKeyConfigResponse() (response *SetL2OssKeyConfigResponse) {
 	response = &SetL2OssKeyConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke GetRole api with *GetRoleRequest synchronously
+// GetRole invokes the ram.GetRole API synchronously
 // api document: https://help.aliyun.com/api/ram/getrole.html
 func (client *Client) GetRole(request *GetRoleRequest) (response *GetRoleResponse, err error) {
 	response = CreateGetRoleResponse()
@@ -28,7 +28,7 @@ func (client *Client) GetRole(request *GetRoleRequest) (response *GetRoleRespons
 	return
 }
 
-// invoke GetRole api with *GetRoleRequest asynchronously
+// GetRoleWithChan invokes the ram.GetRole API asynchronously
 // api document: https://help.aliyun.com/api/ram/getrole.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetRoleWithChan(request *GetRoleRequest) (<-chan *GetRoleResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) GetRoleWithChan(request *GetRoleRequest) (<-chan *GetRoleR
 	return responseChan, errChan
 }
 
-// invoke GetRole api with *GetRoleRequest asynchronously
+// GetRoleWithCallback invokes the ram.GetRole API asynchronously
 // api document: https://help.aliyun.com/api/ram/getrole.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetRoleWithCallback(request *GetRoleRequest, callback func(response *GetRoleResponse, err error)) <-chan int {
@@ -73,19 +73,21 @@ func (client *Client) GetRoleWithCallback(request *GetRoleRequest, callback func
 	return result
 }
 
+// GetRoleRequest is the request struct for api GetRole
 type GetRoleRequest struct {
 	*requests.RpcRequest
 	RoleName string `position:"Query" name:"RoleName"`
 }
 
+// GetRoleResponse is the response struct for api GetRole
 type GetRoleResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Role      Role   `json:"Role" xml:"Role"`
 }
 
-// create a request to invoke GetRole API
-func CreateGetRoleRequest() (request *GetRoleRequest) {
+// CreateGetRoleRequest creates a request to invoke GetRole API
+func CreateGetRoleRequest(request *GetRoleRequest) {
 	request = &GetRoleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -93,7 +95,7 @@ func CreateGetRoleRequest() (request *GetRoleRequest) {
 	return
 }
 
-// create a response to parse from GetRole response
+// CreateGetRoleResponse creates a response to parse from GetRole response
 func CreateGetRoleResponse() (response *GetRoleResponse) {
 	response = &GetRoleResponse{
 		BaseResponse: &responses.BaseResponse{},

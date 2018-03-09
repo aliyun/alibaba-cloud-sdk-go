@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeOptimizeAdviceOnStorage api with *DescribeOptimizeAdviceOnStorageRequest synchronously
+// DescribeOptimizeAdviceOnStorage invokes the rds.DescribeOptimizeAdviceOnStorage API synchronously
 // api document: https://help.aliyun.com/api/rds/describeoptimizeadviceonstorage.html
 func (client *Client) DescribeOptimizeAdviceOnStorage(request *DescribeOptimizeAdviceOnStorageRequest) (response *DescribeOptimizeAdviceOnStorageResponse, err error) {
 	response = CreateDescribeOptimizeAdviceOnStorageResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeOptimizeAdviceOnStorage(request *DescribeOptimizeA
 	return
 }
 
-// invoke DescribeOptimizeAdviceOnStorage api with *DescribeOptimizeAdviceOnStorageRequest asynchronously
+// DescribeOptimizeAdviceOnStorageWithChan invokes the rds.DescribeOptimizeAdviceOnStorage API asynchronously
 // api document: https://help.aliyun.com/api/rds/describeoptimizeadviceonstorage.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeOptimizeAdviceOnStorageWithChan(request *DescribeOptimizeAdviceOnStorageRequest) (<-chan *DescribeOptimizeAdviceOnStorageResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeOptimizeAdviceOnStorageWithChan(request *DescribeO
 	return responseChan, errChan
 }
 
-// invoke DescribeOptimizeAdviceOnStorage api with *DescribeOptimizeAdviceOnStorageRequest asynchronously
+// DescribeOptimizeAdviceOnStorageWithCallback invokes the rds.DescribeOptimizeAdviceOnStorage API asynchronously
 // api document: https://help.aliyun.com/api/rds/describeoptimizeadviceonstorage.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeOptimizeAdviceOnStorageWithCallback(request *DescribeOptimizeAdviceOnStorageRequest, callback func(response *DescribeOptimizeAdviceOnStorageResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeOptimizeAdviceOnStorageWithCallback(request *Descr
 	return result
 }
 
+// DescribeOptimizeAdviceOnStorageRequest is the request struct for api DescribeOptimizeAdviceOnStorage
 type DescribeOptimizeAdviceOnStorageRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,6 +85,7 @@ type DescribeOptimizeAdviceOnStorageRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// DescribeOptimizeAdviceOnStorageResponse is the response struct for api DescribeOptimizeAdviceOnStorage
 type DescribeOptimizeAdviceOnStorageResponse struct {
 	*responses.BaseResponse
 	RequestId         string                                 `json:"RequestId" xml:"RequestId"`
@@ -94,8 +96,8 @@ type DescribeOptimizeAdviceOnStorageResponse struct {
 	Items             ItemsInDescribeOptimizeAdviceOnStorage `json:"Items" xml:"Items"`
 }
 
-// create a request to invoke DescribeOptimizeAdviceOnStorage API
-func CreateDescribeOptimizeAdviceOnStorageRequest() (request *DescribeOptimizeAdviceOnStorageRequest) {
+// CreateDescribeOptimizeAdviceOnStorageRequest creates a request to invoke DescribeOptimizeAdviceOnStorage API
+func CreateDescribeOptimizeAdviceOnStorageRequest(request *DescribeOptimizeAdviceOnStorageRequest) {
 	request = &DescribeOptimizeAdviceOnStorageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -103,7 +105,7 @@ func CreateDescribeOptimizeAdviceOnStorageRequest() (request *DescribeOptimizeAd
 	return
 }
 
-// create a response to parse from DescribeOptimizeAdviceOnStorage response
+// CreateDescribeOptimizeAdviceOnStorageResponse creates a response to parse from DescribeOptimizeAdviceOnStorage response
 func CreateDescribeOptimizeAdviceOnStorageResponse() (response *DescribeOptimizeAdviceOnStorageResponse) {
 	response = &DescribeOptimizeAdviceOnStorageResponse{
 		BaseResponse: &responses.BaseResponse{},

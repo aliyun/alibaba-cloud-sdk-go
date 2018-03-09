@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CreateReadOnlyDBInstance api with *CreateReadOnlyDBInstanceRequest synchronously
+// CreateReadOnlyDBInstance invokes the rds.CreateReadOnlyDBInstance API synchronously
 // api document: https://help.aliyun.com/api/rds/createreadonlydbinstance.html
 func (client *Client) CreateReadOnlyDBInstance(request *CreateReadOnlyDBInstanceRequest) (response *CreateReadOnlyDBInstanceResponse, err error) {
 	response = CreateCreateReadOnlyDBInstanceResponse()
@@ -28,7 +28,7 @@ func (client *Client) CreateReadOnlyDBInstance(request *CreateReadOnlyDBInstance
 	return
 }
 
-// invoke CreateReadOnlyDBInstance api with *CreateReadOnlyDBInstanceRequest asynchronously
+// CreateReadOnlyDBInstanceWithChan invokes the rds.CreateReadOnlyDBInstance API asynchronously
 // api document: https://help.aliyun.com/api/rds/createreadonlydbinstance.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateReadOnlyDBInstanceWithChan(request *CreateReadOnlyDBInstanceRequest) (<-chan *CreateReadOnlyDBInstanceResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CreateReadOnlyDBInstanceWithChan(request *CreateReadOnlyDB
 	return responseChan, errChan
 }
 
-// invoke CreateReadOnlyDBInstance api with *CreateReadOnlyDBInstanceRequest asynchronously
+// CreateReadOnlyDBInstanceWithCallback invokes the rds.CreateReadOnlyDBInstance API asynchronously
 // api document: https://help.aliyun.com/api/rds/createreadonlydbinstance.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateReadOnlyDBInstanceWithCallback(request *CreateReadOnlyDBInstanceRequest, callback func(response *CreateReadOnlyDBInstanceResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) CreateReadOnlyDBInstanceWithCallback(request *CreateReadOn
 	return result
 }
 
+// CreateReadOnlyDBInstanceRequest is the request struct for api CreateReadOnlyDBInstance
 type CreateReadOnlyDBInstanceRequest struct {
 	*requests.RpcRequest
 	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
@@ -94,6 +95,7 @@ type CreateReadOnlyDBInstanceRequest struct {
 	ResourceGroupId       string           `position:"Query" name:"ResourceGroupId"`
 }
 
+// CreateReadOnlyDBInstanceResponse is the response struct for api CreateReadOnlyDBInstance
 type CreateReadOnlyDBInstanceResponse struct {
 	*responses.BaseResponse
 	RequestId        string `json:"RequestId" xml:"RequestId"`
@@ -103,8 +105,8 @@ type CreateReadOnlyDBInstanceResponse struct {
 	Port             string `json:"Port" xml:"Port"`
 }
 
-// create a request to invoke CreateReadOnlyDBInstance API
-func CreateCreateReadOnlyDBInstanceRequest() (request *CreateReadOnlyDBInstanceRequest) {
+// CreateCreateReadOnlyDBInstanceRequest creates a request to invoke CreateReadOnlyDBInstance API
+func CreateCreateReadOnlyDBInstanceRequest(request *CreateReadOnlyDBInstanceRequest) {
 	request = &CreateReadOnlyDBInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -112,7 +114,7 @@ func CreateCreateReadOnlyDBInstanceRequest() (request *CreateReadOnlyDBInstanceR
 	return
 }
 
-// create a response to parse from CreateReadOnlyDBInstance response
+// CreateCreateReadOnlyDBInstanceResponse creates a response to parse from CreateReadOnlyDBInstance response
 func CreateCreateReadOnlyDBInstanceResponse() (response *CreateReadOnlyDBInstanceResponse) {
 	response = &CreateReadOnlyDBInstanceResponse{
 		BaseResponse: &responses.BaseResponse{},

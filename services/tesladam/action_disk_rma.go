@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ActionDiskRma api with *ActionDiskRmaRequest synchronously
+// ActionDiskRma invokes the tesladam.ActionDiskRma API synchronously
 // api document: https://help.aliyun.com/api/tesladam/actiondiskrma.html
 func (client *Client) ActionDiskRma(request *ActionDiskRmaRequest) (response *ActionDiskRmaResponse, err error) {
 	response = CreateActionDiskRmaResponse()
@@ -28,7 +28,7 @@ func (client *Client) ActionDiskRma(request *ActionDiskRmaRequest) (response *Ac
 	return
 }
 
-// invoke ActionDiskRma api with *ActionDiskRmaRequest asynchronously
+// ActionDiskRmaWithChan invokes the tesladam.ActionDiskRma API asynchronously
 // api document: https://help.aliyun.com/api/tesladam/actiondiskrma.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ActionDiskRmaWithChan(request *ActionDiskRmaRequest) (<-chan *ActionDiskRmaResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ActionDiskRmaWithChan(request *ActionDiskRmaRequest) (<-ch
 	return responseChan, errChan
 }
 
-// invoke ActionDiskRma api with *ActionDiskRmaRequest asynchronously
+// ActionDiskRmaWithCallback invokes the tesladam.ActionDiskRma API asynchronously
 // api document: https://help.aliyun.com/api/tesladam/actiondiskrma.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ActionDiskRmaWithCallback(request *ActionDiskRmaRequest, callback func(response *ActionDiskRmaResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ActionDiskRmaWithCallback(request *ActionDiskRmaRequest, c
 	return result
 }
 
+// ActionDiskRmaRequest is the request struct for api ActionDiskRma
 type ActionDiskRmaRequest struct {
 	*requests.RpcRequest
 	Hostname    string `position:"Query" name:"Hostname"`
@@ -84,6 +85,7 @@ type ActionDiskRmaRequest struct {
 	DiskReason  string `position:"Query" name:"DiskReason"`
 }
 
+// ActionDiskRmaResponse is the response struct for api ActionDiskRma
 type ActionDiskRmaResponse struct {
 	*responses.BaseResponse
 	Status  bool   `json:"Status" xml:"Status"`
@@ -91,8 +93,8 @@ type ActionDiskRmaResponse struct {
 	Result  string `json:"Result" xml:"Result"`
 }
 
-// create a request to invoke ActionDiskRma API
-func CreateActionDiskRmaRequest() (request *ActionDiskRmaRequest) {
+// CreateActionDiskRmaRequest creates a request to invoke ActionDiskRma API
+func CreateActionDiskRmaRequest(request *ActionDiskRmaRequest) {
 	request = &ActionDiskRmaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -100,7 +102,7 @@ func CreateActionDiskRmaRequest() (request *ActionDiskRmaRequest) {
 	return
 }
 
-// create a response to parse from ActionDiskRma response
+// CreateActionDiskRmaResponse creates a response to parse from ActionDiskRma response
 func CreateActionDiskRmaResponse() (response *ActionDiskRmaResponse) {
 	response = &ActionDiskRmaResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteSign api with *DeleteSignRequest synchronously
+// DeleteSign invokes the dm.DeleteSign API synchronously
 // api document: https://help.aliyun.com/api/dm/deletesign.html
 func (client *Client) DeleteSign(request *DeleteSignRequest) (response *DeleteSignResponse, err error) {
 	response = CreateDeleteSignResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteSign(request *DeleteSignRequest) (response *DeleteSi
 	return
 }
 
-// invoke DeleteSign api with *DeleteSignRequest asynchronously
+// DeleteSignWithChan invokes the dm.DeleteSign API asynchronously
 // api document: https://help.aliyun.com/api/dm/deletesign.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteSignWithChan(request *DeleteSignRequest) (<-chan *DeleteSignResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteSignWithChan(request *DeleteSignRequest) (<-chan *De
 	return responseChan, errChan
 }
 
-// invoke DeleteSign api with *DeleteSignRequest asynchronously
+// DeleteSignWithCallback invokes the dm.DeleteSign API asynchronously
 // api document: https://help.aliyun.com/api/dm/deletesign.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteSignWithCallback(request *DeleteSignRequest, callback func(response *DeleteSignResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DeleteSignWithCallback(request *DeleteSignRequest, callbac
 	return result
 }
 
+// DeleteSignRequest is the request struct for api DeleteSign
 type DeleteSignRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,13 +83,14 @@ type DeleteSignRequest struct {
 	FromType             requests.Integer `position:"Query" name:"FromType"`
 }
 
+// DeleteSignResponse is the response struct for api DeleteSign
 type DeleteSignResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DeleteSign API
-func CreateDeleteSignRequest() (request *DeleteSignRequest) {
+// CreateDeleteSignRequest creates a request to invoke DeleteSign API
+func CreateDeleteSignRequest(request *DeleteSignRequest) {
 	request = &DeleteSignRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -96,7 +98,7 @@ func CreateDeleteSignRequest() (request *DeleteSignRequest) {
 	return
 }
 
-// create a response to parse from DeleteSign response
+// CreateDeleteSignResponse creates a response to parse from DeleteSign response
 func CreateDeleteSignResponse() (response *DeleteSignResponse) {
 	response = &DeleteSignResponse{
 		BaseResponse: &responses.BaseResponse{},

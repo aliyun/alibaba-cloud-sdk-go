@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke RemoveUserFromGroup api with *RemoveUserFromGroupRequest synchronously
+// RemoveUserFromGroup invokes the ram.RemoveUserFromGroup API synchronously
 // api document: https://help.aliyun.com/api/ram/removeuserfromgroup.html
 func (client *Client) RemoveUserFromGroup(request *RemoveUserFromGroupRequest) (response *RemoveUserFromGroupResponse, err error) {
 	response = CreateRemoveUserFromGroupResponse()
@@ -28,7 +28,7 @@ func (client *Client) RemoveUserFromGroup(request *RemoveUserFromGroupRequest) (
 	return
 }
 
-// invoke RemoveUserFromGroup api with *RemoveUserFromGroupRequest asynchronously
+// RemoveUserFromGroupWithChan invokes the ram.RemoveUserFromGroup API asynchronously
 // api document: https://help.aliyun.com/api/ram/removeuserfromgroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveUserFromGroupWithChan(request *RemoveUserFromGroupRequest) (<-chan *RemoveUserFromGroupResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) RemoveUserFromGroupWithChan(request *RemoveUserFromGroupRe
 	return responseChan, errChan
 }
 
-// invoke RemoveUserFromGroup api with *RemoveUserFromGroupRequest asynchronously
+// RemoveUserFromGroupWithCallback invokes the ram.RemoveUserFromGroup API asynchronously
 // api document: https://help.aliyun.com/api/ram/removeuserfromgroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveUserFromGroupWithCallback(request *RemoveUserFromGroupRequest, callback func(response *RemoveUserFromGroupResponse, err error)) <-chan int {
@@ -73,19 +73,21 @@ func (client *Client) RemoveUserFromGroupWithCallback(request *RemoveUserFromGro
 	return result
 }
 
+// RemoveUserFromGroupRequest is the request struct for api RemoveUserFromGroup
 type RemoveUserFromGroupRequest struct {
 	*requests.RpcRequest
 	UserName  string `position:"Query" name:"UserName"`
 	GroupName string `position:"Query" name:"GroupName"`
 }
 
+// RemoveUserFromGroupResponse is the response struct for api RemoveUserFromGroup
 type RemoveUserFromGroupResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke RemoveUserFromGroup API
-func CreateRemoveUserFromGroupRequest() (request *RemoveUserFromGroupRequest) {
+// CreateRemoveUserFromGroupRequest creates a request to invoke RemoveUserFromGroup API
+func CreateRemoveUserFromGroupRequest(request *RemoveUserFromGroupRequest) {
 	request = &RemoveUserFromGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -93,7 +95,7 @@ func CreateRemoveUserFromGroupRequest() (request *RemoveUserFromGroupRequest) {
 	return
 }
 
-// create a response to parse from RemoveUserFromGroup response
+// CreateRemoveUserFromGroupResponse creates a response to parse from RemoveUserFromGroup response
 func CreateRemoveUserFromGroupResponse() (response *RemoveUserFromGroupResponse) {
 	response = &RemoveUserFromGroupResponse{
 		BaseResponse: &responses.BaseResponse{},

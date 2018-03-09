@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke RerunJobs api with *RerunJobsRequest synchronously
+// RerunJobs invokes the ehpc.RerunJobs API synchronously
 // api document: https://help.aliyun.com/api/ehpc/rerunjobs.html
 func (client *Client) RerunJobs(request *RerunJobsRequest) (response *RerunJobsResponse, err error) {
 	response = CreateRerunJobsResponse()
@@ -28,7 +28,7 @@ func (client *Client) RerunJobs(request *RerunJobsRequest) (response *RerunJobsR
 	return
 }
 
-// invoke RerunJobs api with *RerunJobsRequest asynchronously
+// RerunJobsWithChan invokes the ehpc.RerunJobs API asynchronously
 // api document: https://help.aliyun.com/api/ehpc/rerunjobs.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RerunJobsWithChan(request *RerunJobsRequest) (<-chan *RerunJobsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) RerunJobsWithChan(request *RerunJobsRequest) (<-chan *Reru
 	return responseChan, errChan
 }
 
-// invoke RerunJobs api with *RerunJobsRequest asynchronously
+// RerunJobsWithCallback invokes the ehpc.RerunJobs API asynchronously
 // api document: https://help.aliyun.com/api/ehpc/rerunjobs.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RerunJobsWithCallback(request *RerunJobsRequest, callback func(response *RerunJobsResponse, err error)) <-chan int {
@@ -73,19 +73,21 @@ func (client *Client) RerunJobsWithCallback(request *RerunJobsRequest, callback 
 	return result
 }
 
+// RerunJobsRequest is the request struct for api RerunJobs
 type RerunJobsRequest struct {
 	*requests.RpcRequest
 	ClusterId string `position:"Query" name:"ClusterId"`
 	Jobs      string `position:"Query" name:"Jobs"`
 }
 
+// RerunJobsResponse is the response struct for api RerunJobs
 type RerunJobsResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke RerunJobs API
-func CreateRerunJobsRequest() (request *RerunJobsRequest) {
+// CreateRerunJobsRequest creates a request to invoke RerunJobs API
+func CreateRerunJobsRequest(request *RerunJobsRequest) {
 	request = &RerunJobsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -93,7 +95,7 @@ func CreateRerunJobsRequest() (request *RerunJobsRequest) {
 	return
 }
 
-// create a response to parse from RerunJobs response
+// CreateRerunJobsResponse creates a response to parse from RerunJobs response
 func CreateRerunJobsResponse() (response *RerunJobsResponse) {
 	response = &RerunJobsResponse{
 		BaseResponse: &responses.BaseResponse{},

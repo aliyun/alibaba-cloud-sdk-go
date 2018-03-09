@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ListEntitiesForPolicy api with *ListEntitiesForPolicyRequest synchronously
+// ListEntitiesForPolicy invokes the ram.ListEntitiesForPolicy API synchronously
 // api document: https://help.aliyun.com/api/ram/listentitiesforpolicy.html
 func (client *Client) ListEntitiesForPolicy(request *ListEntitiesForPolicyRequest) (response *ListEntitiesForPolicyResponse, err error) {
 	response = CreateListEntitiesForPolicyResponse()
@@ -28,7 +28,7 @@ func (client *Client) ListEntitiesForPolicy(request *ListEntitiesForPolicyReques
 	return
 }
 
-// invoke ListEntitiesForPolicy api with *ListEntitiesForPolicyRequest asynchronously
+// ListEntitiesForPolicyWithChan invokes the ram.ListEntitiesForPolicy API asynchronously
 // api document: https://help.aliyun.com/api/ram/listentitiesforpolicy.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListEntitiesForPolicyWithChan(request *ListEntitiesForPolicyRequest) (<-chan *ListEntitiesForPolicyResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ListEntitiesForPolicyWithChan(request *ListEntitiesForPoli
 	return responseChan, errChan
 }
 
-// invoke ListEntitiesForPolicy api with *ListEntitiesForPolicyRequest asynchronously
+// ListEntitiesForPolicyWithCallback invokes the ram.ListEntitiesForPolicy API asynchronously
 // api document: https://help.aliyun.com/api/ram/listentitiesforpolicy.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListEntitiesForPolicyWithCallback(request *ListEntitiesForPolicyRequest, callback func(response *ListEntitiesForPolicyResponse, err error)) <-chan int {
@@ -73,12 +73,14 @@ func (client *Client) ListEntitiesForPolicyWithCallback(request *ListEntitiesFor
 	return result
 }
 
+// ListEntitiesForPolicyRequest is the request struct for api ListEntitiesForPolicy
 type ListEntitiesForPolicyRequest struct {
 	*requests.RpcRequest
 	PolicyType string `position:"Query" name:"PolicyType"`
 	PolicyName string `position:"Query" name:"PolicyName"`
 }
 
+// ListEntitiesForPolicyResponse is the response struct for api ListEntitiesForPolicy
 type ListEntitiesForPolicyResponse struct {
 	*responses.BaseResponse
 	RequestId string                        `json:"RequestId" xml:"RequestId"`
@@ -87,8 +89,8 @@ type ListEntitiesForPolicyResponse struct {
 	Roles     RolesInListEntitiesForPolicy  `json:"Roles" xml:"Roles"`
 }
 
-// create a request to invoke ListEntitiesForPolicy API
-func CreateListEntitiesForPolicyRequest() (request *ListEntitiesForPolicyRequest) {
+// CreateListEntitiesForPolicyRequest creates a request to invoke ListEntitiesForPolicy API
+func CreateListEntitiesForPolicyRequest(request *ListEntitiesForPolicyRequest) {
 	request = &ListEntitiesForPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -96,7 +98,7 @@ func CreateListEntitiesForPolicyRequest() (request *ListEntitiesForPolicyRequest
 	return
 }
 
-// create a response to parse from ListEntitiesForPolicy response
+// CreateListEntitiesForPolicyResponse creates a response to parse from ListEntitiesForPolicy response
 func CreateListEntitiesForPolicyResponse() (response *ListEntitiesForPolicyResponse) {
 	response = &ListEntitiesForPolicyResponse{
 		BaseResponse: &responses.BaseResponse{},

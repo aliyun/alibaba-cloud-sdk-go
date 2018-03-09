@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke UpdateCategoryName api with *UpdateCategoryNameRequest synchronously
+// UpdateCategoryName invokes the mts.UpdateCategoryName API synchronously
 // api document: https://help.aliyun.com/api/mts/updatecategoryname.html
 func (client *Client) UpdateCategoryName(request *UpdateCategoryNameRequest) (response *UpdateCategoryNameResponse, err error) {
 	response = CreateUpdateCategoryNameResponse()
@@ -28,7 +28,7 @@ func (client *Client) UpdateCategoryName(request *UpdateCategoryNameRequest) (re
 	return
 }
 
-// invoke UpdateCategoryName api with *UpdateCategoryNameRequest asynchronously
+// UpdateCategoryNameWithChan invokes the mts.UpdateCategoryName API asynchronously
 // api document: https://help.aliyun.com/api/mts/updatecategoryname.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateCategoryNameWithChan(request *UpdateCategoryNameRequest) (<-chan *UpdateCategoryNameResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) UpdateCategoryNameWithChan(request *UpdateCategoryNameRequ
 	return responseChan, errChan
 }
 
-// invoke UpdateCategoryName api with *UpdateCategoryNameRequest asynchronously
+// UpdateCategoryNameWithCallback invokes the mts.UpdateCategoryName API asynchronously
 // api document: https://help.aliyun.com/api/mts/updatecategoryname.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateCategoryNameWithCallback(request *UpdateCategoryNameRequest, callback func(response *UpdateCategoryNameResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) UpdateCategoryNameWithCallback(request *UpdateCategoryName
 	return result
 }
 
+// UpdateCategoryNameRequest is the request struct for api UpdateCategoryName
 type UpdateCategoryNameRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -83,13 +84,14 @@ type UpdateCategoryNameRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// UpdateCategoryNameResponse is the response struct for api UpdateCategoryName
 type UpdateCategoryNameResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke UpdateCategoryName API
-func CreateUpdateCategoryNameRequest() (request *UpdateCategoryNameRequest) {
+// CreateUpdateCategoryNameRequest creates a request to invoke UpdateCategoryName API
+func CreateUpdateCategoryNameRequest(request *UpdateCategoryNameRequest) {
 	request = &UpdateCategoryNameRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateUpdateCategoryNameRequest() (request *UpdateCategoryNameRequest) {
 	return
 }
 
-// create a response to parse from UpdateCategoryName response
+// CreateUpdateCategoryNameResponse creates a response to parse from UpdateCategoryName response
 func CreateUpdateCategoryNameResponse() (response *UpdateCategoryNameResponse) {
 	response = &UpdateCategoryNameResponse{
 		BaseResponse: &responses.BaseResponse{},

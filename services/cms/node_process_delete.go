@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke NodeProcessDelete api with *NodeProcessDeleteRequest synchronously
+// NodeProcessDelete invokes the cms.NodeProcessDelete API synchronously
 // api document: https://help.aliyun.com/api/cms/nodeprocessdelete.html
 func (client *Client) NodeProcessDelete(request *NodeProcessDeleteRequest) (response *NodeProcessDeleteResponse, err error) {
 	response = CreateNodeProcessDeleteResponse()
@@ -28,7 +28,7 @@ func (client *Client) NodeProcessDelete(request *NodeProcessDeleteRequest) (resp
 	return
 }
 
-// invoke NodeProcessDelete api with *NodeProcessDeleteRequest asynchronously
+// NodeProcessDeleteWithChan invokes the cms.NodeProcessDelete API asynchronously
 // api document: https://help.aliyun.com/api/cms/nodeprocessdelete.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) NodeProcessDeleteWithChan(request *NodeProcessDeleteRequest) (<-chan *NodeProcessDeleteResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) NodeProcessDeleteWithChan(request *NodeProcessDeleteReques
 	return responseChan, errChan
 }
 
-// invoke NodeProcessDelete api with *NodeProcessDeleteRequest asynchronously
+// NodeProcessDeleteWithCallback invokes the cms.NodeProcessDelete API asynchronously
 // api document: https://help.aliyun.com/api/cms/nodeprocessdelete.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) NodeProcessDeleteWithCallback(request *NodeProcessDeleteRequest, callback func(response *NodeProcessDeleteResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) NodeProcessDeleteWithCallback(request *NodeProcessDeleteRe
 	return result
 }
 
+// NodeProcessDeleteRequest is the request struct for api NodeProcessDelete
 type NodeProcessDeleteRequest struct {
 	*requests.RpcRequest
 	InstanceId string `position:"Query" name:"InstanceId"`
@@ -80,6 +81,7 @@ type NodeProcessDeleteRequest struct {
 	Id         string `position:"Query" name:"Id"`
 }
 
+// NodeProcessDeleteResponse is the response struct for api NodeProcessDelete
 type NodeProcessDeleteResponse struct {
 	*responses.BaseResponse
 	ErrorCode    int    `json:"ErrorCode" xml:"ErrorCode"`
@@ -88,8 +90,8 @@ type NodeProcessDeleteResponse struct {
 	RequestId    string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke NodeProcessDelete API
-func CreateNodeProcessDeleteRequest() (request *NodeProcessDeleteRequest) {
+// CreateNodeProcessDeleteRequest creates a request to invoke NodeProcessDelete API
+func CreateNodeProcessDeleteRequest(request *NodeProcessDeleteRequest) {
 	request = &NodeProcessDeleteRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateNodeProcessDeleteRequest() (request *NodeProcessDeleteRequest) {
 	return
 }
 
-// create a response to parse from NodeProcessDelete response
+// CreateNodeProcessDeleteResponse creates a response to parse from NodeProcessDelete response
 func CreateNodeProcessDeleteResponse() (response *NodeProcessDeleteResponse) {
 	response = &NodeProcessDeleteResponse{
 		BaseResponse: &responses.BaseResponse{},

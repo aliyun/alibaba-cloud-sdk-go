@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke UpdateMediaCover api with *UpdateMediaCoverRequest synchronously
+// UpdateMediaCover invokes the mts.UpdateMediaCover API synchronously
 // api document: https://help.aliyun.com/api/mts/updatemediacover.html
 func (client *Client) UpdateMediaCover(request *UpdateMediaCoverRequest) (response *UpdateMediaCoverResponse, err error) {
 	response = CreateUpdateMediaCoverResponse()
@@ -28,7 +28,7 @@ func (client *Client) UpdateMediaCover(request *UpdateMediaCoverRequest) (respon
 	return
 }
 
-// invoke UpdateMediaCover api with *UpdateMediaCoverRequest asynchronously
+// UpdateMediaCoverWithChan invokes the mts.UpdateMediaCover API asynchronously
 // api document: https://help.aliyun.com/api/mts/updatemediacover.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateMediaCoverWithChan(request *UpdateMediaCoverRequest) (<-chan *UpdateMediaCoverResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) UpdateMediaCoverWithChan(request *UpdateMediaCoverRequest)
 	return responseChan, errChan
 }
 
-// invoke UpdateMediaCover api with *UpdateMediaCoverRequest asynchronously
+// UpdateMediaCoverWithCallback invokes the mts.UpdateMediaCover API asynchronously
 // api document: https://help.aliyun.com/api/mts/updatemediacover.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateMediaCoverWithCallback(request *UpdateMediaCoverRequest, callback func(response *UpdateMediaCoverResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) UpdateMediaCoverWithCallback(request *UpdateMediaCoverRequ
 	return result
 }
 
+// UpdateMediaCoverRequest is the request struct for api UpdateMediaCover
 type UpdateMediaCoverRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -83,13 +84,14 @@ type UpdateMediaCoverRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// UpdateMediaCoverResponse is the response struct for api UpdateMediaCover
 type UpdateMediaCoverResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke UpdateMediaCover API
-func CreateUpdateMediaCoverRequest() (request *UpdateMediaCoverRequest) {
+// CreateUpdateMediaCoverRequest creates a request to invoke UpdateMediaCover API
+func CreateUpdateMediaCoverRequest(request *UpdateMediaCoverRequest) {
 	request = &UpdateMediaCoverRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateUpdateMediaCoverRequest() (request *UpdateMediaCoverRequest) {
 	return
 }
 
-// create a response to parse from UpdateMediaCover response
+// CreateUpdateMediaCoverResponse creates a response to parse from UpdateMediaCover response
 func CreateUpdateMediaCoverResponse() (response *UpdateMediaCoverResponse) {
 	response = &UpdateMediaCoverResponse{
 		BaseResponse: &responses.BaseResponse{},

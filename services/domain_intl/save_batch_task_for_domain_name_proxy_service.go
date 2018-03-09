@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SaveBatchTaskForDomainNameProxyService api with *SaveBatchTaskForDomainNameProxyServiceRequest synchronously
+// SaveBatchTaskForDomainNameProxyService invokes the domain_intl.SaveBatchTaskForDomainNameProxyService API synchronously
 // api document: https://help.aliyun.com/api/domain-intl/savebatchtaskfordomainnameproxyservice.html
 func (client *Client) SaveBatchTaskForDomainNameProxyService(request *SaveBatchTaskForDomainNameProxyServiceRequest) (response *SaveBatchTaskForDomainNameProxyServiceResponse, err error) {
 	response = CreateSaveBatchTaskForDomainNameProxyServiceResponse()
@@ -28,7 +28,7 @@ func (client *Client) SaveBatchTaskForDomainNameProxyService(request *SaveBatchT
 	return
 }
 
-// invoke SaveBatchTaskForDomainNameProxyService api with *SaveBatchTaskForDomainNameProxyServiceRequest asynchronously
+// SaveBatchTaskForDomainNameProxyServiceWithChan invokes the domain_intl.SaveBatchTaskForDomainNameProxyService API asynchronously
 // api document: https://help.aliyun.com/api/domain-intl/savebatchtaskfordomainnameproxyservice.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveBatchTaskForDomainNameProxyServiceWithChan(request *SaveBatchTaskForDomainNameProxyServiceRequest) (<-chan *SaveBatchTaskForDomainNameProxyServiceResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SaveBatchTaskForDomainNameProxyServiceWithChan(request *Sa
 	return responseChan, errChan
 }
 
-// invoke SaveBatchTaskForDomainNameProxyService api with *SaveBatchTaskForDomainNameProxyServiceRequest asynchronously
+// SaveBatchTaskForDomainNameProxyServiceWithCallback invokes the domain_intl.SaveBatchTaskForDomainNameProxyService API asynchronously
 // api document: https://help.aliyun.com/api/domain-intl/savebatchtaskfordomainnameproxyservice.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveBatchTaskForDomainNameProxyServiceWithCallback(request *SaveBatchTaskForDomainNameProxyServiceRequest, callback func(response *SaveBatchTaskForDomainNameProxyServiceResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SaveBatchTaskForDomainNameProxyServiceWithCallback(request
 	return result
 }
 
+// SaveBatchTaskForDomainNameProxyServiceRequest is the request struct for api SaveBatchTaskForDomainNameProxyService
 type SaveBatchTaskForDomainNameProxyServiceRequest struct {
 	*requests.RpcRequest
 	UserClientIp string           `position:"Query" name:"UserClientIp"`
@@ -81,14 +82,15 @@ type SaveBatchTaskForDomainNameProxyServiceRequest struct {
 	Status       requests.Boolean `position:"Query" name:"status"`
 }
 
+// SaveBatchTaskForDomainNameProxyServiceResponse is the response struct for api SaveBatchTaskForDomainNameProxyService
 type SaveBatchTaskForDomainNameProxyServiceResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	TaskNo    string `json:"TaskNo" xml:"TaskNo"`
 }
 
-// create a request to invoke SaveBatchTaskForDomainNameProxyService API
-func CreateSaveBatchTaskForDomainNameProxyServiceRequest() (request *SaveBatchTaskForDomainNameProxyServiceRequest) {
+// CreateSaveBatchTaskForDomainNameProxyServiceRequest creates a request to invoke SaveBatchTaskForDomainNameProxyService API
+func CreateSaveBatchTaskForDomainNameProxyServiceRequest(request *SaveBatchTaskForDomainNameProxyServiceRequest) {
 	request = &SaveBatchTaskForDomainNameProxyServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -96,7 +98,7 @@ func CreateSaveBatchTaskForDomainNameProxyServiceRequest() (request *SaveBatchTa
 	return
 }
 
-// create a response to parse from SaveBatchTaskForDomainNameProxyService response
+// CreateSaveBatchTaskForDomainNameProxyServiceResponse creates a response to parse from SaveBatchTaskForDomainNameProxyService response
 func CreateSaveBatchTaskForDomainNameProxyServiceResponse() (response *SaveBatchTaskForDomainNameProxyServiceResponse) {
 	response = &SaveBatchTaskForDomainNameProxyServiceResponse{
 		BaseResponse: &responses.BaseResponse{},

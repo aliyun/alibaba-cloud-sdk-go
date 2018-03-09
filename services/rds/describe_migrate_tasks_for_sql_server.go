@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeMigrateTasksForSQLServer api with *DescribeMigrateTasksForSQLServerRequest synchronously
+// DescribeMigrateTasksForSQLServer invokes the rds.DescribeMigrateTasksForSQLServer API synchronously
 // api document: https://help.aliyun.com/api/rds/describemigratetasksforsqlserver.html
 func (client *Client) DescribeMigrateTasksForSQLServer(request *DescribeMigrateTasksForSQLServerRequest) (response *DescribeMigrateTasksForSQLServerResponse, err error) {
 	response = CreateDescribeMigrateTasksForSQLServerResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeMigrateTasksForSQLServer(request *DescribeMigrateT
 	return
 }
 
-// invoke DescribeMigrateTasksForSQLServer api with *DescribeMigrateTasksForSQLServerRequest asynchronously
+// DescribeMigrateTasksForSQLServerWithChan invokes the rds.DescribeMigrateTasksForSQLServer API asynchronously
 // api document: https://help.aliyun.com/api/rds/describemigratetasksforsqlserver.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeMigrateTasksForSQLServerWithChan(request *DescribeMigrateTasksForSQLServerRequest) (<-chan *DescribeMigrateTasksForSQLServerResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeMigrateTasksForSQLServerWithChan(request *Describe
 	return responseChan, errChan
 }
 
-// invoke DescribeMigrateTasksForSQLServer api with *DescribeMigrateTasksForSQLServerRequest asynchronously
+// DescribeMigrateTasksForSQLServerWithCallback invokes the rds.DescribeMigrateTasksForSQLServer API asynchronously
 // api document: https://help.aliyun.com/api/rds/describemigratetasksforsqlserver.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeMigrateTasksForSQLServerWithCallback(request *DescribeMigrateTasksForSQLServerRequest, callback func(response *DescribeMigrateTasksForSQLServerResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeMigrateTasksForSQLServerWithCallback(request *Desc
 	return result
 }
 
+// DescribeMigrateTasksForSQLServerRequest is the request struct for api DescribeMigrateTasksForSQLServer
 type DescribeMigrateTasksForSQLServerRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -85,6 +86,7 @@ type DescribeMigrateTasksForSQLServerRequest struct {
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 }
 
+// DescribeMigrateTasksForSQLServerResponse is the response struct for api DescribeMigrateTasksForSQLServer
 type DescribeMigrateTasksForSQLServerResponse struct {
 	*responses.BaseResponse
 	RequestId        string                                  `json:"RequestId" xml:"RequestId"`
@@ -98,8 +100,8 @@ type DescribeMigrateTasksForSQLServerResponse struct {
 	Items            ItemsInDescribeMigrateTasksForSQLServer `json:"Items" xml:"Items"`
 }
 
-// create a request to invoke DescribeMigrateTasksForSQLServer API
-func CreateDescribeMigrateTasksForSQLServerRequest() (request *DescribeMigrateTasksForSQLServerRequest) {
+// CreateDescribeMigrateTasksForSQLServerRequest creates a request to invoke DescribeMigrateTasksForSQLServer API
+func CreateDescribeMigrateTasksForSQLServerRequest(request *DescribeMigrateTasksForSQLServerRequest) {
 	request = &DescribeMigrateTasksForSQLServerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -107,7 +109,7 @@ func CreateDescribeMigrateTasksForSQLServerRequest() (request *DescribeMigrateTa
 	return
 }
 
-// create a response to parse from DescribeMigrateTasksForSQLServer response
+// CreateDescribeMigrateTasksForSQLServerResponse creates a response to parse from DescribeMigrateTasksForSQLServer response
 func CreateDescribeMigrateTasksForSQLServerResponse() (response *DescribeMigrateTasksForSQLServerResponse) {
 	response = &DescribeMigrateTasksForSQLServerResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifyDBInstanceDescription api with *ModifyDBInstanceDescriptionRequest synchronously
+// ModifyDBInstanceDescription invokes the rds.ModifyDBInstanceDescription API synchronously
 // api document: https://help.aliyun.com/api/rds/modifydbinstancedescription.html
 func (client *Client) ModifyDBInstanceDescription(request *ModifyDBInstanceDescriptionRequest) (response *ModifyDBInstanceDescriptionResponse, err error) {
 	response = CreateModifyDBInstanceDescriptionResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifyDBInstanceDescription(request *ModifyDBInstanceDescr
 	return
 }
 
-// invoke ModifyDBInstanceDescription api with *ModifyDBInstanceDescriptionRequest asynchronously
+// ModifyDBInstanceDescriptionWithChan invokes the rds.ModifyDBInstanceDescription API asynchronously
 // api document: https://help.aliyun.com/api/rds/modifydbinstancedescription.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDBInstanceDescriptionWithChan(request *ModifyDBInstanceDescriptionRequest) (<-chan *ModifyDBInstanceDescriptionResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifyDBInstanceDescriptionWithChan(request *ModifyDBInsta
 	return responseChan, errChan
 }
 
-// invoke ModifyDBInstanceDescription api with *ModifyDBInstanceDescriptionRequest asynchronously
+// ModifyDBInstanceDescriptionWithCallback invokes the rds.ModifyDBInstanceDescription API asynchronously
 // api document: https://help.aliyun.com/api/rds/modifydbinstancedescription.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDBInstanceDescriptionWithCallback(request *ModifyDBInstanceDescriptionRequest, callback func(response *ModifyDBInstanceDescriptionResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ModifyDBInstanceDescriptionWithCallback(request *ModifyDBI
 	return result
 }
 
+// ModifyDBInstanceDescriptionRequest is the request struct for api ModifyDBInstanceDescription
 type ModifyDBInstanceDescriptionRequest struct {
 	*requests.RpcRequest
 	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,13 +85,14 @@ type ModifyDBInstanceDescriptionRequest struct {
 	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
 }
 
+// ModifyDBInstanceDescriptionResponse is the response struct for api ModifyDBInstanceDescription
 type ModifyDBInstanceDescriptionResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ModifyDBInstanceDescription API
-func CreateModifyDBInstanceDescriptionRequest() (request *ModifyDBInstanceDescriptionRequest) {
+// CreateModifyDBInstanceDescriptionRequest creates a request to invoke ModifyDBInstanceDescription API
+func CreateModifyDBInstanceDescriptionRequest(request *ModifyDBInstanceDescriptionRequest) {
 	request = &ModifyDBInstanceDescriptionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateModifyDBInstanceDescriptionRequest() (request *ModifyDBInstanceDescri
 	return
 }
 
-// create a response to parse from ModifyDBInstanceDescription response
+// CreateModifyDBInstanceDescriptionResponse creates a response to parse from ModifyDBInstanceDescription response
 func CreateModifyDBInstanceDescriptionResponse() (response *ModifyDBInstanceDescriptionResponse) {
 	response = &ModifyDBInstanceDescriptionResponse{
 		BaseResponse: &responses.BaseResponse{},

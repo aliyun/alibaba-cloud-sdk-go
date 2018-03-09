@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ReportFacerecogJobResult api with *ReportFacerecogJobResultRequest synchronously
+// ReportFacerecogJobResult invokes the mts.ReportFacerecogJobResult API synchronously
 // api document: https://help.aliyun.com/api/mts/reportfacerecogjobresult.html
 func (client *Client) ReportFacerecogJobResult(request *ReportFacerecogJobResultRequest) (response *ReportFacerecogJobResultResponse, err error) {
 	response = CreateReportFacerecogJobResultResponse()
@@ -28,7 +28,7 @@ func (client *Client) ReportFacerecogJobResult(request *ReportFacerecogJobResult
 	return
 }
 
-// invoke ReportFacerecogJobResult api with *ReportFacerecogJobResultRequest asynchronously
+// ReportFacerecogJobResultWithChan invokes the mts.ReportFacerecogJobResult API asynchronously
 // api document: https://help.aliyun.com/api/mts/reportfacerecogjobresult.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReportFacerecogJobResultWithChan(request *ReportFacerecogJobResultRequest) (<-chan *ReportFacerecogJobResultResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ReportFacerecogJobResultWithChan(request *ReportFacerecogJ
 	return responseChan, errChan
 }
 
-// invoke ReportFacerecogJobResult api with *ReportFacerecogJobResultRequest asynchronously
+// ReportFacerecogJobResultWithCallback invokes the mts.ReportFacerecogJobResult API asynchronously
 // api document: https://help.aliyun.com/api/mts/reportfacerecogjobresult.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReportFacerecogJobResultWithCallback(request *ReportFacerecogJobResultRequest, callback func(response *ReportFacerecogJobResultResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ReportFacerecogJobResultWithCallback(request *ReportFacere
 	return result
 }
 
+// ReportFacerecogJobResultRequest is the request struct for api ReportFacerecogJobResult
 type ReportFacerecogJobResultRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,14 +85,15 @@ type ReportFacerecogJobResultRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// ReportFacerecogJobResultResponse is the response struct for api ReportFacerecogJobResult
 type ReportFacerecogJobResultResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	JobId     string `json:"JobId" xml:"JobId"`
 }
 
-// create a request to invoke ReportFacerecogJobResult API
-func CreateReportFacerecogJobResultRequest() (request *ReportFacerecogJobResultRequest) {
+// CreateReportFacerecogJobResultRequest creates a request to invoke ReportFacerecogJobResult API
+func CreateReportFacerecogJobResultRequest(request *ReportFacerecogJobResultRequest) {
 	request = &ReportFacerecogJobResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateReportFacerecogJobResultRequest() (request *ReportFacerecogJobResultR
 	return
 }
 
-// create a response to parse from ReportFacerecogJobResult response
+// CreateReportFacerecogJobResultResponse creates a response to parse from ReportFacerecogJobResult response
 func CreateReportFacerecogJobResultResponse() (response *ReportFacerecogJobResultResponse) {
 	response = &ReportFacerecogJobResultResponse{
 		BaseResponse: &responses.BaseResponse{},

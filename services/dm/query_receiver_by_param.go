@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke QueryReceiverByParam api with *QueryReceiverByParamRequest synchronously
+// QueryReceiverByParam invokes the dm.QueryReceiverByParam API synchronously
 // api document: https://help.aliyun.com/api/dm/queryreceiverbyparam.html
 func (client *Client) QueryReceiverByParam(request *QueryReceiverByParamRequest) (response *QueryReceiverByParamResponse, err error) {
 	response = CreateQueryReceiverByParamResponse()
@@ -28,7 +28,7 @@ func (client *Client) QueryReceiverByParam(request *QueryReceiverByParamRequest)
 	return
 }
 
-// invoke QueryReceiverByParam api with *QueryReceiverByParamRequest asynchronously
+// QueryReceiverByParamWithChan invokes the dm.QueryReceiverByParam API asynchronously
 // api document: https://help.aliyun.com/api/dm/queryreceiverbyparam.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryReceiverByParamWithChan(request *QueryReceiverByParamRequest) (<-chan *QueryReceiverByParamResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) QueryReceiverByParamWithChan(request *QueryReceiverByParam
 	return responseChan, errChan
 }
 
-// invoke QueryReceiverByParam api with *QueryReceiverByParamRequest asynchronously
+// QueryReceiverByParamWithCallback invokes the dm.QueryReceiverByParam API asynchronously
 // api document: https://help.aliyun.com/api/dm/queryreceiverbyparam.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryReceiverByParamWithCallback(request *QueryReceiverByParamRequest, callback func(response *QueryReceiverByParamResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) QueryReceiverByParamWithCallback(request *QueryReceiverByP
 	return result
 }
 
+// QueryReceiverByParamRequest is the request struct for api QueryReceiverByParam
 type QueryReceiverByParamRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,6 +85,7 @@ type QueryReceiverByParamRequest struct {
 	Status               requests.Integer `position:"Query" name:"Status"`
 }
 
+// QueryReceiverByParamResponse is the response struct for api QueryReceiverByParam
 type QueryReceiverByParamResponse struct {
 	*responses.BaseResponse
 	RequestId  string                     `json:"RequestId" xml:"RequestId"`
@@ -93,8 +95,8 @@ type QueryReceiverByParamResponse struct {
 	Data       DataInQueryReceiverByParam `json:"data" xml:"data"`
 }
 
-// create a request to invoke QueryReceiverByParam API
-func CreateQueryReceiverByParamRequest() (request *QueryReceiverByParamRequest) {
+// CreateQueryReceiverByParamRequest creates a request to invoke QueryReceiverByParam API
+func CreateQueryReceiverByParamRequest(request *QueryReceiverByParamRequest) {
 	request = &QueryReceiverByParamRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -102,7 +104,7 @@ func CreateQueryReceiverByParamRequest() (request *QueryReceiverByParamRequest) 
 	return
 }
 
-// create a response to parse from QueryReceiverByParam response
+// CreateQueryReceiverByParamResponse creates a response to parse from QueryReceiverByParam response
 func CreateQueryReceiverByParamResponse() (response *QueryReceiverByParamResponse) {
 	response = &QueryReceiverByParamResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SetForwardSchemeConfig api with *SetForwardSchemeConfigRequest synchronously
+// SetForwardSchemeConfig invokes the cdn.SetForwardSchemeConfig API synchronously
 // api document: https://help.aliyun.com/api/cdn/setforwardschemeconfig.html
 func (client *Client) SetForwardSchemeConfig(request *SetForwardSchemeConfigRequest) (response *SetForwardSchemeConfigResponse, err error) {
 	response = CreateSetForwardSchemeConfigResponse()
@@ -28,7 +28,7 @@ func (client *Client) SetForwardSchemeConfig(request *SetForwardSchemeConfigRequ
 	return
 }
 
-// invoke SetForwardSchemeConfig api with *SetForwardSchemeConfigRequest asynchronously
+// SetForwardSchemeConfigWithChan invokes the cdn.SetForwardSchemeConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/setforwardschemeconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetForwardSchemeConfigWithChan(request *SetForwardSchemeConfigRequest) (<-chan *SetForwardSchemeConfigResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SetForwardSchemeConfigWithChan(request *SetForwardSchemeCo
 	return responseChan, errChan
 }
 
-// invoke SetForwardSchemeConfig api with *SetForwardSchemeConfigRequest asynchronously
+// SetForwardSchemeConfigWithCallback invokes the cdn.SetForwardSchemeConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/setforwardschemeconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetForwardSchemeConfigWithCallback(request *SetForwardSchemeConfigRequest, callback func(response *SetForwardSchemeConfigResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SetForwardSchemeConfigWithCallback(request *SetForwardSche
 	return result
 }
 
+// SetForwardSchemeConfigRequest is the request struct for api SetForwardSchemeConfig
 type SetForwardSchemeConfigRequest struct {
 	*requests.RpcRequest
 	OwnerId          requests.Integer `position:"Query" name:"OwnerId"`
@@ -83,13 +84,14 @@ type SetForwardSchemeConfigRequest struct {
 	SchemeOriginPort string           `position:"Query" name:"SchemeOriginPort"`
 }
 
+// SetForwardSchemeConfigResponse is the response struct for api SetForwardSchemeConfig
 type SetForwardSchemeConfigResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke SetForwardSchemeConfig API
-func CreateSetForwardSchemeConfigRequest() (request *SetForwardSchemeConfigRequest) {
+// CreateSetForwardSchemeConfigRequest creates a request to invoke SetForwardSchemeConfig API
+func CreateSetForwardSchemeConfigRequest(request *SetForwardSchemeConfigRequest) {
 	request = &SetForwardSchemeConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateSetForwardSchemeConfigRequest() (request *SetForwardSchemeConfigReque
 	return
 }
 
-// create a response to parse from SetForwardSchemeConfig response
+// CreateSetForwardSchemeConfigResponse creates a response to parse from SetForwardSchemeConfig response
 func CreateSetForwardSchemeConfigResponse() (response *SetForwardSchemeConfigResponse) {
 	response = &SetForwardSchemeConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

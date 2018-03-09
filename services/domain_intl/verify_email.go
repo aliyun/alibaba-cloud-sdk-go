@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke VerifyEmail api with *VerifyEmailRequest synchronously
+// VerifyEmail invokes the domain_intl.VerifyEmail API synchronously
 // api document: https://help.aliyun.com/api/domain-intl/verifyemail.html
 func (client *Client) VerifyEmail(request *VerifyEmailRequest) (response *VerifyEmailResponse, err error) {
 	response = CreateVerifyEmailResponse()
@@ -28,7 +28,7 @@ func (client *Client) VerifyEmail(request *VerifyEmailRequest) (response *Verify
 	return
 }
 
-// invoke VerifyEmail api with *VerifyEmailRequest asynchronously
+// VerifyEmailWithChan invokes the domain_intl.VerifyEmail API asynchronously
 // api document: https://help.aliyun.com/api/domain-intl/verifyemail.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) VerifyEmailWithChan(request *VerifyEmailRequest) (<-chan *VerifyEmailResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) VerifyEmailWithChan(request *VerifyEmailRequest) (<-chan *
 	return responseChan, errChan
 }
 
-// invoke VerifyEmail api with *VerifyEmailRequest asynchronously
+// VerifyEmailWithCallback invokes the domain_intl.VerifyEmail API asynchronously
 // api document: https://help.aliyun.com/api/domain-intl/verifyemail.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) VerifyEmailWithCallback(request *VerifyEmailRequest, callback func(response *VerifyEmailResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) VerifyEmailWithCallback(request *VerifyEmailRequest, callb
 	return result
 }
 
+// VerifyEmailRequest is the request struct for api VerifyEmail
 type VerifyEmailRequest struct {
 	*requests.RpcRequest
 	Lang         string `position:"Query" name:"Lang"`
@@ -80,13 +81,14 @@ type VerifyEmailRequest struct {
 	UserClientIp string `position:"Query" name:"UserClientIp"`
 }
 
+// VerifyEmailResponse is the response struct for api VerifyEmail
 type VerifyEmailResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke VerifyEmail API
-func CreateVerifyEmailRequest() (request *VerifyEmailRequest) {
+// CreateVerifyEmailRequest creates a request to invoke VerifyEmail API
+func CreateVerifyEmailRequest(request *VerifyEmailRequest) {
 	request = &VerifyEmailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -94,7 +96,7 @@ func CreateVerifyEmailRequest() (request *VerifyEmailRequest) {
 	return
 }
 
-// create a response to parse from VerifyEmail response
+// CreateVerifyEmailResponse creates a response to parse from VerifyEmail response
 func CreateVerifyEmailResponse() (response *VerifyEmailResponse) {
 	response = &VerifyEmailResponse{
 		BaseResponse: &responses.BaseResponse{},
