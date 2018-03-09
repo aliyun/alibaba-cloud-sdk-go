@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke VerifyEmail api with *VerifyEmailRequest synchronously
+// api document: https://help.aliyun.com/api/domain-intl/verifyemail.html
 func (client *Client) VerifyEmail(request *VerifyEmailRequest) (response *VerifyEmailResponse, err error) {
 	response = CreateVerifyEmailResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke VerifyEmail api with *VerifyEmailRequest asynchronously
+// api document: https://help.aliyun.com/api/domain-intl/verifyemail.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) VerifyEmailWithChan(request *VerifyEmailRequest) (<-chan *VerifyEmailResponse, <-chan error) {
 	responseChan := make(chan *VerifyEmailResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) VerifyEmailWithChan(request *VerifyEmailRequest) (<-chan *
 	return responseChan, errChan
 }
 
+// invoke VerifyEmail api with *VerifyEmailRequest asynchronously
+// api document: https://help.aliyun.com/api/domain-intl/verifyemail.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) VerifyEmailWithCallback(request *VerifyEmailRequest, callback func(response *VerifyEmailResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +85,7 @@ type VerifyEmailResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke VerifyEmail API
 func CreateVerifyEmailRequest() (request *VerifyEmailRequest) {
 	request = &VerifyEmailRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -85,6 +94,7 @@ func CreateVerifyEmailRequest() (request *VerifyEmailRequest) {
 	return
 }
 
+// create a response to parse from VerifyEmail response
 func CreateVerifyEmailResponse() (response *VerifyEmailResponse) {
 	response = &VerifyEmailResponse{
 		BaseResponse: &responses.BaseResponse{},

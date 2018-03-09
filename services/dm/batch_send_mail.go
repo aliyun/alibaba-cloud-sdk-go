@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke BatchSendMail api with *BatchSendMailRequest synchronously
+// api document: https://help.aliyun.com/api/dm/batchsendmail.html
 func (client *Client) BatchSendMail(request *BatchSendMailRequest) (response *BatchSendMailResponse, err error) {
 	response = CreateBatchSendMailResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke BatchSendMail api with *BatchSendMailRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/batchsendmail.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BatchSendMailWithChan(request *BatchSendMailRequest) (<-chan *BatchSendMailResponse, <-chan error) {
 	responseChan := make(chan *BatchSendMailResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) BatchSendMailWithChan(request *BatchSendMailRequest) (<-ch
 	return responseChan, errChan
 }
 
+// invoke BatchSendMail api with *BatchSendMailRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/batchsendmail.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BatchSendMailWithCallback(request *BatchSendMailRequest, callback func(response *BatchSendMailResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -86,6 +94,7 @@ type BatchSendMailResponse struct {
 	EnvId     string `json:"EnvId" xml:"EnvId"`
 }
 
+// create a request to invoke BatchSendMail API
 func CreateBatchSendMailRequest() (request *BatchSendMailRequest) {
 	request = &BatchSendMailRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -94,6 +103,7 @@ func CreateBatchSendMailRequest() (request *BatchSendMailRequest) {
 	return
 }
 
+// create a response to parse from BatchSendMail response
 func CreateBatchSendMailResponse() (response *BatchSendMailResponse) {
 	response = &BatchSendMailResponse{
 		BaseResponse: &responses.BaseResponse{},

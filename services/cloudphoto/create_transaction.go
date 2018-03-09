@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CreateTransaction api with *CreateTransactionRequest synchronously
+// api document: https://help.aliyun.com/api/cloudphoto/createtransaction.html
 func (client *Client) CreateTransaction(request *CreateTransactionRequest) (response *CreateTransactionResponse, err error) {
 	response = CreateCreateTransactionResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CreateTransaction api with *CreateTransactionRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/createtransaction.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateTransactionWithChan(request *CreateTransactionRequest) (<-chan *CreateTransactionResponse, <-chan error) {
 	responseChan := make(chan *CreateTransactionResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CreateTransactionWithChan(request *CreateTransactionReques
 	return responseChan, errChan
 }
 
+// invoke CreateTransaction api with *CreateTransactionRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/createtransaction.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateTransactionWithCallback(request *CreateTransactionRequest, callback func(response *CreateTransactionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,6 +92,7 @@ type CreateTransactionResponse struct {
 	Transaction Transaction `json:"Transaction" xml:"Transaction"`
 }
 
+// create a request to invoke CreateTransaction API
 func CreateCreateTransactionRequest() (request *CreateTransactionRequest) {
 	request = &CreateTransactionRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -92,6 +101,7 @@ func CreateCreateTransactionRequest() (request *CreateTransactionRequest) {
 	return
 }
 
+// create a response to parse from CreateTransaction response
 func CreateCreateTransactionResponse() (response *CreateTransactionResponse) {
 	response = &CreateTransactionResponse{
 		BaseResponse: &responses.BaseResponse{},

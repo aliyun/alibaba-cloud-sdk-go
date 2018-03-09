@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke AttachPolicyToRole api with *AttachPolicyToRoleRequest synchronously
+// api document: https://help.aliyun.com/api/ram/attachpolicytorole.html
 func (client *Client) AttachPolicyToRole(request *AttachPolicyToRoleRequest) (response *AttachPolicyToRoleResponse, err error) {
 	response = CreateAttachPolicyToRoleResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke AttachPolicyToRole api with *AttachPolicyToRoleRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/attachpolicytorole.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AttachPolicyToRoleWithChan(request *AttachPolicyToRoleRequest) (<-chan *AttachPolicyToRoleResponse, <-chan error) {
 	responseChan := make(chan *AttachPolicyToRoleResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) AttachPolicyToRoleWithChan(request *AttachPolicyToRoleRequ
 	return responseChan, errChan
 }
 
+// invoke AttachPolicyToRole api with *AttachPolicyToRoleRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/attachpolicytorole.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AttachPolicyToRoleWithCallback(request *AttachPolicyToRoleRequest, callback func(response *AttachPolicyToRoleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +85,7 @@ type AttachPolicyToRoleResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke AttachPolicyToRole API
 func CreateAttachPolicyToRoleRequest() (request *AttachPolicyToRoleRequest) {
 	request = &AttachPolicyToRoleRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -85,6 +94,7 @@ func CreateAttachPolicyToRoleRequest() (request *AttachPolicyToRoleRequest) {
 	return
 }
 
+// create a response to parse from AttachPolicyToRole response
 func CreateAttachPolicyToRoleResponse() (response *AttachPolicyToRoleResponse) {
 	response = &AttachPolicyToRoleResponse{
 		BaseResponse: &responses.BaseResponse{},

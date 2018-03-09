@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeDomainFileSizeProportionData api with *DescribeDomainFileSizeProportionDataRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/describedomainfilesizeproportiondata.html
 func (client *Client) DescribeDomainFileSizeProportionData(request *DescribeDomainFileSizeProportionDataRequest) (response *DescribeDomainFileSizeProportionDataResponse, err error) {
 	response = CreateDescribeDomainFileSizeProportionDataResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeDomainFileSizeProportionData api with *DescribeDomainFileSizeProportionDataRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describedomainfilesizeproportiondata.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainFileSizeProportionDataWithChan(request *DescribeDomainFileSizeProportionDataRequest) (<-chan *DescribeDomainFileSizeProportionDataResponse, <-chan error) {
 	responseChan := make(chan *DescribeDomainFileSizeProportionDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeDomainFileSizeProportionDataWithChan(request *Desc
 	return responseChan, errChan
 }
 
+// invoke DescribeDomainFileSizeProportionData api with *DescribeDomainFileSizeProportionDataRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describedomainfilesizeproportiondata.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainFileSizeProportionDataWithCallback(request *DescribeDomainFileSizeProportionDataRequest, callback func(response *DescribeDomainFileSizeProportionDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,6 +92,7 @@ type DescribeDomainFileSizeProportionDataResponse struct {
 	FileSizeProportionDataInterval FileSizeProportionDataInterval `json:"FileSizeProportionDataInterval" xml:"FileSizeProportionDataInterval"`
 }
 
+// create a request to invoke DescribeDomainFileSizeProportionData API
 func CreateDescribeDomainFileSizeProportionDataRequest() (request *DescribeDomainFileSizeProportionDataRequest) {
 	request = &DescribeDomainFileSizeProportionDataRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -92,6 +101,7 @@ func CreateDescribeDomainFileSizeProportionDataRequest() (request *DescribeDomai
 	return
 }
 
+// create a response to parse from DescribeDomainFileSizeProportionData response
 func CreateDescribeDomainFileSizeProportionDataResponse() (response *DescribeDomainFileSizeProportionDataResponse) {
 	response = &DescribeDomainFileSizeProportionDataResponse{
 		BaseResponse: &responses.BaseResponse{},

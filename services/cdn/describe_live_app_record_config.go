@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeLiveAppRecordConfig api with *DescribeLiveAppRecordConfigRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/describeliveapprecordconfig.html
 func (client *Client) DescribeLiveAppRecordConfig(request *DescribeLiveAppRecordConfigRequest) (response *DescribeLiveAppRecordConfigResponse, err error) {
 	response = CreateDescribeLiveAppRecordConfigResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeLiveAppRecordConfig api with *DescribeLiveAppRecordConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describeliveapprecordconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveAppRecordConfigWithChan(request *DescribeLiveAppRecordConfigRequest) (<-chan *DescribeLiveAppRecordConfigResponse, <-chan error) {
 	responseChan := make(chan *DescribeLiveAppRecordConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeLiveAppRecordConfigWithChan(request *DescribeLiveA
 	return responseChan, errChan
 }
 
+// invoke DescribeLiveAppRecordConfig api with *DescribeLiveAppRecordConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describeliveapprecordconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveAppRecordConfigWithCallback(request *DescribeLiveAppRecordConfigRequest, callback func(response *DescribeLiveAppRecordConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +87,7 @@ type DescribeLiveAppRecordConfigResponse struct {
 	LiveAppRecord LiveAppRecord `json:"LiveAppRecord" xml:"LiveAppRecord"`
 }
 
+// create a request to invoke DescribeLiveAppRecordConfig API
 func CreateDescribeLiveAppRecordConfigRequest() (request *DescribeLiveAppRecordConfigRequest) {
 	request = &DescribeLiveAppRecordConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -87,6 +96,7 @@ func CreateDescribeLiveAppRecordConfigRequest() (request *DescribeLiveAppRecordC
 	return
 }
 
+// create a response to parse from DescribeLiveAppRecordConfig response
 func CreateDescribeLiveAppRecordConfigResponse() (response *DescribeLiveAppRecordConfigResponse) {
 	response = &DescribeLiveAppRecordConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

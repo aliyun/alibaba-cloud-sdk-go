@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke GetPackage api with *GetPackageRequest synchronously
+// api document: https://help.aliyun.com/api/mts/getpackage.html
 func (client *Client) GetPackage(request *GetPackageRequest) (response *GetPackageResponse, err error) {
 	response = CreateGetPackageResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke GetPackage api with *GetPackageRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/getpackage.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetPackageWithChan(request *GetPackageRequest) (<-chan *GetPackageResponse, <-chan error) {
 	responseChan := make(chan *GetPackageResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) GetPackageWithChan(request *GetPackageRequest) (<-chan *Ge
 	return responseChan, errChan
 }
 
+// invoke GetPackage api with *GetPackageRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/getpackage.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetPackageWithCallback(request *GetPackageRequest, callback func(response *GetPackageResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type GetPackageResponse struct {
 	CertPackage string `json:"CertPackage" xml:"CertPackage"`
 }
 
+// create a request to invoke GetPackage API
 func CreateGetPackageRequest() (request *GetPackageRequest) {
 	request = &GetPackageRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateGetPackageRequest() (request *GetPackageRequest) {
 	return
 }
 
+// create a response to parse from GetPackage response
 func CreateGetPackageResponse() (response *GetPackageResponse) {
 	response = &GetPackageResponse{
 		BaseResponse: &responses.BaseResponse{},

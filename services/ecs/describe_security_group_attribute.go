@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeSecurityGroupAttribute api with *DescribeSecurityGroupAttributeRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/describesecuritygroupattribute.html
 func (client *Client) DescribeSecurityGroupAttribute(request *DescribeSecurityGroupAttributeRequest) (response *DescribeSecurityGroupAttributeResponse, err error) {
 	response = CreateDescribeSecurityGroupAttributeResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeSecurityGroupAttribute api with *DescribeSecurityGroupAttributeRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describesecuritygroupattribute.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSecurityGroupAttributeWithChan(request *DescribeSecurityGroupAttributeRequest) (<-chan *DescribeSecurityGroupAttributeResponse, <-chan error) {
 	responseChan := make(chan *DescribeSecurityGroupAttributeResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeSecurityGroupAttributeWithChan(request *DescribeSe
 	return responseChan, errChan
 }
 
+// invoke DescribeSecurityGroupAttribute api with *DescribeSecurityGroupAttributeRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describesecuritygroupattribute.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSecurityGroupAttributeWithCallback(request *DescribeSecurityGroupAttributeRequest, callback func(response *DescribeSecurityGroupAttributeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -88,6 +96,7 @@ type DescribeSecurityGroupAttributeResponse struct {
 	Permissions       Permissions `json:"Permissions" xml:"Permissions"`
 }
 
+// create a request to invoke DescribeSecurityGroupAttribute API
 func CreateDescribeSecurityGroupAttributeRequest() (request *DescribeSecurityGroupAttributeRequest) {
 	request = &DescribeSecurityGroupAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -96,6 +105,7 @@ func CreateDescribeSecurityGroupAttributeRequest() (request *DescribeSecurityGro
 	return
 }
 
+// create a response to parse from DescribeSecurityGroupAttribute response
 func CreateDescribeSecurityGroupAttributeResponse() (response *DescribeSecurityGroupAttributeResponse) {
 	response = &DescribeSecurityGroupAttributeResponse{
 		BaseResponse: &responses.BaseResponse{},

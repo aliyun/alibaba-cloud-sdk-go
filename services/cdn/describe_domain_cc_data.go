@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeDomainCCData api with *DescribeDomainCCDataRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/describedomainccdata.html
 func (client *Client) DescribeDomainCCData(request *DescribeDomainCCDataRequest) (response *DescribeDomainCCDataResponse, err error) {
 	response = CreateDescribeDomainCCDataResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeDomainCCData api with *DescribeDomainCCDataRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describedomainccdata.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainCCDataWithChan(request *DescribeDomainCCDataRequest) (<-chan *DescribeDomainCCDataResponse, <-chan error) {
 	responseChan := make(chan *DescribeDomainCCDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeDomainCCDataWithChan(request *DescribeDomainCCData
 	return responseChan, errChan
 }
 
+// invoke DescribeDomainCCData api with *DescribeDomainCCDataRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describedomainccdata.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainCCDataWithCallback(request *DescribeDomainCCDataRequest, callback func(response *DescribeDomainCCDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,6 +92,7 @@ type DescribeDomainCCDataResponse struct {
 	CCDataList   CCDataList `json:"CCDataList" xml:"CCDataList"`
 }
 
+// create a request to invoke DescribeDomainCCData API
 func CreateDescribeDomainCCDataRequest() (request *DescribeDomainCCDataRequest) {
 	request = &DescribeDomainCCDataRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -92,6 +101,7 @@ func CreateDescribeDomainCCDataRequest() (request *DescribeDomainCCDataRequest) 
 	return
 }
 
+// create a response to parse from DescribeDomainCCData response
 func CreateDescribeDomainCCDataResponse() (response *DescribeDomainCCDataResponse) {
 	response = &DescribeDomainCCDataResponse{
 		BaseResponse: &responses.BaseResponse{},

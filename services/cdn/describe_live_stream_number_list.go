@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeLiveStreamNumberList api with *DescribeLiveStreamNumberListRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/describelivestreamnumberlist.html
 func (client *Client) DescribeLiveStreamNumberList(request *DescribeLiveStreamNumberListRequest) (response *DescribeLiveStreamNumberListResponse, err error) {
 	response = CreateDescribeLiveStreamNumberListResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeLiveStreamNumberList api with *DescribeLiveStreamNumberListRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describelivestreamnumberlist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamNumberListWithChan(request *DescribeLiveStreamNumberListRequest) (<-chan *DescribeLiveStreamNumberListResponse, <-chan error) {
 	responseChan := make(chan *DescribeLiveStreamNumberListResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeLiveStreamNumberListWithChan(request *DescribeLive
 	return responseChan, errChan
 }
 
+// invoke DescribeLiveStreamNumberList api with *DescribeLiveStreamNumberListRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describelivestreamnumberlist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamNumberListWithCallback(request *DescribeLiveStreamNumberListRequest, callback func(response *DescribeLiveStreamNumberListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type DescribeLiveStreamNumberListResponse struct {
 	StreamNumberInfos StreamNumberInfos `json:"StreamNumberInfos" xml:"StreamNumberInfos"`
 }
 
+// create a request to invoke DescribeLiveStreamNumberList API
 func CreateDescribeLiveStreamNumberListRequest() (request *DescribeLiveStreamNumberListRequest) {
 	request = &DescribeLiveStreamNumberListRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateDescribeLiveStreamNumberListRequest() (request *DescribeLiveStreamNum
 	return
 }
 
+// create a response to parse from DescribeLiveStreamNumberList response
 func CreateDescribeLiveStreamNumberListResponse() (response *DescribeLiveStreamNumberListResponse) {
 	response = &DescribeLiveStreamNumberListResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeDomainSlowRatio api with *DescribeDomainSlowRatioRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/describedomainslowratio.html
 func (client *Client) DescribeDomainSlowRatio(request *DescribeDomainSlowRatioRequest) (response *DescribeDomainSlowRatioResponse, err error) {
 	response = CreateDescribeDomainSlowRatioResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeDomainSlowRatio api with *DescribeDomainSlowRatioRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describedomainslowratio.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainSlowRatioWithChan(request *DescribeDomainSlowRatioRequest) (<-chan *DescribeDomainSlowRatioResponse, <-chan error) {
 	responseChan := make(chan *DescribeDomainSlowRatioResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeDomainSlowRatioWithChan(request *DescribeDomainSlo
 	return responseChan, errChan
 }
 
+// invoke DescribeDomainSlowRatio api with *DescribeDomainSlowRatioRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describedomainslowratio.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainSlowRatioWithCallback(request *DescribeDomainSlowRatioRequest, callback func(response *DescribeDomainSlowRatioResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type DescribeDomainSlowRatioResponse struct {
 	SlowRatioDataPerInterval SlowRatioDataPerInterval `json:"SlowRatioDataPerInterval" xml:"SlowRatioDataPerInterval"`
 }
 
+// create a request to invoke DescribeDomainSlowRatio API
 func CreateDescribeDomainSlowRatioRequest() (request *DescribeDomainSlowRatioRequest) {
 	request = &DescribeDomainSlowRatioRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateDescribeDomainSlowRatioRequest() (request *DescribeDomainSlowRatioReq
 	return
 }
 
+// create a response to parse from DescribeDomainSlowRatio response
 func CreateDescribeDomainSlowRatioResponse() (response *DescribeDomainSlowRatioResponse) {
 	response = &DescribeDomainSlowRatioResponse{
 		BaseResponse: &responses.BaseResponse{},

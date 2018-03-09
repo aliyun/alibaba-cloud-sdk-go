@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ListMediaWorkflowExecutions api with *ListMediaWorkflowExecutionsRequest synchronously
+// api document: https://help.aliyun.com/api/mts/listmediaworkflowexecutions.html
 func (client *Client) ListMediaWorkflowExecutions(request *ListMediaWorkflowExecutionsRequest) (response *ListMediaWorkflowExecutionsResponse, err error) {
 	response = CreateListMediaWorkflowExecutionsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ListMediaWorkflowExecutions api with *ListMediaWorkflowExecutionsRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/listmediaworkflowexecutions.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListMediaWorkflowExecutionsWithChan(request *ListMediaWorkflowExecutionsRequest) (<-chan *ListMediaWorkflowExecutionsResponse, <-chan error) {
 	responseChan := make(chan *ListMediaWorkflowExecutionsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ListMediaWorkflowExecutionsWithChan(request *ListMediaWork
 	return responseChan, errChan
 }
 
+// invoke ListMediaWorkflowExecutions api with *ListMediaWorkflowExecutionsRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/listmediaworkflowexecutions.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListMediaWorkflowExecutionsWithCallback(request *ListMediaWorkflowExecutionsRequest, callback func(response *ListMediaWorkflowExecutionsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -85,6 +93,7 @@ type ListMediaWorkflowExecutionsResponse struct {
 	MediaWorkflowExecutionList MediaWorkflowExecutionListInListMediaWorkflowExecutions `json:"MediaWorkflowExecutionList" xml:"MediaWorkflowExecutionList"`
 }
 
+// create a request to invoke ListMediaWorkflowExecutions API
 func CreateListMediaWorkflowExecutionsRequest() (request *ListMediaWorkflowExecutionsRequest) {
 	request = &ListMediaWorkflowExecutionsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -93,6 +102,7 @@ func CreateListMediaWorkflowExecutionsRequest() (request *ListMediaWorkflowExecu
 	return
 }
 
+// create a response to parse from ListMediaWorkflowExecutions response
 func CreateListMediaWorkflowExecutionsResponse() (response *ListMediaWorkflowExecutionsResponse) {
 	response = &ListMediaWorkflowExecutionsResponse{
 		BaseResponse: &responses.BaseResponse{},

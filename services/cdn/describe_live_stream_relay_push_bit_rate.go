@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeLiveStreamRelayPushBitRate api with *DescribeLiveStreamRelayPushBitRateRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/describelivestreamrelaypushbitrate.html
 func (client *Client) DescribeLiveStreamRelayPushBitRate(request *DescribeLiveStreamRelayPushBitRateRequest) (response *DescribeLiveStreamRelayPushBitRateResponse, err error) {
 	response = CreateDescribeLiveStreamRelayPushBitRateResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeLiveStreamRelayPushBitRate api with *DescribeLiveStreamRelayPushBitRateRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describelivestreamrelaypushbitrate.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamRelayPushBitRateWithChan(request *DescribeLiveStreamRelayPushBitRateRequest) (<-chan *DescribeLiveStreamRelayPushBitRateResponse, <-chan error) {
 	responseChan := make(chan *DescribeLiveStreamRelayPushBitRateResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeLiveStreamRelayPushBitRateWithChan(request *Descri
 	return responseChan, errChan
 }
 
+// invoke DescribeLiveStreamRelayPushBitRate api with *DescribeLiveStreamRelayPushBitRateRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describelivestreamrelaypushbitrate.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamRelayPushBitRateWithCallback(request *DescribeLiveStreamRelayPushBitRateRequest, callback func(response *DescribeLiveStreamRelayPushBitRateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type DescribeLiveStreamRelayPushBitRateResponse struct {
 	RelayPushBitRateModelList RelayPushBitRateModelList `json:"RelayPushBitRateModelList" xml:"RelayPushBitRateModelList"`
 }
 
+// create a request to invoke DescribeLiveStreamRelayPushBitRate API
 func CreateDescribeLiveStreamRelayPushBitRateRequest() (request *DescribeLiveStreamRelayPushBitRateRequest) {
 	request = &DescribeLiveStreamRelayPushBitRateRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateDescribeLiveStreamRelayPushBitRateRequest() (request *DescribeLiveStr
 	return
 }
 
+// create a response to parse from DescribeLiveStreamRelayPushBitRate response
 func CreateDescribeLiveStreamRelayPushBitRateResponse() (response *DescribeLiveStreamRelayPushBitRateResponse) {
 	response = &DescribeLiveStreamRelayPushBitRateResponse{
 		BaseResponse: &responses.BaseResponse{},

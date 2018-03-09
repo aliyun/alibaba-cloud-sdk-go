@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeForwardTables api with *DescribeForwardTablesRequest synchronously
+// api document: https://help.aliyun.com/api/vpc/describeforwardtables.html
 func (client *Client) DescribeForwardTables(request *DescribeForwardTablesRequest) (response *DescribeForwardTablesResponse, err error) {
 	response = CreateDescribeForwardTablesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeForwardTables api with *DescribeForwardTablesRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/describeforwardtables.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeForwardTablesWithChan(request *DescribeForwardTablesRequest) (<-chan *DescribeForwardTablesResponse, <-chan error) {
 	responseChan := make(chan *DescribeForwardTablesResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeForwardTablesWithChan(request *DescribeForwardTabl
 	return responseChan, errChan
 }
 
+// invoke DescribeForwardTables api with *DescribeForwardTablesRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/describeforwardtables.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeForwardTablesWithCallback(request *DescribeForwardTablesRequest, callback func(response *DescribeForwardTablesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -85,6 +93,7 @@ type DescribeForwardTablesResponse struct {
 	ForwardTables ForwardTables `json:"ForwardTables" xml:"ForwardTables"`
 }
 
+// create a request to invoke DescribeForwardTables API
 func CreateDescribeForwardTablesRequest() (request *DescribeForwardTablesRequest) {
 	request = &DescribeForwardTablesRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -93,6 +102,7 @@ func CreateDescribeForwardTablesRequest() (request *DescribeForwardTablesRequest
 	return
 }
 
+// create a response to parse from DescribeForwardTables response
 func CreateDescribeForwardTablesResponse() (response *DescribeForwardTablesResponse) {
 	response = &DescribeForwardTablesResponse{
 		BaseResponse: &responses.BaseResponse{},

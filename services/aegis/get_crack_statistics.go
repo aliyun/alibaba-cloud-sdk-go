@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke GetCrackStatistics api with *GetCrackStatisticsRequest synchronously
+// api document: https://help.aliyun.com/api/aegis/getcrackstatistics.html
 func (client *Client) GetCrackStatistics(request *GetCrackStatisticsRequest) (response *GetCrackStatisticsResponse, err error) {
 	response = CreateGetCrackStatisticsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke GetCrackStatistics api with *GetCrackStatisticsRequest asynchronously
+// api document: https://help.aliyun.com/api/aegis/getcrackstatistics.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetCrackStatisticsWithChan(request *GetCrackStatisticsRequest) (<-chan *GetCrackStatisticsResponse, <-chan error) {
 	responseChan := make(chan *GetCrackStatisticsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) GetCrackStatisticsWithChan(request *GetCrackStatisticsRequ
 	return responseChan, errChan
 }
 
+// invoke GetCrackStatistics api with *GetCrackStatisticsRequest asynchronously
+// api document: https://help.aliyun.com/api/aegis/getcrackstatistics.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetCrackStatisticsWithCallback(request *GetCrackStatisticsRequest, callback func(response *GetCrackStatisticsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type GetCrackStatisticsResponse struct {
 	Data      Data   `json:"Data" xml:"Data"`
 }
 
+// create a request to invoke GetCrackStatistics API
 func CreateGetCrackStatisticsRequest() (request *GetCrackStatisticsRequest) {
 	request = &GetCrackStatisticsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateGetCrackStatisticsRequest() (request *GetCrackStatisticsRequest) {
 	return
 }
 
+// create a response to parse from GetCrackStatistics response
 func CreateGetCrackStatisticsResponse() (response *GetCrackStatisticsResponse) {
 	response = &GetCrackStatisticsResponse{
 		BaseResponse: &responses.BaseResponse{},

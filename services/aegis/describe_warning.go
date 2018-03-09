@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeWarning api with *DescribeWarningRequest synchronously
+// api document: https://help.aliyun.com/api/aegis/describewarning.html
 func (client *Client) DescribeWarning(request *DescribeWarningRequest) (response *DescribeWarningResponse, err error) {
 	response = CreateDescribeWarningResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeWarning api with *DescribeWarningRequest asynchronously
+// api document: https://help.aliyun.com/api/aegis/describewarning.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeWarningWithChan(request *DescribeWarningRequest) (<-chan *DescribeWarningResponse, <-chan error) {
 	responseChan := make(chan *DescribeWarningResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeWarningWithChan(request *DescribeWarningRequest) (
 	return responseChan, errChan
 }
 
+// invoke DescribeWarning api with *DescribeWarningRequest asynchronously
+// api document: https://help.aliyun.com/api/aegis/describewarning.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeWarningWithCallback(request *DescribeWarningRequest, callback func(response *DescribeWarningResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -74,6 +82,7 @@ type DescribeWarningRequest struct {
 	RiskLevels      string           `position:"Query" name:"RiskLevels"`
 	StatusList      string           `position:"Query" name:"StatusList"`
 	RiskName        string           `position:"Query" name:"RiskName"`
+	StrategyId      requests.Integer `position:"Query" name:"StrategyId"`
 	PageSize        requests.Integer `position:"Query" name:"PageSize"`
 	CurrentPage     requests.Integer `position:"Query" name:"CurrentPage"`
 	Uuids           string           `position:"Query" name:"Uuids"`
@@ -82,14 +91,15 @@ type DescribeWarningRequest struct {
 
 type DescribeWarningResponse struct {
 	*responses.BaseResponse
-	RequestId   string   `json:"RequestId" xml:"RequestId"`
-	Count       int      `json:"Count" xml:"Count"`
-	PageSize    int      `json:"PageSize" xml:"PageSize"`
-	TotalCount  int      `json:"TotalCount" xml:"TotalCount"`
-	CurrentPage int      `json:"CurrentPage" xml:"CurrentPage"`
-	Warnings    []string `json:"Warnings" xml:"Warnings"`
+	RequestId   string    `json:"RequestId" xml:"RequestId"`
+	Count       int       `json:"Count" xml:"Count"`
+	PageSize    int       `json:"PageSize" xml:"PageSize"`
+	TotalCount  int       `json:"TotalCount" xml:"TotalCount"`
+	CurrentPage int       `json:"CurrentPage" xml:"CurrentPage"`
+	Warnings    []Warning `json:"Warnings" xml:"Warnings"`
 }
 
+// create a request to invoke DescribeWarning API
 func CreateDescribeWarningRequest() (request *DescribeWarningRequest) {
 	request = &DescribeWarningRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -98,6 +108,7 @@ func CreateDescribeWarningRequest() (request *DescribeWarningRequest) {
 	return
 }
 
+// create a response to parse from DescribeWarning response
 func CreateDescribeWarningResponse() (response *DescribeWarningResponse) {
 	response = &DescribeWarningResponse{
 		BaseResponse: &responses.BaseResponse{},

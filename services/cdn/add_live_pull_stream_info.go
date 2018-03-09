@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke AddLivePullStreamInfo api with *AddLivePullStreamInfoRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/addlivepullstreaminfo.html
 func (client *Client) AddLivePullStreamInfo(request *AddLivePullStreamInfoRequest) (response *AddLivePullStreamInfoResponse, err error) {
 	response = CreateAddLivePullStreamInfoResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke AddLivePullStreamInfo api with *AddLivePullStreamInfoRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/addlivepullstreaminfo.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddLivePullStreamInfoWithChan(request *AddLivePullStreamInfoRequest) (<-chan *AddLivePullStreamInfoResponse, <-chan error) {
 	responseChan := make(chan *AddLivePullStreamInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) AddLivePullStreamInfoWithChan(request *AddLivePullStreamIn
 	return responseChan, errChan
 }
 
+// invoke AddLivePullStreamInfo api with *AddLivePullStreamInfoRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/addlivepullstreaminfo.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddLivePullStreamInfoWithCallback(request *AddLivePullStreamInfoRequest, callback func(response *AddLivePullStreamInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type AddLivePullStreamInfoResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke AddLivePullStreamInfo API
 func CreateAddLivePullStreamInfoRequest() (request *AddLivePullStreamInfoRequest) {
 	request = &AddLivePullStreamInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateAddLivePullStreamInfoRequest() (request *AddLivePullStreamInfoRequest
 	return
 }
 
+// create a response to parse from AddLivePullStreamInfo response
 func CreateAddLivePullStreamInfoResponse() (response *AddLivePullStreamInfoResponse) {
 	response = &AddLivePullStreamInfoResponse{
 		BaseResponse: &responses.BaseResponse{},

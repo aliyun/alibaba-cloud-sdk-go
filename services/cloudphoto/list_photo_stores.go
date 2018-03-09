@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ListPhotoStores api with *ListPhotoStoresRequest synchronously
+// api document: https://help.aliyun.com/api/cloudphoto/listphotostores.html
 func (client *Client) ListPhotoStores(request *ListPhotoStoresRequest) (response *ListPhotoStoresResponse, err error) {
 	response = CreateListPhotoStoresResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ListPhotoStores api with *ListPhotoStoresRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/listphotostores.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListPhotoStoresWithChan(request *ListPhotoStoresRequest) (<-chan *ListPhotoStoresResponse, <-chan error) {
 	responseChan := make(chan *ListPhotoStoresResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ListPhotoStoresWithChan(request *ListPhotoStoresRequest) (
 	return responseChan, errChan
 }
 
+// invoke ListPhotoStores api with *ListPhotoStoresRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/listphotostores.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListPhotoStoresWithCallback(request *ListPhotoStoresRequest, callback func(response *ListPhotoStoresResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type ListPhotoStoresResponse struct {
 	PhotoStores []PhotoStore `json:"PhotoStores" xml:"PhotoStores"`
 }
 
+// create a request to invoke ListPhotoStores API
 func CreateListPhotoStoresRequest() (request *ListPhotoStoresRequest) {
 	request = &ListPhotoStoresRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateListPhotoStoresRequest() (request *ListPhotoStoresRequest) {
 	return
 }
 
+// create a response to parse from ListPhotoStores response
 func CreateListPhotoStoresResponse() (response *ListPhotoStoresResponse) {
 	response = &ListPhotoStoresResponse{
 		BaseResponse: &responses.BaseResponse{},

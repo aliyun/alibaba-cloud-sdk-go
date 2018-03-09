@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeBackupTasks api with *DescribeBackupTasksRequest synchronously
+// api document: https://help.aliyun.com/api/rds/describebackuptasks.html
 func (client *Client) DescribeBackupTasks(request *DescribeBackupTasksRequest) (response *DescribeBackupTasksResponse, err error) {
 	response = CreateDescribeBackupTasksResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeBackupTasks api with *DescribeBackupTasksRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describebackuptasks.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBackupTasksWithChan(request *DescribeBackupTasksRequest) (<-chan *DescribeBackupTasksResponse, <-chan error) {
 	responseChan := make(chan *DescribeBackupTasksResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeBackupTasksWithChan(request *DescribeBackupTasksRe
 	return responseChan, errChan
 }
 
+// invoke DescribeBackupTasks api with *DescribeBackupTasksRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describebackuptasks.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBackupTasksWithCallback(request *DescribeBackupTasksRequest, callback func(response *DescribeBackupTasksResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -85,6 +93,7 @@ type DescribeBackupTasksResponse struct {
 	Items     ItemsInDescribeBackupTasks `json:"Items" xml:"Items"`
 }
 
+// create a request to invoke DescribeBackupTasks API
 func CreateDescribeBackupTasksRequest() (request *DescribeBackupTasksRequest) {
 	request = &DescribeBackupTasksRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -93,6 +102,7 @@ func CreateDescribeBackupTasksRequest() (request *DescribeBackupTasksRequest) {
 	return
 }
 
+// create a response to parse from DescribeBackupTasks response
 func CreateDescribeBackupTasksResponse() (response *DescribeBackupTasksResponse) {
 	response = &DescribeBackupTasksResponse{
 		BaseResponse: &responses.BaseResponse{},

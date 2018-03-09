@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke AddTemplate api with *AddTemplateRequest synchronously
+// api document: https://help.aliyun.com/api/mts/addtemplate.html
 func (client *Client) AddTemplate(request *AddTemplateRequest) (response *AddTemplateResponse, err error) {
 	response = CreateAddTemplateResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke AddTemplate api with *AddTemplateRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/addtemplate.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddTemplateWithChan(request *AddTemplateRequest) (<-chan *AddTemplateResponse, <-chan error) {
 	responseChan := make(chan *AddTemplateResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) AddTemplateWithChan(request *AddTemplateRequest) (<-chan *
 	return responseChan, errChan
 }
 
+// invoke AddTemplate api with *AddTemplateRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/addtemplate.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddTemplateWithCallback(request *AddTemplateRequest, callback func(response *AddTemplateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -85,6 +93,7 @@ type AddTemplateResponse struct {
 	Template  Template `json:"Template" xml:"Template"`
 }
 
+// create a request to invoke AddTemplate API
 func CreateAddTemplateRequest() (request *AddTemplateRequest) {
 	request = &AddTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -93,6 +102,7 @@ func CreateAddTemplateRequest() (request *AddTemplateRequest) {
 	return
 }
 
+// create a response to parse from AddTemplate response
 func CreateAddTemplateResponse() (response *AddTemplateResponse) {
 	response = &AddTemplateResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke BatchDescribeDomainBpsData api with *BatchDescribeDomainBpsDataRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/batchdescribedomainbpsdata.html
 func (client *Client) BatchDescribeDomainBpsData(request *BatchDescribeDomainBpsDataRequest) (response *BatchDescribeDomainBpsDataResponse, err error) {
 	response = CreateBatchDescribeDomainBpsDataResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke BatchDescribeDomainBpsData api with *BatchDescribeDomainBpsDataRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/batchdescribedomainbpsdata.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BatchDescribeDomainBpsDataWithChan(request *BatchDescribeDomainBpsDataRequest) (<-chan *BatchDescribeDomainBpsDataResponse, <-chan error) {
 	responseChan := make(chan *BatchDescribeDomainBpsDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) BatchDescribeDomainBpsDataWithChan(request *BatchDescribeD
 	return responseChan, errChan
 }
 
+// invoke BatchDescribeDomainBpsData api with *BatchDescribeDomainBpsDataRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/batchdescribedomainbpsdata.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BatchDescribeDomainBpsDataWithCallback(request *BatchDescribeDomainBpsDataRequest, callback func(response *BatchDescribeDomainBpsDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type BatchDescribeDomainBpsDataResponse struct {
 	BpsDatas   BpsDatasInBatchDescribeDomainBpsData `json:"BpsDatas" xml:"BpsDatas"`
 }
 
+// create a request to invoke BatchDescribeDomainBpsData API
 func CreateBatchDescribeDomainBpsDataRequest() (request *BatchDescribeDomainBpsDataRequest) {
 	request = &BatchDescribeDomainBpsDataRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateBatchDescribeDomainBpsDataRequest() (request *BatchDescribeDomainBpsD
 	return
 }
 
+// create a response to parse from BatchDescribeDomainBpsData response
 func CreateBatchDescribeDomainBpsDataResponse() (response *BatchDescribeDomainBpsDataResponse) {
 	response = &BatchDescribeDomainBpsDataResponse{
 		BaseResponse: &responses.BaseResponse{},

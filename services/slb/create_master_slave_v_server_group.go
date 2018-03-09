@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CreateMasterSlaveVServerGroup api with *CreateMasterSlaveVServerGroupRequest synchronously
+// api document: https://help.aliyun.com/api/slb/createmasterslavevservergroup.html
 func (client *Client) CreateMasterSlaveVServerGroup(request *CreateMasterSlaveVServerGroupRequest) (response *CreateMasterSlaveVServerGroupResponse, err error) {
 	response = CreateCreateMasterSlaveVServerGroupResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CreateMasterSlaveVServerGroup api with *CreateMasterSlaveVServerGroupRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/createmasterslavevservergroup.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateMasterSlaveVServerGroupWithChan(request *CreateMasterSlaveVServerGroupRequest) (<-chan *CreateMasterSlaveVServerGroupResponse, <-chan error) {
 	responseChan := make(chan *CreateMasterSlaveVServerGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CreateMasterSlaveVServerGroupWithChan(request *CreateMaste
 	return responseChan, errChan
 }
 
+// invoke CreateMasterSlaveVServerGroup api with *CreateMasterSlaveVServerGroupRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/createmasterslavevservergroup.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateMasterSlaveVServerGroupWithCallback(request *CreateMasterSlaveVServerGroupRequest, callback func(response *CreateMasterSlaveVServerGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -85,6 +93,7 @@ type CreateMasterSlaveVServerGroupResponse struct {
 	MasterSlaveBackendServers MasterSlaveBackendServersInCreateMasterSlaveVServerGroup `json:"MasterSlaveBackendServers" xml:"MasterSlaveBackendServers"`
 }
 
+// create a request to invoke CreateMasterSlaveVServerGroup API
 func CreateCreateMasterSlaveVServerGroupRequest() (request *CreateMasterSlaveVServerGroupRequest) {
 	request = &CreateMasterSlaveVServerGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -93,6 +102,7 @@ func CreateCreateMasterSlaveVServerGroupRequest() (request *CreateMasterSlaveVSe
 	return
 }
 
+// create a response to parse from CreateMasterSlaveVServerGroup response
 func CreateCreateMasterSlaveVServerGroupResponse() (response *CreateMasterSlaveVServerGroupResponse) {
 	response = &CreateMasterSlaveVServerGroupResponse{
 		BaseResponse: &responses.BaseResponse{},

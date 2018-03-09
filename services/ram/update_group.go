@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke UpdateGroup api with *UpdateGroupRequest synchronously
+// api document: https://help.aliyun.com/api/ram/updategroup.html
 func (client *Client) UpdateGroup(request *UpdateGroupRequest) (response *UpdateGroupResponse, err error) {
 	response = CreateUpdateGroupResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke UpdateGroup api with *UpdateGroupRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/updategroup.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateGroupWithChan(request *UpdateGroupRequest) (<-chan *UpdateGroupResponse, <-chan error) {
 	responseChan := make(chan *UpdateGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) UpdateGroupWithChan(request *UpdateGroupRequest) (<-chan *
 	return responseChan, errChan
 }
 
+// invoke UpdateGroup api with *UpdateGroupRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/updategroup.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateGroupWithCallback(request *UpdateGroupRequest, callback func(response *UpdateGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type UpdateGroupResponse struct {
 	Group     Group  `json:"Group" xml:"Group"`
 }
 
+// create a request to invoke UpdateGroup API
 func CreateUpdateGroupRequest() (request *UpdateGroupRequest) {
 	request = &UpdateGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateUpdateGroupRequest() (request *UpdateGroupRequest) {
 	return
 }
 
+// create a response to parse from UpdateGroup response
 func CreateUpdateGroupResponse() (response *UpdateGroupResponse) {
 	response = &UpdateGroupResponse{
 		BaseResponse: &responses.BaseResponse{},

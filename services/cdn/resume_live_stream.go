@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ResumeLiveStream api with *ResumeLiveStreamRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/resumelivestream.html
 func (client *Client) ResumeLiveStream(request *ResumeLiveStreamRequest) (response *ResumeLiveStreamResponse, err error) {
 	response = CreateResumeLiveStreamResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ResumeLiveStream api with *ResumeLiveStreamRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/resumelivestream.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResumeLiveStreamWithChan(request *ResumeLiveStreamRequest) (<-chan *ResumeLiveStreamResponse, <-chan error) {
 	responseChan := make(chan *ResumeLiveStreamResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ResumeLiveStreamWithChan(request *ResumeLiveStreamRequest)
 	return responseChan, errChan
 }
 
+// invoke ResumeLiveStream api with *ResumeLiveStreamRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/resumelivestream.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResumeLiveStreamWithCallback(request *ResumeLiveStreamRequest, callback func(response *ResumeLiveStreamResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type ResumeLiveStreamResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ResumeLiveStream API
 func CreateResumeLiveStreamRequest() (request *ResumeLiveStreamRequest) {
 	request = &ResumeLiveStreamRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateResumeLiveStreamRequest() (request *ResumeLiveStreamRequest) {
 	return
 }
 
+// create a response to parse from ResumeLiveStream response
 func CreateResumeLiveStreamResponse() (response *ResumeLiveStreamResponse) {
 	response = &ResumeLiveStreamResponse{
 		BaseResponse: &responses.BaseResponse{},

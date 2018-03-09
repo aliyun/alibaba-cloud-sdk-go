@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CreateDBInstance api with *CreateDBInstanceRequest synchronously
+// api document: https://help.aliyun.com/api/rds/createdbinstance.html
 func (client *Client) CreateDBInstance(request *CreateDBInstanceRequest) (response *CreateDBInstanceResponse, err error) {
 	response = CreateCreateDBInstanceResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CreateDBInstance api with *CreateDBInstanceRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/createdbinstance.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateDBInstanceWithChan(request *CreateDBInstanceRequest) (<-chan *CreateDBInstanceResponse, <-chan error) {
 	responseChan := make(chan *CreateDBInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CreateDBInstanceWithChan(request *CreateDBInstanceRequest)
 	return responseChan, errChan
 }
 
+// invoke CreateDBInstance api with *CreateDBInstanceRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/createdbinstance.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateDBInstanceWithCallback(request *CreateDBInstanceRequest, callback func(response *CreateDBInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -102,6 +110,7 @@ type CreateDBInstanceResponse struct {
 	Port             string `json:"Port" xml:"Port"`
 }
 
+// create a request to invoke CreateDBInstance API
 func CreateCreateDBInstanceRequest() (request *CreateDBInstanceRequest) {
 	request = &CreateDBInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -110,6 +119,7 @@ func CreateCreateDBInstanceRequest() (request *CreateDBInstanceRequest) {
 	return
 }
 
+// create a response to parse from CreateDBInstance response
 func CreateCreateDBInstanceResponse() (response *CreateDBInstanceResponse) {
 	response = &CreateDBInstanceResponse{
 		BaseResponse: &responses.BaseResponse{},

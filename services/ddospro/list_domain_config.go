@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ListDomainConfig api with *ListDomainConfigRequest synchronously
+// api document: https://help.aliyun.com/api/ddospro/listdomainconfig.html
 func (client *Client) ListDomainConfig(request *ListDomainConfigRequest) (response *ListDomainConfigResponse, err error) {
 	response = CreateListDomainConfigResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ListDomainConfig api with *ListDomainConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/ddospro/listdomainconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListDomainConfigWithChan(request *ListDomainConfigRequest) (<-chan *ListDomainConfigResponse, <-chan error) {
 	responseChan := make(chan *ListDomainConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ListDomainConfigWithChan(request *ListDomainConfigRequest)
 	return responseChan, errChan
 }
 
+// invoke ListDomainConfig api with *ListDomainConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/ddospro/listdomainconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListDomainConfigWithCallback(request *ListDomainConfigRequest, callback func(response *ListDomainConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type ListDomainConfigResponse struct {
 	ConfigList ConfigList `json:"ConfigList" xml:"ConfigList"`
 }
 
+// create a request to invoke ListDomainConfig API
 func CreateListDomainConfigRequest() (request *ListDomainConfigRequest) {
 	request = &ListDomainConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateListDomainConfigRequest() (request *ListDomainConfigRequest) {
 	return
 }
 
+// create a response to parse from ListDomainConfig response
 func CreateListDomainConfigResponse() (response *ListDomainConfigResponse) {
 	response = &ListDomainConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

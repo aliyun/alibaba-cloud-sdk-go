@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CreateMyGroups api with *CreateMyGroupsRequest synchronously
+// api document: https://help.aliyun.com/api/cms/createmygroups.html
 func (client *Client) CreateMyGroups(request *CreateMyGroupsRequest) (response *CreateMyGroupsResponse, err error) {
 	response = CreateCreateMyGroupsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CreateMyGroups api with *CreateMyGroupsRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/createmygroups.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateMyGroupsWithChan(request *CreateMyGroupsRequest) (<-chan *CreateMyGroupsResponse, <-chan error) {
 	responseChan := make(chan *CreateMyGroupsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CreateMyGroupsWithChan(request *CreateMyGroupsRequest) (<-
 	return responseChan, errChan
 }
 
+// invoke CreateMyGroups api with *CreateMyGroupsRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/createmygroups.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateMyGroupsWithCallback(request *CreateMyGroupsRequest, callback func(response *CreateMyGroupsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,6 +91,7 @@ type CreateMyGroupsResponse struct {
 	GroupId      int    `json:"GroupId" xml:"GroupId"`
 }
 
+// create a request to invoke CreateMyGroups API
 func CreateCreateMyGroupsRequest() (request *CreateMyGroupsRequest) {
 	request = &CreateMyGroupsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -91,6 +100,7 @@ func CreateCreateMyGroupsRequest() (request *CreateMyGroupsRequest) {
 	return
 }
 
+// create a response to parse from CreateMyGroups response
 func CreateCreateMyGroupsResponse() (response *CreateMyGroupsResponse) {
 	response = &CreateMyGroupsResponse{
 		BaseResponse: &responses.BaseResponse{},

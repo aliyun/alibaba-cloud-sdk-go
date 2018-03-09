@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeleteAccessGroup api with *DeleteAccessGroupRequest synchronously
+// api document: https://help.aliyun.com/api/nas/deleteaccessgroup.html
 func (client *Client) DeleteAccessGroup(request *DeleteAccessGroupRequest) (response *DeleteAccessGroupResponse, err error) {
 	response = CreateDeleteAccessGroupResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeleteAccessGroup api with *DeleteAccessGroupRequest asynchronously
+// api document: https://help.aliyun.com/api/nas/deleteaccessgroup.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteAccessGroupWithChan(request *DeleteAccessGroupRequest) (<-chan *DeleteAccessGroupResponse, <-chan error) {
 	responseChan := make(chan *DeleteAccessGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeleteAccessGroupWithChan(request *DeleteAccessGroupReques
 	return responseChan, errChan
 }
 
+// invoke DeleteAccessGroup api with *DeleteAccessGroupRequest asynchronously
+// api document: https://help.aliyun.com/api/nas/deleteaccessgroup.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteAccessGroupWithCallback(request *DeleteAccessGroupRequest, callback func(response *DeleteAccessGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -75,6 +83,7 @@ type DeleteAccessGroupResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke DeleteAccessGroup API
 func CreateDeleteAccessGroupRequest() (request *DeleteAccessGroupRequest) {
 	request = &DeleteAccessGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -83,6 +92,7 @@ func CreateDeleteAccessGroupRequest() (request *DeleteAccessGroupRequest) {
 	return
 }
 
+// create a response to parse from DeleteAccessGroup response
 func CreateDeleteAccessGroupResponse() (response *DeleteAccessGroupResponse) {
 	response = &DeleteAccessGroupResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeleteCACertificate api with *DeleteCACertificateRequest synchronously
+// api document: https://help.aliyun.com/api/slb/deletecacertificate.html
 func (client *Client) DeleteCACertificate(request *DeleteCACertificateRequest) (response *DeleteCACertificateResponse, err error) {
 	response = CreateDeleteCACertificateResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeleteCACertificate api with *DeleteCACertificateRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/deletecacertificate.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteCACertificateWithChan(request *DeleteCACertificateRequest) (<-chan *DeleteCACertificateResponse, <-chan error) {
 	responseChan := make(chan *DeleteCACertificateResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeleteCACertificateWithChan(request *DeleteCACertificateRe
 	return responseChan, errChan
 }
 
+// invoke DeleteCACertificate api with *DeleteCACertificateRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/deletecacertificate.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteCACertificateWithCallback(request *DeleteCACertificateRequest, callback func(response *DeleteCACertificateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type DeleteCACertificateResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke DeleteCACertificate API
 func CreateDeleteCACertificateRequest() (request *DeleteCACertificateRequest) {
 	request = &DeleteCACertificateRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateDeleteCACertificateRequest() (request *DeleteCACertificateRequest) {
 	return
 }
 
+// create a response to parse from DeleteCACertificate response
 func CreateDeleteCACertificateResponse() (response *DeleteCACertificateResponse) {
 	response = &DeleteCACertificateResponse{
 		BaseResponse: &responses.BaseResponse{},

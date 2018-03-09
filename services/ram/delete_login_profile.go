@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeleteLoginProfile api with *DeleteLoginProfileRequest synchronously
+// api document: https://help.aliyun.com/api/ram/deleteloginprofile.html
 func (client *Client) DeleteLoginProfile(request *DeleteLoginProfileRequest) (response *DeleteLoginProfileResponse, err error) {
 	response = CreateDeleteLoginProfileResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeleteLoginProfile api with *DeleteLoginProfileRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/deleteloginprofile.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteLoginProfileWithChan(request *DeleteLoginProfileRequest) (<-chan *DeleteLoginProfileResponse, <-chan error) {
 	responseChan := make(chan *DeleteLoginProfileResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeleteLoginProfileWithChan(request *DeleteLoginProfileRequ
 	return responseChan, errChan
 }
 
+// invoke DeleteLoginProfile api with *DeleteLoginProfileRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/deleteloginprofile.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteLoginProfileWithCallback(request *DeleteLoginProfileRequest, callback func(response *DeleteLoginProfileResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -75,6 +83,7 @@ type DeleteLoginProfileResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke DeleteLoginProfile API
 func CreateDeleteLoginProfileRequest() (request *DeleteLoginProfileRequest) {
 	request = &DeleteLoginProfileRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -83,6 +92,7 @@ func CreateDeleteLoginProfileRequest() (request *DeleteLoginProfileRequest) {
 	return
 }
 
+// create a response to parse from DeleteLoginProfile response
 func CreateDeleteLoginProfileResponse() (response *DeleteLoginProfileResponse) {
 	response = &DeleteLoginProfileResponse{
 		BaseResponse: &responses.BaseResponse{},

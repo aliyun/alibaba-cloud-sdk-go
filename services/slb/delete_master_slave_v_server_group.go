@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeleteMasterSlaveVServerGroup api with *DeleteMasterSlaveVServerGroupRequest synchronously
+// api document: https://help.aliyun.com/api/slb/deletemasterslavevservergroup.html
 func (client *Client) DeleteMasterSlaveVServerGroup(request *DeleteMasterSlaveVServerGroupRequest) (response *DeleteMasterSlaveVServerGroupResponse, err error) {
 	response = CreateDeleteMasterSlaveVServerGroupResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeleteMasterSlaveVServerGroup api with *DeleteMasterSlaveVServerGroupRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/deletemasterslavevservergroup.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteMasterSlaveVServerGroupWithChan(request *DeleteMasterSlaveVServerGroupRequest) (<-chan *DeleteMasterSlaveVServerGroupResponse, <-chan error) {
 	responseChan := make(chan *DeleteMasterSlaveVServerGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeleteMasterSlaveVServerGroupWithChan(request *DeleteMaste
 	return responseChan, errChan
 }
 
+// invoke DeleteMasterSlaveVServerGroup api with *DeleteMasterSlaveVServerGroupRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/deletemasterslavevservergroup.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteMasterSlaveVServerGroupWithCallback(request *DeleteMasterSlaveVServerGroupRequest, callback func(response *DeleteMasterSlaveVServerGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type DeleteMasterSlaveVServerGroupResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke DeleteMasterSlaveVServerGroup API
 func CreateDeleteMasterSlaveVServerGroupRequest() (request *DeleteMasterSlaveVServerGroupRequest) {
 	request = &DeleteMasterSlaveVServerGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateDeleteMasterSlaveVServerGroupRequest() (request *DeleteMasterSlaveVSe
 	return
 }
 
+// create a response to parse from DeleteMasterSlaveVServerGroup response
 func CreateDeleteMasterSlaveVServerGroupResponse() (response *DeleteMasterSlaveVServerGroupResponse) {
 	response = &DeleteMasterSlaveVServerGroupResponse{
 		BaseResponse: &responses.BaseResponse{},

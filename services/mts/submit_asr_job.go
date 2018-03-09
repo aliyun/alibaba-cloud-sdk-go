@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SubmitAsrJob api with *SubmitAsrJobRequest synchronously
+// api document: https://help.aliyun.com/api/mts/submitasrjob.html
 func (client *Client) SubmitAsrJob(request *SubmitAsrJobRequest) (response *SubmitAsrJobResponse, err error) {
 	response = CreateSubmitAsrJobResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SubmitAsrJob api with *SubmitAsrJobRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/submitasrjob.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitAsrJobWithChan(request *SubmitAsrJobRequest) (<-chan *SubmitAsrJobResponse, <-chan error) {
 	responseChan := make(chan *SubmitAsrJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SubmitAsrJobWithChan(request *SubmitAsrJobRequest) (<-chan
 	return responseChan, errChan
 }
 
+// invoke SubmitAsrJob api with *SubmitAsrJobRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/submitasrjob.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitAsrJobWithCallback(request *SubmitAsrJobRequest, callback func(response *SubmitAsrJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,6 +91,7 @@ type SubmitAsrJobResponse struct {
 	JobId     string `json:"JobId" xml:"JobId"`
 }
 
+// create a request to invoke SubmitAsrJob API
 func CreateSubmitAsrJobRequest() (request *SubmitAsrJobRequest) {
 	request = &SubmitAsrJobRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -91,6 +100,7 @@ func CreateSubmitAsrJobRequest() (request *SubmitAsrJobRequest) {
 	return
 }
 
+// create a response to parse from SubmitAsrJob response
 func CreateSubmitAsrJobResponse() (response *SubmitAsrJobResponse) {
 	response = &SubmitAsrJobResponse{
 		BaseResponse: &responses.BaseResponse{},

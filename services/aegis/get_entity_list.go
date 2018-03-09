@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke GetEntityList api with *GetEntityListRequest synchronously
+// api document: https://help.aliyun.com/api/aegis/getentitylist.html
 func (client *Client) GetEntityList(request *GetEntityListRequest) (response *GetEntityListResponse, err error) {
 	response = CreateGetEntityListResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke GetEntityList api with *GetEntityListRequest asynchronously
+// api document: https://help.aliyun.com/api/aegis/getentitylist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetEntityListWithChan(request *GetEntityListRequest) (<-chan *GetEntityListResponse, <-chan error) {
 	responseChan := make(chan *GetEntityListResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) GetEntityListWithChan(request *GetEntityListRequest) (<-ch
 	return responseChan, errChan
 }
 
+// invoke GetEntityList api with *GetEntityListRequest asynchronously
+// api document: https://help.aliyun.com/api/aegis/getentitylist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetEntityListWithCallback(request *GetEntityListRequest, callback func(response *GetEntityListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,6 +92,7 @@ type GetEntityListResponse struct {
 	Data      Data   `json:"Data" xml:"Data"`
 }
 
+// create a request to invoke GetEntityList API
 func CreateGetEntityListRequest() (request *GetEntityListRequest) {
 	request = &GetEntityListRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -92,6 +101,7 @@ func CreateGetEntityListRequest() (request *GetEntityListRequest) {
 	return
 }
 
+// create a response to parse from GetEntityList response
 func CreateGetEntityListResponse() (response *GetEntityListResponse) {
 	response = &GetEntityListResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifyCdnService api with *ModifyCdnServiceRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/modifycdnservice.html
 func (client *Client) ModifyCdnService(request *ModifyCdnServiceRequest) (response *ModifyCdnServiceResponse, err error) {
 	response = CreateModifyCdnServiceResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifyCdnService api with *ModifyCdnServiceRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/modifycdnservice.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyCdnServiceWithChan(request *ModifyCdnServiceRequest) (<-chan *ModifyCdnServiceResponse, <-chan error) {
 	responseChan := make(chan *ModifyCdnServiceResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifyCdnServiceWithChan(request *ModifyCdnServiceRequest)
 	return responseChan, errChan
 }
 
+// invoke ModifyCdnService api with *ModifyCdnServiceRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/modifycdnservice.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyCdnServiceWithCallback(request *ModifyCdnServiceRequest, callback func(response *ModifyCdnServiceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +85,7 @@ type ModifyCdnServiceResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ModifyCdnService API
 func CreateModifyCdnServiceRequest() (request *ModifyCdnServiceRequest) {
 	request = &ModifyCdnServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -85,6 +94,7 @@ func CreateModifyCdnServiceRequest() (request *ModifyCdnServiceRequest) {
 	return
 }
 
+// create a response to parse from ModifyCdnService response
 func CreateModifyCdnServiceResponse() (response *ModifyCdnServiceResponse) {
 	response = &ModifyCdnServiceResponse{
 		BaseResponse: &responses.BaseResponse{},

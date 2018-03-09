@@ -16,16 +16,16 @@ package cloudphoto
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Cover struct {
+	Mtime   int    `json:"Mtime" xml:"Mtime"`
 	FileId  string `json:"FileId" xml:"FileId"`
-	IsVideo bool   `json:"IsVideo" xml:"IsVideo"`
-	IdStr   string `json:"IdStr" xml:"IdStr"`
 	Ctime   int    `json:"Ctime" xml:"Ctime"`
+	Width   int    `json:"Width" xml:"Width"`
+	IdStr   string `json:"IdStr" xml:"IdStr"`
+	IsVideo bool   `json:"IsVideo" xml:"IsVideo"`
+	Id      int    `json:"Id" xml:"Id"`
+	Remark  string `json:"Remark" xml:"Remark"`
+	Md5     string `json:"Md5" xml:"Md5"`
 	State   string `json:"State" xml:"State"`
 	Title   string `json:"Title" xml:"Title"`
-	Remark  string `json:"Remark" xml:"Remark"`
-	Mtime   int    `json:"Mtime" xml:"Mtime"`
-	Md5     string `json:"Md5" xml:"Md5"`
-	Width   int    `json:"Width" xml:"Width"`
-	Id      int    `json:"Id" xml:"Id"`
 	Height  int    `json:"Height" xml:"Height"`
 }

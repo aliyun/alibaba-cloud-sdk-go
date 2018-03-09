@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeUserConfigs api with *DescribeUserConfigsRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/describeuserconfigs.html
 func (client *Client) DescribeUserConfigs(request *DescribeUserConfigsRequest) (response *DescribeUserConfigsResponse, err error) {
 	response = CreateDescribeUserConfigsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeUserConfigs api with *DescribeUserConfigsRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describeuserconfigs.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUserConfigsWithChan(request *DescribeUserConfigsRequest) (<-chan *DescribeUserConfigsResponse, <-chan error) {
 	responseChan := make(chan *DescribeUserConfigsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeUserConfigsWithChan(request *DescribeUserConfigsRe
 	return responseChan, errChan
 }
 
+// invoke DescribeUserConfigs api with *DescribeUserConfigsRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describeuserconfigs.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUserConfigsWithCallback(request *DescribeUserConfigsRequest, callback func(response *DescribeUserConfigsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type DescribeUserConfigsResponse struct {
 	Configs   Configs `json:"Configs" xml:"Configs"`
 }
 
+// create a request to invoke DescribeUserConfigs API
 func CreateDescribeUserConfigsRequest() (request *DescribeUserConfigsRequest) {
 	request = &DescribeUserConfigsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateDescribeUserConfigsRequest() (request *DescribeUserConfigsRequest) {
 	return
 }
 
+// create a response to parse from DescribeUserConfigs response
 func CreateDescribeUserConfigsResponse() (response *DescribeUserConfigsResponse) {
 	response = &DescribeUserConfigsResponse{
 		BaseResponse: &responses.BaseResponse{},

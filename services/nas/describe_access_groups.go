@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeAccessGroups api with *DescribeAccessGroupsRequest synchronously
+// api document: https://help.aliyun.com/api/nas/describeaccessgroups.html
 func (client *Client) DescribeAccessGroups(request *DescribeAccessGroupsRequest) (response *DescribeAccessGroupsResponse, err error) {
 	response = CreateDescribeAccessGroupsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeAccessGroups api with *DescribeAccessGroupsRequest asynchronously
+// api document: https://help.aliyun.com/api/nas/describeaccessgroups.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAccessGroupsWithChan(request *DescribeAccessGroupsRequest) (<-chan *DescribeAccessGroupsResponse, <-chan error) {
 	responseChan := make(chan *DescribeAccessGroupsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeAccessGroupsWithChan(request *DescribeAccessGroups
 	return responseChan, errChan
 }
 
+// invoke DescribeAccessGroups api with *DescribeAccessGroupsRequest asynchronously
+// api document: https://help.aliyun.com/api/nas/describeaccessgroups.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAccessGroupsWithCallback(request *DescribeAccessGroupsRequest, callback func(response *DescribeAccessGroupsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type DescribeAccessGroupsResponse struct {
 	AccessGroups AccessGroups `json:"AccessGroups" xml:"AccessGroups"`
 }
 
+// create a request to invoke DescribeAccessGroups API
 func CreateDescribeAccessGroupsRequest() (request *DescribeAccessGroupsRequest) {
 	request = &DescribeAccessGroupsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateDescribeAccessGroupsRequest() (request *DescribeAccessGroupsRequest) 
 	return
 }
 
+// create a response to parse from DescribeAccessGroups response
 func CreateDescribeAccessGroupsResponse() (response *DescribeAccessGroupsResponse) {
 	response = &DescribeAccessGroupsResponse{
 		BaseResponse: &responses.BaseResponse{},

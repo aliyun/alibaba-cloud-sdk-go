@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ListCustomImages api with *ListCustomImagesRequest synchronously
+// api document: https://help.aliyun.com/api/ehpc/listcustomimages.html
 func (client *Client) ListCustomImages(request *ListCustomImagesRequest) (response *ListCustomImagesResponse, err error) {
 	response = CreateListCustomImagesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ListCustomImages api with *ListCustomImagesRequest asynchronously
+// api document: https://help.aliyun.com/api/ehpc/listcustomimages.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListCustomImagesWithChan(request *ListCustomImagesRequest) (<-chan *ListCustomImagesResponse, <-chan error) {
 	responseChan := make(chan *ListCustomImagesResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ListCustomImagesWithChan(request *ListCustomImagesRequest)
 	return responseChan, errChan
 }
 
+// invoke ListCustomImages api with *ListCustomImagesRequest asynchronously
+// api document: https://help.aliyun.com/api/ehpc/listcustomimages.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListCustomImagesWithCallback(request *ListCustomImagesRequest, callback func(response *ListCustomImagesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +85,7 @@ type ListCustomImagesResponse struct {
 	Images    Images `json:"Images" xml:"Images"`
 }
 
+// create a request to invoke ListCustomImages API
 func CreateListCustomImagesRequest() (request *ListCustomImagesRequest) {
 	request = &ListCustomImagesRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -85,6 +94,7 @@ func CreateListCustomImagesRequest() (request *ListCustomImagesRequest) {
 	return
 }
 
+// create a response to parse from ListCustomImages response
 func CreateListCustomImagesResponse() (response *ListCustomImagesResponse) {
 	response = &ListCustomImagesResponse{
 		BaseResponse: &responses.BaseResponse{},

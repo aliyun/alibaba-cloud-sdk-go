@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeSpotPriceHistory api with *DescribeSpotPriceHistoryRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/describespotpricehistory.html
 func (client *Client) DescribeSpotPriceHistory(request *DescribeSpotPriceHistoryRequest) (response *DescribeSpotPriceHistoryResponse, err error) {
 	response = CreateDescribeSpotPriceHistoryResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeSpotPriceHistory api with *DescribeSpotPriceHistoryRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describespotpricehistory.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSpotPriceHistoryWithChan(request *DescribeSpotPriceHistoryRequest) (<-chan *DescribeSpotPriceHistoryResponse, <-chan error) {
 	responseChan := make(chan *DescribeSpotPriceHistoryResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeSpotPriceHistoryWithChan(request *DescribeSpotPric
 	return responseChan, errChan
 }
 
+// invoke DescribeSpotPriceHistory api with *DescribeSpotPriceHistoryRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describespotpricehistory.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSpotPriceHistoryWithCallback(request *DescribeSpotPriceHistoryRequest, callback func(response *DescribeSpotPriceHistoryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +85,7 @@ type DescribeSpotPriceHistoryResponse struct {
 	SpotPrices SpotPrices `json:"SpotPrices" xml:"SpotPrices"`
 }
 
+// create a request to invoke DescribeSpotPriceHistory API
 func CreateDescribeSpotPriceHistoryRequest() (request *DescribeSpotPriceHistoryRequest) {
 	request = &DescribeSpotPriceHistoryRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -85,6 +94,7 @@ func CreateDescribeSpotPriceHistoryRequest() (request *DescribeSpotPriceHistoryR
 	return
 }
 
+// create a response to parse from DescribeSpotPriceHistory response
 func CreateDescribeSpotPriceHistoryResponse() (response *DescribeSpotPriceHistoryResponse) {
 	response = &DescribeSpotPriceHistoryResponse{
 		BaseResponse: &responses.BaseResponse{},

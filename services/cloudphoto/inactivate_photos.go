@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke InactivatePhotos api with *InactivatePhotosRequest synchronously
+// api document: https://help.aliyun.com/api/cloudphoto/inactivatephotos.html
 func (client *Client) InactivatePhotos(request *InactivatePhotosRequest) (response *InactivatePhotosResponse, err error) {
 	response = CreateInactivatePhotosResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke InactivatePhotos api with *InactivatePhotosRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/inactivatephotos.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) InactivatePhotosWithChan(request *InactivatePhotosRequest) (<-chan *InactivatePhotosResponse, <-chan error) {
 	responseChan := make(chan *InactivatePhotosResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) InactivatePhotosWithChan(request *InactivatePhotosRequest)
 	return responseChan, errChan
 }
 
+// invoke InactivatePhotos api with *InactivatePhotosRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/inactivatephotos.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) InactivatePhotosWithCallback(request *InactivatePhotosRequest, callback func(response *InactivatePhotosResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type InactivatePhotosResponse struct {
 	Results   []Result `json:"Results" xml:"Results"`
 }
 
+// create a request to invoke InactivatePhotos API
 func CreateInactivatePhotosRequest() (request *InactivatePhotosRequest) {
 	request = &InactivatePhotosRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateInactivatePhotosRequest() (request *InactivatePhotosRequest) {
 	return
 }
 
+// create a response to parse from InactivatePhotos response
 func CreateInactivatePhotosResponse() (response *InactivatePhotosResponse) {
 	response = &InactivatePhotosResponse{
 		BaseResponse: &responses.BaseResponse{},

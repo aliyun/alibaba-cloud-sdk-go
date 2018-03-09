@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CreateFileSystem api with *CreateFileSystemRequest synchronously
+// api document: https://help.aliyun.com/api/nas/createfilesystem.html
 func (client *Client) CreateFileSystem(request *CreateFileSystemRequest) (response *CreateFileSystemResponse, err error) {
 	response = CreateCreateFileSystemResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CreateFileSystem api with *CreateFileSystemRequest asynchronously
+// api document: https://help.aliyun.com/api/nas/createfilesystem.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateFileSystemWithChan(request *CreateFileSystemRequest) (<-chan *CreateFileSystemResponse, <-chan error) {
 	responseChan := make(chan *CreateFileSystemResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CreateFileSystemWithChan(request *CreateFileSystemRequest)
 	return responseChan, errChan
 }
 
+// invoke CreateFileSystem api with *CreateFileSystemRequest asynchronously
+// api document: https://help.aliyun.com/api/nas/createfilesystem.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateFileSystemWithCallback(request *CreateFileSystemRequest, callback func(response *CreateFileSystemResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type CreateFileSystemResponse struct {
 	FileSystemId string `json:"FileSystemId" xml:"FileSystemId"`
 }
 
+// create a request to invoke CreateFileSystem API
 func CreateCreateFileSystemRequest() (request *CreateFileSystemRequest) {
 	request = &CreateFileSystemRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateCreateFileSystemRequest() (request *CreateFileSystemRequest) {
 	return
 }
 
+// create a response to parse from CreateFileSystem response
 func CreateCreateFileSystemResponse() (response *CreateFileSystemResponse) {
 	response = &CreateFileSystemResponse{
 		BaseResponse: &responses.BaseResponse{},

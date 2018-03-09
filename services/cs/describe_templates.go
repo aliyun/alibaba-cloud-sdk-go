@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeTemplates api with *DescribeTemplatesRequest synchronously
+// api document: https://help.aliyun.com/api/cs/describetemplates.html
 func (client *Client) DescribeTemplates(request *DescribeTemplatesRequest) (response *DescribeTemplatesResponse, err error) {
 	response = CreateDescribeTemplatesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeTemplates api with *DescribeTemplatesRequest asynchronously
+// api document: https://help.aliyun.com/api/cs/describetemplates.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeTemplatesWithChan(request *DescribeTemplatesRequest) (<-chan *DescribeTemplatesResponse, <-chan error) {
 	responseChan := make(chan *DescribeTemplatesResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeTemplatesWithChan(request *DescribeTemplatesReques
 	return responseChan, errChan
 }
 
+// invoke DescribeTemplates api with *DescribeTemplatesRequest asynchronously
+// api document: https://help.aliyun.com/api/cs/describetemplates.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeTemplatesWithCallback(request *DescribeTemplatesRequest, callback func(response *DescribeTemplatesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -73,6 +81,7 @@ type DescribeTemplatesResponse struct {
 	*responses.BaseResponse
 }
 
+// create a request to invoke DescribeTemplates API
 func CreateDescribeTemplatesRequest() (request *DescribeTemplatesRequest) {
 	request = &DescribeTemplatesRequest{
 		RoaRequest: &requests.RoaRequest{},
@@ -82,6 +91,7 @@ func CreateDescribeTemplatesRequest() (request *DescribeTemplatesRequest) {
 	return
 }
 
+// create a response to parse from DescribeTemplates response
 func CreateDescribeTemplatesResponse() (response *DescribeTemplatesResponse) {
 	response = &DescribeTemplatesResponse{
 		BaseResponse: &responses.BaseResponse{},

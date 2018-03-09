@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke GrantAccountPrivilege api with *GrantAccountPrivilegeRequest synchronously
+// api document: https://help.aliyun.com/api/rds/grantaccountprivilege.html
 func (client *Client) GrantAccountPrivilege(request *GrantAccountPrivilegeRequest) (response *GrantAccountPrivilegeResponse, err error) {
 	response = CreateGrantAccountPrivilegeResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke GrantAccountPrivilege api with *GrantAccountPrivilegeRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/grantaccountprivilege.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GrantAccountPrivilegeWithChan(request *GrantAccountPrivilegeRequest) (<-chan *GrantAccountPrivilegeResponse, <-chan error) {
 	responseChan := make(chan *GrantAccountPrivilegeResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) GrantAccountPrivilegeWithChan(request *GrantAccountPrivile
 	return responseChan, errChan
 }
 
+// invoke GrantAccountPrivilege api with *GrantAccountPrivilegeRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/grantaccountprivilege.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GrantAccountPrivilegeWithCallback(request *GrantAccountPrivilegeRequest, callback func(response *GrantAccountPrivilegeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type GrantAccountPrivilegeResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke GrantAccountPrivilege API
 func CreateGrantAccountPrivilegeRequest() (request *GrantAccountPrivilegeRequest) {
 	request = &GrantAccountPrivilegeRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateGrantAccountPrivilegeRequest() (request *GrantAccountPrivilegeRequest
 	return
 }
 
+// create a response to parse from GrantAccountPrivilege response
 func CreateGrantAccountPrivilegeResponse() (response *GrantAccountPrivilegeResponse) {
 	response = &GrantAccountPrivilegeResponse{
 		BaseResponse: &responses.BaseResponse{},

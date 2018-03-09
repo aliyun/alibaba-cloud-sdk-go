@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeRecommendInstanceType api with *DescribeRecommendInstanceTypeRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/describerecommendinstancetype.html
 func (client *Client) DescribeRecommendInstanceType(request *DescribeRecommendInstanceTypeRequest) (response *DescribeRecommendInstanceTypeResponse, err error) {
 	response = CreateDescribeRecommendInstanceTypeResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeRecommendInstanceType api with *DescribeRecommendInstanceTypeRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describerecommendinstancetype.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRecommendInstanceTypeWithChan(request *DescribeRecommendInstanceTypeRequest) (<-chan *DescribeRecommendInstanceTypeResponse, <-chan error) {
 	responseChan := make(chan *DescribeRecommendInstanceTypeResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeRecommendInstanceTypeWithChan(request *DescribeRec
 	return responseChan, errChan
 }
 
+// invoke DescribeRecommendInstanceType api with *DescribeRecommendInstanceTypeRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describerecommendinstancetype.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRecommendInstanceTypeWithCallback(request *DescribeRecommendInstanceTypeRequest, callback func(response *DescribeRecommendInstanceTypeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -86,6 +94,7 @@ type DescribeRecommendInstanceTypeResponse struct {
 	Data      Data   `json:"Data" xml:"Data"`
 }
 
+// create a request to invoke DescribeRecommendInstanceType API
 func CreateDescribeRecommendInstanceTypeRequest() (request *DescribeRecommendInstanceTypeRequest) {
 	request = &DescribeRecommendInstanceTypeRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -94,6 +103,7 @@ func CreateDescribeRecommendInstanceTypeRequest() (request *DescribeRecommendIns
 	return
 }
 
+// create a response to parse from DescribeRecommendInstanceType response
 func CreateDescribeRecommendInstanceTypeResponse() (response *DescribeRecommendInstanceTypeResponse) {
 	response = &DescribeRecommendInstanceTypeResponse{
 		BaseResponse: &responses.BaseResponse{},

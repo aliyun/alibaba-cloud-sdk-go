@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke RegisterMediaDetailScenario api with *RegisterMediaDetailScenarioRequest synchronously
+// api document: https://help.aliyun.com/api/mts/registermediadetailscenario.html
 func (client *Client) RegisterMediaDetailScenario(request *RegisterMediaDetailScenarioRequest) (response *RegisterMediaDetailScenarioResponse, err error) {
 	response = CreateRegisterMediaDetailScenarioResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke RegisterMediaDetailScenario api with *RegisterMediaDetailScenarioRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/registermediadetailscenario.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RegisterMediaDetailScenarioWithChan(request *RegisterMediaDetailScenarioRequest) (<-chan *RegisterMediaDetailScenarioResponse, <-chan error) {
 	responseChan := make(chan *RegisterMediaDetailScenarioResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) RegisterMediaDetailScenarioWithChan(request *RegisterMedia
 	return responseChan, errChan
 }
 
+// invoke RegisterMediaDetailScenario api with *RegisterMediaDetailScenarioRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/registermediadetailscenario.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RegisterMediaDetailScenarioWithCallback(request *RegisterMediaDetailScenarioRequest, callback func(response *RegisterMediaDetailScenarioResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type RegisterMediaDetailScenarioResponse struct {
 	ScenarioId string `json:"ScenarioId" xml:"ScenarioId"`
 }
 
+// create a request to invoke RegisterMediaDetailScenario API
 func CreateRegisterMediaDetailScenarioRequest() (request *RegisterMediaDetailScenarioRequest) {
 	request = &RegisterMediaDetailScenarioRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateRegisterMediaDetailScenarioRequest() (request *RegisterMediaDetailSce
 	return
 }
 
+// create a response to parse from RegisterMediaDetailScenario response
 func CreateRegisterMediaDetailScenarioResponse() (response *RegisterMediaDetailScenarioResponse) {
 	response = &RegisterMediaDetailScenarioResponse{
 		BaseResponse: &responses.BaseResponse{},

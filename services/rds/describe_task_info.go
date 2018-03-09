@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeTaskInfo api with *DescribeTaskInfoRequest synchronously
+// api document: https://help.aliyun.com/api/rds/describetaskinfo.html
 func (client *Client) DescribeTaskInfo(request *DescribeTaskInfoRequest) (response *DescribeTaskInfoResponse, err error) {
 	response = CreateDescribeTaskInfoResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeTaskInfo api with *DescribeTaskInfoRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describetaskinfo.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeTaskInfoWithChan(request *DescribeTaskInfoRequest) (<-chan *DescribeTaskInfoResponse, <-chan error) {
 	responseChan := make(chan *DescribeTaskInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeTaskInfoWithChan(request *DescribeTaskInfoRequest)
 	return responseChan, errChan
 }
 
+// invoke DescribeTaskInfo api with *DescribeTaskInfoRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describetaskinfo.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeTaskInfoWithCallback(request *DescribeTaskInfoRequest, callback func(response *DescribeTaskInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +101,7 @@ type DescribeTaskInfoResponse struct {
 	Status             string `json:"Status" xml:"Status"`
 }
 
+// create a request to invoke DescribeTaskInfo API
 func CreateDescribeTaskInfoRequest() (request *DescribeTaskInfoRequest) {
 	request = &DescribeTaskInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -101,6 +110,7 @@ func CreateDescribeTaskInfoRequest() (request *DescribeTaskInfoRequest) {
 	return
 }
 
+// create a response to parse from DescribeTaskInfo response
 func CreateDescribeTaskInfoResponse() (response *DescribeTaskInfoResponse) {
 	response = &DescribeTaskInfoResponse{
 		BaseResponse: &responses.BaseResponse{},

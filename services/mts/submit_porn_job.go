@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SubmitPornJob api with *SubmitPornJobRequest synchronously
+// api document: https://help.aliyun.com/api/mts/submitpornjob.html
 func (client *Client) SubmitPornJob(request *SubmitPornJobRequest) (response *SubmitPornJobResponse, err error) {
 	response = CreateSubmitPornJobResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SubmitPornJob api with *SubmitPornJobRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/submitpornjob.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitPornJobWithChan(request *SubmitPornJobRequest) (<-chan *SubmitPornJobResponse, <-chan error) {
 	responseChan := make(chan *SubmitPornJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SubmitPornJobWithChan(request *SubmitPornJobRequest) (<-ch
 	return responseChan, errChan
 }
 
+// invoke SubmitPornJob api with *SubmitPornJobRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/submitpornjob.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitPornJobWithCallback(request *SubmitPornJobRequest, callback func(response *SubmitPornJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,6 +91,7 @@ type SubmitPornJobResponse struct {
 	JobId     string `json:"JobId" xml:"JobId"`
 }
 
+// create a request to invoke SubmitPornJob API
 func CreateSubmitPornJobRequest() (request *SubmitPornJobRequest) {
 	request = &SubmitPornJobRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -91,6 +100,7 @@ func CreateSubmitPornJobRequest() (request *SubmitPornJobRequest) {
 	return
 }
 
+// create a response to parse from SubmitPornJob response
 func CreateSubmitPornJobResponse() (response *SubmitPornJobResponse) {
 	response = &SubmitPornJobResponse{
 		BaseResponse: &responses.BaseResponse{},

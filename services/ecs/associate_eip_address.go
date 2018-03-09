@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke AssociateEipAddress api with *AssociateEipAddressRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/associateeipaddress.html
 func (client *Client) AssociateEipAddress(request *AssociateEipAddressRequest) (response *AssociateEipAddressResponse, err error) {
 	response = CreateAssociateEipAddressResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke AssociateEipAddress api with *AssociateEipAddressRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/associateeipaddress.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AssociateEipAddressWithChan(request *AssociateEipAddressRequest) (<-chan *AssociateEipAddressResponse, <-chan error) {
 	responseChan := make(chan *AssociateEipAddressResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) AssociateEipAddressWithChan(request *AssociateEipAddressRe
 	return responseChan, errChan
 }
 
+// invoke AssociateEipAddress api with *AssociateEipAddressRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/associateeipaddress.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AssociateEipAddressWithCallback(request *AssociateEipAddressRequest, callback func(response *AssociateEipAddressResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type AssociateEipAddressResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke AssociateEipAddress API
 func CreateAssociateEipAddressRequest() (request *AssociateEipAddressRequest) {
 	request = &AssociateEipAddressRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateAssociateEipAddressRequest() (request *AssociateEipAddressRequest) {
 	return
 }
 
+// create a response to parse from AssociateEipAddress response
 func CreateAssociateEipAddressResponse() (response *AssociateEipAddressResponse) {
 	response = &AssociateEipAddressResponse{
 		BaseResponse: &responses.BaseResponse{},

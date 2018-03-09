@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ListPhotos api with *ListPhotosRequest synchronously
+// api document: https://help.aliyun.com/api/cloudphoto/listphotos.html
 func (client *Client) ListPhotos(request *ListPhotosRequest) (response *ListPhotosResponse, err error) {
 	response = CreateListPhotosResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ListPhotos api with *ListPhotosRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/listphotos.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListPhotosWithChan(request *ListPhotosRequest) (<-chan *ListPhotosResponse, <-chan error) {
 	responseChan := make(chan *ListPhotosResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ListPhotosWithChan(request *ListPhotosRequest) (<-chan *Li
 	return responseChan, errChan
 }
 
+// invoke ListPhotos api with *ListPhotosRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/listphotos.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListPhotosWithCallback(request *ListPhotosRequest, callback func(response *ListPhotosResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -86,6 +94,7 @@ type ListPhotosResponse struct {
 	Photos     []Photo `json:"Photos" xml:"Photos"`
 }
 
+// create a request to invoke ListPhotos API
 func CreateListPhotosRequest() (request *ListPhotosRequest) {
 	request = &ListPhotosRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -94,6 +103,7 @@ func CreateListPhotosRequest() (request *ListPhotosRequest) {
 	return
 }
 
+// create a response to parse from ListPhotos response
 func CreateListPhotosResponse() (response *ListPhotosResponse) {
 	response = &ListPhotosResponse{
 		BaseResponse: &responses.BaseResponse{},

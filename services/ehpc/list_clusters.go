@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ListClusters api with *ListClustersRequest synchronously
+// api document: https://help.aliyun.com/api/ehpc/listclusters.html
 func (client *Client) ListClusters(request *ListClustersRequest) (response *ListClustersResponse, err error) {
 	response = CreateListClustersResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ListClusters api with *ListClustersRequest asynchronously
+// api document: https://help.aliyun.com/api/ehpc/listclusters.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListClustersWithChan(request *ListClustersRequest) (<-chan *ListClustersResponse, <-chan error) {
 	responseChan := make(chan *ListClustersResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ListClustersWithChan(request *ListClustersRequest) (<-chan
 	return responseChan, errChan
 }
 
+// invoke ListClusters api with *ListClustersRequest asynchronously
+// api document: https://help.aliyun.com/api/ehpc/listclusters.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListClustersWithCallback(request *ListClustersRequest, callback func(response *ListClustersResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type ListClustersResponse struct {
 	Clusters   Clusters `json:"Clusters" xml:"Clusters"`
 }
 
+// create a request to invoke ListClusters API
 func CreateListClustersRequest() (request *ListClustersRequest) {
 	request = &ListClustersRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateListClustersRequest() (request *ListClustersRequest) {
 	return
 }
 
+// create a response to parse from ListClusters response
 func CreateListClustersResponse() (response *ListClustersResponse) {
 	response = &ListClustersResponse{
 		BaseResponse: &responses.BaseResponse{},

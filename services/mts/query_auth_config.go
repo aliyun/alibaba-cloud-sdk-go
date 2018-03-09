@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke QueryAuthConfig api with *QueryAuthConfigRequest synchronously
+// api document: https://help.aliyun.com/api/mts/queryauthconfig.html
 func (client *Client) QueryAuthConfig(request *QueryAuthConfigRequest) (response *QueryAuthConfigResponse, err error) {
 	response = CreateQueryAuthConfigResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke QueryAuthConfig api with *QueryAuthConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/queryauthconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryAuthConfigWithChan(request *QueryAuthConfigRequest) (<-chan *QueryAuthConfigResponse, <-chan error) {
 	responseChan := make(chan *QueryAuthConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) QueryAuthConfigWithChan(request *QueryAuthConfigRequest) (
 	return responseChan, errChan
 }
 
+// invoke QueryAuthConfig api with *QueryAuthConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/queryauthconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryAuthConfigWithCallback(request *QueryAuthConfigRequest, callback func(response *QueryAuthConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type QueryAuthConfigResponse struct {
 	Key2      string `json:"Key2" xml:"Key2"`
 }
 
+// create a request to invoke QueryAuthConfig API
 func CreateQueryAuthConfigRequest() (request *QueryAuthConfigRequest) {
 	request = &QueryAuthConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateQueryAuthConfigRequest() (request *QueryAuthConfigRequest) {
 	return
 }
 
+// create a response to parse from QueryAuthConfig response
 func CreateQueryAuthConfigResponse() (response *QueryAuthConfigResponse) {
 	response = &QueryAuthConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

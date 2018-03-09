@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke RemoveAlbumPhotos api with *RemoveAlbumPhotosRequest synchronously
+// api document: https://help.aliyun.com/api/cloudphoto/removealbumphotos.html
 func (client *Client) RemoveAlbumPhotos(request *RemoveAlbumPhotosRequest) (response *RemoveAlbumPhotosResponse, err error) {
 	response = CreateRemoveAlbumPhotosResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke RemoveAlbumPhotos api with *RemoveAlbumPhotosRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/removealbumphotos.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveAlbumPhotosWithChan(request *RemoveAlbumPhotosRequest) (<-chan *RemoveAlbumPhotosResponse, <-chan error) {
 	responseChan := make(chan *RemoveAlbumPhotosResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) RemoveAlbumPhotosWithChan(request *RemoveAlbumPhotosReques
 	return responseChan, errChan
 }
 
+// invoke RemoveAlbumPhotos api with *RemoveAlbumPhotosRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/removealbumphotos.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveAlbumPhotosWithCallback(request *RemoveAlbumPhotosRequest, callback func(response *RemoveAlbumPhotosResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type RemoveAlbumPhotosResponse struct {
 	Results   []Result `json:"Results" xml:"Results"`
 }
 
+// create a request to invoke RemoveAlbumPhotos API
 func CreateRemoveAlbumPhotosRequest() (request *RemoveAlbumPhotosRequest) {
 	request = &RemoveAlbumPhotosRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateRemoveAlbumPhotosRequest() (request *RemoveAlbumPhotosRequest) {
 	return
 }
 
+// create a response to parse from RemoveAlbumPhotos response
 func CreateRemoveAlbumPhotosResponse() (response *RemoveAlbumPhotosResponse) {
 	response = &RemoveAlbumPhotosResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeDomainGroups api with *DescribeDomainGroupsRequest synchronously
+// api document: https://help.aliyun.com/api/alidns/describedomaingroups.html
 func (client *Client) DescribeDomainGroups(request *DescribeDomainGroupsRequest) (response *DescribeDomainGroupsResponse, err error) {
 	response = CreateDescribeDomainGroupsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeDomainGroups api with *DescribeDomainGroupsRequest asynchronously
+// api document: https://help.aliyun.com/api/alidns/describedomaingroups.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainGroupsWithChan(request *DescribeDomainGroupsRequest) (<-chan *DescribeDomainGroupsResponse, <-chan error) {
 	responseChan := make(chan *DescribeDomainGroupsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeDomainGroupsWithChan(request *DescribeDomainGroups
 	return responseChan, errChan
 }
 
+// invoke DescribeDomainGroups api with *DescribeDomainGroupsRequest asynchronously
+// api document: https://help.aliyun.com/api/alidns/describedomaingroups.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainGroupsWithCallback(request *DescribeDomainGroupsRequest, callback func(response *DescribeDomainGroupsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,6 +91,7 @@ type DescribeDomainGroupsResponse struct {
 	DomainGroups DomainGroups `json:"DomainGroups" xml:"DomainGroups"`
 }
 
+// create a request to invoke DescribeDomainGroups API
 func CreateDescribeDomainGroupsRequest() (request *DescribeDomainGroupsRequest) {
 	request = &DescribeDomainGroupsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -91,6 +100,7 @@ func CreateDescribeDomainGroupsRequest() (request *DescribeDomainGroupsRequest) 
 	return
 }
 
+// create a response to parse from DescribeDomainGroups response
 func CreateDescribeDomainGroupsResponse() (response *DescribeDomainGroupsResponse) {
 	response = &DescribeDomainGroupsResponse{
 		BaseResponse: &responses.BaseResponse{},

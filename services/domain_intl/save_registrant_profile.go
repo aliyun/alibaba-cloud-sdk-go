@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SaveRegistrantProfile api with *SaveRegistrantProfileRequest synchronously
+// api document: https://help.aliyun.com/api/domain-intl/saveregistrantprofile.html
 func (client *Client) SaveRegistrantProfile(request *SaveRegistrantProfileRequest) (response *SaveRegistrantProfileResponse, err error) {
 	response = CreateSaveRegistrantProfileResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SaveRegistrantProfile api with *SaveRegistrantProfileRequest asynchronously
+// api document: https://help.aliyun.com/api/domain-intl/saveregistrantprofile.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveRegistrantProfileWithChan(request *SaveRegistrantProfileRequest) (<-chan *SaveRegistrantProfileResponse, <-chan error) {
 	responseChan := make(chan *SaveRegistrantProfileResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SaveRegistrantProfileWithChan(request *SaveRegistrantProfi
 	return responseChan, errChan
 }
 
+// invoke SaveRegistrantProfile api with *SaveRegistrantProfileRequest asynchronously
+// api document: https://help.aliyun.com/api/domain-intl/saveregistrantprofile.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveRegistrantProfileWithCallback(request *SaveRegistrantProfileRequest, callback func(response *SaveRegistrantProfileResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -90,6 +98,7 @@ type SaveRegistrantProfileResponse struct {
 	RegistrantProfileId int    `json:"RegistrantProfileId" xml:"RegistrantProfileId"`
 }
 
+// create a request to invoke SaveRegistrantProfile API
 func CreateSaveRegistrantProfileRequest() (request *SaveRegistrantProfileRequest) {
 	request = &SaveRegistrantProfileRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -98,6 +107,7 @@ func CreateSaveRegistrantProfileRequest() (request *SaveRegistrantProfileRequest
 	return
 }
 
+// create a response to parse from SaveRegistrantProfile response
 func CreateSaveRegistrantProfileResponse() (response *SaveRegistrantProfileResponse) {
 	response = &SaveRegistrantProfileResponse{
 		BaseResponse: &responses.BaseResponse{},

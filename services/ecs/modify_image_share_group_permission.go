@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifyImageShareGroupPermission api with *ModifyImageShareGroupPermissionRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/modifyimagesharegrouppermission.html
 func (client *Client) ModifyImageShareGroupPermission(request *ModifyImageShareGroupPermissionRequest) (response *ModifyImageShareGroupPermissionResponse, err error) {
 	response = CreateModifyImageShareGroupPermissionResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifyImageShareGroupPermission api with *ModifyImageShareGroupPermissionRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/modifyimagesharegrouppermission.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyImageShareGroupPermissionWithChan(request *ModifyImageShareGroupPermissionRequest) (<-chan *ModifyImageShareGroupPermissionResponse, <-chan error) {
 	responseChan := make(chan *ModifyImageShareGroupPermissionResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifyImageShareGroupPermissionWithChan(request *ModifyIma
 	return responseChan, errChan
 }
 
+// invoke ModifyImageShareGroupPermission api with *ModifyImageShareGroupPermissionRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/modifyimagesharegrouppermission.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyImageShareGroupPermissionWithCallback(request *ModifyImageShareGroupPermissionRequest, callback func(response *ModifyImageShareGroupPermissionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type ModifyImageShareGroupPermissionResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ModifyImageShareGroupPermission API
 func CreateModifyImageShareGroupPermissionRequest() (request *ModifyImageShareGroupPermissionRequest) {
 	request = &ModifyImageShareGroupPermissionRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateModifyImageShareGroupPermissionRequest() (request *ModifyImageShareGr
 	return
 }
 
+// create a response to parse from ModifyImageShareGroupPermission response
 func CreateModifyImageShareGroupPermissionResponse() (response *ModifyImageShareGroupPermissionResponse) {
 	response = &ModifyImageShareGroupPermissionResponse{
 		BaseResponse: &responses.BaseResponse{},

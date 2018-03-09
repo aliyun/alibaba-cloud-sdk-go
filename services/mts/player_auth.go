@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke PlayerAuth api with *PlayerAuthRequest synchronously
+// api document: https://help.aliyun.com/api/mts/playerauth.html
 func (client *Client) PlayerAuth(request *PlayerAuthRequest) (response *PlayerAuthResponse, err error) {
 	response = CreatePlayerAuthResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke PlayerAuth api with *PlayerAuthRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/playerauth.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PlayerAuthWithChan(request *PlayerAuthRequest) (<-chan *PlayerAuthResponse, <-chan error) {
 	responseChan := make(chan *PlayerAuthResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) PlayerAuthWithChan(request *PlayerAuthRequest) (<-chan *Pl
 	return responseChan, errChan
 }
 
+// invoke PlayerAuth api with *PlayerAuthRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/playerauth.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PlayerAuthWithCallback(request *PlayerAuthRequest, callback func(response *PlayerAuthResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type PlayerAuthResponse struct {
 	SwitchList SwitchList `json:"SwitchList" xml:"SwitchList"`
 }
 
+// create a request to invoke PlayerAuth API
 func CreatePlayerAuthRequest() (request *PlayerAuthRequest) {
 	request = &PlayerAuthRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreatePlayerAuthRequest() (request *PlayerAuthRequest) {
 	return
 }
 
+// create a response to parse from PlayerAuth response
 func CreatePlayerAuthResponse() (response *PlayerAuthResponse) {
 	response = &PlayerAuthResponse{
 		BaseResponse: &responses.BaseResponse{},

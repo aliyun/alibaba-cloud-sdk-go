@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribePhysicalConnections api with *DescribePhysicalConnectionsRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/describephysicalconnections.html
 func (client *Client) DescribePhysicalConnections(request *DescribePhysicalConnectionsRequest) (response *DescribePhysicalConnectionsResponse, err error) {
 	response = CreateDescribePhysicalConnectionsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribePhysicalConnections api with *DescribePhysicalConnectionsRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describephysicalconnections.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribePhysicalConnectionsWithChan(request *DescribePhysicalConnectionsRequest) (<-chan *DescribePhysicalConnectionsResponse, <-chan error) {
 	responseChan := make(chan *DescribePhysicalConnectionsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribePhysicalConnectionsWithChan(request *DescribePhysi
 	return responseChan, errChan
 }
 
+// invoke DescribePhysicalConnections api with *DescribePhysicalConnectionsRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describephysicalconnections.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribePhysicalConnectionsWithCallback(request *DescribePhysicalConnectionsRequest, callback func(response *DescribePhysicalConnectionsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,6 +100,7 @@ type DescribePhysicalConnectionsResponse struct {
 	PhysicalConnectionSet PhysicalConnectionSet `json:"PhysicalConnectionSet" xml:"PhysicalConnectionSet"`
 }
 
+// create a request to invoke DescribePhysicalConnections API
 func CreateDescribePhysicalConnectionsRequest() (request *DescribePhysicalConnectionsRequest) {
 	request = &DescribePhysicalConnectionsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -100,6 +109,7 @@ func CreateDescribePhysicalConnectionsRequest() (request *DescribePhysicalConnec
 	return
 }
 
+// create a response to parse from DescribePhysicalConnections response
 func CreateDescribePhysicalConnectionsResponse() (response *DescribePhysicalConnectionsResponse) {
 	response = &DescribePhysicalConnectionsResponse{
 		BaseResponse: &responses.BaseResponse{},

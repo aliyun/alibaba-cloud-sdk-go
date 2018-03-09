@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeLivePullStreamConfig api with *DescribeLivePullStreamConfigRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/describelivepullstreamconfig.html
 func (client *Client) DescribeLivePullStreamConfig(request *DescribeLivePullStreamConfigRequest) (response *DescribeLivePullStreamConfigResponse, err error) {
 	response = CreateDescribeLivePullStreamConfigResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeLivePullStreamConfig api with *DescribeLivePullStreamConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describelivepullstreamconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLivePullStreamConfigWithChan(request *DescribeLivePullStreamConfigRequest) (<-chan *DescribeLivePullStreamConfigResponse, <-chan error) {
 	responseChan := make(chan *DescribeLivePullStreamConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeLivePullStreamConfigWithChan(request *DescribeLive
 	return responseChan, errChan
 }
 
+// invoke DescribeLivePullStreamConfig api with *DescribeLivePullStreamConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describelivepullstreamconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLivePullStreamConfigWithCallback(request *DescribeLivePullStreamConfigRequest, callback func(response *DescribeLivePullStreamConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type DescribeLivePullStreamConfigResponse struct {
 	LiveAppRecordList LiveAppRecordListInDescribeLivePullStreamConfig `json:"LiveAppRecordList" xml:"LiveAppRecordList"`
 }
 
+// create a request to invoke DescribeLivePullStreamConfig API
 func CreateDescribeLivePullStreamConfigRequest() (request *DescribeLivePullStreamConfigRequest) {
 	request = &DescribeLivePullStreamConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateDescribeLivePullStreamConfigRequest() (request *DescribeLivePullStrea
 	return
 }
 
+// create a response to parse from DescribeLivePullStreamConfig response
 func CreateDescribeLivePullStreamConfigResponse() (response *DescribeLivePullStreamConfigResponse) {
 	response = &DescribeLivePullStreamConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeCdnService api with *DescribeCdnServiceRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/describecdnservice.html
 func (client *Client) DescribeCdnService(request *DescribeCdnServiceRequest) (response *DescribeCdnServiceResponse, err error) {
 	response = CreateDescribeCdnServiceResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeCdnService api with *DescribeCdnServiceRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describecdnservice.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCdnServiceWithChan(request *DescribeCdnServiceRequest) (<-chan *DescribeCdnServiceResponse, <-chan error) {
 	responseChan := make(chan *DescribeCdnServiceResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeCdnServiceWithChan(request *DescribeCdnServiceRequ
 	return responseChan, errChan
 }
 
+// invoke DescribeCdnService api with *DescribeCdnServiceRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describecdnservice.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCdnServiceWithCallback(request *DescribeCdnServiceRequest, callback func(response *DescribeCdnServiceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type DescribeCdnServiceResponse struct {
 	OperationLocks     OperationLocks `json:"OperationLocks" xml:"OperationLocks"`
 }
 
+// create a request to invoke DescribeCdnService API
 func CreateDescribeCdnServiceRequest() (request *DescribeCdnServiceRequest) {
 	request = &DescribeCdnServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateDescribeCdnServiceRequest() (request *DescribeCdnServiceRequest) {
 	return
 }
 
+// create a response to parse from DescribeCdnService response
 func CreateDescribeCdnServiceResponse() (response *DescribeCdnServiceResponse) {
 	response = &DescribeCdnServiceResponse{
 		BaseResponse: &responses.BaseResponse{},

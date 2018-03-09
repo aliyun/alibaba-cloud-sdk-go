@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke Push api with *PushRequest synchronously
+// api document: https://help.aliyun.com/api/push/push.html
 func (client *Client) Push(request *PushRequest) (response *PushResponse, err error) {
 	response = CreatePushResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke Push api with *PushRequest asynchronously
+// api document: https://help.aliyun.com/api/push/push.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PushWithChan(request *PushRequest) (<-chan *PushResponse, <-chan error) {
 	responseChan := make(chan *PushResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) PushWithChan(request *PushRequest) (<-chan *PushResponse, 
 	return responseChan, errChan
 }
 
+// invoke Push api with *PushRequest asynchronously
+// api document: https://help.aliyun.com/api/push/push.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PushWithCallback(request *PushRequest, callback func(response *PushResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -68,21 +76,32 @@ func (client *Client) PushWithCallback(request *PushRequest, callback func(respo
 type PushRequest struct {
 	*requests.RpcRequest
 	AppKey                         requests.Integer `position:"Query" name:"AppKey"`
-	Target                         string           `position:"Query" name:"Target"`
-	TargetValue                    string           `position:"Query" name:"TargetValue"`
 	PushType                       string           `position:"Query" name:"PushType"`
 	DeviceType                     string           `position:"Query" name:"DeviceType"`
+	Target                         string           `position:"Query" name:"Target"`
+	TargetValue                    string           `position:"Query" name:"TargetValue"`
 	Title                          string           `position:"Query" name:"Title"`
 	Body                           string           `position:"Query" name:"Body"`
-	SendSpeed                      requests.Integer `position:"Query" name:"SendSpeed"`
 	JobKey                         string           `position:"Query" name:"JobKey"`
+	SendSpeed                      requests.Integer `position:"Query" name:"SendSpeed"`
+	StoreOffline                   requests.Boolean `position:"Query" name:"StoreOffline"`
 	PushTime                       string           `position:"Query" name:"PushTime"`
 	ExpireTime                     string           `position:"Query" name:"ExpireTime"`
-	StoreOffline                   requests.Boolean `position:"Query" name:"StoreOffline"`
-	BatchNumber                    string           `position:"Query" name:"BatchNumber"`
+	IOSApnsEnv                     string           `position:"Query" name:"iOSApnsEnv"`
+	IOSRemind                      requests.Boolean `position:"Query" name:"iOSRemind"`
+	IOSRemindBody                  string           `position:"Query" name:"iOSRemindBody"`
+	IOSBadge                       requests.Integer `position:"Query" name:"iOSBadge"`
+	IOSBadgeAutoIncrement          requests.Boolean `position:"Query" name:"iOSBadgeAutoIncrement"`
+	IOSSilentNotification          requests.Boolean `position:"Query" name:"iOSSilentNotification"`
+	IOSMusic                       string           `position:"Query" name:"iOSMusic"`
+	IOSSubtitle                    string           `position:"Query" name:"iOSSubtitle"`
+	IOSNotificationCategory        string           `position:"Query" name:"iOSNotificationCategory"`
+	IOSMutableContent              requests.Boolean `position:"Query" name:"iOSMutableContent"`
+	IOSExtParameters               string           `position:"Query" name:"iOSExtParameters"`
 	AndroidNotifyType              string           `position:"Query" name:"AndroidNotifyType"`
 	AndroidOpenType                string           `position:"Query" name:"AndroidOpenType"`
 	AndroidActivity                string           `position:"Query" name:"AndroidActivity"`
+	AndroidMusic                   string           `position:"Query" name:"AndroidMusic"`
 	AndroidOpenUrl                 string           `position:"Query" name:"AndroidOpenUrl"`
 	AndroidXiaoMiActivity          string           `position:"Query" name:"AndroidXiaoMiActivity"`
 	AndroidXiaoMiNotifyTitle       string           `position:"Query" name:"AndroidXiaoMiNotifyTitle"`
@@ -90,23 +109,11 @@ type PushRequest struct {
 	AndroidPopupActivity           string           `position:"Query" name:"AndroidPopupActivity"`
 	AndroidPopupTitle              string           `position:"Query" name:"AndroidPopupTitle"`
 	AndroidPopupBody               string           `position:"Query" name:"AndroidPopupBody"`
-	AndroidMusic                   string           `position:"Query" name:"AndroidMusic"`
 	AndroidNotificationBarType     requests.Integer `position:"Query" name:"AndroidNotificationBarType"`
 	AndroidNotificationBarPriority requests.Integer `position:"Query" name:"AndroidNotificationBarPriority"`
-	AndroidNotificationChannel     string           `position:"Query" name:"AndroidNotificationChannel"`
 	AndroidExtParameters           string           `position:"Query" name:"AndroidExtParameters"`
 	AndroidRemind                  requests.Boolean `position:"Query" name:"AndroidRemind"`
-	IOSApnsEnv                     string           `position:"Query" name:"iOSApnsEnv"`
-	IOSRemind                      requests.Boolean `position:"Query" name:"iOSRemind"`
-	IOSRemindBody                  string           `position:"Query" name:"iOSRemindBody"`
-	IOSMusic                       string           `position:"Query" name:"iOSMusic"`
-	IOSBadge                       requests.Integer `position:"Query" name:"iOSBadge"`
-	IOSBadgeAutoIncrement          requests.Boolean `position:"Query" name:"iOSBadgeAutoIncrement"`
-	IOSSilentNotification          requests.Boolean `position:"Query" name:"iOSSilentNotification"`
-	IOSSubtitle                    string           `position:"Query" name:"iOSSubtitle"`
-	IOSNotificationCategory        string           `position:"Query" name:"iOSNotificationCategory"`
-	IOSMutableContent              requests.Boolean `position:"Query" name:"iOSMutableContent"`
-	IOSExtParameters               string           `position:"Query" name:"iOSExtParameters"`
+	AndroidNotificationChannel     string           `position:"Query" name:"AndroidNotificationChannel"`
 	SmsTemplateName                string           `position:"Query" name:"SmsTemplateName"`
 	SmsSignName                    string           `position:"Query" name:"SmsSignName"`
 	SmsParams                      string           `position:"Query" name:"SmsParams"`
@@ -120,6 +127,7 @@ type PushResponse struct {
 	MessageId string `json:"MessageId" xml:"MessageId"`
 }
 
+// create a request to invoke Push API
 func CreatePushRequest() (request *PushRequest) {
 	request = &PushRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -128,6 +136,7 @@ func CreatePushRequest() (request *PushRequest) {
 	return
 }
 
+// create a response to parse from Push response
 func CreatePushResponse() (response *PushResponse) {
 	response = &PushResponse{
 		BaseResponse: &responses.BaseResponse{},

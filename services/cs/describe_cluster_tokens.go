@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeClusterTokens api with *DescribeClusterTokensRequest synchronously
+// api document: https://help.aliyun.com/api/cs/describeclustertokens.html
 func (client *Client) DescribeClusterTokens(request *DescribeClusterTokensRequest) (response *DescribeClusterTokensResponse, err error) {
 	response = CreateDescribeClusterTokensResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeClusterTokens api with *DescribeClusterTokensRequest asynchronously
+// api document: https://help.aliyun.com/api/cs/describeclustertokens.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeClusterTokensWithChan(request *DescribeClusterTokensRequest) (<-chan *DescribeClusterTokensResponse, <-chan error) {
 	responseChan := make(chan *DescribeClusterTokensResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeClusterTokensWithChan(request *DescribeClusterToke
 	return responseChan, errChan
 }
 
+// invoke DescribeClusterTokens api with *DescribeClusterTokensRequest asynchronously
+// api document: https://help.aliyun.com/api/cs/describeclustertokens.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeClusterTokensWithCallback(request *DescribeClusterTokensRequest, callback func(response *DescribeClusterTokensResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -74,6 +82,7 @@ type DescribeClusterTokensResponse struct {
 	*responses.BaseResponse
 }
 
+// create a request to invoke DescribeClusterTokens API
 func CreateDescribeClusterTokensRequest() (request *DescribeClusterTokensRequest) {
 	request = &DescribeClusterTokensRequest{
 		RoaRequest: &requests.RoaRequest{},
@@ -83,6 +92,7 @@ func CreateDescribeClusterTokensRequest() (request *DescribeClusterTokensRequest
 	return
 }
 
+// create a response to parse from DescribeClusterTokens response
 func CreateDescribeClusterTokensResponse() (response *DescribeClusterTokensResponse) {
 	response = &DescribeClusterTokensResponse{
 		BaseResponse: &responses.BaseResponse{},

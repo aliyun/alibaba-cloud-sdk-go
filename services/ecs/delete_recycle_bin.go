@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeleteRecycleBin api with *DeleteRecycleBinRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/deleterecyclebin.html
 func (client *Client) DeleteRecycleBin(request *DeleteRecycleBinRequest) (response *DeleteRecycleBinResponse, err error) {
 	response = CreateDeleteRecycleBinResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeleteRecycleBin api with *DeleteRecycleBinRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/deleterecyclebin.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteRecycleBinWithChan(request *DeleteRecycleBinRequest) (<-chan *DeleteRecycleBinResponse, <-chan error) {
 	responseChan := make(chan *DeleteRecycleBinResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeleteRecycleBinWithChan(request *DeleteRecycleBinRequest)
 	return responseChan, errChan
 }
 
+// invoke DeleteRecycleBin api with *DeleteRecycleBinRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/deleterecyclebin.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteRecycleBinWithCallback(request *DeleteRecycleBinRequest, callback func(response *DeleteRecycleBinResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +87,7 @@ type DeleteRecycleBinResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke DeleteRecycleBin API
 func CreateDeleteRecycleBinRequest() (request *DeleteRecycleBinRequest) {
 	request = &DeleteRecycleBinRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -87,6 +96,7 @@ func CreateDeleteRecycleBinRequest() (request *DeleteRecycleBinRequest) {
 	return
 }
 
+// create a response to parse from DeleteRecycleBin response
 func CreateDeleteRecycleBinResponse() (response *DeleteRecycleBinResponse) {
 	response = &DeleteRecycleBinResponse{
 		BaseResponse: &responses.BaseResponse{},

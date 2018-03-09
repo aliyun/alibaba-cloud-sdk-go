@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeBatchResult api with *DescribeBatchResultRequest synchronously
+// api document: https://help.aliyun.com/api/alidns/describebatchresult.html
 func (client *Client) DescribeBatchResult(request *DescribeBatchResultRequest) (response *DescribeBatchResultResponse, err error) {
 	response = CreateDescribeBatchResultResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeBatchResult api with *DescribeBatchResultRequest asynchronously
+// api document: https://help.aliyun.com/api/alidns/describebatchresult.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBatchResultWithChan(request *DescribeBatchResultRequest) (<-chan *DescribeBatchResultResponse, <-chan error) {
 	responseChan := make(chan *DescribeBatchResultResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeBatchResultWithChan(request *DescribeBatchResultRe
 	return responseChan, errChan
 }
 
+// invoke DescribeBatchResult api with *DescribeBatchResultRequest asynchronously
+// api document: https://help.aliyun.com/api/alidns/describebatchresult.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBatchResultWithCallback(request *DescribeBatchResultRequest, callback func(response *DescribeBatchResultResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type DescribeBatchResultResponse struct {
 	FailResults   FailResults `json:"FailResults" xml:"FailResults"`
 }
 
+// create a request to invoke DescribeBatchResult API
 func CreateDescribeBatchResultRequest() (request *DescribeBatchResultRequest) {
 	request = &DescribeBatchResultRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateDescribeBatchResultRequest() (request *DescribeBatchResultRequest) {
 	return
 }
 
+// create a response to parse from DescribeBatchResult response
 func CreateDescribeBatchResultResponse() (response *DescribeBatchResultResponse) {
 	response = &DescribeBatchResultResponse{
 		BaseResponse: &responses.BaseResponse{},

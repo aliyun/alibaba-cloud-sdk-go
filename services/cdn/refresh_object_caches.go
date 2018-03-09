@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke RefreshObjectCaches api with *RefreshObjectCachesRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/refreshobjectcaches.html
 func (client *Client) RefreshObjectCaches(request *RefreshObjectCachesRequest) (response *RefreshObjectCachesResponse, err error) {
 	response = CreateRefreshObjectCachesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke RefreshObjectCaches api with *RefreshObjectCachesRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/refreshobjectcaches.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RefreshObjectCachesWithChan(request *RefreshObjectCachesRequest) (<-chan *RefreshObjectCachesResponse, <-chan error) {
 	responseChan := make(chan *RefreshObjectCachesResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) RefreshObjectCachesWithChan(request *RefreshObjectCachesRe
 	return responseChan, errChan
 }
 
+// invoke RefreshObjectCaches api with *RefreshObjectCachesRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/refreshobjectcaches.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RefreshObjectCachesWithCallback(request *RefreshObjectCachesRequest, callback func(response *RefreshObjectCachesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +87,7 @@ type RefreshObjectCachesResponse struct {
 	RefreshTaskId string `json:"RefreshTaskId" xml:"RefreshTaskId"`
 }
 
+// create a request to invoke RefreshObjectCaches API
 func CreateRefreshObjectCachesRequest() (request *RefreshObjectCachesRequest) {
 	request = &RefreshObjectCachesRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -87,6 +96,7 @@ func CreateRefreshObjectCachesRequest() (request *RefreshObjectCachesRequest) {
 	return
 }
 
+// create a response to parse from RefreshObjectCaches response
 func CreateRefreshObjectCachesResponse() (response *RefreshObjectCachesResponse) {
 	response = &RefreshObjectCachesResponse{
 		BaseResponse: &responses.BaseResponse{},

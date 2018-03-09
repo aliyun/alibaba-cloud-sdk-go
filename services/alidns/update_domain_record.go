@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke UpdateDomainRecord api with *UpdateDomainRecordRequest synchronously
+// api document: https://help.aliyun.com/api/alidns/updatedomainrecord.html
 func (client *Client) UpdateDomainRecord(request *UpdateDomainRecordRequest) (response *UpdateDomainRecordResponse, err error) {
 	response = CreateUpdateDomainRecordResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke UpdateDomainRecord api with *UpdateDomainRecordRequest asynchronously
+// api document: https://help.aliyun.com/api/alidns/updatedomainrecord.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateDomainRecordWithChan(request *UpdateDomainRecordRequest) (<-chan *UpdateDomainRecordResponse, <-chan error) {
 	responseChan := make(chan *UpdateDomainRecordResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) UpdateDomainRecordWithChan(request *UpdateDomainRecordRequ
 	return responseChan, errChan
 }
 
+// invoke UpdateDomainRecord api with *UpdateDomainRecordRequest asynchronously
+// api document: https://help.aliyun.com/api/alidns/updatedomainrecord.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateDomainRecordWithCallback(request *UpdateDomainRecordRequest, callback func(response *UpdateDomainRecordResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,6 +92,7 @@ type UpdateDomainRecordResponse struct {
 	RecordId  string `json:"RecordId" xml:"RecordId"`
 }
 
+// create a request to invoke UpdateDomainRecord API
 func CreateUpdateDomainRecordRequest() (request *UpdateDomainRecordRequest) {
 	request = &UpdateDomainRecordRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -92,6 +101,7 @@ func CreateUpdateDomainRecordRequest() (request *UpdateDomainRecordRequest) {
 	return
 }
 
+// create a response to parse from UpdateDomainRecord response
 func CreateUpdateDomainRecordResponse() (response *UpdateDomainRecordResponse) {
 	response = &UpdateDomainRecordResponse{
 		BaseResponse: &responses.BaseResponse{},

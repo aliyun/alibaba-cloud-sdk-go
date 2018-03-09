@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CreateMountTarget api with *CreateMountTargetRequest synchronously
+// api document: https://help.aliyun.com/api/nas/createmounttarget.html
 func (client *Client) CreateMountTarget(request *CreateMountTargetRequest) (response *CreateMountTargetResponse, err error) {
 	response = CreateCreateMountTargetResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CreateMountTarget api with *CreateMountTargetRequest asynchronously
+// api document: https://help.aliyun.com/api/nas/createmounttarget.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateMountTargetWithChan(request *CreateMountTargetRequest) (<-chan *CreateMountTargetResponse, <-chan error) {
 	responseChan := make(chan *CreateMountTargetResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CreateMountTargetWithChan(request *CreateMountTargetReques
 	return responseChan, errChan
 }
 
+// invoke CreateMountTarget api with *CreateMountTargetRequest asynchronously
+// api document: https://help.aliyun.com/api/nas/createmounttarget.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateMountTargetWithCallback(request *CreateMountTargetRequest, callback func(response *CreateMountTargetResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type CreateMountTargetResponse struct {
 	MountTargetDomain string `json:"MountTargetDomain" xml:"MountTargetDomain"`
 }
 
+// create a request to invoke CreateMountTarget API
 func CreateCreateMountTargetRequest() (request *CreateMountTargetRequest) {
 	request = &CreateMountTargetRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateCreateMountTargetRequest() (request *CreateMountTargetRequest) {
 	return
 }
 
+// create a response to parse from CreateMountTarget response
 func CreateCreateMountTargetResponse() (response *CreateMountTargetResponse) {
 	response = &CreateMountTargetResponse{
 		BaseResponse: &responses.BaseResponse{},

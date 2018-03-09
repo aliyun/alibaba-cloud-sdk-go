@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke AddAlbumPhotos api with *AddAlbumPhotosRequest synchronously
+// api document: https://help.aliyun.com/api/cloudphoto/addalbumphotos.html
 func (client *Client) AddAlbumPhotos(request *AddAlbumPhotosRequest) (response *AddAlbumPhotosResponse, err error) {
 	response = CreateAddAlbumPhotosResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke AddAlbumPhotos api with *AddAlbumPhotosRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/addalbumphotos.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddAlbumPhotosWithChan(request *AddAlbumPhotosRequest) (<-chan *AddAlbumPhotosResponse, <-chan error) {
 	responseChan := make(chan *AddAlbumPhotosResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) AddAlbumPhotosWithChan(request *AddAlbumPhotosRequest) (<-
 	return responseChan, errChan
 }
 
+// invoke AddAlbumPhotos api with *AddAlbumPhotosRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/addalbumphotos.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddAlbumPhotosWithCallback(request *AddAlbumPhotosRequest, callback func(response *AddAlbumPhotosResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type AddAlbumPhotosResponse struct {
 	Results   []Result `json:"Results" xml:"Results"`
 }
 
+// create a request to invoke AddAlbumPhotos API
 func CreateAddAlbumPhotosRequest() (request *AddAlbumPhotosRequest) {
 	request = &AddAlbumPhotosRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateAddAlbumPhotosRequest() (request *AddAlbumPhotosRequest) {
 	return
 }
 
+// create a response to parse from AddAlbumPhotos response
 func CreateAddAlbumPhotosResponse() (response *AddAlbumPhotosResponse) {
 	response = &AddAlbumPhotosResponse{
 		BaseResponse: &responses.BaseResponse{},

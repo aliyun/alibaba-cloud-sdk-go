@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifySkillGroup api with *ModifySkillGroupRequest synchronously
+// api document: https://help.aliyun.com/api/ccc/modifyskillgroup.html
 func (client *Client) ModifySkillGroup(request *ModifySkillGroupRequest) (response *ModifySkillGroupResponse, err error) {
 	response = CreateModifySkillGroupResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifySkillGroup api with *ModifySkillGroupRequest asynchronously
+// api document: https://help.aliyun.com/api/ccc/modifyskillgroup.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySkillGroupWithChan(request *ModifySkillGroupRequest) (<-chan *ModifySkillGroupResponse, <-chan error) {
 	responseChan := make(chan *ModifySkillGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifySkillGroupWithChan(request *ModifySkillGroupRequest)
 	return responseChan, errChan
 }
 
+// invoke ModifySkillGroup api with *ModifySkillGroupRequest asynchronously
+// api document: https://help.aliyun.com/api/ccc/modifyskillgroup.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySkillGroupWithCallback(request *ModifySkillGroupRequest, callback func(response *ModifySkillGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -85,6 +93,7 @@ type ModifySkillGroupResponse struct {
 	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 }
 
+// create a request to invoke ModifySkillGroup API
 func CreateModifySkillGroupRequest() (request *ModifySkillGroupRequest) {
 	request = &ModifySkillGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -93,6 +102,7 @@ func CreateModifySkillGroupRequest() (request *ModifySkillGroupRequest) {
 	return
 }
 
+// create a response to parse from ModifySkillGroup response
 func CreateModifySkillGroupResponse() (response *ModifySkillGroupResponse) {
 	response = &ModifySkillGroupResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke StopInstance api with *StopInstanceRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/stopinstance.html
 func (client *Client) StopInstance(request *StopInstanceRequest) (response *StopInstanceResponse, err error) {
 	response = CreateStopInstanceResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke StopInstance api with *StopInstanceRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/stopinstance.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StopInstanceWithChan(request *StopInstanceRequest) (<-chan *StopInstanceResponse, <-chan error) {
 	responseChan := make(chan *StopInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) StopInstanceWithChan(request *StopInstanceRequest) (<-chan
 	return responseChan, errChan
 }
 
+// invoke StopInstance api with *StopInstanceRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/stopinstance.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StopInstanceWithCallback(request *StopInstanceRequest, callback func(response *StopInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type StopInstanceResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke StopInstance API
 func CreateStopInstanceRequest() (request *StopInstanceRequest) {
 	request = &StopInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateStopInstanceRequest() (request *StopInstanceRequest) {
 	return
 }
 
+// create a response to parse from StopInstance response
 func CreateStopInstanceResponse() (response *StopInstanceResponse) {
 	response = &StopInstanceResponse{
 		BaseResponse: &responses.BaseResponse{},

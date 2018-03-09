@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke GetFramedPhotoUrls api with *GetFramedPhotoUrlsRequest synchronously
+// api document: https://help.aliyun.com/api/cloudphoto/getframedphotourls.html
 func (client *Client) GetFramedPhotoUrls(request *GetFramedPhotoUrlsRequest) (response *GetFramedPhotoUrlsResponse, err error) {
 	response = CreateGetFramedPhotoUrlsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke GetFramedPhotoUrls api with *GetFramedPhotoUrlsRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/getframedphotourls.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetFramedPhotoUrlsWithChan(request *GetFramedPhotoUrlsRequest) (<-chan *GetFramedPhotoUrlsResponse, <-chan error) {
 	responseChan := make(chan *GetFramedPhotoUrlsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) GetFramedPhotoUrlsWithChan(request *GetFramedPhotoUrlsRequ
 	return responseChan, errChan
 }
 
+// invoke GetFramedPhotoUrls api with *GetFramedPhotoUrlsRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/getframedphotourls.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetFramedPhotoUrlsWithCallback(request *GetFramedPhotoUrlsRequest, callback func(response *GetFramedPhotoUrlsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type GetFramedPhotoUrlsResponse struct {
 	Results   ResultsInGetFramedPhotoUrls `json:"Results" xml:"Results"`
 }
 
+// create a request to invoke GetFramedPhotoUrls API
 func CreateGetFramedPhotoUrlsRequest() (request *GetFramedPhotoUrlsRequest) {
 	request = &GetFramedPhotoUrlsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateGetFramedPhotoUrlsRequest() (request *GetFramedPhotoUrlsRequest) {
 	return
 }
 
+// create a response to parse from GetFramedPhotoUrls response
 func CreateGetFramedPhotoUrlsResponse() (response *GetFramedPhotoUrlsResponse) {
 	response = &GetFramedPhotoUrlsResponse{
 		BaseResponse: &responses.BaseResponse{},

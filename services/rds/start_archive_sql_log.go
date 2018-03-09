@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke StartArchiveSQLLog api with *StartArchiveSQLLogRequest synchronously
+// api document: https://help.aliyun.com/api/rds/startarchivesqllog.html
 func (client *Client) StartArchiveSQLLog(request *StartArchiveSQLLogRequest) (response *StartArchiveSQLLogResponse, err error) {
 	response = CreateStartArchiveSQLLogResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke StartArchiveSQLLog api with *StartArchiveSQLLogRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/startarchivesqllog.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StartArchiveSQLLogWithChan(request *StartArchiveSQLLogRequest) (<-chan *StartArchiveSQLLogResponse, <-chan error) {
 	responseChan := make(chan *StartArchiveSQLLogResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) StartArchiveSQLLogWithChan(request *StartArchiveSQLLogRequ
 	return responseChan, errChan
 }
 
+// invoke StartArchiveSQLLog api with *StartArchiveSQLLogRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/startarchivesqllog.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StartArchiveSQLLogWithCallback(request *StartArchiveSQLLogRequest, callback func(response *StartArchiveSQLLogResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,6 +92,7 @@ type StartArchiveSQLLogResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke StartArchiveSQLLog API
 func CreateStartArchiveSQLLogRequest() (request *StartArchiveSQLLogRequest) {
 	request = &StartArchiveSQLLogRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -92,6 +101,7 @@ func CreateStartArchiveSQLLogRequest() (request *StartArchiveSQLLogRequest) {
 	return
 }
 
+// create a response to parse from StartArchiveSQLLog response
 func CreateStartArchiveSQLLogResponse() (response *StartArchiveSQLLogResponse) {
 	response = &StartArchiveSQLLogResponse{
 		BaseResponse: &responses.BaseResponse{},

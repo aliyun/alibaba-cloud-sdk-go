@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeSQLLogRecords api with *DescribeSQLLogRecordsRequest synchronously
+// api document: https://help.aliyun.com/api/rds/describesqllogrecords.html
 func (client *Client) DescribeSQLLogRecords(request *DescribeSQLLogRecordsRequest) (response *DescribeSQLLogRecordsResponse, err error) {
 	response = CreateDescribeSQLLogRecordsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeSQLLogRecords api with *DescribeSQLLogRecordsRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describesqllogrecords.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSQLLogRecordsWithChan(request *DescribeSQLLogRecordsRequest) (<-chan *DescribeSQLLogRecordsResponse, <-chan error) {
 	responseChan := make(chan *DescribeSQLLogRecordsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeSQLLogRecordsWithChan(request *DescribeSQLLogRecor
 	return responseChan, errChan
 }
 
+// invoke DescribeSQLLogRecords api with *DescribeSQLLogRecordsRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describesqllogrecords.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSQLLogRecordsWithCallback(request *DescribeSQLLogRecordsRequest, callback func(response *DescribeSQLLogRecordsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +101,7 @@ type DescribeSQLLogRecordsResponse struct {
 	Items            ItemsInDescribeSQLLogRecords `json:"Items" xml:"Items"`
 }
 
+// create a request to invoke DescribeSQLLogRecords API
 func CreateDescribeSQLLogRecordsRequest() (request *DescribeSQLLogRecordsRequest) {
 	request = &DescribeSQLLogRecordsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -101,6 +110,7 @@ func CreateDescribeSQLLogRecordsRequest() (request *DescribeSQLLogRecordsRequest
 	return
 }
 
+// create a response to parse from DescribeSQLLogRecords response
 func CreateDescribeSQLLogRecordsResponse() (response *DescribeSQLLogRecordsResponse) {
 	response = &DescribeSQLLogRecordsResponse{
 		BaseResponse: &responses.BaseResponse{},

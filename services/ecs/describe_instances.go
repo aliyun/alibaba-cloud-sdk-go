@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeInstances api with *DescribeInstancesRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/describeinstances.html
 func (client *Client) DescribeInstances(request *DescribeInstancesRequest) (response *DescribeInstancesResponse, err error) {
 	response = CreateDescribeInstancesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeInstances api with *DescribeInstancesRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describeinstances.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstancesWithChan(request *DescribeInstancesRequest) (<-chan *DescribeInstancesResponse, <-chan error) {
 	responseChan := make(chan *DescribeInstancesResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeInstancesWithChan(request *DescribeInstancesReques
 	return responseChan, errChan
 }
 
+// invoke DescribeInstances api with *DescribeInstancesRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describeinstances.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstancesWithCallback(request *DescribeInstancesRequest, callback func(response *DescribeInstancesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -127,6 +135,7 @@ type DescribeInstancesResponse struct {
 	Instances  Instances `json:"Instances" xml:"Instances"`
 }
 
+// create a request to invoke DescribeInstances API
 func CreateDescribeInstancesRequest() (request *DescribeInstancesRequest) {
 	request = &DescribeInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -135,6 +144,7 @@ func CreateDescribeInstancesRequest() (request *DescribeInstancesRequest) {
 	return
 }
 
+// create a response to parse from DescribeInstances response
 func CreateDescribeInstancesResponse() (response *DescribeInstancesResponse) {
 	response = &DescribeInstancesResponse{
 		BaseResponse: &responses.BaseResponse{},

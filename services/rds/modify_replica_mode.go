@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifyReplicaMode api with *ModifyReplicaModeRequest synchronously
+// api document: https://help.aliyun.com/api/rds/modifyreplicamode.html
 func (client *Client) ModifyReplicaMode(request *ModifyReplicaModeRequest) (response *ModifyReplicaModeResponse, err error) {
 	response = CreateModifyReplicaModeResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifyReplicaMode api with *ModifyReplicaModeRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/modifyreplicamode.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyReplicaModeWithChan(request *ModifyReplicaModeRequest) (<-chan *ModifyReplicaModeResponse, <-chan error) {
 	responseChan := make(chan *ModifyReplicaModeResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifyReplicaModeWithChan(request *ModifyReplicaModeReques
 	return responseChan, errChan
 }
 
+// invoke ModifyReplicaMode api with *ModifyReplicaModeRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/modifyreplicamode.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyReplicaModeWithCallback(request *ModifyReplicaModeRequest, callback func(response *ModifyReplicaModeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,6 +91,7 @@ type ModifyReplicaModeResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ModifyReplicaMode API
 func CreateModifyReplicaModeRequest() (request *ModifyReplicaModeRequest) {
 	request = &ModifyReplicaModeRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -91,6 +100,7 @@ func CreateModifyReplicaModeRequest() (request *ModifyReplicaModeRequest) {
 	return
 }
 
+// create a response to parse from ModifyReplicaMode response
 func CreateModifyReplicaModeResponse() (response *ModifyReplicaModeResponse) {
 	response = &ModifyReplicaModeResponse{
 		BaseResponse: &responses.BaseResponse{},

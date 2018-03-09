@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ListRoles api with *ListRolesRequest synchronously
+// api document: https://help.aliyun.com/api/ccc/listroles.html
 func (client *Client) ListRoles(request *ListRolesRequest) (response *ListRolesResponse, err error) {
 	response = CreateListRolesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ListRoles api with *ListRolesRequest asynchronously
+// api document: https://help.aliyun.com/api/ccc/listroles.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListRolesWithChan(request *ListRolesRequest) (<-chan *ListRolesResponse, <-chan error) {
 	responseChan := make(chan *ListRolesResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ListRolesWithChan(request *ListRolesRequest) (<-chan *List
 	return responseChan, errChan
 }
 
+// invoke ListRoles api with *ListRolesRequest asynchronously
+// api document: https://help.aliyun.com/api/ccc/listroles.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListRolesWithCallback(request *ListRolesRequest, callback func(response *ListRolesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type ListRolesResponse struct {
 	Roles          RolesInListRoles `json:"Roles" xml:"Roles"`
 }
 
+// create a request to invoke ListRoles API
 func CreateListRolesRequest() (request *ListRolesRequest) {
 	request = &ListRolesRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateListRolesRequest() (request *ListRolesRequest) {
 	return
 }
 
+// create a response to parse from ListRoles response
 func CreateListRolesResponse() (response *ListRolesResponse) {
 	response = &ListRolesResponse{
 		BaseResponse: &responses.BaseResponse{},

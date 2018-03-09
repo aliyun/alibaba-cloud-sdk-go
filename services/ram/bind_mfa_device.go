@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke BindMFADevice api with *BindMFADeviceRequest synchronously
+// api document: https://help.aliyun.com/api/ram/bindmfadevice.html
 func (client *Client) BindMFADevice(request *BindMFADeviceRequest) (response *BindMFADeviceResponse, err error) {
 	response = CreateBindMFADeviceResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke BindMFADevice api with *BindMFADeviceRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/bindmfadevice.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BindMFADeviceWithChan(request *BindMFADeviceRequest) (<-chan *BindMFADeviceResponse, <-chan error) {
 	responseChan := make(chan *BindMFADeviceResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) BindMFADeviceWithChan(request *BindMFADeviceRequest) (<-ch
 	return responseChan, errChan
 }
 
+// invoke BindMFADevice api with *BindMFADeviceRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/bindmfadevice.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BindMFADeviceWithCallback(request *BindMFADeviceRequest, callback func(response *BindMFADeviceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type BindMFADeviceResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke BindMFADevice API
 func CreateBindMFADeviceRequest() (request *BindMFADeviceRequest) {
 	request = &BindMFADeviceRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateBindMFADeviceRequest() (request *BindMFADeviceRequest) {
 	return
 }
 
+// create a response to parse from BindMFADevice response
 func CreateBindMFADeviceResponse() (response *BindMFADeviceResponse) {
 	response = &BindMFADeviceResponse{
 		BaseResponse: &responses.BaseResponse{},

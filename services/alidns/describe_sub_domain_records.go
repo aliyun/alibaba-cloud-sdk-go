@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeSubDomainRecords api with *DescribeSubDomainRecordsRequest synchronously
+// api document: https://help.aliyun.com/api/alidns/describesubdomainrecords.html
 func (client *Client) DescribeSubDomainRecords(request *DescribeSubDomainRecordsRequest) (response *DescribeSubDomainRecordsResponse, err error) {
 	response = CreateDescribeSubDomainRecordsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeSubDomainRecords api with *DescribeSubDomainRecordsRequest asynchronously
+// api document: https://help.aliyun.com/api/alidns/describesubdomainrecords.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSubDomainRecordsWithChan(request *DescribeSubDomainRecordsRequest) (<-chan *DescribeSubDomainRecordsResponse, <-chan error) {
 	responseChan := make(chan *DescribeSubDomainRecordsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeSubDomainRecordsWithChan(request *DescribeSubDomai
 	return responseChan, errChan
 }
 
+// invoke DescribeSubDomainRecords api with *DescribeSubDomainRecordsRequest asynchronously
+// api document: https://help.aliyun.com/api/alidns/describesubdomainrecords.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSubDomainRecordsWithCallback(request *DescribeSubDomainRecordsRequest, callback func(response *DescribeSubDomainRecordsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,6 +92,7 @@ type DescribeSubDomainRecordsResponse struct {
 	DomainRecords DomainRecordsInDescribeSubDomainRecords `json:"DomainRecords" xml:"DomainRecords"`
 }
 
+// create a request to invoke DescribeSubDomainRecords API
 func CreateDescribeSubDomainRecordsRequest() (request *DescribeSubDomainRecordsRequest) {
 	request = &DescribeSubDomainRecordsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -92,6 +101,7 @@ func CreateDescribeSubDomainRecordsRequest() (request *DescribeSubDomainRecordsR
 	return
 }
 
+// create a response to parse from DescribeSubDomainRecords response
 func CreateDescribeSubDomainRecordsResponse() (response *DescribeSubDomainRecordsResponse) {
 	response = &DescribeSubDomainRecordsResponse{
 		BaseResponse: &responses.BaseResponse{},

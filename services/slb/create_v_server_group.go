@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CreateVServerGroup api with *CreateVServerGroupRequest synchronously
+// api document: https://help.aliyun.com/api/slb/createvservergroup.html
 func (client *Client) CreateVServerGroup(request *CreateVServerGroupRequest) (response *CreateVServerGroupResponse, err error) {
 	response = CreateCreateVServerGroupResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CreateVServerGroup api with *CreateVServerGroupRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/createvservergroup.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateVServerGroupWithChan(request *CreateVServerGroupRequest) (<-chan *CreateVServerGroupResponse, <-chan error) {
 	responseChan := make(chan *CreateVServerGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CreateVServerGroupWithChan(request *CreateVServerGroupRequ
 	return responseChan, errChan
 }
 
+// invoke CreateVServerGroup api with *CreateVServerGroupRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/createvservergroup.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateVServerGroupWithCallback(request *CreateVServerGroupRequest, callback func(response *CreateVServerGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -85,6 +93,7 @@ type CreateVServerGroupResponse struct {
 	BackendServers BackendServersInCreateVServerGroup `json:"BackendServers" xml:"BackendServers"`
 }
 
+// create a request to invoke CreateVServerGroup API
 func CreateCreateVServerGroupRequest() (request *CreateVServerGroupRequest) {
 	request = &CreateVServerGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -93,6 +102,7 @@ func CreateCreateVServerGroupRequest() (request *CreateVServerGroupRequest) {
 	return
 }
 
+// create a response to parse from CreateVServerGroup response
 func CreateCreateVServerGroupResponse() (response *CreateVServerGroupResponse) {
 	response = &CreateVServerGroupResponse{
 		BaseResponse: &responses.BaseResponse{},

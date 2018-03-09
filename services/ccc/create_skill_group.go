@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CreateSkillGroup api with *CreateSkillGroupRequest synchronously
+// api document: https://help.aliyun.com/api/ccc/createskillgroup.html
 func (client *Client) CreateSkillGroup(request *CreateSkillGroupRequest) (response *CreateSkillGroupResponse, err error) {
 	response = CreateCreateSkillGroupResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CreateSkillGroup api with *CreateSkillGroupRequest asynchronously
+// api document: https://help.aliyun.com/api/ccc/createskillgroup.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateSkillGroupWithChan(request *CreateSkillGroupRequest) (<-chan *CreateSkillGroupResponse, <-chan error) {
 	responseChan := make(chan *CreateSkillGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CreateSkillGroupWithChan(request *CreateSkillGroupRequest)
 	return responseChan, errChan
 }
 
+// invoke CreateSkillGroup api with *CreateSkillGroupRequest asynchronously
+// api document: https://help.aliyun.com/api/ccc/createskillgroup.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateSkillGroupWithCallback(request *CreateSkillGroupRequest, callback func(response *CreateSkillGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -85,6 +93,7 @@ type CreateSkillGroupResponse struct {
 	SkillGroupId   string `json:"SkillGroupId" xml:"SkillGroupId"`
 }
 
+// create a request to invoke CreateSkillGroup API
 func CreateCreateSkillGroupRequest() (request *CreateSkillGroupRequest) {
 	request = &CreateSkillGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -93,6 +102,7 @@ func CreateCreateSkillGroupRequest() (request *CreateSkillGroupRequest) {
 	return
 }
 
+// create a response to parse from CreateSkillGroup response
 func CreateCreateSkillGroupResponse() (response *CreateSkillGroupResponse) {
 	response = &CreateSkillGroupResponse{
 		BaseResponse: &responses.BaseResponse{},

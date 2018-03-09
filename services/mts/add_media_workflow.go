@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke AddMediaWorkflow api with *AddMediaWorkflowRequest synchronously
+// api document: https://help.aliyun.com/api/mts/addmediaworkflow.html
 func (client *Client) AddMediaWorkflow(request *AddMediaWorkflowRequest) (response *AddMediaWorkflowResponse, err error) {
 	response = CreateAddMediaWorkflowResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke AddMediaWorkflow api with *AddMediaWorkflowRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/addmediaworkflow.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddMediaWorkflowWithChan(request *AddMediaWorkflowRequest) (<-chan *AddMediaWorkflowResponse, <-chan error) {
 	responseChan := make(chan *AddMediaWorkflowResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) AddMediaWorkflowWithChan(request *AddMediaWorkflowRequest)
 	return responseChan, errChan
 }
 
+// invoke AddMediaWorkflow api with *AddMediaWorkflowRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/addmediaworkflow.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddMediaWorkflowWithCallback(request *AddMediaWorkflowRequest, callback func(response *AddMediaWorkflowResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type AddMediaWorkflowResponse struct {
 	MediaWorkflow MediaWorkflow `json:"MediaWorkflow" xml:"MediaWorkflow"`
 }
 
+// create a request to invoke AddMediaWorkflow API
 func CreateAddMediaWorkflowRequest() (request *AddMediaWorkflowRequest) {
 	request = &AddMediaWorkflowRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateAddMediaWorkflowRequest() (request *AddMediaWorkflowRequest) {
 	return
 }
 
+// create a response to parse from AddMediaWorkflow response
 func CreateAddMediaWorkflowResponse() (response *AddMediaWorkflowResponse) {
 	response = &AddMediaWorkflowResponse{
 		BaseResponse: &responses.BaseResponse{},

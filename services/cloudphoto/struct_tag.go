@@ -16,10 +16,10 @@ package cloudphoto
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Tag struct {
-	Name      string `json:"Name" xml:"Name"`
+	IsSubTag  bool   `json:"IsSubTag" xml:"IsSubTag"`
 	ParentTag string `json:"ParentTag" xml:"ParentTag"`
 	IdStr     string `json:"IdStr" xml:"IdStr"`
+	Name      string `json:"Name" xml:"Name"`
 	Id        int    `json:"Id" xml:"Id"`
-	IsSubTag  bool   `json:"IsSubTag" xml:"IsSubTag"`
 	Cover     Cover  `json:"Cover" xml:"Cover"`
 }

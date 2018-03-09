@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CreateAccessRule api with *CreateAccessRuleRequest synchronously
+// api document: https://help.aliyun.com/api/nas/createaccessrule.html
 func (client *Client) CreateAccessRule(request *CreateAccessRuleRequest) (response *CreateAccessRuleResponse, err error) {
 	response = CreateCreateAccessRuleResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CreateAccessRule api with *CreateAccessRuleRequest asynchronously
+// api document: https://help.aliyun.com/api/nas/createaccessrule.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateAccessRuleWithChan(request *CreateAccessRuleRequest) (<-chan *CreateAccessRuleResponse, <-chan error) {
 	responseChan := make(chan *CreateAccessRuleResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CreateAccessRuleWithChan(request *CreateAccessRuleRequest)
 	return responseChan, errChan
 }
 
+// invoke CreateAccessRule api with *CreateAccessRuleRequest asynchronously
+// api document: https://help.aliyun.com/api/nas/createaccessrule.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateAccessRuleWithCallback(request *CreateAccessRuleRequest, callback func(response *CreateAccessRuleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type CreateAccessRuleResponse struct {
 	AccessRuleId string `json:"AccessRuleId" xml:"AccessRuleId"`
 }
 
+// create a request to invoke CreateAccessRule API
 func CreateCreateAccessRuleRequest() (request *CreateAccessRuleRequest) {
 	request = &CreateAccessRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateCreateAccessRuleRequest() (request *CreateAccessRuleRequest) {
 	return
 }
 
+// create a response to parse from CreateAccessRule response
 func CreateCreateAccessRuleResponse() (response *CreateAccessRuleResponse) {
 	response = &CreateAccessRuleResponse{
 		BaseResponse: &responses.BaseResponse{},

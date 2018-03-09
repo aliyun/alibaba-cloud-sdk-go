@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ClearUserBlackList api with *ClearUserBlackListRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/clearuserblacklist.html
 func (client *Client) ClearUserBlackList(request *ClearUserBlackListRequest) (response *ClearUserBlackListResponse, err error) {
 	response = CreateClearUserBlackListResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ClearUserBlackList api with *ClearUserBlackListRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/clearuserblacklist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ClearUserBlackListWithChan(request *ClearUserBlackListRequest) (<-chan *ClearUserBlackListResponse, <-chan error) {
 	responseChan := make(chan *ClearUserBlackListResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ClearUserBlackListWithChan(request *ClearUserBlackListRequ
 	return responseChan, errChan
 }
 
+// invoke ClearUserBlackList api with *ClearUserBlackListRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/clearuserblacklist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ClearUserBlackListWithCallback(request *ClearUserBlackListRequest, callback func(response *ClearUserBlackListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +85,7 @@ type ClearUserBlackListResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ClearUserBlackList API
 func CreateClearUserBlackListRequest() (request *ClearUserBlackListRequest) {
 	request = &ClearUserBlackListRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -85,6 +94,7 @@ func CreateClearUserBlackListRequest() (request *ClearUserBlackListRequest) {
 	return
 }
 
+// create a response to parse from ClearUserBlackList response
 func CreateClearUserBlackListResponse() (response *ClearUserBlackListResponse) {
 	response = &ClearUserBlackListResponse{
 		BaseResponse: &responses.BaseResponse{},

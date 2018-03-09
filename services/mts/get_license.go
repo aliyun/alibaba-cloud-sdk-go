@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke GetLicense api with *GetLicenseRequest synchronously
+// api document: https://help.aliyun.com/api/mts/getlicense.html
 func (client *Client) GetLicense(request *GetLicenseRequest) (response *GetLicenseResponse, err error) {
 	response = CreateGetLicenseResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke GetLicense api with *GetLicenseRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/getlicense.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetLicenseWithChan(request *GetLicenseRequest) (<-chan *GetLicenseResponse, <-chan error) {
 	responseChan := make(chan *GetLicenseResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) GetLicenseWithChan(request *GetLicenseRequest) (<-chan *Ge
 	return responseChan, errChan
 }
 
+// invoke GetLicense api with *GetLicenseRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/getlicense.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetLicenseWithCallback(request *GetLicenseRequest, callback func(response *GetLicenseResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type GetLicenseResponse struct {
 	License   string `json:"License" xml:"License"`
 }
 
+// create a request to invoke GetLicense API
 func CreateGetLicenseRequest() (request *GetLicenseRequest) {
 	request = &GetLicenseRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateGetLicenseRequest() (request *GetLicenseRequest) {
 	return
 }
 
+// create a response to parse from GetLicense response
 func CreateGetLicenseResponse() (response *GetLicenseResponse) {
 	response = &GetLicenseResponse{
 		BaseResponse: &responses.BaseResponse{},

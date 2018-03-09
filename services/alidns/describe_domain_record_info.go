@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeDomainRecordInfo api with *DescribeDomainRecordInfoRequest synchronously
+// api document: https://help.aliyun.com/api/alidns/describedomainrecordinfo.html
 func (client *Client) DescribeDomainRecordInfo(request *DescribeDomainRecordInfoRequest) (response *DescribeDomainRecordInfoResponse, err error) {
 	response = CreateDescribeDomainRecordInfoResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeDomainRecordInfo api with *DescribeDomainRecordInfoRequest asynchronously
+// api document: https://help.aliyun.com/api/alidns/describedomainrecordinfo.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainRecordInfoWithChan(request *DescribeDomainRecordInfoRequest) (<-chan *DescribeDomainRecordInfoResponse, <-chan error) {
 	responseChan := make(chan *DescribeDomainRecordInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeDomainRecordInfoWithChan(request *DescribeDomainRe
 	return responseChan, errChan
 }
 
+// invoke DescribeDomainRecordInfo api with *DescribeDomainRecordInfoRequest asynchronously
+// api document: https://help.aliyun.com/api/alidns/describedomainrecordinfo.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainRecordInfoWithCallback(request *DescribeDomainRecordInfoRequest, callback func(response *DescribeDomainRecordInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -91,6 +99,7 @@ type DescribeDomainRecordInfoResponse struct {
 	Locked     bool   `json:"Locked" xml:"Locked"`
 }
 
+// create a request to invoke DescribeDomainRecordInfo API
 func CreateDescribeDomainRecordInfoRequest() (request *DescribeDomainRecordInfoRequest) {
 	request = &DescribeDomainRecordInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -99,6 +108,7 @@ func CreateDescribeDomainRecordInfoRequest() (request *DescribeDomainRecordInfoR
 	return
 }
 
+// create a response to parse from DescribeDomainRecordInfo response
 func CreateDescribeDomainRecordInfoResponse() (response *DescribeDomainRecordInfoResponse) {
 	response = &DescribeDomainRecordInfoResponse{
 		BaseResponse: &responses.BaseResponse{},

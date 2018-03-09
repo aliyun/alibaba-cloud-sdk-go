@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke QueryLoginEvent api with *QueryLoginEventRequest synchronously
+// api document: https://help.aliyun.com/api/aegis/queryloginevent.html
 func (client *Client) QueryLoginEvent(request *QueryLoginEventRequest) (response *QueryLoginEventResponse, err error) {
 	response = CreateQueryLoginEventResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke QueryLoginEvent api with *QueryLoginEventRequest asynchronously
+// api document: https://help.aliyun.com/api/aegis/queryloginevent.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryLoginEventWithChan(request *QueryLoginEventRequest) (<-chan *QueryLoginEventResponse, <-chan error) {
 	responseChan := make(chan *QueryLoginEventResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) QueryLoginEventWithChan(request *QueryLoginEventRequest) (
 	return responseChan, errChan
 }
 
+// invoke QueryLoginEvent api with *QueryLoginEventRequest asynchronously
+// api document: https://help.aliyun.com/api/aegis/queryloginevent.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryLoginEventWithCallback(request *QueryLoginEventRequest, callback func(response *QueryLoginEventResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,6 +91,7 @@ type QueryLoginEventResponse struct {
 	Data      Data   `json:"Data" xml:"Data"`
 }
 
+// create a request to invoke QueryLoginEvent API
 func CreateQueryLoginEventRequest() (request *QueryLoginEventRequest) {
 	request = &QueryLoginEventRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -91,6 +100,7 @@ func CreateQueryLoginEventRequest() (request *QueryLoginEventRequest) {
 	return
 }
 
+// create a response to parse from QueryLoginEvent response
 func CreateQueryLoginEventResponse() (response *QueryLoginEventResponse) {
 	response = &QueryLoginEventResponse{
 		BaseResponse: &responses.BaseResponse{},

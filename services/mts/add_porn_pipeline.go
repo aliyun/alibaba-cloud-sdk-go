@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke AddPornPipeline api with *AddPornPipelineRequest synchronously
+// api document: https://help.aliyun.com/api/mts/addpornpipeline.html
 func (client *Client) AddPornPipeline(request *AddPornPipelineRequest) (response *AddPornPipelineResponse, err error) {
 	response = CreateAddPornPipelineResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke AddPornPipeline api with *AddPornPipelineRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/addpornpipeline.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddPornPipelineWithChan(request *AddPornPipelineRequest) (<-chan *AddPornPipelineResponse, <-chan error) {
 	responseChan := make(chan *AddPornPipelineResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) AddPornPipelineWithChan(request *AddPornPipelineRequest) (
 	return responseChan, errChan
 }
 
+// invoke AddPornPipeline api with *AddPornPipelineRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/addpornpipeline.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddPornPipelineWithCallback(request *AddPornPipelineRequest, callback func(response *AddPornPipelineResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type AddPornPipelineResponse struct {
 	Pipeline  Pipeline `json:"Pipeline" xml:"Pipeline"`
 }
 
+// create a request to invoke AddPornPipeline API
 func CreateAddPornPipelineRequest() (request *AddPornPipelineRequest) {
 	request = &AddPornPipelineRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateAddPornPipelineRequest() (request *AddPornPipelineRequest) {
 	return
 }
 
+// create a response to parse from AddPornPipeline response
 func CreateAddPornPipelineResponse() (response *AddPornPipelineResponse) {
 	response = &AddPornPipelineResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SubmitMediaInfoJob api with *SubmitMediaInfoJobRequest synchronously
+// api document: https://help.aliyun.com/api/mts/submitmediainfojob.html
 func (client *Client) SubmitMediaInfoJob(request *SubmitMediaInfoJobRequest) (response *SubmitMediaInfoJobResponse, err error) {
 	response = CreateSubmitMediaInfoJobResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SubmitMediaInfoJob api with *SubmitMediaInfoJobRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/submitmediainfojob.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitMediaInfoJobWithChan(request *SubmitMediaInfoJobRequest) (<-chan *SubmitMediaInfoJobResponse, <-chan error) {
 	responseChan := make(chan *SubmitMediaInfoJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SubmitMediaInfoJobWithChan(request *SubmitMediaInfoJobRequ
 	return responseChan, errChan
 }
 
+// invoke SubmitMediaInfoJob api with *SubmitMediaInfoJobRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/submitmediainfojob.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitMediaInfoJobWithCallback(request *SubmitMediaInfoJobRequest, callback func(response *SubmitMediaInfoJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type SubmitMediaInfoJobResponse struct {
 	MediaInfoJob MediaInfoJob `json:"MediaInfoJob" xml:"MediaInfoJob"`
 }
 
+// create a request to invoke SubmitMediaInfoJob API
 func CreateSubmitMediaInfoJobRequest() (request *SubmitMediaInfoJobRequest) {
 	request = &SubmitMediaInfoJobRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateSubmitMediaInfoJobRequest() (request *SubmitMediaInfoJobRequest) {
 	return
 }
 
+// create a response to parse from SubmitMediaInfoJob response
 func CreateSubmitMediaInfoJobResponse() (response *SubmitMediaInfoJobResponse) {
 	response = &SubmitMediaInfoJobResponse{
 		BaseResponse: &responses.BaseResponse{},

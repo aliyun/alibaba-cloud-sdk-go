@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ReActivateInstances api with *ReActivateInstancesRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/reactivateinstances.html
 func (client *Client) ReActivateInstances(request *ReActivateInstancesRequest) (response *ReActivateInstancesResponse, err error) {
 	response = CreateReActivateInstancesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ReActivateInstances api with *ReActivateInstancesRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/reactivateinstances.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReActivateInstancesWithChan(request *ReActivateInstancesRequest) (<-chan *ReActivateInstancesResponse, <-chan error) {
 	responseChan := make(chan *ReActivateInstancesResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ReActivateInstancesWithChan(request *ReActivateInstancesRe
 	return responseChan, errChan
 }
 
+// invoke ReActivateInstances api with *ReActivateInstancesRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/reactivateinstances.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReActivateInstancesWithCallback(request *ReActivateInstancesRequest, callback func(response *ReActivateInstancesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +87,7 @@ type ReActivateInstancesResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ReActivateInstances API
 func CreateReActivateInstancesRequest() (request *ReActivateInstancesRequest) {
 	request = &ReActivateInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -87,6 +96,7 @@ func CreateReActivateInstancesRequest() (request *ReActivateInstancesRequest) {
 	return
 }
 
+// create a response to parse from ReActivateInstances response
 func CreateReActivateInstancesResponse() (response *ReActivateInstancesResponse) {
 	response = &ReActivateInstancesResponse{
 		BaseResponse: &responses.BaseResponse{},

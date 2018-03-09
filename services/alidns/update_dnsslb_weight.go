@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke UpdateDNSSLBWeight api with *UpdateDNSSLBWeightRequest synchronously
+// api document: https://help.aliyun.com/api/alidns/updatednsslbweight.html
 func (client *Client) UpdateDNSSLBWeight(request *UpdateDNSSLBWeightRequest) (response *UpdateDNSSLBWeightResponse, err error) {
 	response = CreateUpdateDNSSLBWeightResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke UpdateDNSSLBWeight api with *UpdateDNSSLBWeightRequest asynchronously
+// api document: https://help.aliyun.com/api/alidns/updatednsslbweight.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateDNSSLBWeightWithChan(request *UpdateDNSSLBWeightRequest) (<-chan *UpdateDNSSLBWeightResponse, <-chan error) {
 	responseChan := make(chan *UpdateDNSSLBWeightResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) UpdateDNSSLBWeightWithChan(request *UpdateDNSSLBWeightRequ
 	return responseChan, errChan
 }
 
+// invoke UpdateDNSSLBWeight api with *UpdateDNSSLBWeightRequest asynchronously
+// api document: https://help.aliyun.com/api/alidns/updatednsslbweight.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateDNSSLBWeightWithCallback(request *UpdateDNSSLBWeightRequest, callback func(response *UpdateDNSSLBWeightResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type UpdateDNSSLBWeightResponse struct {
 	Weight    int    `json:"Weight" xml:"Weight"`
 }
 
+// create a request to invoke UpdateDNSSLBWeight API
 func CreateUpdateDNSSLBWeightRequest() (request *UpdateDNSSLBWeightRequest) {
 	request = &UpdateDNSSLBWeightRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateUpdateDNSSLBWeightRequest() (request *UpdateDNSSLBWeightRequest) {
 	return
 }
 
+// create a response to parse from UpdateDNSSLBWeight response
 func CreateUpdateDNSSLBWeightResponse() (response *UpdateDNSSLBWeightResponse) {
 	response = &UpdateDNSSLBWeightResponse{
 		BaseResponse: &responses.BaseResponse{},

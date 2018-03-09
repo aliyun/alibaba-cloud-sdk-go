@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke RegisterMediaDetailPerson api with *RegisterMediaDetailPersonRequest synchronously
+// api document: https://help.aliyun.com/api/mts/registermediadetailperson.html
 func (client *Client) RegisterMediaDetailPerson(request *RegisterMediaDetailPersonRequest) (response *RegisterMediaDetailPersonResponse, err error) {
 	response = CreateRegisterMediaDetailPersonResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke RegisterMediaDetailPerson api with *RegisterMediaDetailPersonRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/registermediadetailperson.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RegisterMediaDetailPersonWithChan(request *RegisterMediaDetailPersonRequest) (<-chan *RegisterMediaDetailPersonResponse, <-chan error) {
 	responseChan := make(chan *RegisterMediaDetailPersonResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) RegisterMediaDetailPersonWithChan(request *RegisterMediaDe
 	return responseChan, errChan
 }
 
+// invoke RegisterMediaDetailPerson api with *RegisterMediaDetailPersonRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/registermediadetailperson.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RegisterMediaDetailPersonWithCallback(request *RegisterMediaDetailPersonRequest, callback func(response *RegisterMediaDetailPersonResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,6 +91,7 @@ type RegisterMediaDetailPersonResponse struct {
 	FailedImages         FailedImages         `json:"FailedImages" xml:"FailedImages"`
 }
 
+// create a request to invoke RegisterMediaDetailPerson API
 func CreateRegisterMediaDetailPersonRequest() (request *RegisterMediaDetailPersonRequest) {
 	request = &RegisterMediaDetailPersonRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -91,6 +100,7 @@ func CreateRegisterMediaDetailPersonRequest() (request *RegisterMediaDetailPerso
 	return
 }
 
+// create a response to parse from RegisterMediaDetailPerson response
 func CreateRegisterMediaDetailPersonResponse() (response *RegisterMediaDetailPersonResponse) {
 	response = &RegisterMediaDetailPersonResponse{
 		BaseResponse: &responses.BaseResponse{},

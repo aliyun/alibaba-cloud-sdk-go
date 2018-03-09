@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SenderStatisticsDetailByParam api with *SenderStatisticsDetailByParamRequest synchronously
+// api document: https://help.aliyun.com/api/dm/senderstatisticsdetailbyparam.html
 func (client *Client) SenderStatisticsDetailByParam(request *SenderStatisticsDetailByParamRequest) (response *SenderStatisticsDetailByParamResponse, err error) {
 	response = CreateSenderStatisticsDetailByParamResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SenderStatisticsDetailByParam api with *SenderStatisticsDetailByParamRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/senderstatisticsdetailbyparam.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SenderStatisticsDetailByParamWithChan(request *SenderStatisticsDetailByParamRequest) (<-chan *SenderStatisticsDetailByParamResponse, <-chan error) {
 	responseChan := make(chan *SenderStatisticsDetailByParamResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SenderStatisticsDetailByParamWithChan(request *SenderStati
 	return responseChan, errChan
 }
 
+// invoke SenderStatisticsDetailByParam api with *SenderStatisticsDetailByParamRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/senderstatisticsdetailbyparam.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SenderStatisticsDetailByParamWithCallback(request *SenderStatisticsDetailByParamRequest, callback func(response *SenderStatisticsDetailByParamResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -87,6 +95,7 @@ type SenderStatisticsDetailByParamResponse struct {
 	Data      DataInSenderStatisticsDetailByParam `json:"data" xml:"data"`
 }
 
+// create a request to invoke SenderStatisticsDetailByParam API
 func CreateSenderStatisticsDetailByParamRequest() (request *SenderStatisticsDetailByParamRequest) {
 	request = &SenderStatisticsDetailByParamRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -95,6 +104,7 @@ func CreateSenderStatisticsDetailByParamRequest() (request *SenderStatisticsDeta
 	return
 }
 
+// create a response to parse from SenderStatisticsDetailByParam response
 func CreateSenderStatisticsDetailByParamResponse() (response *SenderStatisticsDetailByParamResponse) {
 	response = &SenderStatisticsDetailByParamResponse{
 		BaseResponse: &responses.BaseResponse{},

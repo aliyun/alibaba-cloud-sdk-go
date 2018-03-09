@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeFlowBlockholeStatus api with *DescribeFlowBlockholeStatusRequest synchronously
+// api document: https://help.aliyun.com/api/ddospro/describeflowblockholestatus.html
 func (client *Client) DescribeFlowBlockholeStatus(request *DescribeFlowBlockholeStatusRequest) (response *DescribeFlowBlockholeStatusResponse, err error) {
 	response = CreateDescribeFlowBlockholeStatusResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeFlowBlockholeStatus api with *DescribeFlowBlockholeStatusRequest asynchronously
+// api document: https://help.aliyun.com/api/ddospro/describeflowblockholestatus.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeFlowBlockholeStatusWithChan(request *DescribeFlowBlockholeStatusRequest) (<-chan *DescribeFlowBlockholeStatusResponse, <-chan error) {
 	responseChan := make(chan *DescribeFlowBlockholeStatusResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeFlowBlockholeStatusWithChan(request *DescribeFlowB
 	return responseChan, errChan
 }
 
+// invoke DescribeFlowBlockholeStatus api with *DescribeFlowBlockholeStatusRequest asynchronously
+// api document: https://help.aliyun.com/api/ddospro/describeflowblockholestatus.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeFlowBlockholeStatusWithCallback(request *DescribeFlowBlockholeStatusRequest, callback func(response *DescribeFlowBlockholeStatusResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type DescribeFlowBlockholeStatusResponse struct {
 	Data      []Data `json:"Data" xml:"Data"`
 }
 
+// create a request to invoke DescribeFlowBlockholeStatus API
 func CreateDescribeFlowBlockholeStatusRequest() (request *DescribeFlowBlockholeStatusRequest) {
 	request = &DescribeFlowBlockholeStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateDescribeFlowBlockholeStatusRequest() (request *DescribeFlowBlockholeS
 	return
 }
 
+// create a response to parse from DescribeFlowBlockholeStatus response
 func CreateDescribeFlowBlockholeStatusResponse() (response *DescribeFlowBlockholeStatusResponse) {
 	response = &DescribeFlowBlockholeStatusResponse{
 		BaseResponse: &responses.BaseResponse{},

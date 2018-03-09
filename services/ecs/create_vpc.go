@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CreateVpc api with *CreateVpcRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/createvpc.html
 func (client *Client) CreateVpc(request *CreateVpcRequest) (response *CreateVpcResponse, err error) {
 	response = CreateCreateVpcResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CreateVpc api with *CreateVpcRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/createvpc.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateVpcWithChan(request *CreateVpcRequest) (<-chan *CreateVpcResponse, <-chan error) {
 	responseChan := make(chan *CreateVpcResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CreateVpcWithChan(request *CreateVpcRequest) (<-chan *Crea
 	return responseChan, errChan
 }
 
+// invoke CreateVpc api with *CreateVpcRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/createvpc.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateVpcWithCallback(request *CreateVpcRequest, callback func(response *CreateVpcResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -86,6 +94,7 @@ type CreateVpcResponse struct {
 	RouteTableId string `json:"RouteTableId" xml:"RouteTableId"`
 }
 
+// create a request to invoke CreateVpc API
 func CreateCreateVpcRequest() (request *CreateVpcRequest) {
 	request = &CreateVpcRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -94,6 +103,7 @@ func CreateCreateVpcRequest() (request *CreateVpcRequest) {
 	return
 }
 
+// create a response to parse from CreateVpc response
 func CreateCreateVpcResponse() (response *CreateVpcResponse) {
 	response = &CreateVpcResponse{
 		BaseResponse: &responses.BaseResponse{},

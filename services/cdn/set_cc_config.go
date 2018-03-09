@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SetCcConfig api with *SetCcConfigRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/setccconfig.html
 func (client *Client) SetCcConfig(request *SetCcConfigRequest) (response *SetCcConfigResponse, err error) {
 	response = CreateSetCcConfigResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SetCcConfig api with *SetCcConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/setccconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetCcConfigWithChan(request *SetCcConfigRequest) (<-chan *SetCcConfigResponse, <-chan error) {
 	responseChan := make(chan *SetCcConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SetCcConfigWithChan(request *SetCcConfigRequest) (<-chan *
 	return responseChan, errChan
 }
 
+// invoke SetCcConfig api with *SetCcConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/setccconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetCcConfigWithCallback(request *SetCcConfigRequest, callback func(response *SetCcConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +87,7 @@ type SetCcConfigResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke SetCcConfig API
 func CreateSetCcConfigRequest() (request *SetCcConfigRequest) {
 	request = &SetCcConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -87,6 +96,7 @@ func CreateSetCcConfigRequest() (request *SetCcConfigRequest) {
 	return
 }
 
+// create a response to parse from SetCcConfig response
 func CreateSetCcConfigResponse() (response *SetCcConfigResponse) {
 	response = &SetCcConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke UpdateMyGroupInstances api with *UpdateMyGroupInstancesRequest synchronously
+// api document: https://help.aliyun.com/api/cms/updatemygroupinstances.html
 func (client *Client) UpdateMyGroupInstances(request *UpdateMyGroupInstancesRequest) (response *UpdateMyGroupInstancesResponse, err error) {
 	response = CreateUpdateMyGroupInstancesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke UpdateMyGroupInstances api with *UpdateMyGroupInstancesRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/updatemygroupinstances.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateMyGroupInstancesWithChan(request *UpdateMyGroupInstancesRequest) (<-chan *UpdateMyGroupInstancesResponse, <-chan error) {
 	responseChan := make(chan *UpdateMyGroupInstancesResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) UpdateMyGroupInstancesWithChan(request *UpdateMyGroupInsta
 	return responseChan, errChan
 }
 
+// invoke UpdateMyGroupInstances api with *UpdateMyGroupInstancesRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/updatemygroupinstances.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateMyGroupInstancesWithCallback(request *UpdateMyGroupInstancesRequest, callback func(response *UpdateMyGroupInstancesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +87,7 @@ type UpdateMyGroupInstancesResponse struct {
 	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
 }
 
+// create a request to invoke UpdateMyGroupInstances API
 func CreateUpdateMyGroupInstancesRequest() (request *UpdateMyGroupInstancesRequest) {
 	request = &UpdateMyGroupInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -87,6 +96,7 @@ func CreateUpdateMyGroupInstancesRequest() (request *UpdateMyGroupInstancesReque
 	return
 }
 
+// create a response to parse from UpdateMyGroupInstances response
 func CreateUpdateMyGroupInstancesResponse() (response *UpdateMyGroupInstancesResponse) {
 	response = &UpdateMyGroupInstancesResponse{
 		BaseResponse: &responses.BaseResponse{},

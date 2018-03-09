@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke GetUserMFAInfo api with *GetUserMFAInfoRequest synchronously
+// api document: https://help.aliyun.com/api/ram/getusermfainfo.html
 func (client *Client) GetUserMFAInfo(request *GetUserMFAInfoRequest) (response *GetUserMFAInfoResponse, err error) {
 	response = CreateGetUserMFAInfoResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke GetUserMFAInfo api with *GetUserMFAInfoRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/getusermfainfo.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetUserMFAInfoWithChan(request *GetUserMFAInfoRequest) (<-chan *GetUserMFAInfoResponse, <-chan error) {
 	responseChan := make(chan *GetUserMFAInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) GetUserMFAInfoWithChan(request *GetUserMFAInfoRequest) (<-
 	return responseChan, errChan
 }
 
+// invoke GetUserMFAInfo api with *GetUserMFAInfoRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/getusermfainfo.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetUserMFAInfoWithCallback(request *GetUserMFAInfoRequest, callback func(response *GetUserMFAInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,6 +84,7 @@ type GetUserMFAInfoResponse struct {
 	MFADevice MFADevice `json:"MFADevice" xml:"MFADevice"`
 }
 
+// create a request to invoke GetUserMFAInfo API
 func CreateGetUserMFAInfoRequest() (request *GetUserMFAInfoRequest) {
 	request = &GetUserMFAInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -84,6 +93,7 @@ func CreateGetUserMFAInfoRequest() (request *GetUserMFAInfoRequest) {
 	return
 }
 
+// create a response to parse from GetUserMFAInfo response
 func CreateGetUserMFAInfoResponse() (response *GetUserMFAInfoResponse) {
 	response = &GetUserMFAInfoResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeleteTemplate api with *DeleteTemplateRequest synchronously
+// api document: https://help.aliyun.com/api/mts/deletetemplate.html
 func (client *Client) DeleteTemplate(request *DeleteTemplateRequest) (response *DeleteTemplateResponse, err error) {
 	response = CreateDeleteTemplateResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeleteTemplate api with *DeleteTemplateRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/deletetemplate.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteTemplateWithChan(request *DeleteTemplateRequest) (<-chan *DeleteTemplateResponse, <-chan error) {
 	responseChan := make(chan *DeleteTemplateResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeleteTemplateWithChan(request *DeleteTemplateRequest) (<-
 	return responseChan, errChan
 }
 
+// invoke DeleteTemplate api with *DeleteTemplateRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/deletetemplate.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteTemplateWithCallback(request *DeleteTemplateRequest, callback func(response *DeleteTemplateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type DeleteTemplateResponse struct {
 	TemplateId string `json:"TemplateId" xml:"TemplateId"`
 }
 
+// create a request to invoke DeleteTemplate API
 func CreateDeleteTemplateRequest() (request *DeleteTemplateRequest) {
 	request = &DeleteTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateDeleteTemplateRequest() (request *DeleteTemplateRequest) {
 	return
 }
 
+// create a response to parse from DeleteTemplate response
 func CreateDeleteTemplateResponse() (response *DeleteTemplateResponse) {
 	response = &DeleteTemplateResponse{
 		BaseResponse: &responses.BaseResponse{},

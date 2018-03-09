@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke UnbindPhone api with *UnbindPhoneRequest synchronously
+// api document: https://help.aliyun.com/api/push/unbindphone.html
 func (client *Client) UnbindPhone(request *UnbindPhoneRequest) (response *UnbindPhoneResponse, err error) {
 	response = CreateUnbindPhoneResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke UnbindPhone api with *UnbindPhoneRequest asynchronously
+// api document: https://help.aliyun.com/api/push/unbindphone.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnbindPhoneWithChan(request *UnbindPhoneRequest) (<-chan *UnbindPhoneResponse, <-chan error) {
 	responseChan := make(chan *UnbindPhoneResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) UnbindPhoneWithChan(request *UnbindPhoneRequest) (<-chan *
 	return responseChan, errChan
 }
 
+// invoke UnbindPhone api with *UnbindPhoneRequest asynchronously
+// api document: https://help.aliyun.com/api/push/unbindphone.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnbindPhoneWithCallback(request *UnbindPhoneRequest, callback func(response *UnbindPhoneResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,6 +84,7 @@ type UnbindPhoneResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke UnbindPhone API
 func CreateUnbindPhoneRequest() (request *UnbindPhoneRequest) {
 	request = &UnbindPhoneRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -84,6 +93,7 @@ func CreateUnbindPhoneRequest() (request *UnbindPhoneRequest) {
 	return
 }
 
+// create a response to parse from UnbindPhone response
 func CreateUnbindPhoneResponse() (response *UnbindPhoneResponse) {
 	response = &UnbindPhoneResponse{
 		BaseResponse: &responses.BaseResponse{},

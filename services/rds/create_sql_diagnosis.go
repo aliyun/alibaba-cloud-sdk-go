@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CreateSQLDiagnosis api with *CreateSQLDiagnosisRequest synchronously
+// api document: https://help.aliyun.com/api/rds/createsqldiagnosis.html
 func (client *Client) CreateSQLDiagnosis(request *CreateSQLDiagnosisRequest) (response *CreateSQLDiagnosisResponse, err error) {
 	response = CreateCreateSQLDiagnosisResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CreateSQLDiagnosis api with *CreateSQLDiagnosisRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/createsqldiagnosis.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateSQLDiagnosisWithChan(request *CreateSQLDiagnosisRequest) (<-chan *CreateSQLDiagnosisResponse, <-chan error) {
 	responseChan := make(chan *CreateSQLDiagnosisResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CreateSQLDiagnosisWithChan(request *CreateSQLDiagnosisRequ
 	return responseChan, errChan
 }
 
+// invoke CreateSQLDiagnosis api with *CreateSQLDiagnosisRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/createsqldiagnosis.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateSQLDiagnosisWithCallback(request *CreateSQLDiagnosisRequest, callback func(response *CreateSQLDiagnosisResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type CreateSQLDiagnosisResponse struct {
 	SQLDiagId string `json:"SQLDiagId" xml:"SQLDiagId"`
 }
 
+// create a request to invoke CreateSQLDiagnosis API
 func CreateCreateSQLDiagnosisRequest() (request *CreateSQLDiagnosisRequest) {
 	request = &CreateSQLDiagnosisRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateCreateSQLDiagnosisRequest() (request *CreateSQLDiagnosisRequest) {
 	return
 }
 
+// create a response to parse from CreateSQLDiagnosis response
 func CreateCreateSQLDiagnosisResponse() (response *CreateSQLDiagnosisResponse) {
 	response = &CreateSQLDiagnosisResponse{
 		BaseResponse: &responses.BaseResponse{},

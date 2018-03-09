@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeSecurityGroups api with *DescribeSecurityGroupsRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/describesecuritygroups.html
 func (client *Client) DescribeSecurityGroups(request *DescribeSecurityGroupsRequest) (response *DescribeSecurityGroupsResponse, err error) {
 	response = CreateDescribeSecurityGroupsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeSecurityGroups api with *DescribeSecurityGroupsRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describesecuritygroups.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSecurityGroupsWithChan(request *DescribeSecurityGroupsRequest) (<-chan *DescribeSecurityGroupsResponse, <-chan error) {
 	responseChan := make(chan *DescribeSecurityGroupsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeSecurityGroupsWithChan(request *DescribeSecurityGr
 	return responseChan, errChan
 }
 
+// invoke DescribeSecurityGroups api with *DescribeSecurityGroupsRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describesecuritygroups.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSecurityGroupsWithCallback(request *DescribeSecurityGroupsRequest, callback func(response *DescribeSecurityGroupsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -103,6 +111,7 @@ type DescribeSecurityGroupsResponse struct {
 	SecurityGroups SecurityGroups `json:"SecurityGroups" xml:"SecurityGroups"`
 }
 
+// create a request to invoke DescribeSecurityGroups API
 func CreateDescribeSecurityGroupsRequest() (request *DescribeSecurityGroupsRequest) {
 	request = &DescribeSecurityGroupsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -111,6 +120,7 @@ func CreateDescribeSecurityGroupsRequest() (request *DescribeSecurityGroupsReque
 	return
 }
 
+// create a response to parse from DescribeSecurityGroups response
 func CreateDescribeSecurityGroupsResponse() (response *DescribeSecurityGroupsResponse) {
 	response = &DescribeSecurityGroupsResponse{
 		BaseResponse: &responses.BaseResponse{},

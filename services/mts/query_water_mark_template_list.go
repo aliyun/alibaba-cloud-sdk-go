@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke QueryWaterMarkTemplateList api with *QueryWaterMarkTemplateListRequest synchronously
+// api document: https://help.aliyun.com/api/mts/querywatermarktemplatelist.html
 func (client *Client) QueryWaterMarkTemplateList(request *QueryWaterMarkTemplateListRequest) (response *QueryWaterMarkTemplateListResponse, err error) {
 	response = CreateQueryWaterMarkTemplateListResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke QueryWaterMarkTemplateList api with *QueryWaterMarkTemplateListRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/querywatermarktemplatelist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryWaterMarkTemplateListWithChan(request *QueryWaterMarkTemplateListRequest) (<-chan *QueryWaterMarkTemplateListResponse, <-chan error) {
 	responseChan := make(chan *QueryWaterMarkTemplateListResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) QueryWaterMarkTemplateListWithChan(request *QueryWaterMark
 	return responseChan, errChan
 }
 
+// invoke QueryWaterMarkTemplateList api with *QueryWaterMarkTemplateListRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/querywatermarktemplatelist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryWaterMarkTemplateListWithCallback(request *QueryWaterMarkTemplateListRequest, callback func(response *QueryWaterMarkTemplateListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type QueryWaterMarkTemplateListResponse struct {
 	WaterMarkTemplateList WaterMarkTemplateListInQueryWaterMarkTemplateList `json:"WaterMarkTemplateList" xml:"WaterMarkTemplateList"`
 }
 
+// create a request to invoke QueryWaterMarkTemplateList API
 func CreateQueryWaterMarkTemplateListRequest() (request *QueryWaterMarkTemplateListRequest) {
 	request = &QueryWaterMarkTemplateListRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateQueryWaterMarkTemplateListRequest() (request *QueryWaterMarkTemplateL
 	return
 }
 
+// create a response to parse from QueryWaterMarkTemplateList response
 func CreateQueryWaterMarkTemplateListResponse() (response *QueryWaterMarkTemplateListResponse) {
 	response = &QueryWaterMarkTemplateListResponse{
 		BaseResponse: &responses.BaseResponse{},

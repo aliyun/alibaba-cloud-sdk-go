@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke RemoveTag api with *RemoveTagRequest synchronously
+// api document: https://help.aliyun.com/api/push/removetag.html
 func (client *Client) RemoveTag(request *RemoveTagRequest) (response *RemoveTagResponse, err error) {
 	response = CreateRemoveTagResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke RemoveTag api with *RemoveTagRequest asynchronously
+// api document: https://help.aliyun.com/api/push/removetag.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveTagWithChan(request *RemoveTagRequest) (<-chan *RemoveTagResponse, <-chan error) {
 	responseChan := make(chan *RemoveTagResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) RemoveTagWithChan(request *RemoveTagRequest) (<-chan *Remo
 	return responseChan, errChan
 }
 
+// invoke RemoveTag api with *RemoveTagRequest asynchronously
+// api document: https://help.aliyun.com/api/push/removetag.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveTagWithCallback(request *RemoveTagRequest, callback func(response *RemoveTagResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,6 +84,7 @@ type RemoveTagResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke RemoveTag API
 func CreateRemoveTagRequest() (request *RemoveTagRequest) {
 	request = &RemoveTagRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -84,6 +93,7 @@ func CreateRemoveTagRequest() (request *RemoveTagRequest) {
 	return
 }
 
+// create a response to parse from RemoveTag response
 func CreateRemoveTagResponse() (response *RemoveTagResponse) {
 	response = &RemoveTagResponse{
 		BaseResponse: &responses.BaseResponse{},

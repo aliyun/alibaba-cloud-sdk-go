@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SubmitVideoSplitJob api with *SubmitVideoSplitJobRequest synchronously
+// api document: https://help.aliyun.com/api/mts/submitvideosplitjob.html
 func (client *Client) SubmitVideoSplitJob(request *SubmitVideoSplitJobRequest) (response *SubmitVideoSplitJobResponse, err error) {
 	response = CreateSubmitVideoSplitJobResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SubmitVideoSplitJob api with *SubmitVideoSplitJobRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/submitvideosplitjob.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitVideoSplitJobWithChan(request *SubmitVideoSplitJobRequest) (<-chan *SubmitVideoSplitJobResponse, <-chan error) {
 	responseChan := make(chan *SubmitVideoSplitJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SubmitVideoSplitJobWithChan(request *SubmitVideoSplitJobRe
 	return responseChan, errChan
 }
 
+// invoke SubmitVideoSplitJob api with *SubmitVideoSplitJobRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/submitvideosplitjob.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitVideoSplitJobWithCallback(request *SubmitVideoSplitJobRequest, callback func(response *SubmitVideoSplitJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,6 +91,7 @@ type SubmitVideoSplitJobResponse struct {
 	JobId     string `json:"JobId" xml:"JobId"`
 }
 
+// create a request to invoke SubmitVideoSplitJob API
 func CreateSubmitVideoSplitJobRequest() (request *SubmitVideoSplitJobRequest) {
 	request = &SubmitVideoSplitJobRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -91,6 +100,7 @@ func CreateSubmitVideoSplitJobRequest() (request *SubmitVideoSplitJobRequest) {
 	return
 }
 
+// create a response to parse from SubmitVideoSplitJob response
 func CreateSubmitVideoSplitJobResponse() (response *SubmitVideoSplitJobResponse) {
 	response = &SubmitVideoSplitJobResponse{
 		BaseResponse: &responses.BaseResponse{},

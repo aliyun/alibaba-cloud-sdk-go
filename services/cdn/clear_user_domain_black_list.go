@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ClearUserDomainBlackList api with *ClearUserDomainBlackListRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/clearuserdomainblacklist.html
 func (client *Client) ClearUserDomainBlackList(request *ClearUserDomainBlackListRequest) (response *ClearUserDomainBlackListResponse, err error) {
 	response = CreateClearUserDomainBlackListResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ClearUserDomainBlackList api with *ClearUserDomainBlackListRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/clearuserdomainblacklist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ClearUserDomainBlackListWithChan(request *ClearUserDomainBlackListRequest) (<-chan *ClearUserDomainBlackListResponse, <-chan error) {
 	responseChan := make(chan *ClearUserDomainBlackListResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ClearUserDomainBlackListWithChan(request *ClearUserDomainB
 	return responseChan, errChan
 }
 
+// invoke ClearUserDomainBlackList api with *ClearUserDomainBlackListRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/clearuserdomainblacklist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ClearUserDomainBlackListWithCallback(request *ClearUserDomainBlackListRequest, callback func(response *ClearUserDomainBlackListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type ClearUserDomainBlackListResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ClearUserDomainBlackList API
 func CreateClearUserDomainBlackListRequest() (request *ClearUserDomainBlackListRequest) {
 	request = &ClearUserDomainBlackListRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateClearUserDomainBlackListRequest() (request *ClearUserDomainBlackListR
 	return
 }
 
+// create a response to parse from ClearUserDomainBlackList response
 func CreateClearUserDomainBlackListResponse() (response *ClearUserDomainBlackListResponse) {
 	response = &ClearUserDomainBlackListResponse{
 		BaseResponse: &responses.BaseResponse{},

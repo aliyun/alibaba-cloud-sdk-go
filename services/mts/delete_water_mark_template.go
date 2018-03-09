@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeleteWaterMarkTemplate api with *DeleteWaterMarkTemplateRequest synchronously
+// api document: https://help.aliyun.com/api/mts/deletewatermarktemplate.html
 func (client *Client) DeleteWaterMarkTemplate(request *DeleteWaterMarkTemplateRequest) (response *DeleteWaterMarkTemplateResponse, err error) {
 	response = CreateDeleteWaterMarkTemplateResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeleteWaterMarkTemplate api with *DeleteWaterMarkTemplateRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/deletewatermarktemplate.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteWaterMarkTemplateWithChan(request *DeleteWaterMarkTemplateRequest) (<-chan *DeleteWaterMarkTemplateResponse, <-chan error) {
 	responseChan := make(chan *DeleteWaterMarkTemplateResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeleteWaterMarkTemplateWithChan(request *DeleteWaterMarkTe
 	return responseChan, errChan
 }
 
+// invoke DeleteWaterMarkTemplate api with *DeleteWaterMarkTemplateRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/deletewatermarktemplate.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteWaterMarkTemplateWithCallback(request *DeleteWaterMarkTemplateRequest, callback func(response *DeleteWaterMarkTemplateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type DeleteWaterMarkTemplateResponse struct {
 	WaterMarkTemplateId string `json:"WaterMarkTemplateId" xml:"WaterMarkTemplateId"`
 }
 
+// create a request to invoke DeleteWaterMarkTemplate API
 func CreateDeleteWaterMarkTemplateRequest() (request *DeleteWaterMarkTemplateRequest) {
 	request = &DeleteWaterMarkTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateDeleteWaterMarkTemplateRequest() (request *DeleteWaterMarkTemplateReq
 	return
 }
 
+// create a response to parse from DeleteWaterMarkTemplate response
 func CreateDeleteWaterMarkTemplateResponse() (response *DeleteWaterMarkTemplateResponse) {
 	response = &DeleteWaterMarkTemplateResponse{
 		BaseResponse: &responses.BaseResponse{},

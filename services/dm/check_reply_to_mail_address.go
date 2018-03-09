@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CheckReplyToMailAddress api with *CheckReplyToMailAddressRequest synchronously
+// api document: https://help.aliyun.com/api/dm/checkreplytomailaddress.html
 func (client *Client) CheckReplyToMailAddress(request *CheckReplyToMailAddressRequest) (response *CheckReplyToMailAddressResponse, err error) {
 	response = CreateCheckReplyToMailAddressResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CheckReplyToMailAddress api with *CheckReplyToMailAddressRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/checkreplytomailaddress.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckReplyToMailAddressWithChan(request *CheckReplyToMailAddressRequest) (<-chan *CheckReplyToMailAddressResponse, <-chan error) {
 	responseChan := make(chan *CheckReplyToMailAddressResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CheckReplyToMailAddressWithChan(request *CheckReplyToMailA
 	return responseChan, errChan
 }
 
+// invoke CheckReplyToMailAddress api with *CheckReplyToMailAddressRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/checkreplytomailaddress.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckReplyToMailAddressWithCallback(request *CheckReplyToMailAddressRequest, callback func(response *CheckReplyToMailAddressResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type CheckReplyToMailAddressResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke CheckReplyToMailAddress API
 func CreateCheckReplyToMailAddressRequest() (request *CheckReplyToMailAddressRequest) {
 	request = &CheckReplyToMailAddressRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateCheckReplyToMailAddressRequest() (request *CheckReplyToMailAddressReq
 	return
 }
 
+// create a response to parse from CheckReplyToMailAddress response
 func CreateCheckReplyToMailAddressResponse() (response *CheckReplyToMailAddressResponse) {
 	response = &CheckReplyToMailAddressResponse{
 		BaseResponse: &responses.BaseResponse{},

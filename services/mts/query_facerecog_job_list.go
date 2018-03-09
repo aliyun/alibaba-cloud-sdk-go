@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke QueryFacerecogJobList api with *QueryFacerecogJobListRequest synchronously
+// api document: https://help.aliyun.com/api/mts/queryfacerecogjoblist.html
 func (client *Client) QueryFacerecogJobList(request *QueryFacerecogJobListRequest) (response *QueryFacerecogJobListResponse, err error) {
 	response = CreateQueryFacerecogJobListResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke QueryFacerecogJobList api with *QueryFacerecogJobListRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/queryfacerecogjoblist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryFacerecogJobListWithChan(request *QueryFacerecogJobListRequest) (<-chan *QueryFacerecogJobListResponse, <-chan error) {
 	responseChan := make(chan *QueryFacerecogJobListResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) QueryFacerecogJobListWithChan(request *QueryFacerecogJobLi
 	return responseChan, errChan
 }
 
+// invoke QueryFacerecogJobList api with *QueryFacerecogJobListRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/queryfacerecogjoblist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryFacerecogJobListWithCallback(request *QueryFacerecogJobListRequest, callback func(response *QueryFacerecogJobListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type QueryFacerecogJobListResponse struct {
 	FacerecogJobList FacerecogJobList                   `json:"FacerecogJobList" xml:"FacerecogJobList"`
 }
 
+// create a request to invoke QueryFacerecogJobList API
 func CreateQueryFacerecogJobListRequest() (request *QueryFacerecogJobListRequest) {
 	request = &QueryFacerecogJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateQueryFacerecogJobListRequest() (request *QueryFacerecogJobListRequest
 	return
 }
 
+// create a response to parse from QueryFacerecogJobList response
 func CreateQueryFacerecogJobListResponse() (response *QueryFacerecogJobListResponse) {
 	response = &QueryFacerecogJobListResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ListAccessKeys api with *ListAccessKeysRequest synchronously
+// api document: https://help.aliyun.com/api/ram/listaccesskeys.html
 func (client *Client) ListAccessKeys(request *ListAccessKeysRequest) (response *ListAccessKeysResponse, err error) {
 	response = CreateListAccessKeysResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ListAccessKeys api with *ListAccessKeysRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/listaccesskeys.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAccessKeysWithChan(request *ListAccessKeysRequest) (<-chan *ListAccessKeysResponse, <-chan error) {
 	responseChan := make(chan *ListAccessKeysResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ListAccessKeysWithChan(request *ListAccessKeysRequest) (<-
 	return responseChan, errChan
 }
 
+// invoke ListAccessKeys api with *ListAccessKeysRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/listaccesskeys.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAccessKeysWithCallback(request *ListAccessKeysRequest, callback func(response *ListAccessKeysResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,6 +84,7 @@ type ListAccessKeysResponse struct {
 	AccessKeys AccessKeys `json:"AccessKeys" xml:"AccessKeys"`
 }
 
+// create a request to invoke ListAccessKeys API
 func CreateListAccessKeysRequest() (request *ListAccessKeysRequest) {
 	request = &ListAccessKeysRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -84,6 +93,7 @@ func CreateListAccessKeysRequest() (request *ListAccessKeysRequest) {
 	return
 }
 
+// create a response to parse from ListAccessKeys response
 func CreateListAccessKeysResponse() (response *ListAccessKeysResponse) {
 	response = &ListAccessKeysResponse{
 		BaseResponse: &responses.BaseResponse{},

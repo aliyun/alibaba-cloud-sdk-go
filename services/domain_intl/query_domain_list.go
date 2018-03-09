@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke QueryDomainList api with *QueryDomainListRequest synchronously
+// api document: https://help.aliyun.com/api/domain-intl/querydomainlist.html
 func (client *Client) QueryDomainList(request *QueryDomainListRequest) (response *QueryDomainListResponse, err error) {
 	response = CreateQueryDomainListResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke QueryDomainList api with *QueryDomainListRequest asynchronously
+// api document: https://help.aliyun.com/api/domain-intl/querydomainlist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryDomainListWithChan(request *QueryDomainListRequest) (<-chan *QueryDomainListResponse, <-chan error) {
 	responseChan := make(chan *QueryDomainListResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) QueryDomainListWithChan(request *QueryDomainListRequest) (
 	return responseChan, errChan
 }
 
+// invoke QueryDomainList api with *QueryDomainListRequest asynchronously
+// api document: https://help.aliyun.com/api/domain-intl/querydomainlist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryDomainListWithCallback(request *QueryDomainListRequest, callback func(response *QueryDomainListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,6 +102,7 @@ type QueryDomainListResponse struct {
 	Data           DataInQueryDomainList `json:"Data" xml:"Data"`
 }
 
+// create a request to invoke QueryDomainList API
 func CreateQueryDomainListRequest() (request *QueryDomainListRequest) {
 	request = &QueryDomainListRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -102,6 +111,7 @@ func CreateQueryDomainListRequest() (request *QueryDomainListRequest) {
 	return
 }
 
+// create a response to parse from QueryDomainList response
 func CreateQueryDomainListResponse() (response *QueryDomainListResponse) {
 	response = &QueryDomainListResponse{
 		BaseResponse: &responses.BaseResponse{},

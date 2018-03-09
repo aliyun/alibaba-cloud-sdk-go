@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke RevokeSecurityGroupEgress api with *RevokeSecurityGroupEgressRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/revokesecuritygroupegress.html
 func (client *Client) RevokeSecurityGroupEgress(request *RevokeSecurityGroupEgressRequest) (response *RevokeSecurityGroupEgressResponse, err error) {
 	response = CreateRevokeSecurityGroupEgressResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke RevokeSecurityGroupEgress api with *RevokeSecurityGroupEgressRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/revokesecuritygroupegress.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RevokeSecurityGroupEgressWithChan(request *RevokeSecurityGroupEgressRequest) (<-chan *RevokeSecurityGroupEgressResponse, <-chan error) {
 	responseChan := make(chan *RevokeSecurityGroupEgressResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) RevokeSecurityGroupEgressWithChan(request *RevokeSecurityG
 	return responseChan, errChan
 }
 
+// invoke RevokeSecurityGroupEgress api with *RevokeSecurityGroupEgressRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/revokesecuritygroupegress.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RevokeSecurityGroupEgressWithCallback(request *RevokeSecurityGroupEgressRequest, callback func(response *RevokeSecurityGroupEgressResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -74,6 +82,7 @@ type RevokeSecurityGroupEgressResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke RevokeSecurityGroupEgress API
 func CreateRevokeSecurityGroupEgressRequest() (request *RevokeSecurityGroupEgressRequest) {
 	request = &RevokeSecurityGroupEgressRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -82,6 +91,7 @@ func CreateRevokeSecurityGroupEgressRequest() (request *RevokeSecurityGroupEgres
 	return
 }
 
+// create a response to parse from RevokeSecurityGroupEgress response
 func CreateRevokeSecurityGroupEgressResponse() (response *RevokeSecurityGroupEgressResponse) {
 	response = &RevokeSecurityGroupEgressResponse{
 		BaseResponse: &responses.BaseResponse{},

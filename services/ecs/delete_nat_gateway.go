@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeleteNatGateway api with *DeleteNatGatewayRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/deletenatgateway.html
 func (client *Client) DeleteNatGateway(request *DeleteNatGatewayRequest) (response *DeleteNatGatewayResponse, err error) {
 	response = CreateDeleteNatGatewayResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeleteNatGateway api with *DeleteNatGatewayRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/deletenatgateway.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteNatGatewayWithChan(request *DeleteNatGatewayRequest) (<-chan *DeleteNatGatewayResponse, <-chan error) {
 	responseChan := make(chan *DeleteNatGatewayResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeleteNatGatewayWithChan(request *DeleteNatGatewayRequest)
 	return responseChan, errChan
 }
 
+// invoke DeleteNatGateway api with *DeleteNatGatewayRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/deletenatgateway.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteNatGatewayWithCallback(request *DeleteNatGatewayRequest, callback func(response *DeleteNatGatewayResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +87,7 @@ type DeleteNatGatewayResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke DeleteNatGateway API
 func CreateDeleteNatGatewayRequest() (request *DeleteNatGatewayRequest) {
 	request = &DeleteNatGatewayRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -87,6 +96,7 @@ func CreateDeleteNatGatewayRequest() (request *DeleteNatGatewayRequest) {
 	return
 }
 
+// create a response to parse from DeleteNatGateway response
 func CreateDeleteNatGatewayResponse() (response *DeleteNatGatewayResponse) {
 	response = &DeleteNatGatewayResponse{
 		BaseResponse: &responses.BaseResponse{},

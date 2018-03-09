@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribePrice api with *DescribePriceRequest synchronously
+// api document: https://help.aliyun.com/api/rds/describeprice.html
 func (client *Client) DescribePrice(request *DescribePriceRequest) (response *DescribePriceResponse, err error) {
 	response = CreateDescribePriceResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribePrice api with *DescribePriceRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describeprice.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribePriceWithChan(request *DescribePriceRequest) (<-chan *DescribePriceResponse, <-chan error) {
 	responseChan := make(chan *DescribePriceResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribePriceWithChan(request *DescribePriceRequest) (<-ch
 	return responseChan, errChan
 }
 
+// invoke DescribePrice api with *DescribePriceRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describeprice.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribePriceWithCallback(request *DescribePriceRequest, callback func(response *DescribePriceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -93,6 +101,7 @@ type DescribePriceResponse struct {
 	Rules     RulesInDescribePrice `json:"Rules" xml:"Rules"`
 }
 
+// create a request to invoke DescribePrice API
 func CreateDescribePriceRequest() (request *DescribePriceRequest) {
 	request = &DescribePriceRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -101,6 +110,7 @@ func CreateDescribePriceRequest() (request *DescribePriceRequest) {
 	return
 }
 
+// create a response to parse from DescribePrice response
 func CreateDescribePriceResponse() (response *DescribePriceResponse) {
 	response = &DescribePriceResponse{
 		BaseResponse: &responses.BaseResponse{},

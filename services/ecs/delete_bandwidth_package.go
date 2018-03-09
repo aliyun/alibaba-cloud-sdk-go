@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeleteBandwidthPackage api with *DeleteBandwidthPackageRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/deletebandwidthpackage.html
 func (client *Client) DeleteBandwidthPackage(request *DeleteBandwidthPackageRequest) (response *DeleteBandwidthPackageResponse, err error) {
 	response = CreateDeleteBandwidthPackageResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeleteBandwidthPackage api with *DeleteBandwidthPackageRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/deletebandwidthpackage.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteBandwidthPackageWithChan(request *DeleteBandwidthPackageRequest) (<-chan *DeleteBandwidthPackageResponse, <-chan error) {
 	responseChan := make(chan *DeleteBandwidthPackageResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeleteBandwidthPackageWithChan(request *DeleteBandwidthPac
 	return responseChan, errChan
 }
 
+// invoke DeleteBandwidthPackage api with *DeleteBandwidthPackageRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/deletebandwidthpackage.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteBandwidthPackageWithCallback(request *DeleteBandwidthPackageRequest, callback func(response *DeleteBandwidthPackageResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +87,7 @@ type DeleteBandwidthPackageResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke DeleteBandwidthPackage API
 func CreateDeleteBandwidthPackageRequest() (request *DeleteBandwidthPackageRequest) {
 	request = &DeleteBandwidthPackageRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -87,6 +96,7 @@ func CreateDeleteBandwidthPackageRequest() (request *DeleteBandwidthPackageReque
 	return
 }
 
+// create a response to parse from DeleteBandwidthPackage response
 func CreateDeleteBandwidthPackageResponse() (response *DeleteBandwidthPackageResponse) {
 	response = &DeleteBandwidthPackageResponse{
 		BaseResponse: &responses.BaseResponse{},

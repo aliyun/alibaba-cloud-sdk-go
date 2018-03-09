@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke UpdatePornPipeline api with *UpdatePornPipelineRequest synchronously
+// api document: https://help.aliyun.com/api/mts/updatepornpipeline.html
 func (client *Client) UpdatePornPipeline(request *UpdatePornPipelineRequest) (response *UpdatePornPipelineResponse, err error) {
 	response = CreateUpdatePornPipelineResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke UpdatePornPipeline api with *UpdatePornPipelineRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/updatepornpipeline.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdatePornPipelineWithChan(request *UpdatePornPipelineRequest) (<-chan *UpdatePornPipelineResponse, <-chan error) {
 	responseChan := make(chan *UpdatePornPipelineResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) UpdatePornPipelineWithChan(request *UpdatePornPipelineRequ
 	return responseChan, errChan
 }
 
+// invoke UpdatePornPipeline api with *UpdatePornPipelineRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/updatepornpipeline.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdatePornPipelineWithCallback(request *UpdatePornPipelineRequest, callback func(response *UpdatePornPipelineResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,6 +92,7 @@ type UpdatePornPipelineResponse struct {
 	Pipeline  Pipeline `json:"Pipeline" xml:"Pipeline"`
 }
 
+// create a request to invoke UpdatePornPipeline API
 func CreateUpdatePornPipelineRequest() (request *UpdatePornPipelineRequest) {
 	request = &UpdatePornPipelineRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -92,6 +101,7 @@ func CreateUpdatePornPipelineRequest() (request *UpdatePornPipelineRequest) {
 	return
 }
 
+// create a response to parse from UpdatePornPipeline response
 func CreateUpdatePornPipelineResponse() (response *UpdatePornPipelineResponse) {
 	response = &UpdatePornPipelineResponse{
 		BaseResponse: &responses.BaseResponse{},

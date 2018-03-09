@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeResourceByTags api with *DescribeResourceByTagsRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/describeresourcebytags.html
 func (client *Client) DescribeResourceByTags(request *DescribeResourceByTagsRequest) (response *DescribeResourceByTagsResponse, err error) {
 	response = CreateDescribeResourceByTagsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeResourceByTags api with *DescribeResourceByTagsRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describeresourcebytags.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeResourceByTagsWithChan(request *DescribeResourceByTagsRequest) (<-chan *DescribeResourceByTagsResponse, <-chan error) {
 	responseChan := make(chan *DescribeResourceByTagsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeResourceByTagsWithChan(request *DescribeResourceBy
 	return responseChan, errChan
 }
 
+// invoke DescribeResourceByTags api with *DescribeResourceByTagsRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describeresourcebytags.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeResourceByTagsWithCallback(request *DescribeResourceByTagsRequest, callback func(response *DescribeResourceByTagsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,6 +102,7 @@ type DescribeResourceByTagsResponse struct {
 	Resources  Resources `json:"Resources" xml:"Resources"`
 }
 
+// create a request to invoke DescribeResourceByTags API
 func CreateDescribeResourceByTagsRequest() (request *DescribeResourceByTagsRequest) {
 	request = &DescribeResourceByTagsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -102,6 +111,7 @@ func CreateDescribeResourceByTagsRequest() (request *DescribeResourceByTagsReque
 	return
 }
 
+// create a response to parse from DescribeResourceByTags response
 func CreateDescribeResourceByTagsResponse() (response *DescribeResourceByTagsResponse) {
 	response = &DescribeResourceByTagsResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ListMyGroupCategories api with *ListMyGroupCategoriesRequest synchronously
+// api document: https://help.aliyun.com/api/cms/listmygroupcategories.html
 func (client *Client) ListMyGroupCategories(request *ListMyGroupCategoriesRequest) (response *ListMyGroupCategoriesResponse, err error) {
 	response = CreateListMyGroupCategoriesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ListMyGroupCategories api with *ListMyGroupCategoriesRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/listmygroupcategories.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListMyGroupCategoriesWithChan(request *ListMyGroupCategoriesRequest) (<-chan *ListMyGroupCategoriesResponse, <-chan error) {
 	responseChan := make(chan *ListMyGroupCategoriesResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ListMyGroupCategoriesWithChan(request *ListMyGroupCategori
 	return responseChan, errChan
 }
 
+// invoke ListMyGroupCategories api with *ListMyGroupCategoriesRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/listmygroupcategories.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListMyGroupCategoriesWithCallback(request *ListMyGroupCategoriesRequest, callback func(response *ListMyGroupCategoriesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +87,7 @@ type ListMyGroupCategoriesResponse struct {
 	Category     Category `json:"Category" xml:"Category"`
 }
 
+// create a request to invoke ListMyGroupCategories API
 func CreateListMyGroupCategoriesRequest() (request *ListMyGroupCategoriesRequest) {
 	request = &ListMyGroupCategoriesRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -87,6 +96,7 @@ func CreateListMyGroupCategoriesRequest() (request *ListMyGroupCategoriesRequest
 	return
 }
 
+// create a response to parse from ListMyGroupCategories response
 func CreateListMyGroupCategoriesResponse() (response *ListMyGroupCategoriesResponse) {
 	response = &ListMyGroupCategoriesResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifyImageAttribute api with *ModifyImageAttributeRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/modifyimageattribute.html
 func (client *Client) ModifyImageAttribute(request *ModifyImageAttributeRequest) (response *ModifyImageAttributeResponse, err error) {
 	response = CreateModifyImageAttributeResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifyImageAttribute api with *ModifyImageAttributeRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/modifyimageattribute.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyImageAttributeWithChan(request *ModifyImageAttributeRequest) (<-chan *ModifyImageAttributeResponse, <-chan error) {
 	responseChan := make(chan *ModifyImageAttributeResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifyImageAttributeWithChan(request *ModifyImageAttribute
 	return responseChan, errChan
 }
 
+// invoke ModifyImageAttribute api with *ModifyImageAttributeRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/modifyimageattribute.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyImageAttributeWithCallback(request *ModifyImageAttributeRequest, callback func(response *ModifyImageAttributeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type ModifyImageAttributeResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ModifyImageAttribute API
 func CreateModifyImageAttributeRequest() (request *ModifyImageAttributeRequest) {
 	request = &ModifyImageAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateModifyImageAttributeRequest() (request *ModifyImageAttributeRequest) 
 	return
 }
 
+// create a response to parse from ModifyImageAttribute response
 func CreateModifyImageAttributeResponse() (response *ModifyImageAttributeResponse) {
 	response = &ModifyImageAttributeResponse{
 		BaseResponse: &responses.BaseResponse{},

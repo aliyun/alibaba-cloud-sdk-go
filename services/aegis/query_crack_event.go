@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke QueryCrackEvent api with *QueryCrackEventRequest synchronously
+// api document: https://help.aliyun.com/api/aegis/querycrackevent.html
 func (client *Client) QueryCrackEvent(request *QueryCrackEventRequest) (response *QueryCrackEventResponse, err error) {
 	response = CreateQueryCrackEventResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke QueryCrackEvent api with *QueryCrackEventRequest asynchronously
+// api document: https://help.aliyun.com/api/aegis/querycrackevent.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryCrackEventWithChan(request *QueryCrackEventRequest) (<-chan *QueryCrackEventResponse, <-chan error) {
 	responseChan := make(chan *QueryCrackEventResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) QueryCrackEventWithChan(request *QueryCrackEventRequest) (
 	return responseChan, errChan
 }
 
+// invoke QueryCrackEvent api with *QueryCrackEventRequest asynchronously
+// api document: https://help.aliyun.com/api/aegis/querycrackevent.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryCrackEventWithCallback(request *QueryCrackEventRequest, callback func(response *QueryCrackEventResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,6 +91,7 @@ type QueryCrackEventResponse struct {
 	Data      Data   `json:"Data" xml:"Data"`
 }
 
+// create a request to invoke QueryCrackEvent API
 func CreateQueryCrackEventRequest() (request *QueryCrackEventRequest) {
 	request = &QueryCrackEventRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -91,6 +100,7 @@ func CreateQueryCrackEventRequest() (request *QueryCrackEventRequest) {
 	return
 }
 
+// create a response to parse from QueryCrackEvent response
 func CreateQueryCrackEventResponse() (response *QueryCrackEventResponse) {
 	response = &QueryCrackEventResponse{
 		BaseResponse: &responses.BaseResponse{},

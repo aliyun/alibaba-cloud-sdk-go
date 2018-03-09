@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke UnbindIpRange api with *UnbindIpRangeRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/unbindiprange.html
 func (client *Client) UnbindIpRange(request *UnbindIpRangeRequest) (response *UnbindIpRangeResponse, err error) {
 	response = CreateUnbindIpRangeResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke UnbindIpRange api with *UnbindIpRangeRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/unbindiprange.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnbindIpRangeWithChan(request *UnbindIpRangeRequest) (<-chan *UnbindIpRangeResponse, <-chan error) {
 	responseChan := make(chan *UnbindIpRangeResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) UnbindIpRangeWithChan(request *UnbindIpRangeRequest) (<-ch
 	return responseChan, errChan
 }
 
+// invoke UnbindIpRange api with *UnbindIpRangeRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/unbindiprange.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnbindIpRangeWithCallback(request *UnbindIpRangeRequest, callback func(response *UnbindIpRangeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type UnbindIpRangeResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke UnbindIpRange API
 func CreateUnbindIpRangeRequest() (request *UnbindIpRangeRequest) {
 	request = &UnbindIpRangeRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateUnbindIpRangeRequest() (request *UnbindIpRangeRequest) {
 	return
 }
 
+// create a response to parse from UnbindIpRange response
 func CreateUnbindIpRangeResponse() (response *UnbindIpRangeResponse) {
 	response = &UnbindIpRangeResponse{
 		BaseResponse: &responses.BaseResponse{},

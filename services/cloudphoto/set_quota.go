@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SetQuota api with *SetQuotaRequest synchronously
+// api document: https://help.aliyun.com/api/cloudphoto/setquota.html
 func (client *Client) SetQuota(request *SetQuotaRequest) (response *SetQuotaResponse, err error) {
 	response = CreateSetQuotaResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SetQuota api with *SetQuotaRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/setquota.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetQuotaWithChan(request *SetQuotaRequest) (<-chan *SetQuotaResponse, <-chan error) {
 	responseChan := make(chan *SetQuotaResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SetQuotaWithChan(request *SetQuotaRequest) (<-chan *SetQuo
 	return responseChan, errChan
 }
 
+// invoke SetQuota api with *SetQuotaRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/setquota.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetQuotaWithCallback(request *SetQuotaRequest, callback func(response *SetQuotaResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type SetQuotaResponse struct {
 	Action    string `json:"Action" xml:"Action"`
 }
 
+// create a request to invoke SetQuota API
 func CreateSetQuotaRequest() (request *SetQuotaRequest) {
 	request = &SetQuotaRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateSetQuotaRequest() (request *SetQuotaRequest) {
 	return
 }
 
+// create a response to parse from SetQuota response
 func CreateSetQuotaResponse() (response *SetQuotaResponse) {
 	response = &SetQuotaResponse{
 		BaseResponse: &responses.BaseResponse{},

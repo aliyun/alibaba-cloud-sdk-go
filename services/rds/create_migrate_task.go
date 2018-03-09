@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CreateMigrateTask api with *CreateMigrateTaskRequest synchronously
+// api document: https://help.aliyun.com/api/rds/createmigratetask.html
 func (client *Client) CreateMigrateTask(request *CreateMigrateTaskRequest) (response *CreateMigrateTaskResponse, err error) {
 	response = CreateCreateMigrateTaskResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CreateMigrateTask api with *CreateMigrateTaskRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/createmigratetask.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateMigrateTaskWithChan(request *CreateMigrateTaskRequest) (<-chan *CreateMigrateTaskResponse, <-chan error) {
 	responseChan := make(chan *CreateMigrateTaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CreateMigrateTaskWithChan(request *CreateMigrateTaskReques
 	return responseChan, errChan
 }
 
+// invoke CreateMigrateTask api with *CreateMigrateTaskRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/createmigratetask.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateMigrateTaskWithCallback(request *CreateMigrateTaskRequest, callback func(response *CreateMigrateTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -87,6 +95,7 @@ type CreateMigrateTaskResponse struct {
 	BackupMode    string `json:"BackupMode" xml:"BackupMode"`
 }
 
+// create a request to invoke CreateMigrateTask API
 func CreateCreateMigrateTaskRequest() (request *CreateMigrateTaskRequest) {
 	request = &CreateMigrateTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -95,6 +104,7 @@ func CreateCreateMigrateTaskRequest() (request *CreateMigrateTaskRequest) {
 	return
 }
 
+// create a response to parse from CreateMigrateTask response
 func CreateCreateMigrateTaskResponse() (response *CreateMigrateTaskResponse) {
 	response = &CreateMigrateTaskResponse{
 		BaseResponse: &responses.BaseResponse{},

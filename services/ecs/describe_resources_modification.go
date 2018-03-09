@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeResourcesModification api with *DescribeResourcesModificationRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/describeresourcesmodification.html
 func (client *Client) DescribeResourcesModification(request *DescribeResourcesModificationRequest) (response *DescribeResourcesModificationResponse, err error) {
 	response = CreateDescribeResourcesModificationResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeResourcesModification api with *DescribeResourcesModificationRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describeresourcesmodification.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeResourcesModificationWithChan(request *DescribeResourcesModificationRequest) (<-chan *DescribeResourcesModificationResponse, <-chan error) {
 	responseChan := make(chan *DescribeResourcesModificationResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeResourcesModificationWithChan(request *DescribeRes
 	return responseChan, errChan
 }
 
+// invoke DescribeResourcesModification api with *DescribeResourcesModificationRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describeresourcesmodification.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeResourcesModificationWithCallback(request *DescribeResourcesModificationRequest, callback func(response *DescribeResourcesModificationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -75,6 +83,7 @@ type DescribeResourcesModificationResponse struct {
 	AvailableZones AvailableZonesInDescribeResourcesModification `json:"AvailableZones" xml:"AvailableZones"`
 }
 
+// create a request to invoke DescribeResourcesModification API
 func CreateDescribeResourcesModificationRequest() (request *DescribeResourcesModificationRequest) {
 	request = &DescribeResourcesModificationRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -83,6 +92,7 @@ func CreateDescribeResourcesModificationRequest() (request *DescribeResourcesMod
 	return
 }
 
+// create a response to parse from DescribeResourcesModification response
 func CreateDescribeResourcesModificationResponse() (response *DescribeResourcesModificationResponse) {
 	response = &DescribeResourcesModificationResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ListVolumes api with *ListVolumesRequest synchronously
+// api document: https://help.aliyun.com/api/ehpc/listvolumes.html
 func (client *Client) ListVolumes(request *ListVolumesRequest) (response *ListVolumesResponse, err error) {
 	response = CreateListVolumesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ListVolumes api with *ListVolumesRequest asynchronously
+// api document: https://help.aliyun.com/api/ehpc/listvolumes.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListVolumesWithChan(request *ListVolumesRequest) (<-chan *ListVolumesResponse, <-chan error) {
 	responseChan := make(chan *ListVolumesResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ListVolumesWithChan(request *ListVolumesRequest) (<-chan *
 	return responseChan, errChan
 }
 
+// invoke ListVolumes api with *ListVolumesRequest asynchronously
+// api document: https://help.aliyun.com/api/ehpc/listvolumes.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListVolumesWithCallback(request *ListVolumesRequest, callback func(response *ListVolumesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type ListVolumesResponse struct {
 	Volumes    Volumes `json:"Volumes" xml:"Volumes"`
 }
 
+// create a request to invoke ListVolumes API
 func CreateListVolumesRequest() (request *ListVolumesRequest) {
 	request = &ListVolumesRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateListVolumesRequest() (request *ListVolumesRequest) {
 	return
 }
 
+// create a response to parse from ListVolumes response
 func CreateListVolumesResponse() (response *ListVolumesResponse) {
 	response = &ListVolumesResponse{
 		BaseResponse: &responses.BaseResponse{},

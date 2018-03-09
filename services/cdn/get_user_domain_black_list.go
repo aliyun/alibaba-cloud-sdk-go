@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke GetUserDomainBlackList api with *GetUserDomainBlackListRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/getuserdomainblacklist.html
 func (client *Client) GetUserDomainBlackList(request *GetUserDomainBlackListRequest) (response *GetUserDomainBlackListResponse, err error) {
 	response = CreateGetUserDomainBlackListResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke GetUserDomainBlackList api with *GetUserDomainBlackListRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/getuserdomainblacklist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetUserDomainBlackListWithChan(request *GetUserDomainBlackListRequest) (<-chan *GetUserDomainBlackListResponse, <-chan error) {
 	responseChan := make(chan *GetUserDomainBlackListResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) GetUserDomainBlackListWithChan(request *GetUserDomainBlack
 	return responseChan, errChan
 }
 
+// invoke GetUserDomainBlackList api with *GetUserDomainBlackListRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/getuserdomainblacklist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetUserDomainBlackListWithCallback(request *GetUserDomainBlackListRequest, callback func(response *GetUserDomainBlackListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +87,7 @@ type GetUserDomainBlackListResponse struct {
 	Bind      string `json:"Bind" xml:"Bind"`
 }
 
+// create a request to invoke GetUserDomainBlackList API
 func CreateGetUserDomainBlackListRequest() (request *GetUserDomainBlackListRequest) {
 	request = &GetUserDomainBlackListRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -87,6 +96,7 @@ func CreateGetUserDomainBlackListRequest() (request *GetUserDomainBlackListReque
 	return
 }
 
+// create a response to parse from GetUserDomainBlackList response
 func CreateGetUserDomainBlackListResponse() (response *GetUserDomainBlackListResponse) {
 	response = &GetUserDomainBlackListResponse{
 		BaseResponse: &responses.BaseResponse{},

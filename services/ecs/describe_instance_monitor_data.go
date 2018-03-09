@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeInstanceMonitorData api with *DescribeInstanceMonitorDataRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/describeinstancemonitordata.html
 func (client *Client) DescribeInstanceMonitorData(request *DescribeInstanceMonitorDataRequest) (response *DescribeInstanceMonitorDataResponse, err error) {
 	response = CreateDescribeInstanceMonitorDataResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeInstanceMonitorData api with *DescribeInstanceMonitorDataRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describeinstancemonitordata.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceMonitorDataWithChan(request *DescribeInstanceMonitorDataRequest) (<-chan *DescribeInstanceMonitorDataResponse, <-chan error) {
 	responseChan := make(chan *DescribeInstanceMonitorDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeInstanceMonitorDataWithChan(request *DescribeInsta
 	return responseChan, errChan
 }
 
+// invoke DescribeInstanceMonitorData api with *DescribeInstanceMonitorDataRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describeinstancemonitordata.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceMonitorDataWithCallback(request *DescribeInstanceMonitorDataRequest, callback func(response *DescribeInstanceMonitorDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,6 +91,7 @@ type DescribeInstanceMonitorDataResponse struct {
 	MonitorData MonitorDataInDescribeInstanceMonitorData `json:"MonitorData" xml:"MonitorData"`
 }
 
+// create a request to invoke DescribeInstanceMonitorData API
 func CreateDescribeInstanceMonitorDataRequest() (request *DescribeInstanceMonitorDataRequest) {
 	request = &DescribeInstanceMonitorDataRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -91,6 +100,7 @@ func CreateDescribeInstanceMonitorDataRequest() (request *DescribeInstanceMonito
 	return
 }
 
+// create a response to parse from DescribeInstanceMonitorData response
 func CreateDescribeInstanceMonitorDataResponse() (response *DescribeInstanceMonitorDataResponse) {
 	response = &DescribeInstanceMonitorDataResponse{
 		BaseResponse: &responses.BaseResponse{},

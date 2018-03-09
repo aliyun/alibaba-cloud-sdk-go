@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke AddTerrorismPipeline api with *AddTerrorismPipelineRequest synchronously
+// api document: https://help.aliyun.com/api/mts/addterrorismpipeline.html
 func (client *Client) AddTerrorismPipeline(request *AddTerrorismPipelineRequest) (response *AddTerrorismPipelineResponse, err error) {
 	response = CreateAddTerrorismPipelineResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke AddTerrorismPipeline api with *AddTerrorismPipelineRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/addterrorismpipeline.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddTerrorismPipelineWithChan(request *AddTerrorismPipelineRequest) (<-chan *AddTerrorismPipelineResponse, <-chan error) {
 	responseChan := make(chan *AddTerrorismPipelineResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) AddTerrorismPipelineWithChan(request *AddTerrorismPipeline
 	return responseChan, errChan
 }
 
+// invoke AddTerrorismPipeline api with *AddTerrorismPipelineRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/addterrorismpipeline.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddTerrorismPipelineWithCallback(request *AddTerrorismPipelineRequest, callback func(response *AddTerrorismPipelineResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type AddTerrorismPipelineResponse struct {
 	Pipeline  Pipeline `json:"Pipeline" xml:"Pipeline"`
 }
 
+// create a request to invoke AddTerrorismPipeline API
 func CreateAddTerrorismPipelineRequest() (request *AddTerrorismPipelineRequest) {
 	request = &AddTerrorismPipelineRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateAddTerrorismPipelineRequest() (request *AddTerrorismPipelineRequest) 
 	return
 }
 
+// create a response to parse from AddTerrorismPipeline response
 func CreateAddTerrorismPipelineResponse() (response *AddTerrorismPipelineResponse) {
 	response = &AddTerrorismPipelineResponse{
 		BaseResponse: &responses.BaseResponse{},

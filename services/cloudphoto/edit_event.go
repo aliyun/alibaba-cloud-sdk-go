@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke EditEvent api with *EditEventRequest synchronously
+// api document: https://help.aliyun.com/api/cloudphoto/editevent.html
 func (client *Client) EditEvent(request *EditEventRequest) (response *EditEventResponse, err error) {
 	response = CreateEditEventResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke EditEvent api with *EditEventRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/editevent.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EditEventWithChan(request *EditEventRequest) (<-chan *EditEventResponse, <-chan error) {
 	responseChan := make(chan *EditEventResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) EditEventWithChan(request *EditEventRequest) (<-chan *Edit
 	return responseChan, errChan
 }
 
+// invoke EditEvent api with *EditEventRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/editevent.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EditEventWithCallback(request *EditEventRequest, callback func(response *EditEventResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -90,6 +98,7 @@ type EditEventResponse struct {
 	Event     Event  `json:"Event" xml:"Event"`
 }
 
+// create a request to invoke EditEvent API
 func CreateEditEventRequest() (request *EditEventRequest) {
 	request = &EditEventRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -98,6 +107,7 @@ func CreateEditEventRequest() (request *EditEventRequest) {
 	return
 }
 
+// create a response to parse from EditEvent response
 func CreateEditEventResponse() (response *EditEventResponse) {
 	response = &EditEventResponse{
 		BaseResponse: &responses.BaseResponse{},

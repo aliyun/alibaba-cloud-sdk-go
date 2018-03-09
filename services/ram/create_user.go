@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CreateUser api with *CreateUserRequest synchronously
+// api document: https://help.aliyun.com/api/ram/createuser.html
 func (client *Client) CreateUser(request *CreateUserRequest) (response *CreateUserResponse, err error) {
 	response = CreateCreateUserResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CreateUser api with *CreateUserRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/createuser.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateUserWithChan(request *CreateUserRequest) (<-chan *CreateUserResponse, <-chan error) {
 	responseChan := make(chan *CreateUserResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CreateUserWithChan(request *CreateUserRequest) (<-chan *Cr
 	return responseChan, errChan
 }
 
+// invoke CreateUser api with *CreateUserRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/createuser.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateUserWithCallback(request *CreateUserRequest, callback func(response *CreateUserResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type CreateUserResponse struct {
 	User      User   `json:"User" xml:"User"`
 }
 
+// create a request to invoke CreateUser API
 func CreateCreateUserRequest() (request *CreateUserRequest) {
 	request = &CreateUserRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateCreateUserRequest() (request *CreateUserRequest) {
 	return
 }
 
+// create a response to parse from CreateUser response
 func CreateCreateUserResponse() (response *CreateUserResponse) {
 	response = &CreateUserResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke NodeProcesses api with *NodeProcessesRequest synchronously
+// api document: https://help.aliyun.com/api/cms/nodeprocesses.html
 func (client *Client) NodeProcesses(request *NodeProcessesRequest) (response *NodeProcessesResponse, err error) {
 	response = CreateNodeProcessesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke NodeProcesses api with *NodeProcessesRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/nodeprocesses.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) NodeProcessesWithChan(request *NodeProcessesRequest) (<-chan *NodeProcessesResponse, <-chan error) {
 	responseChan := make(chan *NodeProcessesResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) NodeProcessesWithChan(request *NodeProcessesRequest) (<-ch
 	return responseChan, errChan
 }
 
+// invoke NodeProcesses api with *NodeProcessesRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/nodeprocesses.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) NodeProcessesWithCallback(request *NodeProcessesRequest, callback func(response *NodeProcessesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +87,7 @@ type NodeProcessesResponse struct {
 	NodeProcesses NodeProcesses `json:"NodeProcesses" xml:"NodeProcesses"`
 }
 
+// create a request to invoke NodeProcesses API
 func CreateNodeProcessesRequest() (request *NodeProcessesRequest) {
 	request = &NodeProcessesRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -87,6 +96,7 @@ func CreateNodeProcessesRequest() (request *NodeProcessesRequest) {
 	return
 }
 
+// create a response to parse from NodeProcesses response
 func CreateNodeProcessesResponse() (response *NodeProcessesResponse) {
 	response = &NodeProcessesResponse{
 		BaseResponse: &responses.BaseResponse{},

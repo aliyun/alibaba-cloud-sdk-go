@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifySslVpnServer api with *ModifySslVpnServerRequest synchronously
+// api document: https://help.aliyun.com/api/vpc/modifysslvpnserver.html
 func (client *Client) ModifySslVpnServer(request *ModifySslVpnServerRequest) (response *ModifySslVpnServerResponse, err error) {
 	response = CreateModifySslVpnServerResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifySslVpnServer api with *ModifySslVpnServerRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/modifysslvpnserver.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySslVpnServerWithChan(request *ModifySslVpnServerRequest) (<-chan *ModifySslVpnServerResponse, <-chan error) {
 	responseChan := make(chan *ModifySslVpnServerResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifySslVpnServerWithChan(request *ModifySslVpnServerRequ
 	return responseChan, errChan
 }
 
+// invoke ModifySslVpnServer api with *ModifySslVpnServerRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/modifysslvpnserver.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySslVpnServerWithCallback(request *ModifySslVpnServerRequest, callback func(response *ModifySslVpnServerResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -101,6 +109,7 @@ type ModifySslVpnServerResponse struct {
 	InternetIp     string `json:"InternetIp" xml:"InternetIp"`
 }
 
+// create a request to invoke ModifySslVpnServer API
 func CreateModifySslVpnServerRequest() (request *ModifySslVpnServerRequest) {
 	request = &ModifySslVpnServerRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -109,6 +118,7 @@ func CreateModifySslVpnServerRequest() (request *ModifySslVpnServerRequest) {
 	return
 }
 
+// create a response to parse from ModifySslVpnServer response
 func CreateModifySslVpnServerResponse() (response *ModifySslVpnServerResponse) {
 	response = &ModifySslVpnServerResponse{
 		BaseResponse: &responses.BaseResponse{},

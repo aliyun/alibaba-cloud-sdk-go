@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeCnameAutoStatus api with *DescribeCnameAutoStatusRequest synchronously
+// api document: https://help.aliyun.com/api/ddospro/describecnameautostatus.html
 func (client *Client) DescribeCnameAutoStatus(request *DescribeCnameAutoStatusRequest) (response *DescribeCnameAutoStatusResponse, err error) {
 	response = CreateDescribeCnameAutoStatusResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeCnameAutoStatus api with *DescribeCnameAutoStatusRequest asynchronously
+// api document: https://help.aliyun.com/api/ddospro/describecnameautostatus.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCnameAutoStatusWithChan(request *DescribeCnameAutoStatusRequest) (<-chan *DescribeCnameAutoStatusResponse, <-chan error) {
 	responseChan := make(chan *DescribeCnameAutoStatusResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeCnameAutoStatusWithChan(request *DescribeCnameAuto
 	return responseChan, errChan
 }
 
+// invoke DescribeCnameAutoStatus api with *DescribeCnameAutoStatusRequest asynchronously
+// api document: https://help.aliyun.com/api/ddospro/describecnameautostatus.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCnameAutoStatusWithCallback(request *DescribeCnameAutoStatusRequest, callback func(response *DescribeCnameAutoStatusResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +85,7 @@ type DescribeCnameAutoStatusResponse struct {
 	Status    bool   `json:"Status" xml:"Status"`
 }
 
+// create a request to invoke DescribeCnameAutoStatus API
 func CreateDescribeCnameAutoStatusRequest() (request *DescribeCnameAutoStatusRequest) {
 	request = &DescribeCnameAutoStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -85,6 +94,7 @@ func CreateDescribeCnameAutoStatusRequest() (request *DescribeCnameAutoStatusReq
 	return
 }
 
+// create a response to parse from DescribeCnameAutoStatus response
 func CreateDescribeCnameAutoStatusResponse() (response *DescribeCnameAutoStatusResponse) {
 	response = &DescribeCnameAutoStatusResponse{
 		BaseResponse: &responses.BaseResponse{},

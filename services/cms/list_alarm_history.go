@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ListAlarmHistory api with *ListAlarmHistoryRequest synchronously
+// api document: https://help.aliyun.com/api/cms/listalarmhistory.html
 func (client *Client) ListAlarmHistory(request *ListAlarmHistoryRequest) (response *ListAlarmHistoryResponse, err error) {
 	response = CreateListAlarmHistoryResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ListAlarmHistory api with *ListAlarmHistoryRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/listalarmhistory.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAlarmHistoryWithChan(request *ListAlarmHistoryRequest) (<-chan *ListAlarmHistoryResponse, <-chan error) {
 	responseChan := make(chan *ListAlarmHistoryResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ListAlarmHistoryWithChan(request *ListAlarmHistoryRequest)
 	return responseChan, errChan
 }
 
+// invoke ListAlarmHistory api with *ListAlarmHistoryRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/listalarmhistory.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAlarmHistoryWithCallback(request *ListAlarmHistoryRequest, callback func(response *ListAlarmHistoryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -85,6 +93,7 @@ type ListAlarmHistoryResponse struct {
 	AlarmHistoryList AlarmHistoryListInListAlarmHistory `json:"AlarmHistoryList" xml:"AlarmHistoryList"`
 }
 
+// create a request to invoke ListAlarmHistory API
 func CreateListAlarmHistoryRequest() (request *ListAlarmHistoryRequest) {
 	request = &ListAlarmHistoryRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -93,6 +102,7 @@ func CreateListAlarmHistoryRequest() (request *ListAlarmHistoryRequest) {
 	return
 }
 
+// create a response to parse from ListAlarmHistory response
 func CreateListAlarmHistoryResponse() (response *ListAlarmHistoryResponse) {
 	response = &ListAlarmHistoryResponse{
 		BaseResponse: &responses.BaseResponse{},

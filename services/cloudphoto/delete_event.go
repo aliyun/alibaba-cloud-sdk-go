@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeleteEvent api with *DeleteEventRequest synchronously
+// api document: https://help.aliyun.com/api/cloudphoto/deleteevent.html
 func (client *Client) DeleteEvent(request *DeleteEventRequest) (response *DeleteEventResponse, err error) {
 	response = CreateDeleteEventResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeleteEvent api with *DeleteEventRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/deleteevent.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteEventWithChan(request *DeleteEventRequest) (<-chan *DeleteEventResponse, <-chan error) {
 	responseChan := make(chan *DeleteEventResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeleteEventWithChan(request *DeleteEventRequest) (<-chan *
 	return responseChan, errChan
 }
 
+// invoke DeleteEvent api with *DeleteEventRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/deleteevent.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteEventWithCallback(request *DeleteEventRequest, callback func(response *DeleteEventResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type DeleteEventResponse struct {
 	Action    string `json:"Action" xml:"Action"`
 }
 
+// create a request to invoke DeleteEvent API
 func CreateDeleteEventRequest() (request *DeleteEventRequest) {
 	request = &DeleteEventRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateDeleteEventRequest() (request *DeleteEventRequest) {
 	return
 }
 
+// create a response to parse from DeleteEvent response
 func CreateDeleteEventResponse() (response *DeleteEventResponse) {
 	response = &DeleteEventResponse{
 		BaseResponse: &responses.BaseResponse{},

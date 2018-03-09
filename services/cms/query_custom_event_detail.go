@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke QueryCustomEventDetail api with *QueryCustomEventDetailRequest synchronously
+// api document: https://help.aliyun.com/api/cms/querycustomeventdetail.html
 func (client *Client) QueryCustomEventDetail(request *QueryCustomEventDetailRequest) (response *QueryCustomEventDetailResponse, err error) {
 	response = CreateQueryCustomEventDetailResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke QueryCustomEventDetail api with *QueryCustomEventDetailRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/querycustomeventdetail.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryCustomEventDetailWithChan(request *QueryCustomEventDetailRequest) (<-chan *QueryCustomEventDetailResponse, <-chan error) {
 	responseChan := make(chan *QueryCustomEventDetailResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) QueryCustomEventDetailWithChan(request *QueryCustomEventDe
 	return responseChan, errChan
 }
 
+// invoke QueryCustomEventDetail api with *QueryCustomEventDetailRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/querycustomeventdetail.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryCustomEventDetailWithCallback(request *QueryCustomEventDetailRequest, callback func(response *QueryCustomEventDetailResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +85,7 @@ type QueryCustomEventDetailResponse struct {
 	Data    string `json:"Data" xml:"Data"`
 }
 
+// create a request to invoke QueryCustomEventDetail API
 func CreateQueryCustomEventDetailRequest() (request *QueryCustomEventDetailRequest) {
 	request = &QueryCustomEventDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -85,6 +94,7 @@ func CreateQueryCustomEventDetailRequest() (request *QueryCustomEventDetailReque
 	return
 }
 
+// create a response to parse from QueryCustomEventDetail response
 func CreateQueryCustomEventDetailResponse() (response *QueryCustomEventDetailResponse) {
 	response = &QueryCustomEventDetailResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke QueryPipelineList api with *QueryPipelineListRequest synchronously
+// api document: https://help.aliyun.com/api/mts/querypipelinelist.html
 func (client *Client) QueryPipelineList(request *QueryPipelineListRequest) (response *QueryPipelineListResponse, err error) {
 	response = CreateQueryPipelineListResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke QueryPipelineList api with *QueryPipelineListRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/querypipelinelist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryPipelineListWithChan(request *QueryPipelineListRequest) (<-chan *QueryPipelineListResponse, <-chan error) {
 	responseChan := make(chan *QueryPipelineListResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) QueryPipelineListWithChan(request *QueryPipelineListReques
 	return responseChan, errChan
 }
 
+// invoke QueryPipelineList api with *QueryPipelineListRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/querypipelinelist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryPipelineListWithCallback(request *QueryPipelineListRequest, callback func(response *QueryPipelineListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type QueryPipelineListResponse struct {
 	PipelineList PipelineListInQueryPipelineList `json:"PipelineList" xml:"PipelineList"`
 }
 
+// create a request to invoke QueryPipelineList API
 func CreateQueryPipelineListRequest() (request *QueryPipelineListRequest) {
 	request = &QueryPipelineListRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateQueryPipelineListRequest() (request *QueryPipelineListRequest) {
 	return
 }
 
+// create a response to parse from QueryPipelineList response
 func CreateQueryPipelineListResponse() (response *QueryPipelineListResponse) {
 	response = &QueryPipelineListResponse{
 		BaseResponse: &responses.BaseResponse{},

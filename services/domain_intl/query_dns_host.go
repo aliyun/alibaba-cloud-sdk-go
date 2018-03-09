@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke QueryDnsHost api with *QueryDnsHostRequest synchronously
+// api document: https://help.aliyun.com/api/domain-intl/querydnshost.html
 func (client *Client) QueryDnsHost(request *QueryDnsHostRequest) (response *QueryDnsHostResponse, err error) {
 	response = CreateQueryDnsHostResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke QueryDnsHost api with *QueryDnsHostRequest asynchronously
+// api document: https://help.aliyun.com/api/domain-intl/querydnshost.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryDnsHostWithChan(request *QueryDnsHostRequest) (<-chan *QueryDnsHostResponse, <-chan error) {
 	responseChan := make(chan *QueryDnsHostResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) QueryDnsHostWithChan(request *QueryDnsHostRequest) (<-chan
 	return responseChan, errChan
 }
 
+// invoke QueryDnsHost api with *QueryDnsHostRequest asynchronously
+// api document: https://help.aliyun.com/api/domain-intl/querydnshost.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryDnsHostWithCallback(request *QueryDnsHostRequest, callback func(response *QueryDnsHostResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +85,7 @@ type QueryDnsHostResponse struct {
 	DnsHostList []DnsHost `json:"DnsHostList" xml:"DnsHostList"`
 }
 
+// create a request to invoke QueryDnsHost API
 func CreateQueryDnsHostRequest() (request *QueryDnsHostRequest) {
 	request = &QueryDnsHostRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -85,6 +94,7 @@ func CreateQueryDnsHostRequest() (request *QueryDnsHostRequest) {
 	return
 }
 
+// create a response to parse from QueryDnsHost response
 func CreateQueryDnsHostResponse() (response *QueryDnsHostResponse) {
 	response = &QueryDnsHostResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke AddAsrPipeline api with *AddAsrPipelineRequest synchronously
+// api document: https://help.aliyun.com/api/mts/addasrpipeline.html
 func (client *Client) AddAsrPipeline(request *AddAsrPipelineRequest) (response *AddAsrPipelineResponse, err error) {
 	response = CreateAddAsrPipelineResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke AddAsrPipeline api with *AddAsrPipelineRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/addasrpipeline.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddAsrPipelineWithChan(request *AddAsrPipelineRequest) (<-chan *AddAsrPipelineResponse, <-chan error) {
 	responseChan := make(chan *AddAsrPipelineResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) AddAsrPipelineWithChan(request *AddAsrPipelineRequest) (<-
 	return responseChan, errChan
 }
 
+// invoke AddAsrPipeline api with *AddAsrPipelineRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/addasrpipeline.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddAsrPipelineWithCallback(request *AddAsrPipelineRequest, callback func(response *AddAsrPipelineResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type AddAsrPipelineResponse struct {
 	Pipeline  Pipeline `json:"Pipeline" xml:"Pipeline"`
 }
 
+// create a request to invoke AddAsrPipeline API
 func CreateAddAsrPipelineRequest() (request *AddAsrPipelineRequest) {
 	request = &AddAsrPipelineRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateAddAsrPipelineRequest() (request *AddAsrPipelineRequest) {
 	return
 }
 
+// create a response to parse from AddAsrPipeline response
 func CreateAddAsrPipelineResponse() (response *AddAsrPipelineResponse) {
 	response = &AddAsrPipelineResponse{
 		BaseResponse: &responses.BaseResponse{},

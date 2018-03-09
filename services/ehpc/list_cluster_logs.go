@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ListClusterLogs api with *ListClusterLogsRequest synchronously
+// api document: https://help.aliyun.com/api/ehpc/listclusterlogs.html
 func (client *Client) ListClusterLogs(request *ListClusterLogsRequest) (response *ListClusterLogsResponse, err error) {
 	response = CreateListClusterLogsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ListClusterLogs api with *ListClusterLogsRequest asynchronously
+// api document: https://help.aliyun.com/api/ehpc/listclusterlogs.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListClusterLogsWithChan(request *ListClusterLogsRequest) (<-chan *ListClusterLogsResponse, <-chan error) {
 	responseChan := make(chan *ListClusterLogsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ListClusterLogsWithChan(request *ListClusterLogsRequest) (
 	return responseChan, errChan
 }
 
+// invoke ListClusterLogs api with *ListClusterLogsRequest asynchronously
+// api document: https://help.aliyun.com/api/ehpc/listclusterlogs.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListClusterLogsWithCallback(request *ListClusterLogsRequest, callback func(response *ListClusterLogsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type ListClusterLogsResponse struct {
 	Logs       Logs   `json:"Logs" xml:"Logs"`
 }
 
+// create a request to invoke ListClusterLogs API
 func CreateListClusterLogsRequest() (request *ListClusterLogsRequest) {
 	request = &ListClusterLogsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateListClusterLogsRequest() (request *ListClusterLogsRequest) {
 	return
 }
 
+// create a response to parse from ListClusterLogs response
 func CreateListClusterLogsResponse() (response *ListClusterLogsResponse) {
 	response = &ListClusterLogsResponse{
 		BaseResponse: &responses.BaseResponse{},

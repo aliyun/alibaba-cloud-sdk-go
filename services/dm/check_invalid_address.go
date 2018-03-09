@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CheckInvalidAddress api with *CheckInvalidAddressRequest synchronously
+// api document: https://help.aliyun.com/api/dm/checkinvalidaddress.html
 func (client *Client) CheckInvalidAddress(request *CheckInvalidAddressRequest) (response *CheckInvalidAddressResponse, err error) {
 	response = CreateCheckInvalidAddressResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CheckInvalidAddress api with *CheckInvalidAddressRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/checkinvalidaddress.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckInvalidAddressWithChan(request *CheckInvalidAddressRequest) (<-chan *CheckInvalidAddressResponse, <-chan error) {
 	responseChan := make(chan *CheckInvalidAddressResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CheckInvalidAddressWithChan(request *CheckInvalidAddressRe
 	return responseChan, errChan
 }
 
+// invoke CheckInvalidAddress api with *CheckInvalidAddressRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/checkinvalidaddress.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckInvalidAddressWithCallback(request *CheckInvalidAddressRequest, callback func(response *CheckInvalidAddressResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type CheckInvalidAddressResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke CheckInvalidAddress API
 func CreateCheckInvalidAddressRequest() (request *CheckInvalidAddressRequest) {
 	request = &CheckInvalidAddressRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateCheckInvalidAddressRequest() (request *CheckInvalidAddressRequest) {
 	return
 }
 
+// create a response to parse from CheckInvalidAddress response
 func CreateCheckInvalidAddressResponse() (response *CheckInvalidAddressResponse) {
 	response = &CheckInvalidAddressResponse{
 		BaseResponse: &responses.BaseResponse{},

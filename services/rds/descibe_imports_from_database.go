@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescibeImportsFromDatabase api with *DescibeImportsFromDatabaseRequest synchronously
+// api document: https://help.aliyun.com/api/rds/descibeimportsfromdatabase.html
 func (client *Client) DescibeImportsFromDatabase(request *DescibeImportsFromDatabaseRequest) (response *DescibeImportsFromDatabaseResponse, err error) {
 	response = CreateDescibeImportsFromDatabaseResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescibeImportsFromDatabase api with *DescibeImportsFromDatabaseRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/descibeimportsfromdatabase.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescibeImportsFromDatabaseWithChan(request *DescibeImportsFromDatabaseRequest) (<-chan *DescibeImportsFromDatabaseResponse, <-chan error) {
 	responseChan := make(chan *DescibeImportsFromDatabaseResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescibeImportsFromDatabaseWithChan(request *DescibeImports
 	return responseChan, errChan
 }
 
+// invoke DescibeImportsFromDatabase api with *DescibeImportsFromDatabaseRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/descibeimportsfromdatabase.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescibeImportsFromDatabaseWithCallback(request *DescibeImportsFromDatabaseRequest, callback func(response *DescibeImportsFromDatabaseResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -90,6 +98,7 @@ type DescibeImportsFromDatabaseResponse struct {
 	Items            ItemsInDescibeImportsFromDatabase `json:"Items" xml:"Items"`
 }
 
+// create a request to invoke DescibeImportsFromDatabase API
 func CreateDescibeImportsFromDatabaseRequest() (request *DescibeImportsFromDatabaseRequest) {
 	request = &DescibeImportsFromDatabaseRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -98,6 +107,7 @@ func CreateDescibeImportsFromDatabaseRequest() (request *DescibeImportsFromDatab
 	return
 }
 
+// create a response to parse from DescibeImportsFromDatabase response
 func CreateDescibeImportsFromDatabaseResponse() (response *DescibeImportsFromDatabaseResponse) {
 	response = &DescibeImportsFromDatabaseResponse{
 		BaseResponse: &responses.BaseResponse{},

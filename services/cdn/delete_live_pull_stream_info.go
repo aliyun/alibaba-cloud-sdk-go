@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeleteLivePullStreamInfo api with *DeleteLivePullStreamInfoRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/deletelivepullstreaminfo.html
 func (client *Client) DeleteLivePullStreamInfo(request *DeleteLivePullStreamInfoRequest) (response *DeleteLivePullStreamInfoResponse, err error) {
 	response = CreateDeleteLivePullStreamInfoResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeleteLivePullStreamInfo api with *DeleteLivePullStreamInfoRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/deletelivepullstreaminfo.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteLivePullStreamInfoWithChan(request *DeleteLivePullStreamInfoRequest) (<-chan *DeleteLivePullStreamInfoResponse, <-chan error) {
 	responseChan := make(chan *DeleteLivePullStreamInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeleteLivePullStreamInfoWithChan(request *DeleteLivePullSt
 	return responseChan, errChan
 }
 
+// invoke DeleteLivePullStreamInfo api with *DeleteLivePullStreamInfoRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/deletelivepullstreaminfo.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteLivePullStreamInfoWithCallback(request *DeleteLivePullStreamInfoRequest, callback func(response *DeleteLivePullStreamInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +87,7 @@ type DeleteLivePullStreamInfoResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke DeleteLivePullStreamInfo API
 func CreateDeleteLivePullStreamInfoRequest() (request *DeleteLivePullStreamInfoRequest) {
 	request = &DeleteLivePullStreamInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -87,6 +96,7 @@ func CreateDeleteLivePullStreamInfoRequest() (request *DeleteLivePullStreamInfoR
 	return
 }
 
+// create a response to parse from DeleteLivePullStreamInfo response
 func CreateDeleteLivePullStreamInfoResponse() (response *DeleteLivePullStreamInfoResponse) {
 	response = &DeleteLivePullStreamInfoResponse{
 		BaseResponse: &responses.BaseResponse{},

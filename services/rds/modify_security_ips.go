@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifySecurityIps api with *ModifySecurityIpsRequest synchronously
+// api document: https://help.aliyun.com/api/rds/modifysecurityips.html
 func (client *Client) ModifySecurityIps(request *ModifySecurityIpsRequest) (response *ModifySecurityIpsResponse, err error) {
 	response = CreateModifySecurityIpsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifySecurityIps api with *ModifySecurityIpsRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/modifysecurityips.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySecurityIpsWithChan(request *ModifySecurityIpsRequest) (<-chan *ModifySecurityIpsResponse, <-chan error) {
 	responseChan := make(chan *ModifySecurityIpsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifySecurityIpsWithChan(request *ModifySecurityIpsReques
 	return responseChan, errChan
 }
 
+// invoke ModifySecurityIps api with *ModifySecurityIpsRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/modifysecurityips.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySecurityIpsWithCallback(request *ModifySecurityIpsRequest, callback func(response *ModifySecurityIpsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -87,6 +95,7 @@ type ModifySecurityIpsResponse struct {
 	TaskId    string `json:"TaskId" xml:"TaskId"`
 }
 
+// create a request to invoke ModifySecurityIps API
 func CreateModifySecurityIpsRequest() (request *ModifySecurityIpsRequest) {
 	request = &ModifySecurityIpsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -95,6 +104,7 @@ func CreateModifySecurityIpsRequest() (request *ModifySecurityIpsRequest) {
 	return
 }
 
+// create a response to parse from ModifySecurityIps response
 func CreateModifySecurityIpsResponse() (response *ModifySecurityIpsResponse) {
 	response = &ModifySecurityIpsResponse{
 		BaseResponse: &responses.BaseResponse{},

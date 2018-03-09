@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeTagKeys api with *DescribeTagKeysRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/describetagkeys.html
 func (client *Client) DescribeTagKeys(request *DescribeTagKeysRequest) (response *DescribeTagKeysResponse, err error) {
 	response = CreateDescribeTagKeysResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeTagKeys api with *DescribeTagKeysRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describetagkeys.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeTagKeysWithChan(request *DescribeTagKeysRequest) (<-chan *DescribeTagKeysResponse, <-chan error) {
 	responseChan := make(chan *DescribeTagKeysResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeTagKeysWithChan(request *DescribeTagKeysRequest) (
 	return responseChan, errChan
 }
 
+// invoke DescribeTagKeys api with *DescribeTagKeysRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describetagkeys.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeTagKeysWithCallback(request *DescribeTagKeysRequest, callback func(response *DescribeTagKeysResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -85,6 +93,7 @@ type DescribeTagKeysResponse struct {
 	TagKeys    TagKeys `json:"TagKeys" xml:"TagKeys"`
 }
 
+// create a request to invoke DescribeTagKeys API
 func CreateDescribeTagKeysRequest() (request *DescribeTagKeysRequest) {
 	request = &DescribeTagKeysRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -93,6 +102,7 @@ func CreateDescribeTagKeysRequest() (request *DescribeTagKeysRequest) {
 	return
 }
 
+// create a response to parse from DescribeTagKeys response
 func CreateDescribeTagKeysResponse() (response *DescribeTagKeysResponse) {
 	response = &DescribeTagKeysResponse{
 		BaseResponse: &responses.BaseResponse{},

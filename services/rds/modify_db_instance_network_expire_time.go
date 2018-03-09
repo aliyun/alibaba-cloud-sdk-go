@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifyDBInstanceNetworkExpireTime api with *ModifyDBInstanceNetworkExpireTimeRequest synchronously
+// api document: https://help.aliyun.com/api/rds/modifydbinstancenetworkexpiretime.html
 func (client *Client) ModifyDBInstanceNetworkExpireTime(request *ModifyDBInstanceNetworkExpireTimeRequest) (response *ModifyDBInstanceNetworkExpireTimeResponse, err error) {
 	response = CreateModifyDBInstanceNetworkExpireTimeResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifyDBInstanceNetworkExpireTime api with *ModifyDBInstanceNetworkExpireTimeRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/modifydbinstancenetworkexpiretime.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDBInstanceNetworkExpireTimeWithChan(request *ModifyDBInstanceNetworkExpireTimeRequest) (<-chan *ModifyDBInstanceNetworkExpireTimeResponse, <-chan error) {
 	responseChan := make(chan *ModifyDBInstanceNetworkExpireTimeResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifyDBInstanceNetworkExpireTimeWithChan(request *ModifyD
 	return responseChan, errChan
 }
 
+// invoke ModifyDBInstanceNetworkExpireTime api with *ModifyDBInstanceNetworkExpireTimeRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/modifydbinstancenetworkexpiretime.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDBInstanceNetworkExpireTimeWithCallback(request *ModifyDBInstanceNetworkExpireTimeRequest, callback func(response *ModifyDBInstanceNetworkExpireTimeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type ModifyDBInstanceNetworkExpireTimeResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ModifyDBInstanceNetworkExpireTime API
 func CreateModifyDBInstanceNetworkExpireTimeRequest() (request *ModifyDBInstanceNetworkExpireTimeRequest) {
 	request = &ModifyDBInstanceNetworkExpireTimeRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateModifyDBInstanceNetworkExpireTimeRequest() (request *ModifyDBInstance
 	return
 }
 
+// create a response to parse from ModifyDBInstanceNetworkExpireTime response
 func CreateModifyDBInstanceNetworkExpireTimeResponse() (response *ModifyDBInstanceNetworkExpireTimeResponse) {
 	response = &ModifyDBInstanceNetworkExpireTimeResponse{
 		BaseResponse: &responses.BaseResponse{},

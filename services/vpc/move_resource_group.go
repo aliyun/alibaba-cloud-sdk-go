@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke MoveResourceGroup api with *MoveResourceGroupRequest synchronously
+// api document: https://help.aliyun.com/api/vpc/moveresourcegroup.html
 func (client *Client) MoveResourceGroup(request *MoveResourceGroupRequest) (response *MoveResourceGroupResponse, err error) {
 	response = CreateMoveResourceGroupResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke MoveResourceGroup api with *MoveResourceGroupRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/moveresourcegroup.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) MoveResourceGroupWithChan(request *MoveResourceGroupRequest) (<-chan *MoveResourceGroupResponse, <-chan error) {
 	responseChan := make(chan *MoveResourceGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) MoveResourceGroupWithChan(request *MoveResourceGroupReques
 	return responseChan, errChan
 }
 
+// invoke MoveResourceGroup api with *MoveResourceGroupRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/moveresourcegroup.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) MoveResourceGroupWithCallback(request *MoveResourceGroupRequest, callback func(response *MoveResourceGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type MoveResourceGroupResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke MoveResourceGroup API
 func CreateMoveResourceGroupRequest() (request *MoveResourceGroupRequest) {
 	request = &MoveResourceGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateMoveResourceGroupRequest() (request *MoveResourceGroupRequest) {
 	return
 }
 
+// create a response to parse from MoveResourceGroup response
 func CreateMoveResourceGroupResponse() (response *MoveResourceGroupResponse) {
 	response = &MoveResourceGroupResponse{
 		BaseResponse: &responses.BaseResponse{},

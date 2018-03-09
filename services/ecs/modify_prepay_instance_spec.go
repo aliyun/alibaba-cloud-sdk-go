@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifyPrepayInstanceSpec api with *ModifyPrepayInstanceSpecRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/modifyprepayinstancespec.html
 func (client *Client) ModifyPrepayInstanceSpec(request *ModifyPrepayInstanceSpecRequest) (response *ModifyPrepayInstanceSpecResponse, err error) {
 	response = CreateModifyPrepayInstanceSpecResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifyPrepayInstanceSpec api with *ModifyPrepayInstanceSpecRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/modifyprepayinstancespec.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyPrepayInstanceSpecWithChan(request *ModifyPrepayInstanceSpecRequest) (<-chan *ModifyPrepayInstanceSpecResponse, <-chan error) {
 	responseChan := make(chan *ModifyPrepayInstanceSpecResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifyPrepayInstanceSpecWithChan(request *ModifyPrepayInst
 	return responseChan, errChan
 }
 
+// invoke ModifyPrepayInstanceSpec api with *ModifyPrepayInstanceSpecRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/modifyprepayinstancespec.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyPrepayInstanceSpecWithCallback(request *ModifyPrepayInstanceSpecRequest, callback func(response *ModifyPrepayInstanceSpecResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,6 +92,7 @@ type ModifyPrepayInstanceSpecResponse struct {
 	OrderId   string `json:"OrderId" xml:"OrderId"`
 }
 
+// create a request to invoke ModifyPrepayInstanceSpec API
 func CreateModifyPrepayInstanceSpecRequest() (request *ModifyPrepayInstanceSpecRequest) {
 	request = &ModifyPrepayInstanceSpecRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -92,6 +101,7 @@ func CreateModifyPrepayInstanceSpecRequest() (request *ModifyPrepayInstanceSpecR
 	return
 }
 
+// create a response to parse from ModifyPrepayInstanceSpec response
 func CreateModifyPrepayInstanceSpecResponse() (response *ModifyPrepayInstanceSpecResponse) {
 	response = &ModifyPrepayInstanceSpecResponse{
 		BaseResponse: &responses.BaseResponse{},

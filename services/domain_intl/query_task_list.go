@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke QueryTaskList api with *QueryTaskListRequest synchronously
+// api document: https://help.aliyun.com/api/domain-intl/querytasklist.html
 func (client *Client) QueryTaskList(request *QueryTaskListRequest) (response *QueryTaskListResponse, err error) {
 	response = CreateQueryTaskListResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke QueryTaskList api with *QueryTaskListRequest asynchronously
+// api document: https://help.aliyun.com/api/domain-intl/querytasklist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryTaskListWithChan(request *QueryTaskListRequest) (<-chan *QueryTaskListResponse, <-chan error) {
 	responseChan := make(chan *QueryTaskListResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) QueryTaskListWithChan(request *QueryTaskListRequest) (<-ch
 	return responseChan, errChan
 }
 
+// invoke QueryTaskList api with *QueryTaskListRequest asynchronously
+// api document: https://help.aliyun.com/api/domain-intl/querytasklist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryTaskListWithCallback(request *QueryTaskListRequest, callback func(response *QueryTaskListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -87,6 +95,7 @@ type QueryTaskListResponse struct {
 	Data           DataInQueryTaskList `json:"Data" xml:"Data"`
 }
 
+// create a request to invoke QueryTaskList API
 func CreateQueryTaskListRequest() (request *QueryTaskListRequest) {
 	request = &QueryTaskListRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -95,6 +104,7 @@ func CreateQueryTaskListRequest() (request *QueryTaskListRequest) {
 	return
 }
 
+// create a response to parse from QueryTaskList response
 func CreateQueryTaskListResponse() (response *QueryTaskListResponse) {
 	response = &QueryTaskListResponse{
 		BaseResponse: &responses.BaseResponse{},

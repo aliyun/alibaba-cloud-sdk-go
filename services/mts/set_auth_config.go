@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SetAuthConfig api with *SetAuthConfigRequest synchronously
+// api document: https://help.aliyun.com/api/mts/setauthconfig.html
 func (client *Client) SetAuthConfig(request *SetAuthConfigRequest) (response *SetAuthConfigResponse, err error) {
 	response = CreateSetAuthConfigResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SetAuthConfig api with *SetAuthConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/setauthconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetAuthConfigWithChan(request *SetAuthConfigRequest) (<-chan *SetAuthConfigResponse, <-chan error) {
 	responseChan := make(chan *SetAuthConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SetAuthConfigWithChan(request *SetAuthConfigRequest) (<-ch
 	return responseChan, errChan
 }
 
+// invoke SetAuthConfig api with *SetAuthConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/setauthconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetAuthConfigWithCallback(request *SetAuthConfigRequest, callback func(response *SetAuthConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type SetAuthConfigResponse struct {
 	Key2      string `json:"Key2" xml:"Key2"`
 }
 
+// create a request to invoke SetAuthConfig API
 func CreateSetAuthConfigRequest() (request *SetAuthConfigRequest) {
 	request = &SetAuthConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateSetAuthConfigRequest() (request *SetAuthConfigRequest) {
 	return
 }
 
+// create a response to parse from SetAuthConfig response
 func CreateSetAuthConfigResponse() (response *SetAuthConfigResponse) {
 	response = &SetAuthConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

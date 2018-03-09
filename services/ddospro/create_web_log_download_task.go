@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CreateWebLogDownloadTask api with *CreateWebLogDownloadTaskRequest synchronously
+// api document: https://help.aliyun.com/api/ddospro/createweblogdownloadtask.html
 func (client *Client) CreateWebLogDownloadTask(request *CreateWebLogDownloadTaskRequest) (response *CreateWebLogDownloadTaskResponse, err error) {
 	response = CreateCreateWebLogDownloadTaskResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CreateWebLogDownloadTask api with *CreateWebLogDownloadTaskRequest asynchronously
+// api document: https://help.aliyun.com/api/ddospro/createweblogdownloadtask.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateWebLogDownloadTaskWithChan(request *CreateWebLogDownloadTaskRequest) (<-chan *CreateWebLogDownloadTaskResponse, <-chan error) {
 	responseChan := make(chan *CreateWebLogDownloadTaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CreateWebLogDownloadTaskWithChan(request *CreateWebLogDown
 	return responseChan, errChan
 }
 
+// invoke CreateWebLogDownloadTask api with *CreateWebLogDownloadTaskRequest asynchronously
+// api document: https://help.aliyun.com/api/ddospro/createweblogdownloadtask.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateWebLogDownloadTaskWithCallback(request *CreateWebLogDownloadTaskRequest, callback func(response *CreateWebLogDownloadTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type CreateWebLogDownloadTaskResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke CreateWebLogDownloadTask API
 func CreateCreateWebLogDownloadTaskRequest() (request *CreateWebLogDownloadTaskRequest) {
 	request = &CreateWebLogDownloadTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateCreateWebLogDownloadTaskRequest() (request *CreateWebLogDownloadTaskR
 	return
 }
 
+// create a response to parse from CreateWebLogDownloadTask response
 func CreateCreateWebLogDownloadTaskResponse() (response *CreateWebLogDownloadTaskResponse) {
 	response = &CreateWebLogDownloadTaskResponse{
 		BaseResponse: &responses.BaseResponse{},

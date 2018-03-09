@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke RevokeSecurityGroup api with *RevokeSecurityGroupRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/revokesecuritygroup.html
 func (client *Client) RevokeSecurityGroup(request *RevokeSecurityGroupRequest) (response *RevokeSecurityGroupResponse, err error) {
 	response = CreateRevokeSecurityGroupResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke RevokeSecurityGroup api with *RevokeSecurityGroupRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/revokesecuritygroup.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RevokeSecurityGroupWithChan(request *RevokeSecurityGroupRequest) (<-chan *RevokeSecurityGroupResponse, <-chan error) {
 	responseChan := make(chan *RevokeSecurityGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) RevokeSecurityGroupWithChan(request *RevokeSecurityGroupRe
 	return responseChan, errChan
 }
 
+// invoke RevokeSecurityGroup api with *RevokeSecurityGroupRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/revokesecuritygroup.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RevokeSecurityGroupWithCallback(request *RevokeSecurityGroupRequest, callback func(response *RevokeSecurityGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -74,6 +82,7 @@ type RevokeSecurityGroupResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke RevokeSecurityGroup API
 func CreateRevokeSecurityGroupRequest() (request *RevokeSecurityGroupRequest) {
 	request = &RevokeSecurityGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -82,6 +91,7 @@ func CreateRevokeSecurityGroupRequest() (request *RevokeSecurityGroupRequest) {
 	return
 }
 
+// create a response to parse from RevokeSecurityGroup response
 func CreateRevokeSecurityGroupResponse() (response *RevokeSecurityGroupResponse) {
 	response = &RevokeSecurityGroupResponse{
 		BaseResponse: &responses.BaseResponse{},

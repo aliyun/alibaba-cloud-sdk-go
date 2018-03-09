@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeleteGlobalAccelerationInstance api with *DeleteGlobalAccelerationInstanceRequest synchronously
+// api document: https://help.aliyun.com/api/vpc/deleteglobalaccelerationinstance.html
 func (client *Client) DeleteGlobalAccelerationInstance(request *DeleteGlobalAccelerationInstanceRequest) (response *DeleteGlobalAccelerationInstanceResponse, err error) {
 	response = CreateDeleteGlobalAccelerationInstanceResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeleteGlobalAccelerationInstance api with *DeleteGlobalAccelerationInstanceRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/deleteglobalaccelerationinstance.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteGlobalAccelerationInstanceWithChan(request *DeleteGlobalAccelerationInstanceRequest) (<-chan *DeleteGlobalAccelerationInstanceResponse, <-chan error) {
 	responseChan := make(chan *DeleteGlobalAccelerationInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeleteGlobalAccelerationInstanceWithChan(request *DeleteGl
 	return responseChan, errChan
 }
 
+// invoke DeleteGlobalAccelerationInstance api with *DeleteGlobalAccelerationInstanceRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/deleteglobalaccelerationinstance.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteGlobalAccelerationInstanceWithCallback(request *DeleteGlobalAccelerationInstanceRequest, callback func(response *DeleteGlobalAccelerationInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +87,7 @@ type DeleteGlobalAccelerationInstanceResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke DeleteGlobalAccelerationInstance API
 func CreateDeleteGlobalAccelerationInstanceRequest() (request *DeleteGlobalAccelerationInstanceRequest) {
 	request = &DeleteGlobalAccelerationInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -87,6 +96,7 @@ func CreateDeleteGlobalAccelerationInstanceRequest() (request *DeleteGlobalAccel
 	return
 }
 
+// create a response to parse from DeleteGlobalAccelerationInstance response
 func CreateDeleteGlobalAccelerationInstanceResponse() (response *DeleteGlobalAccelerationInstanceResponse) {
 	response = &DeleteGlobalAccelerationInstanceResponse{
 		BaseResponse: &responses.BaseResponse{},

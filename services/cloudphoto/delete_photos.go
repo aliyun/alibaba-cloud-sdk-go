@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeletePhotos api with *DeletePhotosRequest synchronously
+// api document: https://help.aliyun.com/api/cloudphoto/deletephotos.html
 func (client *Client) DeletePhotos(request *DeletePhotosRequest) (response *DeletePhotosResponse, err error) {
 	response = CreateDeletePhotosResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeletePhotos api with *DeletePhotosRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/deletephotos.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeletePhotosWithChan(request *DeletePhotosRequest) (<-chan *DeletePhotosResponse, <-chan error) {
 	responseChan := make(chan *DeletePhotosResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeletePhotosWithChan(request *DeletePhotosRequest) (<-chan
 	return responseChan, errChan
 }
 
+// invoke DeletePhotos api with *DeletePhotosRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/deletephotos.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeletePhotosWithCallback(request *DeletePhotosRequest, callback func(response *DeletePhotosResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type DeletePhotosResponse struct {
 	Results   []Result `json:"Results" xml:"Results"`
 }
 
+// create a request to invoke DeletePhotos API
 func CreateDeletePhotosRequest() (request *DeletePhotosRequest) {
 	request = &DeletePhotosRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateDeletePhotosRequest() (request *DeletePhotosRequest) {
 	return
 }
 
+// create a response to parse from DeletePhotos response
 func CreateDeletePhotosResponse() (response *DeletePhotosResponse) {
 	response = &DeletePhotosResponse{
 		BaseResponse: &responses.BaseResponse{},

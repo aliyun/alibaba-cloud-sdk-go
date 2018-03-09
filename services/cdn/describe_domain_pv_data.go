@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeDomainPvData api with *DescribeDomainPvDataRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/describedomainpvdata.html
 func (client *Client) DescribeDomainPvData(request *DescribeDomainPvDataRequest) (response *DescribeDomainPvDataResponse, err error) {
 	response = CreateDescribeDomainPvDataResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeDomainPvData api with *DescribeDomainPvDataRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describedomainpvdata.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainPvDataWithChan(request *DescribeDomainPvDataRequest) (<-chan *DescribeDomainPvDataResponse, <-chan error) {
 	responseChan := make(chan *DescribeDomainPvDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeDomainPvDataWithChan(request *DescribeDomainPvData
 	return responseChan, errChan
 }
 
+// invoke DescribeDomainPvData api with *DescribeDomainPvDataRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describedomainpvdata.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainPvDataWithCallback(request *DescribeDomainPvDataRequest, callback func(response *DescribeDomainPvDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,6 +92,7 @@ type DescribeDomainPvDataResponse struct {
 	PvDataInterval PvDataInterval `json:"PvDataInterval" xml:"PvDataInterval"`
 }
 
+// create a request to invoke DescribeDomainPvData API
 func CreateDescribeDomainPvDataRequest() (request *DescribeDomainPvDataRequest) {
 	request = &DescribeDomainPvDataRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -92,6 +101,7 @@ func CreateDescribeDomainPvDataRequest() (request *DescribeDomainPvDataRequest) 
 	return
 }
 
+// create a response to parse from DescribeDomainPvData response
 func CreateDescribeDomainPvDataResponse() (response *DescribeDomainPvDataResponse) {
 	response = &DescribeDomainPvDataResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeVirtualBorderRouters api with *DescribeVirtualBorderRoutersRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/describevirtualborderrouters.html
 func (client *Client) DescribeVirtualBorderRouters(request *DescribeVirtualBorderRoutersRequest) (response *DescribeVirtualBorderRoutersResponse, err error) {
 	response = CreateDescribeVirtualBorderRoutersResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeVirtualBorderRouters api with *DescribeVirtualBorderRoutersRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describevirtualborderrouters.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeVirtualBorderRoutersWithChan(request *DescribeVirtualBorderRoutersRequest) (<-chan *DescribeVirtualBorderRoutersResponse, <-chan error) {
 	responseChan := make(chan *DescribeVirtualBorderRoutersResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeVirtualBorderRoutersWithChan(request *DescribeVirt
 	return responseChan, errChan
 }
 
+// invoke DescribeVirtualBorderRouters api with *DescribeVirtualBorderRoutersRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describevirtualborderrouters.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeVirtualBorderRoutersWithCallback(request *DescribeVirtualBorderRoutersRequest, callback func(response *DescribeVirtualBorderRoutersResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -89,6 +97,7 @@ type DescribeVirtualBorderRoutersResponse struct {
 	VirtualBorderRouterSet VirtualBorderRouterSet `json:"VirtualBorderRouterSet" xml:"VirtualBorderRouterSet"`
 }
 
+// create a request to invoke DescribeVirtualBorderRouters API
 func CreateDescribeVirtualBorderRoutersRequest() (request *DescribeVirtualBorderRoutersRequest) {
 	request = &DescribeVirtualBorderRoutersRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -97,6 +106,7 @@ func CreateDescribeVirtualBorderRoutersRequest() (request *DescribeVirtualBorder
 	return
 }
 
+// create a response to parse from DescribeVirtualBorderRouters response
 func CreateDescribeVirtualBorderRoutersResponse() (response *DescribeVirtualBorderRoutersResponse) {
 	response = &DescribeVirtualBorderRoutersResponse{
 		BaseResponse: &responses.BaseResponse{},

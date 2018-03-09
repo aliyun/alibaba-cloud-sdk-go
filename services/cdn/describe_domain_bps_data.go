@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeDomainBpsData api with *DescribeDomainBpsDataRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/describedomainbpsdata.html
 func (client *Client) DescribeDomainBpsData(request *DescribeDomainBpsDataRequest) (response *DescribeDomainBpsDataResponse, err error) {
 	response = CreateDescribeDomainBpsDataResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeDomainBpsData api with *DescribeDomainBpsDataRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describedomainbpsdata.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainBpsDataWithChan(request *DescribeDomainBpsDataRequest) (<-chan *DescribeDomainBpsDataResponse, <-chan error) {
 	responseChan := make(chan *DescribeDomainBpsDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeDomainBpsDataWithChan(request *DescribeDomainBpsDa
 	return responseChan, errChan
 }
 
+// invoke DescribeDomainBpsData api with *DescribeDomainBpsDataRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describedomainbpsdata.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainBpsDataWithCallback(request *DescribeDomainBpsDataRequest, callback func(response *DescribeDomainBpsDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -95,6 +103,7 @@ type DescribeDomainBpsDataResponse struct {
 	SupplyBpsDatas     SupplyBpsDatas     `json:"SupplyBpsDatas" xml:"SupplyBpsDatas"`
 }
 
+// create a request to invoke DescribeDomainBpsData API
 func CreateDescribeDomainBpsDataRequest() (request *DescribeDomainBpsDataRequest) {
 	request = &DescribeDomainBpsDataRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -103,6 +112,7 @@ func CreateDescribeDomainBpsDataRequest() (request *DescribeDomainBpsDataRequest
 	return
 }
 
+// create a response to parse from DescribeDomainBpsData response
 func CreateDescribeDomainBpsDataResponse() (response *DescribeDomainBpsDataResponse) {
 	response = &DescribeDomainBpsDataResponse{
 		BaseResponse: &responses.BaseResponse{},

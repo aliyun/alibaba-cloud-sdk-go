@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeDatabases api with *DescribeDatabasesRequest synchronously
+// api document: https://help.aliyun.com/api/rds/describedatabases.html
 func (client *Client) DescribeDatabases(request *DescribeDatabasesRequest) (response *DescribeDatabasesResponse, err error) {
 	response = CreateDescribeDatabasesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeDatabases api with *DescribeDatabasesRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describedatabases.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDatabasesWithChan(request *DescribeDatabasesRequest) (<-chan *DescribeDatabasesResponse, <-chan error) {
 	responseChan := make(chan *DescribeDatabasesResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeDatabasesWithChan(request *DescribeDatabasesReques
 	return responseChan, errChan
 }
 
+// invoke DescribeDatabases api with *DescribeDatabasesRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describedatabases.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDatabasesWithCallback(request *DescribeDatabasesRequest, callback func(response *DescribeDatabasesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type DescribeDatabasesResponse struct {
 	Databases DatabasesInDescribeDatabases `json:"Databases" xml:"Databases"`
 }
 
+// create a request to invoke DescribeDatabases API
 func CreateDescribeDatabasesRequest() (request *DescribeDatabasesRequest) {
 	request = &DescribeDatabasesRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateDescribeDatabasesRequest() (request *DescribeDatabasesRequest) {
 	return
 }
 
+// create a response to parse from DescribeDatabases response
 func CreateDescribeDatabasesResponse() (response *DescribeDatabasesResponse) {
 	response = &DescribeDatabasesResponse{
 		BaseResponse: &responses.BaseResponse{},

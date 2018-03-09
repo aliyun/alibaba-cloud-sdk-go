@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ActivateMediaWorkflow api with *ActivateMediaWorkflowRequest synchronously
+// api document: https://help.aliyun.com/api/mts/activatemediaworkflow.html
 func (client *Client) ActivateMediaWorkflow(request *ActivateMediaWorkflowRequest) (response *ActivateMediaWorkflowResponse, err error) {
 	response = CreateActivateMediaWorkflowResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ActivateMediaWorkflow api with *ActivateMediaWorkflowRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/activatemediaworkflow.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ActivateMediaWorkflowWithChan(request *ActivateMediaWorkflowRequest) (<-chan *ActivateMediaWorkflowResponse, <-chan error) {
 	responseChan := make(chan *ActivateMediaWorkflowResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ActivateMediaWorkflowWithChan(request *ActivateMediaWorkfl
 	return responseChan, errChan
 }
 
+// invoke ActivateMediaWorkflow api with *ActivateMediaWorkflowRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/activatemediaworkflow.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ActivateMediaWorkflowWithCallback(request *ActivateMediaWorkflowRequest, callback func(response *ActivateMediaWorkflowResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type ActivateMediaWorkflowResponse struct {
 	MediaWorkflow MediaWorkflow `json:"MediaWorkflow" xml:"MediaWorkflow"`
 }
 
+// create a request to invoke ActivateMediaWorkflow API
 func CreateActivateMediaWorkflowRequest() (request *ActivateMediaWorkflowRequest) {
 	request = &ActivateMediaWorkflowRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateActivateMediaWorkflowRequest() (request *ActivateMediaWorkflowRequest
 	return
 }
 
+// create a response to parse from ActivateMediaWorkflow response
 func CreateActivateMediaWorkflowResponse() (response *ActivateMediaWorkflowResponse) {
 	response = &ActivateMediaWorkflowResponse{
 		BaseResponse: &responses.BaseResponse{},

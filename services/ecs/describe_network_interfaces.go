@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeNetworkInterfaces api with *DescribeNetworkInterfacesRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/describenetworkinterfaces.html
 func (client *Client) DescribeNetworkInterfaces(request *DescribeNetworkInterfacesRequest) (response *DescribeNetworkInterfacesResponse, err error) {
 	response = CreateDescribeNetworkInterfacesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeNetworkInterfaces api with *DescribeNetworkInterfacesRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describenetworkinterfaces.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeNetworkInterfacesWithChan(request *DescribeNetworkInterfacesRequest) (<-chan *DescribeNetworkInterfacesResponse, <-chan error) {
 	responseChan := make(chan *DescribeNetworkInterfacesResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeNetworkInterfacesWithChan(request *DescribeNetwork
 	return responseChan, errChan
 }
 
+// invoke DescribeNetworkInterfaces api with *DescribeNetworkInterfacesRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describenetworkinterfaces.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeNetworkInterfacesWithCallback(request *DescribeNetworkInterfacesRequest, callback func(response *DescribeNetworkInterfacesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type DescribeNetworkInterfacesResponse struct {
 	NetworkInterfaceSets NetworkInterfaceSets `json:"NetworkInterfaceSets" xml:"NetworkInterfaceSets"`
 }
 
+// create a request to invoke DescribeNetworkInterfaces API
 func CreateDescribeNetworkInterfacesRequest() (request *DescribeNetworkInterfacesRequest) {
 	request = &DescribeNetworkInterfacesRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateDescribeNetworkInterfacesRequest() (request *DescribeNetworkInterface
 	return
 }
 
+// create a response to parse from DescribeNetworkInterfaces response
 func CreateDescribeNetworkInterfacesResponse() (response *DescribeNetworkInterfacesResponse) {
 	response = &DescribeNetworkInterfacesResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke GetPrivateAccessUrls api with *GetPrivateAccessUrlsRequest synchronously
+// api document: https://help.aliyun.com/api/cloudphoto/getprivateaccessurls.html
 func (client *Client) GetPrivateAccessUrls(request *GetPrivateAccessUrlsRequest) (response *GetPrivateAccessUrlsResponse, err error) {
 	response = CreateGetPrivateAccessUrlsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke GetPrivateAccessUrls api with *GetPrivateAccessUrlsRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/getprivateaccessurls.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetPrivateAccessUrlsWithChan(request *GetPrivateAccessUrlsRequest) (<-chan *GetPrivateAccessUrlsResponse, <-chan error) {
 	responseChan := make(chan *GetPrivateAccessUrlsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) GetPrivateAccessUrlsWithChan(request *GetPrivateAccessUrls
 	return responseChan, errChan
 }
 
+// invoke GetPrivateAccessUrls api with *GetPrivateAccessUrlsRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/getprivateaccessurls.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetPrivateAccessUrlsWithCallback(request *GetPrivateAccessUrlsRequest, callback func(response *GetPrivateAccessUrlsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type GetPrivateAccessUrlsResponse struct {
 	Results   []Result `json:"Results" xml:"Results"`
 }
 
+// create a request to invoke GetPrivateAccessUrls API
 func CreateGetPrivateAccessUrlsRequest() (request *GetPrivateAccessUrlsRequest) {
 	request = &GetPrivateAccessUrlsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateGetPrivateAccessUrlsRequest() (request *GetPrivateAccessUrlsRequest) 
 	return
 }
 
+// create a response to parse from GetPrivateAccessUrls response
 func CreateGetPrivateAccessUrlsResponse() (response *GetPrivateAccessUrlsResponse) {
 	response = &GetPrivateAccessUrlsResponse{
 		BaseResponse: &responses.BaseResponse{},

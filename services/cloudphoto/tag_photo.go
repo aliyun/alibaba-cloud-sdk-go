@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke TagPhoto api with *TagPhotoRequest synchronously
+// api document: https://help.aliyun.com/api/cloudphoto/tagphoto.html
 func (client *Client) TagPhoto(request *TagPhotoRequest) (response *TagPhotoResponse, err error) {
 	response = CreateTagPhotoResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke TagPhoto api with *TagPhotoRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/tagphoto.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) TagPhotoWithChan(request *TagPhotoRequest) (<-chan *TagPhotoResponse, <-chan error) {
 	responseChan := make(chan *TagPhotoResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) TagPhotoWithChan(request *TagPhotoRequest) (<-chan *TagPho
 	return responseChan, errChan
 }
 
+// invoke TagPhoto api with *TagPhotoRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/tagphoto.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) TagPhotoWithCallback(request *TagPhotoRequest, callback func(response *TagPhotoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type TagPhotoResponse struct {
 	Action    string `json:"Action" xml:"Action"`
 }
 
+// create a request to invoke TagPhoto API
 func CreateTagPhotoRequest() (request *TagPhotoRequest) {
 	request = &TagPhotoRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateTagPhotoRequest() (request *TagPhotoRequest) {
 	return
 }
 
+// create a response to parse from TagPhoto response
 func CreateTagPhotoResponse() (response *TagPhotoResponse) {
 	response = &TagPhotoResponse{
 		BaseResponse: &responses.BaseResponse{},

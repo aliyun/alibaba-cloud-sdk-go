@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke AddTags api with *AddTagsRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/addtags.html
 func (client *Client) AddTags(request *AddTagsRequest) (response *AddTagsResponse, err error) {
 	response = CreateAddTagsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke AddTags api with *AddTagsRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/addtags.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddTagsWithChan(request *AddTagsRequest) (<-chan *AddTagsResponse, <-chan error) {
 	responseChan := make(chan *AddTagsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) AddTagsWithChan(request *AddTagsRequest) (<-chan *AddTagsR
 	return responseChan, errChan
 }
 
+// invoke AddTags api with *AddTagsRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/addtags.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddTagsWithCallback(request *AddTagsRequest, callback func(response *AddTagsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -89,6 +97,7 @@ type AddTagsResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke AddTags API
 func CreateAddTagsRequest() (request *AddTagsRequest) {
 	request = &AddTagsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -97,6 +106,7 @@ func CreateAddTagsRequest() (request *AddTagsRequest) {
 	return
 }
 
+// create a response to parse from AddTags response
 func CreateAddTagsResponse() (response *AddTagsResponse) {
 	response = &AddTagsResponse{
 		BaseResponse: &responses.BaseResponse{},

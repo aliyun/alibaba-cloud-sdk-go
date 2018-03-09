@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SetMe api with *SetMeRequest synchronously
+// api document: https://help.aliyun.com/api/cloudphoto/setme.html
 func (client *Client) SetMe(request *SetMeRequest) (response *SetMeResponse, err error) {
 	response = CreateSetMeResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SetMe api with *SetMeRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/setme.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetMeWithChan(request *SetMeRequest) (<-chan *SetMeResponse, <-chan error) {
 	responseChan := make(chan *SetMeResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SetMeWithChan(request *SetMeRequest) (<-chan *SetMeRespons
 	return responseChan, errChan
 }
 
+// invoke SetMe api with *SetMeRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/setme.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetMeWithCallback(request *SetMeRequest, callback func(response *SetMeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type SetMeResponse struct {
 	Action    string `json:"Action" xml:"Action"`
 }
 
+// create a request to invoke SetMe API
 func CreateSetMeRequest() (request *SetMeRequest) {
 	request = &SetMeRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateSetMeRequest() (request *SetMeRequest) {
 	return
 }
 
+// create a response to parse from SetMe response
 func CreateSetMeResponse() (response *SetMeResponse) {
 	response = &SetMeResponse{
 		BaseResponse: &responses.BaseResponse{},

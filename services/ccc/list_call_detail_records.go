@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ListCallDetailRecords api with *ListCallDetailRecordsRequest synchronously
+// api document: https://help.aliyun.com/api/ccc/listcalldetailrecords.html
 func (client *Client) ListCallDetailRecords(request *ListCallDetailRecordsRequest) (response *ListCallDetailRecordsResponse, err error) {
 	response = CreateListCallDetailRecordsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ListCallDetailRecords api with *ListCallDetailRecordsRequest asynchronously
+// api document: https://help.aliyun.com/api/ccc/listcalldetailrecords.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListCallDetailRecordsWithChan(request *ListCallDetailRecordsRequest) (<-chan *ListCallDetailRecordsResponse, <-chan error) {
 	responseChan := make(chan *ListCallDetailRecordsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ListCallDetailRecordsWithChan(request *ListCallDetailRecor
 	return responseChan, errChan
 }
 
+// invoke ListCallDetailRecords api with *ListCallDetailRecordsRequest asynchronously
+// api document: https://help.aliyun.com/api/ccc/listcalldetailrecords.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListCallDetailRecordsWithCallback(request *ListCallDetailRecordsRequest, callback func(response *ListCallDetailRecordsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -89,6 +97,7 @@ type ListCallDetailRecordsResponse struct {
 	CallDetailRecords CallDetailRecords `json:"CallDetailRecords" xml:"CallDetailRecords"`
 }
 
+// create a request to invoke ListCallDetailRecords API
 func CreateListCallDetailRecordsRequest() (request *ListCallDetailRecordsRequest) {
 	request = &ListCallDetailRecordsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -97,6 +106,7 @@ func CreateListCallDetailRecordsRequest() (request *ListCallDetailRecordsRequest
 	return
 }
 
+// create a response to parse from ListCallDetailRecords response
 func CreateListCallDetailRecordsResponse() (response *ListCallDetailRecordsResponse) {
 	response = &ListCallDetailRecordsResponse{
 		BaseResponse: &responses.BaseResponse{},

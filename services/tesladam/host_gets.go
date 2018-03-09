@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke HostGets api with *HostGetsRequest synchronously
+// api document: https://help.aliyun.com/api/tesladam/hostgets.html
 func (client *Client) HostGets(request *HostGetsRequest) (response *HostGetsResponse, err error) {
 	response = CreateHostGetsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke HostGets api with *HostGetsRequest asynchronously
+// api document: https://help.aliyun.com/api/tesladam/hostgets.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) HostGetsWithChan(request *HostGetsRequest) (<-chan *HostGetsResponse, <-chan error) {
 	responseChan := make(chan *HostGetsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) HostGetsWithChan(request *HostGetsRequest) (<-chan *HostGe
 	return responseChan, errChan
 }
 
+// invoke HostGets api with *HostGetsRequest asynchronously
+// api document: https://help.aliyun.com/api/tesladam/hostgets.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) HostGetsWithCallback(request *HostGetsRequest, callback func(response *HostGetsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -67,28 +75,20 @@ func (client *Client) HostGetsWithCallback(request *HostGetsRequest, callback fu
 
 type HostGetsRequest struct {
 	*requests.RpcRequest
+	QueryType string           `position:"Query" name:"QueryType"`
 	Query     string           `position:"Query" name:"Query"`
 	EndTime   requests.Integer `position:"Query" name:"EndTime"`
 	StartTime requests.Integer `position:"Query" name:"StartTime"`
-	QueryType string           `position:"Query" name:"QueryType"`
 }
 
 type HostGetsResponse struct {
 	*responses.BaseResponse
 	Status  bool   `json:"Status" xml:"Status"`
 	Message string `json:"Message" xml:"Message"`
-	Data    []struct {
-		Hostname         string `json:"Hostname" xml:"Hostname"`
-		Ip               string `json:"Ip" xml:"Ip"`
-		AppCode          string `json:"AppCode" xml:"AppCode"`
-		ClusterCode      string `json:"ClusterCode" xml:"ClusterCode"`
-		SshStatus        int    `json:"SshStatus" xml:"SshStatus"`
-		HeartStatus      int    `json:"heartStatus" xml:"heartStatus"`
-		HealthScoreLast  int    `json:"HealthScoreLast" xml:"HealthScoreLast"`
-		HealthReasonLast string `json:"HealthReasonLast" xml:"HealthReasonLast"`
-	} `json:"Data" xml:"Data"`
+	Data    []Data `json:"Data" xml:"Data"`
 }
 
+// create a request to invoke HostGets API
 func CreateHostGetsRequest() (request *HostGetsRequest) {
 	request = &HostGetsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -97,6 +97,7 @@ func CreateHostGetsRequest() (request *HostGetsRequest) {
 	return
 }
 
+// create a response to parse from HostGets response
 func CreateHostGetsResponse() (response *HostGetsResponse) {
 	response = &HostGetsResponse{
 		BaseResponse: &responses.BaseResponse{},

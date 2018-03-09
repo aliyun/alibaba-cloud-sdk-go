@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifyUserCustomLogConfig api with *ModifyUserCustomLogConfigRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/modifyusercustomlogconfig.html
 func (client *Client) ModifyUserCustomLogConfig(request *ModifyUserCustomLogConfigRequest) (response *ModifyUserCustomLogConfigResponse, err error) {
 	response = CreateModifyUserCustomLogConfigResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifyUserCustomLogConfig api with *ModifyUserCustomLogConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/modifyusercustomlogconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyUserCustomLogConfigWithChan(request *ModifyUserCustomLogConfigRequest) (<-chan *ModifyUserCustomLogConfigResponse, <-chan error) {
 	responseChan := make(chan *ModifyUserCustomLogConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifyUserCustomLogConfigWithChan(request *ModifyUserCusto
 	return responseChan, errChan
 }
 
+// invoke ModifyUserCustomLogConfig api with *ModifyUserCustomLogConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/modifyusercustomlogconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyUserCustomLogConfigWithCallback(request *ModifyUserCustomLogConfigRequest, callback func(response *ModifyUserCustomLogConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -74,6 +82,7 @@ type ModifyUserCustomLogConfigResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ModifyUserCustomLogConfig API
 func CreateModifyUserCustomLogConfigRequest() (request *ModifyUserCustomLogConfigRequest) {
 	request = &ModifyUserCustomLogConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -82,6 +91,7 @@ func CreateModifyUserCustomLogConfigRequest() (request *ModifyUserCustomLogConfi
 	return
 }
 
+// create a response to parse from ModifyUserCustomLogConfig response
 func CreateModifyUserCustomLogConfigResponse() (response *ModifyUserCustomLogConfigResponse) {
 	response = &ModifyUserCustomLogConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

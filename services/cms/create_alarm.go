@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CreateAlarm api with *CreateAlarmRequest synchronously
+// api document: https://help.aliyun.com/api/cms/createalarm.html
 func (client *Client) CreateAlarm(request *CreateAlarmRequest) (response *CreateAlarmResponse, err error) {
 	response = CreateCreateAlarmResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CreateAlarm api with *CreateAlarmRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/createalarm.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateAlarmWithChan(request *CreateAlarmRequest) (<-chan *CreateAlarmResponse, <-chan error) {
 	responseChan := make(chan *CreateAlarmResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CreateAlarmWithChan(request *CreateAlarmRequest) (<-chan *
 	return responseChan, errChan
 }
 
+// invoke CreateAlarm api with *CreateAlarmRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/createalarm.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateAlarmWithCallback(request *CreateAlarmRequest, callback func(response *CreateAlarmResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,6 +102,7 @@ type CreateAlarmResponse struct {
 	Data      string `json:"Data" xml:"Data"`
 }
 
+// create a request to invoke CreateAlarm API
 func CreateCreateAlarmRequest() (request *CreateAlarmRequest) {
 	request = &CreateAlarmRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -102,6 +111,7 @@ func CreateCreateAlarmRequest() (request *CreateAlarmRequest) {
 	return
 }
 
+// create a response to parse from CreateAlarm response
 func CreateCreateAlarmResponse() (response *CreateAlarmResponse) {
 	response = &CreateAlarmResponse{
 		BaseResponse: &responses.BaseResponse{},

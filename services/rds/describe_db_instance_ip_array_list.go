@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeDBInstanceIPArrayList api with *DescribeDBInstanceIPArrayListRequest synchronously
+// api document: https://help.aliyun.com/api/rds/describedbinstanceiparraylist.html
 func (client *Client) DescribeDBInstanceIPArrayList(request *DescribeDBInstanceIPArrayListRequest) (response *DescribeDBInstanceIPArrayListResponse, err error) {
 	response = CreateDescribeDBInstanceIPArrayListResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeDBInstanceIPArrayList api with *DescribeDBInstanceIPArrayListRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describedbinstanceiparraylist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBInstanceIPArrayListWithChan(request *DescribeDBInstanceIPArrayListRequest) (<-chan *DescribeDBInstanceIPArrayListResponse, <-chan error) {
 	responseChan := make(chan *DescribeDBInstanceIPArrayListResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeDBInstanceIPArrayListWithChan(request *DescribeDBI
 	return responseChan, errChan
 }
 
+// invoke DescribeDBInstanceIPArrayList api with *DescribeDBInstanceIPArrayListRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describedbinstanceiparraylist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBInstanceIPArrayListWithCallback(request *DescribeDBInstanceIPArrayListRequest, callback func(response *DescribeDBInstanceIPArrayListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type DescribeDBInstanceIPArrayListResponse struct {
 	Items     ItemsInDescribeDBInstanceIPArrayList `json:"Items" xml:"Items"`
 }
 
+// create a request to invoke DescribeDBInstanceIPArrayList API
 func CreateDescribeDBInstanceIPArrayListRequest() (request *DescribeDBInstanceIPArrayListRequest) {
 	request = &DescribeDBInstanceIPArrayListRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateDescribeDBInstanceIPArrayListRequest() (request *DescribeDBInstanceIP
 	return
 }
 
+// create a response to parse from DescribeDBInstanceIPArrayList response
 func CreateDescribeDBInstanceIPArrayListResponse() (response *DescribeDBInstanceIPArrayListResponse) {
 	response = &DescribeDBInstanceIPArrayListResponse{
 		BaseResponse: &responses.BaseResponse{},

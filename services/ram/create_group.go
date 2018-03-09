@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CreateGroup api with *CreateGroupRequest synchronously
+// api document: https://help.aliyun.com/api/ram/creategroup.html
 func (client *Client) CreateGroup(request *CreateGroupRequest) (response *CreateGroupResponse, err error) {
 	response = CreateCreateGroupResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CreateGroup api with *CreateGroupRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/creategroup.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateGroupWithChan(request *CreateGroupRequest) (<-chan *CreateGroupResponse, <-chan error) {
 	responseChan := make(chan *CreateGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CreateGroupWithChan(request *CreateGroupRequest) (<-chan *
 	return responseChan, errChan
 }
 
+// invoke CreateGroup api with *CreateGroupRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/creategroup.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateGroupWithCallback(request *CreateGroupRequest, callback func(response *CreateGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +85,7 @@ type CreateGroupResponse struct {
 	Group     Group  `json:"Group" xml:"Group"`
 }
 
+// create a request to invoke CreateGroup API
 func CreateCreateGroupRequest() (request *CreateGroupRequest) {
 	request = &CreateGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -85,6 +94,7 @@ func CreateCreateGroupRequest() (request *CreateGroupRequest) {
 	return
 }
 
+// create a response to parse from CreateGroup response
 func CreateCreateGroupResponse() (response *CreateGroupResponse) {
 	response = &CreateGroupResponse{
 		BaseResponse: &responses.BaseResponse{},

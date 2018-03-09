@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeleteDBInstance api with *DeleteDBInstanceRequest synchronously
+// api document: https://help.aliyun.com/api/rds/deletedbinstance.html
 func (client *Client) DeleteDBInstance(request *DeleteDBInstanceRequest) (response *DeleteDBInstanceResponse, err error) {
 	response = CreateDeleteDBInstanceResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeleteDBInstance api with *DeleteDBInstanceRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/deletedbinstance.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDBInstanceWithChan(request *DeleteDBInstanceRequest) (<-chan *DeleteDBInstanceResponse, <-chan error) {
 	responseChan := make(chan *DeleteDBInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeleteDBInstanceWithChan(request *DeleteDBInstanceRequest)
 	return responseChan, errChan
 }
 
+// invoke DeleteDBInstance api with *DeleteDBInstanceRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/deletedbinstance.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDBInstanceWithCallback(request *DeleteDBInstanceRequest, callback func(response *DeleteDBInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type DeleteDBInstanceResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke DeleteDBInstance API
 func CreateDeleteDBInstanceRequest() (request *DeleteDBInstanceRequest) {
 	request = &DeleteDBInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateDeleteDBInstanceRequest() (request *DeleteDBInstanceRequest) {
 	return
 }
 
+// create a response to parse from DeleteDBInstance response
 func CreateDeleteDBInstanceResponse() (response *DeleteDBInstanceResponse) {
 	response = &DeleteDBInstanceResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifyDBInstanceTDE api with *ModifyDBInstanceTDERequest synchronously
+// api document: https://help.aliyun.com/api/rds/modifydbinstancetde.html
 func (client *Client) ModifyDBInstanceTDE(request *ModifyDBInstanceTDERequest) (response *ModifyDBInstanceTDEResponse, err error) {
 	response = CreateModifyDBInstanceTDEResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifyDBInstanceTDE api with *ModifyDBInstanceTDERequest asynchronously
+// api document: https://help.aliyun.com/api/rds/modifydbinstancetde.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDBInstanceTDEWithChan(request *ModifyDBInstanceTDERequest) (<-chan *ModifyDBInstanceTDEResponse, <-chan error) {
 	responseChan := make(chan *ModifyDBInstanceTDEResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifyDBInstanceTDEWithChan(request *ModifyDBInstanceTDERe
 	return responseChan, errChan
 }
 
+// invoke ModifyDBInstanceTDE api with *ModifyDBInstanceTDERequest asynchronously
+// api document: https://help.aliyun.com/api/rds/modifydbinstancetde.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDBInstanceTDEWithCallback(request *ModifyDBInstanceTDERequest, callback func(response *ModifyDBInstanceTDEResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type ModifyDBInstanceTDEResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ModifyDBInstanceTDE API
 func CreateModifyDBInstanceTDERequest() (request *ModifyDBInstanceTDERequest) {
 	request = &ModifyDBInstanceTDERequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateModifyDBInstanceTDERequest() (request *ModifyDBInstanceTDERequest) {
 	return
 }
 
+// create a response to parse from ModifyDBInstanceTDE response
 func CreateModifyDBInstanceTDEResponse() (response *ModifyDBInstanceTDEResponse) {
 	response = &ModifyDBInstanceTDEResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeCdnTypes api with *DescribeCdnTypesRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/describecdntypes.html
 func (client *Client) DescribeCdnTypes(request *DescribeCdnTypesRequest) (response *DescribeCdnTypesResponse, err error) {
 	response = CreateDescribeCdnTypesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeCdnTypes api with *DescribeCdnTypesRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describecdntypes.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCdnTypesWithChan(request *DescribeCdnTypesRequest) (<-chan *DescribeCdnTypesResponse, <-chan error) {
 	responseChan := make(chan *DescribeCdnTypesResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeCdnTypesWithChan(request *DescribeCdnTypesRequest)
 	return responseChan, errChan
 }
 
+// invoke DescribeCdnTypes api with *DescribeCdnTypesRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describecdntypes.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCdnTypesWithCallback(request *DescribeCdnTypesRequest, callback func(response *DescribeCdnTypesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type DescribeCdnTypesResponse struct {
 	CdnTypes  CdnTypes `json:"CdnTypes" xml:"CdnTypes"`
 }
 
+// create a request to invoke DescribeCdnTypes API
 func CreateDescribeCdnTypesRequest() (request *DescribeCdnTypesRequest) {
 	request = &DescribeCdnTypesRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateDescribeCdnTypesRequest() (request *DescribeCdnTypesRequest) {
 	return
 }
 
+// create a response to parse from DescribeCdnTypes response
 func CreateDescribeCdnTypesResponse() (response *DescribeCdnTypesResponse) {
 	response = &DescribeCdnTypesResponse{
 		BaseResponse: &responses.BaseResponse{},

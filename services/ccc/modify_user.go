@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifyUser api with *ModifyUserRequest synchronously
+// api document: https://help.aliyun.com/api/ccc/modifyuser.html
 func (client *Client) ModifyUser(request *ModifyUserRequest) (response *ModifyUserResponse, err error) {
 	response = CreateModifyUserResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifyUser api with *ModifyUserRequest asynchronously
+// api document: https://help.aliyun.com/api/ccc/modifyuser.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyUserWithChan(request *ModifyUserRequest) (<-chan *ModifyUserResponse, <-chan error) {
 	responseChan := make(chan *ModifyUserResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifyUserWithChan(request *ModifyUserRequest) (<-chan *Mo
 	return responseChan, errChan
 }
 
+// invoke ModifyUser api with *ModifyUserRequest asynchronously
+// api document: https://help.aliyun.com/api/ccc/modifyuser.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyUserWithCallback(request *ModifyUserRequest, callback func(response *ModifyUserResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -86,6 +94,7 @@ type ModifyUserResponse struct {
 	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 }
 
+// create a request to invoke ModifyUser API
 func CreateModifyUserRequest() (request *ModifyUserRequest) {
 	request = &ModifyUserRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -94,6 +103,7 @@ func CreateModifyUserRequest() (request *ModifyUserRequest) {
 	return
 }
 
+// create a response to parse from ModifyUser response
 func CreateModifyUserResponse() (response *ModifyUserResponse) {
 	response = &ModifyUserResponse{
 		BaseResponse: &responses.BaseResponse{},

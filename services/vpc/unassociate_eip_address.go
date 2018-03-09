@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke UnassociateEipAddress api with *UnassociateEipAddressRequest synchronously
+// api document: https://help.aliyun.com/api/vpc/unassociateeipaddress.html
 func (client *Client) UnassociateEipAddress(request *UnassociateEipAddressRequest) (response *UnassociateEipAddressResponse, err error) {
 	response = CreateUnassociateEipAddressResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke UnassociateEipAddress api with *UnassociateEipAddressRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/unassociateeipaddress.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnassociateEipAddressWithChan(request *UnassociateEipAddressRequest) (<-chan *UnassociateEipAddressResponse, <-chan error) {
 	responseChan := make(chan *UnassociateEipAddressResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) UnassociateEipAddressWithChan(request *UnassociateEipAddre
 	return responseChan, errChan
 }
 
+// invoke UnassociateEipAddress api with *UnassociateEipAddressRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/unassociateeipaddress.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnassociateEipAddressWithCallback(request *UnassociateEipAddressRequest, callback func(response *UnassociateEipAddressResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type UnassociateEipAddressResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke UnassociateEipAddress API
 func CreateUnassociateEipAddressRequest() (request *UnassociateEipAddressRequest) {
 	request = &UnassociateEipAddressRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateUnassociateEipAddressRequest() (request *UnassociateEipAddressRequest
 	return
 }
 
+// create a response to parse from UnassociateEipAddress response
 func CreateUnassociateEipAddressResponse() (response *UnassociateEipAddressResponse) {
 	response = &UnassociateEipAddressResponse{
 		BaseResponse: &responses.BaseResponse{},

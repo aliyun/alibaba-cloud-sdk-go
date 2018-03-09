@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeAccountAttributes api with *DescribeAccountAttributesRequest synchronously
+// api document: https://help.aliyun.com/api/ess/describeaccountattributes.html
 func (client *Client) DescribeAccountAttributes(request *DescribeAccountAttributesRequest) (response *DescribeAccountAttributesResponse, err error) {
 	response = CreateDescribeAccountAttributesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeAccountAttributes api with *DescribeAccountAttributesRequest asynchronously
+// api document: https://help.aliyun.com/api/ess/describeaccountattributes.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAccountAttributesWithChan(request *DescribeAccountAttributesRequest) (<-chan *DescribeAccountAttributesResponse, <-chan error) {
 	responseChan := make(chan *DescribeAccountAttributesResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeAccountAttributesWithChan(request *DescribeAccount
 	return responseChan, errChan
 }
 
+// invoke DescribeAccountAttributes api with *DescribeAccountAttributesRequest asynchronously
+// api document: https://help.aliyun.com/api/ess/describeaccountattributes.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAccountAttributesWithCallback(request *DescribeAccountAttributesRequest, callback func(response *DescribeAccountAttributesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,6 +92,7 @@ type DescribeAccountAttributesResponse struct {
 	MaxNumberOfMaxSize               int `json:"MaxNumberOfMaxSize" xml:"MaxNumberOfMaxSize"`
 }
 
+// create a request to invoke DescribeAccountAttributes API
 func CreateDescribeAccountAttributesRequest() (request *DescribeAccountAttributesRequest) {
 	request = &DescribeAccountAttributesRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -92,6 +101,7 @@ func CreateDescribeAccountAttributesRequest() (request *DescribeAccountAttribute
 	return
 }
 
+// create a response to parse from DescribeAccountAttributes response
 func CreateDescribeAccountAttributesResponse() (response *DescribeAccountAttributesResponse) {
 	response = &DescribeAccountAttributesResponse{
 		BaseResponse: &responses.BaseResponse{},

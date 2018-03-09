@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke AddCategory api with *AddCategoryRequest synchronously
+// api document: https://help.aliyun.com/api/mts/addcategory.html
 func (client *Client) AddCategory(request *AddCategoryRequest) (response *AddCategoryResponse, err error) {
 	response = CreateAddCategoryResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke AddCategory api with *AddCategoryRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/addcategory.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddCategoryWithChan(request *AddCategoryRequest) (<-chan *AddCategoryResponse, <-chan error) {
 	responseChan := make(chan *AddCategoryResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) AddCategoryWithChan(request *AddCategoryRequest) (<-chan *
 	return responseChan, errChan
 }
 
+// invoke AddCategory api with *AddCategoryRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/addcategory.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddCategoryWithCallback(request *AddCategoryRequest, callback func(response *AddCategoryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type AddCategoryResponse struct {
 	Category  Category `json:"Category" xml:"Category"`
 }
 
+// create a request to invoke AddCategory API
 func CreateAddCategoryRequest() (request *AddCategoryRequest) {
 	request = &AddCategoryRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateAddCategoryRequest() (request *AddCategoryRequest) {
 	return
 }
 
+// create a response to parse from AddCategory response
 func CreateAddCategoryResponse() (response *AddCategoryResponse) {
 	response = &AddCategoryResponse{
 		BaseResponse: &responses.BaseResponse{},

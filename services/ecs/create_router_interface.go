@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CreateRouterInterface api with *CreateRouterInterfaceRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/createrouterinterface.html
 func (client *Client) CreateRouterInterface(request *CreateRouterInterfaceRequest) (response *CreateRouterInterfaceResponse, err error) {
 	response = CreateCreateRouterInterfaceResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CreateRouterInterface api with *CreateRouterInterfaceRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/createrouterinterface.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateRouterInterfaceWithChan(request *CreateRouterInterfaceRequest) (<-chan *CreateRouterInterfaceResponse, <-chan error) {
 	responseChan := make(chan *CreateRouterInterfaceResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CreateRouterInterfaceWithChan(request *CreateRouterInterfa
 	return responseChan, errChan
 }
 
+// invoke CreateRouterInterface api with *CreateRouterInterfaceRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/createrouterinterface.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateRouterInterfaceWithCallback(request *CreateRouterInterfaceRequest, callback func(response *CreateRouterInterfaceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -96,6 +104,7 @@ type CreateRouterInterfaceResponse struct {
 	RouterInterfaceId string `json:"RouterInterfaceId" xml:"RouterInterfaceId"`
 }
 
+// create a request to invoke CreateRouterInterface API
 func CreateCreateRouterInterfaceRequest() (request *CreateRouterInterfaceRequest) {
 	request = &CreateRouterInterfaceRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -104,6 +113,7 @@ func CreateCreateRouterInterfaceRequest() (request *CreateRouterInterfaceRequest
 	return
 }
 
+// create a response to parse from CreateRouterInterface response
 func CreateCreateRouterInterfaceResponse() (response *CreateRouterInterfaceResponse) {
 	response = &CreateRouterInterfaceResponse{
 		BaseResponse: &responses.BaseResponse{},

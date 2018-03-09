@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke StopSyncing api with *StopSyncingRequest synchronously
+// api document: https://help.aliyun.com/api/rds/stopsyncing.html
 func (client *Client) StopSyncing(request *StopSyncingRequest) (response *StopSyncingResponse, err error) {
 	response = CreateStopSyncingResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke StopSyncing api with *StopSyncingRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/stopsyncing.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StopSyncingWithChan(request *StopSyncingRequest) (<-chan *StopSyncingResponse, <-chan error) {
 	responseChan := make(chan *StopSyncingResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) StopSyncingWithChan(request *StopSyncingRequest) (<-chan *
 	return responseChan, errChan
 }
 
+// invoke StopSyncing api with *StopSyncingRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/stopsyncing.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StopSyncingWithCallback(request *StopSyncingRequest, callback func(response *StopSyncingResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type StopSyncingResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke StopSyncing API
 func CreateStopSyncingRequest() (request *StopSyncingRequest) {
 	request = &StopSyncingRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateStopSyncingRequest() (request *StopSyncingRequest) {
 	return
 }
 
+// create a response to parse from StopSyncing response
 func CreateStopSyncingResponse() (response *StopSyncingResponse) {
 	response = &StopSyncingResponse{
 		BaseResponse: &responses.BaseResponse{},

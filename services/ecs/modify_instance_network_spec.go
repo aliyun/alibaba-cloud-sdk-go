@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifyInstanceNetworkSpec api with *ModifyInstanceNetworkSpecRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/modifyinstancenetworkspec.html
 func (client *Client) ModifyInstanceNetworkSpec(request *ModifyInstanceNetworkSpecRequest) (response *ModifyInstanceNetworkSpecResponse, err error) {
 	response = CreateModifyInstanceNetworkSpecResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifyInstanceNetworkSpec api with *ModifyInstanceNetworkSpecRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/modifyinstancenetworkspec.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyInstanceNetworkSpecWithChan(request *ModifyInstanceNetworkSpecRequest) (<-chan *ModifyInstanceNetworkSpecResponse, <-chan error) {
 	responseChan := make(chan *ModifyInstanceNetworkSpecResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifyInstanceNetworkSpecWithChan(request *ModifyInstanceN
 	return responseChan, errChan
 }
 
+// invoke ModifyInstanceNetworkSpec api with *ModifyInstanceNetworkSpecRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/modifyinstancenetworkspec.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyInstanceNetworkSpecWithCallback(request *ModifyInstanceNetworkSpecRequest, callback func(response *ModifyInstanceNetworkSpecResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -88,6 +96,7 @@ type ModifyInstanceNetworkSpecResponse struct {
 	OrderId   string `json:"OrderId" xml:"OrderId"`
 }
 
+// create a request to invoke ModifyInstanceNetworkSpec API
 func CreateModifyInstanceNetworkSpecRequest() (request *ModifyInstanceNetworkSpecRequest) {
 	request = &ModifyInstanceNetworkSpecRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -96,6 +105,7 @@ func CreateModifyInstanceNetworkSpecRequest() (request *ModifyInstanceNetworkSpe
 	return
 }
 
+// create a response to parse from ModifyInstanceNetworkSpec response
 func CreateModifyInstanceNetworkSpecResponse() (response *ModifyInstanceNetworkSpecResponse) {
 	response = &ModifyInstanceNetworkSpecResponse{
 		BaseResponse: &responses.BaseResponse{},

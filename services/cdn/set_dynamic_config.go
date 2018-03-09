@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SetDynamicConfig api with *SetDynamicConfigRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/setdynamicconfig.html
 func (client *Client) SetDynamicConfig(request *SetDynamicConfigRequest) (response *SetDynamicConfigResponse, err error) {
 	response = CreateSetDynamicConfigResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SetDynamicConfig api with *SetDynamicConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/setdynamicconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetDynamicConfigWithChan(request *SetDynamicConfigRequest) (<-chan *SetDynamicConfigResponse, <-chan error) {
 	responseChan := make(chan *SetDynamicConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SetDynamicConfigWithChan(request *SetDynamicConfigRequest)
 	return responseChan, errChan
 }
 
+// invoke SetDynamicConfig api with *SetDynamicConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/setdynamicconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetDynamicConfigWithCallback(request *SetDynamicConfigRequest, callback func(response *SetDynamicConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type SetDynamicConfigResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke SetDynamicConfig API
 func CreateSetDynamicConfigRequest() (request *SetDynamicConfigRequest) {
 	request = &SetDynamicConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateSetDynamicConfigRequest() (request *SetDynamicConfigRequest) {
 	return
 }
 
+// create a response to parse from SetDynamicConfig response
 func CreateSetDynamicConfigResponse() (response *SetDynamicConfigResponse) {
 	response = &SetDynamicConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

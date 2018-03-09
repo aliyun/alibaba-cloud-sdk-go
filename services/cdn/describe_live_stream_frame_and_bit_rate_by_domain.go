@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeLiveStreamFrameAndBitRateByDomain api with *DescribeLiveStreamFrameAndBitRateByDomainRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/describelivestreamframeandbitratebydomain.html
 func (client *Client) DescribeLiveStreamFrameAndBitRateByDomain(request *DescribeLiveStreamFrameAndBitRateByDomainRequest) (response *DescribeLiveStreamFrameAndBitRateByDomainResponse, err error) {
 	response = CreateDescribeLiveStreamFrameAndBitRateByDomainResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeLiveStreamFrameAndBitRateByDomain api with *DescribeLiveStreamFrameAndBitRateByDomainRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describelivestreamframeandbitratebydomain.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamFrameAndBitRateByDomainWithChan(request *DescribeLiveStreamFrameAndBitRateByDomainRequest) (<-chan *DescribeLiveStreamFrameAndBitRateByDomainResponse, <-chan error) {
 	responseChan := make(chan *DescribeLiveStreamFrameAndBitRateByDomainResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeLiveStreamFrameAndBitRateByDomainWithChan(request 
 	return responseChan, errChan
 }
 
+// invoke DescribeLiveStreamFrameAndBitRateByDomain api with *DescribeLiveStreamFrameAndBitRateByDomainRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describelivestreamframeandbitratebydomain.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamFrameAndBitRateByDomainWithCallback(request *DescribeLiveStreamFrameAndBitRateByDomainRequest, callback func(response *DescribeLiveStreamFrameAndBitRateByDomainResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,6 +92,7 @@ type DescribeLiveStreamFrameAndBitRateByDomainResponse struct {
 	FrameRateAndBitRateInfos FrameRateAndBitRateInfosInDescribeLiveStreamFrameAndBitRateByDomain `json:"FrameRateAndBitRateInfos" xml:"FrameRateAndBitRateInfos"`
 }
 
+// create a request to invoke DescribeLiveStreamFrameAndBitRateByDomain API
 func CreateDescribeLiveStreamFrameAndBitRateByDomainRequest() (request *DescribeLiveStreamFrameAndBitRateByDomainRequest) {
 	request = &DescribeLiveStreamFrameAndBitRateByDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -92,6 +101,7 @@ func CreateDescribeLiveStreamFrameAndBitRateByDomainRequest() (request *Describe
 	return
 }
 
+// create a response to parse from DescribeLiveStreamFrameAndBitRateByDomain response
 func CreateDescribeLiveStreamFrameAndBitRateByDomainResponse() (response *DescribeLiveStreamFrameAndBitRateByDomainResponse) {
 	response = &DescribeLiveStreamFrameAndBitRateByDomainResponse{
 		BaseResponse: &responses.BaseResponse{},

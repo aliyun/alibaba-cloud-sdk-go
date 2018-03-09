@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SetCACertificateName api with *SetCACertificateNameRequest synchronously
+// api document: https://help.aliyun.com/api/slb/setcacertificatename.html
 func (client *Client) SetCACertificateName(request *SetCACertificateNameRequest) (response *SetCACertificateNameResponse, err error) {
 	response = CreateSetCACertificateNameResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SetCACertificateName api with *SetCACertificateNameRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/setcacertificatename.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetCACertificateNameWithChan(request *SetCACertificateNameRequest) (<-chan *SetCACertificateNameResponse, <-chan error) {
 	responseChan := make(chan *SetCACertificateNameResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SetCACertificateNameWithChan(request *SetCACertificateName
 	return responseChan, errChan
 }
 
+// invoke SetCACertificateName api with *SetCACertificateNameRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/setcacertificatename.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetCACertificateNameWithCallback(request *SetCACertificateNameRequest, callback func(response *SetCACertificateNameResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type SetCACertificateNameResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke SetCACertificateName API
 func CreateSetCACertificateNameRequest() (request *SetCACertificateNameRequest) {
 	request = &SetCACertificateNameRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateSetCACertificateNameRequest() (request *SetCACertificateNameRequest) 
 	return
 }
 
+// create a response to parse from SetCACertificateName response
 func CreateSetCACertificateNameResponse() (response *SetCACertificateNameResponse) {
 	response = &SetCACertificateNameResponse{
 		BaseResponse: &responses.BaseResponse{},

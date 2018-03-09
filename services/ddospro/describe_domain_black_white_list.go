@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeDomainBlackWhiteList api with *DescribeDomainBlackWhiteListRequest synchronously
+// api document: https://help.aliyun.com/api/ddospro/describedomainblackwhitelist.html
 func (client *Client) DescribeDomainBlackWhiteList(request *DescribeDomainBlackWhiteListRequest) (response *DescribeDomainBlackWhiteListResponse, err error) {
 	response = CreateDescribeDomainBlackWhiteListResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeDomainBlackWhiteList api with *DescribeDomainBlackWhiteListRequest asynchronously
+// api document: https://help.aliyun.com/api/ddospro/describedomainblackwhitelist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainBlackWhiteListWithChan(request *DescribeDomainBlackWhiteListRequest) (<-chan *DescribeDomainBlackWhiteListResponse, <-chan error) {
 	responseChan := make(chan *DescribeDomainBlackWhiteListResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeDomainBlackWhiteListWithChan(request *DescribeDoma
 	return responseChan, errChan
 }
 
+// invoke DescribeDomainBlackWhiteList api with *DescribeDomainBlackWhiteListRequest asynchronously
+// api document: https://help.aliyun.com/api/ddospro/describedomainblackwhitelist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainBlackWhiteListWithCallback(request *DescribeDomainBlackWhiteListRequest, callback func(response *DescribeDomainBlackWhiteListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +85,7 @@ type DescribeDomainBlackWhiteListResponse struct {
 	Data      Data   `json:"Data" xml:"Data"`
 }
 
+// create a request to invoke DescribeDomainBlackWhiteList API
 func CreateDescribeDomainBlackWhiteListRequest() (request *DescribeDomainBlackWhiteListRequest) {
 	request = &DescribeDomainBlackWhiteListRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -85,6 +94,7 @@ func CreateDescribeDomainBlackWhiteListRequest() (request *DescribeDomainBlackWh
 	return
 }
 
+// create a response to parse from DescribeDomainBlackWhiteList response
 func CreateDescribeDomainBlackWhiteListResponse() (response *DescribeDomainBlackWhiteListResponse) {
 	response = &DescribeDomainBlackWhiteListResponse{
 		BaseResponse: &responses.BaseResponse{},

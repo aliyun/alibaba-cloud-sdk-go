@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke QueryFpShotJobList api with *QueryFpShotJobListRequest synchronously
+// api document: https://help.aliyun.com/api/mts/queryfpshotjoblist.html
 func (client *Client) QueryFpShotJobList(request *QueryFpShotJobListRequest) (response *QueryFpShotJobListResponse, err error) {
 	response = CreateQueryFpShotJobListResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke QueryFpShotJobList api with *QueryFpShotJobListRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/queryfpshotjoblist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryFpShotJobListWithChan(request *QueryFpShotJobListRequest) (<-chan *QueryFpShotJobListResponse, <-chan error) {
 	responseChan := make(chan *QueryFpShotJobListResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) QueryFpShotJobListWithChan(request *QueryFpShotJobListRequ
 	return responseChan, errChan
 }
 
+// invoke QueryFpShotJobList api with *QueryFpShotJobListRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/queryfpshotjoblist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryFpShotJobListWithCallback(request *QueryFpShotJobListRequest, callback func(response *QueryFpShotJobListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type QueryFpShotJobListResponse struct {
 	FpShotJobList FpShotJobList                   `json:"FpShotJobList" xml:"FpShotJobList"`
 }
 
+// create a request to invoke QueryFpShotJobList API
 func CreateQueryFpShotJobListRequest() (request *QueryFpShotJobListRequest) {
 	request = &QueryFpShotJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateQueryFpShotJobListRequest() (request *QueryFpShotJobListRequest) {
 	return
 }
 
+// create a response to parse from QueryFpShotJobList response
 func CreateQueryFpShotJobListResponse() (response *QueryFpShotJobListResponse) {
 	response = &QueryFpShotJobListResponse{
 		BaseResponse: &responses.BaseResponse{},

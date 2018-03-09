@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeTemplateAttribute api with *DescribeTemplateAttributeRequest synchronously
+// api document: https://help.aliyun.com/api/cs/describetemplateattribute.html
 func (client *Client) DescribeTemplateAttribute(request *DescribeTemplateAttributeRequest) (response *DescribeTemplateAttributeResponse, err error) {
 	response = CreateDescribeTemplateAttributeResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeTemplateAttribute api with *DescribeTemplateAttributeRequest asynchronously
+// api document: https://help.aliyun.com/api/cs/describetemplateattribute.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeTemplateAttributeWithChan(request *DescribeTemplateAttributeRequest) (<-chan *DescribeTemplateAttributeResponse, <-chan error) {
 	responseChan := make(chan *DescribeTemplateAttributeResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeTemplateAttributeWithChan(request *DescribeTemplat
 	return responseChan, errChan
 }
 
+// invoke DescribeTemplateAttribute api with *DescribeTemplateAttributeRequest asynchronously
+// api document: https://help.aliyun.com/api/cs/describetemplateattribute.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeTemplateAttributeWithCallback(request *DescribeTemplateAttributeRequest, callback func(response *DescribeTemplateAttributeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -74,6 +82,7 @@ type DescribeTemplateAttributeResponse struct {
 	*responses.BaseResponse
 }
 
+// create a request to invoke DescribeTemplateAttribute API
 func CreateDescribeTemplateAttributeRequest() (request *DescribeTemplateAttributeRequest) {
 	request = &DescribeTemplateAttributeRequest{
 		RoaRequest: &requests.RoaRequest{},
@@ -83,6 +92,7 @@ func CreateDescribeTemplateAttributeRequest() (request *DescribeTemplateAttribut
 	return
 }
 
+// create a response to parse from DescribeTemplateAttribute response
 func CreateDescribeTemplateAttributeResponse() (response *DescribeTemplateAttributeResponse) {
 	response = &DescribeTemplateAttributeResponse{
 		BaseResponse: &responses.BaseResponse{},

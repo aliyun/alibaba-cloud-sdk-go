@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeLiveStreamLimitInfo api with *DescribeLiveStreamLimitInfoRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/describelivestreamlimitinfo.html
 func (client *Client) DescribeLiveStreamLimitInfo(request *DescribeLiveStreamLimitInfoRequest) (response *DescribeLiveStreamLimitInfoResponse, err error) {
 	response = CreateDescribeLiveStreamLimitInfoResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeLiveStreamLimitInfo api with *DescribeLiveStreamLimitInfoRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describelivestreamlimitinfo.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamLimitInfoWithChan(request *DescribeLiveStreamLimitInfoRequest) (<-chan *DescribeLiveStreamLimitInfoResponse, <-chan error) {
 	responseChan := make(chan *DescribeLiveStreamLimitInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeLiveStreamLimitInfoWithChan(request *DescribeLiveS
 	return responseChan, errChan
 }
 
+// invoke DescribeLiveStreamLimitInfo api with *DescribeLiveStreamLimitInfoRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describelivestreamlimitinfo.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamLimitInfoWithCallback(request *DescribeLiveStreamLimitInfoRequest, callback func(response *DescribeLiveStreamLimitInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type DescribeLiveStreamLimitInfoResponse struct {
 	UserLimitLists UserLimitLists `json:"UserLimitLists" xml:"UserLimitLists"`
 }
 
+// create a request to invoke DescribeLiveStreamLimitInfo API
 func CreateDescribeLiveStreamLimitInfoRequest() (request *DescribeLiveStreamLimitInfoRequest) {
 	request = &DescribeLiveStreamLimitInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateDescribeLiveStreamLimitInfoRequest() (request *DescribeLiveStreamLimi
 	return
 }
 
+// create a response to parse from DescribeLiveStreamLimitInfo response
 func CreateDescribeLiveStreamLimitInfoResponse() (response *DescribeLiveStreamLimitInfoResponse) {
 	response = &DescribeLiveStreamLimitInfoResponse{
 		BaseResponse: &responses.BaseResponse{},

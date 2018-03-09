@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeAvailableResource api with *DescribeAvailableResourceRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/describeavailableresource.html
 func (client *Client) DescribeAvailableResource(request *DescribeAvailableResourceRequest) (response *DescribeAvailableResourceResponse, err error) {
 	response = CreateDescribeAvailableResourceResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeAvailableResource api with *DescribeAvailableResourceRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describeavailableresource.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAvailableResourceWithChan(request *DescribeAvailableResourceRequest) (<-chan *DescribeAvailableResourceResponse, <-chan error) {
 	responseChan := make(chan *DescribeAvailableResourceResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeAvailableResourceWithChan(request *DescribeAvailab
 	return responseChan, errChan
 }
 
+// invoke DescribeAvailableResource api with *DescribeAvailableResourceRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describeavailableresource.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAvailableResourceWithCallback(request *DescribeAvailableResourceRequest, callback func(response *DescribeAvailableResourceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -75,6 +83,7 @@ type DescribeAvailableResourceResponse struct {
 	AvailableZones AvailableZonesInDescribeAvailableResource `json:"AvailableZones" xml:"AvailableZones"`
 }
 
+// create a request to invoke DescribeAvailableResource API
 func CreateDescribeAvailableResourceRequest() (request *DescribeAvailableResourceRequest) {
 	request = &DescribeAvailableResourceRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -83,6 +92,7 @@ func CreateDescribeAvailableResourceRequest() (request *DescribeAvailableResourc
 	return
 }
 
+// create a response to parse from DescribeAvailableResource response
 func CreateDescribeAvailableResourceResponse() (response *DescribeAvailableResourceResponse) {
 	response = &DescribeAvailableResourceResponse{
 		BaseResponse: &responses.BaseResponse{},

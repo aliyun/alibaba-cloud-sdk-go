@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke AddUsers api with *AddUsersRequest synchronously
+// api document: https://help.aliyun.com/api/ehpc/addusers.html
 func (client *Client) AddUsers(request *AddUsersRequest) (response *AddUsersResponse, err error) {
 	response = CreateAddUsersResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke AddUsers api with *AddUsersRequest asynchronously
+// api document: https://help.aliyun.com/api/ehpc/addusers.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddUsersWithChan(request *AddUsersRequest) (<-chan *AddUsersResponse, <-chan error) {
 	responseChan := make(chan *AddUsersResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) AddUsersWithChan(request *AddUsersRequest) (<-chan *AddUse
 	return responseChan, errChan
 }
 
+// invoke AddUsers api with *AddUsersRequest asynchronously
+// api document: https://help.aliyun.com/api/ehpc/addusers.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddUsersWithCallback(request *AddUsersRequest, callback func(response *AddUsersResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,6 +91,7 @@ type AddUsersResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke AddUsers API
 func CreateAddUsersRequest() (request *AddUsersRequest) {
 	request = &AddUsersRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -91,6 +100,7 @@ func CreateAddUsersRequest() (request *AddUsersRequest) {
 	return
 }
 
+// create a response to parse from AddUsers response
 func CreateAddUsersResponse() (response *AddUsersResponse) {
 	response = &AddUsersResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke RemoveVServerGroupBackendServers api with *RemoveVServerGroupBackendServersRequest synchronously
+// api document: https://help.aliyun.com/api/slb/removevservergroupbackendservers.html
 func (client *Client) RemoveVServerGroupBackendServers(request *RemoveVServerGroupBackendServersRequest) (response *RemoveVServerGroupBackendServersResponse, err error) {
 	response = CreateRemoveVServerGroupBackendServersResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke RemoveVServerGroupBackendServers api with *RemoveVServerGroupBackendServersRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/removevservergroupbackendservers.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveVServerGroupBackendServersWithChan(request *RemoveVServerGroupBackendServersRequest) (<-chan *RemoveVServerGroupBackendServersResponse, <-chan error) {
 	responseChan := make(chan *RemoveVServerGroupBackendServersResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) RemoveVServerGroupBackendServersWithChan(request *RemoveVS
 	return responseChan, errChan
 }
 
+// invoke RemoveVServerGroupBackendServers api with *RemoveVServerGroupBackendServersRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/removevservergroupbackendservers.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveVServerGroupBackendServersWithCallback(request *RemoveVServerGroupBackendServersRequest, callback func(response *RemoveVServerGroupBackendServersResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,6 +92,7 @@ type RemoveVServerGroupBackendServersResponse struct {
 	BackendServers BackendServersInRemoveVServerGroupBackendServers `json:"BackendServers" xml:"BackendServers"`
 }
 
+// create a request to invoke RemoveVServerGroupBackendServers API
 func CreateRemoveVServerGroupBackendServersRequest() (request *RemoveVServerGroupBackendServersRequest) {
 	request = &RemoveVServerGroupBackendServersRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -92,6 +101,7 @@ func CreateRemoveVServerGroupBackendServersRequest() (request *RemoveVServerGrou
 	return
 }
 
+// create a response to parse from RemoveVServerGroupBackendServers response
 func CreateRemoveVServerGroupBackendServersResponse() (response *RemoveVServerGroupBackendServersResponse) {
 	response = &RemoveVServerGroupBackendServersResponse{
 		BaseResponse: &responses.BaseResponse{},

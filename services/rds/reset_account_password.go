@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ResetAccountPassword api with *ResetAccountPasswordRequest synchronously
+// api document: https://help.aliyun.com/api/rds/resetaccountpassword.html
 func (client *Client) ResetAccountPassword(request *ResetAccountPasswordRequest) (response *ResetAccountPasswordResponse, err error) {
 	response = CreateResetAccountPasswordResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ResetAccountPassword api with *ResetAccountPasswordRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/resetaccountpassword.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResetAccountPasswordWithChan(request *ResetAccountPasswordRequest) (<-chan *ResetAccountPasswordResponse, <-chan error) {
 	responseChan := make(chan *ResetAccountPasswordResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ResetAccountPasswordWithChan(request *ResetAccountPassword
 	return responseChan, errChan
 }
 
+// invoke ResetAccountPassword api with *ResetAccountPasswordRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/resetaccountpassword.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResetAccountPasswordWithCallback(request *ResetAccountPasswordRequest, callback func(response *ResetAccountPasswordResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type ResetAccountPasswordResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ResetAccountPassword API
 func CreateResetAccountPasswordRequest() (request *ResetAccountPasswordRequest) {
 	request = &ResetAccountPasswordRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateResetAccountPasswordRequest() (request *ResetAccountPasswordRequest) 
 	return
 }
 
+// create a response to parse from ResetAccountPassword response
 func CreateResetAccountPasswordResponse() (response *ResetAccountPasswordResponse) {
 	response = &ResetAccountPasswordResponse{
 		BaseResponse: &responses.BaseResponse{},

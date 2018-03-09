@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeSslVpnServers api with *DescribeSslVpnServersRequest synchronously
+// api document: https://help.aliyun.com/api/vpc/describesslvpnservers.html
 func (client *Client) DescribeSslVpnServers(request *DescribeSslVpnServersRequest) (response *DescribeSslVpnServersResponse, err error) {
 	response = CreateDescribeSslVpnServersResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeSslVpnServers api with *DescribeSslVpnServersRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/describesslvpnservers.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSslVpnServersWithChan(request *DescribeSslVpnServersRequest) (<-chan *DescribeSslVpnServersResponse, <-chan error) {
 	responseChan := make(chan *DescribeSslVpnServersResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeSslVpnServersWithChan(request *DescribeSslVpnServe
 	return responseChan, errChan
 }
 
+// invoke DescribeSslVpnServers api with *DescribeSslVpnServersRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/describesslvpnservers.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSslVpnServersWithCallback(request *DescribeSslVpnServersRequest, callback func(response *DescribeSslVpnServersResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -87,6 +95,7 @@ type DescribeSslVpnServersResponse struct {
 	SslVpnServers SslVpnServers `json:"SslVpnServers" xml:"SslVpnServers"`
 }
 
+// create a request to invoke DescribeSslVpnServers API
 func CreateDescribeSslVpnServersRequest() (request *DescribeSslVpnServersRequest) {
 	request = &DescribeSslVpnServersRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -95,6 +104,7 @@ func CreateDescribeSslVpnServersRequest() (request *DescribeSslVpnServersRequest
 	return
 }
 
+// create a response to parse from DescribeSslVpnServers response
 func CreateDescribeSslVpnServersResponse() (response *DescribeSslVpnServersResponse) {
 	response = &DescribeSslVpnServersResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke UpdateAlarm api with *UpdateAlarmRequest synchronously
+// api document: https://help.aliyun.com/api/cms/updatealarm.html
 func (client *Client) UpdateAlarm(request *UpdateAlarmRequest) (response *UpdateAlarmResponse, err error) {
 	response = CreateUpdateAlarmResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke UpdateAlarm api with *UpdateAlarmRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/updatealarm.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateAlarmWithChan(request *UpdateAlarmRequest) (<-chan *UpdateAlarmResponse, <-chan error) {
 	responseChan := make(chan *UpdateAlarmResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) UpdateAlarmWithChan(request *UpdateAlarmRequest) (<-chan *
 	return responseChan, errChan
 }
 
+// invoke UpdateAlarm api with *UpdateAlarmRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/updatealarm.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateAlarmWithCallback(request *UpdateAlarmRequest, callback func(response *UpdateAlarmResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -91,6 +99,7 @@ type UpdateAlarmResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke UpdateAlarm API
 func CreateUpdateAlarmRequest() (request *UpdateAlarmRequest) {
 	request = &UpdateAlarmRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -99,6 +108,7 @@ func CreateUpdateAlarmRequest() (request *UpdateAlarmRequest) {
 	return
 }
 
+// create a response to parse from UpdateAlarm response
 func CreateUpdateAlarmResponse() (response *UpdateAlarmResponse) {
 	response = &UpdateAlarmResponse{
 		BaseResponse: &responses.BaseResponse{},

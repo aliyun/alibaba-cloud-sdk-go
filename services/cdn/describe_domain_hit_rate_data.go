@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeDomainHitRateData api with *DescribeDomainHitRateDataRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/describedomainhitratedata.html
 func (client *Client) DescribeDomainHitRateData(request *DescribeDomainHitRateDataRequest) (response *DescribeDomainHitRateDataResponse, err error) {
 	response = CreateDescribeDomainHitRateDataResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeDomainHitRateData api with *DescribeDomainHitRateDataRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describedomainhitratedata.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainHitRateDataWithChan(request *DescribeDomainHitRateDataRequest) (<-chan *DescribeDomainHitRateDataResponse, <-chan error) {
 	responseChan := make(chan *DescribeDomainHitRateDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeDomainHitRateDataWithChan(request *DescribeDomainH
 	return responseChan, errChan
 }
 
+// invoke DescribeDomainHitRateData api with *DescribeDomainHitRateDataRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describedomainhitratedata.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainHitRateDataWithCallback(request *DescribeDomainHitRateDataRequest, callback func(response *DescribeDomainHitRateDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -88,6 +96,7 @@ type DescribeDomainHitRateDataResponse struct {
 	HitRateInterval HitRateInterval `json:"HitRateInterval" xml:"HitRateInterval"`
 }
 
+// create a request to invoke DescribeDomainHitRateData API
 func CreateDescribeDomainHitRateDataRequest() (request *DescribeDomainHitRateDataRequest) {
 	request = &DescribeDomainHitRateDataRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -96,6 +105,7 @@ func CreateDescribeDomainHitRateDataRequest() (request *DescribeDomainHitRateDat
 	return
 }
 
+// create a response to parse from DescribeDomainHitRateData response
 func CreateDescribeDomainHitRateDataResponse() (response *DescribeDomainHitRateDataResponse) {
 	response = &DescribeDomainHitRateDataResponse{
 		BaseResponse: &responses.BaseResponse{},

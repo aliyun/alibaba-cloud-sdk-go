@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CreatePolicyWithSpecifiedPolicy api with *CreatePolicyWithSpecifiedPolicyRequest synchronously
+// api document: https://help.aliyun.com/api/rds/createpolicywithspecifiedpolicy.html
 func (client *Client) CreatePolicyWithSpecifiedPolicy(request *CreatePolicyWithSpecifiedPolicyRequest) (response *CreatePolicyWithSpecifiedPolicyResponse, err error) {
 	response = CreateCreatePolicyWithSpecifiedPolicyResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CreatePolicyWithSpecifiedPolicy api with *CreatePolicyWithSpecifiedPolicyRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/createpolicywithspecifiedpolicy.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreatePolicyWithSpecifiedPolicyWithChan(request *CreatePolicyWithSpecifiedPolicyRequest) (<-chan *CreatePolicyWithSpecifiedPolicyResponse, <-chan error) {
 	responseChan := make(chan *CreatePolicyWithSpecifiedPolicyResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CreatePolicyWithSpecifiedPolicyWithChan(request *CreatePol
 	return responseChan, errChan
 }
 
+// invoke CreatePolicyWithSpecifiedPolicy api with *CreatePolicyWithSpecifiedPolicyRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/createpolicywithspecifiedpolicy.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreatePolicyWithSpecifiedPolicyWithCallback(request *CreatePolicyWithSpecifiedPolicyRequest, callback func(response *CreatePolicyWithSpecifiedPolicyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type CreatePolicyWithSpecifiedPolicyResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke CreatePolicyWithSpecifiedPolicy API
 func CreateCreatePolicyWithSpecifiedPolicyRequest() (request *CreatePolicyWithSpecifiedPolicyRequest) {
 	request = &CreatePolicyWithSpecifiedPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateCreatePolicyWithSpecifiedPolicyRequest() (request *CreatePolicyWithSp
 	return
 }
 
+// create a response to parse from CreatePolicyWithSpecifiedPolicy response
 func CreateCreatePolicyWithSpecifiedPolicyResponse() (response *CreatePolicyWithSpecifiedPolicyResponse) {
 	response = &CreatePolicyWithSpecifiedPolicyResponse{
 		BaseResponse: &responses.BaseResponse{},

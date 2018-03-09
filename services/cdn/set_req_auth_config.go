@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SetReqAuthConfig api with *SetReqAuthConfigRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/setreqauthconfig.html
 func (client *Client) SetReqAuthConfig(request *SetReqAuthConfigRequest) (response *SetReqAuthConfigResponse, err error) {
 	response = CreateSetReqAuthConfigResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SetReqAuthConfig api with *SetReqAuthConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/setreqauthconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetReqAuthConfigWithChan(request *SetReqAuthConfigRequest) (<-chan *SetReqAuthConfigResponse, <-chan error) {
 	responseChan := make(chan *SetReqAuthConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SetReqAuthConfigWithChan(request *SetReqAuthConfigRequest)
 	return responseChan, errChan
 }
 
+// invoke SetReqAuthConfig api with *SetReqAuthConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/setreqauthconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetReqAuthConfigWithCallback(request *SetReqAuthConfigRequest, callback func(response *SetReqAuthConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type SetReqAuthConfigResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke SetReqAuthConfig API
 func CreateSetReqAuthConfigRequest() (request *SetReqAuthConfigRequest) {
 	request = &SetReqAuthConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateSetReqAuthConfigRequest() (request *SetReqAuthConfigRequest) {
 	return
 }
 
+// create a response to parse from SetReqAuthConfig response
 func CreateSetReqAuthConfigResponse() (response *SetReqAuthConfigResponse) {
 	response = &SetReqAuthConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

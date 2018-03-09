@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeDomainRealTimeData api with *DescribeDomainRealTimeDataRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/describedomainrealtimedata.html
 func (client *Client) DescribeDomainRealTimeData(request *DescribeDomainRealTimeDataRequest) (response *DescribeDomainRealTimeDataResponse, err error) {
 	response = CreateDescribeDomainRealTimeDataResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeDomainRealTimeData api with *DescribeDomainRealTimeDataRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describedomainrealtimedata.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainRealTimeDataWithChan(request *DescribeDomainRealTimeDataRequest) (<-chan *DescribeDomainRealTimeDataResponse, <-chan error) {
 	responseChan := make(chan *DescribeDomainRealTimeDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeDomainRealTimeDataWithChan(request *DescribeDomain
 	return responseChan, errChan
 }
 
+// invoke DescribeDomainRealTimeData api with *DescribeDomainRealTimeDataRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describedomainrealtimedata.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainRealTimeDataWithCallback(request *DescribeDomainRealTimeDataRequest, callback func(response *DescribeDomainRealTimeDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -85,6 +93,7 @@ type DescribeDomainRealTimeDataResponse struct {
 	DataPerInterval DataPerIntervalInDescribeDomainRealTimeData `json:"DataPerInterval" xml:"DataPerInterval"`
 }
 
+// create a request to invoke DescribeDomainRealTimeData API
 func CreateDescribeDomainRealTimeDataRequest() (request *DescribeDomainRealTimeDataRequest) {
 	request = &DescribeDomainRealTimeDataRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -93,6 +102,7 @@ func CreateDescribeDomainRealTimeDataRequest() (request *DescribeDomainRealTimeD
 	return
 }
 
+// create a response to parse from DescribeDomainRealTimeData response
 func CreateDescribeDomainRealTimeDataResponse() (response *DescribeDomainRealTimeDataResponse) {
 	response = &DescribeDomainRealTimeDataResponse{
 		BaseResponse: &responses.BaseResponse{},

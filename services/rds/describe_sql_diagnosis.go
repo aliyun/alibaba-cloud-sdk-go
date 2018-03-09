@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeSQLDiagnosis api with *DescribeSQLDiagnosisRequest synchronously
+// api document: https://help.aliyun.com/api/rds/describesqldiagnosis.html
 func (client *Client) DescribeSQLDiagnosis(request *DescribeSQLDiagnosisRequest) (response *DescribeSQLDiagnosisResponse, err error) {
 	response = CreateDescribeSQLDiagnosisResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeSQLDiagnosis api with *DescribeSQLDiagnosisRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describesqldiagnosis.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSQLDiagnosisWithChan(request *DescribeSQLDiagnosisRequest) (<-chan *DescribeSQLDiagnosisResponse, <-chan error) {
 	responseChan := make(chan *DescribeSQLDiagnosisResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeSQLDiagnosisWithChan(request *DescribeSQLDiagnosis
 	return responseChan, errChan
 }
 
+// invoke DescribeSQLDiagnosis api with *DescribeSQLDiagnosisRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describesqldiagnosis.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSQLDiagnosisWithCallback(request *DescribeSQLDiagnosisRequest, callback func(response *DescribeSQLDiagnosisResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +85,7 @@ type DescribeSQLDiagnosisResponse struct {
 	SQLList   []string `json:"SQLList" xml:"SQLList"`
 }
 
+// create a request to invoke DescribeSQLDiagnosis API
 func CreateDescribeSQLDiagnosisRequest() (request *DescribeSQLDiagnosisRequest) {
 	request = &DescribeSQLDiagnosisRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -85,6 +94,7 @@ func CreateDescribeSQLDiagnosisRequest() (request *DescribeSQLDiagnosisRequest) 
 	return
 }
 
+// create a response to parse from DescribeSQLDiagnosis response
 func CreateDescribeSQLDiagnosisResponse() (response *DescribeSQLDiagnosisResponse) {
 	response = &DescribeSQLDiagnosisResponse{
 		BaseResponse: &responses.BaseResponse{},

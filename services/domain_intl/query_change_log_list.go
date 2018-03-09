@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke QueryChangeLogList api with *QueryChangeLogListRequest synchronously
+// api document: https://help.aliyun.com/api/domain-intl/querychangeloglist.html
 func (client *Client) QueryChangeLogList(request *QueryChangeLogListRequest) (response *QueryChangeLogListResponse, err error) {
 	response = CreateQueryChangeLogListResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke QueryChangeLogList api with *QueryChangeLogListRequest asynchronously
+// api document: https://help.aliyun.com/api/domain-intl/querychangeloglist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryChangeLogListWithChan(request *QueryChangeLogListRequest) (<-chan *QueryChangeLogListResponse, <-chan error) {
 	responseChan := make(chan *QueryChangeLogListResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) QueryChangeLogListWithChan(request *QueryChangeLogListRequ
 	return responseChan, errChan
 }
 
+// invoke QueryChangeLogList api with *QueryChangeLogListRequest asynchronously
+// api document: https://help.aliyun.com/api/domain-intl/querychangeloglist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryChangeLogListWithCallback(request *QueryChangeLogListRequest, callback func(response *QueryChangeLogListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -89,6 +97,7 @@ type QueryChangeLogListResponse struct {
 	Data           DataInQueryChangeLogList `json:"Data" xml:"Data"`
 }
 
+// create a request to invoke QueryChangeLogList API
 func CreateQueryChangeLogListRequest() (request *QueryChangeLogListRequest) {
 	request = &QueryChangeLogListRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -97,6 +106,7 @@ func CreateQueryChangeLogListRequest() (request *QueryChangeLogListRequest) {
 	return
 }
 
+// create a response to parse from QueryChangeLogList response
 func CreateQueryChangeLogListResponse() (response *QueryChangeLogListResponse) {
 	response = &QueryChangeLogListResponse{
 		BaseResponse: &responses.BaseResponse{},

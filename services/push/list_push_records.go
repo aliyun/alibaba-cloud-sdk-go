@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ListPushRecords api with *ListPushRecordsRequest synchronously
+// api document: https://help.aliyun.com/api/push/listpushrecords.html
 func (client *Client) ListPushRecords(request *ListPushRecordsRequest) (response *ListPushRecordsResponse, err error) {
 	response = CreateListPushRecordsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ListPushRecords api with *ListPushRecordsRequest asynchronously
+// api document: https://help.aliyun.com/api/push/listpushrecords.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListPushRecordsWithChan(request *ListPushRecordsRequest) (<-chan *ListPushRecordsResponse, <-chan error) {
 	responseChan := make(chan *ListPushRecordsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ListPushRecordsWithChan(request *ListPushRecordsRequest) (
 	return responseChan, errChan
 }
 
+// invoke ListPushRecords api with *ListPushRecordsRequest asynchronously
+// api document: https://help.aliyun.com/api/push/listpushrecords.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListPushRecordsWithCallback(request *ListPushRecordsRequest, callback func(response *ListPushRecordsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,6 +92,7 @@ type ListPushRecordsResponse struct {
 	PushMessageInfos PushMessageInfosInListPushRecords `json:"PushMessageInfos" xml:"PushMessageInfos"`
 }
 
+// create a request to invoke ListPushRecords API
 func CreateListPushRecordsRequest() (request *ListPushRecordsRequest) {
 	request = &ListPushRecordsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -92,6 +101,7 @@ func CreateListPushRecordsRequest() (request *ListPushRecordsRequest) {
 	return
 }
 
+// create a response to parse from ListPushRecords response
 func CreateListPushRecordsResponse() (response *ListPushRecordsResponse) {
 	response = &ListPushRecordsResponse{
 		BaseResponse: &responses.BaseResponse{},

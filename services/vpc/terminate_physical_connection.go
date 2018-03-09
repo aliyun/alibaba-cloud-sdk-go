@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke TerminatePhysicalConnection api with *TerminatePhysicalConnectionRequest synchronously
+// api document: https://help.aliyun.com/api/vpc/terminatephysicalconnection.html
 func (client *Client) TerminatePhysicalConnection(request *TerminatePhysicalConnectionRequest) (response *TerminatePhysicalConnectionResponse, err error) {
 	response = CreateTerminatePhysicalConnectionResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke TerminatePhysicalConnection api with *TerminatePhysicalConnectionRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/terminatephysicalconnection.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) TerminatePhysicalConnectionWithChan(request *TerminatePhysicalConnectionRequest) (<-chan *TerminatePhysicalConnectionResponse, <-chan error) {
 	responseChan := make(chan *TerminatePhysicalConnectionResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) TerminatePhysicalConnectionWithChan(request *TerminatePhys
 	return responseChan, errChan
 }
 
+// invoke TerminatePhysicalConnection api with *TerminatePhysicalConnectionRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/terminatephysicalconnection.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) TerminatePhysicalConnectionWithCallback(request *TerminatePhysicalConnectionRequest, callback func(response *TerminatePhysicalConnectionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type TerminatePhysicalConnectionResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke TerminatePhysicalConnection API
 func CreateTerminatePhysicalConnectionRequest() (request *TerminatePhysicalConnectionRequest) {
 	request = &TerminatePhysicalConnectionRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateTerminatePhysicalConnectionRequest() (request *TerminatePhysicalConne
 	return
 }
 
+// create a response to parse from TerminatePhysicalConnection response
 func CreateTerminatePhysicalConnectionResponse() (response *TerminatePhysicalConnectionResponse) {
 	response = &TerminatePhysicalConnectionResponse{
 		BaseResponse: &responses.BaseResponse{},

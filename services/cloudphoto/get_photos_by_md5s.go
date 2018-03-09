@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke GetPhotosByMd5s api with *GetPhotosByMd5sRequest synchronously
+// api document: https://help.aliyun.com/api/cloudphoto/getphotosbymd5s.html
 func (client *Client) GetPhotosByMd5s(request *GetPhotosByMd5sRequest) (response *GetPhotosByMd5sResponse, err error) {
 	response = CreateGetPhotosByMd5sResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke GetPhotosByMd5s api with *GetPhotosByMd5sRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/getphotosbymd5s.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetPhotosByMd5sWithChan(request *GetPhotosByMd5sRequest) (<-chan *GetPhotosByMd5sResponse, <-chan error) {
 	responseChan := make(chan *GetPhotosByMd5sResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) GetPhotosByMd5sWithChan(request *GetPhotosByMd5sRequest) (
 	return responseChan, errChan
 }
 
+// invoke GetPhotosByMd5s api with *GetPhotosByMd5sRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/getphotosbymd5s.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetPhotosByMd5sWithCallback(request *GetPhotosByMd5sRequest, callback func(response *GetPhotosByMd5sResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type GetPhotosByMd5sResponse struct {
 	Photos    []Photo `json:"Photos" xml:"Photos"`
 }
 
+// create a request to invoke GetPhotosByMd5s API
 func CreateGetPhotosByMd5sRequest() (request *GetPhotosByMd5sRequest) {
 	request = &GetPhotosByMd5sRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateGetPhotosByMd5sRequest() (request *GetPhotosByMd5sRequest) {
 	return
 }
 
+// create a response to parse from GetPhotosByMd5s response
 func CreateGetPhotosByMd5sResponse() (response *GetPhotosByMd5sResponse) {
 	response = &GetPhotosByMd5sResponse{
 		BaseResponse: &responses.BaseResponse{},

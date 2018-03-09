@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeleteVirtualMFADevice api with *DeleteVirtualMFADeviceRequest synchronously
+// api document: https://help.aliyun.com/api/ram/deletevirtualmfadevice.html
 func (client *Client) DeleteVirtualMFADevice(request *DeleteVirtualMFADeviceRequest) (response *DeleteVirtualMFADeviceResponse, err error) {
 	response = CreateDeleteVirtualMFADeviceResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeleteVirtualMFADevice api with *DeleteVirtualMFADeviceRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/deletevirtualmfadevice.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteVirtualMFADeviceWithChan(request *DeleteVirtualMFADeviceRequest) (<-chan *DeleteVirtualMFADeviceResponse, <-chan error) {
 	responseChan := make(chan *DeleteVirtualMFADeviceResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeleteVirtualMFADeviceWithChan(request *DeleteVirtualMFADe
 	return responseChan, errChan
 }
 
+// invoke DeleteVirtualMFADevice api with *DeleteVirtualMFADeviceRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/deletevirtualmfadevice.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteVirtualMFADeviceWithCallback(request *DeleteVirtualMFADeviceRequest, callback func(response *DeleteVirtualMFADeviceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -75,6 +83,7 @@ type DeleteVirtualMFADeviceResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke DeleteVirtualMFADevice API
 func CreateDeleteVirtualMFADeviceRequest() (request *DeleteVirtualMFADeviceRequest) {
 	request = &DeleteVirtualMFADeviceRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -83,6 +92,7 @@ func CreateDeleteVirtualMFADeviceRequest() (request *DeleteVirtualMFADeviceReque
 	return
 }
 
+// create a response to parse from DeleteVirtualMFADevice response
 func CreateDeleteVirtualMFADeviceResponse() (response *DeleteVirtualMFADeviceResponse) {
 	response = &DeleteVirtualMFADeviceResponse{
 		BaseResponse: &responses.BaseResponse{},

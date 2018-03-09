@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifyUserGroups api with *ModifyUserGroupsRequest synchronously
+// api document: https://help.aliyun.com/api/ehpc/modifyusergroups.html
 func (client *Client) ModifyUserGroups(request *ModifyUserGroupsRequest) (response *ModifyUserGroupsResponse, err error) {
 	response = CreateModifyUserGroupsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifyUserGroups api with *ModifyUserGroupsRequest asynchronously
+// api document: https://help.aliyun.com/api/ehpc/modifyusergroups.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyUserGroupsWithChan(request *ModifyUserGroupsRequest) (<-chan *ModifyUserGroupsResponse, <-chan error) {
 	responseChan := make(chan *ModifyUserGroupsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifyUserGroupsWithChan(request *ModifyUserGroupsRequest)
 	return responseChan, errChan
 }
 
+// invoke ModifyUserGroups api with *ModifyUserGroupsRequest asynchronously
+// api document: https://help.aliyun.com/api/ehpc/modifyusergroups.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyUserGroupsWithCallback(request *ModifyUserGroupsRequest, callback func(response *ModifyUserGroupsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type ModifyUserGroupsResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ModifyUserGroups API
 func CreateModifyUserGroupsRequest() (request *ModifyUserGroupsRequest) {
 	request = &ModifyUserGroupsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateModifyUserGroupsRequest() (request *ModifyUserGroupsRequest) {
 	return
 }
 
+// create a response to parse from ModifyUserGroups response
 func CreateModifyUserGroupsResponse() (response *ModifyUserGroupsResponse) {
 	response = &ModifyUserGroupsResponse{
 		BaseResponse: &responses.BaseResponse{},

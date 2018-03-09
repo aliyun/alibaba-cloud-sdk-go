@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeServerRelatedGlobalAccelerationInstances api with *DescribeServerRelatedGlobalAccelerationInstancesRequest synchronously
+// api document: https://help.aliyun.com/api/vpc/describeserverrelatedglobalaccelerationinstances.html
 func (client *Client) DescribeServerRelatedGlobalAccelerationInstances(request *DescribeServerRelatedGlobalAccelerationInstancesRequest) (response *DescribeServerRelatedGlobalAccelerationInstancesResponse, err error) {
 	response = CreateDescribeServerRelatedGlobalAccelerationInstancesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeServerRelatedGlobalAccelerationInstances api with *DescribeServerRelatedGlobalAccelerationInstancesRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/describeserverrelatedglobalaccelerationinstances.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeServerRelatedGlobalAccelerationInstancesWithChan(request *DescribeServerRelatedGlobalAccelerationInstancesRequest) (<-chan *DescribeServerRelatedGlobalAccelerationInstancesResponse, <-chan error) {
 	responseChan := make(chan *DescribeServerRelatedGlobalAccelerationInstancesResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeServerRelatedGlobalAccelerationInstancesWithChan(r
 	return responseChan, errChan
 }
 
+// invoke DescribeServerRelatedGlobalAccelerationInstances api with *DescribeServerRelatedGlobalAccelerationInstancesRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/describeserverrelatedglobalaccelerationinstances.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeServerRelatedGlobalAccelerationInstancesWithCallback(request *DescribeServerRelatedGlobalAccelerationInstancesRequest, callback func(response *DescribeServerRelatedGlobalAccelerationInstancesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type DescribeServerRelatedGlobalAccelerationInstancesResponse struct {
 	GlobalAccelerationInstances GlobalAccelerationInstancesInDescribeServerRelatedGlobalAccelerationInstances `json:"GlobalAccelerationInstances" xml:"GlobalAccelerationInstances"`
 }
 
+// create a request to invoke DescribeServerRelatedGlobalAccelerationInstances API
 func CreateDescribeServerRelatedGlobalAccelerationInstancesRequest() (request *DescribeServerRelatedGlobalAccelerationInstancesRequest) {
 	request = &DescribeServerRelatedGlobalAccelerationInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateDescribeServerRelatedGlobalAccelerationInstancesRequest() (request *D
 	return
 }
 
+// create a response to parse from DescribeServerRelatedGlobalAccelerationInstances response
 func CreateDescribeServerRelatedGlobalAccelerationInstancesResponse() (response *DescribeServerRelatedGlobalAccelerationInstancesResponse) {
 	response = &DescribeServerRelatedGlobalAccelerationInstancesResponse{
 		BaseResponse: &responses.BaseResponse{},

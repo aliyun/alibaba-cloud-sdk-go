@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifyRouterInterfaceAttribute api with *ModifyRouterInterfaceAttributeRequest synchronously
+// api document: https://help.aliyun.com/api/vpc/modifyrouterinterfaceattribute.html
 func (client *Client) ModifyRouterInterfaceAttribute(request *ModifyRouterInterfaceAttributeRequest) (response *ModifyRouterInterfaceAttributeResponse, err error) {
 	response = CreateModifyRouterInterfaceAttributeResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifyRouterInterfaceAttribute api with *ModifyRouterInterfaceAttributeRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/modifyrouterinterfaceattribute.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyRouterInterfaceAttributeWithChan(request *ModifyRouterInterfaceAttributeRequest) (<-chan *ModifyRouterInterfaceAttributeResponse, <-chan error) {
 	responseChan := make(chan *ModifyRouterInterfaceAttributeResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifyRouterInterfaceAttributeWithChan(request *ModifyRout
 	return responseChan, errChan
 }
 
+// invoke ModifyRouterInterfaceAttribute api with *ModifyRouterInterfaceAttributeRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/modifyrouterinterfaceattribute.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyRouterInterfaceAttributeWithCallback(request *ModifyRouterInterfaceAttributeRequest, callback func(response *ModifyRouterInterfaceAttributeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -87,6 +95,7 @@ type ModifyRouterInterfaceAttributeResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ModifyRouterInterfaceAttribute API
 func CreateModifyRouterInterfaceAttributeRequest() (request *ModifyRouterInterfaceAttributeRequest) {
 	request = &ModifyRouterInterfaceAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -95,6 +104,7 @@ func CreateModifyRouterInterfaceAttributeRequest() (request *ModifyRouterInterfa
 	return
 }
 
+// create a response to parse from ModifyRouterInterfaceAttribute response
 func CreateModifyRouterInterfaceAttributeResponse() (response *ModifyRouterInterfaceAttributeResponse) {
 	response = &ModifyRouterInterfaceAttributeResponse{
 		BaseResponse: &responses.BaseResponse{},

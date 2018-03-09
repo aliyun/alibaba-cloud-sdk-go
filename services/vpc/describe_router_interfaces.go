@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeRouterInterfaces api with *DescribeRouterInterfacesRequest synchronously
+// api document: https://help.aliyun.com/api/vpc/describerouterinterfaces.html
 func (client *Client) DescribeRouterInterfaces(request *DescribeRouterInterfacesRequest) (response *DescribeRouterInterfacesResponse, err error) {
 	response = CreateDescribeRouterInterfacesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeRouterInterfaces api with *DescribeRouterInterfacesRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/describerouterinterfaces.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRouterInterfacesWithChan(request *DescribeRouterInterfacesRequest) (<-chan *DescribeRouterInterfacesResponse, <-chan error) {
 	responseChan := make(chan *DescribeRouterInterfacesResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeRouterInterfacesWithChan(request *DescribeRouterIn
 	return responseChan, errChan
 }
 
+// invoke DescribeRouterInterfaces api with *DescribeRouterInterfacesRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/describerouterinterfaces.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRouterInterfacesWithCallback(request *DescribeRouterInterfacesRequest, callback func(response *DescribeRouterInterfacesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -89,6 +97,7 @@ type DescribeRouterInterfacesResponse struct {
 	RouterInterfaceSet RouterInterfaceSetInDescribeRouterInterfaces `json:"RouterInterfaceSet" xml:"RouterInterfaceSet"`
 }
 
+// create a request to invoke DescribeRouterInterfaces API
 func CreateDescribeRouterInterfacesRequest() (request *DescribeRouterInterfacesRequest) {
 	request = &DescribeRouterInterfacesRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -97,6 +106,7 @@ func CreateDescribeRouterInterfacesRequest() (request *DescribeRouterInterfacesR
 	return
 }
 
+// create a response to parse from DescribeRouterInterfaces response
 func CreateDescribeRouterInterfacesResponse() (response *DescribeRouterInterfacesResponse) {
 	response = &DescribeRouterInterfacesResponse{
 		BaseResponse: &responses.BaseResponse{},

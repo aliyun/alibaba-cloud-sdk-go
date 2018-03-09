@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeInstanceAttribute api with *DescribeInstanceAttributeRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/describeinstanceattribute.html
 func (client *Client) DescribeInstanceAttribute(request *DescribeInstanceAttributeRequest) (response *DescribeInstanceAttributeResponse, err error) {
 	response = CreateDescribeInstanceAttributeResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeInstanceAttribute api with *DescribeInstanceAttributeRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describeinstanceattribute.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceAttributeWithChan(request *DescribeInstanceAttributeRequest) (<-chan *DescribeInstanceAttributeResponse, <-chan error) {
 	responseChan := make(chan *DescribeInstanceAttributeResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeInstanceAttributeWithChan(request *DescribeInstanc
 	return responseChan, errChan
 }
 
+// invoke DescribeInstanceAttribute api with *DescribeInstanceAttributeRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describeinstanceattribute.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceAttributeWithCallback(request *DescribeInstanceAttributeRequest, callback func(response *DescribeInstanceAttributeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -108,6 +116,7 @@ type DescribeInstanceAttributeResponse struct {
 	OperationLocks          OperationLocksInDescribeInstanceAttribute   `json:"OperationLocks" xml:"OperationLocks"`
 }
 
+// create a request to invoke DescribeInstanceAttribute API
 func CreateDescribeInstanceAttributeRequest() (request *DescribeInstanceAttributeRequest) {
 	request = &DescribeInstanceAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -116,6 +125,7 @@ func CreateDescribeInstanceAttributeRequest() (request *DescribeInstanceAttribut
 	return
 }
 
+// create a response to parse from DescribeInstanceAttribute response
 func CreateDescribeInstanceAttributeResponse() (response *DescribeInstanceAttributeResponse) {
 	response = &DescribeInstanceAttributeResponse{
 		BaseResponse: &responses.BaseResponse{},

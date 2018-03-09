@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifyAutoSnapshotPolicy api with *ModifyAutoSnapshotPolicyRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/modifyautosnapshotpolicy.html
 func (client *Client) ModifyAutoSnapshotPolicy(request *ModifyAutoSnapshotPolicyRequest) (response *ModifyAutoSnapshotPolicyResponse, err error) {
 	response = CreateModifyAutoSnapshotPolicyResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifyAutoSnapshotPolicy api with *ModifyAutoSnapshotPolicyRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/modifyautosnapshotpolicy.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyAutoSnapshotPolicyWithChan(request *ModifyAutoSnapshotPolicyRequest) (<-chan *ModifyAutoSnapshotPolicyResponse, <-chan error) {
 	responseChan := make(chan *ModifyAutoSnapshotPolicyResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifyAutoSnapshotPolicyWithChan(request *ModifyAutoSnapsh
 	return responseChan, errChan
 }
 
+// invoke ModifyAutoSnapshotPolicy api with *ModifyAutoSnapshotPolicyRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/modifyautosnapshotpolicy.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyAutoSnapshotPolicyWithCallback(request *ModifyAutoSnapshotPolicyRequest, callback func(response *ModifyAutoSnapshotPolicyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -86,6 +94,7 @@ type ModifyAutoSnapshotPolicyResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ModifyAutoSnapshotPolicy API
 func CreateModifyAutoSnapshotPolicyRequest() (request *ModifyAutoSnapshotPolicyRequest) {
 	request = &ModifyAutoSnapshotPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -94,6 +103,7 @@ func CreateModifyAutoSnapshotPolicyRequest() (request *ModifyAutoSnapshotPolicyR
 	return
 }
 
+// create a response to parse from ModifyAutoSnapshotPolicy response
 func CreateModifyAutoSnapshotPolicyResponse() (response *ModifyAutoSnapshotPolicyResponse) {
 	response = &ModifyAutoSnapshotPolicyResponse{
 		BaseResponse: &responses.BaseResponse{},

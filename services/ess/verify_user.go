@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke VerifyUser api with *VerifyUserRequest synchronously
+// api document: https://help.aliyun.com/api/ess/verifyuser.html
 func (client *Client) VerifyUser(request *VerifyUserRequest) (response *VerifyUserResponse, err error) {
 	response = CreateVerifyUserResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke VerifyUser api with *VerifyUserRequest asynchronously
+// api document: https://help.aliyun.com/api/ess/verifyuser.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) VerifyUserWithChan(request *VerifyUserRequest) (<-chan *VerifyUserResponse, <-chan error) {
 	responseChan := make(chan *VerifyUserResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) VerifyUserWithChan(request *VerifyUserRequest) (<-chan *Ve
 	return responseChan, errChan
 }
 
+// invoke VerifyUser api with *VerifyUserRequest asynchronously
+// api document: https://help.aliyun.com/api/ess/verifyuser.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) VerifyUserWithCallback(request *VerifyUserRequest, callback func(response *VerifyUserResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,6 +84,7 @@ type VerifyUserResponse struct {
 	*responses.BaseResponse
 }
 
+// create a request to invoke VerifyUser API
 func CreateVerifyUserRequest() (request *VerifyUserRequest) {
 	request = &VerifyUserRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -84,6 +93,7 @@ func CreateVerifyUserRequest() (request *VerifyUserRequest) {
 	return
 }
 
+// create a response to parse from VerifyUser response
 func CreateVerifyUserResponse() (response *VerifyUserResponse) {
 	response = &VerifyUserResponse{
 		BaseResponse: &responses.BaseResponse{},

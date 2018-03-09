@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeLoadBalancerAutoReleaseTime api with *DescribeLoadBalancerAutoReleaseTimeRequest synchronously
+// api document: https://help.aliyun.com/api/slb/describeloadbalancerautoreleasetime.html
 func (client *Client) DescribeLoadBalancerAutoReleaseTime(request *DescribeLoadBalancerAutoReleaseTimeRequest) (response *DescribeLoadBalancerAutoReleaseTimeResponse, err error) {
 	response = CreateDescribeLoadBalancerAutoReleaseTimeResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeLoadBalancerAutoReleaseTime api with *DescribeLoadBalancerAutoReleaseTimeRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/describeloadbalancerautoreleasetime.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLoadBalancerAutoReleaseTimeWithChan(request *DescribeLoadBalancerAutoReleaseTimeRequest) (<-chan *DescribeLoadBalancerAutoReleaseTimeResponse, <-chan error) {
 	responseChan := make(chan *DescribeLoadBalancerAutoReleaseTimeResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeLoadBalancerAutoReleaseTimeWithChan(request *Descr
 	return responseChan, errChan
 }
 
+// invoke DescribeLoadBalancerAutoReleaseTime api with *DescribeLoadBalancerAutoReleaseTimeRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/describeloadbalancerautoreleasetime.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLoadBalancerAutoReleaseTimeWithCallback(request *DescribeLoadBalancerAutoReleaseTimeRequest, callback func(response *DescribeLoadBalancerAutoReleaseTimeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type DescribeLoadBalancerAutoReleaseTimeResponse struct {
 	AutoReleaseTime int    `json:"AutoReleaseTime" xml:"AutoReleaseTime"`
 }
 
+// create a request to invoke DescribeLoadBalancerAutoReleaseTime API
 func CreateDescribeLoadBalancerAutoReleaseTimeRequest() (request *DescribeLoadBalancerAutoReleaseTimeRequest) {
 	request = &DescribeLoadBalancerAutoReleaseTimeRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateDescribeLoadBalancerAutoReleaseTimeRequest() (request *DescribeLoadBa
 	return
 }
 
+// create a response to parse from DescribeLoadBalancerAutoReleaseTime response
 func CreateDescribeLoadBalancerAutoReleaseTimeResponse() (response *DescribeLoadBalancerAutoReleaseTimeResponse) {
 	response = &DescribeLoadBalancerAutoReleaseTimeResponse{
 		BaseResponse: &responses.BaseResponse{},

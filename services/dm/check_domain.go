@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CheckDomain api with *CheckDomainRequest synchronously
+// api document: https://help.aliyun.com/api/dm/checkdomain.html
 func (client *Client) CheckDomain(request *CheckDomainRequest) (response *CheckDomainResponse, err error) {
 	response = CreateCheckDomainResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CheckDomain api with *CheckDomainRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/checkdomain.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckDomainWithChan(request *CheckDomainRequest) (<-chan *CheckDomainResponse, <-chan error) {
 	responseChan := make(chan *CheckDomainResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CheckDomainWithChan(request *CheckDomainRequest) (<-chan *
 	return responseChan, errChan
 }
 
+// invoke CheckDomain api with *CheckDomainRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/checkdomain.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckDomainWithCallback(request *CheckDomainRequest, callback func(response *CheckDomainResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type CheckDomainResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke CheckDomain API
 func CreateCheckDomainRequest() (request *CheckDomainRequest) {
 	request = &CheckDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateCheckDomainRequest() (request *CheckDomainRequest) {
 	return
 }
 
+// create a response to parse from CheckDomain response
 func CreateCheckDomainResponse() (response *CheckDomainResponse) {
 	response = &CheckDomainResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke UpdateCensorPipeline api with *UpdateCensorPipelineRequest synchronously
+// api document: https://help.aliyun.com/api/mts/updatecensorpipeline.html
 func (client *Client) UpdateCensorPipeline(request *UpdateCensorPipelineRequest) (response *UpdateCensorPipelineResponse, err error) {
 	response = CreateUpdateCensorPipelineResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke UpdateCensorPipeline api with *UpdateCensorPipelineRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/updatecensorpipeline.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateCensorPipelineWithChan(request *UpdateCensorPipelineRequest) (<-chan *UpdateCensorPipelineResponse, <-chan error) {
 	responseChan := make(chan *UpdateCensorPipelineResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) UpdateCensorPipelineWithChan(request *UpdateCensorPipeline
 	return responseChan, errChan
 }
 
+// invoke UpdateCensorPipeline api with *UpdateCensorPipelineRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/updatecensorpipeline.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateCensorPipelineWithCallback(request *UpdateCensorPipelineRequest, callback func(response *UpdateCensorPipelineResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,6 +92,7 @@ type UpdateCensorPipelineResponse struct {
 	Pipeline  Pipeline `json:"Pipeline" xml:"Pipeline"`
 }
 
+// create a request to invoke UpdateCensorPipeline API
 func CreateUpdateCensorPipelineRequest() (request *UpdateCensorPipelineRequest) {
 	request = &UpdateCensorPipelineRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -92,6 +101,7 @@ func CreateUpdateCensorPipelineRequest() (request *UpdateCensorPipelineRequest) 
 	return
 }
 
+// create a response to parse from UpdateCensorPipeline response
 func CreateUpdateCensorPipelineResponse() (response *UpdateCensorPipelineResponse) {
 	response = &UpdateCensorPipelineResponse{
 		BaseResponse: &responses.BaseResponse{},

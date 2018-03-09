@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke QueryMediaDetailJobList api with *QueryMediaDetailJobListRequest synchronously
+// api document: https://help.aliyun.com/api/mts/querymediadetailjoblist.html
 func (client *Client) QueryMediaDetailJobList(request *QueryMediaDetailJobListRequest) (response *QueryMediaDetailJobListResponse, err error) {
 	response = CreateQueryMediaDetailJobListResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke QueryMediaDetailJobList api with *QueryMediaDetailJobListRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/querymediadetailjoblist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryMediaDetailJobListWithChan(request *QueryMediaDetailJobListRequest) (<-chan *QueryMediaDetailJobListResponse, <-chan error) {
 	responseChan := make(chan *QueryMediaDetailJobListResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) QueryMediaDetailJobListWithChan(request *QueryMediaDetailJ
 	return responseChan, errChan
 }
 
+// invoke QueryMediaDetailJobList api with *QueryMediaDetailJobListRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/querymediadetailjoblist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryMediaDetailJobListWithCallback(request *QueryMediaDetailJobListRequest, callback func(response *QueryMediaDetailJobListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type QueryMediaDetailJobListResponse struct {
 	JobList     JobListInQueryMediaDetailJobList     `json:"JobList" xml:"JobList"`
 }
 
+// create a request to invoke QueryMediaDetailJobList API
 func CreateQueryMediaDetailJobListRequest() (request *QueryMediaDetailJobListRequest) {
 	request = &QueryMediaDetailJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateQueryMediaDetailJobListRequest() (request *QueryMediaDetailJobListReq
 	return
 }
 
+// create a response to parse from QueryMediaDetailJobList response
 func CreateQueryMediaDetailJobListResponse() (response *QueryMediaDetailJobListResponse) {
 	response = &QueryMediaDetailJobListResponse{
 		BaseResponse: &responses.BaseResponse{},

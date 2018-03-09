@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeUserBusinessBehavior api with *DescribeUserBusinessBehaviorRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/describeuserbusinessbehavior.html
 func (client *Client) DescribeUserBusinessBehavior(request *DescribeUserBusinessBehaviorRequest) (response *DescribeUserBusinessBehaviorResponse, err error) {
 	response = CreateDescribeUserBusinessBehaviorResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeUserBusinessBehavior api with *DescribeUserBusinessBehaviorRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describeuserbusinessbehavior.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUserBusinessBehaviorWithChan(request *DescribeUserBusinessBehaviorRequest) (<-chan *DescribeUserBusinessBehaviorResponse, <-chan error) {
 	responseChan := make(chan *DescribeUserBusinessBehaviorResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeUserBusinessBehaviorWithChan(request *DescribeUser
 	return responseChan, errChan
 }
 
+// invoke DescribeUserBusinessBehavior api with *DescribeUserBusinessBehaviorRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describeuserbusinessbehavior.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUserBusinessBehaviorWithCallback(request *DescribeUserBusinessBehaviorRequest, callback func(response *DescribeUserBusinessBehaviorResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -75,6 +83,7 @@ type DescribeUserBusinessBehaviorResponse struct {
 	StatusValue string `json:"StatusValue" xml:"StatusValue"`
 }
 
+// create a request to invoke DescribeUserBusinessBehavior API
 func CreateDescribeUserBusinessBehaviorRequest() (request *DescribeUserBusinessBehaviorRequest) {
 	request = &DescribeUserBusinessBehaviorRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -83,6 +92,7 @@ func CreateDescribeUserBusinessBehaviorRequest() (request *DescribeUserBusinessB
 	return
 }
 
+// create a response to parse from DescribeUserBusinessBehavior response
 func CreateDescribeUserBusinessBehaviorResponse() (response *DescribeUserBusinessBehaviorResponse) {
 	response = &DescribeUserBusinessBehaviorResponse{
 		BaseResponse: &responses.BaseResponse{},

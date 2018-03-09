@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeExtensiveDomainData api with *DescribeExtensiveDomainDataRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/describeextensivedomaindata.html
 func (client *Client) DescribeExtensiveDomainData(request *DescribeExtensiveDomainDataRequest) (response *DescribeExtensiveDomainDataResponse, err error) {
 	response = CreateDescribeExtensiveDomainDataResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeExtensiveDomainData api with *DescribeExtensiveDomainDataRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describeextensivedomaindata.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeExtensiveDomainDataWithChan(request *DescribeExtensiveDomainDataRequest) (<-chan *DescribeExtensiveDomainDataResponse, <-chan error) {
 	responseChan := make(chan *DescribeExtensiveDomainDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeExtensiveDomainDataWithChan(request *DescribeExten
 	return responseChan, errChan
 }
 
+// invoke DescribeExtensiveDomainData api with *DescribeExtensiveDomainDataRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describeextensivedomaindata.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeExtensiveDomainDataWithCallback(request *DescribeExtensiveDomainDataRequest, callback func(response *DescribeExtensiveDomainDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -89,6 +97,7 @@ type DescribeExtensiveDomainDataResponse struct {
 	DataPerInterval DataPerIntervalInDescribeExtensiveDomainData `json:"DataPerInterval" xml:"DataPerInterval"`
 }
 
+// create a request to invoke DescribeExtensiveDomainData API
 func CreateDescribeExtensiveDomainDataRequest() (request *DescribeExtensiveDomainDataRequest) {
 	request = &DescribeExtensiveDomainDataRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -97,6 +106,7 @@ func CreateDescribeExtensiveDomainDataRequest() (request *DescribeExtensiveDomai
 	return
 }
 
+// create a response to parse from DescribeExtensiveDomainData response
 func CreateDescribeExtensiveDomainDataResponse() (response *DescribeExtensiveDomainDataResponse) {
 	response = &DescribeExtensiveDomainDataResponse{
 		BaseResponse: &responses.BaseResponse{},

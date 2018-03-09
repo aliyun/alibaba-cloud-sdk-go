@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SubmitSnapshotJob api with *SubmitSnapshotJobRequest synchronously
+// api document: https://help.aliyun.com/api/mts/submitsnapshotjob.html
 func (client *Client) SubmitSnapshotJob(request *SubmitSnapshotJobRequest) (response *SubmitSnapshotJobResponse, err error) {
 	response = CreateSubmitSnapshotJobResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SubmitSnapshotJob api with *SubmitSnapshotJobRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/submitsnapshotjob.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitSnapshotJobWithChan(request *SubmitSnapshotJobRequest) (<-chan *SubmitSnapshotJobResponse, <-chan error) {
 	responseChan := make(chan *SubmitSnapshotJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SubmitSnapshotJobWithChan(request *SubmitSnapshotJobReques
 	return responseChan, errChan
 }
 
+// invoke SubmitSnapshotJob api with *SubmitSnapshotJobRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/submitsnapshotjob.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitSnapshotJobWithCallback(request *SubmitSnapshotJobRequest, callback func(response *SubmitSnapshotJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,6 +91,7 @@ type SubmitSnapshotJobResponse struct {
 	SnapshotJob SnapshotJob `json:"SnapshotJob" xml:"SnapshotJob"`
 }
 
+// create a request to invoke SubmitSnapshotJob API
 func CreateSubmitSnapshotJobRequest() (request *SubmitSnapshotJobRequest) {
 	request = &SubmitSnapshotJobRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -91,6 +100,7 @@ func CreateSubmitSnapshotJobRequest() (request *SubmitSnapshotJobRequest) {
 	return
 }
 
+// create a response to parse from SubmitSnapshotJob response
 func CreateSubmitSnapshotJobResponse() (response *SubmitSnapshotJobResponse) {
 	response = &SubmitSnapshotJobResponse{
 		BaseResponse: &responses.BaseResponse{},

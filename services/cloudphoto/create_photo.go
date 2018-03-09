@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CreatePhoto api with *CreatePhotoRequest synchronously
+// api document: https://help.aliyun.com/api/cloudphoto/createphoto.html
 func (client *Client) CreatePhoto(request *CreatePhotoRequest) (response *CreatePhotoResponse, err error) {
 	response = CreateCreatePhotoResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CreatePhoto api with *CreatePhotoRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/createphoto.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreatePhotoWithChan(request *CreatePhotoRequest) (<-chan *CreatePhotoResponse, <-chan error) {
 	responseChan := make(chan *CreatePhotoResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CreatePhotoWithChan(request *CreatePhotoRequest) (<-chan *
 	return responseChan, errChan
 }
 
+// invoke CreatePhoto api with *CreatePhotoRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/createphoto.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreatePhotoWithCallback(request *CreatePhotoRequest, callback func(response *CreatePhotoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -87,6 +95,7 @@ type CreatePhotoResponse struct {
 	Photo     Photo  `json:"Photo" xml:"Photo"`
 }
 
+// create a request to invoke CreatePhoto API
 func CreateCreatePhotoRequest() (request *CreatePhotoRequest) {
 	request = &CreatePhotoRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -95,6 +104,7 @@ func CreateCreatePhotoRequest() (request *CreatePhotoRequest) {
 	return
 }
 
+// create a response to parse from CreatePhoto response
 func CreateCreatePhotoResponse() (response *CreatePhotoResponse) {
 	response = &CreatePhotoResponse{
 		BaseResponse: &responses.BaseResponse{},

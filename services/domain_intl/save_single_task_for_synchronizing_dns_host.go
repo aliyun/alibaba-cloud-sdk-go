@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SaveSingleTaskForSynchronizingDnsHost api with *SaveSingleTaskForSynchronizingDnsHostRequest synchronously
+// api document: https://help.aliyun.com/api/domain-intl/savesingletaskforsynchronizingdnshost.html
 func (client *Client) SaveSingleTaskForSynchronizingDnsHost(request *SaveSingleTaskForSynchronizingDnsHostRequest) (response *SaveSingleTaskForSynchronizingDnsHostResponse, err error) {
 	response = CreateSaveSingleTaskForSynchronizingDnsHostResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SaveSingleTaskForSynchronizingDnsHost api with *SaveSingleTaskForSynchronizingDnsHostRequest asynchronously
+// api document: https://help.aliyun.com/api/domain-intl/savesingletaskforsynchronizingdnshost.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveSingleTaskForSynchronizingDnsHostWithChan(request *SaveSingleTaskForSynchronizingDnsHostRequest) (<-chan *SaveSingleTaskForSynchronizingDnsHostResponse, <-chan error) {
 	responseChan := make(chan *SaveSingleTaskForSynchronizingDnsHostResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SaveSingleTaskForSynchronizingDnsHostWithChan(request *Sav
 	return responseChan, errChan
 }
 
+// invoke SaveSingleTaskForSynchronizingDnsHost api with *SaveSingleTaskForSynchronizingDnsHostRequest asynchronously
+// api document: https://help.aliyun.com/api/domain-intl/savesingletaskforsynchronizingdnshost.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveSingleTaskForSynchronizingDnsHostWithCallback(request *SaveSingleTaskForSynchronizingDnsHostRequest, callback func(response *SaveSingleTaskForSynchronizingDnsHostResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +85,7 @@ type SaveSingleTaskForSynchronizingDnsHostResponse struct {
 	TaskNo    string `json:"TaskNo" xml:"TaskNo"`
 }
 
+// create a request to invoke SaveSingleTaskForSynchronizingDnsHost API
 func CreateSaveSingleTaskForSynchronizingDnsHostRequest() (request *SaveSingleTaskForSynchronizingDnsHostRequest) {
 	request = &SaveSingleTaskForSynchronizingDnsHostRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -85,6 +94,7 @@ func CreateSaveSingleTaskForSynchronizingDnsHostRequest() (request *SaveSingleTa
 	return
 }
 
+// create a response to parse from SaveSingleTaskForSynchronizingDnsHost response
 func CreateSaveSingleTaskForSynchronizingDnsHostResponse() (response *SaveSingleTaskForSynchronizingDnsHostResponse) {
 	response = &SaveSingleTaskForSynchronizingDnsHostResponse{
 		BaseResponse: &responses.BaseResponse{},

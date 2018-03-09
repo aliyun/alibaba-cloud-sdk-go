@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ResizeDisk api with *ResizeDiskRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/resizedisk.html
 func (client *Client) ResizeDisk(request *ResizeDiskRequest) (response *ResizeDiskResponse, err error) {
 	response = CreateResizeDiskResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ResizeDisk api with *ResizeDiskRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/resizedisk.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResizeDiskWithChan(request *ResizeDiskRequest) (<-chan *ResizeDiskResponse, <-chan error) {
 	responseChan := make(chan *ResizeDiskResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ResizeDiskWithChan(request *ResizeDiskRequest) (<-chan *Re
 	return responseChan, errChan
 }
 
+// invoke ResizeDisk api with *ResizeDiskRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/resizedisk.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResizeDiskWithCallback(request *ResizeDiskRequest, callback func(response *ResizeDiskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type ResizeDiskResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ResizeDisk API
 func CreateResizeDiskRequest() (request *ResizeDiskRequest) {
 	request = &ResizeDiskRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateResizeDiskRequest() (request *ResizeDiskRequest) {
 	return
 }
 
+// create a response to parse from ResizeDisk response
 func CreateResizeDiskResponse() (response *ResizeDiskResponse) {
 	response = &ResizeDiskResponse{
 		BaseResponse: &responses.BaseResponse{},

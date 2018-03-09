@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeDomainQoSRt api with *DescribeDomainQoSRtRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/describedomainqosrt.html
 func (client *Client) DescribeDomainQoSRt(request *DescribeDomainQoSRtRequest) (response *DescribeDomainQoSRtResponse, err error) {
 	response = CreateDescribeDomainQoSRtResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeDomainQoSRt api with *DescribeDomainQoSRtRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describedomainqosrt.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainQoSRtWithChan(request *DescribeDomainQoSRtRequest) (<-chan *DescribeDomainQoSRtResponse, <-chan error) {
 	responseChan := make(chan *DescribeDomainQoSRtResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeDomainQoSRtWithChan(request *DescribeDomainQoSRtRe
 	return responseChan, errChan
 }
 
+// invoke DescribeDomainQoSRt api with *DescribeDomainQoSRtRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describedomainqosrt.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainQoSRtWithCallback(request *DescribeDomainQoSRtRequest, callback func(response *DescribeDomainQoSRtResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type DescribeDomainQoSRtResponse struct {
 	Content    Content `json:"Content" xml:"Content"`
 }
 
+// create a request to invoke DescribeDomainQoSRt API
 func CreateDescribeDomainQoSRtRequest() (request *DescribeDomainQoSRtRequest) {
 	request = &DescribeDomainQoSRtRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateDescribeDomainQoSRtRequest() (request *DescribeDomainQoSRtRequest) {
 	return
 }
 
+// create a response to parse from DescribeDomainQoSRt response
 func CreateDescribeDomainQoSRtResponse() (response *DescribeDomainQoSRtResponse) {
 	response = &DescribeDomainQoSRtResponse{
 		BaseResponse: &responses.BaseResponse{},

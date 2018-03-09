@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke UpdateAsrPipeline api with *UpdateAsrPipelineRequest synchronously
+// api document: https://help.aliyun.com/api/mts/updateasrpipeline.html
 func (client *Client) UpdateAsrPipeline(request *UpdateAsrPipelineRequest) (response *UpdateAsrPipelineResponse, err error) {
 	response = CreateUpdateAsrPipelineResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke UpdateAsrPipeline api with *UpdateAsrPipelineRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/updateasrpipeline.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateAsrPipelineWithChan(request *UpdateAsrPipelineRequest) (<-chan *UpdateAsrPipelineResponse, <-chan error) {
 	responseChan := make(chan *UpdateAsrPipelineResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) UpdateAsrPipelineWithChan(request *UpdateAsrPipelineReques
 	return responseChan, errChan
 }
 
+// invoke UpdateAsrPipeline api with *UpdateAsrPipelineRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/updateasrpipeline.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateAsrPipelineWithCallback(request *UpdateAsrPipelineRequest, callback func(response *UpdateAsrPipelineResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,6 +92,7 @@ type UpdateAsrPipelineResponse struct {
 	Pipeline  Pipeline `json:"Pipeline" xml:"Pipeline"`
 }
 
+// create a request to invoke UpdateAsrPipeline API
 func CreateUpdateAsrPipelineRequest() (request *UpdateAsrPipelineRequest) {
 	request = &UpdateAsrPipelineRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -92,6 +101,7 @@ func CreateUpdateAsrPipelineRequest() (request *UpdateAsrPipelineRequest) {
 	return
 }
 
+// create a response to parse from UpdateAsrPipeline response
 func CreateUpdateAsrPipelineResponse() (response *UpdateAsrPipelineResponse) {
 	response = &UpdateAsrPipelineResponse{
 		BaseResponse: &responses.BaseResponse{},

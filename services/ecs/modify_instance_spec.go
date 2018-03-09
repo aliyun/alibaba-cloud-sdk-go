@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifyInstanceSpec api with *ModifyInstanceSpecRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/modifyinstancespec.html
 func (client *Client) ModifyInstanceSpec(request *ModifyInstanceSpecRequest) (response *ModifyInstanceSpecResponse, err error) {
 	response = CreateModifyInstanceSpecResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifyInstanceSpec api with *ModifyInstanceSpecRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/modifyinstancespec.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyInstanceSpecWithChan(request *ModifyInstanceSpecRequest) (<-chan *ModifyInstanceSpecResponse, <-chan error) {
 	responseChan := make(chan *ModifyInstanceSpecResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifyInstanceSpecWithChan(request *ModifyInstanceSpecRequ
 	return responseChan, errChan
 }
 
+// invoke ModifyInstanceSpec api with *ModifyInstanceSpecRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/modifyinstancespec.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyInstanceSpecWithCallback(request *ModifyInstanceSpecRequest, callback func(response *ModifyInstanceSpecResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -89,6 +97,7 @@ type ModifyInstanceSpecResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ModifyInstanceSpec API
 func CreateModifyInstanceSpecRequest() (request *ModifyInstanceSpecRequest) {
 	request = &ModifyInstanceSpecRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -97,6 +106,7 @@ func CreateModifyInstanceSpecRequest() (request *ModifyInstanceSpecRequest) {
 	return
 }
 
+// create a response to parse from ModifyInstanceSpec response
 func CreateModifyInstanceSpecResponse() (response *ModifyInstanceSpecResponse) {
 	response = &ModifyInstanceSpecResponse{
 		BaseResponse: &responses.BaseResponse{},

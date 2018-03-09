@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeLiveStreamPushData api with *DescribeLiveStreamPushDataRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/describelivestreampushdata.html
 func (client *Client) DescribeLiveStreamPushData(request *DescribeLiveStreamPushDataRequest) (response *DescribeLiveStreamPushDataResponse, err error) {
 	response = CreateDescribeLiveStreamPushDataResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeLiveStreamPushData api with *DescribeLiveStreamPushDataRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describelivestreampushdata.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamPushDataWithChan(request *DescribeLiveStreamPushDataRequest) (<-chan *DescribeLiveStreamPushDataResponse, <-chan error) {
 	responseChan := make(chan *DescribeLiveStreamPushDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeLiveStreamPushDataWithChan(request *DescribeLiveSt
 	return responseChan, errChan
 }
 
+// invoke DescribeLiveStreamPushData api with *DescribeLiveStreamPushDataRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describelivestreampushdata.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamPushDataWithCallback(request *DescribeLiveStreamPushDataRequest, callback func(response *DescribeLiveStreamPushDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type DescribeLiveStreamPushDataResponse struct {
 	PushStreamModelList PushStreamModelList `json:"PushStreamModelList" xml:"PushStreamModelList"`
 }
 
+// create a request to invoke DescribeLiveStreamPushData API
 func CreateDescribeLiveStreamPushDataRequest() (request *DescribeLiveStreamPushDataRequest) {
 	request = &DescribeLiveStreamPushDataRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateDescribeLiveStreamPushDataRequest() (request *DescribeLiveStreamPushD
 	return
 }
 
+// create a response to parse from DescribeLiveStreamPushData response
 func CreateDescribeLiveStreamPushDataResponse() (response *DescribeLiveStreamPushDataResponse) {
 	response = &DescribeLiveStreamPushDataResponse{
 		BaseResponse: &responses.BaseResponse{},

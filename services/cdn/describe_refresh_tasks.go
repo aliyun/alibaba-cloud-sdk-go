@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeRefreshTasks api with *DescribeRefreshTasksRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/describerefreshtasks.html
 func (client *Client) DescribeRefreshTasks(request *DescribeRefreshTasksRequest) (response *DescribeRefreshTasksResponse, err error) {
 	response = CreateDescribeRefreshTasksResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeRefreshTasks api with *DescribeRefreshTasksRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describerefreshtasks.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRefreshTasksWithChan(request *DescribeRefreshTasksRequest) (<-chan *DescribeRefreshTasksResponse, <-chan error) {
 	responseChan := make(chan *DescribeRefreshTasksResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeRefreshTasksWithChan(request *DescribeRefreshTasks
 	return responseChan, errChan
 }
 
+// invoke DescribeRefreshTasks api with *DescribeRefreshTasksRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describerefreshtasks.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRefreshTasksWithCallback(request *DescribeRefreshTasksRequest, callback func(response *DescribeRefreshTasksResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -90,6 +98,7 @@ type DescribeRefreshTasksResponse struct {
 	Tasks      Tasks  `json:"Tasks" xml:"Tasks"`
 }
 
+// create a request to invoke DescribeRefreshTasks API
 func CreateDescribeRefreshTasksRequest() (request *DescribeRefreshTasksRequest) {
 	request = &DescribeRefreshTasksRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -98,6 +107,7 @@ func CreateDescribeRefreshTasksRequest() (request *DescribeRefreshTasksRequest) 
 	return
 }
 
+// create a response to parse from DescribeRefreshTasks response
 func CreateDescribeRefreshTasksResponse() (response *DescribeRefreshTasksResponse) {
 	response = &DescribeRefreshTasksResponse{
 		BaseResponse: &responses.BaseResponse{},

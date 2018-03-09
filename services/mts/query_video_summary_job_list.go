@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke QueryVideoSummaryJobList api with *QueryVideoSummaryJobListRequest synchronously
+// api document: https://help.aliyun.com/api/mts/queryvideosummaryjoblist.html
 func (client *Client) QueryVideoSummaryJobList(request *QueryVideoSummaryJobListRequest) (response *QueryVideoSummaryJobListResponse, err error) {
 	response = CreateQueryVideoSummaryJobListResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke QueryVideoSummaryJobList api with *QueryVideoSummaryJobListRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/queryvideosummaryjoblist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryVideoSummaryJobListWithChan(request *QueryVideoSummaryJobListRequest) (<-chan *QueryVideoSummaryJobListResponse, <-chan error) {
 	responseChan := make(chan *QueryVideoSummaryJobListResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) QueryVideoSummaryJobListWithChan(request *QueryVideoSummar
 	return responseChan, errChan
 }
 
+// invoke QueryVideoSummaryJobList api with *QueryVideoSummaryJobListRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/queryvideosummaryjoblist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryVideoSummaryJobListWithCallback(request *QueryVideoSummaryJobListRequest, callback func(response *QueryVideoSummaryJobListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type QueryVideoSummaryJobListResponse struct {
 	JobList     JobListInQueryVideoSummaryJobList     `json:"JobList" xml:"JobList"`
 }
 
+// create a request to invoke QueryVideoSummaryJobList API
 func CreateQueryVideoSummaryJobListRequest() (request *QueryVideoSummaryJobListRequest) {
 	request = &QueryVideoSummaryJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateQueryVideoSummaryJobListRequest() (request *QueryVideoSummaryJobListR
 	return
 }
 
+// create a response to parse from QueryVideoSummaryJobList response
 func CreateQueryVideoSummaryJobListResponse() (response *QueryVideoSummaryJobListResponse) {
 	response = &QueryVideoSummaryJobListResponse{
 		BaseResponse: &responses.BaseResponse{},

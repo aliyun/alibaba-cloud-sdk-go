@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke GetUser api with *GetUserRequest synchronously
+// api document: https://help.aliyun.com/api/ram/getuser.html
 func (client *Client) GetUser(request *GetUserRequest) (response *GetUserResponse, err error) {
 	response = CreateGetUserResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke GetUser api with *GetUserRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/getuser.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetUserWithChan(request *GetUserRequest) (<-chan *GetUserResponse, <-chan error) {
 	responseChan := make(chan *GetUserResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) GetUserWithChan(request *GetUserRequest) (<-chan *GetUserR
 	return responseChan, errChan
 }
 
+// invoke GetUser api with *GetUserRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/getuser.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetUserWithCallback(request *GetUserRequest, callback func(response *GetUserResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,6 +84,7 @@ type GetUserResponse struct {
 	User      User   `json:"User" xml:"User"`
 }
 
+// create a request to invoke GetUser API
 func CreateGetUserRequest() (request *GetUserRequest) {
 	request = &GetUserRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -84,6 +93,7 @@ func CreateGetUserRequest() (request *GetUserRequest) {
 	return
 }
 
+// create a response to parse from GetUser response
 func CreateGetUserResponse() (response *GetUserResponse) {
 	response = &GetUserResponse{
 		BaseResponse: &responses.BaseResponse{},

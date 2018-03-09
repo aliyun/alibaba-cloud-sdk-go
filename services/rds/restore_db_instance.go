@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke RestoreDBInstance api with *RestoreDBInstanceRequest synchronously
+// api document: https://help.aliyun.com/api/rds/restoredbinstance.html
 func (client *Client) RestoreDBInstance(request *RestoreDBInstanceRequest) (response *RestoreDBInstanceResponse, err error) {
 	response = CreateRestoreDBInstanceResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke RestoreDBInstance api with *RestoreDBInstanceRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/restoredbinstance.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RestoreDBInstanceWithChan(request *RestoreDBInstanceRequest) (<-chan *RestoreDBInstanceResponse, <-chan error) {
 	responseChan := make(chan *RestoreDBInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) RestoreDBInstanceWithChan(request *RestoreDBInstanceReques
 	return responseChan, errChan
 }
 
+// invoke RestoreDBInstance api with *RestoreDBInstanceRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/restoredbinstance.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RestoreDBInstanceWithCallback(request *RestoreDBInstanceRequest, callback func(response *RestoreDBInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type RestoreDBInstanceResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke RestoreDBInstance API
 func CreateRestoreDBInstanceRequest() (request *RestoreDBInstanceRequest) {
 	request = &RestoreDBInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateRestoreDBInstanceRequest() (request *RestoreDBInstanceRequest) {
 	return
 }
 
+// create a response to parse from RestoreDBInstance response
 func CreateRestoreDBInstanceResponse() (response *RestoreDBInstanceResponse) {
 	response = &RestoreDBInstanceResponse{
 		BaseResponse: &responses.BaseResponse{},

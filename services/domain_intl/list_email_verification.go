@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ListEmailVerification api with *ListEmailVerificationRequest synchronously
+// api document: https://help.aliyun.com/api/domain-intl/listemailverification.html
 func (client *Client) ListEmailVerification(request *ListEmailVerificationRequest) (response *ListEmailVerificationResponse, err error) {
 	response = CreateListEmailVerificationResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ListEmailVerification api with *ListEmailVerificationRequest asynchronously
+// api document: https://help.aliyun.com/api/domain-intl/listemailverification.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListEmailVerificationWithChan(request *ListEmailVerificationRequest) (<-chan *ListEmailVerificationResponse, <-chan error) {
 	responseChan := make(chan *ListEmailVerificationResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ListEmailVerificationWithChan(request *ListEmailVerificati
 	return responseChan, errChan
 }
 
+// invoke ListEmailVerification api with *ListEmailVerificationRequest asynchronously
+// api document: https://help.aliyun.com/api/domain-intl/listemailverification.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListEmailVerificationWithCallback(request *ListEmailVerificationRequest, callback func(response *ListEmailVerificationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -88,6 +96,7 @@ type ListEmailVerificationResponse struct {
 	Data           []EmailVerification `json:"Data" xml:"Data"`
 }
 
+// create a request to invoke ListEmailVerification API
 func CreateListEmailVerificationRequest() (request *ListEmailVerificationRequest) {
 	request = &ListEmailVerificationRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -96,6 +105,7 @@ func CreateListEmailVerificationRequest() (request *ListEmailVerificationRequest
 	return
 }
 
+// create a response to parse from ListEmailVerification response
 func CreateListEmailVerificationResponse() (response *ListEmailVerificationResponse) {
 	response = &ListEmailVerificationResponse{
 		BaseResponse: &responses.BaseResponse{},

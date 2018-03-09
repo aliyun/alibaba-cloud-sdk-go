@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeleteRole api with *DeleteRoleRequest synchronously
+// api document: https://help.aliyun.com/api/ram/deleterole.html
 func (client *Client) DeleteRole(request *DeleteRoleRequest) (response *DeleteRoleResponse, err error) {
 	response = CreateDeleteRoleResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeleteRole api with *DeleteRoleRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/deleterole.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteRoleWithChan(request *DeleteRoleRequest) (<-chan *DeleteRoleResponse, <-chan error) {
 	responseChan := make(chan *DeleteRoleResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeleteRoleWithChan(request *DeleteRoleRequest) (<-chan *De
 	return responseChan, errChan
 }
 
+// invoke DeleteRole api with *DeleteRoleRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/deleterole.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteRoleWithCallback(request *DeleteRoleRequest, callback func(response *DeleteRoleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -75,6 +83,7 @@ type DeleteRoleResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke DeleteRole API
 func CreateDeleteRoleRequest() (request *DeleteRoleRequest) {
 	request = &DeleteRoleRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -83,6 +92,7 @@ func CreateDeleteRoleRequest() (request *DeleteRoleRequest) {
 	return
 }
 
+// create a response to parse from DeleteRole response
 func CreateDeleteRoleResponse() (response *DeleteRoleResponse) {
 	response = &DeleteRoleResponse{
 		BaseResponse: &responses.BaseResponse{},

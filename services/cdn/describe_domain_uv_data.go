@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeDomainUvData api with *DescribeDomainUvDataRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/describedomainuvdata.html
 func (client *Client) DescribeDomainUvData(request *DescribeDomainUvDataRequest) (response *DescribeDomainUvDataResponse, err error) {
 	response = CreateDescribeDomainUvDataResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeDomainUvData api with *DescribeDomainUvDataRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describedomainuvdata.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainUvDataWithChan(request *DescribeDomainUvDataRequest) (<-chan *DescribeDomainUvDataResponse, <-chan error) {
 	responseChan := make(chan *DescribeDomainUvDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeDomainUvDataWithChan(request *DescribeDomainUvData
 	return responseChan, errChan
 }
 
+// invoke DescribeDomainUvData api with *DescribeDomainUvDataRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describedomainuvdata.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainUvDataWithCallback(request *DescribeDomainUvDataRequest, callback func(response *DescribeDomainUvDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,6 +92,7 @@ type DescribeDomainUvDataResponse struct {
 	UvDataInterval UvDataInterval `json:"UvDataInterval" xml:"UvDataInterval"`
 }
 
+// create a request to invoke DescribeDomainUvData API
 func CreateDescribeDomainUvDataRequest() (request *DescribeDomainUvDataRequest) {
 	request = &DescribeDomainUvDataRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -92,6 +101,7 @@ func CreateDescribeDomainUvDataRequest() (request *DescribeDomainUvDataRequest) 
 	return
 }
 
+// create a response to parse from DescribeDomainUvData response
 func CreateDescribeDomainUvDataResponse() (response *DescribeDomainUvDataResponse) {
 	response = &DescribeDomainUvDataResponse{
 		BaseResponse: &responses.BaseResponse{},

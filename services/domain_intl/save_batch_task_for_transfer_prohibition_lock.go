@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SaveBatchTaskForTransferProhibitionLock api with *SaveBatchTaskForTransferProhibitionLockRequest synchronously
+// api document: https://help.aliyun.com/api/domain-intl/savebatchtaskfortransferprohibitionlock.html
 func (client *Client) SaveBatchTaskForTransferProhibitionLock(request *SaveBatchTaskForTransferProhibitionLockRequest) (response *SaveBatchTaskForTransferProhibitionLockResponse, err error) {
 	response = CreateSaveBatchTaskForTransferProhibitionLockResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SaveBatchTaskForTransferProhibitionLock api with *SaveBatchTaskForTransferProhibitionLockRequest asynchronously
+// api document: https://help.aliyun.com/api/domain-intl/savebatchtaskfortransferprohibitionlock.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveBatchTaskForTransferProhibitionLockWithChan(request *SaveBatchTaskForTransferProhibitionLockRequest) (<-chan *SaveBatchTaskForTransferProhibitionLockResponse, <-chan error) {
 	responseChan := make(chan *SaveBatchTaskForTransferProhibitionLockResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SaveBatchTaskForTransferProhibitionLockWithChan(request *S
 	return responseChan, errChan
 }
 
+// invoke SaveBatchTaskForTransferProhibitionLock api with *SaveBatchTaskForTransferProhibitionLockRequest asynchronously
+// api document: https://help.aliyun.com/api/domain-intl/savebatchtaskfortransferprohibitionlock.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveBatchTaskForTransferProhibitionLockWithCallback(request *SaveBatchTaskForTransferProhibitionLockRequest, callback func(response *SaveBatchTaskForTransferProhibitionLockResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +87,7 @@ type SaveBatchTaskForTransferProhibitionLockResponse struct {
 	TaskNo    string `json:"TaskNo" xml:"TaskNo"`
 }
 
+// create a request to invoke SaveBatchTaskForTransferProhibitionLock API
 func CreateSaveBatchTaskForTransferProhibitionLockRequest() (request *SaveBatchTaskForTransferProhibitionLockRequest) {
 	request = &SaveBatchTaskForTransferProhibitionLockRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -87,6 +96,7 @@ func CreateSaveBatchTaskForTransferProhibitionLockRequest() (request *SaveBatchT
 	return
 }
 
+// create a response to parse from SaveBatchTaskForTransferProhibitionLock response
 func CreateSaveBatchTaskForTransferProhibitionLockResponse() (response *SaveBatchTaskForTransferProhibitionLockResponse) {
 	response = &SaveBatchTaskForTransferProhibitionLockResponse{
 		BaseResponse: &responses.BaseResponse{},

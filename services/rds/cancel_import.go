@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CancelImport api with *CancelImportRequest synchronously
+// api document: https://help.aliyun.com/api/rds/cancelimport.html
 func (client *Client) CancelImport(request *CancelImportRequest) (response *CancelImportResponse, err error) {
 	response = CreateCancelImportResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CancelImport api with *CancelImportRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/cancelimport.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CancelImportWithChan(request *CancelImportRequest) (<-chan *CancelImportResponse, <-chan error) {
 	responseChan := make(chan *CancelImportResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CancelImportWithChan(request *CancelImportRequest) (<-chan
 	return responseChan, errChan
 }
 
+// invoke CancelImport api with *CancelImportRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/cancelimport.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CancelImportWithCallback(request *CancelImportRequest, callback func(response *CancelImportResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type CancelImportResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke CancelImport API
 func CreateCancelImportRequest() (request *CancelImportRequest) {
 	request = &CancelImportRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateCancelImportRequest() (request *CancelImportRequest) {
 	return
 }
 
+// create a response to parse from CancelImport response
 func CreateCancelImportResponse() (response *CancelImportResponse) {
 	response = &CancelImportResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke GatherLogsToken api with *GatherLogsTokenRequest synchronously
+// api document: https://help.aliyun.com/api/cs/gatherlogstoken.html
 func (client *Client) GatherLogsToken(request *GatherLogsTokenRequest) (response *GatherLogsTokenResponse, err error) {
 	response = CreateGatherLogsTokenResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke GatherLogsToken api with *GatherLogsTokenRequest asynchronously
+// api document: https://help.aliyun.com/api/cs/gatherlogstoken.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GatherLogsTokenWithChan(request *GatherLogsTokenRequest) (<-chan *GatherLogsTokenResponse, <-chan error) {
 	responseChan := make(chan *GatherLogsTokenResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) GatherLogsTokenWithChan(request *GatherLogsTokenRequest) (
 	return responseChan, errChan
 }
 
+// invoke GatherLogsToken api with *GatherLogsTokenRequest asynchronously
+// api document: https://help.aliyun.com/api/cs/gatherlogstoken.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GatherLogsTokenWithCallback(request *GatherLogsTokenRequest, callback func(response *GatherLogsTokenResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -74,6 +82,7 @@ type GatherLogsTokenResponse struct {
 	*responses.BaseResponse
 }
 
+// create a request to invoke GatherLogsToken API
 func CreateGatherLogsTokenRequest() (request *GatherLogsTokenRequest) {
 	request = &GatherLogsTokenRequest{
 		RoaRequest: &requests.RoaRequest{},
@@ -83,6 +92,7 @@ func CreateGatherLogsTokenRequest() (request *GatherLogsTokenRequest) {
 	return
 }
 
+// create a response to parse from GatherLogsToken response
 func CreateGatherLogsTokenResponse() (response *GatherLogsTokenResponse) {
 	response = &GatherLogsTokenResponse{
 		BaseResponse: &responses.BaseResponse{},

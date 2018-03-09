@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeRouterInterfacesForGlobal api with *DescribeRouterInterfacesForGlobalRequest synchronously
+// api document: https://help.aliyun.com/api/vpc/describerouterinterfacesforglobal.html
 func (client *Client) DescribeRouterInterfacesForGlobal(request *DescribeRouterInterfacesForGlobalRequest) (response *DescribeRouterInterfacesForGlobalResponse, err error) {
 	response = CreateDescribeRouterInterfacesForGlobalResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeRouterInterfacesForGlobal api with *DescribeRouterInterfacesForGlobalRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/describerouterinterfacesforglobal.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRouterInterfacesForGlobalWithChan(request *DescribeRouterInterfacesForGlobalRequest) (<-chan *DescribeRouterInterfacesForGlobalResponse, <-chan error) {
 	responseChan := make(chan *DescribeRouterInterfacesForGlobalResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeRouterInterfacesForGlobalWithChan(request *Describ
 	return responseChan, errChan
 }
 
+// invoke DescribeRouterInterfacesForGlobal api with *DescribeRouterInterfacesForGlobalRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/describerouterinterfacesforglobal.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRouterInterfacesForGlobalWithCallback(request *DescribeRouterInterfacesForGlobalRequest, callback func(response *DescribeRouterInterfacesForGlobalResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -89,6 +97,7 @@ type DescribeRouterInterfacesForGlobalResponse struct {
 	RouterInterfaceSet RouterInterfaceSetInDescribeRouterInterfacesForGlobal `json:"RouterInterfaceSet" xml:"RouterInterfaceSet"`
 }
 
+// create a request to invoke DescribeRouterInterfacesForGlobal API
 func CreateDescribeRouterInterfacesForGlobalRequest() (request *DescribeRouterInterfacesForGlobalRequest) {
 	request = &DescribeRouterInterfacesForGlobalRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -97,6 +106,7 @@ func CreateDescribeRouterInterfacesForGlobalRequest() (request *DescribeRouterIn
 	return
 }
 
+// create a response to parse from DescribeRouterInterfacesForGlobal response
 func CreateDescribeRouterInterfacesForGlobalResponse() (response *DescribeRouterInterfacesForGlobalResponse) {
 	response = &DescribeRouterInterfacesForGlobalResponse{
 		BaseResponse: &responses.BaseResponse{},

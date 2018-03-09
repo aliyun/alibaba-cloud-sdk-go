@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeOplog api with *DescribeOplogRequest synchronously
+// api document: https://help.aliyun.com/api/ddospro/describeoplog.html
 func (client *Client) DescribeOplog(request *DescribeOplogRequest) (response *DescribeOplogResponse, err error) {
 	response = CreateDescribeOplogResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeOplog api with *DescribeOplogRequest asynchronously
+// api document: https://help.aliyun.com/api/ddospro/describeoplog.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeOplogWithChan(request *DescribeOplogRequest) (<-chan *DescribeOplogResponse, <-chan error) {
 	responseChan := make(chan *DescribeOplogResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeOplogWithChan(request *DescribeOplogRequest) (<-ch
 	return responseChan, errChan
 }
 
+// invoke DescribeOplog api with *DescribeOplogRequest asynchronously
+// api document: https://help.aliyun.com/api/ddospro/describeoplog.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeOplogWithCallback(request *DescribeOplogRequest, callback func(response *DescribeOplogResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,6 +92,7 @@ type DescribeOplogResponse struct {
 	OplogList []Data `json:"OplogList" xml:"OplogList"`
 }
 
+// create a request to invoke DescribeOplog API
 func CreateDescribeOplogRequest() (request *DescribeOplogRequest) {
 	request = &DescribeOplogRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -92,6 +101,7 @@ func CreateDescribeOplogRequest() (request *DescribeOplogRequest) {
 	return
 }
 
+// create a response to parse from DescribeOplog response
 func CreateDescribeOplogResponse() (response *DescribeOplogResponse) {
 	response = &DescribeOplogResponse{
 		BaseResponse: &responses.BaseResponse{},

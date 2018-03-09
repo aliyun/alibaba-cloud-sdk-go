@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke AssignUsers api with *AssignUsersRequest synchronously
+// api document: https://help.aliyun.com/api/ccc/assignusers.html
 func (client *Client) AssignUsers(request *AssignUsersRequest) (response *AssignUsersResponse, err error) {
 	response = CreateAssignUsersResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke AssignUsers api with *AssignUsersRequest asynchronously
+// api document: https://help.aliyun.com/api/ccc/assignusers.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AssignUsersWithChan(request *AssignUsersRequest) (<-chan *AssignUsersResponse, <-chan error) {
 	responseChan := make(chan *AssignUsersResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) AssignUsersWithChan(request *AssignUsersRequest) (<-chan *
 	return responseChan, errChan
 }
 
+// invoke AssignUsers api with *AssignUsersRequest asynchronously
+// api document: https://help.aliyun.com/api/ccc/assignusers.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AssignUsersWithCallback(request *AssignUsersRequest, callback func(response *AssignUsersResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,6 +91,7 @@ type AssignUsersResponse struct {
 	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 }
 
+// create a request to invoke AssignUsers API
 func CreateAssignUsersRequest() (request *AssignUsersRequest) {
 	request = &AssignUsersRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -91,6 +100,7 @@ func CreateAssignUsersRequest() (request *AssignUsersRequest) {
 	return
 }
 
+// create a response to parse from AssignUsers response
 func CreateAssignUsersResponse() (response *AssignUsersResponse) {
 	response = &AssignUsersResponse{
 		BaseResponse: &responses.BaseResponse{},

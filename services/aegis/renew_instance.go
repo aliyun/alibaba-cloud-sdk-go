@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke RenewInstance api with *RenewInstanceRequest synchronously
+// api document: https://help.aliyun.com/api/aegis/renewinstance.html
 func (client *Client) RenewInstance(request *RenewInstanceRequest) (response *RenewInstanceResponse, err error) {
 	response = CreateRenewInstanceResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke RenewInstance api with *RenewInstanceRequest asynchronously
+// api document: https://help.aliyun.com/api/aegis/renewinstance.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RenewInstanceWithChan(request *RenewInstanceRequest) (<-chan *RenewInstanceResponse, <-chan error) {
 	responseChan := make(chan *RenewInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) RenewInstanceWithChan(request *RenewInstanceRequest) (<-ch
 	return responseChan, errChan
 }
 
+// invoke RenewInstance api with *RenewInstanceRequest asynchronously
+// api document: https://help.aliyun.com/api/aegis/renewinstance.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RenewInstanceWithCallback(request *RenewInstanceRequest, callback func(response *RenewInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type RenewInstanceResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke RenewInstance API
 func CreateRenewInstanceRequest() (request *RenewInstanceRequest) {
 	request = &RenewInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateRenewInstanceRequest() (request *RenewInstanceRequest) {
 	return
 }
 
+// create a response to parse from RenewInstance response
 func CreateRenewInstanceResponse() (response *RenewInstanceResponse) {
 	response = &RenewInstanceResponse{
 		BaseResponse: &responses.BaseResponse{},

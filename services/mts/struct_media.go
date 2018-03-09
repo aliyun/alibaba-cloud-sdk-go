@@ -17,6 +17,7 @@ package mts
 
 type Media struct {
 	CreationTime string                            `json:"CreationTime" xml:"CreationTime"`
+	CensorState  string                            `json:"CensorState" xml:"CensorState"`
 	Size         string                            `json:"Size" xml:"Size"`
 	Height       string                            `json:"Height" xml:"Height"`
 	PublishState string                            `json:"PublishState" xml:"PublishState"`
@@ -36,4 +37,5 @@ type Media struct {
 	MediaInfo    MediaInfo                         `json:"MediaInfo" xml:"MediaInfo"`
 	SnapshotList SnapshotListInQueryMediaListByURL `json:"SnapshotList" xml:"SnapshotList"`
 	PlayList     PlayListInQueryMediaListByURL     `json:"PlayList" xml:"PlayList"`
+	SummaryList  SummaryListInQueryMediaListByURL  `json:"SummaryList" xml:"SummaryList"`
 }

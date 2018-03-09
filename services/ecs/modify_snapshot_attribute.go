@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifySnapshotAttribute api with *ModifySnapshotAttributeRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/modifysnapshotattribute.html
 func (client *Client) ModifySnapshotAttribute(request *ModifySnapshotAttributeRequest) (response *ModifySnapshotAttributeResponse, err error) {
 	response = CreateModifySnapshotAttributeResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifySnapshotAttribute api with *ModifySnapshotAttributeRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/modifysnapshotattribute.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySnapshotAttributeWithChan(request *ModifySnapshotAttributeRequest) (<-chan *ModifySnapshotAttributeResponse, <-chan error) {
 	responseChan := make(chan *ModifySnapshotAttributeResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifySnapshotAttributeWithChan(request *ModifySnapshotAtt
 	return responseChan, errChan
 }
 
+// invoke ModifySnapshotAttribute api with *ModifySnapshotAttributeRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/modifysnapshotattribute.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySnapshotAttributeWithCallback(request *ModifySnapshotAttributeRequest, callback func(response *ModifySnapshotAttributeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type ModifySnapshotAttributeResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ModifySnapshotAttribute API
 func CreateModifySnapshotAttributeRequest() (request *ModifySnapshotAttributeRequest) {
 	request = &ModifySnapshotAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateModifySnapshotAttributeRequest() (request *ModifySnapshotAttributeReq
 	return
 }
 
+// create a response to parse from ModifySnapshotAttribute response
 func CreateModifySnapshotAttributeResponse() (response *ModifySnapshotAttributeResponse) {
 	response = &ModifySnapshotAttributeResponse{
 		BaseResponse: &responses.BaseResponse{},

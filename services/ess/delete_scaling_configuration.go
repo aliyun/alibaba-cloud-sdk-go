@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeleteScalingConfiguration api with *DeleteScalingConfigurationRequest synchronously
+// api document: https://help.aliyun.com/api/ess/deletescalingconfiguration.html
 func (client *Client) DeleteScalingConfiguration(request *DeleteScalingConfigurationRequest) (response *DeleteScalingConfigurationResponse, err error) {
 	response = CreateDeleteScalingConfigurationResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeleteScalingConfiguration api with *DeleteScalingConfigurationRequest asynchronously
+// api document: https://help.aliyun.com/api/ess/deletescalingconfiguration.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteScalingConfigurationWithChan(request *DeleteScalingConfigurationRequest) (<-chan *DeleteScalingConfigurationResponse, <-chan error) {
 	responseChan := make(chan *DeleteScalingConfigurationResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeleteScalingConfigurationWithChan(request *DeleteScalingC
 	return responseChan, errChan
 }
 
+// invoke DeleteScalingConfiguration api with *DeleteScalingConfigurationRequest asynchronously
+// api document: https://help.aliyun.com/api/ess/deletescalingconfiguration.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteScalingConfigurationWithCallback(request *DeleteScalingConfigurationRequest, callback func(response *DeleteScalingConfigurationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type DeleteScalingConfigurationResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke DeleteScalingConfiguration API
 func CreateDeleteScalingConfigurationRequest() (request *DeleteScalingConfigurationRequest) {
 	request = &DeleteScalingConfigurationRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateDeleteScalingConfigurationRequest() (request *DeleteScalingConfigurat
 	return
 }
 
+// create a response to parse from DeleteScalingConfiguration response
 func CreateDeleteScalingConfigurationResponse() (response *DeleteScalingConfigurationResponse) {
 	response = &DeleteScalingConfigurationResponse{
 		BaseResponse: &responses.BaseResponse{},

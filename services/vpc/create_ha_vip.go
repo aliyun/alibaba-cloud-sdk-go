@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CreateHaVip api with *CreateHaVipRequest synchronously
+// api document: https://help.aliyun.com/api/vpc/createhavip.html
 func (client *Client) CreateHaVip(request *CreateHaVipRequest) (response *CreateHaVipResponse, err error) {
 	response = CreateCreateHaVipResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CreateHaVip api with *CreateHaVipRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/createhavip.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateHaVipWithChan(request *CreateHaVipRequest) (<-chan *CreateHaVipResponse, <-chan error) {
 	responseChan := make(chan *CreateHaVipResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CreateHaVipWithChan(request *CreateHaVipRequest) (<-chan *
 	return responseChan, errChan
 }
 
+// invoke CreateHaVip api with *CreateHaVipRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/createhavip.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateHaVipWithCallback(request *CreateHaVipRequest, callback func(response *CreateHaVipResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,6 +91,7 @@ type CreateHaVipResponse struct {
 	HaVipId   string `json:"HaVipId" xml:"HaVipId"`
 }
 
+// create a request to invoke CreateHaVip API
 func CreateCreateHaVipRequest() (request *CreateHaVipRequest) {
 	request = &CreateHaVipRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -91,6 +100,7 @@ func CreateCreateHaVipRequest() (request *CreateHaVipRequest) {
 	return
 }
 
+// create a response to parse from CreateHaVip response
 func CreateCreateHaVipResponse() (response *CreateHaVipResponse) {
 	response = &CreateHaVipResponse{
 		BaseResponse: &responses.BaseResponse{},

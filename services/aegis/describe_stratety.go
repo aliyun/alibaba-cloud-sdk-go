@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeStratety api with *DescribeStratetyRequest synchronously
+// api document: https://help.aliyun.com/api/aegis/describestratety.html
 func (client *Client) DescribeStratety(request *DescribeStratetyRequest) (response *DescribeStratetyResponse, err error) {
 	response = CreateDescribeStratetyResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeStratety api with *DescribeStratetyRequest asynchronously
+// api document: https://help.aliyun.com/api/aegis/describestratety.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeStratetyWithChan(request *DescribeStratetyRequest) (<-chan *DescribeStratetyResponse, <-chan error) {
 	responseChan := make(chan *DescribeStratetyResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeStratetyWithChan(request *DescribeStratetyRequest)
 	return responseChan, errChan
 }
 
+// invoke DescribeStratety api with *DescribeStratetyRequest asynchronously
+// api document: https://help.aliyun.com/api/aegis/describestratety.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeStratetyWithCallback(request *DescribeStratetyRequest, callback func(response *DescribeStratetyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -73,11 +81,12 @@ type DescribeStratetyRequest struct {
 
 type DescribeStratetyResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	Count      int    `json:"Count" xml:"Count"`
-	Strategies []Data `json:"Strategies" xml:"Strategies"`
+	RequestId  string      `json:"RequestId" xml:"RequestId"`
+	Count      int         `json:"Count" xml:"Count"`
+	Strategies []Strategie `json:"Strategies" xml:"Strategies"`
 }
 
+// create a request to invoke DescribeStratety API
 func CreateDescribeStratetyRequest() (request *DescribeStratetyRequest) {
 	request = &DescribeStratetyRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateDescribeStratetyRequest() (request *DescribeStratetyRequest) {
 	return
 }
 
+// create a response to parse from DescribeStratety response
 func CreateDescribeStratetyResponse() (response *DescribeStratetyResponse) {
 	response = &DescribeStratetyResponse{
 		BaseResponse: &responses.BaseResponse{},

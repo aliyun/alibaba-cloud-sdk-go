@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke NodeProcessCreate api with *NodeProcessCreateRequest synchronously
+// api document: https://help.aliyun.com/api/cms/nodeprocesscreate.html
 func (client *Client) NodeProcessCreate(request *NodeProcessCreateRequest) (response *NodeProcessCreateResponse, err error) {
 	response = CreateNodeProcessCreateResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke NodeProcessCreate api with *NodeProcessCreateRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/nodeprocesscreate.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) NodeProcessCreateWithChan(request *NodeProcessCreateRequest) (<-chan *NodeProcessCreateResponse, <-chan error) {
 	responseChan := make(chan *NodeProcessCreateResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) NodeProcessCreateWithChan(request *NodeProcessCreateReques
 	return responseChan, errChan
 }
 
+// invoke NodeProcessCreate api with *NodeProcessCreateRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/nodeprocesscreate.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) NodeProcessCreateWithCallback(request *NodeProcessCreateRequest, callback func(response *NodeProcessCreateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type NodeProcessCreateResponse struct {
 	RequestId    string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke NodeProcessCreate API
 func CreateNodeProcessCreateRequest() (request *NodeProcessCreateRequest) {
 	request = &NodeProcessCreateRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateNodeProcessCreateRequest() (request *NodeProcessCreateRequest) {
 	return
 }
 
+// create a response to parse from NodeProcessCreate response
 func CreateNodeProcessCreateResponse() (response *NodeProcessCreateResponse) {
 	response = &NodeProcessCreateResponse{
 		BaseResponse: &responses.BaseResponse{},

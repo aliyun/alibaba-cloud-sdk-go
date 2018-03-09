@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeRecycleBin api with *DescribeRecycleBinRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/describerecyclebin.html
 func (client *Client) DescribeRecycleBin(request *DescribeRecycleBinRequest) (response *DescribeRecycleBinResponse, err error) {
 	response = CreateDescribeRecycleBinResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeRecycleBin api with *DescribeRecycleBinRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describerecyclebin.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRecycleBinWithChan(request *DescribeRecycleBinRequest) (<-chan *DescribeRecycleBinResponse, <-chan error) {
 	responseChan := make(chan *DescribeRecycleBinResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeRecycleBinWithChan(request *DescribeRecycleBinRequ
 	return responseChan, errChan
 }
 
+// invoke DescribeRecycleBin api with *DescribeRecycleBinRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describerecyclebin.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRecycleBinWithCallback(request *DescribeRecycleBinRequest, callback func(response *DescribeRecycleBinResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,6 +92,7 @@ type DescribeRecycleBinResponse struct {
 	RecycleBinModels RecycleBinModels `json:"RecycleBinModels" xml:"RecycleBinModels"`
 }
 
+// create a request to invoke DescribeRecycleBin API
 func CreateDescribeRecycleBinRequest() (request *DescribeRecycleBinRequest) {
 	request = &DescribeRecycleBinRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -92,6 +101,7 @@ func CreateDescribeRecycleBinRequest() (request *DescribeRecycleBinRequest) {
 	return
 }
 
+// create a response to parse from DescribeRecycleBin response
 func CreateDescribeRecycleBinResponse() (response *DescribeRecycleBinResponse) {
 	response = &DescribeRecycleBinResponse{
 		BaseResponse: &responses.BaseResponse{},

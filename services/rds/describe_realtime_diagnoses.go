@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeRealtimeDiagnoses api with *DescribeRealtimeDiagnosesRequest synchronously
+// api document: https://help.aliyun.com/api/rds/describerealtimediagnoses.html
 func (client *Client) DescribeRealtimeDiagnoses(request *DescribeRealtimeDiagnosesRequest) (response *DescribeRealtimeDiagnosesResponse, err error) {
 	response = CreateDescribeRealtimeDiagnosesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeRealtimeDiagnoses api with *DescribeRealtimeDiagnosesRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describerealtimediagnoses.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRealtimeDiagnosesWithChan(request *DescribeRealtimeDiagnosesRequest) (<-chan *DescribeRealtimeDiagnosesResponse, <-chan error) {
 	responseChan := make(chan *DescribeRealtimeDiagnosesResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeRealtimeDiagnosesWithChan(request *DescribeRealtim
 	return responseChan, errChan
 }
 
+// invoke DescribeRealtimeDiagnoses api with *DescribeRealtimeDiagnosesRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describerealtimediagnoses.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRealtimeDiagnosesWithCallback(request *DescribeRealtimeDiagnosesRequest, callback func(response *DescribeRealtimeDiagnosesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -88,6 +96,7 @@ type DescribeRealtimeDiagnosesResponse struct {
 	Tasks            Tasks  `json:"Tasks" xml:"Tasks"`
 }
 
+// create a request to invoke DescribeRealtimeDiagnoses API
 func CreateDescribeRealtimeDiagnosesRequest() (request *DescribeRealtimeDiagnosesRequest) {
 	request = &DescribeRealtimeDiagnosesRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -96,6 +105,7 @@ func CreateDescribeRealtimeDiagnosesRequest() (request *DescribeRealtimeDiagnose
 	return
 }
 
+// create a response to parse from DescribeRealtimeDiagnoses response
 func CreateDescribeRealtimeDiagnosesResponse() (response *DescribeRealtimeDiagnosesResponse) {
 	response = &DescribeRealtimeDiagnosesResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeUserCustomerLabels api with *DescribeUserCustomerLabelsRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/describeusercustomerlabels.html
 func (client *Client) DescribeUserCustomerLabels(request *DescribeUserCustomerLabelsRequest) (response *DescribeUserCustomerLabelsResponse, err error) {
 	response = CreateDescribeUserCustomerLabelsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeUserCustomerLabels api with *DescribeUserCustomerLabelsRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describeusercustomerlabels.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUserCustomerLabelsWithChan(request *DescribeUserCustomerLabelsRequest) (<-chan *DescribeUserCustomerLabelsResponse, <-chan error) {
 	responseChan := make(chan *DescribeUserCustomerLabelsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeUserCustomerLabelsWithChan(request *DescribeUserCu
 	return responseChan, errChan
 }
 
+// invoke DescribeUserCustomerLabels api with *DescribeUserCustomerLabelsRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describeusercustomerlabels.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUserCustomerLabelsWithCallback(request *DescribeUserCustomerLabelsRequest, callback func(response *DescribeUserCustomerLabelsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type DescribeUserCustomerLabelsResponse struct {
 	IsInnerUser bool   `json:"IsInnerUser" xml:"IsInnerUser"`
 }
 
+// create a request to invoke DescribeUserCustomerLabels API
 func CreateDescribeUserCustomerLabelsRequest() (request *DescribeUserCustomerLabelsRequest) {
 	request = &DescribeUserCustomerLabelsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateDescribeUserCustomerLabelsRequest() (request *DescribeUserCustomerLab
 	return
 }
 
+// create a response to parse from DescribeUserCustomerLabels response
 func CreateDescribeUserCustomerLabelsResponse() (response *DescribeUserCustomerLabelsResponse) {
 	response = &DescribeUserCustomerLabelsResponse{
 		BaseResponse: &responses.BaseResponse{},

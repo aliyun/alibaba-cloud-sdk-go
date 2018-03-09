@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke AddLiveStreamTranscode api with *AddLiveStreamTranscodeRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/addlivestreamtranscode.html
 func (client *Client) AddLiveStreamTranscode(request *AddLiveStreamTranscodeRequest) (response *AddLiveStreamTranscodeResponse, err error) {
 	response = CreateAddLiveStreamTranscodeResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke AddLiveStreamTranscode api with *AddLiveStreamTranscodeRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/addlivestreamtranscode.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddLiveStreamTranscodeWithChan(request *AddLiveStreamTranscodeRequest) (<-chan *AddLiveStreamTranscodeResponse, <-chan error) {
 	responseChan := make(chan *AddLiveStreamTranscodeResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) AddLiveStreamTranscodeWithChan(request *AddLiveStreamTrans
 	return responseChan, errChan
 }
 
+// invoke AddLiveStreamTranscode api with *AddLiveStreamTranscodeRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/addlivestreamtranscode.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddLiveStreamTranscodeWithCallback(request *AddLiveStreamTranscodeRequest, callback func(response *AddLiveStreamTranscodeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type AddLiveStreamTranscodeResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke AddLiveStreamTranscode API
 func CreateAddLiveStreamTranscodeRequest() (request *AddLiveStreamTranscodeRequest) {
 	request = &AddLiveStreamTranscodeRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateAddLiveStreamTranscodeRequest() (request *AddLiveStreamTranscodeReque
 	return
 }
 
+// create a response to parse from AddLiveStreamTranscode response
 func CreateAddLiveStreamTranscodeResponse() (response *AddLiveStreamTranscodeResponse) {
 	response = &AddLiveStreamTranscodeResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke NodeInstall api with *NodeInstallRequest synchronously
+// api document: https://help.aliyun.com/api/cms/nodeinstall.html
 func (client *Client) NodeInstall(request *NodeInstallRequest) (response *NodeInstallResponse, err error) {
 	response = CreateNodeInstallResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke NodeInstall api with *NodeInstallRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/nodeinstall.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) NodeInstallWithChan(request *NodeInstallRequest) (<-chan *NodeInstallResponse, <-chan error) {
 	responseChan := make(chan *NodeInstallResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) NodeInstallWithChan(request *NodeInstallRequest) (<-chan *
 	return responseChan, errChan
 }
 
+// invoke NodeInstall api with *NodeInstallRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/nodeinstall.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) NodeInstallWithCallback(request *NodeInstallRequest, callback func(response *NodeInstallResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type NodeInstallResponse struct {
 	RequestId    string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke NodeInstall API
 func CreateNodeInstallRequest() (request *NodeInstallRequest) {
 	request = &NodeInstallRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateNodeInstallRequest() (request *NodeInstallRequest) {
 	return
 }
 
+// create a response to parse from NodeInstall response
 func CreateNodeInstallResponse() (response *NodeInstallResponse) {
 	response = &NodeInstallResponse{
 		BaseResponse: &responses.BaseResponse{},

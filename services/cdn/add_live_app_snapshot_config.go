@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke AddLiveAppSnapshotConfig api with *AddLiveAppSnapshotConfigRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/addliveappsnapshotconfig.html
 func (client *Client) AddLiveAppSnapshotConfig(request *AddLiveAppSnapshotConfigRequest) (response *AddLiveAppSnapshotConfigResponse, err error) {
 	response = CreateAddLiveAppSnapshotConfigResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke AddLiveAppSnapshotConfig api with *AddLiveAppSnapshotConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/addliveappsnapshotconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddLiveAppSnapshotConfigWithChan(request *AddLiveAppSnapshotConfigRequest) (<-chan *AddLiveAppSnapshotConfigResponse, <-chan error) {
 	responseChan := make(chan *AddLiveAppSnapshotConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) AddLiveAppSnapshotConfigWithChan(request *AddLiveAppSnapsh
 	return responseChan, errChan
 }
 
+// invoke AddLiveAppSnapshotConfig api with *AddLiveAppSnapshotConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/addliveappsnapshotconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddLiveAppSnapshotConfigWithCallback(request *AddLiveAppSnapshotConfigRequest, callback func(response *AddLiveAppSnapshotConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,6 +91,7 @@ type AddLiveAppSnapshotConfigResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke AddLiveAppSnapshotConfig API
 func CreateAddLiveAppSnapshotConfigRequest() (request *AddLiveAppSnapshotConfigRequest) {
 	request = &AddLiveAppSnapshotConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -91,6 +100,7 @@ func CreateAddLiveAppSnapshotConfigRequest() (request *AddLiveAppSnapshotConfigR
 	return
 }
 
+// create a response to parse from AddLiveAppSnapshotConfig response
 func CreateAddLiveAppSnapshotConfigResponse() (response *AddLiveAppSnapshotConfigResponse) {
 	response = &AddLiveAppSnapshotConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

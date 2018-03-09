@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SubmitAnalysisJob api with *SubmitAnalysisJobRequest synchronously
+// api document: https://help.aliyun.com/api/mts/submitanalysisjob.html
 func (client *Client) SubmitAnalysisJob(request *SubmitAnalysisJobRequest) (response *SubmitAnalysisJobResponse, err error) {
 	response = CreateSubmitAnalysisJobResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SubmitAnalysisJob api with *SubmitAnalysisJobRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/submitanalysisjob.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitAnalysisJobWithChan(request *SubmitAnalysisJobRequest) (<-chan *SubmitAnalysisJobResponse, <-chan error) {
 	responseChan := make(chan *SubmitAnalysisJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SubmitAnalysisJobWithChan(request *SubmitAnalysisJobReques
 	return responseChan, errChan
 }
 
+// invoke SubmitAnalysisJob api with *SubmitAnalysisJobRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/submitanalysisjob.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitAnalysisJobWithCallback(request *SubmitAnalysisJobRequest, callback func(response *SubmitAnalysisJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,6 +92,7 @@ type SubmitAnalysisJobResponse struct {
 	AnalysisJob AnalysisJob `json:"AnalysisJob" xml:"AnalysisJob"`
 }
 
+// create a request to invoke SubmitAnalysisJob API
 func CreateSubmitAnalysisJobRequest() (request *SubmitAnalysisJobRequest) {
 	request = &SubmitAnalysisJobRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -92,6 +101,7 @@ func CreateSubmitAnalysisJobRequest() (request *SubmitAnalysisJobRequest) {
 	return
 }
 
+// create a response to parse from SubmitAnalysisJob response
 func CreateSubmitAnalysisJobResponse() (response *SubmitAnalysisJobResponse) {
 	response = &SubmitAnalysisJobResponse{
 		BaseResponse: &responses.BaseResponse{},

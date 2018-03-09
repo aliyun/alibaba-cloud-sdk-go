@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke AddBandwidthPackageIps api with *AddBandwidthPackageIpsRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/addbandwidthpackageips.html
 func (client *Client) AddBandwidthPackageIps(request *AddBandwidthPackageIpsRequest) (response *AddBandwidthPackageIpsResponse, err error) {
 	response = CreateAddBandwidthPackageIpsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke AddBandwidthPackageIps api with *AddBandwidthPackageIpsRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/addbandwidthpackageips.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddBandwidthPackageIpsWithChan(request *AddBandwidthPackageIpsRequest) (<-chan *AddBandwidthPackageIpsResponse, <-chan error) {
 	responseChan := make(chan *AddBandwidthPackageIpsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) AddBandwidthPackageIpsWithChan(request *AddBandwidthPackag
 	return responseChan, errChan
 }
 
+// invoke AddBandwidthPackageIps api with *AddBandwidthPackageIpsRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/addbandwidthpackageips.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddBandwidthPackageIpsWithCallback(request *AddBandwidthPackageIpsRequest, callback func(response *AddBandwidthPackageIpsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type AddBandwidthPackageIpsResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke AddBandwidthPackageIps API
 func CreateAddBandwidthPackageIpsRequest() (request *AddBandwidthPackageIpsRequest) {
 	request = &AddBandwidthPackageIpsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateAddBandwidthPackageIpsRequest() (request *AddBandwidthPackageIpsReque
 	return
 }
 
+// create a response to parse from AddBandwidthPackageIps response
 func CreateAddBandwidthPackageIpsResponse() (response *AddBandwidthPackageIpsResponse) {
 	response = &AddBandwidthPackageIpsResponse{
 		BaseResponse: &responses.BaseResponse{},

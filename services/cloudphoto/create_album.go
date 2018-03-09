@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CreateAlbum api with *CreateAlbumRequest synchronously
+// api document: https://help.aliyun.com/api/cloudphoto/createalbum.html
 func (client *Client) CreateAlbum(request *CreateAlbumRequest) (response *CreateAlbumResponse, err error) {
 	response = CreateCreateAlbumResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CreateAlbum api with *CreateAlbumRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/createalbum.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateAlbumWithChan(request *CreateAlbumRequest) (<-chan *CreateAlbumResponse, <-chan error) {
 	responseChan := make(chan *CreateAlbumResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CreateAlbumWithChan(request *CreateAlbumRequest) (<-chan *
 	return responseChan, errChan
 }
 
+// invoke CreateAlbum api with *CreateAlbumRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/createalbum.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateAlbumWithCallback(request *CreateAlbumRequest, callback func(response *CreateAlbumResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type CreateAlbumResponse struct {
 	Album     Album  `json:"Album" xml:"Album"`
 }
 
+// create a request to invoke CreateAlbum API
 func CreateCreateAlbumRequest() (request *CreateAlbumRequest) {
 	request = &CreateAlbumRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateCreateAlbumRequest() (request *CreateAlbumRequest) {
 	return
 }
 
+// create a response to parse from CreateAlbum response
 func CreateCreateAlbumResponse() (response *CreateAlbumResponse) {
 	response = &CreateAlbumResponse{
 		BaseResponse: &responses.BaseResponse{},

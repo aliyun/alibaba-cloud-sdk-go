@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeCluster api with *DescribeClusterRequest synchronously
+// api document: https://help.aliyun.com/api/ehpc/describecluster.html
 func (client *Client) DescribeCluster(request *DescribeClusterRequest) (response *DescribeClusterResponse, err error) {
 	response = CreateDescribeClusterResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeCluster api with *DescribeClusterRequest asynchronously
+// api document: https://help.aliyun.com/api/ehpc/describecluster.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeClusterWithChan(request *DescribeClusterRequest) (<-chan *DescribeClusterResponse, <-chan error) {
 	responseChan := make(chan *DescribeClusterResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeClusterWithChan(request *DescribeClusterRequest) (
 	return responseChan, errChan
 }
 
+// invoke DescribeCluster api with *DescribeClusterRequest asynchronously
+// api document: https://help.aliyun.com/api/ehpc/describecluster.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeClusterWithCallback(request *DescribeClusterRequest, callback func(response *DescribeClusterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,6 +84,7 @@ type DescribeClusterResponse struct {
 	ClusterInfo ClusterInfo `json:"ClusterInfo" xml:"ClusterInfo"`
 }
 
+// create a request to invoke DescribeCluster API
 func CreateDescribeClusterRequest() (request *DescribeClusterRequest) {
 	request = &DescribeClusterRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -84,6 +93,7 @@ func CreateDescribeClusterRequest() (request *DescribeClusterRequest) {
 	return
 }
 
+// create a response to parse from DescribeCluster response
 func CreateDescribeClusterResponse() (response *DescribeClusterResponse) {
 	response = &DescribeClusterResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CheckDevice api with *CheckDeviceRequest synchronously
+// api document: https://help.aliyun.com/api/push/checkdevice.html
 func (client *Client) CheckDevice(request *CheckDeviceRequest) (response *CheckDeviceResponse, err error) {
 	response = CreateCheckDeviceResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CheckDevice api with *CheckDeviceRequest asynchronously
+// api document: https://help.aliyun.com/api/push/checkdevice.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckDeviceWithChan(request *CheckDeviceRequest) (<-chan *CheckDeviceResponse, <-chan error) {
 	responseChan := make(chan *CheckDeviceResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CheckDeviceWithChan(request *CheckDeviceRequest) (<-chan *
 	return responseChan, errChan
 }
 
+// invoke CheckDevice api with *CheckDeviceRequest asynchronously
+// api document: https://help.aliyun.com/api/push/checkdevice.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckDeviceWithCallback(request *CheckDeviceRequest, callback func(response *CheckDeviceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +85,7 @@ type CheckDeviceResponse struct {
 	Available bool   `json:"Available" xml:"Available"`
 }
 
+// create a request to invoke CheckDevice API
 func CreateCheckDeviceRequest() (request *CheckDeviceRequest) {
 	request = &CheckDeviceRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -85,6 +94,7 @@ func CreateCheckDeviceRequest() (request *CheckDeviceRequest) {
 	return
 }
 
+// create a response to parse from CheckDevice response
 func CreateCheckDeviceResponse() (response *CheckDeviceResponse) {
 	response = &CheckDeviceResponse{
 		BaseResponse: &responses.BaseResponse{},

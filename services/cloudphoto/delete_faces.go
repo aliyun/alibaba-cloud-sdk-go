@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeleteFaces api with *DeleteFacesRequest synchronously
+// api document: https://help.aliyun.com/api/cloudphoto/deletefaces.html
 func (client *Client) DeleteFaces(request *DeleteFacesRequest) (response *DeleteFacesResponse, err error) {
 	response = CreateDeleteFacesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeleteFaces api with *DeleteFacesRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/deletefaces.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteFacesWithChan(request *DeleteFacesRequest) (<-chan *DeleteFacesResponse, <-chan error) {
 	responseChan := make(chan *DeleteFacesResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeleteFacesWithChan(request *DeleteFacesRequest) (<-chan *
 	return responseChan, errChan
 }
 
+// invoke DeleteFaces api with *DeleteFacesRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/deletefaces.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteFacesWithCallback(request *DeleteFacesRequest, callback func(response *DeleteFacesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type DeleteFacesResponse struct {
 	Results   []Result `json:"Results" xml:"Results"`
 }
 
+// create a request to invoke DeleteFaces API
 func CreateDeleteFacesRequest() (request *DeleteFacesRequest) {
 	request = &DeleteFacesRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateDeleteFacesRequest() (request *DeleteFacesRequest) {
 	return
 }
 
+// create a response to parse from DeleteFaces response
 func CreateDeleteFacesResponse() (response *DeleteFacesResponse) {
 	response = &DeleteFacesResponse{
 		BaseResponse: &responses.BaseResponse{},

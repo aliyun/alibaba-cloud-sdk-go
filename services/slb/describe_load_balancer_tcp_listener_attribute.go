@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeLoadBalancerTCPListenerAttribute api with *DescribeLoadBalancerTCPListenerAttributeRequest synchronously
+// api document: https://help.aliyun.com/api/slb/describeloadbalancertcplistenerattribute.html
 func (client *Client) DescribeLoadBalancerTCPListenerAttribute(request *DescribeLoadBalancerTCPListenerAttributeRequest) (response *DescribeLoadBalancerTCPListenerAttributeResponse, err error) {
 	response = CreateDescribeLoadBalancerTCPListenerAttributeResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeLoadBalancerTCPListenerAttribute api with *DescribeLoadBalancerTCPListenerAttributeRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/describeloadbalancertcplistenerattribute.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLoadBalancerTCPListenerAttributeWithChan(request *DescribeLoadBalancerTCPListenerAttributeRequest) (<-chan *DescribeLoadBalancerTCPListenerAttributeResponse, <-chan error) {
 	responseChan := make(chan *DescribeLoadBalancerTCPListenerAttributeResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeLoadBalancerTCPListenerAttributeWithChan(request *
 	return responseChan, errChan
 }
 
+// invoke DescribeLoadBalancerTCPListenerAttribute api with *DescribeLoadBalancerTCPListenerAttributeRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/describeloadbalancertcplistenerattribute.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLoadBalancerTCPListenerAttributeWithCallback(request *DescribeLoadBalancerTCPListenerAttributeRequest, callback func(response *DescribeLoadBalancerTCPListenerAttributeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -103,6 +111,7 @@ type DescribeLoadBalancerTCPListenerAttributeResponse struct {
 	MasterSlaveServerGroupId  string `json:"MasterSlaveServerGroupId" xml:"MasterSlaveServerGroupId"`
 }
 
+// create a request to invoke DescribeLoadBalancerTCPListenerAttribute API
 func CreateDescribeLoadBalancerTCPListenerAttributeRequest() (request *DescribeLoadBalancerTCPListenerAttributeRequest) {
 	request = &DescribeLoadBalancerTCPListenerAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -111,6 +120,7 @@ func CreateDescribeLoadBalancerTCPListenerAttributeRequest() (request *DescribeL
 	return
 }
 
+// create a response to parse from DescribeLoadBalancerTCPListenerAttribute response
 func CreateDescribeLoadBalancerTCPListenerAttributeResponse() (response *DescribeLoadBalancerTCPListenerAttributeResponse) {
 	response = &DescribeLoadBalancerTCPListenerAttributeResponse{
 		BaseResponse: &responses.BaseResponse{},

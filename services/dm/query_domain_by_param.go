@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke QueryDomainByParam api with *QueryDomainByParamRequest synchronously
+// api document: https://help.aliyun.com/api/dm/querydomainbyparam.html
 func (client *Client) QueryDomainByParam(request *QueryDomainByParamRequest) (response *QueryDomainByParamResponse, err error) {
 	response = CreateQueryDomainByParamResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke QueryDomainByParam api with *QueryDomainByParamRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/querydomainbyparam.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryDomainByParamWithChan(request *QueryDomainByParamRequest) (<-chan *QueryDomainByParamResponse, <-chan error) {
 	responseChan := make(chan *QueryDomainByParamResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) QueryDomainByParamWithChan(request *QueryDomainByParamRequ
 	return responseChan, errChan
 }
 
+// invoke QueryDomainByParam api with *QueryDomainByParamRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/querydomainbyparam.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryDomainByParamWithCallback(request *QueryDomainByParamRequest, callback func(response *QueryDomainByParamResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -85,6 +93,7 @@ type QueryDomainByParamResponse struct {
 	Data       DataInQueryDomainByParam `json:"data" xml:"data"`
 }
 
+// create a request to invoke QueryDomainByParam API
 func CreateQueryDomainByParamRequest() (request *QueryDomainByParamRequest) {
 	request = &QueryDomainByParamRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -93,6 +102,7 @@ func CreateQueryDomainByParamRequest() (request *QueryDomainByParamRequest) {
 	return
 }
 
+// create a response to parse from QueryDomainByParam response
 func CreateQueryDomainByParamResponse() (response *QueryDomainByParamResponse) {
 	response = &QueryDomainByParamResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CreateDayu api with *CreateDayuRequest synchronously
+// api document: https://help.aliyun.com/api/dm/createdayu.html
 func (client *Client) CreateDayu(request *CreateDayuRequest) (response *CreateDayuResponse, err error) {
 	response = CreateCreateDayuResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CreateDayu api with *CreateDayuRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/createdayu.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateDayuWithChan(request *CreateDayuRequest) (<-chan *CreateDayuResponse, <-chan error) {
 	responseChan := make(chan *CreateDayuResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CreateDayuWithChan(request *CreateDayuRequest) (<-chan *Cr
 	return responseChan, errChan
 }
 
+// invoke CreateDayu api with *CreateDayuRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/createdayu.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateDayuWithCallback(request *CreateDayuRequest, callback func(response *CreateDayuResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type CreateDayuResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke CreateDayu API
 func CreateCreateDayuRequest() (request *CreateDayuRequest) {
 	request = &CreateDayuRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateCreateDayuRequest() (request *CreateDayuRequest) {
 	return
 }
 
+// create a response to parse from CreateDayu response
 func CreateCreateDayuResponse() (response *CreateDayuResponse) {
 	response = &CreateDayuResponse{
 		BaseResponse: &responses.BaseResponse{},

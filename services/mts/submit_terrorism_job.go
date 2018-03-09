@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SubmitTerrorismJob api with *SubmitTerrorismJobRequest synchronously
+// api document: https://help.aliyun.com/api/mts/submitterrorismjob.html
 func (client *Client) SubmitTerrorismJob(request *SubmitTerrorismJobRequest) (response *SubmitTerrorismJobResponse, err error) {
 	response = CreateSubmitTerrorismJobResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SubmitTerrorismJob api with *SubmitTerrorismJobRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/submitterrorismjob.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitTerrorismJobWithChan(request *SubmitTerrorismJobRequest) (<-chan *SubmitTerrorismJobResponse, <-chan error) {
 	responseChan := make(chan *SubmitTerrorismJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SubmitTerrorismJobWithChan(request *SubmitTerrorismJobRequ
 	return responseChan, errChan
 }
 
+// invoke SubmitTerrorismJob api with *SubmitTerrorismJobRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/submitterrorismjob.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitTerrorismJobWithCallback(request *SubmitTerrorismJobRequest, callback func(response *SubmitTerrorismJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,6 +91,7 @@ type SubmitTerrorismJobResponse struct {
 	JobId     string `json:"JobId" xml:"JobId"`
 }
 
+// create a request to invoke SubmitTerrorismJob API
 func CreateSubmitTerrorismJobRequest() (request *SubmitTerrorismJobRequest) {
 	request = &SubmitTerrorismJobRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -91,6 +100,7 @@ func CreateSubmitTerrorismJobRequest() (request *SubmitTerrorismJobRequest) {
 	return
 }
 
+// create a response to parse from SubmitTerrorismJob response
 func CreateSubmitTerrorismJobResponse() (response *SubmitTerrorismJobResponse) {
 	response = &SubmitTerrorismJobResponse{
 		BaseResponse: &responses.BaseResponse{},

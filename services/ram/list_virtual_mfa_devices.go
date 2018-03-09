@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ListVirtualMFADevices api with *ListVirtualMFADevicesRequest synchronously
+// api document: https://help.aliyun.com/api/ram/listvirtualmfadevices.html
 func (client *Client) ListVirtualMFADevices(request *ListVirtualMFADevicesRequest) (response *ListVirtualMFADevicesResponse, err error) {
 	response = CreateListVirtualMFADevicesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ListVirtualMFADevices api with *ListVirtualMFADevicesRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/listvirtualmfadevices.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListVirtualMFADevicesWithChan(request *ListVirtualMFADevicesRequest) (<-chan *ListVirtualMFADevicesResponse, <-chan error) {
 	responseChan := make(chan *ListVirtualMFADevicesResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ListVirtualMFADevicesWithChan(request *ListVirtualMFADevic
 	return responseChan, errChan
 }
 
+// invoke ListVirtualMFADevices api with *ListVirtualMFADevicesRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/listvirtualmfadevices.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListVirtualMFADevicesWithCallback(request *ListVirtualMFADevicesRequest, callback func(response *ListVirtualMFADevicesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -75,6 +83,7 @@ type ListVirtualMFADevicesResponse struct {
 	VirtualMFADevices VirtualMFADevices `json:"VirtualMFADevices" xml:"VirtualMFADevices"`
 }
 
+// create a request to invoke ListVirtualMFADevices API
 func CreateListVirtualMFADevicesRequest() (request *ListVirtualMFADevicesRequest) {
 	request = &ListVirtualMFADevicesRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -83,6 +92,7 @@ func CreateListVirtualMFADevicesRequest() (request *ListVirtualMFADevicesRequest
 	return
 }
 
+// create a response to parse from ListVirtualMFADevices response
 func CreateListVirtualMFADevicesResponse() (response *ListVirtualMFADevicesResponse) {
 	response = &ListVirtualMFADevicesResponse{
 		BaseResponse: &responses.BaseResponse{},

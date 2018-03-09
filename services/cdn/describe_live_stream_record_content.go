@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeLiveStreamRecordContent api with *DescribeLiveStreamRecordContentRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/describelivestreamrecordcontent.html
 func (client *Client) DescribeLiveStreamRecordContent(request *DescribeLiveStreamRecordContentRequest) (response *DescribeLiveStreamRecordContentResponse, err error) {
 	response = CreateDescribeLiveStreamRecordContentResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeLiveStreamRecordContent api with *DescribeLiveStreamRecordContentRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describelivestreamrecordcontent.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamRecordContentWithChan(request *DescribeLiveStreamRecordContentRequest) (<-chan *DescribeLiveStreamRecordContentResponse, <-chan error) {
 	responseChan := make(chan *DescribeLiveStreamRecordContentResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeLiveStreamRecordContentWithChan(request *DescribeL
 	return responseChan, errChan
 }
 
+// invoke DescribeLiveStreamRecordContent api with *DescribeLiveStreamRecordContentRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describelivestreamrecordcontent.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamRecordContentWithCallback(request *DescribeLiveStreamRecordContentRequest, callback func(response *DescribeLiveStreamRecordContentResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type DescribeLiveStreamRecordContentResponse struct {
 	RecordContentInfoList RecordContentInfoList `json:"RecordContentInfoList" xml:"RecordContentInfoList"`
 }
 
+// create a request to invoke DescribeLiveStreamRecordContent API
 func CreateDescribeLiveStreamRecordContentRequest() (request *DescribeLiveStreamRecordContentRequest) {
 	request = &DescribeLiveStreamRecordContentRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateDescribeLiveStreamRecordContentRequest() (request *DescribeLiveStream
 	return
 }
 
+// create a response to parse from DescribeLiveStreamRecordContent response
 func CreateDescribeLiveStreamRecordContentResponse() (response *DescribeLiveStreamRecordContentResponse) {
 	response = &DescribeLiveStreamRecordContentResponse{
 		BaseResponse: &responses.BaseResponse{},

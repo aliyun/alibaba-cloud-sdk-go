@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeBandwidthPackages api with *DescribeBandwidthPackagesRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/describebandwidthpackages.html
 func (client *Client) DescribeBandwidthPackages(request *DescribeBandwidthPackagesRequest) (response *DescribeBandwidthPackagesResponse, err error) {
 	response = CreateDescribeBandwidthPackagesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeBandwidthPackages api with *DescribeBandwidthPackagesRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describebandwidthpackages.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBandwidthPackagesWithChan(request *DescribeBandwidthPackagesRequest) (<-chan *DescribeBandwidthPackagesResponse, <-chan error) {
 	responseChan := make(chan *DescribeBandwidthPackagesResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeBandwidthPackagesWithChan(request *DescribeBandwid
 	return responseChan, errChan
 }
 
+// invoke DescribeBandwidthPackages api with *DescribeBandwidthPackagesRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describebandwidthpackages.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBandwidthPackagesWithCallback(request *DescribeBandwidthPackagesRequest, callback func(response *DescribeBandwidthPackagesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -86,6 +94,7 @@ type DescribeBandwidthPackagesResponse struct {
 	BandwidthPackages BandwidthPackages `json:"BandwidthPackages" xml:"BandwidthPackages"`
 }
 
+// create a request to invoke DescribeBandwidthPackages API
 func CreateDescribeBandwidthPackagesRequest() (request *DescribeBandwidthPackagesRequest) {
 	request = &DescribeBandwidthPackagesRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -94,6 +103,7 @@ func CreateDescribeBandwidthPackagesRequest() (request *DescribeBandwidthPackage
 	return
 }
 
+// create a response to parse from DescribeBandwidthPackages response
 func CreateDescribeBandwidthPackagesResponse() (response *DescribeBandwidthPackagesResponse) {
 	response = &DescribeBandwidthPackagesResponse{
 		BaseResponse: &responses.BaseResponse{},

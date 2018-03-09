@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke UpdateRole api with *UpdateRoleRequest synchronously
+// api document: https://help.aliyun.com/api/ram/updaterole.html
 func (client *Client) UpdateRole(request *UpdateRoleRequest) (response *UpdateRoleResponse, err error) {
 	response = CreateUpdateRoleResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke UpdateRole api with *UpdateRoleRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/updaterole.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateRoleWithChan(request *UpdateRoleRequest) (<-chan *UpdateRoleResponse, <-chan error) {
 	responseChan := make(chan *UpdateRoleResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) UpdateRoleWithChan(request *UpdateRoleRequest) (<-chan *Up
 	return responseChan, errChan
 }
 
+// invoke UpdateRole api with *UpdateRoleRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/updaterole.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateRoleWithCallback(request *UpdateRoleRequest, callback func(response *UpdateRoleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +85,7 @@ type UpdateRoleResponse struct {
 	Role      Role   `json:"Role" xml:"Role"`
 }
 
+// create a request to invoke UpdateRole API
 func CreateUpdateRoleRequest() (request *UpdateRoleRequest) {
 	request = &UpdateRoleRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -85,6 +94,7 @@ func CreateUpdateRoleRequest() (request *UpdateRoleRequest) {
 	return
 }
 
+// create a response to parse from UpdateRole response
 func CreateUpdateRoleResponse() (response *UpdateRoleResponse) {
 	response = &UpdateRoleResponse{
 		BaseResponse: &responses.BaseResponse{},

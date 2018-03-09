@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifyDBInstanceConnectionMode api with *ModifyDBInstanceConnectionModeRequest synchronously
+// api document: https://help.aliyun.com/api/rds/modifydbinstanceconnectionmode.html
 func (client *Client) ModifyDBInstanceConnectionMode(request *ModifyDBInstanceConnectionModeRequest) (response *ModifyDBInstanceConnectionModeResponse, err error) {
 	response = CreateModifyDBInstanceConnectionModeResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifyDBInstanceConnectionMode api with *ModifyDBInstanceConnectionModeRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/modifydbinstanceconnectionmode.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDBInstanceConnectionModeWithChan(request *ModifyDBInstanceConnectionModeRequest) (<-chan *ModifyDBInstanceConnectionModeResponse, <-chan error) {
 	responseChan := make(chan *ModifyDBInstanceConnectionModeResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifyDBInstanceConnectionModeWithChan(request *ModifyDBIn
 	return responseChan, errChan
 }
 
+// invoke ModifyDBInstanceConnectionMode api with *ModifyDBInstanceConnectionModeRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/modifydbinstanceconnectionmode.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDBInstanceConnectionModeWithCallback(request *ModifyDBInstanceConnectionModeRequest, callback func(response *ModifyDBInstanceConnectionModeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type ModifyDBInstanceConnectionModeResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ModifyDBInstanceConnectionMode API
 func CreateModifyDBInstanceConnectionModeRequest() (request *ModifyDBInstanceConnectionModeRequest) {
 	request = &ModifyDBInstanceConnectionModeRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateModifyDBInstanceConnectionModeRequest() (request *ModifyDBInstanceCon
 	return
 }
 
+// create a response to parse from ModifyDBInstanceConnectionMode response
 func CreateModifyDBInstanceConnectionModeResponse() (response *ModifyDBInstanceConnectionModeResponse) {
 	response = &ModifyDBInstanceConnectionModeResponse{
 		BaseResponse: &responses.BaseResponse{},

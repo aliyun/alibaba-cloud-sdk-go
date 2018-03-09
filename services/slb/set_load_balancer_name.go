@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SetLoadBalancerName api with *SetLoadBalancerNameRequest synchronously
+// api document: https://help.aliyun.com/api/slb/setloadbalancername.html
 func (client *Client) SetLoadBalancerName(request *SetLoadBalancerNameRequest) (response *SetLoadBalancerNameResponse, err error) {
 	response = CreateSetLoadBalancerNameResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SetLoadBalancerName api with *SetLoadBalancerNameRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/setloadbalancername.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetLoadBalancerNameWithChan(request *SetLoadBalancerNameRequest) (<-chan *SetLoadBalancerNameResponse, <-chan error) {
 	responseChan := make(chan *SetLoadBalancerNameResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SetLoadBalancerNameWithChan(request *SetLoadBalancerNameRe
 	return responseChan, errChan
 }
 
+// invoke SetLoadBalancerName api with *SetLoadBalancerNameRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/setloadbalancername.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetLoadBalancerNameWithCallback(request *SetLoadBalancerNameRequest, callback func(response *SetLoadBalancerNameResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type SetLoadBalancerNameResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke SetLoadBalancerName API
 func CreateSetLoadBalancerNameRequest() (request *SetLoadBalancerNameRequest) {
 	request = &SetLoadBalancerNameRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateSetLoadBalancerNameRequest() (request *SetLoadBalancerNameRequest) {
 	return
 }
 
+// create a response to parse from SetLoadBalancerName response
 func CreateSetLoadBalancerNameResponse() (response *SetLoadBalancerNameResponse) {
 	response = &SetLoadBalancerNameResponse{
 		BaseResponse: &responses.BaseResponse{},

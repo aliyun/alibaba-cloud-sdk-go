@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ApproveSmsTemplate api with *ApproveSmsTemplateRequest synchronously
+// api document: https://help.aliyun.com/api/dm/approvesmstemplate.html
 func (client *Client) ApproveSmsTemplate(request *ApproveSmsTemplateRequest) (response *ApproveSmsTemplateResponse, err error) {
 	response = CreateApproveSmsTemplateResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ApproveSmsTemplate api with *ApproveSmsTemplateRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/approvesmstemplate.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ApproveSmsTemplateWithChan(request *ApproveSmsTemplateRequest) (<-chan *ApproveSmsTemplateResponse, <-chan error) {
 	responseChan := make(chan *ApproveSmsTemplateResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ApproveSmsTemplateWithChan(request *ApproveSmsTemplateRequ
 	return responseChan, errChan
 }
 
+// invoke ApproveSmsTemplate api with *ApproveSmsTemplateRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/approvesmstemplate.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ApproveSmsTemplateWithCallback(request *ApproveSmsTemplateRequest, callback func(response *ApproveSmsTemplateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +87,7 @@ type ApproveSmsTemplateResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ApproveSmsTemplate API
 func CreateApproveSmsTemplateRequest() (request *ApproveSmsTemplateRequest) {
 	request = &ApproveSmsTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -87,6 +96,7 @@ func CreateApproveSmsTemplateRequest() (request *ApproveSmsTemplateRequest) {
 	return
 }
 
+// create a response to parse from ApproveSmsTemplate response
 func CreateApproveSmsTemplateResponse() (response *ApproveSmsTemplateResponse) {
 	response = &ApproveSmsTemplateResponse{
 		BaseResponse: &responses.BaseResponse{},

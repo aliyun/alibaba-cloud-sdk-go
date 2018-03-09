@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeDnsProductInstance api with *DescribeDnsProductInstanceRequest synchronously
+// api document: https://help.aliyun.com/api/alidns/describednsproductinstance.html
 func (client *Client) DescribeDnsProductInstance(request *DescribeDnsProductInstanceRequest) (response *DescribeDnsProductInstanceResponse, err error) {
 	response = CreateDescribeDnsProductInstanceResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeDnsProductInstance api with *DescribeDnsProductInstanceRequest asynchronously
+// api document: https://help.aliyun.com/api/alidns/describednsproductinstance.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDnsProductInstanceWithChan(request *DescribeDnsProductInstanceRequest) (<-chan *DescribeDnsProductInstanceResponse, <-chan error) {
 	responseChan := make(chan *DescribeDnsProductInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeDnsProductInstanceWithChan(request *DescribeDnsPro
 	return responseChan, errChan
 }
 
+// invoke DescribeDnsProductInstance api with *DescribeDnsProductInstanceRequest asynchronously
+// api document: https://help.aliyun.com/api/alidns/describednsproductinstance.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDnsProductInstanceWithCallback(request *DescribeDnsProductInstanceRequest, callback func(response *DescribeDnsProductInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -106,6 +114,7 @@ type DescribeDnsProductInstanceResponse struct {
 	DnsServers            DnsServersInDescribeDnsProductInstance `json:"DnsServers" xml:"DnsServers"`
 }
 
+// create a request to invoke DescribeDnsProductInstance API
 func CreateDescribeDnsProductInstanceRequest() (request *DescribeDnsProductInstanceRequest) {
 	request = &DescribeDnsProductInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -114,6 +123,7 @@ func CreateDescribeDnsProductInstanceRequest() (request *DescribeDnsProductInsta
 	return
 }
 
+// create a response to parse from DescribeDnsProductInstance response
 func CreateDescribeDnsProductInstanceResponse() (response *DescribeDnsProductInstanceResponse) {
 	response = &DescribeDnsProductInstanceResponse{
 		BaseResponse: &responses.BaseResponse{},

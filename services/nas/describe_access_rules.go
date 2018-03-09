@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeAccessRules api with *DescribeAccessRulesRequest synchronously
+// api document: https://help.aliyun.com/api/nas/describeaccessrules.html
 func (client *Client) DescribeAccessRules(request *DescribeAccessRulesRequest) (response *DescribeAccessRulesResponse, err error) {
 	response = CreateDescribeAccessRulesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeAccessRules api with *DescribeAccessRulesRequest asynchronously
+// api document: https://help.aliyun.com/api/nas/describeaccessrules.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAccessRulesWithChan(request *DescribeAccessRulesRequest) (<-chan *DescribeAccessRulesResponse, <-chan error) {
 	responseChan := make(chan *DescribeAccessRulesResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeAccessRulesWithChan(request *DescribeAccessRulesRe
 	return responseChan, errChan
 }
 
+// invoke DescribeAccessRules api with *DescribeAccessRulesRequest asynchronously
+// api document: https://help.aliyun.com/api/nas/describeaccessrules.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAccessRulesWithCallback(request *DescribeAccessRulesRequest, callback func(response *DescribeAccessRulesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type DescribeAccessRulesResponse struct {
 	AccessRules AccessRules `json:"AccessRules" xml:"AccessRules"`
 }
 
+// create a request to invoke DescribeAccessRules API
 func CreateDescribeAccessRulesRequest() (request *DescribeAccessRulesRequest) {
 	request = &DescribeAccessRulesRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateDescribeAccessRulesRequest() (request *DescribeAccessRulesRequest) {
 	return
 }
 
+// create a response to parse from DescribeAccessRules response
 func CreateDescribeAccessRulesResponse() (response *DescribeAccessRulesResponse) {
 	response = &DescribeAccessRulesResponse{
 		BaseResponse: &responses.BaseResponse{},

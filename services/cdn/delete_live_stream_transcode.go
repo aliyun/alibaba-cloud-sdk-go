@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeleteLiveStreamTranscode api with *DeleteLiveStreamTranscodeRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/deletelivestreamtranscode.html
 func (client *Client) DeleteLiveStreamTranscode(request *DeleteLiveStreamTranscodeRequest) (response *DeleteLiveStreamTranscodeResponse, err error) {
 	response = CreateDeleteLiveStreamTranscodeResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeleteLiveStreamTranscode api with *DeleteLiveStreamTranscodeRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/deletelivestreamtranscode.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteLiveStreamTranscodeWithChan(request *DeleteLiveStreamTranscodeRequest) (<-chan *DeleteLiveStreamTranscodeResponse, <-chan error) {
 	responseChan := make(chan *DeleteLiveStreamTranscodeResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeleteLiveStreamTranscodeWithChan(request *DeleteLiveStrea
 	return responseChan, errChan
 }
 
+// invoke DeleteLiveStreamTranscode api with *DeleteLiveStreamTranscodeRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/deletelivestreamtranscode.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteLiveStreamTranscodeWithCallback(request *DeleteLiveStreamTranscodeRequest, callback func(response *DeleteLiveStreamTranscodeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type DeleteLiveStreamTranscodeResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke DeleteLiveStreamTranscode API
 func CreateDeleteLiveStreamTranscodeRequest() (request *DeleteLiveStreamTranscodeRequest) {
 	request = &DeleteLiveStreamTranscodeRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateDeleteLiveStreamTranscodeRequest() (request *DeleteLiveStreamTranscod
 	return
 }
 
+// create a response to parse from DeleteLiveStreamTranscode response
 func CreateDeleteLiveStreamTranscodeResponse() (response *DeleteLiveStreamTranscodeResponse) {
 	response = &DeleteLiveStreamTranscodeResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeSslVpnClientCerts api with *DescribeSslVpnClientCertsRequest synchronously
+// api document: https://help.aliyun.com/api/vpc/describesslvpnclientcerts.html
 func (client *Client) DescribeSslVpnClientCerts(request *DescribeSslVpnClientCertsRequest) (response *DescribeSslVpnClientCertsResponse, err error) {
 	response = CreateDescribeSslVpnClientCertsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeSslVpnClientCerts api with *DescribeSslVpnClientCertsRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/describesslvpnclientcerts.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSslVpnClientCertsWithChan(request *DescribeSslVpnClientCertsRequest) (<-chan *DescribeSslVpnClientCertsResponse, <-chan error) {
 	responseChan := make(chan *DescribeSslVpnClientCertsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeSslVpnClientCertsWithChan(request *DescribeSslVpnC
 	return responseChan, errChan
 }
 
+// invoke DescribeSslVpnClientCerts api with *DescribeSslVpnClientCertsRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/describesslvpnclientcerts.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSslVpnClientCertsWithCallback(request *DescribeSslVpnClientCertsRequest, callback func(response *DescribeSslVpnClientCertsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -86,6 +94,7 @@ type DescribeSslVpnClientCertsResponse struct {
 	SslVpnClientCertKeys SslVpnClientCertKeys `json:"SslVpnClientCertKeys" xml:"SslVpnClientCertKeys"`
 }
 
+// create a request to invoke DescribeSslVpnClientCerts API
 func CreateDescribeSslVpnClientCertsRequest() (request *DescribeSslVpnClientCertsRequest) {
 	request = &DescribeSslVpnClientCertsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -94,6 +103,7 @@ func CreateDescribeSslVpnClientCertsRequest() (request *DescribeSslVpnClientCert
 	return
 }
 
+// create a response to parse from DescribeSslVpnClientCerts response
 func CreateDescribeSslVpnClientCertsResponse() (response *DescribeSslVpnClientCertsResponse) {
 	response = &DescribeSslVpnClientCertsResponse{
 		BaseResponse: &responses.BaseResponse{},

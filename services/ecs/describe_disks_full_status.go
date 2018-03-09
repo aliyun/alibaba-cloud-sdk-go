@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeDisksFullStatus api with *DescribeDisksFullStatusRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/describedisksfullstatus.html
 func (client *Client) DescribeDisksFullStatus(request *DescribeDisksFullStatusRequest) (response *DescribeDisksFullStatusResponse, err error) {
 	response = CreateDescribeDisksFullStatusResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeDisksFullStatus api with *DescribeDisksFullStatusRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describedisksfullstatus.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDisksFullStatusWithChan(request *DescribeDisksFullStatusRequest) (<-chan *DescribeDisksFullStatusResponse, <-chan error) {
 	responseChan := make(chan *DescribeDisksFullStatusResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeDisksFullStatusWithChan(request *DescribeDisksFull
 	return responseChan, errChan
 }
 
+// invoke DescribeDisksFullStatus api with *DescribeDisksFullStatusRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describedisksfullstatus.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDisksFullStatusWithCallback(request *DescribeDisksFullStatusRequest, callback func(response *DescribeDisksFullStatusResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type DescribeDisksFullStatusResponse struct {
 	DiskFullStatusSet DiskFullStatusSet `json:"DiskFullStatusSet" xml:"DiskFullStatusSet"`
 }
 
+// create a request to invoke DescribeDisksFullStatus API
 func CreateDescribeDisksFullStatusRequest() (request *DescribeDisksFullStatusRequest) {
 	request = &DescribeDisksFullStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateDescribeDisksFullStatusRequest() (request *DescribeDisksFullStatusReq
 	return
 }
 
+// create a response to parse from DescribeDisksFullStatus response
 func CreateDescribeDisksFullStatusResponse() (response *DescribeDisksFullStatusResponse) {
 	response = &DescribeDisksFullStatusResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke RetrievalDomainName api with *RetrievalDomainNameRequest synchronously
+// api document: https://help.aliyun.com/api/alidns/retrievaldomainname.html
 func (client *Client) RetrievalDomainName(request *RetrievalDomainNameRequest) (response *RetrievalDomainNameResponse, err error) {
 	response = CreateRetrievalDomainNameResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke RetrievalDomainName api with *RetrievalDomainNameRequest asynchronously
+// api document: https://help.aliyun.com/api/alidns/retrievaldomainname.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RetrievalDomainNameWithChan(request *RetrievalDomainNameRequest) (<-chan *RetrievalDomainNameResponse, <-chan error) {
 	responseChan := make(chan *RetrievalDomainNameResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) RetrievalDomainNameWithChan(request *RetrievalDomainNameRe
 	return responseChan, errChan
 }
 
+// invoke RetrievalDomainName api with *RetrievalDomainNameRequest asynchronously
+// api document: https://help.aliyun.com/api/alidns/retrievaldomainname.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RetrievalDomainNameWithCallback(request *RetrievalDomainNameRequest, callback func(response *RetrievalDomainNameResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +87,7 @@ type RetrievalDomainNameResponse struct {
 	WhoisEmail string `json:"WhoisEmail" xml:"WhoisEmail"`
 }
 
+// create a request to invoke RetrievalDomainName API
 func CreateRetrievalDomainNameRequest() (request *RetrievalDomainNameRequest) {
 	request = &RetrievalDomainNameRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -87,6 +96,7 @@ func CreateRetrievalDomainNameRequest() (request *RetrievalDomainNameRequest) {
 	return
 }
 
+// create a response to parse from RetrievalDomainName response
 func CreateRetrievalDomainNameResponse() (response *RetrievalDomainNameResponse) {
 	response = &RetrievalDomainNameResponse{
 		BaseResponse: &responses.BaseResponse{},

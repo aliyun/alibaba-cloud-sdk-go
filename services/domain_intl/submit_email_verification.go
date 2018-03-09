@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SubmitEmailVerification api with *SubmitEmailVerificationRequest synchronously
+// api document: https://help.aliyun.com/api/domain-intl/submitemailverification.html
 func (client *Client) SubmitEmailVerification(request *SubmitEmailVerificationRequest) (response *SubmitEmailVerificationResponse, err error) {
 	response = CreateSubmitEmailVerificationResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SubmitEmailVerification api with *SubmitEmailVerificationRequest asynchronously
+// api document: https://help.aliyun.com/api/domain-intl/submitemailverification.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitEmailVerificationWithChan(request *SubmitEmailVerificationRequest) (<-chan *SubmitEmailVerificationResponse, <-chan error) {
 	responseChan := make(chan *SubmitEmailVerificationResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SubmitEmailVerificationWithChan(request *SubmitEmailVerifi
 	return responseChan, errChan
 }
 
+// invoke SubmitEmailVerification api with *SubmitEmailVerificationRequest asynchronously
+// api document: https://help.aliyun.com/api/domain-intl/submitemailverification.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitEmailVerificationWithCallback(request *SubmitEmailVerificationRequest, callback func(response *SubmitEmailVerificationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type SubmitEmailVerificationResponse struct {
 	ExistList   []SendResult `json:"ExistList" xml:"ExistList"`
 }
 
+// create a request to invoke SubmitEmailVerification API
 func CreateSubmitEmailVerificationRequest() (request *SubmitEmailVerificationRequest) {
 	request = &SubmitEmailVerificationRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateSubmitEmailVerificationRequest() (request *SubmitEmailVerificationReq
 	return
 }
 
+// create a response to parse from SubmitEmailVerification response
 func CreateSubmitEmailVerificationResponse() (response *SubmitEmailVerificationResponse) {
 	response = &SubmitEmailVerificationResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeClusterNodeInfo api with *DescribeClusterNodeInfoRequest synchronously
+// api document: https://help.aliyun.com/api/cs/describeclusternodeinfo.html
 func (client *Client) DescribeClusterNodeInfo(request *DescribeClusterNodeInfoRequest) (response *DescribeClusterNodeInfoResponse, err error) {
 	response = CreateDescribeClusterNodeInfoResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeClusterNodeInfo api with *DescribeClusterNodeInfoRequest asynchronously
+// api document: https://help.aliyun.com/api/cs/describeclusternodeinfo.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeClusterNodeInfoWithChan(request *DescribeClusterNodeInfoRequest) (<-chan *DescribeClusterNodeInfoResponse, <-chan error) {
 	responseChan := make(chan *DescribeClusterNodeInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeClusterNodeInfoWithChan(request *DescribeClusterNo
 	return responseChan, errChan
 }
 
+// invoke DescribeClusterNodeInfo api with *DescribeClusterNodeInfoRequest asynchronously
+// api document: https://help.aliyun.com/api/cs/describeclusternodeinfo.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeClusterNodeInfoWithCallback(request *DescribeClusterNodeInfoRequest, callback func(response *DescribeClusterNodeInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -74,6 +82,7 @@ type DescribeClusterNodeInfoResponse struct {
 	*responses.BaseResponse
 }
 
+// create a request to invoke DescribeClusterNodeInfo API
 func CreateDescribeClusterNodeInfoRequest() (request *DescribeClusterNodeInfoRequest) {
 	request = &DescribeClusterNodeInfoRequest{
 		RoaRequest: &requests.RoaRequest{},
@@ -83,6 +92,7 @@ func CreateDescribeClusterNodeInfoRequest() (request *DescribeClusterNodeInfoReq
 	return
 }
 
+// create a response to parse from DescribeClusterNodeInfo response
 func CreateDescribeClusterNodeInfoResponse() (response *DescribeClusterNodeInfoResponse) {
 	response = &DescribeClusterNodeInfoResponse{
 		BaseResponse: &responses.BaseResponse{},

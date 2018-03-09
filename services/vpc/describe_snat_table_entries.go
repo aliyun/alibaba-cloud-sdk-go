@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeSnatTableEntries api with *DescribeSnatTableEntriesRequest synchronously
+// api document: https://help.aliyun.com/api/vpc/describesnattableentries.html
 func (client *Client) DescribeSnatTableEntries(request *DescribeSnatTableEntriesRequest) (response *DescribeSnatTableEntriesResponse, err error) {
 	response = CreateDescribeSnatTableEntriesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeSnatTableEntries api with *DescribeSnatTableEntriesRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/describesnattableentries.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSnatTableEntriesWithChan(request *DescribeSnatTableEntriesRequest) (<-chan *DescribeSnatTableEntriesResponse, <-chan error) {
 	responseChan := make(chan *DescribeSnatTableEntriesResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeSnatTableEntriesWithChan(request *DescribeSnatTabl
 	return responseChan, errChan
 }
 
+// invoke DescribeSnatTableEntries api with *DescribeSnatTableEntriesRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/describesnattableentries.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSnatTableEntriesWithCallback(request *DescribeSnatTableEntriesRequest, callback func(response *DescribeSnatTableEntriesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -86,6 +94,7 @@ type DescribeSnatTableEntriesResponse struct {
 	SnatTableEntries SnatTableEntries `json:"SnatTableEntries" xml:"SnatTableEntries"`
 }
 
+// create a request to invoke DescribeSnatTableEntries API
 func CreateDescribeSnatTableEntriesRequest() (request *DescribeSnatTableEntriesRequest) {
 	request = &DescribeSnatTableEntriesRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -94,6 +103,7 @@ func CreateDescribeSnatTableEntriesRequest() (request *DescribeSnatTableEntriesR
 	return
 }
 
+// create a response to parse from DescribeSnatTableEntries response
 func CreateDescribeSnatTableEntriesResponse() (response *DescribeSnatTableEntriesResponse) {
 	response = &DescribeSnatTableEntriesResponse{
 		BaseResponse: &responses.BaseResponse{},

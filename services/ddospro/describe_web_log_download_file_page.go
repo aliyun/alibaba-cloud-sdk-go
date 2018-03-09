@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeWebLogDownloadFilePage api with *DescribeWebLogDownloadFilePageRequest synchronously
+// api document: https://help.aliyun.com/api/ddospro/describeweblogdownloadfilepage.html
 func (client *Client) DescribeWebLogDownloadFilePage(request *DescribeWebLogDownloadFilePageRequest) (response *DescribeWebLogDownloadFilePageResponse, err error) {
 	response = CreateDescribeWebLogDownloadFilePageResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeWebLogDownloadFilePage api with *DescribeWebLogDownloadFilePageRequest asynchronously
+// api document: https://help.aliyun.com/api/ddospro/describeweblogdownloadfilepage.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeWebLogDownloadFilePageWithChan(request *DescribeWebLogDownloadFilePageRequest) (<-chan *DescribeWebLogDownloadFilePageResponse, <-chan error) {
 	responseChan := make(chan *DescribeWebLogDownloadFilePageResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeWebLogDownloadFilePageWithChan(request *DescribeWe
 	return responseChan, errChan
 }
 
+// invoke DescribeWebLogDownloadFilePage api with *DescribeWebLogDownloadFilePageRequest asynchronously
+// api document: https://help.aliyun.com/api/ddospro/describeweblogdownloadfilepage.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeWebLogDownloadFilePageWithCallback(request *DescribeWebLogDownloadFilePageRequest, callback func(response *DescribeWebLogDownloadFilePageResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type DescribeWebLogDownloadFilePageResponse struct {
 	FileList   []File `json:"FileList" xml:"FileList"`
 }
 
+// create a request to invoke DescribeWebLogDownloadFilePage API
 func CreateDescribeWebLogDownloadFilePageRequest() (request *DescribeWebLogDownloadFilePageRequest) {
 	request = &DescribeWebLogDownloadFilePageRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateDescribeWebLogDownloadFilePageRequest() (request *DescribeWebLogDownl
 	return
 }
 
+// create a response to parse from DescribeWebLogDownloadFilePage response
 func CreateDescribeWebLogDownloadFilePageResponse() (response *DescribeWebLogDownloadFilePageResponse) {
 	response = &DescribeWebLogDownloadFilePageResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke PutMetricData api with *PutMetricDataRequest synchronously
+// api document: https://help.aliyun.com/api/cms/putmetricdata.html
 func (client *Client) PutMetricData(request *PutMetricDataRequest) (response *PutMetricDataResponse, err error) {
 	response = CreatePutMetricDataResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke PutMetricData api with *PutMetricDataRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/putmetricdata.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PutMetricDataWithChan(request *PutMetricDataRequest) (<-chan *PutMetricDataResponse, <-chan error) {
 	responseChan := make(chan *PutMetricDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) PutMetricDataWithChan(request *PutMetricDataRequest) (<-ch
 	return responseChan, errChan
 }
 
+// invoke PutMetricData api with *PutMetricDataRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/putmetricdata.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PutMetricDataWithCallback(request *PutMetricDataRequest, callback func(response *PutMetricDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +87,7 @@ type PutMetricDataResponse struct {
 	Success   bool   `json:"Success" xml:"Success"`
 }
 
+// create a request to invoke PutMetricData API
 func CreatePutMetricDataRequest() (request *PutMetricDataRequest) {
 	request = &PutMetricDataRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -87,6 +96,7 @@ func CreatePutMetricDataRequest() (request *PutMetricDataRequest) {
 	return
 }
 
+// create a response to parse from PutMetricData response
 func CreatePutMetricDataResponse() (response *PutMetricDataResponse) {
 	response = &PutMetricDataResponse{
 		BaseResponse: &responses.BaseResponse{},

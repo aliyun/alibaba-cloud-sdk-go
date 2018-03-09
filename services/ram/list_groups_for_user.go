@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ListGroupsForUser api with *ListGroupsForUserRequest synchronously
+// api document: https://help.aliyun.com/api/ram/listgroupsforuser.html
 func (client *Client) ListGroupsForUser(request *ListGroupsForUserRequest) (response *ListGroupsForUserResponse, err error) {
 	response = CreateListGroupsForUserResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ListGroupsForUser api with *ListGroupsForUserRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/listgroupsforuser.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListGroupsForUserWithChan(request *ListGroupsForUserRequest) (<-chan *ListGroupsForUserResponse, <-chan error) {
 	responseChan := make(chan *ListGroupsForUserResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ListGroupsForUserWithChan(request *ListGroupsForUserReques
 	return responseChan, errChan
 }
 
+// invoke ListGroupsForUser api with *ListGroupsForUserRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/listgroupsforuser.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListGroupsForUserWithCallback(request *ListGroupsForUserRequest, callback func(response *ListGroupsForUserResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,6 +84,7 @@ type ListGroupsForUserResponse struct {
 	Groups    GroupsInListGroupsForUser `json:"Groups" xml:"Groups"`
 }
 
+// create a request to invoke ListGroupsForUser API
 func CreateListGroupsForUserRequest() (request *ListGroupsForUserRequest) {
 	request = &ListGroupsForUserRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -84,6 +93,7 @@ func CreateListGroupsForUserRequest() (request *ListGroupsForUserRequest) {
 	return
 }
 
+// create a response to parse from ListGroupsForUser response
 func CreateListGroupsForUserResponse() (response *ListGroupsForUserResponse) {
 	response = &ListGroupsForUserResponse{
 		BaseResponse: &responses.BaseResponse{},

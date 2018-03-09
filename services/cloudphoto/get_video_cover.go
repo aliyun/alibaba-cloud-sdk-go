@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke GetVideoCover api with *GetVideoCoverRequest synchronously
+// api document: https://help.aliyun.com/api/cloudphoto/getvideocover.html
 func (client *Client) GetVideoCover(request *GetVideoCoverRequest) (response *GetVideoCoverResponse, err error) {
 	response = CreateGetVideoCoverResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke GetVideoCover api with *GetVideoCoverRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/getvideocover.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetVideoCoverWithChan(request *GetVideoCoverRequest) (<-chan *GetVideoCoverResponse, <-chan error) {
 	responseChan := make(chan *GetVideoCoverResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) GetVideoCoverWithChan(request *GetVideoCoverRequest) (<-ch
 	return responseChan, errChan
 }
 
+// invoke GetVideoCover api with *GetVideoCoverRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/getvideocover.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetVideoCoverWithCallback(request *GetVideoCoverRequest, callback func(response *GetVideoCoverResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type GetVideoCoverResponse struct {
 	Action        string `json:"Action" xml:"Action"`
 }
 
+// create a request to invoke GetVideoCover API
 func CreateGetVideoCoverRequest() (request *GetVideoCoverRequest) {
 	request = &GetVideoCoverRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateGetVideoCoverRequest() (request *GetVideoCoverRequest) {
 	return
 }
 
+// create a response to parse from GetVideoCover response
 func CreateGetVideoCoverResponse() (response *GetVideoCoverResponse) {
 	response = &GetVideoCoverResponse{
 		BaseResponse: &responses.BaseResponse{},

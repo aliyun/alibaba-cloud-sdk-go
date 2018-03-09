@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke QuerySmsStatistics api with *QuerySmsStatisticsRequest synchronously
+// api document: https://help.aliyun.com/api/dm/querysmsstatistics.html
 func (client *Client) QuerySmsStatistics(request *QuerySmsStatisticsRequest) (response *QuerySmsStatisticsResponse, err error) {
 	response = CreateQuerySmsStatisticsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke QuerySmsStatistics api with *QuerySmsStatisticsRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/querysmsstatistics.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QuerySmsStatisticsWithChan(request *QuerySmsStatisticsRequest) (<-chan *QuerySmsStatisticsResponse, <-chan error) {
 	responseChan := make(chan *QuerySmsStatisticsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) QuerySmsStatisticsWithChan(request *QuerySmsStatisticsRequ
 	return responseChan, errChan
 }
 
+// invoke QuerySmsStatistics api with *QuerySmsStatisticsRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/querysmsstatistics.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QuerySmsStatisticsWithCallback(request *QuerySmsStatisticsRequest, callback func(response *QuerySmsStatisticsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type QuerySmsStatisticsResponse struct {
 	Data       DataInQuerySmsStatistics `json:"data" xml:"data"`
 }
 
+// create a request to invoke QuerySmsStatistics API
 func CreateQuerySmsStatisticsRequest() (request *QuerySmsStatisticsRequest) {
 	request = &QuerySmsStatisticsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateQuerySmsStatisticsRequest() (request *QuerySmsStatisticsRequest) {
 	return
 }
 
+// create a response to parse from QuerySmsStatistics response
 func CreateQuerySmsStatisticsResponse() (response *QuerySmsStatisticsResponse) {
 	response = &QuerySmsStatisticsResponse{
 		BaseResponse: &responses.BaseResponse{},

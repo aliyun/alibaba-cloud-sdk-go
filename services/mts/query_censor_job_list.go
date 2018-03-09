@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke QueryCensorJobList api with *QueryCensorJobListRequest synchronously
+// api document: https://help.aliyun.com/api/mts/querycensorjoblist.html
 func (client *Client) QueryCensorJobList(request *QueryCensorJobListRequest) (response *QueryCensorJobListResponse, err error) {
 	response = CreateQueryCensorJobListResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke QueryCensorJobList api with *QueryCensorJobListRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/querycensorjoblist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryCensorJobListWithChan(request *QueryCensorJobListRequest) (<-chan *QueryCensorJobListResponse, <-chan error) {
 	responseChan := make(chan *QueryCensorJobListResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) QueryCensorJobListWithChan(request *QueryCensorJobListRequ
 	return responseChan, errChan
 }
 
+// invoke QueryCensorJobList api with *QueryCensorJobListRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/querycensorjoblist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryCensorJobListWithCallback(request *QueryCensorJobListRequest, callback func(response *QueryCensorJobListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type QueryCensorJobListResponse struct {
 	CensorJobList CensorJobList                   `json:"CensorJobList" xml:"CensorJobList"`
 }
 
+// create a request to invoke QueryCensorJobList API
 func CreateQueryCensorJobListRequest() (request *QueryCensorJobListRequest) {
 	request = &QueryCensorJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateQueryCensorJobListRequest() (request *QueryCensorJobListRequest) {
 	return
 }
 
+// create a response to parse from QueryCensorJobList response
 func CreateQueryCensorJobListResponse() (response *QueryCensorJobListResponse) {
 	response = &QueryCensorJobListResponse{
 		BaseResponse: &responses.BaseResponse{},

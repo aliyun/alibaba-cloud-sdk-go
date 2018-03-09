@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifyAccountDescription api with *ModifyAccountDescriptionRequest synchronously
+// api document: https://help.aliyun.com/api/rds/modifyaccountdescription.html
 func (client *Client) ModifyAccountDescription(request *ModifyAccountDescriptionRequest) (response *ModifyAccountDescriptionResponse, err error) {
 	response = CreateModifyAccountDescriptionResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifyAccountDescription api with *ModifyAccountDescriptionRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/modifyaccountdescription.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyAccountDescriptionWithChan(request *ModifyAccountDescriptionRequest) (<-chan *ModifyAccountDescriptionResponse, <-chan error) {
 	responseChan := make(chan *ModifyAccountDescriptionResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifyAccountDescriptionWithChan(request *ModifyAccountDes
 	return responseChan, errChan
 }
 
+// invoke ModifyAccountDescription api with *ModifyAccountDescriptionRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/modifyaccountdescription.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyAccountDescriptionWithCallback(request *ModifyAccountDescriptionRequest, callback func(response *ModifyAccountDescriptionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type ModifyAccountDescriptionResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ModifyAccountDescription API
 func CreateModifyAccountDescriptionRequest() (request *ModifyAccountDescriptionRequest) {
 	request = &ModifyAccountDescriptionRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateModifyAccountDescriptionRequest() (request *ModifyAccountDescriptionR
 	return
 }
 
+// create a response to parse from ModifyAccountDescription response
 func CreateModifyAccountDescriptionResponse() (response *ModifyAccountDescriptionResponse) {
 	response = &ModifyAccountDescriptionResponse{
 		BaseResponse: &responses.BaseResponse{},

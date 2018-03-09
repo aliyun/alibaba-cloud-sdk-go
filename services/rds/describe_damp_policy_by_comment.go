@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeDampPolicyByComment api with *DescribeDampPolicyByCommentRequest synchronously
+// api document: https://help.aliyun.com/api/rds/describedamppolicybycomment.html
 func (client *Client) DescribeDampPolicyByComment(request *DescribeDampPolicyByCommentRequest) (response *DescribeDampPolicyByCommentResponse, err error) {
 	response = CreateDescribeDampPolicyByCommentResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeDampPolicyByComment api with *DescribeDampPolicyByCommentRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describedamppolicybycomment.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDampPolicyByCommentWithChan(request *DescribeDampPolicyByCommentRequest) (<-chan *DescribeDampPolicyByCommentResponse, <-chan error) {
 	responseChan := make(chan *DescribeDampPolicyByCommentResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeDampPolicyByCommentWithChan(request *DescribeDampP
 	return responseChan, errChan
 }
 
+// invoke DescribeDampPolicyByComment api with *DescribeDampPolicyByCommentRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describedamppolicybycomment.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDampPolicyByCommentWithCallback(request *DescribeDampPolicyByCommentRequest, callback func(response *DescribeDampPolicyByCommentResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -86,6 +94,7 @@ type DescribeDampPolicyByCommentResponse struct {
 	Handler     string `json:"Handler" xml:"Handler"`
 }
 
+// create a request to invoke DescribeDampPolicyByComment API
 func CreateDescribeDampPolicyByCommentRequest() (request *DescribeDampPolicyByCommentRequest) {
 	request = &DescribeDampPolicyByCommentRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -94,6 +103,7 @@ func CreateDescribeDampPolicyByCommentRequest() (request *DescribeDampPolicyByCo
 	return
 }
 
+// create a response to parse from DescribeDampPolicyByComment response
 func CreateDescribeDampPolicyByCommentResponse() (response *DescribeDampPolicyByCommentResponse) {
 	response = &DescribeDampPolicyByCommentResponse{
 		BaseResponse: &responses.BaseResponse{},

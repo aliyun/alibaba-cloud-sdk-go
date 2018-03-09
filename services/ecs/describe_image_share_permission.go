@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeImageSharePermission api with *DescribeImageSharePermissionRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/describeimagesharepermission.html
 func (client *Client) DescribeImageSharePermission(request *DescribeImageSharePermissionRequest) (response *DescribeImageSharePermissionResponse, err error) {
 	response = CreateDescribeImageSharePermissionResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeImageSharePermission api with *DescribeImageSharePermissionRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describeimagesharepermission.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeImageSharePermissionWithChan(request *DescribeImageSharePermissionRequest) (<-chan *DescribeImageSharePermissionResponse, <-chan error) {
 	responseChan := make(chan *DescribeImageSharePermissionResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeImageSharePermissionWithChan(request *DescribeImag
 	return responseChan, errChan
 }
 
+// invoke DescribeImageSharePermission api with *DescribeImageSharePermissionRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describeimagesharepermission.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeImageSharePermissionWithCallback(request *DescribeImageSharePermissionRequest, callback func(response *DescribeImageSharePermissionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -88,6 +96,7 @@ type DescribeImageSharePermissionResponse struct {
 	Accounts    Accounts    `json:"Accounts" xml:"Accounts"`
 }
 
+// create a request to invoke DescribeImageSharePermission API
 func CreateDescribeImageSharePermissionRequest() (request *DescribeImageSharePermissionRequest) {
 	request = &DescribeImageSharePermissionRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -96,6 +105,7 @@ func CreateDescribeImageSharePermissionRequest() (request *DescribeImageSharePer
 	return
 }
 
+// create a response to parse from DescribeImageSharePermission response
 func CreateDescribeImageSharePermissionResponse() (response *DescribeImageSharePermissionResponse) {
 	response = &DescribeImageSharePermissionResponse{
 		BaseResponse: &responses.BaseResponse{},

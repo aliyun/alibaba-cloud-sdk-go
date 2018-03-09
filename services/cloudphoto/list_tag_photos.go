@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ListTagPhotos api with *ListTagPhotosRequest synchronously
+// api document: https://help.aliyun.com/api/cloudphoto/listtagphotos.html
 func (client *Client) ListTagPhotos(request *ListTagPhotosRequest) (response *ListTagPhotosResponse, err error) {
 	response = CreateListTagPhotosResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ListTagPhotos api with *ListTagPhotosRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/listtagphotos.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListTagPhotosWithChan(request *ListTagPhotosRequest) (<-chan *ListTagPhotosResponse, <-chan error) {
 	responseChan := make(chan *ListTagPhotosResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ListTagPhotosWithChan(request *ListTagPhotosRequest) (<-ch
 	return responseChan, errChan
 }
 
+// invoke ListTagPhotos api with *ListTagPhotosRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/listtagphotos.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListTagPhotosWithCallback(request *ListTagPhotosRequest, callback func(response *ListTagPhotosResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -87,6 +95,7 @@ type ListTagPhotosResponse struct {
 	Results    []Result `json:"Results" xml:"Results"`
 }
 
+// create a request to invoke ListTagPhotos API
 func CreateListTagPhotosRequest() (request *ListTagPhotosRequest) {
 	request = &ListTagPhotosRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -95,6 +104,7 @@ func CreateListTagPhotosRequest() (request *ListTagPhotosRequest) {
 	return
 }
 
+// create a response to parse from ListTagPhotos response
 func CreateListTagPhotosResponse() (response *ListTagPhotosResponse) {
 	response = &ListTagPhotosResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeleteGroup api with *DeleteGroupRequest synchronously
+// api document: https://help.aliyun.com/api/ram/deletegroup.html
 func (client *Client) DeleteGroup(request *DeleteGroupRequest) (response *DeleteGroupResponse, err error) {
 	response = CreateDeleteGroupResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeleteGroup api with *DeleteGroupRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/deletegroup.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteGroupWithChan(request *DeleteGroupRequest) (<-chan *DeleteGroupResponse, <-chan error) {
 	responseChan := make(chan *DeleteGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeleteGroupWithChan(request *DeleteGroupRequest) (<-chan *
 	return responseChan, errChan
 }
 
+// invoke DeleteGroup api with *DeleteGroupRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/deletegroup.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteGroupWithCallback(request *DeleteGroupRequest, callback func(response *DeleteGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -75,6 +83,7 @@ type DeleteGroupResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke DeleteGroup API
 func CreateDeleteGroupRequest() (request *DeleteGroupRequest) {
 	request = &DeleteGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -83,6 +92,7 @@ func CreateDeleteGroupRequest() (request *DeleteGroupRequest) {
 	return
 }
 
+// create a response to parse from DeleteGroup response
 func CreateDeleteGroupResponse() (response *DeleteGroupResponse) {
 	response = &DeleteGroupResponse{
 		BaseResponse: &responses.BaseResponse{},

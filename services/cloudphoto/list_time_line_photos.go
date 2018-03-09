@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ListTimeLinePhotos api with *ListTimeLinePhotosRequest synchronously
+// api document: https://help.aliyun.com/api/cloudphoto/listtimelinephotos.html
 func (client *Client) ListTimeLinePhotos(request *ListTimeLinePhotosRequest) (response *ListTimeLinePhotosResponse, err error) {
 	response = CreateListTimeLinePhotosResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ListTimeLinePhotos api with *ListTimeLinePhotosRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/listtimelinephotos.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListTimeLinePhotosWithChan(request *ListTimeLinePhotosRequest) (<-chan *ListTimeLinePhotosResponse, <-chan error) {
 	responseChan := make(chan *ListTimeLinePhotosResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ListTimeLinePhotosWithChan(request *ListTimeLinePhotosRequ
 	return responseChan, errChan
 }
 
+// invoke ListTimeLinePhotos api with *ListTimeLinePhotosRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/listtimelinephotos.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListTimeLinePhotosWithCallback(request *ListTimeLinePhotosRequest, callback func(response *ListTimeLinePhotosResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -88,6 +96,7 @@ type ListTimeLinePhotosResponse struct {
 	Photos     []Photo `json:"Photos" xml:"Photos"`
 }
 
+// create a request to invoke ListTimeLinePhotos API
 func CreateListTimeLinePhotosRequest() (request *ListTimeLinePhotosRequest) {
 	request = &ListTimeLinePhotosRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -96,6 +105,7 @@ func CreateListTimeLinePhotosRequest() (request *ListTimeLinePhotosRequest) {
 	return
 }
 
+// create a response to parse from ListTimeLinePhotos response
 func CreateListTimeLinePhotosResponse() (response *ListTimeLinePhotosResponse) {
 	response = &ListTimeLinePhotosResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke AddCensorPipeline api with *AddCensorPipelineRequest synchronously
+// api document: https://help.aliyun.com/api/mts/addcensorpipeline.html
 func (client *Client) AddCensorPipeline(request *AddCensorPipelineRequest) (response *AddCensorPipelineResponse, err error) {
 	response = CreateAddCensorPipelineResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke AddCensorPipeline api with *AddCensorPipelineRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/addcensorpipeline.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddCensorPipelineWithChan(request *AddCensorPipelineRequest) (<-chan *AddCensorPipelineResponse, <-chan error) {
 	responseChan := make(chan *AddCensorPipelineResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) AddCensorPipelineWithChan(request *AddCensorPipelineReques
 	return responseChan, errChan
 }
 
+// invoke AddCensorPipeline api with *AddCensorPipelineRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/addcensorpipeline.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddCensorPipelineWithCallback(request *AddCensorPipelineRequest, callback func(response *AddCensorPipelineResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type AddCensorPipelineResponse struct {
 	Pipeline  Pipeline `json:"Pipeline" xml:"Pipeline"`
 }
 
+// create a request to invoke AddCensorPipeline API
 func CreateAddCensorPipelineRequest() (request *AddCensorPipelineRequest) {
 	request = &AddCensorPipelineRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateAddCensorPipelineRequest() (request *AddCensorPipelineRequest) {
 	return
 }
 
+// create a response to parse from AddCensorPipeline response
 func CreateAddCensorPipelineResponse() (response *AddCensorPipelineResponse) {
 	response = &AddCensorPipelineResponse{
 		BaseResponse: &responses.BaseResponse{},

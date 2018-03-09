@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke UpdateAccessKey api with *UpdateAccessKeyRequest synchronously
+// api document: https://help.aliyun.com/api/ram/updateaccesskey.html
 func (client *Client) UpdateAccessKey(request *UpdateAccessKeyRequest) (response *UpdateAccessKeyResponse, err error) {
 	response = CreateUpdateAccessKeyResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke UpdateAccessKey api with *UpdateAccessKeyRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/updateaccesskey.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateAccessKeyWithChan(request *UpdateAccessKeyRequest) (<-chan *UpdateAccessKeyResponse, <-chan error) {
 	responseChan := make(chan *UpdateAccessKeyResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) UpdateAccessKeyWithChan(request *UpdateAccessKeyRequest) (
 	return responseChan, errChan
 }
 
+// invoke UpdateAccessKey api with *UpdateAccessKeyRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/updateaccesskey.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateAccessKeyWithCallback(request *UpdateAccessKeyRequest, callback func(response *UpdateAccessKeyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +85,7 @@ type UpdateAccessKeyResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke UpdateAccessKey API
 func CreateUpdateAccessKeyRequest() (request *UpdateAccessKeyRequest) {
 	request = &UpdateAccessKeyRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -85,6 +94,7 @@ func CreateUpdateAccessKeyRequest() (request *UpdateAccessKeyRequest) {
 	return
 }
 
+// create a response to parse from UpdateAccessKey response
 func CreateUpdateAccessKeyResponse() (response *UpdateAccessKeyResponse) {
 	response = &UpdateAccessKeyResponse{
 		BaseResponse: &responses.BaseResponse{},

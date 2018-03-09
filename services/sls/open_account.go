@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke OpenAccount api with *OpenAccountRequest synchronously
+// api document: https://help.aliyun.com/api/sls/openaccount.html
 func (client *Client) OpenAccount(request *OpenAccountRequest) (response *OpenAccountResponse, err error) {
 	response = CreateOpenAccountResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke OpenAccount api with *OpenAccountRequest asynchronously
+// api document: https://help.aliyun.com/api/sls/openaccount.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OpenAccountWithChan(request *OpenAccountRequest) (<-chan *OpenAccountResponse, <-chan error) {
 	responseChan := make(chan *OpenAccountResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) OpenAccountWithChan(request *OpenAccountRequest) (<-chan *
 	return responseChan, errChan
 }
 
+// invoke OpenAccount api with *OpenAccountRequest asynchronously
+// api document: https://help.aliyun.com/api/sls/openaccount.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) OpenAccountWithCallback(request *OpenAccountRequest, callback func(response *OpenAccountResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,6 +84,7 @@ type OpenAccountResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke OpenAccount API
 func CreateOpenAccountRequest() (request *OpenAccountRequest) {
 	request = &OpenAccountRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -84,6 +93,7 @@ func CreateOpenAccountRequest() (request *OpenAccountRequest) {
 	return
 }
 
+// create a response to parse from OpenAccount response
 func CreateOpenAccountResponse() (response *OpenAccountResponse) {
 	response = &OpenAccountResponse{
 		BaseResponse: &responses.BaseResponse{},

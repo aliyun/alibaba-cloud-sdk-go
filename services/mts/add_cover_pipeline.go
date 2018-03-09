@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke AddCoverPipeline api with *AddCoverPipelineRequest synchronously
+// api document: https://help.aliyun.com/api/mts/addcoverpipeline.html
 func (client *Client) AddCoverPipeline(request *AddCoverPipelineRequest) (response *AddCoverPipelineResponse, err error) {
 	response = CreateAddCoverPipelineResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke AddCoverPipeline api with *AddCoverPipelineRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/addcoverpipeline.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddCoverPipelineWithChan(request *AddCoverPipelineRequest) (<-chan *AddCoverPipelineResponse, <-chan error) {
 	responseChan := make(chan *AddCoverPipelineResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) AddCoverPipelineWithChan(request *AddCoverPipelineRequest)
 	return responseChan, errChan
 }
 
+// invoke AddCoverPipeline api with *AddCoverPipelineRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/addcoverpipeline.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddCoverPipelineWithCallback(request *AddCoverPipelineRequest, callback func(response *AddCoverPipelineResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,6 +91,7 @@ type AddCoverPipelineResponse struct {
 	Pipeline  PipelineInAddCoverPipeline `json:"Pipeline" xml:"Pipeline"`
 }
 
+// create a request to invoke AddCoverPipeline API
 func CreateAddCoverPipelineRequest() (request *AddCoverPipelineRequest) {
 	request = &AddCoverPipelineRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -91,6 +100,7 @@ func CreateAddCoverPipelineRequest() (request *AddCoverPipelineRequest) {
 	return
 }
 
+// create a response to parse from AddCoverPipeline response
 func CreateAddCoverPipelineResponse() (response *AddCoverPipelineResponse) {
 	response = &AddCoverPipelineResponse{
 		BaseResponse: &responses.BaseResponse{},

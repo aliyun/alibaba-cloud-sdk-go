@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeClusterServices api with *DescribeClusterServicesRequest synchronously
+// api document: https://help.aliyun.com/api/cs/describeclusterservices.html
 func (client *Client) DescribeClusterServices(request *DescribeClusterServicesRequest) (response *DescribeClusterServicesResponse, err error) {
 	response = CreateDescribeClusterServicesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeClusterServices api with *DescribeClusterServicesRequest asynchronously
+// api document: https://help.aliyun.com/api/cs/describeclusterservices.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeClusterServicesWithChan(request *DescribeClusterServicesRequest) (<-chan *DescribeClusterServicesResponse, <-chan error) {
 	responseChan := make(chan *DescribeClusterServicesResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeClusterServicesWithChan(request *DescribeClusterSe
 	return responseChan, errChan
 }
 
+// invoke DescribeClusterServices api with *DescribeClusterServicesRequest asynchronously
+// api document: https://help.aliyun.com/api/cs/describeclusterservices.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeClusterServicesWithCallback(request *DescribeClusterServicesRequest, callback func(response *DescribeClusterServicesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -74,6 +82,7 @@ type DescribeClusterServicesResponse struct {
 	*responses.BaseResponse
 }
 
+// create a request to invoke DescribeClusterServices API
 func CreateDescribeClusterServicesRequest() (request *DescribeClusterServicesRequest) {
 	request = &DescribeClusterServicesRequest{
 		RoaRequest: &requests.RoaRequest{},
@@ -83,6 +92,7 @@ func CreateDescribeClusterServicesRequest() (request *DescribeClusterServicesReq
 	return
 }
 
+// create a response to parse from DescribeClusterServices response
 func CreateDescribeClusterServicesResponse() (response *DescribeClusterServicesResponse) {
 	response = &DescribeClusterServicesResponse{
 		BaseResponse: &responses.BaseResponse{},

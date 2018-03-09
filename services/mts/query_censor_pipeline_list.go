@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke QueryCensorPipelineList api with *QueryCensorPipelineListRequest synchronously
+// api document: https://help.aliyun.com/api/mts/querycensorpipelinelist.html
 func (client *Client) QueryCensorPipelineList(request *QueryCensorPipelineListRequest) (response *QueryCensorPipelineListResponse, err error) {
 	response = CreateQueryCensorPipelineListResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke QueryCensorPipelineList api with *QueryCensorPipelineListRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/querycensorpipelinelist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryCensorPipelineListWithChan(request *QueryCensorPipelineListRequest) (<-chan *QueryCensorPipelineListResponse, <-chan error) {
 	responseChan := make(chan *QueryCensorPipelineListResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) QueryCensorPipelineListWithChan(request *QueryCensorPipeli
 	return responseChan, errChan
 }
 
+// invoke QueryCensorPipelineList api with *QueryCensorPipelineListRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/querycensorpipelinelist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryCensorPipelineListWithCallback(request *QueryCensorPipelineListRequest, callback func(response *QueryCensorPipelineListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type QueryCensorPipelineListResponse struct {
 	PipelineList PipelineListInQueryCensorPipelineList `json:"PipelineList" xml:"PipelineList"`
 }
 
+// create a request to invoke QueryCensorPipelineList API
 func CreateQueryCensorPipelineListRequest() (request *QueryCensorPipelineListRequest) {
 	request = &QueryCensorPipelineListRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateQueryCensorPipelineListRequest() (request *QueryCensorPipelineListReq
 	return
 }
 
+// create a response to parse from QueryCensorPipelineList response
 func CreateQueryCensorPipelineListResponse() (response *QueryCensorPipelineListResponse) {
 	response = &QueryCensorPipelineListResponse{
 		BaseResponse: &responses.BaseResponse{},

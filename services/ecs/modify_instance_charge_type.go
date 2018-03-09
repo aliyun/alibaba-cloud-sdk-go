@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifyInstanceChargeType api with *ModifyInstanceChargeTypeRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/modifyinstancechargetype.html
 func (client *Client) ModifyInstanceChargeType(request *ModifyInstanceChargeTypeRequest) (response *ModifyInstanceChargeTypeResponse, err error) {
 	response = CreateModifyInstanceChargeTypeResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifyInstanceChargeType api with *ModifyInstanceChargeTypeRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/modifyinstancechargetype.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyInstanceChargeTypeWithChan(request *ModifyInstanceChargeTypeRequest) (<-chan *ModifyInstanceChargeTypeResponse, <-chan error) {
 	responseChan := make(chan *ModifyInstanceChargeTypeResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifyInstanceChargeTypeWithChan(request *ModifyInstanceCh
 	return responseChan, errChan
 }
 
+// invoke ModifyInstanceChargeType api with *ModifyInstanceChargeTypeRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/modifyinstancechargetype.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyInstanceChargeTypeWithCallback(request *ModifyInstanceChargeTypeRequest, callback func(response *ModifyInstanceChargeTypeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -87,6 +95,7 @@ type ModifyInstanceChargeTypeResponse struct {
 	OrderId   string `json:"OrderId" xml:"OrderId"`
 }
 
+// create a request to invoke ModifyInstanceChargeType API
 func CreateModifyInstanceChargeTypeRequest() (request *ModifyInstanceChargeTypeRequest) {
 	request = &ModifyInstanceChargeTypeRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -95,6 +104,7 @@ func CreateModifyInstanceChargeTypeRequest() (request *ModifyInstanceChargeTypeR
 	return
 }
 
+// create a response to parse from ModifyInstanceChargeType response
 func CreateModifyInstanceChargeTypeResponse() (response *ModifyInstanceChargeTypeResponse) {
 	response = &ModifyInstanceChargeTypeResponse{
 		BaseResponse: &responses.BaseResponse{},

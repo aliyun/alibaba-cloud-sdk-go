@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifyAccessGroup api with *ModifyAccessGroupRequest synchronously
+// api document: https://help.aliyun.com/api/nas/modifyaccessgroup.html
 func (client *Client) ModifyAccessGroup(request *ModifyAccessGroupRequest) (response *ModifyAccessGroupResponse, err error) {
 	response = CreateModifyAccessGroupResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifyAccessGroup api with *ModifyAccessGroupRequest asynchronously
+// api document: https://help.aliyun.com/api/nas/modifyaccessgroup.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyAccessGroupWithChan(request *ModifyAccessGroupRequest) (<-chan *ModifyAccessGroupResponse, <-chan error) {
 	responseChan := make(chan *ModifyAccessGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifyAccessGroupWithChan(request *ModifyAccessGroupReques
 	return responseChan, errChan
 }
 
+// invoke ModifyAccessGroup api with *ModifyAccessGroupRequest asynchronously
+// api document: https://help.aliyun.com/api/nas/modifyaccessgroup.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyAccessGroupWithCallback(request *ModifyAccessGroupRequest, callback func(response *ModifyAccessGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,6 +84,7 @@ type ModifyAccessGroupResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ModifyAccessGroup API
 func CreateModifyAccessGroupRequest() (request *ModifyAccessGroupRequest) {
 	request = &ModifyAccessGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -84,6 +93,7 @@ func CreateModifyAccessGroupRequest() (request *ModifyAccessGroupRequest) {
 	return
 }
 
+// create a response to parse from ModifyAccessGroup response
 func CreateModifyAccessGroupResponse() (response *ModifyAccessGroupResponse) {
 	response = &ModifyAccessGroupResponse{
 		BaseResponse: &responses.BaseResponse{},

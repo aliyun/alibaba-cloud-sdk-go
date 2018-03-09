@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke BindTag api with *BindTagRequest synchronously
+// api document: https://help.aliyun.com/api/push/bindtag.html
 func (client *Client) BindTag(request *BindTagRequest) (response *BindTagResponse, err error) {
 	response = CreateBindTagResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke BindTag api with *BindTagRequest asynchronously
+// api document: https://help.aliyun.com/api/push/bindtag.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BindTagWithChan(request *BindTagRequest) (<-chan *BindTagResponse, <-chan error) {
 	responseChan := make(chan *BindTagResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) BindTagWithChan(request *BindTagRequest) (<-chan *BindTagR
 	return responseChan, errChan
 }
 
+// invoke BindTag api with *BindTagRequest asynchronously
+// api document: https://help.aliyun.com/api/push/bindtag.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BindTagWithCallback(request *BindTagRequest, callback func(response *BindTagResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type BindTagResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke BindTag API
 func CreateBindTagRequest() (request *BindTagRequest) {
 	request = &BindTagRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateBindTagRequest() (request *BindTagRequest) {
 	return
 }
 
+// create a response to parse from BindTag response
 func CreateBindTagResponse() (response *BindTagResponse) {
 	response = &BindTagResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SetListenerAccessControlStatus api with *SetListenerAccessControlStatusRequest synchronously
+// api document: https://help.aliyun.com/api/slb/setlisteneraccesscontrolstatus.html
 func (client *Client) SetListenerAccessControlStatus(request *SetListenerAccessControlStatusRequest) (response *SetListenerAccessControlStatusResponse, err error) {
 	response = CreateSetListenerAccessControlStatusResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SetListenerAccessControlStatus api with *SetListenerAccessControlStatusRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/setlisteneraccesscontrolstatus.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetListenerAccessControlStatusWithChan(request *SetListenerAccessControlStatusRequest) (<-chan *SetListenerAccessControlStatusResponse, <-chan error) {
 	responseChan := make(chan *SetListenerAccessControlStatusResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SetListenerAccessControlStatusWithChan(request *SetListene
 	return responseChan, errChan
 }
 
+// invoke SetListenerAccessControlStatus api with *SetListenerAccessControlStatusRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/setlisteneraccesscontrolstatus.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetListenerAccessControlStatusWithCallback(request *SetListenerAccessControlStatusRequest, callback func(response *SetListenerAccessControlStatusResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,6 +91,7 @@ type SetListenerAccessControlStatusResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke SetListenerAccessControlStatus API
 func CreateSetListenerAccessControlStatusRequest() (request *SetListenerAccessControlStatusRequest) {
 	request = &SetListenerAccessControlStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -91,6 +100,7 @@ func CreateSetListenerAccessControlStatusRequest() (request *SetListenerAccessCo
 	return
 }
 
+// create a response to parse from SetListenerAccessControlStatus response
 func CreateSetListenerAccessControlStatusResponse() (response *SetListenerAccessControlStatusResponse) {
 	response = &SetListenerAccessControlStatusResponse{
 		BaseResponse: &responses.BaseResponse{},

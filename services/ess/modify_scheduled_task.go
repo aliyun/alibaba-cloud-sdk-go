@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifyScheduledTask api with *ModifyScheduledTaskRequest synchronously
+// api document: https://help.aliyun.com/api/ess/modifyscheduledtask.html
 func (client *Client) ModifyScheduledTask(request *ModifyScheduledTaskRequest) (response *ModifyScheduledTaskResponse, err error) {
 	response = CreateModifyScheduledTaskResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifyScheduledTask api with *ModifyScheduledTaskRequest asynchronously
+// api document: https://help.aliyun.com/api/ess/modifyscheduledtask.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyScheduledTaskWithChan(request *ModifyScheduledTaskRequest) (<-chan *ModifyScheduledTaskResponse, <-chan error) {
 	responseChan := make(chan *ModifyScheduledTaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifyScheduledTaskWithChan(request *ModifyScheduledTaskRe
 	return responseChan, errChan
 }
 
+// invoke ModifyScheduledTask api with *ModifyScheduledTaskRequest asynchronously
+// api document: https://help.aliyun.com/api/ess/modifyscheduledtask.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyScheduledTaskWithCallback(request *ModifyScheduledTaskRequest, callback func(response *ModifyScheduledTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -88,6 +96,7 @@ type ModifyScheduledTaskResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ModifyScheduledTask API
 func CreateModifyScheduledTaskRequest() (request *ModifyScheduledTaskRequest) {
 	request = &ModifyScheduledTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -96,6 +105,7 @@ func CreateModifyScheduledTaskRequest() (request *ModifyScheduledTaskRequest) {
 	return
 }
 
+// create a response to parse from ModifyScheduledTask response
 func CreateModifyScheduledTaskResponse() (response *ModifyScheduledTaskResponse) {
 	response = &ModifyScheduledTaskResponse{
 		BaseResponse: &responses.BaseResponse{},

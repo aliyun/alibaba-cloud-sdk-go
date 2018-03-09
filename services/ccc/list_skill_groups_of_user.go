@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ListSkillGroupsOfUser api with *ListSkillGroupsOfUserRequest synchronously
+// api document: https://help.aliyun.com/api/ccc/listskillgroupsofuser.html
 func (client *Client) ListSkillGroupsOfUser(request *ListSkillGroupsOfUserRequest) (response *ListSkillGroupsOfUserResponse, err error) {
 	response = CreateListSkillGroupsOfUserResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ListSkillGroupsOfUser api with *ListSkillGroupsOfUserRequest asynchronously
+// api document: https://help.aliyun.com/api/ccc/listskillgroupsofuser.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListSkillGroupsOfUserWithChan(request *ListSkillGroupsOfUserRequest) (<-chan *ListSkillGroupsOfUserResponse, <-chan error) {
 	responseChan := make(chan *ListSkillGroupsOfUserResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ListSkillGroupsOfUserWithChan(request *ListSkillGroupsOfUs
 	return responseChan, errChan
 }
 
+// invoke ListSkillGroupsOfUser api with *ListSkillGroupsOfUserRequest asynchronously
+// api document: https://help.aliyun.com/api/ccc/listskillgroupsofuser.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListSkillGroupsOfUserWithCallback(request *ListSkillGroupsOfUserRequest, callback func(response *ListSkillGroupsOfUserResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type ListSkillGroupsOfUserResponse struct {
 	SkillLevels    SkillLevelsInListSkillGroupsOfUser `json:"SkillLevels" xml:"SkillLevels"`
 }
 
+// create a request to invoke ListSkillGroupsOfUser API
 func CreateListSkillGroupsOfUserRequest() (request *ListSkillGroupsOfUserRequest) {
 	request = &ListSkillGroupsOfUserRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateListSkillGroupsOfUserRequest() (request *ListSkillGroupsOfUserRequest
 	return
 }
 
+// create a response to parse from ListSkillGroupsOfUser response
 func CreateListSkillGroupsOfUserResponse() (response *ListSkillGroupsOfUserResponse) {
 	response = &ListSkillGroupsOfUserResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeKeyPairs api with *DescribeKeyPairsRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/describekeypairs.html
 func (client *Client) DescribeKeyPairs(request *DescribeKeyPairsRequest) (response *DescribeKeyPairsResponse, err error) {
 	response = CreateDescribeKeyPairsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeKeyPairs api with *DescribeKeyPairsRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describekeypairs.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeKeyPairsWithChan(request *DescribeKeyPairsRequest) (<-chan *DescribeKeyPairsResponse, <-chan error) {
 	responseChan := make(chan *DescribeKeyPairsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeKeyPairsWithChan(request *DescribeKeyPairsRequest)
 	return responseChan, errChan
 }
 
+// invoke DescribeKeyPairs api with *DescribeKeyPairsRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describekeypairs.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeKeyPairsWithCallback(request *DescribeKeyPairsRequest, callback func(response *DescribeKeyPairsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -85,6 +93,7 @@ type DescribeKeyPairsResponse struct {
 	KeyPairs   KeyPairs `json:"KeyPairs" xml:"KeyPairs"`
 }
 
+// create a request to invoke DescribeKeyPairs API
 func CreateDescribeKeyPairsRequest() (request *DescribeKeyPairsRequest) {
 	request = &DescribeKeyPairsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -93,6 +102,7 @@ func CreateDescribeKeyPairsRequest() (request *DescribeKeyPairsRequest) {
 	return
 }
 
+// create a response to parse from DescribeKeyPairs response
 func CreateDescribeKeyPairsResponse() (response *DescribeKeyPairsResponse) {
 	response = &DescribeKeyPairsResponse{
 		BaseResponse: &responses.BaseResponse{},

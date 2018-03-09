@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ListNodes api with *ListNodesRequest synchronously
+// api document: https://help.aliyun.com/api/ehpc/listnodes.html
 func (client *Client) ListNodes(request *ListNodesRequest) (response *ListNodesResponse, err error) {
 	response = CreateListNodesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ListNodes api with *ListNodesRequest asynchronously
+// api document: https://help.aliyun.com/api/ehpc/listnodes.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListNodesWithChan(request *ListNodesRequest) (<-chan *ListNodesResponse, <-chan error) {
 	responseChan := make(chan *ListNodesResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ListNodesWithChan(request *ListNodesRequest) (<-chan *List
 	return responseChan, errChan
 }
 
+// invoke ListNodes api with *ListNodesRequest asynchronously
+// api document: https://help.aliyun.com/api/ehpc/listnodes.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListNodesWithCallback(request *ListNodesRequest, callback func(response *ListNodesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,6 +91,7 @@ type ListNodesResponse struct {
 	Nodes      NodesInListNodes `json:"Nodes" xml:"Nodes"`
 }
 
+// create a request to invoke ListNodes API
 func CreateListNodesRequest() (request *ListNodesRequest) {
 	request = &ListNodesRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -91,6 +100,7 @@ func CreateListNodesRequest() (request *ListNodesRequest) {
 	return
 }
 
+// create a response to parse from ListNodes response
 func CreateListNodesResponse() (response *ListNodesResponse) {
 	response = &ListNodesResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke RevokeOperatorPermission api with *RevokeOperatorPermissionRequest synchronously
+// api document: https://help.aliyun.com/api/rds/revokeoperatorpermission.html
 func (client *Client) RevokeOperatorPermission(request *RevokeOperatorPermissionRequest) (response *RevokeOperatorPermissionResponse, err error) {
 	response = CreateRevokeOperatorPermissionResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke RevokeOperatorPermission api with *RevokeOperatorPermissionRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/revokeoperatorpermission.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RevokeOperatorPermissionWithChan(request *RevokeOperatorPermissionRequest) (<-chan *RevokeOperatorPermissionResponse, <-chan error) {
 	responseChan := make(chan *RevokeOperatorPermissionResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) RevokeOperatorPermissionWithChan(request *RevokeOperatorPe
 	return responseChan, errChan
 }
 
+// invoke RevokeOperatorPermission api with *RevokeOperatorPermissionRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/revokeoperatorpermission.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RevokeOperatorPermissionWithCallback(request *RevokeOperatorPermissionRequest, callback func(response *RevokeOperatorPermissionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +87,7 @@ type RevokeOperatorPermissionResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke RevokeOperatorPermission API
 func CreateRevokeOperatorPermissionRequest() (request *RevokeOperatorPermissionRequest) {
 	request = &RevokeOperatorPermissionRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -87,6 +96,7 @@ func CreateRevokeOperatorPermissionRequest() (request *RevokeOperatorPermissionR
 	return
 }
 
+// create a response to parse from RevokeOperatorPermission response
 func CreateRevokeOperatorPermissionResponse() (response *RevokeOperatorPermissionResponse) {
 	response = &RevokeOperatorPermissionResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifyDBDescription api with *ModifyDBDescriptionRequest synchronously
+// api document: https://help.aliyun.com/api/rds/modifydbdescription.html
 func (client *Client) ModifyDBDescription(request *ModifyDBDescriptionRequest) (response *ModifyDBDescriptionResponse, err error) {
 	response = CreateModifyDBDescriptionResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifyDBDescription api with *ModifyDBDescriptionRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/modifydbdescription.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDBDescriptionWithChan(request *ModifyDBDescriptionRequest) (<-chan *ModifyDBDescriptionResponse, <-chan error) {
 	responseChan := make(chan *ModifyDBDescriptionResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifyDBDescriptionWithChan(request *ModifyDBDescriptionRe
 	return responseChan, errChan
 }
 
+// invoke ModifyDBDescription api with *ModifyDBDescriptionRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/modifydbdescription.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDBDescriptionWithCallback(request *ModifyDBDescriptionRequest, callback func(response *ModifyDBDescriptionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type ModifyDBDescriptionResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ModifyDBDescription API
 func CreateModifyDBDescriptionRequest() (request *ModifyDBDescriptionRequest) {
 	request = &ModifyDBDescriptionRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateModifyDBDescriptionRequest() (request *ModifyDBDescriptionRequest) {
 	return
 }
 
+// create a response to parse from ModifyDBDescription response
 func CreateModifyDBDescriptionResponse() (response *ModifyDBDescriptionResponse) {
 	response = &ModifyDBDescriptionResponse{
 		BaseResponse: &responses.BaseResponse{},

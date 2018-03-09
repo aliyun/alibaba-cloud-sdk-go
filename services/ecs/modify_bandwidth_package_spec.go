@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifyBandwidthPackageSpec api with *ModifyBandwidthPackageSpecRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/modifybandwidthpackagespec.html
 func (client *Client) ModifyBandwidthPackageSpec(request *ModifyBandwidthPackageSpecRequest) (response *ModifyBandwidthPackageSpecResponse, err error) {
 	response = CreateModifyBandwidthPackageSpecResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifyBandwidthPackageSpec api with *ModifyBandwidthPackageSpecRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/modifybandwidthpackagespec.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyBandwidthPackageSpecWithChan(request *ModifyBandwidthPackageSpecRequest) (<-chan *ModifyBandwidthPackageSpecResponse, <-chan error) {
 	responseChan := make(chan *ModifyBandwidthPackageSpecResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifyBandwidthPackageSpecWithChan(request *ModifyBandwidt
 	return responseChan, errChan
 }
 
+// invoke ModifyBandwidthPackageSpec api with *ModifyBandwidthPackageSpecRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/modifybandwidthpackagespec.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyBandwidthPackageSpecWithCallback(request *ModifyBandwidthPackageSpecRequest, callback func(response *ModifyBandwidthPackageSpecResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type ModifyBandwidthPackageSpecResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ModifyBandwidthPackageSpec API
 func CreateModifyBandwidthPackageSpecRequest() (request *ModifyBandwidthPackageSpecRequest) {
 	request = &ModifyBandwidthPackageSpecRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateModifyBandwidthPackageSpecRequest() (request *ModifyBandwidthPackageS
 	return
 }
 
+// create a response to parse from ModifyBandwidthPackageSpec response
 func CreateModifyBandwidthPackageSpecResponse() (response *ModifyBandwidthPackageSpecResponse) {
 	response = &ModifyBandwidthPackageSpecResponse{
 		BaseResponse: &responses.BaseResponse{},

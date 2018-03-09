@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifyVSwitchAttribute api with *ModifyVSwitchAttributeRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/modifyvswitchattribute.html
 func (client *Client) ModifyVSwitchAttribute(request *ModifyVSwitchAttributeRequest) (response *ModifyVSwitchAttributeResponse, err error) {
 	response = CreateModifyVSwitchAttributeResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifyVSwitchAttribute api with *ModifyVSwitchAttributeRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/modifyvswitchattribute.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyVSwitchAttributeWithChan(request *ModifyVSwitchAttributeRequest) (<-chan *ModifyVSwitchAttributeResponse, <-chan error) {
 	responseChan := make(chan *ModifyVSwitchAttributeResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifyVSwitchAttributeWithChan(request *ModifyVSwitchAttri
 	return responseChan, errChan
 }
 
+// invoke ModifyVSwitchAttribute api with *ModifyVSwitchAttributeRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/modifyvswitchattribute.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyVSwitchAttributeWithCallback(request *ModifyVSwitchAttributeRequest, callback func(response *ModifyVSwitchAttributeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type ModifyVSwitchAttributeResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ModifyVSwitchAttribute API
 func CreateModifyVSwitchAttributeRequest() (request *ModifyVSwitchAttributeRequest) {
 	request = &ModifyVSwitchAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateModifyVSwitchAttributeRequest() (request *ModifyVSwitchAttributeReque
 	return
 }
 
+// create a response to parse from ModifyVSwitchAttribute response
 func CreateModifyVSwitchAttributeResponse() (response *ModifyVSwitchAttributeResponse) {
 	response = &ModifyVSwitchAttributeResponse{
 		BaseResponse: &responses.BaseResponse{},

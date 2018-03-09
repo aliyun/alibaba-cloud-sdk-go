@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke GetPublicAccessUrls api with *GetPublicAccessUrlsRequest synchronously
+// api document: https://help.aliyun.com/api/cloudphoto/getpublicaccessurls.html
 func (client *Client) GetPublicAccessUrls(request *GetPublicAccessUrlsRequest) (response *GetPublicAccessUrlsResponse, err error) {
 	response = CreateGetPublicAccessUrlsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke GetPublicAccessUrls api with *GetPublicAccessUrlsRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/getpublicaccessurls.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetPublicAccessUrlsWithChan(request *GetPublicAccessUrlsRequest) (<-chan *GetPublicAccessUrlsResponse, <-chan error) {
 	responseChan := make(chan *GetPublicAccessUrlsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) GetPublicAccessUrlsWithChan(request *GetPublicAccessUrlsRe
 	return responseChan, errChan
 }
 
+// invoke GetPublicAccessUrls api with *GetPublicAccessUrlsRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/getpublicaccessurls.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetPublicAccessUrlsWithCallback(request *GetPublicAccessUrlsRequest, callback func(response *GetPublicAccessUrlsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,6 +91,7 @@ type GetPublicAccessUrlsResponse struct {
 	Results   []Result `json:"Results" xml:"Results"`
 }
 
+// create a request to invoke GetPublicAccessUrls API
 func CreateGetPublicAccessUrlsRequest() (request *GetPublicAccessUrlsRequest) {
 	request = &GetPublicAccessUrlsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -91,6 +100,7 @@ func CreateGetPublicAccessUrlsRequest() (request *GetPublicAccessUrlsRequest) {
 	return
 }
 
+// create a response to parse from GetPublicAccessUrls response
 func CreateGetPublicAccessUrlsResponse() (response *GetPublicAccessUrlsResponse) {
 	response = &GetPublicAccessUrlsResponse{
 		BaseResponse: &responses.BaseResponse{},

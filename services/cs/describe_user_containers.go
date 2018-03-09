@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeUserContainers api with *DescribeUserContainersRequest synchronously
+// api document: https://help.aliyun.com/api/cs/describeusercontainers.html
 func (client *Client) DescribeUserContainers(request *DescribeUserContainersRequest) (response *DescribeUserContainersResponse, err error) {
 	response = CreateDescribeUserContainersResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeUserContainers api with *DescribeUserContainersRequest asynchronously
+// api document: https://help.aliyun.com/api/cs/describeusercontainers.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUserContainersWithChan(request *DescribeUserContainersRequest) (<-chan *DescribeUserContainersResponse, <-chan error) {
 	responseChan := make(chan *DescribeUserContainersResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeUserContainersWithChan(request *DescribeUserContai
 	return responseChan, errChan
 }
 
+// invoke DescribeUserContainers api with *DescribeUserContainersRequest asynchronously
+// api document: https://help.aliyun.com/api/cs/describeusercontainers.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUserContainersWithCallback(request *DescribeUserContainersRequest, callback func(response *DescribeUserContainersResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -74,6 +82,7 @@ type DescribeUserContainersResponse struct {
 	*responses.BaseResponse
 }
 
+// create a request to invoke DescribeUserContainers API
 func CreateDescribeUserContainersRequest() (request *DescribeUserContainersRequest) {
 	request = &DescribeUserContainersRequest{
 		RoaRequest: &requests.RoaRequest{},
@@ -83,6 +92,7 @@ func CreateDescribeUserContainersRequest() (request *DescribeUserContainersReque
 	return
 }
 
+// create a response to parse from DescribeUserContainers response
 func CreateDescribeUserContainersResponse() (response *DescribeUserContainersResponse) {
 	response = &DescribeUserContainersResponse{
 		BaseResponse: &responses.BaseResponse{},

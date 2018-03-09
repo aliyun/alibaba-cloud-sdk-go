@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ListAlbumPhotos api with *ListAlbumPhotosRequest synchronously
+// api document: https://help.aliyun.com/api/cloudphoto/listalbumphotos.html
 func (client *Client) ListAlbumPhotos(request *ListAlbumPhotosRequest) (response *ListAlbumPhotosResponse, err error) {
 	response = CreateListAlbumPhotosResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ListAlbumPhotos api with *ListAlbumPhotosRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/listalbumphotos.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAlbumPhotosWithChan(request *ListAlbumPhotosRequest) (<-chan *ListAlbumPhotosResponse, <-chan error) {
 	responseChan := make(chan *ListAlbumPhotosResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ListAlbumPhotosWithChan(request *ListAlbumPhotosRequest) (
 	return responseChan, errChan
 }
 
+// invoke ListAlbumPhotos api with *ListAlbumPhotosRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/listalbumphotos.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAlbumPhotosWithCallback(request *ListAlbumPhotosRequest, callback func(response *ListAlbumPhotosResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -87,6 +95,7 @@ type ListAlbumPhotosResponse struct {
 	Results    []Result `json:"Results" xml:"Results"`
 }
 
+// create a request to invoke ListAlbumPhotos API
 func CreateListAlbumPhotosRequest() (request *ListAlbumPhotosRequest) {
 	request = &ListAlbumPhotosRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -95,6 +104,7 @@ func CreateListAlbumPhotosRequest() (request *ListAlbumPhotosRequest) {
 	return
 }
 
+// create a response to parse from ListAlbumPhotos response
 func CreateListAlbumPhotosResponse() (response *ListAlbumPhotosResponse) {
 	response = &ListAlbumPhotosResponse{
 		BaseResponse: &responses.BaseResponse{},

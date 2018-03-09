@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeleteScalingGroup api with *DeleteScalingGroupRequest synchronously
+// api document: https://help.aliyun.com/api/ess/deletescalinggroup.html
 func (client *Client) DeleteScalingGroup(request *DeleteScalingGroupRequest) (response *DeleteScalingGroupResponse, err error) {
 	response = CreateDeleteScalingGroupResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeleteScalingGroup api with *DeleteScalingGroupRequest asynchronously
+// api document: https://help.aliyun.com/api/ess/deletescalinggroup.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteScalingGroupWithChan(request *DeleteScalingGroupRequest) (<-chan *DeleteScalingGroupResponse, <-chan error) {
 	responseChan := make(chan *DeleteScalingGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeleteScalingGroupWithChan(request *DeleteScalingGroupRequ
 	return responseChan, errChan
 }
 
+// invoke DeleteScalingGroup api with *DeleteScalingGroupRequest asynchronously
+// api document: https://help.aliyun.com/api/ess/deletescalinggroup.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteScalingGroupWithCallback(request *DeleteScalingGroupRequest, callback func(response *DeleteScalingGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +87,7 @@ type DeleteScalingGroupResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke DeleteScalingGroup API
 func CreateDeleteScalingGroupRequest() (request *DeleteScalingGroupRequest) {
 	request = &DeleteScalingGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -87,6 +96,7 @@ func CreateDeleteScalingGroupRequest() (request *DeleteScalingGroupRequest) {
 	return
 }
 
+// create a response to parse from DeleteScalingGroup response
 func CreateDeleteScalingGroupResponse() (response *DeleteScalingGroupResponse) {
 	response = &DeleteScalingGroupResponse{
 		BaseResponse: &responses.BaseResponse{},

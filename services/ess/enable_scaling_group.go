@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke EnableScalingGroup api with *EnableScalingGroupRequest synchronously
+// api document: https://help.aliyun.com/api/ess/enablescalinggroup.html
 func (client *Client) EnableScalingGroup(request *EnableScalingGroupRequest) (response *EnableScalingGroupResponse, err error) {
 	response = CreateEnableScalingGroupResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke EnableScalingGroup api with *EnableScalingGroupRequest asynchronously
+// api document: https://help.aliyun.com/api/ess/enablescalinggroup.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EnableScalingGroupWithChan(request *EnableScalingGroupRequest) (<-chan *EnableScalingGroupResponse, <-chan error) {
 	responseChan := make(chan *EnableScalingGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) EnableScalingGroupWithChan(request *EnableScalingGroupRequ
 	return responseChan, errChan
 }
 
+// invoke EnableScalingGroup api with *EnableScalingGroupRequest asynchronously
+// api document: https://help.aliyun.com/api/ess/enablescalinggroup.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EnableScalingGroupWithCallback(request *EnableScalingGroupRequest, callback func(response *EnableScalingGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -120,6 +128,7 @@ type EnableScalingGroupResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke EnableScalingGroup API
 func CreateEnableScalingGroupRequest() (request *EnableScalingGroupRequest) {
 	request = &EnableScalingGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -128,6 +137,7 @@ func CreateEnableScalingGroupRequest() (request *EnableScalingGroupRequest) {
 	return
 }
 
+// create a response to parse from EnableScalingGroup response
 func CreateEnableScalingGroupResponse() (response *EnableScalingGroupResponse) {
 	response = &EnableScalingGroupResponse{
 		BaseResponse: &responses.BaseResponse{},

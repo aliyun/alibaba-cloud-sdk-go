@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SubmitEditingJobs api with *SubmitEditingJobsRequest synchronously
+// api document: https://help.aliyun.com/api/mts/submiteditingjobs.html
 func (client *Client) SubmitEditingJobs(request *SubmitEditingJobsRequest) (response *SubmitEditingJobsResponse, err error) {
 	response = CreateSubmitEditingJobsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SubmitEditingJobs api with *SubmitEditingJobsRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/submiteditingjobs.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitEditingJobsWithChan(request *SubmitEditingJobsRequest) (<-chan *SubmitEditingJobsResponse, <-chan error) {
 	responseChan := make(chan *SubmitEditingJobsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SubmitEditingJobsWithChan(request *SubmitEditingJobsReques
 	return responseChan, errChan
 }
 
+// invoke SubmitEditingJobs api with *SubmitEditingJobsRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/submiteditingjobs.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitEditingJobsWithCallback(request *SubmitEditingJobsRequest, callback func(response *SubmitEditingJobsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,6 +92,7 @@ type SubmitEditingJobsResponse struct {
 	JobResultList JobResultListInSubmitEditingJobs `json:"JobResultList" xml:"JobResultList"`
 }
 
+// create a request to invoke SubmitEditingJobs API
 func CreateSubmitEditingJobsRequest() (request *SubmitEditingJobsRequest) {
 	request = &SubmitEditingJobsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -92,6 +101,7 @@ func CreateSubmitEditingJobsRequest() (request *SubmitEditingJobsRequest) {
 	return
 }
 
+// create a response to parse from SubmitEditingJobs response
 func CreateSubmitEditingJobsResponse() (response *SubmitEditingJobsResponse) {
 	response = &SubmitEditingJobsResponse{
 		BaseResponse: &responses.BaseResponse{},

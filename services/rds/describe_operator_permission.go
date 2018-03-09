@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeOperatorPermission api with *DescribeOperatorPermissionRequest synchronously
+// api document: https://help.aliyun.com/api/rds/describeoperatorpermission.html
 func (client *Client) DescribeOperatorPermission(request *DescribeOperatorPermissionRequest) (response *DescribeOperatorPermissionResponse, err error) {
 	response = CreateDescribeOperatorPermissionResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeOperatorPermission api with *DescribeOperatorPermissionRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describeoperatorpermission.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeOperatorPermissionWithChan(request *DescribeOperatorPermissionRequest) (<-chan *DescribeOperatorPermissionResponse, <-chan error) {
 	responseChan := make(chan *DescribeOperatorPermissionResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeOperatorPermissionWithChan(request *DescribeOperat
 	return responseChan, errChan
 }
 
+// invoke DescribeOperatorPermission api with *DescribeOperatorPermissionRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describeoperatorpermission.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeOperatorPermissionWithCallback(request *DescribeOperatorPermissionRequest, callback func(response *DescribeOperatorPermissionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type DescribeOperatorPermissionResponse struct {
 	ExpiredTime string `json:"ExpiredTime" xml:"ExpiredTime"`
 }
 
+// create a request to invoke DescribeOperatorPermission API
 func CreateDescribeOperatorPermissionRequest() (request *DescribeOperatorPermissionRequest) {
 	request = &DescribeOperatorPermissionRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateDescribeOperatorPermissionRequest() (request *DescribeOperatorPermiss
 	return
 }
 
+// create a response to parse from DescribeOperatorPermission response
 func CreateDescribeOperatorPermissionResponse() (response *DescribeOperatorPermissionResponse) {
 	response = &DescribeOperatorPermissionResponse{
 		BaseResponse: &responses.BaseResponse{},

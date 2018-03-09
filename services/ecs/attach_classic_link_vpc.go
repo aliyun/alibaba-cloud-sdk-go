@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke AttachClassicLinkVpc api with *AttachClassicLinkVpcRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/attachclassiclinkvpc.html
 func (client *Client) AttachClassicLinkVpc(request *AttachClassicLinkVpcRequest) (response *AttachClassicLinkVpcResponse, err error) {
 	response = CreateAttachClassicLinkVpcResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke AttachClassicLinkVpc api with *AttachClassicLinkVpcRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/attachclassiclinkvpc.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AttachClassicLinkVpcWithChan(request *AttachClassicLinkVpcRequest) (<-chan *AttachClassicLinkVpcResponse, <-chan error) {
 	responseChan := make(chan *AttachClassicLinkVpcResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) AttachClassicLinkVpcWithChan(request *AttachClassicLinkVpc
 	return responseChan, errChan
 }
 
+// invoke AttachClassicLinkVpc api with *AttachClassicLinkVpcRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/attachclassiclinkvpc.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AttachClassicLinkVpcWithCallback(request *AttachClassicLinkVpcRequest, callback func(response *AttachClassicLinkVpcResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +87,7 @@ type AttachClassicLinkVpcResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke AttachClassicLinkVpc API
 func CreateAttachClassicLinkVpcRequest() (request *AttachClassicLinkVpcRequest) {
 	request = &AttachClassicLinkVpcRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -87,6 +96,7 @@ func CreateAttachClassicLinkVpcRequest() (request *AttachClassicLinkVpcRequest) 
 	return
 }
 
+// create a response to parse from AttachClassicLinkVpc response
 func CreateAttachClassicLinkVpcResponse() (response *AttachClassicLinkVpcResponse) {
 	response = &AttachClassicLinkVpcResponse{
 		BaseResponse: &responses.BaseResponse{},

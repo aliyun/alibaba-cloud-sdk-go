@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke QueryTerrorismPipelineList api with *QueryTerrorismPipelineListRequest synchronously
+// api document: https://help.aliyun.com/api/mts/queryterrorismpipelinelist.html
 func (client *Client) QueryTerrorismPipelineList(request *QueryTerrorismPipelineListRequest) (response *QueryTerrorismPipelineListResponse, err error) {
 	response = CreateQueryTerrorismPipelineListResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke QueryTerrorismPipelineList api with *QueryTerrorismPipelineListRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/queryterrorismpipelinelist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryTerrorismPipelineListWithChan(request *QueryTerrorismPipelineListRequest) (<-chan *QueryTerrorismPipelineListResponse, <-chan error) {
 	responseChan := make(chan *QueryTerrorismPipelineListResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) QueryTerrorismPipelineListWithChan(request *QueryTerrorism
 	return responseChan, errChan
 }
 
+// invoke QueryTerrorismPipelineList api with *QueryTerrorismPipelineListRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/queryterrorismpipelinelist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryTerrorismPipelineListWithCallback(request *QueryTerrorismPipelineListRequest, callback func(response *QueryTerrorismPipelineListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type QueryTerrorismPipelineListResponse struct {
 	PipelineList PipelineListInQueryTerrorismPipelineList `json:"PipelineList" xml:"PipelineList"`
 }
 
+// create a request to invoke QueryTerrorismPipelineList API
 func CreateQueryTerrorismPipelineListRequest() (request *QueryTerrorismPipelineListRequest) {
 	request = &QueryTerrorismPipelineListRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateQueryTerrorismPipelineListRequest() (request *QueryTerrorismPipelineL
 	return
 }
 
+// create a response to parse from QueryTerrorismPipelineList response
 func CreateQueryTerrorismPipelineListResponse() (response *QueryTerrorismPipelineListResponse) {
 	response = &QueryTerrorismPipelineListResponse{
 		BaseResponse: &responses.BaseResponse{},

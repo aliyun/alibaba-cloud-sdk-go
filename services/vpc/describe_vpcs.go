@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeVpcs api with *DescribeVpcsRequest synchronously
+// api document: https://help.aliyun.com/api/vpc/describevpcs.html
 func (client *Client) DescribeVpcs(request *DescribeVpcsRequest) (response *DescribeVpcsResponse, err error) {
 	response = CreateDescribeVpcsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeVpcs api with *DescribeVpcsRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/describevpcs.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeVpcsWithChan(request *DescribeVpcsRequest) (<-chan *DescribeVpcsResponse, <-chan error) {
 	responseChan := make(chan *DescribeVpcsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeVpcsWithChan(request *DescribeVpcsRequest) (<-chan
 	return responseChan, errChan
 }
 
+// invoke DescribeVpcs api with *DescribeVpcsRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/describevpcs.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeVpcsWithCallback(request *DescribeVpcsRequest, callback func(response *DescribeVpcsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -88,6 +96,7 @@ type DescribeVpcsResponse struct {
 	Vpcs       Vpcs   `json:"Vpcs" xml:"Vpcs"`
 }
 
+// create a request to invoke DescribeVpcs API
 func CreateDescribeVpcsRequest() (request *DescribeVpcsRequest) {
 	request = &DescribeVpcsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -96,6 +105,7 @@ func CreateDescribeVpcsRequest() (request *DescribeVpcsRequest) {
 	return
 }
 
+// create a response to parse from DescribeVpcs response
 func CreateDescribeVpcsResponse() (response *DescribeVpcsResponse) {
 	response = &DescribeVpcsResponse{
 		BaseResponse: &responses.BaseResponse{},

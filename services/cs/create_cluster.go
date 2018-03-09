@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CreateCluster api with *CreateClusterRequest synchronously
+// api document: https://help.aliyun.com/api/cs/createcluster.html
 func (client *Client) CreateCluster(request *CreateClusterRequest) (response *CreateClusterResponse, err error) {
 	response = CreateCreateClusterResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CreateCluster api with *CreateClusterRequest asynchronously
+// api document: https://help.aliyun.com/api/cs/createcluster.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateClusterWithChan(request *CreateClusterRequest) (<-chan *CreateClusterResponse, <-chan error) {
 	responseChan := make(chan *CreateClusterResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CreateClusterWithChan(request *CreateClusterRequest) (<-ch
 	return responseChan, errChan
 }
 
+// invoke CreateCluster api with *CreateClusterRequest asynchronously
+// api document: https://help.aliyun.com/api/cs/createcluster.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateClusterWithCallback(request *CreateClusterRequest, callback func(response *CreateClusterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -73,6 +81,7 @@ type CreateClusterResponse struct {
 	*responses.BaseResponse
 }
 
+// create a request to invoke CreateCluster API
 func CreateCreateClusterRequest() (request *CreateClusterRequest) {
 	request = &CreateClusterRequest{
 		RoaRequest: &requests.RoaRequest{},
@@ -82,6 +91,7 @@ func CreateCreateClusterRequest() (request *CreateClusterRequest) {
 	return
 }
 
+// create a response to parse from CreateCluster response
 func CreateCreateClusterResponse() (response *CreateClusterResponse) {
 	response = &CreateClusterResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeBinlogFiles api with *DescribeBinlogFilesRequest synchronously
+// api document: https://help.aliyun.com/api/rds/describebinlogfiles.html
 func (client *Client) DescribeBinlogFiles(request *DescribeBinlogFilesRequest) (response *DescribeBinlogFilesResponse, err error) {
 	response = CreateDescribeBinlogFilesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeBinlogFiles api with *DescribeBinlogFilesRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describebinlogfiles.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBinlogFilesWithChan(request *DescribeBinlogFilesRequest) (<-chan *DescribeBinlogFilesResponse, <-chan error) {
 	responseChan := make(chan *DescribeBinlogFilesResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeBinlogFilesWithChan(request *DescribeBinlogFilesRe
 	return responseChan, errChan
 }
 
+// invoke DescribeBinlogFiles api with *DescribeBinlogFilesRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describebinlogfiles.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBinlogFilesWithCallback(request *DescribeBinlogFilesRequest, callback func(response *DescribeBinlogFilesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -88,6 +96,7 @@ type DescribeBinlogFilesResponse struct {
 	Items            ItemsInDescribeBinlogFiles `json:"Items" xml:"Items"`
 }
 
+// create a request to invoke DescribeBinlogFiles API
 func CreateDescribeBinlogFilesRequest() (request *DescribeBinlogFilesRequest) {
 	request = &DescribeBinlogFilesRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -96,6 +105,7 @@ func CreateDescribeBinlogFilesRequest() (request *DescribeBinlogFilesRequest) {
 	return
 }
 
+// create a response to parse from DescribeBinlogFiles response
 func CreateDescribeBinlogFilesResponse() (response *DescribeBinlogFilesResponse) {
 	response = &DescribeBinlogFilesResponse{
 		BaseResponse: &responses.BaseResponse{},

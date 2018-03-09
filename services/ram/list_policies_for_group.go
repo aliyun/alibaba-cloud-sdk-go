@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ListPoliciesForGroup api with *ListPoliciesForGroupRequest synchronously
+// api document: https://help.aliyun.com/api/ram/listpoliciesforgroup.html
 func (client *Client) ListPoliciesForGroup(request *ListPoliciesForGroupRequest) (response *ListPoliciesForGroupResponse, err error) {
 	response = CreateListPoliciesForGroupResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ListPoliciesForGroup api with *ListPoliciesForGroupRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/listpoliciesforgroup.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListPoliciesForGroupWithChan(request *ListPoliciesForGroupRequest) (<-chan *ListPoliciesForGroupResponse, <-chan error) {
 	responseChan := make(chan *ListPoliciesForGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ListPoliciesForGroupWithChan(request *ListPoliciesForGroup
 	return responseChan, errChan
 }
 
+// invoke ListPoliciesForGroup api with *ListPoliciesForGroupRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/listpoliciesforgroup.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListPoliciesForGroupWithCallback(request *ListPoliciesForGroupRequest, callback func(response *ListPoliciesForGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,6 +84,7 @@ type ListPoliciesForGroupResponse struct {
 	Policies  PoliciesInListPoliciesForGroup `json:"Policies" xml:"Policies"`
 }
 
+// create a request to invoke ListPoliciesForGroup API
 func CreateListPoliciesForGroupRequest() (request *ListPoliciesForGroupRequest) {
 	request = &ListPoliciesForGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -84,6 +93,7 @@ func CreateListPoliciesForGroupRequest() (request *ListPoliciesForGroupRequest) 
 	return
 }
 
+// create a response to parse from ListPoliciesForGroup response
 func CreateListPoliciesForGroupResponse() (response *ListPoliciesForGroupResponse) {
 	response = &ListPoliciesForGroupResponse{
 		BaseResponse: &responses.BaseResponse{},

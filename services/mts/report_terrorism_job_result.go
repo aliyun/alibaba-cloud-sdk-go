@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ReportTerrorismJobResult api with *ReportTerrorismJobResultRequest synchronously
+// api document: https://help.aliyun.com/api/mts/reportterrorismjobresult.html
 func (client *Client) ReportTerrorismJobResult(request *ReportTerrorismJobResultRequest) (response *ReportTerrorismJobResultResponse, err error) {
 	response = CreateReportTerrorismJobResultResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ReportTerrorismJobResult api with *ReportTerrorismJobResultRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/reportterrorismjobresult.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReportTerrorismJobResultWithChan(request *ReportTerrorismJobResultRequest) (<-chan *ReportTerrorismJobResultResponse, <-chan error) {
 	responseChan := make(chan *ReportTerrorismJobResultResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ReportTerrorismJobResultWithChan(request *ReportTerrorismJ
 	return responseChan, errChan
 }
 
+// invoke ReportTerrorismJobResult api with *ReportTerrorismJobResultRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/reportterrorismjobresult.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReportTerrorismJobResultWithCallback(request *ReportTerrorismJobResultRequest, callback func(response *ReportTerrorismJobResultResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type ReportTerrorismJobResultResponse struct {
 	JobId     string `json:"JobId" xml:"JobId"`
 }
 
+// create a request to invoke ReportTerrorismJobResult API
 func CreateReportTerrorismJobResultRequest() (request *ReportTerrorismJobResultRequest) {
 	request = &ReportTerrorismJobResultRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateReportTerrorismJobResultRequest() (request *ReportTerrorismJobResultR
 	return
 }
 
+// create a response to parse from ReportTerrorismJobResult response
 func CreateReportTerrorismJobResultResponse() (response *ReportTerrorismJobResultResponse) {
 	response = &ReportTerrorismJobResultResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeOptimizeAdviceOnExcessIndex api with *DescribeOptimizeAdviceOnExcessIndexRequest synchronously
+// api document: https://help.aliyun.com/api/rds/describeoptimizeadviceonexcessindex.html
 func (client *Client) DescribeOptimizeAdviceOnExcessIndex(request *DescribeOptimizeAdviceOnExcessIndexRequest) (response *DescribeOptimizeAdviceOnExcessIndexResponse, err error) {
 	response = CreateDescribeOptimizeAdviceOnExcessIndexResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeOptimizeAdviceOnExcessIndex api with *DescribeOptimizeAdviceOnExcessIndexRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describeoptimizeadviceonexcessindex.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeOptimizeAdviceOnExcessIndexWithChan(request *DescribeOptimizeAdviceOnExcessIndexRequest) (<-chan *DescribeOptimizeAdviceOnExcessIndexResponse, <-chan error) {
 	responseChan := make(chan *DescribeOptimizeAdviceOnExcessIndexResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeOptimizeAdviceOnExcessIndexWithChan(request *Descr
 	return responseChan, errChan
 }
 
+// invoke DescribeOptimizeAdviceOnExcessIndex api with *DescribeOptimizeAdviceOnExcessIndexRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describeoptimizeadviceonexcessindex.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeOptimizeAdviceOnExcessIndexWithCallback(request *DescribeOptimizeAdviceOnExcessIndexRequest, callback func(response *DescribeOptimizeAdviceOnExcessIndexResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -85,6 +93,7 @@ type DescribeOptimizeAdviceOnExcessIndexResponse struct {
 	Items             ItemsInDescribeOptimizeAdviceOnExcessIndex `json:"Items" xml:"Items"`
 }
 
+// create a request to invoke DescribeOptimizeAdviceOnExcessIndex API
 func CreateDescribeOptimizeAdviceOnExcessIndexRequest() (request *DescribeOptimizeAdviceOnExcessIndexRequest) {
 	request = &DescribeOptimizeAdviceOnExcessIndexRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -93,6 +102,7 @@ func CreateDescribeOptimizeAdviceOnExcessIndexRequest() (request *DescribeOptimi
 	return
 }
 
+// create a response to parse from DescribeOptimizeAdviceOnExcessIndex response
 func CreateDescribeOptimizeAdviceOnExcessIndexResponse() (response *DescribeOptimizeAdviceOnExcessIndexResponse) {
 	response = &DescribeOptimizeAdviceOnExcessIndexResponse{
 		BaseResponse: &responses.BaseResponse{},

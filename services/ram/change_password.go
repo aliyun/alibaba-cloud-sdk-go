@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ChangePassword api with *ChangePasswordRequest synchronously
+// api document: https://help.aliyun.com/api/ram/changepassword.html
 func (client *Client) ChangePassword(request *ChangePasswordRequest) (response *ChangePasswordResponse, err error) {
 	response = CreateChangePasswordResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ChangePassword api with *ChangePasswordRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/changepassword.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ChangePasswordWithChan(request *ChangePasswordRequest) (<-chan *ChangePasswordResponse, <-chan error) {
 	responseChan := make(chan *ChangePasswordResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ChangePasswordWithChan(request *ChangePasswordRequest) (<-
 	return responseChan, errChan
 }
 
+// invoke ChangePassword api with *ChangePasswordRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/changepassword.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ChangePasswordWithCallback(request *ChangePasswordRequest, callback func(response *ChangePasswordResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,6 +84,7 @@ type ChangePasswordResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ChangePassword API
 func CreateChangePasswordRequest() (request *ChangePasswordRequest) {
 	request = &ChangePasswordRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -84,6 +93,7 @@ func CreateChangePasswordRequest() (request *ChangePasswordRequest) {
 	return
 }
 
+// create a response to parse from ChangePassword response
 func CreateChangePasswordResponse() (response *ChangePasswordResponse) {
 	response = &ChangePasswordResponse{
 		BaseResponse: &responses.BaseResponse{},

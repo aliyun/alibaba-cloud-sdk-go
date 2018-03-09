@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifyReplicaDescription api with *ModifyReplicaDescriptionRequest synchronously
+// api document: https://help.aliyun.com/api/rds/modifyreplicadescription.html
 func (client *Client) ModifyReplicaDescription(request *ModifyReplicaDescriptionRequest) (response *ModifyReplicaDescriptionResponse, err error) {
 	response = CreateModifyReplicaDescriptionResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifyReplicaDescription api with *ModifyReplicaDescriptionRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/modifyreplicadescription.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyReplicaDescriptionWithChan(request *ModifyReplicaDescriptionRequest) (<-chan *ModifyReplicaDescriptionResponse, <-chan error) {
 	responseChan := make(chan *ModifyReplicaDescriptionResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifyReplicaDescriptionWithChan(request *ModifyReplicaDes
 	return responseChan, errChan
 }
 
+// invoke ModifyReplicaDescription api with *ModifyReplicaDescriptionRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/modifyreplicadescription.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyReplicaDescriptionWithCallback(request *ModifyReplicaDescriptionRequest, callback func(response *ModifyReplicaDescriptionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type ModifyReplicaDescriptionResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ModifyReplicaDescription API
 func CreateModifyReplicaDescriptionRequest() (request *ModifyReplicaDescriptionRequest) {
 	request = &ModifyReplicaDescriptionRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateModifyReplicaDescriptionRequest() (request *ModifyReplicaDescriptionR
 	return
 }
 
+// create a response to parse from ModifyReplicaDescription response
 func CreateModifyReplicaDescriptionResponse() (response *ModifyReplicaDescriptionResponse) {
 	response = &ModifyReplicaDescriptionResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeDNSSLBSubDomains api with *DescribeDNSSLBSubDomainsRequest synchronously
+// api document: https://help.aliyun.com/api/alidns/describednsslbsubdomains.html
 func (client *Client) DescribeDNSSLBSubDomains(request *DescribeDNSSLBSubDomainsRequest) (response *DescribeDNSSLBSubDomainsResponse, err error) {
 	response = CreateDescribeDNSSLBSubDomainsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeDNSSLBSubDomains api with *DescribeDNSSLBSubDomainsRequest asynchronously
+// api document: https://help.aliyun.com/api/alidns/describednsslbsubdomains.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDNSSLBSubDomainsWithChan(request *DescribeDNSSLBSubDomainsRequest) (<-chan *DescribeDNSSLBSubDomainsResponse, <-chan error) {
 	responseChan := make(chan *DescribeDNSSLBSubDomainsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeDNSSLBSubDomainsWithChan(request *DescribeDNSSLBSu
 	return responseChan, errChan
 }
 
+// invoke DescribeDNSSLBSubDomains api with *DescribeDNSSLBSubDomainsRequest asynchronously
+// api document: https://help.aliyun.com/api/alidns/describednsslbsubdomains.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDNSSLBSubDomainsWithCallback(request *DescribeDNSSLBSubDomainsRequest, callback func(response *DescribeDNSSLBSubDomainsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,6 +91,7 @@ type DescribeDNSSLBSubDomainsResponse struct {
 	SlbSubDomains SlbSubDomains `json:"SlbSubDomains" xml:"SlbSubDomains"`
 }
 
+// create a request to invoke DescribeDNSSLBSubDomains API
 func CreateDescribeDNSSLBSubDomainsRequest() (request *DescribeDNSSLBSubDomainsRequest) {
 	request = &DescribeDNSSLBSubDomainsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -91,6 +100,7 @@ func CreateDescribeDNSSLBSubDomainsRequest() (request *DescribeDNSSLBSubDomainsR
 	return
 }
 
+// create a response to parse from DescribeDNSSLBSubDomains response
 func CreateDescribeDNSSLBSubDomainsResponse() (response *DescribeDNSSLBSubDomainsResponse) {
 	response = &DescribeDNSSLBSubDomainsResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke QueryEditingJobList api with *QueryEditingJobListRequest synchronously
+// api document: https://help.aliyun.com/api/mts/queryeditingjoblist.html
 func (client *Client) QueryEditingJobList(request *QueryEditingJobListRequest) (response *QueryEditingJobListResponse, err error) {
 	response = CreateQueryEditingJobListResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke QueryEditingJobList api with *QueryEditingJobListRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/queryeditingjoblist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryEditingJobListWithChan(request *QueryEditingJobListRequest) (<-chan *QueryEditingJobListResponse, <-chan error) {
 	responseChan := make(chan *QueryEditingJobListResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) QueryEditingJobListWithChan(request *QueryEditingJobListRe
 	return responseChan, errChan
 }
 
+// invoke QueryEditingJobList api with *QueryEditingJobListRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/queryeditingjoblist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryEditingJobListWithCallback(request *QueryEditingJobListRequest, callback func(response *QueryEditingJobListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type QueryEditingJobListResponse struct {
 	JobList        JobListInQueryEditingJobList        `json:"JobList" xml:"JobList"`
 }
 
+// create a request to invoke QueryEditingJobList API
 func CreateQueryEditingJobListRequest() (request *QueryEditingJobListRequest) {
 	request = &QueryEditingJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateQueryEditingJobListRequest() (request *QueryEditingJobListRequest) {
 	return
 }
 
+// create a response to parse from QueryEditingJobList response
 func CreateQueryEditingJobListResponse() (response *QueryEditingJobListResponse) {
 	response = &QueryEditingJobListResponse{
 		BaseResponse: &responses.BaseResponse{},

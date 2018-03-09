@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ListMyGroupInstancesDetails api with *ListMyGroupInstancesDetailsRequest synchronously
+// api document: https://help.aliyun.com/api/cms/listmygroupinstancesdetails.html
 func (client *Client) ListMyGroupInstancesDetails(request *ListMyGroupInstancesDetailsRequest) (response *ListMyGroupInstancesDetailsResponse, err error) {
 	response = CreateListMyGroupInstancesDetailsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ListMyGroupInstancesDetails api with *ListMyGroupInstancesDetailsRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/listmygroupinstancesdetails.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListMyGroupInstancesDetailsWithChan(request *ListMyGroupInstancesDetailsRequest) (<-chan *ListMyGroupInstancesDetailsResponse, <-chan error) {
 	responseChan := make(chan *ListMyGroupInstancesDetailsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ListMyGroupInstancesDetailsWithChan(request *ListMyGroupIn
 	return responseChan, errChan
 }
 
+// invoke ListMyGroupInstancesDetails api with *ListMyGroupInstancesDetailsRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/listmygroupinstancesdetails.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListMyGroupInstancesDetailsWithCallback(request *ListMyGroupInstancesDetailsRequest, callback func(response *ListMyGroupInstancesDetailsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -67,8 +75,8 @@ func (client *Client) ListMyGroupInstancesDetailsWithCallback(request *ListMyGro
 
 type ListMyGroupInstancesDetailsRequest struct {
 	*requests.RpcRequest
-	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
 	PageSize   requests.Integer `position:"Query" name:"PageSize"`
+	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
 	Total      requests.Boolean `position:"Query" name:"Total"`
 	GroupId    requests.Integer `position:"Query" name:"GroupId"`
 	Category   string           `position:"Query" name:"Category"`
@@ -86,6 +94,7 @@ type ListMyGroupInstancesDetailsResponse struct {
 	Resources    ResourcesInListMyGroupInstancesDetails `json:"Resources" xml:"Resources"`
 }
 
+// create a request to invoke ListMyGroupInstancesDetails API
 func CreateListMyGroupInstancesDetailsRequest() (request *ListMyGroupInstancesDetailsRequest) {
 	request = &ListMyGroupInstancesDetailsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -94,6 +103,7 @@ func CreateListMyGroupInstancesDetailsRequest() (request *ListMyGroupInstancesDe
 	return
 }
 
+// create a response to parse from ListMyGroupInstancesDetails response
 func CreateListMyGroupInstancesDetailsResponse() (response *ListMyGroupInstancesDetailsResponse) {
 	response = &ListMyGroupInstancesDetailsResponse{
 		BaseResponse: &responses.BaseResponse{},

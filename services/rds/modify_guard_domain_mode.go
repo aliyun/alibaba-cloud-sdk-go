@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifyGuardDomainMode api with *ModifyGuardDomainModeRequest synchronously
+// api document: https://help.aliyun.com/api/rds/modifyguarddomainmode.html
 func (client *Client) ModifyGuardDomainMode(request *ModifyGuardDomainModeRequest) (response *ModifyGuardDomainModeResponse, err error) {
 	response = CreateModifyGuardDomainModeResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifyGuardDomainMode api with *ModifyGuardDomainModeRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/modifyguarddomainmode.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyGuardDomainModeWithChan(request *ModifyGuardDomainModeRequest) (<-chan *ModifyGuardDomainModeResponse, <-chan error) {
 	responseChan := make(chan *ModifyGuardDomainModeResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifyGuardDomainModeWithChan(request *ModifyGuardDomainMo
 	return responseChan, errChan
 }
 
+// invoke ModifyGuardDomainMode api with *ModifyGuardDomainModeRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/modifyguarddomainmode.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyGuardDomainModeWithCallback(request *ModifyGuardDomainModeRequest, callback func(response *ModifyGuardDomainModeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type ModifyGuardDomainModeResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ModifyGuardDomainMode API
 func CreateModifyGuardDomainModeRequest() (request *ModifyGuardDomainModeRequest) {
 	request = &ModifyGuardDomainModeRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateModifyGuardDomainModeRequest() (request *ModifyGuardDomainModeRequest
 	return
 }
 
+// create a response to parse from ModifyGuardDomainMode response
 func CreateModifyGuardDomainModeResponse() (response *ModifyGuardDomainModeResponse) {
 	response = &ModifyGuardDomainModeResponse{
 		BaseResponse: &responses.BaseResponse{},

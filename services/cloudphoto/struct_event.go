@@ -16,19 +16,19 @@ package cloudphoto
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type Event struct {
-	IdStr            string `json:"IdStr" xml:"IdStr"`
-	Ctime            int    `json:"Ctime" xml:"Ctime"`
-	Title            string `json:"Title" xml:"Title"`
+	WatermarkPhotoId string `json:"WatermarkPhotoId" xml:"WatermarkPhotoId"`
+	WeixinTitle      string `json:"WeixinTitle" xml:"WeixinTitle"`
 	SplashPhotoId    string `json:"SplashPhotoId" xml:"SplashPhotoId"`
+	EndAt            int    `json:"EndAt" xml:"EndAt"`
+	State            string `json:"State" xml:"State"`
+	LibraryId        string `json:"LibraryId" xml:"LibraryId"`
+	ViewsCount       int    `json:"ViewsCount" xml:"ViewsCount"`
+	Title            string `json:"Title" xml:"Title"`
+	Mtime            int    `json:"Mtime" xml:"Mtime"`
+	StartAt          int    `json:"StartAt" xml:"StartAt"`
+	Identity         string `json:"Identity" xml:"Identity"`
+	Ctime            int    `json:"Ctime" xml:"Ctime"`
+	IdStr            string `json:"IdStr" xml:"IdStr"`
 	Id               int    `json:"Id" xml:"Id"`
 	BannerPhotoId    string `json:"BannerPhotoId" xml:"BannerPhotoId"`
-	WeixinTitle      string `json:"WeixinTitle" xml:"WeixinTitle"`
-	Identity         string `json:"Identity" xml:"Identity"`
-	State            string `json:"State" xml:"State"`
-	EndAt            int    `json:"EndAt" xml:"EndAt"`
-	Mtime            int    `json:"Mtime" xml:"Mtime"`
-	ViewsCount       int    `json:"ViewsCount" xml:"ViewsCount"`
-	LibraryId        string `json:"LibraryId" xml:"LibraryId"`
-	WatermarkPhotoId string `json:"WatermarkPhotoId" xml:"WatermarkPhotoId"`
-	StartAt          int    `json:"StartAt" xml:"StartAt"`
 }

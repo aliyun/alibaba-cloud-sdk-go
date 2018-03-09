@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke GetStatistics api with *GetStatisticsRequest synchronously
+// api document: https://help.aliyun.com/api/aegis/getstatistics.html
 func (client *Client) GetStatistics(request *GetStatisticsRequest) (response *GetStatisticsResponse, err error) {
 	response = CreateGetStatisticsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke GetStatistics api with *GetStatisticsRequest asynchronously
+// api document: https://help.aliyun.com/api/aegis/getstatistics.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetStatisticsWithChan(request *GetStatisticsRequest) (<-chan *GetStatisticsResponse, <-chan error) {
 	responseChan := make(chan *GetStatisticsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) GetStatisticsWithChan(request *GetStatisticsRequest) (<-ch
 	return responseChan, errChan
 }
 
+// invoke GetStatistics api with *GetStatisticsRequest asynchronously
+// api document: https://help.aliyun.com/api/aegis/getstatistics.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetStatisticsWithCallback(request *GetStatisticsRequest, callback func(response *GetStatisticsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type GetStatisticsResponse struct {
 	Data      Data   `json:"Data" xml:"Data"`
 }
 
+// create a request to invoke GetStatistics API
 func CreateGetStatisticsRequest() (request *GetStatisticsRequest) {
 	request = &GetStatisticsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateGetStatisticsRequest() (request *GetStatisticsRequest) {
 	return
 }
 
+// create a response to parse from GetStatistics response
 func CreateGetStatisticsResponse() (response *GetStatisticsResponse) {
 	response = &GetStatisticsResponse{
 		BaseResponse: &responses.BaseResponse{},

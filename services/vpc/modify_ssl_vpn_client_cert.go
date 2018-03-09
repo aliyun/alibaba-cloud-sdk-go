@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifySslVpnClientCert api with *ModifySslVpnClientCertRequest synchronously
+// api document: https://help.aliyun.com/api/vpc/modifysslvpnclientcert.html
 func (client *Client) ModifySslVpnClientCert(request *ModifySslVpnClientCertRequest) (response *ModifySslVpnClientCertResponse, err error) {
 	response = CreateModifySslVpnClientCertResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifySslVpnClientCert api with *ModifySslVpnClientCertRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/modifysslvpnclientcert.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySslVpnClientCertWithChan(request *ModifySslVpnClientCertRequest) (<-chan *ModifySslVpnClientCertResponse, <-chan error) {
 	responseChan := make(chan *ModifySslVpnClientCertResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifySslVpnClientCertWithChan(request *ModifySslVpnClient
 	return responseChan, errChan
 }
 
+// invoke ModifySslVpnClientCert api with *ModifySslVpnClientCertRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/modifysslvpnclientcert.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySslVpnClientCertWithCallback(request *ModifySslVpnClientCertRequest, callback func(response *ModifySslVpnClientCertResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,6 +91,7 @@ type ModifySslVpnClientCertResponse struct {
 	SslVpnClientCertId string `json:"SslVpnClientCertId" xml:"SslVpnClientCertId"`
 }
 
+// create a request to invoke ModifySslVpnClientCert API
 func CreateModifySslVpnClientCertRequest() (request *ModifySslVpnClientCertRequest) {
 	request = &ModifySslVpnClientCertRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -91,6 +100,7 @@ func CreateModifySslVpnClientCertRequest() (request *ModifySslVpnClientCertReque
 	return
 }
 
+// create a response to parse from ModifySslVpnClientCert response
 func CreateModifySslVpnClientCertResponse() (response *ModifySslVpnClientCertResponse) {
 	response = &ModifySslVpnClientCertResponse{
 		BaseResponse: &responses.BaseResponse{},

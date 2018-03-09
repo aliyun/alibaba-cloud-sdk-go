@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ClearAccountAlias api with *ClearAccountAliasRequest synchronously
+// api document: https://help.aliyun.com/api/ram/clearaccountalias.html
 func (client *Client) ClearAccountAlias(request *ClearAccountAliasRequest) (response *ClearAccountAliasResponse, err error) {
 	response = CreateClearAccountAliasResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ClearAccountAlias api with *ClearAccountAliasRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/clearaccountalias.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ClearAccountAliasWithChan(request *ClearAccountAliasRequest) (<-chan *ClearAccountAliasResponse, <-chan error) {
 	responseChan := make(chan *ClearAccountAliasResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ClearAccountAliasWithChan(request *ClearAccountAliasReques
 	return responseChan, errChan
 }
 
+// invoke ClearAccountAlias api with *ClearAccountAliasRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/clearaccountalias.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ClearAccountAliasWithCallback(request *ClearAccountAliasRequest, callback func(response *ClearAccountAliasResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -74,6 +82,7 @@ type ClearAccountAliasResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ClearAccountAlias API
 func CreateClearAccountAliasRequest() (request *ClearAccountAliasRequest) {
 	request = &ClearAccountAliasRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -82,6 +91,7 @@ func CreateClearAccountAliasRequest() (request *ClearAccountAliasRequest) {
 	return
 }
 
+// create a response to parse from ClearAccountAlias response
 func CreateClearAccountAliasResponse() (response *ClearAccountAliasResponse) {
 	response = &ClearAccountAliasResponse{
 		BaseResponse: &responses.BaseResponse{},

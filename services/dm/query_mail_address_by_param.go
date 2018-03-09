@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke QueryMailAddressByParam api with *QueryMailAddressByParamRequest synchronously
+// api document: https://help.aliyun.com/api/dm/querymailaddressbyparam.html
 func (client *Client) QueryMailAddressByParam(request *QueryMailAddressByParamRequest) (response *QueryMailAddressByParamResponse, err error) {
 	response = CreateQueryMailAddressByParamResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke QueryMailAddressByParam api with *QueryMailAddressByParamRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/querymailaddressbyparam.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryMailAddressByParamWithChan(request *QueryMailAddressByParamRequest) (<-chan *QueryMailAddressByParamResponse, <-chan error) {
 	responseChan := make(chan *QueryMailAddressByParamResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) QueryMailAddressByParamWithChan(request *QueryMailAddressB
 	return responseChan, errChan
 }
 
+// invoke QueryMailAddressByParam api with *QueryMailAddressByParamRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/querymailaddressbyparam.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryMailAddressByParamWithCallback(request *QueryMailAddressByParamRequest, callback func(response *QueryMailAddressByParamResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -85,6 +93,7 @@ type QueryMailAddressByParamResponse struct {
 	Data       DataInQueryMailAddressByParam `json:"data" xml:"data"`
 }
 
+// create a request to invoke QueryMailAddressByParam API
 func CreateQueryMailAddressByParamRequest() (request *QueryMailAddressByParamRequest) {
 	request = &QueryMailAddressByParamRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -93,6 +102,7 @@ func CreateQueryMailAddressByParamRequest() (request *QueryMailAddressByParamReq
 	return
 }
 
+// create a response to parse from QueryMailAddressByParam response
 func CreateQueryMailAddressByParamResponse() (response *QueryMailAddressByParamResponse) {
 	response = &QueryMailAddressByParamResponse{
 		BaseResponse: &responses.BaseResponse{},

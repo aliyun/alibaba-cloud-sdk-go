@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeUserData api with *DescribeUserDataRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/describeuserdata.html
 func (client *Client) DescribeUserData(request *DescribeUserDataRequest) (response *DescribeUserDataResponse, err error) {
 	response = CreateDescribeUserDataResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeUserData api with *DescribeUserDataRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describeuserdata.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUserDataWithChan(request *DescribeUserDataRequest) (<-chan *DescribeUserDataResponse, <-chan error) {
 	responseChan := make(chan *DescribeUserDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeUserDataWithChan(request *DescribeUserDataRequest)
 	return responseChan, errChan
 }
 
+// invoke DescribeUserData api with *DescribeUserDataRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describeuserdata.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUserDataWithCallback(request *DescribeUserDataRequest, callback func(response *DescribeUserDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type DescribeUserDataResponse struct {
 	UserData   string `json:"UserData" xml:"UserData"`
 }
 
+// create a request to invoke DescribeUserData API
 func CreateDescribeUserDataRequest() (request *DescribeUserDataRequest) {
 	request = &DescribeUserDataRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateDescribeUserDataRequest() (request *DescribeUserDataRequest) {
 	return
 }
 
+// create a response to parse from DescribeUserData response
 func CreateDescribeUserDataResponse() (response *DescribeUserDataResponse) {
 	response = &DescribeUserDataResponse{
 		BaseResponse: &responses.BaseResponse{},

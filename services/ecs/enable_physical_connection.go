@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke EnablePhysicalConnection api with *EnablePhysicalConnectionRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/enablephysicalconnection.html
 func (client *Client) EnablePhysicalConnection(request *EnablePhysicalConnectionRequest) (response *EnablePhysicalConnectionResponse, err error) {
 	response = CreateEnablePhysicalConnectionResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke EnablePhysicalConnection api with *EnablePhysicalConnectionRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/enablephysicalconnection.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EnablePhysicalConnectionWithChan(request *EnablePhysicalConnectionRequest) (<-chan *EnablePhysicalConnectionResponse, <-chan error) {
 	responseChan := make(chan *EnablePhysicalConnectionResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) EnablePhysicalConnectionWithChan(request *EnablePhysicalCo
 	return responseChan, errChan
 }
 
+// invoke EnablePhysicalConnection api with *EnablePhysicalConnectionRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/enablephysicalconnection.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EnablePhysicalConnectionWithCallback(request *EnablePhysicalConnectionRequest, callback func(response *EnablePhysicalConnectionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type EnablePhysicalConnectionResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke EnablePhysicalConnection API
 func CreateEnablePhysicalConnectionRequest() (request *EnablePhysicalConnectionRequest) {
 	request = &EnablePhysicalConnectionRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateEnablePhysicalConnectionRequest() (request *EnablePhysicalConnectionR
 	return
 }
 
+// create a response to parse from EnablePhysicalConnection response
 func CreateEnablePhysicalConnectionResponse() (response *EnablePhysicalConnectionResponse) {
 	response = &EnablePhysicalConnectionResponse{
 		BaseResponse: &responses.BaseResponse{},

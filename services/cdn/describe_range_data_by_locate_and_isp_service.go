@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeRangeDataByLocateAndIspService api with *DescribeRangeDataByLocateAndIspServiceRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/describerangedatabylocateandispservice.html
 func (client *Client) DescribeRangeDataByLocateAndIspService(request *DescribeRangeDataByLocateAndIspServiceRequest) (response *DescribeRangeDataByLocateAndIspServiceResponse, err error) {
 	response = CreateDescribeRangeDataByLocateAndIspServiceResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeRangeDataByLocateAndIspService api with *DescribeRangeDataByLocateAndIspServiceRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describerangedatabylocateandispservice.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRangeDataByLocateAndIspServiceWithChan(request *DescribeRangeDataByLocateAndIspServiceRequest) (<-chan *DescribeRangeDataByLocateAndIspServiceResponse, <-chan error) {
 	responseChan := make(chan *DescribeRangeDataByLocateAndIspServiceResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeRangeDataByLocateAndIspServiceWithChan(request *De
 	return responseChan, errChan
 }
 
+// invoke DescribeRangeDataByLocateAndIspService api with *DescribeRangeDataByLocateAndIspServiceRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describerangedatabylocateandispservice.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRangeDataByLocateAndIspServiceWithCallback(request *DescribeRangeDataByLocateAndIspServiceRequest, callback func(response *DescribeRangeDataByLocateAndIspServiceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type DescribeRangeDataByLocateAndIspServiceResponse struct {
 	JsonResult string `json:"JsonResult" xml:"JsonResult"`
 }
 
+// create a request to invoke DescribeRangeDataByLocateAndIspService API
 func CreateDescribeRangeDataByLocateAndIspServiceRequest() (request *DescribeRangeDataByLocateAndIspServiceRequest) {
 	request = &DescribeRangeDataByLocateAndIspServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateDescribeRangeDataByLocateAndIspServiceRequest() (request *DescribeRan
 	return
 }
 
+// create a response to parse from DescribeRangeDataByLocateAndIspService response
 func CreateDescribeRangeDataByLocateAndIspServiceResponse() (response *DescribeRangeDataByLocateAndIspServiceResponse) {
 	response = &DescribeRangeDataByLocateAndIspServiceResponse{
 		BaseResponse: &responses.BaseResponse{},

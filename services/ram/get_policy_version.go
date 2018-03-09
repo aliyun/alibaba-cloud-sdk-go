@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke GetPolicyVersion api with *GetPolicyVersionRequest synchronously
+// api document: https://help.aliyun.com/api/ram/getpolicyversion.html
 func (client *Client) GetPolicyVersion(request *GetPolicyVersionRequest) (response *GetPolicyVersionResponse, err error) {
 	response = CreateGetPolicyVersionResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke GetPolicyVersion api with *GetPolicyVersionRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/getpolicyversion.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetPolicyVersionWithChan(request *GetPolicyVersionRequest) (<-chan *GetPolicyVersionResponse, <-chan error) {
 	responseChan := make(chan *GetPolicyVersionResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) GetPolicyVersionWithChan(request *GetPolicyVersionRequest)
 	return responseChan, errChan
 }
 
+// invoke GetPolicyVersion api with *GetPolicyVersionRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/getpolicyversion.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetPolicyVersionWithCallback(request *GetPolicyVersionRequest, callback func(response *GetPolicyVersionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type GetPolicyVersionResponse struct {
 	PolicyVersion PolicyVersion `json:"PolicyVersion" xml:"PolicyVersion"`
 }
 
+// create a request to invoke GetPolicyVersion API
 func CreateGetPolicyVersionRequest() (request *GetPolicyVersionRequest) {
 	request = &GetPolicyVersionRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateGetPolicyVersionRequest() (request *GetPolicyVersionRequest) {
 	return
 }
 
+// create a response to parse from GetPolicyVersion response
 func CreateGetPolicyVersionResponse() (response *GetPolicyVersionResponse) {
 	response = &GetPolicyVersionResponse{
 		BaseResponse: &responses.BaseResponse{},

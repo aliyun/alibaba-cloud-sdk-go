@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeleteMountTarget api with *DeleteMountTargetRequest synchronously
+// api document: https://help.aliyun.com/api/nas/deletemounttarget.html
 func (client *Client) DeleteMountTarget(request *DeleteMountTargetRequest) (response *DeleteMountTargetResponse, err error) {
 	response = CreateDeleteMountTargetResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeleteMountTarget api with *DeleteMountTargetRequest asynchronously
+// api document: https://help.aliyun.com/api/nas/deletemounttarget.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteMountTargetWithChan(request *DeleteMountTargetRequest) (<-chan *DeleteMountTargetResponse, <-chan error) {
 	responseChan := make(chan *DeleteMountTargetResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeleteMountTargetWithChan(request *DeleteMountTargetReques
 	return responseChan, errChan
 }
 
+// invoke DeleteMountTarget api with *DeleteMountTargetRequest asynchronously
+// api document: https://help.aliyun.com/api/nas/deletemounttarget.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteMountTargetWithCallback(request *DeleteMountTargetRequest, callback func(response *DeleteMountTargetResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,6 +84,7 @@ type DeleteMountTargetResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke DeleteMountTarget API
 func CreateDeleteMountTargetRequest() (request *DeleteMountTargetRequest) {
 	request = &DeleteMountTargetRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -84,6 +93,7 @@ func CreateDeleteMountTargetRequest() (request *DeleteMountTargetRequest) {
 	return
 }
 
+// create a response to parse from DeleteMountTarget response
 func CreateDeleteMountTargetResponse() (response *DeleteMountTargetResponse) {
 	response = &DeleteMountTargetResponse{
 		BaseResponse: &responses.BaseResponse{},

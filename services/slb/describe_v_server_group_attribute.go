@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeVServerGroupAttribute api with *DescribeVServerGroupAttributeRequest synchronously
+// api document: https://help.aliyun.com/api/slb/describevservergroupattribute.html
 func (client *Client) DescribeVServerGroupAttribute(request *DescribeVServerGroupAttributeRequest) (response *DescribeVServerGroupAttributeResponse, err error) {
 	response = CreateDescribeVServerGroupAttributeResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeVServerGroupAttribute api with *DescribeVServerGroupAttributeRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/describevservergroupattribute.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeVServerGroupAttributeWithChan(request *DescribeVServerGroupAttributeRequest) (<-chan *DescribeVServerGroupAttributeResponse, <-chan error) {
 	responseChan := make(chan *DescribeVServerGroupAttributeResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeVServerGroupAttributeWithChan(request *DescribeVSe
 	return responseChan, errChan
 }
 
+// invoke DescribeVServerGroupAttribute api with *DescribeVServerGroupAttributeRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/describevservergroupattribute.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeVServerGroupAttributeWithCallback(request *DescribeVServerGroupAttributeRequest, callback func(response *DescribeVServerGroupAttributeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,6 +92,7 @@ type DescribeVServerGroupAttributeResponse struct {
 	BackendServers   BackendServersInDescribeVServerGroupAttribute `json:"BackendServers" xml:"BackendServers"`
 }
 
+// create a request to invoke DescribeVServerGroupAttribute API
 func CreateDescribeVServerGroupAttributeRequest() (request *DescribeVServerGroupAttributeRequest) {
 	request = &DescribeVServerGroupAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -92,6 +101,7 @@ func CreateDescribeVServerGroupAttributeRequest() (request *DescribeVServerGroup
 	return
 }
 
+// create a response to parse from DescribeVServerGroupAttribute response
 func CreateDescribeVServerGroupAttributeResponse() (response *DescribeVServerGroupAttributeResponse) {
 	response = &DescribeVServerGroupAttributeResponse{
 		BaseResponse: &responses.BaseResponse{},

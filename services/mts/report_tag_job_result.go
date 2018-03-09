@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ReportTagJobResult api with *ReportTagJobResultRequest synchronously
+// api document: https://help.aliyun.com/api/mts/reporttagjobresult.html
 func (client *Client) ReportTagJobResult(request *ReportTagJobResultRequest) (response *ReportTagJobResultResponse, err error) {
 	response = CreateReportTagJobResultResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ReportTagJobResult api with *ReportTagJobResultRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/reporttagjobresult.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReportTagJobResultWithChan(request *ReportTagJobResultRequest) (<-chan *ReportTagJobResultResponse, <-chan error) {
 	responseChan := make(chan *ReportTagJobResultResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ReportTagJobResultWithChan(request *ReportTagJobResultRequ
 	return responseChan, errChan
 }
 
+// invoke ReportTagJobResult api with *ReportTagJobResultRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/reporttagjobresult.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReportTagJobResultWithCallback(request *ReportTagJobResultRequest, callback func(response *ReportTagJobResultResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type ReportTagJobResultResponse struct {
 	JobId     string `json:"JobId" xml:"JobId"`
 }
 
+// create a request to invoke ReportTagJobResult API
 func CreateReportTagJobResultRequest() (request *ReportTagJobResultRequest) {
 	request = &ReportTagJobResultRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateReportTagJobResultRequest() (request *ReportTagJobResultRequest) {
 	return
 }
 
+// create a response to parse from ReportTagJobResult response
 func CreateReportTagJobResultResponse() (response *ReportTagJobResultResponse) {
 	response = &ReportTagJobResultResponse{
 		BaseResponse: &responses.BaseResponse{},

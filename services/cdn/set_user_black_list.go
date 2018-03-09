@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SetUserBlackList api with *SetUserBlackListRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/setuserblacklist.html
 func (client *Client) SetUserBlackList(request *SetUserBlackListRequest) (response *SetUserBlackListResponse, err error) {
 	response = CreateSetUserBlackListResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SetUserBlackList api with *SetUserBlackListRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/setuserblacklist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetUserBlackListWithChan(request *SetUserBlackListRequest) (<-chan *SetUserBlackListResponse, <-chan error) {
 	responseChan := make(chan *SetUserBlackListResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SetUserBlackListWithChan(request *SetUserBlackListRequest)
 	return responseChan, errChan
 }
 
+// invoke SetUserBlackList api with *SetUserBlackListRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/setuserblacklist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetUserBlackListWithCallback(request *SetUserBlackListRequest, callback func(response *SetUserBlackListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type SetUserBlackListResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke SetUserBlackList API
 func CreateSetUserBlackListRequest() (request *SetUserBlackListRequest) {
 	request = &SetUserBlackListRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateSetUserBlackListRequest() (request *SetUserBlackListRequest) {
 	return
 }
 
+// create a response to parse from SetUserBlackList response
 func CreateSetUserBlackListResponse() (response *SetUserBlackListResponse) {
 	response = &SetUserBlackListResponse{
 		BaseResponse: &responses.BaseResponse{},

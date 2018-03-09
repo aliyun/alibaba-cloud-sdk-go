@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke MigrateToOtherZone api with *MigrateToOtherZoneRequest synchronously
+// api document: https://help.aliyun.com/api/rds/migratetootherzone.html
 func (client *Client) MigrateToOtherZone(request *MigrateToOtherZoneRequest) (response *MigrateToOtherZoneResponse, err error) {
 	response = CreateMigrateToOtherZoneResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke MigrateToOtherZone api with *MigrateToOtherZoneRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/migratetootherzone.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) MigrateToOtherZoneWithChan(request *MigrateToOtherZoneRequest) (<-chan *MigrateToOtherZoneResponse, <-chan error) {
 	responseChan := make(chan *MigrateToOtherZoneResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) MigrateToOtherZoneWithChan(request *MigrateToOtherZoneRequ
 	return responseChan, errChan
 }
 
+// invoke MigrateToOtherZone api with *MigrateToOtherZoneRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/migratetootherzone.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) MigrateToOtherZoneWithCallback(request *MigrateToOtherZoneRequest, callback func(response *MigrateToOtherZoneResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type MigrateToOtherZoneResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke MigrateToOtherZone API
 func CreateMigrateToOtherZoneRequest() (request *MigrateToOtherZoneRequest) {
 	request = &MigrateToOtherZoneRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateMigrateToOtherZoneRequest() (request *MigrateToOtherZoneRequest) {
 	return
 }
 
+// create a response to parse from MigrateToOtherZone response
 func CreateMigrateToOtherZoneResponse() (response *MigrateToOtherZoneResponse) {
 	response = &MigrateToOtherZoneResponse{
 		BaseResponse: &responses.BaseResponse{},

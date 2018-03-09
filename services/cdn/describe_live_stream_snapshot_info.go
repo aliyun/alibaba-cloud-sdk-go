@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeLiveStreamSnapshotInfo api with *DescribeLiveStreamSnapshotInfoRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/describelivestreamsnapshotinfo.html
 func (client *Client) DescribeLiveStreamSnapshotInfo(request *DescribeLiveStreamSnapshotInfoRequest) (response *DescribeLiveStreamSnapshotInfoResponse, err error) {
 	response = CreateDescribeLiveStreamSnapshotInfoResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeLiveStreamSnapshotInfo api with *DescribeLiveStreamSnapshotInfoRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describelivestreamsnapshotinfo.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamSnapshotInfoWithChan(request *DescribeLiveStreamSnapshotInfoRequest) (<-chan *DescribeLiveStreamSnapshotInfoResponse, <-chan error) {
 	responseChan := make(chan *DescribeLiveStreamSnapshotInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeLiveStreamSnapshotInfoWithChan(request *DescribeLi
 	return responseChan, errChan
 }
 
+// invoke DescribeLiveStreamSnapshotInfo api with *DescribeLiveStreamSnapshotInfoRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describelivestreamsnapshotinfo.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamSnapshotInfoWithCallback(request *DescribeLiveStreamSnapshotInfoRequest, callback func(response *DescribeLiveStreamSnapshotInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,6 +92,7 @@ type DescribeLiveStreamSnapshotInfoResponse struct {
 	LiveStreamSnapshotInfoList LiveStreamSnapshotInfoList `json:"LiveStreamSnapshotInfoList" xml:"LiveStreamSnapshotInfoList"`
 }
 
+// create a request to invoke DescribeLiveStreamSnapshotInfo API
 func CreateDescribeLiveStreamSnapshotInfoRequest() (request *DescribeLiveStreamSnapshotInfoRequest) {
 	request = &DescribeLiveStreamSnapshotInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -92,6 +101,7 @@ func CreateDescribeLiveStreamSnapshotInfoRequest() (request *DescribeLiveStreamS
 	return
 }
 
+// create a response to parse from DescribeLiveStreamSnapshotInfo response
 func CreateDescribeLiveStreamSnapshotInfoResponse() (response *DescribeLiveStreamSnapshotInfoResponse) {
 	response = &DescribeLiveStreamSnapshotInfoResponse{
 		BaseResponse: &responses.BaseResponse{},

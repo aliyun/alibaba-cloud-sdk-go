@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke QueryMediaWorkflowExecutionList api with *QueryMediaWorkflowExecutionListRequest synchronously
+// api document: https://help.aliyun.com/api/mts/querymediaworkflowexecutionlist.html
 func (client *Client) QueryMediaWorkflowExecutionList(request *QueryMediaWorkflowExecutionListRequest) (response *QueryMediaWorkflowExecutionListResponse, err error) {
 	response = CreateQueryMediaWorkflowExecutionListResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke QueryMediaWorkflowExecutionList api with *QueryMediaWorkflowExecutionListRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/querymediaworkflowexecutionlist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryMediaWorkflowExecutionListWithChan(request *QueryMediaWorkflowExecutionListRequest) (<-chan *QueryMediaWorkflowExecutionListResponse, <-chan error) {
 	responseChan := make(chan *QueryMediaWorkflowExecutionListResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) QueryMediaWorkflowExecutionListWithChan(request *QueryMedi
 	return responseChan, errChan
 }
 
+// invoke QueryMediaWorkflowExecutionList api with *QueryMediaWorkflowExecutionListRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/querymediaworkflowexecutionlist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryMediaWorkflowExecutionListWithCallback(request *QueryMediaWorkflowExecutionListRequest, callback func(response *QueryMediaWorkflowExecutionListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type QueryMediaWorkflowExecutionListResponse struct {
 	MediaWorkflowExecutionList MediaWorkflowExecutionListInQueryMediaWorkflowExecutionList `json:"MediaWorkflowExecutionList" xml:"MediaWorkflowExecutionList"`
 }
 
+// create a request to invoke QueryMediaWorkflowExecutionList API
 func CreateQueryMediaWorkflowExecutionListRequest() (request *QueryMediaWorkflowExecutionListRequest) {
 	request = &QueryMediaWorkflowExecutionListRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateQueryMediaWorkflowExecutionListRequest() (request *QueryMediaWorkflow
 	return
 }
 
+// create a response to parse from QueryMediaWorkflowExecutionList response
 func CreateQueryMediaWorkflowExecutionListResponse() (response *QueryMediaWorkflowExecutionListResponse) {
 	response = &QueryMediaWorkflowExecutionListResponse{
 		BaseResponse: &responses.BaseResponse{},

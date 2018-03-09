@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeDomainRealTimeReqHitRateData api with *DescribeDomainRealTimeReqHitRateDataRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/describedomainrealtimereqhitratedata.html
 func (client *Client) DescribeDomainRealTimeReqHitRateData(request *DescribeDomainRealTimeReqHitRateDataRequest) (response *DescribeDomainRealTimeReqHitRateDataResponse, err error) {
 	response = CreateDescribeDomainRealTimeReqHitRateDataResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeDomainRealTimeReqHitRateData api with *DescribeDomainRealTimeReqHitRateDataRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describedomainrealtimereqhitratedata.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainRealTimeReqHitRateDataWithChan(request *DescribeDomainRealTimeReqHitRateDataRequest) (<-chan *DescribeDomainRealTimeReqHitRateDataResponse, <-chan error) {
 	responseChan := make(chan *DescribeDomainRealTimeReqHitRateDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeDomainRealTimeReqHitRateDataWithChan(request *Desc
 	return responseChan, errChan
 }
 
+// invoke DescribeDomainRealTimeReqHitRateData api with *DescribeDomainRealTimeReqHitRateDataRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describedomainrealtimereqhitratedata.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainRealTimeReqHitRateDataWithCallback(request *DescribeDomainRealTimeReqHitRateDataRequest, callback func(response *DescribeDomainRealTimeReqHitRateDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -75,6 +83,7 @@ type DescribeDomainRealTimeReqHitRateDataResponse struct {
 	Data      DataInDescribeDomainRealTimeReqHitRateData `json:"Data" xml:"Data"`
 }
 
+// create a request to invoke DescribeDomainRealTimeReqHitRateData API
 func CreateDescribeDomainRealTimeReqHitRateDataRequest() (request *DescribeDomainRealTimeReqHitRateDataRequest) {
 	request = &DescribeDomainRealTimeReqHitRateDataRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -83,6 +92,7 @@ func CreateDescribeDomainRealTimeReqHitRateDataRequest() (request *DescribeDomai
 	return
 }
 
+// create a response to parse from DescribeDomainRealTimeReqHitRateData response
 func CreateDescribeDomainRealTimeReqHitRateDataResponse() (response *DescribeDomainRealTimeReqHitRateDataResponse) {
 	response = &DescribeDomainRealTimeReqHitRateDataResponse{
 		BaseResponse: &responses.BaseResponse{},

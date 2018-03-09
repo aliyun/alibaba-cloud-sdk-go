@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeReplicaPerformance api with *DescribeReplicaPerformanceRequest synchronously
+// api document: https://help.aliyun.com/api/rds/describereplicaperformance.html
 func (client *Client) DescribeReplicaPerformance(request *DescribeReplicaPerformanceRequest) (response *DescribeReplicaPerformanceResponse, err error) {
 	response = CreateDescribeReplicaPerformanceResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeReplicaPerformance api with *DescribeReplicaPerformanceRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describereplicaperformance.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeReplicaPerformanceWithChan(request *DescribeReplicaPerformanceRequest) (<-chan *DescribeReplicaPerformanceResponse, <-chan error) {
 	responseChan := make(chan *DescribeReplicaPerformanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeReplicaPerformanceWithChan(request *DescribeReplic
 	return responseChan, errChan
 }
 
+// invoke DescribeReplicaPerformance api with *DescribeReplicaPerformanceRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describereplicaperformance.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeReplicaPerformanceWithCallback(request *DescribeReplicaPerformanceRequest, callback func(response *DescribeReplicaPerformanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -88,6 +96,7 @@ type DescribeReplicaPerformanceResponse struct {
 	PerformanceKeys PerformanceKeys `json:"PerformanceKeys" xml:"PerformanceKeys"`
 }
 
+// create a request to invoke DescribeReplicaPerformance API
 func CreateDescribeReplicaPerformanceRequest() (request *DescribeReplicaPerformanceRequest) {
 	request = &DescribeReplicaPerformanceRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -96,6 +105,7 @@ func CreateDescribeReplicaPerformanceRequest() (request *DescribeReplicaPerforma
 	return
 }
 
+// create a response to parse from DescribeReplicaPerformance response
 func CreateDescribeReplicaPerformanceResponse() (response *DescribeReplicaPerformanceResponse) {
 	response = &DescribeReplicaPerformanceResponse{
 		BaseResponse: &responses.BaseResponse{},

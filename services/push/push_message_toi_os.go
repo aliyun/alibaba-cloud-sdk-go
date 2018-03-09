@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke PushMessageToiOS api with *PushMessageToiOSRequest synchronously
+// api document: https://help.aliyun.com/api/push/pushmessagetoios.html
 func (client *Client) PushMessageToiOS(request *PushMessageToiOSRequest) (response *PushMessageToiOSResponse, err error) {
 	response = CreatePushMessageToiOSResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke PushMessageToiOS api with *PushMessageToiOSRequest asynchronously
+// api document: https://help.aliyun.com/api/push/pushmessagetoios.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PushMessageToiOSWithChan(request *PushMessageToiOSRequest) (<-chan *PushMessageToiOSResponse, <-chan error) {
 	responseChan := make(chan *PushMessageToiOSResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) PushMessageToiOSWithChan(request *PushMessageToiOSRequest)
 	return responseChan, errChan
 }
 
+// invoke PushMessageToiOS api with *PushMessageToiOSRequest asynchronously
+// api document: https://help.aliyun.com/api/push/pushmessagetoios.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PushMessageToiOSWithCallback(request *PushMessageToiOSRequest, callback func(response *PushMessageToiOSResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type PushMessageToiOSResponse struct {
 	MessageId string `json:"MessageId" xml:"MessageId"`
 }
 
+// create a request to invoke PushMessageToiOS API
 func CreatePushMessageToiOSRequest() (request *PushMessageToiOSRequest) {
 	request = &PushMessageToiOSRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreatePushMessageToiOSRequest() (request *PushMessageToiOSRequest) {
 	return
 }
 
+// create a response to parse from PushMessageToiOS response
 func CreatePushMessageToiOSResponse() (response *PushMessageToiOSResponse) {
 	response = &PushMessageToiOSResponse{
 		BaseResponse: &responses.BaseResponse{},

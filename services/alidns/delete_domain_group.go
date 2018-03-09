@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeleteDomainGroup api with *DeleteDomainGroupRequest synchronously
+// api document: https://help.aliyun.com/api/alidns/deletedomaingroup.html
 func (client *Client) DeleteDomainGroup(request *DeleteDomainGroupRequest) (response *DeleteDomainGroupResponse, err error) {
 	response = CreateDeleteDomainGroupResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeleteDomainGroup api with *DeleteDomainGroupRequest asynchronously
+// api document: https://help.aliyun.com/api/alidns/deletedomaingroup.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDomainGroupWithChan(request *DeleteDomainGroupRequest) (<-chan *DeleteDomainGroupResponse, <-chan error) {
 	responseChan := make(chan *DeleteDomainGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeleteDomainGroupWithChan(request *DeleteDomainGroupReques
 	return responseChan, errChan
 }
 
+// invoke DeleteDomainGroup api with *DeleteDomainGroupRequest asynchronously
+// api document: https://help.aliyun.com/api/alidns/deletedomaingroup.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDomainGroupWithCallback(request *DeleteDomainGroupRequest, callback func(response *DeleteDomainGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type DeleteDomainGroupResponse struct {
 	GroupName string `json:"GroupName" xml:"GroupName"`
 }
 
+// create a request to invoke DeleteDomainGroup API
 func CreateDeleteDomainGroupRequest() (request *DeleteDomainGroupRequest) {
 	request = &DeleteDomainGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateDeleteDomainGroupRequest() (request *DeleteDomainGroupRequest) {
 	return
 }
 
+// create a response to parse from DeleteDomainGroup response
 func CreateDeleteDomainGroupResponse() (response *DeleteDomainGroupResponse) {
 	response = &DeleteDomainGroupResponse{
 		BaseResponse: &responses.BaseResponse{},

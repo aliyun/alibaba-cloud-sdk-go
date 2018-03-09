@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke UploadCertificate api with *UploadCertificateRequest synchronously
+// api document: https://help.aliyun.com/api/ddospro/uploadcertificate.html
 func (client *Client) UploadCertificate(request *UploadCertificateRequest) (response *UploadCertificateResponse, err error) {
 	response = CreateUploadCertificateResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke UploadCertificate api with *UploadCertificateRequest asynchronously
+// api document: https://help.aliyun.com/api/ddospro/uploadcertificate.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UploadCertificateWithChan(request *UploadCertificateRequest) (<-chan *UploadCertificateResponse, <-chan error) {
 	responseChan := make(chan *UploadCertificateResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) UploadCertificateWithChan(request *UploadCertificateReques
 	return responseChan, errChan
 }
 
+// invoke UploadCertificate api with *UploadCertificateRequest asynchronously
+// api document: https://help.aliyun.com/api/ddospro/uploadcertificate.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UploadCertificateWithCallback(request *UploadCertificateRequest, callback func(response *UploadCertificateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type UploadCertificateResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke UploadCertificate API
 func CreateUploadCertificateRequest() (request *UploadCertificateRequest) {
 	request = &UploadCertificateRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateUploadCertificateRequest() (request *UploadCertificateRequest) {
 	return
 }
 
+// create a response to parse from UploadCertificate response
 func CreateUploadCertificateResponse() (response *UploadCertificateResponse) {
 	response = &UploadCertificateResponse{
 		BaseResponse: &responses.BaseResponse{},

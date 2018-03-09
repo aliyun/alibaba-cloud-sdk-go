@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke BindInputBucket api with *BindInputBucketRequest synchronously
+// api document: https://help.aliyun.com/api/mts/bindinputbucket.html
 func (client *Client) BindInputBucket(request *BindInputBucketRequest) (response *BindInputBucketResponse, err error) {
 	response = CreateBindInputBucketResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke BindInputBucket api with *BindInputBucketRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/bindinputbucket.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BindInputBucketWithChan(request *BindInputBucketRequest) (<-chan *BindInputBucketResponse, <-chan error) {
 	responseChan := make(chan *BindInputBucketResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) BindInputBucketWithChan(request *BindInputBucketRequest) (
 	return responseChan, errChan
 }
 
+// invoke BindInputBucket api with *BindInputBucketRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/bindinputbucket.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BindInputBucketWithCallback(request *BindInputBucketRequest, callback func(response *BindInputBucketResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type BindInputBucketResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke BindInputBucket API
 func CreateBindInputBucketRequest() (request *BindInputBucketRequest) {
 	request = &BindInputBucketRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateBindInputBucketRequest() (request *BindInputBucketRequest) {
 	return
 }
 
+// create a response to parse from BindInputBucket response
 func CreateBindInputBucketResponse() (response *BindInputBucketResponse) {
 	response = &BindInputBucketResponse{
 		BaseResponse: &responses.BaseResponse{},

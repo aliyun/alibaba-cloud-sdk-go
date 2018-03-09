@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke UpdateUser api with *UpdateUserRequest synchronously
+// api document: https://help.aliyun.com/api/ram/updateuser.html
 func (client *Client) UpdateUser(request *UpdateUserRequest) (response *UpdateUserResponse, err error) {
 	response = CreateUpdateUserResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke UpdateUser api with *UpdateUserRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/updateuser.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateUserWithChan(request *UpdateUserRequest) (<-chan *UpdateUserResponse, <-chan error) {
 	responseChan := make(chan *UpdateUserResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) UpdateUserWithChan(request *UpdateUserRequest) (<-chan *Up
 	return responseChan, errChan
 }
 
+// invoke UpdateUser api with *UpdateUserRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/updateuser.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateUserWithCallback(request *UpdateUserRequest, callback func(response *UpdateUserResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type UpdateUserResponse struct {
 	User      User   `json:"User" xml:"User"`
 }
 
+// create a request to invoke UpdateUser API
 func CreateUpdateUserRequest() (request *UpdateUserRequest) {
 	request = &UpdateUserRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateUpdateUserRequest() (request *UpdateUserRequest) {
 	return
 }
 
+// create a response to parse from UpdateUser response
 func CreateUpdateUserResponse() (response *UpdateUserResponse) {
 	response = &UpdateUserResponse{
 		BaseResponse: &responses.BaseResponse{},

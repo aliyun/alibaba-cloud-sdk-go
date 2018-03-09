@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke QuerySignByParam api with *QuerySignByParamRequest synchronously
+// api document: https://help.aliyun.com/api/dm/querysignbyparam.html
 func (client *Client) QuerySignByParam(request *QuerySignByParamRequest) (response *QuerySignByParamResponse, err error) {
 	response = CreateQuerySignByParamResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke QuerySignByParam api with *QuerySignByParamRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/querysignbyparam.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QuerySignByParamWithChan(request *QuerySignByParamRequest) (<-chan *QuerySignByParamResponse, <-chan error) {
 	responseChan := make(chan *QuerySignByParamResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) QuerySignByParamWithChan(request *QuerySignByParamRequest)
 	return responseChan, errChan
 }
 
+// invoke QuerySignByParam api with *QuerySignByParamRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/querysignbyparam.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QuerySignByParamWithCallback(request *QuerySignByParamRequest, callback func(response *QuerySignByParamResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,6 +92,7 @@ type QuerySignByParamResponse struct {
 	Data       DataInQuerySignByParam `json:"data" xml:"data"`
 }
 
+// create a request to invoke QuerySignByParam API
 func CreateQuerySignByParamRequest() (request *QuerySignByParamRequest) {
 	request = &QuerySignByParamRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -92,6 +101,7 @@ func CreateQuerySignByParamRequest() (request *QuerySignByParamRequest) {
 	return
 }
 
+// create a response to parse from QuerySignByParam response
 func CreateQuerySignByParamResponse() (response *QuerySignByParamResponse) {
 	response = &QuerySignByParamResponse{
 		BaseResponse: &responses.BaseResponse{},

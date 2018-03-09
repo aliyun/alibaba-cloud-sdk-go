@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CreateAutoSnapshotPolicy api with *CreateAutoSnapshotPolicyRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/createautosnapshotpolicy.html
 func (client *Client) CreateAutoSnapshotPolicy(request *CreateAutoSnapshotPolicyRequest) (response *CreateAutoSnapshotPolicyResponse, err error) {
 	response = CreateCreateAutoSnapshotPolicyResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CreateAutoSnapshotPolicy api with *CreateAutoSnapshotPolicyRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/createautosnapshotpolicy.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateAutoSnapshotPolicyWithChan(request *CreateAutoSnapshotPolicyRequest) (<-chan *CreateAutoSnapshotPolicyResponse, <-chan error) {
 	responseChan := make(chan *CreateAutoSnapshotPolicyResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CreateAutoSnapshotPolicyWithChan(request *CreateAutoSnapsh
 	return responseChan, errChan
 }
 
+// invoke CreateAutoSnapshotPolicy api with *CreateAutoSnapshotPolicyRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/createautosnapshotpolicy.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateAutoSnapshotPolicyWithCallback(request *CreateAutoSnapshotPolicyRequest, callback func(response *CreateAutoSnapshotPolicyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type CreateAutoSnapshotPolicyResponse struct {
 	AutoSnapshotPolicyId string `json:"AutoSnapshotPolicyId" xml:"AutoSnapshotPolicyId"`
 }
 
+// create a request to invoke CreateAutoSnapshotPolicy API
 func CreateCreateAutoSnapshotPolicyRequest() (request *CreateAutoSnapshotPolicyRequest) {
 	request = &CreateAutoSnapshotPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateCreateAutoSnapshotPolicyRequest() (request *CreateAutoSnapshotPolicyR
 	return
 }
 
+// create a response to parse from CreateAutoSnapshotPolicy response
 func CreateCreateAutoSnapshotPolicyResponse() (response *CreateAutoSnapshotPolicyResponse) {
 	response = &CreateAutoSnapshotPolicyResponse{
 		BaseResponse: &responses.BaseResponse{},

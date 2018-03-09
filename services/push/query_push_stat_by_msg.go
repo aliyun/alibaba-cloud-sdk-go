@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke QueryPushStatByMsg api with *QueryPushStatByMsgRequest synchronously
+// api document: https://help.aliyun.com/api/push/querypushstatbymsg.html
 func (client *Client) QueryPushStatByMsg(request *QueryPushStatByMsgRequest) (response *QueryPushStatByMsgResponse, err error) {
 	response = CreateQueryPushStatByMsgResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke QueryPushStatByMsg api with *QueryPushStatByMsgRequest asynchronously
+// api document: https://help.aliyun.com/api/push/querypushstatbymsg.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryPushStatByMsgWithChan(request *QueryPushStatByMsgRequest) (<-chan *QueryPushStatByMsgResponse, <-chan error) {
 	responseChan := make(chan *QueryPushStatByMsgResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) QueryPushStatByMsgWithChan(request *QueryPushStatByMsgRequ
 	return responseChan, errChan
 }
 
+// invoke QueryPushStatByMsg api with *QueryPushStatByMsgRequest asynchronously
+// api document: https://help.aliyun.com/api/push/querypushstatbymsg.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryPushStatByMsgWithCallback(request *QueryPushStatByMsgRequest, callback func(response *QueryPushStatByMsgResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +85,7 @@ type QueryPushStatByMsgResponse struct {
 	PushStats PushStats `json:"PushStats" xml:"PushStats"`
 }
 
+// create a request to invoke QueryPushStatByMsg API
 func CreateQueryPushStatByMsgRequest() (request *QueryPushStatByMsgRequest) {
 	request = &QueryPushStatByMsgRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -85,6 +94,7 @@ func CreateQueryPushStatByMsgRequest() (request *QueryPushStatByMsgRequest) {
 	return
 }
 
+// create a response to parse from QueryPushStatByMsg response
 func CreateQueryPushStatByMsgResponse() (response *QueryPushStatByMsgResponse) {
 	response = &QueryPushStatByMsgResponse{
 		BaseResponse: &responses.BaseResponse{},

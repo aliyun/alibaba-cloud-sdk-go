@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeDomainConfig api with *DescribeDomainConfigRequest synchronously
+// api document: https://help.aliyun.com/api/ddospro/describedomainconfig.html
 func (client *Client) DescribeDomainConfig(request *DescribeDomainConfigRequest) (response *DescribeDomainConfigResponse, err error) {
 	response = CreateDescribeDomainConfigResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeDomainConfig api with *DescribeDomainConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/ddospro/describedomainconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainConfigWithChan(request *DescribeDomainConfigRequest) (<-chan *DescribeDomainConfigResponse, <-chan error) {
 	responseChan := make(chan *DescribeDomainConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeDomainConfigWithChan(request *DescribeDomainConfig
 	return responseChan, errChan
 }
 
+// invoke DescribeDomainConfig api with *DescribeDomainConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/ddospro/describedomainconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainConfigWithCallback(request *DescribeDomainConfigRequest, callback func(response *DescribeDomainConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +85,7 @@ type DescribeDomainConfigResponse struct {
 	Config    Config `json:"Config" xml:"Config"`
 }
 
+// create a request to invoke DescribeDomainConfig API
 func CreateDescribeDomainConfigRequest() (request *DescribeDomainConfigRequest) {
 	request = &DescribeDomainConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -85,6 +94,7 @@ func CreateDescribeDomainConfigRequest() (request *DescribeDomainConfigRequest) 
 	return
 }
 
+// create a response to parse from DescribeDomainConfig response
 func CreateDescribeDomainConfigResponse() (response *DescribeDomainConfigResponse) {
 	response = &DescribeDomainConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

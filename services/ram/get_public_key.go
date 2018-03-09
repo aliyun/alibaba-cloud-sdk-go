@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke GetPublicKey api with *GetPublicKeyRequest synchronously
+// api document: https://help.aliyun.com/api/ram/getpublickey.html
 func (client *Client) GetPublicKey(request *GetPublicKeyRequest) (response *GetPublicKeyResponse, err error) {
 	response = CreateGetPublicKeyResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke GetPublicKey api with *GetPublicKeyRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/getpublickey.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetPublicKeyWithChan(request *GetPublicKeyRequest) (<-chan *GetPublicKeyResponse, <-chan error) {
 	responseChan := make(chan *GetPublicKeyResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) GetPublicKeyWithChan(request *GetPublicKeyRequest) (<-chan
 	return responseChan, errChan
 }
 
+// invoke GetPublicKey api with *GetPublicKeyRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/getpublickey.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetPublicKeyWithCallback(request *GetPublicKeyRequest, callback func(response *GetPublicKeyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +85,7 @@ type GetPublicKeyResponse struct {
 	PublicKey PublicKey `json:"PublicKey" xml:"PublicKey"`
 }
 
+// create a request to invoke GetPublicKey API
 func CreateGetPublicKeyRequest() (request *GetPublicKeyRequest) {
 	request = &GetPublicKeyRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -85,6 +94,7 @@ func CreateGetPublicKeyRequest() (request *GetPublicKeyRequest) {
 	return
 }
 
+// create a response to parse from GetPublicKey response
 func CreateGetPublicKeyResponse() (response *GetPublicKeyResponse) {
 	response = &GetPublicKeyResponse{
 		BaseResponse: &responses.BaseResponse{},

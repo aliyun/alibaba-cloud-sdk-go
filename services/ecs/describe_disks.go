@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeDisks api with *DescribeDisksRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/describedisks.html
 func (client *Client) DescribeDisks(request *DescribeDisksRequest) (response *DescribeDisksResponse, err error) {
 	response = CreateDescribeDisksResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeDisks api with *DescribeDisksRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describedisks.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDisksWithChan(request *DescribeDisksRequest) (<-chan *DescribeDisksResponse, <-chan error) {
 	responseChan := make(chan *DescribeDisksResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeDisksWithChan(request *DescribeDisksRequest) (<-ch
 	return responseChan, errChan
 }
 
+// invoke DescribeDisks api with *DescribeDisksRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describedisks.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDisksWithCallback(request *DescribeDisksRequest, callback func(response *DescribeDisksResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -119,6 +127,7 @@ type DescribeDisksResponse struct {
 	Disks      Disks  `json:"Disks" xml:"Disks"`
 }
 
+// create a request to invoke DescribeDisks API
 func CreateDescribeDisksRequest() (request *DescribeDisksRequest) {
 	request = &DescribeDisksRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -127,6 +136,7 @@ func CreateDescribeDisksRequest() (request *DescribeDisksRequest) {
 	return
 }
 
+// create a response to parse from DescribeDisks response
 func CreateDescribeDisksResponse() (response *DescribeDisksResponse) {
 	response = &DescribeDisksResponse{
 		BaseResponse: &responses.BaseResponse{},

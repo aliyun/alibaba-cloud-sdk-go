@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeLiveStreamBitRateData api with *DescribeLiveStreamBitRateDataRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/describelivestreambitratedata.html
 func (client *Client) DescribeLiveStreamBitRateData(request *DescribeLiveStreamBitRateDataRequest) (response *DescribeLiveStreamBitRateDataResponse, err error) {
 	response = CreateDescribeLiveStreamBitRateDataResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeLiveStreamBitRateData api with *DescribeLiveStreamBitRateDataRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describelivestreambitratedata.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamBitRateDataWithChan(request *DescribeLiveStreamBitRateDataRequest) (<-chan *DescribeLiveStreamBitRateDataResponse, <-chan error) {
 	responseChan := make(chan *DescribeLiveStreamBitRateDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeLiveStreamBitRateDataWithChan(request *DescribeLiv
 	return responseChan, errChan
 }
 
+// invoke DescribeLiveStreamBitRateData api with *DescribeLiveStreamBitRateDataRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describelivestreambitratedata.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamBitRateDataWithCallback(request *DescribeLiveStreamBitRateDataRequest, callback func(response *DescribeLiveStreamBitRateDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type DescribeLiveStreamBitRateDataResponse struct {
 	FrameRateAndBitRateInfos FrameRateAndBitRateInfosInDescribeLiveStreamBitRateData `json:"FrameRateAndBitRateInfos" xml:"FrameRateAndBitRateInfos"`
 }
 
+// create a request to invoke DescribeLiveStreamBitRateData API
 func CreateDescribeLiveStreamBitRateDataRequest() (request *DescribeLiveStreamBitRateDataRequest) {
 	request = &DescribeLiveStreamBitRateDataRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateDescribeLiveStreamBitRateDataRequest() (request *DescribeLiveStreamBi
 	return
 }
 
+// create a response to parse from DescribeLiveStreamBitRateData response
 func CreateDescribeLiveStreamBitRateDataResponse() (response *DescribeLiveStreamBitRateDataResponse) {
 	response = &DescribeLiveStreamBitRateDataResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke EnableActiveAlert api with *EnableActiveAlertRequest synchronously
+// api document: https://help.aliyun.com/api/cms/enableactivealert.html
 func (client *Client) EnableActiveAlert(request *EnableActiveAlertRequest) (response *EnableActiveAlertResponse, err error) {
 	response = CreateEnableActiveAlertResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke EnableActiveAlert api with *EnableActiveAlertRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/enableactivealert.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EnableActiveAlertWithChan(request *EnableActiveAlertRequest) (<-chan *EnableActiveAlertResponse, <-chan error) {
 	responseChan := make(chan *EnableActiveAlertResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) EnableActiveAlertWithChan(request *EnableActiveAlertReques
 	return responseChan, errChan
 }
 
+// invoke EnableActiveAlert api with *EnableActiveAlertRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/enableactivealert.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EnableActiveAlertWithCallback(request *EnableActiveAlertRequest, callback func(response *EnableActiveAlertResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type EnableActiveAlertResponse struct {
 	Message string `json:"Message" xml:"Message"`
 }
 
+// create a request to invoke EnableActiveAlert API
 func CreateEnableActiveAlertRequest() (request *EnableActiveAlertRequest) {
 	request = &EnableActiveAlertRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateEnableActiveAlertRequest() (request *EnableActiveAlertRequest) {
 	return
 }
 
+// create a response to parse from EnableActiveAlert response
 func CreateEnableActiveAlertResponse() (response *EnableActiveAlertResponse) {
 	response = &EnableActiveAlertResponse{
 		BaseResponse: &responses.BaseResponse{},

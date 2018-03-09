@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke StopMixStreamsService api with *StopMixStreamsServiceRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/stopmixstreamsservice.html
 func (client *Client) StopMixStreamsService(request *StopMixStreamsServiceRequest) (response *StopMixStreamsServiceResponse, err error) {
 	response = CreateStopMixStreamsServiceResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke StopMixStreamsService api with *StopMixStreamsServiceRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/stopmixstreamsservice.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StopMixStreamsServiceWithChan(request *StopMixStreamsServiceRequest) (<-chan *StopMixStreamsServiceResponse, <-chan error) {
 	responseChan := make(chan *StopMixStreamsServiceResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) StopMixStreamsServiceWithChan(request *StopMixStreamsServi
 	return responseChan, errChan
 }
 
+// invoke StopMixStreamsService api with *StopMixStreamsServiceRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/stopmixstreamsservice.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StopMixStreamsServiceWithCallback(request *StopMixStreamsServiceRequest, callback func(response *StopMixStreamsServiceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,6 +91,7 @@ type StopMixStreamsServiceResponse struct {
 	MixStreamsInfoList MixStreamsInfoListInStopMixStreamsService `json:"MixStreamsInfoList" xml:"MixStreamsInfoList"`
 }
 
+// create a request to invoke StopMixStreamsService API
 func CreateStopMixStreamsServiceRequest() (request *StopMixStreamsServiceRequest) {
 	request = &StopMixStreamsServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -91,6 +100,7 @@ func CreateStopMixStreamsServiceRequest() (request *StopMixStreamsServiceRequest
 	return
 }
 
+// create a response to parse from StopMixStreamsService response
 func CreateStopMixStreamsServiceResponse() (response *StopMixStreamsServiceResponse) {
 	response = &StopMixStreamsServiceResponse{
 		BaseResponse: &responses.BaseResponse{},

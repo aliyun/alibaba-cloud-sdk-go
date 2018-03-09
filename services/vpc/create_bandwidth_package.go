@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CreateBandwidthPackage api with *CreateBandwidthPackageRequest synchronously
+// api document: https://help.aliyun.com/api/vpc/createbandwidthpackage.html
 func (client *Client) CreateBandwidthPackage(request *CreateBandwidthPackageRequest) (response *CreateBandwidthPackageResponse, err error) {
 	response = CreateCreateBandwidthPackageResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CreateBandwidthPackage api with *CreateBandwidthPackageRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/createbandwidthpackage.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateBandwidthPackageWithChan(request *CreateBandwidthPackageRequest) (<-chan *CreateBandwidthPackageResponse, <-chan error) {
 	responseChan := make(chan *CreateBandwidthPackageResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CreateBandwidthPackageWithChan(request *CreateBandwidthPac
 	return responseChan, errChan
 }
 
+// invoke CreateBandwidthPackage api with *CreateBandwidthPackageRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/createbandwidthpackage.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateBandwidthPackageWithCallback(request *CreateBandwidthPackageRequest, callback func(response *CreateBandwidthPackageResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -88,6 +96,7 @@ type CreateBandwidthPackageResponse struct {
 	BandwidthPackageId string `json:"BandwidthPackageId" xml:"BandwidthPackageId"`
 }
 
+// create a request to invoke CreateBandwidthPackage API
 func CreateCreateBandwidthPackageRequest() (request *CreateBandwidthPackageRequest) {
 	request = &CreateBandwidthPackageRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -96,6 +105,7 @@ func CreateCreateBandwidthPackageRequest() (request *CreateBandwidthPackageReque
 	return
 }
 
+// create a response to parse from CreateBandwidthPackage response
 func CreateCreateBandwidthPackageResponse() (response *CreateBandwidthPackageResponse) {
 	response = &CreateBandwidthPackageResponse{
 		BaseResponse: &responses.BaseResponse{},

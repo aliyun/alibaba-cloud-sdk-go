@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke UpgradeDBInstanceNetwork api with *UpgradeDBInstanceNetworkRequest synchronously
+// api document: https://help.aliyun.com/api/rds/upgradedbinstancenetwork.html
 func (client *Client) UpgradeDBInstanceNetwork(request *UpgradeDBInstanceNetworkRequest) (response *UpgradeDBInstanceNetworkResponse, err error) {
 	response = CreateUpgradeDBInstanceNetworkResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke UpgradeDBInstanceNetwork api with *UpgradeDBInstanceNetworkRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/upgradedbinstancenetwork.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpgradeDBInstanceNetworkWithChan(request *UpgradeDBInstanceNetworkRequest) (<-chan *UpgradeDBInstanceNetworkResponse, <-chan error) {
 	responseChan := make(chan *UpgradeDBInstanceNetworkResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) UpgradeDBInstanceNetworkWithChan(request *UpgradeDBInstanc
 	return responseChan, errChan
 }
 
+// invoke UpgradeDBInstanceNetwork api with *UpgradeDBInstanceNetworkRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/upgradedbinstancenetwork.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpgradeDBInstanceNetworkWithCallback(request *UpgradeDBInstanceNetworkRequest, callback func(response *UpgradeDBInstanceNetworkResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type UpgradeDBInstanceNetworkResponse struct {
 	DBInstanceName string `json:"DBInstanceName" xml:"DBInstanceName"`
 }
 
+// create a request to invoke UpgradeDBInstanceNetwork API
 func CreateUpgradeDBInstanceNetworkRequest() (request *UpgradeDBInstanceNetworkRequest) {
 	request = &UpgradeDBInstanceNetworkRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateUpgradeDBInstanceNetworkRequest() (request *UpgradeDBInstanceNetworkR
 	return
 }
 
+// create a response to parse from UpgradeDBInstanceNetwork response
 func CreateUpgradeDBInstanceNetworkResponse() (response *UpgradeDBInstanceNetworkResponse) {
 	response = &UpgradeDBInstanceNetworkResponse{
 		BaseResponse: &responses.BaseResponse{},

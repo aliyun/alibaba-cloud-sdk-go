@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ListRecordings api with *ListRecordingsRequest synchronously
+// api document: https://help.aliyun.com/api/ccc/listrecordings.html
 func (client *Client) ListRecordings(request *ListRecordingsRequest) (response *ListRecordingsResponse, err error) {
 	response = CreateListRecordingsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ListRecordings api with *ListRecordingsRequest asynchronously
+// api document: https://help.aliyun.com/api/ccc/listrecordings.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListRecordingsWithChan(request *ListRecordingsRequest) (<-chan *ListRecordingsResponse, <-chan error) {
 	responseChan := make(chan *ListRecordingsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ListRecordingsWithChan(request *ListRecordingsRequest) (<-
 	return responseChan, errChan
 }
 
+// invoke ListRecordings api with *ListRecordingsRequest asynchronously
+// api document: https://help.aliyun.com/api/ccc/listrecordings.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListRecordingsWithCallback(request *ListRecordingsRequest, callback func(response *ListRecordingsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -87,6 +95,7 @@ type ListRecordingsResponse struct {
 	Recordings     Recordings `json:"Recordings" xml:"Recordings"`
 }
 
+// create a request to invoke ListRecordings API
 func CreateListRecordingsRequest() (request *ListRecordingsRequest) {
 	request = &ListRecordingsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -95,6 +104,7 @@ func CreateListRecordingsRequest() (request *ListRecordingsRequest) {
 	return
 }
 
+// create a response to parse from ListRecordings response
 func CreateListRecordingsResponse() (response *ListRecordingsResponse) {
 	response = &ListRecordingsResponse{
 		BaseResponse: &responses.BaseResponse{},

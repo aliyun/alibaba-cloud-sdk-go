@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeLiveStreamTranscodeInfo api with *DescribeLiveStreamTranscodeInfoRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/describelivestreamtranscodeinfo.html
 func (client *Client) DescribeLiveStreamTranscodeInfo(request *DescribeLiveStreamTranscodeInfoRequest) (response *DescribeLiveStreamTranscodeInfoResponse, err error) {
 	response = CreateDescribeLiveStreamTranscodeInfoResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeLiveStreamTranscodeInfo api with *DescribeLiveStreamTranscodeInfoRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describelivestreamtranscodeinfo.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamTranscodeInfoWithChan(request *DescribeLiveStreamTranscodeInfoRequest) (<-chan *DescribeLiveStreamTranscodeInfoResponse, <-chan error) {
 	responseChan := make(chan *DescribeLiveStreamTranscodeInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeLiveStreamTranscodeInfoWithChan(request *DescribeL
 	return responseChan, errChan
 }
 
+// invoke DescribeLiveStreamTranscodeInfo api with *DescribeLiveStreamTranscodeInfoRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describelivestreamtranscodeinfo.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamTranscodeInfoWithCallback(request *DescribeLiveStreamTranscodeInfoRequest, callback func(response *DescribeLiveStreamTranscodeInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type DescribeLiveStreamTranscodeInfoResponse struct {
 	DomainTranscodeList DomainTranscodeList `json:"DomainTranscodeList" xml:"DomainTranscodeList"`
 }
 
+// create a request to invoke DescribeLiveStreamTranscodeInfo API
 func CreateDescribeLiveStreamTranscodeInfoRequest() (request *DescribeLiveStreamTranscodeInfoRequest) {
 	request = &DescribeLiveStreamTranscodeInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateDescribeLiveStreamTranscodeInfoRequest() (request *DescribeLiveStream
 	return
 }
 
+// create a response to parse from DescribeLiveStreamTranscodeInfo response
 func CreateDescribeLiveStreamTranscodeInfoResponse() (response *DescribeLiveStreamTranscodeInfoResponse) {
 	response = &DescribeLiveStreamTranscodeInfoResponse{
 		BaseResponse: &responses.BaseResponse{},

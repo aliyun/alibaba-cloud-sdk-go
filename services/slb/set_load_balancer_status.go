@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SetLoadBalancerStatus api with *SetLoadBalancerStatusRequest synchronously
+// api document: https://help.aliyun.com/api/slb/setloadbalancerstatus.html
 func (client *Client) SetLoadBalancerStatus(request *SetLoadBalancerStatusRequest) (response *SetLoadBalancerStatusResponse, err error) {
 	response = CreateSetLoadBalancerStatusResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SetLoadBalancerStatus api with *SetLoadBalancerStatusRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/setloadbalancerstatus.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetLoadBalancerStatusWithChan(request *SetLoadBalancerStatusRequest) (<-chan *SetLoadBalancerStatusResponse, <-chan error) {
 	responseChan := make(chan *SetLoadBalancerStatusResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SetLoadBalancerStatusWithChan(request *SetLoadBalancerStat
 	return responseChan, errChan
 }
 
+// invoke SetLoadBalancerStatus api with *SetLoadBalancerStatusRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/setloadbalancerstatus.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetLoadBalancerStatusWithCallback(request *SetLoadBalancerStatusRequest, callback func(response *SetLoadBalancerStatusResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type SetLoadBalancerStatusResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke SetLoadBalancerStatus API
 func CreateSetLoadBalancerStatusRequest() (request *SetLoadBalancerStatusRequest) {
 	request = &SetLoadBalancerStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateSetLoadBalancerStatusRequest() (request *SetLoadBalancerStatusRequest
 	return
 }
 
+// create a response to parse from SetLoadBalancerStatus response
 func CreateSetLoadBalancerStatusResponse() (response *SetLoadBalancerStatusResponse) {
 	response = &SetLoadBalancerStatusResponse{
 		BaseResponse: &responses.BaseResponse{},

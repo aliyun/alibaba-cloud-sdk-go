@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke BindPhone api with *BindPhoneRequest synchronously
+// api document: https://help.aliyun.com/api/push/bindphone.html
 func (client *Client) BindPhone(request *BindPhoneRequest) (response *BindPhoneResponse, err error) {
 	response = CreateBindPhoneResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke BindPhone api with *BindPhoneRequest asynchronously
+// api document: https://help.aliyun.com/api/push/bindphone.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BindPhoneWithChan(request *BindPhoneRequest) (<-chan *BindPhoneResponse, <-chan error) {
 	responseChan := make(chan *BindPhoneResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) BindPhoneWithChan(request *BindPhoneRequest) (<-chan *Bind
 	return responseChan, errChan
 }
 
+// invoke BindPhone api with *BindPhoneRequest asynchronously
+// api document: https://help.aliyun.com/api/push/bindphone.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BindPhoneWithCallback(request *BindPhoneRequest, callback func(response *BindPhoneResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +85,7 @@ type BindPhoneResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke BindPhone API
 func CreateBindPhoneRequest() (request *BindPhoneRequest) {
 	request = &BindPhoneRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -85,6 +94,7 @@ func CreateBindPhoneRequest() (request *BindPhoneRequest) {
 	return
 }
 
+// create a response to parse from BindPhone response
 func CreateBindPhoneResponse() (response *BindPhoneResponse) {
 	response = &BindPhoneResponse{
 		BaseResponse: &responses.BaseResponse{},

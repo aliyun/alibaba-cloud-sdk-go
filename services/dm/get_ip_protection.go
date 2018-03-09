@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke GetIpProtection api with *GetIpProtectionRequest synchronously
+// api document: https://help.aliyun.com/api/dm/getipprotection.html
 func (client *Client) GetIpProtection(request *GetIpProtectionRequest) (response *GetIpProtectionResponse, err error) {
 	response = CreateGetIpProtectionResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke GetIpProtection api with *GetIpProtectionRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/getipprotection.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetIpProtectionWithChan(request *GetIpProtectionRequest) (<-chan *GetIpProtectionResponse, <-chan error) {
 	responseChan := make(chan *GetIpProtectionResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) GetIpProtectionWithChan(request *GetIpProtectionRequest) (
 	return responseChan, errChan
 }
 
+// invoke GetIpProtection api with *GetIpProtectionRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/getipprotection.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetIpProtectionWithCallback(request *GetIpProtectionRequest, callback func(response *GetIpProtectionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type GetIpProtectionResponse struct {
 	IpProtection string `json:"IpProtection" xml:"IpProtection"`
 }
 
+// create a request to invoke GetIpProtection API
 func CreateGetIpProtectionRequest() (request *GetIpProtectionRequest) {
 	request = &GetIpProtectionRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateGetIpProtectionRequest() (request *GetIpProtectionRequest) {
 	return
 }
 
+// create a response to parse from GetIpProtection response
 func CreateGetIpProtectionResponse() (response *GetIpProtectionResponse) {
 	response = &GetIpProtectionResponse{
 		BaseResponse: &responses.BaseResponse{},

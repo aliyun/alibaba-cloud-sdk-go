@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CreateDiagnosticReport api with *CreateDiagnosticReportRequest synchronously
+// api document: https://help.aliyun.com/api/rds/creatediagnosticreport.html
 func (client *Client) CreateDiagnosticReport(request *CreateDiagnosticReportRequest) (response *CreateDiagnosticReportResponse, err error) {
 	response = CreateCreateDiagnosticReportResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CreateDiagnosticReport api with *CreateDiagnosticReportRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/creatediagnosticreport.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateDiagnosticReportWithChan(request *CreateDiagnosticReportRequest) (<-chan *CreateDiagnosticReportResponse, <-chan error) {
 	responseChan := make(chan *CreateDiagnosticReportResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CreateDiagnosticReportWithChan(request *CreateDiagnosticRe
 	return responseChan, errChan
 }
 
+// invoke CreateDiagnosticReport api with *CreateDiagnosticReportRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/creatediagnosticreport.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateDiagnosticReportWithCallback(request *CreateDiagnosticReportRequest, callback func(response *CreateDiagnosticReportResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type CreateDiagnosticReportResponse struct {
 	ReportId  string `json:"ReportId" xml:"ReportId"`
 }
 
+// create a request to invoke CreateDiagnosticReport API
 func CreateCreateDiagnosticReportRequest() (request *CreateDiagnosticReportRequest) {
 	request = &CreateDiagnosticReportRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateCreateDiagnosticReportRequest() (request *CreateDiagnosticReportReque
 	return
 }
 
+// create a response to parse from CreateDiagnosticReport response
 func CreateCreateDiagnosticReportResponse() (response *CreateDiagnosticReportResponse) {
 	response = &CreateDiagnosticReportResponse{
 		BaseResponse: &responses.BaseResponse{},

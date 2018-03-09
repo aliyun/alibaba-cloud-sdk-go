@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeMigrateTasks api with *DescribeMigrateTasksRequest synchronously
+// api document: https://help.aliyun.com/api/rds/describemigratetasks.html
 func (client *Client) DescribeMigrateTasks(request *DescribeMigrateTasksRequest) (response *DescribeMigrateTasksResponse, err error) {
 	response = CreateDescribeMigrateTasksResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeMigrateTasks api with *DescribeMigrateTasksRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describemigratetasks.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeMigrateTasksWithChan(request *DescribeMigrateTasksRequest) (<-chan *DescribeMigrateTasksResponse, <-chan error) {
 	responseChan := make(chan *DescribeMigrateTasksResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeMigrateTasksWithChan(request *DescribeMigrateTasks
 	return responseChan, errChan
 }
 
+// invoke DescribeMigrateTasks api with *DescribeMigrateTasksRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describemigratetasks.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeMigrateTasksWithCallback(request *DescribeMigrateTasksRequest, callback func(response *DescribeMigrateTasksResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -87,6 +95,7 @@ type DescribeMigrateTasksResponse struct {
 	Items            ItemsInDescribeMigrateTasks `json:"Items" xml:"Items"`
 }
 
+// create a request to invoke DescribeMigrateTasks API
 func CreateDescribeMigrateTasksRequest() (request *DescribeMigrateTasksRequest) {
 	request = &DescribeMigrateTasksRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -95,6 +104,7 @@ func CreateDescribeMigrateTasksRequest() (request *DescribeMigrateTasksRequest) 
 	return
 }
 
+// create a response to parse from DescribeMigrateTasks response
 func CreateDescribeMigrateTasksResponse() (response *DescribeMigrateTasksResponse) {
 	response = &DescribeMigrateTasksResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke QueryDomainByInstanceId api with *QueryDomainByInstanceIdRequest synchronously
+// api document: https://help.aliyun.com/api/domain-intl/querydomainbyinstanceid.html
 func (client *Client) QueryDomainByInstanceId(request *QueryDomainByInstanceIdRequest) (response *QueryDomainByInstanceIdResponse, err error) {
 	response = CreateQueryDomainByInstanceIdResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke QueryDomainByInstanceId api with *QueryDomainByInstanceIdRequest asynchronously
+// api document: https://help.aliyun.com/api/domain-intl/querydomainbyinstanceid.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryDomainByInstanceIdWithChan(request *QueryDomainByInstanceIdRequest) (<-chan *QueryDomainByInstanceIdResponse, <-chan error) {
 	responseChan := make(chan *QueryDomainByInstanceIdResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) QueryDomainByInstanceIdWithChan(request *QueryDomainByInst
 	return responseChan, errChan
 }
 
+// invoke QueryDomainByInstanceId api with *QueryDomainByInstanceIdRequest asynchronously
+// api document: https://help.aliyun.com/api/domain-intl/querydomainbyinstanceid.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryDomainByInstanceIdWithCallback(request *QueryDomainByInstanceIdRequest, callback func(response *QueryDomainByInstanceIdResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -91,6 +99,7 @@ type QueryDomainByInstanceIdResponse struct {
 	DnsList                     DnsList `json:"DnsList" xml:"DnsList"`
 }
 
+// create a request to invoke QueryDomainByInstanceId API
 func CreateQueryDomainByInstanceIdRequest() (request *QueryDomainByInstanceIdRequest) {
 	request = &QueryDomainByInstanceIdRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -99,6 +108,7 @@ func CreateQueryDomainByInstanceIdRequest() (request *QueryDomainByInstanceIdReq
 	return
 }
 
+// create a response to parse from QueryDomainByInstanceId response
 func CreateQueryDomainByInstanceIdResponse() (response *QueryDomainByInstanceIdResponse) {
 	response = &QueryDomainByInstanceIdResponse{
 		BaseResponse: &responses.BaseResponse{},

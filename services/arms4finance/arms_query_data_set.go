@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ARMSQueryDataSet api with *ARMSQueryDataSetRequest synchronously
+// api document: https://help.aliyun.com/api/arms4finance/armsquerydataset.html
 func (client *Client) ARMSQueryDataSet(request *ARMSQueryDataSetRequest) (response *ARMSQueryDataSetResponse, err error) {
 	response = CreateARMSQueryDataSetResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ARMSQueryDataSet api with *ARMSQueryDataSetRequest asynchronously
+// api document: https://help.aliyun.com/api/arms4finance/armsquerydataset.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ARMSQueryDataSetWithChan(request *ARMSQueryDataSetRequest) (<-chan *ARMSQueryDataSetResponse, <-chan error) {
 	responseChan := make(chan *ARMSQueryDataSetResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ARMSQueryDataSetWithChan(request *ARMSQueryDataSetRequest)
 	return responseChan, errChan
 }
 
+// invoke ARMSQueryDataSet api with *ARMSQueryDataSetRequest asynchronously
+// api document: https://help.aliyun.com/api/arms4finance/armsquerydataset.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ARMSQueryDataSetWithCallback(request *ARMSQueryDataSetRequest, callback func(response *ARMSQueryDataSetResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -87,6 +95,7 @@ type ARMSQueryDataSetResponse struct {
 	Data string `json:"Data" xml:"Data"`
 }
 
+// create a request to invoke ARMSQueryDataSet API
 func CreateARMSQueryDataSetRequest() (request *ARMSQueryDataSetRequest) {
 	request = &ARMSQueryDataSetRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -95,6 +104,7 @@ func CreateARMSQueryDataSetRequest() (request *ARMSQueryDataSetRequest) {
 	return
 }
 
+// create a response to parse from ARMSQueryDataSet response
 func CreateARMSQueryDataSetResponse() (response *ARMSQueryDataSetResponse) {
 	response = &ARMSQueryDataSetResponse{
 		BaseResponse: &responses.BaseResponse{},

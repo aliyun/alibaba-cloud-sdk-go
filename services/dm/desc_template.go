@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescTemplate api with *DescTemplateRequest synchronously
+// api document: https://help.aliyun.com/api/dm/desctemplate.html
 func (client *Client) DescTemplate(request *DescTemplateRequest) (response *DescTemplateResponse, err error) {
 	response = CreateDescTemplateResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescTemplate api with *DescTemplateRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/desctemplate.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescTemplateWithChan(request *DescTemplateRequest) (<-chan *DescTemplateResponse, <-chan error) {
 	responseChan := make(chan *DescTemplateResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescTemplateWithChan(request *DescTemplateRequest) (<-chan
 	return responseChan, errChan
 }
 
+// invoke DescTemplate api with *DescTemplateRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/desctemplate.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescTemplateWithCallback(request *DescTemplateRequest, callback func(response *DescTemplateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -89,6 +97,7 @@ type DescTemplateResponse struct {
 	Remark           string `json:"Remark" xml:"Remark"`
 }
 
+// create a request to invoke DescTemplate API
 func CreateDescTemplateRequest() (request *DescTemplateRequest) {
 	request = &DescTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -97,6 +106,7 @@ func CreateDescTemplateRequest() (request *DescTemplateRequest) {
 	return
 }
 
+// create a response to parse from DescTemplate response
 func CreateDescTemplateResponse() (response *DescTemplateResponse) {
 	response = &DescTemplateResponse{
 		BaseResponse: &responses.BaseResponse{},

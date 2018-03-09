@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifyBatchIgnoreVul api with *ModifyBatchIgnoreVulRequest synchronously
+// api document: https://help.aliyun.com/api/aegis/modifybatchignorevul.html
 func (client *Client) ModifyBatchIgnoreVul(request *ModifyBatchIgnoreVulRequest) (response *ModifyBatchIgnoreVulResponse, err error) {
 	response = CreateModifyBatchIgnoreVulResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifyBatchIgnoreVul api with *ModifyBatchIgnoreVulRequest asynchronously
+// api document: https://help.aliyun.com/api/aegis/modifybatchignorevul.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyBatchIgnoreVulWithChan(request *ModifyBatchIgnoreVulRequest) (<-chan *ModifyBatchIgnoreVulResponse, <-chan error) {
 	responseChan := make(chan *ModifyBatchIgnoreVulResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifyBatchIgnoreVulWithChan(request *ModifyBatchIgnoreVul
 	return responseChan, errChan
 }
 
+// invoke ModifyBatchIgnoreVul api with *ModifyBatchIgnoreVulRequest asynchronously
+// api document: https://help.aliyun.com/api/aegis/modifybatchignorevul.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyBatchIgnoreVulWithCallback(request *ModifyBatchIgnoreVulRequest, callback func(response *ModifyBatchIgnoreVulResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type ModifyBatchIgnoreVulResponse struct {
 	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 }
 
+// create a request to invoke ModifyBatchIgnoreVul API
 func CreateModifyBatchIgnoreVulRequest() (request *ModifyBatchIgnoreVulRequest) {
 	request = &ModifyBatchIgnoreVulRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateModifyBatchIgnoreVulRequest() (request *ModifyBatchIgnoreVulRequest) 
 	return
 }
 
+// create a response to parse from ModifyBatchIgnoreVul response
 func CreateModifyBatchIgnoreVulResponse() (response *ModifyBatchIgnoreVulResponse) {
 	response = &ModifyBatchIgnoreVulResponse{
 		BaseResponse: &responses.BaseResponse{},

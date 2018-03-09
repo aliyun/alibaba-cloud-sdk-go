@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CheckDBNameAvailable api with *CheckDBNameAvailableRequest synchronously
+// api document: https://help.aliyun.com/api/rds/checkdbnameavailable.html
 func (client *Client) CheckDBNameAvailable(request *CheckDBNameAvailableRequest) (response *CheckDBNameAvailableResponse, err error) {
 	response = CreateCheckDBNameAvailableResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CheckDBNameAvailable api with *CheckDBNameAvailableRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/checkdbnameavailable.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckDBNameAvailableWithChan(request *CheckDBNameAvailableRequest) (<-chan *CheckDBNameAvailableResponse, <-chan error) {
 	responseChan := make(chan *CheckDBNameAvailableResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CheckDBNameAvailableWithChan(request *CheckDBNameAvailable
 	return responseChan, errChan
 }
 
+// invoke CheckDBNameAvailable api with *CheckDBNameAvailableRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/checkdbnameavailable.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckDBNameAvailableWithCallback(request *CheckDBNameAvailableRequest, callback func(response *CheckDBNameAvailableResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type CheckDBNameAvailableResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke CheckDBNameAvailable API
 func CreateCheckDBNameAvailableRequest() (request *CheckDBNameAvailableRequest) {
 	request = &CheckDBNameAvailableRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateCheckDBNameAvailableRequest() (request *CheckDBNameAvailableRequest) 
 	return
 }
 
+// create a response to parse from CheckDBNameAvailable response
 func CreateCheckDBNameAvailableResponse() (response *CheckDBNameAvailableResponse) {
 	response = &CheckDBNameAvailableResponse{
 		BaseResponse: &responses.BaseResponse{},

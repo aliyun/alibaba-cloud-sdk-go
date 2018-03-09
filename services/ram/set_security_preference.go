@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SetSecurityPreference api with *SetSecurityPreferenceRequest synchronously
+// api document: https://help.aliyun.com/api/ram/setsecuritypreference.html
 func (client *Client) SetSecurityPreference(request *SetSecurityPreferenceRequest) (response *SetSecurityPreferenceResponse, err error) {
 	response = CreateSetSecurityPreferenceResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SetSecurityPreference api with *SetSecurityPreferenceRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/setsecuritypreference.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetSecurityPreferenceWithChan(request *SetSecurityPreferenceRequest) (<-chan *SetSecurityPreferenceResponse, <-chan error) {
 	responseChan := make(chan *SetSecurityPreferenceResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SetSecurityPreferenceWithChan(request *SetSecurityPreferen
 	return responseChan, errChan
 }
 
+// invoke SetSecurityPreference api with *SetSecurityPreferenceRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/setsecuritypreference.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetSecurityPreferenceWithCallback(request *SetSecurityPreferenceRequest, callback func(response *SetSecurityPreferenceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type SetSecurityPreferenceResponse struct {
 	SecurityPreference SecurityPreference `json:"SecurityPreference" xml:"SecurityPreference"`
 }
 
+// create a request to invoke SetSecurityPreference API
 func CreateSetSecurityPreferenceRequest() (request *SetSecurityPreferenceRequest) {
 	request = &SetSecurityPreferenceRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateSetSecurityPreferenceRequest() (request *SetSecurityPreferenceRequest
 	return
 }
 
+// create a response to parse from SetSecurityPreference response
 func CreateSetSecurityPreferenceResponse() (response *SetSecurityPreferenceResponse) {
 	response = &SetSecurityPreferenceResponse{
 		BaseResponse: &responses.BaseResponse{},

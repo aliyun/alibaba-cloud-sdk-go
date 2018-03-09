@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ListUsersForGroup api with *ListUsersForGroupRequest synchronously
+// api document: https://help.aliyun.com/api/ram/listusersforgroup.html
 func (client *Client) ListUsersForGroup(request *ListUsersForGroupRequest) (response *ListUsersForGroupResponse, err error) {
 	response = CreateListUsersForGroupResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ListUsersForGroup api with *ListUsersForGroupRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/listusersforgroup.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListUsersForGroupWithChan(request *ListUsersForGroupRequest) (<-chan *ListUsersForGroupResponse, <-chan error) {
 	responseChan := make(chan *ListUsersForGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ListUsersForGroupWithChan(request *ListUsersForGroupReques
 	return responseChan, errChan
 }
 
+// invoke ListUsersForGroup api with *ListUsersForGroupRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/listusersforgroup.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListUsersForGroupWithCallback(request *ListUsersForGroupRequest, callback func(response *ListUsersForGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,6 +84,7 @@ type ListUsersForGroupResponse struct {
 	Users     UsersInListUsersForGroup `json:"Users" xml:"Users"`
 }
 
+// create a request to invoke ListUsersForGroup API
 func CreateListUsersForGroupRequest() (request *ListUsersForGroupRequest) {
 	request = &ListUsersForGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -84,6 +93,7 @@ func CreateListUsersForGroupRequest() (request *ListUsersForGroupRequest) {
 	return
 }
 
+// create a response to parse from ListUsersForGroup response
 func CreateListUsersForGroupResponse() (response *ListUsersForGroupResponse) {
 	response = &ListUsersForGroupResponse{
 		BaseResponse: &responses.BaseResponse{},

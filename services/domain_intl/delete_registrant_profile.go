@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeleteRegistrantProfile api with *DeleteRegistrantProfileRequest synchronously
+// api document: https://help.aliyun.com/api/domain-intl/deleteregistrantprofile.html
 func (client *Client) DeleteRegistrantProfile(request *DeleteRegistrantProfileRequest) (response *DeleteRegistrantProfileResponse, err error) {
 	response = CreateDeleteRegistrantProfileResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeleteRegistrantProfile api with *DeleteRegistrantProfileRequest asynchronously
+// api document: https://help.aliyun.com/api/domain-intl/deleteregistrantprofile.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteRegistrantProfileWithChan(request *DeleteRegistrantProfileRequest) (<-chan *DeleteRegistrantProfileResponse, <-chan error) {
 	responseChan := make(chan *DeleteRegistrantProfileResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeleteRegistrantProfileWithChan(request *DeleteRegistrantP
 	return responseChan, errChan
 }
 
+// invoke DeleteRegistrantProfile api with *DeleteRegistrantProfileRequest asynchronously
+// api document: https://help.aliyun.com/api/domain-intl/deleteregistrantprofile.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteRegistrantProfileWithCallback(request *DeleteRegistrantProfileRequest, callback func(response *DeleteRegistrantProfileResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +85,7 @@ type DeleteRegistrantProfileResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke DeleteRegistrantProfile API
 func CreateDeleteRegistrantProfileRequest() (request *DeleteRegistrantProfileRequest) {
 	request = &DeleteRegistrantProfileRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -85,6 +94,7 @@ func CreateDeleteRegistrantProfileRequest() (request *DeleteRegistrantProfileReq
 	return
 }
 
+// create a response to parse from DeleteRegistrantProfile response
 func CreateDeleteRegistrantProfileResponse() (response *DeleteRegistrantProfileResponse) {
 	response = &DeleteRegistrantProfileResponse{
 		BaseResponse: &responses.BaseResponse{},

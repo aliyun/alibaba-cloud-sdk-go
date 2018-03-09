@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeleteCustomerGateway api with *DeleteCustomerGatewayRequest synchronously
+// api document: https://help.aliyun.com/api/vpc/deletecustomergateway.html
 func (client *Client) DeleteCustomerGateway(request *DeleteCustomerGatewayRequest) (response *DeleteCustomerGatewayResponse, err error) {
 	response = CreateDeleteCustomerGatewayResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeleteCustomerGateway api with *DeleteCustomerGatewayRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/deletecustomergateway.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteCustomerGatewayWithChan(request *DeleteCustomerGatewayRequest) (<-chan *DeleteCustomerGatewayResponse, <-chan error) {
 	responseChan := make(chan *DeleteCustomerGatewayResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeleteCustomerGatewayWithChan(request *DeleteCustomerGatew
 	return responseChan, errChan
 }
 
+// invoke DeleteCustomerGateway api with *DeleteCustomerGatewayRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/deletecustomergateway.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteCustomerGatewayWithCallback(request *DeleteCustomerGatewayRequest, callback func(response *DeleteCustomerGatewayResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type DeleteCustomerGatewayResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke DeleteCustomerGateway API
 func CreateDeleteCustomerGatewayRequest() (request *DeleteCustomerGatewayRequest) {
 	request = &DeleteCustomerGatewayRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateDeleteCustomerGatewayRequest() (request *DeleteCustomerGatewayRequest
 	return
 }
 
+// create a response to parse from DeleteCustomerGateway response
 func CreateDeleteCustomerGatewayResponse() (response *DeleteCustomerGatewayResponse) {
 	response = &DeleteCustomerGatewayResponse{
 		BaseResponse: &responses.BaseResponse{},

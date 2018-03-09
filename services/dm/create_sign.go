@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CreateSign api with *CreateSignRequest synchronously
+// api document: https://help.aliyun.com/api/dm/createsign.html
 func (client *Client) CreateSign(request *CreateSignRequest) (response *CreateSignResponse, err error) {
 	response = CreateCreateSignResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CreateSign api with *CreateSignRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/createsign.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateSignWithChan(request *CreateSignRequest) (<-chan *CreateSignResponse, <-chan error) {
 	responseChan := make(chan *CreateSignResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CreateSignWithChan(request *CreateSignRequest) (<-chan *Cr
 	return responseChan, errChan
 }
 
+// invoke CreateSign api with *CreateSignRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/createsign.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateSignWithCallback(request *CreateSignRequest, callback func(response *CreateSignResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type CreateSignResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke CreateSign API
 func CreateCreateSignRequest() (request *CreateSignRequest) {
 	request = &CreateSignRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateCreateSignRequest() (request *CreateSignRequest) {
 	return
 }
 
+// create a response to parse from CreateSign response
 func CreateCreateSignResponse() (response *CreateSignResponse) {
 	response = &CreateSignResponse{
 		BaseResponse: &responses.BaseResponse{},

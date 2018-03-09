@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke RequestServiceOfCloudDBA api with *RequestServiceOfCloudDBARequest synchronously
+// api document: https://help.aliyun.com/api/rds/requestserviceofclouddba.html
 func (client *Client) RequestServiceOfCloudDBA(request *RequestServiceOfCloudDBARequest) (response *RequestServiceOfCloudDBAResponse, err error) {
 	response = CreateRequestServiceOfCloudDBAResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke RequestServiceOfCloudDBA api with *RequestServiceOfCloudDBARequest asynchronously
+// api document: https://help.aliyun.com/api/rds/requestserviceofclouddba.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RequestServiceOfCloudDBAWithChan(request *RequestServiceOfCloudDBARequest) (<-chan *RequestServiceOfCloudDBAResponse, <-chan error) {
 	responseChan := make(chan *RequestServiceOfCloudDBAResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) RequestServiceOfCloudDBAWithChan(request *RequestServiceOf
 	return responseChan, errChan
 }
 
+// invoke RequestServiceOfCloudDBA api with *RequestServiceOfCloudDBARequest asynchronously
+// api document: https://help.aliyun.com/api/rds/requestserviceofclouddba.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RequestServiceOfCloudDBAWithCallback(request *RequestServiceOfCloudDBARequest, callback func(response *RequestServiceOfCloudDBAResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +87,7 @@ type RequestServiceOfCloudDBAResponse struct {
 	AttrData  string `json:"AttrData" xml:"AttrData"`
 }
 
+// create a request to invoke RequestServiceOfCloudDBA API
 func CreateRequestServiceOfCloudDBARequest() (request *RequestServiceOfCloudDBARequest) {
 	request = &RequestServiceOfCloudDBARequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -87,6 +96,7 @@ func CreateRequestServiceOfCloudDBARequest() (request *RequestServiceOfCloudDBAR
 	return
 }
 
+// create a response to parse from RequestServiceOfCloudDBA response
 func CreateRequestServiceOfCloudDBAResponse() (response *RequestServiceOfCloudDBAResponse) {
 	response = &RequestServiceOfCloudDBAResponse{
 		BaseResponse: &responses.BaseResponse{},

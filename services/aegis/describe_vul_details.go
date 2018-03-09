@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeVulDetails api with *DescribeVulDetailsRequest synchronously
+// api document: https://help.aliyun.com/api/aegis/describevuldetails.html
 func (client *Client) DescribeVulDetails(request *DescribeVulDetailsRequest) (response *DescribeVulDetailsResponse, err error) {
 	response = CreateDescribeVulDetailsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeVulDetails api with *DescribeVulDetailsRequest asynchronously
+// api document: https://help.aliyun.com/api/aegis/describevuldetails.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeVulDetailsWithChan(request *DescribeVulDetailsRequest) (<-chan *DescribeVulDetailsResponse, <-chan error) {
 	responseChan := make(chan *DescribeVulDetailsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeVulDetailsWithChan(request *DescribeVulDetailsRequ
 	return responseChan, errChan
 }
 
+// invoke DescribeVulDetails api with *DescribeVulDetailsRequest asynchronously
+// api document: https://help.aliyun.com/api/aegis/describevuldetails.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeVulDetailsWithCallback(request *DescribeVulDetailsRequest, callback func(response *DescribeVulDetailsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -70,47 +78,16 @@ type DescribeVulDetailsRequest struct {
 	SourceIp        string           `position:"Query" name:"SourceIp"`
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	Type            string           `position:"Query" name:"Type"`
-	Uuids           string           `position:"Query" name:"Uuids"`
 	Name            string           `position:"Query" name:"Name"`
-	PatchId         requests.Integer `position:"Query" name:"PatchId"`
-	Level           string           `position:"Query" name:"Level"`
-	Product         string           `position:"Query" name:"Product"`
-	LastTsStart     requests.Integer `position:"Query" name:"LastTsStart"`
-	LastTsEnd       requests.Integer `position:"Query" name:"LastTsEnd"`
-	StatusList      string           `position:"Query" name:"StatusList"`
-	OrderBy         string           `position:"Query" name:"OrderBy"`
-	Direction       string           `position:"Query" name:"Direction"`
-	AliasName       string           `position:"Query" name:"AliasName"`
-	BatchName       string           `position:"Query" name:"BatchName"`
-	Resource        string           `position:"Query" name:"Resource"`
-	Necessity       string           `position:"Query" name:"Necessity"`
-	Dealed          string           `position:"Query" name:"Dealed"`
-	Lang            string           `position:"Query" name:"Lang"`
-	CurrentPage     requests.Integer `position:"Query" name:"CurrentPage"`
-	PageSize        requests.Integer `position:"Query" name:"PageSize"`
 }
 
 type DescribeVulDetailsResponse struct {
 	*responses.BaseResponse
-	RequestId      string   `json:"RequestId" xml:"RequestId"`
-	Name           string   `json:"Name" xml:"Name"`
-	AliasName      string   `json:"AliasName" xml:"AliasName"`
-	Level          string   `json:"Level" xml:"Level"`
-	VulPublishTs   int      `json:"VulPublishTs" xml:"VulPublishTs"`
-	Type           string   `json:"Type" xml:"Type"`
-	Product        string   `json:"Product" xml:"Product"`
-	HasPatch       bool     `json:"HasPatch" xml:"HasPatch"`
-	PatchPublishTs int      `json:"PatchPublishTs" xml:"PatchPublishTs"`
-	PatchSource    string   `json:"PatchSource" xml:"PatchSource"`
-	Cvss           string   `json:"Cvss" xml:"Cvss"`
-	CveIds         string   `json:"CveIds" xml:"CveIds"`
-	Advice         string   `json:"Advice" xml:"Advice"`
-	Description    string   `json:"Description" xml:"Description"`
-	PendingCount   int      `json:"PendingCount" xml:"PendingCount"`
-	HandledCount   int      `json:"HandledCount" xml:"HandledCount"`
-	CveLists       []string `json:"CveLists" xml:"CveLists"`
+	RequestId string     `json:"RequestId" xml:"RequestId"`
+	Cves      []CvesItem `json:"Cves" xml:"Cves"`
 }
 
+// create a request to invoke DescribeVulDetails API
 func CreateDescribeVulDetailsRequest() (request *DescribeVulDetailsRequest) {
 	request = &DescribeVulDetailsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -119,6 +96,7 @@ func CreateDescribeVulDetailsRequest() (request *DescribeVulDetailsRequest) {
 	return
 }
 
+// create a response to parse from DescribeVulDetails response
 func CreateDescribeVulDetailsResponse() (response *DescribeVulDetailsResponse) {
 	response = &DescribeVulDetailsResponse{
 		BaseResponse: &responses.BaseResponse{},

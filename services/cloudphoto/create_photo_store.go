@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CreatePhotoStore api with *CreatePhotoStoreRequest synchronously
+// api document: https://help.aliyun.com/api/cloudphoto/createphotostore.html
 func (client *Client) CreatePhotoStore(request *CreatePhotoStoreRequest) (response *CreatePhotoStoreResponse, err error) {
 	response = CreateCreatePhotoStoreResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CreatePhotoStore api with *CreatePhotoStoreRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/createphotostore.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreatePhotoStoreWithChan(request *CreatePhotoStoreRequest) (<-chan *CreatePhotoStoreResponse, <-chan error) {
 	responseChan := make(chan *CreatePhotoStoreResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CreatePhotoStoreWithChan(request *CreatePhotoStoreRequest)
 	return responseChan, errChan
 }
 
+// invoke CreatePhotoStore api with *CreatePhotoStoreRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/createphotostore.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreatePhotoStoreWithCallback(request *CreatePhotoStoreRequest, callback func(response *CreatePhotoStoreResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type CreatePhotoStoreResponse struct {
 	Action    string `json:"Action" xml:"Action"`
 }
 
+// create a request to invoke CreatePhotoStore API
 func CreateCreatePhotoStoreRequest() (request *CreatePhotoStoreRequest) {
 	request = &CreatePhotoStoreRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateCreatePhotoStoreRequest() (request *CreatePhotoStoreRequest) {
 	return
 }
 
+// create a response to parse from CreatePhotoStore response
 func CreateCreatePhotoStoreResponse() (response *CreatePhotoStoreResponse) {
 	response = &CreatePhotoStoreResponse{
 		BaseResponse: &responses.BaseResponse{},

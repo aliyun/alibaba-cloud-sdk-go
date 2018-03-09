@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CheckDevices api with *CheckDevicesRequest synchronously
+// api document: https://help.aliyun.com/api/push/checkdevices.html
 func (client *Client) CheckDevices(request *CheckDevicesRequest) (response *CheckDevicesResponse, err error) {
 	response = CreateCheckDevicesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CheckDevices api with *CheckDevicesRequest asynchronously
+// api document: https://help.aliyun.com/api/push/checkdevices.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckDevicesWithChan(request *CheckDevicesRequest) (<-chan *CheckDevicesResponse, <-chan error) {
 	responseChan := make(chan *CheckDevicesResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CheckDevicesWithChan(request *CheckDevicesRequest) (<-chan
 	return responseChan, errChan
 }
 
+// invoke CheckDevices api with *CheckDevicesRequest asynchronously
+// api document: https://help.aliyun.com/api/push/checkdevices.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckDevicesWithCallback(request *CheckDevicesRequest, callback func(response *CheckDevicesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +85,7 @@ type CheckDevicesResponse struct {
 	DeviceCheckInfos DeviceCheckInfos `json:"DeviceCheckInfos" xml:"DeviceCheckInfos"`
 }
 
+// create a request to invoke CheckDevices API
 func CreateCheckDevicesRequest() (request *CheckDevicesRequest) {
 	request = &CheckDevicesRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -85,6 +94,7 @@ func CreateCheckDevicesRequest() (request *CheckDevicesRequest) {
 	return
 }
 
+// create a response to parse from CheckDevices response
 func CreateCheckDevicesResponse() (response *CheckDevicesResponse) {
 	response = &CheckDevicesResponse{
 		BaseResponse: &responses.BaseResponse{},

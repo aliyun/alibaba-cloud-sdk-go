@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeInstanceHistoryEvents api with *DescribeInstanceHistoryEventsRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/describeinstancehistoryevents.html
 func (client *Client) DescribeInstanceHistoryEvents(request *DescribeInstanceHistoryEventsRequest) (response *DescribeInstanceHistoryEventsResponse, err error) {
 	response = CreateDescribeInstanceHistoryEventsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeInstanceHistoryEvents api with *DescribeInstanceHistoryEventsRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describeinstancehistoryevents.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceHistoryEventsWithChan(request *DescribeInstanceHistoryEventsRequest) (<-chan *DescribeInstanceHistoryEventsResponse, <-chan error) {
 	responseChan := make(chan *DescribeInstanceHistoryEventsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeInstanceHistoryEventsWithChan(request *DescribeIns
 	return responseChan, errChan
 }
 
+// invoke DescribeInstanceHistoryEvents api with *DescribeInstanceHistoryEventsRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describeinstancehistoryevents.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceHistoryEventsWithCallback(request *DescribeInstanceHistoryEventsRequest, callback func(response *DescribeInstanceHistoryEventsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type DescribeInstanceHistoryEventsResponse struct {
 	InstanceSystemEventSet InstanceSystemEventSet `json:"InstanceSystemEventSet" xml:"InstanceSystemEventSet"`
 }
 
+// create a request to invoke DescribeInstanceHistoryEvents API
 func CreateDescribeInstanceHistoryEventsRequest() (request *DescribeInstanceHistoryEventsRequest) {
 	request = &DescribeInstanceHistoryEventsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateDescribeInstanceHistoryEventsRequest() (request *DescribeInstanceHist
 	return
 }
 
+// create a response to parse from DescribeInstanceHistoryEvents response
 func CreateDescribeInstanceHistoryEventsResponse() (response *DescribeInstanceHistoryEventsResponse) {
 	response = &DescribeInstanceHistoryEventsResponse{
 		BaseResponse: &responses.BaseResponse{},

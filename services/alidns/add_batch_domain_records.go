@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke AddBatchDomainRecords api with *AddBatchDomainRecordsRequest synchronously
+// api document: https://help.aliyun.com/api/alidns/addbatchdomainrecords.html
 func (client *Client) AddBatchDomainRecords(request *AddBatchDomainRecordsRequest) (response *AddBatchDomainRecordsResponse, err error) {
 	response = CreateAddBatchDomainRecordsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke AddBatchDomainRecords api with *AddBatchDomainRecordsRequest asynchronously
+// api document: https://help.aliyun.com/api/alidns/addbatchdomainrecords.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddBatchDomainRecordsWithChan(request *AddBatchDomainRecordsRequest) (<-chan *AddBatchDomainRecordsResponse, <-chan error) {
 	responseChan := make(chan *AddBatchDomainRecordsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) AddBatchDomainRecordsWithChan(request *AddBatchDomainRecor
 	return responseChan, errChan
 }
 
+// invoke AddBatchDomainRecords api with *AddBatchDomainRecordsRequest asynchronously
+// api document: https://help.aliyun.com/api/alidns/addbatchdomainrecords.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddBatchDomainRecordsWithCallback(request *AddBatchDomainRecordsRequest, callback func(response *AddBatchDomainRecordsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type AddBatchDomainRecordsResponse struct {
 	TraceId   string `json:"TraceId" xml:"TraceId"`
 }
 
+// create a request to invoke AddBatchDomainRecords API
 func CreateAddBatchDomainRecordsRequest() (request *AddBatchDomainRecordsRequest) {
 	request = &AddBatchDomainRecordsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateAddBatchDomainRecordsRequest() (request *AddBatchDomainRecordsRequest
 	return
 }
 
+// create a response to parse from AddBatchDomainRecords response
 func CreateAddBatchDomainRecordsResponse() (response *AddBatchDomainRecordsResponse) {
 	response = &AddBatchDomainRecordsResponse{
 		BaseResponse: &responses.BaseResponse{},

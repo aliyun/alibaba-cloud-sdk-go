@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeDomainPathData api with *DescribeDomainPathDataRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/describedomainpathdata.html
 func (client *Client) DescribeDomainPathData(request *DescribeDomainPathDataRequest) (response *DescribeDomainPathDataResponse, err error) {
 	response = CreateDescribeDomainPathDataResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeDomainPathData api with *DescribeDomainPathDataRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describedomainpathdata.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainPathDataWithChan(request *DescribeDomainPathDataRequest) (<-chan *DescribeDomainPathDataResponse, <-chan error) {
 	responseChan := make(chan *DescribeDomainPathDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeDomainPathDataWithChan(request *DescribeDomainPath
 	return responseChan, errChan
 }
 
+// invoke DescribeDomainPathData api with *DescribeDomainPathDataRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describedomainpathdata.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainPathDataWithCallback(request *DescribeDomainPathDataRequest, callback func(response *DescribeDomainPathDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type DescribeDomainPathDataResponse struct {
 	PathDataPerInterval PathDataPerInterval `json:"PathDataPerInterval" xml:"PathDataPerInterval"`
 }
 
+// create a request to invoke DescribeDomainPathData API
 func CreateDescribeDomainPathDataRequest() (request *DescribeDomainPathDataRequest) {
 	request = &DescribeDomainPathDataRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateDescribeDomainPathDataRequest() (request *DescribeDomainPathDataReque
 	return
 }
 
+// create a response to parse from DescribeDomainPathData response
 func CreateDescribeDomainPathDataResponse() (response *DescribeDomainPathDataResponse) {
 	response = &DescribeDomainPathDataResponse{
 		BaseResponse: &responses.BaseResponse{},

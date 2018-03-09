@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeleteLoadBalancer api with *DeleteLoadBalancerRequest synchronously
+// api document: https://help.aliyun.com/api/slb/deleteloadbalancer.html
 func (client *Client) DeleteLoadBalancer(request *DeleteLoadBalancerRequest) (response *DeleteLoadBalancerResponse, err error) {
 	response = CreateDeleteLoadBalancerResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeleteLoadBalancer api with *DeleteLoadBalancerRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/deleteloadbalancer.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteLoadBalancerWithChan(request *DeleteLoadBalancerRequest) (<-chan *DeleteLoadBalancerResponse, <-chan error) {
 	responseChan := make(chan *DeleteLoadBalancerResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeleteLoadBalancerWithChan(request *DeleteLoadBalancerRequ
 	return responseChan, errChan
 }
 
+// invoke DeleteLoadBalancer api with *DeleteLoadBalancerRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/deleteloadbalancer.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteLoadBalancerWithCallback(request *DeleteLoadBalancerRequest, callback func(response *DeleteLoadBalancerResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type DeleteLoadBalancerResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke DeleteLoadBalancer API
 func CreateDeleteLoadBalancerRequest() (request *DeleteLoadBalancerRequest) {
 	request = &DeleteLoadBalancerRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateDeleteLoadBalancerRequest() (request *DeleteLoadBalancerRequest) {
 	return
 }
 
+// create a response to parse from DeleteLoadBalancer response
 func CreateDeleteLoadBalancerResponse() (response *DeleteLoadBalancerResponse) {
 	response = &DeleteLoadBalancerResponse{
 		BaseResponse: &responses.BaseResponse{},

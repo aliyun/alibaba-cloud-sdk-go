@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SubmitVideoSummaryJob api with *SubmitVideoSummaryJobRequest synchronously
+// api document: https://help.aliyun.com/api/mts/submitvideosummaryjob.html
 func (client *Client) SubmitVideoSummaryJob(request *SubmitVideoSummaryJobRequest) (response *SubmitVideoSummaryJobResponse, err error) {
 	response = CreateSubmitVideoSummaryJobResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SubmitVideoSummaryJob api with *SubmitVideoSummaryJobRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/submitvideosummaryjob.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitVideoSummaryJobWithChan(request *SubmitVideoSummaryJobRequest) (<-chan *SubmitVideoSummaryJobResponse, <-chan error) {
 	responseChan := make(chan *SubmitVideoSummaryJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SubmitVideoSummaryJobWithChan(request *SubmitVideoSummaryJ
 	return responseChan, errChan
 }
 
+// invoke SubmitVideoSummaryJob api with *SubmitVideoSummaryJobRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/submitvideosummaryjob.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitVideoSummaryJobWithCallback(request *SubmitVideoSummaryJobRequest, callback func(response *SubmitVideoSummaryJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,6 +91,7 @@ type SubmitVideoSummaryJobResponse struct {
 	JobId     string `json:"JobId" xml:"JobId"`
 }
 
+// create a request to invoke SubmitVideoSummaryJob API
 func CreateSubmitVideoSummaryJobRequest() (request *SubmitVideoSummaryJobRequest) {
 	request = &SubmitVideoSummaryJobRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -91,6 +100,7 @@ func CreateSubmitVideoSummaryJobRequest() (request *SubmitVideoSummaryJobRequest
 	return
 }
 
+// create a response to parse from SubmitVideoSummaryJob response
 func CreateSubmitVideoSummaryJobResponse() (response *SubmitVideoSummaryJobResponse) {
 	response = &SubmitVideoSummaryJobResponse{
 		BaseResponse: &responses.BaseResponse{},

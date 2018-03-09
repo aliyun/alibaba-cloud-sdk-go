@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SetAutoScaleConfig api with *SetAutoScaleConfigRequest synchronously
+// api document: https://help.aliyun.com/api/ehpc/setautoscaleconfig.html
 func (client *Client) SetAutoScaleConfig(request *SetAutoScaleConfigRequest) (response *SetAutoScaleConfigResponse, err error) {
 	response = CreateSetAutoScaleConfigResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SetAutoScaleConfig api with *SetAutoScaleConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/ehpc/setautoscaleconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetAutoScaleConfigWithChan(request *SetAutoScaleConfigRequest) (<-chan *SetAutoScaleConfigResponse, <-chan error) {
 	responseChan := make(chan *SetAutoScaleConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SetAutoScaleConfigWithChan(request *SetAutoScaleConfigRequ
 	return responseChan, errChan
 }
 
+// invoke SetAutoScaleConfig api with *SetAutoScaleConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/ehpc/setautoscaleconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetAutoScaleConfigWithCallback(request *SetAutoScaleConfigRequest, callback func(response *SetAutoScaleConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -85,6 +93,7 @@ type SetAutoScaleConfigResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke SetAutoScaleConfig API
 func CreateSetAutoScaleConfigRequest() (request *SetAutoScaleConfigRequest) {
 	request = &SetAutoScaleConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -93,6 +102,7 @@ func CreateSetAutoScaleConfigRequest() (request *SetAutoScaleConfigRequest) {
 	return
 }
 
+// create a response to parse from SetAutoScaleConfig response
 func CreateSetAutoScaleConfigResponse() (response *SetAutoScaleConfigResponse) {
 	response = &SetAutoScaleConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

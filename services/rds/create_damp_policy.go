@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CreateDampPolicy api with *CreateDampPolicyRequest synchronously
+// api document: https://help.aliyun.com/api/rds/createdamppolicy.html
 func (client *Client) CreateDampPolicy(request *CreateDampPolicyRequest) (response *CreateDampPolicyResponse, err error) {
 	response = CreateCreateDampPolicyResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CreateDampPolicy api with *CreateDampPolicyRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/createdamppolicy.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateDampPolicyWithChan(request *CreateDampPolicyRequest) (<-chan *CreateDampPolicyResponse, <-chan error) {
 	responseChan := make(chan *CreateDampPolicyResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CreateDampPolicyWithChan(request *CreateDampPolicyRequest)
 	return responseChan, errChan
 }
 
+// invoke CreateDampPolicy api with *CreateDampPolicyRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/createdamppolicy.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateDampPolicyWithCallback(request *CreateDampPolicyRequest, callback func(response *CreateDampPolicyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -88,6 +96,7 @@ type CreateDampPolicyResponse struct {
 	PolicyName string `json:"PolicyName" xml:"PolicyName"`
 }
 
+// create a request to invoke CreateDampPolicy API
 func CreateCreateDampPolicyRequest() (request *CreateDampPolicyRequest) {
 	request = &CreateDampPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -96,6 +105,7 @@ func CreateCreateDampPolicyRequest() (request *CreateDampPolicyRequest) {
 	return
 }
 
+// create a response to parse from CreateDampPolicy response
 func CreateCreateDampPolicyResponse() (response *CreateDampPolicyResponse) {
 	response = &CreateDampPolicyResponse{
 		BaseResponse: &responses.BaseResponse{},

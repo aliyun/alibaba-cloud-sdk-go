@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeDBInstancePerformance api with *DescribeDBInstancePerformanceRequest synchronously
+// api document: https://help.aliyun.com/api/rds/describedbinstanceperformance.html
 func (client *Client) DescribeDBInstancePerformance(request *DescribeDBInstancePerformanceRequest) (response *DescribeDBInstancePerformanceResponse, err error) {
 	response = CreateDescribeDBInstancePerformanceResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeDBInstancePerformance api with *DescribeDBInstancePerformanceRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describedbinstanceperformance.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBInstancePerformanceWithChan(request *DescribeDBInstancePerformanceRequest) (<-chan *DescribeDBInstancePerformanceResponse, <-chan error) {
 	responseChan := make(chan *DescribeDBInstancePerformanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeDBInstancePerformanceWithChan(request *DescribeDBI
 	return responseChan, errChan
 }
 
+// invoke DescribeDBInstancePerformance api with *DescribeDBInstancePerformanceRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describedbinstanceperformance.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBInstancePerformanceWithCallback(request *DescribeDBInstancePerformanceRequest, callback func(response *DescribeDBInstancePerformanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -87,6 +95,7 @@ type DescribeDBInstancePerformanceResponse struct {
 	PerformanceKeys PerformanceKeysInDescribeDBInstancePerformance `json:"PerformanceKeys" xml:"PerformanceKeys"`
 }
 
+// create a request to invoke DescribeDBInstancePerformance API
 func CreateDescribeDBInstancePerformanceRequest() (request *DescribeDBInstancePerformanceRequest) {
 	request = &DescribeDBInstancePerformanceRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -95,6 +104,7 @@ func CreateDescribeDBInstancePerformanceRequest() (request *DescribeDBInstancePe
 	return
 }
 
+// create a response to parse from DescribeDBInstancePerformance response
 func CreateDescribeDBInstancePerformanceResponse() (response *DescribeDBInstancePerformanceResponse) {
 	response = &DescribeDBInstancePerformanceResponse{
 		BaseResponse: &responses.BaseResponse{},

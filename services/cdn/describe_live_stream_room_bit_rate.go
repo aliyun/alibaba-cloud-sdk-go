@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeLiveStreamRoomBitRate api with *DescribeLiveStreamRoomBitRateRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/describelivestreamroombitrate.html
 func (client *Client) DescribeLiveStreamRoomBitRate(request *DescribeLiveStreamRoomBitRateRequest) (response *DescribeLiveStreamRoomBitRateResponse, err error) {
 	response = CreateDescribeLiveStreamRoomBitRateResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeLiveStreamRoomBitRate api with *DescribeLiveStreamRoomBitRateRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describelivestreamroombitrate.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamRoomBitRateWithChan(request *DescribeLiveStreamRoomBitRateRequest) (<-chan *DescribeLiveStreamRoomBitRateResponse, <-chan error) {
 	responseChan := make(chan *DescribeLiveStreamRoomBitRateResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeLiveStreamRoomBitRateWithChan(request *DescribeLiv
 	return responseChan, errChan
 }
 
+// invoke DescribeLiveStreamRoomBitRate api with *DescribeLiveStreamRoomBitRateRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describelivestreamroombitrate.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamRoomBitRateWithCallback(request *DescribeLiveStreamRoomBitRateRequest, callback func(response *DescribeLiveStreamRoomBitRateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type DescribeLiveStreamRoomBitRateResponse struct {
 	FrameRateAndBitRateInfos FrameRateAndBitRateInfosInDescribeLiveStreamRoomBitRate `json:"FrameRateAndBitRateInfos" xml:"FrameRateAndBitRateInfos"`
 }
 
+// create a request to invoke DescribeLiveStreamRoomBitRate API
 func CreateDescribeLiveStreamRoomBitRateRequest() (request *DescribeLiveStreamRoomBitRateRequest) {
 	request = &DescribeLiveStreamRoomBitRateRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateDescribeLiveStreamRoomBitRateRequest() (request *DescribeLiveStreamRo
 	return
 }
 
+// create a response to parse from DescribeLiveStreamRoomBitRate response
 func CreateDescribeLiveStreamRoomBitRateResponse() (response *DescribeLiveStreamRoomBitRateResponse) {
 	response = &DescribeLiveStreamRoomBitRateResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SaveReceiverDetail api with *SaveReceiverDetailRequest synchronously
+// api document: https://help.aliyun.com/api/dm/savereceiverdetail.html
 func (client *Client) SaveReceiverDetail(request *SaveReceiverDetailRequest) (response *SaveReceiverDetailResponse, err error) {
 	response = CreateSaveReceiverDetailResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SaveReceiverDetail api with *SaveReceiverDetailRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/savereceiverdetail.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveReceiverDetailWithChan(request *SaveReceiverDetailRequest) (<-chan *SaveReceiverDetailResponse, <-chan error) {
 	responseChan := make(chan *SaveReceiverDetailResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SaveReceiverDetailWithChan(request *SaveReceiverDetailRequ
 	return responseChan, errChan
 }
 
+// invoke SaveReceiverDetail api with *SaveReceiverDetailRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/savereceiverdetail.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveReceiverDetailWithCallback(request *SaveReceiverDetailRequest, callback func(response *SaveReceiverDetailResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type SaveReceiverDetailResponse struct {
 	Data         DataInSaveReceiverDetail `json:"Data" xml:"Data"`
 }
 
+// create a request to invoke SaveReceiverDetail API
 func CreateSaveReceiverDetailRequest() (request *SaveReceiverDetailRequest) {
 	request = &SaveReceiverDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateSaveReceiverDetailRequest() (request *SaveReceiverDetailRequest) {
 	return
 }
 
+// create a response to parse from SaveReceiverDetail response
 func CreateSaveReceiverDetailResponse() (response *SaveReceiverDetailResponse) {
 	response = &SaveReceiverDetailResponse{
 		BaseResponse: &responses.BaseResponse{},

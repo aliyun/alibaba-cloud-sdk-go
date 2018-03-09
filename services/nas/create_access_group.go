@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CreateAccessGroup api with *CreateAccessGroupRequest synchronously
+// api document: https://help.aliyun.com/api/nas/createaccessgroup.html
 func (client *Client) CreateAccessGroup(request *CreateAccessGroupRequest) (response *CreateAccessGroupResponse, err error) {
 	response = CreateCreateAccessGroupResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CreateAccessGroup api with *CreateAccessGroupRequest asynchronously
+// api document: https://help.aliyun.com/api/nas/createaccessgroup.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateAccessGroupWithChan(request *CreateAccessGroupRequest) (<-chan *CreateAccessGroupResponse, <-chan error) {
 	responseChan := make(chan *CreateAccessGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CreateAccessGroupWithChan(request *CreateAccessGroupReques
 	return responseChan, errChan
 }
 
+// invoke CreateAccessGroup api with *CreateAccessGroupRequest asynchronously
+// api document: https://help.aliyun.com/api/nas/createaccessgroup.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateAccessGroupWithCallback(request *CreateAccessGroupRequest, callback func(response *CreateAccessGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type CreateAccessGroupResponse struct {
 	AccessGroupName string `json:"AccessGroupName" xml:"AccessGroupName"`
 }
 
+// create a request to invoke CreateAccessGroup API
 func CreateCreateAccessGroupRequest() (request *CreateAccessGroupRequest) {
 	request = &CreateAccessGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateCreateAccessGroupRequest() (request *CreateAccessGroupRequest) {
 	return
 }
 
+// create a response to parse from CreateAccessGroup response
 func CreateCreateAccessGroupResponse() (response *CreateAccessGroupResponse) {
 	response = &CreateAccessGroupResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ListPolicies api with *ListPoliciesRequest synchronously
+// api document: https://help.aliyun.com/api/ram/listpolicies.html
 func (client *Client) ListPolicies(request *ListPoliciesRequest) (response *ListPoliciesResponse, err error) {
 	response = CreateListPoliciesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ListPolicies api with *ListPoliciesRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/listpolicies.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListPoliciesWithChan(request *ListPoliciesRequest) (<-chan *ListPoliciesResponse, <-chan error) {
 	responseChan := make(chan *ListPoliciesResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ListPoliciesWithChan(request *ListPoliciesRequest) (<-chan
 	return responseChan, errChan
 }
 
+// invoke ListPolicies api with *ListPoliciesRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/listpolicies.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListPoliciesWithCallback(request *ListPoliciesRequest, callback func(response *ListPoliciesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type ListPoliciesResponse struct {
 	Policies    PoliciesInListPolicies `json:"Policies" xml:"Policies"`
 }
 
+// create a request to invoke ListPolicies API
 func CreateListPoliciesRequest() (request *ListPoliciesRequest) {
 	request = &ListPoliciesRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateListPoliciesRequest() (request *ListPoliciesRequest) {
 	return
 }
 
+// create a response to parse from ListPolicies response
 func CreateListPoliciesResponse() (response *ListPoliciesResponse) {
 	response = &ListPoliciesResponse{
 		BaseResponse: &responses.BaseResponse{},

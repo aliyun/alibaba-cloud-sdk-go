@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ChangeDomainGroup api with *ChangeDomainGroupRequest synchronously
+// api document: https://help.aliyun.com/api/alidns/changedomaingroup.html
 func (client *Client) ChangeDomainGroup(request *ChangeDomainGroupRequest) (response *ChangeDomainGroupResponse, err error) {
 	response = CreateChangeDomainGroupResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ChangeDomainGroup api with *ChangeDomainGroupRequest asynchronously
+// api document: https://help.aliyun.com/api/alidns/changedomaingroup.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ChangeDomainGroupWithChan(request *ChangeDomainGroupRequest) (<-chan *ChangeDomainGroupResponse, <-chan error) {
 	responseChan := make(chan *ChangeDomainGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ChangeDomainGroupWithChan(request *ChangeDomainGroupReques
 	return responseChan, errChan
 }
 
+// invoke ChangeDomainGroup api with *ChangeDomainGroupRequest asynchronously
+// api document: https://help.aliyun.com/api/alidns/changedomaingroup.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ChangeDomainGroupWithCallback(request *ChangeDomainGroupRequest, callback func(response *ChangeDomainGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type ChangeDomainGroupResponse struct {
 	GroupName string `json:"GroupName" xml:"GroupName"`
 }
 
+// create a request to invoke ChangeDomainGroup API
 func CreateChangeDomainGroupRequest() (request *ChangeDomainGroupRequest) {
 	request = &ChangeDomainGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateChangeDomainGroupRequest() (request *ChangeDomainGroupRequest) {
 	return
 }
 
+// create a response to parse from ChangeDomainGroup response
 func CreateChangeDomainGroupResponse() (response *ChangeDomainGroupResponse) {
 	response = &ChangeDomainGroupResponse{
 		BaseResponse: &responses.BaseResponse{},

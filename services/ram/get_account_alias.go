@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke GetAccountAlias api with *GetAccountAliasRequest synchronously
+// api document: https://help.aliyun.com/api/ram/getaccountalias.html
 func (client *Client) GetAccountAlias(request *GetAccountAliasRequest) (response *GetAccountAliasResponse, err error) {
 	response = CreateGetAccountAliasResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke GetAccountAlias api with *GetAccountAliasRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/getaccountalias.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetAccountAliasWithChan(request *GetAccountAliasRequest) (<-chan *GetAccountAliasResponse, <-chan error) {
 	responseChan := make(chan *GetAccountAliasResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) GetAccountAliasWithChan(request *GetAccountAliasRequest) (
 	return responseChan, errChan
 }
 
+// invoke GetAccountAlias api with *GetAccountAliasRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/getaccountalias.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetAccountAliasWithCallback(request *GetAccountAliasRequest, callback func(response *GetAccountAliasResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -75,6 +83,7 @@ type GetAccountAliasResponse struct {
 	AccountAlias string `json:"AccountAlias" xml:"AccountAlias"`
 }
 
+// create a request to invoke GetAccountAlias API
 func CreateGetAccountAliasRequest() (request *GetAccountAliasRequest) {
 	request = &GetAccountAliasRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -83,6 +92,7 @@ func CreateGetAccountAliasRequest() (request *GetAccountAliasRequest) {
 	return
 }
 
+// create a response to parse from GetAccountAlias response
 func CreateGetAccountAliasResponse() (response *GetAccountAliasResponse) {
 	response = &GetAccountAliasResponse{
 		BaseResponse: &responses.BaseResponse{},

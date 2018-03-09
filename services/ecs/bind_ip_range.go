@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke BindIpRange api with *BindIpRangeRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/bindiprange.html
 func (client *Client) BindIpRange(request *BindIpRangeRequest) (response *BindIpRangeResponse, err error) {
 	response = CreateBindIpRangeResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke BindIpRange api with *BindIpRangeRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/bindiprange.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BindIpRangeWithChan(request *BindIpRangeRequest) (<-chan *BindIpRangeResponse, <-chan error) {
 	responseChan := make(chan *BindIpRangeResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) BindIpRangeWithChan(request *BindIpRangeRequest) (<-chan *
 	return responseChan, errChan
 }
 
+// invoke BindIpRange api with *BindIpRangeRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/bindiprange.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BindIpRangeWithCallback(request *BindIpRangeRequest, callback func(response *BindIpRangeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type BindIpRangeResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke BindIpRange API
 func CreateBindIpRangeRequest() (request *BindIpRangeRequest) {
 	request = &BindIpRangeRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateBindIpRangeRequest() (request *BindIpRangeRequest) {
 	return
 }
 
+// create a response to parse from BindIpRange response
 func CreateBindIpRangeResponse() (response *BindIpRangeResponse) {
 	response = &BindIpRangeResponse{
 		BaseResponse: &responses.BaseResponse{},

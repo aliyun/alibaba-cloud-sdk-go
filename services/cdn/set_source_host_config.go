@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SetSourceHostConfig api with *SetSourceHostConfigRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/setsourcehostconfig.html
 func (client *Client) SetSourceHostConfig(request *SetSourceHostConfigRequest) (response *SetSourceHostConfigResponse, err error) {
 	response = CreateSetSourceHostConfigResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SetSourceHostConfig api with *SetSourceHostConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/setsourcehostconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetSourceHostConfigWithChan(request *SetSourceHostConfigRequest) (<-chan *SetSourceHostConfigResponse, <-chan error) {
 	responseChan := make(chan *SetSourceHostConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SetSourceHostConfigWithChan(request *SetSourceHostConfigRe
 	return responseChan, errChan
 }
 
+// invoke SetSourceHostConfig api with *SetSourceHostConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/setsourcehostconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetSourceHostConfigWithCallback(request *SetSourceHostConfigRequest, callback func(response *SetSourceHostConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +87,7 @@ type SetSourceHostConfigResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke SetSourceHostConfig API
 func CreateSetSourceHostConfigRequest() (request *SetSourceHostConfigRequest) {
 	request = &SetSourceHostConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -87,6 +96,7 @@ func CreateSetSourceHostConfigRequest() (request *SetSourceHostConfigRequest) {
 	return
 }
 
+// create a response to parse from SetSourceHostConfig response
 func CreateSetSourceHostConfigResponse() (response *SetSourceHostConfigResponse) {
 	response = &SetSourceHostConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeSnapshotsUsage api with *DescribeSnapshotsUsageRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/describesnapshotsusage.html
 func (client *Client) DescribeSnapshotsUsage(request *DescribeSnapshotsUsageRequest) (response *DescribeSnapshotsUsageResponse, err error) {
 	response = CreateDescribeSnapshotsUsageResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeSnapshotsUsage api with *DescribeSnapshotsUsageRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describesnapshotsusage.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSnapshotsUsageWithChan(request *DescribeSnapshotsUsageRequest) (<-chan *DescribeSnapshotsUsageResponse, <-chan error) {
 	responseChan := make(chan *DescribeSnapshotsUsageResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeSnapshotsUsageWithChan(request *DescribeSnapshotsU
 	return responseChan, errChan
 }
 
+// invoke DescribeSnapshotsUsage api with *DescribeSnapshotsUsageRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describesnapshotsusage.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSnapshotsUsageWithCallback(request *DescribeSnapshotsUsageRequest, callback func(response *DescribeSnapshotsUsageResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,6 +84,7 @@ type DescribeSnapshotsUsageResponse struct {
 	SnapshotSize  int    `json:"SnapshotSize" xml:"SnapshotSize"`
 }
 
+// create a request to invoke DescribeSnapshotsUsage API
 func CreateDescribeSnapshotsUsageRequest() (request *DescribeSnapshotsUsageRequest) {
 	request = &DescribeSnapshotsUsageRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -84,6 +93,7 @@ func CreateDescribeSnapshotsUsageRequest() (request *DescribeSnapshotsUsageReque
 	return
 }
 
+// create a response to parse from DescribeSnapshotsUsage response
 func CreateDescribeSnapshotsUsageResponse() (response *DescribeSnapshotsUsageResponse) {
 	response = &DescribeSnapshotsUsageResponse{
 		BaseResponse: &responses.BaseResponse{},

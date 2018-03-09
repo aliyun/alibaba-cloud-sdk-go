@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ActionDiskMask api with *ActionDiskMaskRequest synchronously
+// api document: https://help.aliyun.com/api/tesladam/actiondiskmask.html
 func (client *Client) ActionDiskMask(request *ActionDiskMaskRequest) (response *ActionDiskMaskResponse, err error) {
 	response = CreateActionDiskMaskResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ActionDiskMask api with *ActionDiskMaskRequest asynchronously
+// api document: https://help.aliyun.com/api/tesladam/actiondiskmask.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ActionDiskMaskWithChan(request *ActionDiskMaskRequest) (<-chan *ActionDiskMaskResponse, <-chan error) {
 	responseChan := make(chan *ActionDiskMaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ActionDiskMaskWithChan(request *ActionDiskMaskRequest) (<-
 	return responseChan, errChan
 }
 
+// invoke ActionDiskMask api with *ActionDiskMaskRequest asynchronously
+// api document: https://help.aliyun.com/api/tesladam/actiondiskmask.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ActionDiskMaskWithCallback(request *ActionDiskMaskRequest, callback func(response *ActionDiskMaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -67,9 +75,9 @@ func (client *Client) ActionDiskMaskWithCallback(request *ActionDiskMaskRequest,
 
 type ActionDiskMaskRequest struct {
 	*requests.RpcRequest
-	Op        string `position:"Query" name:"Op"`
-	DiskMount string `position:"Query" name:"DiskMount"`
 	Ip        string `position:"Query" name:"Ip"`
+	DiskMount string `position:"Query" name:"DiskMount"`
+	Op        string `position:"Query" name:"Op"`
 }
 
 type ActionDiskMaskResponse struct {
@@ -79,6 +87,7 @@ type ActionDiskMaskResponse struct {
 	Result  string `json:"Result" xml:"Result"`
 }
 
+// create a request to invoke ActionDiskMask API
 func CreateActionDiskMaskRequest() (request *ActionDiskMaskRequest) {
 	request = &ActionDiskMaskRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -87,6 +96,7 @@ func CreateActionDiskMaskRequest() (request *ActionDiskMaskRequest) {
 	return
 }
 
+// create a response to parse from ActionDiskMask response
 func CreateActionDiskMaskResponse() (response *ActionDiskMaskResponse) {
 	response = &ActionDiskMaskResponse{
 		BaseResponse: &responses.BaseResponse{},

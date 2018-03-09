@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeleteCdnDomain api with *DeleteCdnDomainRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/deletecdndomain.html
 func (client *Client) DeleteCdnDomain(request *DeleteCdnDomainRequest) (response *DeleteCdnDomainResponse, err error) {
 	response = CreateDeleteCdnDomainResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeleteCdnDomain api with *DeleteCdnDomainRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/deletecdndomain.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteCdnDomainWithChan(request *DeleteCdnDomainRequest) (<-chan *DeleteCdnDomainResponse, <-chan error) {
 	responseChan := make(chan *DeleteCdnDomainResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeleteCdnDomainWithChan(request *DeleteCdnDomainRequest) (
 	return responseChan, errChan
 }
 
+// invoke DeleteCdnDomain api with *DeleteCdnDomainRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/deletecdndomain.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteCdnDomainWithCallback(request *DeleteCdnDomainRequest, callback func(response *DeleteCdnDomainResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type DeleteCdnDomainResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke DeleteCdnDomain API
 func CreateDeleteCdnDomainRequest() (request *DeleteCdnDomainRequest) {
 	request = &DeleteCdnDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateDeleteCdnDomainRequest() (request *DeleteCdnDomainRequest) {
 	return
 }
 
+// create a response to parse from DeleteCdnDomain response
 func CreateDeleteCdnDomainResponse() (response *DeleteCdnDomainResponse) {
 	response = &DeleteCdnDomainResponse{
 		BaseResponse: &responses.BaseResponse{},

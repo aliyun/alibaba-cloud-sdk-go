@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke StopJobs api with *StopJobsRequest synchronously
+// api document: https://help.aliyun.com/api/ehpc/stopjobs.html
 func (client *Client) StopJobs(request *StopJobsRequest) (response *StopJobsResponse, err error) {
 	response = CreateStopJobsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke StopJobs api with *StopJobsRequest asynchronously
+// api document: https://help.aliyun.com/api/ehpc/stopjobs.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StopJobsWithChan(request *StopJobsRequest) (<-chan *StopJobsResponse, <-chan error) {
 	responseChan := make(chan *StopJobsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) StopJobsWithChan(request *StopJobsRequest) (<-chan *StopJo
 	return responseChan, errChan
 }
 
+// invoke StopJobs api with *StopJobsRequest asynchronously
+// api document: https://help.aliyun.com/api/ehpc/stopjobs.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StopJobsWithCallback(request *StopJobsRequest, callback func(response *StopJobsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,6 +84,7 @@ type StopJobsResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke StopJobs API
 func CreateStopJobsRequest() (request *StopJobsRequest) {
 	request = &StopJobsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -84,6 +93,7 @@ func CreateStopJobsRequest() (request *StopJobsRequest) {
 	return
 }
 
+// create a response to parse from StopJobs response
 func CreateStopJobsResponse() (response *StopJobsResponse) {
 	response = &StopJobsResponse{
 		BaseResponse: &responses.BaseResponse{},

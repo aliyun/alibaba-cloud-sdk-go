@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SetPasswordPolicy api with *SetPasswordPolicyRequest synchronously
+// api document: https://help.aliyun.com/api/ram/setpasswordpolicy.html
 func (client *Client) SetPasswordPolicy(request *SetPasswordPolicyRequest) (response *SetPasswordPolicyResponse, err error) {
 	response = CreateSetPasswordPolicyResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SetPasswordPolicy api with *SetPasswordPolicyRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/setpasswordpolicy.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetPasswordPolicyWithChan(request *SetPasswordPolicyRequest) (<-chan *SetPasswordPolicyResponse, <-chan error) {
 	responseChan := make(chan *SetPasswordPolicyResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SetPasswordPolicyWithChan(request *SetPasswordPolicyReques
 	return responseChan, errChan
 }
 
+// invoke SetPasswordPolicy api with *SetPasswordPolicyRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/setpasswordpolicy.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetPasswordPolicyWithCallback(request *SetPasswordPolicyRequest, callback func(response *SetPasswordPolicyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,6 +92,7 @@ type SetPasswordPolicyResponse struct {
 	PasswordPolicy PasswordPolicy `json:"PasswordPolicy" xml:"PasswordPolicy"`
 }
 
+// create a request to invoke SetPasswordPolicy API
 func CreateSetPasswordPolicyRequest() (request *SetPasswordPolicyRequest) {
 	request = &SetPasswordPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -92,6 +101,7 @@ func CreateSetPasswordPolicyRequest() (request *SetPasswordPolicyRequest) {
 	return
 }
 
+// create a response to parse from SetPasswordPolicy response
 func CreateSetPasswordPolicyResponse() (response *SetPasswordPolicyResponse) {
 	response = &SetPasswordPolicyResponse{
 		BaseResponse: &responses.BaseResponse{},

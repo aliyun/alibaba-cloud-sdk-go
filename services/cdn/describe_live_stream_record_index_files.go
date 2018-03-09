@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeLiveStreamRecordIndexFiles api with *DescribeLiveStreamRecordIndexFilesRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/describelivestreamrecordindexfiles.html
 func (client *Client) DescribeLiveStreamRecordIndexFiles(request *DescribeLiveStreamRecordIndexFilesRequest) (response *DescribeLiveStreamRecordIndexFilesResponse, err error) {
 	response = CreateDescribeLiveStreamRecordIndexFilesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeLiveStreamRecordIndexFiles api with *DescribeLiveStreamRecordIndexFilesRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describelivestreamrecordindexfiles.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamRecordIndexFilesWithChan(request *DescribeLiveStreamRecordIndexFilesRequest) (<-chan *DescribeLiveStreamRecordIndexFilesResponse, <-chan error) {
 	responseChan := make(chan *DescribeLiveStreamRecordIndexFilesResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeLiveStreamRecordIndexFilesWithChan(request *Descri
 	return responseChan, errChan
 }
 
+// invoke DescribeLiveStreamRecordIndexFiles api with *DescribeLiveStreamRecordIndexFilesRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describelivestreamrecordindexfiles.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamRecordIndexFilesWithCallback(request *DescribeLiveStreamRecordIndexFilesRequest, callback func(response *DescribeLiveStreamRecordIndexFilesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type DescribeLiveStreamRecordIndexFilesResponse struct {
 	RecordIndexInfoList RecordIndexInfoList `json:"RecordIndexInfoList" xml:"RecordIndexInfoList"`
 }
 
+// create a request to invoke DescribeLiveStreamRecordIndexFiles API
 func CreateDescribeLiveStreamRecordIndexFilesRequest() (request *DescribeLiveStreamRecordIndexFilesRequest) {
 	request = &DescribeLiveStreamRecordIndexFilesRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateDescribeLiveStreamRecordIndexFilesRequest() (request *DescribeLiveStr
 	return
 }
 
+// create a response to parse from DescribeLiveStreamRecordIndexFiles response
 func CreateDescribeLiveStreamRecordIndexFilesResponse() (response *DescribeLiveStreamRecordIndexFilesResponse) {
 	response = &DescribeLiveStreamRecordIndexFilesResponse{
 		BaseResponse: &responses.BaseResponse{},

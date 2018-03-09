@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeBackupPolicy api with *DescribeBackupPolicyRequest synchronously
+// api document: https://help.aliyun.com/api/rds/describebackuppolicy.html
 func (client *Client) DescribeBackupPolicy(request *DescribeBackupPolicyRequest) (response *DescribeBackupPolicyResponse, err error) {
 	response = CreateDescribeBackupPolicyResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeBackupPolicy api with *DescribeBackupPolicyRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describebackuppolicy.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBackupPolicyWithChan(request *DescribeBackupPolicyRequest) (<-chan *DescribeBackupPolicyResponse, <-chan error) {
 	responseChan := make(chan *DescribeBackupPolicyResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeBackupPolicyWithChan(request *DescribeBackupPolicy
 	return responseChan, errChan
 }
 
+// invoke DescribeBackupPolicy api with *DescribeBackupPolicyRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describebackuppolicy.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBackupPolicyWithCallback(request *DescribeBackupPolicyRequest, callback func(response *DescribeBackupPolicyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -85,6 +93,7 @@ type DescribeBackupPolicyResponse struct {
 	LogBackupRetentionPeriod int    `json:"LogBackupRetentionPeriod" xml:"LogBackupRetentionPeriod"`
 }
 
+// create a request to invoke DescribeBackupPolicy API
 func CreateDescribeBackupPolicyRequest() (request *DescribeBackupPolicyRequest) {
 	request = &DescribeBackupPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -93,6 +102,7 @@ func CreateDescribeBackupPolicyRequest() (request *DescribeBackupPolicyRequest) 
 	return
 }
 
+// create a response to parse from DescribeBackupPolicy response
 func CreateDescribeBackupPolicyResponse() (response *DescribeBackupPolicyResponse) {
 	response = &DescribeBackupPolicyResponse{
 		BaseResponse: &responses.BaseResponse{},

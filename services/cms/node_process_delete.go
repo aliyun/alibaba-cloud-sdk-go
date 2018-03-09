@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke NodeProcessDelete api with *NodeProcessDeleteRequest synchronously
+// api document: https://help.aliyun.com/api/cms/nodeprocessdelete.html
 func (client *Client) NodeProcessDelete(request *NodeProcessDeleteRequest) (response *NodeProcessDeleteResponse, err error) {
 	response = CreateNodeProcessDeleteResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke NodeProcessDelete api with *NodeProcessDeleteRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/nodeprocessdelete.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) NodeProcessDeleteWithChan(request *NodeProcessDeleteRequest) (<-chan *NodeProcessDeleteResponse, <-chan error) {
 	responseChan := make(chan *NodeProcessDeleteResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) NodeProcessDeleteWithChan(request *NodeProcessDeleteReques
 	return responseChan, errChan
 }
 
+// invoke NodeProcessDelete api with *NodeProcessDeleteRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/nodeprocessdelete.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) NodeProcessDeleteWithCallback(request *NodeProcessDeleteRequest, callback func(response *NodeProcessDeleteResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type NodeProcessDeleteResponse struct {
 	RequestId    string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke NodeProcessDelete API
 func CreateNodeProcessDeleteRequest() (request *NodeProcessDeleteRequest) {
 	request = &NodeProcessDeleteRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateNodeProcessDeleteRequest() (request *NodeProcessDeleteRequest) {
 	return
 }
 
+// create a response to parse from NodeProcessDelete response
 func CreateNodeProcessDeleteResponse() (response *NodeProcessDeleteResponse) {
 	response = &NodeProcessDeleteResponse{
 		BaseResponse: &responses.BaseResponse{},

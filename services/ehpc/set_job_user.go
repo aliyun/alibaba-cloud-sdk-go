@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SetJobUser api with *SetJobUserRequest synchronously
+// api document: https://help.aliyun.com/api/ehpc/setjobuser.html
 func (client *Client) SetJobUser(request *SetJobUserRequest) (response *SetJobUserResponse, err error) {
 	response = CreateSetJobUserResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SetJobUser api with *SetJobUserRequest asynchronously
+// api document: https://help.aliyun.com/api/ehpc/setjobuser.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetJobUserWithChan(request *SetJobUserRequest) (<-chan *SetJobUserResponse, <-chan error) {
 	responseChan := make(chan *SetJobUserResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SetJobUserWithChan(request *SetJobUserRequest) (<-chan *Se
 	return responseChan, errChan
 }
 
+// invoke SetJobUser api with *SetJobUserRequest asynchronously
+// api document: https://help.aliyun.com/api/ehpc/setjobuser.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetJobUserWithCallback(request *SetJobUserRequest, callback func(response *SetJobUserResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +85,7 @@ type SetJobUserResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke SetJobUser API
 func CreateSetJobUserRequest() (request *SetJobUserRequest) {
 	request = &SetJobUserRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -85,6 +94,7 @@ func CreateSetJobUserRequest() (request *SetJobUserRequest) {
 	return
 }
 
+// create a response to parse from SetJobUser response
 func CreateSetJobUserResponse() (response *SetJobUserResponse) {
 	response = &SetJobUserResponse{
 		BaseResponse: &responses.BaseResponse{},

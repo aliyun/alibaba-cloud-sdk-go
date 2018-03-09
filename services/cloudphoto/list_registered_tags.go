@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ListRegisteredTags api with *ListRegisteredTagsRequest synchronously
+// api document: https://help.aliyun.com/api/cloudphoto/listregisteredtags.html
 func (client *Client) ListRegisteredTags(request *ListRegisteredTagsRequest) (response *ListRegisteredTagsResponse, err error) {
 	response = CreateListRegisteredTagsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ListRegisteredTags api with *ListRegisteredTagsRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/listregisteredtags.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListRegisteredTagsWithChan(request *ListRegisteredTagsRequest) (<-chan *ListRegisteredTagsResponse, <-chan error) {
 	responseChan := make(chan *ListRegisteredTagsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ListRegisteredTagsWithChan(request *ListRegisteredTagsRequ
 	return responseChan, errChan
 }
 
+// invoke ListRegisteredTags api with *ListRegisteredTagsRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/listregisteredtags.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListRegisteredTagsWithCallback(request *ListRegisteredTagsRequest, callback func(response *ListRegisteredTagsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type ListRegisteredTagsResponse struct {
 	RegisteredTags []RegisteredTag `json:"RegisteredTags" xml:"RegisteredTags"`
 }
 
+// create a request to invoke ListRegisteredTags API
 func CreateListRegisteredTagsRequest() (request *ListRegisteredTagsRequest) {
 	request = &ListRegisteredTagsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateListRegisteredTagsRequest() (request *ListRegisteredTagsRequest) {
 	return
 }
 
+// create a response to parse from ListRegisteredTags response
 func CreateListRegisteredTagsResponse() (response *ListRegisteredTagsResponse) {
 	response = &ListRegisteredTagsResponse{
 		BaseResponse: &responses.BaseResponse{},

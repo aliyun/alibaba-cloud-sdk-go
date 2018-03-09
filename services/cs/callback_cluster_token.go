@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CallbackClusterToken api with *CallbackClusterTokenRequest synchronously
+// api document: https://help.aliyun.com/api/cs/callbackclustertoken.html
 func (client *Client) CallbackClusterToken(request *CallbackClusterTokenRequest) (response *CallbackClusterTokenResponse, err error) {
 	response = CreateCallbackClusterTokenResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CallbackClusterToken api with *CallbackClusterTokenRequest asynchronously
+// api document: https://help.aliyun.com/api/cs/callbackclustertoken.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CallbackClusterTokenWithChan(request *CallbackClusterTokenRequest) (<-chan *CallbackClusterTokenResponse, <-chan error) {
 	responseChan := make(chan *CallbackClusterTokenResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CallbackClusterTokenWithChan(request *CallbackClusterToken
 	return responseChan, errChan
 }
 
+// invoke CallbackClusterToken api with *CallbackClusterTokenRequest asynchronously
+// api document: https://help.aliyun.com/api/cs/callbackclustertoken.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CallbackClusterTokenWithCallback(request *CallbackClusterTokenRequest, callback func(response *CallbackClusterTokenResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -67,14 +75,15 @@ func (client *Client) CallbackClusterTokenWithCallback(request *CallbackClusterT
 
 type CallbackClusterTokenRequest struct {
 	*requests.RoaRequest
-	ReqOnce string `position:"Path" name:"ReqOnce"`
 	Token   string `position:"Path" name:"Token"`
+	ReqOnce string `position:"Path" name:"ReqOnce"`
 }
 
 type CallbackClusterTokenResponse struct {
 	*responses.BaseResponse
 }
 
+// create a request to invoke CallbackClusterToken API
 func CreateCallbackClusterTokenRequest() (request *CallbackClusterTokenRequest) {
 	request = &CallbackClusterTokenRequest{
 		RoaRequest: &requests.RoaRequest{},
@@ -84,6 +93,7 @@ func CreateCallbackClusterTokenRequest() (request *CallbackClusterTokenRequest) 
 	return
 }
 
+// create a response to parse from CallbackClusterToken response
 func CreateCallbackClusterTokenResponse() (response *CallbackClusterTokenResponse) {
 	response = &CallbackClusterTokenResponse{
 		BaseResponse: &responses.BaseResponse{},

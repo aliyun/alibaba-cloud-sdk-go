@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke PushObjectCache api with *PushObjectCacheRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/pushobjectcache.html
 func (client *Client) PushObjectCache(request *PushObjectCacheRequest) (response *PushObjectCacheResponse, err error) {
 	response = CreatePushObjectCacheResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke PushObjectCache api with *PushObjectCacheRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/pushobjectcache.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PushObjectCacheWithChan(request *PushObjectCacheRequest) (<-chan *PushObjectCacheResponse, <-chan error) {
 	responseChan := make(chan *PushObjectCacheResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) PushObjectCacheWithChan(request *PushObjectCacheRequest) (
 	return responseChan, errChan
 }
 
+// invoke PushObjectCache api with *PushObjectCacheRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/pushobjectcache.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PushObjectCacheWithCallback(request *PushObjectCacheRequest, callback func(response *PushObjectCacheResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type PushObjectCacheResponse struct {
 	PushTaskId string `json:"PushTaskId" xml:"PushTaskId"`
 }
 
+// create a request to invoke PushObjectCache API
 func CreatePushObjectCacheRequest() (request *PushObjectCacheRequest) {
 	request = &PushObjectCacheRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreatePushObjectCacheRequest() (request *PushObjectCacheRequest) {
 	return
 }
 
+// create a response to parse from PushObjectCache response
 func CreatePushObjectCacheResponse() (response *PushObjectCacheResponse) {
 	response = &PushObjectCacheResponse{
 		BaseResponse: &responses.BaseResponse{},

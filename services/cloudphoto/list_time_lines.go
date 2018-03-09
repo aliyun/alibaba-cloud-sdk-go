@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ListTimeLines api with *ListTimeLinesRequest synchronously
+// api document: https://help.aliyun.com/api/cloudphoto/listtimelines.html
 func (client *Client) ListTimeLines(request *ListTimeLinesRequest) (response *ListTimeLinesResponse, err error) {
 	response = CreateListTimeLinesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ListTimeLines api with *ListTimeLinesRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/listtimelines.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListTimeLinesWithChan(request *ListTimeLinesRequest) (<-chan *ListTimeLinesResponse, <-chan error) {
 	responseChan := make(chan *ListTimeLinesResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ListTimeLinesWithChan(request *ListTimeLinesRequest) (<-ch
 	return responseChan, errChan
 }
 
+// invoke ListTimeLines api with *ListTimeLinesRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/listtimelines.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListTimeLinesWithCallback(request *ListTimeLinesRequest, callback func(response *ListTimeLinesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -88,6 +96,7 @@ type ListTimeLinesResponse struct {
 	TimeLines  []TimeLine `json:"TimeLines" xml:"TimeLines"`
 }
 
+// create a request to invoke ListTimeLines API
 func CreateListTimeLinesRequest() (request *ListTimeLinesRequest) {
 	request = &ListTimeLinesRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -96,6 +105,7 @@ func CreateListTimeLinesRequest() (request *ListTimeLinesRequest) {
 	return
 }
 
+// create a response to parse from ListTimeLines response
 func CreateListTimeLinesResponse() (response *ListTimeLinesResponse) {
 	response = &ListTimeLinesResponse{
 		BaseResponse: &responses.BaseResponse{},

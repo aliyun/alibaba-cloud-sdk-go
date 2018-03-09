@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeOptimizeAdviceOnMissPK api with *DescribeOptimizeAdviceOnMissPKRequest synchronously
+// api document: https://help.aliyun.com/api/rds/describeoptimizeadviceonmisspk.html
 func (client *Client) DescribeOptimizeAdviceOnMissPK(request *DescribeOptimizeAdviceOnMissPKRequest) (response *DescribeOptimizeAdviceOnMissPKResponse, err error) {
 	response = CreateDescribeOptimizeAdviceOnMissPKResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeOptimizeAdviceOnMissPK api with *DescribeOptimizeAdviceOnMissPKRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describeoptimizeadviceonmisspk.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeOptimizeAdviceOnMissPKWithChan(request *DescribeOptimizeAdviceOnMissPKRequest) (<-chan *DescribeOptimizeAdviceOnMissPKResponse, <-chan error) {
 	responseChan := make(chan *DescribeOptimizeAdviceOnMissPKResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeOptimizeAdviceOnMissPKWithChan(request *DescribeOp
 	return responseChan, errChan
 }
 
+// invoke DescribeOptimizeAdviceOnMissPK api with *DescribeOptimizeAdviceOnMissPKRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describeoptimizeadviceonmisspk.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeOptimizeAdviceOnMissPKWithCallback(request *DescribeOptimizeAdviceOnMissPKRequest, callback func(response *DescribeOptimizeAdviceOnMissPKResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -85,6 +93,7 @@ type DescribeOptimizeAdviceOnMissPKResponse struct {
 	Items             ItemsInDescribeOptimizeAdviceOnMissPK `json:"Items" xml:"Items"`
 }
 
+// create a request to invoke DescribeOptimizeAdviceOnMissPK API
 func CreateDescribeOptimizeAdviceOnMissPKRequest() (request *DescribeOptimizeAdviceOnMissPKRequest) {
 	request = &DescribeOptimizeAdviceOnMissPKRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -93,6 +102,7 @@ func CreateDescribeOptimizeAdviceOnMissPKRequest() (request *DescribeOptimizeAdv
 	return
 }
 
+// create a response to parse from DescribeOptimizeAdviceOnMissPK response
 func CreateDescribeOptimizeAdviceOnMissPKResponse() (response *DescribeOptimizeAdviceOnMissPKResponse) {
 	response = &DescribeOptimizeAdviceOnMissPKResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DetachInstances api with *DetachInstancesRequest synchronously
+// api document: https://help.aliyun.com/api/ess/detachinstances.html
 func (client *Client) DetachInstances(request *DetachInstancesRequest) (response *DetachInstancesResponse, err error) {
 	response = CreateDetachInstancesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DetachInstances api with *DetachInstancesRequest asynchronously
+// api document: https://help.aliyun.com/api/ess/detachinstances.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetachInstancesWithChan(request *DetachInstancesRequest) (<-chan *DetachInstancesResponse, <-chan error) {
 	responseChan := make(chan *DetachInstancesResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DetachInstancesWithChan(request *DetachInstancesRequest) (
 	return responseChan, errChan
 }
 
+// invoke DetachInstances api with *DetachInstancesRequest asynchronously
+// api document: https://help.aliyun.com/api/ess/detachinstances.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetachInstancesWithCallback(request *DetachInstancesRequest, callback func(response *DetachInstancesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -100,6 +108,7 @@ type DetachInstancesResponse struct {
 	RequestId         string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke DetachInstances API
 func CreateDetachInstancesRequest() (request *DetachInstancesRequest) {
 	request = &DetachInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -108,6 +117,7 @@ func CreateDetachInstancesRequest() (request *DetachInstancesRequest) {
 	return
 }
 
+// create a response to parse from DetachInstances response
 func CreateDetachInstancesResponse() (response *DetachInstancesResponse) {
 	response = &DetachInstancesResponse{
 		BaseResponse: &responses.BaseResponse{},

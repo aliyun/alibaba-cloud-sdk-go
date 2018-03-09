@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke QueryAnalysisJobList api with *QueryAnalysisJobListRequest synchronously
+// api document: https://help.aliyun.com/api/mts/queryanalysisjoblist.html
 func (client *Client) QueryAnalysisJobList(request *QueryAnalysisJobListRequest) (response *QueryAnalysisJobListResponse, err error) {
 	response = CreateQueryAnalysisJobListResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke QueryAnalysisJobList api with *QueryAnalysisJobListRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/queryanalysisjoblist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryAnalysisJobListWithChan(request *QueryAnalysisJobListRequest) (<-chan *QueryAnalysisJobListResponse, <-chan error) {
 	responseChan := make(chan *QueryAnalysisJobListResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) QueryAnalysisJobListWithChan(request *QueryAnalysisJobList
 	return responseChan, errChan
 }
 
+// invoke QueryAnalysisJobList api with *QueryAnalysisJobListRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/queryanalysisjoblist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryAnalysisJobListWithCallback(request *QueryAnalysisJobListRequest, callback func(response *QueryAnalysisJobListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type QueryAnalysisJobListResponse struct {
 	AnalysisJobList        AnalysisJobList        `json:"AnalysisJobList" xml:"AnalysisJobList"`
 }
 
+// create a request to invoke QueryAnalysisJobList API
 func CreateQueryAnalysisJobListRequest() (request *QueryAnalysisJobListRequest) {
 	request = &QueryAnalysisJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateQueryAnalysisJobListRequest() (request *QueryAnalysisJobListRequest) 
 	return
 }
 
+// create a response to parse from QueryAnalysisJobList response
 func CreateQueryAnalysisJobListResponse() (response *QueryAnalysisJobListResponse) {
 	response = &QueryAnalysisJobListResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SearchPhotos api with *SearchPhotosRequest synchronously
+// api document: https://help.aliyun.com/api/cloudphoto/searchphotos.html
 func (client *Client) SearchPhotos(request *SearchPhotosRequest) (response *SearchPhotosResponse, err error) {
 	response = CreateSearchPhotosResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SearchPhotos api with *SearchPhotosRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/searchphotos.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SearchPhotosWithChan(request *SearchPhotosRequest) (<-chan *SearchPhotosResponse, <-chan error) {
 	responseChan := make(chan *SearchPhotosResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SearchPhotosWithChan(request *SearchPhotosRequest) (<-chan
 	return responseChan, errChan
 }
 
+// invoke SearchPhotos api with *SearchPhotosRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/searchphotos.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SearchPhotosWithCallback(request *SearchPhotosRequest, callback func(response *SearchPhotosResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,6 +92,7 @@ type SearchPhotosResponse struct {
 	Photos     []Photo `json:"Photos" xml:"Photos"`
 }
 
+// create a request to invoke SearchPhotos API
 func CreateSearchPhotosRequest() (request *SearchPhotosRequest) {
 	request = &SearchPhotosRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -92,6 +101,7 @@ func CreateSearchPhotosRequest() (request *SearchPhotosRequest) {
 	return
 }
 
+// create a response to parse from SearchPhotos response
 func CreateSearchPhotosResponse() (response *SearchPhotosResponse) {
 	response = &SearchPhotosResponse{
 		BaseResponse: &responses.BaseResponse{},

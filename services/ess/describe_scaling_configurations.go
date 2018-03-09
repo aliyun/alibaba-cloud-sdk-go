@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeScalingConfigurations api with *DescribeScalingConfigurationsRequest synchronously
+// api document: https://help.aliyun.com/api/ess/describescalingconfigurations.html
 func (client *Client) DescribeScalingConfigurations(request *DescribeScalingConfigurationsRequest) (response *DescribeScalingConfigurationsResponse, err error) {
 	response = CreateDescribeScalingConfigurationsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeScalingConfigurations api with *DescribeScalingConfigurationsRequest asynchronously
+// api document: https://help.aliyun.com/api/ess/describescalingconfigurations.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeScalingConfigurationsWithChan(request *DescribeScalingConfigurationsRequest) (<-chan *DescribeScalingConfigurationsResponse, <-chan error) {
 	responseChan := make(chan *DescribeScalingConfigurationsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeScalingConfigurationsWithChan(request *DescribeSca
 	return responseChan, errChan
 }
 
+// invoke DescribeScalingConfigurations api with *DescribeScalingConfigurationsRequest asynchronously
+// api document: https://help.aliyun.com/api/ess/describescalingconfigurations.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeScalingConfigurationsWithCallback(request *DescribeScalingConfigurationsRequest, callback func(response *DescribeScalingConfigurationsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -105,6 +113,7 @@ type DescribeScalingConfigurationsResponse struct {
 	ScalingConfigurations ScalingConfigurations `json:"ScalingConfigurations" xml:"ScalingConfigurations"`
 }
 
+// create a request to invoke DescribeScalingConfigurations API
 func CreateDescribeScalingConfigurationsRequest() (request *DescribeScalingConfigurationsRequest) {
 	request = &DescribeScalingConfigurationsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -113,6 +122,7 @@ func CreateDescribeScalingConfigurationsRequest() (request *DescribeScalingConfi
 	return
 }
 
+// create a response to parse from DescribeScalingConfigurations response
 func CreateDescribeScalingConfigurationsResponse() (response *DescribeScalingConfigurationsResponse) {
 	response = &DescribeScalingConfigurationsResponse{
 		BaseResponse: &responses.BaseResponse{},

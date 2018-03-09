@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke QueryPornPipelineList api with *QueryPornPipelineListRequest synchronously
+// api document: https://help.aliyun.com/api/mts/querypornpipelinelist.html
 func (client *Client) QueryPornPipelineList(request *QueryPornPipelineListRequest) (response *QueryPornPipelineListResponse, err error) {
 	response = CreateQueryPornPipelineListResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke QueryPornPipelineList api with *QueryPornPipelineListRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/querypornpipelinelist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryPornPipelineListWithChan(request *QueryPornPipelineListRequest) (<-chan *QueryPornPipelineListResponse, <-chan error) {
 	responseChan := make(chan *QueryPornPipelineListResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) QueryPornPipelineListWithChan(request *QueryPornPipelineLi
 	return responseChan, errChan
 }
 
+// invoke QueryPornPipelineList api with *QueryPornPipelineListRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/querypornpipelinelist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryPornPipelineListWithCallback(request *QueryPornPipelineListRequest, callback func(response *QueryPornPipelineListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type QueryPornPipelineListResponse struct {
 	PipelineList PipelineListInQueryPornPipelineList `json:"PipelineList" xml:"PipelineList"`
 }
 
+// create a request to invoke QueryPornPipelineList API
 func CreateQueryPornPipelineListRequest() (request *QueryPornPipelineListRequest) {
 	request = &QueryPornPipelineListRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateQueryPornPipelineListRequest() (request *QueryPornPipelineListRequest
 	return
 }
 
+// create a response to parse from QueryPornPipelineList response
 func CreateQueryPornPipelineListResponse() (response *QueryPornPipelineListResponse) {
 	response = &QueryPornPipelineListResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke AddDomain api with *AddDomainRequest synchronously
+// api document: https://help.aliyun.com/api/alidns/adddomain.html
 func (client *Client) AddDomain(request *AddDomainRequest) (response *AddDomainResponse, err error) {
 	response = CreateAddDomainResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke AddDomain api with *AddDomainRequest asynchronously
+// api document: https://help.aliyun.com/api/alidns/adddomain.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddDomainWithChan(request *AddDomainRequest) (<-chan *AddDomainResponse, <-chan error) {
 	responseChan := make(chan *AddDomainResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) AddDomainWithChan(request *AddDomainRequest) (<-chan *AddD
 	return responseChan, errChan
 }
 
+// invoke AddDomain api with *AddDomainRequest asynchronously
+// api document: https://help.aliyun.com/api/alidns/adddomain.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddDomainWithCallback(request *AddDomainRequest, callback func(response *AddDomainResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,6 +92,7 @@ type AddDomainResponse struct {
 	DnsServers DnsServersInAddDomain `json:"DnsServers" xml:"DnsServers"`
 }
 
+// create a request to invoke AddDomain API
 func CreateAddDomainRequest() (request *AddDomainRequest) {
 	request = &AddDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -92,6 +101,7 @@ func CreateAddDomainRequest() (request *AddDomainRequest) {
 	return
 }
 
+// create a response to parse from AddDomain response
 func CreateAddDomainResponse() (response *AddDomainResponse) {
 	response = &AddDomainResponse{
 		BaseResponse: &responses.BaseResponse{},

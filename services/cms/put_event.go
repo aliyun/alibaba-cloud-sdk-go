@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke PutEvent api with *PutEventRequest synchronously
+// api document: https://help.aliyun.com/api/cms/putevent.html
 func (client *Client) PutEvent(request *PutEventRequest) (response *PutEventResponse, err error) {
 	response = CreatePutEventResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke PutEvent api with *PutEventRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/putevent.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PutEventWithChan(request *PutEventRequest) (<-chan *PutEventResponse, <-chan error) {
 	responseChan := make(chan *PutEventResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) PutEventWithChan(request *PutEventRequest) (<-chan *PutEve
 	return responseChan, errChan
 }
 
+// invoke PutEvent api with *PutEventRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/putevent.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PutEventWithCallback(request *PutEventRequest, callback func(response *PutEventResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +85,7 @@ type PutEventResponse struct {
 	Data    string `json:"Data" xml:"Data"`
 }
 
+// create a request to invoke PutEvent API
 func CreatePutEventRequest() (request *PutEventRequest) {
 	request = &PutEventRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -85,6 +94,7 @@ func CreatePutEventRequest() (request *PutEventRequest) {
 	return
 }
 
+// create a response to parse from PutEvent response
 func CreatePutEventResponse() (response *PutEventResponse) {
 	response = &PutEventResponse{
 		BaseResponse: &responses.BaseResponse{},

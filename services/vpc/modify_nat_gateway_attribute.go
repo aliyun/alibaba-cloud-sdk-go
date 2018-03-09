@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifyNatGatewayAttribute api with *ModifyNatGatewayAttributeRequest synchronously
+// api document: https://help.aliyun.com/api/vpc/modifynatgatewayattribute.html
 func (client *Client) ModifyNatGatewayAttribute(request *ModifyNatGatewayAttributeRequest) (response *ModifyNatGatewayAttributeResponse, err error) {
 	response = CreateModifyNatGatewayAttributeResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifyNatGatewayAttribute api with *ModifyNatGatewayAttributeRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/modifynatgatewayattribute.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyNatGatewayAttributeWithChan(request *ModifyNatGatewayAttributeRequest) (<-chan *ModifyNatGatewayAttributeResponse, <-chan error) {
 	responseChan := make(chan *ModifyNatGatewayAttributeResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifyNatGatewayAttributeWithChan(request *ModifyNatGatewa
 	return responseChan, errChan
 }
 
+// invoke ModifyNatGatewayAttribute api with *ModifyNatGatewayAttributeRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/modifynatgatewayattribute.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyNatGatewayAttributeWithCallback(request *ModifyNatGatewayAttributeRequest, callback func(response *ModifyNatGatewayAttributeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type ModifyNatGatewayAttributeResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ModifyNatGatewayAttribute API
 func CreateModifyNatGatewayAttributeRequest() (request *ModifyNatGatewayAttributeRequest) {
 	request = &ModifyNatGatewayAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateModifyNatGatewayAttributeRequest() (request *ModifyNatGatewayAttribut
 	return
 }
 
+// create a response to parse from ModifyNatGatewayAttribute response
 func CreateModifyNatGatewayAttributeResponse() (response *ModifyNatGatewayAttributeResponse) {
 	response = &ModifyNatGatewayAttributeResponse{
 		BaseResponse: &responses.BaseResponse{},

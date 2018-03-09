@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifyAccessRule api with *ModifyAccessRuleRequest synchronously
+// api document: https://help.aliyun.com/api/nas/modifyaccessrule.html
 func (client *Client) ModifyAccessRule(request *ModifyAccessRuleRequest) (response *ModifyAccessRuleResponse, err error) {
 	response = CreateModifyAccessRuleResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifyAccessRule api with *ModifyAccessRuleRequest asynchronously
+// api document: https://help.aliyun.com/api/nas/modifyaccessrule.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyAccessRuleWithChan(request *ModifyAccessRuleRequest) (<-chan *ModifyAccessRuleResponse, <-chan error) {
 	responseChan := make(chan *ModifyAccessRuleResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifyAccessRuleWithChan(request *ModifyAccessRuleRequest)
 	return responseChan, errChan
 }
 
+// invoke ModifyAccessRule api with *ModifyAccessRuleRequest asynchronously
+// api document: https://help.aliyun.com/api/nas/modifyaccessrule.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyAccessRuleWithCallback(request *ModifyAccessRuleRequest, callback func(response *ModifyAccessRuleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type ModifyAccessRuleResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ModifyAccessRule API
 func CreateModifyAccessRuleRequest() (request *ModifyAccessRuleRequest) {
 	request = &ModifyAccessRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateModifyAccessRuleRequest() (request *ModifyAccessRuleRequest) {
 	return
 }
 
+// create a response to parse from ModifyAccessRule response
 func CreateModifyAccessRuleResponse() (response *ModifyAccessRuleResponse) {
 	response = &ModifyAccessRuleResponse{
 		BaseResponse: &responses.BaseResponse{},

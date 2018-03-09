@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke GetPhotoStore api with *GetPhotoStoreRequest synchronously
+// api document: https://help.aliyun.com/api/cloudphoto/getphotostore.html
 func (client *Client) GetPhotoStore(request *GetPhotoStoreRequest) (response *GetPhotoStoreResponse, err error) {
 	response = CreateGetPhotoStoreResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke GetPhotoStore api with *GetPhotoStoreRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/getphotostore.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetPhotoStoreWithChan(request *GetPhotoStoreRequest) (<-chan *GetPhotoStoreResponse, <-chan error) {
 	responseChan := make(chan *GetPhotoStoreResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) GetPhotoStoreWithChan(request *GetPhotoStoreRequest) (<-ch
 	return responseChan, errChan
 }
 
+// invoke GetPhotoStore api with *GetPhotoStoreRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/getphotostore.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetPhotoStoreWithCallback(request *GetPhotoStoreRequest, callback func(response *GetPhotoStoreResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +87,7 @@ type GetPhotoStoreResponse struct {
 	PhotoStore PhotoStore `json:"PhotoStore" xml:"PhotoStore"`
 }
 
+// create a request to invoke GetPhotoStore API
 func CreateGetPhotoStoreRequest() (request *GetPhotoStoreRequest) {
 	request = &GetPhotoStoreRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -87,6 +96,7 @@ func CreateGetPhotoStoreRequest() (request *GetPhotoStoreRequest) {
 	return
 }
 
+// create a response to parse from GetPhotoStore response
 func CreateGetPhotoStoreResponse() (response *GetPhotoStoreResponse) {
 	response = &GetPhotoStoreResponse{
 		BaseResponse: &responses.BaseResponse{},

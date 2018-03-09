@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CreateMigrateTaskForSQLServer api with *CreateMigrateTaskForSQLServerRequest synchronously
+// api document: https://help.aliyun.com/api/rds/createmigratetaskforsqlserver.html
 func (client *Client) CreateMigrateTaskForSQLServer(request *CreateMigrateTaskForSQLServerRequest) (response *CreateMigrateTaskForSQLServerResponse, err error) {
 	response = CreateCreateMigrateTaskForSQLServerResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CreateMigrateTaskForSQLServer api with *CreateMigrateTaskForSQLServerRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/createmigratetaskforsqlserver.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateMigrateTaskForSQLServerWithChan(request *CreateMigrateTaskForSQLServerRequest) (<-chan *CreateMigrateTaskForSQLServerResponse, <-chan error) {
 	responseChan := make(chan *CreateMigrateTaskForSQLServerResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CreateMigrateTaskForSQLServerWithChan(request *CreateMigra
 	return responseChan, errChan
 }
 
+// invoke CreateMigrateTaskForSQLServer api with *CreateMigrateTaskForSQLServerRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/createmigratetaskforsqlserver.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateMigrateTaskForSQLServerWithCallback(request *CreateMigrateTaskForSQLServerRequest, callback func(response *CreateMigrateTaskForSQLServerResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -88,6 +96,7 @@ type CreateMigrateTaskForSQLServerResponse struct {
 	TaskType       string `json:"TaskType" xml:"TaskType"`
 }
 
+// create a request to invoke CreateMigrateTaskForSQLServer API
 func CreateCreateMigrateTaskForSQLServerRequest() (request *CreateMigrateTaskForSQLServerRequest) {
 	request = &CreateMigrateTaskForSQLServerRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -96,6 +105,7 @@ func CreateCreateMigrateTaskForSQLServerRequest() (request *CreateMigrateTaskFor
 	return
 }
 
+// create a response to parse from CreateMigrateTaskForSQLServer response
 func CreateCreateMigrateTaskForSQLServerResponse() (response *CreateMigrateTaskForSQLServerResponse) {
 	response = &CreateMigrateTaskForSQLServerResponse{
 		BaseResponse: &responses.BaseResponse{},

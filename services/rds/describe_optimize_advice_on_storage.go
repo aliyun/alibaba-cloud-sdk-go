@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeOptimizeAdviceOnStorage api with *DescribeOptimizeAdviceOnStorageRequest synchronously
+// api document: https://help.aliyun.com/api/rds/describeoptimizeadviceonstorage.html
 func (client *Client) DescribeOptimizeAdviceOnStorage(request *DescribeOptimizeAdviceOnStorageRequest) (response *DescribeOptimizeAdviceOnStorageResponse, err error) {
 	response = CreateDescribeOptimizeAdviceOnStorageResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeOptimizeAdviceOnStorage api with *DescribeOptimizeAdviceOnStorageRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describeoptimizeadviceonstorage.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeOptimizeAdviceOnStorageWithChan(request *DescribeOptimizeAdviceOnStorageRequest) (<-chan *DescribeOptimizeAdviceOnStorageResponse, <-chan error) {
 	responseChan := make(chan *DescribeOptimizeAdviceOnStorageResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeOptimizeAdviceOnStorageWithChan(request *DescribeO
 	return responseChan, errChan
 }
 
+// invoke DescribeOptimizeAdviceOnStorage api with *DescribeOptimizeAdviceOnStorageRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describeoptimizeadviceonstorage.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeOptimizeAdviceOnStorageWithCallback(request *DescribeOptimizeAdviceOnStorageRequest, callback func(response *DescribeOptimizeAdviceOnStorageResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -86,6 +94,7 @@ type DescribeOptimizeAdviceOnStorageResponse struct {
 	Items             ItemsInDescribeOptimizeAdviceOnStorage `json:"Items" xml:"Items"`
 }
 
+// create a request to invoke DescribeOptimizeAdviceOnStorage API
 func CreateDescribeOptimizeAdviceOnStorageRequest() (request *DescribeOptimizeAdviceOnStorageRequest) {
 	request = &DescribeOptimizeAdviceOnStorageRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -94,6 +103,7 @@ func CreateDescribeOptimizeAdviceOnStorageRequest() (request *DescribeOptimizeAd
 	return
 }
 
+// create a response to parse from DescribeOptimizeAdviceOnStorage response
 func CreateDescribeOptimizeAdviceOnStorageResponse() (response *DescribeOptimizeAdviceOnStorageResponse) {
 	response = &DescribeOptimizeAdviceOnStorageResponse{
 		BaseResponse: &responses.BaseResponse{},

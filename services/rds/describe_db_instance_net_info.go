@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeDBInstanceNetInfo api with *DescribeDBInstanceNetInfoRequest synchronously
+// api document: https://help.aliyun.com/api/rds/describedbinstancenetinfo.html
 func (client *Client) DescribeDBInstanceNetInfo(request *DescribeDBInstanceNetInfoRequest) (response *DescribeDBInstanceNetInfoResponse, err error) {
 	response = CreateDescribeDBInstanceNetInfoResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeDBInstanceNetInfo api with *DescribeDBInstanceNetInfoRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describedbinstancenetinfo.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBInstanceNetInfoWithChan(request *DescribeDBInstanceNetInfoRequest) (<-chan *DescribeDBInstanceNetInfoResponse, <-chan error) {
 	responseChan := make(chan *DescribeDBInstanceNetInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeDBInstanceNetInfoWithChan(request *DescribeDBInsta
 	return responseChan, errChan
 }
 
+// invoke DescribeDBInstanceNetInfo api with *DescribeDBInstanceNetInfoRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describedbinstancenetinfo.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBInstanceNetInfoWithCallback(request *DescribeDBInstanceNetInfoRequest, callback func(response *DescribeDBInstanceNetInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,6 +92,7 @@ type DescribeDBInstanceNetInfoResponse struct {
 	DBInstanceNetInfos  DBInstanceNetInfos `json:"DBInstanceNetInfos" xml:"DBInstanceNetInfos"`
 }
 
+// create a request to invoke DescribeDBInstanceNetInfo API
 func CreateDescribeDBInstanceNetInfoRequest() (request *DescribeDBInstanceNetInfoRequest) {
 	request = &DescribeDBInstanceNetInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -92,6 +101,7 @@ func CreateDescribeDBInstanceNetInfoRequest() (request *DescribeDBInstanceNetInf
 	return
 }
 
+// create a response to parse from DescribeDBInstanceNetInfo response
 func CreateDescribeDBInstanceNetInfoResponse() (response *DescribeDBInstanceNetInfoResponse) {
 	response = &DescribeDBInstanceNetInfoResponse{
 		BaseResponse: &responses.BaseResponse{},

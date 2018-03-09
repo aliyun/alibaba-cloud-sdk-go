@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeleteLiveAppSnapshotConfig api with *DeleteLiveAppSnapshotConfigRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/deleteliveappsnapshotconfig.html
 func (client *Client) DeleteLiveAppSnapshotConfig(request *DeleteLiveAppSnapshotConfigRequest) (response *DeleteLiveAppSnapshotConfigResponse, err error) {
 	response = CreateDeleteLiveAppSnapshotConfigResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeleteLiveAppSnapshotConfig api with *DeleteLiveAppSnapshotConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/deleteliveappsnapshotconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteLiveAppSnapshotConfigWithChan(request *DeleteLiveAppSnapshotConfigRequest) (<-chan *DeleteLiveAppSnapshotConfigResponse, <-chan error) {
 	responseChan := make(chan *DeleteLiveAppSnapshotConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeleteLiveAppSnapshotConfigWithChan(request *DeleteLiveApp
 	return responseChan, errChan
 }
 
+// invoke DeleteLiveAppSnapshotConfig api with *DeleteLiveAppSnapshotConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/deleteliveappsnapshotconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteLiveAppSnapshotConfigWithCallback(request *DeleteLiveAppSnapshotConfigRequest, callback func(response *DeleteLiveAppSnapshotConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type DeleteLiveAppSnapshotConfigResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke DeleteLiveAppSnapshotConfig API
 func CreateDeleteLiveAppSnapshotConfigRequest() (request *DeleteLiveAppSnapshotConfigRequest) {
 	request = &DeleteLiveAppSnapshotConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateDeleteLiveAppSnapshotConfigRequest() (request *DeleteLiveAppSnapshotC
 	return
 }
 
+// create a response to parse from DeleteLiveAppSnapshotConfig response
 func CreateDeleteLiveAppSnapshotConfigResponse() (response *DeleteLiveAppSnapshotConfigResponse) {
 	response = &DeleteLiveAppSnapshotConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

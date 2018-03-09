@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke UpdateMyGroups api with *UpdateMyGroupsRequest synchronously
+// api document: https://help.aliyun.com/api/cms/updatemygroups.html
 func (client *Client) UpdateMyGroups(request *UpdateMyGroupsRequest) (response *UpdateMyGroupsResponse, err error) {
 	response = CreateUpdateMyGroupsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke UpdateMyGroups api with *UpdateMyGroupsRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/updatemygroups.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateMyGroupsWithChan(request *UpdateMyGroupsRequest) (<-chan *UpdateMyGroupsResponse, <-chan error) {
 	responseChan := make(chan *UpdateMyGroupsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) UpdateMyGroupsWithChan(request *UpdateMyGroupsRequest) (<-
 	return responseChan, errChan
 }
 
+// invoke UpdateMyGroups api with *UpdateMyGroupsRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/updatemygroups.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateMyGroupsWithCallback(request *UpdateMyGroupsRequest, callback func(response *UpdateMyGroupsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,6 +91,7 @@ type UpdateMyGroupsResponse struct {
 	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
 }
 
+// create a request to invoke UpdateMyGroups API
 func CreateUpdateMyGroupsRequest() (request *UpdateMyGroupsRequest) {
 	request = &UpdateMyGroupsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -91,6 +100,7 @@ func CreateUpdateMyGroupsRequest() (request *UpdateMyGroupsRequest) {
 	return
 }
 
+// create a response to parse from UpdateMyGroups response
 func CreateUpdateMyGroupsResponse() (response *UpdateMyGroupsResponse) {
 	response = &UpdateMyGroupsResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CreatePhysicalConnectionNew api with *CreatePhysicalConnectionNewRequest synchronously
+// api document: https://help.aliyun.com/api/vpc/createphysicalconnectionnew.html
 func (client *Client) CreatePhysicalConnectionNew(request *CreatePhysicalConnectionNewRequest) (response *CreatePhysicalConnectionNewResponse, err error) {
 	response = CreateCreatePhysicalConnectionNewResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CreatePhysicalConnectionNew api with *CreatePhysicalConnectionNewRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/createphysicalconnectionnew.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreatePhysicalConnectionNewWithChan(request *CreatePhysicalConnectionNewRequest) (<-chan *CreatePhysicalConnectionNewResponse, <-chan error) {
 	responseChan := make(chan *CreatePhysicalConnectionNewResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CreatePhysicalConnectionNewWithChan(request *CreatePhysica
 	return responseChan, errChan
 }
 
+// invoke CreatePhysicalConnectionNew api with *CreatePhysicalConnectionNewRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/createphysicalconnectionnew.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreatePhysicalConnectionNewWithCallback(request *CreatePhysicalConnectionNewRequest, callback func(response *CreatePhysicalConnectionNewResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,6 +100,7 @@ type CreatePhysicalConnectionNewResponse struct {
 	PhysicalConnectionId string `json:"PhysicalConnectionId" xml:"PhysicalConnectionId"`
 }
 
+// create a request to invoke CreatePhysicalConnectionNew API
 func CreateCreatePhysicalConnectionNewRequest() (request *CreatePhysicalConnectionNewRequest) {
 	request = &CreatePhysicalConnectionNewRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -100,6 +109,7 @@ func CreateCreatePhysicalConnectionNewRequest() (request *CreatePhysicalConnecti
 	return
 }
 
+// create a response to parse from CreatePhysicalConnectionNew response
 func CreateCreatePhysicalConnectionNewResponse() (response *CreatePhysicalConnectionNewResponse) {
 	response = &CreatePhysicalConnectionNewResponse{
 		BaseResponse: &responses.BaseResponse{},

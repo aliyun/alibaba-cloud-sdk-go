@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeleteCacheExpiredConfig api with *DeleteCacheExpiredConfigRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/deletecacheexpiredconfig.html
 func (client *Client) DeleteCacheExpiredConfig(request *DeleteCacheExpiredConfigRequest) (response *DeleteCacheExpiredConfigResponse, err error) {
 	response = CreateDeleteCacheExpiredConfigResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeleteCacheExpiredConfig api with *DeleteCacheExpiredConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/deletecacheexpiredconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteCacheExpiredConfigWithChan(request *DeleteCacheExpiredConfigRequest) (<-chan *DeleteCacheExpiredConfigResponse, <-chan error) {
 	responseChan := make(chan *DeleteCacheExpiredConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeleteCacheExpiredConfigWithChan(request *DeleteCacheExpir
 	return responseChan, errChan
 }
 
+// invoke DeleteCacheExpiredConfig api with *DeleteCacheExpiredConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/deletecacheexpiredconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteCacheExpiredConfigWithCallback(request *DeleteCacheExpiredConfigRequest, callback func(response *DeleteCacheExpiredConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +87,7 @@ type DeleteCacheExpiredConfigResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke DeleteCacheExpiredConfig API
 func CreateDeleteCacheExpiredConfigRequest() (request *DeleteCacheExpiredConfigRequest) {
 	request = &DeleteCacheExpiredConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -87,6 +96,7 @@ func CreateDeleteCacheExpiredConfigRequest() (request *DeleteCacheExpiredConfigR
 	return
 }
 
+// create a response to parse from DeleteCacheExpiredConfig response
 func CreateDeleteCacheExpiredConfigResponse() (response *DeleteCacheExpiredConfigResponse) {
 	response = &DeleteCacheExpiredConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke QueryMetricList api with *QueryMetricListRequest synchronously
+// api document: https://help.aliyun.com/api/cms/querymetriclist.html
 func (client *Client) QueryMetricList(request *QueryMetricListRequest) (response *QueryMetricListResponse, err error) {
 	response = CreateQueryMetricListResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke QueryMetricList api with *QueryMetricListRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/querymetriclist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryMetricListWithChan(request *QueryMetricListRequest) (<-chan *QueryMetricListResponse, <-chan error) {
 	responseChan := make(chan *QueryMetricListResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) QueryMetricListWithChan(request *QueryMetricListRequest) (
 	return responseChan, errChan
 }
 
+// invoke QueryMetricList api with *QueryMetricListRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/querymetriclist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryMetricListWithCallback(request *QueryMetricListRequest, callback func(response *QueryMetricListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,6 +100,7 @@ type QueryMetricListResponse struct {
 	Period     string `json:"Period" xml:"Period"`
 }
 
+// create a request to invoke QueryMetricList API
 func CreateQueryMetricListRequest() (request *QueryMetricListRequest) {
 	request = &QueryMetricListRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -100,6 +109,7 @@ func CreateQueryMetricListRequest() (request *QueryMetricListRequest) {
 	return
 }
 
+// create a response to parse from QueryMetricList response
 func CreateQueryMetricListResponse() (response *QueryMetricListResponse) {
 	response = &QueryMetricListResponse{
 		BaseResponse: &responses.BaseResponse{},

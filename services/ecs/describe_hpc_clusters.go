@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeHpcClusters api with *DescribeHpcClustersRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/describehpcclusters.html
 func (client *Client) DescribeHpcClusters(request *DescribeHpcClustersRequest) (response *DescribeHpcClustersResponse, err error) {
 	response = CreateDescribeHpcClustersResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeHpcClusters api with *DescribeHpcClustersRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describehpcclusters.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeHpcClustersWithChan(request *DescribeHpcClustersRequest) (<-chan *DescribeHpcClustersResponse, <-chan error) {
 	responseChan := make(chan *DescribeHpcClustersResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeHpcClustersWithChan(request *DescribeHpcClustersRe
 	return responseChan, errChan
 }
 
+// invoke DescribeHpcClusters api with *DescribeHpcClustersRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describehpcclusters.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeHpcClustersWithCallback(request *DescribeHpcClustersRequest, callback func(response *DescribeHpcClustersResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type DescribeHpcClustersResponse struct {
 	HpcClusters HpcClusters `json:"HpcClusters" xml:"HpcClusters"`
 }
 
+// create a request to invoke DescribeHpcClusters API
 func CreateDescribeHpcClustersRequest() (request *DescribeHpcClustersRequest) {
 	request = &DescribeHpcClustersRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateDescribeHpcClustersRequest() (request *DescribeHpcClustersRequest) {
 	return
 }
 
+// create a response to parse from DescribeHpcClusters response
 func CreateDescribeHpcClustersResponse() (response *DescribeHpcClustersResponse) {
 	response = &DescribeHpcClustersResponse{
 		BaseResponse: &responses.BaseResponse{},

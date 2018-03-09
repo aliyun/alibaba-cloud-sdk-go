@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeleteRouterInterface api with *DeleteRouterInterfaceRequest synchronously
+// api document: https://help.aliyun.com/api/vpc/deleterouterinterface.html
 func (client *Client) DeleteRouterInterface(request *DeleteRouterInterfaceRequest) (response *DeleteRouterInterfaceResponse, err error) {
 	response = CreateDeleteRouterInterfaceResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeleteRouterInterface api with *DeleteRouterInterfaceRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/deleterouterinterface.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteRouterInterfaceWithChan(request *DeleteRouterInterfaceRequest) (<-chan *DeleteRouterInterfaceResponse, <-chan error) {
 	responseChan := make(chan *DeleteRouterInterfaceResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeleteRouterInterfaceWithChan(request *DeleteRouterInterfa
 	return responseChan, errChan
 }
 
+// invoke DeleteRouterInterface api with *DeleteRouterInterfaceRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/deleterouterinterface.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteRouterInterfaceWithCallback(request *DeleteRouterInterfaceRequest, callback func(response *DeleteRouterInterfaceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type DeleteRouterInterfaceResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke DeleteRouterInterface API
 func CreateDeleteRouterInterfaceRequest() (request *DeleteRouterInterfaceRequest) {
 	request = &DeleteRouterInterfaceRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateDeleteRouterInterfaceRequest() (request *DeleteRouterInterfaceRequest
 	return
 }
 
+// create a response to parse from DeleteRouterInterface response
 func CreateDeleteRouterInterfaceResponse() (response *DeleteRouterInterfaceResponse) {
 	response = &DeleteRouterInterfaceResponse{
 		BaseResponse: &responses.BaseResponse{},

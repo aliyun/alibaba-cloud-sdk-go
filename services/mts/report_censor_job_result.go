@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ReportCensorJobResult api with *ReportCensorJobResultRequest synchronously
+// api document: https://help.aliyun.com/api/mts/reportcensorjobresult.html
 func (client *Client) ReportCensorJobResult(request *ReportCensorJobResultRequest) (response *ReportCensorJobResultResponse, err error) {
 	response = CreateReportCensorJobResultResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ReportCensorJobResult api with *ReportCensorJobResultRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/reportcensorjobresult.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReportCensorJobResultWithChan(request *ReportCensorJobResultRequest) (<-chan *ReportCensorJobResultResponse, <-chan error) {
 	responseChan := make(chan *ReportCensorJobResultResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ReportCensorJobResultWithChan(request *ReportCensorJobResu
 	return responseChan, errChan
 }
 
+// invoke ReportCensorJobResult api with *ReportCensorJobResultRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/reportcensorjobresult.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReportCensorJobResultWithCallback(request *ReportCensorJobResultRequest, callback func(response *ReportCensorJobResultResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type ReportCensorJobResultResponse struct {
 	JobId     string `json:"JobId" xml:"JobId"`
 }
 
+// create a request to invoke ReportCensorJobResult API
 func CreateReportCensorJobResultRequest() (request *ReportCensorJobResultRequest) {
 	request = &ReportCensorJobResultRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateReportCensorJobResultRequest() (request *ReportCensorJobResultRequest
 	return
 }
 
+// create a response to parse from ReportCensorJobResult response
 func CreateReportCensorJobResultResponse() (response *ReportCensorJobResultResponse) {
 	response = &ReportCensorJobResultResponse{
 		BaseResponse: &responses.BaseResponse{},

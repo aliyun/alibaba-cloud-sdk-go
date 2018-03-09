@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeDBInstanceByTags api with *DescribeDBInstanceByTagsRequest synchronously
+// api document: https://help.aliyun.com/api/rds/describedbinstancebytags.html
 func (client *Client) DescribeDBInstanceByTags(request *DescribeDBInstanceByTagsRequest) (response *DescribeDBInstanceByTagsResponse, err error) {
 	response = CreateDescribeDBInstanceByTagsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeDBInstanceByTags api with *DescribeDBInstanceByTagsRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describedbinstancebytags.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBInstanceByTagsWithChan(request *DescribeDBInstanceByTagsRequest) (<-chan *DescribeDBInstanceByTagsResponse, <-chan error) {
 	responseChan := make(chan *DescribeDBInstanceByTagsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeDBInstanceByTagsWithChan(request *DescribeDBInstan
 	return responseChan, errChan
 }
 
+// invoke DescribeDBInstanceByTags api with *DescribeDBInstanceByTagsRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describedbinstancebytags.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBInstanceByTagsWithCallback(request *DescribeDBInstanceByTagsRequest, callback func(response *DescribeDBInstanceByTagsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -87,6 +95,7 @@ type DescribeDBInstanceByTagsResponse struct {
 	Items            ItemsInDescribeDBInstanceByTags `json:"Items" xml:"Items"`
 }
 
+// create a request to invoke DescribeDBInstanceByTags API
 func CreateDescribeDBInstanceByTagsRequest() (request *DescribeDBInstanceByTagsRequest) {
 	request = &DescribeDBInstanceByTagsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -95,6 +104,7 @@ func CreateDescribeDBInstanceByTagsRequest() (request *DescribeDBInstanceByTagsR
 	return
 }
 
+// create a response to parse from DescribeDBInstanceByTags response
 func CreateDescribeDBInstanceByTagsResponse() (response *DescribeDBInstanceByTagsResponse) {
 	response = &DescribeDBInstanceByTagsResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SetVideoSeekConfig api with *SetVideoSeekConfigRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/setvideoseekconfig.html
 func (client *Client) SetVideoSeekConfig(request *SetVideoSeekConfigRequest) (response *SetVideoSeekConfigResponse, err error) {
 	response = CreateSetVideoSeekConfigResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SetVideoSeekConfig api with *SetVideoSeekConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/setvideoseekconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetVideoSeekConfigWithChan(request *SetVideoSeekConfigRequest) (<-chan *SetVideoSeekConfigResponse, <-chan error) {
 	responseChan := make(chan *SetVideoSeekConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SetVideoSeekConfigWithChan(request *SetVideoSeekConfigRequ
 	return responseChan, errChan
 }
 
+// invoke SetVideoSeekConfig api with *SetVideoSeekConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/setvideoseekconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetVideoSeekConfigWithCallback(request *SetVideoSeekConfigRequest, callback func(response *SetVideoSeekConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type SetVideoSeekConfigResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke SetVideoSeekConfig API
 func CreateSetVideoSeekConfigRequest() (request *SetVideoSeekConfigRequest) {
 	request = &SetVideoSeekConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateSetVideoSeekConfigRequest() (request *SetVideoSeekConfigRequest) {
 	return
 }
 
+// create a response to parse from SetVideoSeekConfig response
 func CreateSetVideoSeekConfigResponse() (response *SetVideoSeekConfigResponse) {
 	response = &SetVideoSeekConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

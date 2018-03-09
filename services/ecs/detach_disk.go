@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DetachDisk api with *DetachDiskRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/detachdisk.html
 func (client *Client) DetachDisk(request *DetachDiskRequest) (response *DetachDiskResponse, err error) {
 	response = CreateDetachDiskResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DetachDisk api with *DetachDiskRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/detachdisk.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetachDiskWithChan(request *DetachDiskRequest) (<-chan *DetachDiskResponse, <-chan error) {
 	responseChan := make(chan *DetachDiskResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DetachDiskWithChan(request *DetachDiskRequest) (<-chan *De
 	return responseChan, errChan
 }
 
+// invoke DetachDisk api with *DetachDiskRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/detachdisk.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetachDiskWithCallback(request *DetachDiskRequest, callback func(response *DetachDiskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type DetachDiskResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke DetachDisk API
 func CreateDetachDiskRequest() (request *DetachDiskRequest) {
 	request = &DetachDiskRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateDetachDiskRequest() (request *DetachDiskRequest) {
 	return
 }
 
+// create a response to parse from DetachDisk response
 func CreateDetachDiskResponse() (response *DetachDiskResponse) {
 	response = &DetachDiskResponse{
 		BaseResponse: &responses.BaseResponse{},

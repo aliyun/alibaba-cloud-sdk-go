@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ImportKeyPair api with *ImportKeyPairRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/importkeypair.html
 func (client *Client) ImportKeyPair(request *ImportKeyPairRequest) (response *ImportKeyPairResponse, err error) {
 	response = CreateImportKeyPairResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ImportKeyPair api with *ImportKeyPairRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/importkeypair.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ImportKeyPairWithChan(request *ImportKeyPairRequest) (<-chan *ImportKeyPairResponse, <-chan error) {
 	responseChan := make(chan *ImportKeyPairResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ImportKeyPairWithChan(request *ImportKeyPairRequest) (<-ch
 	return responseChan, errChan
 }
 
+// invoke ImportKeyPair api with *ImportKeyPairRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/importkeypair.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ImportKeyPairWithCallback(request *ImportKeyPairRequest, callback func(response *ImportKeyPairResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type ImportKeyPairResponse struct {
 	KeyPairFingerPrint string `json:"KeyPairFingerPrint" xml:"KeyPairFingerPrint"`
 }
 
+// create a request to invoke ImportKeyPair API
 func CreateImportKeyPairRequest() (request *ImportKeyPairRequest) {
 	request = &ImportKeyPairRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateImportKeyPairRequest() (request *ImportKeyPairRequest) {
 	return
 }
 
+// create a response to parse from ImportKeyPair response
 func CreateImportKeyPairResponse() (response *ImportKeyPairResponse) {
 	response = &ImportKeyPairResponse{
 		BaseResponse: &responses.BaseResponse{},

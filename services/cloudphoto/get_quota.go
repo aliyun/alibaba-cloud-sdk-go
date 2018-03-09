@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke GetQuota api with *GetQuotaRequest synchronously
+// api document: https://help.aliyun.com/api/cloudphoto/getquota.html
 func (client *Client) GetQuota(request *GetQuotaRequest) (response *GetQuotaResponse, err error) {
 	response = CreateGetQuotaResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke GetQuota api with *GetQuotaRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/getquota.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetQuotaWithChan(request *GetQuotaRequest) (<-chan *GetQuotaResponse, <-chan error) {
 	responseChan := make(chan *GetQuotaResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) GetQuotaWithChan(request *GetQuotaRequest) (<-chan *GetQuo
 	return responseChan, errChan
 }
 
+// invoke GetQuota api with *GetQuotaRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/getquota.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetQuotaWithCallback(request *GetQuotaRequest, callback func(response *GetQuotaResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type GetQuotaResponse struct {
 	Quota     Quota  `json:"Quota" xml:"Quota"`
 }
 
+// create a request to invoke GetQuota API
 func CreateGetQuotaRequest() (request *GetQuotaRequest) {
 	request = &GetQuotaRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateGetQuotaRequest() (request *GetQuotaRequest) {
 	return
 }
 
+// create a response to parse from GetQuota response
 func CreateGetQuotaResponse() (response *GetQuotaResponse) {
 	response = &GetQuotaResponse{
 		BaseResponse: &responses.BaseResponse{},

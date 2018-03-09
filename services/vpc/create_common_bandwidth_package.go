@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CreateCommonBandwidthPackage api with *CreateCommonBandwidthPackageRequest synchronously
+// api document: https://help.aliyun.com/api/vpc/createcommonbandwidthpackage.html
 func (client *Client) CreateCommonBandwidthPackage(request *CreateCommonBandwidthPackageRequest) (response *CreateCommonBandwidthPackageResponse, err error) {
 	response = CreateCreateCommonBandwidthPackageResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CreateCommonBandwidthPackage api with *CreateCommonBandwidthPackageRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/createcommonbandwidthpackage.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateCommonBandwidthPackageWithChan(request *CreateCommonBandwidthPackageRequest) (<-chan *CreateCommonBandwidthPackageResponse, <-chan error) {
 	responseChan := make(chan *CreateCommonBandwidthPackageResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CreateCommonBandwidthPackageWithChan(request *CreateCommon
 	return responseChan, errChan
 }
 
+// invoke CreateCommonBandwidthPackage api with *CreateCommonBandwidthPackageRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/createcommonbandwidthpackage.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateCommonBandwidthPackageWithCallback(request *CreateCommonBandwidthPackageRequest, callback func(response *CreateCommonBandwidthPackageResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -85,6 +93,7 @@ type CreateCommonBandwidthPackageResponse struct {
 	BandwidthPackageId string `json:"BandwidthPackageId" xml:"BandwidthPackageId"`
 }
 
+// create a request to invoke CreateCommonBandwidthPackage API
 func CreateCreateCommonBandwidthPackageRequest() (request *CreateCommonBandwidthPackageRequest) {
 	request = &CreateCommonBandwidthPackageRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -93,6 +102,7 @@ func CreateCreateCommonBandwidthPackageRequest() (request *CreateCommonBandwidth
 	return
 }
 
+// create a response to parse from CreateCommonBandwidthPackage response
 func CreateCreateCommonBandwidthPackageResponse() (response *CreateCommonBandwidthPackageResponse) {
 	response = &CreateCommonBandwidthPackageResponse{
 		BaseResponse: &responses.BaseResponse{},

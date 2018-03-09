@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CreateAccessKey api with *CreateAccessKeyRequest synchronously
+// api document: https://help.aliyun.com/api/ram/createaccesskey.html
 func (client *Client) CreateAccessKey(request *CreateAccessKeyRequest) (response *CreateAccessKeyResponse, err error) {
 	response = CreateCreateAccessKeyResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CreateAccessKey api with *CreateAccessKeyRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/createaccesskey.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateAccessKeyWithChan(request *CreateAccessKeyRequest) (<-chan *CreateAccessKeyResponse, <-chan error) {
 	responseChan := make(chan *CreateAccessKeyResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CreateAccessKeyWithChan(request *CreateAccessKeyRequest) (
 	return responseChan, errChan
 }
 
+// invoke CreateAccessKey api with *CreateAccessKeyRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/createaccesskey.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateAccessKeyWithCallback(request *CreateAccessKeyRequest, callback func(response *CreateAccessKeyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,6 +84,7 @@ type CreateAccessKeyResponse struct {
 	AccessKey AccessKey `json:"AccessKey" xml:"AccessKey"`
 }
 
+// create a request to invoke CreateAccessKey API
 func CreateCreateAccessKeyRequest() (request *CreateAccessKeyRequest) {
 	request = &CreateAccessKeyRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -84,6 +93,7 @@ func CreateCreateAccessKeyRequest() (request *CreateAccessKeyRequest) {
 	return
 }
 
+// create a response to parse from CreateAccessKey response
 func CreateCreateAccessKeyResponse() (response *CreateAccessKeyResponse) {
 	response = &CreateAccessKeyResponse{
 		BaseResponse: &responses.BaseResponse{},

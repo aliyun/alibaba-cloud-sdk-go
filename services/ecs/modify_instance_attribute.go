@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifyInstanceAttribute api with *ModifyInstanceAttributeRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/modifyinstanceattribute.html
 func (client *Client) ModifyInstanceAttribute(request *ModifyInstanceAttributeRequest) (response *ModifyInstanceAttributeResponse, err error) {
 	response = CreateModifyInstanceAttributeResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifyInstanceAttribute api with *ModifyInstanceAttributeRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/modifyinstanceattribute.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyInstanceAttributeWithChan(request *ModifyInstanceAttributeRequest) (<-chan *ModifyInstanceAttributeResponse, <-chan error) {
 	responseChan := make(chan *ModifyInstanceAttributeResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifyInstanceAttributeWithChan(request *ModifyInstanceAtt
 	return responseChan, errChan
 }
 
+// invoke ModifyInstanceAttribute api with *ModifyInstanceAttributeRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/modifyinstanceattribute.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyInstanceAttributeWithCallback(request *ModifyInstanceAttributeRequest, callback func(response *ModifyInstanceAttributeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -85,6 +93,7 @@ type ModifyInstanceAttributeResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ModifyInstanceAttribute API
 func CreateModifyInstanceAttributeRequest() (request *ModifyInstanceAttributeRequest) {
 	request = &ModifyInstanceAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -93,6 +102,7 @@ func CreateModifyInstanceAttributeRequest() (request *ModifyInstanceAttributeReq
 	return
 }
 
+// create a response to parse from ModifyInstanceAttribute response
 func CreateModifyInstanceAttributeResponse() (response *ModifyInstanceAttributeResponse) {
 	response = &ModifyInstanceAttributeResponse{
 		BaseResponse: &responses.BaseResponse{},

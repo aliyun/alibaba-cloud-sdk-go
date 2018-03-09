@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeScheduledTasks api with *DescribeScheduledTasksRequest synchronously
+// api document: https://help.aliyun.com/api/ess/describescheduledtasks.html
 func (client *Client) DescribeScheduledTasks(request *DescribeScheduledTasksRequest) (response *DescribeScheduledTasksResponse, err error) {
 	response = CreateDescribeScheduledTasksResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeScheduledTasks api with *DescribeScheduledTasksRequest asynchronously
+// api document: https://help.aliyun.com/api/ess/describescheduledtasks.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeScheduledTasksWithChan(request *DescribeScheduledTasksRequest) (<-chan *DescribeScheduledTasksResponse, <-chan error) {
 	responseChan := make(chan *DescribeScheduledTasksResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeScheduledTasksWithChan(request *DescribeScheduledT
 	return responseChan, errChan
 }
 
+// invoke DescribeScheduledTasks api with *DescribeScheduledTasksRequest asynchronously
+// api document: https://help.aliyun.com/api/ess/describescheduledtasks.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeScheduledTasksWithCallback(request *DescribeScheduledTasksRequest, callback func(response *DescribeScheduledTasksResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -144,6 +152,7 @@ type DescribeScheduledTasksResponse struct {
 	ScheduledTasks ScheduledTasks `json:"ScheduledTasks" xml:"ScheduledTasks"`
 }
 
+// create a request to invoke DescribeScheduledTasks API
 func CreateDescribeScheduledTasksRequest() (request *DescribeScheduledTasksRequest) {
 	request = &DescribeScheduledTasksRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -152,6 +161,7 @@ func CreateDescribeScheduledTasksRequest() (request *DescribeScheduledTasksReque
 	return
 }
 
+// create a response to parse from DescribeScheduledTasks response
 func CreateDescribeScheduledTasksResponse() (response *DescribeScheduledTasksResponse) {
 	response = &DescribeScheduledTasksResponse{
 		BaseResponse: &responses.BaseResponse{},

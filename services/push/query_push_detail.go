@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke QueryPushDetail api with *QueryPushDetailRequest synchronously
+// api document: https://help.aliyun.com/api/push/querypushdetail.html
 func (client *Client) QueryPushDetail(request *QueryPushDetailRequest) (response *QueryPushDetailResponse, err error) {
 	response = CreateQueryPushDetailResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke QueryPushDetail api with *QueryPushDetailRequest asynchronously
+// api document: https://help.aliyun.com/api/push/querypushdetail.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryPushDetailWithChan(request *QueryPushDetailRequest) (<-chan *QueryPushDetailResponse, <-chan error) {
 	responseChan := make(chan *QueryPushDetailResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) QueryPushDetailWithChan(request *QueryPushDetailRequest) (
 	return responseChan, errChan
 }
 
+// invoke QueryPushDetail api with *QueryPushDetailRequest asynchronously
+// api document: https://help.aliyun.com/api/push/querypushdetail.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryPushDetailWithCallback(request *QueryPushDetailRequest, callback func(response *QueryPushDetailResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -118,6 +126,7 @@ type QueryPushDetailResponse struct {
 	SmsSendPolicy                  int    `json:"SmsSendPolicy" xml:"SmsSendPolicy"`
 }
 
+// create a request to invoke QueryPushDetail API
 func CreateQueryPushDetailRequest() (request *QueryPushDetailRequest) {
 	request = &QueryPushDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -126,6 +135,7 @@ func CreateQueryPushDetailRequest() (request *QueryPushDetailRequest) {
 	return
 }
 
+// create a response to parse from QueryPushDetail response
 func CreateQueryPushDetailResponse() (response *QueryPushDetailResponse) {
 	response = &QueryPushDetailResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke NodeStatus api with *NodeStatusRequest synchronously
+// api document: https://help.aliyun.com/api/cms/nodestatus.html
 func (client *Client) NodeStatus(request *NodeStatusRequest) (response *NodeStatusResponse, err error) {
 	response = CreateNodeStatusResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke NodeStatus api with *NodeStatusRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/nodestatus.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) NodeStatusWithChan(request *NodeStatusRequest) (<-chan *NodeStatusResponse, <-chan error) {
 	responseChan := make(chan *NodeStatusResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) NodeStatusWithChan(request *NodeStatusRequest) (<-chan *No
 	return responseChan, errChan
 }
 
+// invoke NodeStatus api with *NodeStatusRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/nodestatus.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) NodeStatusWithCallback(request *NodeStatusRequest, callback func(response *NodeStatusResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type NodeStatusResponse struct {
 	Status       string `json:"Status" xml:"Status"`
 }
 
+// create a request to invoke NodeStatus API
 func CreateNodeStatusRequest() (request *NodeStatusRequest) {
 	request = &NodeStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateNodeStatusRequest() (request *NodeStatusRequest) {
 	return
 }
 
+// create a response to parse from NodeStatus response
 func CreateNodeStatusResponse() (response *NodeStatusResponse) {
 	response = &NodeStatusResponse{
 		BaseResponse: &responses.BaseResponse{},

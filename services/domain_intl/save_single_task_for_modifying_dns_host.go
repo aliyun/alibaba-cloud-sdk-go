@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SaveSingleTaskForModifyingDnsHost api with *SaveSingleTaskForModifyingDnsHostRequest synchronously
+// api document: https://help.aliyun.com/api/domain-intl/savesingletaskformodifyingdnshost.html
 func (client *Client) SaveSingleTaskForModifyingDnsHost(request *SaveSingleTaskForModifyingDnsHostRequest) (response *SaveSingleTaskForModifyingDnsHostResponse, err error) {
 	response = CreateSaveSingleTaskForModifyingDnsHostResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SaveSingleTaskForModifyingDnsHost api with *SaveSingleTaskForModifyingDnsHostRequest asynchronously
+// api document: https://help.aliyun.com/api/domain-intl/savesingletaskformodifyingdnshost.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveSingleTaskForModifyingDnsHostWithChan(request *SaveSingleTaskForModifyingDnsHostRequest) (<-chan *SaveSingleTaskForModifyingDnsHostResponse, <-chan error) {
 	responseChan := make(chan *SaveSingleTaskForModifyingDnsHostResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SaveSingleTaskForModifyingDnsHostWithChan(request *SaveSin
 	return responseChan, errChan
 }
 
+// invoke SaveSingleTaskForModifyingDnsHost api with *SaveSingleTaskForModifyingDnsHostRequest asynchronously
+// api document: https://help.aliyun.com/api/domain-intl/savesingletaskformodifyingdnshost.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveSingleTaskForModifyingDnsHostWithCallback(request *SaveSingleTaskForModifyingDnsHostRequest, callback func(response *SaveSingleTaskForModifyingDnsHostResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +87,7 @@ type SaveSingleTaskForModifyingDnsHostResponse struct {
 	TaskNo    string `json:"TaskNo" xml:"TaskNo"`
 }
 
+// create a request to invoke SaveSingleTaskForModifyingDnsHost API
 func CreateSaveSingleTaskForModifyingDnsHostRequest() (request *SaveSingleTaskForModifyingDnsHostRequest) {
 	request = &SaveSingleTaskForModifyingDnsHostRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -87,6 +96,7 @@ func CreateSaveSingleTaskForModifyingDnsHostRequest() (request *SaveSingleTaskFo
 	return
 }
 
+// create a response to parse from SaveSingleTaskForModifyingDnsHost response
 func CreateSaveSingleTaskForModifyingDnsHostResponse() (response *SaveSingleTaskForModifyingDnsHostResponse) {
 	response = &SaveSingleTaskForModifyingDnsHostResponse{
 		BaseResponse: &responses.BaseResponse{},

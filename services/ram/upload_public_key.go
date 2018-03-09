@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke UploadPublicKey api with *UploadPublicKeyRequest synchronously
+// api document: https://help.aliyun.com/api/ram/uploadpublickey.html
 func (client *Client) UploadPublicKey(request *UploadPublicKeyRequest) (response *UploadPublicKeyResponse, err error) {
 	response = CreateUploadPublicKeyResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke UploadPublicKey api with *UploadPublicKeyRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/uploadpublickey.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UploadPublicKeyWithChan(request *UploadPublicKeyRequest) (<-chan *UploadPublicKeyResponse, <-chan error) {
 	responseChan := make(chan *UploadPublicKeyResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) UploadPublicKeyWithChan(request *UploadPublicKeyRequest) (
 	return responseChan, errChan
 }
 
+// invoke UploadPublicKey api with *UploadPublicKeyRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/uploadpublickey.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UploadPublicKeyWithCallback(request *UploadPublicKeyRequest, callback func(response *UploadPublicKeyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +85,7 @@ type UploadPublicKeyResponse struct {
 	PublicKey PublicKey `json:"PublicKey" xml:"PublicKey"`
 }
 
+// create a request to invoke UploadPublicKey API
 func CreateUploadPublicKeyRequest() (request *UploadPublicKeyRequest) {
 	request = &UploadPublicKeyRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -85,6 +94,7 @@ func CreateUploadPublicKeyRequest() (request *UploadPublicKeyRequest) {
 	return
 }
 
+// create a response to parse from UploadPublicKey response
 func CreateUploadPublicKeyResponse() (response *UploadPublicKeyResponse) {
 	response = &UploadPublicKeyResponse{
 		BaseResponse: &responses.BaseResponse{},

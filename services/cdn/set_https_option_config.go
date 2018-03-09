@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SetHttpsOptionConfig api with *SetHttpsOptionConfigRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/sethttpsoptionconfig.html
 func (client *Client) SetHttpsOptionConfig(request *SetHttpsOptionConfigRequest) (response *SetHttpsOptionConfigResponse, err error) {
 	response = CreateSetHttpsOptionConfigResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SetHttpsOptionConfig api with *SetHttpsOptionConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/sethttpsoptionconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetHttpsOptionConfigWithChan(request *SetHttpsOptionConfigRequest) (<-chan *SetHttpsOptionConfigResponse, <-chan error) {
 	responseChan := make(chan *SetHttpsOptionConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SetHttpsOptionConfigWithChan(request *SetHttpsOptionConfig
 	return responseChan, errChan
 }
 
+// invoke SetHttpsOptionConfig api with *SetHttpsOptionConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/sethttpsoptionconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetHttpsOptionConfigWithCallback(request *SetHttpsOptionConfigRequest, callback func(response *SetHttpsOptionConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type SetHttpsOptionConfigResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke SetHttpsOptionConfig API
 func CreateSetHttpsOptionConfigRequest() (request *SetHttpsOptionConfigRequest) {
 	request = &SetHttpsOptionConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateSetHttpsOptionConfigRequest() (request *SetHttpsOptionConfigRequest) 
 	return
 }
 
+// create a response to parse from SetHttpsOptionConfig response
 func CreateSetHttpsOptionConfigResponse() (response *SetHttpsOptionConfigResponse) {
 	response = &SetHttpsOptionConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

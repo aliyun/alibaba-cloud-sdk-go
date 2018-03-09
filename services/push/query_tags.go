@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke QueryTags api with *QueryTagsRequest synchronously
+// api document: https://help.aliyun.com/api/push/querytags.html
 func (client *Client) QueryTags(request *QueryTagsRequest) (response *QueryTagsResponse, err error) {
 	response = CreateQueryTagsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke QueryTags api with *QueryTagsRequest asynchronously
+// api document: https://help.aliyun.com/api/push/querytags.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryTagsWithChan(request *QueryTagsRequest) (<-chan *QueryTagsResponse, <-chan error) {
 	responseChan := make(chan *QueryTagsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) QueryTagsWithChan(request *QueryTagsRequest) (<-chan *Quer
 	return responseChan, errChan
 }
 
+// invoke QueryTags api with *QueryTagsRequest asynchronously
+// api document: https://help.aliyun.com/api/push/querytags.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryTagsWithCallback(request *QueryTagsRequest, callback func(response *QueryTagsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type QueryTagsResponse struct {
 	TagInfos  TagInfosInQueryTags `json:"TagInfos" xml:"TagInfos"`
 }
 
+// create a request to invoke QueryTags API
 func CreateQueryTagsRequest() (request *QueryTagsRequest) {
 	request = &QueryTagsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateQueryTagsRequest() (request *QueryTagsRequest) {
 	return
 }
 
+// create a response to parse from QueryTags response
 func CreateQueryTagsResponse() (response *QueryTagsResponse) {
 	response = &QueryTagsResponse{
 		BaseResponse: &responses.BaseResponse{},

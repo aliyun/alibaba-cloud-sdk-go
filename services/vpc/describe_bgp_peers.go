@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeBgpPeers api with *DescribeBgpPeersRequest synchronously
+// api document: https://help.aliyun.com/api/vpc/describebgppeers.html
 func (client *Client) DescribeBgpPeers(request *DescribeBgpPeersRequest) (response *DescribeBgpPeersResponse, err error) {
 	response = CreateDescribeBgpPeersResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeBgpPeers api with *DescribeBgpPeersRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/describebgppeers.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBgpPeersWithChan(request *DescribeBgpPeersRequest) (<-chan *DescribeBgpPeersResponse, <-chan error) {
 	responseChan := make(chan *DescribeBgpPeersResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeBgpPeersWithChan(request *DescribeBgpPeersRequest)
 	return responseChan, errChan
 }
 
+// invoke DescribeBgpPeers api with *DescribeBgpPeersRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/describebgppeers.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBgpPeersWithCallback(request *DescribeBgpPeersRequest, callback func(response *DescribeBgpPeersResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -88,6 +96,7 @@ type DescribeBgpPeersResponse struct {
 	BgpPeers   BgpPeers `json:"BgpPeers" xml:"BgpPeers"`
 }
 
+// create a request to invoke DescribeBgpPeers API
 func CreateDescribeBgpPeersRequest() (request *DescribeBgpPeersRequest) {
 	request = &DescribeBgpPeersRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -96,6 +105,7 @@ func CreateDescribeBgpPeersRequest() (request *DescribeBgpPeersRequest) {
 	return
 }
 
+// create a response to parse from DescribeBgpPeers response
 func CreateDescribeBgpPeersResponse() (response *DescribeBgpPeersResponse) {
 	response = &DescribeBgpPeersResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeReplicaInitializeProgress api with *DescribeReplicaInitializeProgressRequest synchronously
+// api document: https://help.aliyun.com/api/rds/describereplicainitializeprogress.html
 func (client *Client) DescribeReplicaInitializeProgress(request *DescribeReplicaInitializeProgressRequest) (response *DescribeReplicaInitializeProgressResponse, err error) {
 	response = CreateDescribeReplicaInitializeProgressResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeReplicaInitializeProgress api with *DescribeReplicaInitializeProgressRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describereplicainitializeprogress.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeReplicaInitializeProgressWithChan(request *DescribeReplicaInitializeProgressRequest) (<-chan *DescribeReplicaInitializeProgressResponse, <-chan error) {
 	responseChan := make(chan *DescribeReplicaInitializeProgressResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeReplicaInitializeProgressWithChan(request *Describ
 	return responseChan, errChan
 }
 
+// invoke DescribeReplicaInitializeProgress api with *DescribeReplicaInitializeProgressRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/describereplicainitializeprogress.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeReplicaInitializeProgressWithCallback(request *DescribeReplicaInitializeProgressRequest, callback func(response *DescribeReplicaInitializeProgressResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type DescribeReplicaInitializeProgressResponse struct {
 	Items     []ItemsItem `json:"Items" xml:"Items"`
 }
 
+// create a request to invoke DescribeReplicaInitializeProgress API
 func CreateDescribeReplicaInitializeProgressRequest() (request *DescribeReplicaInitializeProgressRequest) {
 	request = &DescribeReplicaInitializeProgressRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateDescribeReplicaInitializeProgressRequest() (request *DescribeReplicaI
 	return
 }
 
+// create a response to parse from DescribeReplicaInitializeProgress response
 func CreateDescribeReplicaInitializeProgressResponse() (response *DescribeReplicaInitializeProgressResponse) {
 	response = &DescribeReplicaInitializeProgressResponse{
 		BaseResponse: &responses.BaseResponse{},

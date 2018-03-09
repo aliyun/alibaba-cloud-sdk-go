@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeLimitation api with *DescribeLimitationRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/describelimitation.html
 func (client *Client) DescribeLimitation(request *DescribeLimitationRequest) (response *DescribeLimitationResponse, err error) {
 	response = CreateDescribeLimitationResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeLimitation api with *DescribeLimitationRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describelimitation.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLimitationWithChan(request *DescribeLimitationRequest) (<-chan *DescribeLimitationResponse, <-chan error) {
 	responseChan := make(chan *DescribeLimitationResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeLimitationWithChan(request *DescribeLimitationRequ
 	return responseChan, errChan
 }
 
+// invoke DescribeLimitation api with *DescribeLimitationRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describelimitation.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLimitationWithCallback(request *DescribeLimitationRequest, callback func(response *DescribeLimitationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type DescribeLimitationResponse struct {
 	Value      string `json:"Value" xml:"Value"`
 }
 
+// create a request to invoke DescribeLimitation API
 func CreateDescribeLimitationRequest() (request *DescribeLimitationRequest) {
 	request = &DescribeLimitationRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateDescribeLimitationRequest() (request *DescribeLimitationRequest) {
 	return
 }
 
+// create a response to parse from DescribeLimitation response
 func CreateDescribeLimitationResponse() (response *DescribeLimitationResponse) {
 	response = &DescribeLimitationResponse{
 		BaseResponse: &responses.BaseResponse{},

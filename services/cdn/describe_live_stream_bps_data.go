@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeLiveStreamBpsData api with *DescribeLiveStreamBpsDataRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/describelivestreambpsdata.html
 func (client *Client) DescribeLiveStreamBpsData(request *DescribeLiveStreamBpsDataRequest) (response *DescribeLiveStreamBpsDataResponse, err error) {
 	response = CreateDescribeLiveStreamBpsDataResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeLiveStreamBpsData api with *DescribeLiveStreamBpsDataRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describelivestreambpsdata.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamBpsDataWithChan(request *DescribeLiveStreamBpsDataRequest) (<-chan *DescribeLiveStreamBpsDataResponse, <-chan error) {
 	responseChan := make(chan *DescribeLiveStreamBpsDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeLiveStreamBpsDataWithChan(request *DescribeLiveStr
 	return responseChan, errChan
 }
 
+// invoke DescribeLiveStreamBpsData api with *DescribeLiveStreamBpsDataRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/describelivestreambpsdata.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamBpsDataWithCallback(request *DescribeLiveStreamBpsDataRequest, callback func(response *DescribeLiveStreamBpsDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type DescribeLiveStreamBpsDataResponse struct {
 	BpsDatas  BpsDatasInDescribeLiveStreamBpsData `json:"BpsDatas" xml:"BpsDatas"`
 }
 
+// create a request to invoke DescribeLiveStreamBpsData API
 func CreateDescribeLiveStreamBpsDataRequest() (request *DescribeLiveStreamBpsDataRequest) {
 	request = &DescribeLiveStreamBpsDataRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateDescribeLiveStreamBpsDataRequest() (request *DescribeLiveStreamBpsDat
 	return
 }
 
+// create a response to parse from DescribeLiveStreamBpsData response
 func CreateDescribeLiveStreamBpsDataResponse() (response *DescribeLiveStreamBpsDataResponse) {
 	response = &DescribeLiveStreamBpsDataResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CreateRules api with *CreateRulesRequest synchronously
+// api document: https://help.aliyun.com/api/slb/createrules.html
 func (client *Client) CreateRules(request *CreateRulesRequest) (response *CreateRulesResponse, err error) {
 	response = CreateCreateRulesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CreateRules api with *CreateRulesRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/createrules.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateRulesWithChan(request *CreateRulesRequest) (<-chan *CreateRulesResponse, <-chan error) {
 	responseChan := make(chan *CreateRulesResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CreateRulesWithChan(request *CreateRulesRequest) (<-chan *
 	return responseChan, errChan
 }
 
+// invoke CreateRules api with *CreateRulesRequest asynchronously
+// api document: https://help.aliyun.com/api/slb/createrules.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateRulesWithCallback(request *CreateRulesRequest, callback func(response *CreateRulesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,6 +92,7 @@ type CreateRulesResponse struct {
 	Rules     RulesInCreateRules `json:"Rules" xml:"Rules"`
 }
 
+// create a request to invoke CreateRules API
 func CreateCreateRulesRequest() (request *CreateRulesRequest) {
 	request = &CreateRulesRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -92,6 +101,7 @@ func CreateCreateRulesRequest() (request *CreateRulesRequest) {
 	return
 }
 
+// create a response to parse from CreateRules response
 func CreateCreateRulesResponse() (response *CreateRulesResponse) {
 	response = &CreateRulesResponse{
 		BaseResponse: &responses.BaseResponse{},

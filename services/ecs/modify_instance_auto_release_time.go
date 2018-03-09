@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifyInstanceAutoReleaseTime api with *ModifyInstanceAutoReleaseTimeRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/modifyinstanceautoreleasetime.html
 func (client *Client) ModifyInstanceAutoReleaseTime(request *ModifyInstanceAutoReleaseTimeRequest) (response *ModifyInstanceAutoReleaseTimeResponse, err error) {
 	response = CreateModifyInstanceAutoReleaseTimeResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifyInstanceAutoReleaseTime api with *ModifyInstanceAutoReleaseTimeRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/modifyinstanceautoreleasetime.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyInstanceAutoReleaseTimeWithChan(request *ModifyInstanceAutoReleaseTimeRequest) (<-chan *ModifyInstanceAutoReleaseTimeResponse, <-chan error) {
 	responseChan := make(chan *ModifyInstanceAutoReleaseTimeResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifyInstanceAutoReleaseTimeWithChan(request *ModifyInsta
 	return responseChan, errChan
 }
 
+// invoke ModifyInstanceAutoReleaseTime api with *ModifyInstanceAutoReleaseTimeRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/modifyinstanceautoreleasetime.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyInstanceAutoReleaseTimeWithCallback(request *ModifyInstanceAutoReleaseTimeRequest, callback func(response *ModifyInstanceAutoReleaseTimeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type ModifyInstanceAutoReleaseTimeResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ModifyInstanceAutoReleaseTime API
 func CreateModifyInstanceAutoReleaseTimeRequest() (request *ModifyInstanceAutoReleaseTimeRequest) {
 	request = &ModifyInstanceAutoReleaseTimeRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateModifyInstanceAutoReleaseTimeRequest() (request *ModifyInstanceAutoRe
 	return
 }
 
+// create a response to parse from ModifyInstanceAutoReleaseTime response
 func CreateModifyInstanceAutoReleaseTimeResponse() (response *ModifyInstanceAutoReleaseTimeResponse) {
 	response = &ModifyInstanceAutoReleaseTimeResponse{
 		BaseResponse: &responses.BaseResponse{},

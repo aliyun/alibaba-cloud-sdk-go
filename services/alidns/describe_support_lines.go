@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeSupportLines api with *DescribeSupportLinesRequest synchronously
+// api document: https://help.aliyun.com/api/alidns/describesupportlines.html
 func (client *Client) DescribeSupportLines(request *DescribeSupportLinesRequest) (response *DescribeSupportLinesResponse, err error) {
 	response = CreateDescribeSupportLinesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeSupportLines api with *DescribeSupportLinesRequest asynchronously
+// api document: https://help.aliyun.com/api/alidns/describesupportlines.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSupportLinesWithChan(request *DescribeSupportLinesRequest) (<-chan *DescribeSupportLinesResponse, <-chan error) {
 	responseChan := make(chan *DescribeSupportLinesResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeSupportLinesWithChan(request *DescribeSupportLines
 	return responseChan, errChan
 }
 
+// invoke DescribeSupportLines api with *DescribeSupportLinesRequest asynchronously
+// api document: https://help.aliyun.com/api/alidns/describesupportlines.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSupportLinesWithCallback(request *DescribeSupportLinesRequest, callback func(response *DescribeSupportLinesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +85,7 @@ type DescribeSupportLinesResponse struct {
 	RecordLines RecordLinesInDescribeSupportLines `json:"RecordLines" xml:"RecordLines"`
 }
 
+// create a request to invoke DescribeSupportLines API
 func CreateDescribeSupportLinesRequest() (request *DescribeSupportLinesRequest) {
 	request = &DescribeSupportLinesRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -85,6 +94,7 @@ func CreateDescribeSupportLinesRequest() (request *DescribeSupportLinesRequest) 
 	return
 }
 
+// create a response to parse from DescribeSupportLines response
 func CreateDescribeSupportLinesResponse() (response *DescribeSupportLinesResponse) {
 	response = &DescribeSupportLinesResponse{
 		BaseResponse: &responses.BaseResponse{},

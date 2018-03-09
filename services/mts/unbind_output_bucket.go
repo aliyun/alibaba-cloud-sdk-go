@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke UnbindOutputBucket api with *UnbindOutputBucketRequest synchronously
+// api document: https://help.aliyun.com/api/mts/unbindoutputbucket.html
 func (client *Client) UnbindOutputBucket(request *UnbindOutputBucketRequest) (response *UnbindOutputBucketResponse, err error) {
 	response = CreateUnbindOutputBucketResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke UnbindOutputBucket api with *UnbindOutputBucketRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/unbindoutputbucket.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnbindOutputBucketWithChan(request *UnbindOutputBucketRequest) (<-chan *UnbindOutputBucketResponse, <-chan error) {
 	responseChan := make(chan *UnbindOutputBucketResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) UnbindOutputBucketWithChan(request *UnbindOutputBucketRequ
 	return responseChan, errChan
 }
 
+// invoke UnbindOutputBucket api with *UnbindOutputBucketRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/unbindoutputbucket.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnbindOutputBucketWithCallback(request *UnbindOutputBucketRequest, callback func(response *UnbindOutputBucketResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +87,7 @@ type UnbindOutputBucketResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke UnbindOutputBucket API
 func CreateUnbindOutputBucketRequest() (request *UnbindOutputBucketRequest) {
 	request = &UnbindOutputBucketRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -87,6 +96,7 @@ func CreateUnbindOutputBucketRequest() (request *UnbindOutputBucketRequest) {
 	return
 }
 
+// create a response to parse from UnbindOutputBucket response
 func CreateUnbindOutputBucketResponse() (response *UnbindOutputBucketResponse) {
 	response = &UnbindOutputBucketResponse{
 		BaseResponse: &responses.BaseResponse{},

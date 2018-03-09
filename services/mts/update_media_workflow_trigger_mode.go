@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke UpdateMediaWorkflowTriggerMode api with *UpdateMediaWorkflowTriggerModeRequest synchronously
+// api document: https://help.aliyun.com/api/mts/updatemediaworkflowtriggermode.html
 func (client *Client) UpdateMediaWorkflowTriggerMode(request *UpdateMediaWorkflowTriggerModeRequest) (response *UpdateMediaWorkflowTriggerModeResponse, err error) {
 	response = CreateUpdateMediaWorkflowTriggerModeResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke UpdateMediaWorkflowTriggerMode api with *UpdateMediaWorkflowTriggerModeRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/updatemediaworkflowtriggermode.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateMediaWorkflowTriggerModeWithChan(request *UpdateMediaWorkflowTriggerModeRequest) (<-chan *UpdateMediaWorkflowTriggerModeResponse, <-chan error) {
 	responseChan := make(chan *UpdateMediaWorkflowTriggerModeResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) UpdateMediaWorkflowTriggerModeWithChan(request *UpdateMedi
 	return responseChan, errChan
 }
 
+// invoke UpdateMediaWorkflowTriggerMode api with *UpdateMediaWorkflowTriggerModeRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/updatemediaworkflowtriggermode.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateMediaWorkflowTriggerModeWithCallback(request *UpdateMediaWorkflowTriggerModeRequest, callback func(response *UpdateMediaWorkflowTriggerModeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type UpdateMediaWorkflowTriggerModeResponse struct {
 	MediaWorkflow MediaWorkflow `json:"MediaWorkflow" xml:"MediaWorkflow"`
 }
 
+// create a request to invoke UpdateMediaWorkflowTriggerMode API
 func CreateUpdateMediaWorkflowTriggerModeRequest() (request *UpdateMediaWorkflowTriggerModeRequest) {
 	request = &UpdateMediaWorkflowTriggerModeRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateUpdateMediaWorkflowTriggerModeRequest() (request *UpdateMediaWorkflow
 	return
 }
 
+// create a response to parse from UpdateMediaWorkflowTriggerMode response
 func CreateUpdateMediaWorkflowTriggerModeResponse() (response *UpdateMediaWorkflowTriggerModeResponse) {
 	response = &UpdateMediaWorkflowTriggerModeResponse{
 		BaseResponse: &responses.BaseResponse{},

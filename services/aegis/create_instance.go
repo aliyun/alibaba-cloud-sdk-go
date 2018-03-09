@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CreateInstance api with *CreateInstanceRequest synchronously
+// api document: https://help.aliyun.com/api/aegis/createinstance.html
 func (client *Client) CreateInstance(request *CreateInstanceRequest) (response *CreateInstanceResponse, err error) {
 	response = CreateCreateInstanceResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CreateInstance api with *CreateInstanceRequest asynchronously
+// api document: https://help.aliyun.com/api/aegis/createinstance.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateInstanceWithChan(request *CreateInstanceRequest) (<-chan *CreateInstanceResponse, <-chan error) {
 	responseChan := make(chan *CreateInstanceResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CreateInstanceWithChan(request *CreateInstanceRequest) (<-
 	return responseChan, errChan
 }
 
+// invoke CreateInstance api with *CreateInstanceRequest asynchronously
+// api document: https://help.aliyun.com/api/aegis/createinstance.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateInstanceWithCallback(request *CreateInstanceRequest, callback func(response *CreateInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,6 +92,7 @@ type CreateInstanceResponse struct {
 	RequestId  string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke CreateInstance API
 func CreateCreateInstanceRequest() (request *CreateInstanceRequest) {
 	request = &CreateInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -92,6 +101,7 @@ func CreateCreateInstanceRequest() (request *CreateInstanceRequest) {
 	return
 }
 
+// create a response to parse from CreateInstance response
 func CreateCreateInstanceResponse() (response *CreateInstanceResponse) {
 	response = &CreateInstanceResponse{
 		BaseResponse: &responses.BaseResponse{},

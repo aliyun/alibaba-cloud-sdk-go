@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeStrategyTarget api with *DescribeStrategyTargetRequest synchronously
+// api document: https://help.aliyun.com/api/aegis/describestrategytarget.html
 func (client *Client) DescribeStrategyTarget(request *DescribeStrategyTargetRequest) (response *DescribeStrategyTargetResponse, err error) {
 	response = CreateDescribeStrategyTargetResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeStrategyTarget api with *DescribeStrategyTargetRequest asynchronously
+// api document: https://help.aliyun.com/api/aegis/describestrategytarget.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeStrategyTargetWithChan(request *DescribeStrategyTargetRequest) (<-chan *DescribeStrategyTargetResponse, <-chan error) {
 	responseChan := make(chan *DescribeStrategyTargetResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeStrategyTargetWithChan(request *DescribeStrategyTa
 	return responseChan, errChan
 }
 
+// invoke DescribeStrategyTarget api with *DescribeStrategyTargetRequest asynchronously
+// api document: https://help.aliyun.com/api/aegis/describestrategytarget.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeStrategyTargetWithCallback(request *DescribeStrategyTargetRequest, callback func(response *DescribeStrategyTargetResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,11 +84,12 @@ type DescribeStrategyTargetRequest struct {
 
 type DescribeStrategyTargetResponse struct {
 	*responses.BaseResponse
-	RequestId       string       `json:"RequestId" xml:"RequestId"`
-	Count           int          `json:"Count" xml:"Count"`
-	StrategyTargets []StringItem `json:"StrategyTargets" xml:"StrategyTargets"`
+	RequestId       string           `json:"RequestId" xml:"RequestId"`
+	Count           int              `json:"Count" xml:"Count"`
+	StrategyTargets []StrategyTarget `json:"StrategyTargets" xml:"StrategyTargets"`
 }
 
+// create a request to invoke DescribeStrategyTarget API
 func CreateDescribeStrategyTargetRequest() (request *DescribeStrategyTargetRequest) {
 	request = &DescribeStrategyTargetRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateDescribeStrategyTargetRequest() (request *DescribeStrategyTargetReque
 	return
 }
 
+// create a response to parse from DescribeStrategyTarget response
 func CreateDescribeStrategyTargetResponse() (response *DescribeStrategyTargetResponse) {
 	response = &DescribeStrategyTargetResponse{
 		BaseResponse: &responses.BaseResponse{},

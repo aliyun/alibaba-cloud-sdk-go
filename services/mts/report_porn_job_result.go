@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ReportPornJobResult api with *ReportPornJobResultRequest synchronously
+// api document: https://help.aliyun.com/api/mts/reportpornjobresult.html
 func (client *Client) ReportPornJobResult(request *ReportPornJobResultRequest) (response *ReportPornJobResultResponse, err error) {
 	response = CreateReportPornJobResultResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ReportPornJobResult api with *ReportPornJobResultRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/reportpornjobresult.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReportPornJobResultWithChan(request *ReportPornJobResultRequest) (<-chan *ReportPornJobResultResponse, <-chan error) {
 	responseChan := make(chan *ReportPornJobResultResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ReportPornJobResultWithChan(request *ReportPornJobResultRe
 	return responseChan, errChan
 }
 
+// invoke ReportPornJobResult api with *ReportPornJobResultRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/reportpornjobresult.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReportPornJobResultWithCallback(request *ReportPornJobResultRequest, callback func(response *ReportPornJobResultResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type ReportPornJobResultResponse struct {
 	JobId     string `json:"JobId" xml:"JobId"`
 }
 
+// create a request to invoke ReportPornJobResult API
 func CreateReportPornJobResultRequest() (request *ReportPornJobResultRequest) {
 	request = &ReportPornJobResultRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateReportPornJobResultRequest() (request *ReportPornJobResultRequest) {
 	return
 }
 
+// create a response to parse from ReportPornJobResult response
 func CreateReportPornJobResultResponse() (response *ReportPornJobResultResponse) {
 	response = &ReportPornJobResultResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SubmitFacerecogJob api with *SubmitFacerecogJobRequest synchronously
+// api document: https://help.aliyun.com/api/mts/submitfacerecogjob.html
 func (client *Client) SubmitFacerecogJob(request *SubmitFacerecogJobRequest) (response *SubmitFacerecogJobResponse, err error) {
 	response = CreateSubmitFacerecogJobResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SubmitFacerecogJob api with *SubmitFacerecogJobRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/submitfacerecogjob.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitFacerecogJobWithChan(request *SubmitFacerecogJobRequest) (<-chan *SubmitFacerecogJobResponse, <-chan error) {
 	responseChan := make(chan *SubmitFacerecogJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SubmitFacerecogJobWithChan(request *SubmitFacerecogJobRequ
 	return responseChan, errChan
 }
 
+// invoke SubmitFacerecogJob api with *SubmitFacerecogJobRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/submitfacerecogjob.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitFacerecogJobWithCallback(request *SubmitFacerecogJobRequest, callback func(response *SubmitFacerecogJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,6 +91,7 @@ type SubmitFacerecogJobResponse struct {
 	JobId     string `json:"JobId" xml:"JobId"`
 }
 
+// create a request to invoke SubmitFacerecogJob API
 func CreateSubmitFacerecogJobRequest() (request *SubmitFacerecogJobRequest) {
 	request = &SubmitFacerecogJobRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -91,6 +100,7 @@ func CreateSubmitFacerecogJobRequest() (request *SubmitFacerecogJobRequest) {
 	return
 }
 
+// create a response to parse from SubmitFacerecogJob response
 func CreateSubmitFacerecogJobResponse() (response *SubmitFacerecogJobResponse) {
 	response = &SubmitFacerecogJobResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeleteSkillGroup api with *DeleteSkillGroupRequest synchronously
+// api document: https://help.aliyun.com/api/ccc/deleteskillgroup.html
 func (client *Client) DeleteSkillGroup(request *DeleteSkillGroupRequest) (response *DeleteSkillGroupResponse, err error) {
 	response = CreateDeleteSkillGroupResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeleteSkillGroup api with *DeleteSkillGroupRequest asynchronously
+// api document: https://help.aliyun.com/api/ccc/deleteskillgroup.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteSkillGroupWithChan(request *DeleteSkillGroupRequest) (<-chan *DeleteSkillGroupResponse, <-chan error) {
 	responseChan := make(chan *DeleteSkillGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeleteSkillGroupWithChan(request *DeleteSkillGroupRequest)
 	return responseChan, errChan
 }
 
+// invoke DeleteSkillGroup api with *DeleteSkillGroupRequest asynchronously
+// api document: https://help.aliyun.com/api/ccc/deleteskillgroup.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteSkillGroupWithCallback(request *DeleteSkillGroupRequest, callback func(response *DeleteSkillGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type DeleteSkillGroupResponse struct {
 	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 }
 
+// create a request to invoke DeleteSkillGroup API
 func CreateDeleteSkillGroupRequest() (request *DeleteSkillGroupRequest) {
 	request = &DeleteSkillGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateDeleteSkillGroupRequest() (request *DeleteSkillGroupRequest) {
 	return
 }
 
+// create a response to parse from DeleteSkillGroup response
 func CreateDeleteSkillGroupResponse() (response *DeleteSkillGroupResponse) {
 	response = &DeleteSkillGroupResponse{
 		BaseResponse: &responses.BaseResponse{},

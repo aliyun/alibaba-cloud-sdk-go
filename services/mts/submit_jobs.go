@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SubmitJobs api with *SubmitJobsRequest synchronously
+// api document: https://help.aliyun.com/api/mts/submitjobs.html
 func (client *Client) SubmitJobs(request *SubmitJobsRequest) (response *SubmitJobsResponse, err error) {
 	response = CreateSubmitJobsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SubmitJobs api with *SubmitJobsRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/submitjobs.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitJobsWithChan(request *SubmitJobsRequest) (<-chan *SubmitJobsResponse, <-chan error) {
 	responseChan := make(chan *SubmitJobsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SubmitJobsWithChan(request *SubmitJobsRequest) (<-chan *Su
 	return responseChan, errChan
 }
 
+// invoke SubmitJobs api with *SubmitJobsRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/submitjobs.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitJobsWithCallback(request *SubmitJobsRequest, callback func(response *SubmitJobsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,6 +92,7 @@ type SubmitJobsResponse struct {
 	JobResultList JobResultListInSubmitJobs `json:"JobResultList" xml:"JobResultList"`
 }
 
+// create a request to invoke SubmitJobs API
 func CreateSubmitJobsRequest() (request *SubmitJobsRequest) {
 	request = &SubmitJobsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -92,6 +101,7 @@ func CreateSubmitJobsRequest() (request *SubmitJobsRequest) {
 	return
 }
 
+// create a response to parse from SubmitJobs response
 func CreateSubmitJobsResponse() (response *SubmitJobsResponse) {
 	response = &SubmitJobsResponse{
 		BaseResponse: &responses.BaseResponse{},

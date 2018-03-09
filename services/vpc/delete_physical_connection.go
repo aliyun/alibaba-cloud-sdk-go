@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeletePhysicalConnection api with *DeletePhysicalConnectionRequest synchronously
+// api document: https://help.aliyun.com/api/vpc/deletephysicalconnection.html
 func (client *Client) DeletePhysicalConnection(request *DeletePhysicalConnectionRequest) (response *DeletePhysicalConnectionResponse, err error) {
 	response = CreateDeletePhysicalConnectionResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeletePhysicalConnection api with *DeletePhysicalConnectionRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/deletephysicalconnection.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeletePhysicalConnectionWithChan(request *DeletePhysicalConnectionRequest) (<-chan *DeletePhysicalConnectionResponse, <-chan error) {
 	responseChan := make(chan *DeletePhysicalConnectionResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeletePhysicalConnectionWithChan(request *DeletePhysicalCo
 	return responseChan, errChan
 }
 
+// invoke DeletePhysicalConnection api with *DeletePhysicalConnectionRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/deletephysicalconnection.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeletePhysicalConnectionWithCallback(request *DeletePhysicalConnectionRequest, callback func(response *DeletePhysicalConnectionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type DeletePhysicalConnectionResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke DeletePhysicalConnection API
 func CreateDeletePhysicalConnectionRequest() (request *DeletePhysicalConnectionRequest) {
 	request = &DeletePhysicalConnectionRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateDeletePhysicalConnectionRequest() (request *DeletePhysicalConnectionR
 	return
 }
 
+// create a response to parse from DeletePhysicalConnection response
 func CreateDeletePhysicalConnectionResponse() (response *DeletePhysicalConnectionResponse) {
 	response = &DeletePhysicalConnectionResponse{
 		BaseResponse: &responses.BaseResponse{},

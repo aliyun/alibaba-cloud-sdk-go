@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeVpnGateways api with *DescribeVpnGatewaysRequest synchronously
+// api document: https://help.aliyun.com/api/vpc/describevpngateways.html
 func (client *Client) DescribeVpnGateways(request *DescribeVpnGatewaysRequest) (response *DescribeVpnGatewaysResponse, err error) {
 	response = CreateDescribeVpnGatewaysResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeVpnGateways api with *DescribeVpnGatewaysRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/describevpngateways.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeVpnGatewaysWithChan(request *DescribeVpnGatewaysRequest) (<-chan *DescribeVpnGatewaysResponse, <-chan error) {
 	responseChan := make(chan *DescribeVpnGatewaysResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeVpnGatewaysWithChan(request *DescribeVpnGatewaysRe
 	return responseChan, errChan
 }
 
+// invoke DescribeVpnGateways api with *DescribeVpnGatewaysRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/describevpngateways.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeVpnGatewaysWithCallback(request *DescribeVpnGatewaysRequest, callback func(response *DescribeVpnGatewaysResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -88,6 +96,7 @@ type DescribeVpnGatewaysResponse struct {
 	VpnGateways VpnGateways `json:"VpnGateways" xml:"VpnGateways"`
 }
 
+// create a request to invoke DescribeVpnGateways API
 func CreateDescribeVpnGatewaysRequest() (request *DescribeVpnGatewaysRequest) {
 	request = &DescribeVpnGatewaysRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -96,6 +105,7 @@ func CreateDescribeVpnGatewaysRequest() (request *DescribeVpnGatewaysRequest) {
 	return
 }
 
+// create a response to parse from DescribeVpnGateways response
 func CreateDescribeVpnGatewaysResponse() (response *DescribeVpnGatewaysResponse) {
 	response = &DescribeVpnGatewaysResponse{
 		BaseResponse: &responses.BaseResponse{},

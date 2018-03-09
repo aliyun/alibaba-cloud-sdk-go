@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke QueryPornJobList api with *QueryPornJobListRequest synchronously
+// api document: https://help.aliyun.com/api/mts/querypornjoblist.html
 func (client *Client) QueryPornJobList(request *QueryPornJobListRequest) (response *QueryPornJobListResponse, err error) {
 	response = CreateQueryPornJobListResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke QueryPornJobList api with *QueryPornJobListRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/querypornjoblist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryPornJobListWithChan(request *QueryPornJobListRequest) (<-chan *QueryPornJobListResponse, <-chan error) {
 	responseChan := make(chan *QueryPornJobListResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) QueryPornJobListWithChan(request *QueryPornJobListRequest)
 	return responseChan, errChan
 }
 
+// invoke QueryPornJobList api with *QueryPornJobListRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/querypornjoblist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryPornJobListWithCallback(request *QueryPornJobListRequest, callback func(response *QueryPornJobListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type QueryPornJobListResponse struct {
 	PornJobList PornJobList                   `json:"PornJobList" xml:"PornJobList"`
 }
 
+// create a request to invoke QueryPornJobList API
 func CreateQueryPornJobListRequest() (request *QueryPornJobListRequest) {
 	request = &QueryPornJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateQueryPornJobListRequest() (request *QueryPornJobListRequest) {
 	return
 }
 
+// create a response to parse from QueryPornJobList response
 func CreateQueryPornJobListResponse() (response *QueryPornJobListResponse) {
 	response = &QueryPornJobListResponse{
 		BaseResponse: &responses.BaseResponse{},

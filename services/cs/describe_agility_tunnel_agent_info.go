@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeAgilityTunnelAgentInfo api with *DescribeAgilityTunnelAgentInfoRequest synchronously
+// api document: https://help.aliyun.com/api/cs/describeagilitytunnelagentinfo.html
 func (client *Client) DescribeAgilityTunnelAgentInfo(request *DescribeAgilityTunnelAgentInfoRequest) (response *DescribeAgilityTunnelAgentInfoResponse, err error) {
 	response = CreateDescribeAgilityTunnelAgentInfoResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeAgilityTunnelAgentInfo api with *DescribeAgilityTunnelAgentInfoRequest asynchronously
+// api document: https://help.aliyun.com/api/cs/describeagilitytunnelagentinfo.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAgilityTunnelAgentInfoWithChan(request *DescribeAgilityTunnelAgentInfoRequest) (<-chan *DescribeAgilityTunnelAgentInfoResponse, <-chan error) {
 	responseChan := make(chan *DescribeAgilityTunnelAgentInfoResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeAgilityTunnelAgentInfoWithChan(request *DescribeAg
 	return responseChan, errChan
 }
 
+// invoke DescribeAgilityTunnelAgentInfo api with *DescribeAgilityTunnelAgentInfoRequest asynchronously
+// api document: https://help.aliyun.com/api/cs/describeagilitytunnelagentinfo.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAgilityTunnelAgentInfoWithCallback(request *DescribeAgilityTunnelAgentInfoRequest, callback func(response *DescribeAgilityTunnelAgentInfoResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -74,6 +82,7 @@ type DescribeAgilityTunnelAgentInfoResponse struct {
 	*responses.BaseResponse
 }
 
+// create a request to invoke DescribeAgilityTunnelAgentInfo API
 func CreateDescribeAgilityTunnelAgentInfoRequest() (request *DescribeAgilityTunnelAgentInfoRequest) {
 	request = &DescribeAgilityTunnelAgentInfoRequest{
 		RoaRequest: &requests.RoaRequest{},
@@ -83,6 +92,7 @@ func CreateDescribeAgilityTunnelAgentInfoRequest() (request *DescribeAgilityTunn
 	return
 }
 
+// create a response to parse from DescribeAgilityTunnelAgentInfo response
 func CreateDescribeAgilityTunnelAgentInfoResponse() (response *DescribeAgilityTunnelAgentInfoResponse) {
 	response = &DescribeAgilityTunnelAgentInfoResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifyForwardEntry api with *ModifyForwardEntryRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/modifyforwardentry.html
 func (client *Client) ModifyForwardEntry(request *ModifyForwardEntryRequest) (response *ModifyForwardEntryResponse, err error) {
 	response = CreateModifyForwardEntryResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifyForwardEntry api with *ModifyForwardEntryRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/modifyforwardentry.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyForwardEntryWithChan(request *ModifyForwardEntryRequest) (<-chan *ModifyForwardEntryResponse, <-chan error) {
 	responseChan := make(chan *ModifyForwardEntryResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifyForwardEntryWithChan(request *ModifyForwardEntryRequ
 	return responseChan, errChan
 }
 
+// invoke ModifyForwardEntry api with *ModifyForwardEntryRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/modifyforwardentry.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyForwardEntryWithCallback(request *ModifyForwardEntryRequest, callback func(response *ModifyForwardEntryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -85,6 +93,7 @@ type ModifyForwardEntryResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ModifyForwardEntry API
 func CreateModifyForwardEntryRequest() (request *ModifyForwardEntryRequest) {
 	request = &ModifyForwardEntryRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -93,6 +102,7 @@ func CreateModifyForwardEntryRequest() (request *ModifyForwardEntryRequest) {
 	return
 }
 
+// create a response to parse from ModifyForwardEntry response
 func CreateModifyForwardEntryResponse() (response *ModifyForwardEntryResponse) {
 	response = &ModifyForwardEntryResponse{
 		BaseResponse: &responses.BaseResponse{},

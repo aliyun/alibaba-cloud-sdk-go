@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ListContactGroup api with *ListContactGroupRequest synchronously
+// api document: https://help.aliyun.com/api/cms/listcontactgroup.html
 func (client *Client) ListContactGroup(request *ListContactGroupRequest) (response *ListContactGroupResponse, err error) {
 	response = CreateListContactGroupResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ListContactGroup api with *ListContactGroupRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/listcontactgroup.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListContactGroupWithChan(request *ListContactGroupRequest) (<-chan *ListContactGroupResponse, <-chan error) {
 	responseChan := make(chan *ListContactGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ListContactGroupWithChan(request *ListContactGroupRequest)
 	return responseChan, errChan
 }
 
+// invoke ListContactGroup api with *ListContactGroupRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/listcontactgroup.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListContactGroupWithCallback(request *ListContactGroupRequest, callback func(response *ListContactGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,6 +91,7 @@ type ListContactGroupResponse struct {
 	ContactGroups ContactGroupsInListContactGroup `json:"ContactGroups" xml:"ContactGroups"`
 }
 
+// create a request to invoke ListContactGroup API
 func CreateListContactGroupRequest() (request *ListContactGroupRequest) {
 	request = &ListContactGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -91,6 +100,7 @@ func CreateListContactGroupRequest() (request *ListContactGroupRequest) {
 	return
 }
 
+// create a response to parse from ListContactGroup response
 func CreateListContactGroupResponse() (response *ListContactGroupResponse) {
 	response = &ListContactGroupResponse{
 		BaseResponse: &responses.BaseResponse{},

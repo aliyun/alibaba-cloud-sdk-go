@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke QueryAsrPipelineList api with *QueryAsrPipelineListRequest synchronously
+// api document: https://help.aliyun.com/api/mts/queryasrpipelinelist.html
 func (client *Client) QueryAsrPipelineList(request *QueryAsrPipelineListRequest) (response *QueryAsrPipelineListResponse, err error) {
 	response = CreateQueryAsrPipelineListResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke QueryAsrPipelineList api with *QueryAsrPipelineListRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/queryasrpipelinelist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryAsrPipelineListWithChan(request *QueryAsrPipelineListRequest) (<-chan *QueryAsrPipelineListResponse, <-chan error) {
 	responseChan := make(chan *QueryAsrPipelineListResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) QueryAsrPipelineListWithChan(request *QueryAsrPipelineList
 	return responseChan, errChan
 }
 
+// invoke QueryAsrPipelineList api with *QueryAsrPipelineListRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/queryasrpipelinelist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryAsrPipelineListWithCallback(request *QueryAsrPipelineListRequest, callback func(response *QueryAsrPipelineListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type QueryAsrPipelineListResponse struct {
 	PipelineList PipelineListInQueryAsrPipelineList `json:"PipelineList" xml:"PipelineList"`
 }
 
+// create a request to invoke QueryAsrPipelineList API
 func CreateQueryAsrPipelineListRequest() (request *QueryAsrPipelineListRequest) {
 	request = &QueryAsrPipelineListRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateQueryAsrPipelineListRequest() (request *QueryAsrPipelineListRequest) 
 	return
 }
 
+// create a response to parse from QueryAsrPipelineList response
 func CreateQueryAsrPipelineListResponse() (response *QueryAsrPipelineListResponse) {
 	response = &QueryAsrPipelineListResponse{
 		BaseResponse: &responses.BaseResponse{},

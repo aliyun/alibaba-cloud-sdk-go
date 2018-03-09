@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke UnbindAlias api with *UnbindAliasRequest synchronously
+// api document: https://help.aliyun.com/api/push/unbindalias.html
 func (client *Client) UnbindAlias(request *UnbindAliasRequest) (response *UnbindAliasResponse, err error) {
 	response = CreateUnbindAliasResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke UnbindAlias api with *UnbindAliasRequest asynchronously
+// api document: https://help.aliyun.com/api/push/unbindalias.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnbindAliasWithChan(request *UnbindAliasRequest) (<-chan *UnbindAliasResponse, <-chan error) {
 	responseChan := make(chan *UnbindAliasResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) UnbindAliasWithChan(request *UnbindAliasRequest) (<-chan *
 	return responseChan, errChan
 }
 
+// invoke UnbindAlias api with *UnbindAliasRequest asynchronously
+// api document: https://help.aliyun.com/api/push/unbindalias.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnbindAliasWithCallback(request *UnbindAliasRequest, callback func(response *UnbindAliasResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type UnbindAliasResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke UnbindAlias API
 func CreateUnbindAliasRequest() (request *UnbindAliasRequest) {
 	request = &UnbindAliasRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateUnbindAliasRequest() (request *UnbindAliasRequest) {
 	return
 }
 
+// create a response to parse from UnbindAlias response
 func CreateUnbindAliasResponse() (response *UnbindAliasResponse) {
 	response = &UnbindAliasResponse{
 		BaseResponse: &responses.BaseResponse{},

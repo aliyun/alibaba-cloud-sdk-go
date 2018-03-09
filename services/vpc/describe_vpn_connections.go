@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeVpnConnections api with *DescribeVpnConnectionsRequest synchronously
+// api document: https://help.aliyun.com/api/vpc/describevpnconnections.html
 func (client *Client) DescribeVpnConnections(request *DescribeVpnConnectionsRequest) (response *DescribeVpnConnectionsResponse, err error) {
 	response = CreateDescribeVpnConnectionsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeVpnConnections api with *DescribeVpnConnectionsRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/describevpnconnections.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeVpnConnectionsWithChan(request *DescribeVpnConnectionsRequest) (<-chan *DescribeVpnConnectionsResponse, <-chan error) {
 	responseChan := make(chan *DescribeVpnConnectionsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeVpnConnectionsWithChan(request *DescribeVpnConnect
 	return responseChan, errChan
 }
 
+// invoke DescribeVpnConnections api with *DescribeVpnConnectionsRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/describevpnconnections.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeVpnConnectionsWithCallback(request *DescribeVpnConnectionsRequest, callback func(response *DescribeVpnConnectionsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -86,6 +94,7 @@ type DescribeVpnConnectionsResponse struct {
 	VpnConnections VpnConnections `json:"VpnConnections" xml:"VpnConnections"`
 }
 
+// create a request to invoke DescribeVpnConnections API
 func CreateDescribeVpnConnectionsRequest() (request *DescribeVpnConnectionsRequest) {
 	request = &DescribeVpnConnectionsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -94,6 +103,7 @@ func CreateDescribeVpnConnectionsRequest() (request *DescribeVpnConnectionsReque
 	return
 }
 
+// create a response to parse from DescribeVpnConnections response
 func CreateDescribeVpnConnectionsResponse() (response *DescribeVpnConnectionsResponse) {
 	response = &DescribeVpnConnectionsResponse{
 		BaseResponse: &responses.BaseResponse{},

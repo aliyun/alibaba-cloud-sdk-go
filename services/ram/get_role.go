@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke GetRole api with *GetRoleRequest synchronously
+// api document: https://help.aliyun.com/api/ram/getrole.html
 func (client *Client) GetRole(request *GetRoleRequest) (response *GetRoleResponse, err error) {
 	response = CreateGetRoleResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke GetRole api with *GetRoleRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/getrole.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetRoleWithChan(request *GetRoleRequest) (<-chan *GetRoleResponse, <-chan error) {
 	responseChan := make(chan *GetRoleResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) GetRoleWithChan(request *GetRoleRequest) (<-chan *GetRoleR
 	return responseChan, errChan
 }
 
+// invoke GetRole api with *GetRoleRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/getrole.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetRoleWithCallback(request *GetRoleRequest, callback func(response *GetRoleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,6 +84,7 @@ type GetRoleResponse struct {
 	Role      Role   `json:"Role" xml:"Role"`
 }
 
+// create a request to invoke GetRole API
 func CreateGetRoleRequest() (request *GetRoleRequest) {
 	request = &GetRoleRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -84,6 +93,7 @@ func CreateGetRoleRequest() (request *GetRoleRequest) {
 	return
 }
 
+// create a response to parse from GetRole response
 func CreateGetRoleResponse() (response *GetRoleResponse) {
 	response = &GetRoleResponse{
 		BaseResponse: &responses.BaseResponse{},

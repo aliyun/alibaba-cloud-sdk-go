@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ListUsers api with *ListUsersRequest synchronously
+// api document: https://help.aliyun.com/api/ram/listusers.html
 func (client *Client) ListUsers(request *ListUsersRequest) (response *ListUsersResponse, err error) {
 	response = CreateListUsersResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ListUsers api with *ListUsersRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/listusers.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListUsersWithChan(request *ListUsersRequest) (<-chan *ListUsersResponse, <-chan error) {
 	responseChan := make(chan *ListUsersResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ListUsersWithChan(request *ListUsersRequest) (<-chan *List
 	return responseChan, errChan
 }
 
+// invoke ListUsers api with *ListUsersRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/listusers.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListUsersWithCallback(request *ListUsersRequest, callback func(response *ListUsersResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +87,7 @@ type ListUsersResponse struct {
 	Users       UsersInListUsers `json:"Users" xml:"Users"`
 }
 
+// create a request to invoke ListUsers API
 func CreateListUsersRequest() (request *ListUsersRequest) {
 	request = &ListUsersRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -87,6 +96,7 @@ func CreateListUsersRequest() (request *ListUsersRequest) {
 	return
 }
 
+// create a response to parse from ListUsers response
 func CreateListUsersResponse() (response *ListUsersResponse) {
 	response = &ListUsersResponse{
 		BaseResponse: &responses.BaseResponse{},

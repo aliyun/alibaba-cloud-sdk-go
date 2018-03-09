@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ReleaseEipAddress api with *ReleaseEipAddressRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/releaseeipaddress.html
 func (client *Client) ReleaseEipAddress(request *ReleaseEipAddressRequest) (response *ReleaseEipAddressResponse, err error) {
 	response = CreateReleaseEipAddressResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ReleaseEipAddress api with *ReleaseEipAddressRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/releaseeipaddress.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReleaseEipAddressWithChan(request *ReleaseEipAddressRequest) (<-chan *ReleaseEipAddressResponse, <-chan error) {
 	responseChan := make(chan *ReleaseEipAddressResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ReleaseEipAddressWithChan(request *ReleaseEipAddressReques
 	return responseChan, errChan
 }
 
+// invoke ReleaseEipAddress api with *ReleaseEipAddressRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/releaseeipaddress.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReleaseEipAddressWithCallback(request *ReleaseEipAddressRequest, callback func(response *ReleaseEipAddressResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +87,7 @@ type ReleaseEipAddressResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ReleaseEipAddress API
 func CreateReleaseEipAddressRequest() (request *ReleaseEipAddressRequest) {
 	request = &ReleaseEipAddressRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -87,6 +96,7 @@ func CreateReleaseEipAddressRequest() (request *ReleaseEipAddressRequest) {
 	return
 }
 
+// create a response to parse from ReleaseEipAddress response
 func CreateReleaseEipAddressResponse() (response *ReleaseEipAddressResponse) {
 	response = &ReleaseEipAddressResponse{
 		BaseResponse: &responses.BaseResponse{},

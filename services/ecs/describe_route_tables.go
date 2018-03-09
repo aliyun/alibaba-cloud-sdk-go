@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeRouteTables api with *DescribeRouteTablesRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/describeroutetables.html
 func (client *Client) DescribeRouteTables(request *DescribeRouteTablesRequest) (response *DescribeRouteTablesResponse, err error) {
 	response = CreateDescribeRouteTablesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeRouteTables api with *DescribeRouteTablesRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describeroutetables.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRouteTablesWithChan(request *DescribeRouteTablesRequest) (<-chan *DescribeRouteTablesResponse, <-chan error) {
 	responseChan := make(chan *DescribeRouteTablesResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeRouteTablesWithChan(request *DescribeRouteTablesRe
 	return responseChan, errChan
 }
 
+// invoke DescribeRouteTables api with *DescribeRouteTablesRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describeroutetables.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRouteTablesWithCallback(request *DescribeRouteTablesRequest, callback func(response *DescribeRouteTablesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -89,6 +97,7 @@ type DescribeRouteTablesResponse struct {
 	RouteTables RouteTables `json:"RouteTables" xml:"RouteTables"`
 }
 
+// create a request to invoke DescribeRouteTables API
 func CreateDescribeRouteTablesRequest() (request *DescribeRouteTablesRequest) {
 	request = &DescribeRouteTablesRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -97,6 +106,7 @@ func CreateDescribeRouteTablesRequest() (request *DescribeRouteTablesRequest) {
 	return
 }
 
+// create a response to parse from DescribeRouteTables response
 func CreateDescribeRouteTablesResponse() (response *DescribeRouteTablesResponse) {
 	response = &DescribeRouteTablesResponse{
 		BaseResponse: &responses.BaseResponse{},

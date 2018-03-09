@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke AuthorizeSecurityGroupEgress api with *AuthorizeSecurityGroupEgressRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/authorizesecuritygroupegress.html
 func (client *Client) AuthorizeSecurityGroupEgress(request *AuthorizeSecurityGroupEgressRequest) (response *AuthorizeSecurityGroupEgressResponse, err error) {
 	response = CreateAuthorizeSecurityGroupEgressResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke AuthorizeSecurityGroupEgress api with *AuthorizeSecurityGroupEgressRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/authorizesecuritygroupegress.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AuthorizeSecurityGroupEgressWithChan(request *AuthorizeSecurityGroupEgressRequest) (<-chan *AuthorizeSecurityGroupEgressResponse, <-chan error) {
 	responseChan := make(chan *AuthorizeSecurityGroupEgressResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) AuthorizeSecurityGroupEgressWithChan(request *AuthorizeSec
 	return responseChan, errChan
 }
 
+// invoke AuthorizeSecurityGroupEgress api with *AuthorizeSecurityGroupEgressRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/authorizesecuritygroupegress.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AuthorizeSecurityGroupEgressWithCallback(request *AuthorizeSecurityGroupEgressRequest, callback func(response *AuthorizeSecurityGroupEgressResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -74,6 +82,7 @@ type AuthorizeSecurityGroupEgressResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke AuthorizeSecurityGroupEgress API
 func CreateAuthorizeSecurityGroupEgressRequest() (request *AuthorizeSecurityGroupEgressRequest) {
 	request = &AuthorizeSecurityGroupEgressRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -82,6 +91,7 @@ func CreateAuthorizeSecurityGroupEgressRequest() (request *AuthorizeSecurityGrou
 	return
 }
 
+// create a response to parse from AuthorizeSecurityGroupEgress response
 func CreateAuthorizeSecurityGroupEgressResponse() (response *AuthorizeSecurityGroupEgressResponse) {
 	response = &AuthorizeSecurityGroupEgressResponse{
 		BaseResponse: &responses.BaseResponse{},

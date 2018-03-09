@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ResetAccountForPG api with *ResetAccountForPGRequest synchronously
+// api document: https://help.aliyun.com/api/rds/resetaccountforpg.html
 func (client *Client) ResetAccountForPG(request *ResetAccountForPGRequest) (response *ResetAccountForPGResponse, err error) {
 	response = CreateResetAccountForPGResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ResetAccountForPG api with *ResetAccountForPGRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/resetaccountforpg.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResetAccountForPGWithChan(request *ResetAccountForPGRequest) (<-chan *ResetAccountForPGResponse, <-chan error) {
 	responseChan := make(chan *ResetAccountForPGResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ResetAccountForPGWithChan(request *ResetAccountForPGReques
 	return responseChan, errChan
 }
 
+// invoke ResetAccountForPG api with *ResetAccountForPGRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/resetaccountforpg.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResetAccountForPGWithCallback(request *ResetAccountForPGRequest, callback func(response *ResetAccountForPGResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type ResetAccountForPGResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ResetAccountForPG API
 func CreateResetAccountForPGRequest() (request *ResetAccountForPGRequest) {
 	request = &ResetAccountForPGRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateResetAccountForPGRequest() (request *ResetAccountForPGRequest) {
 	return
 }
 
+// create a response to parse from ResetAccountForPG response
 func CreateResetAccountForPGResponse() (response *ResetAccountForPGResponse) {
 	response = &ResetAccountForPGResponse{
 		BaseResponse: &responses.BaseResponse{},

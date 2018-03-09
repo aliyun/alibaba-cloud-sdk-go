@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke QueryUniqueDeviceStat api with *QueryUniqueDeviceStatRequest synchronously
+// api document: https://help.aliyun.com/api/push/queryuniquedevicestat.html
 func (client *Client) QueryUniqueDeviceStat(request *QueryUniqueDeviceStatRequest) (response *QueryUniqueDeviceStatResponse, err error) {
 	response = CreateQueryUniqueDeviceStatResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke QueryUniqueDeviceStat api with *QueryUniqueDeviceStatRequest asynchronously
+// api document: https://help.aliyun.com/api/push/queryuniquedevicestat.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryUniqueDeviceStatWithChan(request *QueryUniqueDeviceStatRequest) (<-chan *QueryUniqueDeviceStatResponse, <-chan error) {
 	responseChan := make(chan *QueryUniqueDeviceStatResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) QueryUniqueDeviceStatWithChan(request *QueryUniqueDeviceSt
 	return responseChan, errChan
 }
 
+// invoke QueryUniqueDeviceStat api with *QueryUniqueDeviceStatRequest asynchronously
+// api document: https://help.aliyun.com/api/push/queryuniquedevicestat.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryUniqueDeviceStatWithCallback(request *QueryUniqueDeviceStatRequest, callback func(response *QueryUniqueDeviceStatResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +87,7 @@ type QueryUniqueDeviceStatResponse struct {
 	AppDeviceStats AppDeviceStatsInQueryUniqueDeviceStat `json:"AppDeviceStats" xml:"AppDeviceStats"`
 }
 
+// create a request to invoke QueryUniqueDeviceStat API
 func CreateQueryUniqueDeviceStatRequest() (request *QueryUniqueDeviceStatRequest) {
 	request = &QueryUniqueDeviceStatRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -87,6 +96,7 @@ func CreateQueryUniqueDeviceStatRequest() (request *QueryUniqueDeviceStatRequest
 	return
 }
 
+// create a response to parse from QueryUniqueDeviceStat response
 func CreateQueryUniqueDeviceStatResponse() (response *QueryUniqueDeviceStatResponse) {
 	response = &QueryUniqueDeviceStatResponse{
 		BaseResponse: &responses.BaseResponse{},

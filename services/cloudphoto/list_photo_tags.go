@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ListPhotoTags api with *ListPhotoTagsRequest synchronously
+// api document: https://help.aliyun.com/api/cloudphoto/listphototags.html
 func (client *Client) ListPhotoTags(request *ListPhotoTagsRequest) (response *ListPhotoTagsResponse, err error) {
 	response = CreateListPhotoTagsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ListPhotoTags api with *ListPhotoTagsRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/listphototags.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListPhotoTagsWithChan(request *ListPhotoTagsRequest) (<-chan *ListPhotoTagsResponse, <-chan error) {
 	responseChan := make(chan *ListPhotoTagsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ListPhotoTagsWithChan(request *ListPhotoTagsRequest) (<-ch
 	return responseChan, errChan
 }
 
+// invoke ListPhotoTags api with *ListPhotoTagsRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/listphototags.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListPhotoTagsWithCallback(request *ListPhotoTagsRequest, callback func(response *ListPhotoTagsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type ListPhotoTagsResponse struct {
 	Tags      []Tag  `json:"Tags" xml:"Tags"`
 }
 
+// create a request to invoke ListPhotoTags API
 func CreateListPhotoTagsRequest() (request *ListPhotoTagsRequest) {
 	request = &ListPhotoTagsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateListPhotoTagsRequest() (request *ListPhotoTagsRequest) {
 	return
 }
 
+// create a response to parse from ListPhotoTags response
 func CreateListPhotoTagsResponse() (response *ListPhotoTagsResponse) {
 	response = &ListPhotoTagsResponse{
 		BaseResponse: &responses.BaseResponse{},

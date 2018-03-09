@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke GetLibrary api with *GetLibraryRequest synchronously
+// api document: https://help.aliyun.com/api/cloudphoto/getlibrary.html
 func (client *Client) GetLibrary(request *GetLibraryRequest) (response *GetLibraryResponse, err error) {
 	response = CreateGetLibraryResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke GetLibrary api with *GetLibraryRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/getlibrary.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetLibraryWithChan(request *GetLibraryRequest) (<-chan *GetLibraryResponse, <-chan error) {
 	responseChan := make(chan *GetLibraryResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) GetLibraryWithChan(request *GetLibraryRequest) (<-chan *Ge
 	return responseChan, errChan
 }
 
+// invoke GetLibrary api with *GetLibraryRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/getlibrary.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetLibraryWithCallback(request *GetLibraryRequest, callback func(response *GetLibraryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type GetLibraryResponse struct {
 	Library   Library `json:"Library" xml:"Library"`
 }
 
+// create a request to invoke GetLibrary API
 func CreateGetLibraryRequest() (request *GetLibraryRequest) {
 	request = &GetLibraryRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateGetLibraryRequest() (request *GetLibraryRequest) {
 	return
 }
 
+// create a response to parse from GetLibrary response
 func CreateGetLibraryResponse() (response *GetLibraryResponse) {
 	response = &GetLibraryResponse{
 		BaseResponse: &responses.BaseResponse{},

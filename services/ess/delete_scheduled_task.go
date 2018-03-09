@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeleteScheduledTask api with *DeleteScheduledTaskRequest synchronously
+// api document: https://help.aliyun.com/api/ess/deletescheduledtask.html
 func (client *Client) DeleteScheduledTask(request *DeleteScheduledTaskRequest) (response *DeleteScheduledTaskResponse, err error) {
 	response = CreateDeleteScheduledTaskResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeleteScheduledTask api with *DeleteScheduledTaskRequest asynchronously
+// api document: https://help.aliyun.com/api/ess/deletescheduledtask.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteScheduledTaskWithChan(request *DeleteScheduledTaskRequest) (<-chan *DeleteScheduledTaskResponse, <-chan error) {
 	responseChan := make(chan *DeleteScheduledTaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeleteScheduledTaskWithChan(request *DeleteScheduledTaskRe
 	return responseChan, errChan
 }
 
+// invoke DeleteScheduledTask api with *DeleteScheduledTaskRequest asynchronously
+// api document: https://help.aliyun.com/api/ess/deletescheduledtask.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteScheduledTaskWithCallback(request *DeleteScheduledTaskRequest, callback func(response *DeleteScheduledTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type DeleteScheduledTaskResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke DeleteScheduledTask API
 func CreateDeleteScheduledTaskRequest() (request *DeleteScheduledTaskRequest) {
 	request = &DeleteScheduledTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateDeleteScheduledTaskRequest() (request *DeleteScheduledTaskRequest) {
 	return
 }
 
+// create a response to parse from DeleteScheduledTask response
 func CreateDeleteScheduledTaskResponse() (response *DeleteScheduledTaskResponse) {
 	response = &DeleteScheduledTaskResponse{
 		BaseResponse: &responses.BaseResponse{},

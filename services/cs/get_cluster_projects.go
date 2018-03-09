@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke GetClusterProjects api with *GetClusterProjectsRequest synchronously
+// api document: https://help.aliyun.com/api/cs/getclusterprojects.html
 func (client *Client) GetClusterProjects(request *GetClusterProjectsRequest) (response *GetClusterProjectsResponse, err error) {
 	response = CreateGetClusterProjectsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke GetClusterProjects api with *GetClusterProjectsRequest asynchronously
+// api document: https://help.aliyun.com/api/cs/getclusterprojects.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetClusterProjectsWithChan(request *GetClusterProjectsRequest) (<-chan *GetClusterProjectsResponse, <-chan error) {
 	responseChan := make(chan *GetClusterProjectsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) GetClusterProjectsWithChan(request *GetClusterProjectsRequ
 	return responseChan, errChan
 }
 
+// invoke GetClusterProjects api with *GetClusterProjectsRequest asynchronously
+// api document: https://help.aliyun.com/api/cs/getclusterprojects.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetClusterProjectsWithCallback(request *GetClusterProjectsRequest, callback func(response *GetClusterProjectsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -74,6 +82,7 @@ type GetClusterProjectsResponse struct {
 	*responses.BaseResponse
 }
 
+// create a request to invoke GetClusterProjects API
 func CreateGetClusterProjectsRequest() (request *GetClusterProjectsRequest) {
 	request = &GetClusterProjectsRequest{
 		RoaRequest: &requests.RoaRequest{},
@@ -83,6 +92,7 @@ func CreateGetClusterProjectsRequest() (request *GetClusterProjectsRequest) {
 	return
 }
 
+// create a response to parse from GetClusterProjects response
 func CreateGetClusterProjectsResponse() (response *GetClusterProjectsResponse) {
 	response = &GetClusterProjectsResponse{
 		BaseResponse: &responses.BaseResponse{},

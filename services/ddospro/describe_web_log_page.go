@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeWebLogPage api with *DescribeWebLogPageRequest synchronously
+// api document: https://help.aliyun.com/api/ddospro/describeweblogpage.html
 func (client *Client) DescribeWebLogPage(request *DescribeWebLogPageRequest) (response *DescribeWebLogPageResponse, err error) {
 	response = CreateDescribeWebLogPageResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeWebLogPage api with *DescribeWebLogPageRequest asynchronously
+// api document: https://help.aliyun.com/api/ddospro/describeweblogpage.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeWebLogPageWithChan(request *DescribeWebLogPageRequest) (<-chan *DescribeWebLogPageResponse, <-chan error) {
 	responseChan := make(chan *DescribeWebLogPageResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeWebLogPageWithChan(request *DescribeWebLogPageRequ
 	return responseChan, errChan
 }
 
+// invoke DescribeWebLogPage api with *DescribeWebLogPageRequest asynchronously
+// api document: https://help.aliyun.com/api/ddospro/describeweblogpage.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeWebLogPageWithCallback(request *DescribeWebLogPageRequest, callback func(response *DescribeWebLogPageResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type DescribeWebLogPageResponse struct {
 	WebLogList []WebLog `json:"WebLogList" xml:"WebLogList"`
 }
 
+// create a request to invoke DescribeWebLogPage API
 func CreateDescribeWebLogPageRequest() (request *DescribeWebLogPageRequest) {
 	request = &DescribeWebLogPageRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateDescribeWebLogPageRequest() (request *DescribeWebLogPageRequest) {
 	return
 }
 
+// create a response to parse from DescribeWebLogPage response
 func CreateDescribeWebLogPageResponse() (response *DescribeWebLogPageResponse) {
 	response = &DescribeWebLogPageResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke AddWaterMarkTemplate api with *AddWaterMarkTemplateRequest synchronously
+// api document: https://help.aliyun.com/api/mts/addwatermarktemplate.html
 func (client *Client) AddWaterMarkTemplate(request *AddWaterMarkTemplateRequest) (response *AddWaterMarkTemplateResponse, err error) {
 	response = CreateAddWaterMarkTemplateResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke AddWaterMarkTemplate api with *AddWaterMarkTemplateRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/addwatermarktemplate.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddWaterMarkTemplateWithChan(request *AddWaterMarkTemplateRequest) (<-chan *AddWaterMarkTemplateResponse, <-chan error) {
 	responseChan := make(chan *AddWaterMarkTemplateResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) AddWaterMarkTemplateWithChan(request *AddWaterMarkTemplate
 	return responseChan, errChan
 }
 
+// invoke AddWaterMarkTemplate api with *AddWaterMarkTemplateRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/addwatermarktemplate.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddWaterMarkTemplateWithCallback(request *AddWaterMarkTemplateRequest, callback func(response *AddWaterMarkTemplateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type AddWaterMarkTemplateResponse struct {
 	WaterMarkTemplate WaterMarkTemplate `json:"WaterMarkTemplate" xml:"WaterMarkTemplate"`
 }
 
+// create a request to invoke AddWaterMarkTemplate API
 func CreateAddWaterMarkTemplateRequest() (request *AddWaterMarkTemplateRequest) {
 	request = &AddWaterMarkTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateAddWaterMarkTemplateRequest() (request *AddWaterMarkTemplateRequest) 
 	return
 }
 
+// create a response to parse from AddWaterMarkTemplate response
 func CreateAddWaterMarkTemplateResponse() (response *AddWaterMarkTemplateResponse) {
 	response = &AddWaterMarkTemplateResponse{
 		BaseResponse: &responses.BaseResponse{},

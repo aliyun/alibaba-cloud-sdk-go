@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ProfileSet api with *ProfileSetRequest synchronously
+// api document: https://help.aliyun.com/api/cms/profileset.html
 func (client *Client) ProfileSet(request *ProfileSetRequest) (response *ProfileSetResponse, err error) {
 	response = CreateProfileSetResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ProfileSet api with *ProfileSetRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/profileset.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ProfileSetWithChan(request *ProfileSetRequest) (<-chan *ProfileSetResponse, <-chan error) {
 	responseChan := make(chan *ProfileSetResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ProfileSetWithChan(request *ProfileSetRequest) (<-chan *Pr
 	return responseChan, errChan
 }
 
+// invoke ProfileSet api with *ProfileSetRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/profileset.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ProfileSetWithCallback(request *ProfileSetRequest, callback func(response *ProfileSetResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type ProfileSetResponse struct {
 	RequestId    string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ProfileSet API
 func CreateProfileSetRequest() (request *ProfileSetRequest) {
 	request = &ProfileSetRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateProfileSetRequest() (request *ProfileSetRequest) {
 	return
 }
 
+// create a response to parse from ProfileSet response
 func CreateProfileSetResponse() (response *ProfileSetResponse) {
 	response = &ProfileSetResponse{
 		BaseResponse: &responses.BaseResponse{},

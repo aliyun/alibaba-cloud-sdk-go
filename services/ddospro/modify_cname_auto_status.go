@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifyCnameAutoStatus api with *ModifyCnameAutoStatusRequest synchronously
+// api document: https://help.aliyun.com/api/ddospro/modifycnameautostatus.html
 func (client *Client) ModifyCnameAutoStatus(request *ModifyCnameAutoStatusRequest) (response *ModifyCnameAutoStatusResponse, err error) {
 	response = CreateModifyCnameAutoStatusResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifyCnameAutoStatus api with *ModifyCnameAutoStatusRequest asynchronously
+// api document: https://help.aliyun.com/api/ddospro/modifycnameautostatus.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyCnameAutoStatusWithChan(request *ModifyCnameAutoStatusRequest) (<-chan *ModifyCnameAutoStatusResponse, <-chan error) {
 	responseChan := make(chan *ModifyCnameAutoStatusResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifyCnameAutoStatusWithChan(request *ModifyCnameAutoStat
 	return responseChan, errChan
 }
 
+// invoke ModifyCnameAutoStatus api with *ModifyCnameAutoStatusRequest asynchronously
+// api document: https://help.aliyun.com/api/ddospro/modifycnameautostatus.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyCnameAutoStatusWithCallback(request *ModifyCnameAutoStatusRequest, callback func(response *ModifyCnameAutoStatusResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +85,7 @@ type ModifyCnameAutoStatusResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ModifyCnameAutoStatus API
 func CreateModifyCnameAutoStatusRequest() (request *ModifyCnameAutoStatusRequest) {
 	request = &ModifyCnameAutoStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -85,6 +94,7 @@ func CreateModifyCnameAutoStatusRequest() (request *ModifyCnameAutoStatusRequest
 	return
 }
 
+// create a response to parse from ModifyCnameAutoStatus response
 func CreateModifyCnameAutoStatusResponse() (response *ModifyCnameAutoStatusResponse) {
 	response = &ModifyCnameAutoStatusResponse{
 		BaseResponse: &responses.BaseResponse{},

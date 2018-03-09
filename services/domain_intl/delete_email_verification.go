@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeleteEmailVerification api with *DeleteEmailVerificationRequest synchronously
+// api document: https://help.aliyun.com/api/domain-intl/deleteemailverification.html
 func (client *Client) DeleteEmailVerification(request *DeleteEmailVerificationRequest) (response *DeleteEmailVerificationResponse, err error) {
 	response = CreateDeleteEmailVerificationResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeleteEmailVerification api with *DeleteEmailVerificationRequest asynchronously
+// api document: https://help.aliyun.com/api/domain-intl/deleteemailverification.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteEmailVerificationWithChan(request *DeleteEmailVerificationRequest) (<-chan *DeleteEmailVerificationResponse, <-chan error) {
 	responseChan := make(chan *DeleteEmailVerificationResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeleteEmailVerificationWithChan(request *DeleteEmailVerifi
 	return responseChan, errChan
 }
 
+// invoke DeleteEmailVerification api with *DeleteEmailVerificationRequest asynchronously
+// api document: https://help.aliyun.com/api/domain-intl/deleteemailverification.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteEmailVerificationWithCallback(request *DeleteEmailVerificationRequest, callback func(response *DeleteEmailVerificationResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +87,7 @@ type DeleteEmailVerificationResponse struct {
 	FailList    []SendResult `json:"FailList" xml:"FailList"`
 }
 
+// create a request to invoke DeleteEmailVerification API
 func CreateDeleteEmailVerificationRequest() (request *DeleteEmailVerificationRequest) {
 	request = &DeleteEmailVerificationRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -87,6 +96,7 @@ func CreateDeleteEmailVerificationRequest() (request *DeleteEmailVerificationReq
 	return
 }
 
+// create a response to parse from DeleteEmailVerification response
 func CreateDeleteEmailVerificationResponse() (response *DeleteEmailVerificationResponse) {
 	response = &DeleteEmailVerificationResponse{
 		BaseResponse: &responses.BaseResponse{},

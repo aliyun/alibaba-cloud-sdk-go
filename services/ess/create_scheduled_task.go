@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CreateScheduledTask api with *CreateScheduledTaskRequest synchronously
+// api document: https://help.aliyun.com/api/ess/createscheduledtask.html
 func (client *Client) CreateScheduledTask(request *CreateScheduledTaskRequest) (response *CreateScheduledTaskResponse, err error) {
 	response = CreateCreateScheduledTaskResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CreateScheduledTask api with *CreateScheduledTaskRequest asynchronously
+// api document: https://help.aliyun.com/api/ess/createscheduledtask.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateScheduledTaskWithChan(request *CreateScheduledTaskRequest) (<-chan *CreateScheduledTaskResponse, <-chan error) {
 	responseChan := make(chan *CreateScheduledTaskResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CreateScheduledTaskWithChan(request *CreateScheduledTaskRe
 	return responseChan, errChan
 }
 
+// invoke CreateScheduledTask api with *CreateScheduledTaskRequest asynchronously
+// api document: https://help.aliyun.com/api/ess/createscheduledtask.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateScheduledTaskWithCallback(request *CreateScheduledTaskRequest, callback func(response *CreateScheduledTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -87,6 +95,7 @@ type CreateScheduledTaskResponse struct {
 	RequestId       string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke CreateScheduledTask API
 func CreateCreateScheduledTaskRequest() (request *CreateScheduledTaskRequest) {
 	request = &CreateScheduledTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -95,6 +104,7 @@ func CreateCreateScheduledTaskRequest() (request *CreateScheduledTaskRequest) {
 	return
 }
 
+// create a response to parse from CreateScheduledTask response
 func CreateCreateScheduledTaskResponse() (response *CreateScheduledTaskResponse) {
 	response = &CreateScheduledTaskResponse{
 		BaseResponse: &responses.BaseResponse{},

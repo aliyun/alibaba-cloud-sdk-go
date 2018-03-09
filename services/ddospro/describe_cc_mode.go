@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeCcMode api with *DescribeCcModeRequest synchronously
+// api document: https://help.aliyun.com/api/ddospro/describeccmode.html
 func (client *Client) DescribeCcMode(request *DescribeCcModeRequest) (response *DescribeCcModeResponse, err error) {
 	response = CreateDescribeCcModeResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeCcMode api with *DescribeCcModeRequest asynchronously
+// api document: https://help.aliyun.com/api/ddospro/describeccmode.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCcModeWithChan(request *DescribeCcModeRequest) (<-chan *DescribeCcModeResponse, <-chan error) {
 	responseChan := make(chan *DescribeCcModeResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeCcModeWithChan(request *DescribeCcModeRequest) (<-
 	return responseChan, errChan
 }
 
+// invoke DescribeCcMode api with *DescribeCcModeRequest asynchronously
+// api document: https://help.aliyun.com/api/ddospro/describeccmode.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCcModeWithCallback(request *DescribeCcModeRequest, callback func(response *DescribeCcModeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type DescribeCcModeResponse struct {
 	Data      []Data `json:"Data" xml:"Data"`
 }
 
+// create a request to invoke DescribeCcMode API
 func CreateDescribeCcModeRequest() (request *DescribeCcModeRequest) {
 	request = &DescribeCcModeRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateDescribeCcModeRequest() (request *DescribeCcModeRequest) {
 	return
 }
 
+// create a response to parse from DescribeCcMode response
 func CreateDescribeCcModeResponse() (response *DescribeCcModeResponse) {
 	response = &DescribeCcModeResponse{
 		BaseResponse: &responses.BaseResponse{},

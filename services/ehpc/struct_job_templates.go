@@ -21,7 +21,7 @@ type JobTemplates struct {
 	CommandLine        string `json:"CommandLine" xml:"CommandLine"`
 	RunasUser          string `json:"RunasUser" xml:"RunasUser"`
 	Priority           int    `json:"Priority" xml:"Priority"`
-	Package            string `json:"Package" xml:"Package"`
+	PackagePath        string `json:"PackagePath" xml:"PackagePath"`
 	StdoutRedirectPath string `json:"StdoutRedirectPath" xml:"StdoutRedirectPath"`
 	StderrRedirectPath string `json:"StderrRedirectPath" xml:"StderrRedirectPath"`
 	ReRunable          bool   `json:"ReRunable" xml:"ReRunable"`

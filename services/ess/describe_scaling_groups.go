@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeScalingGroups api with *DescribeScalingGroupsRequest synchronously
+// api document: https://help.aliyun.com/api/ess/describescalinggroups.html
 func (client *Client) DescribeScalingGroups(request *DescribeScalingGroupsRequest) (response *DescribeScalingGroupsResponse, err error) {
 	response = CreateDescribeScalingGroupsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeScalingGroups api with *DescribeScalingGroupsRequest asynchronously
+// api document: https://help.aliyun.com/api/ess/describescalinggroups.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeScalingGroupsWithChan(request *DescribeScalingGroupsRequest) (<-chan *DescribeScalingGroupsResponse, <-chan error) {
 	responseChan := make(chan *DescribeScalingGroupsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeScalingGroupsWithChan(request *DescribeScalingGrou
 	return responseChan, errChan
 }
 
+// invoke DescribeScalingGroups api with *DescribeScalingGroupsRequest asynchronously
+// api document: https://help.aliyun.com/api/ess/describescalinggroups.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeScalingGroupsWithCallback(request *DescribeScalingGroupsRequest, callback func(response *DescribeScalingGroupsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -124,6 +132,7 @@ type DescribeScalingGroupsResponse struct {
 	ScalingGroups ScalingGroups `json:"ScalingGroups" xml:"ScalingGroups"`
 }
 
+// create a request to invoke DescribeScalingGroups API
 func CreateDescribeScalingGroupsRequest() (request *DescribeScalingGroupsRequest) {
 	request = &DescribeScalingGroupsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -132,6 +141,7 @@ func CreateDescribeScalingGroupsRequest() (request *DescribeScalingGroupsRequest
 	return
 }
 
+// create a response to parse from DescribeScalingGroups response
 func CreateDescribeScalingGroupsResponse() (response *DescribeScalingGroupsResponse) {
 	response = &DescribeScalingGroupsResponse{
 		BaseResponse: &responses.BaseResponse{},

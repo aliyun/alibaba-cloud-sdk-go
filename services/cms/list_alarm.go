@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ListAlarm api with *ListAlarmRequest synchronously
+// api document: https://help.aliyun.com/api/cms/listalarm.html
 func (client *Client) ListAlarm(request *ListAlarmRequest) (response *ListAlarmResponse, err error) {
 	response = CreateListAlarmResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ListAlarm api with *ListAlarmRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/listalarm.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAlarmWithChan(request *ListAlarmRequest) (<-chan *ListAlarmResponse, <-chan error) {
 	responseChan := make(chan *ListAlarmResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ListAlarmWithChan(request *ListAlarmRequest) (<-chan *List
 	return responseChan, errChan
 }
 
+// invoke ListAlarm api with *ListAlarmRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/listalarm.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAlarmWithCallback(request *ListAlarmRequest, callback func(response *ListAlarmResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -89,6 +97,7 @@ type ListAlarmResponse struct {
 	AlarmList AlarmList `json:"AlarmList" xml:"AlarmList"`
 }
 
+// create a request to invoke ListAlarm API
 func CreateListAlarmRequest() (request *ListAlarmRequest) {
 	request = &ListAlarmRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -97,6 +106,7 @@ func CreateListAlarmRequest() (request *ListAlarmRequest) {
 	return
 }
 
+// create a response to parse from ListAlarm response
 func CreateListAlarmResponse() (response *ListAlarmResponse) {
 	response = &ListAlarmResponse{
 		BaseResponse: &responses.BaseResponse{},

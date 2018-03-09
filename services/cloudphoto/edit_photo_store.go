@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke EditPhotoStore api with *EditPhotoStoreRequest synchronously
+// api document: https://help.aliyun.com/api/cloudphoto/editphotostore.html
 func (client *Client) EditPhotoStore(request *EditPhotoStoreRequest) (response *EditPhotoStoreResponse, err error) {
 	response = CreateEditPhotoStoreResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke EditPhotoStore api with *EditPhotoStoreRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/editphotostore.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EditPhotoStoreWithChan(request *EditPhotoStoreRequest) (<-chan *EditPhotoStoreResponse, <-chan error) {
 	responseChan := make(chan *EditPhotoStoreResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) EditPhotoStoreWithChan(request *EditPhotoStoreRequest) (<-
 	return responseChan, errChan
 }
 
+// invoke EditPhotoStore api with *EditPhotoStoreRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/editphotostore.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EditPhotoStoreWithCallback(request *EditPhotoStoreRequest, callback func(response *EditPhotoStoreResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,6 +91,7 @@ type EditPhotoStoreResponse struct {
 	Action    string `json:"Action" xml:"Action"`
 }
 
+// create a request to invoke EditPhotoStore API
 func CreateEditPhotoStoreRequest() (request *EditPhotoStoreRequest) {
 	request = &EditPhotoStoreRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -91,6 +100,7 @@ func CreateEditPhotoStoreRequest() (request *EditPhotoStoreRequest) {
 	return
 }
 
+// create a response to parse from EditPhotoStore response
 func CreateEditPhotoStoreResponse() (response *EditPhotoStoreResponse) {
 	response = &EditPhotoStoreResponse{
 		BaseResponse: &responses.BaseResponse{},

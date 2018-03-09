@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke QueryCustomEventCount api with *QueryCustomEventCountRequest synchronously
+// api document: https://help.aliyun.com/api/cms/querycustomeventcount.html
 func (client *Client) QueryCustomEventCount(request *QueryCustomEventCountRequest) (response *QueryCustomEventCountResponse, err error) {
 	response = CreateQueryCustomEventCountResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke QueryCustomEventCount api with *QueryCustomEventCountRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/querycustomeventcount.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryCustomEventCountWithChan(request *QueryCustomEventCountRequest) (<-chan *QueryCustomEventCountResponse, <-chan error) {
 	responseChan := make(chan *QueryCustomEventCountResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) QueryCustomEventCountWithChan(request *QueryCustomEventCou
 	return responseChan, errChan
 }
 
+// invoke QueryCustomEventCount api with *QueryCustomEventCountRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/querycustomeventcount.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryCustomEventCountWithCallback(request *QueryCustomEventCountRequest, callback func(response *QueryCustomEventCountResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +85,7 @@ type QueryCustomEventCountResponse struct {
 	Data    string `json:"Data" xml:"Data"`
 }
 
+// create a request to invoke QueryCustomEventCount API
 func CreateQueryCustomEventCountRequest() (request *QueryCustomEventCountRequest) {
 	request = &QueryCustomEventCountRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -85,6 +94,7 @@ func CreateQueryCustomEventCountRequest() (request *QueryCustomEventCountRequest
 	return
 }
 
+// create a response to parse from QueryCustomEventCount response
 func CreateQueryCustomEventCountResponse() (response *QueryCustomEventCountResponse) {
 	response = &QueryCustomEventCountResponse{
 		BaseResponse: &responses.BaseResponse{},

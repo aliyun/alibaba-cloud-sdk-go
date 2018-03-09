@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke NodeStatusList api with *NodeStatusListRequest synchronously
+// api document: https://help.aliyun.com/api/cms/nodestatuslist.html
 func (client *Client) NodeStatusList(request *NodeStatusListRequest) (response *NodeStatusListResponse, err error) {
 	response = CreateNodeStatusListResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke NodeStatusList api with *NodeStatusListRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/nodestatuslist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) NodeStatusListWithChan(request *NodeStatusListRequest) (<-chan *NodeStatusListResponse, <-chan error) {
 	responseChan := make(chan *NodeStatusListResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) NodeStatusListWithChan(request *NodeStatusListRequest) (<-
 	return responseChan, errChan
 }
 
+// invoke NodeStatusList api with *NodeStatusListRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/nodestatuslist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) NodeStatusListWithCallback(request *NodeStatusListRequest, callback func(response *NodeStatusListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +87,7 @@ type NodeStatusListResponse struct {
 	NodeStatusList NodeStatusList `json:"NodeStatusList" xml:"NodeStatusList"`
 }
 
+// create a request to invoke NodeStatusList API
 func CreateNodeStatusListRequest() (request *NodeStatusListRequest) {
 	request = &NodeStatusListRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -87,6 +96,7 @@ func CreateNodeStatusListRequest() (request *NodeStatusListRequest) {
 	return
 }
 
+// create a response to parse from NodeStatusList response
 func CreateNodeStatusListResponse() (response *NodeStatusListResponse) {
 	response = &NodeStatusListResponse{
 		BaseResponse: &responses.BaseResponse{},

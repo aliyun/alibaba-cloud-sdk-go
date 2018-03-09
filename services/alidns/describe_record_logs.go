@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeRecordLogs api with *DescribeRecordLogsRequest synchronously
+// api document: https://help.aliyun.com/api/alidns/describerecordlogs.html
 func (client *Client) DescribeRecordLogs(request *DescribeRecordLogsRequest) (response *DescribeRecordLogsResponse, err error) {
 	response = CreateDescribeRecordLogsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeRecordLogs api with *DescribeRecordLogsRequest asynchronously
+// api document: https://help.aliyun.com/api/alidns/describerecordlogs.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRecordLogsWithChan(request *DescribeRecordLogsRequest) (<-chan *DescribeRecordLogsResponse, <-chan error) {
 	responseChan := make(chan *DescribeRecordLogsResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeRecordLogsWithChan(request *DescribeRecordLogsRequ
 	return responseChan, errChan
 }
 
+// invoke DescribeRecordLogs api with *DescribeRecordLogsRequest asynchronously
+// api document: https://help.aliyun.com/api/alidns/describerecordlogs.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRecordLogsWithCallback(request *DescribeRecordLogsRequest, callback func(response *DescribeRecordLogsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -86,6 +94,7 @@ type DescribeRecordLogsResponse struct {
 	RecordLogs RecordLogs `json:"RecordLogs" xml:"RecordLogs"`
 }
 
+// create a request to invoke DescribeRecordLogs API
 func CreateDescribeRecordLogsRequest() (request *DescribeRecordLogsRequest) {
 	request = &DescribeRecordLogsRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -94,6 +103,7 @@ func CreateDescribeRecordLogsRequest() (request *DescribeRecordLogsRequest) {
 	return
 }
 
+// create a response to parse from DescribeRecordLogs response
 func CreateDescribeRecordLogsResponse() (response *DescribeRecordLogsResponse) {
 	response = &DescribeRecordLogsResponse{
 		BaseResponse: &responses.BaseResponse{},

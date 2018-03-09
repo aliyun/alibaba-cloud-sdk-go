@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke CancelPhysicalConnection api with *CancelPhysicalConnectionRequest synchronously
+// api document: https://help.aliyun.com/api/vpc/cancelphysicalconnection.html
 func (client *Client) CancelPhysicalConnection(request *CancelPhysicalConnectionRequest) (response *CancelPhysicalConnectionResponse, err error) {
 	response = CreateCancelPhysicalConnectionResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke CancelPhysicalConnection api with *CancelPhysicalConnectionRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/cancelphysicalconnection.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CancelPhysicalConnectionWithChan(request *CancelPhysicalConnectionRequest) (<-chan *CancelPhysicalConnectionResponse, <-chan error) {
 	responseChan := make(chan *CancelPhysicalConnectionResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) CancelPhysicalConnectionWithChan(request *CancelPhysicalCo
 	return responseChan, errChan
 }
 
+// invoke CancelPhysicalConnection api with *CancelPhysicalConnectionRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/cancelphysicalconnection.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CancelPhysicalConnectionWithCallback(request *CancelPhysicalConnectionRequest, callback func(response *CancelPhysicalConnectionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type CancelPhysicalConnectionResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke CancelPhysicalConnection API
 func CreateCancelPhysicalConnectionRequest() (request *CancelPhysicalConnectionRequest) {
 	request = &CancelPhysicalConnectionRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateCancelPhysicalConnectionRequest() (request *CancelPhysicalConnectionR
 	return
 }
 
+// create a response to parse from CancelPhysicalConnection response
 func CreateCancelPhysicalConnectionResponse() (response *CancelPhysicalConnectionResponse) {
 	response = &CancelPhysicalConnectionResponse{
 		BaseResponse: &responses.BaseResponse{},

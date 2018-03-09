@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeEipMonitorData api with *DescribeEipMonitorDataRequest synchronously
+// api document: https://help.aliyun.com/api/vpc/describeeipmonitordata.html
 func (client *Client) DescribeEipMonitorData(request *DescribeEipMonitorDataRequest) (response *DescribeEipMonitorDataResponse, err error) {
 	response = CreateDescribeEipMonitorDataResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeEipMonitorData api with *DescribeEipMonitorDataRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/describeeipmonitordata.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeEipMonitorDataWithChan(request *DescribeEipMonitorDataRequest) (<-chan *DescribeEipMonitorDataResponse, <-chan error) {
 	responseChan := make(chan *DescribeEipMonitorDataResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeEipMonitorDataWithChan(request *DescribeEipMonitor
 	return responseChan, errChan
 }
 
+// invoke DescribeEipMonitorData api with *DescribeEipMonitorDataRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/describeeipmonitordata.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeEipMonitorDataWithCallback(request *DescribeEipMonitorDataRequest, callback func(response *DescribeEipMonitorDataResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,6 +91,7 @@ type DescribeEipMonitorDataResponse struct {
 	EipMonitorDatas EipMonitorDatasInDescribeEipMonitorData `json:"EipMonitorDatas" xml:"EipMonitorDatas"`
 }
 
+// create a request to invoke DescribeEipMonitorData API
 func CreateDescribeEipMonitorDataRequest() (request *DescribeEipMonitorDataRequest) {
 	request = &DescribeEipMonitorDataRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -91,6 +100,7 @@ func CreateDescribeEipMonitorDataRequest() (request *DescribeEipMonitorDataReque
 	return
 }
 
+// create a response to parse from DescribeEipMonitorData response
 func CreateDescribeEipMonitorDataResponse() (response *DescribeEipMonitorDataResponse) {
 	response = &DescribeEipMonitorDataResponse{
 		BaseResponse: &responses.BaseResponse{},

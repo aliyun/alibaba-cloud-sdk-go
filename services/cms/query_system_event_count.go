@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke QuerySystemEventCount api with *QuerySystemEventCountRequest synchronously
+// api document: https://help.aliyun.com/api/cms/querysystemeventcount.html
 func (client *Client) QuerySystemEventCount(request *QuerySystemEventCountRequest) (response *QuerySystemEventCountResponse, err error) {
 	response = CreateQuerySystemEventCountResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke QuerySystemEventCount api with *QuerySystemEventCountRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/querysystemeventcount.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QuerySystemEventCountWithChan(request *QuerySystemEventCountRequest) (<-chan *QuerySystemEventCountResponse, <-chan error) {
 	responseChan := make(chan *QuerySystemEventCountResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) QuerySystemEventCountWithChan(request *QuerySystemEventCou
 	return responseChan, errChan
 }
 
+// invoke QuerySystemEventCount api with *QuerySystemEventCountRequest asynchronously
+// api document: https://help.aliyun.com/api/cms/querysystemeventcount.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QuerySystemEventCountWithCallback(request *QuerySystemEventCountRequest, callback func(response *QuerySystemEventCountResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -77,6 +85,7 @@ type QuerySystemEventCountResponse struct {
 	Data    string `json:"Data" xml:"Data"`
 }
 
+// create a request to invoke QuerySystemEventCount API
 func CreateQuerySystemEventCountRequest() (request *QuerySystemEventCountRequest) {
 	request = &QuerySystemEventCountRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -85,6 +94,7 @@ func CreateQuerySystemEventCountRequest() (request *QuerySystemEventCountRequest
 	return
 }
 
+// create a response to parse from QuerySystemEventCount response
 func CreateQuerySystemEventCountResponse() (response *QuerySystemEventCountResponse) {
 	response = &QuerySystemEventCountResponse{
 		BaseResponse: &responses.BaseResponse{},

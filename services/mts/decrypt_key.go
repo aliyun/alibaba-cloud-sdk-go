@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DecryptKey api with *DecryptKeyRequest synchronously
+// api document: https://help.aliyun.com/api/mts/decryptkey.html
 func (client *Client) DecryptKey(request *DecryptKeyRequest) (response *DecryptKeyResponse, err error) {
 	response = CreateDecryptKeyResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DecryptKey api with *DecryptKeyRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/decryptkey.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DecryptKeyWithChan(request *DecryptKeyRequest) (<-chan *DecryptKeyResponse, <-chan error) {
 	responseChan := make(chan *DecryptKeyResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DecryptKeyWithChan(request *DecryptKeyRequest) (<-chan *De
 	return responseChan, errChan
 }
 
+// invoke DecryptKey api with *DecryptKeyRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/decryptkey.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DecryptKeyWithCallback(request *DecryptKeyRequest, callback func(response *DecryptKeyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -82,6 +90,7 @@ type DecryptKeyResponse struct {
 	Rand      string `json:"Rand" xml:"Rand"`
 }
 
+// create a request to invoke DecryptKey API
 func CreateDecryptKeyRequest() (request *DecryptKeyRequest) {
 	request = &DecryptKeyRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -90,6 +99,7 @@ func CreateDecryptKeyRequest() (request *DecryptKeyRequest) {
 	return
 }
 
+// create a response to parse from DecryptKey response
 func CreateDecryptKeyResponse() (response *DecryptKeyResponse) {
 	response = &DecryptKeyResponse{
 		BaseResponse: &responses.BaseResponse{},

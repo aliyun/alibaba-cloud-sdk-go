@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SubmitCoverJob api with *SubmitCoverJobRequest synchronously
+// api document: https://help.aliyun.com/api/mts/submitcoverjob.html
 func (client *Client) SubmitCoverJob(request *SubmitCoverJobRequest) (response *SubmitCoverJobResponse, err error) {
 	response = CreateSubmitCoverJobResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SubmitCoverJob api with *SubmitCoverJobRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/submitcoverjob.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitCoverJobWithChan(request *SubmitCoverJobRequest) (<-chan *SubmitCoverJobResponse, <-chan error) {
 	responseChan := make(chan *SubmitCoverJobResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SubmitCoverJobWithChan(request *SubmitCoverJobRequest) (<-
 	return responseChan, errChan
 }
 
+// invoke SubmitCoverJob api with *SubmitCoverJobRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/submitcoverjob.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitCoverJobWithCallback(request *SubmitCoverJobRequest, callback func(response *SubmitCoverJobResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -83,6 +91,7 @@ type SubmitCoverJobResponse struct {
 	JobId     string `json:"JobId" xml:"JobId"`
 }
 
+// create a request to invoke SubmitCoverJob API
 func CreateSubmitCoverJobRequest() (request *SubmitCoverJobRequest) {
 	request = &SubmitCoverJobRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -91,6 +100,7 @@ func CreateSubmitCoverJobRequest() (request *SubmitCoverJobRequest) {
 	return
 }
 
+// create a response to parse from SubmitCoverJob response
 func CreateSubmitCoverJobResponse() (response *SubmitCoverJobResponse) {
 	response = &SubmitCoverJobResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeRouteTableList api with *DescribeRouteTableListRequest synchronously
+// api document: https://help.aliyun.com/api/vpc/describeroutetablelist.html
 func (client *Client) DescribeRouteTableList(request *DescribeRouteTableListRequest) (response *DescribeRouteTableListResponse, err error) {
 	response = CreateDescribeRouteTableListResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeRouteTableList api with *DescribeRouteTableListRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/describeroutetablelist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRouteTableListWithChan(request *DescribeRouteTableListRequest) (<-chan *DescribeRouteTableListResponse, <-chan error) {
 	responseChan := make(chan *DescribeRouteTableListResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeRouteTableListWithChan(request *DescribeRouteTable
 	return responseChan, errChan
 }
 
+// invoke DescribeRouteTableList api with *DescribeRouteTableListRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/describeroutetablelist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRouteTableListWithCallback(request *DescribeRouteTableListRequest, callback func(response *DescribeRouteTableListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -92,6 +100,7 @@ type DescribeRouteTableListResponse struct {
 	RouterTableList RouterTableList `json:"RouterTableList" xml:"RouterTableList"`
 }
 
+// create a request to invoke DescribeRouteTableList API
 func CreateDescribeRouteTableListRequest() (request *DescribeRouteTableListRequest) {
 	request = &DescribeRouteTableListRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -100,6 +109,7 @@ func CreateDescribeRouteTableListRequest() (request *DescribeRouteTableListReque
 	return
 }
 
+// create a response to parse from DescribeRouteTableList response
 func CreateDescribeRouteTableListResponse() (response *DescribeRouteTableListResponse) {
 	response = &DescribeRouteTableListResponse{
 		BaseResponse: &responses.BaseResponse{},

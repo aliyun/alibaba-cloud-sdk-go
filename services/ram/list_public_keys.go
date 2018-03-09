@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ListPublicKeys api with *ListPublicKeysRequest synchronously
+// api document: https://help.aliyun.com/api/ram/listpublickeys.html
 func (client *Client) ListPublicKeys(request *ListPublicKeysRequest) (response *ListPublicKeysResponse, err error) {
 	response = CreateListPublicKeysResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ListPublicKeys api with *ListPublicKeysRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/listpublickeys.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListPublicKeysWithChan(request *ListPublicKeysRequest) (<-chan *ListPublicKeysResponse, <-chan error) {
 	responseChan := make(chan *ListPublicKeysResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ListPublicKeysWithChan(request *ListPublicKeysRequest) (<-
 	return responseChan, errChan
 }
 
+// invoke ListPublicKeys api with *ListPublicKeysRequest asynchronously
+// api document: https://help.aliyun.com/api/ram/listpublickeys.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListPublicKeysWithCallback(request *ListPublicKeysRequest, callback func(response *ListPublicKeysResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -76,6 +84,7 @@ type ListPublicKeysResponse struct {
 	PublicKeys PublicKeys `json:"PublicKeys" xml:"PublicKeys"`
 }
 
+// create a request to invoke ListPublicKeys API
 func CreateListPublicKeysRequest() (request *ListPublicKeysRequest) {
 	request = &ListPublicKeysRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -84,6 +93,7 @@ func CreateListPublicKeysRequest() (request *ListPublicKeysRequest) {
 	return
 }
 
+// create a response to parse from ListPublicKeys response
 func CreateListPublicKeysResponse() (response *ListPublicKeysResponse) {
 	response = &ListPublicKeysResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke AddIpfilter api with *AddIpfilterRequest synchronously
+// api document: https://help.aliyun.com/api/dm/addipfilter.html
 func (client *Client) AddIpfilter(request *AddIpfilterRequest) (response *AddIpfilterResponse, err error) {
 	response = CreateAddIpfilterResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke AddIpfilter api with *AddIpfilterRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/addipfilter.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddIpfilterWithChan(request *AddIpfilterRequest) (<-chan *AddIpfilterResponse, <-chan error) {
 	responseChan := make(chan *AddIpfilterResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) AddIpfilterWithChan(request *AddIpfilterRequest) (<-chan *
 	return responseChan, errChan
 }
 
+// invoke AddIpfilter api with *AddIpfilterRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/addipfilter.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddIpfilterWithCallback(request *AddIpfilterRequest, callback func(response *AddIpfilterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -78,6 +86,7 @@ type AddIpfilterResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke AddIpfilter API
 func CreateAddIpfilterRequest() (request *AddIpfilterRequest) {
 	request = &AddIpfilterRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -86,6 +95,7 @@ func CreateAddIpfilterRequest() (request *AddIpfilterRequest) {
 	return
 }
 
+// create a response to parse from AddIpfilter response
 func CreateAddIpfilterResponse() (response *AddIpfilterResponse) {
 	response = &AddIpfilterResponse{
 		BaseResponse: &responses.BaseResponse{},

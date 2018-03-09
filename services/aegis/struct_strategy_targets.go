@@ -16,5 +16,5 @@ package aegis
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 type StrategyTargets struct {
-	StringItem []StringItem `json:"StringItem" xml:"StringItem"`
+	StrategyTarget []StrategyTarget `json:"StrategyTarget" xml:"StrategyTarget"`
 }

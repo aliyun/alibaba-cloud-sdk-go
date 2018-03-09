@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifyStrategyTarget api with *ModifyStrategyTargetRequest synchronously
+// api document: https://help.aliyun.com/api/aegis/modifystrategytarget.html
 func (client *Client) ModifyStrategyTarget(request *ModifyStrategyTargetRequest) (response *ModifyStrategyTargetResponse, err error) {
 	response = CreateModifyStrategyTargetResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifyStrategyTarget api with *ModifyStrategyTargetRequest asynchronously
+// api document: https://help.aliyun.com/api/aegis/modifystrategytarget.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyStrategyTargetWithChan(request *ModifyStrategyTargetRequest) (<-chan *ModifyStrategyTargetResponse, <-chan error) {
 	responseChan := make(chan *ModifyStrategyTargetResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifyStrategyTargetWithChan(request *ModifyStrategyTarget
 	return responseChan, errChan
 }
 
+// invoke ModifyStrategyTarget api with *ModifyStrategyTargetRequest asynchronously
+// api document: https://help.aliyun.com/api/aegis/modifystrategytarget.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyStrategyTargetWithCallback(request *ModifyStrategyTargetRequest, callback func(response *ModifyStrategyTargetResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +87,7 @@ type ModifyStrategyTargetResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke ModifyStrategyTarget API
 func CreateModifyStrategyTargetRequest() (request *ModifyStrategyTargetRequest) {
 	request = &ModifyStrategyTargetRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -87,6 +96,7 @@ func CreateModifyStrategyTargetRequest() (request *ModifyStrategyTargetRequest) 
 	return
 }
 
+// create a response to parse from ModifyStrategyTarget response
 func CreateModifyStrategyTargetResponse() (response *ModifyStrategyTargetResponse) {
 	response = &ModifyStrategyTargetResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeAutoSnapshotPolicy api with *DescribeAutoSnapshotPolicyRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/describeautosnapshotpolicy.html
 func (client *Client) DescribeAutoSnapshotPolicy(request *DescribeAutoSnapshotPolicyRequest) (response *DescribeAutoSnapshotPolicyResponse, err error) {
 	response = CreateDescribeAutoSnapshotPolicyResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeAutoSnapshotPolicy api with *DescribeAutoSnapshotPolicyRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describeautosnapshotpolicy.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAutoSnapshotPolicyWithChan(request *DescribeAutoSnapshotPolicyRequest) (<-chan *DescribeAutoSnapshotPolicyResponse, <-chan error) {
 	responseChan := make(chan *DescribeAutoSnapshotPolicyResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeAutoSnapshotPolicyWithChan(request *DescribeAutoSn
 	return responseChan, errChan
 }
 
+// invoke DescribeAutoSnapshotPolicy api with *DescribeAutoSnapshotPolicyRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describeautosnapshotpolicy.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAutoSnapshotPolicyWithCallback(request *DescribeAutoSnapshotPolicyRequest, callback func(response *DescribeAutoSnapshotPolicyResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type DescribeAutoSnapshotPolicyResponse struct {
 	AutoSnapshotExcutionStatus AutoSnapshotExcutionStatus `json:"AutoSnapshotExcutionStatus" xml:"AutoSnapshotExcutionStatus"`
 }
 
+// create a request to invoke DescribeAutoSnapshotPolicy API
 func CreateDescribeAutoSnapshotPolicyRequest() (request *DescribeAutoSnapshotPolicyRequest) {
 	request = &DescribeAutoSnapshotPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateDescribeAutoSnapshotPolicyRequest() (request *DescribeAutoSnapshotPol
 	return
 }
 
+// create a response to parse from DescribeAutoSnapshotPolicy response
 func CreateDescribeAutoSnapshotPolicyResponse() (response *DescribeAutoSnapshotPolicyResponse) {
 	response = &DescribeAutoSnapshotPolicyResponse{
 		BaseResponse: &responses.BaseResponse{},

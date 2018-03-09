@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke UpdateCategoryName api with *UpdateCategoryNameRequest synchronously
+// api document: https://help.aliyun.com/api/mts/updatecategoryname.html
 func (client *Client) UpdateCategoryName(request *UpdateCategoryNameRequest) (response *UpdateCategoryNameResponse, err error) {
 	response = CreateUpdateCategoryNameResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke UpdateCategoryName api with *UpdateCategoryNameRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/updatecategoryname.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateCategoryNameWithChan(request *UpdateCategoryNameRequest) (<-chan *UpdateCategoryNameResponse, <-chan error) {
 	responseChan := make(chan *UpdateCategoryNameResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) UpdateCategoryNameWithChan(request *UpdateCategoryNameRequ
 	return responseChan, errChan
 }
 
+// invoke UpdateCategoryName api with *UpdateCategoryNameRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/updatecategoryname.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateCategoryNameWithCallback(request *UpdateCategoryNameRequest, callback func(response *UpdateCategoryNameResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type UpdateCategoryNameResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke UpdateCategoryName API
 func CreateUpdateCategoryNameRequest() (request *UpdateCategoryNameRequest) {
 	request = &UpdateCategoryNameRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateUpdateCategoryNameRequest() (request *UpdateCategoryNameRequest) {
 	return
 }
 
+// create a response to parse from UpdateCategoryName response
 func CreateUpdateCategoryNameResponse() (response *UpdateCategoryNameResponse) {
 	response = &UpdateCategoryNameResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ImportDataForSQLServer api with *ImportDataForSQLServerRequest synchronously
+// api document: https://help.aliyun.com/api/rds/importdataforsqlserver.html
 func (client *Client) ImportDataForSQLServer(request *ImportDataForSQLServerRequest) (response *ImportDataForSQLServerResponse, err error) {
 	response = CreateImportDataForSQLServerResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ImportDataForSQLServer api with *ImportDataForSQLServerRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/importdataforsqlserver.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ImportDataForSQLServerWithChan(request *ImportDataForSQLServerRequest) (<-chan *ImportDataForSQLServerResponse, <-chan error) {
 	responseChan := make(chan *ImportDataForSQLServerResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ImportDataForSQLServerWithChan(request *ImportDataForSQLSe
 	return responseChan, errChan
 }
 
+// invoke ImportDataForSQLServer api with *ImportDataForSQLServerRequest asynchronously
+// api document: https://help.aliyun.com/api/rds/importdataforsqlserver.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ImportDataForSQLServerWithCallback(request *ImportDataForSQLServerRequest, callback func(response *ImportDataForSQLServerResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type ImportDataForSQLServerResponse struct {
 	ImportID  int    `json:"ImportID" xml:"ImportID"`
 }
 
+// create a request to invoke ImportDataForSQLServer API
 func CreateImportDataForSQLServerRequest() (request *ImportDataForSQLServerRequest) {
 	request = &ImportDataForSQLServerRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateImportDataForSQLServerRequest() (request *ImportDataForSQLServerReque
 	return
 }
 
+// create a response to parse from ImportDataForSQLServer response
 func CreateImportDataForSQLServerResponse() (response *ImportDataForSQLServerResponse) {
 	response = &ImportDataForSQLServerResponse{
 		BaseResponse: &responses.BaseResponse{},

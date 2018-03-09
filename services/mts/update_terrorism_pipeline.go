@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke UpdateTerrorismPipeline api with *UpdateTerrorismPipelineRequest synchronously
+// api document: https://help.aliyun.com/api/mts/updateterrorismpipeline.html
 func (client *Client) UpdateTerrorismPipeline(request *UpdateTerrorismPipelineRequest) (response *UpdateTerrorismPipelineResponse, err error) {
 	response = CreateUpdateTerrorismPipelineResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke UpdateTerrorismPipeline api with *UpdateTerrorismPipelineRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/updateterrorismpipeline.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateTerrorismPipelineWithChan(request *UpdateTerrorismPipelineRequest) (<-chan *UpdateTerrorismPipelineResponse, <-chan error) {
 	responseChan := make(chan *UpdateTerrorismPipelineResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) UpdateTerrorismPipelineWithChan(request *UpdateTerrorismPi
 	return responseChan, errChan
 }
 
+// invoke UpdateTerrorismPipeline api with *UpdateTerrorismPipelineRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/updateterrorismpipeline.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateTerrorismPipelineWithCallback(request *UpdateTerrorismPipelineRequest, callback func(response *UpdateTerrorismPipelineResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,6 +92,7 @@ type UpdateTerrorismPipelineResponse struct {
 	Pipeline  Pipeline `json:"Pipeline" xml:"Pipeline"`
 }
 
+// create a request to invoke UpdateTerrorismPipeline API
 func CreateUpdateTerrorismPipelineRequest() (request *UpdateTerrorismPipelineRequest) {
 	request = &UpdateTerrorismPipelineRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -92,6 +101,7 @@ func CreateUpdateTerrorismPipelineRequest() (request *UpdateTerrorismPipelineReq
 	return
 }
 
+// create a response to parse from UpdateTerrorismPipeline response
 func CreateUpdateTerrorismPipelineResponse() (response *UpdateTerrorismPipelineResponse) {
 	response = &UpdateTerrorismPipelineResponse{
 		BaseResponse: &responses.BaseResponse{},

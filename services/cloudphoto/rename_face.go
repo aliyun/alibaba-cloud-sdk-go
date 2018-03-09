@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke RenameFace api with *RenameFaceRequest synchronously
+// api document: https://help.aliyun.com/api/cloudphoto/renameface.html
 func (client *Client) RenameFace(request *RenameFaceRequest) (response *RenameFaceResponse, err error) {
 	response = CreateRenameFaceResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke RenameFace api with *RenameFaceRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/renameface.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RenameFaceWithChan(request *RenameFaceRequest) (<-chan *RenameFaceResponse, <-chan error) {
 	responseChan := make(chan *RenameFaceResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) RenameFaceWithChan(request *RenameFaceRequest) (<-chan *Re
 	return responseChan, errChan
 }
 
+// invoke RenameFace api with *RenameFaceRequest asynchronously
+// api document: https://help.aliyun.com/api/cloudphoto/renameface.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RenameFaceWithCallback(request *RenameFaceRequest, callback func(response *RenameFaceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type RenameFaceResponse struct {
 	Action    string `json:"Action" xml:"Action"`
 }
 
+// create a request to invoke RenameFace API
 func CreateRenameFaceRequest() (request *RenameFaceRequest) {
 	request = &RenameFaceRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateRenameFaceRequest() (request *RenameFaceRequest) {
 	return
 }
 
+// create a response to parse from RenameFace response
 func CreateRenameFaceResponse() (response *RenameFaceResponse) {
 	response = &RenameFaceResponse{
 		BaseResponse: &responses.BaseResponse{},

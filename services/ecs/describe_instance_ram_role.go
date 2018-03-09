@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeInstanceRamRole api with *DescribeInstanceRamRoleRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/describeinstanceramrole.html
 func (client *Client) DescribeInstanceRamRole(request *DescribeInstanceRamRoleRequest) (response *DescribeInstanceRamRoleResponse, err error) {
 	response = CreateDescribeInstanceRamRoleResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeInstanceRamRole api with *DescribeInstanceRamRoleRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describeinstanceramrole.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceRamRoleWithChan(request *DescribeInstanceRamRoleRequest) (<-chan *DescribeInstanceRamRoleResponse, <-chan error) {
 	responseChan := make(chan *DescribeInstanceRamRoleResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeInstanceRamRoleWithChan(request *DescribeInstanceR
 	return responseChan, errChan
 }
 
+// invoke DescribeInstanceRamRole api with *DescribeInstanceRamRoleRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/describeinstanceramrole.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceRamRoleWithCallback(request *DescribeInstanceRamRoleRequest, callback func(response *DescribeInstanceRamRoleResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -84,6 +92,7 @@ type DescribeInstanceRamRoleResponse struct {
 	InstanceRamRoleSets InstanceRamRoleSetsInDescribeInstanceRamRole `json:"InstanceRamRoleSets" xml:"InstanceRamRoleSets"`
 }
 
+// create a request to invoke DescribeInstanceRamRole API
 func CreateDescribeInstanceRamRoleRequest() (request *DescribeInstanceRamRoleRequest) {
 	request = &DescribeInstanceRamRoleRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -92,6 +101,7 @@ func CreateDescribeInstanceRamRoleRequest() (request *DescribeInstanceRamRoleReq
 	return
 }
 
+// create a response to parse from DescribeInstanceRamRole response
 func CreateDescribeInstanceRamRoleResponse() (response *DescribeInstanceRamRoleResponse) {
 	response = &DescribeInstanceRamRoleResponse{
 		BaseResponse: &responses.BaseResponse{},

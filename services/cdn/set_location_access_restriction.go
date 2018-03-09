@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SetLocationAccessRestriction api with *SetLocationAccessRestrictionRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/setlocationaccessrestriction.html
 func (client *Client) SetLocationAccessRestriction(request *SetLocationAccessRestrictionRequest) (response *SetLocationAccessRestrictionResponse, err error) {
 	response = CreateSetLocationAccessRestrictionResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SetLocationAccessRestriction api with *SetLocationAccessRestrictionRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/setlocationaccessrestriction.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetLocationAccessRestrictionWithChan(request *SetLocationAccessRestrictionRequest) (<-chan *SetLocationAccessRestrictionResponse, <-chan error) {
 	responseChan := make(chan *SetLocationAccessRestrictionResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SetLocationAccessRestrictionWithChan(request *SetLocationA
 	return responseChan, errChan
 }
 
+// invoke SetLocationAccessRestriction api with *SetLocationAccessRestrictionRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/setlocationaccessrestriction.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetLocationAccessRestrictionWithCallback(request *SetLocationAccessRestrictionRequest, callback func(response *SetLocationAccessRestrictionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +87,7 @@ type SetLocationAccessRestrictionResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke SetLocationAccessRestriction API
 func CreateSetLocationAccessRestrictionRequest() (request *SetLocationAccessRestrictionRequest) {
 	request = &SetLocationAccessRestrictionRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -87,6 +96,7 @@ func CreateSetLocationAccessRestrictionRequest() (request *SetLocationAccessRest
 	return
 }
 
+// create a response to parse from SetLocationAccessRestriction response
 func CreateSetLocationAccessRestrictionResponse() (response *SetLocationAccessRestrictionResponse) {
 	response = &SetLocationAccessRestrictionResponse{
 		BaseResponse: &responses.BaseResponse{},

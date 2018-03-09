@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DeleteSecurityGroup api with *DeleteSecurityGroupRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/deletesecuritygroup.html
 func (client *Client) DeleteSecurityGroup(request *DeleteSecurityGroupRequest) (response *DeleteSecurityGroupResponse, err error) {
 	response = CreateDeleteSecurityGroupResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DeleteSecurityGroup api with *DeleteSecurityGroupRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/deletesecuritygroup.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteSecurityGroupWithChan(request *DeleteSecurityGroupRequest) (<-chan *DeleteSecurityGroupResponse, <-chan error) {
 	responseChan := make(chan *DeleteSecurityGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DeleteSecurityGroupWithChan(request *DeleteSecurityGroupRe
 	return responseChan, errChan
 }
 
+// invoke DeleteSecurityGroup api with *DeleteSecurityGroupRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/deletesecuritygroup.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteSecurityGroupWithCallback(request *DeleteSecurityGroupRequest, callback func(response *DeleteSecurityGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +87,7 @@ type DeleteSecurityGroupResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke DeleteSecurityGroup API
 func CreateDeleteSecurityGroupRequest() (request *DeleteSecurityGroupRequest) {
 	request = &DeleteSecurityGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -87,6 +96,7 @@ func CreateDeleteSecurityGroupRequest() (request *DeleteSecurityGroupRequest) {
 	return
 }
 
+// create a response to parse from DeleteSecurityGroup response
 func CreateDeleteSecurityGroupResponse() (response *DeleteSecurityGroupResponse) {
 	response = &DeleteSecurityGroupResponse{
 		BaseResponse: &responses.BaseResponse{},

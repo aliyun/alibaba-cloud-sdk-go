@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ModifyVpnGatewayAttribute api with *ModifyVpnGatewayAttributeRequest synchronously
+// api document: https://help.aliyun.com/api/vpc/modifyvpngatewayattribute.html
 func (client *Client) ModifyVpnGatewayAttribute(request *ModifyVpnGatewayAttributeRequest) (response *ModifyVpnGatewayAttributeResponse, err error) {
 	response = CreateModifyVpnGatewayAttributeResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ModifyVpnGatewayAttribute api with *ModifyVpnGatewayAttributeRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/modifyvpngatewayattribute.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyVpnGatewayAttributeWithChan(request *ModifyVpnGatewayAttributeRequest) (<-chan *ModifyVpnGatewayAttributeResponse, <-chan error) {
 	responseChan := make(chan *ModifyVpnGatewayAttributeResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ModifyVpnGatewayAttributeWithChan(request *ModifyVpnGatewa
 	return responseChan, errChan
 }
 
+// invoke ModifyVpnGatewayAttribute api with *ModifyVpnGatewayAttributeRequest asynchronously
+// api document: https://help.aliyun.com/api/vpc/modifyvpngatewayattribute.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyVpnGatewayAttributeWithCallback(request *ModifyVpnGatewayAttributeRequest, callback func(response *ModifyVpnGatewayAttributeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -94,6 +102,7 @@ type ModifyVpnGatewayAttributeResponse struct {
 	BusinessStatus string `json:"BusinessStatus" xml:"BusinessStatus"`
 }
 
+// create a request to invoke ModifyVpnGatewayAttribute API
 func CreateModifyVpnGatewayAttributeRequest() (request *ModifyVpnGatewayAttributeRequest) {
 	request = &ModifyVpnGatewayAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -102,6 +111,7 @@ func CreateModifyVpnGatewayAttributeRequest() (request *ModifyVpnGatewayAttribut
 	return
 }
 
+// create a response to parse from ModifyVpnGatewayAttribute response
 func CreateModifyVpnGatewayAttributeResponse() (response *ModifyVpnGatewayAttributeResponse) {
 	response = &ModifyVpnGatewayAttributeResponse{
 		BaseResponse: &responses.BaseResponse{},

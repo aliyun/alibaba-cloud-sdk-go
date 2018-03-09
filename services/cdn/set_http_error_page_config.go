@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke SetHttpErrorPageConfig api with *SetHttpErrorPageConfigRequest synchronously
+// api document: https://help.aliyun.com/api/cdn/sethttperrorpageconfig.html
 func (client *Client) SetHttpErrorPageConfig(request *SetHttpErrorPageConfigRequest) (response *SetHttpErrorPageConfigResponse, err error) {
 	response = CreateSetHttpErrorPageConfigResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke SetHttpErrorPageConfig api with *SetHttpErrorPageConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/sethttperrorpageconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetHttpErrorPageConfigWithChan(request *SetHttpErrorPageConfigRequest) (<-chan *SetHttpErrorPageConfigResponse, <-chan error) {
 	responseChan := make(chan *SetHttpErrorPageConfigResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) SetHttpErrorPageConfigWithChan(request *SetHttpErrorPageCo
 	return responseChan, errChan
 }
 
+// invoke SetHttpErrorPageConfig api with *SetHttpErrorPageConfigRequest asynchronously
+// api document: https://help.aliyun.com/api/cdn/sethttperrorpageconfig.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetHttpErrorPageConfigWithCallback(request *SetHttpErrorPageConfigRequest, callback func(response *SetHttpErrorPageConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -79,6 +87,7 @@ type SetHttpErrorPageConfigResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke SetHttpErrorPageConfig API
 func CreateSetHttpErrorPageConfigRequest() (request *SetHttpErrorPageConfigRequest) {
 	request = &SetHttpErrorPageConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -87,6 +96,7 @@ func CreateSetHttpErrorPageConfigRequest() (request *SetHttpErrorPageConfigReque
 	return
 }
 
+// create a response to parse from SetHttpErrorPageConfig response
 func CreateSetHttpErrorPageConfigResponse() (response *SetHttpErrorPageConfigResponse) {
 	response = &SetHttpErrorPageConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

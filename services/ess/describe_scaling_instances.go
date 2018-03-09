@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke DescribeScalingInstances api with *DescribeScalingInstancesRequest synchronously
+// api document: https://help.aliyun.com/api/ess/describescalinginstances.html
 func (client *Client) DescribeScalingInstances(request *DescribeScalingInstancesRequest) (response *DescribeScalingInstancesResponse, err error) {
 	response = CreateDescribeScalingInstancesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke DescribeScalingInstances api with *DescribeScalingInstancesRequest asynchronously
+// api document: https://help.aliyun.com/api/ess/describescalinginstances.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeScalingInstancesWithChan(request *DescribeScalingInstancesRequest) (<-chan *DescribeScalingInstancesResponse, <-chan error) {
 	responseChan := make(chan *DescribeScalingInstancesResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) DescribeScalingInstancesWithChan(request *DescribeScalingI
 	return responseChan, errChan
 }
 
+// invoke DescribeScalingInstances api with *DescribeScalingInstancesRequest asynchronously
+// api document: https://help.aliyun.com/api/ess/describescalinginstances.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeScalingInstancesWithCallback(request *DescribeScalingInstancesRequest, callback func(response *DescribeScalingInstancesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -109,6 +117,7 @@ type DescribeScalingInstancesResponse struct {
 	ScalingInstances ScalingInstances `json:"ScalingInstances" xml:"ScalingInstances"`
 }
 
+// create a request to invoke DescribeScalingInstances API
 func CreateDescribeScalingInstancesRequest() (request *DescribeScalingInstancesRequest) {
 	request = &DescribeScalingInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -117,6 +126,7 @@ func CreateDescribeScalingInstancesRequest() (request *DescribeScalingInstancesR
 	return
 }
 
+// create a response to parse from DescribeScalingInstances response
 func CreateDescribeScalingInstancesResponse() (response *DescribeScalingInstancesResponse) {
 	response = &DescribeScalingInstancesResponse{
 		BaseResponse: &responses.BaseResponse{},

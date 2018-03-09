@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke ReportCoverJobResult api with *ReportCoverJobResultRequest synchronously
+// api document: https://help.aliyun.com/api/mts/reportcoverjobresult.html
 func (client *Client) ReportCoverJobResult(request *ReportCoverJobResultRequest) (response *ReportCoverJobResultResponse, err error) {
 	response = CreateReportCoverJobResultResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke ReportCoverJobResult api with *ReportCoverJobResultRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/reportcoverjobresult.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReportCoverJobResultWithChan(request *ReportCoverJobResultRequest) (<-chan *ReportCoverJobResultResponse, <-chan error) {
 	responseChan := make(chan *ReportCoverJobResultResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) ReportCoverJobResultWithChan(request *ReportCoverJobResult
 	return responseChan, errChan
 }
 
+// invoke ReportCoverJobResult api with *ReportCoverJobResultRequest asynchronously
+// api document: https://help.aliyun.com/api/mts/reportcoverjobresult.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReportCoverJobResultWithCallback(request *ReportCoverJobResultRequest, callback func(response *ReportCoverJobResultResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -81,6 +89,7 @@ type ReportCoverJobResultResponse struct {
 	JobId     string `json:"JobId" xml:"JobId"`
 }
 
+// create a request to invoke ReportCoverJobResult API
 func CreateReportCoverJobResultRequest() (request *ReportCoverJobResultRequest) {
 	request = &ReportCoverJobResultRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -89,6 +98,7 @@ func CreateReportCoverJobResultRequest() (request *ReportCoverJobResultRequest) 
 	return
 }
 
+// create a response to parse from ReportCoverJobResult response
 func CreateReportCoverJobResultResponse() (response *ReportCoverJobResultResponse) {
 	response = &ReportCoverJobResultResponse{
 		BaseResponse: &responses.BaseResponse{},

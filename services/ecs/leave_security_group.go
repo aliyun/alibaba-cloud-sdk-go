@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke LeaveSecurityGroup api with *LeaveSecurityGroupRequest synchronously
+// api document: https://help.aliyun.com/api/ecs/leavesecuritygroup.html
 func (client *Client) LeaveSecurityGroup(request *LeaveSecurityGroupRequest) (response *LeaveSecurityGroupResponse, err error) {
 	response = CreateLeaveSecurityGroupResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke LeaveSecurityGroup api with *LeaveSecurityGroupRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/leavesecuritygroup.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) LeaveSecurityGroupWithChan(request *LeaveSecurityGroupRequest) (<-chan *LeaveSecurityGroupResponse, <-chan error) {
 	responseChan := make(chan *LeaveSecurityGroupResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) LeaveSecurityGroupWithChan(request *LeaveSecurityGroupRequ
 	return responseChan, errChan
 }
 
+// invoke LeaveSecurityGroup api with *LeaveSecurityGroupRequest asynchronously
+// api document: https://help.aliyun.com/api/ecs/leavesecuritygroup.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) LeaveSecurityGroupWithCallback(request *LeaveSecurityGroupRequest, callback func(response *LeaveSecurityGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -80,6 +88,7 @@ type LeaveSecurityGroupResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
+// create a request to invoke LeaveSecurityGroup API
 func CreateLeaveSecurityGroupRequest() (request *LeaveSecurityGroupRequest) {
 	request = &LeaveSecurityGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -88,6 +97,7 @@ func CreateLeaveSecurityGroupRequest() (request *LeaveSecurityGroupRequest) {
 	return
 }
 
+// create a response to parse from LeaveSecurityGroup response
 func CreateLeaveSecurityGroupResponse() (response *LeaveSecurityGroupResponse) {
 	response = &LeaveSecurityGroupResponse{
 		BaseResponse: &responses.BaseResponse{},

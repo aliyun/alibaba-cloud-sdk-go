@@ -20,12 +20,17 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
+// invoke GetSenderAddressList api with *GetSenderAddressListRequest synchronously
+// api document: https://help.aliyun.com/api/dm/getsenderaddresslist.html
 func (client *Client) GetSenderAddressList(request *GetSenderAddressListRequest) (response *GetSenderAddressListResponse, err error) {
 	response = CreateGetSenderAddressListResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
+// invoke GetSenderAddressList api with *GetSenderAddressListRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/getsenderaddresslist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetSenderAddressListWithChan(request *GetSenderAddressListRequest) (<-chan *GetSenderAddressListResponse, <-chan error) {
 	responseChan := make(chan *GetSenderAddressListResponse, 1)
 	errChan := make(chan error, 1)
@@ -47,6 +52,9 @@ func (client *Client) GetSenderAddressListWithChan(request *GetSenderAddressList
 	return responseChan, errChan
 }
 
+// invoke GetSenderAddressList api with *GetSenderAddressListRequest asynchronously
+// api document: https://help.aliyun.com/api/dm/getsenderaddresslist.html
+// asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetSenderAddressListWithCallback(request *GetSenderAddressListRequest, callback func(response *GetSenderAddressListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
@@ -87,6 +95,7 @@ type GetSenderAddressListResponse struct {
 	Data      DataInGetSenderAddressList `json:"data" xml:"data"`
 }
 
+// create a request to invoke GetSenderAddressList API
 func CreateGetSenderAddressListRequest() (request *GetSenderAddressListRequest) {
 	request = &GetSenderAddressListRequest{
 		RpcRequest: &requests.RpcRequest{},
@@ -95,6 +104,7 @@ func CreateGetSenderAddressListRequest() (request *GetSenderAddressListRequest) 
 	return
 }
 
+// create a response to parse from GetSenderAddressList response
 func CreateGetSenderAddressListResponse() (response *GetSenderAddressListResponse) {
 	response = &GetSenderAddressListResponse{
 		BaseResponse: &responses.BaseResponse{},
