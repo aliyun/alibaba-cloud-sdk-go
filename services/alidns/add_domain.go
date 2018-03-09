@@ -95,7 +95,7 @@ type AddDomainResponse struct {
 }
 
 // CreateAddDomainRequest creates a request to invoke AddDomain API
-func CreateAddDomainRequest(request *AddDomainRequest) {
+func CreateAddDomainRequest() (request *AddDomainRequest) {
 	request = &AddDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

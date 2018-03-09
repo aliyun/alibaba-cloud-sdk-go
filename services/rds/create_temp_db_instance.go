@@ -93,7 +93,7 @@ type CreateTempDBInstanceResponse struct {
 }
 
 // CreateCreateTempDBInstanceRequest creates a request to invoke CreateTempDBInstance API
-func CreateCreateTempDBInstanceRequest(request *CreateTempDBInstanceRequest) {
+func CreateCreateTempDBInstanceRequest() (request *CreateTempDBInstanceRequest) {
 	request = &CreateTempDBInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

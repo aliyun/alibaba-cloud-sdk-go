@@ -89,7 +89,7 @@ type SetVideoSeekConfigResponse struct {
 }
 
 // CreateSetVideoSeekConfigRequest creates a request to invoke SetVideoSeekConfig API
-func CreateSetVideoSeekConfigRequest(request *SetVideoSeekConfigRequest) {
+func CreateSetVideoSeekConfigRequest() (request *SetVideoSeekConfigRequest) {
 	request = &SetVideoSeekConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

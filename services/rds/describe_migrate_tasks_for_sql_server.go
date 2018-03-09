@@ -101,7 +101,7 @@ type DescribeMigrateTasksForSQLServerResponse struct {
 }
 
 // CreateDescribeMigrateTasksForSQLServerRequest creates a request to invoke DescribeMigrateTasksForSQLServer API
-func CreateDescribeMigrateTasksForSQLServerRequest(request *DescribeMigrateTasksForSQLServerRequest) {
+func CreateDescribeMigrateTasksForSQLServerRequest() (request *DescribeMigrateTasksForSQLServerRequest) {
 	request = &DescribeMigrateTasksForSQLServerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

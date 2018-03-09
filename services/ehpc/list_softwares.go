@@ -87,7 +87,7 @@ type ListSoftwaresResponse struct {
 }
 
 // CreateListSoftwaresRequest creates a request to invoke ListSoftwares API
-func CreateListSoftwaresRequest(request *ListSoftwaresRequest) {
+func CreateListSoftwaresRequest() (request *ListSoftwaresRequest) {
 	request = &ListSoftwaresRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

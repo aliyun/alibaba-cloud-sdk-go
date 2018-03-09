@@ -90,7 +90,7 @@ type SaveBatchTaskForDomainNameProxyServiceResponse struct {
 }
 
 // CreateSaveBatchTaskForDomainNameProxyServiceRequest creates a request to invoke SaveBatchTaskForDomainNameProxyService API
-func CreateSaveBatchTaskForDomainNameProxyServiceRequest(request *SaveBatchTaskForDomainNameProxyServiceRequest) {
+func CreateSaveBatchTaskForDomainNameProxyServiceRequest() (request *SaveBatchTaskForDomainNameProxyServiceRequest) {
 	request = &SaveBatchTaskForDomainNameProxyServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

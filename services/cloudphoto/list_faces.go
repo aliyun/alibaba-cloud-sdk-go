@@ -98,7 +98,7 @@ type ListFacesResponse struct {
 }
 
 // CreateListFacesRequest creates a request to invoke ListFaces API
-func CreateListFacesRequest(request *ListFacesRequest) {
+func CreateListFacesRequest() (request *ListFacesRequest) {
 	request = &ListFacesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

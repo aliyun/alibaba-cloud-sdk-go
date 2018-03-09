@@ -94,7 +94,7 @@ type DescribeInstancePhysicalAttributeResponse struct {
 }
 
 // CreateDescribeInstancePhysicalAttributeRequest creates a request to invoke DescribeInstancePhysicalAttribute API
-func CreateDescribeInstancePhysicalAttributeRequest(request *DescribeInstancePhysicalAttributeRequest) {
+func CreateDescribeInstancePhysicalAttributeRequest() (request *DescribeInstancePhysicalAttributeRequest) {
 	request = &DescribeInstancePhysicalAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

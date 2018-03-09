@@ -127,7 +127,7 @@ type DescribeImagesResponse struct {
 }
 
 // CreateDescribeImagesRequest creates a request to invoke DescribeImages API
-func CreateDescribeImagesRequest(request *DescribeImagesRequest) {
+func CreateDescribeImagesRequest() (request *DescribeImagesRequest) {
 	request = &DescribeImagesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

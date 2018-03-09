@@ -104,7 +104,7 @@ type DescribePhysicalConnectionsResponse struct {
 }
 
 // CreateDescribePhysicalConnectionsRequest creates a request to invoke DescribePhysicalConnections API
-func CreateDescribePhysicalConnectionsRequest(request *DescribePhysicalConnectionsRequest) {
+func CreateDescribePhysicalConnectionsRequest() (request *DescribePhysicalConnectionsRequest) {
 	request = &DescribePhysicalConnectionsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

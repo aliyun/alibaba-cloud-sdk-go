@@ -91,7 +91,7 @@ type DeleteVirtualBorderRouterResponse struct {
 }
 
 // CreateDeleteVirtualBorderRouterRequest creates a request to invoke DeleteVirtualBorderRouter API
-func CreateDeleteVirtualBorderRouterRequest(request *DeleteVirtualBorderRouterRequest) {
+func CreateDeleteVirtualBorderRouterRequest() (request *DeleteVirtualBorderRouterRequest) {
 	request = &DeleteVirtualBorderRouterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

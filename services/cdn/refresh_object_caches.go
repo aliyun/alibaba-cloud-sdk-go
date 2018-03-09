@@ -90,7 +90,7 @@ type RefreshObjectCachesResponse struct {
 }
 
 // CreateRefreshObjectCachesRequest creates a request to invoke RefreshObjectCaches API
-func CreateRefreshObjectCachesRequest(request *RefreshObjectCachesRequest) {
+func CreateRefreshObjectCachesRequest() (request *RefreshObjectCachesRequest) {
 	request = &RefreshObjectCachesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

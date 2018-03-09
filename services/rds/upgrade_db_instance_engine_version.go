@@ -94,7 +94,7 @@ type UpgradeDBInstanceEngineVersionResponse struct {
 }
 
 // CreateUpgradeDBInstanceEngineVersionRequest creates a request to invoke UpgradeDBInstanceEngineVersion API
-func CreateUpgradeDBInstanceEngineVersionRequest(request *UpgradeDBInstanceEngineVersionRequest) {
+func CreateUpgradeDBInstanceEngineVersionRequest() (request *UpgradeDBInstanceEngineVersionRequest) {
 	request = &UpgradeDBInstanceEngineVersionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

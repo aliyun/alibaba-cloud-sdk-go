@@ -112,7 +112,7 @@ type ModifySslVpnServerResponse struct {
 }
 
 // CreateModifySslVpnServerRequest creates a request to invoke ModifySslVpnServer API
-func CreateModifySslVpnServerRequest(request *ModifySslVpnServerRequest) {
+func CreateModifySslVpnServerRequest() (request *ModifySslVpnServerRequest) {
 	request = &ModifySslVpnServerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

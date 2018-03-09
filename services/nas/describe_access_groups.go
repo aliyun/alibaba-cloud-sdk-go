@@ -92,7 +92,7 @@ type DescribeAccessGroupsResponse struct {
 }
 
 // CreateDescribeAccessGroupsRequest creates a request to invoke DescribeAccessGroups API
-func CreateDescribeAccessGroupsRequest(request *DescribeAccessGroupsRequest) {
+func CreateDescribeAccessGroupsRequest() (request *DescribeAccessGroupsRequest) {
 	request = &DescribeAccessGroupsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

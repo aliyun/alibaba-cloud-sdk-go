@@ -93,7 +93,7 @@ type DescribeLiveStreamBitRateDataResponse struct {
 }
 
 // CreateDescribeLiveStreamBitRateDataRequest creates a request to invoke DescribeLiveStreamBitRateData API
-func CreateDescribeLiveStreamBitRateDataRequest(request *DescribeLiveStreamBitRateDataRequest) {
+func CreateDescribeLiveStreamBitRateDataRequest() (request *DescribeLiveStreamBitRateDataRequest) {
 	request = &DescribeLiveStreamBitRateDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

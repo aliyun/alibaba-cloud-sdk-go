@@ -90,7 +90,7 @@ type ReleaseEipAddressResponse struct {
 }
 
 // CreateReleaseEipAddressRequest creates a request to invoke ReleaseEipAddress API
-func CreateReleaseEipAddressRequest(request *ReleaseEipAddressRequest) {
+func CreateReleaseEipAddressRequest() (request *ReleaseEipAddressRequest) {
 	request = &ReleaseEipAddressRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

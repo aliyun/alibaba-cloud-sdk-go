@@ -97,7 +97,7 @@ type DescribeSnatTableEntriesResponse struct {
 }
 
 // CreateDescribeSnatTableEntriesRequest creates a request to invoke DescribeSnatTableEntries API
-func CreateDescribeSnatTableEntriesRequest(request *DescribeSnatTableEntriesRequest) {
+func CreateDescribeSnatTableEntriesRequest() (request *DescribeSnatTableEntriesRequest) {
 	request = &DescribeSnatTableEntriesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

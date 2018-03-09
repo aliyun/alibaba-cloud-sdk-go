@@ -91,7 +91,7 @@ type ReleaseReplicaResponse struct {
 }
 
 // CreateReleaseReplicaRequest creates a request to invoke ReleaseReplica API
-func CreateReleaseReplicaRequest(request *ReleaseReplicaRequest) {
+func CreateReleaseReplicaRequest() (request *ReleaseReplicaRequest) {
 	request = &ReleaseReplicaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -96,7 +96,7 @@ type DescribeLiveStreamOnlineBpsResponse struct {
 }
 
 // CreateDescribeLiveStreamOnlineBpsRequest creates a request to invoke DescribeLiveStreamOnlineBps API
-func CreateDescribeLiveStreamOnlineBpsRequest(request *DescribeLiveStreamOnlineBpsRequest) {
+func CreateDescribeLiveStreamOnlineBpsRequest() (request *DescribeLiveStreamOnlineBpsRequest) {
 	request = &DescribeLiveStreamOnlineBpsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

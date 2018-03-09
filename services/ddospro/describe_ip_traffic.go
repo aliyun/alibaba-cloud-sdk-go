@@ -92,7 +92,7 @@ type DescribeIpTrafficResponse struct {
 }
 
 // CreateDescribeIpTrafficRequest creates a request to invoke DescribeIpTraffic API
-func CreateDescribeIpTrafficRequest(request *DescribeIpTrafficRequest) {
+func CreateDescribeIpTrafficRequest() (request *DescribeIpTrafficRequest) {
 	request = &DescribeIpTrafficRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

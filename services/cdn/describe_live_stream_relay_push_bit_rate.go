@@ -91,7 +91,7 @@ type DescribeLiveStreamRelayPushBitRateResponse struct {
 }
 
 // CreateDescribeLiveStreamRelayPushBitRateRequest creates a request to invoke DescribeLiveStreamRelayPushBitRate API
-func CreateDescribeLiveStreamRelayPushBitRateRequest(request *DescribeLiveStreamRelayPushBitRateRequest) {
+func CreateDescribeLiveStreamRelayPushBitRateRequest() (request *DescribeLiveStreamRelayPushBitRateRequest) {
 	request = &DescribeLiveStreamRelayPushBitRateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

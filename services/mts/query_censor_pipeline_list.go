@@ -92,7 +92,7 @@ type QueryCensorPipelineListResponse struct {
 }
 
 // CreateQueryCensorPipelineListRequest creates a request to invoke QueryCensorPipelineList API
-func CreateQueryCensorPipelineListRequest(request *QueryCensorPipelineListRequest) {
+func CreateQueryCensorPipelineListRequest() (request *QueryCensorPipelineListRequest) {
 	request = &QueryCensorPipelineListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

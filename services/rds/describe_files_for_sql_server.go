@@ -99,7 +99,7 @@ type DescribeFilesForSQLServerResponse struct {
 }
 
 // CreateDescribeFilesForSQLServerRequest creates a request to invoke DescribeFilesForSQLServer API
-func CreateDescribeFilesForSQLServerRequest(request *DescribeFilesForSQLServerRequest) {
+func CreateDescribeFilesForSQLServerRequest() (request *DescribeFilesForSQLServerRequest) {
 	request = &DescribeFilesForSQLServerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

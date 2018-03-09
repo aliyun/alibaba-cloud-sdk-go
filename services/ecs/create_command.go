@@ -86,7 +86,7 @@ type CreateCommandResponse struct {
 }
 
 // CreateCreateCommandRequest creates a request to invoke CreateCommand API
-func CreateCreateCommandRequest(request *CreateCommandRequest) {
+func CreateCreateCommandRequest() (request *CreateCommandRequest) {
 	request = &CreateCommandRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

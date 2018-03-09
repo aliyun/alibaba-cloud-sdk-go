@@ -95,7 +95,7 @@ type UpdatePornPipelineResponse struct {
 }
 
 // CreateUpdatePornPipelineRequest creates a request to invoke UpdatePornPipeline API
-func CreateUpdatePornPipelineRequest(request *UpdatePornPipelineRequest) {
+func CreateUpdatePornPipelineRequest() (request *UpdatePornPipelineRequest) {
 	request = &UpdatePornPipelineRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -99,7 +99,7 @@ type DescribeIpRangesResponse struct {
 }
 
 // CreateDescribeIpRangesRequest creates a request to invoke DescribeIpRanges API
-func CreateDescribeIpRangesRequest(request *DescribeIpRangesRequest) {
+func CreateDescribeIpRangesRequest() (request *DescribeIpRangesRequest) {
 	request = &DescribeIpRangesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

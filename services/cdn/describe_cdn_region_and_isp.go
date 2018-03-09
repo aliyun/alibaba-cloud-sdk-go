@@ -89,7 +89,7 @@ type DescribeCdnRegionAndIspResponse struct {
 }
 
 // CreateDescribeCdnRegionAndIspRequest creates a request to invoke DescribeCdnRegionAndIsp API
-func CreateDescribeCdnRegionAndIspRequest(request *DescribeCdnRegionAndIspRequest) {
+func CreateDescribeCdnRegionAndIspRequest() (request *DescribeCdnRegionAndIspRequest) {
 	request = &DescribeCdnRegionAndIspRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

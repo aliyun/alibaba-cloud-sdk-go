@@ -88,7 +88,7 @@ type DeleteStrategyResponse struct {
 }
 
 // CreateDeleteStrategyRequest creates a request to invoke DeleteStrategy API
-func CreateDeleteStrategyRequest(request *DeleteStrategyRequest) {
+func CreateDeleteStrategyRequest() (request *DeleteStrategyRequest) {
 	request = &DeleteStrategyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

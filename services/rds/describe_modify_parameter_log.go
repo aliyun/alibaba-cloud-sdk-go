@@ -101,7 +101,7 @@ type DescribeModifyParameterLogResponse struct {
 }
 
 // CreateDescribeModifyParameterLogRequest creates a request to invoke DescribeModifyParameterLog API
-func CreateDescribeModifyParameterLogRequest(request *DescribeModifyParameterLogRequest) {
+func CreateDescribeModifyParameterLogRequest() (request *DescribeModifyParameterLogRequest) {
 	request = &DescribeModifyParameterLogRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

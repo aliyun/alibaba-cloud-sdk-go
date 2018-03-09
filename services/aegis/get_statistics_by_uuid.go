@@ -90,7 +90,7 @@ type GetStatisticsByUuidResponse struct {
 }
 
 // CreateGetStatisticsByUuidRequest creates a request to invoke GetStatisticsByUuid API
-func CreateGetStatisticsByUuidRequest(request *GetStatisticsByUuidRequest) {
+func CreateGetStatisticsByUuidRequest() (request *GetStatisticsByUuidRequest) {
 	request = &GetStatisticsByUuidRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

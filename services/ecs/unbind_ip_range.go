@@ -91,7 +91,7 @@ type UnbindIpRangeResponse struct {
 }
 
 // CreateUnbindIpRangeRequest creates a request to invoke UnbindIpRange API
-func CreateUnbindIpRangeRequest(request *UnbindIpRangeRequest) {
+func CreateUnbindIpRangeRequest() (request *UnbindIpRangeRequest) {
 	request = &UnbindIpRangeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

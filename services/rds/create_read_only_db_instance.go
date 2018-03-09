@@ -106,7 +106,7 @@ type CreateReadOnlyDBInstanceResponse struct {
 }
 
 // CreateCreateReadOnlyDBInstanceRequest creates a request to invoke CreateReadOnlyDBInstance API
-func CreateCreateReadOnlyDBInstanceRequest(request *CreateReadOnlyDBInstanceRequest) {
+func CreateCreateReadOnlyDBInstanceRequest() (request *CreateReadOnlyDBInstanceRequest) {
 	request = &CreateReadOnlyDBInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -95,7 +95,7 @@ type UpdateDomainRecordResponse struct {
 }
 
 // CreateUpdateDomainRecordRequest creates a request to invoke UpdateDomainRecord API
-func CreateUpdateDomainRecordRequest(request *UpdateDomainRecordRequest) {
+func CreateUpdateDomainRecordRequest() (request *UpdateDomainRecordRequest) {
 	request = &UpdateDomainRecordRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

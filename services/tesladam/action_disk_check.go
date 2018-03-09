@@ -89,7 +89,7 @@ type ActionDiskCheckResponse struct {
 }
 
 // CreateActionDiskCheckRequest creates a request to invoke ActionDiskCheck API
-func CreateActionDiskCheckRequest(request *ActionDiskCheckRequest) {
+func CreateActionDiskCheckRequest() (request *ActionDiskCheckRequest) {
 	request = &ActionDiskCheckRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

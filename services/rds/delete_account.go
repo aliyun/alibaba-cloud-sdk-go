@@ -91,7 +91,7 @@ type DeleteAccountResponse struct {
 }
 
 // CreateDeleteAccountRequest creates a request to invoke DeleteAccount API
-func CreateDeleteAccountRequest(request *DeleteAccountRequest) {
+func CreateDeleteAccountRequest() (request *DeleteAccountRequest) {
 	request = &DeleteAccountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

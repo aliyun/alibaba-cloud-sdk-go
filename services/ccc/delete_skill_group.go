@@ -91,7 +91,7 @@ type DeleteSkillGroupResponse struct {
 }
 
 // CreateDeleteSkillGroupRequest creates a request to invoke DeleteSkillGroup API
-func CreateDeleteSkillGroupRequest(request *DeleteSkillGroupRequest) {
+func CreateDeleteSkillGroupRequest() (request *DeleteSkillGroupRequest) {
 	request = &DeleteSkillGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

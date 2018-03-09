@@ -87,7 +87,7 @@ type RerunJobsResponse struct {
 }
 
 // CreateRerunJobsRequest creates a request to invoke RerunJobs API
-func CreateRerunJobsRequest(request *RerunJobsRequest) {
+func CreateRerunJobsRequest() (request *RerunJobsRequest) {
 	request = &RerunJobsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

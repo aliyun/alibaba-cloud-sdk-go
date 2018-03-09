@@ -92,7 +92,7 @@ type ListPhoneNumbersResponse struct {
 }
 
 // CreateListPhoneNumbersRequest creates a request to invoke ListPhoneNumbers API
-func CreateListPhoneNumbersRequest(request *ListPhoneNumbersRequest) {
+func CreateListPhoneNumbersRequest() (request *ListPhoneNumbersRequest) {
 	request = &ListPhoneNumbersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -96,7 +96,7 @@ type CreateJobTemplateResponse struct {
 }
 
 // CreateCreateJobTemplateRequest creates a request to invoke CreateJobTemplate API
-func CreateCreateJobTemplateRequest(request *CreateJobTemplateRequest) {
+func CreateCreateJobTemplateRequest() (request *CreateJobTemplateRequest) {
 	request = &CreateJobTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

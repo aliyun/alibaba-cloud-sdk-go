@@ -92,7 +92,7 @@ type AllocateInstancePublicConnectionResponse struct {
 }
 
 // CreateAllocateInstancePublicConnectionRequest creates a request to invoke AllocateInstancePublicConnection API
-func CreateAllocateInstancePublicConnectionRequest(request *AllocateInstancePublicConnectionRequest) {
+func CreateAllocateInstancePublicConnectionRequest() (request *AllocateInstancePublicConnectionRequest) {
 	request = &AllocateInstancePublicConnectionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

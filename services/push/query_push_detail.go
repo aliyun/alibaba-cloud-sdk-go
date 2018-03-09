@@ -129,7 +129,7 @@ type QueryPushDetailResponse struct {
 }
 
 // CreateQueryPushDetailRequest creates a request to invoke QueryPushDetail API
-func CreateQueryPushDetailRequest(request *QueryPushDetailRequest) {
+func CreateQueryPushDetailRequest() (request *QueryPushDetailRequest) {
 	request = &QueryPushDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

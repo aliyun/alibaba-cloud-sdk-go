@@ -130,7 +130,7 @@ type PushResponse struct {
 }
 
 // CreatePushRequest creates a request to invoke Push API
-func CreatePushRequest(request *PushRequest) {
+func CreatePushRequest() (request *PushRequest) {
 	request = &PushRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

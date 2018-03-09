@@ -104,7 +104,7 @@ type DescribePriceResponse struct {
 }
 
 // CreateDescribePriceRequest creates a request to invoke DescribePrice API
-func CreateDescribePriceRequest(request *DescribePriceRequest) {
+func CreateDescribePriceRequest() (request *DescribePriceRequest) {
 	request = &DescribePriceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

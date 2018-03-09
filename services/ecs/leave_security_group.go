@@ -91,7 +91,7 @@ type LeaveSecurityGroupResponse struct {
 }
 
 // CreateLeaveSecurityGroupRequest creates a request to invoke LeaveSecurityGroup API
-func CreateLeaveSecurityGroupRequest(request *LeaveSecurityGroupRequest) {
+func CreateLeaveSecurityGroupRequest() (request *LeaveSecurityGroupRequest) {
 	request = &LeaveSecurityGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

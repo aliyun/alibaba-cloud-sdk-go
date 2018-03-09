@@ -94,7 +94,7 @@ type CreateSslVpnClientCertResponse struct {
 }
 
 // CreateCreateSslVpnClientCertRequest creates a request to invoke CreateSslVpnClientCert API
-func CreateCreateSslVpnClientCertRequest(request *CreateSslVpnClientCertRequest) {
+func CreateCreateSslVpnClientCertRequest() (request *CreateSslVpnClientCertRequest) {
 	request = &CreateSslVpnClientCertRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

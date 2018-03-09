@@ -92,7 +92,7 @@ type ModifySenderAddressNotificationResponse struct {
 }
 
 // CreateModifySenderAddressNotificationRequest creates a request to invoke ModifySenderAddressNotification API
-func CreateModifySenderAddressNotificationRequest(request *ModifySenderAddressNotificationRequest) {
+func CreateModifySenderAddressNotificationRequest() (request *ModifySenderAddressNotificationRequest) {
 	request = &ModifySenderAddressNotificationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

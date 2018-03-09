@@ -91,7 +91,7 @@ type GetQuotaResponse struct {
 }
 
 // CreateGetQuotaRequest creates a request to invoke GetQuota API
-func CreateGetQuotaRequest(request *GetQuotaRequest) {
+func CreateGetQuotaRequest() (request *GetQuotaRequest) {
 	request = &GetQuotaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

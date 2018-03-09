@@ -91,7 +91,7 @@ type AddIpRangeResponse struct {
 }
 
 // CreateAddIpRangeRequest creates a request to invoke AddIpRange API
-func CreateAddIpRangeRequest(request *AddIpRangeRequest) {
+func CreateAddIpRangeRequest() (request *AddIpRangeRequest) {
 	request = &AddIpRangeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

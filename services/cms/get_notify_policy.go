@@ -93,7 +93,7 @@ type GetNotifyPolicyResponse struct {
 }
 
 // CreateGetNotifyPolicyRequest creates a request to invoke GetNotifyPolicy API
-func CreateGetNotifyPolicyRequest(request *GetNotifyPolicyRequest) {
+func CreateGetNotifyPolicyRequest() (request *GetNotifyPolicyRequest) {
 	request = &GetNotifyPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

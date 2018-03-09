@@ -91,7 +91,7 @@ type AddGlobalAccelerationInstanceIpResponse struct {
 }
 
 // CreateAddGlobalAccelerationInstanceIpRequest creates a request to invoke AddGlobalAccelerationInstanceIp API
-func CreateAddGlobalAccelerationInstanceIpRequest(request *AddGlobalAccelerationInstanceIpRequest) {
+func CreateAddGlobalAccelerationInstanceIpRequest() (request *AddGlobalAccelerationInstanceIpRequest) {
 	request = &AddGlobalAccelerationInstanceIpRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

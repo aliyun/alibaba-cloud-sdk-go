@@ -88,7 +88,7 @@ type DescribeDomainBlackWhiteListResponse struct {
 }
 
 // CreateDescribeDomainBlackWhiteListRequest creates a request to invoke DescribeDomainBlackWhiteList API
-func CreateDescribeDomainBlackWhiteListRequest(request *DescribeDomainBlackWhiteListRequest) {
+func CreateDescribeDomainBlackWhiteListRequest() (request *DescribeDomainBlackWhiteListRequest) {
 	request = &DescribeDomainBlackWhiteListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

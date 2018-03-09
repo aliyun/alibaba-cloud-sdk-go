@@ -96,7 +96,7 @@ type SearchPipelineResponse struct {
 }
 
 // CreateSearchPipelineRequest creates a request to invoke SearchPipeline API
-func CreateSearchPipelineRequest(request *SearchPipelineRequest) {
+func CreateSearchPipelineRequest() (request *SearchPipelineRequest) {
 	request = &SearchPipelineRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

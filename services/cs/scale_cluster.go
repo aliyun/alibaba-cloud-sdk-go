@@ -85,7 +85,7 @@ type ScaleClusterResponse struct {
 }
 
 // CreateScaleClusterRequest creates a request to invoke ScaleCluster API
-func CreateScaleClusterRequest(request *ScaleClusterRequest) {
+func CreateScaleClusterRequest() (request *ScaleClusterRequest) {
 	request = &ScaleClusterRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}

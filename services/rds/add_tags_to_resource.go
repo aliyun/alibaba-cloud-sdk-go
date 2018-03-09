@@ -103,7 +103,7 @@ type AddTagsToResourceResponse struct {
 }
 
 // CreateAddTagsToResourceRequest creates a request to invoke AddTagsToResource API
-func CreateAddTagsToResourceRequest(request *AddTagsToResourceRequest) {
+func CreateAddTagsToResourceRequest() (request *AddTagsToResourceRequest) {
 	request = &AddTagsToResourceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

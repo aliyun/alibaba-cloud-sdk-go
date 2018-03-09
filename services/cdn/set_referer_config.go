@@ -92,7 +92,7 @@ type SetRefererConfigResponse struct {
 }
 
 // CreateSetRefererConfigRequest creates a request to invoke SetRefererConfig API
-func CreateSetRefererConfigRequest(request *SetRefererConfigRequest) {
+func CreateSetRefererConfigRequest() (request *SetRefererConfigRequest) {
 	request = &SetRefererConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

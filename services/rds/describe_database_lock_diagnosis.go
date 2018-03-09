@@ -89,7 +89,7 @@ type DescribeDatabaseLockDiagnosisResponse struct {
 }
 
 // CreateDescribeDatabaseLockDiagnosisRequest creates a request to invoke DescribeDatabaseLockDiagnosis API
-func CreateDescribeDatabaseLockDiagnosisRequest(request *DescribeDatabaseLockDiagnosisRequest) {
+func CreateDescribeDatabaseLockDiagnosisRequest() (request *DescribeDatabaseLockDiagnosisRequest) {
 	request = &DescribeDatabaseLockDiagnosisRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

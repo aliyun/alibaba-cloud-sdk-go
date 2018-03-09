@@ -95,7 +95,7 @@ type ModifyReadWriteSplittingConnectionResponse struct {
 }
 
 // CreateModifyReadWriteSplittingConnectionRequest creates a request to invoke ModifyReadWriteSplittingConnection API
-func CreateModifyReadWriteSplittingConnectionRequest(request *ModifyReadWriteSplittingConnectionRequest) {
+func CreateModifyReadWriteSplittingConnectionRequest() (request *ModifyReadWriteSplittingConnectionRequest) {
 	request = &ModifyReadWriteSplittingConnectionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

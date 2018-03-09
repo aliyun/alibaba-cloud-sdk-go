@@ -95,7 +95,7 @@ type DescribeDomainCCAttackInfoResponse struct {
 }
 
 // CreateDescribeDomainCCAttackInfoRequest creates a request to invoke DescribeDomainCCAttackInfo API
-func CreateDescribeDomainCCAttackInfoRequest(request *DescribeDomainCCAttackInfoRequest) {
+func CreateDescribeDomainCCAttackInfoRequest() (request *DescribeDomainCCAttackInfoRequest) {
 	request = &DescribeDomainCCAttackInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -93,7 +93,7 @@ type StopInstanceResponse struct {
 }
 
 // CreateStopInstanceRequest creates a request to invoke StopInstance API
-func CreateStopInstanceRequest(request *StopInstanceRequest) {
+func CreateStopInstanceRequest() (request *StopInstanceRequest) {
 	request = &StopInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

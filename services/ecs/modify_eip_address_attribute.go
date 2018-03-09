@@ -91,7 +91,7 @@ type ModifyEipAddressAttributeResponse struct {
 }
 
 // CreateModifyEipAddressAttributeRequest creates a request to invoke ModifyEipAddressAttribute API
-func CreateModifyEipAddressAttributeRequest(request *ModifyEipAddressAttributeRequest) {
+func CreateModifyEipAddressAttributeRequest() (request *ModifyEipAddressAttributeRequest) {
 	request = &ModifyEipAddressAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

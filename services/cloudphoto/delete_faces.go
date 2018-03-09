@@ -92,7 +92,7 @@ type DeleteFacesResponse struct {
 }
 
 // CreateDeleteFacesRequest creates a request to invoke DeleteFaces API
-func CreateDeleteFacesRequest(request *DeleteFacesRequest) {
+func CreateDeleteFacesRequest() (request *DeleteFacesRequest) {
 	request = &DeleteFacesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -92,7 +92,7 @@ type RenameFaceResponse struct {
 }
 
 // CreateRenameFaceRequest creates a request to invoke RenameFace API
-func CreateRenameFaceRequest(request *RenameFaceRequest) {
+func CreateRenameFaceRequest() (request *RenameFaceRequest) {
 	request = &RenameFaceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

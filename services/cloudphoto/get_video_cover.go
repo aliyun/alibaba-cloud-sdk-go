@@ -93,7 +93,7 @@ type GetVideoCoverResponse struct {
 }
 
 // CreateGetVideoCoverRequest creates a request to invoke GetVideoCover API
-func CreateGetVideoCoverRequest(request *GetVideoCoverRequest) {
+func CreateGetVideoCoverRequest() (request *GetVideoCoverRequest) {
 	request = &GetVideoCoverRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

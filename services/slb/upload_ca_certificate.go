@@ -99,7 +99,7 @@ type UploadCACertificateResponse struct {
 }
 
 // CreateUploadCACertificateRequest creates a request to invoke UploadCACertificate API
-func CreateUploadCACertificateRequest(request *UploadCACertificateRequest) {
+func CreateUploadCACertificateRequest() (request *UploadCACertificateRequest) {
 	request = &UploadCACertificateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

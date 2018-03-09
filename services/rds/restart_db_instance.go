@@ -91,7 +91,7 @@ type RestartDBInstanceResponse struct {
 }
 
 // CreateRestartDBInstanceRequest creates a request to invoke RestartDBInstance API
-func CreateRestartDBInstanceRequest(request *RestartDBInstanceRequest) {
+func CreateRestartDBInstanceRequest() (request *RestartDBInstanceRequest) {
 	request = &RestartDBInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

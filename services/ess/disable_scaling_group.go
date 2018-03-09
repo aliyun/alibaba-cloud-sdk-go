@@ -90,7 +90,7 @@ type DisableScalingGroupResponse struct {
 }
 
 // CreateDisableScalingGroupRequest creates a request to invoke DisableScalingGroup API
-func CreateDisableScalingGroupRequest(request *DisableScalingGroupRequest) {
+func CreateDisableScalingGroupRequest() (request *DisableScalingGroupRequest) {
 	request = &DisableScalingGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -90,7 +90,7 @@ type ListProductOfActiveAlertResponse struct {
 }
 
 // CreateListProductOfActiveAlertRequest creates a request to invoke ListProductOfActiveAlert API
-func CreateListProductOfActiveAlertRequest(request *ListProductOfActiveAlertRequest) {
+func CreateListProductOfActiveAlertRequest() (request *ListProductOfActiveAlertRequest) {
 	request = &ListProductOfActiveAlertRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

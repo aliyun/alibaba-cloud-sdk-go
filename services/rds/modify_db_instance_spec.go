@@ -95,7 +95,7 @@ type ModifyDBInstanceSpecResponse struct {
 }
 
 // CreateModifyDBInstanceSpecRequest creates a request to invoke ModifyDBInstanceSpec API
-func CreateModifyDBInstanceSpecRequest(request *ModifyDBInstanceSpecRequest) {
+func CreateModifyDBInstanceSpecRequest() (request *ModifyDBInstanceSpecRequest) {
 	request = &ModifyDBInstanceSpecRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

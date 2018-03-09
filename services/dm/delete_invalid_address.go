@@ -89,7 +89,7 @@ type DeleteInvalidAddressResponse struct {
 }
 
 // CreateDeleteInvalidAddressRequest creates a request to invoke DeleteInvalidAddress API
-func CreateDeleteInvalidAddressRequest(request *DeleteInvalidAddressRequest) {
+func CreateDeleteInvalidAddressRequest() (request *DeleteInvalidAddressRequest) {
 	request = &DeleteInvalidAddressRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

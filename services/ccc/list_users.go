@@ -93,7 +93,7 @@ type ListUsersResponse struct {
 }
 
 // CreateListUsersRequest creates a request to invoke ListUsers API
-func CreateListUsersRequest(request *ListUsersRequest) {
+func CreateListUsersRequest() (request *ListUsersRequest) {
 	request = &ListUsersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

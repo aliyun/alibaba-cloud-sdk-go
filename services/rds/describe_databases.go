@@ -93,7 +93,7 @@ type DescribeDatabasesResponse struct {
 }
 
 // CreateDescribeDatabasesRequest creates a request to invoke DescribeDatabases API
-func CreateDescribeDatabasesRequest(request *DescribeDatabasesRequest) {
+func CreateDescribeDatabasesRequest() (request *DescribeDatabasesRequest) {
 	request = &DescribeDatabasesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

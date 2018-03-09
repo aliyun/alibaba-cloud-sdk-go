@@ -98,7 +98,7 @@ type CreateMigrateTaskResponse struct {
 }
 
 // CreateCreateMigrateTaskRequest creates a request to invoke CreateMigrateTask API
-func CreateCreateMigrateTaskRequest(request *CreateMigrateTaskRequest) {
+func CreateCreateMigrateTaskRequest() (request *CreateMigrateTaskRequest) {
 	request = &CreateMigrateTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

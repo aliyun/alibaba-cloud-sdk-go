@@ -95,7 +95,7 @@ type GetEntityListResponse struct {
 }
 
 // CreateGetEntityListRequest creates a request to invoke GetEntityList API
-func CreateGetEntityListRequest(request *GetEntityListRequest) {
+func CreateGetEntityListRequest() (request *GetEntityListRequest) {
 	request = &GetEntityListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

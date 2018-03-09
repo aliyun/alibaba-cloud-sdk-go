@@ -87,7 +87,7 @@ type StopJobsResponse struct {
 }
 
 // CreateStopJobsRequest creates a request to invoke StopJobs API
-func CreateStopJobsRequest(request *StopJobsRequest) {
+func CreateStopJobsRequest() (request *StopJobsRequest) {
 	request = &StopJobsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

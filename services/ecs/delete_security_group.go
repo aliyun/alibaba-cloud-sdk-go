@@ -90,7 +90,7 @@ type DeleteSecurityGroupResponse struct {
 }
 
 // CreateDeleteSecurityGroupRequest creates a request to invoke DeleteSecurityGroup API
-func CreateDeleteSecurityGroupRequest(request *DeleteSecurityGroupRequest) {
+func CreateDeleteSecurityGroupRequest() (request *DeleteSecurityGroupRequest) {
 	request = &DeleteSecurityGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

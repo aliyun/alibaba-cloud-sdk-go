@@ -89,7 +89,7 @@ type DescribeHpcClustersResponse struct {
 }
 
 // CreateDescribeHpcClustersRequest creates a request to invoke DescribeHpcClusters API
-func CreateDescribeHpcClustersRequest(request *DescribeHpcClustersRequest) {
+func CreateDescribeHpcClustersRequest() (request *DescribeHpcClustersRequest) {
 	request = &DescribeHpcClustersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

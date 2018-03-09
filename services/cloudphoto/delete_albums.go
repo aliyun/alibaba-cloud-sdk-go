@@ -92,7 +92,7 @@ type DeleteAlbumsResponse struct {
 }
 
 // CreateDeleteAlbumsRequest creates a request to invoke DeleteAlbums API
-func CreateDeleteAlbumsRequest(request *DeleteAlbumsRequest) {
+func CreateDeleteAlbumsRequest() (request *DeleteAlbumsRequest) {
 	request = &DeleteAlbumsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

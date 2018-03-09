@@ -91,7 +91,7 @@ type DescribeInstanceTypeFamiliesResponse struct {
 }
 
 // CreateDescribeInstanceTypeFamiliesRequest creates a request to invoke DescribeInstanceTypeFamilies API
-func CreateDescribeInstanceTypeFamiliesRequest(request *DescribeInstanceTypeFamiliesRequest) {
+func CreateDescribeInstanceTypeFamiliesRequest() (request *DescribeInstanceTypeFamiliesRequest) {
 	request = &DescribeInstanceTypeFamiliesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

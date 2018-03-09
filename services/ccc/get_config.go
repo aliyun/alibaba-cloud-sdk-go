@@ -94,7 +94,7 @@ type GetConfigResponse struct {
 }
 
 // CreateGetConfigRequest creates a request to invoke GetConfig API
-func CreateGetConfigRequest(request *GetConfigRequest) {
+func CreateGetConfigRequest() (request *GetConfigRequest) {
 	request = &GetConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

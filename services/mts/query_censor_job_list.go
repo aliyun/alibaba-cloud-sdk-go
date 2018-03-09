@@ -92,7 +92,7 @@ type QueryCensorJobListResponse struct {
 }
 
 // CreateQueryCensorJobListRequest creates a request to invoke QueryCensorJobList API
-func CreateQueryCensorJobListRequest(request *QueryCensorJobListRequest) {
+func CreateQueryCensorJobListRequest() (request *QueryCensorJobListRequest) {
 	request = &QueryCensorJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

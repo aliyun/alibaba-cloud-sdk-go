@@ -92,7 +92,7 @@ type DescAccountSummary2Response struct {
 }
 
 // CreateDescAccountSummary2Request creates a request to invoke DescAccountSummary2 API
-func CreateDescAccountSummary2Request(request *DescAccountSummary2Request) {
+func CreateDescAccountSummary2Request() (request *DescAccountSummary2Request) {
 	request = &DescAccountSummary2Request{
 		RpcRequest: &requests.RpcRequest{},
 	}

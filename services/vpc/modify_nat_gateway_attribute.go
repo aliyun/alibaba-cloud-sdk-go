@@ -92,7 +92,7 @@ type ModifyNatGatewayAttributeResponse struct {
 }
 
 // CreateModifyNatGatewayAttributeRequest creates a request to invoke ModifyNatGatewayAttribute API
-func CreateModifyNatGatewayAttributeRequest(request *ModifyNatGatewayAttributeRequest) {
+func CreateModifyNatGatewayAttributeRequest() (request *ModifyNatGatewayAttributeRequest) {
 	request = &ModifyNatGatewayAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

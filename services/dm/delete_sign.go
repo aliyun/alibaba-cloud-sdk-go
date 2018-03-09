@@ -90,7 +90,7 @@ type DeleteSignResponse struct {
 }
 
 // CreateDeleteSignRequest creates a request to invoke DeleteSign API
-func CreateDeleteSignRequest(request *DeleteSignRequest) {
+func CreateDeleteSignRequest() (request *DeleteSignRequest) {
 	request = &DeleteSignRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -102,7 +102,7 @@ type GetTrackListResponse struct {
 }
 
 // CreateGetTrackListRequest creates a request to invoke GetTrackList API
-func CreateGetTrackListRequest(request *GetTrackListRequest) {
+func CreateGetTrackListRequest() (request *GetTrackListRequest) {
 	request = &GetTrackListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

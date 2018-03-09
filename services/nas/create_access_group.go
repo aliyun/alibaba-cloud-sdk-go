@@ -89,7 +89,7 @@ type CreateAccessGroupResponse struct {
 }
 
 // CreateCreateAccessGroupRequest creates a request to invoke CreateAccessGroup API
-func CreateCreateAccessGroupRequest(request *CreateAccessGroupRequest) {
+func CreateCreateAccessGroupRequest() (request *CreateAccessGroupRequest) {
 	request = &CreateAccessGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

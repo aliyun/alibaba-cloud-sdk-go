@@ -88,7 +88,7 @@ type DescribeCnameAutoStatusResponse struct {
 }
 
 // CreateDescribeCnameAutoStatusRequest creates a request to invoke DescribeCnameAutoStatus API
-func CreateDescribeCnameAutoStatusRequest(request *DescribeCnameAutoStatusRequest) {
+func CreateDescribeCnameAutoStatusRequest() (request *DescribeCnameAutoStatusRequest) {
 	request = &DescribeCnameAutoStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -96,7 +96,7 @@ type DescribeMachineConfigResponse struct {
 }
 
 // CreateDescribeMachineConfigRequest creates a request to invoke DescribeMachineConfig API
-func CreateDescribeMachineConfigRequest(request *DescribeMachineConfigRequest) {
+func CreateDescribeMachineConfigRequest() (request *DescribeMachineConfigRequest) {
 	request = &DescribeMachineConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -88,7 +88,7 @@ type DeleteClusterNodeResponse struct {
 }
 
 // CreateDeleteClusterNodeRequest creates a request to invoke DeleteClusterNode API
-func CreateDeleteClusterNodeRequest(request *DeleteClusterNodeRequest) {
+func CreateDeleteClusterNodeRequest() (request *DeleteClusterNodeRequest) {
 	request = &DeleteClusterNodeRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}

@@ -90,7 +90,7 @@ type ActionDiskMaskResponse struct {
 }
 
 // CreateActionDiskMaskRequest creates a request to invoke ActionDiskMask API
-func CreateActionDiskMaskRequest(request *ActionDiskMaskRequest) {
+func CreateActionDiskMaskRequest() (request *ActionDiskMaskRequest) {
 	request = &ActionDiskMaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

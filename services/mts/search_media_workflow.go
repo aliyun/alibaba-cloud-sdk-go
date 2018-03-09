@@ -96,7 +96,7 @@ type SearchMediaWorkflowResponse struct {
 }
 
 // CreateSearchMediaWorkflowRequest creates a request to invoke SearchMediaWorkflow API
-func CreateSearchMediaWorkflowRequest(request *SearchMediaWorkflowRequest) {
+func CreateSearchMediaWorkflowRequest() (request *SearchMediaWorkflowRequest) {
 	request = &SearchMediaWorkflowRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

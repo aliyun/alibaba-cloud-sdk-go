@@ -92,7 +92,7 @@ type CheckDomainRecordResponse struct {
 }
 
 // CreateCheckDomainRecordRequest creates a request to invoke CheckDomainRecord API
-func CreateCheckDomainRecordRequest(request *CheckDomainRecordRequest) {
+func CreateCheckDomainRecordRequest() (request *CheckDomainRecordRequest) {
 	request = &CheckDomainRecordRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

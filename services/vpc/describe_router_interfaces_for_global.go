@@ -100,7 +100,7 @@ type DescribeRouterInterfacesForGlobalResponse struct {
 }
 
 // CreateDescribeRouterInterfacesForGlobalRequest creates a request to invoke DescribeRouterInterfacesForGlobal API
-func CreateDescribeRouterInterfacesForGlobalRequest(request *DescribeRouterInterfacesForGlobalRequest) {
+func CreateDescribeRouterInterfacesForGlobalRequest() (request *DescribeRouterInterfacesForGlobalRequest) {
 	request = &DescribeRouterInterfacesForGlobalRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

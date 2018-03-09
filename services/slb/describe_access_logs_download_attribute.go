@@ -100,7 +100,7 @@ type DescribeAccessLogsDownloadAttributeResponse struct {
 }
 
 // CreateDescribeAccessLogsDownloadAttributeRequest creates a request to invoke DescribeAccessLogsDownloadAttribute API
-func CreateDescribeAccessLogsDownloadAttributeRequest(request *DescribeAccessLogsDownloadAttributeRequest) {
+func CreateDescribeAccessLogsDownloadAttributeRequest() (request *DescribeAccessLogsDownloadAttributeRequest) {
 	request = &DescribeAccessLogsDownloadAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

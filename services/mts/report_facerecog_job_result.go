@@ -93,7 +93,7 @@ type ReportFacerecogJobResultResponse struct {
 }
 
 // CreateReportFacerecogJobResultRequest creates a request to invoke ReportFacerecogJobResult API
-func CreateReportFacerecogJobResultRequest(request *ReportFacerecogJobResultRequest) {
+func CreateReportFacerecogJobResultRequest() (request *ReportFacerecogJobResultRequest) {
 	request = &ReportFacerecogJobResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

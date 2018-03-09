@@ -97,7 +97,7 @@ type DescribeOptimizeAdviceOnStorageResponse struct {
 }
 
 // CreateDescribeOptimizeAdviceOnStorageRequest creates a request to invoke DescribeOptimizeAdviceOnStorage API
-func CreateDescribeOptimizeAdviceOnStorageRequest(request *DescribeOptimizeAdviceOnStorageRequest) {
+func CreateDescribeOptimizeAdviceOnStorageRequest() (request *DescribeOptimizeAdviceOnStorageRequest) {
 	request = &DescribeOptimizeAdviceOnStorageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

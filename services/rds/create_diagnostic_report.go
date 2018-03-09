@@ -89,7 +89,7 @@ type CreateDiagnosticReportResponse struct {
 }
 
 // CreateCreateDiagnosticReportRequest creates a request to invoke CreateDiagnosticReport API
-func CreateCreateDiagnosticReportRequest(request *CreateDiagnosticReportRequest) {
+func CreateCreateDiagnosticReportRequest() (request *CreateDiagnosticReportRequest) {
 	request = &CreateDiagnosticReportRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

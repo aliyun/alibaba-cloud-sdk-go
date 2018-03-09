@@ -101,7 +101,7 @@ type SingleSendMailResponse struct {
 }
 
 // CreateSingleSendMailRequest creates a request to invoke SingleSendMail API
-func CreateSingleSendMailRequest(request *SingleSendMailRequest) {
+func CreateSingleSendMailRequest() (request *SingleSendMailRequest) {
 	request = &SingleSendMailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

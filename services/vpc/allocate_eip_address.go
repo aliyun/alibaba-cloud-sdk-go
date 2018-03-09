@@ -103,7 +103,7 @@ type AllocateEipAddressResponse struct {
 }
 
 // CreateAllocateEipAddressRequest creates a request to invoke AllocateEipAddress API
-func CreateAllocateEipAddressRequest(request *AllocateEipAddressRequest) {
+func CreateAllocateEipAddressRequest() (request *AllocateEipAddressRequest) {
 	request = &AllocateEipAddressRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

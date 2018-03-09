@@ -90,7 +90,7 @@ type DeleteAlarmResponse struct {
 }
 
 // CreateDeleteAlarmRequest creates a request to invoke DeleteAlarm API
-func CreateDeleteAlarmRequest(request *DeleteAlarmRequest) {
+func CreateDeleteAlarmRequest() (request *DeleteAlarmRequest) {
 	request = &DeleteAlarmRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

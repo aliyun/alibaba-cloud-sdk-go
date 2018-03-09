@@ -93,7 +93,7 @@ type SetLoadBalancerAutoReleaseTimeResponse struct {
 }
 
 // CreateSetLoadBalancerAutoReleaseTimeRequest creates a request to invoke SetLoadBalancerAutoReleaseTime API
-func CreateSetLoadBalancerAutoReleaseTimeRequest(request *SetLoadBalancerAutoReleaseTimeRequest) {
+func CreateSetLoadBalancerAutoReleaseTimeRequest() (request *SetLoadBalancerAutoReleaseTimeRequest) {
 	request = &SetLoadBalancerAutoReleaseTimeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

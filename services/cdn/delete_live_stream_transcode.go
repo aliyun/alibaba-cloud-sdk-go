@@ -91,7 +91,7 @@ type DeleteLiveStreamTranscodeResponse struct {
 }
 
 // CreateDeleteLiveStreamTranscodeRequest creates a request to invoke DeleteLiveStreamTranscode API
-func CreateDeleteLiveStreamTranscodeRequest(request *DeleteLiveStreamTranscodeRequest) {
+func CreateDeleteLiveStreamTranscodeRequest() (request *DeleteLiveStreamTranscodeRequest) {
 	request = &DeleteLiveStreamTranscodeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

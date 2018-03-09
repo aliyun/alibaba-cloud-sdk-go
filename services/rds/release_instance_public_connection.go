@@ -91,7 +91,7 @@ type ReleaseInstancePublicConnectionResponse struct {
 }
 
 // CreateReleaseInstancePublicConnectionRequest creates a request to invoke ReleaseInstancePublicConnection API
-func CreateReleaseInstancePublicConnectionRequest(request *ReleaseInstancePublicConnectionRequest) {
+func CreateReleaseInstancePublicConnectionRequest() (request *ReleaseInstancePublicConnectionRequest) {
 	request = &ReleaseInstancePublicConnectionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

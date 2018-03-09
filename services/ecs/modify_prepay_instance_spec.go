@@ -95,7 +95,7 @@ type ModifyPrepayInstanceSpecResponse struct {
 }
 
 // CreateModifyPrepayInstanceSpecRequest creates a request to invoke ModifyPrepayInstanceSpec API
-func CreateModifyPrepayInstanceSpecRequest(request *ModifyPrepayInstanceSpecRequest) {
+func CreateModifyPrepayInstanceSpecRequest() (request *ModifyPrepayInstanceSpecRequest) {
 	request = &ModifyPrepayInstanceSpecRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -84,7 +84,7 @@ type ModifyClusterNameResponse struct {
 }
 
 // CreateModifyClusterNameRequest creates a request to invoke ModifyClusterName API
-func CreateModifyClusterNameRequest(request *ModifyClusterNameRequest) {
+func CreateModifyClusterNameRequest() (request *ModifyClusterNameRequest) {
 	request = &ModifyClusterNameRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}

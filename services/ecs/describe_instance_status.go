@@ -97,7 +97,7 @@ type DescribeInstanceStatusResponse struct {
 }
 
 // CreateDescribeInstanceStatusRequest creates a request to invoke DescribeInstanceStatus API
-func CreateDescribeInstanceStatusRequest(request *DescribeInstanceStatusRequest) {
+func CreateDescribeInstanceStatusRequest() (request *DescribeInstanceStatusRequest) {
 	request = &DescribeInstanceStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

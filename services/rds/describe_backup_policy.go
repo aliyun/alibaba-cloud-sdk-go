@@ -96,7 +96,7 @@ type DescribeBackupPolicyResponse struct {
 }
 
 // CreateDescribeBackupPolicyRequest creates a request to invoke DescribeBackupPolicy API
-func CreateDescribeBackupPolicyRequest(request *DescribeBackupPolicyRequest) {
+func CreateDescribeBackupPolicyRequest() (request *DescribeBackupPolicyRequest) {
 	request = &DescribeBackupPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

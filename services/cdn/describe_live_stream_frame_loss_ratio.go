@@ -93,7 +93,7 @@ type DescribeLiveStreamFrameLossRatioResponse struct {
 }
 
 // CreateDescribeLiveStreamFrameLossRatioRequest creates a request to invoke DescribeLiveStreamFrameLossRatio API
-func CreateDescribeLiveStreamFrameLossRatioRequest(request *DescribeLiveStreamFrameLossRatioRequest) {
+func CreateDescribeLiveStreamFrameLossRatioRequest() (request *DescribeLiveStreamFrameLossRatioRequest) {
 	request = &DescribeLiveStreamFrameLossRatioRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

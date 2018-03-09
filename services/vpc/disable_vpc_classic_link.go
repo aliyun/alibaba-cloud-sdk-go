@@ -91,7 +91,7 @@ type DisableVpcClassicLinkResponse struct {
 }
 
 // CreateDisableVpcClassicLinkRequest creates a request to invoke DisableVpcClassicLink API
-func CreateDisableVpcClassicLinkRequest(request *DisableVpcClassicLinkRequest) {
+func CreateDisableVpcClassicLinkRequest() (request *DisableVpcClassicLinkRequest) {
 	request = &DisableVpcClassicLinkRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

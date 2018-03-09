@@ -92,7 +92,7 @@ type CheckDiskEnableAutoSnapshotValidationResponse struct {
 }
 
 // CreateCheckDiskEnableAutoSnapshotValidationRequest creates a request to invoke CheckDiskEnableAutoSnapshotValidation API
-func CreateCheckDiskEnableAutoSnapshotValidationRequest(request *CheckDiskEnableAutoSnapshotValidationRequest) {
+func CreateCheckDiskEnableAutoSnapshotValidationRequest() (request *CheckDiskEnableAutoSnapshotValidationRequest) {
 	request = &CheckDiskEnableAutoSnapshotValidationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

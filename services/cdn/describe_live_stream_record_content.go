@@ -93,7 +93,7 @@ type DescribeLiveStreamRecordContentResponse struct {
 }
 
 // CreateDescribeLiveStreamRecordContentRequest creates a request to invoke DescribeLiveStreamRecordContent API
-func CreateDescribeLiveStreamRecordContentRequest(request *DescribeLiveStreamRecordContentRequest) {
+func CreateDescribeLiveStreamRecordContentRequest() (request *DescribeLiveStreamRecordContentRequest) {
 	request = &DescribeLiveStreamRecordContentRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

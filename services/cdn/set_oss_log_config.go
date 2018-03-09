@@ -90,7 +90,7 @@ type SetOssLogConfigResponse struct {
 }
 
 // CreateSetOssLogConfigRequest creates a request to invoke SetOssLogConfig API
-func CreateSetOssLogConfigRequest(request *SetOssLogConfigRequest) {
+func CreateSetOssLogConfigRequest() (request *SetOssLogConfigRequest) {
 	request = &SetOssLogConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

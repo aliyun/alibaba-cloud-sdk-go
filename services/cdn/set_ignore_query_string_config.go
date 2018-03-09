@@ -91,7 +91,7 @@ type SetIgnoreQueryStringConfigResponse struct {
 }
 
 // CreateSetIgnoreQueryStringConfigRequest creates a request to invoke SetIgnoreQueryStringConfig API
-func CreateSetIgnoreQueryStringConfigRequest(request *SetIgnoreQueryStringConfigRequest) {
+func CreateSetIgnoreQueryStringConfigRequest() (request *SetIgnoreQueryStringConfigRequest) {
 	request = &SetIgnoreQueryStringConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

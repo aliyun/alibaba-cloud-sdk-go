@@ -95,7 +95,7 @@ type DescribeCustomerGatewayResponse struct {
 }
 
 // CreateDescribeCustomerGatewayRequest creates a request to invoke DescribeCustomerGateway API
-func CreateDescribeCustomerGatewayRequest(request *DescribeCustomerGatewayRequest) {
+func CreateDescribeCustomerGatewayRequest() (request *DescribeCustomerGatewayRequest) {
 	request = &DescribeCustomerGatewayRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

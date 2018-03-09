@@ -91,7 +91,7 @@ type UpdateMediaCoverResponse struct {
 }
 
 // CreateUpdateMediaCoverRequest creates a request to invoke UpdateMediaCover API
-func CreateUpdateMediaCoverRequest(request *UpdateMediaCoverRequest) {
+func CreateUpdateMediaCoverRequest() (request *UpdateMediaCoverRequest) {
 	request = &UpdateMediaCoverRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

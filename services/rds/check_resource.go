@@ -98,7 +98,7 @@ type CheckResourceResponse struct {
 }
 
 // CreateCheckResourceRequest creates a request to invoke CheckResource API
-func CreateCheckResourceRequest(request *CheckResourceRequest) {
+func CreateCheckResourceRequest() (request *CheckResourceRequest) {
 	request = &CheckResourceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

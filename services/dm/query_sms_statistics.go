@@ -93,7 +93,7 @@ type QuerySmsStatisticsResponse struct {
 }
 
 // CreateQuerySmsStatisticsRequest creates a request to invoke QuerySmsStatistics API
-func CreateQuerySmsStatisticsRequest(request *QuerySmsStatisticsRequest) {
+func CreateQuerySmsStatisticsRequest() (request *QuerySmsStatisticsRequest) {
 	request = &QuerySmsStatisticsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

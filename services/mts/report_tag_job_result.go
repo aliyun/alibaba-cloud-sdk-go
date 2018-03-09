@@ -93,7 +93,7 @@ type ReportTagJobResultResponse struct {
 }
 
 // CreateReportTagJobResultRequest creates a request to invoke ReportTagJobResult API
-func CreateReportTagJobResultRequest(request *ReportTagJobResultRequest) {
+func CreateReportTagJobResultRequest() (request *ReportTagJobResultRequest) {
 	request = &ReportTagJobResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

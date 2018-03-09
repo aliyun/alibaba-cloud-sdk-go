@@ -94,7 +94,7 @@ type DetachInstanceRamRoleResponse struct {
 }
 
 // CreateDetachInstanceRamRoleRequest creates a request to invoke DetachInstanceRamRole API
-func CreateDetachInstanceRamRoleRequest(request *DetachInstanceRamRoleRequest) {
+func CreateDetachInstanceRamRoleRequest() (request *DetachInstanceRamRoleRequest) {
 	request = &DetachInstanceRamRoleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

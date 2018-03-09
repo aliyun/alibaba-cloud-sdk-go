@@ -96,7 +96,7 @@ type QueryReceiverDetailResponse struct {
 }
 
 // CreateQueryReceiverDetailRequest creates a request to invoke QueryReceiverDetail API
-func CreateQueryReceiverDetailRequest(request *QueryReceiverDetailRequest) {
+func CreateQueryReceiverDetailRequest() (request *QueryReceiverDetailRequest) {
 	request = &QueryReceiverDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -91,7 +91,7 @@ type UnbindInputBucketResponse struct {
 }
 
 // CreateUnbindInputBucketRequest creates a request to invoke UnbindInputBucket API
-func CreateUnbindInputBucketRequest(request *UnbindInputBucketRequest) {
+func CreateUnbindInputBucketRequest() (request *UnbindInputBucketRequest) {
 	request = &UnbindInputBucketRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

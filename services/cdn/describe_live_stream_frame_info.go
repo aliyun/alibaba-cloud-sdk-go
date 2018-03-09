@@ -93,7 +93,7 @@ type DescribeLiveStreamFrameInfoResponse struct {
 }
 
 // CreateDescribeLiveStreamFrameInfoRequest creates a request to invoke DescribeLiveStreamFrameInfo API
-func CreateDescribeLiveStreamFrameInfoRequest(request *DescribeLiveStreamFrameInfoRequest) {
+func CreateDescribeLiveStreamFrameInfoRequest() (request *DescribeLiveStreamFrameInfoRequest) {
 	request = &DescribeLiveStreamFrameInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

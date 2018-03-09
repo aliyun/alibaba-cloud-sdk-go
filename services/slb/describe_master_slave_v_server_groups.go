@@ -93,7 +93,7 @@ type DescribeMasterSlaveVServerGroupsResponse struct {
 }
 
 // CreateDescribeMasterSlaveVServerGroupsRequest creates a request to invoke DescribeMasterSlaveVServerGroups API
-func CreateDescribeMasterSlaveVServerGroupsRequest(request *DescribeMasterSlaveVServerGroupsRequest) {
+func CreateDescribeMasterSlaveVServerGroupsRequest() (request *DescribeMasterSlaveVServerGroupsRequest) {
 	request = &DescribeMasterSlaveVServerGroupsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

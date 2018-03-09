@@ -92,7 +92,7 @@ type DescribeRisksResponse struct {
 }
 
 // CreateDescribeRisksRequest creates a request to invoke DescribeRisks API
-func CreateDescribeRisksRequest(request *DescribeRisksRequest) {
+func CreateDescribeRisksRequest() (request *DescribeRisksRequest) {
 	request = &DescribeRisksRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

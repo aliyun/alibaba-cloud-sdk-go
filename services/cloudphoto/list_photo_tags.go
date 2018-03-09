@@ -93,7 +93,7 @@ type ListPhotoTagsResponse struct {
 }
 
 // CreateListPhotoTagsRequest creates a request to invoke ListPhotoTags API
-func CreateListPhotoTagsRequest(request *ListPhotoTagsRequest) {
+func CreateListPhotoTagsRequest() (request *ListPhotoTagsRequest) {
 	request = &ListPhotoTagsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -93,7 +93,7 @@ type ModifyPostpaidDBInstanceSpecResponse struct {
 }
 
 // CreateModifyPostpaidDBInstanceSpecRequest creates a request to invoke ModifyPostpaidDBInstanceSpec API
-func CreateModifyPostpaidDBInstanceSpecRequest(request *ModifyPostpaidDBInstanceSpecRequest) {
+func CreateModifyPostpaidDBInstanceSpecRequest() (request *ModifyPostpaidDBInstanceSpecRequest) {
 	request = &ModifyPostpaidDBInstanceSpecRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -87,7 +87,7 @@ type SetDefaultPolicyVersionResponse struct {
 }
 
 // CreateSetDefaultPolicyVersionRequest creates a request to invoke SetDefaultPolicyVersion API
-func CreateSetDefaultPolicyVersionRequest(request *SetDefaultPolicyVersionRequest) {
+func CreateSetDefaultPolicyVersionRequest() (request *SetDefaultPolicyVersionRequest) {
 	request = &SetDefaultPolicyVersionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

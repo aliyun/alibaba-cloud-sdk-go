@@ -92,7 +92,7 @@ type ModifySecurityGroupPolicyResponse struct {
 }
 
 // CreateModifySecurityGroupPolicyRequest creates a request to invoke ModifySecurityGroupPolicy API
-func CreateModifySecurityGroupPolicyRequest(request *ModifySecurityGroupPolicyRequest) {
+func CreateModifySecurityGroupPolicyRequest() (request *ModifySecurityGroupPolicyRequest) {
 	request = &ModifySecurityGroupPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

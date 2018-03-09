@@ -87,7 +87,7 @@ type ChangePasswordResponse struct {
 }
 
 // CreateChangePasswordRequest creates a request to invoke ChangePassword API
-func CreateChangePasswordRequest(request *ChangePasswordRequest) {
+func CreateChangePasswordRequest() (request *ChangePasswordRequest) {
 	request = &ChangePasswordRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -97,7 +97,7 @@ type ModifyLoadBalancerPayTypeResponse struct {
 }
 
 // CreateModifyLoadBalancerPayTypeRequest creates a request to invoke ModifyLoadBalancerPayType API
-func CreateModifyLoadBalancerPayTypeRequest(request *ModifyLoadBalancerPayTypeRequest) {
+func CreateModifyLoadBalancerPayTypeRequest() (request *ModifyLoadBalancerPayTypeRequest) {
 	request = &ModifyLoadBalancerPayTypeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

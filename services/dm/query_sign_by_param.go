@@ -95,7 +95,7 @@ type QuerySignByParamResponse struct {
 }
 
 // CreateQuerySignByParamRequest creates a request to invoke QuerySignByParam API
-func CreateQuerySignByParamRequest(request *QuerySignByParamRequest) {
+func CreateQuerySignByParamRequest() (request *QuerySignByParamRequest) {
 	request = &QuerySignByParamRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

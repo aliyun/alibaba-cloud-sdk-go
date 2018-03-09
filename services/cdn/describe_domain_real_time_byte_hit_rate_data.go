@@ -86,7 +86,7 @@ type DescribeDomainRealTimeByteHitRateDataResponse struct {
 }
 
 // CreateDescribeDomainRealTimeByteHitRateDataRequest creates a request to invoke DescribeDomainRealTimeByteHitRateData API
-func CreateDescribeDomainRealTimeByteHitRateDataRequest(request *DescribeDomainRealTimeByteHitRateDataRequest) {
+func CreateDescribeDomainRealTimeByteHitRateDataRequest() (request *DescribeDomainRealTimeByteHitRateDataRequest) {
 	request = &DescribeDomainRealTimeByteHitRateDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

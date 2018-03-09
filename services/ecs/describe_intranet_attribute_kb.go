@@ -95,7 +95,7 @@ type DescribeIntranetAttributeKbResponse struct {
 }
 
 // CreateDescribeIntranetAttributeKbRequest creates a request to invoke DescribeIntranetAttributeKb API
-func CreateDescribeIntranetAttributeKbRequest(request *DescribeIntranetAttributeKbRequest) {
+func CreateDescribeIntranetAttributeKbRequest() (request *DescribeIntranetAttributeKbRequest) {
 	request = &DescribeIntranetAttributeKbRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -89,7 +89,7 @@ type CreateDayuResponse struct {
 }
 
 // CreateCreateDayuRequest creates a request to invoke CreateDayu API
-func CreateCreateDayuRequest(request *CreateDayuRequest) {
+func CreateCreateDayuRequest() (request *CreateDayuRequest) {
 	request = &CreateDayuRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

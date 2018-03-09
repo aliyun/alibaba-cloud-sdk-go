@@ -92,7 +92,7 @@ type QueryTagJobListResponse struct {
 }
 
 // CreateQueryTagJobListRequest creates a request to invoke QueryTagJobList API
-func CreateQueryTagJobListRequest(request *QueryTagJobListRequest) {
+func CreateQueryTagJobListRequest() (request *QueryTagJobListRequest) {
 	request = &QueryTagJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

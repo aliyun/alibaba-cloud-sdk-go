@@ -91,7 +91,7 @@ type ModifyHttpHeaderConfigResponse struct {
 }
 
 // CreateModifyHttpHeaderConfigRequest creates a request to invoke ModifyHttpHeaderConfig API
-func CreateModifyHttpHeaderConfigRequest(request *ModifyHttpHeaderConfigRequest) {
+func CreateModifyHttpHeaderConfigRequest() (request *ModifyHttpHeaderConfigRequest) {
 	request = &ModifyHttpHeaderConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

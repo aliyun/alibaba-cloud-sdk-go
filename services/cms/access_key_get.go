@@ -92,7 +92,7 @@ type AccessKeyGetResponse struct {
 }
 
 // CreateAccessKeyGetRequest creates a request to invoke AccessKeyGet API
-func CreateAccessKeyGetRequest(request *AccessKeyGetRequest) {
+func CreateAccessKeyGetRequest() (request *AccessKeyGetRequest) {
 	request = &AccessKeyGetRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

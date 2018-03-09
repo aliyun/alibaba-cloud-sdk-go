@@ -86,7 +86,7 @@ type RunInstancesResponse struct {
 }
 
 // CreateRunInstancesRequest creates a request to invoke RunInstances API
-func CreateRunInstancesRequest(request *RunInstancesRequest) {
+func CreateRunInstancesRequest() (request *RunInstancesRequest) {
 	request = &RunInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

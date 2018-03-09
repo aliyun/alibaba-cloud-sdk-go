@@ -94,7 +94,7 @@ type AssignUsersResponse struct {
 }
 
 // CreateAssignUsersRequest creates a request to invoke AssignUsers API
-func CreateAssignUsersRequest(request *AssignUsersRequest) {
+func CreateAssignUsersRequest() (request *AssignUsersRequest) {
 	request = &AssignUsersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -89,7 +89,7 @@ type VerifyAuthenticationResponse struct {
 }
 
 // CreateVerifyAuthenticationRequest creates a request to invoke VerifyAuthentication API
-func CreateVerifyAuthenticationRequest(request *VerifyAuthenticationRequest) {
+func CreateVerifyAuthenticationRequest() (request *VerifyAuthenticationRequest) {
 	request = &VerifyAuthenticationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

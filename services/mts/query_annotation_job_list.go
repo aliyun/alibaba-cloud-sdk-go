@@ -92,7 +92,7 @@ type QueryAnnotationJobListResponse struct {
 }
 
 // CreateQueryAnnotationJobListRequest creates a request to invoke QueryAnnotationJobList API
-func CreateQueryAnnotationJobListRequest(request *QueryAnnotationJobListRequest) {
+func CreateQueryAnnotationJobListRequest() (request *QueryAnnotationJobListRequest) {
 	request = &QueryAnnotationJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

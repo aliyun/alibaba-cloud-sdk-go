@@ -90,7 +90,7 @@ type UpdateDomainTrackNameResponse struct {
 }
 
 // CreateUpdateDomainTrackNameRequest creates a request to invoke UpdateDomainTrackName API
-func CreateUpdateDomainTrackNameRequest(request *UpdateDomainTrackNameRequest) {
+func CreateUpdateDomainTrackNameRequest() (request *UpdateDomainTrackNameRequest) {
 	request = &UpdateDomainTrackNameRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

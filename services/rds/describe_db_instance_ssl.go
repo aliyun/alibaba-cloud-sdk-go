@@ -94,7 +94,7 @@ type DescribeDBInstanceSSLResponse struct {
 }
 
 // CreateDescribeDBInstanceSSLRequest creates a request to invoke DescribeDBInstanceSSL API
-func CreateDescribeDBInstanceSSLRequest(request *DescribeDBInstanceSSLRequest) {
+func CreateDescribeDBInstanceSSLRequest() (request *DescribeDBInstanceSSLRequest) {
 	request = &DescribeDBInstanceSSLRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

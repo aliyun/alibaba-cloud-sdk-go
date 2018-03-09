@@ -91,7 +91,7 @@ type CancelJobResponse struct {
 }
 
 // CreateCancelJobRequest creates a request to invoke CancelJob API
-func CreateCancelJobRequest(request *CancelJobRequest) {
+func CreateCancelJobRequest() (request *CancelJobRequest) {
 	request = &CancelJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

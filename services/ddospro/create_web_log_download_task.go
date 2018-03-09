@@ -92,7 +92,7 @@ type CreateWebLogDownloadTaskResponse struct {
 }
 
 // CreateCreateWebLogDownloadTaskRequest creates a request to invoke CreateWebLogDownloadTask API
-func CreateCreateWebLogDownloadTaskRequest(request *CreateWebLogDownloadTaskRequest) {
+func CreateCreateWebLogDownloadTaskRequest() (request *CreateWebLogDownloadTaskRequest) {
 	request = &CreateWebLogDownloadTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

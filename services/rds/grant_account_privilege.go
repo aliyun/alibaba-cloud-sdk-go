@@ -93,7 +93,7 @@ type GrantAccountPrivilegeResponse struct {
 }
 
 // CreateGrantAccountPrivilegeRequest creates a request to invoke GrantAccountPrivilege API
-func CreateGrantAccountPrivilegeRequest(request *GrantAccountPrivilegeRequest) {
+func CreateGrantAccountPrivilegeRequest() (request *GrantAccountPrivilegeRequest) {
 	request = &GrantAccountPrivilegeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -100,7 +100,7 @@ type AddCdnDomainResponse struct {
 }
 
 // CreateAddCdnDomainRequest creates a request to invoke AddCdnDomain API
-func CreateAddCdnDomainRequest(request *AddCdnDomainRequest) {
+func CreateAddCdnDomainRequest() (request *AddCdnDomainRequest) {
 	request = &AddCdnDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

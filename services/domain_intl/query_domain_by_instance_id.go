@@ -102,7 +102,7 @@ type QueryDomainByInstanceIdResponse struct {
 }
 
 // CreateQueryDomainByInstanceIdRequest creates a request to invoke QueryDomainByInstanceId API
-func CreateQueryDomainByInstanceIdRequest(request *QueryDomainByInstanceIdRequest) {
+func CreateQueryDomainByInstanceIdRequest() (request *QueryDomainByInstanceIdRequest) {
 	request = &QueryDomainByInstanceIdRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

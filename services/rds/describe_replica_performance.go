@@ -99,7 +99,7 @@ type DescribeReplicaPerformanceResponse struct {
 }
 
 // CreateDescribeReplicaPerformanceRequest creates a request to invoke DescribeReplicaPerformance API
-func CreateDescribeReplicaPerformanceRequest(request *DescribeReplicaPerformanceRequest) {
+func CreateDescribeReplicaPerformanceRequest() (request *DescribeReplicaPerformanceRequest) {
 	request = &DescribeReplicaPerformanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

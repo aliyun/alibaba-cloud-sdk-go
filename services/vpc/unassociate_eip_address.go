@@ -92,7 +92,7 @@ type UnassociateEipAddressResponse struct {
 }
 
 // CreateUnassociateEipAddressRequest creates a request to invoke UnassociateEipAddress API
-func CreateUnassociateEipAddressRequest(request *UnassociateEipAddressRequest) {
+func CreateUnassociateEipAddressRequest() (request *UnassociateEipAddressRequest) {
 	request = &UnassociateEipAddressRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -92,7 +92,7 @@ type UnassociatePhysicalConnectionFromVirtualBorderRouterResponse struct {
 }
 
 // CreateUnassociatePhysicalConnectionFromVirtualBorderRouterRequest creates a request to invoke UnassociatePhysicalConnectionFromVirtualBorderRouter API
-func CreateUnassociatePhysicalConnectionFromVirtualBorderRouterRequest(request *UnassociatePhysicalConnectionFromVirtualBorderRouterRequest) {
+func CreateUnassociatePhysicalConnectionFromVirtualBorderRouterRequest() (request *UnassociatePhysicalConnectionFromVirtualBorderRouterRequest) {
 	request = &UnassociatePhysicalConnectionFromVirtualBorderRouterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

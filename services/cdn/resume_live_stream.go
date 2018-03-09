@@ -91,7 +91,7 @@ type ResumeLiveStreamResponse struct {
 }
 
 // CreateResumeLiveStreamRequest creates a request to invoke ResumeLiveStream API
-func CreateResumeLiveStreamRequest(request *ResumeLiveStreamRequest) {
+func CreateResumeLiveStreamRequest() (request *ResumeLiveStreamRequest) {
 	request = &ResumeLiveStreamRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

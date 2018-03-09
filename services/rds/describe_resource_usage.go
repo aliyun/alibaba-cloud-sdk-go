@@ -99,7 +99,7 @@ type DescribeResourceUsageResponse struct {
 }
 
 // CreateDescribeResourceUsageRequest creates a request to invoke DescribeResourceUsage API
-func CreateDescribeResourceUsageRequest(request *DescribeResourceUsageRequest) {
+func CreateDescribeResourceUsageRequest() (request *DescribeResourceUsageRequest) {
 	request = &DescribeResourceUsageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

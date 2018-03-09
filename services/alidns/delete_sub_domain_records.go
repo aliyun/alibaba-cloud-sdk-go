@@ -92,7 +92,7 @@ type DeleteSubDomainRecordsResponse struct {
 }
 
 // CreateDeleteSubDomainRecordsRequest creates a request to invoke DeleteSubDomainRecords API
-func CreateDeleteSubDomainRecordsRequest(request *DeleteSubDomainRecordsRequest) {
+func CreateDeleteSubDomainRecordsRequest() (request *DeleteSubDomainRecordsRequest) {
 	request = &DeleteSubDomainRecordsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

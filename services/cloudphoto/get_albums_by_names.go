@@ -92,7 +92,7 @@ type GetAlbumsByNamesResponse struct {
 }
 
 // CreateGetAlbumsByNamesRequest creates a request to invoke GetAlbumsByNames API
-func CreateGetAlbumsByNamesRequest(request *GetAlbumsByNamesRequest) {
+func CreateGetAlbumsByNamesRequest() (request *GetAlbumsByNamesRequest) {
 	request = &GetAlbumsByNamesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

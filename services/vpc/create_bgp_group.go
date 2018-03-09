@@ -97,7 +97,7 @@ type CreateBgpGroupResponse struct {
 }
 
 // CreateCreateBgpGroupRequest creates a request to invoke CreateBgpGroup API
-func CreateCreateBgpGroupRequest(request *CreateBgpGroupRequest) {
+func CreateCreateBgpGroupRequest() (request *CreateBgpGroupRequest) {
 	request = &CreateBgpGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

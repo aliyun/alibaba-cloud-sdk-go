@@ -90,7 +90,7 @@ type ModifyAccountNotificationResponse struct {
 }
 
 // CreateModifyAccountNotificationRequest creates a request to invoke ModifyAccountNotification API
-func CreateModifyAccountNotificationRequest(request *ModifyAccountNotificationRequest) {
+func CreateModifyAccountNotificationRequest() (request *ModifyAccountNotificationRequest) {
 	request = &ModifyAccountNotificationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

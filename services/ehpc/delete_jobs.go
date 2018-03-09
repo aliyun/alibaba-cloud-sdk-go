@@ -87,7 +87,7 @@ type DeleteJobsResponse struct {
 }
 
 // CreateDeleteJobsRequest creates a request to invoke DeleteJobs API
-func CreateDeleteJobsRequest(request *DeleteJobsRequest) {
+func CreateDeleteJobsRequest() (request *DeleteJobsRequest) {
 	request = &DeleteJobsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

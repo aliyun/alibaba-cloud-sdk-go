@@ -91,7 +91,7 @@ type PlayerAuthResponse struct {
 }
 
 // CreatePlayerAuthRequest creates a request to invoke PlayerAuth API
-func CreatePlayerAuthRequest(request *PlayerAuthRequest) {
+func CreatePlayerAuthRequest() (request *PlayerAuthRequest) {
 	request = &PlayerAuthRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

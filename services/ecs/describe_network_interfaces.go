@@ -89,7 +89,7 @@ type DescribeNetworkInterfacesResponse struct {
 }
 
 // CreateDescribeNetworkInterfacesRequest creates a request to invoke DescribeNetworkInterfaces API
-func CreateDescribeNetworkInterfacesRequest(request *DescribeNetworkInterfacesRequest) {
+func CreateDescribeNetworkInterfacesRequest() (request *DescribeNetworkInterfacesRequest) {
 	request = &DescribeNetworkInterfacesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

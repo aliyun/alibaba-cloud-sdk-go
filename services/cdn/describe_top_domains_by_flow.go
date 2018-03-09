@@ -95,7 +95,7 @@ type DescribeTopDomainsByFlowResponse struct {
 }
 
 // CreateDescribeTopDomainsByFlowRequest creates a request to invoke DescribeTopDomainsByFlow API
-func CreateDescribeTopDomainsByFlowRequest(request *DescribeTopDomainsByFlowRequest) {
+func CreateDescribeTopDomainsByFlowRequest() (request *DescribeTopDomainsByFlowRequest) {
 	request = &DescribeTopDomainsByFlowRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

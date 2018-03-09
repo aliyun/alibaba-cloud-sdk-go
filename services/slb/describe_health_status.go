@@ -94,7 +94,7 @@ type DescribeHealthStatusResponse struct {
 }
 
 // CreateDescribeHealthStatusRequest creates a request to invoke DescribeHealthStatus API
-func CreateDescribeHealthStatusRequest(request *DescribeHealthStatusRequest) {
+func CreateDescribeHealthStatusRequest() (request *DescribeHealthStatusRequest) {
 	request = &DescribeHealthStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

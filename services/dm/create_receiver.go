@@ -91,7 +91,7 @@ type CreateReceiverResponse struct {
 }
 
 // CreateCreateReceiverRequest creates a request to invoke CreateReceiver API
-func CreateCreateReceiverRequest(request *CreateReceiverRequest) {
+func CreateCreateReceiverRequest() (request *CreateReceiverRequest) {
 	request = &CreateReceiverRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

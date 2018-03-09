@@ -100,7 +100,7 @@ type DescTemplateResponse struct {
 }
 
 // CreateDescTemplateRequest creates a request to invoke DescTemplate API
-func CreateDescTemplateRequest(request *DescTemplateRequest) {
+func CreateDescTemplateRequest() (request *DescTemplateRequest) {
 	request = &DescTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

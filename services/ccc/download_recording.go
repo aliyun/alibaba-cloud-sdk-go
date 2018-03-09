@@ -93,7 +93,7 @@ type DownloadRecordingResponse struct {
 }
 
 // CreateDownloadRecordingRequest creates a request to invoke DownloadRecording API
-func CreateDownloadRecordingRequest(request *DownloadRecordingRequest) {
+func CreateDownloadRecordingRequest() (request *DownloadRecordingRequest) {
 	request = &DownloadRecordingRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

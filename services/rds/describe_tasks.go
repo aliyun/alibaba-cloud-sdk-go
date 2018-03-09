@@ -100,7 +100,7 @@ type DescribeTasksResponse struct {
 }
 
 // CreateDescribeTasksRequest creates a request to invoke DescribeTasks API
-func CreateDescribeTasksRequest(request *DescribeTasksRequest) {
+func CreateDescribeTasksRequest() (request *DescribeTasksRequest) {
 	request = &DescribeTasksRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

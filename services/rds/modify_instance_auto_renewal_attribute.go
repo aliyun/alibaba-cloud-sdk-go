@@ -93,7 +93,7 @@ type ModifyInstanceAutoRenewalAttributeResponse struct {
 }
 
 // CreateModifyInstanceAutoRenewalAttributeRequest creates a request to invoke ModifyInstanceAutoRenewalAttribute API
-func CreateModifyInstanceAutoRenewalAttributeRequest(request *ModifyInstanceAutoRenewalAttributeRequest) {
+func CreateModifyInstanceAutoRenewalAttributeRequest() (request *ModifyInstanceAutoRenewalAttributeRequest) {
 	request = &ModifyInstanceAutoRenewalAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

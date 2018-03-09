@@ -91,7 +91,7 @@ type SetReqHeaderConfigResponse struct {
 }
 
 // CreateSetReqHeaderConfigRequest creates a request to invoke SetReqHeaderConfig API
-func CreateSetReqHeaderConfigRequest(request *SetReqHeaderConfigRequest) {
+func CreateSetReqHeaderConfigRequest() (request *SetReqHeaderConfigRequest) {
 	request = &SetReqHeaderConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

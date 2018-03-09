@@ -117,7 +117,7 @@ type DescribeDBInstancesResponse struct {
 }
 
 // CreateDescribeDBInstancesRequest creates a request to invoke DescribeDBInstances API
-func CreateDescribeDBInstancesRequest(request *DescribeDBInstancesRequest) {
+func CreateDescribeDBInstancesRequest() (request *DescribeDBInstancesRequest) {
 	request = &DescribeDBInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

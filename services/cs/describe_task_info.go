@@ -85,7 +85,7 @@ type DescribeTaskInfoResponse struct {
 }
 
 // CreateDescribeTaskInfoRequest creates a request to invoke DescribeTaskInfo API
-func CreateDescribeTaskInfoRequest(request *DescribeTaskInfoRequest) {
+func CreateDescribeTaskInfoRequest() (request *DescribeTaskInfoRequest) {
 	request = &DescribeTaskInfoRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}

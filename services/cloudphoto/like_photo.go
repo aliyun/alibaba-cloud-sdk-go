@@ -91,7 +91,7 @@ type LikePhotoResponse struct {
 }
 
 // CreateLikePhotoRequest creates a request to invoke LikePhoto API
-func CreateLikePhotoRequest(request *LikePhotoRequest) {
+func CreateLikePhotoRequest() (request *LikePhotoRequest) {
 	request = &LikePhotoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

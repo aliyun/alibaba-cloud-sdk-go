@@ -92,7 +92,7 @@ type ModifyDBDescriptionResponse struct {
 }
 
 // CreateModifyDBDescriptionRequest creates a request to invoke ModifyDBDescription API
-func CreateModifyDBDescriptionRequest(request *ModifyDBDescriptionRequest) {
+func CreateModifyDBDescriptionRequest() (request *ModifyDBDescriptionRequest) {
 	request = &ModifyDBDescriptionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

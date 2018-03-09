@@ -101,7 +101,7 @@ type DescribeSlowLogRecordsResponse struct {
 }
 
 // CreateDescribeSlowLogRecordsRequest creates a request to invoke DescribeSlowLogRecords API
-func CreateDescribeSlowLogRecordsRequest(request *DescribeSlowLogRecordsRequest) {
+func CreateDescribeSlowLogRecordsRequest() (request *DescribeSlowLogRecordsRequest) {
 	request = &DescribeSlowLogRecordsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

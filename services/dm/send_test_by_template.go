@@ -96,7 +96,7 @@ type SendTestByTemplateResponse struct {
 }
 
 // CreateSendTestByTemplateRequest creates a request to invoke SendTestByTemplate API
-func CreateSendTestByTemplateRequest(request *SendTestByTemplateRequest) {
+func CreateSendTestByTemplateRequest() (request *SendTestByTemplateRequest) {
 	request = &SendTestByTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

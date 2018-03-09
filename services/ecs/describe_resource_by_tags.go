@@ -105,7 +105,7 @@ type DescribeResourceByTagsResponse struct {
 }
 
 // CreateDescribeResourceByTagsRequest creates a request to invoke DescribeResourceByTags API
-func CreateDescribeResourceByTagsRequest(request *DescribeResourceByTagsRequest) {
+func CreateDescribeResourceByTagsRequest() (request *DescribeResourceByTagsRequest) {
 	request = &DescribeResourceByTagsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

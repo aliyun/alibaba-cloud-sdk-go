@@ -95,7 +95,7 @@ type DescribeRiskWhiteListResponse struct {
 }
 
 // CreateDescribeRiskWhiteListRequest creates a request to invoke DescribeRiskWhiteList API
-func CreateDescribeRiskWhiteListRequest(request *DescribeRiskWhiteListRequest) {
+func CreateDescribeRiskWhiteListRequest() (request *DescribeRiskWhiteListRequest) {
 	request = &DescribeRiskWhiteListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

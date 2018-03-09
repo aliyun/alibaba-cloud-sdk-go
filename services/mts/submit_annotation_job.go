@@ -94,7 +94,7 @@ type SubmitAnnotationJobResponse struct {
 }
 
 // CreateSubmitAnnotationJobRequest creates a request to invoke SubmitAnnotationJob API
-func CreateSubmitAnnotationJobRequest(request *SubmitAnnotationJobRequest) {
+func CreateSubmitAnnotationJobRequest() (request *SubmitAnnotationJobRequest) {
 	request = &SubmitAnnotationJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

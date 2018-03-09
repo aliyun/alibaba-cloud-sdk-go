@@ -90,7 +90,7 @@ type MigrateMarketResponse struct {
 }
 
 // CreateMigrateMarketRequest creates a request to invoke MigrateMarket API
-func CreateMigrateMarketRequest(request *MigrateMarketRequest) {
+func CreateMigrateMarketRequest() (request *MigrateMarketRequest) {
 	request = &MigrateMarketRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

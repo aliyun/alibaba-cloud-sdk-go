@@ -93,7 +93,7 @@ type RegisterMediaDetailScenarioResponse struct {
 }
 
 // CreateRegisterMediaDetailScenarioRequest creates a request to invoke RegisterMediaDetailScenario API
-func CreateRegisterMediaDetailScenarioRequest(request *RegisterMediaDetailScenarioRequest) {
+func CreateRegisterMediaDetailScenarioRequest() (request *RegisterMediaDetailScenarioRequest) {
 	request = &RegisterMediaDetailScenarioRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

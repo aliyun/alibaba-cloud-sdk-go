@@ -88,7 +88,7 @@ type PutSystemEventResponse struct {
 }
 
 // CreatePutSystemEventRequest creates a request to invoke PutSystemEvent API
-func CreatePutSystemEventRequest(request *PutSystemEventRequest) {
+func CreatePutSystemEventRequest() (request *PutSystemEventRequest) {
 	request = &PutSystemEventRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

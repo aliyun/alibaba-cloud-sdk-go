@@ -89,7 +89,7 @@ type QueryTagsResponse struct {
 }
 
 // CreateQueryTagsRequest creates a request to invoke QueryTags API
-func CreateQueryTagsRequest(request *QueryTagsRequest) {
+func CreateQueryTagsRequest() (request *QueryTagsRequest) {
 	request = &QueryTagsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

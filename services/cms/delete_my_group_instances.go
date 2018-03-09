@@ -90,7 +90,7 @@ type DeleteMyGroupInstancesResponse struct {
 }
 
 // CreateDeleteMyGroupInstancesRequest creates a request to invoke DeleteMyGroupInstances API
-func CreateDeleteMyGroupInstancesRequest(request *DeleteMyGroupInstancesRequest) {
+func CreateDeleteMyGroupInstancesRequest() (request *DeleteMyGroupInstancesRequest) {
 	request = &DeleteMyGroupInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

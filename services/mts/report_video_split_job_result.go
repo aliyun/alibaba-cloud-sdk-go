@@ -93,7 +93,7 @@ type ReportVideoSplitJobResultResponse struct {
 }
 
 // CreateReportVideoSplitJobResultRequest creates a request to invoke ReportVideoSplitJobResult API
-func CreateReportVideoSplitJobResultRequest(request *ReportVideoSplitJobResultRequest) {
+func CreateReportVideoSplitJobResultRequest() (request *ReportVideoSplitJobResultRequest) {
 	request = &ReportVideoSplitJobResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

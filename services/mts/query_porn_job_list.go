@@ -92,7 +92,7 @@ type QueryPornJobListResponse struct {
 }
 
 // CreateQueryPornJobListRequest creates a request to invoke QueryPornJobList API
-func CreateQueryPornJobListRequest(request *QueryPornJobListRequest) {
+func CreateQueryPornJobListRequest() (request *QueryPornJobListRequest) {
 	request = &QueryPornJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

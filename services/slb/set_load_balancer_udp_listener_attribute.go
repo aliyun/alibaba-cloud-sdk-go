@@ -108,7 +108,7 @@ type SetLoadBalancerUDPListenerAttributeResponse struct {
 }
 
 // CreateSetLoadBalancerUDPListenerAttributeRequest creates a request to invoke SetLoadBalancerUDPListenerAttribute API
-func CreateSetLoadBalancerUDPListenerAttributeRequest(request *SetLoadBalancerUDPListenerAttributeRequest) {
+func CreateSetLoadBalancerUDPListenerAttributeRequest() (request *SetLoadBalancerUDPListenerAttributeRequest) {
 	request = &SetLoadBalancerUDPListenerAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

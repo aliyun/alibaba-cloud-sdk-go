@@ -92,7 +92,7 @@ type SubmitEmailVerificationResponse struct {
 }
 
 // CreateSubmitEmailVerificationRequest creates a request to invoke SubmitEmailVerification API
-func CreateSubmitEmailVerificationRequest(request *SubmitEmailVerificationRequest) {
+func CreateSubmitEmailVerificationRequest() (request *SubmitEmailVerificationRequest) {
 	request = &SubmitEmailVerificationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

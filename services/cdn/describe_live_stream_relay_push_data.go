@@ -91,7 +91,7 @@ type DescribeLiveStreamRelayPushDataResponse struct {
 }
 
 // CreateDescribeLiveStreamRelayPushDataRequest creates a request to invoke DescribeLiveStreamRelayPushData API
-func CreateDescribeLiveStreamRelayPushDataRequest(request *DescribeLiveStreamRelayPushDataRequest) {
+func CreateDescribeLiveStreamRelayPushDataRequest() (request *DescribeLiveStreamRelayPushDataRequest) {
 	request = &DescribeLiveStreamRelayPushDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

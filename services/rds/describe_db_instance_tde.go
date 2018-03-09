@@ -92,7 +92,7 @@ type DescribeDBInstanceTDEResponse struct {
 }
 
 // CreateDescribeDBInstanceTDERequest creates a request to invoke DescribeDBInstanceTDE API
-func CreateDescribeDBInstanceTDERequest(request *DescribeDBInstanceTDERequest) {
+func CreateDescribeDBInstanceTDERequest() (request *DescribeDBInstanceTDERequest) {
 	request = &DescribeDBInstanceTDERequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -86,7 +86,7 @@ type ListVirtualMFADevicesResponse struct {
 }
 
 // CreateListVirtualMFADevicesRequest creates a request to invoke ListVirtualMFADevices API
-func CreateListVirtualMFADevicesRequest(request *ListVirtualMFADevicesRequest) {
+func CreateListVirtualMFADevicesRequest() (request *ListVirtualMFADevicesRequest) {
 	request = &ListVirtualMFADevicesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

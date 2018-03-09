@@ -92,7 +92,7 @@ type UpdateMediaWorkflowTriggerModeResponse struct {
 }
 
 // CreateUpdateMediaWorkflowTriggerModeRequest creates a request to invoke UpdateMediaWorkflowTriggerMode API
-func CreateUpdateMediaWorkflowTriggerModeRequest(request *UpdateMediaWorkflowTriggerModeRequest) {
+func CreateUpdateMediaWorkflowTriggerModeRequest() (request *UpdateMediaWorkflowTriggerModeRequest) {
 	request = &UpdateMediaWorkflowTriggerModeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

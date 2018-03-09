@@ -89,7 +89,7 @@ type CreateRoleResponse struct {
 }
 
 // CreateCreateRoleRequest creates a request to invoke CreateRole API
-func CreateCreateRoleRequest(request *CreateRoleRequest) {
+func CreateCreateRoleRequest() (request *CreateRoleRequest) {
 	request = &CreateRoleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

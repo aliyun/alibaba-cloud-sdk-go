@@ -85,7 +85,7 @@ type RevokeClusterTokenResponse struct {
 }
 
 // CreateRevokeClusterTokenRequest creates a request to invoke RevokeClusterToken API
-func CreateRevokeClusterTokenRequest(request *RevokeClusterTokenRequest) {
+func CreateRevokeClusterTokenRequest() (request *RevokeClusterTokenRequest) {
 	request = &RevokeClusterTokenRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}

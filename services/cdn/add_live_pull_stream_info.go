@@ -93,7 +93,7 @@ type AddLivePullStreamInfoResponse struct {
 }
 
 // CreateAddLivePullStreamInfoRequest creates a request to invoke AddLivePullStreamInfo API
-func CreateAddLivePullStreamInfoRequest(request *AddLivePullStreamInfoRequest) {
+func CreateAddLivePullStreamInfoRequest() (request *AddLivePullStreamInfoRequest) {
 	request = &AddLivePullStreamInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -93,7 +93,7 @@ type ModifyDBInstanceConnectionStringResponse struct {
 }
 
 // CreateModifyDBInstanceConnectionStringRequest creates a request to invoke ModifyDBInstanceConnectionString API
-func CreateModifyDBInstanceConnectionStringRequest(request *ModifyDBInstanceConnectionStringRequest) {
+func CreateModifyDBInstanceConnectionStringRequest() (request *ModifyDBInstanceConnectionStringRequest) {
 	request = &ModifyDBInstanceConnectionStringRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

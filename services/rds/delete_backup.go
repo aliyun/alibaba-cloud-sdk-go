@@ -91,7 +91,7 @@ type DeleteBackupResponse struct {
 }
 
 // CreateDeleteBackupRequest creates a request to invoke DeleteBackup API
-func CreateDeleteBackupRequest(request *DeleteBackupRequest) {
+func CreateDeleteBackupRequest() (request *DeleteBackupRequest) {
 	request = &DeleteBackupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -89,7 +89,7 @@ type CheckInvalidAddressResponse struct {
 }
 
 // CreateCheckInvalidAddressRequest creates a request to invoke CheckInvalidAddress API
-func CreateCheckInvalidAddressRequest(request *CheckInvalidAddressRequest) {
+func CreateCheckInvalidAddressRequest() (request *CheckInvalidAddressRequest) {
 	request = &CheckInvalidAddressRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -87,7 +87,7 @@ type CancelPushResponse struct {
 }
 
 // CreateCancelPushRequest creates a request to invoke CancelPush API
-func CreateCancelPushRequest(request *CancelPushRequest) {
+func CreateCancelPushRequest() (request *CancelPushRequest) {
 	request = &CancelPushRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

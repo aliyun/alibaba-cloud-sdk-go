@@ -91,7 +91,7 @@ type DescribeLiveStreamPushErrorsResponse struct {
 }
 
 // CreateDescribeLiveStreamPushErrorsRequest creates a request to invoke DescribeLiveStreamPushErrors API
-func CreateDescribeLiveStreamPushErrorsRequest(request *DescribeLiveStreamPushErrorsRequest) {
+func CreateDescribeLiveStreamPushErrorsRequest() (request *DescribeLiveStreamPushErrorsRequest) {
 	request = &DescribeLiveStreamPushErrorsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

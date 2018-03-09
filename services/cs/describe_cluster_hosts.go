@@ -85,7 +85,7 @@ type DescribeClusterHostsResponse struct {
 }
 
 // CreateDescribeClusterHostsRequest creates a request to invoke DescribeClusterHosts API
-func CreateDescribeClusterHostsRequest(request *DescribeClusterHostsRequest) {
+func CreateDescribeClusterHostsRequest() (request *DescribeClusterHostsRequest) {
 	request = &DescribeClusterHostsRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}

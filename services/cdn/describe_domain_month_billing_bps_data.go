@@ -103,7 +103,7 @@ type DescribeDomainMonthBillingBpsDataResponse struct {
 }
 
 // CreateDescribeDomainMonthBillingBpsDataRequest creates a request to invoke DescribeDomainMonthBillingBpsData API
-func CreateDescribeDomainMonthBillingBpsDataRequest(request *DescribeDomainMonthBillingBpsDataRequest) {
+func CreateDescribeDomainMonthBillingBpsDataRequest() (request *DescribeDomainMonthBillingBpsDataRequest) {
 	request = &DescribeDomainMonthBillingBpsDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

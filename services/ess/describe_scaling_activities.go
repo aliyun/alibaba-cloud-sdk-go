@@ -117,7 +117,7 @@ type DescribeScalingActivitiesResponse struct {
 }
 
 // CreateDescribeScalingActivitiesRequest creates a request to invoke DescribeScalingActivities API
-func CreateDescribeScalingActivitiesRequest(request *DescribeScalingActivitiesRequest) {
+func CreateDescribeScalingActivitiesRequest() (request *DescribeScalingActivitiesRequest) {
 	request = &DescribeScalingActivitiesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

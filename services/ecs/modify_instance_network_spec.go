@@ -99,7 +99,7 @@ type ModifyInstanceNetworkSpecResponse struct {
 }
 
 // CreateModifyInstanceNetworkSpecRequest creates a request to invoke ModifyInstanceNetworkSpec API
-func CreateModifyInstanceNetworkSpecRequest(request *ModifyInstanceNetworkSpecRequest) {
+func CreateModifyInstanceNetworkSpecRequest() (request *ModifyInstanceNetworkSpecRequest) {
 	request = &ModifyInstanceNetworkSpecRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

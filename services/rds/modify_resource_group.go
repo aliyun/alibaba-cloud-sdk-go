@@ -92,7 +92,7 @@ type ModifyResourceGroupResponse struct {
 }
 
 // CreateModifyResourceGroupRequest creates a request to invoke ModifyResourceGroup API
-func CreateModifyResourceGroupRequest(request *ModifyResourceGroupRequest) {
+func CreateModifyResourceGroupRequest() (request *ModifyResourceGroupRequest) {
 	request = &ModifyResourceGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

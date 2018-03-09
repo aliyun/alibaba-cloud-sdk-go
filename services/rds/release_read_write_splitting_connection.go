@@ -90,7 +90,7 @@ type ReleaseReadWriteSplittingConnectionResponse struct {
 }
 
 // CreateReleaseReadWriteSplittingConnectionRequest creates a request to invoke ReleaseReadWriteSplittingConnection API
-func CreateReleaseReadWriteSplittingConnectionRequest(request *ReleaseReadWriteSplittingConnectionRequest) {
+func CreateReleaseReadWriteSplittingConnectionRequest() (request *ReleaseReadWriteSplittingConnectionRequest) {
 	request = &ReleaseReadWriteSplittingConnectionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -92,7 +92,7 @@ type ActivatePhotosResponse struct {
 }
 
 // CreateActivatePhotosRequest creates a request to invoke ActivatePhotos API
-func CreateActivatePhotosRequest(request *ActivatePhotosRequest) {
+func CreateActivatePhotosRequest() (request *ActivatePhotosRequest) {
 	request = &ActivatePhotosRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -91,7 +91,7 @@ type RemoveUsersResponse struct {
 }
 
 // CreateRemoveUsersRequest creates a request to invoke RemoveUsers API
-func CreateRemoveUsersRequest(request *RemoveUsersRequest) {
+func CreateRemoveUsersRequest() (request *RemoveUsersRequest) {
 	request = &RemoveUsersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -102,7 +102,7 @@ type DescribeVirtualBorderRoutersForPhysicalConnectionResponse struct {
 }
 
 // CreateDescribeVirtualBorderRoutersForPhysicalConnectionRequest creates a request to invoke DescribeVirtualBorderRoutersForPhysicalConnection API
-func CreateDescribeVirtualBorderRoutersForPhysicalConnectionRequest(request *DescribeVirtualBorderRoutersForPhysicalConnectionRequest) {
+func CreateDescribeVirtualBorderRoutersForPhysicalConnectionRequest() (request *DescribeVirtualBorderRoutersForPhysicalConnectionRequest) {
 	request = &DescribeVirtualBorderRoutersForPhysicalConnectionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

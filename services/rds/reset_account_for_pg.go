@@ -92,7 +92,7 @@ type ResetAccountForPGResponse struct {
 }
 
 // CreateResetAccountForPGRequest creates a request to invoke ResetAccountForPG API
-func CreateResetAccountForPGRequest(request *ResetAccountForPGRequest) {
+func CreateResetAccountForPGRequest() (request *ResetAccountForPGRequest) {
 	request = &ResetAccountForPGRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

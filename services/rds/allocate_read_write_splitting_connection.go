@@ -96,7 +96,7 @@ type AllocateReadWriteSplittingConnectionResponse struct {
 }
 
 // CreateAllocateReadWriteSplittingConnectionRequest creates a request to invoke AllocateReadWriteSplittingConnection API
-func CreateAllocateReadWriteSplittingConnectionRequest(request *AllocateReadWriteSplittingConnectionRequest) {
+func CreateAllocateReadWriteSplittingConnectionRequest() (request *AllocateReadWriteSplittingConnectionRequest) {
 	request = &AllocateReadWriteSplittingConnectionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

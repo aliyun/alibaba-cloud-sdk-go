@@ -102,7 +102,7 @@ type DescribeDeploymentSetsResponse struct {
 }
 
 // CreateDescribeDeploymentSetsRequest creates a request to invoke DescribeDeploymentSets API
-func CreateDescribeDeploymentSetsRequest(request *DescribeDeploymentSetsRequest) {
+func CreateDescribeDeploymentSetsRequest() (request *DescribeDeploymentSetsRequest) {
 	request = &DescribeDeploymentSetsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

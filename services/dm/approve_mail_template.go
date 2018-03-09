@@ -90,7 +90,7 @@ type ApproveMailTemplateResponse struct {
 }
 
 // CreateApproveMailTemplateRequest creates a request to invoke ApproveMailTemplate API
-func CreateApproveMailTemplateRequest(request *ApproveMailTemplateRequest) {
+func CreateApproveMailTemplateRequest() (request *ApproveMailTemplateRequest) {
 	request = &ApproveMailTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

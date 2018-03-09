@@ -92,7 +92,7 @@ type ModifyGlobalAccelerationInstanceAttributesResponse struct {
 }
 
 // CreateModifyGlobalAccelerationInstanceAttributesRequest creates a request to invoke ModifyGlobalAccelerationInstanceAttributes API
-func CreateModifyGlobalAccelerationInstanceAttributesRequest(request *ModifyGlobalAccelerationInstanceAttributesRequest) {
+func CreateModifyGlobalAccelerationInstanceAttributesRequest() (request *ModifyGlobalAccelerationInstanceAttributesRequest) {
 	request = &ModifyGlobalAccelerationInstanceAttributesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

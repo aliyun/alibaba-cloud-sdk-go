@@ -94,7 +94,7 @@ type SubmitVideoSplitJobResponse struct {
 }
 
 // CreateSubmitVideoSplitJobRequest creates a request to invoke SubmitVideoSplitJob API
-func CreateSubmitVideoSplitJobRequest(request *SubmitVideoSplitJobRequest) {
+func CreateSubmitVideoSplitJobRequest() (request *SubmitVideoSplitJobRequest) {
 	request = &SubmitVideoSplitJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

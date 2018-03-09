@@ -91,7 +91,7 @@ type OperateWarningResponse struct {
 }
 
 // CreateOperateWarningRequest creates a request to invoke OperateWarning API
-func CreateOperateWarningRequest(request *OperateWarningRequest) {
+func CreateOperateWarningRequest() (request *OperateWarningRequest) {
 	request = &OperateWarningRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

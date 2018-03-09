@@ -89,7 +89,7 @@ type SetL2OssKeyConfigResponse struct {
 }
 
 // CreateSetL2OssKeyConfigRequest creates a request to invoke SetL2OssKeyConfig API
-func CreateSetL2OssKeyConfigRequest(request *SetL2OssKeyConfigRequest) {
+func CreateSetL2OssKeyConfigRequest() (request *SetL2OssKeyConfigRequest) {
 	request = &SetL2OssKeyConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

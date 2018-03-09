@@ -93,7 +93,7 @@ type UpdateWaterMarkTemplateResponse struct {
 }
 
 // CreateUpdateWaterMarkTemplateRequest creates a request to invoke UpdateWaterMarkTemplate API
-func CreateUpdateWaterMarkTemplateRequest(request *UpdateWaterMarkTemplateRequest) {
+func CreateUpdateWaterMarkTemplateRequest() (request *UpdateWaterMarkTemplateRequest) {
 	request = &UpdateWaterMarkTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -92,7 +92,7 @@ type AddBandwidthPackageIpsResponse struct {
 }
 
 // CreateAddBandwidthPackageIpsRequest creates a request to invoke AddBandwidthPackageIps API
-func CreateAddBandwidthPackageIpsRequest(request *AddBandwidthPackageIpsRequest) {
+func CreateAddBandwidthPackageIpsRequest() (request *AddBandwidthPackageIpsRequest) {
 	request = &AddBandwidthPackageIpsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

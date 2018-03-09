@@ -92,7 +92,7 @@ type ReportCoverJobResultResponse struct {
 }
 
 // CreateReportCoverJobResultRequest creates a request to invoke ReportCoverJobResult API
-func CreateReportCoverJobResultRequest(request *ReportCoverJobResultRequest) {
+func CreateReportCoverJobResultRequest() (request *ReportCoverJobResultRequest) {
 	request = &ReportCoverJobResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

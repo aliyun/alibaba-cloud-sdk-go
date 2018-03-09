@@ -93,7 +93,7 @@ type DecryptKeyResponse struct {
 }
 
 // CreateDecryptKeyRequest creates a request to invoke DecryptKey API
-func CreateDecryptKeyRequest(request *DecryptKeyRequest) {
+func CreateDecryptKeyRequest() (request *DecryptKeyRequest) {
 	request = &DecryptKeyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

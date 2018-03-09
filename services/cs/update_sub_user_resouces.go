@@ -84,7 +84,7 @@ type UpdateSubUserResoucesResponse struct {
 }
 
 // CreateUpdateSubUserResoucesRequest creates a request to invoke UpdateSubUserResouces API
-func CreateUpdateSubUserResoucesRequest(request *UpdateSubUserResoucesRequest) {
+func CreateUpdateSubUserResoucesRequest() (request *UpdateSubUserResoucesRequest) {
 	request = &UpdateSubUserResoucesRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}

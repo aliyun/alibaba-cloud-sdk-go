@@ -93,7 +93,7 @@ type ModifyParameterResponse struct {
 }
 
 // CreateModifyParameterRequest creates a request to invoke ModifyParameter API
-func CreateModifyParameterRequest(request *ModifyParameterRequest) {
+func CreateModifyParameterRequest() (request *ModifyParameterRequest) {
 	request = &ModifyParameterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

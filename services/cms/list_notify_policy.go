@@ -95,7 +95,7 @@ type ListNotifyPolicyResponse struct {
 }
 
 // CreateListNotifyPolicyRequest creates a request to invoke ListNotifyPolicy API
-func CreateListNotifyPolicyRequest(request *ListNotifyPolicyRequest) {
+func CreateListNotifyPolicyRequest() (request *ListNotifyPolicyRequest) {
 	request = &ListNotifyPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

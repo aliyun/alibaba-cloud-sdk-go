@@ -89,7 +89,7 @@ type GetIpProtectionResponse struct {
 }
 
 // CreateGetIpProtectionRequest creates a request to invoke GetIpProtection API
-func CreateGetIpProtectionRequest(request *GetIpProtectionRequest) {
+func CreateGetIpProtectionRequest() (request *GetIpProtectionRequest) {
 	request = &GetIpProtectionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

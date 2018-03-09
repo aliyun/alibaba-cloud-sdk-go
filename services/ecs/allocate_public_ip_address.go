@@ -93,7 +93,7 @@ type AllocatePublicIpAddressResponse struct {
 }
 
 // CreateAllocatePublicIpAddressRequest creates a request to invoke AllocatePublicIpAddress API
-func CreateAllocatePublicIpAddressRequest(request *AllocatePublicIpAddressRequest) {
+func CreateAllocatePublicIpAddressRequest() (request *AllocatePublicIpAddressRequest) {
 	request = &AllocatePublicIpAddressRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

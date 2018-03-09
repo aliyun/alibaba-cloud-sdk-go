@@ -92,7 +92,7 @@ type DeletePhotosResponse struct {
 }
 
 // CreateDeletePhotosRequest creates a request to invoke DeletePhotos API
-func CreateDeletePhotosRequest(request *DeletePhotosRequest) {
+func CreateDeletePhotosRequest() (request *DeletePhotosRequest) {
 	request = &DeletePhotosRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -93,7 +93,7 @@ type ListClusterLogsResponse struct {
 }
 
 // CreateListClusterLogsRequest creates a request to invoke ListClusterLogs API
-func CreateListClusterLogsRequest(request *ListClusterLogsRequest) {
+func CreateListClusterLogsRequest() (request *ListClusterLogsRequest) {
 	request = &ListClusterLogsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

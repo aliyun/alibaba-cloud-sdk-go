@@ -104,7 +104,7 @@ type CreateSecurityGroupResponse struct {
 }
 
 // CreateCreateSecurityGroupRequest creates a request to invoke CreateSecurityGroup API
-func CreateCreateSecurityGroupRequest(request *CreateSecurityGroupRequest) {
+func CreateCreateSecurityGroupRequest() (request *CreateSecurityGroupRequest) {
 	request = &CreateSecurityGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

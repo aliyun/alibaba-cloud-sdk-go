@@ -101,7 +101,7 @@ type WhereInDimQueryResponse struct {
 }
 
 // CreateWhereInDimQueryRequest creates a request to invoke WhereInDimQuery API
-func CreateWhereInDimQueryRequest(request *WhereInDimQueryRequest) {
+func CreateWhereInDimQueryRequest() (request *WhereInDimQueryRequest) {
 	request = &WhereInDimQueryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

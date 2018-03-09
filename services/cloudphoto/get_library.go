@@ -91,7 +91,7 @@ type GetLibraryResponse struct {
 }
 
 // CreateGetLibraryRequest creates a request to invoke GetLibrary API
-func CreateGetLibraryRequest(request *GetLibraryRequest) {
+func CreateGetLibraryRequest() (request *GetLibraryRequest) {
 	request = &GetLibraryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

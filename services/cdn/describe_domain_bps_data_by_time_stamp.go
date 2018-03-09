@@ -94,7 +94,7 @@ type DescribeDomainBpsDataByTimeStampResponse struct {
 }
 
 // CreateDescribeDomainBpsDataByTimeStampRequest creates a request to invoke DescribeDomainBpsDataByTimeStamp API
-func CreateDescribeDomainBpsDataByTimeStampRequest(request *DescribeDomainBpsDataByTimeStampRequest) {
+func CreateDescribeDomainBpsDataByTimeStampRequest() (request *DescribeDomainBpsDataByTimeStampRequest) {
 	request = &DescribeDomainBpsDataByTimeStampRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -90,7 +90,7 @@ type DeleteGlobalAccelerationInstanceResponse struct {
 }
 
 // CreateDeleteGlobalAccelerationInstanceRequest creates a request to invoke DeleteGlobalAccelerationInstance API
-func CreateDeleteGlobalAccelerationInstanceRequest(request *DeleteGlobalAccelerationInstanceRequest) {
+func CreateDeleteGlobalAccelerationInstanceRequest() (request *DeleteGlobalAccelerationInstanceRequest) {
 	request = &DeleteGlobalAccelerationInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

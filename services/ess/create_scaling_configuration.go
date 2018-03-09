@@ -128,7 +128,7 @@ type CreateScalingConfigurationResponse struct {
 }
 
 // CreateCreateScalingConfigurationRequest creates a request to invoke CreateScalingConfiguration API
-func CreateCreateScalingConfigurationRequest(request *CreateScalingConfigurationRequest) {
+func CreateCreateScalingConfigurationRequest() (request *CreateScalingConfigurationRequest) {
 	request = &CreateScalingConfigurationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

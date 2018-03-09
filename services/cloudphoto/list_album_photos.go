@@ -98,7 +98,7 @@ type ListAlbumPhotosResponse struct {
 }
 
 // CreateListAlbumPhotosRequest creates a request to invoke ListAlbumPhotos API
-func CreateListAlbumPhotosRequest(request *ListAlbumPhotosRequest) {
+func CreateListAlbumPhotosRequest() (request *ListAlbumPhotosRequest) {
 	request = &ListAlbumPhotosRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

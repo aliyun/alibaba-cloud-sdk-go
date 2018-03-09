@@ -92,7 +92,7 @@ type ModifySnapshotAttributeResponse struct {
 }
 
 // CreateModifySnapshotAttributeRequest creates a request to invoke ModifySnapshotAttribute API
-func CreateModifySnapshotAttributeRequest(request *ModifySnapshotAttributeRequest) {
+func CreateModifySnapshotAttributeRequest() (request *ModifySnapshotAttributeRequest) {
 	request = &ModifySnapshotAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

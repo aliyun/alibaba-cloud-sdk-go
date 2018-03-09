@@ -95,7 +95,7 @@ type DescribeInstanceRamRoleResponse struct {
 }
 
 // CreateDescribeInstanceRamRoleRequest creates a request to invoke DescribeInstanceRamRole API
-func CreateDescribeInstanceRamRoleRequest(request *DescribeInstanceRamRoleRequest) {
+func CreateDescribeInstanceRamRoleRequest() (request *DescribeInstanceRamRoleRequest) {
 	request = &DescribeInstanceRamRoleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

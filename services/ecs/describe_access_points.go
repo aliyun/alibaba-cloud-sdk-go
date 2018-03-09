@@ -102,7 +102,7 @@ type DescribeAccessPointsResponse struct {
 }
 
 // CreateDescribeAccessPointsRequest creates a request to invoke DescribeAccessPoints API
-func CreateDescribeAccessPointsRequest(request *DescribeAccessPointsRequest) {
+func CreateDescribeAccessPointsRequest() (request *DescribeAccessPointsRequest) {
 	request = &DescribeAccessPointsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

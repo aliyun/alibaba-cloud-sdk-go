@@ -104,7 +104,7 @@ type DescDomainResponse struct {
 }
 
 // CreateDescDomainRequest creates a request to invoke DescDomain API
-func CreateDescDomainRequest(request *DescDomainRequest) {
+func CreateDescDomainRequest() (request *DescDomainRequest) {
 	request = &DescDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

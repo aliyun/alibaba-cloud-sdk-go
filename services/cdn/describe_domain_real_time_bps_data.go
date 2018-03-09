@@ -86,7 +86,7 @@ type DescribeDomainRealTimeBpsDataResponse struct {
 }
 
 // CreateDescribeDomainRealTimeBpsDataRequest creates a request to invoke DescribeDomainRealTimeBpsData API
-func CreateDescribeDomainRealTimeBpsDataRequest(request *DescribeDomainRealTimeBpsDataRequest) {
+func CreateDescribeDomainRealTimeBpsDataRequest() (request *DescribeDomainRealTimeBpsDataRequest) {
 	request = &DescribeDomainRealTimeBpsDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

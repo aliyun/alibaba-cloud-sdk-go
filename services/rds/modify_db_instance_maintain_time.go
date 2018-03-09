@@ -92,7 +92,7 @@ type ModifyDBInstanceMaintainTimeResponse struct {
 }
 
 // CreateModifyDBInstanceMaintainTimeRequest creates a request to invoke ModifyDBInstanceMaintainTime API
-func CreateModifyDBInstanceMaintainTimeRequest(request *ModifyDBInstanceMaintainTimeRequest) {
+func CreateModifyDBInstanceMaintainTimeRequest() (request *ModifyDBInstanceMaintainTimeRequest) {
 	request = &ModifyDBInstanceMaintainTimeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

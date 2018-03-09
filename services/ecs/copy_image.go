@@ -105,7 +105,7 @@ type CopyImageResponse struct {
 }
 
 // CreateCopyImageRequest creates a request to invoke CopyImage API
-func CreateCopyImageRequest(request *CopyImageRequest) {
+func CreateCopyImageRequest() (request *CopyImageRequest) {
 	request = &CopyImageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

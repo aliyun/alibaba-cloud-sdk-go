@@ -98,7 +98,7 @@ type GetAccountListResponse struct {
 }
 
 // CreateGetAccountListRequest creates a request to invoke GetAccountList API
-func CreateGetAccountListRequest(request *GetAccountListRequest) {
+func CreateGetAccountListRequest() (request *GetAccountListRequest) {
 	request = &GetAccountListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

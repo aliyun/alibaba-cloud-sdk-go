@@ -88,7 +88,7 @@ type ModifyCnameAutoStatusResponse struct {
 }
 
 // CreateModifyCnameAutoStatusRequest creates a request to invoke ModifyCnameAutoStatus API
-func CreateModifyCnameAutoStatusRequest(request *ModifyCnameAutoStatusRequest) {
+func CreateModifyCnameAutoStatusRequest() (request *ModifyCnameAutoStatusRequest) {
 	request = &ModifyCnameAutoStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

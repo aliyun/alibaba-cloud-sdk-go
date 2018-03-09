@@ -89,7 +89,7 @@ type ListPhotoStoresResponse struct {
 }
 
 // CreateListPhotoStoresRequest creates a request to invoke ListPhotoStores API
-func CreateListPhotoStoresRequest(request *ListPhotoStoresRequest) {
+func CreateListPhotoStoresRequest() (request *ListPhotoStoresRequest) {
 	request = &ListPhotoStoresRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

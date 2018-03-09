@@ -105,7 +105,7 @@ type QueryDomainListResponse struct {
 }
 
 // CreateQueryDomainListRequest creates a request to invoke QueryDomainList API
-func CreateQueryDomainListRequest(request *QueryDomainListRequest) {
+func CreateQueryDomainListRequest() (request *QueryDomainListRequest) {
 	request = &QueryDomainListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -89,7 +89,7 @@ type DescribeCdnDomainBaseDetailResponse struct {
 }
 
 // CreateDescribeCdnDomainBaseDetailRequest creates a request to invoke DescribeCdnDomainBaseDetail API
-func CreateDescribeCdnDomainBaseDetailRequest(request *DescribeCdnDomainBaseDetailRequest) {
+func CreateDescribeCdnDomainBaseDetailRequest() (request *DescribeCdnDomainBaseDetailRequest) {
 	request = &DescribeCdnDomainBaseDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

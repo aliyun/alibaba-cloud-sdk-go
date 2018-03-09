@@ -90,7 +90,7 @@ type DeleteDiskResponse struct {
 }
 
 // CreateDeleteDiskRequest creates a request to invoke DeleteDisk API
-func CreateDeleteDiskRequest(request *DeleteDiskRequest) {
+func CreateDeleteDiskRequest() (request *DeleteDiskRequest) {
 	request = &DeleteDiskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

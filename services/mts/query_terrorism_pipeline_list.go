@@ -92,7 +92,7 @@ type QueryTerrorismPipelineListResponse struct {
 }
 
 // CreateQueryTerrorismPipelineListRequest creates a request to invoke QueryTerrorismPipelineList API
-func CreateQueryTerrorismPipelineListRequest(request *QueryTerrorismPipelineListRequest) {
+func CreateQueryTerrorismPipelineListRequest() (request *QueryTerrorismPipelineListRequest) {
 	request = &QueryTerrorismPipelineListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

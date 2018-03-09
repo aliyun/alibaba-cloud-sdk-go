@@ -93,7 +93,7 @@ type DescribeVServerGroupsResponse struct {
 }
 
 // CreateDescribeVServerGroupsRequest creates a request to invoke DescribeVServerGroups API
-func CreateDescribeVServerGroupsRequest(request *DescribeVServerGroupsRequest) {
+func CreateDescribeVServerGroupsRequest() (request *DescribeVServerGroupsRequest) {
 	request = &DescribeVServerGroupsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

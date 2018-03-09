@@ -93,7 +93,7 @@ type ReportTerrorismJobResultResponse struct {
 }
 
 // CreateReportTerrorismJobResultRequest creates a request to invoke ReportTerrorismJobResult API
-func CreateReportTerrorismJobResultRequest(request *ReportTerrorismJobResultRequest) {
+func CreateReportTerrorismJobResultRequest() (request *ReportTerrorismJobResultRequest) {
 	request = &ReportTerrorismJobResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

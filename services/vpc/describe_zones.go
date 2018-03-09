@@ -90,7 +90,7 @@ type DescribeZonesResponse struct {
 }
 
 // CreateDescribeZonesRequest creates a request to invoke DescribeZones API
-func CreateDescribeZonesRequest(request *DescribeZonesRequest) {
+func CreateDescribeZonesRequest() (request *DescribeZonesRequest) {
 	request = &DescribeZonesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

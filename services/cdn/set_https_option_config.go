@@ -89,7 +89,7 @@ type SetHttpsOptionConfigResponse struct {
 }
 
 // CreateSetHttpsOptionConfigRequest creates a request to invoke SetHttpsOptionConfig API
-func CreateSetHttpsOptionConfigRequest(request *SetHttpsOptionConfigRequest) {
+func CreateSetHttpsOptionConfigRequest() (request *SetHttpsOptionConfigRequest) {
 	request = &SetHttpsOptionConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

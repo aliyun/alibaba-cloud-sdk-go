@@ -91,7 +91,7 @@ type NodeInstallResponse struct {
 }
 
 // CreateNodeInstallRequest creates a request to invoke NodeInstall API
-func CreateNodeInstallRequest(request *NodeInstallRequest) {
+func CreateNodeInstallRequest() (request *NodeInstallRequest) {
 	request = &NodeInstallRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

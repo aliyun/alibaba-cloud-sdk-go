@@ -92,7 +92,7 @@ type GetSimilarPhotosResponse struct {
 }
 
 // CreateGetSimilarPhotosRequest creates a request to invoke GetSimilarPhotos API
-func CreateGetSimilarPhotosRequest(request *GetSimilarPhotosRequest) {
+func CreateGetSimilarPhotosRequest() (request *GetSimilarPhotosRequest) {
 	request = &GetSimilarPhotosRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

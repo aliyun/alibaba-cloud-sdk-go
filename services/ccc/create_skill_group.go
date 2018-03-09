@@ -96,7 +96,7 @@ type CreateSkillGroupResponse struct {
 }
 
 // CreateCreateSkillGroupRequest creates a request to invoke CreateSkillGroup API
-func CreateCreateSkillGroupRequest(request *CreateSkillGroupRequest) {
+func CreateCreateSkillGroupRequest() (request *CreateSkillGroupRequest) {
 	request = &CreateSkillGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

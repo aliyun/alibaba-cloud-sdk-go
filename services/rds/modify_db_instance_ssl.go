@@ -91,7 +91,7 @@ type ModifyDBInstanceSSLResponse struct {
 }
 
 // CreateModifyDBInstanceSSLRequest creates a request to invoke ModifyDBInstanceSSL API
-func CreateModifyDBInstanceSSLRequest(request *ModifyDBInstanceSSLRequest) {
+func CreateModifyDBInstanceSSLRequest() (request *ModifyDBInstanceSSLRequest) {
 	request = &ModifyDBInstanceSSLRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

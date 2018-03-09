@@ -94,7 +94,7 @@ type DescribeDBInstanceHAConfigResponse struct {
 }
 
 // CreateDescribeDBInstanceHAConfigRequest creates a request to invoke DescribeDBInstanceHAConfig API
-func CreateDescribeDBInstanceHAConfigRequest(request *DescribeDBInstanceHAConfigRequest) {
+func CreateDescribeDBInstanceHAConfigRequest() (request *DescribeDBInstanceHAConfigRequest) {
 	request = &DescribeDBInstanceHAConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

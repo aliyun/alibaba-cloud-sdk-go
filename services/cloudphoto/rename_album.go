@@ -92,7 +92,7 @@ type RenameAlbumResponse struct {
 }
 
 // CreateRenameAlbumRequest creates a request to invoke RenameAlbum API
-func CreateRenameAlbumRequest(request *RenameAlbumRequest) {
+func CreateRenameAlbumRequest() (request *RenameAlbumRequest) {
 	request = &RenameAlbumRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

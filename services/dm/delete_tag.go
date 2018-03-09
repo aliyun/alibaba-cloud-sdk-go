@@ -89,7 +89,7 @@ type DeleteTagResponse struct {
 }
 
 // CreateDeleteTagRequest creates a request to invoke DeleteTag API
-func CreateDeleteTagRequest(request *DeleteTagRequest) {
+func CreateDeleteTagRequest() (request *DeleteTagRequest) {
 	request = &DeleteTagRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -85,7 +85,7 @@ type ScaleInClusterResponse struct {
 }
 
 // CreateScaleInClusterRequest creates a request to invoke ScaleInCluster API
-func CreateScaleInClusterRequest(request *ScaleInClusterRequest) {
+func CreateScaleInClusterRequest() (request *ScaleInClusterRequest) {
 	request = &ScaleInClusterRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}

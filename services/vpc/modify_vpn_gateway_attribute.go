@@ -105,7 +105,7 @@ type ModifyVpnGatewayAttributeResponse struct {
 }
 
 // CreateModifyVpnGatewayAttributeRequest creates a request to invoke ModifyVpnGatewayAttribute API
-func CreateModifyVpnGatewayAttributeRequest(request *ModifyVpnGatewayAttributeRequest) {
+func CreateModifyVpnGatewayAttributeRequest() (request *ModifyVpnGatewayAttributeRequest) {
 	request = &ModifyVpnGatewayAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

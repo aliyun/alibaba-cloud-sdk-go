@@ -88,7 +88,7 @@ type GetPublicKeyResponse struct {
 }
 
 // CreateGetPublicKeyRequest creates a request to invoke GetPublicKey API
-func CreateGetPublicKeyRequest(request *GetPublicKeyRequest) {
+func CreateGetPublicKeyRequest() (request *GetPublicKeyRequest) {
 	request = &GetPublicKeyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

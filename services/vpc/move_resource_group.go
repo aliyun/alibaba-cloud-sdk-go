@@ -92,7 +92,7 @@ type MoveResourceGroupResponse struct {
 }
 
 // CreateMoveResourceGroupRequest creates a request to invoke MoveResourceGroup API
-func CreateMoveResourceGroupRequest(request *MoveResourceGroupRequest) {
+func CreateMoveResourceGroupRequest() (request *MoveResourceGroupRequest) {
 	request = &MoveResourceGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

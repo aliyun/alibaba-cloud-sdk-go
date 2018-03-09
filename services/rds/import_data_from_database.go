@@ -98,7 +98,7 @@ type ImportDataFromDatabaseResponse struct {
 }
 
 // CreateImportDataFromDatabaseRequest creates a request to invoke ImportDataFromDatabase API
-func CreateImportDataFromDatabaseRequest(request *ImportDataFromDatabaseRequest) {
+func CreateImportDataFromDatabaseRequest() (request *ImportDataFromDatabaseRequest) {
 	request = &ImportDataFromDatabaseRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

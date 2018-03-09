@@ -97,7 +97,7 @@ type DescribeOptimizeAdviceOnMissIndexResponse struct {
 }
 
 // CreateDescribeOptimizeAdviceOnMissIndexRequest creates a request to invoke DescribeOptimizeAdviceOnMissIndex API
-func CreateDescribeOptimizeAdviceOnMissIndexRequest(request *DescribeOptimizeAdviceOnMissIndexRequest) {
+func CreateDescribeOptimizeAdviceOnMissIndexRequest() (request *DescribeOptimizeAdviceOnMissIndexRequest) {
 	request = &DescribeOptimizeAdviceOnMissIndexRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

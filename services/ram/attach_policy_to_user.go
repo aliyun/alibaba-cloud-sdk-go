@@ -88,7 +88,7 @@ type AttachPolicyToUserResponse struct {
 }
 
 // CreateAttachPolicyToUserRequest creates a request to invoke AttachPolicyToUser API
-func CreateAttachPolicyToUserRequest(request *AttachPolicyToUserRequest) {
+func CreateAttachPolicyToUserRequest() (request *AttachPolicyToUserRequest) {
 	request = &AttachPolicyToUserRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

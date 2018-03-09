@@ -97,7 +97,7 @@ type DescribeRecommendInstanceTypeResponse struct {
 }
 
 // CreateDescribeRecommendInstanceTypeRequest creates a request to invoke DescribeRecommendInstanceType API
-func CreateDescribeRecommendInstanceTypeRequest(request *DescribeRecommendInstanceTypeRequest) {
+func CreateDescribeRecommendInstanceTypeRequest() (request *DescribeRecommendInstanceTypeRequest) {
 	request = &DescribeRecommendInstanceTypeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

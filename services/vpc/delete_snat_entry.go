@@ -91,7 +91,7 @@ type DeleteSnatEntryResponse struct {
 }
 
 // CreateDeleteSnatEntryRequest creates a request to invoke DeleteSnatEntry API
-func CreateDeleteSnatEntryRequest(request *DeleteSnatEntryRequest) {
+func CreateDeleteSnatEntryRequest() (request *DeleteSnatEntryRequest) {
 	request = &DeleteSnatEntryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

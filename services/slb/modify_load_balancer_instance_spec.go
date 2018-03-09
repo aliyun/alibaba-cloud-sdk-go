@@ -95,7 +95,7 @@ type ModifyLoadBalancerInstanceSpecResponse struct {
 }
 
 // CreateModifyLoadBalancerInstanceSpecRequest creates a request to invoke ModifyLoadBalancerInstanceSpec API
-func CreateModifyLoadBalancerInstanceSpecRequest(request *ModifyLoadBalancerInstanceSpecRequest) {
+func CreateModifyLoadBalancerInstanceSpecRequest() (request *ModifyLoadBalancerInstanceSpecRequest) {
 	request = &ModifyLoadBalancerInstanceSpecRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

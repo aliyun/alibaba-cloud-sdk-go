@@ -96,7 +96,7 @@ type DescribeBackupTasksResponse struct {
 }
 
 // CreateDescribeBackupTasksRequest creates a request to invoke DescribeBackupTasks API
-func CreateDescribeBackupTasksRequest(request *DescribeBackupTasksRequest) {
+func CreateDescribeBackupTasksRequest() (request *DescribeBackupTasksRequest) {
 	request = &DescribeBackupTasksRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

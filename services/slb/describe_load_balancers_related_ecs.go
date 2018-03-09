@@ -95,7 +95,7 @@ type DescribeLoadBalancersRelatedEcsResponse struct {
 }
 
 // CreateDescribeLoadBalancersRelatedEcsRequest creates a request to invoke DescribeLoadBalancersRelatedEcs API
-func CreateDescribeLoadBalancersRelatedEcsRequest(request *DescribeLoadBalancersRelatedEcsRequest) {
+func CreateDescribeLoadBalancersRelatedEcsRequest() (request *DescribeLoadBalancersRelatedEcsRequest) {
 	request = &DescribeLoadBalancersRelatedEcsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

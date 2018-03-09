@@ -93,7 +93,7 @@ type SetDomainServerCertificateResponse struct {
 }
 
 // CreateSetDomainServerCertificateRequest creates a request to invoke SetDomainServerCertificate API
-func CreateSetDomainServerCertificateRequest(request *SetDomainServerCertificateRequest) {
+func CreateSetDomainServerCertificateRequest() (request *SetDomainServerCertificateRequest) {
 	request = &SetDomainServerCertificateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

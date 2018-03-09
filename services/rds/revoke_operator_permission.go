@@ -90,7 +90,7 @@ type RevokeOperatorPermissionResponse struct {
 }
 
 // CreateRevokeOperatorPermissionRequest creates a request to invoke RevokeOperatorPermission API
-func CreateRevokeOperatorPermissionRequest(request *RevokeOperatorPermissionRequest) {
+func CreateRevokeOperatorPermissionRequest() (request *RevokeOperatorPermissionRequest) {
 	request = &RevokeOperatorPermissionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

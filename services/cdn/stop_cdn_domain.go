@@ -88,7 +88,7 @@ type StopCdnDomainResponse struct {
 }
 
 // CreateStopCdnDomainRequest creates a request to invoke StopCdnDomain API
-func CreateStopCdnDomainRequest(request *StopCdnDomainRequest) {
+func CreateStopCdnDomainRequest() (request *StopCdnDomainRequest) {
 	request = &StopCdnDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

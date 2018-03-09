@@ -98,7 +98,7 @@ type AddMediaResponse struct {
 }
 
 // CreateAddMediaRequest creates a request to invoke AddMedia API
-func CreateAddMediaRequest(request *AddMediaRequest) {
+func CreateAddMediaRequest() (request *AddMediaRequest) {
 	request = &AddMediaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -97,7 +97,7 @@ type DescribeForwardTableEntriesResponse struct {
 }
 
 // CreateDescribeForwardTableEntriesRequest creates a request to invoke DescribeForwardTableEntries API
-func CreateDescribeForwardTableEntriesRequest(request *DescribeForwardTableEntriesRequest) {
+func CreateDescribeForwardTableEntriesRequest() (request *DescribeForwardTableEntriesRequest) {
 	request = &DescribeForwardTableEntriesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

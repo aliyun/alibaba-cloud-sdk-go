@@ -90,7 +90,7 @@ type DeleteIpfilterByEdmIdResponse struct {
 }
 
 // CreateDeleteIpfilterByEdmIdRequest creates a request to invoke DeleteIpfilterByEdmId API
-func CreateDeleteIpfilterByEdmIdRequest(request *DeleteIpfilterByEdmIdRequest) {
+func CreateDeleteIpfilterByEdmIdRequest() (request *DeleteIpfilterByEdmIdRequest) {
 	request = &DeleteIpfilterByEdmIdRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

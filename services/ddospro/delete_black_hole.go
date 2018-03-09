@@ -89,7 +89,7 @@ type DeleteBlackHoleResponse struct {
 }
 
 // CreateDeleteBlackHoleRequest creates a request to invoke DeleteBlackHole API
-func CreateDeleteBlackHoleRequest(request *DeleteBlackHoleRequest) {
+func CreateDeleteBlackHoleRequest() (request *DeleteBlackHoleRequest) {
 	request = &DeleteBlackHoleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

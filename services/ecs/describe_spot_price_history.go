@@ -88,7 +88,7 @@ type DescribeSpotPriceHistoryResponse struct {
 }
 
 // CreateDescribeSpotPriceHistoryRequest creates a request to invoke DescribeSpotPriceHistory API
-func CreateDescribeSpotPriceHistoryRequest(request *DescribeSpotPriceHistoryRequest) {
+func CreateDescribeSpotPriceHistoryRequest() (request *DescribeSpotPriceHistoryRequest) {
 	request = &DescribeSpotPriceHistoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -94,7 +94,7 @@ type CreateHaVipResponse struct {
 }
 
 // CreateCreateHaVipRequest creates a request to invoke CreateHaVip API
-func CreateCreateHaVipRequest(request *CreateHaVipRequest) {
+func CreateCreateHaVipRequest() (request *CreateHaVipRequest) {
 	request = &CreateHaVipRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

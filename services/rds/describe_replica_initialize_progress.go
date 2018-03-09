@@ -92,7 +92,7 @@ type DescribeReplicaInitializeProgressResponse struct {
 }
 
 // CreateDescribeReplicaInitializeProgressRequest creates a request to invoke DescribeReplicaInitializeProgress API
-func CreateDescribeReplicaInitializeProgressRequest(request *DescribeReplicaInitializeProgressRequest) {
+func CreateDescribeReplicaInitializeProgressRequest() (request *DescribeReplicaInitializeProgressRequest) {
 	request = &DescribeReplicaInitializeProgressRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

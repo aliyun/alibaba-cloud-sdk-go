@@ -95,7 +95,7 @@ type DescribeDomainFileSizeProportionDataResponse struct {
 }
 
 // CreateDescribeDomainFileSizeProportionDataRequest creates a request to invoke DescribeDomainFileSizeProportionData API
-func CreateDescribeDomainFileSizeProportionDataRequest(request *DescribeDomainFileSizeProportionDataRequest) {
+func CreateDescribeDomainFileSizeProportionDataRequest() (request *DescribeDomainFileSizeProportionDataRequest) {
 	request = &DescribeDomainFileSizeProportionDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

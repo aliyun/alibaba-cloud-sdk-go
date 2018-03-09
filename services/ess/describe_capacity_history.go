@@ -95,7 +95,7 @@ type DescribeCapacityHistoryResponse struct {
 }
 
 // CreateDescribeCapacityHistoryRequest creates a request to invoke DescribeCapacityHistory API
-func CreateDescribeCapacityHistoryRequest(request *DescribeCapacityHistoryRequest) {
+func CreateDescribeCapacityHistoryRequest() (request *DescribeCapacityHistoryRequest) {
 	request = &DescribeCapacityHistoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

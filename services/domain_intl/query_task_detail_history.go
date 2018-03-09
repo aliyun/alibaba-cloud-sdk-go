@@ -98,7 +98,7 @@ type QueryTaskDetailHistoryResponse struct {
 }
 
 // CreateQueryTaskDetailHistoryRequest creates a request to invoke QueryTaskDetailHistory API
-func CreateQueryTaskDetailHistoryRequest(request *QueryTaskDetailHistoryRequest) {
+func CreateQueryTaskDetailHistoryRequest() (request *QueryTaskDetailHistoryRequest) {
 	request = &QueryTaskDetailHistoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -91,7 +91,7 @@ type ListDomainConfigResponse struct {
 }
 
 // CreateListDomainConfigRequest creates a request to invoke ListDomainConfig API
-func CreateListDomainConfigRequest(request *ListDomainConfigRequest) {
+func CreateListDomainConfigRequest() (request *ListDomainConfigRequest) {
 	request = &ListDomainConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

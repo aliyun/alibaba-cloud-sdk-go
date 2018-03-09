@@ -92,7 +92,7 @@ type QueryMediaWorkflowExecutionListResponse struct {
 }
 
 // CreateQueryMediaWorkflowExecutionListRequest creates a request to invoke QueryMediaWorkflowExecutionList API
-func CreateQueryMediaWorkflowExecutionListRequest(request *QueryMediaWorkflowExecutionListRequest) {
+func CreateQueryMediaWorkflowExecutionListRequest() (request *QueryMediaWorkflowExecutionListRequest) {
 	request = &QueryMediaWorkflowExecutionListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

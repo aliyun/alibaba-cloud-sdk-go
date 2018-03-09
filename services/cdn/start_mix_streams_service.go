@@ -96,7 +96,7 @@ type StartMixStreamsServiceResponse struct {
 }
 
 // CreateStartMixStreamsServiceRequest creates a request to invoke StartMixStreamsService API
-func CreateStartMixStreamsServiceRequest(request *StartMixStreamsServiceRequest) {
+func CreateStartMixStreamsServiceRequest() (request *StartMixStreamsServiceRequest) {
 	request = &StartMixStreamsServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

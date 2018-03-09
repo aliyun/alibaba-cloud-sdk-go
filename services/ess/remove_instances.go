@@ -111,7 +111,7 @@ type RemoveInstancesResponse struct {
 }
 
 // CreateRemoveInstancesRequest creates a request to invoke RemoveInstances API
-func CreateRemoveInstancesRequest(request *RemoveInstancesRequest) {
+func CreateRemoveInstancesRequest() (request *RemoveInstancesRequest) {
 	request = &RemoveInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

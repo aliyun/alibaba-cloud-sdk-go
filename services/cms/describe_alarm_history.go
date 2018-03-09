@@ -103,7 +103,7 @@ type DescribeAlarmHistoryResponse struct {
 }
 
 // CreateDescribeAlarmHistoryRequest creates a request to invoke DescribeAlarmHistory API
-func CreateDescribeAlarmHistoryRequest(request *DescribeAlarmHistoryRequest) {
+func CreateDescribeAlarmHistoryRequest() (request *DescribeAlarmHistoryRequest) {
 	request = &DescribeAlarmHistoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -91,7 +91,7 @@ type ReleasePublicIpAddressResponse struct {
 }
 
 // CreateReleasePublicIpAddressRequest creates a request to invoke ReleasePublicIpAddress API
-func CreateReleasePublicIpAddressRequest(request *ReleasePublicIpAddressRequest) {
+func CreateReleasePublicIpAddressRequest() (request *ReleasePublicIpAddressRequest) {
 	request = &ReleasePublicIpAddressRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

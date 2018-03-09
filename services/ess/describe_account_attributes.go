@@ -95,7 +95,7 @@ type DescribeAccountAttributesResponse struct {
 }
 
 // CreateDescribeAccountAttributesRequest creates a request to invoke DescribeAccountAttributes API
-func CreateDescribeAccountAttributesRequest(request *DescribeAccountAttributesRequest) {
+func CreateDescribeAccountAttributesRequest() (request *DescribeAccountAttributesRequest) {
 	request = &DescribeAccountAttributesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

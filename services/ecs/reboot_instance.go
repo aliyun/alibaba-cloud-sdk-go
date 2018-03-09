@@ -91,7 +91,7 @@ type RebootInstanceResponse struct {
 }
 
 // CreateRebootInstanceRequest creates a request to invoke RebootInstance API
-func CreateRebootInstanceRequest(request *RebootInstanceRequest) {
+func CreateRebootInstanceRequest() (request *RebootInstanceRequest) {
 	request = &RebootInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

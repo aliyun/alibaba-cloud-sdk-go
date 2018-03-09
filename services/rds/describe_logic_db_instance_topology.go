@@ -96,7 +96,7 @@ type DescribeLogicDBInstanceTopologyResponse struct {
 }
 
 // CreateDescribeLogicDBInstanceTopologyRequest creates a request to invoke DescribeLogicDBInstanceTopology API
-func CreateDescribeLogicDBInstanceTopologyRequest(request *DescribeLogicDBInstanceTopologyRequest) {
+func CreateDescribeLogicDBInstanceTopologyRequest() (request *DescribeLogicDBInstanceTopologyRequest) {
 	request = &DescribeLogicDBInstanceTopologyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

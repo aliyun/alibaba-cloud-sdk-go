@@ -94,7 +94,7 @@ type DescribePreCheckResultsResponse struct {
 }
 
 // CreateDescribePreCheckResultsRequest creates a request to invoke DescribePreCheckResults API
-func CreateDescribePreCheckResultsRequest(request *DescribePreCheckResultsRequest) {
+func CreateDescribePreCheckResultsRequest() (request *DescribePreCheckResultsRequest) {
 	request = &DescribePreCheckResultsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

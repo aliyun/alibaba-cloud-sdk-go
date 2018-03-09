@@ -94,7 +94,7 @@ type AttachInstanceRamRoleResponse struct {
 }
 
 // CreateAttachInstanceRamRoleRequest creates a request to invoke AttachInstanceRamRole API
-func CreateAttachInstanceRamRoleRequest(request *AttachInstanceRamRoleRequest) {
+func CreateAttachInstanceRamRoleRequest() (request *AttachInstanceRamRoleRequest) {
 	request = &AttachInstanceRamRoleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

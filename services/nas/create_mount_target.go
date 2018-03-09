@@ -91,7 +91,7 @@ type CreateMountTargetResponse struct {
 }
 
 // CreateCreateMountTargetRequest creates a request to invoke CreateMountTarget API
-func CreateCreateMountTargetRequest(request *CreateMountTargetRequest) {
+func CreateCreateMountTargetRequest() (request *CreateMountTargetRequest) {
 	request = &CreateMountTargetRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -96,7 +96,7 @@ type EipFillProductResponse struct {
 }
 
 // CreateEipFillProductRequest creates a request to invoke EipFillProduct API
-func CreateEipFillProductRequest(request *EipFillProductRequest) {
+func CreateEipFillProductRequest() (request *EipFillProductRequest) {
 	request = &EipFillProductRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

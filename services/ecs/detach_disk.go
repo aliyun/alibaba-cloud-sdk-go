@@ -91,7 +91,7 @@ type DetachDiskResponse struct {
 }
 
 // CreateDetachDiskRequest creates a request to invoke DetachDisk API
-func CreateDetachDiskRequest(request *DetachDiskRequest) {
+func CreateDetachDiskRequest() (request *DetachDiskRequest) {
 	request = &DetachDiskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

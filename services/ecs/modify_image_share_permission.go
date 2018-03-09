@@ -110,7 +110,7 @@ type ModifyImageSharePermissionResponse struct {
 }
 
 // CreateModifyImageSharePermissionRequest creates a request to invoke ModifyImageSharePermission API
-func CreateModifyImageSharePermissionRequest(request *ModifyImageSharePermissionRequest) {
+func CreateModifyImageSharePermissionRequest() (request *ModifyImageSharePermissionRequest) {
 	request = &ModifyImageSharePermissionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

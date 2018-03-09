@@ -95,7 +95,7 @@ type StartArchiveSQLLogResponse struct {
 }
 
 // CreateStartArchiveSQLLogRequest creates a request to invoke StartArchiveSQLLog API
-func CreateStartArchiveSQLLogRequest(request *StartArchiveSQLLogRequest) {
+func CreateStartArchiveSQLLogRequest() (request *StartArchiveSQLLogRequest) {
 	request = &StartArchiveSQLLogRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

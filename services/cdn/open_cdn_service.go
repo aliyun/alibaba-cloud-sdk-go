@@ -88,7 +88,7 @@ type OpenCdnServiceResponse struct {
 }
 
 // CreateOpenCdnServiceRequest creates a request to invoke OpenCdnService API
-func CreateOpenCdnServiceRequest(request *OpenCdnServiceRequest) {
+func CreateOpenCdnServiceRequest() (request *OpenCdnServiceRequest) {
 	request = &OpenCdnServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

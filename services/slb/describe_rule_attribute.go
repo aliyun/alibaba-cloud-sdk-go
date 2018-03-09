@@ -98,7 +98,7 @@ type DescribeRuleAttributeResponse struct {
 }
 
 // CreateDescribeRuleAttributeRequest creates a request to invoke DescribeRuleAttribute API
-func CreateDescribeRuleAttributeRequest(request *DescribeRuleAttributeRequest) {
+func CreateDescribeRuleAttributeRequest() (request *DescribeRuleAttributeRequest) {
 	request = &DescribeRuleAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

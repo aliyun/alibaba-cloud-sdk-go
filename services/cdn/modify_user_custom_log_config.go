@@ -85,7 +85,7 @@ type ModifyUserCustomLogConfigResponse struct {
 }
 
 // CreateModifyUserCustomLogConfigRequest creates a request to invoke ModifyUserCustomLogConfig API
-func CreateModifyUserCustomLogConfigRequest(request *ModifyUserCustomLogConfigRequest) {
+func CreateModifyUserCustomLogConfigRequest() (request *ModifyUserCustomLogConfigRequest) {
 	request = &ModifyUserCustomLogConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

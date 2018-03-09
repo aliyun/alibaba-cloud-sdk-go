@@ -92,7 +92,7 @@ type DeleteRulesResponse struct {
 }
 
 // CreateDeleteRulesRequest creates a request to invoke DeleteRules API
-func CreateDeleteRulesRequest(request *DeleteRulesRequest) {
+func CreateDeleteRulesRequest() (request *DeleteRulesRequest) {
 	request = &DeleteRulesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

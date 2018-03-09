@@ -88,7 +88,7 @@ type DescribeUnBlackholeCountResponse struct {
 }
 
 // CreateDescribeUnBlackholeCountRequest creates a request to invoke DescribeUnBlackholeCount API
-func CreateDescribeUnBlackholeCountRequest(request *DescribeUnBlackholeCountRequest) {
+func CreateDescribeUnBlackholeCountRequest() (request *DescribeUnBlackholeCountRequest) {
 	request = &DescribeUnBlackholeCountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

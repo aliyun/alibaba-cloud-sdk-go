@@ -92,7 +92,7 @@ type ListPhotoFacesResponse struct {
 }
 
 // CreateListPhotoFacesRequest creates a request to invoke ListPhotoFaces API
-func CreateListPhotoFacesRequest(request *ListPhotoFacesRequest) {
+func CreateListPhotoFacesRequest() (request *ListPhotoFacesRequest) {
 	request = &ListPhotoFacesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

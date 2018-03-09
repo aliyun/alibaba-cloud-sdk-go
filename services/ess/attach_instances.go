@@ -131,7 +131,7 @@ type AttachInstancesResponse struct {
 }
 
 // CreateAttachInstancesRequest creates a request to invoke AttachInstances API
-func CreateAttachInstancesRequest(request *AttachInstancesRequest) {
+func CreateAttachInstancesRequest() (request *AttachInstancesRequest) {
 	request = &AttachInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -98,7 +98,7 @@ type ExportWarningResponse struct {
 }
 
 // CreateExportWarningRequest creates a request to invoke ExportWarning API
-func CreateExportWarningRequest(request *ExportWarningRequest) {
+func CreateExportWarningRequest() (request *ExportWarningRequest) {
 	request = &ExportWarningRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

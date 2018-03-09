@@ -85,7 +85,7 @@ type ConvertNatPublicIpToEipResponse struct {
 }
 
 // CreateConvertNatPublicIpToEipRequest creates a request to invoke ConvertNatPublicIpToEip API
-func CreateConvertNatPublicIpToEipRequest(request *ConvertNatPublicIpToEipRequest) {
+func CreateConvertNatPublicIpToEipRequest() (request *ConvertNatPublicIpToEipRequest) {
 	request = &ConvertNatPublicIpToEipRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

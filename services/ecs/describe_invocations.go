@@ -89,7 +89,7 @@ type DescribeInvocationsResponse struct {
 }
 
 // CreateDescribeInvocationsRequest creates a request to invoke DescribeInvocations API
-func CreateDescribeInvocationsRequest(request *DescribeInvocationsRequest) {
+func CreateDescribeInvocationsRequest() (request *DescribeInvocationsRequest) {
 	request = &DescribeInvocationsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -94,7 +94,7 @@ type SubmitFpShotJobResponse struct {
 }
 
 // CreateSubmitFpShotJobRequest creates a request to invoke SubmitFpShotJob API
-func CreateSubmitFpShotJobRequest(request *SubmitFpShotJobRequest) {
+func CreateSubmitFpShotJobRequest() (request *SubmitFpShotJobRequest) {
 	request = &SubmitFpShotJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

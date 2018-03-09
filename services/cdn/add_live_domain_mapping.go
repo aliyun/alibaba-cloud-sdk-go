@@ -89,7 +89,7 @@ type AddLiveDomainMappingResponse struct {
 }
 
 // CreateAddLiveDomainMappingRequest creates a request to invoke AddLiveDomainMapping API
-func CreateAddLiveDomainMappingRequest(request *AddLiveDomainMappingRequest) {
+func CreateAddLiveDomainMappingRequest() (request *AddLiveDomainMappingRequest) {
 	request = &AddLiveDomainMappingRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -100,7 +100,7 @@ type ListCallDetailRecordsResponse struct {
 }
 
 // CreateListCallDetailRecordsRequest creates a request to invoke ListCallDetailRecords API
-func CreateListCallDetailRecordsRequest(request *ListCallDetailRecordsRequest) {
+func CreateListCallDetailRecordsRequest() (request *ListCallDetailRecordsRequest) {
 	request = &ListCallDetailRecordsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

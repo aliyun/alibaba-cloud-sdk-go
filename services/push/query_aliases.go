@@ -88,7 +88,7 @@ type QueryAliasesResponse struct {
 }
 
 // CreateQueryAliasesRequest creates a request to invoke QueryAliases API
-func CreateQueryAliasesRequest(request *QueryAliasesRequest) {
+func CreateQueryAliasesRequest() (request *QueryAliasesRequest) {
 	request = &QueryAliasesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -93,7 +93,7 @@ type ModifyUserPasswordsResponse struct {
 }
 
 // CreateModifyUserPasswordsRequest creates a request to invoke ModifyUserPasswords API
-func CreateModifyUserPasswordsRequest(request *ModifyUserPasswordsRequest) {
+func CreateModifyUserPasswordsRequest() (request *ModifyUserPasswordsRequest) {
 	request = &ModifyUserPasswordsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

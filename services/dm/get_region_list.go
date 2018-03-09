@@ -98,7 +98,7 @@ type GetRegionListResponse struct {
 }
 
 // CreateGetRegionListRequest creates a request to invoke GetRegionList API
-func CreateGetRegionListRequest(request *GetRegionListRequest) {
+func CreateGetRegionListRequest() (request *GetRegionListRequest) {
 	request = &GetRegionListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

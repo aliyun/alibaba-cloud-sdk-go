@@ -95,7 +95,7 @@ type UpdateAsrPipelineResponse struct {
 }
 
 // CreateUpdateAsrPipelineRequest creates a request to invoke UpdateAsrPipeline API
-func CreateUpdateAsrPipelineRequest(request *UpdateAsrPipelineRequest) {
+func CreateUpdateAsrPipelineRequest() (request *UpdateAsrPipelineRequest) {
 	request = &UpdateAsrPipelineRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

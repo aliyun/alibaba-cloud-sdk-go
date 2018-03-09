@@ -93,7 +93,7 @@ type ModifyRouterInterfaceSpecResponse struct {
 }
 
 // CreateModifyRouterInterfaceSpecRequest creates a request to invoke ModifyRouterInterfaceSpec API
-func CreateModifyRouterInterfaceSpecRequest(request *ModifyRouterInterfaceSpecRequest) {
+func CreateModifyRouterInterfaceSpecRequest() (request *ModifyRouterInterfaceSpecRequest) {
 	request = &ModifyRouterInterfaceSpecRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

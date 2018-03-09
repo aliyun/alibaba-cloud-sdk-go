@@ -93,7 +93,7 @@ type AddLiveStreamTranscodeResponse struct {
 }
 
 // CreateAddLiveStreamTranscodeRequest creates a request to invoke AddLiveStreamTranscode API
-func CreateAddLiveStreamTranscodeRequest(request *AddLiveStreamTranscodeRequest) {
+func CreateAddLiveStreamTranscodeRequest() (request *AddLiveStreamTranscodeRequest) {
 	request = &AddLiveStreamTranscodeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

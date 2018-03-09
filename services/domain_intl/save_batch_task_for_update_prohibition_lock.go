@@ -90,7 +90,7 @@ type SaveBatchTaskForUpdateProhibitionLockResponse struct {
 }
 
 // CreateSaveBatchTaskForUpdateProhibitionLockRequest creates a request to invoke SaveBatchTaskForUpdateProhibitionLock API
-func CreateSaveBatchTaskForUpdateProhibitionLockRequest(request *SaveBatchTaskForUpdateProhibitionLockRequest) {
+func CreateSaveBatchTaskForUpdateProhibitionLockRequest() (request *SaveBatchTaskForUpdateProhibitionLockRequest) {
 	request = &SaveBatchTaskForUpdateProhibitionLockRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

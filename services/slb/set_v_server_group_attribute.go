@@ -97,7 +97,7 @@ type SetVServerGroupAttributeResponse struct {
 }
 
 // CreateSetVServerGroupAttributeRequest creates a request to invoke SetVServerGroupAttribute API
-func CreateSetVServerGroupAttributeRequest(request *SetVServerGroupAttributeRequest) {
+func CreateSetVServerGroupAttributeRequest() (request *SetVServerGroupAttributeRequest) {
 	request = &SetVServerGroupAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

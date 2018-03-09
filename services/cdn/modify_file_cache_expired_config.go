@@ -92,7 +92,7 @@ type ModifyFileCacheExpiredConfigResponse struct {
 }
 
 // CreateModifyFileCacheExpiredConfigRequest creates a request to invoke ModifyFileCacheExpiredConfig API
-func CreateModifyFileCacheExpiredConfigRequest(request *ModifyFileCacheExpiredConfigRequest) {
+func CreateModifyFileCacheExpiredConfigRequest() (request *ModifyFileCacheExpiredConfigRequest) {
 	request = &ModifyFileCacheExpiredConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

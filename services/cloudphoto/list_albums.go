@@ -97,7 +97,7 @@ type ListAlbumsResponse struct {
 }
 
 // CreateListAlbumsRequest creates a request to invoke ListAlbums API
-func CreateListAlbumsRequest(request *ListAlbumsRequest) {
+func CreateListAlbumsRequest() (request *ListAlbumsRequest) {
 	request = &ListAlbumsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

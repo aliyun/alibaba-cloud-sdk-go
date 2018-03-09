@@ -90,7 +90,7 @@ type ModifyHichinaDomainDNSResponse struct {
 }
 
 // CreateModifyHichinaDomainDNSRequest creates a request to invoke ModifyHichinaDomainDNS API
-func CreateModifyHichinaDomainDNSRequest(request *ModifyHichinaDomainDNSRequest) {
+func CreateModifyHichinaDomainDNSRequest() (request *ModifyHichinaDomainDNSRequest) {
 	request = &ModifyHichinaDomainDNSRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

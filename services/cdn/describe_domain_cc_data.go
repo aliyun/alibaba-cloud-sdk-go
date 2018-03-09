@@ -95,7 +95,7 @@ type DescribeDomainCCDataResponse struct {
 }
 
 // CreateDescribeDomainCCDataRequest creates a request to invoke DescribeDomainCCData API
-func CreateDescribeDomainCCDataRequest(request *DescribeDomainCCDataRequest) {
+func CreateDescribeDomainCCDataRequest() (request *DescribeDomainCCDataRequest) {
 	request = &DescribeDomainCCDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

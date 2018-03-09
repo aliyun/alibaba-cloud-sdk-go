@@ -88,7 +88,7 @@ type ModifyCdnServiceResponse struct {
 }
 
 // CreateModifyCdnServiceRequest creates a request to invoke ModifyCdnService API
-func CreateModifyCdnServiceRequest(request *ModifyCdnServiceRequest) {
+func CreateModifyCdnServiceRequest() (request *ModifyCdnServiceRequest) {
 	request = &ModifyCdnServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

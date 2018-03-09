@@ -96,7 +96,7 @@ type ListCoverPipelineResponse struct {
 }
 
 // CreateListCoverPipelineRequest creates a request to invoke ListCoverPipeline API
-func CreateListCoverPipelineRequest(request *ListCoverPipelineRequest) {
+func CreateListCoverPipelineRequest() (request *ListCoverPipelineRequest) {
 	request = &ListCoverPipelineRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

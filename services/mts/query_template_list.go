@@ -92,7 +92,7 @@ type QueryTemplateListResponse struct {
 }
 
 // CreateQueryTemplateListRequest creates a request to invoke QueryTemplateList API
-func CreateQueryTemplateListRequest(request *QueryTemplateListRequest) {
+func CreateQueryTemplateListRequest() (request *QueryTemplateListRequest) {
 	request = &QueryTemplateListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -88,7 +88,7 @@ type BindPhoneResponse struct {
 }
 
 // CreateBindPhoneRequest creates a request to invoke BindPhone API
-func CreateBindPhoneRequest(request *BindPhoneRequest) {
+func CreateBindPhoneRequest() (request *BindPhoneRequest) {
 	request = &BindPhoneRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

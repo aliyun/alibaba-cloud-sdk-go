@@ -90,7 +90,7 @@ type CancelCopyImageResponse struct {
 }
 
 // CreateCancelCopyImageRequest creates a request to invoke CancelCopyImage API
-func CreateCancelCopyImageRequest(request *CancelCopyImageRequest) {
+func CreateCancelCopyImageRequest() (request *CancelCopyImageRequest) {
 	request = &CancelCopyImageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

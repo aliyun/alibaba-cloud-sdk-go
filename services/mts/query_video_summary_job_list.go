@@ -92,7 +92,7 @@ type QueryVideoSummaryJobListResponse struct {
 }
 
 // CreateQueryVideoSummaryJobListRequest creates a request to invoke QueryVideoSummaryJobList API
-func CreateQueryVideoSummaryJobListRequest(request *QueryVideoSummaryJobListRequest) {
+func CreateQueryVideoSummaryJobListRequest() (request *QueryVideoSummaryJobListRequest) {
 	request = &QueryVideoSummaryJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

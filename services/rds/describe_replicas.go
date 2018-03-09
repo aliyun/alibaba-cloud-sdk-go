@@ -97,7 +97,7 @@ type DescribeReplicasResponse struct {
 }
 
 // CreateDescribeReplicasRequest creates a request to invoke DescribeReplicas API
-func CreateDescribeReplicasRequest(request *DescribeReplicasRequest) {
+func CreateDescribeReplicasRequest() (request *DescribeReplicasRequest) {
 	request = &DescribeReplicasRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

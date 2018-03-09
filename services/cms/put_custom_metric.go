@@ -88,7 +88,7 @@ type PutCustomMetricResponse struct {
 }
 
 // CreatePutCustomMetricRequest creates a request to invoke PutCustomMetric API
-func CreatePutCustomMetricRequest(request *PutCustomMetricRequest) {
+func CreatePutCustomMetricRequest() (request *PutCustomMetricRequest) {
 	request = &PutCustomMetricRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

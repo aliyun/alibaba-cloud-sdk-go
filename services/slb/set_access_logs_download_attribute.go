@@ -93,7 +93,7 @@ type SetAccessLogsDownloadAttributeResponse struct {
 }
 
 // CreateSetAccessLogsDownloadAttributeRequest creates a request to invoke SetAccessLogsDownloadAttribute API
-func CreateSetAccessLogsDownloadAttributeRequest(request *SetAccessLogsDownloadAttributeRequest) {
+func CreateSetAccessLogsDownloadAttributeRequest() (request *SetAccessLogsDownloadAttributeRequest) {
 	request = &SetAccessLogsDownloadAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -91,7 +91,7 @@ type SetForwardSchemeConfigResponse struct {
 }
 
 // CreateSetForwardSchemeConfigRequest creates a request to invoke SetForwardSchemeConfig API
-func CreateSetForwardSchemeConfigRequest(request *SetForwardSchemeConfigRequest) {
+func CreateSetForwardSchemeConfigRequest() (request *SetForwardSchemeConfigRequest) {
 	request = &SetForwardSchemeConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

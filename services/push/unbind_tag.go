@@ -89,7 +89,7 @@ type UnbindTagResponse struct {
 }
 
 // CreateUnbindTagRequest creates a request to invoke UnbindTag API
-func CreateUnbindTagRequest(request *UnbindTagRequest) {
+func CreateUnbindTagRequest() (request *UnbindTagRequest) {
 	request = &UnbindTagRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

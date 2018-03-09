@@ -95,7 +95,7 @@ type SetBackendServersResponse struct {
 }
 
 // CreateSetBackendServersRequest creates a request to invoke SetBackendServers API
-func CreateSetBackendServersRequest(request *SetBackendServersRequest) {
+func CreateSetBackendServersRequest() (request *SetBackendServersRequest) {
 	request = &SetBackendServersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

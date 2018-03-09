@@ -89,7 +89,7 @@ type CreateUserWhiteListResponse struct {
 }
 
 // CreateCreateUserWhiteListRequest creates a request to invoke CreateUserWhiteList API
-func CreateCreateUserWhiteListRequest(request *CreateUserWhiteListRequest) {
+func CreateCreateUserWhiteListRequest() (request *CreateUserWhiteListRequest) {
 	request = &CreateUserWhiteListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

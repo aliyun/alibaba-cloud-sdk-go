@@ -93,7 +93,7 @@ type GetFramedPhotoUrlsResponse struct {
 }
 
 // CreateGetFramedPhotoUrlsRequest creates a request to invoke GetFramedPhotoUrls API
-func CreateGetFramedPhotoUrlsRequest(request *GetFramedPhotoUrlsRequest) {
+func CreateGetFramedPhotoUrlsRequest() (request *GetFramedPhotoUrlsRequest) {
 	request = &GetFramedPhotoUrlsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

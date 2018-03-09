@@ -85,7 +85,7 @@ type DetachNetworkInterfaceResponse struct {
 }
 
 // CreateDetachNetworkInterfaceRequest creates a request to invoke DetachNetworkInterface API
-func CreateDetachNetworkInterfaceRequest(request *DetachNetworkInterfaceRequest) {
+func CreateDetachNetworkInterfaceRequest() (request *DetachNetworkInterfaceRequest) {
 	request = &DetachNetworkInterfaceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

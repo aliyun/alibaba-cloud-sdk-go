@@ -90,7 +90,7 @@ type ReActivateInstancesResponse struct {
 }
 
 // CreateReActivateInstancesRequest creates a request to invoke ReActivateInstances API
-func CreateReActivateInstancesRequest(request *ReActivateInstancesRequest) {
+func CreateReActivateInstancesRequest() (request *ReActivateInstancesRequest) {
 	request = &ReActivateInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

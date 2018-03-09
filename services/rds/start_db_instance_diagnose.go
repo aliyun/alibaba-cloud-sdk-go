@@ -94,7 +94,7 @@ type StartDBInstanceDiagnoseResponse struct {
 }
 
 // CreateStartDBInstanceDiagnoseRequest creates a request to invoke StartDBInstanceDiagnose API
-func CreateStartDBInstanceDiagnoseRequest(request *StartDBInstanceDiagnoseRequest) {
+func CreateStartDBInstanceDiagnoseRequest() (request *StartDBInstanceDiagnoseRequest) {
 	request = &StartDBInstanceDiagnoseRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

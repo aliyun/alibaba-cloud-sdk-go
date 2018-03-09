@@ -86,7 +86,7 @@ type DeleteGroupResponse struct {
 }
 
 // CreateDeleteGroupRequest creates a request to invoke DeleteGroup API
-func CreateDeleteGroupRequest(request *DeleteGroupRequest) {
+func CreateDeleteGroupRequest() (request *DeleteGroupRequest) {
 	request = &DeleteGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

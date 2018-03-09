@@ -88,7 +88,7 @@ type UpdatePublicKeyResponse struct {
 }
 
 // CreateUpdatePublicKeyRequest creates a request to invoke UpdatePublicKey API
-func CreateUpdatePublicKeyRequest(request *UpdatePublicKeyRequest) {
+func CreateUpdatePublicKeyRequest() (request *UpdatePublicKeyRequest) {
 	request = &UpdatePublicKeyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

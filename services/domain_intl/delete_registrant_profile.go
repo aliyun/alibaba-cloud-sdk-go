@@ -88,7 +88,7 @@ type DeleteRegistrantProfileResponse struct {
 }
 
 // CreateDeleteRegistrantProfileRequest creates a request to invoke DeleteRegistrantProfile API
-func CreateDeleteRegistrantProfileRequest(request *DeleteRegistrantProfileRequest) {
+func CreateDeleteRegistrantProfileRequest() (request *DeleteRegistrantProfileRequest) {
 	request = &DeleteRegistrantProfileRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

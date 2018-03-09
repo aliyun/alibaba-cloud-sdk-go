@@ -87,7 +87,7 @@ type DeleteMountTargetResponse struct {
 }
 
 // CreateDeleteMountTargetRequest creates a request to invoke DeleteMountTarget API
-func CreateDeleteMountTargetRequest(request *DeleteMountTargetRequest) {
+func CreateDeleteMountTargetRequest() (request *DeleteMountTargetRequest) {
 	request = &DeleteMountTargetRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

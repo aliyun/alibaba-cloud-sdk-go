@@ -100,7 +100,7 @@ type ModifyPhysicalConnectionAttributeResponse struct {
 }
 
 // CreateModifyPhysicalConnectionAttributeRequest creates a request to invoke ModifyPhysicalConnectionAttribute API
-func CreateModifyPhysicalConnectionAttributeRequest(request *ModifyPhysicalConnectionAttributeRequest) {
+func CreateModifyPhysicalConnectionAttributeRequest() (request *ModifyPhysicalConnectionAttributeRequest) {
 	request = &ModifyPhysicalConnectionAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

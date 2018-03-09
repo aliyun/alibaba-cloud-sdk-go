@@ -96,7 +96,7 @@ type ListAlarmHistoryResponse struct {
 }
 
 // CreateListAlarmHistoryRequest creates a request to invoke ListAlarmHistory API
-func CreateListAlarmHistoryRequest(request *ListAlarmHistoryRequest) {
+func CreateListAlarmHistoryRequest() (request *ListAlarmHistoryRequest) {
 	request = &ListAlarmHistoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

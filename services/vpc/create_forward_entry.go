@@ -96,7 +96,7 @@ type CreateForwardEntryResponse struct {
 }
 
 // CreateCreateForwardEntryRequest creates a request to invoke CreateForwardEntry API
-func CreateCreateForwardEntryRequest(request *CreateForwardEntryRequest) {
+func CreateCreateForwardEntryRequest() (request *CreateForwardEntryRequest) {
 	request = &CreateForwardEntryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

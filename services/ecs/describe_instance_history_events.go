@@ -89,7 +89,7 @@ type DescribeInstanceHistoryEventsResponse struct {
 }
 
 // CreateDescribeInstanceHistoryEventsRequest creates a request to invoke DescribeInstanceHistoryEvents API
-func CreateDescribeInstanceHistoryEventsRequest(request *DescribeInstanceHistoryEventsRequest) {
+func CreateDescribeInstanceHistoryEventsRequest() (request *DescribeInstanceHistoryEventsRequest) {
 	request = &DescribeInstanceHistoryEventsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

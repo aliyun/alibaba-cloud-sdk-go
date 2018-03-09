@@ -102,7 +102,7 @@ type DescribesummaryResponse struct {
 }
 
 // CreateDescribesummaryRequest creates a request to invoke Describesummary API
-func CreateDescribesummaryRequest(request *DescribesummaryRequest) {
+func CreateDescribesummaryRequest() (request *DescribesummaryRequest) {
 	request = &DescribesummaryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

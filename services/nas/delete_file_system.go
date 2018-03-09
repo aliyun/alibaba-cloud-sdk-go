@@ -86,7 +86,7 @@ type DeleteFileSystemResponse struct {
 }
 
 // CreateDeleteFileSystemRequest creates a request to invoke DeleteFileSystem API
-func CreateDeleteFileSystemRequest(request *DeleteFileSystemRequest) {
+func CreateDeleteFileSystemRequest() (request *DeleteFileSystemRequest) {
 	request = &DeleteFileSystemRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

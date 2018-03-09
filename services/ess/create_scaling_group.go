@@ -99,7 +99,7 @@ type CreateScalingGroupResponse struct {
 }
 
 // CreateCreateScalingGroupRequest creates a request to invoke CreateScalingGroup API
-func CreateCreateScalingGroupRequest(request *CreateScalingGroupRequest) {
+func CreateCreateScalingGroupRequest() (request *CreateScalingGroupRequest) {
 	request = &CreateScalingGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

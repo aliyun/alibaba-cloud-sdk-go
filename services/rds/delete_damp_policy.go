@@ -92,7 +92,7 @@ type DeleteDampPolicyResponse struct {
 }
 
 // CreateDeleteDampPolicyRequest creates a request to invoke DeleteDampPolicy API
-func CreateDeleteDampPolicyRequest(request *DeleteDampPolicyRequest) {
+func CreateDeleteDampPolicyRequest() (request *DeleteDampPolicyRequest) {
 	request = &DeleteDampPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

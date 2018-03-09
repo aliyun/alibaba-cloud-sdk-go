@@ -93,7 +93,7 @@ type DescribeIpInfoResponse struct {
 }
 
 // CreateDescribeIpInfoRequest creates a request to invoke DescribeIpInfo API
-func CreateDescribeIpInfoRequest(request *DescribeIpInfoRequest) {
+func CreateDescribeIpInfoRequest() (request *DescribeIpInfoRequest) {
 	request = &DescribeIpInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

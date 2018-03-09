@@ -88,7 +88,7 @@ type BatchDeleteWhiteListResponse struct {
 }
 
 // CreateBatchDeleteWhiteListRequest creates a request to invoke BatchDeleteWhiteList API
-func CreateBatchDeleteWhiteListRequest(request *BatchDeleteWhiteListRequest) {
+func CreateBatchDeleteWhiteListRequest() (request *BatchDeleteWhiteListRequest) {
 	request = &BatchDeleteWhiteListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

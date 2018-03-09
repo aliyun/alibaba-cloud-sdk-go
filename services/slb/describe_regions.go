@@ -92,7 +92,7 @@ type DescribeRegionsResponse struct {
 }
 
 // CreateDescribeRegionsRequest creates a request to invoke DescribeRegions API
-func CreateDescribeRegionsRequest(request *DescribeRegionsRequest) {
+func CreateDescribeRegionsRequest() (request *DescribeRegionsRequest) {
 	request = &DescribeRegionsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

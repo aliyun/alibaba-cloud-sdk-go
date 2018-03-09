@@ -92,7 +92,7 @@ type DeleteMasterSlaveServerGroupResponse struct {
 }
 
 // CreateDeleteMasterSlaveServerGroupRequest creates a request to invoke DeleteMasterSlaveServerGroup API
-func CreateDeleteMasterSlaveServerGroupRequest(request *DeleteMasterSlaveServerGroupRequest) {
+func CreateDeleteMasterSlaveServerGroupRequest() (request *DeleteMasterSlaveServerGroupRequest) {
 	request = &DeleteMasterSlaveServerGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

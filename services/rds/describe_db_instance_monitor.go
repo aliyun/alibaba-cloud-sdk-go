@@ -92,7 +92,7 @@ type DescribeDBInstanceMonitorResponse struct {
 }
 
 // CreateDescribeDBInstanceMonitorRequest creates a request to invoke DescribeDBInstanceMonitor API
-func CreateDescribeDBInstanceMonitorRequest(request *DescribeDBInstanceMonitorRequest) {
+func CreateDescribeDBInstanceMonitorRequest() (request *DescribeDBInstanceMonitorRequest) {
 	request = &DescribeDBInstanceMonitorRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

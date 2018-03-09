@@ -87,7 +87,7 @@ type ListGroupsForUserResponse struct {
 }
 
 // CreateListGroupsForUserRequest creates a request to invoke ListGroupsForUser API
-func CreateListGroupsForUserRequest(request *ListGroupsForUserRequest) {
+func CreateListGroupsForUserRequest() (request *ListGroupsForUserRequest) {
 	request = &ListGroupsForUserRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

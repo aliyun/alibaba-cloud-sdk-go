@@ -93,7 +93,7 @@ type AttachDiskResponse struct {
 }
 
 // CreateAttachDiskRequest creates a request to invoke AttachDisk API
-func CreateAttachDiskRequest(request *AttachDiskRequest) {
+func CreateAttachDiskRequest() (request *AttachDiskRequest) {
 	request = &AttachDiskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

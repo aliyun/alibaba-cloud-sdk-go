@@ -86,7 +86,7 @@ type DeleteLoginProfileResponse struct {
 }
 
 // CreateDeleteLoginProfileRequest creates a request to invoke DeleteLoginProfile API
-func CreateDeleteLoginProfileRequest(request *DeleteLoginProfileRequest) {
+func CreateDeleteLoginProfileRequest() (request *DeleteLoginProfileRequest) {
 	request = &DeleteLoginProfileRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

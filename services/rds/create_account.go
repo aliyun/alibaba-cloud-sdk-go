@@ -94,7 +94,7 @@ type CreateAccountResponse struct {
 }
 
 // CreateCreateAccountRequest creates a request to invoke CreateAccount API
-func CreateCreateAccountRequest(request *CreateAccountRequest) {
+func CreateCreateAccountRequest() (request *CreateAccountRequest) {
 	request = &CreateAccountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

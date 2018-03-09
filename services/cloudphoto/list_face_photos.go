@@ -98,7 +98,7 @@ type ListFacePhotosResponse struct {
 }
 
 // CreateListFacePhotosRequest creates a request to invoke ListFacePhotos API
-func CreateListFacePhotosRequest(request *ListFacePhotosRequest) {
+func CreateListFacePhotosRequest() (request *ListFacePhotosRequest) {
 	request = &ListFacePhotosRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

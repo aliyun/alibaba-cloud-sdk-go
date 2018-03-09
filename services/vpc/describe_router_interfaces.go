@@ -101,7 +101,7 @@ type DescribeRouterInterfacesResponse struct {
 }
 
 // CreateDescribeRouterInterfacesRequest creates a request to invoke DescribeRouterInterfaces API
-func CreateDescribeRouterInterfacesRequest(request *DescribeRouterInterfacesRequest) {
+func CreateDescribeRouterInterfacesRequest() (request *DescribeRouterInterfacesRequest) {
 	request = &DescribeRouterInterfacesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

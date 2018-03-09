@@ -91,7 +91,7 @@ type ModifyAlertConfigResponse struct {
 }
 
 // CreateModifyAlertConfigRequest creates a request to invoke ModifyAlertConfig API
-func CreateModifyAlertConfigRequest(request *ModifyAlertConfigRequest) {
+func CreateModifyAlertConfigRequest() (request *ModifyAlertConfigRequest) {
 	request = &ModifyAlertConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

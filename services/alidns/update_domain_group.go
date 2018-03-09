@@ -91,7 +91,7 @@ type UpdateDomainGroupResponse struct {
 }
 
 // CreateUpdateDomainGroupRequest creates a request to invoke UpdateDomainGroup API
-func CreateUpdateDomainGroupRequest(request *UpdateDomainGroupRequest) {
+func CreateUpdateDomainGroupRequest() (request *UpdateDomainGroupRequest) {
 	request = &UpdateDomainGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

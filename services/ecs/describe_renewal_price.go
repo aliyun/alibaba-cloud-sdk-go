@@ -94,7 +94,7 @@ type DescribeRenewalPriceResponse struct {
 }
 
 // CreateDescribeRenewalPriceRequest creates a request to invoke DescribeRenewalPrice API
-func CreateDescribeRenewalPriceRequest(request *DescribeRenewalPriceRequest) {
+func CreateDescribeRenewalPriceRequest() (request *DescribeRenewalPriceRequest) {
 	request = &DescribeRenewalPriceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

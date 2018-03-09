@@ -96,7 +96,7 @@ type SearchTemplateResponse struct {
 }
 
 // CreateSearchTemplateRequest creates a request to invoke SearchTemplate API
-func CreateSearchTemplateRequest(request *SearchTemplateRequest) {
+func CreateSearchTemplateRequest() (request *SearchTemplateRequest) {
 	request = &SearchTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -91,7 +91,7 @@ type RequestLoginInfoResponse struct {
 }
 
 // CreateRequestLoginInfoRequest creates a request to invoke RequestLoginInfo API
-func CreateRequestLoginInfoRequest(request *RequestLoginInfoRequest) {
+func CreateRequestLoginInfoRequest() (request *RequestLoginInfoRequest) {
 	request = &RequestLoginInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

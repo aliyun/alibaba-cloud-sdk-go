@@ -88,7 +88,7 @@ type QueryCustomEventDetailResponse struct {
 }
 
 // CreateQueryCustomEventDetailRequest creates a request to invoke QueryCustomEventDetail API
-func CreateQueryCustomEventDetailRequest(request *QueryCustomEventDetailRequest) {
+func CreateQueryCustomEventDetailRequest() (request *QueryCustomEventDetailRequest) {
 	request = &QueryCustomEventDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

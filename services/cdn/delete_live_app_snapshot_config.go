@@ -89,7 +89,7 @@ type DeleteLiveAppSnapshotConfigResponse struct {
 }
 
 // CreateDeleteLiveAppSnapshotConfigRequest creates a request to invoke DeleteLiveAppSnapshotConfig API
-func CreateDeleteLiveAppSnapshotConfigRequest(request *DeleteLiveAppSnapshotConfigRequest) {
+func CreateDeleteLiveAppSnapshotConfigRequest() (request *DeleteLiveAppSnapshotConfigRequest) {
 	request = &DeleteLiveAppSnapshotConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

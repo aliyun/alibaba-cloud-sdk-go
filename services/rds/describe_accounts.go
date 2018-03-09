@@ -92,7 +92,7 @@ type DescribeAccountsResponse struct {
 }
 
 // CreateDescribeAccountsRequest creates a request to invoke DescribeAccounts API
-func CreateDescribeAccountsRequest(request *DescribeAccountsRequest) {
+func CreateDescribeAccountsRequest() (request *DescribeAccountsRequest) {
 	request = &DescribeAccountsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

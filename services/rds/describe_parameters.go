@@ -95,7 +95,7 @@ type DescribeParametersResponse struct {
 }
 
 // CreateDescribeParametersRequest creates a request to invoke DescribeParameters API
-func CreateDescribeParametersRequest(request *DescribeParametersRequest) {
+func CreateDescribeParametersRequest() (request *DescribeParametersRequest) {
 	request = &DescribeParametersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

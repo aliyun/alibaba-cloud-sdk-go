@@ -96,7 +96,7 @@ type ModifyBgpGroupAttributeResponse struct {
 }
 
 // CreateModifyBgpGroupAttributeRequest creates a request to invoke ModifyBgpGroupAttribute API
-func CreateModifyBgpGroupAttributeRequest(request *ModifyBgpGroupAttributeRequest) {
+func CreateModifyBgpGroupAttributeRequest() (request *ModifyBgpGroupAttributeRequest) {
 	request = &ModifyBgpGroupAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

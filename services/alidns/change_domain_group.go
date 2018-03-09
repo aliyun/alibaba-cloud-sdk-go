@@ -91,7 +91,7 @@ type ChangeDomainGroupResponse struct {
 }
 
 // CreateChangeDomainGroupRequest creates a request to invoke ChangeDomainGroup API
-func CreateChangeDomainGroupRequest(request *ChangeDomainGroupRequest) {
+func CreateChangeDomainGroupRequest() (request *ChangeDomainGroupRequest) {
 	request = &ChangeDomainGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -92,7 +92,7 @@ type DescribeWebshellResponse struct {
 }
 
 // CreateDescribeWebshellRequest creates a request to invoke DescribeWebshell API
-func CreateDescribeWebshellRequest(request *DescribeWebshellRequest) {
+func CreateDescribeWebshellRequest() (request *DescribeWebshellRequest) {
 	request = &DescribeWebshellRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

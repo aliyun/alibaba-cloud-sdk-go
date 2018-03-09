@@ -85,7 +85,7 @@ type ModifyCommandResponse struct {
 }
 
 // CreateModifyCommandRequest creates a request to invoke ModifyCommand API
-func CreateModifyCommandRequest(request *ModifyCommandRequest) {
+func CreateModifyCommandRequest() (request *ModifyCommandRequest) {
 	request = &ModifyCommandRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

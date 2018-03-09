@@ -96,7 +96,7 @@ type QueryInvalidAddressResponse struct {
 }
 
 // CreateQueryInvalidAddressRequest creates a request to invoke QueryInvalidAddress API
-func CreateQueryInvalidAddressRequest(request *QueryInvalidAddressRequest) {
+func CreateQueryInvalidAddressRequest() (request *QueryInvalidAddressRequest) {
 	request = &QueryInvalidAddressRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -90,7 +90,7 @@ type CreateBlockholeResponse struct {
 }
 
 // CreateCreateBlockholeRequest creates a request to invoke CreateBlockhole API
-func CreateCreateBlockholeRequest(request *CreateBlockholeRequest) {
+func CreateCreateBlockholeRequest() (request *CreateBlockholeRequest) {
 	request = &CreateBlockholeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

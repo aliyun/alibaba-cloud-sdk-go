@@ -90,7 +90,7 @@ type CreateLoginProfileResponse struct {
 }
 
 // CreateCreateLoginProfileRequest creates a request to invoke CreateLoginProfile API
-func CreateCreateLoginProfileRequest(request *CreateLoginProfileRequest) {
+func CreateCreateLoginProfileRequest() (request *CreateLoginProfileRequest) {
 	request = &CreateLoginProfileRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

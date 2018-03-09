@@ -95,7 +95,7 @@ type DescribeLiveStreamsPublishListResponse struct {
 }
 
 // CreateDescribeLiveStreamsPublishListRequest creates a request to invoke DescribeLiveStreamsPublishList API
-func CreateDescribeLiveStreamsPublishListRequest(request *DescribeLiveStreamsPublishListRequest) {
+func CreateDescribeLiveStreamsPublishListRequest() (request *DescribeLiveStreamsPublishListRequest) {
 	request = &DescribeLiveStreamsPublishListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

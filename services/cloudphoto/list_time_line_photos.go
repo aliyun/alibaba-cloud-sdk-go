@@ -99,7 +99,7 @@ type ListTimeLinePhotosResponse struct {
 }
 
 // CreateListTimeLinePhotosRequest creates a request to invoke ListTimeLinePhotos API
-func CreateListTimeLinePhotosRequest(request *ListTimeLinePhotosRequest) {
+func CreateListTimeLinePhotosRequest() (request *ListTimeLinePhotosRequest) {
 	request = &ListTimeLinePhotosRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

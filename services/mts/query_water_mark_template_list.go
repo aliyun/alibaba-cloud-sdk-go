@@ -92,7 +92,7 @@ type QueryWaterMarkTemplateListResponse struct {
 }
 
 // CreateQueryWaterMarkTemplateListRequest creates a request to invoke QueryWaterMarkTemplateList API
-func CreateQueryWaterMarkTemplateListRequest(request *QueryWaterMarkTemplateListRequest) {
+func CreateQueryWaterMarkTemplateListRequest() (request *QueryWaterMarkTemplateListRequest) {
 	request = &QueryWaterMarkTemplateListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -90,7 +90,7 @@ type DescribeLiveStreamsBlockListResponse struct {
 }
 
 // CreateDescribeLiveStreamsBlockListRequest creates a request to invoke DescribeLiveStreamsBlockList API
-func CreateDescribeLiveStreamsBlockListRequest(request *DescribeLiveStreamsBlockListRequest) {
+func CreateDescribeLiveStreamsBlockListRequest() (request *DescribeLiveStreamsBlockListRequest) {
 	request = &DescribeLiveStreamsBlockListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

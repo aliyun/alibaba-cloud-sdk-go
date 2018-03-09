@@ -90,7 +90,7 @@ type SaveBatchTaskForTransferProhibitionLockResponse struct {
 }
 
 // CreateSaveBatchTaskForTransferProhibitionLockRequest creates a request to invoke SaveBatchTaskForTransferProhibitionLock API
-func CreateSaveBatchTaskForTransferProhibitionLockRequest(request *SaveBatchTaskForTransferProhibitionLockRequest) {
+func CreateSaveBatchTaskForTransferProhibitionLockRequest() (request *SaveBatchTaskForTransferProhibitionLockRequest) {
 	request = &SaveBatchTaskForTransferProhibitionLockRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

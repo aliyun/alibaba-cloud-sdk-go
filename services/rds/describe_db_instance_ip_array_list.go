@@ -92,7 +92,7 @@ type DescribeDBInstanceIPArrayListResponse struct {
 }
 
 // CreateDescribeDBInstanceIPArrayListRequest creates a request to invoke DescribeDBInstanceIPArrayList API
-func CreateDescribeDBInstanceIPArrayListRequest(request *DescribeDBInstanceIPArrayListRequest) {
+func CreateDescribeDBInstanceIPArrayListRequest() (request *DescribeDBInstanceIPArrayListRequest) {
 	request = &DescribeDBInstanceIPArrayListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

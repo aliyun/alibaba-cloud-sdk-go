@@ -100,7 +100,7 @@ type QueryChangeLogListResponse struct {
 }
 
 // CreateQueryChangeLogListRequest creates a request to invoke QueryChangeLogList API
-func CreateQueryChangeLogListRequest(request *QueryChangeLogListRequest) {
+func CreateQueryChangeLogListRequest() (request *QueryChangeLogListRequest) {
 	request = &QueryChangeLogListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

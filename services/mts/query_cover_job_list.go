@@ -92,7 +92,7 @@ type QueryCoverJobListResponse struct {
 }
 
 // CreateQueryCoverJobListRequest creates a request to invoke QueryCoverJobList API
-func CreateQueryCoverJobListRequest(request *QueryCoverJobListRequest) {
+func CreateQueryCoverJobListRequest() (request *QueryCoverJobListRequest) {
 	request = &QueryCoverJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

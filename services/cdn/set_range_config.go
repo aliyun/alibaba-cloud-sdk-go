@@ -89,7 +89,7 @@ type SetRangeConfigResponse struct {
 }
 
 // CreateSetRangeConfigRequest creates a request to invoke SetRangeConfig API
-func CreateSetRangeConfigRequest(request *SetRangeConfigRequest) {
+func CreateSetRangeConfigRequest() (request *SetRangeConfigRequest) {
 	request = &SetRangeConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

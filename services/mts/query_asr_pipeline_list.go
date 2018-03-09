@@ -92,7 +92,7 @@ type QueryAsrPipelineListResponse struct {
 }
 
 // CreateQueryAsrPipelineListRequest creates a request to invoke QueryAsrPipelineList API
-func CreateQueryAsrPipelineListRequest(request *QueryAsrPipelineListRequest) {
+func CreateQueryAsrPipelineListRequest() (request *QueryAsrPipelineListRequest) {
 	request = &QueryAsrPipelineListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

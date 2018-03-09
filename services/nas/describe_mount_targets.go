@@ -93,7 +93,7 @@ type DescribeMountTargetsResponse struct {
 }
 
 // CreateDescribeMountTargetsRequest creates a request to invoke DescribeMountTargets API
-func CreateDescribeMountTargetsRequest(request *DescribeMountTargetsRequest) {
+func CreateDescribeMountTargetsRequest() (request *DescribeMountTargetsRequest) {
 	request = &DescribeMountTargetsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

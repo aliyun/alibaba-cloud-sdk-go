@@ -93,7 +93,7 @@ type GetLicenseResponse struct {
 }
 
 // CreateGetLicenseRequest creates a request to invoke GetLicense API
-func CreateGetLicenseRequest(request *GetLicenseRequest) {
+func CreateGetLicenseRequest() (request *GetLicenseRequest) {
 	request = &GetLicenseRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

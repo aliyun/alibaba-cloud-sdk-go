@@ -92,7 +92,7 @@ type DescribeDBInstanceUserResponse struct {
 }
 
 // CreateDescribeDBInstanceUserRequest creates a request to invoke DescribeDBInstanceUser API
-func CreateDescribeDBInstanceUserRequest(request *DescribeDBInstanceUserRequest) {
+func CreateDescribeDBInstanceUserRequest() (request *DescribeDBInstanceUserRequest) {
 	request = &DescribeDBInstanceUserRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

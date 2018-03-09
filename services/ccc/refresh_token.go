@@ -91,7 +91,7 @@ type RefreshTokenResponse struct {
 }
 
 // CreateRefreshTokenRequest creates a request to invoke RefreshToken API
-func CreateRefreshTokenRequest(request *RefreshTokenRequest) {
+func CreateRefreshTokenRequest() (request *RefreshTokenRequest) {
 	request = &RefreshTokenRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

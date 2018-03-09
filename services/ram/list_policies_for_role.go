@@ -87,7 +87,7 @@ type ListPoliciesForRoleResponse struct {
 }
 
 // CreateListPoliciesForRoleRequest creates a request to invoke ListPoliciesForRole API
-func CreateListPoliciesForRoleRequest(request *ListPoliciesForRoleRequest) {
+func CreateListPoliciesForRoleRequest() (request *ListPoliciesForRoleRequest) {
 	request = &ListPoliciesForRoleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

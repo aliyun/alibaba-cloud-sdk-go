@@ -85,7 +85,7 @@ type StopInvocationResponse struct {
 }
 
 // CreateStopInvocationRequest creates a request to invoke StopInvocation API
-func CreateStopInvocationRequest(request *StopInvocationRequest) {
+func CreateStopInvocationRequest() (request *StopInvocationRequest) {
 	request = &StopInvocationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

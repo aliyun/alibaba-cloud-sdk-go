@@ -86,7 +86,7 @@ type CreateHpcClusterResponse struct {
 }
 
 // CreateCreateHpcClusterRequest creates a request to invoke CreateHpcCluster API
-func CreateCreateHpcClusterRequest(request *CreateHpcClusterRequest) {
+func CreateCreateHpcClusterRequest() (request *CreateHpcClusterRequest) {
 	request = &CreateHpcClusterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

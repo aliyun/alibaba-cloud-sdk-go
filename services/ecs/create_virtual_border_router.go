@@ -101,7 +101,7 @@ type CreateVirtualBorderRouterResponse struct {
 }
 
 // CreateCreateVirtualBorderRouterRequest creates a request to invoke CreateVirtualBorderRouter API
-func CreateCreateVirtualBorderRouterRequest(request *CreateVirtualBorderRouterRequest) {
+func CreateCreateVirtualBorderRouterRequest() (request *CreateVirtualBorderRouterRequest) {
 	request = &CreateVirtualBorderRouterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -94,7 +94,7 @@ type SubmitCensorJobResponse struct {
 }
 
 // CreateSubmitCensorJobRequest creates a request to invoke SubmitCensorJob API
-func CreateSubmitCensorJobRequest(request *SubmitCensorJobRequest) {
+func CreateSubmitCensorJobRequest() (request *SubmitCensorJobRequest) {
 	request = &SubmitCensorJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

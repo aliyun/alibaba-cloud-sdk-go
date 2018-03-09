@@ -92,7 +92,7 @@ type DescribeCharacterSetNameResponse struct {
 }
 
 // CreateDescribeCharacterSetNameRequest creates a request to invoke DescribeCharacterSetName API
-func CreateDescribeCharacterSetNameRequest(request *DescribeCharacterSetNameRequest) {
+func CreateDescribeCharacterSetNameRequest() (request *DescribeCharacterSetNameRequest) {
 	request = &DescribeCharacterSetNameRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

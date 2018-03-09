@@ -94,7 +94,7 @@ type RegisterMediaDetailPersonResponse struct {
 }
 
 // CreateRegisterMediaDetailPersonRequest creates a request to invoke RegisterMediaDetailPerson API
-func CreateRegisterMediaDetailPersonRequest(request *RegisterMediaDetailPersonRequest) {
+func CreateRegisterMediaDetailPersonRequest() (request *RegisterMediaDetailPersonRequest) {
 	request = &RegisterMediaDetailPersonRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

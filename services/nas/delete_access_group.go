@@ -86,7 +86,7 @@ type DeleteAccessGroupResponse struct {
 }
 
 // CreateDeleteAccessGroupRequest creates a request to invoke DeleteAccessGroup API
-func CreateDeleteAccessGroupRequest(request *DeleteAccessGroupRequest) {
+func CreateDeleteAccessGroupRequest() (request *DeleteAccessGroupRequest) {
 	request = &DeleteAccessGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

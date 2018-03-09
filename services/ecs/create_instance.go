@@ -152,7 +152,7 @@ type CreateInstanceResponse struct {
 }
 
 // CreateCreateInstanceRequest creates a request to invoke CreateInstance API
-func CreateCreateInstanceRequest(request *CreateInstanceRequest) {
+func CreateCreateInstanceRequest() (request *CreateInstanceRequest) {
 	request = &CreateInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

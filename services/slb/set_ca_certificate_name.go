@@ -92,7 +92,7 @@ type SetCACertificateNameResponse struct {
 }
 
 // CreateSetCACertificateNameRequest creates a request to invoke SetCACertificateName API
-func CreateSetCACertificateNameRequest(request *SetCACertificateNameRequest) {
+func CreateSetCACertificateNameRequest() (request *SetCACertificateNameRequest) {
 	request = &SetCACertificateNameRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -98,7 +98,7 @@ type CreateUploadPathForSQLServerResponse struct {
 }
 
 // CreateCreateUploadPathForSQLServerRequest creates a request to invoke CreateUploadPathForSQLServer API
-func CreateCreateUploadPathForSQLServerRequest(request *CreateUploadPathForSQLServerRequest) {
+func CreateCreateUploadPathForSQLServerRequest() (request *CreateUploadPathForSQLServerRequest) {
 	request = &CreateUploadPathForSQLServerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

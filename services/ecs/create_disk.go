@@ -109,7 +109,7 @@ type CreateDiskResponse struct {
 }
 
 // CreateCreateDiskRequest creates a request to invoke CreateDisk API
-func CreateCreateDiskRequest(request *CreateDiskRequest) {
+func CreateCreateDiskRequest() (request *CreateDiskRequest) {
 	request = &CreateDiskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

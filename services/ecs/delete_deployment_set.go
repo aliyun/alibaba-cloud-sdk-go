@@ -90,7 +90,7 @@ type DeleteDeploymentSetResponse struct {
 }
 
 // CreateDeleteDeploymentSetRequest creates a request to invoke DeleteDeploymentSet API
-func CreateDeleteDeploymentSetRequest(request *DeleteDeploymentSetRequest) {
+func CreateDeleteDeploymentSetRequest() (request *DeleteDeploymentSetRequest) {
 	request = &DeleteDeploymentSetRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -89,7 +89,7 @@ type SetMaxQuotaLevelResponse struct {
 }
 
 // CreateSetMaxQuotaLevelRequest creates a request to invoke SetMaxQuotaLevel API
-func CreateSetMaxQuotaLevelRequest(request *SetMaxQuotaLevelRequest) {
+func CreateSetMaxQuotaLevelRequest() (request *SetMaxQuotaLevelRequest) {
 	request = &SetMaxQuotaLevelRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

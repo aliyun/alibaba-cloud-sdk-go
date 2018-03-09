@@ -92,7 +92,7 @@ type ModifyVSwitchAttributeResponse struct {
 }
 
 // CreateModifyVSwitchAttributeRequest creates a request to invoke ModifyVSwitchAttribute API
-func CreateModifyVSwitchAttributeRequest(request *ModifyVSwitchAttributeRequest) {
+func CreateModifyVSwitchAttributeRequest() (request *ModifyVSwitchAttributeRequest) {
 	request = &ModifyVSwitchAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

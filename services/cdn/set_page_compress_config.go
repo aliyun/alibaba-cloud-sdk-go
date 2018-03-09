@@ -89,7 +89,7 @@ type SetPageCompressConfigResponse struct {
 }
 
 // CreateSetPageCompressConfigRequest creates a request to invoke SetPageCompressConfig API
-func CreateSetPageCompressConfigRequest(request *SetPageCompressConfigRequest) {
+func CreateSetPageCompressConfigRequest() (request *SetPageCompressConfigRequest) {
 	request = &SetPageCompressConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

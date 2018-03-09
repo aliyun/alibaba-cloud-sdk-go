@@ -95,7 +95,7 @@ type DescribeLiveStreamOnlineUserNumResponse struct {
 }
 
 // CreateDescribeLiveStreamOnlineUserNumRequest creates a request to invoke DescribeLiveStreamOnlineUserNum API
-func CreateDescribeLiveStreamOnlineUserNumRequest(request *DescribeLiveStreamOnlineUserNumRequest) {
+func CreateDescribeLiveStreamOnlineUserNumRequest() (request *DescribeLiveStreamOnlineUserNumRequest) {
 	request = &DescribeLiveStreamOnlineUserNumRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

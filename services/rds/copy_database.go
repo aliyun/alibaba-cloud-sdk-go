@@ -90,7 +90,7 @@ type CopyDatabaseResponse struct {
 }
 
 // CreateCopyDatabaseRequest creates a request to invoke CopyDatabase API
-func CreateCopyDatabaseRequest(request *CopyDatabaseRequest) {
+func CreateCopyDatabaseRequest() (request *CopyDatabaseRequest) {
 	request = &CopyDatabaseRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

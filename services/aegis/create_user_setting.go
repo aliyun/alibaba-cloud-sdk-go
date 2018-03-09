@@ -88,7 +88,7 @@ type CreateUserSettingResponse struct {
 }
 
 // CreateCreateUserSettingRequest creates a request to invoke CreateUserSetting API
-func CreateCreateUserSettingRequest(request *CreateUserSettingRequest) {
+func CreateCreateUserSettingRequest() (request *CreateUserSettingRequest) {
 	request = &CreateUserSettingRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

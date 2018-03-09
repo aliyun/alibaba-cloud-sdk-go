@@ -91,7 +91,7 @@ type DescribeAlertConfigResponse struct {
 }
 
 // CreateDescribeAlertConfigRequest creates a request to invoke DescribeAlertConfig API
-func CreateDescribeAlertConfigRequest(request *DescribeAlertConfigRequest) {
+func CreateDescribeAlertConfigRequest() (request *DescribeAlertConfigRequest) {
 	request = &DescribeAlertConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

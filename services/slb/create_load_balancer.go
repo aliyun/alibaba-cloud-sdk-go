@@ -115,7 +115,7 @@ type CreateLoadBalancerResponse struct {
 }
 
 // CreateCreateLoadBalancerRequest creates a request to invoke CreateLoadBalancer API
-func CreateCreateLoadBalancerRequest(request *CreateLoadBalancerRequest) {
+func CreateCreateLoadBalancerRequest() (request *CreateLoadBalancerRequest) {
 	request = &CreateLoadBalancerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

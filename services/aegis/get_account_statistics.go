@@ -91,7 +91,7 @@ type GetAccountStatisticsResponse struct {
 }
 
 // CreateGetAccountStatisticsRequest creates a request to invoke GetAccountStatistics API
-func CreateGetAccountStatisticsRequest(request *GetAccountStatisticsRequest) {
+func CreateGetAccountStatisticsRequest() (request *GetAccountStatisticsRequest) {
 	request = &GetAccountStatisticsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -104,7 +104,7 @@ type QueryPriceForBuyResponse struct {
 }
 
 // CreateQueryPriceForBuyRequest creates a request to invoke QueryPriceForBuy API
-func CreateQueryPriceForBuyRequest(request *QueryPriceForBuyRequest) {
+func CreateQueryPriceForBuyRequest() (request *QueryPriceForBuyRequest) {
 	request = &QueryPriceForBuyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -88,7 +88,7 @@ type DetachPolicyFromGroupResponse struct {
 }
 
 // CreateDetachPolicyFromGroupRequest creates a request to invoke DetachPolicyFromGroup API
-func CreateDetachPolicyFromGroupRequest(request *DetachPolicyFromGroupRequest) {
+func CreateDetachPolicyFromGroupRequest() (request *DetachPolicyFromGroupRequest) {
 	request = &DetachPolicyFromGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -92,7 +92,7 @@ type ModifyBandwidthPackageAttributeResponse struct {
 }
 
 // CreateModifyBandwidthPackageAttributeRequest creates a request to invoke ModifyBandwidthPackageAttribute API
-func CreateModifyBandwidthPackageAttributeRequest(request *ModifyBandwidthPackageAttributeRequest) {
+func CreateModifyBandwidthPackageAttributeRequest() (request *ModifyBandwidthPackageAttributeRequest) {
 	request = &ModifyBandwidthPackageAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

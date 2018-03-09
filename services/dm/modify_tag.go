@@ -90,7 +90,7 @@ type ModifyTagResponse struct {
 }
 
 // CreateModifyTagRequest creates a request to invoke ModifyTag API
-func CreateModifyTagRequest(request *ModifyTagRequest) {
+func CreateModifyTagRequest() (request *ModifyTagRequest) {
 	request = &ModifyTagRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

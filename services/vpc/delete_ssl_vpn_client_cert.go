@@ -91,7 +91,7 @@ type DeleteSslVpnClientCertResponse struct {
 }
 
 // CreateDeleteSslVpnClientCertRequest creates a request to invoke DeleteSslVpnClientCert API
-func CreateDeleteSslVpnClientCertRequest(request *DeleteSslVpnClientCertRequest) {
+func CreateDeleteSslVpnClientCertRequest() (request *DeleteSslVpnClientCertRequest) {
 	request = &DeleteSslVpnClientCertRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

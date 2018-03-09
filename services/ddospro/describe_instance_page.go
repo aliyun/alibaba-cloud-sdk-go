@@ -93,7 +93,7 @@ type DescribeInstancePageResponse struct {
 }
 
 // CreateDescribeInstancePageRequest creates a request to invoke DescribeInstancePage API
-func CreateDescribeInstancePageRequest(request *DescribeInstancePageRequest) {
+func CreateDescribeInstancePageRequest() (request *DescribeInstancePageRequest) {
 	request = &DescribeInstancePageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

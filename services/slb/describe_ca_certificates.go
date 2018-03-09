@@ -93,7 +93,7 @@ type DescribeCACertificatesResponse struct {
 }
 
 // CreateDescribeCACertificatesRequest creates a request to invoke DescribeCACertificates API
-func CreateDescribeCACertificatesRequest(request *DescribeCACertificatesRequest) {
+func CreateDescribeCACertificatesRequest() (request *DescribeCACertificatesRequest) {
 	request = &DescribeCACertificatesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

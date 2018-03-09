@@ -92,7 +92,7 @@ type SaveBatchTaskForUpdatingContactInfoResponse struct {
 }
 
 // CreateSaveBatchTaskForUpdatingContactInfoRequest creates a request to invoke SaveBatchTaskForUpdatingContactInfo API
-func CreateSaveBatchTaskForUpdatingContactInfoRequest(request *SaveBatchTaskForUpdatingContactInfoRequest) {
+func CreateSaveBatchTaskForUpdatingContactInfoRequest() (request *SaveBatchTaskForUpdatingContactInfoRequest) {
 	request = &SaveBatchTaskForUpdatingContactInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

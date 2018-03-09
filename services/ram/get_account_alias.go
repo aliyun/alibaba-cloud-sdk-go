@@ -86,7 +86,7 @@ type GetAccountAliasResponse struct {
 }
 
 // CreateGetAccountAliasRequest creates a request to invoke GetAccountAlias API
-func CreateGetAccountAliasRequest(request *GetAccountAliasRequest) {
+func CreateGetAccountAliasRequest() (request *GetAccountAliasRequest) {
 	request = &GetAccountAliasRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

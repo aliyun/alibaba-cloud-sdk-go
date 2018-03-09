@@ -93,7 +93,7 @@ type DescribeSnapshotMonitorDataResponse struct {
 }
 
 // CreateDescribeSnapshotMonitorDataRequest creates a request to invoke DescribeSnapshotMonitorData API
-func CreateDescribeSnapshotMonitorDataRequest(request *DescribeSnapshotMonitorDataRequest) {
+func CreateDescribeSnapshotMonitorDataRequest() (request *DescribeSnapshotMonitorDataRequest) {
 	request = &DescribeSnapshotMonitorDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

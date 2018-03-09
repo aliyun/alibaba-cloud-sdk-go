@@ -98,7 +98,7 @@ type ModifyDampPolicyResponse struct {
 }
 
 // CreateModifyDampPolicyRequest creates a request to invoke ModifyDampPolicy API
-func CreateModifyDampPolicyRequest(request *ModifyDampPolicyRequest) {
+func CreateModifyDampPolicyRequest() (request *ModifyDampPolicyRequest) {
 	request = &ModifyDampPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

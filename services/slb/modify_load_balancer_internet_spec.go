@@ -96,7 +96,7 @@ type ModifyLoadBalancerInternetSpecResponse struct {
 }
 
 // CreateModifyLoadBalancerInternetSpecRequest creates a request to invoke ModifyLoadBalancerInternetSpec API
-func CreateModifyLoadBalancerInternetSpecRequest(request *ModifyLoadBalancerInternetSpecRequest) {
+func CreateModifyLoadBalancerInternetSpecRequest() (request *ModifyLoadBalancerInternetSpecRequest) {
 	request = &ModifyLoadBalancerInternetSpecRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

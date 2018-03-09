@@ -93,7 +93,7 @@ type CreateDatabaseResponse struct {
 }
 
 // CreateCreateDatabaseRequest creates a request to invoke CreateDatabase API
-func CreateCreateDatabaseRequest(request *CreateDatabaseRequest) {
+func CreateCreateDatabaseRequest() (request *CreateDatabaseRequest) {
 	request = &CreateDatabaseRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

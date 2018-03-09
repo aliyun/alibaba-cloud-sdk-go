@@ -91,7 +91,7 @@ type DescribeLiveStreamStreamStatusResponse struct {
 }
 
 // CreateDescribeLiveStreamStreamStatusRequest creates a request to invoke DescribeLiveStreamStreamStatus API
-func CreateDescribeLiveStreamStreamStatusRequest(request *DescribeLiveStreamStreamStatusRequest) {
+func CreateDescribeLiveStreamStreamStatusRequest() (request *DescribeLiveStreamStreamStatusRequest) {
 	request = &DescribeLiveStreamStreamStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

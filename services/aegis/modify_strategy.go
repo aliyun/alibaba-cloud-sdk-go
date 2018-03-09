@@ -96,7 +96,7 @@ type ModifyStrategyResponse struct {
 }
 
 // CreateModifyStrategyRequest creates a request to invoke ModifyStrategy API
-func CreateModifyStrategyRequest(request *ModifyStrategyRequest) {
+func CreateModifyStrategyRequest() (request *ModifyStrategyRequest) {
 	request = &ModifyStrategyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

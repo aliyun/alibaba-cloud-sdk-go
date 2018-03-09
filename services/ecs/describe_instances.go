@@ -138,7 +138,7 @@ type DescribeInstancesResponse struct {
 }
 
 // CreateDescribeInstancesRequest creates a request to invoke DescribeInstances API
-func CreateDescribeInstancesRequest(request *DescribeInstancesRequest) {
+func CreateDescribeInstancesRequest() (request *DescribeInstancesRequest) {
 	request = &DescribeInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

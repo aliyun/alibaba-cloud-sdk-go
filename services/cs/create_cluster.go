@@ -84,7 +84,7 @@ type CreateClusterResponse struct {
 }
 
 // CreateCreateClusterRequest creates a request to invoke CreateCluster API
-func CreateCreateClusterRequest(request *CreateClusterRequest) {
+func CreateCreateClusterRequest() (request *CreateClusterRequest) {
 	request = &CreateClusterRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}

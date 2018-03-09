@@ -95,7 +95,7 @@ type UpdateCensorPipelineResponse struct {
 }
 
 // CreateUpdateCensorPipelineRequest creates a request to invoke UpdateCensorPipeline API
-func CreateUpdateCensorPipelineRequest(request *UpdateCensorPipelineRequest) {
+func CreateUpdateCensorPipelineRequest() (request *UpdateCensorPipelineRequest) {
 	request = &UpdateCensorPipelineRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

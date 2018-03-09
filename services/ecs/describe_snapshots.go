@@ -120,7 +120,7 @@ type DescribeSnapshotsResponse struct {
 }
 
 // CreateDescribeSnapshotsRequest creates a request to invoke DescribeSnapshots API
-func CreateDescribeSnapshotsRequest(request *DescribeSnapshotsRequest) {
+func CreateDescribeSnapshotsRequest() (request *DescribeSnapshotsRequest) {
 	request = &DescribeSnapshotsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

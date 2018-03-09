@@ -85,7 +85,7 @@ type ModifyNetworkInterfaceAttributeResponse struct {
 }
 
 // CreateModifyNetworkInterfaceAttributeRequest creates a request to invoke ModifyNetworkInterfaceAttribute API
-func CreateModifyNetworkInterfaceAttributeRequest(request *ModifyNetworkInterfaceAttributeRequest) {
+func CreateModifyNetworkInterfaceAttributeRequest() (request *ModifyNetworkInterfaceAttributeRequest) {
 	request = &ModifyNetworkInterfaceAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -89,7 +89,7 @@ type SetIpAllowListConfigResponse struct {
 }
 
 // CreateSetIpAllowListConfigRequest creates a request to invoke SetIpAllowListConfig API
-func CreateSetIpAllowListConfigRequest(request *SetIpAllowListConfigRequest) {
+func CreateSetIpAllowListConfigRequest() (request *SetIpAllowListConfigRequest) {
 	request = &SetIpAllowListConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

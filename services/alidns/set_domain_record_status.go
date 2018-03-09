@@ -91,7 +91,7 @@ type SetDomainRecordStatusResponse struct {
 }
 
 // CreateSetDomainRecordStatusRequest creates a request to invoke SetDomainRecordStatus API
-func CreateSetDomainRecordStatusRequest(request *SetDomainRecordStatusRequest) {
+func CreateSetDomainRecordStatusRequest() (request *SetDomainRecordStatusRequest) {
 	request = &SetDomainRecordStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

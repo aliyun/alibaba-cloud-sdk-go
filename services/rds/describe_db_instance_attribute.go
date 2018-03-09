@@ -92,7 +92,7 @@ type DescribeDBInstanceAttributeResponse struct {
 }
 
 // CreateDescribeDBInstanceAttributeRequest creates a request to invoke DescribeDBInstanceAttribute API
-func CreateDescribeDBInstanceAttributeRequest(request *DescribeDBInstanceAttributeRequest) {
+func CreateDescribeDBInstanceAttributeRequest() (request *DescribeDBInstanceAttributeRequest) {
 	request = &DescribeDBInstanceAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

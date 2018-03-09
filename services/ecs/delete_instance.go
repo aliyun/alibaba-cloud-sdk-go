@@ -92,7 +92,7 @@ type DeleteInstanceResponse struct {
 }
 
 // CreateDeleteInstanceRequest creates a request to invoke DeleteInstance API
-func CreateDeleteInstanceRequest(request *DeleteInstanceRequest) {
+func CreateDeleteInstanceRequest() (request *DeleteInstanceRequest) {
 	request = &DeleteInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

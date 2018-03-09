@@ -95,7 +95,7 @@ type ListMediaResponse struct {
 }
 
 // CreateListMediaRequest creates a request to invoke ListMedia API
-func CreateListMediaRequest(request *ListMediaRequest) {
+func CreateListMediaRequest() (request *ListMediaRequest) {
 	request = &ListMediaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -87,7 +87,7 @@ type ModifyFileSystemResponse struct {
 }
 
 // CreateModifyFileSystemRequest creates a request to invoke ModifyFileSystem API
-func CreateModifyFileSystemRequest(request *ModifyFileSystemRequest) {
+func CreateModifyFileSystemRequest() (request *ModifyFileSystemRequest) {
 	request = &ModifyFileSystemRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

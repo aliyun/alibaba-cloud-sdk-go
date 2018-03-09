@@ -91,7 +91,7 @@ type DeleteWaterMarkTemplateResponse struct {
 }
 
 // CreateDeleteWaterMarkTemplateRequest creates a request to invoke DeleteWaterMarkTemplate API
-func CreateDeleteWaterMarkTemplateRequest(request *DeleteWaterMarkTemplateRequest) {
+func CreateDeleteWaterMarkTemplateRequest() (request *DeleteWaterMarkTemplateRequest) {
 	request = &DeleteWaterMarkTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

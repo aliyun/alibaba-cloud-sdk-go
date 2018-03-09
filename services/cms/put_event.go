@@ -88,7 +88,7 @@ type PutEventResponse struct {
 }
 
 // CreatePutEventRequest creates a request to invoke PutEvent API
-func CreatePutEventRequest(request *PutEventRequest) {
+func CreatePutEventRequest() (request *PutEventRequest) {
 	request = &PutEventRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

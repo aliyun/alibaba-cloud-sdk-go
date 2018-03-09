@@ -93,7 +93,7 @@ type RemoveFacePhotosResponse struct {
 }
 
 // CreateRemoveFacePhotosRequest creates a request to invoke RemoveFacePhotos API
-func CreateRemoveFacePhotosRequest(request *RemoveFacePhotosRequest) {
+func CreateRemoveFacePhotosRequest() (request *RemoveFacePhotosRequest) {
 	request = &RemoveFacePhotosRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

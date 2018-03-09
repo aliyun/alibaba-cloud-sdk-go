@@ -96,7 +96,7 @@ type ModifyInstanceAttributeResponse struct {
 }
 
 // CreateModifyInstanceAttributeRequest creates a request to invoke ModifyInstanceAttribute API
-func CreateModifyInstanceAttributeRequest(request *ModifyInstanceAttributeRequest) {
+func CreateModifyInstanceAttributeRequest() (request *ModifyInstanceAttributeRequest) {
 	request = &ModifyInstanceAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

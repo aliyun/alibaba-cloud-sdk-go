@@ -92,7 +92,7 @@ type ProfileSetResponse struct {
 }
 
 // CreateProfileSetRequest creates a request to invoke ProfileSet API
-func CreateProfileSetRequest(request *ProfileSetRequest) {
+func CreateProfileSetRequest() (request *ProfileSetRequest) {
 	request = &ProfileSetRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

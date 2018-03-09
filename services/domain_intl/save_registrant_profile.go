@@ -101,7 +101,7 @@ type SaveRegistrantProfileResponse struct {
 }
 
 // CreateSaveRegistrantProfileRequest creates a request to invoke SaveRegistrantProfile API
-func CreateSaveRegistrantProfileRequest(request *SaveRegistrantProfileRequest) {
+func CreateSaveRegistrantProfileRequest() (request *SaveRegistrantProfileRequest) {
 	request = &SaveRegistrantProfileRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

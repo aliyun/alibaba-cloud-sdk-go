@@ -91,7 +91,7 @@ type DeleteTemplateResponse struct {
 }
 
 // CreateDeleteTemplateRequest creates a request to invoke DeleteTemplate API
-func CreateDeleteTemplateRequest(request *DeleteTemplateRequest) {
+func CreateDeleteTemplateRequest() (request *DeleteTemplateRequest) {
 	request = &DeleteTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -94,7 +94,7 @@ type SubmitTagJobResponse struct {
 }
 
 // CreateSubmitTagJobRequest creates a request to invoke SubmitTagJob API
-func CreateSubmitTagJobRequest(request *SubmitTagJobRequest) {
+func CreateSubmitTagJobRequest() (request *SubmitTagJobRequest) {
 	request = &SubmitTagJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

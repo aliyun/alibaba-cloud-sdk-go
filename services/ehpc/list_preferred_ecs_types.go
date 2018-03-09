@@ -89,7 +89,7 @@ type ListPreferredEcsTypesResponse struct {
 }
 
 // CreateListPreferredEcsTypesRequest creates a request to invoke ListPreferredEcsTypes API
-func CreateListPreferredEcsTypesRequest(request *ListPreferredEcsTypesRequest) {
+func CreateListPreferredEcsTypesRequest() (request *ListPreferredEcsTypesRequest) {
 	request = &ListPreferredEcsTypesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

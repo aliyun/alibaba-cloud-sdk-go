@@ -95,7 +95,7 @@ type DescribeRecycleBinResponse struct {
 }
 
 // CreateDescribeRecycleBinRequest creates a request to invoke DescribeRecycleBin API
-func CreateDescribeRecycleBinRequest(request *DescribeRecycleBinRequest) {
+func CreateDescribeRecycleBinRequest() (request *DescribeRecycleBinRequest) {
 	request = &DescribeRecycleBinRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

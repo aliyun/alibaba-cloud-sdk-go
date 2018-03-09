@@ -92,7 +92,7 @@ type JoinResourceGroupResponse struct {
 }
 
 // CreateJoinResourceGroupRequest creates a request to invoke JoinResourceGroup API
-func CreateJoinResourceGroupRequest(request *JoinResourceGroupRequest) {
+func CreateJoinResourceGroupRequest() (request *JoinResourceGroupRequest) {
 	request = &JoinResourceGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

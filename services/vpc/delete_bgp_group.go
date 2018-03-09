@@ -91,7 +91,7 @@ type DeleteBgpGroupResponse struct {
 }
 
 // CreateDeleteBgpGroupRequest creates a request to invoke DeleteBgpGroup API
-func CreateDeleteBgpGroupRequest(request *DeleteBgpGroupRequest) {
+func CreateDeleteBgpGroupRequest() (request *DeleteBgpGroupRequest) {
 	request = &DeleteBgpGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

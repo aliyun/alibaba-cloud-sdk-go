@@ -89,7 +89,7 @@ type CancelTaskResponse struct {
 }
 
 // CreateCancelTaskRequest creates a request to invoke CancelTask API
-func CreateCancelTaskRequest(request *CancelTaskRequest) {
+func CreateCancelTaskRequest() (request *CancelTaskRequest) {
 	request = &CancelTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

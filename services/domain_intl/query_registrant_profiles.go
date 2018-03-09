@@ -99,7 +99,7 @@ type QueryRegistrantProfilesResponse struct {
 }
 
 // CreateQueryRegistrantProfilesRequest creates a request to invoke QueryRegistrantProfiles API
-func CreateQueryRegistrantProfilesRequest(request *QueryRegistrantProfilesRequest) {
+func CreateQueryRegistrantProfilesRequest() (request *QueryRegistrantProfilesRequest) {
 	request = &QueryRegistrantProfilesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

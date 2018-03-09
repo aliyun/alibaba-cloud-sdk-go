@@ -91,7 +91,7 @@ type DescribeDomainSlowRatioResponse struct {
 }
 
 // CreateDescribeDomainSlowRatioRequest creates a request to invoke DescribeDomainSlowRatio API
-func CreateDescribeDomainSlowRatioRequest(request *DescribeDomainSlowRatioRequest) {
+func CreateDescribeDomainSlowRatioRequest() (request *DescribeDomainSlowRatioRequest) {
 	request = &DescribeDomainSlowRatioRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

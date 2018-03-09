@@ -90,7 +90,7 @@ type DescribeDomainsBySourceResponse struct {
 }
 
 // CreateDescribeDomainsBySourceRequest creates a request to invoke DescribeDomainsBySource API
-func CreateDescribeDomainsBySourceRequest(request *DescribeDomainsBySourceRequest) {
+func CreateDescribeDomainsBySourceRequest() (request *DescribeDomainsBySourceRequest) {
 	request = &DescribeDomainsBySourceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

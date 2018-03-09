@@ -90,7 +90,7 @@ type DisableAlarmResponse struct {
 }
 
 // CreateDisableAlarmRequest creates a request to invoke DisableAlarm API
-func CreateDisableAlarmRequest(request *DisableAlarmRequest) {
+func CreateDisableAlarmRequest() (request *DisableAlarmRequest) {
 	request = &DisableAlarmRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

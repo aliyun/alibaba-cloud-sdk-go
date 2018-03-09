@@ -86,7 +86,7 @@ type DescribeResourcesModificationResponse struct {
 }
 
 // CreateDescribeResourcesModificationRequest creates a request to invoke DescribeResourcesModification API
-func CreateDescribeResourcesModificationRequest(request *DescribeResourcesModificationRequest) {
+func CreateDescribeResourcesModificationRequest() (request *DescribeResourcesModificationRequest) {
 	request = &DescribeResourcesModificationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

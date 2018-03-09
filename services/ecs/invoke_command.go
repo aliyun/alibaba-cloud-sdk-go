@@ -86,7 +86,7 @@ type InvokeCommandResponse struct {
 }
 
 // CreateInvokeCommandRequest creates a request to invoke InvokeCommand API
-func CreateInvokeCommandRequest(request *InvokeCommandRequest) {
+func CreateInvokeCommandRequest() (request *InvokeCommandRequest) {
 	request = &InvokeCommandRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

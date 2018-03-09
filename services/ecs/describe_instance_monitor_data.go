@@ -94,7 +94,7 @@ type DescribeInstanceMonitorDataResponse struct {
 }
 
 // CreateDescribeInstanceMonitorDataRequest creates a request to invoke DescribeInstanceMonitorData API
-func CreateDescribeInstanceMonitorDataRequest(request *DescribeInstanceMonitorDataRequest) {
+func CreateDescribeInstanceMonitorDataRequest() (request *DescribeInstanceMonitorDataRequest) {
 	request = &DescribeInstanceMonitorDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

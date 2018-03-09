@@ -90,7 +90,7 @@ type DescribeL2VipsByDomainResponse struct {
 }
 
 // CreateDescribeL2VipsByDomainRequest creates a request to invoke DescribeL2VipsByDomain API
-func CreateDescribeL2VipsByDomainRequest(request *DescribeL2VipsByDomainRequest) {
+func CreateDescribeL2VipsByDomainRequest() (request *DescribeL2VipsByDomainRequest) {
 	request = &DescribeL2VipsByDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

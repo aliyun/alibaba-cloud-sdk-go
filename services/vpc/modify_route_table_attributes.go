@@ -99,7 +99,7 @@ type ModifyRouteTableAttributesResponse struct {
 }
 
 // CreateModifyRouteTableAttributesRequest creates a request to invoke ModifyRouteTableAttributes API
-func CreateModifyRouteTableAttributesRequest(request *ModifyRouteTableAttributesRequest) {
+func CreateModifyRouteTableAttributesRequest() (request *ModifyRouteTableAttributesRequest) {
 	request = &ModifyRouteTableAttributesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

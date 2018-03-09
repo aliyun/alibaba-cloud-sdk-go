@@ -85,7 +85,7 @@ type RevokeSecurityGroupEgressResponse struct {
 }
 
 // CreateRevokeSecurityGroupEgressRequest creates a request to invoke RevokeSecurityGroupEgress API
-func CreateRevokeSecurityGroupEgressRequest(request *RevokeSecurityGroupEgressRequest) {
+func CreateRevokeSecurityGroupEgressRequest() (request *RevokeSecurityGroupEgressRequest) {
 	request = &RevokeSecurityGroupEgressRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

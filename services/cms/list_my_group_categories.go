@@ -90,7 +90,7 @@ type ListMyGroupCategoriesResponse struct {
 }
 
 // CreateListMyGroupCategoriesRequest creates a request to invoke ListMyGroupCategories API
-func CreateListMyGroupCategoriesRequest(request *ListMyGroupCategoriesRequest) {
+func CreateListMyGroupCategoriesRequest() (request *ListMyGroupCategoriesRequest) {
 	request = &ListMyGroupCategoriesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

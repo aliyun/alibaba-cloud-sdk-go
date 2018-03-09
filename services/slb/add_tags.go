@@ -92,7 +92,7 @@ type AddTagsResponse struct {
 }
 
 // CreateAddTagsRequest creates a request to invoke AddTags API
-func CreateAddTagsRequest(request *AddTagsRequest) {
+func CreateAddTagsRequest() (request *AddTagsRequest) {
 	request = &AddTagsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

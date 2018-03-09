@@ -89,7 +89,7 @@ type DeactivateScalingConfigurationResponse struct {
 }
 
 // CreateDeactivateScalingConfigurationRequest creates a request to invoke DeactivateScalingConfiguration API
-func CreateDeactivateScalingConfigurationRequest(request *DeactivateScalingConfigurationRequest) {
+func CreateDeactivateScalingConfigurationRequest() (request *DeactivateScalingConfigurationRequest) {
 	request = &DeactivateScalingConfigurationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

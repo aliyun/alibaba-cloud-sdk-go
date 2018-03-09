@@ -101,7 +101,7 @@ type ReplaceSystemDiskResponse struct {
 }
 
 // CreateReplaceSystemDiskRequest creates a request to invoke ReplaceSystemDisk API
-func CreateReplaceSystemDiskRequest(request *ReplaceSystemDiskRequest) {
+func CreateReplaceSystemDiskRequest() (request *ReplaceSystemDiskRequest) {
 	request = &ReplaceSystemDiskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -118,7 +118,7 @@ type CreateLoadBalancerHTTPSListenerResponse struct {
 }
 
 // CreateCreateLoadBalancerHTTPSListenerRequest creates a request to invoke CreateLoadBalancerHTTPSListener API
-func CreateCreateLoadBalancerHTTPSListenerRequest(request *CreateLoadBalancerHTTPSListenerRequest) {
+func CreateCreateLoadBalancerHTTPSListenerRequest() (request *CreateLoadBalancerHTTPSListenerRequest) {
 	request = &CreateLoadBalancerHTTPSListenerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

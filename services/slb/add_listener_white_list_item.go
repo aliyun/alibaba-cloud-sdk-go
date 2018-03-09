@@ -94,7 +94,7 @@ type AddListenerWhiteListItemResponse struct {
 }
 
 // CreateAddListenerWhiteListItemRequest creates a request to invoke AddListenerWhiteListItem API
-func CreateAddListenerWhiteListItemRequest(request *AddListenerWhiteListItemRequest) {
+func CreateAddListenerWhiteListItemRequest() (request *AddListenerWhiteListItemRequest) {
 	request = &AddListenerWhiteListItemRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

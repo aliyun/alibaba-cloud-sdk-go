@@ -86,7 +86,7 @@ type DeleteRoleResponse struct {
 }
 
 // CreateDeleteRoleRequest creates a request to invoke DeleteRole API
-func CreateDeleteRoleRequest(request *DeleteRoleRequest) {
+func CreateDeleteRoleRequest() (request *DeleteRoleRequest) {
 	request = &DeleteRoleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

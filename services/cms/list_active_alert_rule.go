@@ -91,7 +91,7 @@ type ListActiveAlertRuleResponse struct {
 }
 
 // CreateListActiveAlertRuleRequest creates a request to invoke ListActiveAlertRule API
-func CreateListActiveAlertRuleRequest(request *ListActiveAlertRuleRequest) {
+func CreateListActiveAlertRuleRequest() (request *ListActiveAlertRuleRequest) {
 	request = &ListActiveAlertRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

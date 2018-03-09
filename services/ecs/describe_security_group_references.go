@@ -91,7 +91,7 @@ type DescribeSecurityGroupReferencesResponse struct {
 }
 
 // CreateDescribeSecurityGroupReferencesRequest creates a request to invoke DescribeSecurityGroupReferences API
-func CreateDescribeSecurityGroupReferencesRequest(request *DescribeSecurityGroupReferencesRequest) {
+func CreateDescribeSecurityGroupReferencesRequest() (request *DescribeSecurityGroupReferencesRequest) {
 	request = &DescribeSecurityGroupReferencesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

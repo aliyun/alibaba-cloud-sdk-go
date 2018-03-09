@@ -85,7 +85,7 @@ type ModifyHpcClusterAttributeResponse struct {
 }
 
 // CreateModifyHpcClusterAttributeRequest creates a request to invoke ModifyHpcClusterAttribute API
-func CreateModifyHpcClusterAttributeRequest(request *ModifyHpcClusterAttributeRequest) {
+func CreateModifyHpcClusterAttributeRequest() (request *ModifyHpcClusterAttributeRequest) {
 	request = &ModifyHpcClusterAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

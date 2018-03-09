@@ -94,7 +94,7 @@ type ModifyCdnDomainResponse struct {
 }
 
 // CreateModifyCdnDomainRequest creates a request to invoke ModifyCdnDomain API
-func CreateModifyCdnDomainRequest(request *ModifyCdnDomainRequest) {
+func CreateModifyCdnDomainRequest() (request *ModifyCdnDomainRequest) {
 	request = &ModifyCdnDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

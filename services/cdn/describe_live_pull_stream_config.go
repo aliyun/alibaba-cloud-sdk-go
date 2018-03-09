@@ -89,7 +89,7 @@ type DescribeLivePullStreamConfigResponse struct {
 }
 
 // CreateDescribeLivePullStreamConfigRequest creates a request to invoke DescribeLivePullStreamConfig API
-func CreateDescribeLivePullStreamConfigRequest(request *DescribeLivePullStreamConfigRequest) {
+func CreateDescribeLivePullStreamConfigRequest() (request *DescribeLivePullStreamConfigRequest) {
 	request = &DescribeLivePullStreamConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

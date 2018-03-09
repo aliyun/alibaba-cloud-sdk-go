@@ -92,7 +92,7 @@ type QueryEditingJobListResponse struct {
 }
 
 // CreateQueryEditingJobListRequest creates a request to invoke QueryEditingJobList API
-func CreateQueryEditingJobListRequest(request *QueryEditingJobListRequest) {
+func CreateQueryEditingJobListRequest() (request *QueryEditingJobListRequest) {
 	request = &QueryEditingJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

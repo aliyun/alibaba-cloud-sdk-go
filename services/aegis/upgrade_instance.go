@@ -91,7 +91,7 @@ type UpgradeInstanceResponse struct {
 }
 
 // CreateUpgradeInstanceRequest creates a request to invoke UpgradeInstance API
-func CreateUpgradeInstanceRequest(request *UpgradeInstanceRequest) {
+func CreateUpgradeInstanceRequest() (request *UpgradeInstanceRequest) {
 	request = &UpgradeInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

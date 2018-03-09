@@ -91,7 +91,7 @@ type DeleteCustomerGatewayResponse struct {
 }
 
 // CreateDeleteCustomerGatewayRequest creates a request to invoke DeleteCustomerGateway API
-func CreateDeleteCustomerGatewayRequest(request *DeleteCustomerGatewayRequest) {
+func CreateDeleteCustomerGatewayRequest() (request *DeleteCustomerGatewayRequest) {
 	request = &DeleteCustomerGatewayRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

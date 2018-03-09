@@ -98,7 +98,7 @@ type PlayInfoResponse struct {
 }
 
 // CreatePlayInfoRequest creates a request to invoke PlayInfo API
-func CreatePlayInfoRequest(request *PlayInfoRequest) {
+func CreatePlayInfoRequest() (request *PlayInfoRequest) {
 	request = &PlayInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

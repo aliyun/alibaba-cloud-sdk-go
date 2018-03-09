@@ -101,7 +101,7 @@ type CreateRouteEntryResponse struct {
 }
 
 // CreateCreateRouteEntryRequest creates a request to invoke CreateRouteEntry API
-func CreateCreateRouteEntryRequest(request *CreateRouteEntryRequest) {
+func CreateCreateRouteEntryRequest() (request *CreateRouteEntryRequest) {
 	request = &CreateRouteEntryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

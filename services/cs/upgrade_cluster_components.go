@@ -86,7 +86,7 @@ type UpgradeClusterComponentsResponse struct {
 }
 
 // CreateUpgradeClusterComponentsRequest creates a request to invoke UpgradeClusterComponents API
-func CreateUpgradeClusterComponentsRequest(request *UpgradeClusterComponentsRequest) {
+func CreateUpgradeClusterComponentsRequest() (request *UpgradeClusterComponentsRequest) {
 	request = &UpgradeClusterComponentsRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}

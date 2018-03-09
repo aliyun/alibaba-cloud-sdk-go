@@ -96,7 +96,7 @@ type DescribeDeploymentSetTopologyResponse struct {
 }
 
 // CreateDescribeDeploymentSetTopologyRequest creates a request to invoke DescribeDeploymentSetTopology API
-func CreateDescribeDeploymentSetTopologyRequest(request *DescribeDeploymentSetTopologyRequest) {
+func CreateDescribeDeploymentSetTopologyRequest() (request *DescribeDeploymentSetTopologyRequest) {
 	request = &DescribeDeploymentSetTopologyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

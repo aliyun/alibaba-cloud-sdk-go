@@ -93,7 +93,7 @@ type UnassociateHaVipResponse struct {
 }
 
 // CreateUnassociateHaVipRequest creates a request to invoke UnassociateHaVip API
-func CreateUnassociateHaVipRequest(request *UnassociateHaVipRequest) {
+func CreateUnassociateHaVipRequest() (request *UnassociateHaVipRequest) {
 	request = &UnassociateHaVipRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

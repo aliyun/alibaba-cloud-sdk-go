@@ -91,7 +91,7 @@ type ModifyInstanceVncPasswdResponse struct {
 }
 
 // CreateModifyInstanceVncPasswdRequest creates a request to invoke ModifyInstanceVncPasswd API
-func CreateModifyInstanceVncPasswdRequest(request *ModifyInstanceVncPasswdRequest) {
+func CreateModifyInstanceVncPasswdRequest() (request *ModifyInstanceVncPasswdRequest) {
 	request = &ModifyInstanceVncPasswdRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

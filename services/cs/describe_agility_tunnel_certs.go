@@ -85,7 +85,7 @@ type DescribeAgilityTunnelCertsResponse struct {
 }
 
 // CreateDescribeAgilityTunnelCertsRequest creates a request to invoke DescribeAgilityTunnelCerts API
-func CreateDescribeAgilityTunnelCertsRequest(request *DescribeAgilityTunnelCertsRequest) {
+func CreateDescribeAgilityTunnelCertsRequest() (request *DescribeAgilityTunnelCertsRequest) {
 	request = &DescribeAgilityTunnelCertsRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}

@@ -89,7 +89,7 @@ type DescribeDisksFullStatusResponse struct {
 }
 
 // CreateDescribeDisksFullStatusRequest creates a request to invoke DescribeDisksFullStatus API
-func CreateDescribeDisksFullStatusRequest(request *DescribeDisksFullStatusRequest) {
+func CreateDescribeDisksFullStatusRequest() (request *DescribeDisksFullStatusRequest) {
 	request = &DescribeDisksFullStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

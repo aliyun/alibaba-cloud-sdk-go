@@ -99,7 +99,7 @@ type DescribeDBInstancesByExpireTimeResponse struct {
 }
 
 // CreateDescribeDBInstancesByExpireTimeRequest creates a request to invoke DescribeDBInstancesByExpireTime API
-func CreateDescribeDBInstancesByExpireTimeRequest(request *DescribeDBInstancesByExpireTimeRequest) {
+func CreateDescribeDBInstancesByExpireTimeRequest() (request *DescribeDBInstancesByExpireTimeRequest) {
 	request = &DescribeDBInstancesByExpireTimeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

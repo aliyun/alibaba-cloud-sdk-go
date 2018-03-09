@@ -90,7 +90,7 @@ type ModifyCcModeResponse struct {
 }
 
 // CreateModifyCcModeRequest creates a request to invoke ModifyCcMode API
-func CreateModifyCcModeRequest(request *ModifyCcModeRequest) {
+func CreateModifyCcModeRequest() (request *ModifyCcModeRequest) {
 	request = &ModifyCcModeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

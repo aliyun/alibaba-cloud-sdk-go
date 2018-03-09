@@ -92,7 +92,7 @@ type NodeStatusResponse struct {
 }
 
 // CreateNodeStatusRequest creates a request to invoke NodeStatus API
-func CreateNodeStatusRequest(request *NodeStatusRequest) {
+func CreateNodeStatusRequest() (request *NodeStatusRequest) {
 	request = &NodeStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

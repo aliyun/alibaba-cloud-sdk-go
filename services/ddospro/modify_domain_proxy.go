@@ -88,7 +88,7 @@ type ModifyDomainProxyResponse struct {
 }
 
 // CreateModifyDomainProxyRequest creates a request to invoke ModifyDomainProxy API
-func CreateModifyDomainProxyRequest(request *ModifyDomainProxyRequest) {
+func CreateModifyDomainProxyRequest() (request *ModifyDomainProxyRequest) {
 	request = &ModifyDomainProxyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

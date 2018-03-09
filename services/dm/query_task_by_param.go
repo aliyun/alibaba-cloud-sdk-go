@@ -96,7 +96,7 @@ type QueryTaskByParamResponse struct {
 }
 
 // CreateQueryTaskByParamRequest creates a request to invoke QueryTaskByParam API
-func CreateQueryTaskByParamRequest(request *QueryTaskByParamRequest) {
+func CreateQueryTaskByParamRequest() (request *QueryTaskByParamRequest) {
 	request = &QueryTaskByParamRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

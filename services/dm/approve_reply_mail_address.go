@@ -89,7 +89,7 @@ type ApproveReplyMailAddressResponse struct {
 }
 
 // CreateApproveReplyMailAddressRequest creates a request to invoke ApproveReplyMailAddress API
-func CreateApproveReplyMailAddressRequest(request *ApproveReplyMailAddressRequest) {
+func CreateApproveReplyMailAddressRequest() (request *ApproveReplyMailAddressRequest) {
 	request = &ApproveReplyMailAddressRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

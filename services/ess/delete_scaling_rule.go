@@ -89,7 +89,7 @@ type DeleteScalingRuleResponse struct {
 }
 
 // CreateDeleteScalingRuleRequest creates a request to invoke DeleteScalingRule API
-func CreateDeleteScalingRuleRequest(request *DeleteScalingRuleRequest) {
+func CreateDeleteScalingRuleRequest() (request *DeleteScalingRuleRequest) {
 	request = &DeleteScalingRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

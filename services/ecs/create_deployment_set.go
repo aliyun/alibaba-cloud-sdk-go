@@ -97,7 +97,7 @@ type CreateDeploymentSetResponse struct {
 }
 
 // CreateCreateDeploymentSetRequest creates a request to invoke CreateDeploymentSet API
-func CreateCreateDeploymentSetRequest(request *CreateDeploymentSetRequest) {
+func CreateCreateDeploymentSetRequest() (request *CreateDeploymentSetRequest) {
 	request = &CreateDeploymentSetRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

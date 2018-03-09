@@ -88,7 +88,7 @@ type BindAliasResponse struct {
 }
 
 // CreateBindAliasRequest creates a request to invoke BindAlias API
-func CreateBindAliasRequest(request *BindAliasRequest) {
+func CreateBindAliasRequest() (request *BindAliasRequest) {
 	request = &BindAliasRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

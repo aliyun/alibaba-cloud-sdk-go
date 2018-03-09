@@ -89,7 +89,7 @@ type DeleteReceiverResponse struct {
 }
 
 // CreateDeleteReceiverRequest creates a request to invoke DeleteReceiver API
-func CreateDeleteReceiverRequest(request *DeleteReceiverRequest) {
+func CreateDeleteReceiverRequest() (request *DeleteReceiverRequest) {
 	request = &DeleteReceiverRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

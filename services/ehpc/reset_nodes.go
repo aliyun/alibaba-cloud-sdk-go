@@ -92,7 +92,7 @@ type ResetNodesResponse struct {
 }
 
 // CreateResetNodesRequest creates a request to invoke ResetNodes API
-func CreateResetNodesRequest(request *ResetNodesRequest) {
+func CreateResetNodesRequest() (request *ResetNodesRequest) {
 	request = &ResetNodesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

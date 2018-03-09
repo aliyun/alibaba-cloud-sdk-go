@@ -90,7 +90,7 @@ type DescribeVulDetailsResponse struct {
 }
 
 // CreateDescribeVulDetailsRequest creates a request to invoke DescribeVulDetails API
-func CreateDescribeVulDetailsRequest(request *DescribeVulDetailsRequest) {
+func CreateDescribeVulDetailsRequest() (request *DescribeVulDetailsRequest) {
 	request = &DescribeVulDetailsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

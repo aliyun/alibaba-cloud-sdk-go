@@ -98,7 +98,7 @@ type DescribeInstanceAutoRenewAttributeResponse struct {
 }
 
 // CreateDescribeInstanceAutoRenewAttributeRequest creates a request to invoke DescribeInstanceAutoRenewAttribute API
-func CreateDescribeInstanceAutoRenewAttributeRequest(request *DescribeInstanceAutoRenewAttributeRequest) {
+func CreateDescribeInstanceAutoRenewAttributeRequest() (request *DescribeInstanceAutoRenewAttributeRequest) {
 	request = &DescribeInstanceAutoRenewAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

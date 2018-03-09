@@ -94,7 +94,7 @@ type CreateSessionResponse struct {
 }
 
 // CreateCreateSessionRequest creates a request to invoke CreateSession API
-func CreateCreateSessionRequest(request *CreateSessionRequest) {
+func CreateCreateSessionRequest() (request *CreateSessionRequest) {
 	request = &CreateSessionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

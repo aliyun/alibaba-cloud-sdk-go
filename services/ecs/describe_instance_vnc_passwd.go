@@ -91,7 +91,7 @@ type DescribeInstanceVncPasswdResponse struct {
 }
 
 // CreateDescribeInstanceVncPasswdRequest creates a request to invoke DescribeInstanceVncPasswd API
-func CreateDescribeInstanceVncPasswdRequest(request *DescribeInstanceVncPasswdRequest) {
+func CreateDescribeInstanceVncPasswdRequest() (request *DescribeInstanceVncPasswdRequest) {
 	request = &DescribeInstanceVncPasswdRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -90,7 +90,7 @@ type ModifyStrategyTargetResponse struct {
 }
 
 // CreateModifyStrategyTargetRequest creates a request to invoke ModifyStrategyTarget API
-func CreateModifyStrategyTargetRequest(request *ModifyStrategyTargetRequest) {
+func CreateModifyStrategyTargetRequest() (request *ModifyStrategyTargetRequest) {
 	request = &ModifyStrategyTargetRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

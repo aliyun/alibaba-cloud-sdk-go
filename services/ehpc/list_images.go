@@ -86,7 +86,7 @@ type ListImagesResponse struct {
 }
 
 // CreateListImagesRequest creates a request to invoke ListImages API
-func CreateListImagesRequest(request *ListImagesRequest) {
+func CreateListImagesRequest() (request *ListImagesRequest) {
 	request = &ListImagesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

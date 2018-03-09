@@ -93,7 +93,7 @@ type AddPornPipelineResponse struct {
 }
 
 // CreateAddPornPipelineRequest creates a request to invoke AddPornPipeline API
-func CreateAddPornPipelineRequest(request *AddPornPipelineRequest) {
+func CreateAddPornPipelineRequest() (request *AddPornPipelineRequest) {
 	request = &AddPornPipelineRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

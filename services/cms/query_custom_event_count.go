@@ -88,7 +88,7 @@ type QueryCustomEventCountResponse struct {
 }
 
 // CreateQueryCustomEventCountRequest creates a request to invoke QueryCustomEventCount API
-func CreateQueryCustomEventCountRequest(request *QueryCustomEventCountRequest) {
+func CreateQueryCustomEventCountRequest() (request *QueryCustomEventCountRequest) {
 	request = &QueryCustomEventCountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

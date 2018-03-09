@@ -96,7 +96,7 @@ type EipFillParamsResponse struct {
 }
 
 // CreateEipFillParamsRequest creates a request to invoke EipFillParams API
-func CreateEipFillParamsRequest(request *EipFillParamsRequest) {
+func CreateEipFillParamsRequest() (request *EipFillParamsRequest) {
 	request = &EipFillParamsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

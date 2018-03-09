@@ -91,7 +91,7 @@ type BindInputBucketResponse struct {
 }
 
 // CreateBindInputBucketRequest creates a request to invoke BindInputBucket API
-func CreateBindInputBucketRequest(request *BindInputBucketRequest) {
+func CreateBindInputBucketRequest() (request *BindInputBucketRequest) {
 	request = &BindInputBucketRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

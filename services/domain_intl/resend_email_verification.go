@@ -90,7 +90,7 @@ type ResendEmailVerificationResponse struct {
 }
 
 // CreateResendEmailVerificationRequest creates a request to invoke ResendEmailVerification API
-func CreateResendEmailVerificationRequest(request *ResendEmailVerificationRequest) {
+func CreateResendEmailVerificationRequest() (request *ResendEmailVerificationRequest) {
 	request = &ResendEmailVerificationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

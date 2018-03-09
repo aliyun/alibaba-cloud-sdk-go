@@ -96,7 +96,7 @@ type DescribeOptimizeAdviceOnBigTableResponse struct {
 }
 
 // CreateDescribeOptimizeAdviceOnBigTableRequest creates a request to invoke DescribeOptimizeAdviceOnBigTable API
-func CreateDescribeOptimizeAdviceOnBigTableRequest(request *DescribeOptimizeAdviceOnBigTableRequest) {
+func CreateDescribeOptimizeAdviceOnBigTableRequest() (request *DescribeOptimizeAdviceOnBigTableRequest) {
 	request = &DescribeOptimizeAdviceOnBigTableRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

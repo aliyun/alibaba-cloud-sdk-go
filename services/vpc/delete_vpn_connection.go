@@ -91,7 +91,7 @@ type DeleteVpnConnectionResponse struct {
 }
 
 // CreateDeleteVpnConnectionRequest creates a request to invoke DeleteVpnConnection API
-func CreateDeleteVpnConnectionRequest(request *DeleteVpnConnectionRequest) {
+func CreateDeleteVpnConnectionRequest() (request *DeleteVpnConnectionRequest) {
 	request = &DeleteVpnConnectionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -91,7 +91,7 @@ type DescribeDomainOnlineUserNumberResponse struct {
 }
 
 // CreateDescribeDomainOnlineUserNumberRequest creates a request to invoke DescribeDomainOnlineUserNumber API
-func CreateDescribeDomainOnlineUserNumberRequest(request *DescribeDomainOnlineUserNumberRequest) {
+func CreateDescribeDomainOnlineUserNumberRequest() (request *DescribeDomainOnlineUserNumberRequest) {
 	request = &DescribeDomainOnlineUserNumberRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

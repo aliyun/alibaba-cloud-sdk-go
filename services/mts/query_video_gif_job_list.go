@@ -92,7 +92,7 @@ type QueryVideoGifJobListResponse struct {
 }
 
 // CreateQueryVideoGifJobListRequest creates a request to invoke QueryVideoGifJobList API
-func CreateQueryVideoGifJobListRequest(request *QueryVideoGifJobListRequest) {
+func CreateQueryVideoGifJobListRequest() (request *QueryVideoGifJobListRequest) {
 	request = &QueryVideoGifJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

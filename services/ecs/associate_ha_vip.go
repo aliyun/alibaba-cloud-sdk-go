@@ -92,7 +92,7 @@ type AssociateHaVipResponse struct {
 }
 
 // CreateAssociateHaVipRequest creates a request to invoke AssociateHaVip API
-func CreateAssociateHaVipRequest(request *AssociateHaVipRequest) {
+func CreateAssociateHaVipRequest() (request *AssociateHaVipRequest) {
 	request = &AssociateHaVipRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

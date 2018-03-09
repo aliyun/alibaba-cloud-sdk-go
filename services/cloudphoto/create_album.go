@@ -93,7 +93,7 @@ type CreateAlbumResponse struct {
 }
 
 // CreateCreateAlbumRequest creates a request to invoke CreateAlbum API
-func CreateCreateAlbumRequest(request *CreateAlbumRequest) {
+func CreateCreateAlbumRequest() (request *CreateAlbumRequest) {
 	request = &CreateAlbumRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

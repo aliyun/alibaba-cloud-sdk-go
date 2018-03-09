@@ -99,7 +99,7 @@ type DescribeSQLInjectionInfosResponse struct {
 }
 
 // CreateDescribeSQLInjectionInfosRequest creates a request to invoke DescribeSQLInjectionInfos API
-func CreateDescribeSQLInjectionInfosRequest(request *DescribeSQLInjectionInfosRequest) {
+func CreateDescribeSQLInjectionInfosRequest() (request *DescribeSQLInjectionInfosRequest) {
 	request = &DescribeSQLInjectionInfosRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

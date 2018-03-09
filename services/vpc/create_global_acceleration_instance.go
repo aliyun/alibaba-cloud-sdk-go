@@ -98,7 +98,7 @@ type CreateGlobalAccelerationInstanceResponse struct {
 }
 
 // CreateCreateGlobalAccelerationInstanceRequest creates a request to invoke CreateGlobalAccelerationInstance API
-func CreateCreateGlobalAccelerationInstanceRequest(request *CreateGlobalAccelerationInstanceRequest) {
+func CreateCreateGlobalAccelerationInstanceRequest() (request *CreateGlobalAccelerationInstanceRequest) {
 	request = &CreateGlobalAccelerationInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

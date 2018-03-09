@@ -93,7 +93,7 @@ type ReportFpShotJobResultResponse struct {
 }
 
 // CreateReportFpShotJobResultRequest creates a request to invoke ReportFpShotJobResult API
-func CreateReportFpShotJobResultRequest(request *ReportFpShotJobResultRequest) {
+func CreateReportFpShotJobResultRequest() (request *ReportFpShotJobResultRequest) {
 	request = &ReportFpShotJobResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -90,7 +90,7 @@ type SetRemoveQueryStringConfigResponse struct {
 }
 
 // CreateSetRemoveQueryStringConfigRequest creates a request to invoke SetRemoveQueryStringConfig API
-func CreateSetRemoveQueryStringConfigRequest(request *SetRemoveQueryStringConfigRequest) {
+func CreateSetRemoveQueryStringConfigRequest() (request *SetRemoveQueryStringConfigRequest) {
 	request = &SetRemoveQueryStringConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

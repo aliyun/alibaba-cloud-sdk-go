@@ -89,7 +89,7 @@ type DescribeUserCustomerLabelsResponse struct {
 }
 
 // CreateDescribeUserCustomerLabelsRequest creates a request to invoke DescribeUserCustomerLabels API
-func CreateDescribeUserCustomerLabelsRequest(request *DescribeUserCustomerLabelsRequest) {
+func CreateDescribeUserCustomerLabelsRequest() (request *DescribeUserCustomerLabelsRequest) {
 	request = &DescribeUserCustomerLabelsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

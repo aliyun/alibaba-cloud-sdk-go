@@ -96,7 +96,7 @@ type DescribeClassicLinkInstancesResponse struct {
 }
 
 // CreateDescribeClassicLinkInstancesRequest creates a request to invoke DescribeClassicLinkInstances API
-func CreateDescribeClassicLinkInstancesRequest(request *DescribeClassicLinkInstancesRequest) {
+func CreateDescribeClassicLinkInstancesRequest() (request *DescribeClassicLinkInstancesRequest) {
 	request = &DescribeClassicLinkInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

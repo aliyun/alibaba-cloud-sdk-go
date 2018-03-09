@@ -94,7 +94,7 @@ type AddLiveAppSnapshotConfigResponse struct {
 }
 
 // CreateAddLiveAppSnapshotConfigRequest creates a request to invoke AddLiveAppSnapshotConfig API
-func CreateAddLiveAppSnapshotConfigRequest(request *AddLiveAppSnapshotConfigRequest) {
+func CreateAddLiveAppSnapshotConfigRequest() (request *AddLiveAppSnapshotConfigRequest) {
 	request = &AddLiveAppSnapshotConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

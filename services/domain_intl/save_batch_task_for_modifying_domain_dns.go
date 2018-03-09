@@ -91,7 +91,7 @@ type SaveBatchTaskForModifyingDomainDnsResponse struct {
 }
 
 // CreateSaveBatchTaskForModifyingDomainDnsRequest creates a request to invoke SaveBatchTaskForModifyingDomainDns API
-func CreateSaveBatchTaskForModifyingDomainDnsRequest(request *SaveBatchTaskForModifyingDomainDnsRequest) {
+func CreateSaveBatchTaskForModifyingDomainDnsRequest() (request *SaveBatchTaskForModifyingDomainDnsRequest) {
 	request = &SaveBatchTaskForModifyingDomainDnsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -101,7 +101,7 @@ type QueryContactInfoResponse struct {
 }
 
 // CreateQueryContactInfoRequest creates a request to invoke QueryContactInfo API
-func CreateQueryContactInfoRequest(request *QueryContactInfoRequest) {
+func CreateQueryContactInfoRequest() (request *QueryContactInfoRequest) {
 	request = &QueryContactInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

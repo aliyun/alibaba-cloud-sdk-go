@@ -98,7 +98,7 @@ type ListMomentPhotosResponse struct {
 }
 
 // CreateListMomentPhotosRequest creates a request to invoke ListMomentPhotos API
-func CreateListMomentPhotosRequest(request *ListMomentPhotosRequest) {
+func CreateListMomentPhotosRequest() (request *ListMomentPhotosRequest) {
 	request = &ListMomentPhotosRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

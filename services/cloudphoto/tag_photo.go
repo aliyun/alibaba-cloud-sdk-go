@@ -93,7 +93,7 @@ type TagPhotoResponse struct {
 }
 
 // CreateTagPhotoRequest creates a request to invoke TagPhoto API
-func CreateTagPhotoRequest(request *TagPhotoRequest) {
+func CreateTagPhotoRequest() (request *TagPhotoRequest) {
 	request = &TagPhotoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

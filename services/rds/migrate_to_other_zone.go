@@ -93,7 +93,7 @@ type MigrateToOtherZoneResponse struct {
 }
 
 // CreateMigrateToOtherZoneRequest creates a request to invoke MigrateToOtherZone API
-func CreateMigrateToOtherZoneRequest(request *MigrateToOtherZoneRequest) {
+func CreateMigrateToOtherZoneRequest() (request *MigrateToOtherZoneRequest) {
 	request = &MigrateToOtherZoneRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

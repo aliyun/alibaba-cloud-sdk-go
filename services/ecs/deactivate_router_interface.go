@@ -89,7 +89,7 @@ type DeactivateRouterInterfaceResponse struct {
 }
 
 // CreateDeactivateRouterInterfaceRequest creates a request to invoke DeactivateRouterInterface API
-func CreateDeactivateRouterInterfaceRequest(request *DeactivateRouterInterfaceRequest) {
+func CreateDeactivateRouterInterfaceRequest() (request *DeactivateRouterInterfaceRequest) {
 	request = &DeactivateRouterInterfaceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

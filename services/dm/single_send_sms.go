@@ -93,7 +93,7 @@ type SingleSendSmsResponse struct {
 }
 
 // CreateSingleSendSmsRequest creates a request to invoke SingleSendSms API
-func CreateSingleSendSmsRequest(request *SingleSendSmsRequest) {
+func CreateSingleSendSmsRequest() (request *SingleSendSmsRequest) {
 	request = &SingleSendSmsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

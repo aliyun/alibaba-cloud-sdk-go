@@ -92,7 +92,7 @@ type SetFaceCoverResponse struct {
 }
 
 // CreateSetFaceCoverRequest creates a request to invoke SetFaceCover API
-func CreateSetFaceCoverRequest(request *SetFaceCoverRequest) {
+func CreateSetFaceCoverRequest() (request *SetFaceCoverRequest) {
 	request = &SetFaceCoverRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

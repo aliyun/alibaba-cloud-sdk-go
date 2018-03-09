@@ -98,7 +98,7 @@ type DescribeNatGatewaysResponse struct {
 }
 
 // CreateDescribeNatGatewaysRequest creates a request to invoke DescribeNatGateways API
-func CreateDescribeNatGatewaysRequest(request *DescribeNatGatewaysRequest) {
+func CreateDescribeNatGatewaysRequest() (request *DescribeNatGatewaysRequest) {
 	request = &DescribeNatGatewaysRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

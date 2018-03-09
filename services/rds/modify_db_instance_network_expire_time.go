@@ -92,7 +92,7 @@ type ModifyDBInstanceNetworkExpireTimeResponse struct {
 }
 
 // CreateModifyDBInstanceNetworkExpireTimeRequest creates a request to invoke ModifyDBInstanceNetworkExpireTime API
-func CreateModifyDBInstanceNetworkExpireTimeRequest(request *ModifyDBInstanceNetworkExpireTimeRequest) {
+func CreateModifyDBInstanceNetworkExpireTimeRequest() (request *ModifyDBInstanceNetworkExpireTimeRequest) {
 	request = &ModifyDBInstanceNetworkExpireTimeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

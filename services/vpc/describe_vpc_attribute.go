@@ -106,7 +106,7 @@ type DescribeVpcAttributeResponse struct {
 }
 
 // CreateDescribeVpcAttributeRequest creates a request to invoke DescribeVpcAttribute API
-func CreateDescribeVpcAttributeRequest(request *DescribeVpcAttributeRequest) {
+func CreateDescribeVpcAttributeRequest() (request *DescribeVpcAttributeRequest) {
 	request = &DescribeVpcAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

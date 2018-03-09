@@ -94,7 +94,7 @@ type ModifyScalingRuleResponse struct {
 }
 
 // CreateModifyScalingRuleRequest creates a request to invoke ModifyScalingRule API
-func CreateModifyScalingRuleRequest(request *ModifyScalingRuleRequest) {
+func CreateModifyScalingRuleRequest() (request *ModifyScalingRuleRequest) {
 	request = &ModifyScalingRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

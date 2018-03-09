@@ -90,7 +90,7 @@ type SaveSingleTaskForUpdateProhibitionLockResponse struct {
 }
 
 // CreateSaveSingleTaskForUpdateProhibitionLockRequest creates a request to invoke SaveSingleTaskForUpdateProhibitionLock API
-func CreateSaveSingleTaskForUpdateProhibitionLockRequest(request *SaveSingleTaskForUpdateProhibitionLockRequest) {
+func CreateSaveSingleTaskForUpdateProhibitionLockRequest() (request *SaveSingleTaskForUpdateProhibitionLockRequest) {
 	request = &SaveSingleTaskForUpdateProhibitionLockRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

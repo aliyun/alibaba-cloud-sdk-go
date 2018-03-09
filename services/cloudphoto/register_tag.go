@@ -92,7 +92,7 @@ type RegisterTagResponse struct {
 }
 
 // CreateRegisterTagRequest creates a request to invoke RegisterTag API
-func CreateRegisterTagRequest(request *RegisterTagRequest) {
+func CreateRegisterTagRequest() (request *RegisterTagRequest) {
 	request = &RegisterTagRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

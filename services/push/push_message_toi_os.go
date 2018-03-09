@@ -92,7 +92,7 @@ type PushMessageToiOSResponse struct {
 }
 
 // CreatePushMessageToiOSRequest creates a request to invoke PushMessageToiOS API
-func CreatePushMessageToiOSRequest(request *PushMessageToiOSRequest) {
+func CreatePushMessageToiOSRequest() (request *PushMessageToiOSRequest) {
 	request = &PushMessageToiOSRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

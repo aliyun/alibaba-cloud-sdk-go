@@ -91,7 +91,7 @@ type DownloadVpnConnectionConfigResponse struct {
 }
 
 // CreateDownloadVpnConnectionConfigRequest creates a request to invoke DownloadVpnConnectionConfig API
-func CreateDownloadVpnConnectionConfigRequest(request *DownloadVpnConnectionConfigRequest) {
+func CreateDownloadVpnConnectionConfigRequest() (request *DownloadVpnConnectionConfigRequest) {
 	request = &DownloadVpnConnectionConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

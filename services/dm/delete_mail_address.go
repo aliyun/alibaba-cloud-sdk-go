@@ -89,7 +89,7 @@ type DeleteMailAddressResponse struct {
 }
 
 // CreateDeleteMailAddressRequest creates a request to invoke DeleteMailAddress API
-func CreateDeleteMailAddressRequest(request *DeleteMailAddressRequest) {
+func CreateDeleteMailAddressRequest() (request *DeleteMailAddressRequest) {
 	request = &DeleteMailAddressRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

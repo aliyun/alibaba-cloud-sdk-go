@@ -91,7 +91,7 @@ type RemoveCommonBandwidthPackageIpResponse struct {
 }
 
 // CreateRemoveCommonBandwidthPackageIpRequest creates a request to invoke RemoveCommonBandwidthPackageIp API
-func CreateRemoveCommonBandwidthPackageIpRequest(request *RemoveCommonBandwidthPackageIpRequest) {
+func CreateRemoveCommonBandwidthPackageIpRequest() (request *RemoveCommonBandwidthPackageIpRequest) {
 	request = &RemoveCommonBandwidthPackageIpRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

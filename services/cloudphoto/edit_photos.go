@@ -95,7 +95,7 @@ type EditPhotosResponse struct {
 }
 
 // CreateEditPhotosRequest creates a request to invoke EditPhotos API
-func CreateEditPhotosRequest(request *EditPhotosRequest) {
+func CreateEditPhotosRequest() (request *EditPhotosRequest) {
 	request = &EditPhotosRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

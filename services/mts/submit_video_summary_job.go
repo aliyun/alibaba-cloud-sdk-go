@@ -94,7 +94,7 @@ type SubmitVideoSummaryJobResponse struct {
 }
 
 // CreateSubmitVideoSummaryJobRequest creates a request to invoke SubmitVideoSummaryJob API
-func CreateSubmitVideoSummaryJobRequest(request *SubmitVideoSummaryJobRequest) {
+func CreateSubmitVideoSummaryJobRequest() (request *SubmitVideoSummaryJobRequest) {
 	request = &SubmitVideoSummaryJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

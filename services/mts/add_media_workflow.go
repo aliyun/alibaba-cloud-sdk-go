@@ -93,7 +93,7 @@ type AddMediaWorkflowResponse struct {
 }
 
 // CreateAddMediaWorkflowRequest creates a request to invoke AddMediaWorkflow API
-func CreateAddMediaWorkflowRequest(request *AddMediaWorkflowRequest) {
+func CreateAddMediaWorkflowRequest() (request *AddMediaWorkflowRequest) {
 	request = &AddMediaWorkflowRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

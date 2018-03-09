@@ -94,7 +94,7 @@ type CreateSnatEntryResponse struct {
 }
 
 // CreateCreateSnatEntryRequest creates a request to invoke CreateSnatEntry API
-func CreateCreateSnatEntryRequest(request *CreateSnatEntryRequest) {
+func CreateCreateSnatEntryRequest() (request *CreateSnatEntryRequest) {
 	request = &CreateSnatEntryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

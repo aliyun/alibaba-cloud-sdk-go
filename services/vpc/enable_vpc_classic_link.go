@@ -91,7 +91,7 @@ type EnableVpcClassicLinkResponse struct {
 }
 
 // CreateEnableVpcClassicLinkRequest creates a request to invoke EnableVpcClassicLink API
-func CreateEnableVpcClassicLinkRequest(request *EnableVpcClassicLinkRequest) {
+func CreateEnableVpcClassicLinkRequest() (request *EnableVpcClassicLinkRequest) {
 	request = &EnableVpcClassicLinkRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

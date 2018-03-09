@@ -90,7 +90,7 @@ type ListEntitiesForPolicyResponse struct {
 }
 
 // CreateListEntitiesForPolicyRequest creates a request to invoke ListEntitiesForPolicy API
-func CreateListEntitiesForPolicyRequest(request *ListEntitiesForPolicyRequest) {
+func CreateListEntitiesForPolicyRequest() (request *ListEntitiesForPolicyRequest) {
 	request = &ListEntitiesForPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

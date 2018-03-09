@@ -89,7 +89,7 @@ type DescribeCdnTypesResponse struct {
 }
 
 // CreateDescribeCdnTypesRequest creates a request to invoke DescribeCdnTypes API
-func CreateDescribeCdnTypesRequest(request *DescribeCdnTypesRequest) {
+func CreateDescribeCdnTypesRequest() (request *DescribeCdnTypesRequest) {
 	request = &DescribeCdnTypesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -90,7 +90,7 @@ type DeleteVSwitchResponse struct {
 }
 
 // CreateDeleteVSwitchRequest creates a request to invoke DeleteVSwitch API
-func CreateDeleteVSwitchRequest(request *DeleteVSwitchRequest) {
+func CreateDeleteVSwitchRequest() (request *DeleteVSwitchRequest) {
 	request = &DeleteVSwitchRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

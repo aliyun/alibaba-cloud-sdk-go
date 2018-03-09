@@ -93,7 +93,7 @@ type GetPhotosByMd5sResponse struct {
 }
 
 // CreateGetPhotosByMd5sRequest creates a request to invoke GetPhotosByMd5s API
-func CreateGetPhotosByMd5sRequest(request *GetPhotosByMd5sRequest) {
+func CreateGetPhotosByMd5sRequest() (request *GetPhotosByMd5sRequest) {
 	request = &GetPhotosByMd5sRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

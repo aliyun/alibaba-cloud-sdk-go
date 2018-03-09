@@ -92,7 +92,7 @@ type CheckAccountNameAvailableResponse struct {
 }
 
 // CreateCheckAccountNameAvailableRequest creates a request to invoke CheckAccountNameAvailable API
-func CreateCheckAccountNameAvailableRequest(request *CheckAccountNameAvailableRequest) {
+func CreateCheckAccountNameAvailableRequest() (request *CheckAccountNameAvailableRequest) {
 	request = &CheckAccountNameAvailableRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

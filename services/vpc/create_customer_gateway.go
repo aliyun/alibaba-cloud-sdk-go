@@ -98,7 +98,7 @@ type CreateCustomerGatewayResponse struct {
 }
 
 // CreateCreateCustomerGatewayRequest creates a request to invoke CreateCustomerGateway API
-func CreateCreateCustomerGatewayRequest(request *CreateCustomerGatewayRequest) {
+func CreateCreateCustomerGatewayRequest() (request *CreateCustomerGatewayRequest) {
 	request = &CreateCustomerGatewayRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

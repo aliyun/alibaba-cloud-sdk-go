@@ -92,7 +92,7 @@ type ModifyIntranetBandwidthKbResponse struct {
 }
 
 // CreateModifyIntranetBandwidthKbRequest creates a request to invoke ModifyIntranetBandwidthKb API
-func CreateModifyIntranetBandwidthKbRequest(request *ModifyIntranetBandwidthKbRequest) {
+func CreateModifyIntranetBandwidthKbRequest() (request *ModifyIntranetBandwidthKbRequest) {
 	request = &ModifyIntranetBandwidthKbRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

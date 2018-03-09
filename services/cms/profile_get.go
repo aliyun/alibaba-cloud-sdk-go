@@ -93,7 +93,7 @@ type ProfileGetResponse struct {
 }
 
 // CreateProfileGetRequest creates a request to invoke ProfileGet API
-func CreateProfileGetRequest(request *ProfileGetRequest) {
+func CreateProfileGetRequest() (request *ProfileGetRequest) {
 	request = &ProfileGetRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -100,7 +100,7 @@ type DescribeImageSupportInstanceTypesResponse struct {
 }
 
 // CreateDescribeImageSupportInstanceTypesRequest creates a request to invoke DescribeImageSupportInstanceTypes API
-func CreateDescribeImageSupportInstanceTypesRequest(request *DescribeImageSupportInstanceTypesRequest) {
+func CreateDescribeImageSupportInstanceTypesRequest() (request *DescribeImageSupportInstanceTypesRequest) {
 	request = &DescribeImageSupportInstanceTypesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

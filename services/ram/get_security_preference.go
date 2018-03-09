@@ -86,7 +86,7 @@ type GetSecurityPreferenceResponse struct {
 }
 
 // CreateGetSecurityPreferenceRequest creates a request to invoke GetSecurityPreference API
-func CreateGetSecurityPreferenceRequest(request *GetSecurityPreferenceRequest) {
+func CreateGetSecurityPreferenceRequest() (request *GetSecurityPreferenceRequest) {
 	request = &GetSecurityPreferenceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

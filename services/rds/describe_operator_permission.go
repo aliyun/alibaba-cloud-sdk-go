@@ -93,7 +93,7 @@ type DescribeOperatorPermissionResponse struct {
 }
 
 // CreateDescribeOperatorPermissionRequest creates a request to invoke DescribeOperatorPermission API
-func CreateDescribeOperatorPermissionRequest(request *DescribeOperatorPermissionRequest) {
+func CreateDescribeOperatorPermissionRequest() (request *DescribeOperatorPermissionRequest) {
 	request = &DescribeOperatorPermissionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -96,7 +96,7 @@ type CreateLiveStreamRecordIndexFilesResponse struct {
 }
 
 // CreateCreateLiveStreamRecordIndexFilesRequest creates a request to invoke CreateLiveStreamRecordIndexFiles API
-func CreateCreateLiveStreamRecordIndexFilesRequest(request *CreateLiveStreamRecordIndexFilesRequest) {
+func CreateCreateLiveStreamRecordIndexFilesRequest() (request *CreateLiveStreamRecordIndexFilesRequest) {
 	request = &CreateLiveStreamRecordIndexFilesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

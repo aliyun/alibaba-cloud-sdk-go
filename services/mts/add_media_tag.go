@@ -91,7 +91,7 @@ type AddMediaTagResponse struct {
 }
 
 // CreateAddMediaTagRequest creates a request to invoke AddMediaTag API
-func CreateAddMediaTagRequest(request *AddMediaTagRequest) {
+func CreateAddMediaTagRequest() (request *AddMediaTagRequest) {
 	request = &AddMediaTagRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

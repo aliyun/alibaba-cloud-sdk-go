@@ -97,7 +97,7 @@ type EditJobTemplateResponse struct {
 }
 
 // CreateEditJobTemplateRequest creates a request to invoke EditJobTemplate API
-func CreateEditJobTemplateRequest(request *EditJobTemplateRequest) {
+func CreateEditJobTemplateRequest() (request *EditJobTemplateRequest) {
 	request = &EditJobTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

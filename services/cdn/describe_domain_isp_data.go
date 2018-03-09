@@ -95,7 +95,7 @@ type DescribeDomainISPDataResponse struct {
 }
 
 // CreateDescribeDomainISPDataRequest creates a request to invoke DescribeDomainISPData API
-func CreateDescribeDomainISPDataRequest(request *DescribeDomainISPDataRequest) {
+func CreateDescribeDomainISPDataRequest() (request *DescribeDomainISPDataRequest) {
 	request = &DescribeDomainISPDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

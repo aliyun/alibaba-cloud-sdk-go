@@ -90,7 +90,7 @@ type SaveSingleTaskForModifyingDnsHostResponse struct {
 }
 
 // CreateSaveSingleTaskForModifyingDnsHostRequest creates a request to invoke SaveSingleTaskForModifyingDnsHost API
-func CreateSaveSingleTaskForModifyingDnsHostRequest(request *SaveSingleTaskForModifyingDnsHostRequest) {
+func CreateSaveSingleTaskForModifyingDnsHostRequest() (request *SaveSingleTaskForModifyingDnsHostRequest) {
 	request = &SaveSingleTaskForModifyingDnsHostRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

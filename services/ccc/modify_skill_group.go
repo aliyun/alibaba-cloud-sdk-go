@@ -96,7 +96,7 @@ type ModifySkillGroupResponse struct {
 }
 
 // CreateModifySkillGroupRequest creates a request to invoke ModifySkillGroup API
-func CreateModifySkillGroupRequest(request *ModifySkillGroupRequest) {
+func CreateModifySkillGroupRequest() (request *ModifySkillGroupRequest) {
 	request = &ModifySkillGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

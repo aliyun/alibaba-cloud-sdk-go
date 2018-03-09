@@ -88,7 +88,7 @@ type ModifyClusterAttributesResponse struct {
 }
 
 // CreateModifyClusterAttributesRequest creates a request to invoke ModifyClusterAttributes API
-func CreateModifyClusterAttributesRequest(request *ModifyClusterAttributesRequest) {
+func CreateModifyClusterAttributesRequest() (request *ModifyClusterAttributesRequest) {
 	request = &ModifyClusterAttributesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -91,7 +91,7 @@ type CancelImportResponse struct {
 }
 
 // CreateCancelImportRequest creates a request to invoke CancelImport API
-func CreateCancelImportRequest(request *CancelImportRequest) {
+func CreateCancelImportRequest() (request *CancelImportRequest) {
 	request = &CancelImportRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

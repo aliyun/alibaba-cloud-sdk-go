@@ -91,7 +91,7 @@ type SetDNSSLBStatusResponse struct {
 }
 
 // CreateSetDNSSLBStatusRequest creates a request to invoke SetDNSSLBStatus API
-func CreateSetDNSSLBStatusRequest(request *SetDNSSLBStatusRequest) {
+func CreateSetDNSSLBStatusRequest() (request *SetDNSSLBStatusRequest) {
 	request = &SetDNSSLBStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

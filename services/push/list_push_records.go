@@ -95,7 +95,7 @@ type ListPushRecordsResponse struct {
 }
 
 // CreateListPushRecordsRequest creates a request to invoke ListPushRecords API
-func CreateListPushRecordsRequest(request *ListPushRecordsRequest) {
+func CreateListPushRecordsRequest() (request *ListPushRecordsRequest) {
 	request = &ListPushRecordsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

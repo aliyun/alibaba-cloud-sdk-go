@@ -85,7 +85,7 @@ type RevokeSecurityGroupResponse struct {
 }
 
 // CreateRevokeSecurityGroupRequest creates a request to invoke RevokeSecurityGroup API
-func CreateRevokeSecurityGroupRequest(request *RevokeSecurityGroupRequest) {
+func CreateRevokeSecurityGroupRequest() (request *RevokeSecurityGroupRequest) {
 	request = &RevokeSecurityGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

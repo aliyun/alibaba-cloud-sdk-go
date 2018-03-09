@@ -89,7 +89,7 @@ type PushObjectCacheResponse struct {
 }
 
 // CreatePushObjectCacheRequest creates a request to invoke PushObjectCache API
-func CreatePushObjectCacheRequest(request *PushObjectCacheRequest) {
+func CreatePushObjectCacheRequest() (request *PushObjectCacheRequest) {
 	request = &PushObjectCacheRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

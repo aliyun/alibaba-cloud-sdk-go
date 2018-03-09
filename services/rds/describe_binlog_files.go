@@ -99,7 +99,7 @@ type DescribeBinlogFilesResponse struct {
 }
 
 // CreateDescribeBinlogFilesRequest creates a request to invoke DescribeBinlogFiles API
-func CreateDescribeBinlogFilesRequest(request *DescribeBinlogFilesRequest) {
+func CreateDescribeBinlogFilesRequest() (request *DescribeBinlogFilesRequest) {
 	request = &DescribeBinlogFilesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

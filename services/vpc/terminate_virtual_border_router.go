@@ -91,7 +91,7 @@ type TerminateVirtualBorderRouterResponse struct {
 }
 
 // CreateTerminateVirtualBorderRouterRequest creates a request to invoke TerminateVirtualBorderRouter API
-func CreateTerminateVirtualBorderRouterRequest(request *TerminateVirtualBorderRouterRequest) {
+func CreateTerminateVirtualBorderRouterRequest() (request *TerminateVirtualBorderRouterRequest) {
 	request = &TerminateVirtualBorderRouterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

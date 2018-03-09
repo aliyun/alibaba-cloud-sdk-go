@@ -94,7 +94,7 @@ type PushNoticeToiOSResponse struct {
 }
 
 // CreatePushNoticeToiOSRequest creates a request to invoke PushNoticeToiOS API
-func CreatePushNoticeToiOSRequest(request *PushNoticeToiOSRequest) {
+func CreatePushNoticeToiOSRequest() (request *PushNoticeToiOSRequest) {
 	request = &PushNoticeToiOSRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

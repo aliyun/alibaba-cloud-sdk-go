@@ -91,7 +91,7 @@ type ListContactFlowsResponse struct {
 }
 
 // CreateListContactFlowsRequest creates a request to invoke ListContactFlows API
-func CreateListContactFlowsRequest(request *ListContactFlowsRequest) {
+func CreateListContactFlowsRequest() (request *ListContactFlowsRequest) {
 	request = &ListContactFlowsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

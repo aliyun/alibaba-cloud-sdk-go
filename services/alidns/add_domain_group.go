@@ -90,7 +90,7 @@ type AddDomainGroupResponse struct {
 }
 
 // CreateAddDomainGroupRequest creates a request to invoke AddDomainGroup API
-func CreateAddDomainGroupRequest(request *AddDomainGroupRequest) {
+func CreateAddDomainGroupRequest() (request *AddDomainGroupRequest) {
 	request = &AddDomainGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

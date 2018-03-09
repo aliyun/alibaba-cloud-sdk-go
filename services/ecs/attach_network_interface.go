@@ -85,7 +85,7 @@ type AttachNetworkInterfaceResponse struct {
 }
 
 // CreateAttachNetworkInterfaceRequest creates a request to invoke AttachNetworkInterface API
-func CreateAttachNetworkInterfaceRequest(request *AttachNetworkInterfaceRequest) {
+func CreateAttachNetworkInterfaceRequest() (request *AttachNetworkInterfaceRequest) {
 	request = &AttachNetworkInterfaceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

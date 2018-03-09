@@ -91,7 +91,7 @@ type ModifyDBInstanceConnectionModeResponse struct {
 }
 
 // CreateModifyDBInstanceConnectionModeRequest creates a request to invoke ModifyDBInstanceConnectionMode API
-func CreateModifyDBInstanceConnectionModeRequest(request *ModifyDBInstanceConnectionModeRequest) {
+func CreateModifyDBInstanceConnectionModeRequest() (request *ModifyDBInstanceConnectionModeRequest) {
 	request = &ModifyDBInstanceConnectionModeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

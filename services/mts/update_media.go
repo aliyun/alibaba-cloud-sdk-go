@@ -96,7 +96,7 @@ type UpdateMediaResponse struct {
 }
 
 // CreateUpdateMediaRequest creates a request to invoke UpdateMedia API
-func CreateUpdateMediaRequest(request *UpdateMediaRequest) {
+func CreateUpdateMediaRequest() (request *UpdateMediaRequest) {
 	request = &UpdateMediaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -96,7 +96,7 @@ type ListEventsResponse struct {
 }
 
 // CreateListEventsRequest creates a request to invoke ListEvents API
-func CreateListEventsRequest(request *ListEventsRequest) {
+func CreateListEventsRequest() (request *ListEventsRequest) {
 	request = &ListEventsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

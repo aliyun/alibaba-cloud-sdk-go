@@ -89,7 +89,7 @@ type DeleteDomainGroupResponse struct {
 }
 
 // CreateDeleteDomainGroupRequest creates a request to invoke DeleteDomainGroup API
-func CreateDeleteDomainGroupRequest(request *DeleteDomainGroupRequest) {
+func CreateDeleteDomainGroupRequest() (request *DeleteDomainGroupRequest) {
 	request = &DeleteDomainGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

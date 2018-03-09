@@ -87,7 +87,7 @@ type GetGroupResponse struct {
 }
 
 // CreateGetGroupRequest creates a request to invoke GetGroup API
-func CreateGetGroupRequest(request *GetGroupRequest) {
+func CreateGetGroupRequest() (request *GetGroupRequest) {
 	request = &GetGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

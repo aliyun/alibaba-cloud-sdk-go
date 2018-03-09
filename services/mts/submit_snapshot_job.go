@@ -94,7 +94,7 @@ type SubmitSnapshotJobResponse struct {
 }
 
 // CreateSubmitSnapshotJobRequest creates a request to invoke SubmitSnapshotJob API
-func CreateSubmitSnapshotJobRequest(request *SubmitSnapshotJobRequest) {
+func CreateSubmitSnapshotJobRequest() (request *SubmitSnapshotJobRequest) {
 	request = &SubmitSnapshotJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

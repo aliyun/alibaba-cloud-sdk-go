@@ -97,7 +97,7 @@ type CreateVpcResponse struct {
 }
 
 // CreateCreateVpcRequest creates a request to invoke CreateVpc API
-func CreateCreateVpcRequest(request *CreateVpcRequest) {
+func CreateCreateVpcRequest() (request *CreateVpcRequest) {
 	request = &CreateVpcRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

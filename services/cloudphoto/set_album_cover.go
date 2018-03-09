@@ -92,7 +92,7 @@ type SetAlbumCoverResponse struct {
 }
 
 // CreateSetAlbumCoverRequest creates a request to invoke SetAlbumCover API
-func CreateSetAlbumCoverRequest(request *SetAlbumCoverRequest) {
+func CreateSetAlbumCoverRequest() (request *SetAlbumCoverRequest) {
 	request = &SetAlbumCoverRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

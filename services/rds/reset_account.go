@@ -92,7 +92,7 @@ type ResetAccountResponse struct {
 }
 
 // CreateResetAccountRequest creates a request to invoke ResetAccount API
-func CreateResetAccountRequest(request *ResetAccountRequest) {
+func CreateResetAccountRequest() (request *ResetAccountRequest) {
 	request = &ResetAccountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

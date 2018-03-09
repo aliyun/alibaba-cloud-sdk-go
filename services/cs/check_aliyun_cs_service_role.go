@@ -84,7 +84,7 @@ type CheckAliyunCSServiceRoleResponse struct {
 }
 
 // CreateCheckAliyunCSServiceRoleRequest creates a request to invoke CheckAliyunCSServiceRole API
-func CreateCheckAliyunCSServiceRoleRequest(request *CheckAliyunCSServiceRoleRequest) {
+func CreateCheckAliyunCSServiceRoleRequest() (request *CheckAliyunCSServiceRoleRequest) {
 	request = &CheckAliyunCSServiceRoleRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}

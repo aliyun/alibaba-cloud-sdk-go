@@ -93,7 +93,7 @@ type DescribeVpcZoneNosResponse struct {
 }
 
 // CreateDescribeVpcZoneNosRequest creates a request to invoke DescribeVpcZoneNos API
-func CreateDescribeVpcZoneNosRequest(request *DescribeVpcZoneNosRequest) {
+func CreateDescribeVpcZoneNosRequest() (request *DescribeVpcZoneNosRequest) {
 	request = &DescribeVpcZoneNosRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

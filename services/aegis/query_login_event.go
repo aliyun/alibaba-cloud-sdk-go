@@ -94,7 +94,7 @@ type QueryLoginEventResponse struct {
 }
 
 // CreateQueryLoginEventRequest creates a request to invoke QueryLoginEvent API
-func CreateQueryLoginEventRequest(request *QueryLoginEventRequest) {
+func CreateQueryLoginEventRequest() (request *QueryLoginEventRequest) {
 	request = &QueryLoginEventRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

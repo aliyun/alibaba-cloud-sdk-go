@@ -85,7 +85,7 @@ type ModifyDomainCustomLogConfigResponse struct {
 }
 
 // CreateModifyDomainCustomLogConfigRequest creates a request to invoke ModifyDomainCustomLogConfig API
-func CreateModifyDomainCustomLogConfigRequest(request *ModifyDomainCustomLogConfigRequest) {
+func CreateModifyDomainCustomLogConfigRequest() (request *ModifyDomainCustomLogConfigRequest) {
 	request = &ModifyDomainCustomLogConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

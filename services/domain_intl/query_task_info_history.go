@@ -97,7 +97,7 @@ type QueryTaskInfoHistoryResponse struct {
 }
 
 // CreateQueryTaskInfoHistoryRequest creates a request to invoke QueryTaskInfoHistory API
-func CreateQueryTaskInfoHistoryRequest(request *QueryTaskInfoHistoryRequest) {
+func CreateQueryTaskInfoHistoryRequest() (request *QueryTaskInfoHistoryRequest) {
 	request = &QueryTaskInfoHistoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

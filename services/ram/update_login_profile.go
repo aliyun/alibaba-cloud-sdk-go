@@ -89,7 +89,7 @@ type UpdateLoginProfileResponse struct {
 }
 
 // CreateUpdateLoginProfileRequest creates a request to invoke UpdateLoginProfile API
-func CreateUpdateLoginProfileRequest(request *UpdateLoginProfileRequest) {
+func CreateUpdateLoginProfileRequest() (request *UpdateLoginProfileRequest) {
 	request = &UpdateLoginProfileRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

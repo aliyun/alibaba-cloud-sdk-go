@@ -100,7 +100,7 @@ type DescribeExtensiveDomainDataResponse struct {
 }
 
 // CreateDescribeExtensiveDomainDataRequest creates a request to invoke DescribeExtensiveDomainData API
-func CreateDescribeExtensiveDomainDataRequest(request *DescribeExtensiveDomainDataRequest) {
+func CreateDescribeExtensiveDomainDataRequest() (request *DescribeExtensiveDomainDataRequest) {
 	request = &DescribeExtensiveDomainDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -98,7 +98,7 @@ type ModifyCustomerGatewayAttributeResponse struct {
 }
 
 // CreateModifyCustomerGatewayAttributeRequest creates a request to invoke ModifyCustomerGatewayAttribute API
-func CreateModifyCustomerGatewayAttributeRequest(request *ModifyCustomerGatewayAttributeRequest) {
+func CreateModifyCustomerGatewayAttributeRequest() (request *ModifyCustomerGatewayAttributeRequest) {
 	request = &ModifyCustomerGatewayAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

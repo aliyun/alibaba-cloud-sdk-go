@@ -91,7 +91,7 @@ type ModifyMailAddressResponse struct {
 }
 
 // CreateModifyMailAddressRequest creates a request to invoke ModifyMailAddress API
-func CreateModifyMailAddressRequest(request *ModifyMailAddressRequest) {
+func CreateModifyMailAddressRequest() (request *ModifyMailAddressRequest) {
 	request = &ModifyMailAddressRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

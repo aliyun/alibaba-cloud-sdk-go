@@ -95,7 +95,7 @@ type DescribeDomainPvDataResponse struct {
 }
 
 // CreateDescribeDomainPvDataRequest creates a request to invoke DescribeDomainPvData API
-func CreateDescribeDomainPvDataRequest(request *DescribeDomainPvDataRequest) {
+func CreateDescribeDomainPvDataRequest() (request *DescribeDomainPvDataRequest) {
 	request = &DescribeDomainPvDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

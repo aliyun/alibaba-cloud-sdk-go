@@ -86,7 +86,7 @@ type DescribeUserBusinessBehaviorResponse struct {
 }
 
 // CreateDescribeUserBusinessBehaviorRequest creates a request to invoke DescribeUserBusinessBehavior API
-func CreateDescribeUserBusinessBehaviorRequest(request *DescribeUserBusinessBehaviorRequest) {
+func CreateDescribeUserBusinessBehaviorRequest() (request *DescribeUserBusinessBehaviorRequest) {
 	request = &DescribeUserBusinessBehaviorRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

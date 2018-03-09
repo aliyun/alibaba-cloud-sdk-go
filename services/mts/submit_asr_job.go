@@ -94,7 +94,7 @@ type SubmitAsrJobResponse struct {
 }
 
 // CreateSubmitAsrJobRequest creates a request to invoke SubmitAsrJob API
-func CreateSubmitAsrJobRequest(request *SubmitAsrJobRequest) {
+func CreateSubmitAsrJobRequest() (request *SubmitAsrJobRequest) {
 	request = &SubmitAsrJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -90,7 +90,7 @@ type SetSourceHostConfigResponse struct {
 }
 
 // CreateSetSourceHostConfigRequest creates a request to invoke SetSourceHostConfig API
-func CreateSetSourceHostConfigRequest(request *SetSourceHostConfigRequest) {
+func CreateSetSourceHostConfigRequest() (request *SetSourceHostConfigRequest) {
 	request = &SetSourceHostConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

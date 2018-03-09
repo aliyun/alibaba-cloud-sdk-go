@@ -96,7 +96,7 @@ type DescribeDomainWhoisInfoResponse struct {
 }
 
 // CreateDescribeDomainWhoisInfoRequest creates a request to invoke DescribeDomainWhoisInfo API
-func CreateDescribeDomainWhoisInfoRequest(request *DescribeDomainWhoisInfoRequest) {
+func CreateDescribeDomainWhoisInfoRequest() (request *DescribeDomainWhoisInfoRequest) {
 	request = &DescribeDomainWhoisInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

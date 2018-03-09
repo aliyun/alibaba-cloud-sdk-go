@@ -92,7 +92,7 @@ type RemoveBandwidthPackageIpsResponse struct {
 }
 
 // CreateRemoveBandwidthPackageIpsRequest creates a request to invoke RemoveBandwidthPackageIps API
-func CreateRemoveBandwidthPackageIpsRequest(request *RemoveBandwidthPackageIpsRequest) {
+func CreateRemoveBandwidthPackageIpsRequest() (request *RemoveBandwidthPackageIpsRequest) {
 	request = &RemoveBandwidthPackageIpsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

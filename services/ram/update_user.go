@@ -92,7 +92,7 @@ type UpdateUserResponse struct {
 }
 
 // CreateUpdateUserRequest creates a request to invoke UpdateUser API
-func CreateUpdateUserRequest(request *UpdateUserRequest) {
+func CreateUpdateUserRequest() (request *UpdateUserRequest) {
 	request = &UpdateUserRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

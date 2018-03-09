@@ -93,7 +93,7 @@ type DescribeWebLogPageResponse struct {
 }
 
 // CreateDescribeWebLogPageRequest creates a request to invoke DescribeWebLogPage API
-func CreateDescribeWebLogPageRequest(request *DescribeWebLogPageRequest) {
+func CreateDescribeWebLogPageRequest() (request *DescribeWebLogPageRequest) {
 	request = &DescribeWebLogPageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

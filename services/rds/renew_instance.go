@@ -94,7 +94,7 @@ type RenewInstanceResponse struct {
 }
 
 // CreateRenewInstanceRequest creates a request to invoke RenewInstance API
-func CreateRenewInstanceRequest(request *RenewInstanceRequest) {
+func CreateRenewInstanceRequest() (request *RenewInstanceRequest) {
 	request = &RenewInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

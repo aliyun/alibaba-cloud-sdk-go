@@ -89,7 +89,7 @@ type DescribeInstancesFullStatusResponse struct {
 }
 
 // CreateDescribeInstancesFullStatusRequest creates a request to invoke DescribeInstancesFullStatus API
-func CreateDescribeInstancesFullStatusRequest(request *DescribeInstancesFullStatusRequest) {
+func CreateDescribeInstancesFullStatusRequest() (request *DescribeInstancesFullStatusRequest) {
 	request = &DescribeInstancesFullStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

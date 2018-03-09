@@ -87,7 +87,7 @@ type CreateVirtualMFADeviceResponse struct {
 }
 
 // CreateCreateVirtualMFADeviceRequest creates a request to invoke CreateVirtualMFADevice API
-func CreateCreateVirtualMFADeviceRequest(request *CreateVirtualMFADeviceRequest) {
+func CreateCreateVirtualMFADeviceRequest() (request *CreateVirtualMFADeviceRequest) {
 	request = &CreateVirtualMFADeviceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

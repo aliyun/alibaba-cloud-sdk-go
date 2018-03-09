@@ -94,7 +94,7 @@ type ListContactGroupResponse struct {
 }
 
 // CreateListContactGroupRequest creates a request to invoke ListContactGroup API
-func CreateListContactGroupRequest(request *ListContactGroupRequest) {
+func CreateListContactGroupRequest() (request *ListContactGroupRequest) {
 	request = &ListContactGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

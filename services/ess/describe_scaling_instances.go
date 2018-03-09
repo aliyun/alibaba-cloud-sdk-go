@@ -120,7 +120,7 @@ type DescribeScalingInstancesResponse struct {
 }
 
 // CreateDescribeScalingInstancesRequest creates a request to invoke DescribeScalingInstances API
-func CreateDescribeScalingInstancesRequest(request *DescribeScalingInstancesRequest) {
+func CreateDescribeScalingInstancesRequest() (request *DescribeScalingInstancesRequest) {
 	request = &DescribeScalingInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

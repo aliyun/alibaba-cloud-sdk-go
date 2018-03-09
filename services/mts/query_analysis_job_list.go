@@ -92,7 +92,7 @@ type QueryAnalysisJobListResponse struct {
 }
 
 // CreateQueryAnalysisJobListRequest creates a request to invoke QueryAnalysisJobList API
-func CreateQueryAnalysisJobListRequest(request *QueryAnalysisJobListRequest) {
+func CreateQueryAnalysisJobListRequest() (request *QueryAnalysisJobListRequest) {
 	request = &QueryAnalysisJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

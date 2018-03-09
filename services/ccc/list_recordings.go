@@ -98,7 +98,7 @@ type ListRecordingsResponse struct {
 }
 
 // CreateListRecordingsRequest creates a request to invoke ListRecordings API
-func CreateListRecordingsRequest(request *ListRecordingsRequest) {
+func CreateListRecordingsRequest() (request *ListRecordingsRequest) {
 	request = &ListRecordingsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

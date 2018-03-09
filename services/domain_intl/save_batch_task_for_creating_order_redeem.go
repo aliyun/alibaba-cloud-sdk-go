@@ -95,7 +95,7 @@ type SaveBatchTaskForCreatingOrderRedeemResponse struct {
 }
 
 // CreateSaveBatchTaskForCreatingOrderRedeemRequest creates a request to invoke SaveBatchTaskForCreatingOrderRedeem API
-func CreateSaveBatchTaskForCreatingOrderRedeemRequest(request *SaveBatchTaskForCreatingOrderRedeemRequest) {
+func CreateSaveBatchTaskForCreatingOrderRedeemRequest() (request *SaveBatchTaskForCreatingOrderRedeemRequest) {
 	request = &SaveBatchTaskForCreatingOrderRedeemRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

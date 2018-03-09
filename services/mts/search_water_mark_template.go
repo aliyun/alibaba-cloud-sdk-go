@@ -96,7 +96,7 @@ type SearchWaterMarkTemplateResponse struct {
 }
 
 // CreateSearchWaterMarkTemplateRequest creates a request to invoke SearchWaterMarkTemplate API
-func CreateSearchWaterMarkTemplateRequest(request *SearchWaterMarkTemplateRequest) {
+func CreateSearchWaterMarkTemplateRequest() (request *SearchWaterMarkTemplateRequest) {
 	request = &SearchWaterMarkTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

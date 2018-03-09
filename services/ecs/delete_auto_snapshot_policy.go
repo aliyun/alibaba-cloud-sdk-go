@@ -89,7 +89,7 @@ type DeleteAutoSnapshotPolicyResponse struct {
 }
 
 // CreateDeleteAutoSnapshotPolicyRequest creates a request to invoke DeleteAutoSnapshotPolicy API
-func CreateDeleteAutoSnapshotPolicyRequest(request *DeleteAutoSnapshotPolicyRequest) {
+func CreateDeleteAutoSnapshotPolicyRequest() (request *DeleteAutoSnapshotPolicyRequest) {
 	request = &DeleteAutoSnapshotPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

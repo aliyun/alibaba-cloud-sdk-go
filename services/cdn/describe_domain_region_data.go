@@ -95,7 +95,7 @@ type DescribeDomainRegionDataResponse struct {
 }
 
 // CreateDescribeDomainRegionDataRequest creates a request to invoke DescribeDomainRegionData API
-func CreateDescribeDomainRegionDataRequest(request *DescribeDomainRegionDataRequest) {
+func CreateDescribeDomainRegionDataRequest() (request *DescribeDomainRegionDataRequest) {
 	request = &DescribeDomainRegionDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

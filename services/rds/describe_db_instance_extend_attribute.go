@@ -98,7 +98,7 @@ type DescribeDBInstanceExtendAttributeResponse struct {
 }
 
 // CreateDescribeDBInstanceExtendAttributeRequest creates a request to invoke DescribeDBInstanceExtendAttribute API
-func CreateDescribeDBInstanceExtendAttributeRequest(request *DescribeDBInstanceExtendAttributeRequest) {
+func CreateDescribeDBInstanceExtendAttributeRequest() (request *DescribeDBInstanceExtendAttributeRequest) {
 	request = &DescribeDBInstanceExtendAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

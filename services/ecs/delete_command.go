@@ -85,7 +85,7 @@ type DeleteCommandResponse struct {
 }
 
 // CreateDeleteCommandRequest creates a request to invoke DeleteCommand API
-func CreateDeleteCommandRequest(request *DeleteCommandRequest) {
+func CreateDeleteCommandRequest() (request *DeleteCommandRequest) {
 	request = &DeleteCommandRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

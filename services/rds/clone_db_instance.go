@@ -108,7 +108,7 @@ type CloneDBInstanceResponse struct {
 }
 
 // CreateCloneDBInstanceRequest creates a request to invoke CloneDBInstance API
-func CreateCloneDBInstanceRequest(request *CloneDBInstanceRequest) {
+func CreateCloneDBInstanceRequest() (request *CloneDBInstanceRequest) {
 	request = &CloneDBInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

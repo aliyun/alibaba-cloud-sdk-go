@@ -85,7 +85,7 @@ type DescribeClusterScaledNodeResponse struct {
 }
 
 // CreateDescribeClusterScaledNodeRequest creates a request to invoke DescribeClusterScaledNode API
-func CreateDescribeClusterScaledNodeRequest(request *DescribeClusterScaledNodeRequest) {
+func CreateDescribeClusterScaledNodeRequest() (request *DescribeClusterScaledNodeRequest) {
 	request = &DescribeClusterScaledNodeRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}

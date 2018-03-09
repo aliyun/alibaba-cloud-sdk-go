@@ -94,7 +94,7 @@ type SwitchDBInstanceNetTypeResponse struct {
 }
 
 // CreateSwitchDBInstanceNetTypeRequest creates a request to invoke SwitchDBInstanceNetType API
-func CreateSwitchDBInstanceNetTypeRequest(request *SwitchDBInstanceNetTypeRequest) {
+func CreateSwitchDBInstanceNetTypeRequest() (request *SwitchDBInstanceNetTypeRequest) {
 	request = &SwitchDBInstanceNetTypeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

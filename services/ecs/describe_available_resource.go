@@ -86,7 +86,7 @@ type DescribeAvailableResourceResponse struct {
 }
 
 // CreateDescribeAvailableResourceRequest creates a request to invoke DescribeAvailableResource API
-func CreateDescribeAvailableResourceRequest(request *DescribeAvailableResourceRequest) {
+func CreateDescribeAvailableResourceRequest() (request *DescribeAvailableResourceRequest) {
 	request = &DescribeAvailableResourceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

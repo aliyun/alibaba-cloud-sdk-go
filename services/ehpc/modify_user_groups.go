@@ -93,7 +93,7 @@ type ModifyUserGroupsResponse struct {
 }
 
 // CreateModifyUserGroupsRequest creates a request to invoke ModifyUserGroups API
-func CreateModifyUserGroupsRequest(request *ModifyUserGroupsRequest) {
+func CreateModifyUserGroupsRequest() (request *ModifyUserGroupsRequest) {
 	request = &ModifyUserGroupsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

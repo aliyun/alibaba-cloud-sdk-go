@@ -91,7 +91,7 @@ type ToggleFeaturesResponse struct {
 }
 
 // CreateToggleFeaturesRequest creates a request to invoke ToggleFeatures API
-func CreateToggleFeaturesRequest(request *ToggleFeaturesRequest) {
+func CreateToggleFeaturesRequest() (request *ToggleFeaturesRequest) {
 	request = &ToggleFeaturesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -90,7 +90,7 @@ type SaveSingleTaskForCreatingOrderRedeemResponse struct {
 }
 
 // CreateSaveSingleTaskForCreatingOrderRedeemRequest creates a request to invoke SaveSingleTaskForCreatingOrderRedeem API
-func CreateSaveSingleTaskForCreatingOrderRedeemRequest(request *SaveSingleTaskForCreatingOrderRedeemRequest) {
+func CreateSaveSingleTaskForCreatingOrderRedeemRequest() (request *SaveSingleTaskForCreatingOrderRedeemRequest) {
 	request = &SaveSingleTaskForCreatingOrderRedeemRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

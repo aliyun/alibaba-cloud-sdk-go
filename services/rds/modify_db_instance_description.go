@@ -92,7 +92,7 @@ type ModifyDBInstanceDescriptionResponse struct {
 }
 
 // CreateModifyDBInstanceDescriptionRequest creates a request to invoke ModifyDBInstanceDescription API
-func CreateModifyDBInstanceDescriptionRequest(request *ModifyDBInstanceDescriptionRequest) {
+func CreateModifyDBInstanceDescriptionRequest() (request *ModifyDBInstanceDescriptionRequest) {
 	request = &ModifyDBInstanceDescriptionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -95,7 +95,7 @@ type DescribeResourceDiagnosisResponse struct {
 }
 
 // CreateDescribeResourceDiagnosisRequest creates a request to invoke DescribeResourceDiagnosis API
-func CreateDescribeResourceDiagnosisRequest(request *DescribeResourceDiagnosisRequest) {
+func CreateDescribeResourceDiagnosisRequest() (request *DescribeResourceDiagnosisRequest) {
 	request = &DescribeResourceDiagnosisRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -86,7 +86,7 @@ type DownloadClusterNodeCertsResponse struct {
 }
 
 // CreateDownloadClusterNodeCertsRequest creates a request to invoke DownloadClusterNodeCerts API
-func CreateDownloadClusterNodeCertsRequest(request *DownloadClusterNodeCertsRequest) {
+func CreateDownloadClusterNodeCertsRequest() (request *DownloadClusterNodeCertsRequest) {
 	request = &DownloadClusterNodeCertsRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}

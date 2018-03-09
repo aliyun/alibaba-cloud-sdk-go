@@ -92,7 +92,7 @@ type DescribeDomainPathDataResponse struct {
 }
 
 // CreateDescribeDomainPathDataRequest creates a request to invoke DescribeDomainPathData API
-func CreateDescribeDomainPathDataRequest(request *DescribeDomainPathDataRequest) {
+func CreateDescribeDomainPathDataRequest() (request *DescribeDomainPathDataRequest) {
 	request = &DescribeDomainPathDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

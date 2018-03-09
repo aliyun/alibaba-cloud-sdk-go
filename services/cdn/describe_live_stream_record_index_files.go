@@ -93,7 +93,7 @@ type DescribeLiveStreamRecordIndexFilesResponse struct {
 }
 
 // CreateDescribeLiveStreamRecordIndexFilesRequest creates a request to invoke DescribeLiveStreamRecordIndexFiles API
-func CreateDescribeLiveStreamRecordIndexFilesRequest(request *DescribeLiveStreamRecordIndexFilesRequest) {
+func CreateDescribeLiveStreamRecordIndexFilesRequest() (request *DescribeLiveStreamRecordIndexFilesRequest) {
 	request = &DescribeLiveStreamRecordIndexFilesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

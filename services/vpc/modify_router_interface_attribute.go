@@ -98,7 +98,7 @@ type ModifyRouterInterfaceAttributeResponse struct {
 }
 
 // CreateModifyRouterInterfaceAttributeRequest creates a request to invoke ModifyRouterInterfaceAttribute API
-func CreateModifyRouterInterfaceAttributeRequest(request *ModifyRouterInterfaceAttributeRequest) {
+func CreateModifyRouterInterfaceAttributeRequest() (request *ModifyRouterInterfaceAttributeRequest) {
 	request = &ModifyRouterInterfaceAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

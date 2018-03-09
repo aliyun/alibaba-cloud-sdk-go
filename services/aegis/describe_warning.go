@@ -102,7 +102,7 @@ type DescribeWarningResponse struct {
 }
 
 // CreateDescribeWarningRequest creates a request to invoke DescribeWarning API
-func CreateDescribeWarningRequest(request *DescribeWarningRequest) {
+func CreateDescribeWarningRequest() (request *DescribeWarningRequest) {
 	request = &DescribeWarningRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -88,7 +88,7 @@ type QuerySystemEventCountResponse struct {
 }
 
 // CreateQuerySystemEventCountRequest creates a request to invoke QuerySystemEventCount API
-func CreateQuerySystemEventCountRequest(request *QuerySystemEventCountRequest) {
+func CreateQuerySystemEventCountRequest() (request *QuerySystemEventCountRequest) {
 	request = &QuerySystemEventCountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

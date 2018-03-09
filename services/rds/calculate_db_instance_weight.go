@@ -91,7 +91,7 @@ type CalculateDBInstanceWeightResponse struct {
 }
 
 // CreateCalculateDBInstanceWeightRequest creates a request to invoke CalculateDBInstanceWeight API
-func CreateCalculateDBInstanceWeightRequest(request *CalculateDBInstanceWeightRequest) {
+func CreateCalculateDBInstanceWeightRequest() (request *CalculateDBInstanceWeightRequest) {
 	request = &CalculateDBInstanceWeightRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

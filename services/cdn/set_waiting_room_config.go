@@ -85,7 +85,7 @@ type SetWaitingRoomConfigResponse struct {
 }
 
 // CreateSetWaitingRoomConfigRequest creates a request to invoke SetWaitingRoomConfig API
-func CreateSetWaitingRoomConfigRequest(request *SetWaitingRoomConfigRequest) {
+func CreateSetWaitingRoomConfigRequest() (request *SetWaitingRoomConfigRequest) {
 	request = &SetWaitingRoomConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

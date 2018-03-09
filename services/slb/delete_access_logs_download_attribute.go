@@ -93,7 +93,7 @@ type DeleteAccessLogsDownloadAttributeResponse struct {
 }
 
 // CreateDeleteAccessLogsDownloadAttributeRequest creates a request to invoke DeleteAccessLogsDownloadAttribute API
-func CreateDeleteAccessLogsDownloadAttributeRequest(request *DeleteAccessLogsDownloadAttributeRequest) {
+func CreateDeleteAccessLogsDownloadAttributeRequest() (request *DeleteAccessLogsDownloadAttributeRequest) {
 	request = &DeleteAccessLogsDownloadAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

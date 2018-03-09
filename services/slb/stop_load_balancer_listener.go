@@ -93,7 +93,7 @@ type StopLoadBalancerListenerResponse struct {
 }
 
 // CreateStopLoadBalancerListenerRequest creates a request to invoke StopLoadBalancerListener API
-func CreateStopLoadBalancerListenerRequest(request *StopLoadBalancerListenerRequest) {
+func CreateStopLoadBalancerListenerRequest() (request *StopLoadBalancerListenerRequest) {
 	request = &StopLoadBalancerListenerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -91,7 +91,7 @@ type RemovePhoneNumberResponse struct {
 }
 
 // CreateRemovePhoneNumberRequest creates a request to invoke RemovePhoneNumber API
-func CreateRemovePhoneNumberRequest(request *RemovePhoneNumberRequest) {
+func CreateRemovePhoneNumberRequest() (request *RemovePhoneNumberRequest) {
 	request = &RemovePhoneNumberRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

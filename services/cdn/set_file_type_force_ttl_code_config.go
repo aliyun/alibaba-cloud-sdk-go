@@ -85,7 +85,7 @@ type SetFileTypeForceTtlCodeConfigResponse struct {
 }
 
 // CreateSetFileTypeForceTtlCodeConfigRequest creates a request to invoke SetFileTypeForceTtlCodeConfig API
-func CreateSetFileTypeForceTtlCodeConfigRequest(request *SetFileTypeForceTtlCodeConfigRequest) {
+func CreateSetFileTypeForceTtlCodeConfigRequest() (request *SetFileTypeForceTtlCodeConfigRequest) {
 	request = &SetFileTypeForceTtlCodeConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

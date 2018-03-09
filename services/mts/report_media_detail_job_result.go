@@ -93,7 +93,7 @@ type ReportMediaDetailJobResultResponse struct {
 }
 
 // CreateReportMediaDetailJobResultRequest creates a request to invoke ReportMediaDetailJobResult API
-func CreateReportMediaDetailJobResultRequest(request *ReportMediaDetailJobResultRequest) {
+func CreateReportMediaDetailJobResultRequest() (request *ReportMediaDetailJobResultRequest) {
 	request = &ReportMediaDetailJobResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

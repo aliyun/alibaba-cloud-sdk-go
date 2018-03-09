@@ -89,7 +89,7 @@ type DescribeLiveStreamDomainAppInfoResponse struct {
 }
 
 // CreateDescribeLiveStreamDomainAppInfoRequest creates a request to invoke DescribeLiveStreamDomainAppInfo API
-func CreateDescribeLiveStreamDomainAppInfoRequest(request *DescribeLiveStreamDomainAppInfoRequest) {
+func CreateDescribeLiveStreamDomainAppInfoRequest() (request *DescribeLiveStreamDomainAppInfoRequest) {
 	request = &DescribeLiveStreamDomainAppInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

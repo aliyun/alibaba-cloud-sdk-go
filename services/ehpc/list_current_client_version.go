@@ -86,7 +86,7 @@ type ListCurrentClientVersionResponse struct {
 }
 
 // CreateListCurrentClientVersionRequest creates a request to invoke ListCurrentClientVersion API
-func CreateListCurrentClientVersionRequest(request *ListCurrentClientVersionRequest) {
+func CreateListCurrentClientVersionRequest() (request *ListCurrentClientVersionRequest) {
 	request = &ListCurrentClientVersionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

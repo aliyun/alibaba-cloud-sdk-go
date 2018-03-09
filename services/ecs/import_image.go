@@ -108,7 +108,7 @@ type ImportImageResponse struct {
 }
 
 // CreateImportImageRequest creates a request to invoke ImportImage API
-func CreateImportImageRequest(request *ImportImageRequest) {
+func CreateImportImageRequest() (request *ImportImageRequest) {
 	request = &ImportImageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

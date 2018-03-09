@@ -97,7 +97,7 @@ type DescribeVpcsResponse struct {
 }
 
 // CreateDescribeVpcsRequest creates a request to invoke DescribeVpcs API
-func CreateDescribeVpcsRequest(request *DescribeVpcsRequest) {
+func CreateDescribeVpcsRequest() (request *DescribeVpcsRequest) {
 	request = &DescribeVpcsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -92,7 +92,7 @@ type AddLiveAppRecordConfigResponse struct {
 }
 
 // CreateAddLiveAppRecordConfigRequest creates a request to invoke AddLiveAppRecordConfig API
-func CreateAddLiveAppRecordConfigRequest(request *AddLiveAppRecordConfigRequest) {
+func CreateAddLiveAppRecordConfigRequest() (request *AddLiveAppRecordConfigRequest) {
 	request = &AddLiveAppRecordConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

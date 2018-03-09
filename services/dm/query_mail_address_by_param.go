@@ -96,7 +96,7 @@ type QueryMailAddressByParamResponse struct {
 }
 
 // CreateQueryMailAddressByParamRequest creates a request to invoke QueryMailAddressByParam API
-func CreateQueryMailAddressByParamRequest(request *QueryMailAddressByParamRequest) {
+func CreateQueryMailAddressByParamRequest() (request *QueryMailAddressByParamRequest) {
 	request = &QueryMailAddressByParamRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

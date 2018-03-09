@@ -90,7 +90,7 @@ type DescribeDBInstancesAsCsvResponse struct {
 }
 
 // CreateDescribeDBInstancesAsCsvRequest creates a request to invoke DescribeDBInstancesAsCsv API
-func CreateDescribeDBInstancesAsCsvRequest(request *DescribeDBInstancesAsCsvRequest) {
+func CreateDescribeDBInstancesAsCsvRequest() (request *DescribeDBInstancesAsCsvRequest) {
 	request = &DescribeDBInstancesAsCsvRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

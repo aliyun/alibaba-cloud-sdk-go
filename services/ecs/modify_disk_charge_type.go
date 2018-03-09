@@ -94,7 +94,7 @@ type ModifyDiskChargeTypeResponse struct {
 }
 
 // CreateModifyDiskChargeTypeRequest creates a request to invoke ModifyDiskChargeType API
-func CreateModifyDiskChargeTypeRequest(request *ModifyDiskChargeTypeRequest) {
+func CreateModifyDiskChargeTypeRequest() (request *ModifyDiskChargeTypeRequest) {
 	request = &ModifyDiskChargeTypeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

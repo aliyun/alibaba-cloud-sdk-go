@@ -97,7 +97,7 @@ type ModifyScalingGroupResponse struct {
 }
 
 // CreateModifyScalingGroupRequest creates a request to invoke ModifyScalingGroup API
-func CreateModifyScalingGroupRequest(request *ModifyScalingGroupRequest) {
+func CreateModifyScalingGroupRequest() (request *ModifyScalingGroupRequest) {
 	request = &ModifyScalingGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -92,7 +92,7 @@ type CancelPhysicalConnectionResponse struct {
 }
 
 // CreateCancelPhysicalConnectionRequest creates a request to invoke CancelPhysicalConnection API
-func CreateCancelPhysicalConnectionRequest(request *CancelPhysicalConnectionRequest) {
+func CreateCancelPhysicalConnectionRequest() (request *CancelPhysicalConnectionRequest) {
 	request = &CancelPhysicalConnectionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

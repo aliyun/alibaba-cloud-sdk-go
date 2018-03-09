@@ -90,7 +90,7 @@ type DeleteLivePullStreamInfoResponse struct {
 }
 
 // CreateDeleteLivePullStreamInfoRequest creates a request to invoke DeleteLivePullStreamInfo API
-func CreateDeleteLivePullStreamInfoRequest(request *DeleteLivePullStreamInfoRequest) {
+func CreateDeleteLivePullStreamInfoRequest() (request *DeleteLivePullStreamInfoRequest) {
 	request = &DeleteLivePullStreamInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

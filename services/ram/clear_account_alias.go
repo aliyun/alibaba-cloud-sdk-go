@@ -85,7 +85,7 @@ type ClearAccountAliasResponse struct {
 }
 
 // CreateClearAccountAliasRequest creates a request to invoke ClearAccountAlias API
-func CreateClearAccountAliasRequest(request *ClearAccountAliasRequest) {
+func CreateClearAccountAliasRequest() (request *ClearAccountAliasRequest) {
 	request = &ClearAccountAliasRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

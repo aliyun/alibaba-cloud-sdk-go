@@ -90,7 +90,7 @@ type DescribeLiveStreamsOnlineListResponse struct {
 }
 
 // CreateDescribeLiveStreamsOnlineListRequest creates a request to invoke DescribeLiveStreamsOnlineList API
-func CreateDescribeLiveStreamsOnlineListRequest(request *DescribeLiveStreamsOnlineListRequest) {
+func CreateDescribeLiveStreamsOnlineListRequest() (request *DescribeLiveStreamsOnlineListRequest) {
 	request = &DescribeLiveStreamsOnlineListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

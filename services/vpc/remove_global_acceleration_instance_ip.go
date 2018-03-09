@@ -91,7 +91,7 @@ type RemoveGlobalAccelerationInstanceIpResponse struct {
 }
 
 // CreateRemoveGlobalAccelerationInstanceIpRequest creates a request to invoke RemoveGlobalAccelerationInstanceIp API
-func CreateRemoveGlobalAccelerationInstanceIpRequest(request *RemoveGlobalAccelerationInstanceIpRequest) {
+func CreateRemoveGlobalAccelerationInstanceIpRequest() (request *RemoveGlobalAccelerationInstanceIpRequest) {
 	request = &RemoveGlobalAccelerationInstanceIpRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

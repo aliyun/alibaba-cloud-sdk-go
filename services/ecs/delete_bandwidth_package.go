@@ -90,7 +90,7 @@ type DeleteBandwidthPackageResponse struct {
 }
 
 // CreateDeleteBandwidthPackageRequest creates a request to invoke DeleteBandwidthPackage API
-func CreateDeleteBandwidthPackageRequest(request *DeleteBandwidthPackageRequest) {
+func CreateDeleteBandwidthPackageRequest() (request *DeleteBandwidthPackageRequest) {
 	request = &DeleteBandwidthPackageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

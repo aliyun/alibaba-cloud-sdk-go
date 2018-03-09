@@ -85,7 +85,7 @@ type DescribeClusterCertsResponse struct {
 }
 
 // CreateDescribeClusterCertsRequest creates a request to invoke DescribeClusterCerts API
-func CreateDescribeClusterCertsRequest(request *DescribeClusterCertsRequest) {
+func CreateDescribeClusterCertsRequest() (request *DescribeClusterCertsRequest) {
 	request = &DescribeClusterCertsRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}

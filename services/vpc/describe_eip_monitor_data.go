@@ -94,7 +94,7 @@ type DescribeEipMonitorDataResponse struct {
 }
 
 // CreateDescribeEipMonitorDataRequest creates a request to invoke DescribeEipMonitorData API
-func CreateDescribeEipMonitorDataRequest(request *DescribeEipMonitorDataRequest) {
+func CreateDescribeEipMonitorDataRequest() (request *DescribeEipMonitorDataRequest) {
 	request = &DescribeEipMonitorDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

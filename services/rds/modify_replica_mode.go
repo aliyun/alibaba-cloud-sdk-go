@@ -94,7 +94,7 @@ type ModifyReplicaModeResponse struct {
 }
 
 // CreateModifyReplicaModeRequest creates a request to invoke ModifyReplicaMode API
-func CreateModifyReplicaModeRequest(request *ModifyReplicaModeRequest) {
+func CreateModifyReplicaModeRequest() (request *ModifyReplicaModeRequest) {
 	request = &ModifyReplicaModeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

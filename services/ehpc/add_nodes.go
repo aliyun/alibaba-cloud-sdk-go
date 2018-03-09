@@ -92,7 +92,7 @@ type AddNodesResponse struct {
 }
 
 // CreateAddNodesRequest creates a request to invoke AddNodes API
-func CreateAddNodesRequest(request *AddNodesRequest) {
+func CreateAddNodesRequest() (request *AddNodesRequest) {
 	request = &AddNodesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

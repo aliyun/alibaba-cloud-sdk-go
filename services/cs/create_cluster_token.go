@@ -85,7 +85,7 @@ type CreateClusterTokenResponse struct {
 }
 
 // CreateCreateClusterTokenRequest creates a request to invoke CreateClusterToken API
-func CreateCreateClusterTokenRequest(request *CreateClusterTokenRequest) {
+func CreateCreateClusterTokenRequest() (request *CreateClusterTokenRequest) {
 	request = &CreateClusterTokenRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}

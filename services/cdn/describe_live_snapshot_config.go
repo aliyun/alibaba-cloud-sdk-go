@@ -99,7 +99,7 @@ type DescribeLiveSnapshotConfigResponse struct {
 }
 
 // CreateDescribeLiveSnapshotConfigRequest creates a request to invoke DescribeLiveSnapshotConfig API
-func CreateDescribeLiveSnapshotConfigRequest(request *DescribeLiveSnapshotConfigRequest) {
+func CreateDescribeLiveSnapshotConfigRequest() (request *DescribeLiveSnapshotConfigRequest) {
 	request = &DescribeLiveSnapshotConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

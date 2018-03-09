@@ -95,7 +95,7 @@ type SubmitJobsResponse struct {
 }
 
 // CreateSubmitJobsRequest creates a request to invoke SubmitJobs API
-func CreateSubmitJobsRequest(request *SubmitJobsRequest) {
+func CreateSubmitJobsRequest() (request *SubmitJobsRequest) {
 	request = &SubmitJobsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

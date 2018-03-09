@@ -92,7 +92,7 @@ type DeleteVServerGroupResponse struct {
 }
 
 // CreateDeleteVServerGroupRequest creates a request to invoke DeleteVServerGroup API
-func CreateDeleteVServerGroupRequest(request *DeleteVServerGroupRequest) {
+func CreateDeleteVServerGroupRequest() (request *DeleteVServerGroupRequest) {
 	request = &DeleteVServerGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

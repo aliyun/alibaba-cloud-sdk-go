@@ -95,7 +95,7 @@ type QueryCustomMetricListResponse struct {
 }
 
 // CreateQueryCustomMetricListRequest creates a request to invoke QueryCustomMetricList API
-func CreateQueryCustomMetricListRequest(request *QueryCustomMetricListRequest) {
+func CreateQueryCustomMetricListRequest() (request *QueryCustomMetricListRequest) {
 	request = &QueryCustomMetricListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

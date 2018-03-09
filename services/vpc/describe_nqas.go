@@ -98,7 +98,7 @@ type DescribeNqasResponse struct {
 }
 
 // CreateDescribeNqasRequest creates a request to invoke DescribeNqas API
-func CreateDescribeNqasRequest(request *DescribeNqasRequest) {
+func CreateDescribeNqasRequest() (request *DescribeNqasRequest) {
 	request = &DescribeNqasRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

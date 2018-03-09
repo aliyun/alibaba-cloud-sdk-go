@@ -88,7 +88,7 @@ type ListCustomImagesResponse struct {
 }
 
 // CreateListCustomImagesRequest creates a request to invoke ListCustomImages API
-func CreateListCustomImagesRequest(request *ListCustomImagesRequest) {
+func CreateListCustomImagesRequest() (request *ListCustomImagesRequest) {
 	request = &ListCustomImagesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

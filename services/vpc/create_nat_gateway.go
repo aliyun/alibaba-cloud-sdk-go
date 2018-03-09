@@ -108,7 +108,7 @@ type CreateNatGatewayResponse struct {
 }
 
 // CreateCreateNatGatewayRequest creates a request to invoke CreateNatGateway API
-func CreateCreateNatGatewayRequest(request *CreateNatGatewayRequest) {
+func CreateCreateNatGatewayRequest() (request *CreateNatGatewayRequest) {
 	request = &CreateNatGatewayRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

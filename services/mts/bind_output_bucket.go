@@ -91,7 +91,7 @@ type BindOutputBucketResponse struct {
 }
 
 // CreateBindOutputBucketRequest creates a request to invoke BindOutputBucket API
-func CreateBindOutputBucketRequest(request *BindOutputBucketRequest) {
+func CreateBindOutputBucketRequest() (request *BindOutputBucketRequest) {
 	request = &BindOutputBucketRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

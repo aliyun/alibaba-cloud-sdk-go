@@ -90,7 +90,7 @@ type RequestServiceOfCloudDBAResponse struct {
 }
 
 // CreateRequestServiceOfCloudDBARequest creates a request to invoke RequestServiceOfCloudDBA API
-func CreateRequestServiceOfCloudDBARequest(request *RequestServiceOfCloudDBARequest) {
+func CreateRequestServiceOfCloudDBARequest() (request *RequestServiceOfCloudDBARequest) {
 	request = &RequestServiceOfCloudDBARequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

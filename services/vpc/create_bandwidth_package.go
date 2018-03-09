@@ -99,7 +99,7 @@ type CreateBandwidthPackageResponse struct {
 }
 
 // CreateCreateBandwidthPackageRequest creates a request to invoke CreateBandwidthPackage API
-func CreateCreateBandwidthPackageRequest(request *CreateBandwidthPackageRequest) {
+func CreateCreateBandwidthPackageRequest() (request *CreateBandwidthPackageRequest) {
 	request = &CreateBandwidthPackageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

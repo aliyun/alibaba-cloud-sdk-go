@@ -96,7 +96,7 @@ type ListMediaWorkflowExecutionsResponse struct {
 }
 
 // CreateListMediaWorkflowExecutionsRequest creates a request to invoke ListMediaWorkflowExecutions API
-func CreateListMediaWorkflowExecutionsRequest(request *ListMediaWorkflowExecutionsRequest) {
+func CreateListMediaWorkflowExecutionsRequest() (request *ListMediaWorkflowExecutionsRequest) {
 	request = &ListMediaWorkflowExecutionsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

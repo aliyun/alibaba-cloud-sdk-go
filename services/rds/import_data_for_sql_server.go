@@ -92,7 +92,7 @@ type ImportDataForSQLServerResponse struct {
 }
 
 // CreateImportDataForSQLServerRequest creates a request to invoke ImportDataForSQLServer API
-func CreateImportDataForSQLServerRequest(request *ImportDataForSQLServerRequest) {
+func CreateImportDataForSQLServerRequest() (request *ImportDataForSQLServerRequest) {
 	request = &ImportDataForSQLServerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

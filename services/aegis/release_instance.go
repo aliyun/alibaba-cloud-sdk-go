@@ -87,7 +87,7 @@ type ReleaseInstanceResponse struct {
 }
 
 // CreateReleaseInstanceRequest creates a request to invoke ReleaseInstance API
-func CreateReleaseInstanceRequest(request *ReleaseInstanceRequest) {
+func CreateReleaseInstanceRequest() (request *ReleaseInstanceRequest) {
 	request = &ReleaseInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

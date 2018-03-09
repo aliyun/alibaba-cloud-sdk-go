@@ -92,7 +92,7 @@ type QueryMediaInfoJobListResponse struct {
 }
 
 // CreateQueryMediaInfoJobListRequest creates a request to invoke QueryMediaInfoJobList API
-func CreateQueryMediaInfoJobListRequest(request *QueryMediaInfoJobListRequest) {
+func CreateQueryMediaInfoJobListRequest() (request *QueryMediaInfoJobListRequest) {
 	request = &QueryMediaInfoJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

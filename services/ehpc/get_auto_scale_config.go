@@ -99,7 +99,7 @@ type GetAutoScaleConfigResponse struct {
 }
 
 // CreateGetAutoScaleConfigRequest creates a request to invoke GetAutoScaleConfig API
-func CreateGetAutoScaleConfigRequest(request *GetAutoScaleConfigRequest) {
+func CreateGetAutoScaleConfigRequest() (request *GetAutoScaleConfigRequest) {
 	request = &GetAutoScaleConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

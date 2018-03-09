@@ -90,7 +90,7 @@ type DeleteNatGatewayResponse struct {
 }
 
 // CreateDeleteNatGatewayRequest creates a request to invoke DeleteNatGateway API
-func CreateDeleteNatGatewayRequest(request *DeleteNatGatewayRequest) {
+func CreateDeleteNatGatewayRequest() (request *DeleteNatGatewayRequest) {
 	request = &DeleteNatGatewayRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

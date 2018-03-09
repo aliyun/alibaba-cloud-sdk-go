@@ -102,7 +102,7 @@ type RegisterPhotoResponse struct {
 }
 
 // CreateRegisterPhotoRequest creates a request to invoke RegisterPhoto API
-func CreateRegisterPhotoRequest(request *RegisterPhotoRequest) {
+func CreateRegisterPhotoRequest() (request *RegisterPhotoRequest) {
 	request = &RegisterPhotoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

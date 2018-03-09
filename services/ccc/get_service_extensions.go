@@ -92,7 +92,7 @@ type GetServiceExtensionsResponse struct {
 }
 
 // CreateGetServiceExtensionsRequest creates a request to invoke GetServiceExtensions API
-func CreateGetServiceExtensionsRequest(request *GetServiceExtensionsRequest) {
+func CreateGetServiceExtensionsRequest() (request *GetServiceExtensionsRequest) {
 	request = &GetServiceExtensionsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

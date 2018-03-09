@@ -91,7 +91,7 @@ type DeleteHaVipResponse struct {
 }
 
 // CreateDeleteHaVipRequest creates a request to invoke DeleteHaVip API
-func CreateDeleteHaVipRequest(request *DeleteHaVipRequest) {
+func CreateDeleteHaVipRequest() (request *DeleteHaVipRequest) {
 	request = &DeleteHaVipRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

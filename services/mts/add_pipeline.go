@@ -95,7 +95,7 @@ type AddPipelineResponse struct {
 }
 
 // CreateAddPipelineRequest creates a request to invoke AddPipeline API
-func CreateAddPipelineRequest(request *AddPipelineRequest) {
+func CreateAddPipelineRequest() (request *AddPipelineRequest) {
 	request = &AddPipelineRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

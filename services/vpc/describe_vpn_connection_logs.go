@@ -100,7 +100,7 @@ type DescribeVpnConnectionLogsResponse struct {
 }
 
 // CreateDescribeVpnConnectionLogsRequest creates a request to invoke DescribeVpnConnectionLogs API
-func CreateDescribeVpnConnectionLogsRequest(request *DescribeVpnConnectionLogsRequest) {
+func CreateDescribeVpnConnectionLogsRequest() (request *DescribeVpnConnectionLogsRequest) {
 	request = &DescribeVpnConnectionLogsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

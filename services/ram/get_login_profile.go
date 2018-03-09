@@ -87,7 +87,7 @@ type GetLoginProfileResponse struct {
 }
 
 // CreateGetLoginProfileRequest creates a request to invoke GetLoginProfile API
-func CreateGetLoginProfileRequest(request *GetLoginProfileRequest) {
+func CreateGetLoginProfileRequest() (request *GetLoginProfileRequest) {
 	request = &GetLoginProfileRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

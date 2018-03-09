@@ -85,7 +85,7 @@ type DeleteNetworkInterfaceResponse struct {
 }
 
 // CreateDeleteNetworkInterfaceRequest creates a request to invoke DeleteNetworkInterface API
-func CreateDeleteNetworkInterfaceRequest(request *DeleteNetworkInterfaceRequest) {
+func CreateDeleteNetworkInterfaceRequest() (request *DeleteNetworkInterfaceRequest) {
 	request = &DeleteNetworkInterfaceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

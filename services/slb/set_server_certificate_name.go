@@ -93,7 +93,7 @@ type SetServerCertificateNameResponse struct {
 }
 
 // CreateSetServerCertificateNameRequest creates a request to invoke SetServerCertificateName API
-func CreateSetServerCertificateNameRequest(request *SetServerCertificateNameRequest) {
+func CreateSetServerCertificateNameRequest() (request *SetServerCertificateNameRequest) {
 	request = &SetServerCertificateNameRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

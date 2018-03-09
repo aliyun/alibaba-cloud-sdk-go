@@ -89,7 +89,7 @@ type CreateTagResponse struct {
 }
 
 // CreateCreateTagRequest creates a request to invoke CreateTag API
-func CreateCreateTagRequest(request *CreateTagRequest) {
+func CreateCreateTagRequest() (request *CreateTagRequest) {
 	request = &CreateTagRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

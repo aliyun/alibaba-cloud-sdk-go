@@ -90,7 +90,7 @@ type DeleteMediaResponse struct {
 }
 
 // CreateDeleteMediaRequest creates a request to invoke DeleteMedia API
-func CreateDeleteMediaRequest(request *DeleteMediaRequest) {
+func CreateDeleteMediaRequest() (request *DeleteMediaRequest) {
 	request = &DeleteMediaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

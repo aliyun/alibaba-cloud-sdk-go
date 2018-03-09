@@ -85,7 +85,7 @@ type ModifySecurityGroupRuleResponse struct {
 }
 
 // CreateModifySecurityGroupRuleRequest creates a request to invoke ModifySecurityGroupRule API
-func CreateModifySecurityGroupRuleRequest(request *ModifySecurityGroupRuleRequest) {
+func CreateModifySecurityGroupRuleRequest() (request *ModifySecurityGroupRuleRequest) {
 	request = &ModifySecurityGroupRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

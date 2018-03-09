@@ -90,7 +90,7 @@ type AttachClassicLinkVpcResponse struct {
 }
 
 // CreateAttachClassicLinkVpcRequest creates a request to invoke AttachClassicLinkVpc API
-func CreateAttachClassicLinkVpcRequest(request *AttachClassicLinkVpcRequest) {
+func CreateAttachClassicLinkVpcRequest() (request *AttachClassicLinkVpcRequest) {
 	request = &AttachClassicLinkVpcRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

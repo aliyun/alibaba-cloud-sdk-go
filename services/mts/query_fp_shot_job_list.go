@@ -92,7 +92,7 @@ type QueryFpShotJobListResponse struct {
 }
 
 // CreateQueryFpShotJobListRequest creates a request to invoke QueryFpShotJobList API
-func CreateQueryFpShotJobListRequest(request *QueryFpShotJobListRequest) {
+func CreateQueryFpShotJobListRequest() (request *QueryFpShotJobListRequest) {
 	request = &QueryFpShotJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

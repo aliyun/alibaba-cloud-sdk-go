@@ -91,7 +91,7 @@ type ChangeDomainOfDnsProductResponse struct {
 }
 
 // CreateChangeDomainOfDnsProductRequest creates a request to invoke ChangeDomainOfDnsProduct API
-func CreateChangeDomainOfDnsProductRequest(request *ChangeDomainOfDnsProductRequest) {
+func CreateChangeDomainOfDnsProductRequest() (request *ChangeDomainOfDnsProductRequest) {
 	request = &ChangeDomainOfDnsProductRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

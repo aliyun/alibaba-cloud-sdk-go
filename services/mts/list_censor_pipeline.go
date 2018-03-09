@@ -96,7 +96,7 @@ type ListCensorPipelineResponse struct {
 }
 
 // CreateListCensorPipelineRequest creates a request to invoke ListCensorPipeline API
-func CreateListCensorPipelineRequest(request *ListCensorPipelineRequest) {
+func CreateListCensorPipelineRequest() (request *ListCensorPipelineRequest) {
 	request = &ListCensorPipelineRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

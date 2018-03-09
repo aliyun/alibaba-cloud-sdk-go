@@ -92,7 +92,7 @@ type DescribeWebLogDownloadFilePageResponse struct {
 }
 
 // CreateDescribeWebLogDownloadFilePageRequest creates a request to invoke DescribeWebLogDownloadFilePage API
-func CreateDescribeWebLogDownloadFilePageRequest(request *DescribeWebLogDownloadFilePageRequest) {
+func CreateDescribeWebLogDownloadFilePageRequest() (request *DescribeWebLogDownloadFilePageRequest) {
 	request = &DescribeWebLogDownloadFilePageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

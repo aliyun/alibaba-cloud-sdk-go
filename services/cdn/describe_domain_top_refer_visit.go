@@ -93,7 +93,7 @@ type DescribeDomainTopReferVisitResponse struct {
 }
 
 // CreateDescribeDomainTopReferVisitRequest creates a request to invoke DescribeDomainTopReferVisit API
-func CreateDescribeDomainTopReferVisitRequest(request *DescribeDomainTopReferVisitRequest) {
+func CreateDescribeDomainTopReferVisitRequest() (request *DescribeDomainTopReferVisitRequest) {
 	request = &DescribeDomainTopReferVisitRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

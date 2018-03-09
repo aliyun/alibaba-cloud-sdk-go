@@ -92,7 +92,7 @@ type QuerySnapshotJobListResponse struct {
 }
 
 // CreateQuerySnapshotJobListRequest creates a request to invoke QuerySnapshotJobList API
-func CreateQuerySnapshotJobListRequest(request *QuerySnapshotJobListRequest) {
+func CreateQuerySnapshotJobListRequest() (request *QuerySnapshotJobListRequest) {
 	request = &QuerySnapshotJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

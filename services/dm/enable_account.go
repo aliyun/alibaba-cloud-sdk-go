@@ -88,7 +88,7 @@ type EnableAccountResponse struct {
 }
 
 // CreateEnableAccountRequest creates a request to invoke EnableAccount API
-func CreateEnableAccountRequest(request *EnableAccountRequest) {
+func CreateEnableAccountRequest() (request *EnableAccountRequest) {
 	request = &EnableAccountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -96,7 +96,7 @@ type DescribeCdnMonitorDataResponse struct {
 }
 
 // CreateDescribeCdnMonitorDataRequest creates a request to invoke DescribeCdnMonitorData API
-func CreateDescribeCdnMonitorDataRequest(request *DescribeCdnMonitorDataRequest) {
+func CreateDescribeCdnMonitorDataRequest() (request *DescribeCdnMonitorDataRequest) {
 	request = &DescribeCdnMonitorDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -103,7 +103,7 @@ type SearchMediaResponse struct {
 }
 
 // CreateSearchMediaRequest creates a request to invoke SearchMedia API
-func CreateSearchMediaRequest(request *SearchMediaRequest) {
+func CreateSearchMediaRequest() (request *SearchMediaRequest) {
 	request = &SearchMediaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

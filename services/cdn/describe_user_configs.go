@@ -89,7 +89,7 @@ type DescribeUserConfigsResponse struct {
 }
 
 // CreateDescribeUserConfigsRequest creates a request to invoke DescribeUserConfigs API
-func CreateDescribeUserConfigsRequest(request *DescribeUserConfigsRequest) {
+func CreateDescribeUserConfigsRequest() (request *DescribeUserConfigsRequest) {
 	request = &DescribeUserConfigsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

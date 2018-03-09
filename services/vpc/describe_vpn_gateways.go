@@ -99,7 +99,7 @@ type DescribeVpnGatewaysResponse struct {
 }
 
 // CreateDescribeVpnGatewaysRequest creates a request to invoke DescribeVpnGateways API
-func CreateDescribeVpnGatewaysRequest(request *DescribeVpnGatewaysRequest) {
+func CreateDescribeVpnGatewaysRequest() (request *DescribeVpnGatewaysRequest) {
 	request = &DescribeVpnGatewaysRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

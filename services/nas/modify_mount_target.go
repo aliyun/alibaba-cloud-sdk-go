@@ -89,7 +89,7 @@ type ModifyMountTargetResponse struct {
 }
 
 // CreateModifyMountTargetRequest creates a request to invoke ModifyMountTarget API
-func CreateModifyMountTargetRequest(request *ModifyMountTargetRequest) {
+func CreateModifyMountTargetRequest() (request *ModifyMountTargetRequest) {
 	request = &ModifyMountTargetRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

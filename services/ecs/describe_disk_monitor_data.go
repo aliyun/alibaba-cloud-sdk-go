@@ -95,7 +95,7 @@ type DescribeDiskMonitorDataResponse struct {
 }
 
 // CreateDescribeDiskMonitorDataRequest creates a request to invoke DescribeDiskMonitorData API
-func CreateDescribeDiskMonitorDataRequest(request *DescribeDiskMonitorDataRequest) {
+func CreateDescribeDiskMonitorDataRequest() (request *DescribeDiskMonitorDataRequest) {
 	request = &DescribeDiskMonitorDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

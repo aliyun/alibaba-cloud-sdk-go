@@ -87,7 +87,7 @@ type GetRoleResponse struct {
 }
 
 // CreateGetRoleRequest creates a request to invoke GetRole API
-func CreateGetRoleRequest(request *GetRoleRequest) {
+func CreateGetRoleRequest() (request *GetRoleRequest) {
 	request = &GetRoleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -87,7 +87,7 @@ type RemoveUserFromGroupResponse struct {
 }
 
 // CreateRemoveUserFromGroupRequest creates a request to invoke RemoveUserFromGroup API
-func CreateRemoveUserFromGroupRequest(request *RemoveUserFromGroupRequest) {
+func CreateRemoveUserFromGroupRequest() (request *RemoveUserFromGroupRequest) {
 	request = &RemoveUserFromGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -103,7 +103,7 @@ type QueryMetricLastResponse struct {
 }
 
 // CreateQueryMetricLastRequest creates a request to invoke QueryMetricLast API
-func CreateQueryMetricLastRequest(request *QueryMetricLastRequest) {
+func CreateQueryMetricLastRequest() (request *QueryMetricLastRequest) {
 	request = &QueryMetricLastRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -90,7 +90,7 @@ type SetErrorPageConfigResponse struct {
 }
 
 // CreateSetErrorPageConfigRequest creates a request to invoke SetErrorPageConfig API
-func CreateSetErrorPageConfigRequest(request *SetErrorPageConfigRequest) {
+func CreateSetErrorPageConfigRequest() (request *SetErrorPageConfigRequest) {
 	request = &SetErrorPageConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

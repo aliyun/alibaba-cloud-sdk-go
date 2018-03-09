@@ -89,7 +89,7 @@ type DescribeFlowBlockholeStatusResponse struct {
 }
 
 // CreateDescribeFlowBlockholeStatusRequest creates a request to invoke DescribeFlowBlockholeStatus API
-func CreateDescribeFlowBlockholeStatusRequest(request *DescribeFlowBlockholeStatusRequest) {
+func CreateDescribeFlowBlockholeStatusRequest() (request *DescribeFlowBlockholeStatusRequest) {
 	request = &DescribeFlowBlockholeStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

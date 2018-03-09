@@ -91,7 +91,7 @@ type MigrateDomainToHttpsDeliveryResponse struct {
 }
 
 // CreateMigrateDomainToHttpsDeliveryRequest creates a request to invoke MigrateDomainToHttpsDelivery API
-func CreateMigrateDomainToHttpsDeliveryRequest(request *MigrateDomainToHttpsDeliveryRequest) {
+func CreateMigrateDomainToHttpsDeliveryRequest() (request *MigrateDomainToHttpsDeliveryRequest) {
 	request = &MigrateDomainToHttpsDeliveryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

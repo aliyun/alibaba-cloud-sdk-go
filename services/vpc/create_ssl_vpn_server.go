@@ -100,7 +100,7 @@ type CreateSslVpnServerResponse struct {
 }
 
 // CreateCreateSslVpnServerRequest creates a request to invoke CreateSslVpnServer API
-func CreateCreateSslVpnServerRequest(request *CreateSslVpnServerRequest) {
+func CreateCreateSslVpnServerRequest() (request *CreateSslVpnServerRequest) {
 	request = &CreateSslVpnServerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -86,7 +86,7 @@ type GetTriggerHookResponse struct {
 }
 
 // CreateGetTriggerHookRequest creates a request to invoke GetTriggerHook API
-func CreateGetTriggerHookRequest(request *GetTriggerHookRequest) {
+func CreateGetTriggerHookRequest() (request *GetTriggerHookRequest) {
 	request = &GetTriggerHookRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}

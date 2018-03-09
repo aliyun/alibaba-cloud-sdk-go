@@ -91,7 +91,7 @@ type ModifyInstanceAutoReleaseTimeResponse struct {
 }
 
 // CreateModifyInstanceAutoReleaseTimeRequest creates a request to invoke ModifyInstanceAutoReleaseTime API
-func CreateModifyInstanceAutoReleaseTimeRequest(request *ModifyInstanceAutoReleaseTimeRequest) {
+func CreateModifyInstanceAutoReleaseTimeRequest() (request *ModifyInstanceAutoReleaseTimeRequest) {
 	request = &ModifyInstanceAutoReleaseTimeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -92,7 +92,7 @@ type ModifyDBInstanceTDEResponse struct {
 }
 
 // CreateModifyDBInstanceTDERequest creates a request to invoke ModifyDBInstanceTDE API
-func CreateModifyDBInstanceTDERequest(request *ModifyDBInstanceTDERequest) {
+func CreateModifyDBInstanceTDERequest() (request *ModifyDBInstanceTDERequest) {
 	request = &ModifyDBInstanceTDERequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -92,7 +92,7 @@ type QueryFacerecogJobListResponse struct {
 }
 
 // CreateQueryFacerecogJobListRequest creates a request to invoke QueryFacerecogJobList API
-func CreateQueryFacerecogJobListRequest(request *QueryFacerecogJobListRequest) {
+func CreateQueryFacerecogJobListRequest() (request *QueryFacerecogJobListRequest) {
 	request = &QueryFacerecogJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

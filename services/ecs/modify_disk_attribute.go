@@ -95,7 +95,7 @@ type ModifyDiskAttributeResponse struct {
 }
 
 // CreateModifyDiskAttributeRequest creates a request to invoke ModifyDiskAttribute API
-func CreateModifyDiskAttributeRequest(request *ModifyDiskAttributeRequest) {
+func CreateModifyDiskAttributeRequest() (request *ModifyDiskAttributeRequest) {
 	request = &ModifyDiskAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

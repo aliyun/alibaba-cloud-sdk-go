@@ -93,7 +93,7 @@ type PushNoticeToAndroidResponse struct {
 }
 
 // CreatePushNoticeToAndroidRequest creates a request to invoke PushNoticeToAndroid API
-func CreatePushNoticeToAndroidRequest(request *PushNoticeToAndroidRequest) {
+func CreatePushNoticeToAndroidRequest() (request *PushNoticeToAndroidRequest) {
 	request = &PushNoticeToAndroidRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

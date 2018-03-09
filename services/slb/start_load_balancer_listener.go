@@ -93,7 +93,7 @@ type StartLoadBalancerListenerResponse struct {
 }
 
 // CreateStartLoadBalancerListenerRequest creates a request to invoke StartLoadBalancerListener API
-func CreateStartLoadBalancerListenerRequest(request *StartLoadBalancerListenerRequest) {
+func CreateStartLoadBalancerListenerRequest() (request *StartLoadBalancerListenerRequest) {
 	request = &StartLoadBalancerListenerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

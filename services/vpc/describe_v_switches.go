@@ -100,7 +100,7 @@ type DescribeVSwitchesResponse struct {
 }
 
 // CreateDescribeVSwitchesRequest creates a request to invoke DescribeVSwitches API
-func CreateDescribeVSwitchesRequest(request *DescribeVSwitchesRequest) {
+func CreateDescribeVSwitchesRequest() (request *DescribeVSwitchesRequest) {
 	request = &DescribeVSwitchesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

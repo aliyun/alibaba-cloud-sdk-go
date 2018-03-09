@@ -86,7 +86,7 @@ type DeleteJobTemplatesResponse struct {
 }
 
 // CreateDeleteJobTemplatesRequest creates a request to invoke DeleteJobTemplates API
-func CreateDeleteJobTemplatesRequest(request *DeleteJobTemplatesRequest) {
+func CreateDeleteJobTemplatesRequest() (request *DeleteJobTemplatesRequest) {
 	request = &DeleteJobTemplatesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

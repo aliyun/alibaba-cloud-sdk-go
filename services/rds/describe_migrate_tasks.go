@@ -98,7 +98,7 @@ type DescribeMigrateTasksResponse struct {
 }
 
 // CreateDescribeMigrateTasksRequest creates a request to invoke DescribeMigrateTasks API
-func CreateDescribeMigrateTasksRequest(request *DescribeMigrateTasksRequest) {
+func CreateDescribeMigrateTasksRequest() (request *DescribeMigrateTasksRequest) {
 	request = &DescribeMigrateTasksRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

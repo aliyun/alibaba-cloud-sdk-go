@@ -96,7 +96,7 @@ type DescribeDomainReqHitRateDataResponse struct {
 }
 
 // CreateDescribeDomainReqHitRateDataRequest creates a request to invoke DescribeDomainReqHitRateData API
-func CreateDescribeDomainReqHitRateDataRequest(request *DescribeDomainReqHitRateDataRequest) {
+func CreateDescribeDomainReqHitRateDataRequest() (request *DescribeDomainReqHitRateDataRequest) {
 	request = &DescribeDomainReqHitRateDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

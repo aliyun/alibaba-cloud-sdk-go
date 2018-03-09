@@ -92,7 +92,7 @@ type GetEventResponse struct {
 }
 
 // CreateGetEventRequest creates a request to invoke GetEvent API
-func CreateGetEventRequest(request *GetEventRequest) {
+func CreateGetEventRequest() (request *GetEventRequest) {
 	request = &GetEventRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

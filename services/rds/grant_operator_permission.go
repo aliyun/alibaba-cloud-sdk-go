@@ -92,7 +92,7 @@ type GrantOperatorPermissionResponse struct {
 }
 
 // CreateGrantOperatorPermissionRequest creates a request to invoke GrantOperatorPermission API
-func CreateGrantOperatorPermissionRequest(request *GrantOperatorPermissionRequest) {
+func CreateGrantOperatorPermissionRequest() (request *GrantOperatorPermissionRequest) {
 	request = &GrantOperatorPermissionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

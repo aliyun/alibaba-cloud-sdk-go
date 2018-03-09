@@ -91,7 +91,7 @@ type DeleteDatabaseResponse struct {
 }
 
 // CreateDeleteDatabaseRequest creates a request to invoke DeleteDatabase API
-func CreateDeleteDatabaseRequest(request *DeleteDatabaseRequest) {
+func CreateDeleteDatabaseRequest() (request *DeleteDatabaseRequest) {
 	request = &DeleteDatabaseRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

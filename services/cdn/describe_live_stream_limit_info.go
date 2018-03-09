@@ -89,7 +89,7 @@ type DescribeLiveStreamLimitInfoResponse struct {
 }
 
 // CreateDescribeLiveStreamLimitInfoRequest creates a request to invoke DescribeLiveStreamLimitInfo API
-func CreateDescribeLiveStreamLimitInfoRequest(request *DescribeLiveStreamLimitInfoRequest) {
+func CreateDescribeLiveStreamLimitInfoRequest() (request *DescribeLiveStreamLimitInfoRequest) {
 	request = &DescribeLiveStreamLimitInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

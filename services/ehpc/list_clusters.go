@@ -91,7 +91,7 @@ type ListClustersResponse struct {
 }
 
 // CreateListClustersRequest creates a request to invoke ListClusters API
-func CreateListClustersRequest(request *ListClustersRequest) {
+func CreateListClustersRequest() (request *ListClustersRequest) {
 	request = &ListClustersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

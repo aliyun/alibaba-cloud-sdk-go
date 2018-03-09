@@ -97,7 +97,7 @@ type QueryTemplateByParamResponse struct {
 }
 
 // CreateQueryTemplateByParamRequest creates a request to invoke QueryTemplateByParam API
-func CreateQueryTemplateByParamRequest(request *QueryTemplateByParamRequest) {
+func CreateQueryTemplateByParamRequest() (request *QueryTemplateByParamRequest) {
 	request = &QueryTemplateByParamRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

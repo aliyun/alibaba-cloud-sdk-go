@@ -91,7 +91,7 @@ type DeleteCommonBandwidthPackageResponse struct {
 }
 
 // CreateDeleteCommonBandwidthPackageRequest creates a request to invoke DeleteCommonBandwidthPackage API
-func CreateDeleteCommonBandwidthPackageRequest(request *DeleteCommonBandwidthPackageRequest) {
+func CreateDeleteCommonBandwidthPackageRequest() (request *DeleteCommonBandwidthPackageRequest) {
 	request = &DeleteCommonBandwidthPackageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

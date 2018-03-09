@@ -95,7 +95,7 @@ type DescribeDBInstanceNetInfoResponse struct {
 }
 
 // CreateDescribeDBInstanceNetInfoRequest creates a request to invoke DescribeDBInstanceNetInfo API
-func CreateDescribeDBInstanceNetInfoRequest(request *DescribeDBInstanceNetInfoRequest) {
+func CreateDescribeDBInstanceNetInfoRequest() (request *DescribeDBInstanceNetInfoRequest) {
 	request = &DescribeDBInstanceNetInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

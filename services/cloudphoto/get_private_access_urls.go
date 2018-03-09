@@ -93,7 +93,7 @@ type GetPrivateAccessUrlsResponse struct {
 }
 
 // CreateGetPrivateAccessUrlsRequest creates a request to invoke GetPrivateAccessUrls API
-func CreateGetPrivateAccessUrlsRequest(request *GetPrivateAccessUrlsRequest) {
+func CreateGetPrivateAccessUrlsRequest() (request *GetPrivateAccessUrlsRequest) {
 	request = &GetPrivateAccessUrlsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

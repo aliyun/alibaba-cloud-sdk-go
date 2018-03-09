@@ -92,7 +92,7 @@ type ImportKeyPairResponse struct {
 }
 
 // CreateImportKeyPairRequest creates a request to invoke ImportKeyPair API
-func CreateImportKeyPairRequest(request *ImportKeyPairRequest) {
+func CreateImportKeyPairRequest() (request *ImportKeyPairRequest) {
 	request = &ImportKeyPairRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

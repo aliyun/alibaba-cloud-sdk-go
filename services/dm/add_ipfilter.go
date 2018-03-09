@@ -89,7 +89,7 @@ type AddIpfilterResponse struct {
 }
 
 // CreateAddIpfilterRequest creates a request to invoke AddIpfilter API
-func CreateAddIpfilterRequest(request *AddIpfilterRequest) {
+func CreateAddIpfilterRequest() (request *AddIpfilterRequest) {
 	request = &AddIpfilterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

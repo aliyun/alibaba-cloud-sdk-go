@@ -89,7 +89,7 @@ type SetOptimizeConfigResponse struct {
 }
 
 // CreateSetOptimizeConfigRequest creates a request to invoke SetOptimizeConfig API
-func CreateSetOptimizeConfigRequest(request *SetOptimizeConfigRequest) {
+func CreateSetOptimizeConfigRequest() (request *SetOptimizeConfigRequest) {
 	request = &SetOptimizeConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

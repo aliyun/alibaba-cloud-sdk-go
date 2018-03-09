@@ -98,7 +98,7 @@ type GetSenderAddressListResponse struct {
 }
 
 // CreateGetSenderAddressListRequest creates a request to invoke GetSenderAddressList API
-func CreateGetSenderAddressListRequest(request *GetSenderAddressListRequest) {
+func CreateGetSenderAddressListRequest() (request *GetSenderAddressListRequest) {
 	request = &GetSenderAddressListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

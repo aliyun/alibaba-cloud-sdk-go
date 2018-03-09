@@ -85,7 +85,7 @@ type DescribeClusterNodeInfoResponse struct {
 }
 
 // CreateDescribeClusterNodeInfoRequest creates a request to invoke DescribeClusterNodeInfo API
-func CreateDescribeClusterNodeInfoRequest(request *DescribeClusterNodeInfoRequest) {
+func CreateDescribeClusterNodeInfoRequest() (request *DescribeClusterNodeInfoRequest) {
 	request = &DescribeClusterNodeInfoRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}

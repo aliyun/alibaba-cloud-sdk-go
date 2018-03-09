@@ -98,7 +98,7 @@ type DescribeSQLLogReportsResponse struct {
 }
 
 // CreateDescribeSQLLogReportsRequest creates a request to invoke DescribeSQLLogReports API
-func CreateDescribeSQLLogReportsRequest(request *DescribeSQLLogReportsRequest) {
+func CreateDescribeSQLLogReportsRequest() (request *DescribeSQLLogReportsRequest) {
 	request = &DescribeSQLLogReportsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

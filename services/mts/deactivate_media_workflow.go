@@ -91,7 +91,7 @@ type DeactivateMediaWorkflowResponse struct {
 }
 
 // CreateDeactivateMediaWorkflowRequest creates a request to invoke DeactivateMediaWorkflow API
-func CreateDeactivateMediaWorkflowRequest(request *DeactivateMediaWorkflowRequest) {
+func CreateDeactivateMediaWorkflowRequest() (request *DeactivateMediaWorkflowRequest) {
 	request = &DeactivateMediaWorkflowRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

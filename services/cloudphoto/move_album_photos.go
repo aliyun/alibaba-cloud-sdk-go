@@ -94,7 +94,7 @@ type MoveAlbumPhotosResponse struct {
 }
 
 // CreateMoveAlbumPhotosRequest creates a request to invoke MoveAlbumPhotos API
-func CreateMoveAlbumPhotosRequest(request *MoveAlbumPhotosRequest) {
+func CreateMoveAlbumPhotosRequest() (request *MoveAlbumPhotosRequest) {
 	request = &MoveAlbumPhotosRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

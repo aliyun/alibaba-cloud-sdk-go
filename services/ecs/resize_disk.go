@@ -92,7 +92,7 @@ type ResizeDiskResponse struct {
 }
 
 // CreateResizeDiskRequest creates a request to invoke ResizeDisk API
-func CreateResizeDiskRequest(request *ResizeDiskRequest) {
+func CreateResizeDiskRequest() (request *ResizeDiskRequest) {
 	request = &ResizeDiskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

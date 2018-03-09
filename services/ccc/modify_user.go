@@ -97,7 +97,7 @@ type ModifyUserResponse struct {
 }
 
 // CreateModifyUserRequest creates a request to invoke ModifyUser API
-func CreateModifyUserRequest(request *ModifyUserRequest) {
+func CreateModifyUserRequest() (request *ModifyUserRequest) {
 	request = &ModifyUserRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

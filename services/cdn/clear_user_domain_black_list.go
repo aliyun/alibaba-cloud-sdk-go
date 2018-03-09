@@ -89,7 +89,7 @@ type ClearUserDomainBlackListResponse struct {
 }
 
 // CreateClearUserDomainBlackListRequest creates a request to invoke ClearUserDomainBlackList API
-func CreateClearUserDomainBlackListRequest(request *ClearUserDomainBlackListRequest) {
+func CreateClearUserDomainBlackListRequest() (request *ClearUserDomainBlackListRequest) {
 	request = &ClearUserDomainBlackListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

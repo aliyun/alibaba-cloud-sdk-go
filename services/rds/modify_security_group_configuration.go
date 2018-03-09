@@ -92,7 +92,7 @@ type ModifySecurityGroupConfigurationResponse struct {
 }
 
 // CreateModifySecurityGroupConfigurationRequest creates a request to invoke ModifySecurityGroupConfiguration API
-func CreateModifySecurityGroupConfigurationRequest(request *ModifySecurityGroupConfigurationRequest) {
+func CreateModifySecurityGroupConfigurationRequest() (request *ModifySecurityGroupConfigurationRequest) {
 	request = &ModifySecurityGroupConfigurationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

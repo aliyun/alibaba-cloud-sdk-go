@@ -91,7 +91,7 @@ type SetMeResponse struct {
 }
 
 // CreateSetMeRequest creates a request to invoke SetMe API
-func CreateSetMeRequest(request *SetMeRequest) {
+func CreateSetMeRequest() (request *SetMeRequest) {
 	request = &SetMeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

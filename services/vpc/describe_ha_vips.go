@@ -102,7 +102,7 @@ type DescribeHaVipsResponse struct {
 }
 
 // CreateDescribeHaVipsRequest creates a request to invoke DescribeHaVips API
-func CreateDescribeHaVipsRequest(request *DescribeHaVipsRequest) {
+func CreateDescribeHaVipsRequest() (request *DescribeHaVipsRequest) {
 	request = &DescribeHaVipsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

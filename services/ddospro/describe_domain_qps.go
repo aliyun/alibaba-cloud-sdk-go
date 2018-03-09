@@ -93,7 +93,7 @@ type DescribeDomainQpsResponse struct {
 }
 
 // CreateDescribeDomainQpsRequest creates a request to invoke DescribeDomainQps API
-func CreateDescribeDomainQpsRequest(request *DescribeDomainQpsRequest) {
+func CreateDescribeDomainQpsRequest() (request *DescribeDomainQpsRequest) {
 	request = &DescribeDomainQpsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

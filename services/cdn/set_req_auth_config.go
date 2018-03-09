@@ -93,7 +93,7 @@ type SetReqAuthConfigResponse struct {
 }
 
 // CreateSetReqAuthConfigRequest creates a request to invoke SetReqAuthConfig API
-func CreateSetReqAuthConfigRequest(request *SetReqAuthConfigRequest) {
+func CreateSetReqAuthConfigRequest() (request *SetReqAuthConfigRequest) {
 	request = &SetReqAuthConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

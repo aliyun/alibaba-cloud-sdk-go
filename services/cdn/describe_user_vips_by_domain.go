@@ -91,7 +91,7 @@ type DescribeUserVipsByDomainResponse struct {
 }
 
 // CreateDescribeUserVipsByDomainRequest creates a request to invoke DescribeUserVipsByDomain API
-func CreateDescribeUserVipsByDomainRequest(request *DescribeUserVipsByDomainRequest) {
+func CreateDescribeUserVipsByDomainRequest() (request *DescribeUserVipsByDomainRequest) {
 	request = &DescribeUserVipsByDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

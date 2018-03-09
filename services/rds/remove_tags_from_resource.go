@@ -103,7 +103,7 @@ type RemoveTagsFromResourceResponse struct {
 }
 
 // CreateRemoveTagsFromResourceRequest creates a request to invoke RemoveTagsFromResource API
-func CreateRemoveTagsFromResourceRequest(request *RemoveTagsFromResourceRequest) {
+func CreateRemoveTagsFromResourceRequest() (request *RemoveTagsFromResourceRequest) {
 	request = &RemoveTagsFromResourceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

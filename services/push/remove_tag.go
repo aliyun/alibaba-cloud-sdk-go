@@ -87,7 +87,7 @@ type RemoveTagResponse struct {
 }
 
 // CreateRemoveTagRequest creates a request to invoke RemoveTag API
-func CreateRemoveTagRequest(request *RemoveTagRequest) {
+func CreateRemoveTagRequest() (request *RemoveTagRequest) {
 	request = &RemoveTagRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

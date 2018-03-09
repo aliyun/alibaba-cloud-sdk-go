@@ -89,7 +89,7 @@ type CreateSQLDiagnosisResponse struct {
 }
 
 // CreateCreateSQLDiagnosisRequest creates a request to invoke CreateSQLDiagnosis API
-func CreateCreateSQLDiagnosisRequest(request *CreateSQLDiagnosisRequest) {
+func CreateCreateSQLDiagnosisRequest() (request *CreateSQLDiagnosisRequest) {
 	request = &CreateSQLDiagnosisRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

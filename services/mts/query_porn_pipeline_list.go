@@ -92,7 +92,7 @@ type QueryPornPipelineListResponse struct {
 }
 
 // CreateQueryPornPipelineListRequest creates a request to invoke QueryPornPipelineList API
-func CreateQueryPornPipelineListRequest(request *QueryPornPipelineListRequest) {
+func CreateQueryPornPipelineListRequest() (request *QueryPornPipelineListRequest) {
 	request = &QueryPornPipelineListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -92,7 +92,7 @@ type ModifyAccountDescriptionResponse struct {
 }
 
 // CreateModifyAccountDescriptionRequest creates a request to invoke ModifyAccountDescription API
-func CreateModifyAccountDescriptionRequest(request *ModifyAccountDescriptionRequest) {
+func CreateModifyAccountDescriptionRequest() (request *ModifyAccountDescriptionRequest) {
 	request = &ModifyAccountDescriptionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

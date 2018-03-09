@@ -96,7 +96,7 @@ type UpdateCoverPipelineResponse struct {
 }
 
 // CreateUpdateCoverPipelineRequest creates a request to invoke UpdateCoverPipeline API
-func CreateUpdateCoverPipelineRequest(request *UpdateCoverPipelineRequest) {
+func CreateUpdateCoverPipelineRequest() (request *UpdateCoverPipelineRequest) {
 	request = &UpdateCoverPipelineRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

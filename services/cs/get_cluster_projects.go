@@ -85,7 +85,7 @@ type GetClusterProjectsResponse struct {
 }
 
 // CreateGetClusterProjectsRequest creates a request to invoke GetClusterProjects API
-func CreateGetClusterProjectsRequest(request *GetClusterProjectsRequest) {
+func CreateGetClusterProjectsRequest() (request *GetClusterProjectsRequest) {
 	request = &GetClusterProjectsRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}

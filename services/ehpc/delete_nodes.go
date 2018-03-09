@@ -93,7 +93,7 @@ type DeleteNodesResponse struct {
 }
 
 // CreateDeleteNodesRequest creates a request to invoke DeleteNodes API
-func CreateDeleteNodesRequest(request *DeleteNodesRequest) {
+func CreateDeleteNodesRequest() (request *DeleteNodesRequest) {
 	request = &DeleteNodesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

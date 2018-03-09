@@ -91,7 +91,7 @@ type ListRegisteredTagsResponse struct {
 }
 
 // CreateListRegisteredTagsRequest creates a request to invoke ListRegisteredTags API
-func CreateListRegisteredTagsRequest(request *ListRegisteredTagsRequest) {
+func CreateListRegisteredTagsRequest() (request *ListRegisteredTagsRequest) {
 	request = &ListRegisteredTagsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

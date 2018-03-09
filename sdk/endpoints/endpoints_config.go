@@ -1,9 +1,9 @@
 package endpoints
 
 import (
-	"sync"
 	"encoding/json"
 	"fmt"
+	"sync"
 )
 
 const endpointsJson = "{" +
@@ -494,7 +494,7 @@ const endpointsJson = "{" +
 var initOnce sync.Once
 var data interface{}
 
-func getEndpointConfigData() (interface{}) {
+func getEndpointConfigData() interface{} {
 	initOnce.Do(func() {
 		err := json.Unmarshal([]byte(endpointsJson), &data)
 		if err != nil {

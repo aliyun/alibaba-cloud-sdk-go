@@ -94,7 +94,7 @@ type SubmitCoverJobResponse struct {
 }
 
 // CreateSubmitCoverJobRequest creates a request to invoke SubmitCoverJob API
-func CreateSubmitCoverJobRequest(request *SubmitCoverJobRequest) {
+func CreateSubmitCoverJobRequest() (request *SubmitCoverJobRequest) {
 	request = &SubmitCoverJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

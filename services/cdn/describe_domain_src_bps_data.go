@@ -90,7 +90,7 @@ type DescribeDomainSrcBpsDataResponse struct {
 }
 
 // CreateDescribeDomainSrcBpsDataRequest creates a request to invoke DescribeDomainSrcBpsData API
-func CreateDescribeDomainSrcBpsDataRequest(request *DescribeDomainSrcBpsDataRequest) {
+func CreateDescribeDomainSrcBpsDataRequest() (request *DescribeDomainSrcBpsDataRequest) {
 	request = &DescribeDomainSrcBpsDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -91,7 +91,7 @@ type UpdateCategoryNameResponse struct {
 }
 
 // CreateUpdateCategoryNameRequest creates a request to invoke UpdateCategoryName API
-func CreateUpdateCategoryNameRequest(request *UpdateCategoryNameRequest) {
+func CreateUpdateCategoryNameRequest() (request *UpdateCategoryNameRequest) {
 	request = &UpdateCategoryNameRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

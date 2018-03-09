@@ -88,7 +88,7 @@ type QuerySystemEventDetailResponse struct {
 }
 
 // CreateQuerySystemEventDetailRequest creates a request to invoke QuerySystemEventDetail API
-func CreateQuerySystemEventDetailRequest(request *QuerySystemEventDetailRequest) {
+func CreateQuerySystemEventDetailRequest() (request *QuerySystemEventDetailRequest) {
 	request = &QuerySystemEventDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

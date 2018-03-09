@@ -98,7 +98,7 @@ type ModifyInstanceChargeTypeResponse struct {
 }
 
 // CreateModifyInstanceChargeTypeRequest creates a request to invoke ModifyInstanceChargeType API
-func CreateModifyInstanceChargeTypeRequest(request *ModifyInstanceChargeTypeRequest) {
+func CreateModifyInstanceChargeTypeRequest() (request *ModifyInstanceChargeTypeRequest) {
 	request = &ModifyInstanceChargeTypeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -93,7 +93,7 @@ type ModifySQLCollectorPolicyResponse struct {
 }
 
 // CreateModifySQLCollectorPolicyRequest creates a request to invoke ModifySQLCollectorPolicy API
-func CreateModifySQLCollectorPolicyRequest(request *ModifySQLCollectorPolicyRequest) {
+func CreateModifySQLCollectorPolicyRequest() (request *ModifySQLCollectorPolicyRequest) {
 	request = &ModifySQLCollectorPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

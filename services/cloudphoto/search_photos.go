@@ -95,7 +95,7 @@ type SearchPhotosResponse struct {
 }
 
 // CreateSearchPhotosRequest creates a request to invoke SearchPhotos API
-func CreateSearchPhotosRequest(request *SearchPhotosRequest) {
+func CreateSearchPhotosRequest() (request *SearchPhotosRequest) {
 	request = &SearchPhotosRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

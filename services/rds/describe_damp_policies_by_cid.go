@@ -92,7 +92,7 @@ type DescribeDampPoliciesByCidResponse struct {
 }
 
 // CreateDescribeDampPoliciesByCidRequest creates a request to invoke DescribeDampPoliciesByCid API
-func CreateDescribeDampPoliciesByCidRequest(request *DescribeDampPoliciesByCidRequest) {
+func CreateDescribeDampPoliciesByCidRequest() (request *DescribeDampPoliciesByCidRequest) {
 	request = &DescribeDampPoliciesByCidRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -97,7 +97,7 @@ type DescribeMacConfigResponse struct {
 }
 
 // CreateDescribeMacConfigRequest creates a request to invoke DescribeMacConfig API
-func CreateDescribeMacConfigRequest(request *DescribeMacConfigRequest) {
+func CreateDescribeMacConfigRequest() (request *DescribeMacConfigRequest) {
 	request = &DescribeMacConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -99,7 +99,7 @@ type DescribeImportsForSQLServerResponse struct {
 }
 
 // CreateDescribeImportsForSQLServerRequest creates a request to invoke DescribeImportsForSQLServer API
-func CreateDescribeImportsForSQLServerRequest(request *DescribeImportsForSQLServerRequest) {
+func CreateDescribeImportsForSQLServerRequest() (request *DescribeImportsForSQLServerRequest) {
 	request = &DescribeImportsForSQLServerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

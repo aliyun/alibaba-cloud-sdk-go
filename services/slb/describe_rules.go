@@ -94,7 +94,7 @@ type DescribeRulesResponse struct {
 }
 
 // CreateDescribeRulesRequest creates a request to invoke DescribeRules API
-func CreateDescribeRulesRequest(request *DescribeRulesRequest) {
+func CreateDescribeRulesRequest() (request *DescribeRulesRequest) {
 	request = &DescribeRulesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

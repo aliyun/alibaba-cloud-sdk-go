@@ -92,7 +92,7 @@ type GetIpfilterListResponse struct {
 }
 
 // CreateGetIpfilterListRequest creates a request to invoke GetIpfilterList API
-func CreateGetIpfilterListRequest(request *GetIpfilterListRequest) {
+func CreateGetIpfilterListRequest() (request *GetIpfilterListRequest) {
 	request = &GetIpfilterListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

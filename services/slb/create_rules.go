@@ -95,7 +95,7 @@ type CreateRulesResponse struct {
 }
 
 // CreateCreateRulesRequest creates a request to invoke CreateRules API
-func CreateCreateRulesRequest(request *CreateRulesRequest) {
+func CreateCreateRulesRequest() (request *CreateRulesRequest) {
 	request = &CreateRulesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

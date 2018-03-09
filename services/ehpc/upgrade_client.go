@@ -87,7 +87,7 @@ type UpgradeClientResponse struct {
 }
 
 // CreateUpgradeClientRequest creates a request to invoke UpgradeClient API
-func CreateUpgradeClientRequest(request *UpgradeClientRequest) {
+func CreateUpgradeClientRequest() (request *UpgradeClientRequest) {
 	request = &UpgradeClientRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

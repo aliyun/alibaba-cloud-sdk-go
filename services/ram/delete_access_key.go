@@ -87,7 +87,7 @@ type DeleteAccessKeyResponse struct {
 }
 
 // CreateDeleteAccessKeyRequest creates a request to invoke DeleteAccessKey API
-func CreateDeleteAccessKeyRequest(request *DeleteAccessKeyRequest) {
+func CreateDeleteAccessKeyRequest() (request *DeleteAccessKeyRequest) {
 	request = &DeleteAccessKeyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

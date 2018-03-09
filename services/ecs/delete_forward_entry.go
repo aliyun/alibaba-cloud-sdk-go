@@ -91,7 +91,7 @@ type DeleteForwardEntryResponse struct {
 }
 
 // CreateDeleteForwardEntryRequest creates a request to invoke DeleteForwardEntry API
-func CreateDeleteForwardEntryRequest(request *DeleteForwardEntryRequest) {
+func CreateDeleteForwardEntryRequest() (request *DeleteForwardEntryRequest) {
 	request = &DeleteForwardEntryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

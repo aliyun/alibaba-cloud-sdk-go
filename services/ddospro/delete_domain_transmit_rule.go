@@ -88,7 +88,7 @@ type DeleteDomainTransmitRuleResponse struct {
 }
 
 // CreateDeleteDomainTransmitRuleRequest creates a request to invoke DeleteDomainTransmitRule API
-func CreateDeleteDomainTransmitRuleRequest(request *DeleteDomainTransmitRuleRequest) {
+func CreateDeleteDomainTransmitRuleRequest() (request *DeleteDomainTransmitRuleRequest) {
 	request = &DeleteDomainTransmitRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

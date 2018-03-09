@@ -93,7 +93,7 @@ type AddAsrPipelineResponse struct {
 }
 
 // CreateAddAsrPipelineRequest creates a request to invoke AddAsrPipeline API
-func CreateAddAsrPipelineRequest(request *AddAsrPipelineRequest) {
+func CreateAddAsrPipelineRequest() (request *AddAsrPipelineRequest) {
 	request = &AddAsrPipelineRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

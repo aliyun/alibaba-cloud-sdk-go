@@ -92,7 +92,7 @@ type AddCategoryResponse struct {
 }
 
 // CreateAddCategoryRequest creates a request to invoke AddCategory API
-func CreateAddCategoryRequest(request *AddCategoryRequest) {
+func CreateAddCategoryRequest() (request *AddCategoryRequest) {
 	request = &AddCategoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

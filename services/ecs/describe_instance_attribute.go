@@ -119,7 +119,7 @@ type DescribeInstanceAttributeResponse struct {
 }
 
 // CreateDescribeInstanceAttributeRequest creates a request to invoke DescribeInstanceAttribute API
-func CreateDescribeInstanceAttributeRequest(request *DescribeInstanceAttributeRequest) {
+func CreateDescribeInstanceAttributeRequest() (request *DescribeInstanceAttributeRequest) {
 	request = &DescribeInstanceAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -101,7 +101,7 @@ type EditEventResponse struct {
 }
 
 // CreateEditEventRequest creates a request to invoke EditEvent API
-func CreateEditEventRequest(request *EditEventRequest) {
+func CreateEditEventRequest() (request *EditEventRequest) {
 	request = &EditEventRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

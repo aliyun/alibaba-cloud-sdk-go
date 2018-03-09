@@ -92,7 +92,7 @@ type ModifyVRouterAttributeResponse struct {
 }
 
 // CreateModifyVRouterAttributeRequest creates a request to invoke ModifyVRouterAttribute API
-func CreateModifyVRouterAttributeRequest(request *ModifyVRouterAttributeRequest) {
+func CreateModifyVRouterAttributeRequest() (request *ModifyVRouterAttributeRequest) {
 	request = &ModifyVRouterAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

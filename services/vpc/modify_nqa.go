@@ -92,7 +92,7 @@ type ModifyNqaResponse struct {
 }
 
 // CreateModifyNqaRequest creates a request to invoke ModifyNqa API
-func CreateModifyNqaRequest(request *ModifyNqaRequest) {
+func CreateModifyNqaRequest() (request *ModifyNqaRequest) {
 	request = &ModifyNqaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

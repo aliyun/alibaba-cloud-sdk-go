@@ -87,7 +87,7 @@ type UnbindPhoneResponse struct {
 }
 
 // CreateUnbindPhoneRequest creates a request to invoke UnbindPhone API
-func CreateUnbindPhoneRequest(request *UnbindPhoneRequest) {
+func CreateUnbindPhoneRequest() (request *UnbindPhoneRequest) {
 	request = &UnbindPhoneRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

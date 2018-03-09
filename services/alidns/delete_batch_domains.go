@@ -89,7 +89,7 @@ type DeleteBatchDomainsResponse struct {
 }
 
 // CreateDeleteBatchDomainsRequest creates a request to invoke DeleteBatchDomains API
-func CreateDeleteBatchDomainsRequest(request *DeleteBatchDomainsRequest) {
+func CreateDeleteBatchDomainsRequest() (request *DeleteBatchDomainsRequest) {
 	request = &DeleteBatchDomainsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

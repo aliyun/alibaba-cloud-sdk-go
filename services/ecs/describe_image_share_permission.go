@@ -99,7 +99,7 @@ type DescribeImageSharePermissionResponse struct {
 }
 
 // CreateDescribeImageSharePermissionRequest creates a request to invoke DescribeImageSharePermission API
-func CreateDescribeImageSharePermissionRequest(request *DescribeImageSharePermissionRequest) {
+func CreateDescribeImageSharePermissionRequest() (request *DescribeImageSharePermissionRequest) {
 	request = &DescribeImageSharePermissionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

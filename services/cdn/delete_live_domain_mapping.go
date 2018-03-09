@@ -89,7 +89,7 @@ type DeleteLiveDomainMappingResponse struct {
 }
 
 // CreateDeleteLiveDomainMappingRequest creates a request to invoke DeleteLiveDomainMapping API
-func CreateDeleteLiveDomainMappingRequest(request *DeleteLiveDomainMappingRequest) {
+func CreateDeleteLiveDomainMappingRequest() (request *DeleteLiveDomainMappingRequest) {
 	request = &DeleteLiveDomainMappingRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

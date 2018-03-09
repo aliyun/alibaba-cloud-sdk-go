@@ -93,7 +93,7 @@ type CreateAutoSnapshotPolicyResponse struct {
 }
 
 // CreateCreateAutoSnapshotPolicyRequest creates a request to invoke CreateAutoSnapshotPolicy API
-func CreateCreateAutoSnapshotPolicyRequest(request *CreateAutoSnapshotPolicyRequest) {
+func CreateCreateAutoSnapshotPolicyRequest() (request *CreateAutoSnapshotPolicyRequest) {
 	request = &CreateAutoSnapshotPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

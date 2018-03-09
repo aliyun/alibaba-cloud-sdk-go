@@ -155,7 +155,7 @@ type DescribeScheduledTasksResponse struct {
 }
 
 // CreateDescribeScheduledTasksRequest creates a request to invoke DescribeScheduledTasks API
-func CreateDescribeScheduledTasksRequest(request *DescribeScheduledTasksRequest) {
+func CreateDescribeScheduledTasksRequest() (request *DescribeScheduledTasksRequest) {
 	request = &DescribeScheduledTasksRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

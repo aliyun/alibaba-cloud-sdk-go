@@ -96,7 +96,7 @@ type DescribeDomainMax95BpsDataResponse struct {
 }
 
 // CreateDescribeDomainMax95BpsDataRequest creates a request to invoke DescribeDomainMax95BpsData API
-func CreateDescribeDomainMax95BpsDataRequest(request *DescribeDomainMax95BpsDataRequest) {
+func CreateDescribeDomainMax95BpsDataRequest() (request *DescribeDomainMax95BpsDataRequest) {
 	request = &DescribeDomainMax95BpsDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

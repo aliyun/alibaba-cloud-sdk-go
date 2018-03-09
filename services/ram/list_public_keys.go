@@ -87,7 +87,7 @@ type ListPublicKeysResponse struct {
 }
 
 // CreateListPublicKeysRequest creates a request to invoke ListPublicKeys API
-func CreateListPublicKeysRequest(request *ListPublicKeysRequest) {
+func CreateListPublicKeysRequest() (request *ListPublicKeysRequest) {
 	request = &ListPublicKeysRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

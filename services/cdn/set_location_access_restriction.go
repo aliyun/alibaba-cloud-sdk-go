@@ -90,7 +90,7 @@ type SetLocationAccessRestrictionResponse struct {
 }
 
 // CreateSetLocationAccessRestrictionRequest creates a request to invoke SetLocationAccessRestriction API
-func CreateSetLocationAccessRestrictionRequest(request *SetLocationAccessRestrictionRequest) {
+func CreateSetLocationAccessRestrictionRequest() (request *SetLocationAccessRestrictionRequest) {
 	request = &SetLocationAccessRestrictionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

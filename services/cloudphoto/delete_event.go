@@ -91,7 +91,7 @@ type DeleteEventResponse struct {
 }
 
 // CreateDeleteEventRequest creates a request to invoke DeleteEvent API
-func CreateDeleteEventRequest(request *DeleteEventRequest) {
+func CreateDeleteEventRequest() (request *DeleteEventRequest) {
 	request = &DeleteEventRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -86,7 +86,7 @@ type ListSummaryAppsResponse struct {
 }
 
 // CreateListSummaryAppsRequest creates a request to invoke ListSummaryApps API
-func CreateListSummaryAppsRequest(request *ListSummaryAppsRequest) {
+func CreateListSummaryAppsRequest() (request *ListSummaryAppsRequest) {
 	request = &ListSummaryAppsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

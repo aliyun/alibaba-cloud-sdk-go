@@ -89,7 +89,7 @@ type OrderSucceededCallbackResponse struct {
 }
 
 // CreateOrderSucceededCallbackRequest creates a request to invoke OrderSucceededCallback API
-func CreateOrderSucceededCallbackRequest(request *OrderSucceededCallbackRequest) {
+func CreateOrderSucceededCallbackRequest() (request *OrderSucceededCallbackRequest) {
 	request = &OrderSucceededCallbackRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

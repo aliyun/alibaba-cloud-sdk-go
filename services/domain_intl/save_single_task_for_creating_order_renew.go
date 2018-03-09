@@ -91,7 +91,7 @@ type SaveSingleTaskForCreatingOrderRenewResponse struct {
 }
 
 // CreateSaveSingleTaskForCreatingOrderRenewRequest creates a request to invoke SaveSingleTaskForCreatingOrderRenew API
-func CreateSaveSingleTaskForCreatingOrderRenewRequest(request *SaveSingleTaskForCreatingOrderRenewRequest) {
+func CreateSaveSingleTaskForCreatingOrderRenewRequest() (request *SaveSingleTaskForCreatingOrderRenewRequest) {
 	request = &SaveSingleTaskForCreatingOrderRenewRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

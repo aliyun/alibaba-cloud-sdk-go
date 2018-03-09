@@ -88,7 +88,7 @@ type SaveSingleTaskForSynchronizingDnsHostResponse struct {
 }
 
 // CreateSaveSingleTaskForSynchronizingDnsHostRequest creates a request to invoke SaveSingleTaskForSynchronizingDnsHost API
-func CreateSaveSingleTaskForSynchronizingDnsHostRequest(request *SaveSingleTaskForSynchronizingDnsHostRequest) {
+func CreateSaveSingleTaskForSynchronizingDnsHostRequest() (request *SaveSingleTaskForSynchronizingDnsHostRequest) {
 	request = &SaveSingleTaskForSynchronizingDnsHostRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

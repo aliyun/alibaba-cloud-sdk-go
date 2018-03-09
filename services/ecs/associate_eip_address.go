@@ -92,7 +92,7 @@ type AssociateEipAddressResponse struct {
 }
 
 // CreateAssociateEipAddressRequest creates a request to invoke AssociateEipAddress API
-func CreateAssociateEipAddressRequest(request *AssociateEipAddressRequest) {
+func CreateAssociateEipAddressRequest() (request *AssociateEipAddressRequest) {
 	request = &AssociateEipAddressRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

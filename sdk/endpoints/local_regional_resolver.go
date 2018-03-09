@@ -16,8 +16,8 @@ package endpoints
 
 import (
 	"fmt"
-	"strings"
 	"github.com/jmespath/go-jmespath"
+	"strings"
 )
 
 type LocalRegionalResolver struct {

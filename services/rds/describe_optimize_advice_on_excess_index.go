@@ -96,7 +96,7 @@ type DescribeOptimizeAdviceOnExcessIndexResponse struct {
 }
 
 // CreateDescribeOptimizeAdviceOnExcessIndexRequest creates a request to invoke DescribeOptimizeAdviceOnExcessIndex API
-func CreateDescribeOptimizeAdviceOnExcessIndexRequest(request *DescribeOptimizeAdviceOnExcessIndexRequest) {
+func CreateDescribeOptimizeAdviceOnExcessIndexRequest() (request *DescribeOptimizeAdviceOnExcessIndexRequest) {
 	request = &DescribeOptimizeAdviceOnExcessIndexRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

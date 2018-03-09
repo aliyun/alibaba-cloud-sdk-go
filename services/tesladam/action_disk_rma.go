@@ -94,7 +94,7 @@ type ActionDiskRmaResponse struct {
 }
 
 // CreateActionDiskRmaRequest creates a request to invoke ActionDiskRma API
-func CreateActionDiskRmaRequest(request *ActionDiskRmaRequest) {
+func CreateActionDiskRmaRequest() (request *ActionDiskRmaRequest) {
 	request = &ActionDiskRmaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -95,7 +95,7 @@ type RemoveBackendServersResponse struct {
 }
 
 // CreateRemoveBackendServersRequest creates a request to invoke RemoveBackendServers API
-func CreateRemoveBackendServersRequest(request *RemoveBackendServersRequest) {
+func CreateRemoveBackendServersRequest() (request *RemoveBackendServersRequest) {
 	request = &RemoveBackendServersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

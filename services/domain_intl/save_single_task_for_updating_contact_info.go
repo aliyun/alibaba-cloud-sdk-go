@@ -93,7 +93,7 @@ type SaveSingleTaskForUpdatingContactInfoResponse struct {
 }
 
 // CreateSaveSingleTaskForUpdatingContactInfoRequest creates a request to invoke SaveSingleTaskForUpdatingContactInfo API
-func CreateSaveSingleTaskForUpdatingContactInfoRequest(request *SaveSingleTaskForUpdatingContactInfoRequest) {
+func CreateSaveSingleTaskForUpdatingContactInfoRequest() (request *SaveSingleTaskForUpdatingContactInfoRequest) {
 	request = &SaveSingleTaskForUpdatingContactInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

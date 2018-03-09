@@ -88,7 +88,7 @@ type DetachPolicyFromRoleResponse struct {
 }
 
 // CreateDetachPolicyFromRoleRequest creates a request to invoke DetachPolicyFromRole API
-func CreateDetachPolicyFromRoleRequest(request *DetachPolicyFromRoleRequest) {
+func CreateDetachPolicyFromRoleRequest() (request *DetachPolicyFromRoleRequest) {
 	request = &DetachPolicyFromRoleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

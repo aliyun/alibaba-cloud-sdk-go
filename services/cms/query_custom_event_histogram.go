@@ -88,7 +88,7 @@ type QueryCustomEventHistogramResponse struct {
 }
 
 // CreateQueryCustomEventHistogramRequest creates a request to invoke QueryCustomEventHistogram API
-func CreateQueryCustomEventHistogramRequest(request *QueryCustomEventHistogramRequest) {
+func CreateQueryCustomEventHistogramRequest() (request *QueryCustomEventHistogramRequest) {
 	request = &QueryCustomEventHistogramRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

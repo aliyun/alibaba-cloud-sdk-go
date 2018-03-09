@@ -88,7 +88,7 @@ type DescribeSupportLinesResponse struct {
 }
 
 // CreateDescribeSupportLinesRequest creates a request to invoke DescribeSupportLines API
-func CreateDescribeSupportLinesRequest(request *DescribeSupportLinesRequest) {
+func CreateDescribeSupportLinesRequest() (request *DescribeSupportLinesRequest) {
 	request = &DescribeSupportLinesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

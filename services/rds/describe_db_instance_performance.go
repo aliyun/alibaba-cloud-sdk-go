@@ -98,7 +98,7 @@ type DescribeDBInstancePerformanceResponse struct {
 }
 
 // CreateDescribeDBInstancePerformanceRequest creates a request to invoke DescribeDBInstancePerformance API
-func CreateDescribeDBInstancePerformanceRequest(request *DescribeDBInstancePerformanceRequest) {
+func CreateDescribeDBInstancePerformanceRequest() (request *DescribeDBInstancePerformanceRequest) {
 	request = &DescribeDBInstancePerformanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

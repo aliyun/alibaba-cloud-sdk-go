@@ -89,7 +89,7 @@ type ModifyDomainBlackWhiteListResponse struct {
 }
 
 // CreateModifyDomainBlackWhiteListRequest creates a request to invoke ModifyDomainBlackWhiteList API
-func CreateModifyDomainBlackWhiteListRequest(request *ModifyDomainBlackWhiteListRequest) {
+func CreateModifyDomainBlackWhiteListRequest() (request *ModifyDomainBlackWhiteListRequest) {
 	request = &ModifyDomainBlackWhiteListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

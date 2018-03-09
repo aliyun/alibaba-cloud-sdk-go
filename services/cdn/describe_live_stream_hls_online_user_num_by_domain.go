@@ -97,7 +97,7 @@ type DescribeLiveStreamHlsOnlineUserNumByDomainResponse struct {
 }
 
 // CreateDescribeLiveStreamHlsOnlineUserNumByDomainRequest creates a request to invoke DescribeLiveStreamHlsOnlineUserNumByDomain API
-func CreateDescribeLiveStreamHlsOnlineUserNumByDomainRequest(request *DescribeLiveStreamHlsOnlineUserNumByDomainRequest) {
+func CreateDescribeLiveStreamHlsOnlineUserNumByDomainRequest() (request *DescribeLiveStreamHlsOnlineUserNumByDomainRequest) {
 	request = &DescribeLiveStreamHlsOnlineUserNumByDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

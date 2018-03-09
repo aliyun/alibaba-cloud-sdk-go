@@ -96,7 +96,7 @@ type ListAsrPipelineResponse struct {
 }
 
 // CreateListAsrPipelineRequest creates a request to invoke ListAsrPipeline API
-func CreateListAsrPipelineRequest(request *ListAsrPipelineRequest) {
+func CreateListAsrPipelineRequest() (request *ListAsrPipelineRequest) {
 	request = &ListAsrPipelineRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

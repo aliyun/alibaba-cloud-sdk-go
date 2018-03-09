@@ -90,7 +90,7 @@ type PutMetricDataResponse struct {
 }
 
 // CreatePutMetricDataRequest creates a request to invoke PutMetricData API
-func CreatePutMetricDataRequest(request *PutMetricDataRequest) {
+func CreatePutMetricDataRequest() (request *PutMetricDataRequest) {
 	request = &PutMetricDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

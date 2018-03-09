@@ -90,7 +90,7 @@ type ModifyDomainTransmitRuleResponse struct {
 }
 
 // CreateModifyDomainTransmitRuleRequest creates a request to invoke ModifyDomainTransmitRule API
-func CreateModifyDomainTransmitRuleRequest(request *ModifyDomainTransmitRuleRequest) {
+func CreateModifyDomainTransmitRuleRequest() (request *ModifyDomainTransmitRuleRequest) {
 	request = &ModifyDomainTransmitRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

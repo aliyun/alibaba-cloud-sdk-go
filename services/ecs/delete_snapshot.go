@@ -91,7 +91,7 @@ type DeleteSnapshotResponse struct {
 }
 
 // CreateDeleteSnapshotRequest creates a request to invoke DeleteSnapshot API
-func CreateDeleteSnapshotRequest(request *DeleteSnapshotRequest) {
+func CreateDeleteSnapshotRequest() (request *DeleteSnapshotRequest) {
 	request = &DeleteSnapshotRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

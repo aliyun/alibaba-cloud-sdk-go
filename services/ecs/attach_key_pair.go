@@ -94,7 +94,7 @@ type AttachKeyPairResponse struct {
 }
 
 // CreateAttachKeyPairRequest creates a request to invoke AttachKeyPair API
-func CreateAttachKeyPairRequest(request *AttachKeyPairRequest) {
+func CreateAttachKeyPairRequest() (request *AttachKeyPairRequest) {
 	request = &AttachKeyPairRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

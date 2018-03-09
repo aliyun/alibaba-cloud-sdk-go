@@ -100,7 +100,7 @@ type ListAlarmResponse struct {
 }
 
 // CreateListAlarmRequest creates a request to invoke ListAlarm API
-func CreateListAlarmRequest(request *ListAlarmRequest) {
+func CreateListAlarmRequest() (request *ListAlarmRequest) {
 	request = &ListAlarmRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -90,7 +90,7 @@ type EnableAlarmResponse struct {
 }
 
 // CreateEnableAlarmRequest creates a request to invoke EnableAlarm API
-func CreateEnableAlarmRequest(request *EnableAlarmRequest) {
+func CreateEnableAlarmRequest() (request *EnableAlarmRequest) {
 	request = &EnableAlarmRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

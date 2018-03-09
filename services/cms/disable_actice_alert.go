@@ -90,7 +90,7 @@ type DisableActiceAlertResponse struct {
 }
 
 // CreateDisableActiceAlertRequest creates a request to invoke DisableActiceAlert API
-func CreateDisableActiceAlertRequest(request *DisableActiceAlertRequest) {
+func CreateDisableActiceAlertRequest() (request *DisableActiceAlertRequest) {
 	request = &DisableActiceAlertRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

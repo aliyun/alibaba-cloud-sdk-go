@@ -107,7 +107,7 @@ type DescribeEipAddressesResponse struct {
 }
 
 // CreateDescribeEipAddressesRequest creates a request to invoke DescribeEipAddresses API
-func CreateDescribeEipAddressesRequest(request *DescribeEipAddressesRequest) {
+func CreateDescribeEipAddressesRequest() (request *DescribeEipAddressesRequest) {
 	request = &DescribeEipAddressesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -91,7 +91,7 @@ type UnassociateGlobalAccelerationInstanceResponse struct {
 }
 
 // CreateUnassociateGlobalAccelerationInstanceRequest creates a request to invoke UnassociateGlobalAccelerationInstance API
-func CreateUnassociateGlobalAccelerationInstanceRequest(request *UnassociateGlobalAccelerationInstanceRequest) {
+func CreateUnassociateGlobalAccelerationInstanceRequest() (request *UnassociateGlobalAccelerationInstanceRequest) {
 	request = &UnassociateGlobalAccelerationInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

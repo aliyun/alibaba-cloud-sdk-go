@@ -120,7 +120,7 @@ type ARMSQueryDataSetResponse struct {
 }
 
 // CreateARMSQueryDataSetRequest creates a request to invoke ARMSQueryDataSet API
-func CreateARMSQueryDataSetRequest(request *ARMSQueryDataSetRequest) {
+func CreateARMSQueryDataSetRequest() (request *ARMSQueryDataSetRequest) {
 	request = &ARMSQueryDataSetRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

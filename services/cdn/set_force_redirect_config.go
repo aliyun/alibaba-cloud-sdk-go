@@ -89,7 +89,7 @@ type SetForceRedirectConfigResponse struct {
 }
 
 // CreateSetForceRedirectConfigRequest creates a request to invoke SetForceRedirectConfig API
-func CreateSetForceRedirectConfigRequest(request *SetForceRedirectConfigRequest) {
+func CreateSetForceRedirectConfigRequest() (request *SetForceRedirectConfigRequest) {
 	request = &SetForceRedirectConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

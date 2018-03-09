@@ -91,7 +91,7 @@ type SetFileCacheExpiredConfigResponse struct {
 }
 
 // CreateSetFileCacheExpiredConfigRequest creates a request to invoke SetFileCacheExpiredConfig API
-func CreateSetFileCacheExpiredConfigRequest(request *SetFileCacheExpiredConfigRequest) {
+func CreateSetFileCacheExpiredConfigRequest() (request *SetFileCacheExpiredConfigRequest) {
 	request = &SetFileCacheExpiredConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

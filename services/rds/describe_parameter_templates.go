@@ -96,7 +96,7 @@ type DescribeParameterTemplatesResponse struct {
 }
 
 // CreateDescribeParameterTemplatesRequest creates a request to invoke DescribeParameterTemplates API
-func CreateDescribeParameterTemplatesRequest(request *DescribeParameterTemplatesRequest) {
+func CreateDescribeParameterTemplatesRequest() (request *DescribeParameterTemplatesRequest) {
 	request = &DescribeParameterTemplatesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

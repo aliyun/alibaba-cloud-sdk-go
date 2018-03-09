@@ -88,7 +88,7 @@ type ClearUserBlackListResponse struct {
 }
 
 // CreateClearUserBlackListRequest creates a request to invoke ClearUserBlackList API
-func CreateClearUserBlackListRequest(request *ClearUserBlackListRequest) {
+func CreateClearUserBlackListRequest() (request *ClearUserBlackListRequest) {
 	request = &ClearUserBlackListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -93,7 +93,7 @@ type SaveSingleTaskForCreatingOrderActivateResponse struct {
 }
 
 // CreateSaveSingleTaskForCreatingOrderActivateRequest creates a request to invoke SaveSingleTaskForCreatingOrderActivate API
-func CreateSaveSingleTaskForCreatingOrderActivateRequest(request *SaveSingleTaskForCreatingOrderActivateRequest) {
+func CreateSaveSingleTaskForCreatingOrderActivateRequest() (request *SaveSingleTaskForCreatingOrderActivateRequest) {
 	request = &SaveSingleTaskForCreatingOrderActivateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

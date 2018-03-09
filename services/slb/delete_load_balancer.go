@@ -92,7 +92,7 @@ type DeleteLoadBalancerResponse struct {
 }
 
 // CreateDeleteLoadBalancerRequest creates a request to invoke DeleteLoadBalancer API
-func CreateDeleteLoadBalancerRequest(request *DeleteLoadBalancerRequest) {
+func CreateDeleteLoadBalancerRequest() (request *DeleteLoadBalancerRequest) {
 	request = &DeleteLoadBalancerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

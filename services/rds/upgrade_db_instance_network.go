@@ -92,7 +92,7 @@ type UpgradeDBInstanceNetworkResponse struct {
 }
 
 // CreateUpgradeDBInstanceNetworkRequest creates a request to invoke UpgradeDBInstanceNetwork API
-func CreateUpgradeDBInstanceNetworkRequest(request *UpgradeDBInstanceNetworkRequest) {
+func CreateUpgradeDBInstanceNetworkRequest() (request *UpgradeDBInstanceNetworkRequest) {
 	request = &UpgradeDBInstanceNetworkRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -92,7 +92,7 @@ type DescribeUserDataResponse struct {
 }
 
 // CreateDescribeUserDataRequest creates a request to invoke DescribeUserData API
-func CreateDescribeUserDataRequest(request *DescribeUserDataRequest) {
+func CreateDescribeUserDataRequest() (request *DescribeUserDataRequest) {
 	request = &DescribeUserDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

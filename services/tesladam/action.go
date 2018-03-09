@@ -89,7 +89,7 @@ type ActionResponse struct {
 }
 
 // CreateActionRequest creates a request to invoke Action API
-func CreateActionRequest(request *ActionRequest) {
+func CreateActionRequest() (request *ActionRequest) {
 	request = &ActionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

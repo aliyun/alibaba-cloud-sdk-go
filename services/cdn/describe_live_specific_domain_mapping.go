@@ -90,7 +90,7 @@ type DescribeLiveSpecificDomainMappingResponse struct {
 }
 
 // CreateDescribeLiveSpecificDomainMappingRequest creates a request to invoke DescribeLiveSpecificDomainMapping API
-func CreateDescribeLiveSpecificDomainMappingRequest(request *DescribeLiveSpecificDomainMappingRequest) {
+func CreateDescribeLiveSpecificDomainMappingRequest() (request *DescribeLiveSpecificDomainMappingRequest) {
 	request = &DescribeLiveSpecificDomainMappingRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -92,7 +92,7 @@ type DescribeFileSystemsResponse struct {
 }
 
 // CreateDescribeFileSystemsRequest creates a request to invoke DescribeFileSystems API
-func CreateDescribeFileSystemsRequest(request *DescribeFileSystemsRequest) {
+func CreateDescribeFileSystemsRequest() (request *DescribeFileSystemsRequest) {
 	request = &DescribeFileSystemsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

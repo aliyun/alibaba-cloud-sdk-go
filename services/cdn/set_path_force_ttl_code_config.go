@@ -85,7 +85,7 @@ type SetPathForceTtlCodeConfigResponse struct {
 }
 
 // CreateSetPathForceTtlCodeConfigRequest creates a request to invoke SetPathForceTtlCodeConfig API
-func CreateSetPathForceTtlCodeConfigRequest(request *SetPathForceTtlCodeConfigRequest) {
+func CreateSetPathForceTtlCodeConfigRequest() (request *SetPathForceTtlCodeConfigRequest) {
 	request = &SetPathForceTtlCodeConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

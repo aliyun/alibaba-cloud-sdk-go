@@ -94,7 +94,7 @@ type DescribeBandwidthPackagePublicIpMonitorDataResponse struct {
 }
 
 // CreateDescribeBandwidthPackagePublicIpMonitorDataRequest creates a request to invoke DescribeBandwidthPackagePublicIpMonitorData API
-func CreateDescribeBandwidthPackagePublicIpMonitorDataRequest(request *DescribeBandwidthPackagePublicIpMonitorDataRequest) {
+func CreateDescribeBandwidthPackagePublicIpMonitorDataRequest() (request *DescribeBandwidthPackagePublicIpMonitorDataRequest) {
 	request = &DescribeBandwidthPackagePublicIpMonitorDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

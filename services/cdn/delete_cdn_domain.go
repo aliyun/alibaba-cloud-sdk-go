@@ -89,7 +89,7 @@ type DeleteCdnDomainResponse struct {
 }
 
 // CreateDeleteCdnDomainRequest creates a request to invoke DeleteCdnDomain API
-func CreateDeleteCdnDomainRequest(request *DeleteCdnDomainRequest) {
+func CreateDeleteCdnDomainRequest() (request *DeleteCdnDomainRequest) {
 	request = &DeleteCdnDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

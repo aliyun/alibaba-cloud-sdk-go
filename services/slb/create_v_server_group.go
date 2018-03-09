@@ -96,7 +96,7 @@ type CreateVServerGroupResponse struct {
 }
 
 // CreateCreateVServerGroupRequest creates a request to invoke CreateVServerGroup API
-func CreateCreateVServerGroupRequest(request *CreateVServerGroupRequest) {
+func CreateCreateVServerGroupRequest() (request *CreateVServerGroupRequest) {
 	request = &CreateVServerGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

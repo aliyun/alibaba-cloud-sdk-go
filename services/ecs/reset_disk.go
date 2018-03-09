@@ -91,7 +91,7 @@ type ResetDiskResponse struct {
 }
 
 // CreateResetDiskRequest creates a request to invoke ResetDisk API
-func CreateResetDiskRequest(request *ResetDiskRequest) {
+func CreateResetDiskRequest() (request *ResetDiskRequest) {
 	request = &ResetDiskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

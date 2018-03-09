@@ -92,7 +92,7 @@ type DescribeLimitationResponse struct {
 }
 
 // CreateDescribeLimitationRequest creates a request to invoke DescribeLimitation API
-func CreateDescribeLimitationRequest(request *DescribeLimitationRequest) {
+func CreateDescribeLimitationRequest() (request *DescribeLimitationRequest) {
 	request = &DescribeLimitationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

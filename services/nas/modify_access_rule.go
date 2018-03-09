@@ -91,7 +91,7 @@ type ModifyAccessRuleResponse struct {
 }
 
 // CreateModifyAccessRuleRequest creates a request to invoke ModifyAccessRule API
-func CreateModifyAccessRuleRequest(request *ModifyAccessRuleRequest) {
+func CreateModifyAccessRuleRequest() (request *ModifyAccessRuleRequest) {
 	request = &ModifyAccessRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

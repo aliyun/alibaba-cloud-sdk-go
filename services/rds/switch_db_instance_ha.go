@@ -94,7 +94,7 @@ type SwitchDBInstanceHAResponse struct {
 }
 
 // CreateSwitchDBInstanceHARequest creates a request to invoke SwitchDBInstanceHA API
-func CreateSwitchDBInstanceHARequest(request *SwitchDBInstanceHARequest) {
+func CreateSwitchDBInstanceHARequest() (request *SwitchDBInstanceHARequest) {
 	request = &SwitchDBInstanceHARequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

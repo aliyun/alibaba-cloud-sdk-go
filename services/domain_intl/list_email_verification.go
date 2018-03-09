@@ -99,7 +99,7 @@ type ListEmailVerificationResponse struct {
 }
 
 // CreateListEmailVerificationRequest creates a request to invoke ListEmailVerification API
-func CreateListEmailVerificationRequest(request *ListEmailVerificationRequest) {
+func CreateListEmailVerificationRequest() (request *ListEmailVerificationRequest) {
 	request = &ListEmailVerificationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

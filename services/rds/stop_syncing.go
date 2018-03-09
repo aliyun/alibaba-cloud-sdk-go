@@ -92,7 +92,7 @@ type StopSyncingResponse struct {
 }
 
 // CreateStopSyncingRequest creates a request to invoke StopSyncing API
-func CreateStopSyncingRequest(request *StopSyncingRequest) {
+func CreateStopSyncingRequest() (request *StopSyncingRequest) {
 	request = &StopSyncingRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

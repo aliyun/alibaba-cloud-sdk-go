@@ -92,7 +92,7 @@ type ListRecordingsByContactIdResponse struct {
 }
 
 // CreateListRecordingsByContactIdRequest creates a request to invoke ListRecordingsByContactId API
-func CreateListRecordingsByContactIdRequest(request *ListRecordingsByContactIdRequest) {
+func CreateListRecordingsByContactIdRequest() (request *ListRecordingsByContactIdRequest) {
 	request = &ListRecordingsByContactIdRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

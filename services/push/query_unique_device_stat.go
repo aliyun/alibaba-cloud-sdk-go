@@ -90,7 +90,7 @@ type QueryUniqueDeviceStatResponse struct {
 }
 
 // CreateQueryUniqueDeviceStatRequest creates a request to invoke QueryUniqueDeviceStat API
-func CreateQueryUniqueDeviceStatRequest(request *QueryUniqueDeviceStatRequest) {
+func CreateQueryUniqueDeviceStatRequest() (request *QueryUniqueDeviceStatRequest) {
 	request = &QueryUniqueDeviceStatRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

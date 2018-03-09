@@ -98,7 +98,7 @@ type CreateTemplateResponse struct {
 }
 
 // CreateCreateTemplateRequest creates a request to invoke CreateTemplate API
-func CreateCreateTemplateRequest(request *CreateTemplateRequest) {
+func CreateCreateTemplateRequest() (request *CreateTemplateRequest) {
 	request = &CreateTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

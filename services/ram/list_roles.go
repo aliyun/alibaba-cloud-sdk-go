@@ -90,7 +90,7 @@ type ListRolesResponse struct {
 }
 
 // CreateListRolesRequest creates a request to invoke ListRoles API
-func CreateListRolesRequest(request *ListRolesRequest) {
+func CreateListRolesRequest() (request *ListRolesRequest) {
 	request = &ListRolesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

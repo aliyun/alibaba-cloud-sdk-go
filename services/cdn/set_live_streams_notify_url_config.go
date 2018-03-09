@@ -89,7 +89,7 @@ type SetLiveStreamsNotifyUrlConfigResponse struct {
 }
 
 // CreateSetLiveStreamsNotifyUrlConfigRequest creates a request to invoke SetLiveStreamsNotifyUrlConfig API
-func CreateSetLiveStreamsNotifyUrlConfigRequest(request *SetLiveStreamsNotifyUrlConfigRequest) {
+func CreateSetLiveStreamsNotifyUrlConfigRequest() (request *SetLiveStreamsNotifyUrlConfigRequest) {
 	request = &SetLiveStreamsNotifyUrlConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

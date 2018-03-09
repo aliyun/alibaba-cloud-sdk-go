@@ -89,7 +89,7 @@ type DeleteLiveAppRecordConfigResponse struct {
 }
 
 // CreateDeleteLiveAppRecordConfigRequest creates a request to invoke DeleteLiveAppRecordConfig API
-func CreateDeleteLiveAppRecordConfigRequest(request *DeleteLiveAppRecordConfigRequest) {
+func CreateDeleteLiveAppRecordConfigRequest() (request *DeleteLiveAppRecordConfigRequest) {
 	request = &DeleteLiveAppRecordConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

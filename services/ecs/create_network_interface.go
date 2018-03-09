@@ -86,7 +86,7 @@ type CreateNetworkInterfaceResponse struct {
 }
 
 // CreateCreateNetworkInterfaceRequest creates a request to invoke CreateNetworkInterface API
-func CreateCreateNetworkInterfaceRequest(request *CreateNetworkInterfaceRequest) {
+func CreateCreateNetworkInterfaceRequest() (request *CreateNetworkInterfaceRequest) {
 	request = &CreateNetworkInterfaceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

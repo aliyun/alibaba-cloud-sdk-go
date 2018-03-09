@@ -93,7 +93,7 @@ type DescribeSQLCollectorPolicyResponse struct {
 }
 
 // CreateDescribeSQLCollectorPolicyRequest creates a request to invoke DescribeSQLCollectorPolicy API
-func CreateDescribeSQLCollectorPolicyRequest(request *DescribeSQLCollectorPolicyRequest) {
+func CreateDescribeSQLCollectorPolicyRequest() (request *DescribeSQLCollectorPolicyRequest) {
 	request = &DescribeSQLCollectorPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

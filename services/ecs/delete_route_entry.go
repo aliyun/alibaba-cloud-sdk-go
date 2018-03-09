@@ -99,7 +99,7 @@ type DeleteRouteEntryResponse struct {
 }
 
 // CreateDeleteRouteEntryRequest creates a request to invoke DeleteRouteEntry API
-func CreateDeleteRouteEntryRequest(request *DeleteRouteEntryRequest) {
+func CreateDeleteRouteEntryRequest() (request *DeleteRouteEntryRequest) {
 	request = &DeleteRouteEntryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

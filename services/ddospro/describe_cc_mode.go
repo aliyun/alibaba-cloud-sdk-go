@@ -89,7 +89,7 @@ type DescribeCcModeResponse struct {
 }
 
 // CreateDescribeCcModeRequest creates a request to invoke DescribeCcMode API
-func CreateDescribeCcModeRequest(request *DescribeCcModeRequest) {
+func CreateDescribeCcModeRequest() (request *DescribeCcModeRequest) {
 	request = &DescribeCcModeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

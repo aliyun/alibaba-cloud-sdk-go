@@ -89,7 +89,7 @@ type ConnectRouterInterfaceResponse struct {
 }
 
 // CreateConnectRouterInterfaceRequest creates a request to invoke ConnectRouterInterface API
-func CreateConnectRouterInterfaceRequest(request *ConnectRouterInterfaceRequest) {
+func CreateConnectRouterInterfaceRequest() (request *ConnectRouterInterfaceRequest) {
 	request = &ConnectRouterInterfaceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

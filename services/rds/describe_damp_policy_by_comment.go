@@ -97,7 +97,7 @@ type DescribeDampPolicyByCommentResponse struct {
 }
 
 // CreateDescribeDampPolicyByCommentRequest creates a request to invoke DescribeDampPolicyByComment API
-func CreateDescribeDampPolicyByCommentRequest(request *DescribeDampPolicyByCommentRequest) {
+func CreateDescribeDampPolicyByCommentRequest() (request *DescribeDampPolicyByCommentRequest) {
 	request = &DescribeDampPolicyByCommentRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

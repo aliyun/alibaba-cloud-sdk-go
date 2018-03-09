@@ -95,7 +95,7 @@ type AddVServerGroupBackendServersResponse struct {
 }
 
 // CreateAddVServerGroupBackendServersRequest creates a request to invoke AddVServerGroupBackendServers API
-func CreateAddVServerGroupBackendServersRequest(request *AddVServerGroupBackendServersRequest) {
+func CreateAddVServerGroupBackendServersRequest() (request *AddVServerGroupBackendServersRequest) {
 	request = &AddVServerGroupBackendServersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

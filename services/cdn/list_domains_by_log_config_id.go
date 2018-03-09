@@ -86,7 +86,7 @@ type ListDomainsByLogConfigIdResponse struct {
 }
 
 // CreateListDomainsByLogConfigIdRequest creates a request to invoke ListDomainsByLogConfigId API
-func CreateListDomainsByLogConfigIdRequest(request *ListDomainsByLogConfigIdRequest) {
+func CreateListDomainsByLogConfigIdRequest() (request *ListDomainsByLogConfigIdRequest) {
 	request = &ListDomainsByLogConfigIdRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

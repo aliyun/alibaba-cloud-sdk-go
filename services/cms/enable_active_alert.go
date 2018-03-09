@@ -89,7 +89,7 @@ type EnableActiveAlertResponse struct {
 }
 
 // CreateEnableActiveAlertRequest creates a request to invoke EnableActiveAlert API
-func CreateEnableActiveAlertRequest(request *EnableActiveAlertRequest) {
+func CreateEnableActiveAlertRequest() (request *EnableActiveAlertRequest) {
 	request = &EnableActiveAlertRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

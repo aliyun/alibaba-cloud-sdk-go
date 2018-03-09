@@ -98,7 +98,7 @@ type ModifySecurityIpsResponse struct {
 }
 
 // CreateModifySecurityIpsRequest creates a request to invoke ModifySecurityIps API
-func CreateModifySecurityIpsRequest(request *ModifySecurityIpsRequest) {
+func CreateModifySecurityIpsRequest() (request *ModifySecurityIpsRequest) {
 	request = &ModifySecurityIpsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -87,7 +87,7 @@ type DeleteClusterResponse struct {
 }
 
 // CreateDeleteClusterRequest creates a request to invoke DeleteCluster API
-func CreateDeleteClusterRequest(request *DeleteClusterRequest) {
+func CreateDeleteClusterRequest() (request *DeleteClusterRequest) {
 	request = &DeleteClusterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

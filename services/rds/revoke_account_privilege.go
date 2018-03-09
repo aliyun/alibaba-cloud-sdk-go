@@ -92,7 +92,7 @@ type RevokeAccountPrivilegeResponse struct {
 }
 
 // CreateRevokeAccountPrivilegeRequest creates a request to invoke RevokeAccountPrivilege API
-func CreateRevokeAccountPrivilegeRequest(request *RevokeAccountPrivilegeRequest) {
+func CreateRevokeAccountPrivilegeRequest() (request *RevokeAccountPrivilegeRequest) {
 	request = &RevokeAccountPrivilegeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

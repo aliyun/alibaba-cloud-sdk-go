@@ -89,7 +89,7 @@ type DescribeDomainCustomLogConfigResponse struct {
 }
 
 // CreateDescribeDomainCustomLogConfigRequest creates a request to invoke DescribeDomainCustomLogConfig API
-func CreateDescribeDomainCustomLogConfigRequest(request *DescribeDomainCustomLogConfigRequest) {
+func CreateDescribeDomainCustomLogConfigRequest() (request *DescribeDomainCustomLogConfigRequest) {
 	request = &DescribeDomainCustomLogConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

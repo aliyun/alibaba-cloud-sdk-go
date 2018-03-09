@@ -91,7 +91,7 @@ type CheckReplyToMailAddressResponse struct {
 }
 
 // CreateCheckReplyToMailAddressRequest creates a request to invoke CheckReplyToMailAddress API
-func CreateCheckReplyToMailAddressRequest(request *CheckReplyToMailAddressRequest) {
+func CreateCheckReplyToMailAddressRequest() (request *CheckReplyToMailAddressRequest) {
 	request = &CheckReplyToMailAddressRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

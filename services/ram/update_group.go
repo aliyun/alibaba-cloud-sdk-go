@@ -89,7 +89,7 @@ type UpdateGroupResponse struct {
 }
 
 // CreateUpdateGroupRequest creates a request to invoke UpdateGroup API
-func CreateUpdateGroupRequest(request *UpdateGroupRequest) {
+func CreateUpdateGroupRequest() (request *UpdateGroupRequest) {
 	request = &UpdateGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

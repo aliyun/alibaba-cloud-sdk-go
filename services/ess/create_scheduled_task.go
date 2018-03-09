@@ -98,7 +98,7 @@ type CreateScheduledTaskResponse struct {
 }
 
 // CreateCreateScheduledTaskRequest creates a request to invoke CreateScheduledTask API
-func CreateCreateScheduledTaskRequest(request *CreateScheduledTaskRequest) {
+func CreateCreateScheduledTaskRequest() (request *CreateScheduledTaskRequest) {
 	request = &CreateScheduledTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

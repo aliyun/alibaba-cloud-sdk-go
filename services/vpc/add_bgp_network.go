@@ -93,7 +93,7 @@ type AddBgpNetworkResponse struct {
 }
 
 // CreateAddBgpNetworkRequest creates a request to invoke AddBgpNetwork API
-func CreateAddBgpNetworkRequest(request *AddBgpNetworkRequest) {
+func CreateAddBgpNetworkRequest() (request *AddBgpNetworkRequest) {
 	request = &AddBgpNetworkRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

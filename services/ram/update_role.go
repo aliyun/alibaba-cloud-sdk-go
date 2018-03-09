@@ -88,7 +88,7 @@ type UpdateRoleResponse struct {
 }
 
 // CreateUpdateRoleRequest creates a request to invoke UpdateRole API
-func CreateUpdateRoleRequest(request *UpdateRoleRequest) {
+func CreateUpdateRoleRequest() (request *UpdateRoleRequest) {
 	request = &UpdateRoleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

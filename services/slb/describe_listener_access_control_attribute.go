@@ -95,7 +95,7 @@ type DescribeListenerAccessControlAttributeResponse struct {
 }
 
 // CreateDescribeListenerAccessControlAttributeRequest creates a request to invoke DescribeListenerAccessControlAttribute API
-func CreateDescribeListenerAccessControlAttributeRequest(request *DescribeListenerAccessControlAttributeRequest) {
+func CreateDescribeListenerAccessControlAttributeRequest() (request *DescribeListenerAccessControlAttributeRequest) {
 	request = &DescribeListenerAccessControlAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

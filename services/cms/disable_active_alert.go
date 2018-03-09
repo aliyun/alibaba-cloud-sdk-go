@@ -90,7 +90,7 @@ type DisableActiveAlertResponse struct {
 }
 
 // CreateDisableActiveAlertRequest creates a request to invoke DisableActiveAlert API
-func CreateDisableActiveAlertRequest(request *DisableActiveAlertRequest) {
+func CreateDisableActiveAlertRequest() (request *DisableActiveAlertRequest) {
 	request = &DisableActiveAlertRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

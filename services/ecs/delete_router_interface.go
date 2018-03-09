@@ -92,7 +92,7 @@ type DeleteRouterInterfaceResponse struct {
 }
 
 // CreateDeleteRouterInterfaceRequest creates a request to invoke DeleteRouterInterface API
-func CreateDeleteRouterInterfaceRequest(request *DeleteRouterInterfaceRequest) {
+func CreateDeleteRouterInterfaceRequest() (request *DeleteRouterInterfaceRequest) {
 	request = &DeleteRouterInterfaceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

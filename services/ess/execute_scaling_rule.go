@@ -92,7 +92,7 @@ type ExecuteScalingRuleResponse struct {
 }
 
 // CreateExecuteScalingRuleRequest creates a request to invoke ExecuteScalingRule API
-func CreateExecuteScalingRuleRequest(request *ExecuteScalingRuleRequest) {
+func CreateExecuteScalingRuleRequest() (request *ExecuteScalingRuleRequest) {
 	request = &ExecuteScalingRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

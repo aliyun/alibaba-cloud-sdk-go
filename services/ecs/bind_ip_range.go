@@ -91,7 +91,7 @@ type BindIpRangeResponse struct {
 }
 
 // CreateBindIpRangeRequest creates a request to invoke BindIpRange API
-func CreateBindIpRangeRequest(request *BindIpRangeRequest) {
+func CreateBindIpRangeRequest() (request *BindIpRangeRequest) {
 	request = &BindIpRangeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

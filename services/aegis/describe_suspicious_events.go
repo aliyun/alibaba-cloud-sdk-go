@@ -98,7 +98,7 @@ type DescribeSuspiciousEventsResponse struct {
 }
 
 // CreateDescribeSuspiciousEventsRequest creates a request to invoke DescribeSuspiciousEvents API
-func CreateDescribeSuspiciousEventsRequest(request *DescribeSuspiciousEventsRequest) {
+func CreateDescribeSuspiciousEventsRequest() (request *DescribeSuspiciousEventsRequest) {
 	request = &DescribeSuspiciousEventsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

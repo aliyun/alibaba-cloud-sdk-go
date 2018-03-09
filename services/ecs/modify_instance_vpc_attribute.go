@@ -92,7 +92,7 @@ type ModifyInstanceVpcAttributeResponse struct {
 }
 
 // CreateModifyInstanceVpcAttributeRequest creates a request to invoke ModifyInstanceVpcAttribute API
-func CreateModifyInstanceVpcAttributeRequest(request *ModifyInstanceVpcAttributeRequest) {
+func CreateModifyInstanceVpcAttributeRequest() (request *ModifyInstanceVpcAttributeRequest) {
 	request = &ModifyInstanceVpcAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

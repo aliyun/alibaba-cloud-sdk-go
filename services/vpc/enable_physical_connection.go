@@ -91,7 +91,7 @@ type EnablePhysicalConnectionResponse struct {
 }
 
 // CreateEnablePhysicalConnectionRequest creates a request to invoke EnablePhysicalConnection API
-func CreateEnablePhysicalConnectionRequest(request *EnablePhysicalConnectionRequest) {
+func CreateEnablePhysicalConnectionRequest() (request *EnablePhysicalConnectionRequest) {
 	request = &EnablePhysicalConnectionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

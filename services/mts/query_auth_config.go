@@ -91,7 +91,7 @@ type QueryAuthConfigResponse struct {
 }
 
 // CreateQueryAuthConfigRequest creates a request to invoke QueryAuthConfig API
-func CreateQueryAuthConfigRequest(request *QueryAuthConfigRequest) {
+func CreateQueryAuthConfigRequest() (request *QueryAuthConfigRequest) {
 	request = &QueryAuthConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

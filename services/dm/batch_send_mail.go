@@ -97,7 +97,7 @@ type BatchSendMailResponse struct {
 }
 
 // CreateBatchSendMailRequest creates a request to invoke BatchSendMail API
-func CreateBatchSendMailRequest(request *BatchSendMailRequest) {
+func CreateBatchSendMailRequest() (request *BatchSendMailRequest) {
 	request = &BatchSendMailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

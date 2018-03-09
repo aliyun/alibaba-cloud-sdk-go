@@ -95,7 +95,7 @@ type ModifyBackupPolicyResponse struct {
 }
 
 // CreateModifyBackupPolicyRequest creates a request to invoke ModifyBackupPolicy API
-func CreateModifyBackupPolicyRequest(request *ModifyBackupPolicyRequest) {
+func CreateModifyBackupPolicyRequest() (request *ModifyBackupPolicyRequest) {
 	request = &ModifyBackupPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

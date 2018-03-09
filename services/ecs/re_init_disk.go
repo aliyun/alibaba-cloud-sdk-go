@@ -94,7 +94,7 @@ type ReInitDiskResponse struct {
 }
 
 // CreateReInitDiskRequest creates a request to invoke ReInitDisk API
-func CreateReInitDiskRequest(request *ReInitDiskRequest) {
+func CreateReInitDiskRequest() (request *ReInitDiskRequest) {
 	request = &ReInitDiskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

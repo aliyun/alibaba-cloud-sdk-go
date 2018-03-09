@@ -88,7 +88,7 @@ type StartCdnDomainResponse struct {
 }
 
 // CreateStartCdnDomainRequest creates a request to invoke StartCdnDomain API
-func CreateStartCdnDomainRequest(request *StartCdnDomainRequest) {
+func CreateStartCdnDomainRequest() (request *StartCdnDomainRequest) {
 	request = &StartCdnDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

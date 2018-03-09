@@ -87,7 +87,7 @@ type OpenAccountResponse struct {
 }
 
 // CreateOpenAccountRequest creates a request to invoke OpenAccount API
-func CreateOpenAccountRequest(request *OpenAccountRequest) {
+func CreateOpenAccountRequest() (request *OpenAccountRequest) {
 	request = &OpenAccountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

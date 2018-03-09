@@ -96,7 +96,7 @@ type ModifyForwardEntryResponse struct {
 }
 
 // CreateModifyForwardEntryRequest creates a request to invoke ModifyForwardEntry API
-func CreateModifyForwardEntryRequest(request *ModifyForwardEntryRequest) {
+func CreateModifyForwardEntryRequest() (request *ModifyForwardEntryRequest) {
 	request = &ModifyForwardEntryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

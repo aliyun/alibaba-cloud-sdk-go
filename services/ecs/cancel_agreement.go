@@ -85,7 +85,7 @@ type CancelAgreementResponse struct {
 }
 
 // CreateCancelAgreementRequest creates a request to invoke CancelAgreement API
-func CreateCancelAgreementRequest(request *CancelAgreementRequest) {
+func CreateCancelAgreementRequest() (request *CancelAgreementRequest) {
 	request = &CancelAgreementRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

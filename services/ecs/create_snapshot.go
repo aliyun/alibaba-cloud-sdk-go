@@ -104,7 +104,7 @@ type CreateSnapshotResponse struct {
 }
 
 // CreateCreateSnapshotRequest creates a request to invoke CreateSnapshot API
-func CreateCreateSnapshotRequest(request *CreateSnapshotRequest) {
+func CreateCreateSnapshotRequest() (request *CreateSnapshotRequest) {
 	request = &CreateSnapshotRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

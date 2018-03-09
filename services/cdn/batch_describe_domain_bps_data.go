@@ -89,7 +89,7 @@ type BatchDescribeDomainBpsDataResponse struct {
 }
 
 // CreateBatchDescribeDomainBpsDataRequest creates a request to invoke BatchDescribeDomainBpsData API
-func CreateBatchDescribeDomainBpsDataRequest(request *BatchDescribeDomainBpsDataRequest) {
+func CreateBatchDescribeDomainBpsDataRequest() (request *BatchDescribeDomainBpsDataRequest) {
 	request = &BatchDescribeDomainBpsDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

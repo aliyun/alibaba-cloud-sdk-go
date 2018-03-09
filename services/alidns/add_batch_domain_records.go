@@ -89,7 +89,7 @@ type AddBatchDomainRecordsResponse struct {
 }
 
 // CreateAddBatchDomainRecordsRequest creates a request to invoke AddBatchDomainRecords API
-func CreateAddBatchDomainRecordsRequest(request *AddBatchDomainRecordsRequest) {
+func CreateAddBatchDomainRecordsRequest() (request *AddBatchDomainRecordsRequest) {
 	request = &AddBatchDomainRecordsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

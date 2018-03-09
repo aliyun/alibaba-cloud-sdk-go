@@ -95,7 +95,7 @@ type AddBackendServersResponse struct {
 }
 
 // CreateAddBackendServersRequest creates a request to invoke AddBackendServers API
-func CreateAddBackendServersRequest(request *AddBackendServersRequest) {
+func CreateAddBackendServersRequest() (request *AddBackendServersRequest) {
 	request = &AddBackendServersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

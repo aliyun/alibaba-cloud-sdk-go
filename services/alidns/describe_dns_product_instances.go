@@ -94,7 +94,7 @@ type DescribeDnsProductInstancesResponse struct {
 }
 
 // CreateDescribeDnsProductInstancesRequest creates a request to invoke DescribeDnsProductInstances API
-func CreateDescribeDnsProductInstancesRequest(request *DescribeDnsProductInstancesRequest) {
+func CreateDescribeDnsProductInstancesRequest() (request *DescribeDnsProductInstancesRequest) {
 	request = &DescribeDnsProductInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

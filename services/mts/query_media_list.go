@@ -96,7 +96,7 @@ type QueryMediaListResponse struct {
 }
 
 // CreateQueryMediaListRequest creates a request to invoke QueryMediaList API
-func CreateQueryMediaListRequest(request *QueryMediaListRequest) {
+func CreateQueryMediaListRequest() (request *QueryMediaListRequest) {
 	request = &QueryMediaListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

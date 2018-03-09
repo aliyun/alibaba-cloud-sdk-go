@@ -92,7 +92,7 @@ type CreateKeyPairResponse struct {
 }
 
 // CreateCreateKeyPairRequest creates a request to invoke CreateKeyPair API
-func CreateCreateKeyPairRequest(request *CreateKeyPairRequest) {
+func CreateCreateKeyPairRequest() (request *CreateKeyPairRequest) {
 	request = &CreateKeyPairRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -94,7 +94,7 @@ type SubmitVideoGifJobResponse struct {
 }
 
 // CreateSubmitVideoGifJobRequest creates a request to invoke SubmitVideoGifJob API
-func CreateSubmitVideoGifJobRequest(request *SubmitVideoGifJobRequest) {
+func CreateSubmitVideoGifJobRequest() (request *SubmitVideoGifJobRequest) {
 	request = &SubmitVideoGifJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

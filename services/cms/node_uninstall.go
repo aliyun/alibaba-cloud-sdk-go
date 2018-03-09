@@ -89,7 +89,7 @@ type NodeUninstallResponse struct {
 }
 
 // CreateNodeUninstallRequest creates a request to invoke NodeUninstall API
-func CreateNodeUninstallRequest(request *NodeUninstallRequest) {
+func CreateNodeUninstallRequest() (request *NodeUninstallRequest) {
 	request = &NodeUninstallRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

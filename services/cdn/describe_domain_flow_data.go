@@ -101,7 +101,7 @@ type DescribeDomainFlowDataResponse struct {
 }
 
 // CreateDescribeDomainFlowDataRequest creates a request to invoke DescribeDomainFlowData API
-func CreateDescribeDomainFlowDataRequest(request *DescribeDomainFlowDataRequest) {
+func CreateDescribeDomainFlowDataRequest() (request *DescribeDomainFlowDataRequest) {
 	request = &DescribeDomainFlowDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

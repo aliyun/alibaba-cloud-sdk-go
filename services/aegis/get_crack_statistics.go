@@ -91,7 +91,7 @@ type GetCrackStatisticsResponse struct {
 }
 
 // CreateGetCrackStatisticsRequest creates a request to invoke GetCrackStatistics API
-func CreateGetCrackStatisticsRequest(request *GetCrackStatisticsRequest) {
+func CreateGetCrackStatisticsRequest() (request *GetCrackStatisticsRequest) {
 	request = &GetCrackStatisticsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

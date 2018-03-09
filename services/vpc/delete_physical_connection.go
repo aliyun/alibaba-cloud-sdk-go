@@ -92,7 +92,7 @@ type DeletePhysicalConnectionResponse struct {
 }
 
 // CreateDeletePhysicalConnectionRequest creates a request to invoke DeletePhysicalConnection API
-func CreateDeletePhysicalConnectionRequest(request *DeletePhysicalConnectionRequest) {
+func CreateDeletePhysicalConnectionRequest() (request *DeletePhysicalConnectionRequest) {
 	request = &DeletePhysicalConnectionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -100,7 +100,7 @@ type CreateEventResponse struct {
 }
 
 // CreateCreateEventRequest creates a request to invoke CreateEvent API
-func CreateCreateEventRequest(request *CreateEventRequest) {
+func CreateCreateEventRequest() (request *CreateEventRequest) {
 	request = &CreateEventRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

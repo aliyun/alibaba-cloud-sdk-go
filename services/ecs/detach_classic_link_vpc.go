@@ -90,7 +90,7 @@ type DetachClassicLinkVpcResponse struct {
 }
 
 // CreateDetachClassicLinkVpcRequest creates a request to invoke DetachClassicLinkVpc API
-func CreateDetachClassicLinkVpcRequest(request *DetachClassicLinkVpcRequest) {
+func CreateDetachClassicLinkVpcRequest() (request *DetachClassicLinkVpcRequest) {
 	request = &DetachClassicLinkVpcRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

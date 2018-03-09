@@ -88,7 +88,7 @@ type AttachPolicyToGroupResponse struct {
 }
 
 // CreateAttachPolicyToGroupRequest creates a request to invoke AttachPolicyToGroup API
-func CreateAttachPolicyToGroupRequest(request *AttachPolicyToGroupRequest) {
+func CreateAttachPolicyToGroupRequest() (request *AttachPolicyToGroupRequest) {
 	request = &AttachPolicyToGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

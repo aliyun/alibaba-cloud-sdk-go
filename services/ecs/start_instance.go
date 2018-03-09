@@ -91,7 +91,7 @@ type StartInstanceResponse struct {
 }
 
 // CreateStartInstanceRequest creates a request to invoke StartInstance API
-func CreateStartInstanceRequest(request *StartInstanceRequest) {
+func CreateStartInstanceRequest() (request *StartInstanceRequest) {
 	request = &StartInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

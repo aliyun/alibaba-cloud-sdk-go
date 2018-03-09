@@ -98,7 +98,7 @@ type SenderStatisticsDetailByParamResponse struct {
 }
 
 // CreateSenderStatisticsDetailByParamRequest creates a request to invoke SenderStatisticsDetailByParam API
-func CreateSenderStatisticsDetailByParamRequest(request *SenderStatisticsDetailByParamRequest) {
+func CreateSenderStatisticsDetailByParamRequest() (request *SenderStatisticsDetailByParamRequest) {
 	request = &SenderStatisticsDetailByParamRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

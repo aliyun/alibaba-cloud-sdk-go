@@ -89,7 +89,7 @@ type DescribeDomainQoSRtResponse struct {
 }
 
 // CreateDescribeDomainQoSRtRequest creates a request to invoke DescribeDomainQoSRt API
-func CreateDescribeDomainQoSRtRequest(request *DescribeDomainQoSRtRequest) {
+func CreateDescribeDomainQoSRtRequest() (request *DescribeDomainQoSRtRequest) {
 	request = &DescribeDomainQoSRtRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

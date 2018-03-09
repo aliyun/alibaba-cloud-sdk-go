@@ -109,7 +109,7 @@ type DescribeAbnormalDBInstancesResponse struct {
 }
 
 // CreateDescribeAbnormalDBInstancesRequest creates a request to invoke DescribeAbnormalDBInstances API
-func CreateDescribeAbnormalDBInstancesRequest(request *DescribeAbnormalDBInstancesRequest) {
+func CreateDescribeAbnormalDBInstancesRequest() (request *DescribeAbnormalDBInstancesRequest) {
 	request = &DescribeAbnormalDBInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

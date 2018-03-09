@@ -87,7 +87,7 @@ type UnbindMFADeviceResponse struct {
 }
 
 // CreateUnbindMFADeviceRequest creates a request to invoke UnbindMFADevice API
-func CreateUnbindMFADeviceRequest(request *UnbindMFADeviceRequest) {
+func CreateUnbindMFADeviceRequest() (request *UnbindMFADeviceRequest) {
 	request = &UnbindMFADeviceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

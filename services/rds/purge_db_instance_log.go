@@ -91,7 +91,7 @@ type PurgeDBInstanceLogResponse struct {
 }
 
 // CreatePurgeDBInstanceLogRequest creates a request to invoke PurgeDBInstanceLog API
-func CreatePurgeDBInstanceLogRequest(request *PurgeDBInstanceLogRequest) {
+func CreatePurgeDBInstanceLogRequest() (request *PurgeDBInstanceLogRequest) {
 	request = &PurgeDBInstanceLogRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -94,7 +94,7 @@ type GetPublicAccessUrlsResponse struct {
 }
 
 // CreateGetPublicAccessUrlsRequest creates a request to invoke GetPublicAccessUrls API
-func CreateGetPublicAccessUrlsRequest(request *GetPublicAccessUrlsRequest) {
+func CreateGetPublicAccessUrlsRequest() (request *GetPublicAccessUrlsRequest) {
 	request = &GetPublicAccessUrlsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -92,7 +92,7 @@ type DeleteBgpNetworkResponse struct {
 }
 
 // CreateDeleteBgpNetworkRequest creates a request to invoke DeleteBgpNetwork API
-func CreateDeleteBgpNetworkRequest(request *DeleteBgpNetworkRequest) {
+func CreateDeleteBgpNetworkRequest() (request *DeleteBgpNetworkRequest) {
 	request = &DeleteBgpNetworkRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

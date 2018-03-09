@@ -96,7 +96,7 @@ type QueryReceiverByParamResponse struct {
 }
 
 // CreateQueryReceiverByParamRequest creates a request to invoke QueryReceiverByParam API
-func CreateQueryReceiverByParamRequest(request *QueryReceiverByParamRequest) {
+func CreateQueryReceiverByParamRequest() (request *QueryReceiverByParamRequest) {
 	request = &QueryReceiverByParamRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

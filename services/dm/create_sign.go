@@ -93,7 +93,7 @@ type CreateSignResponse struct {
 }
 
 // CreateCreateSignRequest creates a request to invoke CreateSign API
-func CreateCreateSignRequest(request *CreateSignRequest) {
+func CreateCreateSignRequest() (request *CreateSignRequest) {
 	request = &CreateSignRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

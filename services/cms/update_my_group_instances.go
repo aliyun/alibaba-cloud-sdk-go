@@ -90,7 +90,7 @@ type UpdateMyGroupInstancesResponse struct {
 }
 
 // CreateUpdateMyGroupInstancesRequest creates a request to invoke UpdateMyGroupInstances API
-func CreateUpdateMyGroupInstancesRequest(request *UpdateMyGroupInstancesRequest) {
+func CreateUpdateMyGroupInstancesRequest() (request *UpdateMyGroupInstancesRequest) {
 	request = &UpdateMyGroupInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

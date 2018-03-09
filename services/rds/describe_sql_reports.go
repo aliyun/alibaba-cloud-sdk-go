@@ -98,7 +98,7 @@ type DescribeSQLReportsResponse struct {
 }
 
 // CreateDescribeSQLReportsRequest creates a request to invoke DescribeSQLReports API
-func CreateDescribeSQLReportsRequest(request *DescribeSQLReportsRequest) {
+func CreateDescribeSQLReportsRequest() (request *DescribeSQLReportsRequest) {
 	request = &DescribeSQLReportsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

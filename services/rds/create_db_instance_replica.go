@@ -115,7 +115,7 @@ type CreateDBInstanceReplicaResponse struct {
 }
 
 // CreateCreateDBInstanceReplicaRequest creates a request to invoke CreateDBInstanceReplica API
-func CreateCreateDBInstanceReplicaRequest(request *CreateDBInstanceReplicaRequest) {
+func CreateCreateDBInstanceReplicaRequest() (request *CreateDBInstanceReplicaRequest) {
 	request = &CreateDBInstanceReplicaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

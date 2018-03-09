@@ -102,7 +102,7 @@ type UpdateAlarmResponse struct {
 }
 
 // CreateUpdateAlarmRequest creates a request to invoke UpdateAlarm API
-func CreateUpdateAlarmRequest(request *UpdateAlarmRequest) {
+func CreateUpdateAlarmRequest() (request *UpdateAlarmRequest) {
 	request = &UpdateAlarmRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

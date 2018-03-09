@@ -91,7 +91,7 @@ type CreateMailAddressResponse struct {
 }
 
 // CreateCreateMailAddressRequest creates a request to invoke CreateMailAddress API
-func CreateCreateMailAddressRequest(request *CreateMailAddressRequest) {
+func CreateCreateMailAddressRequest() (request *CreateMailAddressRequest) {
 	request = &CreateMailAddressRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

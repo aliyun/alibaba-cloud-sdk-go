@@ -100,7 +100,7 @@ type ModifyInstanceSpecResponse struct {
 }
 
 // CreateModifyInstanceSpecRequest creates a request to invoke ModifyInstanceSpec API
-func CreateModifyInstanceSpecRequest(request *ModifyInstanceSpecRequest) {
+func CreateModifyInstanceSpecRequest() (request *ModifyInstanceSpecRequest) {
 	request = &ModifyInstanceSpecRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

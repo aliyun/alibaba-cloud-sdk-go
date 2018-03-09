@@ -86,7 +86,7 @@ type GetPasswordPolicyResponse struct {
 }
 
 // CreateGetPasswordPolicyRequest creates a request to invoke GetPasswordPolicy API
-func CreateGetPasswordPolicyRequest(request *GetPasswordPolicyRequest) {
+func CreateGetPasswordPolicyRequest() (request *GetPasswordPolicyRequest) {
 	request = &GetPasswordPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

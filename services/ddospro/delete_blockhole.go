@@ -88,7 +88,7 @@ type DeleteBlockholeResponse struct {
 }
 
 // CreateDeleteBlockholeRequest creates a request to invoke DeleteBlockhole API
-func CreateDeleteBlockholeRequest(request *DeleteBlockholeRequest) {
+func CreateDeleteBlockholeRequest() (request *DeleteBlockholeRequest) {
 	request = &DeleteBlockholeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -88,7 +88,7 @@ type EmailVerifiedResponse struct {
 }
 
 // CreateEmailVerifiedRequest creates a request to invoke EmailVerified API
-func CreateEmailVerifiedRequest(request *EmailVerifiedRequest) {
+func CreateEmailVerifiedRequest() (request *EmailVerifiedRequest) {
 	request = &EmailVerifiedRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

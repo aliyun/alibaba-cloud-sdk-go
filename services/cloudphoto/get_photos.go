@@ -92,7 +92,7 @@ type GetPhotosResponse struct {
 }
 
 // CreateGetPhotosRequest creates a request to invoke GetPhotos API
-func CreateGetPhotosRequest(request *GetPhotosRequest) {
+func CreateGetPhotosRequest() (request *GetPhotosRequest) {
 	request = &GetPhotosRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

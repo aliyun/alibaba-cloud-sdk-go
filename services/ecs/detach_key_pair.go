@@ -94,7 +94,7 @@ type DetachKeyPairResponse struct {
 }
 
 // CreateDetachKeyPairRequest creates a request to invoke DetachKeyPair API
-func CreateDetachKeyPairRequest(request *DetachKeyPairRequest) {
+func CreateDetachKeyPairRequest() (request *DetachKeyPairRequest) {
 	request = &DetachKeyPairRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

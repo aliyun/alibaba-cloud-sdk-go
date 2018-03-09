@@ -88,7 +88,7 @@ type QuerySystemEventHistogramResponse struct {
 }
 
 // CreateQuerySystemEventHistogramRequest creates a request to invoke QuerySystemEventHistogram API
-func CreateQuerySystemEventHistogramRequest(request *QuerySystemEventHistogramRequest) {
+func CreateQuerySystemEventHistogramRequest() (request *QuerySystemEventHistogramRequest) {
 	request = &QuerySystemEventHistogramRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

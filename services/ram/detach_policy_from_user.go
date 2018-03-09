@@ -88,7 +88,7 @@ type DetachPolicyFromUserResponse struct {
 }
 
 // CreateDetachPolicyFromUserRequest creates a request to invoke DetachPolicyFromUser API
-func CreateDetachPolicyFromUserRequest(request *DetachPolicyFromUserRequest) {
+func CreateDetachPolicyFromUserRequest() (request *DetachPolicyFromUserRequest) {
 	request = &DetachPolicyFromUserRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

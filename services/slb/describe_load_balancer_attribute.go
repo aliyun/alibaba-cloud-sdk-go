@@ -118,7 +118,7 @@ type DescribeLoadBalancerAttributeResponse struct {
 }
 
 // CreateDescribeLoadBalancerAttributeRequest creates a request to invoke DescribeLoadBalancerAttribute API
-func CreateDescribeLoadBalancerAttributeRequest(request *DescribeLoadBalancerAttributeRequest) {
+func CreateDescribeLoadBalancerAttributeRequest() (request *DescribeLoadBalancerAttributeRequest) {
 	request = &DescribeLoadBalancerAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

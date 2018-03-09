@@ -86,7 +86,7 @@ type GetProjectEventsResponse struct {
 }
 
 // CreateGetProjectEventsRequest creates a request to invoke GetProjectEvents API
-func CreateGetProjectEventsRequest(request *GetProjectEventsRequest) {
+func CreateGetProjectEventsRequest() (request *GetProjectEventsRequest) {
 	request = &GetProjectEventsRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}

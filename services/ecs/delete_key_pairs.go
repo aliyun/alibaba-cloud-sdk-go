@@ -89,7 +89,7 @@ type DeleteKeyPairsResponse struct {
 }
 
 // CreateDeleteKeyPairsRequest creates a request to invoke DeleteKeyPairs API
-func CreateDeleteKeyPairsRequest(request *DeleteKeyPairsRequest) {
+func CreateDeleteKeyPairsRequest() (request *DeleteKeyPairsRequest) {
 	request = &DeleteKeyPairsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

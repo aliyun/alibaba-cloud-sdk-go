@@ -93,7 +93,7 @@ type NodeProcessCreateResponse struct {
 }
 
 // CreateNodeProcessCreateRequest creates a request to invoke NodeProcessCreate API
-func CreateNodeProcessCreateRequest(request *NodeProcessCreateRequest) {
+func CreateNodeProcessCreateRequest() (request *NodeProcessCreateRequest) {
 	request = &NodeProcessCreateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

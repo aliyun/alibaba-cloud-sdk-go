@@ -88,7 +88,7 @@ type UpdateAccessKeyResponse struct {
 }
 
 // CreateUpdateAccessKeyRequest creates a request to invoke UpdateAccessKey API
-func CreateUpdateAccessKeyRequest(request *UpdateAccessKeyRequest) {
+func CreateUpdateAccessKeyRequest() (request *UpdateAccessKeyRequest) {
 	request = &UpdateAccessKeyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

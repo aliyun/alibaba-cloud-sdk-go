@@ -92,7 +92,7 @@ type CheckDBNameAvailableResponse struct {
 }
 
 // CreateCheckDBNameAvailableRequest creates a request to invoke CheckDBNameAvailable API
-func CreateCheckDBNameAvailableRequest(request *CheckDBNameAvailableRequest) {
+func CreateCheckDBNameAvailableRequest() (request *CheckDBNameAvailableRequest) {
 	request = &CheckDBNameAvailableRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

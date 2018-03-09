@@ -95,7 +95,7 @@ type AddUsersResponse struct {
 }
 
 // CreateAddUsersRequest creates a request to invoke AddUsers API
-func CreateAddUsersRequest(request *AddUsersRequest) {
+func CreateAddUsersRequest() (request *AddUsersRequest) {
 	request = &AddUsersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

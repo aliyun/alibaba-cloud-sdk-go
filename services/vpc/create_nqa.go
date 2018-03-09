@@ -93,7 +93,7 @@ type CreateNqaResponse struct {
 }
 
 // CreateCreateNqaRequest creates a request to invoke CreateNqa API
-func CreateCreateNqaRequest(request *CreateNqaRequest) {
+func CreateCreateNqaRequest() (request *CreateNqaRequest) {
 	request = &CreateNqaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

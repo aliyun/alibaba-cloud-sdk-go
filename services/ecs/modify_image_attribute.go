@@ -92,7 +92,7 @@ type ModifyImageAttributeResponse struct {
 }
 
 // CreateModifyImageAttributeRequest creates a request to invoke ModifyImageAttribute API
-func CreateModifyImageAttributeRequest(request *ModifyImageAttributeRequest) {
+func CreateModifyImageAttributeRequest() (request *ModifyImageAttributeRequest) {
 	request = &ModifyImageAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

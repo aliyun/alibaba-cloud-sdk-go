@@ -89,7 +89,7 @@ type SetWafConfigResponse struct {
 }
 
 // CreateSetWafConfigRequest creates a request to invoke SetWafConfig API
-func CreateSetWafConfigRequest(request *SetWafConfigRequest) {
+func CreateSetWafConfigRequest() (request *SetWafConfigRequest) {
 	request = &SetWafConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

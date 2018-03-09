@@ -116,7 +116,7 @@ type SetLoadBalancerHTTPListenerAttributeResponse struct {
 }
 
 // CreateSetLoadBalancerHTTPListenerAttributeRequest creates a request to invoke SetLoadBalancerHTTPListenerAttribute API
-func CreateSetLoadBalancerHTTPListenerAttributeRequest(request *SetLoadBalancerHTTPListenerAttributeRequest) {
+func CreateSetLoadBalancerHTTPListenerAttributeRequest() (request *SetLoadBalancerHTTPListenerAttributeRequest) {
 	request = &SetLoadBalancerHTTPListenerAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

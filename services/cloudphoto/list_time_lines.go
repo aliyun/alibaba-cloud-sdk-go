@@ -99,7 +99,7 @@ type ListTimeLinesResponse struct {
 }
 
 // CreateListTimeLinesRequest creates a request to invoke ListTimeLines API
-func CreateListTimeLinesRequest(request *ListTimeLinesRequest) {
+func CreateListTimeLinesRequest() (request *ListTimeLinesRequest) {
 	request = &ListTimeLinesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -85,7 +85,7 @@ type DescribeUserContainersResponse struct {
 }
 
 // CreateDescribeUserContainersRequest creates a request to invoke DescribeUserContainers API
-func CreateDescribeUserContainersRequest(request *DescribeUserContainersRequest) {
+func CreateDescribeUserContainersRequest() (request *DescribeUserContainersRequest) {
 	request = &DescribeUserContainersRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}

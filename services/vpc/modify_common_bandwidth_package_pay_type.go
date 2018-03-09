@@ -101,7 +101,7 @@ type ModifyCommonBandwidthPackagePayTypeResponse struct {
 }
 
 // CreateModifyCommonBandwidthPackagePayTypeRequest creates a request to invoke ModifyCommonBandwidthPackagePayType API
-func CreateModifyCommonBandwidthPackagePayTypeRequest(request *ModifyCommonBandwidthPackagePayTypeRequest) {
+func CreateModifyCommonBandwidthPackagePayTypeRequest() (request *ModifyCommonBandwidthPackagePayTypeRequest) {
 	request = &ModifyCommonBandwidthPackagePayTypeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

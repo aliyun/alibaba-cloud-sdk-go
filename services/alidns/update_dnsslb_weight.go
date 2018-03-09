@@ -91,7 +91,7 @@ type UpdateDNSSLBWeightResponse struct {
 }
 
 // CreateUpdateDNSSLBWeightRequest creates a request to invoke UpdateDNSSLBWeight API
-func CreateUpdateDNSSLBWeightRequest(request *UpdateDNSSLBWeightRequest) {
+func CreateUpdateDNSSLBWeightRequest() (request *UpdateDNSSLBWeightRequest) {
 	request = &UpdateDNSSLBWeightRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

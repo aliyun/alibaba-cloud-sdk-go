@@ -92,7 +92,7 @@ type ModifyDBInstanceMonitorResponse struct {
 }
 
 // CreateModifyDBInstanceMonitorRequest creates a request to invoke ModifyDBInstanceMonitor API
-func CreateModifyDBInstanceMonitorRequest(request *ModifyDBInstanceMonitorRequest) {
+func CreateModifyDBInstanceMonitorRequest() (request *ModifyDBInstanceMonitorRequest) {
 	request = &ModifyDBInstanceMonitorRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

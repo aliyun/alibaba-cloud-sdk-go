@@ -94,7 +94,7 @@ type QueryCrackEventResponse struct {
 }
 
 // CreateQueryCrackEventRequest creates a request to invoke QueryCrackEvent API
-func CreateQueryCrackEventRequest(request *QueryCrackEventRequest) {
+func CreateQueryCrackEventRequest() (request *QueryCrackEventRequest) {
 	request = &QueryCrackEventRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

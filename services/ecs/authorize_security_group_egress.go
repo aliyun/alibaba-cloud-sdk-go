@@ -85,7 +85,7 @@ type AuthorizeSecurityGroupEgressResponse struct {
 }
 
 // CreateAuthorizeSecurityGroupEgressRequest creates a request to invoke AuthorizeSecurityGroupEgress API
-func CreateAuthorizeSecurityGroupEgressRequest(request *AuthorizeSecurityGroupEgressRequest) {
+func CreateAuthorizeSecurityGroupEgressRequest() (request *AuthorizeSecurityGroupEgressRequest) {
 	request = &AuthorizeSecurityGroupEgressRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -99,7 +99,7 @@ type ModifyVirtualBorderRouterAttributeResponse struct {
 }
 
 // CreateModifyVirtualBorderRouterAttributeRequest creates a request to invoke ModifyVirtualBorderRouterAttribute API
-func CreateModifyVirtualBorderRouterAttributeRequest(request *ModifyVirtualBorderRouterAttributeRequest) {
+func CreateModifyVirtualBorderRouterAttributeRequest() (request *ModifyVirtualBorderRouterAttributeRequest) {
 	request = &ModifyVirtualBorderRouterAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

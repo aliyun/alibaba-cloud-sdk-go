@@ -95,7 +95,7 @@ type QueryTagByParamResponse struct {
 }
 
 // CreateQueryTagByParamRequest creates a request to invoke QueryTagByParam API
-func CreateQueryTagByParamRequest(request *QueryTagByParamRequest) {
+func CreateQueryTagByParamRequest() (request *QueryTagByParamRequest) {
 	request = &QueryTagByParamRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

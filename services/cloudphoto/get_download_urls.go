@@ -92,7 +92,7 @@ type GetDownloadUrlsResponse struct {
 }
 
 // CreateGetDownloadUrlsRequest creates a request to invoke GetDownloadUrls API
-func CreateGetDownloadUrlsRequest(request *GetDownloadUrlsRequest) {
+func CreateGetDownloadUrlsRequest() (request *GetDownloadUrlsRequest) {
 	request = &GetDownloadUrlsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

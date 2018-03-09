@@ -89,7 +89,7 @@ type ApplyForRetrievalDomainNameResponse struct {
 }
 
 // CreateApplyForRetrievalDomainNameRequest creates a request to invoke ApplyForRetrievalDomainName API
-func CreateApplyForRetrievalDomainNameRequest(request *ApplyForRetrievalDomainNameRequest) {
+func CreateApplyForRetrievalDomainNameRequest() (request *ApplyForRetrievalDomainNameRequest) {
 	request = &ApplyForRetrievalDomainNameRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

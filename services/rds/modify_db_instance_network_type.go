@@ -99,7 +99,7 @@ type ModifyDBInstanceNetworkTypeResponse struct {
 }
 
 // CreateModifyDBInstanceNetworkTypeRequest creates a request to invoke ModifyDBInstanceNetworkType API
-func CreateModifyDBInstanceNetworkTypeRequest(request *ModifyDBInstanceNetworkTypeRequest) {
+func CreateModifyDBInstanceNetworkTypeRequest() (request *ModifyDBInstanceNetworkTypeRequest) {
 	request = &ModifyDBInstanceNetworkTypeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

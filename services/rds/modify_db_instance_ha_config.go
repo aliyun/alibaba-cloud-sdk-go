@@ -92,7 +92,7 @@ type ModifyDBInstanceHAConfigResponse struct {
 }
 
 // CreateModifyDBInstanceHAConfigRequest creates a request to invoke ModifyDBInstanceHAConfig API
-func CreateModifyDBInstanceHAConfigRequest(request *ModifyDBInstanceHAConfigRequest) {
+func CreateModifyDBInstanceHAConfigRequest() (request *ModifyDBInstanceHAConfigRequest) {
 	request = &ModifyDBInstanceHAConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

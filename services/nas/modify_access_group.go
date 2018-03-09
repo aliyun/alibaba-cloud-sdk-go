@@ -87,7 +87,7 @@ type ModifyAccessGroupResponse struct {
 }
 
 // CreateModifyAccessGroupRequest creates a request to invoke ModifyAccessGroup API
-func CreateModifyAccessGroupRequest(request *ModifyAccessGroupRequest) {
+func CreateModifyAccessGroupRequest() (request *ModifyAccessGroupRequest) {
 	request = &ModifyAccessGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

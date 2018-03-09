@@ -88,7 +88,7 @@ type UploadPublicKeyResponse struct {
 }
 
 // CreateUploadPublicKeyRequest creates a request to invoke UploadPublicKey API
-func CreateUploadPublicKeyRequest(request *UploadPublicKeyRequest) {
+func CreateUploadPublicKeyRequest() (request *UploadPublicKeyRequest) {
 	request = &UploadPublicKeyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

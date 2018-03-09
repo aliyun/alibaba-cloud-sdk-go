@@ -98,7 +98,7 @@ type PreCheckBeforeImportDataResponse struct {
 }
 
 // CreatePreCheckBeforeImportDataRequest creates a request to invoke PreCheckBeforeImportData API
-func CreatePreCheckBeforeImportDataRequest(request *PreCheckBeforeImportDataRequest) {
+func CreatePreCheckBeforeImportDataRequest() (request *PreCheckBeforeImportDataRequest) {
 	request = &PreCheckBeforeImportDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

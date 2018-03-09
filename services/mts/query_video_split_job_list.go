@@ -92,7 +92,7 @@ type QueryVideoSplitJobListResponse struct {
 }
 
 // CreateQueryVideoSplitJobListRequest creates a request to invoke QueryVideoSplitJobList API
-func CreateQueryVideoSplitJobListRequest(request *QueryVideoSplitJobListRequest) {
+func CreateQueryVideoSplitJobListRequest() (request *QueryVideoSplitJobListRequest) {
 	request = &QueryVideoSplitJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

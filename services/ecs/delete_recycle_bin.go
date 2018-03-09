@@ -90,7 +90,7 @@ type DeleteRecycleBinResponse struct {
 }
 
 // CreateDeleteRecycleBinRequest creates a request to invoke DeleteRecycleBin API
-func CreateDeleteRecycleBinRequest(request *DeleteRecycleBinRequest) {
+func CreateDeleteRecycleBinRequest() (request *DeleteRecycleBinRequest) {
 	request = &DeleteRecycleBinRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

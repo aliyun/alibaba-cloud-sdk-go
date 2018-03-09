@@ -87,7 +87,7 @@ type DeletePublicKeyResponse struct {
 }
 
 // CreateDeletePublicKeyRequest creates a request to invoke DeletePublicKey API
-func CreateDeletePublicKeyRequest(request *DeletePublicKeyRequest) {
+func CreateDeletePublicKeyRequest() (request *DeletePublicKeyRequest) {
 	request = &DeletePublicKeyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

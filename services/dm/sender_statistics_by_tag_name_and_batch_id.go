@@ -94,7 +94,7 @@ type SenderStatisticsByTagNameAndBatchIDResponse struct {
 }
 
 // CreateSenderStatisticsByTagNameAndBatchIDRequest creates a request to invoke SenderStatisticsByTagNameAndBatchID API
-func CreateSenderStatisticsByTagNameAndBatchIDRequest(request *SenderStatisticsByTagNameAndBatchIDRequest) {
+func CreateSenderStatisticsByTagNameAndBatchIDRequest() (request *SenderStatisticsByTagNameAndBatchIDRequest) {
 	request = &SenderStatisticsByTagNameAndBatchIDRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

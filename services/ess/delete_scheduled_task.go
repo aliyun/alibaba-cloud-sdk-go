@@ -89,7 +89,7 @@ type DeleteScheduledTaskResponse struct {
 }
 
 // CreateDeleteScheduledTaskRequest creates a request to invoke DeleteScheduledTask API
-func CreateDeleteScheduledTaskRequest(request *DeleteScheduledTaskRequest) {
+func CreateDeleteScheduledTaskRequest() (request *DeleteScheduledTaskRequest) {
 	request = &DeleteScheduledTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

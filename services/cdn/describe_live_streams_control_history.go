@@ -92,7 +92,7 @@ type DescribeLiveStreamsControlHistoryResponse struct {
 }
 
 // CreateDescribeLiveStreamsControlHistoryRequest creates a request to invoke DescribeLiveStreamsControlHistory API
-func CreateDescribeLiveStreamsControlHistoryRequest(request *DescribeLiveStreamsControlHistoryRequest) {
+func CreateDescribeLiveStreamsControlHistoryRequest() (request *DescribeLiveStreamsControlHistoryRequest) {
 	request = &DescribeLiveStreamsControlHistoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

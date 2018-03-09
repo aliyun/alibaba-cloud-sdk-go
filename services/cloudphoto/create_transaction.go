@@ -95,7 +95,7 @@ type CreateTransactionResponse struct {
 }
 
 // CreateCreateTransactionRequest creates a request to invoke CreateTransaction API
-func CreateCreateTransactionRequest(request *CreateTransactionRequest) {
+func CreateCreateTransactionRequest() (request *CreateTransactionRequest) {
 	request = &CreateTransactionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

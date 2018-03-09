@@ -98,7 +98,7 @@ type SaveBatchTaskForCreatingOrderActivateResponse struct {
 }
 
 // CreateSaveBatchTaskForCreatingOrderActivateRequest creates a request to invoke SaveBatchTaskForCreatingOrderActivate API
-func CreateSaveBatchTaskForCreatingOrderActivateRequest(request *SaveBatchTaskForCreatingOrderActivateRequest) {
+func CreateSaveBatchTaskForCreatingOrderActivateRequest() (request *SaveBatchTaskForCreatingOrderActivateRequest) {
 	request = &SaveBatchTaskForCreatingOrderActivateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -94,7 +94,7 @@ type DescribeTagsResponse struct {
 }
 
 // CreateDescribeTagsRequest creates a request to invoke DescribeTags API
-func CreateDescribeTagsRequest(request *DescribeTagsRequest) {
+func CreateDescribeTagsRequest() (request *DescribeTagsRequest) {
 	request = &DescribeTagsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

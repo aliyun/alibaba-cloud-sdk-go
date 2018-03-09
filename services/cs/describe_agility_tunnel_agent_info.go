@@ -85,7 +85,7 @@ type DescribeAgilityTunnelAgentInfoResponse struct {
 }
 
 // CreateDescribeAgilityTunnelAgentInfoRequest creates a request to invoke DescribeAgilityTunnelAgentInfo API
-func CreateDescribeAgilityTunnelAgentInfoRequest(request *DescribeAgilityTunnelAgentInfoRequest) {
+func CreateDescribeAgilityTunnelAgentInfoRequest() (request *DescribeAgilityTunnelAgentInfoRequest) {
 	request = &DescribeAgilityTunnelAgentInfoRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}

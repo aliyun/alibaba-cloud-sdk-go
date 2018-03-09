@@ -96,7 +96,7 @@ type DescribeDomainsUsageByDayResponse struct {
 }
 
 // CreateDescribeDomainsUsageByDayRequest creates a request to invoke DescribeDomainsUsageByDay API
-func CreateDescribeDomainsUsageByDayRequest(request *DescribeDomainsUsageByDayRequest) {
+func CreateDescribeDomainsUsageByDayRequest() (request *DescribeDomainsUsageByDayRequest) {
 	request = &DescribeDomainsUsageByDayRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

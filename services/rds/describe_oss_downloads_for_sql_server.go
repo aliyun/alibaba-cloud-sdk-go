@@ -93,7 +93,7 @@ type DescribeOssDownloadsForSQLServerResponse struct {
 }
 
 // CreateDescribeOssDownloadsForSQLServerRequest creates a request to invoke DescribeOssDownloadsForSQLServer API
-func CreateDescribeOssDownloadsForSQLServerRequest(request *DescribeOssDownloadsForSQLServerRequest) {
+func CreateDescribeOssDownloadsForSQLServerRequest() (request *DescribeOssDownloadsForSQLServerRequest) {
 	request = &DescribeOssDownloadsForSQLServerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -97,7 +97,7 @@ type DescribeSuspiciousExportInfoResponse struct {
 }
 
 // CreateDescribeSuspiciousExportInfoRequest creates a request to invoke DescribeSuspiciousExportInfo API
-func CreateDescribeSuspiciousExportInfoRequest(request *DescribeSuspiciousExportInfoRequest) {
+func CreateDescribeSuspiciousExportInfoRequest() (request *DescribeSuspiciousExportInfoRequest) {
 	request = &DescribeSuspiciousExportInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

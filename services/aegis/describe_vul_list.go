@@ -99,7 +99,7 @@ type DescribeVulListResponse struct {
 }
 
 // CreateDescribeVulListRequest creates a request to invoke DescribeVulList API
-func CreateDescribeVulListRequest(request *DescribeVulListRequest) {
+func CreateDescribeVulListRequest() (request *DescribeVulListRequest) {
 	request = &DescribeVulListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

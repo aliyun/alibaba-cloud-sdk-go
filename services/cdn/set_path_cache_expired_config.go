@@ -91,7 +91,7 @@ type SetPathCacheExpiredConfigResponse struct {
 }
 
 // CreateSetPathCacheExpiredConfigRequest creates a request to invoke SetPathCacheExpiredConfig API
-func CreateSetPathCacheExpiredConfigRequest(request *SetPathCacheExpiredConfigRequest) {
+func CreateSetPathCacheExpiredConfigRequest() (request *SetPathCacheExpiredConfigRequest) {
 	request = &SetPathCacheExpiredConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

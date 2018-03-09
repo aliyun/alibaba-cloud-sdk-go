@@ -92,7 +92,7 @@ type DescribeOneMinuteDataResponse struct {
 }
 
 // CreateDescribeOneMinuteDataRequest creates a request to invoke DescribeOneMinuteData API
-func CreateDescribeOneMinuteDataRequest(request *DescribeOneMinuteDataRequest) {
+func CreateDescribeOneMinuteDataRequest() (request *DescribeOneMinuteDataRequest) {
 	request = &DescribeOneMinuteDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

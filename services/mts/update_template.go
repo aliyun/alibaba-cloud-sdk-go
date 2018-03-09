@@ -97,7 +97,7 @@ type UpdateTemplateResponse struct {
 }
 
 // CreateUpdateTemplateRequest creates a request to invoke UpdateTemplate API
-func CreateUpdateTemplateRequest(request *UpdateTemplateRequest) {
+func CreateUpdateTemplateRequest() (request *UpdateTemplateRequest) {
 	request = &UpdateTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

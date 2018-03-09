@@ -96,7 +96,7 @@ type CreateMasterSlaveServerGroupResponse struct {
 }
 
 // CreateCreateMasterSlaveServerGroupRequest creates a request to invoke CreateMasterSlaveServerGroup API
-func CreateCreateMasterSlaveServerGroupRequest(request *CreateMasterSlaveServerGroupRequest) {
+func CreateCreateMasterSlaveServerGroupRequest() (request *CreateMasterSlaveServerGroupRequest) {
 	request = &CreateMasterSlaveServerGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

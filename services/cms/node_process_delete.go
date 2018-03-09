@@ -91,7 +91,7 @@ type NodeProcessDeleteResponse struct {
 }
 
 // CreateNodeProcessDeleteRequest creates a request to invoke NodeProcessDelete API
-func CreateNodeProcessDeleteRequest(request *NodeProcessDeleteRequest) {
+func CreateNodeProcessDeleteRequest() (request *NodeProcessDeleteRequest) {
 	request = &NodeProcessDeleteRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

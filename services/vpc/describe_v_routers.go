@@ -96,7 +96,7 @@ type DescribeVRoutersResponse struct {
 }
 
 // CreateDescribeVRoutersRequest creates a request to invoke DescribeVRouters API
-func CreateDescribeVRoutersRequest(request *DescribeVRoutersRequest) {
+func CreateDescribeVRoutersRequest() (request *DescribeVRoutersRequest) {
 	request = &DescribeVRoutersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

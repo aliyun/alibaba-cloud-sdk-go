@@ -97,7 +97,7 @@ type DescribeExportInfoResponse struct {
 }
 
 // CreateDescribeExportInfoRequest creates a request to invoke DescribeExportInfo API
-func CreateDescribeExportInfoRequest(request *DescribeExportInfoRequest) {
+func CreateDescribeExportInfoRequest() (request *DescribeExportInfoRequest) {
 	request = &DescribeExportInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

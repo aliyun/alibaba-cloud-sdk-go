@@ -87,7 +87,7 @@ type AddUserToGroupResponse struct {
 }
 
 // CreateAddUserToGroupRequest creates a request to invoke AddUserToGroup API
-func CreateAddUserToGroupRequest(request *AddUserToGroupRequest) {
+func CreateAddUserToGroupRequest() (request *AddUserToGroupRequest) {
 	request = &AddUserToGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

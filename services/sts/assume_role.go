@@ -91,7 +91,7 @@ type AssumeRoleResponse struct {
 }
 
 // CreateAssumeRoleRequest creates a request to invoke AssumeRole API
-func CreateAssumeRoleRequest(request *AssumeRoleRequest) {
+func CreateAssumeRoleRequest() (request *AssumeRoleRequest) {
 	request = &AssumeRoleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

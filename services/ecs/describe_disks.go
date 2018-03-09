@@ -130,7 +130,7 @@ type DescribeDisksResponse struct {
 }
 
 // CreateDescribeDisksRequest creates a request to invoke DescribeDisks API
-func CreateDescribeDisksRequest(request *DescribeDisksRequest) {
+func CreateDescribeDisksRequest() (request *DescribeDisksRequest) {
 	request = &DescribeDisksRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -93,7 +93,7 @@ type CreateBackupResponse struct {
 }
 
 // CreateCreateBackupRequest creates a request to invoke CreateBackup API
-func CreateCreateBackupRequest(request *CreateBackupRequest) {
+func CreateCreateBackupRequest() (request *CreateBackupRequest) {
 	request = &CreateBackupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

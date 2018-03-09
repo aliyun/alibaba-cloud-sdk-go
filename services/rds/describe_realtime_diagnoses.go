@@ -99,7 +99,7 @@ type DescribeRealtimeDiagnosesResponse struct {
 }
 
 // CreateDescribeRealtimeDiagnosesRequest creates a request to invoke DescribeRealtimeDiagnoses API
-func CreateDescribeRealtimeDiagnosesRequest(request *DescribeRealtimeDiagnosesRequest) {
+func CreateDescribeRealtimeDiagnosesRequest() (request *DescribeRealtimeDiagnosesRequest) {
 	request = &DescribeRealtimeDiagnosesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

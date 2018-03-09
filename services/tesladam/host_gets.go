@@ -91,7 +91,7 @@ type HostGetsResponse struct {
 }
 
 // CreateHostGetsRequest creates a request to invoke HostGets API
-func CreateHostGetsRequest(request *HostGetsRequest) {
+func CreateHostGetsRequest() (request *HostGetsRequest) {
 	request = &HostGetsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

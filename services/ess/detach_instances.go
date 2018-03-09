@@ -111,7 +111,7 @@ type DetachInstancesResponse struct {
 }
 
 // CreateDetachInstancesRequest creates a request to invoke DetachInstances API
-func CreateDetachInstancesRequest(request *DetachInstancesRequest) {
+func CreateDetachInstancesRequest() (request *DetachInstancesRequest) {
 	request = &DetachInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

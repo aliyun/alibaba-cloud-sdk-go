@@ -88,7 +88,7 @@ type CheckDeviceResponse struct {
 }
 
 // CreateCheckDeviceRequest creates a request to invoke CheckDevice API
-func CreateCheckDeviceRequest(request *CheckDeviceRequest) {
+func CreateCheckDeviceRequest() (request *CheckDeviceRequest) {
 	request = &CheckDeviceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

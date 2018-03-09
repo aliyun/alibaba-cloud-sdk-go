@@ -89,7 +89,7 @@ type DeleteScalingConfigurationResponse struct {
 }
 
 // CreateDeleteScalingConfigurationRequest creates a request to invoke DeleteScalingConfiguration API
-func CreateDeleteScalingConfigurationRequest(request *DeleteScalingConfigurationRequest) {
+func CreateDeleteScalingConfigurationRequest() (request *DeleteScalingConfigurationRequest) {
 	request = &DeleteScalingConfigurationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

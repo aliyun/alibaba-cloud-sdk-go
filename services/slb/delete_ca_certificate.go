@@ -91,7 +91,7 @@ type DeleteCACertificateResponse struct {
 }
 
 // CreateDeleteCACertificateRequest creates a request to invoke DeleteCACertificate API
-func CreateDeleteCACertificateRequest(request *DeleteCACertificateRequest) {
+func CreateDeleteCACertificateRequest() (request *DeleteCACertificateRequest) {
 	request = &DeleteCACertificateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

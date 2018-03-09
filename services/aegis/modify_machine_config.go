@@ -93,7 +93,7 @@ type ModifyMachineConfigResponse struct {
 }
 
 // CreateModifyMachineConfigRequest creates a request to invoke ModifyMachineConfig API
-func CreateModifyMachineConfigRequest(request *ModifyMachineConfigRequest) {
+func CreateModifyMachineConfigRequest() (request *ModifyMachineConfigRequest) {
 	request = &ModifyMachineConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

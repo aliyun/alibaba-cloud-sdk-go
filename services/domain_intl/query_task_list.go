@@ -98,7 +98,7 @@ type QueryTaskListResponse struct {
 }
 
 // CreateQueryTaskListRequest creates a request to invoke QueryTaskList API
-func CreateQueryTaskListRequest(request *QueryTaskListRequest) {
+func CreateQueryTaskListRequest() (request *QueryTaskListRequest) {
 	request = &QueryTaskListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

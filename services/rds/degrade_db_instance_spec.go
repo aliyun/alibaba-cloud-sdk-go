@@ -93,7 +93,7 @@ type DegradeDBInstanceSpecResponse struct {
 }
 
 // CreateDegradeDBInstanceSpecRequest creates a request to invoke DegradeDBInstanceSpec API
-func CreateDegradeDBInstanceSpecRequest(request *DegradeDBInstanceSpecRequest) {
+func CreateDegradeDBInstanceSpecRequest() (request *DegradeDBInstanceSpecRequest) {
 	request = &DegradeDBInstanceSpecRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -89,7 +89,7 @@ type UnbindAliasResponse struct {
 }
 
 // CreateUnbindAliasRequest creates a request to invoke UnbindAlias API
-func CreateUnbindAliasRequest(request *UnbindAliasRequest) {
+func CreateUnbindAliasRequest() (request *UnbindAliasRequest) {
 	request = &UnbindAliasRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -90,7 +90,7 @@ type DeleteScalingGroupResponse struct {
 }
 
 // CreateDeleteScalingGroupRequest creates a request to invoke DeleteScalingGroup API
-func CreateDeleteScalingGroupRequest(request *DeleteScalingGroupRequest) {
+func CreateDeleteScalingGroupRequest() (request *DeleteScalingGroupRequest) {
 	request = &DeleteScalingGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

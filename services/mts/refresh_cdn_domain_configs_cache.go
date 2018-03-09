@@ -92,7 +92,7 @@ type RefreshCdnDomainConfigsCacheResponse struct {
 }
 
 // CreateRefreshCdnDomainConfigsCacheRequest creates a request to invoke RefreshCdnDomainConfigsCache API
-func CreateRefreshCdnDomainConfigsCacheRequest(request *RefreshCdnDomainConfigsCacheRequest) {
+func CreateRefreshCdnDomainConfigsCacheRequest() (request *RefreshCdnDomainConfigsCacheRequest) {
 	request = &RefreshCdnDomainConfigsCacheRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

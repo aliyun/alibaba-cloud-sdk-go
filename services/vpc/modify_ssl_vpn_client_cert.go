@@ -94,7 +94,7 @@ type ModifySslVpnClientCertResponse struct {
 }
 
 // CreateModifySslVpnClientCertRequest creates a request to invoke ModifySslVpnClientCert API
-func CreateModifySslVpnClientCertRequest(request *ModifySslVpnClientCertRequest) {
+func CreateModifySslVpnClientCertRequest() (request *ModifySslVpnClientCertRequest) {
 	request = &ModifySslVpnClientCertRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

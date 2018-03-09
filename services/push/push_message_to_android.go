@@ -92,7 +92,7 @@ type PushMessageToAndroidResponse struct {
 }
 
 // CreatePushMessageToAndroidRequest creates a request to invoke PushMessageToAndroid API
-func CreatePushMessageToAndroidRequest(request *PushMessageToAndroidRequest) {
+func CreatePushMessageToAndroidRequest() (request *PushMessageToAndroidRequest) {
 	request = &PushMessageToAndroidRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

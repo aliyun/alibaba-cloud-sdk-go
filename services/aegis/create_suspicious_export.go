@@ -98,7 +98,7 @@ type CreateSuspiciousExportResponse struct {
 }
 
 // CreateCreateSuspiciousExportRequest creates a request to invoke CreateSuspiciousExport API
-func CreateCreateSuspiciousExportRequest(request *CreateSuspiciousExportRequest) {
+func CreateCreateSuspiciousExportRequest() (request *CreateSuspiciousExportRequest) {
 	request = &CreateSuspiciousExportRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

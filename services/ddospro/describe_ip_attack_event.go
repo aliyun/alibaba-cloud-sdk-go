@@ -94,7 +94,7 @@ type DescribeIpAttackEventResponse struct {
 }
 
 // CreateDescribeIpAttackEventRequest creates a request to invoke DescribeIpAttackEvent API
-func CreateDescribeIpAttackEventRequest(request *DescribeIpAttackEventRequest) {
+func CreateDescribeIpAttackEventRequest() (request *DescribeIpAttackEventRequest) {
 	request = &DescribeIpAttackEventRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

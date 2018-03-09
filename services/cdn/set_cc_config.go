@@ -90,7 +90,7 @@ type SetCcConfigResponse struct {
 }
 
 // CreateSetCcConfigRequest creates a request to invoke SetCcConfig API
-func CreateSetCcConfigRequest(request *SetCcConfigRequest) {
+func CreateSetCcConfigRequest() (request *SetCcConfigRequest) {
 	request = &SetCcConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

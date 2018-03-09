@@ -88,7 +88,7 @@ type CreateGroupResponse struct {
 }
 
 // CreateCreateGroupRequest creates a request to invoke CreateGroup API
-func CreateCreateGroupRequest(request *CreateGroupRequest) {
+func CreateCreateGroupRequest() (request *CreateGroupRequest) {
 	request = &CreateGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

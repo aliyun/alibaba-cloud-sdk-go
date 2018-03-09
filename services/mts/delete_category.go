@@ -90,7 +90,7 @@ type DeleteCategoryResponse struct {
 }
 
 // CreateDeleteCategoryRequest creates a request to invoke DeleteCategory API
-func CreateDeleteCategoryRequest(request *DeleteCategoryRequest) {
+func CreateDeleteCategoryRequest() (request *DeleteCategoryRequest) {
 	request = &DeleteCategoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

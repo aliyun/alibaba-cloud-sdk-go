@@ -94,7 +94,7 @@ type RemoveListenerWhiteListItemResponse struct {
 }
 
 // CreateRemoveListenerWhiteListItemRequest creates a request to invoke RemoveListenerWhiteListItem API
-func CreateRemoveListenerWhiteListItemRequest(request *RemoveListenerWhiteListItemRequest) {
+func CreateRemoveListenerWhiteListItemRequest() (request *RemoveListenerWhiteListItemRequest) {
 	request = &RemoveListenerWhiteListItemRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

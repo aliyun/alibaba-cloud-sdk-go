@@ -93,7 +93,7 @@ type ReportCensorJobResultResponse struct {
 }
 
 // CreateReportCensorJobResultRequest creates a request to invoke ReportCensorJobResult API
-func CreateReportCensorJobResultRequest(request *ReportCensorJobResultRequest) {
+func CreateReportCensorJobResultRequest() (request *ReportCensorJobResultRequest) {
 	request = &ReportCensorJobResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

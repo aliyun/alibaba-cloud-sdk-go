@@ -92,7 +92,7 @@ type ForbidLiveStreamResponse struct {
 }
 
 // CreateForbidLiveStreamRequest creates a request to invoke ForbidLiveStream API
-func CreateForbidLiveStreamRequest(request *ForbidLiveStreamRequest) {
+func CreateForbidLiveStreamRequest() (request *ForbidLiveStreamRequest) {
 	request = &ForbidLiveStreamRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

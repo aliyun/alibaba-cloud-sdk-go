@@ -91,7 +91,7 @@ type CreateAccessRuleResponse struct {
 }
 
 // CreateCreateAccessRuleRequest creates a request to invoke CreateAccessRule API
-func CreateCreateAccessRuleRequest(request *CreateAccessRuleRequest) {
+func CreateCreateAccessRuleRequest() (request *CreateAccessRuleRequest) {
 	request = &CreateAccessRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

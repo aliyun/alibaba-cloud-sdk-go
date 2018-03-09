@@ -93,7 +93,7 @@ type ListNodesNoPagingResponse struct {
 }
 
 // CreateListNodesNoPagingRequest creates a request to invoke ListNodesNoPaging API
-func CreateListNodesNoPagingRequest(request *ListNodesNoPagingRequest) {
+func CreateListNodesNoPagingRequest() (request *ListNodesNoPagingRequest) {
 	request = &ListNodesNoPagingRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -95,7 +95,7 @@ type DescribeVServerGroupAttributeResponse struct {
 }
 
 // CreateDescribeVServerGroupAttributeRequest creates a request to invoke DescribeVServerGroupAttribute API
-func CreateDescribeVServerGroupAttributeRequest(request *DescribeVServerGroupAttributeRequest) {
+func CreateDescribeVServerGroupAttributeRequest() (request *DescribeVServerGroupAttributeRequest) {
 	request = &DescribeVServerGroupAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

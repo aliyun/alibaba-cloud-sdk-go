@@ -92,7 +92,7 @@ type ListJobTemplatesResponse struct {
 }
 
 // CreateListJobTemplatesRequest creates a request to invoke ListJobTemplates API
-func CreateListJobTemplatesRequest(request *ListJobTemplatesRequest) {
+func CreateListJobTemplatesRequest() (request *ListJobTemplatesRequest) {
 	request = &ListJobTemplatesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

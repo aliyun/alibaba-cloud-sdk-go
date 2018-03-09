@@ -99,7 +99,7 @@ type DescribeSecurityGroupAttributeResponse struct {
 }
 
 // CreateDescribeSecurityGroupAttributeRequest creates a request to invoke DescribeSecurityGroupAttribute API
-func CreateDescribeSecurityGroupAttributeRequest(request *DescribeSecurityGroupAttributeRequest) {
+func CreateDescribeSecurityGroupAttributeRequest() (request *DescribeSecurityGroupAttributeRequest) {
 	request = &DescribeSecurityGroupAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -93,7 +93,7 @@ type SaveReceiverDetailResponse struct {
 }
 
 // CreateSaveReceiverDetailRequest creates a request to invoke SaveReceiverDetail API
-func CreateSaveReceiverDetailRequest(request *SaveReceiverDetailRequest) {
+func CreateSaveReceiverDetailRequest() (request *SaveReceiverDetailRequest) {
 	request = &SaveReceiverDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

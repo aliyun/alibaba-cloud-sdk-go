@@ -90,7 +90,7 @@ type DescribeClustersResponse struct {
 }
 
 // CreateDescribeClustersRequest creates a request to invoke DescribeClusters API
-func CreateDescribeClustersRequest(request *DescribeClustersRequest) {
+func CreateDescribeClustersRequest() (request *DescribeClustersRequest) {
 	request = &DescribeClustersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

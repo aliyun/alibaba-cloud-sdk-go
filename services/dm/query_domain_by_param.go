@@ -96,7 +96,7 @@ type QueryDomainByParamResponse struct {
 }
 
 // CreateQueryDomainByParamRequest creates a request to invoke QueryDomainByParam API
-func CreateQueryDomainByParamRequest(request *QueryDomainByParamRequest) {
+func CreateQueryDomainByParamRequest() (request *QueryDomainByParamRequest) {
 	request = &QueryDomainByParamRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

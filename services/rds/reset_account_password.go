@@ -92,7 +92,7 @@ type ResetAccountPasswordResponse struct {
 }
 
 // CreateResetAccountPasswordRequest creates a request to invoke ResetAccountPassword API
-func CreateResetAccountPasswordRequest(request *ResetAccountPasswordRequest) {
+func CreateResetAccountPasswordRequest() (request *ResetAccountPasswordRequest) {
 	request = &ResetAccountPasswordRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

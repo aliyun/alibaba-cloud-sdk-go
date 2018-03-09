@@ -89,7 +89,7 @@ type EnableActiceAlertResponse struct {
 }
 
 // CreateEnableActiceAlertRequest creates a request to invoke EnableActiceAlert API
-func CreateEnableActiceAlertRequest(request *EnableActiceAlertRequest) {
+func CreateEnableActiceAlertRequest() (request *EnableActiceAlertRequest) {
 	request = &EnableActiceAlertRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

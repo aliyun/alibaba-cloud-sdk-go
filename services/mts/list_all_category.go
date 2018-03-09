@@ -90,7 +90,7 @@ type ListAllCategoryResponse struct {
 }
 
 // CreateListAllCategoryRequest creates a request to invoke ListAllCategory API
-func CreateListAllCategoryRequest(request *ListAllCategoryRequest) {
+func CreateListAllCategoryRequest() (request *ListAllCategoryRequest) {
 	request = &ListAllCategoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

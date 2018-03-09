@@ -98,7 +98,7 @@ type DescribeDBInstanceByTagsResponse struct {
 }
 
 // CreateDescribeDBInstanceByTagsRequest creates a request to invoke DescribeDBInstanceByTags API
-func CreateDescribeDBInstanceByTagsRequest(request *DescribeDBInstanceByTagsRequest) {
+func CreateDescribeDBInstanceByTagsRequest() (request *DescribeDBInstanceByTagsRequest) {
 	request = &DescribeDBInstanceByTagsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -94,7 +94,7 @@ type ListNodesResponse struct {
 }
 
 // CreateListNodesRequest creates a request to invoke ListNodes API
-func CreateListNodesRequest(request *ListNodesRequest) {
+func CreateListNodesRequest() (request *ListNodesRequest) {
 	request = &ListNodesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

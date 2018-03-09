@@ -96,7 +96,7 @@ type EipNotifyPaidResponse struct {
 }
 
 // CreateEipNotifyPaidRequest creates a request to invoke EipNotifyPaid API
-func CreateEipNotifyPaidRequest(request *EipNotifyPaidRequest) {
+func CreateEipNotifyPaidRequest() (request *EipNotifyPaidRequest) {
 	request = &EipNotifyPaidRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

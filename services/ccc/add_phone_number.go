@@ -94,7 +94,7 @@ type AddPhoneNumberResponse struct {
 }
 
 // CreateAddPhoneNumberRequest creates a request to invoke AddPhoneNumber API
-func CreateAddPhoneNumberRequest(request *AddPhoneNumberRequest) {
+func CreateAddPhoneNumberRequest() (request *AddPhoneNumberRequest) {
 	request = &AddPhoneNumberRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

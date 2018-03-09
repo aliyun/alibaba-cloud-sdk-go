@@ -94,7 +94,7 @@ type UpdateMyGroupsResponse struct {
 }
 
 // CreateUpdateMyGroupsRequest creates a request to invoke UpdateMyGroups API
-func CreateUpdateMyGroupsRequest(request *UpdateMyGroupsRequest) {
+func CreateUpdateMyGroupsRequest() (request *UpdateMyGroupsRequest) {
 	request = &UpdateMyGroupsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

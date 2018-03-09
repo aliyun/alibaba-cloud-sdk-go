@@ -89,7 +89,7 @@ type SetIpBlackListConfigResponse struct {
 }
 
 // CreateSetIpBlackListConfigRequest creates a request to invoke SetIpBlackListConfig API
-func CreateSetIpBlackListConfigRequest(request *SetIpBlackListConfigRequest) {
+func CreateSetIpBlackListConfigRequest() (request *SetIpBlackListConfigRequest) {
 	request = &SetIpBlackListConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

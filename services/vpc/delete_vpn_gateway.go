@@ -91,7 +91,7 @@ type DeleteVpnGatewayResponse struct {
 }
 
 // CreateDeleteVpnGatewayRequest creates a request to invoke DeleteVpnGateway API
-func CreateDeleteVpnGatewayRequest(request *DeleteVpnGatewayRequest) {
+func CreateDeleteVpnGatewayRequest() (request *DeleteVpnGatewayRequest) {
 	request = &DeleteVpnGatewayRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

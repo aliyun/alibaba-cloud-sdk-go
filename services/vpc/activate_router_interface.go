@@ -89,7 +89,7 @@ type ActivateRouterInterfaceResponse struct {
 }
 
 // CreateActivateRouterInterfaceRequest creates a request to invoke ActivateRouterInterface API
-func CreateActivateRouterInterfaceRequest(request *ActivateRouterInterfaceRequest) {
+func CreateActivateRouterInterfaceRequest() (request *ActivateRouterInterfaceRequest) {
 	request = &ActivateRouterInterfaceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

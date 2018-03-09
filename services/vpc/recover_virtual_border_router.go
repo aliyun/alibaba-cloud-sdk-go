@@ -91,7 +91,7 @@ type RecoverVirtualBorderRouterResponse struct {
 }
 
 // CreateRecoverVirtualBorderRouterRequest creates a request to invoke RecoverVirtualBorderRouter API
-func CreateRecoverVirtualBorderRouterRequest(request *RecoverVirtualBorderRouterRequest) {
+func CreateRecoverVirtualBorderRouterRequest() (request *RecoverVirtualBorderRouterRequest) {
 	request = &RecoverVirtualBorderRouterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

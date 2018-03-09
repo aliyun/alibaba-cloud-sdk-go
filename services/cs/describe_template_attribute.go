@@ -85,7 +85,7 @@ type DescribeTemplateAttributeResponse struct {
 }
 
 // CreateDescribeTemplateAttributeRequest creates a request to invoke DescribeTemplateAttribute API
-func CreateDescribeTemplateAttributeRequest(request *DescribeTemplateAttributeRequest) {
+func CreateDescribeTemplateAttributeRequest() (request *DescribeTemplateAttributeRequest) {
 	request = &DescribeTemplateAttributeRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}

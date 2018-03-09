@@ -93,7 +93,7 @@ type DeleteLoadBalancerListenerResponse struct {
 }
 
 // CreateDeleteLoadBalancerListenerRequest creates a request to invoke DeleteLoadBalancerListener API
-func CreateDeleteLoadBalancerListenerRequest(request *DeleteLoadBalancerListenerRequest) {
+func CreateDeleteLoadBalancerListenerRequest() (request *DeleteLoadBalancerListenerRequest) {
 	request = &DeleteLoadBalancerListenerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

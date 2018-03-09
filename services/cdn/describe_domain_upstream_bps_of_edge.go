@@ -91,7 +91,7 @@ type DescribeDomainUpstreamBpsOfEdgeResponse struct {
 }
 
 // CreateDescribeDomainUpstreamBpsOfEdgeRequest creates a request to invoke DescribeDomainUpstreamBpsOfEdge API
-func CreateDescribeDomainUpstreamBpsOfEdgeRequest(request *DescribeDomainUpstreamBpsOfEdgeRequest) {
+func CreateDescribeDomainUpstreamBpsOfEdgeRequest() (request *DescribeDomainUpstreamBpsOfEdgeRequest) {
 	request = &DescribeDomainUpstreamBpsOfEdgeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

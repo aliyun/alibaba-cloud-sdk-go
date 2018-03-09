@@ -92,7 +92,7 @@ type DescribeServerRelatedGlobalAccelerationInstancesResponse struct {
 }
 
 // CreateDescribeServerRelatedGlobalAccelerationInstancesRequest creates a request to invoke DescribeServerRelatedGlobalAccelerationInstances API
-func CreateDescribeServerRelatedGlobalAccelerationInstancesRequest(request *DescribeServerRelatedGlobalAccelerationInstancesRequest) {
+func CreateDescribeServerRelatedGlobalAccelerationInstancesRequest() (request *DescribeServerRelatedGlobalAccelerationInstancesRequest) {
 	request = &DescribeServerRelatedGlobalAccelerationInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -89,7 +89,7 @@ type BindTagResponse struct {
 }
 
 // CreateBindTagRequest creates a request to invoke BindTag API
-func CreateBindTagRequest(request *BindTagRequest) {
+func CreateBindTagRequest() (request *BindTagRequest) {
 	request = &BindTagRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

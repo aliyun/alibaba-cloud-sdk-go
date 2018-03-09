@@ -84,7 +84,7 @@ type AddAgilityClusterResponse struct {
 }
 
 // CreateAddAgilityClusterRequest creates a request to invoke AddAgilityCluster API
-func CreateAddAgilityClusterRequest(request *AddAgilityClusterRequest) {
+func CreateAddAgilityClusterRequest() (request *AddAgilityClusterRequest) {
 	request = &AddAgilityClusterRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}

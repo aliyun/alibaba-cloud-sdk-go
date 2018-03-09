@@ -95,7 +95,7 @@ type DescribeLiveStreamSnapshotInfoResponse struct {
 }
 
 // CreateDescribeLiveStreamSnapshotInfoRequest creates a request to invoke DescribeLiveStreamSnapshotInfo API
-func CreateDescribeLiveStreamSnapshotInfoRequest(request *DescribeLiveStreamSnapshotInfoRequest) {
+func CreateDescribeLiveStreamSnapshotInfoRequest() (request *DescribeLiveStreamSnapshotInfoRequest) {
 	request = &DescribeLiveStreamSnapshotInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

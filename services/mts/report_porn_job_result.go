@@ -93,7 +93,7 @@ type ReportPornJobResultResponse struct {
 }
 
 // CreateReportPornJobResultRequest creates a request to invoke ReportPornJobResult API
-func CreateReportPornJobResultRequest(request *ReportPornJobResultRequest) {
+func CreateReportPornJobResultRequest() (request *ReportPornJobResultRequest) {
 	request = &ReportPornJobResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

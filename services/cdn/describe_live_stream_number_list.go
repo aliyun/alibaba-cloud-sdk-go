@@ -93,7 +93,7 @@ type DescribeLiveStreamNumberListResponse struct {
 }
 
 // CreateDescribeLiveStreamNumberListRequest creates a request to invoke DescribeLiveStreamNumberList API
-func CreateDescribeLiveStreamNumberListRequest(request *DescribeLiveStreamNumberListRequest) {
+func CreateDescribeLiveStreamNumberListRequest() (request *DescribeLiveStreamNumberListRequest) {
 	request = &DescribeLiveStreamNumberListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

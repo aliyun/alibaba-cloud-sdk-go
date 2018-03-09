@@ -91,7 +91,7 @@ type DeleteMediaTagResponse struct {
 }
 
 // CreateDeleteMediaTagRequest creates a request to invoke DeleteMediaTag API
-func CreateDeleteMediaTagRequest(request *DeleteMediaTagRequest) {
+func CreateDeleteMediaTagRequest() (request *DeleteMediaTagRequest) {
 	request = &DeleteMediaTagRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

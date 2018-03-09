@@ -87,7 +87,7 @@ type GetUserResponse struct {
 }
 
 // CreateGetUserRequest creates a request to invoke GetUser API
-func CreateGetUserRequest(request *GetUserRequest) {
+func CreateGetUserRequest() (request *GetUserRequest) {
 	request = &GetUserRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

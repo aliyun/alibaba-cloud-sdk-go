@@ -119,7 +119,7 @@ type DescribeLoadBalancerHTTPListenerAttributeResponse struct {
 }
 
 // CreateDescribeLoadBalancerHTTPListenerAttributeRequest creates a request to invoke DescribeLoadBalancerHTTPListenerAttribute API
-func CreateDescribeLoadBalancerHTTPListenerAttributeRequest(request *DescribeLoadBalancerHTTPListenerAttributeRequest) {
+func CreateDescribeLoadBalancerHTTPListenerAttributeRequest() (request *DescribeLoadBalancerHTTPListenerAttributeRequest) {
 	request = &DescribeLoadBalancerHTTPListenerAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -93,7 +93,7 @@ type DescribeRangeDataByLocateAndIspServiceResponse struct {
 }
 
 // CreateDescribeRangeDataByLocateAndIspServiceRequest creates a request to invoke DescribeRangeDataByLocateAndIspService API
-func CreateDescribeRangeDataByLocateAndIspServiceRequest(request *DescribeRangeDataByLocateAndIspServiceRequest) {
+func CreateDescribeRangeDataByLocateAndIspServiceRequest() (request *DescribeRangeDataByLocateAndIspServiceRequest) {
 	request = &DescribeRangeDataByLocateAndIspServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

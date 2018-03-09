@@ -92,7 +92,7 @@ type ModifyDeploymentSetAttributeResponse struct {
 }
 
 // CreateModifyDeploymentSetAttributeRequest creates a request to invoke ModifyDeploymentSetAttribute API
-func CreateModifyDeploymentSetAttributeRequest(request *ModifyDeploymentSetAttributeRequest) {
+func CreateModifyDeploymentSetAttributeRequest() (request *ModifyDeploymentSetAttributeRequest) {
 	request = &ModifyDeploymentSetAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

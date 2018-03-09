@@ -96,7 +96,7 @@ type SetAutoScaleConfigResponse struct {
 }
 
 // CreateSetAutoScaleConfigRequest creates a request to invoke SetAutoScaleConfig API
-func CreateSetAutoScaleConfigRequest(request *SetAutoScaleConfigRequest) {
+func CreateSetAutoScaleConfigRequest() (request *SetAutoScaleConfigRequest) {
 	request = &SetAutoScaleConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

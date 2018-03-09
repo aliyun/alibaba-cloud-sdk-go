@@ -95,7 +95,7 @@ type DescribeMasterSlaveVServerGroupAttributeResponse struct {
 }
 
 // CreateDescribeMasterSlaveVServerGroupAttributeRequest creates a request to invoke DescribeMasterSlaveVServerGroupAttribute API
-func CreateDescribeMasterSlaveVServerGroupAttributeRequest(request *DescribeMasterSlaveVServerGroupAttributeRequest) {
+func CreateDescribeMasterSlaveVServerGroupAttributeRequest() (request *DescribeMasterSlaveVServerGroupAttributeRequest) {
 	request = &DescribeMasterSlaveVServerGroupAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

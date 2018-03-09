@@ -96,7 +96,7 @@ type DescribeDomainRealTimeDataResponse struct {
 }
 
 // CreateDescribeDomainRealTimeDataRequest creates a request to invoke DescribeDomainRealTimeData API
-func CreateDescribeDomainRealTimeDataRequest(request *DescribeDomainRealTimeDataRequest) {
+func CreateDescribeDomainRealTimeDataRequest() (request *DescribeDomainRealTimeDataRequest) {
 	request = &DescribeDomainRealTimeDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

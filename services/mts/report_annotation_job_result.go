@@ -93,7 +93,7 @@ type ReportAnnotationJobResultResponse struct {
 }
 
 // CreateReportAnnotationJobResultRequest creates a request to invoke ReportAnnotationJobResult API
-func CreateReportAnnotationJobResultRequest(request *ReportAnnotationJobResultRequest) {
+func CreateReportAnnotationJobResultRequest() (request *ReportAnnotationJobResultRequest) {
 	request = &ReportAnnotationJobResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

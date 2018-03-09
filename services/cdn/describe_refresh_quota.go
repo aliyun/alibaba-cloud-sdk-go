@@ -95,7 +95,7 @@ type DescribeRefreshQuotaResponse struct {
 }
 
 // CreateDescribeRefreshQuotaRequest creates a request to invoke DescribeRefreshQuota API
-func CreateDescribeRefreshQuotaRequest(request *DescribeRefreshQuotaRequest) {
+func CreateDescribeRefreshQuotaRequest() (request *DescribeRefreshQuotaRequest) {
 	request = &DescribeRefreshQuotaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

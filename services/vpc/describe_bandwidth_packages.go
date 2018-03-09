@@ -97,7 +97,7 @@ type DescribeBandwidthPackagesResponse struct {
 }
 
 // CreateDescribeBandwidthPackagesRequest creates a request to invoke DescribeBandwidthPackages API
-func CreateDescribeBandwidthPackagesRequest(request *DescribeBandwidthPackagesRequest) {
+func CreateDescribeBandwidthPackagesRequest() (request *DescribeBandwidthPackagesRequest) {
 	request = &DescribeBandwidthPackagesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

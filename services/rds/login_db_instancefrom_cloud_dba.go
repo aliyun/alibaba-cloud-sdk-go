@@ -90,7 +90,7 @@ type LoginDBInstancefromCloudDBAResponse struct {
 }
 
 // CreateLoginDBInstancefromCloudDBARequest creates a request to invoke LoginDBInstancefromCloudDBA API
-func CreateLoginDBInstancefromCloudDBARequest(request *LoginDBInstancefromCloudDBARequest) {
+func CreateLoginDBInstancefromCloudDBARequest() (request *LoginDBInstancefromCloudDBARequest) {
 	request = &LoginDBInstancefromCloudDBARequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

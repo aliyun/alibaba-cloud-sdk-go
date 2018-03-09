@@ -93,7 +93,7 @@ type DescribeAccessRulesResponse struct {
 }
 
 // CreateDescribeAccessRulesRequest creates a request to invoke DescribeAccessRules API
-func CreateDescribeAccessRulesRequest(request *DescribeAccessRulesRequest) {
+func CreateDescribeAccessRulesRequest() (request *DescribeAccessRulesRequest) {
 	request = &DescribeAccessRulesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

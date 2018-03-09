@@ -91,7 +91,7 @@ type ModifyReplicaRelationResponse struct {
 }
 
 // CreateModifyReplicaRelationRequest creates a request to invoke ModifyReplicaRelation API
-func CreateModifyReplicaRelationRequest(request *ModifyReplicaRelationRequest) {
+func CreateModifyReplicaRelationRequest() (request *ModifyReplicaRelationRequest) {
 	request = &ModifyReplicaRelationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

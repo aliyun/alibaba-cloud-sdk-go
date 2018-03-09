@@ -92,7 +92,7 @@ type DescribeStrategyTargetResponse struct {
 }
 
 // CreateDescribeStrategyTargetRequest creates a request to invoke DescribeStrategyTarget API
-func CreateDescribeStrategyTargetRequest(request *DescribeStrategyTargetRequest) {
+func CreateDescribeStrategyTargetRequest() (request *DescribeStrategyTargetRequest) {
 	request = &DescribeStrategyTargetRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

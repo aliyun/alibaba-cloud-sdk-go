@@ -91,7 +91,7 @@ type GetMainDomainNameResponse struct {
 }
 
 // CreateGetMainDomainNameRequest creates a request to invoke GetMainDomainName API
-func CreateGetMainDomainNameRequest(request *GetMainDomainNameRequest) {
+func CreateGetMainDomainNameRequest() (request *GetMainDomainNameRequest) {
 	request = &GetMainDomainNameRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

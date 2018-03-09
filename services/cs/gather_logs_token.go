@@ -85,7 +85,7 @@ type GatherLogsTokenResponse struct {
 }
 
 // CreateGatherLogsTokenRequest creates a request to invoke GatherLogsToken API
-func CreateGatherLogsTokenRequest(request *GatherLogsTokenRequest) {
+func CreateGatherLogsTokenRequest() (request *GatherLogsTokenRequest) {
 	request = &GatherLogsTokenRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}

@@ -89,7 +89,7 @@ type CreatePolicyVersionResponse struct {
 }
 
 // CreateCreatePolicyVersionRequest creates a request to invoke CreatePolicyVersion API
-func CreateCreatePolicyVersionRequest(request *CreatePolicyVersionRequest) {
+func CreateCreatePolicyVersionRequest() (request *CreatePolicyVersionRequest) {
 	request = &CreatePolicyVersionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

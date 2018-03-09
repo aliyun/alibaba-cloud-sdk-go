@@ -92,7 +92,7 @@ type ModifyHaVipAttributeResponse struct {
 }
 
 // CreateModifyHaVipAttributeRequest creates a request to invoke ModifyHaVipAttribute API
-func CreateModifyHaVipAttributeRequest(request *ModifyHaVipAttributeRequest) {
+func CreateModifyHaVipAttributeRequest() (request *ModifyHaVipAttributeRequest) {
 	request = &ModifyHaVipAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

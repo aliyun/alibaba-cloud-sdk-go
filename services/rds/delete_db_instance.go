@@ -91,7 +91,7 @@ type DeleteDBInstanceResponse struct {
 }
 
 // CreateDeleteDBInstanceRequest creates a request to invoke DeleteDBInstance API
-func CreateDeleteDBInstanceRequest(request *DeleteDBInstanceRequest) {
+func CreateDeleteDBInstanceRequest() (request *DeleteDBInstanceRequest) {
 	request = &DeleteDBInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

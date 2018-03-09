@@ -91,7 +91,7 @@ type DeleteImageResponse struct {
 }
 
 // CreateDeleteImageRequest creates a request to invoke DeleteImage API
-func CreateDeleteImageRequest(request *DeleteImageRequest) {
+func CreateDeleteImageRequest() (request *DeleteImageRequest) {
 	request = &DeleteImageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

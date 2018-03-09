@@ -89,7 +89,7 @@ type BindMFADeviceResponse struct {
 }
 
 // CreateBindMFADeviceRequest creates a request to invoke BindMFADevice API
-func CreateBindMFADeviceRequest(request *BindMFADeviceRequest) {
+func CreateBindMFADeviceRequest() (request *BindMFADeviceRequest) {
 	request = &BindMFADeviceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -96,7 +96,7 @@ type DescribeKeyPairsResponse struct {
 }
 
 // CreateDescribeKeyPairsRequest creates a request to invoke DescribeKeyPairs API
-func CreateDescribeKeyPairsRequest(request *DescribeKeyPairsRequest) {
+func CreateDescribeKeyPairsRequest() (request *DescribeKeyPairsRequest) {
 	request = &DescribeKeyPairsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

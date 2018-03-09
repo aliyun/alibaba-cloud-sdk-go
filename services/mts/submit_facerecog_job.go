@@ -94,7 +94,7 @@ type SubmitFacerecogJobResponse struct {
 }
 
 // CreateSubmitFacerecogJobRequest creates a request to invoke SubmitFacerecogJob API
-func CreateSubmitFacerecogJobRequest(request *SubmitFacerecogJobRequest) {
+func CreateSubmitFacerecogJobRequest() (request *SubmitFacerecogJobRequest) {
 	request = &SubmitFacerecogJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

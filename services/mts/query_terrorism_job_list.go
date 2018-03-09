@@ -92,7 +92,7 @@ type QueryTerrorismJobListResponse struct {
 }
 
 // CreateQueryTerrorismJobListRequest creates a request to invoke QueryTerrorismJobList API
-func CreateQueryTerrorismJobListRequest(request *QueryTerrorismJobListRequest) {
+func CreateQueryTerrorismJobListRequest() (request *QueryTerrorismJobListRequest) {
 	request = &QueryTerrorismJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

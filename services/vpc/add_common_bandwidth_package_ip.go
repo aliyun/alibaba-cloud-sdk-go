@@ -91,7 +91,7 @@ type AddCommonBandwidthPackageIpResponse struct {
 }
 
 // CreateAddCommonBandwidthPackageIpRequest creates a request to invoke AddCommonBandwidthPackageIp API
-func CreateAddCommonBandwidthPackageIpRequest(request *AddCommonBandwidthPackageIpRequest) {
+func CreateAddCommonBandwidthPackageIpRequest() (request *AddCommonBandwidthPackageIpRequest) {
 	request = &AddCommonBandwidthPackageIpRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

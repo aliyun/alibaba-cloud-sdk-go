@@ -93,7 +93,7 @@ type CreateBgpPeerResponse struct {
 }
 
 // CreateCreateBgpPeerRequest creates a request to invoke CreateBgpPeer API
-func CreateCreateBgpPeerRequest(request *CreateBgpPeerRequest) {
+func CreateCreateBgpPeerRequest() (request *CreateBgpPeerRequest) {
 	request = &CreateBgpPeerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

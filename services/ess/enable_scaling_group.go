@@ -131,7 +131,7 @@ type EnableScalingGroupResponse struct {
 }
 
 // CreateEnableScalingGroupRequest creates a request to invoke EnableScalingGroup API
-func CreateEnableScalingGroupRequest(request *EnableScalingGroupRequest) {
+func CreateEnableScalingGroupRequest() (request *EnableScalingGroupRequest) {
 	request = &EnableScalingGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

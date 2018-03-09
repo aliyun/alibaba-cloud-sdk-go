@@ -90,7 +90,7 @@ type SetUserAgentAcessRestrictionResponse struct {
 }
 
 // CreateSetUserAgentAcessRestrictionRequest creates a request to invoke SetUserAgentAcessRestriction API
-func CreateSetUserAgentAcessRestrictionRequest(request *SetUserAgentAcessRestrictionRequest) {
+func CreateSetUserAgentAcessRestrictionRequest() (request *SetUserAgentAcessRestrictionRequest) {
 	request = &SetUserAgentAcessRestrictionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -88,7 +88,7 @@ type SetJobUserResponse struct {
 }
 
 // CreateSetJobUserRequest creates a request to invoke SetJobUser API
-func CreateSetJobUserRequest(request *SetJobUserRequest) {
+func CreateSetJobUserRequest() (request *SetJobUserRequest) {
 	request = &SetJobUserRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

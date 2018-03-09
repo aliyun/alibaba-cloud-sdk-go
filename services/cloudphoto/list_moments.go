@@ -97,7 +97,7 @@ type ListMomentsResponse struct {
 }
 
 // CreateListMomentsRequest creates a request to invoke ListMoments API
-func CreateListMomentsRequest(request *ListMomentsRequest) {
+func CreateListMomentsRequest() (request *ListMomentsRequest) {
 	request = &ListMomentsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

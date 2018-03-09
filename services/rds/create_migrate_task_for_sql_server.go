@@ -99,7 +99,7 @@ type CreateMigrateTaskForSQLServerResponse struct {
 }
 
 // CreateCreateMigrateTaskForSQLServerRequest creates a request to invoke CreateMigrateTaskForSQLServer API
-func CreateCreateMigrateTaskForSQLServerRequest(request *CreateMigrateTaskForSQLServerRequest) {
+func CreateCreateMigrateTaskForSQLServerRequest() (request *CreateMigrateTaskForSQLServerRequest) {
 	request = &CreateMigrateTaskForSQLServerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

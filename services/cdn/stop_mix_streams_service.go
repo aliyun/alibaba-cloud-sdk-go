@@ -94,7 +94,7 @@ type StopMixStreamsServiceResponse struct {
 }
 
 // CreateStopMixStreamsServiceRequest creates a request to invoke StopMixStreamsService API
-func CreateStopMixStreamsServiceRequest(request *StopMixStreamsServiceRequest) {
+func CreateStopMixStreamsServiceRequest() (request *StopMixStreamsServiceRequest) {
 	request = &StopMixStreamsServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

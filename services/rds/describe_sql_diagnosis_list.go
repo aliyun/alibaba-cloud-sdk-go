@@ -87,7 +87,7 @@ type DescribeSQLDiagnosisListResponse struct {
 }
 
 // CreateDescribeSQLDiagnosisListRequest creates a request to invoke DescribeSQLDiagnosisList API
-func CreateDescribeSQLDiagnosisListRequest(request *DescribeSQLDiagnosisListRequest) {
+func CreateDescribeSQLDiagnosisListRequest() (request *DescribeSQLDiagnosisListRequest) {
 	request = &DescribeSQLDiagnosisListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

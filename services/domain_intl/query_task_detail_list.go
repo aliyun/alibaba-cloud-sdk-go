@@ -100,7 +100,7 @@ type QueryTaskDetailListResponse struct {
 }
 
 // CreateQueryTaskDetailListRequest creates a request to invoke QueryTaskDetailList API
-func CreateQueryTaskDetailListRequest(request *QueryTaskDetailListRequest) {
+func CreateQueryTaskDetailListRequest() (request *QueryTaskDetailListRequest) {
 	request = &QueryTaskDetailListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -93,7 +93,7 @@ type SetLoadBalancerStatusResponse struct {
 }
 
 // CreateSetLoadBalancerStatusRequest creates a request to invoke SetLoadBalancerStatus API
-func CreateSetLoadBalancerStatusRequest(request *SetLoadBalancerStatusRequest) {
+func CreateSetLoadBalancerStatusRequest() (request *SetLoadBalancerStatusRequest) {
 	request = &SetLoadBalancerStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

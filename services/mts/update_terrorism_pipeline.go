@@ -95,7 +95,7 @@ type UpdateTerrorismPipelineResponse struct {
 }
 
 // CreateUpdateTerrorismPipelineRequest creates a request to invoke UpdateTerrorismPipeline API
-func CreateUpdateTerrorismPipelineRequest(request *UpdateTerrorismPipelineRequest) {
+func CreateUpdateTerrorismPipelineRequest() (request *UpdateTerrorismPipelineRequest) {
 	request = &UpdateTerrorismPipelineRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -88,7 +88,7 @@ type GetPolicyResponse struct {
 }
 
 // CreateGetPolicyRequest creates a request to invoke GetPolicy API
-func CreateGetPolicyRequest(request *GetPolicyRequest) {
+func CreateGetPolicyRequest() (request *GetPolicyRequest) {
 	request = &GetPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

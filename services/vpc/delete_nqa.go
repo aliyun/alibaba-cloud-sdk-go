@@ -91,7 +91,7 @@ type DeleteNqaResponse struct {
 }
 
 // CreateDeleteNqaRequest creates a request to invoke DeleteNqa API
-func CreateDeleteNqaRequest(request *DeleteNqaRequest) {
+func CreateDeleteNqaRequest() (request *DeleteNqaRequest) {
 	request = &DeleteNqaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

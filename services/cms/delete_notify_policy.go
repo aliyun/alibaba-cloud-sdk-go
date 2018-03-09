@@ -93,7 +93,7 @@ type DeleteNotifyPolicyResponse struct {
 }
 
 // CreateDeleteNotifyPolicyRequest creates a request to invoke DeleteNotifyPolicy API
-func CreateDeleteNotifyPolicyRequest(request *DeleteNotifyPolicyRequest) {
+func CreateDeleteNotifyPolicyRequest() (request *DeleteNotifyPolicyRequest) {
 	request = &DeleteNotifyPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

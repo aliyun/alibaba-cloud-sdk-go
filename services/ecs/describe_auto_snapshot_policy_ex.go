@@ -96,7 +96,7 @@ type DescribeAutoSnapshotPolicyExResponse struct {
 }
 
 // CreateDescribeAutoSnapshotPolicyExRequest creates a request to invoke DescribeAutoSnapshotPolicyEx API
-func CreateDescribeAutoSnapshotPolicyExRequest(request *DescribeAutoSnapshotPolicyExRequest) {
+func CreateDescribeAutoSnapshotPolicyExRequest() (request *DescribeAutoSnapshotPolicyExRequest) {
 	request = &DescribeAutoSnapshotPolicyExRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

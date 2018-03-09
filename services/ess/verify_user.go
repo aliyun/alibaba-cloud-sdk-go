@@ -87,7 +87,7 @@ type VerifyUserResponse struct {
 }
 
 // CreateVerifyUserRequest creates a request to invoke VerifyUser API
-func CreateVerifyUserRequest(request *VerifyUserRequest) {
+func CreateVerifyUserRequest() (request *VerifyUserRequest) {
 	request = &VerifyUserRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

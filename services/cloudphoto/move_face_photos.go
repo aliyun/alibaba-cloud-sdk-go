@@ -94,7 +94,7 @@ type MoveFacePhotosResponse struct {
 }
 
 // CreateMoveFacePhotosRequest creates a request to invoke MoveFacePhotos API
-func CreateMoveFacePhotosRequest(request *MoveFacePhotosRequest) {
+func CreateMoveFacePhotosRequest() (request *MoveFacePhotosRequest) {
 	request = &MoveFacePhotosRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

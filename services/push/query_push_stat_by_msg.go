@@ -88,7 +88,7 @@ type QueryPushStatByMsgResponse struct {
 }
 
 // CreateQueryPushStatByMsgRequest creates a request to invoke QueryPushStatByMsg API
-func CreateQueryPushStatByMsgRequest(request *QueryPushStatByMsgRequest) {
+func CreateQueryPushStatByMsgRequest() (request *QueryPushStatByMsgRequest) {
 	request = &QueryPushStatByMsgRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

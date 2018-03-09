@@ -91,7 +91,7 @@ type GetCallerIdentityResponse struct {
 }
 
 // CreateGetCallerIdentityRequest creates a request to invoke GetCallerIdentity API
-func CreateGetCallerIdentityRequest(request *GetCallerIdentityRequest) {
+func CreateGetCallerIdentityRequest() (request *GetCallerIdentityRequest) {
 	request = &GetCallerIdentityRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

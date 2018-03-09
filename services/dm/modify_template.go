@@ -97,7 +97,7 @@ type ModifyTemplateResponse struct {
 }
 
 // CreateModifyTemplateRequest creates a request to invoke ModifyTemplate API
-func CreateModifyTemplateRequest(request *ModifyTemplateRequest) {
+func CreateModifyTemplateRequest() (request *ModifyTemplateRequest) {
 	request = &ModifyTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

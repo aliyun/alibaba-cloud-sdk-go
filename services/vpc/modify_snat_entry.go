@@ -92,7 +92,7 @@ type ModifySnatEntryResponse struct {
 }
 
 // CreateModifySnatEntryRequest creates a request to invoke ModifySnatEntry API
-func CreateModifySnatEntryRequest(request *ModifySnatEntryRequest) {
+func CreateModifySnatEntryRequest() (request *ModifySnatEntryRequest) {
 	request = &ModifySnatEntryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

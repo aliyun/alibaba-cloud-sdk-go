@@ -88,7 +88,7 @@ type AttachPolicyToRoleResponse struct {
 }
 
 // CreateAttachPolicyToRoleRequest creates a request to invoke AttachPolicyToRole API
-func CreateAttachPolicyToRoleRequest(request *AttachPolicyToRoleRequest) {
+func CreateAttachPolicyToRoleRequest() (request *AttachPolicyToRoleRequest) {
 	request = &AttachPolicyToRoleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

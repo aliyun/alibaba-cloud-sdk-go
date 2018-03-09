@@ -96,7 +96,7 @@ type SetRemoteReqAuthConfigResponse struct {
 }
 
 // CreateSetRemoteReqAuthConfigRequest creates a request to invoke SetRemoteReqAuthConfig API
-func CreateSetRemoteReqAuthConfigRequest(request *SetRemoteReqAuthConfigRequest) {
+func CreateSetRemoteReqAuthConfigRequest() (request *SetRemoteReqAuthConfigRequest) {
 	request = &SetRemoteReqAuthConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

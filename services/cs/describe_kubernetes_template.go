@@ -85,7 +85,7 @@ type DescribeKubernetesTemplateResponse struct {
 }
 
 // CreateDescribeKubernetesTemplateRequest creates a request to invoke DescribeKubernetesTemplate API
-func CreateDescribeKubernetesTemplateRequest(request *DescribeKubernetesTemplateRequest) {
+func CreateDescribeKubernetesTemplateRequest() (request *DescribeKubernetesTemplateRequest) {
 	request = &DescribeKubernetesTemplateRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}

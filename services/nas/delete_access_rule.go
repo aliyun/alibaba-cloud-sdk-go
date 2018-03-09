@@ -87,7 +87,7 @@ type DeleteAccessRuleResponse struct {
 }
 
 // CreateDeleteAccessRuleRequest creates a request to invoke DeleteAccessRule API
-func CreateDeleteAccessRuleRequest(request *DeleteAccessRuleRequest) {
+func CreateDeleteAccessRuleRequest() (request *DeleteAccessRuleRequest) {
 	request = &DeleteAccessRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

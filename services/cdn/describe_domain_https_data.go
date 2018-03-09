@@ -98,7 +98,7 @@ type DescribeDomainHttpsDataResponse struct {
 }
 
 // CreateDescribeDomainHttpsDataRequest creates a request to invoke DescribeDomainHttpsData API
-func CreateDescribeDomainHttpsDataRequest(request *DescribeDomainHttpsDataRequest) {
+func CreateDescribeDomainHttpsDataRequest() (request *DescribeDomainHttpsDataRequest) {
 	request = &DescribeDomainHttpsDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -89,7 +89,7 @@ type DescribeDdosStatusResponse struct {
 }
 
 // CreateDescribeDdosStatusRequest creates a request to invoke DescribeDdosStatus API
-func CreateDescribeDdosStatusRequest(request *DescribeDdosStatusRequest) {
+func CreateDescribeDdosStatusRequest() (request *DescribeDdosStatusRequest) {
 	request = &DescribeDdosStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

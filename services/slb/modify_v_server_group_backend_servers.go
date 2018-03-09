@@ -96,7 +96,7 @@ type ModifyVServerGroupBackendServersResponse struct {
 }
 
 // CreateModifyVServerGroupBackendServersRequest creates a request to invoke ModifyVServerGroupBackendServers API
-func CreateModifyVServerGroupBackendServersRequest(request *ModifyVServerGroupBackendServersRequest) {
+func CreateModifyVServerGroupBackendServersRequest() (request *ModifyVServerGroupBackendServersRequest) {
 	request = &ModifyVServerGroupBackendServersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

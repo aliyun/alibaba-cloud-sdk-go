@@ -92,7 +92,7 @@ type ModifyGuardDomainModeResponse struct {
 }
 
 // CreateModifyGuardDomainModeRequest creates a request to invoke ModifyGuardDomainMode API
-func CreateModifyGuardDomainModeRequest(request *ModifyGuardDomainModeRequest) {
+func CreateModifyGuardDomainModeRequest() (request *ModifyGuardDomainModeRequest) {
 	request = &ModifyGuardDomainModeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

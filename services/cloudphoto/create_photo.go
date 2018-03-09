@@ -98,7 +98,7 @@ type CreatePhotoResponse struct {
 }
 
 // CreateCreatePhotoRequest creates a request to invoke CreatePhoto API
-func CreateCreatePhotoRequest(request *CreatePhotoRequest) {
+func CreateCreatePhotoRequest() (request *CreatePhotoRequest) {
 	request = &CreatePhotoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -91,7 +91,7 @@ type ModifyBatchIgnoreVulResponse struct {
 }
 
 // CreateModifyBatchIgnoreVulRequest creates a request to invoke ModifyBatchIgnoreVul API
-func CreateModifyBatchIgnoreVulRequest(request *ModifyBatchIgnoreVulRequest) {
+func CreateModifyBatchIgnoreVulRequest() (request *ModifyBatchIgnoreVulRequest) {
 	request = &ModifyBatchIgnoreVulRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

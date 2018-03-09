@@ -90,7 +90,7 @@ type ListAllMediaBucketResponse struct {
 }
 
 // CreateListAllMediaBucketRequest creates a request to invoke ListAllMediaBucket API
-func CreateListAllMediaBucketRequest(request *ListAllMediaBucketRequest) {
+func CreateListAllMediaBucketRequest() (request *ListAllMediaBucketRequest) {
 	request = &ListAllMediaBucketRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

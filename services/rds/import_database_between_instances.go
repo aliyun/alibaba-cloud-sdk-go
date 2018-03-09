@@ -93,7 +93,7 @@ type ImportDatabaseBetweenInstancesResponse struct {
 }
 
 // CreateImportDatabaseBetweenInstancesRequest creates a request to invoke ImportDatabaseBetweenInstances API
-func CreateImportDatabaseBetweenInstancesRequest(request *ImportDatabaseBetweenInstancesRequest) {
+func CreateImportDatabaseBetweenInstancesRequest() (request *ImportDatabaseBetweenInstancesRequest) {
 	request = &ImportDatabaseBetweenInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

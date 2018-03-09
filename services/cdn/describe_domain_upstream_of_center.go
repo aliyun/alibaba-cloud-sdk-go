@@ -91,7 +91,7 @@ type DescribeDomainUpstreamOfCenterResponse struct {
 }
 
 // CreateDescribeDomainUpstreamOfCenterRequest creates a request to invoke DescribeDomainUpstreamOfCenter API
-func CreateDescribeDomainUpstreamOfCenterRequest(request *DescribeDomainUpstreamOfCenterRequest) {
+func CreateDescribeDomainUpstreamOfCenterRequest() (request *DescribeDomainUpstreamOfCenterRequest) {
 	request = &DescribeDomainUpstreamOfCenterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

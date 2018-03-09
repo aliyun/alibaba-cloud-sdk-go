@@ -93,7 +93,7 @@ type GetThumbnailResponse struct {
 }
 
 // CreateGetThumbnailRequest creates a request to invoke GetThumbnail API
-func CreateGetThumbnailRequest(request *GetThumbnailRequest) {
+func CreateGetThumbnailRequest() (request *GetThumbnailRequest) {
 	request = &GetThumbnailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

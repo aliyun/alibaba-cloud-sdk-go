@@ -97,7 +97,7 @@ type ListMyGroupInstancesResponse struct {
 }
 
 // CreateListMyGroupInstancesRequest creates a request to invoke ListMyGroupInstances API
-func CreateListMyGroupInstancesRequest(request *ListMyGroupInstancesRequest) {
+func CreateListMyGroupInstancesRequest() (request *ListMyGroupInstancesRequest) {
 	request = &ListMyGroupInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -87,7 +87,7 @@ type GetUserMFAInfoResponse struct {
 }
 
 // CreateGetUserMFAInfoRequest creates a request to invoke GetUserMFAInfo API
-func CreateGetUserMFAInfoRequest(request *GetUserMFAInfoRequest) {
+func CreateGetUserMFAInfoRequest() (request *GetUserMFAInfoRequest) {
 	request = &GetUserMFAInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

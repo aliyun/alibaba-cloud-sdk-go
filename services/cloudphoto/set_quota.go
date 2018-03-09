@@ -91,7 +91,7 @@ type SetQuotaResponse struct {
 }
 
 // CreateSetQuotaRequest creates a request to invoke SetQuota API
-func CreateSetQuotaRequest(request *SetQuotaRequest) {
+func CreateSetQuotaRequest() (request *SetQuotaRequest) {
 	request = &SetQuotaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

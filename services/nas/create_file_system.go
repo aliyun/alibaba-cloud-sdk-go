@@ -89,7 +89,7 @@ type CreateFileSystemResponse struct {
 }
 
 // CreateCreateFileSystemRequest creates a request to invoke CreateFileSystem API
-func CreateCreateFileSystemRequest(request *CreateFileSystemRequest) {
+func CreateCreateFileSystemRequest() (request *CreateFileSystemRequest) {
 	request = &CreateFileSystemRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

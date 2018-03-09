@@ -93,7 +93,7 @@ type SetLoadBalancerNameResponse struct {
 }
 
 // CreateSetLoadBalancerNameRequest creates a request to invoke SetLoadBalancerName API
-func CreateSetLoadBalancerNameRequest(request *SetLoadBalancerNameRequest) {
+func CreateSetLoadBalancerNameRequest() (request *SetLoadBalancerNameRequest) {
 	request = &SetLoadBalancerNameRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -91,7 +91,7 @@ type DescribeInstanceVncUrlResponse struct {
 }
 
 // CreateDescribeInstanceVncUrlRequest creates a request to invoke DescribeInstanceVncUrl API
-func CreateDescribeInstanceVncUrlRequest(request *DescribeInstanceVncUrlRequest) {
+func CreateDescribeInstanceVncUrlRequest() (request *DescribeInstanceVncUrlRequest) {
 	request = &DescribeInstanceVncUrlRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

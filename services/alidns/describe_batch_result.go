@@ -93,7 +93,7 @@ type DescribeBatchResultResponse struct {
 }
 
 // CreateDescribeBatchResultRequest creates a request to invoke DescribeBatchResult API
-func CreateDescribeBatchResultRequest(request *DescribeBatchResultRequest) {
+func CreateDescribeBatchResultRequest() (request *DescribeBatchResultRequest) {
 	request = &DescribeBatchResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

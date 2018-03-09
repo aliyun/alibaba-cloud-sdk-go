@@ -86,7 +86,7 @@ type ResetClusterNodeResponse struct {
 }
 
 // CreateResetClusterNodeRequest creates a request to invoke ResetClusterNode API
-func CreateResetClusterNodeRequest(request *ResetClusterNodeRequest) {
+func CreateResetClusterNodeRequest() (request *ResetClusterNodeRequest) {
 	request = &ResetClusterNodeRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}

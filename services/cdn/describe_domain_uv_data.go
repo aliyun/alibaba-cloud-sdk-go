@@ -95,7 +95,7 @@ type DescribeDomainUvDataResponse struct {
 }
 
 // CreateDescribeDomainUvDataRequest creates a request to invoke DescribeDomainUvData API
-func CreateDescribeDomainUvDataRequest(request *DescribeDomainUvDataRequest) {
+func CreateDescribeDomainUvDataRequest() (request *DescribeDomainUvDataRequest) {
 	request = &DescribeDomainUvDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -95,7 +95,7 @@ type CheckRecoveryConditionsResponse struct {
 }
 
 // CreateCheckRecoveryConditionsRequest creates a request to invoke CheckRecoveryConditions API
-func CreateCheckRecoveryConditionsRequest(request *CheckRecoveryConditionsRequest) {
+func CreateCheckRecoveryConditionsRequest() (request *CheckRecoveryConditionsRequest) {
 	request = &CheckRecoveryConditionsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

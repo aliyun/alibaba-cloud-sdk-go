@@ -93,7 +93,7 @@ type AssociateGlobalAccelerationInstanceResponse struct {
 }
 
 // CreateAssociateGlobalAccelerationInstanceRequest creates a request to invoke AssociateGlobalAccelerationInstance API
-func CreateAssociateGlobalAccelerationInstanceRequest(request *AssociateGlobalAccelerationInstanceRequest) {
+func CreateAssociateGlobalAccelerationInstanceRequest() (request *AssociateGlobalAccelerationInstanceRequest) {
 	request = &AssociateGlobalAccelerationInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

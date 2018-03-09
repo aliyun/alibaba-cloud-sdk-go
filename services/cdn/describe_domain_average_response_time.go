@@ -97,7 +97,7 @@ type DescribeDomainAverageResponseTimeResponse struct {
 }
 
 // CreateDescribeDomainAverageResponseTimeRequest creates a request to invoke DescribeDomainAverageResponseTime API
-func CreateDescribeDomainAverageResponseTimeRequest(request *DescribeDomainAverageResponseTimeRequest) {
+func CreateDescribeDomainAverageResponseTimeRequest() (request *DescribeDomainAverageResponseTimeRequest) {
 	request = &DescribeDomainAverageResponseTimeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

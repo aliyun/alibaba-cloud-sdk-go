@@ -90,7 +90,7 @@ type DeleteEmailVerificationResponse struct {
 }
 
 // CreateDeleteEmailVerificationRequest creates a request to invoke DeleteEmailVerification API
-func CreateDeleteEmailVerificationRequest(request *DeleteEmailVerificationRequest) {
+func CreateDeleteEmailVerificationRequest() (request *DeleteEmailVerificationRequest) {
 	request = &DeleteEmailVerificationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -86,7 +86,7 @@ type DeleteVirtualMFADeviceResponse struct {
 }
 
 // CreateDeleteVirtualMFADeviceRequest creates a request to invoke DeleteVirtualMFADevice API
-func CreateDeleteVirtualMFADeviceRequest(request *DeleteVirtualMFADeviceRequest) {
+func CreateDeleteVirtualMFADeviceRequest() (request *DeleteVirtualMFADeviceRequest) {
 	request = &DeleteVirtualMFADeviceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

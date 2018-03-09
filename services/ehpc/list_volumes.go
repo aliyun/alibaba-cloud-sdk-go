@@ -91,7 +91,7 @@ type ListVolumesResponse struct {
 }
 
 // CreateListVolumesRequest creates a request to invoke ListVolumes API
-func CreateListVolumesRequest(request *ListVolumesRequest) {
+func CreateListVolumesRequest() (request *ListVolumesRequest) {
 	request = &ListVolumesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

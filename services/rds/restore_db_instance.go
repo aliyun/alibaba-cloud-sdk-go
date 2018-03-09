@@ -92,7 +92,7 @@ type RestoreDBInstanceResponse struct {
 }
 
 // CreateRestoreDBInstanceRequest creates a request to invoke RestoreDBInstance API
-func CreateRestoreDBInstanceRequest(request *RestoreDBInstanceRequest) {
+func CreateRestoreDBInstanceRequest() (request *RestoreDBInstanceRequest) {
 	request = &RestoreDBInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

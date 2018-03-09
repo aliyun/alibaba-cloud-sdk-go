@@ -90,7 +90,7 @@ type DeleteVpcResponse struct {
 }
 
 // CreateDeleteVpcRequest creates a request to invoke DeleteVpc API
-func CreateDeleteVpcRequest(request *DeleteVpcRequest) {
+func CreateDeleteVpcRequest() (request *DeleteVpcRequest) {
 	request = &DeleteVpcRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

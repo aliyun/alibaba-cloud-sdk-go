@@ -92,7 +92,7 @@ type TerminatePhysicalConnectionResponse struct {
 }
 
 // CreateTerminatePhysicalConnectionRequest creates a request to invoke TerminatePhysicalConnection API
-func CreateTerminatePhysicalConnectionRequest(request *TerminatePhysicalConnectionRequest) {
+func CreateTerminatePhysicalConnectionRequest() (request *TerminatePhysicalConnectionRequest) {
 	request = &TerminatePhysicalConnectionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

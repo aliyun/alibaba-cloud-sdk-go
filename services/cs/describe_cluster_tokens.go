@@ -85,7 +85,7 @@ type DescribeClusterTokensResponse struct {
 }
 
 // CreateDescribeClusterTokensRequest creates a request to invoke DescribeClusterTokens API
-func CreateDescribeClusterTokensRequest(request *DescribeClusterTokensRequest) {
+func CreateDescribeClusterTokensRequest() (request *DescribeClusterTokensRequest) {
 	request = &DescribeClusterTokensRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}

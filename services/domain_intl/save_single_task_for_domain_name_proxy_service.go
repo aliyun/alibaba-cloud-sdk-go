@@ -90,7 +90,7 @@ type SaveSingleTaskForDomainNameProxyServiceResponse struct {
 }
 
 // CreateSaveSingleTaskForDomainNameProxyServiceRequest creates a request to invoke SaveSingleTaskForDomainNameProxyService API
-func CreateSaveSingleTaskForDomainNameProxyServiceRequest(request *SaveSingleTaskForDomainNameProxyServiceRequest) {
+func CreateSaveSingleTaskForDomainNameProxyServiceRequest() (request *SaveSingleTaskForDomainNameProxyServiceRequest) {
 	request = &SaveSingleTaskForDomainNameProxyServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -93,7 +93,7 @@ type DescribeLiveStreamsFrameRateAndBitRateDataResponse struct {
 }
 
 // CreateDescribeLiveStreamsFrameRateAndBitRateDataRequest creates a request to invoke DescribeLiveStreamsFrameRateAndBitRateData API
-func CreateDescribeLiveStreamsFrameRateAndBitRateDataRequest(request *DescribeLiveStreamsFrameRateAndBitRateDataRequest) {
+func CreateDescribeLiveStreamsFrameRateAndBitRateDataRequest() (request *DescribeLiveStreamsFrameRateAndBitRateDataRequest) {
 	request = &DescribeLiveStreamsFrameRateAndBitRateDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -89,7 +89,7 @@ type DescribeBackSourceCidrResponse struct {
 }
 
 // CreateDescribeBackSourceCidrRequest creates a request to invoke DescribeBackSourceCidr API
-func CreateDescribeBackSourceCidrRequest(request *DescribeBackSourceCidrRequest) {
+func CreateDescribeBackSourceCidrRequest() (request *DescribeBackSourceCidrRequest) {
 	request = &DescribeBackSourceCidrRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

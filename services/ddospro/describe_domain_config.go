@@ -88,7 +88,7 @@ type DescribeDomainConfigResponse struct {
 }
 
 // CreateDescribeDomainConfigRequest creates a request to invoke DescribeDomainConfig API
-func CreateDescribeDomainConfigRequest(request *DescribeDomainConfigRequest) {
+func CreateDescribeDomainConfigRequest() (request *DescribeDomainConfigRequest) {
 	request = &DescribeDomainConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

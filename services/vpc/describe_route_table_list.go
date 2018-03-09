@@ -103,7 +103,7 @@ type DescribeRouteTableListResponse struct {
 }
 
 // CreateDescribeRouteTableListRequest creates a request to invoke DescribeRouteTableList API
-func CreateDescribeRouteTableListRequest(request *DescribeRouteTableListRequest) {
+func CreateDescribeRouteTableListRequest() (request *DescribeRouteTableListRequest) {
 	request = &DescribeRouteTableListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

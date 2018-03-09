@@ -95,7 +95,7 @@ type SubmitAnalysisJobResponse struct {
 }
 
 // CreateSubmitAnalysisJobRequest creates a request to invoke SubmitAnalysisJob API
-func CreateSubmitAnalysisJobRequest(request *SubmitAnalysisJobRequest) {
+func CreateSubmitAnalysisJobRequest() (request *SubmitAnalysisJobRequest) {
 	request = &SubmitAnalysisJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

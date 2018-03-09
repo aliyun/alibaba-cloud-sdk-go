@@ -103,7 +103,7 @@ type CreatePhysicalConnectionNewResponse struct {
 }
 
 // CreateCreatePhysicalConnectionNewRequest creates a request to invoke CreatePhysicalConnectionNew API
-func CreateCreatePhysicalConnectionNewRequest(request *CreatePhysicalConnectionNewRequest) {
+func CreateCreatePhysicalConnectionNewRequest() (request *CreatePhysicalConnectionNewRequest) {
 	request = &CreatePhysicalConnectionNewRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

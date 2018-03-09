@@ -95,7 +95,7 @@ type DescribeOplogResponse struct {
 }
 
 // CreateDescribeOplogRequest creates a request to invoke DescribeOplog API
-func CreateDescribeOplogRequest(request *DescribeOplogRequest) {
+func CreateDescribeOplogRequest() (request *DescribeOplogRequest) {
 	request = &DescribeOplogRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

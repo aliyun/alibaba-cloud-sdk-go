@@ -89,7 +89,7 @@ type DescribeCommandsResponse struct {
 }
 
 // CreateDescribeCommandsRequest creates a request to invoke DescribeCommands API
-func CreateDescribeCommandsRequest(request *DescribeCommandsRequest) {
+func CreateDescribeCommandsRequest() (request *DescribeCommandsRequest) {
 	request = &DescribeCommandsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

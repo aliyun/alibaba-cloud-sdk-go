@@ -95,7 +95,7 @@ type ExportImageResponse struct {
 }
 
 // CreateExportImageRequest creates a request to invoke ExportImage API
-func CreateExportImageRequest(request *ExportImageRequest) {
+func CreateExportImageRequest() (request *ExportImageRequest) {
 	request = &ExportImageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

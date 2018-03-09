@@ -86,7 +86,7 @@ type CallbackClusterTokenResponse struct {
 }
 
 // CreateCallbackClusterTokenRequest creates a request to invoke CallbackClusterToken API
-func CreateCallbackClusterTokenRequest(request *CallbackClusterTokenRequest) {
+func CreateCallbackClusterTokenRequest() (request *CallbackClusterTokenRequest) {
 	request = &CallbackClusterTokenRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}

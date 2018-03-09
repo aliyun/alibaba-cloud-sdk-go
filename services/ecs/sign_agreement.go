@@ -85,7 +85,7 @@ type SignAgreementResponse struct {
 }
 
 // CreateSignAgreementRequest creates a request to invoke SignAgreement API
-func CreateSignAgreementRequest(request *SignAgreementRequest) {
+func CreateSignAgreementRequest() (request *SignAgreementRequest) {
 	request = &SignAgreementRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

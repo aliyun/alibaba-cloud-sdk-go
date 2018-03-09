@@ -91,7 +91,7 @@ type DeleteMediaWorkflowResponse struct {
 }
 
 // CreateDeleteMediaWorkflowRequest creates a request to invoke DeleteMediaWorkflow API
-func CreateDeleteMediaWorkflowRequest(request *DeleteMediaWorkflowRequest) {
+func CreateDeleteMediaWorkflowRequest() (request *DeleteMediaWorkflowRequest) {
 	request = &DeleteMediaWorkflowRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

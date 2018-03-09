@@ -92,7 +92,7 @@ type QueryCoverPipelineListResponse struct {
 }
 
 // CreateQueryCoverPipelineListRequest creates a request to invoke QueryCoverPipelineList API
-func CreateQueryCoverPipelineListRequest(request *QueryCoverPipelineListRequest) {
+func CreateQueryCoverPipelineListRequest() (request *QueryCoverPipelineListRequest) {
 	request = &QueryCoverPipelineListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

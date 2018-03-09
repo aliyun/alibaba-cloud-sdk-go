@@ -88,7 +88,7 @@ type QueryDnsHostResponse struct {
 }
 
 // CreateQueryDnsHostRequest creates a request to invoke QueryDnsHost API
-func CreateQueryDnsHostRequest(request *QueryDnsHostRequest) {
+func CreateQueryDnsHostRequest() (request *QueryDnsHostRequest) {
 	request = &QueryDnsHostRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

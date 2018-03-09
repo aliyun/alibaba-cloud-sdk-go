@@ -94,7 +94,7 @@ type SubmitPornJobResponse struct {
 }
 
 // CreateSubmitPornJobRequest creates a request to invoke SubmitPornJob API
-func CreateSubmitPornJobRequest(request *SubmitPornJobRequest) {
+func CreateSubmitPornJobRequest() (request *SubmitPornJobRequest) {
 	request = &SubmitPornJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

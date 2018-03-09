@@ -99,7 +99,7 @@ type DescribeBgpPeersResponse struct {
 }
 
 // CreateDescribeBgpPeersRequest creates a request to invoke DescribeBgpPeers API
-func CreateDescribeBgpPeersRequest(request *DescribeBgpPeersRequest) {
+func CreateDescribeBgpPeersRequest() (request *DescribeBgpPeersRequest) {
 	request = &DescribeBgpPeersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

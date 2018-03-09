@@ -93,7 +93,7 @@ type RemoveAlbumPhotosResponse struct {
 }
 
 // CreateRemoveAlbumPhotosRequest creates a request to invoke RemoveAlbumPhotos API
-func CreateRemoveAlbumPhotosRequest(request *RemoveAlbumPhotosRequest) {
+func CreateRemoveAlbumPhotosRequest() (request *RemoveAlbumPhotosRequest) {
 	request = &RemoveAlbumPhotosRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

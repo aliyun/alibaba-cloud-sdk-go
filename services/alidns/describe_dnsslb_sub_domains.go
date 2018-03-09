@@ -94,7 +94,7 @@ type DescribeDNSSLBSubDomainsResponse struct {
 }
 
 // CreateDescribeDNSSLBSubDomainsRequest creates a request to invoke DescribeDNSSLBSubDomains API
-func CreateDescribeDNSSLBSubDomainsRequest(request *DescribeDNSSLBSubDomainsRequest) {
+func CreateDescribeDNSSLBSubDomainsRequest() (request *DescribeDNSSLBSubDomainsRequest) {
 	request = &DescribeDNSSLBSubDomainsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

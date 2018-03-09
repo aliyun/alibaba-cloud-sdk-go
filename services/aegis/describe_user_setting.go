@@ -88,7 +88,7 @@ type DescribeUserSettingResponse struct {
 }
 
 // CreateDescribeUserSettingRequest creates a request to invoke DescribeUserSetting API
-func CreateDescribeUserSettingRequest(request *DescribeUserSettingRequest) {
+func CreateDescribeUserSettingRequest() (request *DescribeUserSettingRequest) {
 	request = &DescribeUserSettingRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

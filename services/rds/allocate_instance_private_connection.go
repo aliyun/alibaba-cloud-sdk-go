@@ -92,7 +92,7 @@ type AllocateInstancePrivateConnectionResponse struct {
 }
 
 // CreateAllocateInstancePrivateConnectionRequest creates a request to invoke AllocateInstancePrivateConnection API
-func CreateAllocateInstancePrivateConnectionRequest(request *AllocateInstancePrivateConnectionRequest) {
+func CreateAllocateInstancePrivateConnectionRequest() (request *AllocateInstancePrivateConnectionRequest) {
 	request = &AllocateInstancePrivateConnectionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

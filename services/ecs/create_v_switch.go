@@ -96,7 +96,7 @@ type CreateVSwitchResponse struct {
 }
 
 // CreateCreateVSwitchRequest creates a request to invoke CreateVSwitch API
-func CreateCreateVSwitchRequest(request *CreateVSwitchRequest) {
+func CreateCreateVSwitchRequest() (request *CreateVSwitchRequest) {
 	request = &CreateVSwitchRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

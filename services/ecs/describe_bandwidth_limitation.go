@@ -86,7 +86,7 @@ type DescribeBandwidthLimitationResponse struct {
 }
 
 // CreateDescribeBandwidthLimitationRequest creates a request to invoke DescribeBandwidthLimitation API
-func CreateDescribeBandwidthLimitationRequest(request *DescribeBandwidthLimitationRequest) {
+func CreateDescribeBandwidthLimitationRequest() (request *DescribeBandwidthLimitationRequest) {
 	request = &DescribeBandwidthLimitationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

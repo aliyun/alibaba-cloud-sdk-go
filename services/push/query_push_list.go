@@ -95,7 +95,7 @@ type QueryPushListResponse struct {
 }
 
 // CreateQueryPushListRequest creates a request to invoke QueryPushList API
-func CreateQueryPushListRequest(request *QueryPushListRequest) {
+func CreateQueryPushListRequest() (request *QueryPushListRequest) {
 	request = &QueryPushListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -101,7 +101,7 @@ type NodeListResponse struct {
 }
 
 // CreateNodeListRequest creates a request to invoke NodeList API
-func CreateNodeListRequest(request *NodeListRequest) {
+func CreateNodeListRequest() (request *NodeListRequest) {
 	request = &NodeListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

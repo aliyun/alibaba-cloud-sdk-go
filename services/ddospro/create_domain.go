@@ -92,7 +92,7 @@ type CreateDomainResponse struct {
 }
 
 // CreateCreateDomainRequest creates a request to invoke CreateDomain API
-func CreateCreateDomainRequest(request *CreateDomainRequest) {
+func CreateCreateDomainRequest() (request *CreateDomainRequest) {
 	request = &CreateDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

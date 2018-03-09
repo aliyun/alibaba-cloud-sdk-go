@@ -93,7 +93,7 @@ type SetRuleResponse struct {
 }
 
 // CreateSetRuleRequest creates a request to invoke SetRule API
-func CreateSetRuleRequest(request *SetRuleRequest) {
+func CreateSetRuleRequest() (request *SetRuleRequest) {
 	request = &SetRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

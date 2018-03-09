@@ -89,7 +89,7 @@ type SetUserDomainBlackListResponse struct {
 }
 
 // CreateSetUserDomainBlackListRequest creates a request to invoke SetUserDomainBlackList API
-func CreateSetUserDomainBlackListRequest(request *SetUserDomainBlackListRequest) {
+func CreateSetUserDomainBlackListRequest() (request *SetUserDomainBlackListRequest) {
 	request = &SetUserDomainBlackListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

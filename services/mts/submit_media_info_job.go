@@ -93,7 +93,7 @@ type SubmitMediaInfoJobResponse struct {
 }
 
 // CreateSubmitMediaInfoJobRequest creates a request to invoke SubmitMediaInfoJob API
-func CreateSubmitMediaInfoJobRequest(request *SubmitMediaInfoJobRequest) {
+func CreateSubmitMediaInfoJobRequest() (request *SubmitMediaInfoJobRequest) {
 	request = &SubmitMediaInfoJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -101,7 +101,7 @@ type DescribeRefreshTasksResponse struct {
 }
 
 // CreateDescribeRefreshTasksRequest creates a request to invoke DescribeRefreshTasks API
-func CreateDescribeRefreshTasksRequest(request *DescribeRefreshTasksRequest) {
+func CreateDescribeRefreshTasksRequest() (request *DescribeRefreshTasksRequest) {
 	request = &DescribeRefreshTasksRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

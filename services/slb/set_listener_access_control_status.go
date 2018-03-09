@@ -94,7 +94,7 @@ type SetListenerAccessControlStatusResponse struct {
 }
 
 // CreateSetListenerAccessControlStatusRequest creates a request to invoke SetListenerAccessControlStatus API
-func CreateSetListenerAccessControlStatusRequest(request *SetListenerAccessControlStatusRequest) {
+func CreateSetListenerAccessControlStatusRequest() (request *SetListenerAccessControlStatusRequest) {
 	request = &SetListenerAccessControlStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -93,7 +93,7 @@ type SetDynamicConfigResponse struct {
 }
 
 // CreateSetDynamicConfigRequest creates a request to invoke SetDynamicConfig API
-func CreateSetDynamicConfigRequest(request *SetDynamicConfigRequest) {
+func CreateSetDynamicConfigRequest() (request *SetDynamicConfigRequest) {
 	request = &SetDynamicConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

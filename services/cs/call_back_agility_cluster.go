@@ -86,7 +86,7 @@ type CallBackAgilityClusterResponse struct {
 }
 
 // CreateCallBackAgilityClusterRequest creates a request to invoke CallBackAgilityCluster API
-func CreateCallBackAgilityClusterRequest(request *CallBackAgilityClusterRequest) {
+func CreateCallBackAgilityClusterRequest() (request *CallBackAgilityClusterRequest) {
 	request = &CallBackAgilityClusterRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}

@@ -93,7 +93,7 @@ type AddCensorPipelineResponse struct {
 }
 
 // CreateAddCensorPipelineRequest creates a request to invoke AddCensorPipeline API
-func CreateAddCensorPipelineRequest(request *AddCensorPipelineRequest) {
+func CreateAddCensorPipelineRequest() (request *AddCensorPipelineRequest) {
 	request = &AddCensorPipelineRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

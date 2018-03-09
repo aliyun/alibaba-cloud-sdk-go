@@ -91,7 +91,7 @@ type DeletePipelineResponse struct {
 }
 
 // CreateDeletePipelineRequest creates a request to invoke DeletePipeline API
-func CreateDeletePipelineRequest(request *DeletePipelineRequest) {
+func CreateDeletePipelineRequest() (request *DeletePipelineRequest) {
 	request = &DeletePipelineRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

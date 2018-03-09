@@ -85,7 +85,7 @@ type DeleteHpcClusterResponse struct {
 }
 
 // CreateDeleteHpcClusterRequest creates a request to invoke DeleteHpcCluster API
-func CreateDeleteHpcClusterRequest(request *DeleteHpcClusterRequest) {
+func CreateDeleteHpcClusterRequest() (request *DeleteHpcClusterRequest) {
 	request = &DeleteHpcClusterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

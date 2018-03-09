@@ -126,7 +126,7 @@ type DescribeScalingRulesResponse struct {
 }
 
 // CreateDescribeScalingRulesRequest creates a request to invoke DescribeScalingRules API
-func CreateDescribeScalingRulesRequest(request *DescribeScalingRulesRequest) {
+func CreateDescribeScalingRulesRequest() (request *DescribeScalingRulesRequest) {
 	request = &DescribeScalingRulesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

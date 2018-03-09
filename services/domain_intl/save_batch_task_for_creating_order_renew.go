@@ -96,7 +96,7 @@ type SaveBatchTaskForCreatingOrderRenewResponse struct {
 }
 
 // CreateSaveBatchTaskForCreatingOrderRenewRequest creates a request to invoke SaveBatchTaskForCreatingOrderRenew API
-func CreateSaveBatchTaskForCreatingOrderRenewRequest(request *SaveBatchTaskForCreatingOrderRenewRequest) {
+func CreateSaveBatchTaskForCreatingOrderRenewRequest() (request *SaveBatchTaskForCreatingOrderRenewRequest) {
 	request = &SaveBatchTaskForCreatingOrderRenewRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

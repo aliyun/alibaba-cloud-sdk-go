@@ -103,7 +103,7 @@ type QueryMetricListResponse struct {
 }
 
 // CreateQueryMetricListRequest creates a request to invoke QueryMetricList API
-func CreateQueryMetricListRequest(request *QueryMetricListRequest) {
+func CreateQueryMetricListRequest() (request *QueryMetricListRequest) {
 	request = &QueryMetricListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -91,7 +91,7 @@ type GetPackageResponse struct {
 }
 
 // CreateGetPackageRequest creates a request to invoke GetPackage API
-func CreateGetPackageRequest(request *GetPackageRequest) {
+func CreateGetPackageRequest() (request *GetPackageRequest) {
 	request = &GetPackageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

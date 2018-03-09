@@ -101,7 +101,7 @@ type DescibeImportsFromDatabaseResponse struct {
 }
 
 // CreateDescibeImportsFromDatabaseRequest creates a request to invoke DescibeImportsFromDatabase API
-func CreateDescibeImportsFromDatabaseRequest(request *DescibeImportsFromDatabaseRequest) {
+func CreateDescibeImportsFromDatabaseRequest() (request *DescibeImportsFromDatabaseRequest) {
 	request = &DescibeImportsFromDatabaseRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

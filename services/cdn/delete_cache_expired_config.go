@@ -90,7 +90,7 @@ type DeleteCacheExpiredConfigResponse struct {
 }
 
 // CreateDeleteCacheExpiredConfigRequest creates a request to invoke DeleteCacheExpiredConfig API
-func CreateDeleteCacheExpiredConfigRequest(request *DeleteCacheExpiredConfigRequest) {
+func CreateDeleteCacheExpiredConfigRequest() (request *DeleteCacheExpiredConfigRequest) {
 	request = &DeleteCacheExpiredConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

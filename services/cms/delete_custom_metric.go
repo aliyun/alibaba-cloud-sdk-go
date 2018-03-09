@@ -92,7 +92,7 @@ type DeleteCustomMetricResponse struct {
 }
 
 // CreateDeleteCustomMetricRequest creates a request to invoke DeleteCustomMetric API
-func CreateDeleteCustomMetricRequest(request *DeleteCustomMetricRequest) {
+func CreateDeleteCustomMetricRequest() (request *DeleteCustomMetricRequest) {
 	request = &DeleteCustomMetricRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

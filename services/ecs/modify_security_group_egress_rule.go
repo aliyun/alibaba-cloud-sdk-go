@@ -85,7 +85,7 @@ type ModifySecurityGroupEgressRuleResponse struct {
 }
 
 // CreateModifySecurityGroupEgressRuleRequest creates a request to invoke ModifySecurityGroupEgressRule API
-func CreateModifySecurityGroupEgressRuleRequest(request *ModifySecurityGroupEgressRuleRequest) {
+func CreateModifySecurityGroupEgressRuleRequest() (request *ModifySecurityGroupEgressRuleRequest) {
 	request = &ModifySecurityGroupEgressRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

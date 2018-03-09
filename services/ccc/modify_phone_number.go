@@ -94,7 +94,7 @@ type ModifyPhoneNumberResponse struct {
 }
 
 // CreateModifyPhoneNumberRequest creates a request to invoke ModifyPhoneNumber API
-func CreateModifyPhoneNumberRequest(request *ModifyPhoneNumberRequest) {
+func CreateModifyPhoneNumberRequest() (request *ModifyPhoneNumberRequest) {
 	request = &ModifyPhoneNumberRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

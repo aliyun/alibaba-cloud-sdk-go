@@ -99,7 +99,7 @@ type ModifyScheduledTaskResponse struct {
 }
 
 // CreateModifyScheduledTaskRequest creates a request to invoke ModifyScheduledTask API
-func CreateModifyScheduledTaskRequest(request *ModifyScheduledTaskRequest) {
+func CreateModifyScheduledTaskRequest() (request *ModifyScheduledTaskRequest) {
 	request = &ModifyScheduledTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

@@ -91,7 +91,7 @@ type DeleteBgpPeerResponse struct {
 }
 
 // CreateDeleteBgpPeerRequest creates a request to invoke DeleteBgpPeer API
-func CreateDeleteBgpPeerRequest(request *DeleteBgpPeerRequest) {
+func CreateDeleteBgpPeerRequest() (request *DeleteBgpPeerRequest) {
 	request = &DeleteBgpPeerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

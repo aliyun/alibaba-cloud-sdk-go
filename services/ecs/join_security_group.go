@@ -91,7 +91,7 @@ type JoinSecurityGroupResponse struct {
 }
 
 // CreateJoinSecurityGroupRequest creates a request to invoke JoinSecurityGroup API
-func CreateJoinSecurityGroupRequest(request *JoinSecurityGroupRequest) {
+func CreateJoinSecurityGroupRequest() (request *JoinSecurityGroupRequest) {
 	request = &JoinSecurityGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

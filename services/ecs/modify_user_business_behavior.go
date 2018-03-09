@@ -85,7 +85,7 @@ type ModifyUserBusinessBehaviorResponse struct {
 }
 
 // CreateModifyUserBusinessBehaviorRequest creates a request to invoke ModifyUserBusinessBehavior API
-func CreateModifyUserBusinessBehaviorRequest(request *ModifyUserBusinessBehaviorRequest) {
+func CreateModifyUserBusinessBehaviorRequest() (request *ModifyUserBusinessBehaviorRequest) {
 	request = &ModifyUserBusinessBehaviorRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

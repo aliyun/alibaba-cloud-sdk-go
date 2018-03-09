@@ -87,7 +87,7 @@ type GenerateSessionAccessKeyResponse struct {
 }
 
 // CreateGenerateSessionAccessKeyRequest creates a request to invoke GenerateSessionAccessKey API
-func CreateGenerateSessionAccessKeyRequest(request *GenerateSessionAccessKeyRequest) {
+func CreateGenerateSessionAccessKeyRequest() (request *GenerateSessionAccessKeyRequest) {
 	request = &GenerateSessionAccessKeyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

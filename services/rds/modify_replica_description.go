@@ -92,7 +92,7 @@ type ModifyReplicaDescriptionResponse struct {
 }
 
 // CreateModifyReplicaDescriptionRequest creates a request to invoke ModifyReplicaDescription API
-func CreateModifyReplicaDescriptionRequest(request *ModifyReplicaDescriptionRequest) {
+func CreateModifyReplicaDescriptionRequest() (request *ModifyReplicaDescriptionRequest) {
 	request = &ModifyReplicaDescriptionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

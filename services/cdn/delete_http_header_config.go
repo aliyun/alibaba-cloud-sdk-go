@@ -89,7 +89,7 @@ type DeleteHttpHeaderConfigResponse struct {
 }
 
 // CreateDeleteHttpHeaderConfigRequest creates a request to invoke DeleteHttpHeaderConfig API
-func CreateDeleteHttpHeaderConfigRequest(request *DeleteHttpHeaderConfigRequest) {
+func CreateDeleteHttpHeaderConfigRequest() (request *DeleteHttpHeaderConfigRequest) {
 	request = &DeleteHttpHeaderConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

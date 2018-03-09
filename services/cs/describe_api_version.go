@@ -84,7 +84,7 @@ type DescribeApiVersionResponse struct {
 }
 
 // CreateDescribeApiVersionRequest creates a request to invoke DescribeApiVersion API
-func CreateDescribeApiVersionRequest(request *DescribeApiVersionRequest) {
+func CreateDescribeApiVersionRequest() (request *DescribeApiVersionRequest) {
 	request = &DescribeApiVersionRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}

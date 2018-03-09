@@ -91,7 +91,7 @@ type ModifyCommonBandwidthPackageSpecResponse struct {
 }
 
 // CreateModifyCommonBandwidthPackageSpecRequest creates a request to invoke ModifyCommonBandwidthPackageSpec API
-func CreateModifyCommonBandwidthPackageSpecRequest(request *ModifyCommonBandwidthPackageSpecRequest) {
+func CreateModifyCommonBandwidthPackageSpecRequest() (request *ModifyCommonBandwidthPackageSpecRequest) {
 	request = &ModifyCommonBandwidthPackageSpecRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

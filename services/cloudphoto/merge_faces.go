@@ -93,7 +93,7 @@ type MergeFacesResponse struct {
 }
 
 // CreateMergeFacesRequest creates a request to invoke MergeFaces API
-func CreateMergeFacesRequest(request *MergeFacesRequest) {
+func CreateMergeFacesRequest() (request *MergeFacesRequest) {
 	request = &MergeFacesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}

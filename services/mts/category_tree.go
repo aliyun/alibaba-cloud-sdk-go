@@ -90,7 +90,7 @@ type CategoryTreeResponse struct {
 }
 
 // CreateCategoryTreeRequest creates a request to invoke CategoryTree API
-func CreateCategoryTreeRequest(request *CategoryTreeRequest) {
+func CreateCategoryTreeRequest() (request *CategoryTreeRequest) {
 	request = &CategoryTreeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
