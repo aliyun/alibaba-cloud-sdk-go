@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ListTags api with *ListTagsRequest synchronously
+// ListTags invokes the cloudphoto.ListTags API synchronously
 // api document: https://help.aliyun.com/api/cloudphoto/listtags.html
 func (client *Client) ListTags(request *ListTagsRequest) (response *ListTagsResponse, err error) {
 	response = CreateListTagsResponse()
@@ -28,7 +28,7 @@ func (client *Client) ListTags(request *ListTagsRequest) (response *ListTagsResp
 	return
 }
 
-// invoke ListTags api with *ListTagsRequest asynchronously
+// ListTagsWithChan invokes the cloudphoto.ListTags API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/listtags.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListTagsWithChan(request *ListTagsRequest) (<-chan *ListTagsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ListTagsWithChan(request *ListTagsRequest) (<-chan *ListTa
 	return responseChan, errChan
 }
 
-// invoke ListTags api with *ListTagsRequest asynchronously
+// ListTagsWithCallback invokes the cloudphoto.ListTags API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/listtags.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListTagsWithCallback(request *ListTagsRequest, callback func(response *ListTagsResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ListTagsWithCallback(request *ListTagsRequest, callback fu
 	return result
 }
 
+// ListTagsRequest is the request struct for api ListTags
 type ListTagsRequest struct {
 	*requests.RpcRequest
 	Lang      string `position:"Query" name:"Lang"`
@@ -80,6 +81,7 @@ type ListTagsRequest struct {
 	LibraryId string `position:"Query" name:"LibraryId"`
 }
 
+// ListTagsResponse is the response struct for api ListTags
 type ListTagsResponse struct {
 	*responses.BaseResponse
 	Code      string `json:"Code" xml:"Code"`
@@ -89,8 +91,8 @@ type ListTagsResponse struct {
 	Tags      []Tag  `json:"Tags" xml:"Tags"`
 }
 
-// create a request to invoke ListTags API
-func CreateListTagsRequest() (request *ListTagsRequest) {
+// CreateListTagsRequest creates a request to invoke ListTags API
+func CreateListTagsRequest(request *ListTagsRequest) {
 	request = &ListTagsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateListTagsRequest() (request *ListTagsRequest) {
 	return
 }
 
-// create a response to parse from ListTags response
+// CreateListTagsResponse creates a response to parse from ListTags response
 func CreateListTagsResponse() (response *ListTagsResponse) {
 	response = &ListTagsResponse{
 		BaseResponse: &responses.BaseResponse{},

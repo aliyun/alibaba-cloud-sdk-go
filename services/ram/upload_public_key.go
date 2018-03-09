@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke UploadPublicKey api with *UploadPublicKeyRequest synchronously
+// UploadPublicKey invokes the ram.UploadPublicKey API synchronously
 // api document: https://help.aliyun.com/api/ram/uploadpublickey.html
 func (client *Client) UploadPublicKey(request *UploadPublicKeyRequest) (response *UploadPublicKeyResponse, err error) {
 	response = CreateUploadPublicKeyResponse()
@@ -28,7 +28,7 @@ func (client *Client) UploadPublicKey(request *UploadPublicKeyRequest) (response
 	return
 }
 
-// invoke UploadPublicKey api with *UploadPublicKeyRequest asynchronously
+// UploadPublicKeyWithChan invokes the ram.UploadPublicKey API asynchronously
 // api document: https://help.aliyun.com/api/ram/uploadpublickey.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UploadPublicKeyWithChan(request *UploadPublicKeyRequest) (<-chan *UploadPublicKeyResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) UploadPublicKeyWithChan(request *UploadPublicKeyRequest) (
 	return responseChan, errChan
 }
 
-// invoke UploadPublicKey api with *UploadPublicKeyRequest asynchronously
+// UploadPublicKeyWithCallback invokes the ram.UploadPublicKey API asynchronously
 // api document: https://help.aliyun.com/api/ram/uploadpublickey.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UploadPublicKeyWithCallback(request *UploadPublicKeyRequest, callback func(response *UploadPublicKeyResponse, err error)) <-chan int {
@@ -73,20 +73,22 @@ func (client *Client) UploadPublicKeyWithCallback(request *UploadPublicKeyReques
 	return result
 }
 
+// UploadPublicKeyRequest is the request struct for api UploadPublicKey
 type UploadPublicKeyRequest struct {
 	*requests.RpcRequest
 	UserName      string `position:"Query" name:"UserName"`
 	PublicKeySpec string `position:"Query" name:"PublicKeySpec"`
 }
 
+// UploadPublicKeyResponse is the response struct for api UploadPublicKey
 type UploadPublicKeyResponse struct {
 	*responses.BaseResponse
 	RequestId string    `json:"RequestId" xml:"RequestId"`
 	PublicKey PublicKey `json:"PublicKey" xml:"PublicKey"`
 }
 
-// create a request to invoke UploadPublicKey API
-func CreateUploadPublicKeyRequest() (request *UploadPublicKeyRequest) {
+// CreateUploadPublicKeyRequest creates a request to invoke UploadPublicKey API
+func CreateUploadPublicKeyRequest(request *UploadPublicKeyRequest) {
 	request = &UploadPublicKeyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -94,7 +96,7 @@ func CreateUploadPublicKeyRequest() (request *UploadPublicKeyRequest) {
 	return
 }
 
-// create a response to parse from UploadPublicKey response
+// CreateUploadPublicKeyResponse creates a response to parse from UploadPublicKey response
 func CreateUploadPublicKeyResponse() (response *UploadPublicKeyResponse) {
 	response = &UploadPublicKeyResponse{
 		BaseResponse: &responses.BaseResponse{},

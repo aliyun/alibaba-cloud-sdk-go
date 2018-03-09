@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SetPasswordPolicy api with *SetPasswordPolicyRequest synchronously
+// SetPasswordPolicy invokes the ram.SetPasswordPolicy API synchronously
 // api document: https://help.aliyun.com/api/ram/setpasswordpolicy.html
 func (client *Client) SetPasswordPolicy(request *SetPasswordPolicyRequest) (response *SetPasswordPolicyResponse, err error) {
 	response = CreateSetPasswordPolicyResponse()
@@ -28,7 +28,7 @@ func (client *Client) SetPasswordPolicy(request *SetPasswordPolicyRequest) (resp
 	return
 }
 
-// invoke SetPasswordPolicy api with *SetPasswordPolicyRequest asynchronously
+// SetPasswordPolicyWithChan invokes the ram.SetPasswordPolicy API asynchronously
 // api document: https://help.aliyun.com/api/ram/setpasswordpolicy.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetPasswordPolicyWithChan(request *SetPasswordPolicyRequest) (<-chan *SetPasswordPolicyResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SetPasswordPolicyWithChan(request *SetPasswordPolicyReques
 	return responseChan, errChan
 }
 
-// invoke SetPasswordPolicy api with *SetPasswordPolicyRequest asynchronously
+// SetPasswordPolicyWithCallback invokes the ram.SetPasswordPolicy API asynchronously
 // api document: https://help.aliyun.com/api/ram/setpasswordpolicy.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetPasswordPolicyWithCallback(request *SetPasswordPolicyRequest, callback func(response *SetPasswordPolicyResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SetPasswordPolicyWithCallback(request *SetPasswordPolicyRe
 	return result
 }
 
+// SetPasswordPolicyRequest is the request struct for api SetPasswordPolicy
 type SetPasswordPolicyRequest struct {
 	*requests.RpcRequest
 	MinimumPasswordLength      requests.Integer `position:"Query" name:"MinimumPasswordLength"`
@@ -86,14 +87,15 @@ type SetPasswordPolicyRequest struct {
 	MaxLoginAttemps            requests.Integer `position:"Query" name:"MaxLoginAttemps"`
 }
 
+// SetPasswordPolicyResponse is the response struct for api SetPasswordPolicy
 type SetPasswordPolicyResponse struct {
 	*responses.BaseResponse
 	RequestId      string         `json:"RequestId" xml:"RequestId"`
 	PasswordPolicy PasswordPolicy `json:"PasswordPolicy" xml:"PasswordPolicy"`
 }
 
-// create a request to invoke SetPasswordPolicy API
-func CreateSetPasswordPolicyRequest() (request *SetPasswordPolicyRequest) {
+// CreateSetPasswordPolicyRequest creates a request to invoke SetPasswordPolicy API
+func CreateSetPasswordPolicyRequest(request *SetPasswordPolicyRequest) {
 	request = &SetPasswordPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -101,7 +103,7 @@ func CreateSetPasswordPolicyRequest() (request *SetPasswordPolicyRequest) {
 	return
 }
 
-// create a response to parse from SetPasswordPolicy response
+// CreateSetPasswordPolicyResponse creates a response to parse from SetPasswordPolicy response
 func CreateSetPasswordPolicyResponse() (response *SetPasswordPolicyResponse) {
 	response = &SetPasswordPolicyResponse{
 		BaseResponse: &responses.BaseResponse{},

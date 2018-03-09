@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CreateUserSetting api with *CreateUserSettingRequest synchronously
+// CreateUserSetting invokes the aegis.CreateUserSetting API synchronously
 // api document: https://help.aliyun.com/api/aegis/createusersetting.html
 func (client *Client) CreateUserSetting(request *CreateUserSettingRequest) (response *CreateUserSettingResponse, err error) {
 	response = CreateCreateUserSettingResponse()
@@ -28,7 +28,7 @@ func (client *Client) CreateUserSetting(request *CreateUserSettingRequest) (resp
 	return
 }
 
-// invoke CreateUserSetting api with *CreateUserSettingRequest asynchronously
+// CreateUserSettingWithChan invokes the aegis.CreateUserSetting API asynchronously
 // api document: https://help.aliyun.com/api/aegis/createusersetting.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateUserSettingWithChan(request *CreateUserSettingRequest) (<-chan *CreateUserSettingResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CreateUserSettingWithChan(request *CreateUserSettingReques
 	return responseChan, errChan
 }
 
-// invoke CreateUserSetting api with *CreateUserSettingRequest asynchronously
+// CreateUserSettingWithCallback invokes the aegis.CreateUserSetting API asynchronously
 // api document: https://help.aliyun.com/api/aegis/createusersetting.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateUserSettingWithCallback(request *CreateUserSettingRequest, callback func(response *CreateUserSettingResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) CreateUserSettingWithCallback(request *CreateUserSettingRe
 	return result
 }
 
+// CreateUserSettingRequest is the request struct for api CreateUserSetting
 type CreateUserSettingRequest struct {
 	*requests.RpcRequest
 	SourceIp        string           `position:"Query" name:"SourceIp"`
@@ -80,13 +81,14 @@ type CreateUserSettingRequest struct {
 	FrequencyByDays requests.Integer `position:"Query" name:"FrequencyByDays"`
 }
 
+// CreateUserSettingResponse is the response struct for api CreateUserSetting
 type CreateUserSettingResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke CreateUserSetting API
-func CreateCreateUserSettingRequest() (request *CreateUserSettingRequest) {
+// CreateCreateUserSettingRequest creates a request to invoke CreateUserSetting API
+func CreateCreateUserSettingRequest(request *CreateUserSettingRequest) {
 	request = &CreateUserSettingRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -94,7 +96,7 @@ func CreateCreateUserSettingRequest() (request *CreateUserSettingRequest) {
 	return
 }
 
-// create a response to parse from CreateUserSetting response
+// CreateCreateUserSettingResponse creates a response to parse from CreateUserSetting response
 func CreateCreateUserSettingResponse() (response *CreateUserSettingResponse) {
 	response = &CreateUserSettingResponse{
 		BaseResponse: &responses.BaseResponse{},

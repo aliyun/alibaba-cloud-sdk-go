@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke QueryFacerecogJobList api with *QueryFacerecogJobListRequest synchronously
+// QueryFacerecogJobList invokes the mts.QueryFacerecogJobList API synchronously
 // api document: https://help.aliyun.com/api/mts/queryfacerecogjoblist.html
 func (client *Client) QueryFacerecogJobList(request *QueryFacerecogJobListRequest) (response *QueryFacerecogJobListResponse, err error) {
 	response = CreateQueryFacerecogJobListResponse()
@@ -28,7 +28,7 @@ func (client *Client) QueryFacerecogJobList(request *QueryFacerecogJobListReques
 	return
 }
 
-// invoke QueryFacerecogJobList api with *QueryFacerecogJobListRequest asynchronously
+// QueryFacerecogJobListWithChan invokes the mts.QueryFacerecogJobList API asynchronously
 // api document: https://help.aliyun.com/api/mts/queryfacerecogjoblist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryFacerecogJobListWithChan(request *QueryFacerecogJobListRequest) (<-chan *QueryFacerecogJobListResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) QueryFacerecogJobListWithChan(request *QueryFacerecogJobLi
 	return responseChan, errChan
 }
 
-// invoke QueryFacerecogJobList api with *QueryFacerecogJobListRequest asynchronously
+// QueryFacerecogJobListWithCallback invokes the mts.QueryFacerecogJobList API asynchronously
 // api document: https://help.aliyun.com/api/mts/queryfacerecogjoblist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryFacerecogJobListWithCallback(request *QueryFacerecogJobListRequest, callback func(response *QueryFacerecogJobListResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) QueryFacerecogJobListWithCallback(request *QueryFacerecogJ
 	return result
 }
 
+// QueryFacerecogJobListRequest is the request struct for api QueryFacerecogJobList
 type QueryFacerecogJobListRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,6 +83,7 @@ type QueryFacerecogJobListRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// QueryFacerecogJobListResponse is the response struct for api QueryFacerecogJobList
 type QueryFacerecogJobListResponse struct {
 	*responses.BaseResponse
 	RequestId        string                             `json:"RequestId" xml:"RequestId"`
@@ -89,8 +91,8 @@ type QueryFacerecogJobListResponse struct {
 	FacerecogJobList FacerecogJobList                   `json:"FacerecogJobList" xml:"FacerecogJobList"`
 }
 
-// create a request to invoke QueryFacerecogJobList API
-func CreateQueryFacerecogJobListRequest() (request *QueryFacerecogJobListRequest) {
+// CreateQueryFacerecogJobListRequest creates a request to invoke QueryFacerecogJobList API
+func CreateQueryFacerecogJobListRequest(request *QueryFacerecogJobListRequest) {
 	request = &QueryFacerecogJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateQueryFacerecogJobListRequest() (request *QueryFacerecogJobListRequest
 	return
 }
 
-// create a response to parse from QueryFacerecogJobList response
+// CreateQueryFacerecogJobListResponse creates a response to parse from QueryFacerecogJobList response
 func CreateQueryFacerecogJobListResponse() (response *QueryFacerecogJobListResponse) {
 	response = &QueryFacerecogJobListResponse{
 		BaseResponse: &responses.BaseResponse{},

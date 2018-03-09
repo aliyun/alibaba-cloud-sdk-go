@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke UnbindAlias api with *UnbindAliasRequest synchronously
+// UnbindAlias invokes the push.UnbindAlias API synchronously
 // api document: https://help.aliyun.com/api/push/unbindalias.html
 func (client *Client) UnbindAlias(request *UnbindAliasRequest) (response *UnbindAliasResponse, err error) {
 	response = CreateUnbindAliasResponse()
@@ -28,7 +28,7 @@ func (client *Client) UnbindAlias(request *UnbindAliasRequest) (response *Unbind
 	return
 }
 
-// invoke UnbindAlias api with *UnbindAliasRequest asynchronously
+// UnbindAliasWithChan invokes the push.UnbindAlias API asynchronously
 // api document: https://help.aliyun.com/api/push/unbindalias.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnbindAliasWithChan(request *UnbindAliasRequest) (<-chan *UnbindAliasResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) UnbindAliasWithChan(request *UnbindAliasRequest) (<-chan *
 	return responseChan, errChan
 }
 
-// invoke UnbindAlias api with *UnbindAliasRequest asynchronously
+// UnbindAliasWithCallback invokes the push.UnbindAlias API asynchronously
 // api document: https://help.aliyun.com/api/push/unbindalias.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnbindAliasWithCallback(request *UnbindAliasRequest, callback func(response *UnbindAliasResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) UnbindAliasWithCallback(request *UnbindAliasRequest, callb
 	return result
 }
 
+// UnbindAliasRequest is the request struct for api UnbindAlias
 type UnbindAliasRequest struct {
 	*requests.RpcRequest
 	AppKey    requests.Integer `position:"Query" name:"AppKey"`
@@ -81,13 +82,14 @@ type UnbindAliasRequest struct {
 	UnbindAll requests.Boolean `position:"Query" name:"UnbindAll"`
 }
 
+// UnbindAliasResponse is the response struct for api UnbindAlias
 type UnbindAliasResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke UnbindAlias API
-func CreateUnbindAliasRequest() (request *UnbindAliasRequest) {
+// CreateUnbindAliasRequest creates a request to invoke UnbindAlias API
+func CreateUnbindAliasRequest(request *UnbindAliasRequest) {
 	request = &UnbindAliasRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateUnbindAliasRequest() (request *UnbindAliasRequest) {
 	return
 }
 
-// create a response to parse from UnbindAlias response
+// CreateUnbindAliasResponse creates a response to parse from UnbindAlias response
 func CreateUnbindAliasResponse() (response *UnbindAliasResponse) {
 	response = &UnbindAliasResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke QueryTemplateList api with *QueryTemplateListRequest synchronously
+// QueryTemplateList invokes the mts.QueryTemplateList API synchronously
 // api document: https://help.aliyun.com/api/mts/querytemplatelist.html
 func (client *Client) QueryTemplateList(request *QueryTemplateListRequest) (response *QueryTemplateListResponse, err error) {
 	response = CreateQueryTemplateListResponse()
@@ -28,7 +28,7 @@ func (client *Client) QueryTemplateList(request *QueryTemplateListRequest) (resp
 	return
 }
 
-// invoke QueryTemplateList api with *QueryTemplateListRequest asynchronously
+// QueryTemplateListWithChan invokes the mts.QueryTemplateList API asynchronously
 // api document: https://help.aliyun.com/api/mts/querytemplatelist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryTemplateListWithChan(request *QueryTemplateListRequest) (<-chan *QueryTemplateListResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) QueryTemplateListWithChan(request *QueryTemplateListReques
 	return responseChan, errChan
 }
 
-// invoke QueryTemplateList api with *QueryTemplateListRequest asynchronously
+// QueryTemplateListWithCallback invokes the mts.QueryTemplateList API asynchronously
 // api document: https://help.aliyun.com/api/mts/querytemplatelist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryTemplateListWithCallback(request *QueryTemplateListRequest, callback func(response *QueryTemplateListResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) QueryTemplateListWithCallback(request *QueryTemplateListRe
 	return result
 }
 
+// QueryTemplateListRequest is the request struct for api QueryTemplateList
 type QueryTemplateListRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,6 +83,7 @@ type QueryTemplateListRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// QueryTemplateListResponse is the response struct for api QueryTemplateList
 type QueryTemplateListResponse struct {
 	*responses.BaseResponse
 	RequestId    string                          `json:"RequestId" xml:"RequestId"`
@@ -89,8 +91,8 @@ type QueryTemplateListResponse struct {
 	TemplateList TemplateListInQueryTemplateList `json:"TemplateList" xml:"TemplateList"`
 }
 
-// create a request to invoke QueryTemplateList API
-func CreateQueryTemplateListRequest() (request *QueryTemplateListRequest) {
+// CreateQueryTemplateListRequest creates a request to invoke QueryTemplateList API
+func CreateQueryTemplateListRequest(request *QueryTemplateListRequest) {
 	request = &QueryTemplateListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateQueryTemplateListRequest() (request *QueryTemplateListRequest) {
 	return
 }
 
-// create a response to parse from QueryTemplateList response
+// CreateQueryTemplateListResponse creates a response to parse from QueryTemplateList response
 func CreateQueryTemplateListResponse() (response *QueryTemplateListResponse) {
 	response = &QueryTemplateListResponse{
 		BaseResponse: &responses.BaseResponse{},

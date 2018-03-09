@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke AttachKeyPair api with *AttachKeyPairRequest synchronously
+// AttachKeyPair invokes the ecs.AttachKeyPair API synchronously
 // api document: https://help.aliyun.com/api/ecs/attachkeypair.html
 func (client *Client) AttachKeyPair(request *AttachKeyPairRequest) (response *AttachKeyPairResponse, err error) {
 	response = CreateAttachKeyPairResponse()
@@ -28,7 +28,7 @@ func (client *Client) AttachKeyPair(request *AttachKeyPairRequest) (response *At
 	return
 }
 
-// invoke AttachKeyPair api with *AttachKeyPairRequest asynchronously
+// AttachKeyPairWithChan invokes the ecs.AttachKeyPair API asynchronously
 // api document: https://help.aliyun.com/api/ecs/attachkeypair.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AttachKeyPairWithChan(request *AttachKeyPairRequest) (<-chan *AttachKeyPairResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) AttachKeyPairWithChan(request *AttachKeyPairRequest) (<-ch
 	return responseChan, errChan
 }
 
-// invoke AttachKeyPair api with *AttachKeyPairRequest asynchronously
+// AttachKeyPairWithCallback invokes the ecs.AttachKeyPair API asynchronously
 // api document: https://help.aliyun.com/api/ecs/attachkeypair.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AttachKeyPairWithCallback(request *AttachKeyPairRequest, callback func(response *AttachKeyPairResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) AttachKeyPairWithCallback(request *AttachKeyPairRequest, c
 	return result
 }
 
+// AttachKeyPairRequest is the request struct for api AttachKeyPair
 type AttachKeyPairRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,6 +83,7 @@ type AttachKeyPairRequest struct {
 	InstanceIds          string           `position:"Query" name:"InstanceIds"`
 }
 
+// AttachKeyPairResponse is the response struct for api AttachKeyPair
 type AttachKeyPairResponse struct {
 	*responses.BaseResponse
 	RequestId   string                 `json:"RequestId" xml:"RequestId"`
@@ -91,8 +93,8 @@ type AttachKeyPairResponse struct {
 	Results     ResultsInAttachKeyPair `json:"Results" xml:"Results"`
 }
 
-// create a request to invoke AttachKeyPair API
-func CreateAttachKeyPairRequest() (request *AttachKeyPairRequest) {
+// CreateAttachKeyPairRequest creates a request to invoke AttachKeyPair API
+func CreateAttachKeyPairRequest(request *AttachKeyPairRequest) {
 	request = &AttachKeyPairRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -100,7 +102,7 @@ func CreateAttachKeyPairRequest() (request *AttachKeyPairRequest) {
 	return
 }
 
-// create a response to parse from AttachKeyPair response
+// CreateAttachKeyPairResponse creates a response to parse from AttachKeyPair response
 func CreateAttachKeyPairResponse() (response *AttachKeyPairResponse) {
 	response = &AttachKeyPairResponse{
 		BaseResponse: &responses.BaseResponse{},

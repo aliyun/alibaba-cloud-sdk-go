@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SetHttpHeaderConfig api with *SetHttpHeaderConfigRequest synchronously
+// SetHttpHeaderConfig invokes the cdn.SetHttpHeaderConfig API synchronously
 // api document: https://help.aliyun.com/api/cdn/sethttpheaderconfig.html
 func (client *Client) SetHttpHeaderConfig(request *SetHttpHeaderConfigRequest) (response *SetHttpHeaderConfigResponse, err error) {
 	response = CreateSetHttpHeaderConfigResponse()
@@ -28,7 +28,7 @@ func (client *Client) SetHttpHeaderConfig(request *SetHttpHeaderConfigRequest) (
 	return
 }
 
-// invoke SetHttpHeaderConfig api with *SetHttpHeaderConfigRequest asynchronously
+// SetHttpHeaderConfigWithChan invokes the cdn.SetHttpHeaderConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/sethttpheaderconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetHttpHeaderConfigWithChan(request *SetHttpHeaderConfigRequest) (<-chan *SetHttpHeaderConfigResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SetHttpHeaderConfigWithChan(request *SetHttpHeaderConfigRe
 	return responseChan, errChan
 }
 
-// invoke SetHttpHeaderConfig api with *SetHttpHeaderConfigRequest asynchronously
+// SetHttpHeaderConfigWithCallback invokes the cdn.SetHttpHeaderConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/sethttpheaderconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetHttpHeaderConfigWithCallback(request *SetHttpHeaderConfigRequest, callback func(response *SetHttpHeaderConfigResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SetHttpHeaderConfigWithCallback(request *SetHttpHeaderConf
 	return result
 }
 
+// SetHttpHeaderConfigRequest is the request struct for api SetHttpHeaderConfig
 type SetHttpHeaderConfigRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,13 +83,14 @@ type SetHttpHeaderConfigRequest struct {
 	HeaderValue   string           `position:"Query" name:"HeaderValue"`
 }
 
+// SetHttpHeaderConfigResponse is the response struct for api SetHttpHeaderConfig
 type SetHttpHeaderConfigResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke SetHttpHeaderConfig API
-func CreateSetHttpHeaderConfigRequest() (request *SetHttpHeaderConfigRequest) {
+// CreateSetHttpHeaderConfigRequest creates a request to invoke SetHttpHeaderConfig API
+func CreateSetHttpHeaderConfigRequest(request *SetHttpHeaderConfigRequest) {
 	request = &SetHttpHeaderConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -96,7 +98,7 @@ func CreateSetHttpHeaderConfigRequest() (request *SetHttpHeaderConfigRequest) {
 	return
 }
 
-// create a response to parse from SetHttpHeaderConfig response
+// CreateSetHttpHeaderConfigResponse creates a response to parse from SetHttpHeaderConfig response
 func CreateSetHttpHeaderConfigResponse() (response *SetHttpHeaderConfigResponse) {
 	response = &SetHttpHeaderConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

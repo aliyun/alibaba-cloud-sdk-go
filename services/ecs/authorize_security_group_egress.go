@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke AuthorizeSecurityGroupEgress api with *AuthorizeSecurityGroupEgressRequest synchronously
+// AuthorizeSecurityGroupEgress invokes the ecs.AuthorizeSecurityGroupEgress API synchronously
 // api document: https://help.aliyun.com/api/ecs/authorizesecuritygroupegress.html
 func (client *Client) AuthorizeSecurityGroupEgress(request *AuthorizeSecurityGroupEgressRequest) (response *AuthorizeSecurityGroupEgressResponse, err error) {
 	response = CreateAuthorizeSecurityGroupEgressResponse()
@@ -28,7 +28,7 @@ func (client *Client) AuthorizeSecurityGroupEgress(request *AuthorizeSecurityGro
 	return
 }
 
-// invoke AuthorizeSecurityGroupEgress api with *AuthorizeSecurityGroupEgressRequest asynchronously
+// AuthorizeSecurityGroupEgressWithChan invokes the ecs.AuthorizeSecurityGroupEgress API asynchronously
 // api document: https://help.aliyun.com/api/ecs/authorizesecuritygroupegress.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AuthorizeSecurityGroupEgressWithChan(request *AuthorizeSecurityGroupEgressRequest) (<-chan *AuthorizeSecurityGroupEgressResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) AuthorizeSecurityGroupEgressWithChan(request *AuthorizeSec
 	return responseChan, errChan
 }
 
-// invoke AuthorizeSecurityGroupEgress api with *AuthorizeSecurityGroupEgressRequest asynchronously
+// AuthorizeSecurityGroupEgressWithCallback invokes the ecs.AuthorizeSecurityGroupEgress API asynchronously
 // api document: https://help.aliyun.com/api/ecs/authorizesecuritygroupegress.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AuthorizeSecurityGroupEgressWithCallback(request *AuthorizeSecurityGroupEgressRequest, callback func(response *AuthorizeSecurityGroupEgressResponse, err error)) <-chan int {
@@ -73,17 +73,19 @@ func (client *Client) AuthorizeSecurityGroupEgressWithCallback(request *Authoriz
 	return result
 }
 
+// AuthorizeSecurityGroupEgressRequest is the request struct for api AuthorizeSecurityGroupEgress
 type AuthorizeSecurityGroupEgressRequest struct {
 	*requests.RpcRequest
 }
 
+// AuthorizeSecurityGroupEgressResponse is the response struct for api AuthorizeSecurityGroupEgress
 type AuthorizeSecurityGroupEgressResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke AuthorizeSecurityGroupEgress API
-func CreateAuthorizeSecurityGroupEgressRequest() (request *AuthorizeSecurityGroupEgressRequest) {
+// CreateAuthorizeSecurityGroupEgressRequest creates a request to invoke AuthorizeSecurityGroupEgress API
+func CreateAuthorizeSecurityGroupEgressRequest(request *AuthorizeSecurityGroupEgressRequest) {
 	request = &AuthorizeSecurityGroupEgressRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -91,7 +93,7 @@ func CreateAuthorizeSecurityGroupEgressRequest() (request *AuthorizeSecurityGrou
 	return
 }
 
-// create a response to parse from AuthorizeSecurityGroupEgress response
+// CreateAuthorizeSecurityGroupEgressResponse creates a response to parse from AuthorizeSecurityGroupEgress response
 func CreateAuthorizeSecurityGroupEgressResponse() (response *AuthorizeSecurityGroupEgressResponse) {
 	response = &AuthorizeSecurityGroupEgressResponse{
 		BaseResponse: &responses.BaseResponse{},

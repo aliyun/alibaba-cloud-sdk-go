@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ImportKeyPair api with *ImportKeyPairRequest synchronously
+// ImportKeyPair invokes the ecs.ImportKeyPair API synchronously
 // api document: https://help.aliyun.com/api/ecs/importkeypair.html
 func (client *Client) ImportKeyPair(request *ImportKeyPairRequest) (response *ImportKeyPairResponse, err error) {
 	response = CreateImportKeyPairResponse()
@@ -28,7 +28,7 @@ func (client *Client) ImportKeyPair(request *ImportKeyPairRequest) (response *Im
 	return
 }
 
-// invoke ImportKeyPair api with *ImportKeyPairRequest asynchronously
+// ImportKeyPairWithChan invokes the ecs.ImportKeyPair API asynchronously
 // api document: https://help.aliyun.com/api/ecs/importkeypair.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ImportKeyPairWithChan(request *ImportKeyPairRequest) (<-chan *ImportKeyPairResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ImportKeyPairWithChan(request *ImportKeyPairRequest) (<-ch
 	return responseChan, errChan
 }
 
-// invoke ImportKeyPair api with *ImportKeyPairRequest asynchronously
+// ImportKeyPairWithCallback invokes the ecs.ImportKeyPair API asynchronously
 // api document: https://help.aliyun.com/api/ecs/importkeypair.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ImportKeyPairWithCallback(request *ImportKeyPairRequest, callback func(response *ImportKeyPairResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ImportKeyPairWithCallback(request *ImportKeyPairRequest, c
 	return result
 }
 
+// ImportKeyPairRequest is the request struct for api ImportKeyPair
 type ImportKeyPairRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,6 +83,7 @@ type ImportKeyPairRequest struct {
 	PublicKeyBody        string           `position:"Query" name:"PublicKeyBody"`
 }
 
+// ImportKeyPairResponse is the response struct for api ImportKeyPair
 type ImportKeyPairResponse struct {
 	*responses.BaseResponse
 	RequestId          string `json:"RequestId" xml:"RequestId"`
@@ -89,8 +91,8 @@ type ImportKeyPairResponse struct {
 	KeyPairFingerPrint string `json:"KeyPairFingerPrint" xml:"KeyPairFingerPrint"`
 }
 
-// create a request to invoke ImportKeyPair API
-func CreateImportKeyPairRequest() (request *ImportKeyPairRequest) {
+// CreateImportKeyPairRequest creates a request to invoke ImportKeyPair API
+func CreateImportKeyPairRequest(request *ImportKeyPairRequest) {
 	request = &ImportKeyPairRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateImportKeyPairRequest() (request *ImportKeyPairRequest) {
 	return
 }
 
-// create a response to parse from ImportKeyPair response
+// CreateImportKeyPairResponse creates a response to parse from ImportKeyPair response
 func CreateImportKeyPairResponse() (response *ImportKeyPairResponse) {
 	response = &ImportKeyPairResponse{
 		BaseResponse: &responses.BaseResponse{},

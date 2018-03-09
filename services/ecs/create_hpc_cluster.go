@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CreateHpcCluster api with *CreateHpcClusterRequest synchronously
+// CreateHpcCluster invokes the ecs.CreateHpcCluster API synchronously
 // api document: https://help.aliyun.com/api/ecs/createhpccluster.html
 func (client *Client) CreateHpcCluster(request *CreateHpcClusterRequest) (response *CreateHpcClusterResponse, err error) {
 	response = CreateCreateHpcClusterResponse()
@@ -28,7 +28,7 @@ func (client *Client) CreateHpcCluster(request *CreateHpcClusterRequest) (respon
 	return
 }
 
-// invoke CreateHpcCluster api with *CreateHpcClusterRequest asynchronously
+// CreateHpcClusterWithChan invokes the ecs.CreateHpcCluster API asynchronously
 // api document: https://help.aliyun.com/api/ecs/createhpccluster.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateHpcClusterWithChan(request *CreateHpcClusterRequest) (<-chan *CreateHpcClusterResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CreateHpcClusterWithChan(request *CreateHpcClusterRequest)
 	return responseChan, errChan
 }
 
-// invoke CreateHpcCluster api with *CreateHpcClusterRequest asynchronously
+// CreateHpcClusterWithCallback invokes the ecs.CreateHpcCluster API asynchronously
 // api document: https://help.aliyun.com/api/ecs/createhpccluster.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateHpcClusterWithCallback(request *CreateHpcClusterRequest, callback func(response *CreateHpcClusterResponse, err error)) <-chan int {
@@ -73,18 +73,20 @@ func (client *Client) CreateHpcClusterWithCallback(request *CreateHpcClusterRequ
 	return result
 }
 
+// CreateHpcClusterRequest is the request struct for api CreateHpcCluster
 type CreateHpcClusterRequest struct {
 	*requests.RpcRequest
 }
 
+// CreateHpcClusterResponse is the response struct for api CreateHpcCluster
 type CreateHpcClusterResponse struct {
 	*responses.BaseResponse
 	RequestId    string `json:"RequestId" xml:"RequestId"`
 	HpcClusterId string `json:"HpcClusterId" xml:"HpcClusterId"`
 }
 
-// create a request to invoke CreateHpcCluster API
-func CreateCreateHpcClusterRequest() (request *CreateHpcClusterRequest) {
+// CreateCreateHpcClusterRequest creates a request to invoke CreateHpcCluster API
+func CreateCreateHpcClusterRequest(request *CreateHpcClusterRequest) {
 	request = &CreateHpcClusterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -92,7 +94,7 @@ func CreateCreateHpcClusterRequest() (request *CreateHpcClusterRequest) {
 	return
 }
 
-// create a response to parse from CreateHpcCluster response
+// CreateCreateHpcClusterResponse creates a response to parse from CreateHpcCluster response
 func CreateCreateHpcClusterResponse() (response *CreateHpcClusterResponse) {
 	response = &CreateHpcClusterResponse{
 		BaseResponse: &responses.BaseResponse{},

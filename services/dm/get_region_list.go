@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke GetRegionList api with *GetRegionListRequest synchronously
+// GetRegionList invokes the dm.GetRegionList API synchronously
 // api document: https://help.aliyun.com/api/dm/getregionlist.html
 func (client *Client) GetRegionList(request *GetRegionListRequest) (response *GetRegionListResponse, err error) {
 	response = CreateGetRegionListResponse()
@@ -28,7 +28,7 @@ func (client *Client) GetRegionList(request *GetRegionListRequest) (response *Ge
 	return
 }
 
-// invoke GetRegionList api with *GetRegionListRequest asynchronously
+// GetRegionListWithChan invokes the dm.GetRegionList API asynchronously
 // api document: https://help.aliyun.com/api/dm/getregionlist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetRegionListWithChan(request *GetRegionListRequest) (<-chan *GetRegionListResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) GetRegionListWithChan(request *GetRegionListRequest) (<-ch
 	return responseChan, errChan
 }
 
-// invoke GetRegionList api with *GetRegionListRequest asynchronously
+// GetRegionListWithCallback invokes the dm.GetRegionList API asynchronously
 // api document: https://help.aliyun.com/api/dm/getregionlist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetRegionListWithCallback(request *GetRegionListRequest, callback func(response *GetRegionListResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) GetRegionListWithCallback(request *GetRegionListRequest, c
 	return result
 }
 
+// GetRegionListRequest is the request struct for api GetRegionList
 type GetRegionListRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -86,6 +87,7 @@ type GetRegionListRequest struct {
 	PageNumber           string           `position:"Query" name:"PageNumber"`
 }
 
+// GetRegionListResponse is the response struct for api GetRegionList
 type GetRegionListResponse struct {
 	*responses.BaseResponse
 	RequestId string              `json:"RequestId" xml:"RequestId"`
@@ -95,8 +97,8 @@ type GetRegionListResponse struct {
 	Data      DataInGetRegionList `json:"data" xml:"data"`
 }
 
-// create a request to invoke GetRegionList API
-func CreateGetRegionListRequest() (request *GetRegionListRequest) {
+// CreateGetRegionListRequest creates a request to invoke GetRegionList API
+func CreateGetRegionListRequest(request *GetRegionListRequest) {
 	request = &GetRegionListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -104,7 +106,7 @@ func CreateGetRegionListRequest() (request *GetRegionListRequest) {
 	return
 }
 
-// create a response to parse from GetRegionList response
+// CreateGetRegionListResponse creates a response to parse from GetRegionList response
 func CreateGetRegionListResponse() (response *GetRegionListResponse) {
 	response = &GetRegionListResponse{
 		BaseResponse: &responses.BaseResponse{},

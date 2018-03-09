@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke AddBandwidthPackageIps api with *AddBandwidthPackageIpsRequest synchronously
+// AddBandwidthPackageIps invokes the vpc.AddBandwidthPackageIps API synchronously
 // api document: https://help.aliyun.com/api/vpc/addbandwidthpackageips.html
 func (client *Client) AddBandwidthPackageIps(request *AddBandwidthPackageIpsRequest) (response *AddBandwidthPackageIpsResponse, err error) {
 	response = CreateAddBandwidthPackageIpsResponse()
@@ -28,7 +28,7 @@ func (client *Client) AddBandwidthPackageIps(request *AddBandwidthPackageIpsRequ
 	return
 }
 
-// invoke AddBandwidthPackageIps api with *AddBandwidthPackageIpsRequest asynchronously
+// AddBandwidthPackageIpsWithChan invokes the vpc.AddBandwidthPackageIps API asynchronously
 // api document: https://help.aliyun.com/api/vpc/addbandwidthpackageips.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddBandwidthPackageIpsWithChan(request *AddBandwidthPackageIpsRequest) (<-chan *AddBandwidthPackageIpsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) AddBandwidthPackageIpsWithChan(request *AddBandwidthPackag
 	return responseChan, errChan
 }
 
-// invoke AddBandwidthPackageIps api with *AddBandwidthPackageIpsRequest asynchronously
+// AddBandwidthPackageIpsWithCallback invokes the vpc.AddBandwidthPackageIps API asynchronously
 // api document: https://help.aliyun.com/api/vpc/addbandwidthpackageips.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddBandwidthPackageIpsWithCallback(request *AddBandwidthPackageIpsRequest, callback func(response *AddBandwidthPackageIpsResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) AddBandwidthPackageIpsWithCallback(request *AddBandwidthPa
 	return result
 }
 
+// AddBandwidthPackageIpsRequest is the request struct for api AddBandwidthPackageIps
 type AddBandwidthPackageIpsRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,13 +85,14 @@ type AddBandwidthPackageIpsRequest struct {
 	ClientToken          string           `position:"Query" name:"ClientToken"`
 }
 
+// AddBandwidthPackageIpsResponse is the response struct for api AddBandwidthPackageIps
 type AddBandwidthPackageIpsResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke AddBandwidthPackageIps API
-func CreateAddBandwidthPackageIpsRequest() (request *AddBandwidthPackageIpsRequest) {
+// CreateAddBandwidthPackageIpsRequest creates a request to invoke AddBandwidthPackageIps API
+func CreateAddBandwidthPackageIpsRequest(request *AddBandwidthPackageIpsRequest) {
 	request = &AddBandwidthPackageIpsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateAddBandwidthPackageIpsRequest() (request *AddBandwidthPackageIpsReque
 	return
 }
 
-// create a response to parse from AddBandwidthPackageIps response
+// CreateAddBandwidthPackageIpsResponse creates a response to parse from AddBandwidthPackageIps response
 func CreateAddBandwidthPackageIpsResponse() (response *AddBandwidthPackageIpsResponse) {
 	response = &AddBandwidthPackageIpsResponse{
 		BaseResponse: &responses.BaseResponse{},

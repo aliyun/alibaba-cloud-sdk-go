@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeNetworkInterfaces api with *DescribeNetworkInterfacesRequest synchronously
+// DescribeNetworkInterfaces invokes the ecs.DescribeNetworkInterfaces API synchronously
 // api document: https://help.aliyun.com/api/ecs/describenetworkinterfaces.html
 func (client *Client) DescribeNetworkInterfaces(request *DescribeNetworkInterfacesRequest) (response *DescribeNetworkInterfacesResponse, err error) {
 	response = CreateDescribeNetworkInterfacesResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeNetworkInterfaces(request *DescribeNetworkInterfac
 	return
 }
 
-// invoke DescribeNetworkInterfaces api with *DescribeNetworkInterfacesRequest asynchronously
+// DescribeNetworkInterfacesWithChan invokes the ecs.DescribeNetworkInterfaces API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describenetworkinterfaces.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeNetworkInterfacesWithChan(request *DescribeNetworkInterfacesRequest) (<-chan *DescribeNetworkInterfacesResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeNetworkInterfacesWithChan(request *DescribeNetwork
 	return responseChan, errChan
 }
 
-// invoke DescribeNetworkInterfaces api with *DescribeNetworkInterfacesRequest asynchronously
+// DescribeNetworkInterfacesWithCallback invokes the ecs.DescribeNetworkInterfaces API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describenetworkinterfaces.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeNetworkInterfacesWithCallback(request *DescribeNetworkInterfacesRequest, callback func(response *DescribeNetworkInterfacesResponse, err error)) <-chan int {
@@ -73,10 +73,12 @@ func (client *Client) DescribeNetworkInterfacesWithCallback(request *DescribeNet
 	return result
 }
 
+// DescribeNetworkInterfacesRequest is the request struct for api DescribeNetworkInterfaces
 type DescribeNetworkInterfacesRequest struct {
 	*requests.RpcRequest
 }
 
+// DescribeNetworkInterfacesResponse is the response struct for api DescribeNetworkInterfaces
 type DescribeNetworkInterfacesResponse struct {
 	*responses.BaseResponse
 	RequestId            string               `json:"RequestId" xml:"RequestId"`
@@ -86,8 +88,8 @@ type DescribeNetworkInterfacesResponse struct {
 	NetworkInterfaceSets NetworkInterfaceSets `json:"NetworkInterfaceSets" xml:"NetworkInterfaceSets"`
 }
 
-// create a request to invoke DescribeNetworkInterfaces API
-func CreateDescribeNetworkInterfacesRequest() (request *DescribeNetworkInterfacesRequest) {
+// CreateDescribeNetworkInterfacesRequest creates a request to invoke DescribeNetworkInterfaces API
+func CreateDescribeNetworkInterfacesRequest(request *DescribeNetworkInterfacesRequest) {
 	request = &DescribeNetworkInterfacesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateDescribeNetworkInterfacesRequest() (request *DescribeNetworkInterface
 	return
 }
 
-// create a response to parse from DescribeNetworkInterfaces response
+// CreateDescribeNetworkInterfacesResponse creates a response to parse from DescribeNetworkInterfaces response
 func CreateDescribeNetworkInterfacesResponse() (response *DescribeNetworkInterfacesResponse) {
 	response = &DescribeNetworkInterfacesResponse{
 		BaseResponse: &responses.BaseResponse{},

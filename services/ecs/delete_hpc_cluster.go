@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteHpcCluster api with *DeleteHpcClusterRequest synchronously
+// DeleteHpcCluster invokes the ecs.DeleteHpcCluster API synchronously
 // api document: https://help.aliyun.com/api/ecs/deletehpccluster.html
 func (client *Client) DeleteHpcCluster(request *DeleteHpcClusterRequest) (response *DeleteHpcClusterResponse, err error) {
 	response = CreateDeleteHpcClusterResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteHpcCluster(request *DeleteHpcClusterRequest) (respon
 	return
 }
 
-// invoke DeleteHpcCluster api with *DeleteHpcClusterRequest asynchronously
+// DeleteHpcClusterWithChan invokes the ecs.DeleteHpcCluster API asynchronously
 // api document: https://help.aliyun.com/api/ecs/deletehpccluster.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteHpcClusterWithChan(request *DeleteHpcClusterRequest) (<-chan *DeleteHpcClusterResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteHpcClusterWithChan(request *DeleteHpcClusterRequest)
 	return responseChan, errChan
 }
 
-// invoke DeleteHpcCluster api with *DeleteHpcClusterRequest asynchronously
+// DeleteHpcClusterWithCallback invokes the ecs.DeleteHpcCluster API asynchronously
 // api document: https://help.aliyun.com/api/ecs/deletehpccluster.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteHpcClusterWithCallback(request *DeleteHpcClusterRequest, callback func(response *DeleteHpcClusterResponse, err error)) <-chan int {
@@ -73,17 +73,19 @@ func (client *Client) DeleteHpcClusterWithCallback(request *DeleteHpcClusterRequ
 	return result
 }
 
+// DeleteHpcClusterRequest is the request struct for api DeleteHpcCluster
 type DeleteHpcClusterRequest struct {
 	*requests.RpcRequest
 }
 
+// DeleteHpcClusterResponse is the response struct for api DeleteHpcCluster
 type DeleteHpcClusterResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DeleteHpcCluster API
-func CreateDeleteHpcClusterRequest() (request *DeleteHpcClusterRequest) {
+// CreateDeleteHpcClusterRequest creates a request to invoke DeleteHpcCluster API
+func CreateDeleteHpcClusterRequest(request *DeleteHpcClusterRequest) {
 	request = &DeleteHpcClusterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -91,7 +93,7 @@ func CreateDeleteHpcClusterRequest() (request *DeleteHpcClusterRequest) {
 	return
 }
 
-// create a response to parse from DeleteHpcCluster response
+// CreateDeleteHpcClusterResponse creates a response to parse from DeleteHpcCluster response
 func CreateDeleteHpcClusterResponse() (response *DeleteHpcClusterResponse) {
 	response = &DeleteHpcClusterResponse{
 		BaseResponse: &responses.BaseResponse{},

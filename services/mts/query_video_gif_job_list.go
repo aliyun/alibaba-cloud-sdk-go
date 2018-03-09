@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke QueryVideoGifJobList api with *QueryVideoGifJobListRequest synchronously
+// QueryVideoGifJobList invokes the mts.QueryVideoGifJobList API synchronously
 // api document: https://help.aliyun.com/api/mts/queryvideogifjoblist.html
 func (client *Client) QueryVideoGifJobList(request *QueryVideoGifJobListRequest) (response *QueryVideoGifJobListResponse, err error) {
 	response = CreateQueryVideoGifJobListResponse()
@@ -28,7 +28,7 @@ func (client *Client) QueryVideoGifJobList(request *QueryVideoGifJobListRequest)
 	return
 }
 
-// invoke QueryVideoGifJobList api with *QueryVideoGifJobListRequest asynchronously
+// QueryVideoGifJobListWithChan invokes the mts.QueryVideoGifJobList API asynchronously
 // api document: https://help.aliyun.com/api/mts/queryvideogifjoblist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryVideoGifJobListWithChan(request *QueryVideoGifJobListRequest) (<-chan *QueryVideoGifJobListResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) QueryVideoGifJobListWithChan(request *QueryVideoGifJobList
 	return responseChan, errChan
 }
 
-// invoke QueryVideoGifJobList api with *QueryVideoGifJobListRequest asynchronously
+// QueryVideoGifJobListWithCallback invokes the mts.QueryVideoGifJobList API asynchronously
 // api document: https://help.aliyun.com/api/mts/queryvideogifjoblist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryVideoGifJobListWithCallback(request *QueryVideoGifJobListRequest, callback func(response *QueryVideoGifJobListResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) QueryVideoGifJobListWithCallback(request *QueryVideoGifJob
 	return result
 }
 
+// QueryVideoGifJobListRequest is the request struct for api QueryVideoGifJobList
 type QueryVideoGifJobListRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,6 +83,7 @@ type QueryVideoGifJobListRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// QueryVideoGifJobListResponse is the response struct for api QueryVideoGifJobList
 type QueryVideoGifJobListResponse struct {
 	*responses.BaseResponse
 	RequestId   string                            `json:"RequestId" xml:"RequestId"`
@@ -89,8 +91,8 @@ type QueryVideoGifJobListResponse struct {
 	JobList     JobListInQueryVideoGifJobList     `json:"JobList" xml:"JobList"`
 }
 
-// create a request to invoke QueryVideoGifJobList API
-func CreateQueryVideoGifJobListRequest() (request *QueryVideoGifJobListRequest) {
+// CreateQueryVideoGifJobListRequest creates a request to invoke QueryVideoGifJobList API
+func CreateQueryVideoGifJobListRequest(request *QueryVideoGifJobListRequest) {
 	request = &QueryVideoGifJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateQueryVideoGifJobListRequest() (request *QueryVideoGifJobListRequest) 
 	return
 }
 
-// create a response to parse from QueryVideoGifJobList response
+// CreateQueryVideoGifJobListResponse creates a response to parse from QueryVideoGifJobList response
 func CreateQueryVideoGifJobListResponse() (response *QueryVideoGifJobListResponse) {
 	response = &QueryVideoGifJobListResponse{
 		BaseResponse: &responses.BaseResponse{},

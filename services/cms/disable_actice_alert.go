@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DisableActiceAlert api with *DisableActiceAlertRequest synchronously
+// DisableActiceAlert invokes the cms.DisableActiceAlert API synchronously
 // api document: https://help.aliyun.com/api/cms/disableacticealert.html
 func (client *Client) DisableActiceAlert(request *DisableActiceAlertRequest) (response *DisableActiceAlertResponse, err error) {
 	response = CreateDisableActiceAlertResponse()
@@ -28,7 +28,7 @@ func (client *Client) DisableActiceAlert(request *DisableActiceAlertRequest) (re
 	return
 }
 
-// invoke DisableActiceAlert api with *DisableActiceAlertRequest asynchronously
+// DisableActiceAlertWithChan invokes the cms.DisableActiceAlert API asynchronously
 // api document: https://help.aliyun.com/api/cms/disableacticealert.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DisableActiceAlertWithChan(request *DisableActiceAlertRequest) (<-chan *DisableActiceAlertResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DisableActiceAlertWithChan(request *DisableActiceAlertRequ
 	return responseChan, errChan
 }
 
-// invoke DisableActiceAlert api with *DisableActiceAlertRequest asynchronously
+// DisableActiceAlertWithCallback invokes the cms.DisableActiceAlert API asynchronously
 // api document: https://help.aliyun.com/api/cms/disableacticealert.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DisableActiceAlertWithCallback(request *DisableActiceAlertRequest, callback func(response *DisableActiceAlertResponse, err error)) <-chan int {
@@ -73,12 +73,14 @@ func (client *Client) DisableActiceAlertWithCallback(request *DisableActiceAlert
 	return result
 }
 
+// DisableActiceAlertRequest is the request struct for api DisableActiceAlert
 type DisableActiceAlertRequest struct {
 	*requests.RpcRequest
 	Product string `position:"Query" name:"Product"`
 	UserId  string `position:"Query" name:"UserId"`
 }
 
+// DisableActiceAlertResponse is the response struct for api DisableActiceAlert
 type DisableActiceAlertResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
@@ -87,8 +89,8 @@ type DisableActiceAlertResponse struct {
 	Message   string `json:"Message" xml:"Message"`
 }
 
-// create a request to invoke DisableActiceAlert API
-func CreateDisableActiceAlertRequest() (request *DisableActiceAlertRequest) {
+// CreateDisableActiceAlertRequest creates a request to invoke DisableActiceAlert API
+func CreateDisableActiceAlertRequest(request *DisableActiceAlertRequest) {
 	request = &DisableActiceAlertRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -96,7 +98,7 @@ func CreateDisableActiceAlertRequest() (request *DisableActiceAlertRequest) {
 	return
 }
 
-// create a response to parse from DisableActiceAlert response
+// CreateDisableActiceAlertResponse creates a response to parse from DisableActiceAlert response
 func CreateDisableActiceAlertResponse() (response *DisableActiceAlertResponse) {
 	response = &DisableActiceAlertResponse{
 		BaseResponse: &responses.BaseResponse{},

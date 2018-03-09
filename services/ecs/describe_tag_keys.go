@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeTagKeys api with *DescribeTagKeysRequest synchronously
+// DescribeTagKeys invokes the ecs.DescribeTagKeys API synchronously
 // api document: https://help.aliyun.com/api/ecs/describetagkeys.html
 func (client *Client) DescribeTagKeys(request *DescribeTagKeysRequest) (response *DescribeTagKeysResponse, err error) {
 	response = CreateDescribeTagKeysResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeTagKeys(request *DescribeTagKeysRequest) (response
 	return
 }
 
-// invoke DescribeTagKeys api with *DescribeTagKeysRequest asynchronously
+// DescribeTagKeysWithChan invokes the ecs.DescribeTagKeys API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describetagkeys.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeTagKeysWithChan(request *DescribeTagKeysRequest) (<-chan *DescribeTagKeysResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeTagKeysWithChan(request *DescribeTagKeysRequest) (
 	return responseChan, errChan
 }
 
-// invoke DescribeTagKeys api with *DescribeTagKeysRequest asynchronously
+// DescribeTagKeysWithCallback invokes the ecs.DescribeTagKeys API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describetagkeys.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeTagKeysWithCallback(request *DescribeTagKeysRequest, callback func(response *DescribeTagKeysResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeTagKeysWithCallback(request *DescribeTagKeysReques
 	return result
 }
 
+// DescribeTagKeysRequest is the request struct for api DescribeTagKeys
 type DescribeTagKeysRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,6 +85,7 @@ type DescribeTagKeysRequest struct {
 	ResourceId           string           `position:"Query" name:"ResourceId"`
 }
 
+// DescribeTagKeysResponse is the response struct for api DescribeTagKeys
 type DescribeTagKeysResponse struct {
 	*responses.BaseResponse
 	RequestId  string  `json:"RequestId" xml:"RequestId"`
@@ -93,8 +95,8 @@ type DescribeTagKeysResponse struct {
 	TagKeys    TagKeys `json:"TagKeys" xml:"TagKeys"`
 }
 
-// create a request to invoke DescribeTagKeys API
-func CreateDescribeTagKeysRequest() (request *DescribeTagKeysRequest) {
+// CreateDescribeTagKeysRequest creates a request to invoke DescribeTagKeys API
+func CreateDescribeTagKeysRequest(request *DescribeTagKeysRequest) {
 	request = &DescribeTagKeysRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -102,7 +104,7 @@ func CreateDescribeTagKeysRequest() (request *DescribeTagKeysRequest) {
 	return
 }
 
-// create a response to parse from DescribeTagKeys response
+// CreateDescribeTagKeysResponse creates a response to parse from DescribeTagKeys response
 func CreateDescribeTagKeysResponse() (response *DescribeTagKeysResponse) {
 	response = &DescribeTagKeysResponse{
 		BaseResponse: &responses.BaseResponse{},

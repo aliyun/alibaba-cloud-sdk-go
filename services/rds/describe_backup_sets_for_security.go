@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeBackupSetsForSecurity api with *DescribeBackupSetsForSecurityRequest synchronously
+// DescribeBackupSetsForSecurity invokes the rds.DescribeBackupSetsForSecurity API synchronously
 // api document: https://help.aliyun.com/api/rds/describebackupsetsforsecurity.html
 func (client *Client) DescribeBackupSetsForSecurity(request *DescribeBackupSetsForSecurityRequest) (response *DescribeBackupSetsForSecurityResponse, err error) {
 	response = CreateDescribeBackupSetsForSecurityResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeBackupSetsForSecurity(request *DescribeBackupSetsF
 	return
 }
 
-// invoke DescribeBackupSetsForSecurity api with *DescribeBackupSetsForSecurityRequest asynchronously
+// DescribeBackupSetsForSecurityWithChan invokes the rds.DescribeBackupSetsForSecurity API asynchronously
 // api document: https://help.aliyun.com/api/rds/describebackupsetsforsecurity.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBackupSetsForSecurityWithChan(request *DescribeBackupSetsForSecurityRequest) (<-chan *DescribeBackupSetsForSecurityResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeBackupSetsForSecurityWithChan(request *DescribeBac
 	return responseChan, errChan
 }
 
-// invoke DescribeBackupSetsForSecurity api with *DescribeBackupSetsForSecurityRequest asynchronously
+// DescribeBackupSetsForSecurityWithCallback invokes the rds.DescribeBackupSetsForSecurity API asynchronously
 // api document: https://help.aliyun.com/api/rds/describebackupsetsforsecurity.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBackupSetsForSecurityWithCallback(request *DescribeBackupSetsForSecurityRequest, callback func(response *DescribeBackupSetsForSecurityResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeBackupSetsForSecurityWithCallback(request *Describ
 	return result
 }
 
+// DescribeBackupSetsForSecurityRequest is the request struct for api DescribeBackupSetsForSecurity
 type DescribeBackupSetsForSecurityRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -92,6 +93,7 @@ type DescribeBackupSetsForSecurityRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// DescribeBackupSetsForSecurityResponse is the response struct for api DescribeBackupSetsForSecurity
 type DescribeBackupSetsForSecurityResponse struct {
 	*responses.BaseResponse
 	RequestId        string                               `json:"RequestId" xml:"RequestId"`
@@ -102,8 +104,8 @@ type DescribeBackupSetsForSecurityResponse struct {
 	Items            ItemsInDescribeBackupSetsForSecurity `json:"Items" xml:"Items"`
 }
 
-// create a request to invoke DescribeBackupSetsForSecurity API
-func CreateDescribeBackupSetsForSecurityRequest() (request *DescribeBackupSetsForSecurityRequest) {
+// CreateDescribeBackupSetsForSecurityRequest creates a request to invoke DescribeBackupSetsForSecurity API
+func CreateDescribeBackupSetsForSecurityRequest(request *DescribeBackupSetsForSecurityRequest) {
 	request = &DescribeBackupSetsForSecurityRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -111,7 +113,7 @@ func CreateDescribeBackupSetsForSecurityRequest() (request *DescribeBackupSetsFo
 	return
 }
 
-// create a response to parse from DescribeBackupSetsForSecurity response
+// CreateDescribeBackupSetsForSecurityResponse creates a response to parse from DescribeBackupSetsForSecurity response
 func CreateDescribeBackupSetsForSecurityResponse() (response *DescribeBackupSetsForSecurityResponse) {
 	response = &DescribeBackupSetsForSecurityResponse{
 		BaseResponse: &responses.BaseResponse{},

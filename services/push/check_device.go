@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CheckDevice api with *CheckDeviceRequest synchronously
+// CheckDevice invokes the push.CheckDevice API synchronously
 // api document: https://help.aliyun.com/api/push/checkdevice.html
 func (client *Client) CheckDevice(request *CheckDeviceRequest) (response *CheckDeviceResponse, err error) {
 	response = CreateCheckDeviceResponse()
@@ -28,7 +28,7 @@ func (client *Client) CheckDevice(request *CheckDeviceRequest) (response *CheckD
 	return
 }
 
-// invoke CheckDevice api with *CheckDeviceRequest asynchronously
+// CheckDeviceWithChan invokes the push.CheckDevice API asynchronously
 // api document: https://help.aliyun.com/api/push/checkdevice.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckDeviceWithChan(request *CheckDeviceRequest) (<-chan *CheckDeviceResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CheckDeviceWithChan(request *CheckDeviceRequest) (<-chan *
 	return responseChan, errChan
 }
 
-// invoke CheckDevice api with *CheckDeviceRequest asynchronously
+// CheckDeviceWithCallback invokes the push.CheckDevice API asynchronously
 // api document: https://help.aliyun.com/api/push/checkdevice.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckDeviceWithCallback(request *CheckDeviceRequest, callback func(response *CheckDeviceResponse, err error)) <-chan int {
@@ -73,20 +73,22 @@ func (client *Client) CheckDeviceWithCallback(request *CheckDeviceRequest, callb
 	return result
 }
 
+// CheckDeviceRequest is the request struct for api CheckDevice
 type CheckDeviceRequest struct {
 	*requests.RpcRequest
 	AppKey   requests.Integer `position:"Query" name:"AppKey"`
 	DeviceId string           `position:"Query" name:"DeviceId"`
 }
 
+// CheckDeviceResponse is the response struct for api CheckDevice
 type CheckDeviceResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Available bool   `json:"Available" xml:"Available"`
 }
 
-// create a request to invoke CheckDevice API
-func CreateCheckDeviceRequest() (request *CheckDeviceRequest) {
+// CreateCheckDeviceRequest creates a request to invoke CheckDevice API
+func CreateCheckDeviceRequest(request *CheckDeviceRequest) {
 	request = &CheckDeviceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -94,7 +96,7 @@ func CreateCheckDeviceRequest() (request *CheckDeviceRequest) {
 	return
 }
 
-// create a response to parse from CheckDevice response
+// CreateCheckDeviceResponse creates a response to parse from CheckDevice response
 func CreateCheckDeviceResponse() (response *CheckDeviceResponse) {
 	response = &CheckDeviceResponse{
 		BaseResponse: &responses.BaseResponse{},

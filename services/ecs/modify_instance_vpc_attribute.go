@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifyInstanceVpcAttribute api with *ModifyInstanceVpcAttributeRequest synchronously
+// ModifyInstanceVpcAttribute invokes the ecs.ModifyInstanceVpcAttribute API synchronously
 // api document: https://help.aliyun.com/api/ecs/modifyinstancevpcattribute.html
 func (client *Client) ModifyInstanceVpcAttribute(request *ModifyInstanceVpcAttributeRequest) (response *ModifyInstanceVpcAttributeResponse, err error) {
 	response = CreateModifyInstanceVpcAttributeResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifyInstanceVpcAttribute(request *ModifyInstanceVpcAttri
 	return
 }
 
-// invoke ModifyInstanceVpcAttribute api with *ModifyInstanceVpcAttributeRequest asynchronously
+// ModifyInstanceVpcAttributeWithChan invokes the ecs.ModifyInstanceVpcAttribute API asynchronously
 // api document: https://help.aliyun.com/api/ecs/modifyinstancevpcattribute.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyInstanceVpcAttributeWithChan(request *ModifyInstanceVpcAttributeRequest) (<-chan *ModifyInstanceVpcAttributeResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifyInstanceVpcAttributeWithChan(request *ModifyInstance
 	return responseChan, errChan
 }
 
-// invoke ModifyInstanceVpcAttribute api with *ModifyInstanceVpcAttributeRequest asynchronously
+// ModifyInstanceVpcAttributeWithCallback invokes the ecs.ModifyInstanceVpcAttribute API asynchronously
 // api document: https://help.aliyun.com/api/ecs/modifyinstancevpcattribute.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyInstanceVpcAttributeWithCallback(request *ModifyInstanceVpcAttributeRequest, callback func(response *ModifyInstanceVpcAttributeResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ModifyInstanceVpcAttributeWithCallback(request *ModifyInst
 	return result
 }
 
+// ModifyInstanceVpcAttributeRequest is the request struct for api ModifyInstanceVpcAttribute
 type ModifyInstanceVpcAttributeRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,13 +85,14 @@ type ModifyInstanceVpcAttributeRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// ModifyInstanceVpcAttributeResponse is the response struct for api ModifyInstanceVpcAttribute
 type ModifyInstanceVpcAttributeResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ModifyInstanceVpcAttribute API
-func CreateModifyInstanceVpcAttributeRequest() (request *ModifyInstanceVpcAttributeRequest) {
+// CreateModifyInstanceVpcAttributeRequest creates a request to invoke ModifyInstanceVpcAttribute API
+func CreateModifyInstanceVpcAttributeRequest(request *ModifyInstanceVpcAttributeRequest) {
 	request = &ModifyInstanceVpcAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateModifyInstanceVpcAttributeRequest() (request *ModifyInstanceVpcAttrib
 	return
 }
 
-// create a response to parse from ModifyInstanceVpcAttribute response
+// CreateModifyInstanceVpcAttributeResponse creates a response to parse from ModifyInstanceVpcAttribute response
 func CreateModifyInstanceVpcAttributeResponse() (response *ModifyInstanceVpcAttributeResponse) {
 	response = &ModifyInstanceVpcAttributeResponse{
 		BaseResponse: &responses.BaseResponse{},

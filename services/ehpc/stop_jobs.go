@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke StopJobs api with *StopJobsRequest synchronously
+// StopJobs invokes the ehpc.StopJobs API synchronously
 // api document: https://help.aliyun.com/api/ehpc/stopjobs.html
 func (client *Client) StopJobs(request *StopJobsRequest) (response *StopJobsResponse, err error) {
 	response = CreateStopJobsResponse()
@@ -28,7 +28,7 @@ func (client *Client) StopJobs(request *StopJobsRequest) (response *StopJobsResp
 	return
 }
 
-// invoke StopJobs api with *StopJobsRequest asynchronously
+// StopJobsWithChan invokes the ehpc.StopJobs API asynchronously
 // api document: https://help.aliyun.com/api/ehpc/stopjobs.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StopJobsWithChan(request *StopJobsRequest) (<-chan *StopJobsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) StopJobsWithChan(request *StopJobsRequest) (<-chan *StopJo
 	return responseChan, errChan
 }
 
-// invoke StopJobs api with *StopJobsRequest asynchronously
+// StopJobsWithCallback invokes the ehpc.StopJobs API asynchronously
 // api document: https://help.aliyun.com/api/ehpc/stopjobs.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StopJobsWithCallback(request *StopJobsRequest, callback func(response *StopJobsResponse, err error)) <-chan int {
@@ -73,19 +73,21 @@ func (client *Client) StopJobsWithCallback(request *StopJobsRequest, callback fu
 	return result
 }
 
+// StopJobsRequest is the request struct for api StopJobs
 type StopJobsRequest struct {
 	*requests.RpcRequest
 	ClusterId string `position:"Query" name:"ClusterId"`
 	Jobs      string `position:"Query" name:"Jobs"`
 }
 
+// StopJobsResponse is the response struct for api StopJobs
 type StopJobsResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke StopJobs API
-func CreateStopJobsRequest() (request *StopJobsRequest) {
+// CreateStopJobsRequest creates a request to invoke StopJobs API
+func CreateStopJobsRequest(request *StopJobsRequest) {
 	request = &StopJobsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -93,7 +95,7 @@ func CreateStopJobsRequest() (request *StopJobsRequest) {
 	return
 }
 
-// create a response to parse from StopJobs response
+// CreateStopJobsResponse creates a response to parse from StopJobs response
 func CreateStopJobsResponse() (response *StopJobsResponse) {
 	response = &StopJobsResponse{
 		BaseResponse: &responses.BaseResponse{},

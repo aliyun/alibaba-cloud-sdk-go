@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteUsers api with *DeleteUsersRequest synchronously
+// DeleteUsers invokes the ehpc.DeleteUsers API synchronously
 // api document: https://help.aliyun.com/api/ehpc/deleteusers.html
 func (client *Client) DeleteUsers(request *DeleteUsersRequest) (response *DeleteUsersResponse, err error) {
 	response = CreateDeleteUsersResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteUsers(request *DeleteUsersRequest) (response *Delete
 	return
 }
 
-// invoke DeleteUsers api with *DeleteUsersRequest asynchronously
+// DeleteUsersWithChan invokes the ehpc.DeleteUsers API asynchronously
 // api document: https://help.aliyun.com/api/ehpc/deleteusers.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteUsersWithChan(request *DeleteUsersRequest) (<-chan *DeleteUsersResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteUsersWithChan(request *DeleteUsersRequest) (<-chan *
 	return responseChan, errChan
 }
 
-// invoke DeleteUsers api with *DeleteUsersRequest asynchronously
+// DeleteUsersWithCallback invokes the ehpc.DeleteUsers API asynchronously
 // api document: https://help.aliyun.com/api/ehpc/deleteusers.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteUsersWithCallback(request *DeleteUsersRequest, callback func(response *DeleteUsersResponse, err error)) <-chan int {
@@ -73,23 +73,26 @@ func (client *Client) DeleteUsersWithCallback(request *DeleteUsersRequest, callb
 	return result
 }
 
+// DeleteUsersRequest is the request struct for api DeleteUsers
 type DeleteUsersRequest struct {
 	*requests.RpcRequest
 	ClusterId string             `position:"Query" name:"ClusterId"`
 	User      *[]DeleteUsersUser `position:"Query" name:"User"  type:"Repeated"`
 }
 
+// DeleteUsersUser is a repeated param struct in DeleteUsersRequest
 type DeleteUsersUser struct {
 	Name string `name:"Name"`
 }
 
+// DeleteUsersResponse is the response struct for api DeleteUsers
 type DeleteUsersResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DeleteUsers API
-func CreateDeleteUsersRequest() (request *DeleteUsersRequest) {
+// CreateDeleteUsersRequest creates a request to invoke DeleteUsers API
+func CreateDeleteUsersRequest(request *DeleteUsersRequest) {
 	request = &DeleteUsersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +100,7 @@ func CreateDeleteUsersRequest() (request *DeleteUsersRequest) {
 	return
 }
 
-// create a response to parse from DeleteUsers response
+// CreateDeleteUsersResponse creates a response to parse from DeleteUsers response
 func CreateDeleteUsersResponse() (response *DeleteUsersResponse) {
 	response = &DeleteUsersResponse{
 		BaseResponse: &responses.BaseResponse{},

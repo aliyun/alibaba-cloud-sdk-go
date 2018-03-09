@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke TerminateVirtualBorderRouter api with *TerminateVirtualBorderRouterRequest synchronously
+// TerminateVirtualBorderRouter invokes the ecs.TerminateVirtualBorderRouter API synchronously
 // api document: https://help.aliyun.com/api/ecs/terminatevirtualborderrouter.html
 func (client *Client) TerminateVirtualBorderRouter(request *TerminateVirtualBorderRouterRequest) (response *TerminateVirtualBorderRouterResponse, err error) {
 	response = CreateTerminateVirtualBorderRouterResponse()
@@ -28,7 +28,7 @@ func (client *Client) TerminateVirtualBorderRouter(request *TerminateVirtualBord
 	return
 }
 
-// invoke TerminateVirtualBorderRouter api with *TerminateVirtualBorderRouterRequest asynchronously
+// TerminateVirtualBorderRouterWithChan invokes the ecs.TerminateVirtualBorderRouter API asynchronously
 // api document: https://help.aliyun.com/api/ecs/terminatevirtualborderrouter.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) TerminateVirtualBorderRouterWithChan(request *TerminateVirtualBorderRouterRequest) (<-chan *TerminateVirtualBorderRouterResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) TerminateVirtualBorderRouterWithChan(request *TerminateVir
 	return responseChan, errChan
 }
 
-// invoke TerminateVirtualBorderRouter api with *TerminateVirtualBorderRouterRequest asynchronously
+// TerminateVirtualBorderRouterWithCallback invokes the ecs.TerminateVirtualBorderRouter API asynchronously
 // api document: https://help.aliyun.com/api/ecs/terminatevirtualborderrouter.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) TerminateVirtualBorderRouterWithCallback(request *TerminateVirtualBorderRouterRequest, callback func(response *TerminateVirtualBorderRouterResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) TerminateVirtualBorderRouterWithCallback(request *Terminat
 	return result
 }
 
+// TerminateVirtualBorderRouterRequest is the request struct for api TerminateVirtualBorderRouter
 type TerminateVirtualBorderRouterRequest struct {
 	*requests.RpcRequest
 	VbrId                string           `position:"Query" name:"VbrId"`
@@ -84,13 +85,14 @@ type TerminateVirtualBorderRouterRequest struct {
 	UserCidr             string           `position:"Query" name:"UserCidr"`
 }
 
+// TerminateVirtualBorderRouterResponse is the response struct for api TerminateVirtualBorderRouter
 type TerminateVirtualBorderRouterResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke TerminateVirtualBorderRouter API
-func CreateTerminateVirtualBorderRouterRequest() (request *TerminateVirtualBorderRouterRequest) {
+// CreateTerminateVirtualBorderRouterRequest creates a request to invoke TerminateVirtualBorderRouter API
+func CreateTerminateVirtualBorderRouterRequest(request *TerminateVirtualBorderRouterRequest) {
 	request = &TerminateVirtualBorderRouterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateTerminateVirtualBorderRouterRequest() (request *TerminateVirtualBorde
 	return
 }
 
-// create a response to parse from TerminateVirtualBorderRouter response
+// CreateTerminateVirtualBorderRouterResponse creates a response to parse from TerminateVirtualBorderRouter response
 func CreateTerminateVirtualBorderRouterResponse() (response *TerminateVirtualBorderRouterResponse) {
 	response = &TerminateVirtualBorderRouterResponse{
 		BaseResponse: &responses.BaseResponse{},

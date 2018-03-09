@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeClusterScaledNode api with *DescribeClusterScaledNodeRequest synchronously
+// DescribeClusterScaledNode invokes the cs.DescribeClusterScaledNode API synchronously
 // api document: https://help.aliyun.com/api/cs/describeclusterscalednode.html
 func (client *Client) DescribeClusterScaledNode(request *DescribeClusterScaledNodeRequest) (response *DescribeClusterScaledNodeResponse, err error) {
 	response = CreateDescribeClusterScaledNodeResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeClusterScaledNode(request *DescribeClusterScaledNo
 	return
 }
 
-// invoke DescribeClusterScaledNode api with *DescribeClusterScaledNodeRequest asynchronously
+// DescribeClusterScaledNodeWithChan invokes the cs.DescribeClusterScaledNode API asynchronously
 // api document: https://help.aliyun.com/api/cs/describeclusterscalednode.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeClusterScaledNodeWithChan(request *DescribeClusterScaledNodeRequest) (<-chan *DescribeClusterScaledNodeResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeClusterScaledNodeWithChan(request *DescribeCluster
 	return responseChan, errChan
 }
 
-// invoke DescribeClusterScaledNode api with *DescribeClusterScaledNodeRequest asynchronously
+// DescribeClusterScaledNodeWithCallback invokes the cs.DescribeClusterScaledNode API asynchronously
 // api document: https://help.aliyun.com/api/cs/describeclusterscalednode.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeClusterScaledNodeWithCallback(request *DescribeClusterScaledNodeRequest, callback func(response *DescribeClusterScaledNodeResponse, err error)) <-chan int {
@@ -73,17 +73,19 @@ func (client *Client) DescribeClusterScaledNodeWithCallback(request *DescribeClu
 	return result
 }
 
+// DescribeClusterScaledNodeRequest is the request struct for api DescribeClusterScaledNode
 type DescribeClusterScaledNodeRequest struct {
 	*requests.RoaRequest
 	ClusterId string `position:"Path" name:"ClusterId"`
 }
 
+// DescribeClusterScaledNodeResponse is the response struct for api DescribeClusterScaledNode
 type DescribeClusterScaledNodeResponse struct {
 	*responses.BaseResponse
 }
 
-// create a request to invoke DescribeClusterScaledNode API
-func CreateDescribeClusterScaledNodeRequest() (request *DescribeClusterScaledNodeRequest) {
+// CreateDescribeClusterScaledNodeRequest creates a request to invoke DescribeClusterScaledNode API
+func CreateDescribeClusterScaledNodeRequest(request *DescribeClusterScaledNodeRequest) {
 	request = &DescribeClusterScaledNodeRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
@@ -92,7 +94,7 @@ func CreateDescribeClusterScaledNodeRequest() (request *DescribeClusterScaledNod
 	return
 }
 
-// create a response to parse from DescribeClusterScaledNode response
+// CreateDescribeClusterScaledNodeResponse creates a response to parse from DescribeClusterScaledNode response
 func CreateDescribeClusterScaledNodeResponse() (response *DescribeClusterScaledNodeResponse) {
 	response = &DescribeClusterScaledNodeResponse{
 		BaseResponse: &responses.BaseResponse{},

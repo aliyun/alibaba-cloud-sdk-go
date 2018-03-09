@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifyInstanceAutoReleaseTime api with *ModifyInstanceAutoReleaseTimeRequest synchronously
+// ModifyInstanceAutoReleaseTime invokes the ecs.ModifyInstanceAutoReleaseTime API synchronously
 // api document: https://help.aliyun.com/api/ecs/modifyinstanceautoreleasetime.html
 func (client *Client) ModifyInstanceAutoReleaseTime(request *ModifyInstanceAutoReleaseTimeRequest) (response *ModifyInstanceAutoReleaseTimeResponse, err error) {
 	response = CreateModifyInstanceAutoReleaseTimeResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifyInstanceAutoReleaseTime(request *ModifyInstanceAutoR
 	return
 }
 
-// invoke ModifyInstanceAutoReleaseTime api with *ModifyInstanceAutoReleaseTimeRequest asynchronously
+// ModifyInstanceAutoReleaseTimeWithChan invokes the ecs.ModifyInstanceAutoReleaseTime API asynchronously
 // api document: https://help.aliyun.com/api/ecs/modifyinstanceautoreleasetime.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyInstanceAutoReleaseTimeWithChan(request *ModifyInstanceAutoReleaseTimeRequest) (<-chan *ModifyInstanceAutoReleaseTimeResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifyInstanceAutoReleaseTimeWithChan(request *ModifyInsta
 	return responseChan, errChan
 }
 
-// invoke ModifyInstanceAutoReleaseTime api with *ModifyInstanceAutoReleaseTimeRequest asynchronously
+// ModifyInstanceAutoReleaseTimeWithCallback invokes the ecs.ModifyInstanceAutoReleaseTime API asynchronously
 // api document: https://help.aliyun.com/api/ecs/modifyinstanceautoreleasetime.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyInstanceAutoReleaseTimeWithCallback(request *ModifyInstanceAutoReleaseTimeRequest, callback func(response *ModifyInstanceAutoReleaseTimeResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ModifyInstanceAutoReleaseTimeWithCallback(request *ModifyI
 	return result
 }
 
+// ModifyInstanceAutoReleaseTimeRequest is the request struct for api ModifyInstanceAutoReleaseTime
 type ModifyInstanceAutoReleaseTimeRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -83,13 +84,14 @@ type ModifyInstanceAutoReleaseTimeRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// ModifyInstanceAutoReleaseTimeResponse is the response struct for api ModifyInstanceAutoReleaseTime
 type ModifyInstanceAutoReleaseTimeResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ModifyInstanceAutoReleaseTime API
-func CreateModifyInstanceAutoReleaseTimeRequest() (request *ModifyInstanceAutoReleaseTimeRequest) {
+// CreateModifyInstanceAutoReleaseTimeRequest creates a request to invoke ModifyInstanceAutoReleaseTime API
+func CreateModifyInstanceAutoReleaseTimeRequest(request *ModifyInstanceAutoReleaseTimeRequest) {
 	request = &ModifyInstanceAutoReleaseTimeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateModifyInstanceAutoReleaseTimeRequest() (request *ModifyInstanceAutoRe
 	return
 }
 
-// create a response to parse from ModifyInstanceAutoReleaseTime response
+// CreateModifyInstanceAutoReleaseTimeResponse creates a response to parse from ModifyInstanceAutoReleaseTime response
 func CreateModifyInstanceAutoReleaseTimeResponse() (response *ModifyInstanceAutoReleaseTimeResponse) {
 	response = &ModifyInstanceAutoReleaseTimeResponse{
 		BaseResponse: &responses.BaseResponse{},

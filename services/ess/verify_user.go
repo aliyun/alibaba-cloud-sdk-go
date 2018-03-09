@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke VerifyUser api with *VerifyUserRequest synchronously
+// VerifyUser invokes the ess.VerifyUser API synchronously
 // api document: https://help.aliyun.com/api/ess/verifyuser.html
 func (client *Client) VerifyUser(request *VerifyUserRequest) (response *VerifyUserResponse, err error) {
 	response = CreateVerifyUserResponse()
@@ -28,7 +28,7 @@ func (client *Client) VerifyUser(request *VerifyUserRequest) (response *VerifyUs
 	return
 }
 
-// invoke VerifyUser api with *VerifyUserRequest asynchronously
+// VerifyUserWithChan invokes the ess.VerifyUser API asynchronously
 // api document: https://help.aliyun.com/api/ess/verifyuser.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) VerifyUserWithChan(request *VerifyUserRequest) (<-chan *VerifyUserResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) VerifyUserWithChan(request *VerifyUserRequest) (<-chan *Ve
 	return responseChan, errChan
 }
 
-// invoke VerifyUser api with *VerifyUserRequest asynchronously
+// VerifyUserWithCallback invokes the ess.VerifyUser API asynchronously
 // api document: https://help.aliyun.com/api/ess/verifyuser.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) VerifyUserWithCallback(request *VerifyUserRequest, callback func(response *VerifyUserResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) VerifyUserWithCallback(request *VerifyUserRequest, callbac
 	return result
 }
 
+// VerifyUserRequest is the request struct for api VerifyUser
 type VerifyUserRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -80,12 +81,13 @@ type VerifyUserRequest struct {
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 }
 
+// VerifyUserResponse is the response struct for api VerifyUser
 type VerifyUserResponse struct {
 	*responses.BaseResponse
 }
 
-// create a request to invoke VerifyUser API
-func CreateVerifyUserRequest() (request *VerifyUserRequest) {
+// CreateVerifyUserRequest creates a request to invoke VerifyUser API
+func CreateVerifyUserRequest(request *VerifyUserRequest) {
 	request = &VerifyUserRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -93,7 +95,7 @@ func CreateVerifyUserRequest() (request *VerifyUserRequest) {
 	return
 }
 
-// create a response to parse from VerifyUser response
+// CreateVerifyUserResponse creates a response to parse from VerifyUser response
 func CreateVerifyUserResponse() (response *VerifyUserResponse) {
 	response = &VerifyUserResponse{
 		BaseResponse: &responses.BaseResponse{},

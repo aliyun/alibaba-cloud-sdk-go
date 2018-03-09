@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke AddPornPipeline api with *AddPornPipelineRequest synchronously
+// AddPornPipeline invokes the mts.AddPornPipeline API synchronously
 // api document: https://help.aliyun.com/api/mts/addpornpipeline.html
 func (client *Client) AddPornPipeline(request *AddPornPipelineRequest) (response *AddPornPipelineResponse, err error) {
 	response = CreateAddPornPipelineResponse()
@@ -28,7 +28,7 @@ func (client *Client) AddPornPipeline(request *AddPornPipelineRequest) (response
 	return
 }
 
-// invoke AddPornPipeline api with *AddPornPipelineRequest asynchronously
+// AddPornPipelineWithChan invokes the mts.AddPornPipeline API asynchronously
 // api document: https://help.aliyun.com/api/mts/addpornpipeline.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddPornPipelineWithChan(request *AddPornPipelineRequest) (<-chan *AddPornPipelineResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) AddPornPipelineWithChan(request *AddPornPipelineRequest) (
 	return responseChan, errChan
 }
 
-// invoke AddPornPipeline api with *AddPornPipelineRequest asynchronously
+// AddPornPipelineWithCallback invokes the mts.AddPornPipeline API asynchronously
 // api document: https://help.aliyun.com/api/mts/addpornpipeline.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddPornPipelineWithCallback(request *AddPornPipelineRequest, callback func(response *AddPornPipelineResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) AddPornPipelineWithCallback(request *AddPornPipelineReques
 	return result
 }
 
+// AddPornPipelineRequest is the request struct for api AddPornPipeline
 type AddPornPipelineRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,14 +85,15 @@ type AddPornPipelineRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// AddPornPipelineResponse is the response struct for api AddPornPipeline
 type AddPornPipelineResponse struct {
 	*responses.BaseResponse
 	RequestId string   `json:"RequestId" xml:"RequestId"`
 	Pipeline  Pipeline `json:"Pipeline" xml:"Pipeline"`
 }
 
-// create a request to invoke AddPornPipeline API
-func CreateAddPornPipelineRequest() (request *AddPornPipelineRequest) {
+// CreateAddPornPipelineRequest creates a request to invoke AddPornPipeline API
+func CreateAddPornPipelineRequest(request *AddPornPipelineRequest) {
 	request = &AddPornPipelineRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateAddPornPipelineRequest() (request *AddPornPipelineRequest) {
 	return
 }
 
-// create a response to parse from AddPornPipeline response
+// CreateAddPornPipelineResponse creates a response to parse from AddPornPipeline response
 func CreateAddPornPipelineResponse() (response *AddPornPipelineResponse) {
 	response = &AddPornPipelineResponse{
 		BaseResponse: &responses.BaseResponse{},

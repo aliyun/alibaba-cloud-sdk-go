@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeInstanceTypes api with *DescribeInstanceTypesRequest synchronously
+// DescribeInstanceTypes invokes the ecs.DescribeInstanceTypes API synchronously
 // api document: https://help.aliyun.com/api/ecs/describeinstancetypes.html
 func (client *Client) DescribeInstanceTypes(request *DescribeInstanceTypesRequest) (response *DescribeInstanceTypesResponse, err error) {
 	response = CreateDescribeInstanceTypesResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeInstanceTypes(request *DescribeInstanceTypesReques
 	return
 }
 
-// invoke DescribeInstanceTypes api with *DescribeInstanceTypesRequest asynchronously
+// DescribeInstanceTypesWithChan invokes the ecs.DescribeInstanceTypes API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describeinstancetypes.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceTypesWithChan(request *DescribeInstanceTypesRequest) (<-chan *DescribeInstanceTypesResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeInstanceTypesWithChan(request *DescribeInstanceTyp
 	return responseChan, errChan
 }
 
-// invoke DescribeInstanceTypes api with *DescribeInstanceTypesRequest asynchronously
+// DescribeInstanceTypesWithCallback invokes the ecs.DescribeInstanceTypes API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describeinstancetypes.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceTypesWithCallback(request *DescribeInstanceTypesRequest, callback func(response *DescribeInstanceTypesResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeInstanceTypesWithCallback(request *DescribeInstanc
 	return result
 }
 
+// DescribeInstanceTypesRequest is the request struct for api DescribeInstanceTypes
 type DescribeInstanceTypesRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,14 +83,15 @@ type DescribeInstanceTypesRequest struct {
 	InstanceTypeFamily   string           `position:"Query" name:"InstanceTypeFamily"`
 }
 
+// DescribeInstanceTypesResponse is the response struct for api DescribeInstanceTypes
 type DescribeInstanceTypesResponse struct {
 	*responses.BaseResponse
 	RequestId     string                               `json:"RequestId" xml:"RequestId"`
 	InstanceTypes InstanceTypesInDescribeInstanceTypes `json:"InstanceTypes" xml:"InstanceTypes"`
 }
 
-// create a request to invoke DescribeInstanceTypes API
-func CreateDescribeInstanceTypesRequest() (request *DescribeInstanceTypesRequest) {
+// CreateDescribeInstanceTypesRequest creates a request to invoke DescribeInstanceTypes API
+func CreateDescribeInstanceTypesRequest(request *DescribeInstanceTypesRequest) {
 	request = &DescribeInstanceTypesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateDescribeInstanceTypesRequest() (request *DescribeInstanceTypesRequest
 	return
 }
 
-// create a response to parse from DescribeInstanceTypes response
+// CreateDescribeInstanceTypesResponse creates a response to parse from DescribeInstanceTypes response
 func CreateDescribeInstanceTypesResponse() (response *DescribeInstanceTypesResponse) {
 	response = &DescribeInstanceTypesResponse{
 		BaseResponse: &responses.BaseResponse{},

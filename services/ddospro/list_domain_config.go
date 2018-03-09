@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ListDomainConfig api with *ListDomainConfigRequest synchronously
+// ListDomainConfig invokes the ddospro.ListDomainConfig API synchronously
 // api document: https://help.aliyun.com/api/ddospro/listdomainconfig.html
 func (client *Client) ListDomainConfig(request *ListDomainConfigRequest) (response *ListDomainConfigResponse, err error) {
 	response = CreateListDomainConfigResponse()
@@ -28,7 +28,7 @@ func (client *Client) ListDomainConfig(request *ListDomainConfigRequest) (respon
 	return
 }
 
-// invoke ListDomainConfig api with *ListDomainConfigRequest asynchronously
+// ListDomainConfigWithChan invokes the ddospro.ListDomainConfig API asynchronously
 // api document: https://help.aliyun.com/api/ddospro/listdomainconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListDomainConfigWithChan(request *ListDomainConfigRequest) (<-chan *ListDomainConfigResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ListDomainConfigWithChan(request *ListDomainConfigRequest)
 	return responseChan, errChan
 }
 
-// invoke ListDomainConfig api with *ListDomainConfigRequest asynchronously
+// ListDomainConfigWithCallback invokes the ddospro.ListDomainConfig API asynchronously
 // api document: https://help.aliyun.com/api/ddospro/listdomainconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListDomainConfigWithCallback(request *ListDomainConfigRequest, callback func(response *ListDomainConfigResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ListDomainConfigWithCallback(request *ListDomainConfigRequ
 	return result
 }
 
+// ListDomainConfigRequest is the request struct for api ListDomainConfig
 type ListDomainConfigRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
@@ -81,6 +82,7 @@ type ListDomainConfigRequest struct {
 	CurrentPage     requests.Integer `position:"Query" name:"CurrentPage"`
 }
 
+// ListDomainConfigResponse is the response struct for api ListDomainConfig
 type ListDomainConfigResponse struct {
 	*responses.BaseResponse
 	RequestId  string     `json:"RequestId" xml:"RequestId"`
@@ -88,8 +90,8 @@ type ListDomainConfigResponse struct {
 	ConfigList ConfigList `json:"ConfigList" xml:"ConfigList"`
 }
 
-// create a request to invoke ListDomainConfig API
-func CreateListDomainConfigRequest() (request *ListDomainConfigRequest) {
+// CreateListDomainConfigRequest creates a request to invoke ListDomainConfig API
+func CreateListDomainConfigRequest(request *ListDomainConfigRequest) {
 	request = &ListDomainConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateListDomainConfigRequest() (request *ListDomainConfigRequest) {
 	return
 }
 
-// create a response to parse from ListDomainConfig response
+// CreateListDomainConfigResponse creates a response to parse from ListDomainConfig response
 func CreateListDomainConfigResponse() (response *ListDomainConfigResponse) {
 	response = &ListDomainConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

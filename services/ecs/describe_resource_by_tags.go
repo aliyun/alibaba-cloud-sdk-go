@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeResourceByTags api with *DescribeResourceByTagsRequest synchronously
+// DescribeResourceByTags invokes the ecs.DescribeResourceByTags API synchronously
 // api document: https://help.aliyun.com/api/ecs/describeresourcebytags.html
 func (client *Client) DescribeResourceByTags(request *DescribeResourceByTagsRequest) (response *DescribeResourceByTagsResponse, err error) {
 	response = CreateDescribeResourceByTagsResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeResourceByTags(request *DescribeResourceByTagsRequ
 	return
 }
 
-// invoke DescribeResourceByTags api with *DescribeResourceByTagsRequest asynchronously
+// DescribeResourceByTagsWithChan invokes the ecs.DescribeResourceByTags API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describeresourcebytags.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeResourceByTagsWithChan(request *DescribeResourceByTagsRequest) (<-chan *DescribeResourceByTagsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeResourceByTagsWithChan(request *DescribeResourceBy
 	return responseChan, errChan
 }
 
-// invoke DescribeResourceByTags api with *DescribeResourceByTagsRequest asynchronously
+// DescribeResourceByTagsWithCallback invokes the ecs.DescribeResourceByTags API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describeresourcebytags.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeResourceByTagsWithCallback(request *DescribeResourceByTagsRequest, callback func(response *DescribeResourceByTagsResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeResourceByTagsWithCallback(request *DescribeResour
 	return result
 }
 
+// DescribeResourceByTagsRequest is the request struct for api DescribeResourceByTags
 type DescribeResourceByTagsRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -93,6 +94,7 @@ type DescribeResourceByTagsRequest struct {
 	Tag5Value            string           `position:"Query" name:"Tag.5.Value"`
 }
 
+// DescribeResourceByTagsResponse is the response struct for api DescribeResourceByTags
 type DescribeResourceByTagsResponse struct {
 	*responses.BaseResponse
 	RequestId  string    `json:"RequestId" xml:"RequestId"`
@@ -102,8 +104,8 @@ type DescribeResourceByTagsResponse struct {
 	Resources  Resources `json:"Resources" xml:"Resources"`
 }
 
-// create a request to invoke DescribeResourceByTags API
-func CreateDescribeResourceByTagsRequest() (request *DescribeResourceByTagsRequest) {
+// CreateDescribeResourceByTagsRequest creates a request to invoke DescribeResourceByTags API
+func CreateDescribeResourceByTagsRequest(request *DescribeResourceByTagsRequest) {
 	request = &DescribeResourceByTagsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -111,7 +113,7 @@ func CreateDescribeResourceByTagsRequest() (request *DescribeResourceByTagsReque
 	return
 }
 
-// create a response to parse from DescribeResourceByTags response
+// CreateDescribeResourceByTagsResponse creates a response to parse from DescribeResourceByTags response
 func CreateDescribeResourceByTagsResponse() (response *DescribeResourceByTagsResponse) {
 	response = &DescribeResourceByTagsResponse{
 		BaseResponse: &responses.BaseResponse{},

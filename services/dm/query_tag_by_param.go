@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke QueryTagByParam api with *QueryTagByParamRequest synchronously
+// QueryTagByParam invokes the dm.QueryTagByParam API synchronously
 // api document: https://help.aliyun.com/api/dm/querytagbyparam.html
 func (client *Client) QueryTagByParam(request *QueryTagByParamRequest) (response *QueryTagByParamResponse, err error) {
 	response = CreateQueryTagByParamResponse()
@@ -28,7 +28,7 @@ func (client *Client) QueryTagByParam(request *QueryTagByParamRequest) (response
 	return
 }
 
-// invoke QueryTagByParam api with *QueryTagByParamRequest asynchronously
+// QueryTagByParamWithChan invokes the dm.QueryTagByParam API asynchronously
 // api document: https://help.aliyun.com/api/dm/querytagbyparam.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryTagByParamWithChan(request *QueryTagByParamRequest) (<-chan *QueryTagByParamResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) QueryTagByParamWithChan(request *QueryTagByParamRequest) (
 	return responseChan, errChan
 }
 
-// invoke QueryTagByParam api with *QueryTagByParamRequest asynchronously
+// QueryTagByParamWithCallback invokes the dm.QueryTagByParam API asynchronously
 // api document: https://help.aliyun.com/api/dm/querytagbyparam.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryTagByParamWithCallback(request *QueryTagByParamRequest, callback func(response *QueryTagByParamResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) QueryTagByParamWithCallback(request *QueryTagByParamReques
 	return result
 }
 
+// QueryTagByParamRequest is the request struct for api QueryTagByParam
 type QueryTagByParamRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -83,6 +84,7 @@ type QueryTagByParamRequest struct {
 	KeyWord              string           `position:"Query" name:"KeyWord"`
 }
 
+// QueryTagByParamResponse is the response struct for api QueryTagByParam
 type QueryTagByParamResponse struct {
 	*responses.BaseResponse
 	RequestId  string                `json:"RequestId" xml:"RequestId"`
@@ -92,8 +94,8 @@ type QueryTagByParamResponse struct {
 	Data       DataInQueryTagByParam `json:"data" xml:"data"`
 }
 
-// create a request to invoke QueryTagByParam API
-func CreateQueryTagByParamRequest() (request *QueryTagByParamRequest) {
+// CreateQueryTagByParamRequest creates a request to invoke QueryTagByParam API
+func CreateQueryTagByParamRequest(request *QueryTagByParamRequest) {
 	request = &QueryTagByParamRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -101,7 +103,7 @@ func CreateQueryTagByParamRequest() (request *QueryTagByParamRequest) {
 	return
 }
 
-// create a response to parse from QueryTagByParam response
+// CreateQueryTagByParamResponse creates a response to parse from QueryTagByParam response
 func CreateQueryTagByParamResponse() (response *QueryTagByParamResponse) {
 	response = &QueryTagByParamResponse{
 		BaseResponse: &responses.BaseResponse{},

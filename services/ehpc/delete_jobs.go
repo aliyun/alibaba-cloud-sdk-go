@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteJobs api with *DeleteJobsRequest synchronously
+// DeleteJobs invokes the ehpc.DeleteJobs API synchronously
 // api document: https://help.aliyun.com/api/ehpc/deletejobs.html
 func (client *Client) DeleteJobs(request *DeleteJobsRequest) (response *DeleteJobsResponse, err error) {
 	response = CreateDeleteJobsResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteJobs(request *DeleteJobsRequest) (response *DeleteJo
 	return
 }
 
-// invoke DeleteJobs api with *DeleteJobsRequest asynchronously
+// DeleteJobsWithChan invokes the ehpc.DeleteJobs API asynchronously
 // api document: https://help.aliyun.com/api/ehpc/deletejobs.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteJobsWithChan(request *DeleteJobsRequest) (<-chan *DeleteJobsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteJobsWithChan(request *DeleteJobsRequest) (<-chan *De
 	return responseChan, errChan
 }
 
-// invoke DeleteJobs api with *DeleteJobsRequest asynchronously
+// DeleteJobsWithCallback invokes the ehpc.DeleteJobs API asynchronously
 // api document: https://help.aliyun.com/api/ehpc/deletejobs.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteJobsWithCallback(request *DeleteJobsRequest, callback func(response *DeleteJobsResponse, err error)) <-chan int {
@@ -73,19 +73,21 @@ func (client *Client) DeleteJobsWithCallback(request *DeleteJobsRequest, callbac
 	return result
 }
 
+// DeleteJobsRequest is the request struct for api DeleteJobs
 type DeleteJobsRequest struct {
 	*requests.RpcRequest
 	ClusterId string `position:"Query" name:"ClusterId"`
 	Jobs      string `position:"Query" name:"Jobs"`
 }
 
+// DeleteJobsResponse is the response struct for api DeleteJobs
 type DeleteJobsResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DeleteJobs API
-func CreateDeleteJobsRequest() (request *DeleteJobsRequest) {
+// CreateDeleteJobsRequest creates a request to invoke DeleteJobs API
+func CreateDeleteJobsRequest(request *DeleteJobsRequest) {
 	request = &DeleteJobsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -93,7 +95,7 @@ func CreateDeleteJobsRequest() (request *DeleteJobsRequest) {
 	return
 }
 
-// create a response to parse from DeleteJobs response
+// CreateDeleteJobsResponse creates a response to parse from DeleteJobs response
 func CreateDeleteJobsResponse() (response *DeleteJobsResponse) {
 	response = &DeleteJobsResponse{
 		BaseResponse: &responses.BaseResponse{},

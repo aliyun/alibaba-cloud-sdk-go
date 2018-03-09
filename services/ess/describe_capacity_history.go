@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeCapacityHistory api with *DescribeCapacityHistoryRequest synchronously
+// DescribeCapacityHistory invokes the ess.DescribeCapacityHistory API synchronously
 // api document: https://help.aliyun.com/api/ess/describecapacityhistory.html
 func (client *Client) DescribeCapacityHistory(request *DescribeCapacityHistoryRequest) (response *DescribeCapacityHistoryResponse, err error) {
 	response = CreateDescribeCapacityHistoryResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeCapacityHistory(request *DescribeCapacityHistoryRe
 	return
 }
 
-// invoke DescribeCapacityHistory api with *DescribeCapacityHistoryRequest asynchronously
+// DescribeCapacityHistoryWithChan invokes the ess.DescribeCapacityHistory API asynchronously
 // api document: https://help.aliyun.com/api/ess/describecapacityhistory.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCapacityHistoryWithChan(request *DescribeCapacityHistoryRequest) (<-chan *DescribeCapacityHistoryResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeCapacityHistoryWithChan(request *DescribeCapacityH
 	return responseChan, errChan
 }
 
-// invoke DescribeCapacityHistory api with *DescribeCapacityHistoryRequest asynchronously
+// DescribeCapacityHistoryWithCallback invokes the ess.DescribeCapacityHistory API asynchronously
 // api document: https://help.aliyun.com/api/ess/describecapacityhistory.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCapacityHistoryWithCallback(request *DescribeCapacityHistoryRequest, callback func(response *DescribeCapacityHistoryResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeCapacityHistoryWithCallback(request *DescribeCapac
 	return result
 }
 
+// DescribeCapacityHistoryRequest is the request struct for api DescribeCapacityHistory
 type DescribeCapacityHistoryRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,6 +85,7 @@ type DescribeCapacityHistoryRequest struct {
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 }
 
+// DescribeCapacityHistoryResponse is the response struct for api DescribeCapacityHistory
 type DescribeCapacityHistoryResponse struct {
 	*responses.BaseResponse
 	TotalCount           int                  `json:"TotalCount" xml:"TotalCount"`
@@ -92,8 +94,8 @@ type DescribeCapacityHistoryResponse struct {
 	CapacityHistoryItems CapacityHistoryItems `json:"CapacityHistoryItems" xml:"CapacityHistoryItems"`
 }
 
-// create a request to invoke DescribeCapacityHistory API
-func CreateDescribeCapacityHistoryRequest() (request *DescribeCapacityHistoryRequest) {
+// CreateDescribeCapacityHistoryRequest creates a request to invoke DescribeCapacityHistory API
+func CreateDescribeCapacityHistoryRequest(request *DescribeCapacityHistoryRequest) {
 	request = &DescribeCapacityHistoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -101,7 +103,7 @@ func CreateDescribeCapacityHistoryRequest() (request *DescribeCapacityHistoryReq
 	return
 }
 
-// create a response to parse from DescribeCapacityHistory response
+// CreateDescribeCapacityHistoryResponse creates a response to parse from DescribeCapacityHistory response
 func CreateDescribeCapacityHistoryResponse() (response *DescribeCapacityHistoryResponse) {
 	response = &DescribeCapacityHistoryResponse{
 		BaseResponse: &responses.BaseResponse{},

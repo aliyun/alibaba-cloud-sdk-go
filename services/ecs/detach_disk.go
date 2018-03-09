@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DetachDisk api with *DetachDiskRequest synchronously
+// DetachDisk invokes the ecs.DetachDisk API synchronously
 // api document: https://help.aliyun.com/api/ecs/detachdisk.html
 func (client *Client) DetachDisk(request *DetachDiskRequest) (response *DetachDiskResponse, err error) {
 	response = CreateDetachDiskResponse()
@@ -28,7 +28,7 @@ func (client *Client) DetachDisk(request *DetachDiskRequest) (response *DetachDi
 	return
 }
 
-// invoke DetachDisk api with *DetachDiskRequest asynchronously
+// DetachDiskWithChan invokes the ecs.DetachDisk API asynchronously
 // api document: https://help.aliyun.com/api/ecs/detachdisk.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetachDiskWithChan(request *DetachDiskRequest) (<-chan *DetachDiskResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DetachDiskWithChan(request *DetachDiskRequest) (<-chan *De
 	return responseChan, errChan
 }
 
-// invoke DetachDisk api with *DetachDiskRequest asynchronously
+// DetachDiskWithCallback invokes the ecs.DetachDisk API asynchronously
 // api document: https://help.aliyun.com/api/ecs/detachdisk.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetachDiskWithCallback(request *DetachDiskRequest, callback func(response *DetachDiskResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DetachDiskWithCallback(request *DetachDiskRequest, callbac
 	return result
 }
 
+// DetachDiskRequest is the request struct for api DetachDisk
 type DetachDiskRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -83,13 +84,14 @@ type DetachDiskRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// DetachDiskResponse is the response struct for api DetachDisk
 type DetachDiskResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DetachDisk API
-func CreateDetachDiskRequest() (request *DetachDiskRequest) {
+// CreateDetachDiskRequest creates a request to invoke DetachDisk API
+func CreateDetachDiskRequest(request *DetachDiskRequest) {
 	request = &DetachDiskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateDetachDiskRequest() (request *DetachDiskRequest) {
 	return
 }
 
-// create a response to parse from DetachDisk response
+// CreateDetachDiskResponse creates a response to parse from DetachDisk response
 func CreateDetachDiskResponse() (response *DetachDiskResponse) {
 	response = &DetachDiskResponse{
 		BaseResponse: &responses.BaseResponse{},

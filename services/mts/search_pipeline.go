@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SearchPipeline api with *SearchPipelineRequest synchronously
+// SearchPipeline invokes the mts.SearchPipeline API synchronously
 // api document: https://help.aliyun.com/api/mts/searchpipeline.html
 func (client *Client) SearchPipeline(request *SearchPipelineRequest) (response *SearchPipelineResponse, err error) {
 	response = CreateSearchPipelineResponse()
@@ -28,7 +28,7 @@ func (client *Client) SearchPipeline(request *SearchPipelineRequest) (response *
 	return
 }
 
-// invoke SearchPipeline api with *SearchPipelineRequest asynchronously
+// SearchPipelineWithChan invokes the mts.SearchPipeline API asynchronously
 // api document: https://help.aliyun.com/api/mts/searchpipeline.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SearchPipelineWithChan(request *SearchPipelineRequest) (<-chan *SearchPipelineResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SearchPipelineWithChan(request *SearchPipelineRequest) (<-
 	return responseChan, errChan
 }
 
-// invoke SearchPipeline api with *SearchPipelineRequest asynchronously
+// SearchPipelineWithCallback invokes the mts.SearchPipeline API asynchronously
 // api document: https://help.aliyun.com/api/mts/searchpipeline.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SearchPipelineWithCallback(request *SearchPipelineRequest, callback func(response *SearchPipelineResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SearchPipelineWithCallback(request *SearchPipelineRequest,
 	return result
 }
 
+// SearchPipelineRequest is the request struct for api SearchPipeline
 type SearchPipelineRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,6 +85,7 @@ type SearchPipelineRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// SearchPipelineResponse is the response struct for api SearchPipeline
 type SearchPipelineResponse struct {
 	*responses.BaseResponse
 	RequestId    string                       `json:"RequestId" xml:"RequestId"`
@@ -93,8 +95,8 @@ type SearchPipelineResponse struct {
 	PipelineList PipelineListInSearchPipeline `json:"PipelineList" xml:"PipelineList"`
 }
 
-// create a request to invoke SearchPipeline API
-func CreateSearchPipelineRequest() (request *SearchPipelineRequest) {
+// CreateSearchPipelineRequest creates a request to invoke SearchPipeline API
+func CreateSearchPipelineRequest(request *SearchPipelineRequest) {
 	request = &SearchPipelineRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -102,7 +104,7 @@ func CreateSearchPipelineRequest() (request *SearchPipelineRequest) {
 	return
 }
 
-// create a response to parse from SearchPipeline response
+// CreateSearchPipelineResponse creates a response to parse from SearchPipeline response
 func CreateSearchPipelineResponse() (response *SearchPipelineResponse) {
 	response = &SearchPipelineResponse{
 		BaseResponse: &responses.BaseResponse{},

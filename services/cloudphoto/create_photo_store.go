@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CreatePhotoStore api with *CreatePhotoStoreRequest synchronously
+// CreatePhotoStore invokes the cloudphoto.CreatePhotoStore API synchronously
 // api document: https://help.aliyun.com/api/cloudphoto/createphotostore.html
 func (client *Client) CreatePhotoStore(request *CreatePhotoStoreRequest) (response *CreatePhotoStoreResponse, err error) {
 	response = CreateCreatePhotoStoreResponse()
@@ -28,7 +28,7 @@ func (client *Client) CreatePhotoStore(request *CreatePhotoStoreRequest) (respon
 	return
 }
 
-// invoke CreatePhotoStore api with *CreatePhotoStoreRequest asynchronously
+// CreatePhotoStoreWithChan invokes the cloudphoto.CreatePhotoStore API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/createphotostore.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreatePhotoStoreWithChan(request *CreatePhotoStoreRequest) (<-chan *CreatePhotoStoreResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CreatePhotoStoreWithChan(request *CreatePhotoStoreRequest)
 	return responseChan, errChan
 }
 
-// invoke CreatePhotoStore api with *CreatePhotoStoreRequest asynchronously
+// CreatePhotoStoreWithCallback invokes the cloudphoto.CreatePhotoStore API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/createphotostore.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreatePhotoStoreWithCallback(request *CreatePhotoStoreRequest, callback func(response *CreatePhotoStoreResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) CreatePhotoStoreWithCallback(request *CreatePhotoStoreRequ
 	return result
 }
 
+// CreatePhotoStoreRequest is the request struct for api CreatePhotoStore
 type CreatePhotoStoreRequest struct {
 	*requests.RpcRequest
 	StoreName    string           `position:"Query" name:"StoreName"`
@@ -81,6 +82,7 @@ type CreatePhotoStoreRequest struct {
 	Remark       string           `position:"Query" name:"Remark"`
 }
 
+// CreatePhotoStoreResponse is the response struct for api CreatePhotoStore
 type CreatePhotoStoreResponse struct {
 	*responses.BaseResponse
 	Code      string `json:"Code" xml:"Code"`
@@ -89,8 +91,8 @@ type CreatePhotoStoreResponse struct {
 	Action    string `json:"Action" xml:"Action"`
 }
 
-// create a request to invoke CreatePhotoStore API
-func CreateCreatePhotoStoreRequest() (request *CreatePhotoStoreRequest) {
+// CreateCreatePhotoStoreRequest creates a request to invoke CreatePhotoStore API
+func CreateCreatePhotoStoreRequest(request *CreatePhotoStoreRequest) {
 	request = &CreatePhotoStoreRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateCreatePhotoStoreRequest() (request *CreatePhotoStoreRequest) {
 	return
 }
 
-// create a response to parse from CreatePhotoStore response
+// CreateCreatePhotoStoreResponse creates a response to parse from CreatePhotoStore response
 func CreateCreatePhotoStoreResponse() (response *CreatePhotoStoreResponse) {
 	response = &CreatePhotoStoreResponse{
 		BaseResponse: &responses.BaseResponse{},

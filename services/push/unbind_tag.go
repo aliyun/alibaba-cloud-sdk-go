@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke UnbindTag api with *UnbindTagRequest synchronously
+// UnbindTag invokes the push.UnbindTag API synchronously
 // api document: https://help.aliyun.com/api/push/unbindtag.html
 func (client *Client) UnbindTag(request *UnbindTagRequest) (response *UnbindTagResponse, err error) {
 	response = CreateUnbindTagResponse()
@@ -28,7 +28,7 @@ func (client *Client) UnbindTag(request *UnbindTagRequest) (response *UnbindTagR
 	return
 }
 
-// invoke UnbindTag api with *UnbindTagRequest asynchronously
+// UnbindTagWithChan invokes the push.UnbindTag API asynchronously
 // api document: https://help.aliyun.com/api/push/unbindtag.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnbindTagWithChan(request *UnbindTagRequest) (<-chan *UnbindTagResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) UnbindTagWithChan(request *UnbindTagRequest) (<-chan *Unbi
 	return responseChan, errChan
 }
 
-// invoke UnbindTag api with *UnbindTagRequest asynchronously
+// UnbindTagWithCallback invokes the push.UnbindTag API asynchronously
 // api document: https://help.aliyun.com/api/push/unbindtag.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnbindTagWithCallback(request *UnbindTagRequest, callback func(response *UnbindTagResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) UnbindTagWithCallback(request *UnbindTagRequest, callback 
 	return result
 }
 
+// UnbindTagRequest is the request struct for api UnbindTag
 type UnbindTagRequest struct {
 	*requests.RpcRequest
 	AppKey    requests.Integer `position:"Query" name:"AppKey"`
@@ -81,13 +82,14 @@ type UnbindTagRequest struct {
 	TagName   string           `position:"Query" name:"TagName"`
 }
 
+// UnbindTagResponse is the response struct for api UnbindTag
 type UnbindTagResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke UnbindTag API
-func CreateUnbindTagRequest() (request *UnbindTagRequest) {
+// CreateUnbindTagRequest creates a request to invoke UnbindTag API
+func CreateUnbindTagRequest(request *UnbindTagRequest) {
 	request = &UnbindTagRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateUnbindTagRequest() (request *UnbindTagRequest) {
 	return
 }
 
-// create a response to parse from UnbindTag response
+// CreateUnbindTagResponse creates a response to parse from UnbindTag response
 func CreateUnbindTagResponse() (response *UnbindTagResponse) {
 	response = &UnbindTagResponse{
 		BaseResponse: &responses.BaseResponse{},

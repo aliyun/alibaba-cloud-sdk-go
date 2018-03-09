@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke RegisterTag api with *RegisterTagRequest synchronously
+// RegisterTag invokes the cloudphoto.RegisterTag API synchronously
 // api document: https://help.aliyun.com/api/cloudphoto/registertag.html
 func (client *Client) RegisterTag(request *RegisterTagRequest) (response *RegisterTagResponse, err error) {
 	response = CreateRegisterTagResponse()
@@ -28,7 +28,7 @@ func (client *Client) RegisterTag(request *RegisterTagRequest) (response *Regist
 	return
 }
 
-// invoke RegisterTag api with *RegisterTagRequest asynchronously
+// RegisterTagWithChan invokes the cloudphoto.RegisterTag API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/registertag.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RegisterTagWithChan(request *RegisterTagRequest) (<-chan *RegisterTagResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) RegisterTagWithChan(request *RegisterTagRequest) (<-chan *
 	return responseChan, errChan
 }
 
-// invoke RegisterTag api with *RegisterTagRequest asynchronously
+// RegisterTagWithCallback invokes the cloudphoto.RegisterTag API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/registertag.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RegisterTagWithCallback(request *RegisterTagRequest, callback func(response *RegisterTagResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) RegisterTagWithCallback(request *RegisterTagRequest, callb
 	return result
 }
 
+// RegisterTagRequest is the request struct for api RegisterTag
 type RegisterTagRequest struct {
 	*requests.RpcRequest
 	StoreName string `position:"Query" name:"StoreName"`
@@ -81,6 +82,7 @@ type RegisterTagRequest struct {
 	Text      string `position:"Query" name:"Text"`
 }
 
+// RegisterTagResponse is the response struct for api RegisterTag
 type RegisterTagResponse struct {
 	*responses.BaseResponse
 	Code      string `json:"Code" xml:"Code"`
@@ -89,8 +91,8 @@ type RegisterTagResponse struct {
 	Action    string `json:"Action" xml:"Action"`
 }
 
-// create a request to invoke RegisterTag API
-func CreateRegisterTagRequest() (request *RegisterTagRequest) {
+// CreateRegisterTagRequest creates a request to invoke RegisterTag API
+func CreateRegisterTagRequest(request *RegisterTagRequest) {
 	request = &RegisterTagRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateRegisterTagRequest() (request *RegisterTagRequest) {
 	return
 }
 
-// create a response to parse from RegisterTag response
+// CreateRegisterTagResponse creates a response to parse from RegisterTag response
 func CreateRegisterTagResponse() (response *RegisterTagResponse) {
 	response = &RegisterTagResponse{
 		BaseResponse: &responses.BaseResponse{},

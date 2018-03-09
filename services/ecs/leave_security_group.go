@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke LeaveSecurityGroup api with *LeaveSecurityGroupRequest synchronously
+// LeaveSecurityGroup invokes the ecs.LeaveSecurityGroup API synchronously
 // api document: https://help.aliyun.com/api/ecs/leavesecuritygroup.html
 func (client *Client) LeaveSecurityGroup(request *LeaveSecurityGroupRequest) (response *LeaveSecurityGroupResponse, err error) {
 	response = CreateLeaveSecurityGroupResponse()
@@ -28,7 +28,7 @@ func (client *Client) LeaveSecurityGroup(request *LeaveSecurityGroupRequest) (re
 	return
 }
 
-// invoke LeaveSecurityGroup api with *LeaveSecurityGroupRequest asynchronously
+// LeaveSecurityGroupWithChan invokes the ecs.LeaveSecurityGroup API asynchronously
 // api document: https://help.aliyun.com/api/ecs/leavesecuritygroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) LeaveSecurityGroupWithChan(request *LeaveSecurityGroupRequest) (<-chan *LeaveSecurityGroupResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) LeaveSecurityGroupWithChan(request *LeaveSecurityGroupRequ
 	return responseChan, errChan
 }
 
-// invoke LeaveSecurityGroup api with *LeaveSecurityGroupRequest asynchronously
+// LeaveSecurityGroupWithCallback invokes the ecs.LeaveSecurityGroup API asynchronously
 // api document: https://help.aliyun.com/api/ecs/leavesecuritygroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) LeaveSecurityGroupWithCallback(request *LeaveSecurityGroupRequest, callback func(response *LeaveSecurityGroupResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) LeaveSecurityGroupWithCallback(request *LeaveSecurityGroup
 	return result
 }
 
+// LeaveSecurityGroupRequest is the request struct for api LeaveSecurityGroup
 type LeaveSecurityGroupRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -83,13 +84,14 @@ type LeaveSecurityGroupRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// LeaveSecurityGroupResponse is the response struct for api LeaveSecurityGroup
 type LeaveSecurityGroupResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke LeaveSecurityGroup API
-func CreateLeaveSecurityGroupRequest() (request *LeaveSecurityGroupRequest) {
+// CreateLeaveSecurityGroupRequest creates a request to invoke LeaveSecurityGroup API
+func CreateLeaveSecurityGroupRequest(request *LeaveSecurityGroupRequest) {
 	request = &LeaveSecurityGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateLeaveSecurityGroupRequest() (request *LeaveSecurityGroupRequest) {
 	return
 }
 
-// create a response to parse from LeaveSecurityGroup response
+// CreateLeaveSecurityGroupResponse creates a response to parse from LeaveSecurityGroup response
 func CreateLeaveSecurityGroupResponse() (response *LeaveSecurityGroupResponse) {
 	response = &LeaveSecurityGroupResponse{
 		BaseResponse: &responses.BaseResponse{},

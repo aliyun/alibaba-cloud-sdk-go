@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeLiveStreamsOnlineList api with *DescribeLiveStreamsOnlineListRequest synchronously
+// DescribeLiveStreamsOnlineList invokes the cdn.DescribeLiveStreamsOnlineList API synchronously
 // api document: https://help.aliyun.com/api/cdn/describelivestreamsonlinelist.html
 func (client *Client) DescribeLiveStreamsOnlineList(request *DescribeLiveStreamsOnlineListRequest) (response *DescribeLiveStreamsOnlineListResponse, err error) {
 	response = CreateDescribeLiveStreamsOnlineListResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeLiveStreamsOnlineList(request *DescribeLiveStreams
 	return
 }
 
-// invoke DescribeLiveStreamsOnlineList api with *DescribeLiveStreamsOnlineListRequest asynchronously
+// DescribeLiveStreamsOnlineListWithChan invokes the cdn.DescribeLiveStreamsOnlineList API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describelivestreamsonlinelist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamsOnlineListWithChan(request *DescribeLiveStreamsOnlineListRequest) (<-chan *DescribeLiveStreamsOnlineListResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeLiveStreamsOnlineListWithChan(request *DescribeLiv
 	return responseChan, errChan
 }
 
-// invoke DescribeLiveStreamsOnlineList api with *DescribeLiveStreamsOnlineListRequest asynchronously
+// DescribeLiveStreamsOnlineListWithCallback invokes the cdn.DescribeLiveStreamsOnlineList API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describelivestreamsonlinelist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamsOnlineListWithCallback(request *DescribeLiveStreamsOnlineListRequest, callback func(response *DescribeLiveStreamsOnlineListResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeLiveStreamsOnlineListWithCallback(request *Describ
 	return result
 }
 
+// DescribeLiveStreamsOnlineListRequest is the request struct for api DescribeLiveStreamsOnlineList
 type DescribeLiveStreamsOnlineListRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -81,14 +82,15 @@ type DescribeLiveStreamsOnlineListRequest struct {
 	AppName       string           `position:"Query" name:"AppName"`
 }
 
+// DescribeLiveStreamsOnlineListResponse is the response struct for api DescribeLiveStreamsOnlineList
 type DescribeLiveStreamsOnlineListResponse struct {
 	*responses.BaseResponse
 	RequestId  string     `json:"RequestId" xml:"RequestId"`
 	OnlineInfo OnlineInfo `json:"OnlineInfo" xml:"OnlineInfo"`
 }
 
-// create a request to invoke DescribeLiveStreamsOnlineList API
-func CreateDescribeLiveStreamsOnlineListRequest() (request *DescribeLiveStreamsOnlineListRequest) {
+// CreateDescribeLiveStreamsOnlineListRequest creates a request to invoke DescribeLiveStreamsOnlineList API
+func CreateDescribeLiveStreamsOnlineListRequest(request *DescribeLiveStreamsOnlineListRequest) {
 	request = &DescribeLiveStreamsOnlineListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -96,7 +98,7 @@ func CreateDescribeLiveStreamsOnlineListRequest() (request *DescribeLiveStreamsO
 	return
 }
 
-// create a response to parse from DescribeLiveStreamsOnlineList response
+// CreateDescribeLiveStreamsOnlineListResponse creates a response to parse from DescribeLiveStreamsOnlineList response
 func CreateDescribeLiveStreamsOnlineListResponse() (response *DescribeLiveStreamsOnlineListResponse) {
 	response = &DescribeLiveStreamsOnlineListResponse{
 		BaseResponse: &responses.BaseResponse{},

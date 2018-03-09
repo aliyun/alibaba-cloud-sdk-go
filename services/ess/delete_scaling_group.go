@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteScalingGroup api with *DeleteScalingGroupRequest synchronously
+// DeleteScalingGroup invokes the ess.DeleteScalingGroup API synchronously
 // api document: https://help.aliyun.com/api/ess/deletescalinggroup.html
 func (client *Client) DeleteScalingGroup(request *DeleteScalingGroupRequest) (response *DeleteScalingGroupResponse, err error) {
 	response = CreateDeleteScalingGroupResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteScalingGroup(request *DeleteScalingGroupRequest) (re
 	return
 }
 
-// invoke DeleteScalingGroup api with *DeleteScalingGroupRequest asynchronously
+// DeleteScalingGroupWithChan invokes the ess.DeleteScalingGroup API asynchronously
 // api document: https://help.aliyun.com/api/ess/deletescalinggroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteScalingGroupWithChan(request *DeleteScalingGroupRequest) (<-chan *DeleteScalingGroupResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteScalingGroupWithChan(request *DeleteScalingGroupRequ
 	return responseChan, errChan
 }
 
-// invoke DeleteScalingGroup api with *DeleteScalingGroupRequest asynchronously
+// DeleteScalingGroupWithCallback invokes the ess.DeleteScalingGroup API asynchronously
 // api document: https://help.aliyun.com/api/ess/deletescalinggroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteScalingGroupWithCallback(request *DeleteScalingGroupRequest, callback func(response *DeleteScalingGroupResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DeleteScalingGroupWithCallback(request *DeleteScalingGroup
 	return result
 }
 
+// DeleteScalingGroupRequest is the request struct for api DeleteScalingGroup
 type DeleteScalingGroupRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,13 +83,14 @@ type DeleteScalingGroupRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// DeleteScalingGroupResponse is the response struct for api DeleteScalingGroup
 type DeleteScalingGroupResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DeleteScalingGroup API
-func CreateDeleteScalingGroupRequest() (request *DeleteScalingGroupRequest) {
+// CreateDeleteScalingGroupRequest creates a request to invoke DeleteScalingGroup API
+func CreateDeleteScalingGroupRequest(request *DeleteScalingGroupRequest) {
 	request = &DeleteScalingGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -96,7 +98,7 @@ func CreateDeleteScalingGroupRequest() (request *DeleteScalingGroupRequest) {
 	return
 }
 
-// create a response to parse from DeleteScalingGroup response
+// CreateDeleteScalingGroupResponse creates a response to parse from DeleteScalingGroup response
 func CreateDeleteScalingGroupResponse() (response *DeleteScalingGroupResponse) {
 	response = &DeleteScalingGroupResponse{
 		BaseResponse: &responses.BaseResponse{},

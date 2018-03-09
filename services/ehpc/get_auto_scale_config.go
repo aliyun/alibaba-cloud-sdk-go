@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke GetAutoScaleConfig api with *GetAutoScaleConfigRequest synchronously
+// GetAutoScaleConfig invokes the ehpc.GetAutoScaleConfig API synchronously
 // api document: https://help.aliyun.com/api/ehpc/getautoscaleconfig.html
 func (client *Client) GetAutoScaleConfig(request *GetAutoScaleConfigRequest) (response *GetAutoScaleConfigResponse, err error) {
 	response = CreateGetAutoScaleConfigResponse()
@@ -28,7 +28,7 @@ func (client *Client) GetAutoScaleConfig(request *GetAutoScaleConfigRequest) (re
 	return
 }
 
-// invoke GetAutoScaleConfig api with *GetAutoScaleConfigRequest asynchronously
+// GetAutoScaleConfigWithChan invokes the ehpc.GetAutoScaleConfig API asynchronously
 // api document: https://help.aliyun.com/api/ehpc/getautoscaleconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetAutoScaleConfigWithChan(request *GetAutoScaleConfigRequest) (<-chan *GetAutoScaleConfigResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) GetAutoScaleConfigWithChan(request *GetAutoScaleConfigRequ
 	return responseChan, errChan
 }
 
-// invoke GetAutoScaleConfig api with *GetAutoScaleConfigRequest asynchronously
+// GetAutoScaleConfigWithCallback invokes the ehpc.GetAutoScaleConfig API asynchronously
 // api document: https://help.aliyun.com/api/ehpc/getautoscaleconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetAutoScaleConfigWithCallback(request *GetAutoScaleConfigRequest, callback func(response *GetAutoScaleConfigResponse, err error)) <-chan int {
@@ -73,11 +73,13 @@ func (client *Client) GetAutoScaleConfigWithCallback(request *GetAutoScaleConfig
 	return result
 }
 
+// GetAutoScaleConfigRequest is the request struct for api GetAutoScaleConfig
 type GetAutoScaleConfigRequest struct {
 	*requests.RpcRequest
 	ClusterId string `position:"Query" name:"ClusterId"`
 }
 
+// GetAutoScaleConfigResponse is the response struct for api GetAutoScaleConfig
 type GetAutoScaleConfigResponse struct {
 	*responses.BaseResponse
 	RequestId               string `json:"RequestId" xml:"RequestId"`
@@ -96,8 +98,8 @@ type GetAutoScaleConfigResponse struct {
 	ExcludeNodes            string `json:"ExcludeNodes" xml:"ExcludeNodes"`
 }
 
-// create a request to invoke GetAutoScaleConfig API
-func CreateGetAutoScaleConfigRequest() (request *GetAutoScaleConfigRequest) {
+// CreateGetAutoScaleConfigRequest creates a request to invoke GetAutoScaleConfig API
+func CreateGetAutoScaleConfigRequest(request *GetAutoScaleConfigRequest) {
 	request = &GetAutoScaleConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -105,7 +107,7 @@ func CreateGetAutoScaleConfigRequest() (request *GetAutoScaleConfigRequest) {
 	return
 }
 
-// create a response to parse from GetAutoScaleConfig response
+// CreateGetAutoScaleConfigResponse creates a response to parse from GetAutoScaleConfig response
 func CreateGetAutoScaleConfigResponse() (response *GetAutoScaleConfigResponse) {
 	response = &GetAutoScaleConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

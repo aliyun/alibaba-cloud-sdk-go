@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifyUser api with *ModifyUserRequest synchronously
+// ModifyUser invokes the ccc.ModifyUser API synchronously
 // api document: https://help.aliyun.com/api/ccc/modifyuser.html
 func (client *Client) ModifyUser(request *ModifyUserRequest) (response *ModifyUserResponse, err error) {
 	response = CreateModifyUserResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifyUser(request *ModifyUserRequest) (response *ModifyUs
 	return
 }
 
-// invoke ModifyUser api with *ModifyUserRequest asynchronously
+// ModifyUserWithChan invokes the ccc.ModifyUser API asynchronously
 // api document: https://help.aliyun.com/api/ccc/modifyuser.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyUserWithChan(request *ModifyUserRequest) (<-chan *ModifyUserResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifyUserWithChan(request *ModifyUserRequest) (<-chan *Mo
 	return responseChan, errChan
 }
 
-// invoke ModifyUser api with *ModifyUserRequest asynchronously
+// ModifyUserWithCallback invokes the ccc.ModifyUser API asynchronously
 // api document: https://help.aliyun.com/api/ccc/modifyuser.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyUserWithCallback(request *ModifyUserRequest, callback func(response *ModifyUserResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ModifyUserWithCallback(request *ModifyUserRequest, callbac
 	return result
 }
 
+// ModifyUserRequest is the request struct for api ModifyUser
 type ModifyUserRequest struct {
 	*requests.RpcRequest
 	InstanceId   string    `position:"Query" name:"InstanceId"`
@@ -85,6 +86,7 @@ type ModifyUserRequest struct {
 	SkillLevel   *[]string `position:"Query" name:"SkillLevel"  type:"Repeated"`
 }
 
+// ModifyUserResponse is the response struct for api ModifyUser
 type ModifyUserResponse struct {
 	*responses.BaseResponse
 	RequestId      string `json:"RequestId" xml:"RequestId"`
@@ -94,8 +96,8 @@ type ModifyUserResponse struct {
 	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 }
 
-// create a request to invoke ModifyUser API
-func CreateModifyUserRequest() (request *ModifyUserRequest) {
+// CreateModifyUserRequest creates a request to invoke ModifyUser API
+func CreateModifyUserRequest(request *ModifyUserRequest) {
 	request = &ModifyUserRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -103,7 +105,7 @@ func CreateModifyUserRequest() (request *ModifyUserRequest) {
 	return
 }
 
-// create a response to parse from ModifyUser response
+// CreateModifyUserResponse creates a response to parse from ModifyUser response
 func CreateModifyUserResponse() (response *ModifyUserResponse) {
 	response = &ModifyUserResponse{
 		BaseResponse: &responses.BaseResponse{},

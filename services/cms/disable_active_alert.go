@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DisableActiveAlert api with *DisableActiveAlertRequest synchronously
+// DisableActiveAlert invokes the cms.DisableActiveAlert API synchronously
 // api document: https://help.aliyun.com/api/cms/disableactivealert.html
 func (client *Client) DisableActiveAlert(request *DisableActiveAlertRequest) (response *DisableActiveAlertResponse, err error) {
 	response = CreateDisableActiveAlertResponse()
@@ -28,7 +28,7 @@ func (client *Client) DisableActiveAlert(request *DisableActiveAlertRequest) (re
 	return
 }
 
-// invoke DisableActiveAlert api with *DisableActiveAlertRequest asynchronously
+// DisableActiveAlertWithChan invokes the cms.DisableActiveAlert API asynchronously
 // api document: https://help.aliyun.com/api/cms/disableactivealert.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DisableActiveAlertWithChan(request *DisableActiveAlertRequest) (<-chan *DisableActiveAlertResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DisableActiveAlertWithChan(request *DisableActiveAlertRequ
 	return responseChan, errChan
 }
 
-// invoke DisableActiveAlert api with *DisableActiveAlertRequest asynchronously
+// DisableActiveAlertWithCallback invokes the cms.DisableActiveAlert API asynchronously
 // api document: https://help.aliyun.com/api/cms/disableactivealert.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DisableActiveAlertWithCallback(request *DisableActiveAlertRequest, callback func(response *DisableActiveAlertResponse, err error)) <-chan int {
@@ -73,12 +73,14 @@ func (client *Client) DisableActiveAlertWithCallback(request *DisableActiveAlert
 	return result
 }
 
+// DisableActiveAlertRequest is the request struct for api DisableActiveAlert
 type DisableActiveAlertRequest struct {
 	*requests.RpcRequest
 	Product string `position:"Query" name:"Product"`
 	UserId  string `position:"Query" name:"UserId"`
 }
 
+// DisableActiveAlertResponse is the response struct for api DisableActiveAlert
 type DisableActiveAlertResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
@@ -87,8 +89,8 @@ type DisableActiveAlertResponse struct {
 	Message   string `json:"Message" xml:"Message"`
 }
 
-// create a request to invoke DisableActiveAlert API
-func CreateDisableActiveAlertRequest() (request *DisableActiveAlertRequest) {
+// CreateDisableActiveAlertRequest creates a request to invoke DisableActiveAlert API
+func CreateDisableActiveAlertRequest(request *DisableActiveAlertRequest) {
 	request = &DisableActiveAlertRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -96,7 +98,7 @@ func CreateDisableActiveAlertRequest() (request *DisableActiveAlertRequest) {
 	return
 }
 
-// create a response to parse from DisableActiveAlert response
+// CreateDisableActiveAlertResponse creates a response to parse from DisableActiveAlert response
 func CreateDisableActiveAlertResponse() (response *DisableActiveAlertResponse) {
 	response = &DisableActiveAlertResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke GatherLogsToken api with *GatherLogsTokenRequest synchronously
+// GatherLogsToken invokes the cs.GatherLogsToken API synchronously
 // api document: https://help.aliyun.com/api/cs/gatherlogstoken.html
 func (client *Client) GatherLogsToken(request *GatherLogsTokenRequest) (response *GatherLogsTokenResponse, err error) {
 	response = CreateGatherLogsTokenResponse()
@@ -28,7 +28,7 @@ func (client *Client) GatherLogsToken(request *GatherLogsTokenRequest) (response
 	return
 }
 
-// invoke GatherLogsToken api with *GatherLogsTokenRequest asynchronously
+// GatherLogsTokenWithChan invokes the cs.GatherLogsToken API asynchronously
 // api document: https://help.aliyun.com/api/cs/gatherlogstoken.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GatherLogsTokenWithChan(request *GatherLogsTokenRequest) (<-chan *GatherLogsTokenResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) GatherLogsTokenWithChan(request *GatherLogsTokenRequest) (
 	return responseChan, errChan
 }
 
-// invoke GatherLogsToken api with *GatherLogsTokenRequest asynchronously
+// GatherLogsTokenWithCallback invokes the cs.GatherLogsToken API asynchronously
 // api document: https://help.aliyun.com/api/cs/gatherlogstoken.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GatherLogsTokenWithCallback(request *GatherLogsTokenRequest, callback func(response *GatherLogsTokenResponse, err error)) <-chan int {
@@ -73,17 +73,19 @@ func (client *Client) GatherLogsTokenWithCallback(request *GatherLogsTokenReques
 	return result
 }
 
+// GatherLogsTokenRequest is the request struct for api GatherLogsToken
 type GatherLogsTokenRequest struct {
 	*requests.RoaRequest
 	Token string `position:"Path" name:"Token"`
 }
 
+// GatherLogsTokenResponse is the response struct for api GatherLogsToken
 type GatherLogsTokenResponse struct {
 	*responses.BaseResponse
 }
 
-// create a request to invoke GatherLogsToken API
-func CreateGatherLogsTokenRequest() (request *GatherLogsTokenRequest) {
+// CreateGatherLogsTokenRequest creates a request to invoke GatherLogsToken API
+func CreateGatherLogsTokenRequest(request *GatherLogsTokenRequest) {
 	request = &GatherLogsTokenRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
@@ -92,7 +94,7 @@ func CreateGatherLogsTokenRequest() (request *GatherLogsTokenRequest) {
 	return
 }
 
-// create a response to parse from GatherLogsToken response
+// CreateGatherLogsTokenResponse creates a response to parse from GatherLogsToken response
 func CreateGatherLogsTokenResponse() (response *GatherLogsTokenResponse) {
 	response = &GatherLogsTokenResponse{
 		BaseResponse: &responses.BaseResponse{},

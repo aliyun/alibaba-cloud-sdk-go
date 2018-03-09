@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ListClusterLogs api with *ListClusterLogsRequest synchronously
+// ListClusterLogs invokes the ehpc.ListClusterLogs API synchronously
 // api document: https://help.aliyun.com/api/ehpc/listclusterlogs.html
 func (client *Client) ListClusterLogs(request *ListClusterLogsRequest) (response *ListClusterLogsResponse, err error) {
 	response = CreateListClusterLogsResponse()
@@ -28,7 +28,7 @@ func (client *Client) ListClusterLogs(request *ListClusterLogsRequest) (response
 	return
 }
 
-// invoke ListClusterLogs api with *ListClusterLogsRequest asynchronously
+// ListClusterLogsWithChan invokes the ehpc.ListClusterLogs API asynchronously
 // api document: https://help.aliyun.com/api/ehpc/listclusterlogs.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListClusterLogsWithChan(request *ListClusterLogsRequest) (<-chan *ListClusterLogsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ListClusterLogsWithChan(request *ListClusterLogsRequest) (
 	return responseChan, errChan
 }
 
-// invoke ListClusterLogs api with *ListClusterLogsRequest asynchronously
+// ListClusterLogsWithCallback invokes the ehpc.ListClusterLogs API asynchronously
 // api document: https://help.aliyun.com/api/ehpc/listclusterlogs.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListClusterLogsWithCallback(request *ListClusterLogsRequest, callback func(response *ListClusterLogsResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ListClusterLogsWithCallback(request *ListClusterLogsReques
 	return result
 }
 
+// ListClusterLogsRequest is the request struct for api ListClusterLogs
 type ListClusterLogsRequest struct {
 	*requests.RpcRequest
 	ClusterId  string           `position:"Query" name:"ClusterId"`
@@ -80,6 +81,7 @@ type ListClusterLogsRequest struct {
 	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 }
 
+// ListClusterLogsResponse is the response struct for api ListClusterLogs
 type ListClusterLogsResponse struct {
 	*responses.BaseResponse
 	RequestId  string `json:"RequestId" xml:"RequestId"`
@@ -90,8 +92,8 @@ type ListClusterLogsResponse struct {
 	Logs       Logs   `json:"Logs" xml:"Logs"`
 }
 
-// create a request to invoke ListClusterLogs API
-func CreateListClusterLogsRequest() (request *ListClusterLogsRequest) {
+// CreateListClusterLogsRequest creates a request to invoke ListClusterLogs API
+func CreateListClusterLogsRequest(request *ListClusterLogsRequest) {
 	request = &ListClusterLogsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateListClusterLogsRequest() (request *ListClusterLogsRequest) {
 	return
 }
 
-// create a response to parse from ListClusterLogs response
+// CreateListClusterLogsResponse creates a response to parse from ListClusterLogs response
 func CreateListClusterLogsResponse() (response *ListClusterLogsResponse) {
 	response = &ListClusterLogsResponse{
 		BaseResponse: &responses.BaseResponse{},

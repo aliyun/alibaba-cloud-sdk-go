@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke AddLiveAppRecordConfig api with *AddLiveAppRecordConfigRequest synchronously
+// AddLiveAppRecordConfig invokes the cdn.AddLiveAppRecordConfig API synchronously
 // api document: https://help.aliyun.com/api/cdn/addliveapprecordconfig.html
 func (client *Client) AddLiveAppRecordConfig(request *AddLiveAppRecordConfigRequest) (response *AddLiveAppRecordConfigResponse, err error) {
 	response = CreateAddLiveAppRecordConfigResponse()
@@ -28,7 +28,7 @@ func (client *Client) AddLiveAppRecordConfig(request *AddLiveAppRecordConfigRequ
 	return
 }
 
-// invoke AddLiveAppRecordConfig api with *AddLiveAppRecordConfigRequest asynchronously
+// AddLiveAppRecordConfigWithChan invokes the cdn.AddLiveAppRecordConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/addliveapprecordconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddLiveAppRecordConfigWithChan(request *AddLiveAppRecordConfigRequest) (<-chan *AddLiveAppRecordConfigResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) AddLiveAppRecordConfigWithChan(request *AddLiveAppRecordCo
 	return responseChan, errChan
 }
 
-// invoke AddLiveAppRecordConfig api with *AddLiveAppRecordConfigRequest asynchronously
+// AddLiveAppRecordConfigWithCallback invokes the cdn.AddLiveAppRecordConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/addliveapprecordconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddLiveAppRecordConfigWithCallback(request *AddLiveAppRecordConfigRequest, callback func(response *AddLiveAppRecordConfigResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) AddLiveAppRecordConfigWithCallback(request *AddLiveAppReco
 	return result
 }
 
+// AddLiveAppRecordConfigRequest is the request struct for api AddLiveAppRecordConfig
 type AddLiveAppRecordConfigRequest struct {
 	*requests.RpcRequest
 	OwnerId         requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,13 +85,14 @@ type AddLiveAppRecordConfigRequest struct {
 	OssObjectPrefix string           `position:"Query" name:"OssObjectPrefix"`
 }
 
+// AddLiveAppRecordConfigResponse is the response struct for api AddLiveAppRecordConfig
 type AddLiveAppRecordConfigResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke AddLiveAppRecordConfig API
-func CreateAddLiveAppRecordConfigRequest() (request *AddLiveAppRecordConfigRequest) {
+// CreateAddLiveAppRecordConfigRequest creates a request to invoke AddLiveAppRecordConfig API
+func CreateAddLiveAppRecordConfigRequest(request *AddLiveAppRecordConfigRequest) {
 	request = &AddLiveAppRecordConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateAddLiveAppRecordConfigRequest() (request *AddLiveAppRecordConfigReque
 	return
 }
 
-// create a response to parse from AddLiveAppRecordConfig response
+// CreateAddLiveAppRecordConfigResponse creates a response to parse from AddLiveAppRecordConfig response
 func CreateAddLiveAppRecordConfigResponse() (response *AddLiveAppRecordConfigResponse) {
 	response = &AddLiveAppRecordConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

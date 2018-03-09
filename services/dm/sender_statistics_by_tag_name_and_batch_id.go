@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SenderStatisticsByTagNameAndBatchID api with *SenderStatisticsByTagNameAndBatchIDRequest synchronously
+// SenderStatisticsByTagNameAndBatchID invokes the dm.SenderStatisticsByTagNameAndBatchID API synchronously
 // api document: https://help.aliyun.com/api/dm/senderstatisticsbytagnameandbatchid.html
 func (client *Client) SenderStatisticsByTagNameAndBatchID(request *SenderStatisticsByTagNameAndBatchIDRequest) (response *SenderStatisticsByTagNameAndBatchIDResponse, err error) {
 	response = CreateSenderStatisticsByTagNameAndBatchIDResponse()
@@ -28,7 +28,7 @@ func (client *Client) SenderStatisticsByTagNameAndBatchID(request *SenderStatist
 	return
 }
 
-// invoke SenderStatisticsByTagNameAndBatchID api with *SenderStatisticsByTagNameAndBatchIDRequest asynchronously
+// SenderStatisticsByTagNameAndBatchIDWithChan invokes the dm.SenderStatisticsByTagNameAndBatchID API asynchronously
 // api document: https://help.aliyun.com/api/dm/senderstatisticsbytagnameandbatchid.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SenderStatisticsByTagNameAndBatchIDWithChan(request *SenderStatisticsByTagNameAndBatchIDRequest) (<-chan *SenderStatisticsByTagNameAndBatchIDResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SenderStatisticsByTagNameAndBatchIDWithChan(request *Sende
 	return responseChan, errChan
 }
 
-// invoke SenderStatisticsByTagNameAndBatchID api with *SenderStatisticsByTagNameAndBatchIDRequest asynchronously
+// SenderStatisticsByTagNameAndBatchIDWithCallback invokes the dm.SenderStatisticsByTagNameAndBatchID API asynchronously
 // api document: https://help.aliyun.com/api/dm/senderstatisticsbytagnameandbatchid.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SenderStatisticsByTagNameAndBatchIDWithCallback(request *SenderStatisticsByTagNameAndBatchIDRequest, callback func(response *SenderStatisticsByTagNameAndBatchIDResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SenderStatisticsByTagNameAndBatchIDWithCallback(request *S
 	return result
 }
 
+// SenderStatisticsByTagNameAndBatchIDRequest is the request struct for api SenderStatisticsByTagNameAndBatchID
 type SenderStatisticsByTagNameAndBatchIDRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,6 +85,7 @@ type SenderStatisticsByTagNameAndBatchIDRequest struct {
 	TagName              string           `position:"Query" name:"TagName"`
 }
 
+// SenderStatisticsByTagNameAndBatchIDResponse is the response struct for api SenderStatisticsByTagNameAndBatchID
 type SenderStatisticsByTagNameAndBatchIDResponse struct {
 	*responses.BaseResponse
 	RequestId  string                                    `json:"RequestId" xml:"RequestId"`
@@ -91,8 +93,8 @@ type SenderStatisticsByTagNameAndBatchIDResponse struct {
 	Data       DataInSenderStatisticsByTagNameAndBatchID `json:"data" xml:"data"`
 }
 
-// create a request to invoke SenderStatisticsByTagNameAndBatchID API
-func CreateSenderStatisticsByTagNameAndBatchIDRequest() (request *SenderStatisticsByTagNameAndBatchIDRequest) {
+// CreateSenderStatisticsByTagNameAndBatchIDRequest creates a request to invoke SenderStatisticsByTagNameAndBatchID API
+func CreateSenderStatisticsByTagNameAndBatchIDRequest(request *SenderStatisticsByTagNameAndBatchIDRequest) {
 	request = &SenderStatisticsByTagNameAndBatchIDRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -100,7 +102,7 @@ func CreateSenderStatisticsByTagNameAndBatchIDRequest() (request *SenderStatisti
 	return
 }
 
-// create a response to parse from SenderStatisticsByTagNameAndBatchID response
+// CreateSenderStatisticsByTagNameAndBatchIDResponse creates a response to parse from SenderStatisticsByTagNameAndBatchID response
 func CreateSenderStatisticsByTagNameAndBatchIDResponse() (response *SenderStatisticsByTagNameAndBatchIDResponse) {
 	response = &SenderStatisticsByTagNameAndBatchIDResponse{
 		BaseResponse: &responses.BaseResponse{},

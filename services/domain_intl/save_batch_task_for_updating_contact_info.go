@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SaveBatchTaskForUpdatingContactInfo api with *SaveBatchTaskForUpdatingContactInfoRequest synchronously
+// SaveBatchTaskForUpdatingContactInfo invokes the domain_intl.SaveBatchTaskForUpdatingContactInfo API synchronously
 // api document: https://help.aliyun.com/api/domain-intl/savebatchtaskforupdatingcontactinfo.html
 func (client *Client) SaveBatchTaskForUpdatingContactInfo(request *SaveBatchTaskForUpdatingContactInfoRequest) (response *SaveBatchTaskForUpdatingContactInfoResponse, err error) {
 	response = CreateSaveBatchTaskForUpdatingContactInfoResponse()
@@ -28,7 +28,7 @@ func (client *Client) SaveBatchTaskForUpdatingContactInfo(request *SaveBatchTask
 	return
 }
 
-// invoke SaveBatchTaskForUpdatingContactInfo api with *SaveBatchTaskForUpdatingContactInfoRequest asynchronously
+// SaveBatchTaskForUpdatingContactInfoWithChan invokes the domain_intl.SaveBatchTaskForUpdatingContactInfo API asynchronously
 // api document: https://help.aliyun.com/api/domain-intl/savebatchtaskforupdatingcontactinfo.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveBatchTaskForUpdatingContactInfoWithChan(request *SaveBatchTaskForUpdatingContactInfoRequest) (<-chan *SaveBatchTaskForUpdatingContactInfoResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SaveBatchTaskForUpdatingContactInfoWithChan(request *SaveB
 	return responseChan, errChan
 }
 
-// invoke SaveBatchTaskForUpdatingContactInfo api with *SaveBatchTaskForUpdatingContactInfoRequest asynchronously
+// SaveBatchTaskForUpdatingContactInfoWithCallback invokes the domain_intl.SaveBatchTaskForUpdatingContactInfo API asynchronously
 // api document: https://help.aliyun.com/api/domain-intl/savebatchtaskforupdatingcontactinfo.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveBatchTaskForUpdatingContactInfoWithCallback(request *SaveBatchTaskForUpdatingContactInfoRequest, callback func(response *SaveBatchTaskForUpdatingContactInfoResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SaveBatchTaskForUpdatingContactInfoWithCallback(request *S
 	return result
 }
 
+// SaveBatchTaskForUpdatingContactInfoRequest is the request struct for api SaveBatchTaskForUpdatingContactInfo
 type SaveBatchTaskForUpdatingContactInfoRequest struct {
 	*requests.RpcRequest
 	UserClientIp        string           `position:"Query" name:"UserClientIp"`
@@ -83,14 +84,15 @@ type SaveBatchTaskForUpdatingContactInfoRequest struct {
 	DomainName          *[]string        `position:"Query" name:"DomainName"  type:"Repeated"`
 }
 
+// SaveBatchTaskForUpdatingContactInfoResponse is the response struct for api SaveBatchTaskForUpdatingContactInfo
 type SaveBatchTaskForUpdatingContactInfoResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	TaskNo    string `json:"TaskNo" xml:"TaskNo"`
 }
 
-// create a request to invoke SaveBatchTaskForUpdatingContactInfo API
-func CreateSaveBatchTaskForUpdatingContactInfoRequest() (request *SaveBatchTaskForUpdatingContactInfoRequest) {
+// CreateSaveBatchTaskForUpdatingContactInfoRequest creates a request to invoke SaveBatchTaskForUpdatingContactInfo API
+func CreateSaveBatchTaskForUpdatingContactInfoRequest(request *SaveBatchTaskForUpdatingContactInfoRequest) {
 	request = &SaveBatchTaskForUpdatingContactInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateSaveBatchTaskForUpdatingContactInfoRequest() (request *SaveBatchTaskF
 	return
 }
 
-// create a response to parse from SaveBatchTaskForUpdatingContactInfo response
+// CreateSaveBatchTaskForUpdatingContactInfoResponse creates a response to parse from SaveBatchTaskForUpdatingContactInfo response
 func CreateSaveBatchTaskForUpdatingContactInfoResponse() (response *SaveBatchTaskForUpdatingContactInfoResponse) {
 	response = &SaveBatchTaskForUpdatingContactInfoResponse{
 		BaseResponse: &responses.BaseResponse{},

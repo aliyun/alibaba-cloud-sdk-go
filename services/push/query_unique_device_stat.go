@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke QueryUniqueDeviceStat api with *QueryUniqueDeviceStatRequest synchronously
+// QueryUniqueDeviceStat invokes the push.QueryUniqueDeviceStat API synchronously
 // api document: https://help.aliyun.com/api/push/queryuniquedevicestat.html
 func (client *Client) QueryUniqueDeviceStat(request *QueryUniqueDeviceStatRequest) (response *QueryUniqueDeviceStatResponse, err error) {
 	response = CreateQueryUniqueDeviceStatResponse()
@@ -28,7 +28,7 @@ func (client *Client) QueryUniqueDeviceStat(request *QueryUniqueDeviceStatReques
 	return
 }
 
-// invoke QueryUniqueDeviceStat api with *QueryUniqueDeviceStatRequest asynchronously
+// QueryUniqueDeviceStatWithChan invokes the push.QueryUniqueDeviceStat API asynchronously
 // api document: https://help.aliyun.com/api/push/queryuniquedevicestat.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryUniqueDeviceStatWithChan(request *QueryUniqueDeviceStatRequest) (<-chan *QueryUniqueDeviceStatResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) QueryUniqueDeviceStatWithChan(request *QueryUniqueDeviceSt
 	return responseChan, errChan
 }
 
-// invoke QueryUniqueDeviceStat api with *QueryUniqueDeviceStatRequest asynchronously
+// QueryUniqueDeviceStatWithCallback invokes the push.QueryUniqueDeviceStat API asynchronously
 // api document: https://help.aliyun.com/api/push/queryuniquedevicestat.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryUniqueDeviceStatWithCallback(request *QueryUniqueDeviceStatRequest, callback func(response *QueryUniqueDeviceStatResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) QueryUniqueDeviceStatWithCallback(request *QueryUniqueDevi
 	return result
 }
 
+// QueryUniqueDeviceStatRequest is the request struct for api QueryUniqueDeviceStat
 type QueryUniqueDeviceStatRequest struct {
 	*requests.RpcRequest
 	AppKey      requests.Integer `position:"Query" name:"AppKey"`
@@ -81,14 +82,15 @@ type QueryUniqueDeviceStatRequest struct {
 	Granularity string           `position:"Query" name:"Granularity"`
 }
 
+// QueryUniqueDeviceStatResponse is the response struct for api QueryUniqueDeviceStat
 type QueryUniqueDeviceStatResponse struct {
 	*responses.BaseResponse
 	RequestId      string                                `json:"RequestId" xml:"RequestId"`
 	AppDeviceStats AppDeviceStatsInQueryUniqueDeviceStat `json:"AppDeviceStats" xml:"AppDeviceStats"`
 }
 
-// create a request to invoke QueryUniqueDeviceStat API
-func CreateQueryUniqueDeviceStatRequest() (request *QueryUniqueDeviceStatRequest) {
+// CreateQueryUniqueDeviceStatRequest creates a request to invoke QueryUniqueDeviceStat API
+func CreateQueryUniqueDeviceStatRequest(request *QueryUniqueDeviceStatRequest) {
 	request = &QueryUniqueDeviceStatRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -96,7 +98,7 @@ func CreateQueryUniqueDeviceStatRequest() (request *QueryUniqueDeviceStatRequest
 	return
 }
 
-// create a response to parse from QueryUniqueDeviceStat response
+// CreateQueryUniqueDeviceStatResponse creates a response to parse from QueryUniqueDeviceStat response
 func CreateQueryUniqueDeviceStatResponse() (response *QueryUniqueDeviceStatResponse) {
 	response = &QueryUniqueDeviceStatResponse{
 		BaseResponse: &responses.BaseResponse{},

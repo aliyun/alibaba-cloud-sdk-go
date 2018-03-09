@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke BindPhone api with *BindPhoneRequest synchronously
+// BindPhone invokes the push.BindPhone API synchronously
 // api document: https://help.aliyun.com/api/push/bindphone.html
 func (client *Client) BindPhone(request *BindPhoneRequest) (response *BindPhoneResponse, err error) {
 	response = CreateBindPhoneResponse()
@@ -28,7 +28,7 @@ func (client *Client) BindPhone(request *BindPhoneRequest) (response *BindPhoneR
 	return
 }
 
-// invoke BindPhone api with *BindPhoneRequest asynchronously
+// BindPhoneWithChan invokes the push.BindPhone API asynchronously
 // api document: https://help.aliyun.com/api/push/bindphone.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BindPhoneWithChan(request *BindPhoneRequest) (<-chan *BindPhoneResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) BindPhoneWithChan(request *BindPhoneRequest) (<-chan *Bind
 	return responseChan, errChan
 }
 
-// invoke BindPhone api with *BindPhoneRequest asynchronously
+// BindPhoneWithCallback invokes the push.BindPhone API asynchronously
 // api document: https://help.aliyun.com/api/push/bindphone.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BindPhoneWithCallback(request *BindPhoneRequest, callback func(response *BindPhoneResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) BindPhoneWithCallback(request *BindPhoneRequest, callback 
 	return result
 }
 
+// BindPhoneRequest is the request struct for api BindPhone
 type BindPhoneRequest struct {
 	*requests.RpcRequest
 	AppKey      requests.Integer `position:"Query" name:"AppKey"`
@@ -80,13 +81,14 @@ type BindPhoneRequest struct {
 	PhoneNumber string           `position:"Query" name:"PhoneNumber"`
 }
 
+// BindPhoneResponse is the response struct for api BindPhone
 type BindPhoneResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke BindPhone API
-func CreateBindPhoneRequest() (request *BindPhoneRequest) {
+// CreateBindPhoneRequest creates a request to invoke BindPhone API
+func CreateBindPhoneRequest(request *BindPhoneRequest) {
 	request = &BindPhoneRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -94,7 +96,7 @@ func CreateBindPhoneRequest() (request *BindPhoneRequest) {
 	return
 }
 
-// create a response to parse from BindPhone response
+// CreateBindPhoneResponse creates a response to parse from BindPhone response
 func CreateBindPhoneResponse() (response *BindPhoneResponse) {
 	response = &BindPhoneResponse{
 		BaseResponse: &responses.BaseResponse{},

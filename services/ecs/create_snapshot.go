@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CreateSnapshot api with *CreateSnapshotRequest synchronously
+// CreateSnapshot invokes the ecs.CreateSnapshot API synchronously
 // api document: https://help.aliyun.com/api/ecs/createsnapshot.html
 func (client *Client) CreateSnapshot(request *CreateSnapshotRequest) (response *CreateSnapshotResponse, err error) {
 	response = CreateCreateSnapshotResponse()
@@ -28,7 +28,7 @@ func (client *Client) CreateSnapshot(request *CreateSnapshotRequest) (response *
 	return
 }
 
-// invoke CreateSnapshot api with *CreateSnapshotRequest asynchronously
+// CreateSnapshotWithChan invokes the ecs.CreateSnapshot API asynchronously
 // api document: https://help.aliyun.com/api/ecs/createsnapshot.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateSnapshotWithChan(request *CreateSnapshotRequest) (<-chan *CreateSnapshotResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CreateSnapshotWithChan(request *CreateSnapshotRequest) (<-
 	return responseChan, errChan
 }
 
-// invoke CreateSnapshot api with *CreateSnapshotRequest asynchronously
+// CreateSnapshotWithCallback invokes the ecs.CreateSnapshot API asynchronously
 // api document: https://help.aliyun.com/api/ecs/createsnapshot.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateSnapshotWithCallback(request *CreateSnapshotRequest, callback func(response *CreateSnapshotResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) CreateSnapshotWithCallback(request *CreateSnapshotRequest,
 	return result
 }
 
+// CreateSnapshotRequest is the request struct for api CreateSnapshot
 type CreateSnapshotRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -95,14 +96,15 @@ type CreateSnapshotRequest struct {
 	Tag5Value            string           `position:"Query" name:"Tag.5.Value"`
 }
 
+// CreateSnapshotResponse is the response struct for api CreateSnapshot
 type CreateSnapshotResponse struct {
 	*responses.BaseResponse
 	RequestId  string `json:"RequestId" xml:"RequestId"`
 	SnapshotId string `json:"SnapshotId" xml:"SnapshotId"`
 }
 
-// create a request to invoke CreateSnapshot API
-func CreateCreateSnapshotRequest() (request *CreateSnapshotRequest) {
+// CreateCreateSnapshotRequest creates a request to invoke CreateSnapshot API
+func CreateCreateSnapshotRequest(request *CreateSnapshotRequest) {
 	request = &CreateSnapshotRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -110,7 +112,7 @@ func CreateCreateSnapshotRequest() (request *CreateSnapshotRequest) {
 	return
 }
 
-// create a response to parse from CreateSnapshot response
+// CreateCreateSnapshotResponse creates a response to parse from CreateSnapshot response
 func CreateCreateSnapshotResponse() (response *CreateSnapshotResponse) {
 	response = &CreateSnapshotResponse{
 		BaseResponse: &responses.BaseResponse{},

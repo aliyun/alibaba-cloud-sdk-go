@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke RegisterPhoto api with *RegisterPhotoRequest synchronously
+// RegisterPhoto invokes the cloudphoto.RegisterPhoto API synchronously
 // api document: https://help.aliyun.com/api/cloudphoto/registerphoto.html
 func (client *Client) RegisterPhoto(request *RegisterPhotoRequest) (response *RegisterPhotoResponse, err error) {
 	response = CreateRegisterPhotoResponse()
@@ -28,7 +28,7 @@ func (client *Client) RegisterPhoto(request *RegisterPhotoRequest) (response *Re
 	return
 }
 
-// invoke RegisterPhoto api with *RegisterPhotoRequest asynchronously
+// RegisterPhotoWithChan invokes the cloudphoto.RegisterPhoto API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/registerphoto.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RegisterPhotoWithChan(request *RegisterPhotoRequest) (<-chan *RegisterPhotoResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) RegisterPhotoWithChan(request *RegisterPhotoRequest) (<-ch
 	return responseChan, errChan
 }
 
-// invoke RegisterPhoto api with *RegisterPhotoRequest asynchronously
+// RegisterPhotoWithCallback invokes the cloudphoto.RegisterPhoto API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/registerphoto.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RegisterPhotoWithCallback(request *RegisterPhotoRequest, callback func(response *RegisterPhotoResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) RegisterPhotoWithCallback(request *RegisterPhotoRequest, c
 	return result
 }
 
+// RegisterPhotoRequest is the request struct for api RegisterPhoto
 type RegisterPhotoRequest struct {
 	*requests.RpcRequest
 	TakenAt    requests.Integer `position:"Query" name:"TakenAt"`
@@ -90,6 +91,7 @@ type RegisterPhotoRequest struct {
 	Remark     string           `position:"Query" name:"Remark"`
 }
 
+// RegisterPhotoResponse is the response struct for api RegisterPhoto
 type RegisterPhotoResponse struct {
 	*responses.BaseResponse
 	Code      string `json:"Code" xml:"Code"`
@@ -99,8 +101,8 @@ type RegisterPhotoResponse struct {
 	Photo     Photo  `json:"Photo" xml:"Photo"`
 }
 
-// create a request to invoke RegisterPhoto API
-func CreateRegisterPhotoRequest() (request *RegisterPhotoRequest) {
+// CreateRegisterPhotoRequest creates a request to invoke RegisterPhoto API
+func CreateRegisterPhotoRequest(request *RegisterPhotoRequest) {
 	request = &RegisterPhotoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -108,7 +110,7 @@ func CreateRegisterPhotoRequest() (request *RegisterPhotoRequest) {
 	return
 }
 
-// create a response to parse from RegisterPhoto response
+// CreateRegisterPhotoResponse creates a response to parse from RegisterPhoto response
 func CreateRegisterPhotoResponse() (response *RegisterPhotoResponse) {
 	response = &RegisterPhotoResponse{
 		BaseResponse: &responses.BaseResponse{},

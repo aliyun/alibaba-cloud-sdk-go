@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke RegisterMediaDetailPerson api with *RegisterMediaDetailPersonRequest synchronously
+// RegisterMediaDetailPerson invokes the mts.RegisterMediaDetailPerson API synchronously
 // api document: https://help.aliyun.com/api/mts/registermediadetailperson.html
 func (client *Client) RegisterMediaDetailPerson(request *RegisterMediaDetailPersonRequest) (response *RegisterMediaDetailPersonResponse, err error) {
 	response = CreateRegisterMediaDetailPersonResponse()
@@ -28,7 +28,7 @@ func (client *Client) RegisterMediaDetailPerson(request *RegisterMediaDetailPers
 	return
 }
 
-// invoke RegisterMediaDetailPerson api with *RegisterMediaDetailPersonRequest asynchronously
+// RegisterMediaDetailPersonWithChan invokes the mts.RegisterMediaDetailPerson API asynchronously
 // api document: https://help.aliyun.com/api/mts/registermediadetailperson.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RegisterMediaDetailPersonWithChan(request *RegisterMediaDetailPersonRequest) (<-chan *RegisterMediaDetailPersonResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) RegisterMediaDetailPersonWithChan(request *RegisterMediaDe
 	return responseChan, errChan
 }
 
-// invoke RegisterMediaDetailPerson api with *RegisterMediaDetailPersonRequest asynchronously
+// RegisterMediaDetailPersonWithCallback invokes the mts.RegisterMediaDetailPerson API asynchronously
 // api document: https://help.aliyun.com/api/mts/registermediadetailperson.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RegisterMediaDetailPersonWithCallback(request *RegisterMediaDetailPersonRequest, callback func(response *RegisterMediaDetailPersonResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) RegisterMediaDetailPersonWithCallback(request *RegisterMed
 	return result
 }
 
+// RegisterMediaDetailPersonRequest is the request struct for api RegisterMediaDetailPerson
 type RegisterMediaDetailPersonRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,6 +85,7 @@ type RegisterMediaDetailPersonRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// RegisterMediaDetailPersonResponse is the response struct for api RegisterMediaDetailPerson
 type RegisterMediaDetailPersonResponse struct {
 	*responses.BaseResponse
 	RequestId            string               `json:"RequestId" xml:"RequestId"`
@@ -91,8 +93,8 @@ type RegisterMediaDetailPersonResponse struct {
 	FailedImages         FailedImages         `json:"FailedImages" xml:"FailedImages"`
 }
 
-// create a request to invoke RegisterMediaDetailPerson API
-func CreateRegisterMediaDetailPersonRequest() (request *RegisterMediaDetailPersonRequest) {
+// CreateRegisterMediaDetailPersonRequest creates a request to invoke RegisterMediaDetailPerson API
+func CreateRegisterMediaDetailPersonRequest(request *RegisterMediaDetailPersonRequest) {
 	request = &RegisterMediaDetailPersonRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -100,7 +102,7 @@ func CreateRegisterMediaDetailPersonRequest() (request *RegisterMediaDetailPerso
 	return
 }
 
-// create a response to parse from RegisterMediaDetailPerson response
+// CreateRegisterMediaDetailPersonResponse creates a response to parse from RegisterMediaDetailPerson response
 func CreateRegisterMediaDetailPersonResponse() (response *RegisterMediaDetailPersonResponse) {
 	response = &RegisterMediaDetailPersonResponse{
 		BaseResponse: &responses.BaseResponse{},

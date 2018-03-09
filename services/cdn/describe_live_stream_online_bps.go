@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeLiveStreamOnlineBps api with *DescribeLiveStreamOnlineBpsRequest synchronously
+// DescribeLiveStreamOnlineBps invokes the cdn.DescribeLiveStreamOnlineBps API synchronously
 // api document: https://help.aliyun.com/api/cdn/describelivestreamonlinebps.html
 func (client *Client) DescribeLiveStreamOnlineBps(request *DescribeLiveStreamOnlineBpsRequest) (response *DescribeLiveStreamOnlineBpsResponse, err error) {
 	response = CreateDescribeLiveStreamOnlineBpsResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeLiveStreamOnlineBps(request *DescribeLiveStreamOnl
 	return
 }
 
-// invoke DescribeLiveStreamOnlineBps api with *DescribeLiveStreamOnlineBpsRequest asynchronously
+// DescribeLiveStreamOnlineBpsWithChan invokes the cdn.DescribeLiveStreamOnlineBps API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describelivestreamonlinebps.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamOnlineBpsWithChan(request *DescribeLiveStreamOnlineBpsRequest) (<-chan *DescribeLiveStreamOnlineBpsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeLiveStreamOnlineBpsWithChan(request *DescribeLiveS
 	return responseChan, errChan
 }
 
-// invoke DescribeLiveStreamOnlineBps api with *DescribeLiveStreamOnlineBpsRequest asynchronously
+// DescribeLiveStreamOnlineBpsWithCallback invokes the cdn.DescribeLiveStreamOnlineBps API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describelivestreamonlinebps.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamOnlineBpsWithCallback(request *DescribeLiveStreamOnlineBpsRequest, callback func(response *DescribeLiveStreamOnlineBpsResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeLiveStreamOnlineBpsWithCallback(request *DescribeL
 	return result
 }
 
+// DescribeLiveStreamOnlineBpsRequest is the request struct for api DescribeLiveStreamOnlineBps
 type DescribeLiveStreamOnlineBpsRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,6 +85,7 @@ type DescribeLiveStreamOnlineBpsRequest struct {
 	EndTime       string           `position:"Query" name:"EndTime"`
 }
 
+// DescribeLiveStreamOnlineBpsResponse is the response struct for api DescribeLiveStreamOnlineBps
 type DescribeLiveStreamOnlineBpsResponse struct {
 	*responses.BaseResponse
 	RequestId                string                   `json:"RequestId" xml:"RequestId"`
@@ -93,8 +95,8 @@ type DescribeLiveStreamOnlineBpsResponse struct {
 	LiveStreamOnlineBpsInfos LiveStreamOnlineBpsInfos `json:"LiveStreamOnlineBpsInfos" xml:"LiveStreamOnlineBpsInfos"`
 }
 
-// create a request to invoke DescribeLiveStreamOnlineBps API
-func CreateDescribeLiveStreamOnlineBpsRequest() (request *DescribeLiveStreamOnlineBpsRequest) {
+// CreateDescribeLiveStreamOnlineBpsRequest creates a request to invoke DescribeLiveStreamOnlineBps API
+func CreateDescribeLiveStreamOnlineBpsRequest(request *DescribeLiveStreamOnlineBpsRequest) {
 	request = &DescribeLiveStreamOnlineBpsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -102,7 +104,7 @@ func CreateDescribeLiveStreamOnlineBpsRequest() (request *DescribeLiveStreamOnli
 	return
 }
 
-// create a response to parse from DescribeLiveStreamOnlineBps response
+// CreateDescribeLiveStreamOnlineBpsResponse creates a response to parse from DescribeLiveStreamOnlineBps response
 func CreateDescribeLiveStreamOnlineBpsResponse() (response *DescribeLiveStreamOnlineBpsResponse) {
 	response = &DescribeLiveStreamOnlineBpsResponse{
 		BaseResponse: &responses.BaseResponse{},

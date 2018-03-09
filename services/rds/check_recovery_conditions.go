@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CheckRecoveryConditions api with *CheckRecoveryConditionsRequest synchronously
+// CheckRecoveryConditions invokes the rds.CheckRecoveryConditions API synchronously
 // api document: https://help.aliyun.com/api/rds/checkrecoveryconditions.html
 func (client *Client) CheckRecoveryConditions(request *CheckRecoveryConditionsRequest) (response *CheckRecoveryConditionsResponse, err error) {
 	response = CreateCheckRecoveryConditionsResponse()
@@ -28,7 +28,7 @@ func (client *Client) CheckRecoveryConditions(request *CheckRecoveryConditionsRe
 	return
 }
 
-// invoke CheckRecoveryConditions api with *CheckRecoveryConditionsRequest asynchronously
+// CheckRecoveryConditionsWithChan invokes the rds.CheckRecoveryConditions API asynchronously
 // api document: https://help.aliyun.com/api/rds/checkrecoveryconditions.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckRecoveryConditionsWithChan(request *CheckRecoveryConditionsRequest) (<-chan *CheckRecoveryConditionsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CheckRecoveryConditionsWithChan(request *CheckRecoveryCond
 	return responseChan, errChan
 }
 
-// invoke CheckRecoveryConditions api with *CheckRecoveryConditionsRequest asynchronously
+// CheckRecoveryConditionsWithCallback invokes the rds.CheckRecoveryConditions API asynchronously
 // api document: https://help.aliyun.com/api/rds/checkrecoveryconditions.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckRecoveryConditionsWithCallback(request *CheckRecoveryConditionsRequest, callback func(response *CheckRecoveryConditionsResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) CheckRecoveryConditionsWithCallback(request *CheckRecovery
 	return result
 }
 
+// CheckRecoveryConditionsRequest is the request struct for api CheckRecoveryConditions
 type CheckRecoveryConditionsRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -85,6 +86,7 @@ type CheckRecoveryConditionsRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// CheckRecoveryConditionsResponse is the response struct for api CheckRecoveryConditions
 type CheckRecoveryConditionsResponse struct {
 	*responses.BaseResponse
 	RequestId      string `json:"RequestId" xml:"RequestId"`
@@ -92,8 +94,8 @@ type CheckRecoveryConditionsResponse struct {
 	RecoveryStatus string `json:"RecoveryStatus" xml:"RecoveryStatus"`
 }
 
-// create a request to invoke CheckRecoveryConditions API
-func CreateCheckRecoveryConditionsRequest() (request *CheckRecoveryConditionsRequest) {
+// CreateCheckRecoveryConditionsRequest creates a request to invoke CheckRecoveryConditions API
+func CreateCheckRecoveryConditionsRequest(request *CheckRecoveryConditionsRequest) {
 	request = &CheckRecoveryConditionsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -101,7 +103,7 @@ func CreateCheckRecoveryConditionsRequest() (request *CheckRecoveryConditionsReq
 	return
 }
 
-// create a response to parse from CheckRecoveryConditions response
+// CreateCheckRecoveryConditionsResponse creates a response to parse from CheckRecoveryConditions response
 func CreateCheckRecoveryConditionsResponse() (response *CheckRecoveryConditionsResponse) {
 	response = &CheckRecoveryConditionsResponse{
 		BaseResponse: &responses.BaseResponse{},

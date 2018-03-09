@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeClusterTokens api with *DescribeClusterTokensRequest synchronously
+// DescribeClusterTokens invokes the cs.DescribeClusterTokens API synchronously
 // api document: https://help.aliyun.com/api/cs/describeclustertokens.html
 func (client *Client) DescribeClusterTokens(request *DescribeClusterTokensRequest) (response *DescribeClusterTokensResponse, err error) {
 	response = CreateDescribeClusterTokensResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeClusterTokens(request *DescribeClusterTokensReques
 	return
 }
 
-// invoke DescribeClusterTokens api with *DescribeClusterTokensRequest asynchronously
+// DescribeClusterTokensWithChan invokes the cs.DescribeClusterTokens API asynchronously
 // api document: https://help.aliyun.com/api/cs/describeclustertokens.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeClusterTokensWithChan(request *DescribeClusterTokensRequest) (<-chan *DescribeClusterTokensResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeClusterTokensWithChan(request *DescribeClusterToke
 	return responseChan, errChan
 }
 
-// invoke DescribeClusterTokens api with *DescribeClusterTokensRequest asynchronously
+// DescribeClusterTokensWithCallback invokes the cs.DescribeClusterTokens API asynchronously
 // api document: https://help.aliyun.com/api/cs/describeclustertokens.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeClusterTokensWithCallback(request *DescribeClusterTokensRequest, callback func(response *DescribeClusterTokensResponse, err error)) <-chan int {
@@ -73,17 +73,19 @@ func (client *Client) DescribeClusterTokensWithCallback(request *DescribeCluster
 	return result
 }
 
+// DescribeClusterTokensRequest is the request struct for api DescribeClusterTokens
 type DescribeClusterTokensRequest struct {
 	*requests.RoaRequest
 	ClusterId string `position:"Path" name:"ClusterId"`
 }
 
+// DescribeClusterTokensResponse is the response struct for api DescribeClusterTokens
 type DescribeClusterTokensResponse struct {
 	*responses.BaseResponse
 }
 
-// create a request to invoke DescribeClusterTokens API
-func CreateDescribeClusterTokensRequest() (request *DescribeClusterTokensRequest) {
+// CreateDescribeClusterTokensRequest creates a request to invoke DescribeClusterTokens API
+func CreateDescribeClusterTokensRequest(request *DescribeClusterTokensRequest) {
 	request = &DescribeClusterTokensRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
@@ -92,7 +94,7 @@ func CreateDescribeClusterTokensRequest() (request *DescribeClusterTokensRequest
 	return
 }
 
-// create a response to parse from DescribeClusterTokens response
+// CreateDescribeClusterTokensResponse creates a response to parse from DescribeClusterTokens response
 func CreateDescribeClusterTokensResponse() (response *DescribeClusterTokensResponse) {
 	response = &DescribeClusterTokensResponse{
 		BaseResponse: &responses.BaseResponse{},

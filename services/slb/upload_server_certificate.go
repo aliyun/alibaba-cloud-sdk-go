@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke UploadServerCertificate api with *UploadServerCertificateRequest synchronously
+// UploadServerCertificate invokes the slb.UploadServerCertificate API synchronously
 // api document: https://help.aliyun.com/api/slb/uploadservercertificate.html
 func (client *Client) UploadServerCertificate(request *UploadServerCertificateRequest) (response *UploadServerCertificateResponse, err error) {
 	response = CreateUploadServerCertificateResponse()
@@ -28,7 +28,7 @@ func (client *Client) UploadServerCertificate(request *UploadServerCertificateRe
 	return
 }
 
-// invoke UploadServerCertificate api with *UploadServerCertificateRequest asynchronously
+// UploadServerCertificateWithChan invokes the slb.UploadServerCertificate API asynchronously
 // api document: https://help.aliyun.com/api/slb/uploadservercertificate.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UploadServerCertificateWithChan(request *UploadServerCertificateRequest) (<-chan *UploadServerCertificateResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) UploadServerCertificateWithChan(request *UploadServerCerti
 	return responseChan, errChan
 }
 
-// invoke UploadServerCertificate api with *UploadServerCertificateRequest asynchronously
+// UploadServerCertificateWithCallback invokes the slb.UploadServerCertificate API asynchronously
 // api document: https://help.aliyun.com/api/slb/uploadservercertificate.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UploadServerCertificateWithCallback(request *UploadServerCertificateRequest, callback func(response *UploadServerCertificateResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) UploadServerCertificateWithCallback(request *UploadServerC
 	return result
 }
 
+// UploadServerCertificateRequest is the request struct for api UploadServerCertificate
 type UploadServerCertificateRequest struct {
 	*requests.RpcRequest
 	OwnerId                 requests.Integer `position:"Query" name:"OwnerId"`
@@ -89,6 +90,7 @@ type UploadServerCertificateRequest struct {
 	ResourceGroupId         string           `position:"Query" name:"ResourceGroupId"`
 }
 
+// UploadServerCertificateResponse is the response struct for api UploadServerCertificate
 type UploadServerCertificateResponse struct {
 	*responses.BaseResponse
 	RequestId               string `json:"RequestId" xml:"RequestId"`
@@ -105,8 +107,8 @@ type UploadServerCertificateResponse struct {
 	CreateTimeStamp         int    `json:"CreateTimeStamp" xml:"CreateTimeStamp"`
 }
 
-// create a request to invoke UploadServerCertificate API
-func CreateUploadServerCertificateRequest() (request *UploadServerCertificateRequest) {
+// CreateUploadServerCertificateRequest creates a request to invoke UploadServerCertificate API
+func CreateUploadServerCertificateRequest(request *UploadServerCertificateRequest) {
 	request = &UploadServerCertificateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -114,7 +116,7 @@ func CreateUploadServerCertificateRequest() (request *UploadServerCertificateReq
 	return
 }
 
-// create a response to parse from UploadServerCertificate response
+// CreateUploadServerCertificateResponse creates a response to parse from UploadServerCertificate response
 func CreateUploadServerCertificateResponse() (response *UploadServerCertificateResponse) {
 	response = &UploadServerCertificateResponse{
 		BaseResponse: &responses.BaseResponse{},

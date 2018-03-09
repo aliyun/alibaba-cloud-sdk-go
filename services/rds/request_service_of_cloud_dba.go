@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke RequestServiceOfCloudDBA api with *RequestServiceOfCloudDBARequest synchronously
+// RequestServiceOfCloudDBA invokes the rds.RequestServiceOfCloudDBA API synchronously
 // api document: https://help.aliyun.com/api/rds/requestserviceofclouddba.html
 func (client *Client) RequestServiceOfCloudDBA(request *RequestServiceOfCloudDBARequest) (response *RequestServiceOfCloudDBAResponse, err error) {
 	response = CreateRequestServiceOfCloudDBAResponse()
@@ -28,7 +28,7 @@ func (client *Client) RequestServiceOfCloudDBA(request *RequestServiceOfCloudDBA
 	return
 }
 
-// invoke RequestServiceOfCloudDBA api with *RequestServiceOfCloudDBARequest asynchronously
+// RequestServiceOfCloudDBAWithChan invokes the rds.RequestServiceOfCloudDBA API asynchronously
 // api document: https://help.aliyun.com/api/rds/requestserviceofclouddba.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RequestServiceOfCloudDBAWithChan(request *RequestServiceOfCloudDBARequest) (<-chan *RequestServiceOfCloudDBAResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) RequestServiceOfCloudDBAWithChan(request *RequestServiceOf
 	return responseChan, errChan
 }
 
-// invoke RequestServiceOfCloudDBA api with *RequestServiceOfCloudDBARequest asynchronously
+// RequestServiceOfCloudDBAWithCallback invokes the rds.RequestServiceOfCloudDBA API asynchronously
 // api document: https://help.aliyun.com/api/rds/requestserviceofclouddba.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RequestServiceOfCloudDBAWithCallback(request *RequestServiceOfCloudDBARequest, callback func(response *RequestServiceOfCloudDBAResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) RequestServiceOfCloudDBAWithCallback(request *RequestServi
 	return result
 }
 
+// RequestServiceOfCloudDBARequest is the request struct for api RequestServiceOfCloudDBA
 type RequestServiceOfCloudDBARequest struct {
 	*requests.RpcRequest
 	DBInstanceId        string `position:"Query" name:"DBInstanceId"`
@@ -80,6 +81,7 @@ type RequestServiceOfCloudDBARequest struct {
 	ServiceRequestParam string `position:"Query" name:"ServiceRequestParam"`
 }
 
+// RequestServiceOfCloudDBAResponse is the response struct for api RequestServiceOfCloudDBA
 type RequestServiceOfCloudDBAResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
@@ -87,8 +89,8 @@ type RequestServiceOfCloudDBAResponse struct {
 	AttrData  string `json:"AttrData" xml:"AttrData"`
 }
 
-// create a request to invoke RequestServiceOfCloudDBA API
-func CreateRequestServiceOfCloudDBARequest() (request *RequestServiceOfCloudDBARequest) {
+// CreateRequestServiceOfCloudDBARequest creates a request to invoke RequestServiceOfCloudDBA API
+func CreateRequestServiceOfCloudDBARequest(request *RequestServiceOfCloudDBARequest) {
 	request = &RequestServiceOfCloudDBARequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -96,7 +98,7 @@ func CreateRequestServiceOfCloudDBARequest() (request *RequestServiceOfCloudDBAR
 	return
 }
 
-// create a response to parse from RequestServiceOfCloudDBA response
+// CreateRequestServiceOfCloudDBAResponse creates a response to parse from RequestServiceOfCloudDBA response
 func CreateRequestServiceOfCloudDBAResponse() (response *RequestServiceOfCloudDBAResponse) {
 	response = &RequestServiceOfCloudDBAResponse{
 		BaseResponse: &responses.BaseResponse{},

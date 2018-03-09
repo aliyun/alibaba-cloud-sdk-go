@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeWebLogPage api with *DescribeWebLogPageRequest synchronously
+// DescribeWebLogPage invokes the ddospro.DescribeWebLogPage API synchronously
 // api document: https://help.aliyun.com/api/ddospro/describeweblogpage.html
 func (client *Client) DescribeWebLogPage(request *DescribeWebLogPageRequest) (response *DescribeWebLogPageResponse, err error) {
 	response = CreateDescribeWebLogPageResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeWebLogPage(request *DescribeWebLogPageRequest) (re
 	return
 }
 
-// invoke DescribeWebLogPage api with *DescribeWebLogPageRequest asynchronously
+// DescribeWebLogPageWithChan invokes the ddospro.DescribeWebLogPage API asynchronously
 // api document: https://help.aliyun.com/api/ddospro/describeweblogpage.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeWebLogPageWithChan(request *DescribeWebLogPageRequest) (<-chan *DescribeWebLogPageResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeWebLogPageWithChan(request *DescribeWebLogPageRequ
 	return responseChan, errChan
 }
 
-// invoke DescribeWebLogPage api with *DescribeWebLogPageRequest asynchronously
+// DescribeWebLogPageWithCallback invokes the ddospro.DescribeWebLogPage API asynchronously
 // api document: https://help.aliyun.com/api/ddospro/describeweblogpage.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeWebLogPageWithCallback(request *DescribeWebLogPageRequest, callback func(response *DescribeWebLogPageResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeWebLogPageWithCallback(request *DescribeWebLogPage
 	return result
 }
 
+// DescribeWebLogPageRequest is the request struct for api DescribeWebLogPage
 type DescribeWebLogPageRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
@@ -83,6 +84,7 @@ type DescribeWebLogPageRequest struct {
 	CurrentPage     requests.Integer `position:"Query" name:"CurrentPage"`
 }
 
+// DescribeWebLogPageResponse is the response struct for api DescribeWebLogPage
 type DescribeWebLogPageResponse struct {
 	*responses.BaseResponse
 	RequestId  string   `json:"RequestId" xml:"RequestId"`
@@ -90,8 +92,8 @@ type DescribeWebLogPageResponse struct {
 	WebLogList []WebLog `json:"WebLogList" xml:"WebLogList"`
 }
 
-// create a request to invoke DescribeWebLogPage API
-func CreateDescribeWebLogPageRequest() (request *DescribeWebLogPageRequest) {
+// CreateDescribeWebLogPageRequest creates a request to invoke DescribeWebLogPage API
+func CreateDescribeWebLogPageRequest(request *DescribeWebLogPageRequest) {
 	request = &DescribeWebLogPageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateDescribeWebLogPageRequest() (request *DescribeWebLogPageRequest) {
 	return
 }
 
-// create a response to parse from DescribeWebLogPage response
+// CreateDescribeWebLogPageResponse creates a response to parse from DescribeWebLogPage response
 func CreateDescribeWebLogPageResponse() (response *DescribeWebLogPageResponse) {
 	response = &DescribeWebLogPageResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteGroup api with *DeleteGroupRequest synchronously
+// DeleteGroup invokes the ram.DeleteGroup API synchronously
 // api document: https://help.aliyun.com/api/ram/deletegroup.html
 func (client *Client) DeleteGroup(request *DeleteGroupRequest) (response *DeleteGroupResponse, err error) {
 	response = CreateDeleteGroupResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteGroup(request *DeleteGroupRequest) (response *Delete
 	return
 }
 
-// invoke DeleteGroup api with *DeleteGroupRequest asynchronously
+// DeleteGroupWithChan invokes the ram.DeleteGroup API asynchronously
 // api document: https://help.aliyun.com/api/ram/deletegroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteGroupWithChan(request *DeleteGroupRequest) (<-chan *DeleteGroupResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteGroupWithChan(request *DeleteGroupRequest) (<-chan *
 	return responseChan, errChan
 }
 
-// invoke DeleteGroup api with *DeleteGroupRequest asynchronously
+// DeleteGroupWithCallback invokes the ram.DeleteGroup API asynchronously
 // api document: https://help.aliyun.com/api/ram/deletegroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteGroupWithCallback(request *DeleteGroupRequest, callback func(response *DeleteGroupResponse, err error)) <-chan int {
@@ -73,18 +73,20 @@ func (client *Client) DeleteGroupWithCallback(request *DeleteGroupRequest, callb
 	return result
 }
 
+// DeleteGroupRequest is the request struct for api DeleteGroup
 type DeleteGroupRequest struct {
 	*requests.RpcRequest
 	GroupName string `position:"Query" name:"GroupName"`
 }
 
+// DeleteGroupResponse is the response struct for api DeleteGroup
 type DeleteGroupResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DeleteGroup API
-func CreateDeleteGroupRequest() (request *DeleteGroupRequest) {
+// CreateDeleteGroupRequest creates a request to invoke DeleteGroup API
+func CreateDeleteGroupRequest(request *DeleteGroupRequest) {
 	request = &DeleteGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -92,7 +94,7 @@ func CreateDeleteGroupRequest() (request *DeleteGroupRequest) {
 	return
 }
 
-// create a response to parse from DeleteGroup response
+// CreateDeleteGroupResponse creates a response to parse from DeleteGroup response
 func CreateDeleteGroupResponse() (response *DeleteGroupResponse) {
 	response = &DeleteGroupResponse{
 		BaseResponse: &responses.BaseResponse{},

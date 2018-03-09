@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteLoadBalancerListener api with *DeleteLoadBalancerListenerRequest synchronously
+// DeleteLoadBalancerListener invokes the slb.DeleteLoadBalancerListener API synchronously
 // api document: https://help.aliyun.com/api/slb/deleteloadbalancerlistener.html
 func (client *Client) DeleteLoadBalancerListener(request *DeleteLoadBalancerListenerRequest) (response *DeleteLoadBalancerListenerResponse, err error) {
 	response = CreateDeleteLoadBalancerListenerResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteLoadBalancerListener(request *DeleteLoadBalancerList
 	return
 }
 
-// invoke DeleteLoadBalancerListener api with *DeleteLoadBalancerListenerRequest asynchronously
+// DeleteLoadBalancerListenerWithChan invokes the slb.DeleteLoadBalancerListener API asynchronously
 // api document: https://help.aliyun.com/api/slb/deleteloadbalancerlistener.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteLoadBalancerListenerWithChan(request *DeleteLoadBalancerListenerRequest) (<-chan *DeleteLoadBalancerListenerResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteLoadBalancerListenerWithChan(request *DeleteLoadBala
 	return responseChan, errChan
 }
 
-// invoke DeleteLoadBalancerListener api with *DeleteLoadBalancerListenerRequest asynchronously
+// DeleteLoadBalancerListenerWithCallback invokes the slb.DeleteLoadBalancerListener API asynchronously
 // api document: https://help.aliyun.com/api/slb/deleteloadbalancerlistener.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteLoadBalancerListenerWithCallback(request *DeleteLoadBalancerListenerRequest, callback func(response *DeleteLoadBalancerListenerResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DeleteLoadBalancerListenerWithCallback(request *DeleteLoad
 	return result
 }
 
+// DeleteLoadBalancerListenerRequest is the request struct for api DeleteLoadBalancerListener
 type DeleteLoadBalancerListenerRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -85,13 +86,14 @@ type DeleteLoadBalancerListenerRequest struct {
 	Tags                 string           `position:"Query" name:"Tags"`
 }
 
+// DeleteLoadBalancerListenerResponse is the response struct for api DeleteLoadBalancerListener
 type DeleteLoadBalancerListenerResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DeleteLoadBalancerListener API
-func CreateDeleteLoadBalancerListenerRequest() (request *DeleteLoadBalancerListenerRequest) {
+// CreateDeleteLoadBalancerListenerRequest creates a request to invoke DeleteLoadBalancerListener API
+func CreateDeleteLoadBalancerListenerRequest(request *DeleteLoadBalancerListenerRequest) {
 	request = &DeleteLoadBalancerListenerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateDeleteLoadBalancerListenerRequest() (request *DeleteLoadBalancerListe
 	return
 }
 
-// create a response to parse from DeleteLoadBalancerListener response
+// CreateDeleteLoadBalancerListenerResponse creates a response to parse from DeleteLoadBalancerListener response
 func CreateDeleteLoadBalancerListenerResponse() (response *DeleteLoadBalancerListenerResponse) {
 	response = &DeleteLoadBalancerListenerResponse{
 		BaseResponse: &responses.BaseResponse{},

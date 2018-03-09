@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SearchMediaWorkflow api with *SearchMediaWorkflowRequest synchronously
+// SearchMediaWorkflow invokes the mts.SearchMediaWorkflow API synchronously
 // api document: https://help.aliyun.com/api/mts/searchmediaworkflow.html
 func (client *Client) SearchMediaWorkflow(request *SearchMediaWorkflowRequest) (response *SearchMediaWorkflowResponse, err error) {
 	response = CreateSearchMediaWorkflowResponse()
@@ -28,7 +28,7 @@ func (client *Client) SearchMediaWorkflow(request *SearchMediaWorkflowRequest) (
 	return
 }
 
-// invoke SearchMediaWorkflow api with *SearchMediaWorkflowRequest asynchronously
+// SearchMediaWorkflowWithChan invokes the mts.SearchMediaWorkflow API asynchronously
 // api document: https://help.aliyun.com/api/mts/searchmediaworkflow.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SearchMediaWorkflowWithChan(request *SearchMediaWorkflowRequest) (<-chan *SearchMediaWorkflowResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SearchMediaWorkflowWithChan(request *SearchMediaWorkflowRe
 	return responseChan, errChan
 }
 
-// invoke SearchMediaWorkflow api with *SearchMediaWorkflowRequest asynchronously
+// SearchMediaWorkflowWithCallback invokes the mts.SearchMediaWorkflow API asynchronously
 // api document: https://help.aliyun.com/api/mts/searchmediaworkflow.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SearchMediaWorkflowWithCallback(request *SearchMediaWorkflowRequest, callback func(response *SearchMediaWorkflowResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SearchMediaWorkflowWithCallback(request *SearchMediaWorkfl
 	return result
 }
 
+// SearchMediaWorkflowRequest is the request struct for api SearchMediaWorkflow
 type SearchMediaWorkflowRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,6 +85,7 @@ type SearchMediaWorkflowRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// SearchMediaWorkflowResponse is the response struct for api SearchMediaWorkflow
 type SearchMediaWorkflowResponse struct {
 	*responses.BaseResponse
 	RequestId         string                                 `json:"RequestId" xml:"RequestId"`
@@ -93,8 +95,8 @@ type SearchMediaWorkflowResponse struct {
 	MediaWorkflowList MediaWorkflowListInSearchMediaWorkflow `json:"MediaWorkflowList" xml:"MediaWorkflowList"`
 }
 
-// create a request to invoke SearchMediaWorkflow API
-func CreateSearchMediaWorkflowRequest() (request *SearchMediaWorkflowRequest) {
+// CreateSearchMediaWorkflowRequest creates a request to invoke SearchMediaWorkflow API
+func CreateSearchMediaWorkflowRequest(request *SearchMediaWorkflowRequest) {
 	request = &SearchMediaWorkflowRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -102,7 +104,7 @@ func CreateSearchMediaWorkflowRequest() (request *SearchMediaWorkflowRequest) {
 	return
 }
 
-// create a response to parse from SearchMediaWorkflow response
+// CreateSearchMediaWorkflowResponse creates a response to parse from SearchMediaWorkflow response
 func CreateSearchMediaWorkflowResponse() (response *SearchMediaWorkflowResponse) {
 	response = &SearchMediaWorkflowResponse{
 		BaseResponse: &responses.BaseResponse{},

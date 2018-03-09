@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SendTestByTemplate api with *SendTestByTemplateRequest synchronously
+// SendTestByTemplate invokes the dm.SendTestByTemplate API synchronously
 // api document: https://help.aliyun.com/api/dm/sendtestbytemplate.html
 func (client *Client) SendTestByTemplate(request *SendTestByTemplateRequest) (response *SendTestByTemplateResponse, err error) {
 	response = CreateSendTestByTemplateResponse()
@@ -28,7 +28,7 @@ func (client *Client) SendTestByTemplate(request *SendTestByTemplateRequest) (re
 	return
 }
 
-// invoke SendTestByTemplate api with *SendTestByTemplateRequest asynchronously
+// SendTestByTemplateWithChan invokes the dm.SendTestByTemplate API asynchronously
 // api document: https://help.aliyun.com/api/dm/sendtestbytemplate.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SendTestByTemplateWithChan(request *SendTestByTemplateRequest) (<-chan *SendTestByTemplateResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SendTestByTemplateWithChan(request *SendTestByTemplateRequ
 	return responseChan, errChan
 }
 
-// invoke SendTestByTemplate api with *SendTestByTemplateRequest asynchronously
+// SendTestByTemplateWithCallback invokes the dm.SendTestByTemplate API asynchronously
 // api document: https://help.aliyun.com/api/dm/sendtestbytemplate.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SendTestByTemplateWithCallback(request *SendTestByTemplateRequest, callback func(response *SendTestByTemplateResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SendTestByTemplateWithCallback(request *SendTestByTemplate
 	return result
 }
 
+// SendTestByTemplateRequest is the request struct for api SendTestByTemplate
 type SendTestByTemplateRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -88,13 +89,14 @@ type SendTestByTemplateRequest struct {
 	Email                string           `position:"Query" name:"Email"`
 }
 
+// SendTestByTemplateResponse is the response struct for api SendTestByTemplate
 type SendTestByTemplateResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke SendTestByTemplate API
-func CreateSendTestByTemplateRequest() (request *SendTestByTemplateRequest) {
+// CreateSendTestByTemplateRequest creates a request to invoke SendTestByTemplate API
+func CreateSendTestByTemplateRequest(request *SendTestByTemplateRequest) {
 	request = &SendTestByTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -102,7 +104,7 @@ func CreateSendTestByTemplateRequest() (request *SendTestByTemplateRequest) {
 	return
 }
 
-// create a response to parse from SendTestByTemplate response
+// CreateSendTestByTemplateResponse creates a response to parse from SendTestByTemplate response
 func CreateSendTestByTemplateResponse() (response *SendTestByTemplateResponse) {
 	response = &SendTestByTemplateResponse{
 		BaseResponse: &responses.BaseResponse{},

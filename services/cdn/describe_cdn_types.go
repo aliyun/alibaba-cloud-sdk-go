@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeCdnTypes api with *DescribeCdnTypesRequest synchronously
+// DescribeCdnTypes invokes the cdn.DescribeCdnTypes API synchronously
 // api document: https://help.aliyun.com/api/cdn/describecdntypes.html
 func (client *Client) DescribeCdnTypes(request *DescribeCdnTypesRequest) (response *DescribeCdnTypesResponse, err error) {
 	response = CreateDescribeCdnTypesResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeCdnTypes(request *DescribeCdnTypesRequest) (respon
 	return
 }
 
-// invoke DescribeCdnTypes api with *DescribeCdnTypesRequest asynchronously
+// DescribeCdnTypesWithChan invokes the cdn.DescribeCdnTypes API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describecdntypes.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCdnTypesWithChan(request *DescribeCdnTypesRequest) (<-chan *DescribeCdnTypesResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeCdnTypesWithChan(request *DescribeCdnTypesRequest)
 	return responseChan, errChan
 }
 
-// invoke DescribeCdnTypes api with *DescribeCdnTypesRequest asynchronously
+// DescribeCdnTypesWithCallback invokes the cdn.DescribeCdnTypes API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describecdntypes.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCdnTypesWithCallback(request *DescribeCdnTypesRequest, callback func(response *DescribeCdnTypesResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeCdnTypesWithCallback(request *DescribeCdnTypesRequ
 	return result
 }
 
+// DescribeCdnTypesRequest is the request struct for api DescribeCdnTypes
 type DescribeCdnTypesRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -80,14 +81,15 @@ type DescribeCdnTypesRequest struct {
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
+// DescribeCdnTypesResponse is the response struct for api DescribeCdnTypes
 type DescribeCdnTypesResponse struct {
 	*responses.BaseResponse
 	RequestId string   `json:"RequestId" xml:"RequestId"`
 	CdnTypes  CdnTypes `json:"CdnTypes" xml:"CdnTypes"`
 }
 
-// create a request to invoke DescribeCdnTypes API
-func CreateDescribeCdnTypesRequest() (request *DescribeCdnTypesRequest) {
+// CreateDescribeCdnTypesRequest creates a request to invoke DescribeCdnTypes API
+func CreateDescribeCdnTypesRequest(request *DescribeCdnTypesRequest) {
 	request = &DescribeCdnTypesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateDescribeCdnTypesRequest() (request *DescribeCdnTypesRequest) {
 	return
 }
 
-// create a response to parse from DescribeCdnTypes response
+// CreateDescribeCdnTypesResponse creates a response to parse from DescribeCdnTypes response
 func CreateDescribeCdnTypesResponse() (response *DescribeCdnTypesResponse) {
 	response = &DescribeCdnTypesResponse{
 		BaseResponse: &responses.BaseResponse{},

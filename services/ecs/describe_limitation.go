@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeLimitation api with *DescribeLimitationRequest synchronously
+// DescribeLimitation invokes the ecs.DescribeLimitation API synchronously
 // api document: https://help.aliyun.com/api/ecs/describelimitation.html
 func (client *Client) DescribeLimitation(request *DescribeLimitationRequest) (response *DescribeLimitationResponse, err error) {
 	response = CreateDescribeLimitationResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeLimitation(request *DescribeLimitationRequest) (re
 	return
 }
 
-// invoke DescribeLimitation api with *DescribeLimitationRequest asynchronously
+// DescribeLimitationWithChan invokes the ecs.DescribeLimitation API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describelimitation.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLimitationWithChan(request *DescribeLimitationRequest) (<-chan *DescribeLimitationResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeLimitationWithChan(request *DescribeLimitationRequ
 	return responseChan, errChan
 }
 
-// invoke DescribeLimitation api with *DescribeLimitationRequest asynchronously
+// DescribeLimitationWithCallback invokes the ecs.DescribeLimitation API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describelimitation.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLimitationWithCallback(request *DescribeLimitationRequest, callback func(response *DescribeLimitationResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeLimitationWithCallback(request *DescribeLimitation
 	return result
 }
 
+// DescribeLimitationRequest is the request struct for api DescribeLimitation
 type DescribeLimitationRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,6 +83,7 @@ type DescribeLimitationRequest struct {
 	Limitation           string           `position:"Query" name:"Limitation"`
 }
 
+// DescribeLimitationResponse is the response struct for api DescribeLimitation
 type DescribeLimitationResponse struct {
 	*responses.BaseResponse
 	RequestId  string `json:"RequestId" xml:"RequestId"`
@@ -89,8 +91,8 @@ type DescribeLimitationResponse struct {
 	Value      string `json:"Value" xml:"Value"`
 }
 
-// create a request to invoke DescribeLimitation API
-func CreateDescribeLimitationRequest() (request *DescribeLimitationRequest) {
+// CreateDescribeLimitationRequest creates a request to invoke DescribeLimitation API
+func CreateDescribeLimitationRequest(request *DescribeLimitationRequest) {
 	request = &DescribeLimitationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateDescribeLimitationRequest() (request *DescribeLimitationRequest) {
 	return
 }
 
-// create a response to parse from DescribeLimitation response
+// CreateDescribeLimitationResponse creates a response to parse from DescribeLimitation response
 func CreateDescribeLimitationResponse() (response *DescribeLimitationResponse) {
 	response = &DescribeLimitationResponse{
 		BaseResponse: &responses.BaseResponse{},

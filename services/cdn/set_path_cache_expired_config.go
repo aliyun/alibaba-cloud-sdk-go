@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SetPathCacheExpiredConfig api with *SetPathCacheExpiredConfigRequest synchronously
+// SetPathCacheExpiredConfig invokes the cdn.SetPathCacheExpiredConfig API synchronously
 // api document: https://help.aliyun.com/api/cdn/setpathcacheexpiredconfig.html
 func (client *Client) SetPathCacheExpiredConfig(request *SetPathCacheExpiredConfigRequest) (response *SetPathCacheExpiredConfigResponse, err error) {
 	response = CreateSetPathCacheExpiredConfigResponse()
@@ -28,7 +28,7 @@ func (client *Client) SetPathCacheExpiredConfig(request *SetPathCacheExpiredConf
 	return
 }
 
-// invoke SetPathCacheExpiredConfig api with *SetPathCacheExpiredConfigRequest asynchronously
+// SetPathCacheExpiredConfigWithChan invokes the cdn.SetPathCacheExpiredConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/setpathcacheexpiredconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetPathCacheExpiredConfigWithChan(request *SetPathCacheExpiredConfigRequest) (<-chan *SetPathCacheExpiredConfigResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SetPathCacheExpiredConfigWithChan(request *SetPathCacheExp
 	return responseChan, errChan
 }
 
-// invoke SetPathCacheExpiredConfig api with *SetPathCacheExpiredConfigRequest asynchronously
+// SetPathCacheExpiredConfigWithCallback invokes the cdn.SetPathCacheExpiredConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/setpathcacheexpiredconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetPathCacheExpiredConfigWithCallback(request *SetPathCacheExpiredConfigRequest, callback func(response *SetPathCacheExpiredConfigResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SetPathCacheExpiredConfigWithCallback(request *SetPathCach
 	return result
 }
 
+// SetPathCacheExpiredConfigRequest is the request struct for api SetPathCacheExpiredConfig
 type SetPathCacheExpiredConfigRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -83,13 +84,14 @@ type SetPathCacheExpiredConfigRequest struct {
 	Weight        string           `position:"Query" name:"Weight"`
 }
 
+// SetPathCacheExpiredConfigResponse is the response struct for api SetPathCacheExpiredConfig
 type SetPathCacheExpiredConfigResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke SetPathCacheExpiredConfig API
-func CreateSetPathCacheExpiredConfigRequest() (request *SetPathCacheExpiredConfigRequest) {
+// CreateSetPathCacheExpiredConfigRequest creates a request to invoke SetPathCacheExpiredConfig API
+func CreateSetPathCacheExpiredConfigRequest(request *SetPathCacheExpiredConfigRequest) {
 	request = &SetPathCacheExpiredConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateSetPathCacheExpiredConfigRequest() (request *SetPathCacheExpiredConfi
 	return
 }
 
-// create a response to parse from SetPathCacheExpiredConfig response
+// CreateSetPathCacheExpiredConfigResponse creates a response to parse from SetPathCacheExpiredConfig response
 func CreateSetPathCacheExpiredConfigResponse() (response *SetPathCacheExpiredConfigResponse) {
 	response = &SetPathCacheExpiredConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

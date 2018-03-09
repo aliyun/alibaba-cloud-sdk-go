@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DetachNetworkInterface api with *DetachNetworkInterfaceRequest synchronously
+// DetachNetworkInterface invokes the ecs.DetachNetworkInterface API synchronously
 // api document: https://help.aliyun.com/api/ecs/detachnetworkinterface.html
 func (client *Client) DetachNetworkInterface(request *DetachNetworkInterfaceRequest) (response *DetachNetworkInterfaceResponse, err error) {
 	response = CreateDetachNetworkInterfaceResponse()
@@ -28,7 +28,7 @@ func (client *Client) DetachNetworkInterface(request *DetachNetworkInterfaceRequ
 	return
 }
 
-// invoke DetachNetworkInterface api with *DetachNetworkInterfaceRequest asynchronously
+// DetachNetworkInterfaceWithChan invokes the ecs.DetachNetworkInterface API asynchronously
 // api document: https://help.aliyun.com/api/ecs/detachnetworkinterface.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetachNetworkInterfaceWithChan(request *DetachNetworkInterfaceRequest) (<-chan *DetachNetworkInterfaceResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DetachNetworkInterfaceWithChan(request *DetachNetworkInter
 	return responseChan, errChan
 }
 
-// invoke DetachNetworkInterface api with *DetachNetworkInterfaceRequest asynchronously
+// DetachNetworkInterfaceWithCallback invokes the ecs.DetachNetworkInterface API asynchronously
 // api document: https://help.aliyun.com/api/ecs/detachnetworkinterface.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetachNetworkInterfaceWithCallback(request *DetachNetworkInterfaceRequest, callback func(response *DetachNetworkInterfaceResponse, err error)) <-chan int {
@@ -73,17 +73,19 @@ func (client *Client) DetachNetworkInterfaceWithCallback(request *DetachNetworkI
 	return result
 }
 
+// DetachNetworkInterfaceRequest is the request struct for api DetachNetworkInterface
 type DetachNetworkInterfaceRequest struct {
 	*requests.RpcRequest
 }
 
+// DetachNetworkInterfaceResponse is the response struct for api DetachNetworkInterface
 type DetachNetworkInterfaceResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DetachNetworkInterface API
-func CreateDetachNetworkInterfaceRequest() (request *DetachNetworkInterfaceRequest) {
+// CreateDetachNetworkInterfaceRequest creates a request to invoke DetachNetworkInterface API
+func CreateDetachNetworkInterfaceRequest(request *DetachNetworkInterfaceRequest) {
 	request = &DetachNetworkInterfaceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -91,7 +93,7 @@ func CreateDetachNetworkInterfaceRequest() (request *DetachNetworkInterfaceReque
 	return
 }
 
-// create a response to parse from DetachNetworkInterface response
+// CreateDetachNetworkInterfaceResponse creates a response to parse from DetachNetworkInterface response
 func CreateDetachNetworkInterfaceResponse() (response *DetachNetworkInterfaceResponse) {
 	response = &DetachNetworkInterfaceResponse{
 		BaseResponse: &responses.BaseResponse{},

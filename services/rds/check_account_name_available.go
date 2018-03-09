@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CheckAccountNameAvailable api with *CheckAccountNameAvailableRequest synchronously
+// CheckAccountNameAvailable invokes the rds.CheckAccountNameAvailable API synchronously
 // api document: https://help.aliyun.com/api/rds/checkaccountnameavailable.html
 func (client *Client) CheckAccountNameAvailable(request *CheckAccountNameAvailableRequest) (response *CheckAccountNameAvailableResponse, err error) {
 	response = CreateCheckAccountNameAvailableResponse()
@@ -28,7 +28,7 @@ func (client *Client) CheckAccountNameAvailable(request *CheckAccountNameAvailab
 	return
 }
 
-// invoke CheckAccountNameAvailable api with *CheckAccountNameAvailableRequest asynchronously
+// CheckAccountNameAvailableWithChan invokes the rds.CheckAccountNameAvailable API asynchronously
 // api document: https://help.aliyun.com/api/rds/checkaccountnameavailable.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckAccountNameAvailableWithChan(request *CheckAccountNameAvailableRequest) (<-chan *CheckAccountNameAvailableResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CheckAccountNameAvailableWithChan(request *CheckAccountNam
 	return responseChan, errChan
 }
 
-// invoke CheckAccountNameAvailable api with *CheckAccountNameAvailableRequest asynchronously
+// CheckAccountNameAvailableWithCallback invokes the rds.CheckAccountNameAvailable API asynchronously
 // api document: https://help.aliyun.com/api/rds/checkaccountnameavailable.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckAccountNameAvailableWithCallback(request *CheckAccountNameAvailableRequest, callback func(response *CheckAccountNameAvailableResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) CheckAccountNameAvailableWithCallback(request *CheckAccoun
 	return result
 }
 
+// CheckAccountNameAvailableRequest is the request struct for api CheckAccountNameAvailable
 type CheckAccountNameAvailableRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,13 +85,14 @@ type CheckAccountNameAvailableRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// CheckAccountNameAvailableResponse is the response struct for api CheckAccountNameAvailable
 type CheckAccountNameAvailableResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke CheckAccountNameAvailable API
-func CreateCheckAccountNameAvailableRequest() (request *CheckAccountNameAvailableRequest) {
+// CreateCheckAccountNameAvailableRequest creates a request to invoke CheckAccountNameAvailable API
+func CreateCheckAccountNameAvailableRequest(request *CheckAccountNameAvailableRequest) {
 	request = &CheckAccountNameAvailableRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateCheckAccountNameAvailableRequest() (request *CheckAccountNameAvailabl
 	return
 }
 
-// create a response to parse from CheckAccountNameAvailable response
+// CreateCheckAccountNameAvailableResponse creates a response to parse from CheckAccountNameAvailable response
 func CreateCheckAccountNameAvailableResponse() (response *CheckAccountNameAvailableResponse) {
 	response = &CheckAccountNameAvailableResponse{
 		BaseResponse: &responses.BaseResponse{},

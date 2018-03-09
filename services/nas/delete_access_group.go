@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteAccessGroup api with *DeleteAccessGroupRequest synchronously
+// DeleteAccessGroup invokes the nas.DeleteAccessGroup API synchronously
 // api document: https://help.aliyun.com/api/nas/deleteaccessgroup.html
 func (client *Client) DeleteAccessGroup(request *DeleteAccessGroupRequest) (response *DeleteAccessGroupResponse, err error) {
 	response = CreateDeleteAccessGroupResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteAccessGroup(request *DeleteAccessGroupRequest) (resp
 	return
 }
 
-// invoke DeleteAccessGroup api with *DeleteAccessGroupRequest asynchronously
+// DeleteAccessGroupWithChan invokes the nas.DeleteAccessGroup API asynchronously
 // api document: https://help.aliyun.com/api/nas/deleteaccessgroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteAccessGroupWithChan(request *DeleteAccessGroupRequest) (<-chan *DeleteAccessGroupResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteAccessGroupWithChan(request *DeleteAccessGroupReques
 	return responseChan, errChan
 }
 
-// invoke DeleteAccessGroup api with *DeleteAccessGroupRequest asynchronously
+// DeleteAccessGroupWithCallback invokes the nas.DeleteAccessGroup API asynchronously
 // api document: https://help.aliyun.com/api/nas/deleteaccessgroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteAccessGroupWithCallback(request *DeleteAccessGroupRequest, callback func(response *DeleteAccessGroupResponse, err error)) <-chan int {
@@ -73,18 +73,20 @@ func (client *Client) DeleteAccessGroupWithCallback(request *DeleteAccessGroupRe
 	return result
 }
 
+// DeleteAccessGroupRequest is the request struct for api DeleteAccessGroup
 type DeleteAccessGroupRequest struct {
 	*requests.RpcRequest
 	AccessGroupName string `position:"Query" name:"AccessGroupName"`
 }
 
+// DeleteAccessGroupResponse is the response struct for api DeleteAccessGroup
 type DeleteAccessGroupResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DeleteAccessGroup API
-func CreateDeleteAccessGroupRequest() (request *DeleteAccessGroupRequest) {
+// CreateDeleteAccessGroupRequest creates a request to invoke DeleteAccessGroup API
+func CreateDeleteAccessGroupRequest(request *DeleteAccessGroupRequest) {
 	request = &DeleteAccessGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -92,7 +94,7 @@ func CreateDeleteAccessGroupRequest() (request *DeleteAccessGroupRequest) {
 	return
 }
 
-// create a response to parse from DeleteAccessGroup response
+// CreateDeleteAccessGroupResponse creates a response to parse from DeleteAccessGroup response
 func CreateDeleteAccessGroupResponse() (response *DeleteAccessGroupResponse) {
 	response = &DeleteAccessGroupResponse{
 		BaseResponse: &responses.BaseResponse{},

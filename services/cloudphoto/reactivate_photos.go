@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ReactivatePhotos api with *ReactivatePhotosRequest synchronously
+// ReactivatePhotos invokes the cloudphoto.ReactivatePhotos API synchronously
 // api document: https://help.aliyun.com/api/cloudphoto/reactivatephotos.html
 func (client *Client) ReactivatePhotos(request *ReactivatePhotosRequest) (response *ReactivatePhotosResponse, err error) {
 	response = CreateReactivatePhotosResponse()
@@ -28,7 +28,7 @@ func (client *Client) ReactivatePhotos(request *ReactivatePhotosRequest) (respon
 	return
 }
 
-// invoke ReactivatePhotos api with *ReactivatePhotosRequest asynchronously
+// ReactivatePhotosWithChan invokes the cloudphoto.ReactivatePhotos API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/reactivatephotos.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReactivatePhotosWithChan(request *ReactivatePhotosRequest) (<-chan *ReactivatePhotosResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ReactivatePhotosWithChan(request *ReactivatePhotosRequest)
 	return responseChan, errChan
 }
 
-// invoke ReactivatePhotos api with *ReactivatePhotosRequest asynchronously
+// ReactivatePhotosWithCallback invokes the cloudphoto.ReactivatePhotos API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/reactivatephotos.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReactivatePhotosWithCallback(request *ReactivatePhotosRequest, callback func(response *ReactivatePhotosResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ReactivatePhotosWithCallback(request *ReactivatePhotosRequ
 	return result
 }
 
+// ReactivatePhotosRequest is the request struct for api ReactivatePhotos
 type ReactivatePhotosRequest struct {
 	*requests.RpcRequest
 	PhotoId   *[]string `position:"Query" name:"PhotoId"  type:"Repeated"`
@@ -80,6 +81,7 @@ type ReactivatePhotosRequest struct {
 	LibraryId string    `position:"Query" name:"LibraryId"`
 }
 
+// ReactivatePhotosResponse is the response struct for api ReactivatePhotos
 type ReactivatePhotosResponse struct {
 	*responses.BaseResponse
 	Code      string   `json:"Code" xml:"Code"`
@@ -89,8 +91,8 @@ type ReactivatePhotosResponse struct {
 	Results   []Result `json:"Results" xml:"Results"`
 }
 
-// create a request to invoke ReactivatePhotos API
-func CreateReactivatePhotosRequest() (request *ReactivatePhotosRequest) {
+// CreateReactivatePhotosRequest creates a request to invoke ReactivatePhotos API
+func CreateReactivatePhotosRequest(request *ReactivatePhotosRequest) {
 	request = &ReactivatePhotosRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateReactivatePhotosRequest() (request *ReactivatePhotosRequest) {
 	return
 }
 
-// create a response to parse from ReactivatePhotos response
+// CreateReactivatePhotosResponse creates a response to parse from ReactivatePhotos response
 func CreateReactivatePhotosResponse() (response *ReactivatePhotosResponse) {
 	response = &ReactivatePhotosResponse{
 		BaseResponse: &responses.BaseResponse{},

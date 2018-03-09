@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ListVolumes api with *ListVolumesRequest synchronously
+// ListVolumes invokes the ehpc.ListVolumes API synchronously
 // api document: https://help.aliyun.com/api/ehpc/listvolumes.html
 func (client *Client) ListVolumes(request *ListVolumesRequest) (response *ListVolumesResponse, err error) {
 	response = CreateListVolumesResponse()
@@ -28,7 +28,7 @@ func (client *Client) ListVolumes(request *ListVolumesRequest) (response *ListVo
 	return
 }
 
-// invoke ListVolumes api with *ListVolumesRequest asynchronously
+// ListVolumesWithChan invokes the ehpc.ListVolumes API asynchronously
 // api document: https://help.aliyun.com/api/ehpc/listvolumes.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListVolumesWithChan(request *ListVolumesRequest) (<-chan *ListVolumesResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ListVolumesWithChan(request *ListVolumesRequest) (<-chan *
 	return responseChan, errChan
 }
 
-// invoke ListVolumes api with *ListVolumesRequest asynchronously
+// ListVolumesWithCallback invokes the ehpc.ListVolumes API asynchronously
 // api document: https://help.aliyun.com/api/ehpc/listvolumes.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListVolumesWithCallback(request *ListVolumesRequest, callback func(response *ListVolumesResponse, err error)) <-chan int {
@@ -73,12 +73,14 @@ func (client *Client) ListVolumesWithCallback(request *ListVolumesRequest, callb
 	return result
 }
 
+// ListVolumesRequest is the request struct for api ListVolumes
 type ListVolumesRequest struct {
 	*requests.RpcRequest
 	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
 	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 }
 
+// ListVolumesResponse is the response struct for api ListVolumes
 type ListVolumesResponse struct {
 	*responses.BaseResponse
 	RequestId  string  `json:"RequestId" xml:"RequestId"`
@@ -88,8 +90,8 @@ type ListVolumesResponse struct {
 	Volumes    Volumes `json:"Volumes" xml:"Volumes"`
 }
 
-// create a request to invoke ListVolumes API
-func CreateListVolumesRequest() (request *ListVolumesRequest) {
+// CreateListVolumesRequest creates a request to invoke ListVolumes API
+func CreateListVolumesRequest(request *ListVolumesRequest) {
 	request = &ListVolumesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateListVolumesRequest() (request *ListVolumesRequest) {
 	return
 }
 
-// create a response to parse from ListVolumes response
+// CreateListVolumesResponse creates a response to parse from ListVolumes response
 func CreateListVolumesResponse() (response *ListVolumesResponse) {
 	response = &ListVolumesResponse{
 		BaseResponse: &responses.BaseResponse{},

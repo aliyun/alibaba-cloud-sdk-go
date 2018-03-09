@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ListPoliciesForUser api with *ListPoliciesForUserRequest synchronously
+// ListPoliciesForUser invokes the ram.ListPoliciesForUser API synchronously
 // api document: https://help.aliyun.com/api/ram/listpoliciesforuser.html
 func (client *Client) ListPoliciesForUser(request *ListPoliciesForUserRequest) (response *ListPoliciesForUserResponse, err error) {
 	response = CreateListPoliciesForUserResponse()
@@ -28,7 +28,7 @@ func (client *Client) ListPoliciesForUser(request *ListPoliciesForUserRequest) (
 	return
 }
 
-// invoke ListPoliciesForUser api with *ListPoliciesForUserRequest asynchronously
+// ListPoliciesForUserWithChan invokes the ram.ListPoliciesForUser API asynchronously
 // api document: https://help.aliyun.com/api/ram/listpoliciesforuser.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListPoliciesForUserWithChan(request *ListPoliciesForUserRequest) (<-chan *ListPoliciesForUserResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ListPoliciesForUserWithChan(request *ListPoliciesForUserRe
 	return responseChan, errChan
 }
 
-// invoke ListPoliciesForUser api with *ListPoliciesForUserRequest asynchronously
+// ListPoliciesForUserWithCallback invokes the ram.ListPoliciesForUser API asynchronously
 // api document: https://help.aliyun.com/api/ram/listpoliciesforuser.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListPoliciesForUserWithCallback(request *ListPoliciesForUserRequest, callback func(response *ListPoliciesForUserResponse, err error)) <-chan int {
@@ -73,19 +73,21 @@ func (client *Client) ListPoliciesForUserWithCallback(request *ListPoliciesForUs
 	return result
 }
 
+// ListPoliciesForUserRequest is the request struct for api ListPoliciesForUser
 type ListPoliciesForUserRequest struct {
 	*requests.RpcRequest
 	UserName string `position:"Query" name:"UserName"`
 }
 
+// ListPoliciesForUserResponse is the response struct for api ListPoliciesForUser
 type ListPoliciesForUserResponse struct {
 	*responses.BaseResponse
 	RequestId string                        `json:"RequestId" xml:"RequestId"`
 	Policies  PoliciesInListPoliciesForUser `json:"Policies" xml:"Policies"`
 }
 
-// create a request to invoke ListPoliciesForUser API
-func CreateListPoliciesForUserRequest() (request *ListPoliciesForUserRequest) {
+// CreateListPoliciesForUserRequest creates a request to invoke ListPoliciesForUser API
+func CreateListPoliciesForUserRequest(request *ListPoliciesForUserRequest) {
 	request = &ListPoliciesForUserRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -93,7 +95,7 @@ func CreateListPoliciesForUserRequest() (request *ListPoliciesForUserRequest) {
 	return
 }
 
-// create a response to parse from ListPoliciesForUser response
+// CreateListPoliciesForUserResponse creates a response to parse from ListPoliciesForUser response
 func CreateListPoliciesForUserResponse() (response *ListPoliciesForUserResponse) {
 	response = &ListPoliciesForUserResponse{
 		BaseResponse: &responses.BaseResponse{},

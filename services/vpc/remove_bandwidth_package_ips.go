@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke RemoveBandwidthPackageIps api with *RemoveBandwidthPackageIpsRequest synchronously
+// RemoveBandwidthPackageIps invokes the vpc.RemoveBandwidthPackageIps API synchronously
 // api document: https://help.aliyun.com/api/vpc/removebandwidthpackageips.html
 func (client *Client) RemoveBandwidthPackageIps(request *RemoveBandwidthPackageIpsRequest) (response *RemoveBandwidthPackageIpsResponse, err error) {
 	response = CreateRemoveBandwidthPackageIpsResponse()
@@ -28,7 +28,7 @@ func (client *Client) RemoveBandwidthPackageIps(request *RemoveBandwidthPackageI
 	return
 }
 
-// invoke RemoveBandwidthPackageIps api with *RemoveBandwidthPackageIpsRequest asynchronously
+// RemoveBandwidthPackageIpsWithChan invokes the vpc.RemoveBandwidthPackageIps API asynchronously
 // api document: https://help.aliyun.com/api/vpc/removebandwidthpackageips.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveBandwidthPackageIpsWithChan(request *RemoveBandwidthPackageIpsRequest) (<-chan *RemoveBandwidthPackageIpsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) RemoveBandwidthPackageIpsWithChan(request *RemoveBandwidth
 	return responseChan, errChan
 }
 
-// invoke RemoveBandwidthPackageIps api with *RemoveBandwidthPackageIpsRequest asynchronously
+// RemoveBandwidthPackageIpsWithCallback invokes the vpc.RemoveBandwidthPackageIps API asynchronously
 // api document: https://help.aliyun.com/api/vpc/removebandwidthpackageips.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveBandwidthPackageIpsWithCallback(request *RemoveBandwidthPackageIpsRequest, callback func(response *RemoveBandwidthPackageIpsResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) RemoveBandwidthPackageIpsWithCallback(request *RemoveBandw
 	return result
 }
 
+// RemoveBandwidthPackageIpsRequest is the request struct for api RemoveBandwidthPackageIps
 type RemoveBandwidthPackageIpsRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,13 +85,14 @@ type RemoveBandwidthPackageIpsRequest struct {
 	RemovedIpAddresses   *[]string        `position:"Query" name:"RemovedIpAddresses"  type:"Repeated"`
 }
 
+// RemoveBandwidthPackageIpsResponse is the response struct for api RemoveBandwidthPackageIps
 type RemoveBandwidthPackageIpsResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke RemoveBandwidthPackageIps API
-func CreateRemoveBandwidthPackageIpsRequest() (request *RemoveBandwidthPackageIpsRequest) {
+// CreateRemoveBandwidthPackageIpsRequest creates a request to invoke RemoveBandwidthPackageIps API
+func CreateRemoveBandwidthPackageIpsRequest(request *RemoveBandwidthPackageIpsRequest) {
 	request = &RemoveBandwidthPackageIpsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateRemoveBandwidthPackageIpsRequest() (request *RemoveBandwidthPackageIp
 	return
 }
 
-// create a response to parse from RemoveBandwidthPackageIps response
+// CreateRemoveBandwidthPackageIpsResponse creates a response to parse from RemoveBandwidthPackageIps response
 func CreateRemoveBandwidthPackageIpsResponse() (response *RemoveBandwidthPackageIpsResponse) {
 	response = &RemoveBandwidthPackageIpsResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ListMoments api with *ListMomentsRequest synchronously
+// ListMoments invokes the cloudphoto.ListMoments API synchronously
 // api document: https://help.aliyun.com/api/cloudphoto/listmoments.html
 func (client *Client) ListMoments(request *ListMomentsRequest) (response *ListMomentsResponse, err error) {
 	response = CreateListMomentsResponse()
@@ -28,7 +28,7 @@ func (client *Client) ListMoments(request *ListMomentsRequest) (response *ListMo
 	return
 }
 
-// invoke ListMoments api with *ListMomentsRequest asynchronously
+// ListMomentsWithChan invokes the cloudphoto.ListMoments API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/listmoments.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListMomentsWithChan(request *ListMomentsRequest) (<-chan *ListMomentsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ListMomentsWithChan(request *ListMomentsRequest) (<-chan *
 	return responseChan, errChan
 }
 
-// invoke ListMoments api with *ListMomentsRequest asynchronously
+// ListMomentsWithCallback invokes the cloudphoto.ListMoments API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/listmoments.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListMomentsWithCallback(request *ListMomentsRequest, callback func(response *ListMomentsResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ListMomentsWithCallback(request *ListMomentsRequest, callb
 	return result
 }
 
+// ListMomentsRequest is the request struct for api ListMoments
 type ListMomentsRequest struct {
 	*requests.RpcRequest
 	Direction string           `position:"Query" name:"Direction"`
@@ -83,6 +84,7 @@ type ListMomentsRequest struct {
 	LibraryId string           `position:"Query" name:"LibraryId"`
 }
 
+// ListMomentsResponse is the response struct for api ListMoments
 type ListMomentsResponse struct {
 	*responses.BaseResponse
 	Code       string   `json:"Code" xml:"Code"`
@@ -94,8 +96,8 @@ type ListMomentsResponse struct {
 	Moments    []Moment `json:"Moments" xml:"Moments"`
 }
 
-// create a request to invoke ListMoments API
-func CreateListMomentsRequest() (request *ListMomentsRequest) {
+// CreateListMomentsRequest creates a request to invoke ListMoments API
+func CreateListMomentsRequest(request *ListMomentsRequest) {
 	request = &ListMomentsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -103,7 +105,7 @@ func CreateListMomentsRequest() (request *ListMomentsRequest) {
 	return
 }
 
-// create a response to parse from ListMoments response
+// CreateListMomentsResponse creates a response to parse from ListMoments response
 func CreateListMomentsResponse() (response *ListMomentsResponse) {
 	response = &ListMomentsResponse{
 		BaseResponse: &responses.BaseResponse{},

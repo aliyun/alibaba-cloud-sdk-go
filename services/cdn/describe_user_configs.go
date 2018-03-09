@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeUserConfigs api with *DescribeUserConfigsRequest synchronously
+// DescribeUserConfigs invokes the cdn.DescribeUserConfigs API synchronously
 // api document: https://help.aliyun.com/api/cdn/describeuserconfigs.html
 func (client *Client) DescribeUserConfigs(request *DescribeUserConfigsRequest) (response *DescribeUserConfigsResponse, err error) {
 	response = CreateDescribeUserConfigsResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeUserConfigs(request *DescribeUserConfigsRequest) (
 	return
 }
 
-// invoke DescribeUserConfigs api with *DescribeUserConfigsRequest asynchronously
+// DescribeUserConfigsWithChan invokes the cdn.DescribeUserConfigs API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describeuserconfigs.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUserConfigsWithChan(request *DescribeUserConfigsRequest) (<-chan *DescribeUserConfigsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeUserConfigsWithChan(request *DescribeUserConfigsRe
 	return responseChan, errChan
 }
 
-// invoke DescribeUserConfigs api with *DescribeUserConfigsRequest asynchronously
+// DescribeUserConfigsWithCallback invokes the cdn.DescribeUserConfigs API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describeuserconfigs.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUserConfigsWithCallback(request *DescribeUserConfigsRequest, callback func(response *DescribeUserConfigsResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeUserConfigsWithCallback(request *DescribeUserConfi
 	return result
 }
 
+// DescribeUserConfigsRequest is the request struct for api DescribeUserConfigs
 type DescribeUserConfigsRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -80,14 +81,15 @@ type DescribeUserConfigsRequest struct {
 	Config        string           `position:"Query" name:"Config"`
 }
 
+// DescribeUserConfigsResponse is the response struct for api DescribeUserConfigs
 type DescribeUserConfigsResponse struct {
 	*responses.BaseResponse
 	RequestId string  `json:"RequestId" xml:"RequestId"`
 	Configs   Configs `json:"Configs" xml:"Configs"`
 }
 
-// create a request to invoke DescribeUserConfigs API
-func CreateDescribeUserConfigsRequest() (request *DescribeUserConfigsRequest) {
+// CreateDescribeUserConfigsRequest creates a request to invoke DescribeUserConfigs API
+func CreateDescribeUserConfigsRequest(request *DescribeUserConfigsRequest) {
 	request = &DescribeUserConfigsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateDescribeUserConfigsRequest() (request *DescribeUserConfigsRequest) {
 	return
 }
 
-// create a response to parse from DescribeUserConfigs response
+// CreateDescribeUserConfigsResponse creates a response to parse from DescribeUserConfigs response
 func CreateDescribeUserConfigsResponse() (response *DescribeUserConfigsResponse) {
 	response = &DescribeUserConfigsResponse{
 		BaseResponse: &responses.BaseResponse{},

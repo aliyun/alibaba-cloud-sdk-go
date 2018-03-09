@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeLoadBalancerAttribute api with *DescribeLoadBalancerAttributeRequest synchronously
+// DescribeLoadBalancerAttribute invokes the slb.DescribeLoadBalancerAttribute API synchronously
 // api document: https://help.aliyun.com/api/slb/describeloadbalancerattribute.html
 func (client *Client) DescribeLoadBalancerAttribute(request *DescribeLoadBalancerAttributeRequest) (response *DescribeLoadBalancerAttributeResponse, err error) {
 	response = CreateDescribeLoadBalancerAttributeResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeLoadBalancerAttribute(request *DescribeLoadBalance
 	return
 }
 
-// invoke DescribeLoadBalancerAttribute api with *DescribeLoadBalancerAttributeRequest asynchronously
+// DescribeLoadBalancerAttributeWithChan invokes the slb.DescribeLoadBalancerAttribute API asynchronously
 // api document: https://help.aliyun.com/api/slb/describeloadbalancerattribute.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLoadBalancerAttributeWithChan(request *DescribeLoadBalancerAttributeRequest) (<-chan *DescribeLoadBalancerAttributeResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeLoadBalancerAttributeWithChan(request *DescribeLoa
 	return responseChan, errChan
 }
 
-// invoke DescribeLoadBalancerAttribute api with *DescribeLoadBalancerAttributeRequest asynchronously
+// DescribeLoadBalancerAttributeWithCallback invokes the slb.DescribeLoadBalancerAttribute API asynchronously
 // api document: https://help.aliyun.com/api/slb/describeloadbalancerattribute.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLoadBalancerAttributeWithCallback(request *DescribeLoadBalancerAttributeRequest, callback func(response *DescribeLoadBalancerAttributeResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeLoadBalancerAttributeWithCallback(request *Describ
 	return result
 }
 
+// DescribeLoadBalancerAttributeRequest is the request struct for api DescribeLoadBalancerAttribute
 type DescribeLoadBalancerAttributeRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,6 +85,7 @@ type DescribeLoadBalancerAttributeRequest struct {
 	Tags                 string           `position:"Query" name:"Tags"`
 }
 
+// DescribeLoadBalancerAttributeResponse is the response struct for api DescribeLoadBalancerAttribute
 type DescribeLoadBalancerAttributeResponse struct {
 	*responses.BaseResponse
 	RequestId                string                                        `json:"RequestId" xml:"RequestId"`
@@ -115,8 +117,8 @@ type DescribeLoadBalancerAttributeResponse struct {
 	BackendServers           BackendServersInDescribeLoadBalancerAttribute `json:"BackendServers" xml:"BackendServers"`
 }
 
-// create a request to invoke DescribeLoadBalancerAttribute API
-func CreateDescribeLoadBalancerAttributeRequest() (request *DescribeLoadBalancerAttributeRequest) {
+// CreateDescribeLoadBalancerAttributeRequest creates a request to invoke DescribeLoadBalancerAttribute API
+func CreateDescribeLoadBalancerAttributeRequest(request *DescribeLoadBalancerAttributeRequest) {
 	request = &DescribeLoadBalancerAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -124,7 +126,7 @@ func CreateDescribeLoadBalancerAttributeRequest() (request *DescribeLoadBalancer
 	return
 }
 
-// create a response to parse from DescribeLoadBalancerAttribute response
+// CreateDescribeLoadBalancerAttributeResponse creates a response to parse from DescribeLoadBalancerAttribute response
 func CreateDescribeLoadBalancerAttributeResponse() (response *DescribeLoadBalancerAttributeResponse) {
 	response = &DescribeLoadBalancerAttributeResponse{
 		BaseResponse: &responses.BaseResponse{},

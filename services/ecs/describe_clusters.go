@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeClusters api with *DescribeClustersRequest synchronously
+// DescribeClusters invokes the ecs.DescribeClusters API synchronously
 // api document: https://help.aliyun.com/api/ecs/describeclusters.html
 func (client *Client) DescribeClusters(request *DescribeClustersRequest) (response *DescribeClustersResponse, err error) {
 	response = CreateDescribeClustersResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeClusters(request *DescribeClustersRequest) (respon
 	return
 }
 
-// invoke DescribeClusters api with *DescribeClustersRequest asynchronously
+// DescribeClustersWithChan invokes the ecs.DescribeClusters API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describeclusters.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeClustersWithChan(request *DescribeClustersRequest) (<-chan *DescribeClustersResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeClustersWithChan(request *DescribeClustersRequest)
 	return responseChan, errChan
 }
 
-// invoke DescribeClusters api with *DescribeClustersRequest asynchronously
+// DescribeClustersWithCallback invokes the ecs.DescribeClusters API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describeclusters.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeClustersWithCallback(request *DescribeClustersRequest, callback func(response *DescribeClustersResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeClustersWithCallback(request *DescribeClustersRequ
 	return result
 }
 
+// DescribeClustersRequest is the request struct for api DescribeClusters
 type DescribeClustersRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -81,14 +82,15 @@ type DescribeClustersRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// DescribeClustersResponse is the response struct for api DescribeClusters
 type DescribeClustersResponse struct {
 	*responses.BaseResponse
 	RequestId string   `json:"RequestId" xml:"RequestId"`
 	Clusters  Clusters `json:"Clusters" xml:"Clusters"`
 }
 
-// create a request to invoke DescribeClusters API
-func CreateDescribeClustersRequest() (request *DescribeClustersRequest) {
+// CreateDescribeClustersRequest creates a request to invoke DescribeClusters API
+func CreateDescribeClustersRequest(request *DescribeClustersRequest) {
 	request = &DescribeClustersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -96,7 +98,7 @@ func CreateDescribeClustersRequest() (request *DescribeClustersRequest) {
 	return
 }
 
-// create a response to parse from DescribeClusters response
+// CreateDescribeClustersResponse creates a response to parse from DescribeClusters response
 func CreateDescribeClustersResponse() (response *DescribeClustersResponse) {
 	response = &DescribeClustersResponse{
 		BaseResponse: &responses.BaseResponse{},

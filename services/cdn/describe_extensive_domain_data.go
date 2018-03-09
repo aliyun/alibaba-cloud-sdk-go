@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeExtensiveDomainData api with *DescribeExtensiveDomainDataRequest synchronously
+// DescribeExtensiveDomainData invokes the cdn.DescribeExtensiveDomainData API synchronously
 // api document: https://help.aliyun.com/api/cdn/describeextensivedomaindata.html
 func (client *Client) DescribeExtensiveDomainData(request *DescribeExtensiveDomainDataRequest) (response *DescribeExtensiveDomainDataResponse, err error) {
 	response = CreateDescribeExtensiveDomainDataResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeExtensiveDomainData(request *DescribeExtensiveDoma
 	return
 }
 
-// invoke DescribeExtensiveDomainData api with *DescribeExtensiveDomainDataRequest asynchronously
+// DescribeExtensiveDomainDataWithChan invokes the cdn.DescribeExtensiveDomainData API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describeextensivedomaindata.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeExtensiveDomainDataWithChan(request *DescribeExtensiveDomainDataRequest) (<-chan *DescribeExtensiveDomainDataResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeExtensiveDomainDataWithChan(request *DescribeExten
 	return responseChan, errChan
 }
 
-// invoke DescribeExtensiveDomainData api with *DescribeExtensiveDomainDataRequest asynchronously
+// DescribeExtensiveDomainDataWithCallback invokes the cdn.DescribeExtensiveDomainData API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describeextensivedomaindata.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeExtensiveDomainDataWithCallback(request *DescribeExtensiveDomainDataRequest, callback func(response *DescribeExtensiveDomainDataResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeExtensiveDomainDataWithCallback(request *DescribeE
 	return result
 }
 
+// DescribeExtensiveDomainDataRequest is the request struct for api DescribeExtensiveDomainData
 type DescribeExtensiveDomainDataRequest struct {
 	*requests.RpcRequest
 	OwnerId         requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,6 +85,7 @@ type DescribeExtensiveDomainDataRequest struct {
 	PageSize        requests.Integer `position:"Query" name:"PageSize"`
 }
 
+// DescribeExtensiveDomainDataResponse is the response struct for api DescribeExtensiveDomainData
 type DescribeExtensiveDomainDataResponse struct {
 	*responses.BaseResponse
 	RequestId       string                                       `json:"RequestId" xml:"RequestId"`
@@ -97,8 +99,8 @@ type DescribeExtensiveDomainDataResponse struct {
 	DataPerInterval DataPerIntervalInDescribeExtensiveDomainData `json:"DataPerInterval" xml:"DataPerInterval"`
 }
 
-// create a request to invoke DescribeExtensiveDomainData API
-func CreateDescribeExtensiveDomainDataRequest() (request *DescribeExtensiveDomainDataRequest) {
+// CreateDescribeExtensiveDomainDataRequest creates a request to invoke DescribeExtensiveDomainData API
+func CreateDescribeExtensiveDomainDataRequest(request *DescribeExtensiveDomainDataRequest) {
 	request = &DescribeExtensiveDomainDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -106,7 +108,7 @@ func CreateDescribeExtensiveDomainDataRequest() (request *DescribeExtensiveDomai
 	return
 }
 
-// create a response to parse from DescribeExtensiveDomainData response
+// CreateDescribeExtensiveDomainDataResponse creates a response to parse from DescribeExtensiveDomainData response
 func CreateDescribeExtensiveDomainDataResponse() (response *DescribeExtensiveDomainDataResponse) {
 	response = &DescribeExtensiveDomainDataResponse{
 		BaseResponse: &responses.BaseResponse{},

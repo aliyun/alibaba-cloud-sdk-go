@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ListTagPhotos api with *ListTagPhotosRequest synchronously
+// ListTagPhotos invokes the cloudphoto.ListTagPhotos API synchronously
 // api document: https://help.aliyun.com/api/cloudphoto/listtagphotos.html
 func (client *Client) ListTagPhotos(request *ListTagPhotosRequest) (response *ListTagPhotosResponse, err error) {
 	response = CreateListTagPhotosResponse()
@@ -28,7 +28,7 @@ func (client *Client) ListTagPhotos(request *ListTagPhotosRequest) (response *Li
 	return
 }
 
-// invoke ListTagPhotos api with *ListTagPhotosRequest asynchronously
+// ListTagPhotosWithChan invokes the cloudphoto.ListTagPhotos API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/listtagphotos.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListTagPhotosWithChan(request *ListTagPhotosRequest) (<-chan *ListTagPhotosResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ListTagPhotosWithChan(request *ListTagPhotosRequest) (<-ch
 	return responseChan, errChan
 }
 
-// invoke ListTagPhotos api with *ListTagPhotosRequest asynchronously
+// ListTagPhotosWithCallback invokes the cloudphoto.ListTagPhotos API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/listtagphotos.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListTagPhotosWithCallback(request *ListTagPhotosRequest, callback func(response *ListTagPhotosResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ListTagPhotosWithCallback(request *ListTagPhotosRequest, c
 	return result
 }
 
+// ListTagPhotosRequest is the request struct for api ListTagPhotos
 type ListTagPhotosRequest struct {
 	*requests.RpcRequest
 	TagId     requests.Integer `position:"Query" name:"TagId"`
@@ -84,6 +85,7 @@ type ListTagPhotosRequest struct {
 	LibraryId string           `position:"Query" name:"LibraryId"`
 }
 
+// ListTagPhotosResponse is the response struct for api ListTagPhotos
 type ListTagPhotosResponse struct {
 	*responses.BaseResponse
 	Code       string   `json:"Code" xml:"Code"`
@@ -95,8 +97,8 @@ type ListTagPhotosResponse struct {
 	Results    []Result `json:"Results" xml:"Results"`
 }
 
-// create a request to invoke ListTagPhotos API
-func CreateListTagPhotosRequest() (request *ListTagPhotosRequest) {
+// CreateListTagPhotosRequest creates a request to invoke ListTagPhotos API
+func CreateListTagPhotosRequest(request *ListTagPhotosRequest) {
 	request = &ListTagPhotosRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -104,7 +106,7 @@ func CreateListTagPhotosRequest() (request *ListTagPhotosRequest) {
 	return
 }
 
-// create a response to parse from ListTagPhotos response
+// CreateListTagPhotosResponse creates a response to parse from ListTagPhotos response
 func CreateListTagPhotosResponse() (response *ListTagPhotosResponse) {
 	response = &ListTagPhotosResponse{
 		BaseResponse: &responses.BaseResponse{},

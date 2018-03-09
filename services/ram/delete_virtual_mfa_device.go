@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteVirtualMFADevice api with *DeleteVirtualMFADeviceRequest synchronously
+// DeleteVirtualMFADevice invokes the ram.DeleteVirtualMFADevice API synchronously
 // api document: https://help.aliyun.com/api/ram/deletevirtualmfadevice.html
 func (client *Client) DeleteVirtualMFADevice(request *DeleteVirtualMFADeviceRequest) (response *DeleteVirtualMFADeviceResponse, err error) {
 	response = CreateDeleteVirtualMFADeviceResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteVirtualMFADevice(request *DeleteVirtualMFADeviceRequ
 	return
 }
 
-// invoke DeleteVirtualMFADevice api with *DeleteVirtualMFADeviceRequest asynchronously
+// DeleteVirtualMFADeviceWithChan invokes the ram.DeleteVirtualMFADevice API asynchronously
 // api document: https://help.aliyun.com/api/ram/deletevirtualmfadevice.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteVirtualMFADeviceWithChan(request *DeleteVirtualMFADeviceRequest) (<-chan *DeleteVirtualMFADeviceResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteVirtualMFADeviceWithChan(request *DeleteVirtualMFADe
 	return responseChan, errChan
 }
 
-// invoke DeleteVirtualMFADevice api with *DeleteVirtualMFADeviceRequest asynchronously
+// DeleteVirtualMFADeviceWithCallback invokes the ram.DeleteVirtualMFADevice API asynchronously
 // api document: https://help.aliyun.com/api/ram/deletevirtualmfadevice.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteVirtualMFADeviceWithCallback(request *DeleteVirtualMFADeviceRequest, callback func(response *DeleteVirtualMFADeviceResponse, err error)) <-chan int {
@@ -73,18 +73,20 @@ func (client *Client) DeleteVirtualMFADeviceWithCallback(request *DeleteVirtualM
 	return result
 }
 
+// DeleteVirtualMFADeviceRequest is the request struct for api DeleteVirtualMFADevice
 type DeleteVirtualMFADeviceRequest struct {
 	*requests.RpcRequest
 	SerialNumber string `position:"Query" name:"SerialNumber"`
 }
 
+// DeleteVirtualMFADeviceResponse is the response struct for api DeleteVirtualMFADevice
 type DeleteVirtualMFADeviceResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DeleteVirtualMFADevice API
-func CreateDeleteVirtualMFADeviceRequest() (request *DeleteVirtualMFADeviceRequest) {
+// CreateDeleteVirtualMFADeviceRequest creates a request to invoke DeleteVirtualMFADevice API
+func CreateDeleteVirtualMFADeviceRequest(request *DeleteVirtualMFADeviceRequest) {
 	request = &DeleteVirtualMFADeviceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -92,7 +94,7 @@ func CreateDeleteVirtualMFADeviceRequest() (request *DeleteVirtualMFADeviceReque
 	return
 }
 
-// create a response to parse from DeleteVirtualMFADevice response
+// CreateDeleteVirtualMFADeviceResponse creates a response to parse from DeleteVirtualMFADevice response
 func CreateDeleteVirtualMFADeviceResponse() (response *DeleteVirtualMFADeviceResponse) {
 	response = &DeleteVirtualMFADeviceResponse{
 		BaseResponse: &responses.BaseResponse{},

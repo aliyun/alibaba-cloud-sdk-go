@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SetPageCompressConfig api with *SetPageCompressConfigRequest synchronously
+// SetPageCompressConfig invokes the cdn.SetPageCompressConfig API synchronously
 // api document: https://help.aliyun.com/api/cdn/setpagecompressconfig.html
 func (client *Client) SetPageCompressConfig(request *SetPageCompressConfigRequest) (response *SetPageCompressConfigResponse, err error) {
 	response = CreateSetPageCompressConfigResponse()
@@ -28,7 +28,7 @@ func (client *Client) SetPageCompressConfig(request *SetPageCompressConfigReques
 	return
 }
 
-// invoke SetPageCompressConfig api with *SetPageCompressConfigRequest asynchronously
+// SetPageCompressConfigWithChan invokes the cdn.SetPageCompressConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/setpagecompressconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetPageCompressConfigWithChan(request *SetPageCompressConfigRequest) (<-chan *SetPageCompressConfigResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SetPageCompressConfigWithChan(request *SetPageCompressConf
 	return responseChan, errChan
 }
 
-// invoke SetPageCompressConfig api with *SetPageCompressConfigRequest asynchronously
+// SetPageCompressConfigWithCallback invokes the cdn.SetPageCompressConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/setpagecompressconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetPageCompressConfigWithCallback(request *SetPageCompressConfigRequest, callback func(response *SetPageCompressConfigResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SetPageCompressConfigWithCallback(request *SetPageCompress
 	return result
 }
 
+// SetPageCompressConfigRequest is the request struct for api SetPageCompressConfig
 type SetPageCompressConfigRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -81,13 +82,14 @@ type SetPageCompressConfigRequest struct {
 	Enable        string           `position:"Query" name:"Enable"`
 }
 
+// SetPageCompressConfigResponse is the response struct for api SetPageCompressConfig
 type SetPageCompressConfigResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke SetPageCompressConfig API
-func CreateSetPageCompressConfigRequest() (request *SetPageCompressConfigRequest) {
+// CreateSetPageCompressConfigRequest creates a request to invoke SetPageCompressConfig API
+func CreateSetPageCompressConfigRequest(request *SetPageCompressConfigRequest) {
 	request = &SetPageCompressConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateSetPageCompressConfigRequest() (request *SetPageCompressConfigRequest
 	return
 }
 
-// create a response to parse from SetPageCompressConfig response
+// CreateSetPageCompressConfigResponse creates a response to parse from SetPageCompressConfig response
 func CreateSetPageCompressConfigResponse() (response *SetPageCompressConfigResponse) {
 	response = &SetPageCompressConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

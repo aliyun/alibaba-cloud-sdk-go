@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke UpdateWaterMarkTemplate api with *UpdateWaterMarkTemplateRequest synchronously
+// UpdateWaterMarkTemplate invokes the mts.UpdateWaterMarkTemplate API synchronously
 // api document: https://help.aliyun.com/api/mts/updatewatermarktemplate.html
 func (client *Client) UpdateWaterMarkTemplate(request *UpdateWaterMarkTemplateRequest) (response *UpdateWaterMarkTemplateResponse, err error) {
 	response = CreateUpdateWaterMarkTemplateResponse()
@@ -28,7 +28,7 @@ func (client *Client) UpdateWaterMarkTemplate(request *UpdateWaterMarkTemplateRe
 	return
 }
 
-// invoke UpdateWaterMarkTemplate api with *UpdateWaterMarkTemplateRequest asynchronously
+// UpdateWaterMarkTemplateWithChan invokes the mts.UpdateWaterMarkTemplate API asynchronously
 // api document: https://help.aliyun.com/api/mts/updatewatermarktemplate.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateWaterMarkTemplateWithChan(request *UpdateWaterMarkTemplateRequest) (<-chan *UpdateWaterMarkTemplateResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) UpdateWaterMarkTemplateWithChan(request *UpdateWaterMarkTe
 	return responseChan, errChan
 }
 
-// invoke UpdateWaterMarkTemplate api with *UpdateWaterMarkTemplateRequest asynchronously
+// UpdateWaterMarkTemplateWithCallback invokes the mts.UpdateWaterMarkTemplate API asynchronously
 // api document: https://help.aliyun.com/api/mts/updatewatermarktemplate.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateWaterMarkTemplateWithCallback(request *UpdateWaterMarkTemplateRequest, callback func(response *UpdateWaterMarkTemplateResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) UpdateWaterMarkTemplateWithCallback(request *UpdateWaterMa
 	return result
 }
 
+// UpdateWaterMarkTemplateRequest is the request struct for api UpdateWaterMarkTemplate
 type UpdateWaterMarkTemplateRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,14 +85,15 @@ type UpdateWaterMarkTemplateRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// UpdateWaterMarkTemplateResponse is the response struct for api UpdateWaterMarkTemplate
 type UpdateWaterMarkTemplateResponse struct {
 	*responses.BaseResponse
 	RequestId         string            `json:"RequestId" xml:"RequestId"`
 	WaterMarkTemplate WaterMarkTemplate `json:"WaterMarkTemplate" xml:"WaterMarkTemplate"`
 }
 
-// create a request to invoke UpdateWaterMarkTemplate API
-func CreateUpdateWaterMarkTemplateRequest() (request *UpdateWaterMarkTemplateRequest) {
+// CreateUpdateWaterMarkTemplateRequest creates a request to invoke UpdateWaterMarkTemplate API
+func CreateUpdateWaterMarkTemplateRequest(request *UpdateWaterMarkTemplateRequest) {
 	request = &UpdateWaterMarkTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateUpdateWaterMarkTemplateRequest() (request *UpdateWaterMarkTemplateReq
 	return
 }
 
-// create a response to parse from UpdateWaterMarkTemplate response
+// CreateUpdateWaterMarkTemplateResponse creates a response to parse from UpdateWaterMarkTemplate response
 func CreateUpdateWaterMarkTemplateResponse() (response *UpdateWaterMarkTemplateResponse) {
 	response = &UpdateWaterMarkTemplateResponse{
 		BaseResponse: &responses.BaseResponse{},

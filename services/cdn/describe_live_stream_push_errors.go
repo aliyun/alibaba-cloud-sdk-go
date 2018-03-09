@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeLiveStreamPushErrors api with *DescribeLiveStreamPushErrorsRequest synchronously
+// DescribeLiveStreamPushErrors invokes the cdn.DescribeLiveStreamPushErrors API synchronously
 // api document: https://help.aliyun.com/api/cdn/describelivestreampusherrors.html
 func (client *Client) DescribeLiveStreamPushErrors(request *DescribeLiveStreamPushErrorsRequest) (response *DescribeLiveStreamPushErrorsResponse, err error) {
 	response = CreateDescribeLiveStreamPushErrorsResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeLiveStreamPushErrors(request *DescribeLiveStreamPu
 	return
 }
 
-// invoke DescribeLiveStreamPushErrors api with *DescribeLiveStreamPushErrorsRequest asynchronously
+// DescribeLiveStreamPushErrorsWithChan invokes the cdn.DescribeLiveStreamPushErrors API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describelivestreampusherrors.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamPushErrorsWithChan(request *DescribeLiveStreamPushErrorsRequest) (<-chan *DescribeLiveStreamPushErrorsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeLiveStreamPushErrorsWithChan(request *DescribeLive
 	return responseChan, errChan
 }
 
-// invoke DescribeLiveStreamPushErrors api with *DescribeLiveStreamPushErrorsRequest asynchronously
+// DescribeLiveStreamPushErrorsWithCallback invokes the cdn.DescribeLiveStreamPushErrors API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describelivestreampusherrors.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamPushErrorsWithCallback(request *DescribeLiveStreamPushErrorsRequest, callback func(response *DescribeLiveStreamPushErrorsResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeLiveStreamPushErrorsWithCallback(request *Describe
 	return result
 }
 
+// DescribeLiveStreamPushErrorsRequest is the request struct for api DescribeLiveStreamPushErrors
 type DescribeLiveStreamPushErrorsRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,14 +83,15 @@ type DescribeLiveStreamPushErrorsRequest struct {
 	EndTime       string           `position:"Query" name:"EndTime"`
 }
 
+// DescribeLiveStreamPushErrorsResponse is the response struct for api DescribeLiveStreamPushErrors
 type DescribeLiveStreamPushErrorsResponse struct {
 	*responses.BaseResponse
 	RequestId           string              `json:"RequestId" xml:"RequestId"`
 	PushErrorsModelList PushErrorsModelList `json:"PushErrorsModelList" xml:"PushErrorsModelList"`
 }
 
-// create a request to invoke DescribeLiveStreamPushErrors API
-func CreateDescribeLiveStreamPushErrorsRequest() (request *DescribeLiveStreamPushErrorsRequest) {
+// CreateDescribeLiveStreamPushErrorsRequest creates a request to invoke DescribeLiveStreamPushErrors API
+func CreateDescribeLiveStreamPushErrorsRequest(request *DescribeLiveStreamPushErrorsRequest) {
 	request = &DescribeLiveStreamPushErrorsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateDescribeLiveStreamPushErrorsRequest() (request *DescribeLiveStreamPus
 	return
 }
 
-// create a response to parse from DescribeLiveStreamPushErrors response
+// CreateDescribeLiveStreamPushErrorsResponse creates a response to parse from DescribeLiveStreamPushErrors response
 func CreateDescribeLiveStreamPushErrorsResponse() (response *DescribeLiveStreamPushErrorsResponse) {
 	response = &DescribeLiveStreamPushErrorsResponse{
 		BaseResponse: &responses.BaseResponse{},

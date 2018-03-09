@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeRegions api with *DescribeRegionsRequest synchronously
+// DescribeRegions invokes the vpc.DescribeRegions API synchronously
 // api document: https://help.aliyun.com/api/vpc/describeregions.html
 func (client *Client) DescribeRegions(request *DescribeRegionsRequest) (response *DescribeRegionsResponse, err error) {
 	response = CreateDescribeRegionsResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeRegions(request *DescribeRegionsRequest) (response
 	return
 }
 
-// invoke DescribeRegions api with *DescribeRegionsRequest asynchronously
+// DescribeRegionsWithChan invokes the vpc.DescribeRegions API asynchronously
 // api document: https://help.aliyun.com/api/vpc/describeregions.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRegionsWithChan(request *DescribeRegionsRequest) (<-chan *DescribeRegionsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeRegionsWithChan(request *DescribeRegionsRequest) (
 	return responseChan, errChan
 }
 
-// invoke DescribeRegions api with *DescribeRegionsRequest asynchronously
+// DescribeRegionsWithCallback invokes the vpc.DescribeRegions API asynchronously
 // api document: https://help.aliyun.com/api/vpc/describeregions.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRegionsWithCallback(request *DescribeRegionsRequest, callback func(response *DescribeRegionsResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeRegionsWithCallback(request *DescribeRegionsReques
 	return result
 }
 
+// DescribeRegionsRequest is the request struct for api DescribeRegions
 type DescribeRegionsRequest struct {
 	*requests.RpcRequest
 	ProductType          string           `position:"Query" name:"ProductType"`
@@ -82,14 +83,15 @@ type DescribeRegionsRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// DescribeRegionsResponse is the response struct for api DescribeRegions
 type DescribeRegionsResponse struct {
 	*responses.BaseResponse
 	RequestId string  `json:"RequestId" xml:"RequestId"`
 	Regions   Regions `json:"Regions" xml:"Regions"`
 }
 
-// create a request to invoke DescribeRegions API
-func CreateDescribeRegionsRequest() (request *DescribeRegionsRequest) {
+// CreateDescribeRegionsRequest creates a request to invoke DescribeRegions API
+func CreateDescribeRegionsRequest(request *DescribeRegionsRequest) {
 	request = &DescribeRegionsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateDescribeRegionsRequest() (request *DescribeRegionsRequest) {
 	return
 }
 
-// create a response to parse from DescribeRegions response
+// CreateDescribeRegionsResponse creates a response to parse from DescribeRegions response
 func CreateDescribeRegionsResponse() (response *DescribeRegionsResponse) {
 	response = &DescribeRegionsResponse{
 		BaseResponse: &responses.BaseResponse{},

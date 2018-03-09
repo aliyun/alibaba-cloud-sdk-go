@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke AddTerrorismPipeline api with *AddTerrorismPipelineRequest synchronously
+// AddTerrorismPipeline invokes the mts.AddTerrorismPipeline API synchronously
 // api document: https://help.aliyun.com/api/mts/addterrorismpipeline.html
 func (client *Client) AddTerrorismPipeline(request *AddTerrorismPipelineRequest) (response *AddTerrorismPipelineResponse, err error) {
 	response = CreateAddTerrorismPipelineResponse()
@@ -28,7 +28,7 @@ func (client *Client) AddTerrorismPipeline(request *AddTerrorismPipelineRequest)
 	return
 }
 
-// invoke AddTerrorismPipeline api with *AddTerrorismPipelineRequest asynchronously
+// AddTerrorismPipelineWithChan invokes the mts.AddTerrorismPipeline API asynchronously
 // api document: https://help.aliyun.com/api/mts/addterrorismpipeline.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddTerrorismPipelineWithChan(request *AddTerrorismPipelineRequest) (<-chan *AddTerrorismPipelineResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) AddTerrorismPipelineWithChan(request *AddTerrorismPipeline
 	return responseChan, errChan
 }
 
-// invoke AddTerrorismPipeline api with *AddTerrorismPipelineRequest asynchronously
+// AddTerrorismPipelineWithCallback invokes the mts.AddTerrorismPipeline API asynchronously
 // api document: https://help.aliyun.com/api/mts/addterrorismpipeline.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddTerrorismPipelineWithCallback(request *AddTerrorismPipelineRequest, callback func(response *AddTerrorismPipelineResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) AddTerrorismPipelineWithCallback(request *AddTerrorismPipe
 	return result
 }
 
+// AddTerrorismPipelineRequest is the request struct for api AddTerrorismPipeline
 type AddTerrorismPipelineRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,14 +85,15 @@ type AddTerrorismPipelineRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// AddTerrorismPipelineResponse is the response struct for api AddTerrorismPipeline
 type AddTerrorismPipelineResponse struct {
 	*responses.BaseResponse
 	RequestId string   `json:"RequestId" xml:"RequestId"`
 	Pipeline  Pipeline `json:"Pipeline" xml:"Pipeline"`
 }
 
-// create a request to invoke AddTerrorismPipeline API
-func CreateAddTerrorismPipelineRequest() (request *AddTerrorismPipelineRequest) {
+// CreateAddTerrorismPipelineRequest creates a request to invoke AddTerrorismPipeline API
+func CreateAddTerrorismPipelineRequest(request *AddTerrorismPipelineRequest) {
 	request = &AddTerrorismPipelineRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateAddTerrorismPipelineRequest() (request *AddTerrorismPipelineRequest) 
 	return
 }
 
-// create a response to parse from AddTerrorismPipeline response
+// CreateAddTerrorismPipelineResponse creates a response to parse from AddTerrorismPipeline response
 func CreateAddTerrorismPipelineResponse() (response *AddTerrorismPipelineResponse) {
 	response = &AddTerrorismPipelineResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke HostGets api with *HostGetsRequest synchronously
+// HostGets invokes the tesladam.HostGets API synchronously
 // api document: https://help.aliyun.com/api/tesladam/hostgets.html
 func (client *Client) HostGets(request *HostGetsRequest) (response *HostGetsResponse, err error) {
 	response = CreateHostGetsResponse()
@@ -28,7 +28,7 @@ func (client *Client) HostGets(request *HostGetsRequest) (response *HostGetsResp
 	return
 }
 
-// invoke HostGets api with *HostGetsRequest asynchronously
+// HostGetsWithChan invokes the tesladam.HostGets API asynchronously
 // api document: https://help.aliyun.com/api/tesladam/hostgets.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) HostGetsWithChan(request *HostGetsRequest) (<-chan *HostGetsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) HostGetsWithChan(request *HostGetsRequest) (<-chan *HostGe
 	return responseChan, errChan
 }
 
-// invoke HostGets api with *HostGetsRequest asynchronously
+// HostGetsWithCallback invokes the tesladam.HostGets API asynchronously
 // api document: https://help.aliyun.com/api/tesladam/hostgets.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) HostGetsWithCallback(request *HostGetsRequest, callback func(response *HostGetsResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) HostGetsWithCallback(request *HostGetsRequest, callback fu
 	return result
 }
 
+// HostGetsRequest is the request struct for api HostGets
 type HostGetsRequest struct {
 	*requests.RpcRequest
 	QueryType string           `position:"Query" name:"QueryType"`
@@ -81,6 +82,7 @@ type HostGetsRequest struct {
 	StartTime requests.Integer `position:"Query" name:"StartTime"`
 }
 
+// HostGetsResponse is the response struct for api HostGets
 type HostGetsResponse struct {
 	*responses.BaseResponse
 	Status  bool   `json:"Status" xml:"Status"`
@@ -88,8 +90,8 @@ type HostGetsResponse struct {
 	Data    []Data `json:"Data" xml:"Data"`
 }
 
-// create a request to invoke HostGets API
-func CreateHostGetsRequest() (request *HostGetsRequest) {
+// CreateHostGetsRequest creates a request to invoke HostGets API
+func CreateHostGetsRequest(request *HostGetsRequest) {
 	request = &HostGetsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateHostGetsRequest() (request *HostGetsRequest) {
 	return
 }
 
-// create a response to parse from HostGets response
+// CreateHostGetsResponse creates a response to parse from HostGets response
 func CreateHostGetsResponse() (response *HostGetsResponse) {
 	response = &HostGetsResponse{
 		BaseResponse: &responses.BaseResponse{},

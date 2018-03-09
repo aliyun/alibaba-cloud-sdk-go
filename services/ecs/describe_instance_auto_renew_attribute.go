@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeInstanceAutoRenewAttribute api with *DescribeInstanceAutoRenewAttributeRequest synchronously
+// DescribeInstanceAutoRenewAttribute invokes the ecs.DescribeInstanceAutoRenewAttribute API synchronously
 // api document: https://help.aliyun.com/api/ecs/describeinstanceautorenewattribute.html
 func (client *Client) DescribeInstanceAutoRenewAttribute(request *DescribeInstanceAutoRenewAttributeRequest) (response *DescribeInstanceAutoRenewAttributeResponse, err error) {
 	response = CreateDescribeInstanceAutoRenewAttributeResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeInstanceAutoRenewAttribute(request *DescribeInstan
 	return
 }
 
-// invoke DescribeInstanceAutoRenewAttribute api with *DescribeInstanceAutoRenewAttributeRequest asynchronously
+// DescribeInstanceAutoRenewAttributeWithChan invokes the ecs.DescribeInstanceAutoRenewAttribute API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describeinstanceautorenewattribute.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceAutoRenewAttributeWithChan(request *DescribeInstanceAutoRenewAttributeRequest) (<-chan *DescribeInstanceAutoRenewAttributeResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeInstanceAutoRenewAttributeWithChan(request *Descri
 	return responseChan, errChan
 }
 
-// invoke DescribeInstanceAutoRenewAttribute api with *DescribeInstanceAutoRenewAttributeRequest asynchronously
+// DescribeInstanceAutoRenewAttributeWithCallback invokes the ecs.DescribeInstanceAutoRenewAttribute API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describeinstanceautorenewattribute.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceAutoRenewAttributeWithCallback(request *DescribeInstanceAutoRenewAttributeRequest, callback func(response *DescribeInstanceAutoRenewAttributeResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeInstanceAutoRenewAttributeWithCallback(request *De
 	return result
 }
 
+// DescribeInstanceAutoRenewAttributeRequest is the request struct for api DescribeInstanceAutoRenewAttribute
 type DescribeInstanceAutoRenewAttributeRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,14 +83,15 @@ type DescribeInstanceAutoRenewAttributeRequest struct {
 	InstanceId           string           `position:"Query" name:"InstanceId"`
 }
 
+// DescribeInstanceAutoRenewAttributeResponse is the response struct for api DescribeInstanceAutoRenewAttribute
 type DescribeInstanceAutoRenewAttributeResponse struct {
 	*responses.BaseResponse
 	RequestId               string                  `json:"RequestId" xml:"RequestId"`
 	InstanceRenewAttributes InstanceRenewAttributes `json:"InstanceRenewAttributes" xml:"InstanceRenewAttributes"`
 }
 
-// create a request to invoke DescribeInstanceAutoRenewAttribute API
-func CreateDescribeInstanceAutoRenewAttributeRequest() (request *DescribeInstanceAutoRenewAttributeRequest) {
+// CreateDescribeInstanceAutoRenewAttributeRequest creates a request to invoke DescribeInstanceAutoRenewAttribute API
+func CreateDescribeInstanceAutoRenewAttributeRequest(request *DescribeInstanceAutoRenewAttributeRequest) {
 	request = &DescribeInstanceAutoRenewAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateDescribeInstanceAutoRenewAttributeRequest() (request *DescribeInstanc
 	return
 }
 
-// create a response to parse from DescribeInstanceAutoRenewAttribute response
+// CreateDescribeInstanceAutoRenewAttributeResponse creates a response to parse from DescribeInstanceAutoRenewAttribute response
 func CreateDescribeInstanceAutoRenewAttributeResponse() (response *DescribeInstanceAutoRenewAttributeResponse) {
 	response = &DescribeInstanceAutoRenewAttributeResponse{
 		BaseResponse: &responses.BaseResponse{},

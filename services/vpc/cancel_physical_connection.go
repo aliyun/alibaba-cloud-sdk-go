@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CancelPhysicalConnection api with *CancelPhysicalConnectionRequest synchronously
+// CancelPhysicalConnection invokes the vpc.CancelPhysicalConnection API synchronously
 // api document: https://help.aliyun.com/api/vpc/cancelphysicalconnection.html
 func (client *Client) CancelPhysicalConnection(request *CancelPhysicalConnectionRequest) (response *CancelPhysicalConnectionResponse, err error) {
 	response = CreateCancelPhysicalConnectionResponse()
@@ -28,7 +28,7 @@ func (client *Client) CancelPhysicalConnection(request *CancelPhysicalConnection
 	return
 }
 
-// invoke CancelPhysicalConnection api with *CancelPhysicalConnectionRequest asynchronously
+// CancelPhysicalConnectionWithChan invokes the vpc.CancelPhysicalConnection API asynchronously
 // api document: https://help.aliyun.com/api/vpc/cancelphysicalconnection.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CancelPhysicalConnectionWithChan(request *CancelPhysicalConnectionRequest) (<-chan *CancelPhysicalConnectionResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CancelPhysicalConnectionWithChan(request *CancelPhysicalCo
 	return responseChan, errChan
 }
 
-// invoke CancelPhysicalConnection api with *CancelPhysicalConnectionRequest asynchronously
+// CancelPhysicalConnectionWithCallback invokes the vpc.CancelPhysicalConnection API asynchronously
 // api document: https://help.aliyun.com/api/vpc/cancelphysicalconnection.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CancelPhysicalConnectionWithCallback(request *CancelPhysicalConnectionRequest, callback func(response *CancelPhysicalConnectionResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) CancelPhysicalConnectionWithCallback(request *CancelPhysic
 	return result
 }
 
+// CancelPhysicalConnectionRequest is the request struct for api CancelPhysicalConnection
 type CancelPhysicalConnectionRequest struct {
 	*requests.RpcRequest
 	PhysicalConnectionId string           `position:"Query" name:"PhysicalConnectionId"`
@@ -83,13 +84,14 @@ type CancelPhysicalConnectionRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// CancelPhysicalConnectionResponse is the response struct for api CancelPhysicalConnection
 type CancelPhysicalConnectionResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke CancelPhysicalConnection API
-func CreateCancelPhysicalConnectionRequest() (request *CancelPhysicalConnectionRequest) {
+// CreateCancelPhysicalConnectionRequest creates a request to invoke CancelPhysicalConnection API
+func CreateCancelPhysicalConnectionRequest(request *CancelPhysicalConnectionRequest) {
 	request = &CancelPhysicalConnectionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateCancelPhysicalConnectionRequest() (request *CancelPhysicalConnectionR
 	return
 }
 
-// create a response to parse from CancelPhysicalConnection response
+// CreateCancelPhysicalConnectionResponse creates a response to parse from CancelPhysicalConnection response
 func CreateCancelPhysicalConnectionResponse() (response *CancelPhysicalConnectionResponse) {
 	response = &CancelPhysicalConnectionResponse{
 		BaseResponse: &responses.BaseResponse{},

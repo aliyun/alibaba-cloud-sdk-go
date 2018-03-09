@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SetDomainServerCertificate api with *SetDomainServerCertificateRequest synchronously
+// SetDomainServerCertificate invokes the cdn.SetDomainServerCertificate API synchronously
 // api document: https://help.aliyun.com/api/cdn/setdomainservercertificate.html
 func (client *Client) SetDomainServerCertificate(request *SetDomainServerCertificateRequest) (response *SetDomainServerCertificateResponse, err error) {
 	response = CreateSetDomainServerCertificateResponse()
@@ -28,7 +28,7 @@ func (client *Client) SetDomainServerCertificate(request *SetDomainServerCertifi
 	return
 }
 
-// invoke SetDomainServerCertificate api with *SetDomainServerCertificateRequest asynchronously
+// SetDomainServerCertificateWithChan invokes the cdn.SetDomainServerCertificate API asynchronously
 // api document: https://help.aliyun.com/api/cdn/setdomainservercertificate.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetDomainServerCertificateWithChan(request *SetDomainServerCertificateRequest) (<-chan *SetDomainServerCertificateResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SetDomainServerCertificateWithChan(request *SetDomainServe
 	return responseChan, errChan
 }
 
-// invoke SetDomainServerCertificate api with *SetDomainServerCertificateRequest asynchronously
+// SetDomainServerCertificateWithCallback invokes the cdn.SetDomainServerCertificate API asynchronously
 // api document: https://help.aliyun.com/api/cdn/setdomainservercertificate.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetDomainServerCertificateWithCallback(request *SetDomainServerCertificateRequest, callback func(response *SetDomainServerCertificateResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SetDomainServerCertificateWithCallback(request *SetDomainS
 	return result
 }
 
+// SetDomainServerCertificateRequest is the request struct for api SetDomainServerCertificate
 type SetDomainServerCertificateRequest struct {
 	*requests.RpcRequest
 	OwnerId                 requests.Integer `position:"Query" name:"OwnerId"`
@@ -85,13 +86,14 @@ type SetDomainServerCertificateRequest struct {
 	Region                  string           `position:"Query" name:"Region"`
 }
 
+// SetDomainServerCertificateResponse is the response struct for api SetDomainServerCertificate
 type SetDomainServerCertificateResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke SetDomainServerCertificate API
-func CreateSetDomainServerCertificateRequest() (request *SetDomainServerCertificateRequest) {
+// CreateSetDomainServerCertificateRequest creates a request to invoke SetDomainServerCertificate API
+func CreateSetDomainServerCertificateRequest(request *SetDomainServerCertificateRequest) {
 	request = &SetDomainServerCertificateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateSetDomainServerCertificateRequest() (request *SetDomainServerCertific
 	return
 }
 
-// create a response to parse from SetDomainServerCertificate response
+// CreateSetDomainServerCertificateResponse creates a response to parse from SetDomainServerCertificate response
 func CreateSetDomainServerCertificateResponse() (response *SetDomainServerCertificateResponse) {
 	response = &SetDomainServerCertificateResponse{
 		BaseResponse: &responses.BaseResponse{},

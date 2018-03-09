@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CreateBandwidthPackage api with *CreateBandwidthPackageRequest synchronously
+// CreateBandwidthPackage invokes the vpc.CreateBandwidthPackage API synchronously
 // api document: https://help.aliyun.com/api/vpc/createbandwidthpackage.html
 func (client *Client) CreateBandwidthPackage(request *CreateBandwidthPackageRequest) (response *CreateBandwidthPackageResponse, err error) {
 	response = CreateCreateBandwidthPackageResponse()
@@ -28,7 +28,7 @@ func (client *Client) CreateBandwidthPackage(request *CreateBandwidthPackageRequ
 	return
 }
 
-// invoke CreateBandwidthPackage api with *CreateBandwidthPackageRequest asynchronously
+// CreateBandwidthPackageWithChan invokes the vpc.CreateBandwidthPackage API asynchronously
 // api document: https://help.aliyun.com/api/vpc/createbandwidthpackage.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateBandwidthPackageWithChan(request *CreateBandwidthPackageRequest) (<-chan *CreateBandwidthPackageResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CreateBandwidthPackageWithChan(request *CreateBandwidthPac
 	return responseChan, errChan
 }
 
-// invoke CreateBandwidthPackage api with *CreateBandwidthPackageRequest asynchronously
+// CreateBandwidthPackageWithCallback invokes the vpc.CreateBandwidthPackage API asynchronously
 // api document: https://help.aliyun.com/api/vpc/createbandwidthpackage.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateBandwidthPackageWithCallback(request *CreateBandwidthPackageRequest, callback func(response *CreateBandwidthPackageResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) CreateBandwidthPackageWithCallback(request *CreateBandwidt
 	return result
 }
 
+// CreateBandwidthPackageRequest is the request struct for api CreateBandwidthPackage
 type CreateBandwidthPackageRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -90,14 +91,15 @@ type CreateBandwidthPackageRequest struct {
 	InternetChargeType   string           `position:"Query" name:"InternetChargeType"`
 }
 
+// CreateBandwidthPackageResponse is the response struct for api CreateBandwidthPackage
 type CreateBandwidthPackageResponse struct {
 	*responses.BaseResponse
 	RequestId          string `json:"RequestId" xml:"RequestId"`
 	BandwidthPackageId string `json:"BandwidthPackageId" xml:"BandwidthPackageId"`
 }
 
-// create a request to invoke CreateBandwidthPackage API
-func CreateCreateBandwidthPackageRequest() (request *CreateBandwidthPackageRequest) {
+// CreateCreateBandwidthPackageRequest creates a request to invoke CreateBandwidthPackage API
+func CreateCreateBandwidthPackageRequest(request *CreateBandwidthPackageRequest) {
 	request = &CreateBandwidthPackageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -105,7 +107,7 @@ func CreateCreateBandwidthPackageRequest() (request *CreateBandwidthPackageReque
 	return
 }
 
-// create a response to parse from CreateBandwidthPackage response
+// CreateCreateBandwidthPackageResponse creates a response to parse from CreateBandwidthPackage response
 func CreateCreateBandwidthPackageResponse() (response *CreateBandwidthPackageResponse) {
 	response = &CreateBandwidthPackageResponse{
 		BaseResponse: &responses.BaseResponse{},

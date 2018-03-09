@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ReportPornJobResult api with *ReportPornJobResultRequest synchronously
+// ReportPornJobResult invokes the mts.ReportPornJobResult API synchronously
 // api document: https://help.aliyun.com/api/mts/reportpornjobresult.html
 func (client *Client) ReportPornJobResult(request *ReportPornJobResultRequest) (response *ReportPornJobResultResponse, err error) {
 	response = CreateReportPornJobResultResponse()
@@ -28,7 +28,7 @@ func (client *Client) ReportPornJobResult(request *ReportPornJobResultRequest) (
 	return
 }
 
-// invoke ReportPornJobResult api with *ReportPornJobResultRequest asynchronously
+// ReportPornJobResultWithChan invokes the mts.ReportPornJobResult API asynchronously
 // api document: https://help.aliyun.com/api/mts/reportpornjobresult.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReportPornJobResultWithChan(request *ReportPornJobResultRequest) (<-chan *ReportPornJobResultResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ReportPornJobResultWithChan(request *ReportPornJobResultRe
 	return responseChan, errChan
 }
 
-// invoke ReportPornJobResult api with *ReportPornJobResultRequest asynchronously
+// ReportPornJobResultWithCallback invokes the mts.ReportPornJobResult API asynchronously
 // api document: https://help.aliyun.com/api/mts/reportpornjobresult.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReportPornJobResultWithCallback(request *ReportPornJobResultRequest, callback func(response *ReportPornJobResultResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ReportPornJobResultWithCallback(request *ReportPornJobResu
 	return result
 }
 
+// ReportPornJobResultRequest is the request struct for api ReportPornJobResult
 type ReportPornJobResultRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,14 +85,15 @@ type ReportPornJobResultRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// ReportPornJobResultResponse is the response struct for api ReportPornJobResult
 type ReportPornJobResultResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	JobId     string `json:"JobId" xml:"JobId"`
 }
 
-// create a request to invoke ReportPornJobResult API
-func CreateReportPornJobResultRequest() (request *ReportPornJobResultRequest) {
+// CreateReportPornJobResultRequest creates a request to invoke ReportPornJobResult API
+func CreateReportPornJobResultRequest(request *ReportPornJobResultRequest) {
 	request = &ReportPornJobResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateReportPornJobResultRequest() (request *ReportPornJobResultRequest) {
 	return
 }
 
-// create a response to parse from ReportPornJobResult response
+// CreateReportPornJobResultResponse creates a response to parse from ReportPornJobResult response
 func CreateReportPornJobResultResponse() (response *ReportPornJobResultResponse) {
 	response = &ReportPornJobResultResponse{
 		BaseResponse: &responses.BaseResponse{},

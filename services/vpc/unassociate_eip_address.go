@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke UnassociateEipAddress api with *UnassociateEipAddressRequest synchronously
+// UnassociateEipAddress invokes the vpc.UnassociateEipAddress API synchronously
 // api document: https://help.aliyun.com/api/vpc/unassociateeipaddress.html
 func (client *Client) UnassociateEipAddress(request *UnassociateEipAddressRequest) (response *UnassociateEipAddressResponse, err error) {
 	response = CreateUnassociateEipAddressResponse()
@@ -28,7 +28,7 @@ func (client *Client) UnassociateEipAddress(request *UnassociateEipAddressReques
 	return
 }
 
-// invoke UnassociateEipAddress api with *UnassociateEipAddressRequest asynchronously
+// UnassociateEipAddressWithChan invokes the vpc.UnassociateEipAddress API asynchronously
 // api document: https://help.aliyun.com/api/vpc/unassociateeipaddress.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnassociateEipAddressWithChan(request *UnassociateEipAddressRequest) (<-chan *UnassociateEipAddressResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) UnassociateEipAddressWithChan(request *UnassociateEipAddre
 	return responseChan, errChan
 }
 
-// invoke UnassociateEipAddress api with *UnassociateEipAddressRequest asynchronously
+// UnassociateEipAddressWithCallback invokes the vpc.UnassociateEipAddress API asynchronously
 // api document: https://help.aliyun.com/api/vpc/unassociateeipaddress.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnassociateEipAddressWithCallback(request *UnassociateEipAddressRequest, callback func(response *UnassociateEipAddressResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) UnassociateEipAddressWithCallback(request *UnassociateEipA
 	return result
 }
 
+// UnassociateEipAddressRequest is the request struct for api UnassociateEipAddress
 type UnassociateEipAddressRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,13 +85,14 @@ type UnassociateEipAddressRequest struct {
 	InstanceType         string           `position:"Query" name:"InstanceType"`
 }
 
+// UnassociateEipAddressResponse is the response struct for api UnassociateEipAddress
 type UnassociateEipAddressResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke UnassociateEipAddress API
-func CreateUnassociateEipAddressRequest() (request *UnassociateEipAddressRequest) {
+// CreateUnassociateEipAddressRequest creates a request to invoke UnassociateEipAddress API
+func CreateUnassociateEipAddressRequest(request *UnassociateEipAddressRequest) {
 	request = &UnassociateEipAddressRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateUnassociateEipAddressRequest() (request *UnassociateEipAddressRequest
 	return
 }
 
-// create a response to parse from UnassociateEipAddress response
+// CreateUnassociateEipAddressResponse creates a response to parse from UnassociateEipAddress response
 func CreateUnassociateEipAddressResponse() (response *UnassociateEipAddressResponse) {
 	response = &UnassociateEipAddressResponse{
 		BaseResponse: &responses.BaseResponse{},

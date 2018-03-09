@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CreateBgpGroup api with *CreateBgpGroupRequest synchronously
+// CreateBgpGroup invokes the vpc.CreateBgpGroup API synchronously
 // api document: https://help.aliyun.com/api/vpc/createbgpgroup.html
 func (client *Client) CreateBgpGroup(request *CreateBgpGroupRequest) (response *CreateBgpGroupResponse, err error) {
 	response = CreateCreateBgpGroupResponse()
@@ -28,7 +28,7 @@ func (client *Client) CreateBgpGroup(request *CreateBgpGroupRequest) (response *
 	return
 }
 
-// invoke CreateBgpGroup api with *CreateBgpGroupRequest asynchronously
+// CreateBgpGroupWithChan invokes the vpc.CreateBgpGroup API asynchronously
 // api document: https://help.aliyun.com/api/vpc/createbgpgroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateBgpGroupWithChan(request *CreateBgpGroupRequest) (<-chan *CreateBgpGroupResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CreateBgpGroupWithChan(request *CreateBgpGroupRequest) (<-
 	return responseChan, errChan
 }
 
-// invoke CreateBgpGroup api with *CreateBgpGroupRequest asynchronously
+// CreateBgpGroupWithCallback invokes the vpc.CreateBgpGroup API asynchronously
 // api document: https://help.aliyun.com/api/vpc/createbgpgroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateBgpGroupWithCallback(request *CreateBgpGroupRequest, callback func(response *CreateBgpGroupResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) CreateBgpGroupWithCallback(request *CreateBgpGroupRequest,
 	return result
 }
 
+// CreateBgpGroupRequest is the request struct for api CreateBgpGroup
 type CreateBgpGroupRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -88,14 +89,15 @@ type CreateBgpGroupRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// CreateBgpGroupResponse is the response struct for api CreateBgpGroup
 type CreateBgpGroupResponse struct {
 	*responses.BaseResponse
 	RequestId  string `json:"RequestId" xml:"RequestId"`
 	BgpGroupId string `json:"BgpGroupId" xml:"BgpGroupId"`
 }
 
-// create a request to invoke CreateBgpGroup API
-func CreateCreateBgpGroupRequest() (request *CreateBgpGroupRequest) {
+// CreateCreateBgpGroupRequest creates a request to invoke CreateBgpGroup API
+func CreateCreateBgpGroupRequest(request *CreateBgpGroupRequest) {
 	request = &CreateBgpGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -103,7 +105,7 @@ func CreateCreateBgpGroupRequest() (request *CreateBgpGroupRequest) {
 	return
 }
 
-// create a response to parse from CreateBgpGroup response
+// CreateCreateBgpGroupResponse creates a response to parse from CreateBgpGroup response
 func CreateCreateBgpGroupResponse() (response *CreateBgpGroupResponse) {
 	response = &CreateBgpGroupResponse{
 		BaseResponse: &responses.BaseResponse{},

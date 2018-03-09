@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke GetUser api with *GetUserRequest synchronously
+// GetUser invokes the ccc.GetUser API synchronously
 // api document: https://help.aliyun.com/api/ccc/getuser.html
 func (client *Client) GetUser(request *GetUserRequest) (response *GetUserResponse, err error) {
 	response = CreateGetUserResponse()
@@ -28,7 +28,7 @@ func (client *Client) GetUser(request *GetUserRequest) (response *GetUserRespons
 	return
 }
 
-// invoke GetUser api with *GetUserRequest asynchronously
+// GetUserWithChan invokes the ccc.GetUser API asynchronously
 // api document: https://help.aliyun.com/api/ccc/getuser.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetUserWithChan(request *GetUserRequest) (<-chan *GetUserResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) GetUserWithChan(request *GetUserRequest) (<-chan *GetUserR
 	return responseChan, errChan
 }
 
-// invoke GetUser api with *GetUserRequest asynchronously
+// GetUserWithCallback invokes the ccc.GetUser API asynchronously
 // api document: https://help.aliyun.com/api/ccc/getuser.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetUserWithCallback(request *GetUserRequest, callback func(response *GetUserResponse, err error)) <-chan int {
@@ -73,12 +73,14 @@ func (client *Client) GetUserWithCallback(request *GetUserRequest, callback func
 	return result
 }
 
+// GetUserRequest is the request struct for api GetUser
 type GetUserRequest struct {
 	*requests.RpcRequest
 	InstanceId string `position:"Query" name:"InstanceId"`
 	UserId     string `position:"Query" name:"UserId"`
 }
 
+// GetUserResponse is the response struct for api GetUser
 type GetUserResponse struct {
 	*responses.BaseResponse
 	RequestId      string `json:"RequestId" xml:"RequestId"`
@@ -89,8 +91,8 @@ type GetUserResponse struct {
 	User           User   `json:"User" xml:"User"`
 }
 
-// create a request to invoke GetUser API
-func CreateGetUserRequest() (request *GetUserRequest) {
+// CreateGetUserRequest creates a request to invoke GetUser API
+func CreateGetUserRequest(request *GetUserRequest) {
 	request = &GetUserRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateGetUserRequest() (request *GetUserRequest) {
 	return
 }
 
-// create a response to parse from GetUser response
+// CreateGetUserResponse creates a response to parse from GetUser response
 func CreateGetUserResponse() (response *GetUserResponse) {
 	response = &GetUserResponse{
 		BaseResponse: &responses.BaseResponse{},

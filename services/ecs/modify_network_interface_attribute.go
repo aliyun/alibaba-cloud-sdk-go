@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifyNetworkInterfaceAttribute api with *ModifyNetworkInterfaceAttributeRequest synchronously
+// ModifyNetworkInterfaceAttribute invokes the ecs.ModifyNetworkInterfaceAttribute API synchronously
 // api document: https://help.aliyun.com/api/ecs/modifynetworkinterfaceattribute.html
 func (client *Client) ModifyNetworkInterfaceAttribute(request *ModifyNetworkInterfaceAttributeRequest) (response *ModifyNetworkInterfaceAttributeResponse, err error) {
 	response = CreateModifyNetworkInterfaceAttributeResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifyNetworkInterfaceAttribute(request *ModifyNetworkInte
 	return
 }
 
-// invoke ModifyNetworkInterfaceAttribute api with *ModifyNetworkInterfaceAttributeRequest asynchronously
+// ModifyNetworkInterfaceAttributeWithChan invokes the ecs.ModifyNetworkInterfaceAttribute API asynchronously
 // api document: https://help.aliyun.com/api/ecs/modifynetworkinterfaceattribute.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyNetworkInterfaceAttributeWithChan(request *ModifyNetworkInterfaceAttributeRequest) (<-chan *ModifyNetworkInterfaceAttributeResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifyNetworkInterfaceAttributeWithChan(request *ModifyNet
 	return responseChan, errChan
 }
 
-// invoke ModifyNetworkInterfaceAttribute api with *ModifyNetworkInterfaceAttributeRequest asynchronously
+// ModifyNetworkInterfaceAttributeWithCallback invokes the ecs.ModifyNetworkInterfaceAttribute API asynchronously
 // api document: https://help.aliyun.com/api/ecs/modifynetworkinterfaceattribute.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyNetworkInterfaceAttributeWithCallback(request *ModifyNetworkInterfaceAttributeRequest, callback func(response *ModifyNetworkInterfaceAttributeResponse, err error)) <-chan int {
@@ -73,17 +73,19 @@ func (client *Client) ModifyNetworkInterfaceAttributeWithCallback(request *Modif
 	return result
 }
 
+// ModifyNetworkInterfaceAttributeRequest is the request struct for api ModifyNetworkInterfaceAttribute
 type ModifyNetworkInterfaceAttributeRequest struct {
 	*requests.RpcRequest
 }
 
+// ModifyNetworkInterfaceAttributeResponse is the response struct for api ModifyNetworkInterfaceAttribute
 type ModifyNetworkInterfaceAttributeResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ModifyNetworkInterfaceAttribute API
-func CreateModifyNetworkInterfaceAttributeRequest() (request *ModifyNetworkInterfaceAttributeRequest) {
+// CreateModifyNetworkInterfaceAttributeRequest creates a request to invoke ModifyNetworkInterfaceAttribute API
+func CreateModifyNetworkInterfaceAttributeRequest(request *ModifyNetworkInterfaceAttributeRequest) {
 	request = &ModifyNetworkInterfaceAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -91,7 +93,7 @@ func CreateModifyNetworkInterfaceAttributeRequest() (request *ModifyNetworkInter
 	return
 }
 
-// create a response to parse from ModifyNetworkInterfaceAttribute response
+// CreateModifyNetworkInterfaceAttributeResponse creates a response to parse from ModifyNetworkInterfaceAttribute response
 func CreateModifyNetworkInterfaceAttributeResponse() (response *ModifyNetworkInterfaceAttributeResponse) {
 	response = &ModifyNetworkInterfaceAttributeResponse{
 		BaseResponse: &responses.BaseResponse{},

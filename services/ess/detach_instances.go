@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DetachInstances api with *DetachInstancesRequest synchronously
+// DetachInstances invokes the ess.DetachInstances API synchronously
 // api document: https://help.aliyun.com/api/ess/detachinstances.html
 func (client *Client) DetachInstances(request *DetachInstancesRequest) (response *DetachInstancesResponse, err error) {
 	response = CreateDetachInstancesResponse()
@@ -28,7 +28,7 @@ func (client *Client) DetachInstances(request *DetachInstancesRequest) (response
 	return
 }
 
-// invoke DetachInstances api with *DetachInstancesRequest asynchronously
+// DetachInstancesWithChan invokes the ess.DetachInstances API asynchronously
 // api document: https://help.aliyun.com/api/ess/detachinstances.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetachInstancesWithChan(request *DetachInstancesRequest) (<-chan *DetachInstancesResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DetachInstancesWithChan(request *DetachInstancesRequest) (
 	return responseChan, errChan
 }
 
-// invoke DetachInstances api with *DetachInstancesRequest asynchronously
+// DetachInstancesWithCallback invokes the ess.DetachInstances API asynchronously
 // api document: https://help.aliyun.com/api/ess/detachinstances.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DetachInstancesWithCallback(request *DetachInstancesRequest, callback func(response *DetachInstancesResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DetachInstancesWithCallback(request *DetachInstancesReques
 	return result
 }
 
+// DetachInstancesRequest is the request struct for api DetachInstances
 type DetachInstancesRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -102,14 +103,15 @@ type DetachInstancesRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// DetachInstancesResponse is the response struct for api DetachInstances
 type DetachInstancesResponse struct {
 	*responses.BaseResponse
 	ScalingActivityId string `json:"ScalingActivityId" xml:"ScalingActivityId"`
 	RequestId         string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DetachInstances API
-func CreateDetachInstancesRequest() (request *DetachInstancesRequest) {
+// CreateDetachInstancesRequest creates a request to invoke DetachInstances API
+func CreateDetachInstancesRequest(request *DetachInstancesRequest) {
 	request = &DetachInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -117,7 +119,7 @@ func CreateDetachInstancesRequest() (request *DetachInstancesRequest) {
 	return
 }
 
-// create a response to parse from DetachInstances response
+// CreateDetachInstancesResponse creates a response to parse from DetachInstances response
 func CreateDetachInstancesResponse() (response *DetachInstancesResponse) {
 	response = &DetachInstancesResponse{
 		BaseResponse: &responses.BaseResponse{},

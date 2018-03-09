@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke UpdateRole api with *UpdateRoleRequest synchronously
+// UpdateRole invokes the ram.UpdateRole API synchronously
 // api document: https://help.aliyun.com/api/ram/updaterole.html
 func (client *Client) UpdateRole(request *UpdateRoleRequest) (response *UpdateRoleResponse, err error) {
 	response = CreateUpdateRoleResponse()
@@ -28,7 +28,7 @@ func (client *Client) UpdateRole(request *UpdateRoleRequest) (response *UpdateRo
 	return
 }
 
-// invoke UpdateRole api with *UpdateRoleRequest asynchronously
+// UpdateRoleWithChan invokes the ram.UpdateRole API asynchronously
 // api document: https://help.aliyun.com/api/ram/updaterole.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateRoleWithChan(request *UpdateRoleRequest) (<-chan *UpdateRoleResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) UpdateRoleWithChan(request *UpdateRoleRequest) (<-chan *Up
 	return responseChan, errChan
 }
 
-// invoke UpdateRole api with *UpdateRoleRequest asynchronously
+// UpdateRoleWithCallback invokes the ram.UpdateRole API asynchronously
 // api document: https://help.aliyun.com/api/ram/updaterole.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateRoleWithCallback(request *UpdateRoleRequest, callback func(response *UpdateRoleResponse, err error)) <-chan int {
@@ -73,20 +73,22 @@ func (client *Client) UpdateRoleWithCallback(request *UpdateRoleRequest, callbac
 	return result
 }
 
+// UpdateRoleRequest is the request struct for api UpdateRole
 type UpdateRoleRequest struct {
 	*requests.RpcRequest
 	RoleName                    string `position:"Query" name:"RoleName"`
 	NewAssumeRolePolicyDocument string `position:"Query" name:"NewAssumeRolePolicyDocument"`
 }
 
+// UpdateRoleResponse is the response struct for api UpdateRole
 type UpdateRoleResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Role      Role   `json:"Role" xml:"Role"`
 }
 
-// create a request to invoke UpdateRole API
-func CreateUpdateRoleRequest() (request *UpdateRoleRequest) {
+// CreateUpdateRoleRequest creates a request to invoke UpdateRole API
+func CreateUpdateRoleRequest(request *UpdateRoleRequest) {
 	request = &UpdateRoleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -94,7 +96,7 @@ func CreateUpdateRoleRequest() (request *UpdateRoleRequest) {
 	return
 }
 
-// create a response to parse from UpdateRole response
+// CreateUpdateRoleResponse creates a response to parse from UpdateRole response
 func CreateUpdateRoleResponse() (response *UpdateRoleResponse) {
 	response = &UpdateRoleResponse{
 		BaseResponse: &responses.BaseResponse{},

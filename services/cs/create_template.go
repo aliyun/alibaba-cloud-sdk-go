@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CreateTemplate api with *CreateTemplateRequest synchronously
+// CreateTemplate invokes the cs.CreateTemplate API synchronously
 // api document: https://help.aliyun.com/api/cs/createtemplate.html
 func (client *Client) CreateTemplate(request *CreateTemplateRequest) (response *CreateTemplateResponse, err error) {
 	response = CreateCreateTemplateResponse()
@@ -28,7 +28,7 @@ func (client *Client) CreateTemplate(request *CreateTemplateRequest) (response *
 	return
 }
 
-// invoke CreateTemplate api with *CreateTemplateRequest asynchronously
+// CreateTemplateWithChan invokes the cs.CreateTemplate API asynchronously
 // api document: https://help.aliyun.com/api/cs/createtemplate.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateTemplateWithChan(request *CreateTemplateRequest) (<-chan *CreateTemplateResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CreateTemplateWithChan(request *CreateTemplateRequest) (<-
 	return responseChan, errChan
 }
 
-// invoke CreateTemplate api with *CreateTemplateRequest asynchronously
+// CreateTemplateWithCallback invokes the cs.CreateTemplate API asynchronously
 // api document: https://help.aliyun.com/api/cs/createtemplate.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateTemplateWithCallback(request *CreateTemplateRequest, callback func(response *CreateTemplateResponse, err error)) <-chan int {
@@ -73,16 +73,18 @@ func (client *Client) CreateTemplateWithCallback(request *CreateTemplateRequest,
 	return result
 }
 
+// CreateTemplateRequest is the request struct for api CreateTemplate
 type CreateTemplateRequest struct {
 	*requests.RoaRequest
 }
 
+// CreateTemplateResponse is the response struct for api CreateTemplate
 type CreateTemplateResponse struct {
 	*responses.BaseResponse
 }
 
-// create a request to invoke CreateTemplate API
-func CreateCreateTemplateRequest() (request *CreateTemplateRequest) {
+// CreateCreateTemplateRequest creates a request to invoke CreateTemplate API
+func CreateCreateTemplateRequest(request *CreateTemplateRequest) {
 	request = &CreateTemplateRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
@@ -91,7 +93,7 @@ func CreateCreateTemplateRequest() (request *CreateTemplateRequest) {
 	return
 }
 
-// create a response to parse from CreateTemplate response
+// CreateCreateTemplateResponse creates a response to parse from CreateTemplate response
 func CreateCreateTemplateResponse() (response *CreateTemplateResponse) {
 	response = &CreateTemplateResponse{
 		BaseResponse: &responses.BaseResponse{},

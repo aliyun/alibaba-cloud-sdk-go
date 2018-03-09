@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SetCACertificateName api with *SetCACertificateNameRequest synchronously
+// SetCACertificateName invokes the slb.SetCACertificateName API synchronously
 // api document: https://help.aliyun.com/api/slb/setcacertificatename.html
 func (client *Client) SetCACertificateName(request *SetCACertificateNameRequest) (response *SetCACertificateNameResponse, err error) {
 	response = CreateSetCACertificateNameResponse()
@@ -28,7 +28,7 @@ func (client *Client) SetCACertificateName(request *SetCACertificateNameRequest)
 	return
 }
 
-// invoke SetCACertificateName api with *SetCACertificateNameRequest asynchronously
+// SetCACertificateNameWithChan invokes the slb.SetCACertificateName API asynchronously
 // api document: https://help.aliyun.com/api/slb/setcacertificatename.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetCACertificateNameWithChan(request *SetCACertificateNameRequest) (<-chan *SetCACertificateNameResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SetCACertificateNameWithChan(request *SetCACertificateName
 	return responseChan, errChan
 }
 
-// invoke SetCACertificateName api with *SetCACertificateNameRequest asynchronously
+// SetCACertificateNameWithCallback invokes the slb.SetCACertificateName API asynchronously
 // api document: https://help.aliyun.com/api/slb/setcacertificatename.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetCACertificateNameWithCallback(request *SetCACertificateNameRequest, callback func(response *SetCACertificateNameResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SetCACertificateNameWithCallback(request *SetCACertificate
 	return result
 }
 
+// SetCACertificateNameRequest is the request struct for api SetCACertificateName
 type SetCACertificateNameRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,13 +85,14 @@ type SetCACertificateNameRequest struct {
 	CACertificateName    string           `position:"Query" name:"CACertificateName"`
 }
 
+// SetCACertificateNameResponse is the response struct for api SetCACertificateName
 type SetCACertificateNameResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke SetCACertificateName API
-func CreateSetCACertificateNameRequest() (request *SetCACertificateNameRequest) {
+// CreateSetCACertificateNameRequest creates a request to invoke SetCACertificateName API
+func CreateSetCACertificateNameRequest(request *SetCACertificateNameRequest) {
 	request = &SetCACertificateNameRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateSetCACertificateNameRequest() (request *SetCACertificateNameRequest) 
 	return
 }
 
-// create a response to parse from SetCACertificateName response
+// CreateSetCACertificateNameResponse creates a response to parse from SetCACertificateName response
 func CreateSetCACertificateNameResponse() (response *SetCACertificateNameResponse) {
 	response = &SetCACertificateNameResponse{
 		BaseResponse: &responses.BaseResponse{},

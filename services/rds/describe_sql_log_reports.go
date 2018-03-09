@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeSQLLogReports api with *DescribeSQLLogReportsRequest synchronously
+// DescribeSQLLogReports invokes the rds.DescribeSQLLogReports API synchronously
 // api document: https://help.aliyun.com/api/rds/describesqllogreports.html
 func (client *Client) DescribeSQLLogReports(request *DescribeSQLLogReportsRequest) (response *DescribeSQLLogReportsResponse, err error) {
 	response = CreateDescribeSQLLogReportsResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeSQLLogReports(request *DescribeSQLLogReportsReques
 	return
 }
 
-// invoke DescribeSQLLogReports api with *DescribeSQLLogReportsRequest asynchronously
+// DescribeSQLLogReportsWithChan invokes the rds.DescribeSQLLogReports API asynchronously
 // api document: https://help.aliyun.com/api/rds/describesqllogreports.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSQLLogReportsWithChan(request *DescribeSQLLogReportsRequest) (<-chan *DescribeSQLLogReportsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeSQLLogReportsWithChan(request *DescribeSQLLogRepor
 	return responseChan, errChan
 }
 
-// invoke DescribeSQLLogReports api with *DescribeSQLLogReportsRequest asynchronously
+// DescribeSQLLogReportsWithCallback invokes the rds.DescribeSQLLogReports API asynchronously
 // api document: https://help.aliyun.com/api/rds/describesqllogreports.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSQLLogReportsWithCallback(request *DescribeSQLLogReportsRequest, callback func(response *DescribeSQLLogReportsResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeSQLLogReportsWithCallback(request *DescribeSQLLogR
 	return result
 }
 
+// DescribeSQLLogReportsRequest is the request struct for api DescribeSQLLogReports
 type DescribeSQLLogReportsRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -86,6 +87,7 @@ type DescribeSQLLogReportsRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// DescribeSQLLogReportsResponse is the response struct for api DescribeSQLLogReports
 type DescribeSQLLogReportsResponse struct {
 	*responses.BaseResponse
 	RequestId        string                       `json:"RequestId" xml:"RequestId"`
@@ -95,8 +97,8 @@ type DescribeSQLLogReportsResponse struct {
 	Items            ItemsInDescribeSQLLogReports `json:"Items" xml:"Items"`
 }
 
-// create a request to invoke DescribeSQLLogReports API
-func CreateDescribeSQLLogReportsRequest() (request *DescribeSQLLogReportsRequest) {
+// CreateDescribeSQLLogReportsRequest creates a request to invoke DescribeSQLLogReports API
+func CreateDescribeSQLLogReportsRequest(request *DescribeSQLLogReportsRequest) {
 	request = &DescribeSQLLogReportsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -104,7 +106,7 @@ func CreateDescribeSQLLogReportsRequest() (request *DescribeSQLLogReportsRequest
 	return
 }
 
-// create a response to parse from DescribeSQLLogReports response
+// CreateDescribeSQLLogReportsResponse creates a response to parse from DescribeSQLLogReports response
 func CreateDescribeSQLLogReportsResponse() (response *DescribeSQLLogReportsResponse) {
 	response = &DescribeSQLLogReportsResponse{
 		BaseResponse: &responses.BaseResponse{},

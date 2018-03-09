@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SubmitVideoSplitJob api with *SubmitVideoSplitJobRequest synchronously
+// SubmitVideoSplitJob invokes the mts.SubmitVideoSplitJob API synchronously
 // api document: https://help.aliyun.com/api/mts/submitvideosplitjob.html
 func (client *Client) SubmitVideoSplitJob(request *SubmitVideoSplitJobRequest) (response *SubmitVideoSplitJobResponse, err error) {
 	response = CreateSubmitVideoSplitJobResponse()
@@ -28,7 +28,7 @@ func (client *Client) SubmitVideoSplitJob(request *SubmitVideoSplitJobRequest) (
 	return
 }
 
-// invoke SubmitVideoSplitJob api with *SubmitVideoSplitJobRequest asynchronously
+// SubmitVideoSplitJobWithChan invokes the mts.SubmitVideoSplitJob API asynchronously
 // api document: https://help.aliyun.com/api/mts/submitvideosplitjob.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitVideoSplitJobWithChan(request *SubmitVideoSplitJobRequest) (<-chan *SubmitVideoSplitJobResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SubmitVideoSplitJobWithChan(request *SubmitVideoSplitJobRe
 	return responseChan, errChan
 }
 
-// invoke SubmitVideoSplitJob api with *SubmitVideoSplitJobRequest asynchronously
+// SubmitVideoSplitJobWithCallback invokes the mts.SubmitVideoSplitJob API asynchronously
 // api document: https://help.aliyun.com/api/mts/submitvideosplitjob.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitVideoSplitJobWithCallback(request *SubmitVideoSplitJobRequest, callback func(response *SubmitVideoSplitJobResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SubmitVideoSplitJobWithCallback(request *SubmitVideoSplitJ
 	return result
 }
 
+// SubmitVideoSplitJobRequest is the request struct for api SubmitVideoSplitJob
 type SubmitVideoSplitJobRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -85,14 +86,15 @@ type SubmitVideoSplitJobRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// SubmitVideoSplitJobResponse is the response struct for api SubmitVideoSplitJob
 type SubmitVideoSplitJobResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	JobId     string `json:"JobId" xml:"JobId"`
 }
 
-// create a request to invoke SubmitVideoSplitJob API
-func CreateSubmitVideoSplitJobRequest() (request *SubmitVideoSplitJobRequest) {
+// CreateSubmitVideoSplitJobRequest creates a request to invoke SubmitVideoSplitJob API
+func CreateSubmitVideoSplitJobRequest(request *SubmitVideoSplitJobRequest) {
 	request = &SubmitVideoSplitJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -100,7 +102,7 @@ func CreateSubmitVideoSplitJobRequest() (request *SubmitVideoSplitJobRequest) {
 	return
 }
 
-// create a response to parse from SubmitVideoSplitJob response
+// CreateSubmitVideoSplitJobResponse creates a response to parse from SubmitVideoSplitJob response
 func CreateSubmitVideoSplitJobResponse() (response *SubmitVideoSplitJobResponse) {
 	response = &SubmitVideoSplitJobResponse{
 		BaseResponse: &responses.BaseResponse{},

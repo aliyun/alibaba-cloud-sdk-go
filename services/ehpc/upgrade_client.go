@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke UpgradeClient api with *UpgradeClientRequest synchronously
+// UpgradeClient invokes the ehpc.UpgradeClient API synchronously
 // api document: https://help.aliyun.com/api/ehpc/upgradeclient.html
 func (client *Client) UpgradeClient(request *UpgradeClientRequest) (response *UpgradeClientResponse, err error) {
 	response = CreateUpgradeClientResponse()
@@ -28,7 +28,7 @@ func (client *Client) UpgradeClient(request *UpgradeClientRequest) (response *Up
 	return
 }
 
-// invoke UpgradeClient api with *UpgradeClientRequest asynchronously
+// UpgradeClientWithChan invokes the ehpc.UpgradeClient API asynchronously
 // api document: https://help.aliyun.com/api/ehpc/upgradeclient.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpgradeClientWithChan(request *UpgradeClientRequest) (<-chan *UpgradeClientResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) UpgradeClientWithChan(request *UpgradeClientRequest) (<-ch
 	return responseChan, errChan
 }
 
-// invoke UpgradeClient api with *UpgradeClientRequest asynchronously
+// UpgradeClientWithCallback invokes the ehpc.UpgradeClient API asynchronously
 // api document: https://help.aliyun.com/api/ehpc/upgradeclient.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpgradeClientWithCallback(request *UpgradeClientRequest, callback func(response *UpgradeClientResponse, err error)) <-chan int {
@@ -73,19 +73,21 @@ func (client *Client) UpgradeClientWithCallback(request *UpgradeClientRequest, c
 	return result
 }
 
+// UpgradeClientRequest is the request struct for api UpgradeClient
 type UpgradeClientRequest struct {
 	*requests.RpcRequest
 	ClusterId     string `position:"Query" name:"ClusterId"`
 	ClientVersion string `position:"Query" name:"ClientVersion"`
 }
 
+// UpgradeClientResponse is the response struct for api UpgradeClient
 type UpgradeClientResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke UpgradeClient API
-func CreateUpgradeClientRequest() (request *UpgradeClientRequest) {
+// CreateUpgradeClientRequest creates a request to invoke UpgradeClient API
+func CreateUpgradeClientRequest(request *UpgradeClientRequest) {
 	request = &UpgradeClientRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -93,7 +95,7 @@ func CreateUpgradeClientRequest() (request *UpgradeClientRequest) {
 	return
 }
 
-// create a response to parse from UpgradeClient response
+// CreateUpgradeClientResponse creates a response to parse from UpgradeClient response
 func CreateUpgradeClientResponse() (response *UpgradeClientResponse) {
 	response = &UpgradeClientResponse{
 		BaseResponse: &responses.BaseResponse{},

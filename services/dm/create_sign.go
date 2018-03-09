@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CreateSign api with *CreateSignRequest synchronously
+// CreateSign invokes the dm.CreateSign API synchronously
 // api document: https://help.aliyun.com/api/dm/createsign.html
 func (client *Client) CreateSign(request *CreateSignRequest) (response *CreateSignResponse, err error) {
 	response = CreateCreateSignResponse()
@@ -28,7 +28,7 @@ func (client *Client) CreateSign(request *CreateSignRequest) (response *CreateSi
 	return
 }
 
-// invoke CreateSign api with *CreateSignRequest asynchronously
+// CreateSignWithChan invokes the dm.CreateSign API asynchronously
 // api document: https://help.aliyun.com/api/dm/createsign.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateSignWithChan(request *CreateSignRequest) (<-chan *CreateSignResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CreateSignWithChan(request *CreateSignRequest) (<-chan *Cr
 	return responseChan, errChan
 }
 
-// invoke CreateSign api with *CreateSignRequest asynchronously
+// CreateSignWithCallback invokes the dm.CreateSign API asynchronously
 // api document: https://help.aliyun.com/api/dm/createsign.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateSignWithCallback(request *CreateSignRequest, callback func(response *CreateSignResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) CreateSignWithCallback(request *CreateSignRequest, callbac
 	return result
 }
 
+// CreateSignRequest is the request struct for api CreateSign
 type CreateSignRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -85,13 +86,14 @@ type CreateSignRequest struct {
 	FromType             requests.Integer `position:"Query" name:"FromType"`
 }
 
+// CreateSignResponse is the response struct for api CreateSign
 type CreateSignResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke CreateSign API
-func CreateCreateSignRequest() (request *CreateSignRequest) {
+// CreateCreateSignRequest creates a request to invoke CreateSign API
+func CreateCreateSignRequest(request *CreateSignRequest) {
 	request = &CreateSignRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateCreateSignRequest() (request *CreateSignRequest) {
 	return
 }
 
-// create a response to parse from CreateSign response
+// CreateCreateSignResponse creates a response to parse from CreateSign response
 func CreateCreateSignResponse() (response *CreateSignResponse) {
 	response = &CreateSignResponse{
 		BaseResponse: &responses.BaseResponse{},

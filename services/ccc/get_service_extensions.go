@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke GetServiceExtensions api with *GetServiceExtensionsRequest synchronously
+// GetServiceExtensions invokes the ccc.GetServiceExtensions API synchronously
 // api document: https://help.aliyun.com/api/ccc/getserviceextensions.html
 func (client *Client) GetServiceExtensions(request *GetServiceExtensionsRequest) (response *GetServiceExtensionsResponse, err error) {
 	response = CreateGetServiceExtensionsResponse()
@@ -28,7 +28,7 @@ func (client *Client) GetServiceExtensions(request *GetServiceExtensionsRequest)
 	return
 }
 
-// invoke GetServiceExtensions api with *GetServiceExtensionsRequest asynchronously
+// GetServiceExtensionsWithChan invokes the ccc.GetServiceExtensions API asynchronously
 // api document: https://help.aliyun.com/api/ccc/getserviceextensions.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetServiceExtensionsWithChan(request *GetServiceExtensionsRequest) (<-chan *GetServiceExtensionsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) GetServiceExtensionsWithChan(request *GetServiceExtensions
 	return responseChan, errChan
 }
 
-// invoke GetServiceExtensions api with *GetServiceExtensionsRequest asynchronously
+// GetServiceExtensionsWithCallback invokes the ccc.GetServiceExtensions API asynchronously
 // api document: https://help.aliyun.com/api/ccc/getserviceextensions.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetServiceExtensionsWithCallback(request *GetServiceExtensionsRequest, callback func(response *GetServiceExtensionsResponse, err error)) <-chan int {
@@ -73,12 +73,14 @@ func (client *Client) GetServiceExtensionsWithCallback(request *GetServiceExtens
 	return result
 }
 
+// GetServiceExtensionsRequest is the request struct for api GetServiceExtensions
 type GetServiceExtensionsRequest struct {
 	*requests.RpcRequest
 	InstanceId  string `position:"Query" name:"InstanceId"`
 	ServiceType string `position:"Query" name:"ServiceType"`
 }
 
+// GetServiceExtensionsResponse is the response struct for api GetServiceExtensions
 type GetServiceExtensionsResponse struct {
 	*responses.BaseResponse
 	RequestId         string            `json:"RequestId" xml:"RequestId"`
@@ -89,8 +91,8 @@ type GetServiceExtensionsResponse struct {
 	ServiceExtensions ServiceExtensions `json:"ServiceExtensions" xml:"ServiceExtensions"`
 }
 
-// create a request to invoke GetServiceExtensions API
-func CreateGetServiceExtensionsRequest() (request *GetServiceExtensionsRequest) {
+// CreateGetServiceExtensionsRequest creates a request to invoke GetServiceExtensions API
+func CreateGetServiceExtensionsRequest(request *GetServiceExtensionsRequest) {
 	request = &GetServiceExtensionsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateGetServiceExtensionsRequest() (request *GetServiceExtensionsRequest) 
 	return
 }
 
-// create a response to parse from GetServiceExtensions response
+// CreateGetServiceExtensionsResponse creates a response to parse from GetServiceExtensions response
 func CreateGetServiceExtensionsResponse() (response *GetServiceExtensionsResponse) {
 	response = &GetServiceExtensionsResponse{
 		BaseResponse: &responses.BaseResponse{},

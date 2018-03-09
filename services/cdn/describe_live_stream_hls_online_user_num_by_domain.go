@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeLiveStreamHlsOnlineUserNumByDomain api with *DescribeLiveStreamHlsOnlineUserNumByDomainRequest synchronously
+// DescribeLiveStreamHlsOnlineUserNumByDomain invokes the cdn.DescribeLiveStreamHlsOnlineUserNumByDomain API synchronously
 // api document: https://help.aliyun.com/api/cdn/describelivestreamhlsonlineusernumbydomain.html
 func (client *Client) DescribeLiveStreamHlsOnlineUserNumByDomain(request *DescribeLiveStreamHlsOnlineUserNumByDomainRequest) (response *DescribeLiveStreamHlsOnlineUserNumByDomainResponse, err error) {
 	response = CreateDescribeLiveStreamHlsOnlineUserNumByDomainResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeLiveStreamHlsOnlineUserNumByDomain(request *Descri
 	return
 }
 
-// invoke DescribeLiveStreamHlsOnlineUserNumByDomain api with *DescribeLiveStreamHlsOnlineUserNumByDomainRequest asynchronously
+// DescribeLiveStreamHlsOnlineUserNumByDomainWithChan invokes the cdn.DescribeLiveStreamHlsOnlineUserNumByDomain API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describelivestreamhlsonlineusernumbydomain.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamHlsOnlineUserNumByDomainWithChan(request *DescribeLiveStreamHlsOnlineUserNumByDomainRequest) (<-chan *DescribeLiveStreamHlsOnlineUserNumByDomainResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeLiveStreamHlsOnlineUserNumByDomainWithChan(request
 	return responseChan, errChan
 }
 
-// invoke DescribeLiveStreamHlsOnlineUserNumByDomain api with *DescribeLiveStreamHlsOnlineUserNumByDomainRequest asynchronously
+// DescribeLiveStreamHlsOnlineUserNumByDomainWithCallback invokes the cdn.DescribeLiveStreamHlsOnlineUserNumByDomain API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describelivestreamhlsonlineusernumbydomain.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamHlsOnlineUserNumByDomainWithCallback(request *DescribeLiveStreamHlsOnlineUserNumByDomainRequest, callback func(response *DescribeLiveStreamHlsOnlineUserNumByDomainResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeLiveStreamHlsOnlineUserNumByDomainWithCallback(req
 	return result
 }
 
+// DescribeLiveStreamHlsOnlineUserNumByDomainRequest is the request struct for api DescribeLiveStreamHlsOnlineUserNumByDomain
 type DescribeLiveStreamHlsOnlineUserNumByDomainRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,6 +85,7 @@ type DescribeLiveStreamHlsOnlineUserNumByDomainRequest struct {
 	PageSize      requests.Integer `position:"Query" name:"PageSize"`
 }
 
+// DescribeLiveStreamHlsOnlineUserNumByDomainResponse is the response struct for api DescribeLiveStreamHlsOnlineUserNumByDomain
 type DescribeLiveStreamHlsOnlineUserNumByDomainResponse struct {
 	*responses.BaseResponse
 	RequestId       string                                                     `json:"RequestId" xml:"RequestId"`
@@ -94,8 +96,8 @@ type DescribeLiveStreamHlsOnlineUserNumByDomainResponse struct {
 	OnlineUserInfo  OnlineUserInfoInDescribeLiveStreamHlsOnlineUserNumByDomain `json:"OnlineUserInfo" xml:"OnlineUserInfo"`
 }
 
-// create a request to invoke DescribeLiveStreamHlsOnlineUserNumByDomain API
-func CreateDescribeLiveStreamHlsOnlineUserNumByDomainRequest() (request *DescribeLiveStreamHlsOnlineUserNumByDomainRequest) {
+// CreateDescribeLiveStreamHlsOnlineUserNumByDomainRequest creates a request to invoke DescribeLiveStreamHlsOnlineUserNumByDomain API
+func CreateDescribeLiveStreamHlsOnlineUserNumByDomainRequest(request *DescribeLiveStreamHlsOnlineUserNumByDomainRequest) {
 	request = &DescribeLiveStreamHlsOnlineUserNumByDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -103,7 +105,7 @@ func CreateDescribeLiveStreamHlsOnlineUserNumByDomainRequest() (request *Describ
 	return
 }
 
-// create a response to parse from DescribeLiveStreamHlsOnlineUserNumByDomain response
+// CreateDescribeLiveStreamHlsOnlineUserNumByDomainResponse creates a response to parse from DescribeLiveStreamHlsOnlineUserNumByDomain response
 func CreateDescribeLiveStreamHlsOnlineUserNumByDomainResponse() (response *DescribeLiveStreamHlsOnlineUserNumByDomainResponse) {
 	response = &DescribeLiveStreamHlsOnlineUserNumByDomainResponse{
 		BaseResponse: &responses.BaseResponse{},

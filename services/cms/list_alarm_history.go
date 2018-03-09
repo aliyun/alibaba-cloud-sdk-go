@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ListAlarmHistory api with *ListAlarmHistoryRequest synchronously
+// ListAlarmHistory invokes the cms.ListAlarmHistory API synchronously
 // api document: https://help.aliyun.com/api/cms/listalarmhistory.html
 func (client *Client) ListAlarmHistory(request *ListAlarmHistoryRequest) (response *ListAlarmHistoryResponse, err error) {
 	response = CreateListAlarmHistoryResponse()
@@ -28,7 +28,7 @@ func (client *Client) ListAlarmHistory(request *ListAlarmHistoryRequest) (respon
 	return
 }
 
-// invoke ListAlarmHistory api with *ListAlarmHistoryRequest asynchronously
+// ListAlarmHistoryWithChan invokes the cms.ListAlarmHistory API asynchronously
 // api document: https://help.aliyun.com/api/cms/listalarmhistory.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAlarmHistoryWithChan(request *ListAlarmHistoryRequest) (<-chan *ListAlarmHistoryResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ListAlarmHistoryWithChan(request *ListAlarmHistoryRequest)
 	return responseChan, errChan
 }
 
-// invoke ListAlarmHistory api with *ListAlarmHistoryRequest asynchronously
+// ListAlarmHistoryWithCallback invokes the cms.ListAlarmHistory API asynchronously
 // api document: https://help.aliyun.com/api/cms/listalarmhistory.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAlarmHistoryWithCallback(request *ListAlarmHistoryRequest, callback func(response *ListAlarmHistoryResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ListAlarmHistoryWithCallback(request *ListAlarmHistoryRequ
 	return result
 }
 
+// ListAlarmHistoryRequest is the request struct for api ListAlarmHistory
 type ListAlarmHistoryRequest struct {
 	*requests.RpcRequest
 	CallbyCmsOwner string           `position:"Query" name:"callby_cms_owner"`
@@ -83,6 +84,7 @@ type ListAlarmHistoryRequest struct {
 	Cursor         string           `position:"Query" name:"Cursor"`
 }
 
+// ListAlarmHistoryResponse is the response struct for api ListAlarmHistory
 type ListAlarmHistoryResponse struct {
 	*responses.BaseResponse
 	Success          bool                               `json:"Success" xml:"Success"`
@@ -93,8 +95,8 @@ type ListAlarmHistoryResponse struct {
 	AlarmHistoryList AlarmHistoryListInListAlarmHistory `json:"AlarmHistoryList" xml:"AlarmHistoryList"`
 }
 
-// create a request to invoke ListAlarmHistory API
-func CreateListAlarmHistoryRequest() (request *ListAlarmHistoryRequest) {
+// CreateListAlarmHistoryRequest creates a request to invoke ListAlarmHistory API
+func CreateListAlarmHistoryRequest(request *ListAlarmHistoryRequest) {
 	request = &ListAlarmHistoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -102,7 +104,7 @@ func CreateListAlarmHistoryRequest() (request *ListAlarmHistoryRequest) {
 	return
 }
 
-// create a response to parse from ListAlarmHistory response
+// CreateListAlarmHistoryResponse creates a response to parse from ListAlarmHistory response
 func CreateListAlarmHistoryResponse() (response *ListAlarmHistoryResponse) {
 	response = &ListAlarmHistoryResponse{
 		BaseResponse: &responses.BaseResponse{},

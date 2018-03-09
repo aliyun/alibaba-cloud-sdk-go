@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke GrantOperatorPermission api with *GrantOperatorPermissionRequest synchronously
+// GrantOperatorPermission invokes the rds.GrantOperatorPermission API synchronously
 // api document: https://help.aliyun.com/api/rds/grantoperatorpermission.html
 func (client *Client) GrantOperatorPermission(request *GrantOperatorPermissionRequest) (response *GrantOperatorPermissionResponse, err error) {
 	response = CreateGrantOperatorPermissionResponse()
@@ -28,7 +28,7 @@ func (client *Client) GrantOperatorPermission(request *GrantOperatorPermissionRe
 	return
 }
 
-// invoke GrantOperatorPermission api with *GrantOperatorPermissionRequest asynchronously
+// GrantOperatorPermissionWithChan invokes the rds.GrantOperatorPermission API asynchronously
 // api document: https://help.aliyun.com/api/rds/grantoperatorpermission.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GrantOperatorPermissionWithChan(request *GrantOperatorPermissionRequest) (<-chan *GrantOperatorPermissionResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) GrantOperatorPermissionWithChan(request *GrantOperatorPerm
 	return responseChan, errChan
 }
 
-// invoke GrantOperatorPermission api with *GrantOperatorPermissionRequest asynchronously
+// GrantOperatorPermissionWithCallback invokes the rds.GrantOperatorPermission API asynchronously
 // api document: https://help.aliyun.com/api/rds/grantoperatorpermission.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GrantOperatorPermissionWithCallback(request *GrantOperatorPermissionRequest, callback func(response *GrantOperatorPermissionResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) GrantOperatorPermissionWithCallback(request *GrantOperator
 	return result
 }
 
+// GrantOperatorPermissionRequest is the request struct for api GrantOperatorPermission
 type GrantOperatorPermissionRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,13 +85,14 @@ type GrantOperatorPermissionRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// GrantOperatorPermissionResponse is the response struct for api GrantOperatorPermission
 type GrantOperatorPermissionResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke GrantOperatorPermission API
-func CreateGrantOperatorPermissionRequest() (request *GrantOperatorPermissionRequest) {
+// CreateGrantOperatorPermissionRequest creates a request to invoke GrantOperatorPermission API
+func CreateGrantOperatorPermissionRequest(request *GrantOperatorPermissionRequest) {
 	request = &GrantOperatorPermissionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateGrantOperatorPermissionRequest() (request *GrantOperatorPermissionReq
 	return
 }
 
-// create a response to parse from GrantOperatorPermission response
+// CreateGrantOperatorPermissionResponse creates a response to parse from GrantOperatorPermission response
 func CreateGrantOperatorPermissionResponse() (response *GrantOperatorPermissionResponse) {
 	response = &GrantOperatorPermissionResponse{
 		BaseResponse: &responses.BaseResponse{},

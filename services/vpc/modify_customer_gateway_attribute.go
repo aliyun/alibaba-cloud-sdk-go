@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifyCustomerGatewayAttribute api with *ModifyCustomerGatewayAttributeRequest synchronously
+// ModifyCustomerGatewayAttribute invokes the vpc.ModifyCustomerGatewayAttribute API synchronously
 // api document: https://help.aliyun.com/api/vpc/modifycustomergatewayattribute.html
 func (client *Client) ModifyCustomerGatewayAttribute(request *ModifyCustomerGatewayAttributeRequest) (response *ModifyCustomerGatewayAttributeResponse, err error) {
 	response = CreateModifyCustomerGatewayAttributeResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifyCustomerGatewayAttribute(request *ModifyCustomerGate
 	return
 }
 
-// invoke ModifyCustomerGatewayAttribute api with *ModifyCustomerGatewayAttributeRequest asynchronously
+// ModifyCustomerGatewayAttributeWithChan invokes the vpc.ModifyCustomerGatewayAttribute API asynchronously
 // api document: https://help.aliyun.com/api/vpc/modifycustomergatewayattribute.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyCustomerGatewayAttributeWithChan(request *ModifyCustomerGatewayAttributeRequest) (<-chan *ModifyCustomerGatewayAttributeResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifyCustomerGatewayAttributeWithChan(request *ModifyCust
 	return responseChan, errChan
 }
 
-// invoke ModifyCustomerGatewayAttribute api with *ModifyCustomerGatewayAttributeRequest asynchronously
+// ModifyCustomerGatewayAttributeWithCallback invokes the vpc.ModifyCustomerGatewayAttribute API asynchronously
 // api document: https://help.aliyun.com/api/vpc/modifycustomergatewayattribute.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyCustomerGatewayAttributeWithCallback(request *ModifyCustomerGatewayAttributeRequest, callback func(response *ModifyCustomerGatewayAttributeResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ModifyCustomerGatewayAttributeWithCallback(request *Modify
 	return result
 }
 
+// ModifyCustomerGatewayAttributeRequest is the request struct for api ModifyCustomerGatewayAttribute
 type ModifyCustomerGatewayAttributeRequest struct {
 	*requests.RpcRequest
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
@@ -85,6 +86,7 @@ type ModifyCustomerGatewayAttributeRequest struct {
 	Description          string           `position:"Query" name:"Description"`
 }
 
+// ModifyCustomerGatewayAttributeResponse is the response struct for api ModifyCustomerGatewayAttribute
 type ModifyCustomerGatewayAttributeResponse struct {
 	*responses.BaseResponse
 	RequestId         string `json:"RequestId" xml:"RequestId"`
@@ -95,8 +97,8 @@ type ModifyCustomerGatewayAttributeResponse struct {
 	CreateTime        int    `json:"CreateTime" xml:"CreateTime"`
 }
 
-// create a request to invoke ModifyCustomerGatewayAttribute API
-func CreateModifyCustomerGatewayAttributeRequest() (request *ModifyCustomerGatewayAttributeRequest) {
+// CreateModifyCustomerGatewayAttributeRequest creates a request to invoke ModifyCustomerGatewayAttribute API
+func CreateModifyCustomerGatewayAttributeRequest(request *ModifyCustomerGatewayAttributeRequest) {
 	request = &ModifyCustomerGatewayAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -104,7 +106,7 @@ func CreateModifyCustomerGatewayAttributeRequest() (request *ModifyCustomerGatew
 	return
 }
 
-// create a response to parse from ModifyCustomerGatewayAttribute response
+// CreateModifyCustomerGatewayAttributeResponse creates a response to parse from ModifyCustomerGatewayAttribute response
 func CreateModifyCustomerGatewayAttributeResponse() (response *ModifyCustomerGatewayAttributeResponse) {
 	response = &ModifyCustomerGatewayAttributeResponse{
 		BaseResponse: &responses.BaseResponse{},

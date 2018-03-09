@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CancelJob api with *CancelJobRequest synchronously
+// CancelJob invokes the mts.CancelJob API synchronously
 // api document: https://help.aliyun.com/api/mts/canceljob.html
 func (client *Client) CancelJob(request *CancelJobRequest) (response *CancelJobResponse, err error) {
 	response = CreateCancelJobResponse()
@@ -28,7 +28,7 @@ func (client *Client) CancelJob(request *CancelJobRequest) (response *CancelJobR
 	return
 }
 
-// invoke CancelJob api with *CancelJobRequest asynchronously
+// CancelJobWithChan invokes the mts.CancelJob API asynchronously
 // api document: https://help.aliyun.com/api/mts/canceljob.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CancelJobWithChan(request *CancelJobRequest) (<-chan *CancelJobResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CancelJobWithChan(request *CancelJobRequest) (<-chan *Canc
 	return responseChan, errChan
 }
 
-// invoke CancelJob api with *CancelJobRequest asynchronously
+// CancelJobWithCallback invokes the mts.CancelJob API asynchronously
 // api document: https://help.aliyun.com/api/mts/canceljob.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CancelJobWithCallback(request *CancelJobRequest, callback func(response *CancelJobResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) CancelJobWithCallback(request *CancelJobRequest, callback 
 	return result
 }
 
+// CancelJobRequest is the request struct for api CancelJob
 type CancelJobRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,14 +83,15 @@ type CancelJobRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// CancelJobResponse is the response struct for api CancelJob
 type CancelJobResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	JobId     string `json:"JobId" xml:"JobId"`
 }
 
-// create a request to invoke CancelJob API
-func CreateCancelJobRequest() (request *CancelJobRequest) {
+// CreateCancelJobRequest creates a request to invoke CancelJob API
+func CreateCancelJobRequest(request *CancelJobRequest) {
 	request = &CancelJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateCancelJobRequest() (request *CancelJobRequest) {
 	return
 }
 
-// create a response to parse from CancelJob response
+// CreateCancelJobResponse creates a response to parse from CancelJob response
 func CreateCancelJobResponse() (response *CancelJobResponse) {
 	response = &CancelJobResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke GetIpfilterList api with *GetIpfilterListRequest synchronously
+// GetIpfilterList invokes the dm.GetIpfilterList API synchronously
 // api document: https://help.aliyun.com/api/dm/getipfilterlist.html
 func (client *Client) GetIpfilterList(request *GetIpfilterListRequest) (response *GetIpfilterListResponse, err error) {
 	response = CreateGetIpfilterListResponse()
@@ -28,7 +28,7 @@ func (client *Client) GetIpfilterList(request *GetIpfilterListRequest) (response
 	return
 }
 
-// invoke GetIpfilterList api with *GetIpfilterListRequest asynchronously
+// GetIpfilterListWithChan invokes the dm.GetIpfilterList API asynchronously
 // api document: https://help.aliyun.com/api/dm/getipfilterlist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetIpfilterListWithChan(request *GetIpfilterListRequest) (<-chan *GetIpfilterListResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) GetIpfilterListWithChan(request *GetIpfilterListRequest) (
 	return responseChan, errChan
 }
 
-// invoke GetIpfilterList api with *GetIpfilterListRequest asynchronously
+// GetIpfilterListWithCallback invokes the dm.GetIpfilterList API asynchronously
 // api document: https://help.aliyun.com/api/dm/getipfilterlist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetIpfilterListWithCallback(request *GetIpfilterListRequest, callback func(response *GetIpfilterListResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) GetIpfilterListWithCallback(request *GetIpfilterListReques
 	return result
 }
 
+// GetIpfilterListRequest is the request struct for api GetIpfilterList
 type GetIpfilterListRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -80,6 +81,7 @@ type GetIpfilterListRequest struct {
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 }
 
+// GetIpfilterListResponse is the response struct for api GetIpfilterList
 type GetIpfilterListResponse struct {
 	*responses.BaseResponse
 	RequestId  string                `json:"RequestId" xml:"RequestId"`
@@ -89,8 +91,8 @@ type GetIpfilterListResponse struct {
 	Data       DataInGetIpfilterList `json:"data" xml:"data"`
 }
 
-// create a request to invoke GetIpfilterList API
-func CreateGetIpfilterListRequest() (request *GetIpfilterListRequest) {
+// CreateGetIpfilterListRequest creates a request to invoke GetIpfilterList API
+func CreateGetIpfilterListRequest(request *GetIpfilterListRequest) {
 	request = &GetIpfilterListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateGetIpfilterListRequest() (request *GetIpfilterListRequest) {
 	return
 }
 
-// create a response to parse from GetIpfilterList response
+// CreateGetIpfilterListResponse creates a response to parse from GetIpfilterList response
 func CreateGetIpfilterListResponse() (response *GetIpfilterListResponse) {
 	response = &GetIpfilterListResponse{
 		BaseResponse: &responses.BaseResponse{},

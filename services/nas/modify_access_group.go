@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifyAccessGroup api with *ModifyAccessGroupRequest synchronously
+// ModifyAccessGroup invokes the nas.ModifyAccessGroup API synchronously
 // api document: https://help.aliyun.com/api/nas/modifyaccessgroup.html
 func (client *Client) ModifyAccessGroup(request *ModifyAccessGroupRequest) (response *ModifyAccessGroupResponse, err error) {
 	response = CreateModifyAccessGroupResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifyAccessGroup(request *ModifyAccessGroupRequest) (resp
 	return
 }
 
-// invoke ModifyAccessGroup api with *ModifyAccessGroupRequest asynchronously
+// ModifyAccessGroupWithChan invokes the nas.ModifyAccessGroup API asynchronously
 // api document: https://help.aliyun.com/api/nas/modifyaccessgroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyAccessGroupWithChan(request *ModifyAccessGroupRequest) (<-chan *ModifyAccessGroupResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifyAccessGroupWithChan(request *ModifyAccessGroupReques
 	return responseChan, errChan
 }
 
-// invoke ModifyAccessGroup api with *ModifyAccessGroupRequest asynchronously
+// ModifyAccessGroupWithCallback invokes the nas.ModifyAccessGroup API asynchronously
 // api document: https://help.aliyun.com/api/nas/modifyaccessgroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyAccessGroupWithCallback(request *ModifyAccessGroupRequest, callback func(response *ModifyAccessGroupResponse, err error)) <-chan int {
@@ -73,19 +73,21 @@ func (client *Client) ModifyAccessGroupWithCallback(request *ModifyAccessGroupRe
 	return result
 }
 
+// ModifyAccessGroupRequest is the request struct for api ModifyAccessGroup
 type ModifyAccessGroupRequest struct {
 	*requests.RpcRequest
 	AccessGroupName string `position:"Query" name:"AccessGroupName"`
 	Description     string `position:"Query" name:"Description"`
 }
 
+// ModifyAccessGroupResponse is the response struct for api ModifyAccessGroup
 type ModifyAccessGroupResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ModifyAccessGroup API
-func CreateModifyAccessGroupRequest() (request *ModifyAccessGroupRequest) {
+// CreateModifyAccessGroupRequest creates a request to invoke ModifyAccessGroup API
+func CreateModifyAccessGroupRequest(request *ModifyAccessGroupRequest) {
 	request = &ModifyAccessGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -93,7 +95,7 @@ func CreateModifyAccessGroupRequest() (request *ModifyAccessGroupRequest) {
 	return
 }
 
-// create a response to parse from ModifyAccessGroup response
+// CreateModifyAccessGroupResponse creates a response to parse from ModifyAccessGroup response
 func CreateModifyAccessGroupResponse() (response *ModifyAccessGroupResponse) {
 	response = &ModifyAccessGroupResponse{
 		BaseResponse: &responses.BaseResponse{},

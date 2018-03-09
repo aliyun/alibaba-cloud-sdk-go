@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeOptimizeAdviceOnMissPK api with *DescribeOptimizeAdviceOnMissPKRequest synchronously
+// DescribeOptimizeAdviceOnMissPK invokes the rds.DescribeOptimizeAdviceOnMissPK API synchronously
 // api document: https://help.aliyun.com/api/rds/describeoptimizeadviceonmisspk.html
 func (client *Client) DescribeOptimizeAdviceOnMissPK(request *DescribeOptimizeAdviceOnMissPKRequest) (response *DescribeOptimizeAdviceOnMissPKResponse, err error) {
 	response = CreateDescribeOptimizeAdviceOnMissPKResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeOptimizeAdviceOnMissPK(request *DescribeOptimizeAd
 	return
 }
 
-// invoke DescribeOptimizeAdviceOnMissPK api with *DescribeOptimizeAdviceOnMissPKRequest asynchronously
+// DescribeOptimizeAdviceOnMissPKWithChan invokes the rds.DescribeOptimizeAdviceOnMissPK API asynchronously
 // api document: https://help.aliyun.com/api/rds/describeoptimizeadviceonmisspk.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeOptimizeAdviceOnMissPKWithChan(request *DescribeOptimizeAdviceOnMissPKRequest) (<-chan *DescribeOptimizeAdviceOnMissPKResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeOptimizeAdviceOnMissPKWithChan(request *DescribeOp
 	return responseChan, errChan
 }
 
-// invoke DescribeOptimizeAdviceOnMissPK api with *DescribeOptimizeAdviceOnMissPKRequest asynchronously
+// DescribeOptimizeAdviceOnMissPKWithCallback invokes the rds.DescribeOptimizeAdviceOnMissPK API asynchronously
 // api document: https://help.aliyun.com/api/rds/describeoptimizeadviceonmisspk.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeOptimizeAdviceOnMissPKWithCallback(request *DescribeOptimizeAdviceOnMissPKRequest, callback func(response *DescribeOptimizeAdviceOnMissPKResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeOptimizeAdviceOnMissPKWithCallback(request *Descri
 	return result
 }
 
+// DescribeOptimizeAdviceOnMissPKRequest is the request struct for api DescribeOptimizeAdviceOnMissPK
 type DescribeOptimizeAdviceOnMissPKRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,6 +85,7 @@ type DescribeOptimizeAdviceOnMissPKRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// DescribeOptimizeAdviceOnMissPKResponse is the response struct for api DescribeOptimizeAdviceOnMissPK
 type DescribeOptimizeAdviceOnMissPKResponse struct {
 	*responses.BaseResponse
 	RequestId         string                                `json:"RequestId" xml:"RequestId"`
@@ -93,8 +95,8 @@ type DescribeOptimizeAdviceOnMissPKResponse struct {
 	Items             ItemsInDescribeOptimizeAdviceOnMissPK `json:"Items" xml:"Items"`
 }
 
-// create a request to invoke DescribeOptimizeAdviceOnMissPK API
-func CreateDescribeOptimizeAdviceOnMissPKRequest() (request *DescribeOptimizeAdviceOnMissPKRequest) {
+// CreateDescribeOptimizeAdviceOnMissPKRequest creates a request to invoke DescribeOptimizeAdviceOnMissPK API
+func CreateDescribeOptimizeAdviceOnMissPKRequest(request *DescribeOptimizeAdviceOnMissPKRequest) {
 	request = &DescribeOptimizeAdviceOnMissPKRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -102,7 +104,7 @@ func CreateDescribeOptimizeAdviceOnMissPKRequest() (request *DescribeOptimizeAdv
 	return
 }
 
-// create a response to parse from DescribeOptimizeAdviceOnMissPK response
+// CreateDescribeOptimizeAdviceOnMissPKResponse creates a response to parse from DescribeOptimizeAdviceOnMissPK response
 func CreateDescribeOptimizeAdviceOnMissPKResponse() (response *DescribeOptimizeAdviceOnMissPKResponse) {
 	response = &DescribeOptimizeAdviceOnMissPKResponse{
 		BaseResponse: &responses.BaseResponse{},

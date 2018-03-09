@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeClusterCerts api with *DescribeClusterCertsRequest synchronously
+// DescribeClusterCerts invokes the cs.DescribeClusterCerts API synchronously
 // api document: https://help.aliyun.com/api/cs/describeclustercerts.html
 func (client *Client) DescribeClusterCerts(request *DescribeClusterCertsRequest) (response *DescribeClusterCertsResponse, err error) {
 	response = CreateDescribeClusterCertsResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeClusterCerts(request *DescribeClusterCertsRequest)
 	return
 }
 
-// invoke DescribeClusterCerts api with *DescribeClusterCertsRequest asynchronously
+// DescribeClusterCertsWithChan invokes the cs.DescribeClusterCerts API asynchronously
 // api document: https://help.aliyun.com/api/cs/describeclustercerts.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeClusterCertsWithChan(request *DescribeClusterCertsRequest) (<-chan *DescribeClusterCertsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeClusterCertsWithChan(request *DescribeClusterCerts
 	return responseChan, errChan
 }
 
-// invoke DescribeClusterCerts api with *DescribeClusterCertsRequest asynchronously
+// DescribeClusterCertsWithCallback invokes the cs.DescribeClusterCerts API asynchronously
 // api document: https://help.aliyun.com/api/cs/describeclustercerts.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeClusterCertsWithCallback(request *DescribeClusterCertsRequest, callback func(response *DescribeClusterCertsResponse, err error)) <-chan int {
@@ -73,17 +73,19 @@ func (client *Client) DescribeClusterCertsWithCallback(request *DescribeClusterC
 	return result
 }
 
+// DescribeClusterCertsRequest is the request struct for api DescribeClusterCerts
 type DescribeClusterCertsRequest struct {
 	*requests.RoaRequest
 	ClusterId string `position:"Path" name:"ClusterId"`
 }
 
+// DescribeClusterCertsResponse is the response struct for api DescribeClusterCerts
 type DescribeClusterCertsResponse struct {
 	*responses.BaseResponse
 }
 
-// create a request to invoke DescribeClusterCerts API
-func CreateDescribeClusterCertsRequest() (request *DescribeClusterCertsRequest) {
+// CreateDescribeClusterCertsRequest creates a request to invoke DescribeClusterCerts API
+func CreateDescribeClusterCertsRequest(request *DescribeClusterCertsRequest) {
 	request = &DescribeClusterCertsRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
@@ -92,7 +94,7 @@ func CreateDescribeClusterCertsRequest() (request *DescribeClusterCertsRequest) 
 	return
 }
 
-// create a response to parse from DescribeClusterCerts response
+// CreateDescribeClusterCertsResponse creates a response to parse from DescribeClusterCerts response
 func CreateDescribeClusterCertsResponse() (response *DescribeClusterCertsResponse) {
 	response = &DescribeClusterCertsResponse{
 		BaseResponse: &responses.BaseResponse{},

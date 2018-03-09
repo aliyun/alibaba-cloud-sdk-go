@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ActivateMediaWorkflow api with *ActivateMediaWorkflowRequest synchronously
+// ActivateMediaWorkflow invokes the mts.ActivateMediaWorkflow API synchronously
 // api document: https://help.aliyun.com/api/mts/activatemediaworkflow.html
 func (client *Client) ActivateMediaWorkflow(request *ActivateMediaWorkflowRequest) (response *ActivateMediaWorkflowResponse, err error) {
 	response = CreateActivateMediaWorkflowResponse()
@@ -28,7 +28,7 @@ func (client *Client) ActivateMediaWorkflow(request *ActivateMediaWorkflowReques
 	return
 }
 
-// invoke ActivateMediaWorkflow api with *ActivateMediaWorkflowRequest asynchronously
+// ActivateMediaWorkflowWithChan invokes the mts.ActivateMediaWorkflow API asynchronously
 // api document: https://help.aliyun.com/api/mts/activatemediaworkflow.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ActivateMediaWorkflowWithChan(request *ActivateMediaWorkflowRequest) (<-chan *ActivateMediaWorkflowResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ActivateMediaWorkflowWithChan(request *ActivateMediaWorkfl
 	return responseChan, errChan
 }
 
-// invoke ActivateMediaWorkflow api with *ActivateMediaWorkflowRequest asynchronously
+// ActivateMediaWorkflowWithCallback invokes the mts.ActivateMediaWorkflow API asynchronously
 // api document: https://help.aliyun.com/api/mts/activatemediaworkflow.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ActivateMediaWorkflowWithCallback(request *ActivateMediaWorkflowRequest, callback func(response *ActivateMediaWorkflowResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ActivateMediaWorkflowWithCallback(request *ActivateMediaWo
 	return result
 }
 
+// ActivateMediaWorkflowRequest is the request struct for api ActivateMediaWorkflow
 type ActivateMediaWorkflowRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,14 +83,15 @@ type ActivateMediaWorkflowRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// ActivateMediaWorkflowResponse is the response struct for api ActivateMediaWorkflow
 type ActivateMediaWorkflowResponse struct {
 	*responses.BaseResponse
 	RequestId     string        `json:"RequestId" xml:"RequestId"`
 	MediaWorkflow MediaWorkflow `json:"MediaWorkflow" xml:"MediaWorkflow"`
 }
 
-// create a request to invoke ActivateMediaWorkflow API
-func CreateActivateMediaWorkflowRequest() (request *ActivateMediaWorkflowRequest) {
+// CreateActivateMediaWorkflowRequest creates a request to invoke ActivateMediaWorkflow API
+func CreateActivateMediaWorkflowRequest(request *ActivateMediaWorkflowRequest) {
 	request = &ActivateMediaWorkflowRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateActivateMediaWorkflowRequest() (request *ActivateMediaWorkflowRequest
 	return
 }
 
-// create a response to parse from ActivateMediaWorkflow response
+// CreateActivateMediaWorkflowResponse creates a response to parse from ActivateMediaWorkflow response
 func CreateActivateMediaWorkflowResponse() (response *ActivateMediaWorkflowResponse) {
 	response = &ActivateMediaWorkflowResponse{
 		BaseResponse: &responses.BaseResponse{},

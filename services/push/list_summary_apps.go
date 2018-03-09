@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ListSummaryApps api with *ListSummaryAppsRequest synchronously
+// ListSummaryApps invokes the push.ListSummaryApps API synchronously
 // api document: https://help.aliyun.com/api/push/listsummaryapps.html
 func (client *Client) ListSummaryApps(request *ListSummaryAppsRequest) (response *ListSummaryAppsResponse, err error) {
 	response = CreateListSummaryAppsResponse()
@@ -28,7 +28,7 @@ func (client *Client) ListSummaryApps(request *ListSummaryAppsRequest) (response
 	return
 }
 
-// invoke ListSummaryApps api with *ListSummaryAppsRequest asynchronously
+// ListSummaryAppsWithChan invokes the push.ListSummaryApps API asynchronously
 // api document: https://help.aliyun.com/api/push/listsummaryapps.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListSummaryAppsWithChan(request *ListSummaryAppsRequest) (<-chan *ListSummaryAppsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ListSummaryAppsWithChan(request *ListSummaryAppsRequest) (
 	return responseChan, errChan
 }
 
-// invoke ListSummaryApps api with *ListSummaryAppsRequest asynchronously
+// ListSummaryAppsWithCallback invokes the push.ListSummaryApps API asynchronously
 // api document: https://help.aliyun.com/api/push/listsummaryapps.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListSummaryAppsWithCallback(request *ListSummaryAppsRequest, callback func(response *ListSummaryAppsResponse, err error)) <-chan int {
@@ -73,18 +73,20 @@ func (client *Client) ListSummaryAppsWithCallback(request *ListSummaryAppsReques
 	return result
 }
 
+// ListSummaryAppsRequest is the request struct for api ListSummaryApps
 type ListSummaryAppsRequest struct {
 	*requests.RpcRequest
 }
 
+// ListSummaryAppsResponse is the response struct for api ListSummaryApps
 type ListSummaryAppsResponse struct {
 	*responses.BaseResponse
 	RequestId       string          `json:"RequestId" xml:"RequestId"`
 	SummaryAppInfos SummaryAppInfos `json:"SummaryAppInfos" xml:"SummaryAppInfos"`
 }
 
-// create a request to invoke ListSummaryApps API
-func CreateListSummaryAppsRequest() (request *ListSummaryAppsRequest) {
+// CreateListSummaryAppsRequest creates a request to invoke ListSummaryApps API
+func CreateListSummaryAppsRequest(request *ListSummaryAppsRequest) {
 	request = &ListSummaryAppsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -92,7 +94,7 @@ func CreateListSummaryAppsRequest() (request *ListSummaryAppsRequest) {
 	return
 }
 
-// create a response to parse from ListSummaryApps response
+// CreateListSummaryAppsResponse creates a response to parse from ListSummaryApps response
 func CreateListSummaryAppsResponse() (response *ListSummaryAppsResponse) {
 	response = &ListSummaryAppsResponse{
 		BaseResponse: &responses.BaseResponse{},

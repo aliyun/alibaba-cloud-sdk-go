@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CreateDatabase api with *CreateDatabaseRequest synchronously
+// CreateDatabase invokes the rds.CreateDatabase API synchronously
 // api document: https://help.aliyun.com/api/rds/createdatabase.html
 func (client *Client) CreateDatabase(request *CreateDatabaseRequest) (response *CreateDatabaseResponse, err error) {
 	response = CreateCreateDatabaseResponse()
@@ -28,7 +28,7 @@ func (client *Client) CreateDatabase(request *CreateDatabaseRequest) (response *
 	return
 }
 
-// invoke CreateDatabase api with *CreateDatabaseRequest asynchronously
+// CreateDatabaseWithChan invokes the rds.CreateDatabase API asynchronously
 // api document: https://help.aliyun.com/api/rds/createdatabase.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateDatabaseWithChan(request *CreateDatabaseRequest) (<-chan *CreateDatabaseResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CreateDatabaseWithChan(request *CreateDatabaseRequest) (<-
 	return responseChan, errChan
 }
 
-// invoke CreateDatabase api with *CreateDatabaseRequest asynchronously
+// CreateDatabaseWithCallback invokes the rds.CreateDatabase API asynchronously
 // api document: https://help.aliyun.com/api/rds/createdatabase.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateDatabaseWithCallback(request *CreateDatabaseRequest, callback func(response *CreateDatabaseResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) CreateDatabaseWithCallback(request *CreateDatabaseRequest,
 	return result
 }
 
+// CreateDatabaseRequest is the request struct for api CreateDatabase
 type CreateDatabaseRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -85,13 +86,14 @@ type CreateDatabaseRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// CreateDatabaseResponse is the response struct for api CreateDatabase
 type CreateDatabaseResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke CreateDatabase API
-func CreateCreateDatabaseRequest() (request *CreateDatabaseRequest) {
+// CreateCreateDatabaseRequest creates a request to invoke CreateDatabase API
+func CreateCreateDatabaseRequest(request *CreateDatabaseRequest) {
 	request = &CreateDatabaseRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateCreateDatabaseRequest() (request *CreateDatabaseRequest) {
 	return
 }
 
-// create a response to parse from CreateDatabase response
+// CreateCreateDatabaseResponse creates a response to parse from CreateDatabase response
 func CreateCreateDatabaseResponse() (response *CreateDatabaseResponse) {
 	response = &CreateDatabaseResponse{
 		BaseResponse: &responses.BaseResponse{},

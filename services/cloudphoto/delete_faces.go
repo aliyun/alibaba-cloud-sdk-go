@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteFaces api with *DeleteFacesRequest synchronously
+// DeleteFaces invokes the cloudphoto.DeleteFaces API synchronously
 // api document: https://help.aliyun.com/api/cloudphoto/deletefaces.html
 func (client *Client) DeleteFaces(request *DeleteFacesRequest) (response *DeleteFacesResponse, err error) {
 	response = CreateDeleteFacesResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteFaces(request *DeleteFacesRequest) (response *Delete
 	return
 }
 
-// invoke DeleteFaces api with *DeleteFacesRequest asynchronously
+// DeleteFacesWithChan invokes the cloudphoto.DeleteFaces API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/deletefaces.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteFacesWithChan(request *DeleteFacesRequest) (<-chan *DeleteFacesResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteFacesWithChan(request *DeleteFacesRequest) (<-chan *
 	return responseChan, errChan
 }
 
-// invoke DeleteFaces api with *DeleteFacesRequest asynchronously
+// DeleteFacesWithCallback invokes the cloudphoto.DeleteFaces API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/deletefaces.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteFacesWithCallback(request *DeleteFacesRequest, callback func(response *DeleteFacesResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DeleteFacesWithCallback(request *DeleteFacesRequest, callb
 	return result
 }
 
+// DeleteFacesRequest is the request struct for api DeleteFaces
 type DeleteFacesRequest struct {
 	*requests.RpcRequest
 	FaceId    *[]string `position:"Query" name:"FaceId"  type:"Repeated"`
@@ -80,6 +81,7 @@ type DeleteFacesRequest struct {
 	LibraryId string    `position:"Query" name:"LibraryId"`
 }
 
+// DeleteFacesResponse is the response struct for api DeleteFaces
 type DeleteFacesResponse struct {
 	*responses.BaseResponse
 	Code      string   `json:"Code" xml:"Code"`
@@ -89,8 +91,8 @@ type DeleteFacesResponse struct {
 	Results   []Result `json:"Results" xml:"Results"`
 }
 
-// create a request to invoke DeleteFaces API
-func CreateDeleteFacesRequest() (request *DeleteFacesRequest) {
+// CreateDeleteFacesRequest creates a request to invoke DeleteFaces API
+func CreateDeleteFacesRequest(request *DeleteFacesRequest) {
 	request = &DeleteFacesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateDeleteFacesRequest() (request *DeleteFacesRequest) {
 	return
 }
 
-// create a response to parse from DeleteFaces response
+// CreateDeleteFacesResponse creates a response to parse from DeleteFaces response
 func CreateDeleteFacesResponse() (response *DeleteFacesResponse) {
 	response = &DeleteFacesResponse{
 		BaseResponse: &responses.BaseResponse{},

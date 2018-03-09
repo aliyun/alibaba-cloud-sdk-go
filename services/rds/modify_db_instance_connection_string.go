@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifyDBInstanceConnectionString api with *ModifyDBInstanceConnectionStringRequest synchronously
+// ModifyDBInstanceConnectionString invokes the rds.ModifyDBInstanceConnectionString API synchronously
 // api document: https://help.aliyun.com/api/rds/modifydbinstanceconnectionstring.html
 func (client *Client) ModifyDBInstanceConnectionString(request *ModifyDBInstanceConnectionStringRequest) (response *ModifyDBInstanceConnectionStringResponse, err error) {
 	response = CreateModifyDBInstanceConnectionStringResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifyDBInstanceConnectionString(request *ModifyDBInstance
 	return
 }
 
-// invoke ModifyDBInstanceConnectionString api with *ModifyDBInstanceConnectionStringRequest asynchronously
+// ModifyDBInstanceConnectionStringWithChan invokes the rds.ModifyDBInstanceConnectionString API asynchronously
 // api document: https://help.aliyun.com/api/rds/modifydbinstanceconnectionstring.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDBInstanceConnectionStringWithChan(request *ModifyDBInstanceConnectionStringRequest) (<-chan *ModifyDBInstanceConnectionStringResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifyDBInstanceConnectionStringWithChan(request *ModifyDB
 	return responseChan, errChan
 }
 
-// invoke ModifyDBInstanceConnectionString api with *ModifyDBInstanceConnectionStringRequest asynchronously
+// ModifyDBInstanceConnectionStringWithCallback invokes the rds.ModifyDBInstanceConnectionString API asynchronously
 // api document: https://help.aliyun.com/api/rds/modifydbinstanceconnectionstring.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDBInstanceConnectionStringWithCallback(request *ModifyDBInstanceConnectionStringRequest, callback func(response *ModifyDBInstanceConnectionStringResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ModifyDBInstanceConnectionStringWithCallback(request *Modi
 	return result
 }
 
+// ModifyDBInstanceConnectionStringRequest is the request struct for api ModifyDBInstanceConnectionString
 type ModifyDBInstanceConnectionStringRequest struct {
 	*requests.RpcRequest
 	OwnerId                 requests.Integer `position:"Query" name:"OwnerId"`
@@ -85,13 +86,14 @@ type ModifyDBInstanceConnectionStringRequest struct {
 	OwnerAccount            string           `position:"Query" name:"OwnerAccount"`
 }
 
+// ModifyDBInstanceConnectionStringResponse is the response struct for api ModifyDBInstanceConnectionString
 type ModifyDBInstanceConnectionStringResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ModifyDBInstanceConnectionString API
-func CreateModifyDBInstanceConnectionStringRequest() (request *ModifyDBInstanceConnectionStringRequest) {
+// CreateModifyDBInstanceConnectionStringRequest creates a request to invoke ModifyDBInstanceConnectionString API
+func CreateModifyDBInstanceConnectionStringRequest(request *ModifyDBInstanceConnectionStringRequest) {
 	request = &ModifyDBInstanceConnectionStringRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateModifyDBInstanceConnectionStringRequest() (request *ModifyDBInstanceC
 	return
 }
 
-// create a response to parse from ModifyDBInstanceConnectionString response
+// CreateModifyDBInstanceConnectionStringResponse creates a response to parse from ModifyDBInstanceConnectionString response
 func CreateModifyDBInstanceConnectionStringResponse() (response *ModifyDBInstanceConnectionStringResponse) {
 	response = &ModifyDBInstanceConnectionStringResponse{
 		BaseResponse: &responses.BaseResponse{},

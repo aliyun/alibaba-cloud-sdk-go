@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteTag api with *DeleteTagRequest synchronously
+// DeleteTag invokes the dm.DeleteTag API synchronously
 // api document: https://help.aliyun.com/api/dm/deletetag.html
 func (client *Client) DeleteTag(request *DeleteTagRequest) (response *DeleteTagResponse, err error) {
 	response = CreateDeleteTagResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteTag(request *DeleteTagRequest) (response *DeleteTagR
 	return
 }
 
-// invoke DeleteTag api with *DeleteTagRequest asynchronously
+// DeleteTagWithChan invokes the dm.DeleteTag API asynchronously
 // api document: https://help.aliyun.com/api/dm/deletetag.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteTagWithChan(request *DeleteTagRequest) (<-chan *DeleteTagResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteTagWithChan(request *DeleteTagRequest) (<-chan *Dele
 	return responseChan, errChan
 }
 
-// invoke DeleteTag api with *DeleteTagRequest asynchronously
+// DeleteTagWithCallback invokes the dm.DeleteTag API asynchronously
 // api document: https://help.aliyun.com/api/dm/deletetag.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteTagWithCallback(request *DeleteTagRequest, callback func(response *DeleteTagResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DeleteTagWithCallback(request *DeleteTagRequest, callback 
 	return result
 }
 
+// DeleteTagRequest is the request struct for api DeleteTag
 type DeleteTagRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -81,13 +82,14 @@ type DeleteTagRequest struct {
 	TagId                requests.Integer `position:"Query" name:"TagId"`
 }
 
+// DeleteTagResponse is the response struct for api DeleteTag
 type DeleteTagResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DeleteTag API
-func CreateDeleteTagRequest() (request *DeleteTagRequest) {
+// CreateDeleteTagRequest creates a request to invoke DeleteTag API
+func CreateDeleteTagRequest(request *DeleteTagRequest) {
 	request = &DeleteTagRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateDeleteTagRequest() (request *DeleteTagRequest) {
 	return
 }
 
-// create a response to parse from DeleteTag response
+// CreateDeleteTagResponse creates a response to parse from DeleteTag response
 func CreateDeleteTagResponse() (response *DeleteTagResponse) {
 	response = &DeleteTagResponse{
 		BaseResponse: &responses.BaseResponse{},

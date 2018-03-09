@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke AttachInstanceRamRole api with *AttachInstanceRamRoleRequest synchronously
+// AttachInstanceRamRole invokes the ecs.AttachInstanceRamRole API synchronously
 // api document: https://help.aliyun.com/api/ecs/attachinstanceramrole.html
 func (client *Client) AttachInstanceRamRole(request *AttachInstanceRamRoleRequest) (response *AttachInstanceRamRoleResponse, err error) {
 	response = CreateAttachInstanceRamRoleResponse()
@@ -28,7 +28,7 @@ func (client *Client) AttachInstanceRamRole(request *AttachInstanceRamRoleReques
 	return
 }
 
-// invoke AttachInstanceRamRole api with *AttachInstanceRamRoleRequest asynchronously
+// AttachInstanceRamRoleWithChan invokes the ecs.AttachInstanceRamRole API asynchronously
 // api document: https://help.aliyun.com/api/ecs/attachinstanceramrole.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AttachInstanceRamRoleWithChan(request *AttachInstanceRamRoleRequest) (<-chan *AttachInstanceRamRoleResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) AttachInstanceRamRoleWithChan(request *AttachInstanceRamRo
 	return responseChan, errChan
 }
 
-// invoke AttachInstanceRamRole api with *AttachInstanceRamRoleRequest asynchronously
+// AttachInstanceRamRoleWithCallback invokes the ecs.AttachInstanceRamRole API asynchronously
 // api document: https://help.aliyun.com/api/ecs/attachinstanceramrole.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AttachInstanceRamRoleWithCallback(request *AttachInstanceRamRoleRequest, callback func(response *AttachInstanceRamRoleResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) AttachInstanceRamRoleWithCallback(request *AttachInstanceR
 	return result
 }
 
+// AttachInstanceRamRoleRequest is the request struct for api AttachInstanceRamRole
 type AttachInstanceRamRoleRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,6 +83,7 @@ type AttachInstanceRamRoleRequest struct {
 	InstanceIds          string           `position:"Query" name:"InstanceIds"`
 }
 
+// AttachInstanceRamRoleResponse is the response struct for api AttachInstanceRamRole
 type AttachInstanceRamRoleResponse struct {
 	*responses.BaseResponse
 	RequestId                    string                       `json:"RequestId" xml:"RequestId"`
@@ -91,8 +93,8 @@ type AttachInstanceRamRoleResponse struct {
 	AttachInstanceRamRoleResults AttachInstanceRamRoleResults `json:"AttachInstanceRamRoleResults" xml:"AttachInstanceRamRoleResults"`
 }
 
-// create a request to invoke AttachInstanceRamRole API
-func CreateAttachInstanceRamRoleRequest() (request *AttachInstanceRamRoleRequest) {
+// CreateAttachInstanceRamRoleRequest creates a request to invoke AttachInstanceRamRole API
+func CreateAttachInstanceRamRoleRequest(request *AttachInstanceRamRoleRequest) {
 	request = &AttachInstanceRamRoleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -100,7 +102,7 @@ func CreateAttachInstanceRamRoleRequest() (request *AttachInstanceRamRoleRequest
 	return
 }
 
-// create a response to parse from AttachInstanceRamRole response
+// CreateAttachInstanceRamRoleResponse creates a response to parse from AttachInstanceRamRole response
 func CreateAttachInstanceRamRoleResponse() (response *AttachInstanceRamRoleResponse) {
 	response = &AttachInstanceRamRoleResponse{
 		BaseResponse: &responses.BaseResponse{},

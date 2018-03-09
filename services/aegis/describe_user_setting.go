@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeUserSetting api with *DescribeUserSettingRequest synchronously
+// DescribeUserSetting invokes the aegis.DescribeUserSetting API synchronously
 // api document: https://help.aliyun.com/api/aegis/describeusersetting.html
 func (client *Client) DescribeUserSetting(request *DescribeUserSettingRequest) (response *DescribeUserSettingResponse, err error) {
 	response = CreateDescribeUserSettingResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeUserSetting(request *DescribeUserSettingRequest) (
 	return
 }
 
-// invoke DescribeUserSetting api with *DescribeUserSettingRequest asynchronously
+// DescribeUserSettingWithChan invokes the aegis.DescribeUserSetting API asynchronously
 // api document: https://help.aliyun.com/api/aegis/describeusersetting.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUserSettingWithChan(request *DescribeUserSettingRequest) (<-chan *DescribeUserSettingResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeUserSettingWithChan(request *DescribeUserSettingRe
 	return responseChan, errChan
 }
 
-// invoke DescribeUserSetting api with *DescribeUserSettingRequest asynchronously
+// DescribeUserSettingWithCallback invokes the aegis.DescribeUserSetting API asynchronously
 // api document: https://help.aliyun.com/api/aegis/describeusersetting.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUserSettingWithCallback(request *DescribeUserSettingRequest, callback func(response *DescribeUserSettingResponse, err error)) <-chan int {
@@ -73,20 +73,22 @@ func (client *Client) DescribeUserSettingWithCallback(request *DescribeUserSetti
 	return result
 }
 
+// DescribeUserSettingRequest is the request struct for api DescribeUserSetting
 type DescribeUserSettingRequest struct {
 	*requests.RpcRequest
 	SourceIp        string           `position:"Query" name:"SourceIp"`
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
 }
 
+// DescribeUserSettingResponse is the response struct for api DescribeUserSetting
 type DescribeUserSettingResponse struct {
 	*responses.BaseResponse
 	RequestId              string `json:"RequestId" xml:"RequestId"`
 	InvalidWarningKeepDays int    `json:"InvalidWarningKeepDays" xml:"InvalidWarningKeepDays"`
 }
 
-// create a request to invoke DescribeUserSetting API
-func CreateDescribeUserSettingRequest() (request *DescribeUserSettingRequest) {
+// CreateDescribeUserSettingRequest creates a request to invoke DescribeUserSetting API
+func CreateDescribeUserSettingRequest(request *DescribeUserSettingRequest) {
 	request = &DescribeUserSettingRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -94,7 +96,7 @@ func CreateDescribeUserSettingRequest() (request *DescribeUserSettingRequest) {
 	return
 }
 
-// create a response to parse from DescribeUserSetting response
+// CreateDescribeUserSettingResponse creates a response to parse from DescribeUserSetting response
 func CreateDescribeUserSettingResponse() (response *DescribeUserSettingResponse) {
 	response = &DescribeUserSettingResponse{
 		BaseResponse: &responses.BaseResponse{},

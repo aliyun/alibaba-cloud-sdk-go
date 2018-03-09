@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CreateLoginProfile api with *CreateLoginProfileRequest synchronously
+// CreateLoginProfile invokes the ram.CreateLoginProfile API synchronously
 // api document: https://help.aliyun.com/api/ram/createloginprofile.html
 func (client *Client) CreateLoginProfile(request *CreateLoginProfileRequest) (response *CreateLoginProfileResponse, err error) {
 	response = CreateCreateLoginProfileResponse()
@@ -28,7 +28,7 @@ func (client *Client) CreateLoginProfile(request *CreateLoginProfileRequest) (re
 	return
 }
 
-// invoke CreateLoginProfile api with *CreateLoginProfileRequest asynchronously
+// CreateLoginProfileWithChan invokes the ram.CreateLoginProfile API asynchronously
 // api document: https://help.aliyun.com/api/ram/createloginprofile.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateLoginProfileWithChan(request *CreateLoginProfileRequest) (<-chan *CreateLoginProfileResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CreateLoginProfileWithChan(request *CreateLoginProfileRequ
 	return responseChan, errChan
 }
 
-// invoke CreateLoginProfile api with *CreateLoginProfileRequest asynchronously
+// CreateLoginProfileWithCallback invokes the ram.CreateLoginProfile API asynchronously
 // api document: https://help.aliyun.com/api/ram/createloginprofile.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateLoginProfileWithCallback(request *CreateLoginProfileRequest, callback func(response *CreateLoginProfileResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) CreateLoginProfileWithCallback(request *CreateLoginProfile
 	return result
 }
 
+// CreateLoginProfileRequest is the request struct for api CreateLoginProfile
 type CreateLoginProfileRequest struct {
 	*requests.RpcRequest
 	UserName              string           `position:"Query" name:"UserName"`
@@ -81,14 +82,15 @@ type CreateLoginProfileRequest struct {
 	MFABindRequired       requests.Boolean `position:"Query" name:"MFABindRequired"`
 }
 
+// CreateLoginProfileResponse is the response struct for api CreateLoginProfile
 type CreateLoginProfileResponse struct {
 	*responses.BaseResponse
 	RequestId    string       `json:"RequestId" xml:"RequestId"`
 	LoginProfile LoginProfile `json:"LoginProfile" xml:"LoginProfile"`
 }
 
-// create a request to invoke CreateLoginProfile API
-func CreateCreateLoginProfileRequest() (request *CreateLoginProfileRequest) {
+// CreateCreateLoginProfileRequest creates a request to invoke CreateLoginProfile API
+func CreateCreateLoginProfileRequest(request *CreateLoginProfileRequest) {
 	request = &CreateLoginProfileRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -96,7 +98,7 @@ func CreateCreateLoginProfileRequest() (request *CreateLoginProfileRequest) {
 	return
 }
 
-// create a response to parse from CreateLoginProfile response
+// CreateCreateLoginProfileResponse creates a response to parse from CreateLoginProfile response
 func CreateCreateLoginProfileResponse() (response *CreateLoginProfileResponse) {
 	response = &CreateLoginProfileResponse{
 		BaseResponse: &responses.BaseResponse{},

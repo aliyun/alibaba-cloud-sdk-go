@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifyCommonBandwidthPackagePayType api with *ModifyCommonBandwidthPackagePayTypeRequest synchronously
+// ModifyCommonBandwidthPackagePayType invokes the vpc.ModifyCommonBandwidthPackagePayType API synchronously
 // api document: https://help.aliyun.com/api/vpc/modifycommonbandwidthpackagepaytype.html
 func (client *Client) ModifyCommonBandwidthPackagePayType(request *ModifyCommonBandwidthPackagePayTypeRequest) (response *ModifyCommonBandwidthPackagePayTypeResponse, err error) {
 	response = CreateModifyCommonBandwidthPackagePayTypeResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifyCommonBandwidthPackagePayType(request *ModifyCommonB
 	return
 }
 
-// invoke ModifyCommonBandwidthPackagePayType api with *ModifyCommonBandwidthPackagePayTypeRequest asynchronously
+// ModifyCommonBandwidthPackagePayTypeWithChan invokes the vpc.ModifyCommonBandwidthPackagePayType API asynchronously
 // api document: https://help.aliyun.com/api/vpc/modifycommonbandwidthpackagepaytype.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyCommonBandwidthPackagePayTypeWithChan(request *ModifyCommonBandwidthPackagePayTypeRequest) (<-chan *ModifyCommonBandwidthPackagePayTypeResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifyCommonBandwidthPackagePayTypeWithChan(request *Modif
 	return responseChan, errChan
 }
 
-// invoke ModifyCommonBandwidthPackagePayType api with *ModifyCommonBandwidthPackagePayTypeRequest asynchronously
+// ModifyCommonBandwidthPackagePayTypeWithCallback invokes the vpc.ModifyCommonBandwidthPackagePayType API asynchronously
 // api document: https://help.aliyun.com/api/vpc/modifycommonbandwidthpackagepaytype.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyCommonBandwidthPackagePayTypeWithCallback(request *ModifyCommonBandwidthPackagePayTypeRequest, callback func(response *ModifyCommonBandwidthPackagePayTypeResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ModifyCommonBandwidthPackagePayTypeWithCallback(request *M
 	return result
 }
 
+// ModifyCommonBandwidthPackagePayTypeRequest is the request struct for api ModifyCommonBandwidthPackagePayType
 type ModifyCommonBandwidthPackagePayTypeRequest struct {
 	*requests.RpcRequest
 	BandwidthPackageId   string           `position:"Query" name:"BandwidthPackageId"`
@@ -90,6 +91,7 @@ type ModifyCommonBandwidthPackagePayTypeRequest struct {
 	ResourceUid          requests.Integer `position:"Query" name:"ResourceUid"`
 }
 
+// ModifyCommonBandwidthPackagePayTypeResponse is the response struct for api ModifyCommonBandwidthPackagePayType
 type ModifyCommonBandwidthPackagePayTypeResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
@@ -98,8 +100,8 @@ type ModifyCommonBandwidthPackagePayTypeResponse struct {
 	Message   string `json:"Message" xml:"Message"`
 }
 
-// create a request to invoke ModifyCommonBandwidthPackagePayType API
-func CreateModifyCommonBandwidthPackagePayTypeRequest() (request *ModifyCommonBandwidthPackagePayTypeRequest) {
+// CreateModifyCommonBandwidthPackagePayTypeRequest creates a request to invoke ModifyCommonBandwidthPackagePayType API
+func CreateModifyCommonBandwidthPackagePayTypeRequest(request *ModifyCommonBandwidthPackagePayTypeRequest) {
 	request = &ModifyCommonBandwidthPackagePayTypeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -107,7 +109,7 @@ func CreateModifyCommonBandwidthPackagePayTypeRequest() (request *ModifyCommonBa
 	return
 }
 
-// create a response to parse from ModifyCommonBandwidthPackagePayType response
+// CreateModifyCommonBandwidthPackagePayTypeResponse creates a response to parse from ModifyCommonBandwidthPackagePayType response
 func CreateModifyCommonBandwidthPackagePayTypeResponse() (response *ModifyCommonBandwidthPackagePayTypeResponse) {
 	response = &ModifyCommonBandwidthPackagePayTypeResponse{
 		BaseResponse: &responses.BaseResponse{},

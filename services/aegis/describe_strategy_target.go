@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeStrategyTarget api with *DescribeStrategyTargetRequest synchronously
+// DescribeStrategyTarget invokes the aegis.DescribeStrategyTarget API synchronously
 // api document: https://help.aliyun.com/api/aegis/describestrategytarget.html
 func (client *Client) DescribeStrategyTarget(request *DescribeStrategyTargetRequest) (response *DescribeStrategyTargetResponse, err error) {
 	response = CreateDescribeStrategyTargetResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeStrategyTarget(request *DescribeStrategyTargetRequ
 	return
 }
 
-// invoke DescribeStrategyTarget api with *DescribeStrategyTargetRequest asynchronously
+// DescribeStrategyTargetWithChan invokes the aegis.DescribeStrategyTarget API asynchronously
 // api document: https://help.aliyun.com/api/aegis/describestrategytarget.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeStrategyTargetWithChan(request *DescribeStrategyTargetRequest) (<-chan *DescribeStrategyTargetResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeStrategyTargetWithChan(request *DescribeStrategyTa
 	return responseChan, errChan
 }
 
-// invoke DescribeStrategyTarget api with *DescribeStrategyTargetRequest asynchronously
+// DescribeStrategyTargetWithCallback invokes the aegis.DescribeStrategyTarget API asynchronously
 // api document: https://help.aliyun.com/api/aegis/describestrategytarget.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeStrategyTargetWithCallback(request *DescribeStrategyTargetRequest, callback func(response *DescribeStrategyTargetResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeStrategyTargetWithCallback(request *DescribeStrate
 	return result
 }
 
+// DescribeStrategyTargetRequest is the request struct for api DescribeStrategyTarget
 type DescribeStrategyTargetRequest struct {
 	*requests.RpcRequest
 	SourceIp        string           `position:"Query" name:"SourceIp"`
@@ -82,6 +83,7 @@ type DescribeStrategyTargetRequest struct {
 	Target          string           `position:"Query" name:"Target"`
 }
 
+// DescribeStrategyTargetResponse is the response struct for api DescribeStrategyTarget
 type DescribeStrategyTargetResponse struct {
 	*responses.BaseResponse
 	RequestId       string           `json:"RequestId" xml:"RequestId"`
@@ -89,8 +91,8 @@ type DescribeStrategyTargetResponse struct {
 	StrategyTargets []StrategyTarget `json:"StrategyTargets" xml:"StrategyTargets"`
 }
 
-// create a request to invoke DescribeStrategyTarget API
-func CreateDescribeStrategyTargetRequest() (request *DescribeStrategyTargetRequest) {
+// CreateDescribeStrategyTargetRequest creates a request to invoke DescribeStrategyTarget API
+func CreateDescribeStrategyTargetRequest(request *DescribeStrategyTargetRequest) {
 	request = &DescribeStrategyTargetRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateDescribeStrategyTargetRequest() (request *DescribeStrategyTargetReque
 	return
 }
 
-// create a response to parse from DescribeStrategyTarget response
+// CreateDescribeStrategyTargetResponse creates a response to parse from DescribeStrategyTarget response
 func CreateDescribeStrategyTargetResponse() (response *DescribeStrategyTargetResponse) {
 	response = &DescribeStrategyTargetResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeLiveAppRecordConfig api with *DescribeLiveAppRecordConfigRequest synchronously
+// DescribeLiveAppRecordConfig invokes the cdn.DescribeLiveAppRecordConfig API synchronously
 // api document: https://help.aliyun.com/api/cdn/describeliveapprecordconfig.html
 func (client *Client) DescribeLiveAppRecordConfig(request *DescribeLiveAppRecordConfigRequest) (response *DescribeLiveAppRecordConfigResponse, err error) {
 	response = CreateDescribeLiveAppRecordConfigResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeLiveAppRecordConfig(request *DescribeLiveAppRecord
 	return
 }
 
-// invoke DescribeLiveAppRecordConfig api with *DescribeLiveAppRecordConfigRequest asynchronously
+// DescribeLiveAppRecordConfigWithChan invokes the cdn.DescribeLiveAppRecordConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describeliveapprecordconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveAppRecordConfigWithChan(request *DescribeLiveAppRecordConfigRequest) (<-chan *DescribeLiveAppRecordConfigResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeLiveAppRecordConfigWithChan(request *DescribeLiveA
 	return responseChan, errChan
 }
 
-// invoke DescribeLiveAppRecordConfig api with *DescribeLiveAppRecordConfigRequest asynchronously
+// DescribeLiveAppRecordConfigWithCallback invokes the cdn.DescribeLiveAppRecordConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describeliveapprecordconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveAppRecordConfigWithCallback(request *DescribeLiveAppRecordConfigRequest, callback func(response *DescribeLiveAppRecordConfigResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeLiveAppRecordConfigWithCallback(request *DescribeL
 	return result
 }
 
+// DescribeLiveAppRecordConfigRequest is the request struct for api DescribeLiveAppRecordConfig
 type DescribeLiveAppRecordConfigRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -81,14 +82,15 @@ type DescribeLiveAppRecordConfigRequest struct {
 	AppName       string           `position:"Query" name:"AppName"`
 }
 
+// DescribeLiveAppRecordConfigResponse is the response struct for api DescribeLiveAppRecordConfig
 type DescribeLiveAppRecordConfigResponse struct {
 	*responses.BaseResponse
 	RequestId     string        `json:"RequestId" xml:"RequestId"`
 	LiveAppRecord LiveAppRecord `json:"LiveAppRecord" xml:"LiveAppRecord"`
 }
 
-// create a request to invoke DescribeLiveAppRecordConfig API
-func CreateDescribeLiveAppRecordConfigRequest() (request *DescribeLiveAppRecordConfigRequest) {
+// CreateDescribeLiveAppRecordConfigRequest creates a request to invoke DescribeLiveAppRecordConfig API
+func CreateDescribeLiveAppRecordConfigRequest(request *DescribeLiveAppRecordConfigRequest) {
 	request = &DescribeLiveAppRecordConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -96,7 +98,7 @@ func CreateDescribeLiveAppRecordConfigRequest() (request *DescribeLiveAppRecordC
 	return
 }
 
-// create a response to parse from DescribeLiveAppRecordConfig response
+// CreateDescribeLiveAppRecordConfigResponse creates a response to parse from DescribeLiveAppRecordConfig response
 func CreateDescribeLiveAppRecordConfigResponse() (response *DescribeLiveAppRecordConfigResponse) {
 	response = &DescribeLiveAppRecordConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

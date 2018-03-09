@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeMigrateTasks api with *DescribeMigrateTasksRequest synchronously
+// DescribeMigrateTasks invokes the rds.DescribeMigrateTasks API synchronously
 // api document: https://help.aliyun.com/api/rds/describemigratetasks.html
 func (client *Client) DescribeMigrateTasks(request *DescribeMigrateTasksRequest) (response *DescribeMigrateTasksResponse, err error) {
 	response = CreateDescribeMigrateTasksResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeMigrateTasks(request *DescribeMigrateTasksRequest)
 	return
 }
 
-// invoke DescribeMigrateTasks api with *DescribeMigrateTasksRequest asynchronously
+// DescribeMigrateTasksWithChan invokes the rds.DescribeMigrateTasks API asynchronously
 // api document: https://help.aliyun.com/api/rds/describemigratetasks.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeMigrateTasksWithChan(request *DescribeMigrateTasksRequest) (<-chan *DescribeMigrateTasksResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeMigrateTasksWithChan(request *DescribeMigrateTasks
 	return responseChan, errChan
 }
 
-// invoke DescribeMigrateTasks api with *DescribeMigrateTasksRequest asynchronously
+// DescribeMigrateTasksWithCallback invokes the rds.DescribeMigrateTasks API asynchronously
 // api document: https://help.aliyun.com/api/rds/describemigratetasks.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeMigrateTasksWithCallback(request *DescribeMigrateTasksRequest, callback func(response *DescribeMigrateTasksResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeMigrateTasksWithCallback(request *DescribeMigrateT
 	return result
 }
 
+// DescribeMigrateTasksRequest is the request struct for api DescribeMigrateTasks
 type DescribeMigrateTasksRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -85,6 +86,7 @@ type DescribeMigrateTasksRequest struct {
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 }
 
+// DescribeMigrateTasksResponse is the response struct for api DescribeMigrateTasks
 type DescribeMigrateTasksResponse struct {
 	*responses.BaseResponse
 	RequestId        string                      `json:"RequestId" xml:"RequestId"`
@@ -95,8 +97,8 @@ type DescribeMigrateTasksResponse struct {
 	Items            ItemsInDescribeMigrateTasks `json:"Items" xml:"Items"`
 }
 
-// create a request to invoke DescribeMigrateTasks API
-func CreateDescribeMigrateTasksRequest() (request *DescribeMigrateTasksRequest) {
+// CreateDescribeMigrateTasksRequest creates a request to invoke DescribeMigrateTasks API
+func CreateDescribeMigrateTasksRequest(request *DescribeMigrateTasksRequest) {
 	request = &DescribeMigrateTasksRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -104,7 +106,7 @@ func CreateDescribeMigrateTasksRequest() (request *DescribeMigrateTasksRequest) 
 	return
 }
 
-// create a response to parse from DescribeMigrateTasks response
+// CreateDescribeMigrateTasksResponse creates a response to parse from DescribeMigrateTasks response
 func CreateDescribeMigrateTasksResponse() (response *DescribeMigrateTasksResponse) {
 	response = &DescribeMigrateTasksResponse{
 		BaseResponse: &responses.BaseResponse{},

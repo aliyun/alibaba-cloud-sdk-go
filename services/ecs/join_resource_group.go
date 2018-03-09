@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke JoinResourceGroup api with *JoinResourceGroupRequest synchronously
+// JoinResourceGroup invokes the ecs.JoinResourceGroup API synchronously
 // api document: https://help.aliyun.com/api/ecs/joinresourcegroup.html
 func (client *Client) JoinResourceGroup(request *JoinResourceGroupRequest) (response *JoinResourceGroupResponse, err error) {
 	response = CreateJoinResourceGroupResponse()
@@ -28,7 +28,7 @@ func (client *Client) JoinResourceGroup(request *JoinResourceGroupRequest) (resp
 	return
 }
 
-// invoke JoinResourceGroup api with *JoinResourceGroupRequest asynchronously
+// JoinResourceGroupWithChan invokes the ecs.JoinResourceGroup API asynchronously
 // api document: https://help.aliyun.com/api/ecs/joinresourcegroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) JoinResourceGroupWithChan(request *JoinResourceGroupRequest) (<-chan *JoinResourceGroupResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) JoinResourceGroupWithChan(request *JoinResourceGroupReques
 	return responseChan, errChan
 }
 
-// invoke JoinResourceGroup api with *JoinResourceGroupRequest asynchronously
+// JoinResourceGroupWithCallback invokes the ecs.JoinResourceGroup API asynchronously
 // api document: https://help.aliyun.com/api/ecs/joinresourcegroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) JoinResourceGroupWithCallback(request *JoinResourceGroupRequest, callback func(response *JoinResourceGroupResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) JoinResourceGroupWithCallback(request *JoinResourceGroupRe
 	return result
 }
 
+// JoinResourceGroupRequest is the request struct for api JoinResourceGroup
 type JoinResourceGroupRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,13 +85,14 @@ type JoinResourceGroupRequest struct {
 	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 }
 
+// JoinResourceGroupResponse is the response struct for api JoinResourceGroup
 type JoinResourceGroupResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke JoinResourceGroup API
-func CreateJoinResourceGroupRequest() (request *JoinResourceGroupRequest) {
+// CreateJoinResourceGroupRequest creates a request to invoke JoinResourceGroup API
+func CreateJoinResourceGroupRequest(request *JoinResourceGroupRequest) {
 	request = &JoinResourceGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateJoinResourceGroupRequest() (request *JoinResourceGroupRequest) {
 	return
 }
 
-// create a response to parse from JoinResourceGroup response
+// CreateJoinResourceGroupResponse creates a response to parse from JoinResourceGroup response
 func CreateJoinResourceGroupResponse() (response *JoinResourceGroupResponse) {
 	response = &JoinResourceGroupResponse{
 		BaseResponse: &responses.BaseResponse{},

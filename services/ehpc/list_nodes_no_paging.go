@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ListNodesNoPaging api with *ListNodesNoPagingRequest synchronously
+// ListNodesNoPaging invokes the ehpc.ListNodesNoPaging API synchronously
 // api document: https://help.aliyun.com/api/ehpc/listnodesnopaging.html
 func (client *Client) ListNodesNoPaging(request *ListNodesNoPagingRequest) (response *ListNodesNoPagingResponse, err error) {
 	response = CreateListNodesNoPagingResponse()
@@ -28,7 +28,7 @@ func (client *Client) ListNodesNoPaging(request *ListNodesNoPagingRequest) (resp
 	return
 }
 
-// invoke ListNodesNoPaging api with *ListNodesNoPagingRequest asynchronously
+// ListNodesNoPagingWithChan invokes the ehpc.ListNodesNoPaging API asynchronously
 // api document: https://help.aliyun.com/api/ehpc/listnodesnopaging.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListNodesNoPagingWithChan(request *ListNodesNoPagingRequest) (<-chan *ListNodesNoPagingResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ListNodesNoPagingWithChan(request *ListNodesNoPagingReques
 	return responseChan, errChan
 }
 
-// invoke ListNodesNoPaging api with *ListNodesNoPagingRequest asynchronously
+// ListNodesNoPagingWithCallback invokes the ehpc.ListNodesNoPaging API asynchronously
 // api document: https://help.aliyun.com/api/ehpc/listnodesnopaging.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListNodesNoPagingWithCallback(request *ListNodesNoPagingRequest, callback func(response *ListNodesNoPagingResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ListNodesNoPagingWithCallback(request *ListNodesNoPagingRe
 	return result
 }
 
+// ListNodesNoPagingRequest is the request struct for api ListNodesNoPaging
 type ListNodesNoPagingRequest struct {
 	*requests.RpcRequest
 	ClusterId    string           `position:"Query" name:"ClusterId"`
@@ -81,6 +82,7 @@ type ListNodesNoPagingRequest struct {
 	OnlyDetached requests.Boolean `position:"Query" name:"OnlyDetached"`
 }
 
+// ListNodesNoPagingResponse is the response struct for api ListNodesNoPaging
 type ListNodesNoPagingResponse struct {
 	*responses.BaseResponse
 	RequestId  string                   `json:"RequestId" xml:"RequestId"`
@@ -90,8 +92,8 @@ type ListNodesNoPagingResponse struct {
 	Nodes      NodesInListNodesNoPaging `json:"Nodes" xml:"Nodes"`
 }
 
-// create a request to invoke ListNodesNoPaging API
-func CreateListNodesNoPagingRequest() (request *ListNodesNoPagingRequest) {
+// CreateListNodesNoPagingRequest creates a request to invoke ListNodesNoPaging API
+func CreateListNodesNoPagingRequest(request *ListNodesNoPagingRequest) {
 	request = &ListNodesNoPagingRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateListNodesNoPagingRequest() (request *ListNodesNoPagingRequest) {
 	return
 }
 
-// create a response to parse from ListNodesNoPaging response
+// CreateListNodesNoPagingResponse creates a response to parse from ListNodesNoPaging response
 func CreateListNodesNoPagingResponse() (response *ListNodesNoPagingResponse) {
 	response = &ListNodesNoPagingResponse{
 		BaseResponse: &responses.BaseResponse{},

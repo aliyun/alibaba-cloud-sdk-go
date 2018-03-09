@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke Describesummary api with *DescribesummaryRequest synchronously
+// Describesummary invokes the aegis.Describesummary API synchronously
 // api document: https://help.aliyun.com/api/aegis/describesummary.html
 func (client *Client) Describesummary(request *DescribesummaryRequest) (response *DescribesummaryResponse, err error) {
 	response = CreateDescribesummaryResponse()
@@ -28,7 +28,7 @@ func (client *Client) Describesummary(request *DescribesummaryRequest) (response
 	return
 }
 
-// invoke Describesummary api with *DescribesummaryRequest asynchronously
+// DescribesummaryWithChan invokes the aegis.Describesummary API asynchronously
 // api document: https://help.aliyun.com/api/aegis/describesummary.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribesummaryWithChan(request *DescribesummaryRequest) (<-chan *DescribesummaryResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribesummaryWithChan(request *DescribesummaryRequest) (
 	return responseChan, errChan
 }
 
-// invoke Describesummary api with *DescribesummaryRequest asynchronously
+// DescribesummaryWithCallback invokes the aegis.Describesummary API asynchronously
 // api document: https://help.aliyun.com/api/aegis/describesummary.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribesummaryWithCallback(request *DescribesummaryRequest, callback func(response *DescribesummaryResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribesummaryWithCallback(request *DescribesummaryReques
 	return result
 }
 
+// DescribesummaryRequest is the request struct for api Describesummary
 type DescribesummaryRequest struct {
 	*requests.RpcRequest
 	SourceIp        string           `position:"Query" name:"SourceIp"`
@@ -89,6 +90,7 @@ type DescribesummaryRequest struct {
 	CurrentPage     requests.Integer `position:"Query" name:"CurrentPage"`
 }
 
+// DescribesummaryResponse is the response struct for api Describesummary
 type DescribesummaryResponse struct {
 	*responses.BaseResponse
 	RequestId       string           `json:"RequestId" xml:"RequestId"`
@@ -99,8 +101,8 @@ type DescribesummaryResponse struct {
 	WarningSummarys []WarningSummary `json:"WarningSummarys" xml:"WarningSummarys"`
 }
 
-// create a request to invoke Describesummary API
-func CreateDescribesummaryRequest() (request *DescribesummaryRequest) {
+// CreateDescribesummaryRequest creates a request to invoke Describesummary API
+func CreateDescribesummaryRequest(request *DescribesummaryRequest) {
 	request = &DescribesummaryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -108,7 +110,7 @@ func CreateDescribesummaryRequest() (request *DescribesummaryRequest) {
 	return
 }
 
-// create a response to parse from Describesummary response
+// CreateDescribesummaryResponse creates a response to parse from Describesummary response
 func CreateDescribesummaryResponse() (response *DescribesummaryResponse) {
 	response = &DescribesummaryResponse{
 		BaseResponse: &responses.BaseResponse{},

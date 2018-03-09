@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteDomainTransmitRule api with *DeleteDomainTransmitRuleRequest synchronously
+// DeleteDomainTransmitRule invokes the ddospro.DeleteDomainTransmitRule API synchronously
 // api document: https://help.aliyun.com/api/ddospro/deletedomaintransmitrule.html
 func (client *Client) DeleteDomainTransmitRule(request *DeleteDomainTransmitRuleRequest) (response *DeleteDomainTransmitRuleResponse, err error) {
 	response = CreateDeleteDomainTransmitRuleResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteDomainTransmitRule(request *DeleteDomainTransmitRule
 	return
 }
 
-// invoke DeleteDomainTransmitRule api with *DeleteDomainTransmitRuleRequest asynchronously
+// DeleteDomainTransmitRuleWithChan invokes the ddospro.DeleteDomainTransmitRule API asynchronously
 // api document: https://help.aliyun.com/api/ddospro/deletedomaintransmitrule.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDomainTransmitRuleWithChan(request *DeleteDomainTransmitRuleRequest) (<-chan *DeleteDomainTransmitRuleResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteDomainTransmitRuleWithChan(request *DeleteDomainTran
 	return responseChan, errChan
 }
 
-// invoke DeleteDomainTransmitRule api with *DeleteDomainTransmitRuleRequest asynchronously
+// DeleteDomainTransmitRuleWithCallback invokes the ddospro.DeleteDomainTransmitRule API asynchronously
 // api document: https://help.aliyun.com/api/ddospro/deletedomaintransmitrule.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDomainTransmitRuleWithCallback(request *DeleteDomainTransmitRuleRequest, callback func(response *DeleteDomainTransmitRuleResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DeleteDomainTransmitRuleWithCallback(request *DeleteDomain
 	return result
 }
 
+// DeleteDomainTransmitRuleRequest is the request struct for api DeleteDomainTransmitRule
 type DeleteDomainTransmitRuleRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
@@ -80,13 +81,14 @@ type DeleteDomainTransmitRuleRequest struct {
 	Ip              string           `position:"Query" name:"Ip"`
 }
 
+// DeleteDomainTransmitRuleResponse is the response struct for api DeleteDomainTransmitRule
 type DeleteDomainTransmitRuleResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DeleteDomainTransmitRule API
-func CreateDeleteDomainTransmitRuleRequest() (request *DeleteDomainTransmitRuleRequest) {
+// CreateDeleteDomainTransmitRuleRequest creates a request to invoke DeleteDomainTransmitRule API
+func CreateDeleteDomainTransmitRuleRequest(request *DeleteDomainTransmitRuleRequest) {
 	request = &DeleteDomainTransmitRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -94,7 +96,7 @@ func CreateDeleteDomainTransmitRuleRequest() (request *DeleteDomainTransmitRuleR
 	return
 }
 
-// create a response to parse from DeleteDomainTransmitRule response
+// CreateDeleteDomainTransmitRuleResponse creates a response to parse from DeleteDomainTransmitRule response
 func CreateDeleteDomainTransmitRuleResponse() (response *DeleteDomainTransmitRuleResponse) {
 	response = &DeleteDomainTransmitRuleResponse{
 		BaseResponse: &responses.BaseResponse{},

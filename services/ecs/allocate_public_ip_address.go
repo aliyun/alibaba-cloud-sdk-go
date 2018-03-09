@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke AllocatePublicIpAddress api with *AllocatePublicIpAddressRequest synchronously
+// AllocatePublicIpAddress invokes the ecs.AllocatePublicIpAddress API synchronously
 // api document: https://help.aliyun.com/api/ecs/allocatepublicipaddress.html
 func (client *Client) AllocatePublicIpAddress(request *AllocatePublicIpAddressRequest) (response *AllocatePublicIpAddressResponse, err error) {
 	response = CreateAllocatePublicIpAddressResponse()
@@ -28,7 +28,7 @@ func (client *Client) AllocatePublicIpAddress(request *AllocatePublicIpAddressRe
 	return
 }
 
-// invoke AllocatePublicIpAddress api with *AllocatePublicIpAddressRequest asynchronously
+// AllocatePublicIpAddressWithChan invokes the ecs.AllocatePublicIpAddress API asynchronously
 // api document: https://help.aliyun.com/api/ecs/allocatepublicipaddress.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AllocatePublicIpAddressWithChan(request *AllocatePublicIpAddressRequest) (<-chan *AllocatePublicIpAddressResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) AllocatePublicIpAddressWithChan(request *AllocatePublicIpA
 	return responseChan, errChan
 }
 
-// invoke AllocatePublicIpAddress api with *AllocatePublicIpAddressRequest asynchronously
+// AllocatePublicIpAddressWithCallback invokes the ecs.AllocatePublicIpAddress API asynchronously
 // api document: https://help.aliyun.com/api/ecs/allocatepublicipaddress.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AllocatePublicIpAddressWithCallback(request *AllocatePublicIpAddressRequest, callback func(response *AllocatePublicIpAddressResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) AllocatePublicIpAddressWithCallback(request *AllocatePubli
 	return result
 }
 
+// AllocatePublicIpAddressRequest is the request struct for api AllocatePublicIpAddress
 type AllocatePublicIpAddressRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,14 +85,15 @@ type AllocatePublicIpAddressRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// AllocatePublicIpAddressResponse is the response struct for api AllocatePublicIpAddress
 type AllocatePublicIpAddressResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	IpAddress string `json:"IpAddress" xml:"IpAddress"`
 }
 
-// create a request to invoke AllocatePublicIpAddress API
-func CreateAllocatePublicIpAddressRequest() (request *AllocatePublicIpAddressRequest) {
+// CreateAllocatePublicIpAddressRequest creates a request to invoke AllocatePublicIpAddress API
+func CreateAllocatePublicIpAddressRequest(request *AllocatePublicIpAddressRequest) {
 	request = &AllocatePublicIpAddressRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateAllocatePublicIpAddressRequest() (request *AllocatePublicIpAddressReq
 	return
 }
 
-// create a response to parse from AllocatePublicIpAddress response
+// CreateAllocatePublicIpAddressResponse creates a response to parse from AllocatePublicIpAddress response
 func CreateAllocatePublicIpAddressResponse() (response *AllocatePublicIpAddressResponse) {
 	response = &AllocatePublicIpAddressResponse{
 		BaseResponse: &responses.BaseResponse{},

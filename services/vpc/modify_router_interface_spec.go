@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifyRouterInterfaceSpec api with *ModifyRouterInterfaceSpecRequest synchronously
+// ModifyRouterInterfaceSpec invokes the vpc.ModifyRouterInterfaceSpec API synchronously
 // api document: https://help.aliyun.com/api/vpc/modifyrouterinterfacespec.html
 func (client *Client) ModifyRouterInterfaceSpec(request *ModifyRouterInterfaceSpecRequest) (response *ModifyRouterInterfaceSpecResponse, err error) {
 	response = CreateModifyRouterInterfaceSpecResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifyRouterInterfaceSpec(request *ModifyRouterInterfaceSp
 	return
 }
 
-// invoke ModifyRouterInterfaceSpec api with *ModifyRouterInterfaceSpecRequest asynchronously
+// ModifyRouterInterfaceSpecWithChan invokes the vpc.ModifyRouterInterfaceSpec API asynchronously
 // api document: https://help.aliyun.com/api/vpc/modifyrouterinterfacespec.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyRouterInterfaceSpecWithChan(request *ModifyRouterInterfaceSpecRequest) (<-chan *ModifyRouterInterfaceSpecResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifyRouterInterfaceSpecWithChan(request *ModifyRouterInt
 	return responseChan, errChan
 }
 
-// invoke ModifyRouterInterfaceSpec api with *ModifyRouterInterfaceSpecRequest asynchronously
+// ModifyRouterInterfaceSpecWithCallback invokes the vpc.ModifyRouterInterfaceSpec API asynchronously
 // api document: https://help.aliyun.com/api/vpc/modifyrouterinterfacespec.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyRouterInterfaceSpecWithCallback(request *ModifyRouterInterfaceSpecRequest, callback func(response *ModifyRouterInterfaceSpecResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ModifyRouterInterfaceSpecWithCallback(request *ModifyRoute
 	return result
 }
 
+// ModifyRouterInterfaceSpecRequest is the request struct for api ModifyRouterInterfaceSpec
 type ModifyRouterInterfaceSpecRequest struct {
 	*requests.RpcRequest
 	RouterInterfaceId    string           `position:"Query" name:"RouterInterfaceId"`
@@ -84,14 +85,15 @@ type ModifyRouterInterfaceSpecRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// ModifyRouterInterfaceSpecResponse is the response struct for api ModifyRouterInterfaceSpec
 type ModifyRouterInterfaceSpecResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Spec      string `json:"Spec" xml:"Spec"`
 }
 
-// create a request to invoke ModifyRouterInterfaceSpec API
-func CreateModifyRouterInterfaceSpecRequest() (request *ModifyRouterInterfaceSpecRequest) {
+// CreateModifyRouterInterfaceSpecRequest creates a request to invoke ModifyRouterInterfaceSpec API
+func CreateModifyRouterInterfaceSpecRequest(request *ModifyRouterInterfaceSpecRequest) {
 	request = &ModifyRouterInterfaceSpecRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateModifyRouterInterfaceSpecRequest() (request *ModifyRouterInterfaceSpe
 	return
 }
 
-// create a response to parse from ModifyRouterInterfaceSpec response
+// CreateModifyRouterInterfaceSpecResponse creates a response to parse from ModifyRouterInterfaceSpec response
 func CreateModifyRouterInterfaceSpecResponse() (response *ModifyRouterInterfaceSpecResponse) {
 	response = &ModifyRouterInterfaceSpecResponse{
 		BaseResponse: &responses.BaseResponse{},

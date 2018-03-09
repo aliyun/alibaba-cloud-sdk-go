@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CheckAutoSnapshotPolicy api with *CheckAutoSnapshotPolicyRequest synchronously
+// CheckAutoSnapshotPolicy invokes the ecs.CheckAutoSnapshotPolicy API synchronously
 // api document: https://help.aliyun.com/api/ecs/checkautosnapshotpolicy.html
 func (client *Client) CheckAutoSnapshotPolicy(request *CheckAutoSnapshotPolicyRequest) (response *CheckAutoSnapshotPolicyResponse, err error) {
 	response = CreateCheckAutoSnapshotPolicyResponse()
@@ -28,7 +28,7 @@ func (client *Client) CheckAutoSnapshotPolicy(request *CheckAutoSnapshotPolicyRe
 	return
 }
 
-// invoke CheckAutoSnapshotPolicy api with *CheckAutoSnapshotPolicyRequest asynchronously
+// CheckAutoSnapshotPolicyWithChan invokes the ecs.CheckAutoSnapshotPolicy API asynchronously
 // api document: https://help.aliyun.com/api/ecs/checkautosnapshotpolicy.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckAutoSnapshotPolicyWithChan(request *CheckAutoSnapshotPolicyRequest) (<-chan *CheckAutoSnapshotPolicyResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CheckAutoSnapshotPolicyWithChan(request *CheckAutoSnapshot
 	return responseChan, errChan
 }
 
-// invoke CheckAutoSnapshotPolicy api with *CheckAutoSnapshotPolicyRequest asynchronously
+// CheckAutoSnapshotPolicyWithCallback invokes the ecs.CheckAutoSnapshotPolicy API asynchronously
 // api document: https://help.aliyun.com/api/ecs/checkautosnapshotpolicy.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckAutoSnapshotPolicyWithCallback(request *CheckAutoSnapshotPolicyRequest, callback func(response *CheckAutoSnapshotPolicyResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) CheckAutoSnapshotPolicyWithCallback(request *CheckAutoSnap
 	return result
 }
 
+// CheckAutoSnapshotPolicyRequest is the request struct for api CheckAutoSnapshotPolicy
 type CheckAutoSnapshotPolicyRequest struct {
 	*requests.RpcRequest
 	OwnerId                           requests.Integer `position:"Query" name:"OwnerId"`
@@ -89,6 +90,7 @@ type CheckAutoSnapshotPolicyRequest struct {
 	DataDiskPolicyRetentionLastWeek   requests.Boolean `position:"Query" name:"DataDiskPolicyRetentionLastWeek"`
 }
 
+// CheckAutoSnapshotPolicyResponse is the response struct for api CheckAutoSnapshotPolicy
 type CheckAutoSnapshotPolicyResponse struct {
 	*responses.BaseResponse
 	RequestId              string `json:"RequestId" xml:"RequestId"`
@@ -96,8 +98,8 @@ type CheckAutoSnapshotPolicyResponse struct {
 	IsPermittedModify      string `json:"IsPermittedModify" xml:"IsPermittedModify"`
 }
 
-// create a request to invoke CheckAutoSnapshotPolicy API
-func CreateCheckAutoSnapshotPolicyRequest() (request *CheckAutoSnapshotPolicyRequest) {
+// CreateCheckAutoSnapshotPolicyRequest creates a request to invoke CheckAutoSnapshotPolicy API
+func CreateCheckAutoSnapshotPolicyRequest(request *CheckAutoSnapshotPolicyRequest) {
 	request = &CheckAutoSnapshotPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -105,7 +107,7 @@ func CreateCheckAutoSnapshotPolicyRequest() (request *CheckAutoSnapshotPolicyReq
 	return
 }
 
-// create a response to parse from CheckAutoSnapshotPolicy response
+// CreateCheckAutoSnapshotPolicyResponse creates a response to parse from CheckAutoSnapshotPolicy response
 func CreateCheckAutoSnapshotPolicyResponse() (response *CheckAutoSnapshotPolicyResponse) {
 	response = &CheckAutoSnapshotPolicyResponse{
 		BaseResponse: &responses.BaseResponse{},

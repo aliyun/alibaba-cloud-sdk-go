@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteCACertificate api with *DeleteCACertificateRequest synchronously
+// DeleteCACertificate invokes the slb.DeleteCACertificate API synchronously
 // api document: https://help.aliyun.com/api/slb/deletecacertificate.html
 func (client *Client) DeleteCACertificate(request *DeleteCACertificateRequest) (response *DeleteCACertificateResponse, err error) {
 	response = CreateDeleteCACertificateResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteCACertificate(request *DeleteCACertificateRequest) (
 	return
 }
 
-// invoke DeleteCACertificate api with *DeleteCACertificateRequest asynchronously
+// DeleteCACertificateWithChan invokes the slb.DeleteCACertificate API asynchronously
 // api document: https://help.aliyun.com/api/slb/deletecacertificate.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteCACertificateWithChan(request *DeleteCACertificateRequest) (<-chan *DeleteCACertificateResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteCACertificateWithChan(request *DeleteCACertificateRe
 	return responseChan, errChan
 }
 
-// invoke DeleteCACertificate api with *DeleteCACertificateRequest asynchronously
+// DeleteCACertificateWithCallback invokes the slb.DeleteCACertificate API asynchronously
 // api document: https://help.aliyun.com/api/slb/deletecacertificate.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteCACertificateWithCallback(request *DeleteCACertificateRequest, callback func(response *DeleteCACertificateResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DeleteCACertificateWithCallback(request *DeleteCACertifica
 	return result
 }
 
+// DeleteCACertificateRequest is the request struct for api DeleteCACertificate
 type DeleteCACertificateRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -83,13 +84,14 @@ type DeleteCACertificateRequest struct {
 	CACertificateId      string           `position:"Query" name:"CACertificateId"`
 }
 
+// DeleteCACertificateResponse is the response struct for api DeleteCACertificate
 type DeleteCACertificateResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DeleteCACertificate API
-func CreateDeleteCACertificateRequest() (request *DeleteCACertificateRequest) {
+// CreateDeleteCACertificateRequest creates a request to invoke DeleteCACertificate API
+func CreateDeleteCACertificateRequest(request *DeleteCACertificateRequest) {
 	request = &DeleteCACertificateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateDeleteCACertificateRequest() (request *DeleteCACertificateRequest) {
 	return
 }
 
-// create a response to parse from DeleteCACertificate response
+// CreateDeleteCACertificateResponse creates a response to parse from DeleteCACertificate response
 func CreateDeleteCACertificateResponse() (response *DeleteCACertificateResponse) {
 	response = &DeleteCACertificateResponse{
 		BaseResponse: &responses.BaseResponse{},

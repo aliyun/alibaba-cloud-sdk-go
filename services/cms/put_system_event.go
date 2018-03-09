@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke PutSystemEvent api with *PutSystemEventRequest synchronously
+// PutSystemEvent invokes the cms.PutSystemEvent API synchronously
 // api document: https://help.aliyun.com/api/cms/putsystemevent.html
 func (client *Client) PutSystemEvent(request *PutSystemEventRequest) (response *PutSystemEventResponse, err error) {
 	response = CreatePutSystemEventResponse()
@@ -28,7 +28,7 @@ func (client *Client) PutSystemEvent(request *PutSystemEventRequest) (response *
 	return
 }
 
-// invoke PutSystemEvent api with *PutSystemEventRequest asynchronously
+// PutSystemEventWithChan invokes the cms.PutSystemEvent API asynchronously
 // api document: https://help.aliyun.com/api/cms/putsystemevent.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PutSystemEventWithChan(request *PutSystemEventRequest) (<-chan *PutSystemEventResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) PutSystemEventWithChan(request *PutSystemEventRequest) (<-
 	return responseChan, errChan
 }
 
-// invoke PutSystemEvent api with *PutSystemEventRequest asynchronously
+// PutSystemEventWithCallback invokes the cms.PutSystemEvent API asynchronously
 // api document: https://help.aliyun.com/api/cms/putsystemevent.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PutSystemEventWithCallback(request *PutSystemEventRequest, callback func(response *PutSystemEventResponse, err error)) <-chan int {
@@ -73,11 +73,13 @@ func (client *Client) PutSystemEventWithCallback(request *PutSystemEventRequest,
 	return result
 }
 
+// PutSystemEventRequest is the request struct for api PutSystemEvent
 type PutSystemEventRequest struct {
 	*requests.RpcRequest
 	EventInfo string `position:"Query" name:"EventInfo"`
 }
 
+// PutSystemEventResponse is the response struct for api PutSystemEvent
 type PutSystemEventResponse struct {
 	*responses.BaseResponse
 	Code    string `json:"Code" xml:"Code"`
@@ -85,8 +87,8 @@ type PutSystemEventResponse struct {
 	Data    string `json:"Data" xml:"Data"`
 }
 
-// create a request to invoke PutSystemEvent API
-func CreatePutSystemEventRequest() (request *PutSystemEventRequest) {
+// CreatePutSystemEventRequest creates a request to invoke PutSystemEvent API
+func CreatePutSystemEventRequest(request *PutSystemEventRequest) {
 	request = &PutSystemEventRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -94,7 +96,7 @@ func CreatePutSystemEventRequest() (request *PutSystemEventRequest) {
 	return
 }
 
-// create a response to parse from PutSystemEvent response
+// CreatePutSystemEventResponse creates a response to parse from PutSystemEvent response
 func CreatePutSystemEventResponse() (response *PutSystemEventResponse) {
 	response = &PutSystemEventResponse{
 		BaseResponse: &responses.BaseResponse{},

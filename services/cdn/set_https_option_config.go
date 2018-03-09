@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SetHttpsOptionConfig api with *SetHttpsOptionConfigRequest synchronously
+// SetHttpsOptionConfig invokes the cdn.SetHttpsOptionConfig API synchronously
 // api document: https://help.aliyun.com/api/cdn/sethttpsoptionconfig.html
 func (client *Client) SetHttpsOptionConfig(request *SetHttpsOptionConfigRequest) (response *SetHttpsOptionConfigResponse, err error) {
 	response = CreateSetHttpsOptionConfigResponse()
@@ -28,7 +28,7 @@ func (client *Client) SetHttpsOptionConfig(request *SetHttpsOptionConfigRequest)
 	return
 }
 
-// invoke SetHttpsOptionConfig api with *SetHttpsOptionConfigRequest asynchronously
+// SetHttpsOptionConfigWithChan invokes the cdn.SetHttpsOptionConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/sethttpsoptionconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetHttpsOptionConfigWithChan(request *SetHttpsOptionConfigRequest) (<-chan *SetHttpsOptionConfigResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SetHttpsOptionConfigWithChan(request *SetHttpsOptionConfig
 	return responseChan, errChan
 }
 
-// invoke SetHttpsOptionConfig api with *SetHttpsOptionConfigRequest asynchronously
+// SetHttpsOptionConfigWithCallback invokes the cdn.SetHttpsOptionConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/sethttpsoptionconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetHttpsOptionConfigWithCallback(request *SetHttpsOptionConfigRequest, callback func(response *SetHttpsOptionConfigResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SetHttpsOptionConfigWithCallback(request *SetHttpsOptionCo
 	return result
 }
 
+// SetHttpsOptionConfigRequest is the request struct for api SetHttpsOptionConfig
 type SetHttpsOptionConfigRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -81,13 +82,14 @@ type SetHttpsOptionConfigRequest struct {
 	Http2         string           `position:"Query" name:"Http2"`
 }
 
+// SetHttpsOptionConfigResponse is the response struct for api SetHttpsOptionConfig
 type SetHttpsOptionConfigResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke SetHttpsOptionConfig API
-func CreateSetHttpsOptionConfigRequest() (request *SetHttpsOptionConfigRequest) {
+// CreateSetHttpsOptionConfigRequest creates a request to invoke SetHttpsOptionConfig API
+func CreateSetHttpsOptionConfigRequest(request *SetHttpsOptionConfigRequest) {
 	request = &SetHttpsOptionConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateSetHttpsOptionConfigRequest() (request *SetHttpsOptionConfigRequest) 
 	return
 }
 
-// create a response to parse from SetHttpsOptionConfig response
+// CreateSetHttpsOptionConfigResponse creates a response to parse from SetHttpsOptionConfig response
 func CreateSetHttpsOptionConfigResponse() (response *SetHttpsOptionConfigResponse) {
 	response = &SetHttpsOptionConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

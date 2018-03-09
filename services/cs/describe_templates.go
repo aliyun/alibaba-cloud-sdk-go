@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeTemplates api with *DescribeTemplatesRequest synchronously
+// DescribeTemplates invokes the cs.DescribeTemplates API synchronously
 // api document: https://help.aliyun.com/api/cs/describetemplates.html
 func (client *Client) DescribeTemplates(request *DescribeTemplatesRequest) (response *DescribeTemplatesResponse, err error) {
 	response = CreateDescribeTemplatesResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeTemplates(request *DescribeTemplatesRequest) (resp
 	return
 }
 
-// invoke DescribeTemplates api with *DescribeTemplatesRequest asynchronously
+// DescribeTemplatesWithChan invokes the cs.DescribeTemplates API asynchronously
 // api document: https://help.aliyun.com/api/cs/describetemplates.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeTemplatesWithChan(request *DescribeTemplatesRequest) (<-chan *DescribeTemplatesResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeTemplatesWithChan(request *DescribeTemplatesReques
 	return responseChan, errChan
 }
 
-// invoke DescribeTemplates api with *DescribeTemplatesRequest asynchronously
+// DescribeTemplatesWithCallback invokes the cs.DescribeTemplates API asynchronously
 // api document: https://help.aliyun.com/api/cs/describetemplates.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeTemplatesWithCallback(request *DescribeTemplatesRequest, callback func(response *DescribeTemplatesResponse, err error)) <-chan int {
@@ -73,16 +73,18 @@ func (client *Client) DescribeTemplatesWithCallback(request *DescribeTemplatesRe
 	return result
 }
 
+// DescribeTemplatesRequest is the request struct for api DescribeTemplates
 type DescribeTemplatesRequest struct {
 	*requests.RoaRequest
 }
 
+// DescribeTemplatesResponse is the response struct for api DescribeTemplates
 type DescribeTemplatesResponse struct {
 	*responses.BaseResponse
 }
 
-// create a request to invoke DescribeTemplates API
-func CreateDescribeTemplatesRequest() (request *DescribeTemplatesRequest) {
+// CreateDescribeTemplatesRequest creates a request to invoke DescribeTemplates API
+func CreateDescribeTemplatesRequest(request *DescribeTemplatesRequest) {
 	request = &DescribeTemplatesRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
@@ -91,7 +93,7 @@ func CreateDescribeTemplatesRequest() (request *DescribeTemplatesRequest) {
 	return
 }
 
-// create a response to parse from DescribeTemplates response
+// CreateDescribeTemplatesResponse creates a response to parse from DescribeTemplates response
 func CreateDescribeTemplatesResponse() (response *DescribeTemplatesResponse) {
 	response = &DescribeTemplatesResponse{
 		BaseResponse: &responses.BaseResponse{},

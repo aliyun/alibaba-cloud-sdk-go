@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifyAlertConfig api with *ModifyAlertConfigRequest synchronously
+// ModifyAlertConfig invokes the ess.ModifyAlertConfig API synchronously
 // api document: https://help.aliyun.com/api/ess/modifyalertconfig.html
 func (client *Client) ModifyAlertConfig(request *ModifyAlertConfigRequest) (response *ModifyAlertConfigResponse, err error) {
 	response = CreateModifyAlertConfigResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifyAlertConfig(request *ModifyAlertConfigRequest) (resp
 	return
 }
 
-// invoke ModifyAlertConfig api with *ModifyAlertConfigRequest asynchronously
+// ModifyAlertConfigWithChan invokes the ess.ModifyAlertConfig API asynchronously
 // api document: https://help.aliyun.com/api/ess/modifyalertconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyAlertConfigWithChan(request *ModifyAlertConfigRequest) (<-chan *ModifyAlertConfigResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifyAlertConfigWithChan(request *ModifyAlertConfigReques
 	return responseChan, errChan
 }
 
-// invoke ModifyAlertConfig api with *ModifyAlertConfigRequest asynchronously
+// ModifyAlertConfigWithCallback invokes the ess.ModifyAlertConfig API asynchronously
 // api document: https://help.aliyun.com/api/ess/modifyalertconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyAlertConfigWithCallback(request *ModifyAlertConfigRequest, callback func(response *ModifyAlertConfigResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ModifyAlertConfigWithCallback(request *ModifyAlertConfigRe
 	return result
 }
 
+// ModifyAlertConfigRequest is the request struct for api ModifyAlertConfig
 type ModifyAlertConfigRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -83,13 +84,14 @@ type ModifyAlertConfigRequest struct {
 	RejectConfig         requests.Integer `position:"Query" name:"RejectConfig"`
 }
 
+// ModifyAlertConfigResponse is the response struct for api ModifyAlertConfig
 type ModifyAlertConfigResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ModifyAlertConfig API
-func CreateModifyAlertConfigRequest() (request *ModifyAlertConfigRequest) {
+// CreateModifyAlertConfigRequest creates a request to invoke ModifyAlertConfig API
+func CreateModifyAlertConfigRequest(request *ModifyAlertConfigRequest) {
 	request = &ModifyAlertConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateModifyAlertConfigRequest() (request *ModifyAlertConfigRequest) {
 	return
 }
 
-// create a response to parse from ModifyAlertConfig response
+// CreateModifyAlertConfigResponse creates a response to parse from ModifyAlertConfig response
 func CreateModifyAlertConfigResponse() (response *ModifyAlertConfigResponse) {
 	response = &ModifyAlertConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

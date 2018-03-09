@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeDomainTopUrlVisit api with *DescribeDomainTopUrlVisitRequest synchronously
+// DescribeDomainTopUrlVisit invokes the cdn.DescribeDomainTopUrlVisit API synchronously
 // api document: https://help.aliyun.com/api/cdn/describedomaintopurlvisit.html
 func (client *Client) DescribeDomainTopUrlVisit(request *DescribeDomainTopUrlVisitRequest) (response *DescribeDomainTopUrlVisitResponse, err error) {
 	response = CreateDescribeDomainTopUrlVisitResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeDomainTopUrlVisit(request *DescribeDomainTopUrlVis
 	return
 }
 
-// invoke DescribeDomainTopUrlVisit api with *DescribeDomainTopUrlVisitRequest asynchronously
+// DescribeDomainTopUrlVisitWithChan invokes the cdn.DescribeDomainTopUrlVisit API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describedomaintopurlvisit.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainTopUrlVisitWithChan(request *DescribeDomainTopUrlVisitRequest) (<-chan *DescribeDomainTopUrlVisitResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeDomainTopUrlVisitWithChan(request *DescribeDomainT
 	return responseChan, errChan
 }
 
-// invoke DescribeDomainTopUrlVisit api with *DescribeDomainTopUrlVisitRequest asynchronously
+// DescribeDomainTopUrlVisitWithCallback invokes the cdn.DescribeDomainTopUrlVisit API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describedomaintopurlvisit.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainTopUrlVisitWithCallback(request *DescribeDomainTopUrlVisitRequest, callback func(response *DescribeDomainTopUrlVisitResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeDomainTopUrlVisitWithCallback(request *DescribeDom
 	return result
 }
 
+// DescribeDomainTopUrlVisitRequest is the request struct for api DescribeDomainTopUrlVisit
 type DescribeDomainTopUrlVisitRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,6 +83,7 @@ type DescribeDomainTopUrlVisitRequest struct {
 	SortBy        string           `position:"Query" name:"SortBy"`
 }
 
+// DescribeDomainTopUrlVisitResponse is the response struct for api DescribeDomainTopUrlVisit
 type DescribeDomainTopUrlVisitResponse struct {
 	*responses.BaseResponse
 	RequestId  string     `json:"RequestId" xml:"RequestId"`
@@ -94,8 +96,8 @@ type DescribeDomainTopUrlVisitResponse struct {
 	Url500List Url500List `json:"Url500List" xml:"Url500List"`
 }
 
-// create a request to invoke DescribeDomainTopUrlVisit API
-func CreateDescribeDomainTopUrlVisitRequest() (request *DescribeDomainTopUrlVisitRequest) {
+// CreateDescribeDomainTopUrlVisitRequest creates a request to invoke DescribeDomainTopUrlVisit API
+func CreateDescribeDomainTopUrlVisitRequest(request *DescribeDomainTopUrlVisitRequest) {
 	request = &DescribeDomainTopUrlVisitRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -103,7 +105,7 @@ func CreateDescribeDomainTopUrlVisitRequest() (request *DescribeDomainTopUrlVisi
 	return
 }
 
-// create a response to parse from DescribeDomainTopUrlVisit response
+// CreateDescribeDomainTopUrlVisitResponse creates a response to parse from DescribeDomainTopUrlVisit response
 func CreateDescribeDomainTopUrlVisitResponse() (response *DescribeDomainTopUrlVisitResponse) {
 	response = &DescribeDomainTopUrlVisitResponse{
 		BaseResponse: &responses.BaseResponse{},

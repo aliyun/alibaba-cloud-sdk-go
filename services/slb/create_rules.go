@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CreateRules api with *CreateRulesRequest synchronously
+// CreateRules invokes the slb.CreateRules API synchronously
 // api document: https://help.aliyun.com/api/slb/createrules.html
 func (client *Client) CreateRules(request *CreateRulesRequest) (response *CreateRulesResponse, err error) {
 	response = CreateCreateRulesResponse()
@@ -28,7 +28,7 @@ func (client *Client) CreateRules(request *CreateRulesRequest) (response *Create
 	return
 }
 
-// invoke CreateRules api with *CreateRulesRequest asynchronously
+// CreateRulesWithChan invokes the slb.CreateRules API asynchronously
 // api document: https://help.aliyun.com/api/slb/createrules.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateRulesWithChan(request *CreateRulesRequest) (<-chan *CreateRulesResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CreateRulesWithChan(request *CreateRulesRequest) (<-chan *
 	return responseChan, errChan
 }
 
-// invoke CreateRules api with *CreateRulesRequest asynchronously
+// CreateRulesWithCallback invokes the slb.CreateRules API asynchronously
 // api document: https://help.aliyun.com/api/slb/createrules.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateRulesWithCallback(request *CreateRulesRequest, callback func(response *CreateRulesResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) CreateRulesWithCallback(request *CreateRulesRequest, callb
 	return result
 }
 
+// CreateRulesRequest is the request struct for api CreateRules
 type CreateRulesRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -86,14 +87,15 @@ type CreateRulesRequest struct {
 	RuleList             string           `position:"Query" name:"RuleList"`
 }
 
+// CreateRulesResponse is the response struct for api CreateRules
 type CreateRulesResponse struct {
 	*responses.BaseResponse
 	RequestId string             `json:"RequestId" xml:"RequestId"`
 	Rules     RulesInCreateRules `json:"Rules" xml:"Rules"`
 }
 
-// create a request to invoke CreateRules API
-func CreateCreateRulesRequest() (request *CreateRulesRequest) {
+// CreateCreateRulesRequest creates a request to invoke CreateRules API
+func CreateCreateRulesRequest(request *CreateRulesRequest) {
 	request = &CreateRulesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -101,7 +103,7 @@ func CreateCreateRulesRequest() (request *CreateRulesRequest) {
 	return
 }
 
-// create a response to parse from CreateRules response
+// CreateCreateRulesResponse creates a response to parse from CreateRules response
 func CreateCreateRulesResponse() (response *CreateRulesResponse) {
 	response = &CreateRulesResponse{
 		BaseResponse: &responses.BaseResponse{},

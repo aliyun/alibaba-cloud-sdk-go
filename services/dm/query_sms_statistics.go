@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke QuerySmsStatistics api with *QuerySmsStatisticsRequest synchronously
+// QuerySmsStatistics invokes the dm.QuerySmsStatistics API synchronously
 // api document: https://help.aliyun.com/api/dm/querysmsstatistics.html
 func (client *Client) QuerySmsStatistics(request *QuerySmsStatisticsRequest) (response *QuerySmsStatisticsResponse, err error) {
 	response = CreateQuerySmsStatisticsResponse()
@@ -28,7 +28,7 @@ func (client *Client) QuerySmsStatistics(request *QuerySmsStatisticsRequest) (re
 	return
 }
 
-// invoke QuerySmsStatistics api with *QuerySmsStatisticsRequest asynchronously
+// QuerySmsStatisticsWithChan invokes the dm.QuerySmsStatistics API asynchronously
 // api document: https://help.aliyun.com/api/dm/querysmsstatistics.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QuerySmsStatisticsWithChan(request *QuerySmsStatisticsRequest) (<-chan *QuerySmsStatisticsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) QuerySmsStatisticsWithChan(request *QuerySmsStatisticsRequ
 	return responseChan, errChan
 }
 
-// invoke QuerySmsStatistics api with *QuerySmsStatisticsRequest asynchronously
+// QuerySmsStatisticsWithCallback invokes the dm.QuerySmsStatistics API asynchronously
 // api document: https://help.aliyun.com/api/dm/querysmsstatistics.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QuerySmsStatisticsWithCallback(request *QuerySmsStatisticsRequest, callback func(response *QuerySmsStatisticsResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) QuerySmsStatisticsWithCallback(request *QuerySmsStatistics
 	return result
 }
 
+// QuerySmsStatisticsRequest is the request struct for api QuerySmsStatistics
 type QuerySmsStatisticsRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -83,6 +84,7 @@ type QuerySmsStatisticsRequest struct {
 	FromType             requests.Integer `position:"Query" name:"FromType"`
 }
 
+// QuerySmsStatisticsResponse is the response struct for api QuerySmsStatistics
 type QuerySmsStatisticsResponse struct {
 	*responses.BaseResponse
 	RequestId  string                   `json:"RequestId" xml:"RequestId"`
@@ -90,8 +92,8 @@ type QuerySmsStatisticsResponse struct {
 	Data       DataInQuerySmsStatistics `json:"data" xml:"data"`
 }
 
-// create a request to invoke QuerySmsStatistics API
-func CreateQuerySmsStatisticsRequest() (request *QuerySmsStatisticsRequest) {
+// CreateQuerySmsStatisticsRequest creates a request to invoke QuerySmsStatistics API
+func CreateQuerySmsStatisticsRequest(request *QuerySmsStatisticsRequest) {
 	request = &QuerySmsStatisticsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateQuerySmsStatisticsRequest() (request *QuerySmsStatisticsRequest) {
 	return
 }
 
-// create a response to parse from QuerySmsStatistics response
+// CreateQuerySmsStatisticsResponse creates a response to parse from QuerySmsStatistics response
 func CreateQuerySmsStatisticsResponse() (response *QuerySmsStatisticsResponse) {
 	response = &QuerySmsStatisticsResponse{
 		BaseResponse: &responses.BaseResponse{},

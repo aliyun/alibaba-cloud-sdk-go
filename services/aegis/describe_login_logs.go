@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeLoginLogs api with *DescribeLoginLogsRequest synchronously
+// DescribeLoginLogs invokes the aegis.DescribeLoginLogs API synchronously
 // api document: https://help.aliyun.com/api/aegis/describeloginlogs.html
 func (client *Client) DescribeLoginLogs(request *DescribeLoginLogsRequest) (response *DescribeLoginLogsResponse, err error) {
 	response = CreateDescribeLoginLogsResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeLoginLogs(request *DescribeLoginLogsRequest) (resp
 	return
 }
 
-// invoke DescribeLoginLogs api with *DescribeLoginLogsRequest asynchronously
+// DescribeLoginLogsWithChan invokes the aegis.DescribeLoginLogs API asynchronously
 // api document: https://help.aliyun.com/api/aegis/describeloginlogs.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLoginLogsWithChan(request *DescribeLoginLogsRequest) (<-chan *DescribeLoginLogsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeLoginLogsWithChan(request *DescribeLoginLogsReques
 	return responseChan, errChan
 }
 
-// invoke DescribeLoginLogs api with *DescribeLoginLogsRequest asynchronously
+// DescribeLoginLogsWithCallback invokes the aegis.DescribeLoginLogs API asynchronously
 // api document: https://help.aliyun.com/api/aegis/describeloginlogs.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLoginLogsWithCallback(request *DescribeLoginLogsRequest, callback func(response *DescribeLoginLogsResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeLoginLogsWithCallback(request *DescribeLoginLogsRe
 	return result
 }
 
+// DescribeLoginLogsRequest is the request struct for api DescribeLoginLogs
 type DescribeLoginLogsRequest struct {
 	*requests.RpcRequest
 	SourceIp    string           `position:"Query" name:"SourceIp"`
@@ -84,6 +85,7 @@ type DescribeLoginLogsRequest struct {
 	Remark      string           `position:"Query" name:"Remark"`
 }
 
+// DescribeLoginLogsResponse is the response struct for api DescribeLoginLogs
 type DescribeLoginLogsResponse struct {
 	*responses.BaseResponse
 	RequestId   string        `json:"RequestId" xml:"RequestId"`
@@ -93,8 +95,8 @@ type DescribeLoginLogsResponse struct {
 	LogList     []LogListItem `json:"LogList" xml:"LogList"`
 }
 
-// create a request to invoke DescribeLoginLogs API
-func CreateDescribeLoginLogsRequest() (request *DescribeLoginLogsRequest) {
+// CreateDescribeLoginLogsRequest creates a request to invoke DescribeLoginLogs API
+func CreateDescribeLoginLogsRequest(request *DescribeLoginLogsRequest) {
 	request = &DescribeLoginLogsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -102,7 +104,7 @@ func CreateDescribeLoginLogsRequest() (request *DescribeLoginLogsRequest) {
 	return
 }
 
-// create a response to parse from DescribeLoginLogs response
+// CreateDescribeLoginLogsResponse creates a response to parse from DescribeLoginLogs response
 func CreateDescribeLoginLogsResponse() (response *DescribeLoginLogsResponse) {
 	response = &DescribeLoginLogsResponse{
 		BaseResponse: &responses.BaseResponse{},

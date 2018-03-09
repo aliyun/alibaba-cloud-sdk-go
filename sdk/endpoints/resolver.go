@@ -54,7 +54,8 @@ func getAllResolvers() []Resolver {
 		resolvers = []Resolver{
 			&SimpleHostResolver{},
 			&LocationResolver{},
-			&LocalXmlResolver{},
+			&LocalRegionalResolver{},
+			&LocalGlobalResolver{},
 		}
 	})
 	return resolvers

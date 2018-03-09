@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeDomainTopReferVisit api with *DescribeDomainTopReferVisitRequest synchronously
+// DescribeDomainTopReferVisit invokes the cdn.DescribeDomainTopReferVisit API synchronously
 // api document: https://help.aliyun.com/api/cdn/describedomaintoprefervisit.html
 func (client *Client) DescribeDomainTopReferVisit(request *DescribeDomainTopReferVisitRequest) (response *DescribeDomainTopReferVisitResponse, err error) {
 	response = CreateDescribeDomainTopReferVisitResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeDomainTopReferVisit(request *DescribeDomainTopRefe
 	return
 }
 
-// invoke DescribeDomainTopReferVisit api with *DescribeDomainTopReferVisitRequest asynchronously
+// DescribeDomainTopReferVisitWithChan invokes the cdn.DescribeDomainTopReferVisit API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describedomaintoprefervisit.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainTopReferVisitWithChan(request *DescribeDomainTopReferVisitRequest) (<-chan *DescribeDomainTopReferVisitResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeDomainTopReferVisitWithChan(request *DescribeDomai
 	return responseChan, errChan
 }
 
-// invoke DescribeDomainTopReferVisit api with *DescribeDomainTopReferVisitRequest asynchronously
+// DescribeDomainTopReferVisitWithCallback invokes the cdn.DescribeDomainTopReferVisit API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describedomaintoprefervisit.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainTopReferVisitWithCallback(request *DescribeDomainTopReferVisitRequest, callback func(response *DescribeDomainTopReferVisitResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeDomainTopReferVisitWithCallback(request *DescribeD
 	return result
 }
 
+// DescribeDomainTopReferVisitRequest is the request struct for api DescribeDomainTopReferVisit
 type DescribeDomainTopReferVisitRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,6 +83,7 @@ type DescribeDomainTopReferVisitRequest struct {
 	SortBy        string           `position:"Query" name:"SortBy"`
 }
 
+// DescribeDomainTopReferVisitResponse is the response struct for api DescribeDomainTopReferVisit
 type DescribeDomainTopReferVisitResponse struct {
 	*responses.BaseResponse
 	RequestId    string       `json:"RequestId" xml:"RequestId"`
@@ -90,8 +92,8 @@ type DescribeDomainTopReferVisitResponse struct {
 	TopReferList TopReferList `json:"TopReferList" xml:"TopReferList"`
 }
 
-// create a request to invoke DescribeDomainTopReferVisit API
-func CreateDescribeDomainTopReferVisitRequest() (request *DescribeDomainTopReferVisitRequest) {
+// CreateDescribeDomainTopReferVisitRequest creates a request to invoke DescribeDomainTopReferVisit API
+func CreateDescribeDomainTopReferVisitRequest(request *DescribeDomainTopReferVisitRequest) {
 	request = &DescribeDomainTopReferVisitRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateDescribeDomainTopReferVisitRequest() (request *DescribeDomainTopRefer
 	return
 }
 
-// create a response to parse from DescribeDomainTopReferVisit response
+// CreateDescribeDomainTopReferVisitResponse creates a response to parse from DescribeDomainTopReferVisit response
 func CreateDescribeDomainTopReferVisitResponse() (response *DescribeDomainTopReferVisitResponse) {
 	response = &DescribeDomainTopReferVisitResponse{
 		BaseResponse: &responses.BaseResponse{},

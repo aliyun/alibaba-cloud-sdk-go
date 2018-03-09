@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeSupportLines api with *DescribeSupportLinesRequest synchronously
+// DescribeSupportLines invokes the alidns.DescribeSupportLines API synchronously
 // api document: https://help.aliyun.com/api/alidns/describesupportlines.html
 func (client *Client) DescribeSupportLines(request *DescribeSupportLinesRequest) (response *DescribeSupportLinesResponse, err error) {
 	response = CreateDescribeSupportLinesResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeSupportLines(request *DescribeSupportLinesRequest)
 	return
 }
 
-// invoke DescribeSupportLines api with *DescribeSupportLinesRequest asynchronously
+// DescribeSupportLinesWithChan invokes the alidns.DescribeSupportLines API asynchronously
 // api document: https://help.aliyun.com/api/alidns/describesupportlines.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSupportLinesWithChan(request *DescribeSupportLinesRequest) (<-chan *DescribeSupportLinesResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeSupportLinesWithChan(request *DescribeSupportLines
 	return responseChan, errChan
 }
 
-// invoke DescribeSupportLines api with *DescribeSupportLinesRequest asynchronously
+// DescribeSupportLinesWithCallback invokes the alidns.DescribeSupportLines API asynchronously
 // api document: https://help.aliyun.com/api/alidns/describesupportlines.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSupportLinesWithCallback(request *DescribeSupportLinesRequest, callback func(response *DescribeSupportLinesResponse, err error)) <-chan int {
@@ -73,20 +73,22 @@ func (client *Client) DescribeSupportLinesWithCallback(request *DescribeSupportL
 	return result
 }
 
+// DescribeSupportLinesRequest is the request struct for api DescribeSupportLines
 type DescribeSupportLinesRequest struct {
 	*requests.RpcRequest
 	Lang         string `position:"Query" name:"Lang"`
 	UserClientIp string `position:"Query" name:"UserClientIp"`
 }
 
+// DescribeSupportLinesResponse is the response struct for api DescribeSupportLines
 type DescribeSupportLinesResponse struct {
 	*responses.BaseResponse
 	RequestId   string                            `json:"RequestId" xml:"RequestId"`
 	RecordLines RecordLinesInDescribeSupportLines `json:"RecordLines" xml:"RecordLines"`
 }
 
-// create a request to invoke DescribeSupportLines API
-func CreateDescribeSupportLinesRequest() (request *DescribeSupportLinesRequest) {
+// CreateDescribeSupportLinesRequest creates a request to invoke DescribeSupportLines API
+func CreateDescribeSupportLinesRequest(request *DescribeSupportLinesRequest) {
 	request = &DescribeSupportLinesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -94,7 +96,7 @@ func CreateDescribeSupportLinesRequest() (request *DescribeSupportLinesRequest) 
 	return
 }
 
-// create a response to parse from DescribeSupportLines response
+// CreateDescribeSupportLinesResponse creates a response to parse from DescribeSupportLines response
 func CreateDescribeSupportLinesResponse() (response *DescribeSupportLinesResponse) {
 	response = &DescribeSupportLinesResponse{
 		BaseResponse: &responses.BaseResponse{},

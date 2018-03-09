@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeDomainNs api with *DescribeDomainNsRequest synchronously
+// DescribeDomainNs invokes the alidns.DescribeDomainNs API synchronously
 // api document: https://help.aliyun.com/api/alidns/describedomainns.html
 func (client *Client) DescribeDomainNs(request *DescribeDomainNsRequest) (response *DescribeDomainNsResponse, err error) {
 	response = CreateDescribeDomainNsResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeDomainNs(request *DescribeDomainNsRequest) (respon
 	return
 }
 
-// invoke DescribeDomainNs api with *DescribeDomainNsRequest asynchronously
+// DescribeDomainNsWithChan invokes the alidns.DescribeDomainNs API asynchronously
 // api document: https://help.aliyun.com/api/alidns/describedomainns.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainNsWithChan(request *DescribeDomainNsRequest) (<-chan *DescribeDomainNsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeDomainNsWithChan(request *DescribeDomainNsRequest)
 	return responseChan, errChan
 }
 
-// invoke DescribeDomainNs api with *DescribeDomainNsRequest asynchronously
+// DescribeDomainNsWithCallback invokes the alidns.DescribeDomainNs API asynchronously
 // api document: https://help.aliyun.com/api/alidns/describedomainns.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainNsWithCallback(request *DescribeDomainNsRequest, callback func(response *DescribeDomainNsResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeDomainNsWithCallback(request *DescribeDomainNsRequ
 	return result
 }
 
+// DescribeDomainNsRequest is the request struct for api DescribeDomainNs
 type DescribeDomainNsRequest struct {
 	*requests.RpcRequest
 	Lang         string `position:"Query" name:"Lang"`
@@ -80,6 +81,7 @@ type DescribeDomainNsRequest struct {
 	DomainName   string `position:"Query" name:"DomainName"`
 }
 
+// DescribeDomainNsResponse is the response struct for api DescribeDomainNs
 type DescribeDomainNsResponse struct {
 	*responses.BaseResponse
 	RequestId        string                       `json:"RequestId" xml:"RequestId"`
@@ -89,8 +91,8 @@ type DescribeDomainNsResponse struct {
 	ExpectDnsServers ExpectDnsServers             `json:"ExpectDnsServers" xml:"ExpectDnsServers"`
 }
 
-// create a request to invoke DescribeDomainNs API
-func CreateDescribeDomainNsRequest() (request *DescribeDomainNsRequest) {
+// CreateDescribeDomainNsRequest creates a request to invoke DescribeDomainNs API
+func CreateDescribeDomainNsRequest(request *DescribeDomainNsRequest) {
 	request = &DescribeDomainNsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateDescribeDomainNsRequest() (request *DescribeDomainNsRequest) {
 	return
 }
 
-// create a response to parse from DescribeDomainNs response
+// CreateDescribeDomainNsResponse creates a response to parse from DescribeDomainNs response
 func CreateDescribeDomainNsResponse() (response *DescribeDomainNsResponse) {
 	response = &DescribeDomainNsResponse{
 		BaseResponse: &responses.BaseResponse{},

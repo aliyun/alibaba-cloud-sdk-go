@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CreateEvent api with *CreateEventRequest synchronously
+// CreateEvent invokes the cloudphoto.CreateEvent API synchronously
 // api document: https://help.aliyun.com/api/cloudphoto/createevent.html
 func (client *Client) CreateEvent(request *CreateEventRequest) (response *CreateEventResponse, err error) {
 	response = CreateCreateEventResponse()
@@ -28,7 +28,7 @@ func (client *Client) CreateEvent(request *CreateEventRequest) (response *Create
 	return
 }
 
-// invoke CreateEvent api with *CreateEventRequest asynchronously
+// CreateEventWithChan invokes the cloudphoto.CreateEvent API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/createevent.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateEventWithChan(request *CreateEventRequest) (<-chan *CreateEventResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CreateEventWithChan(request *CreateEventRequest) (<-chan *
 	return responseChan, errChan
 }
 
-// invoke CreateEvent api with *CreateEventRequest asynchronously
+// CreateEventWithCallback invokes the cloudphoto.CreateEvent API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/createevent.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateEventWithCallback(request *CreateEventRequest, callback func(response *CreateEventResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) CreateEventWithCallback(request *CreateEventRequest, callb
 	return result
 }
 
+// CreateEventRequest is the request struct for api CreateEvent
 type CreateEventRequest struct {
 	*requests.RpcRequest
 	StoreName        string           `position:"Query" name:"StoreName"`
@@ -88,6 +89,7 @@ type CreateEventRequest struct {
 	Remark           string           `position:"Query" name:"Remark"`
 }
 
+// CreateEventResponse is the response struct for api CreateEvent
 type CreateEventResponse struct {
 	*responses.BaseResponse
 	Code      string `json:"Code" xml:"Code"`
@@ -97,8 +99,8 @@ type CreateEventResponse struct {
 	Event     Event  `json:"Event" xml:"Event"`
 }
 
-// create a request to invoke CreateEvent API
-func CreateCreateEventRequest() (request *CreateEventRequest) {
+// CreateCreateEventRequest creates a request to invoke CreateEvent API
+func CreateCreateEventRequest(request *CreateEventRequest) {
 	request = &CreateEventRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -106,7 +108,7 @@ func CreateCreateEventRequest() (request *CreateEventRequest) {
 	return
 }
 
-// create a response to parse from CreateEvent response
+// CreateCreateEventResponse creates a response to parse from CreateEvent response
 func CreateCreateEventResponse() (response *CreateEventResponse) {
 	response = &CreateEventResponse{
 		BaseResponse: &responses.BaseResponse{},

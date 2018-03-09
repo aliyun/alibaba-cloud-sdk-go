@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke QueryAliases api with *QueryAliasesRequest synchronously
+// QueryAliases invokes the push.QueryAliases API synchronously
 // api document: https://help.aliyun.com/api/push/queryaliases.html
 func (client *Client) QueryAliases(request *QueryAliasesRequest) (response *QueryAliasesResponse, err error) {
 	response = CreateQueryAliasesResponse()
@@ -28,7 +28,7 @@ func (client *Client) QueryAliases(request *QueryAliasesRequest) (response *Quer
 	return
 }
 
-// invoke QueryAliases api with *QueryAliasesRequest asynchronously
+// QueryAliasesWithChan invokes the push.QueryAliases API asynchronously
 // api document: https://help.aliyun.com/api/push/queryaliases.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryAliasesWithChan(request *QueryAliasesRequest) (<-chan *QueryAliasesResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) QueryAliasesWithChan(request *QueryAliasesRequest) (<-chan
 	return responseChan, errChan
 }
 
-// invoke QueryAliases api with *QueryAliasesRequest asynchronously
+// QueryAliasesWithCallback invokes the push.QueryAliases API asynchronously
 // api document: https://help.aliyun.com/api/push/queryaliases.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryAliasesWithCallback(request *QueryAliasesRequest, callback func(response *QueryAliasesResponse, err error)) <-chan int {
@@ -73,20 +73,22 @@ func (client *Client) QueryAliasesWithCallback(request *QueryAliasesRequest, cal
 	return result
 }
 
+// QueryAliasesRequest is the request struct for api QueryAliases
 type QueryAliasesRequest struct {
 	*requests.RpcRequest
 	AppKey   requests.Integer `position:"Query" name:"AppKey"`
 	DeviceId string           `position:"Query" name:"DeviceId"`
 }
 
+// QueryAliasesResponse is the response struct for api QueryAliases
 type QueryAliasesResponse struct {
 	*responses.BaseResponse
 	RequestId  string     `json:"RequestId" xml:"RequestId"`
 	AliasInfos AliasInfos `json:"AliasInfos" xml:"AliasInfos"`
 }
 
-// create a request to invoke QueryAliases API
-func CreateQueryAliasesRequest() (request *QueryAliasesRequest) {
+// CreateQueryAliasesRequest creates a request to invoke QueryAliases API
+func CreateQueryAliasesRequest(request *QueryAliasesRequest) {
 	request = &QueryAliasesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -94,7 +96,7 @@ func CreateQueryAliasesRequest() (request *QueryAliasesRequest) {
 	return
 }
 
-// create a response to parse from QueryAliases response
+// CreateQueryAliasesResponse creates a response to parse from QueryAliases response
 func CreateQueryAliasesResponse() (response *QueryAliasesResponse) {
 	response = &QueryAliasesResponse{
 		BaseResponse: &responses.BaseResponse{},

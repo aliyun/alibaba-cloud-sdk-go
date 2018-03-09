@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke AccessKeyGet api with *AccessKeyGetRequest synchronously
+// AccessKeyGet invokes the cms.AccessKeyGet API synchronously
 // api document: https://help.aliyun.com/api/cms/accesskeyget.html
 func (client *Client) AccessKeyGet(request *AccessKeyGetRequest) (response *AccessKeyGetResponse, err error) {
 	response = CreateAccessKeyGetResponse()
@@ -28,7 +28,7 @@ func (client *Client) AccessKeyGet(request *AccessKeyGetRequest) (response *Acce
 	return
 }
 
-// invoke AccessKeyGet api with *AccessKeyGetRequest asynchronously
+// AccessKeyGetWithChan invokes the cms.AccessKeyGet API asynchronously
 // api document: https://help.aliyun.com/api/cms/accesskeyget.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AccessKeyGetWithChan(request *AccessKeyGetRequest) (<-chan *AccessKeyGetResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) AccessKeyGetWithChan(request *AccessKeyGetRequest) (<-chan
 	return responseChan, errChan
 }
 
-// invoke AccessKeyGet api with *AccessKeyGetRequest asynchronously
+// AccessKeyGetWithCallback invokes the cms.AccessKeyGet API asynchronously
 // api document: https://help.aliyun.com/api/cms/accesskeyget.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AccessKeyGetWithCallback(request *AccessKeyGetRequest, callback func(response *AccessKeyGetResponse, err error)) <-chan int {
@@ -73,11 +73,13 @@ func (client *Client) AccessKeyGetWithCallback(request *AccessKeyGetRequest, cal
 	return result
 }
 
+// AccessKeyGetRequest is the request struct for api AccessKeyGet
 type AccessKeyGetRequest struct {
 	*requests.RpcRequest
 	UserId requests.Integer `position:"Query" name:"UserId"`
 }
 
+// AccessKeyGetResponse is the response struct for api AccessKeyGet
 type AccessKeyGetResponse struct {
 	*responses.BaseResponse
 	ErrorCode    int    `json:"ErrorCode" xml:"ErrorCode"`
@@ -89,8 +91,8 @@ type AccessKeyGetResponse struct {
 	SecretKey    string `json:"SecretKey" xml:"SecretKey"`
 }
 
-// create a request to invoke AccessKeyGet API
-func CreateAccessKeyGetRequest() (request *AccessKeyGetRequest) {
+// CreateAccessKeyGetRequest creates a request to invoke AccessKeyGet API
+func CreateAccessKeyGetRequest(request *AccessKeyGetRequest) {
 	request = &AccessKeyGetRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateAccessKeyGetRequest() (request *AccessKeyGetRequest) {
 	return
 }
 
-// create a response to parse from AccessKeyGet response
+// CreateAccessKeyGetResponse creates a response to parse from AccessKeyGet response
 func CreateAccessKeyGetResponse() (response *AccessKeyGetResponse) {
 	response = &AccessKeyGetResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke RemoveCommonBandwidthPackageIp api with *RemoveCommonBandwidthPackageIpRequest synchronously
+// RemoveCommonBandwidthPackageIp invokes the vpc.RemoveCommonBandwidthPackageIp API synchronously
 // api document: https://help.aliyun.com/api/vpc/removecommonbandwidthpackageip.html
 func (client *Client) RemoveCommonBandwidthPackageIp(request *RemoveCommonBandwidthPackageIpRequest) (response *RemoveCommonBandwidthPackageIpResponse, err error) {
 	response = CreateRemoveCommonBandwidthPackageIpResponse()
@@ -28,7 +28,7 @@ func (client *Client) RemoveCommonBandwidthPackageIp(request *RemoveCommonBandwi
 	return
 }
 
-// invoke RemoveCommonBandwidthPackageIp api with *RemoveCommonBandwidthPackageIpRequest asynchronously
+// RemoveCommonBandwidthPackageIpWithChan invokes the vpc.RemoveCommonBandwidthPackageIp API asynchronously
 // api document: https://help.aliyun.com/api/vpc/removecommonbandwidthpackageip.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveCommonBandwidthPackageIpWithChan(request *RemoveCommonBandwidthPackageIpRequest) (<-chan *RemoveCommonBandwidthPackageIpResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) RemoveCommonBandwidthPackageIpWithChan(request *RemoveComm
 	return responseChan, errChan
 }
 
-// invoke RemoveCommonBandwidthPackageIp api with *RemoveCommonBandwidthPackageIpRequest asynchronously
+// RemoveCommonBandwidthPackageIpWithCallback invokes the vpc.RemoveCommonBandwidthPackageIp API asynchronously
 // api document: https://help.aliyun.com/api/vpc/removecommonbandwidthpackageip.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveCommonBandwidthPackageIpWithCallback(request *RemoveCommonBandwidthPackageIpRequest, callback func(response *RemoveCommonBandwidthPackageIpResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) RemoveCommonBandwidthPackageIpWithCallback(request *Remove
 	return result
 }
 
+// RemoveCommonBandwidthPackageIpRequest is the request struct for api RemoveCommonBandwidthPackageIp
 type RemoveCommonBandwidthPackageIpRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -83,13 +84,14 @@ type RemoveCommonBandwidthPackageIpRequest struct {
 	IpInstanceId         string           `position:"Query" name:"IpInstanceId"`
 }
 
+// RemoveCommonBandwidthPackageIpResponse is the response struct for api RemoveCommonBandwidthPackageIp
 type RemoveCommonBandwidthPackageIpResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke RemoveCommonBandwidthPackageIp API
-func CreateRemoveCommonBandwidthPackageIpRequest() (request *RemoveCommonBandwidthPackageIpRequest) {
+// CreateRemoveCommonBandwidthPackageIpRequest creates a request to invoke RemoveCommonBandwidthPackageIp API
+func CreateRemoveCommonBandwidthPackageIpRequest(request *RemoveCommonBandwidthPackageIpRequest) {
 	request = &RemoveCommonBandwidthPackageIpRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateRemoveCommonBandwidthPackageIpRequest() (request *RemoveCommonBandwid
 	return
 }
 
-// create a response to parse from RemoveCommonBandwidthPackageIp response
+// CreateRemoveCommonBandwidthPackageIpResponse creates a response to parse from RemoveCommonBandwidthPackageIp response
 func CreateRemoveCommonBandwidthPackageIpResponse() (response *RemoveCommonBandwidthPackageIpResponse) {
 	response = &RemoveCommonBandwidthPackageIpResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ListImages api with *ListImagesRequest synchronously
+// ListImages invokes the ehpc.ListImages API synchronously
 // api document: https://help.aliyun.com/api/ehpc/listimages.html
 func (client *Client) ListImages(request *ListImagesRequest) (response *ListImagesResponse, err error) {
 	response = CreateListImagesResponse()
@@ -28,7 +28,7 @@ func (client *Client) ListImages(request *ListImagesRequest) (response *ListImag
 	return
 }
 
-// invoke ListImages api with *ListImagesRequest asynchronously
+// ListImagesWithChan invokes the ehpc.ListImages API asynchronously
 // api document: https://help.aliyun.com/api/ehpc/listimages.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListImagesWithChan(request *ListImagesRequest) (<-chan *ListImagesResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ListImagesWithChan(request *ListImagesRequest) (<-chan *Li
 	return responseChan, errChan
 }
 
-// invoke ListImages api with *ListImagesRequest asynchronously
+// ListImagesWithCallback invokes the ehpc.ListImages API asynchronously
 // api document: https://help.aliyun.com/api/ehpc/listimages.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListImagesWithCallback(request *ListImagesRequest, callback func(response *ListImagesResponse, err error)) <-chan int {
@@ -73,18 +73,20 @@ func (client *Client) ListImagesWithCallback(request *ListImagesRequest, callbac
 	return result
 }
 
+// ListImagesRequest is the request struct for api ListImages
 type ListImagesRequest struct {
 	*requests.RpcRequest
 }
 
+// ListImagesResponse is the response struct for api ListImages
 type ListImagesResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	OsTags    OsTags `json:"OsTags" xml:"OsTags"`
 }
 
-// create a request to invoke ListImages API
-func CreateListImagesRequest() (request *ListImagesRequest) {
+// CreateListImagesRequest creates a request to invoke ListImages API
+func CreateListImagesRequest(request *ListImagesRequest) {
 	request = &ListImagesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -92,7 +94,7 @@ func CreateListImagesRequest() (request *ListImagesRequest) {
 	return
 }
 
-// create a response to parse from ListImages response
+// CreateListImagesResponse creates a response to parse from ListImages response
 func CreateListImagesResponse() (response *ListImagesResponse) {
 	response = &ListImagesResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SearchPhotos api with *SearchPhotosRequest synchronously
+// SearchPhotos invokes the cloudphoto.SearchPhotos API synchronously
 // api document: https://help.aliyun.com/api/cloudphoto/searchphotos.html
 func (client *Client) SearchPhotos(request *SearchPhotosRequest) (response *SearchPhotosResponse, err error) {
 	response = CreateSearchPhotosResponse()
@@ -28,7 +28,7 @@ func (client *Client) SearchPhotos(request *SearchPhotosRequest) (response *Sear
 	return
 }
 
-// invoke SearchPhotos api with *SearchPhotosRequest asynchronously
+// SearchPhotosWithChan invokes the cloudphoto.SearchPhotos API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/searchphotos.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SearchPhotosWithChan(request *SearchPhotosRequest) (<-chan *SearchPhotosResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SearchPhotosWithChan(request *SearchPhotosRequest) (<-chan
 	return responseChan, errChan
 }
 
-// invoke SearchPhotos api with *SearchPhotosRequest asynchronously
+// SearchPhotosWithCallback invokes the cloudphoto.SearchPhotos API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/searchphotos.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SearchPhotosWithCallback(request *SearchPhotosRequest, callback func(response *SearchPhotosResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SearchPhotosWithCallback(request *SearchPhotosRequest, cal
 	return result
 }
 
+// SearchPhotosRequest is the request struct for api SearchPhotos
 type SearchPhotosRequest struct {
 	*requests.RpcRequest
 	Page      requests.Integer `position:"Query" name:"Page"`
@@ -82,6 +83,7 @@ type SearchPhotosRequest struct {
 	LibraryId string           `position:"Query" name:"LibraryId"`
 }
 
+// SearchPhotosResponse is the response struct for api SearchPhotos
 type SearchPhotosResponse struct {
 	*responses.BaseResponse
 	Code       string  `json:"Code" xml:"Code"`
@@ -92,8 +94,8 @@ type SearchPhotosResponse struct {
 	Photos     []Photo `json:"Photos" xml:"Photos"`
 }
 
-// create a request to invoke SearchPhotos API
-func CreateSearchPhotosRequest() (request *SearchPhotosRequest) {
+// CreateSearchPhotosRequest creates a request to invoke SearchPhotos API
+func CreateSearchPhotosRequest(request *SearchPhotosRequest) {
 	request = &SearchPhotosRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -101,7 +103,7 @@ func CreateSearchPhotosRequest() (request *SearchPhotosRequest) {
 	return
 }
 
-// create a response to parse from SearchPhotos response
+// CreateSearchPhotosResponse creates a response to parse from SearchPhotos response
 func CreateSearchPhotosResponse() (response *SearchPhotosResponse) {
 	response = &SearchPhotosResponse{
 		BaseResponse: &responses.BaseResponse{},

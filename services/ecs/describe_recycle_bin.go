@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeRecycleBin api with *DescribeRecycleBinRequest synchronously
+// DescribeRecycleBin invokes the ecs.DescribeRecycleBin API synchronously
 // api document: https://help.aliyun.com/api/ecs/describerecyclebin.html
 func (client *Client) DescribeRecycleBin(request *DescribeRecycleBinRequest) (response *DescribeRecycleBinResponse, err error) {
 	response = CreateDescribeRecycleBinResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeRecycleBin(request *DescribeRecycleBinRequest) (re
 	return
 }
 
-// invoke DescribeRecycleBin api with *DescribeRecycleBinRequest asynchronously
+// DescribeRecycleBinWithChan invokes the ecs.DescribeRecycleBin API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describerecyclebin.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRecycleBinWithChan(request *DescribeRecycleBinRequest) (<-chan *DescribeRecycleBinResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeRecycleBinWithChan(request *DescribeRecycleBinRequ
 	return responseChan, errChan
 }
 
-// invoke DescribeRecycleBin api with *DescribeRecycleBinRequest asynchronously
+// DescribeRecycleBinWithCallback invokes the ecs.DescribeRecycleBin API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describerecyclebin.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRecycleBinWithCallback(request *DescribeRecycleBinRequest, callback func(response *DescribeRecycleBinResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeRecycleBinWithCallback(request *DescribeRecycleBin
 	return result
 }
 
+// DescribeRecycleBinRequest is the request struct for api DescribeRecycleBin
 type DescribeRecycleBinRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -85,6 +86,7 @@ type DescribeRecycleBinRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// DescribeRecycleBinResponse is the response struct for api DescribeRecycleBin
 type DescribeRecycleBinResponse struct {
 	*responses.BaseResponse
 	RequestId        string           `json:"RequestId" xml:"RequestId"`
@@ -92,8 +94,8 @@ type DescribeRecycleBinResponse struct {
 	RecycleBinModels RecycleBinModels `json:"RecycleBinModels" xml:"RecycleBinModels"`
 }
 
-// create a request to invoke DescribeRecycleBin API
-func CreateDescribeRecycleBinRequest() (request *DescribeRecycleBinRequest) {
+// CreateDescribeRecycleBinRequest creates a request to invoke DescribeRecycleBin API
+func CreateDescribeRecycleBinRequest(request *DescribeRecycleBinRequest) {
 	request = &DescribeRecycleBinRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -101,7 +103,7 @@ func CreateDescribeRecycleBinRequest() (request *DescribeRecycleBinRequest) {
 	return
 }
 
-// create a response to parse from DescribeRecycleBin response
+// CreateDescribeRecycleBinResponse creates a response to parse from DescribeRecycleBin response
 func CreateDescribeRecycleBinResponse() (response *DescribeRecycleBinResponse) {
 	response = &DescribeRecycleBinResponse{
 		BaseResponse: &responses.BaseResponse{},

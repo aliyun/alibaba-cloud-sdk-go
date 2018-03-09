@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ScaleCluster api with *ScaleClusterRequest synchronously
+// ScaleCluster invokes the cs.ScaleCluster API synchronously
 // api document: https://help.aliyun.com/api/cs/scalecluster.html
 func (client *Client) ScaleCluster(request *ScaleClusterRequest) (response *ScaleClusterResponse, err error) {
 	response = CreateScaleClusterResponse()
@@ -28,7 +28,7 @@ func (client *Client) ScaleCluster(request *ScaleClusterRequest) (response *Scal
 	return
 }
 
-// invoke ScaleCluster api with *ScaleClusterRequest asynchronously
+// ScaleClusterWithChan invokes the cs.ScaleCluster API asynchronously
 // api document: https://help.aliyun.com/api/cs/scalecluster.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ScaleClusterWithChan(request *ScaleClusterRequest) (<-chan *ScaleClusterResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ScaleClusterWithChan(request *ScaleClusterRequest) (<-chan
 	return responseChan, errChan
 }
 
-// invoke ScaleCluster api with *ScaleClusterRequest asynchronously
+// ScaleClusterWithCallback invokes the cs.ScaleCluster API asynchronously
 // api document: https://help.aliyun.com/api/cs/scalecluster.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ScaleClusterWithCallback(request *ScaleClusterRequest, callback func(response *ScaleClusterResponse, err error)) <-chan int {
@@ -73,17 +73,19 @@ func (client *Client) ScaleClusterWithCallback(request *ScaleClusterRequest, cal
 	return result
 }
 
+// ScaleClusterRequest is the request struct for api ScaleCluster
 type ScaleClusterRequest struct {
 	*requests.RoaRequest
 	ClusterId string `position:"Path" name:"ClusterId"`
 }
 
+// ScaleClusterResponse is the response struct for api ScaleCluster
 type ScaleClusterResponse struct {
 	*responses.BaseResponse
 }
 
-// create a request to invoke ScaleCluster API
-func CreateScaleClusterRequest() (request *ScaleClusterRequest) {
+// CreateScaleClusterRequest creates a request to invoke ScaleCluster API
+func CreateScaleClusterRequest(request *ScaleClusterRequest) {
 	request = &ScaleClusterRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
@@ -92,7 +94,7 @@ func CreateScaleClusterRequest() (request *ScaleClusterRequest) {
 	return
 }
 
-// create a response to parse from ScaleCluster response
+// CreateScaleClusterResponse creates a response to parse from ScaleCluster response
 func CreateScaleClusterResponse() (response *ScaleClusterResponse) {
 	response = &ScaleClusterResponse{
 		BaseResponse: &responses.BaseResponse{},

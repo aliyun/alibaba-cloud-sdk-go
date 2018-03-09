@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifyInstanceChargeType api with *ModifyInstanceChargeTypeRequest synchronously
+// ModifyInstanceChargeType invokes the ecs.ModifyInstanceChargeType API synchronously
 // api document: https://help.aliyun.com/api/ecs/modifyinstancechargetype.html
 func (client *Client) ModifyInstanceChargeType(request *ModifyInstanceChargeTypeRequest) (response *ModifyInstanceChargeTypeResponse, err error) {
 	response = CreateModifyInstanceChargeTypeResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifyInstanceChargeType(request *ModifyInstanceChargeType
 	return
 }
 
-// invoke ModifyInstanceChargeType api with *ModifyInstanceChargeTypeRequest asynchronously
+// ModifyInstanceChargeTypeWithChan invokes the ecs.ModifyInstanceChargeType API asynchronously
 // api document: https://help.aliyun.com/api/ecs/modifyinstancechargetype.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyInstanceChargeTypeWithChan(request *ModifyInstanceChargeTypeRequest) (<-chan *ModifyInstanceChargeTypeResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifyInstanceChargeTypeWithChan(request *ModifyInstanceCh
 	return responseChan, errChan
 }
 
-// invoke ModifyInstanceChargeType api with *ModifyInstanceChargeTypeRequest asynchronously
+// ModifyInstanceChargeTypeWithCallback invokes the ecs.ModifyInstanceChargeType API asynchronously
 // api document: https://help.aliyun.com/api/ecs/modifyinstancechargetype.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyInstanceChargeTypeWithCallback(request *ModifyInstanceChargeTypeRequest, callback func(response *ModifyInstanceChargeTypeResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ModifyInstanceChargeTypeWithCallback(request *ModifyInstan
 	return result
 }
 
+// ModifyInstanceChargeTypeRequest is the request struct for api ModifyInstanceChargeType
 type ModifyInstanceChargeTypeRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -89,14 +90,15 @@ type ModifyInstanceChargeTypeRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// ModifyInstanceChargeTypeResponse is the response struct for api ModifyInstanceChargeType
 type ModifyInstanceChargeTypeResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	OrderId   string `json:"OrderId" xml:"OrderId"`
 }
 
-// create a request to invoke ModifyInstanceChargeType API
-func CreateModifyInstanceChargeTypeRequest() (request *ModifyInstanceChargeTypeRequest) {
+// CreateModifyInstanceChargeTypeRequest creates a request to invoke ModifyInstanceChargeType API
+func CreateModifyInstanceChargeTypeRequest(request *ModifyInstanceChargeTypeRequest) {
 	request = &ModifyInstanceChargeTypeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -104,7 +106,7 @@ func CreateModifyInstanceChargeTypeRequest() (request *ModifyInstanceChargeTypeR
 	return
 }
 
-// create a response to parse from ModifyInstanceChargeType response
+// CreateModifyInstanceChargeTypeResponse creates a response to parse from ModifyInstanceChargeType response
 func CreateModifyInstanceChargeTypeResponse() (response *ModifyInstanceChargeTypeResponse) {
 	response = &ModifyInstanceChargeTypeResponse{
 		BaseResponse: &responses.BaseResponse{},

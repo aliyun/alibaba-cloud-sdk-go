@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ResetNodes api with *ResetNodesRequest synchronously
+// ResetNodes invokes the ehpc.ResetNodes API synchronously
 // api document: https://help.aliyun.com/api/ehpc/resetnodes.html
 func (client *Client) ResetNodes(request *ResetNodesRequest) (response *ResetNodesResponse, err error) {
 	response = CreateResetNodesResponse()
@@ -28,7 +28,7 @@ func (client *Client) ResetNodes(request *ResetNodesRequest) (response *ResetNod
 	return
 }
 
-// invoke ResetNodes api with *ResetNodesRequest asynchronously
+// ResetNodesWithChan invokes the ehpc.ResetNodes API asynchronously
 // api document: https://help.aliyun.com/api/ehpc/resetnodes.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResetNodesWithChan(request *ResetNodesRequest) (<-chan *ResetNodesResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ResetNodesWithChan(request *ResetNodesRequest) (<-chan *Re
 	return responseChan, errChan
 }
 
-// invoke ResetNodes api with *ResetNodesRequest asynchronously
+// ResetNodesWithCallback invokes the ehpc.ResetNodes API asynchronously
 // api document: https://help.aliyun.com/api/ehpc/resetnodes.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResetNodesWithCallback(request *ResetNodesRequest, callback func(response *ResetNodesResponse, err error)) <-chan int {
@@ -73,23 +73,26 @@ func (client *Client) ResetNodesWithCallback(request *ResetNodesRequest, callbac
 	return result
 }
 
+// ResetNodesRequest is the request struct for api ResetNodes
 type ResetNodesRequest struct {
 	*requests.RpcRequest
 	ClusterId string                `position:"Query" name:"ClusterId"`
 	Instance  *[]ResetNodesInstance `position:"Query" name:"Instance"  type:"Repeated"`
 }
 
+// ResetNodesInstance is a repeated param struct in ResetNodesRequest
 type ResetNodesInstance struct {
 	Id string `name:"Id"`
 }
 
+// ResetNodesResponse is the response struct for api ResetNodes
 type ResetNodesResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ResetNodes API
-func CreateResetNodesRequest() (request *ResetNodesRequest) {
+// CreateResetNodesRequest creates a request to invoke ResetNodes API
+func CreateResetNodesRequest(request *ResetNodesRequest) {
 	request = &ResetNodesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +100,7 @@ func CreateResetNodesRequest() (request *ResetNodesRequest) {
 	return
 }
 
-// create a response to parse from ResetNodes response
+// CreateResetNodesResponse creates a response to parse from ResetNodes response
 func CreateResetNodesResponse() (response *ResetNodesResponse) {
 	response = &ResetNodesResponse{
 		BaseResponse: &responses.BaseResponse{},

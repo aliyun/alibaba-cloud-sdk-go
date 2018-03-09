@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeDBInstanceHAConfig api with *DescribeDBInstanceHAConfigRequest synchronously
+// DescribeDBInstanceHAConfig invokes the rds.DescribeDBInstanceHAConfig API synchronously
 // api document: https://help.aliyun.com/api/rds/describedbinstancehaconfig.html
 func (client *Client) DescribeDBInstanceHAConfig(request *DescribeDBInstanceHAConfigRequest) (response *DescribeDBInstanceHAConfigResponse, err error) {
 	response = CreateDescribeDBInstanceHAConfigResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeDBInstanceHAConfig(request *DescribeDBInstanceHACo
 	return
 }
 
-// invoke DescribeDBInstanceHAConfig api with *DescribeDBInstanceHAConfigRequest asynchronously
+// DescribeDBInstanceHAConfigWithChan invokes the rds.DescribeDBInstanceHAConfig API asynchronously
 // api document: https://help.aliyun.com/api/rds/describedbinstancehaconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBInstanceHAConfigWithChan(request *DescribeDBInstanceHAConfigRequest) (<-chan *DescribeDBInstanceHAConfigResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeDBInstanceHAConfigWithChan(request *DescribeDBInst
 	return responseChan, errChan
 }
 
-// invoke DescribeDBInstanceHAConfig api with *DescribeDBInstanceHAConfigRequest asynchronously
+// DescribeDBInstanceHAConfigWithCallback invokes the rds.DescribeDBInstanceHAConfig API asynchronously
 // api document: https://help.aliyun.com/api/rds/describedbinstancehaconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBInstanceHAConfigWithCallback(request *DescribeDBInstanceHAConfigRequest, callback func(response *DescribeDBInstanceHAConfigResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeDBInstanceHAConfigWithCallback(request *DescribeDB
 	return result
 }
 
+// DescribeDBInstanceHAConfigRequest is the request struct for api DescribeDBInstanceHAConfig
 type DescribeDBInstanceHAConfigRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,6 +83,7 @@ type DescribeDBInstanceHAConfigRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// DescribeDBInstanceHAConfigResponse is the response struct for api DescribeDBInstanceHAConfig
 type DescribeDBInstanceHAConfigResponse struct {
 	*responses.BaseResponse
 	RequestId         string            `json:"RequestId" xml:"RequestId"`
@@ -91,8 +93,8 @@ type DescribeDBInstanceHAConfigResponse struct {
 	HostInstanceInfos HostInstanceInfos `json:"HostInstanceInfos" xml:"HostInstanceInfos"`
 }
 
-// create a request to invoke DescribeDBInstanceHAConfig API
-func CreateDescribeDBInstanceHAConfigRequest() (request *DescribeDBInstanceHAConfigRequest) {
+// CreateDescribeDBInstanceHAConfigRequest creates a request to invoke DescribeDBInstanceHAConfig API
+func CreateDescribeDBInstanceHAConfigRequest(request *DescribeDBInstanceHAConfigRequest) {
 	request = &DescribeDBInstanceHAConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -100,7 +102,7 @@ func CreateDescribeDBInstanceHAConfigRequest() (request *DescribeDBInstanceHACon
 	return
 }
 
-// create a response to parse from DescribeDBInstanceHAConfig response
+// CreateDescribeDBInstanceHAConfigResponse creates a response to parse from DescribeDBInstanceHAConfig response
 func CreateDescribeDBInstanceHAConfigResponse() (response *DescribeDBInstanceHAConfigResponse) {
 	response = &DescribeDBInstanceHAConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

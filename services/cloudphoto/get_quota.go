@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke GetQuota api with *GetQuotaRequest synchronously
+// GetQuota invokes the cloudphoto.GetQuota API synchronously
 // api document: https://help.aliyun.com/api/cloudphoto/getquota.html
 func (client *Client) GetQuota(request *GetQuotaRequest) (response *GetQuotaResponse, err error) {
 	response = CreateGetQuotaResponse()
@@ -28,7 +28,7 @@ func (client *Client) GetQuota(request *GetQuotaRequest) (response *GetQuotaResp
 	return
 }
 
-// invoke GetQuota api with *GetQuotaRequest asynchronously
+// GetQuotaWithChan invokes the cloudphoto.GetQuota API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/getquota.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetQuotaWithChan(request *GetQuotaRequest) (<-chan *GetQuotaResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) GetQuotaWithChan(request *GetQuotaRequest) (<-chan *GetQuo
 	return responseChan, errChan
 }
 
-// invoke GetQuota api with *GetQuotaRequest asynchronously
+// GetQuotaWithCallback invokes the cloudphoto.GetQuota API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/getquota.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetQuotaWithCallback(request *GetQuotaRequest, callback func(response *GetQuotaResponse, err error)) <-chan int {
@@ -73,12 +73,14 @@ func (client *Client) GetQuotaWithCallback(request *GetQuotaRequest, callback fu
 	return result
 }
 
+// GetQuotaRequest is the request struct for api GetQuota
 type GetQuotaRequest struct {
 	*requests.RpcRequest
 	StoreName string `position:"Query" name:"StoreName"`
 	LibraryId string `position:"Query" name:"LibraryId"`
 }
 
+// GetQuotaResponse is the response struct for api GetQuota
 type GetQuotaResponse struct {
 	*responses.BaseResponse
 	Code      string `json:"Code" xml:"Code"`
@@ -88,8 +90,8 @@ type GetQuotaResponse struct {
 	Quota     Quota  `json:"Quota" xml:"Quota"`
 }
 
-// create a request to invoke GetQuota API
-func CreateGetQuotaRequest() (request *GetQuotaRequest) {
+// CreateGetQuotaRequest creates a request to invoke GetQuota API
+func CreateGetQuotaRequest(request *GetQuotaRequest) {
 	request = &GetQuotaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateGetQuotaRequest() (request *GetQuotaRequest) {
 	return
 }
 
-// create a response to parse from GetQuota response
+// CreateGetQuotaResponse creates a response to parse from GetQuota response
 func CreateGetQuotaResponse() (response *GetQuotaResponse) {
 	response = &GetQuotaResponse{
 		BaseResponse: &responses.BaseResponse{},

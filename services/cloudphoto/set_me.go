@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SetMe api with *SetMeRequest synchronously
+// SetMe invokes the cloudphoto.SetMe API synchronously
 // api document: https://help.aliyun.com/api/cloudphoto/setme.html
 func (client *Client) SetMe(request *SetMeRequest) (response *SetMeResponse, err error) {
 	response = CreateSetMeResponse()
@@ -28,7 +28,7 @@ func (client *Client) SetMe(request *SetMeRequest) (response *SetMeResponse, err
 	return
 }
 
-// invoke SetMe api with *SetMeRequest asynchronously
+// SetMeWithChan invokes the cloudphoto.SetMe API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/setme.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetMeWithChan(request *SetMeRequest) (<-chan *SetMeResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SetMeWithChan(request *SetMeRequest) (<-chan *SetMeRespons
 	return responseChan, errChan
 }
 
-// invoke SetMe api with *SetMeRequest asynchronously
+// SetMeWithCallback invokes the cloudphoto.SetMe API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/setme.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetMeWithCallback(request *SetMeRequest, callback func(response *SetMeResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SetMeWithCallback(request *SetMeRequest, callback func(res
 	return result
 }
 
+// SetMeRequest is the request struct for api SetMe
 type SetMeRequest struct {
 	*requests.RpcRequest
 	FaceId    requests.Integer `position:"Query" name:"FaceId"`
@@ -80,6 +81,7 @@ type SetMeRequest struct {
 	LibraryId string           `position:"Query" name:"LibraryId"`
 }
 
+// SetMeResponse is the response struct for api SetMe
 type SetMeResponse struct {
 	*responses.BaseResponse
 	Code      string `json:"Code" xml:"Code"`
@@ -88,8 +90,8 @@ type SetMeResponse struct {
 	Action    string `json:"Action" xml:"Action"`
 }
 
-// create a request to invoke SetMe API
-func CreateSetMeRequest() (request *SetMeRequest) {
+// CreateSetMeRequest creates a request to invoke SetMe API
+func CreateSetMeRequest(request *SetMeRequest) {
 	request = &SetMeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateSetMeRequest() (request *SetMeRequest) {
 	return
 }
 
-// create a response to parse from SetMe response
+// CreateSetMeResponse creates a response to parse from SetMe response
 func CreateSetMeResponse() (response *SetMeResponse) {
 	response = &SetMeResponse{
 		BaseResponse: &responses.BaseResponse{},

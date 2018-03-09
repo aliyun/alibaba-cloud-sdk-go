@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ImportDatabaseBetweenInstances api with *ImportDatabaseBetweenInstancesRequest synchronously
+// ImportDatabaseBetweenInstances invokes the rds.ImportDatabaseBetweenInstances API synchronously
 // api document: https://help.aliyun.com/api/rds/importdatabasebetweeninstances.html
 func (client *Client) ImportDatabaseBetweenInstances(request *ImportDatabaseBetweenInstancesRequest) (response *ImportDatabaseBetweenInstancesResponse, err error) {
 	response = CreateImportDatabaseBetweenInstancesResponse()
@@ -28,7 +28,7 @@ func (client *Client) ImportDatabaseBetweenInstances(request *ImportDatabaseBetw
 	return
 }
 
-// invoke ImportDatabaseBetweenInstances api with *ImportDatabaseBetweenInstancesRequest asynchronously
+// ImportDatabaseBetweenInstancesWithChan invokes the rds.ImportDatabaseBetweenInstances API asynchronously
 // api document: https://help.aliyun.com/api/rds/importdatabasebetweeninstances.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ImportDatabaseBetweenInstancesWithChan(request *ImportDatabaseBetweenInstancesRequest) (<-chan *ImportDatabaseBetweenInstancesResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ImportDatabaseBetweenInstancesWithChan(request *ImportData
 	return responseChan, errChan
 }
 
-// invoke ImportDatabaseBetweenInstances api with *ImportDatabaseBetweenInstancesRequest asynchronously
+// ImportDatabaseBetweenInstancesWithCallback invokes the rds.ImportDatabaseBetweenInstances API asynchronously
 // api document: https://help.aliyun.com/api/rds/importdatabasebetweeninstances.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ImportDatabaseBetweenInstancesWithCallback(request *ImportDatabaseBetweenInstancesRequest, callback func(response *ImportDatabaseBetweenInstancesResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ImportDatabaseBetweenInstancesWithCallback(request *Import
 	return result
 }
 
+// ImportDatabaseBetweenInstancesRequest is the request struct for api ImportDatabaseBetweenInstances
 type ImportDatabaseBetweenInstancesRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,14 +85,15 @@ type ImportDatabaseBetweenInstancesRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// ImportDatabaseBetweenInstancesResponse is the response struct for api ImportDatabaseBetweenInstances
 type ImportDatabaseBetweenInstancesResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	ImportId  string `json:"ImportId" xml:"ImportId"`
 }
 
-// create a request to invoke ImportDatabaseBetweenInstances API
-func CreateImportDatabaseBetweenInstancesRequest() (request *ImportDatabaseBetweenInstancesRequest) {
+// CreateImportDatabaseBetweenInstancesRequest creates a request to invoke ImportDatabaseBetweenInstances API
+func CreateImportDatabaseBetweenInstancesRequest(request *ImportDatabaseBetweenInstancesRequest) {
 	request = &ImportDatabaseBetweenInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateImportDatabaseBetweenInstancesRequest() (request *ImportDatabaseBetwe
 	return
 }
 
-// create a response to parse from ImportDatabaseBetweenInstances response
+// CreateImportDatabaseBetweenInstancesResponse creates a response to parse from ImportDatabaseBetweenInstances response
 func CreateImportDatabaseBetweenInstancesResponse() (response *ImportDatabaseBetweenInstancesResponse) {
 	response = &ImportDatabaseBetweenInstancesResponse{
 		BaseResponse: &responses.BaseResponse{},

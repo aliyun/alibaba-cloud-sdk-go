@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SubmitCoverJob api with *SubmitCoverJobRequest synchronously
+// SubmitCoverJob invokes the mts.SubmitCoverJob API synchronously
 // api document: https://help.aliyun.com/api/mts/submitcoverjob.html
 func (client *Client) SubmitCoverJob(request *SubmitCoverJobRequest) (response *SubmitCoverJobResponse, err error) {
 	response = CreateSubmitCoverJobResponse()
@@ -28,7 +28,7 @@ func (client *Client) SubmitCoverJob(request *SubmitCoverJobRequest) (response *
 	return
 }
 
-// invoke SubmitCoverJob api with *SubmitCoverJobRequest asynchronously
+// SubmitCoverJobWithChan invokes the mts.SubmitCoverJob API asynchronously
 // api document: https://help.aliyun.com/api/mts/submitcoverjob.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitCoverJobWithChan(request *SubmitCoverJobRequest) (<-chan *SubmitCoverJobResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SubmitCoverJobWithChan(request *SubmitCoverJobRequest) (<-
 	return responseChan, errChan
 }
 
-// invoke SubmitCoverJob api with *SubmitCoverJobRequest asynchronously
+// SubmitCoverJobWithCallback invokes the mts.SubmitCoverJob API asynchronously
 // api document: https://help.aliyun.com/api/mts/submitcoverjob.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitCoverJobWithCallback(request *SubmitCoverJobRequest, callback func(response *SubmitCoverJobResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SubmitCoverJobWithCallback(request *SubmitCoverJobRequest,
 	return result
 }
 
+// SubmitCoverJobRequest is the request struct for api SubmitCoverJob
 type SubmitCoverJobRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -85,14 +86,15 @@ type SubmitCoverJobRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// SubmitCoverJobResponse is the response struct for api SubmitCoverJob
 type SubmitCoverJobResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	JobId     string `json:"JobId" xml:"JobId"`
 }
 
-// create a request to invoke SubmitCoverJob API
-func CreateSubmitCoverJobRequest() (request *SubmitCoverJobRequest) {
+// CreateSubmitCoverJobRequest creates a request to invoke SubmitCoverJob API
+func CreateSubmitCoverJobRequest(request *SubmitCoverJobRequest) {
 	request = &SubmitCoverJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -100,7 +102,7 @@ func CreateSubmitCoverJobRequest() (request *SubmitCoverJobRequest) {
 	return
 }
 
-// create a response to parse from SubmitCoverJob response
+// CreateSubmitCoverJobResponse creates a response to parse from SubmitCoverJob response
 func CreateSubmitCoverJobResponse() (response *SubmitCoverJobResponse) {
 	response = &SubmitCoverJobResponse{
 		BaseResponse: &responses.BaseResponse{},

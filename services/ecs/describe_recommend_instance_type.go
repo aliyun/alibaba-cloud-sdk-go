@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeRecommendInstanceType api with *DescribeRecommendInstanceTypeRequest synchronously
+// DescribeRecommendInstanceType invokes the ecs.DescribeRecommendInstanceType API synchronously
 // api document: https://help.aliyun.com/api/ecs/describerecommendinstancetype.html
 func (client *Client) DescribeRecommendInstanceType(request *DescribeRecommendInstanceTypeRequest) (response *DescribeRecommendInstanceTypeResponse, err error) {
 	response = CreateDescribeRecommendInstanceTypeResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeRecommendInstanceType(request *DescribeRecommendIn
 	return
 }
 
-// invoke DescribeRecommendInstanceType api with *DescribeRecommendInstanceTypeRequest asynchronously
+// DescribeRecommendInstanceTypeWithChan invokes the ecs.DescribeRecommendInstanceType API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describerecommendinstancetype.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRecommendInstanceTypeWithChan(request *DescribeRecommendInstanceTypeRequest) (<-chan *DescribeRecommendInstanceTypeResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeRecommendInstanceTypeWithChan(request *DescribeRec
 	return responseChan, errChan
 }
 
-// invoke DescribeRecommendInstanceType api with *DescribeRecommendInstanceTypeRequest asynchronously
+// DescribeRecommendInstanceTypeWithCallback invokes the ecs.DescribeRecommendInstanceType API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describerecommendinstancetype.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRecommendInstanceTypeWithCallback(request *DescribeRecommendInstanceTypeRequest, callback func(response *DescribeRecommendInstanceTypeResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeRecommendInstanceTypeWithCallback(request *Describ
 	return result
 }
 
+// DescribeRecommendInstanceTypeRequest is the request struct for api DescribeRecommendInstanceType
 type DescribeRecommendInstanceTypeRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -88,14 +89,15 @@ type DescribeRecommendInstanceTypeRequest struct {
 	NetworkType          string           `position:"Query" name:"NetworkType"`
 }
 
+// DescribeRecommendInstanceTypeResponse is the response struct for api DescribeRecommendInstanceType
 type DescribeRecommendInstanceTypeResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 
-// create a request to invoke DescribeRecommendInstanceType API
-func CreateDescribeRecommendInstanceTypeRequest() (request *DescribeRecommendInstanceTypeRequest) {
+// CreateDescribeRecommendInstanceTypeRequest creates a request to invoke DescribeRecommendInstanceType API
+func CreateDescribeRecommendInstanceTypeRequest(request *DescribeRecommendInstanceTypeRequest) {
 	request = &DescribeRecommendInstanceTypeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -103,7 +105,7 @@ func CreateDescribeRecommendInstanceTypeRequest() (request *DescribeRecommendIns
 	return
 }
 
-// create a response to parse from DescribeRecommendInstanceType response
+// CreateDescribeRecommendInstanceTypeResponse creates a response to parse from DescribeRecommendInstanceType response
 func CreateDescribeRecommendInstanceTypeResponse() (response *DescribeRecommendInstanceTypeResponse) {
 	response = &DescribeRecommendInstanceTypeResponse{
 		BaseResponse: &responses.BaseResponse{},

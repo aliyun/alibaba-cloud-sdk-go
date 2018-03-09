@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CreateSkillGroup api with *CreateSkillGroupRequest synchronously
+// CreateSkillGroup invokes the ccc.CreateSkillGroup API synchronously
 // api document: https://help.aliyun.com/api/ccc/createskillgroup.html
 func (client *Client) CreateSkillGroup(request *CreateSkillGroupRequest) (response *CreateSkillGroupResponse, err error) {
 	response = CreateCreateSkillGroupResponse()
@@ -28,7 +28,7 @@ func (client *Client) CreateSkillGroup(request *CreateSkillGroupRequest) (respon
 	return
 }
 
-// invoke CreateSkillGroup api with *CreateSkillGroupRequest asynchronously
+// CreateSkillGroupWithChan invokes the ccc.CreateSkillGroup API asynchronously
 // api document: https://help.aliyun.com/api/ccc/createskillgroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateSkillGroupWithChan(request *CreateSkillGroupRequest) (<-chan *CreateSkillGroupResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CreateSkillGroupWithChan(request *CreateSkillGroupRequest)
 	return responseChan, errChan
 }
 
-// invoke CreateSkillGroup api with *CreateSkillGroupRequest asynchronously
+// CreateSkillGroupWithCallback invokes the ccc.CreateSkillGroup API asynchronously
 // api document: https://help.aliyun.com/api/ccc/createskillgroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateSkillGroupWithCallback(request *CreateSkillGroupRequest, callback func(response *CreateSkillGroupResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) CreateSkillGroupWithCallback(request *CreateSkillGroupRequ
 	return result
 }
 
+// CreateSkillGroupRequest is the request struct for api CreateSkillGroup
 type CreateSkillGroupRequest struct {
 	*requests.RpcRequest
 	InstanceId            string    `position:"Query" name:"InstanceId"`
@@ -83,6 +84,7 @@ type CreateSkillGroupRequest struct {
 	SkillLevel            *[]string `position:"Query" name:"SkillLevel"  type:"Repeated"`
 }
 
+// CreateSkillGroupResponse is the response struct for api CreateSkillGroup
 type CreateSkillGroupResponse struct {
 	*responses.BaseResponse
 	RequestId      string `json:"RequestId" xml:"RequestId"`
@@ -93,8 +95,8 @@ type CreateSkillGroupResponse struct {
 	SkillGroupId   string `json:"SkillGroupId" xml:"SkillGroupId"`
 }
 
-// create a request to invoke CreateSkillGroup API
-func CreateCreateSkillGroupRequest() (request *CreateSkillGroupRequest) {
+// CreateCreateSkillGroupRequest creates a request to invoke CreateSkillGroup API
+func CreateCreateSkillGroupRequest(request *CreateSkillGroupRequest) {
 	request = &CreateSkillGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -102,7 +104,7 @@ func CreateCreateSkillGroupRequest() (request *CreateSkillGroupRequest) {
 	return
 }
 
-// create a response to parse from CreateSkillGroup response
+// CreateCreateSkillGroupResponse creates a response to parse from CreateSkillGroup response
 func CreateCreateSkillGroupResponse() (response *CreateSkillGroupResponse) {
 	response = &CreateSkillGroupResponse{
 		BaseResponse: &responses.BaseResponse{},

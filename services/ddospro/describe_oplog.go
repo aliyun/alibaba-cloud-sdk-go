@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeOplog api with *DescribeOplogRequest synchronously
+// DescribeOplog invokes the ddospro.DescribeOplog API synchronously
 // api document: https://help.aliyun.com/api/ddospro/describeoplog.html
 func (client *Client) DescribeOplog(request *DescribeOplogRequest) (response *DescribeOplogResponse, err error) {
 	response = CreateDescribeOplogResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeOplog(request *DescribeOplogRequest) (response *De
 	return
 }
 
-// invoke DescribeOplog api with *DescribeOplogRequest asynchronously
+// DescribeOplogWithChan invokes the ddospro.DescribeOplog API asynchronously
 // api document: https://help.aliyun.com/api/ddospro/describeoplog.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeOplogWithChan(request *DescribeOplogRequest) (<-chan *DescribeOplogResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeOplogWithChan(request *DescribeOplogRequest) (<-ch
 	return responseChan, errChan
 }
 
-// invoke DescribeOplog api with *DescribeOplogRequest asynchronously
+// DescribeOplogWithCallback invokes the ddospro.DescribeOplog API asynchronously
 // api document: https://help.aliyun.com/api/ddospro/describeoplog.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeOplogWithCallback(request *DescribeOplogRequest, callback func(response *DescribeOplogResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeOplogWithCallback(request *DescribeOplogRequest, c
 	return result
 }
 
+// DescribeOplogRequest is the request struct for api DescribeOplog
 type DescribeOplogRequest struct {
 	*requests.RpcRequest
 	SourceIp        string           `position:"Query" name:"SourceIp"`
@@ -85,6 +86,7 @@ type DescribeOplogRequest struct {
 	PageSize        requests.Integer `position:"Query" name:"PageSize"`
 }
 
+// DescribeOplogResponse is the response struct for api DescribeOplog
 type DescribeOplogResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
@@ -92,8 +94,8 @@ type DescribeOplogResponse struct {
 	OplogList []Data `json:"OplogList" xml:"OplogList"`
 }
 
-// create a request to invoke DescribeOplog API
-func CreateDescribeOplogRequest() (request *DescribeOplogRequest) {
+// CreateDescribeOplogRequest creates a request to invoke DescribeOplog API
+func CreateDescribeOplogRequest(request *DescribeOplogRequest) {
 	request = &DescribeOplogRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -101,7 +103,7 @@ func CreateDescribeOplogRequest() (request *DescribeOplogRequest) {
 	return
 }
 
-// create a response to parse from DescribeOplog response
+// CreateDescribeOplogResponse creates a response to parse from DescribeOplog response
 func CreateDescribeOplogResponse() (response *DescribeOplogResponse) {
 	response = &DescribeOplogResponse{
 		BaseResponse: &responses.BaseResponse{},

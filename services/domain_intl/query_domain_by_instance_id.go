@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke QueryDomainByInstanceId api with *QueryDomainByInstanceIdRequest synchronously
+// QueryDomainByInstanceId invokes the domain_intl.QueryDomainByInstanceId API synchronously
 // api document: https://help.aliyun.com/api/domain-intl/querydomainbyinstanceid.html
 func (client *Client) QueryDomainByInstanceId(request *QueryDomainByInstanceIdRequest) (response *QueryDomainByInstanceIdResponse, err error) {
 	response = CreateQueryDomainByInstanceIdResponse()
@@ -28,7 +28,7 @@ func (client *Client) QueryDomainByInstanceId(request *QueryDomainByInstanceIdRe
 	return
 }
 
-// invoke QueryDomainByInstanceId api with *QueryDomainByInstanceIdRequest asynchronously
+// QueryDomainByInstanceIdWithChan invokes the domain_intl.QueryDomainByInstanceId API asynchronously
 // api document: https://help.aliyun.com/api/domain-intl/querydomainbyinstanceid.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryDomainByInstanceIdWithChan(request *QueryDomainByInstanceIdRequest) (<-chan *QueryDomainByInstanceIdResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) QueryDomainByInstanceIdWithChan(request *QueryDomainByInst
 	return responseChan, errChan
 }
 
-// invoke QueryDomainByInstanceId api with *QueryDomainByInstanceIdRequest asynchronously
+// QueryDomainByInstanceIdWithCallback invokes the domain_intl.QueryDomainByInstanceId API asynchronously
 // api document: https://help.aliyun.com/api/domain-intl/querydomainbyinstanceid.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryDomainByInstanceIdWithCallback(request *QueryDomainByInstanceIdRequest, callback func(response *QueryDomainByInstanceIdResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) QueryDomainByInstanceIdWithCallback(request *QueryDomainBy
 	return result
 }
 
+// QueryDomainByInstanceIdRequest is the request struct for api QueryDomainByInstanceId
 type QueryDomainByInstanceIdRequest struct {
 	*requests.RpcRequest
 	UserClientIp string `position:"Query" name:"UserClientIp"`
@@ -80,6 +81,7 @@ type QueryDomainByInstanceIdRequest struct {
 	InstanceId   string `position:"Query" name:"InstanceId"`
 }
 
+// QueryDomainByInstanceIdResponse is the response struct for api QueryDomainByInstanceId
 type QueryDomainByInstanceIdResponse struct {
 	*responses.BaseResponse
 	UserId                      string  `json:"UserId" xml:"UserId"`
@@ -99,8 +101,8 @@ type QueryDomainByInstanceIdResponse struct {
 	DnsList                     DnsList `json:"DnsList" xml:"DnsList"`
 }
 
-// create a request to invoke QueryDomainByInstanceId API
-func CreateQueryDomainByInstanceIdRequest() (request *QueryDomainByInstanceIdRequest) {
+// CreateQueryDomainByInstanceIdRequest creates a request to invoke QueryDomainByInstanceId API
+func CreateQueryDomainByInstanceIdRequest(request *QueryDomainByInstanceIdRequest) {
 	request = &QueryDomainByInstanceIdRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -108,7 +110,7 @@ func CreateQueryDomainByInstanceIdRequest() (request *QueryDomainByInstanceIdReq
 	return
 }
 
-// create a response to parse from QueryDomainByInstanceId response
+// CreateQueryDomainByInstanceIdResponse creates a response to parse from QueryDomainByInstanceId response
 func CreateQueryDomainByInstanceIdResponse() (response *QueryDomainByInstanceIdResponse) {
 	response = &QueryDomainByInstanceIdResponse{
 		BaseResponse: &responses.BaseResponse{},

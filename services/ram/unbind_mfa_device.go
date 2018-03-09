@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke UnbindMFADevice api with *UnbindMFADeviceRequest synchronously
+// UnbindMFADevice invokes the ram.UnbindMFADevice API synchronously
 // api document: https://help.aliyun.com/api/ram/unbindmfadevice.html
 func (client *Client) UnbindMFADevice(request *UnbindMFADeviceRequest) (response *UnbindMFADeviceResponse, err error) {
 	response = CreateUnbindMFADeviceResponse()
@@ -28,7 +28,7 @@ func (client *Client) UnbindMFADevice(request *UnbindMFADeviceRequest) (response
 	return
 }
 
-// invoke UnbindMFADevice api with *UnbindMFADeviceRequest asynchronously
+// UnbindMFADeviceWithChan invokes the ram.UnbindMFADevice API asynchronously
 // api document: https://help.aliyun.com/api/ram/unbindmfadevice.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnbindMFADeviceWithChan(request *UnbindMFADeviceRequest) (<-chan *UnbindMFADeviceResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) UnbindMFADeviceWithChan(request *UnbindMFADeviceRequest) (
 	return responseChan, errChan
 }
 
-// invoke UnbindMFADevice api with *UnbindMFADeviceRequest asynchronously
+// UnbindMFADeviceWithCallback invokes the ram.UnbindMFADevice API asynchronously
 // api document: https://help.aliyun.com/api/ram/unbindmfadevice.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnbindMFADeviceWithCallback(request *UnbindMFADeviceRequest, callback func(response *UnbindMFADeviceResponse, err error)) <-chan int {
@@ -73,19 +73,21 @@ func (client *Client) UnbindMFADeviceWithCallback(request *UnbindMFADeviceReques
 	return result
 }
 
+// UnbindMFADeviceRequest is the request struct for api UnbindMFADevice
 type UnbindMFADeviceRequest struct {
 	*requests.RpcRequest
 	UserName string `position:"Query" name:"UserName"`
 }
 
+// UnbindMFADeviceResponse is the response struct for api UnbindMFADevice
 type UnbindMFADeviceResponse struct {
 	*responses.BaseResponse
 	RequestId string    `json:"RequestId" xml:"RequestId"`
 	MFADevice MFADevice `json:"MFADevice" xml:"MFADevice"`
 }
 
-// create a request to invoke UnbindMFADevice API
-func CreateUnbindMFADeviceRequest() (request *UnbindMFADeviceRequest) {
+// CreateUnbindMFADeviceRequest creates a request to invoke UnbindMFADevice API
+func CreateUnbindMFADeviceRequest(request *UnbindMFADeviceRequest) {
 	request = &UnbindMFADeviceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -93,7 +95,7 @@ func CreateUnbindMFADeviceRequest() (request *UnbindMFADeviceRequest) {
 	return
 }
 
-// create a response to parse from UnbindMFADevice response
+// CreateUnbindMFADeviceResponse creates a response to parse from UnbindMFADevice response
 func CreateUnbindMFADeviceResponse() (response *UnbindMFADeviceResponse) {
 	response = &UnbindMFADeviceResponse{
 		BaseResponse: &responses.BaseResponse{},

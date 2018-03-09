@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeInstances api with *DescribeInstancesRequest synchronously
+// DescribeInstances invokes the ecs.DescribeInstances API synchronously
 // api document: https://help.aliyun.com/api/ecs/describeinstances.html
 func (client *Client) DescribeInstances(request *DescribeInstancesRequest) (response *DescribeInstancesResponse, err error) {
 	response = CreateDescribeInstancesResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeInstances(request *DescribeInstancesRequest) (resp
 	return
 }
 
-// invoke DescribeInstances api with *DescribeInstancesRequest asynchronously
+// DescribeInstancesWithChan invokes the ecs.DescribeInstances API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describeinstances.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstancesWithChan(request *DescribeInstancesRequest) (<-chan *DescribeInstancesResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeInstancesWithChan(request *DescribeInstancesReques
 	return responseChan, errChan
 }
 
-// invoke DescribeInstances api with *DescribeInstancesRequest asynchronously
+// DescribeInstancesWithCallback invokes the ecs.DescribeInstances API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describeinstances.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstancesWithCallback(request *DescribeInstancesRequest, callback func(response *DescribeInstancesResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeInstancesWithCallback(request *DescribeInstancesRe
 	return result
 }
 
+// DescribeInstancesRequest is the request struct for api DescribeInstances
 type DescribeInstancesRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -126,6 +127,7 @@ type DescribeInstancesRequest struct {
 	DryRun               requests.Boolean `position:"Query" name:"DryRun"`
 }
 
+// DescribeInstancesResponse is the response struct for api DescribeInstances
 type DescribeInstancesResponse struct {
 	*responses.BaseResponse
 	RequestId  string    `json:"RequestId" xml:"RequestId"`
@@ -135,8 +137,8 @@ type DescribeInstancesResponse struct {
 	Instances  Instances `json:"Instances" xml:"Instances"`
 }
 
-// create a request to invoke DescribeInstances API
-func CreateDescribeInstancesRequest() (request *DescribeInstancesRequest) {
+// CreateDescribeInstancesRequest creates a request to invoke DescribeInstances API
+func CreateDescribeInstancesRequest(request *DescribeInstancesRequest) {
 	request = &DescribeInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -144,7 +146,7 @@ func CreateDescribeInstancesRequest() (request *DescribeInstancesRequest) {
 	return
 }
 
-// create a response to parse from DescribeInstances response
+// CreateDescribeInstancesResponse creates a response to parse from DescribeInstances response
 func CreateDescribeInstancesResponse() (response *DescribeInstancesResponse) {
 	response = &DescribeInstancesResponse{
 		BaseResponse: &responses.BaseResponse{},

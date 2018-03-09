@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SetAccountAlias api with *SetAccountAliasRequest synchronously
+// SetAccountAlias invokes the ram.SetAccountAlias API synchronously
 // api document: https://help.aliyun.com/api/ram/setaccountalias.html
 func (client *Client) SetAccountAlias(request *SetAccountAliasRequest) (response *SetAccountAliasResponse, err error) {
 	response = CreateSetAccountAliasResponse()
@@ -28,7 +28,7 @@ func (client *Client) SetAccountAlias(request *SetAccountAliasRequest) (response
 	return
 }
 
-// invoke SetAccountAlias api with *SetAccountAliasRequest asynchronously
+// SetAccountAliasWithChan invokes the ram.SetAccountAlias API asynchronously
 // api document: https://help.aliyun.com/api/ram/setaccountalias.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetAccountAliasWithChan(request *SetAccountAliasRequest) (<-chan *SetAccountAliasResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SetAccountAliasWithChan(request *SetAccountAliasRequest) (
 	return responseChan, errChan
 }
 
-// invoke SetAccountAlias api with *SetAccountAliasRequest asynchronously
+// SetAccountAliasWithCallback invokes the ram.SetAccountAlias API asynchronously
 // api document: https://help.aliyun.com/api/ram/setaccountalias.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetAccountAliasWithCallback(request *SetAccountAliasRequest, callback func(response *SetAccountAliasResponse, err error)) <-chan int {
@@ -73,18 +73,20 @@ func (client *Client) SetAccountAliasWithCallback(request *SetAccountAliasReques
 	return result
 }
 
+// SetAccountAliasRequest is the request struct for api SetAccountAlias
 type SetAccountAliasRequest struct {
 	*requests.RpcRequest
 	AccountAlias string `position:"Query" name:"AccountAlias"`
 }
 
+// SetAccountAliasResponse is the response struct for api SetAccountAlias
 type SetAccountAliasResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke SetAccountAlias API
-func CreateSetAccountAliasRequest() (request *SetAccountAliasRequest) {
+// CreateSetAccountAliasRequest creates a request to invoke SetAccountAlias API
+func CreateSetAccountAliasRequest(request *SetAccountAliasRequest) {
 	request = &SetAccountAliasRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -92,7 +94,7 @@ func CreateSetAccountAliasRequest() (request *SetAccountAliasRequest) {
 	return
 }
 
-// create a response to parse from SetAccountAlias response
+// CreateSetAccountAliasResponse creates a response to parse from SetAccountAlias response
 func CreateSetAccountAliasResponse() (response *SetAccountAliasResponse) {
 	response = &SetAccountAliasResponse{
 		BaseResponse: &responses.BaseResponse{},

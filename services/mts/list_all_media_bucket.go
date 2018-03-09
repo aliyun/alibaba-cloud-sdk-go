@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ListAllMediaBucket api with *ListAllMediaBucketRequest synchronously
+// ListAllMediaBucket invokes the mts.ListAllMediaBucket API synchronously
 // api document: https://help.aliyun.com/api/mts/listallmediabucket.html
 func (client *Client) ListAllMediaBucket(request *ListAllMediaBucketRequest) (response *ListAllMediaBucketResponse, err error) {
 	response = CreateListAllMediaBucketResponse()
@@ -28,7 +28,7 @@ func (client *Client) ListAllMediaBucket(request *ListAllMediaBucketRequest) (re
 	return
 }
 
-// invoke ListAllMediaBucket api with *ListAllMediaBucketRequest asynchronously
+// ListAllMediaBucketWithChan invokes the mts.ListAllMediaBucket API asynchronously
 // api document: https://help.aliyun.com/api/mts/listallmediabucket.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAllMediaBucketWithChan(request *ListAllMediaBucketRequest) (<-chan *ListAllMediaBucketResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ListAllMediaBucketWithChan(request *ListAllMediaBucketRequ
 	return responseChan, errChan
 }
 
-// invoke ListAllMediaBucket api with *ListAllMediaBucketRequest asynchronously
+// ListAllMediaBucketWithCallback invokes the mts.ListAllMediaBucket API asynchronously
 // api document: https://help.aliyun.com/api/mts/listallmediabucket.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAllMediaBucketWithCallback(request *ListAllMediaBucketRequest, callback func(response *ListAllMediaBucketResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ListAllMediaBucketWithCallback(request *ListAllMediaBucket
 	return result
 }
 
+// ListAllMediaBucketRequest is the request struct for api ListAllMediaBucket
 type ListAllMediaBucketRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -81,14 +82,15 @@ type ListAllMediaBucketRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// ListAllMediaBucketResponse is the response struct for api ListAllMediaBucket
 type ListAllMediaBucketResponse struct {
 	*responses.BaseResponse
 	RequestId       string          `json:"RequestId" xml:"RequestId"`
 	MediaBucketList MediaBucketList `json:"MediaBucketList" xml:"MediaBucketList"`
 }
 
-// create a request to invoke ListAllMediaBucket API
-func CreateListAllMediaBucketRequest() (request *ListAllMediaBucketRequest) {
+// CreateListAllMediaBucketRequest creates a request to invoke ListAllMediaBucket API
+func CreateListAllMediaBucketRequest(request *ListAllMediaBucketRequest) {
 	request = &ListAllMediaBucketRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -96,7 +98,7 @@ func CreateListAllMediaBucketRequest() (request *ListAllMediaBucketRequest) {
 	return
 }
 
-// create a response to parse from ListAllMediaBucket response
+// CreateListAllMediaBucketResponse creates a response to parse from ListAllMediaBucket response
 func CreateListAllMediaBucketResponse() (response *ListAllMediaBucketResponse) {
 	response = &ListAllMediaBucketResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke EnableAccount api with *EnableAccountRequest synchronously
+// EnableAccount invokes the dm.EnableAccount API synchronously
 // api document: https://help.aliyun.com/api/dm/enableaccount.html
 func (client *Client) EnableAccount(request *EnableAccountRequest) (response *EnableAccountResponse, err error) {
 	response = CreateEnableAccountResponse()
@@ -28,7 +28,7 @@ func (client *Client) EnableAccount(request *EnableAccountRequest) (response *En
 	return
 }
 
-// invoke EnableAccount api with *EnableAccountRequest asynchronously
+// EnableAccountWithChan invokes the dm.EnableAccount API asynchronously
 // api document: https://help.aliyun.com/api/dm/enableaccount.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EnableAccountWithChan(request *EnableAccountRequest) (<-chan *EnableAccountResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) EnableAccountWithChan(request *EnableAccountRequest) (<-ch
 	return responseChan, errChan
 }
 
-// invoke EnableAccount api with *EnableAccountRequest asynchronously
+// EnableAccountWithCallback invokes the dm.EnableAccount API asynchronously
 // api document: https://help.aliyun.com/api/dm/enableaccount.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EnableAccountWithCallback(request *EnableAccountRequest, callback func(response *EnableAccountResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) EnableAccountWithCallback(request *EnableAccountRequest, c
 	return result
 }
 
+// EnableAccountRequest is the request struct for api EnableAccount
 type EnableAccountRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -80,13 +81,14 @@ type EnableAccountRequest struct {
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 }
 
+// EnableAccountResponse is the response struct for api EnableAccount
 type EnableAccountResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke EnableAccount API
-func CreateEnableAccountRequest() (request *EnableAccountRequest) {
+// CreateEnableAccountRequest creates a request to invoke EnableAccount API
+func CreateEnableAccountRequest(request *EnableAccountRequest) {
 	request = &EnableAccountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -94,7 +96,7 @@ func CreateEnableAccountRequest() (request *EnableAccountRequest) {
 	return
 }
 
-// create a response to parse from EnableAccount response
+// CreateEnableAccountResponse creates a response to parse from EnableAccount response
 func CreateEnableAccountResponse() (response *EnableAccountResponse) {
 	response = &EnableAccountResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke UpdateMediaPublishState api with *UpdateMediaPublishStateRequest synchronously
+// UpdateMediaPublishState invokes the mts.UpdateMediaPublishState API synchronously
 // api document: https://help.aliyun.com/api/mts/updatemediapublishstate.html
 func (client *Client) UpdateMediaPublishState(request *UpdateMediaPublishStateRequest) (response *UpdateMediaPublishStateResponse, err error) {
 	response = CreateUpdateMediaPublishStateResponse()
@@ -28,7 +28,7 @@ func (client *Client) UpdateMediaPublishState(request *UpdateMediaPublishStateRe
 	return
 }
 
-// invoke UpdateMediaPublishState api with *UpdateMediaPublishStateRequest asynchronously
+// UpdateMediaPublishStateWithChan invokes the mts.UpdateMediaPublishState API asynchronously
 // api document: https://help.aliyun.com/api/mts/updatemediapublishstate.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateMediaPublishStateWithChan(request *UpdateMediaPublishStateRequest) (<-chan *UpdateMediaPublishStateResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) UpdateMediaPublishStateWithChan(request *UpdateMediaPublis
 	return responseChan, errChan
 }
 
-// invoke UpdateMediaPublishState api with *UpdateMediaPublishStateRequest asynchronously
+// UpdateMediaPublishStateWithCallback invokes the mts.UpdateMediaPublishState API asynchronously
 // api document: https://help.aliyun.com/api/mts/updatemediapublishstate.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateMediaPublishStateWithCallback(request *UpdateMediaPublishStateRequest, callback func(response *UpdateMediaPublishStateResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) UpdateMediaPublishStateWithCallback(request *UpdateMediaPu
 	return result
 }
 
+// UpdateMediaPublishStateRequest is the request struct for api UpdateMediaPublishState
 type UpdateMediaPublishStateRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -83,13 +84,14 @@ type UpdateMediaPublishStateRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// UpdateMediaPublishStateResponse is the response struct for api UpdateMediaPublishState
 type UpdateMediaPublishStateResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke UpdateMediaPublishState API
-func CreateUpdateMediaPublishStateRequest() (request *UpdateMediaPublishStateRequest) {
+// CreateUpdateMediaPublishStateRequest creates a request to invoke UpdateMediaPublishState API
+func CreateUpdateMediaPublishStateRequest(request *UpdateMediaPublishStateRequest) {
 	request = &UpdateMediaPublishStateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateUpdateMediaPublishStateRequest() (request *UpdateMediaPublishStateReq
 	return
 }
 
-// create a response to parse from UpdateMediaPublishState response
+// CreateUpdateMediaPublishStateResponse creates a response to parse from UpdateMediaPublishState response
 func CreateUpdateMediaPublishStateResponse() (response *UpdateMediaPublishStateResponse) {
 	response = &UpdateMediaPublishStateResponse{
 		BaseResponse: &responses.BaseResponse{},

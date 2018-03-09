@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeTags api with *DescribeTagsRequest synchronously
+// DescribeTags invokes the ecs.DescribeTags API synchronously
 // api document: https://help.aliyun.com/api/ecs/describetags.html
 func (client *Client) DescribeTags(request *DescribeTagsRequest) (response *DescribeTagsResponse, err error) {
 	response = CreateDescribeTagsResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeTags(request *DescribeTagsRequest) (response *Desc
 	return
 }
 
-// invoke DescribeTags api with *DescribeTagsRequest asynchronously
+// DescribeTagsWithChan invokes the ecs.DescribeTags API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describetags.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeTagsWithChan(request *DescribeTagsRequest) (<-chan *DescribeTagsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeTagsWithChan(request *DescribeTagsRequest) (<-chan
 	return responseChan, errChan
 }
 
-// invoke DescribeTags api with *DescribeTagsRequest asynchronously
+// DescribeTagsWithCallback invokes the ecs.DescribeTags API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describetags.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeTagsWithCallback(request *DescribeTagsRequest, callback func(response *DescribeTagsResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeTagsWithCallback(request *DescribeTagsRequest, cal
 	return result
 }
 
+// DescribeTagsRequest is the request struct for api DescribeTags
 type DescribeTagsRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -94,6 +95,7 @@ type DescribeTagsRequest struct {
 	Tag5Value            string           `position:"Query" name:"Tag.5.Value"`
 }
 
+// DescribeTagsResponse is the response struct for api DescribeTags
 type DescribeTagsResponse struct {
 	*responses.BaseResponse
 	RequestId  string             `json:"RequestId" xml:"RequestId"`
@@ -103,8 +105,8 @@ type DescribeTagsResponse struct {
 	Tags       TagsInDescribeTags `json:"Tags" xml:"Tags"`
 }
 
-// create a request to invoke DescribeTags API
-func CreateDescribeTagsRequest() (request *DescribeTagsRequest) {
+// CreateDescribeTagsRequest creates a request to invoke DescribeTags API
+func CreateDescribeTagsRequest(request *DescribeTagsRequest) {
 	request = &DescribeTagsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -112,7 +114,7 @@ func CreateDescribeTagsRequest() (request *DescribeTagsRequest) {
 	return
 }
 
-// create a response to parse from DescribeTags response
+// CreateDescribeTagsResponse creates a response to parse from DescribeTags response
 func CreateDescribeTagsResponse() (response *DescribeTagsResponse) {
 	response = &DescribeTagsResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke AddDomain api with *AddDomainRequest synchronously
+// AddDomain invokes the alidns.AddDomain API synchronously
 // api document: https://help.aliyun.com/api/alidns/adddomain.html
 func (client *Client) AddDomain(request *AddDomainRequest) (response *AddDomainResponse, err error) {
 	response = CreateAddDomainResponse()
@@ -28,7 +28,7 @@ func (client *Client) AddDomain(request *AddDomainRequest) (response *AddDomainR
 	return
 }
 
-// invoke AddDomain api with *AddDomainRequest asynchronously
+// AddDomainWithChan invokes the alidns.AddDomain API asynchronously
 // api document: https://help.aliyun.com/api/alidns/adddomain.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddDomainWithChan(request *AddDomainRequest) (<-chan *AddDomainResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) AddDomainWithChan(request *AddDomainRequest) (<-chan *AddD
 	return responseChan, errChan
 }
 
-// invoke AddDomain api with *AddDomainRequest asynchronously
+// AddDomainWithCallback invokes the alidns.AddDomain API asynchronously
 // api document: https://help.aliyun.com/api/alidns/adddomain.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddDomainWithCallback(request *AddDomainRequest, callback func(response *AddDomainResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) AddDomainWithCallback(request *AddDomainRequest, callback 
 	return result
 }
 
+// AddDomainRequest is the request struct for api AddDomain
 type AddDomainRequest struct {
 	*requests.RpcRequest
 	Lang         string `position:"Query" name:"Lang"`
@@ -81,6 +82,7 @@ type AddDomainRequest struct {
 	GroupId      string `position:"Query" name:"GroupId"`
 }
 
+// AddDomainResponse is the response struct for api AddDomain
 type AddDomainResponse struct {
 	*responses.BaseResponse
 	RequestId  string                `json:"RequestId" xml:"RequestId"`
@@ -92,8 +94,8 @@ type AddDomainResponse struct {
 	DnsServers DnsServersInAddDomain `json:"DnsServers" xml:"DnsServers"`
 }
 
-// create a request to invoke AddDomain API
-func CreateAddDomainRequest() (request *AddDomainRequest) {
+// CreateAddDomainRequest creates a request to invoke AddDomain API
+func CreateAddDomainRequest(request *AddDomainRequest) {
 	request = &AddDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -101,7 +103,7 @@ func CreateAddDomainRequest() (request *AddDomainRequest) {
 	return
 }
 
-// create a response to parse from AddDomain response
+// CreateAddDomainResponse creates a response to parse from AddDomain response
 func CreateAddDomainResponse() (response *AddDomainResponse) {
 	response = &AddDomainResponse{
 		BaseResponse: &responses.BaseResponse{},

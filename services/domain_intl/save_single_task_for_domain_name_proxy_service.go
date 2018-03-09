@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SaveSingleTaskForDomainNameProxyService api with *SaveSingleTaskForDomainNameProxyServiceRequest synchronously
+// SaveSingleTaskForDomainNameProxyService invokes the domain_intl.SaveSingleTaskForDomainNameProxyService API synchronously
 // api document: https://help.aliyun.com/api/domain-intl/savesingletaskfordomainnameproxyservice.html
 func (client *Client) SaveSingleTaskForDomainNameProxyService(request *SaveSingleTaskForDomainNameProxyServiceRequest) (response *SaveSingleTaskForDomainNameProxyServiceResponse, err error) {
 	response = CreateSaveSingleTaskForDomainNameProxyServiceResponse()
@@ -28,7 +28,7 @@ func (client *Client) SaveSingleTaskForDomainNameProxyService(request *SaveSingl
 	return
 }
 
-// invoke SaveSingleTaskForDomainNameProxyService api with *SaveSingleTaskForDomainNameProxyServiceRequest asynchronously
+// SaveSingleTaskForDomainNameProxyServiceWithChan invokes the domain_intl.SaveSingleTaskForDomainNameProxyService API asynchronously
 // api document: https://help.aliyun.com/api/domain-intl/savesingletaskfordomainnameproxyservice.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveSingleTaskForDomainNameProxyServiceWithChan(request *SaveSingleTaskForDomainNameProxyServiceRequest) (<-chan *SaveSingleTaskForDomainNameProxyServiceResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SaveSingleTaskForDomainNameProxyServiceWithChan(request *S
 	return responseChan, errChan
 }
 
-// invoke SaveSingleTaskForDomainNameProxyService api with *SaveSingleTaskForDomainNameProxyServiceRequest asynchronously
+// SaveSingleTaskForDomainNameProxyServiceWithCallback invokes the domain_intl.SaveSingleTaskForDomainNameProxyService API asynchronously
 // api document: https://help.aliyun.com/api/domain-intl/savesingletaskfordomainnameproxyservice.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveSingleTaskForDomainNameProxyServiceWithCallback(request *SaveSingleTaskForDomainNameProxyServiceRequest, callback func(response *SaveSingleTaskForDomainNameProxyServiceResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SaveSingleTaskForDomainNameProxyServiceWithCallback(reques
 	return result
 }
 
+// SaveSingleTaskForDomainNameProxyServiceRequest is the request struct for api SaveSingleTaskForDomainNameProxyService
 type SaveSingleTaskForDomainNameProxyServiceRequest struct {
 	*requests.RpcRequest
 	UserClientIp string           `position:"Query" name:"UserClientIp"`
@@ -81,14 +82,15 @@ type SaveSingleTaskForDomainNameProxyServiceRequest struct {
 	Status       requests.Boolean `position:"Query" name:"Status"`
 }
 
+// SaveSingleTaskForDomainNameProxyServiceResponse is the response struct for api SaveSingleTaskForDomainNameProxyService
 type SaveSingleTaskForDomainNameProxyServiceResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	TaskNo    string `json:"TaskNo" xml:"TaskNo"`
 }
 
-// create a request to invoke SaveSingleTaskForDomainNameProxyService API
-func CreateSaveSingleTaskForDomainNameProxyServiceRequest() (request *SaveSingleTaskForDomainNameProxyServiceRequest) {
+// CreateSaveSingleTaskForDomainNameProxyServiceRequest creates a request to invoke SaveSingleTaskForDomainNameProxyService API
+func CreateSaveSingleTaskForDomainNameProxyServiceRequest(request *SaveSingleTaskForDomainNameProxyServiceRequest) {
 	request = &SaveSingleTaskForDomainNameProxyServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -96,7 +98,7 @@ func CreateSaveSingleTaskForDomainNameProxyServiceRequest() (request *SaveSingle
 	return
 }
 
-// create a response to parse from SaveSingleTaskForDomainNameProxyService response
+// CreateSaveSingleTaskForDomainNameProxyServiceResponse creates a response to parse from SaveSingleTaskForDomainNameProxyService response
 func CreateSaveSingleTaskForDomainNameProxyServiceResponse() (response *SaveSingleTaskForDomainNameProxyServiceResponse) {
 	response = &SaveSingleTaskForDomainNameProxyServiceResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SaveRegistrantProfile api with *SaveRegistrantProfileRequest synchronously
+// SaveRegistrantProfile invokes the domain_intl.SaveRegistrantProfile API synchronously
 // api document: https://help.aliyun.com/api/domain-intl/saveregistrantprofile.html
 func (client *Client) SaveRegistrantProfile(request *SaveRegistrantProfileRequest) (response *SaveRegistrantProfileResponse, err error) {
 	response = CreateSaveRegistrantProfileResponse()
@@ -28,7 +28,7 @@ func (client *Client) SaveRegistrantProfile(request *SaveRegistrantProfileReques
 	return
 }
 
-// invoke SaveRegistrantProfile api with *SaveRegistrantProfileRequest asynchronously
+// SaveRegistrantProfileWithChan invokes the domain_intl.SaveRegistrantProfile API asynchronously
 // api document: https://help.aliyun.com/api/domain-intl/saveregistrantprofile.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveRegistrantProfileWithChan(request *SaveRegistrantProfileRequest) (<-chan *SaveRegistrantProfileResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SaveRegistrantProfileWithChan(request *SaveRegistrantProfi
 	return responseChan, errChan
 }
 
-// invoke SaveRegistrantProfile api with *SaveRegistrantProfileRequest asynchronously
+// SaveRegistrantProfileWithCallback invokes the domain_intl.SaveRegistrantProfile API asynchronously
 // api document: https://help.aliyun.com/api/domain-intl/saveregistrantprofile.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveRegistrantProfileWithCallback(request *SaveRegistrantProfileRequest, callback func(response *SaveRegistrantProfileResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SaveRegistrantProfileWithCallback(request *SaveRegistrantP
 	return result
 }
 
+// SaveRegistrantProfileRequest is the request struct for api SaveRegistrantProfile
 type SaveRegistrantProfileRequest struct {
 	*requests.RpcRequest
 	Country                  string           `position:"Query" name:"Country"`
@@ -92,14 +93,15 @@ type SaveRegistrantProfileRequest struct {
 	TelExt                   string           `position:"Query" name:"TelExt"`
 }
 
+// SaveRegistrantProfileResponse is the response struct for api SaveRegistrantProfile
 type SaveRegistrantProfileResponse struct {
 	*responses.BaseResponse
 	RequestId           string `json:"RequestId" xml:"RequestId"`
 	RegistrantProfileId int    `json:"RegistrantProfileId" xml:"RegistrantProfileId"`
 }
 
-// create a request to invoke SaveRegistrantProfile API
-func CreateSaveRegistrantProfileRequest() (request *SaveRegistrantProfileRequest) {
+// CreateSaveRegistrantProfileRequest creates a request to invoke SaveRegistrantProfile API
+func CreateSaveRegistrantProfileRequest(request *SaveRegistrantProfileRequest) {
 	request = &SaveRegistrantProfileRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -107,7 +109,7 @@ func CreateSaveRegistrantProfileRequest() (request *SaveRegistrantProfileRequest
 	return
 }
 
-// create a response to parse from SaveRegistrantProfile response
+// CreateSaveRegistrantProfileResponse creates a response to parse from SaveRegistrantProfile response
 func CreateSaveRegistrantProfileResponse() (response *SaveRegistrantProfileResponse) {
 	response = &SaveRegistrantProfileResponse{
 		BaseResponse: &responses.BaseResponse{},

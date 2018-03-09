@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteVSwitch api with *DeleteVSwitchRequest synchronously
+// DeleteVSwitch invokes the vpc.DeleteVSwitch API synchronously
 // api document: https://help.aliyun.com/api/vpc/deletevswitch.html
 func (client *Client) DeleteVSwitch(request *DeleteVSwitchRequest) (response *DeleteVSwitchResponse, err error) {
 	response = CreateDeleteVSwitchResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteVSwitch(request *DeleteVSwitchRequest) (response *De
 	return
 }
 
-// invoke DeleteVSwitch api with *DeleteVSwitchRequest asynchronously
+// DeleteVSwitchWithChan invokes the vpc.DeleteVSwitch API asynchronously
 // api document: https://help.aliyun.com/api/vpc/deletevswitch.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteVSwitchWithChan(request *DeleteVSwitchRequest) (<-chan *DeleteVSwitchResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteVSwitchWithChan(request *DeleteVSwitchRequest) (<-ch
 	return responseChan, errChan
 }
 
-// invoke DeleteVSwitch api with *DeleteVSwitchRequest asynchronously
+// DeleteVSwitchWithCallback invokes the vpc.DeleteVSwitch API asynchronously
 // api document: https://help.aliyun.com/api/vpc/deletevswitch.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteVSwitchWithCallback(request *DeleteVSwitchRequest, callback func(response *DeleteVSwitchResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DeleteVSwitchWithCallback(request *DeleteVSwitchRequest, c
 	return result
 }
 
+// DeleteVSwitchRequest is the request struct for api DeleteVSwitch
 type DeleteVSwitchRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,13 +83,14 @@ type DeleteVSwitchRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// DeleteVSwitchResponse is the response struct for api DeleteVSwitch
 type DeleteVSwitchResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DeleteVSwitch API
-func CreateDeleteVSwitchRequest() (request *DeleteVSwitchRequest) {
+// CreateDeleteVSwitchRequest creates a request to invoke DeleteVSwitch API
+func CreateDeleteVSwitchRequest(request *DeleteVSwitchRequest) {
 	request = &DeleteVSwitchRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -96,7 +98,7 @@ func CreateDeleteVSwitchRequest() (request *DeleteVSwitchRequest) {
 	return
 }
 
-// create a response to parse from DeleteVSwitch response
+// CreateDeleteVSwitchResponse creates a response to parse from DeleteVSwitch response
 func CreateDeleteVSwitchResponse() (response *DeleteVSwitchResponse) {
 	response = &DeleteVSwitchResponse{
 		BaseResponse: &responses.BaseResponse{},

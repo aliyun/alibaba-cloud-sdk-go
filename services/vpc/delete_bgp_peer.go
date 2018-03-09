@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteBgpPeer api with *DeleteBgpPeerRequest synchronously
+// DeleteBgpPeer invokes the vpc.DeleteBgpPeer API synchronously
 // api document: https://help.aliyun.com/api/vpc/deletebgppeer.html
 func (client *Client) DeleteBgpPeer(request *DeleteBgpPeerRequest) (response *DeleteBgpPeerResponse, err error) {
 	response = CreateDeleteBgpPeerResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteBgpPeer(request *DeleteBgpPeerRequest) (response *De
 	return
 }
 
-// invoke DeleteBgpPeer api with *DeleteBgpPeerRequest asynchronously
+// DeleteBgpPeerWithChan invokes the vpc.DeleteBgpPeer API asynchronously
 // api document: https://help.aliyun.com/api/vpc/deletebgppeer.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteBgpPeerWithChan(request *DeleteBgpPeerRequest) (<-chan *DeleteBgpPeerResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteBgpPeerWithChan(request *DeleteBgpPeerRequest) (<-ch
 	return responseChan, errChan
 }
 
-// invoke DeleteBgpPeer api with *DeleteBgpPeerRequest asynchronously
+// DeleteBgpPeerWithCallback invokes the vpc.DeleteBgpPeer API asynchronously
 // api document: https://help.aliyun.com/api/vpc/deletebgppeer.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteBgpPeerWithCallback(request *DeleteBgpPeerRequest, callback func(response *DeleteBgpPeerResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DeleteBgpPeerWithCallback(request *DeleteBgpPeerRequest, c
 	return result
 }
 
+// DeleteBgpPeerRequest is the request struct for api DeleteBgpPeer
 type DeleteBgpPeerRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -83,13 +84,14 @@ type DeleteBgpPeerRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// DeleteBgpPeerResponse is the response struct for api DeleteBgpPeer
 type DeleteBgpPeerResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DeleteBgpPeer API
-func CreateDeleteBgpPeerRequest() (request *DeleteBgpPeerRequest) {
+// CreateDeleteBgpPeerRequest creates a request to invoke DeleteBgpPeer API
+func CreateDeleteBgpPeerRequest(request *DeleteBgpPeerRequest) {
 	request = &DeleteBgpPeerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateDeleteBgpPeerRequest() (request *DeleteBgpPeerRequest) {
 	return
 }
 
-// create a response to parse from DeleteBgpPeer response
+// CreateDeleteBgpPeerResponse creates a response to parse from DeleteBgpPeer response
 func CreateDeleteBgpPeerResponse() (response *DeleteBgpPeerResponse) {
 	response = &DeleteBgpPeerResponse{
 		BaseResponse: &responses.BaseResponse{},

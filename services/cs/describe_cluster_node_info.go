@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeClusterNodeInfo api with *DescribeClusterNodeInfoRequest synchronously
+// DescribeClusterNodeInfo invokes the cs.DescribeClusterNodeInfo API synchronously
 // api document: https://help.aliyun.com/api/cs/describeclusternodeinfo.html
 func (client *Client) DescribeClusterNodeInfo(request *DescribeClusterNodeInfoRequest) (response *DescribeClusterNodeInfoResponse, err error) {
 	response = CreateDescribeClusterNodeInfoResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeClusterNodeInfo(request *DescribeClusterNodeInfoRe
 	return
 }
 
-// invoke DescribeClusterNodeInfo api with *DescribeClusterNodeInfoRequest asynchronously
+// DescribeClusterNodeInfoWithChan invokes the cs.DescribeClusterNodeInfo API asynchronously
 // api document: https://help.aliyun.com/api/cs/describeclusternodeinfo.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeClusterNodeInfoWithChan(request *DescribeClusterNodeInfoRequest) (<-chan *DescribeClusterNodeInfoResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeClusterNodeInfoWithChan(request *DescribeClusterNo
 	return responseChan, errChan
 }
 
-// invoke DescribeClusterNodeInfo api with *DescribeClusterNodeInfoRequest asynchronously
+// DescribeClusterNodeInfoWithCallback invokes the cs.DescribeClusterNodeInfo API asynchronously
 // api document: https://help.aliyun.com/api/cs/describeclusternodeinfo.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeClusterNodeInfoWithCallback(request *DescribeClusterNodeInfoRequest, callback func(response *DescribeClusterNodeInfoResponse, err error)) <-chan int {
@@ -73,17 +73,19 @@ func (client *Client) DescribeClusterNodeInfoWithCallback(request *DescribeClust
 	return result
 }
 
+// DescribeClusterNodeInfoRequest is the request struct for api DescribeClusterNodeInfo
 type DescribeClusterNodeInfoRequest struct {
 	*requests.RoaRequest
 	Token string `position:"Path" name:"Token"`
 }
 
+// DescribeClusterNodeInfoResponse is the response struct for api DescribeClusterNodeInfo
 type DescribeClusterNodeInfoResponse struct {
 	*responses.BaseResponse
 }
 
-// create a request to invoke DescribeClusterNodeInfo API
-func CreateDescribeClusterNodeInfoRequest() (request *DescribeClusterNodeInfoRequest) {
+// CreateDescribeClusterNodeInfoRequest creates a request to invoke DescribeClusterNodeInfo API
+func CreateDescribeClusterNodeInfoRequest(request *DescribeClusterNodeInfoRequest) {
 	request = &DescribeClusterNodeInfoRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
@@ -92,7 +94,7 @@ func CreateDescribeClusterNodeInfoRequest() (request *DescribeClusterNodeInfoReq
 	return
 }
 
-// create a response to parse from DescribeClusterNodeInfo response
+// CreateDescribeClusterNodeInfoResponse creates a response to parse from DescribeClusterNodeInfo response
 func CreateDescribeClusterNodeInfoResponse() (response *DescribeClusterNodeInfoResponse) {
 	response = &DescribeClusterNodeInfoResponse{
 		BaseResponse: &responses.BaseResponse{},

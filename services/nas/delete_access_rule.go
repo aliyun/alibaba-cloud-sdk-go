@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteAccessRule api with *DeleteAccessRuleRequest synchronously
+// DeleteAccessRule invokes the nas.DeleteAccessRule API synchronously
 // api document: https://help.aliyun.com/api/nas/deleteaccessrule.html
 func (client *Client) DeleteAccessRule(request *DeleteAccessRuleRequest) (response *DeleteAccessRuleResponse, err error) {
 	response = CreateDeleteAccessRuleResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteAccessRule(request *DeleteAccessRuleRequest) (respon
 	return
 }
 
-// invoke DeleteAccessRule api with *DeleteAccessRuleRequest asynchronously
+// DeleteAccessRuleWithChan invokes the nas.DeleteAccessRule API asynchronously
 // api document: https://help.aliyun.com/api/nas/deleteaccessrule.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteAccessRuleWithChan(request *DeleteAccessRuleRequest) (<-chan *DeleteAccessRuleResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteAccessRuleWithChan(request *DeleteAccessRuleRequest)
 	return responseChan, errChan
 }
 
-// invoke DeleteAccessRule api with *DeleteAccessRuleRequest asynchronously
+// DeleteAccessRuleWithCallback invokes the nas.DeleteAccessRule API asynchronously
 // api document: https://help.aliyun.com/api/nas/deleteaccessrule.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteAccessRuleWithCallback(request *DeleteAccessRuleRequest, callback func(response *DeleteAccessRuleResponse, err error)) <-chan int {
@@ -73,19 +73,21 @@ func (client *Client) DeleteAccessRuleWithCallback(request *DeleteAccessRuleRequ
 	return result
 }
 
+// DeleteAccessRuleRequest is the request struct for api DeleteAccessRule
 type DeleteAccessRuleRequest struct {
 	*requests.RpcRequest
 	AccessGroupName string `position:"Query" name:"AccessGroupName"`
 	AccessRuleId    string `position:"Query" name:"AccessRuleId"`
 }
 
+// DeleteAccessRuleResponse is the response struct for api DeleteAccessRule
 type DeleteAccessRuleResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DeleteAccessRule API
-func CreateDeleteAccessRuleRequest() (request *DeleteAccessRuleRequest) {
+// CreateDeleteAccessRuleRequest creates a request to invoke DeleteAccessRule API
+func CreateDeleteAccessRuleRequest(request *DeleteAccessRuleRequest) {
 	request = &DeleteAccessRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -93,7 +95,7 @@ func CreateDeleteAccessRuleRequest() (request *DeleteAccessRuleRequest) {
 	return
 }
 
-// create a response to parse from DeleteAccessRule response
+// CreateDeleteAccessRuleResponse creates a response to parse from DeleteAccessRule response
 func CreateDeleteAccessRuleResponse() (response *DeleteAccessRuleResponse) {
 	response = &DeleteAccessRuleResponse{
 		BaseResponse: &responses.BaseResponse{},

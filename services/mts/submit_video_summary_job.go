@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SubmitVideoSummaryJob api with *SubmitVideoSummaryJobRequest synchronously
+// SubmitVideoSummaryJob invokes the mts.SubmitVideoSummaryJob API synchronously
 // api document: https://help.aliyun.com/api/mts/submitvideosummaryjob.html
 func (client *Client) SubmitVideoSummaryJob(request *SubmitVideoSummaryJobRequest) (response *SubmitVideoSummaryJobResponse, err error) {
 	response = CreateSubmitVideoSummaryJobResponse()
@@ -28,7 +28,7 @@ func (client *Client) SubmitVideoSummaryJob(request *SubmitVideoSummaryJobReques
 	return
 }
 
-// invoke SubmitVideoSummaryJob api with *SubmitVideoSummaryJobRequest asynchronously
+// SubmitVideoSummaryJobWithChan invokes the mts.SubmitVideoSummaryJob API asynchronously
 // api document: https://help.aliyun.com/api/mts/submitvideosummaryjob.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitVideoSummaryJobWithChan(request *SubmitVideoSummaryJobRequest) (<-chan *SubmitVideoSummaryJobResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SubmitVideoSummaryJobWithChan(request *SubmitVideoSummaryJ
 	return responseChan, errChan
 }
 
-// invoke SubmitVideoSummaryJob api with *SubmitVideoSummaryJobRequest asynchronously
+// SubmitVideoSummaryJobWithCallback invokes the mts.SubmitVideoSummaryJob API asynchronously
 // api document: https://help.aliyun.com/api/mts/submitvideosummaryjob.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitVideoSummaryJobWithCallback(request *SubmitVideoSummaryJobRequest, callback func(response *SubmitVideoSummaryJobResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SubmitVideoSummaryJobWithCallback(request *SubmitVideoSumm
 	return result
 }
 
+// SubmitVideoSummaryJobRequest is the request struct for api SubmitVideoSummaryJob
 type SubmitVideoSummaryJobRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -85,14 +86,15 @@ type SubmitVideoSummaryJobRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// SubmitVideoSummaryJobResponse is the response struct for api SubmitVideoSummaryJob
 type SubmitVideoSummaryJobResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	JobId     string `json:"JobId" xml:"JobId"`
 }
 
-// create a request to invoke SubmitVideoSummaryJob API
-func CreateSubmitVideoSummaryJobRequest() (request *SubmitVideoSummaryJobRequest) {
+// CreateSubmitVideoSummaryJobRequest creates a request to invoke SubmitVideoSummaryJob API
+func CreateSubmitVideoSummaryJobRequest(request *SubmitVideoSummaryJobRequest) {
 	request = &SubmitVideoSummaryJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -100,7 +102,7 @@ func CreateSubmitVideoSummaryJobRequest() (request *SubmitVideoSummaryJobRequest
 	return
 }
 
-// create a response to parse from SubmitVideoSummaryJob response
+// CreateSubmitVideoSummaryJobResponse creates a response to parse from SubmitVideoSummaryJob response
 func CreateSubmitVideoSummaryJobResponse() (response *SubmitVideoSummaryJobResponse) {
 	response = &SubmitVideoSummaryJobResponse{
 		BaseResponse: &responses.BaseResponse{},

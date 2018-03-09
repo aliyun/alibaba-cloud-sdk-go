@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke GetProjectEvents api with *GetProjectEventsRequest synchronously
+// GetProjectEvents invokes the cs.GetProjectEvents API synchronously
 // api document: https://help.aliyun.com/api/cs/getprojectevents.html
 func (client *Client) GetProjectEvents(request *GetProjectEventsRequest) (response *GetProjectEventsResponse, err error) {
 	response = CreateGetProjectEventsResponse()
@@ -28,7 +28,7 @@ func (client *Client) GetProjectEvents(request *GetProjectEventsRequest) (respon
 	return
 }
 
-// invoke GetProjectEvents api with *GetProjectEventsRequest asynchronously
+// GetProjectEventsWithChan invokes the cs.GetProjectEvents API asynchronously
 // api document: https://help.aliyun.com/api/cs/getprojectevents.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetProjectEventsWithChan(request *GetProjectEventsRequest) (<-chan *GetProjectEventsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) GetProjectEventsWithChan(request *GetProjectEventsRequest)
 	return responseChan, errChan
 }
 
-// invoke GetProjectEvents api with *GetProjectEventsRequest asynchronously
+// GetProjectEventsWithCallback invokes the cs.GetProjectEvents API asynchronously
 // api document: https://help.aliyun.com/api/cs/getprojectevents.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetProjectEventsWithCallback(request *GetProjectEventsRequest, callback func(response *GetProjectEventsResponse, err error)) <-chan int {
@@ -73,18 +73,20 @@ func (client *Client) GetProjectEventsWithCallback(request *GetProjectEventsRequ
 	return result
 }
 
+// GetProjectEventsRequest is the request struct for api GetProjectEvents
 type GetProjectEventsRequest struct {
 	*requests.RoaRequest
 	ClusterId string `position:"Path" name:"ClusterId"`
 	ProjectId string `position:"Path" name:"ProjectId"`
 }
 
+// GetProjectEventsResponse is the response struct for api GetProjectEvents
 type GetProjectEventsResponse struct {
 	*responses.BaseResponse
 }
 
-// create a request to invoke GetProjectEvents API
-func CreateGetProjectEventsRequest() (request *GetProjectEventsRequest) {
+// CreateGetProjectEventsRequest creates a request to invoke GetProjectEvents API
+func CreateGetProjectEventsRequest(request *GetProjectEventsRequest) {
 	request = &GetProjectEventsRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
@@ -93,7 +95,7 @@ func CreateGetProjectEventsRequest() (request *GetProjectEventsRequest) {
 	return
 }
 
-// create a response to parse from GetProjectEvents response
+// CreateGetProjectEventsResponse creates a response to parse from GetProjectEvents response
 func CreateGetProjectEventsResponse() (response *GetProjectEventsResponse) {
 	response = &GetProjectEventsResponse{
 		BaseResponse: &responses.BaseResponse{},

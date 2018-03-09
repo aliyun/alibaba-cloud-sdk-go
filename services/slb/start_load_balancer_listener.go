@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke StartLoadBalancerListener api with *StartLoadBalancerListenerRequest synchronously
+// StartLoadBalancerListener invokes the slb.StartLoadBalancerListener API synchronously
 // api document: https://help.aliyun.com/api/slb/startloadbalancerlistener.html
 func (client *Client) StartLoadBalancerListener(request *StartLoadBalancerListenerRequest) (response *StartLoadBalancerListenerResponse, err error) {
 	response = CreateStartLoadBalancerListenerResponse()
@@ -28,7 +28,7 @@ func (client *Client) StartLoadBalancerListener(request *StartLoadBalancerListen
 	return
 }
 
-// invoke StartLoadBalancerListener api with *StartLoadBalancerListenerRequest asynchronously
+// StartLoadBalancerListenerWithChan invokes the slb.StartLoadBalancerListener API asynchronously
 // api document: https://help.aliyun.com/api/slb/startloadbalancerlistener.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StartLoadBalancerListenerWithChan(request *StartLoadBalancerListenerRequest) (<-chan *StartLoadBalancerListenerResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) StartLoadBalancerListenerWithChan(request *StartLoadBalanc
 	return responseChan, errChan
 }
 
-// invoke StartLoadBalancerListener api with *StartLoadBalancerListenerRequest asynchronously
+// StartLoadBalancerListenerWithCallback invokes the slb.StartLoadBalancerListener API asynchronously
 // api document: https://help.aliyun.com/api/slb/startloadbalancerlistener.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StartLoadBalancerListenerWithCallback(request *StartLoadBalancerListenerRequest, callback func(response *StartLoadBalancerListenerResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) StartLoadBalancerListenerWithCallback(request *StartLoadBa
 	return result
 }
 
+// StartLoadBalancerListenerRequest is the request struct for api StartLoadBalancerListener
 type StartLoadBalancerListenerRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -85,13 +86,14 @@ type StartLoadBalancerListenerRequest struct {
 	Tags                 string           `position:"Query" name:"Tags"`
 }
 
+// StartLoadBalancerListenerResponse is the response struct for api StartLoadBalancerListener
 type StartLoadBalancerListenerResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke StartLoadBalancerListener API
-func CreateStartLoadBalancerListenerRequest() (request *StartLoadBalancerListenerRequest) {
+// CreateStartLoadBalancerListenerRequest creates a request to invoke StartLoadBalancerListener API
+func CreateStartLoadBalancerListenerRequest(request *StartLoadBalancerListenerRequest) {
 	request = &StartLoadBalancerListenerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateStartLoadBalancerListenerRequest() (request *StartLoadBalancerListene
 	return
 }
 
-// create a response to parse from StartLoadBalancerListener response
+// CreateStartLoadBalancerListenerResponse creates a response to parse from StartLoadBalancerListener response
 func CreateStartLoadBalancerListenerResponse() (response *StartLoadBalancerListenerResponse) {
 	response = &StartLoadBalancerListenerResponse{
 		BaseResponse: &responses.BaseResponse{},

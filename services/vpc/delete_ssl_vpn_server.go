@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteSslVpnServer api with *DeleteSslVpnServerRequest synchronously
+// DeleteSslVpnServer invokes the vpc.DeleteSslVpnServer API synchronously
 // api document: https://help.aliyun.com/api/vpc/deletesslvpnserver.html
 func (client *Client) DeleteSslVpnServer(request *DeleteSslVpnServerRequest) (response *DeleteSslVpnServerResponse, err error) {
 	response = CreateDeleteSslVpnServerResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteSslVpnServer(request *DeleteSslVpnServerRequest) (re
 	return
 }
 
-// invoke DeleteSslVpnServer api with *DeleteSslVpnServerRequest asynchronously
+// DeleteSslVpnServerWithChan invokes the vpc.DeleteSslVpnServer API asynchronously
 // api document: https://help.aliyun.com/api/vpc/deletesslvpnserver.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteSslVpnServerWithChan(request *DeleteSslVpnServerRequest) (<-chan *DeleteSslVpnServerResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteSslVpnServerWithChan(request *DeleteSslVpnServerRequ
 	return responseChan, errChan
 }
 
-// invoke DeleteSslVpnServer api with *DeleteSslVpnServerRequest asynchronously
+// DeleteSslVpnServerWithCallback invokes the vpc.DeleteSslVpnServer API asynchronously
 // api document: https://help.aliyun.com/api/vpc/deletesslvpnserver.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteSslVpnServerWithCallback(request *DeleteSslVpnServerRequest, callback func(response *DeleteSslVpnServerResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DeleteSslVpnServerWithCallback(request *DeleteSslVpnServer
 	return result
 }
 
+// DeleteSslVpnServerRequest is the request struct for api DeleteSslVpnServer
 type DeleteSslVpnServerRequest struct {
 	*requests.RpcRequest
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
@@ -83,13 +84,14 @@ type DeleteSslVpnServerRequest struct {
 	SslVpnServerId       string           `position:"Query" name:"SslVpnServerId"`
 }
 
+// DeleteSslVpnServerResponse is the response struct for api DeleteSslVpnServer
 type DeleteSslVpnServerResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DeleteSslVpnServer API
-func CreateDeleteSslVpnServerRequest() (request *DeleteSslVpnServerRequest) {
+// CreateDeleteSslVpnServerRequest creates a request to invoke DeleteSslVpnServer API
+func CreateDeleteSslVpnServerRequest(request *DeleteSslVpnServerRequest) {
 	request = &DeleteSslVpnServerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateDeleteSslVpnServerRequest() (request *DeleteSslVpnServerRequest) {
 	return
 }
 
-// create a response to parse from DeleteSslVpnServer response
+// CreateDeleteSslVpnServerResponse creates a response to parse from DeleteSslVpnServer response
 func CreateDeleteSslVpnServerResponse() (response *DeleteSslVpnServerResponse) {
 	response = &DeleteSslVpnServerResponse{
 		BaseResponse: &responses.BaseResponse{},

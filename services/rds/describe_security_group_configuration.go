@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeSecurityGroupConfiguration api with *DescribeSecurityGroupConfigurationRequest synchronously
+// DescribeSecurityGroupConfiguration invokes the rds.DescribeSecurityGroupConfiguration API synchronously
 // api document: https://help.aliyun.com/api/rds/describesecuritygroupconfiguration.html
 func (client *Client) DescribeSecurityGroupConfiguration(request *DescribeSecurityGroupConfigurationRequest) (response *DescribeSecurityGroupConfigurationResponse, err error) {
 	response = CreateDescribeSecurityGroupConfigurationResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeSecurityGroupConfiguration(request *DescribeSecuri
 	return
 }
 
-// invoke DescribeSecurityGroupConfiguration api with *DescribeSecurityGroupConfigurationRequest asynchronously
+// DescribeSecurityGroupConfigurationWithChan invokes the rds.DescribeSecurityGroupConfiguration API asynchronously
 // api document: https://help.aliyun.com/api/rds/describesecuritygroupconfiguration.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSecurityGroupConfigurationWithChan(request *DescribeSecurityGroupConfigurationRequest) (<-chan *DescribeSecurityGroupConfigurationResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeSecurityGroupConfigurationWithChan(request *Descri
 	return responseChan, errChan
 }
 
-// invoke DescribeSecurityGroupConfiguration api with *DescribeSecurityGroupConfigurationRequest asynchronously
+// DescribeSecurityGroupConfigurationWithCallback invokes the rds.DescribeSecurityGroupConfiguration API asynchronously
 // api document: https://help.aliyun.com/api/rds/describesecuritygroupconfiguration.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSecurityGroupConfigurationWithCallback(request *DescribeSecurityGroupConfigurationRequest, callback func(response *DescribeSecurityGroupConfigurationResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeSecurityGroupConfigurationWithCallback(request *De
 	return result
 }
 
+// DescribeSecurityGroupConfigurationRequest is the request struct for api DescribeSecurityGroupConfiguration
 type DescribeSecurityGroupConfigurationRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -81,6 +82,7 @@ type DescribeSecurityGroupConfigurationRequest struct {
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 }
 
+// DescribeSecurityGroupConfigurationResponse is the response struct for api DescribeSecurityGroupConfiguration
 type DescribeSecurityGroupConfigurationResponse struct {
 	*responses.BaseResponse
 	RequestId      string                                    `json:"RequestId" xml:"RequestId"`
@@ -88,8 +90,8 @@ type DescribeSecurityGroupConfigurationResponse struct {
 	Items          ItemsInDescribeSecurityGroupConfiguration `json:"Items" xml:"Items"`
 }
 
-// create a request to invoke DescribeSecurityGroupConfiguration API
-func CreateDescribeSecurityGroupConfigurationRequest() (request *DescribeSecurityGroupConfigurationRequest) {
+// CreateDescribeSecurityGroupConfigurationRequest creates a request to invoke DescribeSecurityGroupConfiguration API
+func CreateDescribeSecurityGroupConfigurationRequest(request *DescribeSecurityGroupConfigurationRequest) {
 	request = &DescribeSecurityGroupConfigurationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateDescribeSecurityGroupConfigurationRequest() (request *DescribeSecurit
 	return
 }
 
-// create a response to parse from DescribeSecurityGroupConfiguration response
+// CreateDescribeSecurityGroupConfigurationResponse creates a response to parse from DescribeSecurityGroupConfiguration response
 func CreateDescribeSecurityGroupConfigurationResponse() (response *DescribeSecurityGroupConfigurationResponse) {
 	response = &DescribeSecurityGroupConfigurationResponse{
 		BaseResponse: &responses.BaseResponse{},

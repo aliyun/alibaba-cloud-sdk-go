@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeUserVipsByDomain api with *DescribeUserVipsByDomainRequest synchronously
+// DescribeUserVipsByDomain invokes the cdn.DescribeUserVipsByDomain API synchronously
 // api document: https://help.aliyun.com/api/cdn/describeuservipsbydomain.html
 func (client *Client) DescribeUserVipsByDomain(request *DescribeUserVipsByDomainRequest) (response *DescribeUserVipsByDomainResponse, err error) {
 	response = CreateDescribeUserVipsByDomainResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeUserVipsByDomain(request *DescribeUserVipsByDomain
 	return
 }
 
-// invoke DescribeUserVipsByDomain api with *DescribeUserVipsByDomainRequest asynchronously
+// DescribeUserVipsByDomainWithChan invokes the cdn.DescribeUserVipsByDomain API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describeuservipsbydomain.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUserVipsByDomainWithChan(request *DescribeUserVipsByDomainRequest) (<-chan *DescribeUserVipsByDomainResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeUserVipsByDomainWithChan(request *DescribeUserVips
 	return responseChan, errChan
 }
 
-// invoke DescribeUserVipsByDomain api with *DescribeUserVipsByDomainRequest asynchronously
+// DescribeUserVipsByDomainWithCallback invokes the cdn.DescribeUserVipsByDomain API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describeuservipsbydomain.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUserVipsByDomainWithCallback(request *DescribeUserVipsByDomainRequest, callback func(response *DescribeUserVipsByDomainResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeUserVipsByDomainWithCallback(request *DescribeUser
 	return result
 }
 
+// DescribeUserVipsByDomainRequest is the request struct for api DescribeUserVipsByDomain
 type DescribeUserVipsByDomainRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -81,6 +82,7 @@ type DescribeUserVipsByDomainRequest struct {
 	Available     string           `position:"Query" name:"Available"`
 }
 
+// DescribeUserVipsByDomainResponse is the response struct for api DescribeUserVipsByDomain
 type DescribeUserVipsByDomainResponse struct {
 	*responses.BaseResponse
 	RequestId  string                         `json:"RequestId" xml:"RequestId"`
@@ -88,8 +90,8 @@ type DescribeUserVipsByDomainResponse struct {
 	Vips       VipsInDescribeUserVipsByDomain `json:"Vips" xml:"Vips"`
 }
 
-// create a request to invoke DescribeUserVipsByDomain API
-func CreateDescribeUserVipsByDomainRequest() (request *DescribeUserVipsByDomainRequest) {
+// CreateDescribeUserVipsByDomainRequest creates a request to invoke DescribeUserVipsByDomain API
+func CreateDescribeUserVipsByDomainRequest(request *DescribeUserVipsByDomainRequest) {
 	request = &DescribeUserVipsByDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateDescribeUserVipsByDomainRequest() (request *DescribeUserVipsByDomainR
 	return
 }
 
-// create a response to parse from DescribeUserVipsByDomain response
+// CreateDescribeUserVipsByDomainResponse creates a response to parse from DescribeUserVipsByDomain response
 func CreateDescribeUserVipsByDomainResponse() (response *DescribeUserVipsByDomainResponse) {
 	response = &DescribeUserVipsByDomainResponse{
 		BaseResponse: &responses.BaseResponse{},

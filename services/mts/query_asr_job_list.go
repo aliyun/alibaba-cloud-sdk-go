@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke QueryAsrJobList api with *QueryAsrJobListRequest synchronously
+// QueryAsrJobList invokes the mts.QueryAsrJobList API synchronously
 // api document: https://help.aliyun.com/api/mts/queryasrjoblist.html
 func (client *Client) QueryAsrJobList(request *QueryAsrJobListRequest) (response *QueryAsrJobListResponse, err error) {
 	response = CreateQueryAsrJobListResponse()
@@ -28,7 +28,7 @@ func (client *Client) QueryAsrJobList(request *QueryAsrJobListRequest) (response
 	return
 }
 
-// invoke QueryAsrJobList api with *QueryAsrJobListRequest asynchronously
+// QueryAsrJobListWithChan invokes the mts.QueryAsrJobList API asynchronously
 // api document: https://help.aliyun.com/api/mts/queryasrjoblist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryAsrJobListWithChan(request *QueryAsrJobListRequest) (<-chan *QueryAsrJobListResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) QueryAsrJobListWithChan(request *QueryAsrJobListRequest) (
 	return responseChan, errChan
 }
 
-// invoke QueryAsrJobList api with *QueryAsrJobListRequest asynchronously
+// QueryAsrJobListWithCallback invokes the mts.QueryAsrJobList API asynchronously
 // api document: https://help.aliyun.com/api/mts/queryasrjoblist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryAsrJobListWithCallback(request *QueryAsrJobListRequest, callback func(response *QueryAsrJobListResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) QueryAsrJobListWithCallback(request *QueryAsrJobListReques
 	return result
 }
 
+// QueryAsrJobListRequest is the request struct for api QueryAsrJobList
 type QueryAsrJobListRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,6 +83,7 @@ type QueryAsrJobListRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// QueryAsrJobListResponse is the response struct for api QueryAsrJobList
 type QueryAsrJobListResponse struct {
 	*responses.BaseResponse
 	RequestId   string                       `json:"RequestId" xml:"RequestId"`
@@ -89,8 +91,8 @@ type QueryAsrJobListResponse struct {
 	JobList     JobListInQueryAsrJobList     `json:"JobList" xml:"JobList"`
 }
 
-// create a request to invoke QueryAsrJobList API
-func CreateQueryAsrJobListRequest() (request *QueryAsrJobListRequest) {
+// CreateQueryAsrJobListRequest creates a request to invoke QueryAsrJobList API
+func CreateQueryAsrJobListRequest(request *QueryAsrJobListRequest) {
 	request = &QueryAsrJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateQueryAsrJobListRequest() (request *QueryAsrJobListRequest) {
 	return
 }
 
-// create a response to parse from QueryAsrJobList response
+// CreateQueryAsrJobListResponse creates a response to parse from QueryAsrJobList response
 func CreateQueryAsrJobListResponse() (response *QueryAsrJobListResponse) {
 	response = &QueryAsrJobListResponse{
 		BaseResponse: &responses.BaseResponse{},

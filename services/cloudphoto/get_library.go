@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke GetLibrary api with *GetLibraryRequest synchronously
+// GetLibrary invokes the cloudphoto.GetLibrary API synchronously
 // api document: https://help.aliyun.com/api/cloudphoto/getlibrary.html
 func (client *Client) GetLibrary(request *GetLibraryRequest) (response *GetLibraryResponse, err error) {
 	response = CreateGetLibraryResponse()
@@ -28,7 +28,7 @@ func (client *Client) GetLibrary(request *GetLibraryRequest) (response *GetLibra
 	return
 }
 
-// invoke GetLibrary api with *GetLibraryRequest asynchronously
+// GetLibraryWithChan invokes the cloudphoto.GetLibrary API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/getlibrary.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetLibraryWithChan(request *GetLibraryRequest) (<-chan *GetLibraryResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) GetLibraryWithChan(request *GetLibraryRequest) (<-chan *Ge
 	return responseChan, errChan
 }
 
-// invoke GetLibrary api with *GetLibraryRequest asynchronously
+// GetLibraryWithCallback invokes the cloudphoto.GetLibrary API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/getlibrary.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetLibraryWithCallback(request *GetLibraryRequest, callback func(response *GetLibraryResponse, err error)) <-chan int {
@@ -73,12 +73,14 @@ func (client *Client) GetLibraryWithCallback(request *GetLibraryRequest, callbac
 	return result
 }
 
+// GetLibraryRequest is the request struct for api GetLibrary
 type GetLibraryRequest struct {
 	*requests.RpcRequest
 	StoreName string `position:"Query" name:"StoreName"`
 	LibraryId string `position:"Query" name:"LibraryId"`
 }
 
+// GetLibraryResponse is the response struct for api GetLibrary
 type GetLibraryResponse struct {
 	*responses.BaseResponse
 	Code      string  `json:"Code" xml:"Code"`
@@ -88,8 +90,8 @@ type GetLibraryResponse struct {
 	Library   Library `json:"Library" xml:"Library"`
 }
 
-// create a request to invoke GetLibrary API
-func CreateGetLibraryRequest() (request *GetLibraryRequest) {
+// CreateGetLibraryRequest creates a request to invoke GetLibrary API
+func CreateGetLibraryRequest(request *GetLibraryRequest) {
 	request = &GetLibraryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateGetLibraryRequest() (request *GetLibraryRequest) {
 	return
 }
 
-// create a response to parse from GetLibrary response
+// CreateGetLibraryResponse creates a response to parse from GetLibrary response
 func CreateGetLibraryResponse() (response *GetLibraryResponse) {
 	response = &GetLibraryResponse{
 		BaseResponse: &responses.BaseResponse{},

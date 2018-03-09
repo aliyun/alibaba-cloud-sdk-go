@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeDBInstanceByTags api with *DescribeDBInstanceByTagsRequest synchronously
+// DescribeDBInstanceByTags invokes the rds.DescribeDBInstanceByTags API synchronously
 // api document: https://help.aliyun.com/api/rds/describedbinstancebytags.html
 func (client *Client) DescribeDBInstanceByTags(request *DescribeDBInstanceByTagsRequest) (response *DescribeDBInstanceByTagsResponse, err error) {
 	response = CreateDescribeDBInstanceByTagsResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeDBInstanceByTags(request *DescribeDBInstanceByTags
 	return
 }
 
-// invoke DescribeDBInstanceByTags api with *DescribeDBInstanceByTagsRequest asynchronously
+// DescribeDBInstanceByTagsWithChan invokes the rds.DescribeDBInstanceByTags API asynchronously
 // api document: https://help.aliyun.com/api/rds/describedbinstancebytags.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBInstanceByTagsWithChan(request *DescribeDBInstanceByTagsRequest) (<-chan *DescribeDBInstanceByTagsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeDBInstanceByTagsWithChan(request *DescribeDBInstan
 	return responseChan, errChan
 }
 
-// invoke DescribeDBInstanceByTags api with *DescribeDBInstanceByTagsRequest asynchronously
+// DescribeDBInstanceByTagsWithCallback invokes the rds.DescribeDBInstanceByTags API asynchronously
 // api document: https://help.aliyun.com/api/rds/describedbinstancebytags.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBInstanceByTagsWithCallback(request *DescribeDBInstanceByTagsRequest, callback func(response *DescribeDBInstanceByTagsResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeDBInstanceByTagsWithCallback(request *DescribeDBIn
 	return result
 }
 
+// DescribeDBInstanceByTagsRequest is the request struct for api DescribeDBInstanceByTags
 type DescribeDBInstanceByTagsRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -86,6 +87,7 @@ type DescribeDBInstanceByTagsRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// DescribeDBInstanceByTagsResponse is the response struct for api DescribeDBInstanceByTags
 type DescribeDBInstanceByTagsResponse struct {
 	*responses.BaseResponse
 	RequestId        string                          `json:"RequestId" xml:"RequestId"`
@@ -95,8 +97,8 @@ type DescribeDBInstanceByTagsResponse struct {
 	Items            ItemsInDescribeDBInstanceByTags `json:"Items" xml:"Items"`
 }
 
-// create a request to invoke DescribeDBInstanceByTags API
-func CreateDescribeDBInstanceByTagsRequest() (request *DescribeDBInstanceByTagsRequest) {
+// CreateDescribeDBInstanceByTagsRequest creates a request to invoke DescribeDBInstanceByTags API
+func CreateDescribeDBInstanceByTagsRequest(request *DescribeDBInstanceByTagsRequest) {
 	request = &DescribeDBInstanceByTagsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -104,7 +106,7 @@ func CreateDescribeDBInstanceByTagsRequest() (request *DescribeDBInstanceByTagsR
 	return
 }
 
-// create a response to parse from DescribeDBInstanceByTags response
+// CreateDescribeDBInstanceByTagsResponse creates a response to parse from DescribeDBInstanceByTags response
 func CreateDescribeDBInstanceByTagsResponse() (response *DescribeDBInstanceByTagsResponse) {
 	response = &DescribeDBInstanceByTagsResponse{
 		BaseResponse: &responses.BaseResponse{},

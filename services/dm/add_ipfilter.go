@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke AddIpfilter api with *AddIpfilterRequest synchronously
+// AddIpfilter invokes the dm.AddIpfilter API synchronously
 // api document: https://help.aliyun.com/api/dm/addipfilter.html
 func (client *Client) AddIpfilter(request *AddIpfilterRequest) (response *AddIpfilterResponse, err error) {
 	response = CreateAddIpfilterResponse()
@@ -28,7 +28,7 @@ func (client *Client) AddIpfilter(request *AddIpfilterRequest) (response *AddIpf
 	return
 }
 
-// invoke AddIpfilter api with *AddIpfilterRequest asynchronously
+// AddIpfilterWithChan invokes the dm.AddIpfilter API asynchronously
 // api document: https://help.aliyun.com/api/dm/addipfilter.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddIpfilterWithChan(request *AddIpfilterRequest) (<-chan *AddIpfilterResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) AddIpfilterWithChan(request *AddIpfilterRequest) (<-chan *
 	return responseChan, errChan
 }
 
-// invoke AddIpfilter api with *AddIpfilterRequest asynchronously
+// AddIpfilterWithCallback invokes the dm.AddIpfilter API asynchronously
 // api document: https://help.aliyun.com/api/dm/addipfilter.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddIpfilterWithCallback(request *AddIpfilterRequest, callback func(response *AddIpfilterResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) AddIpfilterWithCallback(request *AddIpfilterRequest, callb
 	return result
 }
 
+// AddIpfilterRequest is the request struct for api AddIpfilter
 type AddIpfilterRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -81,13 +82,14 @@ type AddIpfilterRequest struct {
 	IpAddress            string           `position:"Query" name:"IpAddress"`
 }
 
+// AddIpfilterResponse is the response struct for api AddIpfilter
 type AddIpfilterResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke AddIpfilter API
-func CreateAddIpfilterRequest() (request *AddIpfilterRequest) {
+// CreateAddIpfilterRequest creates a request to invoke AddIpfilter API
+func CreateAddIpfilterRequest(request *AddIpfilterRequest) {
 	request = &AddIpfilterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateAddIpfilterRequest() (request *AddIpfilterRequest) {
 	return
 }
 
-// create a response to parse from AddIpfilter response
+// CreateAddIpfilterResponse creates a response to parse from AddIpfilter response
 func CreateAddIpfilterResponse() (response *AddIpfilterResponse) {
 	response = &AddIpfilterResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke GetPasswordPolicy api with *GetPasswordPolicyRequest synchronously
+// GetPasswordPolicy invokes the ram.GetPasswordPolicy API synchronously
 // api document: https://help.aliyun.com/api/ram/getpasswordpolicy.html
 func (client *Client) GetPasswordPolicy(request *GetPasswordPolicyRequest) (response *GetPasswordPolicyResponse, err error) {
 	response = CreateGetPasswordPolicyResponse()
@@ -28,7 +28,7 @@ func (client *Client) GetPasswordPolicy(request *GetPasswordPolicyRequest) (resp
 	return
 }
 
-// invoke GetPasswordPolicy api with *GetPasswordPolicyRequest asynchronously
+// GetPasswordPolicyWithChan invokes the ram.GetPasswordPolicy API asynchronously
 // api document: https://help.aliyun.com/api/ram/getpasswordpolicy.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetPasswordPolicyWithChan(request *GetPasswordPolicyRequest) (<-chan *GetPasswordPolicyResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) GetPasswordPolicyWithChan(request *GetPasswordPolicyReques
 	return responseChan, errChan
 }
 
-// invoke GetPasswordPolicy api with *GetPasswordPolicyRequest asynchronously
+// GetPasswordPolicyWithCallback invokes the ram.GetPasswordPolicy API asynchronously
 // api document: https://help.aliyun.com/api/ram/getpasswordpolicy.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetPasswordPolicyWithCallback(request *GetPasswordPolicyRequest, callback func(response *GetPasswordPolicyResponse, err error)) <-chan int {
@@ -73,18 +73,20 @@ func (client *Client) GetPasswordPolicyWithCallback(request *GetPasswordPolicyRe
 	return result
 }
 
+// GetPasswordPolicyRequest is the request struct for api GetPasswordPolicy
 type GetPasswordPolicyRequest struct {
 	*requests.RpcRequest
 }
 
+// GetPasswordPolicyResponse is the response struct for api GetPasswordPolicy
 type GetPasswordPolicyResponse struct {
 	*responses.BaseResponse
 	RequestId      string         `json:"RequestId" xml:"RequestId"`
 	PasswordPolicy PasswordPolicy `json:"PasswordPolicy" xml:"PasswordPolicy"`
 }
 
-// create a request to invoke GetPasswordPolicy API
-func CreateGetPasswordPolicyRequest() (request *GetPasswordPolicyRequest) {
+// CreateGetPasswordPolicyRequest creates a request to invoke GetPasswordPolicy API
+func CreateGetPasswordPolicyRequest(request *GetPasswordPolicyRequest) {
 	request = &GetPasswordPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -92,7 +94,7 @@ func CreateGetPasswordPolicyRequest() (request *GetPasswordPolicyRequest) {
 	return
 }
 
-// create a response to parse from GetPasswordPolicy response
+// CreateGetPasswordPolicyResponse creates a response to parse from GetPasswordPolicy response
 func CreateGetPasswordPolicyResponse() (response *GetPasswordPolicyResponse) {
 	response = &GetPasswordPolicyResponse{
 		BaseResponse: &responses.BaseResponse{},

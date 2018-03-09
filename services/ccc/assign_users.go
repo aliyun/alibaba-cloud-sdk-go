@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke AssignUsers api with *AssignUsersRequest synchronously
+// AssignUsers invokes the ccc.AssignUsers API synchronously
 // api document: https://help.aliyun.com/api/ccc/assignusers.html
 func (client *Client) AssignUsers(request *AssignUsersRequest) (response *AssignUsersResponse, err error) {
 	response = CreateAssignUsersResponse()
@@ -28,7 +28,7 @@ func (client *Client) AssignUsers(request *AssignUsersRequest) (response *Assign
 	return
 }
 
-// invoke AssignUsers api with *AssignUsersRequest asynchronously
+// AssignUsersWithChan invokes the ccc.AssignUsers API asynchronously
 // api document: https://help.aliyun.com/api/ccc/assignusers.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AssignUsersWithChan(request *AssignUsersRequest) (<-chan *AssignUsersResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) AssignUsersWithChan(request *AssignUsersRequest) (<-chan *
 	return responseChan, errChan
 }
 
-// invoke AssignUsers api with *AssignUsersRequest asynchronously
+// AssignUsersWithCallback invokes the ccc.AssignUsers API asynchronously
 // api document: https://help.aliyun.com/api/ccc/assignusers.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AssignUsersWithCallback(request *AssignUsersRequest, callback func(response *AssignUsersResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) AssignUsersWithCallback(request *AssignUsersRequest, callb
 	return result
 }
 
+// AssignUsersRequest is the request struct for api AssignUsers
 type AssignUsersRequest struct {
 	*requests.RpcRequest
 	InstanceId   string    `position:"Query" name:"InstanceId"`
@@ -82,6 +83,7 @@ type AssignUsersRequest struct {
 	SkillLevel   *[]string `position:"Query" name:"SkillLevel"  type:"Repeated"`
 }
 
+// AssignUsersResponse is the response struct for api AssignUsers
 type AssignUsersResponse struct {
 	*responses.BaseResponse
 	RequestId      string `json:"RequestId" xml:"RequestId"`
@@ -91,8 +93,8 @@ type AssignUsersResponse struct {
 	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 }
 
-// create a request to invoke AssignUsers API
-func CreateAssignUsersRequest() (request *AssignUsersRequest) {
+// CreateAssignUsersRequest creates a request to invoke AssignUsers API
+func CreateAssignUsersRequest(request *AssignUsersRequest) {
 	request = &AssignUsersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -100,7 +102,7 @@ func CreateAssignUsersRequest() (request *AssignUsersRequest) {
 	return
 }
 
-// create a response to parse from AssignUsers response
+// CreateAssignUsersResponse creates a response to parse from AssignUsers response
 func CreateAssignUsersResponse() (response *AssignUsersResponse) {
 	response = &AssignUsersResponse{
 		BaseResponse: &responses.BaseResponse{},

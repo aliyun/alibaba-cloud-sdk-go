@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeServiceContainers api with *DescribeServiceContainersRequest synchronously
+// DescribeServiceContainers invokes the cs.DescribeServiceContainers API synchronously
 // api document: https://help.aliyun.com/api/cs/describeservicecontainers.html
 func (client *Client) DescribeServiceContainers(request *DescribeServiceContainersRequest) (response *DescribeServiceContainersResponse, err error) {
 	response = CreateDescribeServiceContainersResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeServiceContainers(request *DescribeServiceContaine
 	return
 }
 
-// invoke DescribeServiceContainers api with *DescribeServiceContainersRequest asynchronously
+// DescribeServiceContainersWithChan invokes the cs.DescribeServiceContainers API asynchronously
 // api document: https://help.aliyun.com/api/cs/describeservicecontainers.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeServiceContainersWithChan(request *DescribeServiceContainersRequest) (<-chan *DescribeServiceContainersResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeServiceContainersWithChan(request *DescribeService
 	return responseChan, errChan
 }
 
-// invoke DescribeServiceContainers api with *DescribeServiceContainersRequest asynchronously
+// DescribeServiceContainersWithCallback invokes the cs.DescribeServiceContainers API asynchronously
 // api document: https://help.aliyun.com/api/cs/describeservicecontainers.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeServiceContainersWithCallback(request *DescribeServiceContainersRequest, callback func(response *DescribeServiceContainersResponse, err error)) <-chan int {
@@ -73,18 +73,20 @@ func (client *Client) DescribeServiceContainersWithCallback(request *DescribeSer
 	return result
 }
 
+// DescribeServiceContainersRequest is the request struct for api DescribeServiceContainers
 type DescribeServiceContainersRequest struct {
 	*requests.RoaRequest
 	ClusterId string `position:"Path" name:"ClusterId"`
 	ServiceId string `position:"Path" name:"ServiceId"`
 }
 
+// DescribeServiceContainersResponse is the response struct for api DescribeServiceContainers
 type DescribeServiceContainersResponse struct {
 	*responses.BaseResponse
 }
 
-// create a request to invoke DescribeServiceContainers API
-func CreateDescribeServiceContainersRequest() (request *DescribeServiceContainersRequest) {
+// CreateDescribeServiceContainersRequest creates a request to invoke DescribeServiceContainers API
+func CreateDescribeServiceContainersRequest(request *DescribeServiceContainersRequest) {
 	request = &DescribeServiceContainersRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
@@ -93,7 +95,7 @@ func CreateDescribeServiceContainersRequest() (request *DescribeServiceContainer
 	return
 }
 
-// create a response to parse from DescribeServiceContainers response
+// CreateDescribeServiceContainersResponse creates a response to parse from DescribeServiceContainers response
 func CreateDescribeServiceContainersResponse() (response *DescribeServiceContainersResponse) {
 	response = &DescribeServiceContainersResponse{
 		BaseResponse: &responses.BaseResponse{},

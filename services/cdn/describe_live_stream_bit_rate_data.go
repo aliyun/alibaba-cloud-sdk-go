@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeLiveStreamBitRateData api with *DescribeLiveStreamBitRateDataRequest synchronously
+// DescribeLiveStreamBitRateData invokes the cdn.DescribeLiveStreamBitRateData API synchronously
 // api document: https://help.aliyun.com/api/cdn/describelivestreambitratedata.html
 func (client *Client) DescribeLiveStreamBitRateData(request *DescribeLiveStreamBitRateDataRequest) (response *DescribeLiveStreamBitRateDataResponse, err error) {
 	response = CreateDescribeLiveStreamBitRateDataResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeLiveStreamBitRateData(request *DescribeLiveStreamB
 	return
 }
 
-// invoke DescribeLiveStreamBitRateData api with *DescribeLiveStreamBitRateDataRequest asynchronously
+// DescribeLiveStreamBitRateDataWithChan invokes the cdn.DescribeLiveStreamBitRateData API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describelivestreambitratedata.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamBitRateDataWithChan(request *DescribeLiveStreamBitRateDataRequest) (<-chan *DescribeLiveStreamBitRateDataResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeLiveStreamBitRateDataWithChan(request *DescribeLiv
 	return responseChan, errChan
 }
 
-// invoke DescribeLiveStreamBitRateData api with *DescribeLiveStreamBitRateDataRequest asynchronously
+// DescribeLiveStreamBitRateDataWithCallback invokes the cdn.DescribeLiveStreamBitRateData API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describelivestreambitratedata.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamBitRateDataWithCallback(request *DescribeLiveStreamBitRateDataRequest, callback func(response *DescribeLiveStreamBitRateDataResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeLiveStreamBitRateDataWithCallback(request *Describ
 	return result
 }
 
+// DescribeLiveStreamBitRateDataRequest is the request struct for api DescribeLiveStreamBitRateData
 type DescribeLiveStreamBitRateDataRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,14 +85,15 @@ type DescribeLiveStreamBitRateDataRequest struct {
 	EndTime       string           `position:"Query" name:"EndTime"`
 }
 
+// DescribeLiveStreamBitRateDataResponse is the response struct for api DescribeLiveStreamBitRateData
 type DescribeLiveStreamBitRateDataResponse struct {
 	*responses.BaseResponse
 	RequestId                string                                                  `json:"RequestId" xml:"RequestId"`
 	FrameRateAndBitRateInfos FrameRateAndBitRateInfosInDescribeLiveStreamBitRateData `json:"FrameRateAndBitRateInfos" xml:"FrameRateAndBitRateInfos"`
 }
 
-// create a request to invoke DescribeLiveStreamBitRateData API
-func CreateDescribeLiveStreamBitRateDataRequest() (request *DescribeLiveStreamBitRateDataRequest) {
+// CreateDescribeLiveStreamBitRateDataRequest creates a request to invoke DescribeLiveStreamBitRateData API
+func CreateDescribeLiveStreamBitRateDataRequest(request *DescribeLiveStreamBitRateDataRequest) {
 	request = &DescribeLiveStreamBitRateDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateDescribeLiveStreamBitRateDataRequest() (request *DescribeLiveStreamBi
 	return
 }
 
-// create a response to parse from DescribeLiveStreamBitRateData response
+// CreateDescribeLiveStreamBitRateDataResponse creates a response to parse from DescribeLiveStreamBitRateData response
 func CreateDescribeLiveStreamBitRateDataResponse() (response *DescribeLiveStreamBitRateDataResponse) {
 	response = &DescribeLiveStreamBitRateDataResponse{
 		BaseResponse: &responses.BaseResponse{},

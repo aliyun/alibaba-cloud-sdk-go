@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteSkillGroup api with *DeleteSkillGroupRequest synchronously
+// DeleteSkillGroup invokes the ccc.DeleteSkillGroup API synchronously
 // api document: https://help.aliyun.com/api/ccc/deleteskillgroup.html
 func (client *Client) DeleteSkillGroup(request *DeleteSkillGroupRequest) (response *DeleteSkillGroupResponse, err error) {
 	response = CreateDeleteSkillGroupResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteSkillGroup(request *DeleteSkillGroupRequest) (respon
 	return
 }
 
-// invoke DeleteSkillGroup api with *DeleteSkillGroupRequest asynchronously
+// DeleteSkillGroupWithChan invokes the ccc.DeleteSkillGroup API asynchronously
 // api document: https://help.aliyun.com/api/ccc/deleteskillgroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteSkillGroupWithChan(request *DeleteSkillGroupRequest) (<-chan *DeleteSkillGroupResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteSkillGroupWithChan(request *DeleteSkillGroupRequest)
 	return responseChan, errChan
 }
 
-// invoke DeleteSkillGroup api with *DeleteSkillGroupRequest asynchronously
+// DeleteSkillGroupWithCallback invokes the ccc.DeleteSkillGroup API asynchronously
 // api document: https://help.aliyun.com/api/ccc/deleteskillgroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteSkillGroupWithCallback(request *DeleteSkillGroupRequest, callback func(response *DeleteSkillGroupResponse, err error)) <-chan int {
@@ -73,12 +73,14 @@ func (client *Client) DeleteSkillGroupWithCallback(request *DeleteSkillGroupRequ
 	return result
 }
 
+// DeleteSkillGroupRequest is the request struct for api DeleteSkillGroup
 type DeleteSkillGroupRequest struct {
 	*requests.RpcRequest
 	InstanceId   string `position:"Query" name:"InstanceId"`
 	SkillGroupId string `position:"Query" name:"SkillGroupId"`
 }
 
+// DeleteSkillGroupResponse is the response struct for api DeleteSkillGroup
 type DeleteSkillGroupResponse struct {
 	*responses.BaseResponse
 	RequestId      string `json:"RequestId" xml:"RequestId"`
@@ -88,8 +90,8 @@ type DeleteSkillGroupResponse struct {
 	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 }
 
-// create a request to invoke DeleteSkillGroup API
-func CreateDeleteSkillGroupRequest() (request *DeleteSkillGroupRequest) {
+// CreateDeleteSkillGroupRequest creates a request to invoke DeleteSkillGroup API
+func CreateDeleteSkillGroupRequest(request *DeleteSkillGroupRequest) {
 	request = &DeleteSkillGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateDeleteSkillGroupRequest() (request *DeleteSkillGroupRequest) {
 	return
 }
 
-// create a response to parse from DeleteSkillGroup response
+// CreateDeleteSkillGroupResponse creates a response to parse from DeleteSkillGroup response
 func CreateDeleteSkillGroupResponse() (response *DeleteSkillGroupResponse) {
 	response = &DeleteSkillGroupResponse{
 		BaseResponse: &responses.BaseResponse{},

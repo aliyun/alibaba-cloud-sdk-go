@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CheckDomain api with *CheckDomainRequest synchronously
+// CheckDomain invokes the domain_intl.CheckDomain API synchronously
 // api document: https://help.aliyun.com/api/domain-intl/checkdomain.html
 func (client *Client) CheckDomain(request *CheckDomainRequest) (response *CheckDomainResponse, err error) {
 	response = CreateCheckDomainResponse()
@@ -28,7 +28,7 @@ func (client *Client) CheckDomain(request *CheckDomainRequest) (response *CheckD
 	return
 }
 
-// invoke CheckDomain api with *CheckDomainRequest asynchronously
+// CheckDomainWithChan invokes the domain_intl.CheckDomain API asynchronously
 // api document: https://help.aliyun.com/api/domain-intl/checkdomain.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckDomainWithChan(request *CheckDomainRequest) (<-chan *CheckDomainResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CheckDomainWithChan(request *CheckDomainRequest) (<-chan *
 	return responseChan, errChan
 }
 
-// invoke CheckDomain api with *CheckDomainRequest asynchronously
+// CheckDomainWithCallback invokes the domain_intl.CheckDomain API asynchronously
 // api document: https://help.aliyun.com/api/domain-intl/checkdomain.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckDomainWithCallback(request *CheckDomainRequest, callback func(response *CheckDomainResponse, err error)) <-chan int {
@@ -73,11 +73,13 @@ func (client *Client) CheckDomainWithCallback(request *CheckDomainRequest, callb
 	return result
 }
 
+// CheckDomainRequest is the request struct for api CheckDomain
 type CheckDomainRequest struct {
 	*requests.RpcRequest
 	DomainName string `position:"Query" name:"DomainName"`
 }
 
+// CheckDomainResponse is the response struct for api CheckDomain
 type CheckDomainResponse struct {
 	*responses.BaseResponse
 	RequestId  string `json:"RequestId" xml:"RequestId"`
@@ -86,8 +88,8 @@ type CheckDomainResponse struct {
 	Premium    string `json:"Premium" xml:"Premium"`
 }
 
-// create a request to invoke CheckDomain API
-func CreateCheckDomainRequest() (request *CheckDomainRequest) {
+// CreateCheckDomainRequest creates a request to invoke CheckDomain API
+func CreateCheckDomainRequest(request *CheckDomainRequest) {
 	request = &CheckDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateCheckDomainRequest() (request *CheckDomainRequest) {
 	return
 }
 
-// create a response to parse from CheckDomain response
+// CreateCheckDomainResponse creates a response to parse from CheckDomain response
 func CreateCheckDomainResponse() (response *CheckDomainResponse) {
 	response = &CheckDomainResponse{
 		BaseResponse: &responses.BaseResponse{},

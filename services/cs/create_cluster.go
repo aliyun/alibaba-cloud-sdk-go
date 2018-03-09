@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CreateCluster api with *CreateClusterRequest synchronously
+// CreateCluster invokes the cs.CreateCluster API synchronously
 // api document: https://help.aliyun.com/api/cs/createcluster.html
 func (client *Client) CreateCluster(request *CreateClusterRequest) (response *CreateClusterResponse, err error) {
 	response = CreateCreateClusterResponse()
@@ -28,7 +28,7 @@ func (client *Client) CreateCluster(request *CreateClusterRequest) (response *Cr
 	return
 }
 
-// invoke CreateCluster api with *CreateClusterRequest asynchronously
+// CreateClusterWithChan invokes the cs.CreateCluster API asynchronously
 // api document: https://help.aliyun.com/api/cs/createcluster.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateClusterWithChan(request *CreateClusterRequest) (<-chan *CreateClusterResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CreateClusterWithChan(request *CreateClusterRequest) (<-ch
 	return responseChan, errChan
 }
 
-// invoke CreateCluster api with *CreateClusterRequest asynchronously
+// CreateClusterWithCallback invokes the cs.CreateCluster API asynchronously
 // api document: https://help.aliyun.com/api/cs/createcluster.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateClusterWithCallback(request *CreateClusterRequest, callback func(response *CreateClusterResponse, err error)) <-chan int {
@@ -73,16 +73,18 @@ func (client *Client) CreateClusterWithCallback(request *CreateClusterRequest, c
 	return result
 }
 
+// CreateClusterRequest is the request struct for api CreateCluster
 type CreateClusterRequest struct {
 	*requests.RoaRequest
 }
 
+// CreateClusterResponse is the response struct for api CreateCluster
 type CreateClusterResponse struct {
 	*responses.BaseResponse
 }
 
-// create a request to invoke CreateCluster API
-func CreateCreateClusterRequest() (request *CreateClusterRequest) {
+// CreateCreateClusterRequest creates a request to invoke CreateCluster API
+func CreateCreateClusterRequest(request *CreateClusterRequest) {
 	request = &CreateClusterRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
@@ -91,7 +93,7 @@ func CreateCreateClusterRequest() (request *CreateClusterRequest) {
 	return
 }
 
-// create a response to parse from CreateCluster response
+// CreateCreateClusterResponse creates a response to parse from CreateCluster response
 func CreateCreateClusterResponse() (response *CreateClusterResponse) {
 	response = &CreateClusterResponse{
 		BaseResponse: &responses.BaseResponse{},

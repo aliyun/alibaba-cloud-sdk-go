@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifyAccessRule api with *ModifyAccessRuleRequest synchronously
+// ModifyAccessRule invokes the nas.ModifyAccessRule API synchronously
 // api document: https://help.aliyun.com/api/nas/modifyaccessrule.html
 func (client *Client) ModifyAccessRule(request *ModifyAccessRuleRequest) (response *ModifyAccessRuleResponse, err error) {
 	response = CreateModifyAccessRuleResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifyAccessRule(request *ModifyAccessRuleRequest) (respon
 	return
 }
 
-// invoke ModifyAccessRule api with *ModifyAccessRuleRequest asynchronously
+// ModifyAccessRuleWithChan invokes the nas.ModifyAccessRule API asynchronously
 // api document: https://help.aliyun.com/api/nas/modifyaccessrule.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyAccessRuleWithChan(request *ModifyAccessRuleRequest) (<-chan *ModifyAccessRuleResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifyAccessRuleWithChan(request *ModifyAccessRuleRequest)
 	return responseChan, errChan
 }
 
-// invoke ModifyAccessRule api with *ModifyAccessRuleRequest asynchronously
+// ModifyAccessRuleWithCallback invokes the nas.ModifyAccessRule API asynchronously
 // api document: https://help.aliyun.com/api/nas/modifyaccessrule.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyAccessRuleWithCallback(request *ModifyAccessRuleRequest, callback func(response *ModifyAccessRuleResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ModifyAccessRuleWithCallback(request *ModifyAccessRuleRequ
 	return result
 }
 
+// ModifyAccessRuleRequest is the request struct for api ModifyAccessRule
 type ModifyAccessRuleRequest struct {
 	*requests.RpcRequest
 	AccessGroupName string           `position:"Query" name:"AccessGroupName"`
@@ -83,13 +84,14 @@ type ModifyAccessRuleRequest struct {
 	Priority        requests.Integer `position:"Query" name:"Priority"`
 }
 
+// ModifyAccessRuleResponse is the response struct for api ModifyAccessRule
 type ModifyAccessRuleResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ModifyAccessRule API
-func CreateModifyAccessRuleRequest() (request *ModifyAccessRuleRequest) {
+// CreateModifyAccessRuleRequest creates a request to invoke ModifyAccessRule API
+func CreateModifyAccessRuleRequest(request *ModifyAccessRuleRequest) {
 	request = &ModifyAccessRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateModifyAccessRuleRequest() (request *ModifyAccessRuleRequest) {
 	return
 }
 
-// create a response to parse from ModifyAccessRule response
+// CreateModifyAccessRuleResponse creates a response to parse from ModifyAccessRule response
 func CreateModifyAccessRuleResponse() (response *ModifyAccessRuleResponse) {
 	response = &ModifyAccessRuleResponse{
 		BaseResponse: &responses.BaseResponse{},

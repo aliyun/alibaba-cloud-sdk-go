@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CreateFileSystem api with *CreateFileSystemRequest synchronously
+// CreateFileSystem invokes the nas.CreateFileSystem API synchronously
 // api document: https://help.aliyun.com/api/nas/createfilesystem.html
 func (client *Client) CreateFileSystem(request *CreateFileSystemRequest) (response *CreateFileSystemResponse, err error) {
 	response = CreateCreateFileSystemResponse()
@@ -28,7 +28,7 @@ func (client *Client) CreateFileSystem(request *CreateFileSystemRequest) (respon
 	return
 }
 
-// invoke CreateFileSystem api with *CreateFileSystemRequest asynchronously
+// CreateFileSystemWithChan invokes the nas.CreateFileSystem API asynchronously
 // api document: https://help.aliyun.com/api/nas/createfilesystem.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateFileSystemWithChan(request *CreateFileSystemRequest) (<-chan *CreateFileSystemResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CreateFileSystemWithChan(request *CreateFileSystemRequest)
 	return responseChan, errChan
 }
 
-// invoke CreateFileSystem api with *CreateFileSystemRequest asynchronously
+// CreateFileSystemWithCallback invokes the nas.CreateFileSystem API asynchronously
 // api document: https://help.aliyun.com/api/nas/createfilesystem.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateFileSystemWithCallback(request *CreateFileSystemRequest, callback func(response *CreateFileSystemResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) CreateFileSystemWithCallback(request *CreateFileSystemRequ
 	return result
 }
 
+// CreateFileSystemRequest is the request struct for api CreateFileSystem
 type CreateFileSystemRequest struct {
 	*requests.RpcRequest
 	StorageType  string `position:"Query" name:"StorageType"`
@@ -80,14 +81,15 @@ type CreateFileSystemRequest struct {
 	Description  string `position:"Query" name:"Description"`
 }
 
+// CreateFileSystemResponse is the response struct for api CreateFileSystem
 type CreateFileSystemResponse struct {
 	*responses.BaseResponse
 	RequestId    string `json:"RequestId" xml:"RequestId"`
 	FileSystemId string `json:"FileSystemId" xml:"FileSystemId"`
 }
 
-// create a request to invoke CreateFileSystem API
-func CreateCreateFileSystemRequest() (request *CreateFileSystemRequest) {
+// CreateCreateFileSystemRequest creates a request to invoke CreateFileSystem API
+func CreateCreateFileSystemRequest(request *CreateFileSystemRequest) {
 	request = &CreateFileSystemRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateCreateFileSystemRequest() (request *CreateFileSystemRequest) {
 	return
 }
 
-// create a response to parse from CreateFileSystem response
+// CreateCreateFileSystemResponse creates a response to parse from CreateFileSystem response
 func CreateCreateFileSystemResponse() (response *CreateFileSystemResponse) {
 	response = &CreateFileSystemResponse{
 		BaseResponse: &responses.BaseResponse{},

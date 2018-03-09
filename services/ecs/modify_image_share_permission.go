@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifyImageSharePermission api with *ModifyImageSharePermissionRequest synchronously
+// ModifyImageSharePermission invokes the ecs.ModifyImageSharePermission API synchronously
 // api document: https://help.aliyun.com/api/ecs/modifyimagesharepermission.html
 func (client *Client) ModifyImageSharePermission(request *ModifyImageSharePermissionRequest) (response *ModifyImageSharePermissionResponse, err error) {
 	response = CreateModifyImageSharePermissionResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifyImageSharePermission(request *ModifyImageSharePermis
 	return
 }
 
-// invoke ModifyImageSharePermission api with *ModifyImageSharePermissionRequest asynchronously
+// ModifyImageSharePermissionWithChan invokes the ecs.ModifyImageSharePermission API asynchronously
 // api document: https://help.aliyun.com/api/ecs/modifyimagesharepermission.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyImageSharePermissionWithChan(request *ModifyImageSharePermissionRequest) (<-chan *ModifyImageSharePermissionResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifyImageSharePermissionWithChan(request *ModifyImageSha
 	return responseChan, errChan
 }
 
-// invoke ModifyImageSharePermission api with *ModifyImageSharePermissionRequest asynchronously
+// ModifyImageSharePermissionWithCallback invokes the ecs.ModifyImageSharePermission API asynchronously
 // api document: https://help.aliyun.com/api/ecs/modifyimagesharepermission.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyImageSharePermissionWithCallback(request *ModifyImageSharePermissionRequest, callback func(response *ModifyImageSharePermissionResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ModifyImageSharePermissionWithCallback(request *ModifyImag
 	return result
 }
 
+// ModifyImageSharePermissionRequest is the request struct for api ModifyImageSharePermission
 type ModifyImageSharePermissionRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -102,13 +103,14 @@ type ModifyImageSharePermissionRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// ModifyImageSharePermissionResponse is the response struct for api ModifyImageSharePermission
 type ModifyImageSharePermissionResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ModifyImageSharePermission API
-func CreateModifyImageSharePermissionRequest() (request *ModifyImageSharePermissionRequest) {
+// CreateModifyImageSharePermissionRequest creates a request to invoke ModifyImageSharePermission API
+func CreateModifyImageSharePermissionRequest(request *ModifyImageSharePermissionRequest) {
 	request = &ModifyImageSharePermissionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -116,7 +118,7 @@ func CreateModifyImageSharePermissionRequest() (request *ModifyImageSharePermiss
 	return
 }
 
-// create a response to parse from ModifyImageSharePermission response
+// CreateModifyImageSharePermissionResponse creates a response to parse from ModifyImageSharePermission response
 func CreateModifyImageSharePermissionResponse() (response *ModifyImageSharePermissionResponse) {
 	response = &ModifyImageSharePermissionResponse{
 		BaseResponse: &responses.BaseResponse{},

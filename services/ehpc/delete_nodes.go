@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteNodes api with *DeleteNodesRequest synchronously
+// DeleteNodes invokes the ehpc.DeleteNodes API synchronously
 // api document: https://help.aliyun.com/api/ehpc/deletenodes.html
 func (client *Client) DeleteNodes(request *DeleteNodesRequest) (response *DeleteNodesResponse, err error) {
 	response = CreateDeleteNodesResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteNodes(request *DeleteNodesRequest) (response *Delete
 	return
 }
 
-// invoke DeleteNodes api with *DeleteNodesRequest asynchronously
+// DeleteNodesWithChan invokes the ehpc.DeleteNodes API asynchronously
 // api document: https://help.aliyun.com/api/ehpc/deletenodes.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteNodesWithChan(request *DeleteNodesRequest) (<-chan *DeleteNodesResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteNodesWithChan(request *DeleteNodesRequest) (<-chan *
 	return responseChan, errChan
 }
 
-// invoke DeleteNodes api with *DeleteNodesRequest asynchronously
+// DeleteNodesWithCallback invokes the ehpc.DeleteNodes API asynchronously
 // api document: https://help.aliyun.com/api/ehpc/deletenodes.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteNodesWithCallback(request *DeleteNodesRequest, callback func(response *DeleteNodesResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DeleteNodesWithCallback(request *DeleteNodesRequest, callb
 	return result
 }
 
+// DeleteNodesRequest is the request struct for api DeleteNodes
 type DeleteNodesRequest struct {
 	*requests.RpcRequest
 	ClusterId       string                 `position:"Query" name:"ClusterId"`
@@ -80,17 +81,19 @@ type DeleteNodesRequest struct {
 	ReleaseInstance requests.Boolean       `position:"Query" name:"ReleaseInstance"`
 }
 
+// DeleteNodesInstance is a repeated param struct in DeleteNodesRequest
 type DeleteNodesInstance struct {
 	Id string `name:"Id"`
 }
 
+// DeleteNodesResponse is the response struct for api DeleteNodes
 type DeleteNodesResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DeleteNodes API
-func CreateDeleteNodesRequest() (request *DeleteNodesRequest) {
+// CreateDeleteNodesRequest creates a request to invoke DeleteNodes API
+func CreateDeleteNodesRequest(request *DeleteNodesRequest) {
 	request = &DeleteNodesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +101,7 @@ func CreateDeleteNodesRequest() (request *DeleteNodesRequest) {
 	return
 }
 
-// create a response to parse from DeleteNodes response
+// CreateDeleteNodesResponse creates a response to parse from DeleteNodes response
 func CreateDeleteNodesResponse() (response *DeleteNodesResponse) {
 	response = &DeleteNodesResponse{
 		BaseResponse: &responses.BaseResponse{},

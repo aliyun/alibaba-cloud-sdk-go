@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CreateTempDBInstance api with *CreateTempDBInstanceRequest synchronously
+// CreateTempDBInstance invokes the rds.CreateTempDBInstance API synchronously
 // api document: https://help.aliyun.com/api/rds/createtempdbinstance.html
 func (client *Client) CreateTempDBInstance(request *CreateTempDBInstanceRequest) (response *CreateTempDBInstanceResponse, err error) {
 	response = CreateCreateTempDBInstanceResponse()
@@ -28,7 +28,7 @@ func (client *Client) CreateTempDBInstance(request *CreateTempDBInstanceRequest)
 	return
 }
 
-// invoke CreateTempDBInstance api with *CreateTempDBInstanceRequest asynchronously
+// CreateTempDBInstanceWithChan invokes the rds.CreateTempDBInstance API asynchronously
 // api document: https://help.aliyun.com/api/rds/createtempdbinstance.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateTempDBInstanceWithChan(request *CreateTempDBInstanceRequest) (<-chan *CreateTempDBInstanceResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CreateTempDBInstanceWithChan(request *CreateTempDBInstance
 	return responseChan, errChan
 }
 
-// invoke CreateTempDBInstance api with *CreateTempDBInstanceRequest asynchronously
+// CreateTempDBInstanceWithCallback invokes the rds.CreateTempDBInstance API asynchronously
 // api document: https://help.aliyun.com/api/rds/createtempdbinstance.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateTempDBInstanceWithCallback(request *CreateTempDBInstanceRequest, callback func(response *CreateTempDBInstanceResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) CreateTempDBInstanceWithCallback(request *CreateTempDBInst
 	return result
 }
 
+// CreateTempDBInstanceRequest is the request struct for api CreateTempDBInstance
 type CreateTempDBInstanceRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,14 +85,15 @@ type CreateTempDBInstanceRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// CreateTempDBInstanceResponse is the response struct for api CreateTempDBInstance
 type CreateTempDBInstanceResponse struct {
 	*responses.BaseResponse
 	RequestId        string `json:"RequestId" xml:"RequestId"`
 	TempDBInstanceId string `json:"TempDBInstanceId" xml:"TempDBInstanceId"`
 }
 
-// create a request to invoke CreateTempDBInstance API
-func CreateCreateTempDBInstanceRequest() (request *CreateTempDBInstanceRequest) {
+// CreateCreateTempDBInstanceRequest creates a request to invoke CreateTempDBInstance API
+func CreateCreateTempDBInstanceRequest(request *CreateTempDBInstanceRequest) {
 	request = &CreateTempDBInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateCreateTempDBInstanceRequest() (request *CreateTempDBInstanceRequest) 
 	return
 }
 
-// create a response to parse from CreateTempDBInstance response
+// CreateCreateTempDBInstanceResponse creates a response to parse from CreateTempDBInstance response
 func CreateCreateTempDBInstanceResponse() (response *CreateTempDBInstanceResponse) {
 	response = &CreateTempDBInstanceResponse{
 		BaseResponse: &responses.BaseResponse{},

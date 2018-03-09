@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeLiveStreamLimitInfo api with *DescribeLiveStreamLimitInfoRequest synchronously
+// DescribeLiveStreamLimitInfo invokes the cdn.DescribeLiveStreamLimitInfo API synchronously
 // api document: https://help.aliyun.com/api/cdn/describelivestreamlimitinfo.html
 func (client *Client) DescribeLiveStreamLimitInfo(request *DescribeLiveStreamLimitInfoRequest) (response *DescribeLiveStreamLimitInfoResponse, err error) {
 	response = CreateDescribeLiveStreamLimitInfoResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeLiveStreamLimitInfo(request *DescribeLiveStreamLim
 	return
 }
 
-// invoke DescribeLiveStreamLimitInfo api with *DescribeLiveStreamLimitInfoRequest asynchronously
+// DescribeLiveStreamLimitInfoWithChan invokes the cdn.DescribeLiveStreamLimitInfo API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describelivestreamlimitinfo.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamLimitInfoWithChan(request *DescribeLiveStreamLimitInfoRequest) (<-chan *DescribeLiveStreamLimitInfoResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeLiveStreamLimitInfoWithChan(request *DescribeLiveS
 	return responseChan, errChan
 }
 
-// invoke DescribeLiveStreamLimitInfo api with *DescribeLiveStreamLimitInfoRequest asynchronously
+// DescribeLiveStreamLimitInfoWithCallback invokes the cdn.DescribeLiveStreamLimitInfo API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describelivestreamlimitinfo.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamLimitInfoWithCallback(request *DescribeLiveStreamLimitInfoRequest, callback func(response *DescribeLiveStreamLimitInfoResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeLiveStreamLimitInfoWithCallback(request *DescribeL
 	return result
 }
 
+// DescribeLiveStreamLimitInfoRequest is the request struct for api DescribeLiveStreamLimitInfo
 type DescribeLiveStreamLimitInfoRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -80,14 +81,15 @@ type DescribeLiveStreamLimitInfoRequest struct {
 	LimitDomain   string           `position:"Query" name:"LimitDomain"`
 }
 
+// DescribeLiveStreamLimitInfoResponse is the response struct for api DescribeLiveStreamLimitInfo
 type DescribeLiveStreamLimitInfoResponse struct {
 	*responses.BaseResponse
 	RequestId      string         `json:"RequestId" xml:"RequestId"`
 	UserLimitLists UserLimitLists `json:"UserLimitLists" xml:"UserLimitLists"`
 }
 
-// create a request to invoke DescribeLiveStreamLimitInfo API
-func CreateDescribeLiveStreamLimitInfoRequest() (request *DescribeLiveStreamLimitInfoRequest) {
+// CreateDescribeLiveStreamLimitInfoRequest creates a request to invoke DescribeLiveStreamLimitInfo API
+func CreateDescribeLiveStreamLimitInfoRequest(request *DescribeLiveStreamLimitInfoRequest) {
 	request = &DescribeLiveStreamLimitInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateDescribeLiveStreamLimitInfoRequest() (request *DescribeLiveStreamLimi
 	return
 }
 
-// create a response to parse from DescribeLiveStreamLimitInfo response
+// CreateDescribeLiveStreamLimitInfoResponse creates a response to parse from DescribeLiveStreamLimitInfo response
 func CreateDescribeLiveStreamLimitInfoResponse() (response *DescribeLiveStreamLimitInfoResponse) {
 	response = &DescribeLiveStreamLimitInfoResponse{
 		BaseResponse: &responses.BaseResponse{},

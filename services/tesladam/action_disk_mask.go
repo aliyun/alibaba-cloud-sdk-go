@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ActionDiskMask api with *ActionDiskMaskRequest synchronously
+// ActionDiskMask invokes the tesladam.ActionDiskMask API synchronously
 // api document: https://help.aliyun.com/api/tesladam/actiondiskmask.html
 func (client *Client) ActionDiskMask(request *ActionDiskMaskRequest) (response *ActionDiskMaskResponse, err error) {
 	response = CreateActionDiskMaskResponse()
@@ -28,7 +28,7 @@ func (client *Client) ActionDiskMask(request *ActionDiskMaskRequest) (response *
 	return
 }
 
-// invoke ActionDiskMask api with *ActionDiskMaskRequest asynchronously
+// ActionDiskMaskWithChan invokes the tesladam.ActionDiskMask API asynchronously
 // api document: https://help.aliyun.com/api/tesladam/actiondiskmask.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ActionDiskMaskWithChan(request *ActionDiskMaskRequest) (<-chan *ActionDiskMaskResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ActionDiskMaskWithChan(request *ActionDiskMaskRequest) (<-
 	return responseChan, errChan
 }
 
-// invoke ActionDiskMask api with *ActionDiskMaskRequest asynchronously
+// ActionDiskMaskWithCallback invokes the tesladam.ActionDiskMask API asynchronously
 // api document: https://help.aliyun.com/api/tesladam/actiondiskmask.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ActionDiskMaskWithCallback(request *ActionDiskMaskRequest, callback func(response *ActionDiskMaskResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ActionDiskMaskWithCallback(request *ActionDiskMaskRequest,
 	return result
 }
 
+// ActionDiskMaskRequest is the request struct for api ActionDiskMask
 type ActionDiskMaskRequest struct {
 	*requests.RpcRequest
 	Ip        string `position:"Query" name:"Ip"`
@@ -80,6 +81,7 @@ type ActionDiskMaskRequest struct {
 	Op        string `position:"Query" name:"Op"`
 }
 
+// ActionDiskMaskResponse is the response struct for api ActionDiskMask
 type ActionDiskMaskResponse struct {
 	*responses.BaseResponse
 	Status  bool   `json:"Status" xml:"Status"`
@@ -87,8 +89,8 @@ type ActionDiskMaskResponse struct {
 	Result  string `json:"Result" xml:"Result"`
 }
 
-// create a request to invoke ActionDiskMask API
-func CreateActionDiskMaskRequest() (request *ActionDiskMaskRequest) {
+// CreateActionDiskMaskRequest creates a request to invoke ActionDiskMask API
+func CreateActionDiskMaskRequest(request *ActionDiskMaskRequest) {
 	request = &ActionDiskMaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -96,7 +98,7 @@ func CreateActionDiskMaskRequest() (request *ActionDiskMaskRequest) {
 	return
 }
 
-// create a response to parse from ActionDiskMask response
+// CreateActionDiskMaskResponse creates a response to parse from ActionDiskMask response
 func CreateActionDiskMaskResponse() (response *ActionDiskMaskResponse) {
 	response = &ActionDiskMaskResponse{
 		BaseResponse: &responses.BaseResponse{},

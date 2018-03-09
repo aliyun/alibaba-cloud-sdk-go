@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeDomainPvData api with *DescribeDomainPvDataRequest synchronously
+// DescribeDomainPvData invokes the cdn.DescribeDomainPvData API synchronously
 // api document: https://help.aliyun.com/api/cdn/describedomainpvdata.html
 func (client *Client) DescribeDomainPvData(request *DescribeDomainPvDataRequest) (response *DescribeDomainPvDataResponse, err error) {
 	response = CreateDescribeDomainPvDataResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeDomainPvData(request *DescribeDomainPvDataRequest)
 	return
 }
 
-// invoke DescribeDomainPvData api with *DescribeDomainPvDataRequest asynchronously
+// DescribeDomainPvDataWithChan invokes the cdn.DescribeDomainPvData API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describedomainpvdata.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainPvDataWithChan(request *DescribeDomainPvDataRequest) (<-chan *DescribeDomainPvDataResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeDomainPvDataWithChan(request *DescribeDomainPvData
 	return responseChan, errChan
 }
 
-// invoke DescribeDomainPvData api with *DescribeDomainPvDataRequest asynchronously
+// DescribeDomainPvDataWithCallback invokes the cdn.DescribeDomainPvData API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describedomainpvdata.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainPvDataWithCallback(request *DescribeDomainPvDataRequest, callback func(response *DescribeDomainPvDataResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeDomainPvDataWithCallback(request *DescribeDomainPv
 	return result
 }
 
+// DescribeDomainPvDataRequest is the request struct for api DescribeDomainPvData
 type DescribeDomainPvDataRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,6 +83,7 @@ type DescribeDomainPvDataRequest struct {
 	EndTime       string           `position:"Query" name:"EndTime"`
 }
 
+// DescribeDomainPvDataResponse is the response struct for api DescribeDomainPvData
 type DescribeDomainPvDataResponse struct {
 	*responses.BaseResponse
 	RequestId      string         `json:"RequestId" xml:"RequestId"`
@@ -92,8 +94,8 @@ type DescribeDomainPvDataResponse struct {
 	PvDataInterval PvDataInterval `json:"PvDataInterval" xml:"PvDataInterval"`
 }
 
-// create a request to invoke DescribeDomainPvData API
-func CreateDescribeDomainPvDataRequest() (request *DescribeDomainPvDataRequest) {
+// CreateDescribeDomainPvDataRequest creates a request to invoke DescribeDomainPvData API
+func CreateDescribeDomainPvDataRequest(request *DescribeDomainPvDataRequest) {
 	request = &DescribeDomainPvDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -101,7 +103,7 @@ func CreateDescribeDomainPvDataRequest() (request *DescribeDomainPvDataRequest) 
 	return
 }
 
-// create a response to parse from DescribeDomainPvData response
+// CreateDescribeDomainPvDataResponse creates a response to parse from DescribeDomainPvData response
 func CreateDescribeDomainPvDataResponse() (response *DescribeDomainPvDataResponse) {
 	response = &DescribeDomainPvDataResponse{
 		BaseResponse: &responses.BaseResponse{},

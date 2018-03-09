@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ExportImage api with *ExportImageRequest synchronously
+// ExportImage invokes the ecs.ExportImage API synchronously
 // api document: https://help.aliyun.com/api/ecs/exportimage.html
 func (client *Client) ExportImage(request *ExportImageRequest) (response *ExportImageResponse, err error) {
 	response = CreateExportImageResponse()
@@ -28,7 +28,7 @@ func (client *Client) ExportImage(request *ExportImageRequest) (response *Export
 	return
 }
 
-// invoke ExportImage api with *ExportImageRequest asynchronously
+// ExportImageWithChan invokes the ecs.ExportImage API asynchronously
 // api document: https://help.aliyun.com/api/ecs/exportimage.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ExportImageWithChan(request *ExportImageRequest) (<-chan *ExportImageResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ExportImageWithChan(request *ExportImageRequest) (<-chan *
 	return responseChan, errChan
 }
 
-// invoke ExportImage api with *ExportImageRequest asynchronously
+// ExportImageWithCallback invokes the ecs.ExportImage API asynchronously
 // api document: https://help.aliyun.com/api/ecs/exportimage.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ExportImageWithCallback(request *ExportImageRequest, callback func(response *ExportImageResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ExportImageWithCallback(request *ExportImageRequest, callb
 	return result
 }
 
+// ExportImageRequest is the request struct for api ExportImage
 type ExportImageRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -85,6 +86,7 @@ type ExportImageRequest struct {
 	RoleName             string           `position:"Query" name:"RoleName"`
 }
 
+// ExportImageResponse is the response struct for api ExportImage
 type ExportImageResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
@@ -92,8 +94,8 @@ type ExportImageResponse struct {
 	RegionId  string `json:"RegionId" xml:"RegionId"`
 }
 
-// create a request to invoke ExportImage API
-func CreateExportImageRequest() (request *ExportImageRequest) {
+// CreateExportImageRequest creates a request to invoke ExportImage API
+func CreateExportImageRequest(request *ExportImageRequest) {
 	request = &ExportImageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -101,7 +103,7 @@ func CreateExportImageRequest() (request *ExportImageRequest) {
 	return
 }
 
-// create a response to parse from ExportImage response
+// CreateExportImageResponse creates a response to parse from ExportImage response
 func CreateExportImageResponse() (response *ExportImageResponse) {
 	response = &ExportImageResponse{
 		BaseResponse: &responses.BaseResponse{},

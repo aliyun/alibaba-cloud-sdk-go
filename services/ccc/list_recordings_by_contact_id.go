@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ListRecordingsByContactId api with *ListRecordingsByContactIdRequest synchronously
+// ListRecordingsByContactId invokes the ccc.ListRecordingsByContactId API synchronously
 // api document: https://help.aliyun.com/api/ccc/listrecordingsbycontactid.html
 func (client *Client) ListRecordingsByContactId(request *ListRecordingsByContactIdRequest) (response *ListRecordingsByContactIdResponse, err error) {
 	response = CreateListRecordingsByContactIdResponse()
@@ -28,7 +28,7 @@ func (client *Client) ListRecordingsByContactId(request *ListRecordingsByContact
 	return
 }
 
-// invoke ListRecordingsByContactId api with *ListRecordingsByContactIdRequest asynchronously
+// ListRecordingsByContactIdWithChan invokes the ccc.ListRecordingsByContactId API asynchronously
 // api document: https://help.aliyun.com/api/ccc/listrecordingsbycontactid.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListRecordingsByContactIdWithChan(request *ListRecordingsByContactIdRequest) (<-chan *ListRecordingsByContactIdResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ListRecordingsByContactIdWithChan(request *ListRecordingsB
 	return responseChan, errChan
 }
 
-// invoke ListRecordingsByContactId api with *ListRecordingsByContactIdRequest asynchronously
+// ListRecordingsByContactIdWithCallback invokes the ccc.ListRecordingsByContactId API asynchronously
 // api document: https://help.aliyun.com/api/ccc/listrecordingsbycontactid.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListRecordingsByContactIdWithCallback(request *ListRecordingsByContactIdRequest, callback func(response *ListRecordingsByContactIdResponse, err error)) <-chan int {
@@ -73,12 +73,14 @@ func (client *Client) ListRecordingsByContactIdWithCallback(request *ListRecordi
 	return result
 }
 
+// ListRecordingsByContactIdRequest is the request struct for api ListRecordingsByContactId
 type ListRecordingsByContactIdRequest struct {
 	*requests.RpcRequest
 	InstanceId string `position:"Query" name:"InstanceId"`
 	ContactId  string `position:"Query" name:"ContactId"`
 }
 
+// ListRecordingsByContactIdResponse is the response struct for api ListRecordingsByContactId
 type ListRecordingsByContactIdResponse struct {
 	*responses.BaseResponse
 	RequestId      string                                `json:"RequestId" xml:"RequestId"`
@@ -89,8 +91,8 @@ type ListRecordingsByContactIdResponse struct {
 	Recordings     RecordingsInListRecordingsByContactId `json:"Recordings" xml:"Recordings"`
 }
 
-// create a request to invoke ListRecordingsByContactId API
-func CreateListRecordingsByContactIdRequest() (request *ListRecordingsByContactIdRequest) {
+// CreateListRecordingsByContactIdRequest creates a request to invoke ListRecordingsByContactId API
+func CreateListRecordingsByContactIdRequest(request *ListRecordingsByContactIdRequest) {
 	request = &ListRecordingsByContactIdRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateListRecordingsByContactIdRequest() (request *ListRecordingsByContactI
 	return
 }
 
-// create a response to parse from ListRecordingsByContactId response
+// CreateListRecordingsByContactIdResponse creates a response to parse from ListRecordingsByContactId response
 func CreateListRecordingsByContactIdResponse() (response *ListRecordingsByContactIdResponse) {
 	response = &ListRecordingsByContactIdResponse{
 		BaseResponse: &responses.BaseResponse{},

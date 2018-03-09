@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifyDeploymentSetAttribute api with *ModifyDeploymentSetAttributeRequest synchronously
+// ModifyDeploymentSetAttribute invokes the ecs.ModifyDeploymentSetAttribute API synchronously
 // api document: https://help.aliyun.com/api/ecs/modifydeploymentsetattribute.html
 func (client *Client) ModifyDeploymentSetAttribute(request *ModifyDeploymentSetAttributeRequest) (response *ModifyDeploymentSetAttributeResponse, err error) {
 	response = CreateModifyDeploymentSetAttributeResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifyDeploymentSetAttribute(request *ModifyDeploymentSetA
 	return
 }
 
-// invoke ModifyDeploymentSetAttribute api with *ModifyDeploymentSetAttributeRequest asynchronously
+// ModifyDeploymentSetAttributeWithChan invokes the ecs.ModifyDeploymentSetAttribute API asynchronously
 // api document: https://help.aliyun.com/api/ecs/modifydeploymentsetattribute.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDeploymentSetAttributeWithChan(request *ModifyDeploymentSetAttributeRequest) (<-chan *ModifyDeploymentSetAttributeResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifyDeploymentSetAttributeWithChan(request *ModifyDeploy
 	return responseChan, errChan
 }
 
-// invoke ModifyDeploymentSetAttribute api with *ModifyDeploymentSetAttributeRequest asynchronously
+// ModifyDeploymentSetAttributeWithCallback invokes the ecs.ModifyDeploymentSetAttribute API asynchronously
 // api document: https://help.aliyun.com/api/ecs/modifydeploymentsetattribute.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDeploymentSetAttributeWithCallback(request *ModifyDeploymentSetAttributeRequest, callback func(response *ModifyDeploymentSetAttributeResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ModifyDeploymentSetAttributeWithCallback(request *ModifyDe
 	return result
 }
 
+// ModifyDeploymentSetAttributeRequest is the request struct for api ModifyDeploymentSetAttribute
 type ModifyDeploymentSetAttributeRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,13 +85,14 @@ type ModifyDeploymentSetAttributeRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// ModifyDeploymentSetAttributeResponse is the response struct for api ModifyDeploymentSetAttribute
 type ModifyDeploymentSetAttributeResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ModifyDeploymentSetAttribute API
-func CreateModifyDeploymentSetAttributeRequest() (request *ModifyDeploymentSetAttributeRequest) {
+// CreateModifyDeploymentSetAttributeRequest creates a request to invoke ModifyDeploymentSetAttribute API
+func CreateModifyDeploymentSetAttributeRequest(request *ModifyDeploymentSetAttributeRequest) {
 	request = &ModifyDeploymentSetAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateModifyDeploymentSetAttributeRequest() (request *ModifyDeploymentSetAt
 	return
 }
 
-// create a response to parse from ModifyDeploymentSetAttribute response
+// CreateModifyDeploymentSetAttributeResponse creates a response to parse from ModifyDeploymentSetAttribute response
 func CreateModifyDeploymentSetAttributeResponse() (response *ModifyDeploymentSetAttributeResponse) {
 	response = &ModifyDeploymentSetAttributeResponse{
 		BaseResponse: &responses.BaseResponse{},

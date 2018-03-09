@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ReportVideoSplitJobResult api with *ReportVideoSplitJobResultRequest synchronously
+// ReportVideoSplitJobResult invokes the mts.ReportVideoSplitJobResult API synchronously
 // api document: https://help.aliyun.com/api/mts/reportvideosplitjobresult.html
 func (client *Client) ReportVideoSplitJobResult(request *ReportVideoSplitJobResultRequest) (response *ReportVideoSplitJobResultResponse, err error) {
 	response = CreateReportVideoSplitJobResultResponse()
@@ -28,7 +28,7 @@ func (client *Client) ReportVideoSplitJobResult(request *ReportVideoSplitJobResu
 	return
 }
 
-// invoke ReportVideoSplitJobResult api with *ReportVideoSplitJobResultRequest asynchronously
+// ReportVideoSplitJobResultWithChan invokes the mts.ReportVideoSplitJobResult API asynchronously
 // api document: https://help.aliyun.com/api/mts/reportvideosplitjobresult.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReportVideoSplitJobResultWithChan(request *ReportVideoSplitJobResultRequest) (<-chan *ReportVideoSplitJobResultResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ReportVideoSplitJobResultWithChan(request *ReportVideoSpli
 	return responseChan, errChan
 }
 
-// invoke ReportVideoSplitJobResult api with *ReportVideoSplitJobResultRequest asynchronously
+// ReportVideoSplitJobResultWithCallback invokes the mts.ReportVideoSplitJobResult API asynchronously
 // api document: https://help.aliyun.com/api/mts/reportvideosplitjobresult.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReportVideoSplitJobResultWithCallback(request *ReportVideoSplitJobResultRequest, callback func(response *ReportVideoSplitJobResultResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ReportVideoSplitJobResultWithCallback(request *ReportVideo
 	return result
 }
 
+// ReportVideoSplitJobResultRequest is the request struct for api ReportVideoSplitJobResult
 type ReportVideoSplitJobResultRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,14 +85,15 @@ type ReportVideoSplitJobResultRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// ReportVideoSplitJobResultResponse is the response struct for api ReportVideoSplitJobResult
 type ReportVideoSplitJobResultResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	JobId     string `json:"JobId" xml:"JobId"`
 }
 
-// create a request to invoke ReportVideoSplitJobResult API
-func CreateReportVideoSplitJobResultRequest() (request *ReportVideoSplitJobResultRequest) {
+// CreateReportVideoSplitJobResultRequest creates a request to invoke ReportVideoSplitJobResult API
+func CreateReportVideoSplitJobResultRequest(request *ReportVideoSplitJobResultRequest) {
 	request = &ReportVideoSplitJobResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateReportVideoSplitJobResultRequest() (request *ReportVideoSplitJobResul
 	return
 }
 
-// create a response to parse from ReportVideoSplitJobResult response
+// CreateReportVideoSplitJobResultResponse creates a response to parse from ReportVideoSplitJobResult response
 func CreateReportVideoSplitJobResultResponse() (response *ReportVideoSplitJobResultResponse) {
 	response = &ReportVideoSplitJobResultResponse{
 		BaseResponse: &responses.BaseResponse{},

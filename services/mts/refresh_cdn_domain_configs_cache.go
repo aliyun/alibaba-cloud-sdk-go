@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke RefreshCdnDomainConfigsCache api with *RefreshCdnDomainConfigsCacheRequest synchronously
+// RefreshCdnDomainConfigsCache invokes the mts.RefreshCdnDomainConfigsCache API synchronously
 // api document: https://help.aliyun.com/api/mts/refreshcdndomainconfigscache.html
 func (client *Client) RefreshCdnDomainConfigsCache(request *RefreshCdnDomainConfigsCacheRequest) (response *RefreshCdnDomainConfigsCacheResponse, err error) {
 	response = CreateRefreshCdnDomainConfigsCacheResponse()
@@ -28,7 +28,7 @@ func (client *Client) RefreshCdnDomainConfigsCache(request *RefreshCdnDomainConf
 	return
 }
 
-// invoke RefreshCdnDomainConfigsCache api with *RefreshCdnDomainConfigsCacheRequest asynchronously
+// RefreshCdnDomainConfigsCacheWithChan invokes the mts.RefreshCdnDomainConfigsCache API asynchronously
 // api document: https://help.aliyun.com/api/mts/refreshcdndomainconfigscache.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RefreshCdnDomainConfigsCacheWithChan(request *RefreshCdnDomainConfigsCacheRequest) (<-chan *RefreshCdnDomainConfigsCacheResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) RefreshCdnDomainConfigsCacheWithChan(request *RefreshCdnDo
 	return responseChan, errChan
 }
 
-// invoke RefreshCdnDomainConfigsCache api with *RefreshCdnDomainConfigsCacheRequest asynchronously
+// RefreshCdnDomainConfigsCacheWithCallback invokes the mts.RefreshCdnDomainConfigsCache API asynchronously
 // api document: https://help.aliyun.com/api/mts/refreshcdndomainconfigscache.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RefreshCdnDomainConfigsCacheWithCallback(request *RefreshCdnDomainConfigsCacheRequest, callback func(response *RefreshCdnDomainConfigsCacheResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) RefreshCdnDomainConfigsCacheWithCallback(request *RefreshC
 	return result
 }
 
+// RefreshCdnDomainConfigsCacheRequest is the request struct for api RefreshCdnDomainConfigsCache
 type RefreshCdnDomainConfigsCacheRequest struct {
 	*requests.RpcRequest
 	OwnerId              string `position:"Query" name:"OwnerId"`
@@ -82,6 +83,7 @@ type RefreshCdnDomainConfigsCacheRequest struct {
 	Domains              string `position:"Query" name:"Domains"`
 }
 
+// RefreshCdnDomainConfigsCacheResponse is the response struct for api RefreshCdnDomainConfigsCache
 type RefreshCdnDomainConfigsCacheResponse struct {
 	*responses.BaseResponse
 	RequestId     string        `json:"RequestId" xml:"RequestId"`
@@ -89,8 +91,8 @@ type RefreshCdnDomainConfigsCacheResponse struct {
 	FailedDomains FailedDomains `json:"FailedDomains" xml:"FailedDomains"`
 }
 
-// create a request to invoke RefreshCdnDomainConfigsCache API
-func CreateRefreshCdnDomainConfigsCacheRequest() (request *RefreshCdnDomainConfigsCacheRequest) {
+// CreateRefreshCdnDomainConfigsCacheRequest creates a request to invoke RefreshCdnDomainConfigsCache API
+func CreateRefreshCdnDomainConfigsCacheRequest(request *RefreshCdnDomainConfigsCacheRequest) {
 	request = &RefreshCdnDomainConfigsCacheRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateRefreshCdnDomainConfigsCacheRequest() (request *RefreshCdnDomainConfi
 	return
 }
 
-// create a response to parse from RefreshCdnDomainConfigsCache response
+// CreateRefreshCdnDomainConfigsCacheResponse creates a response to parse from RefreshCdnDomainConfigsCache response
 func CreateRefreshCdnDomainConfigsCacheResponse() (response *RefreshCdnDomainConfigsCacheResponse) {
 	response = &RefreshCdnDomainConfigsCacheResponse{
 		BaseResponse: &responses.BaseResponse{},

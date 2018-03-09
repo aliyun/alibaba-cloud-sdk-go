@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeDeploymentSetTopology api with *DescribeDeploymentSetTopologyRequest synchronously
+// DescribeDeploymentSetTopology invokes the ecs.DescribeDeploymentSetTopology API synchronously
 // api document: https://help.aliyun.com/api/ecs/describedeploymentsettopology.html
 func (client *Client) DescribeDeploymentSetTopology(request *DescribeDeploymentSetTopologyRequest) (response *DescribeDeploymentSetTopologyResponse, err error) {
 	response = CreateDescribeDeploymentSetTopologyResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeDeploymentSetTopology(request *DescribeDeploymentS
 	return
 }
 
-// invoke DescribeDeploymentSetTopology api with *DescribeDeploymentSetTopologyRequest asynchronously
+// DescribeDeploymentSetTopologyWithChan invokes the ecs.DescribeDeploymentSetTopology API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describedeploymentsettopology.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDeploymentSetTopologyWithChan(request *DescribeDeploymentSetTopologyRequest) (<-chan *DescribeDeploymentSetTopologyResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeDeploymentSetTopologyWithChan(request *DescribeDep
 	return responseChan, errChan
 }
 
-// invoke DescribeDeploymentSetTopology api with *DescribeDeploymentSetTopologyRequest asynchronously
+// DescribeDeploymentSetTopologyWithCallback invokes the ecs.DescribeDeploymentSetTopology API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describedeploymentsettopology.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDeploymentSetTopologyWithCallback(request *DescribeDeploymentSetTopologyRequest, callback func(response *DescribeDeploymentSetTopologyResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeDeploymentSetTopologyWithCallback(request *Describ
 	return result
 }
 
+// DescribeDeploymentSetTopologyRequest is the request struct for api DescribeDeploymentSetTopology
 type DescribeDeploymentSetTopologyRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -86,6 +87,7 @@ type DescribeDeploymentSetTopologyRequest struct {
 	Domain               string           `position:"Query" name:"Domain"`
 }
 
+// DescribeDeploymentSetTopologyResponse is the response struct for api DescribeDeploymentSetTopology
 type DescribeDeploymentSetTopologyResponse struct {
 	*responses.BaseResponse
 	RequestId string  `json:"RequestId" xml:"RequestId"`
@@ -93,8 +95,8 @@ type DescribeDeploymentSetTopologyResponse struct {
 	Racks     Racks   `json:"Racks" xml:"Racks"`
 }
 
-// create a request to invoke DescribeDeploymentSetTopology API
-func CreateDescribeDeploymentSetTopologyRequest() (request *DescribeDeploymentSetTopologyRequest) {
+// CreateDescribeDeploymentSetTopologyRequest creates a request to invoke DescribeDeploymentSetTopology API
+func CreateDescribeDeploymentSetTopologyRequest(request *DescribeDeploymentSetTopologyRequest) {
 	request = &DescribeDeploymentSetTopologyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -102,7 +104,7 @@ func CreateDescribeDeploymentSetTopologyRequest() (request *DescribeDeploymentSe
 	return
 }
 
-// create a response to parse from DescribeDeploymentSetTopology response
+// CreateDescribeDeploymentSetTopologyResponse creates a response to parse from DescribeDeploymentSetTopology response
 func CreateDescribeDeploymentSetTopologyResponse() (response *DescribeDeploymentSetTopologyResponse) {
 	response = &DescribeDeploymentSetTopologyResponse{
 		BaseResponse: &responses.BaseResponse{},

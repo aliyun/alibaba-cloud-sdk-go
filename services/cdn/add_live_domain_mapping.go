@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke AddLiveDomainMapping api with *AddLiveDomainMappingRequest synchronously
+// AddLiveDomainMapping invokes the cdn.AddLiveDomainMapping API synchronously
 // api document: https://help.aliyun.com/api/cdn/addlivedomainmapping.html
 func (client *Client) AddLiveDomainMapping(request *AddLiveDomainMappingRequest) (response *AddLiveDomainMappingResponse, err error) {
 	response = CreateAddLiveDomainMappingResponse()
@@ -28,7 +28,7 @@ func (client *Client) AddLiveDomainMapping(request *AddLiveDomainMappingRequest)
 	return
 }
 
-// invoke AddLiveDomainMapping api with *AddLiveDomainMappingRequest asynchronously
+// AddLiveDomainMappingWithChan invokes the cdn.AddLiveDomainMapping API asynchronously
 // api document: https://help.aliyun.com/api/cdn/addlivedomainmapping.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddLiveDomainMappingWithChan(request *AddLiveDomainMappingRequest) (<-chan *AddLiveDomainMappingResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) AddLiveDomainMappingWithChan(request *AddLiveDomainMapping
 	return responseChan, errChan
 }
 
-// invoke AddLiveDomainMapping api with *AddLiveDomainMappingRequest asynchronously
+// AddLiveDomainMappingWithCallback invokes the cdn.AddLiveDomainMapping API asynchronously
 // api document: https://help.aliyun.com/api/cdn/addlivedomainmapping.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddLiveDomainMappingWithCallback(request *AddLiveDomainMappingRequest, callback func(response *AddLiveDomainMappingResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) AddLiveDomainMappingWithCallback(request *AddLiveDomainMap
 	return result
 }
 
+// AddLiveDomainMappingRequest is the request struct for api AddLiveDomainMapping
 type AddLiveDomainMappingRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -81,13 +82,14 @@ type AddLiveDomainMappingRequest struct {
 	PullDomain    string           `position:"Query" name:"PullDomain"`
 }
 
+// AddLiveDomainMappingResponse is the response struct for api AddLiveDomainMapping
 type AddLiveDomainMappingResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke AddLiveDomainMapping API
-func CreateAddLiveDomainMappingRequest() (request *AddLiveDomainMappingRequest) {
+// CreateAddLiveDomainMappingRequest creates a request to invoke AddLiveDomainMapping API
+func CreateAddLiveDomainMappingRequest(request *AddLiveDomainMappingRequest) {
 	request = &AddLiveDomainMappingRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateAddLiveDomainMappingRequest() (request *AddLiveDomainMappingRequest) 
 	return
 }
 
-// create a response to parse from AddLiveDomainMapping response
+// CreateAddLiveDomainMappingResponse creates a response to parse from AddLiveDomainMapping response
 func CreateAddLiveDomainMappingResponse() (response *AddLiveDomainMappingResponse) {
 	response = &AddLiveDomainMappingResponse{
 		BaseResponse: &responses.BaseResponse{},

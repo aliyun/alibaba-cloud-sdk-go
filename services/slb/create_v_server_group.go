@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CreateVServerGroup api with *CreateVServerGroupRequest synchronously
+// CreateVServerGroup invokes the slb.CreateVServerGroup API synchronously
 // api document: https://help.aliyun.com/api/slb/createvservergroup.html
 func (client *Client) CreateVServerGroup(request *CreateVServerGroupRequest) (response *CreateVServerGroupResponse, err error) {
 	response = CreateCreateVServerGroupResponse()
@@ -28,7 +28,7 @@ func (client *Client) CreateVServerGroup(request *CreateVServerGroupRequest) (re
 	return
 }
 
-// invoke CreateVServerGroup api with *CreateVServerGroupRequest asynchronously
+// CreateVServerGroupWithChan invokes the slb.CreateVServerGroup API asynchronously
 // api document: https://help.aliyun.com/api/slb/createvservergroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateVServerGroupWithChan(request *CreateVServerGroupRequest) (<-chan *CreateVServerGroupResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CreateVServerGroupWithChan(request *CreateVServerGroupRequ
 	return responseChan, errChan
 }
 
-// invoke CreateVServerGroup api with *CreateVServerGroupRequest asynchronously
+// CreateVServerGroupWithCallback invokes the slb.CreateVServerGroup API asynchronously
 // api document: https://help.aliyun.com/api/slb/createvservergroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateVServerGroupWithCallback(request *CreateVServerGroupRequest, callback func(response *CreateVServerGroupResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) CreateVServerGroupWithCallback(request *CreateVServerGroup
 	return result
 }
 
+// CreateVServerGroupRequest is the request struct for api CreateVServerGroup
 type CreateVServerGroupRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -86,6 +87,7 @@ type CreateVServerGroupRequest struct {
 	BackendServers       string           `position:"Query" name:"BackendServers"`
 }
 
+// CreateVServerGroupResponse is the response struct for api CreateVServerGroup
 type CreateVServerGroupResponse struct {
 	*responses.BaseResponse
 	RequestId      string                             `json:"RequestId" xml:"RequestId"`
@@ -93,8 +95,8 @@ type CreateVServerGroupResponse struct {
 	BackendServers BackendServersInCreateVServerGroup `json:"BackendServers" xml:"BackendServers"`
 }
 
-// create a request to invoke CreateVServerGroup API
-func CreateCreateVServerGroupRequest() (request *CreateVServerGroupRequest) {
+// CreateCreateVServerGroupRequest creates a request to invoke CreateVServerGroup API
+func CreateCreateVServerGroupRequest(request *CreateVServerGroupRequest) {
 	request = &CreateVServerGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -102,7 +104,7 @@ func CreateCreateVServerGroupRequest() (request *CreateVServerGroupRequest) {
 	return
 }
 
-// create a response to parse from CreateVServerGroup response
+// CreateCreateVServerGroupResponse creates a response to parse from CreateVServerGroup response
 func CreateCreateVServerGroupResponse() (response *CreateVServerGroupResponse) {
 	response = &CreateVServerGroupResponse{
 		BaseResponse: &responses.BaseResponse{},

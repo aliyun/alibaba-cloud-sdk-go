@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke LikePhoto api with *LikePhotoRequest synchronously
+// LikePhoto invokes the cloudphoto.LikePhoto API synchronously
 // api document: https://help.aliyun.com/api/cloudphoto/likephoto.html
 func (client *Client) LikePhoto(request *LikePhotoRequest) (response *LikePhotoResponse, err error) {
 	response = CreateLikePhotoResponse()
@@ -28,7 +28,7 @@ func (client *Client) LikePhoto(request *LikePhotoRequest) (response *LikePhotoR
 	return
 }
 
-// invoke LikePhoto api with *LikePhotoRequest asynchronously
+// LikePhotoWithChan invokes the cloudphoto.LikePhoto API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/likephoto.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) LikePhotoWithChan(request *LikePhotoRequest) (<-chan *LikePhotoResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) LikePhotoWithChan(request *LikePhotoRequest) (<-chan *Like
 	return responseChan, errChan
 }
 
-// invoke LikePhoto api with *LikePhotoRequest asynchronously
+// LikePhotoWithCallback invokes the cloudphoto.LikePhoto API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/likephoto.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) LikePhotoWithCallback(request *LikePhotoRequest, callback func(response *LikePhotoResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) LikePhotoWithCallback(request *LikePhotoRequest, callback 
 	return result
 }
 
+// LikePhotoRequest is the request struct for api LikePhoto
 type LikePhotoRequest struct {
 	*requests.RpcRequest
 	PhotoId   requests.Integer `position:"Query" name:"PhotoId"`
@@ -80,6 +81,7 @@ type LikePhotoRequest struct {
 	LibraryId string           `position:"Query" name:"LibraryId"`
 }
 
+// LikePhotoResponse is the response struct for api LikePhoto
 type LikePhotoResponse struct {
 	*responses.BaseResponse
 	Code      string `json:"Code" xml:"Code"`
@@ -88,8 +90,8 @@ type LikePhotoResponse struct {
 	Action    string `json:"Action" xml:"Action"`
 }
 
-// create a request to invoke LikePhoto API
-func CreateLikePhotoRequest() (request *LikePhotoRequest) {
+// CreateLikePhotoRequest creates a request to invoke LikePhoto API
+func CreateLikePhotoRequest(request *LikePhotoRequest) {
 	request = &LikePhotoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateLikePhotoRequest() (request *LikePhotoRequest) {
 	return
 }
 
-// create a response to parse from LikePhoto response
+// CreateLikePhotoResponse creates a response to parse from LikePhoto response
 func CreateLikePhotoResponse() (response *LikePhotoResponse) {
 	response = &LikePhotoResponse{
 		BaseResponse: &responses.BaseResponse{},

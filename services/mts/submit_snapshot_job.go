@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SubmitSnapshotJob api with *SubmitSnapshotJobRequest synchronously
+// SubmitSnapshotJob invokes the mts.SubmitSnapshotJob API synchronously
 // api document: https://help.aliyun.com/api/mts/submitsnapshotjob.html
 func (client *Client) SubmitSnapshotJob(request *SubmitSnapshotJobRequest) (response *SubmitSnapshotJobResponse, err error) {
 	response = CreateSubmitSnapshotJobResponse()
@@ -28,7 +28,7 @@ func (client *Client) SubmitSnapshotJob(request *SubmitSnapshotJobRequest) (resp
 	return
 }
 
-// invoke SubmitSnapshotJob api with *SubmitSnapshotJobRequest asynchronously
+// SubmitSnapshotJobWithChan invokes the mts.SubmitSnapshotJob API asynchronously
 // api document: https://help.aliyun.com/api/mts/submitsnapshotjob.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitSnapshotJobWithChan(request *SubmitSnapshotJobRequest) (<-chan *SubmitSnapshotJobResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SubmitSnapshotJobWithChan(request *SubmitSnapshotJobReques
 	return responseChan, errChan
 }
 
-// invoke SubmitSnapshotJob api with *SubmitSnapshotJobRequest asynchronously
+// SubmitSnapshotJobWithCallback invokes the mts.SubmitSnapshotJob API asynchronously
 // api document: https://help.aliyun.com/api/mts/submitsnapshotjob.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitSnapshotJobWithCallback(request *SubmitSnapshotJobRequest, callback func(response *SubmitSnapshotJobResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SubmitSnapshotJobWithCallback(request *SubmitSnapshotJobRe
 	return result
 }
 
+// SubmitSnapshotJobRequest is the request struct for api SubmitSnapshotJob
 type SubmitSnapshotJobRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -85,14 +86,15 @@ type SubmitSnapshotJobRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// SubmitSnapshotJobResponse is the response struct for api SubmitSnapshotJob
 type SubmitSnapshotJobResponse struct {
 	*responses.BaseResponse
 	RequestId   string      `json:"RequestId" xml:"RequestId"`
 	SnapshotJob SnapshotJob `json:"SnapshotJob" xml:"SnapshotJob"`
 }
 
-// create a request to invoke SubmitSnapshotJob API
-func CreateSubmitSnapshotJobRequest() (request *SubmitSnapshotJobRequest) {
+// CreateSubmitSnapshotJobRequest creates a request to invoke SubmitSnapshotJob API
+func CreateSubmitSnapshotJobRequest(request *SubmitSnapshotJobRequest) {
 	request = &SubmitSnapshotJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -100,7 +102,7 @@ func CreateSubmitSnapshotJobRequest() (request *SubmitSnapshotJobRequest) {
 	return
 }
 
-// create a response to parse from SubmitSnapshotJob response
+// CreateSubmitSnapshotJobResponse creates a response to parse from SubmitSnapshotJob response
 func CreateSubmitSnapshotJobResponse() (response *SubmitSnapshotJobResponse) {
 	response = &SubmitSnapshotJobResponse{
 		BaseResponse: &responses.BaseResponse{},

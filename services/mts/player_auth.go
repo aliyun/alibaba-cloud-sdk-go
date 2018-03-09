@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke PlayerAuth api with *PlayerAuthRequest synchronously
+// PlayerAuth invokes the mts.PlayerAuth API synchronously
 // api document: https://help.aliyun.com/api/mts/playerauth.html
 func (client *Client) PlayerAuth(request *PlayerAuthRequest) (response *PlayerAuthResponse, err error) {
 	response = CreatePlayerAuthResponse()
@@ -28,7 +28,7 @@ func (client *Client) PlayerAuth(request *PlayerAuthRequest) (response *PlayerAu
 	return
 }
 
-// invoke PlayerAuth api with *PlayerAuthRequest asynchronously
+// PlayerAuthWithChan invokes the mts.PlayerAuth API asynchronously
 // api document: https://help.aliyun.com/api/mts/playerauth.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PlayerAuthWithChan(request *PlayerAuthRequest) (<-chan *PlayerAuthResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) PlayerAuthWithChan(request *PlayerAuthRequest) (<-chan *Pl
 	return responseChan, errChan
 }
 
-// invoke PlayerAuth api with *PlayerAuthRequest asynchronously
+// PlayerAuthWithCallback invokes the mts.PlayerAuth API asynchronously
 // api document: https://help.aliyun.com/api/mts/playerauth.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PlayerAuthWithCallback(request *PlayerAuthRequest, callback func(response *PlayerAuthResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) PlayerAuthWithCallback(request *PlayerAuthRequest, callbac
 	return result
 }
 
+// PlayerAuthRequest is the request struct for api PlayerAuth
 type PlayerAuthRequest struct {
 	*requests.RpcRequest
 	OwnerId              string `position:"Query" name:"OwnerId"`
@@ -81,6 +82,7 @@ type PlayerAuthRequest struct {
 	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
 }
 
+// PlayerAuthResponse is the response struct for api PlayerAuth
 type PlayerAuthResponse struct {
 	*responses.BaseResponse
 	RequestId  string     `json:"RequestId" xml:"RequestId"`
@@ -88,8 +90,8 @@ type PlayerAuthResponse struct {
 	SwitchList SwitchList `json:"SwitchList" xml:"SwitchList"`
 }
 
-// create a request to invoke PlayerAuth API
-func CreatePlayerAuthRequest() (request *PlayerAuthRequest) {
+// CreatePlayerAuthRequest creates a request to invoke PlayerAuth API
+func CreatePlayerAuthRequest(request *PlayerAuthRequest) {
 	request = &PlayerAuthRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreatePlayerAuthRequest() (request *PlayerAuthRequest) {
 	return
 }
 
-// create a response to parse from PlayerAuth response
+// CreatePlayerAuthResponse creates a response to parse from PlayerAuth response
 func CreatePlayerAuthResponse() (response *PlayerAuthResponse) {
 	response = &PlayerAuthResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifyMailAddress api with *ModifyMailAddressRequest synchronously
+// ModifyMailAddress invokes the dm.ModifyMailAddress API synchronously
 // api document: https://help.aliyun.com/api/dm/modifymailaddress.html
 func (client *Client) ModifyMailAddress(request *ModifyMailAddressRequest) (response *ModifyMailAddressResponse, err error) {
 	response = CreateModifyMailAddressResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifyMailAddress(request *ModifyMailAddressRequest) (resp
 	return
 }
 
-// invoke ModifyMailAddress api with *ModifyMailAddressRequest asynchronously
+// ModifyMailAddressWithChan invokes the dm.ModifyMailAddress API asynchronously
 // api document: https://help.aliyun.com/api/dm/modifymailaddress.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyMailAddressWithChan(request *ModifyMailAddressRequest) (<-chan *ModifyMailAddressResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifyMailAddressWithChan(request *ModifyMailAddressReques
 	return responseChan, errChan
 }
 
-// invoke ModifyMailAddress api with *ModifyMailAddressRequest asynchronously
+// ModifyMailAddressWithCallback invokes the dm.ModifyMailAddress API asynchronously
 // api document: https://help.aliyun.com/api/dm/modifymailaddress.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyMailAddressWithCallback(request *ModifyMailAddressRequest, callback func(response *ModifyMailAddressResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ModifyMailAddressWithCallback(request *ModifyMailAddressRe
 	return result
 }
 
+// ModifyMailAddressRequest is the request struct for api ModifyMailAddress
 type ModifyMailAddressRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -83,13 +84,14 @@ type ModifyMailAddressRequest struct {
 	Password             string           `position:"Query" name:"Password"`
 }
 
+// ModifyMailAddressResponse is the response struct for api ModifyMailAddress
 type ModifyMailAddressResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ModifyMailAddress API
-func CreateModifyMailAddressRequest() (request *ModifyMailAddressRequest) {
+// CreateModifyMailAddressRequest creates a request to invoke ModifyMailAddress API
+func CreateModifyMailAddressRequest(request *ModifyMailAddressRequest) {
 	request = &ModifyMailAddressRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateModifyMailAddressRequest() (request *ModifyMailAddressRequest) {
 	return
 }
 
-// create a response to parse from ModifyMailAddress response
+// CreateModifyMailAddressResponse creates a response to parse from ModifyMailAddress response
 func CreateModifyMailAddressResponse() (response *ModifyMailAddressResponse) {
 	response = &ModifyMailAddressResponse{
 		BaseResponse: &responses.BaseResponse{},

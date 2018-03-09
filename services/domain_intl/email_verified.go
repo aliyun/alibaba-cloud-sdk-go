@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke EmailVerified api with *EmailVerifiedRequest synchronously
+// EmailVerified invokes the domain_intl.EmailVerified API synchronously
 // api document: https://help.aliyun.com/api/domain-intl/emailverified.html
 func (client *Client) EmailVerified(request *EmailVerifiedRequest) (response *EmailVerifiedResponse, err error) {
 	response = CreateEmailVerifiedResponse()
@@ -28,7 +28,7 @@ func (client *Client) EmailVerified(request *EmailVerifiedRequest) (response *Em
 	return
 }
 
-// invoke EmailVerified api with *EmailVerifiedRequest asynchronously
+// EmailVerifiedWithChan invokes the domain_intl.EmailVerified API asynchronously
 // api document: https://help.aliyun.com/api/domain-intl/emailverified.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EmailVerifiedWithChan(request *EmailVerifiedRequest) (<-chan *EmailVerifiedResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) EmailVerifiedWithChan(request *EmailVerifiedRequest) (<-ch
 	return responseChan, errChan
 }
 
-// invoke EmailVerified api with *EmailVerifiedRequest asynchronously
+// EmailVerifiedWithCallback invokes the domain_intl.EmailVerified API asynchronously
 // api document: https://help.aliyun.com/api/domain-intl/emailverified.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EmailVerifiedWithCallback(request *EmailVerifiedRequest, callback func(response *EmailVerifiedResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) EmailVerifiedWithCallback(request *EmailVerifiedRequest, c
 	return result
 }
 
+// EmailVerifiedRequest is the request struct for api EmailVerified
 type EmailVerifiedRequest struct {
 	*requests.RpcRequest
 	Lang         string `position:"Query" name:"Lang"`
@@ -80,13 +81,14 @@ type EmailVerifiedRequest struct {
 	Email        string `position:"Query" name:"Email"`
 }
 
+// EmailVerifiedResponse is the response struct for api EmailVerified
 type EmailVerifiedResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke EmailVerified API
-func CreateEmailVerifiedRequest() (request *EmailVerifiedRequest) {
+// CreateEmailVerifiedRequest creates a request to invoke EmailVerified API
+func CreateEmailVerifiedRequest(request *EmailVerifiedRequest) {
 	request = &EmailVerifiedRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -94,7 +96,7 @@ func CreateEmailVerifiedRequest() (request *EmailVerifiedRequest) {
 	return
 }
 
-// create a response to parse from EmailVerified response
+// CreateEmailVerifiedResponse creates a response to parse from EmailVerified response
 func CreateEmailVerifiedResponse() (response *EmailVerifiedResponse) {
 	response = &EmailVerifiedResponse{
 		BaseResponse: &responses.BaseResponse{},

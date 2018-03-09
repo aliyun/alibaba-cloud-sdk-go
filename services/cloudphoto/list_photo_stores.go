@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ListPhotoStores api with *ListPhotoStoresRequest synchronously
+// ListPhotoStores invokes the cloudphoto.ListPhotoStores API synchronously
 // api document: https://help.aliyun.com/api/cloudphoto/listphotostores.html
 func (client *Client) ListPhotoStores(request *ListPhotoStoresRequest) (response *ListPhotoStoresResponse, err error) {
 	response = CreateListPhotoStoresResponse()
@@ -28,7 +28,7 @@ func (client *Client) ListPhotoStores(request *ListPhotoStoresRequest) (response
 	return
 }
 
-// invoke ListPhotoStores api with *ListPhotoStoresRequest asynchronously
+// ListPhotoStoresWithChan invokes the cloudphoto.ListPhotoStores API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/listphotostores.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListPhotoStoresWithChan(request *ListPhotoStoresRequest) (<-chan *ListPhotoStoresResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ListPhotoStoresWithChan(request *ListPhotoStoresRequest) (
 	return responseChan, errChan
 }
 
-// invoke ListPhotoStores api with *ListPhotoStoresRequest asynchronously
+// ListPhotoStoresWithCallback invokes the cloudphoto.ListPhotoStores API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/listphotostores.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListPhotoStoresWithCallback(request *ListPhotoStoresRequest, callback func(response *ListPhotoStoresResponse, err error)) <-chan int {
@@ -73,10 +73,12 @@ func (client *Client) ListPhotoStoresWithCallback(request *ListPhotoStoresReques
 	return result
 }
 
+// ListPhotoStoresRequest is the request struct for api ListPhotoStores
 type ListPhotoStoresRequest struct {
 	*requests.RpcRequest
 }
 
+// ListPhotoStoresResponse is the response struct for api ListPhotoStores
 type ListPhotoStoresResponse struct {
 	*responses.BaseResponse
 	Code        string       `json:"Code" xml:"Code"`
@@ -86,8 +88,8 @@ type ListPhotoStoresResponse struct {
 	PhotoStores []PhotoStore `json:"PhotoStores" xml:"PhotoStores"`
 }
 
-// create a request to invoke ListPhotoStores API
-func CreateListPhotoStoresRequest() (request *ListPhotoStoresRequest) {
+// CreateListPhotoStoresRequest creates a request to invoke ListPhotoStores API
+func CreateListPhotoStoresRequest(request *ListPhotoStoresRequest) {
 	request = &ListPhotoStoresRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateListPhotoStoresRequest() (request *ListPhotoStoresRequest) {
 	return
 }
 
-// create a response to parse from ListPhotoStores response
+// CreateListPhotoStoresResponse creates a response to parse from ListPhotoStores response
 func CreateListPhotoStoresResponse() (response *ListPhotoStoresResponse) {
 	response = &ListPhotoStoresResponse{
 		BaseResponse: &responses.BaseResponse{},

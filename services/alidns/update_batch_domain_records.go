@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke UpdateBatchDomainRecords api with *UpdateBatchDomainRecordsRequest synchronously
+// UpdateBatchDomainRecords invokes the alidns.UpdateBatchDomainRecords API synchronously
 // api document: https://help.aliyun.com/api/alidns/updatebatchdomainrecords.html
 func (client *Client) UpdateBatchDomainRecords(request *UpdateBatchDomainRecordsRequest) (response *UpdateBatchDomainRecordsResponse, err error) {
 	response = CreateUpdateBatchDomainRecordsResponse()
@@ -28,7 +28,7 @@ func (client *Client) UpdateBatchDomainRecords(request *UpdateBatchDomainRecords
 	return
 }
 
-// invoke UpdateBatchDomainRecords api with *UpdateBatchDomainRecordsRequest asynchronously
+// UpdateBatchDomainRecordsWithChan invokes the alidns.UpdateBatchDomainRecords API asynchronously
 // api document: https://help.aliyun.com/api/alidns/updatebatchdomainrecords.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateBatchDomainRecordsWithChan(request *UpdateBatchDomainRecordsRequest) (<-chan *UpdateBatchDomainRecordsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) UpdateBatchDomainRecordsWithChan(request *UpdateBatchDomai
 	return responseChan, errChan
 }
 
-// invoke UpdateBatchDomainRecords api with *UpdateBatchDomainRecordsRequest asynchronously
+// UpdateBatchDomainRecordsWithCallback invokes the alidns.UpdateBatchDomainRecords API asynchronously
 // api document: https://help.aliyun.com/api/alidns/updatebatchdomainrecords.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateBatchDomainRecordsWithCallback(request *UpdateBatchDomainRecordsRequest, callback func(response *UpdateBatchDomainRecordsResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) UpdateBatchDomainRecordsWithCallback(request *UpdateBatchD
 	return result
 }
 
+// UpdateBatchDomainRecordsRequest is the request struct for api UpdateBatchDomainRecords
 type UpdateBatchDomainRecordsRequest struct {
 	*requests.RpcRequest
 	Lang         string `position:"Query" name:"Lang"`
@@ -80,14 +81,15 @@ type UpdateBatchDomainRecordsRequest struct {
 	Records      string `position:"Query" name:"Records"`
 }
 
+// UpdateBatchDomainRecordsResponse is the response struct for api UpdateBatchDomainRecords
 type UpdateBatchDomainRecordsResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	TraceId   string `json:"TraceId" xml:"TraceId"`
 }
 
-// create a request to invoke UpdateBatchDomainRecords API
-func CreateUpdateBatchDomainRecordsRequest() (request *UpdateBatchDomainRecordsRequest) {
+// CreateUpdateBatchDomainRecordsRequest creates a request to invoke UpdateBatchDomainRecords API
+func CreateUpdateBatchDomainRecordsRequest(request *UpdateBatchDomainRecordsRequest) {
 	request = &UpdateBatchDomainRecordsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateUpdateBatchDomainRecordsRequest() (request *UpdateBatchDomainRecordsR
 	return
 }
 
-// create a response to parse from UpdateBatchDomainRecords response
+// CreateUpdateBatchDomainRecordsResponse creates a response to parse from UpdateBatchDomainRecords response
 func CreateUpdateBatchDomainRecordsResponse() (response *UpdateBatchDomainRecordsResponse) {
 	response = &UpdateBatchDomainRecordsResponse{
 		BaseResponse: &responses.BaseResponse{},

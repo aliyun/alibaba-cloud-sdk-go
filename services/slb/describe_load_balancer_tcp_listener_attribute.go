@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeLoadBalancerTCPListenerAttribute api with *DescribeLoadBalancerTCPListenerAttributeRequest synchronously
+// DescribeLoadBalancerTCPListenerAttribute invokes the slb.DescribeLoadBalancerTCPListenerAttribute API synchronously
 // api document: https://help.aliyun.com/api/slb/describeloadbalancertcplistenerattribute.html
 func (client *Client) DescribeLoadBalancerTCPListenerAttribute(request *DescribeLoadBalancerTCPListenerAttributeRequest) (response *DescribeLoadBalancerTCPListenerAttributeResponse, err error) {
 	response = CreateDescribeLoadBalancerTCPListenerAttributeResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeLoadBalancerTCPListenerAttribute(request *Describe
 	return
 }
 
-// invoke DescribeLoadBalancerTCPListenerAttribute api with *DescribeLoadBalancerTCPListenerAttributeRequest asynchronously
+// DescribeLoadBalancerTCPListenerAttributeWithChan invokes the slb.DescribeLoadBalancerTCPListenerAttribute API asynchronously
 // api document: https://help.aliyun.com/api/slb/describeloadbalancertcplistenerattribute.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLoadBalancerTCPListenerAttributeWithChan(request *DescribeLoadBalancerTCPListenerAttributeRequest) (<-chan *DescribeLoadBalancerTCPListenerAttributeResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeLoadBalancerTCPListenerAttributeWithChan(request *
 	return responseChan, errChan
 }
 
-// invoke DescribeLoadBalancerTCPListenerAttribute api with *DescribeLoadBalancerTCPListenerAttributeRequest asynchronously
+// DescribeLoadBalancerTCPListenerAttributeWithCallback invokes the slb.DescribeLoadBalancerTCPListenerAttribute API asynchronously
 // api document: https://help.aliyun.com/api/slb/describeloadbalancertcplistenerattribute.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLoadBalancerTCPListenerAttributeWithCallback(request *DescribeLoadBalancerTCPListenerAttributeRequest, callback func(response *DescribeLoadBalancerTCPListenerAttributeResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeLoadBalancerTCPListenerAttributeWithCallback(reque
 	return result
 }
 
+// DescribeLoadBalancerTCPListenerAttributeRequest is the request struct for api DescribeLoadBalancerTCPListenerAttribute
 type DescribeLoadBalancerTCPListenerAttributeRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -85,6 +86,7 @@ type DescribeLoadBalancerTCPListenerAttributeRequest struct {
 	Tags                 string           `position:"Query" name:"Tags"`
 }
 
+// DescribeLoadBalancerTCPListenerAttributeResponse is the response struct for api DescribeLoadBalancerTCPListenerAttribute
 type DescribeLoadBalancerTCPListenerAttributeResponse struct {
 	*responses.BaseResponse
 	RequestId                 string `json:"RequestId" xml:"RequestId"`
@@ -111,8 +113,8 @@ type DescribeLoadBalancerTCPListenerAttributeResponse struct {
 	MasterSlaveServerGroupId  string `json:"MasterSlaveServerGroupId" xml:"MasterSlaveServerGroupId"`
 }
 
-// create a request to invoke DescribeLoadBalancerTCPListenerAttribute API
-func CreateDescribeLoadBalancerTCPListenerAttributeRequest() (request *DescribeLoadBalancerTCPListenerAttributeRequest) {
+// CreateDescribeLoadBalancerTCPListenerAttributeRequest creates a request to invoke DescribeLoadBalancerTCPListenerAttribute API
+func CreateDescribeLoadBalancerTCPListenerAttributeRequest(request *DescribeLoadBalancerTCPListenerAttributeRequest) {
 	request = &DescribeLoadBalancerTCPListenerAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -120,7 +122,7 @@ func CreateDescribeLoadBalancerTCPListenerAttributeRequest() (request *DescribeL
 	return
 }
 
-// create a response to parse from DescribeLoadBalancerTCPListenerAttribute response
+// CreateDescribeLoadBalancerTCPListenerAttributeResponse creates a response to parse from DescribeLoadBalancerTCPListenerAttribute response
 func CreateDescribeLoadBalancerTCPListenerAttributeResponse() (response *DescribeLoadBalancerTCPListenerAttributeResponse) {
 	response = &DescribeLoadBalancerTCPListenerAttributeResponse{
 		BaseResponse: &responses.BaseResponse{},

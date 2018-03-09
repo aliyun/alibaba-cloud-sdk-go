@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CreateAlbum api with *CreateAlbumRequest synchronously
+// CreateAlbum invokes the cloudphoto.CreateAlbum API synchronously
 // api document: https://help.aliyun.com/api/cloudphoto/createalbum.html
 func (client *Client) CreateAlbum(request *CreateAlbumRequest) (response *CreateAlbumResponse, err error) {
 	response = CreateCreateAlbumResponse()
@@ -28,7 +28,7 @@ func (client *Client) CreateAlbum(request *CreateAlbumRequest) (response *Create
 	return
 }
 
-// invoke CreateAlbum api with *CreateAlbumRequest asynchronously
+// CreateAlbumWithChan invokes the cloudphoto.CreateAlbum API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/createalbum.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateAlbumWithChan(request *CreateAlbumRequest) (<-chan *CreateAlbumResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CreateAlbumWithChan(request *CreateAlbumRequest) (<-chan *
 	return responseChan, errChan
 }
 
-// invoke CreateAlbum api with *CreateAlbumRequest asynchronously
+// CreateAlbumWithCallback invokes the cloudphoto.CreateAlbum API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/createalbum.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateAlbumWithCallback(request *CreateAlbumRequest, callback func(response *CreateAlbumResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) CreateAlbumWithCallback(request *CreateAlbumRequest, callb
 	return result
 }
 
+// CreateAlbumRequest is the request struct for api CreateAlbum
 type CreateAlbumRequest struct {
 	*requests.RpcRequest
 	AlbumName string `position:"Query" name:"AlbumName"`
@@ -81,6 +82,7 @@ type CreateAlbumRequest struct {
 	LibraryId string `position:"Query" name:"LibraryId"`
 }
 
+// CreateAlbumResponse is the response struct for api CreateAlbum
 type CreateAlbumResponse struct {
 	*responses.BaseResponse
 	Code      string `json:"Code" xml:"Code"`
@@ -90,8 +92,8 @@ type CreateAlbumResponse struct {
 	Album     Album  `json:"Album" xml:"Album"`
 }
 
-// create a request to invoke CreateAlbum API
-func CreateCreateAlbumRequest() (request *CreateAlbumRequest) {
+// CreateCreateAlbumRequest creates a request to invoke CreateAlbum API
+func CreateCreateAlbumRequest(request *CreateAlbumRequest) {
 	request = &CreateAlbumRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateCreateAlbumRequest() (request *CreateAlbumRequest) {
 	return
 }
 
-// create a response to parse from CreateAlbum response
+// CreateCreateAlbumResponse creates a response to parse from CreateAlbum response
 func CreateCreateAlbumResponse() (response *CreateAlbumResponse) {
 	response = &CreateAlbumResponse{
 		BaseResponse: &responses.BaseResponse{},

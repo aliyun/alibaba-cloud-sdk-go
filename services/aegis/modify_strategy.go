@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifyStrategy api with *ModifyStrategyRequest synchronously
+// ModifyStrategy invokes the aegis.ModifyStrategy API synchronously
 // api document: https://help.aliyun.com/api/aegis/modifystrategy.html
 func (client *Client) ModifyStrategy(request *ModifyStrategyRequest) (response *ModifyStrategyResponse, err error) {
 	response = CreateModifyStrategyResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifyStrategy(request *ModifyStrategyRequest) (response *
 	return
 }
 
-// invoke ModifyStrategy api with *ModifyStrategyRequest asynchronously
+// ModifyStrategyWithChan invokes the aegis.ModifyStrategy API asynchronously
 // api document: https://help.aliyun.com/api/aegis/modifystrategy.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyStrategyWithChan(request *ModifyStrategyRequest) (<-chan *ModifyStrategyResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifyStrategyWithChan(request *ModifyStrategyRequest) (<-
 	return responseChan, errChan
 }
 
-// invoke ModifyStrategy api with *ModifyStrategyRequest asynchronously
+// ModifyStrategyWithCallback invokes the aegis.ModifyStrategy API asynchronously
 // api document: https://help.aliyun.com/api/aegis/modifystrategy.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyStrategyWithCallback(request *ModifyStrategyRequest, callback func(response *ModifyStrategyResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ModifyStrategyWithCallback(request *ModifyStrategyRequest,
 	return result
 }
 
+// ModifyStrategyRequest is the request struct for api ModifyStrategy
 type ModifyStrategyRequest struct {
 	*requests.RpcRequest
 	SourceIp        string           `position:"Query" name:"SourceIp"`
@@ -84,6 +85,7 @@ type ModifyStrategyRequest struct {
 	Id              string           `position:"Query" name:"Id"`
 }
 
+// ModifyStrategyResponse is the response struct for api ModifyStrategy
 type ModifyStrategyResponse struct {
 	*responses.BaseResponse
 	RequestId      string `json:"RequestId" xml:"RequestId"`
@@ -93,8 +95,8 @@ type ModifyStrategyResponse struct {
 	Result         Result `json:"Result" xml:"Result"`
 }
 
-// create a request to invoke ModifyStrategy API
-func CreateModifyStrategyRequest() (request *ModifyStrategyRequest) {
+// CreateModifyStrategyRequest creates a request to invoke ModifyStrategy API
+func CreateModifyStrategyRequest(request *ModifyStrategyRequest) {
 	request = &ModifyStrategyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -102,7 +104,7 @@ func CreateModifyStrategyRequest() (request *ModifyStrategyRequest) {
 	return
 }
 
-// create a response to parse from ModifyStrategy response
+// CreateModifyStrategyResponse creates a response to parse from ModifyStrategy response
 func CreateModifyStrategyResponse() (response *ModifyStrategyResponse) {
 	response = &ModifyStrategyResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeCdnRegionAndIsp api with *DescribeCdnRegionAndIspRequest synchronously
+// DescribeCdnRegionAndIsp invokes the cdn.DescribeCdnRegionAndIsp API synchronously
 // api document: https://help.aliyun.com/api/cdn/describecdnregionandisp.html
 func (client *Client) DescribeCdnRegionAndIsp(request *DescribeCdnRegionAndIspRequest) (response *DescribeCdnRegionAndIspResponse, err error) {
 	response = CreateDescribeCdnRegionAndIspResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeCdnRegionAndIsp(request *DescribeCdnRegionAndIspRe
 	return
 }
 
-// invoke DescribeCdnRegionAndIsp api with *DescribeCdnRegionAndIspRequest asynchronously
+// DescribeCdnRegionAndIspWithChan invokes the cdn.DescribeCdnRegionAndIsp API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describecdnregionandisp.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCdnRegionAndIspWithChan(request *DescribeCdnRegionAndIspRequest) (<-chan *DescribeCdnRegionAndIspResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeCdnRegionAndIspWithChan(request *DescribeCdnRegion
 	return responseChan, errChan
 }
 
-// invoke DescribeCdnRegionAndIsp api with *DescribeCdnRegionAndIspRequest asynchronously
+// DescribeCdnRegionAndIspWithCallback invokes the cdn.DescribeCdnRegionAndIsp API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describecdnregionandisp.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCdnRegionAndIspWithCallback(request *DescribeCdnRegionAndIspRequest, callback func(response *DescribeCdnRegionAndIspResponse, err error)) <-chan int {
@@ -73,12 +73,14 @@ func (client *Client) DescribeCdnRegionAndIspWithCallback(request *DescribeCdnRe
 	return result
 }
 
+// DescribeCdnRegionAndIspRequest is the request struct for api DescribeCdnRegionAndIsp
 type DescribeCdnRegionAndIspRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
+// DescribeCdnRegionAndIspResponse is the response struct for api DescribeCdnRegionAndIsp
 type DescribeCdnRegionAndIspResponse struct {
 	*responses.BaseResponse
 	RequestId string  `json:"RequestId" xml:"RequestId"`
@@ -86,8 +88,8 @@ type DescribeCdnRegionAndIspResponse struct {
 	Isps      Isps    `json:"Isps" xml:"Isps"`
 }
 
-// create a request to invoke DescribeCdnRegionAndIsp API
-func CreateDescribeCdnRegionAndIspRequest() (request *DescribeCdnRegionAndIspRequest) {
+// CreateDescribeCdnRegionAndIspRequest creates a request to invoke DescribeCdnRegionAndIsp API
+func CreateDescribeCdnRegionAndIspRequest(request *DescribeCdnRegionAndIspRequest) {
 	request = &DescribeCdnRegionAndIspRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateDescribeCdnRegionAndIspRequest() (request *DescribeCdnRegionAndIspReq
 	return
 }
 
-// create a response to parse from DescribeCdnRegionAndIsp response
+// CreateDescribeCdnRegionAndIspResponse creates a response to parse from DescribeCdnRegionAndIsp response
 func CreateDescribeCdnRegionAndIspResponse() (response *DescribeCdnRegionAndIspResponse) {
 	response = &DescribeCdnRegionAndIspResponse{
 		BaseResponse: &responses.BaseResponse{},

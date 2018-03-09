@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ListRecordings api with *ListRecordingsRequest synchronously
+// ListRecordings invokes the ccc.ListRecordings API synchronously
 // api document: https://help.aliyun.com/api/ccc/listrecordings.html
 func (client *Client) ListRecordings(request *ListRecordingsRequest) (response *ListRecordingsResponse, err error) {
 	response = CreateListRecordingsResponse()
@@ -28,7 +28,7 @@ func (client *Client) ListRecordings(request *ListRecordingsRequest) (response *
 	return
 }
 
-// invoke ListRecordings api with *ListRecordingsRequest asynchronously
+// ListRecordingsWithChan invokes the ccc.ListRecordings API asynchronously
 // api document: https://help.aliyun.com/api/ccc/listrecordings.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListRecordingsWithChan(request *ListRecordingsRequest) (<-chan *ListRecordingsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ListRecordingsWithChan(request *ListRecordingsRequest) (<-
 	return responseChan, errChan
 }
 
-// invoke ListRecordings api with *ListRecordingsRequest asynchronously
+// ListRecordingsWithCallback invokes the ccc.ListRecordings API asynchronously
 // api document: https://help.aliyun.com/api/ccc/listrecordings.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListRecordingsWithCallback(request *ListRecordingsRequest, callback func(response *ListRecordingsResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ListRecordingsWithCallback(request *ListRecordingsRequest,
 	return result
 }
 
+// ListRecordingsRequest is the request struct for api ListRecordings
 type ListRecordingsRequest struct {
 	*requests.RpcRequest
 	InstanceId  string           `position:"Query" name:"InstanceId"`
@@ -85,6 +86,7 @@ type ListRecordingsRequest struct {
 	PageSize    requests.Integer `position:"Query" name:"PageSize"`
 }
 
+// ListRecordingsResponse is the response struct for api ListRecordings
 type ListRecordingsResponse struct {
 	*responses.BaseResponse
 	RequestId      string     `json:"RequestId" xml:"RequestId"`
@@ -95,8 +97,8 @@ type ListRecordingsResponse struct {
 	Recordings     Recordings `json:"Recordings" xml:"Recordings"`
 }
 
-// create a request to invoke ListRecordings API
-func CreateListRecordingsRequest() (request *ListRecordingsRequest) {
+// CreateListRecordingsRequest creates a request to invoke ListRecordings API
+func CreateListRecordingsRequest(request *ListRecordingsRequest) {
 	request = &ListRecordingsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -104,7 +106,7 @@ func CreateListRecordingsRequest() (request *ListRecordingsRequest) {
 	return
 }
 
-// create a response to parse from ListRecordings response
+// CreateListRecordingsResponse creates a response to parse from ListRecordings response
 func CreateListRecordingsResponse() (response *ListRecordingsResponse) {
 	response = &ListRecordingsResponse{
 		BaseResponse: &responses.BaseResponse{},

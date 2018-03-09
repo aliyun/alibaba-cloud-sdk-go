@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ListPhoneNumbers api with *ListPhoneNumbersRequest synchronously
+// ListPhoneNumbers invokes the ccc.ListPhoneNumbers API synchronously
 // api document: https://help.aliyun.com/api/ccc/listphonenumbers.html
 func (client *Client) ListPhoneNumbers(request *ListPhoneNumbersRequest) (response *ListPhoneNumbersResponse, err error) {
 	response = CreateListPhoneNumbersResponse()
@@ -28,7 +28,7 @@ func (client *Client) ListPhoneNumbers(request *ListPhoneNumbersRequest) (respon
 	return
 }
 
-// invoke ListPhoneNumbers api with *ListPhoneNumbersRequest asynchronously
+// ListPhoneNumbersWithChan invokes the ccc.ListPhoneNumbers API asynchronously
 // api document: https://help.aliyun.com/api/ccc/listphonenumbers.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListPhoneNumbersWithChan(request *ListPhoneNumbersRequest) (<-chan *ListPhoneNumbersResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ListPhoneNumbersWithChan(request *ListPhoneNumbersRequest)
 	return responseChan, errChan
 }
 
-// invoke ListPhoneNumbers api with *ListPhoneNumbersRequest asynchronously
+// ListPhoneNumbersWithCallback invokes the ccc.ListPhoneNumbers API asynchronously
 // api document: https://help.aliyun.com/api/ccc/listphonenumbers.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListPhoneNumbersWithCallback(request *ListPhoneNumbersRequest, callback func(response *ListPhoneNumbersResponse, err error)) <-chan int {
@@ -73,12 +73,14 @@ func (client *Client) ListPhoneNumbersWithCallback(request *ListPhoneNumbersRequ
 	return result
 }
 
+// ListPhoneNumbersRequest is the request struct for api ListPhoneNumbers
 type ListPhoneNumbersRequest struct {
 	*requests.RpcRequest
 	InstanceId   string           `position:"Query" name:"InstanceId"`
 	OutboundOnly requests.Boolean `position:"Query" name:"OutboundOnly"`
 }
 
+// ListPhoneNumbersResponse is the response struct for api ListPhoneNumbers
 type ListPhoneNumbersResponse struct {
 	*responses.BaseResponse
 	RequestId      string                         `json:"RequestId" xml:"RequestId"`
@@ -89,8 +91,8 @@ type ListPhoneNumbersResponse struct {
 	PhoneNumbers   PhoneNumbersInListPhoneNumbers `json:"PhoneNumbers" xml:"PhoneNumbers"`
 }
 
-// create a request to invoke ListPhoneNumbers API
-func CreateListPhoneNumbersRequest() (request *ListPhoneNumbersRequest) {
+// CreateListPhoneNumbersRequest creates a request to invoke ListPhoneNumbers API
+func CreateListPhoneNumbersRequest(request *ListPhoneNumbersRequest) {
 	request = &ListPhoneNumbersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateListPhoneNumbersRequest() (request *ListPhoneNumbersRequest) {
 	return
 }
 
-// create a response to parse from ListPhoneNumbers response
+// CreateListPhoneNumbersResponse creates a response to parse from ListPhoneNumbers response
 func CreateListPhoneNumbersResponse() (response *ListPhoneNumbersResponse) {
 	response = &ListPhoneNumbersResponse{
 		BaseResponse: &responses.BaseResponse{},

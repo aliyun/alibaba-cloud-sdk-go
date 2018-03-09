@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifyIntranetBandwidthKb api with *ModifyIntranetBandwidthKbRequest synchronously
+// ModifyIntranetBandwidthKb invokes the ecs.ModifyIntranetBandwidthKb API synchronously
 // api document: https://help.aliyun.com/api/ecs/modifyintranetbandwidthkb.html
 func (client *Client) ModifyIntranetBandwidthKb(request *ModifyIntranetBandwidthKbRequest) (response *ModifyIntranetBandwidthKbResponse, err error) {
 	response = CreateModifyIntranetBandwidthKbResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifyIntranetBandwidthKb(request *ModifyIntranetBandwidth
 	return
 }
 
-// invoke ModifyIntranetBandwidthKb api with *ModifyIntranetBandwidthKbRequest asynchronously
+// ModifyIntranetBandwidthKbWithChan invokes the ecs.ModifyIntranetBandwidthKb API asynchronously
 // api document: https://help.aliyun.com/api/ecs/modifyintranetbandwidthkb.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyIntranetBandwidthKbWithChan(request *ModifyIntranetBandwidthKbRequest) (<-chan *ModifyIntranetBandwidthKbResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifyIntranetBandwidthKbWithChan(request *ModifyIntranetB
 	return responseChan, errChan
 }
 
-// invoke ModifyIntranetBandwidthKb api with *ModifyIntranetBandwidthKbRequest asynchronously
+// ModifyIntranetBandwidthKbWithCallback invokes the ecs.ModifyIntranetBandwidthKb API asynchronously
 // api document: https://help.aliyun.com/api/ecs/modifyintranetbandwidthkb.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyIntranetBandwidthKbWithCallback(request *ModifyIntranetBandwidthKbRequest, callback func(response *ModifyIntranetBandwidthKbResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ModifyIntranetBandwidthKbWithCallback(request *ModifyIntra
 	return result
 }
 
+// ModifyIntranetBandwidthKbRequest is the request struct for api ModifyIntranetBandwidthKb
 type ModifyIntranetBandwidthKbRequest struct {
 	*requests.RpcRequest
 	OwnerId                 requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,13 +85,14 @@ type ModifyIntranetBandwidthKbRequest struct {
 	OwnerAccount            string           `position:"Query" name:"OwnerAccount"`
 }
 
+// ModifyIntranetBandwidthKbResponse is the response struct for api ModifyIntranetBandwidthKb
 type ModifyIntranetBandwidthKbResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ModifyIntranetBandwidthKb API
-func CreateModifyIntranetBandwidthKbRequest() (request *ModifyIntranetBandwidthKbRequest) {
+// CreateModifyIntranetBandwidthKbRequest creates a request to invoke ModifyIntranetBandwidthKb API
+func CreateModifyIntranetBandwidthKbRequest(request *ModifyIntranetBandwidthKbRequest) {
 	request = &ModifyIntranetBandwidthKbRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateModifyIntranetBandwidthKbRequest() (request *ModifyIntranetBandwidthK
 	return
 }
 
-// create a response to parse from ModifyIntranetBandwidthKb response
+// CreateModifyIntranetBandwidthKbResponse creates a response to parse from ModifyIntranetBandwidthKb response
 func CreateModifyIntranetBandwidthKbResponse() (response *ModifyIntranetBandwidthKbResponse) {
 	response = &ModifyIntranetBandwidthKbResponse{
 		BaseResponse: &responses.BaseResponse{},

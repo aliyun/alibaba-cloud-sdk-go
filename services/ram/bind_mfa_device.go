@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke BindMFADevice api with *BindMFADeviceRequest synchronously
+// BindMFADevice invokes the ram.BindMFADevice API synchronously
 // api document: https://help.aliyun.com/api/ram/bindmfadevice.html
 func (client *Client) BindMFADevice(request *BindMFADeviceRequest) (response *BindMFADeviceResponse, err error) {
 	response = CreateBindMFADeviceResponse()
@@ -28,7 +28,7 @@ func (client *Client) BindMFADevice(request *BindMFADeviceRequest) (response *Bi
 	return
 }
 
-// invoke BindMFADevice api with *BindMFADeviceRequest asynchronously
+// BindMFADeviceWithChan invokes the ram.BindMFADevice API asynchronously
 // api document: https://help.aliyun.com/api/ram/bindmfadevice.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BindMFADeviceWithChan(request *BindMFADeviceRequest) (<-chan *BindMFADeviceResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) BindMFADeviceWithChan(request *BindMFADeviceRequest) (<-ch
 	return responseChan, errChan
 }
 
-// invoke BindMFADevice api with *BindMFADeviceRequest asynchronously
+// BindMFADeviceWithCallback invokes the ram.BindMFADevice API asynchronously
 // api document: https://help.aliyun.com/api/ram/bindmfadevice.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BindMFADeviceWithCallback(request *BindMFADeviceRequest, callback func(response *BindMFADeviceResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) BindMFADeviceWithCallback(request *BindMFADeviceRequest, c
 	return result
 }
 
+// BindMFADeviceRequest is the request struct for api BindMFADevice
 type BindMFADeviceRequest struct {
 	*requests.RpcRequest
 	SerialNumber        string `position:"Query" name:"SerialNumber"`
@@ -81,13 +82,14 @@ type BindMFADeviceRequest struct {
 	AuthenticationCode2 string `position:"Query" name:"AuthenticationCode2"`
 }
 
+// BindMFADeviceResponse is the response struct for api BindMFADevice
 type BindMFADeviceResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke BindMFADevice API
-func CreateBindMFADeviceRequest() (request *BindMFADeviceRequest) {
+// CreateBindMFADeviceRequest creates a request to invoke BindMFADevice API
+func CreateBindMFADeviceRequest(request *BindMFADeviceRequest) {
 	request = &BindMFADeviceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateBindMFADeviceRequest() (request *BindMFADeviceRequest) {
 	return
 }
 
-// create a response to parse from BindMFADevice response
+// CreateBindMFADeviceResponse creates a response to parse from BindMFADevice response
 func CreateBindMFADeviceResponse() (response *BindMFADeviceResponse) {
 	response = &BindMFADeviceResponse{
 		BaseResponse: &responses.BaseResponse{},

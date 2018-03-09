@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeDisks api with *DescribeDisksRequest synchronously
+// DescribeDisks invokes the ecs.DescribeDisks API synchronously
 // api document: https://help.aliyun.com/api/ecs/describedisks.html
 func (client *Client) DescribeDisks(request *DescribeDisksRequest) (response *DescribeDisksResponse, err error) {
 	response = CreateDescribeDisksResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeDisks(request *DescribeDisksRequest) (response *De
 	return
 }
 
-// invoke DescribeDisks api with *DescribeDisksRequest asynchronously
+// DescribeDisksWithChan invokes the ecs.DescribeDisks API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describedisks.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDisksWithChan(request *DescribeDisksRequest) (<-chan *DescribeDisksResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeDisksWithChan(request *DescribeDisksRequest) (<-ch
 	return responseChan, errChan
 }
 
-// invoke DescribeDisks api with *DescribeDisksRequest asynchronously
+// DescribeDisksWithCallback invokes the ecs.DescribeDisks API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describedisks.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDisksWithCallback(request *DescribeDisksRequest, callback func(response *DescribeDisksResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeDisksWithCallback(request *DescribeDisksRequest, c
 	return result
 }
 
+// DescribeDisksRequest is the request struct for api DescribeDisks
 type DescribeDisksRequest struct {
 	*requests.RpcRequest
 	OwnerId                       requests.Integer `position:"Query" name:"OwnerId"`
@@ -118,6 +119,7 @@ type DescribeDisksRequest struct {
 	DryRun                        requests.Boolean `position:"Query" name:"DryRun"`
 }
 
+// DescribeDisksResponse is the response struct for api DescribeDisks
 type DescribeDisksResponse struct {
 	*responses.BaseResponse
 	RequestId  string `json:"RequestId" xml:"RequestId"`
@@ -127,8 +129,8 @@ type DescribeDisksResponse struct {
 	Disks      Disks  `json:"Disks" xml:"Disks"`
 }
 
-// create a request to invoke DescribeDisks API
-func CreateDescribeDisksRequest() (request *DescribeDisksRequest) {
+// CreateDescribeDisksRequest creates a request to invoke DescribeDisks API
+func CreateDescribeDisksRequest(request *DescribeDisksRequest) {
 	request = &DescribeDisksRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -136,7 +138,7 @@ func CreateDescribeDisksRequest() (request *DescribeDisksRequest) {
 	return
 }
 
-// create a response to parse from DescribeDisks response
+// CreateDescribeDisksResponse creates a response to parse from DescribeDisks response
 func CreateDescribeDisksResponse() (response *DescribeDisksResponse) {
 	response = &DescribeDisksResponse{
 		BaseResponse: &responses.BaseResponse{},

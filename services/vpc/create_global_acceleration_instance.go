@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CreateGlobalAccelerationInstance api with *CreateGlobalAccelerationInstanceRequest synchronously
+// CreateGlobalAccelerationInstance invokes the vpc.CreateGlobalAccelerationInstance API synchronously
 // api document: https://help.aliyun.com/api/vpc/createglobalaccelerationinstance.html
 func (client *Client) CreateGlobalAccelerationInstance(request *CreateGlobalAccelerationInstanceRequest) (response *CreateGlobalAccelerationInstanceResponse, err error) {
 	response = CreateCreateGlobalAccelerationInstanceResponse()
@@ -28,7 +28,7 @@ func (client *Client) CreateGlobalAccelerationInstance(request *CreateGlobalAcce
 	return
 }
 
-// invoke CreateGlobalAccelerationInstance api with *CreateGlobalAccelerationInstanceRequest asynchronously
+// CreateGlobalAccelerationInstanceWithChan invokes the vpc.CreateGlobalAccelerationInstance API asynchronously
 // api document: https://help.aliyun.com/api/vpc/createglobalaccelerationinstance.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateGlobalAccelerationInstanceWithChan(request *CreateGlobalAccelerationInstanceRequest) (<-chan *CreateGlobalAccelerationInstanceResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CreateGlobalAccelerationInstanceWithChan(request *CreateGl
 	return responseChan, errChan
 }
 
-// invoke CreateGlobalAccelerationInstance api with *CreateGlobalAccelerationInstanceRequest asynchronously
+// CreateGlobalAccelerationInstanceWithCallback invokes the vpc.CreateGlobalAccelerationInstance API asynchronously
 // api document: https://help.aliyun.com/api/vpc/createglobalaccelerationinstance.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateGlobalAccelerationInstanceWithCallback(request *CreateGlobalAccelerationInstanceRequest, callback func(response *CreateGlobalAccelerationInstanceResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) CreateGlobalAccelerationInstanceWithCallback(request *Crea
 	return result
 }
 
+// CreateGlobalAccelerationInstanceRequest is the request struct for api CreateGlobalAccelerationInstance
 type CreateGlobalAccelerationInstanceRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -88,6 +89,7 @@ type CreateGlobalAccelerationInstanceRequest struct {
 	ClientToken          string           `position:"Query" name:"ClientToken"`
 }
 
+// CreateGlobalAccelerationInstanceResponse is the response struct for api CreateGlobalAccelerationInstance
 type CreateGlobalAccelerationInstanceResponse struct {
 	*responses.BaseResponse
 	RequestId                    string `json:"RequestId" xml:"RequestId"`
@@ -95,8 +97,8 @@ type CreateGlobalAccelerationInstanceResponse struct {
 	IpAddress                    string `json:"IpAddress" xml:"IpAddress"`
 }
 
-// create a request to invoke CreateGlobalAccelerationInstance API
-func CreateCreateGlobalAccelerationInstanceRequest() (request *CreateGlobalAccelerationInstanceRequest) {
+// CreateCreateGlobalAccelerationInstanceRequest creates a request to invoke CreateGlobalAccelerationInstance API
+func CreateCreateGlobalAccelerationInstanceRequest(request *CreateGlobalAccelerationInstanceRequest) {
 	request = &CreateGlobalAccelerationInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -104,7 +106,7 @@ func CreateCreateGlobalAccelerationInstanceRequest() (request *CreateGlobalAccel
 	return
 }
 
-// create a response to parse from CreateGlobalAccelerationInstance response
+// CreateCreateGlobalAccelerationInstanceResponse creates a response to parse from CreateGlobalAccelerationInstance response
 func CreateCreateGlobalAccelerationInstanceResponse() (response *CreateGlobalAccelerationInstanceResponse) {
 	response = &CreateGlobalAccelerationInstanceResponse{
 		BaseResponse: &responses.BaseResponse{},

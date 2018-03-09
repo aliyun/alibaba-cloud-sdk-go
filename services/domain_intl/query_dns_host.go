@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke QueryDnsHost api with *QueryDnsHostRequest synchronously
+// QueryDnsHost invokes the domain_intl.QueryDnsHost API synchronously
 // api document: https://help.aliyun.com/api/domain-intl/querydnshost.html
 func (client *Client) QueryDnsHost(request *QueryDnsHostRequest) (response *QueryDnsHostResponse, err error) {
 	response = CreateQueryDnsHostResponse()
@@ -28,7 +28,7 @@ func (client *Client) QueryDnsHost(request *QueryDnsHostRequest) (response *Quer
 	return
 }
 
-// invoke QueryDnsHost api with *QueryDnsHostRequest asynchronously
+// QueryDnsHostWithChan invokes the domain_intl.QueryDnsHost API asynchronously
 // api document: https://help.aliyun.com/api/domain-intl/querydnshost.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryDnsHostWithChan(request *QueryDnsHostRequest) (<-chan *QueryDnsHostResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) QueryDnsHostWithChan(request *QueryDnsHostRequest) (<-chan
 	return responseChan, errChan
 }
 
-// invoke QueryDnsHost api with *QueryDnsHostRequest asynchronously
+// QueryDnsHostWithCallback invokes the domain_intl.QueryDnsHost API asynchronously
 // api document: https://help.aliyun.com/api/domain-intl/querydnshost.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryDnsHostWithCallback(request *QueryDnsHostRequest, callback func(response *QueryDnsHostResponse, err error)) <-chan int {
@@ -73,20 +73,22 @@ func (client *Client) QueryDnsHostWithCallback(request *QueryDnsHostRequest, cal
 	return result
 }
 
+// QueryDnsHostRequest is the request struct for api QueryDnsHost
 type QueryDnsHostRequest struct {
 	*requests.RpcRequest
 	InstanceId string `position:"Query" name:"InstanceId"`
 	Lang       string `position:"Query" name:"Lang"`
 }
 
+// QueryDnsHostResponse is the response struct for api QueryDnsHost
 type QueryDnsHostResponse struct {
 	*responses.BaseResponse
 	RequestId   string    `json:"RequestId" xml:"RequestId"`
 	DnsHostList []DnsHost `json:"DnsHostList" xml:"DnsHostList"`
 }
 
-// create a request to invoke QueryDnsHost API
-func CreateQueryDnsHostRequest() (request *QueryDnsHostRequest) {
+// CreateQueryDnsHostRequest creates a request to invoke QueryDnsHost API
+func CreateQueryDnsHostRequest(request *QueryDnsHostRequest) {
 	request = &QueryDnsHostRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -94,7 +96,7 @@ func CreateQueryDnsHostRequest() (request *QueryDnsHostRequest) {
 	return
 }
 
-// create a response to parse from QueryDnsHost response
+// CreateQueryDnsHostResponse creates a response to parse from QueryDnsHost response
 func CreateQueryDnsHostResponse() (response *QueryDnsHostResponse) {
 	response = &QueryDnsHostResponse{
 		BaseResponse: &responses.BaseResponse{},

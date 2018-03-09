@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SetListenerAccessControlStatus api with *SetListenerAccessControlStatusRequest synchronously
+// SetListenerAccessControlStatus invokes the slb.SetListenerAccessControlStatus API synchronously
 // api document: https://help.aliyun.com/api/slb/setlisteneraccesscontrolstatus.html
 func (client *Client) SetListenerAccessControlStatus(request *SetListenerAccessControlStatusRequest) (response *SetListenerAccessControlStatusResponse, err error) {
 	response = CreateSetListenerAccessControlStatusResponse()
@@ -28,7 +28,7 @@ func (client *Client) SetListenerAccessControlStatus(request *SetListenerAccessC
 	return
 }
 
-// invoke SetListenerAccessControlStatus api with *SetListenerAccessControlStatusRequest asynchronously
+// SetListenerAccessControlStatusWithChan invokes the slb.SetListenerAccessControlStatus API asynchronously
 // api document: https://help.aliyun.com/api/slb/setlisteneraccesscontrolstatus.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetListenerAccessControlStatusWithChan(request *SetListenerAccessControlStatusRequest) (<-chan *SetListenerAccessControlStatusResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SetListenerAccessControlStatusWithChan(request *SetListene
 	return responseChan, errChan
 }
 
-// invoke SetListenerAccessControlStatus api with *SetListenerAccessControlStatusRequest asynchronously
+// SetListenerAccessControlStatusWithCallback invokes the slb.SetListenerAccessControlStatus API asynchronously
 // api document: https://help.aliyun.com/api/slb/setlisteneraccesscontrolstatus.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetListenerAccessControlStatusWithCallback(request *SetListenerAccessControlStatusRequest, callback func(response *SetListenerAccessControlStatusResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SetListenerAccessControlStatusWithCallback(request *SetLis
 	return result
 }
 
+// SetListenerAccessControlStatusRequest is the request struct for api SetListenerAccessControlStatus
 type SetListenerAccessControlStatusRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -86,13 +87,14 @@ type SetListenerAccessControlStatusRequest struct {
 	Tags                 string           `position:"Query" name:"Tags"`
 }
 
+// SetListenerAccessControlStatusResponse is the response struct for api SetListenerAccessControlStatus
 type SetListenerAccessControlStatusResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke SetListenerAccessControlStatus API
-func CreateSetListenerAccessControlStatusRequest() (request *SetListenerAccessControlStatusRequest) {
+// CreateSetListenerAccessControlStatusRequest creates a request to invoke SetListenerAccessControlStatus API
+func CreateSetListenerAccessControlStatusRequest(request *SetListenerAccessControlStatusRequest) {
 	request = &SetListenerAccessControlStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -100,7 +102,7 @@ func CreateSetListenerAccessControlStatusRequest() (request *SetListenerAccessCo
 	return
 }
 
-// create a response to parse from SetListenerAccessControlStatus response
+// CreateSetListenerAccessControlStatusResponse creates a response to parse from SetListenerAccessControlStatus response
 func CreateSetListenerAccessControlStatusResponse() (response *SetListenerAccessControlStatusResponse) {
 	response = &SetListenerAccessControlStatusResponse{
 		BaseResponse: &responses.BaseResponse{},

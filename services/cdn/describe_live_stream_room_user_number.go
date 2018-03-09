@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeLiveStreamRoomUserNumber api with *DescribeLiveStreamRoomUserNumberRequest synchronously
+// DescribeLiveStreamRoomUserNumber invokes the cdn.DescribeLiveStreamRoomUserNumber API synchronously
 // api document: https://help.aliyun.com/api/cdn/describelivestreamroomusernumber.html
 func (client *Client) DescribeLiveStreamRoomUserNumber(request *DescribeLiveStreamRoomUserNumberRequest) (response *DescribeLiveStreamRoomUserNumberResponse, err error) {
 	response = CreateDescribeLiveStreamRoomUserNumberResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeLiveStreamRoomUserNumber(request *DescribeLiveStre
 	return
 }
 
-// invoke DescribeLiveStreamRoomUserNumber api with *DescribeLiveStreamRoomUserNumberRequest asynchronously
+// DescribeLiveStreamRoomUserNumberWithChan invokes the cdn.DescribeLiveStreamRoomUserNumber API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describelivestreamroomusernumber.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamRoomUserNumberWithChan(request *DescribeLiveStreamRoomUserNumberRequest) (<-chan *DescribeLiveStreamRoomUserNumberResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeLiveStreamRoomUserNumberWithChan(request *Describe
 	return responseChan, errChan
 }
 
-// invoke DescribeLiveStreamRoomUserNumber api with *DescribeLiveStreamRoomUserNumberRequest asynchronously
+// DescribeLiveStreamRoomUserNumberWithCallback invokes the cdn.DescribeLiveStreamRoomUserNumber API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describelivestreamroomusernumber.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamRoomUserNumberWithCallback(request *DescribeLiveStreamRoomUserNumberRequest, callback func(response *DescribeLiveStreamRoomUserNumberResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeLiveStreamRoomUserNumberWithCallback(request *Desc
 	return result
 }
 
+// DescribeLiveStreamRoomUserNumberRequest is the request struct for api DescribeLiveStreamRoomUserNumber
 type DescribeLiveStreamRoomUserNumberRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -85,6 +86,7 @@ type DescribeLiveStreamRoomUserNumberRequest struct {
 	HlsSwitch     string           `position:"Query" name:"HlsSwitch"`
 }
 
+// DescribeLiveStreamRoomUserNumberResponse is the response struct for api DescribeLiveStreamRoomUserNumber
 type DescribeLiveStreamRoomUserNumberResponse struct {
 	*responses.BaseResponse
 	RequestId       string                                           `json:"RequestId" xml:"RequestId"`
@@ -92,8 +94,8 @@ type DescribeLiveStreamRoomUserNumberResponse struct {
 	OnlineUserInfo  OnlineUserInfoInDescribeLiveStreamRoomUserNumber `json:"OnlineUserInfo" xml:"OnlineUserInfo"`
 }
 
-// create a request to invoke DescribeLiveStreamRoomUserNumber API
-func CreateDescribeLiveStreamRoomUserNumberRequest() (request *DescribeLiveStreamRoomUserNumberRequest) {
+// CreateDescribeLiveStreamRoomUserNumberRequest creates a request to invoke DescribeLiveStreamRoomUserNumber API
+func CreateDescribeLiveStreamRoomUserNumberRequest(request *DescribeLiveStreamRoomUserNumberRequest) {
 	request = &DescribeLiveStreamRoomUserNumberRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -101,7 +103,7 @@ func CreateDescribeLiveStreamRoomUserNumberRequest() (request *DescribeLiveStrea
 	return
 }
 
-// create a response to parse from DescribeLiveStreamRoomUserNumber response
+// CreateDescribeLiveStreamRoomUserNumberResponse creates a response to parse from DescribeLiveStreamRoomUserNumber response
 func CreateDescribeLiveStreamRoomUserNumberResponse() (response *DescribeLiveStreamRoomUserNumberResponse) {
 	response = &DescribeLiveStreamRoomUserNumberResponse{
 		BaseResponse: &responses.BaseResponse{},

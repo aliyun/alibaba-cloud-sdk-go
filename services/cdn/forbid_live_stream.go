@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ForbidLiveStream api with *ForbidLiveStreamRequest synchronously
+// ForbidLiveStream invokes the cdn.ForbidLiveStream API synchronously
 // api document: https://help.aliyun.com/api/cdn/forbidlivestream.html
 func (client *Client) ForbidLiveStream(request *ForbidLiveStreamRequest) (response *ForbidLiveStreamResponse, err error) {
 	response = CreateForbidLiveStreamResponse()
@@ -28,7 +28,7 @@ func (client *Client) ForbidLiveStream(request *ForbidLiveStreamRequest) (respon
 	return
 }
 
-// invoke ForbidLiveStream api with *ForbidLiveStreamRequest asynchronously
+// ForbidLiveStreamWithChan invokes the cdn.ForbidLiveStream API asynchronously
 // api document: https://help.aliyun.com/api/cdn/forbidlivestream.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ForbidLiveStreamWithChan(request *ForbidLiveStreamRequest) (<-chan *ForbidLiveStreamResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ForbidLiveStreamWithChan(request *ForbidLiveStreamRequest)
 	return responseChan, errChan
 }
 
-// invoke ForbidLiveStream api with *ForbidLiveStreamRequest asynchronously
+// ForbidLiveStreamWithCallback invokes the cdn.ForbidLiveStream API asynchronously
 // api document: https://help.aliyun.com/api/cdn/forbidlivestream.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ForbidLiveStreamWithCallback(request *ForbidLiveStreamRequest, callback func(response *ForbidLiveStreamResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ForbidLiveStreamWithCallback(request *ForbidLiveStreamRequ
 	return result
 }
 
+// ForbidLiveStreamRequest is the request struct for api ForbidLiveStream
 type ForbidLiveStreamRequest struct {
 	*requests.RpcRequest
 	OwnerId        requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,13 +85,14 @@ type ForbidLiveStreamRequest struct {
 	ResumeTime     string           `position:"Query" name:"ResumeTime"`
 }
 
+// ForbidLiveStreamResponse is the response struct for api ForbidLiveStream
 type ForbidLiveStreamResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ForbidLiveStream API
-func CreateForbidLiveStreamRequest() (request *ForbidLiveStreamRequest) {
+// CreateForbidLiveStreamRequest creates a request to invoke ForbidLiveStream API
+func CreateForbidLiveStreamRequest(request *ForbidLiveStreamRequest) {
 	request = &ForbidLiveStreamRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateForbidLiveStreamRequest() (request *ForbidLiveStreamRequest) {
 	return
 }
 
-// create a response to parse from ForbidLiveStream response
+// CreateForbidLiveStreamResponse creates a response to parse from ForbidLiveStream response
 func CreateForbidLiveStreamResponse() (response *ForbidLiveStreamResponse) {
 	response = &ForbidLiveStreamResponse{
 		BaseResponse: &responses.BaseResponse{},

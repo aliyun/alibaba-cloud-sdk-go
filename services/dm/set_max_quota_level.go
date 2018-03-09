@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SetMaxQuotaLevel api with *SetMaxQuotaLevelRequest synchronously
+// SetMaxQuotaLevel invokes the dm.SetMaxQuotaLevel API synchronously
 // api document: https://help.aliyun.com/api/dm/setmaxquotalevel.html
 func (client *Client) SetMaxQuotaLevel(request *SetMaxQuotaLevelRequest) (response *SetMaxQuotaLevelResponse, err error) {
 	response = CreateSetMaxQuotaLevelResponse()
@@ -28,7 +28,7 @@ func (client *Client) SetMaxQuotaLevel(request *SetMaxQuotaLevelRequest) (respon
 	return
 }
 
-// invoke SetMaxQuotaLevel api with *SetMaxQuotaLevelRequest asynchronously
+// SetMaxQuotaLevelWithChan invokes the dm.SetMaxQuotaLevel API asynchronously
 // api document: https://help.aliyun.com/api/dm/setmaxquotalevel.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetMaxQuotaLevelWithChan(request *SetMaxQuotaLevelRequest) (<-chan *SetMaxQuotaLevelResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SetMaxQuotaLevelWithChan(request *SetMaxQuotaLevelRequest)
 	return responseChan, errChan
 }
 
-// invoke SetMaxQuotaLevel api with *SetMaxQuotaLevelRequest asynchronously
+// SetMaxQuotaLevelWithCallback invokes the dm.SetMaxQuotaLevel API asynchronously
 // api document: https://help.aliyun.com/api/dm/setmaxquotalevel.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetMaxQuotaLevelWithCallback(request *SetMaxQuotaLevelRequest, callback func(response *SetMaxQuotaLevelResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SetMaxQuotaLevelWithCallback(request *SetMaxQuotaLevelRequ
 	return result
 }
 
+// SetMaxQuotaLevelRequest is the request struct for api SetMaxQuotaLevel
 type SetMaxQuotaLevelRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -81,13 +82,14 @@ type SetMaxQuotaLevelRequest struct {
 	MaxQuotaLevel        string           `position:"Query" name:"MaxQuotaLevel"`
 }
 
+// SetMaxQuotaLevelResponse is the response struct for api SetMaxQuotaLevel
 type SetMaxQuotaLevelResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke SetMaxQuotaLevel API
-func CreateSetMaxQuotaLevelRequest() (request *SetMaxQuotaLevelRequest) {
+// CreateSetMaxQuotaLevelRequest creates a request to invoke SetMaxQuotaLevel API
+func CreateSetMaxQuotaLevelRequest(request *SetMaxQuotaLevelRequest) {
 	request = &SetMaxQuotaLevelRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateSetMaxQuotaLevelRequest() (request *SetMaxQuotaLevelRequest) {
 	return
 }
 
-// create a response to parse from SetMaxQuotaLevel response
+// CreateSetMaxQuotaLevelResponse creates a response to parse from SetMaxQuotaLevel response
 func CreateSetMaxQuotaLevelResponse() (response *SetMaxQuotaLevelResponse) {
 	response = &SetMaxQuotaLevelResponse{
 		BaseResponse: &responses.BaseResponse{},

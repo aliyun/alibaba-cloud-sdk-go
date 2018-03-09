@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifyCommand api with *ModifyCommandRequest synchronously
+// ModifyCommand invokes the ecs.ModifyCommand API synchronously
 // api document: https://help.aliyun.com/api/ecs/modifycommand.html
 func (client *Client) ModifyCommand(request *ModifyCommandRequest) (response *ModifyCommandResponse, err error) {
 	response = CreateModifyCommandResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifyCommand(request *ModifyCommandRequest) (response *Mo
 	return
 }
 
-// invoke ModifyCommand api with *ModifyCommandRequest asynchronously
+// ModifyCommandWithChan invokes the ecs.ModifyCommand API asynchronously
 // api document: https://help.aliyun.com/api/ecs/modifycommand.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyCommandWithChan(request *ModifyCommandRequest) (<-chan *ModifyCommandResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifyCommandWithChan(request *ModifyCommandRequest) (<-ch
 	return responseChan, errChan
 }
 
-// invoke ModifyCommand api with *ModifyCommandRequest asynchronously
+// ModifyCommandWithCallback invokes the ecs.ModifyCommand API asynchronously
 // api document: https://help.aliyun.com/api/ecs/modifycommand.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyCommandWithCallback(request *ModifyCommandRequest, callback func(response *ModifyCommandResponse, err error)) <-chan int {
@@ -73,17 +73,19 @@ func (client *Client) ModifyCommandWithCallback(request *ModifyCommandRequest, c
 	return result
 }
 
+// ModifyCommandRequest is the request struct for api ModifyCommand
 type ModifyCommandRequest struct {
 	*requests.RpcRequest
 }
 
+// ModifyCommandResponse is the response struct for api ModifyCommand
 type ModifyCommandResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ModifyCommand API
-func CreateModifyCommandRequest() (request *ModifyCommandRequest) {
+// CreateModifyCommandRequest creates a request to invoke ModifyCommand API
+func CreateModifyCommandRequest(request *ModifyCommandRequest) {
 	request = &ModifyCommandRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -91,7 +93,7 @@ func CreateModifyCommandRequest() (request *ModifyCommandRequest) {
 	return
 }
 
-// create a response to parse from ModifyCommand response
+// CreateModifyCommandResponse creates a response to parse from ModifyCommand response
 func CreateModifyCommandResponse() (response *ModifyCommandResponse) {
 	response = &ModifyCommandResponse{
 		BaseResponse: &responses.BaseResponse{},

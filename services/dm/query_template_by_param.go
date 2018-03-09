@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke QueryTemplateByParam api with *QueryTemplateByParamRequest synchronously
+// QueryTemplateByParam invokes the dm.QueryTemplateByParam API synchronously
 // api document: https://help.aliyun.com/api/dm/querytemplatebyparam.html
 func (client *Client) QueryTemplateByParam(request *QueryTemplateByParamRequest) (response *QueryTemplateByParamResponse, err error) {
 	response = CreateQueryTemplateByParamResponse()
@@ -28,7 +28,7 @@ func (client *Client) QueryTemplateByParam(request *QueryTemplateByParamRequest)
 	return
 }
 
-// invoke QueryTemplateByParam api with *QueryTemplateByParamRequest asynchronously
+// QueryTemplateByParamWithChan invokes the dm.QueryTemplateByParam API asynchronously
 // api document: https://help.aliyun.com/api/dm/querytemplatebyparam.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryTemplateByParamWithChan(request *QueryTemplateByParamRequest) (<-chan *QueryTemplateByParamResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) QueryTemplateByParamWithChan(request *QueryTemplateByParam
 	return responseChan, errChan
 }
 
-// invoke QueryTemplateByParam api with *QueryTemplateByParamRequest asynchronously
+// QueryTemplateByParamWithCallback invokes the dm.QueryTemplateByParam API asynchronously
 // api document: https://help.aliyun.com/api/dm/querytemplatebyparam.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryTemplateByParamWithCallback(request *QueryTemplateByParamRequest, callback func(response *QueryTemplateByParamResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) QueryTemplateByParamWithCallback(request *QueryTemplateByP
 	return result
 }
 
+// QueryTemplateByParamRequest is the request struct for api QueryTemplateByParam
 type QueryTemplateByParamRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -85,6 +86,7 @@ type QueryTemplateByParamRequest struct {
 	FromType             requests.Integer `position:"Query" name:"FromType"`
 }
 
+// QueryTemplateByParamResponse is the response struct for api QueryTemplateByParam
 type QueryTemplateByParamResponse struct {
 	*responses.BaseResponse
 	RequestId  string                     `json:"RequestId" xml:"RequestId"`
@@ -94,8 +96,8 @@ type QueryTemplateByParamResponse struct {
 	Data       DataInQueryTemplateByParam `json:"data" xml:"data"`
 }
 
-// create a request to invoke QueryTemplateByParam API
-func CreateQueryTemplateByParamRequest() (request *QueryTemplateByParamRequest) {
+// CreateQueryTemplateByParamRequest creates a request to invoke QueryTemplateByParam API
+func CreateQueryTemplateByParamRequest(request *QueryTemplateByParamRequest) {
 	request = &QueryTemplateByParamRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -103,7 +105,7 @@ func CreateQueryTemplateByParamRequest() (request *QueryTemplateByParamRequest) 
 	return
 }
 
-// create a response to parse from QueryTemplateByParam response
+// CreateQueryTemplateByParamResponse creates a response to parse from QueryTemplateByParam response
 func CreateQueryTemplateByParamResponse() (response *QueryTemplateByParamResponse) {
 	response = &QueryTemplateByParamResponse{
 		BaseResponse: &responses.BaseResponse{},

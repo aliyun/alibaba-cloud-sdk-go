@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteBlackHole api with *DeleteBlackHoleRequest synchronously
+// DeleteBlackHole invokes the ddospro.DeleteBlackHole API synchronously
 // api document: https://help.aliyun.com/api/ddospro/deleteblackhole.html
 func (client *Client) DeleteBlackHole(request *DeleteBlackHoleRequest) (response *DeleteBlackHoleResponse, err error) {
 	response = CreateDeleteBlackHoleResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteBlackHole(request *DeleteBlackHoleRequest) (response
 	return
 }
 
-// invoke DeleteBlackHole api with *DeleteBlackHoleRequest asynchronously
+// DeleteBlackHoleWithChan invokes the ddospro.DeleteBlackHole API asynchronously
 // api document: https://help.aliyun.com/api/ddospro/deleteblackhole.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteBlackHoleWithChan(request *DeleteBlackHoleRequest) (<-chan *DeleteBlackHoleResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteBlackHoleWithChan(request *DeleteBlackHoleRequest) (
 	return responseChan, errChan
 }
 
-// invoke DeleteBlackHole api with *DeleteBlackHoleRequest asynchronously
+// DeleteBlackHoleWithCallback invokes the ddospro.DeleteBlackHole API asynchronously
 // api document: https://help.aliyun.com/api/ddospro/deleteblackhole.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteBlackHoleWithCallback(request *DeleteBlackHoleRequest, callback func(response *DeleteBlackHoleResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DeleteBlackHoleWithCallback(request *DeleteBlackHoleReques
 	return result
 }
 
+// DeleteBlackHoleRequest is the request struct for api DeleteBlackHole
 type DeleteBlackHoleRequest struct {
 	*requests.RpcRequest
 	SourceIp        string           `position:"Query" name:"SourceIp"`
@@ -80,14 +81,15 @@ type DeleteBlackHoleRequest struct {
 	Vip             string           `position:"Query" name:"Vip"`
 }
 
+// DeleteBlackHoleResponse is the response struct for api DeleteBlackHole
 type DeleteBlackHoleResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Data      string `json:"data" xml:"data"`
 }
 
-// create a request to invoke DeleteBlackHole API
-func CreateDeleteBlackHoleRequest() (request *DeleteBlackHoleRequest) {
+// CreateDeleteBlackHoleRequest creates a request to invoke DeleteBlackHole API
+func CreateDeleteBlackHoleRequest(request *DeleteBlackHoleRequest) {
 	request = &DeleteBlackHoleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateDeleteBlackHoleRequest() (request *DeleteBlackHoleRequest) {
 	return
 }
 
-// create a response to parse from DeleteBlackHole response
+// CreateDeleteBlackHoleResponse creates a response to parse from DeleteBlackHole response
 func CreateDeleteBlackHoleResponse() (response *DeleteBlackHoleResponse) {
 	response = &DeleteBlackHoleResponse{
 		BaseResponse: &responses.BaseResponse{},

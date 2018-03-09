@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ListNodes api with *ListNodesRequest synchronously
+// ListNodes invokes the ehpc.ListNodes API synchronously
 // api document: https://help.aliyun.com/api/ehpc/listnodes.html
 func (client *Client) ListNodes(request *ListNodesRequest) (response *ListNodesResponse, err error) {
 	response = CreateListNodesResponse()
@@ -28,7 +28,7 @@ func (client *Client) ListNodes(request *ListNodesRequest) (response *ListNodesR
 	return
 }
 
-// invoke ListNodes api with *ListNodesRequest asynchronously
+// ListNodesWithChan invokes the ehpc.ListNodes API asynchronously
 // api document: https://help.aliyun.com/api/ehpc/listnodes.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListNodesWithChan(request *ListNodesRequest) (<-chan *ListNodesResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ListNodesWithChan(request *ListNodesRequest) (<-chan *List
 	return responseChan, errChan
 }
 
-// invoke ListNodes api with *ListNodesRequest asynchronously
+// ListNodesWithCallback invokes the ehpc.ListNodes API asynchronously
 // api document: https://help.aliyun.com/api/ehpc/listnodes.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListNodesWithCallback(request *ListNodesRequest, callback func(response *ListNodesResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ListNodesWithCallback(request *ListNodesRequest, callback 
 	return result
 }
 
+// ListNodesRequest is the request struct for api ListNodes
 type ListNodesRequest struct {
 	*requests.RpcRequest
 	ClusterId  string           `position:"Query" name:"ClusterId"`
@@ -82,6 +83,7 @@ type ListNodesRequest struct {
 	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 }
 
+// ListNodesResponse is the response struct for api ListNodes
 type ListNodesResponse struct {
 	*responses.BaseResponse
 	RequestId  string           `json:"RequestId" xml:"RequestId"`
@@ -91,8 +93,8 @@ type ListNodesResponse struct {
 	Nodes      NodesInListNodes `json:"Nodes" xml:"Nodes"`
 }
 
-// create a request to invoke ListNodes API
-func CreateListNodesRequest() (request *ListNodesRequest) {
+// CreateListNodesRequest creates a request to invoke ListNodes API
+func CreateListNodesRequest(request *ListNodesRequest) {
 	request = &ListNodesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -100,7 +102,7 @@ func CreateListNodesRequest() (request *ListNodesRequest) {
 	return
 }
 
-// create a response to parse from ListNodes response
+// CreateListNodesResponse creates a response to parse from ListNodes response
 func CreateListNodesResponse() (response *ListNodesResponse) {
 	response = &ListNodesResponse{
 		BaseResponse: &responses.BaseResponse{},

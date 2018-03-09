@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeFileSystems api with *DescribeFileSystemsRequest synchronously
+// DescribeFileSystems invokes the nas.DescribeFileSystems API synchronously
 // api document: https://help.aliyun.com/api/nas/describefilesystems.html
 func (client *Client) DescribeFileSystems(request *DescribeFileSystemsRequest) (response *DescribeFileSystemsResponse, err error) {
 	response = CreateDescribeFileSystemsResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeFileSystems(request *DescribeFileSystemsRequest) (
 	return
 }
 
-// invoke DescribeFileSystems api with *DescribeFileSystemsRequest asynchronously
+// DescribeFileSystemsWithChan invokes the nas.DescribeFileSystems API asynchronously
 // api document: https://help.aliyun.com/api/nas/describefilesystems.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeFileSystemsWithChan(request *DescribeFileSystemsRequest) (<-chan *DescribeFileSystemsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeFileSystemsWithChan(request *DescribeFileSystemsRe
 	return responseChan, errChan
 }
 
-// invoke DescribeFileSystems api with *DescribeFileSystemsRequest asynchronously
+// DescribeFileSystemsWithCallback invokes the nas.DescribeFileSystems API asynchronously
 // api document: https://help.aliyun.com/api/nas/describefilesystems.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeFileSystemsWithCallback(request *DescribeFileSystemsRequest, callback func(response *DescribeFileSystemsResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeFileSystemsWithCallback(request *DescribeFileSyste
 	return result
 }
 
+// DescribeFileSystemsRequest is the request struct for api DescribeFileSystems
 type DescribeFileSystemsRequest struct {
 	*requests.RpcRequest
 	FileSystemId string           `position:"Query" name:"FileSystemId"`
@@ -80,6 +81,7 @@ type DescribeFileSystemsRequest struct {
 	PageNumber   requests.Integer `position:"Query" name:"PageNumber"`
 }
 
+// DescribeFileSystemsResponse is the response struct for api DescribeFileSystems
 type DescribeFileSystemsResponse struct {
 	*responses.BaseResponse
 	RequestId   string      `json:"RequestId" xml:"RequestId"`
@@ -89,8 +91,8 @@ type DescribeFileSystemsResponse struct {
 	FileSystems FileSystems `json:"FileSystems" xml:"FileSystems"`
 }
 
-// create a request to invoke DescribeFileSystems API
-func CreateDescribeFileSystemsRequest() (request *DescribeFileSystemsRequest) {
+// CreateDescribeFileSystemsRequest creates a request to invoke DescribeFileSystems API
+func CreateDescribeFileSystemsRequest(request *DescribeFileSystemsRequest) {
 	request = &DescribeFileSystemsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateDescribeFileSystemsRequest() (request *DescribeFileSystemsRequest) {
 	return
 }
 
-// create a response to parse from DescribeFileSystems response
+// CreateDescribeFileSystemsResponse creates a response to parse from DescribeFileSystems response
 func CreateDescribeFileSystemsResponse() (response *DescribeFileSystemsResponse) {
 	response = &DescribeFileSystemsResponse{
 		BaseResponse: &responses.BaseResponse{},

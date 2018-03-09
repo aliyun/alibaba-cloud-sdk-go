@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SubmitPornJob api with *SubmitPornJobRequest synchronously
+// SubmitPornJob invokes the mts.SubmitPornJob API synchronously
 // api document: https://help.aliyun.com/api/mts/submitpornjob.html
 func (client *Client) SubmitPornJob(request *SubmitPornJobRequest) (response *SubmitPornJobResponse, err error) {
 	response = CreateSubmitPornJobResponse()
@@ -28,7 +28,7 @@ func (client *Client) SubmitPornJob(request *SubmitPornJobRequest) (response *Su
 	return
 }
 
-// invoke SubmitPornJob api with *SubmitPornJobRequest asynchronously
+// SubmitPornJobWithChan invokes the mts.SubmitPornJob API asynchronously
 // api document: https://help.aliyun.com/api/mts/submitpornjob.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitPornJobWithChan(request *SubmitPornJobRequest) (<-chan *SubmitPornJobResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SubmitPornJobWithChan(request *SubmitPornJobRequest) (<-ch
 	return responseChan, errChan
 }
 
-// invoke SubmitPornJob api with *SubmitPornJobRequest asynchronously
+// SubmitPornJobWithCallback invokes the mts.SubmitPornJob API asynchronously
 // api document: https://help.aliyun.com/api/mts/submitpornjob.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitPornJobWithCallback(request *SubmitPornJobRequest, callback func(response *SubmitPornJobResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SubmitPornJobWithCallback(request *SubmitPornJobRequest, c
 	return result
 }
 
+// SubmitPornJobRequest is the request struct for api SubmitPornJob
 type SubmitPornJobRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -85,14 +86,15 @@ type SubmitPornJobRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// SubmitPornJobResponse is the response struct for api SubmitPornJob
 type SubmitPornJobResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	JobId     string `json:"JobId" xml:"JobId"`
 }
 
-// create a request to invoke SubmitPornJob API
-func CreateSubmitPornJobRequest() (request *SubmitPornJobRequest) {
+// CreateSubmitPornJobRequest creates a request to invoke SubmitPornJob API
+func CreateSubmitPornJobRequest(request *SubmitPornJobRequest) {
 	request = &SubmitPornJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -100,7 +102,7 @@ func CreateSubmitPornJobRequest() (request *SubmitPornJobRequest) {
 	return
 }
 
-// create a response to parse from SubmitPornJob response
+// CreateSubmitPornJobResponse creates a response to parse from SubmitPornJob response
 func CreateSubmitPornJobResponse() (response *SubmitPornJobResponse) {
 	response = &SubmitPornJobResponse{
 		BaseResponse: &responses.BaseResponse{},

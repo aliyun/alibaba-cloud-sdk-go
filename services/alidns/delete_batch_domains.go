@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteBatchDomains api with *DeleteBatchDomainsRequest synchronously
+// DeleteBatchDomains invokes the alidns.DeleteBatchDomains API synchronously
 // api document: https://help.aliyun.com/api/alidns/deletebatchdomains.html
 func (client *Client) DeleteBatchDomains(request *DeleteBatchDomainsRequest) (response *DeleteBatchDomainsResponse, err error) {
 	response = CreateDeleteBatchDomainsResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteBatchDomains(request *DeleteBatchDomainsRequest) (re
 	return
 }
 
-// invoke DeleteBatchDomains api with *DeleteBatchDomainsRequest asynchronously
+// DeleteBatchDomainsWithChan invokes the alidns.DeleteBatchDomains API asynchronously
 // api document: https://help.aliyun.com/api/alidns/deletebatchdomains.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteBatchDomainsWithChan(request *DeleteBatchDomainsRequest) (<-chan *DeleteBatchDomainsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteBatchDomainsWithChan(request *DeleteBatchDomainsRequ
 	return responseChan, errChan
 }
 
-// invoke DeleteBatchDomains api with *DeleteBatchDomainsRequest asynchronously
+// DeleteBatchDomainsWithCallback invokes the alidns.DeleteBatchDomains API asynchronously
 // api document: https://help.aliyun.com/api/alidns/deletebatchdomains.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteBatchDomainsWithCallback(request *DeleteBatchDomainsRequest, callback func(response *DeleteBatchDomainsResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DeleteBatchDomainsWithCallback(request *DeleteBatchDomains
 	return result
 }
 
+// DeleteBatchDomainsRequest is the request struct for api DeleteBatchDomains
 type DeleteBatchDomainsRequest struct {
 	*requests.RpcRequest
 	Lang         string `position:"Query" name:"Lang"`
@@ -80,14 +81,15 @@ type DeleteBatchDomainsRequest struct {
 	Domains      string `position:"Query" name:"Domains"`
 }
 
+// DeleteBatchDomainsResponse is the response struct for api DeleteBatchDomains
 type DeleteBatchDomainsResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	TraceId   string `json:"TraceId" xml:"TraceId"`
 }
 
-// create a request to invoke DeleteBatchDomains API
-func CreateDeleteBatchDomainsRequest() (request *DeleteBatchDomainsRequest) {
+// CreateDeleteBatchDomainsRequest creates a request to invoke DeleteBatchDomains API
+func CreateDeleteBatchDomainsRequest(request *DeleteBatchDomainsRequest) {
 	request = &DeleteBatchDomainsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateDeleteBatchDomainsRequest() (request *DeleteBatchDomainsRequest) {
 	return
 }
 
-// create a response to parse from DeleteBatchDomains response
+// CreateDeleteBatchDomainsResponse creates a response to parse from DeleteBatchDomains response
 func CreateDeleteBatchDomainsResponse() (response *DeleteBatchDomainsResponse) {
 	response = &DeleteBatchDomainsResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke GetAlbumsByNames api with *GetAlbumsByNamesRequest synchronously
+// GetAlbumsByNames invokes the cloudphoto.GetAlbumsByNames API synchronously
 // api document: https://help.aliyun.com/api/cloudphoto/getalbumsbynames.html
 func (client *Client) GetAlbumsByNames(request *GetAlbumsByNamesRequest) (response *GetAlbumsByNamesResponse, err error) {
 	response = CreateGetAlbumsByNamesResponse()
@@ -28,7 +28,7 @@ func (client *Client) GetAlbumsByNames(request *GetAlbumsByNamesRequest) (respon
 	return
 }
 
-// invoke GetAlbumsByNames api with *GetAlbumsByNamesRequest asynchronously
+// GetAlbumsByNamesWithChan invokes the cloudphoto.GetAlbumsByNames API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/getalbumsbynames.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetAlbumsByNamesWithChan(request *GetAlbumsByNamesRequest) (<-chan *GetAlbumsByNamesResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) GetAlbumsByNamesWithChan(request *GetAlbumsByNamesRequest)
 	return responseChan, errChan
 }
 
-// invoke GetAlbumsByNames api with *GetAlbumsByNamesRequest asynchronously
+// GetAlbumsByNamesWithCallback invokes the cloudphoto.GetAlbumsByNames API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/getalbumsbynames.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetAlbumsByNamesWithCallback(request *GetAlbumsByNamesRequest, callback func(response *GetAlbumsByNamesResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) GetAlbumsByNamesWithCallback(request *GetAlbumsByNamesRequ
 	return result
 }
 
+// GetAlbumsByNamesRequest is the request struct for api GetAlbumsByNames
 type GetAlbumsByNamesRequest struct {
 	*requests.RpcRequest
 	Name      *[]string `position:"Query" name:"Name"  type:"Repeated"`
@@ -80,6 +81,7 @@ type GetAlbumsByNamesRequest struct {
 	LibraryId string    `position:"Query" name:"LibraryId"`
 }
 
+// GetAlbumsByNamesResponse is the response struct for api GetAlbumsByNames
 type GetAlbumsByNamesResponse struct {
 	*responses.BaseResponse
 	Code      string  `json:"Code" xml:"Code"`
@@ -89,8 +91,8 @@ type GetAlbumsByNamesResponse struct {
 	Albums    []Album `json:"Albums" xml:"Albums"`
 }
 
-// create a request to invoke GetAlbumsByNames API
-func CreateGetAlbumsByNamesRequest() (request *GetAlbumsByNamesRequest) {
+// CreateGetAlbumsByNamesRequest creates a request to invoke GetAlbumsByNames API
+func CreateGetAlbumsByNamesRequest(request *GetAlbumsByNamesRequest) {
 	request = &GetAlbumsByNamesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateGetAlbumsByNamesRequest() (request *GetAlbumsByNamesRequest) {
 	return
 }
 
-// create a response to parse from GetAlbumsByNames response
+// CreateGetAlbumsByNamesResponse creates a response to parse from GetAlbumsByNames response
 func CreateGetAlbumsByNamesResponse() (response *GetAlbumsByNamesResponse) {
 	response = &GetAlbumsByNamesResponse{
 		BaseResponse: &responses.BaseResponse{},

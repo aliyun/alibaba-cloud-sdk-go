@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke QueryMediaInfoJobList api with *QueryMediaInfoJobListRequest synchronously
+// QueryMediaInfoJobList invokes the mts.QueryMediaInfoJobList API synchronously
 // api document: https://help.aliyun.com/api/mts/querymediainfojoblist.html
 func (client *Client) QueryMediaInfoJobList(request *QueryMediaInfoJobListRequest) (response *QueryMediaInfoJobListResponse, err error) {
 	response = CreateQueryMediaInfoJobListResponse()
@@ -28,7 +28,7 @@ func (client *Client) QueryMediaInfoJobList(request *QueryMediaInfoJobListReques
 	return
 }
 
-// invoke QueryMediaInfoJobList api with *QueryMediaInfoJobListRequest asynchronously
+// QueryMediaInfoJobListWithChan invokes the mts.QueryMediaInfoJobList API asynchronously
 // api document: https://help.aliyun.com/api/mts/querymediainfojoblist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryMediaInfoJobListWithChan(request *QueryMediaInfoJobListRequest) (<-chan *QueryMediaInfoJobListResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) QueryMediaInfoJobListWithChan(request *QueryMediaInfoJobLi
 	return responseChan, errChan
 }
 
-// invoke QueryMediaInfoJobList api with *QueryMediaInfoJobListRequest asynchronously
+// QueryMediaInfoJobListWithCallback invokes the mts.QueryMediaInfoJobList API asynchronously
 // api document: https://help.aliyun.com/api/mts/querymediainfojoblist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryMediaInfoJobListWithCallback(request *QueryMediaInfoJobListRequest, callback func(response *QueryMediaInfoJobListResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) QueryMediaInfoJobListWithCallback(request *QueryMediaInfoJ
 	return result
 }
 
+// QueryMediaInfoJobListRequest is the request struct for api QueryMediaInfoJobList
 type QueryMediaInfoJobListRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,6 +83,7 @@ type QueryMediaInfoJobListRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// QueryMediaInfoJobListResponse is the response struct for api QueryMediaInfoJobList
 type QueryMediaInfoJobListResponse struct {
 	*responses.BaseResponse
 	RequestId               string                  `json:"RequestId" xml:"RequestId"`
@@ -89,8 +91,8 @@ type QueryMediaInfoJobListResponse struct {
 	MediaInfoJobList        MediaInfoJobList        `json:"MediaInfoJobList" xml:"MediaInfoJobList"`
 }
 
-// create a request to invoke QueryMediaInfoJobList API
-func CreateQueryMediaInfoJobListRequest() (request *QueryMediaInfoJobListRequest) {
+// CreateQueryMediaInfoJobListRequest creates a request to invoke QueryMediaInfoJobList API
+func CreateQueryMediaInfoJobListRequest(request *QueryMediaInfoJobListRequest) {
 	request = &QueryMediaInfoJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateQueryMediaInfoJobListRequest() (request *QueryMediaInfoJobListRequest
 	return
 }
 
-// create a response to parse from QueryMediaInfoJobList response
+// CreateQueryMediaInfoJobListResponse creates a response to parse from QueryMediaInfoJobList response
 func CreateQueryMediaInfoJobListResponse() (response *QueryMediaInfoJobListResponse) {
 	response = &QueryMediaInfoJobListResponse{
 		BaseResponse: &responses.BaseResponse{},

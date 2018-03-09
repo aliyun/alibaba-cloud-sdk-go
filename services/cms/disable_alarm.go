@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DisableAlarm api with *DisableAlarmRequest synchronously
+// DisableAlarm invokes the cms.DisableAlarm API synchronously
 // api document: https://help.aliyun.com/api/cms/disablealarm.html
 func (client *Client) DisableAlarm(request *DisableAlarmRequest) (response *DisableAlarmResponse, err error) {
 	response = CreateDisableAlarmResponse()
@@ -28,7 +28,7 @@ func (client *Client) DisableAlarm(request *DisableAlarmRequest) (response *Disa
 	return
 }
 
-// invoke DisableAlarm api with *DisableAlarmRequest asynchronously
+// DisableAlarmWithChan invokes the cms.DisableAlarm API asynchronously
 // api document: https://help.aliyun.com/api/cms/disablealarm.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DisableAlarmWithChan(request *DisableAlarmRequest) (<-chan *DisableAlarmResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DisableAlarmWithChan(request *DisableAlarmRequest) (<-chan
 	return responseChan, errChan
 }
 
-// invoke DisableAlarm api with *DisableAlarmRequest asynchronously
+// DisableAlarmWithCallback invokes the cms.DisableAlarm API asynchronously
 // api document: https://help.aliyun.com/api/cms/disablealarm.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DisableAlarmWithCallback(request *DisableAlarmRequest, callback func(response *DisableAlarmResponse, err error)) <-chan int {
@@ -73,12 +73,14 @@ func (client *Client) DisableAlarmWithCallback(request *DisableAlarmRequest, cal
 	return result
 }
 
+// DisableAlarmRequest is the request struct for api DisableAlarm
 type DisableAlarmRequest struct {
 	*requests.RpcRequest
 	CallbyCmsOwner string `position:"Query" name:"callby_cms_owner"`
 	Id             string `position:"Query" name:"Id"`
 }
 
+// DisableAlarmResponse is the response struct for api DisableAlarm
 type DisableAlarmResponse struct {
 	*responses.BaseResponse
 	Success   bool   `json:"Success" xml:"Success"`
@@ -87,8 +89,8 @@ type DisableAlarmResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DisableAlarm API
-func CreateDisableAlarmRequest() (request *DisableAlarmRequest) {
+// CreateDisableAlarmRequest creates a request to invoke DisableAlarm API
+func CreateDisableAlarmRequest(request *DisableAlarmRequest) {
 	request = &DisableAlarmRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -96,7 +98,7 @@ func CreateDisableAlarmRequest() (request *DisableAlarmRequest) {
 	return
 }
 
-// create a response to parse from DisableAlarm response
+// CreateDisableAlarmResponse creates a response to parse from DisableAlarm response
 func CreateDisableAlarmResponse() (response *DisableAlarmResponse) {
 	response = &DisableAlarmResponse{
 		BaseResponse: &responses.BaseResponse{},

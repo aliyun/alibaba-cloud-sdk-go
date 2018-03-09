@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteMediaWorkflow api with *DeleteMediaWorkflowRequest synchronously
+// DeleteMediaWorkflow invokes the mts.DeleteMediaWorkflow API synchronously
 // api document: https://help.aliyun.com/api/mts/deletemediaworkflow.html
 func (client *Client) DeleteMediaWorkflow(request *DeleteMediaWorkflowRequest) (response *DeleteMediaWorkflowResponse, err error) {
 	response = CreateDeleteMediaWorkflowResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteMediaWorkflow(request *DeleteMediaWorkflowRequest) (
 	return
 }
 
-// invoke DeleteMediaWorkflow api with *DeleteMediaWorkflowRequest asynchronously
+// DeleteMediaWorkflowWithChan invokes the mts.DeleteMediaWorkflow API asynchronously
 // api document: https://help.aliyun.com/api/mts/deletemediaworkflow.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteMediaWorkflowWithChan(request *DeleteMediaWorkflowRequest) (<-chan *DeleteMediaWorkflowResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteMediaWorkflowWithChan(request *DeleteMediaWorkflowRe
 	return responseChan, errChan
 }
 
-// invoke DeleteMediaWorkflow api with *DeleteMediaWorkflowRequest asynchronously
+// DeleteMediaWorkflowWithCallback invokes the mts.DeleteMediaWorkflow API asynchronously
 // api document: https://help.aliyun.com/api/mts/deletemediaworkflow.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteMediaWorkflowWithCallback(request *DeleteMediaWorkflowRequest, callback func(response *DeleteMediaWorkflowResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DeleteMediaWorkflowWithCallback(request *DeleteMediaWorkfl
 	return result
 }
 
+// DeleteMediaWorkflowRequest is the request struct for api DeleteMediaWorkflow
 type DeleteMediaWorkflowRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,14 +83,15 @@ type DeleteMediaWorkflowRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// DeleteMediaWorkflowResponse is the response struct for api DeleteMediaWorkflow
 type DeleteMediaWorkflowResponse struct {
 	*responses.BaseResponse
 	RequestId     string        `json:"RequestId" xml:"RequestId"`
 	MediaWorkflow MediaWorkflow `json:"MediaWorkflow" xml:"MediaWorkflow"`
 }
 
-// create a request to invoke DeleteMediaWorkflow API
-func CreateDeleteMediaWorkflowRequest() (request *DeleteMediaWorkflowRequest) {
+// CreateDeleteMediaWorkflowRequest creates a request to invoke DeleteMediaWorkflow API
+func CreateDeleteMediaWorkflowRequest(request *DeleteMediaWorkflowRequest) {
 	request = &DeleteMediaWorkflowRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateDeleteMediaWorkflowRequest() (request *DeleteMediaWorkflowRequest) {
 	return
 }
 
-// create a response to parse from DeleteMediaWorkflow response
+// CreateDeleteMediaWorkflowResponse creates a response to parse from DeleteMediaWorkflow response
 func CreateDeleteMediaWorkflowResponse() (response *DeleteMediaWorkflowResponse) {
 	response = &DeleteMediaWorkflowResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteRole api with *DeleteRoleRequest synchronously
+// DeleteRole invokes the ram.DeleteRole API synchronously
 // api document: https://help.aliyun.com/api/ram/deleterole.html
 func (client *Client) DeleteRole(request *DeleteRoleRequest) (response *DeleteRoleResponse, err error) {
 	response = CreateDeleteRoleResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteRole(request *DeleteRoleRequest) (response *DeleteRo
 	return
 }
 
-// invoke DeleteRole api with *DeleteRoleRequest asynchronously
+// DeleteRoleWithChan invokes the ram.DeleteRole API asynchronously
 // api document: https://help.aliyun.com/api/ram/deleterole.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteRoleWithChan(request *DeleteRoleRequest) (<-chan *DeleteRoleResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteRoleWithChan(request *DeleteRoleRequest) (<-chan *De
 	return responseChan, errChan
 }
 
-// invoke DeleteRole api with *DeleteRoleRequest asynchronously
+// DeleteRoleWithCallback invokes the ram.DeleteRole API asynchronously
 // api document: https://help.aliyun.com/api/ram/deleterole.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteRoleWithCallback(request *DeleteRoleRequest, callback func(response *DeleteRoleResponse, err error)) <-chan int {
@@ -73,18 +73,20 @@ func (client *Client) DeleteRoleWithCallback(request *DeleteRoleRequest, callbac
 	return result
 }
 
+// DeleteRoleRequest is the request struct for api DeleteRole
 type DeleteRoleRequest struct {
 	*requests.RpcRequest
 	RoleName string `position:"Query" name:"RoleName"`
 }
 
+// DeleteRoleResponse is the response struct for api DeleteRole
 type DeleteRoleResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DeleteRole API
-func CreateDeleteRoleRequest() (request *DeleteRoleRequest) {
+// CreateDeleteRoleRequest creates a request to invoke DeleteRole API
+func CreateDeleteRoleRequest(request *DeleteRoleRequest) {
 	request = &DeleteRoleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -92,7 +94,7 @@ func CreateDeleteRoleRequest() (request *DeleteRoleRequest) {
 	return
 }
 
-// create a response to parse from DeleteRole response
+// CreateDeleteRoleResponse creates a response to parse from DeleteRole response
 func CreateDeleteRoleResponse() (response *DeleteRoleResponse) {
 	response = &DeleteRoleResponse{
 		BaseResponse: &responses.BaseResponse{},

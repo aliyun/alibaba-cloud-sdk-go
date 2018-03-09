@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ReleasePublicIpAddress api with *ReleasePublicIpAddressRequest synchronously
+// ReleasePublicIpAddress invokes the ecs.ReleasePublicIpAddress API synchronously
 // api document: https://help.aliyun.com/api/ecs/releasepublicipaddress.html
 func (client *Client) ReleasePublicIpAddress(request *ReleasePublicIpAddressRequest) (response *ReleasePublicIpAddressResponse, err error) {
 	response = CreateReleasePublicIpAddressResponse()
@@ -28,7 +28,7 @@ func (client *Client) ReleasePublicIpAddress(request *ReleasePublicIpAddressRequ
 	return
 }
 
-// invoke ReleasePublicIpAddress api with *ReleasePublicIpAddressRequest asynchronously
+// ReleasePublicIpAddressWithChan invokes the ecs.ReleasePublicIpAddress API asynchronously
 // api document: https://help.aliyun.com/api/ecs/releasepublicipaddress.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReleasePublicIpAddressWithChan(request *ReleasePublicIpAddressRequest) (<-chan *ReleasePublicIpAddressResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ReleasePublicIpAddressWithChan(request *ReleasePublicIpAdd
 	return responseChan, errChan
 }
 
-// invoke ReleasePublicIpAddress api with *ReleasePublicIpAddressRequest asynchronously
+// ReleasePublicIpAddressWithCallback invokes the ecs.ReleasePublicIpAddress API asynchronously
 // api document: https://help.aliyun.com/api/ecs/releasepublicipaddress.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReleasePublicIpAddressWithCallback(request *ReleasePublicIpAddressRequest, callback func(response *ReleasePublicIpAddressResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ReleasePublicIpAddressWithCallback(request *ReleasePublicI
 	return result
 }
 
+// ReleasePublicIpAddressRequest is the request struct for api ReleasePublicIpAddress
 type ReleasePublicIpAddressRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -83,13 +84,14 @@ type ReleasePublicIpAddressRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// ReleasePublicIpAddressResponse is the response struct for api ReleasePublicIpAddress
 type ReleasePublicIpAddressResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ReleasePublicIpAddress API
-func CreateReleasePublicIpAddressRequest() (request *ReleasePublicIpAddressRequest) {
+// CreateReleasePublicIpAddressRequest creates a request to invoke ReleasePublicIpAddress API
+func CreateReleasePublicIpAddressRequest(request *ReleasePublicIpAddressRequest) {
 	request = &ReleasePublicIpAddressRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateReleasePublicIpAddressRequest() (request *ReleasePublicIpAddressReque
 	return
 }
 
-// create a response to parse from ReleasePublicIpAddress response
+// CreateReleasePublicIpAddressResponse creates a response to parse from ReleasePublicIpAddress response
 func CreateReleasePublicIpAddressResponse() (response *ReleasePublicIpAddressResponse) {
 	response = &ReleasePublicIpAddressResponse{
 		BaseResponse: &responses.BaseResponse{},

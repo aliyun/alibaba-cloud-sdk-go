@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifyDomainCustomLogConfig api with *ModifyDomainCustomLogConfigRequest synchronously
+// ModifyDomainCustomLogConfig invokes the cdn.ModifyDomainCustomLogConfig API synchronously
 // api document: https://help.aliyun.com/api/cdn/modifydomaincustomlogconfig.html
 func (client *Client) ModifyDomainCustomLogConfig(request *ModifyDomainCustomLogConfigRequest) (response *ModifyDomainCustomLogConfigResponse, err error) {
 	response = CreateModifyDomainCustomLogConfigResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifyDomainCustomLogConfig(request *ModifyDomainCustomLog
 	return
 }
 
-// invoke ModifyDomainCustomLogConfig api with *ModifyDomainCustomLogConfigRequest asynchronously
+// ModifyDomainCustomLogConfigWithChan invokes the cdn.ModifyDomainCustomLogConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/modifydomaincustomlogconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDomainCustomLogConfigWithChan(request *ModifyDomainCustomLogConfigRequest) (<-chan *ModifyDomainCustomLogConfigResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifyDomainCustomLogConfigWithChan(request *ModifyDomainC
 	return responseChan, errChan
 }
 
-// invoke ModifyDomainCustomLogConfig api with *ModifyDomainCustomLogConfigRequest asynchronously
+// ModifyDomainCustomLogConfigWithCallback invokes the cdn.ModifyDomainCustomLogConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/modifydomaincustomlogconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDomainCustomLogConfigWithCallback(request *ModifyDomainCustomLogConfigRequest, callback func(response *ModifyDomainCustomLogConfigResponse, err error)) <-chan int {
@@ -73,17 +73,19 @@ func (client *Client) ModifyDomainCustomLogConfigWithCallback(request *ModifyDom
 	return result
 }
 
+// ModifyDomainCustomLogConfigRequest is the request struct for api ModifyDomainCustomLogConfig
 type ModifyDomainCustomLogConfigRequest struct {
 	*requests.RpcRequest
 }
 
+// ModifyDomainCustomLogConfigResponse is the response struct for api ModifyDomainCustomLogConfig
 type ModifyDomainCustomLogConfigResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ModifyDomainCustomLogConfig API
-func CreateModifyDomainCustomLogConfigRequest() (request *ModifyDomainCustomLogConfigRequest) {
+// CreateModifyDomainCustomLogConfigRequest creates a request to invoke ModifyDomainCustomLogConfig API
+func CreateModifyDomainCustomLogConfigRequest(request *ModifyDomainCustomLogConfigRequest) {
 	request = &ModifyDomainCustomLogConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -91,7 +93,7 @@ func CreateModifyDomainCustomLogConfigRequest() (request *ModifyDomainCustomLogC
 	return
 }
 
-// create a response to parse from ModifyDomainCustomLogConfig response
+// CreateModifyDomainCustomLogConfigResponse creates a response to parse from ModifyDomainCustomLogConfig response
 func CreateModifyDomainCustomLogConfigResponse() (response *ModifyDomainCustomLogConfigResponse) {
 	response = &ModifyDomainCustomLogConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

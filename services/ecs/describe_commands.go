@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeCommands api with *DescribeCommandsRequest synchronously
+// DescribeCommands invokes the ecs.DescribeCommands API synchronously
 // api document: https://help.aliyun.com/api/ecs/describecommands.html
 func (client *Client) DescribeCommands(request *DescribeCommandsRequest) (response *DescribeCommandsResponse, err error) {
 	response = CreateDescribeCommandsResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeCommands(request *DescribeCommandsRequest) (respon
 	return
 }
 
-// invoke DescribeCommands api with *DescribeCommandsRequest asynchronously
+// DescribeCommandsWithChan invokes the ecs.DescribeCommands API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describecommands.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCommandsWithChan(request *DescribeCommandsRequest) (<-chan *DescribeCommandsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeCommandsWithChan(request *DescribeCommandsRequest)
 	return responseChan, errChan
 }
 
-// invoke DescribeCommands api with *DescribeCommandsRequest asynchronously
+// DescribeCommandsWithCallback invokes the ecs.DescribeCommands API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describecommands.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCommandsWithCallback(request *DescribeCommandsRequest, callback func(response *DescribeCommandsResponse, err error)) <-chan int {
@@ -73,10 +73,12 @@ func (client *Client) DescribeCommandsWithCallback(request *DescribeCommandsRequ
 	return result
 }
 
+// DescribeCommandsRequest is the request struct for api DescribeCommands
 type DescribeCommandsRequest struct {
 	*requests.RpcRequest
 }
 
+// DescribeCommandsResponse is the response struct for api DescribeCommands
 type DescribeCommandsResponse struct {
 	*responses.BaseResponse
 	RequestId  string   `json:"RequestId" xml:"RequestId"`
@@ -86,8 +88,8 @@ type DescribeCommandsResponse struct {
 	Commands   Commands `json:"Commands" xml:"Commands"`
 }
 
-// create a request to invoke DescribeCommands API
-func CreateDescribeCommandsRequest() (request *DescribeCommandsRequest) {
+// CreateDescribeCommandsRequest creates a request to invoke DescribeCommands API
+func CreateDescribeCommandsRequest(request *DescribeCommandsRequest) {
 	request = &DescribeCommandsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateDescribeCommandsRequest() (request *DescribeCommandsRequest) {
 	return
 }
 
-// create a response to parse from DescribeCommands response
+// CreateDescribeCommandsResponse creates a response to parse from DescribeCommands response
 func CreateDescribeCommandsResponse() (response *DescribeCommandsResponse) {
 	response = &DescribeCommandsResponse{
 		BaseResponse: &responses.BaseResponse{},

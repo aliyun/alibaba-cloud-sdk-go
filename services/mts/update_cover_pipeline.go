@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke UpdateCoverPipeline api with *UpdateCoverPipelineRequest synchronously
+// UpdateCoverPipeline invokes the mts.UpdateCoverPipeline API synchronously
 // api document: https://help.aliyun.com/api/mts/updatecoverpipeline.html
 func (client *Client) UpdateCoverPipeline(request *UpdateCoverPipelineRequest) (response *UpdateCoverPipelineResponse, err error) {
 	response = CreateUpdateCoverPipelineResponse()
@@ -28,7 +28,7 @@ func (client *Client) UpdateCoverPipeline(request *UpdateCoverPipelineRequest) (
 	return
 }
 
-// invoke UpdateCoverPipeline api with *UpdateCoverPipelineRequest asynchronously
+// UpdateCoverPipelineWithChan invokes the mts.UpdateCoverPipeline API asynchronously
 // api document: https://help.aliyun.com/api/mts/updatecoverpipeline.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateCoverPipelineWithChan(request *UpdateCoverPipelineRequest) (<-chan *UpdateCoverPipelineResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) UpdateCoverPipelineWithChan(request *UpdateCoverPipelineRe
 	return responseChan, errChan
 }
 
-// invoke UpdateCoverPipeline api with *UpdateCoverPipelineRequest asynchronously
+// UpdateCoverPipelineWithCallback invokes the mts.UpdateCoverPipeline API asynchronously
 // api document: https://help.aliyun.com/api/mts/updatecoverpipeline.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateCoverPipelineWithCallback(request *UpdateCoverPipelineRequest, callback func(response *UpdateCoverPipelineResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) UpdateCoverPipelineWithCallback(request *UpdateCoverPipeli
 	return result
 }
 
+// UpdateCoverPipelineRequest is the request struct for api UpdateCoverPipeline
 type UpdateCoverPipelineRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -87,14 +88,15 @@ type UpdateCoverPipelineRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// UpdateCoverPipelineResponse is the response struct for api UpdateCoverPipeline
 type UpdateCoverPipelineResponse struct {
 	*responses.BaseResponse
 	RequestId string   `json:"RequestId" xml:"RequestId"`
 	Pipeline  Pipeline `json:"Pipeline" xml:"Pipeline"`
 }
 
-// create a request to invoke UpdateCoverPipeline API
-func CreateUpdateCoverPipelineRequest() (request *UpdateCoverPipelineRequest) {
+// CreateUpdateCoverPipelineRequest creates a request to invoke UpdateCoverPipeline API
+func CreateUpdateCoverPipelineRequest(request *UpdateCoverPipelineRequest) {
 	request = &UpdateCoverPipelineRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -102,7 +104,7 @@ func CreateUpdateCoverPipelineRequest() (request *UpdateCoverPipelineRequest) {
 	return
 }
 
-// create a response to parse from UpdateCoverPipeline response
+// CreateUpdateCoverPipelineResponse creates a response to parse from UpdateCoverPipeline response
 func CreateUpdateCoverPipelineResponse() (response *UpdateCoverPipelineResponse) {
 	response = &UpdateCoverPipelineResponse{
 		BaseResponse: &responses.BaseResponse{},

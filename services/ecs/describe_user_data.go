@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeUserData api with *DescribeUserDataRequest synchronously
+// DescribeUserData invokes the ecs.DescribeUserData API synchronously
 // api document: https://help.aliyun.com/api/ecs/describeuserdata.html
 func (client *Client) DescribeUserData(request *DescribeUserDataRequest) (response *DescribeUserDataResponse, err error) {
 	response = CreateDescribeUserDataResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeUserData(request *DescribeUserDataRequest) (respon
 	return
 }
 
-// invoke DescribeUserData api with *DescribeUserDataRequest asynchronously
+// DescribeUserDataWithChan invokes the ecs.DescribeUserData API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describeuserdata.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUserDataWithChan(request *DescribeUserDataRequest) (<-chan *DescribeUserDataResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeUserDataWithChan(request *DescribeUserDataRequest)
 	return responseChan, errChan
 }
 
-// invoke DescribeUserData api with *DescribeUserDataRequest asynchronously
+// DescribeUserDataWithCallback invokes the ecs.DescribeUserData API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describeuserdata.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUserDataWithCallback(request *DescribeUserDataRequest, callback func(response *DescribeUserDataResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeUserDataWithCallback(request *DescribeUserDataRequ
 	return result
 }
 
+// DescribeUserDataRequest is the request struct for api DescribeUserData
 type DescribeUserDataRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -81,6 +82,7 @@ type DescribeUserDataRequest struct {
 	InstanceId           string           `position:"Query" name:"InstanceId"`
 }
 
+// DescribeUserDataResponse is the response struct for api DescribeUserData
 type DescribeUserDataResponse struct {
 	*responses.BaseResponse
 	RequestId  string `json:"RequestId" xml:"RequestId"`
@@ -89,8 +91,8 @@ type DescribeUserDataResponse struct {
 	UserData   string `json:"UserData" xml:"UserData"`
 }
 
-// create a request to invoke DescribeUserData API
-func CreateDescribeUserDataRequest() (request *DescribeUserDataRequest) {
+// CreateDescribeUserDataRequest creates a request to invoke DescribeUserData API
+func CreateDescribeUserDataRequest(request *DescribeUserDataRequest) {
 	request = &DescribeUserDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateDescribeUserDataRequest() (request *DescribeUserDataRequest) {
 	return
 }
 
-// create a response to parse from DescribeUserData response
+// CreateDescribeUserDataResponse creates a response to parse from DescribeUserData response
 func CreateDescribeUserDataResponse() (response *DescribeUserDataResponse) {
 	response = &DescribeUserDataResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CopyDatabase api with *CopyDatabaseRequest synchronously
+// CopyDatabase invokes the rds.CopyDatabase API synchronously
 // api document: https://help.aliyun.com/api/rds/copydatabase.html
 func (client *Client) CopyDatabase(request *CopyDatabaseRequest) (response *CopyDatabaseResponse, err error) {
 	response = CreateCopyDatabaseResponse()
@@ -28,7 +28,7 @@ func (client *Client) CopyDatabase(request *CopyDatabaseRequest) (response *Copy
 	return
 }
 
-// invoke CopyDatabase api with *CopyDatabaseRequest asynchronously
+// CopyDatabaseWithChan invokes the rds.CopyDatabase API asynchronously
 // api document: https://help.aliyun.com/api/rds/copydatabase.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CopyDatabaseWithChan(request *CopyDatabaseRequest) (<-chan *CopyDatabaseResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CopyDatabaseWithChan(request *CopyDatabaseRequest) (<-chan
 	return responseChan, errChan
 }
 
-// invoke CopyDatabase api with *CopyDatabaseRequest asynchronously
+// CopyDatabaseWithCallback invokes the rds.CopyDatabase API asynchronously
 // api document: https://help.aliyun.com/api/rds/copydatabase.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CopyDatabaseWithCallback(request *CopyDatabaseRequest, callback func(response *CopyDatabaseResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) CopyDatabaseWithCallback(request *CopyDatabaseRequest, cal
 	return result
 }
 
+// CopyDatabaseRequest is the request struct for api CopyDatabase
 type CopyDatabaseRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -80,6 +81,7 @@ type CopyDatabaseRequest struct {
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 }
 
+// CopyDatabaseResponse is the response struct for api CopyDatabase
 type CopyDatabaseResponse struct {
 	*responses.BaseResponse
 	DBName   string `json:"DBName" xml:"DBName"`
@@ -87,8 +89,8 @@ type CopyDatabaseResponse struct {
 	TaskId   string `json:"TaskId" xml:"TaskId"`
 }
 
-// create a request to invoke CopyDatabase API
-func CreateCopyDatabaseRequest() (request *CopyDatabaseRequest) {
+// CreateCopyDatabaseRequest creates a request to invoke CopyDatabase API
+func CreateCopyDatabaseRequest(request *CopyDatabaseRequest) {
 	request = &CopyDatabaseRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -96,7 +98,7 @@ func CreateCopyDatabaseRequest() (request *CopyDatabaseRequest) {
 	return
 }
 
-// create a response to parse from CopyDatabase response
+// CreateCopyDatabaseResponse creates a response to parse from CopyDatabase response
 func CreateCopyDatabaseResponse() (response *CopyDatabaseResponse) {
 	response = &CopyDatabaseResponse{
 		BaseResponse: &responses.BaseResponse{},

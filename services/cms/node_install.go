@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke NodeInstall api with *NodeInstallRequest synchronously
+// NodeInstall invokes the cms.NodeInstall API synchronously
 // api document: https://help.aliyun.com/api/cms/nodeinstall.html
 func (client *Client) NodeInstall(request *NodeInstallRequest) (response *NodeInstallResponse, err error) {
 	response = CreateNodeInstallResponse()
@@ -28,7 +28,7 @@ func (client *Client) NodeInstall(request *NodeInstallRequest) (response *NodeIn
 	return
 }
 
-// invoke NodeInstall api with *NodeInstallRequest asynchronously
+// NodeInstallWithChan invokes the cms.NodeInstall API asynchronously
 // api document: https://help.aliyun.com/api/cms/nodeinstall.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) NodeInstallWithChan(request *NodeInstallRequest) (<-chan *NodeInstallResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) NodeInstallWithChan(request *NodeInstallRequest) (<-chan *
 	return responseChan, errChan
 }
 
-// invoke NodeInstall api with *NodeInstallRequest asynchronously
+// NodeInstallWithCallback invokes the cms.NodeInstall API asynchronously
 // api document: https://help.aliyun.com/api/cms/nodeinstall.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) NodeInstallWithCallback(request *NodeInstallRequest, callback func(response *NodeInstallResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) NodeInstallWithCallback(request *NodeInstallRequest, callb
 	return result
 }
 
+// NodeInstallRequest is the request struct for api NodeInstall
 type NodeInstallRequest struct {
 	*requests.RpcRequest
 	UserId     string           `position:"Query" name:"UserId"`
@@ -80,6 +81,7 @@ type NodeInstallRequest struct {
 	Force      requests.Boolean `position:"Query" name:"Force"`
 }
 
+// NodeInstallResponse is the response struct for api NodeInstall
 type NodeInstallResponse struct {
 	*responses.BaseResponse
 	ErrorCode    int    `json:"ErrorCode" xml:"ErrorCode"`
@@ -88,8 +90,8 @@ type NodeInstallResponse struct {
 	RequestId    string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke NodeInstall API
-func CreateNodeInstallRequest() (request *NodeInstallRequest) {
+// CreateNodeInstallRequest creates a request to invoke NodeInstall API
+func CreateNodeInstallRequest(request *NodeInstallRequest) {
 	request = &NodeInstallRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateNodeInstallRequest() (request *NodeInstallRequest) {
 	return
 }
 
-// create a response to parse from NodeInstall response
+// CreateNodeInstallResponse creates a response to parse from NodeInstall response
 func CreateNodeInstallResponse() (response *NodeInstallResponse) {
 	response = &NodeInstallResponse{
 		BaseResponse: &responses.BaseResponse{},

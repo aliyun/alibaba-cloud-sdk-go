@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeDBInstancesByExpireTime api with *DescribeDBInstancesByExpireTimeRequest synchronously
+// DescribeDBInstancesByExpireTime invokes the rds.DescribeDBInstancesByExpireTime API synchronously
 // api document: https://help.aliyun.com/api/rds/describedbinstancesbyexpiretime.html
 func (client *Client) DescribeDBInstancesByExpireTime(request *DescribeDBInstancesByExpireTimeRequest) (response *DescribeDBInstancesByExpireTimeResponse, err error) {
 	response = CreateDescribeDBInstancesByExpireTimeResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeDBInstancesByExpireTime(request *DescribeDBInstanc
 	return
 }
 
-// invoke DescribeDBInstancesByExpireTime api with *DescribeDBInstancesByExpireTimeRequest asynchronously
+// DescribeDBInstancesByExpireTimeWithChan invokes the rds.DescribeDBInstancesByExpireTime API asynchronously
 // api document: https://help.aliyun.com/api/rds/describedbinstancesbyexpiretime.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBInstancesByExpireTimeWithChan(request *DescribeDBInstancesByExpireTimeRequest) (<-chan *DescribeDBInstancesByExpireTimeResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeDBInstancesByExpireTimeWithChan(request *DescribeD
 	return responseChan, errChan
 }
 
-// invoke DescribeDBInstancesByExpireTime api with *DescribeDBInstancesByExpireTimeRequest asynchronously
+// DescribeDBInstancesByExpireTimeWithCallback invokes the rds.DescribeDBInstancesByExpireTime API asynchronously
 // api document: https://help.aliyun.com/api/rds/describedbinstancesbyexpiretime.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBInstancesByExpireTimeWithCallback(request *DescribeDBInstancesByExpireTimeRequest, callback func(response *DescribeDBInstancesByExpireTimeResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeDBInstancesByExpireTimeWithCallback(request *Descr
 	return result
 }
 
+// DescribeDBInstancesByExpireTimeRequest is the request struct for api DescribeDBInstancesByExpireTime
 type DescribeDBInstancesByExpireTimeRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -87,6 +88,7 @@ type DescribeDBInstancesByExpireTimeRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// DescribeDBInstancesByExpireTimeResponse is the response struct for api DescribeDBInstancesByExpireTime
 type DescribeDBInstancesByExpireTimeResponse struct {
 	*responses.BaseResponse
 	RequestId        string                                 `json:"RequestId" xml:"RequestId"`
@@ -96,8 +98,8 @@ type DescribeDBInstancesByExpireTimeResponse struct {
 	Items            ItemsInDescribeDBInstancesByExpireTime `json:"Items" xml:"Items"`
 }
 
-// create a request to invoke DescribeDBInstancesByExpireTime API
-func CreateDescribeDBInstancesByExpireTimeRequest() (request *DescribeDBInstancesByExpireTimeRequest) {
+// CreateDescribeDBInstancesByExpireTimeRequest creates a request to invoke DescribeDBInstancesByExpireTime API
+func CreateDescribeDBInstancesByExpireTimeRequest(request *DescribeDBInstancesByExpireTimeRequest) {
 	request = &DescribeDBInstancesByExpireTimeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -105,7 +107,7 @@ func CreateDescribeDBInstancesByExpireTimeRequest() (request *DescribeDBInstance
 	return
 }
 
-// create a response to parse from DescribeDBInstancesByExpireTime response
+// CreateDescribeDBInstancesByExpireTimeResponse creates a response to parse from DescribeDBInstancesByExpireTime response
 func CreateDescribeDBInstancesByExpireTimeResponse() (response *DescribeDBInstancesByExpireTimeResponse) {
 	response = &DescribeDBInstancesByExpireTimeResponse{
 		BaseResponse: &responses.BaseResponse{},

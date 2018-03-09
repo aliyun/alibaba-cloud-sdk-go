@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke RemoveAlbumPhotos api with *RemoveAlbumPhotosRequest synchronously
+// RemoveAlbumPhotos invokes the cloudphoto.RemoveAlbumPhotos API synchronously
 // api document: https://help.aliyun.com/api/cloudphoto/removealbumphotos.html
 func (client *Client) RemoveAlbumPhotos(request *RemoveAlbumPhotosRequest) (response *RemoveAlbumPhotosResponse, err error) {
 	response = CreateRemoveAlbumPhotosResponse()
@@ -28,7 +28,7 @@ func (client *Client) RemoveAlbumPhotos(request *RemoveAlbumPhotosRequest) (resp
 	return
 }
 
-// invoke RemoveAlbumPhotos api with *RemoveAlbumPhotosRequest asynchronously
+// RemoveAlbumPhotosWithChan invokes the cloudphoto.RemoveAlbumPhotos API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/removealbumphotos.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveAlbumPhotosWithChan(request *RemoveAlbumPhotosRequest) (<-chan *RemoveAlbumPhotosResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) RemoveAlbumPhotosWithChan(request *RemoveAlbumPhotosReques
 	return responseChan, errChan
 }
 
-// invoke RemoveAlbumPhotos api with *RemoveAlbumPhotosRequest asynchronously
+// RemoveAlbumPhotosWithCallback invokes the cloudphoto.RemoveAlbumPhotos API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/removealbumphotos.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveAlbumPhotosWithCallback(request *RemoveAlbumPhotosRequest, callback func(response *RemoveAlbumPhotosResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) RemoveAlbumPhotosWithCallback(request *RemoveAlbumPhotosRe
 	return result
 }
 
+// RemoveAlbumPhotosRequest is the request struct for api RemoveAlbumPhotos
 type RemoveAlbumPhotosRequest struct {
 	*requests.RpcRequest
 	AlbumId   requests.Integer `position:"Query" name:"AlbumId"`
@@ -81,6 +82,7 @@ type RemoveAlbumPhotosRequest struct {
 	LibraryId string           `position:"Query" name:"LibraryId"`
 }
 
+// RemoveAlbumPhotosResponse is the response struct for api RemoveAlbumPhotos
 type RemoveAlbumPhotosResponse struct {
 	*responses.BaseResponse
 	Code      string   `json:"Code" xml:"Code"`
@@ -90,8 +92,8 @@ type RemoveAlbumPhotosResponse struct {
 	Results   []Result `json:"Results" xml:"Results"`
 }
 
-// create a request to invoke RemoveAlbumPhotos API
-func CreateRemoveAlbumPhotosRequest() (request *RemoveAlbumPhotosRequest) {
+// CreateRemoveAlbumPhotosRequest creates a request to invoke RemoveAlbumPhotos API
+func CreateRemoveAlbumPhotosRequest(request *RemoveAlbumPhotosRequest) {
 	request = &RemoveAlbumPhotosRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateRemoveAlbumPhotosRequest() (request *RemoveAlbumPhotosRequest) {
 	return
 }
 
-// create a response to parse from RemoveAlbumPhotos response
+// CreateRemoveAlbumPhotosResponse creates a response to parse from RemoveAlbumPhotos response
 func CreateRemoveAlbumPhotosResponse() (response *RemoveAlbumPhotosResponse) {
 	response = &RemoveAlbumPhotosResponse{
 		BaseResponse: &responses.BaseResponse{},

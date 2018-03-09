@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeCcMode api with *DescribeCcModeRequest synchronously
+// DescribeCcMode invokes the ddospro.DescribeCcMode API synchronously
 // api document: https://help.aliyun.com/api/ddospro/describeccmode.html
 func (client *Client) DescribeCcMode(request *DescribeCcModeRequest) (response *DescribeCcModeResponse, err error) {
 	response = CreateDescribeCcModeResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeCcMode(request *DescribeCcModeRequest) (response *
 	return
 }
 
-// invoke DescribeCcMode api with *DescribeCcModeRequest asynchronously
+// DescribeCcModeWithChan invokes the ddospro.DescribeCcMode API asynchronously
 // api document: https://help.aliyun.com/api/ddospro/describeccmode.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCcModeWithChan(request *DescribeCcModeRequest) (<-chan *DescribeCcModeResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeCcModeWithChan(request *DescribeCcModeRequest) (<-
 	return responseChan, errChan
 }
 
-// invoke DescribeCcMode api with *DescribeCcModeRequest asynchronously
+// DescribeCcModeWithCallback invokes the ddospro.DescribeCcMode API asynchronously
 // api document: https://help.aliyun.com/api/ddospro/describeccmode.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCcModeWithCallback(request *DescribeCcModeRequest, callback func(response *DescribeCcModeResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeCcModeWithCallback(request *DescribeCcModeRequest,
 	return result
 }
 
+// DescribeCcModeRequest is the request struct for api DescribeCcMode
 type DescribeCcModeRequest struct {
 	*requests.RpcRequest
 	SourceIp        string           `position:"Query" name:"SourceIp"`
@@ -80,14 +81,15 @@ type DescribeCcModeRequest struct {
 	Vips            *[]string        `position:"Query" name:"Vips"  type:"Repeated"`
 }
 
+// DescribeCcModeResponse is the response struct for api DescribeCcMode
 type DescribeCcModeResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Data      []Data `json:"Data" xml:"Data"`
 }
 
-// create a request to invoke DescribeCcMode API
-func CreateDescribeCcModeRequest() (request *DescribeCcModeRequest) {
+// CreateDescribeCcModeRequest creates a request to invoke DescribeCcMode API
+func CreateDescribeCcModeRequest(request *DescribeCcModeRequest) {
 	request = &DescribeCcModeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateDescribeCcModeRequest() (request *DescribeCcModeRequest) {
 	return
 }
 
-// create a response to parse from DescribeCcMode response
+// CreateDescribeCcModeResponse creates a response to parse from DescribeCcMode response
 func CreateDescribeCcModeResponse() (response *DescribeCcModeResponse) {
 	response = &DescribeCcModeResponse{
 		BaseResponse: &responses.BaseResponse{},

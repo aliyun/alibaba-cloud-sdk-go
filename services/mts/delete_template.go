@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteTemplate api with *DeleteTemplateRequest synchronously
+// DeleteTemplate invokes the mts.DeleteTemplate API synchronously
 // api document: https://help.aliyun.com/api/mts/deletetemplate.html
 func (client *Client) DeleteTemplate(request *DeleteTemplateRequest) (response *DeleteTemplateResponse, err error) {
 	response = CreateDeleteTemplateResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteTemplate(request *DeleteTemplateRequest) (response *
 	return
 }
 
-// invoke DeleteTemplate api with *DeleteTemplateRequest asynchronously
+// DeleteTemplateWithChan invokes the mts.DeleteTemplate API asynchronously
 // api document: https://help.aliyun.com/api/mts/deletetemplate.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteTemplateWithChan(request *DeleteTemplateRequest) (<-chan *DeleteTemplateResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteTemplateWithChan(request *DeleteTemplateRequest) (<-
 	return responseChan, errChan
 }
 
-// invoke DeleteTemplate api with *DeleteTemplateRequest asynchronously
+// DeleteTemplateWithCallback invokes the mts.DeleteTemplate API asynchronously
 // api document: https://help.aliyun.com/api/mts/deletetemplate.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteTemplateWithCallback(request *DeleteTemplateRequest, callback func(response *DeleteTemplateResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DeleteTemplateWithCallback(request *DeleteTemplateRequest,
 	return result
 }
 
+// DeleteTemplateRequest is the request struct for api DeleteTemplate
 type DeleteTemplateRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,14 +83,15 @@ type DeleteTemplateRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// DeleteTemplateResponse is the response struct for api DeleteTemplate
 type DeleteTemplateResponse struct {
 	*responses.BaseResponse
 	RequestId  string `json:"RequestId" xml:"RequestId"`
 	TemplateId string `json:"TemplateId" xml:"TemplateId"`
 }
 
-// create a request to invoke DeleteTemplate API
-func CreateDeleteTemplateRequest() (request *DeleteTemplateRequest) {
+// CreateDeleteTemplateRequest creates a request to invoke DeleteTemplate API
+func CreateDeleteTemplateRequest(request *DeleteTemplateRequest) {
 	request = &DeleteTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateDeleteTemplateRequest() (request *DeleteTemplateRequest) {
 	return
 }
 
-// create a response to parse from DeleteTemplate response
+// CreateDeleteTemplateResponse creates a response to parse from DeleteTemplate response
 func CreateDeleteTemplateResponse() (response *DeleteTemplateResponse) {
 	response = &DeleteTemplateResponse{
 		BaseResponse: &responses.BaseResponse{},

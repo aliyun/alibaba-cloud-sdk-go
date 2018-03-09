@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SetWafConfig api with *SetWafConfigRequest synchronously
+// SetWafConfig invokes the cdn.SetWafConfig API synchronously
 // api document: https://help.aliyun.com/api/cdn/setwafconfig.html
 func (client *Client) SetWafConfig(request *SetWafConfigRequest) (response *SetWafConfigResponse, err error) {
 	response = CreateSetWafConfigResponse()
@@ -28,7 +28,7 @@ func (client *Client) SetWafConfig(request *SetWafConfigRequest) (response *SetW
 	return
 }
 
-// invoke SetWafConfig api with *SetWafConfigRequest asynchronously
+// SetWafConfigWithChan invokes the cdn.SetWafConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/setwafconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetWafConfigWithChan(request *SetWafConfigRequest) (<-chan *SetWafConfigResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SetWafConfigWithChan(request *SetWafConfigRequest) (<-chan
 	return responseChan, errChan
 }
 
-// invoke SetWafConfig api with *SetWafConfigRequest asynchronously
+// SetWafConfigWithCallback invokes the cdn.SetWafConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/setwafconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetWafConfigWithCallback(request *SetWafConfigRequest, callback func(response *SetWafConfigResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SetWafConfigWithCallback(request *SetWafConfigRequest, cal
 	return result
 }
 
+// SetWafConfigRequest is the request struct for api SetWafConfig
 type SetWafConfigRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -81,13 +82,14 @@ type SetWafConfigRequest struct {
 	Enable        string           `position:"Query" name:"Enable"`
 }
 
+// SetWafConfigResponse is the response struct for api SetWafConfig
 type SetWafConfigResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke SetWafConfig API
-func CreateSetWafConfigRequest() (request *SetWafConfigRequest) {
+// CreateSetWafConfigRequest creates a request to invoke SetWafConfig API
+func CreateSetWafConfigRequest(request *SetWafConfigRequest) {
 	request = &SetWafConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateSetWafConfigRequest() (request *SetWafConfigRequest) {
 	return
 }
 
-// create a response to parse from SetWafConfig response
+// CreateSetWafConfigResponse creates a response to parse from SetWafConfig response
 func CreateSetWafConfigResponse() (response *SetWafConfigResponse) {
 	response = &SetWafConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeDomainHttpCodeData api with *DescribeDomainHttpCodeDataRequest synchronously
+// DescribeDomainHttpCodeData invokes the cdn.DescribeDomainHttpCodeData API synchronously
 // api document: https://help.aliyun.com/api/cdn/describedomainhttpcodedata.html
 func (client *Client) DescribeDomainHttpCodeData(request *DescribeDomainHttpCodeDataRequest) (response *DescribeDomainHttpCodeDataResponse, err error) {
 	response = CreateDescribeDomainHttpCodeDataResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeDomainHttpCodeData(request *DescribeDomainHttpCode
 	return
 }
 
-// invoke DescribeDomainHttpCodeData api with *DescribeDomainHttpCodeDataRequest asynchronously
+// DescribeDomainHttpCodeDataWithChan invokes the cdn.DescribeDomainHttpCodeData API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describedomainhttpcodedata.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainHttpCodeDataWithChan(request *DescribeDomainHttpCodeDataRequest) (<-chan *DescribeDomainHttpCodeDataResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeDomainHttpCodeDataWithChan(request *DescribeDomain
 	return responseChan, errChan
 }
 
-// invoke DescribeDomainHttpCodeData api with *DescribeDomainHttpCodeDataRequest asynchronously
+// DescribeDomainHttpCodeDataWithCallback invokes the cdn.DescribeDomainHttpCodeData API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describedomainhttpcodedata.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainHttpCodeDataWithCallback(request *DescribeDomainHttpCodeDataRequest, callback func(response *DescribeDomainHttpCodeDataResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeDomainHttpCodeDataWithCallback(request *DescribeDo
 	return result
 }
 
+// DescribeDomainHttpCodeDataRequest is the request struct for api DescribeDomainHttpCodeData
 type DescribeDomainHttpCodeDataRequest struct {
 	*requests.RpcRequest
 	OwnerId        requests.Integer `position:"Query" name:"OwnerId"`
@@ -86,6 +87,7 @@ type DescribeDomainHttpCodeDataRequest struct {
 	Interval       string           `position:"Query" name:"Interval"`
 }
 
+// DescribeDomainHttpCodeDataResponse is the response struct for api DescribeDomainHttpCodeData
 type DescribeDomainHttpCodeDataResponse struct {
 	*responses.BaseResponse
 	RequestId    string       `json:"RequestId" xml:"RequestId"`
@@ -96,8 +98,8 @@ type DescribeDomainHttpCodeDataResponse struct {
 	HttpCodeData HttpCodeData `json:"HttpCodeData" xml:"HttpCodeData"`
 }
 
-// create a request to invoke DescribeDomainHttpCodeData API
-func CreateDescribeDomainHttpCodeDataRequest() (request *DescribeDomainHttpCodeDataRequest) {
+// CreateDescribeDomainHttpCodeDataRequest creates a request to invoke DescribeDomainHttpCodeData API
+func CreateDescribeDomainHttpCodeDataRequest(request *DescribeDomainHttpCodeDataRequest) {
 	request = &DescribeDomainHttpCodeDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -105,7 +107,7 @@ func CreateDescribeDomainHttpCodeDataRequest() (request *DescribeDomainHttpCodeD
 	return
 }
 
-// create a response to parse from DescribeDomainHttpCodeData response
+// CreateDescribeDomainHttpCodeDataResponse creates a response to parse from DescribeDomainHttpCodeData response
 func CreateDescribeDomainHttpCodeDataResponse() (response *DescribeDomainHttpCodeDataResponse) {
 	response = &DescribeDomainHttpCodeDataResponse{
 		BaseResponse: &responses.BaseResponse{},

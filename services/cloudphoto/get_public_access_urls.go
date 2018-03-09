@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke GetPublicAccessUrls api with *GetPublicAccessUrlsRequest synchronously
+// GetPublicAccessUrls invokes the cloudphoto.GetPublicAccessUrls API synchronously
 // api document: https://help.aliyun.com/api/cloudphoto/getpublicaccessurls.html
 func (client *Client) GetPublicAccessUrls(request *GetPublicAccessUrlsRequest) (response *GetPublicAccessUrlsResponse, err error) {
 	response = CreateGetPublicAccessUrlsResponse()
@@ -28,7 +28,7 @@ func (client *Client) GetPublicAccessUrls(request *GetPublicAccessUrlsRequest) (
 	return
 }
 
-// invoke GetPublicAccessUrls api with *GetPublicAccessUrlsRequest asynchronously
+// GetPublicAccessUrlsWithChan invokes the cloudphoto.GetPublicAccessUrls API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/getpublicaccessurls.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetPublicAccessUrlsWithChan(request *GetPublicAccessUrlsRequest) (<-chan *GetPublicAccessUrlsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) GetPublicAccessUrlsWithChan(request *GetPublicAccessUrlsRe
 	return responseChan, errChan
 }
 
-// invoke GetPublicAccessUrls api with *GetPublicAccessUrlsRequest asynchronously
+// GetPublicAccessUrlsWithCallback invokes the cloudphoto.GetPublicAccessUrls API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/getpublicaccessurls.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetPublicAccessUrlsWithCallback(request *GetPublicAccessUrlsRequest, callback func(response *GetPublicAccessUrlsResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) GetPublicAccessUrlsWithCallback(request *GetPublicAccessUr
 	return result
 }
 
+// GetPublicAccessUrlsRequest is the request struct for api GetPublicAccessUrls
 type GetPublicAccessUrlsRequest struct {
 	*requests.RpcRequest
 	PhotoId    *[]string `position:"Query" name:"PhotoId"  type:"Repeated"`
@@ -82,6 +83,7 @@ type GetPublicAccessUrlsRequest struct {
 	LibraryId  string    `position:"Query" name:"LibraryId"`
 }
 
+// GetPublicAccessUrlsResponse is the response struct for api GetPublicAccessUrls
 type GetPublicAccessUrlsResponse struct {
 	*responses.BaseResponse
 	Code      string   `json:"Code" xml:"Code"`
@@ -91,8 +93,8 @@ type GetPublicAccessUrlsResponse struct {
 	Results   []Result `json:"Results" xml:"Results"`
 }
 
-// create a request to invoke GetPublicAccessUrls API
-func CreateGetPublicAccessUrlsRequest() (request *GetPublicAccessUrlsRequest) {
+// CreateGetPublicAccessUrlsRequest creates a request to invoke GetPublicAccessUrls API
+func CreateGetPublicAccessUrlsRequest(request *GetPublicAccessUrlsRequest) {
 	request = &GetPublicAccessUrlsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -100,7 +102,7 @@ func CreateGetPublicAccessUrlsRequest() (request *GetPublicAccessUrlsRequest) {
 	return
 }
 
-// create a response to parse from GetPublicAccessUrls response
+// CreateGetPublicAccessUrlsResponse creates a response to parse from GetPublicAccessUrls response
 func CreateGetPublicAccessUrlsResponse() (response *GetPublicAccessUrlsResponse) {
 	response = &GetPublicAccessUrlsResponse{
 		BaseResponse: &responses.BaseResponse{},

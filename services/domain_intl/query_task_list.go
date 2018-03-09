@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke QueryTaskList api with *QueryTaskListRequest synchronously
+// QueryTaskList invokes the domain_intl.QueryTaskList API synchronously
 // api document: https://help.aliyun.com/api/domain-intl/querytasklist.html
 func (client *Client) QueryTaskList(request *QueryTaskListRequest) (response *QueryTaskListResponse, err error) {
 	response = CreateQueryTaskListResponse()
@@ -28,7 +28,7 @@ func (client *Client) QueryTaskList(request *QueryTaskListRequest) (response *Qu
 	return
 }
 
-// invoke QueryTaskList api with *QueryTaskListRequest asynchronously
+// QueryTaskListWithChan invokes the domain_intl.QueryTaskList API asynchronously
 // api document: https://help.aliyun.com/api/domain-intl/querytasklist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryTaskListWithChan(request *QueryTaskListRequest) (<-chan *QueryTaskListResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) QueryTaskListWithChan(request *QueryTaskListRequest) (<-ch
 	return responseChan, errChan
 }
 
-// invoke QueryTaskList api with *QueryTaskListRequest asynchronously
+// QueryTaskListWithCallback invokes the domain_intl.QueryTaskList API asynchronously
 // api document: https://help.aliyun.com/api/domain-intl/querytasklist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryTaskListWithCallback(request *QueryTaskListRequest, callback func(response *QueryTaskListResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) QueryTaskListWithCallback(request *QueryTaskListRequest, c
 	return result
 }
 
+// QueryTaskListRequest is the request struct for api QueryTaskList
 type QueryTaskListRequest struct {
 	*requests.RpcRequest
 	UserClientIp    string           `position:"Query" name:"UserClientIp"`
@@ -83,6 +84,7 @@ type QueryTaskListRequest struct {
 	PageSize        requests.Integer `position:"Query" name:"PageSize"`
 }
 
+// QueryTaskListResponse is the response struct for api QueryTaskList
 type QueryTaskListResponse struct {
 	*responses.BaseResponse
 	RequestId      string              `json:"RequestId" xml:"RequestId"`
@@ -95,8 +97,8 @@ type QueryTaskListResponse struct {
 	Data           DataInQueryTaskList `json:"Data" xml:"Data"`
 }
 
-// create a request to invoke QueryTaskList API
-func CreateQueryTaskListRequest() (request *QueryTaskListRequest) {
+// CreateQueryTaskListRequest creates a request to invoke QueryTaskList API
+func CreateQueryTaskListRequest(request *QueryTaskListRequest) {
 	request = &QueryTaskListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -104,7 +106,7 @@ func CreateQueryTaskListRequest() (request *QueryTaskListRequest) {
 	return
 }
 
-// create a response to parse from QueryTaskList response
+// CreateQueryTaskListResponse creates a response to parse from QueryTaskList response
 func CreateQueryTaskListResponse() (response *QueryTaskListResponse) {
 	response = &QueryTaskListResponse{
 		BaseResponse: &responses.BaseResponse{},

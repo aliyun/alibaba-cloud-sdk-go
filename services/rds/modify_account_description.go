@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifyAccountDescription api with *ModifyAccountDescriptionRequest synchronously
+// ModifyAccountDescription invokes the rds.ModifyAccountDescription API synchronously
 // api document: https://help.aliyun.com/api/rds/modifyaccountdescription.html
 func (client *Client) ModifyAccountDescription(request *ModifyAccountDescriptionRequest) (response *ModifyAccountDescriptionResponse, err error) {
 	response = CreateModifyAccountDescriptionResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifyAccountDescription(request *ModifyAccountDescription
 	return
 }
 
-// invoke ModifyAccountDescription api with *ModifyAccountDescriptionRequest asynchronously
+// ModifyAccountDescriptionWithChan invokes the rds.ModifyAccountDescription API asynchronously
 // api document: https://help.aliyun.com/api/rds/modifyaccountdescription.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyAccountDescriptionWithChan(request *ModifyAccountDescriptionRequest) (<-chan *ModifyAccountDescriptionResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifyAccountDescriptionWithChan(request *ModifyAccountDes
 	return responseChan, errChan
 }
 
-// invoke ModifyAccountDescription api with *ModifyAccountDescriptionRequest asynchronously
+// ModifyAccountDescriptionWithCallback invokes the rds.ModifyAccountDescription API asynchronously
 // api document: https://help.aliyun.com/api/rds/modifyaccountdescription.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyAccountDescriptionWithCallback(request *ModifyAccountDescriptionRequest, callback func(response *ModifyAccountDescriptionResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ModifyAccountDescriptionWithCallback(request *ModifyAccoun
 	return result
 }
 
+// ModifyAccountDescriptionRequest is the request struct for api ModifyAccountDescription
 type ModifyAccountDescriptionRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,13 +85,14 @@ type ModifyAccountDescriptionRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// ModifyAccountDescriptionResponse is the response struct for api ModifyAccountDescription
 type ModifyAccountDescriptionResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ModifyAccountDescription API
-func CreateModifyAccountDescriptionRequest() (request *ModifyAccountDescriptionRequest) {
+// CreateModifyAccountDescriptionRequest creates a request to invoke ModifyAccountDescription API
+func CreateModifyAccountDescriptionRequest(request *ModifyAccountDescriptionRequest) {
 	request = &ModifyAccountDescriptionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateModifyAccountDescriptionRequest() (request *ModifyAccountDescriptionR
 	return
 }
 
-// create a response to parse from ModifyAccountDescription response
+// CreateModifyAccountDescriptionResponse creates a response to parse from ModifyAccountDescription response
 func CreateModifyAccountDescriptionResponse() (response *ModifyAccountDescriptionResponse) {
 	response = &ModifyAccountDescriptionResponse{
 		BaseResponse: &responses.BaseResponse{},

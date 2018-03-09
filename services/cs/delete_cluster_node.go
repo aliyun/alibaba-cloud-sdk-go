@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteClusterNode api with *DeleteClusterNodeRequest synchronously
+// DeleteClusterNode invokes the cs.DeleteClusterNode API synchronously
 // api document: https://help.aliyun.com/api/cs/deleteclusternode.html
 func (client *Client) DeleteClusterNode(request *DeleteClusterNodeRequest) (response *DeleteClusterNodeResponse, err error) {
 	response = CreateDeleteClusterNodeResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteClusterNode(request *DeleteClusterNodeRequest) (resp
 	return
 }
 
-// invoke DeleteClusterNode api with *DeleteClusterNodeRequest asynchronously
+// DeleteClusterNodeWithChan invokes the cs.DeleteClusterNode API asynchronously
 // api document: https://help.aliyun.com/api/cs/deleteclusternode.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteClusterNodeWithChan(request *DeleteClusterNodeRequest) (<-chan *DeleteClusterNodeResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteClusterNodeWithChan(request *DeleteClusterNodeReques
 	return responseChan, errChan
 }
 
-// invoke DeleteClusterNode api with *DeleteClusterNodeRequest asynchronously
+// DeleteClusterNodeWithCallback invokes the cs.DeleteClusterNode API asynchronously
 // api document: https://help.aliyun.com/api/cs/deleteclusternode.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteClusterNodeWithCallback(request *DeleteClusterNodeRequest, callback func(response *DeleteClusterNodeResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DeleteClusterNodeWithCallback(request *DeleteClusterNodeRe
 	return result
 }
 
+// DeleteClusterNodeRequest is the request struct for api DeleteClusterNode
 type DeleteClusterNodeRequest struct {
 	*requests.RoaRequest
 	ClusterId       string `position:"Path" name:"ClusterId"`
@@ -81,12 +82,13 @@ type DeleteClusterNodeRequest struct {
 	ReleaseInstance string `position:"Query" name:"releaseInstance"`
 }
 
+// DeleteClusterNodeResponse is the response struct for api DeleteClusterNode
 type DeleteClusterNodeResponse struct {
 	*responses.BaseResponse
 }
 
-// create a request to invoke DeleteClusterNode API
-func CreateDeleteClusterNodeRequest() (request *DeleteClusterNodeRequest) {
+// CreateDeleteClusterNodeRequest creates a request to invoke DeleteClusterNode API
+func CreateDeleteClusterNodeRequest(request *DeleteClusterNodeRequest) {
 	request = &DeleteClusterNodeRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateDeleteClusterNodeRequest() (request *DeleteClusterNodeRequest) {
 	return
 }
 
-// create a response to parse from DeleteClusterNode response
+// CreateDeleteClusterNodeResponse creates a response to parse from DeleteClusterNode response
 func CreateDeleteClusterNodeResponse() (response *DeleteClusterNodeResponse) {
 	response = &DeleteClusterNodeResponse{
 		BaseResponse: &responses.BaseResponse{},

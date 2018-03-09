@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeDomainSrcBpsData api with *DescribeDomainSrcBpsDataRequest synchronously
+// DescribeDomainSrcBpsData invokes the cdn.DescribeDomainSrcBpsData API synchronously
 // api document: https://help.aliyun.com/api/cdn/describedomainsrcbpsdata.html
 func (client *Client) DescribeDomainSrcBpsData(request *DescribeDomainSrcBpsDataRequest) (response *DescribeDomainSrcBpsDataResponse, err error) {
 	response = CreateDescribeDomainSrcBpsDataResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeDomainSrcBpsData(request *DescribeDomainSrcBpsData
 	return
 }
 
-// invoke DescribeDomainSrcBpsData api with *DescribeDomainSrcBpsDataRequest asynchronously
+// DescribeDomainSrcBpsDataWithChan invokes the cdn.DescribeDomainSrcBpsData API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describedomainsrcbpsdata.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainSrcBpsDataWithChan(request *DescribeDomainSrcBpsDataRequest) (<-chan *DescribeDomainSrcBpsDataResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeDomainSrcBpsDataWithChan(request *DescribeDomainSr
 	return responseChan, errChan
 }
 
-// invoke DescribeDomainSrcBpsData api with *DescribeDomainSrcBpsDataRequest asynchronously
+// DescribeDomainSrcBpsDataWithCallback invokes the cdn.DescribeDomainSrcBpsData API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describedomainsrcbpsdata.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainSrcBpsDataWithCallback(request *DescribeDomainSrcBpsDataRequest, callback func(response *DescribeDomainSrcBpsDataResponse, err error)) <-chan int {
@@ -73,10 +73,12 @@ func (client *Client) DescribeDomainSrcBpsDataWithCallback(request *DescribeDoma
 	return result
 }
 
+// DescribeDomainSrcBpsDataRequest is the request struct for api DescribeDomainSrcBpsData
 type DescribeDomainSrcBpsDataRequest struct {
 	*requests.RpcRequest
 }
 
+// DescribeDomainSrcBpsDataResponse is the response struct for api DescribeDomainSrcBpsData
 type DescribeDomainSrcBpsDataResponse struct {
 	*responses.BaseResponse
 	RequestId             string                `json:"RequestId" xml:"RequestId"`
@@ -87,8 +89,8 @@ type DescribeDomainSrcBpsDataResponse struct {
 	SrcBpsDataPerInterval SrcBpsDataPerInterval `json:"SrcBpsDataPerInterval" xml:"SrcBpsDataPerInterval"`
 }
 
-// create a request to invoke DescribeDomainSrcBpsData API
-func CreateDescribeDomainSrcBpsDataRequest() (request *DescribeDomainSrcBpsDataRequest) {
+// CreateDescribeDomainSrcBpsDataRequest creates a request to invoke DescribeDomainSrcBpsData API
+func CreateDescribeDomainSrcBpsDataRequest(request *DescribeDomainSrcBpsDataRequest) {
 	request = &DescribeDomainSrcBpsDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -96,7 +98,7 @@ func CreateDescribeDomainSrcBpsDataRequest() (request *DescribeDomainSrcBpsDataR
 	return
 }
 
-// create a response to parse from DescribeDomainSrcBpsData response
+// CreateDescribeDomainSrcBpsDataResponse creates a response to parse from DescribeDomainSrcBpsData response
 func CreateDescribeDomainSrcBpsDataResponse() (response *DescribeDomainSrcBpsDataResponse) {
 	response = &DescribeDomainSrcBpsDataResponse{
 		BaseResponse: &responses.BaseResponse{},

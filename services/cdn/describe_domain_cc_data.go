@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeDomainCCData api with *DescribeDomainCCDataRequest synchronously
+// DescribeDomainCCData invokes the cdn.DescribeDomainCCData API synchronously
 // api document: https://help.aliyun.com/api/cdn/describedomainccdata.html
 func (client *Client) DescribeDomainCCData(request *DescribeDomainCCDataRequest) (response *DescribeDomainCCDataResponse, err error) {
 	response = CreateDescribeDomainCCDataResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeDomainCCData(request *DescribeDomainCCDataRequest)
 	return
 }
 
-// invoke DescribeDomainCCData api with *DescribeDomainCCDataRequest asynchronously
+// DescribeDomainCCDataWithChan invokes the cdn.DescribeDomainCCData API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describedomainccdata.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainCCDataWithChan(request *DescribeDomainCCDataRequest) (<-chan *DescribeDomainCCDataResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeDomainCCDataWithChan(request *DescribeDomainCCData
 	return responseChan, errChan
 }
 
-// invoke DescribeDomainCCData api with *DescribeDomainCCDataRequest asynchronously
+// DescribeDomainCCDataWithCallback invokes the cdn.DescribeDomainCCData API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describedomainccdata.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainCCDataWithCallback(request *DescribeDomainCCDataRequest, callback func(response *DescribeDomainCCDataResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeDomainCCDataWithCallback(request *DescribeDomainCC
 	return result
 }
 
+// DescribeDomainCCDataRequest is the request struct for api DescribeDomainCCData
 type DescribeDomainCCDataRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,6 +83,7 @@ type DescribeDomainCCDataRequest struct {
 	EndTime       string           `position:"Query" name:"EndTime"`
 }
 
+// DescribeDomainCCDataResponse is the response struct for api DescribeDomainCCData
 type DescribeDomainCCDataResponse struct {
 	*responses.BaseResponse
 	RequestId    string     `json:"RequestId" xml:"RequestId"`
@@ -92,8 +94,8 @@ type DescribeDomainCCDataResponse struct {
 	CCDataList   CCDataList `json:"CCDataList" xml:"CCDataList"`
 }
 
-// create a request to invoke DescribeDomainCCData API
-func CreateDescribeDomainCCDataRequest() (request *DescribeDomainCCDataRequest) {
+// CreateDescribeDomainCCDataRequest creates a request to invoke DescribeDomainCCData API
+func CreateDescribeDomainCCDataRequest(request *DescribeDomainCCDataRequest) {
 	request = &DescribeDomainCCDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -101,7 +103,7 @@ func CreateDescribeDomainCCDataRequest() (request *DescribeDomainCCDataRequest) 
 	return
 }
 
-// create a response to parse from DescribeDomainCCData response
+// CreateDescribeDomainCCDataResponse creates a response to parse from DescribeDomainCCData response
 func CreateDescribeDomainCCDataResponse() (response *DescribeDomainCCDataResponse) {
 	response = &DescribeDomainCCDataResponse{
 		BaseResponse: &responses.BaseResponse{},

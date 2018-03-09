@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ResetAccountForPG api with *ResetAccountForPGRequest synchronously
+// ResetAccountForPG invokes the rds.ResetAccountForPG API synchronously
 // api document: https://help.aliyun.com/api/rds/resetaccountforpg.html
 func (client *Client) ResetAccountForPG(request *ResetAccountForPGRequest) (response *ResetAccountForPGResponse, err error) {
 	response = CreateResetAccountForPGResponse()
@@ -28,7 +28,7 @@ func (client *Client) ResetAccountForPG(request *ResetAccountForPGRequest) (resp
 	return
 }
 
-// invoke ResetAccountForPG api with *ResetAccountForPGRequest asynchronously
+// ResetAccountForPGWithChan invokes the rds.ResetAccountForPG API asynchronously
 // api document: https://help.aliyun.com/api/rds/resetaccountforpg.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResetAccountForPGWithChan(request *ResetAccountForPGRequest) (<-chan *ResetAccountForPGResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ResetAccountForPGWithChan(request *ResetAccountForPGReques
 	return responseChan, errChan
 }
 
-// invoke ResetAccountForPG api with *ResetAccountForPGRequest asynchronously
+// ResetAccountForPGWithCallback invokes the rds.ResetAccountForPG API asynchronously
 // api document: https://help.aliyun.com/api/rds/resetaccountforpg.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResetAccountForPGWithCallback(request *ResetAccountForPGRequest, callback func(response *ResetAccountForPGResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ResetAccountForPGWithCallback(request *ResetAccountForPGRe
 	return result
 }
 
+// ResetAccountForPGRequest is the request struct for api ResetAccountForPG
 type ResetAccountForPGRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,13 +85,14 @@ type ResetAccountForPGRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// ResetAccountForPGResponse is the response struct for api ResetAccountForPG
 type ResetAccountForPGResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ResetAccountForPG API
-func CreateResetAccountForPGRequest() (request *ResetAccountForPGRequest) {
+// CreateResetAccountForPGRequest creates a request to invoke ResetAccountForPG API
+func CreateResetAccountForPGRequest(request *ResetAccountForPGRequest) {
 	request = &ResetAccountForPGRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateResetAccountForPGRequest() (request *ResetAccountForPGRequest) {
 	return
 }
 
-// create a response to parse from ResetAccountForPG response
+// CreateResetAccountForPGResponse creates a response to parse from ResetAccountForPG response
 func CreateResetAccountForPGResponse() (response *ResetAccountForPGResponse) {
 	response = &ResetAccountForPGResponse{
 		BaseResponse: &responses.BaseResponse{},

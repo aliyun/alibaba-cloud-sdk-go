@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SetReqHeaderConfig api with *SetReqHeaderConfigRequest synchronously
+// SetReqHeaderConfig invokes the cdn.SetReqHeaderConfig API synchronously
 // api document: https://help.aliyun.com/api/cdn/setreqheaderconfig.html
 func (client *Client) SetReqHeaderConfig(request *SetReqHeaderConfigRequest) (response *SetReqHeaderConfigResponse, err error) {
 	response = CreateSetReqHeaderConfigResponse()
@@ -28,7 +28,7 @@ func (client *Client) SetReqHeaderConfig(request *SetReqHeaderConfigRequest) (re
 	return
 }
 
-// invoke SetReqHeaderConfig api with *SetReqHeaderConfigRequest asynchronously
+// SetReqHeaderConfigWithChan invokes the cdn.SetReqHeaderConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/setreqheaderconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetReqHeaderConfigWithChan(request *SetReqHeaderConfigRequest) (<-chan *SetReqHeaderConfigResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SetReqHeaderConfigWithChan(request *SetReqHeaderConfigRequ
 	return responseChan, errChan
 }
 
-// invoke SetReqHeaderConfig api with *SetReqHeaderConfigRequest asynchronously
+// SetReqHeaderConfigWithCallback invokes the cdn.SetReqHeaderConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/setreqheaderconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetReqHeaderConfigWithCallback(request *SetReqHeaderConfigRequest, callback func(response *SetReqHeaderConfigResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SetReqHeaderConfigWithCallback(request *SetReqHeaderConfig
 	return result
 }
 
+// SetReqHeaderConfigRequest is the request struct for api SetReqHeaderConfig
 type SetReqHeaderConfigRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -83,13 +84,14 @@ type SetReqHeaderConfigRequest struct {
 	ConfigId      requests.Integer `position:"Query" name:"ConfigId"`
 }
 
+// SetReqHeaderConfigResponse is the response struct for api SetReqHeaderConfig
 type SetReqHeaderConfigResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke SetReqHeaderConfig API
-func CreateSetReqHeaderConfigRequest() (request *SetReqHeaderConfigRequest) {
+// CreateSetReqHeaderConfigRequest creates a request to invoke SetReqHeaderConfig API
+func CreateSetReqHeaderConfigRequest(request *SetReqHeaderConfigRequest) {
 	request = &SetReqHeaderConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateSetReqHeaderConfigRequest() (request *SetReqHeaderConfigRequest) {
 	return
 }
 
-// create a response to parse from SetReqHeaderConfig response
+// CreateSetReqHeaderConfigResponse creates a response to parse from SetReqHeaderConfig response
 func CreateSetReqHeaderConfigResponse() (response *SetReqHeaderConfigResponse) {
 	response = &SetReqHeaderConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

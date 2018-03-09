@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteLiveStreamTranscode api with *DeleteLiveStreamTranscodeRequest synchronously
+// DeleteLiveStreamTranscode invokes the cdn.DeleteLiveStreamTranscode API synchronously
 // api document: https://help.aliyun.com/api/cdn/deletelivestreamtranscode.html
 func (client *Client) DeleteLiveStreamTranscode(request *DeleteLiveStreamTranscodeRequest) (response *DeleteLiveStreamTranscodeResponse, err error) {
 	response = CreateDeleteLiveStreamTranscodeResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteLiveStreamTranscode(request *DeleteLiveStreamTransco
 	return
 }
 
-// invoke DeleteLiveStreamTranscode api with *DeleteLiveStreamTranscodeRequest asynchronously
+// DeleteLiveStreamTranscodeWithChan invokes the cdn.DeleteLiveStreamTranscode API asynchronously
 // api document: https://help.aliyun.com/api/cdn/deletelivestreamtranscode.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteLiveStreamTranscodeWithChan(request *DeleteLiveStreamTranscodeRequest) (<-chan *DeleteLiveStreamTranscodeResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteLiveStreamTranscodeWithChan(request *DeleteLiveStrea
 	return responseChan, errChan
 }
 
-// invoke DeleteLiveStreamTranscode api with *DeleteLiveStreamTranscodeRequest asynchronously
+// DeleteLiveStreamTranscodeWithCallback invokes the cdn.DeleteLiveStreamTranscode API asynchronously
 // api document: https://help.aliyun.com/api/cdn/deletelivestreamtranscode.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteLiveStreamTranscodeWithCallback(request *DeleteLiveStreamTranscodeRequest, callback func(response *DeleteLiveStreamTranscodeResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DeleteLiveStreamTranscodeWithCallback(request *DeleteLiveS
 	return result
 }
 
+// DeleteLiveStreamTranscodeRequest is the request struct for api DeleteLiveStreamTranscode
 type DeleteLiveStreamTranscodeRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -83,13 +84,14 @@ type DeleteLiveStreamTranscodeRequest struct {
 	App           string           `position:"Query" name:"App"`
 }
 
+// DeleteLiveStreamTranscodeResponse is the response struct for api DeleteLiveStreamTranscode
 type DeleteLiveStreamTranscodeResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DeleteLiveStreamTranscode API
-func CreateDeleteLiveStreamTranscodeRequest() (request *DeleteLiveStreamTranscodeRequest) {
+// CreateDeleteLiveStreamTranscodeRequest creates a request to invoke DeleteLiveStreamTranscode API
+func CreateDeleteLiveStreamTranscodeRequest(request *DeleteLiveStreamTranscodeRequest) {
 	request = &DeleteLiveStreamTranscodeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateDeleteLiveStreamTranscodeRequest() (request *DeleteLiveStreamTranscod
 	return
 }
 
-// create a response to parse from DeleteLiveStreamTranscode response
+// CreateDeleteLiveStreamTranscodeResponse creates a response to parse from DeleteLiveStreamTranscode response
 func CreateDeleteLiveStreamTranscodeResponse() (response *DeleteLiveStreamTranscodeResponse) {
 	response = &DeleteLiveStreamTranscodeResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke AddAgilityCluster api with *AddAgilityClusterRequest synchronously
+// AddAgilityCluster invokes the cs.AddAgilityCluster API synchronously
 // api document: https://help.aliyun.com/api/cs/addagilitycluster.html
 func (client *Client) AddAgilityCluster(request *AddAgilityClusterRequest) (response *AddAgilityClusterResponse, err error) {
 	response = CreateAddAgilityClusterResponse()
@@ -28,7 +28,7 @@ func (client *Client) AddAgilityCluster(request *AddAgilityClusterRequest) (resp
 	return
 }
 
-// invoke AddAgilityCluster api with *AddAgilityClusterRequest asynchronously
+// AddAgilityClusterWithChan invokes the cs.AddAgilityCluster API asynchronously
 // api document: https://help.aliyun.com/api/cs/addagilitycluster.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddAgilityClusterWithChan(request *AddAgilityClusterRequest) (<-chan *AddAgilityClusterResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) AddAgilityClusterWithChan(request *AddAgilityClusterReques
 	return responseChan, errChan
 }
 
-// invoke AddAgilityCluster api with *AddAgilityClusterRequest asynchronously
+// AddAgilityClusterWithCallback invokes the cs.AddAgilityCluster API asynchronously
 // api document: https://help.aliyun.com/api/cs/addagilitycluster.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddAgilityClusterWithCallback(request *AddAgilityClusterRequest, callback func(response *AddAgilityClusterResponse, err error)) <-chan int {
@@ -73,16 +73,18 @@ func (client *Client) AddAgilityClusterWithCallback(request *AddAgilityClusterRe
 	return result
 }
 
+// AddAgilityClusterRequest is the request struct for api AddAgilityCluster
 type AddAgilityClusterRequest struct {
 	*requests.RoaRequest
 }
 
+// AddAgilityClusterResponse is the response struct for api AddAgilityCluster
 type AddAgilityClusterResponse struct {
 	*responses.BaseResponse
 }
 
-// create a request to invoke AddAgilityCluster API
-func CreateAddAgilityClusterRequest() (request *AddAgilityClusterRequest) {
+// CreateAddAgilityClusterRequest creates a request to invoke AddAgilityCluster API
+func CreateAddAgilityClusterRequest(request *AddAgilityClusterRequest) {
 	request = &AddAgilityClusterRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
@@ -91,7 +93,7 @@ func CreateAddAgilityClusterRequest() (request *AddAgilityClusterRequest) {
 	return
 }
 
-// create a response to parse from AddAgilityCluster response
+// CreateAddAgilityClusterResponse creates a response to parse from AddAgilityCluster response
 func CreateAddAgilityClusterResponse() (response *AddAgilityClusterResponse) {
 	response = &AddAgilityClusterResponse{
 		BaseResponse: &responses.BaseResponse{},

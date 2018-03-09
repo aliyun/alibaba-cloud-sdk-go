@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeUnBlockholeCount api with *DescribeUnBlockholeCountRequest synchronously
+// DescribeUnBlockholeCount invokes the ddospro.DescribeUnBlockholeCount API synchronously
 // api document: https://help.aliyun.com/api/ddospro/describeunblockholecount.html
 func (client *Client) DescribeUnBlockholeCount(request *DescribeUnBlockholeCountRequest) (response *DescribeUnBlockholeCountResponse, err error) {
 	response = CreateDescribeUnBlockholeCountResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeUnBlockholeCount(request *DescribeUnBlockholeCount
 	return
 }
 
-// invoke DescribeUnBlockholeCount api with *DescribeUnBlockholeCountRequest asynchronously
+// DescribeUnBlockholeCountWithChan invokes the ddospro.DescribeUnBlockholeCount API asynchronously
 // api document: https://help.aliyun.com/api/ddospro/describeunblockholecount.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUnBlockholeCountWithChan(request *DescribeUnBlockholeCountRequest) (<-chan *DescribeUnBlockholeCountResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeUnBlockholeCountWithChan(request *DescribeUnBlockh
 	return responseChan, errChan
 }
 
-// invoke DescribeUnBlockholeCount api with *DescribeUnBlockholeCountRequest asynchronously
+// DescribeUnBlockholeCountWithCallback invokes the ddospro.DescribeUnBlockholeCount API asynchronously
 // api document: https://help.aliyun.com/api/ddospro/describeunblockholecount.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUnBlockholeCountWithCallback(request *DescribeUnBlockholeCountRequest, callback func(response *DescribeUnBlockholeCountResponse, err error)) <-chan int {
@@ -73,20 +73,22 @@ func (client *Client) DescribeUnBlockholeCountWithCallback(request *DescribeUnBl
 	return result
 }
 
+// DescribeUnBlockholeCountRequest is the request struct for api DescribeUnBlockholeCount
 type DescribeUnBlockholeCountRequest struct {
 	*requests.RpcRequest
 	SourceIp        string           `position:"Query" name:"SourceIp"`
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
 }
 
+// DescribeUnBlockholeCountResponse is the response struct for api DescribeUnBlockholeCount
 type DescribeUnBlockholeCountResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 
-// create a request to invoke DescribeUnBlockholeCount API
-func CreateDescribeUnBlockholeCountRequest() (request *DescribeUnBlockholeCountRequest) {
+// CreateDescribeUnBlockholeCountRequest creates a request to invoke DescribeUnBlockholeCount API
+func CreateDescribeUnBlockholeCountRequest(request *DescribeUnBlockholeCountRequest) {
 	request = &DescribeUnBlockholeCountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -94,7 +96,7 @@ func CreateDescribeUnBlockholeCountRequest() (request *DescribeUnBlockholeCountR
 	return
 }
 
-// create a response to parse from DescribeUnBlockholeCount response
+// CreateDescribeUnBlockholeCountResponse creates a response to parse from DescribeUnBlockholeCount response
 func CreateDescribeUnBlockholeCountResponse() (response *DescribeUnBlockholeCountResponse) {
 	response = &DescribeUnBlockholeCountResponse{
 		BaseResponse: &responses.BaseResponse{},

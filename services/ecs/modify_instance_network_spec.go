@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifyInstanceNetworkSpec api with *ModifyInstanceNetworkSpecRequest synchronously
+// ModifyInstanceNetworkSpec invokes the ecs.ModifyInstanceNetworkSpec API synchronously
 // api document: https://help.aliyun.com/api/ecs/modifyinstancenetworkspec.html
 func (client *Client) ModifyInstanceNetworkSpec(request *ModifyInstanceNetworkSpecRequest) (response *ModifyInstanceNetworkSpecResponse, err error) {
 	response = CreateModifyInstanceNetworkSpecResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifyInstanceNetworkSpec(request *ModifyInstanceNetworkSp
 	return
 }
 
-// invoke ModifyInstanceNetworkSpec api with *ModifyInstanceNetworkSpecRequest asynchronously
+// ModifyInstanceNetworkSpecWithChan invokes the ecs.ModifyInstanceNetworkSpec API asynchronously
 // api document: https://help.aliyun.com/api/ecs/modifyinstancenetworkspec.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyInstanceNetworkSpecWithChan(request *ModifyInstanceNetworkSpecRequest) (<-chan *ModifyInstanceNetworkSpecResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifyInstanceNetworkSpecWithChan(request *ModifyInstanceN
 	return responseChan, errChan
 }
 
-// invoke ModifyInstanceNetworkSpec api with *ModifyInstanceNetworkSpecRequest asynchronously
+// ModifyInstanceNetworkSpecWithCallback invokes the ecs.ModifyInstanceNetworkSpec API asynchronously
 // api document: https://help.aliyun.com/api/ecs/modifyinstancenetworkspec.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyInstanceNetworkSpecWithCallback(request *ModifyInstanceNetworkSpecRequest, callback func(response *ModifyInstanceNetworkSpecResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ModifyInstanceNetworkSpecWithCallback(request *ModifyInsta
 	return result
 }
 
+// ModifyInstanceNetworkSpecRequest is the request struct for api ModifyInstanceNetworkSpec
 type ModifyInstanceNetworkSpecRequest struct {
 	*requests.RpcRequest
 	OwnerId                 requests.Integer `position:"Query" name:"OwnerId"`
@@ -90,14 +91,15 @@ type ModifyInstanceNetworkSpecRequest struct {
 	OwnerAccount            string           `position:"Query" name:"OwnerAccount"`
 }
 
+// ModifyInstanceNetworkSpecResponse is the response struct for api ModifyInstanceNetworkSpec
 type ModifyInstanceNetworkSpecResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	OrderId   string `json:"OrderId" xml:"OrderId"`
 }
 
-// create a request to invoke ModifyInstanceNetworkSpec API
-func CreateModifyInstanceNetworkSpecRequest() (request *ModifyInstanceNetworkSpecRequest) {
+// CreateModifyInstanceNetworkSpecRequest creates a request to invoke ModifyInstanceNetworkSpec API
+func CreateModifyInstanceNetworkSpecRequest(request *ModifyInstanceNetworkSpecRequest) {
 	request = &ModifyInstanceNetworkSpecRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -105,7 +107,7 @@ func CreateModifyInstanceNetworkSpecRequest() (request *ModifyInstanceNetworkSpe
 	return
 }
 
-// create a response to parse from ModifyInstanceNetworkSpec response
+// CreateModifyInstanceNetworkSpecResponse creates a response to parse from ModifyInstanceNetworkSpec response
 func CreateModifyInstanceNetworkSpecResponse() (response *ModifyInstanceNetworkSpecResponse) {
 	response = &ModifyInstanceNetworkSpecResponse{
 		BaseResponse: &responses.BaseResponse{},

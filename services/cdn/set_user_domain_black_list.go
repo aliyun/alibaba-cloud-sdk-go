@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SetUserDomainBlackList api with *SetUserDomainBlackListRequest synchronously
+// SetUserDomainBlackList invokes the cdn.SetUserDomainBlackList API synchronously
 // api document: https://help.aliyun.com/api/cdn/setuserdomainblacklist.html
 func (client *Client) SetUserDomainBlackList(request *SetUserDomainBlackListRequest) (response *SetUserDomainBlackListResponse, err error) {
 	response = CreateSetUserDomainBlackListResponse()
@@ -28,7 +28,7 @@ func (client *Client) SetUserDomainBlackList(request *SetUserDomainBlackListRequ
 	return
 }
 
-// invoke SetUserDomainBlackList api with *SetUserDomainBlackListRequest asynchronously
+// SetUserDomainBlackListWithChan invokes the cdn.SetUserDomainBlackList API asynchronously
 // api document: https://help.aliyun.com/api/cdn/setuserdomainblacklist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetUserDomainBlackListWithChan(request *SetUserDomainBlackListRequest) (<-chan *SetUserDomainBlackListResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SetUserDomainBlackListWithChan(request *SetUserDomainBlack
 	return responseChan, errChan
 }
 
-// invoke SetUserDomainBlackList api with *SetUserDomainBlackListRequest asynchronously
+// SetUserDomainBlackListWithCallback invokes the cdn.SetUserDomainBlackList API asynchronously
 // api document: https://help.aliyun.com/api/cdn/setuserdomainblacklist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetUserDomainBlackListWithCallback(request *SetUserDomainBlackListRequest, callback func(response *SetUserDomainBlackListResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SetUserDomainBlackListWithCallback(request *SetUserDomainB
 	return result
 }
 
+// SetUserDomainBlackListRequest is the request struct for api SetUserDomainBlackList
 type SetUserDomainBlackListRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -81,13 +82,14 @@ type SetUserDomainBlackListRequest struct {
 	DomainName    string           `position:"Query" name:"DomainName"`
 }
 
+// SetUserDomainBlackListResponse is the response struct for api SetUserDomainBlackList
 type SetUserDomainBlackListResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke SetUserDomainBlackList API
-func CreateSetUserDomainBlackListRequest() (request *SetUserDomainBlackListRequest) {
+// CreateSetUserDomainBlackListRequest creates a request to invoke SetUserDomainBlackList API
+func CreateSetUserDomainBlackListRequest(request *SetUserDomainBlackListRequest) {
 	request = &SetUserDomainBlackListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateSetUserDomainBlackListRequest() (request *SetUserDomainBlackListReque
 	return
 }
 
-// create a response to parse from SetUserDomainBlackList response
+// CreateSetUserDomainBlackListResponse creates a response to parse from SetUserDomainBlackList response
 func CreateSetUserDomainBlackListResponse() (response *SetUserDomainBlackListResponse) {
 	response = &SetUserDomainBlackListResponse{
 		BaseResponse: &responses.BaseResponse{},

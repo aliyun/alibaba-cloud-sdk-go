@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifyInstanceSpec api with *ModifyInstanceSpecRequest synchronously
+// ModifyInstanceSpec invokes the ecs.ModifyInstanceSpec API synchronously
 // api document: https://help.aliyun.com/api/ecs/modifyinstancespec.html
 func (client *Client) ModifyInstanceSpec(request *ModifyInstanceSpecRequest) (response *ModifyInstanceSpecResponse, err error) {
 	response = CreateModifyInstanceSpecResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifyInstanceSpec(request *ModifyInstanceSpecRequest) (re
 	return
 }
 
-// invoke ModifyInstanceSpec api with *ModifyInstanceSpecRequest asynchronously
+// ModifyInstanceSpecWithChan invokes the ecs.ModifyInstanceSpec API asynchronously
 // api document: https://help.aliyun.com/api/ecs/modifyinstancespec.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyInstanceSpecWithChan(request *ModifyInstanceSpecRequest) (<-chan *ModifyInstanceSpecResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifyInstanceSpecWithChan(request *ModifyInstanceSpecRequ
 	return responseChan, errChan
 }
 
-// invoke ModifyInstanceSpec api with *ModifyInstanceSpecRequest asynchronously
+// ModifyInstanceSpecWithCallback invokes the ecs.ModifyInstanceSpec API asynchronously
 // api document: https://help.aliyun.com/api/ecs/modifyinstancespec.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyInstanceSpecWithCallback(request *ModifyInstanceSpecRequest, callback func(response *ModifyInstanceSpecResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ModifyInstanceSpecWithCallback(request *ModifyInstanceSpec
 	return result
 }
 
+// ModifyInstanceSpecRequest is the request struct for api ModifyInstanceSpec
 type ModifyInstanceSpecRequest struct {
 	*requests.RpcRequest
 	OwnerId                          requests.Integer `position:"Query" name:"OwnerId"`
@@ -92,13 +93,14 @@ type ModifyInstanceSpecRequest struct {
 	ClientToken                      string           `position:"Query" name:"ClientToken"`
 }
 
+// ModifyInstanceSpecResponse is the response struct for api ModifyInstanceSpec
 type ModifyInstanceSpecResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ModifyInstanceSpec API
-func CreateModifyInstanceSpecRequest() (request *ModifyInstanceSpecRequest) {
+// CreateModifyInstanceSpecRequest creates a request to invoke ModifyInstanceSpec API
+func CreateModifyInstanceSpecRequest(request *ModifyInstanceSpecRequest) {
 	request = &ModifyInstanceSpecRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -106,7 +108,7 @@ func CreateModifyInstanceSpecRequest() (request *ModifyInstanceSpecRequest) {
 	return
 }
 
-// create a response to parse from ModifyInstanceSpec response
+// CreateModifyInstanceSpecResponse creates a response to parse from ModifyInstanceSpec response
 func CreateModifyInstanceSpecResponse() (response *ModifyInstanceSpecResponse) {
 	response = &ModifyInstanceSpecResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke QueryRegistrantProfiles api with *QueryRegistrantProfilesRequest synchronously
+// QueryRegistrantProfiles invokes the domain_intl.QueryRegistrantProfiles API synchronously
 // api document: https://help.aliyun.com/api/domain-intl/queryregistrantprofiles.html
 func (client *Client) QueryRegistrantProfiles(request *QueryRegistrantProfilesRequest) (response *QueryRegistrantProfilesResponse, err error) {
 	response = CreateQueryRegistrantProfilesResponse()
@@ -28,7 +28,7 @@ func (client *Client) QueryRegistrantProfiles(request *QueryRegistrantProfilesRe
 	return
 }
 
-// invoke QueryRegistrantProfiles api with *QueryRegistrantProfilesRequest asynchronously
+// QueryRegistrantProfilesWithChan invokes the domain_intl.QueryRegistrantProfiles API asynchronously
 // api document: https://help.aliyun.com/api/domain-intl/queryregistrantprofiles.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryRegistrantProfilesWithChan(request *QueryRegistrantProfilesRequest) (<-chan *QueryRegistrantProfilesResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) QueryRegistrantProfilesWithChan(request *QueryRegistrantPr
 	return responseChan, errChan
 }
 
-// invoke QueryRegistrantProfiles api with *QueryRegistrantProfilesRequest asynchronously
+// QueryRegistrantProfilesWithCallback invokes the domain_intl.QueryRegistrantProfiles API asynchronously
 // api document: https://help.aliyun.com/api/domain-intl/queryregistrantprofiles.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryRegistrantProfilesWithCallback(request *QueryRegistrantProfilesRequest, callback func(response *QueryRegistrantProfilesResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) QueryRegistrantProfilesWithCallback(request *QueryRegistra
 	return result
 }
 
+// QueryRegistrantProfilesRequest is the request struct for api QueryRegistrantProfiles
 type QueryRegistrantProfilesRequest struct {
 	*requests.RpcRequest
 	UserClientIp             string           `position:"Query" name:"UserClientIp"`
@@ -84,6 +85,7 @@ type QueryRegistrantProfilesRequest struct {
 	PageSize                 requests.Integer `position:"Query" name:"PageSize"`
 }
 
+// QueryRegistrantProfilesResponse is the response struct for api QueryRegistrantProfiles
 type QueryRegistrantProfilesResponse struct {
 	*responses.BaseResponse
 	RequestId          string             `json:"RequestId" xml:"RequestId"`
@@ -96,8 +98,8 @@ type QueryRegistrantProfilesResponse struct {
 	RegistrantProfiles RegistrantProfiles `json:"RegistrantProfiles" xml:"RegistrantProfiles"`
 }
 
-// create a request to invoke QueryRegistrantProfiles API
-func CreateQueryRegistrantProfilesRequest() (request *QueryRegistrantProfilesRequest) {
+// CreateQueryRegistrantProfilesRequest creates a request to invoke QueryRegistrantProfiles API
+func CreateQueryRegistrantProfilesRequest(request *QueryRegistrantProfilesRequest) {
 	request = &QueryRegistrantProfilesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -105,7 +107,7 @@ func CreateQueryRegistrantProfilesRequest() (request *QueryRegistrantProfilesReq
 	return
 }
 
-// create a response to parse from QueryRegistrantProfiles response
+// CreateQueryRegistrantProfilesResponse creates a response to parse from QueryRegistrantProfiles response
 func CreateQueryRegistrantProfilesResponse() (response *QueryRegistrantProfilesResponse) {
 	response = &QueryRegistrantProfilesResponse{
 		BaseResponse: &responses.BaseResponse{},

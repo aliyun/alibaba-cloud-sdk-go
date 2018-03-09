@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifyFileCacheExpiredConfig api with *ModifyFileCacheExpiredConfigRequest synchronously
+// ModifyFileCacheExpiredConfig invokes the cdn.ModifyFileCacheExpiredConfig API synchronously
 // api document: https://help.aliyun.com/api/cdn/modifyfilecacheexpiredconfig.html
 func (client *Client) ModifyFileCacheExpiredConfig(request *ModifyFileCacheExpiredConfigRequest) (response *ModifyFileCacheExpiredConfigResponse, err error) {
 	response = CreateModifyFileCacheExpiredConfigResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifyFileCacheExpiredConfig(request *ModifyFileCacheExpir
 	return
 }
 
-// invoke ModifyFileCacheExpiredConfig api with *ModifyFileCacheExpiredConfigRequest asynchronously
+// ModifyFileCacheExpiredConfigWithChan invokes the cdn.ModifyFileCacheExpiredConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/modifyfilecacheexpiredconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyFileCacheExpiredConfigWithChan(request *ModifyFileCacheExpiredConfigRequest) (<-chan *ModifyFileCacheExpiredConfigResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifyFileCacheExpiredConfigWithChan(request *ModifyFileCa
 	return responseChan, errChan
 }
 
-// invoke ModifyFileCacheExpiredConfig api with *ModifyFileCacheExpiredConfigRequest asynchronously
+// ModifyFileCacheExpiredConfigWithCallback invokes the cdn.ModifyFileCacheExpiredConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/modifyfilecacheexpiredconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyFileCacheExpiredConfigWithCallback(request *ModifyFileCacheExpiredConfigRequest, callback func(response *ModifyFileCacheExpiredConfigResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ModifyFileCacheExpiredConfigWithCallback(request *ModifyFi
 	return result
 }
 
+// ModifyFileCacheExpiredConfigRequest is the request struct for api ModifyFileCacheExpiredConfig
 type ModifyFileCacheExpiredConfigRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,13 +85,14 @@ type ModifyFileCacheExpiredConfigRequest struct {
 	Weight        string           `position:"Query" name:"Weight"`
 }
 
+// ModifyFileCacheExpiredConfigResponse is the response struct for api ModifyFileCacheExpiredConfig
 type ModifyFileCacheExpiredConfigResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ModifyFileCacheExpiredConfig API
-func CreateModifyFileCacheExpiredConfigRequest() (request *ModifyFileCacheExpiredConfigRequest) {
+// CreateModifyFileCacheExpiredConfigRequest creates a request to invoke ModifyFileCacheExpiredConfig API
+func CreateModifyFileCacheExpiredConfigRequest(request *ModifyFileCacheExpiredConfigRequest) {
 	request = &ModifyFileCacheExpiredConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateModifyFileCacheExpiredConfigRequest() (request *ModifyFileCacheExpire
 	return
 }
 
-// create a response to parse from ModifyFileCacheExpiredConfig response
+// CreateModifyFileCacheExpiredConfigResponse creates a response to parse from ModifyFileCacheExpiredConfig response
 func CreateModifyFileCacheExpiredConfigResponse() (response *ModifyFileCacheExpiredConfigResponse) {
 	response = &ModifyFileCacheExpiredConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

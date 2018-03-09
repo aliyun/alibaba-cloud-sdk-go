@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CreateVirtualBorderRouter api with *CreateVirtualBorderRouterRequest synchronously
+// CreateVirtualBorderRouter invokes the ecs.CreateVirtualBorderRouter API synchronously
 // api document: https://help.aliyun.com/api/ecs/createvirtualborderrouter.html
 func (client *Client) CreateVirtualBorderRouter(request *CreateVirtualBorderRouterRequest) (response *CreateVirtualBorderRouterResponse, err error) {
 	response = CreateCreateVirtualBorderRouterResponse()
@@ -28,7 +28,7 @@ func (client *Client) CreateVirtualBorderRouter(request *CreateVirtualBorderRout
 	return
 }
 
-// invoke CreateVirtualBorderRouter api with *CreateVirtualBorderRouterRequest asynchronously
+// CreateVirtualBorderRouterWithChan invokes the ecs.CreateVirtualBorderRouter API asynchronously
 // api document: https://help.aliyun.com/api/ecs/createvirtualborderrouter.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateVirtualBorderRouterWithChan(request *CreateVirtualBorderRouterRequest) (<-chan *CreateVirtualBorderRouterResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CreateVirtualBorderRouterWithChan(request *CreateVirtualBo
 	return responseChan, errChan
 }
 
-// invoke CreateVirtualBorderRouter api with *CreateVirtualBorderRouterRequest asynchronously
+// CreateVirtualBorderRouterWithCallback invokes the ecs.CreateVirtualBorderRouter API asynchronously
 // api document: https://help.aliyun.com/api/ecs/createvirtualborderrouter.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateVirtualBorderRouterWithCallback(request *CreateVirtualBorderRouterRequest, callback func(response *CreateVirtualBorderRouterResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) CreateVirtualBorderRouterWithCallback(request *CreateVirtu
 	return result
 }
 
+// CreateVirtualBorderRouterRequest is the request struct for api CreateVirtualBorderRouter
 type CreateVirtualBorderRouterRequest struct {
 	*requests.RpcRequest
 	PhysicalConnectionId string           `position:"Query" name:"PhysicalConnectionId"`
@@ -92,14 +93,15 @@ type CreateVirtualBorderRouterRequest struct {
 	UserCidr             string           `position:"Query" name:"UserCidr"`
 }
 
+// CreateVirtualBorderRouterResponse is the response struct for api CreateVirtualBorderRouter
 type CreateVirtualBorderRouterResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	VbrId     string `json:"VbrId" xml:"VbrId"`
 }
 
-// create a request to invoke CreateVirtualBorderRouter API
-func CreateCreateVirtualBorderRouterRequest() (request *CreateVirtualBorderRouterRequest) {
+// CreateCreateVirtualBorderRouterRequest creates a request to invoke CreateVirtualBorderRouter API
+func CreateCreateVirtualBorderRouterRequest(request *CreateVirtualBorderRouterRequest) {
 	request = &CreateVirtualBorderRouterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -107,7 +109,7 @@ func CreateCreateVirtualBorderRouterRequest() (request *CreateVirtualBorderRoute
 	return
 }
 
-// create a response to parse from CreateVirtualBorderRouter response
+// CreateCreateVirtualBorderRouterResponse creates a response to parse from CreateVirtualBorderRouter response
 func CreateCreateVirtualBorderRouterResponse() (response *CreateVirtualBorderRouterResponse) {
 	response = &CreateVirtualBorderRouterResponse{
 		BaseResponse: &responses.BaseResponse{},

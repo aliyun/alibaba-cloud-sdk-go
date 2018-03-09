@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeCACertificates api with *DescribeCACertificatesRequest synchronously
+// DescribeCACertificates invokes the slb.DescribeCACertificates API synchronously
 // api document: https://help.aliyun.com/api/slb/describecacertificates.html
 func (client *Client) DescribeCACertificates(request *DescribeCACertificatesRequest) (response *DescribeCACertificatesResponse, err error) {
 	response = CreateDescribeCACertificatesResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeCACertificates(request *DescribeCACertificatesRequ
 	return
 }
 
-// invoke DescribeCACertificates api with *DescribeCACertificatesRequest asynchronously
+// DescribeCACertificatesWithChan invokes the slb.DescribeCACertificates API asynchronously
 // api document: https://help.aliyun.com/api/slb/describecacertificates.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCACertificatesWithChan(request *DescribeCACertificatesRequest) (<-chan *DescribeCACertificatesResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeCACertificatesWithChan(request *DescribeCACertific
 	return responseChan, errChan
 }
 
-// invoke DescribeCACertificates api with *DescribeCACertificatesRequest asynchronously
+// DescribeCACertificatesWithCallback invokes the slb.DescribeCACertificates API asynchronously
 // api document: https://help.aliyun.com/api/slb/describecacertificates.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCACertificatesWithCallback(request *DescribeCACertificatesRequest, callback func(response *DescribeCACertificatesResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeCACertificatesWithCallback(request *DescribeCACert
 	return result
 }
 
+// DescribeCACertificatesRequest is the request struct for api DescribeCACertificates
 type DescribeCACertificatesRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,14 +85,15 @@ type DescribeCACertificatesRequest struct {
 	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 }
 
+// DescribeCACertificatesResponse is the response struct for api DescribeCACertificates
 type DescribeCACertificatesResponse struct {
 	*responses.BaseResponse
 	RequestId      string         `json:"RequestId" xml:"RequestId"`
 	CACertificates CACertificates `json:"CACertificates" xml:"CACertificates"`
 }
 
-// create a request to invoke DescribeCACertificates API
-func CreateDescribeCACertificatesRequest() (request *DescribeCACertificatesRequest) {
+// CreateDescribeCACertificatesRequest creates a request to invoke DescribeCACertificates API
+func CreateDescribeCACertificatesRequest(request *DescribeCACertificatesRequest) {
 	request = &DescribeCACertificatesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateDescribeCACertificatesRequest() (request *DescribeCACertificatesReque
 	return
 }
 
-// create a response to parse from DescribeCACertificates response
+// CreateDescribeCACertificatesResponse creates a response to parse from DescribeCACertificates response
 func CreateDescribeCACertificatesResponse() (response *DescribeCACertificatesResponse) {
 	response = &DescribeCACertificatesResponse{
 		BaseResponse: &responses.BaseResponse{},

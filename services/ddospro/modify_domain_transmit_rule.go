@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifyDomainTransmitRule api with *ModifyDomainTransmitRuleRequest synchronously
+// ModifyDomainTransmitRule invokes the ddospro.ModifyDomainTransmitRule API synchronously
 // api document: https://help.aliyun.com/api/ddospro/modifydomaintransmitrule.html
 func (client *Client) ModifyDomainTransmitRule(request *ModifyDomainTransmitRuleRequest) (response *ModifyDomainTransmitRuleResponse, err error) {
 	response = CreateModifyDomainTransmitRuleResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifyDomainTransmitRule(request *ModifyDomainTransmitRule
 	return
 }
 
-// invoke ModifyDomainTransmitRule api with *ModifyDomainTransmitRuleRequest asynchronously
+// ModifyDomainTransmitRuleWithChan invokes the ddospro.ModifyDomainTransmitRule API asynchronously
 // api document: https://help.aliyun.com/api/ddospro/modifydomaintransmitrule.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDomainTransmitRuleWithChan(request *ModifyDomainTransmitRuleRequest) (<-chan *ModifyDomainTransmitRuleResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifyDomainTransmitRuleWithChan(request *ModifyDomainTran
 	return responseChan, errChan
 }
 
-// invoke ModifyDomainTransmitRule api with *ModifyDomainTransmitRuleRequest asynchronously
+// ModifyDomainTransmitRuleWithCallback invokes the ddospro.ModifyDomainTransmitRule API asynchronously
 // api document: https://help.aliyun.com/api/ddospro/modifydomaintransmitrule.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDomainTransmitRuleWithCallback(request *ModifyDomainTransmitRuleRequest, callback func(response *ModifyDomainTransmitRuleResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ModifyDomainTransmitRuleWithCallback(request *ModifyDomain
 	return result
 }
 
+// ModifyDomainTransmitRuleRequest is the request struct for api ModifyDomainTransmitRule
 type ModifyDomainTransmitRuleRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
@@ -82,13 +83,14 @@ type ModifyDomainTransmitRuleRequest struct {
 	RealServer      *[]string        `position:"Query" name:"RealServer"  type:"Repeated"`
 }
 
+// ModifyDomainTransmitRuleResponse is the response struct for api ModifyDomainTransmitRule
 type ModifyDomainTransmitRuleResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ModifyDomainTransmitRule API
-func CreateModifyDomainTransmitRuleRequest() (request *ModifyDomainTransmitRuleRequest) {
+// CreateModifyDomainTransmitRuleRequest creates a request to invoke ModifyDomainTransmitRule API
+func CreateModifyDomainTransmitRuleRequest(request *ModifyDomainTransmitRuleRequest) {
 	request = &ModifyDomainTransmitRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -96,7 +98,7 @@ func CreateModifyDomainTransmitRuleRequest() (request *ModifyDomainTransmitRuleR
 	return
 }
 
-// create a response to parse from ModifyDomainTransmitRule response
+// CreateModifyDomainTransmitRuleResponse creates a response to parse from ModifyDomainTransmitRule response
 func CreateModifyDomainTransmitRuleResponse() (response *ModifyDomainTransmitRuleResponse) {
 	response = &ModifyDomainTransmitRuleResponse{
 		BaseResponse: &responses.BaseResponse{},

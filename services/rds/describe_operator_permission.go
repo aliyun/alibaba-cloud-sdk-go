@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeOperatorPermission api with *DescribeOperatorPermissionRequest synchronously
+// DescribeOperatorPermission invokes the rds.DescribeOperatorPermission API synchronously
 // api document: https://help.aliyun.com/api/rds/describeoperatorpermission.html
 func (client *Client) DescribeOperatorPermission(request *DescribeOperatorPermissionRequest) (response *DescribeOperatorPermissionResponse, err error) {
 	response = CreateDescribeOperatorPermissionResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeOperatorPermission(request *DescribeOperatorPermis
 	return
 }
 
-// invoke DescribeOperatorPermission api with *DescribeOperatorPermissionRequest asynchronously
+// DescribeOperatorPermissionWithChan invokes the rds.DescribeOperatorPermission API asynchronously
 // api document: https://help.aliyun.com/api/rds/describeoperatorpermission.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeOperatorPermissionWithChan(request *DescribeOperatorPermissionRequest) (<-chan *DescribeOperatorPermissionResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeOperatorPermissionWithChan(request *DescribeOperat
 	return responseChan, errChan
 }
 
-// invoke DescribeOperatorPermission api with *DescribeOperatorPermissionRequest asynchronously
+// DescribeOperatorPermissionWithCallback invokes the rds.DescribeOperatorPermission API asynchronously
 // api document: https://help.aliyun.com/api/rds/describeoperatorpermission.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeOperatorPermissionWithCallback(request *DescribeOperatorPermissionRequest, callback func(response *DescribeOperatorPermissionResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeOperatorPermissionWithCallback(request *DescribeOp
 	return result
 }
 
+// DescribeOperatorPermissionRequest is the request struct for api DescribeOperatorPermission
 type DescribeOperatorPermissionRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,6 +83,7 @@ type DescribeOperatorPermissionRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// DescribeOperatorPermissionResponse is the response struct for api DescribeOperatorPermission
 type DescribeOperatorPermissionResponse struct {
 	*responses.BaseResponse
 	RequestId   string `json:"RequestId" xml:"RequestId"`
@@ -90,8 +92,8 @@ type DescribeOperatorPermissionResponse struct {
 	ExpiredTime string `json:"ExpiredTime" xml:"ExpiredTime"`
 }
 
-// create a request to invoke DescribeOperatorPermission API
-func CreateDescribeOperatorPermissionRequest() (request *DescribeOperatorPermissionRequest) {
+// CreateDescribeOperatorPermissionRequest creates a request to invoke DescribeOperatorPermission API
+func CreateDescribeOperatorPermissionRequest(request *DescribeOperatorPermissionRequest) {
 	request = &DescribeOperatorPermissionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateDescribeOperatorPermissionRequest() (request *DescribeOperatorPermiss
 	return
 }
 
-// create a response to parse from DescribeOperatorPermission response
+// CreateDescribeOperatorPermissionResponse creates a response to parse from DescribeOperatorPermission response
 func CreateDescribeOperatorPermissionResponse() (response *DescribeOperatorPermissionResponse) {
 	response = &DescribeOperatorPermissionResponse{
 		BaseResponse: &responses.BaseResponse{},

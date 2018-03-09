@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke GetMainDomainName api with *GetMainDomainNameRequest synchronously
+// GetMainDomainName invokes the alidns.GetMainDomainName API synchronously
 // api document: https://help.aliyun.com/api/alidns/getmaindomainname.html
 func (client *Client) GetMainDomainName(request *GetMainDomainNameRequest) (response *GetMainDomainNameResponse, err error) {
 	response = CreateGetMainDomainNameResponse()
@@ -28,7 +28,7 @@ func (client *Client) GetMainDomainName(request *GetMainDomainNameRequest) (resp
 	return
 }
 
-// invoke GetMainDomainName api with *GetMainDomainNameRequest asynchronously
+// GetMainDomainNameWithChan invokes the alidns.GetMainDomainName API asynchronously
 // api document: https://help.aliyun.com/api/alidns/getmaindomainname.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetMainDomainNameWithChan(request *GetMainDomainNameRequest) (<-chan *GetMainDomainNameResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) GetMainDomainNameWithChan(request *GetMainDomainNameReques
 	return responseChan, errChan
 }
 
-// invoke GetMainDomainName api with *GetMainDomainNameRequest asynchronously
+// GetMainDomainNameWithCallback invokes the alidns.GetMainDomainName API asynchronously
 // api document: https://help.aliyun.com/api/alidns/getmaindomainname.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetMainDomainNameWithCallback(request *GetMainDomainNameRequest, callback func(response *GetMainDomainNameResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) GetMainDomainNameWithCallback(request *GetMainDomainNameRe
 	return result
 }
 
+// GetMainDomainNameRequest is the request struct for api GetMainDomainName
 type GetMainDomainNameRequest struct {
 	*requests.RpcRequest
 	Lang         string `position:"Query" name:"Lang"`
@@ -80,6 +81,7 @@ type GetMainDomainNameRequest struct {
 	InputString  string `position:"Query" name:"InputString"`
 }
 
+// GetMainDomainNameResponse is the response struct for api GetMainDomainName
 type GetMainDomainNameResponse struct {
 	*responses.BaseResponse
 	RequestId   string `json:"RequestId" xml:"RequestId"`
@@ -88,8 +90,8 @@ type GetMainDomainNameResponse struct {
 	DomainLevel int    `json:"DomainLevel" xml:"DomainLevel"`
 }
 
-// create a request to invoke GetMainDomainName API
-func CreateGetMainDomainNameRequest() (request *GetMainDomainNameRequest) {
+// CreateGetMainDomainNameRequest creates a request to invoke GetMainDomainName API
+func CreateGetMainDomainNameRequest(request *GetMainDomainNameRequest) {
 	request = &GetMainDomainNameRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateGetMainDomainNameRequest() (request *GetMainDomainNameRequest) {
 	return
 }
 
-// create a response to parse from GetMainDomainName response
+// CreateGetMainDomainNameResponse creates a response to parse from GetMainDomainName response
 func CreateGetMainDomainNameResponse() (response *GetMainDomainNameResponse) {
 	response = &GetMainDomainNameResponse{
 		BaseResponse: &responses.BaseResponse{},

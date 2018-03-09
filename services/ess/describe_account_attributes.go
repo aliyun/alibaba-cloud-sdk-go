@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeAccountAttributes api with *DescribeAccountAttributesRequest synchronously
+// DescribeAccountAttributes invokes the ess.DescribeAccountAttributes API synchronously
 // api document: https://help.aliyun.com/api/ess/describeaccountattributes.html
 func (client *Client) DescribeAccountAttributes(request *DescribeAccountAttributesRequest) (response *DescribeAccountAttributesResponse, err error) {
 	response = CreateDescribeAccountAttributesResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeAccountAttributes(request *DescribeAccountAttribut
 	return
 }
 
-// invoke DescribeAccountAttributes api with *DescribeAccountAttributesRequest asynchronously
+// DescribeAccountAttributesWithChan invokes the ess.DescribeAccountAttributes API asynchronously
 // api document: https://help.aliyun.com/api/ess/describeaccountattributes.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAccountAttributesWithChan(request *DescribeAccountAttributesRequest) (<-chan *DescribeAccountAttributesResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeAccountAttributesWithChan(request *DescribeAccount
 	return responseChan, errChan
 }
 
-// invoke DescribeAccountAttributes api with *DescribeAccountAttributesRequest asynchronously
+// DescribeAccountAttributesWithCallback invokes the ess.DescribeAccountAttributes API asynchronously
 // api document: https://help.aliyun.com/api/ess/describeaccountattributes.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAccountAttributesWithCallback(request *DescribeAccountAttributesRequest, callback func(response *DescribeAccountAttributesResponse, err error)) <-chan int {
@@ -73,12 +73,14 @@ func (client *Client) DescribeAccountAttributesWithCallback(request *DescribeAcc
 	return result
 }
 
+// DescribeAccountAttributesRequest is the request struct for api DescribeAccountAttributes
 type DescribeAccountAttributesRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 }
 
+// DescribeAccountAttributesResponse is the response struct for api DescribeAccountAttributes
 type DescribeAccountAttributesResponse struct {
 	*responses.BaseResponse
 	MaxNumberOfScalingGroups         int `json:"MaxNumberOfScalingGroups" xml:"MaxNumberOfScalingGroups"`
@@ -92,8 +94,8 @@ type DescribeAccountAttributesResponse struct {
 	MaxNumberOfMaxSize               int `json:"MaxNumberOfMaxSize" xml:"MaxNumberOfMaxSize"`
 }
 
-// create a request to invoke DescribeAccountAttributes API
-func CreateDescribeAccountAttributesRequest() (request *DescribeAccountAttributesRequest) {
+// CreateDescribeAccountAttributesRequest creates a request to invoke DescribeAccountAttributes API
+func CreateDescribeAccountAttributesRequest(request *DescribeAccountAttributesRequest) {
 	request = &DescribeAccountAttributesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -101,7 +103,7 @@ func CreateDescribeAccountAttributesRequest() (request *DescribeAccountAttribute
 	return
 }
 
-// create a response to parse from DescribeAccountAttributes response
+// CreateDescribeAccountAttributesResponse creates a response to parse from DescribeAccountAttributes response
 func CreateDescribeAccountAttributesResponse() (response *DescribeAccountAttributesResponse) {
 	response = &DescribeAccountAttributesResponse{
 		BaseResponse: &responses.BaseResponse{},

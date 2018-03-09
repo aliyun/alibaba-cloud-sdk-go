@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeExportInfo api with *DescribeExportInfoRequest synchronously
+// DescribeExportInfo invokes the aegis.DescribeExportInfo API synchronously
 // api document: https://help.aliyun.com/api/aegis/describeexportinfo.html
 func (client *Client) DescribeExportInfo(request *DescribeExportInfoRequest) (response *DescribeExportInfoResponse, err error) {
 	response = CreateDescribeExportInfoResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeExportInfo(request *DescribeExportInfoRequest) (re
 	return
 }
 
-// invoke DescribeExportInfo api with *DescribeExportInfoRequest asynchronously
+// DescribeExportInfoWithChan invokes the aegis.DescribeExportInfo API asynchronously
 // api document: https://help.aliyun.com/api/aegis/describeexportinfo.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeExportInfoWithChan(request *DescribeExportInfoRequest) (<-chan *DescribeExportInfoResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeExportInfoWithChan(request *DescribeExportInfoRequ
 	return responseChan, errChan
 }
 
-// invoke DescribeExportInfo api with *DescribeExportInfoRequest asynchronously
+// DescribeExportInfoWithCallback invokes the aegis.DescribeExportInfo API asynchronously
 // api document: https://help.aliyun.com/api/aegis/describeexportinfo.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeExportInfoWithCallback(request *DescribeExportInfoRequest, callback func(response *DescribeExportInfoResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeExportInfoWithCallback(request *DescribeExportInfo
 	return result
 }
 
+// DescribeExportInfoRequest is the request struct for api DescribeExportInfo
 type DescribeExportInfoRequest struct {
 	*requests.RpcRequest
 	SourceIp        string           `position:"Query" name:"SourceIp"`
@@ -80,6 +81,7 @@ type DescribeExportInfoRequest struct {
 	ExportId        requests.Integer `position:"Query" name:"ExportId"`
 }
 
+// DescribeExportInfoResponse is the response struct for api DescribeExportInfo
 type DescribeExportInfoResponse struct {
 	*responses.BaseResponse
 	RequestId    string `json:"RequestId" xml:"RequestId"`
@@ -94,8 +96,8 @@ type DescribeExportInfoResponse struct {
 	Status       string `json:"Status" xml:"Status"`
 }
 
-// create a request to invoke DescribeExportInfo API
-func CreateDescribeExportInfoRequest() (request *DescribeExportInfoRequest) {
+// CreateDescribeExportInfoRequest creates a request to invoke DescribeExportInfo API
+func CreateDescribeExportInfoRequest(request *DescribeExportInfoRequest) {
 	request = &DescribeExportInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -103,7 +105,7 @@ func CreateDescribeExportInfoRequest() (request *DescribeExportInfoRequest) {
 	return
 }
 
-// create a response to parse from DescribeExportInfo response
+// CreateDescribeExportInfoResponse creates a response to parse from DescribeExportInfo response
 func CreateDescribeExportInfoResponse() (response *DescribeExportInfoResponse) {
 	response = &DescribeExportInfoResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke UpdateMediaWorkflowTriggerMode api with *UpdateMediaWorkflowTriggerModeRequest synchronously
+// UpdateMediaWorkflowTriggerMode invokes the mts.UpdateMediaWorkflowTriggerMode API synchronously
 // api document: https://help.aliyun.com/api/mts/updatemediaworkflowtriggermode.html
 func (client *Client) UpdateMediaWorkflowTriggerMode(request *UpdateMediaWorkflowTriggerModeRequest) (response *UpdateMediaWorkflowTriggerModeResponse, err error) {
 	response = CreateUpdateMediaWorkflowTriggerModeResponse()
@@ -28,7 +28,7 @@ func (client *Client) UpdateMediaWorkflowTriggerMode(request *UpdateMediaWorkflo
 	return
 }
 
-// invoke UpdateMediaWorkflowTriggerMode api with *UpdateMediaWorkflowTriggerModeRequest asynchronously
+// UpdateMediaWorkflowTriggerModeWithChan invokes the mts.UpdateMediaWorkflowTriggerMode API asynchronously
 // api document: https://help.aliyun.com/api/mts/updatemediaworkflowtriggermode.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateMediaWorkflowTriggerModeWithChan(request *UpdateMediaWorkflowTriggerModeRequest) (<-chan *UpdateMediaWorkflowTriggerModeResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) UpdateMediaWorkflowTriggerModeWithChan(request *UpdateMedi
 	return responseChan, errChan
 }
 
-// invoke UpdateMediaWorkflowTriggerMode api with *UpdateMediaWorkflowTriggerModeRequest asynchronously
+// UpdateMediaWorkflowTriggerModeWithCallback invokes the mts.UpdateMediaWorkflowTriggerMode API asynchronously
 // api document: https://help.aliyun.com/api/mts/updatemediaworkflowtriggermode.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateMediaWorkflowTriggerModeWithCallback(request *UpdateMediaWorkflowTriggerModeRequest, callback func(response *UpdateMediaWorkflowTriggerModeResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) UpdateMediaWorkflowTriggerModeWithCallback(request *Update
 	return result
 }
 
+// UpdateMediaWorkflowTriggerModeRequest is the request struct for api UpdateMediaWorkflowTriggerMode
 type UpdateMediaWorkflowTriggerModeRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -83,14 +84,15 @@ type UpdateMediaWorkflowTriggerModeRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// UpdateMediaWorkflowTriggerModeResponse is the response struct for api UpdateMediaWorkflowTriggerMode
 type UpdateMediaWorkflowTriggerModeResponse struct {
 	*responses.BaseResponse
 	RequestId     string        `json:"RequestId" xml:"RequestId"`
 	MediaWorkflow MediaWorkflow `json:"MediaWorkflow" xml:"MediaWorkflow"`
 }
 
-// create a request to invoke UpdateMediaWorkflowTriggerMode API
-func CreateUpdateMediaWorkflowTriggerModeRequest() (request *UpdateMediaWorkflowTriggerModeRequest) {
+// CreateUpdateMediaWorkflowTriggerModeRequest creates a request to invoke UpdateMediaWorkflowTriggerMode API
+func CreateUpdateMediaWorkflowTriggerModeRequest(request *UpdateMediaWorkflowTriggerModeRequest) {
 	request = &UpdateMediaWorkflowTriggerModeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateUpdateMediaWorkflowTriggerModeRequest() (request *UpdateMediaWorkflow
 	return
 }
 
-// create a response to parse from UpdateMediaWorkflowTriggerMode response
+// CreateUpdateMediaWorkflowTriggerModeResponse creates a response to parse from UpdateMediaWorkflowTriggerMode response
 func CreateUpdateMediaWorkflowTriggerModeResponse() (response *UpdateMediaWorkflowTriggerModeResponse) {
 	response = &UpdateMediaWorkflowTriggerModeResponse{
 		BaseResponse: &responses.BaseResponse{},

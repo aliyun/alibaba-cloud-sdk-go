@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CreateJobTemplate api with *CreateJobTemplateRequest synchronously
+// CreateJobTemplate invokes the ehpc.CreateJobTemplate API synchronously
 // api document: https://help.aliyun.com/api/ehpc/createjobtemplate.html
 func (client *Client) CreateJobTemplate(request *CreateJobTemplateRequest) (response *CreateJobTemplateResponse, err error) {
 	response = CreateCreateJobTemplateResponse()
@@ -28,7 +28,7 @@ func (client *Client) CreateJobTemplate(request *CreateJobTemplateRequest) (resp
 	return
 }
 
-// invoke CreateJobTemplate api with *CreateJobTemplateRequest asynchronously
+// CreateJobTemplateWithChan invokes the ehpc.CreateJobTemplate API asynchronously
 // api document: https://help.aliyun.com/api/ehpc/createjobtemplate.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateJobTemplateWithChan(request *CreateJobTemplateRequest) (<-chan *CreateJobTemplateResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CreateJobTemplateWithChan(request *CreateJobTemplateReques
 	return responseChan, errChan
 }
 
-// invoke CreateJobTemplate api with *CreateJobTemplateRequest asynchronously
+// CreateJobTemplateWithCallback invokes the ehpc.CreateJobTemplate API asynchronously
 // api document: https://help.aliyun.com/api/ehpc/createjobtemplate.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateJobTemplateWithCallback(request *CreateJobTemplateRequest, callback func(response *CreateJobTemplateResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) CreateJobTemplateWithCallback(request *CreateJobTemplateRe
 	return result
 }
 
+// CreateJobTemplateRequest is the request struct for api CreateJobTemplate
 type CreateJobTemplateRequest struct {
 	*requests.RpcRequest
 	CommandLine        string           `position:"Query" name:"CommandLine"`
@@ -87,14 +88,15 @@ type CreateJobTemplateRequest struct {
 	Variables          string           `position:"Query" name:"Variables"`
 }
 
+// CreateJobTemplateResponse is the response struct for api CreateJobTemplate
 type CreateJobTemplateResponse struct {
 	*responses.BaseResponse
 	RequestId  string `json:"RequestId" xml:"RequestId"`
 	TemplateId string `json:"TemplateId" xml:"TemplateId"`
 }
 
-// create a request to invoke CreateJobTemplate API
-func CreateCreateJobTemplateRequest() (request *CreateJobTemplateRequest) {
+// CreateCreateJobTemplateRequest creates a request to invoke CreateJobTemplate API
+func CreateCreateJobTemplateRequest(request *CreateJobTemplateRequest) {
 	request = &CreateJobTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -102,7 +104,7 @@ func CreateCreateJobTemplateRequest() (request *CreateJobTemplateRequest) {
 	return
 }
 
-// create a response to parse from CreateJobTemplate response
+// CreateCreateJobTemplateResponse creates a response to parse from CreateJobTemplate response
 func CreateCreateJobTemplateResponse() (response *CreateJobTemplateResponse) {
 	response = &CreateJobTemplateResponse{
 		BaseResponse: &responses.BaseResponse{},

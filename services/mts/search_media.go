@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SearchMedia api with *SearchMediaRequest synchronously
+// SearchMedia invokes the mts.SearchMedia API synchronously
 // api document: https://help.aliyun.com/api/mts/searchmedia.html
 func (client *Client) SearchMedia(request *SearchMediaRequest) (response *SearchMediaResponse, err error) {
 	response = CreateSearchMediaResponse()
@@ -28,7 +28,7 @@ func (client *Client) SearchMedia(request *SearchMediaRequest) (response *Search
 	return
 }
 
-// invoke SearchMedia api with *SearchMediaRequest asynchronously
+// SearchMediaWithChan invokes the mts.SearchMedia API asynchronously
 // api document: https://help.aliyun.com/api/mts/searchmedia.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SearchMediaWithChan(request *SearchMediaRequest) (<-chan *SearchMediaResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SearchMediaWithChan(request *SearchMediaRequest) (<-chan *
 	return responseChan, errChan
 }
 
-// invoke SearchMedia api with *SearchMediaRequest asynchronously
+// SearchMediaWithCallback invokes the mts.SearchMedia API asynchronously
 // api document: https://help.aliyun.com/api/mts/searchmedia.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SearchMediaWithCallback(request *SearchMediaRequest, callback func(response *SearchMediaResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SearchMediaWithCallback(request *SearchMediaRequest, callb
 	return result
 }
 
+// SearchMediaRequest is the request struct for api SearchMedia
 type SearchMediaRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -91,6 +92,7 @@ type SearchMediaRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// SearchMediaResponse is the response struct for api SearchMedia
 type SearchMediaResponse struct {
 	*responses.BaseResponse
 	RequestId  string                 `json:"RequestId" xml:"RequestId"`
@@ -100,8 +102,8 @@ type SearchMediaResponse struct {
 	MediaList  MediaListInSearchMedia `json:"MediaList" xml:"MediaList"`
 }
 
-// create a request to invoke SearchMedia API
-func CreateSearchMediaRequest() (request *SearchMediaRequest) {
+// CreateSearchMediaRequest creates a request to invoke SearchMedia API
+func CreateSearchMediaRequest(request *SearchMediaRequest) {
 	request = &SearchMediaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -109,7 +111,7 @@ func CreateSearchMediaRequest() (request *SearchMediaRequest) {
 	return
 }
 
-// create a response to parse from SearchMedia response
+// CreateSearchMediaResponse creates a response to parse from SearchMedia response
 func CreateSearchMediaResponse() (response *SearchMediaResponse) {
 	response = &SearchMediaResponse{
 		BaseResponse: &responses.BaseResponse{},

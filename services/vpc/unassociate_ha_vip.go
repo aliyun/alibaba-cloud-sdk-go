@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke UnassociateHaVip api with *UnassociateHaVipRequest synchronously
+// UnassociateHaVip invokes the vpc.UnassociateHaVip API synchronously
 // api document: https://help.aliyun.com/api/vpc/unassociatehavip.html
 func (client *Client) UnassociateHaVip(request *UnassociateHaVipRequest) (response *UnassociateHaVipResponse, err error) {
 	response = CreateUnassociateHaVipResponse()
@@ -28,7 +28,7 @@ func (client *Client) UnassociateHaVip(request *UnassociateHaVipRequest) (respon
 	return
 }
 
-// invoke UnassociateHaVip api with *UnassociateHaVipRequest asynchronously
+// UnassociateHaVipWithChan invokes the vpc.UnassociateHaVip API asynchronously
 // api document: https://help.aliyun.com/api/vpc/unassociatehavip.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnassociateHaVipWithChan(request *UnassociateHaVipRequest) (<-chan *UnassociateHaVipResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) UnassociateHaVipWithChan(request *UnassociateHaVipRequest)
 	return responseChan, errChan
 }
 
-// invoke UnassociateHaVip api with *UnassociateHaVipRequest asynchronously
+// UnassociateHaVipWithCallback invokes the vpc.UnassociateHaVip API asynchronously
 // api document: https://help.aliyun.com/api/vpc/unassociatehavip.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnassociateHaVipWithCallback(request *UnassociateHaVipRequest, callback func(response *UnassociateHaVipResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) UnassociateHaVipWithCallback(request *UnassociateHaVipRequ
 	return result
 }
 
+// UnassociateHaVipRequest is the request struct for api UnassociateHaVip
 type UnassociateHaVipRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -85,13 +86,14 @@ type UnassociateHaVipRequest struct {
 	Force                string           `position:"Query" name:"Force"`
 }
 
+// UnassociateHaVipResponse is the response struct for api UnassociateHaVip
 type UnassociateHaVipResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke UnassociateHaVip API
-func CreateUnassociateHaVipRequest() (request *UnassociateHaVipRequest) {
+// CreateUnassociateHaVipRequest creates a request to invoke UnassociateHaVip API
+func CreateUnassociateHaVipRequest(request *UnassociateHaVipRequest) {
 	request = &UnassociateHaVipRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateUnassociateHaVipRequest() (request *UnassociateHaVipRequest) {
 	return
 }
 
-// create a response to parse from UnassociateHaVip response
+// CreateUnassociateHaVipResponse creates a response to parse from UnassociateHaVip response
 func CreateUnassociateHaVipResponse() (response *UnassociateHaVipResponse) {
 	response = &UnassociateHaVipResponse{
 		BaseResponse: &responses.BaseResponse{},

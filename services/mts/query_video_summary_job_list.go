@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke QueryVideoSummaryJobList api with *QueryVideoSummaryJobListRequest synchronously
+// QueryVideoSummaryJobList invokes the mts.QueryVideoSummaryJobList API synchronously
 // api document: https://help.aliyun.com/api/mts/queryvideosummaryjoblist.html
 func (client *Client) QueryVideoSummaryJobList(request *QueryVideoSummaryJobListRequest) (response *QueryVideoSummaryJobListResponse, err error) {
 	response = CreateQueryVideoSummaryJobListResponse()
@@ -28,7 +28,7 @@ func (client *Client) QueryVideoSummaryJobList(request *QueryVideoSummaryJobList
 	return
 }
 
-// invoke QueryVideoSummaryJobList api with *QueryVideoSummaryJobListRequest asynchronously
+// QueryVideoSummaryJobListWithChan invokes the mts.QueryVideoSummaryJobList API asynchronously
 // api document: https://help.aliyun.com/api/mts/queryvideosummaryjoblist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryVideoSummaryJobListWithChan(request *QueryVideoSummaryJobListRequest) (<-chan *QueryVideoSummaryJobListResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) QueryVideoSummaryJobListWithChan(request *QueryVideoSummar
 	return responseChan, errChan
 }
 
-// invoke QueryVideoSummaryJobList api with *QueryVideoSummaryJobListRequest asynchronously
+// QueryVideoSummaryJobListWithCallback invokes the mts.QueryVideoSummaryJobList API asynchronously
 // api document: https://help.aliyun.com/api/mts/queryvideosummaryjoblist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryVideoSummaryJobListWithCallback(request *QueryVideoSummaryJobListRequest, callback func(response *QueryVideoSummaryJobListResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) QueryVideoSummaryJobListWithCallback(request *QueryVideoSu
 	return result
 }
 
+// QueryVideoSummaryJobListRequest is the request struct for api QueryVideoSummaryJobList
 type QueryVideoSummaryJobListRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,6 +83,7 @@ type QueryVideoSummaryJobListRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// QueryVideoSummaryJobListResponse is the response struct for api QueryVideoSummaryJobList
 type QueryVideoSummaryJobListResponse struct {
 	*responses.BaseResponse
 	RequestId   string                                `json:"RequestId" xml:"RequestId"`
@@ -89,8 +91,8 @@ type QueryVideoSummaryJobListResponse struct {
 	JobList     JobListInQueryVideoSummaryJobList     `json:"JobList" xml:"JobList"`
 }
 
-// create a request to invoke QueryVideoSummaryJobList API
-func CreateQueryVideoSummaryJobListRequest() (request *QueryVideoSummaryJobListRequest) {
+// CreateQueryVideoSummaryJobListRequest creates a request to invoke QueryVideoSummaryJobList API
+func CreateQueryVideoSummaryJobListRequest(request *QueryVideoSummaryJobListRequest) {
 	request = &QueryVideoSummaryJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateQueryVideoSummaryJobListRequest() (request *QueryVideoSummaryJobListR
 	return
 }
 
-// create a response to parse from QueryVideoSummaryJobList response
+// CreateQueryVideoSummaryJobListResponse creates a response to parse from QueryVideoSummaryJobList response
 func CreateQueryVideoSummaryJobListResponse() (response *QueryVideoSummaryJobListResponse) {
 	response = &QueryVideoSummaryJobListResponse{
 		BaseResponse: &responses.BaseResponse{},

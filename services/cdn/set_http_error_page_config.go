@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SetHttpErrorPageConfig api with *SetHttpErrorPageConfigRequest synchronously
+// SetHttpErrorPageConfig invokes the cdn.SetHttpErrorPageConfig API synchronously
 // api document: https://help.aliyun.com/api/cdn/sethttperrorpageconfig.html
 func (client *Client) SetHttpErrorPageConfig(request *SetHttpErrorPageConfigRequest) (response *SetHttpErrorPageConfigResponse, err error) {
 	response = CreateSetHttpErrorPageConfigResponse()
@@ -28,7 +28,7 @@ func (client *Client) SetHttpErrorPageConfig(request *SetHttpErrorPageConfigRequ
 	return
 }
 
-// invoke SetHttpErrorPageConfig api with *SetHttpErrorPageConfigRequest asynchronously
+// SetHttpErrorPageConfigWithChan invokes the cdn.SetHttpErrorPageConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/sethttperrorpageconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetHttpErrorPageConfigWithChan(request *SetHttpErrorPageConfigRequest) (<-chan *SetHttpErrorPageConfigResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SetHttpErrorPageConfigWithChan(request *SetHttpErrorPageCo
 	return responseChan, errChan
 }
 
-// invoke SetHttpErrorPageConfig api with *SetHttpErrorPageConfigRequest asynchronously
+// SetHttpErrorPageConfigWithCallback invokes the cdn.SetHttpErrorPageConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/sethttperrorpageconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetHttpErrorPageConfigWithCallback(request *SetHttpErrorPageConfigRequest, callback func(response *SetHttpErrorPageConfigResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SetHttpErrorPageConfigWithCallback(request *SetHttpErrorPa
 	return result
 }
 
+// SetHttpErrorPageConfigRequest is the request struct for api SetHttpErrorPageConfig
 type SetHttpErrorPageConfigRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,13 +83,14 @@ type SetHttpErrorPageConfigRequest struct {
 	ErrorCode     string           `position:"Query" name:"ErrorCode"`
 }
 
+// SetHttpErrorPageConfigResponse is the response struct for api SetHttpErrorPageConfig
 type SetHttpErrorPageConfigResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke SetHttpErrorPageConfig API
-func CreateSetHttpErrorPageConfigRequest() (request *SetHttpErrorPageConfigRequest) {
+// CreateSetHttpErrorPageConfigRequest creates a request to invoke SetHttpErrorPageConfig API
+func CreateSetHttpErrorPageConfigRequest(request *SetHttpErrorPageConfigRequest) {
 	request = &SetHttpErrorPageConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -96,7 +98,7 @@ func CreateSetHttpErrorPageConfigRequest() (request *SetHttpErrorPageConfigReque
 	return
 }
 
-// create a response to parse from SetHttpErrorPageConfig response
+// CreateSetHttpErrorPageConfigResponse creates a response to parse from SetHttpErrorPageConfig response
 func CreateSetHttpErrorPageConfigResponse() (response *SetHttpErrorPageConfigResponse) {
 	response = &SetHttpErrorPageConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

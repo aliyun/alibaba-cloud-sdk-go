@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeVulDetails api with *DescribeVulDetailsRequest synchronously
+// DescribeVulDetails invokes the aegis.DescribeVulDetails API synchronously
 // api document: https://help.aliyun.com/api/aegis/describevuldetails.html
 func (client *Client) DescribeVulDetails(request *DescribeVulDetailsRequest) (response *DescribeVulDetailsResponse, err error) {
 	response = CreateDescribeVulDetailsResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeVulDetails(request *DescribeVulDetailsRequest) (re
 	return
 }
 
-// invoke DescribeVulDetails api with *DescribeVulDetailsRequest asynchronously
+// DescribeVulDetailsWithChan invokes the aegis.DescribeVulDetails API asynchronously
 // api document: https://help.aliyun.com/api/aegis/describevuldetails.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeVulDetailsWithChan(request *DescribeVulDetailsRequest) (<-chan *DescribeVulDetailsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeVulDetailsWithChan(request *DescribeVulDetailsRequ
 	return responseChan, errChan
 }
 
-// invoke DescribeVulDetails api with *DescribeVulDetailsRequest asynchronously
+// DescribeVulDetailsWithCallback invokes the aegis.DescribeVulDetails API asynchronously
 // api document: https://help.aliyun.com/api/aegis/describevuldetails.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeVulDetailsWithCallback(request *DescribeVulDetailsRequest, callback func(response *DescribeVulDetailsResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeVulDetailsWithCallback(request *DescribeVulDetails
 	return result
 }
 
+// DescribeVulDetailsRequest is the request struct for api DescribeVulDetails
 type DescribeVulDetailsRequest struct {
 	*requests.RpcRequest
 	SourceIp        string           `position:"Query" name:"SourceIp"`
@@ -81,14 +82,15 @@ type DescribeVulDetailsRequest struct {
 	Name            string           `position:"Query" name:"Name"`
 }
 
+// DescribeVulDetailsResponse is the response struct for api DescribeVulDetails
 type DescribeVulDetailsResponse struct {
 	*responses.BaseResponse
 	RequestId string     `json:"RequestId" xml:"RequestId"`
 	Cves      []CvesItem `json:"Cves" xml:"Cves"`
 }
 
-// create a request to invoke DescribeVulDetails API
-func CreateDescribeVulDetailsRequest() (request *DescribeVulDetailsRequest) {
+// CreateDescribeVulDetailsRequest creates a request to invoke DescribeVulDetails API
+func CreateDescribeVulDetailsRequest(request *DescribeVulDetailsRequest) {
 	request = &DescribeVulDetailsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -96,7 +98,7 @@ func CreateDescribeVulDetailsRequest() (request *DescribeVulDetailsRequest) {
 	return
 }
 
-// create a response to parse from DescribeVulDetails response
+// CreateDescribeVulDetailsResponse creates a response to parse from DescribeVulDetails response
 func CreateDescribeVulDetailsResponse() (response *DescribeVulDetailsResponse) {
 	response = &DescribeVulDetailsResponse{
 		BaseResponse: &responses.BaseResponse{},

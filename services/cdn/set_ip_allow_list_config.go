@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SetIpAllowListConfig api with *SetIpAllowListConfigRequest synchronously
+// SetIpAllowListConfig invokes the cdn.SetIpAllowListConfig API synchronously
 // api document: https://help.aliyun.com/api/cdn/setipallowlistconfig.html
 func (client *Client) SetIpAllowListConfig(request *SetIpAllowListConfigRequest) (response *SetIpAllowListConfigResponse, err error) {
 	response = CreateSetIpAllowListConfigResponse()
@@ -28,7 +28,7 @@ func (client *Client) SetIpAllowListConfig(request *SetIpAllowListConfigRequest)
 	return
 }
 
-// invoke SetIpAllowListConfig api with *SetIpAllowListConfigRequest asynchronously
+// SetIpAllowListConfigWithChan invokes the cdn.SetIpAllowListConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/setipallowlistconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetIpAllowListConfigWithChan(request *SetIpAllowListConfigRequest) (<-chan *SetIpAllowListConfigResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SetIpAllowListConfigWithChan(request *SetIpAllowListConfig
 	return responseChan, errChan
 }
 
-// invoke SetIpAllowListConfig api with *SetIpAllowListConfigRequest asynchronously
+// SetIpAllowListConfigWithCallback invokes the cdn.SetIpAllowListConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/setipallowlistconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetIpAllowListConfigWithCallback(request *SetIpAllowListConfigRequest, callback func(response *SetIpAllowListConfigResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SetIpAllowListConfigWithCallback(request *SetIpAllowListCo
 	return result
 }
 
+// SetIpAllowListConfigRequest is the request struct for api SetIpAllowListConfig
 type SetIpAllowListConfigRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -81,13 +82,14 @@ type SetIpAllowListConfigRequest struct {
 	AllowIps      string           `position:"Query" name:"AllowIps"`
 }
 
+// SetIpAllowListConfigResponse is the response struct for api SetIpAllowListConfig
 type SetIpAllowListConfigResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke SetIpAllowListConfig API
-func CreateSetIpAllowListConfigRequest() (request *SetIpAllowListConfigRequest) {
+// CreateSetIpAllowListConfigRequest creates a request to invoke SetIpAllowListConfig API
+func CreateSetIpAllowListConfigRequest(request *SetIpAllowListConfigRequest) {
 	request = &SetIpAllowListConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateSetIpAllowListConfigRequest() (request *SetIpAllowListConfigRequest) 
 	return
 }
 
-// create a response to parse from SetIpAllowListConfig response
+// CreateSetIpAllowListConfigResponse creates a response to parse from SetIpAllowListConfig response
 func CreateSetIpAllowListConfigResponse() (response *SetIpAllowListConfigResponse) {
 	response = &SetIpAllowListConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

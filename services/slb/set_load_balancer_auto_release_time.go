@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SetLoadBalancerAutoReleaseTime api with *SetLoadBalancerAutoReleaseTimeRequest synchronously
+// SetLoadBalancerAutoReleaseTime invokes the slb.SetLoadBalancerAutoReleaseTime API synchronously
 // api document: https://help.aliyun.com/api/slb/setloadbalancerautoreleasetime.html
 func (client *Client) SetLoadBalancerAutoReleaseTime(request *SetLoadBalancerAutoReleaseTimeRequest) (response *SetLoadBalancerAutoReleaseTimeResponse, err error) {
 	response = CreateSetLoadBalancerAutoReleaseTimeResponse()
@@ -28,7 +28,7 @@ func (client *Client) SetLoadBalancerAutoReleaseTime(request *SetLoadBalancerAut
 	return
 }
 
-// invoke SetLoadBalancerAutoReleaseTime api with *SetLoadBalancerAutoReleaseTimeRequest asynchronously
+// SetLoadBalancerAutoReleaseTimeWithChan invokes the slb.SetLoadBalancerAutoReleaseTime API asynchronously
 // api document: https://help.aliyun.com/api/slb/setloadbalancerautoreleasetime.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetLoadBalancerAutoReleaseTimeWithChan(request *SetLoadBalancerAutoReleaseTimeRequest) (<-chan *SetLoadBalancerAutoReleaseTimeResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SetLoadBalancerAutoReleaseTimeWithChan(request *SetLoadBal
 	return responseChan, errChan
 }
 
-// invoke SetLoadBalancerAutoReleaseTime api with *SetLoadBalancerAutoReleaseTimeRequest asynchronously
+// SetLoadBalancerAutoReleaseTimeWithCallback invokes the slb.SetLoadBalancerAutoReleaseTime API asynchronously
 // api document: https://help.aliyun.com/api/slb/setloadbalancerautoreleasetime.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetLoadBalancerAutoReleaseTimeWithCallback(request *SetLoadBalancerAutoReleaseTimeRequest, callback func(response *SetLoadBalancerAutoReleaseTimeResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SetLoadBalancerAutoReleaseTimeWithCallback(request *SetLoa
 	return result
 }
 
+// SetLoadBalancerAutoReleaseTimeRequest is the request struct for api SetLoadBalancerAutoReleaseTime
 type SetLoadBalancerAutoReleaseTimeRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -85,13 +86,14 @@ type SetLoadBalancerAutoReleaseTimeRequest struct {
 	AutoReleaseTime      requests.Integer `position:"Query" name:"AutoReleaseTime"`
 }
 
+// SetLoadBalancerAutoReleaseTimeResponse is the response struct for api SetLoadBalancerAutoReleaseTime
 type SetLoadBalancerAutoReleaseTimeResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke SetLoadBalancerAutoReleaseTime API
-func CreateSetLoadBalancerAutoReleaseTimeRequest() (request *SetLoadBalancerAutoReleaseTimeRequest) {
+// CreateSetLoadBalancerAutoReleaseTimeRequest creates a request to invoke SetLoadBalancerAutoReleaseTime API
+func CreateSetLoadBalancerAutoReleaseTimeRequest(request *SetLoadBalancerAutoReleaseTimeRequest) {
 	request = &SetLoadBalancerAutoReleaseTimeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateSetLoadBalancerAutoReleaseTimeRequest() (request *SetLoadBalancerAuto
 	return
 }
 
-// create a response to parse from SetLoadBalancerAutoReleaseTime response
+// CreateSetLoadBalancerAutoReleaseTimeResponse creates a response to parse from SetLoadBalancerAutoReleaseTime response
 func CreateSetLoadBalancerAutoReleaseTimeResponse() (response *SetLoadBalancerAutoReleaseTimeResponse) {
 	response = &SetLoadBalancerAutoReleaseTimeResponse{
 		BaseResponse: &responses.BaseResponse{},

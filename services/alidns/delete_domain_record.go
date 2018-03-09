@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteDomainRecord api with *DeleteDomainRecordRequest synchronously
+// DeleteDomainRecord invokes the alidns.DeleteDomainRecord API synchronously
 // api document: https://help.aliyun.com/api/alidns/deletedomainrecord.html
 func (client *Client) DeleteDomainRecord(request *DeleteDomainRecordRequest) (response *DeleteDomainRecordResponse, err error) {
 	response = CreateDeleteDomainRecordResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteDomainRecord(request *DeleteDomainRecordRequest) (re
 	return
 }
 
-// invoke DeleteDomainRecord api with *DeleteDomainRecordRequest asynchronously
+// DeleteDomainRecordWithChan invokes the alidns.DeleteDomainRecord API asynchronously
 // api document: https://help.aliyun.com/api/alidns/deletedomainrecord.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDomainRecordWithChan(request *DeleteDomainRecordRequest) (<-chan *DeleteDomainRecordResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteDomainRecordWithChan(request *DeleteDomainRecordRequ
 	return responseChan, errChan
 }
 
-// invoke DeleteDomainRecord api with *DeleteDomainRecordRequest asynchronously
+// DeleteDomainRecordWithCallback invokes the alidns.DeleteDomainRecord API asynchronously
 // api document: https://help.aliyun.com/api/alidns/deletedomainrecord.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDomainRecordWithCallback(request *DeleteDomainRecordRequest, callback func(response *DeleteDomainRecordResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DeleteDomainRecordWithCallback(request *DeleteDomainRecord
 	return result
 }
 
+// DeleteDomainRecordRequest is the request struct for api DeleteDomainRecord
 type DeleteDomainRecordRequest struct {
 	*requests.RpcRequest
 	Lang         string `position:"Query" name:"Lang"`
@@ -80,14 +81,15 @@ type DeleteDomainRecordRequest struct {
 	RecordId     string `position:"Query" name:"RecordId"`
 }
 
+// DeleteDomainRecordResponse is the response struct for api DeleteDomainRecord
 type DeleteDomainRecordResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	RecordId  string `json:"RecordId" xml:"RecordId"`
 }
 
-// create a request to invoke DeleteDomainRecord API
-func CreateDeleteDomainRecordRequest() (request *DeleteDomainRecordRequest) {
+// CreateDeleteDomainRecordRequest creates a request to invoke DeleteDomainRecord API
+func CreateDeleteDomainRecordRequest(request *DeleteDomainRecordRequest) {
 	request = &DeleteDomainRecordRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateDeleteDomainRecordRequest() (request *DeleteDomainRecordRequest) {
 	return
 }
 
-// create a response to parse from DeleteDomainRecord response
+// CreateDeleteDomainRecordResponse creates a response to parse from DeleteDomainRecord response
 func CreateDeleteDomainRecordResponse() (response *DeleteDomainRecordResponse) {
 	response = &DeleteDomainRecordResponse{
 		BaseResponse: &responses.BaseResponse{},

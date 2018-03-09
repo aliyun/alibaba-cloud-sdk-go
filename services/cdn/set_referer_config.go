@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SetRefererConfig api with *SetRefererConfigRequest synchronously
+// SetRefererConfig invokes the cdn.SetRefererConfig API synchronously
 // api document: https://help.aliyun.com/api/cdn/setrefererconfig.html
 func (client *Client) SetRefererConfig(request *SetRefererConfigRequest) (response *SetRefererConfigResponse, err error) {
 	response = CreateSetRefererConfigResponse()
@@ -28,7 +28,7 @@ func (client *Client) SetRefererConfig(request *SetRefererConfigRequest) (respon
 	return
 }
 
-// invoke SetRefererConfig api with *SetRefererConfigRequest asynchronously
+// SetRefererConfigWithChan invokes the cdn.SetRefererConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/setrefererconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetRefererConfigWithChan(request *SetRefererConfigRequest) (<-chan *SetRefererConfigResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SetRefererConfigWithChan(request *SetRefererConfigRequest)
 	return responseChan, errChan
 }
 
-// invoke SetRefererConfig api with *SetRefererConfigRequest asynchronously
+// SetRefererConfigWithCallback invokes the cdn.SetRefererConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/setrefererconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetRefererConfigWithCallback(request *SetRefererConfigRequest, callback func(response *SetRefererConfigResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SetRefererConfigWithCallback(request *SetRefererConfigRequ
 	return result
 }
 
+// SetRefererConfigRequest is the request struct for api SetRefererConfig
 type SetRefererConfigRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,13 +85,14 @@ type SetRefererConfigRequest struct {
 	DisableAst    string           `position:"Query" name:"DisableAst"`
 }
 
+// SetRefererConfigResponse is the response struct for api SetRefererConfig
 type SetRefererConfigResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke SetRefererConfig API
-func CreateSetRefererConfigRequest() (request *SetRefererConfigRequest) {
+// CreateSetRefererConfigRequest creates a request to invoke SetRefererConfig API
+func CreateSetRefererConfigRequest(request *SetRefererConfigRequest) {
 	request = &SetRefererConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateSetRefererConfigRequest() (request *SetRefererConfigRequest) {
 	return
 }
 
-// create a response to parse from SetRefererConfig response
+// CreateSetRefererConfigResponse creates a response to parse from SetRefererConfig response
 func CreateSetRefererConfigResponse() (response *SetRefererConfigResponse) {
 	response = &SetRefererConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

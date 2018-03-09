@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeClusterNodeInfoWithInstance api with *DescribeClusterNodeInfoWithInstanceRequest synchronously
+// DescribeClusterNodeInfoWithInstance invokes the cs.DescribeClusterNodeInfoWithInstance API synchronously
 // api document: https://help.aliyun.com/api/cs/describeclusternodeinfowithinstance.html
 func (client *Client) DescribeClusterNodeInfoWithInstance(request *DescribeClusterNodeInfoWithInstanceRequest) (response *DescribeClusterNodeInfoWithInstanceResponse, err error) {
 	response = CreateDescribeClusterNodeInfoWithInstanceResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeClusterNodeInfoWithInstance(request *DescribeClust
 	return
 }
 
-// invoke DescribeClusterNodeInfoWithInstance api with *DescribeClusterNodeInfoWithInstanceRequest asynchronously
+// DescribeClusterNodeInfoWithInstanceWithChan invokes the cs.DescribeClusterNodeInfoWithInstance API asynchronously
 // api document: https://help.aliyun.com/api/cs/describeclusternodeinfowithinstance.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeClusterNodeInfoWithInstanceWithChan(request *DescribeClusterNodeInfoWithInstanceRequest) (<-chan *DescribeClusterNodeInfoWithInstanceResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeClusterNodeInfoWithInstanceWithChan(request *Descr
 	return responseChan, errChan
 }
 
-// invoke DescribeClusterNodeInfoWithInstance api with *DescribeClusterNodeInfoWithInstanceRequest asynchronously
+// DescribeClusterNodeInfoWithInstanceWithCallback invokes the cs.DescribeClusterNodeInfoWithInstance API asynchronously
 // api document: https://help.aliyun.com/api/cs/describeclusternodeinfowithinstance.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeClusterNodeInfoWithInstanceWithCallback(request *DescribeClusterNodeInfoWithInstanceRequest, callback func(response *DescribeClusterNodeInfoWithInstanceResponse, err error)) <-chan int {
@@ -73,18 +73,20 @@ func (client *Client) DescribeClusterNodeInfoWithInstanceWithCallback(request *D
 	return result
 }
 
+// DescribeClusterNodeInfoWithInstanceRequest is the request struct for api DescribeClusterNodeInfoWithInstance
 type DescribeClusterNodeInfoWithInstanceRequest struct {
 	*requests.RoaRequest
 	Token      string `position:"Path" name:"Token"`
 	InstanceId string `position:"Path" name:"InstanceId"`
 }
 
+// DescribeClusterNodeInfoWithInstanceResponse is the response struct for api DescribeClusterNodeInfoWithInstance
 type DescribeClusterNodeInfoWithInstanceResponse struct {
 	*responses.BaseResponse
 }
 
-// create a request to invoke DescribeClusterNodeInfoWithInstance API
-func CreateDescribeClusterNodeInfoWithInstanceRequest() (request *DescribeClusterNodeInfoWithInstanceRequest) {
+// CreateDescribeClusterNodeInfoWithInstanceRequest creates a request to invoke DescribeClusterNodeInfoWithInstance API
+func CreateDescribeClusterNodeInfoWithInstanceRequest(request *DescribeClusterNodeInfoWithInstanceRequest) {
 	request = &DescribeClusterNodeInfoWithInstanceRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
@@ -93,7 +95,7 @@ func CreateDescribeClusterNodeInfoWithInstanceRequest() (request *DescribeCluste
 	return
 }
 
-// create a response to parse from DescribeClusterNodeInfoWithInstance response
+// CreateDescribeClusterNodeInfoWithInstanceResponse creates a response to parse from DescribeClusterNodeInfoWithInstance response
 func CreateDescribeClusterNodeInfoWithInstanceResponse() (response *DescribeClusterNodeInfoWithInstanceResponse) {
 	response = &DescribeClusterNodeInfoWithInstanceResponse{
 		BaseResponse: &responses.BaseResponse{},

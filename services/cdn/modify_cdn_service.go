@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifyCdnService api with *ModifyCdnServiceRequest synchronously
+// ModifyCdnService invokes the cdn.ModifyCdnService API synchronously
 // api document: https://help.aliyun.com/api/cdn/modifycdnservice.html
 func (client *Client) ModifyCdnService(request *ModifyCdnServiceRequest) (response *ModifyCdnServiceResponse, err error) {
 	response = CreateModifyCdnServiceResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifyCdnService(request *ModifyCdnServiceRequest) (respon
 	return
 }
 
-// invoke ModifyCdnService api with *ModifyCdnServiceRequest asynchronously
+// ModifyCdnServiceWithChan invokes the cdn.ModifyCdnService API asynchronously
 // api document: https://help.aliyun.com/api/cdn/modifycdnservice.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyCdnServiceWithChan(request *ModifyCdnServiceRequest) (<-chan *ModifyCdnServiceResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifyCdnServiceWithChan(request *ModifyCdnServiceRequest)
 	return responseChan, errChan
 }
 
-// invoke ModifyCdnService api with *ModifyCdnServiceRequest asynchronously
+// ModifyCdnServiceWithCallback invokes the cdn.ModifyCdnService API asynchronously
 // api document: https://help.aliyun.com/api/cdn/modifycdnservice.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyCdnServiceWithCallback(request *ModifyCdnServiceRequest, callback func(response *ModifyCdnServiceResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ModifyCdnServiceWithCallback(request *ModifyCdnServiceRequ
 	return result
 }
 
+// ModifyCdnServiceRequest is the request struct for api ModifyCdnService
 type ModifyCdnServiceRequest struct {
 	*requests.RpcRequest
 	OwnerId            requests.Integer `position:"Query" name:"OwnerId"`
@@ -80,13 +81,14 @@ type ModifyCdnServiceRequest struct {
 	InternetChargeType string           `position:"Query" name:"InternetChargeType"`
 }
 
+// ModifyCdnServiceResponse is the response struct for api ModifyCdnService
 type ModifyCdnServiceResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ModifyCdnService API
-func CreateModifyCdnServiceRequest() (request *ModifyCdnServiceRequest) {
+// CreateModifyCdnServiceRequest creates a request to invoke ModifyCdnService API
+func CreateModifyCdnServiceRequest(request *ModifyCdnServiceRequest) {
 	request = &ModifyCdnServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -94,7 +96,7 @@ func CreateModifyCdnServiceRequest() (request *ModifyCdnServiceRequest) {
 	return
 }
 
-// create a response to parse from ModifyCdnService response
+// CreateModifyCdnServiceResponse creates a response to parse from ModifyCdnService response
 func CreateModifyCdnServiceResponse() (response *ModifyCdnServiceResponse) {
 	response = &ModifyCdnServiceResponse{
 		BaseResponse: &responses.BaseResponse{},

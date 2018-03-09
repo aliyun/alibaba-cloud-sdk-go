@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CreateDBInstance api with *CreateDBInstanceRequest synchronously
+// CreateDBInstance invokes the rds.CreateDBInstance API synchronously
 // api document: https://help.aliyun.com/api/rds/createdbinstance.html
 func (client *Client) CreateDBInstance(request *CreateDBInstanceRequest) (response *CreateDBInstanceResponse, err error) {
 	response = CreateCreateDBInstanceResponse()
@@ -28,7 +28,7 @@ func (client *Client) CreateDBInstance(request *CreateDBInstanceRequest) (respon
 	return
 }
 
-// invoke CreateDBInstance api with *CreateDBInstanceRequest asynchronously
+// CreateDBInstanceWithChan invokes the rds.CreateDBInstance API asynchronously
 // api document: https://help.aliyun.com/api/rds/createdbinstance.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateDBInstanceWithChan(request *CreateDBInstanceRequest) (<-chan *CreateDBInstanceResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CreateDBInstanceWithChan(request *CreateDBInstanceRequest)
 	return responseChan, errChan
 }
 
-// invoke CreateDBInstance api with *CreateDBInstanceRequest asynchronously
+// CreateDBInstanceWithCallback invokes the rds.CreateDBInstance API asynchronously
 // api document: https://help.aliyun.com/api/rds/createdbinstance.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateDBInstanceWithCallback(request *CreateDBInstanceRequest, callback func(response *CreateDBInstanceResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) CreateDBInstanceWithCallback(request *CreateDBInstanceRequ
 	return result
 }
 
+// CreateDBInstanceRequest is the request struct for api CreateDBInstance
 type CreateDBInstanceRequest struct {
 	*requests.RpcRequest
 	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
@@ -101,6 +102,7 @@ type CreateDBInstanceRequest struct {
 	TunnelId              string           `position:"Query" name:"TunnelId"`
 }
 
+// CreateDBInstanceResponse is the response struct for api CreateDBInstance
 type CreateDBInstanceResponse struct {
 	*responses.BaseResponse
 	RequestId        string `json:"RequestId" xml:"RequestId"`
@@ -110,8 +112,8 @@ type CreateDBInstanceResponse struct {
 	Port             string `json:"Port" xml:"Port"`
 }
 
-// create a request to invoke CreateDBInstance API
-func CreateCreateDBInstanceRequest() (request *CreateDBInstanceRequest) {
+// CreateCreateDBInstanceRequest creates a request to invoke CreateDBInstance API
+func CreateCreateDBInstanceRequest(request *CreateDBInstanceRequest) {
 	request = &CreateDBInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -119,7 +121,7 @@ func CreateCreateDBInstanceRequest() (request *CreateDBInstanceRequest) {
 	return
 }
 
-// create a response to parse from CreateDBInstance response
+// CreateCreateDBInstanceResponse creates a response to parse from CreateDBInstance response
 func CreateCreateDBInstanceResponse() (response *CreateDBInstanceResponse) {
 	response = &CreateDBInstanceResponse{
 		BaseResponse: &responses.BaseResponse{},

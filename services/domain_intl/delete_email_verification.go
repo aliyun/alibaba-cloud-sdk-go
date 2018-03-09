@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteEmailVerification api with *DeleteEmailVerificationRequest synchronously
+// DeleteEmailVerification invokes the domain_intl.DeleteEmailVerification API synchronously
 // api document: https://help.aliyun.com/api/domain-intl/deleteemailverification.html
 func (client *Client) DeleteEmailVerification(request *DeleteEmailVerificationRequest) (response *DeleteEmailVerificationResponse, err error) {
 	response = CreateDeleteEmailVerificationResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteEmailVerification(request *DeleteEmailVerificationRe
 	return
 }
 
-// invoke DeleteEmailVerification api with *DeleteEmailVerificationRequest asynchronously
+// DeleteEmailVerificationWithChan invokes the domain_intl.DeleteEmailVerification API asynchronously
 // api document: https://help.aliyun.com/api/domain-intl/deleteemailverification.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteEmailVerificationWithChan(request *DeleteEmailVerificationRequest) (<-chan *DeleteEmailVerificationResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteEmailVerificationWithChan(request *DeleteEmailVerifi
 	return responseChan, errChan
 }
 
-// invoke DeleteEmailVerification api with *DeleteEmailVerificationRequest asynchronously
+// DeleteEmailVerificationWithCallback invokes the domain_intl.DeleteEmailVerification API asynchronously
 // api document: https://help.aliyun.com/api/domain-intl/deleteemailverification.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteEmailVerificationWithCallback(request *DeleteEmailVerificationRequest, callback func(response *DeleteEmailVerificationResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DeleteEmailVerificationWithCallback(request *DeleteEmailVe
 	return result
 }
 
+// DeleteEmailVerificationRequest is the request struct for api DeleteEmailVerification
 type DeleteEmailVerificationRequest struct {
 	*requests.RpcRequest
 	Lang         string `position:"Query" name:"Lang"`
@@ -80,6 +81,7 @@ type DeleteEmailVerificationRequest struct {
 	UserClientIp string `position:"Query" name:"UserClientIp"`
 }
 
+// DeleteEmailVerificationResponse is the response struct for api DeleteEmailVerification
 type DeleteEmailVerificationResponse struct {
 	*responses.BaseResponse
 	RequestId   string       `json:"RequestId" xml:"RequestId"`
@@ -87,8 +89,8 @@ type DeleteEmailVerificationResponse struct {
 	FailList    []SendResult `json:"FailList" xml:"FailList"`
 }
 
-// create a request to invoke DeleteEmailVerification API
-func CreateDeleteEmailVerificationRequest() (request *DeleteEmailVerificationRequest) {
+// CreateDeleteEmailVerificationRequest creates a request to invoke DeleteEmailVerification API
+func CreateDeleteEmailVerificationRequest(request *DeleteEmailVerificationRequest) {
 	request = &DeleteEmailVerificationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -96,7 +98,7 @@ func CreateDeleteEmailVerificationRequest() (request *DeleteEmailVerificationReq
 	return
 }
 
-// create a response to parse from DeleteEmailVerification response
+// CreateDeleteEmailVerificationResponse creates a response to parse from DeleteEmailVerification response
 func CreateDeleteEmailVerificationResponse() (response *DeleteEmailVerificationResponse) {
 	response = &DeleteEmailVerificationResponse{
 		BaseResponse: &responses.BaseResponse{},

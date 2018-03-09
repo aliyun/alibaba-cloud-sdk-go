@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ResetDisk api with *ResetDiskRequest synchronously
+// ResetDisk invokes the ecs.ResetDisk API synchronously
 // api document: https://help.aliyun.com/api/ecs/resetdisk.html
 func (client *Client) ResetDisk(request *ResetDiskRequest) (response *ResetDiskResponse, err error) {
 	response = CreateResetDiskResponse()
@@ -28,7 +28,7 @@ func (client *Client) ResetDisk(request *ResetDiskRequest) (response *ResetDiskR
 	return
 }
 
-// invoke ResetDisk api with *ResetDiskRequest asynchronously
+// ResetDiskWithChan invokes the ecs.ResetDisk API asynchronously
 // api document: https://help.aliyun.com/api/ecs/resetdisk.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResetDiskWithChan(request *ResetDiskRequest) (<-chan *ResetDiskResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ResetDiskWithChan(request *ResetDiskRequest) (<-chan *Rese
 	return responseChan, errChan
 }
 
-// invoke ResetDisk api with *ResetDiskRequest asynchronously
+// ResetDiskWithCallback invokes the ecs.ResetDisk API asynchronously
 // api document: https://help.aliyun.com/api/ecs/resetdisk.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResetDiskWithCallback(request *ResetDiskRequest, callback func(response *ResetDiskResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ResetDiskWithCallback(request *ResetDiskRequest, callback 
 	return result
 }
 
+// ResetDiskRequest is the request struct for api ResetDisk
 type ResetDiskRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -83,13 +84,14 @@ type ResetDiskRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// ResetDiskResponse is the response struct for api ResetDisk
 type ResetDiskResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ResetDisk API
-func CreateResetDiskRequest() (request *ResetDiskRequest) {
+// CreateResetDiskRequest creates a request to invoke ResetDisk API
+func CreateResetDiskRequest(request *ResetDiskRequest) {
 	request = &ResetDiskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateResetDiskRequest() (request *ResetDiskRequest) {
 	return
 }
 
-// create a response to parse from ResetDisk response
+// CreateResetDiskResponse creates a response to parse from ResetDisk response
 func CreateResetDiskResponse() (response *ResetDiskResponse) {
 	response = &ResetDiskResponse{
 		BaseResponse: &responses.BaseResponse{},

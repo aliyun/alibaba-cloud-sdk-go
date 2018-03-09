@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ListPreferredEcsTypes api with *ListPreferredEcsTypesRequest synchronously
+// ListPreferredEcsTypes invokes the ehpc.ListPreferredEcsTypes API synchronously
 // api document: https://help.aliyun.com/api/ehpc/listpreferredecstypes.html
 func (client *Client) ListPreferredEcsTypes(request *ListPreferredEcsTypesRequest) (response *ListPreferredEcsTypesResponse, err error) {
 	response = CreateListPreferredEcsTypesResponse()
@@ -28,7 +28,7 @@ func (client *Client) ListPreferredEcsTypes(request *ListPreferredEcsTypesReques
 	return
 }
 
-// invoke ListPreferredEcsTypes api with *ListPreferredEcsTypesRequest asynchronously
+// ListPreferredEcsTypesWithChan invokes the ehpc.ListPreferredEcsTypes API asynchronously
 // api document: https://help.aliyun.com/api/ehpc/listpreferredecstypes.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListPreferredEcsTypesWithChan(request *ListPreferredEcsTypesRequest) (<-chan *ListPreferredEcsTypesResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ListPreferredEcsTypesWithChan(request *ListPreferredEcsTyp
 	return responseChan, errChan
 }
 
-// invoke ListPreferredEcsTypes api with *ListPreferredEcsTypesRequest asynchronously
+// ListPreferredEcsTypesWithCallback invokes the ehpc.ListPreferredEcsTypes API asynchronously
 // api document: https://help.aliyun.com/api/ehpc/listpreferredecstypes.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListPreferredEcsTypesWithCallback(request *ListPreferredEcsTypesRequest, callback func(response *ListPreferredEcsTypesResponse, err error)) <-chan int {
@@ -73,12 +73,14 @@ func (client *Client) ListPreferredEcsTypesWithCallback(request *ListPreferredEc
 	return result
 }
 
+// ListPreferredEcsTypesRequest is the request struct for api ListPreferredEcsTypes
 type ListPreferredEcsTypesRequest struct {
 	*requests.RpcRequest
 	ZoneId       string `position:"Query" name:"ZoneId"`
 	SpotStrategy string `position:"Query" name:"SpotStrategy"`
 }
 
+// ListPreferredEcsTypesResponse is the response struct for api ListPreferredEcsTypes
 type ListPreferredEcsTypesResponse struct {
 	*responses.BaseResponse
 	RequestId           string `json:"RequestId" xml:"RequestId"`
@@ -86,8 +88,8 @@ type ListPreferredEcsTypesResponse struct {
 	Series              Series `json:"Series" xml:"Series"`
 }
 
-// create a request to invoke ListPreferredEcsTypes API
-func CreateListPreferredEcsTypesRequest() (request *ListPreferredEcsTypesRequest) {
+// CreateListPreferredEcsTypesRequest creates a request to invoke ListPreferredEcsTypes API
+func CreateListPreferredEcsTypesRequest(request *ListPreferredEcsTypesRequest) {
 	request = &ListPreferredEcsTypesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateListPreferredEcsTypesRequest() (request *ListPreferredEcsTypesRequest
 	return
 }
 
-// create a response to parse from ListPreferredEcsTypes response
+// CreateListPreferredEcsTypesResponse creates a response to parse from ListPreferredEcsTypes response
 func CreateListPreferredEcsTypesResponse() (response *ListPreferredEcsTypesResponse) {
 	response = &ListPreferredEcsTypesResponse{
 		BaseResponse: &responses.BaseResponse{},

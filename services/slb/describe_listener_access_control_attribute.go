@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeListenerAccessControlAttribute api with *DescribeListenerAccessControlAttributeRequest synchronously
+// DescribeListenerAccessControlAttribute invokes the slb.DescribeListenerAccessControlAttribute API synchronously
 // api document: https://help.aliyun.com/api/slb/describelisteneraccesscontrolattribute.html
 func (client *Client) DescribeListenerAccessControlAttribute(request *DescribeListenerAccessControlAttributeRequest) (response *DescribeListenerAccessControlAttributeResponse, err error) {
 	response = CreateDescribeListenerAccessControlAttributeResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeListenerAccessControlAttribute(request *DescribeLi
 	return
 }
 
-// invoke DescribeListenerAccessControlAttribute api with *DescribeListenerAccessControlAttributeRequest asynchronously
+// DescribeListenerAccessControlAttributeWithChan invokes the slb.DescribeListenerAccessControlAttribute API asynchronously
 // api document: https://help.aliyun.com/api/slb/describelisteneraccesscontrolattribute.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeListenerAccessControlAttributeWithChan(request *DescribeListenerAccessControlAttributeRequest) (<-chan *DescribeListenerAccessControlAttributeResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeListenerAccessControlAttributeWithChan(request *De
 	return responseChan, errChan
 }
 
-// invoke DescribeListenerAccessControlAttribute api with *DescribeListenerAccessControlAttributeRequest asynchronously
+// DescribeListenerAccessControlAttributeWithCallback invokes the slb.DescribeListenerAccessControlAttribute API asynchronously
 // api document: https://help.aliyun.com/api/slb/describelisteneraccesscontrolattribute.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeListenerAccessControlAttributeWithCallback(request *DescribeListenerAccessControlAttributeRequest, callback func(response *DescribeListenerAccessControlAttributeResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeListenerAccessControlAttributeWithCallback(request
 	return result
 }
 
+// DescribeListenerAccessControlAttributeRequest is the request struct for api DescribeListenerAccessControlAttribute
 type DescribeListenerAccessControlAttributeRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -85,6 +86,7 @@ type DescribeListenerAccessControlAttributeRequest struct {
 	Tags                 string           `position:"Query" name:"Tags"`
 }
 
+// DescribeListenerAccessControlAttributeResponse is the response struct for api DescribeListenerAccessControlAttribute
 type DescribeListenerAccessControlAttributeResponse struct {
 	*responses.BaseResponse
 	RequestId           string `json:"RequestId" xml:"RequestId"`
@@ -92,8 +94,8 @@ type DescribeListenerAccessControlAttributeResponse struct {
 	SourceItems         string `json:"SourceItems" xml:"SourceItems"`
 }
 
-// create a request to invoke DescribeListenerAccessControlAttribute API
-func CreateDescribeListenerAccessControlAttributeRequest() (request *DescribeListenerAccessControlAttributeRequest) {
+// CreateDescribeListenerAccessControlAttributeRequest creates a request to invoke DescribeListenerAccessControlAttribute API
+func CreateDescribeListenerAccessControlAttributeRequest(request *DescribeListenerAccessControlAttributeRequest) {
 	request = &DescribeListenerAccessControlAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -101,7 +103,7 @@ func CreateDescribeListenerAccessControlAttributeRequest() (request *DescribeLis
 	return
 }
 
-// create a response to parse from DescribeListenerAccessControlAttribute response
+// CreateDescribeListenerAccessControlAttributeResponse creates a response to parse from DescribeListenerAccessControlAttribute response
 func CreateDescribeListenerAccessControlAttributeResponse() (response *DescribeListenerAccessControlAttributeResponse) {
 	response = &DescribeListenerAccessControlAttributeResponse{
 		BaseResponse: &responses.BaseResponse{},

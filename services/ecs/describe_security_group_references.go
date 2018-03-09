@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeSecurityGroupReferences api with *DescribeSecurityGroupReferencesRequest synchronously
+// DescribeSecurityGroupReferences invokes the ecs.DescribeSecurityGroupReferences API synchronously
 // api document: https://help.aliyun.com/api/ecs/describesecuritygroupreferences.html
 func (client *Client) DescribeSecurityGroupReferences(request *DescribeSecurityGroupReferencesRequest) (response *DescribeSecurityGroupReferencesResponse, err error) {
 	response = CreateDescribeSecurityGroupReferencesResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeSecurityGroupReferences(request *DescribeSecurityG
 	return
 }
 
-// invoke DescribeSecurityGroupReferences api with *DescribeSecurityGroupReferencesRequest asynchronously
+// DescribeSecurityGroupReferencesWithChan invokes the ecs.DescribeSecurityGroupReferences API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describesecuritygroupreferences.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSecurityGroupReferencesWithChan(request *DescribeSecurityGroupReferencesRequest) (<-chan *DescribeSecurityGroupReferencesResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeSecurityGroupReferencesWithChan(request *DescribeS
 	return responseChan, errChan
 }
 
-// invoke DescribeSecurityGroupReferences api with *DescribeSecurityGroupReferencesRequest asynchronously
+// DescribeSecurityGroupReferencesWithCallback invokes the ecs.DescribeSecurityGroupReferences API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describesecuritygroupreferences.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSecurityGroupReferencesWithCallback(request *DescribeSecurityGroupReferencesRequest, callback func(response *DescribeSecurityGroupReferencesResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeSecurityGroupReferencesWithCallback(request *Descr
 	return result
 }
 
+// DescribeSecurityGroupReferencesRequest is the request struct for api DescribeSecurityGroupReferences
 type DescribeSecurityGroupReferencesRequest struct {
 	*requests.RpcRequest
 	SecurityGroupId      *[]string        `position:"Query" name:"SecurityGroupId"  type:"Repeated"`
@@ -82,14 +83,15 @@ type DescribeSecurityGroupReferencesRequest struct {
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
+// DescribeSecurityGroupReferencesResponse is the response struct for api DescribeSecurityGroupReferences
 type DescribeSecurityGroupReferencesResponse struct {
 	*responses.BaseResponse
 	RequestId               string                  `json:"RequestId" xml:"RequestId"`
 	SecurityGroupReferences SecurityGroupReferences `json:"SecurityGroupReferences" xml:"SecurityGroupReferences"`
 }
 
-// create a request to invoke DescribeSecurityGroupReferences API
-func CreateDescribeSecurityGroupReferencesRequest() (request *DescribeSecurityGroupReferencesRequest) {
+// CreateDescribeSecurityGroupReferencesRequest creates a request to invoke DescribeSecurityGroupReferences API
+func CreateDescribeSecurityGroupReferencesRequest(request *DescribeSecurityGroupReferencesRequest) {
 	request = &DescribeSecurityGroupReferencesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateDescribeSecurityGroupReferencesRequest() (request *DescribeSecurityGr
 	return
 }
 
-// create a response to parse from DescribeSecurityGroupReferences response
+// CreateDescribeSecurityGroupReferencesResponse creates a response to parse from DescribeSecurityGroupReferences response
 func CreateDescribeSecurityGroupReferencesResponse() (response *DescribeSecurityGroupReferencesResponse) {
 	response = &DescribeSecurityGroupReferencesResponse{
 		BaseResponse: &responses.BaseResponse{},

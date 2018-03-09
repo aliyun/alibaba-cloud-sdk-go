@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SingleSendMail api with *SingleSendMailRequest synchronously
+// SingleSendMail invokes the dm.SingleSendMail API synchronously
 // api document: https://help.aliyun.com/api/dm/singlesendmail.html
 func (client *Client) SingleSendMail(request *SingleSendMailRequest) (response *SingleSendMailResponse, err error) {
 	response = CreateSingleSendMailResponse()
@@ -28,7 +28,7 @@ func (client *Client) SingleSendMail(request *SingleSendMailRequest) (response *
 	return
 }
 
-// invoke SingleSendMail api with *SingleSendMailRequest asynchronously
+// SingleSendMailWithChan invokes the dm.SingleSendMail API asynchronously
 // api document: https://help.aliyun.com/api/dm/singlesendmail.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SingleSendMailWithChan(request *SingleSendMailRequest) (<-chan *SingleSendMailResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SingleSendMailWithChan(request *SingleSendMailRequest) (<-
 	return responseChan, errChan
 }
 
-// invoke SingleSendMail api with *SingleSendMailRequest asynchronously
+// SingleSendMailWithCallback invokes the dm.SingleSendMail API asynchronously
 // api document: https://help.aliyun.com/api/dm/singlesendmail.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SingleSendMailWithCallback(request *SingleSendMailRequest, callback func(response *SingleSendMailResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SingleSendMailWithCallback(request *SingleSendMailRequest,
 	return result
 }
 
+// SingleSendMailRequest is the request struct for api SingleSendMail
 type SingleSendMailRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -92,14 +93,15 @@ type SingleSendMailRequest struct {
 	ClickTrace           string           `position:"Query" name:"ClickTrace"`
 }
 
+// SingleSendMailResponse is the response struct for api SingleSendMail
 type SingleSendMailResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	EnvId     string `json:"EnvId" xml:"EnvId"`
 }
 
-// create a request to invoke SingleSendMail API
-func CreateSingleSendMailRequest() (request *SingleSendMailRequest) {
+// CreateSingleSendMailRequest creates a request to invoke SingleSendMail API
+func CreateSingleSendMailRequest(request *SingleSendMailRequest) {
 	request = &SingleSendMailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -107,7 +109,7 @@ func CreateSingleSendMailRequest() (request *SingleSendMailRequest) {
 	return
 }
 
-// create a response to parse from SingleSendMail response
+// CreateSingleSendMailResponse creates a response to parse from SingleSendMail response
 func CreateSingleSendMailResponse() (response *SingleSendMailResponse) {
 	response = &SingleSendMailResponse{
 		BaseResponse: &responses.BaseResponse{},

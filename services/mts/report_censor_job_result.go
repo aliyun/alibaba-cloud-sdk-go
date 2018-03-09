@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ReportCensorJobResult api with *ReportCensorJobResultRequest synchronously
+// ReportCensorJobResult invokes the mts.ReportCensorJobResult API synchronously
 // api document: https://help.aliyun.com/api/mts/reportcensorjobresult.html
 func (client *Client) ReportCensorJobResult(request *ReportCensorJobResultRequest) (response *ReportCensorJobResultResponse, err error) {
 	response = CreateReportCensorJobResultResponse()
@@ -28,7 +28,7 @@ func (client *Client) ReportCensorJobResult(request *ReportCensorJobResultReques
 	return
 }
 
-// invoke ReportCensorJobResult api with *ReportCensorJobResultRequest asynchronously
+// ReportCensorJobResultWithChan invokes the mts.ReportCensorJobResult API asynchronously
 // api document: https://help.aliyun.com/api/mts/reportcensorjobresult.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReportCensorJobResultWithChan(request *ReportCensorJobResultRequest) (<-chan *ReportCensorJobResultResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ReportCensorJobResultWithChan(request *ReportCensorJobResu
 	return responseChan, errChan
 }
 
-// invoke ReportCensorJobResult api with *ReportCensorJobResultRequest asynchronously
+// ReportCensorJobResultWithCallback invokes the mts.ReportCensorJobResult API asynchronously
 // api document: https://help.aliyun.com/api/mts/reportcensorjobresult.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReportCensorJobResultWithCallback(request *ReportCensorJobResultRequest, callback func(response *ReportCensorJobResultResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ReportCensorJobResultWithCallback(request *ReportCensorJob
 	return result
 }
 
+// ReportCensorJobResultRequest is the request struct for api ReportCensorJobResult
 type ReportCensorJobResultRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,14 +85,15 @@ type ReportCensorJobResultRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// ReportCensorJobResultResponse is the response struct for api ReportCensorJobResult
 type ReportCensorJobResultResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	JobId     string `json:"JobId" xml:"JobId"`
 }
 
-// create a request to invoke ReportCensorJobResult API
-func CreateReportCensorJobResultRequest() (request *ReportCensorJobResultRequest) {
+// CreateReportCensorJobResultRequest creates a request to invoke ReportCensorJobResult API
+func CreateReportCensorJobResultRequest(request *ReportCensorJobResultRequest) {
 	request = &ReportCensorJobResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateReportCensorJobResultRequest() (request *ReportCensorJobResultRequest
 	return
 }
 
-// create a response to parse from ReportCensorJobResult response
+// CreateReportCensorJobResultResponse creates a response to parse from ReportCensorJobResult response
 func CreateReportCensorJobResultResponse() (response *ReportCensorJobResultResponse) {
 	response = &ReportCensorJobResultResponse{
 		BaseResponse: &responses.BaseResponse{},

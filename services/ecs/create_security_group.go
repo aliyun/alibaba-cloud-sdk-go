@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CreateSecurityGroup api with *CreateSecurityGroupRequest synchronously
+// CreateSecurityGroup invokes the ecs.CreateSecurityGroup API synchronously
 // api document: https://help.aliyun.com/api/ecs/createsecuritygroup.html
 func (client *Client) CreateSecurityGroup(request *CreateSecurityGroupRequest) (response *CreateSecurityGroupResponse, err error) {
 	response = CreateCreateSecurityGroupResponse()
@@ -28,7 +28,7 @@ func (client *Client) CreateSecurityGroup(request *CreateSecurityGroupRequest) (
 	return
 }
 
-// invoke CreateSecurityGroup api with *CreateSecurityGroupRequest asynchronously
+// CreateSecurityGroupWithChan invokes the ecs.CreateSecurityGroup API asynchronously
 // api document: https://help.aliyun.com/api/ecs/createsecuritygroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateSecurityGroupWithChan(request *CreateSecurityGroupRequest) (<-chan *CreateSecurityGroupResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CreateSecurityGroupWithChan(request *CreateSecurityGroupRe
 	return responseChan, errChan
 }
 
-// invoke CreateSecurityGroup api with *CreateSecurityGroupRequest asynchronously
+// CreateSecurityGroupWithCallback invokes the ecs.CreateSecurityGroup API asynchronously
 // api document: https://help.aliyun.com/api/ecs/createsecuritygroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateSecurityGroupWithCallback(request *CreateSecurityGroupRequest, callback func(response *CreateSecurityGroupResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) CreateSecurityGroupWithCallback(request *CreateSecurityGro
 	return result
 }
 
+// CreateSecurityGroupRequest is the request struct for api CreateSecurityGroup
 type CreateSecurityGroupRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -95,14 +96,15 @@ type CreateSecurityGroupRequest struct {
 	Tag5Value            string           `position:"Query" name:"Tag.5.Value"`
 }
 
+// CreateSecurityGroupResponse is the response struct for api CreateSecurityGroup
 type CreateSecurityGroupResponse struct {
 	*responses.BaseResponse
 	RequestId       string `json:"RequestId" xml:"RequestId"`
 	SecurityGroupId string `json:"SecurityGroupId" xml:"SecurityGroupId"`
 }
 
-// create a request to invoke CreateSecurityGroup API
-func CreateCreateSecurityGroupRequest() (request *CreateSecurityGroupRequest) {
+// CreateCreateSecurityGroupRequest creates a request to invoke CreateSecurityGroup API
+func CreateCreateSecurityGroupRequest(request *CreateSecurityGroupRequest) {
 	request = &CreateSecurityGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -110,7 +112,7 @@ func CreateCreateSecurityGroupRequest() (request *CreateSecurityGroupRequest) {
 	return
 }
 
-// create a response to parse from CreateSecurityGroup response
+// CreateCreateSecurityGroupResponse creates a response to parse from CreateSecurityGroup response
 func CreateCreateSecurityGroupResponse() (response *CreateSecurityGroupResponse) {
 	response = &CreateSecurityGroupResponse{
 		BaseResponse: &responses.BaseResponse{},

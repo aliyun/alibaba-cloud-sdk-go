@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeDBInstanceMonitor api with *DescribeDBInstanceMonitorRequest synchronously
+// DescribeDBInstanceMonitor invokes the rds.DescribeDBInstanceMonitor API synchronously
 // api document: https://help.aliyun.com/api/rds/describedbinstancemonitor.html
 func (client *Client) DescribeDBInstanceMonitor(request *DescribeDBInstanceMonitorRequest) (response *DescribeDBInstanceMonitorResponse, err error) {
 	response = CreateDescribeDBInstanceMonitorResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeDBInstanceMonitor(request *DescribeDBInstanceMonit
 	return
 }
 
-// invoke DescribeDBInstanceMonitor api with *DescribeDBInstanceMonitorRequest asynchronously
+// DescribeDBInstanceMonitorWithChan invokes the rds.DescribeDBInstanceMonitor API asynchronously
 // api document: https://help.aliyun.com/api/rds/describedbinstancemonitor.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBInstanceMonitorWithChan(request *DescribeDBInstanceMonitorRequest) (<-chan *DescribeDBInstanceMonitorResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeDBInstanceMonitorWithChan(request *DescribeDBInsta
 	return responseChan, errChan
 }
 
-// invoke DescribeDBInstanceMonitor api with *DescribeDBInstanceMonitorRequest asynchronously
+// DescribeDBInstanceMonitorWithCallback invokes the rds.DescribeDBInstanceMonitor API asynchronously
 // api document: https://help.aliyun.com/api/rds/describedbinstancemonitor.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBInstanceMonitorWithCallback(request *DescribeDBInstanceMonitorRequest, callback func(response *DescribeDBInstanceMonitorResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeDBInstanceMonitorWithCallback(request *DescribeDBI
 	return result
 }
 
+// DescribeDBInstanceMonitorRequest is the request struct for api DescribeDBInstanceMonitor
 type DescribeDBInstanceMonitorRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -83,14 +84,15 @@ type DescribeDBInstanceMonitorRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// DescribeDBInstanceMonitorResponse is the response struct for api DescribeDBInstanceMonitor
 type DescribeDBInstanceMonitorResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Period    string `json:"Period" xml:"Period"`
 }
 
-// create a request to invoke DescribeDBInstanceMonitor API
-func CreateDescribeDBInstanceMonitorRequest() (request *DescribeDBInstanceMonitorRequest) {
+// CreateDescribeDBInstanceMonitorRequest creates a request to invoke DescribeDBInstanceMonitor API
+func CreateDescribeDBInstanceMonitorRequest(request *DescribeDBInstanceMonitorRequest) {
 	request = &DescribeDBInstanceMonitorRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateDescribeDBInstanceMonitorRequest() (request *DescribeDBInstanceMonito
 	return
 }
 
-// create a response to parse from DescribeDBInstanceMonitor response
+// CreateDescribeDBInstanceMonitorResponse creates a response to parse from DescribeDBInstanceMonitor response
 func CreateDescribeDBInstanceMonitorResponse() (response *DescribeDBInstanceMonitorResponse) {
 	response = &DescribeDBInstanceMonitorResponse{
 		BaseResponse: &responses.BaseResponse{},

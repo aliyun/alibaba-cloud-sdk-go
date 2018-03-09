@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeCommonBandwidthPackages api with *DescribeCommonBandwidthPackagesRequest synchronously
+// DescribeCommonBandwidthPackages invokes the vpc.DescribeCommonBandwidthPackages API synchronously
 // api document: https://help.aliyun.com/api/vpc/describecommonbandwidthpackages.html
 func (client *Client) DescribeCommonBandwidthPackages(request *DescribeCommonBandwidthPackagesRequest) (response *DescribeCommonBandwidthPackagesResponse, err error) {
 	response = CreateDescribeCommonBandwidthPackagesResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeCommonBandwidthPackages(request *DescribeCommonBan
 	return
 }
 
-// invoke DescribeCommonBandwidthPackages api with *DescribeCommonBandwidthPackagesRequest asynchronously
+// DescribeCommonBandwidthPackagesWithChan invokes the vpc.DescribeCommonBandwidthPackages API asynchronously
 // api document: https://help.aliyun.com/api/vpc/describecommonbandwidthpackages.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCommonBandwidthPackagesWithChan(request *DescribeCommonBandwidthPackagesRequest) (<-chan *DescribeCommonBandwidthPackagesResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeCommonBandwidthPackagesWithChan(request *DescribeC
 	return responseChan, errChan
 }
 
-// invoke DescribeCommonBandwidthPackages api with *DescribeCommonBandwidthPackagesRequest asynchronously
+// DescribeCommonBandwidthPackagesWithCallback invokes the vpc.DescribeCommonBandwidthPackages API asynchronously
 // api document: https://help.aliyun.com/api/vpc/describecommonbandwidthpackages.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCommonBandwidthPackagesWithCallback(request *DescribeCommonBandwidthPackagesRequest, callback func(response *DescribeCommonBandwidthPackagesResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeCommonBandwidthPackagesWithCallback(request *Descr
 	return result
 }
 
+// DescribeCommonBandwidthPackagesRequest is the request struct for api DescribeCommonBandwidthPackages
 type DescribeCommonBandwidthPackagesRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -85,6 +86,7 @@ type DescribeCommonBandwidthPackagesRequest struct {
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 }
 
+// DescribeCommonBandwidthPackagesResponse is the response struct for api DescribeCommonBandwidthPackages
 type DescribeCommonBandwidthPackagesResponse struct {
 	*responses.BaseResponse
 	RequestId               string                  `json:"RequestId" xml:"RequestId"`
@@ -94,8 +96,8 @@ type DescribeCommonBandwidthPackagesResponse struct {
 	CommonBandwidthPackages CommonBandwidthPackages `json:"CommonBandwidthPackages" xml:"CommonBandwidthPackages"`
 }
 
-// create a request to invoke DescribeCommonBandwidthPackages API
-func CreateDescribeCommonBandwidthPackagesRequest() (request *DescribeCommonBandwidthPackagesRequest) {
+// CreateDescribeCommonBandwidthPackagesRequest creates a request to invoke DescribeCommonBandwidthPackages API
+func CreateDescribeCommonBandwidthPackagesRequest(request *DescribeCommonBandwidthPackagesRequest) {
 	request = &DescribeCommonBandwidthPackagesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -103,7 +105,7 @@ func CreateDescribeCommonBandwidthPackagesRequest() (request *DescribeCommonBand
 	return
 }
 
-// create a response to parse from DescribeCommonBandwidthPackages response
+// CreateDescribeCommonBandwidthPackagesResponse creates a response to parse from DescribeCommonBandwidthPackages response
 func CreateDescribeCommonBandwidthPackagesResponse() (response *DescribeCommonBandwidthPackagesResponse) {
 	response = &DescribeCommonBandwidthPackagesResponse{
 		BaseResponse: &responses.BaseResponse{},

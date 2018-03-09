@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeCharacterSetName api with *DescribeCharacterSetNameRequest synchronously
+// DescribeCharacterSetName invokes the rds.DescribeCharacterSetName API synchronously
 // api document: https://help.aliyun.com/api/rds/describecharactersetname.html
 func (client *Client) DescribeCharacterSetName(request *DescribeCharacterSetNameRequest) (response *DescribeCharacterSetNameResponse, err error) {
 	response = CreateDescribeCharacterSetNameResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeCharacterSetName(request *DescribeCharacterSetName
 	return
 }
 
-// invoke DescribeCharacterSetName api with *DescribeCharacterSetNameRequest asynchronously
+// DescribeCharacterSetNameWithChan invokes the rds.DescribeCharacterSetName API asynchronously
 // api document: https://help.aliyun.com/api/rds/describecharactersetname.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCharacterSetNameWithChan(request *DescribeCharacterSetNameRequest) (<-chan *DescribeCharacterSetNameResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeCharacterSetNameWithChan(request *DescribeCharacte
 	return responseChan, errChan
 }
 
-// invoke DescribeCharacterSetName api with *DescribeCharacterSetNameRequest asynchronously
+// DescribeCharacterSetNameWithCallback invokes the rds.DescribeCharacterSetName API asynchronously
 // api document: https://help.aliyun.com/api/rds/describecharactersetname.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCharacterSetNameWithCallback(request *DescribeCharacterSetNameRequest, callback func(response *DescribeCharacterSetNameResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeCharacterSetNameWithCallback(request *DescribeChar
 	return result
 }
 
+// DescribeCharacterSetNameRequest is the request struct for api DescribeCharacterSetName
 type DescribeCharacterSetNameRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,6 +83,7 @@ type DescribeCharacterSetNameRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// DescribeCharacterSetNameResponse is the response struct for api DescribeCharacterSetName
 type DescribeCharacterSetNameResponse struct {
 	*responses.BaseResponse
 	RequestId             string                `json:"RequestId" xml:"RequestId"`
@@ -89,8 +91,8 @@ type DescribeCharacterSetNameResponse struct {
 	CharacterSetNameItems CharacterSetNameItems `json:"CharacterSetNameItems" xml:"CharacterSetNameItems"`
 }
 
-// create a request to invoke DescribeCharacterSetName API
-func CreateDescribeCharacterSetNameRequest() (request *DescribeCharacterSetNameRequest) {
+// CreateDescribeCharacterSetNameRequest creates a request to invoke DescribeCharacterSetName API
+func CreateDescribeCharacterSetNameRequest(request *DescribeCharacterSetNameRequest) {
 	request = &DescribeCharacterSetNameRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateDescribeCharacterSetNameRequest() (request *DescribeCharacterSetNameR
 	return
 }
 
-// create a response to parse from DescribeCharacterSetName response
+// CreateDescribeCharacterSetNameResponse creates a response to parse from DescribeCharacterSetName response
 func CreateDescribeCharacterSetNameResponse() (response *DescribeCharacterSetNameResponse) {
 	response = &DescribeCharacterSetNameResponse{
 		BaseResponse: &responses.BaseResponse{},

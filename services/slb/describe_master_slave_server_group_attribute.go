@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeMasterSlaveServerGroupAttribute api with *DescribeMasterSlaveServerGroupAttributeRequest synchronously
+// DescribeMasterSlaveServerGroupAttribute invokes the slb.DescribeMasterSlaveServerGroupAttribute API synchronously
 // api document: https://help.aliyun.com/api/slb/describemasterslaveservergroupattribute.html
 func (client *Client) DescribeMasterSlaveServerGroupAttribute(request *DescribeMasterSlaveServerGroupAttributeRequest) (response *DescribeMasterSlaveServerGroupAttributeResponse, err error) {
 	response = CreateDescribeMasterSlaveServerGroupAttributeResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeMasterSlaveServerGroupAttribute(request *DescribeM
 	return
 }
 
-// invoke DescribeMasterSlaveServerGroupAttribute api with *DescribeMasterSlaveServerGroupAttributeRequest asynchronously
+// DescribeMasterSlaveServerGroupAttributeWithChan invokes the slb.DescribeMasterSlaveServerGroupAttribute API asynchronously
 // api document: https://help.aliyun.com/api/slb/describemasterslaveservergroupattribute.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeMasterSlaveServerGroupAttributeWithChan(request *DescribeMasterSlaveServerGroupAttributeRequest) (<-chan *DescribeMasterSlaveServerGroupAttributeResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeMasterSlaveServerGroupAttributeWithChan(request *D
 	return responseChan, errChan
 }
 
-// invoke DescribeMasterSlaveServerGroupAttribute api with *DescribeMasterSlaveServerGroupAttributeRequest asynchronously
+// DescribeMasterSlaveServerGroupAttributeWithCallback invokes the slb.DescribeMasterSlaveServerGroupAttribute API asynchronously
 // api document: https://help.aliyun.com/api/slb/describemasterslaveservergroupattribute.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeMasterSlaveServerGroupAttributeWithCallback(request *DescribeMasterSlaveServerGroupAttributeRequest, callback func(response *DescribeMasterSlaveServerGroupAttributeResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeMasterSlaveServerGroupAttributeWithCallback(reques
 	return result
 }
 
+// DescribeMasterSlaveServerGroupAttributeRequest is the request struct for api DescribeMasterSlaveServerGroupAttribute
 type DescribeMasterSlaveServerGroupAttributeRequest struct {
 	*requests.RpcRequest
 	OwnerId                  requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,6 +85,7 @@ type DescribeMasterSlaveServerGroupAttributeRequest struct {
 	MasterSlaveServerGroupId string           `position:"Query" name:"MasterSlaveServerGroupId"`
 }
 
+// DescribeMasterSlaveServerGroupAttributeResponse is the response struct for api DescribeMasterSlaveServerGroupAttribute
 type DescribeMasterSlaveServerGroupAttributeResponse struct {
 	*responses.BaseResponse
 	RequestId                  string                                                             `json:"RequestId" xml:"RequestId"`
@@ -92,8 +94,8 @@ type DescribeMasterSlaveServerGroupAttributeResponse struct {
 	MasterSlaveBackendServers  MasterSlaveBackendServersInDescribeMasterSlaveServerGroupAttribute `json:"MasterSlaveBackendServers" xml:"MasterSlaveBackendServers"`
 }
 
-// create a request to invoke DescribeMasterSlaveServerGroupAttribute API
-func CreateDescribeMasterSlaveServerGroupAttributeRequest() (request *DescribeMasterSlaveServerGroupAttributeRequest) {
+// CreateDescribeMasterSlaveServerGroupAttributeRequest creates a request to invoke DescribeMasterSlaveServerGroupAttribute API
+func CreateDescribeMasterSlaveServerGroupAttributeRequest(request *DescribeMasterSlaveServerGroupAttributeRequest) {
 	request = &DescribeMasterSlaveServerGroupAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -101,7 +103,7 @@ func CreateDescribeMasterSlaveServerGroupAttributeRequest() (request *DescribeMa
 	return
 }
 
-// create a response to parse from DescribeMasterSlaveServerGroupAttribute response
+// CreateDescribeMasterSlaveServerGroupAttributeResponse creates a response to parse from DescribeMasterSlaveServerGroupAttribute response
 func CreateDescribeMasterSlaveServerGroupAttributeResponse() (response *DescribeMasterSlaveServerGroupAttributeResponse) {
 	response = &DescribeMasterSlaveServerGroupAttributeResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SubmitVideoGifJob api with *SubmitVideoGifJobRequest synchronously
+// SubmitVideoGifJob invokes the mts.SubmitVideoGifJob API synchronously
 // api document: https://help.aliyun.com/api/mts/submitvideogifjob.html
 func (client *Client) SubmitVideoGifJob(request *SubmitVideoGifJobRequest) (response *SubmitVideoGifJobResponse, err error) {
 	response = CreateSubmitVideoGifJobResponse()
@@ -28,7 +28,7 @@ func (client *Client) SubmitVideoGifJob(request *SubmitVideoGifJobRequest) (resp
 	return
 }
 
-// invoke SubmitVideoGifJob api with *SubmitVideoGifJobRequest asynchronously
+// SubmitVideoGifJobWithChan invokes the mts.SubmitVideoGifJob API asynchronously
 // api document: https://help.aliyun.com/api/mts/submitvideogifjob.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitVideoGifJobWithChan(request *SubmitVideoGifJobRequest) (<-chan *SubmitVideoGifJobResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SubmitVideoGifJobWithChan(request *SubmitVideoGifJobReques
 	return responseChan, errChan
 }
 
-// invoke SubmitVideoGifJob api with *SubmitVideoGifJobRequest asynchronously
+// SubmitVideoGifJobWithCallback invokes the mts.SubmitVideoGifJob API asynchronously
 // api document: https://help.aliyun.com/api/mts/submitvideogifjob.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitVideoGifJobWithCallback(request *SubmitVideoGifJobRequest, callback func(response *SubmitVideoGifJobResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SubmitVideoGifJobWithCallback(request *SubmitVideoGifJobRe
 	return result
 }
 
+// SubmitVideoGifJobRequest is the request struct for api SubmitVideoGifJob
 type SubmitVideoGifJobRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -85,14 +86,15 @@ type SubmitVideoGifJobRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// SubmitVideoGifJobResponse is the response struct for api SubmitVideoGifJob
 type SubmitVideoGifJobResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	JobId     string `json:"JobId" xml:"JobId"`
 }
 
-// create a request to invoke SubmitVideoGifJob API
-func CreateSubmitVideoGifJobRequest() (request *SubmitVideoGifJobRequest) {
+// CreateSubmitVideoGifJobRequest creates a request to invoke SubmitVideoGifJob API
+func CreateSubmitVideoGifJobRequest(request *SubmitVideoGifJobRequest) {
 	request = &SubmitVideoGifJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -100,7 +102,7 @@ func CreateSubmitVideoGifJobRequest() (request *SubmitVideoGifJobRequest) {
 	return
 }
 
-// create a response to parse from SubmitVideoGifJob response
+// CreateSubmitVideoGifJobResponse creates a response to parse from SubmitVideoGifJob response
 func CreateSubmitVideoGifJobResponse() (response *SubmitVideoGifJobResponse) {
 	response = &SubmitVideoGifJobResponse{
 		BaseResponse: &responses.BaseResponse{},

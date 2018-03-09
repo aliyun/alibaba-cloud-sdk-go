@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke AddListenerWhiteListItem api with *AddListenerWhiteListItemRequest synchronously
+// AddListenerWhiteListItem invokes the slb.AddListenerWhiteListItem API synchronously
 // api document: https://help.aliyun.com/api/slb/addlistenerwhitelistitem.html
 func (client *Client) AddListenerWhiteListItem(request *AddListenerWhiteListItemRequest) (response *AddListenerWhiteListItemResponse, err error) {
 	response = CreateAddListenerWhiteListItemResponse()
@@ -28,7 +28,7 @@ func (client *Client) AddListenerWhiteListItem(request *AddListenerWhiteListItem
 	return
 }
 
-// invoke AddListenerWhiteListItem api with *AddListenerWhiteListItemRequest asynchronously
+// AddListenerWhiteListItemWithChan invokes the slb.AddListenerWhiteListItem API asynchronously
 // api document: https://help.aliyun.com/api/slb/addlistenerwhitelistitem.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddListenerWhiteListItemWithChan(request *AddListenerWhiteListItemRequest) (<-chan *AddListenerWhiteListItemResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) AddListenerWhiteListItemWithChan(request *AddListenerWhite
 	return responseChan, errChan
 }
 
-// invoke AddListenerWhiteListItem api with *AddListenerWhiteListItemRequest asynchronously
+// AddListenerWhiteListItemWithCallback invokes the slb.AddListenerWhiteListItem API asynchronously
 // api document: https://help.aliyun.com/api/slb/addlistenerwhitelistitem.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddListenerWhiteListItemWithCallback(request *AddListenerWhiteListItemRequest, callback func(response *AddListenerWhiteListItemResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) AddListenerWhiteListItemWithCallback(request *AddListenerW
 	return result
 }
 
+// AddListenerWhiteListItemRequest is the request struct for api AddListenerWhiteListItem
 type AddListenerWhiteListItemRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -86,13 +87,14 @@ type AddListenerWhiteListItemRequest struct {
 	Tags                 string           `position:"Query" name:"Tags"`
 }
 
+// AddListenerWhiteListItemResponse is the response struct for api AddListenerWhiteListItem
 type AddListenerWhiteListItemResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke AddListenerWhiteListItem API
-func CreateAddListenerWhiteListItemRequest() (request *AddListenerWhiteListItemRequest) {
+// CreateAddListenerWhiteListItemRequest creates a request to invoke AddListenerWhiteListItem API
+func CreateAddListenerWhiteListItemRequest(request *AddListenerWhiteListItemRequest) {
 	request = &AddListenerWhiteListItemRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -100,7 +102,7 @@ func CreateAddListenerWhiteListItemRequest() (request *AddListenerWhiteListItemR
 	return
 }
 
-// create a response to parse from AddListenerWhiteListItem response
+// CreateAddListenerWhiteListItemResponse creates a response to parse from AddListenerWhiteListItem response
 func CreateAddListenerWhiteListItemResponse() (response *AddListenerWhiteListItemResponse) {
 	response = &AddListenerWhiteListItemResponse{
 		BaseResponse: &responses.BaseResponse{},

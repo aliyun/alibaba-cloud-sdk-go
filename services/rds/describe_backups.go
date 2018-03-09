@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeBackups api with *DescribeBackupsRequest synchronously
+// DescribeBackups invokes the rds.DescribeBackups API synchronously
 // api document: https://help.aliyun.com/api/rds/describebackups.html
 func (client *Client) DescribeBackups(request *DescribeBackupsRequest) (response *DescribeBackupsResponse, err error) {
 	response = CreateDescribeBackupsResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeBackups(request *DescribeBackupsRequest) (response
 	return
 }
 
-// invoke DescribeBackups api with *DescribeBackupsRequest asynchronously
+// DescribeBackupsWithChan invokes the rds.DescribeBackups API asynchronously
 // api document: https://help.aliyun.com/api/rds/describebackups.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBackupsWithChan(request *DescribeBackupsRequest) (<-chan *DescribeBackupsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeBackupsWithChan(request *DescribeBackupsRequest) (
 	return responseChan, errChan
 }
 
-// invoke DescribeBackups api with *DescribeBackupsRequest asynchronously
+// DescribeBackupsWithCallback invokes the rds.DescribeBackups API asynchronously
 // api document: https://help.aliyun.com/api/rds/describebackups.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBackupsWithCallback(request *DescribeBackupsRequest, callback func(response *DescribeBackupsResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeBackupsWithCallback(request *DescribeBackupsReques
 	return result
 }
 
+// DescribeBackupsRequest is the request struct for api DescribeBackups
 type DescribeBackupsRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -90,6 +91,7 @@ type DescribeBackupsRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// DescribeBackupsResponse is the response struct for api DescribeBackups
 type DescribeBackupsResponse struct {
 	*responses.BaseResponse
 	RequestId        string                 `json:"RequestId" xml:"RequestId"`
@@ -100,8 +102,8 @@ type DescribeBackupsResponse struct {
 	Items            ItemsInDescribeBackups `json:"Items" xml:"Items"`
 }
 
-// create a request to invoke DescribeBackups API
-func CreateDescribeBackupsRequest() (request *DescribeBackupsRequest) {
+// CreateDescribeBackupsRequest creates a request to invoke DescribeBackups API
+func CreateDescribeBackupsRequest(request *DescribeBackupsRequest) {
 	request = &DescribeBackupsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -109,7 +111,7 @@ func CreateDescribeBackupsRequest() (request *DescribeBackupsRequest) {
 	return
 }
 
-// create a response to parse from DescribeBackups response
+// CreateDescribeBackupsResponse creates a response to parse from DescribeBackups response
 func CreateDescribeBackupsResponse() (response *DescribeBackupsResponse) {
 	response = &DescribeBackupsResponse{
 		BaseResponse: &responses.BaseResponse{},

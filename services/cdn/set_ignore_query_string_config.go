@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SetIgnoreQueryStringConfig api with *SetIgnoreQueryStringConfigRequest synchronously
+// SetIgnoreQueryStringConfig invokes the cdn.SetIgnoreQueryStringConfig API synchronously
 // api document: https://help.aliyun.com/api/cdn/setignorequerystringconfig.html
 func (client *Client) SetIgnoreQueryStringConfig(request *SetIgnoreQueryStringConfigRequest) (response *SetIgnoreQueryStringConfigResponse, err error) {
 	response = CreateSetIgnoreQueryStringConfigResponse()
@@ -28,7 +28,7 @@ func (client *Client) SetIgnoreQueryStringConfig(request *SetIgnoreQueryStringCo
 	return
 }
 
-// invoke SetIgnoreQueryStringConfig api with *SetIgnoreQueryStringConfigRequest asynchronously
+// SetIgnoreQueryStringConfigWithChan invokes the cdn.SetIgnoreQueryStringConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/setignorequerystringconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetIgnoreQueryStringConfigWithChan(request *SetIgnoreQueryStringConfigRequest) (<-chan *SetIgnoreQueryStringConfigResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SetIgnoreQueryStringConfigWithChan(request *SetIgnoreQuery
 	return responseChan, errChan
 }
 
-// invoke SetIgnoreQueryStringConfig api with *SetIgnoreQueryStringConfigRequest asynchronously
+// SetIgnoreQueryStringConfigWithCallback invokes the cdn.SetIgnoreQueryStringConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/setignorequerystringconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetIgnoreQueryStringConfigWithCallback(request *SetIgnoreQueryStringConfigRequest, callback func(response *SetIgnoreQueryStringConfigResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SetIgnoreQueryStringConfigWithCallback(request *SetIgnoreQ
 	return result
 }
 
+// SetIgnoreQueryStringConfigRequest is the request struct for api SetIgnoreQueryStringConfig
 type SetIgnoreQueryStringConfigRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -83,13 +84,14 @@ type SetIgnoreQueryStringConfigRequest struct {
 	KeepOssArgs   string           `position:"Query" name:"KeepOssArgs"`
 }
 
+// SetIgnoreQueryStringConfigResponse is the response struct for api SetIgnoreQueryStringConfig
 type SetIgnoreQueryStringConfigResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke SetIgnoreQueryStringConfig API
-func CreateSetIgnoreQueryStringConfigRequest() (request *SetIgnoreQueryStringConfigRequest) {
+// CreateSetIgnoreQueryStringConfigRequest creates a request to invoke SetIgnoreQueryStringConfig API
+func CreateSetIgnoreQueryStringConfigRequest(request *SetIgnoreQueryStringConfigRequest) {
 	request = &SetIgnoreQueryStringConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateSetIgnoreQueryStringConfigRequest() (request *SetIgnoreQueryStringCon
 	return
 }
 
-// create a response to parse from SetIgnoreQueryStringConfig response
+// CreateSetIgnoreQueryStringConfigResponse creates a response to parse from SetIgnoreQueryStringConfig response
 func CreateSetIgnoreQueryStringConfigResponse() (response *SetIgnoreQueryStringConfigResponse) {
 	response = &SetIgnoreQueryStringConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

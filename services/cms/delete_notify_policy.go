@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteNotifyPolicy api with *DeleteNotifyPolicyRequest synchronously
+// DeleteNotifyPolicy invokes the cms.DeleteNotifyPolicy API synchronously
 // api document: https://help.aliyun.com/api/cms/deletenotifypolicy.html
 func (client *Client) DeleteNotifyPolicy(request *DeleteNotifyPolicyRequest) (response *DeleteNotifyPolicyResponse, err error) {
 	response = CreateDeleteNotifyPolicyResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteNotifyPolicy(request *DeleteNotifyPolicyRequest) (re
 	return
 }
 
-// invoke DeleteNotifyPolicy api with *DeleteNotifyPolicyRequest asynchronously
+// DeleteNotifyPolicyWithChan invokes the cms.DeleteNotifyPolicy API asynchronously
 // api document: https://help.aliyun.com/api/cms/deletenotifypolicy.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteNotifyPolicyWithChan(request *DeleteNotifyPolicyRequest) (<-chan *DeleteNotifyPolicyResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteNotifyPolicyWithChan(request *DeleteNotifyPolicyRequ
 	return responseChan, errChan
 }
 
-// invoke DeleteNotifyPolicy api with *DeleteNotifyPolicyRequest asynchronously
+// DeleteNotifyPolicyWithCallback invokes the cms.DeleteNotifyPolicy API asynchronously
 // api document: https://help.aliyun.com/api/cms/deletenotifypolicy.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteNotifyPolicyWithCallback(request *DeleteNotifyPolicyRequest, callback func(response *DeleteNotifyPolicyResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DeleteNotifyPolicyWithCallback(request *DeleteNotifyPolicy
 	return result
 }
 
+// DeleteNotifyPolicyRequest is the request struct for api DeleteNotifyPolicy
 type DeleteNotifyPolicyRequest struct {
 	*requests.RpcRequest
 	Dimensions string `position:"Query" name:"Dimensions"`
@@ -81,6 +82,7 @@ type DeleteNotifyPolicyRequest struct {
 	AlertName  string `position:"Query" name:"AlertName"`
 }
 
+// DeleteNotifyPolicyResponse is the response struct for api DeleteNotifyPolicy
 type DeleteNotifyPolicyResponse struct {
 	*responses.BaseResponse
 	Code    string `json:"code" xml:"code"`
@@ -90,8 +92,8 @@ type DeleteNotifyPolicyResponse struct {
 	Result  int    `json:"result" xml:"result"`
 }
 
-// create a request to invoke DeleteNotifyPolicy API
-func CreateDeleteNotifyPolicyRequest() (request *DeleteNotifyPolicyRequest) {
+// CreateDeleteNotifyPolicyRequest creates a request to invoke DeleteNotifyPolicy API
+func CreateDeleteNotifyPolicyRequest(request *DeleteNotifyPolicyRequest) {
 	request = &DeleteNotifyPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateDeleteNotifyPolicyRequest() (request *DeleteNotifyPolicyRequest) {
 	return
 }
 
-// create a response to parse from DeleteNotifyPolicy response
+// CreateDeleteNotifyPolicyResponse creates a response to parse from DeleteNotifyPolicy response
 func CreateDeleteNotifyPolicyResponse() (response *DeleteNotifyPolicyResponse) {
 	response = &DeleteNotifyPolicyResponse{
 		BaseResponse: &responses.BaseResponse{},

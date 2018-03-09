@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ChangeDomainOfDnsProduct api with *ChangeDomainOfDnsProductRequest synchronously
+// ChangeDomainOfDnsProduct invokes the alidns.ChangeDomainOfDnsProduct API synchronously
 // api document: https://help.aliyun.com/api/alidns/changedomainofdnsproduct.html
 func (client *Client) ChangeDomainOfDnsProduct(request *ChangeDomainOfDnsProductRequest) (response *ChangeDomainOfDnsProductResponse, err error) {
 	response = CreateChangeDomainOfDnsProductResponse()
@@ -28,7 +28,7 @@ func (client *Client) ChangeDomainOfDnsProduct(request *ChangeDomainOfDnsProduct
 	return
 }
 
-// invoke ChangeDomainOfDnsProduct api with *ChangeDomainOfDnsProductRequest asynchronously
+// ChangeDomainOfDnsProductWithChan invokes the alidns.ChangeDomainOfDnsProduct API asynchronously
 // api document: https://help.aliyun.com/api/alidns/changedomainofdnsproduct.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ChangeDomainOfDnsProductWithChan(request *ChangeDomainOfDnsProductRequest) (<-chan *ChangeDomainOfDnsProductResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ChangeDomainOfDnsProductWithChan(request *ChangeDomainOfDn
 	return responseChan, errChan
 }
 
-// invoke ChangeDomainOfDnsProduct api with *ChangeDomainOfDnsProductRequest asynchronously
+// ChangeDomainOfDnsProductWithCallback invokes the alidns.ChangeDomainOfDnsProduct API asynchronously
 // api document: https://help.aliyun.com/api/alidns/changedomainofdnsproduct.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ChangeDomainOfDnsProductWithCallback(request *ChangeDomainOfDnsProductRequest, callback func(response *ChangeDomainOfDnsProductResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ChangeDomainOfDnsProductWithCallback(request *ChangeDomain
 	return result
 }
 
+// ChangeDomainOfDnsProductRequest is the request struct for api ChangeDomainOfDnsProduct
 type ChangeDomainOfDnsProductRequest struct {
 	*requests.RpcRequest
 	Lang         string           `position:"Query" name:"Lang"`
@@ -82,14 +83,15 @@ type ChangeDomainOfDnsProductRequest struct {
 	Force        requests.Boolean `position:"Query" name:"Force"`
 }
 
+// ChangeDomainOfDnsProductResponse is the response struct for api ChangeDomainOfDnsProduct
 type ChangeDomainOfDnsProductResponse struct {
 	*responses.BaseResponse
 	RequestId      string `json:"RequestId" xml:"RequestId"`
 	OriginalDomain string `json:"OriginalDomain" xml:"OriginalDomain"`
 }
 
-// create a request to invoke ChangeDomainOfDnsProduct API
-func CreateChangeDomainOfDnsProductRequest() (request *ChangeDomainOfDnsProductRequest) {
+// CreateChangeDomainOfDnsProductRequest creates a request to invoke ChangeDomainOfDnsProduct API
+func CreateChangeDomainOfDnsProductRequest(request *ChangeDomainOfDnsProductRequest) {
 	request = &ChangeDomainOfDnsProductRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateChangeDomainOfDnsProductRequest() (request *ChangeDomainOfDnsProductR
 	return
 }
 
-// create a response to parse from ChangeDomainOfDnsProduct response
+// CreateChangeDomainOfDnsProductResponse creates a response to parse from ChangeDomainOfDnsProduct response
 func CreateChangeDomainOfDnsProductResponse() (response *ChangeDomainOfDnsProductResponse) {
 	response = &ChangeDomainOfDnsProductResponse{
 		BaseResponse: &responses.BaseResponse{},

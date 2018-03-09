@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifySkillGroup api with *ModifySkillGroupRequest synchronously
+// ModifySkillGroup invokes the ccc.ModifySkillGroup API synchronously
 // api document: https://help.aliyun.com/api/ccc/modifyskillgroup.html
 func (client *Client) ModifySkillGroup(request *ModifySkillGroupRequest) (response *ModifySkillGroupResponse, err error) {
 	response = CreateModifySkillGroupResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifySkillGroup(request *ModifySkillGroupRequest) (respon
 	return
 }
 
-// invoke ModifySkillGroup api with *ModifySkillGroupRequest asynchronously
+// ModifySkillGroupWithChan invokes the ccc.ModifySkillGroup API asynchronously
 // api document: https://help.aliyun.com/api/ccc/modifyskillgroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySkillGroupWithChan(request *ModifySkillGroupRequest) (<-chan *ModifySkillGroupResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifySkillGroupWithChan(request *ModifySkillGroupRequest)
 	return responseChan, errChan
 }
 
-// invoke ModifySkillGroup api with *ModifySkillGroupRequest asynchronously
+// ModifySkillGroupWithCallback invokes the ccc.ModifySkillGroup API asynchronously
 // api document: https://help.aliyun.com/api/ccc/modifyskillgroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySkillGroupWithCallback(request *ModifySkillGroupRequest, callback func(response *ModifySkillGroupResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ModifySkillGroupWithCallback(request *ModifySkillGroupRequ
 	return result
 }
 
+// ModifySkillGroupRequest is the request struct for api ModifySkillGroup
 type ModifySkillGroupRequest struct {
 	*requests.RpcRequest
 	InstanceId            string    `position:"Query" name:"InstanceId"`
@@ -84,6 +85,7 @@ type ModifySkillGroupRequest struct {
 	SkillLevel            *[]string `position:"Query" name:"SkillLevel"  type:"Repeated"`
 }
 
+// ModifySkillGroupResponse is the response struct for api ModifySkillGroup
 type ModifySkillGroupResponse struct {
 	*responses.BaseResponse
 	RequestId      string `json:"RequestId" xml:"RequestId"`
@@ -93,8 +95,8 @@ type ModifySkillGroupResponse struct {
 	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 }
 
-// create a request to invoke ModifySkillGroup API
-func CreateModifySkillGroupRequest() (request *ModifySkillGroupRequest) {
+// CreateModifySkillGroupRequest creates a request to invoke ModifySkillGroup API
+func CreateModifySkillGroupRequest(request *ModifySkillGroupRequest) {
 	request = &ModifySkillGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -102,7 +104,7 @@ func CreateModifySkillGroupRequest() (request *ModifySkillGroupRequest) {
 	return
 }
 
-// create a response to parse from ModifySkillGroup response
+// CreateModifySkillGroupResponse creates a response to parse from ModifySkillGroup response
 func CreateModifySkillGroupResponse() (response *ModifySkillGroupResponse) {
 	response = &ModifySkillGroupResponse{
 		BaseResponse: &responses.BaseResponse{},

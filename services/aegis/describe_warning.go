@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeWarning api with *DescribeWarningRequest synchronously
+// DescribeWarning invokes the aegis.DescribeWarning API synchronously
 // api document: https://help.aliyun.com/api/aegis/describewarning.html
 func (client *Client) DescribeWarning(request *DescribeWarningRequest) (response *DescribeWarningResponse, err error) {
 	response = CreateDescribeWarningResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeWarning(request *DescribeWarningRequest) (response
 	return
 }
 
-// invoke DescribeWarning api with *DescribeWarningRequest asynchronously
+// DescribeWarningWithChan invokes the aegis.DescribeWarning API asynchronously
 // api document: https://help.aliyun.com/api/aegis/describewarning.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeWarningWithChan(request *DescribeWarningRequest) (<-chan *DescribeWarningResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeWarningWithChan(request *DescribeWarningRequest) (
 	return responseChan, errChan
 }
 
-// invoke DescribeWarning api with *DescribeWarningRequest asynchronously
+// DescribeWarningWithCallback invokes the aegis.DescribeWarning API asynchronously
 // api document: https://help.aliyun.com/api/aegis/describewarning.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeWarningWithCallback(request *DescribeWarningRequest, callback func(response *DescribeWarningResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeWarningWithCallback(request *DescribeWarningReques
 	return result
 }
 
+// DescribeWarningRequest is the request struct for api DescribeWarning
 type DescribeWarningRequest struct {
 	*requests.RpcRequest
 	SourceIp        string           `position:"Query" name:"SourceIp"`
@@ -89,6 +90,7 @@ type DescribeWarningRequest struct {
 	Dealed          string           `position:"Query" name:"Dealed"`
 }
 
+// DescribeWarningResponse is the response struct for api DescribeWarning
 type DescribeWarningResponse struct {
 	*responses.BaseResponse
 	RequestId   string    `json:"RequestId" xml:"RequestId"`
@@ -99,8 +101,8 @@ type DescribeWarningResponse struct {
 	Warnings    []Warning `json:"Warnings" xml:"Warnings"`
 }
 
-// create a request to invoke DescribeWarning API
-func CreateDescribeWarningRequest() (request *DescribeWarningRequest) {
+// CreateDescribeWarningRequest creates a request to invoke DescribeWarning API
+func CreateDescribeWarningRequest(request *DescribeWarningRequest) {
 	request = &DescribeWarningRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -108,7 +110,7 @@ func CreateDescribeWarningRequest() (request *DescribeWarningRequest) {
 	return
 }
 
-// create a response to parse from DescribeWarning response
+// CreateDescribeWarningResponse creates a response to parse from DescribeWarning response
 func CreateDescribeWarningResponse() (response *DescribeWarningResponse) {
 	response = &DescribeWarningResponse{
 		BaseResponse: &responses.BaseResponse{},

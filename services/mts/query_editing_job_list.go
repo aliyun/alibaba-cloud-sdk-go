@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke QueryEditingJobList api with *QueryEditingJobListRequest synchronously
+// QueryEditingJobList invokes the mts.QueryEditingJobList API synchronously
 // api document: https://help.aliyun.com/api/mts/queryeditingjoblist.html
 func (client *Client) QueryEditingJobList(request *QueryEditingJobListRequest) (response *QueryEditingJobListResponse, err error) {
 	response = CreateQueryEditingJobListResponse()
@@ -28,7 +28,7 @@ func (client *Client) QueryEditingJobList(request *QueryEditingJobListRequest) (
 	return
 }
 
-// invoke QueryEditingJobList api with *QueryEditingJobListRequest asynchronously
+// QueryEditingJobListWithChan invokes the mts.QueryEditingJobList API asynchronously
 // api document: https://help.aliyun.com/api/mts/queryeditingjoblist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryEditingJobListWithChan(request *QueryEditingJobListRequest) (<-chan *QueryEditingJobListResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) QueryEditingJobListWithChan(request *QueryEditingJobListRe
 	return responseChan, errChan
 }
 
-// invoke QueryEditingJobList api with *QueryEditingJobListRequest asynchronously
+// QueryEditingJobListWithCallback invokes the mts.QueryEditingJobList API asynchronously
 // api document: https://help.aliyun.com/api/mts/queryeditingjoblist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryEditingJobListWithCallback(request *QueryEditingJobListRequest, callback func(response *QueryEditingJobListResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) QueryEditingJobListWithCallback(request *QueryEditingJobLi
 	return result
 }
 
+// QueryEditingJobListRequest is the request struct for api QueryEditingJobList
 type QueryEditingJobListRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,6 +83,7 @@ type QueryEditingJobListRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// QueryEditingJobListResponse is the response struct for api QueryEditingJobList
 type QueryEditingJobListResponse struct {
 	*responses.BaseResponse
 	RequestId      string                              `json:"RequestId" xml:"RequestId"`
@@ -89,8 +91,8 @@ type QueryEditingJobListResponse struct {
 	JobList        JobListInQueryEditingJobList        `json:"JobList" xml:"JobList"`
 }
 
-// create a request to invoke QueryEditingJobList API
-func CreateQueryEditingJobListRequest() (request *QueryEditingJobListRequest) {
+// CreateQueryEditingJobListRequest creates a request to invoke QueryEditingJobList API
+func CreateQueryEditingJobListRequest(request *QueryEditingJobListRequest) {
 	request = &QueryEditingJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateQueryEditingJobListRequest() (request *QueryEditingJobListRequest) {
 	return
 }
 
-// create a response to parse from QueryEditingJobList response
+// CreateQueryEditingJobListResponse creates a response to parse from QueryEditingJobList response
 func CreateQueryEditingJobListResponse() (response *QueryEditingJobListResponse) {
 	response = &QueryEditingJobListResponse{
 		BaseResponse: &responses.BaseResponse{},

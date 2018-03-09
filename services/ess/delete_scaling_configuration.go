@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteScalingConfiguration api with *DeleteScalingConfigurationRequest synchronously
+// DeleteScalingConfiguration invokes the ess.DeleteScalingConfiguration API synchronously
 // api document: https://help.aliyun.com/api/ess/deletescalingconfiguration.html
 func (client *Client) DeleteScalingConfiguration(request *DeleteScalingConfigurationRequest) (response *DeleteScalingConfigurationResponse, err error) {
 	response = CreateDeleteScalingConfigurationResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteScalingConfiguration(request *DeleteScalingConfigura
 	return
 }
 
-// invoke DeleteScalingConfiguration api with *DeleteScalingConfigurationRequest asynchronously
+// DeleteScalingConfigurationWithChan invokes the ess.DeleteScalingConfiguration API asynchronously
 // api document: https://help.aliyun.com/api/ess/deletescalingconfiguration.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteScalingConfigurationWithChan(request *DeleteScalingConfigurationRequest) (<-chan *DeleteScalingConfigurationResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteScalingConfigurationWithChan(request *DeleteScalingC
 	return responseChan, errChan
 }
 
-// invoke DeleteScalingConfiguration api with *DeleteScalingConfigurationRequest asynchronously
+// DeleteScalingConfigurationWithCallback invokes the ess.DeleteScalingConfiguration API asynchronously
 // api document: https://help.aliyun.com/api/ess/deletescalingconfiguration.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteScalingConfigurationWithCallback(request *DeleteScalingConfigurationRequest, callback func(response *DeleteScalingConfigurationResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DeleteScalingConfigurationWithCallback(request *DeleteScal
 	return result
 }
 
+// DeleteScalingConfigurationRequest is the request struct for api DeleteScalingConfiguration
 type DeleteScalingConfigurationRequest struct {
 	*requests.RpcRequest
 	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
@@ -81,13 +82,14 @@ type DeleteScalingConfigurationRequest struct {
 	OwnerAccount           string           `position:"Query" name:"OwnerAccount"`
 }
 
+// DeleteScalingConfigurationResponse is the response struct for api DeleteScalingConfiguration
 type DeleteScalingConfigurationResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DeleteScalingConfiguration API
-func CreateDeleteScalingConfigurationRequest() (request *DeleteScalingConfigurationRequest) {
+// CreateDeleteScalingConfigurationRequest creates a request to invoke DeleteScalingConfiguration API
+func CreateDeleteScalingConfigurationRequest(request *DeleteScalingConfigurationRequest) {
 	request = &DeleteScalingConfigurationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateDeleteScalingConfigurationRequest() (request *DeleteScalingConfigurat
 	return
 }
 
-// create a response to parse from DeleteScalingConfiguration response
+// CreateDeleteScalingConfigurationResponse creates a response to parse from DeleteScalingConfiguration response
 func CreateDeleteScalingConfigurationResponse() (response *DeleteScalingConfigurationResponse) {
 	response = &DeleteScalingConfigurationResponse{
 		BaseResponse: &responses.BaseResponse{},

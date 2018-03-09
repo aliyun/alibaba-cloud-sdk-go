@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke GetTriggerHook api with *GetTriggerHookRequest synchronously
+// GetTriggerHook invokes the cs.GetTriggerHook API synchronously
 // api document: https://help.aliyun.com/api/cs/gettriggerhook.html
 func (client *Client) GetTriggerHook(request *GetTriggerHookRequest) (response *GetTriggerHookResponse, err error) {
 	response = CreateGetTriggerHookResponse()
@@ -28,7 +28,7 @@ func (client *Client) GetTriggerHook(request *GetTriggerHookRequest) (response *
 	return
 }
 
-// invoke GetTriggerHook api with *GetTriggerHookRequest asynchronously
+// GetTriggerHookWithChan invokes the cs.GetTriggerHook API asynchronously
 // api document: https://help.aliyun.com/api/cs/gettriggerhook.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetTriggerHookWithChan(request *GetTriggerHookRequest) (<-chan *GetTriggerHookResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) GetTriggerHookWithChan(request *GetTriggerHookRequest) (<-
 	return responseChan, errChan
 }
 
-// invoke GetTriggerHook api with *GetTriggerHookRequest asynchronously
+// GetTriggerHookWithCallback invokes the cs.GetTriggerHook API asynchronously
 // api document: https://help.aliyun.com/api/cs/gettriggerhook.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetTriggerHookWithCallback(request *GetTriggerHookRequest, callback func(response *GetTriggerHookResponse, err error)) <-chan int {
@@ -73,18 +73,20 @@ func (client *Client) GetTriggerHookWithCallback(request *GetTriggerHookRequest,
 	return result
 }
 
+// GetTriggerHookRequest is the request struct for api GetTriggerHook
 type GetTriggerHookRequest struct {
 	*requests.RoaRequest
 	ClusterId string `position:"Path" name:"ClusterId"`
 	ProjectId string `position:"Path" name:"ProjectId"`
 }
 
+// GetTriggerHookResponse is the response struct for api GetTriggerHook
 type GetTriggerHookResponse struct {
 	*responses.BaseResponse
 }
 
-// create a request to invoke GetTriggerHook API
-func CreateGetTriggerHookRequest() (request *GetTriggerHookRequest) {
+// CreateGetTriggerHookRequest creates a request to invoke GetTriggerHook API
+func CreateGetTriggerHookRequest(request *GetTriggerHookRequest) {
 	request = &GetTriggerHookRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
@@ -93,7 +95,7 @@ func CreateGetTriggerHookRequest() (request *GetTriggerHookRequest) {
 	return
 }
 
-// create a response to parse from GetTriggerHook response
+// CreateGetTriggerHookResponse creates a response to parse from GetTriggerHook response
 func CreateGetTriggerHookResponse() (response *GetTriggerHookResponse) {
 	response = &GetTriggerHookResponse{
 		BaseResponse: &responses.BaseResponse{},

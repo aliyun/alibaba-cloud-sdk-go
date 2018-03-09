@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke QueryCoverPipelineList api with *QueryCoverPipelineListRequest synchronously
+// QueryCoverPipelineList invokes the mts.QueryCoverPipelineList API synchronously
 // api document: https://help.aliyun.com/api/mts/querycoverpipelinelist.html
 func (client *Client) QueryCoverPipelineList(request *QueryCoverPipelineListRequest) (response *QueryCoverPipelineListResponse, err error) {
 	response = CreateQueryCoverPipelineListResponse()
@@ -28,7 +28,7 @@ func (client *Client) QueryCoverPipelineList(request *QueryCoverPipelineListRequ
 	return
 }
 
-// invoke QueryCoverPipelineList api with *QueryCoverPipelineListRequest asynchronously
+// QueryCoverPipelineListWithChan invokes the mts.QueryCoverPipelineList API asynchronously
 // api document: https://help.aliyun.com/api/mts/querycoverpipelinelist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryCoverPipelineListWithChan(request *QueryCoverPipelineListRequest) (<-chan *QueryCoverPipelineListResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) QueryCoverPipelineListWithChan(request *QueryCoverPipeline
 	return responseChan, errChan
 }
 
-// invoke QueryCoverPipelineList api with *QueryCoverPipelineListRequest asynchronously
+// QueryCoverPipelineListWithCallback invokes the mts.QueryCoverPipelineList API asynchronously
 // api document: https://help.aliyun.com/api/mts/querycoverpipelinelist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryCoverPipelineListWithCallback(request *QueryCoverPipelineListRequest, callback func(response *QueryCoverPipelineListResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) QueryCoverPipelineListWithCallback(request *QueryCoverPipe
 	return result
 }
 
+// QueryCoverPipelineListRequest is the request struct for api QueryCoverPipelineList
 type QueryCoverPipelineListRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,6 +83,7 @@ type QueryCoverPipelineListRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// QueryCoverPipelineListResponse is the response struct for api QueryCoverPipelineList
 type QueryCoverPipelineListResponse struct {
 	*responses.BaseResponse
 	RequestId    string                               `json:"RequestId" xml:"RequestId"`
@@ -89,8 +91,8 @@ type QueryCoverPipelineListResponse struct {
 	PipelineList PipelineListInQueryCoverPipelineList `json:"PipelineList" xml:"PipelineList"`
 }
 
-// create a request to invoke QueryCoverPipelineList API
-func CreateQueryCoverPipelineListRequest() (request *QueryCoverPipelineListRequest) {
+// CreateQueryCoverPipelineListRequest creates a request to invoke QueryCoverPipelineList API
+func CreateQueryCoverPipelineListRequest(request *QueryCoverPipelineListRequest) {
 	request = &QueryCoverPipelineListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateQueryCoverPipelineListRequest() (request *QueryCoverPipelineListReque
 	return
 }
 
-// create a response to parse from QueryCoverPipelineList response
+// CreateQueryCoverPipelineListResponse creates a response to parse from QueryCoverPipelineList response
 func CreateQueryCoverPipelineListResponse() (response *QueryCoverPipelineListResponse) {
 	response = &QueryCoverPipelineListResponse{
 		BaseResponse: &responses.BaseResponse{},

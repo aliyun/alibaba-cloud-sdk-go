@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke RestoreDBInstance api with *RestoreDBInstanceRequest synchronously
+// RestoreDBInstance invokes the rds.RestoreDBInstance API synchronously
 // api document: https://help.aliyun.com/api/rds/restoredbinstance.html
 func (client *Client) RestoreDBInstance(request *RestoreDBInstanceRequest) (response *RestoreDBInstanceResponse, err error) {
 	response = CreateRestoreDBInstanceResponse()
@@ -28,7 +28,7 @@ func (client *Client) RestoreDBInstance(request *RestoreDBInstanceRequest) (resp
 	return
 }
 
-// invoke RestoreDBInstance api with *RestoreDBInstanceRequest asynchronously
+// RestoreDBInstanceWithChan invokes the rds.RestoreDBInstance API asynchronously
 // api document: https://help.aliyun.com/api/rds/restoredbinstance.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RestoreDBInstanceWithChan(request *RestoreDBInstanceRequest) (<-chan *RestoreDBInstanceResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) RestoreDBInstanceWithChan(request *RestoreDBInstanceReques
 	return responseChan, errChan
 }
 
-// invoke RestoreDBInstance api with *RestoreDBInstanceRequest asynchronously
+// RestoreDBInstanceWithCallback invokes the rds.RestoreDBInstance API asynchronously
 // api document: https://help.aliyun.com/api/rds/restoredbinstance.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RestoreDBInstanceWithCallback(request *RestoreDBInstanceRequest, callback func(response *RestoreDBInstanceResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) RestoreDBInstanceWithCallback(request *RestoreDBInstanceRe
 	return result
 }
 
+// RestoreDBInstanceRequest is the request struct for api RestoreDBInstance
 type RestoreDBInstanceRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,13 +85,14 @@ type RestoreDBInstanceRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// RestoreDBInstanceResponse is the response struct for api RestoreDBInstance
 type RestoreDBInstanceResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke RestoreDBInstance API
-func CreateRestoreDBInstanceRequest() (request *RestoreDBInstanceRequest) {
+// CreateRestoreDBInstanceRequest creates a request to invoke RestoreDBInstance API
+func CreateRestoreDBInstanceRequest(request *RestoreDBInstanceRequest) {
 	request = &RestoreDBInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateRestoreDBInstanceRequest() (request *RestoreDBInstanceRequest) {
 	return
 }
 
-// create a response to parse from RestoreDBInstance response
+// CreateRestoreDBInstanceResponse creates a response to parse from RestoreDBInstance response
 func CreateRestoreDBInstanceResponse() (response *RestoreDBInstanceResponse) {
 	response = &RestoreDBInstanceResponse{
 		BaseResponse: &responses.BaseResponse{},

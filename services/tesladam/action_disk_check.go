@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ActionDiskCheck api with *ActionDiskCheckRequest synchronously
+// ActionDiskCheck invokes the tesladam.ActionDiskCheck API synchronously
 // api document: https://help.aliyun.com/api/tesladam/actiondiskcheck.html
 func (client *Client) ActionDiskCheck(request *ActionDiskCheckRequest) (response *ActionDiskCheckResponse, err error) {
 	response = CreateActionDiskCheckResponse()
@@ -28,7 +28,7 @@ func (client *Client) ActionDiskCheck(request *ActionDiskCheckRequest) (response
 	return
 }
 
-// invoke ActionDiskCheck api with *ActionDiskCheckRequest asynchronously
+// ActionDiskCheckWithChan invokes the tesladam.ActionDiskCheck API asynchronously
 // api document: https://help.aliyun.com/api/tesladam/actiondiskcheck.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ActionDiskCheckWithChan(request *ActionDiskCheckRequest) (<-chan *ActionDiskCheckResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ActionDiskCheckWithChan(request *ActionDiskCheckRequest) (
 	return responseChan, errChan
 }
 
-// invoke ActionDiskCheck api with *ActionDiskCheckRequest asynchronously
+// ActionDiskCheckWithCallback invokes the tesladam.ActionDiskCheck API asynchronously
 // api document: https://help.aliyun.com/api/tesladam/actiondiskcheck.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ActionDiskCheckWithCallback(request *ActionDiskCheckRequest, callback func(response *ActionDiskCheckResponse, err error)) <-chan int {
@@ -73,12 +73,14 @@ func (client *Client) ActionDiskCheckWithCallback(request *ActionDiskCheckReques
 	return result
 }
 
+// ActionDiskCheckRequest is the request struct for api ActionDiskCheck
 type ActionDiskCheckRequest struct {
 	*requests.RpcRequest
 	Ip        string `position:"Query" name:"Ip"`
 	DiskMount string `position:"Query" name:"DiskMount"`
 }
 
+// ActionDiskCheckResponse is the response struct for api ActionDiskCheck
 type ActionDiskCheckResponse struct {
 	*responses.BaseResponse
 	Status  bool   `json:"Status" xml:"Status"`
@@ -86,8 +88,8 @@ type ActionDiskCheckResponse struct {
 	Result  string `json:"Result" xml:"Result"`
 }
 
-// create a request to invoke ActionDiskCheck API
-func CreateActionDiskCheckRequest() (request *ActionDiskCheckRequest) {
+// CreateActionDiskCheckRequest creates a request to invoke ActionDiskCheck API
+func CreateActionDiskCheckRequest(request *ActionDiskCheckRequest) {
 	request = &ActionDiskCheckRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateActionDiskCheckRequest() (request *ActionDiskCheckRequest) {
 	return
 }
 
-// create a response to parse from ActionDiskCheck response
+// CreateActionDiskCheckResponse creates a response to parse from ActionDiskCheck response
 func CreateActionDiskCheckResponse() (response *ActionDiskCheckResponse) {
 	response = &ActionDiskCheckResponse{
 		BaseResponse: &responses.BaseResponse{},

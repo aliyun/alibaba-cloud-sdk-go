@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke QueryTaskByParam api with *QueryTaskByParamRequest synchronously
+// QueryTaskByParam invokes the dm.QueryTaskByParam API synchronously
 // api document: https://help.aliyun.com/api/dm/querytaskbyparam.html
 func (client *Client) QueryTaskByParam(request *QueryTaskByParamRequest) (response *QueryTaskByParamResponse, err error) {
 	response = CreateQueryTaskByParamResponse()
@@ -28,7 +28,7 @@ func (client *Client) QueryTaskByParam(request *QueryTaskByParamRequest) (respon
 	return
 }
 
-// invoke QueryTaskByParam api with *QueryTaskByParamRequest asynchronously
+// QueryTaskByParamWithChan invokes the dm.QueryTaskByParam API asynchronously
 // api document: https://help.aliyun.com/api/dm/querytaskbyparam.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryTaskByParamWithChan(request *QueryTaskByParamRequest) (<-chan *QueryTaskByParamResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) QueryTaskByParamWithChan(request *QueryTaskByParamRequest)
 	return responseChan, errChan
 }
 
-// invoke QueryTaskByParam api with *QueryTaskByParamRequest asynchronously
+// QueryTaskByParamWithCallback invokes the dm.QueryTaskByParam API asynchronously
 // api document: https://help.aliyun.com/api/dm/querytaskbyparam.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryTaskByParamWithCallback(request *QueryTaskByParamRequest, callback func(response *QueryTaskByParamResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) QueryTaskByParamWithCallback(request *QueryTaskByParamRequ
 	return result
 }
 
+// QueryTaskByParamRequest is the request struct for api QueryTaskByParam
 type QueryTaskByParamRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,6 +85,7 @@ type QueryTaskByParamRequest struct {
 	Status               requests.Integer `position:"Query" name:"Status"`
 }
 
+// QueryTaskByParamResponse is the response struct for api QueryTaskByParam
 type QueryTaskByParamResponse struct {
 	*responses.BaseResponse
 	RequestId  string                 `json:"RequestId" xml:"RequestId"`
@@ -93,8 +95,8 @@ type QueryTaskByParamResponse struct {
 	Data       DataInQueryTaskByParam `json:"data" xml:"data"`
 }
 
-// create a request to invoke QueryTaskByParam API
-func CreateQueryTaskByParamRequest() (request *QueryTaskByParamRequest) {
+// CreateQueryTaskByParamRequest creates a request to invoke QueryTaskByParam API
+func CreateQueryTaskByParamRequest(request *QueryTaskByParamRequest) {
 	request = &QueryTaskByParamRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -102,7 +104,7 @@ func CreateQueryTaskByParamRequest() (request *QueryTaskByParamRequest) {
 	return
 }
 
-// create a response to parse from QueryTaskByParam response
+// CreateQueryTaskByParamResponse creates a response to parse from QueryTaskByParam response
 func CreateQueryTaskByParamResponse() (response *QueryTaskByParamResponse) {
 	response = &QueryTaskByParamResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeUserBusinessBehavior api with *DescribeUserBusinessBehaviorRequest synchronously
+// DescribeUserBusinessBehavior invokes the ecs.DescribeUserBusinessBehavior API synchronously
 // api document: https://help.aliyun.com/api/ecs/describeuserbusinessbehavior.html
 func (client *Client) DescribeUserBusinessBehavior(request *DescribeUserBusinessBehaviorRequest) (response *DescribeUserBusinessBehaviorResponse, err error) {
 	response = CreateDescribeUserBusinessBehaviorResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeUserBusinessBehavior(request *DescribeUserBusiness
 	return
 }
 
-// invoke DescribeUserBusinessBehavior api with *DescribeUserBusinessBehaviorRequest asynchronously
+// DescribeUserBusinessBehaviorWithChan invokes the ecs.DescribeUserBusinessBehavior API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describeuserbusinessbehavior.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUserBusinessBehaviorWithChan(request *DescribeUserBusinessBehaviorRequest) (<-chan *DescribeUserBusinessBehaviorResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeUserBusinessBehaviorWithChan(request *DescribeUser
 	return responseChan, errChan
 }
 
-// invoke DescribeUserBusinessBehavior api with *DescribeUserBusinessBehaviorRequest asynchronously
+// DescribeUserBusinessBehaviorWithCallback invokes the ecs.DescribeUserBusinessBehavior API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describeuserbusinessbehavior.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUserBusinessBehaviorWithCallback(request *DescribeUserBusinessBehaviorRequest, callback func(response *DescribeUserBusinessBehaviorResponse, err error)) <-chan int {
@@ -73,18 +73,20 @@ func (client *Client) DescribeUserBusinessBehaviorWithCallback(request *Describe
 	return result
 }
 
+// DescribeUserBusinessBehaviorRequest is the request struct for api DescribeUserBusinessBehavior
 type DescribeUserBusinessBehaviorRequest struct {
 	*requests.RpcRequest
 }
 
+// DescribeUserBusinessBehaviorResponse is the response struct for api DescribeUserBusinessBehavior
 type DescribeUserBusinessBehaviorResponse struct {
 	*responses.BaseResponse
 	RequestId   string `json:"RequestId" xml:"RequestId"`
 	StatusValue string `json:"StatusValue" xml:"StatusValue"`
 }
 
-// create a request to invoke DescribeUserBusinessBehavior API
-func CreateDescribeUserBusinessBehaviorRequest() (request *DescribeUserBusinessBehaviorRequest) {
+// CreateDescribeUserBusinessBehaviorRequest creates a request to invoke DescribeUserBusinessBehavior API
+func CreateDescribeUserBusinessBehaviorRequest(request *DescribeUserBusinessBehaviorRequest) {
 	request = &DescribeUserBusinessBehaviorRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -92,7 +94,7 @@ func CreateDescribeUserBusinessBehaviorRequest() (request *DescribeUserBusinessB
 	return
 }
 
-// create a response to parse from DescribeUserBusinessBehavior response
+// CreateDescribeUserBusinessBehaviorResponse creates a response to parse from DescribeUserBusinessBehavior response
 func CreateDescribeUserBusinessBehaviorResponse() (response *DescribeUserBusinessBehaviorResponse) {
 	response = &DescribeUserBusinessBehaviorResponse{
 		BaseResponse: &responses.BaseResponse{},

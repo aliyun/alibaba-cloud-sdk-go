@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifyDBInstanceNetworkType api with *ModifyDBInstanceNetworkTypeRequest synchronously
+// ModifyDBInstanceNetworkType invokes the rds.ModifyDBInstanceNetworkType API synchronously
 // api document: https://help.aliyun.com/api/rds/modifydbinstancenetworktype.html
 func (client *Client) ModifyDBInstanceNetworkType(request *ModifyDBInstanceNetworkTypeRequest) (response *ModifyDBInstanceNetworkTypeResponse, err error) {
 	response = CreateModifyDBInstanceNetworkTypeResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifyDBInstanceNetworkType(request *ModifyDBInstanceNetwo
 	return
 }
 
-// invoke ModifyDBInstanceNetworkType api with *ModifyDBInstanceNetworkTypeRequest asynchronously
+// ModifyDBInstanceNetworkTypeWithChan invokes the rds.ModifyDBInstanceNetworkType API asynchronously
 // api document: https://help.aliyun.com/api/rds/modifydbinstancenetworktype.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDBInstanceNetworkTypeWithChan(request *ModifyDBInstanceNetworkTypeRequest) (<-chan *ModifyDBInstanceNetworkTypeResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifyDBInstanceNetworkTypeWithChan(request *ModifyDBInsta
 	return responseChan, errChan
 }
 
-// invoke ModifyDBInstanceNetworkType api with *ModifyDBInstanceNetworkTypeRequest asynchronously
+// ModifyDBInstanceNetworkTypeWithCallback invokes the rds.ModifyDBInstanceNetworkType API asynchronously
 // api document: https://help.aliyun.com/api/rds/modifydbinstancenetworktype.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDBInstanceNetworkTypeWithCallback(request *ModifyDBInstanceNetworkTypeRequest, callback func(response *ModifyDBInstanceNetworkTypeResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ModifyDBInstanceNetworkTypeWithCallback(request *ModifyDBI
 	return result
 }
 
+// ModifyDBInstanceNetworkTypeRequest is the request struct for api ModifyDBInstanceNetworkType
 type ModifyDBInstanceNetworkTypeRequest struct {
 	*requests.RpcRequest
 	OwnerId                              requests.Integer `position:"Query" name:"OwnerId"`
@@ -90,14 +91,15 @@ type ModifyDBInstanceNetworkTypeRequest struct {
 	OwnerAccount                         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// ModifyDBInstanceNetworkTypeResponse is the response struct for api ModifyDBInstanceNetworkType
 type ModifyDBInstanceNetworkTypeResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	TaskId    string `json:"TaskId" xml:"TaskId"`
 }
 
-// create a request to invoke ModifyDBInstanceNetworkType API
-func CreateModifyDBInstanceNetworkTypeRequest() (request *ModifyDBInstanceNetworkTypeRequest) {
+// CreateModifyDBInstanceNetworkTypeRequest creates a request to invoke ModifyDBInstanceNetworkType API
+func CreateModifyDBInstanceNetworkTypeRequest(request *ModifyDBInstanceNetworkTypeRequest) {
 	request = &ModifyDBInstanceNetworkTypeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -105,7 +107,7 @@ func CreateModifyDBInstanceNetworkTypeRequest() (request *ModifyDBInstanceNetwor
 	return
 }
 
-// create a response to parse from ModifyDBInstanceNetworkType response
+// CreateModifyDBInstanceNetworkTypeResponse creates a response to parse from ModifyDBInstanceNetworkType response
 func CreateModifyDBInstanceNetworkTypeResponse() (response *ModifyDBInstanceNetworkTypeResponse) {
 	response = &ModifyDBInstanceNetworkTypeResponse{
 		BaseResponse: &responses.BaseResponse{},

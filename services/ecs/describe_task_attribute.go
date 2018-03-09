@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeTaskAttribute api with *DescribeTaskAttributeRequest synchronously
+// DescribeTaskAttribute invokes the ecs.DescribeTaskAttribute API synchronously
 // api document: https://help.aliyun.com/api/ecs/describetaskattribute.html
 func (client *Client) DescribeTaskAttribute(request *DescribeTaskAttributeRequest) (response *DescribeTaskAttributeResponse, err error) {
 	response = CreateDescribeTaskAttributeResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeTaskAttribute(request *DescribeTaskAttributeReques
 	return
 }
 
-// invoke DescribeTaskAttribute api with *DescribeTaskAttributeRequest asynchronously
+// DescribeTaskAttributeWithChan invokes the ecs.DescribeTaskAttribute API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describetaskattribute.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeTaskAttributeWithChan(request *DescribeTaskAttributeRequest) (<-chan *DescribeTaskAttributeResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeTaskAttributeWithChan(request *DescribeTaskAttribu
 	return responseChan, errChan
 }
 
-// invoke DescribeTaskAttribute api with *DescribeTaskAttributeRequest asynchronously
+// DescribeTaskAttributeWithCallback invokes the ecs.DescribeTaskAttribute API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describetaskattribute.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeTaskAttributeWithCallback(request *DescribeTaskAttributeRequest, callback func(response *DescribeTaskAttributeResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeTaskAttributeWithCallback(request *DescribeTaskAtt
 	return result
 }
 
+// DescribeTaskAttributeRequest is the request struct for api DescribeTaskAttribute
 type DescribeTaskAttributeRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -81,6 +82,7 @@ type DescribeTaskAttributeRequest struct {
 	TaskId               string           `position:"Query" name:"TaskId"`
 }
 
+// DescribeTaskAttributeResponse is the response struct for api DescribeTaskAttribute
 type DescribeTaskAttributeResponse struct {
 	*responses.BaseResponse
 	RequestId            string               `json:"RequestId" xml:"RequestId"`
@@ -98,8 +100,8 @@ type DescribeTaskAttributeResponse struct {
 	OperationProgressSet OperationProgressSet `json:"OperationProgressSet" xml:"OperationProgressSet"`
 }
 
-// create a request to invoke DescribeTaskAttribute API
-func CreateDescribeTaskAttributeRequest() (request *DescribeTaskAttributeRequest) {
+// CreateDescribeTaskAttributeRequest creates a request to invoke DescribeTaskAttribute API
+func CreateDescribeTaskAttributeRequest(request *DescribeTaskAttributeRequest) {
 	request = &DescribeTaskAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -107,7 +109,7 @@ func CreateDescribeTaskAttributeRequest() (request *DescribeTaskAttributeRequest
 	return
 }
 
-// create a response to parse from DescribeTaskAttribute response
+// CreateDescribeTaskAttributeResponse creates a response to parse from DescribeTaskAttribute response
 func CreateDescribeTaskAttributeResponse() (response *DescribeTaskAttributeResponse) {
 	response = &DescribeTaskAttributeResponse{
 		BaseResponse: &responses.BaseResponse{},

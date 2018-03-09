@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteNetworkInterface api with *DeleteNetworkInterfaceRequest synchronously
+// DeleteNetworkInterface invokes the ecs.DeleteNetworkInterface API synchronously
 // api document: https://help.aliyun.com/api/ecs/deletenetworkinterface.html
 func (client *Client) DeleteNetworkInterface(request *DeleteNetworkInterfaceRequest) (response *DeleteNetworkInterfaceResponse, err error) {
 	response = CreateDeleteNetworkInterfaceResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteNetworkInterface(request *DeleteNetworkInterfaceRequ
 	return
 }
 
-// invoke DeleteNetworkInterface api with *DeleteNetworkInterfaceRequest asynchronously
+// DeleteNetworkInterfaceWithChan invokes the ecs.DeleteNetworkInterface API asynchronously
 // api document: https://help.aliyun.com/api/ecs/deletenetworkinterface.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteNetworkInterfaceWithChan(request *DeleteNetworkInterfaceRequest) (<-chan *DeleteNetworkInterfaceResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteNetworkInterfaceWithChan(request *DeleteNetworkInter
 	return responseChan, errChan
 }
 
-// invoke DeleteNetworkInterface api with *DeleteNetworkInterfaceRequest asynchronously
+// DeleteNetworkInterfaceWithCallback invokes the ecs.DeleteNetworkInterface API asynchronously
 // api document: https://help.aliyun.com/api/ecs/deletenetworkinterface.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteNetworkInterfaceWithCallback(request *DeleteNetworkInterfaceRequest, callback func(response *DeleteNetworkInterfaceResponse, err error)) <-chan int {
@@ -73,17 +73,19 @@ func (client *Client) DeleteNetworkInterfaceWithCallback(request *DeleteNetworkI
 	return result
 }
 
+// DeleteNetworkInterfaceRequest is the request struct for api DeleteNetworkInterface
 type DeleteNetworkInterfaceRequest struct {
 	*requests.RpcRequest
 }
 
+// DeleteNetworkInterfaceResponse is the response struct for api DeleteNetworkInterface
 type DeleteNetworkInterfaceResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DeleteNetworkInterface API
-func CreateDeleteNetworkInterfaceRequest() (request *DeleteNetworkInterfaceRequest) {
+// CreateDeleteNetworkInterfaceRequest creates a request to invoke DeleteNetworkInterface API
+func CreateDeleteNetworkInterfaceRequest(request *DeleteNetworkInterfaceRequest) {
 	request = &DeleteNetworkInterfaceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -91,7 +93,7 @@ func CreateDeleteNetworkInterfaceRequest() (request *DeleteNetworkInterfaceReque
 	return
 }
 
-// create a response to parse from DeleteNetworkInterface response
+// CreateDeleteNetworkInterfaceResponse creates a response to parse from DeleteNetworkInterface response
 func CreateDeleteNetworkInterfaceResponse() (response *DeleteNetworkInterfaceResponse) {
 	response = &DeleteNetworkInterfaceResponse{
 		BaseResponse: &responses.BaseResponse{},

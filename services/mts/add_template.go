@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke AddTemplate api with *AddTemplateRequest synchronously
+// AddTemplate invokes the mts.AddTemplate API synchronously
 // api document: https://help.aliyun.com/api/mts/addtemplate.html
 func (client *Client) AddTemplate(request *AddTemplateRequest) (response *AddTemplateResponse, err error) {
 	response = CreateAddTemplateResponse()
@@ -28,7 +28,7 @@ func (client *Client) AddTemplate(request *AddTemplateRequest) (response *AddTem
 	return
 }
 
-// invoke AddTemplate api with *AddTemplateRequest asynchronously
+// AddTemplateWithChan invokes the mts.AddTemplate API asynchronously
 // api document: https://help.aliyun.com/api/mts/addtemplate.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddTemplateWithChan(request *AddTemplateRequest) (<-chan *AddTemplateResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) AddTemplateWithChan(request *AddTemplateRequest) (<-chan *
 	return responseChan, errChan
 }
 
-// invoke AddTemplate api with *AddTemplateRequest asynchronously
+// AddTemplateWithCallback invokes the mts.AddTemplate API asynchronously
 // api document: https://help.aliyun.com/api/mts/addtemplate.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddTemplateWithCallback(request *AddTemplateRequest, callback func(response *AddTemplateResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) AddTemplateWithCallback(request *AddTemplateRequest, callb
 	return result
 }
 
+// AddTemplateRequest is the request struct for api AddTemplate
 type AddTemplateRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -87,14 +88,15 @@ type AddTemplateRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// AddTemplateResponse is the response struct for api AddTemplate
 type AddTemplateResponse struct {
 	*responses.BaseResponse
 	RequestId string   `json:"RequestId" xml:"RequestId"`
 	Template  Template `json:"Template" xml:"Template"`
 }
 
-// create a request to invoke AddTemplate API
-func CreateAddTemplateRequest() (request *AddTemplateRequest) {
+// CreateAddTemplateRequest creates a request to invoke AddTemplate API
+func CreateAddTemplateRequest(request *AddTemplateRequest) {
 	request = &AddTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -102,7 +104,7 @@ func CreateAddTemplateRequest() (request *AddTemplateRequest) {
 	return
 }
 
-// create a response to parse from AddTemplate response
+// CreateAddTemplateResponse creates a response to parse from AddTemplate response
 func CreateAddTemplateResponse() (response *AddTemplateResponse) {
 	response = &AddTemplateResponse{
 		BaseResponse: &responses.BaseResponse{},

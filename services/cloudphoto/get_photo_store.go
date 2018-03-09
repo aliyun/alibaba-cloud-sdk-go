@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke GetPhotoStore api with *GetPhotoStoreRequest synchronously
+// GetPhotoStore invokes the cloudphoto.GetPhotoStore API synchronously
 // api document: https://help.aliyun.com/api/cloudphoto/getphotostore.html
 func (client *Client) GetPhotoStore(request *GetPhotoStoreRequest) (response *GetPhotoStoreResponse, err error) {
 	response = CreateGetPhotoStoreResponse()
@@ -28,7 +28,7 @@ func (client *Client) GetPhotoStore(request *GetPhotoStoreRequest) (response *Ge
 	return
 }
 
-// invoke GetPhotoStore api with *GetPhotoStoreRequest asynchronously
+// GetPhotoStoreWithChan invokes the cloudphoto.GetPhotoStore API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/getphotostore.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetPhotoStoreWithChan(request *GetPhotoStoreRequest) (<-chan *GetPhotoStoreResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) GetPhotoStoreWithChan(request *GetPhotoStoreRequest) (<-ch
 	return responseChan, errChan
 }
 
-// invoke GetPhotoStore api with *GetPhotoStoreRequest asynchronously
+// GetPhotoStoreWithCallback invokes the cloudphoto.GetPhotoStore API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/getphotostore.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetPhotoStoreWithCallback(request *GetPhotoStoreRequest, callback func(response *GetPhotoStoreResponse, err error)) <-chan int {
@@ -73,11 +73,13 @@ func (client *Client) GetPhotoStoreWithCallback(request *GetPhotoStoreRequest, c
 	return result
 }
 
+// GetPhotoStoreRequest is the request struct for api GetPhotoStore
 type GetPhotoStoreRequest struct {
 	*requests.RpcRequest
 	StoreName string `position:"Query" name:"StoreName"`
 }
 
+// GetPhotoStoreResponse is the response struct for api GetPhotoStore
 type GetPhotoStoreResponse struct {
 	*responses.BaseResponse
 	Code       string     `json:"Code" xml:"Code"`
@@ -87,8 +89,8 @@ type GetPhotoStoreResponse struct {
 	PhotoStore PhotoStore `json:"PhotoStore" xml:"PhotoStore"`
 }
 
-// create a request to invoke GetPhotoStore API
-func CreateGetPhotoStoreRequest() (request *GetPhotoStoreRequest) {
+// CreateGetPhotoStoreRequest creates a request to invoke GetPhotoStore API
+func CreateGetPhotoStoreRequest(request *GetPhotoStoreRequest) {
 	request = &GetPhotoStoreRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -96,7 +98,7 @@ func CreateGetPhotoStoreRequest() (request *GetPhotoStoreRequest) {
 	return
 }
 
-// create a response to parse from GetPhotoStore response
+// CreateGetPhotoStoreResponse creates a response to parse from GetPhotoStore response
 func CreateGetPhotoStoreResponse() (response *GetPhotoStoreResponse) {
 	response = &GetPhotoStoreResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke EnableAlarm api with *EnableAlarmRequest synchronously
+// EnableAlarm invokes the cms.EnableAlarm API synchronously
 // api document: https://help.aliyun.com/api/cms/enablealarm.html
 func (client *Client) EnableAlarm(request *EnableAlarmRequest) (response *EnableAlarmResponse, err error) {
 	response = CreateEnableAlarmResponse()
@@ -28,7 +28,7 @@ func (client *Client) EnableAlarm(request *EnableAlarmRequest) (response *Enable
 	return
 }
 
-// invoke EnableAlarm api with *EnableAlarmRequest asynchronously
+// EnableAlarmWithChan invokes the cms.EnableAlarm API asynchronously
 // api document: https://help.aliyun.com/api/cms/enablealarm.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EnableAlarmWithChan(request *EnableAlarmRequest) (<-chan *EnableAlarmResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) EnableAlarmWithChan(request *EnableAlarmRequest) (<-chan *
 	return responseChan, errChan
 }
 
-// invoke EnableAlarm api with *EnableAlarmRequest asynchronously
+// EnableAlarmWithCallback invokes the cms.EnableAlarm API asynchronously
 // api document: https://help.aliyun.com/api/cms/enablealarm.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EnableAlarmWithCallback(request *EnableAlarmRequest, callback func(response *EnableAlarmResponse, err error)) <-chan int {
@@ -73,12 +73,14 @@ func (client *Client) EnableAlarmWithCallback(request *EnableAlarmRequest, callb
 	return result
 }
 
+// EnableAlarmRequest is the request struct for api EnableAlarm
 type EnableAlarmRequest struct {
 	*requests.RpcRequest
 	CallbyCmsOwner string `position:"Query" name:"callby_cms_owner"`
 	Id             string `position:"Query" name:"Id"`
 }
 
+// EnableAlarmResponse is the response struct for api EnableAlarm
 type EnableAlarmResponse struct {
 	*responses.BaseResponse
 	Success   bool   `json:"Success" xml:"Success"`
@@ -87,8 +89,8 @@ type EnableAlarmResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke EnableAlarm API
-func CreateEnableAlarmRequest() (request *EnableAlarmRequest) {
+// CreateEnableAlarmRequest creates a request to invoke EnableAlarm API
+func CreateEnableAlarmRequest(request *EnableAlarmRequest) {
 	request = &EnableAlarmRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -96,7 +98,7 @@ func CreateEnableAlarmRequest() (request *EnableAlarmRequest) {
 	return
 }
 
-// create a response to parse from EnableAlarm response
+// CreateEnableAlarmResponse creates a response to parse from EnableAlarm response
 func CreateEnableAlarmResponse() (response *EnableAlarmResponse) {
 	response = &EnableAlarmResponse{
 		BaseResponse: &responses.BaseResponse{},

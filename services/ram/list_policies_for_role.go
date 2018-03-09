@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ListPoliciesForRole api with *ListPoliciesForRoleRequest synchronously
+// ListPoliciesForRole invokes the ram.ListPoliciesForRole API synchronously
 // api document: https://help.aliyun.com/api/ram/listpoliciesforrole.html
 func (client *Client) ListPoliciesForRole(request *ListPoliciesForRoleRequest) (response *ListPoliciesForRoleResponse, err error) {
 	response = CreateListPoliciesForRoleResponse()
@@ -28,7 +28,7 @@ func (client *Client) ListPoliciesForRole(request *ListPoliciesForRoleRequest) (
 	return
 }
 
-// invoke ListPoliciesForRole api with *ListPoliciesForRoleRequest asynchronously
+// ListPoliciesForRoleWithChan invokes the ram.ListPoliciesForRole API asynchronously
 // api document: https://help.aliyun.com/api/ram/listpoliciesforrole.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListPoliciesForRoleWithChan(request *ListPoliciesForRoleRequest) (<-chan *ListPoliciesForRoleResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ListPoliciesForRoleWithChan(request *ListPoliciesForRoleRe
 	return responseChan, errChan
 }
 
-// invoke ListPoliciesForRole api with *ListPoliciesForRoleRequest asynchronously
+// ListPoliciesForRoleWithCallback invokes the ram.ListPoliciesForRole API asynchronously
 // api document: https://help.aliyun.com/api/ram/listpoliciesforrole.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListPoliciesForRoleWithCallback(request *ListPoliciesForRoleRequest, callback func(response *ListPoliciesForRoleResponse, err error)) <-chan int {
@@ -73,19 +73,21 @@ func (client *Client) ListPoliciesForRoleWithCallback(request *ListPoliciesForRo
 	return result
 }
 
+// ListPoliciesForRoleRequest is the request struct for api ListPoliciesForRole
 type ListPoliciesForRoleRequest struct {
 	*requests.RpcRequest
 	RoleName string `position:"Query" name:"RoleName"`
 }
 
+// ListPoliciesForRoleResponse is the response struct for api ListPoliciesForRole
 type ListPoliciesForRoleResponse struct {
 	*responses.BaseResponse
 	RequestId string                        `json:"RequestId" xml:"RequestId"`
 	Policies  PoliciesInListPoliciesForRole `json:"Policies" xml:"Policies"`
 }
 
-// create a request to invoke ListPoliciesForRole API
-func CreateListPoliciesForRoleRequest() (request *ListPoliciesForRoleRequest) {
+// CreateListPoliciesForRoleRequest creates a request to invoke ListPoliciesForRole API
+func CreateListPoliciesForRoleRequest(request *ListPoliciesForRoleRequest) {
 	request = &ListPoliciesForRoleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -93,7 +95,7 @@ func CreateListPoliciesForRoleRequest() (request *ListPoliciesForRoleRequest) {
 	return
 }
 
-// create a response to parse from ListPoliciesForRole response
+// CreateListPoliciesForRoleResponse creates a response to parse from ListPoliciesForRole response
 func CreateListPoliciesForRoleResponse() (response *ListPoliciesForRoleResponse) {
 	response = &ListPoliciesForRoleResponse{
 		BaseResponse: &responses.BaseResponse{},

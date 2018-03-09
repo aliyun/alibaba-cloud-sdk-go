@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SetDomainRecordStatus api with *SetDomainRecordStatusRequest synchronously
+// SetDomainRecordStatus invokes the alidns.SetDomainRecordStatus API synchronously
 // api document: https://help.aliyun.com/api/alidns/setdomainrecordstatus.html
 func (client *Client) SetDomainRecordStatus(request *SetDomainRecordStatusRequest) (response *SetDomainRecordStatusResponse, err error) {
 	response = CreateSetDomainRecordStatusResponse()
@@ -28,7 +28,7 @@ func (client *Client) SetDomainRecordStatus(request *SetDomainRecordStatusReques
 	return
 }
 
-// invoke SetDomainRecordStatus api with *SetDomainRecordStatusRequest asynchronously
+// SetDomainRecordStatusWithChan invokes the alidns.SetDomainRecordStatus API asynchronously
 // api document: https://help.aliyun.com/api/alidns/setdomainrecordstatus.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetDomainRecordStatusWithChan(request *SetDomainRecordStatusRequest) (<-chan *SetDomainRecordStatusResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SetDomainRecordStatusWithChan(request *SetDomainRecordStat
 	return responseChan, errChan
 }
 
-// invoke SetDomainRecordStatus api with *SetDomainRecordStatusRequest asynchronously
+// SetDomainRecordStatusWithCallback invokes the alidns.SetDomainRecordStatus API asynchronously
 // api document: https://help.aliyun.com/api/alidns/setdomainrecordstatus.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetDomainRecordStatusWithCallback(request *SetDomainRecordStatusRequest, callback func(response *SetDomainRecordStatusResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SetDomainRecordStatusWithCallback(request *SetDomainRecord
 	return result
 }
 
+// SetDomainRecordStatusRequest is the request struct for api SetDomainRecordStatus
 type SetDomainRecordStatusRequest struct {
 	*requests.RpcRequest
 	Lang         string `position:"Query" name:"Lang"`
@@ -81,6 +82,7 @@ type SetDomainRecordStatusRequest struct {
 	Status       string `position:"Query" name:"Status"`
 }
 
+// SetDomainRecordStatusResponse is the response struct for api SetDomainRecordStatus
 type SetDomainRecordStatusResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
@@ -88,8 +90,8 @@ type SetDomainRecordStatusResponse struct {
 	Status    string `json:"Status" xml:"Status"`
 }
 
-// create a request to invoke SetDomainRecordStatus API
-func CreateSetDomainRecordStatusRequest() (request *SetDomainRecordStatusRequest) {
+// CreateSetDomainRecordStatusRequest creates a request to invoke SetDomainRecordStatus API
+func CreateSetDomainRecordStatusRequest(request *SetDomainRecordStatusRequest) {
 	request = &SetDomainRecordStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateSetDomainRecordStatusRequest() (request *SetDomainRecordStatusRequest
 	return
 }
 
-// create a response to parse from SetDomainRecordStatus response
+// CreateSetDomainRecordStatusResponse creates a response to parse from SetDomainRecordStatus response
 func CreateSetDomainRecordStatusResponse() (response *SetDomainRecordStatusResponse) {
 	response = &SetDomainRecordStatusResponse{
 		BaseResponse: &responses.BaseResponse{},

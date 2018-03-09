@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SetRemoteReqAuthConfig api with *SetRemoteReqAuthConfigRequest synchronously
+// SetRemoteReqAuthConfig invokes the cdn.SetRemoteReqAuthConfig API synchronously
 // api document: https://help.aliyun.com/api/cdn/setremotereqauthconfig.html
 func (client *Client) SetRemoteReqAuthConfig(request *SetRemoteReqAuthConfigRequest) (response *SetRemoteReqAuthConfigResponse, err error) {
 	response = CreateSetRemoteReqAuthConfigResponse()
@@ -28,7 +28,7 @@ func (client *Client) SetRemoteReqAuthConfig(request *SetRemoteReqAuthConfigRequ
 	return
 }
 
-// invoke SetRemoteReqAuthConfig api with *SetRemoteReqAuthConfigRequest asynchronously
+// SetRemoteReqAuthConfigWithChan invokes the cdn.SetRemoteReqAuthConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/setremotereqauthconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetRemoteReqAuthConfigWithChan(request *SetRemoteReqAuthConfigRequest) (<-chan *SetRemoteReqAuthConfigResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SetRemoteReqAuthConfigWithChan(request *SetRemoteReqAuthCo
 	return responseChan, errChan
 }
 
-// invoke SetRemoteReqAuthConfig api with *SetRemoteReqAuthConfigRequest asynchronously
+// SetRemoteReqAuthConfigWithCallback invokes the cdn.SetRemoteReqAuthConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/setremotereqauthconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetRemoteReqAuthConfigWithCallback(request *SetRemoteReqAuthConfigRequest, callback func(response *SetRemoteReqAuthConfigResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SetRemoteReqAuthConfigWithCallback(request *SetRemoteReqAu
 	return result
 }
 
+// SetRemoteReqAuthConfigRequest is the request struct for api SetRemoteReqAuthConfig
 type SetRemoteReqAuthConfigRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -88,13 +89,14 @@ type SetRemoteReqAuthConfigRequest struct {
 	AuthFileType  string           `position:"Query" name:"AuthFileType"`
 }
 
+// SetRemoteReqAuthConfigResponse is the response struct for api SetRemoteReqAuthConfig
 type SetRemoteReqAuthConfigResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke SetRemoteReqAuthConfig API
-func CreateSetRemoteReqAuthConfigRequest() (request *SetRemoteReqAuthConfigRequest) {
+// CreateSetRemoteReqAuthConfigRequest creates a request to invoke SetRemoteReqAuthConfig API
+func CreateSetRemoteReqAuthConfigRequest(request *SetRemoteReqAuthConfigRequest) {
 	request = &SetRemoteReqAuthConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -102,7 +104,7 @@ func CreateSetRemoteReqAuthConfigRequest() (request *SetRemoteReqAuthConfigReque
 	return
 }
 
-// create a response to parse from SetRemoteReqAuthConfig response
+// CreateSetRemoteReqAuthConfigResponse creates a response to parse from SetRemoteReqAuthConfig response
 func CreateSetRemoteReqAuthConfigResponse() (response *SetRemoteReqAuthConfigResponse) {
 	response = &SetRemoteReqAuthConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

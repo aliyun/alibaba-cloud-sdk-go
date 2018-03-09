@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeDomainFlowData api with *DescribeDomainFlowDataRequest synchronously
+// DescribeDomainFlowData invokes the cdn.DescribeDomainFlowData API synchronously
 // api document: https://help.aliyun.com/api/cdn/describedomainflowdata.html
 func (client *Client) DescribeDomainFlowData(request *DescribeDomainFlowDataRequest) (response *DescribeDomainFlowDataResponse, err error) {
 	response = CreateDescribeDomainFlowDataResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeDomainFlowData(request *DescribeDomainFlowDataRequ
 	return
 }
 
-// invoke DescribeDomainFlowData api with *DescribeDomainFlowDataRequest asynchronously
+// DescribeDomainFlowDataWithChan invokes the cdn.DescribeDomainFlowData API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describedomainflowdata.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainFlowDataWithChan(request *DescribeDomainFlowDataRequest) (<-chan *DescribeDomainFlowDataResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeDomainFlowDataWithChan(request *DescribeDomainFlow
 	return responseChan, errChan
 }
 
-// invoke DescribeDomainFlowData api with *DescribeDomainFlowDataRequest asynchronously
+// DescribeDomainFlowDataWithCallback invokes the cdn.DescribeDomainFlowData API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describedomainflowdata.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainFlowDataWithCallback(request *DescribeDomainFlowDataRequest, callback func(response *DescribeDomainFlowDataResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeDomainFlowDataWithCallback(request *DescribeDomain
 	return result
 }
 
+// DescribeDomainFlowDataRequest is the request struct for api DescribeDomainFlowData
 type DescribeDomainFlowDataRequest struct {
 	*requests.RpcRequest
 	OwnerId        requests.Integer `position:"Query" name:"OwnerId"`
@@ -88,6 +89,7 @@ type DescribeDomainFlowDataRequest struct {
 	FixTimeGap     string           `position:"Query" name:"FixTimeGap"`
 }
 
+// DescribeDomainFlowDataResponse is the response struct for api DescribeDomainFlowData
 type DescribeDomainFlowDataResponse struct {
 	*responses.BaseResponse
 	RequestId           string              `json:"RequestId" xml:"RequestId"`
@@ -98,8 +100,8 @@ type DescribeDomainFlowDataResponse struct {
 	FlowDataPerInterval FlowDataPerInterval `json:"FlowDataPerInterval" xml:"FlowDataPerInterval"`
 }
 
-// create a request to invoke DescribeDomainFlowData API
-func CreateDescribeDomainFlowDataRequest() (request *DescribeDomainFlowDataRequest) {
+// CreateDescribeDomainFlowDataRequest creates a request to invoke DescribeDomainFlowData API
+func CreateDescribeDomainFlowDataRequest(request *DescribeDomainFlowDataRequest) {
 	request = &DescribeDomainFlowDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -107,7 +109,7 @@ func CreateDescribeDomainFlowDataRequest() (request *DescribeDomainFlowDataReque
 	return
 }
 
-// create a response to parse from DescribeDomainFlowData response
+// CreateDescribeDomainFlowDataResponse creates a response to parse from DescribeDomainFlowData response
 func CreateDescribeDomainFlowDataResponse() (response *DescribeDomainFlowDataResponse) {
 	response = &DescribeDomainFlowDataResponse{
 		BaseResponse: &responses.BaseResponse{},

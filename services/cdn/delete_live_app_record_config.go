@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteLiveAppRecordConfig api with *DeleteLiveAppRecordConfigRequest synchronously
+// DeleteLiveAppRecordConfig invokes the cdn.DeleteLiveAppRecordConfig API synchronously
 // api document: https://help.aliyun.com/api/cdn/deleteliveapprecordconfig.html
 func (client *Client) DeleteLiveAppRecordConfig(request *DeleteLiveAppRecordConfigRequest) (response *DeleteLiveAppRecordConfigResponse, err error) {
 	response = CreateDeleteLiveAppRecordConfigResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteLiveAppRecordConfig(request *DeleteLiveAppRecordConf
 	return
 }
 
-// invoke DeleteLiveAppRecordConfig api with *DeleteLiveAppRecordConfigRequest asynchronously
+// DeleteLiveAppRecordConfigWithChan invokes the cdn.DeleteLiveAppRecordConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/deleteliveapprecordconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteLiveAppRecordConfigWithChan(request *DeleteLiveAppRecordConfigRequest) (<-chan *DeleteLiveAppRecordConfigResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteLiveAppRecordConfigWithChan(request *DeleteLiveAppRe
 	return responseChan, errChan
 }
 
-// invoke DeleteLiveAppRecordConfig api with *DeleteLiveAppRecordConfigRequest asynchronously
+// DeleteLiveAppRecordConfigWithCallback invokes the cdn.DeleteLiveAppRecordConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/deleteliveapprecordconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteLiveAppRecordConfigWithCallback(request *DeleteLiveAppRecordConfigRequest, callback func(response *DeleteLiveAppRecordConfigResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DeleteLiveAppRecordConfigWithCallback(request *DeleteLiveA
 	return result
 }
 
+// DeleteLiveAppRecordConfigRequest is the request struct for api DeleteLiveAppRecordConfig
 type DeleteLiveAppRecordConfigRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -81,13 +82,14 @@ type DeleteLiveAppRecordConfigRequest struct {
 	AppName       string           `position:"Query" name:"AppName"`
 }
 
+// DeleteLiveAppRecordConfigResponse is the response struct for api DeleteLiveAppRecordConfig
 type DeleteLiveAppRecordConfigResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DeleteLiveAppRecordConfig API
-func CreateDeleteLiveAppRecordConfigRequest() (request *DeleteLiveAppRecordConfigRequest) {
+// CreateDeleteLiveAppRecordConfigRequest creates a request to invoke DeleteLiveAppRecordConfig API
+func CreateDeleteLiveAppRecordConfigRequest(request *DeleteLiveAppRecordConfigRequest) {
 	request = &DeleteLiveAppRecordConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateDeleteLiveAppRecordConfigRequest() (request *DeleteLiveAppRecordConfi
 	return
 }
 
-// create a response to parse from DeleteLiveAppRecordConfig response
+// CreateDeleteLiveAppRecordConfigResponse creates a response to parse from DeleteLiveAppRecordConfig response
 func CreateDeleteLiveAppRecordConfigResponse() (response *DeleteLiveAppRecordConfigResponse) {
 	response = &DeleteLiveAppRecordConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

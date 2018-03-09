@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeTemplateAttribute api with *DescribeTemplateAttributeRequest synchronously
+// DescribeTemplateAttribute invokes the cs.DescribeTemplateAttribute API synchronously
 // api document: https://help.aliyun.com/api/cs/describetemplateattribute.html
 func (client *Client) DescribeTemplateAttribute(request *DescribeTemplateAttributeRequest) (response *DescribeTemplateAttributeResponse, err error) {
 	response = CreateDescribeTemplateAttributeResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeTemplateAttribute(request *DescribeTemplateAttribu
 	return
 }
 
-// invoke DescribeTemplateAttribute api with *DescribeTemplateAttributeRequest asynchronously
+// DescribeTemplateAttributeWithChan invokes the cs.DescribeTemplateAttribute API asynchronously
 // api document: https://help.aliyun.com/api/cs/describetemplateattribute.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeTemplateAttributeWithChan(request *DescribeTemplateAttributeRequest) (<-chan *DescribeTemplateAttributeResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeTemplateAttributeWithChan(request *DescribeTemplat
 	return responseChan, errChan
 }
 
-// invoke DescribeTemplateAttribute api with *DescribeTemplateAttributeRequest asynchronously
+// DescribeTemplateAttributeWithCallback invokes the cs.DescribeTemplateAttribute API asynchronously
 // api document: https://help.aliyun.com/api/cs/describetemplateattribute.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeTemplateAttributeWithCallback(request *DescribeTemplateAttributeRequest, callback func(response *DescribeTemplateAttributeResponse, err error)) <-chan int {
@@ -73,17 +73,19 @@ func (client *Client) DescribeTemplateAttributeWithCallback(request *DescribeTem
 	return result
 }
 
+// DescribeTemplateAttributeRequest is the request struct for api DescribeTemplateAttribute
 type DescribeTemplateAttributeRequest struct {
 	*requests.RoaRequest
 	TemplateId string `position:"Path" name:"TemplateId"`
 }
 
+// DescribeTemplateAttributeResponse is the response struct for api DescribeTemplateAttribute
 type DescribeTemplateAttributeResponse struct {
 	*responses.BaseResponse
 }
 
-// create a request to invoke DescribeTemplateAttribute API
-func CreateDescribeTemplateAttributeRequest() (request *DescribeTemplateAttributeRequest) {
+// CreateDescribeTemplateAttributeRequest creates a request to invoke DescribeTemplateAttribute API
+func CreateDescribeTemplateAttributeRequest(request *DescribeTemplateAttributeRequest) {
 	request = &DescribeTemplateAttributeRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
@@ -92,7 +94,7 @@ func CreateDescribeTemplateAttributeRequest() (request *DescribeTemplateAttribut
 	return
 }
 
-// create a response to parse from DescribeTemplateAttribute response
+// CreateDescribeTemplateAttributeResponse creates a response to parse from DescribeTemplateAttribute response
 func CreateDescribeTemplateAttributeResponse() (response *DescribeTemplateAttributeResponse) {
 	response = &DescribeTemplateAttributeResponse{
 		BaseResponse: &responses.BaseResponse{},

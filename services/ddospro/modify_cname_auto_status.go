@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifyCnameAutoStatus api with *ModifyCnameAutoStatusRequest synchronously
+// ModifyCnameAutoStatus invokes the ddospro.ModifyCnameAutoStatus API synchronously
 // api document: https://help.aliyun.com/api/ddospro/modifycnameautostatus.html
 func (client *Client) ModifyCnameAutoStatus(request *ModifyCnameAutoStatusRequest) (response *ModifyCnameAutoStatusResponse, err error) {
 	response = CreateModifyCnameAutoStatusResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifyCnameAutoStatus(request *ModifyCnameAutoStatusReques
 	return
 }
 
-// invoke ModifyCnameAutoStatus api with *ModifyCnameAutoStatusRequest asynchronously
+// ModifyCnameAutoStatusWithChan invokes the ddospro.ModifyCnameAutoStatus API asynchronously
 // api document: https://help.aliyun.com/api/ddospro/modifycnameautostatus.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyCnameAutoStatusWithChan(request *ModifyCnameAutoStatusRequest) (<-chan *ModifyCnameAutoStatusResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifyCnameAutoStatusWithChan(request *ModifyCnameAutoStat
 	return responseChan, errChan
 }
 
-// invoke ModifyCnameAutoStatus api with *ModifyCnameAutoStatusRequest asynchronously
+// ModifyCnameAutoStatusWithCallback invokes the ddospro.ModifyCnameAutoStatus API asynchronously
 // api document: https://help.aliyun.com/api/ddospro/modifycnameautostatus.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyCnameAutoStatusWithCallback(request *ModifyCnameAutoStatusRequest, callback func(response *ModifyCnameAutoStatusResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ModifyCnameAutoStatusWithCallback(request *ModifyCnameAuto
 	return result
 }
 
+// ModifyCnameAutoStatusRequest is the request struct for api ModifyCnameAutoStatus
 type ModifyCnameAutoStatusRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
@@ -80,13 +81,14 @@ type ModifyCnameAutoStatusRequest struct {
 	Enable          requests.Boolean `position:"Query" name:"Enable"`
 }
 
+// ModifyCnameAutoStatusResponse is the response struct for api ModifyCnameAutoStatus
 type ModifyCnameAutoStatusResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ModifyCnameAutoStatus API
-func CreateModifyCnameAutoStatusRequest() (request *ModifyCnameAutoStatusRequest) {
+// CreateModifyCnameAutoStatusRequest creates a request to invoke ModifyCnameAutoStatus API
+func CreateModifyCnameAutoStatusRequest(request *ModifyCnameAutoStatusRequest) {
 	request = &ModifyCnameAutoStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -94,7 +96,7 @@ func CreateModifyCnameAutoStatusRequest() (request *ModifyCnameAutoStatusRequest
 	return
 }
 
-// create a response to parse from ModifyCnameAutoStatus response
+// CreateModifyCnameAutoStatusResponse creates a response to parse from ModifyCnameAutoStatus response
 func CreateModifyCnameAutoStatusResponse() (response *ModifyCnameAutoStatusResponse) {
 	response = &ModifyCnameAutoStatusResponse{
 		BaseResponse: &responses.BaseResponse{},

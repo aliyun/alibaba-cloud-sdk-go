@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifyGlobalAccelerationInstanceSpec api with *ModifyGlobalAccelerationInstanceSpecRequest synchronously
+// ModifyGlobalAccelerationInstanceSpec invokes the vpc.ModifyGlobalAccelerationInstanceSpec API synchronously
 // api document: https://help.aliyun.com/api/vpc/modifyglobalaccelerationinstancespec.html
 func (client *Client) ModifyGlobalAccelerationInstanceSpec(request *ModifyGlobalAccelerationInstanceSpecRequest) (response *ModifyGlobalAccelerationInstanceSpecResponse, err error) {
 	response = CreateModifyGlobalAccelerationInstanceSpecResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifyGlobalAccelerationInstanceSpec(request *ModifyGlobal
 	return
 }
 
-// invoke ModifyGlobalAccelerationInstanceSpec api with *ModifyGlobalAccelerationInstanceSpecRequest asynchronously
+// ModifyGlobalAccelerationInstanceSpecWithChan invokes the vpc.ModifyGlobalAccelerationInstanceSpec API asynchronously
 // api document: https://help.aliyun.com/api/vpc/modifyglobalaccelerationinstancespec.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyGlobalAccelerationInstanceSpecWithChan(request *ModifyGlobalAccelerationInstanceSpecRequest) (<-chan *ModifyGlobalAccelerationInstanceSpecResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifyGlobalAccelerationInstanceSpecWithChan(request *Modi
 	return responseChan, errChan
 }
 
-// invoke ModifyGlobalAccelerationInstanceSpec api with *ModifyGlobalAccelerationInstanceSpecRequest asynchronously
+// ModifyGlobalAccelerationInstanceSpecWithCallback invokes the vpc.ModifyGlobalAccelerationInstanceSpec API asynchronously
 // api document: https://help.aliyun.com/api/vpc/modifyglobalaccelerationinstancespec.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyGlobalAccelerationInstanceSpecWithCallback(request *ModifyGlobalAccelerationInstanceSpecRequest, callback func(response *ModifyGlobalAccelerationInstanceSpecResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ModifyGlobalAccelerationInstanceSpecWithCallback(request *
 	return result
 }
 
+// ModifyGlobalAccelerationInstanceSpecRequest is the request struct for api ModifyGlobalAccelerationInstanceSpec
 type ModifyGlobalAccelerationInstanceSpecRequest struct {
 	*requests.RpcRequest
 	OwnerId                      requests.Integer `position:"Query" name:"OwnerId"`
@@ -83,13 +84,14 @@ type ModifyGlobalAccelerationInstanceSpecRequest struct {
 	OwnerAccount                 string           `position:"Query" name:"OwnerAccount"`
 }
 
+// ModifyGlobalAccelerationInstanceSpecResponse is the response struct for api ModifyGlobalAccelerationInstanceSpec
 type ModifyGlobalAccelerationInstanceSpecResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ModifyGlobalAccelerationInstanceSpec API
-func CreateModifyGlobalAccelerationInstanceSpecRequest() (request *ModifyGlobalAccelerationInstanceSpecRequest) {
+// CreateModifyGlobalAccelerationInstanceSpecRequest creates a request to invoke ModifyGlobalAccelerationInstanceSpec API
+func CreateModifyGlobalAccelerationInstanceSpecRequest(request *ModifyGlobalAccelerationInstanceSpecRequest) {
 	request = &ModifyGlobalAccelerationInstanceSpecRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateModifyGlobalAccelerationInstanceSpecRequest() (request *ModifyGlobalA
 	return
 }
 
-// create a response to parse from ModifyGlobalAccelerationInstanceSpec response
+// CreateModifyGlobalAccelerationInstanceSpecResponse creates a response to parse from ModifyGlobalAccelerationInstanceSpec response
 func CreateModifyGlobalAccelerationInstanceSpecResponse() (response *ModifyGlobalAccelerationInstanceSpecResponse) {
 	response = &ModifyGlobalAccelerationInstanceSpecResponse{
 		BaseResponse: &responses.BaseResponse{},

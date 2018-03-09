@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke QueryPushList api with *QueryPushListRequest synchronously
+// QueryPushList invokes the push.QueryPushList API synchronously
 // api document: https://help.aliyun.com/api/push/querypushlist.html
 func (client *Client) QueryPushList(request *QueryPushListRequest) (response *QueryPushListResponse, err error) {
 	response = CreateQueryPushListResponse()
@@ -28,7 +28,7 @@ func (client *Client) QueryPushList(request *QueryPushListRequest) (response *Qu
 	return
 }
 
-// invoke QueryPushList api with *QueryPushListRequest asynchronously
+// QueryPushListWithChan invokes the push.QueryPushList API asynchronously
 // api document: https://help.aliyun.com/api/push/querypushlist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryPushListWithChan(request *QueryPushListRequest) (<-chan *QueryPushListResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) QueryPushListWithChan(request *QueryPushListRequest) (<-ch
 	return responseChan, errChan
 }
 
-// invoke QueryPushList api with *QueryPushListRequest asynchronously
+// QueryPushListWithCallback invokes the push.QueryPushList API asynchronously
 // api document: https://help.aliyun.com/api/push/querypushlist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryPushListWithCallback(request *QueryPushListRequest, callback func(response *QueryPushListResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) QueryPushListWithCallback(request *QueryPushListRequest, c
 	return result
 }
 
+// QueryPushListRequest is the request struct for api QueryPushList
 type QueryPushListRequest struct {
 	*requests.RpcRequest
 	AppKey    requests.Integer `position:"Query" name:"AppKey"`
@@ -83,6 +84,7 @@ type QueryPushListRequest struct {
 	PageSize  requests.Integer `position:"Query" name:"PageSize"`
 }
 
+// QueryPushListResponse is the response struct for api QueryPushList
 type QueryPushListResponse struct {
 	*responses.BaseResponse
 	RequestId        string                          `json:"RequestId" xml:"RequestId"`
@@ -92,8 +94,8 @@ type QueryPushListResponse struct {
 	PushMessageInfos PushMessageInfosInQueryPushList `json:"PushMessageInfos" xml:"PushMessageInfos"`
 }
 
-// create a request to invoke QueryPushList API
-func CreateQueryPushListRequest() (request *QueryPushListRequest) {
+// CreateQueryPushListRequest creates a request to invoke QueryPushList API
+func CreateQueryPushListRequest(request *QueryPushListRequest) {
 	request = &QueryPushListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -101,7 +103,7 @@ func CreateQueryPushListRequest() (request *QueryPushListRequest) {
 	return
 }
 
-// create a response to parse from QueryPushList response
+// CreateQueryPushListResponse creates a response to parse from QueryPushList response
 func CreateQueryPushListResponse() (response *QueryPushListResponse) {
 	response = &QueryPushListResponse{
 		BaseResponse: &responses.BaseResponse{},

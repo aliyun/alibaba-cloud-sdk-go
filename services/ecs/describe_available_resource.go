@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeAvailableResource api with *DescribeAvailableResourceRequest synchronously
+// DescribeAvailableResource invokes the ecs.DescribeAvailableResource API synchronously
 // api document: https://help.aliyun.com/api/ecs/describeavailableresource.html
 func (client *Client) DescribeAvailableResource(request *DescribeAvailableResourceRequest) (response *DescribeAvailableResourceResponse, err error) {
 	response = CreateDescribeAvailableResourceResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeAvailableResource(request *DescribeAvailableResour
 	return
 }
 
-// invoke DescribeAvailableResource api with *DescribeAvailableResourceRequest asynchronously
+// DescribeAvailableResourceWithChan invokes the ecs.DescribeAvailableResource API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describeavailableresource.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAvailableResourceWithChan(request *DescribeAvailableResourceRequest) (<-chan *DescribeAvailableResourceResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeAvailableResourceWithChan(request *DescribeAvailab
 	return responseChan, errChan
 }
 
-// invoke DescribeAvailableResource api with *DescribeAvailableResourceRequest asynchronously
+// DescribeAvailableResourceWithCallback invokes the ecs.DescribeAvailableResource API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describeavailableresource.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAvailableResourceWithCallback(request *DescribeAvailableResourceRequest, callback func(response *DescribeAvailableResourceResponse, err error)) <-chan int {
@@ -73,18 +73,20 @@ func (client *Client) DescribeAvailableResourceWithCallback(request *DescribeAva
 	return result
 }
 
+// DescribeAvailableResourceRequest is the request struct for api DescribeAvailableResource
 type DescribeAvailableResourceRequest struct {
 	*requests.RpcRequest
 }
 
+// DescribeAvailableResourceResponse is the response struct for api DescribeAvailableResource
 type DescribeAvailableResourceResponse struct {
 	*responses.BaseResponse
 	RequestId      string                                    `json:"RequestId" xml:"RequestId"`
 	AvailableZones AvailableZonesInDescribeAvailableResource `json:"AvailableZones" xml:"AvailableZones"`
 }
 
-// create a request to invoke DescribeAvailableResource API
-func CreateDescribeAvailableResourceRequest() (request *DescribeAvailableResourceRequest) {
+// CreateDescribeAvailableResourceRequest creates a request to invoke DescribeAvailableResource API
+func CreateDescribeAvailableResourceRequest(request *DescribeAvailableResourceRequest) {
 	request = &DescribeAvailableResourceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -92,7 +94,7 @@ func CreateDescribeAvailableResourceRequest() (request *DescribeAvailableResourc
 	return
 }
 
-// create a response to parse from DescribeAvailableResource response
+// CreateDescribeAvailableResourceResponse creates a response to parse from DescribeAvailableResource response
 func CreateDescribeAvailableResourceResponse() (response *DescribeAvailableResourceResponse) {
 	response = &DescribeAvailableResourceResponse{
 		BaseResponse: &responses.BaseResponse{},

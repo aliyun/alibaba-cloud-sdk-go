@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ListPushRecords api with *ListPushRecordsRequest synchronously
+// ListPushRecords invokes the push.ListPushRecords API synchronously
 // api document: https://help.aliyun.com/api/push/listpushrecords.html
 func (client *Client) ListPushRecords(request *ListPushRecordsRequest) (response *ListPushRecordsResponse, err error) {
 	response = CreateListPushRecordsResponse()
@@ -28,7 +28,7 @@ func (client *Client) ListPushRecords(request *ListPushRecordsRequest) (response
 	return
 }
 
-// invoke ListPushRecords api with *ListPushRecordsRequest asynchronously
+// ListPushRecordsWithChan invokes the push.ListPushRecords API asynchronously
 // api document: https://help.aliyun.com/api/push/listpushrecords.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListPushRecordsWithChan(request *ListPushRecordsRequest) (<-chan *ListPushRecordsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ListPushRecordsWithChan(request *ListPushRecordsRequest) (
 	return responseChan, errChan
 }
 
-// invoke ListPushRecords api with *ListPushRecordsRequest asynchronously
+// ListPushRecordsWithCallback invokes the push.ListPushRecords API asynchronously
 // api document: https://help.aliyun.com/api/push/listpushrecords.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListPushRecordsWithCallback(request *ListPushRecordsRequest, callback func(response *ListPushRecordsResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ListPushRecordsWithCallback(request *ListPushRecordsReques
 	return result
 }
 
+// ListPushRecordsRequest is the request struct for api ListPushRecords
 type ListPushRecordsRequest struct {
 	*requests.RpcRequest
 	AppKey    requests.Integer `position:"Query" name:"AppKey"`
@@ -83,6 +84,7 @@ type ListPushRecordsRequest struct {
 	PageSize  requests.Integer `position:"Query" name:"PageSize"`
 }
 
+// ListPushRecordsResponse is the response struct for api ListPushRecords
 type ListPushRecordsResponse struct {
 	*responses.BaseResponse
 	RequestId        string                            `json:"RequestId" xml:"RequestId"`
@@ -92,8 +94,8 @@ type ListPushRecordsResponse struct {
 	PushMessageInfos PushMessageInfosInListPushRecords `json:"PushMessageInfos" xml:"PushMessageInfos"`
 }
 
-// create a request to invoke ListPushRecords API
-func CreateListPushRecordsRequest() (request *ListPushRecordsRequest) {
+// CreateListPushRecordsRequest creates a request to invoke ListPushRecords API
+func CreateListPushRecordsRequest(request *ListPushRecordsRequest) {
 	request = &ListPushRecordsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -101,7 +103,7 @@ func CreateListPushRecordsRequest() (request *ListPushRecordsRequest) {
 	return
 }
 
-// create a response to parse from ListPushRecords response
+// CreateListPushRecordsResponse creates a response to parse from ListPushRecords response
 func CreateListPushRecordsResponse() (response *ListPushRecordsResponse) {
 	response = &ListPushRecordsResponse{
 		BaseResponse: &responses.BaseResponse{},

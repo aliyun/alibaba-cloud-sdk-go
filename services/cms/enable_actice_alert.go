@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke EnableActiceAlert api with *EnableActiceAlertRequest synchronously
+// EnableActiceAlert invokes the cms.EnableActiceAlert API synchronously
 // api document: https://help.aliyun.com/api/cms/enableacticealert.html
 func (client *Client) EnableActiceAlert(request *EnableActiceAlertRequest) (response *EnableActiceAlertResponse, err error) {
 	response = CreateEnableActiceAlertResponse()
@@ -28,7 +28,7 @@ func (client *Client) EnableActiceAlert(request *EnableActiceAlertRequest) (resp
 	return
 }
 
-// invoke EnableActiceAlert api with *EnableActiceAlertRequest asynchronously
+// EnableActiceAlertWithChan invokes the cms.EnableActiceAlert API asynchronously
 // api document: https://help.aliyun.com/api/cms/enableacticealert.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EnableActiceAlertWithChan(request *EnableActiceAlertRequest) (<-chan *EnableActiceAlertResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) EnableActiceAlertWithChan(request *EnableActiceAlertReques
 	return responseChan, errChan
 }
 
-// invoke EnableActiceAlert api with *EnableActiceAlertRequest asynchronously
+// EnableActiceAlertWithCallback invokes the cms.EnableActiceAlert API asynchronously
 // api document: https://help.aliyun.com/api/cms/enableacticealert.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EnableActiceAlertWithCallback(request *EnableActiceAlertRequest, callback func(response *EnableActiceAlertResponse, err error)) <-chan int {
@@ -73,12 +73,14 @@ func (client *Client) EnableActiceAlertWithCallback(request *EnableActiceAlertRe
 	return result
 }
 
+// EnableActiceAlertRequest is the request struct for api EnableActiceAlert
 type EnableActiceAlertRequest struct {
 	*requests.RpcRequest
 	Product string `position:"Query" name:"Product"`
 	UserId  string `position:"Query" name:"UserId"`
 }
 
+// EnableActiceAlertResponse is the response struct for api EnableActiceAlert
 type EnableActiceAlertResponse struct {
 	*responses.BaseResponse
 	Success bool   `json:"Success" xml:"Success"`
@@ -86,8 +88,8 @@ type EnableActiceAlertResponse struct {
 	Message string `json:"Message" xml:"Message"`
 }
 
-// create a request to invoke EnableActiceAlert API
-func CreateEnableActiceAlertRequest() (request *EnableActiceAlertRequest) {
+// CreateEnableActiceAlertRequest creates a request to invoke EnableActiceAlert API
+func CreateEnableActiceAlertRequest(request *EnableActiceAlertRequest) {
 	request = &EnableActiceAlertRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateEnableActiceAlertRequest() (request *EnableActiceAlertRequest) {
 	return
 }
 
-// create a response to parse from EnableActiceAlert response
+// CreateEnableActiceAlertResponse creates a response to parse from EnableActiceAlert response
 func CreateEnableActiceAlertResponse() (response *EnableActiceAlertResponse) {
 	response = &EnableActiceAlertResponse{
 		BaseResponse: &responses.BaseResponse{},

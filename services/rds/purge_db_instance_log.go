@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke PurgeDBInstanceLog api with *PurgeDBInstanceLogRequest synchronously
+// PurgeDBInstanceLog invokes the rds.PurgeDBInstanceLog API synchronously
 // api document: https://help.aliyun.com/api/rds/purgedbinstancelog.html
 func (client *Client) PurgeDBInstanceLog(request *PurgeDBInstanceLogRequest) (response *PurgeDBInstanceLogResponse, err error) {
 	response = CreatePurgeDBInstanceLogResponse()
@@ -28,7 +28,7 @@ func (client *Client) PurgeDBInstanceLog(request *PurgeDBInstanceLogRequest) (re
 	return
 }
 
-// invoke PurgeDBInstanceLog api with *PurgeDBInstanceLogRequest asynchronously
+// PurgeDBInstanceLogWithChan invokes the rds.PurgeDBInstanceLog API asynchronously
 // api document: https://help.aliyun.com/api/rds/purgedbinstancelog.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PurgeDBInstanceLogWithChan(request *PurgeDBInstanceLogRequest) (<-chan *PurgeDBInstanceLogResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) PurgeDBInstanceLogWithChan(request *PurgeDBInstanceLogRequ
 	return responseChan, errChan
 }
 
-// invoke PurgeDBInstanceLog api with *PurgeDBInstanceLogRequest asynchronously
+// PurgeDBInstanceLogWithCallback invokes the rds.PurgeDBInstanceLog API asynchronously
 // api document: https://help.aliyun.com/api/rds/purgedbinstancelog.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PurgeDBInstanceLogWithCallback(request *PurgeDBInstanceLogRequest, callback func(response *PurgeDBInstanceLogResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) PurgeDBInstanceLogWithCallback(request *PurgeDBInstanceLog
 	return result
 }
 
+// PurgeDBInstanceLogRequest is the request struct for api PurgeDBInstanceLog
 type PurgeDBInstanceLogRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -83,13 +84,14 @@ type PurgeDBInstanceLogRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// PurgeDBInstanceLogResponse is the response struct for api PurgeDBInstanceLog
 type PurgeDBInstanceLogResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke PurgeDBInstanceLog API
-func CreatePurgeDBInstanceLogRequest() (request *PurgeDBInstanceLogRequest) {
+// CreatePurgeDBInstanceLogRequest creates a request to invoke PurgeDBInstanceLog API
+func CreatePurgeDBInstanceLogRequest(request *PurgeDBInstanceLogRequest) {
 	request = &PurgeDBInstanceLogRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreatePurgeDBInstanceLogRequest() (request *PurgeDBInstanceLogRequest) {
 	return
 }
 
-// create a response to parse from PurgeDBInstanceLog response
+// CreatePurgeDBInstanceLogResponse creates a response to parse from PurgeDBInstanceLog response
 func CreatePurgeDBInstanceLogResponse() (response *PurgeDBInstanceLogResponse) {
 	response = &PurgeDBInstanceLogResponse{
 		BaseResponse: &responses.BaseResponse{},

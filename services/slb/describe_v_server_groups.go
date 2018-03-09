@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeVServerGroups api with *DescribeVServerGroupsRequest synchronously
+// DescribeVServerGroups invokes the slb.DescribeVServerGroups API synchronously
 // api document: https://help.aliyun.com/api/slb/describevservergroups.html
 func (client *Client) DescribeVServerGroups(request *DescribeVServerGroupsRequest) (response *DescribeVServerGroupsResponse, err error) {
 	response = CreateDescribeVServerGroupsResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeVServerGroups(request *DescribeVServerGroupsReques
 	return
 }
 
-// invoke DescribeVServerGroups api with *DescribeVServerGroupsRequest asynchronously
+// DescribeVServerGroupsWithChan invokes the slb.DescribeVServerGroups API asynchronously
 // api document: https://help.aliyun.com/api/slb/describevservergroups.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeVServerGroupsWithChan(request *DescribeVServerGroupsRequest) (<-chan *DescribeVServerGroupsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeVServerGroupsWithChan(request *DescribeVServerGrou
 	return responseChan, errChan
 }
 
-// invoke DescribeVServerGroups api with *DescribeVServerGroupsRequest asynchronously
+// DescribeVServerGroupsWithCallback invokes the slb.DescribeVServerGroups API asynchronously
 // api document: https://help.aliyun.com/api/slb/describevservergroups.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeVServerGroupsWithCallback(request *DescribeVServerGroupsRequest, callback func(response *DescribeVServerGroupsResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeVServerGroupsWithCallback(request *DescribeVServer
 	return result
 }
 
+// DescribeVServerGroupsRequest is the request struct for api DescribeVServerGroups
 type DescribeVServerGroupsRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,14 +85,15 @@ type DescribeVServerGroupsRequest struct {
 	LoadBalancerId       string           `position:"Query" name:"LoadBalancerId"`
 }
 
+// DescribeVServerGroupsResponse is the response struct for api DescribeVServerGroups
 type DescribeVServerGroupsResponse struct {
 	*responses.BaseResponse
 	RequestId     string                               `json:"RequestId" xml:"RequestId"`
 	VServerGroups VServerGroupsInDescribeVServerGroups `json:"VServerGroups" xml:"VServerGroups"`
 }
 
-// create a request to invoke DescribeVServerGroups API
-func CreateDescribeVServerGroupsRequest() (request *DescribeVServerGroupsRequest) {
+// CreateDescribeVServerGroupsRequest creates a request to invoke DescribeVServerGroups API
+func CreateDescribeVServerGroupsRequest(request *DescribeVServerGroupsRequest) {
 	request = &DescribeVServerGroupsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateDescribeVServerGroupsRequest() (request *DescribeVServerGroupsRequest
 	return
 }
 
-// create a response to parse from DescribeVServerGroups response
+// CreateDescribeVServerGroupsResponse creates a response to parse from DescribeVServerGroups response
 func CreateDescribeVServerGroupsResponse() (response *DescribeVServerGroupsResponse) {
 	response = &DescribeVServerGroupsResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifySecurityIps api with *ModifySecurityIpsRequest synchronously
+// ModifySecurityIps invokes the rds.ModifySecurityIps API synchronously
 // api document: https://help.aliyun.com/api/rds/modifysecurityips.html
 func (client *Client) ModifySecurityIps(request *ModifySecurityIpsRequest) (response *ModifySecurityIpsResponse, err error) {
 	response = CreateModifySecurityIpsResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifySecurityIps(request *ModifySecurityIpsRequest) (resp
 	return
 }
 
-// invoke ModifySecurityIps api with *ModifySecurityIpsRequest asynchronously
+// ModifySecurityIpsWithChan invokes the rds.ModifySecurityIps API asynchronously
 // api document: https://help.aliyun.com/api/rds/modifysecurityips.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySecurityIpsWithChan(request *ModifySecurityIpsRequest) (<-chan *ModifySecurityIpsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifySecurityIpsWithChan(request *ModifySecurityIpsReques
 	return responseChan, errChan
 }
 
-// invoke ModifySecurityIps api with *ModifySecurityIpsRequest asynchronously
+// ModifySecurityIpsWithCallback invokes the rds.ModifySecurityIps API asynchronously
 // api document: https://help.aliyun.com/api/rds/modifysecurityips.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySecurityIpsWithCallback(request *ModifySecurityIpsRequest, callback func(response *ModifySecurityIpsResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ModifySecurityIpsWithCallback(request *ModifySecurityIpsRe
 	return result
 }
 
+// ModifySecurityIpsRequest is the request struct for api ModifySecurityIps
 type ModifySecurityIpsRequest struct {
 	*requests.RpcRequest
 	OwnerId                    requests.Integer `position:"Query" name:"OwnerId"`
@@ -89,14 +90,15 @@ type ModifySecurityIpsRequest struct {
 	ModifyMode                 string           `position:"Query" name:"ModifyMode"`
 }
 
+// ModifySecurityIpsResponse is the response struct for api ModifySecurityIps
 type ModifySecurityIpsResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	TaskId    string `json:"TaskId" xml:"TaskId"`
 }
 
-// create a request to invoke ModifySecurityIps API
-func CreateModifySecurityIpsRequest() (request *ModifySecurityIpsRequest) {
+// CreateModifySecurityIpsRequest creates a request to invoke ModifySecurityIps API
+func CreateModifySecurityIpsRequest(request *ModifySecurityIpsRequest) {
 	request = &ModifySecurityIpsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -104,7 +106,7 @@ func CreateModifySecurityIpsRequest() (request *ModifySecurityIpsRequest) {
 	return
 }
 
-// create a response to parse from ModifySecurityIps response
+// CreateModifySecurityIpsResponse creates a response to parse from ModifySecurityIps response
 func CreateModifySecurityIpsResponse() (response *ModifySecurityIpsResponse) {
 	response = &ModifySecurityIpsResponse{
 		BaseResponse: &responses.BaseResponse{},

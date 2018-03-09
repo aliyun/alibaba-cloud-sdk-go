@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SetDynamicConfig api with *SetDynamicConfigRequest synchronously
+// SetDynamicConfig invokes the cdn.SetDynamicConfig API synchronously
 // api document: https://help.aliyun.com/api/cdn/setdynamicconfig.html
 func (client *Client) SetDynamicConfig(request *SetDynamicConfigRequest) (response *SetDynamicConfigResponse, err error) {
 	response = CreateSetDynamicConfigResponse()
@@ -28,7 +28,7 @@ func (client *Client) SetDynamicConfig(request *SetDynamicConfigRequest) (respon
 	return
 }
 
-// invoke SetDynamicConfig api with *SetDynamicConfigRequest asynchronously
+// SetDynamicConfigWithChan invokes the cdn.SetDynamicConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/setdynamicconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetDynamicConfigWithChan(request *SetDynamicConfigRequest) (<-chan *SetDynamicConfigResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SetDynamicConfigWithChan(request *SetDynamicConfigRequest)
 	return responseChan, errChan
 }
 
-// invoke SetDynamicConfig api with *SetDynamicConfigRequest asynchronously
+// SetDynamicConfigWithCallback invokes the cdn.SetDynamicConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/setdynamicconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetDynamicConfigWithCallback(request *SetDynamicConfigRequest, callback func(response *SetDynamicConfigResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SetDynamicConfigWithCallback(request *SetDynamicConfigRequ
 	return result
 }
 
+// SetDynamicConfigRequest is the request struct for api SetDynamicConfig
 type SetDynamicConfigRequest struct {
 	*requests.RpcRequest
 	OwnerId             requests.Integer `position:"Query" name:"OwnerId"`
@@ -85,13 +86,14 @@ type SetDynamicConfigRequest struct {
 	DynamicCacheControl string           `position:"Query" name:"DynamicCacheControl"`
 }
 
+// SetDynamicConfigResponse is the response struct for api SetDynamicConfig
 type SetDynamicConfigResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke SetDynamicConfig API
-func CreateSetDynamicConfigRequest() (request *SetDynamicConfigRequest) {
+// CreateSetDynamicConfigRequest creates a request to invoke SetDynamicConfig API
+func CreateSetDynamicConfigRequest(request *SetDynamicConfigRequest) {
 	request = &SetDynamicConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateSetDynamicConfigRequest() (request *SetDynamicConfigRequest) {
 	return
 }
 
-// create a response to parse from SetDynamicConfig response
+// CreateSetDynamicConfigResponse creates a response to parse from SetDynamicConfig response
 func CreateSetDynamicConfigResponse() (response *SetDynamicConfigResponse) {
 	response = &SetDynamicConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteBackup api with *DeleteBackupRequest synchronously
+// DeleteBackup invokes the rds.DeleteBackup API synchronously
 // api document: https://help.aliyun.com/api/rds/deletebackup.html
 func (client *Client) DeleteBackup(request *DeleteBackupRequest) (response *DeleteBackupResponse, err error) {
 	response = CreateDeleteBackupResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteBackup(request *DeleteBackupRequest) (response *Dele
 	return
 }
 
-// invoke DeleteBackup api with *DeleteBackupRequest asynchronously
+// DeleteBackupWithChan invokes the rds.DeleteBackup API asynchronously
 // api document: https://help.aliyun.com/api/rds/deletebackup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteBackupWithChan(request *DeleteBackupRequest) (<-chan *DeleteBackupResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteBackupWithChan(request *DeleteBackupRequest) (<-chan
 	return responseChan, errChan
 }
 
-// invoke DeleteBackup api with *DeleteBackupRequest asynchronously
+// DeleteBackupWithCallback invokes the rds.DeleteBackup API asynchronously
 // api document: https://help.aliyun.com/api/rds/deletebackup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteBackupWithCallback(request *DeleteBackupRequest, callback func(response *DeleteBackupResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DeleteBackupWithCallback(request *DeleteBackupRequest, cal
 	return result
 }
 
+// DeleteBackupRequest is the request struct for api DeleteBackup
 type DeleteBackupRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -83,13 +84,14 @@ type DeleteBackupRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// DeleteBackupResponse is the response struct for api DeleteBackup
 type DeleteBackupResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DeleteBackup API
-func CreateDeleteBackupRequest() (request *DeleteBackupRequest) {
+// CreateDeleteBackupRequest creates a request to invoke DeleteBackup API
+func CreateDeleteBackupRequest(request *DeleteBackupRequest) {
 	request = &DeleteBackupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateDeleteBackupRequest() (request *DeleteBackupRequest) {
 	return
 }
 
-// create a response to parse from DeleteBackup response
+// CreateDeleteBackupResponse creates a response to parse from DeleteBackup response
 func CreateDeleteBackupResponse() (response *DeleteBackupResponse) {
 	response = &DeleteBackupResponse{
 		BaseResponse: &responses.BaseResponse{},

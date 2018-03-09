@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteSecurityGroup api with *DeleteSecurityGroupRequest synchronously
+// DeleteSecurityGroup invokes the ecs.DeleteSecurityGroup API synchronously
 // api document: https://help.aliyun.com/api/ecs/deletesecuritygroup.html
 func (client *Client) DeleteSecurityGroup(request *DeleteSecurityGroupRequest) (response *DeleteSecurityGroupResponse, err error) {
 	response = CreateDeleteSecurityGroupResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteSecurityGroup(request *DeleteSecurityGroupRequest) (
 	return
 }
 
-// invoke DeleteSecurityGroup api with *DeleteSecurityGroupRequest asynchronously
+// DeleteSecurityGroupWithChan invokes the ecs.DeleteSecurityGroup API asynchronously
 // api document: https://help.aliyun.com/api/ecs/deletesecuritygroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteSecurityGroupWithChan(request *DeleteSecurityGroupRequest) (<-chan *DeleteSecurityGroupResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteSecurityGroupWithChan(request *DeleteSecurityGroupRe
 	return responseChan, errChan
 }
 
-// invoke DeleteSecurityGroup api with *DeleteSecurityGroupRequest asynchronously
+// DeleteSecurityGroupWithCallback invokes the ecs.DeleteSecurityGroup API asynchronously
 // api document: https://help.aliyun.com/api/ecs/deletesecuritygroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteSecurityGroupWithCallback(request *DeleteSecurityGroupRequest, callback func(response *DeleteSecurityGroupResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DeleteSecurityGroupWithCallback(request *DeleteSecurityGro
 	return result
 }
 
+// DeleteSecurityGroupRequest is the request struct for api DeleteSecurityGroup
 type DeleteSecurityGroupRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,13 +83,14 @@ type DeleteSecurityGroupRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// DeleteSecurityGroupResponse is the response struct for api DeleteSecurityGroup
 type DeleteSecurityGroupResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DeleteSecurityGroup API
-func CreateDeleteSecurityGroupRequest() (request *DeleteSecurityGroupRequest) {
+// CreateDeleteSecurityGroupRequest creates a request to invoke DeleteSecurityGroup API
+func CreateDeleteSecurityGroupRequest(request *DeleteSecurityGroupRequest) {
 	request = &DeleteSecurityGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -96,7 +98,7 @@ func CreateDeleteSecurityGroupRequest() (request *DeleteSecurityGroupRequest) {
 	return
 }
 
-// create a response to parse from DeleteSecurityGroup response
+// CreateDeleteSecurityGroupResponse creates a response to parse from DeleteSecurityGroup response
 func CreateDeleteSecurityGroupResponse() (response *DeleteSecurityGroupResponse) {
 	response = &DeleteSecurityGroupResponse{
 		BaseResponse: &responses.BaseResponse{},

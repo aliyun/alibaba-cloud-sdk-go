@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeDomainWhoisInfo api with *DescribeDomainWhoisInfoRequest synchronously
+// DescribeDomainWhoisInfo invokes the alidns.DescribeDomainWhoisInfo API synchronously
 // api document: https://help.aliyun.com/api/alidns/describedomainwhoisinfo.html
 func (client *Client) DescribeDomainWhoisInfo(request *DescribeDomainWhoisInfoRequest) (response *DescribeDomainWhoisInfoResponse, err error) {
 	response = CreateDescribeDomainWhoisInfoResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeDomainWhoisInfo(request *DescribeDomainWhoisInfoRe
 	return
 }
 
-// invoke DescribeDomainWhoisInfo api with *DescribeDomainWhoisInfoRequest asynchronously
+// DescribeDomainWhoisInfoWithChan invokes the alidns.DescribeDomainWhoisInfo API asynchronously
 // api document: https://help.aliyun.com/api/alidns/describedomainwhoisinfo.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainWhoisInfoWithChan(request *DescribeDomainWhoisInfoRequest) (<-chan *DescribeDomainWhoisInfoResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeDomainWhoisInfoWithChan(request *DescribeDomainWho
 	return responseChan, errChan
 }
 
-// invoke DescribeDomainWhoisInfo api with *DescribeDomainWhoisInfoRequest asynchronously
+// DescribeDomainWhoisInfoWithCallback invokes the alidns.DescribeDomainWhoisInfo API asynchronously
 // api document: https://help.aliyun.com/api/alidns/describedomainwhoisinfo.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainWhoisInfoWithCallback(request *DescribeDomainWhoisInfoRequest, callback func(response *DescribeDomainWhoisInfoResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeDomainWhoisInfoWithCallback(request *DescribeDomai
 	return result
 }
 
+// DescribeDomainWhoisInfoRequest is the request struct for api DescribeDomainWhoisInfo
 type DescribeDomainWhoisInfoRequest struct {
 	*requests.RpcRequest
 	Lang         string `position:"Query" name:"Lang"`
@@ -81,6 +82,7 @@ type DescribeDomainWhoisInfoRequest struct {
 	GroupId      string `position:"Query" name:"GroupId"`
 }
 
+// DescribeDomainWhoisInfoResponse is the response struct for api DescribeDomainWhoisInfo
 type DescribeDomainWhoisInfoResponse struct {
 	*responses.BaseResponse
 	RequestId        string                              `json:"RequestId" xml:"RequestId"`
@@ -93,8 +95,8 @@ type DescribeDomainWhoisInfoResponse struct {
 	DnsServers       DnsServersInDescribeDomainWhoisInfo `json:"DnsServers" xml:"DnsServers"`
 }
 
-// create a request to invoke DescribeDomainWhoisInfo API
-func CreateDescribeDomainWhoisInfoRequest() (request *DescribeDomainWhoisInfoRequest) {
+// CreateDescribeDomainWhoisInfoRequest creates a request to invoke DescribeDomainWhoisInfo API
+func CreateDescribeDomainWhoisInfoRequest(request *DescribeDomainWhoisInfoRequest) {
 	request = &DescribeDomainWhoisInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -102,7 +104,7 @@ func CreateDescribeDomainWhoisInfoRequest() (request *DescribeDomainWhoisInfoReq
 	return
 }
 
-// create a response to parse from DescribeDomainWhoisInfo response
+// CreateDescribeDomainWhoisInfoResponse creates a response to parse from DescribeDomainWhoisInfo response
 func CreateDescribeDomainWhoisInfoResponse() (response *DescribeDomainWhoisInfoResponse) {
 	response = &DescribeDomainWhoisInfoResponse{
 		BaseResponse: &responses.BaseResponse{},

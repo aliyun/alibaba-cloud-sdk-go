@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CreateAccessRule api with *CreateAccessRuleRequest synchronously
+// CreateAccessRule invokes the nas.CreateAccessRule API synchronously
 // api document: https://help.aliyun.com/api/nas/createaccessrule.html
 func (client *Client) CreateAccessRule(request *CreateAccessRuleRequest) (response *CreateAccessRuleResponse, err error) {
 	response = CreateCreateAccessRuleResponse()
@@ -28,7 +28,7 @@ func (client *Client) CreateAccessRule(request *CreateAccessRuleRequest) (respon
 	return
 }
 
-// invoke CreateAccessRule api with *CreateAccessRuleRequest asynchronously
+// CreateAccessRuleWithChan invokes the nas.CreateAccessRule API asynchronously
 // api document: https://help.aliyun.com/api/nas/createaccessrule.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateAccessRuleWithChan(request *CreateAccessRuleRequest) (<-chan *CreateAccessRuleResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CreateAccessRuleWithChan(request *CreateAccessRuleRequest)
 	return responseChan, errChan
 }
 
-// invoke CreateAccessRule api with *CreateAccessRuleRequest asynchronously
+// CreateAccessRuleWithCallback invokes the nas.CreateAccessRule API asynchronously
 // api document: https://help.aliyun.com/api/nas/createaccessrule.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateAccessRuleWithCallback(request *CreateAccessRuleRequest, callback func(response *CreateAccessRuleResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) CreateAccessRuleWithCallback(request *CreateAccessRuleRequ
 	return result
 }
 
+// CreateAccessRuleRequest is the request struct for api CreateAccessRule
 type CreateAccessRuleRequest struct {
 	*requests.RpcRequest
 	AccessGroupName string           `position:"Query" name:"AccessGroupName"`
@@ -82,14 +83,15 @@ type CreateAccessRuleRequest struct {
 	Priority        requests.Integer `position:"Query" name:"Priority"`
 }
 
+// CreateAccessRuleResponse is the response struct for api CreateAccessRule
 type CreateAccessRuleResponse struct {
 	*responses.BaseResponse
 	RequestId    string `json:"RequestId" xml:"RequestId"`
 	AccessRuleId string `json:"AccessRuleId" xml:"AccessRuleId"`
 }
 
-// create a request to invoke CreateAccessRule API
-func CreateCreateAccessRuleRequest() (request *CreateAccessRuleRequest) {
+// CreateCreateAccessRuleRequest creates a request to invoke CreateAccessRule API
+func CreateCreateAccessRuleRequest(request *CreateAccessRuleRequest) {
 	request = &CreateAccessRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateCreateAccessRuleRequest() (request *CreateAccessRuleRequest) {
 	return
 }
 
-// create a response to parse from CreateAccessRule response
+// CreateCreateAccessRuleResponse creates a response to parse from CreateAccessRule response
 func CreateCreateAccessRuleResponse() (response *CreateAccessRuleResponse) {
 	response = &CreateAccessRuleResponse{
 		BaseResponse: &responses.BaseResponse{},

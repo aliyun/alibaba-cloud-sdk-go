@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeSnapshotsUsage api with *DescribeSnapshotsUsageRequest synchronously
+// DescribeSnapshotsUsage invokes the ecs.DescribeSnapshotsUsage API synchronously
 // api document: https://help.aliyun.com/api/ecs/describesnapshotsusage.html
 func (client *Client) DescribeSnapshotsUsage(request *DescribeSnapshotsUsageRequest) (response *DescribeSnapshotsUsageResponse, err error) {
 	response = CreateDescribeSnapshotsUsageResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeSnapshotsUsage(request *DescribeSnapshotsUsageRequ
 	return
 }
 
-// invoke DescribeSnapshotsUsage api with *DescribeSnapshotsUsageRequest asynchronously
+// DescribeSnapshotsUsageWithChan invokes the ecs.DescribeSnapshotsUsage API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describesnapshotsusage.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSnapshotsUsageWithChan(request *DescribeSnapshotsUsageRequest) (<-chan *DescribeSnapshotsUsageResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeSnapshotsUsageWithChan(request *DescribeSnapshotsU
 	return responseChan, errChan
 }
 
-// invoke DescribeSnapshotsUsage api with *DescribeSnapshotsUsageRequest asynchronously
+// DescribeSnapshotsUsageWithCallback invokes the ecs.DescribeSnapshotsUsage API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describesnapshotsusage.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSnapshotsUsageWithCallback(request *DescribeSnapshotsUsageRequest, callback func(response *DescribeSnapshotsUsageResponse, err error)) <-chan int {
@@ -73,10 +73,12 @@ func (client *Client) DescribeSnapshotsUsageWithCallback(request *DescribeSnapsh
 	return result
 }
 
+// DescribeSnapshotsUsageRequest is the request struct for api DescribeSnapshotsUsage
 type DescribeSnapshotsUsageRequest struct {
 	*requests.RpcRequest
 }
 
+// DescribeSnapshotsUsageResponse is the response struct for api DescribeSnapshotsUsage
 type DescribeSnapshotsUsageResponse struct {
 	*responses.BaseResponse
 	RequestId     string `json:"RequestId" xml:"RequestId"`
@@ -84,8 +86,8 @@ type DescribeSnapshotsUsageResponse struct {
 	SnapshotSize  int    `json:"SnapshotSize" xml:"SnapshotSize"`
 }
 
-// create a request to invoke DescribeSnapshotsUsage API
-func CreateDescribeSnapshotsUsageRequest() (request *DescribeSnapshotsUsageRequest) {
+// CreateDescribeSnapshotsUsageRequest creates a request to invoke DescribeSnapshotsUsage API
+func CreateDescribeSnapshotsUsageRequest(request *DescribeSnapshotsUsageRequest) {
 	request = &DescribeSnapshotsUsageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -93,7 +95,7 @@ func CreateDescribeSnapshotsUsageRequest() (request *DescribeSnapshotsUsageReque
 	return
 }
 
-// create a response to parse from DescribeSnapshotsUsage response
+// CreateDescribeSnapshotsUsageResponse creates a response to parse from DescribeSnapshotsUsage response
 func CreateDescribeSnapshotsUsageResponse() (response *DescribeSnapshotsUsageResponse) {
 	response = &DescribeSnapshotsUsageResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeDomainsUsageByDay api with *DescribeDomainsUsageByDayRequest synchronously
+// DescribeDomainsUsageByDay invokes the cdn.DescribeDomainsUsageByDay API synchronously
 // api document: https://help.aliyun.com/api/cdn/describedomainsusagebyday.html
 func (client *Client) DescribeDomainsUsageByDay(request *DescribeDomainsUsageByDayRequest) (response *DescribeDomainsUsageByDayResponse, err error) {
 	response = CreateDescribeDomainsUsageByDayResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeDomainsUsageByDay(request *DescribeDomainsUsageByD
 	return
 }
 
-// invoke DescribeDomainsUsageByDay api with *DescribeDomainsUsageByDayRequest asynchronously
+// DescribeDomainsUsageByDayWithChan invokes the cdn.DescribeDomainsUsageByDay API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describedomainsusagebyday.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainsUsageByDayWithChan(request *DescribeDomainsUsageByDayRequest) (<-chan *DescribeDomainsUsageByDayResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeDomainsUsageByDayWithChan(request *DescribeDomains
 	return responseChan, errChan
 }
 
-// invoke DescribeDomainsUsageByDay api with *DescribeDomainsUsageByDayRequest asynchronously
+// DescribeDomainsUsageByDayWithCallback invokes the cdn.DescribeDomainsUsageByDay API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describedomainsusagebyday.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainsUsageByDayWithCallback(request *DescribeDomainsUsageByDayRequest, callback func(response *DescribeDomainsUsageByDayResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeDomainsUsageByDayWithCallback(request *DescribeDom
 	return result
 }
 
+// DescribeDomainsUsageByDayRequest is the request struct for api DescribeDomainsUsageByDay
 type DescribeDomainsUsageByDayRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,6 +83,7 @@ type DescribeDomainsUsageByDayRequest struct {
 	EndTime       string           `position:"Query" name:"EndTime"`
 }
 
+// DescribeDomainsUsageByDayResponse is the response struct for api DescribeDomainsUsageByDay
 type DescribeDomainsUsageByDayResponse struct {
 	*responses.BaseResponse
 	RequestId    string      `json:"RequestId" xml:"RequestId"`
@@ -93,8 +95,8 @@ type DescribeDomainsUsageByDayResponse struct {
 	UsageByDays  UsageByDays `json:"UsageByDays" xml:"UsageByDays"`
 }
 
-// create a request to invoke DescribeDomainsUsageByDay API
-func CreateDescribeDomainsUsageByDayRequest() (request *DescribeDomainsUsageByDayRequest) {
+// CreateDescribeDomainsUsageByDayRequest creates a request to invoke DescribeDomainsUsageByDay API
+func CreateDescribeDomainsUsageByDayRequest(request *DescribeDomainsUsageByDayRequest) {
 	request = &DescribeDomainsUsageByDayRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -102,7 +104,7 @@ func CreateDescribeDomainsUsageByDayRequest() (request *DescribeDomainsUsageByDa
 	return
 }
 
-// create a response to parse from DescribeDomainsUsageByDay response
+// CreateDescribeDomainsUsageByDayResponse creates a response to parse from DescribeDomainsUsageByDay response
 func CreateDescribeDomainsUsageByDayResponse() (response *DescribeDomainsUsageByDayResponse) {
 	response = &DescribeDomainsUsageByDayResponse{
 		BaseResponse: &responses.BaseResponse{},

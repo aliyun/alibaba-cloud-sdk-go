@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke QueryChangeLogList api with *QueryChangeLogListRequest synchronously
+// QueryChangeLogList invokes the domain_intl.QueryChangeLogList API synchronously
 // api document: https://help.aliyun.com/api/domain-intl/querychangeloglist.html
 func (client *Client) QueryChangeLogList(request *QueryChangeLogListRequest) (response *QueryChangeLogListResponse, err error) {
 	response = CreateQueryChangeLogListResponse()
@@ -28,7 +28,7 @@ func (client *Client) QueryChangeLogList(request *QueryChangeLogListRequest) (re
 	return
 }
 
-// invoke QueryChangeLogList api with *QueryChangeLogListRequest asynchronously
+// QueryChangeLogListWithChan invokes the domain_intl.QueryChangeLogList API asynchronously
 // api document: https://help.aliyun.com/api/domain-intl/querychangeloglist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryChangeLogListWithChan(request *QueryChangeLogListRequest) (<-chan *QueryChangeLogListResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) QueryChangeLogListWithChan(request *QueryChangeLogListRequ
 	return responseChan, errChan
 }
 
-// invoke QueryChangeLogList api with *QueryChangeLogListRequest asynchronously
+// QueryChangeLogListWithCallback invokes the domain_intl.QueryChangeLogList API asynchronously
 // api document: https://help.aliyun.com/api/domain-intl/querychangeloglist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryChangeLogListWithCallback(request *QueryChangeLogListRequest, callback func(response *QueryChangeLogListResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) QueryChangeLogListWithCallback(request *QueryChangeLogList
 	return result
 }
 
+// QueryChangeLogListRequest is the request struct for api QueryChangeLogList
 type QueryChangeLogListRequest struct {
 	*requests.RpcRequest
 	UserClientIp string           `position:"Query" name:"UserClientIp"`
@@ -84,6 +85,7 @@ type QueryChangeLogListRequest struct {
 	EndDate      requests.Integer `position:"Query" name:"EndDate"`
 }
 
+// QueryChangeLogListResponse is the response struct for api QueryChangeLogList
 type QueryChangeLogListResponse struct {
 	*responses.BaseResponse
 	RequestId      string                   `json:"RequestId" xml:"RequestId"`
@@ -97,8 +99,8 @@ type QueryChangeLogListResponse struct {
 	Data           DataInQueryChangeLogList `json:"Data" xml:"Data"`
 }
 
-// create a request to invoke QueryChangeLogList API
-func CreateQueryChangeLogListRequest() (request *QueryChangeLogListRequest) {
+// CreateQueryChangeLogListRequest creates a request to invoke QueryChangeLogList API
+func CreateQueryChangeLogListRequest(request *QueryChangeLogListRequest) {
 	request = &QueryChangeLogListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -106,7 +108,7 @@ func CreateQueryChangeLogListRequest() (request *QueryChangeLogListRequest) {
 	return
 }
 
-// create a response to parse from QueryChangeLogList response
+// CreateQueryChangeLogListResponse creates a response to parse from QueryChangeLogList response
 func CreateQueryChangeLogListResponse() (response *QueryChangeLogListResponse) {
 	response = &QueryChangeLogListResponse{
 		BaseResponse: &responses.BaseResponse{},

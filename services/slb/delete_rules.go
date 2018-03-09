@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteRules api with *DeleteRulesRequest synchronously
+// DeleteRules invokes the slb.DeleteRules API synchronously
 // api document: https://help.aliyun.com/api/slb/deleterules.html
 func (client *Client) DeleteRules(request *DeleteRulesRequest) (response *DeleteRulesResponse, err error) {
 	response = CreateDeleteRulesResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteRules(request *DeleteRulesRequest) (response *Delete
 	return
 }
 
-// invoke DeleteRules api with *DeleteRulesRequest asynchronously
+// DeleteRulesWithChan invokes the slb.DeleteRules API asynchronously
 // api document: https://help.aliyun.com/api/slb/deleterules.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteRulesWithChan(request *DeleteRulesRequest) (<-chan *DeleteRulesResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteRulesWithChan(request *DeleteRulesRequest) (<-chan *
 	return responseChan, errChan
 }
 
-// invoke DeleteRules api with *DeleteRulesRequest asynchronously
+// DeleteRulesWithCallback invokes the slb.DeleteRules API asynchronously
 // api document: https://help.aliyun.com/api/slb/deleterules.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteRulesWithCallback(request *DeleteRulesRequest, callback func(response *DeleteRulesResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DeleteRulesWithCallback(request *DeleteRulesRequest, callb
 	return result
 }
 
+// DeleteRulesRequest is the request struct for api DeleteRules
 type DeleteRulesRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,13 +85,14 @@ type DeleteRulesRequest struct {
 	RuleIds              string           `position:"Query" name:"RuleIds"`
 }
 
+// DeleteRulesResponse is the response struct for api DeleteRules
 type DeleteRulesResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DeleteRules API
-func CreateDeleteRulesRequest() (request *DeleteRulesRequest) {
+// CreateDeleteRulesRequest creates a request to invoke DeleteRules API
+func CreateDeleteRulesRequest(request *DeleteRulesRequest) {
 	request = &DeleteRulesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateDeleteRulesRequest() (request *DeleteRulesRequest) {
 	return
 }
 
-// create a response to parse from DeleteRules response
+// CreateDeleteRulesResponse creates a response to parse from DeleteRules response
 func CreateDeleteRulesResponse() (response *DeleteRulesResponse) {
 	response = &DeleteRulesResponse{
 		BaseResponse: &responses.BaseResponse{},

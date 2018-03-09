@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeLoadBalancerAutoReleaseTime api with *DescribeLoadBalancerAutoReleaseTimeRequest synchronously
+// DescribeLoadBalancerAutoReleaseTime invokes the slb.DescribeLoadBalancerAutoReleaseTime API synchronously
 // api document: https://help.aliyun.com/api/slb/describeloadbalancerautoreleasetime.html
 func (client *Client) DescribeLoadBalancerAutoReleaseTime(request *DescribeLoadBalancerAutoReleaseTimeRequest) (response *DescribeLoadBalancerAutoReleaseTimeResponse, err error) {
 	response = CreateDescribeLoadBalancerAutoReleaseTimeResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeLoadBalancerAutoReleaseTime(request *DescribeLoadB
 	return
 }
 
-// invoke DescribeLoadBalancerAutoReleaseTime api with *DescribeLoadBalancerAutoReleaseTimeRequest asynchronously
+// DescribeLoadBalancerAutoReleaseTimeWithChan invokes the slb.DescribeLoadBalancerAutoReleaseTime API asynchronously
 // api document: https://help.aliyun.com/api/slb/describeloadbalancerautoreleasetime.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLoadBalancerAutoReleaseTimeWithChan(request *DescribeLoadBalancerAutoReleaseTimeRequest) (<-chan *DescribeLoadBalancerAutoReleaseTimeResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeLoadBalancerAutoReleaseTimeWithChan(request *Descr
 	return responseChan, errChan
 }
 
-// invoke DescribeLoadBalancerAutoReleaseTime api with *DescribeLoadBalancerAutoReleaseTimeRequest asynchronously
+// DescribeLoadBalancerAutoReleaseTimeWithCallback invokes the slb.DescribeLoadBalancerAutoReleaseTime API asynchronously
 // api document: https://help.aliyun.com/api/slb/describeloadbalancerautoreleasetime.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLoadBalancerAutoReleaseTimeWithCallback(request *DescribeLoadBalancerAutoReleaseTimeRequest, callback func(response *DescribeLoadBalancerAutoReleaseTimeResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeLoadBalancerAutoReleaseTimeWithCallback(request *D
 	return result
 }
 
+// DescribeLoadBalancerAutoReleaseTimeRequest is the request struct for api DescribeLoadBalancerAutoReleaseTime
 type DescribeLoadBalancerAutoReleaseTimeRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,14 +85,15 @@ type DescribeLoadBalancerAutoReleaseTimeRequest struct {
 	LoadBalancerId       string           `position:"Query" name:"LoadBalancerId"`
 }
 
+// DescribeLoadBalancerAutoReleaseTimeResponse is the response struct for api DescribeLoadBalancerAutoReleaseTime
 type DescribeLoadBalancerAutoReleaseTimeResponse struct {
 	*responses.BaseResponse
 	RequestId       string `json:"RequestId" xml:"RequestId"`
 	AutoReleaseTime int    `json:"AutoReleaseTime" xml:"AutoReleaseTime"`
 }
 
-// create a request to invoke DescribeLoadBalancerAutoReleaseTime API
-func CreateDescribeLoadBalancerAutoReleaseTimeRequest() (request *DescribeLoadBalancerAutoReleaseTimeRequest) {
+// CreateDescribeLoadBalancerAutoReleaseTimeRequest creates a request to invoke DescribeLoadBalancerAutoReleaseTime API
+func CreateDescribeLoadBalancerAutoReleaseTimeRequest(request *DescribeLoadBalancerAutoReleaseTimeRequest) {
 	request = &DescribeLoadBalancerAutoReleaseTimeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateDescribeLoadBalancerAutoReleaseTimeRequest() (request *DescribeLoadBa
 	return
 }
 
-// create a response to parse from DescribeLoadBalancerAutoReleaseTime response
+// CreateDescribeLoadBalancerAutoReleaseTimeResponse creates a response to parse from DescribeLoadBalancerAutoReleaseTime response
 func CreateDescribeLoadBalancerAutoReleaseTimeResponse() (response *DescribeLoadBalancerAutoReleaseTimeResponse) {
 	response = &DescribeLoadBalancerAutoReleaseTimeResponse{
 		BaseResponse: &responses.BaseResponse{},

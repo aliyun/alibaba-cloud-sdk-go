@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifyHttpHeaderConfig api with *ModifyHttpHeaderConfigRequest synchronously
+// ModifyHttpHeaderConfig invokes the cdn.ModifyHttpHeaderConfig API synchronously
 // api document: https://help.aliyun.com/api/cdn/modifyhttpheaderconfig.html
 func (client *Client) ModifyHttpHeaderConfig(request *ModifyHttpHeaderConfigRequest) (response *ModifyHttpHeaderConfigResponse, err error) {
 	response = CreateModifyHttpHeaderConfigResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifyHttpHeaderConfig(request *ModifyHttpHeaderConfigRequ
 	return
 }
 
-// invoke ModifyHttpHeaderConfig api with *ModifyHttpHeaderConfigRequest asynchronously
+// ModifyHttpHeaderConfigWithChan invokes the cdn.ModifyHttpHeaderConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/modifyhttpheaderconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyHttpHeaderConfigWithChan(request *ModifyHttpHeaderConfigRequest) (<-chan *ModifyHttpHeaderConfigResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifyHttpHeaderConfigWithChan(request *ModifyHttpHeaderCo
 	return responseChan, errChan
 }
 
-// invoke ModifyHttpHeaderConfig api with *ModifyHttpHeaderConfigRequest asynchronously
+// ModifyHttpHeaderConfigWithCallback invokes the cdn.ModifyHttpHeaderConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/modifyhttpheaderconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyHttpHeaderConfigWithCallback(request *ModifyHttpHeaderConfigRequest, callback func(response *ModifyHttpHeaderConfigResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ModifyHttpHeaderConfigWithCallback(request *ModifyHttpHead
 	return result
 }
 
+// ModifyHttpHeaderConfigRequest is the request struct for api ModifyHttpHeaderConfig
 type ModifyHttpHeaderConfigRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -83,13 +84,14 @@ type ModifyHttpHeaderConfigRequest struct {
 	ConfigID      string           `position:"Query" name:"ConfigID"`
 }
 
+// ModifyHttpHeaderConfigResponse is the response struct for api ModifyHttpHeaderConfig
 type ModifyHttpHeaderConfigResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ModifyHttpHeaderConfig API
-func CreateModifyHttpHeaderConfigRequest() (request *ModifyHttpHeaderConfigRequest) {
+// CreateModifyHttpHeaderConfigRequest creates a request to invoke ModifyHttpHeaderConfig API
+func CreateModifyHttpHeaderConfigRequest(request *ModifyHttpHeaderConfigRequest) {
 	request = &ModifyHttpHeaderConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateModifyHttpHeaderConfigRequest() (request *ModifyHttpHeaderConfigReque
 	return
 }
 
-// create a response to parse from ModifyHttpHeaderConfig response
+// CreateModifyHttpHeaderConfigResponse creates a response to parse from ModifyHttpHeaderConfig response
 func CreateModifyHttpHeaderConfigResponse() (response *ModifyHttpHeaderConfigResponse) {
 	response = &ModifyHttpHeaderConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

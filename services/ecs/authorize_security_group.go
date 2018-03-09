@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke AuthorizeSecurityGroup api with *AuthorizeSecurityGroupRequest synchronously
+// AuthorizeSecurityGroup invokes the ecs.AuthorizeSecurityGroup API synchronously
 // api document: https://help.aliyun.com/api/ecs/authorizesecuritygroup.html
 func (client *Client) AuthorizeSecurityGroup(request *AuthorizeSecurityGroupRequest) (response *AuthorizeSecurityGroupResponse, err error) {
 	response = CreateAuthorizeSecurityGroupResponse()
@@ -28,7 +28,7 @@ func (client *Client) AuthorizeSecurityGroup(request *AuthorizeSecurityGroupRequ
 	return
 }
 
-// invoke AuthorizeSecurityGroup api with *AuthorizeSecurityGroupRequest asynchronously
+// AuthorizeSecurityGroupWithChan invokes the ecs.AuthorizeSecurityGroup API asynchronously
 // api document: https://help.aliyun.com/api/ecs/authorizesecuritygroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AuthorizeSecurityGroupWithChan(request *AuthorizeSecurityGroupRequest) (<-chan *AuthorizeSecurityGroupResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) AuthorizeSecurityGroupWithChan(request *AuthorizeSecurityG
 	return responseChan, errChan
 }
 
-// invoke AuthorizeSecurityGroup api with *AuthorizeSecurityGroupRequest asynchronously
+// AuthorizeSecurityGroupWithCallback invokes the ecs.AuthorizeSecurityGroup API asynchronously
 // api document: https://help.aliyun.com/api/ecs/authorizesecuritygroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AuthorizeSecurityGroupWithCallback(request *AuthorizeSecurityGroupRequest, callback func(response *AuthorizeSecurityGroupResponse, err error)) <-chan int {
@@ -73,17 +73,19 @@ func (client *Client) AuthorizeSecurityGroupWithCallback(request *AuthorizeSecur
 	return result
 }
 
+// AuthorizeSecurityGroupRequest is the request struct for api AuthorizeSecurityGroup
 type AuthorizeSecurityGroupRequest struct {
 	*requests.RpcRequest
 }
 
+// AuthorizeSecurityGroupResponse is the response struct for api AuthorizeSecurityGroup
 type AuthorizeSecurityGroupResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke AuthorizeSecurityGroup API
-func CreateAuthorizeSecurityGroupRequest() (request *AuthorizeSecurityGroupRequest) {
+// CreateAuthorizeSecurityGroupRequest creates a request to invoke AuthorizeSecurityGroup API
+func CreateAuthorizeSecurityGroupRequest(request *AuthorizeSecurityGroupRequest) {
 	request = &AuthorizeSecurityGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -91,7 +93,7 @@ func CreateAuthorizeSecurityGroupRequest() (request *AuthorizeSecurityGroupReque
 	return
 }
 
-// create a response to parse from AuthorizeSecurityGroup response
+// CreateAuthorizeSecurityGroupResponse creates a response to parse from AuthorizeSecurityGroup response
 func CreateAuthorizeSecurityGroupResponse() (response *AuthorizeSecurityGroupResponse) {
 	response = &AuthorizeSecurityGroupResponse{
 		BaseResponse: &responses.BaseResponse{},

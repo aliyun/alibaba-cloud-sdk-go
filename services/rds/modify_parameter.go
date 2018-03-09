@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifyParameter api with *ModifyParameterRequest synchronously
+// ModifyParameter invokes the rds.ModifyParameter API synchronously
 // api document: https://help.aliyun.com/api/rds/modifyparameter.html
 func (client *Client) ModifyParameter(request *ModifyParameterRequest) (response *ModifyParameterResponse, err error) {
 	response = CreateModifyParameterResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifyParameter(request *ModifyParameterRequest) (response
 	return
 }
 
-// invoke ModifyParameter api with *ModifyParameterRequest asynchronously
+// ModifyParameterWithChan invokes the rds.ModifyParameter API asynchronously
 // api document: https://help.aliyun.com/api/rds/modifyparameter.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyParameterWithChan(request *ModifyParameterRequest) (<-chan *ModifyParameterResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifyParameterWithChan(request *ModifyParameterRequest) (
 	return responseChan, errChan
 }
 
-// invoke ModifyParameter api with *ModifyParameterRequest asynchronously
+// ModifyParameterWithCallback invokes the rds.ModifyParameter API asynchronously
 // api document: https://help.aliyun.com/api/rds/modifyparameter.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyParameterWithCallback(request *ModifyParameterRequest, callback func(response *ModifyParameterResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ModifyParameterWithCallback(request *ModifyParameterReques
 	return result
 }
 
+// ModifyParameterRequest is the request struct for api ModifyParameter
 type ModifyParameterRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -85,13 +86,14 @@ type ModifyParameterRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// ModifyParameterResponse is the response struct for api ModifyParameter
 type ModifyParameterResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ModifyParameter API
-func CreateModifyParameterRequest() (request *ModifyParameterRequest) {
+// CreateModifyParameterRequest creates a request to invoke ModifyParameter API
+func CreateModifyParameterRequest(request *ModifyParameterRequest) {
 	request = &ModifyParameterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateModifyParameterRequest() (request *ModifyParameterRequest) {
 	return
 }
 
-// create a response to parse from ModifyParameter response
+// CreateModifyParameterResponse creates a response to parse from ModifyParameter response
 func CreateModifyParameterResponse() (response *ModifyParameterResponse) {
 	response = &ModifyParameterResponse{
 		BaseResponse: &responses.BaseResponse{},

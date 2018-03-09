@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeletePipeline api with *DeletePipelineRequest synchronously
+// DeletePipeline invokes the mts.DeletePipeline API synchronously
 // api document: https://help.aliyun.com/api/mts/deletepipeline.html
 func (client *Client) DeletePipeline(request *DeletePipelineRequest) (response *DeletePipelineResponse, err error) {
 	response = CreateDeletePipelineResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeletePipeline(request *DeletePipelineRequest) (response *
 	return
 }
 
-// invoke DeletePipeline api with *DeletePipelineRequest asynchronously
+// DeletePipelineWithChan invokes the mts.DeletePipeline API asynchronously
 // api document: https://help.aliyun.com/api/mts/deletepipeline.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeletePipelineWithChan(request *DeletePipelineRequest) (<-chan *DeletePipelineResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeletePipelineWithChan(request *DeletePipelineRequest) (<-
 	return responseChan, errChan
 }
 
-// invoke DeletePipeline api with *DeletePipelineRequest asynchronously
+// DeletePipelineWithCallback invokes the mts.DeletePipeline API asynchronously
 // api document: https://help.aliyun.com/api/mts/deletepipeline.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeletePipelineWithCallback(request *DeletePipelineRequest, callback func(response *DeletePipelineResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DeletePipelineWithCallback(request *DeletePipelineRequest,
 	return result
 }
 
+// DeletePipelineRequest is the request struct for api DeletePipeline
 type DeletePipelineRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,14 +83,15 @@ type DeletePipelineRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// DeletePipelineResponse is the response struct for api DeletePipeline
 type DeletePipelineResponse struct {
 	*responses.BaseResponse
 	RequestId  string `json:"RequestId" xml:"RequestId"`
 	PipelineId string `json:"PipelineId" xml:"PipelineId"`
 }
 
-// create a request to invoke DeletePipeline API
-func CreateDeletePipelineRequest() (request *DeletePipelineRequest) {
+// CreateDeletePipelineRequest creates a request to invoke DeletePipeline API
+func CreateDeletePipelineRequest(request *DeletePipelineRequest) {
 	request = &DeletePipelineRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateDeletePipelineRequest() (request *DeletePipelineRequest) {
 	return
 }
 
-// create a response to parse from DeletePipeline response
+// CreateDeletePipelineResponse creates a response to parse from DeletePipeline response
 func CreateDeletePipelineResponse() (response *DeletePipelineResponse) {
 	response = &DeletePipelineResponse{
 		BaseResponse: &responses.BaseResponse{},

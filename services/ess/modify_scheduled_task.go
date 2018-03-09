@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifyScheduledTask api with *ModifyScheduledTaskRequest synchronously
+// ModifyScheduledTask invokes the ess.ModifyScheduledTask API synchronously
 // api document: https://help.aliyun.com/api/ess/modifyscheduledtask.html
 func (client *Client) ModifyScheduledTask(request *ModifyScheduledTaskRequest) (response *ModifyScheduledTaskResponse, err error) {
 	response = CreateModifyScheduledTaskResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifyScheduledTask(request *ModifyScheduledTaskRequest) (
 	return
 }
 
-// invoke ModifyScheduledTask api with *ModifyScheduledTaskRequest asynchronously
+// ModifyScheduledTaskWithChan invokes the ess.ModifyScheduledTask API asynchronously
 // api document: https://help.aliyun.com/api/ess/modifyscheduledtask.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyScheduledTaskWithChan(request *ModifyScheduledTaskRequest) (<-chan *ModifyScheduledTaskResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifyScheduledTaskWithChan(request *ModifyScheduledTaskRe
 	return responseChan, errChan
 }
 
-// invoke ModifyScheduledTask api with *ModifyScheduledTaskRequest asynchronously
+// ModifyScheduledTaskWithCallback invokes the ess.ModifyScheduledTask API asynchronously
 // api document: https://help.aliyun.com/api/ess/modifyscheduledtask.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyScheduledTaskWithCallback(request *ModifyScheduledTaskRequest, callback func(response *ModifyScheduledTaskResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ModifyScheduledTaskWithCallback(request *ModifyScheduledTa
 	return result
 }
 
+// ModifyScheduledTaskRequest is the request struct for api ModifyScheduledTask
 type ModifyScheduledTaskRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -91,13 +92,14 @@ type ModifyScheduledTaskRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// ModifyScheduledTaskResponse is the response struct for api ModifyScheduledTask
 type ModifyScheduledTaskResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ModifyScheduledTask API
-func CreateModifyScheduledTaskRequest() (request *ModifyScheduledTaskRequest) {
+// CreateModifyScheduledTaskRequest creates a request to invoke ModifyScheduledTask API
+func CreateModifyScheduledTaskRequest(request *ModifyScheduledTaskRequest) {
 	request = &ModifyScheduledTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -105,7 +107,7 @@ func CreateModifyScheduledTaskRequest() (request *ModifyScheduledTaskRequest) {
 	return
 }
 
-// create a response to parse from ModifyScheduledTask response
+// CreateModifyScheduledTaskResponse creates a response to parse from ModifyScheduledTask response
 func CreateModifyScheduledTaskResponse() (response *ModifyScheduledTaskResponse) {
 	response = &ModifyScheduledTaskResponse{
 		BaseResponse: &responses.BaseResponse{},

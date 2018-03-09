@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke EipFillProduct api with *EipFillProductRequest synchronously
+// EipFillProduct invokes the ecs.EipFillProduct API synchronously
 // api document: https://help.aliyun.com/api/ecs/eipfillproduct.html
 func (client *Client) EipFillProduct(request *EipFillProductRequest) (response *EipFillProductResponse, err error) {
 	response = CreateEipFillProductResponse()
@@ -28,7 +28,7 @@ func (client *Client) EipFillProduct(request *EipFillProductRequest) (response *
 	return
 }
 
-// invoke EipFillProduct api with *EipFillProductRequest asynchronously
+// EipFillProductWithChan invokes the ecs.EipFillProduct API asynchronously
 // api document: https://help.aliyun.com/api/ecs/eipfillproduct.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EipFillProductWithChan(request *EipFillProductRequest) (<-chan *EipFillProductResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) EipFillProductWithChan(request *EipFillProductRequest) (<-
 	return responseChan, errChan
 }
 
-// invoke EipFillProduct api with *EipFillProductRequest asynchronously
+// EipFillProductWithCallback invokes the ecs.EipFillProduct API asynchronously
 // api document: https://help.aliyun.com/api/ecs/eipfillproduct.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EipFillProductWithCallback(request *EipFillProductRequest, callback func(response *EipFillProductResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) EipFillProductWithCallback(request *EipFillProductRequest,
 	return result
 }
 
+// EipFillProductRequest is the request struct for api EipFillProduct
 type EipFillProductRequest struct {
 	*requests.RpcRequest
 	Data                 string           `position:"Query" name:"data"`
@@ -84,6 +85,7 @@ type EipFillProductRequest struct {
 	UserCidr             string           `position:"Query" name:"UserCidr"`
 }
 
+// EipFillProductResponse is the response struct for api EipFillProduct
 type EipFillProductResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"requestId" xml:"requestId"`
@@ -93,8 +95,8 @@ type EipFillProductResponse struct {
 	Message   string `json:"message" xml:"message"`
 }
 
-// create a request to invoke EipFillProduct API
-func CreateEipFillProductRequest() (request *EipFillProductRequest) {
+// CreateEipFillProductRequest creates a request to invoke EipFillProduct API
+func CreateEipFillProductRequest(request *EipFillProductRequest) {
 	request = &EipFillProductRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -102,7 +104,7 @@ func CreateEipFillProductRequest() (request *EipFillProductRequest) {
 	return
 }
 
-// create a response to parse from EipFillProduct response
+// CreateEipFillProductResponse creates a response to parse from EipFillProduct response
 func CreateEipFillProductResponse() (response *EipFillProductResponse) {
 	response = &EipFillProductResponse{
 		BaseResponse: &responses.BaseResponse{},

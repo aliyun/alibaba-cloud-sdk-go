@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ListNotifyPolicy api with *ListNotifyPolicyRequest synchronously
+// ListNotifyPolicy invokes the cms.ListNotifyPolicy API synchronously
 // api document: https://help.aliyun.com/api/cms/listnotifypolicy.html
 func (client *Client) ListNotifyPolicy(request *ListNotifyPolicyRequest) (response *ListNotifyPolicyResponse, err error) {
 	response = CreateListNotifyPolicyResponse()
@@ -28,7 +28,7 @@ func (client *Client) ListNotifyPolicy(request *ListNotifyPolicyRequest) (respon
 	return
 }
 
-// invoke ListNotifyPolicy api with *ListNotifyPolicyRequest asynchronously
+// ListNotifyPolicyWithChan invokes the cms.ListNotifyPolicy API asynchronously
 // api document: https://help.aliyun.com/api/cms/listnotifypolicy.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListNotifyPolicyWithChan(request *ListNotifyPolicyRequest) (<-chan *ListNotifyPolicyResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ListNotifyPolicyWithChan(request *ListNotifyPolicyRequest)
 	return responseChan, errChan
 }
 
-// invoke ListNotifyPolicy api with *ListNotifyPolicyRequest asynchronously
+// ListNotifyPolicyWithCallback invokes the cms.ListNotifyPolicy API asynchronously
 // api document: https://help.aliyun.com/api/cms/listnotifypolicy.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListNotifyPolicyWithCallback(request *ListNotifyPolicyRequest, callback func(response *ListNotifyPolicyResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ListNotifyPolicyWithCallback(request *ListNotifyPolicyRequ
 	return result
 }
 
+// ListNotifyPolicyRequest is the request struct for api ListNotifyPolicy
 type ListNotifyPolicyRequest struct {
 	*requests.RpcRequest
 	AlertName  string           `position:"Query" name:"AlertName"`
@@ -82,6 +83,7 @@ type ListNotifyPolicyRequest struct {
 	Dimensions string           `position:"Query" name:"Dimensions"`
 }
 
+// ListNotifyPolicyResponse is the response struct for api ListNotifyPolicy
 type ListNotifyPolicyResponse struct {
 	*responses.BaseResponse
 	Code             string           `json:"code" xml:"code"`
@@ -92,8 +94,8 @@ type ListNotifyPolicyResponse struct {
 	NotifyPolicyList NotifyPolicyList `json:"NotifyPolicyList" xml:"NotifyPolicyList"`
 }
 
-// create a request to invoke ListNotifyPolicy API
-func CreateListNotifyPolicyRequest() (request *ListNotifyPolicyRequest) {
+// CreateListNotifyPolicyRequest creates a request to invoke ListNotifyPolicy API
+func CreateListNotifyPolicyRequest(request *ListNotifyPolicyRequest) {
 	request = &ListNotifyPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -101,7 +103,7 @@ func CreateListNotifyPolicyRequest() (request *ListNotifyPolicyRequest) {
 	return
 }
 
-// create a response to parse from ListNotifyPolicy response
+// CreateListNotifyPolicyResponse creates a response to parse from ListNotifyPolicy response
 func CreateListNotifyPolicyResponse() (response *ListNotifyPolicyResponse) {
 	response = &ListNotifyPolicyResponse{
 		BaseResponse: &responses.BaseResponse{},

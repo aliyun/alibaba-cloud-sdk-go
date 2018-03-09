@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke AttachDisk api with *AttachDiskRequest synchronously
+// AttachDisk invokes the ecs.AttachDisk API synchronously
 // api document: https://help.aliyun.com/api/ecs/attachdisk.html
 func (client *Client) AttachDisk(request *AttachDiskRequest) (response *AttachDiskResponse, err error) {
 	response = CreateAttachDiskResponse()
@@ -28,7 +28,7 @@ func (client *Client) AttachDisk(request *AttachDiskRequest) (response *AttachDi
 	return
 }
 
-// invoke AttachDisk api with *AttachDiskRequest asynchronously
+// AttachDiskWithChan invokes the ecs.AttachDisk API asynchronously
 // api document: https://help.aliyun.com/api/ecs/attachdisk.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AttachDiskWithChan(request *AttachDiskRequest) (<-chan *AttachDiskResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) AttachDiskWithChan(request *AttachDiskRequest) (<-chan *At
 	return responseChan, errChan
 }
 
-// invoke AttachDisk api with *AttachDiskRequest asynchronously
+// AttachDiskWithCallback invokes the ecs.AttachDisk API asynchronously
 // api document: https://help.aliyun.com/api/ecs/attachdisk.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AttachDiskWithCallback(request *AttachDiskRequest, callback func(response *AttachDiskResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) AttachDiskWithCallback(request *AttachDiskRequest, callbac
 	return result
 }
 
+// AttachDiskRequest is the request struct for api AttachDisk
 type AttachDiskRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -85,13 +86,14 @@ type AttachDiskRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// AttachDiskResponse is the response struct for api AttachDisk
 type AttachDiskResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke AttachDisk API
-func CreateAttachDiskRequest() (request *AttachDiskRequest) {
+// CreateAttachDiskRequest creates a request to invoke AttachDisk API
+func CreateAttachDiskRequest(request *AttachDiskRequest) {
 	request = &AttachDiskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateAttachDiskRequest() (request *AttachDiskRequest) {
 	return
 }
 
-// create a response to parse from AttachDisk response
+// CreateAttachDiskResponse creates a response to parse from AttachDisk response
 func CreateAttachDiskResponse() (response *AttachDiskResponse) {
 	response = &AttachDiskResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke GenerateSessionAccessKey api with *GenerateSessionAccessKeyRequest synchronously
+// GenerateSessionAccessKey invokes the sts.GenerateSessionAccessKey API synchronously
 // api document: https://help.aliyun.com/api/sts/generatesessionaccesskey.html
 func (client *Client) GenerateSessionAccessKey(request *GenerateSessionAccessKeyRequest) (response *GenerateSessionAccessKeyResponse, err error) {
 	response = CreateGenerateSessionAccessKeyResponse()
@@ -28,7 +28,7 @@ func (client *Client) GenerateSessionAccessKey(request *GenerateSessionAccessKey
 	return
 }
 
-// invoke GenerateSessionAccessKey api with *GenerateSessionAccessKeyRequest asynchronously
+// GenerateSessionAccessKeyWithChan invokes the sts.GenerateSessionAccessKey API asynchronously
 // api document: https://help.aliyun.com/api/sts/generatesessionaccesskey.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GenerateSessionAccessKeyWithChan(request *GenerateSessionAccessKeyRequest) (<-chan *GenerateSessionAccessKeyResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) GenerateSessionAccessKeyWithChan(request *GenerateSessionA
 	return responseChan, errChan
 }
 
-// invoke GenerateSessionAccessKey api with *GenerateSessionAccessKeyRequest asynchronously
+// GenerateSessionAccessKeyWithCallback invokes the sts.GenerateSessionAccessKey API asynchronously
 // api document: https://help.aliyun.com/api/sts/generatesessionaccesskey.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GenerateSessionAccessKeyWithCallback(request *GenerateSessionAccessKeyRequest, callback func(response *GenerateSessionAccessKeyResponse, err error)) <-chan int {
@@ -73,19 +73,21 @@ func (client *Client) GenerateSessionAccessKeyWithCallback(request *GenerateSess
 	return result
 }
 
+// GenerateSessionAccessKeyRequest is the request struct for api GenerateSessionAccessKey
 type GenerateSessionAccessKeyRequest struct {
 	*requests.RpcRequest
 	DurationSeconds requests.Integer `position:"Query" name:"DurationSeconds"`
 }
 
+// GenerateSessionAccessKeyResponse is the response struct for api GenerateSessionAccessKey
 type GenerateSessionAccessKeyResponse struct {
 	*responses.BaseResponse
 	RequestId        string           `json:"RequestId" xml:"RequestId"`
 	SessionAccessKey SessionAccessKey `json:"SessionAccessKey" xml:"SessionAccessKey"`
 }
 
-// create a request to invoke GenerateSessionAccessKey API
-func CreateGenerateSessionAccessKeyRequest() (request *GenerateSessionAccessKeyRequest) {
+// CreateGenerateSessionAccessKeyRequest creates a request to invoke GenerateSessionAccessKey API
+func CreateGenerateSessionAccessKeyRequest(request *GenerateSessionAccessKeyRequest) {
 	request = &GenerateSessionAccessKeyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -93,7 +95,7 @@ func CreateGenerateSessionAccessKeyRequest() (request *GenerateSessionAccessKeyR
 	return
 }
 
-// create a response to parse from GenerateSessionAccessKey response
+// CreateGenerateSessionAccessKeyResponse creates a response to parse from GenerateSessionAccessKey response
 func CreateGenerateSessionAccessKeyResponse() (response *GenerateSessionAccessKeyResponse) {
 	response = &GenerateSessionAccessKeyResponse{
 		BaseResponse: &responses.BaseResponse{},

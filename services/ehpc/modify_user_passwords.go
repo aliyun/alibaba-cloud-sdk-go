@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifyUserPasswords api with *ModifyUserPasswordsRequest synchronously
+// ModifyUserPasswords invokes the ehpc.ModifyUserPasswords API synchronously
 // api document: https://help.aliyun.com/api/ehpc/modifyuserpasswords.html
 func (client *Client) ModifyUserPasswords(request *ModifyUserPasswordsRequest) (response *ModifyUserPasswordsResponse, err error) {
 	response = CreateModifyUserPasswordsResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifyUserPasswords(request *ModifyUserPasswordsRequest) (
 	return
 }
 
-// invoke ModifyUserPasswords api with *ModifyUserPasswordsRequest asynchronously
+// ModifyUserPasswordsWithChan invokes the ehpc.ModifyUserPasswords API asynchronously
 // api document: https://help.aliyun.com/api/ehpc/modifyuserpasswords.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyUserPasswordsWithChan(request *ModifyUserPasswordsRequest) (<-chan *ModifyUserPasswordsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifyUserPasswordsWithChan(request *ModifyUserPasswordsRe
 	return responseChan, errChan
 }
 
-// invoke ModifyUserPasswords api with *ModifyUserPasswordsRequest asynchronously
+// ModifyUserPasswordsWithCallback invokes the ehpc.ModifyUserPasswords API asynchronously
 // api document: https://help.aliyun.com/api/ehpc/modifyuserpasswords.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyUserPasswordsWithCallback(request *ModifyUserPasswordsRequest, callback func(response *ModifyUserPasswordsResponse, err error)) <-chan int {
@@ -73,24 +73,27 @@ func (client *Client) ModifyUserPasswordsWithCallback(request *ModifyUserPasswor
 	return result
 }
 
+// ModifyUserPasswordsRequest is the request struct for api ModifyUserPasswords
 type ModifyUserPasswordsRequest struct {
 	*requests.RpcRequest
 	ClusterId string                     `position:"Query" name:"ClusterId"`
 	User      *[]ModifyUserPasswordsUser `position:"Query" name:"User"  type:"Repeated"`
 }
 
+// ModifyUserPasswordsUser is a repeated param struct in ModifyUserPasswordsRequest
 type ModifyUserPasswordsUser struct {
 	Name     string `name:"Name"`
 	Password string `name:"Password"`
 }
 
+// ModifyUserPasswordsResponse is the response struct for api ModifyUserPasswords
 type ModifyUserPasswordsResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ModifyUserPasswords API
-func CreateModifyUserPasswordsRequest() (request *ModifyUserPasswordsRequest) {
+// CreateModifyUserPasswordsRequest creates a request to invoke ModifyUserPasswords API
+func CreateModifyUserPasswordsRequest(request *ModifyUserPasswordsRequest) {
 	request = &ModifyUserPasswordsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +101,7 @@ func CreateModifyUserPasswordsRequest() (request *ModifyUserPasswordsRequest) {
 	return
 }
 
-// create a response to parse from ModifyUserPasswords response
+// CreateModifyUserPasswordsResponse creates a response to parse from ModifyUserPasswords response
 func CreateModifyUserPasswordsResponse() (response *ModifyUserPasswordsResponse) {
 	response = &ModifyUserPasswordsResponse{
 		BaseResponse: &responses.BaseResponse{},

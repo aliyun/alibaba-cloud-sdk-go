@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke GetPhotos api with *GetPhotosRequest synchronously
+// GetPhotos invokes the cloudphoto.GetPhotos API synchronously
 // api document: https://help.aliyun.com/api/cloudphoto/getphotos.html
 func (client *Client) GetPhotos(request *GetPhotosRequest) (response *GetPhotosResponse, err error) {
 	response = CreateGetPhotosResponse()
@@ -28,7 +28,7 @@ func (client *Client) GetPhotos(request *GetPhotosRequest) (response *GetPhotosR
 	return
 }
 
-// invoke GetPhotos api with *GetPhotosRequest asynchronously
+// GetPhotosWithChan invokes the cloudphoto.GetPhotos API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/getphotos.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetPhotosWithChan(request *GetPhotosRequest) (<-chan *GetPhotosResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) GetPhotosWithChan(request *GetPhotosRequest) (<-chan *GetP
 	return responseChan, errChan
 }
 
-// invoke GetPhotos api with *GetPhotosRequest asynchronously
+// GetPhotosWithCallback invokes the cloudphoto.GetPhotos API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/getphotos.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetPhotosWithCallback(request *GetPhotosRequest, callback func(response *GetPhotosResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) GetPhotosWithCallback(request *GetPhotosRequest, callback 
 	return result
 }
 
+// GetPhotosRequest is the request struct for api GetPhotos
 type GetPhotosRequest struct {
 	*requests.RpcRequest
 	PhotoId   *[]string `position:"Query" name:"PhotoId"  type:"Repeated"`
@@ -80,6 +81,7 @@ type GetPhotosRequest struct {
 	LibraryId string    `position:"Query" name:"LibraryId"`
 }
 
+// GetPhotosResponse is the response struct for api GetPhotos
 type GetPhotosResponse struct {
 	*responses.BaseResponse
 	Code      string  `json:"Code" xml:"Code"`
@@ -89,8 +91,8 @@ type GetPhotosResponse struct {
 	Photos    []Photo `json:"Photos" xml:"Photos"`
 }
 
-// create a request to invoke GetPhotos API
-func CreateGetPhotosRequest() (request *GetPhotosRequest) {
+// CreateGetPhotosRequest creates a request to invoke GetPhotos API
+func CreateGetPhotosRequest(request *GetPhotosRequest) {
 	request = &GetPhotosRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateGetPhotosRequest() (request *GetPhotosRequest) {
 	return
 }
 
-// create a response to parse from GetPhotos response
+// CreateGetPhotosResponse creates a response to parse from GetPhotos response
 func CreateGetPhotosResponse() (response *GetPhotosResponse) {
 	response = &GetPhotosResponse{
 		BaseResponse: &responses.BaseResponse{},

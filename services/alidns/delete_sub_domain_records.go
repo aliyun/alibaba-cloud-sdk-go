@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteSubDomainRecords api with *DeleteSubDomainRecordsRequest synchronously
+// DeleteSubDomainRecords invokes the alidns.DeleteSubDomainRecords API synchronously
 // api document: https://help.aliyun.com/api/alidns/deletesubdomainrecords.html
 func (client *Client) DeleteSubDomainRecords(request *DeleteSubDomainRecordsRequest) (response *DeleteSubDomainRecordsResponse, err error) {
 	response = CreateDeleteSubDomainRecordsResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteSubDomainRecords(request *DeleteSubDomainRecordsRequ
 	return
 }
 
-// invoke DeleteSubDomainRecords api with *DeleteSubDomainRecordsRequest asynchronously
+// DeleteSubDomainRecordsWithChan invokes the alidns.DeleteSubDomainRecords API asynchronously
 // api document: https://help.aliyun.com/api/alidns/deletesubdomainrecords.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteSubDomainRecordsWithChan(request *DeleteSubDomainRecordsRequest) (<-chan *DeleteSubDomainRecordsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteSubDomainRecordsWithChan(request *DeleteSubDomainRec
 	return responseChan, errChan
 }
 
-// invoke DeleteSubDomainRecords api with *DeleteSubDomainRecordsRequest asynchronously
+// DeleteSubDomainRecordsWithCallback invokes the alidns.DeleteSubDomainRecords API asynchronously
 // api document: https://help.aliyun.com/api/alidns/deletesubdomainrecords.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteSubDomainRecordsWithCallback(request *DeleteSubDomainRecordsRequest, callback func(response *DeleteSubDomainRecordsResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DeleteSubDomainRecordsWithCallback(request *DeleteSubDomai
 	return result
 }
 
+// DeleteSubDomainRecordsRequest is the request struct for api DeleteSubDomainRecords
 type DeleteSubDomainRecordsRequest struct {
 	*requests.RpcRequest
 	Lang         string `position:"Query" name:"Lang"`
@@ -82,6 +83,7 @@ type DeleteSubDomainRecordsRequest struct {
 	Type         string `position:"Query" name:"Type"`
 }
 
+// DeleteSubDomainRecordsResponse is the response struct for api DeleteSubDomainRecords
 type DeleteSubDomainRecordsResponse struct {
 	*responses.BaseResponse
 	RequestId  string `json:"RequestId" xml:"RequestId"`
@@ -89,8 +91,8 @@ type DeleteSubDomainRecordsResponse struct {
 	TotalCount string `json:"TotalCount" xml:"TotalCount"`
 }
 
-// create a request to invoke DeleteSubDomainRecords API
-func CreateDeleteSubDomainRecordsRequest() (request *DeleteSubDomainRecordsRequest) {
+// CreateDeleteSubDomainRecordsRequest creates a request to invoke DeleteSubDomainRecords API
+func CreateDeleteSubDomainRecordsRequest(request *DeleteSubDomainRecordsRequest) {
 	request = &DeleteSubDomainRecordsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateDeleteSubDomainRecordsRequest() (request *DeleteSubDomainRecordsReque
 	return
 }
 
-// create a response to parse from DeleteSubDomainRecords response
+// CreateDeleteSubDomainRecordsResponse creates a response to parse from DeleteSubDomainRecords response
 func CreateDeleteSubDomainRecordsResponse() (response *DeleteSubDomainRecordsResponse) {
 	response = &DeleteSubDomainRecordsResponse{
 		BaseResponse: &responses.BaseResponse{},

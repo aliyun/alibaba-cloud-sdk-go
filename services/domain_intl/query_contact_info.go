@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke QueryContactInfo api with *QueryContactInfoRequest synchronously
+// QueryContactInfo invokes the domain_intl.QueryContactInfo API synchronously
 // api document: https://help.aliyun.com/api/domain-intl/querycontactinfo.html
 func (client *Client) QueryContactInfo(request *QueryContactInfoRequest) (response *QueryContactInfoResponse, err error) {
 	response = CreateQueryContactInfoResponse()
@@ -28,7 +28,7 @@ func (client *Client) QueryContactInfo(request *QueryContactInfoRequest) (respon
 	return
 }
 
-// invoke QueryContactInfo api with *QueryContactInfoRequest asynchronously
+// QueryContactInfoWithChan invokes the domain_intl.QueryContactInfo API asynchronously
 // api document: https://help.aliyun.com/api/domain-intl/querycontactinfo.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryContactInfoWithChan(request *QueryContactInfoRequest) (<-chan *QueryContactInfoResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) QueryContactInfoWithChan(request *QueryContactInfoRequest)
 	return responseChan, errChan
 }
 
-// invoke QueryContactInfo api with *QueryContactInfoRequest asynchronously
+// QueryContactInfoWithCallback invokes the domain_intl.QueryContactInfo API asynchronously
 // api document: https://help.aliyun.com/api/domain-intl/querycontactinfo.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryContactInfoWithCallback(request *QueryContactInfoRequest, callback func(response *QueryContactInfoResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) QueryContactInfoWithCallback(request *QueryContactInfoRequ
 	return result
 }
 
+// QueryContactInfoRequest is the request struct for api QueryContactInfo
 type QueryContactInfoRequest struct {
 	*requests.RpcRequest
 	UserClientIp string `position:"Query" name:"UserClientIp"`
@@ -81,6 +82,7 @@ type QueryContactInfoRequest struct {
 	ContactType  string `position:"Query" name:"ContactType"`
 }
 
+// QueryContactInfoResponse is the response struct for api QueryContactInfo
 type QueryContactInfoResponse struct {
 	*responses.BaseResponse
 	RequestId              string `json:"RequestId" xml:"RequestId"`
@@ -98,8 +100,8 @@ type QueryContactInfoResponse struct {
 	TelExt                 string `json:"TelExt" xml:"TelExt"`
 }
 
-// create a request to invoke QueryContactInfo API
-func CreateQueryContactInfoRequest() (request *QueryContactInfoRequest) {
+// CreateQueryContactInfoRequest creates a request to invoke QueryContactInfo API
+func CreateQueryContactInfoRequest(request *QueryContactInfoRequest) {
 	request = &QueryContactInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -107,7 +109,7 @@ func CreateQueryContactInfoRequest() (request *QueryContactInfoRequest) {
 	return
 }
 
-// create a response to parse from QueryContactInfo response
+// CreateQueryContactInfoResponse creates a response to parse from QueryContactInfo response
 func CreateQueryContactInfoResponse() (response *QueryContactInfoResponse) {
 	response = &QueryContactInfoResponse{
 		BaseResponse: &responses.BaseResponse{},

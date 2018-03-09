@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifyRouteTableAttributes api with *ModifyRouteTableAttributesRequest synchronously
+// ModifyRouteTableAttributes invokes the vpc.ModifyRouteTableAttributes API synchronously
 // api document: https://help.aliyun.com/api/vpc/modifyroutetableattributes.html
 func (client *Client) ModifyRouteTableAttributes(request *ModifyRouteTableAttributesRequest) (response *ModifyRouteTableAttributesResponse, err error) {
 	response = CreateModifyRouteTableAttributesResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifyRouteTableAttributes(request *ModifyRouteTableAttrib
 	return
 }
 
-// invoke ModifyRouteTableAttributes api with *ModifyRouteTableAttributesRequest asynchronously
+// ModifyRouteTableAttributesWithChan invokes the vpc.ModifyRouteTableAttributes API asynchronously
 // api document: https://help.aliyun.com/api/vpc/modifyroutetableattributes.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyRouteTableAttributesWithChan(request *ModifyRouteTableAttributesRequest) (<-chan *ModifyRouteTableAttributesResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifyRouteTableAttributesWithChan(request *ModifyRouteTab
 	return responseChan, errChan
 }
 
-// invoke ModifyRouteTableAttributes api with *ModifyRouteTableAttributesRequest asynchronously
+// ModifyRouteTableAttributesWithCallback invokes the vpc.ModifyRouteTableAttributes API asynchronously
 // api document: https://help.aliyun.com/api/vpc/modifyroutetableattributes.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyRouteTableAttributesWithCallback(request *ModifyRouteTableAttributesRequest, callback func(response *ModifyRouteTableAttributesResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ModifyRouteTableAttributesWithCallback(request *ModifyRout
 	return result
 }
 
+// ModifyRouteTableAttributesRequest is the request struct for api ModifyRouteTableAttributes
 type ModifyRouteTableAttributesRequest struct {
 	*requests.RpcRequest
 	RouteTableId         string           `position:"Query" name:"RouteTableId"`
@@ -88,6 +89,7 @@ type ModifyRouteTableAttributesRequest struct {
 	ResourceUid          requests.Integer `position:"Query" name:"ResourceUid"`
 }
 
+// ModifyRouteTableAttributesResponse is the response struct for api ModifyRouteTableAttributes
 type ModifyRouteTableAttributesResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
@@ -96,8 +98,8 @@ type ModifyRouteTableAttributesResponse struct {
 	Success   bool   `json:"Success" xml:"Success"`
 }
 
-// create a request to invoke ModifyRouteTableAttributes API
-func CreateModifyRouteTableAttributesRequest() (request *ModifyRouteTableAttributesRequest) {
+// CreateModifyRouteTableAttributesRequest creates a request to invoke ModifyRouteTableAttributes API
+func CreateModifyRouteTableAttributesRequest(request *ModifyRouteTableAttributesRequest) {
 	request = &ModifyRouteTableAttributesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -105,7 +107,7 @@ func CreateModifyRouteTableAttributesRequest() (request *ModifyRouteTableAttribu
 	return
 }
 
-// create a response to parse from ModifyRouteTableAttributes response
+// CreateModifyRouteTableAttributesResponse creates a response to parse from ModifyRouteTableAttributes response
 func CreateModifyRouteTableAttributesResponse() (response *ModifyRouteTableAttributesResponse) {
 	response = &ModifyRouteTableAttributesResponse{
 		BaseResponse: &responses.BaseResponse{},

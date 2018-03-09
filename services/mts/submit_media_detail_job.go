@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SubmitMediaDetailJob api with *SubmitMediaDetailJobRequest synchronously
+// SubmitMediaDetailJob invokes the mts.SubmitMediaDetailJob API synchronously
 // api document: https://help.aliyun.com/api/mts/submitmediadetailjob.html
 func (client *Client) SubmitMediaDetailJob(request *SubmitMediaDetailJobRequest) (response *SubmitMediaDetailJobResponse, err error) {
 	response = CreateSubmitMediaDetailJobResponse()
@@ -28,7 +28,7 @@ func (client *Client) SubmitMediaDetailJob(request *SubmitMediaDetailJobRequest)
 	return
 }
 
-// invoke SubmitMediaDetailJob api with *SubmitMediaDetailJobRequest asynchronously
+// SubmitMediaDetailJobWithChan invokes the mts.SubmitMediaDetailJob API asynchronously
 // api document: https://help.aliyun.com/api/mts/submitmediadetailjob.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitMediaDetailJobWithChan(request *SubmitMediaDetailJobRequest) (<-chan *SubmitMediaDetailJobResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SubmitMediaDetailJobWithChan(request *SubmitMediaDetailJob
 	return responseChan, errChan
 }
 
-// invoke SubmitMediaDetailJob api with *SubmitMediaDetailJobRequest asynchronously
+// SubmitMediaDetailJobWithCallback invokes the mts.SubmitMediaDetailJob API asynchronously
 // api document: https://help.aliyun.com/api/mts/submitmediadetailjob.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitMediaDetailJobWithCallback(request *SubmitMediaDetailJobRequest, callback func(response *SubmitMediaDetailJobResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SubmitMediaDetailJobWithCallback(request *SubmitMediaDetai
 	return result
 }
 
+// SubmitMediaDetailJobRequest is the request struct for api SubmitMediaDetailJob
 type SubmitMediaDetailJobRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -85,14 +86,15 @@ type SubmitMediaDetailJobRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// SubmitMediaDetailJobResponse is the response struct for api SubmitMediaDetailJob
 type SubmitMediaDetailJobResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	JobId     string `json:"JobId" xml:"JobId"`
 }
 
-// create a request to invoke SubmitMediaDetailJob API
-func CreateSubmitMediaDetailJobRequest() (request *SubmitMediaDetailJobRequest) {
+// CreateSubmitMediaDetailJobRequest creates a request to invoke SubmitMediaDetailJob API
+func CreateSubmitMediaDetailJobRequest(request *SubmitMediaDetailJobRequest) {
 	request = &SubmitMediaDetailJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -100,7 +102,7 @@ func CreateSubmitMediaDetailJobRequest() (request *SubmitMediaDetailJobRequest) 
 	return
 }
 
-// create a response to parse from SubmitMediaDetailJob response
+// CreateSubmitMediaDetailJobResponse creates a response to parse from SubmitMediaDetailJob response
 func CreateSubmitMediaDetailJobResponse() (response *SubmitMediaDetailJobResponse) {
 	response = &SubmitMediaDetailJobResponse{
 		BaseResponse: &responses.BaseResponse{},

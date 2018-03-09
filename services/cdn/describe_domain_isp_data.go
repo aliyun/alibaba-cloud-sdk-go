@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeDomainISPData api with *DescribeDomainISPDataRequest synchronously
+// DescribeDomainISPData invokes the cdn.DescribeDomainISPData API synchronously
 // api document: https://help.aliyun.com/api/cdn/describedomainispdata.html
 func (client *Client) DescribeDomainISPData(request *DescribeDomainISPDataRequest) (response *DescribeDomainISPDataResponse, err error) {
 	response = CreateDescribeDomainISPDataResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeDomainISPData(request *DescribeDomainISPDataReques
 	return
 }
 
-// invoke DescribeDomainISPData api with *DescribeDomainISPDataRequest asynchronously
+// DescribeDomainISPDataWithChan invokes the cdn.DescribeDomainISPData API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describedomainispdata.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainISPDataWithChan(request *DescribeDomainISPDataRequest) (<-chan *DescribeDomainISPDataResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeDomainISPDataWithChan(request *DescribeDomainISPDa
 	return responseChan, errChan
 }
 
-// invoke DescribeDomainISPData api with *DescribeDomainISPDataRequest asynchronously
+// DescribeDomainISPDataWithCallback invokes the cdn.DescribeDomainISPData API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describedomainispdata.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainISPDataWithCallback(request *DescribeDomainISPDataRequest, callback func(response *DescribeDomainISPDataResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeDomainISPDataWithCallback(request *DescribeDomainI
 	return result
 }
 
+// DescribeDomainISPDataRequest is the request struct for api DescribeDomainISPData
 type DescribeDomainISPDataRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,6 +83,7 @@ type DescribeDomainISPDataRequest struct {
 	EndTime       string           `position:"Query" name:"EndTime"`
 }
 
+// DescribeDomainISPDataResponse is the response struct for api DescribeDomainISPData
 type DescribeDomainISPDataResponse struct {
 	*responses.BaseResponse
 	RequestId    string                       `json:"RequestId" xml:"RequestId"`
@@ -92,8 +94,8 @@ type DescribeDomainISPDataResponse struct {
 	Value        ValueInDescribeDomainISPData `json:"Value" xml:"Value"`
 }
 
-// create a request to invoke DescribeDomainISPData API
-func CreateDescribeDomainISPDataRequest() (request *DescribeDomainISPDataRequest) {
+// CreateDescribeDomainISPDataRequest creates a request to invoke DescribeDomainISPData API
+func CreateDescribeDomainISPDataRequest(request *DescribeDomainISPDataRequest) {
 	request = &DescribeDomainISPDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -101,7 +103,7 @@ func CreateDescribeDomainISPDataRequest() (request *DescribeDomainISPDataRequest
 	return
 }
 
-// create a response to parse from DescribeDomainISPData response
+// CreateDescribeDomainISPDataResponse creates a response to parse from DescribeDomainISPData response
 func CreateDescribeDomainISPDataResponse() (response *DescribeDomainISPDataResponse) {
 	response = &DescribeDomainISPDataResponse{
 		BaseResponse: &responses.BaseResponse{},

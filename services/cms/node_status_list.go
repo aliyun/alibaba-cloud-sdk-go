@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke NodeStatusList api with *NodeStatusListRequest synchronously
+// NodeStatusList invokes the cms.NodeStatusList API synchronously
 // api document: https://help.aliyun.com/api/cms/nodestatuslist.html
 func (client *Client) NodeStatusList(request *NodeStatusListRequest) (response *NodeStatusListResponse, err error) {
 	response = CreateNodeStatusListResponse()
@@ -28,7 +28,7 @@ func (client *Client) NodeStatusList(request *NodeStatusListRequest) (response *
 	return
 }
 
-// invoke NodeStatusList api with *NodeStatusListRequest asynchronously
+// NodeStatusListWithChan invokes the cms.NodeStatusList API asynchronously
 // api document: https://help.aliyun.com/api/cms/nodestatuslist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) NodeStatusListWithChan(request *NodeStatusListRequest) (<-chan *NodeStatusListResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) NodeStatusListWithChan(request *NodeStatusListRequest) (<-
 	return responseChan, errChan
 }
 
-// invoke NodeStatusList api with *NodeStatusListRequest asynchronously
+// NodeStatusListWithCallback invokes the cms.NodeStatusList API asynchronously
 // api document: https://help.aliyun.com/api/cms/nodestatuslist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) NodeStatusListWithCallback(request *NodeStatusListRequest, callback func(response *NodeStatusListResponse, err error)) <-chan int {
@@ -73,11 +73,13 @@ func (client *Client) NodeStatusListWithCallback(request *NodeStatusListRequest,
 	return result
 }
 
+// NodeStatusListRequest is the request struct for api NodeStatusList
 type NodeStatusListRequest struct {
 	*requests.RpcRequest
 	InstanceIds string `position:"Query" name:"InstanceIds"`
 }
 
+// NodeStatusListResponse is the response struct for api NodeStatusList
 type NodeStatusListResponse struct {
 	*responses.BaseResponse
 	ErrorCode      int            `json:"ErrorCode" xml:"ErrorCode"`
@@ -87,8 +89,8 @@ type NodeStatusListResponse struct {
 	NodeStatusList NodeStatusList `json:"NodeStatusList" xml:"NodeStatusList"`
 }
 
-// create a request to invoke NodeStatusList API
-func CreateNodeStatusListRequest() (request *NodeStatusListRequest) {
+// CreateNodeStatusListRequest creates a request to invoke NodeStatusList API
+func CreateNodeStatusListRequest(request *NodeStatusListRequest) {
 	request = &NodeStatusListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -96,7 +98,7 @@ func CreateNodeStatusListRequest() (request *NodeStatusListRequest) {
 	return
 }
 
-// create a response to parse from NodeStatusList response
+// CreateNodeStatusListResponse creates a response to parse from NodeStatusList response
 func CreateNodeStatusListResponse() (response *NodeStatusListResponse) {
 	response = &NodeStatusListResponse{
 		BaseResponse: &responses.BaseResponse{},

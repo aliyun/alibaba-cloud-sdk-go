@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ListAccessKeys api with *ListAccessKeysRequest synchronously
+// ListAccessKeys invokes the ram.ListAccessKeys API synchronously
 // api document: https://help.aliyun.com/api/ram/listaccesskeys.html
 func (client *Client) ListAccessKeys(request *ListAccessKeysRequest) (response *ListAccessKeysResponse, err error) {
 	response = CreateListAccessKeysResponse()
@@ -28,7 +28,7 @@ func (client *Client) ListAccessKeys(request *ListAccessKeysRequest) (response *
 	return
 }
 
-// invoke ListAccessKeys api with *ListAccessKeysRequest asynchronously
+// ListAccessKeysWithChan invokes the ram.ListAccessKeys API asynchronously
 // api document: https://help.aliyun.com/api/ram/listaccesskeys.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAccessKeysWithChan(request *ListAccessKeysRequest) (<-chan *ListAccessKeysResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ListAccessKeysWithChan(request *ListAccessKeysRequest) (<-
 	return responseChan, errChan
 }
 
-// invoke ListAccessKeys api with *ListAccessKeysRequest asynchronously
+// ListAccessKeysWithCallback invokes the ram.ListAccessKeys API asynchronously
 // api document: https://help.aliyun.com/api/ram/listaccesskeys.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAccessKeysWithCallback(request *ListAccessKeysRequest, callback func(response *ListAccessKeysResponse, err error)) <-chan int {
@@ -73,19 +73,21 @@ func (client *Client) ListAccessKeysWithCallback(request *ListAccessKeysRequest,
 	return result
 }
 
+// ListAccessKeysRequest is the request struct for api ListAccessKeys
 type ListAccessKeysRequest struct {
 	*requests.RpcRequest
 	UserName string `position:"Query" name:"UserName"`
 }
 
+// ListAccessKeysResponse is the response struct for api ListAccessKeys
 type ListAccessKeysResponse struct {
 	*responses.BaseResponse
 	RequestId  string     `json:"RequestId" xml:"RequestId"`
 	AccessKeys AccessKeys `json:"AccessKeys" xml:"AccessKeys"`
 }
 
-// create a request to invoke ListAccessKeys API
-func CreateListAccessKeysRequest() (request *ListAccessKeysRequest) {
+// CreateListAccessKeysRequest creates a request to invoke ListAccessKeys API
+func CreateListAccessKeysRequest(request *ListAccessKeysRequest) {
 	request = &ListAccessKeysRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -93,7 +95,7 @@ func CreateListAccessKeysRequest() (request *ListAccessKeysRequest) {
 	return
 }
 
-// create a response to parse from ListAccessKeys response
+// CreateListAccessKeysResponse creates a response to parse from ListAccessKeys response
 func CreateListAccessKeysResponse() (response *ListAccessKeysResponse) {
 	response = &ListAccessKeysResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke QueryTaskDetailHistory api with *QueryTaskDetailHistoryRequest synchronously
+// QueryTaskDetailHistory invokes the domain_intl.QueryTaskDetailHistory API synchronously
 // api document: https://help.aliyun.com/api/domain-intl/querytaskdetailhistory.html
 func (client *Client) QueryTaskDetailHistory(request *QueryTaskDetailHistoryRequest) (response *QueryTaskDetailHistoryResponse, err error) {
 	response = CreateQueryTaskDetailHistoryResponse()
@@ -28,7 +28,7 @@ func (client *Client) QueryTaskDetailHistory(request *QueryTaskDetailHistoryRequ
 	return
 }
 
-// invoke QueryTaskDetailHistory api with *QueryTaskDetailHistoryRequest asynchronously
+// QueryTaskDetailHistoryWithChan invokes the domain_intl.QueryTaskDetailHistory API asynchronously
 // api document: https://help.aliyun.com/api/domain-intl/querytaskdetailhistory.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryTaskDetailHistoryWithChan(request *QueryTaskDetailHistoryRequest) (<-chan *QueryTaskDetailHistoryResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) QueryTaskDetailHistoryWithChan(request *QueryTaskDetailHis
 	return responseChan, errChan
 }
 
-// invoke QueryTaskDetailHistory api with *QueryTaskDetailHistoryRequest asynchronously
+// QueryTaskDetailHistoryWithCallback invokes the domain_intl.QueryTaskDetailHistory API asynchronously
 // api document: https://help.aliyun.com/api/domain-intl/querytaskdetailhistory.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryTaskDetailHistoryWithCallback(request *QueryTaskDetailHistoryRequest, callback func(response *QueryTaskDetailHistoryResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) QueryTaskDetailHistoryWithCallback(request *QueryTaskDetai
 	return result
 }
 
+// QueryTaskDetailHistoryRequest is the request struct for api QueryTaskDetailHistory
 type QueryTaskDetailHistoryRequest struct {
 	*requests.RpcRequest
 	Lang               string           `position:"Query" name:"Lang"`
@@ -85,6 +86,7 @@ type QueryTaskDetailHistoryRequest struct {
 	TaskDetailNoCursor string           `position:"Query" name:"TaskDetailNoCursor"`
 }
 
+// QueryTaskDetailHistoryResponse is the response struct for api QueryTaskDetailHistory
 type QueryTaskDetailHistoryResponse struct {
 	*responses.BaseResponse
 	RequestId         string              `json:"RequestId" xml:"RequestId"`
@@ -95,8 +97,8 @@ type QueryTaskDetailHistoryResponse struct {
 	Objects           []TaskDetailHistory `json:"Objects" xml:"Objects"`
 }
 
-// create a request to invoke QueryTaskDetailHistory API
-func CreateQueryTaskDetailHistoryRequest() (request *QueryTaskDetailHistoryRequest) {
+// CreateQueryTaskDetailHistoryRequest creates a request to invoke QueryTaskDetailHistory API
+func CreateQueryTaskDetailHistoryRequest(request *QueryTaskDetailHistoryRequest) {
 	request = &QueryTaskDetailHistoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -104,7 +106,7 @@ func CreateQueryTaskDetailHistoryRequest() (request *QueryTaskDetailHistoryReque
 	return
 }
 
-// create a response to parse from QueryTaskDetailHistory response
+// CreateQueryTaskDetailHistoryResponse creates a response to parse from QueryTaskDetailHistory response
 func CreateQueryTaskDetailHistoryResponse() (response *QueryTaskDetailHistoryResponse) {
 	response = &QueryTaskDetailHistoryResponse{
 		BaseResponse: &responses.BaseResponse{},

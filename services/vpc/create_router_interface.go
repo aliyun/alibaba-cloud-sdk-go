@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CreateRouterInterface api with *CreateRouterInterfaceRequest synchronously
+// CreateRouterInterface invokes the vpc.CreateRouterInterface API synchronously
 // api document: https://help.aliyun.com/api/vpc/createrouterinterface.html
 func (client *Client) CreateRouterInterface(request *CreateRouterInterfaceRequest) (response *CreateRouterInterfaceResponse, err error) {
 	response = CreateCreateRouterInterfaceResponse()
@@ -28,7 +28,7 @@ func (client *Client) CreateRouterInterface(request *CreateRouterInterfaceReques
 	return
 }
 
-// invoke CreateRouterInterface api with *CreateRouterInterfaceRequest asynchronously
+// CreateRouterInterfaceWithChan invokes the vpc.CreateRouterInterface API asynchronously
 // api document: https://help.aliyun.com/api/vpc/createrouterinterface.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateRouterInterfaceWithChan(request *CreateRouterInterfaceRequest) (<-chan *CreateRouterInterfaceResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CreateRouterInterfaceWithChan(request *CreateRouterInterfa
 	return responseChan, errChan
 }
 
-// invoke CreateRouterInterface api with *CreateRouterInterfaceRequest asynchronously
+// CreateRouterInterfaceWithCallback invokes the vpc.CreateRouterInterface API asynchronously
 // api document: https://help.aliyun.com/api/vpc/createrouterinterface.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateRouterInterfaceWithCallback(request *CreateRouterInterfaceRequest, callback func(response *CreateRouterInterfaceResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) CreateRouterInterfaceWithCallback(request *CreateRouterInt
 	return result
 }
 
+// CreateRouterInterfaceRequest is the request struct for api CreateRouterInterface
 type CreateRouterInterfaceRequest struct {
 	*requests.RpcRequest
 	Role                     string           `position:"Query" name:"Role"`
@@ -97,14 +98,15 @@ type CreateRouterInterfaceRequest struct {
 	OwnerAccount             string           `position:"Query" name:"OwnerAccount"`
 }
 
+// CreateRouterInterfaceResponse is the response struct for api CreateRouterInterface
 type CreateRouterInterfaceResponse struct {
 	*responses.BaseResponse
 	RequestId         string `json:"RequestId" xml:"RequestId"`
 	RouterInterfaceId string `json:"RouterInterfaceId" xml:"RouterInterfaceId"`
 }
 
-// create a request to invoke CreateRouterInterface API
-func CreateCreateRouterInterfaceRequest() (request *CreateRouterInterfaceRequest) {
+// CreateCreateRouterInterfaceRequest creates a request to invoke CreateRouterInterface API
+func CreateCreateRouterInterfaceRequest(request *CreateRouterInterfaceRequest) {
 	request = &CreateRouterInterfaceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -112,7 +114,7 @@ func CreateCreateRouterInterfaceRequest() (request *CreateRouterInterfaceRequest
 	return
 }
 
-// create a response to parse from CreateRouterInterface response
+// CreateCreateRouterInterfaceResponse creates a response to parse from CreateRouterInterface response
 func CreateCreateRouterInterfaceResponse() (response *CreateRouterInterfaceResponse) {
 	response = &CreateRouterInterfaceResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteDatabase api with *DeleteDatabaseRequest synchronously
+// DeleteDatabase invokes the rds.DeleteDatabase API synchronously
 // api document: https://help.aliyun.com/api/rds/deletedatabase.html
 func (client *Client) DeleteDatabase(request *DeleteDatabaseRequest) (response *DeleteDatabaseResponse, err error) {
 	response = CreateDeleteDatabaseResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteDatabase(request *DeleteDatabaseRequest) (response *
 	return
 }
 
-// invoke DeleteDatabase api with *DeleteDatabaseRequest asynchronously
+// DeleteDatabaseWithChan invokes the rds.DeleteDatabase API asynchronously
 // api document: https://help.aliyun.com/api/rds/deletedatabase.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDatabaseWithChan(request *DeleteDatabaseRequest) (<-chan *DeleteDatabaseResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteDatabaseWithChan(request *DeleteDatabaseRequest) (<-
 	return responseChan, errChan
 }
 
-// invoke DeleteDatabase api with *DeleteDatabaseRequest asynchronously
+// DeleteDatabaseWithCallback invokes the rds.DeleteDatabase API asynchronously
 // api document: https://help.aliyun.com/api/rds/deletedatabase.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteDatabaseWithCallback(request *DeleteDatabaseRequest, callback func(response *DeleteDatabaseResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DeleteDatabaseWithCallback(request *DeleteDatabaseRequest,
 	return result
 }
 
+// DeleteDatabaseRequest is the request struct for api DeleteDatabase
 type DeleteDatabaseRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -83,13 +84,14 @@ type DeleteDatabaseRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// DeleteDatabaseResponse is the response struct for api DeleteDatabase
 type DeleteDatabaseResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DeleteDatabase API
-func CreateDeleteDatabaseRequest() (request *DeleteDatabaseRequest) {
+// CreateDeleteDatabaseRequest creates a request to invoke DeleteDatabase API
+func CreateDeleteDatabaseRequest(request *DeleteDatabaseRequest) {
 	request = &DeleteDatabaseRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateDeleteDatabaseRequest() (request *DeleteDatabaseRequest) {
 	return
 }
 
-// create a response to parse from DeleteDatabase response
+// CreateDeleteDatabaseResponse creates a response to parse from DeleteDatabase response
 func CreateDeleteDatabaseResponse() (response *DeleteDatabaseResponse) {
 	response = &DeleteDatabaseResponse{
 		BaseResponse: &responses.BaseResponse{},

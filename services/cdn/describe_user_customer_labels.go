@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeUserCustomerLabels api with *DescribeUserCustomerLabelsRequest synchronously
+// DescribeUserCustomerLabels invokes the cdn.DescribeUserCustomerLabels API synchronously
 // api document: https://help.aliyun.com/api/cdn/describeusercustomerlabels.html
 func (client *Client) DescribeUserCustomerLabels(request *DescribeUserCustomerLabelsRequest) (response *DescribeUserCustomerLabelsResponse, err error) {
 	response = CreateDescribeUserCustomerLabelsResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeUserCustomerLabels(request *DescribeUserCustomerLa
 	return
 }
 
-// invoke DescribeUserCustomerLabels api with *DescribeUserCustomerLabelsRequest asynchronously
+// DescribeUserCustomerLabelsWithChan invokes the cdn.DescribeUserCustomerLabels API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describeusercustomerlabels.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUserCustomerLabelsWithChan(request *DescribeUserCustomerLabelsRequest) (<-chan *DescribeUserCustomerLabelsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeUserCustomerLabelsWithChan(request *DescribeUserCu
 	return responseChan, errChan
 }
 
-// invoke DescribeUserCustomerLabels api with *DescribeUserCustomerLabelsRequest asynchronously
+// DescribeUserCustomerLabelsWithCallback invokes the cdn.DescribeUserCustomerLabels API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describeusercustomerlabels.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUserCustomerLabelsWithCallback(request *DescribeUserCustomerLabelsRequest, callback func(response *DescribeUserCustomerLabelsResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeUserCustomerLabelsWithCallback(request *DescribeUs
 	return result
 }
 
+// DescribeUserCustomerLabelsRequest is the request struct for api DescribeUserCustomerLabels
 type DescribeUserCustomerLabelsRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -80,14 +81,15 @@ type DescribeUserCustomerLabelsRequest struct {
 	Uid           requests.Integer `position:"Query" name:"Uid"`
 }
 
+// DescribeUserCustomerLabelsResponse is the response struct for api DescribeUserCustomerLabels
 type DescribeUserCustomerLabelsResponse struct {
 	*responses.BaseResponse
 	RequestId   string `json:"RequestId" xml:"RequestId"`
 	IsInnerUser bool   `json:"IsInnerUser" xml:"IsInnerUser"`
 }
 
-// create a request to invoke DescribeUserCustomerLabels API
-func CreateDescribeUserCustomerLabelsRequest() (request *DescribeUserCustomerLabelsRequest) {
+// CreateDescribeUserCustomerLabelsRequest creates a request to invoke DescribeUserCustomerLabels API
+func CreateDescribeUserCustomerLabelsRequest(request *DescribeUserCustomerLabelsRequest) {
 	request = &DescribeUserCustomerLabelsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateDescribeUserCustomerLabelsRequest() (request *DescribeUserCustomerLab
 	return
 }
 
-// create a response to parse from DescribeUserCustomerLabels response
+// CreateDescribeUserCustomerLabelsResponse creates a response to parse from DescribeUserCustomerLabels response
 func CreateDescribeUserCustomerLabelsResponse() (response *DescribeUserCustomerLabelsResponse) {
 	response = &DescribeUserCustomerLabelsResponse{
 		BaseResponse: &responses.BaseResponse{},

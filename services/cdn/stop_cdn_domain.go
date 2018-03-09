@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke StopCdnDomain api with *StopCdnDomainRequest synchronously
+// StopCdnDomain invokes the cdn.StopCdnDomain API synchronously
 // api document: https://help.aliyun.com/api/cdn/stopcdndomain.html
 func (client *Client) StopCdnDomain(request *StopCdnDomainRequest) (response *StopCdnDomainResponse, err error) {
 	response = CreateStopCdnDomainResponse()
@@ -28,7 +28,7 @@ func (client *Client) StopCdnDomain(request *StopCdnDomainRequest) (response *St
 	return
 }
 
-// invoke StopCdnDomain api with *StopCdnDomainRequest asynchronously
+// StopCdnDomainWithChan invokes the cdn.StopCdnDomain API asynchronously
 // api document: https://help.aliyun.com/api/cdn/stopcdndomain.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StopCdnDomainWithChan(request *StopCdnDomainRequest) (<-chan *StopCdnDomainResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) StopCdnDomainWithChan(request *StopCdnDomainRequest) (<-ch
 	return responseChan, errChan
 }
 
-// invoke StopCdnDomain api with *StopCdnDomainRequest asynchronously
+// StopCdnDomainWithCallback invokes the cdn.StopCdnDomain API asynchronously
 // api document: https://help.aliyun.com/api/cdn/stopcdndomain.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StopCdnDomainWithCallback(request *StopCdnDomainRequest, callback func(response *StopCdnDomainResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) StopCdnDomainWithCallback(request *StopCdnDomainRequest, c
 	return result
 }
 
+// StopCdnDomainRequest is the request struct for api StopCdnDomain
 type StopCdnDomainRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -80,13 +81,14 @@ type StopCdnDomainRequest struct {
 	DomainName    string           `position:"Query" name:"DomainName"`
 }
 
+// StopCdnDomainResponse is the response struct for api StopCdnDomain
 type StopCdnDomainResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke StopCdnDomain API
-func CreateStopCdnDomainRequest() (request *StopCdnDomainRequest) {
+// CreateStopCdnDomainRequest creates a request to invoke StopCdnDomain API
+func CreateStopCdnDomainRequest(request *StopCdnDomainRequest) {
 	request = &StopCdnDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -94,7 +96,7 @@ func CreateStopCdnDomainRequest() (request *StopCdnDomainRequest) {
 	return
 }
 
-// create a response to parse from StopCdnDomain response
+// CreateStopCdnDomainResponse creates a response to parse from StopCdnDomain response
 func CreateStopCdnDomainResponse() (response *StopCdnDomainResponse) {
 	response = &StopCdnDomainResponse{
 		BaseResponse: &responses.BaseResponse{},

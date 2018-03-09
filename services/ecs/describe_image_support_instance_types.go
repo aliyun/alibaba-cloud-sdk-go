@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeImageSupportInstanceTypes api with *DescribeImageSupportInstanceTypesRequest synchronously
+// DescribeImageSupportInstanceTypes invokes the ecs.DescribeImageSupportInstanceTypes API synchronously
 // api document: https://help.aliyun.com/api/ecs/describeimagesupportinstancetypes.html
 func (client *Client) DescribeImageSupportInstanceTypes(request *DescribeImageSupportInstanceTypesRequest) (response *DescribeImageSupportInstanceTypesResponse, err error) {
 	response = CreateDescribeImageSupportInstanceTypesResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeImageSupportInstanceTypes(request *DescribeImageSu
 	return
 }
 
-// invoke DescribeImageSupportInstanceTypes api with *DescribeImageSupportInstanceTypesRequest asynchronously
+// DescribeImageSupportInstanceTypesWithChan invokes the ecs.DescribeImageSupportInstanceTypes API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describeimagesupportinstancetypes.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeImageSupportInstanceTypesWithChan(request *DescribeImageSupportInstanceTypesRequest) (<-chan *DescribeImageSupportInstanceTypesResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeImageSupportInstanceTypesWithChan(request *Describ
 	return responseChan, errChan
 }
 
-// invoke DescribeImageSupportInstanceTypes api with *DescribeImageSupportInstanceTypesRequest asynchronously
+// DescribeImageSupportInstanceTypesWithCallback invokes the ecs.DescribeImageSupportInstanceTypes API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describeimagesupportinstancetypes.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeImageSupportInstanceTypesWithCallback(request *DescribeImageSupportInstanceTypesRequest, callback func(response *DescribeImageSupportInstanceTypesResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeImageSupportInstanceTypesWithCallback(request *Des
 	return result
 }
 
+// DescribeImageSupportInstanceTypesRequest is the request struct for api DescribeImageSupportInstanceTypes
 type DescribeImageSupportInstanceTypesRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer                           `position:"Query" name:"OwnerId"`
@@ -83,11 +84,13 @@ type DescribeImageSupportInstanceTypesRequest struct {
 	Filter               *[]DescribeImageSupportInstanceTypesFilter `position:"Query" name:"Filter"  type:"Repeated"`
 }
 
+// DescribeImageSupportInstanceTypesFilter is a repeated param struct in DescribeImageSupportInstanceTypesRequest
 type DescribeImageSupportInstanceTypesFilter struct {
 	Key   string `name:"Key"`
 	Value string `name:"Value"`
 }
 
+// DescribeImageSupportInstanceTypesResponse is the response struct for api DescribeImageSupportInstanceTypes
 type DescribeImageSupportInstanceTypesResponse struct {
 	*responses.BaseResponse
 	RequestId     string                                           `json:"RequestId" xml:"RequestId"`
@@ -96,8 +99,8 @@ type DescribeImageSupportInstanceTypesResponse struct {
 	InstanceTypes InstanceTypesInDescribeImageSupportInstanceTypes `json:"InstanceTypes" xml:"InstanceTypes"`
 }
 
-// create a request to invoke DescribeImageSupportInstanceTypes API
-func CreateDescribeImageSupportInstanceTypesRequest() (request *DescribeImageSupportInstanceTypesRequest) {
+// CreateDescribeImageSupportInstanceTypesRequest creates a request to invoke DescribeImageSupportInstanceTypes API
+func CreateDescribeImageSupportInstanceTypesRequest(request *DescribeImageSupportInstanceTypesRequest) {
 	request = &DescribeImageSupportInstanceTypesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -105,7 +108,7 @@ func CreateDescribeImageSupportInstanceTypesRequest() (request *DescribeImageSup
 	return
 }
 
-// create a response to parse from DescribeImageSupportInstanceTypes response
+// CreateDescribeImageSupportInstanceTypesResponse creates a response to parse from DescribeImageSupportInstanceTypes response
 func CreateDescribeImageSupportInstanceTypesResponse() (response *DescribeImageSupportInstanceTypesResponse) {
 	response = &DescribeImageSupportInstanceTypesResponse{
 		BaseResponse: &responses.BaseResponse{},

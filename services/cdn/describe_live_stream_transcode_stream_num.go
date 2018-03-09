@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeLiveStreamTranscodeStreamNum api with *DescribeLiveStreamTranscodeStreamNumRequest synchronously
+// DescribeLiveStreamTranscodeStreamNum invokes the cdn.DescribeLiveStreamTranscodeStreamNum API synchronously
 // api document: https://help.aliyun.com/api/cdn/describelivestreamtranscodestreamnum.html
 func (client *Client) DescribeLiveStreamTranscodeStreamNum(request *DescribeLiveStreamTranscodeStreamNumRequest) (response *DescribeLiveStreamTranscodeStreamNumResponse, err error) {
 	response = CreateDescribeLiveStreamTranscodeStreamNumResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeLiveStreamTranscodeStreamNum(request *DescribeLive
 	return
 }
 
-// invoke DescribeLiveStreamTranscodeStreamNum api with *DescribeLiveStreamTranscodeStreamNumRequest asynchronously
+// DescribeLiveStreamTranscodeStreamNumWithChan invokes the cdn.DescribeLiveStreamTranscodeStreamNum API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describelivestreamtranscodestreamnum.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamTranscodeStreamNumWithChan(request *DescribeLiveStreamTranscodeStreamNumRequest) (<-chan *DescribeLiveStreamTranscodeStreamNumResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeLiveStreamTranscodeStreamNumWithChan(request *Desc
 	return responseChan, errChan
 }
 
-// invoke DescribeLiveStreamTranscodeStreamNum api with *DescribeLiveStreamTranscodeStreamNumRequest asynchronously
+// DescribeLiveStreamTranscodeStreamNumWithCallback invokes the cdn.DescribeLiveStreamTranscodeStreamNum API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describelivestreamtranscodestreamnum.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamTranscodeStreamNumWithCallback(request *DescribeLiveStreamTranscodeStreamNumRequest, callback func(response *DescribeLiveStreamTranscodeStreamNumResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeLiveStreamTranscodeStreamNumWithCallback(request *
 	return result
 }
 
+// DescribeLiveStreamTranscodeStreamNumRequest is the request struct for api DescribeLiveStreamTranscodeStreamNum
 type DescribeLiveStreamTranscodeStreamNumRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -81,6 +82,7 @@ type DescribeLiveStreamTranscodeStreamNumRequest struct {
 	PushDomain    string           `position:"Query" name:"PushDomain"`
 }
 
+// DescribeLiveStreamTranscodeStreamNumResponse is the response struct for api DescribeLiveStreamTranscodeStreamNum
 type DescribeLiveStreamTranscodeStreamNumResponse struct {
 	*responses.BaseResponse
 	RequestId         string `json:"RequestId" xml:"RequestId"`
@@ -89,8 +91,8 @@ type DescribeLiveStreamTranscodeStreamNumResponse struct {
 	UntranscodeNumber int    `json:"UntranscodeNumber" xml:"UntranscodeNumber"`
 }
 
-// create a request to invoke DescribeLiveStreamTranscodeStreamNum API
-func CreateDescribeLiveStreamTranscodeStreamNumRequest() (request *DescribeLiveStreamTranscodeStreamNumRequest) {
+// CreateDescribeLiveStreamTranscodeStreamNumRequest creates a request to invoke DescribeLiveStreamTranscodeStreamNum API
+func CreateDescribeLiveStreamTranscodeStreamNumRequest(request *DescribeLiveStreamTranscodeStreamNumRequest) {
 	request = &DescribeLiveStreamTranscodeStreamNumRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateDescribeLiveStreamTranscodeStreamNumRequest() (request *DescribeLiveS
 	return
 }
 
-// create a response to parse from DescribeLiveStreamTranscodeStreamNum response
+// CreateDescribeLiveStreamTranscodeStreamNumResponse creates a response to parse from DescribeLiveStreamTranscodeStreamNum response
 func CreateDescribeLiveStreamTranscodeStreamNumResponse() (response *DescribeLiveStreamTranscodeStreamNumResponse) {
 	response = &DescribeLiveStreamTranscodeStreamNumResponse{
 		BaseResponse: &responses.BaseResponse{},

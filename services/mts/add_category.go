@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke AddCategory api with *AddCategoryRequest synchronously
+// AddCategory invokes the mts.AddCategory API synchronously
 // api document: https://help.aliyun.com/api/mts/addcategory.html
 func (client *Client) AddCategory(request *AddCategoryRequest) (response *AddCategoryResponse, err error) {
 	response = CreateAddCategoryResponse()
@@ -28,7 +28,7 @@ func (client *Client) AddCategory(request *AddCategoryRequest) (response *AddCat
 	return
 }
 
-// invoke AddCategory api with *AddCategoryRequest asynchronously
+// AddCategoryWithChan invokes the mts.AddCategory API asynchronously
 // api document: https://help.aliyun.com/api/mts/addcategory.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddCategoryWithChan(request *AddCategoryRequest) (<-chan *AddCategoryResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) AddCategoryWithChan(request *AddCategoryRequest) (<-chan *
 	return responseChan, errChan
 }
 
-// invoke AddCategory api with *AddCategoryRequest asynchronously
+// AddCategoryWithCallback invokes the mts.AddCategory API asynchronously
 // api document: https://help.aliyun.com/api/mts/addcategory.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddCategoryWithCallback(request *AddCategoryRequest, callback func(response *AddCategoryResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) AddCategoryWithCallback(request *AddCategoryRequest, callb
 	return result
 }
 
+// AddCategoryRequest is the request struct for api AddCategory
 type AddCategoryRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -83,14 +84,15 @@ type AddCategoryRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// AddCategoryResponse is the response struct for api AddCategory
 type AddCategoryResponse struct {
 	*responses.BaseResponse
 	RequestId string   `json:"RequestId" xml:"RequestId"`
 	Category  Category `json:"Category" xml:"Category"`
 }
 
-// create a request to invoke AddCategory API
-func CreateAddCategoryRequest() (request *AddCategoryRequest) {
+// CreateAddCategoryRequest creates a request to invoke AddCategory API
+func CreateAddCategoryRequest(request *AddCategoryRequest) {
 	request = &AddCategoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateAddCategoryRequest() (request *AddCategoryRequest) {
 	return
 }
 
-// create a response to parse from AddCategory response
+// CreateAddCategoryResponse creates a response to parse from AddCategory response
 func CreateAddCategoryResponse() (response *AddCategoryResponse) {
 	response = &AddCategoryResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke RebootInstance api with *RebootInstanceRequest synchronously
+// RebootInstance invokes the ecs.RebootInstance API synchronously
 // api document: https://help.aliyun.com/api/ecs/rebootinstance.html
 func (client *Client) RebootInstance(request *RebootInstanceRequest) (response *RebootInstanceResponse, err error) {
 	response = CreateRebootInstanceResponse()
@@ -28,7 +28,7 @@ func (client *Client) RebootInstance(request *RebootInstanceRequest) (response *
 	return
 }
 
-// invoke RebootInstance api with *RebootInstanceRequest asynchronously
+// RebootInstanceWithChan invokes the ecs.RebootInstance API asynchronously
 // api document: https://help.aliyun.com/api/ecs/rebootinstance.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RebootInstanceWithChan(request *RebootInstanceRequest) (<-chan *RebootInstanceResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) RebootInstanceWithChan(request *RebootInstanceRequest) (<-
 	return responseChan, errChan
 }
 
-// invoke RebootInstance api with *RebootInstanceRequest asynchronously
+// RebootInstanceWithCallback invokes the ecs.RebootInstance API asynchronously
 // api document: https://help.aliyun.com/api/ecs/rebootinstance.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RebootInstanceWithCallback(request *RebootInstanceRequest, callback func(response *RebootInstanceResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) RebootInstanceWithCallback(request *RebootInstanceRequest,
 	return result
 }
 
+// RebootInstanceRequest is the request struct for api RebootInstance
 type RebootInstanceRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -83,13 +84,14 @@ type RebootInstanceRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// RebootInstanceResponse is the response struct for api RebootInstance
 type RebootInstanceResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke RebootInstance API
-func CreateRebootInstanceRequest() (request *RebootInstanceRequest) {
+// CreateRebootInstanceRequest creates a request to invoke RebootInstance API
+func CreateRebootInstanceRequest(request *RebootInstanceRequest) {
 	request = &RebootInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateRebootInstanceRequest() (request *RebootInstanceRequest) {
 	return
 }
 
-// create a response to parse from RebootInstance response
+// CreateRebootInstanceResponse creates a response to parse from RebootInstance response
 func CreateRebootInstanceResponse() (response *RebootInstanceResponse) {
 	response = &RebootInstanceResponse{
 		BaseResponse: &responses.BaseResponse{},

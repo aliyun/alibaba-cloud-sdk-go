@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CreateUserWhiteList api with *CreateUserWhiteListRequest synchronously
+// CreateUserWhiteList invokes the aegis.CreateUserWhiteList API synchronously
 // api document: https://help.aliyun.com/api/aegis/createuserwhitelist.html
 func (client *Client) CreateUserWhiteList(request *CreateUserWhiteListRequest) (response *CreateUserWhiteListResponse, err error) {
 	response = CreateCreateUserWhiteListResponse()
@@ -28,7 +28,7 @@ func (client *Client) CreateUserWhiteList(request *CreateUserWhiteListRequest) (
 	return
 }
 
-// invoke CreateUserWhiteList api with *CreateUserWhiteListRequest asynchronously
+// CreateUserWhiteListWithChan invokes the aegis.CreateUserWhiteList API asynchronously
 // api document: https://help.aliyun.com/api/aegis/createuserwhitelist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateUserWhiteListWithChan(request *CreateUserWhiteListRequest) (<-chan *CreateUserWhiteListResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CreateUserWhiteListWithChan(request *CreateUserWhiteListRe
 	return responseChan, errChan
 }
 
-// invoke CreateUserWhiteList api with *CreateUserWhiteListRequest asynchronously
+// CreateUserWhiteListWithCallback invokes the aegis.CreateUserWhiteList API asynchronously
 // api document: https://help.aliyun.com/api/aegis/createuserwhitelist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateUserWhiteListWithCallback(request *CreateUserWhiteListRequest, callback func(response *CreateUserWhiteListResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) CreateUserWhiteListWithCallback(request *CreateUserWhiteLi
 	return result
 }
 
+// CreateUserWhiteListRequest is the request struct for api CreateUserWhiteList
 type CreateUserWhiteListRequest struct {
 	*requests.RpcRequest
 	SourceIp        string           `position:"Query" name:"SourceIp"`
@@ -80,14 +81,15 @@ type CreateUserWhiteListRequest struct {
 	RiskIdList      string           `position:"Query" name:"RiskIdList"`
 }
 
+// CreateUserWhiteListResponse is the response struct for api CreateUserWhiteList
 type CreateUserWhiteListResponse struct {
 	*responses.BaseResponse
 	RequestId      string `json:"RequestId" xml:"RequestId"`
 	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 }
 
-// create a request to invoke CreateUserWhiteList API
-func CreateCreateUserWhiteListRequest() (request *CreateUserWhiteListRequest) {
+// CreateCreateUserWhiteListRequest creates a request to invoke CreateUserWhiteList API
+func CreateCreateUserWhiteListRequest(request *CreateUserWhiteListRequest) {
 	request = &CreateUserWhiteListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateCreateUserWhiteListRequest() (request *CreateUserWhiteListRequest) {
 	return
 }
 
-// create a response to parse from CreateUserWhiteList response
+// CreateCreateUserWhiteListResponse creates a response to parse from CreateUserWhiteList response
 func CreateCreateUserWhiteListResponse() (response *CreateUserWhiteListResponse) {
 	response = &CreateUserWhiteListResponse{
 		BaseResponse: &responses.BaseResponse{},

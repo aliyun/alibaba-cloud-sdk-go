@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ResizeDisk api with *ResizeDiskRequest synchronously
+// ResizeDisk invokes the ecs.ResizeDisk API synchronously
 // api document: https://help.aliyun.com/api/ecs/resizedisk.html
 func (client *Client) ResizeDisk(request *ResizeDiskRequest) (response *ResizeDiskResponse, err error) {
 	response = CreateResizeDiskResponse()
@@ -28,7 +28,7 @@ func (client *Client) ResizeDisk(request *ResizeDiskRequest) (response *ResizeDi
 	return
 }
 
-// invoke ResizeDisk api with *ResizeDiskRequest asynchronously
+// ResizeDiskWithChan invokes the ecs.ResizeDisk API asynchronously
 // api document: https://help.aliyun.com/api/ecs/resizedisk.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResizeDiskWithChan(request *ResizeDiskRequest) (<-chan *ResizeDiskResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ResizeDiskWithChan(request *ResizeDiskRequest) (<-chan *Re
 	return responseChan, errChan
 }
 
-// invoke ResizeDisk api with *ResizeDiskRequest asynchronously
+// ResizeDiskWithCallback invokes the ecs.ResizeDisk API asynchronously
 // api document: https://help.aliyun.com/api/ecs/resizedisk.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResizeDiskWithCallback(request *ResizeDiskRequest, callback func(response *ResizeDiskResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ResizeDiskWithCallback(request *ResizeDiskRequest, callbac
 	return result
 }
 
+// ResizeDiskRequest is the request struct for api ResizeDisk
 type ResizeDiskRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,13 +85,14 @@ type ResizeDiskRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// ResizeDiskResponse is the response struct for api ResizeDisk
 type ResizeDiskResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ResizeDisk API
-func CreateResizeDiskRequest() (request *ResizeDiskRequest) {
+// CreateResizeDiskRequest creates a request to invoke ResizeDisk API
+func CreateResizeDiskRequest(request *ResizeDiskRequest) {
 	request = &ResizeDiskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateResizeDiskRequest() (request *ResizeDiskRequest) {
 	return
 }
 
-// create a response to parse from ResizeDisk response
+// CreateResizeDiskResponse creates a response to parse from ResizeDisk response
 func CreateResizeDiskResponse() (response *ResizeDiskResponse) {
 	response = &ResizeDiskResponse{
 		BaseResponse: &responses.BaseResponse{},

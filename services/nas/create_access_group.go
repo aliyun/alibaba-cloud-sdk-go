@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CreateAccessGroup api with *CreateAccessGroupRequest synchronously
+// CreateAccessGroup invokes the nas.CreateAccessGroup API synchronously
 // api document: https://help.aliyun.com/api/nas/createaccessgroup.html
 func (client *Client) CreateAccessGroup(request *CreateAccessGroupRequest) (response *CreateAccessGroupResponse, err error) {
 	response = CreateCreateAccessGroupResponse()
@@ -28,7 +28,7 @@ func (client *Client) CreateAccessGroup(request *CreateAccessGroupRequest) (resp
 	return
 }
 
-// invoke CreateAccessGroup api with *CreateAccessGroupRequest asynchronously
+// CreateAccessGroupWithChan invokes the nas.CreateAccessGroup API asynchronously
 // api document: https://help.aliyun.com/api/nas/createaccessgroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateAccessGroupWithChan(request *CreateAccessGroupRequest) (<-chan *CreateAccessGroupResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CreateAccessGroupWithChan(request *CreateAccessGroupReques
 	return responseChan, errChan
 }
 
-// invoke CreateAccessGroup api with *CreateAccessGroupRequest asynchronously
+// CreateAccessGroupWithCallback invokes the nas.CreateAccessGroup API asynchronously
 // api document: https://help.aliyun.com/api/nas/createaccessgroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateAccessGroupWithCallback(request *CreateAccessGroupRequest, callback func(response *CreateAccessGroupResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) CreateAccessGroupWithCallback(request *CreateAccessGroupRe
 	return result
 }
 
+// CreateAccessGroupRequest is the request struct for api CreateAccessGroup
 type CreateAccessGroupRequest struct {
 	*requests.RpcRequest
 	AccessGroupName string `position:"Query" name:"AccessGroupName"`
@@ -80,14 +81,15 @@ type CreateAccessGroupRequest struct {
 	Description     string `position:"Query" name:"Description"`
 }
 
+// CreateAccessGroupResponse is the response struct for api CreateAccessGroup
 type CreateAccessGroupResponse struct {
 	*responses.BaseResponse
 	RequestId       string `json:"RequestId" xml:"RequestId"`
 	AccessGroupName string `json:"AccessGroupName" xml:"AccessGroupName"`
 }
 
-// create a request to invoke CreateAccessGroup API
-func CreateCreateAccessGroupRequest() (request *CreateAccessGroupRequest) {
+// CreateCreateAccessGroupRequest creates a request to invoke CreateAccessGroup API
+func CreateCreateAccessGroupRequest(request *CreateAccessGroupRequest) {
 	request = &CreateAccessGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateCreateAccessGroupRequest() (request *CreateAccessGroupRequest) {
 	return
 }
 
-// create a response to parse from CreateAccessGroup response
+// CreateCreateAccessGroupResponse creates a response to parse from CreateAccessGroup response
 func CreateCreateAccessGroupResponse() (response *CreateAccessGroupResponse) {
 	response = &CreateAccessGroupResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteVpnConnection api with *DeleteVpnConnectionRequest synchronously
+// DeleteVpnConnection invokes the vpc.DeleteVpnConnection API synchronously
 // api document: https://help.aliyun.com/api/vpc/deletevpnconnection.html
 func (client *Client) DeleteVpnConnection(request *DeleteVpnConnectionRequest) (response *DeleteVpnConnectionResponse, err error) {
 	response = CreateDeleteVpnConnectionResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteVpnConnection(request *DeleteVpnConnectionRequest) (
 	return
 }
 
-// invoke DeleteVpnConnection api with *DeleteVpnConnectionRequest asynchronously
+// DeleteVpnConnectionWithChan invokes the vpc.DeleteVpnConnection API asynchronously
 // api document: https://help.aliyun.com/api/vpc/deletevpnconnection.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteVpnConnectionWithChan(request *DeleteVpnConnectionRequest) (<-chan *DeleteVpnConnectionResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteVpnConnectionWithChan(request *DeleteVpnConnectionRe
 	return responseChan, errChan
 }
 
-// invoke DeleteVpnConnection api with *DeleteVpnConnectionRequest asynchronously
+// DeleteVpnConnectionWithCallback invokes the vpc.DeleteVpnConnection API asynchronously
 // api document: https://help.aliyun.com/api/vpc/deletevpnconnection.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteVpnConnectionWithCallback(request *DeleteVpnConnectionRequest, callback func(response *DeleteVpnConnectionResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DeleteVpnConnectionWithCallback(request *DeleteVpnConnecti
 	return result
 }
 
+// DeleteVpnConnectionRequest is the request struct for api DeleteVpnConnection
 type DeleteVpnConnectionRequest struct {
 	*requests.RpcRequest
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
@@ -83,13 +84,14 @@ type DeleteVpnConnectionRequest struct {
 	VpnConnectionId      string           `position:"Query" name:"VpnConnectionId"`
 }
 
+// DeleteVpnConnectionResponse is the response struct for api DeleteVpnConnection
 type DeleteVpnConnectionResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DeleteVpnConnection API
-func CreateDeleteVpnConnectionRequest() (request *DeleteVpnConnectionRequest) {
+// CreateDeleteVpnConnectionRequest creates a request to invoke DeleteVpnConnection API
+func CreateDeleteVpnConnectionRequest(request *DeleteVpnConnectionRequest) {
 	request = &DeleteVpnConnectionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateDeleteVpnConnectionRequest() (request *DeleteVpnConnectionRequest) {
 	return
 }
 
-// create a response to parse from DeleteVpnConnection response
+// CreateDeleteVpnConnectionResponse creates a response to parse from DeleteVpnConnection response
 func CreateDeleteVpnConnectionResponse() (response *DeleteVpnConnectionResponse) {
 	response = &DeleteVpnConnectionResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeIpRanges api with *DescribeIpRangesRequest synchronously
+// DescribeIpRanges invokes the ecs.DescribeIpRanges API synchronously
 // api document: https://help.aliyun.com/api/ecs/describeipranges.html
 func (client *Client) DescribeIpRanges(request *DescribeIpRangesRequest) (response *DescribeIpRangesResponse, err error) {
 	response = CreateDescribeIpRangesResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeIpRanges(request *DescribeIpRangesRequest) (respon
 	return
 }
 
-// invoke DescribeIpRanges api with *DescribeIpRangesRequest asynchronously
+// DescribeIpRangesWithChan invokes the ecs.DescribeIpRanges API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describeipranges.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeIpRangesWithChan(request *DescribeIpRangesRequest) (<-chan *DescribeIpRangesResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeIpRangesWithChan(request *DescribeIpRangesRequest)
 	return responseChan, errChan
 }
 
-// invoke DescribeIpRanges api with *DescribeIpRangesRequest asynchronously
+// DescribeIpRangesWithCallback invokes the ecs.DescribeIpRanges API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describeipranges.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeIpRangesWithCallback(request *DescribeIpRangesRequest, callback func(response *DescribeIpRangesResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeIpRangesWithCallback(request *DescribeIpRangesRequ
 	return result
 }
 
+// DescribeIpRangesRequest is the request struct for api DescribeIpRanges
 type DescribeIpRangesRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -85,6 +86,7 @@ type DescribeIpRangesRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// DescribeIpRangesResponse is the response struct for api DescribeIpRanges
 type DescribeIpRangesResponse struct {
 	*responses.BaseResponse
 	RequestId  string   `json:"RequestId" xml:"RequestId"`
@@ -96,8 +98,8 @@ type DescribeIpRangesResponse struct {
 	IpRanges   IpRanges `json:"IpRanges" xml:"IpRanges"`
 }
 
-// create a request to invoke DescribeIpRanges API
-func CreateDescribeIpRangesRequest() (request *DescribeIpRangesRequest) {
+// CreateDescribeIpRangesRequest creates a request to invoke DescribeIpRanges API
+func CreateDescribeIpRangesRequest(request *DescribeIpRangesRequest) {
 	request = &DescribeIpRangesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -105,7 +107,7 @@ func CreateDescribeIpRangesRequest() (request *DescribeIpRangesRequest) {
 	return
 }
 
-// create a response to parse from DescribeIpRanges response
+// CreateDescribeIpRangesResponse creates a response to parse from DescribeIpRanges response
 func CreateDescribeIpRangesResponse() (response *DescribeIpRangesResponse) {
 	response = &DescribeIpRangesResponse{
 		BaseResponse: &responses.BaseResponse{},

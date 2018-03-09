@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeInstanceTypeFamilies api with *DescribeInstanceTypeFamiliesRequest synchronously
+// DescribeInstanceTypeFamilies invokes the ecs.DescribeInstanceTypeFamilies API synchronously
 // api document: https://help.aliyun.com/api/ecs/describeinstancetypefamilies.html
 func (client *Client) DescribeInstanceTypeFamilies(request *DescribeInstanceTypeFamiliesRequest) (response *DescribeInstanceTypeFamiliesResponse, err error) {
 	response = CreateDescribeInstanceTypeFamiliesResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeInstanceTypeFamilies(request *DescribeInstanceType
 	return
 }
 
-// invoke DescribeInstanceTypeFamilies api with *DescribeInstanceTypeFamiliesRequest asynchronously
+// DescribeInstanceTypeFamiliesWithChan invokes the ecs.DescribeInstanceTypeFamilies API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describeinstancetypefamilies.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceTypeFamiliesWithChan(request *DescribeInstanceTypeFamiliesRequest) (<-chan *DescribeInstanceTypeFamiliesResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeInstanceTypeFamiliesWithChan(request *DescribeInst
 	return responseChan, errChan
 }
 
-// invoke DescribeInstanceTypeFamilies api with *DescribeInstanceTypeFamiliesRequest asynchronously
+// DescribeInstanceTypeFamiliesWithCallback invokes the ecs.DescribeInstanceTypeFamilies API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describeinstancetypefamilies.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceTypeFamiliesWithCallback(request *DescribeInstanceTypeFamiliesRequest, callback func(response *DescribeInstanceTypeFamiliesResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeInstanceTypeFamiliesWithCallback(request *Describe
 	return result
 }
 
+// DescribeInstanceTypeFamiliesRequest is the request struct for api DescribeInstanceTypeFamilies
 type DescribeInstanceTypeFamiliesRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,14 +83,15 @@ type DescribeInstanceTypeFamiliesRequest struct {
 	Generation           string           `position:"Query" name:"Generation"`
 }
 
+// DescribeInstanceTypeFamiliesResponse is the response struct for api DescribeInstanceTypeFamilies
 type DescribeInstanceTypeFamiliesResponse struct {
 	*responses.BaseResponse
 	RequestId            string                                             `json:"RequestId" xml:"RequestId"`
 	InstanceTypeFamilies InstanceTypeFamiliesInDescribeInstanceTypeFamilies `json:"InstanceTypeFamilies" xml:"InstanceTypeFamilies"`
 }
 
-// create a request to invoke DescribeInstanceTypeFamilies API
-func CreateDescribeInstanceTypeFamiliesRequest() (request *DescribeInstanceTypeFamiliesRequest) {
+// CreateDescribeInstanceTypeFamiliesRequest creates a request to invoke DescribeInstanceTypeFamilies API
+func CreateDescribeInstanceTypeFamiliesRequest(request *DescribeInstanceTypeFamiliesRequest) {
 	request = &DescribeInstanceTypeFamiliesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateDescribeInstanceTypeFamiliesRequest() (request *DescribeInstanceTypeF
 	return
 }
 
-// create a response to parse from DescribeInstanceTypeFamilies response
+// CreateDescribeInstanceTypeFamiliesResponse creates a response to parse from DescribeInstanceTypeFamilies response
 func CreateDescribeInstanceTypeFamiliesResponse() (response *DescribeInstanceTypeFamiliesResponse) {
 	response = &DescribeInstanceTypeFamiliesResponse{
 		BaseResponse: &responses.BaseResponse{},

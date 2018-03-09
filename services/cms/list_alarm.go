@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ListAlarm api with *ListAlarmRequest synchronously
+// ListAlarm invokes the cms.ListAlarm API synchronously
 // api document: https://help.aliyun.com/api/cms/listalarm.html
 func (client *Client) ListAlarm(request *ListAlarmRequest) (response *ListAlarmResponse, err error) {
 	response = CreateListAlarmResponse()
@@ -28,7 +28,7 @@ func (client *Client) ListAlarm(request *ListAlarmRequest) (response *ListAlarmR
 	return
 }
 
-// invoke ListAlarm api with *ListAlarmRequest asynchronously
+// ListAlarmWithChan invokes the cms.ListAlarm API asynchronously
 // api document: https://help.aliyun.com/api/cms/listalarm.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAlarmWithChan(request *ListAlarmRequest) (<-chan *ListAlarmResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ListAlarmWithChan(request *ListAlarmRequest) (<-chan *List
 	return responseChan, errChan
 }
 
-// invoke ListAlarm api with *ListAlarmRequest asynchronously
+// ListAlarmWithCallback invokes the cms.ListAlarm API asynchronously
 // api document: https://help.aliyun.com/api/cms/listalarm.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListAlarmWithCallback(request *ListAlarmRequest, callback func(response *ListAlarmResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ListAlarmWithCallback(request *ListAlarmRequest, callback 
 	return result
 }
 
+// ListAlarmRequest is the request struct for api ListAlarm
 type ListAlarmRequest struct {
 	*requests.RpcRequest
 	CallbyCmsOwner string           `position:"Query" name:"callby_cms_owner"`
@@ -86,6 +87,7 @@ type ListAlarmRequest struct {
 	PageSize       requests.Integer `position:"Query" name:"PageSize"`
 }
 
+// ListAlarmResponse is the response struct for api ListAlarm
 type ListAlarmResponse struct {
 	*responses.BaseResponse
 	Success   bool      `json:"Success" xml:"Success"`
@@ -97,8 +99,8 @@ type ListAlarmResponse struct {
 	AlarmList AlarmList `json:"AlarmList" xml:"AlarmList"`
 }
 
-// create a request to invoke ListAlarm API
-func CreateListAlarmRequest() (request *ListAlarmRequest) {
+// CreateListAlarmRequest creates a request to invoke ListAlarm API
+func CreateListAlarmRequest(request *ListAlarmRequest) {
 	request = &ListAlarmRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -106,7 +108,7 @@ func CreateListAlarmRequest() (request *ListAlarmRequest) {
 	return
 }
 
-// create a response to parse from ListAlarm response
+// CreateListAlarmResponse creates a response to parse from ListAlarm response
 func CreateListAlarmResponse() (response *ListAlarmResponse) {
 	response = &ListAlarmResponse{
 		BaseResponse: &responses.BaseResponse{},

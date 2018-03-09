@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifyNqa api with *ModifyNqaRequest synchronously
+// ModifyNqa invokes the vpc.ModifyNqa API synchronously
 // api document: https://help.aliyun.com/api/vpc/modifynqa.html
 func (client *Client) ModifyNqa(request *ModifyNqaRequest) (response *ModifyNqaResponse, err error) {
 	response = CreateModifyNqaResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifyNqa(request *ModifyNqaRequest) (response *ModifyNqaR
 	return
 }
 
-// invoke ModifyNqa api with *ModifyNqaRequest asynchronously
+// ModifyNqaWithChan invokes the vpc.ModifyNqa API asynchronously
 // api document: https://help.aliyun.com/api/vpc/modifynqa.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyNqaWithChan(request *ModifyNqaRequest) (<-chan *ModifyNqaResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifyNqaWithChan(request *ModifyNqaRequest) (<-chan *Modi
 	return responseChan, errChan
 }
 
-// invoke ModifyNqa api with *ModifyNqaRequest asynchronously
+// ModifyNqaWithCallback invokes the vpc.ModifyNqa API asynchronously
 // api document: https://help.aliyun.com/api/vpc/modifynqa.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyNqaWithCallback(request *ModifyNqaRequest, callback func(response *ModifyNqaResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ModifyNqaWithCallback(request *ModifyNqaRequest, callback 
 	return result
 }
 
+// ModifyNqaRequest is the request struct for api ModifyNqa
 type ModifyNqaRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,13 +85,14 @@ type ModifyNqaRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// ModifyNqaResponse is the response struct for api ModifyNqa
 type ModifyNqaResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ModifyNqa API
-func CreateModifyNqaRequest() (request *ModifyNqaRequest) {
+// CreateModifyNqaRequest creates a request to invoke ModifyNqa API
+func CreateModifyNqaRequest(request *ModifyNqaRequest) {
 	request = &ModifyNqaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateModifyNqaRequest() (request *ModifyNqaRequest) {
 	return
 }
 
-// create a response to parse from ModifyNqa response
+// CreateModifyNqaResponse creates a response to parse from ModifyNqa response
 func CreateModifyNqaResponse() (response *ModifyNqaResponse) {
 	response = &ModifyNqaResponse{
 		BaseResponse: &responses.BaseResponse{},

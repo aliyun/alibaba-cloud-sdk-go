@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke RevokeSecurityGroup api with *RevokeSecurityGroupRequest synchronously
+// RevokeSecurityGroup invokes the ecs.RevokeSecurityGroup API synchronously
 // api document: https://help.aliyun.com/api/ecs/revokesecuritygroup.html
 func (client *Client) RevokeSecurityGroup(request *RevokeSecurityGroupRequest) (response *RevokeSecurityGroupResponse, err error) {
 	response = CreateRevokeSecurityGroupResponse()
@@ -28,7 +28,7 @@ func (client *Client) RevokeSecurityGroup(request *RevokeSecurityGroupRequest) (
 	return
 }
 
-// invoke RevokeSecurityGroup api with *RevokeSecurityGroupRequest asynchronously
+// RevokeSecurityGroupWithChan invokes the ecs.RevokeSecurityGroup API asynchronously
 // api document: https://help.aliyun.com/api/ecs/revokesecuritygroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RevokeSecurityGroupWithChan(request *RevokeSecurityGroupRequest) (<-chan *RevokeSecurityGroupResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) RevokeSecurityGroupWithChan(request *RevokeSecurityGroupRe
 	return responseChan, errChan
 }
 
-// invoke RevokeSecurityGroup api with *RevokeSecurityGroupRequest asynchronously
+// RevokeSecurityGroupWithCallback invokes the ecs.RevokeSecurityGroup API asynchronously
 // api document: https://help.aliyun.com/api/ecs/revokesecuritygroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RevokeSecurityGroupWithCallback(request *RevokeSecurityGroupRequest, callback func(response *RevokeSecurityGroupResponse, err error)) <-chan int {
@@ -73,17 +73,19 @@ func (client *Client) RevokeSecurityGroupWithCallback(request *RevokeSecurityGro
 	return result
 }
 
+// RevokeSecurityGroupRequest is the request struct for api RevokeSecurityGroup
 type RevokeSecurityGroupRequest struct {
 	*requests.RpcRequest
 }
 
+// RevokeSecurityGroupResponse is the response struct for api RevokeSecurityGroup
 type RevokeSecurityGroupResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke RevokeSecurityGroup API
-func CreateRevokeSecurityGroupRequest() (request *RevokeSecurityGroupRequest) {
+// CreateRevokeSecurityGroupRequest creates a request to invoke RevokeSecurityGroup API
+func CreateRevokeSecurityGroupRequest(request *RevokeSecurityGroupRequest) {
 	request = &RevokeSecurityGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -91,7 +93,7 @@ func CreateRevokeSecurityGroupRequest() (request *RevokeSecurityGroupRequest) {
 	return
 }
 
-// create a response to parse from RevokeSecurityGroup response
+// CreateRevokeSecurityGroupResponse creates a response to parse from RevokeSecurityGroup response
 func CreateRevokeSecurityGroupResponse() (response *RevokeSecurityGroupResponse) {
 	response = &RevokeSecurityGroupResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke UpdateLiveAppSnapshotConfig api with *UpdateLiveAppSnapshotConfigRequest synchronously
+// UpdateLiveAppSnapshotConfig invokes the cdn.UpdateLiveAppSnapshotConfig API synchronously
 // api document: https://help.aliyun.com/api/cdn/updateliveappsnapshotconfig.html
 func (client *Client) UpdateLiveAppSnapshotConfig(request *UpdateLiveAppSnapshotConfigRequest) (response *UpdateLiveAppSnapshotConfigResponse, err error) {
 	response = CreateUpdateLiveAppSnapshotConfigResponse()
@@ -28,7 +28,7 @@ func (client *Client) UpdateLiveAppSnapshotConfig(request *UpdateLiveAppSnapshot
 	return
 }
 
-// invoke UpdateLiveAppSnapshotConfig api with *UpdateLiveAppSnapshotConfigRequest asynchronously
+// UpdateLiveAppSnapshotConfigWithChan invokes the cdn.UpdateLiveAppSnapshotConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/updateliveappsnapshotconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateLiveAppSnapshotConfigWithChan(request *UpdateLiveAppSnapshotConfigRequest) (<-chan *UpdateLiveAppSnapshotConfigResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) UpdateLiveAppSnapshotConfigWithChan(request *UpdateLiveApp
 	return responseChan, errChan
 }
 
-// invoke UpdateLiveAppSnapshotConfig api with *UpdateLiveAppSnapshotConfigRequest asynchronously
+// UpdateLiveAppSnapshotConfigWithCallback invokes the cdn.UpdateLiveAppSnapshotConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/updateliveappsnapshotconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateLiveAppSnapshotConfigWithCallback(request *UpdateLiveAppSnapshotConfigRequest, callback func(response *UpdateLiveAppSnapshotConfigResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) UpdateLiveAppSnapshotConfigWithCallback(request *UpdateLiv
 	return result
 }
 
+// UpdateLiveAppSnapshotConfigRequest is the request struct for api UpdateLiveAppSnapshotConfig
 type UpdateLiveAppSnapshotConfigRequest struct {
 	*requests.RpcRequest
 	OwnerId            requests.Integer `position:"Query" name:"OwnerId"`
@@ -86,13 +87,14 @@ type UpdateLiveAppSnapshotConfigRequest struct {
 	SequenceOssObject  string           `position:"Query" name:"SequenceOssObject"`
 }
 
+// UpdateLiveAppSnapshotConfigResponse is the response struct for api UpdateLiveAppSnapshotConfig
 type UpdateLiveAppSnapshotConfigResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke UpdateLiveAppSnapshotConfig API
-func CreateUpdateLiveAppSnapshotConfigRequest() (request *UpdateLiveAppSnapshotConfigRequest) {
+// CreateUpdateLiveAppSnapshotConfigRequest creates a request to invoke UpdateLiveAppSnapshotConfig API
+func CreateUpdateLiveAppSnapshotConfigRequest(request *UpdateLiveAppSnapshotConfigRequest) {
 	request = &UpdateLiveAppSnapshotConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -100,7 +102,7 @@ func CreateUpdateLiveAppSnapshotConfigRequest() (request *UpdateLiveAppSnapshotC
 	return
 }
 
-// create a response to parse from UpdateLiveAppSnapshotConfig response
+// CreateUpdateLiveAppSnapshotConfigResponse creates a response to parse from UpdateLiveAppSnapshotConfig response
 func CreateUpdateLiveAppSnapshotConfigResponse() (response *UpdateLiveAppSnapshotConfigResponse) {
 	response = &UpdateLiveAppSnapshotConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

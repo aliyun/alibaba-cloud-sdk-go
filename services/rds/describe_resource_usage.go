@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeResourceUsage api with *DescribeResourceUsageRequest synchronously
+// DescribeResourceUsage invokes the rds.DescribeResourceUsage API synchronously
 // api document: https://help.aliyun.com/api/rds/describeresourceusage.html
 func (client *Client) DescribeResourceUsage(request *DescribeResourceUsageRequest) (response *DescribeResourceUsageResponse, err error) {
 	response = CreateDescribeResourceUsageResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeResourceUsage(request *DescribeResourceUsageReques
 	return
 }
 
-// invoke DescribeResourceUsage api with *DescribeResourceUsageRequest asynchronously
+// DescribeResourceUsageWithChan invokes the rds.DescribeResourceUsage API asynchronously
 // api document: https://help.aliyun.com/api/rds/describeresourceusage.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeResourceUsageWithChan(request *DescribeResourceUsageRequest) (<-chan *DescribeResourceUsageResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeResourceUsageWithChan(request *DescribeResourceUsa
 	return responseChan, errChan
 }
 
-// invoke DescribeResourceUsage api with *DescribeResourceUsageRequest asynchronously
+// DescribeResourceUsageWithCallback invokes the rds.DescribeResourceUsage API asynchronously
 // api document: https://help.aliyun.com/api/rds/describeresourceusage.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeResourceUsageWithCallback(request *DescribeResourceUsageRequest, callback func(response *DescribeResourceUsageResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeResourceUsageWithCallback(request *DescribeResourc
 	return result
 }
 
+// DescribeResourceUsageRequest is the request struct for api DescribeResourceUsage
 type DescribeResourceUsageRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -83,6 +84,7 @@ type DescribeResourceUsageRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// DescribeResourceUsageResponse is the response struct for api DescribeResourceUsage
 type DescribeResourceUsageResponse struct {
 	*responses.BaseResponse
 	RequestId      string `json:"RequestId" xml:"RequestId"`
@@ -96,8 +98,8 @@ type DescribeResourceUsageResponse struct {
 	ColdBackupSize int    `json:"ColdBackupSize" xml:"ColdBackupSize"`
 }
 
-// create a request to invoke DescribeResourceUsage API
-func CreateDescribeResourceUsageRequest() (request *DescribeResourceUsageRequest) {
+// CreateDescribeResourceUsageRequest creates a request to invoke DescribeResourceUsage API
+func CreateDescribeResourceUsageRequest(request *DescribeResourceUsageRequest) {
 	request = &DescribeResourceUsageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -105,7 +107,7 @@ func CreateDescribeResourceUsageRequest() (request *DescribeResourceUsageRequest
 	return
 }
 
-// create a response to parse from DescribeResourceUsage response
+// CreateDescribeResourceUsageResponse creates a response to parse from DescribeResourceUsage response
 func CreateDescribeResourceUsageResponse() (response *DescribeResourceUsageResponse) {
 	response = &DescribeResourceUsageResponse{
 		BaseResponse: &responses.BaseResponse{},

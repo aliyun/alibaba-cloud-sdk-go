@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeInstanceAttribute api with *DescribeInstanceAttributeRequest synchronously
+// DescribeInstanceAttribute invokes the ecs.DescribeInstanceAttribute API synchronously
 // api document: https://help.aliyun.com/api/ecs/describeinstanceattribute.html
 func (client *Client) DescribeInstanceAttribute(request *DescribeInstanceAttributeRequest) (response *DescribeInstanceAttributeResponse, err error) {
 	response = CreateDescribeInstanceAttributeResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeInstanceAttribute(request *DescribeInstanceAttribu
 	return
 }
 
-// invoke DescribeInstanceAttribute api with *DescribeInstanceAttributeRequest asynchronously
+// DescribeInstanceAttributeWithChan invokes the ecs.DescribeInstanceAttribute API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describeinstanceattribute.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceAttributeWithChan(request *DescribeInstanceAttributeRequest) (<-chan *DescribeInstanceAttributeResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeInstanceAttributeWithChan(request *DescribeInstanc
 	return responseChan, errChan
 }
 
-// invoke DescribeInstanceAttribute api with *DescribeInstanceAttributeRequest asynchronously
+// DescribeInstanceAttributeWithCallback invokes the ecs.DescribeInstanceAttribute API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describeinstanceattribute.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInstanceAttributeWithCallback(request *DescribeInstanceAttributeRequest, callback func(response *DescribeInstanceAttributeResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeInstanceAttributeWithCallback(request *DescribeIns
 	return result
 }
 
+// DescribeInstanceAttributeRequest is the request struct for api DescribeInstanceAttribute
 type DescribeInstanceAttributeRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,6 +83,7 @@ type DescribeInstanceAttributeRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// DescribeInstanceAttributeResponse is the response struct for api DescribeInstanceAttribute
 type DescribeInstanceAttributeResponse struct {
 	*responses.BaseResponse
 	RequestId               string                                      `json:"RequestId" xml:"RequestId"`
@@ -116,8 +118,8 @@ type DescribeInstanceAttributeResponse struct {
 	OperationLocks          OperationLocksInDescribeInstanceAttribute   `json:"OperationLocks" xml:"OperationLocks"`
 }
 
-// create a request to invoke DescribeInstanceAttribute API
-func CreateDescribeInstanceAttributeRequest() (request *DescribeInstanceAttributeRequest) {
+// CreateDescribeInstanceAttributeRequest creates a request to invoke DescribeInstanceAttribute API
+func CreateDescribeInstanceAttributeRequest(request *DescribeInstanceAttributeRequest) {
 	request = &DescribeInstanceAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -125,7 +127,7 @@ func CreateDescribeInstanceAttributeRequest() (request *DescribeInstanceAttribut
 	return
 }
 
-// create a response to parse from DescribeInstanceAttribute response
+// CreateDescribeInstanceAttributeResponse creates a response to parse from DescribeInstanceAttribute response
 func CreateDescribeInstanceAttributeResponse() (response *DescribeInstanceAttributeResponse) {
 	response = &DescribeInstanceAttributeResponse{
 		BaseResponse: &responses.BaseResponse{},

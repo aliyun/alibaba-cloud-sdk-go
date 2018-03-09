@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SetVServerGroupAttribute api with *SetVServerGroupAttributeRequest synchronously
+// SetVServerGroupAttribute invokes the slb.SetVServerGroupAttribute API synchronously
 // api document: https://help.aliyun.com/api/slb/setvservergroupattribute.html
 func (client *Client) SetVServerGroupAttribute(request *SetVServerGroupAttributeRequest) (response *SetVServerGroupAttributeResponse, err error) {
 	response = CreateSetVServerGroupAttributeResponse()
@@ -28,7 +28,7 @@ func (client *Client) SetVServerGroupAttribute(request *SetVServerGroupAttribute
 	return
 }
 
-// invoke SetVServerGroupAttribute api with *SetVServerGroupAttributeRequest asynchronously
+// SetVServerGroupAttributeWithChan invokes the slb.SetVServerGroupAttribute API asynchronously
 // api document: https://help.aliyun.com/api/slb/setvservergroupattribute.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetVServerGroupAttributeWithChan(request *SetVServerGroupAttributeRequest) (<-chan *SetVServerGroupAttributeResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SetVServerGroupAttributeWithChan(request *SetVServerGroupA
 	return responseChan, errChan
 }
 
-// invoke SetVServerGroupAttribute api with *SetVServerGroupAttributeRequest asynchronously
+// SetVServerGroupAttributeWithCallback invokes the slb.SetVServerGroupAttribute API asynchronously
 // api document: https://help.aliyun.com/api/slb/setvservergroupattribute.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetVServerGroupAttributeWithCallback(request *SetVServerGroupAttributeRequest, callback func(response *SetVServerGroupAttributeResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SetVServerGroupAttributeWithCallback(request *SetVServerGr
 	return result
 }
 
+// SetVServerGroupAttributeRequest is the request struct for api SetVServerGroupAttribute
 type SetVServerGroupAttributeRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -86,6 +87,7 @@ type SetVServerGroupAttributeRequest struct {
 	BackendServers       string           `position:"Query" name:"BackendServers"`
 }
 
+// SetVServerGroupAttributeResponse is the response struct for api SetVServerGroupAttribute
 type SetVServerGroupAttributeResponse struct {
 	*responses.BaseResponse
 	RequestId        string                                   `json:"RequestId" xml:"RequestId"`
@@ -94,8 +96,8 @@ type SetVServerGroupAttributeResponse struct {
 	BackendServers   BackendServersInSetVServerGroupAttribute `json:"BackendServers" xml:"BackendServers"`
 }
 
-// create a request to invoke SetVServerGroupAttribute API
-func CreateSetVServerGroupAttributeRequest() (request *SetVServerGroupAttributeRequest) {
+// CreateSetVServerGroupAttributeRequest creates a request to invoke SetVServerGroupAttribute API
+func CreateSetVServerGroupAttributeRequest(request *SetVServerGroupAttributeRequest) {
 	request = &SetVServerGroupAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -103,7 +105,7 @@ func CreateSetVServerGroupAttributeRequest() (request *SetVServerGroupAttributeR
 	return
 }
 
-// create a response to parse from SetVServerGroupAttribute response
+// CreateSetVServerGroupAttributeResponse creates a response to parse from SetVServerGroupAttribute response
 func CreateSetVServerGroupAttributeResponse() (response *SetVServerGroupAttributeResponse) {
 	response = &SetVServerGroupAttributeResponse{
 		BaseResponse: &responses.BaseResponse{},

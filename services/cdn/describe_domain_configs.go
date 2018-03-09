@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeDomainConfigs api with *DescribeDomainConfigsRequest synchronously
+// DescribeDomainConfigs invokes the cdn.DescribeDomainConfigs API synchronously
 // api document: https://help.aliyun.com/api/cdn/describedomainconfigs.html
 func (client *Client) DescribeDomainConfigs(request *DescribeDomainConfigsRequest) (response *DescribeDomainConfigsResponse, err error) {
 	response = CreateDescribeDomainConfigsResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeDomainConfigs(request *DescribeDomainConfigsReques
 	return
 }
 
-// invoke DescribeDomainConfigs api with *DescribeDomainConfigsRequest asynchronously
+// DescribeDomainConfigsWithChan invokes the cdn.DescribeDomainConfigs API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describedomainconfigs.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainConfigsWithChan(request *DescribeDomainConfigsRequest) (<-chan *DescribeDomainConfigsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeDomainConfigsWithChan(request *DescribeDomainConfi
 	return responseChan, errChan
 }
 
-// invoke DescribeDomainConfigs api with *DescribeDomainConfigsRequest asynchronously
+// DescribeDomainConfigsWithCallback invokes the cdn.DescribeDomainConfigs API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describedomainconfigs.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainConfigsWithCallback(request *DescribeDomainConfigsRequest, callback func(response *DescribeDomainConfigsResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeDomainConfigsWithCallback(request *DescribeDomainC
 	return result
 }
 
+// DescribeDomainConfigsRequest is the request struct for api DescribeDomainConfigs
 type DescribeDomainConfigsRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -81,14 +82,15 @@ type DescribeDomainConfigsRequest struct {
 	ConfigList    string           `position:"Query" name:"ConfigList"`
 }
 
+// DescribeDomainConfigsResponse is the response struct for api DescribeDomainConfigs
 type DescribeDomainConfigsResponse struct {
 	*responses.BaseResponse
 	RequestId     string        `json:"RequestId" xml:"RequestId"`
 	DomainConfigs DomainConfigs `json:"DomainConfigs" xml:"DomainConfigs"`
 }
 
-// create a request to invoke DescribeDomainConfigs API
-func CreateDescribeDomainConfigsRequest() (request *DescribeDomainConfigsRequest) {
+// CreateDescribeDomainConfigsRequest creates a request to invoke DescribeDomainConfigs API
+func CreateDescribeDomainConfigsRequest(request *DescribeDomainConfigsRequest) {
 	request = &DescribeDomainConfigsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -96,7 +98,7 @@ func CreateDescribeDomainConfigsRequest() (request *DescribeDomainConfigsRequest
 	return
 }
 
-// create a response to parse from DescribeDomainConfigs response
+// CreateDescribeDomainConfigsResponse creates a response to parse from DescribeDomainConfigs response
 func CreateDescribeDomainConfigsResponse() (response *DescribeDomainConfigsResponse) {
 	response = &DescribeDomainConfigsResponse{
 		BaseResponse: &responses.BaseResponse{},

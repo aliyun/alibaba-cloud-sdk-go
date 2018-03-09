@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke GetSecurityPreference api with *GetSecurityPreferenceRequest synchronously
+// GetSecurityPreference invokes the ram.GetSecurityPreference API synchronously
 // api document: https://help.aliyun.com/api/ram/getsecuritypreference.html
 func (client *Client) GetSecurityPreference(request *GetSecurityPreferenceRequest) (response *GetSecurityPreferenceResponse, err error) {
 	response = CreateGetSecurityPreferenceResponse()
@@ -28,7 +28,7 @@ func (client *Client) GetSecurityPreference(request *GetSecurityPreferenceReques
 	return
 }
 
-// invoke GetSecurityPreference api with *GetSecurityPreferenceRequest asynchronously
+// GetSecurityPreferenceWithChan invokes the ram.GetSecurityPreference API asynchronously
 // api document: https://help.aliyun.com/api/ram/getsecuritypreference.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetSecurityPreferenceWithChan(request *GetSecurityPreferenceRequest) (<-chan *GetSecurityPreferenceResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) GetSecurityPreferenceWithChan(request *GetSecurityPreferen
 	return responseChan, errChan
 }
 
-// invoke GetSecurityPreference api with *GetSecurityPreferenceRequest asynchronously
+// GetSecurityPreferenceWithCallback invokes the ram.GetSecurityPreference API asynchronously
 // api document: https://help.aliyun.com/api/ram/getsecuritypreference.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetSecurityPreferenceWithCallback(request *GetSecurityPreferenceRequest, callback func(response *GetSecurityPreferenceResponse, err error)) <-chan int {
@@ -73,18 +73,20 @@ func (client *Client) GetSecurityPreferenceWithCallback(request *GetSecurityPref
 	return result
 }
 
+// GetSecurityPreferenceRequest is the request struct for api GetSecurityPreference
 type GetSecurityPreferenceRequest struct {
 	*requests.RpcRequest
 }
 
+// GetSecurityPreferenceResponse is the response struct for api GetSecurityPreference
 type GetSecurityPreferenceResponse struct {
 	*responses.BaseResponse
 	RequestId          string             `json:"RequestId" xml:"RequestId"`
 	SecurityPreference SecurityPreference `json:"SecurityPreference" xml:"SecurityPreference"`
 }
 
-// create a request to invoke GetSecurityPreference API
-func CreateGetSecurityPreferenceRequest() (request *GetSecurityPreferenceRequest) {
+// CreateGetSecurityPreferenceRequest creates a request to invoke GetSecurityPreference API
+func CreateGetSecurityPreferenceRequest(request *GetSecurityPreferenceRequest) {
 	request = &GetSecurityPreferenceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -92,7 +94,7 @@ func CreateGetSecurityPreferenceRequest() (request *GetSecurityPreferenceRequest
 	return
 }
 
-// create a response to parse from GetSecurityPreference response
+// CreateGetSecurityPreferenceResponse creates a response to parse from GetSecurityPreference response
 func CreateGetSecurityPreferenceResponse() (response *GetSecurityPreferenceResponse) {
 	response = &GetSecurityPreferenceResponse{
 		BaseResponse: &responses.BaseResponse{},

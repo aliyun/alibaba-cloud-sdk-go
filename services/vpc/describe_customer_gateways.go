@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeCustomerGateways api with *DescribeCustomerGatewaysRequest synchronously
+// DescribeCustomerGateways invokes the vpc.DescribeCustomerGateways API synchronously
 // api document: https://help.aliyun.com/api/vpc/describecustomergateways.html
 func (client *Client) DescribeCustomerGateways(request *DescribeCustomerGatewaysRequest) (response *DescribeCustomerGatewaysResponse, err error) {
 	response = CreateDescribeCustomerGatewaysResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeCustomerGateways(request *DescribeCustomerGateways
 	return
 }
 
-// invoke DescribeCustomerGateways api with *DescribeCustomerGatewaysRequest asynchronously
+// DescribeCustomerGatewaysWithChan invokes the vpc.DescribeCustomerGateways API asynchronously
 // api document: https://help.aliyun.com/api/vpc/describecustomergateways.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCustomerGatewaysWithChan(request *DescribeCustomerGatewaysRequest) (<-chan *DescribeCustomerGatewaysResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeCustomerGatewaysWithChan(request *DescribeCustomer
 	return responseChan, errChan
 }
 
-// invoke DescribeCustomerGateways api with *DescribeCustomerGatewaysRequest asynchronously
+// DescribeCustomerGatewaysWithCallback invokes the vpc.DescribeCustomerGateways API asynchronously
 // api document: https://help.aliyun.com/api/vpc/describecustomergateways.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeCustomerGatewaysWithCallback(request *DescribeCustomerGatewaysRequest, callback func(response *DescribeCustomerGatewaysResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeCustomerGatewaysWithCallback(request *DescribeCust
 	return result
 }
 
+// DescribeCustomerGatewaysRequest is the request struct for api DescribeCustomerGateways
 type DescribeCustomerGatewaysRequest struct {
 	*requests.RpcRequest
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
@@ -84,6 +85,7 @@ type DescribeCustomerGatewaysRequest struct {
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 }
 
+// DescribeCustomerGatewaysResponse is the response struct for api DescribeCustomerGateways
 type DescribeCustomerGatewaysResponse struct {
 	*responses.BaseResponse
 	RequestId        string           `json:"RequestId" xml:"RequestId"`
@@ -93,8 +95,8 @@ type DescribeCustomerGatewaysResponse struct {
 	CustomerGateways CustomerGateways `json:"CustomerGateways" xml:"CustomerGateways"`
 }
 
-// create a request to invoke DescribeCustomerGateways API
-func CreateDescribeCustomerGatewaysRequest() (request *DescribeCustomerGatewaysRequest) {
+// CreateDescribeCustomerGatewaysRequest creates a request to invoke DescribeCustomerGateways API
+func CreateDescribeCustomerGatewaysRequest(request *DescribeCustomerGatewaysRequest) {
 	request = &DescribeCustomerGatewaysRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -102,7 +104,7 @@ func CreateDescribeCustomerGatewaysRequest() (request *DescribeCustomerGatewaysR
 	return
 }
 
-// create a response to parse from DescribeCustomerGateways response
+// CreateDescribeCustomerGatewaysResponse creates a response to parse from DescribeCustomerGateways response
 func CreateDescribeCustomerGatewaysResponse() (response *DescribeCustomerGatewaysResponse) {
 	response = &DescribeCustomerGatewaysResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeDBInstanceNetInfo api with *DescribeDBInstanceNetInfoRequest synchronously
+// DescribeDBInstanceNetInfo invokes the rds.DescribeDBInstanceNetInfo API synchronously
 // api document: https://help.aliyun.com/api/rds/describedbinstancenetinfo.html
 func (client *Client) DescribeDBInstanceNetInfo(request *DescribeDBInstanceNetInfoRequest) (response *DescribeDBInstanceNetInfoResponse, err error) {
 	response = CreateDescribeDBInstanceNetInfoResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeDBInstanceNetInfo(request *DescribeDBInstanceNetIn
 	return
 }
 
-// invoke DescribeDBInstanceNetInfo api with *DescribeDBInstanceNetInfoRequest asynchronously
+// DescribeDBInstanceNetInfoWithChan invokes the rds.DescribeDBInstanceNetInfo API asynchronously
 // api document: https://help.aliyun.com/api/rds/describedbinstancenetinfo.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBInstanceNetInfoWithChan(request *DescribeDBInstanceNetInfoRequest) (<-chan *DescribeDBInstanceNetInfoResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeDBInstanceNetInfoWithChan(request *DescribeDBInsta
 	return responseChan, errChan
 }
 
-// invoke DescribeDBInstanceNetInfo api with *DescribeDBInstanceNetInfoRequest asynchronously
+// DescribeDBInstanceNetInfoWithCallback invokes the rds.DescribeDBInstanceNetInfo API asynchronously
 // api document: https://help.aliyun.com/api/rds/describedbinstancenetinfo.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDBInstanceNetInfoWithCallback(request *DescribeDBInstanceNetInfoRequest, callback func(response *DescribeDBInstanceNetInfoResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeDBInstanceNetInfoWithCallback(request *DescribeDBI
 	return result
 }
 
+// DescribeDBInstanceNetInfoRequest is the request struct for api DescribeDBInstanceNetInfo
 type DescribeDBInstanceNetInfoRequest struct {
 	*requests.RpcRequest
 	OwnerId                  requests.Integer `position:"Query" name:"OwnerId"`
@@ -85,6 +86,7 @@ type DescribeDBInstanceNetInfoRequest struct {
 	OwnerAccount             string           `position:"Query" name:"OwnerAccount"`
 }
 
+// DescribeDBInstanceNetInfoResponse is the response struct for api DescribeDBInstanceNetInfo
 type DescribeDBInstanceNetInfoResponse struct {
 	*responses.BaseResponse
 	RequestId           string             `json:"RequestId" xml:"RequestId"`
@@ -92,8 +94,8 @@ type DescribeDBInstanceNetInfoResponse struct {
 	DBInstanceNetInfos  DBInstanceNetInfos `json:"DBInstanceNetInfos" xml:"DBInstanceNetInfos"`
 }
 
-// create a request to invoke DescribeDBInstanceNetInfo API
-func CreateDescribeDBInstanceNetInfoRequest() (request *DescribeDBInstanceNetInfoRequest) {
+// CreateDescribeDBInstanceNetInfoRequest creates a request to invoke DescribeDBInstanceNetInfo API
+func CreateDescribeDBInstanceNetInfoRequest(request *DescribeDBInstanceNetInfoRequest) {
 	request = &DescribeDBInstanceNetInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -101,7 +103,7 @@ func CreateDescribeDBInstanceNetInfoRequest() (request *DescribeDBInstanceNetInf
 	return
 }
 
-// create a response to parse from DescribeDBInstanceNetInfo response
+// CreateDescribeDBInstanceNetInfoResponse creates a response to parse from DescribeDBInstanceNetInfo response
 func CreateDescribeDBInstanceNetInfoResponse() (response *DescribeDBInstanceNetInfoResponse) {
 	response = &DescribeDBInstanceNetInfoResponse{
 		BaseResponse: &responses.BaseResponse{},

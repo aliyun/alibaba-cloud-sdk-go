@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeDomainUvData api with *DescribeDomainUvDataRequest synchronously
+// DescribeDomainUvData invokes the cdn.DescribeDomainUvData API synchronously
 // api document: https://help.aliyun.com/api/cdn/describedomainuvdata.html
 func (client *Client) DescribeDomainUvData(request *DescribeDomainUvDataRequest) (response *DescribeDomainUvDataResponse, err error) {
 	response = CreateDescribeDomainUvDataResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeDomainUvData(request *DescribeDomainUvDataRequest)
 	return
 }
 
-// invoke DescribeDomainUvData api with *DescribeDomainUvDataRequest asynchronously
+// DescribeDomainUvDataWithChan invokes the cdn.DescribeDomainUvData API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describedomainuvdata.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainUvDataWithChan(request *DescribeDomainUvDataRequest) (<-chan *DescribeDomainUvDataResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeDomainUvDataWithChan(request *DescribeDomainUvData
 	return responseChan, errChan
 }
 
-// invoke DescribeDomainUvData api with *DescribeDomainUvDataRequest asynchronously
+// DescribeDomainUvDataWithCallback invokes the cdn.DescribeDomainUvData API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describedomainuvdata.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainUvDataWithCallback(request *DescribeDomainUvDataRequest, callback func(response *DescribeDomainUvDataResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeDomainUvDataWithCallback(request *DescribeDomainUv
 	return result
 }
 
+// DescribeDomainUvDataRequest is the request struct for api DescribeDomainUvData
 type DescribeDomainUvDataRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,6 +83,7 @@ type DescribeDomainUvDataRequest struct {
 	EndTime       string           `position:"Query" name:"EndTime"`
 }
 
+// DescribeDomainUvDataResponse is the response struct for api DescribeDomainUvData
 type DescribeDomainUvDataResponse struct {
 	*responses.BaseResponse
 	RequestId      string         `json:"RequestId" xml:"RequestId"`
@@ -92,8 +94,8 @@ type DescribeDomainUvDataResponse struct {
 	UvDataInterval UvDataInterval `json:"UvDataInterval" xml:"UvDataInterval"`
 }
 
-// create a request to invoke DescribeDomainUvData API
-func CreateDescribeDomainUvDataRequest() (request *DescribeDomainUvDataRequest) {
+// CreateDescribeDomainUvDataRequest creates a request to invoke DescribeDomainUvData API
+func CreateDescribeDomainUvDataRequest(request *DescribeDomainUvDataRequest) {
 	request = &DescribeDomainUvDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -101,7 +103,7 @@ func CreateDescribeDomainUvDataRequest() (request *DescribeDomainUvDataRequest) 
 	return
 }
 
-// create a response to parse from DescribeDomainUvData response
+// CreateDescribeDomainUvDataResponse creates a response to parse from DescribeDomainUvData response
 func CreateDescribeDomainUvDataResponse() (response *DescribeDomainUvDataResponse) {
 	response = &DescribeDomainUvDataResponse{
 		BaseResponse: &responses.BaseResponse{},

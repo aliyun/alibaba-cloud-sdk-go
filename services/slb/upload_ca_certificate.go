@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke UploadCACertificate api with *UploadCACertificateRequest synchronously
+// UploadCACertificate invokes the slb.UploadCACertificate API synchronously
 // api document: https://help.aliyun.com/api/slb/uploadcacertificate.html
 func (client *Client) UploadCACertificate(request *UploadCACertificateRequest) (response *UploadCACertificateResponse, err error) {
 	response = CreateUploadCACertificateResponse()
@@ -28,7 +28,7 @@ func (client *Client) UploadCACertificate(request *UploadCACertificateRequest) (
 	return
 }
 
-// invoke UploadCACertificate api with *UploadCACertificateRequest asynchronously
+// UploadCACertificateWithChan invokes the slb.UploadCACertificate API asynchronously
 // api document: https://help.aliyun.com/api/slb/uploadcacertificate.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UploadCACertificateWithChan(request *UploadCACertificateRequest) (<-chan *UploadCACertificateResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) UploadCACertificateWithChan(request *UploadCACertificateRe
 	return responseChan, errChan
 }
 
-// invoke UploadCACertificate api with *UploadCACertificateRequest asynchronously
+// UploadCACertificateWithCallback invokes the slb.UploadCACertificate API asynchronously
 // api document: https://help.aliyun.com/api/slb/uploadcacertificate.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UploadCACertificateWithCallback(request *UploadCACertificateRequest, callback func(response *UploadCACertificateResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) UploadCACertificateWithCallback(request *UploadCACertifica
 	return result
 }
 
+// UploadCACertificateRequest is the request struct for api UploadCACertificate
 type UploadCACertificateRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -85,6 +86,7 @@ type UploadCACertificateRequest struct {
 	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 }
 
+// UploadCACertificateResponse is the response struct for api UploadCACertificate
 type UploadCACertificateResponse struct {
 	*responses.BaseResponse
 	RequestId         string `json:"RequestId" xml:"RequestId"`
@@ -96,8 +98,8 @@ type UploadCACertificateResponse struct {
 	CreateTimeStamp   int    `json:"CreateTimeStamp" xml:"CreateTimeStamp"`
 }
 
-// create a request to invoke UploadCACertificate API
-func CreateUploadCACertificateRequest() (request *UploadCACertificateRequest) {
+// CreateUploadCACertificateRequest creates a request to invoke UploadCACertificate API
+func CreateUploadCACertificateRequest(request *UploadCACertificateRequest) {
 	request = &UploadCACertificateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -105,7 +107,7 @@ func CreateUploadCACertificateRequest() (request *UploadCACertificateRequest) {
 	return
 }
 
-// create a response to parse from UploadCACertificate response
+// CreateUploadCACertificateResponse creates a response to parse from UploadCACertificate response
 func CreateUploadCACertificateResponse() (response *UploadCACertificateResponse) {
 	response = &UploadCACertificateResponse{
 		BaseResponse: &responses.BaseResponse{},

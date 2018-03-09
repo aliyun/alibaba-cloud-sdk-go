@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke GetIpProtection api with *GetIpProtectionRequest synchronously
+// GetIpProtection invokes the dm.GetIpProtection API synchronously
 // api document: https://help.aliyun.com/api/dm/getipprotection.html
 func (client *Client) GetIpProtection(request *GetIpProtectionRequest) (response *GetIpProtectionResponse, err error) {
 	response = CreateGetIpProtectionResponse()
@@ -28,7 +28,7 @@ func (client *Client) GetIpProtection(request *GetIpProtectionRequest) (response
 	return
 }
 
-// invoke GetIpProtection api with *GetIpProtectionRequest asynchronously
+// GetIpProtectionWithChan invokes the dm.GetIpProtection API asynchronously
 // api document: https://help.aliyun.com/api/dm/getipprotection.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetIpProtectionWithChan(request *GetIpProtectionRequest) (<-chan *GetIpProtectionResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) GetIpProtectionWithChan(request *GetIpProtectionRequest) (
 	return responseChan, errChan
 }
 
-// invoke GetIpProtection api with *GetIpProtectionRequest asynchronously
+// GetIpProtectionWithCallback invokes the dm.GetIpProtection API asynchronously
 // api document: https://help.aliyun.com/api/dm/getipprotection.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetIpProtectionWithCallback(request *GetIpProtectionRequest, callback func(response *GetIpProtectionResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) GetIpProtectionWithCallback(request *GetIpProtectionReques
 	return result
 }
 
+// GetIpProtectionRequest is the request struct for api GetIpProtection
 type GetIpProtectionRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -80,14 +81,15 @@ type GetIpProtectionRequest struct {
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 }
 
+// GetIpProtectionResponse is the response struct for api GetIpProtection
 type GetIpProtectionResponse struct {
 	*responses.BaseResponse
 	RequestId    string `json:"RequestId" xml:"RequestId"`
 	IpProtection string `json:"IpProtection" xml:"IpProtection"`
 }
 
-// create a request to invoke GetIpProtection API
-func CreateGetIpProtectionRequest() (request *GetIpProtectionRequest) {
+// CreateGetIpProtectionRequest creates a request to invoke GetIpProtection API
+func CreateGetIpProtectionRequest(request *GetIpProtectionRequest) {
 	request = &GetIpProtectionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateGetIpProtectionRequest() (request *GetIpProtectionRequest) {
 	return
 }
 
-// create a response to parse from GetIpProtection response
+// CreateGetIpProtectionResponse creates a response to parse from GetIpProtection response
 func CreateGetIpProtectionResponse() (response *GetIpProtectionResponse) {
 	response = &GetIpProtectionResponse{
 		BaseResponse: &responses.BaseResponse{},

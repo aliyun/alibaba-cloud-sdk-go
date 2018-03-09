@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeBackSourceCidr api with *DescribeBackSourceCidrRequest synchronously
+// DescribeBackSourceCidr invokes the ddospro.DescribeBackSourceCidr API synchronously
 // api document: https://help.aliyun.com/api/ddospro/describebacksourcecidr.html
 func (client *Client) DescribeBackSourceCidr(request *DescribeBackSourceCidrRequest) (response *DescribeBackSourceCidrResponse, err error) {
 	response = CreateDescribeBackSourceCidrResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeBackSourceCidr(request *DescribeBackSourceCidrRequ
 	return
 }
 
-// invoke DescribeBackSourceCidr api with *DescribeBackSourceCidrRequest asynchronously
+// DescribeBackSourceCidrWithChan invokes the ddospro.DescribeBackSourceCidr API asynchronously
 // api document: https://help.aliyun.com/api/ddospro/describebacksourcecidr.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBackSourceCidrWithChan(request *DescribeBackSourceCidrRequest) (<-chan *DescribeBackSourceCidrResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeBackSourceCidrWithChan(request *DescribeBackSource
 	return responseChan, errChan
 }
 
-// invoke DescribeBackSourceCidr api with *DescribeBackSourceCidrRequest asynchronously
+// DescribeBackSourceCidrWithCallback invokes the ddospro.DescribeBackSourceCidr API asynchronously
 // api document: https://help.aliyun.com/api/ddospro/describebacksourcecidr.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBackSourceCidrWithCallback(request *DescribeBackSourceCidrRequest, callback func(response *DescribeBackSourceCidrResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeBackSourceCidrWithCallback(request *DescribeBackSo
 	return result
 }
 
+// DescribeBackSourceCidrRequest is the request struct for api DescribeBackSourceCidr
 type DescribeBackSourceCidrRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
@@ -80,14 +81,15 @@ type DescribeBackSourceCidrRequest struct {
 	Region          string           `position:"Query" name:"Region"`
 }
 
+// DescribeBackSourceCidrResponse is the response struct for api DescribeBackSourceCidr
 type DescribeBackSourceCidrResponse struct {
 	*responses.BaseResponse
 	RequestId string   `json:"RequestId" xml:"RequestId"`
 	CidrList  CidrList `json:"CidrList" xml:"CidrList"`
 }
 
-// create a request to invoke DescribeBackSourceCidr API
-func CreateDescribeBackSourceCidrRequest() (request *DescribeBackSourceCidrRequest) {
+// CreateDescribeBackSourceCidrRequest creates a request to invoke DescribeBackSourceCidr API
+func CreateDescribeBackSourceCidrRequest(request *DescribeBackSourceCidrRequest) {
 	request = &DescribeBackSourceCidrRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateDescribeBackSourceCidrRequest() (request *DescribeBackSourceCidrReque
 	return
 }
 
-// create a response to parse from DescribeBackSourceCidr response
+// CreateDescribeBackSourceCidrResponse creates a response to parse from DescribeBackSourceCidr response
 func CreateDescribeBackSourceCidrResponse() (response *DescribeBackSourceCidrResponse) {
 	response = &DescribeBackSourceCidrResponse{
 		BaseResponse: &responses.BaseResponse{},

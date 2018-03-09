@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteJobTemplates api with *DeleteJobTemplatesRequest synchronously
+// DeleteJobTemplates invokes the ehpc.DeleteJobTemplates API synchronously
 // api document: https://help.aliyun.com/api/ehpc/deletejobtemplates.html
 func (client *Client) DeleteJobTemplates(request *DeleteJobTemplatesRequest) (response *DeleteJobTemplatesResponse, err error) {
 	response = CreateDeleteJobTemplatesResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteJobTemplates(request *DeleteJobTemplatesRequest) (re
 	return
 }
 
-// invoke DeleteJobTemplates api with *DeleteJobTemplatesRequest asynchronously
+// DeleteJobTemplatesWithChan invokes the ehpc.DeleteJobTemplates API asynchronously
 // api document: https://help.aliyun.com/api/ehpc/deletejobtemplates.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteJobTemplatesWithChan(request *DeleteJobTemplatesRequest) (<-chan *DeleteJobTemplatesResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteJobTemplatesWithChan(request *DeleteJobTemplatesRequ
 	return responseChan, errChan
 }
 
-// invoke DeleteJobTemplates api with *DeleteJobTemplatesRequest asynchronously
+// DeleteJobTemplatesWithCallback invokes the ehpc.DeleteJobTemplates API asynchronously
 // api document: https://help.aliyun.com/api/ehpc/deletejobtemplates.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteJobTemplatesWithCallback(request *DeleteJobTemplatesRequest, callback func(response *DeleteJobTemplatesResponse, err error)) <-chan int {
@@ -73,18 +73,20 @@ func (client *Client) DeleteJobTemplatesWithCallback(request *DeleteJobTemplates
 	return result
 }
 
+// DeleteJobTemplatesRequest is the request struct for api DeleteJobTemplates
 type DeleteJobTemplatesRequest struct {
 	*requests.RpcRequest
 	Templates string `position:"Query" name:"Templates"`
 }
 
+// DeleteJobTemplatesResponse is the response struct for api DeleteJobTemplates
 type DeleteJobTemplatesResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DeleteJobTemplates API
-func CreateDeleteJobTemplatesRequest() (request *DeleteJobTemplatesRequest) {
+// CreateDeleteJobTemplatesRequest creates a request to invoke DeleteJobTemplates API
+func CreateDeleteJobTemplatesRequest(request *DeleteJobTemplatesRequest) {
 	request = &DeleteJobTemplatesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -92,7 +94,7 @@ func CreateDeleteJobTemplatesRequest() (request *DeleteJobTemplatesRequest) {
 	return
 }
 
-// create a response to parse from DeleteJobTemplates response
+// CreateDeleteJobTemplatesResponse creates a response to parse from DeleteJobTemplates response
 func CreateDeleteJobTemplatesResponse() (response *DeleteJobTemplatesResponse) {
 	response = &DeleteJobTemplatesResponse{
 		BaseResponse: &responses.BaseResponse{},

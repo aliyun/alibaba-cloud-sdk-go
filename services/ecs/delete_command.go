@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteCommand api with *DeleteCommandRequest synchronously
+// DeleteCommand invokes the ecs.DeleteCommand API synchronously
 // api document: https://help.aliyun.com/api/ecs/deletecommand.html
 func (client *Client) DeleteCommand(request *DeleteCommandRequest) (response *DeleteCommandResponse, err error) {
 	response = CreateDeleteCommandResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteCommand(request *DeleteCommandRequest) (response *De
 	return
 }
 
-// invoke DeleteCommand api with *DeleteCommandRequest asynchronously
+// DeleteCommandWithChan invokes the ecs.DeleteCommand API asynchronously
 // api document: https://help.aliyun.com/api/ecs/deletecommand.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteCommandWithChan(request *DeleteCommandRequest) (<-chan *DeleteCommandResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteCommandWithChan(request *DeleteCommandRequest) (<-ch
 	return responseChan, errChan
 }
 
-// invoke DeleteCommand api with *DeleteCommandRequest asynchronously
+// DeleteCommandWithCallback invokes the ecs.DeleteCommand API asynchronously
 // api document: https://help.aliyun.com/api/ecs/deletecommand.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteCommandWithCallback(request *DeleteCommandRequest, callback func(response *DeleteCommandResponse, err error)) <-chan int {
@@ -73,17 +73,19 @@ func (client *Client) DeleteCommandWithCallback(request *DeleteCommandRequest, c
 	return result
 }
 
+// DeleteCommandRequest is the request struct for api DeleteCommand
 type DeleteCommandRequest struct {
 	*requests.RpcRequest
 }
 
+// DeleteCommandResponse is the response struct for api DeleteCommand
 type DeleteCommandResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DeleteCommand API
-func CreateDeleteCommandRequest() (request *DeleteCommandRequest) {
+// CreateDeleteCommandRequest creates a request to invoke DeleteCommand API
+func CreateDeleteCommandRequest(request *DeleteCommandRequest) {
 	request = &DeleteCommandRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -91,7 +93,7 @@ func CreateDeleteCommandRequest() (request *DeleteCommandRequest) {
 	return
 }
 
-// create a response to parse from DeleteCommand response
+// CreateDeleteCommandResponse creates a response to parse from DeleteCommand response
 func CreateDeleteCommandResponse() (response *DeleteCommandResponse) {
 	response = &DeleteCommandResponse{
 		BaseResponse: &responses.BaseResponse{},

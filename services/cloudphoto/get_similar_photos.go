@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke GetSimilarPhotos api with *GetSimilarPhotosRequest synchronously
+// GetSimilarPhotos invokes the cloudphoto.GetSimilarPhotos API synchronously
 // api document: https://help.aliyun.com/api/cloudphoto/getsimilarphotos.html
 func (client *Client) GetSimilarPhotos(request *GetSimilarPhotosRequest) (response *GetSimilarPhotosResponse, err error) {
 	response = CreateGetSimilarPhotosResponse()
@@ -28,7 +28,7 @@ func (client *Client) GetSimilarPhotos(request *GetSimilarPhotosRequest) (respon
 	return
 }
 
-// invoke GetSimilarPhotos api with *GetSimilarPhotosRequest asynchronously
+// GetSimilarPhotosWithChan invokes the cloudphoto.GetSimilarPhotos API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/getsimilarphotos.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetSimilarPhotosWithChan(request *GetSimilarPhotosRequest) (<-chan *GetSimilarPhotosResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) GetSimilarPhotosWithChan(request *GetSimilarPhotosRequest)
 	return responseChan, errChan
 }
 
-// invoke GetSimilarPhotos api with *GetSimilarPhotosRequest asynchronously
+// GetSimilarPhotosWithCallback invokes the cloudphoto.GetSimilarPhotos API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/getsimilarphotos.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetSimilarPhotosWithCallback(request *GetSimilarPhotosRequest, callback func(response *GetSimilarPhotosResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) GetSimilarPhotosWithCallback(request *GetSimilarPhotosRequ
 	return result
 }
 
+// GetSimilarPhotosRequest is the request struct for api GetSimilarPhotos
 type GetSimilarPhotosRequest struct {
 	*requests.RpcRequest
 	PhotoId   requests.Integer `position:"Query" name:"PhotoId"`
@@ -80,6 +81,7 @@ type GetSimilarPhotosRequest struct {
 	LibraryId string           `position:"Query" name:"LibraryId"`
 }
 
+// GetSimilarPhotosResponse is the response struct for api GetSimilarPhotos
 type GetSimilarPhotosResponse struct {
 	*responses.BaseResponse
 	Code      string  `json:"Code" xml:"Code"`
@@ -89,8 +91,8 @@ type GetSimilarPhotosResponse struct {
 	Photos    []Photo `json:"Photos" xml:"Photos"`
 }
 
-// create a request to invoke GetSimilarPhotos API
-func CreateGetSimilarPhotosRequest() (request *GetSimilarPhotosRequest) {
+// CreateGetSimilarPhotosRequest creates a request to invoke GetSimilarPhotos API
+func CreateGetSimilarPhotosRequest(request *GetSimilarPhotosRequest) {
 	request = &GetSimilarPhotosRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateGetSimilarPhotosRequest() (request *GetSimilarPhotosRequest) {
 	return
 }
 
-// create a response to parse from GetSimilarPhotos response
+// CreateGetSimilarPhotosResponse creates a response to parse from GetSimilarPhotos response
 func CreateGetSimilarPhotosResponse() (response *GetSimilarPhotosResponse) {
 	response = &GetSimilarPhotosResponse{
 		BaseResponse: &responses.BaseResponse{},

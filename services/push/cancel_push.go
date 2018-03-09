@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CancelPush api with *CancelPushRequest synchronously
+// CancelPush invokes the push.CancelPush API synchronously
 // api document: https://help.aliyun.com/api/push/cancelpush.html
 func (client *Client) CancelPush(request *CancelPushRequest) (response *CancelPushResponse, err error) {
 	response = CreateCancelPushResponse()
@@ -28,7 +28,7 @@ func (client *Client) CancelPush(request *CancelPushRequest) (response *CancelPu
 	return
 }
 
-// invoke CancelPush api with *CancelPushRequest asynchronously
+// CancelPushWithChan invokes the push.CancelPush API asynchronously
 // api document: https://help.aliyun.com/api/push/cancelpush.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CancelPushWithChan(request *CancelPushRequest) (<-chan *CancelPushResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CancelPushWithChan(request *CancelPushRequest) (<-chan *Ca
 	return responseChan, errChan
 }
 
-// invoke CancelPush api with *CancelPushRequest asynchronously
+// CancelPushWithCallback invokes the push.CancelPush API asynchronously
 // api document: https://help.aliyun.com/api/push/cancelpush.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CancelPushWithCallback(request *CancelPushRequest, callback func(response *CancelPushResponse, err error)) <-chan int {
@@ -73,19 +73,21 @@ func (client *Client) CancelPushWithCallback(request *CancelPushRequest, callbac
 	return result
 }
 
+// CancelPushRequest is the request struct for api CancelPush
 type CancelPushRequest struct {
 	*requests.RpcRequest
 	AppKey    requests.Integer `position:"Query" name:"AppKey"`
 	MessageId requests.Integer `position:"Query" name:"MessageId"`
 }
 
+// CancelPushResponse is the response struct for api CancelPush
 type CancelPushResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke CancelPush API
-func CreateCancelPushRequest() (request *CancelPushRequest) {
+// CreateCancelPushRequest creates a request to invoke CancelPush API
+func CreateCancelPushRequest(request *CancelPushRequest) {
 	request = &CancelPushRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -93,7 +95,7 @@ func CreateCancelPushRequest() (request *CancelPushRequest) {
 	return
 }
 
-// create a response to parse from CancelPush response
+// CreateCancelPushResponse creates a response to parse from CancelPush response
 func CreateCancelPushResponse() (response *CancelPushResponse) {
 	response = &CancelPushResponse{
 		BaseResponse: &responses.BaseResponse{},

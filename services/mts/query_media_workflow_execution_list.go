@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke QueryMediaWorkflowExecutionList api with *QueryMediaWorkflowExecutionListRequest synchronously
+// QueryMediaWorkflowExecutionList invokes the mts.QueryMediaWorkflowExecutionList API synchronously
 // api document: https://help.aliyun.com/api/mts/querymediaworkflowexecutionlist.html
 func (client *Client) QueryMediaWorkflowExecutionList(request *QueryMediaWorkflowExecutionListRequest) (response *QueryMediaWorkflowExecutionListResponse, err error) {
 	response = CreateQueryMediaWorkflowExecutionListResponse()
@@ -28,7 +28,7 @@ func (client *Client) QueryMediaWorkflowExecutionList(request *QueryMediaWorkflo
 	return
 }
 
-// invoke QueryMediaWorkflowExecutionList api with *QueryMediaWorkflowExecutionListRequest asynchronously
+// QueryMediaWorkflowExecutionListWithChan invokes the mts.QueryMediaWorkflowExecutionList API asynchronously
 // api document: https://help.aliyun.com/api/mts/querymediaworkflowexecutionlist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryMediaWorkflowExecutionListWithChan(request *QueryMediaWorkflowExecutionListRequest) (<-chan *QueryMediaWorkflowExecutionListResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) QueryMediaWorkflowExecutionListWithChan(request *QueryMedi
 	return responseChan, errChan
 }
 
-// invoke QueryMediaWorkflowExecutionList api with *QueryMediaWorkflowExecutionListRequest asynchronously
+// QueryMediaWorkflowExecutionListWithCallback invokes the mts.QueryMediaWorkflowExecutionList API asynchronously
 // api document: https://help.aliyun.com/api/mts/querymediaworkflowexecutionlist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryMediaWorkflowExecutionListWithCallback(request *QueryMediaWorkflowExecutionListRequest, callback func(response *QueryMediaWorkflowExecutionListResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) QueryMediaWorkflowExecutionListWithCallback(request *Query
 	return result
 }
 
+// QueryMediaWorkflowExecutionListRequest is the request struct for api QueryMediaWorkflowExecutionList
 type QueryMediaWorkflowExecutionListRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,6 +83,7 @@ type QueryMediaWorkflowExecutionListRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// QueryMediaWorkflowExecutionListResponse is the response struct for api QueryMediaWorkflowExecutionList
 type QueryMediaWorkflowExecutionListResponse struct {
 	*responses.BaseResponse
 	RequestId                  string                                                      `json:"RequestId" xml:"RequestId"`
@@ -89,8 +91,8 @@ type QueryMediaWorkflowExecutionListResponse struct {
 	MediaWorkflowExecutionList MediaWorkflowExecutionListInQueryMediaWorkflowExecutionList `json:"MediaWorkflowExecutionList" xml:"MediaWorkflowExecutionList"`
 }
 
-// create a request to invoke QueryMediaWorkflowExecutionList API
-func CreateQueryMediaWorkflowExecutionListRequest() (request *QueryMediaWorkflowExecutionListRequest) {
+// CreateQueryMediaWorkflowExecutionListRequest creates a request to invoke QueryMediaWorkflowExecutionList API
+func CreateQueryMediaWorkflowExecutionListRequest(request *QueryMediaWorkflowExecutionListRequest) {
 	request = &QueryMediaWorkflowExecutionListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateQueryMediaWorkflowExecutionListRequest() (request *QueryMediaWorkflow
 	return
 }
 
-// create a response to parse from QueryMediaWorkflowExecutionList response
+// CreateQueryMediaWorkflowExecutionListResponse creates a response to parse from QueryMediaWorkflowExecutionList response
 func CreateQueryMediaWorkflowExecutionListResponse() (response *QueryMediaWorkflowExecutionListResponse) {
 	response = &QueryMediaWorkflowExecutionListResponse{
 		BaseResponse: &responses.BaseResponse{},

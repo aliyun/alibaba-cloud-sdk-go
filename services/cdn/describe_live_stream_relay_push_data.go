@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeLiveStreamRelayPushData api with *DescribeLiveStreamRelayPushDataRequest synchronously
+// DescribeLiveStreamRelayPushData invokes the cdn.DescribeLiveStreamRelayPushData API synchronously
 // api document: https://help.aliyun.com/api/cdn/describelivestreamrelaypushdata.html
 func (client *Client) DescribeLiveStreamRelayPushData(request *DescribeLiveStreamRelayPushDataRequest) (response *DescribeLiveStreamRelayPushDataResponse, err error) {
 	response = CreateDescribeLiveStreamRelayPushDataResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeLiveStreamRelayPushData(request *DescribeLiveStrea
 	return
 }
 
-// invoke DescribeLiveStreamRelayPushData api with *DescribeLiveStreamRelayPushDataRequest asynchronously
+// DescribeLiveStreamRelayPushDataWithChan invokes the cdn.DescribeLiveStreamRelayPushData API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describelivestreamrelaypushdata.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamRelayPushDataWithChan(request *DescribeLiveStreamRelayPushDataRequest) (<-chan *DescribeLiveStreamRelayPushDataResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeLiveStreamRelayPushDataWithChan(request *DescribeL
 	return responseChan, errChan
 }
 
-// invoke DescribeLiveStreamRelayPushData api with *DescribeLiveStreamRelayPushDataRequest asynchronously
+// DescribeLiveStreamRelayPushDataWithCallback invokes the cdn.DescribeLiveStreamRelayPushData API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describelivestreamrelaypushdata.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamRelayPushDataWithCallback(request *DescribeLiveStreamRelayPushDataRequest, callback func(response *DescribeLiveStreamRelayPushDataResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeLiveStreamRelayPushDataWithCallback(request *Descr
 	return result
 }
 
+// DescribeLiveStreamRelayPushDataRequest is the request struct for api DescribeLiveStreamRelayPushData
 type DescribeLiveStreamRelayPushDataRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,14 +83,15 @@ type DescribeLiveStreamRelayPushDataRequest struct {
 	EndTime       string           `position:"Query" name:"EndTime"`
 }
 
+// DescribeLiveStreamRelayPushDataResponse is the response struct for api DescribeLiveStreamRelayPushData
 type DescribeLiveStreamRelayPushDataResponse struct {
 	*responses.BaseResponse
 	RequestId                string                   `json:"RequestId" xml:"RequestId"`
 	RelayPushDetailModelList RelayPushDetailModelList `json:"RelayPushDetailModelList" xml:"RelayPushDetailModelList"`
 }
 
-// create a request to invoke DescribeLiveStreamRelayPushData API
-func CreateDescribeLiveStreamRelayPushDataRequest() (request *DescribeLiveStreamRelayPushDataRequest) {
+// CreateDescribeLiveStreamRelayPushDataRequest creates a request to invoke DescribeLiveStreamRelayPushData API
+func CreateDescribeLiveStreamRelayPushDataRequest(request *DescribeLiveStreamRelayPushDataRequest) {
 	request = &DescribeLiveStreamRelayPushDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateDescribeLiveStreamRelayPushDataRequest() (request *DescribeLiveStream
 	return
 }
 
-// create a response to parse from DescribeLiveStreamRelayPushData response
+// CreateDescribeLiveStreamRelayPushDataResponse creates a response to parse from DescribeLiveStreamRelayPushData response
 func CreateDescribeLiveStreamRelayPushDataResponse() (response *DescribeLiveStreamRelayPushDataResponse) {
 	response = &DescribeLiveStreamRelayPushDataResponse{
 		BaseResponse: &responses.BaseResponse{},

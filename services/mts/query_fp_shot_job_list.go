@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke QueryFpShotJobList api with *QueryFpShotJobListRequest synchronously
+// QueryFpShotJobList invokes the mts.QueryFpShotJobList API synchronously
 // api document: https://help.aliyun.com/api/mts/queryfpshotjoblist.html
 func (client *Client) QueryFpShotJobList(request *QueryFpShotJobListRequest) (response *QueryFpShotJobListResponse, err error) {
 	response = CreateQueryFpShotJobListResponse()
@@ -28,7 +28,7 @@ func (client *Client) QueryFpShotJobList(request *QueryFpShotJobListRequest) (re
 	return
 }
 
-// invoke QueryFpShotJobList api with *QueryFpShotJobListRequest asynchronously
+// QueryFpShotJobListWithChan invokes the mts.QueryFpShotJobList API asynchronously
 // api document: https://help.aliyun.com/api/mts/queryfpshotjoblist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryFpShotJobListWithChan(request *QueryFpShotJobListRequest) (<-chan *QueryFpShotJobListResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) QueryFpShotJobListWithChan(request *QueryFpShotJobListRequ
 	return responseChan, errChan
 }
 
-// invoke QueryFpShotJobList api with *QueryFpShotJobListRequest asynchronously
+// QueryFpShotJobListWithCallback invokes the mts.QueryFpShotJobList API asynchronously
 // api document: https://help.aliyun.com/api/mts/queryfpshotjoblist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryFpShotJobListWithCallback(request *QueryFpShotJobListRequest, callback func(response *QueryFpShotJobListResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) QueryFpShotJobListWithCallback(request *QueryFpShotJobList
 	return result
 }
 
+// QueryFpShotJobListRequest is the request struct for api QueryFpShotJobList
 type QueryFpShotJobListRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,6 +83,7 @@ type QueryFpShotJobListRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// QueryFpShotJobListResponse is the response struct for api QueryFpShotJobList
 type QueryFpShotJobListResponse struct {
 	*responses.BaseResponse
 	RequestId     string                          `json:"RequestId" xml:"RequestId"`
@@ -89,8 +91,8 @@ type QueryFpShotJobListResponse struct {
 	FpShotJobList FpShotJobList                   `json:"FpShotJobList" xml:"FpShotJobList"`
 }
 
-// create a request to invoke QueryFpShotJobList API
-func CreateQueryFpShotJobListRequest() (request *QueryFpShotJobListRequest) {
+// CreateQueryFpShotJobListRequest creates a request to invoke QueryFpShotJobList API
+func CreateQueryFpShotJobListRequest(request *QueryFpShotJobListRequest) {
 	request = &QueryFpShotJobListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateQueryFpShotJobListRequest() (request *QueryFpShotJobListRequest) {
 	return
 }
 
-// create a response to parse from QueryFpShotJobList response
+// CreateQueryFpShotJobListResponse creates a response to parse from QueryFpShotJobList response
 func CreateQueryFpShotJobListResponse() (response *QueryFpShotJobListResponse) {
 	response = &QueryFpShotJobListResponse{
 		BaseResponse: &responses.BaseResponse{},

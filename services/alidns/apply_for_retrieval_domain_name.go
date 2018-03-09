@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ApplyForRetrievalDomainName api with *ApplyForRetrievalDomainNameRequest synchronously
+// ApplyForRetrievalDomainName invokes the alidns.ApplyForRetrievalDomainName API synchronously
 // api document: https://help.aliyun.com/api/alidns/applyforretrievaldomainname.html
 func (client *Client) ApplyForRetrievalDomainName(request *ApplyForRetrievalDomainNameRequest) (response *ApplyForRetrievalDomainNameResponse, err error) {
 	response = CreateApplyForRetrievalDomainNameResponse()
@@ -28,7 +28,7 @@ func (client *Client) ApplyForRetrievalDomainName(request *ApplyForRetrievalDoma
 	return
 }
 
-// invoke ApplyForRetrievalDomainName api with *ApplyForRetrievalDomainNameRequest asynchronously
+// ApplyForRetrievalDomainNameWithChan invokes the alidns.ApplyForRetrievalDomainName API asynchronously
 // api document: https://help.aliyun.com/api/alidns/applyforretrievaldomainname.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ApplyForRetrievalDomainNameWithChan(request *ApplyForRetrievalDomainNameRequest) (<-chan *ApplyForRetrievalDomainNameResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ApplyForRetrievalDomainNameWithChan(request *ApplyForRetri
 	return responseChan, errChan
 }
 
-// invoke ApplyForRetrievalDomainName api with *ApplyForRetrievalDomainNameRequest asynchronously
+// ApplyForRetrievalDomainNameWithCallback invokes the alidns.ApplyForRetrievalDomainName API asynchronously
 // api document: https://help.aliyun.com/api/alidns/applyforretrievaldomainname.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ApplyForRetrievalDomainNameWithCallback(request *ApplyForRetrievalDomainNameRequest, callback func(response *ApplyForRetrievalDomainNameResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ApplyForRetrievalDomainNameWithCallback(request *ApplyForR
 	return result
 }
 
+// ApplyForRetrievalDomainNameRequest is the request struct for api ApplyForRetrievalDomainName
 type ApplyForRetrievalDomainNameRequest struct {
 	*requests.RpcRequest
 	Lang         string `position:"Query" name:"Lang"`
@@ -80,14 +81,15 @@ type ApplyForRetrievalDomainNameRequest struct {
 	DomainName   string `position:"Query" name:"DomainName"`
 }
 
+// ApplyForRetrievalDomainNameResponse is the response struct for api ApplyForRetrievalDomainName
 type ApplyForRetrievalDomainNameResponse struct {
 	*responses.BaseResponse
 	RequestId  string `json:"RequestId" xml:"RequestId"`
 	DomainName string `json:"DomainName" xml:"DomainName"`
 }
 
-// create a request to invoke ApplyForRetrievalDomainName API
-func CreateApplyForRetrievalDomainNameRequest() (request *ApplyForRetrievalDomainNameRequest) {
+// CreateApplyForRetrievalDomainNameRequest creates a request to invoke ApplyForRetrievalDomainName API
+func CreateApplyForRetrievalDomainNameRequest(request *ApplyForRetrievalDomainNameRequest) {
 	request = &ApplyForRetrievalDomainNameRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateApplyForRetrievalDomainNameRequest() (request *ApplyForRetrievalDomai
 	return
 }
 
-// create a response to parse from ApplyForRetrievalDomainName response
+// CreateApplyForRetrievalDomainNameResponse creates a response to parse from ApplyForRetrievalDomainName response
 func CreateApplyForRetrievalDomainNameResponse() (response *ApplyForRetrievalDomainNameResponse) {
 	response = &ApplyForRetrievalDomainNameResponse{
 		BaseResponse: &responses.BaseResponse{},

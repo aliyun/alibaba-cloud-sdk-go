@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke GetEvent api with *GetEventRequest synchronously
+// GetEvent invokes the cloudphoto.GetEvent API synchronously
 // api document: https://help.aliyun.com/api/cloudphoto/getevent.html
 func (client *Client) GetEvent(request *GetEventRequest) (response *GetEventResponse, err error) {
 	response = CreateGetEventResponse()
@@ -28,7 +28,7 @@ func (client *Client) GetEvent(request *GetEventRequest) (response *GetEventResp
 	return
 }
 
-// invoke GetEvent api with *GetEventRequest asynchronously
+// GetEventWithChan invokes the cloudphoto.GetEvent API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/getevent.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetEventWithChan(request *GetEventRequest) (<-chan *GetEventResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) GetEventWithChan(request *GetEventRequest) (<-chan *GetEve
 	return responseChan, errChan
 }
 
-// invoke GetEvent api with *GetEventRequest asynchronously
+// GetEventWithCallback invokes the cloudphoto.GetEvent API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/getevent.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetEventWithCallback(request *GetEventRequest, callback func(response *GetEventResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) GetEventWithCallback(request *GetEventRequest, callback fu
 	return result
 }
 
+// GetEventRequest is the request struct for api GetEvent
 type GetEventRequest struct {
 	*requests.RpcRequest
 	EventId   requests.Integer `position:"Query" name:"EventId"`
@@ -80,6 +81,7 @@ type GetEventRequest struct {
 	LibraryId string           `position:"Query" name:"LibraryId"`
 }
 
+// GetEventResponse is the response struct for api GetEvent
 type GetEventResponse struct {
 	*responses.BaseResponse
 	Code      string `json:"Code" xml:"Code"`
@@ -89,8 +91,8 @@ type GetEventResponse struct {
 	Event     Event  `json:"Event" xml:"Event"`
 }
 
-// create a request to invoke GetEvent API
-func CreateGetEventRequest() (request *GetEventRequest) {
+// CreateGetEventRequest creates a request to invoke GetEvent API
+func CreateGetEventRequest(request *GetEventRequest) {
 	request = &GetEventRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateGetEventRequest() (request *GetEventRequest) {
 	return
 }
 
-// create a response to parse from GetEvent response
+// CreateGetEventResponse creates a response to parse from GetEvent response
 func CreateGetEventResponse() (response *GetEventResponse) {
 	response = &GetEventResponse{
 		BaseResponse: &responses.BaseResponse{},

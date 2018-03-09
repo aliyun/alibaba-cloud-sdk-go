@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeInvocations api with *DescribeInvocationsRequest synchronously
+// DescribeInvocations invokes the ecs.DescribeInvocations API synchronously
 // api document: https://help.aliyun.com/api/ecs/describeinvocations.html
 func (client *Client) DescribeInvocations(request *DescribeInvocationsRequest) (response *DescribeInvocationsResponse, err error) {
 	response = CreateDescribeInvocationsResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeInvocations(request *DescribeInvocationsRequest) (
 	return
 }
 
-// invoke DescribeInvocations api with *DescribeInvocationsRequest asynchronously
+// DescribeInvocationsWithChan invokes the ecs.DescribeInvocations API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describeinvocations.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInvocationsWithChan(request *DescribeInvocationsRequest) (<-chan *DescribeInvocationsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeInvocationsWithChan(request *DescribeInvocationsRe
 	return responseChan, errChan
 }
 
-// invoke DescribeInvocations api with *DescribeInvocationsRequest asynchronously
+// DescribeInvocationsWithCallback invokes the ecs.DescribeInvocations API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describeinvocations.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeInvocationsWithCallback(request *DescribeInvocationsRequest, callback func(response *DescribeInvocationsResponse, err error)) <-chan int {
@@ -73,10 +73,12 @@ func (client *Client) DescribeInvocationsWithCallback(request *DescribeInvocatio
 	return result
 }
 
+// DescribeInvocationsRequest is the request struct for api DescribeInvocations
 type DescribeInvocationsRequest struct {
 	*requests.RpcRequest
 }
 
+// DescribeInvocationsResponse is the response struct for api DescribeInvocations
 type DescribeInvocationsResponse struct {
 	*responses.BaseResponse
 	RequestId   string      `json:"RequestId" xml:"RequestId"`
@@ -86,8 +88,8 @@ type DescribeInvocationsResponse struct {
 	Invocations Invocations `json:"Invocations" xml:"Invocations"`
 }
 
-// create a request to invoke DescribeInvocations API
-func CreateDescribeInvocationsRequest() (request *DescribeInvocationsRequest) {
+// CreateDescribeInvocationsRequest creates a request to invoke DescribeInvocations API
+func CreateDescribeInvocationsRequest(request *DescribeInvocationsRequest) {
 	request = &DescribeInvocationsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateDescribeInvocationsRequest() (request *DescribeInvocationsRequest) {
 	return
 }
 
-// create a response to parse from DescribeInvocations response
+// CreateDescribeInvocationsResponse creates a response to parse from DescribeInvocations response
 func CreateDescribeInvocationsResponse() (response *DescribeInvocationsResponse) {
 	response = &DescribeInvocationsResponse{
 		BaseResponse: &responses.BaseResponse{},

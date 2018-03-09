@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifySenderAddressNotification api with *ModifySenderAddressNotificationRequest synchronously
+// ModifySenderAddressNotification invokes the dm.ModifySenderAddressNotification API synchronously
 // api document: https://help.aliyun.com/api/dm/modifysenderaddressnotification.html
 func (client *Client) ModifySenderAddressNotification(request *ModifySenderAddressNotificationRequest) (response *ModifySenderAddressNotificationResponse, err error) {
 	response = CreateModifySenderAddressNotificationResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifySenderAddressNotification(request *ModifySenderAddre
 	return
 }
 
-// invoke ModifySenderAddressNotification api with *ModifySenderAddressNotificationRequest asynchronously
+// ModifySenderAddressNotificationWithChan invokes the dm.ModifySenderAddressNotification API asynchronously
 // api document: https://help.aliyun.com/api/dm/modifysenderaddressnotification.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySenderAddressNotificationWithChan(request *ModifySenderAddressNotificationRequest) (<-chan *ModifySenderAddressNotificationResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifySenderAddressNotificationWithChan(request *ModifySen
 	return responseChan, errChan
 }
 
-// invoke ModifySenderAddressNotification api with *ModifySenderAddressNotificationRequest asynchronously
+// ModifySenderAddressNotificationWithCallback invokes the dm.ModifySenderAddressNotification API asynchronously
 // api document: https://help.aliyun.com/api/dm/modifysenderaddressnotification.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySenderAddressNotificationWithCallback(request *ModifySenderAddressNotificationRequest, callback func(response *ModifySenderAddressNotificationResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ModifySenderAddressNotificationWithCallback(request *Modif
 	return result
 }
 
+// ModifySenderAddressNotificationRequest is the request struct for api ModifySenderAddressNotification
 type ModifySenderAddressNotificationRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,13 +85,14 @@ type ModifySenderAddressNotificationRequest struct {
 	Status               string           `position:"Query" name:"Status"`
 }
 
+// ModifySenderAddressNotificationResponse is the response struct for api ModifySenderAddressNotification
 type ModifySenderAddressNotificationResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ModifySenderAddressNotification API
-func CreateModifySenderAddressNotificationRequest() (request *ModifySenderAddressNotificationRequest) {
+// CreateModifySenderAddressNotificationRequest creates a request to invoke ModifySenderAddressNotification API
+func CreateModifySenderAddressNotificationRequest(request *ModifySenderAddressNotificationRequest) {
 	request = &ModifySenderAddressNotificationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateModifySenderAddressNotificationRequest() (request *ModifySenderAddres
 	return
 }
 
-// create a response to parse from ModifySenderAddressNotification response
+// CreateModifySenderAddressNotificationResponse creates a response to parse from ModifySenderAddressNotification response
 func CreateModifySenderAddressNotificationResponse() (response *ModifySenderAddressNotificationResponse) {
 	response = &ModifySenderAddressNotificationResponse{
 		BaseResponse: &responses.BaseResponse{},

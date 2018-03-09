@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke AddLivePullStreamInfo api with *AddLivePullStreamInfoRequest synchronously
+// AddLivePullStreamInfo invokes the cdn.AddLivePullStreamInfo API synchronously
 // api document: https://help.aliyun.com/api/cdn/addlivepullstreaminfo.html
 func (client *Client) AddLivePullStreamInfo(request *AddLivePullStreamInfoRequest) (response *AddLivePullStreamInfoResponse, err error) {
 	response = CreateAddLivePullStreamInfoResponse()
@@ -28,7 +28,7 @@ func (client *Client) AddLivePullStreamInfo(request *AddLivePullStreamInfoReques
 	return
 }
 
-// invoke AddLivePullStreamInfo api with *AddLivePullStreamInfoRequest asynchronously
+// AddLivePullStreamInfoWithChan invokes the cdn.AddLivePullStreamInfo API asynchronously
 // api document: https://help.aliyun.com/api/cdn/addlivepullstreaminfo.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddLivePullStreamInfoWithChan(request *AddLivePullStreamInfoRequest) (<-chan *AddLivePullStreamInfoResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) AddLivePullStreamInfoWithChan(request *AddLivePullStreamIn
 	return responseChan, errChan
 }
 
-// invoke AddLivePullStreamInfo api with *AddLivePullStreamInfoRequest asynchronously
+// AddLivePullStreamInfoWithCallback invokes the cdn.AddLivePullStreamInfo API asynchronously
 // api document: https://help.aliyun.com/api/cdn/addlivepullstreaminfo.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddLivePullStreamInfoWithCallback(request *AddLivePullStreamInfoRequest, callback func(response *AddLivePullStreamInfoResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) AddLivePullStreamInfoWithCallback(request *AddLivePullStre
 	return result
 }
 
+// AddLivePullStreamInfoRequest is the request struct for api AddLivePullStreamInfo
 type AddLivePullStreamInfoRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -85,13 +86,14 @@ type AddLivePullStreamInfoRequest struct {
 	EndTime       string           `position:"Query" name:"EndTime"`
 }
 
+// AddLivePullStreamInfoResponse is the response struct for api AddLivePullStreamInfo
 type AddLivePullStreamInfoResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke AddLivePullStreamInfo API
-func CreateAddLivePullStreamInfoRequest() (request *AddLivePullStreamInfoRequest) {
+// CreateAddLivePullStreamInfoRequest creates a request to invoke AddLivePullStreamInfo API
+func CreateAddLivePullStreamInfoRequest(request *AddLivePullStreamInfoRequest) {
 	request = &AddLivePullStreamInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateAddLivePullStreamInfoRequest() (request *AddLivePullStreamInfoRequest
 	return
 }
 
-// create a response to parse from AddLivePullStreamInfo response
+// CreateAddLivePullStreamInfoResponse creates a response to parse from AddLivePullStreamInfo response
 func CreateAddLivePullStreamInfoResponse() (response *AddLivePullStreamInfoResponse) {
 	response = &AddLivePullStreamInfoResponse{
 		BaseResponse: &responses.BaseResponse{},

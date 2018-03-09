@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke EditPhotoStore api with *EditPhotoStoreRequest synchronously
+// EditPhotoStore invokes the cloudphoto.EditPhotoStore API synchronously
 // api document: https://help.aliyun.com/api/cloudphoto/editphotostore.html
 func (client *Client) EditPhotoStore(request *EditPhotoStoreRequest) (response *EditPhotoStoreResponse, err error) {
 	response = CreateEditPhotoStoreResponse()
@@ -28,7 +28,7 @@ func (client *Client) EditPhotoStore(request *EditPhotoStoreRequest) (response *
 	return
 }
 
-// invoke EditPhotoStore api with *EditPhotoStoreRequest asynchronously
+// EditPhotoStoreWithChan invokes the cloudphoto.EditPhotoStore API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/editphotostore.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EditPhotoStoreWithChan(request *EditPhotoStoreRequest) (<-chan *EditPhotoStoreResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) EditPhotoStoreWithChan(request *EditPhotoStoreRequest) (<-
 	return responseChan, errChan
 }
 
-// invoke EditPhotoStore api with *EditPhotoStoreRequest asynchronously
+// EditPhotoStoreWithCallback invokes the cloudphoto.EditPhotoStore API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/editphotostore.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EditPhotoStoreWithCallback(request *EditPhotoStoreRequest, callback func(response *EditPhotoStoreResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) EditPhotoStoreWithCallback(request *EditPhotoStoreRequest,
 	return result
 }
 
+// EditPhotoStoreRequest is the request struct for api EditPhotoStore
 type EditPhotoStoreRequest struct {
 	*requests.RpcRequest
 	AutoCleanEnabled  string           `position:"Query" name:"AutoCleanEnabled"`
@@ -83,6 +84,7 @@ type EditPhotoStoreRequest struct {
 	StoreName         string           `position:"Query" name:"StoreName"`
 }
 
+// EditPhotoStoreResponse is the response struct for api EditPhotoStore
 type EditPhotoStoreResponse struct {
 	*responses.BaseResponse
 	Code      string `json:"Code" xml:"Code"`
@@ -91,8 +93,8 @@ type EditPhotoStoreResponse struct {
 	Action    string `json:"Action" xml:"Action"`
 }
 
-// create a request to invoke EditPhotoStore API
-func CreateEditPhotoStoreRequest() (request *EditPhotoStoreRequest) {
+// CreateEditPhotoStoreRequest creates a request to invoke EditPhotoStore API
+func CreateEditPhotoStoreRequest(request *EditPhotoStoreRequest) {
 	request = &EditPhotoStoreRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -100,7 +102,7 @@ func CreateEditPhotoStoreRequest() (request *EditPhotoStoreRequest) {
 	return
 }
 
-// create a response to parse from EditPhotoStore response
+// CreateEditPhotoStoreResponse creates a response to parse from EditPhotoStore response
 func CreateEditPhotoStoreResponse() (response *EditPhotoStoreResponse) {
 	response = &EditPhotoStoreResponse{
 		BaseResponse: &responses.BaseResponse{},

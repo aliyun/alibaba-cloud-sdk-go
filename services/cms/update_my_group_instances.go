@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke UpdateMyGroupInstances api with *UpdateMyGroupInstancesRequest synchronously
+// UpdateMyGroupInstances invokes the cms.UpdateMyGroupInstances API synchronously
 // api document: https://help.aliyun.com/api/cms/updatemygroupinstances.html
 func (client *Client) UpdateMyGroupInstances(request *UpdateMyGroupInstancesRequest) (response *UpdateMyGroupInstancesResponse, err error) {
 	response = CreateUpdateMyGroupInstancesResponse()
@@ -28,7 +28,7 @@ func (client *Client) UpdateMyGroupInstances(request *UpdateMyGroupInstancesRequ
 	return
 }
 
-// invoke UpdateMyGroupInstances api with *UpdateMyGroupInstancesRequest asynchronously
+// UpdateMyGroupInstancesWithChan invokes the cms.UpdateMyGroupInstances API asynchronously
 // api document: https://help.aliyun.com/api/cms/updatemygroupinstances.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateMyGroupInstancesWithChan(request *UpdateMyGroupInstancesRequest) (<-chan *UpdateMyGroupInstancesResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) UpdateMyGroupInstancesWithChan(request *UpdateMyGroupInsta
 	return responseChan, errChan
 }
 
-// invoke UpdateMyGroupInstances api with *UpdateMyGroupInstancesRequest asynchronously
+// UpdateMyGroupInstancesWithCallback invokes the cms.UpdateMyGroupInstances API asynchronously
 // api document: https://help.aliyun.com/api/cms/updatemygroupinstances.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateMyGroupInstancesWithCallback(request *UpdateMyGroupInstancesRequest, callback func(response *UpdateMyGroupInstancesResponse, err error)) <-chan int {
@@ -73,12 +73,14 @@ func (client *Client) UpdateMyGroupInstancesWithCallback(request *UpdateMyGroupI
 	return result
 }
 
+// UpdateMyGroupInstancesRequest is the request struct for api UpdateMyGroupInstances
 type UpdateMyGroupInstancesRequest struct {
 	*requests.RpcRequest
 	GroupId   requests.Integer `position:"Query" name:"GroupId"`
 	Instances string           `position:"Query" name:"Instances"`
 }
 
+// UpdateMyGroupInstancesResponse is the response struct for api UpdateMyGroupInstances
 type UpdateMyGroupInstancesResponse struct {
 	*responses.BaseResponse
 	RequestId    string `json:"RequestId" xml:"RequestId"`
@@ -87,8 +89,8 @@ type UpdateMyGroupInstancesResponse struct {
 	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
 }
 
-// create a request to invoke UpdateMyGroupInstances API
-func CreateUpdateMyGroupInstancesRequest() (request *UpdateMyGroupInstancesRequest) {
+// CreateUpdateMyGroupInstancesRequest creates a request to invoke UpdateMyGroupInstances API
+func CreateUpdateMyGroupInstancesRequest(request *UpdateMyGroupInstancesRequest) {
 	request = &UpdateMyGroupInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -96,7 +98,7 @@ func CreateUpdateMyGroupInstancesRequest() (request *UpdateMyGroupInstancesReque
 	return
 }
 
-// create a response to parse from UpdateMyGroupInstances response
+// CreateUpdateMyGroupInstancesResponse creates a response to parse from UpdateMyGroupInstances response
 func CreateUpdateMyGroupInstancesResponse() (response *UpdateMyGroupInstancesResponse) {
 	response = &UpdateMyGroupInstancesResponse{
 		BaseResponse: &responses.BaseResponse{},

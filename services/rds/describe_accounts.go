@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeAccounts api with *DescribeAccountsRequest synchronously
+// DescribeAccounts invokes the rds.DescribeAccounts API synchronously
 // api document: https://help.aliyun.com/api/rds/describeaccounts.html
 func (client *Client) DescribeAccounts(request *DescribeAccountsRequest) (response *DescribeAccountsResponse, err error) {
 	response = CreateDescribeAccountsResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeAccounts(request *DescribeAccountsRequest) (respon
 	return
 }
 
-// invoke DescribeAccounts api with *DescribeAccountsRequest asynchronously
+// DescribeAccountsWithChan invokes the rds.DescribeAccounts API asynchronously
 // api document: https://help.aliyun.com/api/rds/describeaccounts.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAccountsWithChan(request *DescribeAccountsRequest) (<-chan *DescribeAccountsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeAccountsWithChan(request *DescribeAccountsRequest)
 	return responseChan, errChan
 }
 
-// invoke DescribeAccounts api with *DescribeAccountsRequest asynchronously
+// DescribeAccountsWithCallback invokes the rds.DescribeAccounts API asynchronously
 // api document: https://help.aliyun.com/api/rds/describeaccounts.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeAccountsWithCallback(request *DescribeAccountsRequest, callback func(response *DescribeAccountsResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeAccountsWithCallback(request *DescribeAccountsRequ
 	return result
 }
 
+// DescribeAccountsRequest is the request struct for api DescribeAccounts
 type DescribeAccountsRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -83,14 +84,15 @@ type DescribeAccountsRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// DescribeAccountsResponse is the response struct for api DescribeAccounts
 type DescribeAccountsResponse struct {
 	*responses.BaseResponse
 	RequestId string                     `json:"RequestId" xml:"RequestId"`
 	Accounts  AccountsInDescribeAccounts `json:"Accounts" xml:"Accounts"`
 }
 
-// create a request to invoke DescribeAccounts API
-func CreateDescribeAccountsRequest() (request *DescribeAccountsRequest) {
+// CreateDescribeAccountsRequest creates a request to invoke DescribeAccounts API
+func CreateDescribeAccountsRequest(request *DescribeAccountsRequest) {
 	request = &DescribeAccountsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateDescribeAccountsRequest() (request *DescribeAccountsRequest) {
 	return
 }
 
-// create a response to parse from DescribeAccounts response
+// CreateDescribeAccountsResponse creates a response to parse from DescribeAccounts response
 func CreateDescribeAccountsResponse() (response *DescribeAccountsResponse) {
 	response = &DescribeAccountsResponse{
 		BaseResponse: &responses.BaseResponse{},

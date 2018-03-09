@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifyDBInstanceConnectionMode api with *ModifyDBInstanceConnectionModeRequest synchronously
+// ModifyDBInstanceConnectionMode invokes the rds.ModifyDBInstanceConnectionMode API synchronously
 // api document: https://help.aliyun.com/api/rds/modifydbinstanceconnectionmode.html
 func (client *Client) ModifyDBInstanceConnectionMode(request *ModifyDBInstanceConnectionModeRequest) (response *ModifyDBInstanceConnectionModeResponse, err error) {
 	response = CreateModifyDBInstanceConnectionModeResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifyDBInstanceConnectionMode(request *ModifyDBInstanceCo
 	return
 }
 
-// invoke ModifyDBInstanceConnectionMode api with *ModifyDBInstanceConnectionModeRequest asynchronously
+// ModifyDBInstanceConnectionModeWithChan invokes the rds.ModifyDBInstanceConnectionMode API asynchronously
 // api document: https://help.aliyun.com/api/rds/modifydbinstanceconnectionmode.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDBInstanceConnectionModeWithChan(request *ModifyDBInstanceConnectionModeRequest) (<-chan *ModifyDBInstanceConnectionModeResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifyDBInstanceConnectionModeWithChan(request *ModifyDBIn
 	return responseChan, errChan
 }
 
-// invoke ModifyDBInstanceConnectionMode api with *ModifyDBInstanceConnectionModeRequest asynchronously
+// ModifyDBInstanceConnectionModeWithCallback invokes the rds.ModifyDBInstanceConnectionMode API asynchronously
 // api document: https://help.aliyun.com/api/rds/modifydbinstanceconnectionmode.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyDBInstanceConnectionModeWithCallback(request *ModifyDBInstanceConnectionModeRequest, callback func(response *ModifyDBInstanceConnectionModeResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ModifyDBInstanceConnectionModeWithCallback(request *Modify
 	return result
 }
 
+// ModifyDBInstanceConnectionModeRequest is the request struct for api ModifyDBInstanceConnectionMode
 type ModifyDBInstanceConnectionModeRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -83,13 +84,14 @@ type ModifyDBInstanceConnectionModeRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// ModifyDBInstanceConnectionModeResponse is the response struct for api ModifyDBInstanceConnectionMode
 type ModifyDBInstanceConnectionModeResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ModifyDBInstanceConnectionMode API
-func CreateModifyDBInstanceConnectionModeRequest() (request *ModifyDBInstanceConnectionModeRequest) {
+// CreateModifyDBInstanceConnectionModeRequest creates a request to invoke ModifyDBInstanceConnectionMode API
+func CreateModifyDBInstanceConnectionModeRequest(request *ModifyDBInstanceConnectionModeRequest) {
 	request = &ModifyDBInstanceConnectionModeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateModifyDBInstanceConnectionModeRequest() (request *ModifyDBInstanceCon
 	return
 }
 
-// create a response to parse from ModifyDBInstanceConnectionMode response
+// CreateModifyDBInstanceConnectionModeResponse creates a response to parse from ModifyDBInstanceConnectionMode response
 func CreateModifyDBInstanceConnectionModeResponse() (response *ModifyDBInstanceConnectionModeResponse) {
 	response = &ModifyDBInstanceConnectionModeResponse{
 		BaseResponse: &responses.BaseResponse{},

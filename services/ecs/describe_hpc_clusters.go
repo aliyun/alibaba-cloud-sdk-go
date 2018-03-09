@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeHpcClusters api with *DescribeHpcClustersRequest synchronously
+// DescribeHpcClusters invokes the ecs.DescribeHpcClusters API synchronously
 // api document: https://help.aliyun.com/api/ecs/describehpcclusters.html
 func (client *Client) DescribeHpcClusters(request *DescribeHpcClustersRequest) (response *DescribeHpcClustersResponse, err error) {
 	response = CreateDescribeHpcClustersResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeHpcClusters(request *DescribeHpcClustersRequest) (
 	return
 }
 
-// invoke DescribeHpcClusters api with *DescribeHpcClustersRequest asynchronously
+// DescribeHpcClustersWithChan invokes the ecs.DescribeHpcClusters API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describehpcclusters.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeHpcClustersWithChan(request *DescribeHpcClustersRequest) (<-chan *DescribeHpcClustersResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeHpcClustersWithChan(request *DescribeHpcClustersRe
 	return responseChan, errChan
 }
 
-// invoke DescribeHpcClusters api with *DescribeHpcClustersRequest asynchronously
+// DescribeHpcClustersWithCallback invokes the ecs.DescribeHpcClusters API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describehpcclusters.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeHpcClustersWithCallback(request *DescribeHpcClustersRequest, callback func(response *DescribeHpcClustersResponse, err error)) <-chan int {
@@ -73,10 +73,12 @@ func (client *Client) DescribeHpcClustersWithCallback(request *DescribeHpcCluste
 	return result
 }
 
+// DescribeHpcClustersRequest is the request struct for api DescribeHpcClusters
 type DescribeHpcClustersRequest struct {
 	*requests.RpcRequest
 }
 
+// DescribeHpcClustersResponse is the response struct for api DescribeHpcClusters
 type DescribeHpcClustersResponse struct {
 	*responses.BaseResponse
 	RequestId   string      `json:"RequestId" xml:"RequestId"`
@@ -86,8 +88,8 @@ type DescribeHpcClustersResponse struct {
 	HpcClusters HpcClusters `json:"HpcClusters" xml:"HpcClusters"`
 }
 
-// create a request to invoke DescribeHpcClusters API
-func CreateDescribeHpcClustersRequest() (request *DescribeHpcClustersRequest) {
+// CreateDescribeHpcClustersRequest creates a request to invoke DescribeHpcClusters API
+func CreateDescribeHpcClustersRequest(request *DescribeHpcClustersRequest) {
 	request = &DescribeHpcClustersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateDescribeHpcClustersRequest() (request *DescribeHpcClustersRequest) {
 	return
 }
 
-// create a response to parse from DescribeHpcClusters response
+// CreateDescribeHpcClustersResponse creates a response to parse from DescribeHpcClusters response
 func CreateDescribeHpcClustersResponse() (response *DescribeHpcClustersResponse) {
 	response = &DescribeHpcClustersResponse{
 		BaseResponse: &responses.BaseResponse{},

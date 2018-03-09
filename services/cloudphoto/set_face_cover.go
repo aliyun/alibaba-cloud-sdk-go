@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SetFaceCover api with *SetFaceCoverRequest synchronously
+// SetFaceCover invokes the cloudphoto.SetFaceCover API synchronously
 // api document: https://help.aliyun.com/api/cloudphoto/setfacecover.html
 func (client *Client) SetFaceCover(request *SetFaceCoverRequest) (response *SetFaceCoverResponse, err error) {
 	response = CreateSetFaceCoverResponse()
@@ -28,7 +28,7 @@ func (client *Client) SetFaceCover(request *SetFaceCoverRequest) (response *SetF
 	return
 }
 
-// invoke SetFaceCover api with *SetFaceCoverRequest asynchronously
+// SetFaceCoverWithChan invokes the cloudphoto.SetFaceCover API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/setfacecover.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetFaceCoverWithChan(request *SetFaceCoverRequest) (<-chan *SetFaceCoverResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SetFaceCoverWithChan(request *SetFaceCoverRequest) (<-chan
 	return responseChan, errChan
 }
 
-// invoke SetFaceCover api with *SetFaceCoverRequest asynchronously
+// SetFaceCoverWithCallback invokes the cloudphoto.SetFaceCover API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/setfacecover.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetFaceCoverWithCallback(request *SetFaceCoverRequest, callback func(response *SetFaceCoverResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SetFaceCoverWithCallback(request *SetFaceCoverRequest, cal
 	return result
 }
 
+// SetFaceCoverRequest is the request struct for api SetFaceCover
 type SetFaceCoverRequest struct {
 	*requests.RpcRequest
 	FaceId    requests.Integer `position:"Query" name:"FaceId"`
@@ -81,6 +82,7 @@ type SetFaceCoverRequest struct {
 	LibraryId string           `position:"Query" name:"LibraryId"`
 }
 
+// SetFaceCoverResponse is the response struct for api SetFaceCover
 type SetFaceCoverResponse struct {
 	*responses.BaseResponse
 	Code      string `json:"Code" xml:"Code"`
@@ -89,8 +91,8 @@ type SetFaceCoverResponse struct {
 	Action    string `json:"Action" xml:"Action"`
 }
 
-// create a request to invoke SetFaceCover API
-func CreateSetFaceCoverRequest() (request *SetFaceCoverRequest) {
+// CreateSetFaceCoverRequest creates a request to invoke SetFaceCover API
+func CreateSetFaceCoverRequest(request *SetFaceCoverRequest) {
 	request = &SetFaceCoverRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateSetFaceCoverRequest() (request *SetFaceCoverRequest) {
 	return
 }
 
-// create a response to parse from SetFaceCover response
+// CreateSetFaceCoverResponse creates a response to parse from SetFaceCover response
 func CreateSetFaceCoverResponse() (response *SetFaceCoverResponse) {
 	response = &SetFaceCoverResponse{
 		BaseResponse: &responses.BaseResponse{},

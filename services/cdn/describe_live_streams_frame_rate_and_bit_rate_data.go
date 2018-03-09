@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeLiveStreamsFrameRateAndBitRateData api with *DescribeLiveStreamsFrameRateAndBitRateDataRequest synchronously
+// DescribeLiveStreamsFrameRateAndBitRateData invokes the cdn.DescribeLiveStreamsFrameRateAndBitRateData API synchronously
 // api document: https://help.aliyun.com/api/cdn/describelivestreamsframerateandbitratedata.html
 func (client *Client) DescribeLiveStreamsFrameRateAndBitRateData(request *DescribeLiveStreamsFrameRateAndBitRateDataRequest) (response *DescribeLiveStreamsFrameRateAndBitRateDataResponse, err error) {
 	response = CreateDescribeLiveStreamsFrameRateAndBitRateDataResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeLiveStreamsFrameRateAndBitRateData(request *Descri
 	return
 }
 
-// invoke DescribeLiveStreamsFrameRateAndBitRateData api with *DescribeLiveStreamsFrameRateAndBitRateDataRequest asynchronously
+// DescribeLiveStreamsFrameRateAndBitRateDataWithChan invokes the cdn.DescribeLiveStreamsFrameRateAndBitRateData API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describelivestreamsframerateandbitratedata.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamsFrameRateAndBitRateDataWithChan(request *DescribeLiveStreamsFrameRateAndBitRateDataRequest) (<-chan *DescribeLiveStreamsFrameRateAndBitRateDataResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeLiveStreamsFrameRateAndBitRateDataWithChan(request
 	return responseChan, errChan
 }
 
-// invoke DescribeLiveStreamsFrameRateAndBitRateData api with *DescribeLiveStreamsFrameRateAndBitRateDataRequest asynchronously
+// DescribeLiveStreamsFrameRateAndBitRateDataWithCallback invokes the cdn.DescribeLiveStreamsFrameRateAndBitRateData API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describelivestreamsframerateandbitratedata.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamsFrameRateAndBitRateDataWithCallback(request *DescribeLiveStreamsFrameRateAndBitRateDataRequest, callback func(response *DescribeLiveStreamsFrameRateAndBitRateDataResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeLiveStreamsFrameRateAndBitRateDataWithCallback(req
 	return result
 }
 
+// DescribeLiveStreamsFrameRateAndBitRateDataRequest is the request struct for api DescribeLiveStreamsFrameRateAndBitRateData
 type DescribeLiveStreamsFrameRateAndBitRateDataRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,14 +85,15 @@ type DescribeLiveStreamsFrameRateAndBitRateDataRequest struct {
 	EndTime       string           `position:"Query" name:"EndTime"`
 }
 
+// DescribeLiveStreamsFrameRateAndBitRateDataResponse is the response struct for api DescribeLiveStreamsFrameRateAndBitRateData
 type DescribeLiveStreamsFrameRateAndBitRateDataResponse struct {
 	*responses.BaseResponse
 	RequestId                string                                                               `json:"RequestId" xml:"RequestId"`
 	FrameRateAndBitRateInfos FrameRateAndBitRateInfosInDescribeLiveStreamsFrameRateAndBitRateData `json:"FrameRateAndBitRateInfos" xml:"FrameRateAndBitRateInfos"`
 }
 
-// create a request to invoke DescribeLiveStreamsFrameRateAndBitRateData API
-func CreateDescribeLiveStreamsFrameRateAndBitRateDataRequest() (request *DescribeLiveStreamsFrameRateAndBitRateDataRequest) {
+// CreateDescribeLiveStreamsFrameRateAndBitRateDataRequest creates a request to invoke DescribeLiveStreamsFrameRateAndBitRateData API
+func CreateDescribeLiveStreamsFrameRateAndBitRateDataRequest(request *DescribeLiveStreamsFrameRateAndBitRateDataRequest) {
 	request = &DescribeLiveStreamsFrameRateAndBitRateDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateDescribeLiveStreamsFrameRateAndBitRateDataRequest() (request *Describ
 	return
 }
 
-// create a response to parse from DescribeLiveStreamsFrameRateAndBitRateData response
+// CreateDescribeLiveStreamsFrameRateAndBitRateDataResponse creates a response to parse from DescribeLiveStreamsFrameRateAndBitRateData response
 func CreateDescribeLiveStreamsFrameRateAndBitRateDataResponse() (response *DescribeLiveStreamsFrameRateAndBitRateDataResponse) {
 	response = &DescribeLiveStreamsFrameRateAndBitRateDataResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke AddDomainGroup api with *AddDomainGroupRequest synchronously
+// AddDomainGroup invokes the alidns.AddDomainGroup API synchronously
 // api document: https://help.aliyun.com/api/alidns/adddomaingroup.html
 func (client *Client) AddDomainGroup(request *AddDomainGroupRequest) (response *AddDomainGroupResponse, err error) {
 	response = CreateAddDomainGroupResponse()
@@ -28,7 +28,7 @@ func (client *Client) AddDomainGroup(request *AddDomainGroupRequest) (response *
 	return
 }
 
-// invoke AddDomainGroup api with *AddDomainGroupRequest asynchronously
+// AddDomainGroupWithChan invokes the alidns.AddDomainGroup API asynchronously
 // api document: https://help.aliyun.com/api/alidns/adddomaingroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddDomainGroupWithChan(request *AddDomainGroupRequest) (<-chan *AddDomainGroupResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) AddDomainGroupWithChan(request *AddDomainGroupRequest) (<-
 	return responseChan, errChan
 }
 
-// invoke AddDomainGroup api with *AddDomainGroupRequest asynchronously
+// AddDomainGroupWithCallback invokes the alidns.AddDomainGroup API asynchronously
 // api document: https://help.aliyun.com/api/alidns/adddomaingroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddDomainGroupWithCallback(request *AddDomainGroupRequest, callback func(response *AddDomainGroupResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) AddDomainGroupWithCallback(request *AddDomainGroupRequest,
 	return result
 }
 
+// AddDomainGroupRequest is the request struct for api AddDomainGroup
 type AddDomainGroupRequest struct {
 	*requests.RpcRequest
 	Lang         string `position:"Query" name:"Lang"`
@@ -80,6 +81,7 @@ type AddDomainGroupRequest struct {
 	GroupName    string `position:"Query" name:"GroupName"`
 }
 
+// AddDomainGroupResponse is the response struct for api AddDomainGroup
 type AddDomainGroupResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
@@ -87,8 +89,8 @@ type AddDomainGroupResponse struct {
 	GroupName string `json:"GroupName" xml:"GroupName"`
 }
 
-// create a request to invoke AddDomainGroup API
-func CreateAddDomainGroupRequest() (request *AddDomainGroupRequest) {
+// CreateAddDomainGroupRequest creates a request to invoke AddDomainGroup API
+func CreateAddDomainGroupRequest(request *AddDomainGroupRequest) {
 	request = &AddDomainGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -96,7 +98,7 @@ func CreateAddDomainGroupRequest() (request *AddDomainGroupRequest) {
 	return
 }
 
-// create a response to parse from AddDomainGroup response
+// CreateAddDomainGroupResponse creates a response to parse from AddDomainGroup response
 func CreateAddDomainGroupResponse() (response *AddDomainGroupResponse) {
 	response = &AddDomainGroupResponse{
 		BaseResponse: &responses.BaseResponse{},

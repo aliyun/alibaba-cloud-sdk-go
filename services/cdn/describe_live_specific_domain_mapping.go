@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeLiveSpecificDomainMapping api with *DescribeLiveSpecificDomainMappingRequest synchronously
+// DescribeLiveSpecificDomainMapping invokes the cdn.DescribeLiveSpecificDomainMapping API synchronously
 // api document: https://help.aliyun.com/api/cdn/describelivespecificdomainmapping.html
 func (client *Client) DescribeLiveSpecificDomainMapping(request *DescribeLiveSpecificDomainMappingRequest) (response *DescribeLiveSpecificDomainMappingResponse, err error) {
 	response = CreateDescribeLiveSpecificDomainMappingResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeLiveSpecificDomainMapping(request *DescribeLiveSpe
 	return
 }
 
-// invoke DescribeLiveSpecificDomainMapping api with *DescribeLiveSpecificDomainMappingRequest asynchronously
+// DescribeLiveSpecificDomainMappingWithChan invokes the cdn.DescribeLiveSpecificDomainMapping API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describelivespecificdomainmapping.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveSpecificDomainMappingWithChan(request *DescribeLiveSpecificDomainMappingRequest) (<-chan *DescribeLiveSpecificDomainMappingResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeLiveSpecificDomainMappingWithChan(request *Describ
 	return responseChan, errChan
 }
 
-// invoke DescribeLiveSpecificDomainMapping api with *DescribeLiveSpecificDomainMappingRequest asynchronously
+// DescribeLiveSpecificDomainMappingWithCallback invokes the cdn.DescribeLiveSpecificDomainMapping API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describelivespecificdomainmapping.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveSpecificDomainMappingWithCallback(request *DescribeLiveSpecificDomainMappingRequest, callback func(response *DescribeLiveSpecificDomainMappingResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeLiveSpecificDomainMappingWithCallback(request *Des
 	return result
 }
 
+// DescribeLiveSpecificDomainMappingRequest is the request struct for api DescribeLiveSpecificDomainMapping
 type DescribeLiveSpecificDomainMappingRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -81,14 +82,15 @@ type DescribeLiveSpecificDomainMappingRequest struct {
 	PullDomain    string           `position:"Query" name:"PullDomain"`
 }
 
+// DescribeLiveSpecificDomainMappingResponse is the response struct for api DescribeLiveSpecificDomainMapping
 type DescribeLiveSpecificDomainMappingResponse struct {
 	*responses.BaseResponse
 	RequestId           string              `json:"RequestId" xml:"RequestId"`
 	DomainMappingModels DomainMappingModels `json:"DomainMappingModels" xml:"DomainMappingModels"`
 }
 
-// create a request to invoke DescribeLiveSpecificDomainMapping API
-func CreateDescribeLiveSpecificDomainMappingRequest() (request *DescribeLiveSpecificDomainMappingRequest) {
+// CreateDescribeLiveSpecificDomainMappingRequest creates a request to invoke DescribeLiveSpecificDomainMapping API
+func CreateDescribeLiveSpecificDomainMappingRequest(request *DescribeLiveSpecificDomainMappingRequest) {
 	request = &DescribeLiveSpecificDomainMappingRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -96,7 +98,7 @@ func CreateDescribeLiveSpecificDomainMappingRequest() (request *DescribeLiveSpec
 	return
 }
 
-// create a response to parse from DescribeLiveSpecificDomainMapping response
+// CreateDescribeLiveSpecificDomainMappingResponse creates a response to parse from DescribeLiveSpecificDomainMapping response
 func CreateDescribeLiveSpecificDomainMappingResponse() (response *DescribeLiveSpecificDomainMappingResponse) {
 	response = &DescribeLiveSpecificDomainMappingResponse{
 		BaseResponse: &responses.BaseResponse{},

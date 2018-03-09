@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeLiveStreamPushData api with *DescribeLiveStreamPushDataRequest synchronously
+// DescribeLiveStreamPushData invokes the cdn.DescribeLiveStreamPushData API synchronously
 // api document: https://help.aliyun.com/api/cdn/describelivestreampushdata.html
 func (client *Client) DescribeLiveStreamPushData(request *DescribeLiveStreamPushDataRequest) (response *DescribeLiveStreamPushDataResponse, err error) {
 	response = CreateDescribeLiveStreamPushDataResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeLiveStreamPushData(request *DescribeLiveStreamPush
 	return
 }
 
-// invoke DescribeLiveStreamPushData api with *DescribeLiveStreamPushDataRequest asynchronously
+// DescribeLiveStreamPushDataWithChan invokes the cdn.DescribeLiveStreamPushData API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describelivestreampushdata.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamPushDataWithChan(request *DescribeLiveStreamPushDataRequest) (<-chan *DescribeLiveStreamPushDataResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeLiveStreamPushDataWithChan(request *DescribeLiveSt
 	return responseChan, errChan
 }
 
-// invoke DescribeLiveStreamPushData api with *DescribeLiveStreamPushDataRequest asynchronously
+// DescribeLiveStreamPushDataWithCallback invokes the cdn.DescribeLiveStreamPushData API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describelivestreampushdata.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamPushDataWithCallback(request *DescribeLiveStreamPushDataRequest, callback func(response *DescribeLiveStreamPushDataResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeLiveStreamPushDataWithCallback(request *DescribeLi
 	return result
 }
 
+// DescribeLiveStreamPushDataRequest is the request struct for api DescribeLiveStreamPushData
 type DescribeLiveStreamPushDataRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,14 +83,15 @@ type DescribeLiveStreamPushDataRequest struct {
 	EndTime       string           `position:"Query" name:"EndTime"`
 }
 
+// DescribeLiveStreamPushDataResponse is the response struct for api DescribeLiveStreamPushData
 type DescribeLiveStreamPushDataResponse struct {
 	*responses.BaseResponse
 	RequestId           string              `json:"RequestId" xml:"RequestId"`
 	PushStreamModelList PushStreamModelList `json:"PushStreamModelList" xml:"PushStreamModelList"`
 }
 
-// create a request to invoke DescribeLiveStreamPushData API
-func CreateDescribeLiveStreamPushDataRequest() (request *DescribeLiveStreamPushDataRequest) {
+// CreateDescribeLiveStreamPushDataRequest creates a request to invoke DescribeLiveStreamPushData API
+func CreateDescribeLiveStreamPushDataRequest(request *DescribeLiveStreamPushDataRequest) {
 	request = &DescribeLiveStreamPushDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateDescribeLiveStreamPushDataRequest() (request *DescribeLiveStreamPushD
 	return
 }
 
-// create a response to parse from DescribeLiveStreamPushData response
+// CreateDescribeLiveStreamPushDataResponse creates a response to parse from DescribeLiveStreamPushData response
 func CreateDescribeLiveStreamPushDataResponse() (response *DescribeLiveStreamPushDataResponse) {
 	response = &DescribeLiveStreamPushDataResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke UpdateGroup api with *UpdateGroupRequest synchronously
+// UpdateGroup invokes the ram.UpdateGroup API synchronously
 // api document: https://help.aliyun.com/api/ram/updategroup.html
 func (client *Client) UpdateGroup(request *UpdateGroupRequest) (response *UpdateGroupResponse, err error) {
 	response = CreateUpdateGroupResponse()
@@ -28,7 +28,7 @@ func (client *Client) UpdateGroup(request *UpdateGroupRequest) (response *Update
 	return
 }
 
-// invoke UpdateGroup api with *UpdateGroupRequest asynchronously
+// UpdateGroupWithChan invokes the ram.UpdateGroup API asynchronously
 // api document: https://help.aliyun.com/api/ram/updategroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateGroupWithChan(request *UpdateGroupRequest) (<-chan *UpdateGroupResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) UpdateGroupWithChan(request *UpdateGroupRequest) (<-chan *
 	return responseChan, errChan
 }
 
-// invoke UpdateGroup api with *UpdateGroupRequest asynchronously
+// UpdateGroupWithCallback invokes the ram.UpdateGroup API asynchronously
 // api document: https://help.aliyun.com/api/ram/updategroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateGroupWithCallback(request *UpdateGroupRequest, callback func(response *UpdateGroupResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) UpdateGroupWithCallback(request *UpdateGroupRequest, callb
 	return result
 }
 
+// UpdateGroupRequest is the request struct for api UpdateGroup
 type UpdateGroupRequest struct {
 	*requests.RpcRequest
 	GroupName    string `position:"Query" name:"GroupName"`
@@ -80,14 +81,15 @@ type UpdateGroupRequest struct {
 	NewComments  string `position:"Query" name:"NewComments"`
 }
 
+// UpdateGroupResponse is the response struct for api UpdateGroup
 type UpdateGroupResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Group     Group  `json:"Group" xml:"Group"`
 }
 
-// create a request to invoke UpdateGroup API
-func CreateUpdateGroupRequest() (request *UpdateGroupRequest) {
+// CreateUpdateGroupRequest creates a request to invoke UpdateGroup API
+func CreateUpdateGroupRequest(request *UpdateGroupRequest) {
 	request = &UpdateGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateUpdateGroupRequest() (request *UpdateGroupRequest) {
 	return
 }
 
-// create a response to parse from UpdateGroup response
+// CreateUpdateGroupResponse creates a response to parse from UpdateGroup response
 func CreateUpdateGroupResponse() (response *UpdateGroupResponse) {
 	response = &UpdateGroupResponse{
 		BaseResponse: &responses.BaseResponse{},

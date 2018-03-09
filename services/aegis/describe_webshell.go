@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeWebshell api with *DescribeWebshellRequest synchronously
+// DescribeWebshell invokes the aegis.DescribeWebshell API synchronously
 // api document: https://help.aliyun.com/api/aegis/describewebshell.html
 func (client *Client) DescribeWebshell(request *DescribeWebshellRequest) (response *DescribeWebshellResponse, err error) {
 	response = CreateDescribeWebshellResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeWebshell(request *DescribeWebshellRequest) (respon
 	return
 }
 
-// invoke DescribeWebshell api with *DescribeWebshellRequest asynchronously
+// DescribeWebshellWithChan invokes the aegis.DescribeWebshell API asynchronously
 // api document: https://help.aliyun.com/api/aegis/describewebshell.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeWebshellWithChan(request *DescribeWebshellRequest) (<-chan *DescribeWebshellResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeWebshellWithChan(request *DescribeWebshellRequest)
 	return responseChan, errChan
 }
 
-// invoke DescribeWebshell api with *DescribeWebshellRequest asynchronously
+// DescribeWebshellWithCallback invokes the aegis.DescribeWebshell API asynchronously
 // api document: https://help.aliyun.com/api/aegis/describewebshell.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeWebshellWithCallback(request *DescribeWebshellRequest, callback func(response *DescribeWebshellResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeWebshellWithCallback(request *DescribeWebshellRequ
 	return result
 }
 
+// DescribeWebshellRequest is the request struct for api DescribeWebshell
 type DescribeWebshellRequest struct {
 	*requests.RpcRequest
 	SourceIp        string           `position:"Query" name:"SourceIp"`
@@ -83,14 +84,15 @@ type DescribeWebshellRequest struct {
 	Dealed          string           `position:"Query" name:"Dealed"`
 }
 
+// DescribeWebshellResponse is the response struct for api DescribeWebshell
 type DescribeWebshellResponse struct {
 	*responses.BaseResponse
 	RequestId    string             `json:"RequestId" xml:"RequestId"`
 	WebshellList []WebshellListItem `json:"WebshellList" xml:"WebshellList"`
 }
 
-// create a request to invoke DescribeWebshell API
-func CreateDescribeWebshellRequest() (request *DescribeWebshellRequest) {
+// CreateDescribeWebshellRequest creates a request to invoke DescribeWebshell API
+func CreateDescribeWebshellRequest(request *DescribeWebshellRequest) {
 	request = &DescribeWebshellRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateDescribeWebshellRequest() (request *DescribeWebshellRequest) {
 	return
 }
 
-// create a response to parse from DescribeWebshell response
+// CreateDescribeWebshellResponse creates a response to parse from DescribeWebshell response
 func CreateDescribeWebshellResponse() (response *DescribeWebshellResponse) {
 	response = &DescribeWebshellResponse{
 		BaseResponse: &responses.BaseResponse{},

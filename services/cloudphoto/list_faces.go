@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ListFaces api with *ListFacesRequest synchronously
+// ListFaces invokes the cloudphoto.ListFaces API synchronously
 // api document: https://help.aliyun.com/api/cloudphoto/listfaces.html
 func (client *Client) ListFaces(request *ListFacesRequest) (response *ListFacesResponse, err error) {
 	response = CreateListFacesResponse()
@@ -28,7 +28,7 @@ func (client *Client) ListFaces(request *ListFacesRequest) (response *ListFacesR
 	return
 }
 
-// invoke ListFaces api with *ListFacesRequest asynchronously
+// ListFacesWithChan invokes the cloudphoto.ListFaces API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/listfaces.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListFacesWithChan(request *ListFacesRequest) (<-chan *ListFacesResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ListFacesWithChan(request *ListFacesRequest) (<-chan *List
 	return responseChan, errChan
 }
 
-// invoke ListFaces api with *ListFacesRequest asynchronously
+// ListFacesWithCallback invokes the cloudphoto.ListFaces API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/listfaces.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListFacesWithCallback(request *ListFacesRequest, callback func(response *ListFacesResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ListFacesWithCallback(request *ListFacesRequest, callback 
 	return result
 }
 
+// ListFacesRequest is the request struct for api ListFaces
 type ListFacesRequest struct {
 	*requests.RpcRequest
 	Direction   string           `position:"Query" name:"Direction"`
@@ -84,6 +85,7 @@ type ListFacesRequest struct {
 	HasFaceName string           `position:"Query" name:"HasFaceName"`
 }
 
+// ListFacesResponse is the response struct for api ListFaces
 type ListFacesResponse struct {
 	*responses.BaseResponse
 	Code       string `json:"Code" xml:"Code"`
@@ -95,8 +97,8 @@ type ListFacesResponse struct {
 	Faces      []Face `json:"Faces" xml:"Faces"`
 }
 
-// create a request to invoke ListFaces API
-func CreateListFacesRequest() (request *ListFacesRequest) {
+// CreateListFacesRequest creates a request to invoke ListFaces API
+func CreateListFacesRequest(request *ListFacesRequest) {
 	request = &ListFacesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -104,7 +106,7 @@ func CreateListFacesRequest() (request *ListFacesRequest) {
 	return
 }
 
-// create a response to parse from ListFaces response
+// CreateListFacesResponse creates a response to parse from ListFaces response
 func CreateListFacesResponse() (response *ListFacesResponse) {
 	response = &ListFacesResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifySecurityGroupPolicy api with *ModifySecurityGroupPolicyRequest synchronously
+// ModifySecurityGroupPolicy invokes the ecs.ModifySecurityGroupPolicy API synchronously
 // api document: https://help.aliyun.com/api/ecs/modifysecuritygrouppolicy.html
 func (client *Client) ModifySecurityGroupPolicy(request *ModifySecurityGroupPolicyRequest) (response *ModifySecurityGroupPolicyResponse, err error) {
 	response = CreateModifySecurityGroupPolicyResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifySecurityGroupPolicy(request *ModifySecurityGroupPoli
 	return
 }
 
-// invoke ModifySecurityGroupPolicy api with *ModifySecurityGroupPolicyRequest asynchronously
+// ModifySecurityGroupPolicyWithChan invokes the ecs.ModifySecurityGroupPolicy API asynchronously
 // api document: https://help.aliyun.com/api/ecs/modifysecuritygrouppolicy.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySecurityGroupPolicyWithChan(request *ModifySecurityGroupPolicyRequest) (<-chan *ModifySecurityGroupPolicyResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifySecurityGroupPolicyWithChan(request *ModifySecurityG
 	return responseChan, errChan
 }
 
-// invoke ModifySecurityGroupPolicy api with *ModifySecurityGroupPolicyRequest asynchronously
+// ModifySecurityGroupPolicyWithCallback invokes the ecs.ModifySecurityGroupPolicy API asynchronously
 // api document: https://help.aliyun.com/api/ecs/modifysecuritygrouppolicy.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySecurityGroupPolicyWithCallback(request *ModifySecurityGroupPolicyRequest, callback func(response *ModifySecurityGroupPolicyResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ModifySecurityGroupPolicyWithCallback(request *ModifySecur
 	return result
 }
 
+// ModifySecurityGroupPolicyRequest is the request struct for api ModifySecurityGroupPolicy
 type ModifySecurityGroupPolicyRequest struct {
 	*requests.RpcRequest
 	SecurityGroupId      string           `position:"Query" name:"SecurityGroupId"`
@@ -84,13 +85,14 @@ type ModifySecurityGroupPolicyRequest struct {
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
+// ModifySecurityGroupPolicyResponse is the response struct for api ModifySecurityGroupPolicy
 type ModifySecurityGroupPolicyResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ModifySecurityGroupPolicy API
-func CreateModifySecurityGroupPolicyRequest() (request *ModifySecurityGroupPolicyRequest) {
+// CreateModifySecurityGroupPolicyRequest creates a request to invoke ModifySecurityGroupPolicy API
+func CreateModifySecurityGroupPolicyRequest(request *ModifySecurityGroupPolicyRequest) {
 	request = &ModifySecurityGroupPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateModifySecurityGroupPolicyRequest() (request *ModifySecurityGroupPolic
 	return
 }
 
-// create a response to parse from ModifySecurityGroupPolicy response
+// CreateModifySecurityGroupPolicyResponse creates a response to parse from ModifySecurityGroupPolicy response
 func CreateModifySecurityGroupPolicyResponse() (response *ModifySecurityGroupPolicyResponse) {
 	response = &ModifySecurityGroupPolicyResponse{
 		BaseResponse: &responses.BaseResponse{},

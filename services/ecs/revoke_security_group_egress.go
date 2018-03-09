@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke RevokeSecurityGroupEgress api with *RevokeSecurityGroupEgressRequest synchronously
+// RevokeSecurityGroupEgress invokes the ecs.RevokeSecurityGroupEgress API synchronously
 // api document: https://help.aliyun.com/api/ecs/revokesecuritygroupegress.html
 func (client *Client) RevokeSecurityGroupEgress(request *RevokeSecurityGroupEgressRequest) (response *RevokeSecurityGroupEgressResponse, err error) {
 	response = CreateRevokeSecurityGroupEgressResponse()
@@ -28,7 +28,7 @@ func (client *Client) RevokeSecurityGroupEgress(request *RevokeSecurityGroupEgre
 	return
 }
 
-// invoke RevokeSecurityGroupEgress api with *RevokeSecurityGroupEgressRequest asynchronously
+// RevokeSecurityGroupEgressWithChan invokes the ecs.RevokeSecurityGroupEgress API asynchronously
 // api document: https://help.aliyun.com/api/ecs/revokesecuritygroupegress.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RevokeSecurityGroupEgressWithChan(request *RevokeSecurityGroupEgressRequest) (<-chan *RevokeSecurityGroupEgressResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) RevokeSecurityGroupEgressWithChan(request *RevokeSecurityG
 	return responseChan, errChan
 }
 
-// invoke RevokeSecurityGroupEgress api with *RevokeSecurityGroupEgressRequest asynchronously
+// RevokeSecurityGroupEgressWithCallback invokes the ecs.RevokeSecurityGroupEgress API asynchronously
 // api document: https://help.aliyun.com/api/ecs/revokesecuritygroupegress.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RevokeSecurityGroupEgressWithCallback(request *RevokeSecurityGroupEgressRequest, callback func(response *RevokeSecurityGroupEgressResponse, err error)) <-chan int {
@@ -73,17 +73,19 @@ func (client *Client) RevokeSecurityGroupEgressWithCallback(request *RevokeSecur
 	return result
 }
 
+// RevokeSecurityGroupEgressRequest is the request struct for api RevokeSecurityGroupEgress
 type RevokeSecurityGroupEgressRequest struct {
 	*requests.RpcRequest
 }
 
+// RevokeSecurityGroupEgressResponse is the response struct for api RevokeSecurityGroupEgress
 type RevokeSecurityGroupEgressResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke RevokeSecurityGroupEgress API
-func CreateRevokeSecurityGroupEgressRequest() (request *RevokeSecurityGroupEgressRequest) {
+// CreateRevokeSecurityGroupEgressRequest creates a request to invoke RevokeSecurityGroupEgress API
+func CreateRevokeSecurityGroupEgressRequest(request *RevokeSecurityGroupEgressRequest) {
 	request = &RevokeSecurityGroupEgressRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -91,7 +93,7 @@ func CreateRevokeSecurityGroupEgressRequest() (request *RevokeSecurityGroupEgres
 	return
 }
 
-// create a response to parse from RevokeSecurityGroupEgress response
+// CreateRevokeSecurityGroupEgressResponse creates a response to parse from RevokeSecurityGroupEgress response
 func CreateRevokeSecurityGroupEgressResponse() (response *RevokeSecurityGroupEgressResponse) {
 	response = &RevokeSecurityGroupEgressResponse{
 		BaseResponse: &responses.BaseResponse{},

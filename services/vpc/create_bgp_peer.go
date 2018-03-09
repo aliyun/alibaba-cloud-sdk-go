@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CreateBgpPeer api with *CreateBgpPeerRequest synchronously
+// CreateBgpPeer invokes the vpc.CreateBgpPeer API synchronously
 // api document: https://help.aliyun.com/api/vpc/createbgppeer.html
 func (client *Client) CreateBgpPeer(request *CreateBgpPeerRequest) (response *CreateBgpPeerResponse, err error) {
 	response = CreateCreateBgpPeerResponse()
@@ -28,7 +28,7 @@ func (client *Client) CreateBgpPeer(request *CreateBgpPeerRequest) (response *Cr
 	return
 }
 
-// invoke CreateBgpPeer api with *CreateBgpPeerRequest asynchronously
+// CreateBgpPeerWithChan invokes the vpc.CreateBgpPeer API asynchronously
 // api document: https://help.aliyun.com/api/vpc/createbgppeer.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateBgpPeerWithChan(request *CreateBgpPeerRequest) (<-chan *CreateBgpPeerResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CreateBgpPeerWithChan(request *CreateBgpPeerRequest) (<-ch
 	return responseChan, errChan
 }
 
-// invoke CreateBgpPeer api with *CreateBgpPeerRequest asynchronously
+// CreateBgpPeerWithCallback invokes the vpc.CreateBgpPeer API asynchronously
 // api document: https://help.aliyun.com/api/vpc/createbgppeer.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateBgpPeerWithCallback(request *CreateBgpPeerRequest, callback func(response *CreateBgpPeerResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) CreateBgpPeerWithCallback(request *CreateBgpPeerRequest, c
 	return result
 }
 
+// CreateBgpPeerRequest is the request struct for api CreateBgpPeer
 type CreateBgpPeerRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,14 +85,15 @@ type CreateBgpPeerRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// CreateBgpPeerResponse is the response struct for api CreateBgpPeer
 type CreateBgpPeerResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	BgpPeerId string `json:"BgpPeerId" xml:"BgpPeerId"`
 }
 
-// create a request to invoke CreateBgpPeer API
-func CreateCreateBgpPeerRequest() (request *CreateBgpPeerRequest) {
+// CreateCreateBgpPeerRequest creates a request to invoke CreateBgpPeer API
+func CreateCreateBgpPeerRequest(request *CreateBgpPeerRequest) {
 	request = &CreateBgpPeerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateCreateBgpPeerRequest() (request *CreateBgpPeerRequest) {
 	return
 }
 
-// create a response to parse from CreateBgpPeer response
+// CreateCreateBgpPeerResponse creates a response to parse from CreateBgpPeer response
 func CreateCreateBgpPeerResponse() (response *CreateBgpPeerResponse) {
 	response = &CreateBgpPeerResponse{
 		BaseResponse: &responses.BaseResponse{},

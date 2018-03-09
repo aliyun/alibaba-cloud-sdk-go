@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke PlayInfo api with *PlayInfoRequest synchronously
+// PlayInfo invokes the mts.PlayInfo API synchronously
 // api document: https://help.aliyun.com/api/mts/playinfo.html
 func (client *Client) PlayInfo(request *PlayInfoRequest) (response *PlayInfoResponse, err error) {
 	response = CreatePlayInfoResponse()
@@ -28,7 +28,7 @@ func (client *Client) PlayInfo(request *PlayInfoRequest) (response *PlayInfoResp
 	return
 }
 
-// invoke PlayInfo api with *PlayInfoRequest asynchronously
+// PlayInfoWithChan invokes the mts.PlayInfo API asynchronously
 // api document: https://help.aliyun.com/api/mts/playinfo.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PlayInfoWithChan(request *PlayInfoRequest) (<-chan *PlayInfoResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) PlayInfoWithChan(request *PlayInfoRequest) (<-chan *PlayIn
 	return responseChan, errChan
 }
 
-// invoke PlayInfo api with *PlayInfoRequest asynchronously
+// PlayInfoWithCallback invokes the mts.PlayInfo API asynchronously
 // api document: https://help.aliyun.com/api/mts/playinfo.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PlayInfoWithCallback(request *PlayInfoRequest, callback func(response *PlayInfoResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) PlayInfoWithCallback(request *PlayInfoRequest, callback fu
 	return result
 }
 
+// PlayInfoRequest is the request struct for api PlayInfo
 type PlayInfoRequest struct {
 	*requests.RpcRequest
 	OwnerId              string           `position:"Query" name:"OwnerId"`
@@ -88,6 +89,7 @@ type PlayInfoRequest struct {
 	HlsUriToken          string           `position:"Query" name:"HlsUriToken"`
 }
 
+// PlayInfoResponse is the response struct for api PlayInfo
 type PlayInfoResponse struct {
 	*responses.BaseResponse
 	RequestId         string            `json:"RequestId" xml:"RequestId"`
@@ -95,8 +97,8 @@ type PlayInfoResponse struct {
 	PlayInfoList      PlayInfoList      `json:"PlayInfoList" xml:"PlayInfoList"`
 }
 
-// create a request to invoke PlayInfo API
-func CreatePlayInfoRequest() (request *PlayInfoRequest) {
+// CreatePlayInfoRequest creates a request to invoke PlayInfo API
+func CreatePlayInfoRequest(request *PlayInfoRequest) {
 	request = &PlayInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -104,7 +106,7 @@ func CreatePlayInfoRequest() (request *PlayInfoRequest) {
 	return
 }
 
-// create a response to parse from PlayInfo response
+// CreatePlayInfoResponse creates a response to parse from PlayInfo response
 func CreatePlayInfoResponse() (response *PlayInfoResponse) {
 	response = &PlayInfoResponse{
 		BaseResponse: &responses.BaseResponse{},

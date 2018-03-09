@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CreateHaVip api with *CreateHaVipRequest synchronously
+// CreateHaVip invokes the ecs.CreateHaVip API synchronously
 // api document: https://help.aliyun.com/api/ecs/createhavip.html
 func (client *Client) CreateHaVip(request *CreateHaVipRequest) (response *CreateHaVipResponse, err error) {
 	response = CreateCreateHaVipResponse()
@@ -28,7 +28,7 @@ func (client *Client) CreateHaVip(request *CreateHaVipRequest) (response *Create
 	return
 }
 
-// invoke CreateHaVip api with *CreateHaVipRequest asynchronously
+// CreateHaVipWithChan invokes the ecs.CreateHaVip API asynchronously
 // api document: https://help.aliyun.com/api/ecs/createhavip.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateHaVipWithChan(request *CreateHaVipRequest) (<-chan *CreateHaVipResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CreateHaVipWithChan(request *CreateHaVipRequest) (<-chan *
 	return responseChan, errChan
 }
 
-// invoke CreateHaVip api with *CreateHaVipRequest asynchronously
+// CreateHaVipWithCallback invokes the ecs.CreateHaVip API asynchronously
 // api document: https://help.aliyun.com/api/ecs/createhavip.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateHaVipWithCallback(request *CreateHaVipRequest, callback func(response *CreateHaVipResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) CreateHaVipWithCallback(request *CreateHaVipRequest, callb
 	return result
 }
 
+// CreateHaVipRequest is the request struct for api CreateHaVip
 type CreateHaVipRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -85,14 +86,15 @@ type CreateHaVipRequest struct {
 	Description          string           `position:"Query" name:"Description"`
 }
 
+// CreateHaVipResponse is the response struct for api CreateHaVip
 type CreateHaVipResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	HaVipId   string `json:"HaVipId" xml:"HaVipId"`
 }
 
-// create a request to invoke CreateHaVip API
-func CreateCreateHaVipRequest() (request *CreateHaVipRequest) {
+// CreateCreateHaVipRequest creates a request to invoke CreateHaVip API
+func CreateCreateHaVipRequest(request *CreateHaVipRequest) {
 	request = &CreateHaVipRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -100,7 +102,7 @@ func CreateCreateHaVipRequest() (request *CreateHaVipRequest) {
 	return
 }
 
-// create a response to parse from CreateHaVip response
+// CreateCreateHaVipResponse creates a response to parse from CreateHaVip response
 func CreateCreateHaVipResponse() (response *CreateHaVipResponse) {
 	response = &CreateHaVipResponse{
 		BaseResponse: &responses.BaseResponse{},

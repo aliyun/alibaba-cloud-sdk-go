@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteCacheExpiredConfig api with *DeleteCacheExpiredConfigRequest synchronously
+// DeleteCacheExpiredConfig invokes the cdn.DeleteCacheExpiredConfig API synchronously
 // api document: https://help.aliyun.com/api/cdn/deletecacheexpiredconfig.html
 func (client *Client) DeleteCacheExpiredConfig(request *DeleteCacheExpiredConfigRequest) (response *DeleteCacheExpiredConfigResponse, err error) {
 	response = CreateDeleteCacheExpiredConfigResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteCacheExpiredConfig(request *DeleteCacheExpiredConfig
 	return
 }
 
-// invoke DeleteCacheExpiredConfig api with *DeleteCacheExpiredConfigRequest asynchronously
+// DeleteCacheExpiredConfigWithChan invokes the cdn.DeleteCacheExpiredConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/deletecacheexpiredconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteCacheExpiredConfigWithChan(request *DeleteCacheExpiredConfigRequest) (<-chan *DeleteCacheExpiredConfigResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteCacheExpiredConfigWithChan(request *DeleteCacheExpir
 	return responseChan, errChan
 }
 
-// invoke DeleteCacheExpiredConfig api with *DeleteCacheExpiredConfigRequest asynchronously
+// DeleteCacheExpiredConfigWithCallback invokes the cdn.DeleteCacheExpiredConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/deletecacheexpiredconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteCacheExpiredConfigWithCallback(request *DeleteCacheExpiredConfigRequest, callback func(response *DeleteCacheExpiredConfigResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DeleteCacheExpiredConfigWithCallback(request *DeleteCacheE
 	return result
 }
 
+// DeleteCacheExpiredConfigRequest is the request struct for api DeleteCacheExpiredConfig
 type DeleteCacheExpiredConfigRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,13 +83,14 @@ type DeleteCacheExpiredConfigRequest struct {
 	ConfigID      string           `position:"Query" name:"ConfigID"`
 }
 
+// DeleteCacheExpiredConfigResponse is the response struct for api DeleteCacheExpiredConfig
 type DeleteCacheExpiredConfigResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DeleteCacheExpiredConfig API
-func CreateDeleteCacheExpiredConfigRequest() (request *DeleteCacheExpiredConfigRequest) {
+// CreateDeleteCacheExpiredConfigRequest creates a request to invoke DeleteCacheExpiredConfig API
+func CreateDeleteCacheExpiredConfigRequest(request *DeleteCacheExpiredConfigRequest) {
 	request = &DeleteCacheExpiredConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -96,7 +98,7 @@ func CreateDeleteCacheExpiredConfigRequest() (request *DeleteCacheExpiredConfigR
 	return
 }
 
-// create a response to parse from DeleteCacheExpiredConfig response
+// CreateDeleteCacheExpiredConfigResponse creates a response to parse from DeleteCacheExpiredConfig response
 func CreateDeleteCacheExpiredConfigResponse() (response *DeleteCacheExpiredConfigResponse) {
 	response = &DeleteCacheExpiredConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

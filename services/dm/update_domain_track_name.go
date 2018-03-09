@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke UpdateDomainTrackName api with *UpdateDomainTrackNameRequest synchronously
+// UpdateDomainTrackName invokes the dm.UpdateDomainTrackName API synchronously
 // api document: https://help.aliyun.com/api/dm/updatedomaintrackname.html
 func (client *Client) UpdateDomainTrackName(request *UpdateDomainTrackNameRequest) (response *UpdateDomainTrackNameResponse, err error) {
 	response = CreateUpdateDomainTrackNameResponse()
@@ -28,7 +28,7 @@ func (client *Client) UpdateDomainTrackName(request *UpdateDomainTrackNameReques
 	return
 }
 
-// invoke UpdateDomainTrackName api with *UpdateDomainTrackNameRequest asynchronously
+// UpdateDomainTrackNameWithChan invokes the dm.UpdateDomainTrackName API asynchronously
 // api document: https://help.aliyun.com/api/dm/updatedomaintrackname.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateDomainTrackNameWithChan(request *UpdateDomainTrackNameRequest) (<-chan *UpdateDomainTrackNameResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) UpdateDomainTrackNameWithChan(request *UpdateDomainTrackNa
 	return responseChan, errChan
 }
 
-// invoke UpdateDomainTrackName api with *UpdateDomainTrackNameRequest asynchronously
+// UpdateDomainTrackNameWithCallback invokes the dm.UpdateDomainTrackName API asynchronously
 // api document: https://help.aliyun.com/api/dm/updatedomaintrackname.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateDomainTrackNameWithCallback(request *UpdateDomainTrackNameRequest, callback func(response *UpdateDomainTrackNameResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) UpdateDomainTrackNameWithCallback(request *UpdateDomainTra
 	return result
 }
 
+// UpdateDomainTrackNameRequest is the request struct for api UpdateDomainTrackName
 type UpdateDomainTrackNameRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,13 +83,14 @@ type UpdateDomainTrackNameRequest struct {
 	CnameTrackRecord     string           `position:"Query" name:"CnameTrackRecord"`
 }
 
+// UpdateDomainTrackNameResponse is the response struct for api UpdateDomainTrackName
 type UpdateDomainTrackNameResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke UpdateDomainTrackName API
-func CreateUpdateDomainTrackNameRequest() (request *UpdateDomainTrackNameRequest) {
+// CreateUpdateDomainTrackNameRequest creates a request to invoke UpdateDomainTrackName API
+func CreateUpdateDomainTrackNameRequest(request *UpdateDomainTrackNameRequest) {
 	request = &UpdateDomainTrackNameRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -96,7 +98,7 @@ func CreateUpdateDomainTrackNameRequest() (request *UpdateDomainTrackNameRequest
 	return
 }
 
-// create a response to parse from UpdateDomainTrackName response
+// CreateUpdateDomainTrackNameResponse creates a response to parse from UpdateDomainTrackName response
 func CreateUpdateDomainTrackNameResponse() (response *UpdateDomainTrackNameResponse) {
 	response = &UpdateDomainTrackNameResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeLiveStreamFrameInfo api with *DescribeLiveStreamFrameInfoRequest synchronously
+// DescribeLiveStreamFrameInfo invokes the cdn.DescribeLiveStreamFrameInfo API synchronously
 // api document: https://help.aliyun.com/api/cdn/describelivestreamframeinfo.html
 func (client *Client) DescribeLiveStreamFrameInfo(request *DescribeLiveStreamFrameInfoRequest) (response *DescribeLiveStreamFrameInfoResponse, err error) {
 	response = CreateDescribeLiveStreamFrameInfoResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeLiveStreamFrameInfo(request *DescribeLiveStreamFra
 	return
 }
 
-// invoke DescribeLiveStreamFrameInfo api with *DescribeLiveStreamFrameInfoRequest asynchronously
+// DescribeLiveStreamFrameInfoWithChan invokes the cdn.DescribeLiveStreamFrameInfo API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describelivestreamframeinfo.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamFrameInfoWithChan(request *DescribeLiveStreamFrameInfoRequest) (<-chan *DescribeLiveStreamFrameInfoResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeLiveStreamFrameInfoWithChan(request *DescribeLiveS
 	return responseChan, errChan
 }
 
-// invoke DescribeLiveStreamFrameInfo api with *DescribeLiveStreamFrameInfoRequest asynchronously
+// DescribeLiveStreamFrameInfoWithCallback invokes the cdn.DescribeLiveStreamFrameInfo API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describelivestreamframeinfo.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamFrameInfoWithCallback(request *DescribeLiveStreamFrameInfoRequest, callback func(response *DescribeLiveStreamFrameInfoResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeLiveStreamFrameInfoWithCallback(request *DescribeL
 	return result
 }
 
+// DescribeLiveStreamFrameInfoRequest is the request struct for api DescribeLiveStreamFrameInfo
 type DescribeLiveStreamFrameInfoRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,14 +85,15 @@ type DescribeLiveStreamFrameInfoRequest struct {
 	EndTime       string           `position:"Query" name:"EndTime"`
 }
 
+// DescribeLiveStreamFrameInfoResponse is the response struct for api DescribeLiveStreamFrameInfo
 type DescribeLiveStreamFrameInfoResponse struct {
 	*responses.BaseResponse
 	RequestId      string         `json:"RequestId" xml:"RequestId"`
 	FrameDataInfos FrameDataInfos `json:"FrameDataInfos" xml:"FrameDataInfos"`
 }
 
-// create a request to invoke DescribeLiveStreamFrameInfo API
-func CreateDescribeLiveStreamFrameInfoRequest() (request *DescribeLiveStreamFrameInfoRequest) {
+// CreateDescribeLiveStreamFrameInfoRequest creates a request to invoke DescribeLiveStreamFrameInfo API
+func CreateDescribeLiveStreamFrameInfoRequest(request *DescribeLiveStreamFrameInfoRequest) {
 	request = &DescribeLiveStreamFrameInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateDescribeLiveStreamFrameInfoRequest() (request *DescribeLiveStreamFram
 	return
 }
 
-// create a response to parse from DescribeLiveStreamFrameInfo response
+// CreateDescribeLiveStreamFrameInfoResponse creates a response to parse from DescribeLiveStreamFrameInfo response
 func CreateDescribeLiveStreamFrameInfoResponse() (response *DescribeLiveStreamFrameInfoResponse) {
 	response = &DescribeLiveStreamFrameInfoResponse{
 		BaseResponse: &responses.BaseResponse{},

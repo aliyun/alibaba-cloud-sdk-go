@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CheckAliyunCSServiceRole api with *CheckAliyunCSServiceRoleRequest synchronously
+// CheckAliyunCSServiceRole invokes the cs.CheckAliyunCSServiceRole API synchronously
 // api document: https://help.aliyun.com/api/cs/checkaliyuncsservicerole.html
 func (client *Client) CheckAliyunCSServiceRole(request *CheckAliyunCSServiceRoleRequest) (response *CheckAliyunCSServiceRoleResponse, err error) {
 	response = CreateCheckAliyunCSServiceRoleResponse()
@@ -28,7 +28,7 @@ func (client *Client) CheckAliyunCSServiceRole(request *CheckAliyunCSServiceRole
 	return
 }
 
-// invoke CheckAliyunCSServiceRole api with *CheckAliyunCSServiceRoleRequest asynchronously
+// CheckAliyunCSServiceRoleWithChan invokes the cs.CheckAliyunCSServiceRole API asynchronously
 // api document: https://help.aliyun.com/api/cs/checkaliyuncsservicerole.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckAliyunCSServiceRoleWithChan(request *CheckAliyunCSServiceRoleRequest) (<-chan *CheckAliyunCSServiceRoleResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CheckAliyunCSServiceRoleWithChan(request *CheckAliyunCSSer
 	return responseChan, errChan
 }
 
-// invoke CheckAliyunCSServiceRole api with *CheckAliyunCSServiceRoleRequest asynchronously
+// CheckAliyunCSServiceRoleWithCallback invokes the cs.CheckAliyunCSServiceRole API asynchronously
 // api document: https://help.aliyun.com/api/cs/checkaliyuncsservicerole.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CheckAliyunCSServiceRoleWithCallback(request *CheckAliyunCSServiceRoleRequest, callback func(response *CheckAliyunCSServiceRoleResponse, err error)) <-chan int {
@@ -73,16 +73,18 @@ func (client *Client) CheckAliyunCSServiceRoleWithCallback(request *CheckAliyunC
 	return result
 }
 
+// CheckAliyunCSServiceRoleRequest is the request struct for api CheckAliyunCSServiceRole
 type CheckAliyunCSServiceRoleRequest struct {
 	*requests.RoaRequest
 }
 
+// CheckAliyunCSServiceRoleResponse is the response struct for api CheckAliyunCSServiceRole
 type CheckAliyunCSServiceRoleResponse struct {
 	*responses.BaseResponse
 }
 
-// create a request to invoke CheckAliyunCSServiceRole API
-func CreateCheckAliyunCSServiceRoleRequest() (request *CheckAliyunCSServiceRoleRequest) {
+// CreateCheckAliyunCSServiceRoleRequest creates a request to invoke CheckAliyunCSServiceRole API
+func CreateCheckAliyunCSServiceRoleRequest(request *CheckAliyunCSServiceRoleRequest) {
 	request = &CheckAliyunCSServiceRoleRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
@@ -91,7 +93,7 @@ func CreateCheckAliyunCSServiceRoleRequest() (request *CheckAliyunCSServiceRoleR
 	return
 }
 
-// create a response to parse from CheckAliyunCSServiceRole response
+// CreateCheckAliyunCSServiceRoleResponse creates a response to parse from CheckAliyunCSServiceRole response
 func CreateCheckAliyunCSServiceRoleResponse() (response *CheckAliyunCSServiceRoleResponse) {
 	response = &CheckAliyunCSServiceRoleResponse{
 		BaseResponse: &responses.BaseResponse{},

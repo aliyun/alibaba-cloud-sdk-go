@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeLiveStreamOnlineUserNumByDomain api with *DescribeLiveStreamOnlineUserNumByDomainRequest synchronously
+// DescribeLiveStreamOnlineUserNumByDomain invokes the cdn.DescribeLiveStreamOnlineUserNumByDomain API synchronously
 // api document: https://help.aliyun.com/api/cdn/describelivestreamonlineusernumbydomain.html
 func (client *Client) DescribeLiveStreamOnlineUserNumByDomain(request *DescribeLiveStreamOnlineUserNumByDomainRequest) (response *DescribeLiveStreamOnlineUserNumByDomainResponse, err error) {
 	response = CreateDescribeLiveStreamOnlineUserNumByDomainResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeLiveStreamOnlineUserNumByDomain(request *DescribeL
 	return
 }
 
-// invoke DescribeLiveStreamOnlineUserNumByDomain api with *DescribeLiveStreamOnlineUserNumByDomainRequest asynchronously
+// DescribeLiveStreamOnlineUserNumByDomainWithChan invokes the cdn.DescribeLiveStreamOnlineUserNumByDomain API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describelivestreamonlineusernumbydomain.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamOnlineUserNumByDomainWithChan(request *DescribeLiveStreamOnlineUserNumByDomainRequest) (<-chan *DescribeLiveStreamOnlineUserNumByDomainResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeLiveStreamOnlineUserNumByDomainWithChan(request *D
 	return responseChan, errChan
 }
 
-// invoke DescribeLiveStreamOnlineUserNumByDomain api with *DescribeLiveStreamOnlineUserNumByDomainRequest asynchronously
+// DescribeLiveStreamOnlineUserNumByDomainWithCallback invokes the cdn.DescribeLiveStreamOnlineUserNumByDomain API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describelivestreamonlineusernumbydomain.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamOnlineUserNumByDomainWithCallback(request *DescribeLiveStreamOnlineUserNumByDomainRequest, callback func(response *DescribeLiveStreamOnlineUserNumByDomainResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeLiveStreamOnlineUserNumByDomainWithCallback(reques
 	return result
 }
 
+// DescribeLiveStreamOnlineUserNumByDomainRequest is the request struct for api DescribeLiveStreamOnlineUserNumByDomain
 type DescribeLiveStreamOnlineUserNumByDomainRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,6 +85,7 @@ type DescribeLiveStreamOnlineUserNumByDomainRequest struct {
 	PageSize      requests.Integer `position:"Query" name:"PageSize"`
 }
 
+// DescribeLiveStreamOnlineUserNumByDomainResponse is the response struct for api DescribeLiveStreamOnlineUserNumByDomain
 type DescribeLiveStreamOnlineUserNumByDomainResponse struct {
 	*responses.BaseResponse
 	RequestId       string                                                  `json:"RequestId" xml:"RequestId"`
@@ -94,8 +96,8 @@ type DescribeLiveStreamOnlineUserNumByDomainResponse struct {
 	OnlineUserInfo  OnlineUserInfoInDescribeLiveStreamOnlineUserNumByDomain `json:"OnlineUserInfo" xml:"OnlineUserInfo"`
 }
 
-// create a request to invoke DescribeLiveStreamOnlineUserNumByDomain API
-func CreateDescribeLiveStreamOnlineUserNumByDomainRequest() (request *DescribeLiveStreamOnlineUserNumByDomainRequest) {
+// CreateDescribeLiveStreamOnlineUserNumByDomainRequest creates a request to invoke DescribeLiveStreamOnlineUserNumByDomain API
+func CreateDescribeLiveStreamOnlineUserNumByDomainRequest(request *DescribeLiveStreamOnlineUserNumByDomainRequest) {
 	request = &DescribeLiveStreamOnlineUserNumByDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -103,7 +105,7 @@ func CreateDescribeLiveStreamOnlineUserNumByDomainRequest() (request *DescribeLi
 	return
 }
 
-// create a response to parse from DescribeLiveStreamOnlineUserNumByDomain response
+// CreateDescribeLiveStreamOnlineUserNumByDomainResponse creates a response to parse from DescribeLiveStreamOnlineUserNumByDomain response
 func CreateDescribeLiveStreamOnlineUserNumByDomainResponse() (response *DescribeLiveStreamOnlineUserNumByDomainResponse) {
 	response = &DescribeLiveStreamOnlineUserNumByDomainResponse{
 		BaseResponse: &responses.BaseResponse{},

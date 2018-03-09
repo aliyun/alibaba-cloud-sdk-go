@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CreateClusterToken api with *CreateClusterTokenRequest synchronously
+// CreateClusterToken invokes the cs.CreateClusterToken API synchronously
 // api document: https://help.aliyun.com/api/cs/createclustertoken.html
 func (client *Client) CreateClusterToken(request *CreateClusterTokenRequest) (response *CreateClusterTokenResponse, err error) {
 	response = CreateCreateClusterTokenResponse()
@@ -28,7 +28,7 @@ func (client *Client) CreateClusterToken(request *CreateClusterTokenRequest) (re
 	return
 }
 
-// invoke CreateClusterToken api with *CreateClusterTokenRequest asynchronously
+// CreateClusterTokenWithChan invokes the cs.CreateClusterToken API asynchronously
 // api document: https://help.aliyun.com/api/cs/createclustertoken.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateClusterTokenWithChan(request *CreateClusterTokenRequest) (<-chan *CreateClusterTokenResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CreateClusterTokenWithChan(request *CreateClusterTokenRequ
 	return responseChan, errChan
 }
 
-// invoke CreateClusterToken api with *CreateClusterTokenRequest asynchronously
+// CreateClusterTokenWithCallback invokes the cs.CreateClusterToken API asynchronously
 // api document: https://help.aliyun.com/api/cs/createclustertoken.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateClusterTokenWithCallback(request *CreateClusterTokenRequest, callback func(response *CreateClusterTokenResponse, err error)) <-chan int {
@@ -73,17 +73,19 @@ func (client *Client) CreateClusterTokenWithCallback(request *CreateClusterToken
 	return result
 }
 
+// CreateClusterTokenRequest is the request struct for api CreateClusterToken
 type CreateClusterTokenRequest struct {
 	*requests.RoaRequest
 	ClusterId string `position:"Path" name:"ClusterId"`
 }
 
+// CreateClusterTokenResponse is the response struct for api CreateClusterToken
 type CreateClusterTokenResponse struct {
 	*responses.BaseResponse
 }
 
-// create a request to invoke CreateClusterToken API
-func CreateCreateClusterTokenRequest() (request *CreateClusterTokenRequest) {
+// CreateCreateClusterTokenRequest creates a request to invoke CreateClusterToken API
+func CreateCreateClusterTokenRequest(request *CreateClusterTokenRequest) {
 	request = &CreateClusterTokenRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
@@ -92,7 +94,7 @@ func CreateCreateClusterTokenRequest() (request *CreateClusterTokenRequest) {
 	return
 }
 
-// create a response to parse from CreateClusterToken response
+// CreateCreateClusterTokenResponse creates a response to parse from CreateClusterToken response
 func CreateCreateClusterTokenResponse() (response *CreateClusterTokenResponse) {
 	response = &CreateClusterTokenResponse{
 		BaseResponse: &responses.BaseResponse{},

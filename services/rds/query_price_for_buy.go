@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke QueryPriceForBuy api with *QueryPriceForBuyRequest synchronously
+// QueryPriceForBuy invokes the rds.QueryPriceForBuy API synchronously
 // api document: https://help.aliyun.com/api/rds/querypriceforbuy.html
 func (client *Client) QueryPriceForBuy(request *QueryPriceForBuyRequest) (response *QueryPriceForBuyResponse, err error) {
 	response = CreateQueryPriceForBuyResponse()
@@ -28,7 +28,7 @@ func (client *Client) QueryPriceForBuy(request *QueryPriceForBuyRequest) (respon
 	return
 }
 
-// invoke QueryPriceForBuy api with *QueryPriceForBuyRequest asynchronously
+// QueryPriceForBuyWithChan invokes the rds.QueryPriceForBuy API asynchronously
 // api document: https://help.aliyun.com/api/rds/querypriceforbuy.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryPriceForBuyWithChan(request *QueryPriceForBuyRequest) (<-chan *QueryPriceForBuyResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) QueryPriceForBuyWithChan(request *QueryPriceForBuyRequest)
 	return responseChan, errChan
 }
 
-// invoke QueryPriceForBuy api with *QueryPriceForBuyRequest asynchronously
+// QueryPriceForBuyWithCallback invokes the rds.QueryPriceForBuy API asynchronously
 // api document: https://help.aliyun.com/api/rds/querypriceforbuy.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryPriceForBuyWithCallback(request *QueryPriceForBuyRequest, callback func(response *QueryPriceForBuyResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) QueryPriceForBuyWithCallback(request *QueryPriceForBuyRequ
 	return result
 }
 
+// QueryPriceForBuyRequest is the request struct for api QueryPriceForBuy
 type QueryPriceForBuyRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -94,6 +95,7 @@ type QueryPriceForBuyRequest struct {
 	OrderType            string           `position:"Query" name:"OrderType"`
 }
 
+// QueryPriceForBuyResponse is the response struct for api QueryPriceForBuy
 type QueryPriceForBuyResponse struct {
 	*responses.BaseResponse
 	RequestId string                  `json:"RequestId" xml:"RequestId"`
@@ -101,8 +103,8 @@ type QueryPriceForBuyResponse struct {
 	Rules     RulesInQueryPriceForBuy `json:"Rules" xml:"Rules"`
 }
 
-// create a request to invoke QueryPriceForBuy API
-func CreateQueryPriceForBuyRequest() (request *QueryPriceForBuyRequest) {
+// CreateQueryPriceForBuyRequest creates a request to invoke QueryPriceForBuy API
+func CreateQueryPriceForBuyRequest(request *QueryPriceForBuyRequest) {
 	request = &QueryPriceForBuyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -110,7 +112,7 @@ func CreateQueryPriceForBuyRequest() (request *QueryPriceForBuyRequest) {
 	return
 }
 
-// create a response to parse from QueryPriceForBuy response
+// CreateQueryPriceForBuyResponse creates a response to parse from QueryPriceForBuy response
 func CreateQueryPriceForBuyResponse() (response *QueryPriceForBuyResponse) {
 	response = &QueryPriceForBuyResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ResetClusterNode api with *ResetClusterNodeRequest synchronously
+// ResetClusterNode invokes the cs.ResetClusterNode API synchronously
 // api document: https://help.aliyun.com/api/cs/resetclusternode.html
 func (client *Client) ResetClusterNode(request *ResetClusterNodeRequest) (response *ResetClusterNodeResponse, err error) {
 	response = CreateResetClusterNodeResponse()
@@ -28,7 +28,7 @@ func (client *Client) ResetClusterNode(request *ResetClusterNodeRequest) (respon
 	return
 }
 
-// invoke ResetClusterNode api with *ResetClusterNodeRequest asynchronously
+// ResetClusterNodeWithChan invokes the cs.ResetClusterNode API asynchronously
 // api document: https://help.aliyun.com/api/cs/resetclusternode.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResetClusterNodeWithChan(request *ResetClusterNodeRequest) (<-chan *ResetClusterNodeResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ResetClusterNodeWithChan(request *ResetClusterNodeRequest)
 	return responseChan, errChan
 }
 
-// invoke ResetClusterNode api with *ResetClusterNodeRequest asynchronously
+// ResetClusterNodeWithCallback invokes the cs.ResetClusterNode API asynchronously
 // api document: https://help.aliyun.com/api/cs/resetclusternode.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ResetClusterNodeWithCallback(request *ResetClusterNodeRequest, callback func(response *ResetClusterNodeResponse, err error)) <-chan int {
@@ -73,18 +73,20 @@ func (client *Client) ResetClusterNodeWithCallback(request *ResetClusterNodeRequ
 	return result
 }
 
+// ResetClusterNodeRequest is the request struct for api ResetClusterNode
 type ResetClusterNodeRequest struct {
 	*requests.RoaRequest
 	ClusterId  string `position:"Path" name:"ClusterId"`
 	InstanceId string `position:"Path" name:"InstanceId"`
 }
 
+// ResetClusterNodeResponse is the response struct for api ResetClusterNode
 type ResetClusterNodeResponse struct {
 	*responses.BaseResponse
 }
 
-// create a request to invoke ResetClusterNode API
-func CreateResetClusterNodeRequest() (request *ResetClusterNodeRequest) {
+// CreateResetClusterNodeRequest creates a request to invoke ResetClusterNode API
+func CreateResetClusterNodeRequest(request *ResetClusterNodeRequest) {
 	request = &ResetClusterNodeRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
@@ -93,7 +95,7 @@ func CreateResetClusterNodeRequest() (request *ResetClusterNodeRequest) {
 	return
 }
 
-// create a response to parse from ResetClusterNode response
+// CreateResetClusterNodeResponse creates a response to parse from ResetClusterNode response
 func CreateResetClusterNodeResponse() (response *ResetClusterNodeResponse) {
 	response = &ResetClusterNodeResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SetLoadBalancerStatus api with *SetLoadBalancerStatusRequest synchronously
+// SetLoadBalancerStatus invokes the slb.SetLoadBalancerStatus API synchronously
 // api document: https://help.aliyun.com/api/slb/setloadbalancerstatus.html
 func (client *Client) SetLoadBalancerStatus(request *SetLoadBalancerStatusRequest) (response *SetLoadBalancerStatusResponse, err error) {
 	response = CreateSetLoadBalancerStatusResponse()
@@ -28,7 +28,7 @@ func (client *Client) SetLoadBalancerStatus(request *SetLoadBalancerStatusReques
 	return
 }
 
-// invoke SetLoadBalancerStatus api with *SetLoadBalancerStatusRequest asynchronously
+// SetLoadBalancerStatusWithChan invokes the slb.SetLoadBalancerStatus API asynchronously
 // api document: https://help.aliyun.com/api/slb/setloadbalancerstatus.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetLoadBalancerStatusWithChan(request *SetLoadBalancerStatusRequest) (<-chan *SetLoadBalancerStatusResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SetLoadBalancerStatusWithChan(request *SetLoadBalancerStat
 	return responseChan, errChan
 }
 
-// invoke SetLoadBalancerStatus api with *SetLoadBalancerStatusRequest asynchronously
+// SetLoadBalancerStatusWithCallback invokes the slb.SetLoadBalancerStatus API asynchronously
 // api document: https://help.aliyun.com/api/slb/setloadbalancerstatus.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SetLoadBalancerStatusWithCallback(request *SetLoadBalancerStatusRequest, callback func(response *SetLoadBalancerStatusResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SetLoadBalancerStatusWithCallback(request *SetLoadBalancer
 	return result
 }
 
+// SetLoadBalancerStatusRequest is the request struct for api SetLoadBalancerStatus
 type SetLoadBalancerStatusRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -85,13 +86,14 @@ type SetLoadBalancerStatusRequest struct {
 	Tags                 string           `position:"Query" name:"Tags"`
 }
 
+// SetLoadBalancerStatusResponse is the response struct for api SetLoadBalancerStatus
 type SetLoadBalancerStatusResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke SetLoadBalancerStatus API
-func CreateSetLoadBalancerStatusRequest() (request *SetLoadBalancerStatusRequest) {
+// CreateSetLoadBalancerStatusRequest creates a request to invoke SetLoadBalancerStatus API
+func CreateSetLoadBalancerStatusRequest(request *SetLoadBalancerStatusRequest) {
 	request = &SetLoadBalancerStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateSetLoadBalancerStatusRequest() (request *SetLoadBalancerStatusRequest
 	return
 }
 
-// create a response to parse from SetLoadBalancerStatus response
+// CreateSetLoadBalancerStatusResponse creates a response to parse from SetLoadBalancerStatus response
 func CreateSetLoadBalancerStatusResponse() (response *SetLoadBalancerStatusResponse) {
 	response = &SetLoadBalancerStatusResponse{
 		BaseResponse: &responses.BaseResponse{},

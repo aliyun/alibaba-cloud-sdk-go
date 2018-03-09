@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeBatchResult api with *DescribeBatchResultRequest synchronously
+// DescribeBatchResult invokes the alidns.DescribeBatchResult API synchronously
 // api document: https://help.aliyun.com/api/alidns/describebatchresult.html
 func (client *Client) DescribeBatchResult(request *DescribeBatchResultRequest) (response *DescribeBatchResultResponse, err error) {
 	response = CreateDescribeBatchResultResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeBatchResult(request *DescribeBatchResultRequest) (
 	return
 }
 
-// invoke DescribeBatchResult api with *DescribeBatchResultRequest asynchronously
+// DescribeBatchResultWithChan invokes the alidns.DescribeBatchResult API asynchronously
 // api document: https://help.aliyun.com/api/alidns/describebatchresult.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBatchResultWithChan(request *DescribeBatchResultRequest) (<-chan *DescribeBatchResultResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeBatchResultWithChan(request *DescribeBatchResultRe
 	return responseChan, errChan
 }
 
-// invoke DescribeBatchResult api with *DescribeBatchResultRequest asynchronously
+// DescribeBatchResultWithCallback invokes the alidns.DescribeBatchResult API asynchronously
 // api document: https://help.aliyun.com/api/alidns/describebatchresult.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBatchResultWithCallback(request *DescribeBatchResultRequest, callback func(response *DescribeBatchResultResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeBatchResultWithCallback(request *DescribeBatchResu
 	return result
 }
 
+// DescribeBatchResultRequest is the request struct for api DescribeBatchResult
 type DescribeBatchResultRequest struct {
 	*requests.RpcRequest
 	Lang         string `position:"Query" name:"Lang"`
@@ -80,6 +81,7 @@ type DescribeBatchResultRequest struct {
 	TraceId      string `position:"Query" name:"TraceId"`
 }
 
+// DescribeBatchResultResponse is the response struct for api DescribeBatchResult
 type DescribeBatchResultResponse struct {
 	*responses.BaseResponse
 	RequestId     string      `json:"RequestId" xml:"RequestId"`
@@ -90,8 +92,8 @@ type DescribeBatchResultResponse struct {
 	FailResults   FailResults `json:"FailResults" xml:"FailResults"`
 }
 
-// create a request to invoke DescribeBatchResult API
-func CreateDescribeBatchResultRequest() (request *DescribeBatchResultRequest) {
+// CreateDescribeBatchResultRequest creates a request to invoke DescribeBatchResult API
+func CreateDescribeBatchResultRequest(request *DescribeBatchResultRequest) {
 	request = &DescribeBatchResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateDescribeBatchResultRequest() (request *DescribeBatchResultRequest) {
 	return
 }
 
-// create a response to parse from DescribeBatchResult response
+// CreateDescribeBatchResultResponse creates a response to parse from DescribeBatchResult response
 func CreateDescribeBatchResultResponse() (response *DescribeBatchResultResponse) {
 	response = &DescribeBatchResultResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke NodeList api with *NodeListRequest synchronously
+// NodeList invokes the cms.NodeList API synchronously
 // api document: https://help.aliyun.com/api/cms/nodelist.html
 func (client *Client) NodeList(request *NodeListRequest) (response *NodeListResponse, err error) {
 	response = CreateNodeListResponse()
@@ -28,7 +28,7 @@ func (client *Client) NodeList(request *NodeListRequest) (response *NodeListResp
 	return
 }
 
-// invoke NodeList api with *NodeListRequest asynchronously
+// NodeListWithChan invokes the cms.NodeList API asynchronously
 // api document: https://help.aliyun.com/api/cms/nodelist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) NodeListWithChan(request *NodeListRequest) (<-chan *NodeListResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) NodeListWithChan(request *NodeListRequest) (<-chan *NodeLi
 	return responseChan, errChan
 }
 
-// invoke NodeList api with *NodeListRequest asynchronously
+// NodeListWithCallback invokes the cms.NodeList API asynchronously
 // api document: https://help.aliyun.com/api/cms/nodelist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) NodeListWithCallback(request *NodeListRequest, callback func(response *NodeListResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) NodeListWithCallback(request *NodeListRequest, callback fu
 	return result
 }
 
+// NodeListRequest is the request struct for api NodeList
 type NodeListRequest struct {
 	*requests.RpcRequest
 	UserId        requests.Integer `position:"Query" name:"UserId"`
@@ -85,6 +86,7 @@ type NodeListRequest struct {
 	Status        string           `position:"Query" name:"Status"`
 }
 
+// NodeListResponse is the response struct for api NodeList
 type NodeListResponse struct {
 	*responses.BaseResponse
 	ErrorCode    int    `json:"ErrorCode" xml:"ErrorCode"`
@@ -98,8 +100,8 @@ type NodeListResponse struct {
 	Nodes        Nodes  `json:"Nodes" xml:"Nodes"`
 }
 
-// create a request to invoke NodeList API
-func CreateNodeListRequest() (request *NodeListRequest) {
+// CreateNodeListRequest creates a request to invoke NodeList API
+func CreateNodeListRequest(request *NodeListRequest) {
 	request = &NodeListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -107,7 +109,7 @@ func CreateNodeListRequest() (request *NodeListRequest) {
 	return
 }
 
-// create a response to parse from NodeList response
+// CreateNodeListResponse creates a response to parse from NodeList response
 func CreateNodeListResponse() (response *NodeListResponse) {
 	response = &NodeListResponse{
 		BaseResponse: &responses.BaseResponse{},

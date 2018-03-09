@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CreateMigrateTask api with *CreateMigrateTaskRequest synchronously
+// CreateMigrateTask invokes the rds.CreateMigrateTask API synchronously
 // api document: https://help.aliyun.com/api/rds/createmigratetask.html
 func (client *Client) CreateMigrateTask(request *CreateMigrateTaskRequest) (response *CreateMigrateTaskResponse, err error) {
 	response = CreateCreateMigrateTaskResponse()
@@ -28,7 +28,7 @@ func (client *Client) CreateMigrateTask(request *CreateMigrateTaskRequest) (resp
 	return
 }
 
-// invoke CreateMigrateTask api with *CreateMigrateTaskRequest asynchronously
+// CreateMigrateTaskWithChan invokes the rds.CreateMigrateTask API asynchronously
 // api document: https://help.aliyun.com/api/rds/createmigratetask.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateMigrateTaskWithChan(request *CreateMigrateTaskRequest) (<-chan *CreateMigrateTaskResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CreateMigrateTaskWithChan(request *CreateMigrateTaskReques
 	return responseChan, errChan
 }
 
-// invoke CreateMigrateTask api with *CreateMigrateTaskRequest asynchronously
+// CreateMigrateTaskWithCallback invokes the rds.CreateMigrateTask API asynchronously
 // api document: https://help.aliyun.com/api/rds/createmigratetask.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateMigrateTaskWithCallback(request *CreateMigrateTaskRequest, callback func(response *CreateMigrateTaskResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) CreateMigrateTaskWithCallback(request *CreateMigrateTaskRe
 	return result
 }
 
+// CreateMigrateTaskRequest is the request struct for api CreateMigrateTask
 type CreateMigrateTaskRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -85,6 +86,7 @@ type CreateMigrateTaskRequest struct {
 	OSSUrls              string           `position:"Query" name:"OSSUrls"`
 }
 
+// CreateMigrateTaskResponse is the response struct for api CreateMigrateTask
 type CreateMigrateTaskResponse struct {
 	*responses.BaseResponse
 	RequestId     string `json:"RequestId" xml:"RequestId"`
@@ -95,8 +97,8 @@ type CreateMigrateTaskResponse struct {
 	BackupMode    string `json:"BackupMode" xml:"BackupMode"`
 }
 
-// create a request to invoke CreateMigrateTask API
-func CreateCreateMigrateTaskRequest() (request *CreateMigrateTaskRequest) {
+// CreateCreateMigrateTaskRequest creates a request to invoke CreateMigrateTask API
+func CreateCreateMigrateTaskRequest(request *CreateMigrateTaskRequest) {
 	request = &CreateMigrateTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -104,7 +106,7 @@ func CreateCreateMigrateTaskRequest() (request *CreateMigrateTaskRequest) {
 	return
 }
 
-// create a response to parse from CreateMigrateTask response
+// CreateCreateMigrateTaskResponse creates a response to parse from CreateMigrateTask response
 func CreateCreateMigrateTaskResponse() (response *CreateMigrateTaskResponse) {
 	response = &CreateMigrateTaskResponse{
 		BaseResponse: &responses.BaseResponse{},

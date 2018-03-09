@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifyPhoneNumber api with *ModifyPhoneNumberRequest synchronously
+// ModifyPhoneNumber invokes the ccc.ModifyPhoneNumber API synchronously
 // api document: https://help.aliyun.com/api/ccc/modifyphonenumber.html
 func (client *Client) ModifyPhoneNumber(request *ModifyPhoneNumberRequest) (response *ModifyPhoneNumberResponse, err error) {
 	response = CreateModifyPhoneNumberResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifyPhoneNumber(request *ModifyPhoneNumberRequest) (resp
 	return
 }
 
-// invoke ModifyPhoneNumber api with *ModifyPhoneNumberRequest asynchronously
+// ModifyPhoneNumberWithChan invokes the ccc.ModifyPhoneNumber API asynchronously
 // api document: https://help.aliyun.com/api/ccc/modifyphonenumber.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyPhoneNumberWithChan(request *ModifyPhoneNumberRequest) (<-chan *ModifyPhoneNumberResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifyPhoneNumberWithChan(request *ModifyPhoneNumberReques
 	return responseChan, errChan
 }
 
-// invoke ModifyPhoneNumber api with *ModifyPhoneNumberRequest asynchronously
+// ModifyPhoneNumberWithCallback invokes the ccc.ModifyPhoneNumber API asynchronously
 // api document: https://help.aliyun.com/api/ccc/modifyphonenumber.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifyPhoneNumberWithCallback(request *ModifyPhoneNumberRequest, callback func(response *ModifyPhoneNumberResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ModifyPhoneNumberWithCallback(request *ModifyPhoneNumberRe
 	return result
 }
 
+// ModifyPhoneNumberRequest is the request struct for api ModifyPhoneNumber
 type ModifyPhoneNumberRequest struct {
 	*requests.RpcRequest
 	InstanceId    string `position:"Query" name:"InstanceId"`
@@ -81,6 +82,7 @@ type ModifyPhoneNumberRequest struct {
 	ContactFlowId string `position:"Query" name:"ContactFlowId"`
 }
 
+// ModifyPhoneNumberResponse is the response struct for api ModifyPhoneNumber
 type ModifyPhoneNumberResponse struct {
 	*responses.BaseResponse
 	RequestId      string      `json:"RequestId" xml:"RequestId"`
@@ -91,8 +93,8 @@ type ModifyPhoneNumberResponse struct {
 	PhoneNumber    PhoneNumber `json:"PhoneNumber" xml:"PhoneNumber"`
 }
 
-// create a request to invoke ModifyPhoneNumber API
-func CreateModifyPhoneNumberRequest() (request *ModifyPhoneNumberRequest) {
+// CreateModifyPhoneNumberRequest creates a request to invoke ModifyPhoneNumber API
+func CreateModifyPhoneNumberRequest(request *ModifyPhoneNumberRequest) {
 	request = &ModifyPhoneNumberRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -100,7 +102,7 @@ func CreateModifyPhoneNumberRequest() (request *ModifyPhoneNumberRequest) {
 	return
 }
 
-// create a response to parse from ModifyPhoneNumber response
+// CreateModifyPhoneNumberResponse creates a response to parse from ModifyPhoneNumber response
 func CreateModifyPhoneNumberResponse() (response *ModifyPhoneNumberResponse) {
 	response = &ModifyPhoneNumberResponse{
 		BaseResponse: &responses.BaseResponse{},

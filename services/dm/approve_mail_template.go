@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ApproveMailTemplate api with *ApproveMailTemplateRequest synchronously
+// ApproveMailTemplate invokes the dm.ApproveMailTemplate API synchronously
 // api document: https://help.aliyun.com/api/dm/approvemailtemplate.html
 func (client *Client) ApproveMailTemplate(request *ApproveMailTemplateRequest) (response *ApproveMailTemplateResponse, err error) {
 	response = CreateApproveMailTemplateResponse()
@@ -28,7 +28,7 @@ func (client *Client) ApproveMailTemplate(request *ApproveMailTemplateRequest) (
 	return
 }
 
-// invoke ApproveMailTemplate api with *ApproveMailTemplateRequest asynchronously
+// ApproveMailTemplateWithChan invokes the dm.ApproveMailTemplate API asynchronously
 // api document: https://help.aliyun.com/api/dm/approvemailtemplate.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ApproveMailTemplateWithChan(request *ApproveMailTemplateRequest) (<-chan *ApproveMailTemplateResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ApproveMailTemplateWithChan(request *ApproveMailTemplateRe
 	return responseChan, errChan
 }
 
-// invoke ApproveMailTemplate api with *ApproveMailTemplateRequest asynchronously
+// ApproveMailTemplateWithCallback invokes the dm.ApproveMailTemplate API asynchronously
 // api document: https://help.aliyun.com/api/dm/approvemailtemplate.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ApproveMailTemplateWithCallback(request *ApproveMailTemplateRequest, callback func(response *ApproveMailTemplateResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ApproveMailTemplateWithCallback(request *ApproveMailTempla
 	return result
 }
 
+// ApproveMailTemplateRequest is the request struct for api ApproveMailTemplate
 type ApproveMailTemplateRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,13 +83,14 @@ type ApproveMailTemplateRequest struct {
 	FromType             requests.Integer `position:"Query" name:"FromType"`
 }
 
+// ApproveMailTemplateResponse is the response struct for api ApproveMailTemplate
 type ApproveMailTemplateResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ApproveMailTemplate API
-func CreateApproveMailTemplateRequest() (request *ApproveMailTemplateRequest) {
+// CreateApproveMailTemplateRequest creates a request to invoke ApproveMailTemplate API
+func CreateApproveMailTemplateRequest(request *ApproveMailTemplateRequest) {
 	request = &ApproveMailTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -96,7 +98,7 @@ func CreateApproveMailTemplateRequest() (request *ApproveMailTemplateRequest) {
 	return
 }
 
-// create a response to parse from ApproveMailTemplate response
+// CreateApproveMailTemplateResponse creates a response to parse from ApproveMailTemplate response
 func CreateApproveMailTemplateResponse() (response *ApproveMailTemplateResponse) {
 	response = &ApproveMailTemplateResponse{
 		BaseResponse: &responses.BaseResponse{},

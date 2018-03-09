@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SearchWaterMarkTemplate api with *SearchWaterMarkTemplateRequest synchronously
+// SearchWaterMarkTemplate invokes the mts.SearchWaterMarkTemplate API synchronously
 // api document: https://help.aliyun.com/api/mts/searchwatermarktemplate.html
 func (client *Client) SearchWaterMarkTemplate(request *SearchWaterMarkTemplateRequest) (response *SearchWaterMarkTemplateResponse, err error) {
 	response = CreateSearchWaterMarkTemplateResponse()
@@ -28,7 +28,7 @@ func (client *Client) SearchWaterMarkTemplate(request *SearchWaterMarkTemplateRe
 	return
 }
 
-// invoke SearchWaterMarkTemplate api with *SearchWaterMarkTemplateRequest asynchronously
+// SearchWaterMarkTemplateWithChan invokes the mts.SearchWaterMarkTemplate API asynchronously
 // api document: https://help.aliyun.com/api/mts/searchwatermarktemplate.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SearchWaterMarkTemplateWithChan(request *SearchWaterMarkTemplateRequest) (<-chan *SearchWaterMarkTemplateResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SearchWaterMarkTemplateWithChan(request *SearchWaterMarkTe
 	return responseChan, errChan
 }
 
-// invoke SearchWaterMarkTemplate api with *SearchWaterMarkTemplateRequest asynchronously
+// SearchWaterMarkTemplateWithCallback invokes the mts.SearchWaterMarkTemplate API asynchronously
 // api document: https://help.aliyun.com/api/mts/searchwatermarktemplate.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SearchWaterMarkTemplateWithCallback(request *SearchWaterMarkTemplateRequest, callback func(response *SearchWaterMarkTemplateResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SearchWaterMarkTemplateWithCallback(request *SearchWaterMa
 	return result
 }
 
+// SearchWaterMarkTemplateRequest is the request struct for api SearchWaterMarkTemplate
 type SearchWaterMarkTemplateRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,6 +85,7 @@ type SearchWaterMarkTemplateRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// SearchWaterMarkTemplateResponse is the response struct for api SearchWaterMarkTemplate
 type SearchWaterMarkTemplateResponse struct {
 	*responses.BaseResponse
 	RequestId             string                                         `json:"RequestId" xml:"RequestId"`
@@ -93,8 +95,8 @@ type SearchWaterMarkTemplateResponse struct {
 	WaterMarkTemplateList WaterMarkTemplateListInSearchWaterMarkTemplate `json:"WaterMarkTemplateList" xml:"WaterMarkTemplateList"`
 }
 
-// create a request to invoke SearchWaterMarkTemplate API
-func CreateSearchWaterMarkTemplateRequest() (request *SearchWaterMarkTemplateRequest) {
+// CreateSearchWaterMarkTemplateRequest creates a request to invoke SearchWaterMarkTemplate API
+func CreateSearchWaterMarkTemplateRequest(request *SearchWaterMarkTemplateRequest) {
 	request = &SearchWaterMarkTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -102,7 +104,7 @@ func CreateSearchWaterMarkTemplateRequest() (request *SearchWaterMarkTemplateReq
 	return
 }
 
-// create a response to parse from SearchWaterMarkTemplate response
+// CreateSearchWaterMarkTemplateResponse creates a response to parse from SearchWaterMarkTemplate response
 func CreateSearchWaterMarkTemplateResponse() (response *SearchWaterMarkTemplateResponse) {
 	response = &SearchWaterMarkTemplateResponse{
 		BaseResponse: &responses.BaseResponse{},

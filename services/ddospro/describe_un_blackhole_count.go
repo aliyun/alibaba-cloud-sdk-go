@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeUnBlackholeCount api with *DescribeUnBlackholeCountRequest synchronously
+// DescribeUnBlackholeCount invokes the ddospro.DescribeUnBlackholeCount API synchronously
 // api document: https://help.aliyun.com/api/ddospro/describeunblackholecount.html
 func (client *Client) DescribeUnBlackholeCount(request *DescribeUnBlackholeCountRequest) (response *DescribeUnBlackholeCountResponse, err error) {
 	response = CreateDescribeUnBlackholeCountResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeUnBlackholeCount(request *DescribeUnBlackholeCount
 	return
 }
 
-// invoke DescribeUnBlackholeCount api with *DescribeUnBlackholeCountRequest asynchronously
+// DescribeUnBlackholeCountWithChan invokes the ddospro.DescribeUnBlackholeCount API asynchronously
 // api document: https://help.aliyun.com/api/ddospro/describeunblackholecount.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUnBlackholeCountWithChan(request *DescribeUnBlackholeCountRequest) (<-chan *DescribeUnBlackholeCountResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeUnBlackholeCountWithChan(request *DescribeUnBlackh
 	return responseChan, errChan
 }
 
-// invoke DescribeUnBlackholeCount api with *DescribeUnBlackholeCountRequest asynchronously
+// DescribeUnBlackholeCountWithCallback invokes the ddospro.DescribeUnBlackholeCount API asynchronously
 // api document: https://help.aliyun.com/api/ddospro/describeunblackholecount.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeUnBlackholeCountWithCallback(request *DescribeUnBlackholeCountRequest, callback func(response *DescribeUnBlackholeCountResponse, err error)) <-chan int {
@@ -73,20 +73,22 @@ func (client *Client) DescribeUnBlackholeCountWithCallback(request *DescribeUnBl
 	return result
 }
 
+// DescribeUnBlackholeCountRequest is the request struct for api DescribeUnBlackholeCount
 type DescribeUnBlackholeCountRequest struct {
 	*requests.RpcRequest
 	SourceIp        string           `position:"Query" name:"SourceIp"`
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
 }
 
+// DescribeUnBlackholeCountResponse is the response struct for api DescribeUnBlackholeCount
 type DescribeUnBlackholeCountResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 
-// create a request to invoke DescribeUnBlackholeCount API
-func CreateDescribeUnBlackholeCountRequest() (request *DescribeUnBlackholeCountRequest) {
+// CreateDescribeUnBlackholeCountRequest creates a request to invoke DescribeUnBlackholeCount API
+func CreateDescribeUnBlackholeCountRequest(request *DescribeUnBlackholeCountRequest) {
 	request = &DescribeUnBlackholeCountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -94,7 +96,7 @@ func CreateDescribeUnBlackholeCountRequest() (request *DescribeUnBlackholeCountR
 	return
 }
 
-// create a response to parse from DescribeUnBlackholeCount response
+// CreateDescribeUnBlackholeCountResponse creates a response to parse from DescribeUnBlackholeCount response
 func CreateDescribeUnBlackholeCountResponse() (response *DescribeUnBlackholeCountResponse) {
 	response = &DescribeUnBlackholeCountResponse{
 		BaseResponse: &responses.BaseResponse{},

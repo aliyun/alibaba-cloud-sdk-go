@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke UpdateDomainGroup api with *UpdateDomainGroupRequest synchronously
+// UpdateDomainGroup invokes the alidns.UpdateDomainGroup API synchronously
 // api document: https://help.aliyun.com/api/alidns/updatedomaingroup.html
 func (client *Client) UpdateDomainGroup(request *UpdateDomainGroupRequest) (response *UpdateDomainGroupResponse, err error) {
 	response = CreateUpdateDomainGroupResponse()
@@ -28,7 +28,7 @@ func (client *Client) UpdateDomainGroup(request *UpdateDomainGroupRequest) (resp
 	return
 }
 
-// invoke UpdateDomainGroup api with *UpdateDomainGroupRequest asynchronously
+// UpdateDomainGroupWithChan invokes the alidns.UpdateDomainGroup API asynchronously
 // api document: https://help.aliyun.com/api/alidns/updatedomaingroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateDomainGroupWithChan(request *UpdateDomainGroupRequest) (<-chan *UpdateDomainGroupResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) UpdateDomainGroupWithChan(request *UpdateDomainGroupReques
 	return responseChan, errChan
 }
 
-// invoke UpdateDomainGroup api with *UpdateDomainGroupRequest asynchronously
+// UpdateDomainGroupWithCallback invokes the alidns.UpdateDomainGroup API asynchronously
 // api document: https://help.aliyun.com/api/alidns/updatedomaingroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateDomainGroupWithCallback(request *UpdateDomainGroupRequest, callback func(response *UpdateDomainGroupResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) UpdateDomainGroupWithCallback(request *UpdateDomainGroupRe
 	return result
 }
 
+// UpdateDomainGroupRequest is the request struct for api UpdateDomainGroup
 type UpdateDomainGroupRequest struct {
 	*requests.RpcRequest
 	Lang         string `position:"Query" name:"Lang"`
@@ -81,6 +82,7 @@ type UpdateDomainGroupRequest struct {
 	GroupName    string `position:"Query" name:"GroupName"`
 }
 
+// UpdateDomainGroupResponse is the response struct for api UpdateDomainGroup
 type UpdateDomainGroupResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
@@ -88,8 +90,8 @@ type UpdateDomainGroupResponse struct {
 	GroupName string `json:"GroupName" xml:"GroupName"`
 }
 
-// create a request to invoke UpdateDomainGroup API
-func CreateUpdateDomainGroupRequest() (request *UpdateDomainGroupRequest) {
+// CreateUpdateDomainGroupRequest creates a request to invoke UpdateDomainGroup API
+func CreateUpdateDomainGroupRequest(request *UpdateDomainGroupRequest) {
 	request = &UpdateDomainGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateUpdateDomainGroupRequest() (request *UpdateDomainGroupRequest) {
 	return
 }
 
-// create a response to parse from UpdateDomainGroup response
+// CreateUpdateDomainGroupResponse creates a response to parse from UpdateDomainGroup response
 func CreateUpdateDomainGroupResponse() (response *UpdateDomainGroupResponse) {
 	response = &UpdateDomainGroupResponse{
 		BaseResponse: &responses.BaseResponse{},

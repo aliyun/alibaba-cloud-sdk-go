@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke RemoveInstances api with *RemoveInstancesRequest synchronously
+// RemoveInstances invokes the ess.RemoveInstances API synchronously
 // api document: https://help.aliyun.com/api/ess/removeinstances.html
 func (client *Client) RemoveInstances(request *RemoveInstancesRequest) (response *RemoveInstancesResponse, err error) {
 	response = CreateRemoveInstancesResponse()
@@ -28,7 +28,7 @@ func (client *Client) RemoveInstances(request *RemoveInstancesRequest) (response
 	return
 }
 
-// invoke RemoveInstances api with *RemoveInstancesRequest asynchronously
+// RemoveInstancesWithChan invokes the ess.RemoveInstances API asynchronously
 // api document: https://help.aliyun.com/api/ess/removeinstances.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveInstancesWithChan(request *RemoveInstancesRequest) (<-chan *RemoveInstancesResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) RemoveInstancesWithChan(request *RemoveInstancesRequest) (
 	return responseChan, errChan
 }
 
-// invoke RemoveInstances api with *RemoveInstancesRequest asynchronously
+// RemoveInstancesWithCallback invokes the ess.RemoveInstances API asynchronously
 // api document: https://help.aliyun.com/api/ess/removeinstances.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RemoveInstancesWithCallback(request *RemoveInstancesRequest, callback func(response *RemoveInstancesResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) RemoveInstancesWithCallback(request *RemoveInstancesReques
 	return result
 }
 
+// RemoveInstancesRequest is the request struct for api RemoveInstances
 type RemoveInstancesRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -102,14 +103,15 @@ type RemoveInstancesRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// RemoveInstancesResponse is the response struct for api RemoveInstances
 type RemoveInstancesResponse struct {
 	*responses.BaseResponse
 	ScalingActivityId string `json:"ScalingActivityId" xml:"ScalingActivityId"`
 	RequestId         string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke RemoveInstances API
-func CreateRemoveInstancesRequest() (request *RemoveInstancesRequest) {
+// CreateRemoveInstancesRequest creates a request to invoke RemoveInstances API
+func CreateRemoveInstancesRequest(request *RemoveInstancesRequest) {
 	request = &RemoveInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -117,7 +119,7 @@ func CreateRemoveInstancesRequest() (request *RemoveInstancesRequest) {
 	return
 }
 
-// create a response to parse from RemoveInstances response
+// CreateRemoveInstancesResponse creates a response to parse from RemoveInstances response
 func CreateRemoveInstancesResponse() (response *RemoveInstancesResponse) {
 	response = &RemoveInstancesResponse{
 		BaseResponse: &responses.BaseResponse{},

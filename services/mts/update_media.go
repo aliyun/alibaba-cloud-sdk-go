@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke UpdateMedia api with *UpdateMediaRequest synchronously
+// UpdateMedia invokes the mts.UpdateMedia API synchronously
 // api document: https://help.aliyun.com/api/mts/updatemedia.html
 func (client *Client) UpdateMedia(request *UpdateMediaRequest) (response *UpdateMediaResponse, err error) {
 	response = CreateUpdateMediaResponse()
@@ -28,7 +28,7 @@ func (client *Client) UpdateMedia(request *UpdateMediaRequest) (response *Update
 	return
 }
 
-// invoke UpdateMedia api with *UpdateMediaRequest asynchronously
+// UpdateMediaWithChan invokes the mts.UpdateMedia API asynchronously
 // api document: https://help.aliyun.com/api/mts/updatemedia.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateMediaWithChan(request *UpdateMediaRequest) (<-chan *UpdateMediaResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) UpdateMediaWithChan(request *UpdateMediaRequest) (<-chan *
 	return responseChan, errChan
 }
 
-// invoke UpdateMedia api with *UpdateMediaRequest asynchronously
+// UpdateMediaWithCallback invokes the mts.UpdateMedia API asynchronously
 // api document: https://help.aliyun.com/api/mts/updatemedia.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateMediaWithCallback(request *UpdateMediaRequest, callback func(response *UpdateMediaResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) UpdateMediaWithCallback(request *UpdateMediaRequest, callb
 	return result
 }
 
+// UpdateMediaRequest is the request struct for api UpdateMedia
 type UpdateMediaRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -87,14 +88,15 @@ type UpdateMediaRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// UpdateMediaResponse is the response struct for api UpdateMedia
 type UpdateMediaResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Media     Media  `json:"Media" xml:"Media"`
 }
 
-// create a request to invoke UpdateMedia API
-func CreateUpdateMediaRequest() (request *UpdateMediaRequest) {
+// CreateUpdateMediaRequest creates a request to invoke UpdateMedia API
+func CreateUpdateMediaRequest(request *UpdateMediaRequest) {
 	request = &UpdateMediaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -102,7 +104,7 @@ func CreateUpdateMediaRequest() (request *UpdateMediaRequest) {
 	return
 }
 
-// create a response to parse from UpdateMedia response
+// CreateUpdateMediaResponse creates a response to parse from UpdateMedia response
 func CreateUpdateMediaResponse() (response *UpdateMediaResponse) {
 	response = &UpdateMediaResponse{
 		BaseResponse: &responses.BaseResponse{},

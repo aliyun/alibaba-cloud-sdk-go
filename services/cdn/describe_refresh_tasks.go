@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeRefreshTasks api with *DescribeRefreshTasksRequest synchronously
+// DescribeRefreshTasks invokes the cdn.DescribeRefreshTasks API synchronously
 // api document: https://help.aliyun.com/api/cdn/describerefreshtasks.html
 func (client *Client) DescribeRefreshTasks(request *DescribeRefreshTasksRequest) (response *DescribeRefreshTasksResponse, err error) {
 	response = CreateDescribeRefreshTasksResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeRefreshTasks(request *DescribeRefreshTasksRequest)
 	return
 }
 
-// invoke DescribeRefreshTasks api with *DescribeRefreshTasksRequest asynchronously
+// DescribeRefreshTasksWithChan invokes the cdn.DescribeRefreshTasks API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describerefreshtasks.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRefreshTasksWithChan(request *DescribeRefreshTasksRequest) (<-chan *DescribeRefreshTasksResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeRefreshTasksWithChan(request *DescribeRefreshTasks
 	return responseChan, errChan
 }
 
-// invoke DescribeRefreshTasks api with *DescribeRefreshTasksRequest asynchronously
+// DescribeRefreshTasksWithCallback invokes the cdn.DescribeRefreshTasks API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describerefreshtasks.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeRefreshTasksWithCallback(request *DescribeRefreshTasksRequest, callback func(response *DescribeRefreshTasksResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeRefreshTasksWithCallback(request *DescribeRefreshT
 	return result
 }
 
+// DescribeRefreshTasksRequest is the request struct for api DescribeRefreshTasks
 type DescribeRefreshTasksRequest struct {
 	*requests.RpcRequest
 	OwnerId         requests.Integer `position:"Query" name:"OwnerId"`
@@ -89,6 +90,7 @@ type DescribeRefreshTasksRequest struct {
 	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
 }
 
+// DescribeRefreshTasksResponse is the response struct for api DescribeRefreshTasks
 type DescribeRefreshTasksResponse struct {
 	*responses.BaseResponse
 	RequestId  string `json:"RequestId" xml:"RequestId"`
@@ -98,8 +100,8 @@ type DescribeRefreshTasksResponse struct {
 	Tasks      Tasks  `json:"Tasks" xml:"Tasks"`
 }
 
-// create a request to invoke DescribeRefreshTasks API
-func CreateDescribeRefreshTasksRequest() (request *DescribeRefreshTasksRequest) {
+// CreateDescribeRefreshTasksRequest creates a request to invoke DescribeRefreshTasks API
+func CreateDescribeRefreshTasksRequest(request *DescribeRefreshTasksRequest) {
 	request = &DescribeRefreshTasksRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -107,7 +109,7 @@ func CreateDescribeRefreshTasksRequest() (request *DescribeRefreshTasksRequest) 
 	return
 }
 
-// create a response to parse from DescribeRefreshTasks response
+// CreateDescribeRefreshTasksResponse creates a response to parse from DescribeRefreshTasks response
 func CreateDescribeRefreshTasksResponse() (response *DescribeRefreshTasksResponse) {
 	response = &DescribeRefreshTasksResponse{
 		BaseResponse: &responses.BaseResponse{},

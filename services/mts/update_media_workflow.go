@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke UpdateMediaWorkflow api with *UpdateMediaWorkflowRequest synchronously
+// UpdateMediaWorkflow invokes the mts.UpdateMediaWorkflow API synchronously
 // api document: https://help.aliyun.com/api/mts/updatemediaworkflow.html
 func (client *Client) UpdateMediaWorkflow(request *UpdateMediaWorkflowRequest) (response *UpdateMediaWorkflowResponse, err error) {
 	response = CreateUpdateMediaWorkflowResponse()
@@ -28,7 +28,7 @@ func (client *Client) UpdateMediaWorkflow(request *UpdateMediaWorkflowRequest) (
 	return
 }
 
-// invoke UpdateMediaWorkflow api with *UpdateMediaWorkflowRequest asynchronously
+// UpdateMediaWorkflowWithChan invokes the mts.UpdateMediaWorkflow API asynchronously
 // api document: https://help.aliyun.com/api/mts/updatemediaworkflow.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateMediaWorkflowWithChan(request *UpdateMediaWorkflowRequest) (<-chan *UpdateMediaWorkflowResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) UpdateMediaWorkflowWithChan(request *UpdateMediaWorkflowRe
 	return responseChan, errChan
 }
 
-// invoke UpdateMediaWorkflow api with *UpdateMediaWorkflowRequest asynchronously
+// UpdateMediaWorkflowWithCallback invokes the mts.UpdateMediaWorkflow API asynchronously
 // api document: https://help.aliyun.com/api/mts/updatemediaworkflow.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateMediaWorkflowWithCallback(request *UpdateMediaWorkflowRequest, callback func(response *UpdateMediaWorkflowResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) UpdateMediaWorkflowWithCallback(request *UpdateMediaWorkfl
 	return result
 }
 
+// UpdateMediaWorkflowRequest is the request struct for api UpdateMediaWorkflow
 type UpdateMediaWorkflowRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -83,14 +84,15 @@ type UpdateMediaWorkflowRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// UpdateMediaWorkflowResponse is the response struct for api UpdateMediaWorkflow
 type UpdateMediaWorkflowResponse struct {
 	*responses.BaseResponse
 	RequestId     string        `json:"RequestId" xml:"RequestId"`
 	MediaWorkflow MediaWorkflow `json:"MediaWorkflow" xml:"MediaWorkflow"`
 }
 
-// create a request to invoke UpdateMediaWorkflow API
-func CreateUpdateMediaWorkflowRequest() (request *UpdateMediaWorkflowRequest) {
+// CreateUpdateMediaWorkflowRequest creates a request to invoke UpdateMediaWorkflow API
+func CreateUpdateMediaWorkflowRequest(request *UpdateMediaWorkflowRequest) {
 	request = &UpdateMediaWorkflowRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateUpdateMediaWorkflowRequest() (request *UpdateMediaWorkflowRequest) {
 	return
 }
 
-// create a response to parse from UpdateMediaWorkflow response
+// CreateUpdateMediaWorkflowResponse creates a response to parse from UpdateMediaWorkflow response
 func CreateUpdateMediaWorkflowResponse() (response *UpdateMediaWorkflowResponse) {
 	response = &UpdateMediaWorkflowResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke QueryPushStatByApp api with *QueryPushStatByAppRequest synchronously
+// QueryPushStatByApp invokes the push.QueryPushStatByApp API synchronously
 // api document: https://help.aliyun.com/api/push/querypushstatbyapp.html
 func (client *Client) QueryPushStatByApp(request *QueryPushStatByAppRequest) (response *QueryPushStatByAppResponse, err error) {
 	response = CreateQueryPushStatByAppResponse()
@@ -28,7 +28,7 @@ func (client *Client) QueryPushStatByApp(request *QueryPushStatByAppRequest) (re
 	return
 }
 
-// invoke QueryPushStatByApp api with *QueryPushStatByAppRequest asynchronously
+// QueryPushStatByAppWithChan invokes the push.QueryPushStatByApp API asynchronously
 // api document: https://help.aliyun.com/api/push/querypushstatbyapp.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryPushStatByAppWithChan(request *QueryPushStatByAppRequest) (<-chan *QueryPushStatByAppResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) QueryPushStatByAppWithChan(request *QueryPushStatByAppRequ
 	return responseChan, errChan
 }
 
-// invoke QueryPushStatByApp api with *QueryPushStatByAppRequest asynchronously
+// QueryPushStatByAppWithCallback invokes the push.QueryPushStatByApp API asynchronously
 // api document: https://help.aliyun.com/api/push/querypushstatbyapp.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryPushStatByAppWithCallback(request *QueryPushStatByAppRequest, callback func(response *QueryPushStatByAppResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) QueryPushStatByAppWithCallback(request *QueryPushStatByApp
 	return result
 }
 
+// QueryPushStatByAppRequest is the request struct for api QueryPushStatByApp
 type QueryPushStatByAppRequest struct {
 	*requests.RpcRequest
 	AppKey      requests.Integer `position:"Query" name:"AppKey"`
@@ -81,14 +82,15 @@ type QueryPushStatByAppRequest struct {
 	Granularity string           `position:"Query" name:"Granularity"`
 }
 
+// QueryPushStatByAppResponse is the response struct for api QueryPushStatByApp
 type QueryPushStatByAppResponse struct {
 	*responses.BaseResponse
 	RequestId    string       `json:"RequestId" xml:"RequestId"`
 	AppPushStats AppPushStats `json:"AppPushStats" xml:"AppPushStats"`
 }
 
-// create a request to invoke QueryPushStatByApp API
-func CreateQueryPushStatByAppRequest() (request *QueryPushStatByAppRequest) {
+// CreateQueryPushStatByAppRequest creates a request to invoke QueryPushStatByApp API
+func CreateQueryPushStatByAppRequest(request *QueryPushStatByAppRequest) {
 	request = &QueryPushStatByAppRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -96,7 +98,7 @@ func CreateQueryPushStatByAppRequest() (request *QueryPushStatByAppRequest) {
 	return
 }
 
-// create a response to parse from QueryPushStatByApp response
+// CreateQueryPushStatByAppResponse creates a response to parse from QueryPushStatByApp response
 func CreateQueryPushStatByAppResponse() (response *QueryPushStatByAppResponse) {
 	response = &QueryPushStatByAppResponse{
 		BaseResponse: &responses.BaseResponse{},

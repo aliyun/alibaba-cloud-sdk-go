@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeClassicLinkInstances api with *DescribeClassicLinkInstancesRequest synchronously
+// DescribeClassicLinkInstances invokes the ecs.DescribeClassicLinkInstances API synchronously
 // api document: https://help.aliyun.com/api/ecs/describeclassiclinkinstances.html
 func (client *Client) DescribeClassicLinkInstances(request *DescribeClassicLinkInstancesRequest) (response *DescribeClassicLinkInstancesResponse, err error) {
 	response = CreateDescribeClassicLinkInstancesResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeClassicLinkInstances(request *DescribeClassicLinkI
 	return
 }
 
-// invoke DescribeClassicLinkInstances api with *DescribeClassicLinkInstancesRequest asynchronously
+// DescribeClassicLinkInstancesWithChan invokes the ecs.DescribeClassicLinkInstances API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describeclassiclinkinstances.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeClassicLinkInstancesWithChan(request *DescribeClassicLinkInstancesRequest) (<-chan *DescribeClassicLinkInstancesResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeClassicLinkInstancesWithChan(request *DescribeClas
 	return responseChan, errChan
 }
 
-// invoke DescribeClassicLinkInstances api with *DescribeClassicLinkInstancesRequest asynchronously
+// DescribeClassicLinkInstancesWithCallback invokes the ecs.DescribeClassicLinkInstances API asynchronously
 // api document: https://help.aliyun.com/api/ecs/describeclassiclinkinstances.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeClassicLinkInstancesWithCallback(request *DescribeClassicLinkInstancesRequest, callback func(response *DescribeClassicLinkInstancesResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeClassicLinkInstancesWithCallback(request *Describe
 	return result
 }
 
+// DescribeClassicLinkInstancesRequest is the request struct for api DescribeClassicLinkInstances
 type DescribeClassicLinkInstancesRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,6 +85,7 @@ type DescribeClassicLinkInstancesRequest struct {
 	PageSize             string           `position:"Query" name:"PageSize"`
 }
 
+// DescribeClassicLinkInstancesResponse is the response struct for api DescribeClassicLinkInstances
 type DescribeClassicLinkInstancesResponse struct {
 	*responses.BaseResponse
 	RequestId  string `json:"RequestId" xml:"RequestId"`
@@ -93,8 +95,8 @@ type DescribeClassicLinkInstancesResponse struct {
 	Links      Links  `json:"Links" xml:"Links"`
 }
 
-// create a request to invoke DescribeClassicLinkInstances API
-func CreateDescribeClassicLinkInstancesRequest() (request *DescribeClassicLinkInstancesRequest) {
+// CreateDescribeClassicLinkInstancesRequest creates a request to invoke DescribeClassicLinkInstances API
+func CreateDescribeClassicLinkInstancesRequest(request *DescribeClassicLinkInstancesRequest) {
 	request = &DescribeClassicLinkInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -102,7 +104,7 @@ func CreateDescribeClassicLinkInstancesRequest() (request *DescribeClassicLinkIn
 	return
 }
 
-// create a response to parse from DescribeClassicLinkInstances response
+// CreateDescribeClassicLinkInstancesResponse creates a response to parse from DescribeClassicLinkInstances response
 func CreateDescribeClassicLinkInstancesResponse() (response *DescribeClassicLinkInstancesResponse) {
 	response = &DescribeClassicLinkInstancesResponse{
 		BaseResponse: &responses.BaseResponse{},

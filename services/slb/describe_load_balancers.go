@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeLoadBalancers api with *DescribeLoadBalancersRequest synchronously
+// DescribeLoadBalancers invokes the slb.DescribeLoadBalancers API synchronously
 // api document: https://help.aliyun.com/api/slb/describeloadbalancers.html
 func (client *Client) DescribeLoadBalancers(request *DescribeLoadBalancersRequest) (response *DescribeLoadBalancersResponse, err error) {
 	response = CreateDescribeLoadBalancersResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeLoadBalancers(request *DescribeLoadBalancersReques
 	return
 }
 
-// invoke DescribeLoadBalancers api with *DescribeLoadBalancersRequest asynchronously
+// DescribeLoadBalancersWithChan invokes the slb.DescribeLoadBalancers API asynchronously
 // api document: https://help.aliyun.com/api/slb/describeloadbalancers.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLoadBalancersWithChan(request *DescribeLoadBalancersRequest) (<-chan *DescribeLoadBalancersResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeLoadBalancersWithChan(request *DescribeLoadBalance
 	return responseChan, errChan
 }
 
-// invoke DescribeLoadBalancers api with *DescribeLoadBalancersRequest asynchronously
+// DescribeLoadBalancersWithCallback invokes the slb.DescribeLoadBalancers API asynchronously
 // api document: https://help.aliyun.com/api/slb/describeloadbalancers.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLoadBalancersWithCallback(request *DescribeLoadBalancersRequest, callback func(response *DescribeLoadBalancersResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeLoadBalancersWithCallback(request *DescribeLoadBal
 	return result
 }
 
+// DescribeLoadBalancersRequest is the request struct for api DescribeLoadBalancers
 type DescribeLoadBalancersRequest struct {
 	*requests.RpcRequest
 	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
@@ -99,6 +100,7 @@ type DescribeLoadBalancersRequest struct {
 	PageSize              requests.Integer `position:"Query" name:"PageSize"`
 }
 
+// DescribeLoadBalancersResponse is the response struct for api DescribeLoadBalancers
 type DescribeLoadBalancersResponse struct {
 	*responses.BaseResponse
 	RequestId     string                               `json:"RequestId" xml:"RequestId"`
@@ -108,8 +110,8 @@ type DescribeLoadBalancersResponse struct {
 	LoadBalancers LoadBalancersInDescribeLoadBalancers `json:"LoadBalancers" xml:"LoadBalancers"`
 }
 
-// create a request to invoke DescribeLoadBalancers API
-func CreateDescribeLoadBalancersRequest() (request *DescribeLoadBalancersRequest) {
+// CreateDescribeLoadBalancersRequest creates a request to invoke DescribeLoadBalancers API
+func CreateDescribeLoadBalancersRequest(request *DescribeLoadBalancersRequest) {
 	request = &DescribeLoadBalancersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -117,7 +119,7 @@ func CreateDescribeLoadBalancersRequest() (request *DescribeLoadBalancersRequest
 	return
 }
 
-// create a response to parse from DescribeLoadBalancers response
+// CreateDescribeLoadBalancersResponse creates a response to parse from DescribeLoadBalancers response
 func CreateDescribeLoadBalancersResponse() (response *DescribeLoadBalancersResponse) {
 	response = &DescribeLoadBalancersResponse{
 		BaseResponse: &responses.BaseResponse{},

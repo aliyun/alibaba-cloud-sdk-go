@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke UpdateMyGroups api with *UpdateMyGroupsRequest synchronously
+// UpdateMyGroups invokes the cms.UpdateMyGroups API synchronously
 // api document: https://help.aliyun.com/api/cms/updatemygroups.html
 func (client *Client) UpdateMyGroups(request *UpdateMyGroupsRequest) (response *UpdateMyGroupsResponse, err error) {
 	response = CreateUpdateMyGroupsResponse()
@@ -28,7 +28,7 @@ func (client *Client) UpdateMyGroups(request *UpdateMyGroupsRequest) (response *
 	return
 }
 
-// invoke UpdateMyGroups api with *UpdateMyGroupsRequest asynchronously
+// UpdateMyGroupsWithChan invokes the cms.UpdateMyGroups API asynchronously
 // api document: https://help.aliyun.com/api/cms/updatemygroups.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateMyGroupsWithChan(request *UpdateMyGroupsRequest) (<-chan *UpdateMyGroupsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) UpdateMyGroupsWithChan(request *UpdateMyGroupsRequest) (<-
 	return responseChan, errChan
 }
 
-// invoke UpdateMyGroups api with *UpdateMyGroupsRequest asynchronously
+// UpdateMyGroupsWithCallback invokes the cms.UpdateMyGroups API asynchronously
 // api document: https://help.aliyun.com/api/cms/updatemygroups.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateMyGroupsWithCallback(request *UpdateMyGroupsRequest, callback func(response *UpdateMyGroupsResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) UpdateMyGroupsWithCallback(request *UpdateMyGroupsRequest,
 	return result
 }
 
+// UpdateMyGroupsRequest is the request struct for api UpdateMyGroups
 type UpdateMyGroupsRequest struct {
 	*requests.RpcRequest
 	GroupId       string           `position:"Query" name:"GroupId"`
@@ -83,6 +84,7 @@ type UpdateMyGroupsRequest struct {
 	ContactGroups string           `position:"Query" name:"ContactGroups"`
 }
 
+// UpdateMyGroupsResponse is the response struct for api UpdateMyGroups
 type UpdateMyGroupsResponse struct {
 	*responses.BaseResponse
 	RequestId    string `json:"RequestId" xml:"RequestId"`
@@ -91,8 +93,8 @@ type UpdateMyGroupsResponse struct {
 	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
 }
 
-// create a request to invoke UpdateMyGroups API
-func CreateUpdateMyGroupsRequest() (request *UpdateMyGroupsRequest) {
+// CreateUpdateMyGroupsRequest creates a request to invoke UpdateMyGroups API
+func CreateUpdateMyGroupsRequest(request *UpdateMyGroupsRequest) {
 	request = &UpdateMyGroupsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -100,7 +102,7 @@ func CreateUpdateMyGroupsRequest() (request *UpdateMyGroupsRequest) {
 	return
 }
 
-// create a response to parse from UpdateMyGroups response
+// CreateUpdateMyGroupsResponse creates a response to parse from UpdateMyGroups response
 func CreateUpdateMyGroupsResponse() (response *UpdateMyGroupsResponse) {
 	response = &UpdateMyGroupsResponse{
 		BaseResponse: &responses.BaseResponse{},

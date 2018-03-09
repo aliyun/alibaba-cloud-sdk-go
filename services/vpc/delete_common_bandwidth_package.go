@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteCommonBandwidthPackage api with *DeleteCommonBandwidthPackageRequest synchronously
+// DeleteCommonBandwidthPackage invokes the vpc.DeleteCommonBandwidthPackage API synchronously
 // api document: https://help.aliyun.com/api/vpc/deletecommonbandwidthpackage.html
 func (client *Client) DeleteCommonBandwidthPackage(request *DeleteCommonBandwidthPackageRequest) (response *DeleteCommonBandwidthPackageResponse, err error) {
 	response = CreateDeleteCommonBandwidthPackageResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteCommonBandwidthPackage(request *DeleteCommonBandwidt
 	return
 }
 
-// invoke DeleteCommonBandwidthPackage api with *DeleteCommonBandwidthPackageRequest asynchronously
+// DeleteCommonBandwidthPackageWithChan invokes the vpc.DeleteCommonBandwidthPackage API asynchronously
 // api document: https://help.aliyun.com/api/vpc/deletecommonbandwidthpackage.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteCommonBandwidthPackageWithChan(request *DeleteCommonBandwidthPackageRequest) (<-chan *DeleteCommonBandwidthPackageResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteCommonBandwidthPackageWithChan(request *DeleteCommon
 	return responseChan, errChan
 }
 
-// invoke DeleteCommonBandwidthPackage api with *DeleteCommonBandwidthPackageRequest asynchronously
+// DeleteCommonBandwidthPackageWithCallback invokes the vpc.DeleteCommonBandwidthPackage API asynchronously
 // api document: https://help.aliyun.com/api/vpc/deletecommonbandwidthpackage.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteCommonBandwidthPackageWithCallback(request *DeleteCommonBandwidthPackageRequest, callback func(response *DeleteCommonBandwidthPackageResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DeleteCommonBandwidthPackageWithCallback(request *DeleteCo
 	return result
 }
 
+// DeleteCommonBandwidthPackageRequest is the request struct for api DeleteCommonBandwidthPackage
 type DeleteCommonBandwidthPackageRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -83,13 +84,14 @@ type DeleteCommonBandwidthPackageRequest struct {
 	BandwidthPackageId   string           `position:"Query" name:"BandwidthPackageId"`
 }
 
+// DeleteCommonBandwidthPackageResponse is the response struct for api DeleteCommonBandwidthPackage
 type DeleteCommonBandwidthPackageResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DeleteCommonBandwidthPackage API
-func CreateDeleteCommonBandwidthPackageRequest() (request *DeleteCommonBandwidthPackageRequest) {
+// CreateDeleteCommonBandwidthPackageRequest creates a request to invoke DeleteCommonBandwidthPackage API
+func CreateDeleteCommonBandwidthPackageRequest(request *DeleteCommonBandwidthPackageRequest) {
 	request = &DeleteCommonBandwidthPackageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateDeleteCommonBandwidthPackageRequest() (request *DeleteCommonBandwidth
 	return
 }
 
-// create a response to parse from DeleteCommonBandwidthPackage response
+// CreateDeleteCommonBandwidthPackageResponse creates a response to parse from DeleteCommonBandwidthPackage response
 func CreateDeleteCommonBandwidthPackageResponse() (response *DeleteCommonBandwidthPackageResponse) {
 	response = &DeleteCommonBandwidthPackageResponse{
 		BaseResponse: &responses.BaseResponse{},

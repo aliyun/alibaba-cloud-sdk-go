@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke QueryMetricLast api with *QueryMetricLastRequest synchronously
+// QueryMetricLast invokes the cms.QueryMetricLast API synchronously
 // api document: https://help.aliyun.com/api/cms/querymetriclast.html
 func (client *Client) QueryMetricLast(request *QueryMetricLastRequest) (response *QueryMetricLastResponse, err error) {
 	response = CreateQueryMetricLastResponse()
@@ -28,7 +28,7 @@ func (client *Client) QueryMetricLast(request *QueryMetricLastRequest) (response
 	return
 }
 
-// invoke QueryMetricLast api with *QueryMetricLastRequest asynchronously
+// QueryMetricLastWithChan invokes the cms.QueryMetricLast API asynchronously
 // api document: https://help.aliyun.com/api/cms/querymetriclast.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryMetricLastWithChan(request *QueryMetricLastRequest) (<-chan *QueryMetricLastResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) QueryMetricLastWithChan(request *QueryMetricLastRequest) (
 	return responseChan, errChan
 }
 
-// invoke QueryMetricLast api with *QueryMetricLastRequest asynchronously
+// QueryMetricLastWithCallback invokes the cms.QueryMetricLast API asynchronously
 // api document: https://help.aliyun.com/api/cms/querymetriclast.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QueryMetricLastWithCallback(request *QueryMetricLastRequest, callback func(response *QueryMetricLastResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) QueryMetricLastWithCallback(request *QueryMetricLastReques
 	return result
 }
 
+// QueryMetricLastRequest is the request struct for api QueryMetricLast
 type QueryMetricLastRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
@@ -89,6 +90,7 @@ type QueryMetricLastRequest struct {
 	Express         string           `position:"Query" name:"Express"`
 }
 
+// QueryMetricLastResponse is the response struct for api QueryMetricLast
 type QueryMetricLastResponse struct {
 	*responses.BaseResponse
 	Code       string `json:"Code" xml:"Code"`
@@ -100,8 +102,8 @@ type QueryMetricLastResponse struct {
 	Period     string `json:"Period" xml:"Period"`
 }
 
-// create a request to invoke QueryMetricLast API
-func CreateQueryMetricLastRequest() (request *QueryMetricLastRequest) {
+// CreateQueryMetricLastRequest creates a request to invoke QueryMetricLast API
+func CreateQueryMetricLastRequest(request *QueryMetricLastRequest) {
 	request = &QueryMetricLastRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -109,7 +111,7 @@ func CreateQueryMetricLastRequest() (request *QueryMetricLastRequest) {
 	return
 }
 
-// create a response to parse from QueryMetricLast response
+// CreateQueryMetricLastResponse creates a response to parse from QueryMetricLast response
 func CreateQueryMetricLastResponse() (response *QueryMetricLastResponse) {
 	response = &QueryMetricLastResponse{
 		BaseResponse: &responses.BaseResponse{},

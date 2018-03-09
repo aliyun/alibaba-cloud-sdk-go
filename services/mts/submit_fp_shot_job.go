@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SubmitFpShotJob api with *SubmitFpShotJobRequest synchronously
+// SubmitFpShotJob invokes the mts.SubmitFpShotJob API synchronously
 // api document: https://help.aliyun.com/api/mts/submitfpshotjob.html
 func (client *Client) SubmitFpShotJob(request *SubmitFpShotJobRequest) (response *SubmitFpShotJobResponse, err error) {
 	response = CreateSubmitFpShotJobResponse()
@@ -28,7 +28,7 @@ func (client *Client) SubmitFpShotJob(request *SubmitFpShotJobRequest) (response
 	return
 }
 
-// invoke SubmitFpShotJob api with *SubmitFpShotJobRequest asynchronously
+// SubmitFpShotJobWithChan invokes the mts.SubmitFpShotJob API asynchronously
 // api document: https://help.aliyun.com/api/mts/submitfpshotjob.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitFpShotJobWithChan(request *SubmitFpShotJobRequest) (<-chan *SubmitFpShotJobResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SubmitFpShotJobWithChan(request *SubmitFpShotJobRequest) (
 	return responseChan, errChan
 }
 
-// invoke SubmitFpShotJob api with *SubmitFpShotJobRequest asynchronously
+// SubmitFpShotJobWithCallback invokes the mts.SubmitFpShotJob API asynchronously
 // api document: https://help.aliyun.com/api/mts/submitfpshotjob.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitFpShotJobWithCallback(request *SubmitFpShotJobRequest, callback func(response *SubmitFpShotJobResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SubmitFpShotJobWithCallback(request *SubmitFpShotJobReques
 	return result
 }
 
+// SubmitFpShotJobRequest is the request struct for api SubmitFpShotJob
 type SubmitFpShotJobRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -85,14 +86,15 @@ type SubmitFpShotJobRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// SubmitFpShotJobResponse is the response struct for api SubmitFpShotJob
 type SubmitFpShotJobResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	JobId     string `json:"JobId" xml:"JobId"`
 }
 
-// create a request to invoke SubmitFpShotJob API
-func CreateSubmitFpShotJobRequest() (request *SubmitFpShotJobRequest) {
+// CreateSubmitFpShotJobRequest creates a request to invoke SubmitFpShotJob API
+func CreateSubmitFpShotJobRequest(request *SubmitFpShotJobRequest) {
 	request = &SubmitFpShotJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -100,7 +102,7 @@ func CreateSubmitFpShotJobRequest() (request *SubmitFpShotJobRequest) {
 	return
 }
 
-// create a response to parse from SubmitFpShotJob response
+// CreateSubmitFpShotJobResponse creates a response to parse from SubmitFpShotJob response
 func CreateSubmitFpShotJobResponse() (response *SubmitFpShotJobResponse) {
 	response = &SubmitFpShotJobResponse{
 		BaseResponse: &responses.BaseResponse{},

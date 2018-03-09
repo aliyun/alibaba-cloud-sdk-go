@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke QuerySystemEventCount api with *QuerySystemEventCountRequest synchronously
+// QuerySystemEventCount invokes the cms.QuerySystemEventCount API synchronously
 // api document: https://help.aliyun.com/api/cms/querysystemeventcount.html
 func (client *Client) QuerySystemEventCount(request *QuerySystemEventCountRequest) (response *QuerySystemEventCountResponse, err error) {
 	response = CreateQuerySystemEventCountResponse()
@@ -28,7 +28,7 @@ func (client *Client) QuerySystemEventCount(request *QuerySystemEventCountReques
 	return
 }
 
-// invoke QuerySystemEventCount api with *QuerySystemEventCountRequest asynchronously
+// QuerySystemEventCountWithChan invokes the cms.QuerySystemEventCount API asynchronously
 // api document: https://help.aliyun.com/api/cms/querysystemeventcount.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QuerySystemEventCountWithChan(request *QuerySystemEventCountRequest) (<-chan *QuerySystemEventCountResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) QuerySystemEventCountWithChan(request *QuerySystemEventCou
 	return responseChan, errChan
 }
 
-// invoke QuerySystemEventCount api with *QuerySystemEventCountRequest asynchronously
+// QuerySystemEventCountWithCallback invokes the cms.QuerySystemEventCount API asynchronously
 // api document: https://help.aliyun.com/api/cms/querysystemeventcount.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) QuerySystemEventCountWithCallback(request *QuerySystemEventCountRequest, callback func(response *QuerySystemEventCountResponse, err error)) <-chan int {
@@ -73,11 +73,13 @@ func (client *Client) QuerySystemEventCountWithCallback(request *QuerySystemEven
 	return result
 }
 
+// QuerySystemEventCountRequest is the request struct for api QuerySystemEventCount
 type QuerySystemEventCountRequest struct {
 	*requests.RpcRequest
 	QueryJson string `position:"Query" name:"QueryJson"`
 }
 
+// QuerySystemEventCountResponse is the response struct for api QuerySystemEventCount
 type QuerySystemEventCountResponse struct {
 	*responses.BaseResponse
 	Code    string `json:"Code" xml:"Code"`
@@ -85,8 +87,8 @@ type QuerySystemEventCountResponse struct {
 	Data    string `json:"Data" xml:"Data"`
 }
 
-// create a request to invoke QuerySystemEventCount API
-func CreateQuerySystemEventCountRequest() (request *QuerySystemEventCountRequest) {
+// CreateQuerySystemEventCountRequest creates a request to invoke QuerySystemEventCount API
+func CreateQuerySystemEventCountRequest(request *QuerySystemEventCountRequest) {
 	request = &QuerySystemEventCountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -94,7 +96,7 @@ func CreateQuerySystemEventCountRequest() (request *QuerySystemEventCountRequest
 	return
 }
 
-// create a response to parse from QuerySystemEventCount response
+// CreateQuerySystemEventCountResponse creates a response to parse from QuerySystemEventCount response
 func CreateQuerySystemEventCountResponse() (response *QuerySystemEventCountResponse) {
 	response = &QuerySystemEventCountResponse{
 		BaseResponse: &responses.BaseResponse{},

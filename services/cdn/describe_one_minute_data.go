@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeOneMinuteData api with *DescribeOneMinuteDataRequest synchronously
+// DescribeOneMinuteData invokes the cdn.DescribeOneMinuteData API synchronously
 // api document: https://help.aliyun.com/api/cdn/describeoneminutedata.html
 func (client *Client) DescribeOneMinuteData(request *DescribeOneMinuteDataRequest) (response *DescribeOneMinuteDataResponse, err error) {
 	response = CreateDescribeOneMinuteDataResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeOneMinuteData(request *DescribeOneMinuteDataReques
 	return
 }
 
-// invoke DescribeOneMinuteData api with *DescribeOneMinuteDataRequest asynchronously
+// DescribeOneMinuteDataWithChan invokes the cdn.DescribeOneMinuteData API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describeoneminutedata.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeOneMinuteDataWithChan(request *DescribeOneMinuteDataRequest) (<-chan *DescribeOneMinuteDataResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeOneMinuteDataWithChan(request *DescribeOneMinuteDa
 	return responseChan, errChan
 }
 
-// invoke DescribeOneMinuteData api with *DescribeOneMinuteDataRequest asynchronously
+// DescribeOneMinuteDataWithCallback invokes the cdn.DescribeOneMinuteData API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describeoneminutedata.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeOneMinuteDataWithCallback(request *DescribeOneMinuteDataRequest, callback func(response *DescribeOneMinuteDataResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeOneMinuteDataWithCallback(request *DescribeOneMinu
 	return result
 }
 
+// DescribeOneMinuteDataRequest is the request struct for api DescribeOneMinuteData
 type DescribeOneMinuteDataRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -82,6 +83,7 @@ type DescribeOneMinuteDataRequest struct {
 	DataTime             string           `position:"Query" name:"DataTime"`
 }
 
+// DescribeOneMinuteDataResponse is the response struct for api DescribeOneMinuteData
 type DescribeOneMinuteDataResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
@@ -89,8 +91,8 @@ type DescribeOneMinuteDataResponse struct {
 	Qps       string `json:"Qps" xml:"Qps"`
 }
 
-// create a request to invoke DescribeOneMinuteData API
-func CreateDescribeOneMinuteDataRequest() (request *DescribeOneMinuteDataRequest) {
+// CreateDescribeOneMinuteDataRequest creates a request to invoke DescribeOneMinuteData API
+func CreateDescribeOneMinuteDataRequest(request *DescribeOneMinuteDataRequest) {
 	request = &DescribeOneMinuteDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateDescribeOneMinuteDataRequest() (request *DescribeOneMinuteDataRequest
 	return
 }
 
-// create a response to parse from DescribeOneMinuteData response
+// CreateDescribeOneMinuteDataResponse creates a response to parse from DescribeOneMinuteData response
 func CreateDescribeOneMinuteDataResponse() (response *DescribeOneMinuteDataResponse) {
 	response = &DescribeOneMinuteDataResponse{
 		BaseResponse: &responses.BaseResponse{},

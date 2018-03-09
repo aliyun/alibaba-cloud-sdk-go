@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke EditEvent api with *EditEventRequest synchronously
+// EditEvent invokes the cloudphoto.EditEvent API synchronously
 // api document: https://help.aliyun.com/api/cloudphoto/editevent.html
 func (client *Client) EditEvent(request *EditEventRequest) (response *EditEventResponse, err error) {
 	response = CreateEditEventResponse()
@@ -28,7 +28,7 @@ func (client *Client) EditEvent(request *EditEventRequest) (response *EditEventR
 	return
 }
 
-// invoke EditEvent api with *EditEventRequest asynchronously
+// EditEventWithChan invokes the cloudphoto.EditEvent API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/editevent.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EditEventWithChan(request *EditEventRequest) (<-chan *EditEventResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) EditEventWithChan(request *EditEventRequest) (<-chan *Edit
 	return responseChan, errChan
 }
 
-// invoke EditEvent api with *EditEventRequest asynchronously
+// EditEventWithCallback invokes the cloudphoto.EditEvent API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/editevent.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) EditEventWithCallback(request *EditEventRequest, callback func(response *EditEventResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) EditEventWithCallback(request *EditEventRequest, callback 
 	return result
 }
 
+// EditEventRequest is the request struct for api EditEvent
 type EditEventRequest struct {
 	*requests.RpcRequest
 	StoreName        string           `position:"Query" name:"StoreName"`
@@ -89,6 +90,7 @@ type EditEventRequest struct {
 	Remark           string           `position:"Query" name:"Remark"`
 }
 
+// EditEventResponse is the response struct for api EditEvent
 type EditEventResponse struct {
 	*responses.BaseResponse
 	Code      string `json:"Code" xml:"Code"`
@@ -98,8 +100,8 @@ type EditEventResponse struct {
 	Event     Event  `json:"Event" xml:"Event"`
 }
 
-// create a request to invoke EditEvent API
-func CreateEditEventRequest() (request *EditEventRequest) {
+// CreateEditEventRequest creates a request to invoke EditEvent API
+func CreateEditEventRequest(request *EditEventRequest) {
 	request = &EditEventRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -107,7 +109,7 @@ func CreateEditEventRequest() (request *EditEventRequest) {
 	return
 }
 
-// create a response to parse from EditEvent response
+// CreateEditEventResponse creates a response to parse from EditEvent response
 func CreateEditEventResponse() (response *EditEventResponse) {
 	response = &EditEventResponse{
 		BaseResponse: &responses.BaseResponse{},

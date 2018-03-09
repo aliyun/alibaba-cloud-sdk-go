@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteLiveAppSnapshotConfig api with *DeleteLiveAppSnapshotConfigRequest synchronously
+// DeleteLiveAppSnapshotConfig invokes the cdn.DeleteLiveAppSnapshotConfig API synchronously
 // api document: https://help.aliyun.com/api/cdn/deleteliveappsnapshotconfig.html
 func (client *Client) DeleteLiveAppSnapshotConfig(request *DeleteLiveAppSnapshotConfigRequest) (response *DeleteLiveAppSnapshotConfigResponse, err error) {
 	response = CreateDeleteLiveAppSnapshotConfigResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteLiveAppSnapshotConfig(request *DeleteLiveAppSnapshot
 	return
 }
 
-// invoke DeleteLiveAppSnapshotConfig api with *DeleteLiveAppSnapshotConfigRequest asynchronously
+// DeleteLiveAppSnapshotConfigWithChan invokes the cdn.DeleteLiveAppSnapshotConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/deleteliveappsnapshotconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteLiveAppSnapshotConfigWithChan(request *DeleteLiveAppSnapshotConfigRequest) (<-chan *DeleteLiveAppSnapshotConfigResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteLiveAppSnapshotConfigWithChan(request *DeleteLiveApp
 	return responseChan, errChan
 }
 
-// invoke DeleteLiveAppSnapshotConfig api with *DeleteLiveAppSnapshotConfigRequest asynchronously
+// DeleteLiveAppSnapshotConfigWithCallback invokes the cdn.DeleteLiveAppSnapshotConfig API asynchronously
 // api document: https://help.aliyun.com/api/cdn/deleteliveappsnapshotconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteLiveAppSnapshotConfigWithCallback(request *DeleteLiveAppSnapshotConfigRequest, callback func(response *DeleteLiveAppSnapshotConfigResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DeleteLiveAppSnapshotConfigWithCallback(request *DeleteLiv
 	return result
 }
 
+// DeleteLiveAppSnapshotConfigRequest is the request struct for api DeleteLiveAppSnapshotConfig
 type DeleteLiveAppSnapshotConfigRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -81,13 +82,14 @@ type DeleteLiveAppSnapshotConfigRequest struct {
 	AppName       string           `position:"Query" name:"AppName"`
 }
 
+// DeleteLiveAppSnapshotConfigResponse is the response struct for api DeleteLiveAppSnapshotConfig
 type DeleteLiveAppSnapshotConfigResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DeleteLiveAppSnapshotConfig API
-func CreateDeleteLiveAppSnapshotConfigRequest() (request *DeleteLiveAppSnapshotConfigRequest) {
+// CreateDeleteLiveAppSnapshotConfigRequest creates a request to invoke DeleteLiveAppSnapshotConfig API
+func CreateDeleteLiveAppSnapshotConfigRequest(request *DeleteLiveAppSnapshotConfigRequest) {
 	request = &DeleteLiveAppSnapshotConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateDeleteLiveAppSnapshotConfigRequest() (request *DeleteLiveAppSnapshotC
 	return
 }
 
-// create a response to parse from DeleteLiveAppSnapshotConfig response
+// CreateDeleteLiveAppSnapshotConfigResponse creates a response to parse from DeleteLiveAppSnapshotConfig response
 func CreateDeleteLiveAppSnapshotConfigResponse() (response *DeleteLiveAppSnapshotConfigResponse) {
 	response = &DeleteLiveAppSnapshotConfigResponse{
 		BaseResponse: &responses.BaseResponse{},

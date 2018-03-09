@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteAccessKey api with *DeleteAccessKeyRequest synchronously
+// DeleteAccessKey invokes the ram.DeleteAccessKey API synchronously
 // api document: https://help.aliyun.com/api/ram/deleteaccesskey.html
 func (client *Client) DeleteAccessKey(request *DeleteAccessKeyRequest) (response *DeleteAccessKeyResponse, err error) {
 	response = CreateDeleteAccessKeyResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteAccessKey(request *DeleteAccessKeyRequest) (response
 	return
 }
 
-// invoke DeleteAccessKey api with *DeleteAccessKeyRequest asynchronously
+// DeleteAccessKeyWithChan invokes the ram.DeleteAccessKey API asynchronously
 // api document: https://help.aliyun.com/api/ram/deleteaccesskey.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteAccessKeyWithChan(request *DeleteAccessKeyRequest) (<-chan *DeleteAccessKeyResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteAccessKeyWithChan(request *DeleteAccessKeyRequest) (
 	return responseChan, errChan
 }
 
-// invoke DeleteAccessKey api with *DeleteAccessKeyRequest asynchronously
+// DeleteAccessKeyWithCallback invokes the ram.DeleteAccessKey API asynchronously
 // api document: https://help.aliyun.com/api/ram/deleteaccesskey.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteAccessKeyWithCallback(request *DeleteAccessKeyRequest, callback func(response *DeleteAccessKeyResponse, err error)) <-chan int {
@@ -73,19 +73,21 @@ func (client *Client) DeleteAccessKeyWithCallback(request *DeleteAccessKeyReques
 	return result
 }
 
+// DeleteAccessKeyRequest is the request struct for api DeleteAccessKey
 type DeleteAccessKeyRequest struct {
 	*requests.RpcRequest
 	UserName        string `position:"Query" name:"UserName"`
 	UserAccessKeyId string `position:"Query" name:"UserAccessKeyId"`
 }
 
+// DeleteAccessKeyResponse is the response struct for api DeleteAccessKey
 type DeleteAccessKeyResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DeleteAccessKey API
-func CreateDeleteAccessKeyRequest() (request *DeleteAccessKeyRequest) {
+// CreateDeleteAccessKeyRequest creates a request to invoke DeleteAccessKey API
+func CreateDeleteAccessKeyRequest(request *DeleteAccessKeyRequest) {
 	request = &DeleteAccessKeyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -93,7 +95,7 @@ func CreateDeleteAccessKeyRequest() (request *DeleteAccessKeyRequest) {
 	return
 }
 
-// create a response to parse from DeleteAccessKey response
+// CreateDeleteAccessKeyResponse creates a response to parse from DeleteAccessKey response
 func CreateDeleteAccessKeyResponse() (response *DeleteAccessKeyResponse) {
 	response = &DeleteAccessKeyResponse{
 		BaseResponse: &responses.BaseResponse{},

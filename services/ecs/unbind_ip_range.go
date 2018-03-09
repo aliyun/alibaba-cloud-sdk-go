@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke UnbindIpRange api with *UnbindIpRangeRequest synchronously
+// UnbindIpRange invokes the ecs.UnbindIpRange API synchronously
 // api document: https://help.aliyun.com/api/ecs/unbindiprange.html
 func (client *Client) UnbindIpRange(request *UnbindIpRangeRequest) (response *UnbindIpRangeResponse, err error) {
 	response = CreateUnbindIpRangeResponse()
@@ -28,7 +28,7 @@ func (client *Client) UnbindIpRange(request *UnbindIpRangeRequest) (response *Un
 	return
 }
 
-// invoke UnbindIpRange api with *UnbindIpRangeRequest asynchronously
+// UnbindIpRangeWithChan invokes the ecs.UnbindIpRange API asynchronously
 // api document: https://help.aliyun.com/api/ecs/unbindiprange.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnbindIpRangeWithChan(request *UnbindIpRangeRequest) (<-chan *UnbindIpRangeResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) UnbindIpRangeWithChan(request *UnbindIpRangeRequest) (<-ch
 	return responseChan, errChan
 }
 
-// invoke UnbindIpRange api with *UnbindIpRangeRequest asynchronously
+// UnbindIpRangeWithCallback invokes the ecs.UnbindIpRange API asynchronously
 // api document: https://help.aliyun.com/api/ecs/unbindiprange.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UnbindIpRangeWithCallback(request *UnbindIpRangeRequest, callback func(response *UnbindIpRangeResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) UnbindIpRangeWithCallback(request *UnbindIpRangeRequest, c
 	return result
 }
 
+// UnbindIpRangeRequest is the request struct for api UnbindIpRange
 type UnbindIpRangeRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -83,13 +84,14 @@ type UnbindIpRangeRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// UnbindIpRangeResponse is the response struct for api UnbindIpRange
 type UnbindIpRangeResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke UnbindIpRange API
-func CreateUnbindIpRangeRequest() (request *UnbindIpRangeRequest) {
+// CreateUnbindIpRangeRequest creates a request to invoke UnbindIpRange API
+func CreateUnbindIpRangeRequest(request *UnbindIpRangeRequest) {
 	request = &UnbindIpRangeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateUnbindIpRangeRequest() (request *UnbindIpRangeRequest) {
 	return
 }
 
-// create a response to parse from UnbindIpRange response
+// CreateUnbindIpRangeResponse creates a response to parse from UnbindIpRange response
 func CreateUnbindIpRangeResponse() (response *UnbindIpRangeResponse) {
 	response = &UnbindIpRangeResponse{
 		BaseResponse: &responses.BaseResponse{},

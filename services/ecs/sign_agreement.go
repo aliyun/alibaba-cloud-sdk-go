@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SignAgreement api with *SignAgreementRequest synchronously
+// SignAgreement invokes the ecs.SignAgreement API synchronously
 // api document: https://help.aliyun.com/api/ecs/signagreement.html
 func (client *Client) SignAgreement(request *SignAgreementRequest) (response *SignAgreementResponse, err error) {
 	response = CreateSignAgreementResponse()
@@ -28,7 +28,7 @@ func (client *Client) SignAgreement(request *SignAgreementRequest) (response *Si
 	return
 }
 
-// invoke SignAgreement api with *SignAgreementRequest asynchronously
+// SignAgreementWithChan invokes the ecs.SignAgreement API asynchronously
 // api document: https://help.aliyun.com/api/ecs/signagreement.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SignAgreementWithChan(request *SignAgreementRequest) (<-chan *SignAgreementResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SignAgreementWithChan(request *SignAgreementRequest) (<-ch
 	return responseChan, errChan
 }
 
-// invoke SignAgreement api with *SignAgreementRequest asynchronously
+// SignAgreementWithCallback invokes the ecs.SignAgreement API asynchronously
 // api document: https://help.aliyun.com/api/ecs/signagreement.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SignAgreementWithCallback(request *SignAgreementRequest, callback func(response *SignAgreementResponse, err error)) <-chan int {
@@ -73,17 +73,19 @@ func (client *Client) SignAgreementWithCallback(request *SignAgreementRequest, c
 	return result
 }
 
+// SignAgreementRequest is the request struct for api SignAgreement
 type SignAgreementRequest struct {
 	*requests.RpcRequest
 }
 
+// SignAgreementResponse is the response struct for api SignAgreement
 type SignAgreementResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke SignAgreement API
-func CreateSignAgreementRequest() (request *SignAgreementRequest) {
+// CreateSignAgreementRequest creates a request to invoke SignAgreement API
+func CreateSignAgreementRequest(request *SignAgreementRequest) {
 	request = &SignAgreementRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -91,7 +93,7 @@ func CreateSignAgreementRequest() (request *SignAgreementRequest) {
 	return
 }
 
-// create a response to parse from SignAgreement response
+// CreateSignAgreementResponse creates a response to parse from SignAgreement response
 func CreateSignAgreementResponse() (response *SignAgreementResponse) {
 	response = &SignAgreementResponse{
 		BaseResponse: &responses.BaseResponse{},

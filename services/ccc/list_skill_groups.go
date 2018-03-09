@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ListSkillGroups api with *ListSkillGroupsRequest synchronously
+// ListSkillGroups invokes the ccc.ListSkillGroups API synchronously
 // api document: https://help.aliyun.com/api/ccc/listskillgroups.html
 func (client *Client) ListSkillGroups(request *ListSkillGroupsRequest) (response *ListSkillGroupsResponse, err error) {
 	response = CreateListSkillGroupsResponse()
@@ -28,7 +28,7 @@ func (client *Client) ListSkillGroups(request *ListSkillGroupsRequest) (response
 	return
 }
 
-// invoke ListSkillGroups api with *ListSkillGroupsRequest asynchronously
+// ListSkillGroupsWithChan invokes the ccc.ListSkillGroups API asynchronously
 // api document: https://help.aliyun.com/api/ccc/listskillgroups.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListSkillGroupsWithChan(request *ListSkillGroupsRequest) (<-chan *ListSkillGroupsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ListSkillGroupsWithChan(request *ListSkillGroupsRequest) (
 	return responseChan, errChan
 }
 
-// invoke ListSkillGroups api with *ListSkillGroupsRequest asynchronously
+// ListSkillGroupsWithCallback invokes the ccc.ListSkillGroups API asynchronously
 // api document: https://help.aliyun.com/api/ccc/listskillgroups.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListSkillGroupsWithCallback(request *ListSkillGroupsRequest, callback func(response *ListSkillGroupsResponse, err error)) <-chan int {
@@ -73,11 +73,13 @@ func (client *Client) ListSkillGroupsWithCallback(request *ListSkillGroupsReques
 	return result
 }
 
+// ListSkillGroupsRequest is the request struct for api ListSkillGroups
 type ListSkillGroupsRequest struct {
 	*requests.RpcRequest
 	InstanceId string `position:"Query" name:"InstanceId"`
 }
 
+// ListSkillGroupsResponse is the response struct for api ListSkillGroups
 type ListSkillGroupsResponse struct {
 	*responses.BaseResponse
 	RequestId      string      `json:"RequestId" xml:"RequestId"`
@@ -88,8 +90,8 @@ type ListSkillGroupsResponse struct {
 	SkillGroups    SkillGroups `json:"SkillGroups" xml:"SkillGroups"`
 }
 
-// create a request to invoke ListSkillGroups API
-func CreateListSkillGroupsRequest() (request *ListSkillGroupsRequest) {
+// CreateListSkillGroupsRequest creates a request to invoke ListSkillGroups API
+func CreateListSkillGroupsRequest(request *ListSkillGroupsRequest) {
 	request = &ListSkillGroupsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateListSkillGroupsRequest() (request *ListSkillGroupsRequest) {
 	return
 }
 
-// create a response to parse from ListSkillGroups response
+// CreateListSkillGroupsResponse creates a response to parse from ListSkillGroups response
 func CreateListSkillGroupsResponse() (response *ListSkillGroupsResponse) {
 	response = &ListSkillGroupsResponse{
 		BaseResponse: &responses.BaseResponse{},

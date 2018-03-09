@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CreateNotifyPolicy api with *CreateNotifyPolicyRequest synchronously
+// CreateNotifyPolicy invokes the cms.CreateNotifyPolicy API synchronously
 // api document: https://help.aliyun.com/api/cms/createnotifypolicy.html
 func (client *Client) CreateNotifyPolicy(request *CreateNotifyPolicyRequest) (response *CreateNotifyPolicyResponse, err error) {
 	response = CreateCreateNotifyPolicyResponse()
@@ -28,7 +28,7 @@ func (client *Client) CreateNotifyPolicy(request *CreateNotifyPolicyRequest) (re
 	return
 }
 
-// invoke CreateNotifyPolicy api with *CreateNotifyPolicyRequest asynchronously
+// CreateNotifyPolicyWithChan invokes the cms.CreateNotifyPolicy API asynchronously
 // api document: https://help.aliyun.com/api/cms/createnotifypolicy.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateNotifyPolicyWithChan(request *CreateNotifyPolicyRequest) (<-chan *CreateNotifyPolicyResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CreateNotifyPolicyWithChan(request *CreateNotifyPolicyRequ
 	return responseChan, errChan
 }
 
-// invoke CreateNotifyPolicy api with *CreateNotifyPolicyRequest asynchronously
+// CreateNotifyPolicyWithCallback invokes the cms.CreateNotifyPolicy API asynchronously
 // api document: https://help.aliyun.com/api/cms/createnotifypolicy.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreateNotifyPolicyWithCallback(request *CreateNotifyPolicyRequest, callback func(response *CreateNotifyPolicyResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) CreateNotifyPolicyWithCallback(request *CreateNotifyPolicy
 	return result
 }
 
+// CreateNotifyPolicyRequest is the request struct for api CreateNotifyPolicy
 type CreateNotifyPolicyRequest struct {
 	*requests.RpcRequest
 	Dimensions string           `position:"Query" name:"Dimensions"`
@@ -82,6 +83,7 @@ type CreateNotifyPolicyRequest struct {
 	AlertName  string           `position:"Query" name:"AlertName"`
 }
 
+// CreateNotifyPolicyResponse is the response struct for api CreateNotifyPolicy
 type CreateNotifyPolicyResponse struct {
 	*responses.BaseResponse
 	Code    string `json:"code" xml:"code"`
@@ -91,8 +93,8 @@ type CreateNotifyPolicyResponse struct {
 	Result  int    `json:"result" xml:"result"`
 }
 
-// create a request to invoke CreateNotifyPolicy API
-func CreateCreateNotifyPolicyRequest() (request *CreateNotifyPolicyRequest) {
+// CreateCreateNotifyPolicyRequest creates a request to invoke CreateNotifyPolicy API
+func CreateCreateNotifyPolicyRequest(request *CreateNotifyPolicyRequest) {
 	request = &CreateNotifyPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -100,7 +102,7 @@ func CreateCreateNotifyPolicyRequest() (request *CreateNotifyPolicyRequest) {
 	return
 }
 
-// create a response to parse from CreateNotifyPolicy response
+// CreateCreateNotifyPolicyResponse creates a response to parse from CreateNotifyPolicy response
 func CreateCreateNotifyPolicyResponse() (response *CreateNotifyPolicyResponse) {
 	response = &CreateNotifyPolicyResponse{
 		BaseResponse: &responses.BaseResponse{},

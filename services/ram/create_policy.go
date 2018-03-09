@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke CreatePolicy api with *CreatePolicyRequest synchronously
+// CreatePolicy invokes the ram.CreatePolicy API synchronously
 // api document: https://help.aliyun.com/api/ram/createpolicy.html
 func (client *Client) CreatePolicy(request *CreatePolicyRequest) (response *CreatePolicyResponse, err error) {
 	response = CreateCreatePolicyResponse()
@@ -28,7 +28,7 @@ func (client *Client) CreatePolicy(request *CreatePolicyRequest) (response *Crea
 	return
 }
 
-// invoke CreatePolicy api with *CreatePolicyRequest asynchronously
+// CreatePolicyWithChan invokes the ram.CreatePolicy API asynchronously
 // api document: https://help.aliyun.com/api/ram/createpolicy.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreatePolicyWithChan(request *CreatePolicyRequest) (<-chan *CreatePolicyResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) CreatePolicyWithChan(request *CreatePolicyRequest) (<-chan
 	return responseChan, errChan
 }
 
-// invoke CreatePolicy api with *CreatePolicyRequest asynchronously
+// CreatePolicyWithCallback invokes the ram.CreatePolicy API asynchronously
 // api document: https://help.aliyun.com/api/ram/createpolicy.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) CreatePolicyWithCallback(request *CreatePolicyRequest, callback func(response *CreatePolicyResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) CreatePolicyWithCallback(request *CreatePolicyRequest, cal
 	return result
 }
 
+// CreatePolicyRequest is the request struct for api CreatePolicy
 type CreatePolicyRequest struct {
 	*requests.RpcRequest
 	PolicyName     string `position:"Query" name:"PolicyName"`
@@ -80,14 +81,15 @@ type CreatePolicyRequest struct {
 	PolicyDocument string `position:"Query" name:"PolicyDocument"`
 }
 
+// CreatePolicyResponse is the response struct for api CreatePolicy
 type CreatePolicyResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Policy    Policy `json:"Policy" xml:"Policy"`
 }
 
-// create a request to invoke CreatePolicy API
-func CreateCreatePolicyRequest() (request *CreatePolicyRequest) {
+// CreateCreatePolicyRequest creates a request to invoke CreatePolicy API
+func CreateCreatePolicyRequest(request *CreatePolicyRequest) {
 	request = &CreatePolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateCreatePolicyRequest() (request *CreatePolicyRequest) {
 	return
 }
 
-// create a response to parse from CreatePolicy response
+// CreateCreatePolicyResponse creates a response to parse from CreatePolicy response
 func CreateCreatePolicyResponse() (response *CreatePolicyResponse) {
 	response = &CreatePolicyResponse{
 		BaseResponse: &responses.BaseResponse{},

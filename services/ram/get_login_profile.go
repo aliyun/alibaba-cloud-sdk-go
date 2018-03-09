@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke GetLoginProfile api with *GetLoginProfileRequest synchronously
+// GetLoginProfile invokes the ram.GetLoginProfile API synchronously
 // api document: https://help.aliyun.com/api/ram/getloginprofile.html
 func (client *Client) GetLoginProfile(request *GetLoginProfileRequest) (response *GetLoginProfileResponse, err error) {
 	response = CreateGetLoginProfileResponse()
@@ -28,7 +28,7 @@ func (client *Client) GetLoginProfile(request *GetLoginProfileRequest) (response
 	return
 }
 
-// invoke GetLoginProfile api with *GetLoginProfileRequest asynchronously
+// GetLoginProfileWithChan invokes the ram.GetLoginProfile API asynchronously
 // api document: https://help.aliyun.com/api/ram/getloginprofile.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetLoginProfileWithChan(request *GetLoginProfileRequest) (<-chan *GetLoginProfileResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) GetLoginProfileWithChan(request *GetLoginProfileRequest) (
 	return responseChan, errChan
 }
 
-// invoke GetLoginProfile api with *GetLoginProfileRequest asynchronously
+// GetLoginProfileWithCallback invokes the ram.GetLoginProfile API asynchronously
 // api document: https://help.aliyun.com/api/ram/getloginprofile.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetLoginProfileWithCallback(request *GetLoginProfileRequest, callback func(response *GetLoginProfileResponse, err error)) <-chan int {
@@ -73,19 +73,21 @@ func (client *Client) GetLoginProfileWithCallback(request *GetLoginProfileReques
 	return result
 }
 
+// GetLoginProfileRequest is the request struct for api GetLoginProfile
 type GetLoginProfileRequest struct {
 	*requests.RpcRequest
 	UserName string `position:"Query" name:"UserName"`
 }
 
+// GetLoginProfileResponse is the response struct for api GetLoginProfile
 type GetLoginProfileResponse struct {
 	*responses.BaseResponse
 	RequestId    string       `json:"RequestId" xml:"RequestId"`
 	LoginProfile LoginProfile `json:"LoginProfile" xml:"LoginProfile"`
 }
 
-// create a request to invoke GetLoginProfile API
-func CreateGetLoginProfileRequest() (request *GetLoginProfileRequest) {
+// CreateGetLoginProfileRequest creates a request to invoke GetLoginProfile API
+func CreateGetLoginProfileRequest(request *GetLoginProfileRequest) {
 	request = &GetLoginProfileRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -93,7 +95,7 @@ func CreateGetLoginProfileRequest() (request *GetLoginProfileRequest) {
 	return
 }
 
-// create a response to parse from GetLoginProfile response
+// CreateGetLoginProfileResponse creates a response to parse from GetLoginProfile response
 func CreateGetLoginProfileResponse() (response *GetLoginProfileResponse) {
 	response = &GetLoginProfileResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SaveSingleTaskForCreatingOrderRenew api with *SaveSingleTaskForCreatingOrderRenewRequest synchronously
+// SaveSingleTaskForCreatingOrderRenew invokes the domain_intl.SaveSingleTaskForCreatingOrderRenew API synchronously
 // api document: https://help.aliyun.com/api/domain-intl/savesingletaskforcreatingorderrenew.html
 func (client *Client) SaveSingleTaskForCreatingOrderRenew(request *SaveSingleTaskForCreatingOrderRenewRequest) (response *SaveSingleTaskForCreatingOrderRenewResponse, err error) {
 	response = CreateSaveSingleTaskForCreatingOrderRenewResponse()
@@ -28,7 +28,7 @@ func (client *Client) SaveSingleTaskForCreatingOrderRenew(request *SaveSingleTas
 	return
 }
 
-// invoke SaveSingleTaskForCreatingOrderRenew api with *SaveSingleTaskForCreatingOrderRenewRequest asynchronously
+// SaveSingleTaskForCreatingOrderRenewWithChan invokes the domain_intl.SaveSingleTaskForCreatingOrderRenew API asynchronously
 // api document: https://help.aliyun.com/api/domain-intl/savesingletaskforcreatingorderrenew.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveSingleTaskForCreatingOrderRenewWithChan(request *SaveSingleTaskForCreatingOrderRenewRequest) (<-chan *SaveSingleTaskForCreatingOrderRenewResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SaveSingleTaskForCreatingOrderRenewWithChan(request *SaveS
 	return responseChan, errChan
 }
 
-// invoke SaveSingleTaskForCreatingOrderRenew api with *SaveSingleTaskForCreatingOrderRenewRequest asynchronously
+// SaveSingleTaskForCreatingOrderRenewWithCallback invokes the domain_intl.SaveSingleTaskForCreatingOrderRenew API asynchronously
 // api document: https://help.aliyun.com/api/domain-intl/savesingletaskforcreatingorderrenew.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SaveSingleTaskForCreatingOrderRenewWithCallback(request *SaveSingleTaskForCreatingOrderRenewRequest, callback func(response *SaveSingleTaskForCreatingOrderRenewResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SaveSingleTaskForCreatingOrderRenewWithCallback(request *S
 	return result
 }
 
+// SaveSingleTaskForCreatingOrderRenewRequest is the request struct for api SaveSingleTaskForCreatingOrderRenew
 type SaveSingleTaskForCreatingOrderRenewRequest struct {
 	*requests.RpcRequest
 	UserClientIp          string           `position:"Query" name:"UserClientIp"`
@@ -82,14 +83,15 @@ type SaveSingleTaskForCreatingOrderRenewRequest struct {
 	CurrentExpirationDate requests.Integer `position:"Query" name:"CurrentExpirationDate"`
 }
 
+// SaveSingleTaskForCreatingOrderRenewResponse is the response struct for api SaveSingleTaskForCreatingOrderRenew
 type SaveSingleTaskForCreatingOrderRenewResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	TaskNo    string `json:"TaskNo" xml:"TaskNo"`
 }
 
-// create a request to invoke SaveSingleTaskForCreatingOrderRenew API
-func CreateSaveSingleTaskForCreatingOrderRenewRequest() (request *SaveSingleTaskForCreatingOrderRenewRequest) {
+// CreateSaveSingleTaskForCreatingOrderRenewRequest creates a request to invoke SaveSingleTaskForCreatingOrderRenew API
+func CreateSaveSingleTaskForCreatingOrderRenewRequest(request *SaveSingleTaskForCreatingOrderRenewRequest) {
 	request = &SaveSingleTaskForCreatingOrderRenewRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateSaveSingleTaskForCreatingOrderRenewRequest() (request *SaveSingleTask
 	return
 }
 
-// create a response to parse from SaveSingleTaskForCreatingOrderRenew response
+// CreateSaveSingleTaskForCreatingOrderRenewResponse creates a response to parse from SaveSingleTaskForCreatingOrderRenew response
 func CreateSaveSingleTaskForCreatingOrderRenewResponse() (response *SaveSingleTaskForCreatingOrderRenewResponse) {
 	response = &SaveSingleTaskForCreatingOrderRenewResponse{
 		BaseResponse: &responses.BaseResponse{},

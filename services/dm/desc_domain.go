@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescDomain api with *DescDomainRequest synchronously
+// DescDomain invokes the dm.DescDomain API synchronously
 // api document: https://help.aliyun.com/api/dm/descdomain.html
 func (client *Client) DescDomain(request *DescDomainRequest) (response *DescDomainResponse, err error) {
 	response = CreateDescDomainResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescDomain(request *DescDomainRequest) (response *DescDoma
 	return
 }
 
-// invoke DescDomain api with *DescDomainRequest asynchronously
+// DescDomainWithChan invokes the dm.DescDomain API asynchronously
 // api document: https://help.aliyun.com/api/dm/descdomain.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescDomainWithChan(request *DescDomainRequest) (<-chan *DescDomainResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescDomainWithChan(request *DescDomainRequest) (<-chan *De
 	return responseChan, errChan
 }
 
-// invoke DescDomain api with *DescDomainRequest asynchronously
+// DescDomainWithCallback invokes the dm.DescDomain API asynchronously
 // api document: https://help.aliyun.com/api/dm/descdomain.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescDomainWithCallback(request *DescDomainRequest, callback func(response *DescDomainResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescDomainWithCallback(request *DescDomainRequest, callbac
 	return result
 }
 
+// DescDomainRequest is the request struct for api DescDomain
 type DescDomainRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -81,6 +82,7 @@ type DescDomainRequest struct {
 	DomainId             requests.Integer `position:"Query" name:"DomainId"`
 }
 
+// DescDomainResponse is the response struct for api DescDomain
 type DescDomainResponse struct {
 	*responses.BaseResponse
 	RequestId          string `json:"RequestId" xml:"RequestId"`
@@ -101,8 +103,8 @@ type DescDomainResponse struct {
 	TracefRecord       string `json:"TracefRecord" xml:"TracefRecord"`
 }
 
-// create a request to invoke DescDomain API
-func CreateDescDomainRequest() (request *DescDomainRequest) {
+// CreateDescDomainRequest creates a request to invoke DescDomain API
+func CreateDescDomainRequest(request *DescDomainRequest) {
 	request = &DescDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -110,7 +112,7 @@ func CreateDescDomainRequest() (request *DescDomainRequest) {
 	return
 }
 
-// create a response to parse from DescDomain response
+// CreateDescDomainResponse creates a response to parse from DescDomain response
 func CreateDescDomainResponse() (response *DescDomainResponse) {
 	response = &DescDomainResponse{
 		BaseResponse: &responses.BaseResponse{},

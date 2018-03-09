@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ListMyGroupCategories api with *ListMyGroupCategoriesRequest synchronously
+// ListMyGroupCategories invokes the cms.ListMyGroupCategories API synchronously
 // api document: https://help.aliyun.com/api/cms/listmygroupcategories.html
 func (client *Client) ListMyGroupCategories(request *ListMyGroupCategoriesRequest) (response *ListMyGroupCategoriesResponse, err error) {
 	response = CreateListMyGroupCategoriesResponse()
@@ -28,7 +28,7 @@ func (client *Client) ListMyGroupCategories(request *ListMyGroupCategoriesReques
 	return
 }
 
-// invoke ListMyGroupCategories api with *ListMyGroupCategoriesRequest asynchronously
+// ListMyGroupCategoriesWithChan invokes the cms.ListMyGroupCategories API asynchronously
 // api document: https://help.aliyun.com/api/cms/listmygroupcategories.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListMyGroupCategoriesWithChan(request *ListMyGroupCategoriesRequest) (<-chan *ListMyGroupCategoriesResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ListMyGroupCategoriesWithChan(request *ListMyGroupCategori
 	return responseChan, errChan
 }
 
-// invoke ListMyGroupCategories api with *ListMyGroupCategoriesRequest asynchronously
+// ListMyGroupCategoriesWithCallback invokes the cms.ListMyGroupCategories API asynchronously
 // api document: https://help.aliyun.com/api/cms/listmygroupcategories.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ListMyGroupCategoriesWithCallback(request *ListMyGroupCategoriesRequest, callback func(response *ListMyGroupCategoriesResponse, err error)) <-chan int {
@@ -73,11 +73,13 @@ func (client *Client) ListMyGroupCategoriesWithCallback(request *ListMyGroupCate
 	return result
 }
 
+// ListMyGroupCategoriesRequest is the request struct for api ListMyGroupCategories
 type ListMyGroupCategoriesRequest struct {
 	*requests.RpcRequest
 	GroupId requests.Integer `position:"Query" name:"GroupId"`
 }
 
+// ListMyGroupCategoriesResponse is the response struct for api ListMyGroupCategories
 type ListMyGroupCategoriesResponse struct {
 	*responses.BaseResponse
 	RequestId    string   `json:"RequestId" xml:"RequestId"`
@@ -87,8 +89,8 @@ type ListMyGroupCategoriesResponse struct {
 	Category     Category `json:"Category" xml:"Category"`
 }
 
-// create a request to invoke ListMyGroupCategories API
-func CreateListMyGroupCategoriesRequest() (request *ListMyGroupCategoriesRequest) {
+// CreateListMyGroupCategoriesRequest creates a request to invoke ListMyGroupCategories API
+func CreateListMyGroupCategoriesRequest(request *ListMyGroupCategoriesRequest) {
 	request = &ListMyGroupCategoriesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -96,7 +98,7 @@ func CreateListMyGroupCategoriesRequest() (request *ListMyGroupCategoriesRequest
 	return
 }
 
-// create a response to parse from ListMyGroupCategories response
+// CreateListMyGroupCategoriesResponse creates a response to parse from ListMyGroupCategories response
 func CreateListMyGroupCategoriesResponse() (response *ListMyGroupCategoriesResponse) {
 	response = &ListMyGroupCategoriesResponse{
 		BaseResponse: &responses.BaseResponse{},

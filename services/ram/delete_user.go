@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteUser api with *DeleteUserRequest synchronously
+// DeleteUser invokes the ram.DeleteUser API synchronously
 // api document: https://help.aliyun.com/api/ram/deleteuser.html
 func (client *Client) DeleteUser(request *DeleteUserRequest) (response *DeleteUserResponse, err error) {
 	response = CreateDeleteUserResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteUser(request *DeleteUserRequest) (response *DeleteUs
 	return
 }
 
-// invoke DeleteUser api with *DeleteUserRequest asynchronously
+// DeleteUserWithChan invokes the ram.DeleteUser API asynchronously
 // api document: https://help.aliyun.com/api/ram/deleteuser.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteUserWithChan(request *DeleteUserRequest) (<-chan *DeleteUserResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteUserWithChan(request *DeleteUserRequest) (<-chan *De
 	return responseChan, errChan
 }
 
-// invoke DeleteUser api with *DeleteUserRequest asynchronously
+// DeleteUserWithCallback invokes the ram.DeleteUser API asynchronously
 // api document: https://help.aliyun.com/api/ram/deleteuser.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteUserWithCallback(request *DeleteUserRequest, callback func(response *DeleteUserResponse, err error)) <-chan int {
@@ -73,18 +73,20 @@ func (client *Client) DeleteUserWithCallback(request *DeleteUserRequest, callbac
 	return result
 }
 
+// DeleteUserRequest is the request struct for api DeleteUser
 type DeleteUserRequest struct {
 	*requests.RpcRequest
 	UserName string `position:"Query" name:"UserName"`
 }
 
+// DeleteUserResponse is the response struct for api DeleteUser
 type DeleteUserResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DeleteUser API
-func CreateDeleteUserRequest() (request *DeleteUserRequest) {
+// CreateDeleteUserRequest creates a request to invoke DeleteUser API
+func CreateDeleteUserRequest(request *DeleteUserRequest) {
 	request = &DeleteUserRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -92,7 +94,7 @@ func CreateDeleteUserRequest() (request *DeleteUserRequest) {
 	return
 }
 
-// create a response to parse from DeleteUser response
+// CreateDeleteUserResponse creates a response to parse from DeleteUser response
 func CreateDeleteUserResponse() (response *DeleteUserResponse) {
 	response = &DeleteUserResponse{
 		BaseResponse: &responses.BaseResponse{},

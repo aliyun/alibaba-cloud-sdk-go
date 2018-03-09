@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeletePolicy api with *DeletePolicyRequest synchronously
+// DeletePolicy invokes the ram.DeletePolicy API synchronously
 // api document: https://help.aliyun.com/api/ram/deletepolicy.html
 func (client *Client) DeletePolicy(request *DeletePolicyRequest) (response *DeletePolicyResponse, err error) {
 	response = CreateDeletePolicyResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeletePolicy(request *DeletePolicyRequest) (response *Dele
 	return
 }
 
-// invoke DeletePolicy api with *DeletePolicyRequest asynchronously
+// DeletePolicyWithChan invokes the ram.DeletePolicy API asynchronously
 // api document: https://help.aliyun.com/api/ram/deletepolicy.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeletePolicyWithChan(request *DeletePolicyRequest) (<-chan *DeletePolicyResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeletePolicyWithChan(request *DeletePolicyRequest) (<-chan
 	return responseChan, errChan
 }
 
-// invoke DeletePolicy api with *DeletePolicyRequest asynchronously
+// DeletePolicyWithCallback invokes the ram.DeletePolicy API asynchronously
 // api document: https://help.aliyun.com/api/ram/deletepolicy.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeletePolicyWithCallback(request *DeletePolicyRequest, callback func(response *DeletePolicyResponse, err error)) <-chan int {
@@ -73,18 +73,20 @@ func (client *Client) DeletePolicyWithCallback(request *DeletePolicyRequest, cal
 	return result
 }
 
+// DeletePolicyRequest is the request struct for api DeletePolicy
 type DeletePolicyRequest struct {
 	*requests.RpcRequest
 	PolicyName string `position:"Query" name:"PolicyName"`
 }
 
+// DeletePolicyResponse is the response struct for api DeletePolicy
 type DeletePolicyResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DeletePolicy API
-func CreateDeletePolicyRequest() (request *DeletePolicyRequest) {
+// CreateDeletePolicyRequest creates a request to invoke DeletePolicy API
+func CreateDeletePolicyRequest(request *DeletePolicyRequest) {
 	request = &DeletePolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -92,7 +94,7 @@ func CreateDeletePolicyRequest() (request *DeletePolicyRequest) {
 	return
 }
 
-// create a response to parse from DeletePolicy response
+// CreateDeletePolicyResponse creates a response to parse from DeletePolicy response
 func CreateDeletePolicyResponse() (response *DeletePolicyResponse) {
 	response = &DeletePolicyResponse{
 		BaseResponse: &responses.BaseResponse{},

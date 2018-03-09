@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeDdosStatus api with *DescribeDdosStatusRequest synchronously
+// DescribeDdosStatus invokes the ddospro.DescribeDdosStatus API synchronously
 // api document: https://help.aliyun.com/api/ddospro/describeddosstatus.html
 func (client *Client) DescribeDdosStatus(request *DescribeDdosStatusRequest) (response *DescribeDdosStatusResponse, err error) {
 	response = CreateDescribeDdosStatusResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeDdosStatus(request *DescribeDdosStatusRequest) (re
 	return
 }
 
-// invoke DescribeDdosStatus api with *DescribeDdosStatusRequest asynchronously
+// DescribeDdosStatusWithChan invokes the ddospro.DescribeDdosStatus API asynchronously
 // api document: https://help.aliyun.com/api/ddospro/describeddosstatus.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDdosStatusWithChan(request *DescribeDdosStatusRequest) (<-chan *DescribeDdosStatusResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeDdosStatusWithChan(request *DescribeDdosStatusRequ
 	return responseChan, errChan
 }
 
-// invoke DescribeDdosStatus api with *DescribeDdosStatusRequest asynchronously
+// DescribeDdosStatusWithCallback invokes the ddospro.DescribeDdosStatus API asynchronously
 // api document: https://help.aliyun.com/api/ddospro/describeddosstatus.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDdosStatusWithCallback(request *DescribeDdosStatusRequest, callback func(response *DescribeDdosStatusResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeDdosStatusWithCallback(request *DescribeDdosStatus
 	return result
 }
 
+// DescribeDdosStatusRequest is the request struct for api DescribeDdosStatus
 type DescribeDdosStatusRequest struct {
 	*requests.RpcRequest
 	SourceIp        string           `position:"Query" name:"SourceIp"`
@@ -80,14 +81,15 @@ type DescribeDdosStatusRequest struct {
 	Vips            *[]string        `position:"Query" name:"Vips"  type:"Repeated"`
 }
 
+// DescribeDdosStatusResponse is the response struct for api DescribeDdosStatus
 type DescribeDdosStatusResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Data      []Data `json:"Data" xml:"Data"`
 }
 
-// create a request to invoke DescribeDdosStatus API
-func CreateDescribeDdosStatusRequest() (request *DescribeDdosStatusRequest) {
+// CreateDescribeDdosStatusRequest creates a request to invoke DescribeDdosStatus API
+func CreateDescribeDdosStatusRequest(request *DescribeDdosStatusRequest) {
 	request = &DescribeDdosStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateDescribeDdosStatusRequest() (request *DescribeDdosStatusRequest) {
 	return
 }
 
-// create a response to parse from DescribeDdosStatus response
+// CreateDescribeDdosStatusResponse creates a response to parse from DescribeDdosStatus response
 func CreateDescribeDdosStatusResponse() (response *DescribeDdosStatusResponse) {
 	response = &DescribeDdosStatusResponse{
 		BaseResponse: &responses.BaseResponse{},

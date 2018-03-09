@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DeleteVirtualBorderRouter api with *DeleteVirtualBorderRouterRequest synchronously
+// DeleteVirtualBorderRouter invokes the vpc.DeleteVirtualBorderRouter API synchronously
 // api document: https://help.aliyun.com/api/vpc/deletevirtualborderrouter.html
 func (client *Client) DeleteVirtualBorderRouter(request *DeleteVirtualBorderRouterRequest) (response *DeleteVirtualBorderRouterResponse, err error) {
 	response = CreateDeleteVirtualBorderRouterResponse()
@@ -28,7 +28,7 @@ func (client *Client) DeleteVirtualBorderRouter(request *DeleteVirtualBorderRout
 	return
 }
 
-// invoke DeleteVirtualBorderRouter api with *DeleteVirtualBorderRouterRequest asynchronously
+// DeleteVirtualBorderRouterWithChan invokes the vpc.DeleteVirtualBorderRouter API asynchronously
 // api document: https://help.aliyun.com/api/vpc/deletevirtualborderrouter.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteVirtualBorderRouterWithChan(request *DeleteVirtualBorderRouterRequest) (<-chan *DeleteVirtualBorderRouterResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DeleteVirtualBorderRouterWithChan(request *DeleteVirtualBo
 	return responseChan, errChan
 }
 
-// invoke DeleteVirtualBorderRouter api with *DeleteVirtualBorderRouterRequest asynchronously
+// DeleteVirtualBorderRouterWithCallback invokes the vpc.DeleteVirtualBorderRouter API asynchronously
 // api document: https://help.aliyun.com/api/vpc/deletevirtualborderrouter.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DeleteVirtualBorderRouterWithCallback(request *DeleteVirtualBorderRouterRequest, callback func(response *DeleteVirtualBorderRouterResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DeleteVirtualBorderRouterWithCallback(request *DeleteVirtu
 	return result
 }
 
+// DeleteVirtualBorderRouterRequest is the request struct for api DeleteVirtualBorderRouter
 type DeleteVirtualBorderRouterRequest struct {
 	*requests.RpcRequest
 	VbrId                string           `position:"Query" name:"VbrId"`
@@ -83,13 +84,14 @@ type DeleteVirtualBorderRouterRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// DeleteVirtualBorderRouterResponse is the response struct for api DeleteVirtualBorderRouter
 type DeleteVirtualBorderRouterResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke DeleteVirtualBorderRouter API
-func CreateDeleteVirtualBorderRouterRequest() (request *DeleteVirtualBorderRouterRequest) {
+// CreateDeleteVirtualBorderRouterRequest creates a request to invoke DeleteVirtualBorderRouter API
+func CreateDeleteVirtualBorderRouterRequest(request *DeleteVirtualBorderRouterRequest) {
 	request = &DeleteVirtualBorderRouterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateDeleteVirtualBorderRouterRequest() (request *DeleteVirtualBorderRoute
 	return
 }
 
-// create a response to parse from DeleteVirtualBorderRouter response
+// CreateDeleteVirtualBorderRouterResponse creates a response to parse from DeleteVirtualBorderRouter response
 func CreateDeleteVirtualBorderRouterResponse() (response *DeleteVirtualBorderRouterResponse) {
 	response = &DeleteVirtualBorderRouterResponse{
 		BaseResponse: &responses.BaseResponse{},

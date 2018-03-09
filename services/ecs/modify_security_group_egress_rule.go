@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ModifySecurityGroupEgressRule api with *ModifySecurityGroupEgressRuleRequest synchronously
+// ModifySecurityGroupEgressRule invokes the ecs.ModifySecurityGroupEgressRule API synchronously
 // api document: https://help.aliyun.com/api/ecs/modifysecuritygroupegressrule.html
 func (client *Client) ModifySecurityGroupEgressRule(request *ModifySecurityGroupEgressRuleRequest) (response *ModifySecurityGroupEgressRuleResponse, err error) {
 	response = CreateModifySecurityGroupEgressRuleResponse()
@@ -28,7 +28,7 @@ func (client *Client) ModifySecurityGroupEgressRule(request *ModifySecurityGroup
 	return
 }
 
-// invoke ModifySecurityGroupEgressRule api with *ModifySecurityGroupEgressRuleRequest asynchronously
+// ModifySecurityGroupEgressRuleWithChan invokes the ecs.ModifySecurityGroupEgressRule API asynchronously
 // api document: https://help.aliyun.com/api/ecs/modifysecuritygroupegressrule.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySecurityGroupEgressRuleWithChan(request *ModifySecurityGroupEgressRuleRequest) (<-chan *ModifySecurityGroupEgressRuleResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ModifySecurityGroupEgressRuleWithChan(request *ModifySecur
 	return responseChan, errChan
 }
 
-// invoke ModifySecurityGroupEgressRule api with *ModifySecurityGroupEgressRuleRequest asynchronously
+// ModifySecurityGroupEgressRuleWithCallback invokes the ecs.ModifySecurityGroupEgressRule API asynchronously
 // api document: https://help.aliyun.com/api/ecs/modifysecuritygroupegressrule.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ModifySecurityGroupEgressRuleWithCallback(request *ModifySecurityGroupEgressRuleRequest, callback func(response *ModifySecurityGroupEgressRuleResponse, err error)) <-chan int {
@@ -73,17 +73,19 @@ func (client *Client) ModifySecurityGroupEgressRuleWithCallback(request *ModifyS
 	return result
 }
 
+// ModifySecurityGroupEgressRuleRequest is the request struct for api ModifySecurityGroupEgressRule
 type ModifySecurityGroupEgressRuleRequest struct {
 	*requests.RpcRequest
 }
 
+// ModifySecurityGroupEgressRuleResponse is the response struct for api ModifySecurityGroupEgressRule
 type ModifySecurityGroupEgressRuleResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ModifySecurityGroupEgressRule API
-func CreateModifySecurityGroupEgressRuleRequest() (request *ModifySecurityGroupEgressRuleRequest) {
+// CreateModifySecurityGroupEgressRuleRequest creates a request to invoke ModifySecurityGroupEgressRule API
+func CreateModifySecurityGroupEgressRuleRequest(request *ModifySecurityGroupEgressRuleRequest) {
 	request = &ModifySecurityGroupEgressRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -91,7 +93,7 @@ func CreateModifySecurityGroupEgressRuleRequest() (request *ModifySecurityGroupE
 	return
 }
 
-// create a response to parse from ModifySecurityGroupEgressRule response
+// CreateModifySecurityGroupEgressRuleResponse creates a response to parse from ModifySecurityGroupEgressRule response
 func CreateModifySecurityGroupEgressRuleResponse() (response *ModifySecurityGroupEgressRuleResponse) {
 	response = &ModifySecurityGroupEgressRuleResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeDomainMonthBillingBpsData api with *DescribeDomainMonthBillingBpsDataRequest synchronously
+// DescribeDomainMonthBillingBpsData invokes the cdn.DescribeDomainMonthBillingBpsData API synchronously
 // api document: https://help.aliyun.com/api/cdn/describedomainmonthbillingbpsdata.html
 func (client *Client) DescribeDomainMonthBillingBpsData(request *DescribeDomainMonthBillingBpsDataRequest) (response *DescribeDomainMonthBillingBpsDataResponse, err error) {
 	response = CreateDescribeDomainMonthBillingBpsDataResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeDomainMonthBillingBpsData(request *DescribeDomainM
 	return
 }
 
-// invoke DescribeDomainMonthBillingBpsData api with *DescribeDomainMonthBillingBpsDataRequest asynchronously
+// DescribeDomainMonthBillingBpsDataWithChan invokes the cdn.DescribeDomainMonthBillingBpsData API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describedomainmonthbillingbpsdata.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainMonthBillingBpsDataWithChan(request *DescribeDomainMonthBillingBpsDataRequest) (<-chan *DescribeDomainMonthBillingBpsDataResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeDomainMonthBillingBpsDataWithChan(request *Describ
 	return responseChan, errChan
 }
 
-// invoke DescribeDomainMonthBillingBpsData api with *DescribeDomainMonthBillingBpsDataRequest asynchronously
+// DescribeDomainMonthBillingBpsDataWithCallback invokes the cdn.DescribeDomainMonthBillingBpsData API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describedomainmonthbillingbpsdata.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainMonthBillingBpsDataWithCallback(request *DescribeDomainMonthBillingBpsDataRequest, callback func(response *DescribeDomainMonthBillingBpsDataResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeDomainMonthBillingBpsDataWithCallback(request *Des
 	return result
 }
 
+// DescribeDomainMonthBillingBpsDataRequest is the request struct for api DescribeDomainMonthBillingBpsData
 type DescribeDomainMonthBillingBpsDataRequest struct {
 	*requests.RpcRequest
 	OwnerId            requests.Integer `position:"Query" name:"OwnerId"`
@@ -83,6 +84,7 @@ type DescribeDomainMonthBillingBpsDataRequest struct {
 	InternetChargeType string           `position:"Query" name:"InternetChargeType"`
 }
 
+// DescribeDomainMonthBillingBpsDataResponse is the response struct for api DescribeDomainMonthBillingBpsData
 type DescribeDomainMonthBillingBpsDataResponse struct {
 	*responses.BaseResponse
 	RequestId              string  `json:"RequestId" xml:"RequestId"`
@@ -100,8 +102,8 @@ type DescribeDomainMonthBillingBpsDataResponse struct {
 	OverseasMonth4thBps    float64 `json:"OverseasMonth4thBps" xml:"OverseasMonth4thBps"`
 }
 
-// create a request to invoke DescribeDomainMonthBillingBpsData API
-func CreateDescribeDomainMonthBillingBpsDataRequest() (request *DescribeDomainMonthBillingBpsDataRequest) {
+// CreateDescribeDomainMonthBillingBpsDataRequest creates a request to invoke DescribeDomainMonthBillingBpsData API
+func CreateDescribeDomainMonthBillingBpsDataRequest(request *DescribeDomainMonthBillingBpsDataRequest) {
 	request = &DescribeDomainMonthBillingBpsDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -109,7 +111,7 @@ func CreateDescribeDomainMonthBillingBpsDataRequest() (request *DescribeDomainMo
 	return
 }
 
-// create a response to parse from DescribeDomainMonthBillingBpsData response
+// CreateDescribeDomainMonthBillingBpsDataResponse creates a response to parse from DescribeDomainMonthBillingBpsData response
 func CreateDescribeDomainMonthBillingBpsDataResponse() (response *DescribeDomainMonthBillingBpsDataResponse) {
 	response = &DescribeDomainMonthBillingBpsDataResponse{
 		BaseResponse: &responses.BaseResponse{},

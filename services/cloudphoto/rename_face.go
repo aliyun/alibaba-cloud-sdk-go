@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke RenameFace api with *RenameFaceRequest synchronously
+// RenameFace invokes the cloudphoto.RenameFace API synchronously
 // api document: https://help.aliyun.com/api/cloudphoto/renameface.html
 func (client *Client) RenameFace(request *RenameFaceRequest) (response *RenameFaceResponse, err error) {
 	response = CreateRenameFaceResponse()
@@ -28,7 +28,7 @@ func (client *Client) RenameFace(request *RenameFaceRequest) (response *RenameFa
 	return
 }
 
-// invoke RenameFace api with *RenameFaceRequest asynchronously
+// RenameFaceWithChan invokes the cloudphoto.RenameFace API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/renameface.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RenameFaceWithChan(request *RenameFaceRequest) (<-chan *RenameFaceResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) RenameFaceWithChan(request *RenameFaceRequest) (<-chan *Re
 	return responseChan, errChan
 }
 
-// invoke RenameFace api with *RenameFaceRequest asynchronously
+// RenameFaceWithCallback invokes the cloudphoto.RenameFace API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/renameface.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) RenameFaceWithCallback(request *RenameFaceRequest, callback func(response *RenameFaceResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) RenameFaceWithCallback(request *RenameFaceRequest, callbac
 	return result
 }
 
+// RenameFaceRequest is the request struct for api RenameFace
 type RenameFaceRequest struct {
 	*requests.RpcRequest
 	FaceId    requests.Integer `position:"Query" name:"FaceId"`
@@ -81,6 +82,7 @@ type RenameFaceRequest struct {
 	LibraryId string           `position:"Query" name:"LibraryId"`
 }
 
+// RenameFaceResponse is the response struct for api RenameFace
 type RenameFaceResponse struct {
 	*responses.BaseResponse
 	Code      string `json:"Code" xml:"Code"`
@@ -89,8 +91,8 @@ type RenameFaceResponse struct {
 	Action    string `json:"Action" xml:"Action"`
 }
 
-// create a request to invoke RenameFace API
-func CreateRenameFaceRequest() (request *RenameFaceRequest) {
+// CreateRenameFaceRequest creates a request to invoke RenameFace API
+func CreateRenameFaceRequest(request *RenameFaceRequest) {
 	request = &RenameFaceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateRenameFaceRequest() (request *RenameFaceRequest) {
 	return
 }
 
-// create a response to parse from RenameFace response
+// CreateRenameFaceResponse creates a response to parse from RenameFace response
 func CreateRenameFaceResponse() (response *RenameFaceResponse) {
 	response = &RenameFaceResponse{
 		BaseResponse: &responses.BaseResponse{},

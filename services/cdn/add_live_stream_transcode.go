@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke AddLiveStreamTranscode api with *AddLiveStreamTranscodeRequest synchronously
+// AddLiveStreamTranscode invokes the cdn.AddLiveStreamTranscode API synchronously
 // api document: https://help.aliyun.com/api/cdn/addlivestreamtranscode.html
 func (client *Client) AddLiveStreamTranscode(request *AddLiveStreamTranscodeRequest) (response *AddLiveStreamTranscodeResponse, err error) {
 	response = CreateAddLiveStreamTranscodeResponse()
@@ -28,7 +28,7 @@ func (client *Client) AddLiveStreamTranscode(request *AddLiveStreamTranscodeRequ
 	return
 }
 
-// invoke AddLiveStreamTranscode api with *AddLiveStreamTranscodeRequest asynchronously
+// AddLiveStreamTranscodeWithChan invokes the cdn.AddLiveStreamTranscode API asynchronously
 // api document: https://help.aliyun.com/api/cdn/addlivestreamtranscode.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddLiveStreamTranscodeWithChan(request *AddLiveStreamTranscodeRequest) (<-chan *AddLiveStreamTranscodeResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) AddLiveStreamTranscodeWithChan(request *AddLiveStreamTrans
 	return responseChan, errChan
 }
 
-// invoke AddLiveStreamTranscode api with *AddLiveStreamTranscodeRequest asynchronously
+// AddLiveStreamTranscodeWithCallback invokes the cdn.AddLiveStreamTranscode API asynchronously
 // api document: https://help.aliyun.com/api/cdn/addlivestreamtranscode.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddLiveStreamTranscodeWithCallback(request *AddLiveStreamTranscodeRequest, callback func(response *AddLiveStreamTranscodeResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) AddLiveStreamTranscodeWithCallback(request *AddLiveStreamT
 	return result
 }
 
+// AddLiveStreamTranscodeRequest is the request struct for api AddLiveStreamTranscode
 type AddLiveStreamTranscodeRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -85,13 +86,14 @@ type AddLiveStreamTranscodeRequest struct {
 	App           string           `position:"Query" name:"App"`
 }
 
+// AddLiveStreamTranscodeResponse is the response struct for api AddLiveStreamTranscode
 type AddLiveStreamTranscodeResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke AddLiveStreamTranscode API
-func CreateAddLiveStreamTranscodeRequest() (request *AddLiveStreamTranscodeRequest) {
+// CreateAddLiveStreamTranscodeRequest creates a request to invoke AddLiveStreamTranscode API
+func CreateAddLiveStreamTranscodeRequest(request *AddLiveStreamTranscodeRequest) {
 	request = &AddLiveStreamTranscodeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateAddLiveStreamTranscodeRequest() (request *AddLiveStreamTranscodeReque
 	return
 }
 
-// create a response to parse from AddLiveStreamTranscode response
+// CreateAddLiveStreamTranscodeResponse creates a response to parse from AddLiveStreamTranscode response
 func CreateAddLiveStreamTranscodeResponse() (response *AddLiveStreamTranscodeResponse) {
 	response = &AddLiveStreamTranscodeResponse{
 		BaseResponse: &responses.BaseResponse{},

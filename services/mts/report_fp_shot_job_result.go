@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ReportFpShotJobResult api with *ReportFpShotJobResultRequest synchronously
+// ReportFpShotJobResult invokes the mts.ReportFpShotJobResult API synchronously
 // api document: https://help.aliyun.com/api/mts/reportfpshotjobresult.html
 func (client *Client) ReportFpShotJobResult(request *ReportFpShotJobResultRequest) (response *ReportFpShotJobResultResponse, err error) {
 	response = CreateReportFpShotJobResultResponse()
@@ -28,7 +28,7 @@ func (client *Client) ReportFpShotJobResult(request *ReportFpShotJobResultReques
 	return
 }
 
-// invoke ReportFpShotJobResult api with *ReportFpShotJobResultRequest asynchronously
+// ReportFpShotJobResultWithChan invokes the mts.ReportFpShotJobResult API asynchronously
 // api document: https://help.aliyun.com/api/mts/reportfpshotjobresult.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReportFpShotJobResultWithChan(request *ReportFpShotJobResultRequest) (<-chan *ReportFpShotJobResultResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ReportFpShotJobResultWithChan(request *ReportFpShotJobResu
 	return responseChan, errChan
 }
 
-// invoke ReportFpShotJobResult api with *ReportFpShotJobResultRequest asynchronously
+// ReportFpShotJobResultWithCallback invokes the mts.ReportFpShotJobResult API asynchronously
 // api document: https://help.aliyun.com/api/mts/reportfpshotjobresult.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReportFpShotJobResultWithCallback(request *ReportFpShotJobResultRequest, callback func(response *ReportFpShotJobResultResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ReportFpShotJobResultWithCallback(request *ReportFpShotJob
 	return result
 }
 
+// ReportFpShotJobResultRequest is the request struct for api ReportFpShotJobResult
 type ReportFpShotJobResultRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,14 +85,15 @@ type ReportFpShotJobResultRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// ReportFpShotJobResultResponse is the response struct for api ReportFpShotJobResult
 type ReportFpShotJobResultResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	JobId     string `json:"JobId" xml:"JobId"`
 }
 
-// create a request to invoke ReportFpShotJobResult API
-func CreateReportFpShotJobResultRequest() (request *ReportFpShotJobResultRequest) {
+// CreateReportFpShotJobResultRequest creates a request to invoke ReportFpShotJobResult API
+func CreateReportFpShotJobResultRequest(request *ReportFpShotJobResultRequest) {
 	request = &ReportFpShotJobResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateReportFpShotJobResultRequest() (request *ReportFpShotJobResultRequest
 	return
 }
 
-// create a response to parse from ReportFpShotJobResult response
+// CreateReportFpShotJobResultResponse creates a response to parse from ReportFpShotJobResult response
 func CreateReportFpShotJobResultResponse() (response *ReportFpShotJobResultResponse) {
 	response = &ReportFpShotJobResultResponse{
 		BaseResponse: &responses.BaseResponse{},

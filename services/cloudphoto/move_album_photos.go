@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke MoveAlbumPhotos api with *MoveAlbumPhotosRequest synchronously
+// MoveAlbumPhotos invokes the cloudphoto.MoveAlbumPhotos API synchronously
 // api document: https://help.aliyun.com/api/cloudphoto/movealbumphotos.html
 func (client *Client) MoveAlbumPhotos(request *MoveAlbumPhotosRequest) (response *MoveAlbumPhotosResponse, err error) {
 	response = CreateMoveAlbumPhotosResponse()
@@ -28,7 +28,7 @@ func (client *Client) MoveAlbumPhotos(request *MoveAlbumPhotosRequest) (response
 	return
 }
 
-// invoke MoveAlbumPhotos api with *MoveAlbumPhotosRequest asynchronously
+// MoveAlbumPhotosWithChan invokes the cloudphoto.MoveAlbumPhotos API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/movealbumphotos.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) MoveAlbumPhotosWithChan(request *MoveAlbumPhotosRequest) (<-chan *MoveAlbumPhotosResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) MoveAlbumPhotosWithChan(request *MoveAlbumPhotosRequest) (
 	return responseChan, errChan
 }
 
-// invoke MoveAlbumPhotos api with *MoveAlbumPhotosRequest asynchronously
+// MoveAlbumPhotosWithCallback invokes the cloudphoto.MoveAlbumPhotos API asynchronously
 // api document: https://help.aliyun.com/api/cloudphoto/movealbumphotos.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) MoveAlbumPhotosWithCallback(request *MoveAlbumPhotosRequest, callback func(response *MoveAlbumPhotosResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) MoveAlbumPhotosWithCallback(request *MoveAlbumPhotosReques
 	return result
 }
 
+// MoveAlbumPhotosRequest is the request struct for api MoveAlbumPhotos
 type MoveAlbumPhotosRequest struct {
 	*requests.RpcRequest
 	SourceAlbumId requests.Integer `position:"Query" name:"SourceAlbumId"`
@@ -82,6 +83,7 @@ type MoveAlbumPhotosRequest struct {
 	LibraryId     string           `position:"Query" name:"LibraryId"`
 }
 
+// MoveAlbumPhotosResponse is the response struct for api MoveAlbumPhotos
 type MoveAlbumPhotosResponse struct {
 	*responses.BaseResponse
 	Code      string   `json:"Code" xml:"Code"`
@@ -91,8 +93,8 @@ type MoveAlbumPhotosResponse struct {
 	Results   []Result `json:"Results" xml:"Results"`
 }
 
-// create a request to invoke MoveAlbumPhotos API
-func CreateMoveAlbumPhotosRequest() (request *MoveAlbumPhotosRequest) {
+// CreateMoveAlbumPhotosRequest creates a request to invoke MoveAlbumPhotos API
+func CreateMoveAlbumPhotosRequest(request *MoveAlbumPhotosRequest) {
 	request = &MoveAlbumPhotosRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -100,7 +102,7 @@ func CreateMoveAlbumPhotosRequest() (request *MoveAlbumPhotosRequest) {
 	return
 }
 
-// create a response to parse from MoveAlbumPhotos response
+// CreateMoveAlbumPhotosResponse creates a response to parse from MoveAlbumPhotos response
 func CreateMoveAlbumPhotosResponse() (response *MoveAlbumPhotosResponse) {
 	response = &MoveAlbumPhotosResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke GetCrackStatistics api with *GetCrackStatisticsRequest synchronously
+// GetCrackStatistics invokes the aegis.GetCrackStatistics API synchronously
 // api document: https://help.aliyun.com/api/aegis/getcrackstatistics.html
 func (client *Client) GetCrackStatistics(request *GetCrackStatisticsRequest) (response *GetCrackStatisticsResponse, err error) {
 	response = CreateGetCrackStatisticsResponse()
@@ -28,7 +28,7 @@ func (client *Client) GetCrackStatistics(request *GetCrackStatisticsRequest) (re
 	return
 }
 
-// invoke GetCrackStatistics api with *GetCrackStatisticsRequest asynchronously
+// GetCrackStatisticsWithChan invokes the aegis.GetCrackStatistics API asynchronously
 // api document: https://help.aliyun.com/api/aegis/getcrackstatistics.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetCrackStatisticsWithChan(request *GetCrackStatisticsRequest) (<-chan *GetCrackStatisticsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) GetCrackStatisticsWithChan(request *GetCrackStatisticsRequ
 	return responseChan, errChan
 }
 
-// invoke GetCrackStatistics api with *GetCrackStatisticsRequest asynchronously
+// GetCrackStatisticsWithCallback invokes the aegis.GetCrackStatistics API asynchronously
 // api document: https://help.aliyun.com/api/aegis/getcrackstatistics.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetCrackStatisticsWithCallback(request *GetCrackStatisticsRequest, callback func(response *GetCrackStatisticsResponse, err error)) <-chan int {
@@ -73,12 +73,14 @@ func (client *Client) GetCrackStatisticsWithCallback(request *GetCrackStatistics
 	return result
 }
 
+// GetCrackStatisticsRequest is the request struct for api GetCrackStatistics
 type GetCrackStatisticsRequest struct {
 	*requests.RpcRequest
 	StartTime string `position:"Query" name:"StartTime"`
 	EndTime   string `position:"Query" name:"EndTime"`
 }
 
+// GetCrackStatisticsResponse is the response struct for api GetCrackStatistics
 type GetCrackStatisticsResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"requestId" xml:"requestId"`
@@ -88,8 +90,8 @@ type GetCrackStatisticsResponse struct {
 	Data      Data   `json:"Data" xml:"Data"`
 }
 
-// create a request to invoke GetCrackStatistics API
-func CreateGetCrackStatisticsRequest() (request *GetCrackStatisticsRequest) {
+// CreateGetCrackStatisticsRequest creates a request to invoke GetCrackStatistics API
+func CreateGetCrackStatisticsRequest(request *GetCrackStatisticsRequest) {
 	request = &GetCrackStatisticsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateGetCrackStatisticsRequest() (request *GetCrackStatisticsRequest) {
 	return
 }
 
-// create a response to parse from GetCrackStatistics response
+// CreateGetCrackStatisticsResponse creates a response to parse from GetCrackStatistics response
 func CreateGetCrackStatisticsResponse() (response *GetCrackStatisticsResponse) {
 	response = &GetCrackStatisticsResponse{
 		BaseResponse: &responses.BaseResponse{},

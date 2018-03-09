@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke PushObjectCache api with *PushObjectCacheRequest synchronously
+// PushObjectCache invokes the cdn.PushObjectCache API synchronously
 // api document: https://help.aliyun.com/api/cdn/pushobjectcache.html
 func (client *Client) PushObjectCache(request *PushObjectCacheRequest) (response *PushObjectCacheResponse, err error) {
 	response = CreatePushObjectCacheResponse()
@@ -28,7 +28,7 @@ func (client *Client) PushObjectCache(request *PushObjectCacheRequest) (response
 	return
 }
 
-// invoke PushObjectCache api with *PushObjectCacheRequest asynchronously
+// PushObjectCacheWithChan invokes the cdn.PushObjectCache API asynchronously
 // api document: https://help.aliyun.com/api/cdn/pushobjectcache.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PushObjectCacheWithChan(request *PushObjectCacheRequest) (<-chan *PushObjectCacheResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) PushObjectCacheWithChan(request *PushObjectCacheRequest) (
 	return responseChan, errChan
 }
 
-// invoke PushObjectCache api with *PushObjectCacheRequest asynchronously
+// PushObjectCacheWithCallback invokes the cdn.PushObjectCache API asynchronously
 // api document: https://help.aliyun.com/api/cdn/pushobjectcache.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) PushObjectCacheWithCallback(request *PushObjectCacheRequest, callback func(response *PushObjectCacheResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) PushObjectCacheWithCallback(request *PushObjectCacheReques
 	return result
 }
 
+// PushObjectCacheRequest is the request struct for api PushObjectCache
 type PushObjectCacheRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -80,14 +81,15 @@ type PushObjectCacheRequest struct {
 	ObjectPath    string           `position:"Query" name:"ObjectPath"`
 }
 
+// PushObjectCacheResponse is the response struct for api PushObjectCache
 type PushObjectCacheResponse struct {
 	*responses.BaseResponse
 	RequestId  string `json:"RequestId" xml:"RequestId"`
 	PushTaskId string `json:"PushTaskId" xml:"PushTaskId"`
 }
 
-// create a request to invoke PushObjectCache API
-func CreatePushObjectCacheRequest() (request *PushObjectCacheRequest) {
+// CreatePushObjectCacheRequest creates a request to invoke PushObjectCache API
+func CreatePushObjectCacheRequest(request *PushObjectCacheRequest) {
 	request = &PushObjectCacheRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreatePushObjectCacheRequest() (request *PushObjectCacheRequest) {
 	return
 }
 
-// create a response to parse from PushObjectCache response
+// CreatePushObjectCacheResponse creates a response to parse from PushObjectCache response
 func CreatePushObjectCacheResponse() (response *PushObjectCacheResponse) {
 	response = &PushObjectCacheResponse{
 		BaseResponse: &responses.BaseResponse{},

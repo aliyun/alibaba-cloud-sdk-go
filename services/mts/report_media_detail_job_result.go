@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ReportMediaDetailJobResult api with *ReportMediaDetailJobResultRequest synchronously
+// ReportMediaDetailJobResult invokes the mts.ReportMediaDetailJobResult API synchronously
 // api document: https://help.aliyun.com/api/mts/reportmediadetailjobresult.html
 func (client *Client) ReportMediaDetailJobResult(request *ReportMediaDetailJobResultRequest) (response *ReportMediaDetailJobResultResponse, err error) {
 	response = CreateReportMediaDetailJobResultResponse()
@@ -28,7 +28,7 @@ func (client *Client) ReportMediaDetailJobResult(request *ReportMediaDetailJobRe
 	return
 }
 
-// invoke ReportMediaDetailJobResult api with *ReportMediaDetailJobResultRequest asynchronously
+// ReportMediaDetailJobResultWithChan invokes the mts.ReportMediaDetailJobResult API asynchronously
 // api document: https://help.aliyun.com/api/mts/reportmediadetailjobresult.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReportMediaDetailJobResultWithChan(request *ReportMediaDetailJobResultRequest) (<-chan *ReportMediaDetailJobResultResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ReportMediaDetailJobResultWithChan(request *ReportMediaDet
 	return responseChan, errChan
 }
 
-// invoke ReportMediaDetailJobResult api with *ReportMediaDetailJobResultRequest asynchronously
+// ReportMediaDetailJobResultWithCallback invokes the mts.ReportMediaDetailJobResult API asynchronously
 // api document: https://help.aliyun.com/api/mts/reportmediadetailjobresult.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ReportMediaDetailJobResultWithCallback(request *ReportMediaDetailJobResultRequest, callback func(response *ReportMediaDetailJobResultResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ReportMediaDetailJobResultWithCallback(request *ReportMedi
 	return result
 }
 
+// ReportMediaDetailJobResultRequest is the request struct for api ReportMediaDetailJobResult
 type ReportMediaDetailJobResultRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,14 +85,15 @@ type ReportMediaDetailJobResultRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// ReportMediaDetailJobResultResponse is the response struct for api ReportMediaDetailJobResult
 type ReportMediaDetailJobResultResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	JobId     string `json:"JobId" xml:"JobId"`
 }
 
-// create a request to invoke ReportMediaDetailJobResult API
-func CreateReportMediaDetailJobResultRequest() (request *ReportMediaDetailJobResultRequest) {
+// CreateReportMediaDetailJobResultRequest creates a request to invoke ReportMediaDetailJobResult API
+func CreateReportMediaDetailJobResultRequest(request *ReportMediaDetailJobResultRequest) {
 	request = &ReportMediaDetailJobResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -99,7 +101,7 @@ func CreateReportMediaDetailJobResultRequest() (request *ReportMediaDetailJobRes
 	return
 }
 
-// create a response to parse from ReportMediaDetailJobResult response
+// CreateReportMediaDetailJobResultResponse creates a response to parse from ReportMediaDetailJobResult response
 func CreateReportMediaDetailJobResultResponse() (response *ReportMediaDetailJobResultResponse) {
 	response = &ReportMediaDetailJobResultResponse{
 		BaseResponse: &responses.BaseResponse{},

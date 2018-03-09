@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeLiveStreamDomainAppInfo api with *DescribeLiveStreamDomainAppInfoRequest synchronously
+// DescribeLiveStreamDomainAppInfo invokes the cdn.DescribeLiveStreamDomainAppInfo API synchronously
 // api document: https://help.aliyun.com/api/cdn/describelivestreamdomainappinfo.html
 func (client *Client) DescribeLiveStreamDomainAppInfo(request *DescribeLiveStreamDomainAppInfoRequest) (response *DescribeLiveStreamDomainAppInfoResponse, err error) {
 	response = CreateDescribeLiveStreamDomainAppInfoResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeLiveStreamDomainAppInfo(request *DescribeLiveStrea
 	return
 }
 
-// invoke DescribeLiveStreamDomainAppInfo api with *DescribeLiveStreamDomainAppInfoRequest asynchronously
+// DescribeLiveStreamDomainAppInfoWithChan invokes the cdn.DescribeLiveStreamDomainAppInfo API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describelivestreamdomainappinfo.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamDomainAppInfoWithChan(request *DescribeLiveStreamDomainAppInfoRequest) (<-chan *DescribeLiveStreamDomainAppInfoResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeLiveStreamDomainAppInfoWithChan(request *DescribeL
 	return responseChan, errChan
 }
 
-// invoke DescribeLiveStreamDomainAppInfo api with *DescribeLiveStreamDomainAppInfoRequest asynchronously
+// DescribeLiveStreamDomainAppInfoWithCallback invokes the cdn.DescribeLiveStreamDomainAppInfo API asynchronously
 // api document: https://help.aliyun.com/api/cdn/describelivestreamdomainappinfo.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeLiveStreamDomainAppInfoWithCallback(request *DescribeLiveStreamDomainAppInfoRequest, callback func(response *DescribeLiveStreamDomainAppInfoResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeLiveStreamDomainAppInfoWithCallback(request *Descr
 	return result
 }
 
+// DescribeLiveStreamDomainAppInfoRequest is the request struct for api DescribeLiveStreamDomainAppInfo
 type DescribeLiveStreamDomainAppInfoRequest struct {
 	*requests.RpcRequest
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
@@ -80,14 +81,15 @@ type DescribeLiveStreamDomainAppInfoRequest struct {
 	AppDomain     string           `position:"Query" name:"AppDomain"`
 }
 
+// DescribeLiveStreamDomainAppInfoResponse is the response struct for api DescribeLiveStreamDomainAppInfo
 type DescribeLiveStreamDomainAppInfoResponse struct {
 	*responses.BaseResponse
 	RequestId     string        `json:"RequestId" xml:"RequestId"`
 	DomainAppList DomainAppList `json:"DomainAppList" xml:"DomainAppList"`
 }
 
-// create a request to invoke DescribeLiveStreamDomainAppInfo API
-func CreateDescribeLiveStreamDomainAppInfoRequest() (request *DescribeLiveStreamDomainAppInfoRequest) {
+// CreateDescribeLiveStreamDomainAppInfoRequest creates a request to invoke DescribeLiveStreamDomainAppInfo API
+func CreateDescribeLiveStreamDomainAppInfoRequest(request *DescribeLiveStreamDomainAppInfoRequest) {
 	request = &DescribeLiveStreamDomainAppInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateDescribeLiveStreamDomainAppInfoRequest() (request *DescribeLiveStream
 	return
 }
 
-// create a response to parse from DescribeLiveStreamDomainAppInfo response
+// CreateDescribeLiveStreamDomainAppInfoResponse creates a response to parse from DescribeLiveStreamDomainAppInfo response
 func CreateDescribeLiveStreamDomainAppInfoResponse() (response *DescribeLiveStreamDomainAppInfoResponse) {
 	response = &DescribeLiveStreamDomainAppInfoResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke AddCoverPipeline api with *AddCoverPipelineRequest synchronously
+// AddCoverPipeline invokes the mts.AddCoverPipeline API synchronously
 // api document: https://help.aliyun.com/api/mts/addcoverpipeline.html
 func (client *Client) AddCoverPipeline(request *AddCoverPipelineRequest) (response *AddCoverPipelineResponse, err error) {
 	response = CreateAddCoverPipelineResponse()
@@ -28,7 +28,7 @@ func (client *Client) AddCoverPipeline(request *AddCoverPipelineRequest) (respon
 	return
 }
 
-// invoke AddCoverPipeline api with *AddCoverPipelineRequest asynchronously
+// AddCoverPipelineWithChan invokes the mts.AddCoverPipeline API asynchronously
 // api document: https://help.aliyun.com/api/mts/addcoverpipeline.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddCoverPipelineWithChan(request *AddCoverPipelineRequest) (<-chan *AddCoverPipelineResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) AddCoverPipelineWithChan(request *AddCoverPipelineRequest)
 	return responseChan, errChan
 }
 
-// invoke AddCoverPipeline api with *AddCoverPipelineRequest asynchronously
+// AddCoverPipelineWithCallback invokes the mts.AddCoverPipeline API asynchronously
 // api document: https://help.aliyun.com/api/mts/addcoverpipeline.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AddCoverPipelineWithCallback(request *AddCoverPipelineRequest, callback func(response *AddCoverPipelineResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) AddCoverPipelineWithCallback(request *AddCoverPipelineRequ
 	return result
 }
 
+// AddCoverPipelineRequest is the request struct for api AddCoverPipeline
 type AddCoverPipelineRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -85,14 +86,15 @@ type AddCoverPipelineRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// AddCoverPipelineResponse is the response struct for api AddCoverPipeline
 type AddCoverPipelineResponse struct {
 	*responses.BaseResponse
 	RequestId string                     `json:"RequestId" xml:"RequestId"`
 	Pipeline  PipelineInAddCoverPipeline `json:"Pipeline" xml:"Pipeline"`
 }
 
-// create a request to invoke AddCoverPipeline API
-func CreateAddCoverPipelineRequest() (request *AddCoverPipelineRequest) {
+// CreateAddCoverPipelineRequest creates a request to invoke AddCoverPipeline API
+func CreateAddCoverPipelineRequest(request *AddCoverPipelineRequest) {
 	request = &AddCoverPipelineRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -100,7 +102,7 @@ func CreateAddCoverPipelineRequest() (request *AddCoverPipelineRequest) {
 	return
 }
 
-// create a response to parse from AddCoverPipeline response
+// CreateAddCoverPipelineResponse creates a response to parse from AddCoverPipeline response
 func CreateAddCoverPipelineResponse() (response *AddCoverPipelineResponse) {
 	response = &AddCoverPipelineResponse{
 		BaseResponse: &responses.BaseResponse{},

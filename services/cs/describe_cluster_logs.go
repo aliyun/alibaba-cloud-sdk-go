@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeClusterLogs api with *DescribeClusterLogsRequest synchronously
+// DescribeClusterLogs invokes the cs.DescribeClusterLogs API synchronously
 // api document: https://help.aliyun.com/api/cs/describeclusterlogs.html
 func (client *Client) DescribeClusterLogs(request *DescribeClusterLogsRequest) (response *DescribeClusterLogsResponse, err error) {
 	response = CreateDescribeClusterLogsResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeClusterLogs(request *DescribeClusterLogsRequest) (
 	return
 }
 
-// invoke DescribeClusterLogs api with *DescribeClusterLogsRequest asynchronously
+// DescribeClusterLogsWithChan invokes the cs.DescribeClusterLogs API asynchronously
 // api document: https://help.aliyun.com/api/cs/describeclusterlogs.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeClusterLogsWithChan(request *DescribeClusterLogsRequest) (<-chan *DescribeClusterLogsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeClusterLogsWithChan(request *DescribeClusterLogsRe
 	return responseChan, errChan
 }
 
-// invoke DescribeClusterLogs api with *DescribeClusterLogsRequest asynchronously
+// DescribeClusterLogsWithCallback invokes the cs.DescribeClusterLogs API asynchronously
 // api document: https://help.aliyun.com/api/cs/describeclusterlogs.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeClusterLogsWithCallback(request *DescribeClusterLogsRequest, callback func(response *DescribeClusterLogsResponse, err error)) <-chan int {
@@ -73,17 +73,19 @@ func (client *Client) DescribeClusterLogsWithCallback(request *DescribeClusterLo
 	return result
 }
 
+// DescribeClusterLogsRequest is the request struct for api DescribeClusterLogs
 type DescribeClusterLogsRequest struct {
 	*requests.RoaRequest
 	ClusterId string `position:"Path" name:"ClusterId"`
 }
 
+// DescribeClusterLogsResponse is the response struct for api DescribeClusterLogs
 type DescribeClusterLogsResponse struct {
 	*responses.BaseResponse
 }
 
-// create a request to invoke DescribeClusterLogs API
-func CreateDescribeClusterLogsRequest() (request *DescribeClusterLogsRequest) {
+// CreateDescribeClusterLogsRequest creates a request to invoke DescribeClusterLogs API
+func CreateDescribeClusterLogsRequest(request *DescribeClusterLogsRequest) {
 	request = &DescribeClusterLogsRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
@@ -92,7 +94,7 @@ func CreateDescribeClusterLogsRequest() (request *DescribeClusterLogsRequest) {
 	return
 }
 
-// create a response to parse from DescribeClusterLogs response
+// CreateDescribeClusterLogsResponse creates a response to parse from DescribeClusterLogs response
 func CreateDescribeClusterLogsResponse() (response *DescribeClusterLogsResponse) {
 	response = &DescribeClusterLogsResponse{
 		BaseResponse: &responses.BaseResponse{},

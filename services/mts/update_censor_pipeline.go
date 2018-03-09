@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke UpdateCensorPipeline api with *UpdateCensorPipelineRequest synchronously
+// UpdateCensorPipeline invokes the mts.UpdateCensorPipeline API synchronously
 // api document: https://help.aliyun.com/api/mts/updatecensorpipeline.html
 func (client *Client) UpdateCensorPipeline(request *UpdateCensorPipelineRequest) (response *UpdateCensorPipelineResponse, err error) {
 	response = CreateUpdateCensorPipelineResponse()
@@ -28,7 +28,7 @@ func (client *Client) UpdateCensorPipeline(request *UpdateCensorPipelineRequest)
 	return
 }
 
-// invoke UpdateCensorPipeline api with *UpdateCensorPipelineRequest asynchronously
+// UpdateCensorPipelineWithChan invokes the mts.UpdateCensorPipeline API asynchronously
 // api document: https://help.aliyun.com/api/mts/updatecensorpipeline.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateCensorPipelineWithChan(request *UpdateCensorPipelineRequest) (<-chan *UpdateCensorPipelineResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) UpdateCensorPipelineWithChan(request *UpdateCensorPipeline
 	return responseChan, errChan
 }
 
-// invoke UpdateCensorPipeline api with *UpdateCensorPipelineRequest asynchronously
+// UpdateCensorPipelineWithCallback invokes the mts.UpdateCensorPipeline API asynchronously
 // api document: https://help.aliyun.com/api/mts/updatecensorpipeline.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateCensorPipelineWithCallback(request *UpdateCensorPipelineRequest, callback func(response *UpdateCensorPipelineResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) UpdateCensorPipelineWithCallback(request *UpdateCensorPipe
 	return result
 }
 
+// UpdateCensorPipelineRequest is the request struct for api UpdateCensorPipeline
 type UpdateCensorPipelineRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -86,14 +87,15 @@ type UpdateCensorPipelineRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// UpdateCensorPipelineResponse is the response struct for api UpdateCensorPipeline
 type UpdateCensorPipelineResponse struct {
 	*responses.BaseResponse
 	RequestId string   `json:"RequestId" xml:"RequestId"`
 	Pipeline  Pipeline `json:"Pipeline" xml:"Pipeline"`
 }
 
-// create a request to invoke UpdateCensorPipeline API
-func CreateUpdateCensorPipelineRequest() (request *UpdateCensorPipelineRequest) {
+// CreateUpdateCensorPipelineRequest creates a request to invoke UpdateCensorPipeline API
+func CreateUpdateCensorPipelineRequest(request *UpdateCensorPipelineRequest) {
 	request = &UpdateCensorPipelineRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -101,7 +103,7 @@ func CreateUpdateCensorPipelineRequest() (request *UpdateCensorPipelineRequest) 
 	return
 }
 
-// create a response to parse from UpdateCensorPipeline response
+// CreateUpdateCensorPipelineResponse creates a response to parse from UpdateCensorPipeline response
 func CreateUpdateCensorPipelineResponse() (response *UpdateCensorPipelineResponse) {
 	response = &UpdateCensorPipelineResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke ProfileSet api with *ProfileSetRequest synchronously
+// ProfileSet invokes the cms.ProfileSet API synchronously
 // api document: https://help.aliyun.com/api/cms/profileset.html
 func (client *Client) ProfileSet(request *ProfileSetRequest) (response *ProfileSetResponse, err error) {
 	response = CreateProfileSetResponse()
@@ -28,7 +28,7 @@ func (client *Client) ProfileSet(request *ProfileSetRequest) (response *ProfileS
 	return
 }
 
-// invoke ProfileSet api with *ProfileSetRequest asynchronously
+// ProfileSetWithChan invokes the cms.ProfileSet API asynchronously
 // api document: https://help.aliyun.com/api/cms/profileset.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ProfileSetWithChan(request *ProfileSetRequest) (<-chan *ProfileSetResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) ProfileSetWithChan(request *ProfileSetRequest) (<-chan *Pr
 	return responseChan, errChan
 }
 
-// invoke ProfileSet api with *ProfileSetRequest asynchronously
+// ProfileSetWithCallback invokes the cms.ProfileSet API asynchronously
 // api document: https://help.aliyun.com/api/cms/profileset.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) ProfileSetWithCallback(request *ProfileSetRequest, callback func(response *ProfileSetResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) ProfileSetWithCallback(request *ProfileSetRequest, callbac
 	return result
 }
 
+// ProfileSetRequest is the request struct for api ProfileSet
 type ProfileSetRequest struct {
 	*requests.RpcRequest
 	UserId                   requests.Integer `position:"Query" name:"UserId"`
@@ -81,6 +82,7 @@ type ProfileSetRequest struct {
 	EnableActiveAlert        string           `position:"Query" name:"EnableActiveAlert"`
 }
 
+// ProfileSetResponse is the response struct for api ProfileSet
 type ProfileSetResponse struct {
 	*responses.BaseResponse
 	ErrorCode    int    `json:"ErrorCode" xml:"ErrorCode"`
@@ -89,8 +91,8 @@ type ProfileSetResponse struct {
 	RequestId    string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke ProfileSet API
-func CreateProfileSetRequest() (request *ProfileSetRequest) {
+// CreateProfileSetRequest creates a request to invoke ProfileSet API
+func CreateProfileSetRequest(request *ProfileSetRequest) {
 	request = &ProfileSetRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -98,7 +100,7 @@ func CreateProfileSetRequest() (request *ProfileSetRequest) {
 	return
 }
 
-// create a response to parse from ProfileSet response
+// CreateProfileSetResponse creates a response to parse from ProfileSet response
 func CreateProfileSetResponse() (response *ProfileSetResponse) {
 	response = &ProfileSetResponse{
 		BaseResponse: &responses.BaseResponse{},

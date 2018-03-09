@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke BatchSendMail api with *BatchSendMailRequest synchronously
+// BatchSendMail invokes the dm.BatchSendMail API synchronously
 // api document: https://help.aliyun.com/api/dm/batchsendmail.html
 func (client *Client) BatchSendMail(request *BatchSendMailRequest) (response *BatchSendMailResponse, err error) {
 	response = CreateBatchSendMailResponse()
@@ -28,7 +28,7 @@ func (client *Client) BatchSendMail(request *BatchSendMailRequest) (response *Ba
 	return
 }
 
-// invoke BatchSendMail api with *BatchSendMailRequest asynchronously
+// BatchSendMailWithChan invokes the dm.BatchSendMail API asynchronously
 // api document: https://help.aliyun.com/api/dm/batchsendmail.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BatchSendMailWithChan(request *BatchSendMailRequest) (<-chan *BatchSendMailResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) BatchSendMailWithChan(request *BatchSendMailRequest) (<-ch
 	return responseChan, errChan
 }
 
-// invoke BatchSendMail api with *BatchSendMailRequest asynchronously
+// BatchSendMailWithCallback invokes the dm.BatchSendMail API asynchronously
 // api document: https://help.aliyun.com/api/dm/batchsendmail.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) BatchSendMailWithCallback(request *BatchSendMailRequest, callback func(response *BatchSendMailResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) BatchSendMailWithCallback(request *BatchSendMailRequest, c
 	return result
 }
 
+// BatchSendMailRequest is the request struct for api BatchSendMail
 type BatchSendMailRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -88,14 +89,15 @@ type BatchSendMailRequest struct {
 	ClickTrace           string           `position:"Query" name:"ClickTrace"`
 }
 
+// BatchSendMailResponse is the response struct for api BatchSendMail
 type BatchSendMailResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	EnvId     string `json:"EnvId" xml:"EnvId"`
 }
 
-// create a request to invoke BatchSendMail API
-func CreateBatchSendMailRequest() (request *BatchSendMailRequest) {
+// CreateBatchSendMailRequest creates a request to invoke BatchSendMail API
+func CreateBatchSendMailRequest(request *BatchSendMailRequest) {
 	request = &BatchSendMailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -103,7 +105,7 @@ func CreateBatchSendMailRequest() (request *BatchSendMailRequest) {
 	return
 }
 
-// create a response to parse from BatchSendMail response
+// CreateBatchSendMailResponse creates a response to parse from BatchSendMail response
 func CreateBatchSendMailResponse() (response *BatchSendMailResponse) {
 	response = &BatchSendMailResponse{
 		BaseResponse: &responses.BaseResponse{},

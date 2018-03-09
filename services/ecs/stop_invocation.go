@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke StopInvocation api with *StopInvocationRequest synchronously
+// StopInvocation invokes the ecs.StopInvocation API synchronously
 // api document: https://help.aliyun.com/api/ecs/stopinvocation.html
 func (client *Client) StopInvocation(request *StopInvocationRequest) (response *StopInvocationResponse, err error) {
 	response = CreateStopInvocationResponse()
@@ -28,7 +28,7 @@ func (client *Client) StopInvocation(request *StopInvocationRequest) (response *
 	return
 }
 
-// invoke StopInvocation api with *StopInvocationRequest asynchronously
+// StopInvocationWithChan invokes the ecs.StopInvocation API asynchronously
 // api document: https://help.aliyun.com/api/ecs/stopinvocation.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StopInvocationWithChan(request *StopInvocationRequest) (<-chan *StopInvocationResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) StopInvocationWithChan(request *StopInvocationRequest) (<-
 	return responseChan, errChan
 }
 
-// invoke StopInvocation api with *StopInvocationRequest asynchronously
+// StopInvocationWithCallback invokes the ecs.StopInvocation API asynchronously
 // api document: https://help.aliyun.com/api/ecs/stopinvocation.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) StopInvocationWithCallback(request *StopInvocationRequest, callback func(response *StopInvocationResponse, err error)) <-chan int {
@@ -73,17 +73,19 @@ func (client *Client) StopInvocationWithCallback(request *StopInvocationRequest,
 	return result
 }
 
+// StopInvocationRequest is the request struct for api StopInvocation
 type StopInvocationRequest struct {
 	*requests.RpcRequest
 }
 
+// StopInvocationResponse is the response struct for api StopInvocation
 type StopInvocationResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke StopInvocation API
-func CreateStopInvocationRequest() (request *StopInvocationRequest) {
+// CreateStopInvocationRequest creates a request to invoke StopInvocation API
+func CreateStopInvocationRequest(request *StopInvocationRequest) {
 	request = &StopInvocationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -91,7 +93,7 @@ func CreateStopInvocationRequest() (request *StopInvocationRequest) {
 	return
 }
 
-// create a response to parse from StopInvocation response
+// CreateStopInvocationResponse creates a response to parse from StopInvocation response
 func CreateStopInvocationResponse() (response *StopInvocationResponse) {
 	response = &StopInvocationResponse{
 		BaseResponse: &responses.BaseResponse{},

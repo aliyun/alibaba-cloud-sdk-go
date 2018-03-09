@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke AssumeRole api with *AssumeRoleRequest synchronously
+// AssumeRole invokes the sts.AssumeRole API synchronously
 // api document: https://help.aliyun.com/api/sts/assumerole.html
 func (client *Client) AssumeRole(request *AssumeRoleRequest) (response *AssumeRoleResponse, err error) {
 	response = CreateAssumeRoleResponse()
@@ -28,7 +28,7 @@ func (client *Client) AssumeRole(request *AssumeRoleRequest) (response *AssumeRo
 	return
 }
 
-// invoke AssumeRole api with *AssumeRoleRequest asynchronously
+// AssumeRoleWithChan invokes the sts.AssumeRole API asynchronously
 // api document: https://help.aliyun.com/api/sts/assumerole.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AssumeRoleWithChan(request *AssumeRoleRequest) (<-chan *AssumeRoleResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) AssumeRoleWithChan(request *AssumeRoleRequest) (<-chan *As
 	return responseChan, errChan
 }
 
-// invoke AssumeRole api with *AssumeRoleRequest asynchronously
+// AssumeRoleWithCallback invokes the sts.AssumeRole API asynchronously
 // api document: https://help.aliyun.com/api/sts/assumerole.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) AssumeRoleWithCallback(request *AssumeRoleRequest, callback func(response *AssumeRoleResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) AssumeRoleWithCallback(request *AssumeRoleRequest, callbac
 	return result
 }
 
+// AssumeRoleRequest is the request struct for api AssumeRole
 type AssumeRoleRequest struct {
 	*requests.RpcRequest
 	DurationSeconds requests.Integer `position:"Query" name:"DurationSeconds"`
@@ -81,6 +82,7 @@ type AssumeRoleRequest struct {
 	RoleSessionName string           `position:"Query" name:"RoleSessionName"`
 }
 
+// AssumeRoleResponse is the response struct for api AssumeRole
 type AssumeRoleResponse struct {
 	*responses.BaseResponse
 	RequestId       string          `json:"RequestId" xml:"RequestId"`
@@ -88,8 +90,8 @@ type AssumeRoleResponse struct {
 	AssumedRoleUser AssumedRoleUser `json:"AssumedRoleUser" xml:"AssumedRoleUser"`
 }
 
-// create a request to invoke AssumeRole API
-func CreateAssumeRoleRequest() (request *AssumeRoleRequest) {
+// CreateAssumeRoleRequest creates a request to invoke AssumeRole API
+func CreateAssumeRoleRequest(request *AssumeRoleRequest) {
 	request = &AssumeRoleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -97,7 +99,7 @@ func CreateAssumeRoleRequest() (request *AssumeRoleRequest) {
 	return
 }
 
-// create a response to parse from AssumeRole response
+// CreateAssumeRoleResponse creates a response to parse from AssumeRole response
 func CreateAssumeRoleResponse() (response *AssumeRoleResponse) {
 	response = &AssumeRoleResponse{
 		BaseResponse: &responses.BaseResponse{},

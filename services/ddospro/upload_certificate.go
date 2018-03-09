@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke UploadCertificate api with *UploadCertificateRequest synchronously
+// UploadCertificate invokes the ddospro.UploadCertificate API synchronously
 // api document: https://help.aliyun.com/api/ddospro/uploadcertificate.html
 func (client *Client) UploadCertificate(request *UploadCertificateRequest) (response *UploadCertificateResponse, err error) {
 	response = CreateUploadCertificateResponse()
@@ -28,7 +28,7 @@ func (client *Client) UploadCertificate(request *UploadCertificateRequest) (resp
 	return
 }
 
-// invoke UploadCertificate api with *UploadCertificateRequest asynchronously
+// UploadCertificateWithChan invokes the ddospro.UploadCertificate API asynchronously
 // api document: https://help.aliyun.com/api/ddospro/uploadcertificate.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UploadCertificateWithChan(request *UploadCertificateRequest) (<-chan *UploadCertificateResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) UploadCertificateWithChan(request *UploadCertificateReques
 	return responseChan, errChan
 }
 
-// invoke UploadCertificate api with *UploadCertificateRequest asynchronously
+// UploadCertificateWithCallback invokes the ddospro.UploadCertificate API asynchronously
 // api document: https://help.aliyun.com/api/ddospro/uploadcertificate.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UploadCertificateWithCallback(request *UploadCertificateRequest, callback func(response *UploadCertificateResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) UploadCertificateWithCallback(request *UploadCertificateRe
 	return result
 }
 
+// UploadCertificateRequest is the request struct for api UploadCertificate
 type UploadCertificateRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
@@ -81,13 +82,14 @@ type UploadCertificateRequest struct {
 	Key             string           `position:"Query" name:"Key"`
 }
 
+// UploadCertificateResponse is the response struct for api UploadCertificate
 type UploadCertificateResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke UploadCertificate API
-func CreateUploadCertificateRequest() (request *UploadCertificateRequest) {
+// CreateUploadCertificateRequest creates a request to invoke UploadCertificate API
+func CreateUploadCertificateRequest(request *UploadCertificateRequest) {
 	request = &UploadCertificateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateUploadCertificateRequest() (request *UploadCertificateRequest) {
 	return
 }
 
-// create a response to parse from UploadCertificate response
+// CreateUploadCertificateResponse creates a response to parse from UploadCertificate response
 func CreateUploadCertificateResponse() (response *UploadCertificateResponse) {
 	response = &UploadCertificateResponse{
 		BaseResponse: &responses.BaseResponse{},

@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeBandwidthPackagePublicIpMonitorData api with *DescribeBandwidthPackagePublicIpMonitorDataRequest synchronously
+// DescribeBandwidthPackagePublicIpMonitorData invokes the vpc.DescribeBandwidthPackagePublicIpMonitorData API synchronously
 // api document: https://help.aliyun.com/api/vpc/describebandwidthpackagepublicipmonitordata.html
 func (client *Client) DescribeBandwidthPackagePublicIpMonitorData(request *DescribeBandwidthPackagePublicIpMonitorDataRequest) (response *DescribeBandwidthPackagePublicIpMonitorDataResponse, err error) {
 	response = CreateDescribeBandwidthPackagePublicIpMonitorDataResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeBandwidthPackagePublicIpMonitorData(request *Descr
 	return
 }
 
-// invoke DescribeBandwidthPackagePublicIpMonitorData api with *DescribeBandwidthPackagePublicIpMonitorDataRequest asynchronously
+// DescribeBandwidthPackagePublicIpMonitorDataWithChan invokes the vpc.DescribeBandwidthPackagePublicIpMonitorData API asynchronously
 // api document: https://help.aliyun.com/api/vpc/describebandwidthpackagepublicipmonitordata.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBandwidthPackagePublicIpMonitorDataWithChan(request *DescribeBandwidthPackagePublicIpMonitorDataRequest) (<-chan *DescribeBandwidthPackagePublicIpMonitorDataResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeBandwidthPackagePublicIpMonitorDataWithChan(reques
 	return responseChan, errChan
 }
 
-// invoke DescribeBandwidthPackagePublicIpMonitorData api with *DescribeBandwidthPackagePublicIpMonitorDataRequest asynchronously
+// DescribeBandwidthPackagePublicIpMonitorDataWithCallback invokes the vpc.DescribeBandwidthPackagePublicIpMonitorData API asynchronously
 // api document: https://help.aliyun.com/api/vpc/describebandwidthpackagepublicipmonitordata.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeBandwidthPackagePublicIpMonitorDataWithCallback(request *DescribeBandwidthPackagePublicIpMonitorDataRequest, callback func(response *DescribeBandwidthPackagePublicIpMonitorDataResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeBandwidthPackagePublicIpMonitorDataWithCallback(re
 	return result
 }
 
+// DescribeBandwidthPackagePublicIpMonitorDataRequest is the request struct for api DescribeBandwidthPackagePublicIpMonitorData
 type DescribeBandwidthPackagePublicIpMonitorDataRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -85,14 +86,15 @@ type DescribeBandwidthPackagePublicIpMonitorDataRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// DescribeBandwidthPackagePublicIpMonitorDataResponse is the response struct for api DescribeBandwidthPackagePublicIpMonitorData
 type DescribeBandwidthPackagePublicIpMonitorDataResponse struct {
 	*responses.BaseResponse
 	RequestId    string       `json:"RequestId" xml:"RequestId"`
 	MonitorDatas MonitorDatas `json:"MonitorDatas" xml:"MonitorDatas"`
 }
 
-// create a request to invoke DescribeBandwidthPackagePublicIpMonitorData API
-func CreateDescribeBandwidthPackagePublicIpMonitorDataRequest() (request *DescribeBandwidthPackagePublicIpMonitorDataRequest) {
+// CreateDescribeBandwidthPackagePublicIpMonitorDataRequest creates a request to invoke DescribeBandwidthPackagePublicIpMonitorData API
+func CreateDescribeBandwidthPackagePublicIpMonitorDataRequest(request *DescribeBandwidthPackagePublicIpMonitorDataRequest) {
 	request = &DescribeBandwidthPackagePublicIpMonitorDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -100,7 +102,7 @@ func CreateDescribeBandwidthPackagePublicIpMonitorDataRequest() (request *Descri
 	return
 }
 
-// create a response to parse from DescribeBandwidthPackagePublicIpMonitorData response
+// CreateDescribeBandwidthPackagePublicIpMonitorDataResponse creates a response to parse from DescribeBandwidthPackagePublicIpMonitorData response
 func CreateDescribeBandwidthPackagePublicIpMonitorDataResponse() (response *DescribeBandwidthPackagePublicIpMonitorDataResponse) {
 	response = &DescribeBandwidthPackagePublicIpMonitorDataResponse{
 		BaseResponse: &responses.BaseResponse{},

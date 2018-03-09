@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeVServerGroupAttribute api with *DescribeVServerGroupAttributeRequest synchronously
+// DescribeVServerGroupAttribute invokes the slb.DescribeVServerGroupAttribute API synchronously
 // api document: https://help.aliyun.com/api/slb/describevservergroupattribute.html
 func (client *Client) DescribeVServerGroupAttribute(request *DescribeVServerGroupAttributeRequest) (response *DescribeVServerGroupAttributeResponse, err error) {
 	response = CreateDescribeVServerGroupAttributeResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeVServerGroupAttribute(request *DescribeVServerGrou
 	return
 }
 
-// invoke DescribeVServerGroupAttribute api with *DescribeVServerGroupAttributeRequest asynchronously
+// DescribeVServerGroupAttributeWithChan invokes the slb.DescribeVServerGroupAttribute API asynchronously
 // api document: https://help.aliyun.com/api/slb/describevservergroupattribute.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeVServerGroupAttributeWithChan(request *DescribeVServerGroupAttributeRequest) (<-chan *DescribeVServerGroupAttributeResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeVServerGroupAttributeWithChan(request *DescribeVSe
 	return responseChan, errChan
 }
 
-// invoke DescribeVServerGroupAttribute api with *DescribeVServerGroupAttributeRequest asynchronously
+// DescribeVServerGroupAttributeWithCallback invokes the slb.DescribeVServerGroupAttribute API asynchronously
 // api document: https://help.aliyun.com/api/slb/describevservergroupattribute.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeVServerGroupAttributeWithCallback(request *DescribeVServerGroupAttributeRequest, callback func(response *DescribeVServerGroupAttributeResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeVServerGroupAttributeWithCallback(request *Describ
 	return result
 }
 
+// DescribeVServerGroupAttributeRequest is the request struct for api DescribeVServerGroupAttribute
 type DescribeVServerGroupAttributeRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -84,6 +85,7 @@ type DescribeVServerGroupAttributeRequest struct {
 	VServerGroupId       string           `position:"Query" name:"VServerGroupId"`
 }
 
+// DescribeVServerGroupAttributeResponse is the response struct for api DescribeVServerGroupAttribute
 type DescribeVServerGroupAttributeResponse struct {
 	*responses.BaseResponse
 	RequestId        string                                        `json:"RequestId" xml:"RequestId"`
@@ -92,8 +94,8 @@ type DescribeVServerGroupAttributeResponse struct {
 	BackendServers   BackendServersInDescribeVServerGroupAttribute `json:"BackendServers" xml:"BackendServers"`
 }
 
-// create a request to invoke DescribeVServerGroupAttribute API
-func CreateDescribeVServerGroupAttributeRequest() (request *DescribeVServerGroupAttributeRequest) {
+// CreateDescribeVServerGroupAttributeRequest creates a request to invoke DescribeVServerGroupAttribute API
+func CreateDescribeVServerGroupAttributeRequest(request *DescribeVServerGroupAttributeRequest) {
 	request = &DescribeVServerGroupAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -101,7 +103,7 @@ func CreateDescribeVServerGroupAttributeRequest() (request *DescribeVServerGroup
 	return
 }
 
-// create a response to parse from DescribeVServerGroupAttribute response
+// CreateDescribeVServerGroupAttributeResponse creates a response to parse from DescribeVServerGroupAttribute response
 func CreateDescribeVServerGroupAttributeResponse() (response *DescribeVServerGroupAttributeResponse) {
 	response = &DescribeVServerGroupAttributeResponse{
 		BaseResponse: &responses.BaseResponse{},

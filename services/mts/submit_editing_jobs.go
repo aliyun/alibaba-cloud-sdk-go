@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke SubmitEditingJobs api with *SubmitEditingJobsRequest synchronously
+// SubmitEditingJobs invokes the mts.SubmitEditingJobs API synchronously
 // api document: https://help.aliyun.com/api/mts/submiteditingjobs.html
 func (client *Client) SubmitEditingJobs(request *SubmitEditingJobsRequest) (response *SubmitEditingJobsResponse, err error) {
 	response = CreateSubmitEditingJobsResponse()
@@ -28,7 +28,7 @@ func (client *Client) SubmitEditingJobs(request *SubmitEditingJobsRequest) (resp
 	return
 }
 
-// invoke SubmitEditingJobs api with *SubmitEditingJobsRequest asynchronously
+// SubmitEditingJobsWithChan invokes the mts.SubmitEditingJobs API asynchronously
 // api document: https://help.aliyun.com/api/mts/submiteditingjobs.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitEditingJobsWithChan(request *SubmitEditingJobsRequest) (<-chan *SubmitEditingJobsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) SubmitEditingJobsWithChan(request *SubmitEditingJobsReques
 	return responseChan, errChan
 }
 
-// invoke SubmitEditingJobs api with *SubmitEditingJobsRequest asynchronously
+// SubmitEditingJobsWithCallback invokes the mts.SubmitEditingJobs API asynchronously
 // api document: https://help.aliyun.com/api/mts/submiteditingjobs.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) SubmitEditingJobsWithCallback(request *SubmitEditingJobsRequest, callback func(response *SubmitEditingJobsResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) SubmitEditingJobsWithCallback(request *SubmitEditingJobsRe
 	return result
 }
 
+// SubmitEditingJobsRequest is the request struct for api SubmitEditingJobs
 type SubmitEditingJobsRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -86,14 +87,15 @@ type SubmitEditingJobsRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
+// SubmitEditingJobsResponse is the response struct for api SubmitEditingJobs
 type SubmitEditingJobsResponse struct {
 	*responses.BaseResponse
 	RequestId     string                           `json:"RequestId" xml:"RequestId"`
 	JobResultList JobResultListInSubmitEditingJobs `json:"JobResultList" xml:"JobResultList"`
 }
 
-// create a request to invoke SubmitEditingJobs API
-func CreateSubmitEditingJobsRequest() (request *SubmitEditingJobsRequest) {
+// CreateSubmitEditingJobsRequest creates a request to invoke SubmitEditingJobs API
+func CreateSubmitEditingJobsRequest(request *SubmitEditingJobsRequest) {
 	request = &SubmitEditingJobsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -101,7 +103,7 @@ func CreateSubmitEditingJobsRequest() (request *SubmitEditingJobsRequest) {
 	return
 }
 
-// create a response to parse from SubmitEditingJobs response
+// CreateSubmitEditingJobsResponse creates a response to parse from SubmitEditingJobs response
 func CreateSubmitEditingJobsResponse() (response *SubmitEditingJobsResponse) {
 	response = &SubmitEditingJobsResponse{
 		BaseResponse: &responses.BaseResponse{},

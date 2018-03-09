@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeDomainBlackWhiteList api with *DescribeDomainBlackWhiteListRequest synchronously
+// DescribeDomainBlackWhiteList invokes the ddospro.DescribeDomainBlackWhiteList API synchronously
 // api document: https://help.aliyun.com/api/ddospro/describedomainblackwhitelist.html
 func (client *Client) DescribeDomainBlackWhiteList(request *DescribeDomainBlackWhiteListRequest) (response *DescribeDomainBlackWhiteListResponse, err error) {
 	response = CreateDescribeDomainBlackWhiteListResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeDomainBlackWhiteList(request *DescribeDomainBlackW
 	return
 }
 
-// invoke DescribeDomainBlackWhiteList api with *DescribeDomainBlackWhiteListRequest asynchronously
+// DescribeDomainBlackWhiteListWithChan invokes the ddospro.DescribeDomainBlackWhiteList API asynchronously
 // api document: https://help.aliyun.com/api/ddospro/describedomainblackwhitelist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainBlackWhiteListWithChan(request *DescribeDomainBlackWhiteListRequest) (<-chan *DescribeDomainBlackWhiteListResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeDomainBlackWhiteListWithChan(request *DescribeDoma
 	return responseChan, errChan
 }
 
-// invoke DescribeDomainBlackWhiteList api with *DescribeDomainBlackWhiteListRequest asynchronously
+// DescribeDomainBlackWhiteListWithCallback invokes the ddospro.DescribeDomainBlackWhiteList API asynchronously
 // api document: https://help.aliyun.com/api/ddospro/describedomainblackwhitelist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeDomainBlackWhiteListWithCallback(request *DescribeDomainBlackWhiteListRequest, callback func(response *DescribeDomainBlackWhiteListResponse, err error)) <-chan int {
@@ -73,20 +73,22 @@ func (client *Client) DescribeDomainBlackWhiteListWithCallback(request *Describe
 	return result
 }
 
+// DescribeDomainBlackWhiteListRequest is the request struct for api DescribeDomainBlackWhiteList
 type DescribeDomainBlackWhiteListRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	Domain          string           `position:"Query" name:"Domain"`
 }
 
+// DescribeDomainBlackWhiteListResponse is the response struct for api DescribeDomainBlackWhiteList
 type DescribeDomainBlackWhiteListResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Data      Data   `json:"Data" xml:"Data"`
 }
 
-// create a request to invoke DescribeDomainBlackWhiteList API
-func CreateDescribeDomainBlackWhiteListRequest() (request *DescribeDomainBlackWhiteListRequest) {
+// CreateDescribeDomainBlackWhiteListRequest creates a request to invoke DescribeDomainBlackWhiteList API
+func CreateDescribeDomainBlackWhiteListRequest(request *DescribeDomainBlackWhiteListRequest) {
 	request = &DescribeDomainBlackWhiteListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -94,7 +96,7 @@ func CreateDescribeDomainBlackWhiteListRequest() (request *DescribeDomainBlackWh
 	return
 }
 
-// create a response to parse from DescribeDomainBlackWhiteList response
+// CreateDescribeDomainBlackWhiteListResponse creates a response to parse from DescribeDomainBlackWhiteList response
 func CreateDescribeDomainBlackWhiteListResponse() (response *DescribeDomainBlackWhiteListResponse) {
 	response = &DescribeDomainBlackWhiteListResponse{
 		BaseResponse: &responses.BaseResponse{},

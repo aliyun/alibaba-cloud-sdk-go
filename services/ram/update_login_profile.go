@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke UpdateLoginProfile api with *UpdateLoginProfileRequest synchronously
+// UpdateLoginProfile invokes the ram.UpdateLoginProfile API synchronously
 // api document: https://help.aliyun.com/api/ram/updateloginprofile.html
 func (client *Client) UpdateLoginProfile(request *UpdateLoginProfileRequest) (response *UpdateLoginProfileResponse, err error) {
 	response = CreateUpdateLoginProfileResponse()
@@ -28,7 +28,7 @@ func (client *Client) UpdateLoginProfile(request *UpdateLoginProfileRequest) (re
 	return
 }
 
-// invoke UpdateLoginProfile api with *UpdateLoginProfileRequest asynchronously
+// UpdateLoginProfileWithChan invokes the ram.UpdateLoginProfile API asynchronously
 // api document: https://help.aliyun.com/api/ram/updateloginprofile.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateLoginProfileWithChan(request *UpdateLoginProfileRequest) (<-chan *UpdateLoginProfileResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) UpdateLoginProfileWithChan(request *UpdateLoginProfileRequ
 	return responseChan, errChan
 }
 
-// invoke UpdateLoginProfile api with *UpdateLoginProfileRequest asynchronously
+// UpdateLoginProfileWithCallback invokes the ram.UpdateLoginProfile API asynchronously
 // api document: https://help.aliyun.com/api/ram/updateloginprofile.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpdateLoginProfileWithCallback(request *UpdateLoginProfileRequest, callback func(response *UpdateLoginProfileResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) UpdateLoginProfileWithCallback(request *UpdateLoginProfile
 	return result
 }
 
+// UpdateLoginProfileRequest is the request struct for api UpdateLoginProfile
 type UpdateLoginProfileRequest struct {
 	*requests.RpcRequest
 	UserName              string           `position:"Query" name:"UserName"`
@@ -81,13 +82,14 @@ type UpdateLoginProfileRequest struct {
 	MFABindRequired       requests.Boolean `position:"Query" name:"MFABindRequired"`
 }
 
+// UpdateLoginProfileResponse is the response struct for api UpdateLoginProfile
 type UpdateLoginProfileResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// create a request to invoke UpdateLoginProfile API
-func CreateUpdateLoginProfileRequest() (request *UpdateLoginProfileRequest) {
+// CreateUpdateLoginProfileRequest creates a request to invoke UpdateLoginProfile API
+func CreateUpdateLoginProfileRequest(request *UpdateLoginProfileRequest) {
 	request = &UpdateLoginProfileRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -95,7 +97,7 @@ func CreateUpdateLoginProfileRequest() (request *UpdateLoginProfileRequest) {
 	return
 }
 
-// create a response to parse from UpdateLoginProfile response
+// CreateUpdateLoginProfileResponse creates a response to parse from UpdateLoginProfile response
 func CreateUpdateLoginProfileResponse() (response *UpdateLoginProfileResponse) {
 	response = &UpdateLoginProfileResponse{
 		BaseResponse: &responses.BaseResponse{},

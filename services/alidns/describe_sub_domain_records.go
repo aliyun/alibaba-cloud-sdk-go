@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke DescribeSubDomainRecords api with *DescribeSubDomainRecordsRequest synchronously
+// DescribeSubDomainRecords invokes the alidns.DescribeSubDomainRecords API synchronously
 // api document: https://help.aliyun.com/api/alidns/describesubdomainrecords.html
 func (client *Client) DescribeSubDomainRecords(request *DescribeSubDomainRecordsRequest) (response *DescribeSubDomainRecordsResponse, err error) {
 	response = CreateDescribeSubDomainRecordsResponse()
@@ -28,7 +28,7 @@ func (client *Client) DescribeSubDomainRecords(request *DescribeSubDomainRecords
 	return
 }
 
-// invoke DescribeSubDomainRecords api with *DescribeSubDomainRecordsRequest asynchronously
+// DescribeSubDomainRecordsWithChan invokes the alidns.DescribeSubDomainRecords API asynchronously
 // api document: https://help.aliyun.com/api/alidns/describesubdomainrecords.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSubDomainRecordsWithChan(request *DescribeSubDomainRecordsRequest) (<-chan *DescribeSubDomainRecordsResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) DescribeSubDomainRecordsWithChan(request *DescribeSubDomai
 	return responseChan, errChan
 }
 
-// invoke DescribeSubDomainRecords api with *DescribeSubDomainRecordsRequest asynchronously
+// DescribeSubDomainRecordsWithCallback invokes the alidns.DescribeSubDomainRecords API asynchronously
 // api document: https://help.aliyun.com/api/alidns/describesubdomainrecords.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) DescribeSubDomainRecordsWithCallback(request *DescribeSubDomainRecordsRequest, callback func(response *DescribeSubDomainRecordsResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) DescribeSubDomainRecordsWithCallback(request *DescribeSubD
 	return result
 }
 
+// DescribeSubDomainRecordsRequest is the request struct for api DescribeSubDomainRecords
 type DescribeSubDomainRecordsRequest struct {
 	*requests.RpcRequest
 	Lang         string           `position:"Query" name:"Lang"`
@@ -83,6 +84,7 @@ type DescribeSubDomainRecordsRequest struct {
 	Type         string           `position:"Query" name:"Type"`
 }
 
+// DescribeSubDomainRecordsResponse is the response struct for api DescribeSubDomainRecords
 type DescribeSubDomainRecordsResponse struct {
 	*responses.BaseResponse
 	RequestId     string                                  `json:"RequestId" xml:"RequestId"`
@@ -92,8 +94,8 @@ type DescribeSubDomainRecordsResponse struct {
 	DomainRecords DomainRecordsInDescribeSubDomainRecords `json:"DomainRecords" xml:"DomainRecords"`
 }
 
-// create a request to invoke DescribeSubDomainRecords API
-func CreateDescribeSubDomainRecordsRequest() (request *DescribeSubDomainRecordsRequest) {
+// CreateDescribeSubDomainRecordsRequest creates a request to invoke DescribeSubDomainRecords API
+func CreateDescribeSubDomainRecordsRequest(request *DescribeSubDomainRecordsRequest) {
 	request = &DescribeSubDomainRecordsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -101,7 +103,7 @@ func CreateDescribeSubDomainRecordsRequest() (request *DescribeSubDomainRecordsR
 	return
 }
 
-// create a response to parse from DescribeSubDomainRecords response
+// CreateDescribeSubDomainRecordsResponse creates a response to parse from DescribeSubDomainRecords response
 func CreateDescribeSubDomainRecordsResponse() (response *DescribeSubDomainRecordsResponse) {
 	response = &DescribeSubDomainRecordsResponse{
 		BaseResponse: &responses.BaseResponse{},

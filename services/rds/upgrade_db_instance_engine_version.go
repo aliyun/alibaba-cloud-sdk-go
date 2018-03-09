@@ -20,7 +20,7 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// invoke UpgradeDBInstanceEngineVersion api with *UpgradeDBInstanceEngineVersionRequest synchronously
+// UpgradeDBInstanceEngineVersion invokes the rds.UpgradeDBInstanceEngineVersion API synchronously
 // api document: https://help.aliyun.com/api/rds/upgradedbinstanceengineversion.html
 func (client *Client) UpgradeDBInstanceEngineVersion(request *UpgradeDBInstanceEngineVersionRequest) (response *UpgradeDBInstanceEngineVersionResponse, err error) {
 	response = CreateUpgradeDBInstanceEngineVersionResponse()
@@ -28,7 +28,7 @@ func (client *Client) UpgradeDBInstanceEngineVersion(request *UpgradeDBInstanceE
 	return
 }
 
-// invoke UpgradeDBInstanceEngineVersion api with *UpgradeDBInstanceEngineVersionRequest asynchronously
+// UpgradeDBInstanceEngineVersionWithChan invokes the rds.UpgradeDBInstanceEngineVersion API asynchronously
 // api document: https://help.aliyun.com/api/rds/upgradedbinstanceengineversion.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpgradeDBInstanceEngineVersionWithChan(request *UpgradeDBInstanceEngineVersionRequest) (<-chan *UpgradeDBInstanceEngineVersionResponse, <-chan error) {
@@ -52,7 +52,7 @@ func (client *Client) UpgradeDBInstanceEngineVersionWithChan(request *UpgradeDBI
 	return responseChan, errChan
 }
 
-// invoke UpgradeDBInstanceEngineVersion api with *UpgradeDBInstanceEngineVersionRequest asynchronously
+// UpgradeDBInstanceEngineVersionWithCallback invokes the rds.UpgradeDBInstanceEngineVersion API asynchronously
 // api document: https://help.aliyun.com/api/rds/upgradedbinstanceengineversion.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) UpgradeDBInstanceEngineVersionWithCallback(request *UpgradeDBInstanceEngineVersionRequest, callback func(response *UpgradeDBInstanceEngineVersionResponse, err error)) <-chan int {
@@ -73,6 +73,7 @@ func (client *Client) UpgradeDBInstanceEngineVersionWithCallback(request *Upgrad
 	return result
 }
 
+// UpgradeDBInstanceEngineVersionRequest is the request struct for api UpgradeDBInstanceEngineVersion
 type UpgradeDBInstanceEngineVersionRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -85,14 +86,15 @@ type UpgradeDBInstanceEngineVersionRequest struct {
 	EffectiveTime        string           `position:"Query" name:"EffectiveTime"`
 }
 
+// UpgradeDBInstanceEngineVersionResponse is the response struct for api UpgradeDBInstanceEngineVersion
 type UpgradeDBInstanceEngineVersionResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	TaskId    string `json:"TaskId" xml:"TaskId"`
 }
 
-// create a request to invoke UpgradeDBInstanceEngineVersion API
-func CreateUpgradeDBInstanceEngineVersionRequest() (request *UpgradeDBInstanceEngineVersionRequest) {
+// CreateUpgradeDBInstanceEngineVersionRequest creates a request to invoke UpgradeDBInstanceEngineVersion API
+func CreateUpgradeDBInstanceEngineVersionRequest(request *UpgradeDBInstanceEngineVersionRequest) {
 	request = &UpgradeDBInstanceEngineVersionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
@@ -100,7 +102,7 @@ func CreateUpgradeDBInstanceEngineVersionRequest() (request *UpgradeDBInstanceEn
 	return
 }
 
-// create a response to parse from UpgradeDBInstanceEngineVersion response
+// CreateUpgradeDBInstanceEngineVersionResponse creates a response to parse from UpgradeDBInstanceEngineVersion response
 func CreateUpgradeDBInstanceEngineVersionResponse() (response *UpgradeDBInstanceEngineVersionResponse) {
 	response = &UpgradeDBInstanceEngineVersionResponse{
 		BaseResponse: &responses.BaseResponse{},
