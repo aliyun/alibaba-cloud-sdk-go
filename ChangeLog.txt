@@ -1,3 +1,9 @@
+2018-03-09 Version: 1.2.1
+1, complete api comments
+
+2018-03-09 Version: 1.2.0
+1, improve endpoint resolver
+
 2018-03-07 Version: 1.1.7
 1, add GetAlbumsByNames
 2, add ListEvent/CreateEvent/EditEvent/DeleteEvent/GetEvent
