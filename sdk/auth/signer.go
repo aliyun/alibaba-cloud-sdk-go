@@ -28,7 +28,7 @@ type Signer interface {
 	GetName() string
 	GetType() string
 	GetVersion() string
-	GetAccessKeyId() string
+	GetAccessKeyId() (string, error)
 	GetExtraParam() map[string]string
 	Sign(stringToSign, secretSuffix string) string
 	Shutdown()
@@ -84,7 +84,7 @@ func Sign(request requests.AcsRequest, signer Signer, regionId string) (err erro
 		}
 	case requests.RPC:
 		{
-			signRpcRequest(request, signer, regionId)
+			err = signRpcRequest(request, signer, regionId)
 		}
 	default:
 		message := fmt.Sprintf(errors.UnknownRequestTypeErrorMessage, reflect.TypeOf(request))

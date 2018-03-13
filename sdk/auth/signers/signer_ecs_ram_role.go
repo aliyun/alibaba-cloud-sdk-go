@@ -61,14 +61,14 @@ func (*EcsRamRoleSigner) GetVersion() string {
 	return "1.0"
 }
 
-func (signer *EcsRamRoleSigner) GetAccessKeyId() string {
+func (signer *EcsRamRoleSigner) GetAccessKeyId() (accessKeyId string, err error) {
 	if signer.sessionCredential == nil || signer.needUpdateCredential() {
-		signer.updateCredential()
+		err = signer.updateCredential()
 	}
-	if len(signer.sessionCredential.accessKeyId) <= 0 {
-		return ""
+	if err != nil && (signer.sessionCredential == nil || len(signer.sessionCredential.accessKeyId) <= 0) {
+		return "", err
 	}
-	return signer.sessionCredential.accessKeyId
+	return signer.sessionCredential.accessKeyId, nil
 }
 
 func (signer *EcsRamRoleSigner) GetExtraParam() map[string]string {

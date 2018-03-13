@@ -40,8 +40,8 @@ func (*StsTokenSigner) GetVersion() string {
 	return "1.0"
 }
 
-func (signer *StsTokenSigner) GetAccessKeyId() string {
-	return signer.credential.AccessKeyId
+func (signer *StsTokenSigner) GetAccessKeyId() (accessKeyId string, err error) {
+	return signer.credential.AccessKeyId, nil
 }
 
 func (signer *StsTokenSigner) GetExtraParam() map[string]string {
