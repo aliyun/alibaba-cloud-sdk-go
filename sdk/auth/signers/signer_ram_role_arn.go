@@ -87,14 +87,14 @@ func (*RamRoleArnSigner) GetVersion() string {
 	return "1.0"
 }
 
-func (signer *RamRoleArnSigner) GetAccessKeyId() string {
+func (signer *RamRoleArnSigner) GetAccessKeyId() (accessKeyId string, err error) {
 	if signer.sessionCredential == nil || signer.needUpdateCredential() {
-		signer.updateCredential()
+		err = signer.updateCredential()
 	}
-	if signer.sessionCredential == nil || len(signer.sessionCredential.accessKeyId) <= 0 {
-		return ""
+	if err != nil && (signer.sessionCredential == nil || len(signer.sessionCredential.accessKeyId) <= 0) {
+		return "", err
 	}
-	return signer.sessionCredential.accessKeyId
+	return signer.sessionCredential.accessKeyId, nil
 }
 
 func (signer *RamRoleArnSigner) GetExtraParam() map[string]string {

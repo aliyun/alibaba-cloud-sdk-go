@@ -44,8 +44,8 @@ func (*SignerV2) GetVersion() string {
 	return "1.0"
 }
 
-func (signer *SignerV2) GetAccessKeyId() string {
-	return signer.credential.PublicKeyId
+func (signer *SignerV2) GetAccessKeyId() (accessKeyId string, err error) {
+	return signer.credential.PublicKeyId, err
 }
 
 func (signer *SignerV2) Sign(stringToSign, secretSuffix string) string {

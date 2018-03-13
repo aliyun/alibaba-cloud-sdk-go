@@ -22,12 +22,19 @@ import (
 	"strings"
 )
 
-func signRoaRequest(request requests.AcsRequest, signer Signer, regionId string) {
+func signRoaRequest(request requests.AcsRequest, signer Signer, regionId string) (err error) {
 	completeROASignParams(request, signer, regionId)
 	stringToSign := buildRoaStringToSign(request)
 	request.SetStringToSign(stringToSign)
 	signature := signer.Sign(stringToSign, "")
-	request.GetHeaders()["Authorization"] = "acs " + signer.GetAccessKeyId() + ":" + signature
+	accessKeyId, err := signer.GetAccessKeyId()
+	if err != nil {
+		return nil
+	}
+
+	request.GetHeaders()["Authorization"] = "acs " + accessKeyId + ":" + signature
+
+	return
 }
 
 func completeROASignParams(request requests.AcsRequest, signer Signer, regionId string) {

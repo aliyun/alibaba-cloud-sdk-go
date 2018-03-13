@@ -44,8 +44,8 @@ func (*AccessKeySigner) GetVersion() string {
 	return "1.0"
 }
 
-func (signer *AccessKeySigner) GetAccessKeyId() string {
-	return signer.credential.AccessKeyId
+func (signer *AccessKeySigner) GetAccessKeyId() (accessKeyId string, err error) {
+	return signer.credential.AccessKeyId, nil
 }
 
 func (signer *AccessKeySigner) Sign(stringToSign, secretSuffix string) string {

@@ -75,14 +75,14 @@ func (*SignerKeyPair) GetVersion() string {
 	return "1.0"
 }
 
-func (signer *SignerKeyPair) GetAccessKeyId() string {
+func (signer *SignerKeyPair) GetAccessKeyId() (accessKeyId string, err error) {
 	if signer.sessionCredential == nil || signer.needUpdateCredential() {
-		signer.updateCredential()
+		err = signer.updateCredential()
 	}
-	if signer.sessionCredential == nil || len(signer.sessionCredential.accessKeyId) <= 0 {
-		return ""
+	if err != nil && (signer.sessionCredential == nil || len(signer.sessionCredential.accessKeyId) <= 0) {
+		return "", err
 	}
-	return signer.sessionCredential.accessKeyId
+	return signer.sessionCredential.accessKeyId, err
 }
 
 func (signer *SignerKeyPair) GetExtraParam() map[string]string {
