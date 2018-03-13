@@ -1,3 +1,7 @@
+
+2018-03-09 Version:1.2.3
+1, fix bug:modify error message when roleArn is wrong
+
 2018-03-13 Version: 1.2.2
 1, API GetQuotaHistoryInfo fix field error.
 

@@ -120,9 +120,6 @@ func (signer *SignerKeyPair) refreshCredential(response *responses.CommonRespons
 	if response.GetHttpStatus() != http.StatusOK {
 		message := "refresh session AccessKey failed"
 		err = errors.NewServerError(response.GetHttpStatus(), response.GetHttpContentString(), message)
-		if signer.sessionCredential == nil {
-			panic(err)
-		}
 		return
 	}
 	var data interface{}
@@ -142,9 +139,7 @@ func (signer *SignerKeyPair) refreshCredential(response *responses.CommonRespons
 		return
 	}
 	if accessKeyId == nil || accessKeySecret == nil {
-		if signer.sessionCredential == nil {
-			panic("refresh KeyPair, accessKeyId or accessKeySecret is null")
-		}
+		return
 	}
 	signer.sessionCredential = &SessionAkCredential{
 		accessKeyId:     accessKeyId.(string),
