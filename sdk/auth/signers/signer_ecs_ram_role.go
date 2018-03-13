@@ -152,9 +152,7 @@ func (signer *EcsRamRoleSigner) refreshCredential(response *responses.CommonResp
 		return
 	}
 	if accessKeyId == nil || accessKeySecret == nil || securityToken == nil {
-		if signer.sessionCredential == nil {
-			panic("refresh Ecs sts token failed, accessKeyId, accessKeySecret or securityToken is null")
-		}
+		return
 	}
 
 	expirationTime, err := time.Parse("2006-01-02T15:04:05Z", expiration.(string))

@@ -137,9 +137,6 @@ func (signer *RamRoleArnSigner) refreshCredential(response *responses.CommonResp
 	if response.GetHttpStatus() != http.StatusOK {
 		message := "refresh session token failed"
 		err = errors.NewServerError(response.GetHttpStatus(), response.GetHttpContentString(), message)
-		if signer.sessionCredential == nil {
-			panic(err)
-		}
 		return
 	}
 	var data interface{}
@@ -164,9 +161,7 @@ func (signer *RamRoleArnSigner) refreshCredential(response *responses.CommonResp
 		return
 	}
 	if accessKeyId == nil || accessKeySecret == nil || securityToken == nil {
-		if signer.sessionCredential == nil {
-			panic("refresh session token failed, accessKeyId, accessKeySecret or securityToken is null")
-		}
+		return
 	}
 	signer.sessionCredential = &sessionCredential{
 		accessKeyId:     accessKeyId.(string),

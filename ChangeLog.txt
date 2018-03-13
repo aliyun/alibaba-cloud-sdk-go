@@ -1,3 +1,6 @@
+2018-03-09 Version:1.2.2
+1, fix bug:modify error message when roleArn is wrong
+
 2018-03-09 Version: 1.2.1
 1, complete api comments
 
