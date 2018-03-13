@@ -1,3 +1,6 @@
+2018-03-13 Version: 1.2.2
+1, API GetQuotaHistoryInfo fix field error.
+
 2018-03-09 Version: 1.2.1
 1, complete api comments
 
