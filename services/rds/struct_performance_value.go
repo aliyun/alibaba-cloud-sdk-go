@@ -17,6 +17,6 @@ package rds
 
 // PerformanceValue is a nested struct in rds response
 type PerformanceValue struct {
-	Date  string `json:"Date" xml:"Date"`
 	Value string `json:"Value" xml:"Value"`
+	Date  string `json:"Date" xml:"Date"`
 }

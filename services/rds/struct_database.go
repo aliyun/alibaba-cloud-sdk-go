@@ -17,12 +17,12 @@ package rds
 
 // Database is a nested struct in rds response
 type Database struct {
-	DBName           string                      `json:"DBName" xml:"DBName"`
-	DBStatus         string                      `json:"DBStatus" xml:"DBStatus"`
-	DBInstanceId     string                      `json:"DBInstanceId" xml:"DBInstanceId"`
-	TDEStatus        string                      `json:"TDEStatus" xml:"TDEStatus"`
-	DBDescription    string                      `json:"DBDescription" xml:"DBDescription"`
-	Engine           string                      `json:"Engine" xml:"Engine"`
 	CharacterSetName string                      `json:"CharacterSetName" xml:"CharacterSetName"`
+	Engine           string                      `json:"Engine" xml:"Engine"`
+	DBStatus         string                      `json:"DBStatus" xml:"DBStatus"`
+	TDEStatus        string                      `json:"TDEStatus" xml:"TDEStatus"`
+	DBName           string                      `json:"DBName" xml:"DBName"`
+	DBInstanceId     string                      `json:"DBInstanceId" xml:"DBInstanceId"`
+	DBDescription    string                      `json:"DBDescription" xml:"DBDescription"`
 	Accounts         AccountsInDescribeDatabases `json:"Accounts" xml:"Accounts"`
 }

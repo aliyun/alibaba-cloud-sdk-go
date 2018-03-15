@@ -17,13 +17,13 @@ package rds
 
 // Items is a nested struct in rds response
 type Items struct {
-	ReplicaId          string  `json:"ReplicaId" xml:"ReplicaId"`
-	ReadWriteType      string  `json:"ReadWriteType" xml:"ReadWriteType"`
+	ReplicaMode        string  `json:"ReplicaMode" xml:"ReplicaMode"`
 	Role               string  `json:"Role" xml:"Role"`
+	ReadWriteType      string  `json:"ReadWriteType" xml:"ReadWriteType"`
+	DomainMode         string  `json:"DomainMode" xml:"DomainMode"`
+	ReplicaDescription string  `json:"ReplicaDescription" xml:"ReplicaDescription"`
 	DBInstanceId       string  `json:"DBInstanceId" xml:"DBInstanceId"`
 	ReplicaStatus      string  `json:"ReplicaStatus" xml:"ReplicaStatus"`
-	ReplicaDescription string  `json:"ReplicaDescription" xml:"ReplicaDescription"`
-	DomainMode         string  `json:"DomainMode" xml:"DomainMode"`
-	ReplicaMode        string  `json:"ReplicaMode" xml:"ReplicaMode"`
+	ReplicaId          string  `json:"ReplicaId" xml:"ReplicaId"`
 	DBInstances        []Items `json:"DBInstances" xml:"DBInstances"`
 }

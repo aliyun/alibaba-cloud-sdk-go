@@ -18,6 +18,6 @@ package rds
 // ActivityInfo is a nested struct in rds response
 type ActivityInfo struct {
 	Success     string `json:"Success" xml:"Success"`
-	ErrorCode   string `json:"ErrorCode" xml:"ErrorCode"`
 	CheckErrMsg string `json:"CheckErrMsg" xml:"CheckErrMsg"`
+	ErrorCode   string `json:"ErrorCode" xml:"ErrorCode"`
 }

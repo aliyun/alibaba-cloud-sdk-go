@@ -17,62 +17,62 @@ package rds
 
 // DBInstanceAttribute is a nested struct in rds response
 type DBInstanceAttribute struct {
-	InsId                             int                                                `json:"InsId" xml:"InsId"`
-	ReplicateId                       string                                             `json:"ReplicateId" xml:"ReplicateId"`
-	PayType                           string                                             `json:"PayType" xml:"PayType"`
-	DBInstanceDiskUsed                string                                             `json:"DBInstanceDiskUsed" xml:"DBInstanceDiskUsed"`
-	VpcCloudInstanceId                string                                             `json:"VpcCloudInstanceId" xml:"VpcCloudInstanceId"`
-	InstanceNetworkType               string                                             `json:"InstanceNetworkType" xml:"InstanceNetworkType"`
-	EngineVersion                     string                                             `json:"EngineVersion" xml:"EngineVersion"`
-	ConnectionMode                    string                                             `json:"ConnectionMode" xml:"ConnectionMode"`
-	ZoneId                            string                                             `json:"ZoneId" xml:"ZoneId"`
+	Engine                            string                                             `json:"Engine" xml:"Engine"`
 	TempUpgradeTimeStart              string                                             `json:"TempUpgradeTimeStart" xml:"TempUpgradeTimeStart"`
-	MaxIOPS                           int                                                `json:"MaxIOPS" xml:"MaxIOPS"`
-	DBInstanceStatus                  string                                             `json:"DBInstanceStatus" xml:"DBInstanceStatus"`
-	TempUpgradeRecoveryMaxConnections string                                             `json:"TempUpgradeRecoveryMaxConnections" xml:"TempUpgradeRecoveryMaxConnections"`
+	TempUpgradeRecoveryTime           string                                             `json:"TempUpgradeRecoveryTime" xml:"TempUpgradeRecoveryTime"`
+	TempUpgradeRecoveryMaxIOPS        string                                             `json:"TempUpgradeRecoveryMaxIOPS" xml:"TempUpgradeRecoveryMaxIOPS"`
+	DBInstanceDiskUsed                string                                             `json:"DBInstanceDiskUsed" xml:"DBInstanceDiskUsed"`
+	AdvancedFeatures                  string                                             `json:"AdvancedFeatures" xml:"AdvancedFeatures"`
+	DBInstanceClass                   string                                             `json:"DBInstanceClass" xml:"DBInstanceClass"`
+	DBInstanceNetType                 string                                             `json:"DBInstanceNetType" xml:"DBInstanceNetType"`
+	VpcCloudInstanceId                string                                             `json:"VpcCloudInstanceId" xml:"VpcCloudInstanceId"`
+	DBMaxQuantity                     int                                                `json:"DBMaxQuantity" xml:"DBMaxQuantity"`
+	DBInstanceCPU                     string                                             `json:"DBInstanceCPU" xml:"DBInstanceCPU"`
 	MaxConnections                    int                                                `json:"MaxConnections" xml:"MaxConnections"`
-	AccountMaxQuantity                int                                                `json:"AccountMaxQuantity" xml:"AccountMaxQuantity"`
-	DBInstanceStorage                 int                                                `json:"DBInstanceStorage" xml:"DBInstanceStorage"`
-	TempUpgradeTimeEnd                string                                             `json:"TempUpgradeTimeEnd" xml:"TempUpgradeTimeEnd"`
+	IncrementSourceDBInstanceId       string                                             `json:"IncrementSourceDBInstanceId" xml:"IncrementSourceDBInstanceId"`
+	InstanceNetworkType               string                                             `json:"InstanceNetworkType" xml:"InstanceNetworkType"`
+	DBInstanceType                    string                                             `json:"DBInstanceType" xml:"DBInstanceType"`
+	TempUpgradeRecoveryClass          string                                             `json:"TempUpgradeRecoveryClass" xml:"TempUpgradeRecoveryClass"`
+	DBInstanceId                      string                                             `json:"DBInstanceId" xml:"DBInstanceId"`
 	DBInstanceMemory                  int                                                `json:"DBInstanceMemory" xml:"DBInstanceMemory"`
-	CreationTime                      string                                             `json:"CreationTime" xml:"CreationTime"`
-	ResourceGroupId                   string                                             `json:"ResourceGroupId" xml:"ResourceGroupId"`
-	TempUpgradeRecoveryMemory         int                                                `json:"TempUpgradeRecoveryMemory" xml:"TempUpgradeRecoveryMemory"`
+	VpcId                             string                                             `json:"VpcId" xml:"VpcId"`
+	SecurityIPList                    string                                             `json:"SecurityIPList" xml:"SecurityIPList"`
+	SupportUpgradeAccountType         string                                             `json:"SupportUpgradeAccountType" xml:"SupportUpgradeAccountType"`
+	MaxIOPS                           int                                                `json:"MaxIOPS" xml:"MaxIOPS"`
+	Tags                              string                                             `json:"Tags" xml:"Tags"`
+	EngineVersion                     string                                             `json:"EngineVersion" xml:"EngineVersion"`
+	MaintainTime                      string                                             `json:"MaintainTime" xml:"MaintainTime"`
+	PayType                           string                                             `json:"PayType" xml:"PayType"`
+	DBInstanceStorage                 int                                                `json:"DBInstanceStorage" xml:"DBInstanceStorage"`
+	TempDBInstanceId                  string                                             `json:"TempDBInstanceId" xml:"TempDBInstanceId"`
+	ZoneId                            string                                             `json:"ZoneId" xml:"ZoneId"`
+	ConnectionMode                    string                                             `json:"ConnectionMode" xml:"ConnectionMode"`
+	LockMode                          string                                             `json:"LockMode" xml:"LockMode"`
+	CanTempUpgrade                    bool                                               `json:"CanTempUpgrade" xml:"CanTempUpgrade"`
 	LockReason                        string                                             `json:"LockReason" xml:"LockReason"`
+	Category                          string                                             `json:"Category" xml:"Category"`
+	GuardDBInstanceId                 string                                             `json:"GuardDBInstanceId" xml:"GuardDBInstanceId"`
+	InsId                             int                                                `json:"InsId" xml:"InsId"`
+	DBInstanceDescription             string                                             `json:"DBInstanceDescription" xml:"DBInstanceDescription"`
 	AccountType                       string                                             `json:"AccountType" xml:"AccountType"`
 	GuardDBInstanceName               string                                             `json:"GuardDBInstanceName" xml:"GuardDBInstanceName"`
-	LockMode                          string                                             `json:"LockMode" xml:"LockMode"`
-	ConnectionString                  string                                             `json:"ConnectionString" xml:"ConnectionString"`
-	Port                              string                                             `json:"Port" xml:"Port"`
-	TempDBInstanceId                  string                                             `json:"TempDBInstanceId" xml:"TempDBInstanceId"`
-	DBInstanceType                    string                                             `json:"DBInstanceType" xml:"DBInstanceType"`
-	VSwitchId                         string                                             `json:"VSwitchId" xml:"VSwitchId"`
-	AvailabilityValue                 string                                             `json:"AvailabilityValue" xml:"AvailabilityValue"`
-	MaintainTime                      string                                             `json:"MaintainTime" xml:"MaintainTime"`
-	Category                          string                                             `json:"Category" xml:"Category"`
-	TempUpgradeRecoveryTime           string                                             `json:"TempUpgradeRecoveryTime" xml:"TempUpgradeRecoveryTime"`
-	IncrementSourceDBInstanceId       string                                             `json:"IncrementSourceDBInstanceId" xml:"IncrementSourceDBInstanceId"`
-	TempUpgradeRecoveryCpu            int                                                `json:"TempUpgradeRecoveryCpu" xml:"TempUpgradeRecoveryCpu"`
-	DBInstanceNetType                 string                                             `json:"DBInstanceNetType" xml:"DBInstanceNetType"`
-	Tags                              string                                             `json:"Tags" xml:"Tags"`
-	DBInstanceCPU                     string                                             `json:"DBInstanceCPU" xml:"DBInstanceCPU"`
-	TempUpgradeRecoveryClass          string                                             `json:"TempUpgradeRecoveryClass" xml:"TempUpgradeRecoveryClass"`
-	GuardDBInstanceId                 string                                             `json:"GuardDBInstanceId" xml:"GuardDBInstanceId"`
-	DBInstanceDescription             string                                             `json:"DBInstanceDescription" xml:"DBInstanceDescription"`
-	Engine                            string                                             `json:"Engine" xml:"Engine"`
-	ReadDelayTime                     string                                             `json:"ReadDelayTime" xml:"ReadDelayTime"`
-	TempUpgradeRecoveryMaxIOPS        string                                             `json:"TempUpgradeRecoveryMaxIOPS" xml:"TempUpgradeRecoveryMaxIOPS"`
-	DBMaxQuantity                     int                                                `json:"DBMaxQuantity" xml:"DBMaxQuantity"`
-	MasterInstanceId                  string                                             `json:"MasterInstanceId" xml:"MasterInstanceId"`
-	VpcId                             string                                             `json:"VpcId" xml:"VpcId"`
-	DBInstanceClass                   string                                             `json:"DBInstanceClass" xml:"DBInstanceClass"`
-	SupportUpgradeAccountType         string                                             `json:"SupportUpgradeAccountType" xml:"SupportUpgradeAccountType"`
-	DBInstanceId                      string                                             `json:"DBInstanceId" xml:"DBInstanceId"`
-	CanTempUpgrade                    bool                                               `json:"CanTempUpgrade" xml:"CanTempUpgrade"`
-	ExpireTime                        string                                             `json:"ExpireTime" xml:"ExpireTime"`
 	RegionId                          string                                             `json:"RegionId" xml:"RegionId"`
-	AdvancedFeatures                  string                                             `json:"AdvancedFeatures" xml:"AdvancedFeatures"`
+	ResourceGroupId                   string                                             `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	TempUpgradeTimeEnd                string                                             `json:"TempUpgradeTimeEnd" xml:"TempUpgradeTimeEnd"`
+	ExpireTime                        string                                             `json:"ExpireTime" xml:"ExpireTime"`
+	TempUpgradeRecoveryMemory         int                                                `json:"TempUpgradeRecoveryMemory" xml:"TempUpgradeRecoveryMemory"`
+	AccountMaxQuantity                int                                                `json:"AccountMaxQuantity" xml:"AccountMaxQuantity"`
+	TempUpgradeRecoveryMaxConnections string                                             `json:"TempUpgradeRecoveryMaxConnections" xml:"TempUpgradeRecoveryMaxConnections"`
+	Port                              string                                             `json:"Port" xml:"Port"`
+	VSwitchId                         string                                             `json:"VSwitchId" xml:"VSwitchId"`
+	CreationTime                      string                                             `json:"CreationTime" xml:"CreationTime"`
+	MasterInstanceId                  string                                             `json:"MasterInstanceId" xml:"MasterInstanceId"`
 	DBInstanceClassType               string                                             `json:"DBInstanceClassType" xml:"DBInstanceClassType"`
-	SecurityIPList                    string                                             `json:"SecurityIPList" xml:"SecurityIPList"`
+	ReadDelayTime                     string                                             `json:"ReadDelayTime" xml:"ReadDelayTime"`
+	DBInstanceStatus                  string                                             `json:"DBInstanceStatus" xml:"DBInstanceStatus"`
+	ReplicateId                       string                                             `json:"ReplicateId" xml:"ReplicateId"`
+	ConnectionString                  string                                             `json:"ConnectionString" xml:"ConnectionString"`
+	TempUpgradeRecoveryCpu            int                                                `json:"TempUpgradeRecoveryCpu" xml:"TempUpgradeRecoveryCpu"`
+	AvailabilityValue                 string                                             `json:"AvailabilityValue" xml:"AvailabilityValue"`
 	ReadOnlyDBInstanceIds             ReadOnlyDBInstanceIdsInDescribeDBInstanceAttribute `json:"ReadOnlyDBInstanceIds" xml:"ReadOnlyDBInstanceIds"`
 }

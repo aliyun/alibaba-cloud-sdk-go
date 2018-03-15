@@ -17,12 +17,12 @@ package rds
 
 // Item is a nested struct in rds response
 type Item struct {
-	AutoRenew        string                               `json:"AutoRenew" xml:"AutoRenew"`
-	ReportTime       string                               `json:"ReportTime" xml:"ReportTime"`
 	RegionId         string                               `json:"RegionId" xml:"RegionId"`
 	Duration         int                                  `json:"Duration" xml:"Duration"`
 	DBInstanceId     string                               `json:"DBInstanceId" xml:"DBInstanceId"`
 	Status           string                               `json:"Status" xml:"Status"`
+	AutoRenew        string                               `json:"AutoRenew" xml:"AutoRenew"`
+	ReportTime       string                               `json:"ReportTime" xml:"ReportTime"`
 	LatencyTopNItems LatencyTopNItemsInDescribeSQLReports `json:"LatencyTopNItems" xml:"LatencyTopNItems"`
 	QPSTopNItems     QPSTopNItemsInDescribeSQLReports     `json:"QPSTopNItems" xml:"QPSTopNItems"`
 }

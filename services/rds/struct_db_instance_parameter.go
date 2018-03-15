@@ -17,7 +17,7 @@ package rds
 
 // DBInstanceParameter is a nested struct in rds response
 type DBInstanceParameter struct {
-	ParameterDescription string `json:"ParameterDescription" xml:"ParameterDescription"`
 	ParameterName        string `json:"ParameterName" xml:"ParameterName"`
+	ParameterDescription string `json:"ParameterDescription" xml:"ParameterDescription"`
 	ParameterValue       string `json:"ParameterValue" xml:"ParameterValue"`
 }
