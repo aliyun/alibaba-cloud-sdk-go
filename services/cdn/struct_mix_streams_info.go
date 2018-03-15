@@ -17,7 +17,7 @@ package cdn
 
 // MixStreamsInfo is a nested struct in cdn response
 type MixStreamsInfo struct {
-	StreamName string `json:"StreamName" xml:"StreamName"`
-	AppName    string `json:"AppName" xml:"AppName"`
 	DomainName string `json:"DomainName" xml:"DomainName"`
+	AppName    string `json:"AppName" xml:"AppName"`
+	StreamName string `json:"StreamName" xml:"StreamName"`
 }

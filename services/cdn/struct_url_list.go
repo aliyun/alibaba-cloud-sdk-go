@@ -18,8 +18,8 @@ package cdn
 // UrlList is a nested struct in cdn response
 type UrlList struct {
 	Flow            string  `json:"Flow" xml:"Flow"`
-	UrlDetail       string  `json:"UrlDetail" xml:"UrlDetail"`
 	VisitData       string  `json:"VisitData" xml:"VisitData"`
-	VisitProportion float64 `json:"VisitProportion" xml:"VisitProportion"`
+	UrlDetail       string  `json:"UrlDetail" xml:"UrlDetail"`
 	FlowProportion  float64 `json:"FlowProportion" xml:"FlowProportion"`
+	VisitProportion float64 `json:"VisitProportion" xml:"VisitProportion"`
 }

@@ -17,7 +17,7 @@ package cdn
 
 // LiveStreamOnlineUserNumInfo is a nested struct in cdn response
 type LiveStreamOnlineUserNumInfo struct {
-	UserNumber int    `json:"UserNumber" xml:"UserNumber"`
-	StreamUrl  string `json:"StreamUrl" xml:"StreamUrl"`
 	Time       string `json:"Time" xml:"Time"`
+	StreamUrl  string `json:"StreamUrl" xml:"StreamUrl"`
+	UserNumber int    `json:"UserNumber" xml:"UserNumber"`
 }

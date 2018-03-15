@@ -17,16 +17,16 @@ package cdn
 
 // RecordIndexInfo is a nested struct in cdn response
 type RecordIndexInfo struct {
-	Duration   float64 `json:"Duration" xml:"Duration"`
-	RecordUrl  string  `json:"RecordUrl" xml:"RecordUrl"`
-	Width      int     `json:"Width" xml:"Width"`
-	StreamName string  `json:"StreamName" xml:"StreamName"`
-	StartTime  string  `json:"StartTime" xml:"StartTime"`
-	Height     int     `json:"Height" xml:"Height"`
-	RecordId   string  `json:"RecordId" xml:"RecordId"`
-	AppName    string  `json:"AppName" xml:"AppName"`
 	OssObject  string  `json:"OssObject" xml:"OssObject"`
-	CreateTime string  `json:"CreateTime" xml:"CreateTime"`
-	DomainName string  `json:"DomainName" xml:"DomainName"`
+	StartTime  string  `json:"StartTime" xml:"StartTime"`
 	EndTime    string  `json:"EndTime" xml:"EndTime"`
+	Duration   float64 `json:"Duration" xml:"Duration"`
+	DomainName string  `json:"DomainName" xml:"DomainName"`
+	RecordUrl  string  `json:"RecordUrl" xml:"RecordUrl"`
+	CreateTime string  `json:"CreateTime" xml:"CreateTime"`
+	RecordId   string  `json:"RecordId" xml:"RecordId"`
+	Height     int     `json:"Height" xml:"Height"`
+	Width      int     `json:"Width" xml:"Width"`
+	AppName    string  `json:"AppName" xml:"AppName"`
+	StreamName string  `json:"StreamName" xml:"StreamName"`
 }

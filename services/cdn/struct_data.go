@@ -17,10 +17,10 @@ package cdn
 
 // Data is a nested struct in cdn response
 type Data struct {
-	More5s string `json:"More5s" xml:"More5s"`
-	Status int    `json:"Status" xml:"Status"`
-	Cname  string `json:"Cname" xml:"Cname"`
 	Domain string `json:"Domain" xml:"Domain"`
+	Cname  string `json:"Cname" xml:"Cname"`
 	Time   string `json:"Time" xml:"Time"`
+	Status int    `json:"Status" xml:"Status"`
 	More3s string `json:"More3s" xml:"More3s"`
+	More5s string `json:"More5s" xml:"More5s"`
 }

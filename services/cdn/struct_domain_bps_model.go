@@ -17,6 +17,6 @@ package cdn
 
 // DomainBpsModel is a nested struct in cdn response
 type DomainBpsModel struct {
-	Bps  float64 `json:"Bps" xml:"Bps"`
 	Time string  `json:"Time" xml:"Time"`
+	Bps  float64 `json:"Bps" xml:"Bps"`
 }

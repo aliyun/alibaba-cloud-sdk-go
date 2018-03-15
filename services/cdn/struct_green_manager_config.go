@@ -17,9 +17,9 @@ package cdn
 
 // GreenManagerConfig is a nested struct in cdn response
 type GreenManagerConfig struct {
-	Ratio    string `json:"Ratio" xml:"Ratio"`
+	Quota    string `json:"Quota" xml:"Quota"`
 	ConfigId string `json:"ConfigId" xml:"ConfigId"`
 	Enabled  string `json:"Enabled" xml:"Enabled"`
-	Quota    string `json:"Quota" xml:"Quota"`
 	Status   string `json:"Status" xml:"Status"`
+	Ratio    string `json:"Ratio" xml:"Ratio"`
 }

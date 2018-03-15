@@ -17,25 +17,25 @@ package cdn
 
 // DataModule is a nested struct in cdn response
 type DataModule struct {
-	AccDomesticValue     string  `json:"AccDomesticValue" xml:"AccDomesticValue"`
-	L2Value              string  `json:"L2Value" xml:"L2Value"`
-	OverseasL2Value      string  `json:"OverseasL2Value" xml:"OverseasL2Value"`
-	DynamicOverseasValue string  `json:"DynamicOverseasValue" xml:"DynamicOverseasValue"`
-	L1OutBps             float64 `json:"L1OutBps" xml:"L1OutBps"`
-	StaticValue          string  `json:"StaticValue" xml:"StaticValue"`
-	TimeStamp            string  `json:"TimeStamp" xml:"TimeStamp"`
-	Value                string  `json:"Value" xml:"Value"`
-	Timestamp            string  `json:"Timestamp" xml:"Timestamp"`
-	L1InnerBps           float64 `json:"L1InnerBps" xml:"L1InnerBps"`
-	StaticOverseasValue  string  `json:"StaticOverseasValue" xml:"StaticOverseasValue"`
+	OverseasValue        string  `json:"OverseasValue" xml:"OverseasValue"`
 	DynamicValue         string  `json:"DynamicValue" xml:"DynamicValue"`
-	AccValue             string  `json:"AccValue" xml:"AccValue"`
-	AccOverseasValue     string  `json:"AccOverseasValue" xml:"AccOverseasValue"`
-	DomesticL2Value      string  `json:"DomesticL2Value" xml:"DomesticL2Value"`
+	Timestamp            string  `json:"Timestamp" xml:"Timestamp"`
+	DomainName           string  `json:"DomainName" xml:"DomainName"`
+	L2Value              string  `json:"L2Value" xml:"L2Value"`
+	StaticOverseasValue  string  `json:"StaticOverseasValue" xml:"StaticOverseasValue"`
+	DynamicOverseasValue string  `json:"DynamicOverseasValue" xml:"DynamicOverseasValue"`
+	L1InnerBps           float64 `json:"L1InnerBps" xml:"L1InnerBps"`
 	L1Bps                float64 `json:"L1Bps" xml:"L1Bps"`
 	DomesticValue        string  `json:"DomesticValue" xml:"DomesticValue"`
-	OverseasValue        string  `json:"OverseasValue" xml:"OverseasValue"`
-	StaticDomesticValue  string  `json:"StaticDomesticValue" xml:"StaticDomesticValue"`
+	AccValue             string  `json:"AccValue" xml:"AccValue"`
+	Value                string  `json:"Value" xml:"Value"`
+	AccDomesticValue     string  `json:"AccDomesticValue" xml:"AccDomesticValue"`
+	StaticValue          string  `json:"StaticValue" xml:"StaticValue"`
+	TimeStamp            string  `json:"TimeStamp" xml:"TimeStamp"`
 	DynamicDomesticValue string  `json:"DynamicDomesticValue" xml:"DynamicDomesticValue"`
-	DomainName           string  `json:"DomainName" xml:"DomainName"`
+	StaticDomesticValue  string  `json:"StaticDomesticValue" xml:"StaticDomesticValue"`
+	L1OutBps             float64 `json:"L1OutBps" xml:"L1OutBps"`
+	DomesticL2Value      string  `json:"DomesticL2Value" xml:"DomesticL2Value"`
+	AccOverseasValue     string  `json:"AccOverseasValue" xml:"AccOverseasValue"`
+	OverseasL2Value      string  `json:"OverseasL2Value" xml:"OverseasL2Value"`
 }
