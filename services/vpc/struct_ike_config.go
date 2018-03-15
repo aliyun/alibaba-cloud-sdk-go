@@ -17,13 +17,13 @@ package vpc
 
 // IkeConfig is a nested struct in vpc response
 type IkeConfig struct {
-	Psk         string `json:"Psk" xml:"Psk"`
-	IkeVersion  string `json:"IkeVersion" xml:"IkeVersion"`
-	RemoteId    string `json:"RemoteId" xml:"RemoteId"`
-	IkeLifetime int    `json:"IkeLifetime" xml:"IkeLifetime"`
+	LocalId     string `json:"LocalId" xml:"LocalId"`
+	IkeAuthAlg  string `json:"IkeAuthAlg" xml:"IkeAuthAlg"`
+	IkePfs      string `json:"IkePfs" xml:"IkePfs"`
 	IkeMode     string `json:"IkeMode" xml:"IkeMode"`
 	IkeEncAlg   string `json:"IkeEncAlg" xml:"IkeEncAlg"`
-	LocalId     string `json:"LocalId" xml:"LocalId"`
-	IkePfs      string `json:"IkePfs" xml:"IkePfs"`
-	IkeAuthAlg  string `json:"IkeAuthAlg" xml:"IkeAuthAlg"`
+	Psk         string `json:"Psk" xml:"Psk"`
+	RemoteId    string `json:"RemoteId" xml:"RemoteId"`
+	IkeVersion  string `json:"IkeVersion" xml:"IkeVersion"`
+	IkeLifetime int    `json:"IkeLifetime" xml:"IkeLifetime"`
 }

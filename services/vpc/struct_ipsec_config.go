@@ -17,8 +17,8 @@ package vpc
 
 // IpsecConfig is a nested struct in vpc response
 type IpsecConfig struct {
-	IpsecEncAlg   string `json:"IpsecEncAlg" xml:"IpsecEncAlg"`
-	IpsecLifetime int    `json:"IpsecLifetime" xml:"IpsecLifetime"`
 	IpsecAuthAlg  string `json:"IpsecAuthAlg" xml:"IpsecAuthAlg"`
 	IpsecPfs      string `json:"IpsecPfs" xml:"IpsecPfs"`
+	IpsecEncAlg   string `json:"IpsecEncAlg" xml:"IpsecEncAlg"`
+	IpsecLifetime int    `json:"IpsecLifetime" xml:"IpsecLifetime"`
 }

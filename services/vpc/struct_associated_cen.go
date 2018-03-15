@@ -17,7 +17,7 @@ package vpc
 
 // AssociatedCen is a nested struct in vpc response
 type AssociatedCen struct {
-	CenOwnerId int    `json:"CenOwnerId" xml:"CenOwnerId"`
 	CenStatus  string `json:"CenStatus" xml:"CenStatus"`
+	CenOwnerId int    `json:"CenOwnerId" xml:"CenOwnerId"`
 	CenId      string `json:"CenId" xml:"CenId"`
 }
