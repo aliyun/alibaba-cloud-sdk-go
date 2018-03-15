@@ -17,9 +17,9 @@ package slb
 
 // Rule is a nested struct in slb response
 type Rule struct {
-	Url            string `json:"Url" xml:"Url"`
 	Domain         string `json:"Domain" xml:"Domain"`
-	RuleId         string `json:"RuleId" xml:"RuleId"`
 	VServerGroupId string `json:"VServerGroupId" xml:"VServerGroupId"`
 	RuleName       string `json:"RuleName" xml:"RuleName"`
+	RuleId         string `json:"RuleId" xml:"RuleId"`
+	Url            string `json:"Url" xml:"Url"`
 }

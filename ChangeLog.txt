@@ -8,6 +8,9 @@
 1, Synchronize to the latest api list
 
 2018-03-15 Version: 1.2.4
+1, Synchronize to the latest api list
+
+2018-03-15 Version: 1.2.4
 1, Add QueryCustomerSaleInfo API.
 
 

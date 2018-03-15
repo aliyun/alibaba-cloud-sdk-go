@@ -17,25 +17,25 @@ package slb
 
 // LoadBalancer is a nested struct in slb response
 type LoadBalancer struct {
-	ResourceGroupId          string                                                    `json:"ResourceGroupId" xml:"ResourceGroupId"`
-	VpcId                    string                                                    `json:"VpcId" xml:"VpcId"`
-	LoadBalancerName         string                                                    `json:"LoadBalancerName" xml:"LoadBalancerName"`
-	RegionIdAlias            string                                                    `json:"RegionIdAlias" xml:"RegionIdAlias"`
-	PayType                  string                                                    `json:"PayType" xml:"PayType"`
-	SlaveZoneId              string                                                    `json:"SlaveZoneId" xml:"SlaveZoneId"`
-	InternetChargeType       string                                                    `json:"InternetChargeType" xml:"InternetChargeType"`
-	Address                  string                                                    `json:"Address" xml:"Address"`
 	Count                    int                                                       `json:"Count" xml:"Count"`
-	CreateTime               string                                                    `json:"CreateTime" xml:"CreateTime"`
+	SlaveZoneId              string                                                    `json:"SlaveZoneId" xml:"SlaveZoneId"`
 	LoadBalancerStatus       string                                                    `json:"LoadBalancerStatus" xml:"LoadBalancerStatus"`
+	VSwitchId                string                                                    `json:"VSwitchId" xml:"VSwitchId"`
+	MasterZoneId             string                                                    `json:"MasterZoneId" xml:"MasterZoneId"`
+	PayType                  string                                                    `json:"PayType" xml:"PayType"`
+	RegionIdAlias            string                                                    `json:"RegionIdAlias" xml:"RegionIdAlias"`
+	CreateTime               string                                                    `json:"CreateTime" xml:"CreateTime"`
+	Address                  string                                                    `json:"Address" xml:"Address"`
 	LoadBalancerId           string                                                    `json:"LoadBalancerId" xml:"LoadBalancerId"`
 	CreateTimeStamp          int                                                       `json:"CreateTimeStamp" xml:"CreateTimeStamp"`
 	RegionId                 string                                                    `json:"RegionId" xml:"RegionId"`
-	MasterZoneId             string                                                    `json:"MasterZoneId" xml:"MasterZoneId"`
-	NetworkType              string                                                    `json:"NetworkType" xml:"NetworkType"`
-	VSwitchId                string                                                    `json:"VSwitchId" xml:"VSwitchId"`
+	ResourceGroupId          string                                                    `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	LoadBalancerName         string                                                    `json:"LoadBalancerName" xml:"LoadBalancerName"`
+	InternetChargeType       string                                                    `json:"InternetChargeType" xml:"InternetChargeType"`
 	AddressType              string                                                    `json:"AddressType" xml:"AddressType"`
-	VServerGroups            VServerGroupsInDescribeLoadBalancersRelatedEcs            `json:"VServerGroups" xml:"VServerGroups"`
+	VpcId                    string                                                    `json:"VpcId" xml:"VpcId"`
+	NetworkType              string                                                    `json:"NetworkType" xml:"NetworkType"`
 	BackendServers           BackendServersInDescribeLoadBalancersRelatedEcs           `json:"BackendServers" xml:"BackendServers"`
+	VServerGroups            VServerGroupsInDescribeLoadBalancersRelatedEcs            `json:"VServerGroups" xml:"VServerGroups"`
 	MasterSlaveVServerGroups MasterSlaveVServerGroupsInDescribeLoadBalancersRelatedEcs `json:"MasterSlaveVServerGroups" xml:"MasterSlaveVServerGroups"`
 }
