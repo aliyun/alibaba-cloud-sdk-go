@@ -76,11 +76,13 @@ func (client *Client) GetQuotaInstanceWithCallback(request *GetQuotaInstanceRequ
 // GetQuotaInstanceRequest is the request struct for api GetQuotaInstance
 type GetQuotaInstanceRequest struct {
 	*requests.RpcRequest
-	Cluster  string           `position:"Query" name:"Cluster"`
-	QuotaId  string           `position:"Query" name:"QuotaId"`
-	PageNum  requests.Integer `position:"Query" name:"PageNum"`
-	PageSize requests.Integer `position:"Query" name:"PageSize"`
-	Status   string           `position:"Query" name:"Status"`
+	Cluster   string           `position:"Query" name:"Cluster"`
+	QuotaId   string           `position:"Query" name:"QuotaId"`
+	PageNum   requests.Integer `position:"Query" name:"PageNum"`
+	PageSize  requests.Integer `position:"Query" name:"PageSize"`
+	Status    string           `position:"Query" name:"Status"`
+	Region    string           `position:"Query" name:"Region"`
+	QuotaName string           `position:"Query" name:"QuotaName"`
 }
 
 // GetQuotaInstanceResponse is the response struct for api GetQuotaInstance

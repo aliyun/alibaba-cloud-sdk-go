@@ -1,4 +1,7 @@
 2018-03-16 Version: 1.2.4
+1, Update GetQuotaInstance API.
+
+2018-03-16 Version: 1.2.4
 1, Synchronize to the latest api list
 
 2018-03-15 Version: 1.2.4
