@@ -17,8 +17,8 @@ package ecs
 
 // Result is a nested struct in ecs response
 type Result struct {
-	Success    string `json:"Success" xml:"Success"`
 	Message    string `json:"Message" xml:"Message"`
+	Success    string `json:"Success" xml:"Success"`
 	Code       string `json:"Code" xml:"Code"`
 	InstanceId string `json:"InstanceId" xml:"InstanceId"`
 }

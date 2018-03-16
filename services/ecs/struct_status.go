@@ -17,6 +17,6 @@ package ecs
 
 // Status is a nested struct in ecs response
 type Status struct {
-	Code int    `json:"Code" xml:"Code"`
 	Name string `json:"Name" xml:"Name"`
+	Code int    `json:"Code" xml:"Code"`
 }

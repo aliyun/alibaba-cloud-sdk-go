@@ -17,16 +17,16 @@ package ecs
 
 // Invocation is a nested struct in ecs response
 type Invocation struct {
-	TotalCount        int               `json:"TotalCount" xml:"TotalCount"`
-	Timed             bool              `json:"Timed" xml:"Timed"`
-	CommandName       string            `json:"CommandName" xml:"CommandName"`
-	PageSize          int               `json:"PageSize" xml:"PageSize"`
+	CommandId         string            `json:"CommandId" xml:"CommandId"`
 	PageNumber        int               `json:"PageNumber" xml:"PageNumber"`
+	CommandName       string            `json:"CommandName" xml:"CommandName"`
+	TotalCount        int               `json:"TotalCount" xml:"TotalCount"`
+	PageSize          int               `json:"PageSize" xml:"PageSize"`
 	InvokeId          string            `json:"InvokeId" xml:"InvokeId"`
 	InvokeStatus      string            `json:"InvokeStatus" xml:"InvokeStatus"`
-	CommandType       string            `json:"CommandType" xml:"CommandType"`
+	Timed             bool              `json:"Timed" xml:"Timed"`
 	Frequency         string            `json:"Frequency" xml:"Frequency"`
-	CommandId         string            `json:"CommandId" xml:"CommandId"`
-	InvokeInstances   InvokeInstances   `json:"InvokeInstances" xml:"InvokeInstances"`
+	CommandType       string            `json:"CommandType" xml:"CommandType"`
 	InvocationResults InvocationResults `json:"InvocationResults" xml:"InvocationResults"`
+	InvokeInstances   InvokeInstances   `json:"InvokeInstances" xml:"InvokeInstances"`
 }

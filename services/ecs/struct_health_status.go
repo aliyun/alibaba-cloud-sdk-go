@@ -17,6 +17,6 @@ package ecs
 
 // HealthStatus is a nested struct in ecs response
 type HealthStatus struct {
-	Code int    `json:"Code" xml:"Code"`
 	Name string `json:"Name" xml:"Name"`
+	Code int    `json:"Code" xml:"Code"`
 }

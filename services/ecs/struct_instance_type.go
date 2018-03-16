@@ -17,23 +17,23 @@ package ecs
 
 // InstanceType is a nested struct in ecs response
 type InstanceType struct {
-	InstanceTypeFamily   string  `json:"InstanceTypeFamily" xml:"InstanceTypeFamily"`
-	InstanceBandwidthRx  int     `json:"InstanceBandwidthRx" xml:"InstanceBandwidthRx"`
-	SupportIoOptimized   string  `json:"SupportIoOptimized" xml:"SupportIoOptimized"`
-	Cores                int     `json:"Cores" xml:"Cores"`
-	InitialCredit        int     `json:"InitialCredit" xml:"InitialCredit"`
-	GPUAmount            int     `json:"GPUAmount" xml:"GPUAmount"`
-	Memory               int     `json:"Memory" xml:"Memory"`
-	LocalStorageAmount   int     `json:"LocalStorageAmount" xml:"LocalStorageAmount"`
-	EniQuantity          int     `json:"EniQuantity" xml:"EniQuantity"`
-	LocalStorageCapacity int     `json:"LocalStorageCapacity" xml:"LocalStorageCapacity"`
-	Generation           string  `json:"Generation" xml:"Generation"`
-	CpuCoreCount         int     `json:"CpuCoreCount" xml:"CpuCoreCount"`
-	InstanceBandwidthTx  int     `json:"InstanceBandwidthTx" xml:"InstanceBandwidthTx"`
 	MemorySize           float64 `json:"MemorySize" xml:"MemorySize"`
-	InstanceType         string  `json:"InstanceType" xml:"InstanceType"`
+	CpuCoreCount         int     `json:"CpuCoreCount" xml:"CpuCoreCount"`
+	Cores                int     `json:"Cores" xml:"Cores"`
+	Memory               int     `json:"Memory" xml:"Memory"`
 	InstanceTypeId       string  `json:"InstanceTypeId" xml:"InstanceTypeId"`
+	InstanceBandwidthRx  int     `json:"InstanceBandwidthRx" xml:"InstanceBandwidthRx"`
+	InstanceType         string  `json:"InstanceType" xml:"InstanceType"`
 	BaselineCredit       int     `json:"BaselineCredit" xml:"BaselineCredit"`
+	EniQuantity          int     `json:"EniQuantity" xml:"EniQuantity"`
+	Generation           string  `json:"Generation" xml:"Generation"`
+	GPUAmount            int     `json:"GPUAmount" xml:"GPUAmount"`
+	SupportIoOptimized   string  `json:"SupportIoOptimized" xml:"SupportIoOptimized"`
+	InstanceTypeFamily   string  `json:"InstanceTypeFamily" xml:"InstanceTypeFamily"`
+	InitialCredit        int     `json:"InitialCredit" xml:"InitialCredit"`
+	LocalStorageAmount   int     `json:"LocalStorageAmount" xml:"LocalStorageAmount"`
+	LocalStorageCapacity int     `json:"LocalStorageCapacity" xml:"LocalStorageCapacity"`
 	GPUSpec              string  `json:"GPUSpec" xml:"GPUSpec"`
 	LocalStorageCategory string  `json:"LocalStorageCategory" xml:"LocalStorageCategory"`
+	InstanceBandwidthTx  int     `json:"InstanceBandwidthTx" xml:"InstanceBandwidthTx"`
 }

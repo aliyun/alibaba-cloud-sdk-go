@@ -17,13 +17,13 @@ package ecs
 
 // Zone is a nested struct in ecs response
 type Zone struct {
-	ZoneId                    string                                      `json:"ZoneId" xml:"ZoneId"`
 	ZoneNo                    string                                      `json:"ZoneNo" xml:"ZoneNo"`
+	ZoneId                    string                                      `json:"ZoneId" xml:"ZoneId"`
 	LocalName                 string                                      `json:"LocalName" xml:"LocalName"`
+	AvailableResourceCreation AvailableResourceCreation                   `json:"AvailableResourceCreation" xml:"AvailableResourceCreation"`
+	AvailableVolumeCategories AvailableVolumeCategories                   `json:"AvailableVolumeCategories" xml:"AvailableVolumeCategories"`
+	AvailableInstanceTypes    AvailableInstanceTypes                      `json:"AvailableInstanceTypes" xml:"AvailableInstanceTypes"`
 	NetworkTypes              NetworkTypesInDescribeRecommendInstanceType `json:"NetworkTypes" xml:"NetworkTypes"`
 	AvailableDiskCategories   AvailableDiskCategories                     `json:"AvailableDiskCategories" xml:"AvailableDiskCategories"`
-	AvailableInstanceTypes    AvailableInstanceTypes                      `json:"AvailableInstanceTypes" xml:"AvailableInstanceTypes"`
-	AvailableVolumeCategories AvailableVolumeCategories                   `json:"AvailableVolumeCategories" xml:"AvailableVolumeCategories"`
-	AvailableResourceCreation AvailableResourceCreation                   `json:"AvailableResourceCreation" xml:"AvailableResourceCreation"`
 	AvailableResources        AvailableResourcesInDescribeZones           `json:"AvailableResources" xml:"AvailableResources"`
 }
