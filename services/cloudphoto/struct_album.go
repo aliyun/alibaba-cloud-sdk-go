@@ -17,13 +17,13 @@ package cloudphoto
 
 // Album is a nested struct in cloudphoto response
 type Album struct {
-	Mtime       int    `json:"Mtime" xml:"Mtime"`
-	Ctime       int    `json:"Ctime" xml:"Ctime"`
-	IdStr       string `json:"IdStr" xml:"IdStr"`
 	Name        string `json:"Name" xml:"Name"`
-	Id          int    `json:"Id" xml:"Id"`
-	Remark      string `json:"Remark" xml:"Remark"`
-	PhotosCount int    `json:"PhotosCount" xml:"PhotosCount"`
+	IdStr       string `json:"IdStr" xml:"IdStr"`
+	Ctime       int    `json:"Ctime" xml:"Ctime"`
 	State       string `json:"State" xml:"State"`
+	PhotosCount int    `json:"PhotosCount" xml:"PhotosCount"`
+	Mtime       int    `json:"Mtime" xml:"Mtime"`
+	Remark      string `json:"Remark" xml:"Remark"`
+	Id          int    `json:"Id" xml:"Id"`
 	Cover       Cover  `json:"Cover" xml:"Cover"`
 }

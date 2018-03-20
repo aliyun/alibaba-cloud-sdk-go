@@ -85,6 +85,7 @@ type CreatePhotoRequest struct {
 	LibraryId       string           `position:"Query" name:"LibraryId"`
 	Staging         string           `position:"Query" name:"Staging"`
 	ShareExpireTime requests.Integer `position:"Query" name:"ShareExpireTime"`
+	TakenAt         requests.Integer `position:"Query" name:"TakenAt"`
 }
 
 // CreatePhotoResponse is the response struct for api CreatePhoto

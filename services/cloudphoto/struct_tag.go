@@ -17,10 +17,10 @@ package cloudphoto
 
 // Tag is a nested struct in cloudphoto response
 type Tag struct {
-	IsSubTag  bool   `json:"IsSubTag" xml:"IsSubTag"`
+	Name      string `json:"Name" xml:"Name"`
 	ParentTag string `json:"ParentTag" xml:"ParentTag"`
 	IdStr     string `json:"IdStr" xml:"IdStr"`
-	Name      string `json:"Name" xml:"Name"`
 	Id        int    `json:"Id" xml:"Id"`
+	IsSubTag  bool   `json:"IsSubTag" xml:"IsSubTag"`
 	Cover     Cover  `json:"Cover" xml:"Cover"`
 }

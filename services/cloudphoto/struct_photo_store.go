@@ -17,15 +17,15 @@ package cloudphoto
 
 // PhotoStore is a nested struct in cloudphoto response
 type PhotoStore struct {
-	Mtime             int      `json:"Mtime" xml:"Mtime"`
-	DefaultQuota      int      `json:"DefaultQuota" xml:"DefaultQuota"`
-	AutoCleanDays     int      `json:"AutoCleanDays" xml:"AutoCleanDays"`
+	Name              string   `json:"Name" xml:"Name"`
+	IdStr             string   `json:"IdStr" xml:"IdStr"`
 	Ctime             int      `json:"Ctime" xml:"Ctime"`
 	AutoCleanEnabled  bool     `json:"AutoCleanEnabled" xml:"AutoCleanEnabled"`
-	IdStr             string   `json:"IdStr" xml:"IdStr"`
-	Name              string   `json:"Name" xml:"Name"`
-	Id                int      `json:"Id" xml:"Id"`
+	DefaultQuota      int      `json:"DefaultQuota" xml:"DefaultQuota"`
 	Remark            string   `json:"Remark" xml:"Remark"`
+	Mtime             int      `json:"Mtime" xml:"Mtime"`
 	DefaultTrashQuota int      `json:"DefaultTrashQuota" xml:"DefaultTrashQuota"`
+	Id                int      `json:"Id" xml:"Id"`
+	AutoCleanDays     int      `json:"AutoCleanDays" xml:"AutoCleanDays"`
 	Buckets           []Bucket `json:"Buckets" xml:"Buckets"`
 }

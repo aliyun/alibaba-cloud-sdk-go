@@ -18,21 +18,21 @@ package cloudphoto
 // Photo is a nested struct in cloudphoto response
 type Photo struct {
 	FileId          string `json:"FileId" xml:"FileId"`
-	Width           int    `json:"Width" xml:"Width"`
-	State           string `json:"State" xml:"State"`
-	Md5             string `json:"Md5" xml:"Md5"`
-	Title           string `json:"Title" xml:"Title"`
-	Height          int    `json:"Height" xml:"Height"`
-	Mtime           int    `json:"Mtime" xml:"Mtime"`
-	TakenAt         int    `json:"TakenAt" xml:"TakenAt"`
-	Ctime           int    `json:"Ctime" xml:"Ctime"`
 	IdStr           string `json:"IdStr" xml:"IdStr"`
-	Location        string `json:"Location" xml:"Location"`
-	IsVideo         bool   `json:"IsVideo" xml:"IsVideo"`
+	Ctime           int    `json:"Ctime" xml:"Ctime"`
+	Title           string `json:"Title" xml:"Title"`
+	Remark          string `json:"Remark" xml:"Remark"`
 	Like            int    `json:"Like" xml:"Like"`
 	Id              int    `json:"Id" xml:"Id"`
-	Size            int    `json:"Size" xml:"Size"`
-	Remark          string `json:"Remark" xml:"Remark"`
-	InactiveTime    int    `json:"InactiveTime" xml:"InactiveTime"`
 	ShareExpireTime int    `json:"ShareExpireTime" xml:"ShareExpireTime"`
+	InactiveTime    int    `json:"InactiveTime" xml:"InactiveTime"`
+	Location        string `json:"Location" xml:"Location"`
+	Height          int    `json:"Height" xml:"Height"`
+	IsVideo         bool   `json:"IsVideo" xml:"IsVideo"`
+	State           string `json:"State" xml:"State"`
+	Mtime           int    `json:"Mtime" xml:"Mtime"`
+	Md5             string `json:"Md5" xml:"Md5"`
+	Width           int    `json:"Width" xml:"Width"`
+	Size            int    `json:"Size" xml:"Size"`
+	TakenAt         int    `json:"TakenAt" xml:"TakenAt"`
 }

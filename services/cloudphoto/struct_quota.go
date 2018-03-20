@@ -17,12 +17,12 @@ package cloudphoto
 
 // Quota is a nested struct in cloudphoto response
 type Quota struct {
-	InactiveSize    int `json:"InactiveSize" xml:"InactiveSize"`
-	TotalQuota      int `json:"TotalQuota" xml:"TotalQuota"`
-	ActiveSize      int `json:"ActiveSize" xml:"ActiveSize"`
-	VideosCount     int `json:"VideosCount" xml:"VideosCount"`
 	TotalTrashQuota int `json:"TotalTrashQuota" xml:"TotalTrashQuota"`
+	ActiveSize      int `json:"ActiveSize" xml:"ActiveSize"`
+	UsedQuota       int `json:"UsedQuota" xml:"UsedQuota"`
+	InactiveSize    int `json:"InactiveSize" xml:"InactiveSize"`
 	PhotosCount     int `json:"PhotosCount" xml:"PhotosCount"`
 	FacesCount      int `json:"FacesCount" xml:"FacesCount"`
-	UsedQuota       int `json:"UsedQuota" xml:"UsedQuota"`
+	VideosCount     int `json:"VideosCount" xml:"VideosCount"`
+	TotalQuota      int `json:"TotalQuota" xml:"TotalQuota"`
 }
