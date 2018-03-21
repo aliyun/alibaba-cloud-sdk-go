@@ -165,7 +165,7 @@ func (signer *RamRoleArnSigner) refreshCredential(response *responses.CommonResp
 	return
 }
 
-func (signer *RamRoleArnSigner) GetSessionCredential()(*SessionCredential){
+func (signer *RamRoleArnSigner) GetSessionCredential() *SessionCredential {
 	return signer.sessionCredential
 }
 
