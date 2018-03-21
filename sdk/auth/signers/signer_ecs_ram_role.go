@@ -28,7 +28,7 @@ import (
 
 type EcsRamRoleSigner struct {
 	*credentialUpdater
-	sessionCredential *sessionCredential
+	sessionCredential *SessionCredential
 	credential        *credentials.EcsRamRoleCredential
 	commonApi         func(request *requests.CommonRequest, signer interface{}) (response *responses.CommonResponse, err error)
 }
@@ -65,24 +65,24 @@ func (signer *EcsRamRoleSigner) GetAccessKeyId() (accessKeyId string, err error)
 	if signer.sessionCredential == nil || signer.needUpdateCredential() {
 		err = signer.updateCredential()
 	}
-	if err != nil && (signer.sessionCredential == nil || len(signer.sessionCredential.accessKeyId) <= 0) {
+	if err != nil && (signer.sessionCredential == nil || len(signer.sessionCredential.AccessKeyId) <= 0) {
 		return "", err
 	}
-	return signer.sessionCredential.accessKeyId, nil
+	return signer.sessionCredential.AccessKeyId, nil
 }
 
 func (signer *EcsRamRoleSigner) GetExtraParam() map[string]string {
 	if signer.sessionCredential == nil {
 		return make(map[string]string)
 	}
-	if len(signer.sessionCredential.securityToken) <= 0 {
+	if len(signer.sessionCredential.StsToken) <= 0 {
 		return make(map[string]string)
 	}
-	return map[string]string{"SecurityToken": signer.sessionCredential.securityToken}
+	return map[string]string{"SecurityToken": signer.sessionCredential.StsToken}
 }
 
 func (signer *EcsRamRoleSigner) Sign(stringToSign, secretSuffix string) string {
-	secret := signer.sessionCredential.accessKeySecret + secretSuffix
+	secret := signer.sessionCredential.AccessKeyId + secretSuffix
 	return ShaHmac1(stringToSign, secret)
 }
 
@@ -157,13 +157,17 @@ func (signer *EcsRamRoleSigner) refreshCredential(response *responses.CommonResp
 
 	expirationTime, err := time.Parse("2006-01-02T15:04:05Z", expiration.(string))
 	signer.credentialExpiration = int(expirationTime.Unix() - time.Now().Unix())
-	signer.sessionCredential = &sessionCredential{
-		accessKeyId:     accessKeyId.(string),
-		accessKeySecret: accessKeySecret.(string),
-		securityToken:   securityToken.(string),
+	signer.sessionCredential = &SessionCredential{
+		AccessKeyId:     accessKeyId.(string),
+		AccessKeySecret: accessKeySecret.(string),
+		StsToken:        securityToken.(string),
 	}
 
 	return
+}
+
+func (signer *EcsRamRoleSigner) GetSessionCredential()(*SessionCredential){
+	return signer.sessionCredential
 }
 
 func (signer *EcsRamRoleSigner) Shutdown() {

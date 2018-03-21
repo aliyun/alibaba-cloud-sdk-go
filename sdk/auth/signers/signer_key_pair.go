@@ -28,14 +28,9 @@ import (
 
 type SignerKeyPair struct {
 	*credentialUpdater
-	sessionCredential *SessionAkCredential
+	sessionCredential *SessionCredential
 	credential        *credentials.RsaKeyPairCredential
 	commonApi         func(request *requests.CommonRequest, signer interface{}) (response *responses.CommonResponse, err error)
-}
-
-type SessionAkCredential struct {
-	accessKeyId     string
-	accessKeySecret string
 }
 
 func NewSignerKeyPair(credential *credentials.RsaKeyPairCredential, commonApi func(*requests.CommonRequest, interface{}) (response *responses.CommonResponse, err error)) (signer *SignerKeyPair, err error) {
@@ -79,24 +74,24 @@ func (signer *SignerKeyPair) GetAccessKeyId() (accessKeyId string, err error) {
 	if signer.sessionCredential == nil || signer.needUpdateCredential() {
 		err = signer.updateCredential()
 	}
-	if err != nil && (signer.sessionCredential == nil || len(signer.sessionCredential.accessKeyId) <= 0) {
+	if err != nil && (signer.sessionCredential == nil || len(signer.sessionCredential.AccessKeyId) <= 0) {
 		return "", err
 	}
-	return signer.sessionCredential.accessKeyId, err
+	return signer.sessionCredential.AccessKeyId, err
 }
 
 func (signer *SignerKeyPair) GetExtraParam() map[string]string {
 	if signer.sessionCredential == nil || signer.needUpdateCredential() {
 		signer.updateCredential()
 	}
-	if signer.sessionCredential == nil || len(signer.sessionCredential.accessKeyId) <= 0 {
+	if signer.sessionCredential == nil || len(signer.sessionCredential.AccessKeyId) <= 0 {
 		return make(map[string]string)
 	}
 	return make(map[string]string)
 }
 
 func (signer *SignerKeyPair) Sign(stringToSign, secretSuffix string) string {
-	secret := signer.sessionCredential.accessKeySecret + secretSuffix
+	secret := signer.sessionCredential.AccessKeyId + secretSuffix
 	return ShaHmac1(stringToSign, secret)
 }
 
@@ -141,9 +136,9 @@ func (signer *SignerKeyPair) refreshCredential(response *responses.CommonRespons
 	if accessKeyId == nil || accessKeySecret == nil {
 		return
 	}
-	signer.sessionCredential = &SessionAkCredential{
-		accessKeyId:     accessKeyId.(string),
-		accessKeySecret: accessKeySecret.(string),
+	signer.sessionCredential = &SessionCredential{
+		AccessKeyId:     accessKeyId.(string),
+		AccessKeySecret: accessKeySecret.(string),
 	}
 	return
 }
