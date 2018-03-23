@@ -1,3 +1,6 @@
+2018-03-23 Version: 1.4.2
+1, interface DescribeInstanceTypes output InstancePpsRx InstancePpsTx
+
 2018-03-23 Version: 1.4.1
 1, ModifyPrepayInstanceSpec support migrateAcrossZone.
 
