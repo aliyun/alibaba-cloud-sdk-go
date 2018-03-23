@@ -84,6 +84,8 @@ type ModifyPrepayInstanceSpecRequest struct {
 	OperatorType         string           `position:"Query" name:"OperatorType"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
 	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`
+	MigrateAcrossZone    requests.Boolean `position:"Query" name:"MigrateAcrossZone"`
+	SystemDiskCategory   string           `position:"Query" name:"SystemDisk.Category"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
