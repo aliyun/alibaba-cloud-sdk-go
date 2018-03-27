@@ -1,3 +1,6 @@
+2018-03-27 Version: 1.4.6
+1, Rename QueryCustomerSaleInfo to RegionName.
+
 2018-03-27 Version: 1.4.5
 1, publish Project API.
 2, publish Service API.
