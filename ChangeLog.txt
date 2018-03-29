@@ -1,3 +1,8 @@
+2018-03-29 Version: 1.4.9
+1, Add APIs: CreateAlias, UpdateAlias, DeleteAlias, ListAliases, ListAliasesByKeyId.
+2, Add APIs: GetParametersForImport, ImportKeyMaterial, DeleteKeyMaterial.
+3, Update KeyMetadata for CreateKey and DescribeKey.
+
 2018-03-29 Version: 1.4.8
 1, Cloud Enterprise Network SDK initial release.
 
