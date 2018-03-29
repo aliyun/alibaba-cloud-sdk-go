@@ -84,12 +84,12 @@ type FetchLibrariesRequest struct {
 // FetchLibrariesResponse is the response struct for api FetchLibraries
 type FetchLibrariesResponse struct {
 	*responses.BaseResponse
-	Code       string                  `json:"Code" xml:"Code"`
-	Message    string                  `json:"Message" xml:"Message"`
-	TotalCount int                     `json:"TotalCount" xml:"TotalCount"`
-	RequestId  string                  `json:"RequestId" xml:"RequestId"`
-	Action     string                  `json:"Action" xml:"Action"`
-	Library    LibraryInFetchLibraries `json:"Library" xml:"Library"`
+	Code       string    `json:"Code" xml:"Code"`
+	Message    string    `json:"Message" xml:"Message"`
+	TotalCount int       `json:"TotalCount" xml:"TotalCount"`
+	RequestId  string    `json:"RequestId" xml:"RequestId"`
+	Action     string    `json:"Action" xml:"Action"`
+	Libraries  []Library `json:"Libraries" xml:"Libraries"`
 }
 
 // CreateFetchLibrariesRequest creates a request to invoke FetchLibraries API
