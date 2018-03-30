@@ -84,6 +84,7 @@ type ModifyInstanceAutoRenewAttributeRequest struct {
 	Duration             requests.Integer `position:"Query" name:"Duration"`
 	AutoRenew            requests.Boolean `position:"Query" name:"AutoRenew"`
 	RenewalStatus        string           `position:"Query" name:"RenewalStatus"`
+	PeriodUnit           string           `position:"Query" name:"PeriodUnit"`
 }
 
 // ModifyInstanceAutoRenewAttributeResponse is the response struct for api ModifyInstanceAutoRenewAttribute

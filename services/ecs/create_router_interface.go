@@ -91,6 +91,10 @@ type CreateRouterInterfaceRequest struct {
 	OppositeAccessPointId    string           `position:"Query" name:"OppositeAccessPointId"`
 	Description              string           `position:"Query" name:"Description"`
 	Name                     string           `position:"Query" name:"Name"`
+	Period                   requests.Integer `position:"Query" name:"Period"`
+	InstanceChargeType       string           `position:"Query" name:"InstanceChargeType"`
+	AutoPay                  requests.Boolean `position:"Query" name:"AutoPay"`
+	PricingCycle             string           `position:"Query" name:"PricingCycle"`
 	ClientToken              string           `position:"Query" name:"ClientToken"`
 	OwnerId                  requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount     string           `position:"Query" name:"ResourceOwnerAccount"`
@@ -104,6 +108,7 @@ type CreateRouterInterfaceResponse struct {
 	*responses.BaseResponse
 	RequestId         string `json:"RequestId" xml:"RequestId"`
 	RouterInterfaceId string `json:"RouterInterfaceId" xml:"RouterInterfaceId"`
+	OrderId           int    `json:"OrderId" xml:"OrderId"`
 }
 
 // CreateCreateRouterInterfaceRequest creates a request to invoke CreateRouterInterface API

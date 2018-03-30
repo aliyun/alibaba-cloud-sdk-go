@@ -17,12 +17,12 @@ package push
 
 // PushMessageInfo is a nested struct in push response
 type PushMessageInfo struct {
-	Body       string `json:"Body" xml:"Body"`
-	Type       string `json:"Type" xml:"Type"`
-	PushTime   string `json:"PushTime" xml:"PushTime"`
 	MessageId  string `json:"MessageId" xml:"MessageId"`
-	AppName    string `json:"AppName" xml:"AppName"`
+	PushTime   string `json:"PushTime" xml:"PushTime"`
 	Title      string `json:"Title" xml:"Title"`
-	DeviceType string `json:"DeviceType" xml:"DeviceType"`
 	AppKey     int    `json:"AppKey" xml:"AppKey"`
+	DeviceType string `json:"DeviceType" xml:"DeviceType"`
+	Body       string `json:"Body" xml:"Body"`
+	AppName    string `json:"AppName" xml:"AppName"`
+	Type       string `json:"Type" xml:"Type"`
 }

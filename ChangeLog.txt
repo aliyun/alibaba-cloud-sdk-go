@@ -1,3 +1,43 @@
+2018-03-29 Version: 1.4.10
+1, edit FetchLibraries return param format
+
+2018-03-29 Version: 1.4.9
+1, Add APIs: CreateAlias, UpdateAlias, DeleteAlias, ListAliases, ListAliasesByKeyId.
+2, Add APIs: GetParametersForImport, ImportKeyMaterial, DeleteKeyMaterial.
+3, Update KeyMetadata for CreateKey and DescribeKey.
+
+2018-03-29 Version: 1.4.8
+1, Cloud Enterprise Network SDK initial release.
+
+2018-03-29 Version: 1.4.7
+1, Cloud Enterprise Network SDK initial release.
+
+2018-03-27 Version: 1.4.6
+1, Rename QueryCustomerSaleInfo to RegionName.
+
+2018-03-27 Version: 1.4.5
+1, publish Project API.
+2, publish Service API.
+3, publish Service order API.
+4, publish Credential API.
+5, publish CAS API.
+
+2018-03-27 Version: 1.4.4
+1, add interface FetchLibraries
+
+2018-03-23 Version: 1.4.3
+1, interface DescribeInstanceTypes output InstancePpsRx InstancePpsTx
+
+2018-03-23 Version: 1.4.2
+1, interface DescribeInstanceTypes output InstancePpsRx InstancePpsTx
+
+2018-03-23 Version: 1.4.1
+1, ModifyPrepayInstanceSpec support migrateAcrossZone.
+
+2018-03-23 Version: 1.4.0
+1, Add 'QueryDevicesByAccount' and 'QueryDevicesByAlias'  Api.
+2, Remove 'QueryPushDetail' Api.
+
 2018-03-20 Version: 1.2.7
 1, add FetchAlbumTagPhotos
 2, CreatePhoto add optional param TakenAt
