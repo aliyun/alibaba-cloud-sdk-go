@@ -76,7 +76,7 @@ func (client *Client) QueryCustomerSaleInfoWithCallback(request *QueryCustomerSa
 // QueryCustomerSaleInfoRequest is the request struct for api QueryCustomerSaleInfo
 type QueryCustomerSaleInfoRequest struct {
 	*requests.RpcRequest
-	Region string `position:"Query" name:"Region"`
+	RegionName string `position:"Query" name:"RegionName"`
 }
 
 // QueryCustomerSaleInfoResponse is the response struct for api QueryCustomerSaleInfo
