@@ -16,8 +16,8 @@ package push
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/MWangxj/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/MWangxj/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // Push invokes the push.Push API synchronously
