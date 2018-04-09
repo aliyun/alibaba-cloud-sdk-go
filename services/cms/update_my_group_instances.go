@@ -94,7 +94,7 @@ func CreateUpdateMyGroupInstancesRequest() (request *UpdateMyGroupInstancesReque
 	request = &UpdateMyGroupInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2017-03-01", "UpdateMyGroupInstances", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2018-03-08", "UpdateMyGroupInstances", "cms", "openAPI")
 	return
 }
 

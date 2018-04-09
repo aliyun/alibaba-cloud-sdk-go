@@ -17,27 +17,16 @@ package cms
 
 // AlarmHistory is a nested struct in cms response
 type AlarmHistory struct {
-	Status          int                                 `json:"Status" xml:"Status"`
-	LastTime        int                                 `json:"LastTime" xml:"LastTime"`
-	GroupId         string                              `json:"GroupId" xml:"GroupId"`
-	Expression      string                              `json:"Expression" xml:"Expression"`
-	EvaluationCount int                                 `json:"EvaluationCount" xml:"EvaluationCount"`
-	PreLevel        string                              `json:"PreLevel" xml:"PreLevel"`
-	State           string                              `json:"State" xml:"State"`
-	Namespace       string                              `json:"Namespace" xml:"Namespace"`
-	Value           string                              `json:"Value" xml:"Value"`
-	Dimensions      string                              `json:"Dimensions" xml:"Dimensions"`
-	AlertTime       int                                 `json:"AlertTime" xml:"AlertTime"`
-	Level           string                              `json:"Level" xml:"Level"`
-	UserId          string                              `json:"UserId" xml:"UserId"`
-	MetricName      string                              `json:"MetricName" xml:"MetricName"`
-	Id              string                              `json:"Id" xml:"Id"`
-	AlertName       string                              `json:"AlertName" xml:"AlertName"`
-	RuleName        string                              `json:"ruleName" xml:"ruleName"`
-	Webhooks        string                              `json:"Webhooks" xml:"Webhooks"`
-	ContactMails    ContactMails                        `json:"ContactMails" xml:"ContactMails"`
-	ContactSmses    ContactSmses                        `json:"ContactSmses" xml:"ContactSmses"`
-	ContactGroups   ContactGroupsInDescribeAlarmHistory `json:"ContactGroups" xml:"ContactGroups"`
-	ContactALIIMs   ContactALIIMs                       `json:"ContactALIIMs" xml:"ContactALIIMs"`
-	Contacts        Contacts                            `json:"Contacts" xml:"Contacts"`
+	Name            string `json:"Name" xml:"Name"`
+	Value           string `json:"Value" xml:"Value"`
+	AlarmTime       int    `json:"AlarmTime" xml:"AlarmTime"`
+	Status          int    `json:"Status" xml:"Status"`
+	State           string `json:"State" xml:"State"`
+	Namespace       string `json:"Namespace" xml:"Namespace"`
+	Dimension       string `json:"Dimension" xml:"Dimension"`
+	ContactGroups   string `json:"ContactGroups" xml:"ContactGroups"`
+	Id              string `json:"Id" xml:"Id"`
+	MetricName      string `json:"MetricName" xml:"MetricName"`
+	LastTime        int    `json:"LastTime" xml:"LastTime"`
+	EvaluationCount int    `json:"EvaluationCount" xml:"EvaluationCount"`
 }

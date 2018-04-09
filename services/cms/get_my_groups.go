@@ -76,10 +76,10 @@ func (client *Client) GetMyGroupsWithCallback(request *GetMyGroupsRequest, callb
 // GetMyGroupsRequest is the request struct for api GetMyGroups
 type GetMyGroupsRequest struct {
 	*requests.RpcRequest
+	InstanceId          string           `position:"Query" name:"InstanceId"`
 	GroupId             requests.Integer `position:"Query" name:"GroupId"`
 	Type                string           `position:"Query" name:"Type"`
 	SelectContactGroups requests.Boolean `position:"Query" name:"SelectContactGroups"`
-	InstanceId          string           `position:"Query" name:"InstanceId"`
 	BindUrl             string           `position:"Query" name:"BindUrl"`
 	GroupName           string           `position:"Query" name:"GroupName"`
 }
@@ -99,7 +99,7 @@ func CreateGetMyGroupsRequest() (request *GetMyGroupsRequest) {
 	request = &GetMyGroupsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2017-03-01", "GetMyGroups", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2018-03-08", "GetMyGroups", "cms", "openAPI")
 	return
 }
 

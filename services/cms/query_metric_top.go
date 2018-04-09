@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// QueryMetricLast invokes the cms.QueryMetricLast API synchronously
-// api document: https://help.aliyun.com/api/cms/querymetriclast.html
-func (client *Client) QueryMetricLast(request *QueryMetricLastRequest) (response *QueryMetricLastResponse, err error) {
-	response = CreateQueryMetricLastResponse()
+// QueryMetricTop invokes the cms.QueryMetricTop API synchronously
+// api document: https://help.aliyun.com/api/cms/querymetrictop.html
+func (client *Client) QueryMetricTop(request *QueryMetricTopRequest) (response *QueryMetricTopResponse, err error) {
+	response = CreateQueryMetricTopResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// QueryMetricLastWithChan invokes the cms.QueryMetricLast API asynchronously
-// api document: https://help.aliyun.com/api/cms/querymetriclast.html
+// QueryMetricTopWithChan invokes the cms.QueryMetricTop API asynchronously
+// api document: https://help.aliyun.com/api/cms/querymetrictop.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) QueryMetricLastWithChan(request *QueryMetricLastRequest) (<-chan *QueryMetricLastResponse, <-chan error) {
-	responseChan := make(chan *QueryMetricLastResponse, 1)
+func (client *Client) QueryMetricTopWithChan(request *QueryMetricTopRequest) (<-chan *QueryMetricTopResponse, <-chan error) {
+	responseChan := make(chan *QueryMetricTopResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.QueryMetricLast(request)
+		response, err := client.QueryMetricTop(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) QueryMetricLastWithChan(request *QueryMetricLastRequest) (
 	return responseChan, errChan
 }
 
-// QueryMetricLastWithCallback invokes the cms.QueryMetricLast API asynchronously
-// api document: https://help.aliyun.com/api/cms/querymetriclast.html
+// QueryMetricTopWithCallback invokes the cms.QueryMetricTop API asynchronously
+// api document: https://help.aliyun.com/api/cms/querymetrictop.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) QueryMetricLastWithCallback(request *QueryMetricLastRequest, callback func(response *QueryMetricLastResponse, err error)) <-chan int {
+func (client *Client) QueryMetricTopWithCallback(request *QueryMetricTopRequest, callback func(response *QueryMetricTopResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *QueryMetricLastResponse
+		var response *QueryMetricTopResponse
 		var err error
 		defer close(result)
-		response, err = client.QueryMetricLast(request)
+		response, err = client.QueryMetricTop(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,46 +73,45 @@ func (client *Client) QueryMetricLastWithCallback(request *QueryMetricLastReques
 	return result
 }
 
-// QueryMetricLastRequest is the request struct for api QueryMetricLast
-type QueryMetricLastRequest struct {
+// QueryMetricTopRequest is the request struct for api QueryMetricTop
+type QueryMetricTopRequest struct {
 	*requests.RpcRequest
-	Project         string           `position:"Query" name:"Project"`
-	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	CallbyCmsOwner  string           `position:"Query" name:"callby_cms_owner"`
-	Metric          string           `position:"Query" name:"Metric"`
 	Period          string           `position:"Query" name:"Period"`
+	CallbyCmsOwner  string           `position:"Query" name:"callby_cms_owner"`
+	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Project         string           `position:"Query" name:"Project"`
+	Metric          string           `position:"Query" name:"Metric"`
 	StartTime       string           `position:"Query" name:"StartTime"`
 	EndTime         string           `position:"Query" name:"EndTime"`
 	Dimensions      string           `position:"Query" name:"Dimensions"`
-	Cursor          string           `position:"Query" name:"Cursor"`
-	Page            string           `position:"Query" name:"Page"`
+	Orderby         string           `position:"Query" name:"Orderby"`
+	OrderDesc       string           `position:"Query" name:"OrderDesc"`
 	Length          string           `position:"Query" name:"Length"`
 	Express         string           `position:"Query" name:"Express"`
 }
 
-// QueryMetricLastResponse is the response struct for api QueryMetricLast
-type QueryMetricLastResponse struct {
+// QueryMetricTopResponse is the response struct for api QueryMetricTop
+type QueryMetricTopResponse struct {
 	*responses.BaseResponse
 	Code       string `json:"Code" xml:"Code"`
 	Message    string `json:"Message" xml:"Message"`
 	RequestId  string `json:"RequestId" xml:"RequestId"`
-	Cursor     string `json:"Cursor" xml:"Cursor"`
 	Datapoints string `json:"Datapoints" xml:"Datapoints"`
 	Period     string `json:"Period" xml:"Period"`
 }
 
-// CreateQueryMetricLastRequest creates a request to invoke QueryMetricLast API
-func CreateQueryMetricLastRequest() (request *QueryMetricLastRequest) {
-	request = &QueryMetricLastRequest{
+// CreateQueryMetricTopRequest creates a request to invoke QueryMetricTop API
+func CreateQueryMetricTopRequest() (request *QueryMetricTopRequest) {
+	request = &QueryMetricTopRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2018-03-08", "QueryMetricLast", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2018-03-08", "QueryMetricTop", "cms", "openAPI")
 	return
 }
 
-// CreateQueryMetricLastResponse creates a response to parse from QueryMetricLast response
-func CreateQueryMetricLastResponse() (response *QueryMetricLastResponse) {
-	response = &QueryMetricLastResponse{
+// CreateQueryMetricTopResponse creates a response to parse from QueryMetricTop response
+func CreateQueryMetricTopResponse() (response *QueryMetricTopResponse) {
+	response = &QueryMetricTopResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

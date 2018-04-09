@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// ProfileSet invokes the cms.ProfileSet API synchronously
-// api document: https://help.aliyun.com/api/cms/profileset.html
-func (client *Client) ProfileSet(request *ProfileSetRequest) (response *ProfileSetResponse, err error) {
-	response = CreateProfileSetResponse()
+// TaskConfigEnable invokes the cms.TaskConfigEnable API synchronously
+// api document: https://help.aliyun.com/api/cms/taskconfigenable.html
+func (client *Client) TaskConfigEnable(request *TaskConfigEnableRequest) (response *TaskConfigEnableResponse, err error) {
+	response = CreateTaskConfigEnableResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// ProfileSetWithChan invokes the cms.ProfileSet API asynchronously
-// api document: https://help.aliyun.com/api/cms/profileset.html
+// TaskConfigEnableWithChan invokes the cms.TaskConfigEnable API asynchronously
+// api document: https://help.aliyun.com/api/cms/taskconfigenable.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) ProfileSetWithChan(request *ProfileSetRequest) (<-chan *ProfileSetResponse, <-chan error) {
-	responseChan := make(chan *ProfileSetResponse, 1)
+func (client *Client) TaskConfigEnableWithChan(request *TaskConfigEnableRequest) (<-chan *TaskConfigEnableResponse, <-chan error) {
+	responseChan := make(chan *TaskConfigEnableResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.ProfileSet(request)
+		response, err := client.TaskConfigEnable(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) ProfileSetWithChan(request *ProfileSetRequest) (<-chan *Pr
 	return responseChan, errChan
 }
 
-// ProfileSetWithCallback invokes the cms.ProfileSet API asynchronously
-// api document: https://help.aliyun.com/api/cms/profileset.html
+// TaskConfigEnableWithCallback invokes the cms.TaskConfigEnable API asynchronously
+// api document: https://help.aliyun.com/api/cms/taskconfigenable.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) ProfileSetWithCallback(request *ProfileSetRequest, callback func(response *ProfileSetResponse, err error)) <-chan int {
+func (client *Client) TaskConfigEnableWithCallback(request *TaskConfigEnableRequest, callback func(response *TaskConfigEnableResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *ProfileSetResponse
+		var response *TaskConfigEnableResponse
 		var err error
 		defer close(result)
-		response, err = client.ProfileSet(request)
+		response, err = client.TaskConfigEnable(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,17 +73,15 @@ func (client *Client) ProfileSetWithCallback(request *ProfileSetRequest, callbac
 	return result
 }
 
-// ProfileSetRequest is the request struct for api ProfileSet
-type ProfileSetRequest struct {
+// TaskConfigEnableRequest is the request struct for api TaskConfigEnable
+type TaskConfigEnableRequest struct {
 	*requests.RpcRequest
-	UserId                   requests.Integer `position:"Query" name:"UserId"`
-	AutoInstall              requests.Boolean `position:"Query" name:"AutoInstall"`
-	EnableInstallAgentNewECS requests.Boolean `position:"Query" name:"EnableInstallAgentNewECS"`
-	EnableActiveAlert        string           `position:"Query" name:"EnableActiveAlert"`
+	IdList  *[]string        `position:"Query" name:"IdList"  type:"Repeated"`
+	Enabled requests.Boolean `position:"Query" name:"Enabled"`
 }
 
-// ProfileSetResponse is the response struct for api ProfileSet
-type ProfileSetResponse struct {
+// TaskConfigEnableResponse is the response struct for api TaskConfigEnable
+type TaskConfigEnableResponse struct {
 	*responses.BaseResponse
 	ErrorCode    int    `json:"ErrorCode" xml:"ErrorCode"`
 	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
@@ -91,18 +89,18 @@ type ProfileSetResponse struct {
 	RequestId    string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateProfileSetRequest creates a request to invoke ProfileSet API
-func CreateProfileSetRequest() (request *ProfileSetRequest) {
-	request = &ProfileSetRequest{
+// CreateTaskConfigEnableRequest creates a request to invoke TaskConfigEnable API
+func CreateTaskConfigEnableRequest() (request *TaskConfigEnableRequest) {
+	request = &TaskConfigEnableRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2018-03-08", "ProfileSet", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2018-03-08", "TaskConfigEnable", "cms", "openAPI")
 	return
 }
 
-// CreateProfileSetResponse creates a response to parse from ProfileSet response
-func CreateProfileSetResponse() (response *ProfileSetResponse) {
-	response = &ProfileSetResponse{
+// CreateTaskConfigEnableResponse creates a response to parse from TaskConfigEnable response
+func CreateTaskConfigEnableResponse() (response *TaskConfigEnableResponse) {
+	response = &TaskConfigEnableResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

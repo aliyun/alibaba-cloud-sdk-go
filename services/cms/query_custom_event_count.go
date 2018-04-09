@@ -82,9 +82,11 @@ type QueryCustomEventCountRequest struct {
 // QueryCustomEventCountResponse is the response struct for api QueryCustomEventCount
 type QueryCustomEventCountResponse struct {
 	*responses.BaseResponse
-	Code    string `json:"Code" xml:"Code"`
-	Message string `json:"Message" xml:"Message"`
-	Data    string `json:"Data" xml:"Data"`
+	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
+	Data      string `json:"Data" xml:"Data"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
 }
 
 // CreateQueryCustomEventCountRequest creates a request to invoke QueryCustomEventCount API
@@ -92,7 +94,7 @@ func CreateQueryCustomEventCountRequest() (request *QueryCustomEventCountRequest
 	request = &QueryCustomEventCountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2017-03-01", "QueryCustomEventCount", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2018-03-08", "QueryCustomEventCount", "cms", "openAPI")
 	return
 }
 

@@ -76,9 +76,9 @@ func (client *Client) ListMyGroupInstancesDetailsWithCallback(request *ListMyGro
 // ListMyGroupInstancesDetailsRequest is the request struct for api ListMyGroupInstancesDetails
 type ListMyGroupInstancesDetailsRequest struct {
 	*requests.RpcRequest
+	Total      requests.Boolean `position:"Query" name:"Total"`
 	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
-	Total      requests.Boolean `position:"Query" name:"Total"`
 	GroupId    requests.Integer `position:"Query" name:"GroupId"`
 	Category   string           `position:"Query" name:"Category"`
 }
@@ -101,7 +101,7 @@ func CreateListMyGroupInstancesDetailsRequest() (request *ListMyGroupInstancesDe
 	request = &ListMyGroupInstancesDetailsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2017-03-01", "ListMyGroupInstancesDetails", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2018-03-08", "ListMyGroupInstancesDetails", "cms", "openAPI")
 	return
 }
 

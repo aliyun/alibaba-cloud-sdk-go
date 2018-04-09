@@ -82,9 +82,11 @@ type QuerySystemEventHistogramRequest struct {
 // QuerySystemEventHistogramResponse is the response struct for api QuerySystemEventHistogram
 type QuerySystemEventHistogramResponse struct {
 	*responses.BaseResponse
-	Code    string `json:"Code" xml:"Code"`
-	Message string `json:"Message" xml:"Message"`
-	Data    string `json:"Data" xml:"Data"`
+	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
+	Data      string `json:"Data" xml:"Data"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   string `json:"Success" xml:"Success"`
 }
 
 // CreateQuerySystemEventHistogramRequest creates a request to invoke QuerySystemEventHistogram API
@@ -92,7 +94,7 @@ func CreateQuerySystemEventHistogramRequest() (request *QuerySystemEventHistogra
 	request = &QuerySystemEventHistogramRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2017-03-01", "QuerySystemEventHistogram", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2018-03-08", "QuerySystemEventHistogram", "cms", "openAPI")
 	return
 }
 

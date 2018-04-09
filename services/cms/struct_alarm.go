@@ -17,22 +17,22 @@ package cms
 
 // Alarm is a nested struct in cms response
 type Alarm struct {
-	Statistics         string `json:"Statistics" xml:"Statistics"`
 	Name               string `json:"Name" xml:"Name"`
-	StartTime          string `json:"StartTime" xml:"StartTime"`
-	Threshold          string `json:"Threshold" xml:"Threshold"`
-	State              string `json:"State" xml:"State"`
-	EvaluationCount    string `json:"EvaluationCount" xml:"EvaluationCount"`
 	RuleName           string `json:"RuleName" xml:"RuleName"`
-	ComparisonOperator string `json:"ComparisonOperator" xml:"ComparisonOperator"`
-	Namespace          string `json:"Namespace" xml:"Namespace"`
+	ContactGroups      string `json:"ContactGroups" xml:"ContactGroups"`
+	SilenceTime        string `json:"SilenceTime" xml:"SilenceTime"`
+	Threshold          string `json:"Threshold" xml:"Threshold"`
 	Period             string `json:"Period" xml:"Period"`
 	Uuid               string `json:"Uuid" xml:"Uuid"`
-	SilenceTime        string `json:"SilenceTime" xml:"SilenceTime"`
-	NotifyType         string `json:"NotifyType" xml:"NotifyType"`
-	ContactGroups      string `json:"ContactGroups" xml:"ContactGroups"`
-	MetricName         string `json:"MetricName" xml:"MetricName"`
-	Enable             string `json:"Enable" xml:"Enable"`
-	Webhook            string `json:"Webhook" xml:"Webhook"`
+	ComparisonOperator string `json:"ComparisonOperator" xml:"ComparisonOperator"`
+	StartTime          string `json:"StartTime" xml:"StartTime"`
+	State              string `json:"State" xml:"State"`
 	EndTime            string `json:"EndTime" xml:"EndTime"`
+	NotifyType         string `json:"NotifyType" xml:"NotifyType"`
+	Namespace          string `json:"Namespace" xml:"Namespace"`
+	Enable             string `json:"Enable" xml:"Enable"`
+	MetricName         string `json:"MetricName" xml:"MetricName"`
+	Statistics         string `json:"Statistics" xml:"Statistics"`
+	EvaluationCount    string `json:"EvaluationCount" xml:"EvaluationCount"`
+	Webhook            string `json:"Webhook" xml:"Webhook"`
 }
