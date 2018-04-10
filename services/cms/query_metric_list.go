@@ -76,9 +76,9 @@ func (client *Client) QueryMetricListWithCallback(request *QueryMetricListReques
 // QueryMetricListRequest is the request struct for api QueryMetricList
 type QueryMetricListRequest struct {
 	*requests.RpcRequest
+	Project         string           `position:"Query" name:"Project"`
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	CallbyCmsOwner  string           `position:"Query" name:"callby_cms_owner"`
-	Project         string           `position:"Query" name:"Project"`
 	Metric          string           `position:"Query" name:"Metric"`
 	Period          string           `position:"Query" name:"Period"`
 	StartTime       string           `position:"Query" name:"StartTime"`
@@ -95,7 +95,6 @@ type QueryMetricListResponse struct {
 	*responses.BaseResponse
 	Code       string `json:"Code" xml:"Code"`
 	Message    string `json:"Message" xml:"Message"`
-	Success    bool   `json:"Success" xml:"Success"`
 	RequestId  string `json:"RequestId" xml:"RequestId"`
 	Cursor     string `json:"Cursor" xml:"Cursor"`
 	Datapoints string `json:"Datapoints" xml:"Datapoints"`
@@ -107,7 +106,7 @@ func CreateQueryMetricListRequest() (request *QueryMetricListRequest) {
 	request = &QueryMetricListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2017-03-01", "QueryMetricList", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2018-03-08", "QueryMetricList", "cms", "openAPI")
 	return
 }
 

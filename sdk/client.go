@@ -190,6 +190,9 @@ func (client *Client) DoActionWithSigner(request requests.AcsRequest, response r
 		finalSigner = client.signer
 	}
 	httpRequest, err := buildHttpRequest(request, finalSigner, regionId)
+	if client.config.UserAgent != "" {
+		httpRequest.Header.Set("User-Agent", client.config.UserAgent)
+	}
 	if err != nil {
 		return
 	}

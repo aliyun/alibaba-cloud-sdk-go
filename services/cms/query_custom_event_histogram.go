@@ -82,9 +82,11 @@ type QueryCustomEventHistogramRequest struct {
 // QueryCustomEventHistogramResponse is the response struct for api QueryCustomEventHistogram
 type QueryCustomEventHistogramResponse struct {
 	*responses.BaseResponse
-	Code    string `json:"Code" xml:"Code"`
-	Message string `json:"Message" xml:"Message"`
-	Data    string `json:"Data" xml:"Data"`
+	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
+	Data      string `json:"Data" xml:"Data"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   string `json:"Success" xml:"Success"`
 }
 
 // CreateQueryCustomEventHistogramRequest creates a request to invoke QueryCustomEventHistogram API
@@ -92,7 +94,7 @@ func CreateQueryCustomEventHistogramRequest() (request *QueryCustomEventHistogra
 	request = &QueryCustomEventHistogramRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2017-03-01", "QueryCustomEventHistogram", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2018-03-08", "QueryCustomEventHistogram", "cms", "openAPI")
 	return
 }
 

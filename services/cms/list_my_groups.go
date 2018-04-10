@@ -76,11 +76,11 @@ func (client *Client) ListMyGroupsWithCallback(request *ListMyGroupsRequest, cal
 // ListMyGroupsRequest is the request struct for api ListMyGroups
 type ListMyGroupsRequest struct {
 	*requests.RpcRequest
+	Keyword             string           `position:"Query" name:"Keyword"`
 	Type                string           `position:"Query" name:"Type"`
-	SelectContactGroups requests.Boolean `position:"Query" name:"SelectContactGroups"`
 	PageNumber          requests.Integer `position:"Query" name:"PageNumber"`
 	PageSize            requests.Integer `position:"Query" name:"PageSize"`
-	Keyword             string           `position:"Query" name:"Keyword"`
+	SelectContactGroups requests.Boolean `position:"Query" name:"SelectContactGroups"`
 	InstanceId          string           `position:"Query" name:"InstanceId"`
 	BindUrls            string           `position:"Query" name:"BindUrls"`
 	GroupName           string           `position:"Query" name:"GroupName"`
@@ -104,7 +104,7 @@ func CreateListMyGroupsRequest() (request *ListMyGroupsRequest) {
 	request = &ListMyGroupsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2017-03-01", "ListMyGroups", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2018-03-08", "ListMyGroups", "cms", "openAPI")
 	return
 }
 

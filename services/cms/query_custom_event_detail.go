@@ -82,9 +82,11 @@ type QueryCustomEventDetailRequest struct {
 // QueryCustomEventDetailResponse is the response struct for api QueryCustomEventDetail
 type QueryCustomEventDetailResponse struct {
 	*responses.BaseResponse
-	Code    string `json:"Code" xml:"Code"`
-	Message string `json:"Message" xml:"Message"`
-	Data    string `json:"Data" xml:"Data"`
+	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
+	Data      string `json:"Data" xml:"Data"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   string `json:"Success" xml:"Success"`
 }
 
 // CreateQueryCustomEventDetailRequest creates a request to invoke QueryCustomEventDetail API
@@ -92,7 +94,7 @@ func CreateQueryCustomEventDetailRequest() (request *QueryCustomEventDetailReque
 	request = &QueryCustomEventDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2017-03-01", "QueryCustomEventDetail", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2018-03-08", "QueryCustomEventDetail", "cms", "openAPI")
 	return
 }
 

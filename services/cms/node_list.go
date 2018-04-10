@@ -76,12 +76,12 @@ func (client *Client) NodeListWithCallback(request *NodeListRequest, callback fu
 // NodeListRequest is the request struct for api NodeList
 type NodeListRequest struct {
 	*requests.RpcRequest
+	PageNumber    requests.Integer `position:"Query" name:"PageNumber"`
+	KeyWord       string           `position:"Query" name:"KeyWord"`
 	UserId        requests.Integer `position:"Query" name:"UserId"`
 	HostName      string           `position:"Query" name:"HostName"`
-	KeyWord       string           `position:"Query" name:"KeyWord"`
 	InstanceIds   string           `position:"Query" name:"InstanceIds"`
 	SerialNumbers string           `position:"Query" name:"SerialNumbers"`
-	PageNumber    requests.Integer `position:"Query" name:"PageNumber"`
 	PageSize      requests.Integer `position:"Query" name:"PageSize"`
 	Status        string           `position:"Query" name:"Status"`
 }
@@ -105,7 +105,7 @@ func CreateNodeListRequest() (request *NodeListRequest) {
 	request = &NodeListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2017-03-01", "NodeList", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2018-03-08", "NodeList", "cms", "openAPI")
 	return
 }
 

@@ -96,7 +96,7 @@ func CreateNodeStatusRequest() (request *NodeStatusRequest) {
 	request = &NodeStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2017-03-01", "NodeStatus", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2018-03-08", "NodeStatus", "cms", "openAPI")
 	return
 }
 

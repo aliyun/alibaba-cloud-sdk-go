@@ -1,3 +1,58 @@
+2018-04-09 Version: 1.7.2
+1, Add api: QueryMetricData, QueryMetricTop, TaskConfigCreate, TaskConfigDelete, TaskConfigEnable, TaskConfigList, TaskConfigModify, TaskConfigUnhealthy
+2, Remove api: PutSystemEvent 
+
+2018-04-08 Version: 1.7.0
+1, Add voice asynchronous scan interface.
+
+2018-04-04 Version: 1.6.1
+1, add tablestore trigger pop api and sample code
+
+2018-04-04 Version: 1.6.0
+1, Add APIs for domain transfer in and transfer out.
+2, Add APIs for poll and acknowledge domain task.
+
+2018-04-03 Version: 1.5.0
+1, Add APIs for domain transfer in and transfer out.
+2, Add APIs for poll and acknowledge domain task.
+3, Add API for query domain group list.
+
+2018-03-30 Version: 1.4.11
+1, API QueryCustomerSaleInfo arguments update.
+
+2018-03-29 Version: 1.4.10
+1, edit FetchLibraries return param format
+
+2018-03-29 Version: 1.4.9
+1, Add APIs: CreateAlias, UpdateAlias, DeleteAlias, ListAliases, ListAliasesByKeyId.
+2, Add APIs: GetParametersForImport, ImportKeyMaterial, DeleteKeyMaterial.
+3, Update KeyMetadata for CreateKey and DescribeKey.
+
+2018-03-29 Version: 1.4.8
+1, Cloud Enterprise Network SDK initial release.
+
+2018-03-29 Version: 1.4.7
+1, Cloud Enterprise Network SDK initial release.
+
+2018-03-27 Version: 1.4.6
+1, Rename QueryCustomerSaleInfo to RegionName.
+
+2018-03-27 Version: 1.4.5
+1, publish Project API.
+2, publish Service API.
+3, publish Service order API.
+4, publish Credential API.
+5, publish CAS API.
+
+2018-03-27 Version: 1.4.4
+1, add interface FetchLibraries
+
+2018-03-23 Version: 1.4.3
+1, interface DescribeInstanceTypes output InstancePpsRx InstancePpsTx
+
+2018-03-23 Version: 1.4.2
+1, interface DescribeInstanceTypes output InstancePpsRx InstancePpsTx
+
 2018-03-23 Version: 1.4.1
 1, ModifyPrepayInstanceSpec support migrateAcrossZone.
 

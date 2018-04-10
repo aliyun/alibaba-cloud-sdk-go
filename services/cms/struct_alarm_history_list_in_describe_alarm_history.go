@@ -17,5 +17,5 @@ package cms
 
 // AlarmHistoryListInDescribeAlarmHistory is a nested struct in cms response
 type AlarmHistoryListInDescribeAlarmHistory struct {
-	AlarmHistory []AlarmHistory `json:"AlarmHistory" xml:"AlarmHistory"`
+	AlarmHistory []AlarmHistoryInDescribeAlarmHistory `json:"AlarmHistory" xml:"AlarmHistory"`
 }
