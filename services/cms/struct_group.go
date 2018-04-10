@@ -17,10 +17,10 @@ package cms
 
 // Group is a nested struct in cms response
 type Group struct {
+	GroupId       int                        `json:"GroupId" xml:"GroupId"`
 	ServiceId     int                        `json:"ServiceId" xml:"ServiceId"`
-	Type          string                     `json:"Type" xml:"Type"`
 	BindUrl       string                     `json:"BindUrl" xml:"BindUrl"`
 	GroupName     string                     `json:"GroupName" xml:"GroupName"`
-	GroupId       int                        `json:"GroupId" xml:"GroupId"`
+	Type          string                     `json:"Type" xml:"Type"`
 	ContactGroups ContactGroupsInGetMyGroups `json:"ContactGroups" xml:"ContactGroups"`
 }

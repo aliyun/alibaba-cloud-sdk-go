@@ -100,7 +100,7 @@ func CreateListAlarmHistoryRequest() (request *ListAlarmHistoryRequest) {
 	request = &ListAlarmHistoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2017-03-01", "ListAlarmHistory", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2018-03-08", "ListAlarmHistory", "cms", "openAPI")
 	return
 }
 

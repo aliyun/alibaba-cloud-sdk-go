@@ -18,18 +18,18 @@ package cms
 // Resource is a nested struct in cms response
 type Resource struct {
 	Category      string                      `json:"Category" xml:"Category"`
-	ServiceId     string                      `json:"ServiceId" xml:"ServiceId"`
-	GroupName     string                      `json:"GroupName" xml:"GroupName"`
 	Desc          string                      `json:"Desc" xml:"Desc"`
 	InstanceName  string                      `json:"InstanceName" xml:"InstanceName"`
-	Type          string                      `json:"Type" xml:"Type"`
-	AliUid        int                         `json:"AliUid" xml:"AliUid"`
-	RegionId      string                      `json:"RegionId" xml:"RegionId"`
-	BindUrls      string                      `json:"BindUrls" xml:"BindUrls"`
+	GroupName     string                      `json:"GroupName" xml:"GroupName"`
 	Id            int                         `json:"Id" xml:"Id"`
-	NetworkType   string                      `json:"NetworkType" xml:"NetworkType"`
+	BindUrls      string                      `json:"BindUrls" xml:"BindUrls"`
+	ServiceId     string                      `json:"ServiceId" xml:"ServiceId"`
+	RegionId      string                      `json:"RegionId" xml:"RegionId"`
 	InstanceId    string                      `json:"InstanceId" xml:"InstanceId"`
 	GroupId       int                         `json:"GroupId" xml:"GroupId"`
+	AliUid        int                         `json:"AliUid" xml:"AliUid"`
+	NetworkType   string                      `json:"NetworkType" xml:"NetworkType"`
+	Type          string                      `json:"Type" xml:"Type"`
 	Vpc           Vpc                         `json:"Vpc" xml:"Vpc"`
 	Region        Region                      `json:"Region" xml:"Region"`
 	Tags          Tags                        `json:"Tags" xml:"Tags"`

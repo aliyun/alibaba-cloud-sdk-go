@@ -95,8 +95,9 @@ type baseRequest struct {
 	Port     string
 	RegionId string
 
-	product    string
-	version    string
+	product string
+	version string
+
 	actionName string
 
 	AcceptFormat string

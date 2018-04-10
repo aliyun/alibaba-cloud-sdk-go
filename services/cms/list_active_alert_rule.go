@@ -95,7 +95,7 @@ func CreateListActiveAlertRuleRequest() (request *ListActiveAlertRuleRequest) {
 	request = &ListActiveAlertRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2017-03-01", "ListActiveAlertRule", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2018-03-08", "ListActiveAlertRule", "cms", "openAPI")
 	return
 }
 

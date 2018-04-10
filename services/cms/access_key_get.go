@@ -96,7 +96,7 @@ func CreateAccessKeyGetRequest() (request *AccessKeyGetRequest) {
 	request = &AccessKeyGetRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2017-03-01", "AccessKeyGet", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2018-03-08", "AccessKeyGet", "cms", "openAPI")
 	return
 }
 

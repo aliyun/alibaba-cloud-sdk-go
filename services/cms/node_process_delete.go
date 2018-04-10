@@ -95,7 +95,7 @@ func CreateNodeProcessDeleteRequest() (request *NodeProcessDeleteRequest) {
 	request = &NodeProcessDeleteRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2017-03-01", "NodeProcessDelete", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2018-03-08", "NodeProcessDelete", "cms", "openAPI")
 	return
 }
 

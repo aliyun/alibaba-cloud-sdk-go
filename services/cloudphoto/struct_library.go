@@ -17,6 +17,7 @@ package cloudphoto
 
 // Library is a nested struct in cloudphoto response
 type Library struct {
-	Quota           Quota           `json:"Quota" xml:"Quota"`
+	LibraryId       string          `json:"LibraryId" xml:"LibraryId"`
 	AutoCleanConfig AutoCleanConfig `json:"AutoCleanConfig" xml:"AutoCleanConfig"`
+	Quota           Quota           `json:"Quota" xml:"Quota"`
 }
