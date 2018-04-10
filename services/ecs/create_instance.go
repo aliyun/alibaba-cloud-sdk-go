@@ -125,6 +125,7 @@ type CreateInstanceRequest struct {
 	SpotStrategy                string                    `position:"Query" name:"SpotStrategy"`
 	KeyPairName                 string                    `position:"Query" name:"KeyPairName"`
 	SpotPriceLimit              requests.Float            `position:"Query" name:"SpotPriceLimit"`
+	SpotInterruptionBehavior    string                    `position:"Query" name:"SpotInterruptionBehavior"`
 	RamRoleName                 string                    `position:"Query" name:"RamRoleName"`
 	SecurityEnhancementStrategy string                    `position:"Query" name:"SecurityEnhancementStrategy"`
 	ResourceGroupId             string                    `position:"Query" name:"ResourceGroupId"`
