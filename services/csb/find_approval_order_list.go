@@ -76,12 +76,12 @@ func (client *Client) FindApprovalOrderListWithCallback(request *FindApprovalOrd
 // FindApprovalOrderListRequest is the request struct for api FindApprovalOrderList
 type FindApprovalOrderListRequest struct {
 	*requests.RpcRequest
+	ServiceId   requests.Integer `position:"Query" name:"ServiceId"`
 	ServiceName string           `position:"Query" name:"ServiceName"`
-	PageNum     requests.Integer `position:"Query" name:"PageNum"`
 	Alias       string           `position:"Query" name:"Alias"`
 	ProjectName string           `position:"Query" name:"ProjectName"`
 	OnlyPending requests.Boolean `position:"Query" name:"OnlyPending"`
-	ServiceId   requests.Integer `position:"Query" name:"ServiceId"`
+	PageNum     requests.Integer `position:"Query" name:"PageNum"`
 }
 
 // FindApprovalOrderListResponse is the response struct for api FindApprovalOrderList

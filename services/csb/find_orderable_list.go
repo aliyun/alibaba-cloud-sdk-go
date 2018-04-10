@@ -76,11 +76,11 @@ func (client *Client) FindOrderableListWithCallback(request *FindOrderableListRe
 // FindOrderableListRequest is the request struct for api FindOrderableList
 type FindOrderableListRequest struct {
 	*requests.RpcRequest
+	PageNum     requests.Integer `position:"Query" name:"PageNum"`
 	CsbId       requests.Integer `position:"Query" name:"CsbId"`
 	ServiceName string           `position:"Query" name:"ServiceName"`
 	Alias       string           `position:"Query" name:"Alias"`
 	ProjectName string           `position:"Query" name:"ProjectName"`
-	PageNum     requests.Integer `position:"Query" name:"PageNum"`
 }
 
 // FindOrderableListResponse is the response struct for api FindOrderableList
