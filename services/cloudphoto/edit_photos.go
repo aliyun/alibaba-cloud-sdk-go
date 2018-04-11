@@ -78,6 +78,7 @@ type EditPhotosRequest struct {
 	*requests.RpcRequest
 	PhotoId         *[]string        `position:"Query" name:"PhotoId"  type:"Repeated"`
 	ShareExpireTime requests.Integer `position:"Query" name:"ShareExpireTime"`
+	TakenAt         requests.Integer `position:"Query" name:"TakenAt"`
 	Title           string           `position:"Query" name:"Title"`
 	Remark          string           `position:"Query" name:"Remark"`
 	StoreName       string           `position:"Query" name:"StoreName"`
