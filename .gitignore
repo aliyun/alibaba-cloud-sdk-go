@@ -10,3 +10,4 @@ workspace.xml
 build/
 dist/
 out/
+.gitignore
