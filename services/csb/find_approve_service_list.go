@@ -76,12 +76,12 @@ func (client *Client) FindApproveServiceListWithCallback(request *FindApproveSer
 // FindApproveServiceListRequest is the request struct for api FindApproveServiceList
 type FindApproveServiceListRequest struct {
 	*requests.RpcRequest
-	ShowDelService requests.Boolean `position:"Query" name:"showDelService"`
+	ApproveLevel   string           `position:"Query" name:"approveLevel"`
 	ServiceName    string           `position:"Query" name:"serviceName"`
 	Alias          string           `position:"Query" name:"alias"`
 	ProjectName    string           `position:"Query" name:"projectName"`
 	CsbId          requests.Integer `position:"Query" name:"csbId"`
-	ApproveLevel   string           `position:"Query" name:"approveLevel"`
+	ShowDelService requests.Boolean `position:"Query" name:"showDelService"`
 }
 
 // FindApproveServiceListResponse is the response struct for api FindApproveServiceList

@@ -76,13 +76,13 @@ func (client *Client) FindServiceListWithCallback(request *FindServiceListReques
 // FindServiceListRequest is the request struct for api FindServiceList
 type FindServiceListRequest struct {
 	*requests.RpcRequest
-	ShowDelService requests.Boolean `position:"Query" name:"ShowDelService"`
+	PageNum        requests.Integer `position:"Query" name:"PageNum"`
+	CasShowType    requests.Integer `position:"Query" name:"CasShowType"`
 	ServiceName    string           `position:"Query" name:"ServiceName"`
 	Alias          string           `position:"Query" name:"Alias"`
 	ProjectName    string           `position:"Query" name:"ProjectName"`
 	CsbId          requests.Integer `position:"Query" name:"CsbId"`
-	CasShowType    requests.Integer `position:"Query" name:"CasShowType"`
-	PageNum        requests.Integer `position:"Query" name:"PageNum"`
+	ShowDelService requests.Boolean `position:"Query" name:"ShowDelService"`
 }
 
 // FindServiceListResponse is the response struct for api FindServiceList

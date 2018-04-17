@@ -28,9 +28,9 @@ type Data struct {
 	Service         Service                  `json:"Service" xml:"Service"`
 	Order           Order                    `json:"Order" xml:"Order"`
 	Instance        Instance                 `json:"Instance" xml:"Instance"`
-	ServiceList     []Service                `json:"ServiceList" xml:"ServiceList"`
 	ProjectList     []Project                `json:"ProjectList" xml:"ProjectList"`
 	CredentialList  []Credential             `json:"CredentialList" xml:"CredentialList"`
 	OrderList       []OrderInFindOrderedList `json:"OrderList" xml:"OrderList"`
 	ItemList        []Item                   `json:"ItemList" xml:"ItemList"`
+	ServiceList     []Service                `json:"ServiceList" xml:"ServiceList"`
 }

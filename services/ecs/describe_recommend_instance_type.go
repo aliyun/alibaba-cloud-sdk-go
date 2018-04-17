@@ -92,8 +92,8 @@ type DescribeRecommendInstanceTypeRequest struct {
 // DescribeRecommendInstanceTypeResponse is the response struct for api DescribeRecommendInstanceType
 type DescribeRecommendInstanceTypeResponse struct {
 	*responses.BaseResponse
-	RequestId string                              `json:"RequestId" xml:"RequestId"`
-	Data      DataInDescribeRecommendInstanceType `json:"Data" xml:"Data"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Data      Data   `json:"Data" xml:"Data"`
 }
 
 // CreateDescribeRecommendInstanceTypeRequest creates a request to invoke DescribeRecommendInstanceType API

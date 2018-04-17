@@ -1,3 +1,21 @@
+2018-04-16 Version: 1.8.2
+1, Release go sdk
+
+
+2018-04-11 Version: 1.8.1
+1, GetLibrary/FetchLibraries add return ctime
+2, Editphotos add input param takenAt
+
+2018-04-10 Version: 1.8.0
+1, Add three interfaces CreateNetworkInterfacePermission DeleteNetworkInterfacePermission DescribeNetworkInterfacePermissions.
+
+2018-04-10 Version: 1.7.3
+1, publish Project API.
+2, publish Service API.
+3, publish Service order API.
+4, publish Credential API.
+5, publish CAS API.
+
 2018-04-09 Version: 1.7.2
 1, Add api: QueryMetricData, QueryMetricTop, TaskConfigCreate, TaskConfigDelete, TaskConfigEnable, TaskConfigList, TaskConfigModify, TaskConfigUnhealthy
 2, Remove api: PutSystemEvent 
