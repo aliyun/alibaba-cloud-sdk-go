@@ -63,6 +63,7 @@ type Instance struct {
 	RdmaIpAddress           RdmaIpAddress                       `json:"RdmaIpAddress" xml:"RdmaIpAddress"`
 	VpcAttributes           VpcAttributes                       `json:"VpcAttributes" xml:"VpcAttributes"`
 	EipAddress              EipAddress                          `json:"EipAddress" xml:"EipAddress"`
+	DedicatedHostAttribute  DedicatedHostAttribute              `json:"DedicatedHostAttribute" xml:"DedicatedHostAttribute"`
 	NetworkInterfaces       NetworkInterfaces                   `json:"NetworkInterfaces" xml:"NetworkInterfaces"`
 	OperationLocks          OperationLocksInDescribeInstances   `json:"OperationLocks" xml:"OperationLocks"`
 	Tags                    TagsInDescribeInstances             `json:"Tags" xml:"Tags"`

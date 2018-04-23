@@ -115,6 +115,7 @@ type DescribeInstanceAttributeResponse struct {
 	InnerIpAddress          InnerIpAddressInDescribeInstanceAttribute   `json:"InnerIpAddress" xml:"InnerIpAddress"`
 	VpcAttributes           VpcAttributes                               `json:"VpcAttributes" xml:"VpcAttributes"`
 	EipAddress              EipAddress                                  `json:"EipAddress" xml:"EipAddress"`
+	DedicatedHostAttribute  DedicatedHostAttribute                      `json:"DedicatedHostAttribute" xml:"DedicatedHostAttribute"`
 	OperationLocks          OperationLocksInDescribeInstanceAttribute   `json:"OperationLocks" xml:"OperationLocks"`
 }
 
