@@ -76,8 +76,8 @@ func (client *Client) QueryMetricDataWithCallback(request *QueryMetricDataReques
 // QueryMetricDataRequest is the request struct for api QueryMetricData
 type QueryMetricDataRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	CallbyCmsOwner  string           `position:"Query" name:"callby_cms_owner"`
+	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	Project         string           `position:"Query" name:"Project"`
 	Metric          string           `position:"Query" name:"Metric"`
 	Period          string           `position:"Query" name:"Period"`
