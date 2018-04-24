@@ -18,13 +18,14 @@ package cms
 // AlarmHistory is a nested struct in cms response
 type AlarmHistory struct {
 	Name            string `json:"Name" xml:"Name"`
-	Value           string `json:"Value" xml:"Value"`
 	AlarmTime       int    `json:"AlarmTime" xml:"AlarmTime"`
 	Status          int    `json:"Status" xml:"Status"`
-	State           string `json:"State" xml:"State"`
-	Namespace       string `json:"Namespace" xml:"Namespace"`
+	InstanceName    string `json:"InstanceName" xml:"InstanceName"`
 	Dimension       string `json:"Dimension" xml:"Dimension"`
 	ContactGroups   string `json:"ContactGroups" xml:"ContactGroups"`
+	Value           string `json:"Value" xml:"Value"`
+	State           string `json:"State" xml:"State"`
+	Namespace       string `json:"Namespace" xml:"Namespace"`
 	Id              string `json:"Id" xml:"Id"`
 	MetricName      string `json:"MetricName" xml:"MetricName"`
 	LastTime        int    `json:"LastTime" xml:"LastTime"`

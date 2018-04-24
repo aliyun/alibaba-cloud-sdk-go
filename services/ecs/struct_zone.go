@@ -17,13 +17,15 @@ package ecs
 
 // Zone is a nested struct in ecs response
 type Zone struct {
-	ZoneNo                    string                                      `json:"ZoneNo" xml:"ZoneNo"`
-	ZoneId                    string                                      `json:"ZoneId" xml:"ZoneId"`
-	LocalName                 string                                      `json:"LocalName" xml:"LocalName"`
-	AvailableResourceCreation AvailableResourceCreation                   `json:"AvailableResourceCreation" xml:"AvailableResourceCreation"`
-	AvailableVolumeCategories AvailableVolumeCategories                   `json:"AvailableVolumeCategories" xml:"AvailableVolumeCategories"`
-	AvailableInstanceTypes    AvailableInstanceTypes                      `json:"AvailableInstanceTypes" xml:"AvailableInstanceTypes"`
-	NetworkTypes              NetworkTypesInDescribeRecommendInstanceType `json:"NetworkTypes" xml:"NetworkTypes"`
-	AvailableDiskCategories   AvailableDiskCategories                     `json:"AvailableDiskCategories" xml:"AvailableDiskCategories"`
-	AvailableResources        AvailableResourcesInDescribeZones           `json:"AvailableResources" xml:"AvailableResources"`
+	ZoneNo                      string                                      `json:"ZoneNo" xml:"ZoneNo"`
+	ZoneId                      string                                      `json:"ZoneId" xml:"ZoneId"`
+	LocalName                   string                                      `json:"LocalName" xml:"LocalName"`
+	AvailableResourceCreation   AvailableResourceCreation                   `json:"AvailableResourceCreation" xml:"AvailableResourceCreation"`
+	AvailableVolumeCategories   AvailableVolumeCategories                   `json:"AvailableVolumeCategories" xml:"AvailableVolumeCategories"`
+	AvailableInstanceTypes      AvailableInstanceTypes                      `json:"AvailableInstanceTypes" xml:"AvailableInstanceTypes"`
+	AvailableDedicatedHostTypes AvailableDedicatedHostTypes                 `json:"AvailableDedicatedHostTypes" xml:"AvailableDedicatedHostTypes"`
+	NetworkTypes                NetworkTypesInDescribeRecommendInstanceType `json:"NetworkTypes" xml:"NetworkTypes"`
+	AvailableDiskCategories     AvailableDiskCategories                     `json:"AvailableDiskCategories" xml:"AvailableDiskCategories"`
+	DedicatedHostGenerations    DedicatedHostGenerations                    `json:"DedicatedHostGenerations" xml:"DedicatedHostGenerations"`
+	AvailableResources          AvailableResourcesInDescribeZones           `json:"AvailableResources" xml:"AvailableResources"`
 }

@@ -22,11 +22,13 @@ type Resource struct {
 	InstanceName  string                      `json:"InstanceName" xml:"InstanceName"`
 	GroupName     string                      `json:"GroupName" xml:"GroupName"`
 	Id            int                         `json:"Id" xml:"Id"`
+	GmtCreate     int                         `json:"GmtCreate" xml:"GmtCreate"`
 	BindUrls      string                      `json:"BindUrls" xml:"BindUrls"`
 	ServiceId     string                      `json:"ServiceId" xml:"ServiceId"`
 	RegionId      string                      `json:"RegionId" xml:"RegionId"`
 	InstanceId    string                      `json:"InstanceId" xml:"InstanceId"`
 	GroupId       int                         `json:"GroupId" xml:"GroupId"`
+	GmtModified   int                         `json:"GmtModified" xml:"GmtModified"`
 	AliUid        int                         `json:"AliUid" xml:"AliUid"`
 	NetworkType   string                      `json:"NetworkType" xml:"NetworkType"`
 	Type          string                      `json:"Type" xml:"Type"`

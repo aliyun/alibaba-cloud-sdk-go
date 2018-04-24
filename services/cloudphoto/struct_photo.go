@@ -24,8 +24,8 @@ type Photo struct {
 	Remark          string `json:"Remark" xml:"Remark"`
 	Like            int    `json:"Like" xml:"Like"`
 	Id              int    `json:"Id" xml:"Id"`
-	ShareExpireTime int    `json:"ShareExpireTime" xml:"ShareExpireTime"`
 	InactiveTime    int    `json:"InactiveTime" xml:"InactiveTime"`
+	ShareExpireTime int    `json:"ShareExpireTime" xml:"ShareExpireTime"`
 	Location        string `json:"Location" xml:"Location"`
 	Height          int    `json:"Height" xml:"Height"`
 	IsVideo         bool   `json:"IsVideo" xml:"IsVideo"`
