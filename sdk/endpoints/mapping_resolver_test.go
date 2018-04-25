@@ -2,7 +2,7 @@ package endpoints
 
 import (
 	"testing"
-	"github.com/github.com/stretchr/testify/assert"
+	"github.com/stretchr/testify/assert"
 	"fmt"
 )
 
