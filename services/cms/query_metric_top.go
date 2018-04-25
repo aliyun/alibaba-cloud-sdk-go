@@ -77,10 +77,10 @@ func (client *Client) QueryMetricTopWithCallback(request *QueryMetricTopRequest,
 type QueryMetricTopRequest struct {
 	*requests.RpcRequest
 	Period          string           `position:"Query" name:"Period"`
-	CallbyCmsOwner  string           `position:"Query" name:"callby_cms_owner"`
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	Project         string           `position:"Query" name:"Project"`
 	Metric          string           `position:"Query" name:"Metric"`
+	CallbyCmsOwner  string           `position:"Query" name:"callby_cms_owner"`
 	StartTime       string           `position:"Query" name:"StartTime"`
 	EndTime         string           `position:"Query" name:"EndTime"`
 	Dimensions      string           `position:"Query" name:"Dimensions"`

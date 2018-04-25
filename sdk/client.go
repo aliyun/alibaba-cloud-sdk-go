@@ -151,6 +151,50 @@ func (client *Client) DoAction(request requests.AcsRequest, response responses.A
 	return client.DoActionWithSigner(request, response, nil)
 }
 
+func (client *Client) BuildRequestWithSigner(request requests.AcsRequest, signer auth.Signer) (err error) {
+	// add clientVersion
+	request.GetHeaders()["x-sdk-core-version"] = Version
+
+	regionId := client.regionId
+	if len(request.GetRegionId()) > 0 {
+		regionId = request.GetRegionId()
+	}
+
+	// resolve endpoint
+	resolveParam := &endpoints.ResolveParam{
+		Domain:               request.GetDomain(),
+		Product:              request.GetProduct(),
+		RegionId:             regionId,
+		LocationProduct:      request.GetLocationServiceCode(),
+		LocationEndpointType: request.GetLocationEndpointType(),
+		CommonApi:            client.ProcessCommonRequest,
+	}
+	endpoint, err := endpoints.Resolve(resolveParam)
+	if err != nil {
+		return
+	}
+	request.SetDomain(endpoint)
+
+	// init request params
+	err = requests.InitParams(request)
+	if err != nil {
+		return
+	}
+
+	// signature
+	var finalSigner auth.Signer
+	if signer != nil {
+		finalSigner = signer
+	} else {
+		finalSigner = client.signer
+	}
+	httpRequest, err := buildHttpRequest(request, finalSigner, regionId)
+	if client.config.UserAgent != "" {
+		httpRequest.Header.Set("User-Agent", client.config.UserAgent)
+	}
+	return err
+}
+
 func (client *Client) DoActionWithSigner(request requests.AcsRequest, response responses.AcsResponse, signer auth.Signer) (err error) {
 
 	// add clientVersion

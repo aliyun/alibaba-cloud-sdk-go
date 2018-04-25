@@ -131,6 +131,7 @@ type CreateInstanceRequest struct {
 	ResourceGroupId             string                    `position:"Query" name:"ResourceGroupId"`
 	HpcClusterId                string                    `position:"Query" name:"HpcClusterId"`
 	DryRun                      requests.Boolean          `position:"Query" name:"DryRun"`
+	DedicatedHostId             string                    `position:"Query" name:"DedicatedHostId"`
 }
 
 // CreateInstanceDataDisk is a repeated param struct in CreateInstanceRequest

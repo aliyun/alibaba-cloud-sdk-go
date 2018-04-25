@@ -35,6 +35,7 @@ type AlarmHistoryInDescribeAlarmHistory struct {
 	Status          int                                 `json:"Status" xml:"Status"`
 	UserId          string                              `json:"UserId" xml:"UserId"`
 	Webhooks        string                              `json:"Webhooks" xml:"Webhooks"`
+	InstanceName    string                              `json:"InstanceName" xml:"InstanceName"`
 	ContactGroups   ContactGroupsInDescribeAlarmHistory `json:"ContactGroups" xml:"ContactGroups"`
 	Contacts        Contacts                            `json:"Contacts" xml:"Contacts"`
 	ContactALIIMs   ContactALIIMs                       `json:"ContactALIIMs" xml:"ContactALIIMs"`
