@@ -17,23 +17,21 @@ package domain
 
 // Domain is a nested struct in domain response
 type Domain struct {
-	RegistrationDate     string `json:"RegistrationDate" xml:"RegistrationDate"`
-	RegistrationDateLong int    `json:"RegistrationDateLong" xml:"RegistrationDateLong"`
-	DomainStatus         string `json:"DomainStatus" xml:"DomainStatus"`
-	DomainType           string `json:"DomainType" xml:"DomainType"`
-	Remark               string `json:"Remark" xml:"Remark"`
-	DomainName           string `json:"DomainName" xml:"DomainName"`
-	ProductId            string `json:"ProductId" xml:"ProductId"`
-	ExpirationDateStatus string `json:"ExpirationDateStatus" xml:"ExpirationDateStatus"`
-	ExpirationDateLong   int    `json:"ExpirationDateLong" xml:"ExpirationDateLong"`
-	RegistrantType       string `json:"RegistrantType" xml:"RegistrantType"`
-	ExpirationDate       string `json:"ExpirationDate" xml:"ExpirationDate"`
-	Premium              bool   `json:"Premium" xml:"Premium"`
-	DomainGroupName      string `json:"DomainGroupName" xml:"DomainGroupName"`
-	DomainAuditStatus    string `json:"DomainAuditStatus" xml:"DomainAuditStatus"`
-	CreationDate         string `json:"CreationDate" xml:"CreationDate"`
-	InstanceId           string `json:"InstanceId" xml:"InstanceId"`
-	TotalNumber          int    `json:"TotalNumber" xml:"TotalNumber"`
-	DomainGroupId        string `json:"DomainGroupId" xml:"DomainGroupId"`
-	ModificationDate     string `json:"ModificationDate" xml:"ModificationDate"`
+	RegistrationDate       string `json:"RegistrationDate" xml:"RegistrationDate"`
+	RegistrationDateLong   int    `json:"RegistrationDateLong" xml:"RegistrationDateLong"`
+	DomainStatus           string `json:"DomainStatus" xml:"DomainStatus"`
+	DomainType             string `json:"DomainType" xml:"DomainType"`
+	Remark                 string `json:"Remark" xml:"Remark"`
+	DomainName             string `json:"DomainName" xml:"DomainName"`
+	ProductId              string `json:"ProductId" xml:"ProductId"`
+	ExpirationDateStatus   string `json:"ExpirationDateStatus" xml:"ExpirationDateStatus"`
+	ExpirationDateLong     int    `json:"ExpirationDateLong" xml:"ExpirationDateLong"`
+	RegistrantType         string `json:"RegistrantType" xml:"RegistrantType"`
+	ExpirationDate         string `json:"ExpirationDate" xml:"ExpirationDate"`
+	Premium                bool   `json:"Premium" xml:"Premium"`
+	DomainAuditStatus      string `json:"DomainAuditStatus" xml:"DomainAuditStatus"`
+	DomainGroupName        string `json:"DomainGroupName" xml:"DomainGroupName"`
+	InstanceId             string `json:"InstanceId" xml:"InstanceId"`
+	ExpirationCurrDateDiff int    `json:"ExpirationCurrDateDiff" xml:"ExpirationCurrDateDiff"`
+	DomainGroupId          string `json:"DomainGroupId" xml:"DomainGroupId"`
 }

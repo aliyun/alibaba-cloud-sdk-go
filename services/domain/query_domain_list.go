@@ -76,11 +76,11 @@ func (client *Client) QueryDomainListWithCallback(request *QueryDomainListReques
 // QueryDomainListRequest is the request struct for api QueryDomainList
 type QueryDomainListRequest struct {
 	*requests.RpcRequest
+	EndExpirationDate     requests.Integer `position:"Query" name:"EndExpirationDate"`
 	StartExpirationDate   requests.Integer `position:"Query" name:"StartExpirationDate"`
 	UserClientIp          string           `position:"Query" name:"UserClientIp"`
 	Lang                  string           `position:"Query" name:"Lang"`
 	QueryType             string           `position:"Query" name:"QueryType"`
-	EndExpirationDate     requests.Integer `position:"Query" name:"EndExpirationDate"`
 	StartRegistrationDate requests.Integer `position:"Query" name:"StartRegistrationDate"`
 	EndRegistrationDate   requests.Integer `position:"Query" name:"EndRegistrationDate"`
 	DomainName            string           `position:"Query" name:"DomainName"`
@@ -89,6 +89,7 @@ type QueryDomainListRequest struct {
 	ProductDomainType     string           `position:"Query" name:"ProductDomainType"`
 	PageNum               requests.Integer `position:"Query" name:"PageNum"`
 	PageSize              requests.Integer `position:"Query" name:"PageSize"`
+	DomainGroupId         string           `position:"Query" name:"DomainGroupId"`
 }
 
 // QueryDomainListResponse is the response struct for api QueryDomainList

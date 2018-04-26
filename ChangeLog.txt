@@ -1,3 +1,7 @@
+2018-04-26 Version: 1.10.0
+1, Add apis for domain group.
+3, Add fields for QueryDomainList.
+
 2018-04-25 Version: 1.9.6
 1, CreateMyGroups add parameter "options"
 

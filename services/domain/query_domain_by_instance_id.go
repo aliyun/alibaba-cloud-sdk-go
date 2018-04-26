@@ -103,6 +103,7 @@ type QueryDomainByInstanceIdResponse struct {
 	TransferOutStatus            string  `json:"TransferOutStatus" xml:"TransferOutStatus"`
 	RegistrantType               string  `json:"RegistrantType" xml:"RegistrantType"`
 	DomainNameVerificationStatus string  `json:"DomainNameVerificationStatus" xml:"DomainNameVerificationStatus"`
+	RequestId                    string  `json:"RequestId" xml:"RequestId"`
 	DnsList                      DnsList `json:"DnsList" xml:"DnsList"`
 }
 

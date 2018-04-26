@@ -76,9 +76,10 @@ func (client *Client) QueryDomainGroupListWithCallback(request *QueryDomainGroup
 // QueryDomainGroupListRequest is the request struct for api QueryDomainGroupList
 type QueryDomainGroupListRequest struct {
 	*requests.RpcRequest
-	UserClientIp    string `position:"Query" name:"UserClientIp"`
-	Lang            string `position:"Query" name:"Lang"`
-	DomainGroupName string `position:"Query" name:"DomainGroupName"`
+	Lang              string           `position:"Query" name:"Lang"`
+	UserClientIp      string           `position:"Query" name:"UserClientIp"`
+	DomainGroupName   string           `position:"Query" name:"DomainGroupName"`
+	ShowDeletingGroup requests.Boolean `position:"Query" name:"ShowDeletingGroup"`
 }
 
 // QueryDomainGroupListResponse is the response struct for api QueryDomainGroupList
