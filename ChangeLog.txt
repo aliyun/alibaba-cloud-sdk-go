@@ -1,3 +1,7 @@
+2018-04-27 Version: 1.10.1
+1, release hsm open api
+2, hsm open api includes DescribeRegions, DescribeInstances, ModityInstance, ConfigNetwork, ConfigWhiteList
+
 2018-04-26 Version: 1.10.0
 1, Add apis for domain group.
 3, Add fields for QueryDomainList.
