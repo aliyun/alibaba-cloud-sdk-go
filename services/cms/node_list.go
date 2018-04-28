@@ -76,14 +76,15 @@ func (client *Client) NodeListWithCallback(request *NodeListRequest, callback fu
 // NodeListRequest is the request struct for api NodeList
 type NodeListRequest struct {
 	*requests.RpcRequest
-	PageNumber    requests.Integer `position:"Query" name:"PageNumber"`
-	KeyWord       string           `position:"Query" name:"KeyWord"`
-	UserId        requests.Integer `position:"Query" name:"UserId"`
-	HostName      string           `position:"Query" name:"HostName"`
-	InstanceIds   string           `position:"Query" name:"InstanceIds"`
-	SerialNumbers string           `position:"Query" name:"SerialNumbers"`
-	PageSize      requests.Integer `position:"Query" name:"PageSize"`
-	Status        string           `position:"Query" name:"Status"`
+	PageNumber       requests.Integer `position:"Query" name:"PageNumber"`
+	UserId           requests.Integer `position:"Query" name:"UserId"`
+	HostName         string           `position:"Query" name:"HostName"`
+	InstanceIds      string           `position:"Query" name:"InstanceIds"`
+	SerialNumbers    string           `position:"Query" name:"SerialNumbers"`
+	KeyWord          string           `position:"Query" name:"KeyWord"`
+	PageSize         requests.Integer `position:"Query" name:"PageSize"`
+	Status           string           `position:"Query" name:"Status"`
+	InstanceRegionId string           `position:"Query" name:"InstanceRegionId"`
 }
 
 // NodeListResponse is the response struct for api NodeList
