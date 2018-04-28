@@ -1,3 +1,7 @@
+2018-04-28 Version: 1.10.2
+1, Add dcdn domain interface，Support add、modify、delete、query dcdn domain.
+2, Add dcdn config interface，Support set、delete、query domain config.
+
 2018-04-27 Version: 1.10.1
 1, release hsm open api
 2, hsm open api includes DescribeRegions, DescribeInstances, ModityInstance, ConfigNetwork, ConfigWhiteList
