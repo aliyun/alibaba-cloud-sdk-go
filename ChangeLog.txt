@@ -1,3 +1,7 @@
+2018-05-03 Version: 1.11.1
+1, Publish DRDS go sdk for the first time.
+2, Support for creation/modification/deletion/description operation for DRDS instances and databases.
+
 2018-05-02 Version: 1.11.0
 1, Add new interface InstallCloudAssistant, support Cloud Assistant client installation.
 2, Add new interface DescribeCloudAssistantStatus, support Cloud Assistant client status detection.
