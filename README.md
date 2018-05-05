@@ -14,7 +14,7 @@ If you have any problem while using Go SDK, please join the **DingTalk group: 11
 
 - To use Alibaba Cloud Go SDK, you must have an Alibaba Cloud account as well as an AccessKey.
 
-	The AccessKey is required when initializing `AcsClient`. You can create an AccessKey in the Alibaba Cloud console. For more information, see [Create an AccessKey](~~53045~~).
+	The AccessKey is required when initializing `AcsClient`. You can create an AccessKey in the Alibaba Cloud console. For more information, see [Create an AccessKey](https://usercenter.console.aliyun.com/?spm=5176.doc52740.2.3.QKZk8w#/manage/ak).
 
 	>**Note:** To increase the security of your account, we recommend that you use the AccessKey of the RAM user to access Alibaba Cloud services.
 
