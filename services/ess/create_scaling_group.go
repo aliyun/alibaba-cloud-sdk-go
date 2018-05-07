@@ -89,6 +89,7 @@ type CreateScalingGroupRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	VSwitchId            string           `position:"Query" name:"VSwitchId"`
 	VSwitchIds           *[]string        `position:"Query" name:"VSwitchIds"  type:"Repeated"`
+	MultiAZPolicy        string           `position:"Query" name:"MultiAZPolicy"`
 }
 
 // CreateScalingGroupResponse is the response struct for api CreateScalingGroup

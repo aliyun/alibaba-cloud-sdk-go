@@ -24,6 +24,7 @@ type ScalingGroup struct {
 	ScalingGroupName             string          `json:"ScalingGroupName" xml:"ScalingGroupName"`
 	ActiveCapacity               int             `json:"ActiveCapacity" xml:"ActiveCapacity"`
 	StandbyCapacity              int             `json:"StandbyCapacity" xml:"StandbyCapacity"`
+	ProtectedCapacity            int             `json:"ProtectedCapacity" xml:"ProtectedCapacity"`
 	ActiveScalingConfigurationId string          `json:"ActiveScalingConfigurationId" xml:"ActiveScalingConfigurationId"`
 	ScalingGroupId               string          `json:"ScalingGroupId" xml:"ScalingGroupId"`
 	RegionId                     string          `json:"RegionId" xml:"RegionId"`
@@ -34,6 +35,7 @@ type ScalingGroup struct {
 	ModificationTime             string          `json:"ModificationTime" xml:"ModificationTime"`
 	VpcId                        string          `json:"VpcId" xml:"VpcId"`
 	VSwitchId                    string          `json:"VSwitchId" xml:"VSwitchId"`
+	MultiAZPolicy                string          `json:"MultiAZPolicy" xml:"MultiAZPolicy"`
 	VSwitchIds                   VSwitchIds      `json:"VSwitchIds" xml:"VSwitchIds"`
 	RemovalPolicies              RemovalPolicies `json:"RemovalPolicies" xml:"RemovalPolicies"`
 	DBInstanceIds                DBInstanceIds   `json:"DBInstanceIds" xml:"DBInstanceIds"`

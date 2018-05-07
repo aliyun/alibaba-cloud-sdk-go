@@ -1,3 +1,6 @@
+2018-05-08 Version: 1.11.2
+1, Remove DescribeAccountAttributes.
+
 2018-05-03 Version: 1.11.1
 1, Publish DRDS go sdk for the first time.
 2, Support for creation/modification/deletion/description operation for DRDS instances and databases.

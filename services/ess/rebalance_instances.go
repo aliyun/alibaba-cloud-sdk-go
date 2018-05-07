@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// ExecuteScalingRule invokes the ess.ExecuteScalingRule API synchronously
-// api document: https://help.aliyun.com/api/ess/executescalingrule.html
-func (client *Client) ExecuteScalingRule(request *ExecuteScalingRuleRequest) (response *ExecuteScalingRuleResponse, err error) {
-	response = CreateExecuteScalingRuleResponse()
+// RebalanceInstances invokes the ess.RebalanceInstances API synchronously
+// api document: https://help.aliyun.com/api/ess/rebalanceinstances.html
+func (client *Client) RebalanceInstances(request *RebalanceInstancesRequest) (response *RebalanceInstancesResponse, err error) {
+	response = CreateRebalanceInstancesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// ExecuteScalingRuleWithChan invokes the ess.ExecuteScalingRule API asynchronously
-// api document: https://help.aliyun.com/api/ess/executescalingrule.html
+// RebalanceInstancesWithChan invokes the ess.RebalanceInstances API asynchronously
+// api document: https://help.aliyun.com/api/ess/rebalanceinstances.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) ExecuteScalingRuleWithChan(request *ExecuteScalingRuleRequest) (<-chan *ExecuteScalingRuleResponse, <-chan error) {
-	responseChan := make(chan *ExecuteScalingRuleResponse, 1)
+func (client *Client) RebalanceInstancesWithChan(request *RebalanceInstancesRequest) (<-chan *RebalanceInstancesResponse, <-chan error) {
+	responseChan := make(chan *RebalanceInstancesResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.ExecuteScalingRule(request)
+		response, err := client.RebalanceInstances(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) ExecuteScalingRuleWithChan(request *ExecuteScalingRuleRequ
 	return responseChan, errChan
 }
 
-// ExecuteScalingRuleWithCallback invokes the ess.ExecuteScalingRule API asynchronously
-// api document: https://help.aliyun.com/api/ess/executescalingrule.html
+// RebalanceInstancesWithCallback invokes the ess.RebalanceInstances API asynchronously
+// api document: https://help.aliyun.com/api/ess/rebalanceinstances.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) ExecuteScalingRuleWithCallback(request *ExecuteScalingRuleRequest, callback func(response *ExecuteScalingRuleResponse, err error)) <-chan int {
+func (client *Client) RebalanceInstancesWithCallback(request *RebalanceInstancesRequest, callback func(response *RebalanceInstancesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *ExecuteScalingRuleResponse
+		var response *RebalanceInstancesResponse
 		var err error
 		defer close(result)
-		response, err = client.ExecuteScalingRule(request)
+		response, err = client.RebalanceInstances(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,36 +73,35 @@ func (client *Client) ExecuteScalingRuleWithCallback(request *ExecuteScalingRule
 	return result
 }
 
-// ExecuteScalingRuleRequest is the request struct for api ExecuteScalingRule
-type ExecuteScalingRuleRequest struct {
+// RebalanceInstancesRequest is the request struct for api RebalanceInstances
+type RebalanceInstancesRequest struct {
 	*requests.RpcRequest
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ScalingRuleAri       string           `position:"Query" name:"ScalingRuleAri"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
+	ScalingGroupId       string           `position:"Query" name:"ScalingGroupId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
-// ExecuteScalingRuleResponse is the response struct for api ExecuteScalingRule
-type ExecuteScalingRuleResponse struct {
+// RebalanceInstancesResponse is the response struct for api RebalanceInstances
+type RebalanceInstancesResponse struct {
 	*responses.BaseResponse
 	ScalingActivityId string `json:"ScalingActivityId" xml:"ScalingActivityId"`
 	RequestId         string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateExecuteScalingRuleRequest creates a request to invoke ExecuteScalingRule API
-func CreateExecuteScalingRuleRequest() (request *ExecuteScalingRuleRequest) {
-	request = &ExecuteScalingRuleRequest{
+// CreateRebalanceInstancesRequest creates a request to invoke RebalanceInstances API
+func CreateRebalanceInstancesRequest() (request *RebalanceInstancesRequest) {
+	request = &RebalanceInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ess", "2014-08-28", "ExecuteScalingRule", "ess", "openAPI")
+	request.InitWithApiInfo("Ess", "2014-08-28", "RebalanceInstances", "ess", "openAPI")
 	return
 }
 
-// CreateExecuteScalingRuleResponse creates a response to parse from ExecuteScalingRule response
-func CreateExecuteScalingRuleResponse() (response *ExecuteScalingRuleResponse) {
-	response = &ExecuteScalingRuleResponse{
+// CreateRebalanceInstancesResponse creates a response to parse from RebalanceInstances response
+func CreateRebalanceInstancesResponse() (response *RebalanceInstancesResponse) {
+	response = &RebalanceInstancesResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return
