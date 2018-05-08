@@ -17,25 +17,29 @@ package teslamaxcompute
 
 // Instance is a nested struct in teslamaxcompute response
 type Instance struct {
-	MemUsedTotal    int     `json:"MemUsedTotal" xml:"MemUsedTotal"`
+	User            string  `json:"User" xml:"User"`
 	SkynetId        string  `json:"SkynetId" xml:"SkynetId"`
 	CpuUsedRatioMin float64 `json:"CpuUsedRatioMin" xml:"CpuUsedRatioMin"`
 	CpuRequest      int     `json:"CpuRequest" xml:"CpuRequest"`
-	QuotaName       string  `json:"QuotaName" xml:"QuotaName"`
 	MemUsedRatioMin float64 `json:"MemUsedRatioMin" xml:"MemUsedRatioMin"`
 	QuotaId         int     `json:"QuotaId" xml:"QuotaId"`
-	MemRequest      int     `json:"MemRequest" xml:"MemRequest"`
-	Cluster         string  `json:"Cluster" xml:"Cluster"`
-	CpuUsed         int     `json:"CpuUsed" xml:"CpuUsed"`
 	RunTime         string  `json:"RunTime" xml:"RunTime"`
 	Project         string  `json:"Project" xml:"Project"`
 	MemUsedRatioMax float64 `json:"MemUsedRatioMax" xml:"MemUsedRatioMax"`
 	InstanceId      string  `json:"InstanceId" xml:"InstanceId"`
 	NickName        string  `json:"NickName" xml:"NickName"`
+	CpuUsedRatioMax float64 `json:"CpuUsedRatioMax" xml:"CpuUsedRatioMax"`
+	MemUsedTotal    int     `json:"MemUsedTotal" xml:"MemUsedTotal"`
+	ProjectOwner    string  `json:"ProjectOwner" xml:"ProjectOwner"`
+	QuotaName       string  `json:"QuotaName" xml:"QuotaName"`
+	MemRequest      int     `json:"MemRequest" xml:"MemRequest"`
+	CollectTime     string  `json:"CollectTime" xml:"CollectTime"`
+	Cluster         string  `json:"Cluster" xml:"Cluster"`
+	CpuUsed         int     `json:"CpuUsed" xml:"CpuUsed"`
+	IsRealOwner     string  `json:"IsRealOwner" xml:"IsRealOwner"`
 	Status          string  `json:"Status" xml:"Status"`
 	TaskType        string  `json:"TaskType" xml:"TaskType"`
 	UserAccount     string  `json:"UserAccount" xml:"UserAccount"`
 	MemUsed         int     `json:"MemUsed" xml:"MemUsed"`
 	CpuUsedTotal    int     `json:"CpuUsedTotal" xml:"CpuUsedTotal"`
-	CpuUsedRatioMax float64 `json:"CpuUsedRatioMax" xml:"CpuUsedRatioMax"`
 }

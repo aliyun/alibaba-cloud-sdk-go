@@ -88,10 +88,10 @@ type GetQuotaInstanceRequest struct {
 // GetQuotaInstanceResponse is the response struct for api GetQuotaInstance
 type GetQuotaInstanceResponse struct {
 	*responses.BaseResponse
-	Code      int    `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Data      Data   `json:"Data" xml:"Data"`
+	Code      int                    `json:"Code" xml:"Code"`
+	Message   string                 `json:"Message" xml:"Message"`
+	RequestId string                 `json:"RequestId" xml:"RequestId"`
+	Data      DataInGetQuotaInstance `json:"Data" xml:"Data"`
 }
 
 // CreateGetQuotaInstanceRequest creates a request to invoke GetQuotaInstance API

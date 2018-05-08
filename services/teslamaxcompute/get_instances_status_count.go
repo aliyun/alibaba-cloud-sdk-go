@@ -76,8 +76,10 @@ func (client *Client) GetInstancesStatusCountWithCallback(request *GetInstancesS
 // GetInstancesStatusCountRequest is the request struct for api GetInstancesStatusCount
 type GetInstancesStatusCountRequest struct {
 	*requests.RpcRequest
-	Region  string `position:"Query" name:"Region"`
-	Cluster string `position:"Query" name:"Cluster"`
+	Region    string `position:"Query" name:"Region"`
+	Cluster   string `position:"Query" name:"Cluster"`
+	QuotaName string `position:"Query" name:"QuotaName"`
+	QuotaId   string `position:"Query" name:"QuotaId"`
 }
 
 // GetInstancesStatusCountResponse is the response struct for api GetInstancesStatusCount
