@@ -84,6 +84,7 @@ type SetDomainServerCertificateRequest struct {
 	ServerCertificate       string           `position:"Query" name:"ServerCertificate"`
 	PrivateKey              string           `position:"Query" name:"PrivateKey"`
 	Region                  string           `position:"Query" name:"Region"`
+	CertType                string           `position:"Query" name:"CertType"`
 }
 
 // SetDomainServerCertificateResponse is the response struct for api SetDomainServerCertificate

@@ -81,6 +81,7 @@ type SetHttpHeaderConfigRequest struct {
 	DomainName    string           `position:"Query" name:"DomainName"`
 	HeaderKey     string           `position:"Query" name:"HeaderKey"`
 	HeaderValue   string           `position:"Query" name:"HeaderValue"`
+	ConfigId      requests.Integer `position:"Query" name:"ConfigId"`
 }
 
 // SetHttpHeaderConfigResponse is the response struct for api SetHttpHeaderConfig

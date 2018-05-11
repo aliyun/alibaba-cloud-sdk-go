@@ -17,31 +17,31 @@ package cdn
 
 // DomainConfigs is a nested struct in cdn response
 type DomainConfigs struct {
-	CcConfig                CcConfig                `json:"CcConfig" xml:"CcConfig"`
-	ErrorPageConfig         ErrorPageConfig         `json:"ErrorPageConfig" xml:"ErrorPageConfig"`
-	OptimizeConfig          OptimizeConfig          `json:"OptimizeConfig" xml:"OptimizeConfig"`
-	PageCompressConfig      PageCompressConfig      `json:"PageCompressConfig" xml:"PageCompressConfig"`
-	IgnoreQueryStringConfig IgnoreQueryStringConfig `json:"IgnoreQueryStringConfig" xml:"IgnoreQueryStringConfig"`
-	RangeConfig             RangeConfig             `json:"RangeConfig" xml:"RangeConfig"`
-	RefererConfig           RefererConfig           `json:"RefererConfig" xml:"RefererConfig"`
-	ReqAuthConfig           ReqAuthConfig           `json:"ReqAuthConfig" xml:"ReqAuthConfig"`
-	SrcHostConfig           SrcHostConfig           `json:"SrcHostConfig" xml:"SrcHostConfig"`
-	VideoSeekConfig         VideoSeekConfig         `json:"VideoSeekConfig" xml:"VideoSeekConfig"`
-	WafConfig               WafConfig               `json:"WafConfig" xml:"WafConfig"`
 	NotifyUrlConfig         NotifyUrlConfig         `json:"NotifyUrlConfig" xml:"NotifyUrlConfig"`
-	RedirectTypeConfig      RedirectTypeConfig      `json:"RedirectTypeConfig" xml:"RedirectTypeConfig"`
-	ForwardSchemeConfig     ForwardSchemeConfig     `json:"ForwardSchemeConfig" xml:"ForwardSchemeConfig"`
-	RemoveQueryStringConfig RemoveQueryStringConfig `json:"RemoveQueryStringConfig" xml:"RemoveQueryStringConfig"`
-	L2OssKeyConfig          L2OssKeyConfig          `json:"L2OssKeyConfig" xml:"L2OssKeyConfig"`
-	MacServiceConfig        MacServiceConfig        `json:"MacServiceConfig" xml:"MacServiceConfig"`
-	GreenManagerConfig      GreenManagerConfig      `json:"GreenManagerConfig" xml:"GreenManagerConfig"`
-	HttpsOptionConfig       HttpsOptionConfig       `json:"HttpsOptionConfig" xml:"HttpsOptionConfig"`
-	AliBusinessConfig       AliBusinessConfig       `json:"AliBusinessConfig" xml:"AliBusinessConfig"`
+	PageCompressConfig      PageCompressConfig      `json:"PageCompressConfig" xml:"PageCompressConfig"`
+	OptimizeConfig          OptimizeConfig          `json:"OptimizeConfig" xml:"OptimizeConfig"`
+	ReqAuthConfig           ReqAuthConfig           `json:"ReqAuthConfig" xml:"ReqAuthConfig"`
+	RangeConfig             RangeConfig             `json:"RangeConfig" xml:"RangeConfig"`
 	IpAllowListConfig       IpAllowListConfig       `json:"IpAllowListConfig" xml:"IpAllowListConfig"`
-	CacheExpiredConfigs     CacheExpiredConfigs     `json:"CacheExpiredConfigs" xml:"CacheExpiredConfigs"`
-	HttpErrorPageConfigs    HttpErrorPageConfigs    `json:"HttpErrorPageConfigs" xml:"HttpErrorPageConfigs"`
-	HttpHeaderConfigs       HttpHeaderConfigs       `json:"HttpHeaderConfigs" xml:"HttpHeaderConfigs"`
-	DynamicConfigs          DynamicConfigs          `json:"DynamicConfigs" xml:"DynamicConfigs"`
+	ErrorPageConfig         ErrorPageConfig         `json:"ErrorPageConfig" xml:"ErrorPageConfig"`
+	ForwardSchemeConfig     ForwardSchemeConfig     `json:"ForwardSchemeConfig" xml:"ForwardSchemeConfig"`
+	AliBusinessConfig       AliBusinessConfig       `json:"AliBusinessConfig" xml:"AliBusinessConfig"`
+	RefererConfig           RefererConfig           `json:"RefererConfig" xml:"RefererConfig"`
+	CcConfig                CcConfig                `json:"CcConfig" xml:"CcConfig"`
+	SrcHostConfig           SrcHostConfig           `json:"SrcHostConfig" xml:"SrcHostConfig"`
+	MacServiceConfig        MacServiceConfig        `json:"MacServiceConfig" xml:"MacServiceConfig"`
+	IgnoreQueryStringConfig IgnoreQueryStringConfig `json:"IgnoreQueryStringConfig" xml:"IgnoreQueryStringConfig"`
+	L2OssKeyConfig          L2OssKeyConfig          `json:"L2OssKeyConfig" xml:"L2OssKeyConfig"`
+	WafConfig               WafConfig               `json:"WafConfig" xml:"WafConfig"`
+	RedirectTypeConfig      RedirectTypeConfig      `json:"RedirectTypeConfig" xml:"RedirectTypeConfig"`
+	GreenManagerConfig      GreenManagerConfig      `json:"GreenManagerConfig" xml:"GreenManagerConfig"`
+	RemoveQueryStringConfig RemoveQueryStringConfig `json:"RemoveQueryStringConfig" xml:"RemoveQueryStringConfig"`
+	HttpsOptionConfig       HttpsOptionConfig       `json:"HttpsOptionConfig" xml:"HttpsOptionConfig"`
+	VideoSeekConfig         VideoSeekConfig         `json:"VideoSeekConfig" xml:"VideoSeekConfig"`
 	ReqHeaderConfigs        ReqHeaderConfigs        `json:"ReqHeaderConfigs" xml:"ReqHeaderConfigs"`
+	HttpHeaderConfigs       HttpHeaderConfigs       `json:"HttpHeaderConfigs" xml:"HttpHeaderConfigs"`
+	CacheExpiredConfigs     CacheExpiredConfigs     `json:"CacheExpiredConfigs" xml:"CacheExpiredConfigs"`
+	DynamicConfigs          DynamicConfigs          `json:"DynamicConfigs" xml:"DynamicConfigs"`
 	SetVarsConfigs          SetVarsConfigs          `json:"SetVarsConfigs" xml:"SetVarsConfigs"`
+	HttpErrorPageConfigs    HttpErrorPageConfigs    `json:"HttpErrorPageConfigs" xml:"HttpErrorPageConfigs"`
 }

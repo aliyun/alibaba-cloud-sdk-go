@@ -1,3 +1,6 @@
+2018-05-11 Version: 1.12.1
+1, Add Function Compute interface,support Function Compute.
+
 2018-05-09 Version: 1.12.0
 1, Add apis for domain broker.
 

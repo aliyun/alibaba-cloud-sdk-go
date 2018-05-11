@@ -80,12 +80,19 @@ type DescribeLiveStreamsOnlineListRequest struct {
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	DomainName    string           `position:"Query" name:"DomainName"`
 	AppName       string           `position:"Query" name:"AppName"`
+	PageSize      requests.Integer `position:"Query" name:"PageSize"`
+	PageNum       requests.Integer `position:"Query" name:"PageNum"`
+	StreamType    string           `position:"Query" name:"StreamType"`
 }
 
 // DescribeLiveStreamsOnlineListResponse is the response struct for api DescribeLiveStreamsOnlineList
 type DescribeLiveStreamsOnlineListResponse struct {
 	*responses.BaseResponse
 	RequestId  string     `json:"RequestId" xml:"RequestId"`
+	PageNum    int        `json:"PageNum" xml:"PageNum"`
+	PageSize   int        `json:"PageSize" xml:"PageSize"`
+	TotalNum   int        `json:"TotalNum" xml:"TotalNum"`
+	TotalPage  int        `json:"TotalPage" xml:"TotalPage"`
 	OnlineInfo OnlineInfo `json:"OnlineInfo" xml:"OnlineInfo"`
 }
 
