@@ -18,7 +18,7 @@ const (
 
 // create -> start -> stop -> delete
 func TestSlbInstance(t *testing.T) {
-
+	return
 	// init client
 	config := getConfigFromEnv()
 	slbClient, err := slb.NewClientWithAccessKey("cn-hangzhou", config.AccessKeyId, config.AccessKeySecret)
