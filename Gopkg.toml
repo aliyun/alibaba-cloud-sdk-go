@@ -24,6 +24,11 @@
 #   go-tests = true
 #   unused-packages = true
 
+#ignored = [
+#  "golang.org/x/sys/unix",
+#  "golang.org/x/sys/windows",
+#  "golang.org/x/crypto/ssh/terminal",
+#]
 
 [[constraint]]
   name = "github.com/jmespath/go-jmespath"
