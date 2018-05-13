@@ -7,6 +7,12 @@ go:
   - 1.9.x
   - 1.10.x
 
+branches:
+  only:
+    - master
+    - pre-release
+    - dev-jxy
+
 install:
   - go get -u github.com/golang/dep/cmd/dep
   - dep ensure
