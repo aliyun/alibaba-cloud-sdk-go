@@ -1,3 +1,6 @@
+2018-05-17 Version: 1.12.2
+1, the first version of private dns SDK
+
 2018-05-11 Version: 1.12.1
 1, Add Function Compute interface,support Function Compute.
 
