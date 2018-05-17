@@ -1,3 +1,6 @@
+2018-05-17 Version: 1.12.3
+1, Supporting ethnicGroup and idCardStartDate fields in GetMaterials api
+
 2018-05-17 Version: 1.12.2
 1, the first version of private dns SDK
 
