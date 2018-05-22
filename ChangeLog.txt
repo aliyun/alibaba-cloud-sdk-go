@@ -1,3 +1,7 @@
+2018-05-22 Version: 1.12.4
+1, add DescribeMigrateTasks,DescribeOssDownloads,CheckRecoveryConditions.
+2, modify DescribeDBInstanceAttribute.
+
 2018-05-17 Version: 1.12.3
 1, Supporting ethnicGroup and idCardStartDate fields in GetMaterials api
 

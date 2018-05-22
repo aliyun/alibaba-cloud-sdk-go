@@ -83,6 +83,8 @@ type DescribeDatabasesRequest struct {
 	DBName               string           `position:"Query" name:"DBName"`
 	DBStatus             string           `position:"Query" name:"DBStatus"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 // DescribeDatabasesResponse is the response struct for api DescribeDatabases

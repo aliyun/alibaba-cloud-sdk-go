@@ -17,9 +17,28 @@ package rds
 
 // ItemsItem is a nested struct in rds response
 type ItemsItem struct {
-	ReplicaId   string `json:"ReplicaId" xml:"ReplicaId"`
-	Status      string `json:"Status" xml:"Status"`
-	Progress    string `json:"Progress" xml:"Progress"`
-	FinishTime  string `json:"FinishTime" xml:"FinishTime"`
-	CurrentStep string `json:"CurrentStep" xml:"CurrentStep"`
+	Schema                string `json:"Schema" xml:"Schema"`
+	ConfictReason         string `json:"ConfictReason" xml:"ConfictReason"`
+	SourceDetail          string `json:"SourceDetail" xml:"SourceDetail"`
+	InconsistentFields    string `json:"InconsistentFields" xml:"InconsistentFields"`
+	InstanceIdA           string `json:"InstanceIdA" xml:"InstanceIdA"`
+	DestinationInstanceId string `json:"DestinationInstanceId" xml:"DestinationInstanceId"`
+	ConflictGtid          string `json:"ConflictGtid" xml:"ConflictGtid"`
+	DestinationDetail     string `json:"DestinationDetail" xml:"DestinationDetail"`
+	FinishTime            string `json:"FinishTime" xml:"FinishTime"`
+	OccurTime             string `json:"OccurTime" xml:"OccurTime"`
+	Key                   string `json:"Key" xml:"Key"`
+	Progress              string `json:"Progress" xml:"Progress"`
+	InstanceIdB           string `json:"InstanceIdB" xml:"InstanceIdB"`
+	CurrentStep           string `json:"CurrentStep" xml:"CurrentStep"`
+	SourceInstanceId      string `json:"SourceInstanceId" xml:"SourceInstanceId"`
+	RecoveryMode          string `json:"RecoveryMode" xml:"RecoveryMode"`
+	AbnormalType          string `json:"AbnormalType" xml:"AbnormalType"`
+	InconsistentType      string `json:"InconsistentType" xml:"InconsistentType"`
+	ConfictKey            string `json:"ConfictKey" xml:"ConfictKey"`
+	KeyType               string `json:"KeyType" xml:"KeyType"`
+	Status                string `json:"Status" xml:"Status"`
+	DatabaseName          string `json:"DatabaseName" xml:"DatabaseName"`
+	ReplicaId             string `json:"ReplicaId" xml:"ReplicaId"`
+	DetailInfo            string `json:"DetailInfo" xml:"DetailInfo"`
 }

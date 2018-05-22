@@ -36,6 +36,7 @@ type DBInstanceAttribute struct {
 	DBInstanceId                      string                                             `json:"DBInstanceId" xml:"DBInstanceId"`
 	DBInstanceMemory                  int                                                `json:"DBInstanceMemory" xml:"DBInstanceMemory"`
 	VpcId                             string                                             `json:"VpcId" xml:"VpcId"`
+	DBInstanceStorageType             string                                             `json:"DBInstanceStorageType" xml:"DBInstanceStorageType"`
 	SecurityIPList                    string                                             `json:"SecurityIPList" xml:"SecurityIPList"`
 	SupportUpgradeAccountType         string                                             `json:"SupportUpgradeAccountType" xml:"SupportUpgradeAccountType"`
 	MaxIOPS                           int                                                `json:"MaxIOPS" xml:"MaxIOPS"`
@@ -44,6 +45,7 @@ type DBInstanceAttribute struct {
 	MaintainTime                      string                                             `json:"MaintainTime" xml:"MaintainTime"`
 	PayType                           string                                             `json:"PayType" xml:"PayType"`
 	DBInstanceStorage                 int                                                `json:"DBInstanceStorage" xml:"DBInstanceStorage"`
+	SupportCreateSuperAccount         string                                             `json:"SupportCreateSuperAccount" xml:"SupportCreateSuperAccount"`
 	TempDBInstanceId                  string                                             `json:"TempDBInstanceId" xml:"TempDBInstanceId"`
 	ZoneId                            string                                             `json:"ZoneId" xml:"ZoneId"`
 	ConnectionMode                    string                                             `json:"ConnectionMode" xml:"ConnectionMode"`
