@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// CreateDrdsDB invokes the drds.CreateDrdsDB API synchronously
-// api document: https://help.aliyun.com/api/drds/createdrdsdb.html
-func (client *Client) CreateDrdsDB(request *CreateDrdsDBRequest) (response *CreateDrdsDBResponse, err error) {
-	response = CreateCreateDrdsDBResponse()
+// CreateDrdsAccount invokes the drds.CreateDrdsAccount API synchronously
+// api document: https://help.aliyun.com/api/drds/createdrdsaccount.html
+func (client *Client) CreateDrdsAccount(request *CreateDrdsAccountRequest) (response *CreateDrdsAccountResponse, err error) {
+	response = CreateCreateDrdsAccountResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// CreateDrdsDBWithChan invokes the drds.CreateDrdsDB API asynchronously
-// api document: https://help.aliyun.com/api/drds/createdrdsdb.html
+// CreateDrdsAccountWithChan invokes the drds.CreateDrdsAccount API asynchronously
+// api document: https://help.aliyun.com/api/drds/createdrdsaccount.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) CreateDrdsDBWithChan(request *CreateDrdsDBRequest) (<-chan *CreateDrdsDBResponse, <-chan error) {
-	responseChan := make(chan *CreateDrdsDBResponse, 1)
+func (client *Client) CreateDrdsAccountWithChan(request *CreateDrdsAccountRequest) (<-chan *CreateDrdsAccountResponse, <-chan error) {
+	responseChan := make(chan *CreateDrdsAccountResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.CreateDrdsDB(request)
+		response, err := client.CreateDrdsAccount(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) CreateDrdsDBWithChan(request *CreateDrdsDBRequest) (<-chan
 	return responseChan, errChan
 }
 
-// CreateDrdsDBWithCallback invokes the drds.CreateDrdsDB API asynchronously
-// api document: https://help.aliyun.com/api/drds/createdrdsdb.html
+// CreateDrdsAccountWithCallback invokes the drds.CreateDrdsAccount API asynchronously
+// api document: https://help.aliyun.com/api/drds/createdrdsaccount.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) CreateDrdsDBWithCallback(request *CreateDrdsDBRequest, callback func(response *CreateDrdsDBResponse, err error)) <-chan int {
+func (client *Client) CreateDrdsAccountWithCallback(request *CreateDrdsAccountRequest, callback func(response *CreateDrdsAccountResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *CreateDrdsDBResponse
+		var response *CreateDrdsAccountResponse
 		var err error
 		defer close(result)
-		response, err = client.CreateDrdsDB(request)
+		response, err = client.CreateDrdsAccount(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,35 +73,34 @@ func (client *Client) CreateDrdsDBWithCallback(request *CreateDrdsDBRequest, cal
 	return result
 }
 
-// CreateDrdsDBRequest is the request struct for api CreateDrdsDB
-type CreateDrdsDBRequest struct {
+// CreateDrdsAccountRequest is the request struct for api CreateDrdsAccount
+type CreateDrdsAccountRequest struct {
 	*requests.RpcRequest
-	Encode         string `position:"Query" name:"Encode"`
 	Password       string `position:"Query" name:"Password"`
 	DbName         string `position:"Query" name:"DbName"`
-	RdsInstances   string `position:"Query" name:"RdsInstances"`
 	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
+	UserName       string `position:"Query" name:"UserName"`
 }
 
-// CreateDrdsDBResponse is the response struct for api CreateDrdsDB
-type CreateDrdsDBResponse struct {
+// CreateDrdsAccountResponse is the response struct for api CreateDrdsAccount
+type CreateDrdsAccountResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
 }
 
-// CreateCreateDrdsDBRequest creates a request to invoke CreateDrdsDB API
-func CreateCreateDrdsDBRequest() (request *CreateDrdsDBRequest) {
-	request = &CreateDrdsDBRequest{
+// CreateCreateDrdsAccountRequest creates a request to invoke CreateDrdsAccount API
+func CreateCreateDrdsAccountRequest() (request *CreateDrdsAccountRequest) {
+	request = &CreateDrdsAccountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2017-10-16", "CreateDrdsDB", "", "")
+	request.InitWithApiInfo("Drds", "2017-10-16", "CreateDrdsAccount", "", "")
 	return
 }
 
-// CreateCreateDrdsDBResponse creates a response to parse from CreateDrdsDB response
-func CreateCreateDrdsDBResponse() (response *CreateDrdsDBResponse) {
-	response = &CreateDrdsDBResponse{
+// CreateCreateDrdsAccountResponse creates a response to parse from CreateDrdsAccount response
+func CreateCreateDrdsAccountResponse() (response *CreateDrdsAccountResponse) {
+	response = &CreateDrdsAccountResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

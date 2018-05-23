@@ -76,11 +76,11 @@ func (client *Client) ModifyReadOnlyAccountPasswordWithCallback(request *ModifyR
 // ModifyReadOnlyAccountPasswordRequest is the request struct for api ModifyReadOnlyAccountPassword
 type ModifyReadOnlyAccountPasswordRequest struct {
 	*requests.RpcRequest
-	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
+	NewPasswd      string `position:"Query" name:"NewPasswd"`
 	DbName         string `position:"Query" name:"DbName"`
 	AccountName    string `position:"Query" name:"AccountName"`
 	OriginPassword string `position:"Query" name:"OriginPassword"`
-	NewPasswd      string `position:"Query" name:"NewPasswd"`
+	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
 }
 
 // ModifyReadOnlyAccountPasswordResponse is the response struct for api ModifyReadOnlyAccountPassword

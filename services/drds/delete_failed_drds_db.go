@@ -76,8 +76,8 @@ func (client *Client) DeleteFailedDrdsDBWithCallback(request *DeleteFailedDrdsDB
 // DeleteFailedDrdsDBRequest is the request struct for api DeleteFailedDrdsDB
 type DeleteFailedDrdsDBRequest struct {
 	*requests.RpcRequest
-	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
 	DbName         string `position:"Query" name:"DbName"`
+	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
 }
 
 // DeleteFailedDrdsDBResponse is the response struct for api DeleteFailedDrdsDB

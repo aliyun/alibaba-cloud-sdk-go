@@ -76,8 +76,8 @@ func (client *Client) DescribeReadOnlyAccountWithCallback(request *DescribeReadO
 // DescribeReadOnlyAccountRequest is the request struct for api DescribeReadOnlyAccount
 type DescribeReadOnlyAccountRequest struct {
 	*requests.RpcRequest
-	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
 	DbName         string `position:"Query" name:"DbName"`
+	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
 }
 
 // DescribeReadOnlyAccountResponse is the response struct for api DescribeReadOnlyAccount

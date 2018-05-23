@@ -76,8 +76,8 @@ func (client *Client) DescribeShardDbConnectionInfoWithCallback(request *Describ
 // DescribeShardDbConnectionInfoRequest is the request struct for api DescribeShardDbConnectionInfo
 type DescribeShardDbConnectionInfoRequest struct {
 	*requests.RpcRequest
-	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
 	DbName         string `position:"Query" name:"DbName"`
+	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
 	SubDbName      string `position:"Query" name:"SubDbName"`
 }
 

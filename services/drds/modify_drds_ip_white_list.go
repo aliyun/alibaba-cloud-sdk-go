@@ -76,12 +76,12 @@ func (client *Client) ModifyDrdsIpWhiteListWithCallback(request *ModifyDrdsIpWhi
 // ModifyDrdsIpWhiteListRequest is the request struct for api ModifyDrdsIpWhiteList
 type ModifyDrdsIpWhiteListRequest struct {
 	*requests.RpcRequest
-	DrdsInstanceId string           `position:"Query" name:"DrdsInstanceId"`
-	DbName         string           `position:"Query" name:"DbName"`
-	IpWhiteList    string           `position:"Query" name:"IpWhiteList"`
 	Mode           requests.Boolean `position:"Query" name:"Mode"`
-	GroupName      string           `position:"Query" name:"GroupName"`
+	DbName         string           `position:"Query" name:"DbName"`
 	GroupAttribute string           `position:"Query" name:"GroupAttribute"`
+	IpWhiteList    string           `position:"Query" name:"IpWhiteList"`
+	DrdsInstanceId string           `position:"Query" name:"DrdsInstanceId"`
+	GroupName      string           `position:"Query" name:"GroupName"`
 }
 
 // ModifyDrdsIpWhiteListResponse is the response struct for api ModifyDrdsIpWhiteList

@@ -1,3 +1,6 @@
+2018-05-23 Version: 1.14.0
+1, Add CreateDrdsAccount API, to support creating account for all databases of a DRDS instance.
+
 2018-05-23 Version: 1.13.1
 1, Add Function Compute interface,support Function Compute.
 

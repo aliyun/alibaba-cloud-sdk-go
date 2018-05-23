@@ -76,9 +76,9 @@ func (client *Client) ModifyFullTableScanWithCallback(request *ModifyFullTableSc
 // ModifyFullTableScanRequest is the request struct for api ModifyFullTableScan
 type ModifyFullTableScanRequest struct {
 	*requests.RpcRequest
-	DrdsInstanceId string           `position:"Query" name:"DrdsInstanceId"`
 	DbName         string           `position:"Query" name:"DbName"`
 	TableNames     string           `position:"Query" name:"TableNames"`
+	DrdsInstanceId string           `position:"Query" name:"DrdsInstanceId"`
 	FullTableScan  requests.Boolean `position:"Query" name:"FullTableScan"`
 }
 

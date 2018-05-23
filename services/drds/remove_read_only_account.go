@@ -76,9 +76,9 @@ func (client *Client) RemoveReadOnlyAccountWithCallback(request *RemoveReadOnlyA
 // RemoveReadOnlyAccountRequest is the request struct for api RemoveReadOnlyAccount
 type RemoveReadOnlyAccountRequest struct {
 	*requests.RpcRequest
-	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
 	DbName         string `position:"Query" name:"DbName"`
 	AccountName    string `position:"Query" name:"AccountName"`
+	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
 }
 
 // RemoveReadOnlyAccountResponse is the response struct for api RemoveReadOnlyAccount

@@ -25,7 +25,7 @@ import (
 func (client *Client) DescribeDrdsInstance(request *DescribeDrdsInstanceRequest) (response *DescribeDrdsInstanceResponse, err error) {
 	response = CreateDescribeDrdsInstanceResponse()
 	err = client.DoAction(request, response)
-	return response, err
+	return
 }
 
 // DescribeDrdsInstanceWithChan invokes the drds.DescribeDrdsInstance API asynchronously
@@ -93,7 +93,7 @@ func CreateDescribeDrdsInstanceRequest() (request *DescribeDrdsInstanceRequest) 
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2017-10-16", "DescribeDrdsInstance", "", "")
-	return request
+	return
 }
 
 // CreateDescribeDrdsInstanceResponse creates a response to parse from DescribeDrdsInstance response

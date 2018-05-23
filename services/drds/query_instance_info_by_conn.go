@@ -76,8 +76,8 @@ func (client *Client) QueryInstanceInfoByConnWithCallback(request *QueryInstance
 // QueryInstanceInfoByConnRequest is the request struct for api QueryInstanceInfoByConn
 type QueryInstanceInfoByConnRequest struct {
 	*requests.RpcRequest
-	Host     string           `position:"Query" name:"Host"`
 	Port     requests.Integer `position:"Query" name:"Port"`
+	Host     string           `position:"Query" name:"Host"`
 	UserName string           `position:"Query" name:"UserName"`
 }
 

@@ -76,8 +76,8 @@ func (client *Client) ModifyDrdsInstanceDescriptionWithCallback(request *ModifyD
 // ModifyDrdsInstanceDescriptionRequest is the request struct for api ModifyDrdsInstanceDescription
 type ModifyDrdsInstanceDescriptionRequest struct {
 	*requests.RpcRequest
-	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
 	Description    string `position:"Query" name:"Description"`
+	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
 }
 
 // ModifyDrdsInstanceDescriptionResponse is the response struct for api ModifyDrdsInstanceDescription

@@ -76,8 +76,8 @@ func (client *Client) DescribeShardDBsWithCallback(request *DescribeShardDBsRequ
 // DescribeShardDBsRequest is the request struct for api DescribeShardDBs
 type DescribeShardDBsRequest struct {
 	*requests.RpcRequest
-	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
 	DbName         string `position:"Query" name:"DbName"`
+	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
 }
 
 // DescribeShardDBsResponse is the response struct for api DescribeShardDBs
