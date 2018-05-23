@@ -79,6 +79,7 @@ type ListJobsRequest struct {
 	ClusterId  string           `position:"Query" name:"ClusterId"`
 	Owner      string           `position:"Query" name:"Owner"`
 	State      string           `position:"Query" name:"State"`
+	Rerunable  string           `position:"Query" name:"Rerunable"`
 	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
 	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 }
@@ -98,7 +99,7 @@ func CreateListJobsRequest() (request *ListJobsRequest) {
 	request = &ListJobsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2017-07-14", "ListJobs", "ehs", "openAPI")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "ListJobs", "ehs", "openAPI")
 	return
 }
 

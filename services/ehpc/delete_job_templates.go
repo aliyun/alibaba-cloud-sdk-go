@@ -90,7 +90,7 @@ func CreateDeleteJobTemplatesRequest() (request *DeleteJobTemplatesRequest) {
 	request = &DeleteJobTemplatesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2017-07-14", "DeleteJobTemplates", "ehs", "openAPI")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "DeleteJobTemplates", "ehs", "openAPI")
 	return
 }
 

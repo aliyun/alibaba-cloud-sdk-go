@@ -17,18 +17,18 @@ package ehpc
 
 // NodeInfo is a nested struct in ehpc response
 type NodeInfo struct {
-	ExpiredTime     string         `json:"ExpiredTime" xml:"ExpiredTime"`
-	LockReason      string         `json:"LockReason" xml:"LockReason"`
-	CreatedByEhpc   bool           `json:"CreatedByEhpc" xml:"CreatedByEhpc"`
-	AddTime         string         `json:"AddTime" xml:"AddTime"`
-	ImageOwnerAlias string         `json:"ImageOwnerAlias" xml:"ImageOwnerAlias"`
-	Expired         bool           `json:"Expired" xml:"Expired"`
-	SpotStrategy    string         `json:"SpotStrategy" xml:"SpotStrategy"`
-	ImageId         string         `json:"ImageId" xml:"ImageId"`
-	Id              string         `json:"Id" xml:"Id"`
-	RegionId        string         `json:"RegionId" xml:"RegionId"`
-	Role            string         `json:"Role" xml:"Role"`
-	Status          string         `json:"Status" xml:"Status"`
-	UsedResources   UsedResources  `json:"UsedResources" xml:"UsedResources"`
-	TotalResources  TotalResources `json:"TotalResources" xml:"TotalResources"`
+	LockReason      string                   `json:"LockReason" xml:"LockReason"`
+	Expired         bool                     `json:"Expired" xml:"Expired"`
+	ExpiredTime     string                   `json:"ExpiredTime" xml:"ExpiredTime"`
+	ImageId         string                   `json:"ImageId" xml:"ImageId"`
+	ImageOwnerAlias string                   `json:"ImageOwnerAlias" xml:"ImageOwnerAlias"`
+	RegionId        string                   `json:"RegionId" xml:"RegionId"`
+	CreatedByEhpc   bool                     `json:"CreatedByEhpc" xml:"CreatedByEhpc"`
+	Id              string                   `json:"Id" xml:"Id"`
+	Status          string                   `json:"Status" xml:"Status"`
+	AddTime         string                   `json:"AddTime" xml:"AddTime"`
+	SpotStrategy    string                   `json:"SpotStrategy" xml:"SpotStrategy"`
+	Roles           RolesInListNodesNoPaging `json:"Roles" xml:"Roles"`
+	TotalResources  TotalResources           `json:"TotalResources" xml:"TotalResources"`
+	UsedResources   UsedResources            `json:"UsedResources" xml:"UsedResources"`
 }

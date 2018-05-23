@@ -76,42 +76,55 @@ func (client *Client) CreateClusterWithCallback(request *CreateClusterRequest, c
 // CreateClusterRequest is the request struct for api CreateCluster
 type CreateClusterRequest struct {
 	*requests.RpcRequest
-	ZoneId                      string                      `position:"Query" name:"ZoneId"`
-	Name                        string                      `position:"Query" name:"Name"`
-	Description                 string                      `position:"Query" name:"Description"`
-	EhpcVersion                 string                      `position:"Query" name:"EhpcVersion"`
-	OsTag                       string                      `position:"Query" name:"OsTag"`
-	AccountType                 string                      `position:"Query" name:"AccountType"`
-	SchedulerType               string                      `position:"Query" name:"SchedulerType"`
-	SecurityGroupId             string                      `position:"Query" name:"SecurityGroupId"`
-	SecurityGroupName           string                      `position:"Query" name:"SecurityGroupName"`
-	VSwitchId                   string                      `position:"Query" name:"VSwitchId"`
-	VolumeType                  string                      `position:"Query" name:"VolumeType"`
-	VolumeId                    string                      `position:"Query" name:"VolumeId"`
-	VolumeProtocol              string                      `position:"Query" name:"VolumeProtocol"`
-	VolumeMountpoint            string                      `position:"Query" name:"VolumeMountpoint"`
-	RemoteDirectory             string                      `position:"Query" name:"RemoteDirectory"`
-	HaEnable                    requests.Boolean            `position:"Query" name:"HaEnable"`
-	EcsChargeType               string                      `position:"Query" name:"EcsChargeType"`
-	Password                    string                      `position:"Query" name:"Password"`
-	KeyPairName                 string                      `position:"Query" name:"KeyPairName"`
-	ImageOwnerAlias             string                      `position:"Query" name:"ImageOwnerAlias"`
-	ImageId                     string                      `position:"Query" name:"ImageId"`
-	EcsOrderManagerCount        requests.Integer            `position:"Query" name:"EcsOrder.Manager.Count"`
-	EcsOrderManagerInstanceType string                      `position:"Query" name:"EcsOrder.Manager.InstanceType"`
-	EcsOrderComputeCount        requests.Integer            `position:"Query" name:"EcsOrder.Compute.Count"`
-	EcsOrderComputeInstanceType string                      `position:"Query" name:"EcsOrder.Compute.InstanceType"`
-	EcsOrderLoginCount          requests.Integer            `position:"Query" name:"EcsOrder.Login.Count"`
-	EcsOrderLoginInstanceType   string                      `position:"Query" name:"EcsOrder.Login.InstanceType"`
-	SccClusterId                string                      `position:"Query" name:"SccClusterId"`
-	ComputeSpotStrategy         string                      `position:"Query" name:"ComputeSpotStrategy"`
-	ComputeSpotPriceLimit       string                      `position:"Query" name:"ComputeSpotPriceLimit"`
-	Application                 *[]CreateClusterApplication `position:"Query" name:"Application"  type:"Repeated"`
+	ZoneId                      string                            `position:"Query" name:"ZoneId"`
+	Name                        string                            `position:"Query" name:"Name"`
+	Description                 string                            `position:"Query" name:"Description"`
+	EhpcVersion                 string                            `position:"Query" name:"EhpcVersion"`
+	OsTag                       string                            `position:"Query" name:"OsTag"`
+	AccountType                 string                            `position:"Query" name:"AccountType"`
+	SchedulerType               string                            `position:"Query" name:"SchedulerType"`
+	SecurityGroupId             string                            `position:"Query" name:"SecurityGroupId"`
+	SecurityGroupName           string                            `position:"Query" name:"SecurityGroupName"`
+	VpcId                       string                            `position:"Query" name:"VpcId"`
+	VSwitchId                   string                            `position:"Query" name:"VSwitchId"`
+	VolumeType                  string                            `position:"Query" name:"VolumeType"`
+	VolumeId                    string                            `position:"Query" name:"VolumeId"`
+	VolumeProtocol              string                            `position:"Query" name:"VolumeProtocol"`
+	VolumeMountpoint            string                            `position:"Query" name:"VolumeMountpoint"`
+	RemoteDirectory             string                            `position:"Query" name:"RemoteDirectory"`
+	DeployMode                  string                            `position:"Query" name:"DeployMode"`
+	HaEnable                    requests.Boolean                  `position:"Query" name:"HaEnable"`
+	EcsChargeType               string                            `position:"Query" name:"EcsChargeType"`
+	Password                    string                            `position:"Query" name:"Password"`
+	KeyPairName                 string                            `position:"Query" name:"KeyPairName"`
+	ImageOwnerAlias             string                            `position:"Query" name:"ImageOwnerAlias"`
+	ImageId                     string                            `position:"Query" name:"ImageId"`
+	EcsOrderManagerCount        requests.Integer                  `position:"Query" name:"EcsOrder.Manager.Count"`
+	EcsOrderManagerInstanceType string                            `position:"Query" name:"EcsOrder.Manager.InstanceType"`
+	EcsOrderComputeCount        requests.Integer                  `position:"Query" name:"EcsOrder.Compute.Count"`
+	EcsOrderComputeInstanceType string                            `position:"Query" name:"EcsOrder.Compute.InstanceType"`
+	EcsOrderLoginCount          requests.Integer                  `position:"Query" name:"EcsOrder.Login.Count"`
+	EcsOrderLoginInstanceType   string                            `position:"Query" name:"EcsOrder.Login.InstanceType"`
+	SccClusterId                string                            `position:"Query" name:"SccClusterId"`
+	ComputeSpotStrategy         string                            `position:"Query" name:"ComputeSpotStrategy"`
+	ComputeSpotPriceLimit       string                            `position:"Query" name:"ComputeSpotPriceLimit"`
+	Application                 *[]CreateClusterApplication       `position:"Query" name:"Application"  type:"Repeated"`
+	PostInstallScript           *[]CreateClusterPostInstallScript `position:"Query" name:"PostInstallScript"  type:"Repeated"`
+	Period                      requests.Integer                  `position:"Query" name:"Period"`
+	PeriodUnit                  string                            `position:"Query" name:"PeriodUnit"`
+	AutoRenew                   string                            `position:"Query" name:"AutoRenew"`
+	AutoRenewPeriod             requests.Integer                  `position:"Query" name:"AutoRenewPeriod"`
 }
 
 // CreateClusterApplication is a repeated param struct in CreateClusterRequest
 type CreateClusterApplication struct {
 	Tag string `name:"Tag"`
+}
+
+// CreateClusterPostInstallScript is a repeated param struct in CreateClusterRequest
+type CreateClusterPostInstallScript struct {
+	Url  string `name:"Url"`
+	Args string `name:"Args"`
 }
 
 // CreateClusterResponse is the response struct for api CreateCluster
@@ -126,7 +139,7 @@ func CreateCreateClusterRequest() (request *CreateClusterRequest) {
 	request = &CreateClusterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2017-07-14", "CreateCluster", "ehs", "openAPI")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "CreateCluster", "ehs", "openAPI")
 	return
 }
 

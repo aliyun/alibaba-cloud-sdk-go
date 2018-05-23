@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// StopJobs invokes the ehpc.StopJobs API synchronously
-// api document: https://help.aliyun.com/api/ehpc/stopjobs.html
-func (client *Client) StopJobs(request *StopJobsRequest) (response *StopJobsResponse, err error) {
-	response = CreateStopJobsResponse()
+// RecoverCluster invokes the ehpc.RecoverCluster API synchronously
+// api document: https://help.aliyun.com/api/ehpc/recovercluster.html
+func (client *Client) RecoverCluster(request *RecoverClusterRequest) (response *RecoverClusterResponse, err error) {
+	response = CreateRecoverClusterResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// StopJobsWithChan invokes the ehpc.StopJobs API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/stopjobs.html
+// RecoverClusterWithChan invokes the ehpc.RecoverCluster API asynchronously
+// api document: https://help.aliyun.com/api/ehpc/recovercluster.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) StopJobsWithChan(request *StopJobsRequest) (<-chan *StopJobsResponse, <-chan error) {
-	responseChan := make(chan *StopJobsResponse, 1)
+func (client *Client) RecoverClusterWithChan(request *RecoverClusterRequest) (<-chan *RecoverClusterResponse, <-chan error) {
+	responseChan := make(chan *RecoverClusterResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.StopJobs(request)
+		response, err := client.RecoverCluster(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) StopJobsWithChan(request *StopJobsRequest) (<-chan *StopJo
 	return responseChan, errChan
 }
 
-// StopJobsWithCallback invokes the ehpc.StopJobs API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/stopjobs.html
+// RecoverClusterWithCallback invokes the ehpc.RecoverCluster API asynchronously
+// api document: https://help.aliyun.com/api/ehpc/recovercluster.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) StopJobsWithCallback(request *StopJobsRequest, callback func(response *StopJobsResponse, err error)) <-chan int {
+func (client *Client) RecoverClusterWithCallback(request *RecoverClusterRequest, callback func(response *RecoverClusterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *StopJobsResponse
+		var response *RecoverClusterResponse
 		var err error
 		defer close(result)
-		response, err = client.StopJobs(request)
+		response, err = client.RecoverCluster(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,31 +73,30 @@ func (client *Client) StopJobsWithCallback(request *StopJobsRequest, callback fu
 	return result
 }
 
-// StopJobsRequest is the request struct for api StopJobs
-type StopJobsRequest struct {
+// RecoverClusterRequest is the request struct for api RecoverCluster
+type RecoverClusterRequest struct {
 	*requests.RpcRequest
 	ClusterId string `position:"Query" name:"ClusterId"`
-	Jobs      string `position:"Query" name:"Jobs"`
 }
 
-// StopJobsResponse is the response struct for api StopJobs
-type StopJobsResponse struct {
+// RecoverClusterResponse is the response struct for api RecoverCluster
+type RecoverClusterResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateStopJobsRequest creates a request to invoke StopJobs API
-func CreateStopJobsRequest() (request *StopJobsRequest) {
-	request = &StopJobsRequest{
+// CreateRecoverClusterRequest creates a request to invoke RecoverCluster API
+func CreateRecoverClusterRequest() (request *RecoverClusterRequest) {
+	request = &RecoverClusterRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "StopJobs", "ehs", "openAPI")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "RecoverCluster", "ehs", "openAPI")
 	return
 }
 
-// CreateStopJobsResponse creates a response to parse from StopJobs response
-func CreateStopJobsResponse() (response *StopJobsResponse) {
-	response = &StopJobsResponse{
+// CreateRecoverClusterResponse creates a response to parse from RecoverCluster response
+func CreateRecoverClusterResponse() (response *RecoverClusterResponse) {
+	response = &RecoverClusterResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

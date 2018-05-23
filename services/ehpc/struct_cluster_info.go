@@ -33,6 +33,7 @@ type ClusterInfo struct {
 	VolumeProtocol   string                        `json:"VolumeProtocol" xml:"VolumeProtocol"`
 	VolumeMountpoint string                        `json:"VolumeMountpoint" xml:"VolumeMountpoint"`
 	RemoteDirectory  string                        `json:"RemoteDirectory" xml:"RemoteDirectory"`
+	DeployMode       string                        `json:"DeployMode" xml:"DeployMode"`
 	HaEnable         bool                          `json:"HaEnable" xml:"HaEnable"`
 	EcsChargeType    string                        `json:"EcsChargeType" xml:"EcsChargeType"`
 	KeyPairName      string                        `json:"KeyPairName" xml:"KeyPairName"`

@@ -17,6 +17,6 @@ package ehpc
 
 // Manager is a nested struct in ehpc response
 type Manager struct {
-	InstanceType string `json:"InstanceType" xml:"InstanceType"`
 	Count        int    `json:"Count" xml:"Count"`
+	InstanceType string `json:"InstanceType" xml:"InstanceType"`
 }

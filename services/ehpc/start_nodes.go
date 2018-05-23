@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// ResetNodes invokes the ehpc.ResetNodes API synchronously
-// api document: https://help.aliyun.com/api/ehpc/resetnodes.html
-func (client *Client) ResetNodes(request *ResetNodesRequest) (response *ResetNodesResponse, err error) {
-	response = CreateResetNodesResponse()
+// StartNodes invokes the ehpc.StartNodes API synchronously
+// api document: https://help.aliyun.com/api/ehpc/startnodes.html
+func (client *Client) StartNodes(request *StartNodesRequest) (response *StartNodesResponse, err error) {
+	response = CreateStartNodesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// ResetNodesWithChan invokes the ehpc.ResetNodes API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/resetnodes.html
+// StartNodesWithChan invokes the ehpc.StartNodes API asynchronously
+// api document: https://help.aliyun.com/api/ehpc/startnodes.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) ResetNodesWithChan(request *ResetNodesRequest) (<-chan *ResetNodesResponse, <-chan error) {
-	responseChan := make(chan *ResetNodesResponse, 1)
+func (client *Client) StartNodesWithChan(request *StartNodesRequest) (<-chan *StartNodesResponse, <-chan error) {
+	responseChan := make(chan *StartNodesResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.ResetNodes(request)
+		response, err := client.StartNodes(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) ResetNodesWithChan(request *ResetNodesRequest) (<-chan *Re
 	return responseChan, errChan
 }
 
-// ResetNodesWithCallback invokes the ehpc.ResetNodes API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/resetnodes.html
+// StartNodesWithCallback invokes the ehpc.StartNodes API asynchronously
+// api document: https://help.aliyun.com/api/ehpc/startnodes.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) ResetNodesWithCallback(request *ResetNodesRequest, callback func(response *ResetNodesResponse, err error)) <-chan int {
+func (client *Client) StartNodesWithCallback(request *StartNodesRequest, callback func(response *StartNodesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *ResetNodesResponse
+		var response *StartNodesResponse
 		var err error
 		defer close(result)
-		response, err = client.ResetNodes(request)
+		response, err = client.StartNodes(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,36 +73,37 @@ func (client *Client) ResetNodesWithCallback(request *ResetNodesRequest, callbac
 	return result
 }
 
-// ResetNodesRequest is the request struct for api ResetNodes
-type ResetNodesRequest struct {
+// StartNodesRequest is the request struct for api StartNodes
+type StartNodesRequest struct {
 	*requests.RpcRequest
 	ClusterId string                `position:"Query" name:"ClusterId"`
-	Instance  *[]ResetNodesInstance `position:"Query" name:"Instance"  type:"Repeated"`
+	Role      string                `position:"Query" name:"Role"`
+	Instance  *[]StartNodesInstance `position:"Query" name:"Instance"  type:"Repeated"`
 }
 
-// ResetNodesInstance is a repeated param struct in ResetNodesRequest
-type ResetNodesInstance struct {
+// StartNodesInstance is a repeated param struct in StartNodesRequest
+type StartNodesInstance struct {
 	Id string `name:"Id"`
 }
 
-// ResetNodesResponse is the response struct for api ResetNodes
-type ResetNodesResponse struct {
+// StartNodesResponse is the response struct for api StartNodes
+type StartNodesResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateResetNodesRequest creates a request to invoke ResetNodes API
-func CreateResetNodesRequest() (request *ResetNodesRequest) {
-	request = &ResetNodesRequest{
+// CreateStartNodesRequest creates a request to invoke StartNodes API
+func CreateStartNodesRequest() (request *StartNodesRequest) {
+	request = &StartNodesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "ResetNodes", "ehs", "openAPI")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "StartNodes", "ehs", "openAPI")
 	return
 }
 
-// CreateResetNodesResponse creates a response to parse from ResetNodes response
-func CreateResetNodesResponse() (response *ResetNodesResponse) {
-	response = &ResetNodesResponse{
+// CreateStartNodesResponse creates a response to parse from StartNodes response
+func CreateStartNodesResponse() (response *StartNodesResponse) {
+	response = &StartNodesResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

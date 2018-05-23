@@ -82,6 +82,11 @@ type AddNodesRequest struct {
 	Count                 requests.Integer `position:"Query" name:"Count"`
 	ComputeSpotStrategy   string           `position:"Query" name:"ComputeSpotStrategy"`
 	ComputeSpotPriceLimit string           `position:"Query" name:"ComputeSpotPriceLimit"`
+	EcsChargeType         string           `position:"Query" name:"EcsChargeType"`
+	Period                requests.Integer `position:"Query" name:"Period"`
+	PeriodUnit            string           `position:"Query" name:"PeriodUnit"`
+	AutoRenew             string           `position:"Query" name:"AutoRenew"`
+	AutoRenewPeriod       requests.Integer `position:"Query" name:"AutoRenewPeriod"`
 }
 
 // AddNodesResponse is the response struct for api AddNodes
@@ -96,7 +101,7 @@ func CreateAddNodesRequest() (request *AddNodesRequest) {
 	request = &AddNodesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2017-07-14", "AddNodes", "ehs", "openAPI")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "AddNodes", "ehs", "openAPI")
 	return
 }
 
