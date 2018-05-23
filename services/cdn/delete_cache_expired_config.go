@@ -76,11 +76,11 @@ func (client *Client) DeleteCacheExpiredConfigWithCallback(request *DeleteCacheE
 // DeleteCacheExpiredConfigRequest is the request struct for api DeleteCacheExpiredConfig
 type DeleteCacheExpiredConfigRequest struct {
 	*requests.RpcRequest
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
-	DomainName    string           `position:"Query" name:"DomainName"`
 	CacheType     string           `position:"Query" name:"CacheType"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	ConfigID      string           `position:"Query" name:"ConfigID"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DeleteCacheExpiredConfigResponse is the response struct for api DeleteCacheExpiredConfig

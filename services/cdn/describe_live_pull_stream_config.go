@@ -76,9 +76,9 @@ func (client *Client) DescribeLivePullStreamConfigWithCallback(request *Describe
 // DescribeLivePullStreamConfigRequest is the request struct for api DescribeLivePullStreamConfig
 type DescribeLivePullStreamConfigRequest struct {
 	*requests.RpcRequest
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	DomainName    string           `position:"Query" name:"DomainName"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeLivePullStreamConfigResponse is the response struct for api DescribeLivePullStreamConfig

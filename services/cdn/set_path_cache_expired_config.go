@@ -76,12 +76,12 @@ func (client *Client) SetPathCacheExpiredConfigWithCallback(request *SetPathCach
 // SetPathCacheExpiredConfigRequest is the request struct for api SetPathCacheExpiredConfig
 type SetPathCacheExpiredConfigRequest struct {
 	*requests.RpcRequest
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	DomainName    string           `position:"Query" name:"DomainName"`
-	CacheContent  string           `position:"Query" name:"CacheContent"`
-	TTL           string           `position:"Query" name:"TTL"`
 	Weight        string           `position:"Query" name:"Weight"`
+	CacheContent  string           `position:"Query" name:"CacheContent"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	TTL           string           `position:"Query" name:"TTL"`
 }
 
 // SetPathCacheExpiredConfigResponse is the response struct for api SetPathCacheExpiredConfig

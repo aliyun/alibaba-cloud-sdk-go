@@ -76,11 +76,11 @@ func (client *Client) ResumeLiveStreamWithCallback(request *ResumeLiveStreamRequ
 // ResumeLiveStreamRequest is the request struct for api ResumeLiveStream
 type ResumeLiveStreamRequest struct {
 	*requests.RpcRequest
-	OwnerId        requests.Integer `position:"Query" name:"OwnerId"`
-	SecurityToken  string           `position:"Query" name:"SecurityToken"`
-	DomainName     string           `position:"Query" name:"DomainName"`
-	LiveStreamType string           `position:"Query" name:"LiveStreamType"`
 	AppName        string           `position:"Query" name:"AppName"`
+	SecurityToken  string           `position:"Query" name:"SecurityToken"`
+	LiveStreamType string           `position:"Query" name:"LiveStreamType"`
+	DomainName     string           `position:"Query" name:"DomainName"`
+	OwnerId        requests.Integer `position:"Query" name:"OwnerId"`
 	StreamName     string           `position:"Query" name:"StreamName"`
 }
 

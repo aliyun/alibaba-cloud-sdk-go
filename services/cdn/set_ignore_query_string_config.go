@@ -76,12 +76,12 @@ func (client *Client) SetIgnoreQueryStringConfigWithCallback(request *SetIgnoreQ
 // SetIgnoreQueryStringConfigRequest is the request struct for api SetIgnoreQueryStringConfig
 type SetIgnoreQueryStringConfigRequest struct {
 	*requests.RpcRequest
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
-	DomainName    string           `position:"Query" name:"DomainName"`
-	Enable        string           `position:"Query" name:"Enable"`
-	HashKeyArgs   string           `position:"Query" name:"HashKeyArgs"`
 	KeepOssArgs   string           `position:"Query" name:"KeepOssArgs"`
+	HashKeyArgs   string           `position:"Query" name:"HashKeyArgs"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	Enable        string           `position:"Query" name:"Enable"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // SetIgnoreQueryStringConfigResponse is the response struct for api SetIgnoreQueryStringConfig

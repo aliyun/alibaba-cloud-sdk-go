@@ -76,11 +76,11 @@ func (client *Client) DescribeDomainMax95BpsDataWithCallback(request *DescribeDo
 // DescribeDomainMax95BpsDataRequest is the request struct for api DescribeDomainMax95BpsData
 type DescribeDomainMax95BpsDataRequest struct {
 	*requests.RpcRequest
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	DomainName    string           `position:"Query" name:"DomainName"`
-	StartTime     string           `position:"Query" name:"StartTime"`
 	EndTime       string           `position:"Query" name:"EndTime"`
+	StartTime     string           `position:"Query" name:"StartTime"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeDomainMax95BpsDataResponse is the response struct for api DescribeDomainMax95BpsData

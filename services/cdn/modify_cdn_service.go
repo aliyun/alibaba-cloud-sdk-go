@@ -76,9 +76,9 @@ func (client *Client) ModifyCdnServiceWithCallback(request *ModifyCdnServiceRequ
 // ModifyCdnServiceRequest is the request struct for api ModifyCdnService
 type ModifyCdnServiceRequest struct {
 	*requests.RpcRequest
-	OwnerId            requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken      string           `position:"Query" name:"SecurityToken"`
 	InternetChargeType string           `position:"Query" name:"InternetChargeType"`
+	OwnerId            requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // ModifyCdnServiceResponse is the response struct for api ModifyCdnService

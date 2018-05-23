@@ -76,18 +76,18 @@ func (client *Client) DescribeRefreshTasksWithCallback(request *DescribeRefreshT
 // DescribeRefreshTasksRequest is the request struct for api DescribeRefreshTasks
 type DescribeRefreshTasksRequest struct {
 	*requests.RpcRequest
-	OwnerId         requests.Integer `position:"Query" name:"OwnerId"`
-	SecurityToken   string           `position:"Query" name:"SecurityToken"`
-	TaskId          string           `position:"Query" name:"TaskId"`
 	ObjectPath      string           `position:"Query" name:"ObjectPath"`
-	PageNumber      requests.Integer `position:"Query" name:"PageNumber"`
 	DomainName      string           `position:"Query" name:"DomainName"`
-	ObjectType      string           `position:"Query" name:"ObjectType"`
-	Status          string           `position:"Query" name:"Status"`
-	PageSize        requests.Integer `position:"Query" name:"PageSize"`
-	StartTime       string           `position:"Query" name:"StartTime"`
 	EndTime         string           `position:"Query" name:"EndTime"`
+	StartTime       string           `position:"Query" name:"StartTime"`
+	OwnerId         requests.Integer `position:"Query" name:"OwnerId"`
+	PageNumber      requests.Integer `position:"Query" name:"PageNumber"`
 	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
+	SecurityToken   string           `position:"Query" name:"SecurityToken"`
+	PageSize        requests.Integer `position:"Query" name:"PageSize"`
+	ObjectType      string           `position:"Query" name:"ObjectType"`
+	TaskId          string           `position:"Query" name:"TaskId"`
+	Status          string           `position:"Query" name:"Status"`
 }
 
 // DescribeRefreshTasksResponse is the response struct for api DescribeRefreshTasks

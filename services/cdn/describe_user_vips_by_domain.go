@@ -76,10 +76,10 @@ func (client *Client) DescribeUserVipsByDomainWithCallback(request *DescribeUser
 // DescribeUserVipsByDomainRequest is the request struct for api DescribeUserVipsByDomain
 type DescribeUserVipsByDomainRequest struct {
 	*requests.RpcRequest
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	DomainName    string           `position:"Query" name:"DomainName"`
 	Available     string           `position:"Query" name:"Available"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeUserVipsByDomainResponse is the response struct for api DescribeUserVipsByDomain

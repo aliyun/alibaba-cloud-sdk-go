@@ -76,10 +76,10 @@ func (client *Client) DescribeCdnDomainConfigsWithCallback(request *DescribeCdnD
 // DescribeCdnDomainConfigsRequest is the request struct for api DescribeCdnDomainConfigs
 type DescribeCdnDomainConfigsRequest struct {
 	*requests.RpcRequest
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	FunctionNames string           `position:"Query" name:"FunctionNames"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	DomainName    string           `position:"Query" name:"DomainName"`
-	FunctionNames string           `position:"Query" name:"FunctionNames"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeCdnDomainConfigsResponse is the response struct for api DescribeCdnDomainConfigs

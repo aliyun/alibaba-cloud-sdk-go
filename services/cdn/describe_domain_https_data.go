@@ -76,16 +76,16 @@ func (client *Client) DescribeDomainHttpsDataWithCallback(request *DescribeDomai
 // DescribeDomainHttpsDataRequest is the request struct for api DescribeDomainHttpsData
 type DescribeDomainHttpsDataRequest struct {
 	*requests.RpcRequest
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
-	DomainNames   string           `position:"Query" name:"DomainNames"`
-	StartTime     string           `position:"Query" name:"StartTime"`
-	EndTime       string           `position:"Query" name:"EndTime"`
 	DomainType    string           `position:"Query" name:"DomainType"`
-	TimeMerge     string           `position:"Query" name:"TimeMerge"`
-	Interval      string           `position:"Query" name:"Interval"`
-	Cls           string           `position:"Query" name:"Cls"`
 	FixTimeGap    string           `position:"Query" name:"FixTimeGap"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	TimeMerge     string           `position:"Query" name:"TimeMerge"`
+	DomainNames   string           `position:"Query" name:"DomainNames"`
+	EndTime       string           `position:"Query" name:"EndTime"`
+	Interval      string           `position:"Query" name:"Interval"`
+	StartTime     string           `position:"Query" name:"StartTime"`
+	Cls           string           `position:"Query" name:"Cls"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeDomainHttpsDataResponse is the response struct for api DescribeDomainHttpsData

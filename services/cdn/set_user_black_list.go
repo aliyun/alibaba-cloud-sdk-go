@@ -76,10 +76,10 @@ func (client *Client) SetUserBlackListWithCallback(request *SetUserBlackListRequ
 // SetUserBlackListRequest is the request struct for api SetUserBlackList
 type SetUserBlackListRequest struct {
 	*requests.RpcRequest
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
-	OwnerAccount  string           `position:"Query" name:"OwnerAccount"`
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	ConfigUrl     string           `position:"Query" name:"ConfigUrl"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	OwnerAccount  string           `position:"Query" name:"OwnerAccount"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // SetUserBlackListResponse is the response struct for api SetUserBlackList

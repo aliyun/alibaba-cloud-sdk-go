@@ -76,9 +76,9 @@ func (client *Client) DescribeIpInfoWithCallback(request *DescribeIpInfoRequest,
 // DescribeIpInfoRequest is the request struct for api DescribeIpInfo
 type DescribeIpInfoRequest struct {
 	*requests.RpcRequest
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	IP            string           `position:"Query" name:"IP"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeIpInfoResponse is the response struct for api DescribeIpInfo

@@ -76,11 +76,11 @@ func (client *Client) DescribeTopDomainsByFlowWithCallback(request *DescribeTopD
 // DescribeTopDomainsByFlowRequest is the request struct for api DescribeTopDomainsByFlow
 type DescribeTopDomainsByFlowRequest struct {
 	*requests.RpcRequest
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
-	StartTime     string           `position:"Query" name:"StartTime"`
-	EndTime       string           `position:"Query" name:"EndTime"`
 	Limit         requests.Integer `position:"Query" name:"Limit"`
+	EndTime       string           `position:"Query" name:"EndTime"`
+	StartTime     string           `position:"Query" name:"StartTime"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeTopDomainsByFlowResponse is the response struct for api DescribeTopDomainsByFlow

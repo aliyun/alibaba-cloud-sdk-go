@@ -1,3 +1,6 @@
+2018-05-23 Version: 1.13.1
+1, Add Function Compute interface,support Function Compute.
+
 2018-05-23 Version: 1.13.0
 1, Update API version to 2018-04-12. 
 2, New APIs in this new version: StartCluster, StopCluster, RecoverCluster, StartNodes, StopNodes, ListCustomImages. Support stopping a post-paid cluster or partial nodes of a cluster to save cost.

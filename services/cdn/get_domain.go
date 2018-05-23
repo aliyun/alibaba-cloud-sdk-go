@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// SetWafConfig invokes the cdn.SetWafConfig API synchronously
-// api document: https://help.aliyun.com/api/cdn/setwafconfig.html
-func (client *Client) SetWafConfig(request *SetWafConfigRequest) (response *SetWafConfigResponse, err error) {
-	response = CreateSetWafConfigResponse()
+// GetDomain invokes the cdn.GetDomain API synchronously
+// api document: https://help.aliyun.com/api/cdn/getdomain.html
+func (client *Client) GetDomain(request *GetDomainRequest) (response *GetDomainResponse, err error) {
+	response = CreateGetDomainResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// SetWafConfigWithChan invokes the cdn.SetWafConfig API asynchronously
-// api document: https://help.aliyun.com/api/cdn/setwafconfig.html
+// GetDomainWithChan invokes the cdn.GetDomain API asynchronously
+// api document: https://help.aliyun.com/api/cdn/getdomain.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) SetWafConfigWithChan(request *SetWafConfigRequest) (<-chan *SetWafConfigResponse, <-chan error) {
-	responseChan := make(chan *SetWafConfigResponse, 1)
+func (client *Client) GetDomainWithChan(request *GetDomainRequest) (<-chan *GetDomainResponse, <-chan error) {
+	responseChan := make(chan *GetDomainResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.SetWafConfig(request)
+		response, err := client.GetDomain(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) SetWafConfigWithChan(request *SetWafConfigRequest) (<-chan
 	return responseChan, errChan
 }
 
-// SetWafConfigWithCallback invokes the cdn.SetWafConfig API asynchronously
-// api document: https://help.aliyun.com/api/cdn/setwafconfig.html
+// GetDomainWithCallback invokes the cdn.GetDomain API asynchronously
+// api document: https://help.aliyun.com/api/cdn/getdomain.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) SetWafConfigWithCallback(request *SetWafConfigRequest, callback func(response *SetWafConfigResponse, err error)) <-chan int {
+func (client *Client) GetDomainWithCallback(request *GetDomainRequest, callback func(response *GetDomainResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *SetWafConfigResponse
+		var response *GetDomainResponse
 		var err error
 		defer close(result)
-		response, err = client.SetWafConfig(request)
+		response, err = client.GetDomain(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,33 +73,35 @@ func (client *Client) SetWafConfigWithCallback(request *SetWafConfigRequest, cal
 	return result
 }
 
-// SetWafConfigRequest is the request struct for api SetWafConfig
-type SetWafConfigRequest struct {
+// GetDomainRequest is the request struct for api GetDomain
+type GetDomainRequest struct {
 	*requests.RpcRequest
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
-	Enable        string           `position:"Query" name:"Enable"`
 	DomainName    string           `position:"Query" name:"DomainName"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	Version       string           `position:"Query" name:"Version"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
-// SetWafConfigResponse is the response struct for api SetWafConfig
-type SetWafConfigResponse struct {
+// GetDomainResponse is the response struct for api GetDomain
+type GetDomainResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	RetCode      string       `json:"RetCode" xml:"RetCode"`
+	Description  string       `json:"Description" xml:"Description"`
+	DomainDetail DomainDetail `json:"DomainDetail" xml:"DomainDetail"`
 }
 
-// CreateSetWafConfigRequest creates a request to invoke SetWafConfig API
-func CreateSetWafConfigRequest() (request *SetWafConfigRequest) {
-	request = &SetWafConfigRequest{
+// CreateGetDomainRequest creates a request to invoke GetDomain API
+func CreateGetDomainRequest() (request *GetDomainRequest) {
+	request = &GetDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "SetWafConfig", "", "")
+	request.InitWithApiInfo("Cdn", "2014-11-11", "GetDomain", "", "")
 	return
 }
 
-// CreateSetWafConfigResponse creates a response to parse from SetWafConfig response
-func CreateSetWafConfigResponse() (response *SetWafConfigResponse) {
-	response = &SetWafConfigResponse{
+// CreateGetDomainResponse creates a response to parse from GetDomain response
+func CreateGetDomainResponse() (response *GetDomainResponse) {
+	response = &GetDomainResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

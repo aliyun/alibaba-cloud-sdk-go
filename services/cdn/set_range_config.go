@@ -76,10 +76,10 @@ func (client *Client) SetRangeConfigWithCallback(request *SetRangeConfigRequest,
 // SetRangeConfigRequest is the request struct for api SetRangeConfig
 type SetRangeConfigRequest struct {
 	*requests.RpcRequest
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
-	DomainName    string           `position:"Query" name:"DomainName"`
 	Enable        string           `position:"Query" name:"Enable"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // SetRangeConfigResponse is the response struct for api SetRangeConfig

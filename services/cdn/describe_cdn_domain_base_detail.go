@@ -76,9 +76,9 @@ func (client *Client) DescribeCdnDomainBaseDetailWithCallback(request *DescribeC
 // DescribeCdnDomainBaseDetailRequest is the request struct for api DescribeCdnDomainBaseDetail
 type DescribeCdnDomainBaseDetailRequest struct {
 	*requests.RpcRequest
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	DomainName    string           `position:"Query" name:"DomainName"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeCdnDomainBaseDetailResponse is the response struct for api DescribeCdnDomainBaseDetail

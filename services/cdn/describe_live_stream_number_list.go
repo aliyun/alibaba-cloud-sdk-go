@@ -76,12 +76,12 @@ func (client *Client) DescribeLiveStreamNumberListWithCallback(request *Describe
 // DescribeLiveStreamNumberListRequest is the request struct for api DescribeLiveStreamNumberList
 type DescribeLiveStreamNumberListRequest struct {
 	*requests.RpcRequest
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	AppName       string           `position:"Query" name:"AppName"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	DomainName    string           `position:"Query" name:"DomainName"`
-	AppName       string           `position:"Query" name:"AppName"`
-	StartTime     string           `position:"Query" name:"StartTime"`
 	EndTime       string           `position:"Query" name:"EndTime"`
+	StartTime     string           `position:"Query" name:"StartTime"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeLiveStreamNumberListResponse is the response struct for api DescribeLiveStreamNumberList

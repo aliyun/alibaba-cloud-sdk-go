@@ -76,11 +76,11 @@ func (client *Client) DescribeDomainFileSizeProportionDataWithCallback(request *
 // DescribeDomainFileSizeProportionDataRequest is the request struct for api DescribeDomainFileSizeProportionData
 type DescribeDomainFileSizeProportionDataRequest struct {
 	*requests.RpcRequest
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	DomainName    string           `position:"Query" name:"DomainName"`
-	StartTime     string           `position:"Query" name:"StartTime"`
 	EndTime       string           `position:"Query" name:"EndTime"`
+	StartTime     string           `position:"Query" name:"StartTime"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeDomainFileSizeProportionDataResponse is the response struct for api DescribeDomainFileSizeProportionData

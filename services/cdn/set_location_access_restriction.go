@@ -76,10 +76,10 @@ func (client *Client) SetLocationAccessRestrictionWithCallback(request *SetLocat
 // SetLocationAccessRestrictionRequest is the request struct for api SetLocationAccessRestriction
 type SetLocationAccessRestrictionRequest struct {
 	*requests.RpcRequest
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	DomainName    string           `position:"Query" name:"DomainName"`
 	Location      string           `position:"Query" name:"Location"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	Type          string           `position:"Query" name:"Type"`
 }
 

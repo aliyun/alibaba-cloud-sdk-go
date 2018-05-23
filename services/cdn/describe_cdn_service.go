@@ -76,8 +76,8 @@ func (client *Client) DescribeCdnServiceWithCallback(request *DescribeCdnService
 // DescribeCdnServiceRequest is the request struct for api DescribeCdnService
 type DescribeCdnServiceRequest struct {
 	*requests.RpcRequest
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeCdnServiceResponse is the response struct for api DescribeCdnService

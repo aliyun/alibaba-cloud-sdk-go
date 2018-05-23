@@ -76,14 +76,14 @@ func (client *Client) DescribeLiveStreamOnlineUserNumWithCallback(request *Descr
 // DescribeLiveStreamOnlineUserNumRequest is the request struct for api DescribeLiveStreamOnlineUserNum
 type DescribeLiveStreamOnlineUserNumRequest struct {
 	*requests.RpcRequest
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
-	DomainName    string           `position:"Query" name:"DomainName"`
 	AppName       string           `position:"Query" name:"AppName"`
-	StreamName    string           `position:"Query" name:"StreamName"`
-	StartTime     string           `position:"Query" name:"StartTime"`
-	EndTime       string           `position:"Query" name:"EndTime"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	HlsSwitch     string           `position:"Query" name:"HlsSwitch"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	EndTime       string           `position:"Query" name:"EndTime"`
+	StartTime     string           `position:"Query" name:"StartTime"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	StreamName    string           `position:"Query" name:"StreamName"`
 }
 
 // DescribeLiveStreamOnlineUserNumResponse is the response struct for api DescribeLiveStreamOnlineUserNum

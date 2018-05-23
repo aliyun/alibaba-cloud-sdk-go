@@ -76,9 +76,9 @@ func (client *Client) DescribeLiveRecordConfigWithCallback(request *DescribeLive
 // DescribeLiveRecordConfigRequest is the request struct for api DescribeLiveRecordConfig
 type DescribeLiveRecordConfigRequest struct {
 	*requests.RpcRequest
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	DomainName    string           `position:"Query" name:"DomainName"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeLiveRecordConfigResponse is the response struct for api DescribeLiveRecordConfig

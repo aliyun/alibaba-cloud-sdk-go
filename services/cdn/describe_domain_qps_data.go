@@ -76,17 +76,17 @@ func (client *Client) DescribeDomainQpsDataWithCallback(request *DescribeDomainQ
 // DescribeDomainQpsDataRequest is the request struct for api DescribeDomainQpsData
 type DescribeDomainQpsDataRequest struct {
 	*requests.RpcRequest
-	OwnerId        requests.Integer `position:"Query" name:"OwnerId"`
-	SecurityToken  string           `position:"Query" name:"SecurityToken"`
-	DomainName     string           `position:"Query" name:"DomainName"`
-	StartTime      string           `position:"Query" name:"StartTime"`
-	EndTime        string           `position:"Query" name:"EndTime"`
-	TimeMerge      string           `position:"Query" name:"TimeMerge"`
-	LocationNameEn string           `position:"Query" name:"LocationNameEn"`
-	IspNameEn      string           `position:"Query" name:"IspNameEn"`
-	DomainType     string           `position:"Query" name:"DomainType"`
-	Interval       string           `position:"Query" name:"Interval"`
 	FixTimeGap     string           `position:"Query" name:"FixTimeGap"`
+	TimeMerge      string           `position:"Query" name:"TimeMerge"`
+	DomainName     string           `position:"Query" name:"DomainName"`
+	EndTime        string           `position:"Query" name:"EndTime"`
+	LocationNameEn string           `position:"Query" name:"LocationNameEn"`
+	StartTime      string           `position:"Query" name:"StartTime"`
+	IspNameEn      string           `position:"Query" name:"IspNameEn"`
+	OwnerId        requests.Integer `position:"Query" name:"OwnerId"`
+	DomainType     string           `position:"Query" name:"DomainType"`
+	SecurityToken  string           `position:"Query" name:"SecurityToken"`
+	Interval       string           `position:"Query" name:"Interval"`
 }
 
 // DescribeDomainQpsDataResponse is the response struct for api DescribeDomainQpsData

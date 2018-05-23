@@ -76,6 +76,10 @@ func (client *Client) ListDomainsByLogConfigIdWithCallback(request *ListDomainsB
 // ListDomainsByLogConfigIdRequest is the request struct for api ListDomainsByLogConfigId
 type ListDomainsByLogConfigIdRequest struct {
 	*requests.RpcRequest
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	Version       string           `position:"Query" name:"Version"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	ConfigId      string           `position:"Query" name:"ConfigId"`
 }
 
 // ListDomainsByLogConfigIdResponse is the response struct for api ListDomainsByLogConfigId

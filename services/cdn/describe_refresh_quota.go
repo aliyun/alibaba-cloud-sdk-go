@@ -76,8 +76,8 @@ func (client *Client) DescribeRefreshQuotaWithCallback(request *DescribeRefreshQ
 // DescribeRefreshQuotaRequest is the request struct for api DescribeRefreshQuota
 type DescribeRefreshQuotaRequest struct {
 	*requests.RpcRequest
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeRefreshQuotaResponse is the response struct for api DescribeRefreshQuota
