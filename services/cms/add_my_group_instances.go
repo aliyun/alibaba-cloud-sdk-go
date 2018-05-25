@@ -76,8 +76,8 @@ func (client *Client) AddMyGroupInstancesWithCallback(request *AddMyGroupInstanc
 // AddMyGroupInstancesRequest is the request struct for api AddMyGroupInstances
 type AddMyGroupInstancesRequest struct {
 	*requests.RpcRequest
-	GroupId   requests.Integer `position:"Query" name:"GroupId"`
 	Instances string           `position:"Query" name:"Instances"`
+	GroupId   requests.Integer `position:"Query" name:"GroupId"`
 }
 
 // AddMyGroupInstancesResponse is the response struct for api AddMyGroupInstances

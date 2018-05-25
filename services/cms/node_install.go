@@ -76,9 +76,9 @@ func (client *Client) NodeInstallWithCallback(request *NodeInstallRequest, callb
 // NodeInstallRequest is the request struct for api NodeInstall
 type NodeInstallRequest struct {
 	*requests.RpcRequest
-	UserId     string           `position:"Query" name:"UserId"`
 	InstanceId string           `position:"Query" name:"InstanceId"`
 	Force      requests.Boolean `position:"Query" name:"Force"`
+	UserId     string           `position:"Query" name:"UserId"`
 }
 
 // NodeInstallResponse is the response struct for api NodeInstall

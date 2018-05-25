@@ -76,8 +76,8 @@ func (client *Client) UpdateMyGroupInstancesWithCallback(request *UpdateMyGroupI
 // UpdateMyGroupInstancesRequest is the request struct for api UpdateMyGroupInstances
 type UpdateMyGroupInstancesRequest struct {
 	*requests.RpcRequest
-	GroupId   requests.Integer `position:"Query" name:"GroupId"`
 	Instances string           `position:"Query" name:"Instances"`
+	GroupId   requests.Integer `position:"Query" name:"GroupId"`
 }
 
 // UpdateMyGroupInstancesResponse is the response struct for api UpdateMyGroupInstances

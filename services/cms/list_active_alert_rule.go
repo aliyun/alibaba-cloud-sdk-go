@@ -76,8 +76,8 @@ func (client *Client) ListActiveAlertRuleWithCallback(request *ListActiveAlertRu
 // ListActiveAlertRuleRequest is the request struct for api ListActiveAlertRule
 type ListActiveAlertRuleRequest struct {
 	*requests.RpcRequest
-	UserId  string `position:"Query" name:"UserId"`
 	Product string `position:"Query" name:"Product"`
+	UserId  string `position:"Query" name:"UserId"`
 }
 
 // ListActiveAlertRuleResponse is the response struct for api ListActiveAlertRule

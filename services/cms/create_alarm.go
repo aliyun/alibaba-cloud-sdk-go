@@ -76,22 +76,21 @@ func (client *Client) CreateAlarmWithCallback(request *CreateAlarmRequest, callb
 // CreateAlarmRequest is the request struct for api CreateAlarm
 type CreateAlarmRequest struct {
 	*requests.RpcRequest
-	Name               string           `position:"Query" name:"Name"`
-	CallbyCmsOwner     string           `position:"Query" name:"callby_cms_owner"`
-	Namespace          string           `position:"Query" name:"Namespace"`
-	MetricName         string           `position:"Query" name:"MetricName"`
-	Dimensions         string           `position:"Query" name:"Dimensions"`
 	Period             requests.Integer `position:"Query" name:"Period"`
-	Statistics         string           `position:"Query" name:"Statistics"`
-	ComparisonOperator string           `position:"Query" name:"ComparisonOperator"`
-	Threshold          string           `position:"Query" name:"Threshold"`
-	EvaluationCount    requests.Integer `position:"Query" name:"EvaluationCount"`
-	ContactGroups      string           `position:"Query" name:"ContactGroups"`
-	StartTime          requests.Integer `position:"Query" name:"StartTime"`
-	EndTime            requests.Integer `position:"Query" name:"EndTime"`
-	SilenceTime        requests.Integer `position:"Query" name:"SilenceTime"`
-	NotifyType         requests.Integer `position:"Query" name:"NotifyType"`
 	Webhook            string           `position:"Query" name:"Webhook"`
+	ContactGroups      string           `position:"Query" name:"ContactGroups"`
+	EndTime            requests.Integer `position:"Query" name:"EndTime"`
+	Threshold          string           `position:"Query" name:"Threshold"`
+	StartTime          requests.Integer `position:"Query" name:"StartTime"`
+	Namespace          string           `position:"Query" name:"Namespace"`
+	Name               string           `position:"Query" name:"Name"`
+	EvaluationCount    requests.Integer `position:"Query" name:"EvaluationCount"`
+	SilenceTime        requests.Integer `position:"Query" name:"SilenceTime"`
+	MetricName         string           `position:"Query" name:"MetricName"`
+	NotifyType         requests.Integer `position:"Query" name:"NotifyType"`
+	ComparisonOperator string           `position:"Query" name:"ComparisonOperator"`
+	Dimensions         string           `position:"Query" name:"Dimensions"`
+	Statistics         string           `position:"Query" name:"Statistics"`
 }
 
 // CreateAlarmResponse is the response struct for api CreateAlarm

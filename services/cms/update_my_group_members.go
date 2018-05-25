@@ -76,6 +76,7 @@ func (client *Client) UpdateMyGroupMembersWithCallback(request *UpdateMyGroupMem
 // UpdateMyGroupMembersRequest is the request struct for api UpdateMyGroupMembers
 type UpdateMyGroupMembersRequest struct {
 	*requests.RpcRequest
+	Readers string           `position:"Query" name:"Readers"`
 	GroupId requests.Integer `position:"Query" name:"GroupId"`
 	Masters string           `position:"Query" name:"Masters"`
 }

@@ -76,10 +76,10 @@ func (client *Client) DeleteNotifyPolicyWithCallback(request *DeleteNotifyPolicy
 // DeleteNotifyPolicyRequest is the request struct for api DeleteNotifyPolicy
 type DeleteNotifyPolicyRequest struct {
 	*requests.RpcRequest
-	Dimensions string `position:"Query" name:"Dimensions"`
 	PolicyType string `position:"Query" name:"PolicyType"`
-	Id         string `position:"Query" name:"Id"`
 	AlertName  string `position:"Query" name:"AlertName"`
+	Id         string `position:"Query" name:"Id"`
+	Dimensions string `position:"Query" name:"Dimensions"`
 }
 
 // DeleteNotifyPolicyResponse is the response struct for api DeleteNotifyPolicy

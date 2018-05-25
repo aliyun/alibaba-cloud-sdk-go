@@ -76,20 +76,19 @@ func (client *Client) UpdateAlarmWithCallback(request *UpdateAlarmRequest, callb
 // UpdateAlarmRequest is the request struct for api UpdateAlarm
 type UpdateAlarmRequest struct {
 	*requests.RpcRequest
-	CallbyCmsOwner     string           `position:"Query" name:"callby_cms_owner"`
-	Id                 string           `position:"Query" name:"Id"`
-	Name               string           `position:"Query" name:"Name"`
 	Period             requests.Integer `position:"Query" name:"Period"`
-	Statistics         string           `position:"Query" name:"Statistics"`
-	ComparisonOperator string           `position:"Query" name:"ComparisonOperator"`
-	Threshold          string           `position:"Query" name:"Threshold"`
-	ContactGroups      string           `position:"Query" name:"ContactGroups"`
-	StartTime          requests.Integer `position:"Query" name:"StartTime"`
-	EndTime            requests.Integer `position:"Query" name:"EndTime"`
-	SilenceTime        requests.Integer `position:"Query" name:"SilenceTime"`
-	EvaluationCount    requests.Integer `position:"Query" name:"EvaluationCount"`
-	NotifyType         requests.Integer `position:"Query" name:"NotifyType"`
 	Webhook            string           `position:"Query" name:"Webhook"`
+	ContactGroups      string           `position:"Query" name:"ContactGroups"`
+	EndTime            requests.Integer `position:"Query" name:"EndTime"`
+	Threshold          string           `position:"Query" name:"Threshold"`
+	StartTime          requests.Integer `position:"Query" name:"StartTime"`
+	Name               string           `position:"Query" name:"Name"`
+	EvaluationCount    requests.Integer `position:"Query" name:"EvaluationCount"`
+	SilenceTime        requests.Integer `position:"Query" name:"SilenceTime"`
+	Id                 string           `position:"Query" name:"Id"`
+	NotifyType         requests.Integer `position:"Query" name:"NotifyType"`
+	ComparisonOperator string           `position:"Query" name:"ComparisonOperator"`
+	Statistics         string           `position:"Query" name:"Statistics"`
 }
 
 // UpdateAlarmResponse is the response struct for api UpdateAlarm

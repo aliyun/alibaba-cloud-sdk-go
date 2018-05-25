@@ -76,15 +76,14 @@ func (client *Client) ListAlarmWithCallback(request *ListAlarmRequest, callback 
 // ListAlarmRequest is the request struct for api ListAlarm
 type ListAlarmRequest struct {
 	*requests.RpcRequest
-	CallbyCmsOwner string           `position:"Query" name:"callby_cms_owner"`
-	Id             string           `position:"Query" name:"Id"`
-	Name           string           `position:"Query" name:"Name"`
-	Namespace      string           `position:"Query" name:"Namespace"`
-	Dimension      string           `position:"Query" name:"Dimension"`
-	State          string           `position:"Query" name:"State"`
-	IsEnable       requests.Boolean `position:"Query" name:"IsEnable"`
-	PageNumber     requests.Integer `position:"Query" name:"PageNumber"`
-	PageSize       requests.Integer `position:"Query" name:"PageSize"`
+	IsEnable   requests.Boolean `position:"Query" name:"IsEnable"`
+	Name       string           `position:"Query" name:"Name"`
+	Namespace  string           `position:"Query" name:"Namespace"`
+	PageSize   requests.Integer `position:"Query" name:"PageSize"`
+	Id         string           `position:"Query" name:"Id"`
+	State      string           `position:"Query" name:"State"`
+	Dimension  string           `position:"Query" name:"Dimension"`
+	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 // ListAlarmResponse is the response struct for api ListAlarm

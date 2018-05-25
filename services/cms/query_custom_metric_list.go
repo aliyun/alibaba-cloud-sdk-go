@@ -76,13 +76,12 @@ func (client *Client) QueryCustomMetricListWithCallback(request *QueryCustomMetr
 // QueryCustomMetricListRequest is the request struct for api QueryCustomMetricList
 type QueryCustomMetricListRequest struct {
 	*requests.RpcRequest
+	Size       string `position:"Query" name:"Size"`
 	GroupId    string `position:"Query" name:"GroupId"`
+	Page       string `position:"Query" name:"Page"`
 	MetricName string `position:"Query" name:"MetricName"`
 	Dimension  string `position:"Query" name:"Dimension"`
 	Md5        string `position:"Query" name:"Md5"`
-	UUID       string `position:"Query" name:"UUID"`
-	Page       string `position:"Query" name:"Page"`
-	Size       string `position:"Query" name:"Size"`
 }
 
 // QueryCustomMetricListResponse is the response struct for api QueryCustomMetricList
