@@ -76,6 +76,12 @@ func (client *Client) DeleteNetworkInterfacePermissionWithCallback(request *Dele
 // DeleteNetworkInterfacePermissionRequest is the request struct for api DeleteNetworkInterfacePermission
 type DeleteNetworkInterfacePermissionRequest struct {
 	*requests.RpcRequest
+	ResourceOwnerId              requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	NetworkInterfacePermissionId string           `position:"Query" name:"NetworkInterfacePermissionId"`
+	ResourceOwnerAccount         string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount                 string           `position:"Query" name:"OwnerAccount"`
+	OwnerId                      requests.Integer `position:"Query" name:"OwnerId"`
+	Force                        requests.Boolean `position:"Query" name:"Force"`
 }
 
 // DeleteNetworkInterfacePermissionResponse is the response struct for api DeleteNetworkInterfacePermission

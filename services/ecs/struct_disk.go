@@ -49,6 +49,6 @@ type Disk struct {
 	IOPSRead                      int                           `json:"IOPSRead" xml:"IOPSRead"`
 	IOPSWrite                     int                           `json:"IOPSWrite" xml:"IOPSWrite"`
 	OperationLocks                OperationLocksInDescribeDisks `json:"OperationLocks" xml:"OperationLocks"`
-	MountInstances                MountInstancesInDescribeDisks `json:"MountInstances" xml:"MountInstances"`
+	MountInstances                MountInstances                `json:"MountInstances" xml:"MountInstances"`
 	Tags                          TagsInDescribeDisks           `json:"Tags" xml:"Tags"`
 }

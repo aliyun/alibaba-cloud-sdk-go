@@ -76,17 +76,17 @@ func (client *Client) DescribeRecommendInstanceTypeWithCallback(request *Describ
 // DescribeRecommendInstanceTypeRequest is the request struct for api DescribeRecommendInstanceType
 type DescribeRecommendInstanceTypeRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Token                string           `position:"Query" name:"token"`
-	ProxyId              string           `position:"Query" name:"proxyId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	Channel              string           `position:"Query" name:"channel"`
-	Operator             string           `position:"Query" name:"operator"`
-	InstanceType         string           `position:"Query" name:"InstanceType"`
-	Scene                string           `position:"Query" name:"Scene"`
 	NetworkType          string           `position:"Query" name:"NetworkType"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Operator             string           `position:"Query" name:"operator"`
+	Token                string           `position:"Query" name:"token"`
+	Scene                string           `position:"Query" name:"Scene"`
+	InstanceType         string           `position:"Query" name:"InstanceType"`
+	ProxyId              string           `position:"Query" name:"proxyId"`
 }
 
 // DescribeRecommendInstanceTypeResponse is the response struct for api DescribeRecommendInstanceType

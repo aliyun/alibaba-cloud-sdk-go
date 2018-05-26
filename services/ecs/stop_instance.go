@@ -76,14 +76,14 @@ func (client *Client) StopInstanceWithCallback(request *StopInstanceRequest, cal
 // StopInstanceRequest is the request struct for api StopInstance
 type StopInstanceRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ConfirmStop          requests.Boolean `position:"Query" name:"ConfirmStop"`
-	ForceStop            requests.Boolean `position:"Query" name:"ForceStop"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	StoppedMode          string           `position:"Query" name:"StoppedMode"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ForceStop            requests.Boolean `position:"Query" name:"ForceStop"`
 }
 
 // StopInstanceResponse is the response struct for api StopInstance

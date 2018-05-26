@@ -76,11 +76,11 @@ func (client *Client) ApplyAutoSnapshotPolicyWithCallback(request *ApplyAutoSnap
 // ApplyAutoSnapshotPolicyRequest is the request struct for api ApplyAutoSnapshotPolicy
 type ApplyAutoSnapshotPolicyRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	AutoSnapshotPolicyId string           `position:"Query" name:"autoSnapshotPolicyId"`
 	DiskIds              string           `position:"Query" name:"diskIds"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // ApplyAutoSnapshotPolicyResponse is the response struct for api ApplyAutoSnapshotPolicy

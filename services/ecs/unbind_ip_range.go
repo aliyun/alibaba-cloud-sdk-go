@@ -76,12 +76,12 @@ func (client *Client) UnbindIpRangeWithCallback(request *UnbindIpRangeRequest, c
 // UnbindIpRangeRequest is the request struct for api UnbindIpRange
 type UnbindIpRangeRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	IpAddress            string           `position:"Query" name:"IpAddress"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
-	IpAddress            string           `position:"Query" name:"IpAddress"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // UnbindIpRangeResponse is the response struct for api UnbindIpRange

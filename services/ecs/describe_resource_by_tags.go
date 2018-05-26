@@ -76,22 +76,22 @@ func (client *Client) DescribeResourceByTagsWithCallback(request *DescribeResour
 // DescribeResourceByTagsRequest is the request struct for api DescribeResourceByTags
 type DescribeResourceByTagsRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	Tag4Value            string           `position:"Query" name:"Tag.4.Value"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	ResourceType         string           `position:"Query" name:"ResourceType"`
-	Tag1Key              string           `position:"Query" name:"Tag.1.Key"`
 	Tag2Key              string           `position:"Query" name:"Tag.2.Key"`
-	Tag3Key              string           `position:"Query" name:"Tag.3.Key"`
-	Tag4Key              string           `position:"Query" name:"Tag.4.Key"`
 	Tag5Key              string           `position:"Query" name:"Tag.5.Key"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	Tag3Key              string           `position:"Query" name:"Tag.3.Key"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceType         string           `position:"Query" name:"ResourceType"`
+	Tag5Value            string           `position:"Query" name:"Tag.5.Value"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	Tag1Key              string           `position:"Query" name:"Tag.1.Key"`
 	Tag1Value            string           `position:"Query" name:"Tag.1.Value"`
 	Tag2Value            string           `position:"Query" name:"Tag.2.Value"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	Tag4Key              string           `position:"Query" name:"Tag.4.Key"`
 	Tag3Value            string           `position:"Query" name:"Tag.3.Value"`
-	Tag4Value            string           `position:"Query" name:"Tag.4.Value"`
-	Tag5Value            string           `position:"Query" name:"Tag.5.Value"`
 }
 
 // DescribeResourceByTagsResponse is the response struct for api DescribeResourceByTags

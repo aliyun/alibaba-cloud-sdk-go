@@ -76,17 +76,17 @@ func (client *Client) ModifyPrepayInstanceSpecWithCallback(request *ModifyPrepay
 // ModifyPrepayInstanceSpecRequest is the request struct for api ModifyPrepayInstanceSpec
 type ModifyPrepayInstanceSpecRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	InstanceId           string           `position:"Query" name:"InstanceId"`
-	InstanceType         string           `position:"Query" name:"InstanceType"`
-	OperatorType         string           `position:"Query" name:"OperatorType"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
 	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`
-	MigrateAcrossZone    requests.Boolean `position:"Query" name:"MigrateAcrossZone"`
-	SystemDiskCategory   string           `position:"Query" name:"SystemDisk.Category"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	OperatorType         string           `position:"Query" name:"OperatorType"`
+	SystemDiskCategory   string           `position:"Query" name:"SystemDisk.Category"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
+	MigrateAcrossZone    requests.Boolean `position:"Query" name:"MigrateAcrossZone"`
+	InstanceType         string           `position:"Query" name:"InstanceType"`
 }
 
 // ModifyPrepayInstanceSpecResponse is the response struct for api ModifyPrepayInstanceSpec

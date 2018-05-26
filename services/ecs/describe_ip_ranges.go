@@ -76,14 +76,14 @@ func (client *Client) DescribeIpRangesWithCallback(request *DescribeIpRangesRequ
 // DescribeIpRangesRequest is the request struct for api DescribeIpRanges
 type DescribeIpRangesRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ClusterId            string           `position:"Query" name:"ClusterId"`
 	NicType              string           `position:"Query" name:"NicType"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	ClusterId            string           `position:"Query" name:"ClusterId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 // DescribeIpRangesResponse is the response struct for api DescribeIpRanges

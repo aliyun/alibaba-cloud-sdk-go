@@ -76,13 +76,13 @@ func (client *Client) ModifyIntranetBandwidthKbWithCallback(request *ModifyIntra
 // ModifyIntranetBandwidthKbRequest is the request struct for api ModifyIntranetBandwidthKb
 type ModifyIntranetBandwidthKbRequest struct {
 	*requests.RpcRequest
-	OwnerId                 requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount    string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId         requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	IntranetMaxBandwidthOut requests.Integer `position:"Query" name:"IntranetMaxBandwidthOut"`
 	InstanceId              string           `position:"Query" name:"InstanceId"`
 	IntranetMaxBandwidthIn  requests.Integer `position:"Query" name:"IntranetMaxBandwidthIn"`
-	IntranetMaxBandwidthOut requests.Integer `position:"Query" name:"IntranetMaxBandwidthOut"`
+	ResourceOwnerAccount    string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount            string           `position:"Query" name:"OwnerAccount"`
+	OwnerId                 requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // ModifyIntranetBandwidthKbResponse is the response struct for api ModifyIntranetBandwidthKb

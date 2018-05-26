@@ -76,18 +76,18 @@ func (client *Client) DescribeDeploymentSetsWithCallback(request *DescribeDeploy
 // DescribeDeploymentSetsRequest is the request struct for api DescribeDeploymentSets
 type DescribeDeploymentSetsRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	DeploymentSetIds     string           `position:"Query" name:"DeploymentSetIds"`
 	NetworkType          string           `position:"Query" name:"NetworkType"`
-	Strategy             string           `position:"Query" name:"Strategy"`
 	DeploymentSetName    string           `position:"Query" name:"DeploymentSetName"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	DeploymentSetIds     string           `position:"Query" name:"DeploymentSetIds"`
 	Granularity          string           `position:"Query" name:"Granularity"`
 	Domain               string           `position:"Query" name:"Domain"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	Strategy             string           `position:"Query" name:"Strategy"`
 }
 
 // DescribeDeploymentSetsResponse is the response struct for api DescribeDeploymentSets

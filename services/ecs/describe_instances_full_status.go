@@ -76,6 +76,22 @@ func (client *Client) DescribeInstancesFullStatusWithCallback(request *DescribeI
 // DescribeInstancesFullStatusRequest is the request struct for api DescribeInstancesFullStatus
 type DescribeInstancesFullStatusRequest struct {
 	*requests.RpcRequest
+	EventId               *[]string        `position:"Query" name:"EventId"  type:"Repeated"`
+	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	PageNumber            requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize              requests.Integer `position:"Query" name:"PageSize"`
+	EventPublishTimeEnd   string           `position:"Query" name:"EventPublishTime.End"`
+	InstanceEventType     *[]string        `position:"Query" name:"InstanceEventType"  type:"Repeated"`
+	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
+	NotBeforeStart        string           `position:"Query" name:"NotBefore.Start"`
+	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
+	EventPublishTimeStart string           `position:"Query" name:"EventPublishTime.Start"`
+	InstanceId            *[]string        `position:"Query" name:"InstanceId"  type:"Repeated"`
+	NotBeforeEnd          string           `position:"Query" name:"NotBefore.End"`
+	HealthStatus          string           `position:"Query" name:"HealthStatus"`
+	EventType             string           `position:"Query" name:"EventType"`
+	Status                string           `position:"Query" name:"Status"`
 }
 
 // DescribeInstancesFullStatusResponse is the response struct for api DescribeInstancesFullStatus

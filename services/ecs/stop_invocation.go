@@ -76,6 +76,12 @@ func (client *Client) StopInvocationWithCallback(request *StopInvocationRequest,
 // StopInvocationRequest is the request struct for api StopInvocation
 type StopInvocationRequest struct {
 	*requests.RpcRequest
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	InvokeId             string           `position:"Query" name:"InvokeId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	InstanceId           *[]string        `position:"Query" name:"InstanceId"  type:"Repeated"`
 }
 
 // StopInvocationResponse is the response struct for api StopInvocation

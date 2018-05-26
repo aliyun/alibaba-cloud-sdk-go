@@ -76,6 +76,16 @@ func (client *Client) ModifyCommandWithCallback(request *ModifyCommandRequest, c
 // ModifyCommandRequest is the request struct for api ModifyCommand
 type ModifyCommandRequest struct {
 	*requests.RpcRequest
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	WorkingDir           string           `position:"Query" name:"WorkingDir"`
+	Description          string           `position:"Query" name:"Description"`
+	CommandId            string           `position:"Query" name:"CommandId"`
+	CommandContent       string           `position:"Query" name:"CommandContent"`
+	Timeout              requests.Integer `position:"Query" name:"Timeout"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Name                 string           `position:"Query" name:"Name"`
 }
 
 // ModifyCommandResponse is the response struct for api ModifyCommand

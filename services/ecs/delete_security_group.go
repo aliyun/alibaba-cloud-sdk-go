@@ -76,11 +76,11 @@ func (client *Client) DeleteSecurityGroupWithCallback(request *DeleteSecurityGro
 // DeleteSecurityGroupRequest is the request struct for api DeleteSecurityGroup
 type DeleteSecurityGroupRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	SecurityGroupId      string           `position:"Query" name:"SecurityGroupId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	SecurityGroupId      string           `position:"Query" name:"SecurityGroupId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DeleteSecurityGroupResponse is the response struct for api DeleteSecurityGroup

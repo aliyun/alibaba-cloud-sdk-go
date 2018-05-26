@@ -76,6 +76,16 @@ func (client *Client) DescribeInvocationResultsWithCallback(request *DescribeInv
 // DescribeInvocationResultsRequest is the request struct for api DescribeInvocationResults
 type DescribeInvocationResultsRequest struct {
 	*requests.RpcRequest
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	CommandId            string           `position:"Query" name:"CommandId"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	InvokeId             string           `position:"Query" name:"InvokeId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
+	InvokeRecordStatus   string           `position:"Query" name:"InvokeRecordStatus"`
 }
 
 // DescribeInvocationResultsResponse is the response struct for api DescribeInvocationResults

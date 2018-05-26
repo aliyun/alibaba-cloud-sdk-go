@@ -76,11 +76,11 @@ func (client *Client) CheckDiskEnableAutoSnapshotValidationWithCallback(request 
 // CheckDiskEnableAutoSnapshotValidationRequest is the request struct for api CheckDiskEnableAutoSnapshotValidation
 type CheckDiskEnableAutoSnapshotValidationRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	DiskIds              string           `position:"Query" name:"DiskIds"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // CheckDiskEnableAutoSnapshotValidationResponse is the response struct for api CheckDiskEnableAutoSnapshotValidation

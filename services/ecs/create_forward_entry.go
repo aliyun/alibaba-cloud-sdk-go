@@ -76,16 +76,16 @@ func (client *Client) CreateForwardEntryWithCallback(request *CreateForwardEntry
 // CreateForwardEntryRequest is the request struct for api CreateForwardEntry
 type CreateForwardEntryRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	IpProtocol           string           `position:"Query" name:"IpProtocol"`
+	InternalPort         string           `position:"Query" name:"InternalPort"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	ForwardTableId       string           `position:"Query" name:"ForwardTableId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ExternalIp           string           `position:"Query" name:"ExternalIp"`
 	ExternalPort         string           `position:"Query" name:"ExternalPort"`
 	InternalIp           string           `position:"Query" name:"InternalIp"`
-	InternalPort         string           `position:"Query" name:"InternalPort"`
-	IpProtocol           string           `position:"Query" name:"IpProtocol"`
 }
 
 // CreateForwardEntryResponse is the response struct for api CreateForwardEntry

@@ -76,12 +76,12 @@ func (client *Client) ResetDiskWithCallback(request *ResetDiskRequest, callback 
 // ResetDiskRequest is the request struct for api ResetDisk
 type ResetDiskRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	DiskId               string           `position:"Query" name:"DiskId"`
 	SnapshotId           string           `position:"Query" name:"SnapshotId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	DiskId               string           `position:"Query" name:"DiskId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // ResetDiskResponse is the response struct for api ResetDisk

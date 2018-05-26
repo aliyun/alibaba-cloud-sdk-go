@@ -76,6 +76,18 @@ func (client *Client) DescribeSpotPriceHistoryWithCallback(request *DescribeSpot
 // DescribeSpotPriceHistoryRequest is the request struct for api DescribeSpotPriceHistory
 type DescribeSpotPriceHistoryRequest struct {
 	*requests.RpcRequest
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	IoOptimized          string           `position:"Query" name:"IoOptimized"`
+	NetworkType          string           `position:"Query" name:"NetworkType"`
+	StartTime            string           `position:"Query" name:"StartTime"`
+	InstanceType         string           `position:"Query" name:"InstanceType"`
+	Offset               requests.Integer `position:"Query" name:"Offset"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	EndTime              string           `position:"Query" name:"EndTime"`
+	OSType               string           `position:"Query" name:"OSType"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ZoneId               string           `position:"Query" name:"ZoneId"`
 }
 
 // DescribeSpotPriceHistoryResponse is the response struct for api DescribeSpotPriceHistory

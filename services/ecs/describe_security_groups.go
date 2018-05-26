@@ -76,30 +76,31 @@ func (client *Client) DescribeSecurityGroupsWithCallback(request *DescribeSecuri
 // DescribeSecurityGroupsRequest is the request struct for api DescribeSecurityGroups
 type DescribeSecurityGroupsRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	VpcId                string           `position:"Query" name:"VpcId"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	SecurityGroupIds     string           `position:"Query" name:"SecurityGroupIds"`
-	Tag1Key              string           `position:"Query" name:"Tag.1.Key"`
-	Tag2Key              string           `position:"Query" name:"Tag.2.Key"`
-	Tag3Key              string           `position:"Query" name:"Tag.3.Key"`
-	Tag4Key              string           `position:"Query" name:"Tag.4.Key"`
-	Tag5Key              string           `position:"Query" name:"Tag.5.Key"`
-	Tag1Value            string           `position:"Query" name:"Tag.1.Value"`
-	Tag2Value            string           `position:"Query" name:"Tag.2.Value"`
-	Tag3Value            string           `position:"Query" name:"Tag.3.Value"`
 	Tag4Value            string           `position:"Query" name:"Tag.4.Value"`
-	Tag5Value            string           `position:"Query" name:"Tag.5.Value"`
-	NetworkType          string           `position:"Query" name:"NetworkType"`
-	SecurityGroupId      string           `position:"Query" name:"SecurityGroupId"`
-	SecurityGroupName    string           `position:"Query" name:"SecurityGroupName"`
-	IsQueryEcsCount      requests.Boolean `position:"Query" name:"IsQueryEcsCount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Tag2Key              string           `position:"Query" name:"Tag.2.Key"`
 	FuzzyQuery           requests.Boolean `position:"Query" name:"FuzzyQuery"`
+	SecurityGroupId      string           `position:"Query" name:"SecurityGroupId"`
+	Tag3Key              string           `position:"Query" name:"Tag.3.Key"`
+	IsQueryEcsCount      requests.Boolean `position:"Query" name:"IsQueryEcsCount"`
+	NetworkType          string           `position:"Query" name:"NetworkType"`
+	SecurityGroupName    string           `position:"Query" name:"SecurityGroupName"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	Tag1Value            string           `position:"Query" name:"Tag.1.Value"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	Tag3Value            string           `position:"Query" name:"Tag.3.Value"`
 	DryRun               requests.Boolean `position:"Query" name:"DryRun"`
+	Tag5Key              string           `position:"Query" name:"Tag.5.Key"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityGroupIds     string           `position:"Query" name:"SecurityGroupIds"`
+	Tag5Value            string           `position:"Query" name:"Tag.5.Value"`
+	Tag1Key              string           `position:"Query" name:"Tag.1.Key"`
+	VpcId                string           `position:"Query" name:"VpcId"`
+	Tag2Value            string           `position:"Query" name:"Tag.2.Value"`
+	Tag4Key              string           `position:"Query" name:"Tag.4.Key"`
 }
 
 // DescribeSecurityGroupsResponse is the response struct for api DescribeSecurityGroups

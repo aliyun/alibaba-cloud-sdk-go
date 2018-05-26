@@ -76,11 +76,11 @@ func (client *Client) DescribeInstanceAttributeWithCallback(request *DescribeIns
 // DescribeInstanceAttributeRequest is the request struct for api DescribeInstanceAttribute
 type DescribeInstanceAttributeRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeInstanceAttributeResponse is the response struct for api DescribeInstanceAttribute

@@ -76,6 +76,16 @@ func (client *Client) CreateNetworkInterfaceWithCallback(request *CreateNetworkI
 // CreateNetworkInterfaceRequest is the request struct for api CreateNetworkInterface
 type CreateNetworkInterfaceRequest struct {
 	*requests.RpcRequest
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	SecurityGroupId      string           `position:"Query" name:"SecurityGroupId"`
+	Description          string           `position:"Query" name:"Description"`
+	NetworkInterfaceName string           `position:"Query" name:"NetworkInterfaceName"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	VSwitchId            string           `position:"Query" name:"VSwitchId"`
+	PrimaryIpAddress     string           `position:"Query" name:"PrimaryIpAddress"`
 }
 
 // CreateNetworkInterfaceResponse is the response struct for api CreateNetworkInterface

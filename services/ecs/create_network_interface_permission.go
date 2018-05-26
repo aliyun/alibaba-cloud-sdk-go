@@ -76,6 +76,13 @@ func (client *Client) CreateNetworkInterfacePermissionWithCallback(request *Crea
 // CreateNetworkInterfacePermissionRequest is the request struct for api CreateNetworkInterfacePermission
 type CreateNetworkInterfacePermissionRequest struct {
 	*requests.RpcRequest
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	AccountId            requests.Integer `position:"Query" name:"AccountId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	Permission           string           `position:"Query" name:"Permission"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	NetworkInterfaceId   string           `position:"Query" name:"NetworkInterfaceId"`
 }
 
 // CreateNetworkInterfacePermissionResponse is the response struct for api CreateNetworkInterfacePermission

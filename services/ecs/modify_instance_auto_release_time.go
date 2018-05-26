@@ -76,12 +76,12 @@ func (client *Client) ModifyInstanceAutoReleaseTimeWithCallback(request *ModifyI
 // ModifyInstanceAutoReleaseTimeRequest is the request struct for api ModifyInstanceAutoReleaseTime
 type ModifyInstanceAutoReleaseTimeRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
-	AutoReleaseTime      string           `position:"Query" name:"AutoReleaseTime"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	AutoReleaseTime      string           `position:"Query" name:"AutoReleaseTime"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // ModifyInstanceAutoReleaseTimeResponse is the response struct for api ModifyInstanceAutoReleaseTime

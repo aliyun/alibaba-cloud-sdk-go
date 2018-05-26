@@ -76,6 +76,13 @@ func (client *Client) AssignPrivateIpAddressesWithCallback(request *AssignPrivat
 // AssignPrivateIpAddressesRequest is the request struct for api AssignPrivateIpAddresses
 type AssignPrivateIpAddressesRequest struct {
 	*requests.RpcRequest
+	ResourceOwnerId                requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	SecondaryPrivateIpAddressCount requests.Integer `position:"Query" name:"SecondaryPrivateIpAddressCount"`
+	ResourceOwnerAccount           string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount                   string           `position:"Query" name:"OwnerAccount"`
+	OwnerId                        requests.Integer `position:"Query" name:"OwnerId"`
+	PrivateIpAddress               *[]string        `position:"Query" name:"PrivateIpAddress"  type:"Repeated"`
+	NetworkInterfaceId             string           `position:"Query" name:"NetworkInterfaceId"`
 }
 
 // AssignPrivateIpAddressesResponse is the response struct for api AssignPrivateIpAddresses

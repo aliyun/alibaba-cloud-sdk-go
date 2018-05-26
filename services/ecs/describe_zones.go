@@ -76,13 +76,13 @@ func (client *Client) DescribeZonesWithCallback(request *DescribeZonesRequest, c
 // DescribeZonesRequest is the request struct for api DescribeZones
 type DescribeZonesRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	Verbose              requests.Boolean `position:"Query" name:"Verbose"`
-	InstanceChargeType   string           `position:"Query" name:"InstanceChargeType"`
 	SpotStrategy         string           `position:"Query" name:"SpotStrategy"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	InstanceChargeType   string           `position:"Query" name:"InstanceChargeType"`
+	Verbose              requests.Boolean `position:"Query" name:"Verbose"`
 }
 
 // DescribeZonesResponse is the response struct for api DescribeZones

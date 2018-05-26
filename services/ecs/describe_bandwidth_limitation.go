@@ -76,6 +76,15 @@ func (client *Client) DescribeBandwidthLimitationWithCallback(request *DescribeB
 // DescribeBandwidthLimitationRequest is the request struct for api DescribeBandwidthLimitation
 type DescribeBandwidthLimitationRequest struct {
 	*requests.RpcRequest
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	InstanceType         string           `position:"Query" name:"InstanceType"`
+	InstanceChargeType   string           `position:"Query" name:"InstanceChargeType"`
+	ResourceId           string           `position:"Query" name:"ResourceId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OperationType        string           `position:"Query" name:"OperationType"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	SpotStrategy         string           `position:"Query" name:"SpotStrategy"`
 }
 
 // DescribeBandwidthLimitationResponse is the response struct for api DescribeBandwidthLimitation

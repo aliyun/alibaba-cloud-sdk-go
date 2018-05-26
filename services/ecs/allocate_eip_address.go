@@ -76,13 +76,13 @@ func (client *Client) AllocateEipAddressWithCallback(request *AllocateEipAddress
 // AllocateEipAddressRequest is the request struct for api AllocateEipAddress
 type AllocateEipAddressRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	Bandwidth            string           `position:"Query" name:"Bandwidth"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
 	InternetChargeType   string           `position:"Query" name:"InternetChargeType"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // AllocateEipAddressResponse is the response struct for api AllocateEipAddress

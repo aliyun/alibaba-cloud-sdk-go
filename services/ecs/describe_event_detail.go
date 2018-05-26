@@ -76,6 +76,10 @@ func (client *Client) DescribeEventDetailWithCallback(request *DescribeEventDeta
 // DescribeEventDetailRequest is the request struct for api DescribeEventDetail
 type DescribeEventDetailRequest struct {
 	*requests.RpcRequest
+	EventId              string           `position:"Query" name:"EventId"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeEventDetailResponse is the response struct for api DescribeEventDetail
