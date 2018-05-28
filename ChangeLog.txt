@@ -1,3 +1,6 @@
+2018-05-28 Version: 1.17.0
+1, Add face 1-N,1-1 scan interface.
+
 2018-05-28 Version: 1.16.0
 1, ValidateSecurityGroup API
 

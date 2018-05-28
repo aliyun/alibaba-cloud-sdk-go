@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// ImageAsyncScan invokes the green.ImageAsyncScan API synchronously
-// api document: https://help.aliyun.com/api/green/imageasyncscan.html
-func (client *Client) ImageAsyncScan(request *ImageAsyncScanRequest) (response *ImageAsyncScanResponse, err error) {
-	response = CreateImageAsyncScanResponse()
+// SearchPerson invokes the green.SearchPerson API synchronously
+// api document: https://help.aliyun.com/api/green/searchperson.html
+func (client *Client) SearchPerson(request *SearchPersonRequest) (response *SearchPersonResponse, err error) {
+	response = CreateSearchPersonResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// ImageAsyncScanWithChan invokes the green.ImageAsyncScan API asynchronously
-// api document: https://help.aliyun.com/api/green/imageasyncscan.html
+// SearchPersonWithChan invokes the green.SearchPerson API asynchronously
+// api document: https://help.aliyun.com/api/green/searchperson.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) ImageAsyncScanWithChan(request *ImageAsyncScanRequest) (<-chan *ImageAsyncScanResponse, <-chan error) {
-	responseChan := make(chan *ImageAsyncScanResponse, 1)
+func (client *Client) SearchPersonWithChan(request *SearchPersonRequest) (<-chan *SearchPersonResponse, <-chan error) {
+	responseChan := make(chan *SearchPersonResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.ImageAsyncScan(request)
+		response, err := client.SearchPerson(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) ImageAsyncScanWithChan(request *ImageAsyncScanRequest) (<-
 	return responseChan, errChan
 }
 
-// ImageAsyncScanWithCallback invokes the green.ImageAsyncScan API asynchronously
-// api document: https://help.aliyun.com/api/green/imageasyncscan.html
+// SearchPersonWithCallback invokes the green.SearchPerson API asynchronously
+// api document: https://help.aliyun.com/api/green/searchperson.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) ImageAsyncScanWithCallback(request *ImageAsyncScanRequest, callback func(response *ImageAsyncScanResponse, err error)) <-chan int {
+func (client *Client) SearchPersonWithCallback(request *SearchPersonRequest, callback func(response *SearchPersonResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *ImageAsyncScanResponse
+		var response *SearchPersonResponse
 		var err error
 		defer close(result)
-		response, err = client.ImageAsyncScan(request)
+		response, err = client.SearchPerson(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,30 +73,30 @@ func (client *Client) ImageAsyncScanWithCallback(request *ImageAsyncScanRequest,
 	return result
 }
 
-// ImageAsyncScanRequest is the request struct for api ImageAsyncScan
-type ImageAsyncScanRequest struct {
+// SearchPersonRequest is the request struct for api SearchPerson
+type SearchPersonRequest struct {
 	*requests.RoaRequest
 	ClientInfo string `position:"Query" name:"ClientInfo"`
 }
 
-// ImageAsyncScanResponse is the response struct for api ImageAsyncScan
-type ImageAsyncScanResponse struct {
+// SearchPersonResponse is the response struct for api SearchPerson
+type SearchPersonResponse struct {
 	*responses.BaseResponse
 }
 
-// CreateImageAsyncScanRequest creates a request to invoke ImageAsyncScan API
-func CreateImageAsyncScanRequest() (request *ImageAsyncScanRequest) {
-	request = &ImageAsyncScanRequest{
+// CreateSearchPersonRequest creates a request to invoke SearchPerson API
+func CreateSearchPersonRequest() (request *SearchPersonRequest) {
+	request = &SearchPersonRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Green", "2018-05-09", "ImageAsyncScan", "/green/image/asyncscan", "green", "openAPI")
+	request.InitWithApiInfo("Green", "2018-05-09", "SearchPerson", "/green/sface/search", "green", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateImageAsyncScanResponse creates a response to parse from ImageAsyncScan response
-func CreateImageAsyncScanResponse() (response *ImageAsyncScanResponse) {
-	response = &ImageAsyncScanResponse{
+// CreateSearchPersonResponse creates a response to parse from SearchPerson response
+func CreateSearchPersonResponse() (response *SearchPersonResponse) {
+	response = &SearchPersonResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

@@ -89,7 +89,7 @@ func CreateVideoFeedbackRequest() (request *VideoFeedbackRequest) {
 	request = &VideoFeedbackRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Green", "2017-08-25", "VideoFeedback", "/green/video/feedback", "green", "openAPI")
+	request.InitWithApiInfo("Green", "2018-05-09", "VideoFeedback", "/green/video/feedback", "green", "openAPI")
 	request.Method = requests.POST
 	return
 }

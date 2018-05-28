@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// Search invokes the green.Search API synchronously
-// api document: https://help.aliyun.com/api/green/search.html
-func (client *Client) Search(request *SearchRequest) (response *SearchResponse, err error) {
-	response = CreateSearchResponse()
+// VideoSyncScan invokes the green.VideoSyncScan API synchronously
+// api document: https://help.aliyun.com/api/green/videosyncscan.html
+func (client *Client) VideoSyncScan(request *VideoSyncScanRequest) (response *VideoSyncScanResponse, err error) {
+	response = CreateVideoSyncScanResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// SearchWithChan invokes the green.Search API asynchronously
-// api document: https://help.aliyun.com/api/green/search.html
+// VideoSyncScanWithChan invokes the green.VideoSyncScan API asynchronously
+// api document: https://help.aliyun.com/api/green/videosyncscan.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) SearchWithChan(request *SearchRequest) (<-chan *SearchResponse, <-chan error) {
-	responseChan := make(chan *SearchResponse, 1)
+func (client *Client) VideoSyncScanWithChan(request *VideoSyncScanRequest) (<-chan *VideoSyncScanResponse, <-chan error) {
+	responseChan := make(chan *VideoSyncScanResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.Search(request)
+		response, err := client.VideoSyncScan(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) SearchWithChan(request *SearchRequest) (<-chan *SearchResp
 	return responseChan, errChan
 }
 
-// SearchWithCallback invokes the green.Search API asynchronously
-// api document: https://help.aliyun.com/api/green/search.html
+// VideoSyncScanWithCallback invokes the green.VideoSyncScan API asynchronously
+// api document: https://help.aliyun.com/api/green/videosyncscan.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) SearchWithCallback(request *SearchRequest, callback func(response *SearchResponse, err error)) <-chan int {
+func (client *Client) VideoSyncScanWithCallback(request *VideoSyncScanRequest, callback func(response *VideoSyncScanResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *SearchResponse
+		var response *VideoSyncScanResponse
 		var err error
 		defer close(result)
-		response, err = client.Search(request)
+		response, err = client.VideoSyncScan(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,30 +73,30 @@ func (client *Client) SearchWithCallback(request *SearchRequest, callback func(r
 	return result
 }
 
-// SearchRequest is the request struct for api Search
-type SearchRequest struct {
+// VideoSyncScanRequest is the request struct for api VideoSyncScan
+type VideoSyncScanRequest struct {
 	*requests.RoaRequest
 	ClientInfo string `position:"Query" name:"ClientInfo"`
 }
 
-// SearchResponse is the response struct for api Search
-type SearchResponse struct {
+// VideoSyncScanResponse is the response struct for api VideoSyncScan
+type VideoSyncScanResponse struct {
 	*responses.BaseResponse
 }
 
-// CreateSearchRequest creates a request to invoke Search API
-func CreateSearchRequest() (request *SearchRequest) {
-	request = &SearchRequest{
+// CreateVideoSyncScanRequest creates a request to invoke VideoSyncScan API
+func CreateVideoSyncScanRequest() (request *VideoSyncScanRequest) {
+	request = &VideoSyncScanRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Green", "2017-08-25", "Search", "/green/sface/search", "green", "openAPI")
+	request.InitWithApiInfo("Green", "2018-05-09", "VideoSyncScan", "/green/video/syncscan", "green", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateSearchResponse creates a response to parse from Search response
-func CreateSearchResponse() (response *SearchResponse) {
-	response = &SearchResponse{
+// CreateVideoSyncScanResponse creates a response to parse from VideoSyncScan response
+func CreateVideoSyncScanResponse() (response *VideoSyncScanResponse) {
+	response = &VideoSyncScanResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return
