@@ -1,3 +1,6 @@
+2018-05-29 Version: 1.18.0
+1, Add new interface DescribePhoneInfo to SDK.
+
 2018-05-28 Version: 1.17.0
 1, Add face 1-N,1-1 scan interface.
 
