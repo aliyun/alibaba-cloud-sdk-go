@@ -93,6 +93,7 @@ type CreateTaskResponse struct {
 	Success   string `json:"Success" xml:"Success"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Data      string `json:"Data" xml:"Data"`
+	AlertRule string `json:"AlertRule" xml:"AlertRule"`
 }
 
 // CreateCreateTaskRequest creates a request to invoke CreateTask API

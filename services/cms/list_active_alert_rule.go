@@ -83,11 +83,11 @@ type ListActiveAlertRuleRequest struct {
 // ListActiveAlertRuleResponse is the response struct for api ListActiveAlertRule
 type ListActiveAlertRuleResponse struct {
 	*responses.BaseResponse
-	Success    bool       `json:"Success" xml:"Success"`
-	Code       string     `json:"Code" xml:"Code"`
-	Message    string     `json:"Message" xml:"Message"`
-	RequestId  string     `json:"RequestId" xml:"RequestId"`
-	Datapoints Datapoints `json:"Datapoints" xml:"Datapoints"`
+	Success    bool                            `json:"Success" xml:"Success"`
+	Code       string                          `json:"Code" xml:"Code"`
+	Message    string                          `json:"Message" xml:"Message"`
+	RequestId  string                          `json:"RequestId" xml:"RequestId"`
+	Datapoints DatapointsInListActiveAlertRule `json:"Datapoints" xml:"Datapoints"`
 }
 
 // CreateListActiveAlertRuleRequest creates a request to invoke ListActiveAlertRule API

@@ -76,7 +76,8 @@ func (client *Client) DeleteTasksWithCallback(request *DeleteTasksRequest, callb
 // DeleteTasksRequest is the request struct for api DeleteTasks
 type DeleteTasksRequest struct {
 	*requests.RpcRequest
-	TaskIds string `position:"Query" name:"TaskIds"`
+	IsDeleteAlarms requests.Integer `position:"Query" name:"IsDeleteAlarms"`
+	TaskIds        string           `position:"Query" name:"TaskIds"`
 }
 
 // DeleteTasksResponse is the response struct for api DeleteTasks
@@ -86,6 +87,7 @@ type DeleteTasksResponse struct {
 	Message   string `json:"Message" xml:"Message"`
 	Success   string `json:"Success" xml:"Success"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Data      string `json:"Data" xml:"Data"`
 }
 
 // CreateDeleteTasksRequest creates a request to invoke DeleteTasks API
