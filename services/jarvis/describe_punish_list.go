@@ -82,7 +82,7 @@ type DescribePunishListRequest struct {
 	CurrentPage  requests.Integer `position:"Query" name:"currentPage"`
 	PunishStatus string           `position:"Query" name:"PunishStatus"`
 	Lang         string           `position:"Query" name:"Lang"`
-	SrcUid       string           `position:"Query" name:"srcUid"`
+	SrcUid       requests.Integer `position:"Query" name:"srcUid"`
 	SourceCode   string           `position:"Query" name:"sourceCode"`
 }
 

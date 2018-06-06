@@ -76,17 +76,17 @@ func (client *Client) DescribeRiskListDetailWithCallback(request *DescribeRiskLi
 // DescribeRiskListDetailRequest is the request struct for api DescribeRiskListDetail
 type DescribeRiskListDetailRequest struct {
 	*requests.RpcRequest
-	RiskType      string `position:"Query" name:"riskType"`
-	SourceIp      string `position:"Query" name:"SourceIp"`
-	PageSize      string `position:"Query" name:"pageSize"`
-	QueryProduct  string `position:"Query" name:"queryProduct"`
-	CurrentPage   string `position:"Query" name:"currentPage"`
-	RiskDescribe  string `position:"Query" name:"riskDescribe"`
-	Lang          string `position:"Query" name:"Lang"`
-	SrcUid        string `position:"Query" name:"srcUid"`
-	SourceCode    string `position:"Query" name:"sourceCode"`
-	QueryRegionId string `position:"Query" name:"queryRegionId"`
-	Status        string `position:"Query" name:"status"`
+	RiskType      string           `position:"Query" name:"riskType"`
+	SourceIp      string           `position:"Query" name:"SourceIp"`
+	PageSize      requests.Integer `position:"Query" name:"pageSize"`
+	QueryProduct  string           `position:"Query" name:"queryProduct"`
+	CurrentPage   requests.Integer `position:"Query" name:"currentPage"`
+	RiskDescribe  string           `position:"Query" name:"riskDescribe"`
+	Lang          string           `position:"Query" name:"Lang"`
+	SrcUid        requests.Integer `position:"Query" name:"srcUid"`
+	SourceCode    string           `position:"Query" name:"sourceCode"`
+	QueryRegionId string           `position:"Query" name:"queryRegionId"`
+	Status        string           `position:"Query" name:"status"`
 }
 
 // DescribeRiskListDetailResponse is the response struct for api DescribeRiskListDetail

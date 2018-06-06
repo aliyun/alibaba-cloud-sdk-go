@@ -76,10 +76,10 @@ func (client *Client) DescribeDdosDefenseInfoWithCallback(request *DescribeDdosD
 // DescribeDdosDefenseInfoRequest is the request struct for api DescribeDdosDefenseInfo
 type DescribeDdosDefenseInfoRequest struct {
 	*requests.RpcRequest
-	SourceIp   string `position:"Query" name:"SourceIp"`
-	Lang       string `position:"Query" name:"Lang"`
-	SrcUid     string `position:"Query" name:"srcUid"`
-	SourceCode string `position:"Query" name:"sourceCode"`
+	SourceIp   string           `position:"Query" name:"SourceIp"`
+	Lang       string           `position:"Query" name:"Lang"`
+	SrcUid     requests.Integer `position:"Query" name:"srcUid"`
+	SourceCode string           `position:"Query" name:"sourceCode"`
 }
 
 // DescribeDdosDefenseInfoResponse is the response struct for api DescribeDdosDefenseInfo
