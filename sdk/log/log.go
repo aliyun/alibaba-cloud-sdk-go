@@ -22,8 +22,8 @@ var (
 	PanicLevel = logrus.PanicLevel
 	FatalLevel = logrus.FatalLevel
 	ErrorLevel = logrus.ErrorLevel
-	WarnLevel = logrus.WarnLevel
-	InfoLevel = logrus.InfoLevel
+	WarnLevel  = logrus.WarnLevel
+	InfoLevel  = logrus.InfoLevel
 	DebugLevel = logrus.DebugLevel
 
 	SetLevel = logrus.SetLevel

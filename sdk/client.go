@@ -333,7 +333,7 @@ func (client *Client) AddAsyncTask(task func()) (err error) {
 	return
 }
 
-func (client *Client)GetConfig() *Config {
+func (client *Client) GetConfig() *Config {
 	return client.config
 }
 

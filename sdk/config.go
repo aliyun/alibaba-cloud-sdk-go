@@ -30,7 +30,7 @@ type Config struct {
 	EnableAsync       bool            `default:"false"`
 	MaxTaskQueueSize  int             `default:"1000"`
 	GoRoutinePoolSize int             `default:"5"`
-	Scheme string             `default:"HTTP"`
+	Scheme            string          `default:"HTTP"`
 }
 
 func NewConfig() (config *Config) {
