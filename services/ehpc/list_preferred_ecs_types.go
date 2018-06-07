@@ -76,8 +76,9 @@ func (client *Client) ListPreferredEcsTypesWithCallback(request *ListPreferredEc
 // ListPreferredEcsTypesRequest is the request struct for api ListPreferredEcsTypes
 type ListPreferredEcsTypesRequest struct {
 	*requests.RpcRequest
-	ZoneId       string `position:"Query" name:"ZoneId"`
-	SpotStrategy string `position:"Query" name:"SpotStrategy"`
+	ZoneId             string `position:"Query" name:"ZoneId"`
+	SpotStrategy       string `position:"Query" name:"SpotStrategy"`
+	InstanceChargeType string `position:"Query" name:"InstanceChargeType"`
 }
 
 // ListPreferredEcsTypesResponse is the response struct for api ListPreferredEcsTypes
@@ -93,7 +94,7 @@ func CreateListPreferredEcsTypesRequest() (request *ListPreferredEcsTypesRequest
 	request = &ListPreferredEcsTypesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2017-07-14", "ListPreferredEcsTypes", "ehs", "openAPI")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "ListPreferredEcsTypes", "ehs", "openAPI")
 	return
 }
 

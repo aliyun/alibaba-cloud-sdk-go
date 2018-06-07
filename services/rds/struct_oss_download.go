@@ -21,6 +21,7 @@ type OssDownload struct {
 	IsAvail     string `json:"IsAvail" xml:"IsAvail"`
 	BackupMode  string `json:"BackupMode" xml:"BackupMode"`
 	Desc        string `json:"Desc" xml:"Desc"`
+	EndTime     string `json:"EndTime" xml:"EndTime"`
 	IsAvailable string `json:"IsAvailable" xml:"IsAvailable"`
 	CreateTime  string `json:"CreateTime" xml:"CreateTime"`
 	BakType     string `json:"BakType" xml:"BakType"`

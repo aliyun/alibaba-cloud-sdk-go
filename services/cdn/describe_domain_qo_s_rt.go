@@ -76,6 +76,13 @@ func (client *Client) DescribeDomainQoSRtWithCallback(request *DescribeDomainQoS
 // DescribeDomainQoSRtRequest is the request struct for api DescribeDomainQoSRt
 type DescribeDomainQoSRtRequest struct {
 	*requests.RpcRequest
+	Ip            string           `position:"Query" name:"Ip"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	EndTime       string           `position:"Query" name:"EndTime"`
+	StartTime     string           `position:"Query" name:"StartTime"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	Version       string           `position:"Query" name:"Version"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 // DescribeDomainQoSRtResponse is the response struct for api DescribeDomainQoSRt

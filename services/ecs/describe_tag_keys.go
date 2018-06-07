@@ -76,13 +76,13 @@ func (client *Client) DescribeTagKeysWithCallback(request *DescribeTagKeysReques
 // DescribeTagKeysRequest is the request struct for api DescribeTagKeys
 type DescribeTagKeysRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	ResourceType         string           `position:"Query" name:"ResourceType"`
 	ResourceId           string           `position:"Query" name:"ResourceId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceType         string           `position:"Query" name:"ResourceType"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 // DescribeTagKeysResponse is the response struct for api DescribeTagKeys

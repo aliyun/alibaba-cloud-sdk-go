@@ -76,10 +76,10 @@ func (client *Client) DeleteLiveDomainMappingWithCallback(request *DeleteLiveDom
 // DeleteLiveDomainMappingRequest is the request struct for api DeleteLiveDomainMapping
 type DeleteLiveDomainMappingRequest struct {
 	*requests.RpcRequest
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	PullDomain    string           `position:"Query" name:"PullDomain"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	PushDomain    string           `position:"Query" name:"PushDomain"`
-	PullDomain    string           `position:"Query" name:"PullDomain"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DeleteLiveDomainMappingResponse is the response struct for api DeleteLiveDomainMapping

@@ -76,17 +76,17 @@ func (client *Client) DescribeTasksWithCallback(request *DescribeTasksRequest, c
 // DescribeTasksRequest is the request struct for api DescribeTasks
 type DescribeTasksRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	TaskIds              string           `position:"Query" name:"TaskIds"`
-	TaskAction           string           `position:"Query" name:"TaskAction"`
-	TaskStatus           string           `position:"Query" name:"TaskStatus"`
-	StartTime            string           `position:"Query" name:"StartTime"`
 	EndTime              string           `position:"Query" name:"EndTime"`
+	StartTime            string           `position:"Query" name:"StartTime"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	TaskIds              string           `position:"Query" name:"TaskIds"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	TaskStatus           string           `position:"Query" name:"TaskStatus"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	TaskAction           string           `position:"Query" name:"TaskAction"`
 }
 
 // DescribeTasksResponse is the response struct for api DescribeTasks

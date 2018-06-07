@@ -76,11 +76,11 @@ func (client *Client) CreateDrdsDBWithCallback(request *CreateDrdsDBRequest, cal
 // CreateDrdsDBRequest is the request struct for api CreateDrdsDB
 type CreateDrdsDBRequest struct {
 	*requests.RpcRequest
-	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
-	DbName         string `position:"Query" name:"DbName"`
 	Encode         string `position:"Query" name:"Encode"`
 	Password       string `position:"Query" name:"Password"`
+	DbName         string `position:"Query" name:"DbName"`
 	RdsInstances   string `position:"Query" name:"RdsInstances"`
+	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
 }
 
 // CreateDrdsDBResponse is the response struct for api CreateDrdsDB

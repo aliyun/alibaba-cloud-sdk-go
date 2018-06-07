@@ -76,9 +76,9 @@ func (client *Client) DescribeLiveStreamDomainAppInfoWithCallback(request *Descr
 // DescribeLiveStreamDomainAppInfoRequest is the request struct for api DescribeLiveStreamDomainAppInfo
 type DescribeLiveStreamDomainAppInfoRequest struct {
 	*requests.RpcRequest
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	AppDomain     string           `position:"Query" name:"AppDomain"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeLiveStreamDomainAppInfoResponse is the response struct for api DescribeLiveStreamDomainAppInfo

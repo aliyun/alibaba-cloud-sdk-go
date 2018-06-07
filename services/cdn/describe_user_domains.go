@@ -76,19 +76,19 @@ func (client *Client) DescribeUserDomainsWithCallback(request *DescribeUserDomai
 // DescribeUserDomainsRequest is the request struct for api DescribeUserDomains
 type DescribeUserDomainsRequest struct {
 	*requests.RpcRequest
-	OwnerId          requests.Integer `position:"Query" name:"OwnerId"`
-	SecurityToken    string           `position:"Query" name:"SecurityToken"`
-	PageSize         requests.Integer `position:"Query" name:"PageSize"`
-	PageNumber       requests.Integer `position:"Query" name:"PageNumber"`
+	FuncFilter       string           `position:"Query" name:"FuncFilter"`
+	Sources          string           `position:"Query" name:"Sources"`
 	DomainName       string           `position:"Query" name:"DomainName"`
+	OwnerId          requests.Integer `position:"Query" name:"OwnerId"`
+	FuncId           string           `position:"Query" name:"FuncId"`
+	PageNumber       requests.Integer `position:"Query" name:"PageNumber"`
 	DomainStatus     string           `position:"Query" name:"DomainStatus"`
 	DomainSearchType string           `position:"Query" name:"DomainSearchType"`
-	Sources          string           `position:"Query" name:"Sources"`
-	CdnType          string           `position:"Query" name:"CdnType"`
 	CheckDomainShow  requests.Boolean `position:"Query" name:"CheckDomainShow"`
 	ResourceGroupId  string           `position:"Query" name:"ResourceGroupId"`
-	FuncId           string           `position:"Query" name:"FuncId"`
-	FuncFilter       string           `position:"Query" name:"FuncFilter"`
+	SecurityToken    string           `position:"Query" name:"SecurityToken"`
+	CdnType          string           `position:"Query" name:"CdnType"`
+	PageSize         requests.Integer `position:"Query" name:"PageSize"`
 }
 
 // DescribeUserDomainsResponse is the response struct for api DescribeUserDomains

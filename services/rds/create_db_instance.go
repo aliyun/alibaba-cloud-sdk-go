@@ -99,7 +99,9 @@ type CreateDBInstanceRequest struct {
 	UsedTime              string           `position:"Query" name:"UsedTime"`
 	Period                string           `position:"Query" name:"Period"`
 	ResourceGroupId       string           `position:"Query" name:"ResourceGroupId"`
+	DBInstanceStorageType string           `position:"Query" name:"DBInstanceStorageType"`
 	TunnelId              string           `position:"Query" name:"TunnelId"`
+	BusinessInfo          string           `position:"Query" name:"BusinessInfo"`
 }
 
 // CreateDBInstanceResponse is the response struct for api CreateDBInstance

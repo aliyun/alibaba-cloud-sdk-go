@@ -76,9 +76,9 @@ func (client *Client) StopCdnDomainWithCallback(request *StopCdnDomainRequest, c
 // StopCdnDomainRequest is the request struct for api StopCdnDomain
 type StopCdnDomainRequest struct {
 	*requests.RpcRequest
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	DomainName    string           `position:"Query" name:"DomainName"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // StopCdnDomainResponse is the response struct for api StopCdnDomain

@@ -76,10 +76,10 @@ func (client *Client) GetUserDomainBlackListWithCallback(request *GetUserDomainB
 // GetUserDomainBlackListRequest is the request struct for api GetUserDomainBlackList
 type GetUserDomainBlackListRequest struct {
 	*requests.RpcRequest
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
-	OwnerAccount  string           `position:"Query" name:"OwnerAccount"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	OwnerAccount  string           `position:"Query" name:"OwnerAccount"`
 	DomainName    string           `position:"Query" name:"DomainName"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // GetUserDomainBlackListResponse is the response struct for api GetUserDomainBlackList

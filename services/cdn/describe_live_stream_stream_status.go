@@ -76,10 +76,10 @@ func (client *Client) DescribeLiveStreamStreamStatusWithCallback(request *Descri
 // DescribeLiveStreamStreamStatusRequest is the request struct for api DescribeLiveStreamStreamStatus
 type DescribeLiveStreamStreamStatusRequest struct {
 	*requests.RpcRequest
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	AppName       string           `position:"Query" name:"AppName"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	DomainName    string           `position:"Query" name:"DomainName"`
-	AppName       string           `position:"Query" name:"AppName"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	StreamName    string           `position:"Query" name:"StreamName"`
 }
 

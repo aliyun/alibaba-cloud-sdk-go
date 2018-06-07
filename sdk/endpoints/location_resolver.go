@@ -53,6 +53,7 @@ func (resolver *LocationResolver) TryResolve(param *ResolveParam) (endpoint stri
 
 	//get from remote
 	getEndpointRequest := requests.NewCommonRequest()
+
 	getEndpointRequest.Product = "Location"
 	getEndpointRequest.Version = "2015-06-12"
 	getEndpointRequest.ApiName = "DescribeEndpoints"

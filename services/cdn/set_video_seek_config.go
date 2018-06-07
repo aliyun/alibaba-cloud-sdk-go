@@ -76,10 +76,10 @@ func (client *Client) SetVideoSeekConfigWithCallback(request *SetVideoSeekConfig
 // SetVideoSeekConfigRequest is the request struct for api SetVideoSeekConfig
 type SetVideoSeekConfigRequest struct {
 	*requests.RpcRequest
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
-	DomainName    string           `position:"Query" name:"DomainName"`
 	Enable        string           `position:"Query" name:"Enable"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // SetVideoSeekConfigResponse is the response struct for api SetVideoSeekConfig

@@ -76,11 +76,13 @@ func (client *Client) ListMyGroupInstancesDetailsWithCallback(request *ListMyGro
 // ListMyGroupInstancesDetailsRequest is the request struct for api ListMyGroupInstancesDetails
 type ListMyGroupInstancesDetailsRequest struct {
 	*requests.RpcRequest
-	Total      requests.Boolean `position:"Query" name:"Total"`
-	PageSize   requests.Integer `position:"Query" name:"PageSize"`
-	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
-	GroupId    requests.Integer `position:"Query" name:"GroupId"`
-	Category   string           `position:"Query" name:"Category"`
+	Total       requests.Boolean `position:"Query" name:"Total"`
+	InstanceIds string           `position:"Query" name:"InstanceIds"`
+	GroupId     requests.Integer `position:"Query" name:"GroupId"`
+	PageSize    requests.Integer `position:"Query" name:"PageSize"`
+	Category    string           `position:"Query" name:"Category"`
+	Keyword     string           `position:"Query" name:"Keyword"`
+	PageNumber  requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 // ListMyGroupInstancesDetailsResponse is the response struct for api ListMyGroupInstancesDetails

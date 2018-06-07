@@ -76,13 +76,13 @@ func (client *Client) ResizeDiskWithCallback(request *ResizeDiskRequest, callbac
 // ResizeDiskRequest is the request struct for api ResizeDisk
 type ResizeDiskRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	DiskId               string           `position:"Query" name:"DiskId"`
-	NewSize              requests.Integer `position:"Query" name:"NewSize"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	NewSize              requests.Integer `position:"Query" name:"NewSize"`
+	DiskId               string           `position:"Query" name:"DiskId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // ResizeDiskResponse is the response struct for api ResizeDisk

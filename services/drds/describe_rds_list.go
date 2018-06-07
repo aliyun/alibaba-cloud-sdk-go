@@ -76,8 +76,8 @@ func (client *Client) DescribeRdsListWithCallback(request *DescribeRdsListReques
 // DescribeRdsListRequest is the request struct for api DescribeRdsList
 type DescribeRdsListRequest struct {
 	*requests.RpcRequest
-	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
 	DbName         string `position:"Query" name:"DbName"`
+	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
 }
 
 // DescribeRdsListResponse is the response struct for api DescribeRdsList

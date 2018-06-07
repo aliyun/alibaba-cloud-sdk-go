@@ -76,14 +76,14 @@ func (client *Client) DescribeDiskMonitorDataWithCallback(request *DescribeDiskM
 // DescribeDiskMonitorDataRequest is the request struct for api DescribeDiskMonitorData
 type DescribeDiskMonitorDataRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Period               requests.Integer `position:"Query" name:"Period"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	EndTime              string           `position:"Query" name:"EndTime"`
 	DiskId               string           `position:"Query" name:"DiskId"`
 	StartTime            string           `position:"Query" name:"StartTime"`
-	EndTime              string           `position:"Query" name:"EndTime"`
-	Period               requests.Integer `position:"Query" name:"Period"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeDiskMonitorDataResponse is the response struct for api DescribeDiskMonitorData

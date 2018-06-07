@@ -76,10 +76,10 @@ func (client *Client) SetIpAllowListConfigWithCallback(request *SetIpAllowListCo
 // SetIpAllowListConfigRequest is the request struct for api SetIpAllowListConfig
 type SetIpAllowListConfigRequest struct {
 	*requests.RpcRequest
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	AllowIps      string           `position:"Query" name:"AllowIps"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	DomainName    string           `position:"Query" name:"DomainName"`
-	AllowIps      string           `position:"Query" name:"AllowIps"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // SetIpAllowListConfigResponse is the response struct for api SetIpAllowListConfig

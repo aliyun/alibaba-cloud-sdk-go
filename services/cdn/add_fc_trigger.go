@@ -76,6 +76,13 @@ func (client *Client) AddFCTriggerWithCallback(request *AddFCTriggerRequest, cal
 // AddFCTriggerRequest is the request struct for api AddFCTrigger
 type AddFCTriggerRequest struct {
 	*requests.RpcRequest
+	Notes            string           `position:"Body" name:"Notes"`
+	EventMetaVersion string           `position:"Body" name:"EventMetaVersion"`
+	TriggerARN       string           `position:"Query" name:"TriggerARN"`
+	SourceARN        string           `position:"Body" name:"SourceARN"`
+	OwnerId          requests.Integer `position:"Query" name:"OwnerId"`
+	RoleARN          string           `position:"Body" name:"RoleARN"`
+	EventMetaName    string           `position:"Body" name:"EventMetaName"`
 }
 
 // AddFCTriggerResponse is the response struct for api AddFCTrigger

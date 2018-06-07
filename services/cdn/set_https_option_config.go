@@ -76,10 +76,10 @@ func (client *Client) SetHttpsOptionConfigWithCallback(request *SetHttpsOptionCo
 // SetHttpsOptionConfigRequest is the request struct for api SetHttpsOptionConfig
 type SetHttpsOptionConfigRequest struct {
 	*requests.RpcRequest
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	DomainName    string           `position:"Query" name:"DomainName"`
 	Http2         string           `position:"Query" name:"Http2"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // SetHttpsOptionConfigResponse is the response struct for api SetHttpsOptionConfig

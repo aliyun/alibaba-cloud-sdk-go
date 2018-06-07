@@ -76,14 +76,14 @@ func (client *Client) SetDynamicConfigWithCallback(request *SetDynamicConfigRequ
 // SetDynamicConfigRequest is the request struct for api SetDynamicConfig
 type SetDynamicConfigRequest struct {
 	*requests.RpcRequest
-	OwnerId             requests.Integer `position:"Query" name:"OwnerId"`
-	SecurityToken       string           `position:"Query" name:"SecurityToken"`
-	DomainName          string           `position:"Query" name:"DomainName"`
 	DynamicOrigin       string           `position:"Query" name:"DynamicOrigin"`
 	StaticType          string           `position:"Query" name:"StaticType"`
+	SecurityToken       string           `position:"Query" name:"SecurityToken"`
 	StaticUri           string           `position:"Query" name:"StaticUri"`
+	DomainName          string           `position:"Query" name:"DomainName"`
 	StaticPath          string           `position:"Query" name:"StaticPath"`
 	DynamicCacheControl string           `position:"Query" name:"DynamicCacheControl"`
+	OwnerId             requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // SetDynamicConfigResponse is the response struct for api SetDynamicConfig

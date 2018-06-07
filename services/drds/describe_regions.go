@@ -25,7 +25,7 @@ import (
 func (client *Client) DescribeRegions(request *DescribeRegionsRequest) (response *DescribeRegionsResponse, err error) {
 	response = CreateDescribeRegionsResponse()
 	err = client.DoAction(request, response)
-	return response, err
+	return
 }
 
 // DescribeRegionsWithChan invokes the drds.DescribeRegions API asynchronously

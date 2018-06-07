@@ -76,11 +76,11 @@ func (client *Client) DescribeLiveStreamRelayPushDataWithCallback(request *Descr
 // DescribeLiveStreamRelayPushDataRequest is the request struct for api DescribeLiveStreamRelayPushData
 type DescribeLiveStreamRelayPushDataRequest struct {
 	*requests.RpcRequest
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	RelayDomain   string           `position:"Query" name:"RelayDomain"`
-	StartTime     string           `position:"Query" name:"StartTime"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	EndTime       string           `position:"Query" name:"EndTime"`
+	StartTime     string           `position:"Query" name:"StartTime"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeLiveStreamRelayPushDataResponse is the response struct for api DescribeLiveStreamRelayPushData

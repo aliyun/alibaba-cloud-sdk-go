@@ -76,11 +76,11 @@ func (client *Client) DescribeTasksWithCallback(request *DescribeTasksRequest, c
 // DescribeTasksRequest is the request struct for api DescribeTasks
 type DescribeTasksRequest struct {
 	*requests.RpcRequest
-	TaskId   string           `position:"Query" name:"TaskId"`
 	TaskType string           `position:"Query" name:"TaskType"`
-	Keyword  string           `position:"Query" name:"Keyword"`
-	Page     requests.Integer `position:"Query" name:"Page"`
 	PageSize requests.Integer `position:"Query" name:"PageSize"`
+	Page     requests.Integer `position:"Query" name:"Page"`
+	Keyword  string           `position:"Query" name:"Keyword"`
+	TaskId   string           `position:"Query" name:"TaskId"`
 }
 
 // DescribeTasksResponse is the response struct for api DescribeTasks

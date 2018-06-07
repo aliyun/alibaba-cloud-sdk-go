@@ -76,8 +76,8 @@ func (client *Client) DescribeUserConfigsWithCallback(request *DescribeUserConfi
 // DescribeUserConfigsRequest is the request struct for api DescribeUserConfigs
 type DescribeUserConfigsRequest struct {
 	*requests.RpcRequest
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	Config        string           `position:"Query" name:"Config"`
 }
 

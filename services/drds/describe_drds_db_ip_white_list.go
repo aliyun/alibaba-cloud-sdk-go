@@ -76,8 +76,8 @@ func (client *Client) DescribeDrdsDBIpWhiteListWithCallback(request *DescribeDrd
 // DescribeDrdsDBIpWhiteListRequest is the request struct for api DescribeDrdsDBIpWhiteList
 type DescribeDrdsDBIpWhiteListRequest struct {
 	*requests.RpcRequest
-	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
 	DbName         string `position:"Query" name:"DbName"`
+	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
 	GroupName      string `position:"Query" name:"GroupName"`
 }
 

@@ -76,10 +76,10 @@ func (client *Client) ProfileSetWithCallback(request *ProfileSetRequest, callbac
 // ProfileSetRequest is the request struct for api ProfileSet
 type ProfileSetRequest struct {
 	*requests.RpcRequest
-	UserId                   requests.Integer `position:"Query" name:"UserId"`
-	AutoInstall              requests.Boolean `position:"Query" name:"AutoInstall"`
 	EnableInstallAgentNewECS requests.Boolean `position:"Query" name:"EnableInstallAgentNewECS"`
 	EnableActiveAlert        string           `position:"Query" name:"EnableActiveAlert"`
+	AutoInstall              requests.Boolean `position:"Query" name:"AutoInstall"`
+	UserId                   requests.Integer `position:"Query" name:"UserId"`
 }
 
 // ProfileSetResponse is the response struct for api ProfileSet

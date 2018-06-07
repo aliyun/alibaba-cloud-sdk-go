@@ -76,12 +76,12 @@ func (client *Client) DeleteLiveStreamTranscodeWithCallback(request *DeleteLiveS
 // DeleteLiveStreamTranscodeRequest is the request struct for api DeleteLiveStreamTranscode
 type DeleteLiveStreamTranscodeRequest struct {
 	*requests.RpcRequest
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
-	OwnerAccount  string           `position:"Query" name:"OwnerAccount"`
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
-	Domain        string           `position:"Query" name:"Domain"`
 	Template      string           `position:"Query" name:"Template"`
 	App           string           `position:"Query" name:"App"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	OwnerAccount  string           `position:"Query" name:"OwnerAccount"`
+	Domain        string           `position:"Query" name:"Domain"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DeleteLiveStreamTranscodeResponse is the response struct for api DeleteLiveStreamTranscode

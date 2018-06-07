@@ -76,9 +76,9 @@ func (client *Client) SetIpBlackListConfigWithCallback(request *SetIpBlackListCo
 // SetIpBlackListConfigRequest is the request struct for api SetIpBlackListConfig
 type SetIpBlackListConfigRequest struct {
 	*requests.RpcRequest
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	DomainName    string           `position:"Query" name:"DomainName"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	BlockIps      string           `position:"Query" name:"BlockIps"`
 }
 

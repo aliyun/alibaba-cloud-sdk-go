@@ -17,6 +17,6 @@ package ehpc
 
 // Compute is a nested struct in ehpc response
 type Compute struct {
-	InstanceType string `json:"InstanceType" xml:"InstanceType"`
 	Count        int    `json:"Count" xml:"Count"`
+	InstanceType string `json:"InstanceType" xml:"InstanceType"`
 }

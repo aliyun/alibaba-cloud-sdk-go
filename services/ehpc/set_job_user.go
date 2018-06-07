@@ -92,7 +92,7 @@ func CreateSetJobUserRequest() (request *SetJobUserRequest) {
 	request = &SetJobUserRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2017-07-14", "SetJobUser", "ehs", "openAPI")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "SetJobUser", "ehs", "openAPI")
 	return
 }
 

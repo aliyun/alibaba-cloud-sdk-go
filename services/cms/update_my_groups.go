@@ -76,12 +76,12 @@ func (client *Client) UpdateMyGroupsWithCallback(request *UpdateMyGroupsRequest,
 // UpdateMyGroupsRequest is the request struct for api UpdateMyGroups
 type UpdateMyGroupsRequest struct {
 	*requests.RpcRequest
-	GroupId       string           `position:"Query" name:"GroupId"`
-	GroupName     string           `position:"Query" name:"GroupName"`
-	ServiceId     requests.Integer `position:"Query" name:"ServiceId"`
-	BindUrls      string           `position:"Query" name:"BindUrls"`
-	Type          string           `position:"Query" name:"Type"`
 	ContactGroups string           `position:"Query" name:"ContactGroups"`
+	GroupId       string           `position:"Query" name:"GroupId"`
+	ServiceId     requests.Integer `position:"Query" name:"ServiceId"`
+	Type          string           `position:"Query" name:"Type"`
+	GroupName     string           `position:"Query" name:"GroupName"`
+	BindUrls      string           `position:"Query" name:"BindUrls"`
 }
 
 // UpdateMyGroupsResponse is the response struct for api UpdateMyGroups

@@ -76,9 +76,9 @@ func (client *Client) DescribeUserCustomerLabelsWithCallback(request *DescribeUs
 // DescribeUserCustomerLabelsRequest is the request struct for api DescribeUserCustomerLabels
 type DescribeUserCustomerLabelsRequest struct {
 	*requests.RpcRequest
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	Uid           requests.Integer `position:"Query" name:"Uid"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeUserCustomerLabelsResponse is the response struct for api DescribeUserCustomerLabels

@@ -76,23 +76,13 @@ func (client *Client) CreateTaskWithCallback(request *CreateTaskRequest, callbac
 // CreateTaskRequest is the request struct for api CreateTask
 type CreateTaskRequest struct {
 	*requests.RpcRequest
-	AgentGroup    string `position:"Query" name:"AgentGroup"`
-	AlertName     string `position:"Query" name:"AlertName"`
-	TaskId        string `position:"Query" name:"TaskId"`
-	ClientIds     string `position:"Query" name:"ClientIds"`
-	TaskType      string `position:"Query" name:"TaskType"`
-	TaskName      string `position:"Query" name:"TaskName"`
-	TaskState     string `position:"Query" name:"TaskState"`
-	AgentType     string `position:"Query" name:"AgentType"`
-	ReportProject string `position:"Query" name:"ReportProject"`
-	Address       string `position:"Query" name:"Address"`
-	Interval      string `position:"Query" name:"Interval"`
-	EndTime       string `position:"Query" name:"EndTime"`
-	IspCity       string `position:"Query" name:"IspCity"`
-	Options       string `position:"Query" name:"Options"`
-	AlertInfo     string `position:"Query" name:"AlertInfo"`
-	AlertRule     string `position:"Query" name:"AlertRule"`
-	Ip            string `position:"Query" name:"Ip"`
+	TaskType  string `position:"Query" name:"TaskType"`
+	Address   string `position:"Query" name:"Address"`
+	IspCity   string `position:"Query" name:"IspCity"`
+	Options   string `position:"Query" name:"Options"`
+	TaskName  string `position:"Query" name:"TaskName"`
+	Interval  string `position:"Query" name:"Interval"`
+	AlertRule string `position:"Query" name:"AlertRule"`
 }
 
 // CreateTaskResponse is the response struct for api CreateTask
@@ -102,6 +92,8 @@ type CreateTaskResponse struct {
 	Message   string `json:"Message" xml:"Message"`
 	Success   string `json:"Success" xml:"Success"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Data      string `json:"Data" xml:"Data"`
+	AlertRule string `json:"AlertRule" xml:"AlertRule"`
 }
 
 // CreateCreateTaskRequest creates a request to invoke CreateTask API

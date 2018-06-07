@@ -76,13 +76,13 @@ func (client *Client) DescribeDomainAverageResponseTimeWithCallback(request *Des
 // DescribeDomainAverageResponseTimeRequest is the request struct for api DescribeDomainAverageResponseTime
 type DescribeDomainAverageResponseTimeRequest struct {
 	*requests.RpcRequest
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
-	DomainName    string           `position:"Query" name:"DomainName"`
-	StartTime     string           `position:"Query" name:"StartTime"`
-	EndTime       string           `position:"Query" name:"EndTime"`
 	TimeMerge     string           `position:"Query" name:"TimeMerge"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	EndTime       string           `position:"Query" name:"EndTime"`
 	Interval      string           `position:"Query" name:"Interval"`
+	StartTime     string           `position:"Query" name:"StartTime"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeDomainAverageResponseTimeResponse is the response struct for api DescribeDomainAverageResponseTime

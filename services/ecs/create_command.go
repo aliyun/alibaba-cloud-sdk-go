@@ -76,6 +76,16 @@ func (client *Client) CreateCommandWithCallback(request *CreateCommandRequest, c
 // CreateCommandRequest is the request struct for api CreateCommand
 type CreateCommandRequest struct {
 	*requests.RpcRequest
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	WorkingDir           string           `position:"Query" name:"WorkingDir"`
+	Description          string           `position:"Query" name:"Description"`
+	Type                 string           `position:"Query" name:"Type"`
+	CommandContent       string           `position:"Query" name:"CommandContent"`
+	Timeout              requests.Integer `position:"Query" name:"Timeout"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Name                 string           `position:"Query" name:"Name"`
 }
 
 // CreateCommandResponse is the response struct for api CreateCommand

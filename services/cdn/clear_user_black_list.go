@@ -76,9 +76,9 @@ func (client *Client) ClearUserBlackListWithCallback(request *ClearUserBlackList
 // ClearUserBlackListRequest is the request struct for api ClearUserBlackList
 type ClearUserBlackListRequest struct {
 	*requests.RpcRequest
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
-	OwnerAccount  string           `position:"Query" name:"OwnerAccount"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	OwnerAccount  string           `position:"Query" name:"OwnerAccount"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // ClearUserBlackListResponse is the response struct for api ClearUserBlackList

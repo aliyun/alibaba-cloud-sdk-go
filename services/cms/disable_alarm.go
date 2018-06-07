@@ -76,8 +76,7 @@ func (client *Client) DisableAlarmWithCallback(request *DisableAlarmRequest, cal
 // DisableAlarmRequest is the request struct for api DisableAlarm
 type DisableAlarmRequest struct {
 	*requests.RpcRequest
-	CallbyCmsOwner string `position:"Query" name:"callby_cms_owner"`
-	Id             string `position:"Query" name:"Id"`
+	Id string `position:"Query" name:"Id"`
 }
 
 // DisableAlarmResponse is the response struct for api DisableAlarm

@@ -76,10 +76,10 @@ func (client *Client) SetPageCompressConfigWithCallback(request *SetPageCompress
 // SetPageCompressConfigRequest is the request struct for api SetPageCompressConfig
 type SetPageCompressConfigRequest struct {
 	*requests.RpcRequest
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
-	DomainName    string           `position:"Query" name:"DomainName"`
 	Enable        string           `position:"Query" name:"Enable"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // SetPageCompressConfigResponse is the response struct for api SetPageCompressConfig

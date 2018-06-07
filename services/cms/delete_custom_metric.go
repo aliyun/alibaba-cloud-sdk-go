@@ -78,8 +78,8 @@ type DeleteCustomMetricRequest struct {
 	*requests.RpcRequest
 	GroupId    string `position:"Query" name:"GroupId"`
 	MetricName string `position:"Query" name:"MetricName"`
-	Md5        string `position:"Query" name:"Md5"`
 	UUID       string `position:"Query" name:"UUID"`
+	Md5        string `position:"Query" name:"Md5"`
 }
 
 // DeleteCustomMetricResponse is the response struct for api DeleteCustomMetric

@@ -76,8 +76,8 @@ func (client *Client) DescribeCdnRegionAndIspWithCallback(request *DescribeCdnRe
 // DescribeCdnRegionAndIspRequest is the request struct for api DescribeCdnRegionAndIsp
 type DescribeCdnRegionAndIspRequest struct {
 	*requests.RpcRequest
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeCdnRegionAndIspResponse is the response struct for api DescribeCdnRegionAndIsp

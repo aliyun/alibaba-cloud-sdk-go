@@ -76,6 +76,14 @@ func (client *Client) DescribeDomainSlowRatioWithCallback(request *DescribeDomai
 // DescribeDomainSlowRatioRequest is the request struct for api DescribeDomainSlowRatio
 type DescribeDomainSlowRatioRequest struct {
 	*requests.RpcRequest
+	StartTime     string           `position:"Query" name:"StartTime"`
+	PageNumber    requests.Integer `position:"Query" name:"PageNumber"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	PageSize      requests.Integer `position:"Query" name:"PageSize"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	EndTime       string           `position:"Query" name:"EndTime"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	Version       string           `position:"Query" name:"Version"`
 }
 
 // DescribeDomainSlowRatioResponse is the response struct for api DescribeDomainSlowRatio

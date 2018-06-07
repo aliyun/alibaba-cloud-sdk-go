@@ -76,16 +76,16 @@ func (client *Client) ModifyDiskAttributeWithCallback(request *ModifyDiskAttribu
 // ModifyDiskAttributeRequest is the request struct for api ModifyDiskAttribute
 type ModifyDiskAttributeRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	DiskId               string           `position:"Query" name:"DiskId"`
 	DiskName             string           `position:"Query" name:"DiskName"`
-	Description          string           `position:"Query" name:"Description"`
-	DeleteWithInstance   requests.Boolean `position:"Query" name:"DeleteWithInstance"`
 	DeleteAutoSnapshot   requests.Boolean `position:"Query" name:"DeleteAutoSnapshot"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	EnableAutoSnapshot   requests.Boolean `position:"Query" name:"EnableAutoSnapshot"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	Description          string           `position:"Query" name:"Description"`
+	DiskId               string           `position:"Query" name:"DiskId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	DeleteWithInstance   requests.Boolean `position:"Query" name:"DeleteWithInstance"`
 }
 
 // ModifyDiskAttributeResponse is the response struct for api ModifyDiskAttribute

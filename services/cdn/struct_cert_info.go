@@ -26,4 +26,5 @@ type CertInfo struct {
 	CertType                string `json:"CertType" xml:"CertType"`
 	ServerCertificateStatus string `json:"ServerCertificateStatus" xml:"ServerCertificateStatus"`
 	Status                  string `json:"Status" xml:"Status"`
+	ServerCertificate       string `json:"ServerCertificate" xml:"ServerCertificate"`
 }

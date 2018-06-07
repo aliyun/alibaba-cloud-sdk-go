@@ -89,7 +89,7 @@ func CreateImageScanFeedbackRequest() (request *ImageScanFeedbackRequest) {
 	request = &ImageScanFeedbackRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Green", "2017-08-25", "ImageScanFeedback", "/green/image/feedback", "green", "openAPI")
+	request.InitWithApiInfo("Green", "2018-05-09", "ImageScanFeedback", "/green/image/feedback", "green", "openAPI")
 	request.Method = requests.POST
 	return
 }

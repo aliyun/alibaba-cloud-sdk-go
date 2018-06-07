@@ -76,8 +76,8 @@ func (client *Client) DescribeDrdsDBWithCallback(request *DescribeDrdsDBRequest,
 // DescribeDrdsDBRequest is the request struct for api DescribeDrdsDB
 type DescribeDrdsDBRequest struct {
 	*requests.RpcRequest
-	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
 	DbName         string `position:"Query" name:"DbName"`
+	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
 }
 
 // DescribeDrdsDBResponse is the response struct for api DescribeDrdsDB

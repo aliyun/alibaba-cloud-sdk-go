@@ -76,14 +76,14 @@ func (client *Client) TaskConfigCreateWithCallback(request *TaskConfigCreateRequ
 // TaskConfigCreateRequest is the request struct for api TaskConfigCreate
 type TaskConfigCreateRequest struct {
 	*requests.RpcRequest
-	TaskType     string           `position:"Query" name:"TaskType"`
-	TaskName     string           `position:"Query" name:"TaskName"`
-	TaskScope    string           `position:"Query" name:"TaskScope"`
-	GroupId      requests.Integer `position:"Query" name:"GroupId"`
-	GroupName    string           `position:"Query" name:"GroupName"`
-	JsonData     string           `position:"Query" name:"JsonData"`
 	InstanceList *[]string        `position:"Query" name:"InstanceList"  type:"Repeated"`
+	JsonData     string           `position:"Query" name:"JsonData"`
+	TaskType     string           `position:"Query" name:"TaskType"`
+	TaskScope    string           `position:"Query" name:"TaskScope"`
 	AlertConfig  string           `position:"Query" name:"AlertConfig"`
+	GroupId      requests.Integer `position:"Query" name:"GroupId"`
+	TaskName     string           `position:"Query" name:"TaskName"`
+	GroupName    string           `position:"Query" name:"GroupName"`
 }
 
 // TaskConfigCreateResponse is the response struct for api TaskConfigCreate

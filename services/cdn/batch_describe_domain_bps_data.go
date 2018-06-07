@@ -76,6 +76,12 @@ func (client *Client) BatchDescribeDomainBpsDataWithCallback(request *BatchDescr
 // BatchDescribeDomainBpsDataRequest is the request struct for api BatchDescribeDomainBpsData
 type BatchDescribeDomainBpsDataRequest struct {
 	*requests.RpcRequest
+	StartTime  string           `position:"Query" name:"StartTime"`
+	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize   requests.Integer `position:"Query" name:"PageSize"`
+	DomainName string           `position:"Query" name:"DomainName"`
+	EndTime    string           `position:"Query" name:"EndTime"`
+	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // BatchDescribeDomainBpsDataResponse is the response struct for api BatchDescribeDomainBpsData

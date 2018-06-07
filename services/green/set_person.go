@@ -89,7 +89,7 @@ func CreateSetPersonRequest() (request *SetPersonRequest) {
 	request = &SetPersonRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Green", "2017-08-25", "SetPerson", "/green/sface/setPerson", "green", "openAPI")
+	request.InitWithApiInfo("Green", "2018-05-09", "SetPerson", "/green/sface/person/update", "green", "openAPI")
 	request.Method = requests.POST
 	return
 }

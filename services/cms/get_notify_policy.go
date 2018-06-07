@@ -76,8 +76,8 @@ func (client *Client) GetNotifyPolicyWithCallback(request *GetNotifyPolicyReques
 // GetNotifyPolicyRequest is the request struct for api GetNotifyPolicy
 type GetNotifyPolicyRequest struct {
 	*requests.RpcRequest
-	AlertName  string `position:"Query" name:"AlertName"`
 	PolicyType string `position:"Query" name:"PolicyType"`
+	AlertName  string `position:"Query" name:"AlertName"`
 	Id         string `position:"Query" name:"Id"`
 	Dimensions string `position:"Query" name:"Dimensions"`
 }

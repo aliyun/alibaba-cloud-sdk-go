@@ -25,7 +25,7 @@ import (
 func (client *Client) CreateDrdsInstance(request *CreateDrdsInstanceRequest) (response *CreateDrdsInstanceResponse, err error) {
 	response = CreateCreateDrdsInstanceResponse()
 	err = client.DoAction(request, response)
-	return response, err
+	return
 }
 
 // CreateDrdsInstanceWithChan invokes the drds.CreateDrdsInstance API asynchronously
@@ -76,16 +76,16 @@ func (client *Client) CreateDrdsInstanceWithCallback(request *CreateDrdsInstance
 // CreateDrdsInstanceRequest is the request struct for api CreateDrdsInstance
 type CreateDrdsInstanceRequest struct {
 	*requests.RpcRequest
+	Quantity       requests.Integer `position:"Query" name:"Quantity"`
 	Description    string           `position:"Query" name:"Description"`
-	ZoneId         string           `position:"Query" name:"ZoneId"`
-	Type           string           `position:"Query" name:"Type"`
-	Quantity       string		    `position:"Query" name:"Quantity"`
-	InstanceSeries string           `position:"Query" name:"instanceSeries"`
 	Specification  string           `position:"Query" name:"Specification"`
-	PayType        string           `position:"Query" name:"PayType"`
-	VpcId          string           `position:"Query" name:"VpcId"`
+	Type           string           `position:"Query" name:"Type"`
 	VswitchId      string           `position:"Query" name:"VswitchId"`
 	IsHa           requests.Boolean `position:"Query" name:"isHa"`
+	InstanceSeries string           `position:"Query" name:"instanceSeries"`
+	VpcId          string           `position:"Query" name:"VpcId"`
+	ZoneId         string           `position:"Query" name:"ZoneId"`
+	PayType        string           `position:"Query" name:"PayType"`
 }
 
 // CreateDrdsInstanceResponse is the response struct for api CreateDrdsInstance

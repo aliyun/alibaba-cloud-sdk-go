@@ -17,7 +17,11 @@ package ecs
 
 // NetworkInterface is a nested struct in ecs response
 type NetworkInterface struct {
-	NetworkInterfaceId string `json:"NetworkInterfaceId" xml:"NetworkInterfaceId"`
-	MacAddress         string `json:"MacAddress" xml:"MacAddress"`
-	PrimaryIpAddress   string `json:"PrimaryIpAddress" xml:"PrimaryIpAddress"`
+	SecurityGroupId      string `json:"SecurityGroupId" xml:"SecurityGroupId"`
+	VSwitchId            string `json:"VSwitchId" xml:"VSwitchId"`
+	NetworkInterfaceId   string `json:"NetworkInterfaceId" xml:"NetworkInterfaceId"`
+	PrimaryIpAddress     string `json:"PrimaryIpAddress" xml:"PrimaryIpAddress"`
+	MacAddress           string `json:"MacAddress" xml:"MacAddress"`
+	Description          string `json:"Description" xml:"Description"`
+	NetworkInterfaceName string `json:"NetworkInterfaceName" xml:"NetworkInterfaceName"`
 }

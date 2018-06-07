@@ -17,8 +17,8 @@ package ehpc
 
 // ApplicationInfo is a nested struct in ehpc response
 type ApplicationInfo struct {
-	Version  string `json:"Version" xml:"Version"`
-	Required bool   `json:"Required" xml:"Required"`
 	Name     string `json:"Name" xml:"Name"`
 	Tag      string `json:"Tag" xml:"Tag"`
+	Version  string `json:"Version" xml:"Version"`
+	Required bool   `json:"Required" xml:"Required"`
 }

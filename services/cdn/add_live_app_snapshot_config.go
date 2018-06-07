@@ -76,15 +76,15 @@ func (client *Client) AddLiveAppSnapshotConfigWithCallback(request *AddLiveAppSn
 // AddLiveAppSnapshotConfigRequest is the request struct for api AddLiveAppSnapshotConfig
 type AddLiveAppSnapshotConfigRequest struct {
 	*requests.RpcRequest
-	OwnerId            requests.Integer `position:"Query" name:"OwnerId"`
+	TimeInterval       requests.Integer `position:"Query" name:"TimeInterval"`
+	OssBucket          string           `position:"Query" name:"OssBucket"`
+	AppName            string           `position:"Query" name:"AppName"`
 	SecurityToken      string           `position:"Query" name:"SecurityToken"`
 	DomainName         string           `position:"Query" name:"DomainName"`
-	AppName            string           `position:"Query" name:"AppName"`
-	TimeInterval       requests.Integer `position:"Query" name:"TimeInterval"`
 	OssEndpoint        string           `position:"Query" name:"OssEndpoint"`
-	OssBucket          string           `position:"Query" name:"OssBucket"`
-	OverwriteOssObject string           `position:"Query" name:"OverwriteOssObject"`
 	SequenceOssObject  string           `position:"Query" name:"SequenceOssObject"`
+	OverwriteOssObject string           `position:"Query" name:"OverwriteOssObject"`
+	OwnerId            requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // AddLiveAppSnapshotConfigResponse is the response struct for api AddLiveAppSnapshotConfig

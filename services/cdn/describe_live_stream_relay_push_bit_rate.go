@@ -76,10 +76,10 @@ func (client *Client) DescribeLiveStreamRelayPushBitRateWithCallback(request *De
 // DescribeLiveStreamRelayPushBitRateRequest is the request struct for api DescribeLiveStreamRelayPushBitRate
 type DescribeLiveStreamRelayPushBitRateRequest struct {
 	*requests.RpcRequest
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	AppName       string           `position:"Query" name:"AppName"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	DomainName    string           `position:"Query" name:"DomainName"`
-	AppName       string           `position:"Query" name:"AppName"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	StreamName    string           `position:"Query" name:"StreamName"`
 }
 

@@ -82,9 +82,10 @@ type PutCustomMetricRequest struct {
 // PutCustomMetricResponse is the response struct for api PutCustomMetric
 type PutCustomMetricResponse struct {
 	*responses.BaseResponse
-	Code    string `json:"Code" xml:"Code"`
-	Message string `json:"Message" xml:"Message"`
-	Data    string `json:"Data" xml:"Data"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
+	Data      string `json:"Data" xml:"Data"`
 }
 
 // CreatePutCustomMetricRequest creates a request to invoke PutCustomMetric API

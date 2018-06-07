@@ -76,14 +76,14 @@ func (client *Client) DescribeRecycleBinWithCallback(request *DescribeRecycleBin
 // DescribeRecycleBinRequest is the request struct for api DescribeRecycleBin
 type DescribeRecycleBinRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceId           string           `position:"Query" name:"ResourceId"`
-	Status               string           `position:"Query" name:"Status"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	Status               string           `position:"Query" name:"Status"`
 }
 
 // DescribeRecycleBinResponse is the response struct for api DescribeRecycleBin

@@ -76,6 +76,12 @@ func (client *Client) SetFileTypeForceTtlCodeConfigWithCallback(request *SetFile
 // SetFileTypeForceTtlCodeConfigRequest is the request struct for api SetFileTypeForceTtlCodeConfig
 type SetFileTypeForceTtlCodeConfigRequest struct {
 	*requests.RpcRequest
+	FileType      string           `position:"Query" name:"FileType"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	Version       string           `position:"Query" name:"Version"`
+	CodeString    string           `position:"Query" name:"CodeString"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 // SetFileTypeForceTtlCodeConfigResponse is the response struct for api SetFileTypeForceTtlCodeConfig

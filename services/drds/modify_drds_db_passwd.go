@@ -76,9 +76,9 @@ func (client *Client) ModifyDrdsDBPasswdWithCallback(request *ModifyDrdsDBPasswd
 // ModifyDrdsDBPasswdRequest is the request struct for api ModifyDrdsDBPasswd
 type ModifyDrdsDBPasswdRequest struct {
 	*requests.RpcRequest
-	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
-	DbName         string `position:"Query" name:"DbName"`
 	NewPasswd      string `position:"Query" name:"NewPasswd"`
+	DbName         string `position:"Query" name:"DbName"`
+	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
 }
 
 // ModifyDrdsDBPasswdResponse is the response struct for api ModifyDrdsDBPasswd

@@ -76,18 +76,18 @@ func (client *Client) CheckAutoSnapshotPolicyWithCallback(request *CheckAutoSnap
 // CheckAutoSnapshotPolicyRequest is the request struct for api CheckAutoSnapshotPolicy
 type CheckAutoSnapshotPolicyRequest struct {
 	*requests.RpcRequest
-	OwnerId                           requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount              string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId                   requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount                      string           `position:"Query" name:"OwnerAccount"`
-	SystemDiskPolicyEnabled           requests.Boolean `position:"Query" name:"SystemDiskPolicyEnabled"`
-	SystemDiskPolicyTimePeriod        requests.Integer `position:"Query" name:"SystemDiskPolicyTimePeriod"`
-	SystemDiskPolicyRetentionDays     requests.Integer `position:"Query" name:"SystemDiskPolicyRetentionDays"`
-	SystemDiskPolicyRetentionLastWeek requests.Boolean `position:"Query" name:"SystemDiskPolicyRetentionLastWeek"`
 	DataDiskPolicyEnabled             requests.Boolean `position:"Query" name:"DataDiskPolicyEnabled"`
-	DataDiskPolicyTimePeriod          requests.Integer `position:"Query" name:"DataDiskPolicyTimePeriod"`
+	ResourceOwnerId                   requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	DataDiskPolicyRetentionDays       requests.Integer `position:"Query" name:"DataDiskPolicyRetentionDays"`
+	ResourceOwnerAccount              string           `position:"Query" name:"ResourceOwnerAccount"`
+	SystemDiskPolicyRetentionLastWeek requests.Boolean `position:"Query" name:"SystemDiskPolicyRetentionLastWeek"`
+	OwnerAccount                      string           `position:"Query" name:"OwnerAccount"`
+	SystemDiskPolicyTimePeriod        requests.Integer `position:"Query" name:"SystemDiskPolicyTimePeriod"`
+	OwnerId                           requests.Integer `position:"Query" name:"OwnerId"`
 	DataDiskPolicyRetentionLastWeek   requests.Boolean `position:"Query" name:"DataDiskPolicyRetentionLastWeek"`
+	SystemDiskPolicyRetentionDays     requests.Integer `position:"Query" name:"SystemDiskPolicyRetentionDays"`
+	DataDiskPolicyTimePeriod          requests.Integer `position:"Query" name:"DataDiskPolicyTimePeriod"`
+	SystemDiskPolicyEnabled           requests.Boolean `position:"Query" name:"SystemDiskPolicyEnabled"`
 }
 
 // CheckAutoSnapshotPolicyResponse is the response struct for api CheckAutoSnapshotPolicy

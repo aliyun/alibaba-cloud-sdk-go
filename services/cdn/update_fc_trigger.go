@@ -76,6 +76,11 @@ func (client *Client) UpdateFCTriggerWithCallback(request *UpdateFCTriggerReques
 // UpdateFCTriggerRequest is the request struct for api UpdateFCTrigger
 type UpdateFCTriggerRequest struct {
 	*requests.RpcRequest
+	Notes      string           `position:"Body" name:"Notes"`
+	TriggerARN string           `position:"Query" name:"TriggerARN"`
+	SourceARN  string           `position:"Body" name:"SourceARN"`
+	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
+	RoleARN    string           `position:"Body" name:"RoleARN"`
 }
 
 // UpdateFCTriggerResponse is the response struct for api UpdateFCTrigger

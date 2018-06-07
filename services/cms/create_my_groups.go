@@ -76,12 +76,12 @@ func (client *Client) CreateMyGroupsWithCallback(request *CreateMyGroupsRequest,
 // CreateMyGroupsRequest is the request struct for api CreateMyGroups
 type CreateMyGroupsRequest struct {
 	*requests.RpcRequest
-	Type          string           `position:"Query" name:"Type"`
-	BindUrl       string           `position:"Query" name:"BindUrl"`
-	GroupName     string           `position:"Query" name:"GroupName"`
-	ServiceId     requests.Integer `position:"Query" name:"ServiceId"`
 	ContactGroups string           `position:"Query" name:"ContactGroups"`
 	Options       string           `position:"Query" name:"Options"`
+	ServiceId     requests.Integer `position:"Query" name:"ServiceId"`
+	Type          string           `position:"Query" name:"Type"`
+	GroupName     string           `position:"Query" name:"GroupName"`
+	BindUrl       string           `position:"Query" name:"BindUrl"`
 }
 
 // CreateMyGroupsResponse is the response struct for api CreateMyGroups

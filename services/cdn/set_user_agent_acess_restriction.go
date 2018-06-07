@@ -76,10 +76,10 @@ func (client *Client) SetUserAgentAcessRestrictionWithCallback(request *SetUserA
 // SetUserAgentAcessRestrictionRequest is the request struct for api SetUserAgentAcessRestriction
 type SetUserAgentAcessRestrictionRequest struct {
 	*requests.RpcRequest
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	DomainName    string           `position:"Query" name:"DomainName"`
 	UserAgent     string           `position:"Query" name:"UserAgent"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	Type          string           `position:"Query" name:"Type"`
 }
 

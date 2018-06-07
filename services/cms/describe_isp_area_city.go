@@ -76,6 +76,8 @@ func (client *Client) DescribeISPAreaCityWithCallback(request *DescribeISPAreaCi
 // DescribeISPAreaCityRequest is the request struct for api DescribeISPAreaCity
 type DescribeISPAreaCityRequest struct {
 	*requests.RpcRequest
+	City string `position:"Query" name:"City"`
+	Isp  string `position:"Query" name:"Isp"`
 }
 
 // DescribeISPAreaCityResponse is the response struct for api DescribeISPAreaCity

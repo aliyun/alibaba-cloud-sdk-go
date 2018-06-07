@@ -25,7 +25,7 @@ import (
 func (client *Client) RemoveDrdsInstance(request *RemoveDrdsInstanceRequest) (response *RemoveDrdsInstanceResponse, err error) {
 	response = CreateRemoveDrdsInstanceResponse()
 	err = client.DoAction(request, response)
-	return response, err
+	return
 }
 
 // RemoveDrdsInstanceWithChan invokes the drds.RemoveDrdsInstance API asynchronously
@@ -92,7 +92,7 @@ func CreateRemoveDrdsInstanceRequest() (request *RemoveDrdsInstanceRequest) {
 		RpcRequest: &requests.RpcRequest{},
 	}
 	request.InitWithApiInfo("Drds", "2017-10-16", "RemoveDrdsInstance", "", "")
-	return request
+	return
 }
 
 // CreateRemoveDrdsInstanceResponse creates a response to parse from RemoveDrdsInstance response

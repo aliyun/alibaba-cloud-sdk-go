@@ -76,15 +76,15 @@ func (client *Client) TaskConfigModifyWithCallback(request *TaskConfigModifyRequ
 // TaskConfigModifyRequest is the request struct for api TaskConfigModify
 type TaskConfigModifyRequest struct {
 	*requests.RpcRequest
-	GroupId      requests.Integer `position:"Query" name:"GroupId"`
-	TaskType     string           `position:"Query" name:"TaskType"`
-	Id           requests.Integer `position:"Query" name:"Id"`
-	TaskName     string           `position:"Query" name:"TaskName"`
-	TaskScope    string           `position:"Query" name:"TaskScope"`
-	GroupName    string           `position:"Query" name:"GroupName"`
-	JsonData     string           `position:"Query" name:"JsonData"`
 	InstanceList *[]string        `position:"Query" name:"InstanceList"  type:"Repeated"`
+	JsonData     string           `position:"Query" name:"JsonData"`
+	TaskType     string           `position:"Query" name:"TaskType"`
+	TaskScope    string           `position:"Query" name:"TaskScope"`
 	AlertConfig  string           `position:"Query" name:"AlertConfig"`
+	GroupId      requests.Integer `position:"Query" name:"GroupId"`
+	TaskName     string           `position:"Query" name:"TaskName"`
+	Id           requests.Integer `position:"Query" name:"Id"`
+	GroupName    string           `position:"Query" name:"GroupName"`
 }
 
 // TaskConfigModifyResponse is the response struct for api TaskConfigModify

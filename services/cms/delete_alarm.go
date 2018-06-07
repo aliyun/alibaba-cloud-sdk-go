@@ -76,8 +76,7 @@ func (client *Client) DeleteAlarmWithCallback(request *DeleteAlarmRequest, callb
 // DeleteAlarmRequest is the request struct for api DeleteAlarm
 type DeleteAlarmRequest struct {
 	*requests.RpcRequest
-	CallbyCmsOwner string `position:"Query" name:"callby_cms_owner"`
-	Id             string `position:"Query" name:"Id"`
+	Id string `position:"Query" name:"Id"`
 }
 
 // DeleteAlarmResponse is the response struct for api DeleteAlarm

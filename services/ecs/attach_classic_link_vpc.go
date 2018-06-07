@@ -76,11 +76,11 @@ func (client *Client) AttachClassicLinkVpcWithCallback(request *AttachClassicLin
 // AttachClassicLinkVpcRequest is the request struct for api AttachClassicLinkVpc
 type AttachClassicLinkVpcRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	VpcId                string           `position:"Query" name:"VpcId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // AttachClassicLinkVpcResponse is the response struct for api AttachClassicLinkVpc

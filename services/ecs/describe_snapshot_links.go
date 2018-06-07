@@ -76,15 +76,15 @@ func (client *Client) DescribeSnapshotLinksWithCallback(request *DescribeSnapsho
 // DescribeSnapshotLinksRequest is the request struct for api DescribeSnapshotLinks
 type DescribeSnapshotLinksRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	DiskIds              string           `position:"Query" name:"DiskIds"`
 	SnapshotLinkIds      string           `position:"Query" name:"SnapshotLinkIds"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 }
 
 // DescribeSnapshotLinksResponse is the response struct for api DescribeSnapshotLinks

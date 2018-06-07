@@ -76,6 +76,11 @@ func (client *Client) ModifyUserCustomLogConfigWithCallback(request *ModifyUserC
 // ModifyUserCustomLogConfigRequest is the request struct for api ModifyUserCustomLogConfig
 type ModifyUserCustomLogConfigRequest struct {
 	*requests.RpcRequest
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	Version       string           `position:"Query" name:"Version"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	ConfigId      string           `position:"Query" name:"ConfigId"`
+	Tag           string           `position:"Query" name:"Tag"`
 }
 
 // ModifyUserCustomLogConfigResponse is the response struct for api ModifyUserCustomLogConfig

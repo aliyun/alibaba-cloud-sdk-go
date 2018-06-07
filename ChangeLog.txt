@@ -1,3 +1,72 @@
+2018-06-06 Version: 1.19.1
+1, Change the type of srcUid to int.
+
+2018-06-06 Version: 1.19.0
+1, Add interface DescribePhoneInfo, DescribeDdosDefenseInfo, DescribeRiskListDetail, DescribePunishList.
+
+2018-05-30 Version: 1.18.1
+1, Add new API: DescribeContact and GetContacts.
+2, Add return value: alertRule for CreateTask.
+
+2018-05-29 Version: 1.18.0
+1, Add new interface DescribePhoneInfo to SDK.
+
+2018-05-28 Version: 1.17.0
+1, Add face 1-N,1-1 scan interface.
+
+2018-05-28 Version: 1.16.0
+1, ValidateSecurityGroup API
+
+2018-05-28 Version: 1.15.1
+1, add new openapi .
+
+2018-05-28 Version: 1.15.0
+1, This is an example of release-log.
+2, Please strictly follow this format to edit in English.
+3, Format：Number + , + Space + Description
+
+2018-05-26 Version: 1.14.2
+1, Add new interface InstallCloudAssistant, support Cloud Assistant client installation.
+2, Add new interface DescribeCloudAssistantStatus, support Cloud Assistant client status detection.
+
+2018-05-25 Version: 1.14.1
+1, CreateAlarm,DeleteAlarm,UpdateAlarm,DisableAlarm,EnableAlarm,ListAlarm,ListAlarmHistory,ListContactGroup,PutMetricData,QueryMetricData,QueryMetricLast,QueryMetricList,QueryMetricTop remove useless parameter: callby_cms_owner. 
+2, QueryMetricList remove useless parameter: Page.
+3, UpdateMyGroupMembers add parameter: Readers.
+4, StopTasks,StartTasks,DeleteTasks add return value: Data.
+5, ModifyTask remove invalid parameter: TaskType.
+6, CreateTask fix bug: TaskName maybe duplicated.
+7, Add lost return value for CreateTask.
+8, DescribeISPAreaCity add parameter: isp and city.
+9, remove api: PutMetricData.
+
+2018-05-23 Version: 1.14.0
+1, Add CreateDrdsAccount API, to support creating account for all databases of a DRDS instance.
+
+2018-05-23 Version: 1.13.1
+1, Add Function Compute interface,support Function Compute.
+
+2018-05-23 Version: 1.13.0
+1, Update API version to 2018-04-12. 
+2, New APIs in this new version: StartCluster, StopCluster, RecoverCluster, StartNodes, StopNodes, ListCustomImages. Support stopping a post-paid cluster or partial nodes of a cluster to save cost.
+3, New parameters for CreateCluster API: EcsChargeType. Support creating a pre-paid cluster.
+4, New parameters for CreateCluster API: DeploymentMode. Support creating a cluster with fewer manager nodes.
+
+2018-05-23 Version: 1.12.5
+1, This is an example of release-log.
+2, Please strictly follow this format to edit in English.
+3, Format：Number + , + Space + Description
+
+2018-05-22 Version: 1.12.4
+1, add DescribeMigrateTasks,DescribeOssDownloads,CheckRecoveryConditions.
+2, modify DescribeDBInstanceAttribute.
+
+2018-05-17 Version: 1.12.3
+1, Supporting ethnicGroup and idCardStartDate fields in GetMaterials api
+
+2018-05-17 Version: 1.12.2
+1, the first version of private dns SDK
+
 2018-05-11 Version: 1.12.1
 1, Add Function Compute interface,support Function Compute.
 

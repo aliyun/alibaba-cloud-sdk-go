@@ -18,6 +18,6 @@ package ehpc
 // UsedResources is a nested struct in ehpc response
 type UsedResources struct {
 	Gpu    int `json:"Gpu" xml:"Gpu"`
-	Cpu    int `json:"Cpu" xml:"Cpu"`
 	Memory int `json:"Memory" xml:"Memory"`
+	Cpu    int `json:"Cpu" xml:"Cpu"`
 }

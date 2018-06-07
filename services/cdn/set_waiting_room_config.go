@@ -76,6 +76,14 @@ func (client *Client) SetWaitingRoomConfigWithCallback(request *SetWaitingRoomCo
 // SetWaitingRoomConfigRequest is the request struct for api SetWaitingRoomConfig
 type SetWaitingRoomConfigRequest struct {
 	*requests.RpcRequest
+	WaitUrl     string           `position:"Query" name:"WaitUrl"`
+	WaitUri     string           `position:"Query" name:"WaitUri"`
+	MaxQps      requests.Integer `position:"Query" name:"MaxQps"`
+	MaxTimeWait requests.Integer `position:"Query" name:"MaxTimeWait"`
+	DomainName  string           `position:"Query" name:"DomainName"`
+	AllowPct    requests.Integer `position:"Query" name:"AllowPct"`
+	GapTime     requests.Integer `position:"Query" name:"GapTime"`
+	OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // SetWaitingRoomConfigResponse is the response struct for api SetWaitingRoomConfig

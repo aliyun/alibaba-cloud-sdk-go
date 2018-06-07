@@ -76,9 +76,9 @@ func (client *Client) CreateReadOnlyAccountWithCallback(request *CreateReadOnlyA
 // CreateReadOnlyAccountRequest is the request struct for api CreateReadOnlyAccount
 type CreateReadOnlyAccountRequest struct {
 	*requests.RpcRequest
-	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
-	DbName         string `position:"Query" name:"DbName"`
 	Password       string `position:"Query" name:"password"`
+	DbName         string `position:"Query" name:"DbName"`
+	DrdsInstanceId string `position:"Query" name:"DrdsInstanceId"`
 }
 
 // CreateReadOnlyAccountResponse is the response struct for api CreateReadOnlyAccount

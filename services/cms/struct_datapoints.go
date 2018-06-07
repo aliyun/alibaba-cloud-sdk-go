@@ -17,5 +17,7 @@ package cms
 
 // Datapoints is a nested struct in cms response
 type Datapoints struct {
-	Alarm []Alarm `json:"Alarm" xml:"Alarm"`
+	Name     string                `json:"Name" xml:"Name"`
+	Contacts ContactsInGetContacts `json:"Contacts" xml:"Contacts"`
+	Channels Channels              `json:"Channels" xml:"Channels"`
 }

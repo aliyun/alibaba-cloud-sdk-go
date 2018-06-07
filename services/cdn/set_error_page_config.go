@@ -76,11 +76,11 @@ func (client *Client) SetErrorPageConfigWithCallback(request *SetErrorPageConfig
 // SetErrorPageConfigRequest is the request struct for api SetErrorPageConfig
 type SetErrorPageConfigRequest struct {
 	*requests.RpcRequest
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	PageType      string           `position:"Query" name:"PageType"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	DomainName    string           `position:"Query" name:"DomainName"`
-	PageType      string           `position:"Query" name:"PageType"`
 	CustomPageUrl string           `position:"Query" name:"CustomPageUrl"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // SetErrorPageConfigResponse is the response struct for api SetErrorPageConfig

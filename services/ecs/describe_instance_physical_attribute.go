@@ -76,11 +76,11 @@ func (client *Client) DescribeInstancePhysicalAttributeWithCallback(request *Des
 // DescribeInstancePhysicalAttributeRequest is the request struct for api DescribeInstancePhysicalAttribute
 type DescribeInstancePhysicalAttributeRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeInstancePhysicalAttributeResponse is the response struct for api DescribeInstancePhysicalAttribute

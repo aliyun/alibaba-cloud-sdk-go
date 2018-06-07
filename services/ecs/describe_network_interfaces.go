@@ -76,6 +76,19 @@ func (client *Client) DescribeNetworkInterfacesWithCallback(request *DescribeNet
 // DescribeNetworkInterfacesRequest is the request struct for api DescribeNetworkInterfaces
 type DescribeNetworkInterfacesRequest struct {
 	*requests.RpcRequest
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	SecurityGroupId      string           `position:"Query" name:"SecurityGroupId"`
+	Type                 string           `position:"Query" name:"Type"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	NetworkInterfaceName string           `position:"Query" name:"NetworkInterfaceName"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	VSwitchId            string           `position:"Query" name:"VSwitchId"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
+	PrimaryIpAddress     string           `position:"Query" name:"PrimaryIpAddress"`
+	NetworkInterfaceId   *[]string        `position:"Query" name:"NetworkInterfaceId"  type:"Repeated"`
 }
 
 // DescribeNetworkInterfacesResponse is the response struct for api DescribeNetworkInterfaces

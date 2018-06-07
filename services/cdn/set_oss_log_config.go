@@ -76,11 +76,11 @@ func (client *Client) SetOssLogConfigWithCallback(request *SetOssLogConfigReques
 // SetOssLogConfigRequest is the request struct for api SetOssLogConfig
 type SetOssLogConfigRequest struct {
 	*requests.RpcRequest
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	Bucket        string           `position:"Query" name:"Bucket"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	Enable        string           `position:"Query" name:"Enable"`
-	Bucket        string           `position:"Query" name:"Bucket"`
 	Prefix        string           `position:"Query" name:"Prefix"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // SetOssLogConfigResponse is the response struct for api SetOssLogConfig

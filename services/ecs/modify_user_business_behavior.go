@@ -76,6 +76,12 @@ func (client *Client) ModifyUserBusinessBehaviorWithCallback(request *ModifyUser
 // ModifyUserBusinessBehaviorRequest is the request struct for api ModifyUserBusinessBehavior
 type ModifyUserBusinessBehaviorRequest struct {
 	*requests.RpcRequest
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	StatusValue          string           `position:"Query" name:"statusValue"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	StatusKey            string           `position:"Query" name:"statusKey"`
 }
 
 // ModifyUserBusinessBehaviorResponse is the response struct for api ModifyUserBusinessBehavior

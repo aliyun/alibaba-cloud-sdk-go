@@ -76,6 +76,11 @@ func (client *Client) InstallCloudAssistantWithCallback(request *InstallCloudAss
 // InstallCloudAssistantRequest is the request struct for api InstallCloudAssistant
 type InstallCloudAssistantRequest struct {
 	*requests.RpcRequest
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	InstanceId           *[]string        `position:"Query" name:"InstanceId"  type:"Repeated"`
 }
 
 // InstallCloudAssistantResponse is the response struct for api InstallCloudAssistant

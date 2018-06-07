@@ -76,13 +76,13 @@ func (client *Client) ModifyFileCacheExpiredConfigWithCallback(request *ModifyFi
 // ModifyFileCacheExpiredConfigRequest is the request struct for api ModifyFileCacheExpiredConfig
 type ModifyFileCacheExpiredConfigRequest struct {
 	*requests.RpcRequest
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
-	DomainName    string           `position:"Query" name:"DomainName"`
 	ConfigID      string           `position:"Query" name:"ConfigID"`
-	CacheContent  string           `position:"Query" name:"CacheContent"`
-	TTL           string           `position:"Query" name:"TTL"`
+	DomainName    string           `position:"Query" name:"DomainName"`
 	Weight        string           `position:"Query" name:"Weight"`
+	CacheContent  string           `position:"Query" name:"CacheContent"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	TTL           string           `position:"Query" name:"TTL"`
 }
 
 // ModifyFileCacheExpiredConfigResponse is the response struct for api ModifyFileCacheExpiredConfig

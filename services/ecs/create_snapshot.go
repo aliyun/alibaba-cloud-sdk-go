@@ -76,24 +76,24 @@ func (client *Client) CreateSnapshotWithCallback(request *CreateSnapshotRequest,
 // CreateSnapshotRequest is the request struct for api CreateSnapshot
 type CreateSnapshotRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	Tag4Value            string           `position:"Query" name:"Tag.4.Value"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	DiskId               string           `position:"Query" name:"DiskId"`
-	SnapshotName         string           `position:"Query" name:"SnapshotName"`
-	Description          string           `position:"Query" name:"Description"`
+	Tag2Key              string           `position:"Query" name:"Tag.2.Key"`
+	Tag5Key              string           `position:"Query" name:"Tag.5.Key"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	Tag1Key              string           `position:"Query" name:"Tag.1.Key"`
-	Tag2Key              string           `position:"Query" name:"Tag.2.Key"`
+	Description          string           `position:"Query" name:"Description"`
+	SnapshotName         string           `position:"Query" name:"SnapshotName"`
 	Tag3Key              string           `position:"Query" name:"Tag.3.Key"`
-	Tag4Key              string           `position:"Query" name:"Tag.4.Key"`
-	Tag5Key              string           `position:"Query" name:"Tag.5.Key"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Tag5Value            string           `position:"Query" name:"Tag.5.Value"`
+	Tag1Key              string           `position:"Query" name:"Tag.1.Key"`
 	Tag1Value            string           `position:"Query" name:"Tag.1.Value"`
 	Tag2Value            string           `position:"Query" name:"Tag.2.Value"`
+	Tag4Key              string           `position:"Query" name:"Tag.4.Key"`
+	DiskId               string           `position:"Query" name:"DiskId"`
 	Tag3Value            string           `position:"Query" name:"Tag.3.Value"`
-	Tag4Value            string           `position:"Query" name:"Tag.4.Value"`
-	Tag5Value            string           `position:"Query" name:"Tag.5.Value"`
 }
 
 // CreateSnapshotResponse is the response struct for api CreateSnapshot

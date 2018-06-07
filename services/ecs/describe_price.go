@@ -76,30 +76,30 @@ func (client *Client) DescribePriceWithCallback(request *DescribePriceRequest, c
 // DescribePriceRequest is the request struct for api DescribePrice
 type DescribePriceRequest struct {
 	*requests.RpcRequest
-	OwnerId                 requests.Integer `position:"Query" name:"OwnerId"`
-	OwnerAccount            string           `position:"Query" name:"OwnerAccount"`
-	ResourceOwnerAccount    string           `position:"Query" name:"ResourceOwnerAccount"`
+	DataDisk3Size           requests.Integer `position:"Query" name:"DataDisk.3.Size"`
 	ResourceOwnerId         requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceType            string           `position:"Query" name:"ResourceType"`
 	ImageId                 string           `position:"Query" name:"ImageId"`
-	InstanceType            string           `position:"Query" name:"InstanceType"`
+	DataDisk3Category       string           `position:"Query" name:"DataDisk.3.Category"`
 	IoOptimized             string           `position:"Query" name:"IoOptimized"`
-	InstanceNetworkType     string           `position:"Query" name:"InstanceNetworkType"`
-	InternetChargeType      string           `position:"Query" name:"InternetChargeType"`
 	InternetMaxBandwidthOut requests.Integer `position:"Query" name:"InternetMaxBandwidthOut"`
 	SystemDiskCategory      string           `position:"Query" name:"SystemDisk.Category"`
-	SystemDiskSize          requests.Integer `position:"Query" name:"SystemDisk.Size"`
-	DataDisk1Size           requests.Integer `position:"Query" name:"DataDisk.1.Size"`
-	DataDisk1Category       string           `position:"Query" name:"DataDisk.1.Category"`
-	DataDisk2Size           requests.Integer `position:"Query" name:"DataDisk.2.Size"`
-	DataDisk2Category       string           `position:"Query" name:"DataDisk.2.Category"`
-	DataDisk3Size           requests.Integer `position:"Query" name:"DataDisk.3.Size"`
-	DataDisk3Category       string           `position:"Query" name:"DataDisk.3.Category"`
-	DataDisk4Size           requests.Integer `position:"Query" name:"DataDisk.4.Size"`
 	DataDisk4Category       string           `position:"Query" name:"DataDisk.4.Category"`
-	Period                  requests.Integer `position:"Query" name:"Period"`
+	DataDisk4Size           requests.Integer `position:"Query" name:"DataDisk.4.Size"`
 	PriceUnit               string           `position:"Query" name:"PriceUnit"`
+	InstanceType            string           `position:"Query" name:"InstanceType"`
+	DataDisk2Category       string           `position:"Query" name:"DataDisk.2.Category"`
+	DataDisk1Size           requests.Integer `position:"Query" name:"DataDisk.1.Size"`
+	Period                  requests.Integer `position:"Query" name:"Period"`
 	Amount                  requests.Integer `position:"Query" name:"Amount"`
+	ResourceOwnerAccount    string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount            string           `position:"Query" name:"OwnerAccount"`
+	DataDisk2Size           requests.Integer `position:"Query" name:"DataDisk.2.Size"`
+	OwnerId                 requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceType            string           `position:"Query" name:"ResourceType"`
+	DataDisk1Category       string           `position:"Query" name:"DataDisk.1.Category"`
+	SystemDiskSize          requests.Integer `position:"Query" name:"SystemDisk.Size"`
+	InternetChargeType      string           `position:"Query" name:"InternetChargeType"`
+	InstanceNetworkType     string           `position:"Query" name:"InstanceNetworkType"`
 }
 
 // DescribePriceResponse is the response struct for api DescribePrice

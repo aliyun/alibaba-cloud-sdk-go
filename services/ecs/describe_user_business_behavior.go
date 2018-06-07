@@ -76,6 +76,11 @@ func (client *Client) DescribeUserBusinessBehaviorWithCallback(request *Describe
 // DescribeUserBusinessBehaviorRequest is the request struct for api DescribeUserBusinessBehavior
 type DescribeUserBusinessBehaviorRequest struct {
 	*requests.RpcRequest
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	StatusKey            string           `position:"Query" name:"statusKey"`
 }
 
 // DescribeUserBusinessBehaviorResponse is the response struct for api DescribeUserBusinessBehavior
