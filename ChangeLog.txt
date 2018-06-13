@@ -1,3 +1,11 @@
+2018-06-13 Version: 1.19.4
+1, Add API AddCasterEpisodeGroupContent,CreateCaster.
+2, Add Parameter fillMode for AddCasterLayout,ModifyCasterLayout.
+3, Add return value fillMode DescribeCasterLayouts.
+4, Update ErrorCode for StartCaster,StartCasterScene,DescribeCasters,CopyCaster.
+5, Update ErrorCode for ModifyCasterLayout,DeleteCasterLayout,DeleteLiveAppRecordConfig.
+6, Update ForbidLiveStream,DescribeLiveStreamsPublishList,DescribeLiveStreamsOnlineList.
+
 2018-06-13 Version: 1.19.3
 1, Add lifecycleHook.
 
