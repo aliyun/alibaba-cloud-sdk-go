@@ -76,9 +76,9 @@ func (client *Client) DescribeNotificationConfigurationsWithCallback(request *De
 // DescribeNotificationConfigurationsRequest is the request struct for api DescribeNotificationConfigurations
 type DescribeNotificationConfigurationsRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ScalingGroupId       string           `position:"Query" name:"ScalingGroupId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeNotificationConfigurationsResponse is the response struct for api DescribeNotificationConfigurations

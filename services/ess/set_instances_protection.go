@@ -76,10 +76,10 @@ func (client *Client) SetInstancesProtectionWithCallback(request *SetInstancesPr
 // SetInstancesProtectionRequest is the request struct for api SetInstancesProtection
 type SetInstancesProtectionRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	InstanceId           *[]string        `position:"Query" name:"InstanceId"  type:"Repeated"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ScalingGroupId       string           `position:"Query" name:"ScalingGroupId"`
-	InstanceId           *[]string        `position:"Query" name:"InstanceId"  type:"Repeated"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ProtectedFromScaleIn requests.Boolean `position:"Query" name:"ProtectedFromScaleIn"`
 }
 

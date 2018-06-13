@@ -76,11 +76,11 @@ func (client *Client) ModifyNotificationConfigurationWithCallback(request *Modif
 // ModifyNotificationConfigurationRequest is the request struct for api ModifyNotificationConfiguration
 type ModifyNotificationConfigurationRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ScalingGroupId       string           `position:"Query" name:"ScalingGroupId"`
 	NotificationArn      string           `position:"Query" name:"NotificationArn"`
 	NotificationType     *[]string        `position:"Query" name:"NotificationType"  type:"Repeated"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // ModifyNotificationConfigurationResponse is the response struct for api ModifyNotificationConfiguration

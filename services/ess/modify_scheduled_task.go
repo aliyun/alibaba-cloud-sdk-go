@@ -76,20 +76,20 @@ func (client *Client) ModifyScheduledTaskWithCallback(request *ModifyScheduledTa
 // ModifyScheduledTaskRequest is the request struct for api ModifyScheduledTask
 type ModifyScheduledTaskRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ScheduledTaskId      string           `position:"Query" name:"ScheduledTaskId"`
-	ScheduledTaskName    string           `position:"Query" name:"ScheduledTaskName"`
-	Description          string           `position:"Query" name:"Description"`
-	ScheduledAction      string           `position:"Query" name:"ScheduledAction"`
-	RecurrenceEndTime    string           `position:"Query" name:"RecurrenceEndTime"`
 	LaunchTime           string           `position:"Query" name:"LaunchTime"`
-	RecurrenceType       string           `position:"Query" name:"RecurrenceType"`
-	RecurrenceValue      string           `position:"Query" name:"RecurrenceValue"`
-	TaskEnabled          requests.Boolean `position:"Query" name:"TaskEnabled"`
-	LaunchExpirationTime requests.Integer `position:"Query" name:"LaunchExpirationTime"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ScheduledAction      string           `position:"Query" name:"ScheduledAction"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	Description          string           `position:"Query" name:"Description"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	RecurrenceValue      string           `position:"Query" name:"RecurrenceValue"`
+	LaunchExpirationTime requests.Integer `position:"Query" name:"LaunchExpirationTime"`
+	RecurrenceEndTime    string           `position:"Query" name:"RecurrenceEndTime"`
+	ScheduledTaskName    string           `position:"Query" name:"ScheduledTaskName"`
+	TaskEnabled          requests.Boolean `position:"Query" name:"TaskEnabled"`
+	ScheduledTaskId      string           `position:"Query" name:"ScheduledTaskId"`
+	RecurrenceType       string           `position:"Query" name:"RecurrenceType"`
 }
 
 // ModifyScheduledTaskResponse is the response struct for api ModifyScheduledTask

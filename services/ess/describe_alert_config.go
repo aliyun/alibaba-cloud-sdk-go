@@ -76,9 +76,9 @@ func (client *Client) DescribeAlertConfigWithCallback(request *DescribeAlertConf
 // DescribeAlertConfigRequest is the request struct for api DescribeAlertConfig
 type DescribeAlertConfigRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ScalingGroupId       string           `position:"Query" name:"ScalingGroupId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeAlertConfigResponse is the response struct for api DescribeAlertConfig

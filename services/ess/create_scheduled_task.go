@@ -76,18 +76,18 @@ func (client *Client) CreateScheduledTaskWithCallback(request *CreateScheduledTa
 // CreateScheduledTaskRequest is the request struct for api CreateScheduledTask
 type CreateScheduledTaskRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ScheduledTaskName    string           `position:"Query" name:"ScheduledTaskName"`
-	Description          string           `position:"Query" name:"Description"`
-	ScheduledAction      string           `position:"Query" name:"ScheduledAction"`
-	RecurrenceEndTime    string           `position:"Query" name:"RecurrenceEndTime"`
 	LaunchTime           string           `position:"Query" name:"LaunchTime"`
-	RecurrenceType       string           `position:"Query" name:"RecurrenceType"`
-	RecurrenceValue      string           `position:"Query" name:"RecurrenceValue"`
-	TaskEnabled          requests.Boolean `position:"Query" name:"TaskEnabled"`
-	LaunchExpirationTime requests.Integer `position:"Query" name:"LaunchExpirationTime"`
+	ScheduledAction      string           `position:"Query" name:"ScheduledAction"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	Description          string           `position:"Query" name:"Description"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	RecurrenceValue      string           `position:"Query" name:"RecurrenceValue"`
+	LaunchExpirationTime requests.Integer `position:"Query" name:"LaunchExpirationTime"`
+	RecurrenceEndTime    string           `position:"Query" name:"RecurrenceEndTime"`
+	ScheduledTaskName    string           `position:"Query" name:"ScheduledTaskName"`
+	TaskEnabled          requests.Boolean `position:"Query" name:"TaskEnabled"`
+	RecurrenceType       string           `position:"Query" name:"RecurrenceType"`
 }
 
 // CreateScheduledTaskResponse is the response struct for api CreateScheduledTask

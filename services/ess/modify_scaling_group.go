@@ -76,18 +76,19 @@ func (client *Client) ModifyScalingGroupWithCallback(request *ModifyScalingGroup
 // ModifyScalingGroupRequest is the request struct for api ModifyScalingGroup
 type ModifyScalingGroupRequest struct {
 	*requests.RpcRequest
-	OwnerId                      requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount         string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId              requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ScalingGroupId               string           `position:"Query" name:"ScalingGroupId"`
+	HealthCheckType              string           `position:"Query" name:"HealthCheckType"`
+	ResourceOwnerAccount         string           `position:"Query" name:"ResourceOwnerAccount"`
 	ScalingGroupName             string           `position:"Query" name:"ScalingGroupName"`
+	ScalingGroupId               string           `position:"Query" name:"ScalingGroupId"`
+	OwnerAccount                 string           `position:"Query" name:"OwnerAccount"`
+	ActiveScalingConfigurationId string           `position:"Query" name:"ActiveScalingConfigurationId"`
 	MinSize                      requests.Integer `position:"Query" name:"MinSize"`
+	OwnerId                      requests.Integer `position:"Query" name:"OwnerId"`
 	MaxSize                      requests.Integer `position:"Query" name:"MaxSize"`
 	DefaultCooldown              requests.Integer `position:"Query" name:"DefaultCooldown"`
 	RemovalPolicy1               string           `position:"Query" name:"RemovalPolicy.1"`
 	RemovalPolicy2               string           `position:"Query" name:"RemovalPolicy.2"`
-	ActiveScalingConfigurationId string           `position:"Query" name:"ActiveScalingConfigurationId"`
-	OwnerAccount                 string           `position:"Query" name:"OwnerAccount"`
 }
 
 // ModifyScalingGroupResponse is the response struct for api ModifyScalingGroup

@@ -76,11 +76,11 @@ func (client *Client) CreateNotificationConfigurationWithCallback(request *Creat
 // CreateNotificationConfigurationRequest is the request struct for api CreateNotificationConfiguration
 type CreateNotificationConfigurationRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ScalingGroupId       string           `position:"Query" name:"ScalingGroupId"`
 	NotificationArn      string           `position:"Query" name:"NotificationArn"`
 	NotificationType     *[]string        `position:"Query" name:"NotificationType"  type:"Repeated"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // CreateNotificationConfigurationResponse is the response struct for api CreateNotificationConfiguration

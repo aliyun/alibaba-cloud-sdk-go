@@ -76,14 +76,14 @@ func (client *Client) CreateScalingRuleWithCallback(request *CreateScalingRuleRe
 // CreateScalingRuleRequest is the request struct for api CreateScalingRule
 type CreateScalingRuleRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ScalingGroupId       string           `position:"Query" name:"ScalingGroupId"`
 	ScalingRuleName      string           `position:"Query" name:"ScalingRuleName"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	AdjustmentValue      requests.Integer `position:"Query" name:"AdjustmentValue"`
+	ScalingGroupId       string           `position:"Query" name:"ScalingGroupId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	Cooldown             requests.Integer `position:"Query" name:"Cooldown"`
 	AdjustmentType       string           `position:"Query" name:"AdjustmentType"`
-	AdjustmentValue      requests.Integer `position:"Query" name:"AdjustmentValue"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // CreateScalingRuleResponse is the response struct for api CreateScalingRule

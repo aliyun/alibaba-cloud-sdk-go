@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DescribeLimitation invokes the ess.DescribeLimitation API synchronously
-// api document: https://help.aliyun.com/api/ess/describelimitation.html
-func (client *Client) DescribeLimitation(request *DescribeLimitationRequest) (response *DescribeLimitationResponse, err error) {
-	response = CreateDescribeLimitationResponse()
+// DescribeAccountAttributes invokes the ess.DescribeAccountAttributes API synchronously
+// api document: https://help.aliyun.com/api/ess/describeaccountattributes.html
+func (client *Client) DescribeAccountAttributes(request *DescribeAccountAttributesRequest) (response *DescribeAccountAttributesResponse, err error) {
+	response = CreateDescribeAccountAttributesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DescribeLimitationWithChan invokes the ess.DescribeLimitation API asynchronously
-// api document: https://help.aliyun.com/api/ess/describelimitation.html
+// DescribeAccountAttributesWithChan invokes the ess.DescribeAccountAttributes API asynchronously
+// api document: https://help.aliyun.com/api/ess/describeaccountattributes.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DescribeLimitationWithChan(request *DescribeLimitationRequest) (<-chan *DescribeLimitationResponse, <-chan error) {
-	responseChan := make(chan *DescribeLimitationResponse, 1)
+func (client *Client) DescribeAccountAttributesWithChan(request *DescribeAccountAttributesRequest) (<-chan *DescribeAccountAttributesResponse, <-chan error) {
+	responseChan := make(chan *DescribeAccountAttributesResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DescribeLimitation(request)
+		response, err := client.DescribeAccountAttributes(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) DescribeLimitationWithChan(request *DescribeLimitationRequ
 	return responseChan, errChan
 }
 
-// DescribeLimitationWithCallback invokes the ess.DescribeLimitation API asynchronously
-// api document: https://help.aliyun.com/api/ess/describelimitation.html
+// DescribeAccountAttributesWithCallback invokes the ess.DescribeAccountAttributes API asynchronously
+// api document: https://help.aliyun.com/api/ess/describeaccountattributes.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DescribeLimitationWithCallback(request *DescribeLimitationRequest, callback func(response *DescribeLimitationResponse, err error)) <-chan int {
+func (client *Client) DescribeAccountAttributesWithCallback(request *DescribeAccountAttributesRequest, callback func(response *DescribeAccountAttributesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DescribeLimitationResponse
+		var response *DescribeAccountAttributesResponse
 		var err error
 		defer close(result)
-		response, err = client.DescribeLimitation(request)
+		response, err = client.DescribeAccountAttributes(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,15 +73,15 @@ func (client *Client) DescribeLimitationWithCallback(request *DescribeLimitation
 	return result
 }
 
-// DescribeLimitationRequest is the request struct for api DescribeLimitation
-type DescribeLimitationRequest struct {
+// DescribeAccountAttributesRequest is the request struct for api DescribeAccountAttributes
+type DescribeAccountAttributesRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
-// DescribeLimitationResponse is the response struct for api DescribeLimitation
-type DescribeLimitationResponse struct {
+// DescribeAccountAttributesResponse is the response struct for api DescribeAccountAttributes
+type DescribeAccountAttributesResponse struct {
 	*responses.BaseResponse
 	MaxNumberOfScalingGroups         int `json:"MaxNumberOfScalingGroups" xml:"MaxNumberOfScalingGroups"`
 	MaxNumberOfScalingConfigurations int `json:"MaxNumberOfScalingConfigurations" xml:"MaxNumberOfScalingConfigurations"`
@@ -94,18 +94,18 @@ type DescribeLimitationResponse struct {
 	MaxNumberOfMaxSize               int `json:"MaxNumberOfMaxSize" xml:"MaxNumberOfMaxSize"`
 }
 
-// CreateDescribeLimitationRequest creates a request to invoke DescribeLimitation API
-func CreateDescribeLimitationRequest() (request *DescribeLimitationRequest) {
-	request = &DescribeLimitationRequest{
+// CreateDescribeAccountAttributesRequest creates a request to invoke DescribeAccountAttributes API
+func CreateDescribeAccountAttributesRequest() (request *DescribeAccountAttributesRequest) {
+	request = &DescribeAccountAttributesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ess", "2014-08-28", "DescribeLimitation", "ess", "openAPI")
+	request.InitWithApiInfo("Ess", "2014-08-28", "DescribeAccountAttributes", "ess", "openAPI")
 	return
 }
 
-// CreateDescribeLimitationResponse creates a response to parse from DescribeLimitation response
-func CreateDescribeLimitationResponse() (response *DescribeLimitationResponse) {
-	response = &DescribeLimitationResponse{
+// CreateDescribeAccountAttributesResponse creates a response to parse from DescribeAccountAttributes response
+func CreateDescribeAccountAttributesResponse() (response *DescribeAccountAttributesResponse) {
+	response = &DescribeAccountAttributesResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

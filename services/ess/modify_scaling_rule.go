@@ -76,15 +76,15 @@ func (client *Client) ModifyScalingRuleWithCallback(request *ModifyScalingRuleRe
 // ModifyScalingRuleRequest is the request struct for api ModifyScalingRule
 type ModifyScalingRuleRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ScalingRuleId        string           `position:"Query" name:"ScalingRuleId"`
 	ScalingRuleName      string           `position:"Query" name:"ScalingRuleName"`
-	Cooldown             requests.Integer `position:"Query" name:"Cooldown"`
-	AdjustmentType       string           `position:"Query" name:"AdjustmentType"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	AdjustmentValue      requests.Integer `position:"Query" name:"AdjustmentValue"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	Cooldown             requests.Integer `position:"Query" name:"Cooldown"`
+	AdjustmentType       string           `position:"Query" name:"AdjustmentType"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ScalingRuleId        string           `position:"Query" name:"ScalingRuleId"`
 }
 
 // ModifyScalingRuleResponse is the response struct for api ModifyScalingRule

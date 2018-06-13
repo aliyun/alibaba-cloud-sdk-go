@@ -76,10 +76,10 @@ func (client *Client) EnterStandbyWithCallback(request *EnterStandbyRequest, cal
 // EnterStandbyRequest is the request struct for api EnterStandby
 type EnterStandbyRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	InstanceId           *[]string        `position:"Query" name:"InstanceId"  type:"Repeated"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ScalingGroupId       string           `position:"Query" name:"ScalingGroupId"`
-	InstanceId           *[]string        `position:"Query" name:"InstanceId"  type:"Repeated"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // EnterStandbyResponse is the response struct for api EnterStandby

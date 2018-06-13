@@ -76,50 +76,50 @@ func (client *Client) CreateScalingConfigurationWithCallback(request *CreateScal
 // CreateScalingConfigurationRequest is the request struct for api CreateScalingConfiguration
 type CreateScalingConfigurationRequest struct {
 	*requests.RpcRequest
-	OwnerId                     requests.Integer                    `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount        string                              `position:"Query" name:"ResourceOwnerAccount"`
-	ScalingGroupId              string                              `position:"Query" name:"ScalingGroupId"`
-	ImageId                     string                              `position:"Query" name:"ImageId"`
-	InstanceType                string                              `position:"Query" name:"InstanceType"`
-	InstanceTypes               *[]string                           `position:"Query" name:"InstanceTypes"  type:"Repeated"`
-	SecurityGroupId             string                              `position:"Query" name:"SecurityGroupId"`
-	IoOptimized                 string                              `position:"Query" name:"IoOptimized"`
-	InternetChargeType          string                              `position:"Query" name:"InternetChargeType"`
-	InternetMaxBandwidthIn      requests.Integer                    `position:"Query" name:"InternetMaxBandwidthIn"`
-	InternetMaxBandwidthOut     requests.Integer                    `position:"Query" name:"InternetMaxBandwidthOut"`
-	SystemDiskCategory          string                              `position:"Query" name:"SystemDisk.Category"`
-	SystemDiskSize              requests.Integer                    `position:"Query" name:"SystemDisk.Size"`
-	ScalingConfigurationName    string                              `position:"Query" name:"ScalingConfigurationName"`
-	DataDisk1Size               requests.Integer                    `position:"Query" name:"DataDisk.1.Size"`
-	DataDisk2Size               requests.Integer                    `position:"Query" name:"DataDisk.2.Size"`
 	DataDisk3Size               requests.Integer                    `position:"Query" name:"DataDisk.3.Size"`
-	DataDisk4Size               requests.Integer                    `position:"Query" name:"DataDisk.4.Size"`
-	DataDisk1Category           string                              `position:"Query" name:"DataDisk.1.Category"`
-	DataDisk2Category           string                              `position:"Query" name:"DataDisk.2.Category"`
-	DataDisk3Category           string                              `position:"Query" name:"DataDisk.3.Category"`
-	DataDisk4Category           string                              `position:"Query" name:"DataDisk.4.Category"`
+	ImageId                     string                              `position:"Query" name:"ImageId"`
 	DataDisk1SnapshotId         string                              `position:"Query" name:"DataDisk.1.SnapshotId"`
-	DataDisk2SnapshotId         string                              `position:"Query" name:"DataDisk.2.SnapshotId"`
-	DataDisk3SnapshotId         string                              `position:"Query" name:"DataDisk.3.SnapshotId"`
-	DataDisk4SnapshotId         string                              `position:"Query" name:"DataDisk.4.SnapshotId"`
+	DataDisk3Category           string                              `position:"Query" name:"DataDisk.3.Category"`
 	DataDisk1Device             string                              `position:"Query" name:"DataDisk.1.Device"`
+	ScalingGroupId              string                              `position:"Query" name:"ScalingGroupId"`
 	DataDisk2Device             string                              `position:"Query" name:"DataDisk.2.Device"`
-	DataDisk3Device             string                              `position:"Query" name:"DataDisk.3.Device"`
-	DataDisk4Device             string                              `position:"Query" name:"DataDisk.4.Device"`
-	DataDisk1DeleteWithInstance string                              `position:"Query" name:"DataDisk.1.DeleteWithInstance"`
-	DataDisk2DeleteWithInstance string                              `position:"Query" name:"DataDisk.2.DeleteWithInstance"`
-	DataDisk3DeleteWithInstance string                              `position:"Query" name:"DataDisk.3.DeleteWithInstance"`
-	DataDisk4DeleteWithInstance string                              `position:"Query" name:"DataDisk.4.DeleteWithInstance"`
-	LoadBalancerWeight          requests.Integer                    `position:"Query" name:"LoadBalancerWeight"`
-	OwnerAccount                string                              `position:"Query" name:"OwnerAccount"`
-	Tags                        string                              `position:"Query" name:"Tags"`
-	UserData                    string                              `position:"Query" name:"UserData"`
-	KeyPairName                 string                              `position:"Query" name:"KeyPairName"`
-	RamRoleName                 string                              `position:"Query" name:"RamRoleName"`
+	InstanceTypes               *[]string                           `position:"Query" name:"InstanceTypes"  type:"Repeated"`
+	IoOptimized                 string                              `position:"Query" name:"IoOptimized"`
+	SecurityGroupId             string                              `position:"Query" name:"SecurityGroupId"`
+	InternetMaxBandwidthOut     requests.Integer                    `position:"Query" name:"InternetMaxBandwidthOut"`
 	SecurityEnhancementStrategy string                              `position:"Query" name:"SecurityEnhancementStrategy"`
-	InstanceName                string                              `position:"Query" name:"InstanceName"`
-	SpotStrategy                string                              `position:"Query" name:"SpotStrategy"`
+	KeyPairName                 string                              `position:"Query" name:"KeyPairName"`
 	SpotPriceLimit              *[]CreateScalingConfigurationString `position:"Query" name:"SpotPriceLimit"  type:"Repeated"`
+	SystemDiskCategory          string                              `position:"Query" name:"SystemDisk.Category"`
+	UserData                    string                              `position:"Query" name:"UserData"`
+	DataDisk4Category           string                              `position:"Query" name:"DataDisk.4.Category"`
+	DataDisk2SnapshotId         string                              `position:"Query" name:"DataDisk.2.SnapshotId"`
+	DataDisk4Size               requests.Integer                    `position:"Query" name:"DataDisk.4.Size"`
+	InstanceType                string                              `position:"Query" name:"InstanceType"`
+	DataDisk2Category           string                              `position:"Query" name:"DataDisk.2.Category"`
+	DataDisk1Size               requests.Integer                    `position:"Query" name:"DataDisk.1.Size"`
+	DataDisk3SnapshotId         string                              `position:"Query" name:"DataDisk.3.SnapshotId"`
+	ResourceOwnerAccount        string                              `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount                string                              `position:"Query" name:"OwnerAccount"`
+	DataDisk2Size               requests.Integer                    `position:"Query" name:"DataDisk.2.Size"`
+	RamRoleName                 string                              `position:"Query" name:"RamRoleName"`
+	OwnerId                     requests.Integer                    `position:"Query" name:"OwnerId"`
+	ScalingConfigurationName    string                              `position:"Query" name:"ScalingConfigurationName"`
+	Tags                        string                              `position:"Query" name:"Tags"`
+	DataDisk2DeleteWithInstance string                              `position:"Query" name:"DataDisk.2.DeleteWithInstance"`
+	SpotStrategy                string                              `position:"Query" name:"SpotStrategy"`
+	DataDisk1Category           string                              `position:"Query" name:"DataDisk.1.Category"`
+	DataDisk3DeleteWithInstance string                              `position:"Query" name:"DataDisk.3.DeleteWithInstance"`
+	LoadBalancerWeight          requests.Integer                    `position:"Query" name:"LoadBalancerWeight"`
+	InstanceName                string                              `position:"Query" name:"InstanceName"`
+	SystemDiskSize              requests.Integer                    `position:"Query" name:"SystemDisk.Size"`
+	DataDisk4SnapshotId         string                              `position:"Query" name:"DataDisk.4.SnapshotId"`
+	DataDisk4Device             string                              `position:"Query" name:"DataDisk.4.Device"`
+	InternetChargeType          string                              `position:"Query" name:"InternetChargeType"`
+	DataDisk3Device             string                              `position:"Query" name:"DataDisk.3.Device"`
+	DataDisk4DeleteWithInstance string                              `position:"Query" name:"DataDisk.4.DeleteWithInstance"`
+	InternetMaxBandwidthIn      requests.Integer                    `position:"Query" name:"InternetMaxBandwidthIn"`
+	DataDisk1DeleteWithInstance string                              `position:"Query" name:"DataDisk.1.DeleteWithInstance"`
 }
 
 // CreateScalingConfigurationString is a repeated param struct in CreateScalingConfigurationRequest

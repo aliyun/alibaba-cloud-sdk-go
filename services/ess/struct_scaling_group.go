@@ -36,6 +36,7 @@ type ScalingGroup struct {
 	VpcId                        string          `json:"VpcId" xml:"VpcId"`
 	VSwitchId                    string          `json:"VSwitchId" xml:"VSwitchId"`
 	MultiAZPolicy                string          `json:"MultiAZPolicy" xml:"MultiAZPolicy"`
+	HealthCheckType              string          `json:"HealthCheckType" xml:"HealthCheckType"`
 	VSwitchIds                   VSwitchIds      `json:"VSwitchIds" xml:"VSwitchIds"`
 	RemovalPolicies              RemovalPolicies `json:"RemovalPolicies" xml:"RemovalPolicies"`
 	DBInstanceIds                DBInstanceIds   `json:"DBInstanceIds" xml:"DBInstanceIds"`

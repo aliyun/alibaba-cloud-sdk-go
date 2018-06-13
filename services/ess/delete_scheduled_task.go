@@ -76,10 +76,10 @@ func (client *Client) DeleteScheduledTaskWithCallback(request *DeleteScheduledTa
 // DeleteScheduledTaskRequest is the request struct for api DeleteScheduledTask
 type DeleteScheduledTaskRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ScheduledTaskId      string           `position:"Query" name:"ScheduledTaskId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ScheduledTaskId      string           `position:"Query" name:"ScheduledTaskId"`
 }
 
 // DeleteScheduledTaskResponse is the response struct for api DeleteScheduledTask
