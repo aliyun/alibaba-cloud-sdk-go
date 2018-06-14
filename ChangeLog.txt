@@ -1,3 +1,6 @@
+2018-06-14 Version: 1.19.5
+1, Add passwordInherit.
+
 2018-06-13 Version: 1.19.4
 1, Add API AddCasterEpisodeGroupContent,CreateCaster.
 2, Add Parameter fillMode for AddCasterLayout,ModifyCasterLayout.

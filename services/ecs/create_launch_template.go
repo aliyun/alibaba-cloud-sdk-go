@@ -78,24 +78,31 @@ type CreateLaunchTemplateRequest struct {
 	*requests.RpcRequest
 	LaunchTemplateName          string                                  `position:"Query" name:"LaunchTemplateName"`
 	ResourceOwnerId             requests.Integer                        `position:"Query" name:"ResourceOwnerId"`
+	TemplateTag4Key             string                                  `position:"Query" name:"TemplateTag.4.Key"`
 	SecurityEnhancementStrategy string                                  `position:"Query" name:"SecurityEnhancementStrategy"`
 	NetworkType                 string                                  `position:"Query" name:"NetworkType"`
 	KeyPairName                 string                                  `position:"Query" name:"KeyPairName"`
 	SpotPriceLimit              requests.Float                          `position:"Query" name:"SpotPriceLimit"`
 	ImageOwnerAlias             string                                  `position:"Query" name:"ImageOwnerAlias"`
 	ResourceGroupId             string                                  `position:"Query" name:"ResourceGroupId"`
+	TemplateTag3Key             string                                  `position:"Query" name:"TemplateTag.3.Key"`
 	HostName                    string                                  `position:"Query" name:"HostName"`
 	SystemDiskIops              requests.Integer                        `position:"Query" name:"SystemDisk.Iops"`
+	TemplateTag3Value           string                                  `position:"Query" name:"TemplateTag.3.Value"`
 	Tag                         *[]CreateLaunchTemplateTag              `position:"Query" name:"Tag"  type:"Repeated"`
 	Period                      requests.Integer                        `position:"Query" name:"Period"`
+	TemplateResourceGroupId     string                                  `position:"Query" name:"TemplateResourceGroupId"`
+	TemplateTag2Value           string                                  `position:"Query" name:"TemplateTag.2.Value"`
 	OwnerId                     requests.Integer                        `position:"Query" name:"OwnerId"`
 	VSwitchId                   string                                  `position:"Query" name:"VSwitchId"`
 	SpotStrategy                string                                  `position:"Query" name:"SpotStrategy"`
 	InstanceName                string                                  `position:"Query" name:"InstanceName"`
 	InternetChargeType          string                                  `position:"Query" name:"InternetChargeType"`
+	TemplateTag5Key             string                                  `position:"Query" name:"TemplateTag.5.Key"`
 	ZoneId                      string                                  `position:"Query" name:"ZoneId"`
 	InternetMaxBandwidthIn      requests.Integer                        `position:"Query" name:"InternetMaxBandwidthIn"`
 	VersionDescription          string                                  `position:"Query" name:"VersionDescription"`
+	TemplateTag1Value           string                                  `position:"Query" name:"TemplateTag.1.Value"`
 	ImageId                     string                                  `position:"Query" name:"ImageId"`
 	IoOptimized                 string                                  `position:"Query" name:"IoOptimized"`
 	SecurityGroupId             string                                  `position:"Query" name:"SecurityGroupId"`
@@ -103,10 +110,12 @@ type CreateLaunchTemplateRequest struct {
 	Description                 string                                  `position:"Query" name:"Description"`
 	SystemDiskCategory          string                                  `position:"Query" name:"SystemDisk.Category"`
 	UserData                    string                                  `position:"Query" name:"UserData"`
+	TemplateTag5Value           string                                  `position:"Query" name:"TemplateTag.5.Value"`
 	InstanceType                string                                  `position:"Query" name:"InstanceType"`
 	InstanceChargeType          string                                  `position:"Query" name:"InstanceChargeType"`
 	EnableVmOsConfig            requests.Boolean                        `position:"Query" name:"EnableVmOsConfig"`
 	NetworkInterface            *[]CreateLaunchTemplateNetworkInterface `position:"Query" name:"NetworkInterface"  type:"Repeated"`
+	TemplateTag2Key             string                                  `position:"Query" name:"TemplateTag.2.Key"`
 	ResourceOwnerAccount        string                                  `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount                string                                  `position:"Query" name:"OwnerAccount"`
 	SystemDiskDiskName          string                                  `position:"Query" name:"SystemDisk.DiskName"`
@@ -114,8 +123,10 @@ type CreateLaunchTemplateRequest struct {
 	AutoReleaseTime             string                                  `position:"Query" name:"AutoReleaseTime"`
 	SpotDuration                requests.Integer                        `position:"Query" name:"SpotDuration"`
 	DataDisk                    *[]CreateLaunchTemplateDataDisk         `position:"Query" name:"DataDisk"  type:"Repeated"`
+	TemplateTag4Value           string                                  `position:"Query" name:"TemplateTag.4.Value"`
 	SystemDiskSize              requests.Integer                        `position:"Query" name:"SystemDisk.Size"`
 	VpcId                       string                                  `position:"Query" name:"VpcId"`
+	TemplateTag1Key             string                                  `position:"Query" name:"TemplateTag.1.Key"`
 	SystemDiskDescription       string                                  `position:"Query" name:"SystemDisk.Description"`
 }
 

@@ -82,6 +82,7 @@ type RunInstancesRequest struct {
 	SecurityEnhancementStrategy string                          `position:"Query" name:"SecurityEnhancementStrategy"`
 	KeyPairName                 string                          `position:"Query" name:"KeyPairName"`
 	SpotPriceLimit              requests.Float                  `position:"Query" name:"SpotPriceLimit"`
+	ResourceGroupId             string                          `position:"Query" name:"ResourceGroupId"`
 	HostName                    string                          `position:"Query" name:"HostName"`
 	Password                    string                          `position:"Query" name:"Password"`
 	Tag                         *[]RunInstancesTag              `position:"Query" name:"Tag"  type:"Repeated"`
@@ -103,6 +104,7 @@ type RunInstancesRequest struct {
 	Description                 string                          `position:"Query" name:"Description"`
 	SystemDiskCategory          string                          `position:"Query" name:"SystemDisk.Category"`
 	UserData                    string                          `position:"Query" name:"UserData"`
+	PasswordInherit             requests.Boolean                `position:"Query" name:"PasswordInherit"`
 	InstanceType                string                          `position:"Query" name:"InstanceType"`
 	NetworkInterface            *[]RunInstancesNetworkInterface `position:"Query" name:"NetworkInterface"  type:"Repeated"`
 	Amount                      requests.Integer                `position:"Query" name:"Amount"`

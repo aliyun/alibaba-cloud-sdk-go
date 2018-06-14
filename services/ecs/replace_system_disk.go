@@ -87,6 +87,7 @@ type ReplaceSystemDiskRequest struct {
 	Platform                    string           `position:"Query" name:"Platform"`
 	Password                    string           `position:"Query" name:"Password"`
 	InstanceId                  string           `position:"Query" name:"InstanceId"`
+	PasswordInherit             requests.Boolean `position:"Query" name:"PasswordInherit"`
 	SystemDiskSize              requests.Integer `position:"Query" name:"SystemDisk.Size"`
 	DiskId                      string           `position:"Query" name:"DiskId"`
 	UseAdditionalService        requests.Boolean `position:"Query" name:"UseAdditionalService"`

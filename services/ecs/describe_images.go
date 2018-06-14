@@ -87,6 +87,7 @@ type DescribeImagesRequest struct {
 	PageNumber           requests.Integer        `position:"Query" name:"PageNumber"`
 	ImageOwnerAlias      string                  `position:"Query" name:"ImageOwnerAlias"`
 	Tag1Value            string                  `position:"Query" name:"Tag.1.Value"`
+	ResourceGroupId      string                  `position:"Query" name:"ResourceGroupId"`
 	IsSupportIoOptimized requests.Boolean        `position:"Query" name:"IsSupportIoOptimized"`
 	ImageName            string                  `position:"Query" name:"ImageName"`
 	IsSupportCloudinit   requests.Boolean        `position:"Query" name:"IsSupportCloudinit"`

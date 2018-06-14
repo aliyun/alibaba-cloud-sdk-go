@@ -76,17 +76,28 @@ func (client *Client) DescribeNetworkInterfacesWithCallback(request *DescribeNet
 // DescribeNetworkInterfacesRequest is the request struct for api DescribeNetworkInterfaces
 type DescribeNetworkInterfacesRequest struct {
 	*requests.RpcRequest
+	Tag4Value            string           `position:"Query" name:"Tag.4.Value"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Tag2Key              string           `position:"Query" name:"Tag.2.Key"`
 	SecurityGroupId      string           `position:"Query" name:"SecurityGroupId"`
+	Tag3Key              string           `position:"Query" name:"Tag.3.Key"`
 	Type                 string           `position:"Query" name:"Type"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	Tag1Value            string           `position:"Query" name:"Tag.1.Value"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	Tag3Value            string           `position:"Query" name:"Tag.3.Value"`
 	NetworkInterfaceName string           `position:"Query" name:"NetworkInterfaceName"`
+	Tag5Key              string           `position:"Query" name:"Tag.5.Key"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Tag5Value            string           `position:"Query" name:"Tag.5.Value"`
+	Tag1Key              string           `position:"Query" name:"Tag.1.Key"`
 	VSwitchId            string           `position:"Query" name:"VSwitchId"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
+	Tag2Value            string           `position:"Query" name:"Tag.2.Value"`
+	Tag4Key              string           `position:"Query" name:"Tag.4.Key"`
 	PrimaryIpAddress     string           `position:"Query" name:"PrimaryIpAddress"`
 	NetworkInterfaceId   *[]string        `position:"Query" name:"NetworkInterfaceId"  type:"Repeated"`
 }

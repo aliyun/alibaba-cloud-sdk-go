@@ -86,6 +86,7 @@ type CreateImageRequest struct {
 	Tag3Key              string                          `position:"Query" name:"Tag.3.Key"`
 	Platform             string                          `position:"Query" name:"Platform"`
 	Tag1Value            string                          `position:"Query" name:"Tag.1.Value"`
+	ResourceGroupId      string                          `position:"Query" name:"ResourceGroupId"`
 	ImageName            string                          `position:"Query" name:"ImageName"`
 	Tag3Value            string                          `position:"Query" name:"Tag.3.Value"`
 	Architecture         string                          `position:"Query" name:"Architecture"`

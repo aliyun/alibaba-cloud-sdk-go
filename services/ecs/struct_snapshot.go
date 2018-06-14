@@ -31,5 +31,6 @@ type Snapshot struct {
 	Status            string                  `json:"Status" xml:"Status"`
 	Usage             string                  `json:"Usage" xml:"Usage"`
 	SourceStorageType string                  `json:"SourceStorageType" xml:"SourceStorageType"`
+	RemainTime        int                     `json:"RemainTime" xml:"RemainTime"`
 	Tags              TagsInDescribeSnapshots `json:"Tags" xml:"Tags"`
 }
