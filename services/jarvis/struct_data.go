@@ -43,6 +43,7 @@ type Data struct {
 	Status           string                 `json:"Status" xml:"Status"`
 	GmtRealExpire    string                 `json:"GmtRealExpire" xml:"GmtRealExpire"`
 	SrcUid           string                 `json:"SrcUid" xml:"SrcUid"`
+	InstanceList     []string               `json:"InstanceList" xml:"InstanceList"`
 	Items            []Item                 `json:"Items" xml:"Items"`
 	RdsWhitelistRisk []RdsWhitelistRiskItem `json:"RdsWhitelistRisk" xml:"RdsWhitelistRisk"`
 	EcsSecGroupRisk  []EcsSecGroupRiskItem  `json:"EcsSecGroupRisk" xml:"EcsSecGroupRisk"`
