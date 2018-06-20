@@ -1,3 +1,6 @@
+2018-06-20 Version: 1.20.1
+1, Add InstanceList in product security information query.
+
 2018-06-20 Version: 1.20.0
 1, This is the first version of jarvis-public.
 
