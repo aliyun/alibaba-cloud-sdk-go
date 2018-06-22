@@ -1,3 +1,7 @@
+2018-06-22 Version: 1.20.5
+1, rtc openapi
+
+
 2018-06-22 Version: 1.20.4
 1, Add new API: DeleteGroupDynamicRule,ListGroupDynamicRule,ApplyTemplate,PutGroupDynamicRule.
 2, Add parameter(AlertIds) for CreateTask and ModifyTask.
