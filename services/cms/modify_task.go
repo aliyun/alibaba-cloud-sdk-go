@@ -78,6 +78,7 @@ type ModifyTaskRequest struct {
 	*requests.RpcRequest
 	Address   string `position:"Query" name:"Address"`
 	IspCity   string `position:"Query" name:"IspCity"`
+	AlertIds  string `position:"Query" name:"AlertIds"`
 	Options   string `position:"Query" name:"Options"`
 	TaskName  string `position:"Query" name:"TaskName"`
 	Interval  string `position:"Query" name:"Interval"`

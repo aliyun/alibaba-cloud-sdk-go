@@ -93,7 +93,7 @@ type TaskConfigCreateResponse struct {
 	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
 	Success      bool   `json:"Success" xml:"Success"`
 	RequestId    string `json:"RequestId" xml:"RequestId"`
-	TaskId       int    `json:"taskId" xml:"taskId"`
+	TaskId       int    `json:"TaskId" xml:"TaskId"`
 }
 
 // CreateTaskConfigCreateRequest creates a request to invoke TaskConfigCreate API

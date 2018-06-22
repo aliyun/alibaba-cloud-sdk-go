@@ -86,7 +86,7 @@ type TaskConfigUnhealthyResponse struct {
 	ErrorMessage  string        `json:"ErrorMessage" xml:"ErrorMessage"`
 	Success       bool          `json:"Success" xml:"Success"`
 	RequestId     string        `json:"RequestId" xml:"RequestId"`
-	UnhealthyList UnhealthyList `json:"unhealthyList" xml:"unhealthyList"`
+	UnhealthyList UnhealthyList `json:"UnhealthyList" xml:"UnhealthyList"`
 }
 
 // CreateTaskConfigUnhealthyRequest creates a request to invoke TaskConfigUnhealthy API

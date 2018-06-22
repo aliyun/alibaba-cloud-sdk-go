@@ -78,8 +78,8 @@ type CreateMyGroupsRequest struct {
 	*requests.RpcRequest
 	ContactGroups string           `position:"Query" name:"ContactGroups"`
 	Options       string           `position:"Query" name:"Options"`
-	ServiceId     requests.Integer `position:"Query" name:"ServiceId"`
 	Type          string           `position:"Query" name:"Type"`
+	ServiceId     requests.Integer `position:"Query" name:"ServiceId"`
 	GroupName     string           `position:"Query" name:"GroupName"`
 	BindUrl       string           `position:"Query" name:"BindUrl"`
 }
