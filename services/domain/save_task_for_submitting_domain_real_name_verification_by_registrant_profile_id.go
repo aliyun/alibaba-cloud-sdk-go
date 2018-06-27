@@ -76,11 +76,11 @@ func (client *Client) SaveTaskForSubmittingDomainRealNameVerificationByRegistran
 // SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileIDRequest is the request struct for api SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileID
 type SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileIDRequest struct {
 	*requests.RpcRequest
-	UserClientIp        string           `position:"Query" name:"UserClientIp"`
-	Lang                string           `position:"Query" name:"Lang"`
-	DomainName          string           `position:"Query" name:"DomainName"`
 	InstanceId          string           `position:"Query" name:"InstanceId"`
+	UserClientIp        string           `position:"Query" name:"UserClientIp"`
+	DomainName          string           `position:"Query" name:"DomainName"`
 	RegistrantProfileId requests.Integer `position:"Query" name:"RegistrantProfileId"`
+	Lang                string           `position:"Query" name:"Lang"`
 }
 
 // SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileIDResponse is the response struct for api SaveTaskForSubmittingDomainRealNameVerificationByRegistrantProfileID

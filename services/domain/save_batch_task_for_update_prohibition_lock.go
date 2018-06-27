@@ -77,8 +77,8 @@ func (client *Client) SaveBatchTaskForUpdateProhibitionLockWithCallback(request 
 type SaveBatchTaskForUpdateProhibitionLockRequest struct {
 	*requests.RpcRequest
 	UserClientIp string           `position:"Query" name:"UserClientIp"`
-	Lang         string           `position:"Query" name:"Lang"`
 	DomainName   *[]string        `position:"Query" name:"DomainName"  type:"Repeated"`
+	Lang         string           `position:"Query" name:"Lang"`
 	Status       requests.Boolean `position:"Query" name:"Status"`
 }
 

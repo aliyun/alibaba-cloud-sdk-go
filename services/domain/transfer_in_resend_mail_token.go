@@ -77,8 +77,8 @@ func (client *Client) TransferInResendMailTokenWithCallback(request *TransferInR
 type TransferInResendMailTokenRequest struct {
 	*requests.RpcRequest
 	DomainName   string `position:"Query" name:"DomainName"`
-	Lang         string `position:"Query" name:"Lang"`
 	UserClientIp string `position:"Query" name:"UserClientIp"`
+	Lang         string `position:"Query" name:"Lang"`
 }
 
 // TransferInResendMailTokenResponse is the response struct for api TransferInResendMailToken

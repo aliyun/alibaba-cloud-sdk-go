@@ -76,12 +76,12 @@ func (client *Client) SaveBatchTaskForUpdatingContactInfoByRegistrantProfileIdWi
 // SaveBatchTaskForUpdatingContactInfoByRegistrantProfileIdRequest is the request struct for api SaveBatchTaskForUpdatingContactInfoByRegistrantProfileId
 type SaveBatchTaskForUpdatingContactInfoByRegistrantProfileIdRequest struct {
 	*requests.RpcRequest
-	UserClientIp          string           `position:"Query" name:"UserClientIp"`
-	Lang                  string           `position:"Query" name:"Lang"`
-	RegistrantProfileId   requests.Integer `position:"Query" name:"RegistrantProfileId"`
 	ContactType           string           `position:"Query" name:"ContactType"`
-	TransferOutProhibited requests.Boolean `position:"Query" name:"TransferOutProhibited"`
+	UserClientIp          string           `position:"Query" name:"UserClientIp"`
+	RegistrantProfileId   requests.Integer `position:"Query" name:"RegistrantProfileId"`
 	DomainName            *[]string        `position:"Query" name:"DomainName"  type:"Repeated"`
+	TransferOutProhibited requests.Boolean `position:"Query" name:"TransferOutProhibited"`
+	Lang                  string           `position:"Query" name:"Lang"`
 }
 
 // SaveBatchTaskForUpdatingContactInfoByRegistrantProfileIdResponse is the response struct for api SaveBatchTaskForUpdatingContactInfoByRegistrantProfileId

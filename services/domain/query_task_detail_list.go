@@ -76,14 +76,14 @@ func (client *Client) QueryTaskDetailListWithCallback(request *QueryTaskDetailLi
 // QueryTaskDetailListRequest is the request struct for api QueryTaskDetailList
 type QueryTaskDetailListRequest struct {
 	*requests.RpcRequest
+	TaskStatus   requests.Integer `position:"Query" name:"TaskStatus"`
+	InstanceId   string           `position:"Query" name:"InstanceId"`
 	UserClientIp string           `position:"Query" name:"UserClientIp"`
-	Lang         string           `position:"Query" name:"Lang"`
 	TaskNo       string           `position:"Query" name:"TaskNo"`
 	DomainName   string           `position:"Query" name:"DomainName"`
-	InstanceId   string           `position:"Query" name:"InstanceId"`
-	TaskStatus   requests.Integer `position:"Query" name:"TaskStatus"`
-	PageNum      requests.Integer `position:"Query" name:"PageNum"`
 	PageSize     requests.Integer `position:"Query" name:"PageSize"`
+	Lang         string           `position:"Query" name:"Lang"`
+	PageNum      requests.Integer `position:"Query" name:"PageNum"`
 }
 
 // QueryTaskDetailListResponse is the response struct for api QueryTaskDetailList

@@ -76,10 +76,10 @@ func (client *Client) QueryBrokerDemandWithCallback(request *QueryBrokerDemandRe
 // QueryBrokerDemandRequest is the request struct for api QueryBrokerDemand
 type QueryBrokerDemandRequest struct {
 	*requests.RpcRequest
-	Status      string           `position:"Query" name:"Status"`
-	CurrentPage requests.Integer `position:"Query" name:"CurrentPage"`
 	PageSize    requests.Integer `position:"Query" name:"PageSize"`
 	BizId       string           `position:"Query" name:"BizId"`
+	CurrentPage requests.Integer `position:"Query" name:"CurrentPage"`
+	Status      string           `position:"Query" name:"Status"`
 }
 
 // QueryBrokerDemandResponse is the response struct for api QueryBrokerDemand

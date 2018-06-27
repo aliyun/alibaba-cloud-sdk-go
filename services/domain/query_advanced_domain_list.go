@@ -76,32 +76,32 @@ func (client *Client) QueryAdvancedDomainListWithCallback(request *QueryAdvanced
 // QueryAdvancedDomainListRequest is the request struct for api QueryAdvancedDomainList
 type QueryAdvancedDomainListRequest struct {
 	*requests.RpcRequest
-	EndExpirationDate     requests.Integer `position:"Query" name:"EndExpirationDate"`
-	UserClientIp          string           `position:"Query" name:"UserClientIp"`
-	Lang                  string           `position:"Query" name:"Lang"`
-	StartExpirationDate   requests.Integer `position:"Query" name:"StartExpirationDate"`
 	ProductDomainType     string           `position:"Query" name:"ProductDomainType"`
 	PageNum               requests.Integer `position:"Query" name:"PageNum"`
-	PageSize              requests.Integer `position:"Query" name:"PageSize"`
-	DomainGroupId         requests.Integer `position:"Query" name:"DomainGroupId"`
-	DomainNameSort        requests.Boolean `position:"Query" name:"DomainNameSort"`
-	DomainStatus          requests.Integer `position:"Query" name:"DomainStatus"`
-	EndLength             requests.Integer `position:"Query" name:"EndLength"`
 	Excluded              string           `position:"Query" name:"Excluded"`
-	ExcludedPrefix        requests.Boolean `position:"Query" name:"ExcludedPrefix"`
-	ExcludedSuffix        requests.Boolean `position:"Query" name:"ExcludedSuffix"`
-	ExpirationDateSort    requests.Boolean `position:"Query" name:"ExpirationDateSort"`
-	Form                  requests.Integer `position:"Query" name:"Form"`
-	KeyWord               string           `position:"Query" name:"KeyWord"`
-	KeyWordPrefix         requests.Boolean `position:"Query" name:"KeyWordPrefix"`
-	KeyWordSuffix         requests.Boolean `position:"Query" name:"KeyWordSuffix"`
-	ProductDomainTypeSort requests.Boolean `position:"Query" name:"ProductDomainTypeSort"`
-	RegistrationDateSort  requests.Boolean `position:"Query" name:"RegistrationDateSort"`
 	StartLength           requests.Integer `position:"Query" name:"StartLength"`
-	TradeType             requests.Integer `position:"Query" name:"TradeType"`
+	ExcludedSuffix        requests.Boolean `position:"Query" name:"ExcludedSuffix"`
+	PageSize              requests.Integer `position:"Query" name:"PageSize"`
+	Lang                  string           `position:"Query" name:"Lang"`
+	ExcludedPrefix        requests.Boolean `position:"Query" name:"ExcludedPrefix"`
+	KeyWord               string           `position:"Query" name:"KeyWord"`
+	ProductDomainTypeSort requests.Boolean `position:"Query" name:"ProductDomainTypeSort"`
+	EndExpirationDate     requests.Integer `position:"Query" name:"EndExpirationDate"`
 	Suffixs               string           `position:"Query" name:"Suffixs"`
-	StartRegistrationDate requests.Integer `position:"Query" name:"StartRegistrationDate"`
+	DomainNameSort        requests.Boolean `position:"Query" name:"DomainNameSort"`
+	ExpirationDateSort    requests.Boolean `position:"Query" name:"ExpirationDateSort"`
+	StartExpirationDate   requests.Integer `position:"Query" name:"StartExpirationDate"`
+	DomainStatus          requests.Integer `position:"Query" name:"DomainStatus"`
+	DomainGroupId         requests.Integer `position:"Query" name:"DomainGroupId"`
+	KeyWordSuffix         requests.Boolean `position:"Query" name:"KeyWordSuffix"`
+	KeyWordPrefix         requests.Boolean `position:"Query" name:"KeyWordPrefix"`
+	TradeType             requests.Integer `position:"Query" name:"TradeType"`
 	EndRegistrationDate   requests.Integer `position:"Query" name:"EndRegistrationDate"`
+	Form                  requests.Integer `position:"Query" name:"Form"`
+	UserClientIp          string           `position:"Query" name:"UserClientIp"`
+	RegistrationDateSort  requests.Boolean `position:"Query" name:"RegistrationDateSort"`
+	StartRegistrationDate requests.Integer `position:"Query" name:"StartRegistrationDate"`
+	EndLength             requests.Integer `position:"Query" name:"EndLength"`
 }
 
 // QueryAdvancedDomainListResponse is the response struct for api QueryAdvancedDomainList

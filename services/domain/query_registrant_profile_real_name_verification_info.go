@@ -76,10 +76,10 @@ func (client *Client) QueryRegistrantProfileRealNameVerificationInfoWithCallback
 // QueryRegistrantProfileRealNameVerificationInfoRequest is the request struct for api QueryRegistrantProfileRealNameVerificationInfo
 type QueryRegistrantProfileRealNameVerificationInfoRequest struct {
 	*requests.RpcRequest
-	UserClientIp        string           `position:"Query" name:"UserClientIp"`
-	Lang                string           `position:"Query" name:"Lang"`
-	RegistrantProfileId requests.Integer `position:"Query" name:"RegistrantProfileId"`
 	FetchImage          requests.Boolean `position:"Query" name:"FetchImage"`
+	UserClientIp        string           `position:"Query" name:"UserClientIp"`
+	RegistrantProfileId requests.Integer `position:"Query" name:"RegistrantProfileId"`
+	Lang                string           `position:"Query" name:"Lang"`
 }
 
 // QueryRegistrantProfileRealNameVerificationInfoResponse is the response struct for api QueryRegistrantProfileRealNameVerificationInfo
@@ -92,6 +92,7 @@ type QueryRegistrantProfileRealNameVerificationInfoResponse struct {
 	RegistrantProfileId    int    `json:"RegistrantProfileId" xml:"RegistrantProfileId"`
 	IdentityCredentialNo   string `json:"IdentityCredentialNo" xml:"IdentityCredentialNo"`
 	IdentityCredentialType string `json:"IdentityCredentialType" xml:"IdentityCredentialType"`
+	IdentityCredentialUrl  string `json:"IdentityCredentialUrl" xml:"IdentityCredentialUrl"`
 }
 
 // CreateQueryRegistrantProfileRealNameVerificationInfoRequest creates a request to invoke QueryRegistrantProfileRealNameVerificationInfo API

@@ -77,8 +77,8 @@ func (client *Client) QueryFailReasonForRegistrantProfileRealNameVerificationWit
 type QueryFailReasonForRegistrantProfileRealNameVerificationRequest struct {
 	*requests.RpcRequest
 	UserClientIp        string           `position:"Query" name:"UserClientIp"`
-	Lang                string           `position:"Query" name:"Lang"`
 	RegistrantProfileID requests.Integer `position:"Query" name:"RegistrantProfileID"`
+	Lang                string           `position:"Query" name:"Lang"`
 }
 
 // QueryFailReasonForRegistrantProfileRealNameVerificationResponse is the response struct for api QueryFailReasonForRegistrantProfileRealNameVerification

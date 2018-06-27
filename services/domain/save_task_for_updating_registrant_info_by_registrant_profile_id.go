@@ -77,10 +77,10 @@ func (client *Client) SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDWith
 type SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDRequest struct {
 	*requests.RpcRequest
 	UserClientIp          string           `position:"Query" name:"UserClientIp"`
-	Lang                  string           `position:"Query" name:"Lang"`
 	RegistrantProfileId   requests.Integer `position:"Query" name:"RegistrantProfileId"`
 	DomainName            *[]string        `position:"Query" name:"DomainName"  type:"Repeated"`
 	TransferOutProhibited requests.Boolean `position:"Query" name:"TransferOutProhibited"`
+	Lang                  string           `position:"Query" name:"Lang"`
 }
 
 // SaveTaskForUpdatingRegistrantInfoByRegistrantProfileIDResponse is the response struct for api SaveTaskForUpdatingRegistrantInfoByRegistrantProfileID

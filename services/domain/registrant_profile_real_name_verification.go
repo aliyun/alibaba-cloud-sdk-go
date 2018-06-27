@@ -76,12 +76,12 @@ func (client *Client) RegistrantProfileRealNameVerificationWithCallback(request 
 // RegistrantProfileRealNameVerificationRequest is the request struct for api RegistrantProfileRealNameVerification
 type RegistrantProfileRealNameVerificationRequest struct {
 	*requests.RpcRequest
+	IdentityCredentialType string           `position:"Query" name:"IdentityCredentialType"`
 	UserClientIp           string           `position:"Query" name:"UserClientIp"`
-	Lang                   string           `position:"Query" name:"Lang"`
 	RegistrantProfileID    requests.Integer `position:"Query" name:"RegistrantProfileID"`
 	IdentityCredential     string           `position:"Body" name:"IdentityCredential"`
+	Lang                   string           `position:"Query" name:"Lang"`
 	IdentityCredentialNo   string           `position:"Query" name:"IdentityCredentialNo"`
-	IdentityCredentialType string           `position:"Query" name:"IdentityCredentialType"`
 }
 
 // RegistrantProfileRealNameVerificationResponse is the response struct for api RegistrantProfileRealNameVerification

@@ -77,9 +77,9 @@ func (client *Client) SaveSingleTaskForModifyingDnsHostWithCallback(request *Sav
 type SaveSingleTaskForModifyingDnsHostRequest struct {
 	*requests.RpcRequest
 	InstanceId string    `position:"Query" name:"InstanceId"`
-	Lang       string    `position:"Query" name:"Lang"`
-	DnsName    string    `position:"Query" name:"DnsName"`
 	Ip         *[]string `position:"Query" name:"Ip"  type:"Repeated"`
+	DnsName    string    `position:"Query" name:"DnsName"`
+	Lang       string    `position:"Query" name:"Lang"`
 }
 
 // SaveSingleTaskForModifyingDnsHostResponse is the response struct for api SaveSingleTaskForModifyingDnsHost

@@ -76,9 +76,9 @@ func (client *Client) QueryDomainByInstanceIdWithCallback(request *QueryDomainBy
 // QueryDomainByInstanceIdRequest is the request struct for api QueryDomainByInstanceId
 type QueryDomainByInstanceIdRequest struct {
 	*requests.RpcRequest
+	InstanceId   string `position:"Query" name:"InstanceId"`
 	UserClientIp string `position:"Query" name:"UserClientIp"`
 	Lang         string `position:"Query" name:"Lang"`
-	InstanceId   string `position:"Query" name:"InstanceId"`
 }
 
 // QueryDomainByInstanceIdResponse is the response struct for api QueryDomainByInstanceId
@@ -104,6 +104,10 @@ type QueryDomainByInstanceIdResponse struct {
 	RegistrantType               string  `json:"RegistrantType" xml:"RegistrantType"`
 	DomainNameVerificationStatus string  `json:"DomainNameVerificationStatus" xml:"DomainNameVerificationStatus"`
 	RequestId                    string  `json:"RequestId" xml:"RequestId"`
+	ZhRegistrantOrganization     string  `json:"ZhRegistrantOrganization" xml:"ZhRegistrantOrganization"`
+	ZhRegistrantName             string  `json:"ZhRegistrantName" xml:"ZhRegistrantName"`
+	RegistrationDateLong         int     `json:"RegistrationDateLong" xml:"RegistrationDateLong"`
+	ExpirationDateLong           int     `json:"ExpirationDateLong" xml:"ExpirationDateLong"`
 	DnsList                      DnsList `json:"DnsList" xml:"DnsList"`
 }
 

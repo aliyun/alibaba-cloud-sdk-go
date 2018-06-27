@@ -76,28 +76,28 @@ func (client *Client) SaveBatchTaskForUpdatingContactInfoByNewContactWithCallbac
 // SaveBatchTaskForUpdatingContactInfoByNewContactRequest is the request struct for api SaveBatchTaskForUpdatingContactInfoByNewContact
 type SaveBatchTaskForUpdatingContactInfoByNewContactRequest struct {
 	*requests.RpcRequest
+	Country                  string           `position:"Query" name:"Country"`
 	Address                  string           `position:"Query" name:"Address"`
+	TelArea                  string           `position:"Query" name:"TelArea"`
+	ContactType              string           `position:"Query" name:"ContactType"`
+	City                     string           `position:"Query" name:"City"`
+	ZhAddress                string           `position:"Query" name:"ZhAddress"`
+	RegistrantType           string           `position:"Query" name:"RegistrantType"`
+	DomainName               *[]string        `position:"Query" name:"DomainName"  type:"Repeated"`
+	Telephone                string           `position:"Query" name:"Telephone"`
+	TransferOutProhibited    requests.Boolean `position:"Query" name:"TransferOutProhibited"`
+	ZhCity                   string           `position:"Query" name:"ZhCity"`
+	ZhProvince               string           `position:"Query" name:"ZhProvince"`
+	RegistrantOrganization   string           `position:"Query" name:"RegistrantOrganization"`
+	TelExt                   string           `position:"Query" name:"TelExt"`
+	Province                 string           `position:"Query" name:"Province"`
+	ZhRegistrantName         string           `position:"Query" name:"ZhRegistrantName"`
+	PostalCode               string           `position:"Query" name:"PostalCode"`
 	UserClientIp             string           `position:"Query" name:"UserClientIp"`
 	Lang                     string           `position:"Query" name:"Lang"`
-	City                     string           `position:"Query" name:"City"`
-	RegistrantOrganization   string           `position:"Query" name:"RegistrantOrganization"`
-	RegistrantName           string           `position:"Query" name:"RegistrantName"`
-	Province                 string           `position:"Query" name:"Province"`
-	Country                  string           `position:"Query" name:"Country"`
 	Email                    string           `position:"Query" name:"Email"`
-	PostalCode               string           `position:"Query" name:"PostalCode"`
-	TelArea                  string           `position:"Query" name:"TelArea"`
-	Telephone                string           `position:"Query" name:"Telephone"`
-	TelExt                   string           `position:"Query" name:"TelExt"`
-	ZhCity                   string           `position:"Query" name:"ZhCity"`
+	RegistrantName           string           `position:"Query" name:"RegistrantName"`
 	ZhRegistrantOrganization string           `position:"Query" name:"ZhRegistrantOrganization"`
-	ZhRegistrantName         string           `position:"Query" name:"ZhRegistrantName"`
-	ZhProvince               string           `position:"Query" name:"ZhProvince"`
-	ZhAddress                string           `position:"Query" name:"ZhAddress"`
-	ContactType              string           `position:"Query" name:"ContactType"`
-	RegistrantType           string           `position:"Query" name:"RegistrantType"`
-	TransferOutProhibited    requests.Boolean `position:"Query" name:"TransferOutProhibited"`
-	DomainName               *[]string        `position:"Query" name:"DomainName"  type:"Repeated"`
 }
 
 // SaveBatchTaskForUpdatingContactInfoByNewContactResponse is the response struct for api SaveBatchTaskForUpdatingContactInfoByNewContact

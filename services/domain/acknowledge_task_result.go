@@ -76,9 +76,9 @@ func (client *Client) AcknowledgeTaskResultWithCallback(request *AcknowledgeTask
 // AcknowledgeTaskResultRequest is the request struct for api AcknowledgeTaskResult
 type AcknowledgeTaskResultRequest struct {
 	*requests.RpcRequest
+	TaskDetailNo *[]string `position:"Query" name:"TaskDetailNo"  type:"Repeated"`
 	UserClientIp string    `position:"Query" name:"UserClientIp"`
 	Lang         string    `position:"Query" name:"Lang"`
-	TaskDetailNo *[]string `position:"Query" name:"TaskDetailNo"  type:"Repeated"`
 }
 
 // AcknowledgeTaskResultResponse is the response struct for api AcknowledgeTaskResult

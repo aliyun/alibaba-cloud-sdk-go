@@ -76,14 +76,14 @@ func (client *Client) QueryTransferInListWithCallback(request *QueryTransferInLi
 // QueryTransferInListRequest is the request struct for api QueryTransferInList
 type QueryTransferInListRequest struct {
 	*requests.RpcRequest
-	Lang                   string           `position:"Query" name:"Lang"`
-	UserClientIp           string           `position:"Query" name:"UserClientIp"`
 	SubmissionStartDate    requests.Integer `position:"Query" name:"SubmissionStartDate"`
+	UserClientIp           string           `position:"Query" name:"UserClientIp"`
 	SubmissionEndDate      requests.Integer `position:"Query" name:"SubmissionEndDate"`
 	DomainName             string           `position:"Query" name:"DomainName"`
 	SimpleTransferInStatus string           `position:"Query" name:"SimpleTransferInStatus"`
-	PageNum                requests.Integer `position:"Query" name:"PageNum"`
 	PageSize               requests.Integer `position:"Query" name:"PageSize"`
+	Lang                   string           `position:"Query" name:"Lang"`
+	PageNum                requests.Integer `position:"Query" name:"PageNum"`
 }
 
 // QueryTransferInListResponse is the response struct for api QueryTransferInList

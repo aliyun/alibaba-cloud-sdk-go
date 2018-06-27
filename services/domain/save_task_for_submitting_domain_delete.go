@@ -76,9 +76,9 @@ func (client *Client) SaveTaskForSubmittingDomainDeleteWithCallback(request *Sav
 // SaveTaskForSubmittingDomainDeleteRequest is the request struct for api SaveTaskForSubmittingDomainDelete
 type SaveTaskForSubmittingDomainDeleteRequest struct {
 	*requests.RpcRequest
-	Lang         string `position:"Query" name:"Lang"`
-	UserClientIp string `position:"Query" name:"UserClientIp"`
 	InstanceId   string `position:"Query" name:"InstanceId"`
+	UserClientIp string `position:"Query" name:"UserClientIp"`
+	Lang         string `position:"Query" name:"Lang"`
 }
 
 // SaveTaskForSubmittingDomainDeleteResponse is the response struct for api SaveTaskForSubmittingDomainDelete

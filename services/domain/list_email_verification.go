@@ -76,13 +76,13 @@ func (client *Client) ListEmailVerificationWithCallback(request *ListEmailVerifi
 // ListEmailVerificationRequest is the request struct for api ListEmailVerification
 type ListEmailVerificationRequest struct {
 	*requests.RpcRequest
-	Lang               string           `position:"Query" name:"Lang"`
 	BeginCreateTime    requests.Integer `position:"Query" name:"BeginCreateTime"`
 	EndCreateTime      requests.Integer `position:"Query" name:"EndCreateTime"`
+	PageSize           requests.Integer `position:"Query" name:"PageSize"`
+	Lang               string           `position:"Query" name:"Lang"`
+	PageNum            requests.Integer `position:"Query" name:"PageNum"`
 	Email              string           `position:"Query" name:"Email"`
 	VerificationStatus requests.Integer `position:"Query" name:"VerificationStatus"`
-	PageNum            requests.Integer `position:"Query" name:"PageNum"`
-	PageSize           requests.Integer `position:"Query" name:"PageSize"`
 }
 
 // ListEmailVerificationResponse is the response struct for api ListEmailVerification

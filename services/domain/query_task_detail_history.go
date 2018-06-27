@@ -76,14 +76,14 @@ func (client *Client) QueryTaskDetailHistoryWithCallback(request *QueryTaskDetai
 // QueryTaskDetailHistoryRequest is the request struct for api QueryTaskDetailHistory
 type QueryTaskDetailHistoryRequest struct {
 	*requests.RpcRequest
-	Lang               string           `position:"Query" name:"Lang"`
+	TaskStatus         requests.Integer `position:"Query" name:"TaskStatus"`
 	UserClientIp       string           `position:"Query" name:"UserClientIp"`
 	TaskNo             string           `position:"Query" name:"TaskNo"`
 	DomainName         string           `position:"Query" name:"DomainName"`
-	DomainNameCursor   string           `position:"Query" name:"DomainNameCursor"`
-	TaskStatus         requests.Integer `position:"Query" name:"TaskStatus"`
 	PageSize           requests.Integer `position:"Query" name:"PageSize"`
 	TaskDetailNoCursor string           `position:"Query" name:"TaskDetailNoCursor"`
+	Lang               string           `position:"Query" name:"Lang"`
+	DomainNameCursor   string           `position:"Query" name:"DomainNameCursor"`
 }
 
 // QueryTaskDetailHistoryResponse is the response struct for api QueryTaskDetailHistory

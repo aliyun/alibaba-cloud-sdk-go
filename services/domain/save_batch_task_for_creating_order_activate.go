@@ -76,9 +76,9 @@ func (client *Client) SaveBatchTaskForCreatingOrderActivateWithCallback(request 
 // SaveBatchTaskForCreatingOrderActivateRequest is the request struct for api SaveBatchTaskForCreatingOrderActivate
 type SaveBatchTaskForCreatingOrderActivateRequest struct {
 	*requests.RpcRequest
+	OrderActivateParam *[]SaveBatchTaskForCreatingOrderActivateOrderActivateParam `position:"Query" name:"OrderActivateParam"  type:"Repeated"`
 	UserClientIp       string                                                     `position:"Query" name:"UserClientIp"`
 	Lang               string                                                     `position:"Query" name:"Lang"`
-	OrderActivateParam *[]SaveBatchTaskForCreatingOrderActivateOrderActivateParam `position:"Query" name:"OrderActivateParam"  type:"Repeated"`
 }
 
 // SaveBatchTaskForCreatingOrderActivateOrderActivateParam is a repeated param struct in SaveBatchTaskForCreatingOrderActivateRequest

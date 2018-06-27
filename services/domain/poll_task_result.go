@@ -76,14 +76,14 @@ func (client *Client) PollTaskResultWithCallback(request *PollTaskResultRequest,
 // PollTaskResultRequest is the request struct for api PollTaskResult
 type PollTaskResultRequest struct {
 	*requests.RpcRequest
+	InstanceId       string           `position:"Query" name:"InstanceId"`
 	UserClientIp     string           `position:"Query" name:"UserClientIp"`
-	Lang             string           `position:"Query" name:"Lang"`
 	TaskNo           string           `position:"Query" name:"TaskNo"`
 	DomainName       string           `position:"Query" name:"DomainName"`
-	InstanceId       string           `position:"Query" name:"InstanceId"`
-	TaskResultStatus requests.Integer `position:"Query" name:"TaskResultStatus"`
-	PageNum          requests.Integer `position:"Query" name:"PageNum"`
 	PageSize         requests.Integer `position:"Query" name:"PageSize"`
+	Lang             string           `position:"Query" name:"Lang"`
+	PageNum          requests.Integer `position:"Query" name:"PageNum"`
+	TaskResultStatus requests.Integer `position:"Query" name:"TaskResultStatus"`
 }
 
 // PollTaskResultResponse is the response struct for api PollTaskResult

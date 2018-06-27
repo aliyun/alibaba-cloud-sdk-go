@@ -76,12 +76,12 @@ func (client *Client) SaveTaskForSubmittingDomainRealNameVerificationByIdentityC
 // SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredentialRequest is the request struct for api SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredential
 type SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredentialRequest struct {
 	*requests.RpcRequest
-	UserClientIp           string    `position:"Query" name:"UserClientIp"`
-	Lang                   string    `position:"Query" name:"Lang"`
-	IdentityCredential     string    `position:"Body" name:"IdentityCredential"`
-	IdentityCredentialNo   string    `position:"Query" name:"IdentityCredentialNo"`
 	IdentityCredentialType string    `position:"Query" name:"IdentityCredentialType"`
+	UserClientIp           string    `position:"Query" name:"UserClientIp"`
+	IdentityCredential     string    `position:"Body" name:"IdentityCredential"`
 	DomainName             *[]string `position:"Query" name:"DomainName"  type:"Repeated"`
+	Lang                   string    `position:"Query" name:"Lang"`
+	IdentityCredentialNo   string    `position:"Query" name:"IdentityCredentialNo"`
 }
 
 // SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredentialResponse is the response struct for api SaveTaskForSubmittingDomainRealNameVerificationByIdentityCredential

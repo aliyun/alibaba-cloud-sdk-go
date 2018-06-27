@@ -76,30 +76,30 @@ func (client *Client) SaveTaskForUpdatingRegistrantInfoByIdentityCredentialWithC
 // SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest is the request struct for api SaveTaskForUpdatingRegistrantInfoByIdentityCredential
 type SaveTaskForUpdatingRegistrantInfoByIdentityCredentialRequest struct {
 	*requests.RpcRequest
-	PostalCode               string           `position:"Query" name:"PostalCode"`
-	Address                  string           `position:"Query" name:"Address"`
-	UserClientIp             string           `position:"Query" name:"UserClientIp"`
-	Lang                     string           `position:"Query" name:"Lang"`
-	City                     string           `position:"Query" name:"City"`
-	RegistrantOrganization   string           `position:"Query" name:"RegistrantOrganization"`
-	RegistrantName           string           `position:"Query" name:"RegistrantName"`
-	Province                 string           `position:"Query" name:"Province"`
-	Email                    string           `position:"Query" name:"Email"`
 	Country                  string           `position:"Query" name:"Country"`
+	IdentityCredentialType   string           `position:"Query" name:"IdentityCredentialType"`
+	Address                  string           `position:"Query" name:"Address"`
 	TelArea                  string           `position:"Query" name:"TelArea"`
-	Telephone                string           `position:"Query" name:"Telephone"`
-	TelExt                   string           `position:"Query" name:"TelExt"`
-	ZhCity                   string           `position:"Query" name:"ZhCity"`
-	ZhRegistrantOrganization string           `position:"Query" name:"ZhRegistrantOrganization"`
-	ZhRegistrantName         string           `position:"Query" name:"ZhRegistrantName"`
-	ZhProvince               string           `position:"Query" name:"ZhProvince"`
+	City                     string           `position:"Query" name:"City"`
 	ZhAddress                string           `position:"Query" name:"ZhAddress"`
 	RegistrantType           string           `position:"Query" name:"RegistrantType"`
 	DomainName               *[]string        `position:"Query" name:"DomainName"  type:"Repeated"`
-	IdentityCredentialType   string           `position:"Query" name:"IdentityCredentialType"`
-	IdentityCredentialNo     string           `position:"Query" name:"IdentityCredentialNo"`
 	IdentityCredential       string           `position:"Body" name:"IdentityCredential"`
+	Telephone                string           `position:"Query" name:"Telephone"`
 	TransferOutProhibited    requests.Boolean `position:"Query" name:"TransferOutProhibited"`
+	ZhCity                   string           `position:"Query" name:"ZhCity"`
+	ZhProvince               string           `position:"Query" name:"ZhProvince"`
+	RegistrantOrganization   string           `position:"Query" name:"RegistrantOrganization"`
+	TelExt                   string           `position:"Query" name:"TelExt"`
+	Province                 string           `position:"Query" name:"Province"`
+	ZhRegistrantName         string           `position:"Query" name:"ZhRegistrantName"`
+	PostalCode               string           `position:"Query" name:"PostalCode"`
+	UserClientIp             string           `position:"Query" name:"UserClientIp"`
+	Lang                     string           `position:"Query" name:"Lang"`
+	IdentityCredentialNo     string           `position:"Query" name:"IdentityCredentialNo"`
+	Email                    string           `position:"Query" name:"Email"`
+	RegistrantName           string           `position:"Query" name:"RegistrantName"`
+	ZhRegistrantOrganization string           `position:"Query" name:"ZhRegistrantOrganization"`
 }
 
 // SaveTaskForUpdatingRegistrantInfoByIdentityCredentialResponse is the response struct for api SaveTaskForUpdatingRegistrantInfoByIdentityCredential

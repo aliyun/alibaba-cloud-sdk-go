@@ -77,8 +77,8 @@ func (client *Client) SaveSingleTaskForQueryingTransferAuthorizationCodeWithCall
 type SaveSingleTaskForQueryingTransferAuthorizationCodeRequest struct {
 	*requests.RpcRequest
 	DomainName   string `position:"Query" name:"DomainName"`
-	Lang         string `position:"Query" name:"Lang"`
 	UserClientIp string `position:"Query" name:"UserClientIp"`
+	Lang         string `position:"Query" name:"Lang"`
 }
 
 // SaveSingleTaskForQueryingTransferAuthorizationCodeResponse is the response struct for api SaveSingleTaskForQueryingTransferAuthorizationCode

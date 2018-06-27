@@ -76,10 +76,10 @@ func (client *Client) QueryContactInfoWithCallback(request *QueryContactInfoRequ
 // QueryContactInfoRequest is the request struct for api QueryContactInfo
 type QueryContactInfoRequest struct {
 	*requests.RpcRequest
-	UserClientIp string `position:"Query" name:"UserClientIp"`
-	Lang         string `position:"Query" name:"Lang"`
-	DomainName   string `position:"Query" name:"DomainName"`
 	ContactType  string `position:"Query" name:"ContactType"`
+	UserClientIp string `position:"Query" name:"UserClientIp"`
+	DomainName   string `position:"Query" name:"DomainName"`
+	Lang         string `position:"Query" name:"Lang"`
 }
 
 // QueryContactInfoResponse is the response struct for api QueryContactInfo

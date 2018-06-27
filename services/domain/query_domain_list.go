@@ -77,19 +77,19 @@ func (client *Client) QueryDomainListWithCallback(request *QueryDomainListReques
 type QueryDomainListRequest struct {
 	*requests.RpcRequest
 	EndExpirationDate     requests.Integer `position:"Query" name:"EndExpirationDate"`
+	ProductDomainType     string           `position:"Query" name:"ProductDomainType"`
+	OrderKeyType          string           `position:"Query" name:"OrderKeyType"`
+	DomainName            string           `position:"Query" name:"DomainName"`
 	StartExpirationDate   requests.Integer `position:"Query" name:"StartExpirationDate"`
+	PageNum               requests.Integer `position:"Query" name:"PageNum"`
+	OrderByType           string           `position:"Query" name:"OrderByType"`
+	DomainGroupId         string           `position:"Query" name:"DomainGroupId"`
+	EndRegistrationDate   requests.Integer `position:"Query" name:"EndRegistrationDate"`
 	UserClientIp          string           `position:"Query" name:"UserClientIp"`
+	PageSize              requests.Integer `position:"Query" name:"PageSize"`
 	Lang                  string           `position:"Query" name:"Lang"`
 	QueryType             string           `position:"Query" name:"QueryType"`
 	StartRegistrationDate requests.Integer `position:"Query" name:"StartRegistrationDate"`
-	EndRegistrationDate   requests.Integer `position:"Query" name:"EndRegistrationDate"`
-	DomainName            string           `position:"Query" name:"DomainName"`
-	OrderByType           string           `position:"Query" name:"OrderByType"`
-	OrderKeyType          string           `position:"Query" name:"OrderKeyType"`
-	ProductDomainType     string           `position:"Query" name:"ProductDomainType"`
-	PageNum               requests.Integer `position:"Query" name:"PageNum"`
-	PageSize              requests.Integer `position:"Query" name:"PageSize"`
-	DomainGroupId         string           `position:"Query" name:"DomainGroupId"`
 }
 
 // QueryDomainListResponse is the response struct for api QueryDomainList

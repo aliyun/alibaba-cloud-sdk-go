@@ -76,10 +76,10 @@ func (client *Client) SubmitEmailVerificationWithCallback(request *SubmitEmailVe
 // SubmitEmailVerificationRequest is the request struct for api SubmitEmailVerification
 type SubmitEmailVerificationRequest struct {
 	*requests.RpcRequest
-	Lang         string           `position:"Query" name:"Lang"`
-	Email        string           `position:"Query" name:"Email"`
 	SendIfExist  requests.Boolean `position:"Query" name:"SendIfExist"`
 	UserClientIp string           `position:"Query" name:"UserClientIp"`
+	Lang         string           `position:"Query" name:"Lang"`
+	Email        string           `position:"Query" name:"Email"`
 }
 
 // SubmitEmailVerificationResponse is the response struct for api SubmitEmailVerification
