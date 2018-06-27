@@ -97,6 +97,7 @@ type DescribeNetworkInterfacesRequest struct {
 	VSwitchId            string           `position:"Query" name:"VSwitchId"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
 	Tag2Value            string           `position:"Query" name:"Tag.2.Value"`
+	VpcId                string           `position:"Query" name:"VpcId"`
 	Tag4Key              string           `position:"Query" name:"Tag.4.Key"`
 	PrimaryIpAddress     string           `position:"Query" name:"PrimaryIpAddress"`
 	NetworkInterfaceId   *[]string        `position:"Query" name:"NetworkInterfaceId"  type:"Repeated"`

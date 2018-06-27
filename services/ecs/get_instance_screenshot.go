@@ -78,7 +78,7 @@ type GetInstanceScreenshotRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	Wakeup               requests.Boolean `position:"Query" name:"Wakeup"`
+	WakeUp               requests.Boolean `position:"Query" name:"WakeUp"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`

@@ -17,7 +17,8 @@ package ecs
 
 // Region is a nested struct in ecs response
 type Region struct {
-	RegionId  string `json:"RegionId" xml:"RegionId"`
-	LocalName string `json:"LocalName" xml:"LocalName"`
-	Status    string `json:"Status" xml:"Status"`
+	RegionId       string `json:"RegionId" xml:"RegionId"`
+	LocalName      string `json:"LocalName" xml:"LocalName"`
+	RegionEndpoint string `json:"RegionEndpoint" xml:"RegionEndpoint"`
+	Status         string `json:"Status" xml:"Status"`
 }
