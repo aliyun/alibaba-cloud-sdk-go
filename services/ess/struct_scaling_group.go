@@ -19,6 +19,8 @@ package ess
 type ScalingGroup struct {
 	DefaultCooldown              int             `json:"DefaultCooldown" xml:"DefaultCooldown"`
 	MaxSize                      int             `json:"MaxSize" xml:"MaxSize"`
+	PendingWaitCapacity          int             `json:"PendingWaitCapacity" xml:"PendingWaitCapacity"`
+	RemovingWaitCapacity         int             `json:"RemovingWaitCapacity" xml:"RemovingWaitCapacity"`
 	PendingCapacity              int             `json:"PendingCapacity" xml:"PendingCapacity"`
 	RemovingCapacity             int             `json:"RemovingCapacity" xml:"RemovingCapacity"`
 	ScalingGroupName             string          `json:"ScalingGroupName" xml:"ScalingGroupName"`

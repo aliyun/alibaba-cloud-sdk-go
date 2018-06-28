@@ -22,6 +22,7 @@ type ScalingConfiguration struct {
 	ScalingGroupId              string         `json:"ScalingGroupId" xml:"ScalingGroupId"`
 	InstanceName                string         `json:"InstanceName" xml:"InstanceName"`
 	ImageId                     string         `json:"ImageId" xml:"ImageId"`
+	HostName                    string         `json:"HostName" xml:"HostName"`
 	InstanceType                string         `json:"InstanceType" xml:"InstanceType"`
 	InstanceGeneration          string         `json:"InstanceGeneration" xml:"InstanceGeneration"`
 	SecurityGroupId             string         `json:"SecurityGroupId" xml:"SecurityGroupId"`
@@ -40,6 +41,7 @@ type ScalingConfiguration struct {
 	DeploymentSetId             string         `json:"DeploymentSetId" xml:"DeploymentSetId"`
 	SecurityEnhancementStrategy string         `json:"SecurityEnhancementStrategy" xml:"SecurityEnhancementStrategy"`
 	SpotStrategy                string         `json:"SpotStrategy" xml:"SpotStrategy"`
+	PasswordInherit             bool           `json:"PasswordInherit" xml:"PasswordInherit"`
 	InstanceTypes               InstanceTypes  `json:"InstanceTypes" xml:"InstanceTypes"`
 	DataDisks                   DataDisks      `json:"DataDisks" xml:"DataDisks"`
 	Tags                        Tags           `json:"Tags" xml:"Tags"`
