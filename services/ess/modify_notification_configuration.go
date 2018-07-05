@@ -94,7 +94,7 @@ func CreateModifyNotificationConfigurationRequest() (request *ModifyNotification
 	request = &ModifyNotificationConfigurationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ess", "2014-08-28", "ModifyNotificationConfiguration", "ess", "openAPI")
+	request.InitWithApiInfo("Ess", "2014-08-28", "ModifyNotificationConfiguration", "ESS", "openAPI")
 	return
 }
 

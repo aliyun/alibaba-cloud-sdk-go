@@ -93,7 +93,7 @@ func CreateVerifyAuthenticationRequest() (request *VerifyAuthenticationRequest) 
 	request = &VerifyAuthenticationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ess", "2014-08-28", "VerifyAuthentication", "ess", "openAPI")
+	request.InitWithApiInfo("Ess", "2014-08-28", "VerifyAuthentication", "ESS", "openAPI")
 	return
 }
 

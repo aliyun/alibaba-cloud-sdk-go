@@ -111,7 +111,7 @@ func CreateCreateLifecycleHookRequest() (request *CreateLifecycleHookRequest) {
 	request = &CreateLifecycleHookRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ess", "2014-08-28", "CreateLifecycleHook", "ess", "openAPI")
+	request.InitWithApiInfo("Ess", "2014-08-28", "CreateLifecycleHook", "ESS", "openAPI")
 	return
 }
 

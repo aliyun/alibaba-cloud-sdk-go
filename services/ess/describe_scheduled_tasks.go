@@ -159,7 +159,7 @@ func CreateDescribeScheduledTasksRequest() (request *DescribeScheduledTasksReque
 	request = &DescribeScheduledTasksRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ess", "2014-08-28", "DescribeScheduledTasks", "ess", "openAPI")
+	request.InitWithApiInfo("Ess", "2014-08-28", "DescribeScheduledTasks", "ESS", "openAPI")
 	return
 }
 
