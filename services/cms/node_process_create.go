@@ -90,6 +90,7 @@ type NodeProcessCreateResponse struct {
 	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
 	Success      bool   `json:"Success" xml:"Success"`
 	RequestId    string `json:"RequestId" xml:"RequestId"`
+	Id           int    `json:"Id" xml:"Id"`
 }
 
 // CreateNodeProcessCreateRequest creates a request to invoke NodeProcessCreate API

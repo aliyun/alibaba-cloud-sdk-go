@@ -17,17 +17,18 @@ package cms
 
 // Node is a nested struct in cms response
 type Node struct {
-	InstanceId       string `json:"InstanceId" xml:"InstanceId"`
-	SerialNumber     string `json:"SerialNumber" xml:"SerialNumber"`
-	HostName         string `json:"HostName" xml:"HostName"`
-	AliUid           int    `json:"AliUid" xml:"AliUid"`
-	OperatingSystem  string `json:"OperatingSystem" xml:"OperatingSystem"`
-	IpGroup          string `json:"IpGroup" xml:"IpGroup"`
-	Region           string `json:"Region" xml:"Region"`
-	TianjimonVersion string `json:"TianjimonVersion" xml:"TianjimonVersion"`
-	EipAddress       string `json:"EipAddress" xml:"EipAddress"`
-	EipId            string `json:"EipId" xml:"EipId"`
-	AliyunHost       bool   `json:"AliyunHost" xml:"AliyunHost"`
-	NatIp            string `json:"NatIp" xml:"NatIp"`
-	NetworkType      string `json:"NetworkType" xml:"NetworkType"`
+	InstanceId         string `json:"InstanceId" xml:"InstanceId"`
+	SerialNumber       string `json:"SerialNumber" xml:"SerialNumber"`
+	HostName           string `json:"HostName" xml:"HostName"`
+	AliUid             int    `json:"AliUid" xml:"AliUid"`
+	OperatingSystem    string `json:"OperatingSystem" xml:"OperatingSystem"`
+	IpGroup            string `json:"IpGroup" xml:"IpGroup"`
+	Region             string `json:"Region" xml:"Region"`
+	TianjimonVersion   string `json:"TianjimonVersion" xml:"TianjimonVersion"`
+	EipAddress         string `json:"EipAddress" xml:"EipAddress"`
+	EipId              string `json:"EipId" xml:"EipId"`
+	AliyunHost         bool   `json:"AliyunHost" xml:"AliyunHost"`
+	NatIp              string `json:"NatIp" xml:"NatIp"`
+	NetworkType        string `json:"NetworkType" xml:"NetworkType"`
+	InstanceTypeFamily string `json:"InstanceTypeFamily" xml:"InstanceTypeFamily"`
 }
