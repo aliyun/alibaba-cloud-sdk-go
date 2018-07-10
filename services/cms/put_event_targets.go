@@ -76,10 +76,19 @@ func (client *Client) PutEventTargetsWithCallback(request *PutEventTargetsReques
 // PutEventTargetsRequest is the request struct for api PutEventTargets
 type PutEventTargetsRequest struct {
 	*requests.RpcRequest
+	WebhookParameters *[]PutEventTargetsWebhookParameters `position:"Query" name:"WebhookParameters"  type:"Repeated"`
 	ContactParameters *[]PutEventTargetsContactParameters `position:"Query" name:"ContactParameters"  type:"Repeated"`
 	FcParameters      *[]PutEventTargetsFcParameters      `position:"Query" name:"FcParameters"  type:"Repeated"`
 	RuleName          string                              `position:"Query" name:"RuleName"`
 	MnsParameters     *[]PutEventTargetsMnsParameters     `position:"Query" name:"MnsParameters"  type:"Repeated"`
+}
+
+// PutEventTargetsWebhookParameters is a repeated param struct in PutEventTargetsRequest
+type PutEventTargetsWebhookParameters struct {
+	Id       string `name:"Id"`
+	Protocol string `name:"Protocol"`
+	Url      string `name:"Url"`
+	Method   string `name:"Method"`
 }
 
 // PutEventTargetsContactParameters is a repeated param struct in PutEventTargetsRequest

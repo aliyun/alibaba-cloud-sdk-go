@@ -17,11 +17,16 @@ package cms
 
 // Result is a nested struct in cms response
 type Result struct {
-	StartTime    int    `json:"StartTime" xml:"StartTime"`
-	Dimensions   string `json:"Dimensions" xml:"Dimensions"`
-	EventPattern string `json:"EventPattern" xml:"EventPattern"`
-	Id           string `json:"Id" xml:"Id"`
-	EndTime      int    `json:"EndTime" xml:"EndTime"`
-	AlertName    string `json:"AlertName" xml:"AlertName"`
-	Type         string `json:"Type" xml:"Type"`
+	Name         string       `json:"Name" xml:"Name"`
+	StartTime    int          `json:"StartTime" xml:"StartTime"`
+	State        string       `json:"State" xml:"State"`
+	EventType    string       `json:"EventType" xml:"EventType"`
+	Dimensions   string       `json:"Dimensions" xml:"Dimensions"`
+	GroupId      string       `json:"GroupId" xml:"GroupId"`
+	Id           string       `json:"Id" xml:"Id"`
+	Description  string       `json:"Description" xml:"Description"`
+	EndTime      int          `json:"EndTime" xml:"EndTime"`
+	AlertName    string       `json:"AlertName" xml:"AlertName"`
+	Type         string       `json:"Type" xml:"Type"`
+	EventPattern EventPattern `json:"EventPattern" xml:"EventPattern"`
 }
