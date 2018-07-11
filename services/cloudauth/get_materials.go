@@ -76,9 +76,9 @@ func (client *Client) GetMaterialsWithCallback(request *GetMaterialsRequest, cal
 // GetMaterialsRequest is the request struct for api GetMaterials
 type GetMaterialsRequest struct {
 	*requests.RpcRequest
-	SourceIp        string           `position:"Query" name:"SourceIp"`
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	Biz             string           `position:"Query" name:"Biz"`
+	SourceIp        string           `position:"Query" name:"SourceIp"`
 	TicketId        string           `position:"Query" name:"TicketId"`
 }
 
@@ -97,7 +97,7 @@ func CreateGetMaterialsRequest() (request *GetMaterialsRequest) {
 	request = &GetMaterialsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cloudauth", "2018-05-04", "GetMaterials", "cloudauth", "openAPI")
+	request.InitWithApiInfo("Cloudauth", "2018-07-03", "GetMaterials", "cloudauth", "openAPI")
 	return
 }
 

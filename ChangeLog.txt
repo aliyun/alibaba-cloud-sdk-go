@@ -1,3 +1,7 @@
+2018-07-11 Version: 1.22.4
+1, Add DetectFaceAttributesService.
+2, Add cloudauthPageUrl to GetVerifyTokenResponse.
+
 2018-07-10 Version: 1.22.3
 1, Add new API: EnableEventRule,DisableEventRule,DeleteEventTargets,DeleteEventRule,ListEventRules.
 2, Modify the structured parameters for API: PutEventTargets,PutEventRule,DescribeEventRule.
