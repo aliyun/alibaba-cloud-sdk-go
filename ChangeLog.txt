@@ -1,3 +1,7 @@
+2018-07-11 Version: 1.22.5
+1, new function: Attach and Detach Rds instance of scalingGroup.
+
+
 2018-07-11 Version: 1.22.4
 1, Add DetectFaceAttributesService.
 2, Add cloudauthPageUrl to GetVerifyTokenResponse.

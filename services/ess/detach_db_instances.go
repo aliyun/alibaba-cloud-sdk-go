@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DetachLoadBalancers invokes the ess.DetachLoadBalancers API synchronously
-// api document: https://help.aliyun.com/api/ess/detachloadbalancers.html
-func (client *Client) DetachLoadBalancers(request *DetachLoadBalancersRequest) (response *DetachLoadBalancersResponse, err error) {
-	response = CreateDetachLoadBalancersResponse()
+// DetachDBInstances invokes the ess.DetachDBInstances API synchronously
+// api document: https://help.aliyun.com/api/ess/detachdbinstances.html
+func (client *Client) DetachDBInstances(request *DetachDBInstancesRequest) (response *DetachDBInstancesResponse, err error) {
+	response = CreateDetachDBInstancesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DetachLoadBalancersWithChan invokes the ess.DetachLoadBalancers API asynchronously
-// api document: https://help.aliyun.com/api/ess/detachloadbalancers.html
+// DetachDBInstancesWithChan invokes the ess.DetachDBInstances API asynchronously
+// api document: https://help.aliyun.com/api/ess/detachdbinstances.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DetachLoadBalancersWithChan(request *DetachLoadBalancersRequest) (<-chan *DetachLoadBalancersResponse, <-chan error) {
-	responseChan := make(chan *DetachLoadBalancersResponse, 1)
+func (client *Client) DetachDBInstancesWithChan(request *DetachDBInstancesRequest) (<-chan *DetachDBInstancesResponse, <-chan error) {
+	responseChan := make(chan *DetachDBInstancesResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DetachLoadBalancers(request)
+		response, err := client.DetachDBInstances(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) DetachLoadBalancersWithChan(request *DetachLoadBalancersRe
 	return responseChan, errChan
 }
 
-// DetachLoadBalancersWithCallback invokes the ess.DetachLoadBalancers API asynchronously
-// api document: https://help.aliyun.com/api/ess/detachloadbalancers.html
+// DetachDBInstancesWithCallback invokes the ess.DetachDBInstances API asynchronously
+// api document: https://help.aliyun.com/api/ess/detachdbinstances.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DetachLoadBalancersWithCallback(request *DetachLoadBalancersRequest, callback func(response *DetachLoadBalancersResponse, err error)) <-chan int {
+func (client *Client) DetachDBInstancesWithCallback(request *DetachDBInstancesRequest, callback func(response *DetachDBInstancesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DetachLoadBalancersResponse
+		var response *DetachDBInstancesResponse
 		var err error
 		defer close(result)
-		response, err = client.DetachLoadBalancers(request)
+		response, err = client.DetachDBInstances(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,34 +73,34 @@ func (client *Client) DetachLoadBalancersWithCallback(request *DetachLoadBalance
 	return result
 }
 
-// DetachLoadBalancersRequest is the request struct for api DetachLoadBalancers
-type DetachLoadBalancersRequest struct {
+// DetachDBInstancesRequest is the request struct for api DetachDBInstances
+type DetachDBInstancesRequest struct {
 	*requests.RpcRequest
-	LoadBalancer         *[]string        `position:"Query" name:"LoadBalancer"  type:"Repeated"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ScalingGroupId       string           `position:"Query" name:"ScalingGroupId"`
+	DBInstance           *[]string        `position:"Query" name:"DBInstance"  type:"Repeated"`
 	ForceDetach          requests.Boolean `position:"Query" name:"ForceDetach"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
-// DetachLoadBalancersResponse is the response struct for api DetachLoadBalancers
-type DetachLoadBalancersResponse struct {
+// DetachDBInstancesResponse is the response struct for api DetachDBInstances
+type DetachDBInstancesResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateDetachLoadBalancersRequest creates a request to invoke DetachLoadBalancers API
-func CreateDetachLoadBalancersRequest() (request *DetachLoadBalancersRequest) {
-	request = &DetachLoadBalancersRequest{
+// CreateDetachDBInstancesRequest creates a request to invoke DetachDBInstances API
+func CreateDetachDBInstancesRequest() (request *DetachDBInstancesRequest) {
+	request = &DetachDBInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ess", "2014-08-28", "DetachLoadBalancers", "ess", "openAPI")
+	request.InitWithApiInfo("Ess", "2014-08-28", "DetachDBInstances", "ess", "openAPI")
 	return
 }
 
-// CreateDetachLoadBalancersResponse creates a response to parse from DetachLoadBalancers response
-func CreateDetachLoadBalancersResponse() (response *DetachLoadBalancersResponse) {
-	response = &DetachLoadBalancersResponse{
+// CreateDetachDBInstancesResponse creates a response to parse from DetachDBInstances response
+func CreateDetachDBInstancesResponse() (response *DetachDBInstancesResponse) {
+	response = &DetachDBInstancesResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

@@ -93,7 +93,7 @@ func CreateDescribeNotificationConfigurationsRequest() (request *DescribeNotific
 	request = &DescribeNotificationConfigurationsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ess", "2014-08-28", "DescribeNotificationConfigurations", "ESS", "openAPI")
+	request.InitWithApiInfo("Ess", "2014-08-28", "DescribeNotificationConfigurations", "ess", "openAPI")
 	return
 }
 

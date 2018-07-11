@@ -121,7 +121,7 @@ func CreateDescribeScalingActivitiesRequest() (request *DescribeScalingActivitie
 	request = &DescribeScalingActivitiesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ess", "2014-08-28", "DescribeScalingActivities", "ESS", "openAPI")
+	request.InitWithApiInfo("Ess", "2014-08-28", "DescribeScalingActivities", "ess", "openAPI")
 	return
 }
 

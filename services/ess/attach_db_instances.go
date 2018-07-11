@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// EnterStandby invokes the ess.EnterStandby API synchronously
-// api document: https://help.aliyun.com/api/ess/enterstandby.html
-func (client *Client) EnterStandby(request *EnterStandbyRequest) (response *EnterStandbyResponse, err error) {
-	response = CreateEnterStandbyResponse()
+// AttachDBInstances invokes the ess.AttachDBInstances API synchronously
+// api document: https://help.aliyun.com/api/ess/attachdbinstances.html
+func (client *Client) AttachDBInstances(request *AttachDBInstancesRequest) (response *AttachDBInstancesResponse, err error) {
+	response = CreateAttachDBInstancesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// EnterStandbyWithChan invokes the ess.EnterStandby API asynchronously
-// api document: https://help.aliyun.com/api/ess/enterstandby.html
+// AttachDBInstancesWithChan invokes the ess.AttachDBInstances API asynchronously
+// api document: https://help.aliyun.com/api/ess/attachdbinstances.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) EnterStandbyWithChan(request *EnterStandbyRequest) (<-chan *EnterStandbyResponse, <-chan error) {
-	responseChan := make(chan *EnterStandbyResponse, 1)
+func (client *Client) AttachDBInstancesWithChan(request *AttachDBInstancesRequest) (<-chan *AttachDBInstancesResponse, <-chan error) {
+	responseChan := make(chan *AttachDBInstancesResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.EnterStandby(request)
+		response, err := client.AttachDBInstances(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) EnterStandbyWithChan(request *EnterStandbyRequest) (<-chan
 	return responseChan, errChan
 }
 
-// EnterStandbyWithCallback invokes the ess.EnterStandby API asynchronously
-// api document: https://help.aliyun.com/api/ess/enterstandby.html
+// AttachDBInstancesWithCallback invokes the ess.AttachDBInstances API asynchronously
+// api document: https://help.aliyun.com/api/ess/attachdbinstances.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) EnterStandbyWithCallback(request *EnterStandbyRequest, callback func(response *EnterStandbyResponse, err error)) <-chan int {
+func (client *Client) AttachDBInstancesWithCallback(request *AttachDBInstancesRequest, callback func(response *AttachDBInstancesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *EnterStandbyResponse
+		var response *AttachDBInstancesResponse
 		var err error
 		defer close(result)
-		response, err = client.EnterStandby(request)
+		response, err = client.AttachDBInstances(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,33 +73,34 @@ func (client *Client) EnterStandbyWithCallback(request *EnterStandbyRequest, cal
 	return result
 }
 
-// EnterStandbyRequest is the request struct for api EnterStandby
-type EnterStandbyRequest struct {
+// AttachDBInstancesRequest is the request struct for api AttachDBInstances
+type AttachDBInstancesRequest struct {
 	*requests.RpcRequest
-	InstanceId           *[]string        `position:"Query" name:"InstanceId"  type:"Repeated"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ScalingGroupId       string           `position:"Query" name:"ScalingGroupId"`
+	ForceAttach          requests.Boolean `position:"Query" name:"ForceAttach"`
+	DBInstance           *[]string        `position:"Query" name:"DBInstance"  type:"Repeated"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
-// EnterStandbyResponse is the response struct for api EnterStandby
-type EnterStandbyResponse struct {
+// AttachDBInstancesResponse is the response struct for api AttachDBInstances
+type AttachDBInstancesResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateEnterStandbyRequest creates a request to invoke EnterStandby API
-func CreateEnterStandbyRequest() (request *EnterStandbyRequest) {
-	request = &EnterStandbyRequest{
+// CreateAttachDBInstancesRequest creates a request to invoke AttachDBInstances API
+func CreateAttachDBInstancesRequest() (request *AttachDBInstancesRequest) {
+	request = &AttachDBInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ess", "2014-08-28", "EnterStandby", "ess", "openAPI")
+	request.InitWithApiInfo("Ess", "2014-08-28", "AttachDBInstances", "ess", "openAPI")
 	return
 }
 
-// CreateEnterStandbyResponse creates a response to parse from EnterStandby response
-func CreateEnterStandbyResponse() (response *EnterStandbyResponse) {
-	response = &EnterStandbyResponse{
+// CreateAttachDBInstancesResponse creates a response to parse from AttachDBInstances response
+func CreateAttachDBInstancesResponse() (response *AttachDBInstancesResponse) {
+	response = &AttachDBInstancesResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

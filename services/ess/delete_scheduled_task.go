@@ -93,7 +93,7 @@ func CreateDeleteScheduledTaskRequest() (request *DeleteScheduledTaskRequest) {
 	request = &DeleteScheduledTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ess", "2014-08-28", "DeleteScheduledTask", "ESS", "openAPI")
+	request.InitWithApiInfo("Ess", "2014-08-28", "DeleteScheduledTask", "ess", "openAPI")
 	return
 }
 

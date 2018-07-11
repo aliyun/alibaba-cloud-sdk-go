@@ -95,7 +95,7 @@ func CreateDeleteLifecycleHookRequest() (request *DeleteLifecycleHookRequest) {
 	request = &DeleteLifecycleHookRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ess", "2014-08-28", "DeleteLifecycleHook", "ESS", "openAPI")
+	request.InitWithApiInfo("Ess", "2014-08-28", "DeleteLifecycleHook", "ess", "openAPI")
 	return
 }
 

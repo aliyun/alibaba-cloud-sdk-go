@@ -95,7 +95,7 @@ func CreateRebalanceInstancesRequest() (request *RebalanceInstancesRequest) {
 	request = &RebalanceInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ess", "2014-08-28", "RebalanceInstances", "ESS", "openAPI")
+	request.InitWithApiInfo("Ess", "2014-08-28", "RebalanceInstances", "ess", "openAPI")
 	return
 }
 

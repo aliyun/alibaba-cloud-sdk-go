@@ -115,7 +115,7 @@ func CreateRemoveInstancesRequest() (request *RemoveInstancesRequest) {
 	request = &RemoveInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ess", "2014-08-28", "RemoveInstances", "ESS", "openAPI")
+	request.InitWithApiInfo("Ess", "2014-08-28", "RemoveInstances", "ess", "openAPI")
 	return
 }
 
