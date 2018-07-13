@@ -76,9 +76,9 @@ func (client *Client) ListNodesNoPagingWithCallback(request *ListNodesNoPagingRe
 // ListNodesNoPagingRequest is the request struct for api ListNodesNoPaging
 type ListNodesNoPagingRequest struct {
 	*requests.RpcRequest
-	ClusterId    string           `position:"Query" name:"ClusterId"`
-	Role         string           `position:"Query" name:"Role"`
 	HostName     string           `position:"Query" name:"HostName"`
+	Role         string           `position:"Query" name:"Role"`
+	ClusterId    string           `position:"Query" name:"ClusterId"`
 	OnlyDetached requests.Boolean `position:"Query" name:"OnlyDetached"`
 }
 

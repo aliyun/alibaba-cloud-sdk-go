@@ -76,9 +76,9 @@ func (client *Client) StartNodesWithCallback(request *StartNodesRequest, callbac
 // StartNodesRequest is the request struct for api StartNodes
 type StartNodesRequest struct {
 	*requests.RpcRequest
-	ClusterId string                `position:"Query" name:"ClusterId"`
 	Role      string                `position:"Query" name:"Role"`
 	Instance  *[]StartNodesInstance `position:"Query" name:"Instance"  type:"Repeated"`
+	ClusterId string                `position:"Query" name:"ClusterId"`
 }
 
 // StartNodesInstance is a repeated param struct in StartNodesRequest

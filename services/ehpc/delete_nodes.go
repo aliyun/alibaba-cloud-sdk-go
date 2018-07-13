@@ -76,9 +76,9 @@ func (client *Client) DeleteNodesWithCallback(request *DeleteNodesRequest, callb
 // DeleteNodesRequest is the request struct for api DeleteNodes
 type DeleteNodesRequest struct {
 	*requests.RpcRequest
-	ClusterId       string                 `position:"Query" name:"ClusterId"`
-	Instance        *[]DeleteNodesInstance `position:"Query" name:"Instance"  type:"Repeated"`
 	ReleaseInstance requests.Boolean       `position:"Query" name:"ReleaseInstance"`
+	Instance        *[]DeleteNodesInstance `position:"Query" name:"Instance"  type:"Repeated"`
+	ClusterId       string                 `position:"Query" name:"ClusterId"`
 }
 
 // DeleteNodesInstance is a repeated param struct in DeleteNodesRequest

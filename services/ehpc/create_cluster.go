@@ -76,55 +76,55 @@ func (client *Client) CreateClusterWithCallback(request *CreateClusterRequest, c
 // CreateClusterRequest is the request struct for api CreateCluster
 type CreateClusterRequest struct {
 	*requests.RpcRequest
-	ZoneId                      string                            `position:"Query" name:"ZoneId"`
-	Name                        string                            `position:"Query" name:"Name"`
-	Description                 string                            `position:"Query" name:"Description"`
-	EhpcVersion                 string                            `position:"Query" name:"EhpcVersion"`
-	OsTag                       string                            `position:"Query" name:"OsTag"`
-	AccountType                 string                            `position:"Query" name:"AccountType"`
-	SchedulerType               string                            `position:"Query" name:"SchedulerType"`
-	SecurityGroupId             string                            `position:"Query" name:"SecurityGroupId"`
-	SecurityGroupName           string                            `position:"Query" name:"SecurityGroupName"`
-	VpcId                       string                            `position:"Query" name:"VpcId"`
-	VSwitchId                   string                            `position:"Query" name:"VSwitchId"`
-	VolumeType                  string                            `position:"Query" name:"VolumeType"`
-	VolumeId                    string                            `position:"Query" name:"VolumeId"`
-	VolumeProtocol              string                            `position:"Query" name:"VolumeProtocol"`
-	VolumeMountpoint            string                            `position:"Query" name:"VolumeMountpoint"`
-	RemoteDirectory             string                            `position:"Query" name:"RemoteDirectory"`
-	DeployMode                  string                            `position:"Query" name:"DeployMode"`
-	HaEnable                    requests.Boolean                  `position:"Query" name:"HaEnable"`
-	EcsChargeType               string                            `position:"Query" name:"EcsChargeType"`
-	Password                    string                            `position:"Query" name:"Password"`
-	KeyPairName                 string                            `position:"Query" name:"KeyPairName"`
-	ImageOwnerAlias             string                            `position:"Query" name:"ImageOwnerAlias"`
-	ImageId                     string                            `position:"Query" name:"ImageId"`
-	EcsOrderManagerCount        requests.Integer                  `position:"Query" name:"EcsOrder.Manager.Count"`
-	EcsOrderManagerInstanceType string                            `position:"Query" name:"EcsOrder.Manager.InstanceType"`
-	EcsOrderComputeCount        requests.Integer                  `position:"Query" name:"EcsOrder.Compute.Count"`
-	EcsOrderComputeInstanceType string                            `position:"Query" name:"EcsOrder.Compute.InstanceType"`
-	EcsOrderLoginCount          requests.Integer                  `position:"Query" name:"EcsOrder.Login.Count"`
-	EcsOrderLoginInstanceType   string                            `position:"Query" name:"EcsOrder.Login.InstanceType"`
 	SccClusterId                string                            `position:"Query" name:"SccClusterId"`
-	ComputeSpotStrategy         string                            `position:"Query" name:"ComputeSpotStrategy"`
+	ImageId                     string                            `position:"Query" name:"ImageId"`
+	EcsOrderManagerInstanceType string                            `position:"Query" name:"EcsOrder.Manager.InstanceType"`
+	EhpcVersion                 string                            `position:"Query" name:"EhpcVersion"`
+	AccountType                 string                            `position:"Query" name:"AccountType"`
+	SecurityGroupId             string                            `position:"Query" name:"SecurityGroupId"`
+	Description                 string                            `position:"Query" name:"Description"`
+	KeyPairName                 string                            `position:"Query" name:"KeyPairName"`
+	SecurityGroupName           string                            `position:"Query" name:"SecurityGroupName"`
+	EcsOrderComputeInstanceType string                            `position:"Query" name:"EcsOrder.Compute.InstanceType"`
+	ImageOwnerAlias             string                            `position:"Query" name:"ImageOwnerAlias"`
+	VolumeType                  string                            `position:"Query" name:"VolumeType"`
+	DeployMode                  string                            `position:"Query" name:"DeployMode"`
+	EcsOrderManagerCount        requests.Integer                  `position:"Query" name:"EcsOrder.Manager.Count"`
+	Password                    string                            `position:"Query" name:"Password"`
+	EcsOrderLoginCount          requests.Integer                  `position:"Query" name:"EcsOrder.Login.Count"`
 	ComputeSpotPriceLimit       string                            `position:"Query" name:"ComputeSpotPriceLimit"`
-	Application                 *[]CreateClusterApplication       `position:"Query" name:"Application"  type:"Repeated"`
-	PostInstallScript           *[]CreateClusterPostInstallScript `position:"Query" name:"PostInstallScript"  type:"Repeated"`
-	Period                      requests.Integer                  `position:"Query" name:"Period"`
-	PeriodUnit                  string                            `position:"Query" name:"PeriodUnit"`
-	AutoRenew                   string                            `position:"Query" name:"AutoRenew"`
 	AutoRenewPeriod             requests.Integer                  `position:"Query" name:"AutoRenewPeriod"`
-}
-
-// CreateClusterApplication is a repeated param struct in CreateClusterRequest
-type CreateClusterApplication struct {
-	Tag string `name:"Tag"`
+	Period                      requests.Integer                  `position:"Query" name:"Period"`
+	VolumeProtocol              string                            `position:"Query" name:"VolumeProtocol"`
+	OsTag                       string                            `position:"Query" name:"OsTag"`
+	RemoteDirectory             string                            `position:"Query" name:"RemoteDirectory"`
+	EcsOrderComputeCount        requests.Integer                  `position:"Query" name:"EcsOrder.Compute.Count"`
+	ComputeSpotStrategy         string                            `position:"Query" name:"ComputeSpotStrategy"`
+	PostInstallScript           *[]CreateClusterPostInstallScript `position:"Query" name:"PostInstallScript"  type:"Repeated"`
+	VSwitchId                   string                            `position:"Query" name:"VSwitchId"`
+	PeriodUnit                  string                            `position:"Query" name:"PeriodUnit"`
+	Application                 *[]CreateClusterApplication       `position:"Query" name:"Application"  type:"Repeated"`
+	AutoRenew                   string                            `position:"Query" name:"AutoRenew"`
+	EcsChargeType               string                            `position:"Query" name:"EcsChargeType"`
+	VpcId                       string                            `position:"Query" name:"VpcId"`
+	HaEnable                    requests.Boolean                  `position:"Query" name:"HaEnable"`
+	Name                        string                            `position:"Query" name:"Name"`
+	SchedulerType               string                            `position:"Query" name:"SchedulerType"`
+	VolumeId                    string                            `position:"Query" name:"VolumeId"`
+	VolumeMountpoint            string                            `position:"Query" name:"VolumeMountpoint"`
+	EcsOrderLoginInstanceType   string                            `position:"Query" name:"EcsOrder.Login.InstanceType"`
+	ZoneId                      string                            `position:"Query" name:"ZoneId"`
 }
 
 // CreateClusterPostInstallScript is a repeated param struct in CreateClusterRequest
 type CreateClusterPostInstallScript struct {
 	Url  string `name:"Url"`
 	Args string `name:"Args"`
+}
+
+// CreateClusterApplication is a repeated param struct in CreateClusterRequest
+type CreateClusterApplication struct {
+	Tag string `name:"Tag"`
 }
 
 // CreateClusterResponse is the response struct for api CreateCluster

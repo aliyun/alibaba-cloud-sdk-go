@@ -22,6 +22,7 @@ type NodeInfo struct {
 	ExpiredTime     string                   `json:"ExpiredTime" xml:"ExpiredTime"`
 	ImageId         string                   `json:"ImageId" xml:"ImageId"`
 	ImageOwnerAlias string                   `json:"ImageOwnerAlias" xml:"ImageOwnerAlias"`
+	Location        string                   `json:"Location" xml:"Location"`
 	RegionId        string                   `json:"RegionId" xml:"RegionId"`
 	CreatedByEhpc   bool                     `json:"CreatedByEhpc" xml:"CreatedByEhpc"`
 	Id              string                   `json:"Id" xml:"Id"`

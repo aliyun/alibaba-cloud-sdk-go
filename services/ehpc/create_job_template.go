@@ -76,16 +76,16 @@ func (client *Client) CreateJobTemplateWithCallback(request *CreateJobTemplateRe
 // CreateJobTemplateRequest is the request struct for api CreateJobTemplate
 type CreateJobTemplateRequest struct {
 	*requests.RpcRequest
-	CommandLine        string           `position:"Query" name:"CommandLine"`
+	StderrRedirectPath string           `position:"Query" name:"StderrRedirectPath"`
+	ArrayRequest       string           `position:"Query" name:"ArrayRequest"`
+	PackagePath        string           `position:"Query" name:"PackagePath"`
+	Variables          string           `position:"Query" name:"Variables"`
 	Name               string           `position:"Query" name:"Name"`
 	RunasUser          string           `position:"Query" name:"RunasUser"`
-	Priority           requests.Integer `position:"Query" name:"Priority"`
-	PackagePath        string           `position:"Query" name:"PackagePath"`
 	StdoutRedirectPath string           `position:"Query" name:"StdoutRedirectPath"`
-	StderrRedirectPath string           `position:"Query" name:"StderrRedirectPath"`
 	ReRunable          requests.Boolean `position:"Query" name:"ReRunable"`
-	ArrayRequest       string           `position:"Query" name:"ArrayRequest"`
-	Variables          string           `position:"Query" name:"Variables"`
+	Priority           requests.Integer `position:"Query" name:"Priority"`
+	CommandLine        string           `position:"Query" name:"CommandLine"`
 }
 
 // CreateJobTemplateResponse is the response struct for api CreateJobTemplate

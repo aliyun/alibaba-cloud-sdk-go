@@ -76,12 +76,12 @@ func (client *Client) ListJobsWithCallback(request *ListJobsRequest, callback fu
 // ListJobsRequest is the request struct for api ListJobs
 type ListJobsRequest struct {
 	*requests.RpcRequest
-	ClusterId  string           `position:"Query" name:"ClusterId"`
 	Owner      string           `position:"Query" name:"Owner"`
+	PageSize   requests.Integer `position:"Query" name:"PageSize"`
+	ClusterId  string           `position:"Query" name:"ClusterId"`
 	State      string           `position:"Query" name:"State"`
 	Rerunable  string           `position:"Query" name:"Rerunable"`
 	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
-	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 }
 
 // ListJobsResponse is the response struct for api ListJobs

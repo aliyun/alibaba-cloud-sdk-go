@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// ListClusters invokes the ehpc.ListClusters API synchronously
-// api document: https://help.aliyun.com/api/ehpc/listclusters.html
-func (client *Client) ListClusters(request *ListClustersRequest) (response *ListClustersResponse, err error) {
-	response = CreateListClustersResponse()
+// ListCommands invokes the ehpc.ListCommands API synchronously
+// api document: https://help.aliyun.com/api/ehpc/listcommands.html
+func (client *Client) ListCommands(request *ListCommandsRequest) (response *ListCommandsResponse, err error) {
+	response = CreateListCommandsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// ListClustersWithChan invokes the ehpc.ListClusters API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/listclusters.html
+// ListCommandsWithChan invokes the ehpc.ListCommands API asynchronously
+// api document: https://help.aliyun.com/api/ehpc/listcommands.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) ListClustersWithChan(request *ListClustersRequest) (<-chan *ListClustersResponse, <-chan error) {
-	responseChan := make(chan *ListClustersResponse, 1)
+func (client *Client) ListCommandsWithChan(request *ListCommandsRequest) (<-chan *ListCommandsResponse, <-chan error) {
+	responseChan := make(chan *ListCommandsResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.ListClusters(request)
+		response, err := client.ListCommands(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) ListClustersWithChan(request *ListClustersRequest) (<-chan
 	return responseChan, errChan
 }
 
-// ListClustersWithCallback invokes the ehpc.ListClusters API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/listclusters.html
+// ListCommandsWithCallback invokes the ehpc.ListCommands API asynchronously
+// api document: https://help.aliyun.com/api/ehpc/listcommands.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) ListClustersWithCallback(request *ListClustersRequest, callback func(response *ListClustersResponse, err error)) <-chan int {
+func (client *Client) ListCommandsWithCallback(request *ListCommandsRequest, callback func(response *ListCommandsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *ListClustersResponse
+		var response *ListCommandsResponse
 		var err error
 		defer close(result)
-		response, err = client.ListClusters(request)
+		response, err = client.ListCommands(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,35 +73,37 @@ func (client *Client) ListClustersWithCallback(request *ListClustersRequest, cal
 	return result
 }
 
-// ListClustersRequest is the request struct for api ListClusters
-type ListClustersRequest struct {
+// ListCommandsRequest is the request struct for api ListCommands
+type ListCommandsRequest struct {
 	*requests.RpcRequest
 	PageSize   requests.Integer `position:"Query" name:"PageSize"`
+	ClusterId  string           `position:"Query" name:"ClusterId"`
+	CommandId  string           `position:"Query" name:"CommandId"`
 	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
 }
 
-// ListClustersResponse is the response struct for api ListClusters
-type ListClustersResponse struct {
+// ListCommandsResponse is the response struct for api ListCommands
+type ListCommandsResponse struct {
 	*responses.BaseResponse
 	RequestId  string   `json:"RequestId" xml:"RequestId"`
 	TotalCount int      `json:"TotalCount" xml:"TotalCount"`
 	PageNumber int      `json:"PageNumber" xml:"PageNumber"`
 	PageSize   int      `json:"PageSize" xml:"PageSize"`
-	Clusters   Clusters `json:"Clusters" xml:"Clusters"`
+	Commands   Commands `json:"Commands" xml:"Commands"`
 }
 
-// CreateListClustersRequest creates a request to invoke ListClusters API
-func CreateListClustersRequest() (request *ListClustersRequest) {
-	request = &ListClustersRequest{
+// CreateListCommandsRequest creates a request to invoke ListCommands API
+func CreateListCommandsRequest() (request *ListCommandsRequest) {
+	request = &ListCommandsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "ListClusters", "ehs", "openAPI")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "ListCommands", "ehs", "openAPI")
 	return
 }
 
-// CreateListClustersResponse creates a response to parse from ListClusters response
-func CreateListClustersResponse() (response *ListClustersResponse) {
-	response = &ListClustersResponse{
+// CreateListCommandsResponse creates a response to parse from ListCommands response
+func CreateListCommandsResponse() (response *ListCommandsResponse) {
+	response = &ListCommandsResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

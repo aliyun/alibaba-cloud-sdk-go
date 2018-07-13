@@ -76,15 +76,15 @@ func (client *Client) ListCustomImagesWithCallback(request *ListCustomImagesRequ
 // ListCustomImagesRequest is the request struct for api ListCustomImages
 type ListCustomImagesRequest struct {
 	*requests.RpcRequest
-	ImageOwnerAlias string `position:"Query" name:"ImageOwnerAlias"`
 	BaseOsTag       string `position:"Query" name:"BaseOsTag"`
+	ImageOwnerAlias string `position:"Query" name:"ImageOwnerAlias"`
 }
 
 // ListCustomImagesResponse is the response struct for api ListCustomImages
 type ListCustomImagesResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Images    Images `json:"Images" xml:"Images"`
+	RequestId string                   `json:"RequestId" xml:"RequestId"`
+	Images    ImagesInListCustomImages `json:"Images" xml:"Images"`
 }
 
 // CreateListCustomImagesRequest creates a request to invoke ListCustomImages API

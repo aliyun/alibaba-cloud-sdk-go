@@ -76,8 +76,8 @@ func (client *Client) DeleteJobsWithCallback(request *DeleteJobsRequest, callbac
 // DeleteJobsRequest is the request struct for api DeleteJobs
 type DeleteJobsRequest struct {
 	*requests.RpcRequest
-	ClusterId string `position:"Query" name:"ClusterId"`
 	Jobs      string `position:"Query" name:"Jobs"`
+	ClusterId string `position:"Query" name:"ClusterId"`
 }
 
 // DeleteJobsResponse is the response struct for api DeleteJobs

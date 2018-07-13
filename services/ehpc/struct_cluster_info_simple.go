@@ -33,6 +33,7 @@ type ClusterInfoSimple struct {
 	CreateTime      string         `json:"CreateTime" xml:"CreateTime"`
 	ImageOwnerAlias string         `json:"ImageOwnerAlias" xml:"ImageOwnerAlias"`
 	ImageId         string         `json:"ImageId" xml:"ImageId"`
+	Location        string         `json:"Location" xml:"Location"`
 	Managers        Managers       `json:"Managers" xml:"Managers"`
 	Computes        Computes       `json:"Computes" xml:"Computes"`
 	TotalResources  TotalResources `json:"TotalResources" xml:"TotalResources"`

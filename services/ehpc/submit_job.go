@@ -76,18 +76,22 @@ func (client *Client) SubmitJobWithCallback(request *SubmitJobRequest, callback 
 // SubmitJobRequest is the request struct for api SubmitJob
 type SubmitJobRequest struct {
 	*requests.RpcRequest
-	ClusterId          string           `position:"Query" name:"ClusterId"`
-	CommandLine        string           `position:"Query" name:"CommandLine"`
-	Name               string           `position:"Query" name:"Name"`
-	RunasUser          string           `position:"Query" name:"RunasUser"`
-	RunasUserPassword  string           `position:"Query" name:"RunasUserPassword"`
-	Priority           requests.Integer `position:"Query" name:"Priority"`
-	PackagePath        string           `position:"Query" name:"PackagePath"`
-	StdoutRedirectPath string           `position:"Query" name:"StdoutRedirectPath"`
 	StderrRedirectPath string           `position:"Query" name:"StderrRedirectPath"`
-	ReRunable          requests.Boolean `position:"Query" name:"ReRunable"`
-	ArrayRequest       string           `position:"Query" name:"ArrayRequest"`
 	Variables          string           `position:"Query" name:"Variables"`
+	RunasUserPassword  string           `position:"Query" name:"RunasUserPassword"`
+	PostCmdLine        string           `position:"Query" name:"PostCmdLine"`
+	RunasUser          string           `position:"Query" name:"RunasUser"`
+	ClusterId          string           `position:"Query" name:"ClusterId"`
+	ReRunable          requests.Boolean `position:"Query" name:"ReRunable"`
+	Priority           requests.Integer `position:"Query" name:"Priority"`
+	CommandLine        string           `position:"Query" name:"CommandLine"`
+	ArrayRequest       string           `position:"Query" name:"ArrayRequest"`
+	UnzipCmd           string           `position:"Query" name:"UnzipCmd"`
+	PackagePath        string           `position:"Query" name:"PackagePath"`
+	InputFileUrl       string           `position:"Query" name:"InputFileUrl"`
+	Name               string           `position:"Query" name:"Name"`
+	StdoutRedirectPath string           `position:"Query" name:"StdoutRedirectPath"`
+	ContainerId        string           `position:"Query" name:"ContainerId"`
 }
 
 // SubmitJobResponse is the response struct for api SubmitJob

@@ -76,9 +76,9 @@ func (client *Client) StopNodesWithCallback(request *StopNodesRequest, callback 
 // StopNodesRequest is the request struct for api StopNodes
 type StopNodesRequest struct {
 	*requests.RpcRequest
-	ClusterId string               `position:"Query" name:"ClusterId"`
 	Role      string               `position:"Query" name:"Role"`
 	Instance  *[]StopNodesInstance `position:"Query" name:"Instance"  type:"Repeated"`
+	ClusterId string               `position:"Query" name:"ClusterId"`
 }
 
 // StopNodesInstance is a repeated param struct in StopNodesRequest

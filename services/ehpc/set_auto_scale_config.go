@@ -76,17 +76,17 @@ func (client *Client) SetAutoScaleConfigWithCallback(request *SetAutoScaleConfig
 // SetAutoScaleConfigRequest is the request struct for api SetAutoScaleConfig
 type SetAutoScaleConfigRequest struct {
 	*requests.RpcRequest
+	ShrinkIdleTimes         requests.Integer `position:"Query" name:"ShrinkIdleTimes"`
+	GrowTimeoutInMinutes    requests.Integer `position:"Query" name:"GrowTimeoutInMinutes"`
 	ClusterId               string           `position:"Query" name:"ClusterId"`
 	EnableAutoGrow          requests.Boolean `position:"Query" name:"EnableAutoGrow"`
 	EnableAutoShrink        requests.Boolean `position:"Query" name:"EnableAutoShrink"`
-	GrowIntervalInMinutes   requests.Integer `position:"Query" name:"GrowIntervalInMinutes"`
-	ShrinkIntervalInMinutes requests.Integer `position:"Query" name:"ShrinkIntervalInMinutes"`
-	ShrinkIdleTimes         requests.Integer `position:"Query" name:"ShrinkIdleTimes"`
-	GrowTimeoutInMinutes    requests.Integer `position:"Query" name:"GrowTimeoutInMinutes"`
-	ExtraNodesGrowRatio     requests.Integer `position:"Query" name:"ExtraNodesGrowRatio"`
-	GrowRatio               requests.Integer `position:"Query" name:"GrowRatio"`
 	MaxNodesInCluster       requests.Integer `position:"Query" name:"MaxNodesInCluster"`
 	ExcludeNodes            string           `position:"Query" name:"ExcludeNodes"`
+	ShrinkIntervalInMinutes requests.Integer `position:"Query" name:"ShrinkIntervalInMinutes"`
+	ExtraNodesGrowRatio     requests.Integer `position:"Query" name:"ExtraNodesGrowRatio"`
+	GrowIntervalInMinutes   requests.Integer `position:"Query" name:"GrowIntervalInMinutes"`
+	GrowRatio               requests.Integer `position:"Query" name:"GrowRatio"`
 }
 
 // SetAutoScaleConfigResponse is the response struct for api SetAutoScaleConfig

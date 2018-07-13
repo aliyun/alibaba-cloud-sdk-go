@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// UpgradeClient invokes the ehpc.UpgradeClient API synchronously
-// api document: https://help.aliyun.com/api/ehpc/upgradeclient.html
-func (client *Client) UpgradeClient(request *UpgradeClientRequest) (response *UpgradeClientResponse, err error) {
-	response = CreateUpgradeClientResponse()
+// PullImage invokes the ehpc.PullImage API synchronously
+// api document: https://help.aliyun.com/api/ehpc/pullimage.html
+func (client *Client) PullImage(request *PullImageRequest) (response *PullImageResponse, err error) {
+	response = CreatePullImageResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// UpgradeClientWithChan invokes the ehpc.UpgradeClient API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/upgradeclient.html
+// PullImageWithChan invokes the ehpc.PullImage API asynchronously
+// api document: https://help.aliyun.com/api/ehpc/pullimage.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) UpgradeClientWithChan(request *UpgradeClientRequest) (<-chan *UpgradeClientResponse, <-chan error) {
-	responseChan := make(chan *UpgradeClientResponse, 1)
+func (client *Client) PullImageWithChan(request *PullImageRequest) (<-chan *PullImageResponse, <-chan error) {
+	responseChan := make(chan *PullImageResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.UpgradeClient(request)
+		response, err := client.PullImage(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) UpgradeClientWithChan(request *UpgradeClientRequest) (<-ch
 	return responseChan, errChan
 }
 
-// UpgradeClientWithCallback invokes the ehpc.UpgradeClient API asynchronously
-// api document: https://help.aliyun.com/api/ehpc/upgradeclient.html
+// PullImageWithCallback invokes the ehpc.PullImage API asynchronously
+// api document: https://help.aliyun.com/api/ehpc/pullimage.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) UpgradeClientWithCallback(request *UpgradeClientRequest, callback func(response *UpgradeClientResponse, err error)) <-chan int {
+func (client *Client) PullImageWithCallback(request *PullImageRequest, callback func(response *PullImageResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *UpgradeClientResponse
+		var response *PullImageResponse
 		var err error
 		defer close(result)
-		response, err = client.UpgradeClient(request)
+		response, err = client.PullImage(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,31 +73,33 @@ func (client *Client) UpgradeClientWithCallback(request *UpgradeClientRequest, c
 	return result
 }
 
-// UpgradeClientRequest is the request struct for api UpgradeClient
-type UpgradeClientRequest struct {
+// PullImageRequest is the request struct for api PullImage
+type PullImageRequest struct {
 	*requests.RpcRequest
-	ClientVersion string `position:"Query" name:"ClientVersion"`
+	ContainerType string `position:"Query" name:"ContainerType"`
 	ClusterId     string `position:"Query" name:"ClusterId"`
+	Repository    string `position:"Query" name:"Repository"`
+	ImageTag      string `position:"Query" name:"ImageTag"`
 }
 
-// UpgradeClientResponse is the response struct for api UpgradeClient
-type UpgradeClientResponse struct {
+// PullImageResponse is the response struct for api PullImage
+type PullImageResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateUpgradeClientRequest creates a request to invoke UpgradeClient API
-func CreateUpgradeClientRequest() (request *UpgradeClientRequest) {
-	request = &UpgradeClientRequest{
+// CreatePullImageRequest creates a request to invoke PullImage API
+func CreatePullImageRequest() (request *PullImageRequest) {
+	request = &PullImageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("EHPC", "2018-04-12", "UpgradeClient", "ehs", "openAPI")
+	request.InitWithApiInfo("EHPC", "2018-04-12", "PullImage", "ehs", "openAPI")
 	return
 }
 
-// CreateUpgradeClientResponse creates a response to parse from UpgradeClient response
-func CreateUpgradeClientResponse() (response *UpgradeClientResponse) {
-	response = &UpgradeClientResponse{
+// CreatePullImageResponse creates a response to parse from PullImage response
+func CreatePullImageResponse() (response *PullImageResponse) {
+	response = &PullImageResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

@@ -27,6 +27,7 @@ type ClusterInfo struct {
 	SchedulerType    string                        `json:"SchedulerType" xml:"SchedulerType"`
 	CreateTime       string                        `json:"CreateTime" xml:"CreateTime"`
 	SecurityGroupId  string                        `json:"SecurityGroupId" xml:"SecurityGroupId"`
+	VpcId            string                        `json:"VpcId" xml:"VpcId"`
 	VSwitchId        string                        `json:"VSwitchId" xml:"VSwitchId"`
 	VolumeType       string                        `json:"VolumeType" xml:"VolumeType"`
 	VolumeId         string                        `json:"VolumeId" xml:"VolumeId"`
@@ -41,6 +42,7 @@ type ClusterInfo struct {
 	ClientVersion    string                        `json:"ClientVersion" xml:"ClientVersion"`
 	ImageOwnerAlias  string                        `json:"ImageOwnerAlias" xml:"ImageOwnerAlias"`
 	ImageId          string                        `json:"ImageId" xml:"ImageId"`
+	Location         string                        `json:"Location" xml:"Location"`
 	EcsInfo          EcsInfo                       `json:"EcsInfo" xml:"EcsInfo"`
 	Applications     ApplicationsInDescribeCluster `json:"Applications" xml:"Applications"`
 }

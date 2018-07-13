@@ -76,8 +76,8 @@ func (client *Client) ListPreferredEcsTypesWithCallback(request *ListPreferredEc
 // ListPreferredEcsTypesRequest is the request struct for api ListPreferredEcsTypes
 type ListPreferredEcsTypesRequest struct {
 	*requests.RpcRequest
-	ZoneId             string `position:"Query" name:"ZoneId"`
 	SpotStrategy       string `position:"Query" name:"SpotStrategy"`
+	ZoneId             string `position:"Query" name:"ZoneId"`
 	InstanceChargeType string `position:"Query" name:"InstanceChargeType"`
 }
 
