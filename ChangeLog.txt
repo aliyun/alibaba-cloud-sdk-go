@@ -1,3 +1,6 @@
+2018-07-13 Version: 1.22.6
+1, Release 2016-06-20 TableStore Open API
+
 2018-07-11 Version: 1.22.5
 1, new function: Attach and Detach Rds instance of scalingGroup.
 
