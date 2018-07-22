@@ -80,12 +80,6 @@ func buildRpcStringToSign(request requests.AcsRequest) (stringToSign string) {
 		signParams[key] = value
 	}
 
-	// sort params by key
-	var paramKeySlice []string
-	for key := range signParams {
-		paramKeySlice = append(paramKeySlice, key)
-	}
-	sort.Strings(paramKeySlice)
 	stringToSign = utils.GetUrlFormedMap(signParams)
 	stringToSign = strings.Replace(stringToSign, "+", "%20", -1)
 	stringToSign = strings.Replace(stringToSign, "*", "%2A", -1)
