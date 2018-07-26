@@ -1,3 +1,8 @@
+2018-07-26 Version: 1.23.1
+1, Add BatchGetJobMetricInfo API.
+2, Add BatchGetPluginConfigInfo API.
+3, Add GetJobTopology API.
+
 2018-07-13 Version: 1.23.0
 1, New APIs for batch executing commands in cluster: InvokeShellCommand, ListCommands, etc.
 2, New APIs for HybridCluster (link E-HPC with cluster in local IDC): CreateHybridCluster, etc.
