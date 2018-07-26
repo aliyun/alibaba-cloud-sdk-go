@@ -76,7 +76,8 @@ func (client *Client) EnableEventRuleWithCallback(request *EnableEventRuleReques
 // EnableEventRuleRequest is the request struct for api EnableEventRule
 type EnableEventRuleRequest struct {
 	*requests.RpcRequest
-	RuleName string `position:"Query" name:"RuleName"`
+	RuleNames *[]string `position:"Query" name:"RuleNames"  type:"Repeated"`
+	RuleName  string    `position:"Query" name:"RuleName"`
 }
 
 // EnableEventRuleResponse is the response struct for api EnableEventRule

@@ -82,8 +82,8 @@ type NodeListRequest struct {
 	PageSize         requests.Integer `position:"Query" name:"PageSize"`
 	KeyWord          string           `position:"Query" name:"KeyWord"`
 	UserId           requests.Integer `position:"Query" name:"UserId"`
-	PageNumber       requests.Integer `position:"Query" name:"PageNumber"`
 	SerialNumbers    string           `position:"Query" name:"SerialNumbers"`
+	PageNumber       requests.Integer `position:"Query" name:"PageNumber"`
 	Status           string           `position:"Query" name:"Status"`
 }
 

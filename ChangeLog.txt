@@ -1,3 +1,6 @@
+2018-07-26 Version: 1.23.2
+1, Add new API: SendDryRunSystemEvent,PutMetricAlarm,DescribeAlarmsForDimensions,DescribeAlarms.
+
 2018-07-26 Version: 1.23.1
 1, Add BatchGetJobMetricInfo API.
 2, Add BatchGetPluginConfigInfo API.

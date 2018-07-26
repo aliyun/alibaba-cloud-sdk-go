@@ -76,6 +76,7 @@ func (client *Client) ListEventRulesWithCallback(request *ListEventRulesRequest,
 // ListEventRulesRequest is the request struct for api ListEventRules
 type ListEventRulesRequest struct {
 	*requests.RpcRequest
+	GroupId    string `position:"Query" name:"GroupId"`
 	PageSize   string `position:"Query" name:"PageSize"`
 	NamePrefix string `position:"Query" name:"NamePrefix"`
 	Page       string `position:"Query" name:"Page"`

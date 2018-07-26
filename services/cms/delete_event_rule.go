@@ -76,7 +76,8 @@ func (client *Client) DeleteEventRuleWithCallback(request *DeleteEventRuleReques
 // DeleteEventRuleRequest is the request struct for api DeleteEventRule
 type DeleteEventRuleRequest struct {
 	*requests.RpcRequest
-	RuleName string `position:"Query" name:"RuleName"`
+	RuleNames *[]string `position:"Query" name:"RuleNames"  type:"Repeated"`
+	RuleName  string    `position:"Query" name:"RuleName"`
 }
 
 // DeleteEventRuleResponse is the response struct for api DeleteEventRule
