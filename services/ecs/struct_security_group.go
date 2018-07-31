@@ -24,5 +24,6 @@ type SecurityGroup struct {
 	CreationTime            string                       `json:"CreationTime" xml:"CreationTime"`
 	AvailableInstanceAmount int                          `json:"AvailableInstanceAmount" xml:"AvailableInstanceAmount"`
 	EcsCount                int                          `json:"EcsCount" xml:"EcsCount"`
+	ResourceGroupId         string                       `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	Tags                    TagsInDescribeSecurityGroups `json:"Tags" xml:"Tags"`
 }

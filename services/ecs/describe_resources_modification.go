@@ -77,6 +77,8 @@ func (client *Client) DescribeResourcesModificationWithCallback(request *Describ
 type DescribeResourcesModificationRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Memory               requests.Integer `position:"Query" name:"Memory"`
+	Cores                requests.Integer `position:"Query" name:"Cores"`
 	MigrateAcrossZone    requests.Boolean `position:"Query" name:"MigrateAcrossZone"`
 	InstanceType         string           `position:"Query" name:"InstanceType"`
 	ResourceId           string           `position:"Query" name:"ResourceId"`

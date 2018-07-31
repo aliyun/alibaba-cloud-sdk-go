@@ -78,6 +78,7 @@ type RunInstancesRequest struct {
 	*requests.RpcRequest
 	LaunchTemplateName          string                          `position:"Query" name:"LaunchTemplateName"`
 	ResourceOwnerId             requests.Integer                `position:"Query" name:"ResourceOwnerId"`
+	UniqueSuffix                requests.Boolean                `position:"Query" name:"UniqueSuffix"`
 	HpcClusterId                string                          `position:"Query" name:"HpcClusterId"`
 	SecurityEnhancementStrategy string                          `position:"Query" name:"SecurityEnhancementStrategy"`
 	KeyPairName                 string                          `position:"Query" name:"KeyPairName"`

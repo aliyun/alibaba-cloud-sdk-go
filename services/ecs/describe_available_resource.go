@@ -77,8 +77,10 @@ func (client *Client) DescribeAvailableResourceWithCallback(request *DescribeAva
 type DescribeAvailableResourceRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Memory               requests.Integer `position:"Query" name:"Memory"`
 	IoOptimized          string           `position:"Query" name:"IoOptimized"`
 	DataDiskCategory     string           `position:"Query" name:"DataDiskCategory"`
+	Cores                requests.Integer `position:"Query" name:"Cores"`
 	SystemDiskCategory   string           `position:"Query" name:"SystemDiskCategory"`
 	InstanceType         string           `position:"Query" name:"InstanceType"`
 	NetworkCategory      string           `position:"Query" name:"NetworkCategory"`

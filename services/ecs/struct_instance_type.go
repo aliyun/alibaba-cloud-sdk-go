@@ -34,6 +34,7 @@ type InstanceType struct {
 	InitialCredit        int     `json:"InitialCredit" xml:"InitialCredit"`
 	InstancePpsTx        int     `json:"InstancePpsTx" xml:"InstancePpsTx"`
 	LocalStorageAmount   int     `json:"LocalStorageAmount" xml:"LocalStorageAmount"`
+	InstanceFamilyLevel  string  `json:"InstanceFamilyLevel" xml:"InstanceFamilyLevel"`
 	LocalStorageCapacity int     `json:"LocalStorageCapacity" xml:"LocalStorageCapacity"`
 	GPUSpec              string  `json:"GPUSpec" xml:"GPUSpec"`
 	LocalStorageCategory string  `json:"LocalStorageCategory" xml:"LocalStorageCategory"`

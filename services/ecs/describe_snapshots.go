@@ -87,6 +87,7 @@ type DescribeSnapshotsRequest struct {
 	Tag3Key              string           `position:"Query" name:"Tag.3.Key"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	Tag1Value            string           `position:"Query" name:"Tag.1.Value"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	Filter1Key           string           `position:"Query" name:"Filter.1.Key"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	DiskId               string           `position:"Query" name:"DiskId"`
