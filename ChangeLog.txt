@@ -1,3 +1,6 @@
+2018-08-01 Version: 1.23.5
+1, Add api: MoPenQueryCanvas, MoPenDoRecognize, MoPenSendMqttMessage, MoPenFindGroup
+
 2018-08-01 Version: 1.23.4
 1, Support describePrice for market image, add return detailInfo in interface describePrice
 
