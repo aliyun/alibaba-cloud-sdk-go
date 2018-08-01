@@ -78,6 +78,7 @@ type UpdateAlarmRequest struct {
 	*requests.RpcRequest
 	Period             requests.Integer `position:"Query" name:"Period"`
 	Webhook            string           `position:"Query" name:"Webhook"`
+	DryRun             requests.Boolean `position:"Query" name:"DryRun"`
 	ContactGroups      string           `position:"Query" name:"ContactGroups"`
 	EndTime            requests.Integer `position:"Query" name:"EndTime"`
 	Threshold          string           `position:"Query" name:"Threshold"`
