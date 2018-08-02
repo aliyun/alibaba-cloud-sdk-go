@@ -1,3 +1,6 @@
+2018-08-02 Version: 1.23.7
+1, Add parameter(GroupId) for CreateNotifyPolicy,GetNotifyPolicy,DeleteNotifyPolicy,ListNotifyPolicy.
+
 2018-08-01 Version: 1.23.6
 1, Add parameter(DryRun) for CreateAlarm and UpdateAlarm.
 
