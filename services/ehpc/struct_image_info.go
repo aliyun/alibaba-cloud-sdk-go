@@ -18,14 +18,19 @@ package ehpc
 // ImageInfo is a nested struct in ehpc response
 type ImageInfo struct {
 	Uid               string    `json:"Uid" xml:"Uid"`
-	ImageId           string    `json:"ImageId" xml:"ImageId"`
-	ImageName         string    `json:"ImageName" xml:"ImageName"`
-	ImageOwnerAlias   string    `json:"ImageOwnerAlias" xml:"ImageOwnerAlias"`
-	Description       string    `json:"Description" xml:"Description"`
-	Status            string    `json:"Status" xml:"Status"`
-	ProductCode       string    `json:"ProductCode" xml:"ProductCode"`
+	Repository        string    `json:"Repository" xml:"Repository"`
 	SkuCode           string    `json:"SkuCode" xml:"SkuCode"`
-	PricingCycle      string    `json:"PricingCycle" xml:"PricingCycle"`
+	ImageId           string    `json:"ImageId" xml:"ImageId"`
+	ImageOwnerAlias   string    `json:"ImageOwnerAlias" xml:"ImageOwnerAlias"`
+	System            string    `json:"System" xml:"System"`
 	PostInstallScript string    `json:"PostInstallScript" xml:"PostInstallScript"`
+	ProductCode       string    `json:"ProductCode" xml:"ProductCode"`
+	Tag               string    `json:"Tag" xml:"Tag"`
+	PricingCycle      string    `json:"PricingCycle" xml:"PricingCycle"`
+	ImageName         string    `json:"ImageName" xml:"ImageName"`
+	Status            string    `json:"Status" xml:"Status"`
+	Description       string    `json:"Description" xml:"Description"`
+	Type              string    `json:"Type" xml:"Type"`
+	UpdateDateTime    string    `json:"UpdateDateTime" xml:"UpdateDateTime"`
 	BaseOsTag         BaseOsTag `json:"BaseOsTag" xml:"BaseOsTag"`
 }

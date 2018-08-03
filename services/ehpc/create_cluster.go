@@ -106,6 +106,7 @@ type CreateClusterRequest struct {
 	Application                 *[]CreateClusterApplication       `position:"Query" name:"Application"  type:"Repeated"`
 	AutoRenew                   string                            `position:"Query" name:"AutoRenew"`
 	EcsChargeType               string                            `position:"Query" name:"EcsChargeType"`
+	InputFileUrl                string                            `position:"Query" name:"InputFileUrl"`
 	VpcId                       string                            `position:"Query" name:"VpcId"`
 	HaEnable                    requests.Boolean                  `position:"Query" name:"HaEnable"`
 	Name                        string                            `position:"Query" name:"Name"`

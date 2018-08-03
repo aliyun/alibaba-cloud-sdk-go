@@ -96,6 +96,8 @@ type GetAutoScaleConfigResponse struct {
 	GrowRatio               int    `json:"GrowRatio" xml:"GrowRatio"`
 	MaxNodesInCluster       int    `json:"MaxNodesInCluster" xml:"MaxNodesInCluster"`
 	ExcludeNodes            string `json:"ExcludeNodes" xml:"ExcludeNodes"`
+	SpotStrategy            string `json:"SpotStrategy" xml:"SpotStrategy"`
+	SpotPriceLimit          string `json:"SpotPriceLimit" xml:"SpotPriceLimit"`
 }
 
 // CreateGetAutoScaleConfigRequest creates a request to invoke GetAutoScaleConfig API

@@ -76,18 +76,22 @@ func (client *Client) CreateHybridClusterWithCallback(request *CreateHybridClust
 // CreateHybridClusterRequest is the request struct for api CreateHybridCluster
 type CreateHybridClusterRequest struct {
 	*requests.RpcRequest
-	VolumeProtocol              string                            `position:"Query" name:"VolumeProtocol"`
-	OsTag                       string                            `position:"Query" name:"OsTag"`
-	RemoteDirectory             string                            `position:"Query" name:"RemoteDirectory"`
 	EhpcVersion                 string                            `position:"Query" name:"EhpcVersion"`
 	SecurityGroupId             string                            `position:"Query" name:"SecurityGroupId"`
 	Description                 string                            `position:"Query" name:"Description"`
 	KeyPairName                 string                            `position:"Query" name:"KeyPairName"`
 	SecurityGroupName           string                            `position:"Query" name:"SecurityGroupName"`
 	EcsOrderComputeInstanceType string                            `position:"Query" name:"EcsOrder.Compute.InstanceType"`
-	VSwitchId                   string                            `position:"Query" name:"VSwitchId"`
+	OnPremiseVolumeRemotePath   string                            `position:"Query" name:"OnPremiseVolumeRemotePath"`
 	VolumeType                  string                            `position:"Query" name:"VolumeType"`
 	Password                    string                            `position:"Query" name:"Password"`
+	OnPremiseVolumeMountPoint   string                            `position:"Query" name:"OnPremiseVolumeMountPoint"`
+	OnPremiseVolumeProtocol     string                            `position:"Query" name:"OnPremiseVolumeProtocol"`
+	VolumeProtocol              string                            `position:"Query" name:"VolumeProtocol"`
+	OnPremiseVolumeLocalPath    string                            `position:"Query" name:"OnPremiseVolumeLocalPath"`
+	OsTag                       string                            `position:"Query" name:"OsTag"`
+	RemoteDirectory             string                            `position:"Query" name:"RemoteDirectory"`
+	VSwitchId                   string                            `position:"Query" name:"VSwitchId"`
 	Nodes                       string                            `position:"Query" name:"Nodes"`
 	Application                 *[]CreateHybridClusterApplication `position:"Query" name:"Application"  type:"Repeated"`
 	Domain                      string                            `position:"Query" name:"Domain"`

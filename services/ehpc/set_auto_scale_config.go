@@ -80,7 +80,9 @@ type SetAutoScaleConfigRequest struct {
 	GrowTimeoutInMinutes    requests.Integer `position:"Query" name:"GrowTimeoutInMinutes"`
 	ClusterId               string           `position:"Query" name:"ClusterId"`
 	EnableAutoGrow          requests.Boolean `position:"Query" name:"EnableAutoGrow"`
+	SpotPriceLimit          string           `position:"Query" name:"SpotPriceLimit"`
 	EnableAutoShrink        requests.Boolean `position:"Query" name:"EnableAutoShrink"`
+	SpotStrategy            string           `position:"Query" name:"SpotStrategy"`
 	MaxNodesInCluster       requests.Integer `position:"Query" name:"MaxNodesInCluster"`
 	ExcludeNodes            string           `position:"Query" name:"ExcludeNodes"`
 	ShrinkIntervalInMinutes requests.Integer `position:"Query" name:"ShrinkIntervalInMinutes"`
