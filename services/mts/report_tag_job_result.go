@@ -76,13 +76,13 @@ func (client *Client) ReportTagJobResultWithCallback(request *ReportTagJobResult
 // ReportTagJobResultRequest is the request struct for api ReportTagJobResult
 type ReportTagJobResultRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	JobId                string           `position:"Query" name:"JobId"`
-	Tag                  string           `position:"Query" name:"Tag"`
 	Result               string           `position:"Query" name:"Result"`
+	JobId                string           `position:"Query" name:"JobId"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	Tag                  string           `position:"Query" name:"Tag"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // ReportTagJobResultResponse is the response struct for api ReportTagJobResult

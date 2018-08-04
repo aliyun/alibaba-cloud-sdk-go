@@ -76,13 +76,14 @@ func (client *Client) SubmitMediaInfoJobWithCallback(request *SubmitMediaInfoJob
 // SubmitMediaInfoJobRequest is the request struct for api SubmitMediaInfoJob
 type SubmitMediaInfoJobRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	Input                string           `position:"Query" name:"Input"`
 	UserData             string           `position:"Query" name:"UserData"`
-	PipelineId           string           `position:"Query" name:"PipelineId"`
+	Async                requests.Boolean `position:"Query" name:"Async"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	PipelineId           string           `position:"Query" name:"PipelineId"`
 }
 
 // SubmitMediaInfoJobResponse is the response struct for api SubmitMediaInfoJob

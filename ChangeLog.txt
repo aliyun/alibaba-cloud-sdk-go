@@ -1,3 +1,7 @@
+2018-08-05 Version: 1.24.3
+1, Add Interface SubmitSubtitleJob
+2, Support convert ttml、stl subtitle to vtt
+
 2018-08-04 Version: 1.24.2
 1, Add a new api called SetAuditSecurityIp to set audit security ip.
 2, Add a new api called ListAuditSecurityIp to query audit security ip list.

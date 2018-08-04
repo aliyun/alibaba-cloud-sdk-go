@@ -24,6 +24,7 @@ type FpShotJob struct {
 	Code         string       `json:"Code" xml:"Code"`
 	Message      string       `json:"Message" xml:"Message"`
 	CreationTime string       `json:"CreationTime" xml:"CreationTime"`
+	FinishTime   string       `json:"FinishTime" xml:"FinishTime"`
 	InputFile    InputFile    `json:"InputFile" xml:"InputFile"`
 	FpShotResult FpShotResult `json:"FpShotResult" xml:"FpShotResult"`
 }

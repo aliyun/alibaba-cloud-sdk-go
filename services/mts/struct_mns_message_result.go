@@ -17,7 +17,7 @@ package mts
 
 // MNSMessageResult is a nested struct in mts response
 type MNSMessageResult struct {
-	ErrorCode    string `json:"ErrorCode" xml:"ErrorCode"`
 	MessageId    string `json:"MessageId" xml:"MessageId"`
 	ErrorMessage string `json:"ErrorMessage" xml:"ErrorMessage"`
+	ErrorCode    string `json:"ErrorCode" xml:"ErrorCode"`
 }

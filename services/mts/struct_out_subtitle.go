@@ -17,8 +17,8 @@ package mts
 
 // OutSubtitle is a nested struct in mts response
 type OutSubtitle struct {
-	Success         bool            `json:"Success" xml:"Success"`
 	Map             string          `json:"Map" xml:"Map"`
 	Message         string          `json:"Message" xml:"Message"`
+	Success         bool            `json:"Success" xml:"Success"`
 	OutSubtitleFile OutSubtitleFile `json:"OutSubtitleFile" xml:"OutSubtitleFile"`
 }

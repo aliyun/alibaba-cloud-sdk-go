@@ -76,11 +76,11 @@ func (client *Client) QueryMediaWorkflowListWithCallback(request *QueryMediaWork
 // QueryMediaWorkflowListRequest is the request struct for api QueryMediaWorkflowList
 type QueryMediaWorkflowListRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	MediaWorkflowIds     string           `position:"Query" name:"MediaWorkflowIds"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // QueryMediaWorkflowListResponse is the response struct for api QueryMediaWorkflowList

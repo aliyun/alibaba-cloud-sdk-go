@@ -76,13 +76,13 @@ func (client *Client) ReportCensorJobResultWithCallback(request *ReportCensorJob
 // ReportCensorJobResultRequest is the request struct for api ReportCensorJobResult
 type ReportCensorJobResultRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	JobId                string           `position:"Query" name:"JobId"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	Label                string           `position:"Query" name:"Label"`
 	Detail               string           `position:"Query" name:"Detail"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // ReportCensorJobResultResponse is the response struct for api ReportCensorJobResult

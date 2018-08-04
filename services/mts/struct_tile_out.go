@@ -17,13 +17,13 @@ package mts
 
 // TileOut is a nested struct in mts response
 type TileOut struct {
+	Margin        string `json:"Margin" xml:"Margin"`
 	IsKeepCellPic string `json:"IsKeepCellPic" xml:"IsKeepCellPic"`
+	CellWidth     string `json:"CellWidth" xml:"CellWidth"`
 	CellHeight    string `json:"CellHeight" xml:"CellHeight"`
+	CellSelStep   string `json:"CellSelStep" xml:"CellSelStep"`
 	Lines         string `json:"Lines" xml:"Lines"`
 	Columns       string `json:"Columns" xml:"Columns"`
-	CellSelStep   string `json:"CellSelStep" xml:"CellSelStep"`
 	Padding       string `json:"Padding" xml:"Padding"`
-	CellWidth     string `json:"CellWidth" xml:"CellWidth"`
 	Color         string `json:"Color" xml:"Color"`
-	Margin        string `json:"Margin" xml:"Margin"`
 }

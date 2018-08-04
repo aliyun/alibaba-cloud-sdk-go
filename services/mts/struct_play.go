@@ -17,16 +17,16 @@ package mts
 
 // Play is a nested struct in mts response
 type Play struct {
-	Fps               string `json:"Fps" xml:"Fps"`
-	Size              string `json:"Size" xml:"Size"`
 	Height            string `json:"Height" xml:"Height"`
-	Duration          string `json:"Duration" xml:"Duration"`
-	Encryption        string `json:"Encryption" xml:"Encryption"`
-	Width             string `json:"Width" xml:"Width"`
 	Format            string `json:"Format" xml:"Format"`
-	MediaWorkflowName string `json:"MediaWorkflowName" xml:"MediaWorkflowName"`
+	Width             string `json:"Width" xml:"Width"`
+	Duration          string `json:"Duration" xml:"Duration"`
+	Fps               string `json:"Fps" xml:"Fps"`
 	MediaWorkflowId   string `json:"MediaWorkflowId" xml:"MediaWorkflowId"`
-	ActivityName      string `json:"ActivityName" xml:"ActivityName"`
+	Size              string `json:"Size" xml:"Size"`
 	Bitrate           string `json:"Bitrate" xml:"Bitrate"`
+	MediaWorkflowName string `json:"MediaWorkflowName" xml:"MediaWorkflowName"`
+	Encryption        string `json:"Encryption" xml:"Encryption"`
+	ActivityName      string `json:"ActivityName" xml:"ActivityName"`
 	File              File   `json:"File" xml:"File"`
 }

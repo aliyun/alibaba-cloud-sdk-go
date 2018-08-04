@@ -17,31 +17,31 @@ package mts
 
 // Output is a nested struct in mts response
 type Output struct {
-	UserData               string                   `json:"UserData" xml:"UserData"`
-	Priority               string                   `json:"Priority" xml:"Priority"`
 	TemplateId             string                   `json:"TemplateId" xml:"TemplateId"`
-	MergeConfigUrl         string                   `json:"MergeConfigUrl" xml:"MergeConfigUrl"`
-	Rotate                 string                   `json:"Rotate" xml:"Rotate"`
 	DeWatermark            string                   `json:"DeWatermark" xml:"DeWatermark"`
-	WaterMarkConfigUrl     string                   `json:"WaterMarkConfigUrl" xml:"WaterMarkConfigUrl"`
-	VideoStreamMap         string                   `json:"VideoStreamMap" xml:"VideoStreamMap"`
+	MergeConfigUrl         string                   `json:"MergeConfigUrl" xml:"MergeConfigUrl"`
+	UserData               string                   `json:"UserData" xml:"UserData"`
+	Rotate                 string                   `json:"Rotate" xml:"Rotate"`
 	AudioStreamMap         string                   `json:"AudioStreamMap" xml:"AudioStreamMap"`
-	TransConfig            TransConfig              `json:"TransConfig" xml:"TransConfig"`
-	Encryption             Encryption               `json:"Encryption" xml:"Encryption"`
-	MuxConfig              MuxConfig                `json:"MuxConfig" xml:"MuxConfig"`
+	VideoStreamMap         string                   `json:"VideoStreamMap" xml:"VideoStreamMap"`
+	Priority               string                   `json:"Priority" xml:"Priority"`
+	WaterMarkConfigUrl     string                   `json:"WaterMarkConfigUrl" xml:"WaterMarkConfigUrl"`
 	Properties             Properties               `json:"Properties" xml:"Properties"`
-	OutputFile             OutputFile               `json:"OutputFile" xml:"OutputFile"`
-	Video                  Video                    `json:"Video" xml:"Video"`
-	Container              Container                `json:"Container" xml:"Container"`
-	Clip                   Clip                     `json:"Clip" xml:"Clip"`
-	SuperReso              SuperReso                `json:"SuperReso" xml:"SuperReso"`
-	Audio                  Audio                    `json:"Audio" xml:"Audio"`
-	SubtitleConfig         SubtitleConfig           `json:"SubtitleConfig" xml:"SubtitleConfig"`
+	MuxConfig              MuxConfig                `json:"MuxConfig" xml:"MuxConfig"`
 	DigiWaterMark          DigiWaterMark            `json:"DigiWaterMark" xml:"DigiWaterMark"`
+	Video                  Video                    `json:"Video" xml:"Video"`
+	Clip                   Clip                     `json:"Clip" xml:"Clip"`
+	OutputFile             OutputFile               `json:"OutputFile" xml:"OutputFile"`
 	M3U8NonStandardSupport M3U8NonStandardSupport   `json:"M3U8NonStandardSupport" xml:"M3U8NonStandardSupport"`
-	OutSubtitleList        OutSubtitleListInListJob `json:"OutSubtitleList" xml:"OutSubtitleList"`
+	Audio                  Audio                    `json:"Audio" xml:"Audio"`
+	TransConfig            TransConfig              `json:"TransConfig" xml:"TransConfig"`
+	SubtitleConfig         SubtitleConfig           `json:"SubtitleConfig" xml:"SubtitleConfig"`
+	Container              Container                `json:"Container" xml:"Container"`
+	Encryption             Encryption               `json:"Encryption" xml:"Encryption"`
+	SuperReso              SuperReso                `json:"SuperReso" xml:"SuperReso"`
 	TailSlateList          TailSlateListInListJob   `json:"TailSlateList" xml:"TailSlateList"`
-	MergeList              MergeListInListJob       `json:"MergeList" xml:"MergeList"`
-	OpeningList            OpeningListInListJob     `json:"OpeningList" xml:"OpeningList"`
 	WaterMarkList          WaterMarkListInListJob   `json:"WaterMarkList" xml:"WaterMarkList"`
+	MergeList              MergeListInListJob       `json:"MergeList" xml:"MergeList"`
+	OutSubtitleList        OutSubtitleListInListJob `json:"OutSubtitleList" xml:"OutSubtitleList"`
+	OpeningList            OpeningListInListJob     `json:"OpeningList" xml:"OpeningList"`
 }

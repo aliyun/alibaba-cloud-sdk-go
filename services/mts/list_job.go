@@ -76,16 +76,16 @@ func (client *Client) ListJobWithCallback(request *ListJobRequest, callback func
 // ListJobRequest is the request struct for api ListJob
 type ListJobRequest struct {
 	*requests.RpcRequest
-	OwnerId                    requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount       string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId            requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount       string           `position:"Query" name:"ResourceOwnerAccount"`
 	NextPageToken              string           `position:"Query" name:"NextPageToken"`
+	StartOfJobCreatedTimeRange string           `position:"Query" name:"StartOfJobCreatedTimeRange"`
+	OwnerAccount               string           `position:"Query" name:"OwnerAccount"`
 	MaximumPageSize            requests.Integer `position:"Query" name:"MaximumPageSize"`
 	State                      string           `position:"Query" name:"State"`
-	StartOfJobCreatedTimeRange string           `position:"Query" name:"StartOfJobCreatedTimeRange"`
+	OwnerId                    requests.Integer `position:"Query" name:"OwnerId"`
 	EndOfJobCreatedTimeRange   string           `position:"Query" name:"EndOfJobCreatedTimeRange"`
 	PipelineId                 string           `position:"Query" name:"PipelineId"`
-	OwnerAccount               string           `position:"Query" name:"OwnerAccount"`
 }
 
 // ListJobResponse is the response struct for api ListJob

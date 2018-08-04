@@ -76,13 +76,13 @@ func (client *Client) ReportMediaDetailJobResultWithCallback(request *ReportMedi
 // ReportMediaDetailJobResultRequest is the request struct for api ReportMediaDetailJobResult
 type ReportMediaDetailJobResultRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	JobId                string           `position:"Query" name:"JobId"`
-	Tag                  string           `position:"Query" name:"Tag"`
-	Results              string           `position:"Query" name:"Results"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	Tag                  string           `position:"Query" name:"Tag"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Results              string           `position:"Query" name:"Results"`
 }
 
 // ReportMediaDetailJobResultResponse is the response struct for api ReportMediaDetailJobResult

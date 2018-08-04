@@ -17,25 +17,25 @@ package mts
 
 // Video is a nested struct in mts response
 type Video struct {
-	Crop         string     `json:"Crop" xml:"Crop"`
-	Gop          string     `json:"Gop" xml:"Gop"`
-	Bufsize      string     `json:"Bufsize" xml:"Bufsize"`
-	Remove       string     `json:"Remove" xml:"Remove"`
 	Height       string     `json:"Height" xml:"Height"`
-	Degrain      string     `json:"Degrain" xml:"Degrain"`
-	Crf          string     `json:"Crf" xml:"Crf"`
-	Width        string     `json:"Width" xml:"Width"`
-	MaxFps       string     `json:"MaxFps" xml:"MaxFps"`
-	Pad          string     `json:"Pad" xml:"Pad"`
-	Bitrate      string     `json:"Bitrate" xml:"Bitrate"`
-	ResoPriority string     `json:"ResoPriority" xml:"ResoPriority"`
-	Fps          string     `json:"Fps" xml:"Fps"`
 	Preset       string     `json:"Preset" xml:"Preset"`
-	ScanMode     string     `json:"ScanMode" xml:"ScanMode"`
+	MaxFps       string     `json:"MaxFps" xml:"MaxFps"`
+	Gop          string     `json:"Gop" xml:"Gop"`
 	Qscale       string     `json:"Qscale" xml:"Qscale"`
-	PixFmt       string     `json:"PixFmt" xml:"PixFmt"`
 	Profile      string     `json:"Profile" xml:"Profile"`
+	Fps          string     `json:"Fps" xml:"Fps"`
+	Bitrate      string     `json:"Bitrate" xml:"Bitrate"`
+	Bufsize      string     `json:"Bufsize" xml:"Bufsize"`
+	PixFmt       string     `json:"PixFmt" xml:"PixFmt"`
+	Remove       string     `json:"Remove" xml:"Remove"`
+	Crop         string     `json:"Crop" xml:"Crop"`
+	Crf          string     `json:"Crf" xml:"Crf"`
+	ScanMode     string     `json:"ScanMode" xml:"ScanMode"`
+	Width        string     `json:"Width" xml:"Width"`
+	ResoPriority string     `json:"ResoPriority" xml:"ResoPriority"`
 	Codec        string     `json:"Codec" xml:"Codec"`
 	Maxrate      string     `json:"Maxrate" xml:"Maxrate"`
+	Degrain      string     `json:"Degrain" xml:"Degrain"`
+	Pad          string     `json:"Pad" xml:"Pad"`
 	BitrateBnd   BitrateBnd `json:"BitrateBnd" xml:"BitrateBnd"`
 }

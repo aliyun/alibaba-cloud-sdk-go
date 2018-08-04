@@ -76,12 +76,12 @@ func (client *Client) AddCategoryWithCallback(request *AddCategoryRequest, callb
 // AddCategoryRequest is the request struct for api AddCategory
 type AddCategoryRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	CateName             string           `position:"Query" name:"CateName"`
-	ParentId             requests.Integer `position:"Query" name:"ParentId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ParentId             requests.Integer `position:"Query" name:"ParentId"`
+	CateName             string           `position:"Query" name:"CateName"`
 }
 
 // AddCategoryResponse is the response struct for api AddCategory

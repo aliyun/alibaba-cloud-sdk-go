@@ -76,13 +76,13 @@ func (client *Client) UpdateWaterMarkTemplateWithCallback(request *UpdateWaterMa
 // UpdateWaterMarkTemplateRequest is the request struct for api UpdateWaterMarkTemplate
 type UpdateWaterMarkTemplateRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	WaterMarkTemplateId  string           `position:"Query" name:"WaterMarkTemplateId"`
-	Name                 string           `position:"Query" name:"Name"`
-	Config               string           `position:"Query" name:"Config"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	Name                 string           `position:"Query" name:"Name"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	WaterMarkTemplateId  string           `position:"Query" name:"WaterMarkTemplateId"`
+	Config               string           `position:"Query" name:"Config"`
 }
 
 // UpdateWaterMarkTemplateResponse is the response struct for api UpdateWaterMarkTemplate

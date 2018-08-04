@@ -76,11 +76,11 @@ func (client *Client) QueryAsrJobListWithCallback(request *QueryAsrJobListReques
 // QueryAsrJobListRequest is the request struct for api QueryAsrJobList
 type QueryAsrJobListRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	JobIds               string           `position:"Query" name:"JobIds"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // QueryAsrJobListResponse is the response struct for api QueryAsrJobList

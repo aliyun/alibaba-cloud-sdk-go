@@ -17,17 +17,17 @@ package mts
 
 // AnalysisJob is a nested struct in mts response
 type AnalysisJob struct {
-	CreationTime     string                             `json:"CreationTime" xml:"CreationTime"`
 	Message          string                             `json:"Message" xml:"Message"`
-	PipelineId       string                             `json:"PipelineId" xml:"PipelineId"`
-	State            string                             `json:"State" xml:"State"`
 	Code             string                             `json:"Code" xml:"Code"`
+	CreationTime     string                             `json:"CreationTime" xml:"CreationTime"`
 	UserData         string                             `json:"UserData" xml:"UserData"`
 	Priority         string                             `json:"Priority" xml:"Priority"`
-	Id               string                             `json:"Id" xml:"Id"`
+	State            string                             `json:"State" xml:"State"`
+	PipelineId       string                             `json:"PipelineId" xml:"PipelineId"`
 	Percent          int                                `json:"Percent" xml:"Percent"`
-	MNSMessageResult MNSMessageResult                   `json:"MNSMessageResult" xml:"MNSMessageResult"`
-	InputFile        InputFile                          `json:"InputFile" xml:"InputFile"`
+	Id               string                             `json:"Id" xml:"Id"`
 	AnalysisConfig   AnalysisConfig                     `json:"AnalysisConfig" xml:"AnalysisConfig"`
+	InputFile        InputFile                          `json:"InputFile" xml:"InputFile"`
+	MNSMessageResult MNSMessageResult                   `json:"MNSMessageResult" xml:"MNSMessageResult"`
 	TemplateList     TemplateListInQueryAnalysisJobList `json:"TemplateList" xml:"TemplateList"`
 }

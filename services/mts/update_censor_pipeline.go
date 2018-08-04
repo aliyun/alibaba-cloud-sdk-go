@@ -76,15 +76,15 @@ func (client *Client) UpdateCensorPipelineWithCallback(request *UpdateCensorPipe
 // UpdateCensorPipelineRequest is the request struct for api UpdateCensorPipeline
 type UpdateCensorPipelineRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	PipelineId           string           `position:"Query" name:"PipelineId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	Name                 string           `position:"Query" name:"Name"`
 	State                string           `position:"Query" name:"State"`
-	Priority             requests.Integer `position:"Query" name:"Priority"`
 	NotifyConfig         string           `position:"Query" name:"NotifyConfig"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Priority             requests.Integer `position:"Query" name:"Priority"`
+	PipelineId           string           `position:"Query" name:"PipelineId"`
 }
 
 // UpdateCensorPipelineResponse is the response struct for api UpdateCensorPipeline

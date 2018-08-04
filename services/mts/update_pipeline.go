@@ -76,15 +76,15 @@ func (client *Client) UpdatePipelineWithCallback(request *UpdatePipelineRequest,
 // UpdatePipelineRequest is the request struct for api UpdatePipeline
 type UpdatePipelineRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	PipelineId           string           `position:"Query" name:"PipelineId"`
+	Role                 string           `position:"Query" name:"Role"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	Name                 string           `position:"Query" name:"Name"`
 	State                string           `position:"Query" name:"State"`
 	NotifyConfig         string           `position:"Query" name:"NotifyConfig"`
-	Role                 string           `position:"Query" name:"Role"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	PipelineId           string           `position:"Query" name:"PipelineId"`
 }
 
 // UpdatePipelineResponse is the response struct for api UpdatePipeline

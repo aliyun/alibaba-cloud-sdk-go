@@ -76,11 +76,11 @@ func (client *Client) DeleteMediaWorkflowWithCallback(request *DeleteMediaWorkfl
 // DeleteMediaWorkflowRequest is the request struct for api DeleteMediaWorkflow
 type DeleteMediaWorkflowRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	MediaWorkflowId      string           `position:"Query" name:"MediaWorkflowId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	MediaWorkflowId      string           `position:"Query" name:"MediaWorkflowId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DeleteMediaWorkflowResponse is the response struct for api DeleteMediaWorkflow

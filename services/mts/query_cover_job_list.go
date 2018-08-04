@@ -76,11 +76,11 @@ func (client *Client) QueryCoverJobListWithCallback(request *QueryCoverJobListRe
 // QueryCoverJobListRequest is the request struct for api QueryCoverJobList
 type QueryCoverJobListRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	CoverJobIds          string           `position:"Query" name:"CoverJobIds"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	CoverJobIds          string           `position:"Query" name:"CoverJobIds"`
 }
 
 // QueryCoverJobListResponse is the response struct for api QueryCoverJobList

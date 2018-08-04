@@ -76,11 +76,11 @@ func (client *Client) DeleteTemplateWithCallback(request *DeleteTemplateRequest,
 // DeleteTemplateRequest is the request struct for api DeleteTemplate
 type DeleteTemplateRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	TemplateId           string           `position:"Query" name:"TemplateId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	TemplateId           string           `position:"Query" name:"TemplateId"`
 }
 
 // DeleteTemplateResponse is the response struct for api DeleteTemplate

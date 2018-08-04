@@ -17,13 +17,13 @@ package mts
 
 // TransConfig is a nested struct in mts response
 type TransConfig struct {
-	IsCheckAudioBitrateFail string `json:"IsCheckAudioBitrateFail" xml:"IsCheckAudioBitrateFail"`
-	IsCheckVideoBitrate     string `json:"IsCheckVideoBitrate" xml:"IsCheckVideoBitrate"`
-	Duration                string `json:"Duration" xml:"Duration"`
-	IsCheckVideoBitrateFail string `json:"IsCheckVideoBitrateFail" xml:"IsCheckVideoBitrateFail"`
 	IsCheckResoFail         string `json:"IsCheckResoFail" xml:"IsCheckResoFail"`
-	IsCheckReso             string `json:"IsCheckReso" xml:"IsCheckReso"`
 	AdjDarMethod            string `json:"AdjDarMethod" xml:"AdjDarMethod"`
 	IsCheckAudioBitrate     string `json:"IsCheckAudioBitrate" xml:"IsCheckAudioBitrate"`
+	Duration                string `json:"Duration" xml:"Duration"`
+	IsCheckReso             string `json:"IsCheckReso" xml:"IsCheckReso"`
+	IsCheckAudioBitrateFail string `json:"IsCheckAudioBitrateFail" xml:"IsCheckAudioBitrateFail"`
+	IsCheckVideoBitrate     string `json:"IsCheckVideoBitrate" xml:"IsCheckVideoBitrate"`
 	TransMode               string `json:"TransMode" xml:"TransMode"`
+	IsCheckVideoBitrateFail string `json:"IsCheckVideoBitrateFail" xml:"IsCheckVideoBitrateFail"`
 }

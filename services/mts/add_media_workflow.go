@@ -76,13 +76,13 @@ func (client *Client) AddMediaWorkflowWithCallback(request *AddMediaWorkflowRequ
 // AddMediaWorkflowRequest is the request struct for api AddMediaWorkflow
 type AddMediaWorkflowRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Name                 string           `position:"Query" name:"Name"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	Topology             string           `position:"Query" name:"Topology"`
-	TriggerMode          string           `position:"Query" name:"TriggerMode"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	Name                 string           `position:"Query" name:"Name"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	TriggerMode          string           `position:"Query" name:"TriggerMode"`
 }
 
 // AddMediaWorkflowResponse is the response struct for api AddMediaWorkflow

@@ -76,14 +76,14 @@ func (client *Client) SubmitTerrorismJobWithCallback(request *SubmitTerrorismJob
 // SubmitTerrorismJobRequest is the request struct for api SubmitTerrorismJob
 type SubmitTerrorismJobRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	Input                string           `position:"Query" name:"Input"`
+	UserData             string           `position:"Query" name:"UserData"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	PipelineId           string           `position:"Query" name:"PipelineId"`
 	TerrorismConfig      string           `position:"Query" name:"TerrorismConfig"`
-	UserData             string           `position:"Query" name:"UserData"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 // SubmitTerrorismJobResponse is the response struct for api SubmitTerrorismJob

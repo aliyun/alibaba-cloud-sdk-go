@@ -17,10 +17,10 @@ package mts
 
 // Snapshot is a nested struct in mts response
 type Snapshot struct {
-	Type              string `json:"Type" xml:"Type"`
-	MediaWorkflowName string `json:"MediaWorkflowName" xml:"MediaWorkflowName"`
 	MediaWorkflowId   string `json:"MediaWorkflowId" xml:"MediaWorkflowId"`
-	ActivityName      string `json:"ActivityName" xml:"ActivityName"`
 	Count             string `json:"Count" xml:"Count"`
+	MediaWorkflowName string `json:"MediaWorkflowName" xml:"MediaWorkflowName"`
+	Type              string `json:"Type" xml:"Type"`
+	ActivityName      string `json:"ActivityName" xml:"ActivityName"`
 	File              File   `json:"File" xml:"File"`
 }

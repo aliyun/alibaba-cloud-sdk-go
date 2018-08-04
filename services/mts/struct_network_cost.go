@@ -17,7 +17,7 @@ package mts
 
 // NetworkCost is a nested struct in mts response
 type NetworkCost struct {
-	CostBandwidth string `json:"CostBandwidth" xml:"CostBandwidth"`
-	PreloadTime   string `json:"PreloadTime" xml:"PreloadTime"`
 	AvgBitrate    string `json:"AvgBitrate" xml:"AvgBitrate"`
+	PreloadTime   string `json:"PreloadTime" xml:"PreloadTime"`
+	CostBandwidth string `json:"CostBandwidth" xml:"CostBandwidth"`
 }

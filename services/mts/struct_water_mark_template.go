@@ -17,15 +17,15 @@ package mts
 
 // WaterMarkTemplate is a nested struct in mts response
 type WaterMarkTemplate struct {
-	Dy         string     `json:"Dy" xml:"Dy"`
-	Height     string     `json:"Height" xml:"Height"`
-	Type       string     `json:"Type" xml:"Type"`
-	Id         string     `json:"Id" xml:"Id"`
 	Name       string     `json:"Name" xml:"Name"`
+	Height     string     `json:"Height" xml:"Height"`
 	Width      string     `json:"Width" xml:"Width"`
 	State      string     `json:"State" xml:"State"`
 	Dx         string     `json:"Dx" xml:"Dx"`
+	Dy         string     `json:"Dy" xml:"Dy"`
+	Id         string     `json:"Id" xml:"Id"`
 	ReferPos   string     `json:"ReferPos" xml:"ReferPos"`
+	Type       string     `json:"Type" xml:"Type"`
 	RatioRefer RatioRefer `json:"RatioRefer" xml:"RatioRefer"`
 	Timeline   Timeline   `json:"Timeline" xml:"Timeline"`
 }

@@ -76,20 +76,20 @@ func (client *Client) SearchMediaWithCallback(request *SearchMediaRequest, callb
 // SearchMediaRequest is the request struct for api SearchMedia
 type SearchMediaRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	From                 string           `position:"Query" name:"From"`
-	To                   string           `position:"Query" name:"To"`
-	KeyWord              string           `position:"Query" name:"KeyWord"`
-	Title                string           `position:"Query" name:"Title"`
-	Description          string           `position:"Query" name:"Description"`
-	Tag                  string           `position:"Query" name:"Tag"`
-	CateId               string           `position:"Query" name:"CateId"`
-	SortBy               string           `position:"Query" name:"SortBy"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	Description          string           `position:"Query" name:"Description"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Title                string           `position:"Query" name:"Title"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	CateId               string           `position:"Query" name:"CateId"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	From                 string           `position:"Query" name:"From"`
+	SortBy               string           `position:"Query" name:"SortBy"`
+	To                   string           `position:"Query" name:"To"`
+	Tag                  string           `position:"Query" name:"Tag"`
+	KeyWord              string           `position:"Query" name:"KeyWord"`
 }
 
 // SearchMediaResponse is the response struct for api SearchMedia

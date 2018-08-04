@@ -76,11 +76,11 @@ func (client *Client) GetPackageWithCallback(request *GetPackageRequest, callbac
 // GetPackageRequest is the request struct for api GetPackage
 type GetPackageRequest struct {
 	*requests.RpcRequest
-	OwnerId              string `position:"Query" name:"OwnerId"`
 	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	Data                 string `position:"Query" name:"Data"`
 	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	Data                 string `position:"Query" name:"Data"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
 }
 
 // GetPackageResponse is the response struct for api GetPackage

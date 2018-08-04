@@ -76,12 +76,12 @@ func (client *Client) DeleteMediaTagWithCallback(request *DeleteMediaTagRequest,
 // DeleteMediaTagRequest is the request struct for api DeleteMediaTag
 type DeleteMediaTagRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	MediaId              string           `position:"Query" name:"MediaId"`
-	Tag                  string           `position:"Query" name:"Tag"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	Tag                  string           `position:"Query" name:"Tag"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	MediaId              string           `position:"Query" name:"MediaId"`
 }
 
 // DeleteMediaTagResponse is the response struct for api DeleteMediaTag

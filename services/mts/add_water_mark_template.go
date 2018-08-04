@@ -76,12 +76,12 @@ func (client *Client) AddWaterMarkTemplateWithCallback(request *AddWaterMarkTemp
 // AddWaterMarkTemplateRequest is the request struct for api AddWaterMarkTemplate
 type AddWaterMarkTemplateRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Name                 string           `position:"Query" name:"Name"`
-	Config               string           `position:"Query" name:"Config"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	Name                 string           `position:"Query" name:"Name"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Config               string           `position:"Query" name:"Config"`
 }
 
 // AddWaterMarkTemplateResponse is the response struct for api AddWaterMarkTemplate

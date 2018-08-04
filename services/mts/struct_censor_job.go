@@ -24,8 +24,13 @@ type CensorJob struct {
 	Code                  string                `json:"Code" xml:"Code"`
 	Message               string                `json:"Message" xml:"Message"`
 	CreationTime          string                `json:"CreationTime" xml:"CreationTime"`
+	TitleCensorResult     string                `json:"TitleCensorResult" xml:"TitleCensorResult"`
+	DescCensorResult      string                `json:"DescCensorResult" xml:"DescCensorResult"`
+	BarrageCensorResult   string                `json:"BarrageCensorResult" xml:"BarrageCensorResult"`
+	ResultSaveObject      string                `json:"ResultSaveObject" xml:"ResultSaveObject"`
 	Input                 Input                 `json:"Input" xml:"Input"`
 	CensorConfig          CensorConfig          `json:"CensorConfig" xml:"CensorConfig"`
 	CensorPornResult      CensorPornResult      `json:"CensorPornResult" xml:"CensorPornResult"`
 	CensorTerrorismResult CensorTerrorismResult `json:"CensorTerrorismResult" xml:"CensorTerrorismResult"`
+	ImageCensorResults    ImageCensorResults    `json:"ImageCensorResults" xml:"ImageCensorResults"`
 }

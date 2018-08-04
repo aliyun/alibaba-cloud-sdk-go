@@ -76,11 +76,11 @@ func (client *Client) RefreshCdnDomainConfigsCacheWithCallback(request *RefreshC
 // RefreshCdnDomainConfigsCacheRequest is the request struct for api RefreshCdnDomainConfigsCache
 type RefreshCdnDomainConfigsCacheRequest struct {
 	*requests.RpcRequest
-	OwnerId              string `position:"Query" name:"OwnerId"`
 	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
 	Domains              string `position:"Query" name:"Domains"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
 }
 
 // RefreshCdnDomainConfigsCacheResponse is the response struct for api RefreshCdnDomainConfigsCache

@@ -76,10 +76,10 @@ func (client *Client) PlayerAuthWithCallback(request *PlayerAuthRequest, callbac
 // PlayerAuthRequest is the request struct for api PlayerAuth
 type PlayerAuthRequest struct {
 	*requests.RpcRequest
-	OwnerId              string `position:"Query" name:"OwnerId"`
 	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
 }
 
 // PlayerAuthResponse is the response struct for api PlayerAuth

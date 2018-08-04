@@ -76,18 +76,20 @@ func (client *Client) AddMediaWithCallback(request *AddMediaRequest, callback fu
 // AddMediaRequest is the request struct for api AddMedia
 type AddMediaRequest struct {
 	*requests.RpcRequest
-	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	FileURL               string           `position:"Query" name:"FileURL"`
-	Title                 string           `position:"Query" name:"Title"`
+	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
 	Description           string           `position:"Query" name:"Description"`
-	CoverURL              string           `position:"Query" name:"CoverURL"`
+	OverrideParams        string           `position:"Query" name:"OverrideParams"`
+	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
+	Title                 string           `position:"Query" name:"Title"`
+	InputUnbind           requests.Boolean `position:"Query" name:"InputUnbind"`
 	Tags                  string           `position:"Query" name:"Tags"`
+	CoverURL              string           `position:"Query" name:"CoverURL"`
+	CateId                requests.Integer `position:"Query" name:"CateId"`
+	FileURL               string           `position:"Query" name:"FileURL"`
 	MediaWorkflowId       string           `position:"Query" name:"MediaWorkflowId"`
 	MediaWorkflowUserData string           `position:"Query" name:"MediaWorkflowUserData"`
-	CateId                requests.Integer `position:"Query" name:"CateId"`
-	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
 }
 
 // AddMediaResponse is the response struct for api AddMedia

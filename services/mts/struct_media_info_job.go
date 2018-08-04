@@ -17,14 +17,15 @@ package mts
 
 // MediaInfoJob is a nested struct in mts response
 type MediaInfoJob struct {
-	CreationTime     string           `json:"CreationTime" xml:"CreationTime"`
-	Message          string           `json:"Message" xml:"Message"`
-	PipelineId       string           `json:"PipelineId" xml:"PipelineId"`
-	State            string           `json:"State" xml:"State"`
-	Code             string           `json:"Code" xml:"Code"`
-	UserData         string           `json:"UserData" xml:"UserData"`
 	JobId            string           `json:"JobId" xml:"JobId"`
+	Message          string           `json:"Message" xml:"Message"`
+	State            string           `json:"State" xml:"State"`
+	Async            bool             `json:"Async" xml:"Async"`
+	Code             string           `json:"Code" xml:"Code"`
+	PipelineId       string           `json:"PipelineId" xml:"PipelineId"`
+	CreationTime     string           `json:"CreationTime" xml:"CreationTime"`
+	UserData         string           `json:"UserData" xml:"UserData"`
+	Properties       Properties       `json:"Properties" xml:"Properties"`
 	MNSMessageResult MNSMessageResult `json:"MNSMessageResult" xml:"MNSMessageResult"`
 	Input            Input            `json:"Input" xml:"Input"`
-	Properties       Properties       `json:"Properties" xml:"Properties"`
 }

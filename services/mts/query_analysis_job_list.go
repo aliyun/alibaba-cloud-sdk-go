@@ -76,11 +76,11 @@ func (client *Client) QueryAnalysisJobListWithCallback(request *QueryAnalysisJob
 // QueryAnalysisJobListRequest is the request struct for api QueryAnalysisJobList
 type QueryAnalysisJobListRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	AnalysisJobIds       string           `position:"Query" name:"AnalysisJobIds"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	AnalysisJobIds       string           `position:"Query" name:"AnalysisJobIds"`
 }
 
 // QueryAnalysisJobListResponse is the response struct for api QueryAnalysisJobList

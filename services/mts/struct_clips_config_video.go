@@ -17,6 +17,6 @@ package mts
 
 // ClipsConfigVideo is a nested struct in mts response
 type ClipsConfigVideo struct {
-	L string `json:"L" xml:"L"`
 	T string `json:"T" xml:"T"`
+	L string `json:"L" xml:"L"`
 }

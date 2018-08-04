@@ -17,12 +17,12 @@ package mts
 
 // Template is a nested struct in mts response
 type Template struct {
-	Id          string      `json:"Id" xml:"Id"`
 	Name        string      `json:"Name" xml:"Name"`
 	State       string      `json:"State" xml:"State"`
+	Id          string      `json:"Id" xml:"Id"`
+	MuxConfig   MuxConfig   `json:"MuxConfig" xml:"MuxConfig"`
 	Audio       Audio       `json:"Audio" xml:"Audio"`
 	TransConfig TransConfig `json:"TransConfig" xml:"TransConfig"`
 	Container   Container   `json:"Container" xml:"Container"`
-	MuxConfig   MuxConfig   `json:"MuxConfig" xml:"MuxConfig"`
 	Video       Video       `json:"Video" xml:"Video"`
 }

@@ -76,14 +76,14 @@ func (client *Client) SubmitTagJobWithCallback(request *SubmitTagJobRequest, cal
 // SubmitTagJobRequest is the request struct for api SubmitTagJob
 type SubmitTagJobRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	Input                string           `position:"Query" name:"Input"`
-	TagConfig            string           `position:"Query" name:"TagConfig"`
 	UserData             string           `position:"Query" name:"UserData"`
-	PipelineId           string           `position:"Query" name:"PipelineId"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	TagConfig            string           `position:"Query" name:"TagConfig"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	PipelineId           string           `position:"Query" name:"PipelineId"`
 }
 
 // SubmitTagJobResponse is the response struct for api SubmitTagJob

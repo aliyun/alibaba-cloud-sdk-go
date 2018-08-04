@@ -17,20 +17,20 @@ package mts
 
 // AudioStream is a nested struct in mts response
 type AudioStream struct {
-	Timebase       string `json:"Timebase" xml:"Timebase"`
-	CodecTimeBase  string `json:"CodecTimeBase" xml:"CodecTimeBase"`
-	Samplerate     string `json:"Samplerate" xml:"Samplerate"`
-	CodecLongName  string `json:"CodecLongName" xml:"CodecLongName"`
-	Channels       string `json:"Channels" xml:"Channels"`
-	StartTime      string `json:"StartTime" xml:"StartTime"`
-	Index          string `json:"Index" xml:"Index"`
 	NumFrames      string `json:"NumFrames" xml:"NumFrames"`
-	SampleFmt      string `json:"SampleFmt" xml:"SampleFmt"`
-	Bitrate        string `json:"Bitrate" xml:"Bitrate"`
-	ChannelLayout  string `json:"ChannelLayout" xml:"ChannelLayout"`
 	CodecName      string `json:"CodecName" xml:"CodecName"`
-	Duration       string `json:"Duration" xml:"Duration"`
-	CodecTagString string `json:"CodecTagString" xml:"CodecTagString"`
-	Lang           string `json:"Lang" xml:"Lang"`
+	Timebase       string `json:"Timebase" xml:"Timebase"`
+	Bitrate        string `json:"Bitrate" xml:"Bitrate"`
+	SampleFmt      string `json:"SampleFmt" xml:"SampleFmt"`
 	CodecTag       string `json:"CodecTag" xml:"CodecTag"`
+	CodecTagString string `json:"CodecTagString" xml:"CodecTagString"`
+	Index          string `json:"Index" xml:"Index"`
+	Channels       string `json:"Channels" xml:"Channels"`
+	Lang           string `json:"Lang" xml:"Lang"`
+	StartTime      string `json:"StartTime" xml:"StartTime"`
+	Samplerate     string `json:"Samplerate" xml:"Samplerate"`
+	Duration       string `json:"Duration" xml:"Duration"`
+	CodecTimeBase  string `json:"CodecTimeBase" xml:"CodecTimeBase"`
+	CodecLongName  string `json:"CodecLongName" xml:"CodecLongName"`
+	ChannelLayout  string `json:"ChannelLayout" xml:"ChannelLayout"`
 }

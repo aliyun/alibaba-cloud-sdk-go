@@ -76,14 +76,14 @@ func (client *Client) SubmitFacerecogJobWithCallback(request *SubmitFacerecogJob
 // SubmitFacerecogJobRequest is the request struct for api SubmitFacerecogJob
 type SubmitFacerecogJobRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	Input                string           `position:"Query" name:"Input"`
-	FacerecogConfig      string           `position:"Query" name:"FacerecogConfig"`
 	UserData             string           `position:"Query" name:"UserData"`
-	PipelineId           string           `position:"Query" name:"PipelineId"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	FacerecogConfig      string           `position:"Query" name:"FacerecogConfig"`
+	PipelineId           string           `position:"Query" name:"PipelineId"`
 }
 
 // SubmitFacerecogJobResponse is the response struct for api SubmitFacerecogJob

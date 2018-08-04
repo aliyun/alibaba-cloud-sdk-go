@@ -17,8 +17,8 @@ package mts
 
 // OutputFile is a nested struct in mts response
 type OutputFile struct {
-	Location string `json:"Location" xml:"Location"`
-	RoleArn  string `json:"RoleArn" xml:"RoleArn"`
 	Bucket   string `json:"Bucket" xml:"Bucket"`
 	Object   string `json:"Object" xml:"Object"`
+	Location string `json:"Location" xml:"Location"`
+	RoleArn  string `json:"RoleArn" xml:"RoleArn"`
 }

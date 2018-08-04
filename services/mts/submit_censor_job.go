@@ -76,14 +76,18 @@ func (client *Client) SubmitCensorJobWithCallback(request *SubmitCensorJobReques
 // SubmitCensorJobRequest is the request struct for api SubmitCensorJob
 type SubmitCensorJobRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Input                string           `position:"Query" name:"Input"`
-	PipelineId           string           `position:"Query" name:"PipelineId"`
-	CensorConfig         string           `position:"Query" name:"CensorConfig"`
-	UserData             string           `position:"Query" name:"UserData"`
+	CoverImages          string           `position:"Query" name:"CoverImages"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	Description          string           `position:"Query" name:"Description"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Title                string           `position:"Query" name:"Title"`
+	CensorConfig         string           `position:"Query" name:"CensorConfig"`
+	PipelineId           string           `position:"Query" name:"PipelineId"`
+	Input                string           `position:"Query" name:"Input"`
+	UserData             string           `position:"Query" name:"UserData"`
+	Barrages             string           `position:"Query" name:"Barrages"`
 }
 
 // SubmitCensorJobResponse is the response struct for api SubmitCensorJob

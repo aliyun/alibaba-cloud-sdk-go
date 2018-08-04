@@ -76,11 +76,11 @@ func (client *Client) QueryCoverPipelineListWithCallback(request *QueryCoverPipe
 // QueryCoverPipelineListRequest is the request struct for api QueryCoverPipelineList
 type QueryCoverPipelineListRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	PipelineIds          string           `position:"Query" name:"PipelineIds"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // QueryCoverPipelineListResponse is the response struct for api QueryCoverPipelineList

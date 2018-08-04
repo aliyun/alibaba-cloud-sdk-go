@@ -19,5 +19,7 @@ package mts
 type CensorConfig struct {
 	Interval   string     `json:"Interval" xml:"Interval"`
 	BizType    string     `json:"BizType" xml:"BizType"`
+	SaveType   string     `json:"SaveType" xml:"SaveType"`
+	Scenes     string     `json:"Scenes" xml:"Scenes"`
 	OutputFile OutputFile `json:"OutputFile" xml:"OutputFile"`
 }
