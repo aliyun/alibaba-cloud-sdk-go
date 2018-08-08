@@ -76,20 +76,19 @@ func (client *Client) DescribeDomainPathDataWithCallback(request *DescribeDomain
 // DescribeDomainPathDataRequest is the request struct for api DescribeDomainPathData
 type DescribeDomainPathDataRequest struct {
 	*requests.RpcRequest
-	StartTime     string           `position:"Query" name:"StartTime"`
-	PageNumber    requests.Integer `position:"Query" name:"PageNumber"`
-	Path          string           `position:"Query" name:"Path"`
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
-	PageSize      requests.Integer `position:"Query" name:"PageSize"`
-	DomainName    string           `position:"Query" name:"DomainName"`
-	EndTime       string           `position:"Query" name:"EndTime"`
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
-	Version       string           `position:"Query" name:"Version"`
+	StartTime  string           `position:"Query" name:"StartTime"`
+	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
+	Path       string           `position:"Query" name:"Path"`
+	PageSize   requests.Integer `position:"Query" name:"PageSize"`
+	DomainName string           `position:"Query" name:"DomainName"`
+	EndTime    string           `position:"Query" name:"EndTime"`
+	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeDomainPathDataResponse is the response struct for api DescribeDomainPathData
 type DescribeDomainPathDataResponse struct {
 	*responses.BaseResponse
+	RequestId           string              `json:"RequestId" xml:"RequestId"`
 	DomainName          string              `json:"DomainName" xml:"DomainName"`
 	StartTime           string              `json:"StartTime" xml:"StartTime"`
 	EndTime             string              `json:"EndTime" xml:"EndTime"`

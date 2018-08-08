@@ -1,3 +1,6 @@
+2018-08-08 Version: 1.24.5
+1, Update FC apis.
+
 2018-08-08 Version: 1.24.4
 1, First release.
 
