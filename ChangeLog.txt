@@ -1,3 +1,6 @@
+2018-08-08 Version: 1.24.4
+1, First release.
+
 2018-08-05 Version: 1.24.3
 1, Add Interface SubmitSubtitleJob
 2, Support convert ttml、stl subtitle to vtt
