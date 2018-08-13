@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// UpdateFace invokes the linkface.UpdateFace API synchronously
-// api document: https://help.aliyun.com/api/linkface/updateface.html
-func (client *Client) UpdateFace(request *UpdateFaceRequest) (response *UpdateFaceResponse, err error) {
-	response = CreateUpdateFaceResponse()
+// SearchFace invokes the linkface.SearchFace API synchronously
+// api document: https://help.aliyun.com/api/linkface/searchface.html
+func (client *Client) SearchFace(request *SearchFaceRequest) (response *SearchFaceResponse, err error) {
+	response = CreateSearchFaceResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// UpdateFaceWithChan invokes the linkface.UpdateFace API asynchronously
-// api document: https://help.aliyun.com/api/linkface/updateface.html
+// SearchFaceWithChan invokes the linkface.SearchFace API asynchronously
+// api document: https://help.aliyun.com/api/linkface/searchface.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) UpdateFaceWithChan(request *UpdateFaceRequest) (<-chan *UpdateFaceResponse, <-chan error) {
-	responseChan := make(chan *UpdateFaceResponse, 1)
+func (client *Client) SearchFaceWithChan(request *SearchFaceRequest) (<-chan *SearchFaceResponse, <-chan error) {
+	responseChan := make(chan *SearchFaceResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.UpdateFace(request)
+		response, err := client.SearchFace(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) UpdateFaceWithChan(request *UpdateFaceRequest) (<-chan *Up
 	return responseChan, errChan
 }
 
-// UpdateFaceWithCallback invokes the linkface.UpdateFace API asynchronously
-// api document: https://help.aliyun.com/api/linkface/updateface.html
+// SearchFaceWithCallback invokes the linkface.SearchFace API asynchronously
+// api document: https://help.aliyun.com/api/linkface/searchface.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) UpdateFaceWithCallback(request *UpdateFaceRequest, callback func(response *UpdateFaceResponse, err error)) <-chan int {
+func (client *Client) SearchFaceWithCallback(request *SearchFaceRequest, callback func(response *SearchFaceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *UpdateFaceResponse
+		var response *SearchFaceResponse
 		var err error
 		defer close(result)
-		response, err = client.UpdateFace(request)
+		response, err = client.SearchFace(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,35 +73,35 @@ func (client *Client) UpdateFaceWithCallback(request *UpdateFaceRequest, callbac
 	return result
 }
 
-// UpdateFaceRequest is the request struct for api UpdateFace
-type UpdateFaceRequest struct {
+// SearchFaceRequest is the request struct for api SearchFace
+type SearchFaceRequest struct {
 	*requests.RpcRequest
-	Image    string `position:"Body" name:"Image"`
-	UserId   string `position:"Body" name:"UserId"`
-	UserInfo string `position:"Body" name:"UserInfo"`
+	Image   string `position:"Body" name:"Image"`
+	GroupId string `position:"Body" name:"GroupId"`
 }
 
-// UpdateFaceResponse is the response struct for api UpdateFace
-type UpdateFaceResponse struct {
+// SearchFaceResponse is the response struct for api SearchFace
+type SearchFaceResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      int    `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
 	Success   bool   `json:"Success" xml:"Success"`
+	Data      Data   `json:"Data" xml:"Data"`
 }
 
-// CreateUpdateFaceRequest creates a request to invoke UpdateFace API
-func CreateUpdateFaceRequest() (request *UpdateFaceRequest) {
-	request = &UpdateFaceRequest{
+// CreateSearchFaceRequest creates a request to invoke SearchFace API
+func CreateSearchFaceRequest() (request *SearchFaceRequest) {
+	request = &SearchFaceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("LinkFace", "2018-07-20", "UpdateFace", "", "")
+	request.InitWithApiInfo("LinkFace", "2018-07-20", "SearchFace", "", "")
 	return
 }
 
-// CreateUpdateFaceResponse creates a response to parse from UpdateFace response
-func CreateUpdateFaceResponse() (response *UpdateFaceResponse) {
-	response = &UpdateFaceResponse{
+// CreateSearchFaceResponse creates a response to parse from SearchFace response
+func CreateSearchFaceResponse() (response *SearchFaceResponse) {
+	response = &SearchFaceResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

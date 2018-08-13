@@ -1,3 +1,8 @@
+2018-08-13 Version: 1.25.0
+1, New userinfo fields for registerface input parameter.
+2, New userinfo fields for updateface input parameter.
+3, New userinfo fields for queryface output parameter.
+
 2018-08-13 Version: 1.24.7
 1, Add cross domain support.
 2, Add parameter SerialNumber to interface RebootSmartAccessGateway.

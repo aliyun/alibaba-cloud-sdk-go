@@ -23,4 +23,5 @@ type Data struct {
 	CurrentFaceInfos []CurrentFaceInfosItem `json:"CurrentFaceInfos" xml:"CurrentFaceInfos"`
 	FailedFaceInfos  []FailedFaceInfosItem  `json:"FailedFaceInfos" xml:"FailedFaceInfos"`
 	UserFaceMetas    []UserFaceMetasItem    `json:"UserFaceMetas" xml:"UserFaceMetas"`
+	TopUserItem      []TopUserItemItem      `json:"TopUserItem" xml:"TopUserItem"`
 }

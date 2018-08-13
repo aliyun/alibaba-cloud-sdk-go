@@ -76,9 +76,10 @@ func (client *Client) RegisterFaceWithCallback(request *RegisterFaceRequest, cal
 // RegisterFaceRequest is the request struct for api RegisterFace
 type RegisterFaceRequest struct {
 	*requests.RpcRequest
-	Image   string `position:"Body" name:"Image"`
-	GroupId string `position:"Body" name:"GroupId"`
-	UserId  string `position:"Body" name:"UserId"`
+	Image    string `position:"Body" name:"Image"`
+	GroupId  string `position:"Body" name:"GroupId"`
+	UserId   string `position:"Body" name:"UserId"`
+	UserInfo string `position:"Body" name:"UserInfo"`
 }
 
 // RegisterFaceResponse is the response struct for api RegisterFace
