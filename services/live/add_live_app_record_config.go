@@ -91,9 +91,9 @@ type AddLiveAppRecordConfigRequest struct {
 
 // AddLiveAppRecordConfigRecordFormat is a repeated param struct in AddLiveAppRecordConfigRequest
 type AddLiveAppRecordConfigRecordFormat struct {
+	SliceOssObjectPrefix string `name:"SliceOssObjectPrefix"`
 	Format               string `name:"Format"`
 	OssObjectPrefix      string `name:"OssObjectPrefix"`
-	SliceOssObjectPrefix string `name:"SliceOssObjectPrefix"`
 	CycleDuration        string `name:"CycleDuration"`
 }
 
