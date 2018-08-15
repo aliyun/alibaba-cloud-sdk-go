@@ -89,9 +89,9 @@ type CreateNatGatewayRequest struct {
 
 // CreateNatGatewayBandwidthPackage is a repeated param struct in CreateNatGatewayRequest
 type CreateNatGatewayBandwidthPackage struct {
-	IpCount   string `name:"IpCount"`
 	Bandwidth string `name:"Bandwidth"`
 	Zone      string `name:"Zone"`
+	IpCount   string `name:"IpCount"`
 }
 
 // CreateNatGatewayResponse is the response struct for api CreateNatGateway

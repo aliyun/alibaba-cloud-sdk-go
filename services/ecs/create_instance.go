@@ -76,23 +76,19 @@ func (client *Client) CreateInstanceWithCallback(request *CreateInstanceRequest,
 // CreateInstanceRequest is the request struct for api CreateInstance
 type CreateInstanceRequest struct {
 	*requests.RpcRequest
-	Tag4Value                   string                    `position:"Query" name:"Tag.4.Value"`
 	ResourceOwnerId             requests.Integer          `position:"Query" name:"ResourceOwnerId"`
-	Tag2Key                     string                    `position:"Query" name:"Tag.2.Key"`
 	HpcClusterId                string                    `position:"Query" name:"HpcClusterId"`
-	Tag3Key                     string                    `position:"Query" name:"Tag.3.Key"`
 	SecurityEnhancementStrategy string                    `position:"Query" name:"SecurityEnhancementStrategy"`
 	KeyPairName                 string                    `position:"Query" name:"KeyPairName"`
 	SpotPriceLimit              requests.Float            `position:"Query" name:"SpotPriceLimit"`
-	Tag1Value                   string                    `position:"Query" name:"Tag.1.Value"`
 	ResourceGroupId             string                    `position:"Query" name:"ResourceGroupId"`
 	HostName                    string                    `position:"Query" name:"HostName"`
 	Password                    string                    `position:"Query" name:"Password"`
+	Tag                         *[]CreateInstanceTag      `position:"Query" name:"Tag"  type:"Repeated"`
 	AutoRenewPeriod             requests.Integer          `position:"Query" name:"AutoRenewPeriod"`
 	NodeControllerId            string                    `position:"Query" name:"NodeControllerId"`
 	Period                      requests.Integer          `position:"Query" name:"Period"`
 	DryRun                      requests.Boolean          `position:"Query" name:"DryRun"`
-	Tag5Key                     string                    `position:"Query" name:"Tag.5.Key"`
 	OwnerId                     requests.Integer          `position:"Query" name:"OwnerId"`
 	VSwitchId                   string                    `position:"Query" name:"VSwitchId"`
 	PrivateIpAddress            string                    `position:"Query" name:"PrivateIpAddress"`
@@ -102,7 +98,6 @@ type CreateInstanceRequest struct {
 	AutoRenew                   requests.Boolean          `position:"Query" name:"AutoRenew"`
 	InternetChargeType          string                    `position:"Query" name:"InternetChargeType"`
 	ZoneId                      string                    `position:"Query" name:"ZoneId"`
-	Tag4Key                     string                    `position:"Query" name:"Tag.4.Key"`
 	InternetMaxBandwidthIn      requests.Integer          `position:"Query" name:"InternetMaxBandwidthIn"`
 	UseAdditionalService        requests.Boolean          `position:"Query" name:"UseAdditionalService"`
 	ImageId                     string                    `position:"Query" name:"ImageId"`
@@ -118,7 +113,6 @@ type CreateInstanceRequest struct {
 	PasswordInherit             requests.Boolean          `position:"Query" name:"PasswordInherit"`
 	InstanceType                string                    `position:"Query" name:"InstanceType"`
 	InstanceChargeType          string                    `position:"Query" name:"InstanceChargeType"`
-	Tag3Value                   string                    `position:"Query" name:"Tag.3.Value"`
 	DeploymentSetId             string                    `position:"Query" name:"DeploymentSetId"`
 	InnerIpAddress              string                    `position:"Query" name:"InnerIpAddress"`
 	ResourceOwnerAccount        string                    `position:"Query" name:"ResourceOwnerAccount"`
@@ -128,23 +122,26 @@ type CreateInstanceRequest struct {
 	DedicatedHostId             string                    `position:"Query" name:"DedicatedHostId"`
 	ClusterId                   string                    `position:"Query" name:"ClusterId"`
 	DataDisk                    *[]CreateInstanceDataDisk `position:"Query" name:"DataDisk"  type:"Repeated"`
-	Tag5Value                   string                    `position:"Query" name:"Tag.5.Value"`
-	Tag1Key                     string                    `position:"Query" name:"Tag.1.Key"`
 	SystemDiskSize              requests.Integer          `position:"Query" name:"SystemDisk.Size"`
-	Tag2Value                   string                    `position:"Query" name:"Tag.2.Value"`
 	SystemDiskDescription       string                    `position:"Query" name:"SystemDisk.Description"`
+}
+
+// CreateInstanceTag is a repeated param struct in CreateInstanceRequest
+type CreateInstanceTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // CreateInstanceDataDisk is a repeated param struct in CreateInstanceRequest
 type CreateInstanceDataDisk struct {
-	Size               string `name:"Size"`
-	SnapshotId         string `name:"SnapshotId"`
-	Category           string `name:"Category"`
 	DiskName           string `name:"DiskName"`
+	SnapshotId         string `name:"SnapshotId"`
+	Size               string `name:"Size"`
+	Encrypted          string `name:"Encrypted"`
 	Description        string `name:"Description"`
+	Category           string `name:"Category"`
 	Device             string `name:"Device"`
 	DeleteWithInstance string `name:"DeleteWithInstance"`
-	Encrypted          string `name:"Encrypted"`
 }
 
 // CreateInstanceResponse is the response struct for api CreateInstance

@@ -81,7 +81,6 @@ type DeletePhysicalConnectionRequest struct {
 	ClientToken          string           `position:"Query" name:"ClientToken"`
 	PhysicalConnectionId string           `position:"Query" name:"PhysicalConnectionId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	UserCidr             string           `position:"Query" name:"UserCidr"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 

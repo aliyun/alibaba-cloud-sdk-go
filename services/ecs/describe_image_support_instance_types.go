@@ -86,8 +86,8 @@ type DescribeImageSupportInstanceTypesRequest struct {
 
 // DescribeImageSupportInstanceTypesFilter is a repeated param struct in DescribeImageSupportInstanceTypesRequest
 type DescribeImageSupportInstanceTypesFilter struct {
-	Key   string `name:"Key"`
 	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // DescribeImageSupportInstanceTypesResponse is the response struct for api DescribeImageSupportInstanceTypes

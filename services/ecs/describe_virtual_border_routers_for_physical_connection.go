@@ -87,8 +87,8 @@ type DescribeVirtualBorderRoutersForPhysicalConnectionRequest struct {
 
 // DescribeVirtualBorderRoutersForPhysicalConnectionFilter is a repeated param struct in DescribeVirtualBorderRoutersForPhysicalConnectionRequest
 type DescribeVirtualBorderRoutersForPhysicalConnectionFilter struct {
-	Key   string    `name:"Key"`
 	Value *[]string `name:"Value" type:"Repeated"`
+	Key   string    `name:"Key"`
 }
 
 // DescribeVirtualBorderRoutersForPhysicalConnectionResponse is the response struct for api DescribeVirtualBorderRoutersForPhysicalConnection

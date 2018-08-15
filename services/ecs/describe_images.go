@@ -76,44 +76,41 @@ func (client *Client) DescribeImagesWithCallback(request *DescribeImagesRequest,
 // DescribeImagesRequest is the request struct for api DescribeImages
 type DescribeImagesRequest struct {
 	*requests.RpcRequest
-	Tag4Value            string                  `position:"Query" name:"Tag.4.Value"`
 	ActionType           string                  `position:"Query" name:"ActionType"`
 	ResourceOwnerId      requests.Integer        `position:"Query" name:"ResourceOwnerId"`
 	ImageId              string                  `position:"Query" name:"ImageId"`
 	SnapshotId           string                  `position:"Query" name:"SnapshotId"`
-	Tag2Key              string                  `position:"Query" name:"Tag.2.Key"`
 	Usage                string                  `position:"Query" name:"Usage"`
-	Tag3Key              string                  `position:"Query" name:"Tag.3.Key"`
 	PageNumber           requests.Integer        `position:"Query" name:"PageNumber"`
 	ImageOwnerAlias      string                  `position:"Query" name:"ImageOwnerAlias"`
-	Tag1Value            string                  `position:"Query" name:"Tag.1.Value"`
 	ResourceGroupId      string                  `position:"Query" name:"ResourceGroupId"`
 	IsSupportIoOptimized requests.Boolean        `position:"Query" name:"IsSupportIoOptimized"`
 	ImageName            string                  `position:"Query" name:"ImageName"`
 	IsSupportCloudinit   requests.Boolean        `position:"Query" name:"IsSupportCloudinit"`
 	PageSize             requests.Integer        `position:"Query" name:"PageSize"`
 	InstanceType         string                  `position:"Query" name:"InstanceType"`
-	Tag3Value            string                  `position:"Query" name:"Tag.3.Value"`
+	Tag                  *[]DescribeImagesTag    `position:"Query" name:"Tag"  type:"Repeated"`
 	Architecture         string                  `position:"Query" name:"Architecture"`
 	DryRun               requests.Boolean        `position:"Query" name:"DryRun"`
-	Tag5Key              string                  `position:"Query" name:"Tag.5.Key"`
 	ResourceOwnerAccount string                  `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string                  `position:"Query" name:"OwnerAccount"`
 	ShowExpired          requests.Boolean        `position:"Query" name:"ShowExpired"`
 	OSType               string                  `position:"Query" name:"OSType"`
 	OwnerId              requests.Integer        `position:"Query" name:"OwnerId"`
-	Tag5Value            string                  `position:"Query" name:"Tag.5.Value"`
-	Tag1Key              string                  `position:"Query" name:"Tag.1.Key"`
 	Filter               *[]DescribeImagesFilter `position:"Query" name:"Filter"  type:"Repeated"`
-	Tag2Value            string                  `position:"Query" name:"Tag.2.Value"`
-	Tag4Key              string                  `position:"Query" name:"Tag.4.Key"`
 	Status               string                  `position:"Query" name:"Status"`
+}
+
+// DescribeImagesTag is a repeated param struct in DescribeImagesRequest
+type DescribeImagesTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // DescribeImagesFilter is a repeated param struct in DescribeImagesRequest
 type DescribeImagesFilter struct {
-	Key   string `name:"Key"`
 	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // DescribeImagesResponse is the response struct for api DescribeImages

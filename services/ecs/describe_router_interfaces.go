@@ -86,8 +86,8 @@ type DescribeRouterInterfacesRequest struct {
 
 // DescribeRouterInterfacesFilter is a repeated param struct in DescribeRouterInterfacesRequest
 type DescribeRouterInterfacesFilter struct {
-	Key   string    `name:"Key"`
 	Value *[]string `name:"Value" type:"Repeated"`
+	Key   string    `name:"Key"`
 }
 
 // DescribeRouterInterfacesResponse is the response struct for api DescribeRouterInterfaces

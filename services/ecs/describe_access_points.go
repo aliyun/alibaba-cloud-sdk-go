@@ -87,8 +87,8 @@ type DescribeAccessPointsRequest struct {
 
 // DescribeAccessPointsFilter is a repeated param struct in DescribeAccessPointsRequest
 type DescribeAccessPointsFilter struct {
-	Key   string    `name:"Key"`
 	Value *[]string `name:"Value" type:"Repeated"`
+	Key   string    `name:"Key"`
 }
 
 // DescribeAccessPointsResponse is the response struct for api DescribeAccessPoints

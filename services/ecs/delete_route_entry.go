@@ -88,8 +88,8 @@ type DeleteRouteEntryRequest struct {
 
 // DeleteRouteEntryNextHopList is a repeated param struct in DeleteRouteEntryRequest
 type DeleteRouteEntryNextHopList struct {
-	NextHopType string `name:"NextHopType"`
 	NextHopId   string `name:"NextHopId"`
+	NextHopType string `name:"NextHopType"`
 }
 
 // DeleteRouteEntryResponse is the response struct for api DeleteRouteEntry

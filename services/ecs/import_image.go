@@ -90,12 +90,12 @@ type ImportImageRequest struct {
 
 // ImportImageDiskDeviceMapping is a repeated param struct in ImportImageRequest
 type ImportImageDiskDeviceMapping struct {
-	Format        string `name:"Format"`
 	OSSBucket     string `name:"OSSBucket"`
-	OSSObject     string `name:"OSSObject"`
 	DiskImSize    string `name:"DiskImSize"`
-	DiskImageSize string `name:"DiskImageSize"`
+	Format        string `name:"Format"`
 	Device        string `name:"Device"`
+	OSSObject     string `name:"OSSObject"`
+	DiskImageSize string `name:"DiskImageSize"`
 }
 
 // ImportImageResponse is the response struct for api ImportImage
