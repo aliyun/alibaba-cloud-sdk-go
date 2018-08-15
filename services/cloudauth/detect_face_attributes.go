@@ -101,7 +101,7 @@ func CreateDetectFaceAttributesRequest() (request *DetectFaceAttributesRequest) 
 	request = &DetectFaceAttributesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cloudauth", "2018-07-03", "DetectFaceAttributes", "cloudauth", "openAPI")
+	request.InitWithApiInfo("Cloudauth", "2018-08-07", "DetectFaceAttributes", "cloudauth", "openAPI")
 	return
 }
 

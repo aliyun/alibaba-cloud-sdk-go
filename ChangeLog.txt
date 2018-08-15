@@ -1,3 +1,7 @@
+2018-08-15 Version: 1.25.3
+1, Fix bug in GetMaterials API.
+2, GetVerifyToken added a new param VerifyConfigs
+
 2018-08-15 Version: 1.25.2
 1, Add domain operation api AddLiveDomain,DeleteLiveDomain,DescribeLiveDomainDetail,StartLiveDomain,StopLiveDomain.
 2, Add certificate operation api DescribeLiveCertificateDetail,DescribeLiveCertificateList,SetLiveDomainCertificate.

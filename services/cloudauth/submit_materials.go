@@ -103,7 +103,7 @@ func CreateSubmitMaterialsRequest() (request *SubmitMaterialsRequest) {
 	request = &SubmitMaterialsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cloudauth", "2018-07-03", "SubmitMaterials", "cloudauth", "openAPI")
+	request.InitWithApiInfo("Cloudauth", "2018-08-07", "SubmitMaterials", "cloudauth", "openAPI")
 	return
 }
 

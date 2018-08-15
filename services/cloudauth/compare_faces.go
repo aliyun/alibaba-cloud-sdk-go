@@ -99,7 +99,7 @@ func CreateCompareFacesRequest() (request *CompareFacesRequest) {
 	request = &CompareFacesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cloudauth", "2018-07-03", "CompareFaces", "cloudauth", "openAPI")
+	request.InitWithApiInfo("Cloudauth", "2018-08-07", "CompareFaces", "cloudauth", "openAPI")
 	return
 }
 
