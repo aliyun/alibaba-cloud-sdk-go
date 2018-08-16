@@ -1,3 +1,8 @@
+2018-08-17 Version: 1.25.5
+1, New apkpubkey fields for queryauthentication output parameter.
+2, New packagename fields for queryauthentication output parameter.
+3, New clientId fields for queryauthentication output parameter.
+
 2018-08-16 Version: 1.25.4
 1, ModifyScalingConfiguration add imageName.
 2, CreateScalingConfiguration add imageName.
