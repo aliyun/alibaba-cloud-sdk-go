@@ -1,3 +1,7 @@
+2018-08-16 Version: 1.25.4
+1, ModifyScalingConfiguration add imageName.
+2, CreateScalingConfiguration add imageName.
+
 2018-08-15 Version: 1.25.3
 1, Fix bug in GetMaterials API.
 2, GetVerifyToken added a new param VerifyConfigs

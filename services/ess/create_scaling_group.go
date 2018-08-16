@@ -96,12 +96,12 @@ type CreateScalingGroupRequest struct {
 
 // CreateScalingGroupLifecycleHook is a repeated param struct in CreateScalingGroupRequest
 type CreateScalingGroupLifecycleHook struct {
-	LifecycleHookName    string `name:"LifecycleHookName"`
-	LifecycleTransition  string `name:"LifecycleTransition"`
 	DefaultResult        string `name:"DefaultResult"`
+	LifecycleHookName    string `name:"LifecycleHookName"`
 	HeartbeatTimeout     string `name:"HeartbeatTimeout"`
-	NotificationMetadata string `name:"NotificationMetadata"`
 	NotificationArn      string `name:"NotificationArn"`
+	NotificationMetadata string `name:"NotificationMetadata"`
+	LifecycleTransition  string `name:"LifecycleTransition"`
 }
 
 // CreateScalingGroupResponse is the response struct for api CreateScalingGroup
