@@ -20,5 +20,5 @@ type SecurityIp struct {
 	SecurityGroupName string `json:"SecurityGroupName" xml:"SecurityGroupName"`
 	Ips               string `json:"Ips" xml:"Ips"`
 	CreationTime      string `json:"CreationTime" xml:"CreationTime"`
-	ModifyTime        string `json:"ModifyTime" xml:"ModifyTime"`
+	ModificationTime  string `json:"ModificationTime" xml:"ModificationTime"`
 }

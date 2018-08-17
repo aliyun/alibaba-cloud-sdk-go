@@ -80,6 +80,8 @@ type GetMezzanineInfoRequest struct {
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	VideoId              string           `position:"Query" name:"VideoId"`
 	PreviewSegment       requests.Boolean `position:"Query" name:"PreviewSegment"`
+	OutputType           string           `position:"Query" name:"OutputType"`
+	AdditionType         string           `position:"Query" name:"AdditionType"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	AuthTimeout          requests.Integer `position:"Query" name:"AuthTimeout"`
 }

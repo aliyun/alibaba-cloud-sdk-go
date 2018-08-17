@@ -17,7 +17,6 @@ package vod
 
 // VideoBase is a nested struct in vod response
 type VideoBase struct {
-	OutputType    string                     `json:"OutputType" xml:"OutputType"`
 	CoverURL      string                     `json:"CoverURL" xml:"CoverURL"`
 	Duration      string                     `json:"Duration" xml:"Duration"`
 	Status        string                     `json:"Status" xml:"Status"`

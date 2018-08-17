@@ -17,6 +17,7 @@ package vod
 
 // Mezzanine is a nested struct in vod response
 type Mezzanine struct {
+	OutputType       string        `json:"OutputType" xml:"OutputType"`
 	PreprocessStatus string        `json:"PreprocessStatus" xml:"PreprocessStatus"`
 	Fps              string        `json:"Fps" xml:"Fps"`
 	Bitrate          string        `json:"Bitrate" xml:"Bitrate"`
