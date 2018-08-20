@@ -23,8 +23,8 @@ type ChainProvider struct {
 
 func (p *ChainProvider) Retrieve() (auth.Credential, error) {
 	var lastErr error
-	for _, p := range p.Providers {
-		creds, err := p.Retrieve()
+	for _, provider := range p.Providers {
+		creds, err := provider.Retrieve()
 		if err == nil {
 			return creds, nil
 		}
