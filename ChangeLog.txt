@@ -1,3 +1,6 @@
+2018-08-21 Version: 1.25.7
+1, Repair describeLaunchTemplateVersions securityEnhancementStrategy type
+
 2018-08-17 Version: 1.25.6
 1, Add a new api called DeleteImage to clear the image resource.
 2, Add the field called AdditionType and OutputType to GetMezzanineInfo api request.

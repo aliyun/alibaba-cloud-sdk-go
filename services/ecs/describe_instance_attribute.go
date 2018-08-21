@@ -110,6 +110,7 @@ type DescribeInstanceAttributeResponse struct {
 	InstanceChargeType      string                                      `json:"InstanceChargeType" xml:"InstanceChargeType"`
 	ExpiredTime             string                                      `json:"ExpiredTime" xml:"ExpiredTime"`
 	StoppedMode             string                                      `json:"StoppedMode" xml:"StoppedMode"`
+	CreditSpecification     string                                      `json:"CreditSpecification" xml:"CreditSpecification"`
 	SecurityGroupIds        SecurityGroupIdsInDescribeInstanceAttribute `json:"SecurityGroupIds" xml:"SecurityGroupIds"`
 	PublicIpAddress         PublicIpAddressInDescribeInstanceAttribute  `json:"PublicIpAddress" xml:"PublicIpAddress"`
 	InnerIpAddress          InnerIpAddressInDescribeInstanceAttribute   `json:"InnerIpAddress" xml:"InnerIpAddress"`

@@ -121,6 +121,7 @@ type CreateInstanceRequest struct {
 	RamRoleName                 string                    `position:"Query" name:"RamRoleName"`
 	DedicatedHostId             string                    `position:"Query" name:"DedicatedHostId"`
 	ClusterId                   string                    `position:"Query" name:"ClusterId"`
+	CreditSpecification         string                    `position:"Query" name:"CreditSpecification"`
 	DataDisk                    *[]CreateInstanceDataDisk `position:"Query" name:"DataDisk"  type:"Repeated"`
 	SystemDiskSize              requests.Integer          `position:"Query" name:"SystemDisk.Size"`
 	SystemDiskDescription       string                    `position:"Query" name:"SystemDisk.Description"`

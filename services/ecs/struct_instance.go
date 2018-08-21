@@ -57,6 +57,7 @@ type Instance struct {
 	Recyclable              bool                                 `json:"Recyclable" xml:"Recyclable"`
 	HpcClusterId            string                               `json:"HpcClusterId" xml:"HpcClusterId"`
 	StoppedMode             string                               `json:"StoppedMode" xml:"StoppedMode"`
+	CreditSpecification     string                               `json:"CreditSpecification" xml:"CreditSpecification"`
 	SecurityGroupIds        SecurityGroupIdsInDescribeInstances  `json:"SecurityGroupIds" xml:"SecurityGroupIds"`
 	PublicIpAddress         PublicIpAddressInDescribeInstances   `json:"PublicIpAddress" xml:"PublicIpAddress"`
 	InnerIpAddress          InnerIpAddressInDescribeInstances    `json:"InnerIpAddress" xml:"InnerIpAddress"`
