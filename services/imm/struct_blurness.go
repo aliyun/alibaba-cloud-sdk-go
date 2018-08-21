@@ -17,7 +17,6 @@ package imm
 
 // Blurness is a nested struct in imm response
 type Blurness struct {
-	Balue     float64 `json:"Balue" xml:"Balue"`
 	Value     float64 `json:"Value" xml:"Value"`
 	Threshold float64 `json:"Threshold" xml:"Threshold"`
 }

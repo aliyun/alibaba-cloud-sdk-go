@@ -77,6 +77,7 @@ func (client *Client) DetectTagWithCallback(request *DetectTagRequest, callback 
 type DetectTagRequest struct {
 	*requests.RpcRequest
 	SrcUris string `position:"Query" name:"SrcUris"`
+	ModelId string `position:"Query" name:"ModelId"`
 	Project string `position:"Query" name:"Project"`
 }
 

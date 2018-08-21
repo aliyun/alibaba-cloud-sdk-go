@@ -88,6 +88,7 @@ type CreateFaceSetResponse struct {
 	Photos     int    `json:"Photos" xml:"Photos"`
 	CreateTime string `json:"CreateTime" xml:"CreateTime"`
 	ModifyTime string `json:"ModifyTime" xml:"ModifyTime"`
+	Faces      int    `json:"Faces" xml:"Faces"`
 }
 
 // CreateCreateFaceSetRequest creates a request to invoke CreateFaceSet API
