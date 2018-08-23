@@ -76,13 +76,13 @@ func (client *Client) ModifyNatGatewayAttributeWithCallback(request *ModifyNatGa
 // ModifyNatGatewayAttributeRequest is the request struct for api ModifyNatGatewayAttribute
 type ModifyNatGatewayAttributeRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	NatGatewayId         string           `position:"Query" name:"NatGatewayId"`
 	Name                 string           `position:"Query" name:"Name"`
 	Description          string           `position:"Query" name:"Description"`
+	NatGatewayId         string           `position:"Query" name:"NatGatewayId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // ModifyNatGatewayAttributeResponse is the response struct for api ModifyNatGatewayAttribute

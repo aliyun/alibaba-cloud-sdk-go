@@ -76,12 +76,12 @@ func (client *Client) DeleteHaVipWithCallback(request *DeleteHaVipRequest, callb
 // DeleteHaVipRequest is the request struct for api DeleteHaVip
 type DeleteHaVipRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
 	HaVipId              string           `position:"Query" name:"HaVipId"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DeleteHaVipResponse is the response struct for api DeleteHaVip

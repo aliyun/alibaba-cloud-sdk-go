@@ -76,17 +76,17 @@ func (client *Client) CreateGlobalAccelerationInstanceWithCallback(request *Crea
 // CreateGlobalAccelerationInstanceRequest is the request struct for api CreateGlobalAccelerationInstance
 type CreateGlobalAccelerationInstanceRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	BandwidthType        string           `position:"Query" name:"BandwidthType"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ServiceLocation      string           `position:"Query" name:"ServiceLocation"`
 	Bandwidth            string           `position:"Query" name:"Bandwidth"`
-	InternetChargeType   string           `position:"Query" name:"InternetChargeType"`
-	BandwidthType        string           `position:"Query" name:"BandwidthType"`
-	Name                 string           `position:"Query" name:"Name"`
-	Description          string           `position:"Query" name:"Description"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	Description          string           `position:"Query" name:"Description"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	InternetChargeType   string           `position:"Query" name:"InternetChargeType"`
+	Name                 string           `position:"Query" name:"Name"`
 }
 
 // CreateGlobalAccelerationInstanceResponse is the response struct for api CreateGlobalAccelerationInstance

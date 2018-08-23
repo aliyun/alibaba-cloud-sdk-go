@@ -76,11 +76,11 @@ func (client *Client) DescribeVSwitchAttributesWithCallback(request *DescribeVSw
 // DescribeVSwitchAttributesRequest is the request struct for api DescribeVSwitchAttributes
 type DescribeVSwitchAttributesRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	VSwitchId            string           `position:"Query" name:"VSwitchId"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeVSwitchAttributesResponse is the response struct for api DescribeVSwitchAttributes
@@ -97,6 +97,7 @@ type DescribeVSwitchAttributesResponse struct {
 	VSwitchName             string                                    `json:"VSwitchName" xml:"VSwitchName"`
 	CreationTime            string                                    `json:"CreationTime" xml:"CreationTime"`
 	IsDefault               bool                                      `json:"IsDefault" xml:"IsDefault"`
+	RouteTable              RouteTable                                `json:"RouteTable" xml:"RouteTable"`
 	CloudResources          CloudResourcesInDescribeVSwitchAttributes `json:"CloudResources" xml:"CloudResources"`
 }
 

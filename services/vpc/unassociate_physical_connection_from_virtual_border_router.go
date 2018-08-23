@@ -76,13 +76,13 @@ func (client *Client) UnassociatePhysicalConnectionFromVirtualBorderRouterWithCa
 // UnassociatePhysicalConnectionFromVirtualBorderRouterRequest is the request struct for api UnassociatePhysicalConnectionFromVirtualBorderRouter
 type UnassociatePhysicalConnectionFromVirtualBorderRouterRequest struct {
 	*requests.RpcRequest
-	VbrId                string           `position:"Query" name:"VbrId"`
-	PhysicalConnectionId string           `position:"Query" name:"PhysicalConnectionId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
+	PhysicalConnectionId string           `position:"Query" name:"PhysicalConnectionId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	VbrId                string           `position:"Query" name:"VbrId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // UnassociatePhysicalConnectionFromVirtualBorderRouterResponse is the response struct for api UnassociatePhysicalConnectionFromVirtualBorderRouter

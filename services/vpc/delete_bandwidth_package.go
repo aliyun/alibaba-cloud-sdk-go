@@ -76,12 +76,12 @@ func (client *Client) DeleteBandwidthPackageWithCallback(request *DeleteBandwidt
 // DeleteBandwidthPackageRequest is the request struct for api DeleteBandwidthPackage
 type DeleteBandwidthPackageRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	BandwidthPackageId   string           `position:"Query" name:"BandwidthPackageId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	Force                requests.Boolean `position:"Query" name:"Force"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DeleteBandwidthPackageResponse is the response struct for api DeleteBandwidthPackage

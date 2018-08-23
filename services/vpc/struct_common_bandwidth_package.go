@@ -17,17 +17,22 @@ package vpc
 
 // CommonBandwidthPackage is a nested struct in vpc response
 type CommonBandwidthPackage struct {
-	BandwidthPackageId string                                             `json:"BandwidthPackageId" xml:"BandwidthPackageId"`
-	RegionId           string                                             `json:"RegionId" xml:"RegionId"`
-	Name               string                                             `json:"Name" xml:"Name"`
-	Description        string                                             `json:"Description" xml:"Description"`
-	Bandwidth          string                                             `json:"Bandwidth" xml:"Bandwidth"`
-	InstanceChargeType string                                             `json:"InstanceChargeType" xml:"InstanceChargeType"`
-	InternetChargeType string                                             `json:"InternetChargeType" xml:"InternetChargeType"`
-	BusinessStatus     string                                             `json:"BusinessStatus" xml:"BusinessStatus"`
-	CreationTime       string                                             `json:"CreationTime" xml:"CreationTime"`
-	ExpiredTime        string                                             `json:"ExpiredTime" xml:"ExpiredTime"`
-	Status             string                                             `json:"Status" xml:"Status"`
-	Ratio              int                                                `json:"Ratio" xml:"Ratio"`
-	PublicIpAddresses  PublicIpAddressesInDescribeCommonBandwidthPackages `json:"PublicIpAddresses" xml:"PublicIpAddresses"`
+	BandwidthPackageId            string                                             `json:"BandwidthPackageId" xml:"BandwidthPackageId"`
+	RegionId                      string                                             `json:"RegionId" xml:"RegionId"`
+	Name                          string                                             `json:"Name" xml:"Name"`
+	Description                   string                                             `json:"Description" xml:"Description"`
+	Bandwidth                     string                                             `json:"Bandwidth" xml:"Bandwidth"`
+	InstanceChargeType            string                                             `json:"InstanceChargeType" xml:"InstanceChargeType"`
+	InternetChargeType            string                                             `json:"InternetChargeType" xml:"InternetChargeType"`
+	BusinessStatus                string                                             `json:"BusinessStatus" xml:"BusinessStatus"`
+	CreationTime                  string                                             `json:"CreationTime" xml:"CreationTime"`
+	ExpiredTime                   string                                             `json:"ExpiredTime" xml:"ExpiredTime"`
+	Status                        string                                             `json:"Status" xml:"Status"`
+	Ratio                         int                                                `json:"Ratio" xml:"Ratio"`
+	HasReservationData            string                                             `json:"HasReservationData" xml:"HasReservationData"`
+	ReservationBandwidth          string                                             `json:"ReservationBandwidth" xml:"ReservationBandwidth"`
+	ReservationInternetChargeType string                                             `json:"ReservationInternetChargeType" xml:"ReservationInternetChargeType"`
+	ReservationActiveTime         string                                             `json:"ReservationActiveTime" xml:"ReservationActiveTime"`
+	ReservationOrderType          string                                             `json:"ReservationOrderType" xml:"ReservationOrderType"`
+	PublicIpAddresses             PublicIpAddressesInDescribeCommonBandwidthPackages `json:"PublicIpAddresses" xml:"PublicIpAddresses"`
 }

@@ -17,12 +17,13 @@ package vpc
 
 // RouterTableListType is a nested struct in vpc response
 type RouterTableListType struct {
-	VpcId          string `json:"VpcId" xml:"VpcId"`
-	RouterType     string `json:"RouterType" xml:"RouterType"`
-	RouterId       string `json:"RouterId" xml:"RouterId"`
-	RouteTableId   string `json:"RouteTableId" xml:"RouteTableId"`
-	RouteTableName string `json:"RouteTableName" xml:"RouteTableName"`
-	RouteTableType string `json:"RouteTableType" xml:"RouteTableType"`
-	Description    string `json:"Description" xml:"Description"`
-	CreationTime   string `json:"CreationTime" xml:"CreationTime"`
+	VpcId          string                             `json:"VpcId" xml:"VpcId"`
+	RouterType     string                             `json:"RouterType" xml:"RouterType"`
+	RouterId       string                             `json:"RouterId" xml:"RouterId"`
+	RouteTableId   string                             `json:"RouteTableId" xml:"RouteTableId"`
+	RouteTableName string                             `json:"RouteTableName" xml:"RouteTableName"`
+	RouteTableType string                             `json:"RouteTableType" xml:"RouteTableType"`
+	Description    string                             `json:"Description" xml:"Description"`
+	CreationTime   string                             `json:"CreationTime" xml:"CreationTime"`
+	VSwitchIds     VSwitchIdsInDescribeRouteTableList `json:"VSwitchIds" xml:"VSwitchIds"`
 }

@@ -76,15 +76,15 @@ func (client *Client) DescribeNqasWithCallback(request *DescribeNqasRequest, cal
 // DescribeNqasRequest is the request struct for api DescribeNqas
 type DescribeNqasRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	RouterId             string           `position:"Query" name:"RouterId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	NqaId                string           `position:"Query" name:"NqaId"`
 	IsDefault            requests.Boolean `position:"Query" name:"IsDefault"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 // DescribeNqasResponse is the response struct for api DescribeNqas

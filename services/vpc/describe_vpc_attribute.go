@@ -76,12 +76,12 @@ func (client *Client) DescribeVpcAttributeWithCallback(request *DescribeVpcAttri
 // DescribeVpcAttributeRequest is the request struct for api DescribeVpcAttribute
 type DescribeVpcAttributeRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	VpcId                string           `position:"Query" name:"VpcId"`
-	IsDefault            requests.Boolean `position:"Query" name:"IsDefault"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	IsDefault            requests.Boolean `position:"Query" name:"IsDefault"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeVpcAttributeResponse is the response struct for api DescribeVpcAttribute

@@ -76,14 +76,14 @@ func (client *Client) DescribeBandwidthPackagePublicIpMonitorDataWithCallback(re
 // DescribeBandwidthPackagePublicIpMonitorDataRequest is the request struct for api DescribeBandwidthPackagePublicIpMonitorData
 type DescribeBandwidthPackagePublicIpMonitorDataRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Period               requests.Integer `position:"Query" name:"Period"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	EndTime              string           `position:"Query" name:"EndTime"`
 	AllocationId         string           `position:"Query" name:"AllocationId"`
 	StartTime            string           `position:"Query" name:"StartTime"`
-	EndTime              string           `position:"Query" name:"EndTime"`
-	Period               requests.Integer `position:"Query" name:"Period"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeBandwidthPackagePublicIpMonitorDataResponse is the response struct for api DescribeBandwidthPackagePublicIpMonitorData

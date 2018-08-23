@@ -76,14 +76,15 @@ func (client *Client) DescribeVpnConnectionsWithCallback(request *DescribeVpnCon
 // DescribeVpnConnectionsRequest is the request struct for api DescribeVpnConnections
 type DescribeVpnConnectionsRequest struct {
 	*requests.RpcRequest
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	VpnConnectionId      string           `position:"Query" name:"VpnConnectionId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	VpnGatewayId         string           `position:"Query" name:"VpnGatewayId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	CustomerGatewayId    string           `position:"Query" name:"CustomerGatewayId"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 }
 
 // DescribeVpnConnectionsResponse is the response struct for api DescribeVpnConnections

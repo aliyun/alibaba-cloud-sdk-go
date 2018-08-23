@@ -76,14 +76,14 @@ func (client *Client) CreateHaVipWithCallback(request *CreateHaVipRequest, callb
 // CreateHaVipRequest is the request struct for api CreateHaVip
 type CreateHaVipRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
 	VSwitchId            string           `position:"Query" name:"VSwitchId"`
 	IpAddress            string           `position:"Query" name:"IpAddress"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	Description          string           `position:"Query" name:"Description"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // CreateHaVipResponse is the response struct for api CreateHaVip

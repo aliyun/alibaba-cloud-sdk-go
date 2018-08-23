@@ -76,20 +76,20 @@ func (client *Client) AllocateEipAddressWithCallback(request *AllocateEipAddress
 // AllocateEipAddressRequest is the request struct for api AllocateEipAddress
 type AllocateEipAddressRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Bandwidth            string           `position:"Query" name:"Bandwidth"`
 	Period               requests.Integer `position:"Query" name:"Period"`
-	ISP                  string           `position:"Query" name:"ISP"`
-	Netmode              string           `position:"Query" name:"Netmode"`
 	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	Bandwidth            string           `position:"Query" name:"Bandwidth"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	ISP                  string           `position:"Query" name:"ISP"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
+	InternetChargeType   string           `position:"Query" name:"InternetChargeType"`
+	Netmode              string           `position:"Query" name:"Netmode"`
 	PricingCycle         string           `position:"Query" name:"PricingCycle"`
 	InstanceChargeType   string           `position:"Query" name:"InstanceChargeType"`
-	InternetChargeType   string           `position:"Query" name:"InternetChargeType"`
-	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
 }
 
 // AllocateEipAddressResponse is the response struct for api AllocateEipAddress

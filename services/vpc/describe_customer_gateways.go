@@ -76,13 +76,13 @@ func (client *Client) DescribeCustomerGatewaysWithCallback(request *DescribeCust
 // DescribeCustomerGatewaysRequest is the request struct for api DescribeCustomerGateways
 type DescribeCustomerGatewaysRequest struct {
 	*requests.RpcRequest
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	CustomerGatewayId    string           `position:"Query" name:"CustomerGatewayId"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 }
 
 // DescribeCustomerGatewaysResponse is the response struct for api DescribeCustomerGateways

@@ -76,16 +76,16 @@ func (client *Client) CreateCommonBandwidthPackageWithCallback(request *CreateCo
 // CreateCommonBandwidthPackageRequest is the request struct for api CreateCommonBandwidthPackage
 type CreateCommonBandwidthPackageRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	Bandwidth            requests.Integer `position:"Query" name:"Bandwidth"`
+	InternetChargeType   string           `position:"Query" name:"InternetChargeType"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	Name                 string           `position:"Query" name:"Name"`
 	Description          string           `position:"Query" name:"Description"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	Bandwidth            requests.Integer `position:"Query" name:"Bandwidth"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	Ratio                requests.Integer `position:"Query" name:"Ratio"`
-	InternetChargeType   string           `position:"Query" name:"InternetChargeType"`
 }
 
 // CreateCommonBandwidthPackageResponse is the response struct for api CreateCommonBandwidthPackage

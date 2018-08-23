@@ -76,18 +76,18 @@ func (client *Client) ModifyVpnConnectionAttributeWithCallback(request *ModifyVp
 // ModifyVpnConnectionAttributeRequest is the request struct for api ModifyVpnConnectionAttribute
 type ModifyVpnConnectionAttributeRequest struct {
 	*requests.RpcRequest
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	IkeConfig            string           `position:"Query" name:"IkeConfig"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	VpnConnectionId      string           `position:"Query" name:"VpnConnectionId"`
-	Name                 string           `position:"Query" name:"Name"`
-	LocalSubnet          string           `position:"Query" name:"LocalSubnet"`
 	RemoteSubnet         string           `position:"Query" name:"RemoteSubnet"`
 	EffectImmediately    requests.Boolean `position:"Query" name:"EffectImmediately"`
-	IkeConfig            string           `position:"Query" name:"IkeConfig"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	IpsecConfig          string           `position:"Query" name:"IpsecConfig"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	LocalSubnet          string           `position:"Query" name:"LocalSubnet"`
+	VpnConnectionId      string           `position:"Query" name:"VpnConnectionId"`
+	Name                 string           `position:"Query" name:"Name"`
 }
 
 // ModifyVpnConnectionAttributeResponse is the response struct for api ModifyVpnConnectionAttribute

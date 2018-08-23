@@ -76,18 +76,18 @@ func (client *Client) DescribeRouteTablesWithCallback(request *DescribeRouteTabl
 // DescribeRouteTablesRequest is the request struct for api DescribeRouteTables
 type DescribeRouteTablesRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	VRouterId            string           `position:"Query" name:"VRouterId"`
-	RouteTableId         string           `position:"Query" name:"RouteTableId"`
-	RouterType           string           `position:"Query" name:"RouterType"`
-	RouterId             string           `position:"Query" name:"RouterId"`
-	Type                 string           `position:"Query" name:"Type"`
-	RouteTableName       string           `position:"Query" name:"RouteTableName"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Type                 string           `position:"Query" name:"Type"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	RouterType           string           `position:"Query" name:"RouterType"`
+	RouteTableName       string           `position:"Query" name:"RouteTableName"`
+	RouterId             string           `position:"Query" name:"RouterId"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	RouteTableId         string           `position:"Query" name:"RouteTableId"`
 }
 
 // DescribeRouteTablesResponse is the response struct for api DescribeRouteTables

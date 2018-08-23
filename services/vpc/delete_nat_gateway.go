@@ -76,12 +76,12 @@ func (client *Client) DeleteNatGatewayWithCallback(request *DeleteNatGatewayRequ
 // DeleteNatGatewayRequest is the request struct for api DeleteNatGateway
 type DeleteNatGatewayRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	NatGatewayId         string           `position:"Query" name:"NatGatewayId"`
 	Force                requests.Boolean `position:"Query" name:"Force"`
+	NatGatewayId         string           `position:"Query" name:"NatGatewayId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DeleteNatGatewayResponse is the response struct for api DeleteNatGateway

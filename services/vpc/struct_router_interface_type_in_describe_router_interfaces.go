@@ -44,4 +44,10 @@ type RouterInterfaceTypeInDescribeRouterInterfaces struct {
 	HealthCheckTargetIp             string `json:"HealthCheckTargetIp" xml:"HealthCheckTargetIp"`
 	OppositeVpcInstanceId           string `json:"OppositeVpcInstanceId" xml:"OppositeVpcInstanceId"`
 	VpcInstanceId                   string `json:"VpcInstanceId" xml:"VpcInstanceId"`
+	CrossBorder                     bool   `json:"CrossBorder" xml:"CrossBorder"`
+	HasReservationData              string `json:"HasReservationData" xml:"HasReservationData"`
+	ReservationBandwidth            string `json:"ReservationBandwidth" xml:"ReservationBandwidth"`
+	ReservationInternetChargeType   string `json:"ReservationInternetChargeType" xml:"ReservationInternetChargeType"`
+	ReservationActiveTime           string `json:"ReservationActiveTime" xml:"ReservationActiveTime"`
+	ReservationOrderType            string `json:"ReservationOrderType" xml:"ReservationOrderType"`
 }
