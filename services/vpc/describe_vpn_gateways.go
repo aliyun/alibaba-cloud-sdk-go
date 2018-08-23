@@ -76,16 +76,16 @@ func (client *Client) DescribeVpnGatewaysWithCallback(request *DescribeVpnGatewa
 // DescribeVpnGatewaysRequest is the request struct for api DescribeVpnGateways
 type DescribeVpnGatewaysRequest struct {
 	*requests.RpcRequest
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	VpcId                string           `position:"Query" name:"VpcId"`
-	VpnGatewayId         string           `position:"Query" name:"VpnGatewayId"`
-	Status               string           `position:"Query" name:"Status"`
 	BusinessStatus       string           `position:"Query" name:"BusinessStatus"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	VpcId                string           `position:"Query" name:"VpcId"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	VpnGatewayId         string           `position:"Query" name:"VpnGatewayId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	Status               string           `position:"Query" name:"Status"`
 }
 
 // DescribeVpnGatewaysResponse is the response struct for api DescribeVpnGateways

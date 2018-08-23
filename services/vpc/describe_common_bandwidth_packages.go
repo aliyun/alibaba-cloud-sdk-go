@@ -76,14 +76,15 @@ func (client *Client) DescribeCommonBandwidthPackagesWithCallback(request *Descr
 // DescribeCommonBandwidthPackagesRequest is the request struct for api DescribeCommonBandwidthPackages
 type DescribeCommonBandwidthPackagesRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	BandwidthPackageId   string           `position:"Query" name:"BandwidthPackageId"`
-	Name                 string           `position:"Query" name:"Name"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	ResourceOwnerId        requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	BandwidthPackageId     string           `position:"Query" name:"BandwidthPackageId"`
+	ResourceOwnerAccount   string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount           string           `position:"Query" name:"OwnerAccount"`
+	Name                   string           `position:"Query" name:"Name"`
+	PageSize               requests.Integer `position:"Query" name:"PageSize"`
+	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
+	IncludeReservationData requests.Boolean `position:"Query" name:"IncludeReservationData"`
+	PageNumber             requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 // DescribeCommonBandwidthPackagesResponse is the response struct for api DescribeCommonBandwidthPackages

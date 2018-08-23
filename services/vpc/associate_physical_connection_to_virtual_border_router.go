@@ -76,18 +76,18 @@ func (client *Client) AssociatePhysicalConnectionToVirtualBorderRouterWithCallba
 // AssociatePhysicalConnectionToVirtualBorderRouterRequest is the request struct for api AssociatePhysicalConnectionToVirtualBorderRouter
 type AssociatePhysicalConnectionToVirtualBorderRouterRequest struct {
 	*requests.RpcRequest
-	VbrId                string           `position:"Query" name:"VbrId"`
-	PhysicalConnectionId string           `position:"Query" name:"PhysicalConnectionId"`
-	VlanId               string           `position:"Query" name:"VlanId"`
-	CircuitCode          string           `position:"Query" name:"CircuitCode"`
-	LocalGatewayIp       string           `position:"Query" name:"LocalGatewayIp"`
-	PeerGatewayIp        string           `position:"Query" name:"PeerGatewayIp"`
-	PeeringSubnetMask    string           `position:"Query" name:"PeeringSubnetMask"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	CircuitCode          string           `position:"Query" name:"CircuitCode"`
+	VlanId               string           `position:"Query" name:"VlanId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	VbrId                string           `position:"Query" name:"VbrId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	PeerGatewayIp        string           `position:"Query" name:"PeerGatewayIp"`
+	PeeringSubnetMask    string           `position:"Query" name:"PeeringSubnetMask"`
+	PhysicalConnectionId string           `position:"Query" name:"PhysicalConnectionId"`
+	LocalGatewayIp       string           `position:"Query" name:"LocalGatewayIp"`
 }
 
 // AssociatePhysicalConnectionToVirtualBorderRouterResponse is the response struct for api AssociatePhysicalConnectionToVirtualBorderRouter

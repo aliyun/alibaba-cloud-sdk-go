@@ -76,12 +76,12 @@ func (client *Client) RecoverVirtualBorderRouterWithCallback(request *RecoverVir
 // RecoverVirtualBorderRouterRequest is the request struct for api RecoverVirtualBorderRouter
 type RecoverVirtualBorderRouterRequest struct {
 	*requests.RpcRequest
-	VbrId                string           `position:"Query" name:"VbrId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	VbrId                string           `position:"Query" name:"VbrId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // RecoverVirtualBorderRouterResponse is the response struct for api RecoverVirtualBorderRouter

@@ -76,12 +76,12 @@ func (client *Client) DeleteForwardEntryWithCallback(request *DeleteForwardEntry
 // DeleteForwardEntryRequest is the request struct for api DeleteForwardEntry
 type DeleteForwardEntryRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ForwardEntryId       string           `position:"Query" name:"ForwardEntryId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	ForwardTableId       string           `position:"Query" name:"ForwardTableId"`
-	ForwardEntryId       string           `position:"Query" name:"ForwardEntryId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DeleteForwardEntryResponse is the response struct for api DeleteForwardEntry

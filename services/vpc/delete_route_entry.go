@@ -76,20 +76,20 @@ func (client *Client) DeleteRouteEntryWithCallback(request *DeleteRouteEntryRequ
 // DeleteRouteEntryRequest is the request struct for api DeleteRouteEntry
 type DeleteRouteEntryRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer               `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string                         `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer               `position:"Query" name:"ResourceOwnerId"`
-	RouteTableId         string                         `position:"Query" name:"RouteTableId"`
+	ResourceOwnerAccount string                         `position:"Query" name:"ResourceOwnerAccount"`
 	DestinationCidrBlock string                         `position:"Query" name:"DestinationCidrBlock"`
-	NextHopId            string                         `position:"Query" name:"NextHopId"`
 	OwnerAccount         string                         `position:"Query" name:"OwnerAccount"`
+	NextHopId            string                         `position:"Query" name:"NextHopId"`
+	OwnerId              requests.Integer               `position:"Query" name:"OwnerId"`
 	NextHopList          *[]DeleteRouteEntryNextHopList `position:"Query" name:"NextHopList"  type:"Repeated"`
+	RouteTableId         string                         `position:"Query" name:"RouteTableId"`
 }
 
 // DeleteRouteEntryNextHopList is a repeated param struct in DeleteRouteEntryRequest
 type DeleteRouteEntryNextHopList struct {
-	NextHopType string `name:"NextHopType"`
 	NextHopId   string `name:"NextHopId"`
+	NextHopType string `name:"NextHopType"`
 }
 
 // DeleteRouteEntryResponse is the response struct for api DeleteRouteEntry

@@ -76,12 +76,12 @@ func (client *Client) ModifyCommonBandwidthPackageSpecWithCallback(request *Modi
 // ModifyCommonBandwidthPackageSpecRequest is the request struct for api ModifyCommonBandwidthPackageSpec
 type ModifyCommonBandwidthPackageSpecRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	BandwidthPackageId   string           `position:"Query" name:"BandwidthPackageId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	Bandwidth            string           `position:"Query" name:"Bandwidth"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // ModifyCommonBandwidthPackageSpecResponse is the response struct for api ModifyCommonBandwidthPackageSpec

@@ -76,19 +76,19 @@ func (client *Client) ModifySslVpnServerWithCallback(request *ModifySslVpnServer
 // ModifySslVpnServerRequest is the request struct for api ModifySslVpnServer
 type ModifySslVpnServerRequest struct {
 	*requests.RpcRequest
+	Cipher               string           `position:"Query" name:"Cipher"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientIpPool         string           `position:"Query" name:"ClientIpPool"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	Compress             requests.Boolean `position:"Query" name:"Compress"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
 	SslVpnServerId       string           `position:"Query" name:"SslVpnServerId"`
-	Name                 string           `position:"Query" name:"Name"`
-	ClientIpPool         string           `position:"Query" name:"ClientIpPool"`
 	LocalSubnet          string           `position:"Query" name:"LocalSubnet"`
-	Proto                string           `position:"Query" name:"Proto"`
-	Cipher               string           `position:"Query" name:"Cipher"`
 	Port                 requests.Integer `position:"Query" name:"Port"`
-	Compress             requests.Boolean `position:"Query" name:"Compress"`
+	Proto                string           `position:"Query" name:"Proto"`
+	Name                 string           `position:"Query" name:"Name"`
 }
 
 // ModifySslVpnServerResponse is the response struct for api ModifySslVpnServer

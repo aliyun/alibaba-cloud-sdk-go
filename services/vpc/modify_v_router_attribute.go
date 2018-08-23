@@ -76,13 +76,13 @@ func (client *Client) ModifyVRouterAttributeWithCallback(request *ModifyVRouterA
 // ModifyVRouterAttributeRequest is the request struct for api ModifyVRouterAttribute
 type ModifyVRouterAttributeRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	VRouterName          string           `position:"Query" name:"VRouterName"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	VRouterId            string           `position:"Query" name:"VRouterId"`
-	VRouterName          string           `position:"Query" name:"VRouterName"`
-	Description          string           `position:"Query" name:"Description"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	Description          string           `position:"Query" name:"Description"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // ModifyVRouterAttributeResponse is the response struct for api ModifyVRouterAttribute

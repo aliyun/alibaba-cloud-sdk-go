@@ -76,9 +76,9 @@ func (client *Client) ConnectRouterInterfaceWithCallback(request *ConnectRouterI
 // ConnectRouterInterfaceRequest is the request struct for api ConnectRouterInterface
 type ConnectRouterInterfaceRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	RouterInterfaceId    string           `position:"Query" name:"RouterInterfaceId"`
 }
 

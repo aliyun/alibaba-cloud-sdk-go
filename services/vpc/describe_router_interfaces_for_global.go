@@ -76,13 +76,13 @@ func (client *Client) DescribeRouterInterfacesForGlobalWithCallback(request *Des
 // DescribeRouterInterfacesForGlobalRequest is the request struct for api DescribeRouterInterfacesForGlobal
 type DescribeRouterInterfacesForGlobalRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	Status               string           `position:"Query" name:"Status"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	Status               string           `position:"Query" name:"Status"`
 }
 
 // DescribeRouterInterfacesForGlobalResponse is the response struct for api DescribeRouterInterfacesForGlobal

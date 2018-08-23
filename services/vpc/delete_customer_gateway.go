@@ -76,11 +76,11 @@ func (client *Client) DeleteCustomerGatewayWithCallback(request *DeleteCustomerG
 // DeleteCustomerGatewayRequest is the request struct for api DeleteCustomerGateway
 type DeleteCustomerGatewayRequest struct {
 	*requests.RpcRequest
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
 	CustomerGatewayId    string           `position:"Query" name:"CustomerGatewayId"`
 }
 

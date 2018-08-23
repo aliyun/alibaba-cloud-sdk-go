@@ -76,12 +76,12 @@ func (client *Client) DeleteBgpGroupWithCallback(request *DeleteBgpGroupRequest,
 // DeleteBgpGroupRequest is the request struct for api DeleteBgpGroup
 type DeleteBgpGroupRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	BgpGroupId           string           `position:"Query" name:"BgpGroupId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	BgpGroupId           string           `position:"Query" name:"BgpGroupId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DeleteBgpGroupResponse is the response struct for api DeleteBgpGroup

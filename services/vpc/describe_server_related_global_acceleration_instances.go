@@ -76,12 +76,12 @@ func (client *Client) DescribeServerRelatedGlobalAccelerationInstancesWithCallba
 // DescribeServerRelatedGlobalAccelerationInstancesRequest is the request struct for api DescribeServerRelatedGlobalAccelerationInstances
 type DescribeServerRelatedGlobalAccelerationInstancesRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ServerId             string           `position:"Query" name:"ServerId"`
 	ServerType           string           `position:"Query" name:"ServerType"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ServerId             string           `position:"Query" name:"ServerId"`
 }
 
 // DescribeServerRelatedGlobalAccelerationInstancesResponse is the response struct for api DescribeServerRelatedGlobalAccelerationInstances

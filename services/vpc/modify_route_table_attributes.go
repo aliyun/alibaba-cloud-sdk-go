@@ -76,17 +76,17 @@ func (client *Client) ModifyRouteTableAttributesWithCallback(request *ModifyRout
 // ModifyRouteTableAttributesRequest is the request struct for api ModifyRouteTableAttributes
 type ModifyRouteTableAttributesRequest struct {
 	*requests.RpcRequest
-	RouteTableId         string           `position:"Query" name:"RouteTableId"`
-	RouteTableName       string           `position:"Query" name:"RouteTableName"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	Bandwidth            string           `position:"Query" name:"Bandwidth"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	Description          string           `position:"Query" name:"Description"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Bandwidth            string           `position:"Query" name:"Bandwidth"`
 	KbpsBandwidth        string           `position:"Query" name:"KbpsBandwidth"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	ResourceBid          string           `position:"Query" name:"ResourceBid"`
+	RouteTableName       string           `position:"Query" name:"RouteTableName"`
 	ResourceUid          requests.Integer `position:"Query" name:"ResourceUid"`
+	ResourceBid          string           `position:"Query" name:"ResourceBid"`
+	RouteTableId         string           `position:"Query" name:"RouteTableId"`
 }
 
 // ModifyRouteTableAttributesResponse is the response struct for api ModifyRouteTableAttributes

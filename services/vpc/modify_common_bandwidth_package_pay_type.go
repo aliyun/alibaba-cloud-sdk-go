@@ -76,19 +76,19 @@ func (client *Client) ModifyCommonBandwidthPackagePayTypeWithCallback(request *M
 // ModifyCommonBandwidthPackagePayTypeRequest is the request struct for api ModifyCommonBandwidthPackagePayType
 type ModifyCommonBandwidthPackagePayTypeRequest struct {
 	*requests.RpcRequest
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	BandwidthPackageId   string           `position:"Query" name:"BandwidthPackageId"`
+	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	Bandwidth            string           `position:"Query" name:"Bandwidth"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Duration             requests.Integer `position:"Query" name:"Duration"`
+	KbpsBandwidth        string           `position:"Query" name:"KbpsBandwidth"`
+	ResourceUid          requests.Integer `position:"Query" name:"ResourceUid"`
+	ResourceBid          string           `position:"Query" name:"ResourceBid"`
 	PayType              string           `position:"Query" name:"PayType"`
 	PricingCycle         string           `position:"Query" name:"PricingCycle"`
-	Duration             requests.Integer `position:"Query" name:"Duration"`
-	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Bandwidth            string           `position:"Query" name:"Bandwidth"`
-	KbpsBandwidth        string           `position:"Query" name:"KbpsBandwidth"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	ResourceBid          string           `position:"Query" name:"ResourceBid"`
-	ResourceUid          requests.Integer `position:"Query" name:"ResourceUid"`
 }
 
 // ModifyCommonBandwidthPackagePayTypeResponse is the response struct for api ModifyCommonBandwidthPackagePayType
