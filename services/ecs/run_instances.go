@@ -94,6 +94,7 @@ type RunInstancesRequest struct {
 	OwnerId                     requests.Integer                `position:"Query" name:"OwnerId"`
 	VSwitchId                   string                          `position:"Query" name:"VSwitchId"`
 	SpotStrategy                string                          `position:"Query" name:"SpotStrategy"`
+	PrivateIpAddress            string                          `position:"Query" name:"PrivateIpAddress"`
 	PeriodUnit                  string                          `position:"Query" name:"PeriodUnit"`
 	InstanceName                string                          `position:"Query" name:"InstanceName"`
 	AutoRenew                   requests.Boolean                `position:"Query" name:"AutoRenew"`

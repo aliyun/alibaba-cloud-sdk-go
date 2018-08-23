@@ -1,3 +1,6 @@
+2018-08-23 Version: 1.27.2
+1, RunInstance add privateIpAddress.
+
 2018-08-23 Version: 1.27.1
 1, This is an example of release-log.
 2, Please strictly follow this format to edit in English.
