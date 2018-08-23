@@ -22,7 +22,7 @@ const (
 
 	UnsupportedCredentialErrorCode    = "SDK.UnsupportedCredential"
 	UnsupportedCredentialErrorMessage = "Specified credential (type = %s) is not supported, please check"
-r
+
 	CanNotResolveEndpointErrorCode    = "SDK.CanNotResolveEndpoint"
 	CanNotResolveEndpointErrorMessage = "Can not resolve endpoint(param = %s), please check your accessKey with secret, and read the user guide\n %s"
 
