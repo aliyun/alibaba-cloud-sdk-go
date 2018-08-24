@@ -1,3 +1,6 @@
+2018-08-24 Version: 1.27.3
+1, Add api: DetectQRCode
+
 2018-08-23 Version: 1.27.2
 1, RunInstance add privateIpAddress.
 
