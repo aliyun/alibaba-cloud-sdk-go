@@ -24,6 +24,7 @@ type KVStoreInstance struct {
 	CreateTime          string `json:"CreateTime" xml:"CreateTime"`
 	HasRenewChangeOrder string `json:"HasRenewChangeOrder" xml:"HasRenewChangeOrder"`
 	InstanceType        string `json:"InstanceType" xml:"InstanceType"`
+	DestroyTime         string `json:"DestroyTime" xml:"DestroyTime"`
 	RegionId            string `json:"RegionId" xml:"RegionId"`
 	PrivateIp           string `json:"PrivateIp" xml:"PrivateIp"`
 	InstanceId          string `json:"InstanceId" xml:"InstanceId"`
