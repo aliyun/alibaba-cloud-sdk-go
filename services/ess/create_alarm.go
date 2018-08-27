@@ -80,15 +80,15 @@ type CreateAlarmRequest struct {
 	Period               requests.Integer        `position:"Query" name:"Period"`
 	ResourceOwnerAccount string                  `position:"Query" name:"ResourceOwnerAccount"`
 	ScalingGroupId       string                  `position:"Query" name:"ScalingGroupId"`
-	GroupId              string                  `position:"Query" name:"GroupId"`
+	GroupId              requests.Integer        `position:"Query" name:"GroupId"`
 	Description          string                  `position:"Query" name:"Description"`
 	AlarmAction          *[]string               `position:"Query" name:"AlarmAction"  type:"Repeated"`
 	Threshold            requests.Float          `position:"Query" name:"Threshold"`
 	OwnerId              requests.Integer        `position:"Query" name:"OwnerId"`
-	ComparisionOperator  string                  `position:"Query" name:"ComparisionOperator"`
 	Name                 string                  `position:"Query" name:"Name"`
 	EvaluationCount      requests.Integer        `position:"Query" name:"EvaluationCount"`
 	MetricName           string                  `position:"Query" name:"MetricName"`
+	ComparisonOperator   string                  `position:"Query" name:"ComparisonOperator"`
 	Dimension            *[]CreateAlarmDimension `position:"Query" name:"Dimension"  type:"Repeated"`
 	Statistics           string                  `position:"Query" name:"Statistics"`
 }

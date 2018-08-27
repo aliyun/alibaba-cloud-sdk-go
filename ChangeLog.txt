@@ -1,3 +1,7 @@
+2018-08-27 Version: 1.27.5
+1, add Ess alarm task api, CreateAlarm, DeleteAlarm, DescribeAlarms, DeleteAlarm, EnableAlarm, DisableAlarm
+
+
 2018-08-27 Version: 1.27.4
 1, createInstance supported IpAddress param.
 
