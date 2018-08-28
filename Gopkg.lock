@@ -10,7 +10,8 @@
 [[projects]]
   name = "github.com/jmespath/go-jmespath"
   packages = ["."]
-  revision = "0b12d6b5"
+  revision = "3433f3ea46d9f8019119e7dd41274e112a2359a9"
+  version = "0.2.2"
 
 [[projects]]
   name = "github.com/json-iterator/go"
@@ -72,6 +73,6 @@
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
-  inputs-digest = "d0ac3538ad51346f28f4bfa6f46b8a6b57847e683a90398178ebd7e5336f8aca"
+  inputs-digest = "bc688a70dca76f7e57da66641e374b6fcd0c715afb0b38f71cbfaebdbd02075f"
   solver-name = "gps-cdcl"
   solver-version = 1
