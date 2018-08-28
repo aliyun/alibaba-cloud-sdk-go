@@ -27,6 +27,7 @@ type LoadBalancer struct {
 	CreateTime               string                                                    `json:"CreateTime" xml:"CreateTime"`
 	Address                  string                                                    `json:"Address" xml:"Address"`
 	LoadBalancerId           string                                                    `json:"LoadBalancerId" xml:"LoadBalancerId"`
+	AddressIPVersion         string                                                    `json:"AddressIPVersion" xml:"AddressIPVersion"`
 	CreateTimeStamp          int                                                       `json:"CreateTimeStamp" xml:"CreateTimeStamp"`
 	RegionId                 string                                                    `json:"RegionId" xml:"RegionId"`
 	ResourceGroupId          string                                                    `json:"ResourceGroupId" xml:"ResourceGroupId"`

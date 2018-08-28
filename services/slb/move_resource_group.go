@@ -76,16 +76,16 @@ func (client *Client) MoveResourceGroupWithCallback(request *MoveResourceGroupRe
 // MoveResourceGroupRequest is the request struct for api MoveResourceGroup
 type MoveResourceGroupRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	AccessKeyId          string           `position:"Query" name:"access_key_id"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceId           string           `position:"Query" name:"ResourceId"`
-	ResourceType         string           `position:"Query" name:"ResourceType"`
-	NewResourceGroupId   string           `position:"Query" name:"NewResourceGroupId"`
-	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	AccessKeyId          string           `position:"Query" name:"access_key_id"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceType         string           `position:"Query" name:"ResourceType"`
 	Tags                 string           `position:"Query" name:"Tags"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
+	NewResourceGroupId   string           `position:"Query" name:"NewResourceGroupId"`
 }
 
 // MoveResourceGroupResponse is the response struct for api MoveResourceGroup

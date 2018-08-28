@@ -76,25 +76,40 @@ func (client *Client) DescribeRuleAttributeWithCallback(request *DescribeRuleAtt
 // DescribeRuleAttributeRequest is the request struct for api DescribeRuleAttribute
 type DescribeRuleAttributeRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	AccessKeyId          string           `position:"Query" name:"access_key_id"`
-	Tags                 string           `position:"Query" name:"Tags"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	RuleId               string           `position:"Query" name:"RuleId"`
+	Tags                 string           `position:"Query" name:"Tags"`
 }
 
 // DescribeRuleAttributeResponse is the response struct for api DescribeRuleAttribute
 type DescribeRuleAttributeResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	RuleName       string `json:"RuleName" xml:"RuleName"`
-	LoadBalancerId string `json:"LoadBalancerId" xml:"LoadBalancerId"`
-	ListenerPort   string `json:"ListenerPort" xml:"ListenerPort"`
-	Domain         string `json:"Domain" xml:"Domain"`
-	Url            string `json:"Url" xml:"Url"`
-	VServerGroupId string `json:"VServerGroupId" xml:"VServerGroupId"`
+	RequestId              string `json:"RequestId" xml:"RequestId"`
+	RuleName               string `json:"RuleName" xml:"RuleName"`
+	LoadBalancerId         string `json:"LoadBalancerId" xml:"LoadBalancerId"`
+	ListenerPort           string `json:"ListenerPort" xml:"ListenerPort"`
+	Domain                 string `json:"Domain" xml:"Domain"`
+	Url                    string `json:"Url" xml:"Url"`
+	VServerGroupId         string `json:"VServerGroupId" xml:"VServerGroupId"`
+	ListenerSync           string `json:"ListenerSync" xml:"ListenerSync"`
+	Scheduler              string `json:"Scheduler" xml:"Scheduler"`
+	StickySession          string `json:"StickySession" xml:"StickySession"`
+	StickySessionType      string `json:"StickySessionType" xml:"StickySessionType"`
+	CookieTimeout          int    `json:"CookieTimeout" xml:"CookieTimeout"`
+	Cookie                 string `json:"Cookie" xml:"Cookie"`
+	HealthCheck            string `json:"HealthCheck" xml:"HealthCheck"`
+	HealthCheckDomain      string `json:"HealthCheckDomain" xml:"HealthCheckDomain"`
+	HealthCheckURI         string `json:"HealthCheckURI" xml:"HealthCheckURI"`
+	HealthyThreshold       int    `json:"HealthyThreshold" xml:"HealthyThreshold"`
+	UnhealthyThreshold     int    `json:"UnhealthyThreshold" xml:"UnhealthyThreshold"`
+	HealthCheckTimeout     int    `json:"HealthCheckTimeout" xml:"HealthCheckTimeout"`
+	HealthCheckInterval    int    `json:"HealthCheckInterval" xml:"HealthCheckInterval"`
+	HealthCheckConnectPort int    `json:"HealthCheckConnectPort" xml:"HealthCheckConnectPort"`
+	HealthCheckHttpCode    string `json:"HealthCheckHttpCode" xml:"HealthCheckHttpCode"`
 }
 
 // CreateDescribeRuleAttributeRequest creates a request to invoke DescribeRuleAttribute API
