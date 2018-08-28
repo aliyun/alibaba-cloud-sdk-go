@@ -89,6 +89,7 @@ type CreateHybridClusterRequest struct {
 	OnPremiseVolumeProtocol     string                            `position:"Query" name:"OnPremiseVolumeProtocol"`
 	VolumeProtocol              string                            `position:"Query" name:"VolumeProtocol"`
 	OnPremiseVolumeLocalPath    string                            `position:"Query" name:"OnPremiseVolumeLocalPath"`
+	ClientVersion               string                            `position:"Query" name:"ClientVersion"`
 	OsTag                       string                            `position:"Query" name:"OsTag"`
 	RemoteDirectory             string                            `position:"Query" name:"RemoteDirectory"`
 	VSwitchId                   string                            `position:"Query" name:"VSwitchId"`

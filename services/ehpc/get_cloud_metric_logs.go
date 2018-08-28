@@ -79,7 +79,6 @@ type GetCloudMetricLogsRequest struct {
 	AggregationType     string           `position:"Query" name:"AggregationType"`
 	Filter              string           `position:"Query" name:"Filter"`
 	MetricCategories    string           `position:"Query" name:"MetricCategories"`
-	Line                requests.Integer `position:"Query" name:"Line"`
 	MetricScope         string           `position:"Query" name:"MetricScope"`
 	From                requests.Integer `position:"Query" name:"From"`
 	ClusterId           string           `position:"Query" name:"ClusterId"`

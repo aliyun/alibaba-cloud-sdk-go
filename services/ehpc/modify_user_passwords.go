@@ -82,8 +82,8 @@ type ModifyUserPasswordsRequest struct {
 
 // ModifyUserPasswordsUser is a repeated param struct in ModifyUserPasswordsRequest
 type ModifyUserPasswordsUser struct {
-	Name     string `name:"Name"`
 	Password string `name:"Password"`
+	Name     string `name:"Name"`
 }
 
 // ModifyUserPasswordsResponse is the response struct for api ModifyUserPasswords

@@ -89,8 +89,8 @@ type ModifyImageGatewayConfigRequest struct {
 
 // ModifyImageGatewayConfigRepo is a repeated param struct in ModifyImageGatewayConfigRequest
 type ModifyImageGatewayConfigRepo struct {
-	Location string `name:"Location"`
 	Auth     string `name:"Auth"`
+	Location string `name:"Location"`
 	URL      string `name:"URL"`
 }
 

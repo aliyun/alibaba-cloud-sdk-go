@@ -96,6 +96,7 @@ type CreateClusterRequest struct {
 	AutoRenewPeriod             requests.Integer                  `position:"Query" name:"AutoRenewPeriod"`
 	Period                      requests.Integer                  `position:"Query" name:"Period"`
 	VolumeProtocol              string                            `position:"Query" name:"VolumeProtocol"`
+	ClientVersion               string                            `position:"Query" name:"ClientVersion"`
 	OsTag                       string                            `position:"Query" name:"OsTag"`
 	RemoteDirectory             string                            `position:"Query" name:"RemoteDirectory"`
 	EcsOrderComputeCount        requests.Integer                  `position:"Query" name:"EcsOrder.Compute.Count"`
@@ -119,8 +120,8 @@ type CreateClusterRequest struct {
 
 // CreateClusterPostInstallScript is a repeated param struct in CreateClusterRequest
 type CreateClusterPostInstallScript struct {
-	Url  string `name:"Url"`
 	Args string `name:"Args"`
+	Url  string `name:"Url"`
 }
 
 // CreateClusterApplication is a repeated param struct in CreateClusterRequest

@@ -82,9 +82,9 @@ type AddUsersRequest struct {
 
 // AddUsersUser is a repeated param struct in AddUsersRequest
 type AddUsersUser struct {
+	Password string `name:"Password"`
 	Name     string `name:"Name"`
 	Group    string `name:"Group"`
-	Password string `name:"Password"`
 }
 
 // AddUsersResponse is the response struct for api AddUsers

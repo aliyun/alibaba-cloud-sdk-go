@@ -1,3 +1,7 @@
+2018-08-28 Version: 1.28.0
+1, Add new APIs for profiling application performance: GetCloudMetricProfiling, etc.
+2, Add new APIs to support Shifter container applications: AddContainerApp, etc.
+
 2018-08-28 Version: 1.27.6
 1, Add param for DescribeRegions,support AcceptLanguage,RegionEndpoint.
 
