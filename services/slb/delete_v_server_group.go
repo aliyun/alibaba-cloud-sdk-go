@@ -76,13 +76,13 @@ func (client *Client) DeleteVServerGroupWithCallback(request *DeleteVServerGroup
 // DeleteVServerGroupRequest is the request struct for api DeleteVServerGroup
 type DeleteVServerGroupRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	AccessKeyId          string           `position:"Query" name:"access_key_id"`
-	Tags                 string           `position:"Query" name:"Tags"`
 	VServerGroupId       string           `position:"Query" name:"VServerGroupId"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Tags                 string           `position:"Query" name:"Tags"`
 }
 
 // DeleteVServerGroupResponse is the response struct for api DeleteVServerGroup

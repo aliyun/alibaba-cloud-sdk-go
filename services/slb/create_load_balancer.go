@@ -76,28 +76,29 @@ func (client *Client) CreateLoadBalancerWithCallback(request *CreateLoadBalancer
 // CreateLoadBalancerRequest is the request struct for api CreateLoadBalancer
 type CreateLoadBalancerRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	AddressType          string           `position:"Query" name:"AddressType"`
-	InternetChargeType   string           `position:"Query" name:"InternetChargeType"`
-	Bandwidth            requests.Integer `position:"Query" name:"Bandwidth"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	LoadBalancerName     string           `position:"Query" name:"LoadBalancerName"`
-	VpcId                string           `position:"Query" name:"VpcId"`
-	VSwitchId            string           `position:"Query" name:"VSwitchId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	MasterZoneId         string           `position:"Query" name:"MasterZoneId"`
-	SlaveZoneId          string           `position:"Query" name:"SlaveZoneId"`
 	AccessKeyId          string           `position:"Query" name:"access_key_id"`
-	Tags                 string           `position:"Query" name:"Tags"`
-	EnableVpcVipFlow     string           `position:"Query" name:"EnableVpcVipFlow"`
-	LoadBalancerSpec     string           `position:"Query" name:"LoadBalancerSpec"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	AddressIPVersion     string           `position:"Query" name:"AddressIPVersion"`
+	MasterZoneId         string           `position:"Query" name:"MasterZoneId"`
+	Duration             requests.Integer `position:"Query" name:"Duration"`
 	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
+	LoadBalancerName     string           `position:"Query" name:"LoadBalancerName"`
+	AddressType          string           `position:"Query" name:"AddressType"`
+	SlaveZoneId          string           `position:"Query" name:"SlaveZoneId"`
+	LoadBalancerSpec     string           `position:"Query" name:"LoadBalancerSpec"`
+	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	Bandwidth            requests.Integer `position:"Query" name:"Bandwidth"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Tags                 string           `position:"Query" name:"Tags"`
+	VSwitchId            string           `position:"Query" name:"VSwitchId"`
+	EnableVpcVipFlow     string           `position:"Query" name:"EnableVpcVipFlow"`
+	InternetChargeType   string           `position:"Query" name:"InternetChargeType"`
+	VpcId                string           `position:"Query" name:"VpcId"`
 	PayType              string           `position:"Query" name:"PayType"`
 	PricingCycle         string           `position:"Query" name:"PricingCycle"`
-	Duration             requests.Integer `position:"Query" name:"Duration"`
-	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`
 }
 
 // CreateLoadBalancerResponse is the response struct for api CreateLoadBalancer
@@ -112,6 +113,7 @@ type CreateLoadBalancerResponse struct {
 	VSwitchId        string `json:"VSwitchId" xml:"VSwitchId"`
 	NetworkType      string `json:"NetworkType" xml:"NetworkType"`
 	OrderId          int    `json:"OrderId" xml:"OrderId"`
+	AddressIPVersion string `json:"AddressIPVersion" xml:"AddressIPVersion"`
 }
 
 // CreateCreateLoadBalancerRequest creates a request to invoke CreateLoadBalancer API

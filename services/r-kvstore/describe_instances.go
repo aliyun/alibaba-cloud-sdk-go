@@ -85,6 +85,7 @@ type DescribeInstancesRequest struct {
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	VSwitchId            string           `position:"Query" name:"VSwitchId"`
+	Expired              string           `position:"Query" name:"Expired"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	InstanceIds          string           `position:"Query" name:"InstanceIds"`
 	VpcId                string           `position:"Query" name:"VpcId"`

@@ -76,28 +76,33 @@ func (client *Client) CreateLoadBalancerUDPListenerWithCallback(request *CreateL
 // CreateLoadBalancerUDPListenerRequest is the request struct for api CreateLoadBalancerUDPListener
 type CreateLoadBalancerUDPListenerRequest struct {
 	*requests.RpcRequest
-	OwnerId                   requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount      string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId           requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	LoadBalancerId            string           `position:"Query" name:"LoadBalancerId"`
-	ListenerPort              requests.Integer `position:"Query" name:"ListenerPort"`
-	BackendServerPort         requests.Integer `position:"Query" name:"BackendServerPort"`
-	Bandwidth                 requests.Integer `position:"Query" name:"Bandwidth"`
-	Scheduler                 string           `position:"Query" name:"Scheduler"`
-	PersistenceTimeout        requests.Integer `position:"Query" name:"PersistenceTimeout"`
-	HealthyThreshold          requests.Integer `position:"Query" name:"HealthyThreshold"`
-	UnhealthyThreshold        requests.Integer `position:"Query" name:"UnhealthyThreshold"`
-	HealthCheckConnectTimeout requests.Integer `position:"Query" name:"HealthCheckConnectTimeout"`
-	HealthCheckConnectPort    requests.Integer `position:"Query" name:"HealthCheckConnectPort"`
-	HealthCheckInterval       requests.Integer `position:"Query" name:"healthCheckInterval"`
-	HealthCheckReq            string           `position:"Query" name:"healthCheckReq"`
-	HealthCheckExp            string           `position:"Query" name:"healthCheckExp"`
-	MaxConnection             requests.Integer `position:"Query" name:"MaxConnection"`
-	OwnerAccount              string           `position:"Query" name:"OwnerAccount"`
 	AccessKeyId               string           `position:"Query" name:"access_key_id"`
+	HealthCheckConnectTimeout requests.Integer `position:"Query" name:"HealthCheckConnectTimeout"`
+	ResourceOwnerId           requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Description               string           `position:"Query" name:"Description"`
+	UnhealthyThreshold        requests.Integer `position:"Query" name:"UnhealthyThreshold"`
+	HealthyThreshold          requests.Integer `position:"Query" name:"HealthyThreshold"`
+	AclStatus                 string           `position:"Query" name:"AclStatus"`
+	Scheduler                 string           `position:"Query" name:"Scheduler"`
+	AclType                   string           `position:"Query" name:"AclType"`
+	MaxConnection             requests.Integer `position:"Query" name:"MaxConnection"`
+	PersistenceTimeout        requests.Integer `position:"Query" name:"PersistenceTimeout"`
+	VpcIds                    string           `position:"Query" name:"VpcIds"`
 	VServerGroupId            string           `position:"Query" name:"VServerGroupId"`
-	MasterSlaveServerGroupId  string           `position:"Query" name:"MasterSlaveServerGroupId"`
+	AclId                     string           `position:"Query" name:"AclId"`
+	ListenerPort              requests.Integer `position:"Query" name:"ListenerPort"`
+	ResourceOwnerAccount      string           `position:"Query" name:"ResourceOwnerAccount"`
+	Bandwidth                 requests.Integer `position:"Query" name:"Bandwidth"`
+	OwnerAccount              string           `position:"Query" name:"OwnerAccount"`
+	OwnerId                   requests.Integer `position:"Query" name:"OwnerId"`
 	Tags                      string           `position:"Query" name:"Tags"`
+	LoadBalancerId            string           `position:"Query" name:"LoadBalancerId"`
+	MasterSlaveServerGroupId  string           `position:"Query" name:"MasterSlaveServerGroupId"`
+	HealthCheckReq            string           `position:"Query" name:"healthCheckReq"`
+	BackendServerPort         requests.Integer `position:"Query" name:"BackendServerPort"`
+	HealthCheckInterval       requests.Integer `position:"Query" name:"healthCheckInterval"`
+	HealthCheckExp            string           `position:"Query" name:"healthCheckExp"`
+	HealthCheckConnectPort    requests.Integer `position:"Query" name:"HealthCheckConnectPort"`
 }
 
 // CreateLoadBalancerUDPListenerResponse is the response struct for api CreateLoadBalancerUDPListener

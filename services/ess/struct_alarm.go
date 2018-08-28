@@ -22,7 +22,6 @@ type Alarm struct {
 	Description        string       `json:"Description" xml:"Description"`
 	MetricType         string       `json:"MetricType" xml:"MetricType"`
 	MetricName         string       `json:"MetricName" xml:"MetricName"`
-	Dimensions         string       `json:"Dimensions" xml:"Dimensions"`
 	Period             int          `json:"Period" xml:"Period"`
 	Statistics         string       `json:"Statistics" xml:"Statistics"`
 	ComparisonOperator string       `json:"ComparisonOperator" xml:"ComparisonOperator"`
@@ -32,4 +31,5 @@ type Alarm struct {
 	ScalingGroupId     string       `json:"ScalingGroupId" xml:"ScalingGroupId"`
 	Enable             bool         `json:"Enable" xml:"Enable"`
 	AlarmActions       AlarmActions `json:"alarmActions" xml:"alarmActions"`
+	Dimensions         Dimensions   `json:"Dimensions" xml:"Dimensions"`
 }

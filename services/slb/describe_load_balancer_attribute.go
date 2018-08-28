@@ -76,12 +76,12 @@ func (client *Client) DescribeLoadBalancerAttributeWithCallback(request *Describ
 // DescribeLoadBalancerAttributeRequest is the request struct for api DescribeLoadBalancerAttribute
 type DescribeLoadBalancerAttributeRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	AccessKeyId          string           `position:"Query" name:"access_key_id"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	LoadBalancerId       string           `position:"Query" name:"LoadBalancerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	AccessKeyId          string           `position:"Query" name:"access_key_id"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	Tags                 string           `position:"Query" name:"Tags"`
 }
 
@@ -111,6 +111,11 @@ type DescribeLoadBalancerAttributeResponse struct {
 	PayType                  string                                        `json:"PayType" xml:"PayType"`
 	MasterZoneId             string                                        `json:"MasterZoneId" xml:"MasterZoneId"`
 	SlaveZoneId              string                                        `json:"SlaveZoneId" xml:"SlaveZoneId"`
+	AddressIPVersion         string                                        `json:"AddressIPVersion" xml:"AddressIPVersion"`
+	CloudType                string                                        `json:"CloudType" xml:"CloudType"`
+	RenewalDuration          int                                           `json:"RenewalDuration" xml:"RenewalDuration"`
+	RenewalStatus            string                                        `json:"RenewalStatus" xml:"RenewalStatus"`
+	RenewalCycUnit           string                                        `json:"RenewalCycUnit" xml:"RenewalCycUnit"`
 	ListenerPorts            ListenerPorts                                 `json:"ListenerPorts" xml:"ListenerPorts"`
 	ListenerPortsAndProtocal ListenerPortsAndProtocal                      `json:"ListenerPortsAndProtocal" xml:"ListenerPortsAndProtocal"`
 	ListenerPortsAndProtocol ListenerPortsAndProtocol                      `json:"ListenerPortsAndProtocol" xml:"ListenerPortsAndProtocol"`

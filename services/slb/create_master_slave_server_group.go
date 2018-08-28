@@ -76,15 +76,15 @@ func (client *Client) CreateMasterSlaveServerGroupWithCallback(request *CreateMa
 // CreateMasterSlaveServerGroupRequest is the request struct for api CreateMasterSlaveServerGroup
 type CreateMasterSlaveServerGroupRequest struct {
 	*requests.RpcRequest
-	OwnerId                    requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount       string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId            requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount               string           `position:"Query" name:"OwnerAccount"`
 	AccessKeyId                string           `position:"Query" name:"access_key_id"`
-	Tags                       string           `position:"Query" name:"Tags"`
-	LoadBalancerId             string           `position:"Query" name:"LoadBalancerId"`
-	MasterSlaveServerGroupName string           `position:"Query" name:"MasterSlaveServerGroupName"`
+	ResourceOwnerId            requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	MasterSlaveBackendServers  string           `position:"Query" name:"MasterSlaveBackendServers"`
+	LoadBalancerId             string           `position:"Query" name:"LoadBalancerId"`
+	ResourceOwnerAccount       string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount               string           `position:"Query" name:"OwnerAccount"`
+	MasterSlaveServerGroupName string           `position:"Query" name:"MasterSlaveServerGroupName"`
+	OwnerId                    requests.Integer `position:"Query" name:"OwnerId"`
+	Tags                       string           `position:"Query" name:"Tags"`
 }
 
 // CreateMasterSlaveServerGroupResponse is the response struct for api CreateMasterSlaveServerGroup

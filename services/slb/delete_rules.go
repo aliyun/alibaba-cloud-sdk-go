@@ -76,13 +76,13 @@ func (client *Client) DeleteRulesWithCallback(request *DeleteRulesRequest, callb
 // DeleteRulesRequest is the request struct for api DeleteRules
 type DeleteRulesRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	AccessKeyId          string           `position:"Query" name:"access_key_id"`
-	Tags                 string           `position:"Query" name:"Tags"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	RuleIds              string           `position:"Query" name:"RuleIds"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Tags                 string           `position:"Query" name:"Tags"`
 }
 
 // DeleteRulesResponse is the response struct for api DeleteRules
