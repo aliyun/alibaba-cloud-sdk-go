@@ -1,3 +1,6 @@
+2018-08-31 Version: 1.28.1
+1, The CreateInstance supported VPC IpAddress.
+
 2018-08-28 Version: 1.28.0
 1, Add new APIs for profiling application performance: GetCloudMetricProfiling, etc.
 2, Add new APIs to support Shifter container applications: AddContainerApp, etc.
