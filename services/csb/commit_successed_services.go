@@ -93,7 +93,7 @@ func CreateCommitSuccessedServicesRequest() (request *CommitSuccessedServicesReq
 	request = &CommitSuccessedServicesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CSB", "2017-11-18", "CommitSuccessedServices", "CSB", "openAPI")
+	request.InitWithApiInfo("CSB", "2017-11-18", "CommitSuccessedServices", "", "")
 	return
 }
 

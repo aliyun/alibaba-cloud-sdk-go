@@ -17,20 +17,21 @@ package csb
 
 // Data is a nested struct in csb response
 type Data struct {
-	Id              int                      `json:"Id" xml:"Id"`
-	UpdateCount     int                      `json:"UpdateCount" xml:"UpdateCount"`
-	CurrentPage     int                      `json:"CurrentPage" xml:"CurrentPage"`
-	Total           int                      `json:"Total" xml:"Total"`
-	PageNumber      int                      `json:"PageNumber" xml:"PageNumber"`
-	Exist           bool                     `json:"Exist" xml:"Exist"`
-	ProjectNameList []string                 `json:"ProjectNameList" xml:"ProjectNameList"`
-	Credentials     Credentials              `json:"Credentials" xml:"Credentials"`
-	Service         Service                  `json:"Service" xml:"Service"`
-	Order           Order                    `json:"Order" xml:"Order"`
-	Instance        Instance                 `json:"Instance" xml:"Instance"`
-	ProjectList     []Project                `json:"ProjectList" xml:"ProjectList"`
-	CredentialList  []Credential             `json:"CredentialList" xml:"CredentialList"`
-	OrderList       []OrderInFindOrderedList `json:"OrderList" xml:"OrderList"`
-	ItemList        []Item                   `json:"ItemList" xml:"ItemList"`
-	ServiceList     []Service                `json:"ServiceList" xml:"ServiceList"`
+	Id                   int                      `json:"Id" xml:"Id"`
+	UpdateCount          int                      `json:"UpdateCount" xml:"UpdateCount"`
+	CurrentPage          int                      `json:"CurrentPage" xml:"CurrentPage"`
+	Total                int                      `json:"Total" xml:"Total"`
+	PageNumber           int                      `json:"PageNumber" xml:"PageNumber"`
+	Exist                bool                     `json:"Exist" xml:"Exist"`
+	ProjectNameList      []string                 `json:"ProjectNameList" xml:"ProjectNameList"`
+	Credentials          Credentials              `json:"Credentials" xml:"Credentials"`
+	Service              Service                  `json:"Service" xml:"Service"`
+	Order                Order                    `json:"Order" xml:"Order"`
+	Instance             Instance                 `json:"Instance" xml:"Instance"`
+	ProjectList          []Project                `json:"ProjectList" xml:"ProjectList"`
+	CredentialList       []Credential             `json:"CredentialList" xml:"CredentialList"`
+	OrderList            []OrderInFindOrderedList `json:"OrderList" xml:"OrderList"`
+	ItemList             []Item                   `json:"ItemList" xml:"ItemList"`
+	ServiceList          []Service                `json:"ServiceList" xml:"ServiceList"`
+	MonitorStatisticData []ServiceStatisticData   `json:"MonitorStatisticData" xml:"MonitorStatisticData"`
 }

@@ -76,8 +76,8 @@ func (client *Client) UpdateOrderWithCallback(request *UpdateOrderRequest, callb
 // UpdateOrderRequest is the request struct for api UpdateOrder
 type UpdateOrderRequest struct {
 	*requests.RpcRequest
-	CsbId requests.Integer `position:"Query" name:"CsbId"`
 	Data  string           `position:"Body" name:"Data"`
+	CsbId requests.Integer `position:"Query" name:"CsbId"`
 }
 
 // UpdateOrderResponse is the response struct for api UpdateOrder
@@ -93,7 +93,7 @@ func CreateUpdateOrderRequest() (request *UpdateOrderRequest) {
 	request = &UpdateOrderRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CSB", "2017-11-18", "UpdateOrder", "CSB", "openAPI")
+	request.InitWithApiInfo("CSB", "2017-11-18", "UpdateOrder", "", "")
 	return
 }
 

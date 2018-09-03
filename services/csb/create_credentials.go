@@ -94,7 +94,7 @@ func CreateCreateCredentialsRequest() (request *CreateCredentialsRequest) {
 	request = &CreateCredentialsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CSB", "2017-11-18", "CreateCredentials", "CSB", "openAPI")
+	request.InitWithApiInfo("CSB", "2017-11-18", "CreateCredentials", "", "")
 	return
 }
 

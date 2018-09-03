@@ -76,8 +76,8 @@ func (client *Client) UpdateServiceQPSWithCallback(request *UpdateServiceQPSRequ
 // UpdateServiceQPSRequest is the request struct for api UpdateServiceQPS
 type UpdateServiceQPSRequest struct {
 	*requests.RpcRequest
-	ServiceId requests.Integer `position:"Query" name:"ServiceId"`
 	Qps       string           `position:"Query" name:"Qps"`
+	ServiceId requests.Integer `position:"Query" name:"ServiceId"`
 }
 
 // UpdateServiceQPSResponse is the response struct for api UpdateServiceQPS
@@ -93,7 +93,7 @@ func CreateUpdateServiceQPSRequest() (request *UpdateServiceQPSRequest) {
 	request = &UpdateServiceQPSRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CSB", "2017-11-18", "UpdateServiceQPS", "CSB", "openAPI")
+	request.InitWithApiInfo("CSB", "2017-11-18", "UpdateServiceQPS", "", "")
 	return
 }
 

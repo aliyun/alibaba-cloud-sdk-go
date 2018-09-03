@@ -76,8 +76,8 @@ func (client *Client) UpdateProjectWithCallback(request *UpdateProjectRequest, c
 // UpdateProjectRequest is the request struct for api UpdateProject
 type UpdateProjectRequest struct {
 	*requests.RpcRequest
-	CsbId requests.Integer `position:"Query" name:"CsbId"`
 	Data  string           `position:"Body" name:"Data"`
+	CsbId requests.Integer `position:"Query" name:"CsbId"`
 }
 
 // UpdateProjectResponse is the response struct for api UpdateProject
@@ -93,7 +93,7 @@ func CreateUpdateProjectRequest() (request *UpdateProjectRequest) {
 	request = &UpdateProjectRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CSB", "2017-11-18", "UpdateProject", "CSB", "openAPI")
+	request.InitWithApiInfo("CSB", "2017-11-18", "UpdateProject", "", "")
 	return
 }
 

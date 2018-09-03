@@ -76,8 +76,8 @@ func (client *Client) GetProjectWithCallback(request *GetProjectRequest, callbac
 // GetProjectRequest is the request struct for api GetProject
 type GetProjectRequest struct {
 	*requests.RpcRequest
-	CsbId       requests.Integer `position:"Query" name:"CsbId"`
 	ProjectName string           `position:"Query" name:"ProjectName"`
+	CsbId       requests.Integer `position:"Query" name:"CsbId"`
 }
 
 // GetProjectResponse is the response struct for api GetProject
@@ -94,7 +94,7 @@ func CreateGetProjectRequest() (request *GetProjectRequest) {
 	request = &GetProjectRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CSB", "2017-11-18", "GetProject", "CSB", "openAPI")
+	request.InitWithApiInfo("CSB", "2017-11-18", "GetProject", "", "")
 	return
 }
 

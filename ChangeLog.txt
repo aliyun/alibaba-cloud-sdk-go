@@ -1,3 +1,6 @@
+2018-09-03 Version: 1.28.2
+1, Add new service API：FindServiceStatisticalData, which can support query service statistical data.
+
 2018-08-31 Version: 1.28.1
 1, The CreateInstance supported VPC IpAddress.
 

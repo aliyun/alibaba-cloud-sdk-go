@@ -76,12 +76,12 @@ func (client *Client) FindApproveServiceListWithCallback(request *FindApproveSer
 // FindApproveServiceListRequest is the request struct for api FindApproveServiceList
 type FindApproveServiceListRequest struct {
 	*requests.RpcRequest
-	ApproveLevel   string           `position:"Query" name:"approveLevel"`
-	ServiceName    string           `position:"Query" name:"serviceName"`
-	Alias          string           `position:"Query" name:"alias"`
-	ProjectName    string           `position:"Query" name:"projectName"`
-	CsbId          requests.Integer `position:"Query" name:"csbId"`
-	ShowDelService requests.Boolean `position:"Query" name:"showDelService"`
+	ProjectName    string           `position:"Query" name:"ProjectName"`
+	ApproveLevel   string           `position:"Query" name:"ApproveLevel"`
+	ShowDelService requests.Boolean `position:"Query" name:"ShowDelService"`
+	CsbId          requests.Integer `position:"Query" name:"CsbId"`
+	Alias          string           `position:"Query" name:"Alias"`
+	ServiceName    string           `position:"Query" name:"ServiceName"`
 }
 
 // FindApproveServiceListResponse is the response struct for api FindApproveServiceList
@@ -98,7 +98,7 @@ func CreateFindApproveServiceListRequest() (request *FindApproveServiceListReque
 	request = &FindApproveServiceListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CSB", "2017-11-18", "FindApproveServiceList", "CSB", "openAPI")
+	request.InitWithApiInfo("CSB", "2017-11-18", "FindApproveServiceList", "", "")
 	return
 }
 

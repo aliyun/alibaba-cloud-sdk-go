@@ -76,13 +76,13 @@ func (client *Client) FindServiceListWithCallback(request *FindServiceListReques
 // FindServiceListRequest is the request struct for api FindServiceList
 type FindServiceListRequest struct {
 	*requests.RpcRequest
-	PageNum        requests.Integer `position:"Query" name:"PageNum"`
-	CasShowType    requests.Integer `position:"Query" name:"CasShowType"`
-	ServiceName    string           `position:"Query" name:"ServiceName"`
-	Alias          string           `position:"Query" name:"Alias"`
 	ProjectName    string           `position:"Query" name:"ProjectName"`
-	CsbId          requests.Integer `position:"Query" name:"CsbId"`
 	ShowDelService requests.Boolean `position:"Query" name:"ShowDelService"`
+	CasShowType    requests.Integer `position:"Query" name:"CasShowType"`
+	CsbId          requests.Integer `position:"Query" name:"CsbId"`
+	Alias          string           `position:"Query" name:"Alias"`
+	ServiceName    string           `position:"Query" name:"ServiceName"`
+	PageNum        requests.Integer `position:"Query" name:"PageNum"`
 }
 
 // FindServiceListResponse is the response struct for api FindServiceList
@@ -99,7 +99,7 @@ func CreateFindServiceListRequest() (request *FindServiceListRequest) {
 	request = &FindServiceListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CSB", "2017-11-18", "FindServiceList", "CSB", "openAPI")
+	request.InitWithApiInfo("CSB", "2017-11-18", "FindServiceList", "", "")
 	return
 }
 

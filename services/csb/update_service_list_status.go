@@ -76,8 +76,8 @@ func (client *Client) UpdateServiceListStatusWithCallback(request *UpdateService
 // UpdateServiceListStatusRequest is the request struct for api UpdateServiceListStatus
 type UpdateServiceListStatusRequest struct {
 	*requests.RpcRequest
-	CsbId requests.Integer `position:"Query" name:"CsbId"`
 	Data  string           `position:"Body" name:"Data"`
+	CsbId requests.Integer `position:"Query" name:"CsbId"`
 }
 
 // UpdateServiceListStatusResponse is the response struct for api UpdateServiceListStatus
@@ -93,7 +93,7 @@ func CreateUpdateServiceListStatusRequest() (request *UpdateServiceListStatusReq
 	request = &UpdateServiceListStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CSB", "2017-11-18", "UpdateServiceListStatus", "CSB", "openAPI")
+	request.InitWithApiInfo("CSB", "2017-11-18", "UpdateServiceListStatus", "", "")
 	return
 }
 

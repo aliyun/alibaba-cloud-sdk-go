@@ -93,7 +93,7 @@ func CreateDeleteProjectRequest() (request *DeleteProjectRequest) {
 	request = &DeleteProjectRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CSB", "2017-11-18", "DeleteProject", "CSB", "openAPI")
+	request.InitWithApiInfo("CSB", "2017-11-18", "DeleteProject", "", "")
 	return
 }
 
