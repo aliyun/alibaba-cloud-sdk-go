@@ -1,3 +1,6 @@
+2018-09-05 Version: 1.29.0
+1, Add new APIs with control policy for querying price
+
 2018-09-03 Version: 1.28.3
 1, voice identify interface
 2, client upload credentials interface
