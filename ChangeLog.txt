@@ -1,3 +1,6 @@
+2018-09-06 Version: 1.29.1
+1, AutoScaling support launchTemplate.
+
 2018-09-05 Version: 1.29.0
 1, Add new APIs with control policy for querying price
 

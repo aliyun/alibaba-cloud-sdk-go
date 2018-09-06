@@ -30,6 +30,6 @@ type Alarm struct {
 	State              string       `json:"State" xml:"State"`
 	ScalingGroupId     string       `json:"ScalingGroupId" xml:"ScalingGroupId"`
 	Enable             bool         `json:"Enable" xml:"Enable"`
-	AlarmActions       AlarmActions `json:"alarmActions" xml:"alarmActions"`
+	AlarmActions       AlarmActions `json:"AlarmActions" xml:"AlarmActions"`
 	Dimensions         Dimensions   `json:"Dimensions" xml:"Dimensions"`
 }

@@ -17,5 +17,5 @@ package ess
 
 // AlarmActions is a nested struct in ess response
 type AlarmActions struct {
-	AlarmAction []string `json:"alarmAction" xml:"alarmAction"`
+	AlarmAction []string `json:"AlarmAction" xml:"AlarmAction"`
 }

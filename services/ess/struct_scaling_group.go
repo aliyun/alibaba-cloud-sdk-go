@@ -28,6 +28,8 @@ type ScalingGroup struct {
 	StandbyCapacity              int             `json:"StandbyCapacity" xml:"StandbyCapacity"`
 	ProtectedCapacity            int             `json:"ProtectedCapacity" xml:"ProtectedCapacity"`
 	ActiveScalingConfigurationId string          `json:"ActiveScalingConfigurationId" xml:"ActiveScalingConfigurationId"`
+	LaunchTemplateId             string          `json:"LaunchTemplateId" xml:"LaunchTemplateId"`
+	LaunchTemplateVersion        string          `json:"LaunchTemplateVersion" xml:"LaunchTemplateVersion"`
 	ScalingGroupId               string          `json:"ScalingGroupId" xml:"ScalingGroupId"`
 	RegionId                     string          `json:"RegionId" xml:"RegionId"`
 	TotalCapacity                int             `json:"TotalCapacity" xml:"TotalCapacity"`
