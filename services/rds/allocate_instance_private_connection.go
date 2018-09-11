@@ -76,13 +76,13 @@ func (client *Client) AllocateInstancePrivateConnectionWithCallback(request *All
 // AllocateInstancePrivateConnectionRequest is the request struct for api AllocateInstancePrivateConnection
 type AllocateInstancePrivateConnectionRequest struct {
 	*requests.RpcRequest
-	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount   string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId        requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	DBInstanceId           string           `position:"Query" name:"DBInstanceId"`
 	ConnectionStringPrefix string           `position:"Query" name:"ConnectionStringPrefix"`
+	ResourceOwnerAccount   string           `position:"Query" name:"ResourceOwnerAccount"`
 	Port                   string           `position:"Query" name:"Port"`
 	OwnerAccount           string           `position:"Query" name:"OwnerAccount"`
+	DBInstanceId           string           `position:"Query" name:"DBInstanceId"`
+	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // AllocateInstancePrivateConnectionResponse is the response struct for api AllocateInstancePrivateConnection

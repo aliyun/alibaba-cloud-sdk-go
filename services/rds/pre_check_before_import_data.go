@@ -76,18 +76,18 @@ func (client *Client) PreCheckBeforeImportDataWithCallback(request *PreCheckBefo
 // PreCheckBeforeImportDataRequest is the request struct for api PreCheckBeforeImportData
 type PreCheckBeforeImportDataRequest struct {
 	*requests.RpcRequest
-	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount   string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId        requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ImportDataType         string           `position:"Query" name:"ImportDataType"`
+	ResourceOwnerAccount   string           `position:"Query" name:"ResourceOwnerAccount"`
 	ClientToken            string           `position:"Query" name:"ClientToken"`
-	DBInstanceId           string           `position:"Query" name:"DBInstanceId"`
+	OwnerAccount           string           `position:"Query" name:"OwnerAccount"`
+	SourceDatabaseDBNames  string           `position:"Query" name:"SourceDatabaseDBNames"`
 	SourceDatabaseIp       string           `position:"Query" name:"SourceDatabaseIp"`
+	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
+	SourceDatabasePassword string           `position:"Query" name:"SourceDatabasePassword"`
 	SourceDatabasePort     string           `position:"Query" name:"SourceDatabasePort"`
 	SourceDatabaseUserName string           `position:"Query" name:"SourceDatabaseUserName"`
-	SourceDatabasePassword string           `position:"Query" name:"SourceDatabasePassword"`
-	ImportDataType         string           `position:"Query" name:"ImportDataType"`
-	SourceDatabaseDBNames  string           `position:"Query" name:"SourceDatabaseDBNames"`
-	OwnerAccount           string           `position:"Query" name:"OwnerAccount"`
+	DBInstanceId           string           `position:"Query" name:"DBInstanceId"`
 }
 
 // PreCheckBeforeImportDataResponse is the response struct for api PreCheckBeforeImportData

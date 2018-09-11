@@ -76,14 +76,14 @@ func (client *Client) DegradeDBInstanceSpecWithCallback(request *DegradeDBInstan
 // DegradeDBInstanceSpecRequest is the request struct for api DegradeDBInstanceSpec
 type DegradeDBInstanceSpecRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	DBInstanceClass      string           `position:"Query" name:"DBInstanceClass"`
 	DBInstanceStorage    requests.Integer `position:"Query" name:"DBInstanceStorage"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	DBInstanceClass      string           `position:"Query" name:"DBInstanceClass"`
 }
 
 // DegradeDBInstanceSpecResponse is the response struct for api DegradeDBInstanceSpec

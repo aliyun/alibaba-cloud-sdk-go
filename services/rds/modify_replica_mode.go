@@ -76,15 +76,15 @@ func (client *Client) ModifyReplicaModeWithCallback(request *ModifyReplicaModeRe
 // ModifyReplicaModeRequest is the request struct for api ModifyReplicaMode
 type ModifyReplicaModeRequest struct {
 	*requests.RpcRequest
-	SecurityToken        string           `position:"Query" name:"SecurityToken"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	DomainMode           string           `position:"Query" name:"DomainMode"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	PrimaryInstanceId    string           `position:"Query" name:"PrimaryInstanceId"`
+	ReplicaMode          string           `position:"Query" name:"ReplicaMode"`
+	SecurityToken        string           `position:"Query" name:"SecurityToken"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	ReplicaId            string           `position:"Query" name:"ReplicaId"`
-	ReplicaMode          string           `position:"Query" name:"ReplicaMode"`
-	PrimaryInstanceId    string           `position:"Query" name:"PrimaryInstanceId"`
-	DomainMode           string           `position:"Query" name:"DomainMode"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // ModifyReplicaModeResponse is the response struct for api ModifyReplicaMode

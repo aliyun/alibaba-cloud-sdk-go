@@ -76,18 +76,18 @@ func (client *Client) ImportDataFromDatabaseWithCallback(request *ImportDataFrom
 // ImportDataFromDatabaseRequest is the request struct for api ImportDataFromDatabase
 type ImportDataFromDatabaseRequest struct {
 	*requests.RpcRequest
-	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount   string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId        requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	DBInstanceId           string           `position:"Query" name:"DBInstanceId"`
+	ImportDataType         string           `position:"Query" name:"ImportDataType"`
+	ResourceOwnerAccount   string           `position:"Query" name:"ResourceOwnerAccount"`
+	IsLockTable            string           `position:"Query" name:"IsLockTable"`
+	OwnerAccount           string           `position:"Query" name:"OwnerAccount"`
+	SourceDatabaseDBNames  string           `position:"Query" name:"SourceDatabaseDBNames"`
 	SourceDatabaseIp       string           `position:"Query" name:"SourceDatabaseIp"`
+	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
+	SourceDatabasePassword string           `position:"Query" name:"SourceDatabasePassword"`
 	SourceDatabasePort     string           `position:"Query" name:"SourceDatabasePort"`
 	SourceDatabaseUserName string           `position:"Query" name:"SourceDatabaseUserName"`
-	SourceDatabasePassword string           `position:"Query" name:"SourceDatabasePassword"`
-	ImportDataType         string           `position:"Query" name:"ImportDataType"`
-	IsLockTable            string           `position:"Query" name:"IsLockTable"`
-	SourceDatabaseDBNames  string           `position:"Query" name:"SourceDatabaseDBNames"`
-	OwnerAccount           string           `position:"Query" name:"OwnerAccount"`
+	DBInstanceId           string           `position:"Query" name:"DBInstanceId"`
 }
 
 // ImportDataFromDatabaseResponse is the response struct for api ImportDataFromDatabase

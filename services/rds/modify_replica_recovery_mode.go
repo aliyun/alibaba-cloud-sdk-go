@@ -76,13 +76,13 @@ func (client *Client) ModifyReplicaRecoveryModeWithCallback(request *ModifyRepli
 // ModifyReplicaRecoveryModeRequest is the request struct for api ModifyReplicaRecoveryMode
 type ModifyReplicaRecoveryModeRequest struct {
 	*requests.RpcRequest
-	SecurityToken        string           `position:"Query" name:"SecurityToken"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	SecurityToken        string           `position:"Query" name:"SecurityToken"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	RecoveryMode         string           `position:"Query" name:"RecoveryMode"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	ReplicaId            string           `position:"Query" name:"ReplicaId"`
-	RecoveryMode         string           `position:"Query" name:"RecoveryMode"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // ModifyReplicaRecoveryModeResponse is the response struct for api ModifyReplicaRecoveryMode

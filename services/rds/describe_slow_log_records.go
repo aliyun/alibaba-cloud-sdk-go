@@ -76,17 +76,18 @@ func (client *Client) DescribeSlowLogRecordsWithCallback(request *DescribeSlowLo
 // DescribeSlowLogRecordsRequest is the request struct for api DescribeSlowLogRecords
 type DescribeSlowLogRecordsRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	SQLId                requests.Integer `position:"Query" name:"SQLId"`
-	StartTime            string           `position:"Query" name:"StartTime"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	QueryTimeFormat      string           `position:"Query" name:"QueryTimeFormat"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	EndTime              string           `position:"Query" name:"EndTime"`
+	StartTime            string           `position:"Query" name:"StartTime"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	DBName               string           `position:"Query" name:"DBName"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 }
 
 // DescribeSlowLogRecordsResponse is the response struct for api DescribeSlowLogRecords

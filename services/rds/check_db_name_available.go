@@ -76,13 +76,13 @@ func (client *Client) CheckDBNameAvailableWithCallback(request *CheckDBNameAvail
 // CheckDBNameAvailableRequest is the request struct for api CheckDBNameAvailable
 type CheckDBNameAvailableRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	DBName               string           `position:"Query" name:"DBName"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // CheckDBNameAvailableResponse is the response struct for api CheckDBNameAvailable

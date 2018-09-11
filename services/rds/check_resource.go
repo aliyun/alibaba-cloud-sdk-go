@@ -76,17 +76,17 @@ func (client *Client) CheckResourceWithCallback(request *CheckResourceRequest, c
 // CheckResourceRequest is the request struct for api CheckResource
 type CheckResourceRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Engine               string           `position:"Query" name:"Engine"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	SpecifyCount         string           `position:"Query" name:"SpecifyCount"`
 	EngineVersion        string           `position:"Query" name:"EngineVersion"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	DBInstanceClass      string           `position:"Query" name:"DBInstanceClass"`
+	Engine               string           `position:"Query" name:"Engine"`
 	ZoneId               string           `position:"Query" name:"ZoneId"`
 	DBInstanceUseType    string           `position:"Query" name:"DBInstanceUseType"`
-	SpecifyCount         string           `position:"Query" name:"SpecifyCount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 }
 
 // CheckResourceResponse is the response struct for api CheckResource

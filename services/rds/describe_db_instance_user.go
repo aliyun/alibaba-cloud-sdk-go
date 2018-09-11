@@ -76,11 +76,11 @@ func (client *Client) DescribeDBInstanceUserWithCallback(request *DescribeDBInst
 // DescribeDBInstanceUserRequest is the request struct for api DescribeDBInstanceUser
 type DescribeDBInstanceUserRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ConnectionString     string           `position:"Query" name:"ConnectionString"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeDBInstanceUserResponse is the response struct for api DescribeDBInstanceUser

@@ -17,13 +17,20 @@ package rds
 
 // Items is a nested struct in rds response
 type Items struct {
-	ReplicaMode        string  `json:"ReplicaMode" xml:"ReplicaMode"`
-	Role               string  `json:"Role" xml:"Role"`
-	ReadWriteType      string  `json:"ReadWriteType" xml:"ReadWriteType"`
-	DomainMode         string  `json:"DomainMode" xml:"DomainMode"`
-	ReplicaDescription string  `json:"ReplicaDescription" xml:"ReplicaDescription"`
-	DBInstanceId       string  `json:"DBInstanceId" xml:"DBInstanceId"`
-	ReplicaStatus      string  `json:"ReplicaStatus" xml:"ReplicaStatus"`
-	ReplicaId          string  `json:"ReplicaId" xml:"ReplicaId"`
-	DBInstances        []Items `json:"DBInstances" xml:"DBInstances"`
+	DBInstanceDescription    string  `json:"DBInstanceDescription" xml:"DBInstanceDescription"`
+	Engine                   string  `json:"Engine" xml:"Engine"`
+	ReadWriteType            string  `json:"ReadWriteType" xml:"ReadWriteType"`
+	DomainMode               string  `json:"DomainMode" xml:"DomainMode"`
+	ReplicaStatus            string  `json:"ReplicaStatus" xml:"ReplicaStatus"`
+	ReplicaMode              string  `json:"ReplicaMode" xml:"ReplicaMode"`
+	ReplicationClusterStatus string  `json:"ReplicationClusterStatus" xml:"ReplicationClusterStatus"`
+	DBInstanceStatus         string  `json:"DBInstanceStatus" xml:"DBInstanceStatus"`
+	RegionId                 string  `json:"RegionId" xml:"RegionId"`
+	Role                     string  `json:"Role" xml:"Role"`
+	InstanceNetworkType      string  `json:"InstanceNetworkType" xml:"InstanceNetworkType"`
+	ZoneId                   string  `json:"ZoneId" xml:"ZoneId"`
+	ReplicaDescription       string  `json:"ReplicaDescription" xml:"ReplicaDescription"`
+	DBInstanceId             string  `json:"DBInstanceId" xml:"DBInstanceId"`
+	ReplicaId                string  `json:"ReplicaId" xml:"ReplicaId"`
+	DBInstances              []Items `json:"DBInstances" xml:"DBInstances"`
 }

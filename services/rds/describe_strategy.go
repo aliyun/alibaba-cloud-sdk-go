@@ -76,12 +76,12 @@ func (client *Client) DescribeStrategyWithCallback(request *DescribeStrategyRequ
 // DescribeStrategyRequest is the request struct for api DescribeStrategy
 type DescribeStrategyRequest struct {
 	*requests.RpcRequest
-	SecurityToken        string           `position:"Query" name:"SecurityToken"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	SecurityToken        string           `position:"Query" name:"SecurityToken"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	ReplicaId            string           `position:"Query" name:"ReplicaId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeStrategyResponse is the response struct for api DescribeStrategy

@@ -19,6 +19,7 @@ package rds
 type DBInstanceIPArray struct {
 	DBInstanceIPArrayName      string `json:"DBInstanceIPArrayName" xml:"DBInstanceIPArrayName"`
 	DBInstanceIPArrayAttribute string `json:"DBInstanceIPArrayAttribute" xml:"DBInstanceIPArrayAttribute"`
+	SecurityIPType             string `json:"SecurityIPType" xml:"SecurityIPType"`
 	SecurityIPList             string `json:"SecurityIPList" xml:"SecurityIPList"`
 	WhitelistNetworkType       string `json:"WhitelistNetworkType" xml:"WhitelistNetworkType"`
 }

@@ -76,13 +76,13 @@ func (client *Client) ModifyReplicaVerificationModeWithCallback(request *ModifyR
 // ModifyReplicaVerificationModeRequest is the request struct for api ModifyReplicaVerificationMode
 type ModifyReplicaVerificationModeRequest struct {
 	*requests.RpcRequest
-	SecurityToken        string           `position:"Query" name:"SecurityToken"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	VerificationMode     string           `position:"Query" name:"VerificationMode"`
+	SecurityToken        string           `position:"Query" name:"SecurityToken"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	ReplicaId            string           `position:"Query" name:"ReplicaId"`
-	VerificationMode     string           `position:"Query" name:"VerificationMode"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // ModifyReplicaVerificationModeResponse is the response struct for api ModifyReplicaVerificationMode

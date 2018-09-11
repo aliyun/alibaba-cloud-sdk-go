@@ -38,6 +38,7 @@ type DBInstanceAttribute struct {
 	VpcId                             string                                             `json:"VpcId" xml:"VpcId"`
 	DBInstanceStorageType             string                                             `json:"DBInstanceStorageType" xml:"DBInstanceStorageType"`
 	SecurityIPList                    string                                             `json:"SecurityIPList" xml:"SecurityIPList"`
+	LatestKernelVersion               string                                             `json:"LatestKernelVersion" xml:"LatestKernelVersion"`
 	SupportUpgradeAccountType         string                                             `json:"SupportUpgradeAccountType" xml:"SupportUpgradeAccountType"`
 	MaxIOPS                           int                                                `json:"MaxIOPS" xml:"MaxIOPS"`
 	Tags                              string                                             `json:"Tags" xml:"Tags"`
@@ -47,8 +48,11 @@ type DBInstanceAttribute struct {
 	DBInstanceStorage                 int                                                `json:"DBInstanceStorage" xml:"DBInstanceStorage"`
 	SupportCreateSuperAccount         string                                             `json:"SupportCreateSuperAccount" xml:"SupportCreateSuperAccount"`
 	TempDBInstanceId                  string                                             `json:"TempDBInstanceId" xml:"TempDBInstanceId"`
+	CurrentKernelVersion              string                                             `json:"CurrentKernelVersion" xml:"CurrentKernelVersion"`
 	ZoneId                            string                                             `json:"ZoneId" xml:"ZoneId"`
 	ConnectionMode                    string                                             `json:"ConnectionMode" xml:"ConnectionMode"`
+	IPType                            string                                             `json:"IPType" xml:"IPType"`
+	ReadonlyInstanceSQLDelayedTime    string                                             `json:"ReadonlyInstanceSQLDelayedTime" xml:"ReadonlyInstanceSQLDelayedTime"`
 	LockMode                          string                                             `json:"LockMode" xml:"LockMode"`
 	CanTempUpgrade                    bool                                               `json:"CanTempUpgrade" xml:"CanTempUpgrade"`
 	LockReason                        string                                             `json:"LockReason" xml:"LockReason"`
@@ -69,6 +73,7 @@ type DBInstanceAttribute struct {
 	VSwitchId                         string                                             `json:"VSwitchId" xml:"VSwitchId"`
 	CreationTime                      string                                             `json:"CreationTime" xml:"CreationTime"`
 	MasterInstanceId                  string                                             `json:"MasterInstanceId" xml:"MasterInstanceId"`
+	SecurityIPMode                    string                                             `json:"SecurityIPMode" xml:"SecurityIPMode"`
 	DBInstanceClassType               string                                             `json:"DBInstanceClassType" xml:"DBInstanceClassType"`
 	ReadDelayTime                     string                                             `json:"ReadDelayTime" xml:"ReadDelayTime"`
 	DBInstanceStatus                  string                                             `json:"DBInstanceStatus" xml:"DBInstanceStatus"`

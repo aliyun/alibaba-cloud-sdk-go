@@ -17,12 +17,14 @@ package rds
 
 // Item is a nested struct in rds response
 type Item struct {
-	RegionId         string                               `json:"RegionId" xml:"RegionId"`
-	Duration         int                                  `json:"Duration" xml:"Duration"`
-	DBInstanceId     string                               `json:"DBInstanceId" xml:"DBInstanceId"`
-	Status           string                               `json:"Status" xml:"Status"`
-	AutoRenew        string                               `json:"AutoRenew" xml:"AutoRenew"`
-	ReportTime       string                               `json:"ReportTime" xml:"ReportTime"`
-	LatencyTopNItems LatencyTopNItemsInDescribeSQLReports `json:"LatencyTopNItems" xml:"LatencyTopNItems"`
-	QPSTopNItems     QPSTopNItemsInDescribeSQLReports     `json:"QPSTopNItems" xml:"QPSTopNItems"`
+	RegionId                 string                               `json:"RegionId" xml:"RegionId"`
+	Duration                 int                                  `json:"Duration" xml:"Duration"`
+	CurrentVersion           string                               `json:"CurrentVersion" xml:"CurrentVersion"`
+	DBInstanceId             string                               `json:"DBInstanceId" xml:"DBInstanceId"`
+	Status                   string                               `json:"Status" xml:"Status"`
+	AutoRenew                string                               `json:"AutoRenew" xml:"AutoRenew"`
+	ReportTime               string                               `json:"ReportTime" xml:"ReportTime"`
+	LatencyTopNItems         LatencyTopNItemsInDescribeSQLReports `json:"LatencyTopNItems" xml:"LatencyTopNItems"`
+	SQLServerUpgradeVersions SQLServerUpgradeVersions             `json:"SQLServerUpgradeVersions" xml:"SQLServerUpgradeVersions"`
+	QPSTopNItems             QPSTopNItemsInDescribeSQLReports     `json:"QPSTopNItems" xml:"QPSTopNItems"`
 }

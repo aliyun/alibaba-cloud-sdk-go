@@ -76,14 +76,14 @@ func (client *Client) DescribeStaticVerificationListWithCallback(request *Descri
 // DescribeStaticVerificationListRequest is the request struct for api DescribeStaticVerificationList
 type DescribeStaticVerificationListRequest struct {
 	*requests.RpcRequest
-	SecurityToken         string           `position:"Query" name:"SecurityToken"`
-	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	SecurityToken         string           `position:"Query" name:"SecurityToken"`
+	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
 	ReplicaId             string           `position:"Query" name:"ReplicaId"`
-	SourceInstanceId      string           `position:"Query" name:"SourceInstanceId"`
 	DestinationInstanceId string           `position:"Query" name:"DestinationInstanceId"`
+	SourceInstanceId      string           `position:"Query" name:"SourceInstanceId"`
+	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeStaticVerificationListResponse is the response struct for api DescribeStaticVerificationList

@@ -76,9 +76,9 @@ func (client *Client) RequestServiceOfCloudDBAWithCallback(request *RequestServi
 // RequestServiceOfCloudDBARequest is the request struct for api RequestServiceOfCloudDBA
 type RequestServiceOfCloudDBARequest struct {
 	*requests.RpcRequest
+	ServiceRequestParam string `position:"Query" name:"ServiceRequestParam"`
 	DBInstanceId        string `position:"Query" name:"DBInstanceId"`
 	ServiceRequestType  string `position:"Query" name:"ServiceRequestType"`
-	ServiceRequestParam string `position:"Query" name:"ServiceRequestParam"`
 }
 
 // RequestServiceOfCloudDBAResponse is the response struct for api RequestServiceOfCloudDBA

@@ -24,11 +24,14 @@ type DBInstance struct {
 	DBInstanceType        string                                     `json:"DBInstanceType" xml:"DBInstanceType"`
 	RegionId              string                                     `json:"RegionId" xml:"RegionId"`
 	ExpireTime            string                                     `json:"ExpireTime" xml:"ExpireTime"`
+	DestroyTime           string                                     `json:"DestroyTime" xml:"DestroyTime"`
 	DBInstanceStatus      string                                     `json:"DBInstanceStatus" xml:"DBInstanceStatus"`
 	Engine                string                                     `json:"Engine" xml:"Engine"`
 	DBInstanceNetType     string                                     `json:"DBInstanceNetType" xml:"DBInstanceNetType"`
 	ConnectionMode        string                                     `json:"ConnectionMode" xml:"ConnectionMode"`
 	LockMode              string                                     `json:"LockMode" xml:"LockMode"`
+	Category              string                                     `json:"Category" xml:"Category"`
+	DBInstanceStorageType string                                     `json:"DBInstanceStorageType" xml:"DBInstanceStorageType"`
 	DBInstanceClass       string                                     `json:"DBInstanceClass" xml:"DBInstanceClass"`
 	InstanceNetworkType   string                                     `json:"InstanceNetworkType" xml:"InstanceNetworkType"`
 	VpcCloudInstanceId    string                                     `json:"VpcCloudInstanceId" xml:"VpcCloudInstanceId"`
