@@ -85,9 +85,8 @@ type CheckDBInstancesRequest struct {
 // CheckDBInstancesResponse is the response struct for api CheckDBInstances
 type CheckDBInstancesResponse struct {
 	*responses.BaseResponse
-	RequestId        string `json:"RequestId" xml:"RequestId"`
-	DBInstanceId     string `json:"DBInstanceId" xml:"DBInstanceId"`
-	DBInstanceStatus string `json:"DBInstanceStatus" xml:"DBInstanceStatus"`
+	RequestId       string `json:"RequestId" xml:"RequestId"`
+	IsExistInstance bool   `json:"IsExistInstance" xml:"IsExistInstance"`
 }
 
 // CreateCheckDBInstancesRequest creates a request to invoke CheckDBInstances API
