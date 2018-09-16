@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// CheckDBInstances invokes the rds.CheckDBInstances API synchronously
-// api document: https://help.aliyun.com/api/rds/checkdbinstances.html
-func (client *Client) CheckDBInstances(request *CheckDBInstancesRequest) (response *CheckDBInstancesResponse, err error) {
-	response = CreateCheckDBInstancesResponse()
+// CheckInstanceExist invokes the rds.CheckInstanceExist API synchronously
+// api document: https://help.aliyun.com/api/rds/checkinstanceexist.html
+func (client *Client) CheckInstanceExist(request *CheckInstanceExistRequest) (response *CheckInstanceExistResponse, err error) {
+	response = CreateCheckInstanceExistResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// CheckDBInstancesWithChan invokes the rds.CheckDBInstances API asynchronously
-// api document: https://help.aliyun.com/api/rds/checkdbinstances.html
+// CheckInstanceExistWithChan invokes the rds.CheckInstanceExist API asynchronously
+// api document: https://help.aliyun.com/api/rds/checkinstanceexist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) CheckDBInstancesWithChan(request *CheckDBInstancesRequest) (<-chan *CheckDBInstancesResponse, <-chan error) {
-	responseChan := make(chan *CheckDBInstancesResponse, 1)
+func (client *Client) CheckInstanceExistWithChan(request *CheckInstanceExistRequest) (<-chan *CheckInstanceExistResponse, <-chan error) {
+	responseChan := make(chan *CheckInstanceExistResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.CheckDBInstances(request)
+		response, err := client.CheckInstanceExist(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) CheckDBInstancesWithChan(request *CheckDBInstancesRequest)
 	return responseChan, errChan
 }
 
-// CheckDBInstancesWithCallback invokes the rds.CheckDBInstances API asynchronously
-// api document: https://help.aliyun.com/api/rds/checkdbinstances.html
+// CheckInstanceExistWithCallback invokes the rds.CheckInstanceExist API asynchronously
+// api document: https://help.aliyun.com/api/rds/checkinstanceexist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) CheckDBInstancesWithCallback(request *CheckDBInstancesRequest, callback func(response *CheckDBInstancesResponse, err error)) <-chan int {
+func (client *Client) CheckInstanceExistWithCallback(request *CheckInstanceExistRequest, callback func(response *CheckInstanceExistResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *CheckDBInstancesResponse
+		var response *CheckInstanceExistResponse
 		var err error
 		defer close(result)
-		response, err = client.CheckDBInstances(request)
+		response, err = client.CheckInstanceExist(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,8 +73,8 @@ func (client *Client) CheckDBInstancesWithCallback(request *CheckDBInstancesRequ
 	return result
 }
 
-// CheckDBInstancesRequest is the request struct for api CheckDBInstances
-type CheckDBInstancesRequest struct {
+// CheckInstanceExistRequest is the request struct for api CheckInstanceExist
+type CheckInstanceExistRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
@@ -82,25 +82,25 @@ type CheckDBInstancesRequest struct {
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
-// CheckDBInstancesResponse is the response struct for api CheckDBInstances
-type CheckDBInstancesResponse struct {
+// CheckInstanceExistResponse is the response struct for api CheckInstanceExist
+type CheckInstanceExistResponse struct {
 	*responses.BaseResponse
 	RequestId       string `json:"RequestId" xml:"RequestId"`
 	IsExistInstance bool   `json:"IsExistInstance" xml:"IsExistInstance"`
 }
 
-// CreateCheckDBInstancesRequest creates a request to invoke CheckDBInstances API
-func CreateCheckDBInstancesRequest() (request *CheckDBInstancesRequest) {
-	request = &CheckDBInstancesRequest{
+// CreateCheckInstanceExistRequest creates a request to invoke CheckInstanceExist API
+func CreateCheckInstanceExistRequest() (request *CheckInstanceExistRequest) {
+	request = &CheckInstanceExistRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "CheckDBInstances", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "CheckInstanceExist", "rds", "openAPI")
 	return
 }
 
-// CreateCheckDBInstancesResponse creates a response to parse from CheckDBInstances response
-func CreateCheckDBInstancesResponse() (response *CheckDBInstancesResponse) {
-	response = &CheckDBInstancesResponse{
+// CreateCheckInstanceExistResponse creates a response to parse from CheckInstanceExist response
+func CreateCheckInstanceExistResponse() (response *CheckInstanceExistResponse) {
+	response = &CheckInstanceExistResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return
