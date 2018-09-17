@@ -1,3 +1,6 @@
+2018-09-17 Version: 1.29.8
+1, ModifySecurityIps support WhitelistNetworkType 
+
 2018-09-16 Version: 1.29.7
 1, add CheckInstanceExist OpenApi.
 
