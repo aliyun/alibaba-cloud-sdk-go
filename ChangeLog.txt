@@ -1,3 +1,6 @@
+2018-09-17 Version: 1.29.9
+1, describeRegions modify.
+
 2018-09-17 Version: 1.29.8
 1, ModifySecurityIps support WhitelistNetworkType 
 
