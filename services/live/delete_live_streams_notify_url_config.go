@@ -76,9 +76,8 @@ func (client *Client) DeleteLiveStreamsNotifyUrlConfigWithCallback(request *Dele
 // DeleteLiveStreamsNotifyUrlConfigRequest is the request struct for api DeleteLiveStreamsNotifyUrlConfig
 type DeleteLiveStreamsNotifyUrlConfigRequest struct {
 	*requests.RpcRequest
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
-	DomainName    string           `position:"Query" name:"DomainName"`
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	DomainName string           `position:"Query" name:"DomainName"`
+	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DeleteLiveStreamsNotifyUrlConfigResponse is the response struct for api DeleteLiveStreamsNotifyUrlConfig

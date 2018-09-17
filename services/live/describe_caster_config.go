@@ -93,6 +93,7 @@ type DescribeCasterConfigResponse struct {
 	CallbackUrl      string          `json:"CallbackUrl" xml:"CallbackUrl"`
 	ProgramName      string          `json:"ProgramName" xml:"ProgramName"`
 	ProgramEffect    int             `json:"ProgramEffect" xml:"ProgramEffect"`
+	ChannelEnable    int             `json:"ChannelEnable" xml:"ChannelEnable"`
 	TranscodeConfig  TranscodeConfig `json:"TranscodeConfig" xml:"TranscodeConfig"`
 	RecordConfig     RecordConfig    `json:"RecordConfig" xml:"RecordConfig"`
 }

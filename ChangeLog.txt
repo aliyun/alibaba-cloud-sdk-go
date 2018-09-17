@@ -1,3 +1,7 @@
+2018-09-17 Version: 1.29.10
+1, Add field for AddCasterVideoResource, DescribeCasterVideoResources, ModifyCasterVideoResource.
+
+
 2018-09-17 Version: 1.29.9
 1, describeRegions modify.
 
