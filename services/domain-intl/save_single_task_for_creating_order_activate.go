@@ -76,27 +76,27 @@ func (client *Client) SaveSingleTaskForCreatingOrderActivateWithCallback(request
 // SaveSingleTaskForCreatingOrderActivateRequest is the request struct for api SaveSingleTaskForCreatingOrderActivate
 type SaveSingleTaskForCreatingOrderActivateRequest struct {
 	*requests.RpcRequest
-	Dns2                    string           `position:"Query" name:"Dns2"`
-	UserClientIp            string           `position:"Query" name:"UserClientIp"`
-	Lang                    string           `position:"Query" name:"Lang"`
-	DomainName              string           `position:"Query" name:"DomainName"`
-	SubscriptionDuration    requests.Integer `position:"Query" name:"SubscriptionDuration"`
-	RegistrantProfileId     requests.Integer `position:"Query" name:"RegistrantProfileId"`
-	EnableDomainProxy       requests.Boolean `position:"Query" name:"EnableDomainProxy"`
-	PermitPremiumActivation requests.Boolean `position:"Query" name:"PermitPremiumActivation"`
-	AliyunDns               requests.Boolean `position:"Query" name:"AliyunDns"`
-	Dns1                    string           `position:"Query" name:"Dns1"`
 	Country                 string           `position:"Query" name:"Country"`
-	City                    string           `position:"Query" name:"City"`
-	RegistrantOrganization  string           `position:"Query" name:"RegistrantOrganization"`
-	RegistrantName          string           `position:"Query" name:"RegistrantName"`
-	Province                string           `position:"Query" name:"Province"`
+	SubscriptionDuration    requests.Integer `position:"Query" name:"SubscriptionDuration"`
 	Address                 string           `position:"Query" name:"Address"`
-	Email                   string           `position:"Query" name:"Email"`
-	PostalCode              string           `position:"Query" name:"PostalCode"`
+	PermitPremiumActivation requests.Boolean `position:"Query" name:"PermitPremiumActivation"`
 	TelArea                 string           `position:"Query" name:"TelArea"`
+	City                    string           `position:"Query" name:"City"`
+	Dns2                    string           `position:"Query" name:"Dns2"`
+	Dns1                    string           `position:"Query" name:"Dns1"`
+	DomainName              string           `position:"Query" name:"DomainName"`
+	RegistrantProfileId     requests.Integer `position:"Query" name:"RegistrantProfileId"`
 	Telephone               string           `position:"Query" name:"Telephone"`
+	AliyunDns               requests.Boolean `position:"Query" name:"AliyunDns"`
+	RegistrantOrganization  string           `position:"Query" name:"RegistrantOrganization"`
 	TelExt                  string           `position:"Query" name:"TelExt"`
+	Province                string           `position:"Query" name:"Province"`
+	PostalCode              string           `position:"Query" name:"PostalCode"`
+	UserClientIp            string           `position:"Query" name:"UserClientIp"`
+	EnableDomainProxy       requests.Boolean `position:"Query" name:"EnableDomainProxy"`
+	Lang                    string           `position:"Query" name:"Lang"`
+	Email                   string           `position:"Query" name:"Email"`
+	RegistrantName          string           `position:"Query" name:"RegistrantName"`
 }
 
 // SaveSingleTaskForCreatingOrderActivateResponse is the response struct for api SaveSingleTaskForCreatingOrderActivate

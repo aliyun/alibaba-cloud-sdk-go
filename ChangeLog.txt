@@ -1,3 +1,6 @@
+2018-09-19 Version: 1.30.0
+1, Add ens api, include SaveSingleTaskForDisassociatingEns, SaveSingleTaskForAssociatingEns, QueryLocalEnsAssociation and QueryEnsAssociation.
+
 2018-09-17 Version: 1.29.10
 1, Add field for AddCasterVideoResource, DescribeCasterVideoResources, ModifyCasterVideoResource.
 

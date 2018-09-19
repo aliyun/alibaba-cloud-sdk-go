@@ -76,13 +76,13 @@ func (client *Client) QueryRegistrantProfilesWithCallback(request *QueryRegistra
 // QueryRegistrantProfilesRequest is the request struct for api QueryRegistrantProfiles
 type QueryRegistrantProfilesRequest struct {
 	*requests.RpcRequest
-	UserClientIp             string           `position:"Query" name:"UserClientIp"`
-	Lang                     string           `position:"Query" name:"Lang"`
 	RegistrantOrganization   string           `position:"Query" name:"RegistrantOrganization"`
+	UserClientIp             string           `position:"Query" name:"UserClientIp"`
 	RegistrantProfileId      requests.Integer `position:"Query" name:"RegistrantProfileId"`
-	DefaultRegistrantProfile requests.Boolean `position:"Query" name:"DefaultRegistrantProfile"`
-	PageNum                  requests.Integer `position:"Query" name:"PageNum"`
 	PageSize                 requests.Integer `position:"Query" name:"PageSize"`
+	Lang                     string           `position:"Query" name:"Lang"`
+	PageNum                  requests.Integer `position:"Query" name:"PageNum"`
+	DefaultRegistrantProfile requests.Boolean `position:"Query" name:"DefaultRegistrantProfile"`
 }
 
 // QueryRegistrantProfilesResponse is the response struct for api QueryRegistrantProfiles

@@ -76,13 +76,13 @@ func (client *Client) QueryChangeLogListWithCallback(request *QueryChangeLogList
 // QueryChangeLogListRequest is the request struct for api QueryChangeLogList
 type QueryChangeLogListRequest struct {
 	*requests.RpcRequest
-	UserClientIp string           `position:"Query" name:"UserClientIp"`
-	Lang         string           `position:"Query" name:"Lang"`
-	DomainName   string           `position:"Query" name:"DomainName"`
-	PageNum      requests.Integer `position:"Query" name:"PageNum"`
-	PageSize     requests.Integer `position:"Query" name:"PageSize"`
-	StartDate    requests.Integer `position:"Query" name:"StartDate"`
 	EndDate      requests.Integer `position:"Query" name:"EndDate"`
+	UserClientIp string           `position:"Query" name:"UserClientIp"`
+	DomainName   string           `position:"Query" name:"DomainName"`
+	PageSize     requests.Integer `position:"Query" name:"PageSize"`
+	Lang         string           `position:"Query" name:"Lang"`
+	PageNum      requests.Integer `position:"Query" name:"PageNum"`
+	StartDate    requests.Integer `position:"Query" name:"StartDate"`
 }
 
 // QueryChangeLogListResponse is the response struct for api QueryChangeLogList

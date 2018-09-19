@@ -77,8 +77,8 @@ func (client *Client) QueryTransferInByInstanceIdWithCallback(request *QueryTran
 type QueryTransferInByInstanceIdRequest struct {
 	*requests.RpcRequest
 	InstanceId   string `position:"Query" name:"InstanceId"`
-	Lang         string `position:"Query" name:"Lang"`
 	UserClientIp string `position:"Query" name:"UserClientIp"`
+	Lang         string `position:"Query" name:"Lang"`
 }
 
 // QueryTransferInByInstanceIdResponse is the response struct for api QueryTransferInByInstanceId

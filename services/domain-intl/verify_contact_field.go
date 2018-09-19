@@ -76,19 +76,19 @@ func (client *Client) VerifyContactFieldWithCallback(request *VerifyContactField
 // VerifyContactFieldRequest is the request struct for api VerifyContactField
 type VerifyContactFieldRequest struct {
 	*requests.RpcRequest
-	RegistrantName         string `position:"Query" name:"RegistrantName"`
+	Country                string `position:"Query" name:"Country"`
+	Address                string `position:"Query" name:"Address"`
+	TelArea                string `position:"Query" name:"TelArea"`
+	City                   string `position:"Query" name:"City"`
+	Telephone              string `position:"Query" name:"Telephone"`
+	RegistrantOrganization string `position:"Query" name:"RegistrantOrganization"`
+	TelExt                 string `position:"Query" name:"TelExt"`
+	Province               string `position:"Query" name:"Province"`
+	PostalCode             string `position:"Query" name:"PostalCode"`
 	UserClientIp           string `position:"Query" name:"UserClientIp"`
 	Lang                   string `position:"Query" name:"Lang"`
-	City                   string `position:"Query" name:"City"`
-	RegistrantOrganization string `position:"Query" name:"RegistrantOrganization"`
-	Country                string `position:"Query" name:"Country"`
-	Province               string `position:"Query" name:"Province"`
-	Address                string `position:"Query" name:"Address"`
 	Email                  string `position:"Query" name:"Email"`
-	PostalCode             string `position:"Query" name:"PostalCode"`
-	TelArea                string `position:"Query" name:"TelArea"`
-	Telephone              string `position:"Query" name:"Telephone"`
-	TelExt                 string `position:"Query" name:"TelExt"`
+	RegistrantName         string `position:"Query" name:"RegistrantName"`
 }
 
 // VerifyContactFieldResponse is the response struct for api VerifyContactField

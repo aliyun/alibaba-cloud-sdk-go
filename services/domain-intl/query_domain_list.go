@@ -76,19 +76,19 @@ func (client *Client) QueryDomainListWithCallback(request *QueryDomainListReques
 // QueryDomainListRequest is the request struct for api QueryDomainList
 type QueryDomainListRequest struct {
 	*requests.RpcRequest
-	StartExpirationDate   requests.Integer `position:"Query" name:"StartExpirationDate"`
-	QueryType             string           `position:"Query" name:"QueryType"`
-	UserClientIp          string           `position:"Query" name:"UserClientIp"`
-	Lang                  string           `position:"Query" name:"Lang"`
 	EndExpirationDate     requests.Integer `position:"Query" name:"EndExpirationDate"`
-	StartRegistrationDate requests.Integer `position:"Query" name:"StartRegistrationDate"`
-	EndRegistrationDate   requests.Integer `position:"Query" name:"EndRegistrationDate"`
-	DomainName            string           `position:"Query" name:"DomainName"`
-	OrderByType           string           `position:"Query" name:"OrderByType"`
-	OrderKeyType          string           `position:"Query" name:"OrderKeyType"`
 	ProductDomainType     string           `position:"Query" name:"ProductDomainType"`
+	OrderKeyType          string           `position:"Query" name:"OrderKeyType"`
+	DomainName            string           `position:"Query" name:"DomainName"`
+	StartExpirationDate   requests.Integer `position:"Query" name:"StartExpirationDate"`
 	PageNum               requests.Integer `position:"Query" name:"PageNum"`
+	OrderByType           string           `position:"Query" name:"OrderByType"`
+	EndRegistrationDate   requests.Integer `position:"Query" name:"EndRegistrationDate"`
+	UserClientIp          string           `position:"Query" name:"UserClientIp"`
 	PageSize              requests.Integer `position:"Query" name:"PageSize"`
+	Lang                  string           `position:"Query" name:"Lang"`
+	QueryType             string           `position:"Query" name:"QueryType"`
+	StartRegistrationDate requests.Integer `position:"Query" name:"StartRegistrationDate"`
 }
 
 // QueryDomainListResponse is the response struct for api QueryDomainList
