@@ -1,3 +1,6 @@
+2018-09-20 Version: 1.30.1
+1, BssOpenApi first deploy.
+
 2018-09-19 Version: 1.30.0
 1, Add ens api, include SaveSingleTaskForDisassociatingEns, SaveSingleTaskForAssociatingEns, QueryLocalEnsAssociation and QueryEnsAssociation.
 
