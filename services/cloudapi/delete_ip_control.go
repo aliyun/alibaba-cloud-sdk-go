@@ -76,7 +76,8 @@ func (client *Client) DeleteIpControlWithCallback(request *DeleteIpControlReques
 // DeleteIpControlRequest is the request struct for api DeleteIpControl
 type DeleteIpControlRequest struct {
 	*requests.RpcRequest
-	IpControlId string `position:"Query" name:"IpControlId"`
+	IpControlId   string `position:"Query" name:"IpControlId"`
+	SecurityToken string `position:"Query" name:"SecurityToken"`
 }
 
 // DeleteIpControlResponse is the response struct for api DeleteIpControl

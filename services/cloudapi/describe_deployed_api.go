@@ -76,9 +76,10 @@ func (client *Client) DescribeDeployedApiWithCallback(request *DescribeDeployedA
 // DescribeDeployedApiRequest is the request struct for api DescribeDeployedApi
 type DescribeDeployedApiRequest struct {
 	*requests.RpcRequest
-	GroupId   string `position:"Query" name:"GroupId"`
-	ApiId     string `position:"Query" name:"ApiId"`
-	StageName string `position:"Query" name:"StageName"`
+	StageName     string `position:"Query" name:"StageName"`
+	SecurityToken string `position:"Query" name:"SecurityToken"`
+	GroupId       string `position:"Query" name:"GroupId"`
+	ApiId         string `position:"Query" name:"ApiId"`
 }
 
 // DescribeDeployedApiResponse is the response struct for api DescribeDeployedApi

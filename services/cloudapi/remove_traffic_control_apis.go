@@ -77,9 +77,10 @@ func (client *Client) RemoveTrafficControlApisWithCallback(request *RemoveTraffi
 type RemoveTrafficControlApisRequest struct {
 	*requests.RpcRequest
 	TrafficControlId string `position:"Query" name:"TrafficControlId"`
+	StageName        string `position:"Query" name:"StageName"`
+	SecurityToken    string `position:"Query" name:"SecurityToken"`
 	GroupId          string `position:"Query" name:"GroupId"`
 	ApiIds           string `position:"Query" name:"ApiIds"`
-	StageName        string `position:"Query" name:"StageName"`
 }
 
 // RemoveTrafficControlApisResponse is the response struct for api RemoveTrafficControlApis

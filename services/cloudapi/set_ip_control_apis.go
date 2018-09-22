@@ -76,10 +76,11 @@ func (client *Client) SetIpControlApisWithCallback(request *SetIpControlApisRequ
 // SetIpControlApisRequest is the request struct for api SetIpControlApis
 type SetIpControlApisRequest struct {
 	*requests.RpcRequest
-	IpControlId string `position:"Query" name:"IpControlId"`
-	GroupId     string `position:"Query" name:"GroupId"`
-	ApiIds      string `position:"Query" name:"ApiIds"`
-	StageName   string `position:"Query" name:"StageName"`
+	StageName     string `position:"Query" name:"StageName"`
+	IpControlId   string `position:"Query" name:"IpControlId"`
+	SecurityToken string `position:"Query" name:"SecurityToken"`
+	GroupId       string `position:"Query" name:"GroupId"`
+	ApiIds        string `position:"Query" name:"ApiIds"`
 }
 
 // SetIpControlApisResponse is the response struct for api SetIpControlApis

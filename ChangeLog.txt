@@ -1,3 +1,6 @@
+2018-09-22 Version: 1.30.4
+1, update
+
 2018-09-20 Version: 1.30.3
 1, Fix publish failure for Java, Python and C# SDK.
 

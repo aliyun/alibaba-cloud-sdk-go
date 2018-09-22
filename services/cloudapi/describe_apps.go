@@ -76,10 +76,11 @@ func (client *Client) DescribeAppsWithCallback(request *DescribeAppsRequest, cal
 // DescribeAppsRequest is the request struct for api DescribeApps
 type DescribeAppsRequest struct {
 	*requests.RpcRequest
-	AppId      requests.Integer `position:"Query" name:"AppId"`
-	AppOwner   requests.Integer `position:"Query" name:"AppOwner"`
-	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
-	PageSize   requests.Integer `position:"Query" name:"PageSize"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	AppId         requests.Integer `position:"Query" name:"AppId"`
+	PageSize      requests.Integer `position:"Query" name:"PageSize"`
+	AppOwner      requests.Integer `position:"Query" name:"AppOwner"`
+	PageNumber    requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 // DescribeAppsResponse is the response struct for api DescribeApps

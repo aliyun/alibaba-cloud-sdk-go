@@ -76,7 +76,8 @@ func (client *Client) DescribeLogConfigWithCallback(request *DescribeLogConfigRe
 // DescribeLogConfigRequest is the request struct for api DescribeLogConfig
 type DescribeLogConfigRequest struct {
 	*requests.RpcRequest
-	LogType string `position:"Query" name:"LogType"`
+	LogType       string `position:"Query" name:"LogType"`
+	SecurityToken string `position:"Query" name:"SecurityToken"`
 }
 
 // DescribeLogConfigResponse is the response struct for api DescribeLogConfig

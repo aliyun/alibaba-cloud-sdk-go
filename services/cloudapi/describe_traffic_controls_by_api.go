@@ -76,9 +76,10 @@ func (client *Client) DescribeTrafficControlsByApiWithCallback(request *Describe
 // DescribeTrafficControlsByApiRequest is the request struct for api DescribeTrafficControlsByApi
 type DescribeTrafficControlsByApiRequest struct {
 	*requests.RpcRequest
-	GroupId   string `position:"Query" name:"GroupId"`
-	ApiId     string `position:"Query" name:"ApiId"`
-	StageName string `position:"Query" name:"StageName"`
+	StageName     string `position:"Query" name:"StageName"`
+	SecurityToken string `position:"Query" name:"SecurityToken"`
+	GroupId       string `position:"Query" name:"GroupId"`
+	ApiId         string `position:"Query" name:"ApiId"`
 }
 
 // DescribeTrafficControlsByApiResponse is the response struct for api DescribeTrafficControlsByApi

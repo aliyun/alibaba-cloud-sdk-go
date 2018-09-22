@@ -76,8 +76,10 @@ func (client *Client) CreateApiGroupWithCallback(request *CreateApiGroupRequest,
 // CreateApiGroupRequest is the request struct for api CreateApiGroup
 type CreateApiGroupRequest struct {
 	*requests.RpcRequest
-	GroupName   string `position:"Query" name:"GroupName"`
-	Description string `position:"Query" name:"Description"`
+	SecurityToken string `position:"Query" name:"SecurityToken"`
+	Description   string `position:"Query" name:"Description"`
+	Source        string `position:"Query" name:"Source"`
+	GroupName     string `position:"Query" name:"GroupName"`
 }
 
 // CreateApiGroupResponse is the response struct for api CreateApiGroup

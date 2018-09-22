@@ -76,7 +76,8 @@ func (client *Client) DeleteLogConfigWithCallback(request *DeleteLogConfigReques
 // DeleteLogConfigRequest is the request struct for api DeleteLogConfig
 type DeleteLogConfigRequest struct {
 	*requests.RpcRequest
-	LogType string `position:"Query" name:"LogType"`
+	LogType       string `position:"Query" name:"LogType"`
+	SecurityToken string `position:"Query" name:"SecurityToken"`
 }
 
 // DeleteLogConfigResponse is the response struct for api DeleteLogConfig

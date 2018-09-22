@@ -76,10 +76,11 @@ func (client *Client) DescribeApiGroupsWithCallback(request *DescribeApiGroupsRe
 // DescribeApiGroupsRequest is the request struct for api DescribeApiGroups
 type DescribeApiGroupsRequest struct {
 	*requests.RpcRequest
-	GroupId    string           `position:"Query" name:"GroupId"`
-	GroupName  string           `position:"Query" name:"GroupName"`
-	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
-	PageSize   requests.Integer `position:"Query" name:"PageSize"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	GroupId       string           `position:"Query" name:"GroupId"`
+	PageSize      requests.Integer `position:"Query" name:"PageSize"`
+	GroupName     string           `position:"Query" name:"GroupName"`
+	PageNumber    requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 // DescribeApiGroupsResponse is the response struct for api DescribeApiGroups

@@ -76,9 +76,10 @@ func (client *Client) SdkGenerateWithCallback(request *SdkGenerateRequest, callb
 // SdkGenerateRequest is the request struct for api SdkGenerate
 type SdkGenerateRequest struct {
 	*requests.RpcRequest
-	GroupId  string           `position:"Query" name:"GroupId"`
-	AppId    requests.Integer `position:"Query" name:"AppId"`
-	Language string           `position:"Query" name:"Language"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	GroupId       string           `position:"Query" name:"GroupId"`
+	AppId         requests.Integer `position:"Query" name:"AppId"`
+	Language      string           `position:"Query" name:"Language"`
 }
 
 // SdkGenerateResponse is the response struct for api SdkGenerate

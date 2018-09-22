@@ -76,10 +76,11 @@ func (client *Client) DescribeApiTrafficDataWithCallback(request *DescribeApiTra
 // DescribeApiTrafficDataRequest is the request struct for api DescribeApiTrafficData
 type DescribeApiTrafficDataRequest struct {
 	*requests.RpcRequest
-	ApiId     string `position:"Query" name:"ApiId"`
-	GroupId   string `position:"Query" name:"GroupId"`
-	StartTime string `position:"Query" name:"StartTime"`
-	EndTime   string `position:"Query" name:"EndTime"`
+	SecurityToken string `position:"Query" name:"SecurityToken"`
+	GroupId       string `position:"Query" name:"GroupId"`
+	EndTime       string `position:"Query" name:"EndTime"`
+	StartTime     string `position:"Query" name:"StartTime"`
+	ApiId         string `position:"Query" name:"ApiId"`
 }
 
 // DescribeApiTrafficDataResponse is the response struct for api DescribeApiTrafficData

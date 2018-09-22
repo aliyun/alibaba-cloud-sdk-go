@@ -76,9 +76,10 @@ func (client *Client) AddIpControlPolicyItemWithCallback(request *AddIpControlPo
 // AddIpControlPolicyItemRequest is the request struct for api AddIpControlPolicyItem
 type AddIpControlPolicyItemRequest struct {
 	*requests.RpcRequest
-	IpControlId string `position:"Query" name:"IpControlId"`
-	AppId       string `position:"Query" name:"AppId"`
-	CidrIp      string `position:"Query" name:"CidrIp"`
+	IpControlId   string `position:"Query" name:"IpControlId"`
+	SecurityToken string `position:"Query" name:"SecurityToken"`
+	AppId         string `position:"Query" name:"AppId"`
+	CidrIp        string `position:"Query" name:"CidrIp"`
 }
 
 // AddIpControlPolicyItemResponse is the response struct for api AddIpControlPolicyItem

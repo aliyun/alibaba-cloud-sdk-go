@@ -76,26 +76,27 @@ func (client *Client) CreateApiWithCallback(request *CreateApiRequest, callback 
 // CreateApiRequest is the request struct for api CreateApi
 type CreateApiRequest struct {
 	*requests.RpcRequest
-	GroupId              string `position:"Query" name:"GroupId"`
-	ApiName              string `position:"Query" name:"ApiName"`
-	Visibility           string `position:"Query" name:"Visibility"`
-	Description          string `position:"Query" name:"Description"`
-	AuthType             string `position:"Query" name:"AuthType"`
-	RequestConfig        string `position:"Query" name:"RequestConfig"`
-	ServiceConfig        string `position:"Query" name:"ServiceConfig"`
-	RequestParameters    string `position:"Query" name:"RequestParameters"`
-	SystemParameters     string `position:"Query" name:"SystemParameters"`
-	ConstantParameters   string `position:"Query" name:"ConstantParameters"`
-	ServiceParameters    string `position:"Query" name:"ServiceParameters"`
-	ServiceParametersMap string `position:"Query" name:"ServiceParametersMap"`
-	ResultType           string `position:"Query" name:"ResultType"`
-	ResultSample         string `position:"Query" name:"ResultSample"`
-	FailResultSample     string `position:"Query" name:"FailResultSample"`
-	ErrorCodeSamples     string `position:"Query" name:"ErrorCodeSamples"`
 	ResultDescriptions   string `position:"Query" name:"ResultDescriptions"`
-	OpenIdConnectConfig  string `position:"Query" name:"OpenIdConnectConfig"`
-	AllowSignatureMethod string `position:"Query" name:"AllowSignatureMethod"`
 	WebSocketApiType     string `position:"Query" name:"WebSocketApiType"`
+	Visibility           string `position:"Query" name:"Visibility"`
+	GroupId              string `position:"Query" name:"GroupId"`
+	ErrorCodeSamples     string `position:"Query" name:"ErrorCodeSamples"`
+	Description          string `position:"Query" name:"Description"`
+	ServiceConfig        string `position:"Query" name:"ServiceConfig"`
+	ConstantParameters   string `position:"Query" name:"ConstantParameters"`
+	ResultType           string `position:"Query" name:"ResultType"`
+	AuthType             string `position:"Query" name:"AuthType"`
+	AllowSignatureMethod string `position:"Query" name:"AllowSignatureMethod"`
+	ServiceParameters    string `position:"Query" name:"ServiceParameters"`
+	FailResultSample     string `position:"Query" name:"FailResultSample"`
+	ApiName              string `position:"Query" name:"ApiName"`
+	SystemParameters     string `position:"Query" name:"SystemParameters"`
+	ServiceParametersMap string `position:"Query" name:"ServiceParametersMap"`
+	ResultSample         string `position:"Query" name:"ResultSample"`
+	SecurityToken        string `position:"Query" name:"SecurityToken"`
+	OpenIdConnectConfig  string `position:"Query" name:"OpenIdConnectConfig"`
+	RequestParameters    string `position:"Query" name:"RequestParameters"`
+	RequestConfig        string `position:"Query" name:"RequestConfig"`
 }
 
 // CreateApiResponse is the response struct for api CreateApi

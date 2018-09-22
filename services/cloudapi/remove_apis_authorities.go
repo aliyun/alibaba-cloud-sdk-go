@@ -76,11 +76,12 @@ func (client *Client) RemoveApisAuthoritiesWithCallback(request *RemoveApisAutho
 // RemoveApisAuthoritiesRequest is the request struct for api RemoveApisAuthorities
 type RemoveApisAuthoritiesRequest struct {
 	*requests.RpcRequest
-	GroupId     string           `position:"Query" name:"GroupId"`
-	AppId       requests.Integer `position:"Query" name:"AppId"`
-	StageName   string           `position:"Query" name:"StageName"`
-	ApiIds      string           `position:"Query" name:"ApiIds"`
-	Description string           `position:"Query" name:"Description"`
+	StageName     string           `position:"Query" name:"StageName"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	GroupId       string           `position:"Query" name:"GroupId"`
+	AppId         requests.Integer `position:"Query" name:"AppId"`
+	Description   string           `position:"Query" name:"Description"`
+	ApiIds        string           `position:"Query" name:"ApiIds"`
 }
 
 // RemoveApisAuthoritiesResponse is the response struct for api RemoveApisAuthorities

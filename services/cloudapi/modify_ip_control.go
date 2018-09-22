@@ -77,6 +77,7 @@ func (client *Client) ModifyIpControlWithCallback(request *ModifyIpControlReques
 type ModifyIpControlRequest struct {
 	*requests.RpcRequest
 	IpControlId   string `position:"Query" name:"IpControlId"`
+	SecurityToken string `position:"Query" name:"SecurityToken"`
 	IpControlName string `position:"Query" name:"IpControlName"`
 	Description   string `position:"Query" name:"Description"`
 }
