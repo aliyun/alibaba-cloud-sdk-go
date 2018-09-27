@@ -1,3 +1,6 @@
+2018-09-27 Version: 1.30.7
+1, modify getFaces Api
+
 2018-09-25 Version: 1.30.6
 1, Add GetHotlineRecord and QueryHotlineRecord interface, version 1.0.0
 
