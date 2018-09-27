@@ -1,3 +1,6 @@
+2018-09-27 Version: 1.30.8
+1, modify getFaces Api
+
 2018-09-27 Version: 1.30.7
 1, modify getFaces Api
 
