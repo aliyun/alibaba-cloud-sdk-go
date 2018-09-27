@@ -86,6 +86,7 @@ type CreateClusterRequest struct {
 	KeyPairName                 string                            `position:"Query" name:"KeyPairName"`
 	SecurityGroupName           string                            `position:"Query" name:"SecurityGroupName"`
 	EcsOrderComputeInstanceType string                            `position:"Query" name:"EcsOrder.Compute.InstanceType"`
+	JobQueue                    string                            `position:"Query" name:"JobQueue"`
 	ImageOwnerAlias             string                            `position:"Query" name:"ImageOwnerAlias"`
 	VolumeType                  string                            `position:"Query" name:"VolumeType"`
 	DeployMode                  string                            `position:"Query" name:"DeployMode"`

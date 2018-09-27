@@ -1,3 +1,6 @@
+2018-09-27 Version: 1.31.0
+1, Add new API ListQueues, modify API SetAutoScaleConfig to support queue related features.
+
 2018-09-27 Version: 1.30.8
 1, modify getFaces Api
 

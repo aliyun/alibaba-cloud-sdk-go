@@ -85,6 +85,7 @@ type SubmitJobRequest struct {
 	ReRunable          requests.Boolean `position:"Query" name:"ReRunable"`
 	Priority           requests.Integer `position:"Query" name:"Priority"`
 	CommandLine        string           `position:"Query" name:"CommandLine"`
+	JobQueue           string           `position:"Query" name:"JobQueue"`
 	ArrayRequest       string           `position:"Query" name:"ArrayRequest"`
 	UnzipCmd           string           `position:"Query" name:"UnzipCmd"`
 	PackagePath        string           `position:"Query" name:"PackagePath"`

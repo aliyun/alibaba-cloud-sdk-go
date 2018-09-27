@@ -82,6 +82,7 @@ type AddNodesRequest struct {
 	Count                 requests.Integer `position:"Query" name:"Count"`
 	ClusterId             string           `position:"Query" name:"ClusterId"`
 	ComputeSpotStrategy   string           `position:"Query" name:"ComputeSpotStrategy"`
+	JobQueue              string           `position:"Query" name:"JobQueue"`
 	ImageOwnerAlias       string           `position:"Query" name:"ImageOwnerAlias"`
 	PeriodUnit            string           `position:"Query" name:"PeriodUnit"`
 	AutoRenew             string           `position:"Query" name:"AutoRenew"`
