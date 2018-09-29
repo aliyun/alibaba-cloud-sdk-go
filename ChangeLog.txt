@@ -1,3 +1,6 @@
+2018-09-29 Version: 1.31.3
+1, Sync cdn api.
+
 2018-09-29 Version: 1.31.2
 1, This is an example of release-log.
 2, Please strictly follow this format to edit in English.

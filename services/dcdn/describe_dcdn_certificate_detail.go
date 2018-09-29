@@ -76,9 +76,9 @@ func (client *Client) DescribeDcdnCertificateDetailWithCallback(request *Describ
 // DescribeDcdnCertificateDetailRequest is the request struct for api DescribeDcdnCertificateDetail
 type DescribeDcdnCertificateDetailRequest struct {
 	*requests.RpcRequest
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	CertName      string           `position:"Query" name:"CertName"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeDcdnCertificateDetailResponse is the response struct for api DescribeDcdnCertificateDetail
@@ -96,7 +96,7 @@ func CreateDescribeDcdnCertificateDetailRequest() (request *DescribeDcdnCertific
 	request = &DescribeDcdnCertificateDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dcdn", "2018-01-15", "DescribeDcdnCertificateDetail", "dcdn", "openAPI")
+	request.InitWithApiInfo("dcdn", "2018-01-15", "DescribeDcdnCertificateDetail", "", "")
 	return
 }
 

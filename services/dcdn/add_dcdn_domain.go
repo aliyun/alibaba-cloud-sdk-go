@@ -76,15 +76,15 @@ func (client *Client) AddDcdnDomainWithCallback(request *AddDcdnDomainRequest, c
 // AddDcdnDomainRequest is the request struct for api AddDcdnDomain
 type AddDcdnDomainRequest struct {
 	*requests.RpcRequest
-	OwnerId         requests.Integer `position:"Query" name:"OwnerId"`
-	OwnerAccount    string           `position:"Query" name:"OwnerAccount"`
-	SecurityToken   string           `position:"Query" name:"SecurityToken"`
-	DomainName      string           `position:"Query" name:"DomainName"`
+	TopLevelDomain  string           `position:"Query" name:"TopLevelDomain"`
 	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
 	Sources         string           `position:"Query" name:"Sources"`
-	CheckUrl        string           `position:"Query" name:"CheckUrl"`
+	SecurityToken   string           `position:"Query" name:"SecurityToken"`
+	OwnerAccount    string           `position:"Query" name:"OwnerAccount"`
 	Scope           string           `position:"Query" name:"Scope"`
-	TopLevelDomain  string           `position:"Query" name:"TopLevelDomain"`
+	DomainName      string           `position:"Query" name:"DomainName"`
+	OwnerId         requests.Integer `position:"Query" name:"OwnerId"`
+	CheckUrl        string           `position:"Query" name:"CheckUrl"`
 }
 
 // AddDcdnDomainResponse is the response struct for api AddDcdnDomain
@@ -98,7 +98,7 @@ func CreateAddDcdnDomainRequest() (request *AddDcdnDomainRequest) {
 	request = &AddDcdnDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dcdn", "2018-01-15", "AddDcdnDomain", "dcdn", "openAPI")
+	request.InitWithApiInfo("dcdn", "2018-01-15", "AddDcdnDomain", "", "")
 	return
 }
 

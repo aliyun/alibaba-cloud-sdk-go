@@ -76,6 +76,13 @@ func (client *Client) DescribeDcdnDomainHttpCodeDataWithCallback(request *Descri
 // DescribeDcdnDomainHttpCodeDataRequest is the request struct for api DescribeDcdnDomainHttpCodeData
 type DescribeDcdnDomainHttpCodeDataRequest struct {
 	*requests.RpcRequest
+	LocationNameEn string           `position:"Query" name:"LocationNameEn"`
+	StartTime      string           `position:"Query" name:"StartTime"`
+	IspNameEn      string           `position:"Query" name:"IspNameEn"`
+	DomainName     string           `position:"Query" name:"DomainName"`
+	EndTime        string           `position:"Query" name:"EndTime"`
+	OwnerId        requests.Integer `position:"Query" name:"OwnerId"`
+	Interval       string           `position:"Query" name:"Interval"`
 }
 
 // DescribeDcdnDomainHttpCodeDataResponse is the response struct for api DescribeDcdnDomainHttpCodeData
@@ -94,7 +101,7 @@ func CreateDescribeDcdnDomainHttpCodeDataRequest() (request *DescribeDcdnDomainH
 	request = &DescribeDcdnDomainHttpCodeDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dcdn", "2018-01-15", "DescribeDcdnDomainHttpCodeData", "dcdn", "openAPI")
+	request.InitWithApiInfo("dcdn", "2018-01-15", "DescribeDcdnDomainHttpCodeData", "", "")
 	return
 }
 

@@ -76,8 +76,8 @@ func (client *Client) DescribeDcdnRefreshQuotaWithCallback(request *DescribeDcdn
 // DescribeDcdnRefreshQuotaRequest is the request struct for api DescribeDcdnRefreshQuota
 type DescribeDcdnRefreshQuotaRequest struct {
 	*requests.RpcRequest
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeDcdnRefreshQuotaResponse is the response struct for api DescribeDcdnRefreshQuota
@@ -99,7 +99,7 @@ func CreateDescribeDcdnRefreshQuotaRequest() (request *DescribeDcdnRefreshQuotaR
 	request = &DescribeDcdnRefreshQuotaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dcdn", "2018-01-15", "DescribeDcdnRefreshQuota", "dcdn", "openAPI")
+	request.InitWithApiInfo("dcdn", "2018-01-15", "DescribeDcdnRefreshQuota", "", "")
 	return
 }
 

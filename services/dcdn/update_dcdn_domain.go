@@ -76,12 +76,12 @@ func (client *Client) UpdateDcdnDomainWithCallback(request *UpdateDcdnDomainRequ
 // UpdateDcdnDomainRequest is the request struct for api UpdateDcdnDomain
 type UpdateDcdnDomainRequest struct {
 	*requests.RpcRequest
-	OwnerId         requests.Integer `position:"Query" name:"OwnerId"`
+	TopLevelDomain  string           `position:"Query" name:"TopLevelDomain"`
+	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
+	Sources         string           `position:"Query" name:"Sources"`
 	SecurityToken   string           `position:"Query" name:"SecurityToken"`
 	DomainName      string           `position:"Query" name:"DomainName"`
-	Sources         string           `position:"Query" name:"Sources"`
-	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
-	TopLevelDomain  string           `position:"Query" name:"TopLevelDomain"`
+	OwnerId         requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // UpdateDcdnDomainResponse is the response struct for api UpdateDcdnDomain
@@ -95,7 +95,7 @@ func CreateUpdateDcdnDomainRequest() (request *UpdateDcdnDomainRequest) {
 	request = &UpdateDcdnDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dcdn", "2018-01-15", "UpdateDcdnDomain", "dcdn", "openAPI")
+	request.InitWithApiInfo("dcdn", "2018-01-15", "UpdateDcdnDomain", "", "")
 	return
 }
 

@@ -76,8 +76,8 @@ func (client *Client) DescribeDcdnUserResourcePackageWithCallback(request *Descr
 // DescribeDcdnUserResourcePackageRequest is the request struct for api DescribeDcdnUserResourcePackage
 type DescribeDcdnUserResourcePackageRequest struct {
 	*requests.RpcRequest
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeDcdnUserResourcePackageResponse is the response struct for api DescribeDcdnUserResourcePackage
@@ -92,7 +92,7 @@ func CreateDescribeDcdnUserResourcePackageRequest() (request *DescribeDcdnUserRe
 	request = &DescribeDcdnUserResourcePackageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dcdn", "2018-01-15", "DescribeDcdnUserResourcePackage", "dcdn", "openAPI")
+	request.InitWithApiInfo("dcdn", "2018-01-15", "DescribeDcdnUserResourcePackage", "", "")
 	return
 }
 

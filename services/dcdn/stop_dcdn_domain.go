@@ -76,9 +76,9 @@ func (client *Client) StopDcdnDomainWithCallback(request *StopDcdnDomainRequest,
 // StopDcdnDomainRequest is the request struct for api StopDcdnDomain
 type StopDcdnDomainRequest struct {
 	*requests.RpcRequest
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	DomainName    string           `position:"Query" name:"DomainName"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // StopDcdnDomainResponse is the response struct for api StopDcdnDomain
@@ -92,7 +92,7 @@ func CreateStopDcdnDomainRequest() (request *StopDcdnDomainRequest) {
 	request = &StopDcdnDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dcdn", "2018-01-15", "StopDcdnDomain", "dcdn", "openAPI")
+	request.InitWithApiInfo("dcdn", "2018-01-15", "StopDcdnDomain", "", "")
 	return
 }
 
