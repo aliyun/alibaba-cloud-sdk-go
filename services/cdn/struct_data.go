@@ -19,8 +19,5 @@ package cdn
 type Data struct {
 	Domain string `json:"Domain" xml:"Domain"`
 	Cname  string `json:"Cname" xml:"Cname"`
-	Time   string `json:"Time" xml:"Time"`
 	Status int    `json:"Status" xml:"Status"`
-	More3s string `json:"More3s" xml:"More3s"`
-	More5s string `json:"More5s" xml:"More5s"`
 }

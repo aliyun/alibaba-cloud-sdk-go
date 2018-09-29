@@ -17,5 +17,5 @@ package cdn
 
 // PvDataInterval is a nested struct in cdn response
 type PvDataInterval struct {
-	UsageData []UsageData `json:"UsageData" xml:"UsageData"`
+	UsageData []UsageDataInDescribeDomainPvData `json:"UsageData" xml:"UsageData"`
 }

@@ -76,9 +76,9 @@ func (client *Client) DescribeDomainRealTimeByteHitRateDataWithCallback(request 
 // DescribeDomainRealTimeByteHitRateDataRequest is the request struct for api DescribeDomainRealTimeByteHitRateData
 type DescribeDomainRealTimeByteHitRateDataRequest struct {
 	*requests.RpcRequest
+	StartTime  string           `position:"Query" name:"StartTime"`
 	DomainName string           `position:"Query" name:"DomainName"`
 	EndTime    string           `position:"Query" name:"EndTime"`
-	StartTime  string           `position:"Query" name:"StartTime"`
 	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
 }
 
