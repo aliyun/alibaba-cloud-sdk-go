@@ -85,8 +85,8 @@ type DescribeCdnDomainConfigsRequest struct {
 // DescribeCdnDomainConfigsResponse is the response struct for api DescribeCdnDomainConfigs
 type DescribeCdnDomainConfigsResponse struct {
 	*responses.BaseResponse
-	RequestId     string                                  `json:"RequestId" xml:"RequestId"`
-	DomainConfigs DomainConfigsInDescribeCdnDomainConfigs `json:"DomainConfigs" xml:"DomainConfigs"`
+	RequestId     string        `json:"RequestId" xml:"RequestId"`
+	DomainConfigs DomainConfigs `json:"DomainConfigs" xml:"DomainConfigs"`
 }
 
 // CreateDescribeCdnDomainConfigsRequest creates a request to invoke DescribeCdnDomainConfigs API
@@ -94,7 +94,7 @@ func CreateDescribeCdnDomainConfigsRequest() (request *DescribeCdnDomainConfigsR
 	request = &DescribeCdnDomainConfigsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeCdnDomainConfigs", "", "")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeCdnDomainConfigs", "", "")
 	return
 }
 

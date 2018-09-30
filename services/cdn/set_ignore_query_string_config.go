@@ -76,12 +76,12 @@ func (client *Client) SetIgnoreQueryStringConfigWithCallback(request *SetIgnoreQ
 // SetIgnoreQueryStringConfigRequest is the request struct for api SetIgnoreQueryStringConfig
 type SetIgnoreQueryStringConfigRequest struct {
 	*requests.RpcRequest
-	KeepOssArgs   string           `position:"Query" name:"KeepOssArgs"`
-	HashKeyArgs   string           `position:"Query" name:"HashKeyArgs"`
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
-	Enable        string           `position:"Query" name:"Enable"`
-	DomainName    string           `position:"Query" name:"DomainName"`
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	Enable      string           `position:"Query" name:"Enable"`
+	KeepOssArgs string           `position:"Query" name:"KeepOssArgs"`
+	DomainName  string           `position:"Query" name:"DomainName"`
+	OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
+	HashKeyArgs string           `position:"Query" name:"HashKeyArgs"`
+	ConfigId    requests.Integer `position:"Query" name:"ConfigId"`
 }
 
 // SetIgnoreQueryStringConfigResponse is the response struct for api SetIgnoreQueryStringConfig
@@ -95,7 +95,7 @@ func CreateSetIgnoreQueryStringConfigRequest() (request *SetIgnoreQueryStringCon
 	request = &SetIgnoreQueryStringConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "SetIgnoreQueryStringConfig", "", "")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "SetIgnoreQueryStringConfig", "", "")
 	return
 }
 

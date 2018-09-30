@@ -17,10 +17,10 @@ package cdn
 
 // FCTrigger is a nested struct in cdn response
 type FCTrigger struct {
-	EventMetaName    string `json:"EventMetaName" xml:"EventMetaName"`
 	EventMetaVersion string `json:"EventMetaVersion" xml:"EventMetaVersion"`
+	EventMetaName    string `json:"EventMetaName" xml:"EventMetaName"`
 	TriggerARN       string `json:"TriggerARN" xml:"TriggerARN"`
-	RoleARN          string `json:"RoleARN" xml:"RoleARN"`
 	SourceArn        string `json:"SourceArn" xml:"SourceArn"`
 	Notes            string `json:"Notes" xml:"Notes"`
+	RoleARN          string `json:"RoleARN" xml:"RoleARN"`
 }

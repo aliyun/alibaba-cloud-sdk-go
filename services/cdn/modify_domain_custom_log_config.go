@@ -92,7 +92,7 @@ func CreateModifyDomainCustomLogConfigRequest() (request *ModifyDomainCustomLogC
 	request = &ModifyDomainCustomLogConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "ModifyDomainCustomLogConfig", "", "")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "ModifyDomainCustomLogConfig", "", "")
 	return
 }
 

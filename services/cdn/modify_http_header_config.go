@@ -95,7 +95,7 @@ func CreateModifyHttpHeaderConfigRequest() (request *ModifyHttpHeaderConfigReque
 	request = &ModifyHttpHeaderConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "ModifyHttpHeaderConfig", "", "")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "ModifyHttpHeaderConfig", "", "")
 	return
 }
 

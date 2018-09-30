@@ -17,20 +17,18 @@ package cdn
 
 // DataModule is a nested struct in cdn response
 type DataModule struct {
-	OverseasValue        string `json:"OverseasValue" xml:"OverseasValue"`
-	DynamicValue         string `json:"DynamicValue" xml:"DynamicValue"`
-	L2Value              string `json:"L2Value" xml:"L2Value"`
-	StaticOverseasValue  string `json:"StaticOverseasValue" xml:"StaticOverseasValue"`
-	DynamicOverseasValue string `json:"DynamicOverseasValue" xml:"DynamicOverseasValue"`
-	DomesticValue        string `json:"DomesticValue" xml:"DomesticValue"`
-	AccValue             string `json:"AccValue" xml:"AccValue"`
-	Value                string `json:"Value" xml:"Value"`
-	AccDomesticValue     string `json:"AccDomesticValue" xml:"AccDomesticValue"`
-	StaticValue          string `json:"StaticValue" xml:"StaticValue"`
-	TimeStamp            string `json:"TimeStamp" xml:"TimeStamp"`
-	DynamicDomesticValue string `json:"DynamicDomesticValue" xml:"DynamicDomesticValue"`
-	StaticDomesticValue  string `json:"StaticDomesticValue" xml:"StaticDomesticValue"`
-	DomesticL2Value      string `json:"DomesticL2Value" xml:"DomesticL2Value"`
-	AccOverseasValue     string `json:"AccOverseasValue" xml:"AccOverseasValue"`
-	OverseasL2Value      string `json:"OverseasL2Value" xml:"OverseasL2Value"`
+	PeakTime              string `json:"PeakTime" xml:"PeakTime"`
+	OverseasValue         string `json:"OverseasValue" xml:"OverseasValue"`
+	HttpsAccOverseasValue string `json:"HttpsAccOverseasValue" xml:"HttpsAccOverseasValue"`
+	HttpsOverseasValue    string `json:"HttpsOverseasValue" xml:"HttpsOverseasValue"`
+	DomesticValue         string `json:"DomesticValue" xml:"DomesticValue"`
+	AccValue              string `json:"AccValue" xml:"AccValue"`
+	Value                 string `json:"Value" xml:"Value"`
+	AccDomesticValue      string `json:"AccDomesticValue" xml:"AccDomesticValue"`
+	TimeStamp             string `json:"TimeStamp" xml:"TimeStamp"`
+	HttpsDomesticValue    string `json:"HttpsDomesticValue" xml:"HttpsDomesticValue"`
+	HttpsValue            string `json:"HttpsValue" xml:"HttpsValue"`
+	HttpsAccValue         string `json:"HttpsAccValue" xml:"HttpsAccValue"`
+	AccOverseasValue      string `json:"AccOverseasValue" xml:"AccOverseasValue"`
+	HttpsAccDomesticValue string `json:"HttpsAccDomesticValue" xml:"HttpsAccDomesticValue"`
 }

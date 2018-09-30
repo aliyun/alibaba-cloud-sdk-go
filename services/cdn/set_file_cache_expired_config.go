@@ -76,12 +76,11 @@ func (client *Client) SetFileCacheExpiredConfigWithCallback(request *SetFileCach
 // SetFileCacheExpiredConfigRequest is the request struct for api SetFileCacheExpiredConfig
 type SetFileCacheExpiredConfigRequest struct {
 	*requests.RpcRequest
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
-	DomainName    string           `position:"Query" name:"DomainName"`
-	Weight        string           `position:"Query" name:"Weight"`
-	CacheContent  string           `position:"Query" name:"CacheContent"`
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
-	TTL           string           `position:"Query" name:"TTL"`
+	DomainName   string           `position:"Query" name:"DomainName"`
+	CacheContent string           `position:"Query" name:"CacheContent"`
+	OwnerId      requests.Integer `position:"Query" name:"OwnerId"`
+	TTL          string           `position:"Query" name:"TTL"`
+	ConfigId     requests.Integer `position:"Query" name:"ConfigId"`
 }
 
 // SetFileCacheExpiredConfigResponse is the response struct for api SetFileCacheExpiredConfig
@@ -95,7 +94,7 @@ func CreateSetFileCacheExpiredConfigRequest() (request *SetFileCacheExpiredConfi
 	request = &SetFileCacheExpiredConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "SetFileCacheExpiredConfig", "", "")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "SetFileCacheExpiredConfig", "", "")
 	return
 }
 

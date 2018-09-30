@@ -76,10 +76,10 @@ func (client *Client) SetHttpsOptionConfigWithCallback(request *SetHttpsOptionCo
 // SetHttpsOptionConfigRequest is the request struct for api SetHttpsOptionConfig
 type SetHttpsOptionConfigRequest struct {
 	*requests.RpcRequest
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
-	DomainName    string           `position:"Query" name:"DomainName"`
-	Http2         string           `position:"Query" name:"Http2"`
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	Http2      string           `position:"Query" name:"Http2"`
+	DomainName string           `position:"Query" name:"DomainName"`
+	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
+	ConfigId   requests.Integer `position:"Query" name:"ConfigId"`
 }
 
 // SetHttpsOptionConfigResponse is the response struct for api SetHttpsOptionConfig
@@ -93,7 +93,7 @@ func CreateSetHttpsOptionConfigRequest() (request *SetHttpsOptionConfigRequest) 
 	request = &SetHttpsOptionConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "SetHttpsOptionConfig", "", "")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "SetHttpsOptionConfig", "", "")
 	return
 }
 

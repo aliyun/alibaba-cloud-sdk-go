@@ -88,7 +88,6 @@ type DescribeDomainPathDataRequest struct {
 // DescribeDomainPathDataResponse is the response struct for api DescribeDomainPathData
 type DescribeDomainPathDataResponse struct {
 	*responses.BaseResponse
-	RequestId           string              `json:"RequestId" xml:"RequestId"`
 	DomainName          string              `json:"DomainName" xml:"DomainName"`
 	StartTime           string              `json:"StartTime" xml:"StartTime"`
 	EndTime             string              `json:"EndTime" xml:"EndTime"`
@@ -104,7 +103,7 @@ func CreateDescribeDomainPathDataRequest() (request *DescribeDomainPathDataReque
 	request = &DescribeDomainPathDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeDomainPathData", "", "")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeDomainPathData", "", "")
 	return
 }
 

@@ -97,7 +97,7 @@ func CreateDescribeCdnServiceRequest() (request *DescribeCdnServiceRequest) {
 	request = &DescribeCdnServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeCdnService", "", "")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeCdnService", "", "")
 	return
 }
 

@@ -76,10 +76,10 @@ func (client *Client) SetIpBlackListConfigWithCallback(request *SetIpBlackListCo
 // SetIpBlackListConfigRequest is the request struct for api SetIpBlackListConfig
 type SetIpBlackListConfigRequest struct {
 	*requests.RpcRequest
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
-	DomainName    string           `position:"Query" name:"DomainName"`
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
-	BlockIps      string           `position:"Query" name:"BlockIps"`
+	BlockIps   string           `position:"Query" name:"BlockIps"`
+	DomainName string           `position:"Query" name:"DomainName"`
+	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
+	ConfigId   requests.Integer `position:"Query" name:"ConfigId"`
 }
 
 // SetIpBlackListConfigResponse is the response struct for api SetIpBlackListConfig
@@ -93,7 +93,7 @@ func CreateSetIpBlackListConfigRequest() (request *SetIpBlackListConfigRequest) 
 	request = &SetIpBlackListConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "SetIpBlackListConfig", "", "")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "SetIpBlackListConfig", "", "")
 	return
 }
 

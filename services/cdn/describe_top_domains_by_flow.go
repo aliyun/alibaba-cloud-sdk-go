@@ -76,11 +76,10 @@ func (client *Client) DescribeTopDomainsByFlowWithCallback(request *DescribeTopD
 // DescribeTopDomainsByFlowRequest is the request struct for api DescribeTopDomainsByFlow
 type DescribeTopDomainsByFlowRequest struct {
 	*requests.RpcRequest
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
-	Limit         requests.Integer `position:"Query" name:"Limit"`
-	EndTime       string           `position:"Query" name:"EndTime"`
-	StartTime     string           `position:"Query" name:"StartTime"`
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	StartTime string           `position:"Query" name:"StartTime"`
+	Limit     requests.Integer `position:"Query" name:"Limit"`
+	EndTime   string           `position:"Query" name:"EndTime"`
+	OwnerId   requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeTopDomainsByFlowResponse is the response struct for api DescribeTopDomainsByFlow
@@ -99,7 +98,7 @@ func CreateDescribeTopDomainsByFlowRequest() (request *DescribeTopDomainsByFlowR
 	request = &DescribeTopDomainsByFlowRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeTopDomainsByFlow", "", "")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeTopDomainsByFlow", "", "")
 	return
 }
 
