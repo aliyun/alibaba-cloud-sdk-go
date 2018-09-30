@@ -76,7 +76,8 @@ func (client *Client) DeleteSignatureWithCallback(request *DeleteSignatureReques
 // DeleteSignatureRequest is the request struct for api DeleteSignature
 type DeleteSignatureRequest struct {
 	*requests.RpcRequest
-	SignatureId string `position:"Query" name:"SignatureId"`
+	SecurityToken string `position:"Query" name:"SecurityToken"`
+	SignatureId   string `position:"Query" name:"SignatureId"`
 }
 
 // DeleteSignatureResponse is the response struct for api DeleteSignature

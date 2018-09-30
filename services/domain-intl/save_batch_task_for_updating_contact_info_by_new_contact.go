@@ -76,22 +76,22 @@ func (client *Client) SaveBatchTaskForUpdatingContactInfoByNewContactWithCallbac
 // SaveBatchTaskForUpdatingContactInfoByNewContactRequest is the request struct for api SaveBatchTaskForUpdatingContactInfoByNewContact
 type SaveBatchTaskForUpdatingContactInfoByNewContactRequest struct {
 	*requests.RpcRequest
-	RegistrantName         string           `position:"Query" name:"RegistrantName"`
+	Country                string           `position:"Query" name:"Country"`
 	Address                string           `position:"Query" name:"Address"`
+	TelArea                string           `position:"Query" name:"TelArea"`
+	ContactType            string           `position:"Query" name:"ContactType"`
+	City                   string           `position:"Query" name:"City"`
+	DomainName             *[]string        `position:"Query" name:"DomainName"  type:"Repeated"`
+	Telephone              string           `position:"Query" name:"Telephone"`
+	TransferOutProhibited  requests.Boolean `position:"Query" name:"TransferOutProhibited"`
+	RegistrantOrganization string           `position:"Query" name:"RegistrantOrganization"`
+	TelExt                 string           `position:"Query" name:"TelExt"`
+	Province               string           `position:"Query" name:"Province"`
+	PostalCode             string           `position:"Query" name:"PostalCode"`
 	UserClientIp           string           `position:"Query" name:"UserClientIp"`
 	Lang                   string           `position:"Query" name:"Lang"`
-	City                   string           `position:"Query" name:"City"`
-	RegistrantOrganization string           `position:"Query" name:"RegistrantOrganization"`
 	Email                  string           `position:"Query" name:"Email"`
-	Province               string           `position:"Query" name:"Province"`
-	Country                string           `position:"Query" name:"Country"`
-	PostalCode             string           `position:"Query" name:"PostalCode"`
-	TelArea                string           `position:"Query" name:"TelArea"`
-	Telephone              string           `position:"Query" name:"Telephone"`
-	TelExt                 string           `position:"Query" name:"TelExt"`
-	ContactType            string           `position:"Query" name:"ContactType"`
-	TransferOutProhibited  requests.Boolean `position:"Query" name:"TransferOutProhibited"`
-	DomainName             *[]string        `position:"Query" name:"DomainName"  type:"Repeated"`
+	RegistrantName         string           `position:"Query" name:"RegistrantName"`
 }
 
 // SaveBatchTaskForUpdatingContactInfoByNewContactResponse is the response struct for api SaveBatchTaskForUpdatingContactInfoByNewContact

@@ -76,9 +76,9 @@ func (client *Client) ResendEmailVerificationWithCallback(request *ResendEmailVe
 // ResendEmailVerificationRequest is the request struct for api ResendEmailVerification
 type ResendEmailVerificationRequest struct {
 	*requests.RpcRequest
+	UserClientIp string `position:"Query" name:"UserClientIp"`
 	Lang         string `position:"Query" name:"Lang"`
 	Email        string `position:"Query" name:"Email"`
-	UserClientIp string `position:"Query" name:"UserClientIp"`
 }
 
 // ResendEmailVerificationResponse is the response struct for api ResendEmailVerification

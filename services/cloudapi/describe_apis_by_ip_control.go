@@ -76,9 +76,10 @@ func (client *Client) DescribeApisByIpControlWithCallback(request *DescribeApisB
 // DescribeApisByIpControlRequest is the request struct for api DescribeApisByIpControl
 type DescribeApisByIpControlRequest struct {
 	*requests.RpcRequest
-	IpControlId string           `position:"Query" name:"IpControlId"`
-	PageSize    requests.Integer `position:"Query" name:"PageSize"`
-	PageNumber  requests.Integer `position:"Query" name:"PageNumber"`
+	IpControlId   string           `position:"Query" name:"IpControlId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	PageSize      requests.Integer `position:"Query" name:"PageSize"`
+	PageNumber    requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 // DescribeApisByIpControlResponse is the response struct for api DescribeApisByIpControl

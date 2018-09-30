@@ -76,6 +76,7 @@ func (client *Client) DescribeSystemParametersWithCallback(request *DescribeSyst
 // DescribeSystemParametersRequest is the request struct for api DescribeSystemParameters
 type DescribeSystemParametersRequest struct {
 	*requests.RpcRequest
+	SecurityToken string `position:"Query" name:"SecurityToken"`
 }
 
 // DescribeSystemParametersResponse is the response struct for api DescribeSystemParameters

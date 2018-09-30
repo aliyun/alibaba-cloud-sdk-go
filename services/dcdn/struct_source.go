@@ -21,5 +21,6 @@ type Source struct {
 	Content  string `json:"Content" xml:"Content"`
 	Enabled  string `json:"Enabled" xml:"Enabled"`
 	Priority string `json:"Priority" xml:"Priority"`
+	Weight   string `json:"Weight" xml:"Weight"`
 	Type     string `json:"Type" xml:"Type"`
 }

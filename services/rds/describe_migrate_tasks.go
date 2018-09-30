@@ -76,13 +76,13 @@ func (client *Client) DescribeMigrateTasksWithCallback(request *DescribeMigrateT
 // DescribeMigrateTasksRequest is the request struct for api DescribeMigrateTasks
 type DescribeMigrateTasksRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	EndTime              string           `position:"Query" name:"EndTime"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	StartTime            string           `position:"Query" name:"StartTime"`
-	EndTime              string           `position:"Query" name:"EndTime"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 }
 

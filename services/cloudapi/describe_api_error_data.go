@@ -76,10 +76,11 @@ func (client *Client) DescribeApiErrorDataWithCallback(request *DescribeApiError
 // DescribeApiErrorDataRequest is the request struct for api DescribeApiErrorData
 type DescribeApiErrorDataRequest struct {
 	*requests.RpcRequest
-	ApiId     string `position:"Query" name:"ApiId"`
-	GroupId   string `position:"Query" name:"GroupId"`
-	StartTime string `position:"Query" name:"StartTime"`
-	EndTime   string `position:"Query" name:"EndTime"`
+	SecurityToken string `position:"Query" name:"SecurityToken"`
+	GroupId       string `position:"Query" name:"GroupId"`
+	EndTime       string `position:"Query" name:"EndTime"`
+	StartTime     string `position:"Query" name:"StartTime"`
+	ApiId         string `position:"Query" name:"ApiId"`
 }
 
 // DescribeApiErrorDataResponse is the response struct for api DescribeApiErrorData

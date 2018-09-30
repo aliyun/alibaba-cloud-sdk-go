@@ -89,9 +89,9 @@ type DescribeLiveStreamOnlineUserNumRequest struct {
 // DescribeLiveStreamOnlineUserNumResponse is the response struct for api DescribeLiveStreamOnlineUserNum
 type DescribeLiveStreamOnlineUserNumResponse struct {
 	*responses.BaseResponse
-	RequestId       string                                          `json:"RequestId" xml:"RequestId"`
-	TotalUserNumber int                                             `json:"TotalUserNumber" xml:"TotalUserNumber"`
-	OnlineUserInfo  OnlineUserInfoInDescribeLiveStreamOnlineUserNum `json:"OnlineUserInfo" xml:"OnlineUserInfo"`
+	RequestId       string         `json:"RequestId" xml:"RequestId"`
+	TotalUserNumber int            `json:"TotalUserNumber" xml:"TotalUserNumber"`
+	OnlineUserInfo  OnlineUserInfo `json:"OnlineUserInfo" xml:"OnlineUserInfo"`
 }
 
 // CreateDescribeLiveStreamOnlineUserNumRequest creates a request to invoke DescribeLiveStreamOnlineUserNum API

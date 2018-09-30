@@ -76,21 +76,21 @@ func (client *Client) DescribeRenewalPriceWithCallback(request *DescribeRenewalP
 // DescribeRenewalPriceRequest is the request struct for api DescribeRenewalPrice
 type DescribeRenewalPriceRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Quantity             requests.Integer `position:"Query" name:"Quantity"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	CommodityCode        string           `position:"Query" name:"CommodityCode"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	PayType              string           `position:"Query" name:"PayType"`
-	DBInstanceClass      string           `position:"Query" name:"DBInstanceClass"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	UsedTime             string           `position:"Query" name:"UsedTime"`
-	TimeType             string           `position:"Query" name:"TimeType"`
-	Quantity             requests.Integer `position:"Query" name:"Quantity"`
-	OrderType            string           `position:"Query" name:"OrderType"`
+	DBInstanceClass      string           `position:"Query" name:"DBInstanceClass"`
 	PromotionCode        string           `position:"Query" name:"PromotionCode"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	TimeType             string           `position:"Query" name:"TimeType"`
+	PayType              string           `position:"Query" name:"PayType"`
 	BusinessInfo         string           `position:"Query" name:"BusinessInfo"`
+	OrderType            string           `position:"Query" name:"OrderType"`
 }
 
 // DescribeRenewalPriceResponse is the response struct for api DescribeRenewalPrice

@@ -76,12 +76,12 @@ func (client *Client) CompareFacesWithCallback(request *CompareFacesRequest, cal
 // CompareFacesRequest is the request struct for api CompareFaces
 type CompareFacesRequest struct {
 	*requests.RpcRequest
-	SourceImageType  string           `position:"Query" name:"SourceImageType"`
+	SourceImageType  string           `position:"Body" name:"SourceImageType"`
 	ResourceOwnerId  requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	SourceIp         string           `position:"Query" name:"SourceIp"`
-	TargetImageType  string           `position:"Query" name:"TargetImageType"`
-	SourceImageValue string           `position:"Query" name:"SourceImageValue"`
-	TargetImageValue string           `position:"Query" name:"TargetImageValue"`
+	TargetImageType  string           `position:"Body" name:"TargetImageType"`
+	SourceImageValue string           `position:"Body" name:"SourceImageValue"`
+	TargetImageValue string           `position:"Body" name:"TargetImageValue"`
 }
 
 // CompareFacesResponse is the response struct for api CompareFaces
@@ -99,7 +99,7 @@ func CreateCompareFacesRequest() (request *CompareFacesRequest) {
 	request = &CompareFacesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cloudauth", "2018-08-07", "CompareFaces", "cloudauth", "openAPI")
+	request.InitWithApiInfo("Cloudauth", "2018-09-16", "CompareFaces", "cloudauth", "openAPI")
 	return
 }
 

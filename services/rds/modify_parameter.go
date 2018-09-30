@@ -76,14 +76,14 @@ func (client *Client) ModifyParameterWithCallback(request *ModifyParameterReques
 // ModifyParameterRequest is the request struct for api ModifyParameter
 type ModifyParameterRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	Parameters           string           `position:"Query" name:"Parameters"`
-	Forcerestart         requests.Boolean `position:"Query" name:"Forcerestart"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	Forcerestart         requests.Boolean `position:"Query" name:"Forcerestart"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Parameters           string           `position:"Query" name:"Parameters"`
 }
 
 // ModifyParameterResponse is the response struct for api ModifyParameter

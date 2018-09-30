@@ -76,12 +76,12 @@ func (client *Client) UpgradeDBInstanceNetworkWithCallback(request *UpgradeDBIns
 // UpgradeDBInstanceNetworkRequest is the request struct for api UpgradeDBInstanceNetwork
 type UpgradeDBInstanceNetworkRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ConnectionString     string           `position:"Query" name:"ConnectionString"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // UpgradeDBInstanceNetworkResponse is the response struct for api UpgradeDBInstanceNetwork

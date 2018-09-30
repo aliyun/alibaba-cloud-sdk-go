@@ -77,6 +77,7 @@ func (client *Client) RemoveIpControlPolicyItemWithCallback(request *RemoveIpCon
 type RemoveIpControlPolicyItemRequest struct {
 	*requests.RpcRequest
 	IpControlId   string `position:"Query" name:"IpControlId"`
+	SecurityToken string `position:"Query" name:"SecurityToken"`
 	PolicyItemIds string `position:"Query" name:"PolicyItemIds"`
 }
 

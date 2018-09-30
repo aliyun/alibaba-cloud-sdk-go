@@ -1,3 +1,75 @@
+2018-09-29 Version: 1.31.3
+1, Sync cdn api.
+
+2018-09-29 Version: 1.31.2
+1, This is an example of release-log.
+2, Please strictly follow this format to edit in English.
+3, Format：Number + , + Space + Description
+
+2018-09-29 Version: 1.31.1
+1, This is an example of release-log.
+2, Please strictly follow this format to edit in English.
+3, Format：Number + , + Space + Description
+
+2018-09-27 Version: 1.31.0
+1, Add new API ListQueues, modify API SetAutoScaleConfig to support queue related features.
+
+2018-09-27 Version: 1.30.8
+1, modify getFaces Api
+
+2018-09-27 Version: 1.30.7
+1, modify getFaces Api
+
+2018-09-25 Version: 1.30.6
+1, Add GetHotlineRecord and QueryHotlineRecord interface, version 1.0.0
+
+2018-09-25 Version: 1.30.5
+1, Fix bug in GetVerifyToken and SubmitMaterials API.
+
+2018-09-22 Version: 1.30.4
+1, update
+
+2018-09-20 Version: 1.30.3
+1, Fix publish failure for Java, Python and C# SDK.
+
+2018-09-20 Version: 1.30.2
+1, BssOpenApi first deploy.
+
+2018-09-20 Version: 1.30.1
+1, BssOpenApi first deploy.
+
+2018-09-19 Version: 1.30.0
+1, Add ens api, include SaveSingleTaskForDisassociatingEns, SaveSingleTaskForAssociatingEns, QueryLocalEnsAssociation and QueryEnsAssociation.
+
+2018-09-17 Version: 1.29.10
+1, Add field for AddCasterVideoResource, DescribeCasterVideoResources, ModifyCasterVideoResource.
+
+
+2018-09-17 Version: 1.29.9
+1, describeRegions modify.
+
+2018-09-17 Version: 1.29.8
+1, ModifySecurityIps support WhitelistNetworkType 
+
+2018-09-16 Version: 1.29.7
+1, add CheckInstanceExist OpenApi.
+
+2018-09-14 Version: 1.29.6
+1, Add DedicatedHost Feature
+
+2018-09-13 Version: 1.29.5
+1, modify CheckDBInstance OpenApi
+
+2018-09-13 Version: 1.29.4
+1, Add CreateChannelToken.
+
+
+2018-09-11 Version: 1.29.3
+1, add CheckDBInstance OpenApi.
+
+2018-09-06 Version: 1.29.2
+1, fixed DescirbeRegions zoneId date type.
+
 2018-09-06 Version: 1.29.1
 1, AutoScaling support launchTemplate.
 

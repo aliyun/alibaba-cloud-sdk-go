@@ -76,32 +76,32 @@ func (client *Client) SaveBatchTaskForCreatingOrderActivateWithCallback(request 
 // SaveBatchTaskForCreatingOrderActivateRequest is the request struct for api SaveBatchTaskForCreatingOrderActivate
 type SaveBatchTaskForCreatingOrderActivateRequest struct {
 	*requests.RpcRequest
+	OrderActivateParam *[]SaveBatchTaskForCreatingOrderActivateOrderActivateParam `position:"Query" name:"OrderActivateParam"  type:"Repeated"`
 	UserClientIp       string                                                     `position:"Query" name:"UserClientIp"`
 	Lang               string                                                     `position:"Query" name:"Lang"`
-	OrderActivateParam *[]SaveBatchTaskForCreatingOrderActivateOrderActivateParam `position:"Query" name:"OrderActivateParam"  type:"Repeated"`
 }
 
 // SaveBatchTaskForCreatingOrderActivateOrderActivateParam is a repeated param struct in SaveBatchTaskForCreatingOrderActivateRequest
 type SaveBatchTaskForCreatingOrderActivateOrderActivateParam struct {
-	DomainName              string `name:"DomainName"`
-	SubscriptionDuration    string `name:"SubscriptionDuration"`
-	RegistrantProfileId     string `name:"RegistrantProfileId"`
-	EnableDomainProxy       string `name:"EnableDomainProxy"`
-	PermitPremiumActivation string `name:"PermitPremiumActivation"`
-	AliyunDns               string `name:"AliyunDns"`
-	Dns1                    string `name:"Dns1"`
-	Dns2                    string `name:"Dns2"`
 	Country                 string `name:"Country"`
-	City                    string `name:"City"`
-	RegistrantOrganization  string `name:"RegistrantOrganization"`
-	RegistrantName          string `name:"RegistrantName"`
-	Province                string `name:"Province"`
+	SubscriptionDuration    string `name:"SubscriptionDuration"`
 	Address                 string `name:"Address"`
-	Email                   string `name:"Email"`
-	PostalCode              string `name:"PostalCode"`
+	PermitPremiumActivation string `name:"PermitPremiumActivation"`
 	TelArea                 string `name:"TelArea"`
+	City                    string `name:"City"`
+	Dns2                    string `name:"Dns2"`
+	Dns1                    string `name:"Dns1"`
+	DomainName              string `name:"DomainName"`
+	RegistrantProfileId     string `name:"RegistrantProfileId"`
 	Telephone               string `name:"Telephone"`
+	AliyunDns               string `name:"AliyunDns"`
+	RegistrantOrganization  string `name:"RegistrantOrganization"`
 	TelExt                  string `name:"TelExt"`
+	Province                string `name:"Province"`
+	PostalCode              string `name:"PostalCode"`
+	EnableDomainProxy       string `name:"EnableDomainProxy"`
+	Email                   string `name:"Email"`
+	RegistrantName          string `name:"RegistrantName"`
 }
 
 // SaveBatchTaskForCreatingOrderActivateResponse is the response struct for api SaveBatchTaskForCreatingOrderActivate

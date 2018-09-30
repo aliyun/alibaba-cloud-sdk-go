@@ -76,6 +76,12 @@ func (client *Client) DescribeDcdnDomainLogWithCallback(request *DescribeDcdnDom
 // DescribeDcdnDomainLogRequest is the request struct for api DescribeDcdnDomainLog
 type DescribeDcdnDomainLogRequest struct {
 	*requests.RpcRequest
+	StartTime  string           `position:"Query" name:"StartTime"`
+	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize   requests.Integer `position:"Query" name:"PageSize"`
+	DomainName string           `position:"Query" name:"DomainName"`
+	EndTime    string           `position:"Query" name:"EndTime"`
+	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeDcdnDomainLogResponse is the response struct for api DescribeDcdnDomainLog
@@ -91,7 +97,7 @@ func CreateDescribeDcdnDomainLogRequest() (request *DescribeDcdnDomainLogRequest
 	request = &DescribeDcdnDomainLogRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dcdn", "2018-01-15", "DescribeDcdnDomainLog", "dcdn", "openAPI")
+	request.InitWithApiInfo("dcdn", "2018-01-15", "DescribeDcdnDomainLog", "", "")
 	return
 }
 

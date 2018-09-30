@@ -76,7 +76,9 @@ func (client *Client) CheckDomainWithCallback(request *CheckDomainRequest, callb
 // CheckDomainRequest is the request struct for api CheckDomain
 type CheckDomainRequest struct {
 	*requests.RpcRequest
-	DomainName string `position:"Query" name:"DomainName"`
+	DomainName   string `position:"Query" name:"DomainName"`
+	UserClientIp string `position:"Query" name:"UserClientIp"`
+	Lang         string `position:"Query" name:"Lang"`
 }
 
 // CheckDomainResponse is the response struct for api CheckDomain

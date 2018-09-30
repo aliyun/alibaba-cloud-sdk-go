@@ -76,14 +76,14 @@ func (client *Client) ModifySQLCollectorPolicyWithCallback(request *ModifySQLCol
 // ModifySQLCollectorPolicyRequest is the request struct for api ModifySQLCollectorPolicy
 type ModifySQLCollectorPolicyRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	SQLCollectorStatus   string           `position:"Query" name:"SQLCollectorStatus"`
 	StoragePeriod        requests.Integer `position:"Query" name:"StoragePeriod"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	SQLCollectorStatus   string           `position:"Query" name:"SQLCollectorStatus"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // ModifySQLCollectorPolicyResponse is the response struct for api ModifySQLCollectorPolicy

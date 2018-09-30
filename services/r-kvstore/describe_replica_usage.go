@@ -76,13 +76,14 @@ func (client *Client) DescribeReplicaUsageWithCallback(request *DescribeReplicaU
 // DescribeReplicaUsageRequest is the request struct for api DescribeReplicaUsage
 type DescribeReplicaUsageRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	SourceDBInstanceId   string           `position:"Query" name:"SourceDBInstanceId"`
-	SecurityToken        string           `position:"Query" name:"SecurityToken"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	ReplicaId            string           `position:"Query" name:"ReplicaId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerId         requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	SourceDBInstanceId      string           `position:"Query" name:"SourceDBInstanceId"`
+	DestinationDBInstanceId string           `position:"Query" name:"DestinationDBInstanceId"`
+	SecurityToken           string           `position:"Query" name:"SecurityToken"`
+	ResourceOwnerAccount    string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount            string           `position:"Query" name:"OwnerAccount"`
+	ReplicaId               string           `position:"Query" name:"ReplicaId"`
+	OwnerId                 requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeReplicaUsageResponse is the response struct for api DescribeReplicaUsage

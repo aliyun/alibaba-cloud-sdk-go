@@ -76,13 +76,11 @@ func (client *Client) DescribeScdnDomainOriginTrafficDataWithCallback(request *D
 // DescribeScdnDomainOriginTrafficDataRequest is the request struct for api DescribeScdnDomainOriginTrafficData
 type DescribeScdnDomainOriginTrafficDataRequest struct {
 	*requests.RpcRequest
-	StartTime     string           `position:"Query" name:"StartTime"`
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
-	DomainName    string           `position:"Query" name:"DomainName"`
-	EndTime       string           `position:"Query" name:"EndTime"`
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
-	Version       string           `position:"Query" name:"Version"`
-	Interval      string           `position:"Query" name:"Interval"`
+	StartTime  string           `position:"Query" name:"StartTime"`
+	DomainName string           `position:"Query" name:"DomainName"`
+	EndTime    string           `position:"Query" name:"EndTime"`
+	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
+	Interval   string           `position:"Query" name:"Interval"`
 }
 
 // DescribeScdnDomainOriginTrafficDataResponse is the response struct for api DescribeScdnDomainOriginTrafficData

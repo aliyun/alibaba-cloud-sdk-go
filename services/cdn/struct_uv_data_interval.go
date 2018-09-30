@@ -17,5 +17,5 @@ package cdn
 
 // UvDataInterval is a nested struct in cdn response
 type UvDataInterval struct {
-	UsageData []UsageData `json:"UsageData" xml:"UsageData"`
+	UsageData []UsageDataInDescribeDomainUvData `json:"UsageData" xml:"UsageData"`
 }

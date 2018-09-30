@@ -76,9 +76,10 @@ func (client *Client) DeleteApiStageVariableWithCallback(request *DeleteApiStage
 // DeleteApiStageVariableRequest is the request struct for api DeleteApiStageVariable
 type DeleteApiStageVariableRequest struct {
 	*requests.RpcRequest
-	GroupId      string `position:"Query" name:"GroupId"`
-	StageId      string `position:"Query" name:"StageId"`
-	VariableName string `position:"Query" name:"VariableName"`
+	SecurityToken string `position:"Query" name:"SecurityToken"`
+	VariableName  string `position:"Query" name:"VariableName"`
+	GroupId       string `position:"Query" name:"GroupId"`
+	StageId       string `position:"Query" name:"StageId"`
 }
 
 // DeleteApiStageVariableResponse is the response struct for api DeleteApiStageVariable

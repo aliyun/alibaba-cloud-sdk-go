@@ -76,13 +76,13 @@ func (client *Client) CreatePolicyWithSpecifiedPolicyWithCallback(request *Creat
 // CreatePolicyWithSpecifiedPolicyRequest is the request struct for api CreatePolicyWithSpecifiedPolicy
 type CreatePolicyWithSpecifiedPolicyRequest struct {
 	*requests.RpcRequest
-	SecurityToken        string           `position:"Query" name:"SecurityToken"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	PolicyId             string           `position:"Query" name:"PolicyId"`
+	SecurityToken        string           `position:"Query" name:"SecurityToken"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	PolicyId             string           `position:"Query" name:"PolicyId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // CreatePolicyWithSpecifiedPolicyResponse is the response struct for api CreatePolicyWithSpecifiedPolicy

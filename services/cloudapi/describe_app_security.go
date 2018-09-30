@@ -76,7 +76,8 @@ func (client *Client) DescribeAppSecurityWithCallback(request *DescribeAppSecuri
 // DescribeAppSecurityRequest is the request struct for api DescribeAppSecurity
 type DescribeAppSecurityRequest struct {
 	*requests.RpcRequest
-	AppId requests.Integer `position:"Query" name:"AppId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	AppId         requests.Integer `position:"Query" name:"AppId"`
 }
 
 // DescribeAppSecurityResponse is the response struct for api DescribeAppSecurity

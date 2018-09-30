@@ -76,17 +76,17 @@ func (client *Client) DescribeDcdnUserDomainsWithCallback(request *DescribeDcdnU
 // DescribeDcdnUserDomainsRequest is the request struct for api DescribeDcdnUserDomains
 type DescribeDcdnUserDomainsRequest struct {
 	*requests.RpcRequest
-	OwnerId          requests.Integer `position:"Query" name:"OwnerId"`
-	SecurityToken    string           `position:"Query" name:"SecurityToken"`
-	PageSize         requests.Integer `position:"Query" name:"PageSize"`
-	PageNumber       requests.Integer `position:"Query" name:"PageNumber"`
+	FuncFilter       string           `position:"Query" name:"FuncFilter"`
 	DomainName       string           `position:"Query" name:"DomainName"`
+	OwnerId          requests.Integer `position:"Query" name:"OwnerId"`
+	FuncId           string           `position:"Query" name:"FuncId"`
+	PageNumber       requests.Integer `position:"Query" name:"PageNumber"`
 	DomainStatus     string           `position:"Query" name:"DomainStatus"`
 	DomainSearchType string           `position:"Query" name:"DomainSearchType"`
 	CheckDomainShow  requests.Boolean `position:"Query" name:"CheckDomainShow"`
 	ResourceGroupId  string           `position:"Query" name:"ResourceGroupId"`
-	FuncId           string           `position:"Query" name:"FuncId"`
-	FuncFilter       string           `position:"Query" name:"FuncFilter"`
+	SecurityToken    string           `position:"Query" name:"SecurityToken"`
+	PageSize         requests.Integer `position:"Query" name:"PageSize"`
 }
 
 // DescribeDcdnUserDomainsResponse is the response struct for api DescribeDcdnUserDomains
@@ -105,7 +105,7 @@ func CreateDescribeDcdnUserDomainsRequest() (request *DescribeDcdnUserDomainsReq
 	request = &DescribeDcdnUserDomainsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dcdn", "2018-01-15", "DescribeDcdnUserDomains", "dcdn", "openAPI")
+	request.InitWithApiInfo("dcdn", "2018-01-15", "DescribeDcdnUserDomains", "", "")
 	return
 }
 

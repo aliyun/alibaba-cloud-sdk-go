@@ -76,13 +76,13 @@ func (client *Client) DescribeDampPolicyByCommentWithCallback(request *DescribeD
 // DescribeDampPolicyByCommentRequest is the request struct for api DescribeDampPolicyByComment
 type DescribeDampPolicyByCommentRequest struct {
 	*requests.RpcRequest
-	SecurityToken        string           `position:"Query" name:"SecurityToken"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	SecurityToken        string           `position:"Query" name:"SecurityToken"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	PolicyName           string           `position:"Query" name:"PolicyName"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeDampPolicyByCommentResponse is the response struct for api DescribeDampPolicyByComment

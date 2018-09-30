@@ -76,9 +76,9 @@ func (client *Client) LoginDBInstancefromCloudDBAWithCallback(request *LoginDBIn
 // LoginDBInstancefromCloudDBARequest is the request struct for api LoginDBInstancefromCloudDBA
 type LoginDBInstancefromCloudDBARequest struct {
 	*requests.RpcRequest
+	ServiceRequestParam string `position:"Query" name:"ServiceRequestParam"`
 	DBInstanceId        string `position:"Query" name:"DBInstanceId"`
 	ServiceRequestType  string `position:"Query" name:"ServiceRequestType"`
-	ServiceRequestParam string `position:"Query" name:"ServiceRequestParam"`
 }
 
 // LoginDBInstancefromCloudDBAResponse is the response struct for api LoginDBInstancefromCloudDBA

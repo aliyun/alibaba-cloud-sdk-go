@@ -76,8 +76,9 @@ func (client *Client) DeleteDomainWithCallback(request *DeleteDomainRequest, cal
 // DeleteDomainRequest is the request struct for api DeleteDomain
 type DeleteDomainRequest struct {
 	*requests.RpcRequest
-	GroupId    string `position:"Query" name:"GroupId"`
-	DomainName string `position:"Query" name:"DomainName"`
+	SecurityToken string `position:"Query" name:"SecurityToken"`
+	GroupId       string `position:"Query" name:"GroupId"`
+	DomainName    string `position:"Query" name:"DomainName"`
 }
 
 // DeleteDomainResponse is the response struct for api DeleteDomain

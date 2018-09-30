@@ -76,10 +76,10 @@ func (client *Client) TransferInReenterTransferAuthorizationCodeWithCallback(req
 // TransferInReenterTransferAuthorizationCodeRequest is the request struct for api TransferInReenterTransferAuthorizationCode
 type TransferInReenterTransferAuthorizationCodeRequest struct {
 	*requests.RpcRequest
-	DomainName                string `position:"Query" name:"DomainName"`
-	Lang                      string `position:"Query" name:"Lang"`
-	UserClientIp              string `position:"Query" name:"UserClientIp"`
 	TransferAuthorizationCode string `position:"Query" name:"TransferAuthorizationCode"`
+	DomainName                string `position:"Query" name:"DomainName"`
+	UserClientIp              string `position:"Query" name:"UserClientIp"`
+	Lang                      string `position:"Query" name:"Lang"`
 }
 
 // TransferInReenterTransferAuthorizationCodeResponse is the response struct for api TransferInReenterTransferAuthorizationCode

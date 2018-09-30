@@ -76,13 +76,13 @@ func (client *Client) DescribeOptimizeAdviceOnMissIndexWithCallback(request *Des
 // DescribeOptimizeAdviceOnMissIndexRequest is the request struct for api DescribeOptimizeAdviceOnMissIndex
 type DescribeOptimizeAdviceOnMissIndexRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 // DescribeOptimizeAdviceOnMissIndexResponse is the response struct for api DescribeOptimizeAdviceOnMissIndex

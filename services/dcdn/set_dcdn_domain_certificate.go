@@ -76,15 +76,15 @@ func (client *Client) SetDcdnDomainCertificateWithCallback(request *SetDcdnDomai
 // SetDcdnDomainCertificateRequest is the request struct for api SetDcdnDomainCertificate
 type SetDcdnDomainCertificateRequest struct {
 	*requests.RpcRequest
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
-	DomainName    string           `position:"Query" name:"DomainName"`
-	CertName      string           `position:"Query" name:"CertName"`
 	CertType      string           `position:"Query" name:"CertType"`
-	SSLProtocol   string           `position:"Query" name:"SSLProtocol"`
 	SSLPub        string           `position:"Query" name:"SSLPub"`
-	SSLPri        string           `position:"Query" name:"SSLPri"`
+	CertName      string           `position:"Query" name:"CertName"`
+	SSLProtocol   string           `position:"Query" name:"SSLProtocol"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	Region        string           `position:"Query" name:"Region"`
+	SSLPri        string           `position:"Query" name:"SSLPri"`
 }
 
 // SetDcdnDomainCertificateResponse is the response struct for api SetDcdnDomainCertificate
@@ -98,7 +98,7 @@ func CreateSetDcdnDomainCertificateRequest() (request *SetDcdnDomainCertificateR
 	request = &SetDcdnDomainCertificateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dcdn", "2018-01-15", "SetDcdnDomainCertificate", "dcdn", "openAPI")
+	request.InitWithApiInfo("dcdn", "2018-01-15", "SetDcdnDomainCertificate", "", "")
 	return
 }
 

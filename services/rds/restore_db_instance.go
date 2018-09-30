@@ -76,13 +76,13 @@ func (client *Client) RestoreDBInstanceWithCallback(request *RestoreDBInstanceRe
 // RestoreDBInstanceRequest is the request struct for api RestoreDBInstance
 type RestoreDBInstanceRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	BackupId             string           `position:"Query" name:"BackupId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // RestoreDBInstanceResponse is the response struct for api RestoreDBInstance

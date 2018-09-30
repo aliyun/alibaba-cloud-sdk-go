@@ -76,10 +76,11 @@ func (client *Client) RemoveSignatureApisWithCallback(request *RemoveSignatureAp
 // RemoveSignatureApisRequest is the request struct for api RemoveSignatureApis
 type RemoveSignatureApisRequest struct {
 	*requests.RpcRequest
-	SignatureId string `position:"Query" name:"SignatureId"`
-	GroupId     string `position:"Query" name:"GroupId"`
-	ApiIds      string `position:"Query" name:"ApiIds"`
-	StageName   string `position:"Query" name:"StageName"`
+	StageName     string `position:"Query" name:"StageName"`
+	SecurityToken string `position:"Query" name:"SecurityToken"`
+	GroupId       string `position:"Query" name:"GroupId"`
+	SignatureId   string `position:"Query" name:"SignatureId"`
+	ApiIds        string `position:"Query" name:"ApiIds"`
 }
 
 // RemoveSignatureApisResponse is the response struct for api RemoveSignatureApis

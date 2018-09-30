@@ -80,7 +80,6 @@ type AddCdnDomainRequest struct {
 	Sources         string           `position:"Query" name:"Sources"`
 	OwnerAccount    string           `position:"Query" name:"OwnerAccount"`
 	DomainName      string           `position:"Query" name:"DomainName"`
-	LiveType        string           `position:"Query" name:"LiveType"`
 	OwnerId         requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
 	SourcePort      requests.Integer `position:"Query" name:"SourcePort"`

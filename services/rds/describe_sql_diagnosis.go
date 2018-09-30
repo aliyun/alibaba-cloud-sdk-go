@@ -76,8 +76,8 @@ func (client *Client) DescribeSQLDiagnosisWithCallback(request *DescribeSQLDiagn
 // DescribeSQLDiagnosisRequest is the request struct for api DescribeSQLDiagnosis
 type DescribeSQLDiagnosisRequest struct {
 	*requests.RpcRequest
-	DBInstanceId string `position:"Query" name:"DBInstanceId"`
 	SQLDiagId    string `position:"Query" name:"SQLDiagId"`
+	DBInstanceId string `position:"Query" name:"DBInstanceId"`
 }
 
 // DescribeSQLDiagnosisResponse is the response struct for api DescribeSQLDiagnosis

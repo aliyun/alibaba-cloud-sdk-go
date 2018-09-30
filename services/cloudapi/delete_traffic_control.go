@@ -77,6 +77,7 @@ func (client *Client) DeleteTrafficControlWithCallback(request *DeleteTrafficCon
 type DeleteTrafficControlRequest struct {
 	*requests.RpcRequest
 	TrafficControlId string `position:"Query" name:"TrafficControlId"`
+	SecurityToken    string `position:"Query" name:"SecurityToken"`
 }
 
 // DeleteTrafficControlResponse is the response struct for api DeleteTrafficControl

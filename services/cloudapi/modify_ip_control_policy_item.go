@@ -76,10 +76,11 @@ func (client *Client) ModifyIpControlPolicyItemWithCallback(request *ModifyIpCon
 // ModifyIpControlPolicyItemRequest is the request struct for api ModifyIpControlPolicyItem
 type ModifyIpControlPolicyItemRequest struct {
 	*requests.RpcRequest
-	IpControlId  string `position:"Query" name:"IpControlId"`
-	PolicyItemId string `position:"Query" name:"PolicyItemId"`
-	AppId        string `position:"Query" name:"AppId"`
-	CidrIp       string `position:"Query" name:"CidrIp"`
+	IpControlId   string `position:"Query" name:"IpControlId"`
+	PolicyItemId  string `position:"Query" name:"PolicyItemId"`
+	SecurityToken string `position:"Query" name:"SecurityToken"`
+	AppId         string `position:"Query" name:"AppId"`
+	CidrIp        string `position:"Query" name:"CidrIp"`
 }
 
 // ModifyIpControlPolicyItemResponse is the response struct for api ModifyIpControlPolicyItem

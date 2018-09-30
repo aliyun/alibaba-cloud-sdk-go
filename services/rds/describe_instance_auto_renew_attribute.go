@@ -76,15 +76,15 @@ func (client *Client) DescribeInstanceAutoRenewAttributeWithCallback(request *De
 // DescribeInstanceAutoRenewAttributeRequest is the request struct for api DescribeInstanceAutoRenewAttribute
 type DescribeInstanceAutoRenewAttributeRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
-	ProxyId              string           `position:"Query" name:"proxyId"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	ProxyId              string           `position:"Query" name:"proxyId"`
 }
 
 // DescribeInstanceAutoRenewAttributeResponse is the response struct for api DescribeInstanceAutoRenewAttribute

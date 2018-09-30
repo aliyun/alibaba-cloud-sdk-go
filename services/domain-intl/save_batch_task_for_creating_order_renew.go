@@ -77,15 +77,15 @@ func (client *Client) SaveBatchTaskForCreatingOrderRenewWithCallback(request *Sa
 type SaveBatchTaskForCreatingOrderRenewRequest struct {
 	*requests.RpcRequest
 	UserClientIp    string                                               `position:"Query" name:"UserClientIp"`
-	Lang            string                                               `position:"Query" name:"Lang"`
 	OrderRenewParam *[]SaveBatchTaskForCreatingOrderRenewOrderRenewParam `position:"Query" name:"OrderRenewParam"  type:"Repeated"`
+	Lang            string                                               `position:"Query" name:"Lang"`
 }
 
 // SaveBatchTaskForCreatingOrderRenewOrderRenewParam is a repeated param struct in SaveBatchTaskForCreatingOrderRenewRequest
 type SaveBatchTaskForCreatingOrderRenewOrderRenewParam struct {
-	DomainName            string `name:"DomainName"`
-	CurrentExpirationDate string `name:"CurrentExpirationDate"`
 	SubscriptionDuration  string `name:"SubscriptionDuration"`
+	CurrentExpirationDate string `name:"CurrentExpirationDate"`
+	DomainName            string `name:"DomainName"`
 }
 
 // SaveBatchTaskForCreatingOrderRenewResponse is the response struct for api SaveBatchTaskForCreatingOrderRenew

@@ -86,8 +86,8 @@ type DescribeDomainDownstreamBpsOfEdgeRequest struct {
 // DescribeDomainDownstreamBpsOfEdgeResponse is the response struct for api DescribeDomainDownstreamBpsOfEdge
 type DescribeDomainDownstreamBpsOfEdgeResponse struct {
 	*responses.BaseResponse
-	RequestId string                                      `json:"RequestId" xml:"RequestId"`
-	BpsDatas  BpsDatasInDescribeDomainDownstreamBpsOfEdge `json:"BpsDatas" xml:"BpsDatas"`
+	RequestId string   `json:"RequestId" xml:"RequestId"`
+	BpsDatas  BpsDatas `json:"BpsDatas" xml:"BpsDatas"`
 }
 
 // CreateDescribeDomainDownstreamBpsOfEdgeRequest creates a request to invoke DescribeDomainDownstreamBpsOfEdge API

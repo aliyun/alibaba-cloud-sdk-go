@@ -76,13 +76,13 @@ func (client *Client) StartDBInstanceDiagnoseWithCallback(request *StartDBInstan
 // StartDBInstanceDiagnoseRequest is the request struct for api StartDBInstanceDiagnose
 type StartDBInstanceDiagnoseRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
-	ProxyId              string           `position:"Query" name:"proxyId"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ProxyId              string           `position:"Query" name:"proxyId"`
 }
 
 // StartDBInstanceDiagnoseResponse is the response struct for api StartDBInstanceDiagnose

@@ -82,22 +82,23 @@ type GetAutoScaleConfigRequest struct {
 // GetAutoScaleConfigResponse is the response struct for api GetAutoScaleConfig
 type GetAutoScaleConfigResponse struct {
 	*responses.BaseResponse
-	RequestId               string `json:"RequestId" xml:"RequestId"`
-	Uid                     string `json:"Uid" xml:"Uid"`
-	ClusterId               string `json:"ClusterId" xml:"ClusterId"`
-	ClusterType             string `json:"ClusterType" xml:"ClusterType"`
-	EnableAutoGrow          bool   `json:"EnableAutoGrow" xml:"EnableAutoGrow"`
-	EnableAutoShrink        bool   `json:"EnableAutoShrink" xml:"EnableAutoShrink"`
-	GrowIntervalInMinutes   int    `json:"GrowIntervalInMinutes" xml:"GrowIntervalInMinutes"`
-	ShrinkIntervalInMinutes int    `json:"ShrinkIntervalInMinutes" xml:"ShrinkIntervalInMinutes"`
-	ShrinkIdleTimes         int    `json:"ShrinkIdleTimes" xml:"ShrinkIdleTimes"`
-	GrowTimeoutInMinutes    int    `json:"GrowTimeoutInMinutes" xml:"GrowTimeoutInMinutes"`
-	ExtraNodesGrowRatio     int    `json:"ExtraNodesGrowRatio" xml:"ExtraNodesGrowRatio"`
-	GrowRatio               int    `json:"GrowRatio" xml:"GrowRatio"`
-	MaxNodesInCluster       int    `json:"MaxNodesInCluster" xml:"MaxNodesInCluster"`
-	ExcludeNodes            string `json:"ExcludeNodes" xml:"ExcludeNodes"`
-	SpotStrategy            string `json:"SpotStrategy" xml:"SpotStrategy"`
-	SpotPriceLimit          string `json:"SpotPriceLimit" xml:"SpotPriceLimit"`
+	RequestId               string                     `json:"RequestId" xml:"RequestId"`
+	Uid                     string                     `json:"Uid" xml:"Uid"`
+	ClusterId               string                     `json:"ClusterId" xml:"ClusterId"`
+	ClusterType             string                     `json:"ClusterType" xml:"ClusterType"`
+	EnableAutoGrow          bool                       `json:"EnableAutoGrow" xml:"EnableAutoGrow"`
+	EnableAutoShrink        bool                       `json:"EnableAutoShrink" xml:"EnableAutoShrink"`
+	GrowIntervalInMinutes   int                        `json:"GrowIntervalInMinutes" xml:"GrowIntervalInMinutes"`
+	ShrinkIntervalInMinutes int                        `json:"ShrinkIntervalInMinutes" xml:"ShrinkIntervalInMinutes"`
+	ShrinkIdleTimes         int                        `json:"ShrinkIdleTimes" xml:"ShrinkIdleTimes"`
+	GrowTimeoutInMinutes    int                        `json:"GrowTimeoutInMinutes" xml:"GrowTimeoutInMinutes"`
+	ExtraNodesGrowRatio     int                        `json:"ExtraNodesGrowRatio" xml:"ExtraNodesGrowRatio"`
+	GrowRatio               int                        `json:"GrowRatio" xml:"GrowRatio"`
+	MaxNodesInCluster       int                        `json:"MaxNodesInCluster" xml:"MaxNodesInCluster"`
+	ExcludeNodes            string                     `json:"ExcludeNodes" xml:"ExcludeNodes"`
+	SpotStrategy            string                     `json:"SpotStrategy" xml:"SpotStrategy"`
+	SpotPriceLimit          float64                    `json:"SpotPriceLimit" xml:"SpotPriceLimit"`
+	Queues                  QueuesInGetAutoScaleConfig `json:"Queues" xml:"Queues"`
 }
 
 // CreateGetAutoScaleConfigRequest creates a request to invoke GetAutoScaleConfig API

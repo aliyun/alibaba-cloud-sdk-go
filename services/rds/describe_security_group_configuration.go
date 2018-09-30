@@ -76,10 +76,10 @@ func (client *Client) DescribeSecurityGroupConfigurationWithCallback(request *De
 // DescribeSecurityGroupConfigurationRequest is the request struct for api DescribeSecurityGroupConfiguration
 type DescribeSecurityGroupConfigurationRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeSecurityGroupConfigurationResponse is the response struct for api DescribeSecurityGroupConfiguration
