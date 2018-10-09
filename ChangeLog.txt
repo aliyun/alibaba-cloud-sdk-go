@@ -1,3 +1,8 @@
+2018-10-09 Version: 1.31.5
+1, v1.0.0-->v1.0.1
+2, provider new region:beijing/shenzhen/zhangjiakou
+3, provider service for VPC user;
+
 2018-09-30 Version: 1.31.4
 1, This is an example of release-log.
 2, Please strictly follow this format to edit in English.
