@@ -90,14 +90,14 @@ type RegistFaceResponse struct {
 	*responses.BaseResponse
 	RequestId string   `json:"RequestId" xml:"RequestId"`
 	GroupId   string   `json:"GroupId" xml:"GroupId"`
-	ImageUrl  string   `json:"ImageUrl" xml:"ImageUrl"`
+	ImageUri  string   `json:"ImageUri" xml:"ImageUri"`
 	ImageMd5  string   `json:"ImageMd5" xml:"ImageMd5"`
 	ImageId   string   `json:"ImageId" xml:"ImageId"`
 	GroupName string   `json:"GroupName" xml:"GroupName"`
 	User      string   `json:"User" xml:"User"`
 	Roll      float64  `json:"Roll" xml:"Roll"`
 	FaceId    string   `json:"FaceId" xml:"FaceId"`
-	Yaw       string   `json:"Yaw" xml:"Yaw"`
+	Yaw       float64  `json:"Yaw" xml:"Yaw"`
 	Quality   float64  `json:"Quality" xml:"Quality"`
 	Glasses   int      `json:"Glasses" xml:"Glasses"`
 	Hat       int      `json:"Hat" xml:"Hat"`

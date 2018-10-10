@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// PutProject invokes the imm.PutProject API synchronously
-// api document: https://help.aliyun.com/api/imm/putproject.html
-func (client *Client) PutProject(request *PutProjectRequest) (response *PutProjectResponse, err error) {
-	response = CreatePutProjectResponse()
+// UpdateProject invokes the imm.UpdateProject API synchronously
+// api document: https://help.aliyun.com/api/imm/updateproject.html
+func (client *Client) UpdateProject(request *UpdateProjectRequest) (response *UpdateProjectResponse, err error) {
+	response = CreateUpdateProjectResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// PutProjectWithChan invokes the imm.PutProject API asynchronously
-// api document: https://help.aliyun.com/api/imm/putproject.html
+// UpdateProjectWithChan invokes the imm.UpdateProject API asynchronously
+// api document: https://help.aliyun.com/api/imm/updateproject.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) PutProjectWithChan(request *PutProjectRequest) (<-chan *PutProjectResponse, <-chan error) {
-	responseChan := make(chan *PutProjectResponse, 1)
+func (client *Client) UpdateProjectWithChan(request *UpdateProjectRequest) (<-chan *UpdateProjectResponse, <-chan error) {
+	responseChan := make(chan *UpdateProjectResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.PutProject(request)
+		response, err := client.UpdateProject(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) PutProjectWithChan(request *PutProjectRequest) (<-chan *Pu
 	return responseChan, errChan
 }
 
-// PutProjectWithCallback invokes the imm.PutProject API asynchronously
-// api document: https://help.aliyun.com/api/imm/putproject.html
+// UpdateProjectWithCallback invokes the imm.UpdateProject API asynchronously
+// api document: https://help.aliyun.com/api/imm/updateproject.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) PutProjectWithCallback(request *PutProjectRequest, callback func(response *PutProjectResponse, err error)) <-chan int {
+func (client *Client) UpdateProjectWithCallback(request *UpdateProjectRequest, callback func(response *UpdateProjectResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *PutProjectResponse
+		var response *UpdateProjectResponse
 		var err error
 		defer close(result)
-		response, err = client.PutProject(request)
+		response, err = client.UpdateProject(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,18 +73,16 @@ func (client *Client) PutProjectWithCallback(request *PutProjectRequest, callbac
 	return result
 }
 
-// PutProjectRequest is the request struct for api PutProject
-type PutProjectRequest struct {
+// UpdateProjectRequest is the request struct for api UpdateProject
+type UpdateProjectRequest struct {
 	*requests.RpcRequest
-	CU          requests.Integer `position:"Query" name:"CU"`
-	ServiceRole string           `position:"Query" name:"ServiceRole"`
-	Project     string           `position:"Query" name:"Project"`
-	BillingType string           `position:"Query" name:"BillingType"`
-	Type        string           `position:"Query" name:"Type"`
+	NewServiceRole string           `position:"Query" name:"NewServiceRole"`
+	Project        string           `position:"Query" name:"Project"`
+	NewCU          requests.Integer `position:"Query" name:"NewCU"`
 }
 
-// PutProjectResponse is the response struct for api PutProject
-type PutProjectResponse struct {
+// UpdateProjectResponse is the response struct for api UpdateProject
+type UpdateProjectResponse struct {
 	*responses.BaseResponse
 	RequestId   string `json:"RequestId" xml:"RequestId"`
 	Project     string `json:"Project" xml:"Project"`
@@ -93,22 +91,20 @@ type PutProjectResponse struct {
 	ServiceRole string `json:"ServiceRole" xml:"ServiceRole"`
 	CU          int    `json:"CU" xml:"CU"`
 	Type        string `json:"Type" xml:"Type"`
-	Endpoint    string `json:"Endpoint" xml:"Endpoint"`
-	BillingType string `json:"BillingType" xml:"BillingType"`
 }
 
-// CreatePutProjectRequest creates a request to invoke PutProject API
-func CreatePutProjectRequest() (request *PutProjectRequest) {
-	request = &PutProjectRequest{
+// CreateUpdateProjectRequest creates a request to invoke UpdateProject API
+func CreateUpdateProjectRequest() (request *UpdateProjectRequest) {
+	request = &UpdateProjectRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "PutProject", "imm", "openAPI")
+	request.InitWithApiInfo("imm", "2017-09-06", "UpdateProject", "imm", "openAPI")
 	return
 }
 
-// CreatePutProjectResponse creates a response to parse from PutProject response
-func CreatePutProjectResponse() (response *PutProjectResponse) {
-	response = &PutProjectResponse{
+// CreateUpdateProjectResponse creates a response to parse from UpdateProject response
+func CreateUpdateProjectResponse() (response *UpdateProjectResponse) {
+	response = &UpdateProjectResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

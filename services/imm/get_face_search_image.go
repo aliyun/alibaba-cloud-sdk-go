@@ -92,7 +92,7 @@ type GetFaceSearchImageResponse struct {
 	Gender    string   `json:"Gender" xml:"Gender"`
 	Age       int      `json:"Age" xml:"Age"`
 	Pitch     float64  `json:"Pitch" xml:"Pitch"`
-	ImageUrl  float64  `json:"ImageUrl" xml:"ImageUrl"`
+	ImageUri  string   `json:"ImageUri" xml:"ImageUri"`
 	ImageMd5  string   `json:"ImageMd5" xml:"ImageMd5"`
 	Roll      float64  `json:"Roll" xml:"Roll"`
 	FaceId    string   `json:"FaceId" xml:"FaceId"`

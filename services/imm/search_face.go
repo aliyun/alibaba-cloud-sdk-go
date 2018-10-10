@@ -88,7 +88,7 @@ type SearchFaceRequest struct {
 type SearchFaceResponse struct {
 	*responses.BaseResponse
 	RequestId   string            `json:"RequestId" xml:"RequestId"`
-	ImageUrl    string            `json:"ImageUrl" xml:"ImageUrl"`
+	ImageUri    string            `json:"ImageUri" xml:"ImageUri"`
 	GroupName   string            `json:"GroupName" xml:"GroupName"`
 	Glasses     int               `json:"Glasses" xml:"Glasses"`
 	Hat         int               `json:"Hat" xml:"Hat"`

@@ -17,6 +17,6 @@ package imm
 
 // FaceA is a nested struct in imm response
 type FaceA struct {
-	ImageUrl string   `json:"ImageUrl" xml:"ImageUrl"`
+	ImageUri string   `json:"ImageUri" xml:"ImageUri"`
 	Axis     []string `json:"Axis" xml:"Axis"`
 }

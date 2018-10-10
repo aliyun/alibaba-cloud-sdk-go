@@ -76,12 +76,10 @@ func (client *Client) CreateOfficeConversionTaskWithCallback(request *CreateOffi
 // CreateOfficeConversionTaskRequest is the request struct for api CreateOfficeConversionTask
 type CreateOfficeConversionTaskRequest struct {
 	*requests.RpcRequest
-	ImageSpec       string           `position:"Query" name:"ImageSpec"`
 	SrcType         string           `position:"Query" name:"SrcType"`
 	NotifyTopicName string           `position:"Query" name:"NotifyTopicName"`
 	ModelId         string           `position:"Query" name:"ModelId"`
 	Project         string           `position:"Query" name:"Project"`
-	ExternalID      string           `position:"Query" name:"ExternalID"`
 	MaxSheetRow     requests.Integer `position:"Query" name:"MaxSheetRow"`
 	MaxSheetCount   requests.Integer `position:"Query" name:"MaxSheetCount"`
 	EndPage         requests.Integer `position:"Query" name:"EndPage"`
@@ -92,7 +90,9 @@ type CreateOfficeConversionTaskRequest struct {
 	MaxSheetCol     requests.Integer `position:"Query" name:"MaxSheetCol"`
 	TgtType         string           `position:"Query" name:"TgtType"`
 	NotifyEndpoint  string           `position:"Query" name:"NotifyEndpoint"`
+	FitToPagesWide  requests.Boolean `position:"Query" name:"FitToPagesWide"`
 	TgtFilePrefix   string           `position:"Query" name:"TgtFilePrefix"`
+	FitToPagesTall  requests.Boolean `position:"Query" name:"FitToPagesTall"`
 	SrcUri          string           `position:"Query" name:"SrcUri"`
 	TgtFilePages    string           `position:"Query" name:"TgtFilePages"`
 	TgtUri          string           `position:"Query" name:"TgtUri"`

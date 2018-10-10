@@ -21,7 +21,7 @@ type ResultFacesItem struct {
 	User     string   `json:"User" xml:"User"`
 	ImageId  string   `json:"ImageId" xml:"ImageId"`
 	Score    float64  `json:"Score" xml:"Score"`
-	ImageUrl string   `json:"ImageUrl" xml:"ImageUrl"`
+	ImageUri string   `json:"ImageUri" xml:"ImageUri"`
 	Glasses  int      `json:"Glasses" xml:"Glasses"`
 	Hat      int      `json:"Hat" xml:"Hat"`
 	Axis     []string `json:"Axis" xml:"Axis"`

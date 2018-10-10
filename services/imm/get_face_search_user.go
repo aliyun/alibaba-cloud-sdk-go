@@ -86,7 +86,7 @@ type GetFaceSearchUserResponse struct {
 	*responses.BaseResponse
 	RequestId  string `json:"RequestId" xml:"RequestId"`
 	GroupName  string `json:"GroupName" xml:"GroupName"`
-	Count      string `json:"Count" xml:"Count"`
+	Count      int    `json:"Count" xml:"Count"`
 	Status     string `json:"Status" xml:"Status"`
 	CreateTime string `json:"CreateTime" xml:"CreateTime"`
 	ModifyTime string `json:"ModifyTime" xml:"ModifyTime"`

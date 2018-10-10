@@ -19,7 +19,7 @@ package imm
 type ImagesItem struct {
 	User     string   `json:"User" xml:"User"`
 	ImageId  string   `json:"ImageId" xml:"ImageId"`
-	ImageUrl string   `json:"ImageUrl" xml:"ImageUrl"`
+	ImageUri string   `json:"ImageUri" xml:"ImageUri"`
 	ImageMd5 string   `json:"ImageMd5" xml:"ImageMd5"`
 	Roll     float64  `json:"Roll" xml:"Roll"`
 	FaceId   string   `json:"FaceId" xml:"FaceId"`

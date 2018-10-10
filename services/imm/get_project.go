@@ -82,16 +82,15 @@ type GetProjectRequest struct {
 // GetProjectResponse is the response struct for api GetProject
 type GetProjectResponse struct {
 	*responses.BaseResponse
-	RequestId   string         `json:"RequestId" xml:"RequestId"`
-	Project     string         `json:"Project" xml:"Project"`
-	ServiceRole string         `json:"ServiceRole" xml:"ServiceRole"`
-	Endpoint    string         `json:"Endpoint" xml:"Endpoint"`
-	CreateTime  string         `json:"CreateTime" xml:"CreateTime"`
-	ModifyTime  string         `json:"ModifyTime" xml:"ModifyTime"`
-	Type        string         `json:"Type" xml:"Type"`
-	CU          int            `json:"CU" xml:"CU"`
-	Indexers    []IndexersItem `json:"Indexers" xml:"Indexers"`
-	Engines     []EnginesItem  `json:"Engines" xml:"Engines"`
+	RequestId   string `json:"RequestId" xml:"RequestId"`
+	Project     string `json:"Project" xml:"Project"`
+	ServiceRole string `json:"ServiceRole" xml:"ServiceRole"`
+	Endpoint    string `json:"Endpoint" xml:"Endpoint"`
+	CreateTime  string `json:"CreateTime" xml:"CreateTime"`
+	ModifyTime  string `json:"ModifyTime" xml:"ModifyTime"`
+	Type        string `json:"Type" xml:"Type"`
+	CU          int    `json:"CU" xml:"CU"`
+	BillingType string `json:"BillingType" xml:"BillingType"`
 }
 
 // CreateGetProjectRequest creates a request to invoke GetProject API
