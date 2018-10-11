@@ -76,7 +76,12 @@ func (client *Client) GetAuditResultWithCallback(request *GetAuditResultRequest,
 // GetAuditResultRequest is the request struct for api GetAuditResult
 type GetAuditResultRequest struct {
 	*requests.RpcRequest
-	VideoId string `position:"Query" name:"VideoId"`
+	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	VideoId              string `position:"Query" name:"VideoId"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
+	MediaId              string `position:"Query" name:"MediaId"`
 }
 
 // GetAuditResultResponse is the response struct for api GetAuditResult

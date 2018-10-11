@@ -1,3 +1,8 @@
+2018-10-11 Version: 1.31.7
+1, Add a new api called DeleteMezzanines to clear mezzanine infos and storages.
+2, Add the field called PlayConfig to GetVideoPlayAuth and GetPlayInfo api request.
+3, Add a new api called UpdateImageInfos to update image information.
+
 2018-10-10 Version: 1.31.6
 1, add UpdateProject api, support update CU, ServiceRole
 2, PutProject not support edit

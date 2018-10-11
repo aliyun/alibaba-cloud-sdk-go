@@ -87,6 +87,7 @@ type GetPlayInfoRequest struct {
 	ResultType           string           `position:"Query" name:"ResultType"`
 	Rand                 string           `position:"Query" name:"Rand"`
 	ReAuthInfo           string           `position:"Query" name:"ReAuthInfo"`
+	PlayConfig           string           `position:"Query" name:"PlayConfig"`
 	OutputType           string           `position:"Query" name:"OutputType"`
 	Definition           string           `position:"Query" name:"Definition"`
 	AuthTimeout          requests.Integer `position:"Query" name:"AuthTimeout"`
