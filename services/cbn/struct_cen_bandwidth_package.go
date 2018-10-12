@@ -24,6 +24,7 @@ type CenBandwidthPackage struct {
 	BandwidthPackageChargeType string `json:"BandwidthPackageChargeType" xml:"BandwidthPackageChargeType"`
 	GeographicRegionAId        string `json:"GeographicRegionAId" xml:"GeographicRegionAId"`
 	GeographicRegionBId        string `json:"GeographicRegionBId" xml:"GeographicRegionBId"`
+	GeographicSpanId           string `json:"GeographicSpanId" xml:"GeographicSpanId"`
 	BusinessStatus             string `json:"BusinessStatus" xml:"BusinessStatus"`
 	CreationTime               string `json:"CreationTime" xml:"CreationTime"`
 	ExpiredTime                string `json:"ExpiredTime" xml:"ExpiredTime"`

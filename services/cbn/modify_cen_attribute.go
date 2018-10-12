@@ -76,13 +76,14 @@ func (client *Client) ModifyCenAttributeWithCallback(request *ModifyCenAttribute
 // ModifyCenAttributeRequest is the request struct for api ModifyCenAttribute
 type ModifyCenAttributeRequest struct {
 	*requests.RpcRequest
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ProtectionLevel      string           `position:"Query" name:"ProtectionLevel"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	CenId                string           `position:"Query" name:"CenId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	Name                 string           `position:"Query" name:"Name"`
 	Description          string           `position:"Query" name:"Description"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // ModifyCenAttributeResponse is the response struct for api ModifyCenAttribute

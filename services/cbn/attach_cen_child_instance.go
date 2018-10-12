@@ -76,15 +76,15 @@ func (client *Client) AttachCenChildInstanceWithCallback(request *AttachCenChild
 // AttachCenChildInstanceRequest is the request struct for api AttachCenChildInstance
 type AttachCenChildInstanceRequest struct {
 	*requests.RpcRequest
+	ChildInstanceId       string           `position:"Query" name:"ChildInstanceId"`
+	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
+	CenId                 string           `position:"Query" name:"CenId"`
 	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
 	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	CenId                 string           `position:"Query" name:"CenId"`
-	ChildInstanceId       string           `position:"Query" name:"ChildInstanceId"`
 	ChildInstanceType     string           `position:"Query" name:"ChildInstanceType"`
-	ChildInstanceRegionId string           `position:"Query" name:"ChildInstanceRegionId"`
 	ChildInstanceOwnerId  requests.Integer `position:"Query" name:"ChildInstanceOwnerId"`
+	ChildInstanceRegionId string           `position:"Query" name:"ChildInstanceRegionId"`
 }
 
 // AttachCenChildInstanceResponse is the response struct for api AttachCenChildInstance

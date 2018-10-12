@@ -76,15 +76,15 @@ func (client *Client) DescribeCenGeographicSpanRemainingBandwidthWithCallback(re
 // DescribeCenGeographicSpanRemainingBandwidthRequest is the request struct for api DescribeCenGeographicSpanRemainingBandwidth
 type DescribeCenGeographicSpanRemainingBandwidthRequest struct {
 	*requests.RpcRequest
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	CenId                string           `position:"Query" name:"CenId"`
-	GeographicRegionAId  string           `position:"Query" name:"GeographicRegionAId"`
 	GeographicRegionBId  string           `position:"Query" name:"GeographicRegionBId"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	GeographicRegionAId  string           `position:"Query" name:"GeographicRegionAId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	CenId                string           `position:"Query" name:"CenId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 // DescribeCenGeographicSpanRemainingBandwidthResponse is the response struct for api DescribeCenGeographicSpanRemainingBandwidth

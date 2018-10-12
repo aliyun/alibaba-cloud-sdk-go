@@ -76,12 +76,12 @@ func (client *Client) AssociateCenBandwidthPackageWithCallback(request *Associat
 // AssociateCenBandwidthPackageRequest is the request struct for api AssociateCenBandwidthPackage
 type AssociateCenBandwidthPackageRequest struct {
 	*requests.RpcRequest
-	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
-	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
 	CenId                 string           `position:"Query" name:"CenId"`
 	CenBandwidthPackageId string           `position:"Query" name:"CenBandwidthPackageId"`
+	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
+	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // AssociateCenBandwidthPackageResponse is the response struct for api AssociateCenBandwidthPackage

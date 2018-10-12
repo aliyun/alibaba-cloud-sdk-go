@@ -1,3 +1,7 @@
+2018-10-12 Version: 1.31.8
+1, ModifyCenAttribute supports ProtectionLevel.
+2, New APIs: PublishRouteEntries/WithdrawPublishedRouteEntries/DescribePublishedRouteEntries
+
 2018-10-11 Version: 1.31.7
 1, Add a new api called DeleteMezzanines to clear mezzanine infos and storages.
 2, Add the field called PlayConfig to GetVideoPlayAuth and GetPlayInfo api request.

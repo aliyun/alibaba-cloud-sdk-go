@@ -76,16 +76,16 @@ func (client *Client) DescribeCenVbrHealthCheckWithCallback(request *DescribeCen
 // DescribeCenVbrHealthCheckRequest is the request struct for api DescribeCenVbrHealthCheck
 type DescribeCenVbrHealthCheckRequest struct {
 	*requests.RpcRequest
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	CenId                string           `position:"Query" name:"CenId"`
-	VbrInstanceRegionId  string           `position:"Query" name:"VbrInstanceRegionId"`
-	VbrInstanceId        string           `position:"Query" name:"VbrInstanceId"`
 	VbrInstanceOwnerId   requests.Integer `position:"Query" name:"VbrInstanceOwnerId"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	VbrInstanceId        string           `position:"Query" name:"VbrInstanceId"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	VbrInstanceRegionId  string           `position:"Query" name:"VbrInstanceRegionId"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 // DescribeCenVbrHealthCheckResponse is the response struct for api DescribeCenVbrHealthCheck

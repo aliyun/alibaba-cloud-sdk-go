@@ -76,11 +76,11 @@ func (client *Client) DeleteCenWithCallback(request *DeleteCenRequest, callback 
 // DeleteCenRequest is the request struct for api DeleteCen
 type DeleteCenRequest struct {
 	*requests.RpcRequest
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	CenId                string           `position:"Query" name:"CenId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	CenId                string           `position:"Query" name:"CenId"`
 }
 
 // DeleteCenResponse is the response struct for api DeleteCen

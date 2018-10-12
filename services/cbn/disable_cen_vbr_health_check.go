@@ -76,14 +76,14 @@ func (client *Client) DisableCenVbrHealthCheckWithCallback(request *DisableCenVb
 // DisableCenVbrHealthCheckRequest is the request struct for api DisableCenVbrHealthCheck
 type DisableCenVbrHealthCheckRequest struct {
 	*requests.RpcRequest
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	CenId                string           `position:"Query" name:"CenId"`
-	VbrInstanceRegionId  string           `position:"Query" name:"VbrInstanceRegionId"`
-	VbrInstanceId        string           `position:"Query" name:"VbrInstanceId"`
 	VbrInstanceOwnerId   requests.Integer `position:"Query" name:"VbrInstanceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	VbrInstanceId        string           `position:"Query" name:"VbrInstanceId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	VbrInstanceRegionId  string           `position:"Query" name:"VbrInstanceRegionId"`
 }
 
 // DisableCenVbrHealthCheckResponse is the response struct for api DisableCenVbrHealthCheck

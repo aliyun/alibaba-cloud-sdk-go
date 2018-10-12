@@ -76,12 +76,12 @@ func (client *Client) ModifyCenBandwidthPackageSpecWithCallback(request *ModifyC
 // ModifyCenBandwidthPackageSpecRequest is the request struct for api ModifyCenBandwidthPackageSpec
 type ModifyCenBandwidthPackageSpecRequest struct {
 	*requests.RpcRequest
+	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
+	Bandwidth             requests.Integer `position:"Query" name:"Bandwidth"`
+	CenBandwidthPackageId string           `position:"Query" name:"CenBandwidthPackageId"`
 	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
 	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	CenBandwidthPackageId string           `position:"Query" name:"CenBandwidthPackageId"`
-	Bandwidth             requests.Integer `position:"Query" name:"Bandwidth"`
 }
 
 // ModifyCenBandwidthPackageSpecResponse is the response struct for api ModifyCenBandwidthPackageSpec

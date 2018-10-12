@@ -76,20 +76,20 @@ func (client *Client) CreateCenBandwidthPackageWithCallback(request *CreateCenBa
 // CreateCenBandwidthPackageRequest is the request struct for api CreateCenBandwidthPackage
 type CreateCenBandwidthPackageRequest struct {
 	*requests.RpcRequest
-	OwnerAccount               string           `position:"Query" name:"OwnerAccount"`
-	OwnerId                    requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount       string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId            requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ClientToken                string           `position:"Query" name:"ClientToken"`
-	Name                       string           `position:"Query" name:"Name"`
-	Description                string           `position:"Query" name:"Description"`
-	Bandwidth                  requests.Integer `position:"Query" name:"Bandwidth"`
-	GeographicRegionAId        string           `position:"Query" name:"GeographicRegionAId"`
 	GeographicRegionBId        string           `position:"Query" name:"GeographicRegionBId"`
-	BandwidthPackageChargeType string           `position:"Query" name:"BandwidthPackageChargeType"`
+	ResourceOwnerId            requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	Period                     requests.Integer `position:"Query" name:"Period"`
-	PricingCycle               string           `position:"Query" name:"PricingCycle"`
+	GeographicRegionAId        string           `position:"Query" name:"GeographicRegionAId"`
 	AutoPay                    requests.Boolean `position:"Query" name:"AutoPay"`
+	ResourceOwnerAccount       string           `position:"Query" name:"ResourceOwnerAccount"`
+	ClientToken                string           `position:"Query" name:"ClientToken"`
+	Bandwidth                  requests.Integer `position:"Query" name:"Bandwidth"`
+	OwnerAccount               string           `position:"Query" name:"OwnerAccount"`
+	Description                string           `position:"Query" name:"Description"`
+	OwnerId                    requests.Integer `position:"Query" name:"OwnerId"`
+	BandwidthPackageChargeType string           `position:"Query" name:"BandwidthPackageChargeType"`
+	Name                       string           `position:"Query" name:"Name"`
+	PricingCycle               string           `position:"Query" name:"PricingCycle"`
 }
 
 // CreateCenBandwidthPackageResponse is the response struct for api CreateCenBandwidthPackage

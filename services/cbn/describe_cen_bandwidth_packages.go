@@ -76,20 +76,20 @@ func (client *Client) DescribeCenBandwidthPackagesWithCallback(request *Describe
 // DescribeCenBandwidthPackagesRequest is the request struct for api DescribeCenBandwidthPackages
 type DescribeCenBandwidthPackagesRequest struct {
 	*requests.RpcRequest
-	OwnerAccount         string                                `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer                      `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string                                `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      requests.Integer                      `position:"Query" name:"ResourceOwnerId"`
-	PageNumber           requests.Integer                      `position:"Query" name:"PageNumber"`
-	PageSize             requests.Integer                      `position:"Query" name:"PageSize"`
 	Filter               *[]DescribeCenBandwidthPackagesFilter `position:"Query" name:"Filter"  type:"Repeated"`
+	ResourceOwnerId      requests.Integer                      `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string                                `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string                                `position:"Query" name:"OwnerAccount"`
+	PageSize             requests.Integer                      `position:"Query" name:"PageSize"`
+	OwnerId              requests.Integer                      `position:"Query" name:"OwnerId"`
+	PageNumber           requests.Integer                      `position:"Query" name:"PageNumber"`
 	IsOrKey              requests.Boolean                      `position:"Query" name:"IsOrKey"`
 }
 
 // DescribeCenBandwidthPackagesFilter is a repeated param struct in DescribeCenBandwidthPackagesRequest
 type DescribeCenBandwidthPackagesFilter struct {
-	Key   string    `name:"Key"`
 	Value *[]string `name:"Value" type:"Repeated"`
+	Key   string    `name:"Key"`
 }
 
 // DescribeCenBandwidthPackagesResponse is the response struct for api DescribeCenBandwidthPackages
