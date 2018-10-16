@@ -1,3 +1,6 @@
+2018-10-16 Version: 1.32.3
+1, This version add MetricQuery interface to support retcode and apm metric query.
+
 2018-10-16 Version: 1.32.2
 1, This version add MetricQuery interface to support retcode and apm metric query.
 
