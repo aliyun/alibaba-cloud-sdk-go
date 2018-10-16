@@ -1,3 +1,6 @@
+2018-10-16 Version: 1.32.1
+1, This version add MetricQuery interface to support retcode and apm metric query.
+
 2018-10-16 Version: 1.32.0
 1, Delete deprecated and unusable apis : AddIpRange, UnbindIpRange, BindIpRange, DescribeIntranetAttributeKb, DescribeIpRanges, ModifyIntranetBandwidthKb, DescribeEventDetail, CheckAutoSnapshotPolicy, CheckDiskEnableAutoSnapshotValidation, DescribeAutoSnapshotPolicy
 2, Add instance topology api DescribeInstanceTopology
