@@ -104,6 +104,7 @@ type DescribeInstancesRequest struct {
 	OwnerAccount         string                  `position:"Query" name:"OwnerAccount"`
 	InstanceTypeFamily   string                  `position:"Query" name:"InstanceTypeFamily"`
 	Filter1Value         string                  `position:"Query" name:"Filter.1.Value"`
+	NeedSaleCycle        requests.Boolean        `position:"Query" name:"NeedSaleCycle"`
 	Filter2Key           string                  `position:"Query" name:"Filter.2.Key"`
 	OwnerId              requests.Integer        `position:"Query" name:"OwnerId"`
 	VSwitchId            string                  `position:"Query" name:"VSwitchId"`

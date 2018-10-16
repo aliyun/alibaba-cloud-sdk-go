@@ -83,6 +83,7 @@ type ResizeDiskRequest struct {
 	NewSize              requests.Integer `position:"Query" name:"NewSize"`
 	DiskId               string           `position:"Query" name:"DiskId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Type                 string           `position:"Query" name:"Type"`
 }
 
 // ResizeDiskResponse is the response struct for api ResizeDisk

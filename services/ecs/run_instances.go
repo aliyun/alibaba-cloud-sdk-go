@@ -114,6 +114,7 @@ type RunInstancesRequest struct {
 	InstanceType                string                          `position:"Query" name:"InstanceType"`
 	InstanceChargeType          string                          `position:"Query" name:"InstanceChargeType"`
 	NetworkInterface            *[]RunInstancesNetworkInterface `position:"Query" name:"NetworkInterface"  type:"Repeated"`
+	DeploymentSetId             string                          `position:"Query" name:"DeploymentSetId"`
 	Amount                      requests.Integer                `position:"Query" name:"Amount"`
 	ResourceOwnerAccount        string                          `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount                string                          `position:"Query" name:"OwnerAccount"`

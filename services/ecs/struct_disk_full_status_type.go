@@ -18,6 +18,8 @@ package ecs
 // DiskFullStatusType is a nested struct in ecs response
 type DiskFullStatusType struct {
 	DiskId       string       `json:"DiskId" xml:"DiskId"`
+	InstanceId   string       `json:"InstanceId" xml:"InstanceId"`
+	Device       string       `json:"Device" xml:"Device"`
 	Status       Status       `json:"Status" xml:"Status"`
 	HealthStatus HealthStatus `json:"HealthStatus" xml:"HealthStatus"`
 	DiskEventSet DiskEventSet `json:"DiskEventSet" xml:"DiskEventSet"`

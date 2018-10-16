@@ -44,6 +44,7 @@ type Instance struct {
 	ResourceGroupId         string                               `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	InstanceTypeFamily      string                               `json:"InstanceTypeFamily" xml:"InstanceTypeFamily"`
 	InstanceId              string                               `json:"InstanceId" xml:"InstanceId"`
+	DeploymentSetId         string                               `json:"DeploymentSetId" xml:"DeploymentSetId"`
 	GPUSpec                 string                               `json:"GPUSpec" xml:"GPUSpec"`
 	Description             string                               `json:"Description" xml:"Description"`
 	Recyclable              bool                                 `json:"Recyclable" xml:"Recyclable"`
