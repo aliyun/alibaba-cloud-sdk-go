@@ -88,8 +88,8 @@ type AddCasterEpisodeGroupRequest struct {
 
 // AddCasterEpisodeGroupItem is a repeated param struct in AddCasterEpisodeGroupRequest
 type AddCasterEpisodeGroupItem struct {
-	ItemName string `name:"ItemName"`
 	VodUrl   string `name:"VodUrl"`
+	ItemName string `name:"ItemName"`
 }
 
 // AddCasterEpisodeGroupResponse is the response struct for api AddCasterEpisodeGroup

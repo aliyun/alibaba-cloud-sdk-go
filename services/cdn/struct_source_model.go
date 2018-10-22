@@ -22,4 +22,5 @@ type SourceModel struct {
 	Port     int    `json:"Port" xml:"Port"`
 	Enabled  string `json:"Enabled" xml:"Enabled"`
 	Priority string `json:"Priority" xml:"Priority"`
+	Weight   string `json:"Weight" xml:"Weight"`
 }

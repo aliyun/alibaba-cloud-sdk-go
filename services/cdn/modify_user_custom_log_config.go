@@ -76,11 +76,9 @@ func (client *Client) ModifyUserCustomLogConfigWithCallback(request *ModifyUserC
 // ModifyUserCustomLogConfigRequest is the request struct for api ModifyUserCustomLogConfig
 type ModifyUserCustomLogConfigRequest struct {
 	*requests.RpcRequest
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
-	Version       string           `position:"Query" name:"Version"`
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
-	ConfigId      string           `position:"Query" name:"ConfigId"`
-	Tag           string           `position:"Query" name:"Tag"`
+	OwnerId  requests.Integer `position:"Query" name:"OwnerId"`
+	ConfigId string           `position:"Query" name:"ConfigId"`
+	Tag      string           `position:"Query" name:"Tag"`
 }
 
 // ModifyUserCustomLogConfigResponse is the response struct for api ModifyUserCustomLogConfig
@@ -94,7 +92,7 @@ func CreateModifyUserCustomLogConfigRequest() (request *ModifyUserCustomLogConfi
 	request = &ModifyUserCustomLogConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "ModifyUserCustomLogConfig", "", "")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "ModifyUserCustomLogConfig", "", "")
 	return
 }
 

@@ -90,8 +90,8 @@ type CreateRouteEntryRequest struct {
 
 // CreateRouteEntryNextHopList is a repeated param struct in CreateRouteEntryRequest
 type CreateRouteEntryNextHopList struct {
-	NextHopType string `name:"NextHopType"`
 	NextHopId   string `name:"NextHopId"`
+	NextHopType string `name:"NextHopType"`
 }
 
 // CreateRouteEntryResponse is the response struct for api CreateRouteEntry

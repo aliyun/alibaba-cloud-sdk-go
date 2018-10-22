@@ -76,10 +76,10 @@ func (client *Client) SetRangeConfigWithCallback(request *SetRangeConfigRequest,
 // SetRangeConfigRequest is the request struct for api SetRangeConfig
 type SetRangeConfigRequest struct {
 	*requests.RpcRequest
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
-	Enable        string           `position:"Query" name:"Enable"`
-	DomainName    string           `position:"Query" name:"DomainName"`
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	Enable     string           `position:"Query" name:"Enable"`
+	DomainName string           `position:"Query" name:"DomainName"`
+	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
+	ConfigId   requests.Integer `position:"Query" name:"ConfigId"`
 }
 
 // SetRangeConfigResponse is the response struct for api SetRangeConfig
@@ -93,7 +93,7 @@ func CreateSetRangeConfigRequest() (request *SetRangeConfigRequest) {
 	request = &SetRangeConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "SetRangeConfig", "", "")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "SetRangeConfig", "", "")
 	return
 }
 

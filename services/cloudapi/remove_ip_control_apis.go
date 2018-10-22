@@ -76,10 +76,11 @@ func (client *Client) RemoveIpControlApisWithCallback(request *RemoveIpControlAp
 // RemoveIpControlApisRequest is the request struct for api RemoveIpControlApis
 type RemoveIpControlApisRequest struct {
 	*requests.RpcRequest
-	IpControlId string `position:"Query" name:"IpControlId"`
-	GroupId     string `position:"Query" name:"GroupId"`
-	ApiIds      string `position:"Query" name:"ApiIds"`
-	StageName   string `position:"Query" name:"StageName"`
+	StageName     string `position:"Query" name:"StageName"`
+	IpControlId   string `position:"Query" name:"IpControlId"`
+	SecurityToken string `position:"Query" name:"SecurityToken"`
+	GroupId       string `position:"Query" name:"GroupId"`
+	ApiIds        string `position:"Query" name:"ApiIds"`
 }
 
 // RemoveIpControlApisResponse is the response struct for api RemoveIpControlApis

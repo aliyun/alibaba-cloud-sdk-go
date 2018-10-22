@@ -78,6 +78,7 @@ type SetCasterConfigRequest struct {
 	*requests.RpcRequest
 	SideOutputUrl    string           `position:"Query" name:"SideOutputUrl"`
 	CasterId         string           `position:"Query" name:"CasterId"`
+	ChannelEnable    requests.Integer `position:"Query" name:"ChannelEnable"`
 	DomainName       string           `position:"Query" name:"DomainName"`
 	ProgramEffect    requests.Integer `position:"Query" name:"ProgramEffect"`
 	ProgramName      string           `position:"Query" name:"ProgramName"`

@@ -76,11 +76,11 @@ func (client *Client) QueryTemplateListWithCallback(request *QueryTemplateListRe
 // QueryTemplateListRequest is the request struct for api QueryTemplateList
 type QueryTemplateListRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	TemplateIds          string           `position:"Query" name:"TemplateIds"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // QueryTemplateListResponse is the response struct for api QueryTemplateList

@@ -76,13 +76,13 @@ func (client *Client) AddPornPipelineWithCallback(request *AddPornPipelineReques
 // AddPornPipelineRequest is the request struct for api AddPornPipeline
 type AddPornPipelineRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Name                 string           `position:"Query" name:"Name"`
-	Priority             requests.Integer `position:"Query" name:"Priority"`
-	NotifyConfig         string           `position:"Query" name:"NotifyConfig"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	Name                 string           `position:"Query" name:"Name"`
+	NotifyConfig         string           `position:"Query" name:"NotifyConfig"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Priority             requests.Integer `position:"Query" name:"Priority"`
 }
 
 // AddPornPipelineResponse is the response struct for api AddPornPipeline

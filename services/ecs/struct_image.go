@@ -37,6 +37,7 @@ type Image struct {
 	Platform             string               `json:"Platform" xml:"Platform"`
 	Usage                string               `json:"Usage" xml:"Usage"`
 	IsCopied             bool                 `json:"IsCopied" xml:"IsCopied"`
+	ResourceGroupId      string               `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	DiskDeviceMappings   DiskDeviceMappings   `json:"DiskDeviceMappings" xml:"DiskDeviceMappings"`
 	Tags                 TagsInDescribeImages `json:"Tags" xml:"Tags"`
 }

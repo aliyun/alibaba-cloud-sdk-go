@@ -76,9 +76,9 @@ func (client *Client) SetL2OssKeyConfigWithCallback(request *SetL2OssKeyConfigRe
 // SetL2OssKeyConfigRequest is the request struct for api SetL2OssKeyConfig
 type SetL2OssKeyConfigRequest struct {
 	*requests.RpcRequest
-	SecurityToken  string           `position:"Query" name:"SecurityToken"`
 	DomainName     string           `position:"Query" name:"DomainName"`
 	OwnerId        requests.Integer `position:"Query" name:"OwnerId"`
+	ConfigId       requests.Integer `position:"Query" name:"ConfigId"`
 	PrivateOssAuth string           `position:"Query" name:"PrivateOssAuth"`
 }
 
@@ -93,7 +93,7 @@ func CreateSetL2OssKeyConfigRequest() (request *SetL2OssKeyConfigRequest) {
 	request = &SetL2OssKeyConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "SetL2OssKeyConfig", "", "")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "SetL2OssKeyConfig", "", "")
 	return
 }
 

@@ -76,8 +76,8 @@ func (client *Client) DescribeUserDcdnStatusWithCallback(request *DescribeUserDc
 // DescribeUserDcdnStatusRequest is the request struct for api DescribeUserDcdnStatus
 type DescribeUserDcdnStatusRequest struct {
 	*requests.RpcRequest
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeUserDcdnStatusResponse is the response struct for api DescribeUserDcdnStatus
@@ -95,7 +95,7 @@ func CreateDescribeUserDcdnStatusRequest() (request *DescribeUserDcdnStatusReque
 	request = &DescribeUserDcdnStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dcdn", "2018-01-15", "DescribeUserDcdnStatus", "dcdn", "openAPI")
+	request.InitWithApiInfo("dcdn", "2018-01-15", "DescribeUserDcdnStatus", "", "")
 	return
 }
 

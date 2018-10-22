@@ -18,6 +18,6 @@ package cdn
 // CodeProportionData is a nested struct in cdn response
 type CodeProportionData struct {
 	Code       string `json:"Code" xml:"Code"`
-	Proportion string `json:"Proportion" xml:"Proportion"`
 	Count      string `json:"Count" xml:"Count"`
+	Proportion string `json:"Proportion" xml:"Proportion"`
 }

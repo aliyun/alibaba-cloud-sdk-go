@@ -17,15 +17,15 @@ package mts
 
 // SnapshotJob is a nested struct in mts response
 type SnapshotJob struct {
-	CreationTime     string           `json:"CreationTime" xml:"CreationTime"`
-	Id               string           `json:"Id" xml:"Id"`
 	Message          string           `json:"Message" xml:"Message"`
-	PipelineId       string           `json:"PipelineId" xml:"PipelineId"`
-	TileCount        string           `json:"TileCount" xml:"TileCount"`
 	State            string           `json:"State" xml:"State"`
 	Code             string           `json:"Code" xml:"Code"`
-	UserData         string           `json:"UserData" xml:"UserData"`
+	PipelineId       string           `json:"PipelineId" xml:"PipelineId"`
+	TileCount        string           `json:"TileCount" xml:"TileCount"`
 	Count            string           `json:"Count" xml:"Count"`
+	CreationTime     string           `json:"CreationTime" xml:"CreationTime"`
+	Id               string           `json:"Id" xml:"Id"`
+	UserData         string           `json:"UserData" xml:"UserData"`
 	SnapshotConfig   SnapshotConfig   `json:"SnapshotConfig" xml:"SnapshotConfig"`
 	MNSMessageResult MNSMessageResult `json:"MNSMessageResult" xml:"MNSMessageResult"`
 	Input            Input            `json:"Input" xml:"Input"`

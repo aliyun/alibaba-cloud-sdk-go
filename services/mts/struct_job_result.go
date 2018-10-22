@@ -17,8 +17,8 @@ package mts
 
 // JobResult is a nested struct in mts response
 type JobResult struct {
-	Success bool   `json:"Success" xml:"Success"`
 	Message string `json:"Message" xml:"Message"`
+	Success bool   `json:"Success" xml:"Success"`
 	Code    string `json:"Code" xml:"Code"`
 	Job     Job    `json:"Job" xml:"Job"`
 }

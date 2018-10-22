@@ -17,6 +17,6 @@ package mts
 
 // TS is a nested struct in mts response
 type TS struct {
-	SizeSupport bool `json:"SizeSupport" xml:"SizeSupport"`
 	Md5Support  bool `json:"Md5Support" xml:"Md5Support"`
+	SizeSupport bool `json:"SizeSupport" xml:"SizeSupport"`
 }

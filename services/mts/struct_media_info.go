@@ -17,6 +17,6 @@ package mts
 
 // MediaInfo is a nested struct in mts response
 type MediaInfo struct {
-	Streams Streams `json:"Streams" xml:"Streams"`
 	Format  Format  `json:"Format" xml:"Format"`
+	Streams Streams `json:"Streams" xml:"Streams"`
 }

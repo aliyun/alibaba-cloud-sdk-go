@@ -76,25 +76,22 @@ func (client *Client) CreateSecurityGroupWithCallback(request *CreateSecurityGro
 // CreateSecurityGroupRequest is the request struct for api CreateSecurityGroup
 type CreateSecurityGroupRequest struct {
 	*requests.RpcRequest
-	Tag4Value            string           `position:"Query" name:"Tag.4.Value"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Tag2Key              string           `position:"Query" name:"Tag.2.Key"`
-	Tag5Key              string           `position:"Query" name:"Tag.5.Key"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	Description          string           `position:"Query" name:"Description"`
-	Tag3Key              string           `position:"Query" name:"Tag.3.Key"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	SecurityGroupName    string           `position:"Query" name:"SecurityGroupName"`
-	Tag5Value            string           `position:"Query" name:"Tag.5.Value"`
-	Tag1Key              string           `position:"Query" name:"Tag.1.Key"`
-	Tag1Value            string           `position:"Query" name:"Tag.1.Value"`
-	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
-	VpcId                string           `position:"Query" name:"VpcId"`
-	Tag2Value            string           `position:"Query" name:"Tag.2.Value"`
-	Tag4Key              string           `position:"Query" name:"Tag.4.Key"`
-	Tag3Value            string           `position:"Query" name:"Tag.3.Value"`
+	ResourceGroupId      string                    `position:"Query" name:"ResourceGroupId"`
+	ResourceOwnerId      requests.Integer          `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string                    `position:"Query" name:"ResourceOwnerAccount"`
+	ClientToken          string                    `position:"Query" name:"ClientToken"`
+	VpcId                string                    `position:"Query" name:"VpcId"`
+	OwnerAccount         string                    `position:"Query" name:"OwnerAccount"`
+	Description          string                    `position:"Query" name:"Description"`
+	Tag                  *[]CreateSecurityGroupTag `position:"Query" name:"Tag"  type:"Repeated"`
+	OwnerId              requests.Integer          `position:"Query" name:"OwnerId"`
+	SecurityGroupName    string                    `position:"Query" name:"SecurityGroupName"`
+}
+
+// CreateSecurityGroupTag is a repeated param struct in CreateSecurityGroupRequest
+type CreateSecurityGroupTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // CreateSecurityGroupResponse is the response struct for api CreateSecurityGroup

@@ -76,21 +76,18 @@ func (client *Client) RemoveTagsWithCallback(request *RemoveTagsRequest, callbac
 // RemoveTagsRequest is the request struct for api RemoveTags
 type RemoveTagsRequest struct {
 	*requests.RpcRequest
-	Tag4Value            string           `position:"Query" name:"Tag.4.Value"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceId           string           `position:"Query" name:"ResourceId"`
-	Tag2Key              string           `position:"Query" name:"Tag.2.Key"`
-	Tag5Key              string           `position:"Query" name:"Tag.5.Key"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	Tag3Key              string           `position:"Query" name:"Tag.3.Key"`
+	Tag                  *[]RemoveTagsTag `position:"Query" name:"Tag"  type:"Repeated"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceType         string           `position:"Query" name:"ResourceType"`
-	Tag5Value            string           `position:"Query" name:"Tag.5.Value"`
-	Tag1Key              string           `position:"Query" name:"Tag.1.Key"`
-	Tag1Value            string           `position:"Query" name:"Tag.1.Value"`
-	Tag2Value            string           `position:"Query" name:"Tag.2.Value"`
-	Tag4Key              string           `position:"Query" name:"Tag.4.Key"`
-	Tag3Value            string           `position:"Query" name:"Tag.3.Value"`
+}
+
+// RemoveTagsTag is a repeated param struct in RemoveTagsRequest
+type RemoveTagsTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // RemoveTagsResponse is the response struct for api RemoveTags

@@ -76,12 +76,12 @@ func (client *Client) UpdateMediaPublishStateWithCallback(request *UpdateMediaPu
 // UpdateMediaPublishStateRequest is the request struct for api UpdateMediaPublishState
 type UpdateMediaPublishStateRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	MediaId              string           `position:"Query" name:"MediaId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	Publish              requests.Boolean `position:"Query" name:"Publish"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	MediaId              string           `position:"Query" name:"MediaId"`
 }
 
 // UpdateMediaPublishStateResponse is the response struct for api UpdateMediaPublishState

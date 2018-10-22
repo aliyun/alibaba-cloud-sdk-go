@@ -76,12 +76,13 @@ func (client *Client) DescribeHistoryApisWithCallback(request *DescribeHistoryAp
 // DescribeHistoryApisRequest is the request struct for api DescribeHistoryApis
 type DescribeHistoryApisRequest struct {
 	*requests.RpcRequest
-	GroupId    string `position:"Query" name:"GroupId"`
-	StageName  string `position:"Query" name:"StageName"`
-	ApiId      string `position:"Query" name:"ApiId"`
-	ApiName    string `position:"Query" name:"ApiName"`
-	PageSize   string `position:"Query" name:"PageSize"`
-	PageNumber string `position:"Query" name:"PageNumber"`
+	StageName     string `position:"Query" name:"StageName"`
+	ApiName       string `position:"Query" name:"ApiName"`
+	SecurityToken string `position:"Query" name:"SecurityToken"`
+	GroupId       string `position:"Query" name:"GroupId"`
+	PageSize      string `position:"Query" name:"PageSize"`
+	ApiId         string `position:"Query" name:"ApiId"`
+	PageNumber    string `position:"Query" name:"PageNumber"`
 }
 
 // DescribeHistoryApisResponse is the response struct for api DescribeHistoryApis

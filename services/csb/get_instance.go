@@ -93,7 +93,7 @@ func CreateGetInstanceRequest() (request *GetInstanceRequest) {
 	request = &GetInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CSB", "2017-11-18", "GetInstance", "CSB", "openAPI")
+	request.InitWithApiInfo("CSB", "2017-11-18", "GetInstance", "", "")
 	return
 }
 

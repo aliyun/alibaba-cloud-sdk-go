@@ -76,9 +76,11 @@ func (client *Client) DescribeAppAttributesWithCallback(request *DescribeAppAttr
 // DescribeAppAttributesRequest is the request struct for api DescribeAppAttributes
 type DescribeAppAttributesRequest struct {
 	*requests.RpcRequest
-	AppId      requests.Integer `position:"Query" name:"AppId"`
-	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
-	PageSize   requests.Integer `position:"Query" name:"PageSize"`
+	AppName       string           `position:"Query" name:"AppName"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	AppId         requests.Integer `position:"Query" name:"AppId"`
+	PageSize      requests.Integer `position:"Query" name:"PageSize"`
+	PageNumber    requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 // DescribeAppAttributesResponse is the response struct for api DescribeAppAttributes

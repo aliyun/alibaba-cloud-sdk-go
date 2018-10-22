@@ -17,6 +17,6 @@ package mts
 
 // File is a nested struct in mts response
 type File struct {
-	URL   string `json:"URL" xml:"URL"`
 	State string `json:"State" xml:"State"`
+	URL   string `json:"URL" xml:"URL"`
 }

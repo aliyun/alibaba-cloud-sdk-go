@@ -93,7 +93,7 @@ func CreateRenewCredentialsRequest() (request *RenewCredentialsRequest) {
 	request = &RenewCredentialsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CSB", "2017-11-18", "RenewCredentials", "CSB", "openAPI")
+	request.InitWithApiInfo("CSB", "2017-11-18", "RenewCredentials", "", "")
 	return
 }
 

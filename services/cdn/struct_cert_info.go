@@ -27,4 +27,7 @@ type CertInfo struct {
 	ServerCertificateStatus string `json:"ServerCertificateStatus" xml:"ServerCertificateStatus"`
 	Status                  string `json:"Status" xml:"Status"`
 	ServerCertificate       string `json:"ServerCertificate" xml:"ServerCertificate"`
+	CertUpdateTime          string `json:"CertUpdateTime" xml:"CertUpdateTime"`
+	CertStartTime           string `json:"CertStartTime" xml:"CertStartTime"`
+	DomainCnameStatus       string `json:"DomainCnameStatus" xml:"DomainCnameStatus"`
 }

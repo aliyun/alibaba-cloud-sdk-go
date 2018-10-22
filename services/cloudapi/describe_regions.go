@@ -76,6 +76,8 @@ func (client *Client) DescribeRegionsWithCallback(request *DescribeRegionsReques
 // DescribeRegionsRequest is the request struct for api DescribeRegions
 type DescribeRegionsRequest struct {
 	*requests.RpcRequest
+	SecurityToken string `position:"Query" name:"SecurityToken"`
+	Language      string `position:"Query" name:"Language"`
 }
 
 // DescribeRegionsResponse is the response struct for api DescribeRegions

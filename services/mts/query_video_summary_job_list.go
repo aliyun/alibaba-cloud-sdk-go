@@ -76,11 +76,11 @@ func (client *Client) QueryVideoSummaryJobListWithCallback(request *QueryVideoSu
 // QueryVideoSummaryJobListRequest is the request struct for api QueryVideoSummaryJobList
 type QueryVideoSummaryJobListRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	JobIds               string           `position:"Query" name:"JobIds"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // QueryVideoSummaryJobListResponse is the response struct for api QueryVideoSummaryJobList

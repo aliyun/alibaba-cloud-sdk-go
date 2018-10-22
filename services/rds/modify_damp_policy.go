@@ -76,17 +76,17 @@ func (client *Client) ModifyDampPolicyWithCallback(request *ModifyDampPolicyRequ
 // ModifyDampPolicyRequest is the request struct for api ModifyDampPolicy
 type ModifyDampPolicyRequest struct {
 	*requests.RpcRequest
-	SecurityToken        string           `position:"Query" name:"SecurityToken"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	PolicyName           string           `position:"Query" name:"PolicyName"`
-	Handlers             string           `position:"Query" name:"Handlers"`
-	SourceRules          string           `position:"Query" name:"SourceRules"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	TimeRules            string           `position:"Query" name:"TimeRules"`
 	ActionRules          string           `position:"Query" name:"ActionRules"`
+	SecurityToken        string           `position:"Query" name:"SecurityToken"`
+	Handlers             string           `position:"Query" name:"Handlers"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	PolicyName           string           `position:"Query" name:"PolicyName"`
+	SourceRules          string           `position:"Query" name:"SourceRules"`
 }
 
 // ModifyDampPolicyResponse is the response struct for api ModifyDampPolicy

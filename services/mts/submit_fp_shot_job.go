@@ -76,14 +76,14 @@ func (client *Client) SubmitFpShotJobWithCallback(request *SubmitFpShotJobReques
 // SubmitFpShotJobRequest is the request struct for api SubmitFpShotJob
 type SubmitFpShotJobRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	Input                string           `position:"Query" name:"Input"`
-	PipelineId           string           `position:"Query" name:"PipelineId"`
-	FpShotConfig         string           `position:"Query" name:"FpShotConfig"`
 	UserData             string           `position:"Query" name:"UserData"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	FpShotConfig         string           `position:"Query" name:"FpShotConfig"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	PipelineId           string           `position:"Query" name:"PipelineId"`
 }
 
 // SubmitFpShotJobResponse is the response struct for api SubmitFpShotJob

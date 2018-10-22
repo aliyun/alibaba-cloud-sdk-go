@@ -76,11 +76,11 @@ func (client *Client) QuerySnapshotJobListWithCallback(request *QuerySnapshotJob
 // QuerySnapshotJobListRequest is the request struct for api QuerySnapshotJobList
 type QuerySnapshotJobListRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	SnapshotJobIds       string           `position:"Query" name:"SnapshotJobIds"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // QuerySnapshotJobListResponse is the response struct for api QuerySnapshotJobList

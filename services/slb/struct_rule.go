@@ -17,9 +17,24 @@ package slb
 
 // Rule is a nested struct in slb response
 type Rule struct {
-	Domain         string `json:"Domain" xml:"Domain"`
-	VServerGroupId string `json:"VServerGroupId" xml:"VServerGroupId"`
-	RuleName       string `json:"RuleName" xml:"RuleName"`
-	RuleId         string `json:"RuleId" xml:"RuleId"`
-	Url            string `json:"Url" xml:"Url"`
+	Domain                 string `json:"Domain" xml:"Domain"`
+	HealthCheckTimeout     int    `json:"HealthCheckTimeout" xml:"HealthCheckTimeout"`
+	RuleName               string `json:"RuleName" xml:"RuleName"`
+	HealthCheckURI         string `json:"HealthCheckURI" xml:"HealthCheckURI"`
+	StickySession          string `json:"StickySession" xml:"StickySession"`
+	HealthCheckInterval    int    `json:"HealthCheckInterval" xml:"HealthCheckInterval"`
+	ListenerSync           string `json:"ListenerSync" xml:"ListenerSync"`
+	RuleId                 string `json:"RuleId" xml:"RuleId"`
+	HealthCheckDomain      string `json:"HealthCheckDomain" xml:"HealthCheckDomain"`
+	Scheduler              string `json:"Scheduler" xml:"Scheduler"`
+	Url                    string `json:"Url" xml:"Url"`
+	VServerGroupId         string `json:"VServerGroupId" xml:"VServerGroupId"`
+	HealthyThreshold       int    `json:"HealthyThreshold" xml:"HealthyThreshold"`
+	CookieTimeout          int    `json:"CookieTimeout" xml:"CookieTimeout"`
+	HealthCheckHttpCode    string `json:"HealthCheckHttpCode" xml:"HealthCheckHttpCode"`
+	UnhealthyThreshold     int    `json:"UnhealthyThreshold" xml:"UnhealthyThreshold"`
+	StickySessionType      string `json:"StickySessionType" xml:"StickySessionType"`
+	HealthCheckConnectPort int    `json:"HealthCheckConnectPort" xml:"HealthCheckConnectPort"`
+	Cookie                 string `json:"Cookie" xml:"Cookie"`
+	HealthCheck            string `json:"HealthCheck" xml:"HealthCheck"`
 }

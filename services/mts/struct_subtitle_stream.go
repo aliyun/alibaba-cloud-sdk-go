@@ -17,6 +17,14 @@ package mts
 
 // SubtitleStream is a nested struct in mts response
 type SubtitleStream struct {
-	Index string `json:"Index" xml:"Index"`
-	Lang  string `json:"Lang" xml:"Lang"`
+	StartTime      string `json:"StartTime" xml:"StartTime"`
+	CodecName      string `json:"CodecName" xml:"CodecName"`
+	Duration       string `json:"Duration" xml:"Duration"`
+	CodecTimeBase  string `json:"CodecTimeBase" xml:"CodecTimeBase"`
+	Timebase       string `json:"Timebase" xml:"Timebase"`
+	CodecTag       string `json:"CodecTag" xml:"CodecTag"`
+	CodecTagString string `json:"CodecTagString" xml:"CodecTagString"`
+	CodecLongName  string `json:"CodecLongName" xml:"CodecLongName"`
+	Index          string `json:"Index" xml:"Index"`
+	Lang           string `json:"Lang" xml:"Lang"`
 }

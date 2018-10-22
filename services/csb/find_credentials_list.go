@@ -77,8 +77,8 @@ func (client *Client) FindCredentialsListWithCallback(request *FindCredentialsLi
 type FindCredentialsListRequest struct {
 	*requests.RpcRequest
 	CsbId     requests.Integer `position:"Query" name:"CsbId"`
-	GroupName string           `position:"Query" name:"GroupName"`
 	PageNum   requests.Integer `position:"Query" name:"PageNum"`
+	GroupName string           `position:"Query" name:"GroupName"`
 }
 
 // FindCredentialsListResponse is the response struct for api FindCredentialsList
@@ -95,7 +95,7 @@ func CreateFindCredentialsListRequest() (request *FindCredentialsListRequest) {
 	request = &FindCredentialsListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CSB", "2017-11-18", "FindCredentialsList", "CSB", "openAPI")
+	request.InitWithApiInfo("CSB", "2017-11-18", "FindCredentialsList", "", "")
 	return
 }
 

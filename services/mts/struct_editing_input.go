@@ -18,6 +18,6 @@ package mts
 // EditingInput is a nested struct in mts response
 type EditingInput struct {
 	Id          string      `json:"Id" xml:"Id"`
-	InputConfig InputConfig `json:"InputConfig" xml:"InputConfig"`
 	InputFile   InputFile   `json:"InputFile" xml:"InputFile"`
+	InputConfig InputConfig `json:"InputConfig" xml:"InputConfig"`
 }

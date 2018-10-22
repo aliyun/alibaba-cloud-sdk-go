@@ -25,4 +25,5 @@ type MediaDetailRecgResult struct {
 	Sensitives    Sensitives    `json:"Sensitives" xml:"Sensitives"`
 	Politicians   Politicians   `json:"Politicians" xml:"Politicians"`
 	FrameTagInfos FrameTagInfos `json:"FrameTagInfos" xml:"FrameTagInfos"`
+	Customs       Customs       `json:"Customs" xml:"Customs"`
 }

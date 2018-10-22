@@ -76,21 +76,21 @@ func (client *Client) DescribeBackupSetsForSecurityWithCallback(request *Describ
 // DescribeBackupSetsForSecurityRequest is the request struct for api DescribeBackupSetsForSecurity
 type DescribeBackupSetsForSecurityRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	TargetAliUid         string           `position:"Query" name:"TargetAliUid"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	TargetAliBid         string           `position:"Query" name:"TargetAliBid"`
 	BackupId             string           `position:"Query" name:"BackupId"`
-	BackupLocation       string           `position:"Query" name:"BackupLocation"`
-	BackupStatus         string           `position:"Query" name:"BackupStatus"`
-	BackupMode           string           `position:"Query" name:"BackupMode"`
-	StartTime            string           `position:"Query" name:"StartTime"`
-	EndTime              string           `position:"Query" name:"EndTime"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	EndTime              string           `position:"Query" name:"EndTime"`
+	StartTime            string           `position:"Query" name:"StartTime"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	BackupStatus         string           `position:"Query" name:"BackupStatus"`
+	BackupLocation       string           `position:"Query" name:"BackupLocation"`
+	TargetAliUid         string           `position:"Query" name:"TargetAliUid"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	BackupMode           string           `position:"Query" name:"BackupMode"`
 }
 
 // DescribeBackupSetsForSecurityResponse is the response struct for api DescribeBackupSetsForSecurity

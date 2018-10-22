@@ -76,6 +76,7 @@ func (client *Client) CreateSignatureWithCallback(request *CreateSignatureReques
 // CreateSignatureRequest is the request struct for api CreateSignature
 type CreateSignatureRequest struct {
 	*requests.RpcRequest
+	SecurityToken   string `position:"Query" name:"SecurityToken"`
 	SignatureName   string `position:"Query" name:"SignatureName"`
 	SignatureKey    string `position:"Query" name:"SignatureKey"`
 	SignatureSecret string `position:"Query" name:"SignatureSecret"`

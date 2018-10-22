@@ -76,13 +76,13 @@ func (client *Client) ModifyCenBandwidthPackageAttributeWithCallback(request *Mo
 // ModifyCenBandwidthPackageAttributeRequest is the request struct for api ModifyCenBandwidthPackageAttribute
 type ModifyCenBandwidthPackageAttributeRequest struct {
 	*requests.RpcRequest
-	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
-	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
+	CenBandwidthPackageId string           `position:"Query" name:"CenBandwidthPackageId"`
+	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
 	Name                  string           `position:"Query" name:"Name"`
 	Description           string           `position:"Query" name:"Description"`
-	CenBandwidthPackageId string           `position:"Query" name:"CenBandwidthPackageId"`
+	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // ModifyCenBandwidthPackageAttributeResponse is the response struct for api ModifyCenBandwidthPackageAttribute

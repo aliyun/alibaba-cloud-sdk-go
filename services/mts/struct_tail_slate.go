@@ -17,11 +17,11 @@ package mts
 
 // TailSlate is a nested struct in mts response
 type TailSlate struct {
-	Start         string `json:"Start" xml:"Start"`
-	TailUrl       string `json:"TailUrl" xml:"TailUrl"`
 	Height        string `json:"Height" xml:"Height"`
-	BlendDuration string `json:"BlendDuration" xml:"BlendDuration"`
 	Width         string `json:"Width" xml:"Width"`
+	TailUrl       string `json:"TailUrl" xml:"TailUrl"`
 	IsMergeAudio  bool   `json:"IsMergeAudio" xml:"IsMergeAudio"`
+	Start         string `json:"Start" xml:"Start"`
 	BgColor       string `json:"BgColor" xml:"BgColor"`
+	BlendDuration string `json:"BlendDuration" xml:"BlendDuration"`
 }

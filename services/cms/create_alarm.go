@@ -78,12 +78,13 @@ type CreateAlarmRequest struct {
 	*requests.RpcRequest
 	Period             requests.Integer `position:"Query" name:"Period"`
 	Webhook            string           `position:"Query" name:"Webhook"`
+	DryRun             requests.Boolean `position:"Query" name:"DryRun"`
 	ContactGroups      string           `position:"Query" name:"ContactGroups"`
 	EndTime            requests.Integer `position:"Query" name:"EndTime"`
 	Threshold          string           `position:"Query" name:"Threshold"`
 	StartTime          requests.Integer `position:"Query" name:"StartTime"`
-	Namespace          string           `position:"Query" name:"Namespace"`
 	Name               string           `position:"Query" name:"Name"`
+	Namespace          string           `position:"Query" name:"Namespace"`
 	EvaluationCount    requests.Integer `position:"Query" name:"EvaluationCount"`
 	SilenceTime        requests.Integer `position:"Query" name:"SilenceTime"`
 	MetricName         string           `position:"Query" name:"MetricName"`

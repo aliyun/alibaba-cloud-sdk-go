@@ -76,26 +76,28 @@ func (client *Client) DescribeResourceUsageWithCallback(request *DescribeResourc
 // DescribeResourceUsageRequest is the request struct for api DescribeResourceUsage
 type DescribeResourceUsageRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeResourceUsageResponse is the response struct for api DescribeResourceUsage
 type DescribeResourceUsageResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	DBInstanceId   string `json:"DBInstanceId" xml:"DBInstanceId"`
-	Engine         string `json:"Engine" xml:"Engine"`
-	DiskUsed       int    `json:"DiskUsed" xml:"DiskUsed"`
-	DataSize       int    `json:"DataSize" xml:"DataSize"`
-	LogSize        int    `json:"LogSize" xml:"LogSize"`
-	BackupSize     int    `json:"BackupSize" xml:"BackupSize"`
-	SQLSize        int    `json:"SQLSize" xml:"SQLSize"`
-	ColdBackupSize int    `json:"ColdBackupSize" xml:"ColdBackupSize"`
+	RequestId         string `json:"RequestId" xml:"RequestId"`
+	DBInstanceId      string `json:"DBInstanceId" xml:"DBInstanceId"`
+	Engine            string `json:"Engine" xml:"Engine"`
+	DiskUsed          int    `json:"DiskUsed" xml:"DiskUsed"`
+	DataSize          int    `json:"DataSize" xml:"DataSize"`
+	LogSize           int    `json:"LogSize" xml:"LogSize"`
+	BackupSize        int    `json:"BackupSize" xml:"BackupSize"`
+	BackupOssDataSize int    `json:"BackupOssDataSize" xml:"BackupOssDataSize"`
+	BackupOssLogSize  int    `json:"BackupOssLogSize" xml:"BackupOssLogSize"`
+	SQLSize           int    `json:"SQLSize" xml:"SQLSize"`
+	ColdBackupSize    int    `json:"ColdBackupSize" xml:"ColdBackupSize"`
 }
 
 // CreateDescribeResourceUsageRequest creates a request to invoke DescribeResourceUsage API

@@ -18,9 +18,9 @@ package mts
 // Encryption is a nested struct in mts response
 type Encryption struct {
 	Key     string `json:"Key" xml:"Key"`
-	Type    string `json:"Type" xml:"Type"`
-	Id      string `json:"Id" xml:"Id"`
+	KeyUri  string `json:"KeyUri" xml:"KeyUri"`
 	SkipCnt string `json:"SkipCnt" xml:"SkipCnt"`
 	KeyType string `json:"KeyType" xml:"KeyType"`
-	KeyUri  string `json:"KeyUri" xml:"KeyUri"`
+	Id      string `json:"Id" xml:"Id"`
+	Type    string `json:"Type" xml:"Type"`
 }

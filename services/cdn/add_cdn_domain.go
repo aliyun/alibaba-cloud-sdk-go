@@ -77,20 +77,15 @@ func (client *Client) AddCdnDomainWithCallback(request *AddCdnDomainRequest, cal
 type AddCdnDomainRequest struct {
 	*requests.RpcRequest
 	TopLevelDomain  string           `position:"Query" name:"TopLevelDomain"`
-	Sources         string           `position:"Query" name:"Sources"`
-	OwnerAccount    string           `position:"Query" name:"OwnerAccount"`
-	DomainName      string           `position:"Query" name:"DomainName"`
-	LiveType        string           `position:"Query" name:"LiveType"`
-	OwnerId         requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
-	SourcePort      requests.Integer `position:"Query" name:"SourcePort"`
-	Priorities      string           `position:"Query" name:"Priorities"`
+	Sources         string           `position:"Query" name:"Sources"`
 	SecurityToken   string           `position:"Query" name:"SecurityToken"`
 	CdnType         string           `position:"Query" name:"CdnType"`
+	OwnerAccount    string           `position:"Query" name:"OwnerAccount"`
 	Scope           string           `position:"Query" name:"Scope"`
-	SourceType      string           `position:"Query" name:"SourceType"`
+	DomainName      string           `position:"Query" name:"DomainName"`
+	OwnerId         requests.Integer `position:"Query" name:"OwnerId"`
 	CheckUrl        string           `position:"Query" name:"CheckUrl"`
-	Region          string           `position:"Query" name:"Region"`
 }
 
 // AddCdnDomainResponse is the response struct for api AddCdnDomain
@@ -104,7 +99,7 @@ func CreateAddCdnDomainRequest() (request *AddCdnDomainRequest) {
 	request = &AddCdnDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "AddCdnDomain", "", "")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "AddCdnDomain", "", "")
 	return
 }
 

@@ -76,13 +76,13 @@ func (client *Client) CreateBgpPeerWithCallback(request *CreateBgpPeerRequest, c
 // CreateBgpPeerRequest is the request struct for api CreateBgpPeer
 type CreateBgpPeerRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	BgpGroupId           string           `position:"Query" name:"BgpGroupId"`
-	PeerIpAddress        string           `position:"Query" name:"PeerIpAddress"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	BgpGroupId           string           `position:"Query" name:"BgpGroupId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	PeerIpAddress        string           `position:"Query" name:"PeerIpAddress"`
 }
 
 // CreateBgpPeerResponse is the response struct for api CreateBgpPeer

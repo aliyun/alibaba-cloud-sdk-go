@@ -80,7 +80,8 @@ type GetVerifyTokenRequest struct {
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	Biz             string           `position:"Query" name:"Biz"`
 	SourceIp        string           `position:"Query" name:"SourceIp"`
-	Binding         string           `position:"Query" name:"Binding"`
+	Binding         string           `position:"Body" name:"Binding"`
+	VerifyConfigs   string           `position:"Query" name:"VerifyConfigs"`
 	TicketId        string           `position:"Query" name:"TicketId"`
 }
 
@@ -99,7 +100,7 @@ func CreateGetVerifyTokenRequest() (request *GetVerifyTokenRequest) {
 	request = &GetVerifyTokenRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cloudauth", "2018-07-03", "GetVerifyToken", "cloudauth", "openAPI")
+	request.InitWithApiInfo("Cloudauth", "2018-09-16", "GetVerifyToken", "cloudauth", "openAPI")
 	return
 }
 

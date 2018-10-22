@@ -24,4 +24,7 @@ type CACertificate struct {
 	ResourceGroupId   string `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	CreateTime        string `json:"CreateTime" xml:"CreateTime"`
 	CreateTimeStamp   int    `json:"CreateTimeStamp" xml:"CreateTimeStamp"`
+	ExpireTime        string `json:"ExpireTime" xml:"ExpireTime"`
+	ExpireTimeStamp   int    `json:"ExpireTimeStamp" xml:"ExpireTimeStamp"`
+	CommonName        string `json:"CommonName" xml:"CommonName"`
 }

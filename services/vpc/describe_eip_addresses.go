@@ -76,24 +76,25 @@ func (client *Client) DescribeEipAddressesWithCallback(request *DescribeEipAddre
 // DescribeEipAddressesRequest is the request struct for api DescribeEipAddresses
 type DescribeEipAddressesRequest struct {
 	*requests.RpcRequest
-	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount   string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId        requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Status                 string           `position:"Query" name:"Status"`
-	EipAddress             string           `position:"Query" name:"EipAddress"`
-	AllocationId           string           `position:"Query" name:"AllocationId"`
-	ResourceGroupId        string           `position:"Query" name:"ResourceGroupId"`
-	PageNumber             requests.Integer `position:"Query" name:"PageNumber"`
-	PageSize               requests.Integer `position:"Query" name:"PageSize"`
-	OwnerAccount           string           `position:"Query" name:"OwnerAccount"`
-	Filter1Key             string           `position:"Query" name:"Filter.1.Key"`
-	Filter2Key             string           `position:"Query" name:"Filter.2.Key"`
-	Filter1Value           string           `position:"Query" name:"Filter.1.Value"`
+	ResourceOwnerAccount   string           `position:"Query" name:"ResourceOwnerAccount"`
 	Filter2Value           string           `position:"Query" name:"Filter.2.Value"`
+	OwnerAccount           string           `position:"Query" name:"OwnerAccount"`
+	AllocationId           string           `position:"Query" name:"AllocationId"`
+	Filter1Value           string           `position:"Query" name:"Filter.1.Value"`
+	Filter2Key             string           `position:"Query" name:"Filter.2.Key"`
+	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
+	IncludeReservationData requests.Boolean `position:"Query" name:"IncludeReservationData"`
+	EipAddress             string           `position:"Query" name:"EipAddress"`
+	PageNumber             requests.Integer `position:"Query" name:"PageNumber"`
+	ResourceGroupId        string           `position:"Query" name:"ResourceGroupId"`
 	LockReason             string           `position:"Query" name:"LockReason"`
+	Filter1Key             string           `position:"Query" name:"Filter.1.Key"`
 	AssociatedInstanceType string           `position:"Query" name:"AssociatedInstanceType"`
-	AssociatedInstanceId   string           `position:"Query" name:"AssociatedInstanceId"`
+	PageSize               requests.Integer `position:"Query" name:"PageSize"`
 	ChargeType             string           `position:"Query" name:"ChargeType"`
+	AssociatedInstanceId   string           `position:"Query" name:"AssociatedInstanceId"`
+	Status                 string           `position:"Query" name:"Status"`
 }
 
 // DescribeEipAddressesResponse is the response struct for api DescribeEipAddresses

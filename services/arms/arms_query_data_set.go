@@ -76,47 +76,49 @@ func (client *Client) ARMSQueryDataSetWithCallback(request *ARMSQueryDataSetRequ
 // ARMSQueryDataSetRequest is the request struct for api ARMSQueryDataSet
 type ARMSQueryDataSetRequest struct {
 	*requests.RpcRequest
-	DatasetId     requests.Integer                `position:"Query" name:"DatasetId"`
-	IntervalInSec requests.Integer                `position:"Query" name:"IntervalInSec"`
-	DateStr       requests.Integer                `position:"Query" name:"DateStr"`
+	DateStr       string                          `position:"Query" name:"DateStr"`
 	MinTime       requests.Integer                `position:"Query" name:"MinTime"`
+	ReduceTail    requests.Boolean                `position:"Query" name:"ReduceTail"`
 	MaxTime       requests.Integer                `position:"Query" name:"MaxTime"`
-	Dimensions    *[]ARMSQueryDataSetDimensions   `position:"Query" name:"Dimensions"  type:"Repeated"`
+	OptionalDims  *[]ARMSQueryDataSetOptionalDims `position:"Query" name:"OptionalDims"  type:"Repeated"`
 	Measures      *[]string                       `position:"Query" name:"Measures"  type:"Repeated"`
+	IntervalInSec requests.Integer                `position:"Query" name:"IntervalInSec"`
 	IsDrillDown   requests.Boolean                `position:"Query" name:"IsDrillDown"`
+	HungryMode    requests.Boolean                `position:"Query" name:"HungryMode"`
+	SecurityToken string                          `position:"Query" name:"SecurityToken"`
 	OrderByKey    string                          `position:"Query" name:"OrderByKey"`
 	Limit         requests.Integer                `position:"Query" name:"Limit"`
-	ReduceTail    requests.Boolean                `position:"Query" name:"ReduceTail"`
-	HungryMode    requests.Boolean                `position:"Query" name:"HungryMode"`
 	RequiredDims  *[]ARMSQueryDataSetRequiredDims `position:"Query" name:"RequiredDims"  type:"Repeated"`
-	OptionalDims  *[]ARMSQueryDataSetOptionalDims `position:"Query" name:"OptionalDims"  type:"Repeated"`
-}
-
-// ARMSQueryDataSetDimensions is a repeated param struct in ARMSQueryDataSetRequest
-type ARMSQueryDataSetDimensions struct {
-	Key   string `name:"Key"`
-	Value string `name:"Value"`
-	Type  string `name:"Type"`
-}
-
-// ARMSQueryDataSetRequiredDims is a repeated param struct in ARMSQueryDataSetRequest
-type ARMSQueryDataSetRequiredDims struct {
-	Key   string `name:"Key"`
-	Value string `name:"Value"`
-	Type  string `name:"Type"`
+	DatasetId     requests.Integer                `position:"Query" name:"DatasetId"`
+	Dimensions    *[]ARMSQueryDataSetDimensions   `position:"Query" name:"Dimensions"  type:"Repeated"`
 }
 
 // ARMSQueryDataSetOptionalDims is a repeated param struct in ARMSQueryDataSetRequest
 type ARMSQueryDataSetOptionalDims struct {
-	Key   string `name:"Key"`
-	Value string `name:"Value"`
 	Type  string `name:"Type"`
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
+}
+
+// ARMSQueryDataSetRequiredDims is a repeated param struct in ARMSQueryDataSetRequest
+type ARMSQueryDataSetRequiredDims struct {
+	Type  string `name:"Type"`
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
+}
+
+// ARMSQueryDataSetDimensions is a repeated param struct in ARMSQueryDataSetRequest
+type ARMSQueryDataSetDimensions struct {
+	Type  string `name:"Type"`
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // ARMSQueryDataSetResponse is the response struct for api ARMSQueryDataSet
 type ARMSQueryDataSetResponse struct {
 	*responses.BaseResponse
-	Data string `json:"Data" xml:"Data"`
+	Data      string `json:"Data" xml:"Data"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateARMSQueryDataSetRequest creates a request to invoke ARMSQueryDataSet API
@@ -124,7 +126,7 @@ func CreateARMSQueryDataSetRequest() (request *ARMSQueryDataSetRequest) {
 	request = &ARMSQueryDataSetRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2016-11-25", "ARMSQueryDataSet", "", "")
+	request.InitWithApiInfo("ARMS", "2018-10-15", "ARMSQueryDataSet", "", "")
 	return
 }
 

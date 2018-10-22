@@ -76,13 +76,13 @@ func (client *Client) DescribeLoadBalancerUDPListenerAttributeWithCallback(reque
 // DescribeLoadBalancerUDPListenerAttributeRequest is the request struct for api DescribeLoadBalancerUDPListenerAttribute
 type DescribeLoadBalancerUDPListenerAttributeRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	LoadBalancerId       string           `position:"Query" name:"LoadBalancerId"`
-	ListenerPort         requests.Integer `position:"Query" name:"ListenerPort"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	AccessKeyId          string           `position:"Query" name:"access_key_id"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ListenerPort         requests.Integer `position:"Query" name:"ListenerPort"`
+	LoadBalancerId       string           `position:"Query" name:"LoadBalancerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	Tags                 string           `position:"Query" name:"Tags"`
 }
 
@@ -107,6 +107,11 @@ type DescribeLoadBalancerUDPListenerAttributeResponse struct {
 	MaxConnection             int    `json:"MaxConnection" xml:"MaxConnection"`
 	VServerGroupId            string `json:"VServerGroupId" xml:"VServerGroupId"`
 	MasterSlaveServerGroupId  string `json:"MasterSlaveServerGroupId" xml:"MasterSlaveServerGroupId"`
+	AclId                     string `json:"AclId" xml:"AclId"`
+	AclType                   string `json:"AclType" xml:"AclType"`
+	AclStatus                 string `json:"AclStatus" xml:"AclStatus"`
+	VpcIds                    string `json:"VpcIds" xml:"VpcIds"`
+	Description               string `json:"Description" xml:"Description"`
 }
 
 // CreateDescribeLoadBalancerUDPListenerAttributeRequest creates a request to invoke DescribeLoadBalancerUDPListenerAttribute API

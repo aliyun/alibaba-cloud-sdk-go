@@ -76,10 +76,10 @@ func (client *Client) QueryAuthConfigWithCallback(request *QueryAuthConfigReques
 // QueryAuthConfigRequest is the request struct for api QueryAuthConfig
 type QueryAuthConfigRequest struct {
 	*requests.RpcRequest
-	OwnerId              string `position:"Query" name:"OwnerId"`
 	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
 }
 
 // QueryAuthConfigResponse is the response struct for api QueryAuthConfig

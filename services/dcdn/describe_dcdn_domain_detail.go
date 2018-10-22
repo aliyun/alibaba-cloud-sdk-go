@@ -76,9 +76,9 @@ func (client *Client) DescribeDcdnDomainDetailWithCallback(request *DescribeDcdn
 // DescribeDcdnDomainDetailRequest is the request struct for api DescribeDcdnDomainDetail
 type DescribeDcdnDomainDetailRequest struct {
 	*requests.RpcRequest
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	DomainName    string           `position:"Query" name:"DomainName"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeDcdnDomainDetailResponse is the response struct for api DescribeDcdnDomainDetail
@@ -93,7 +93,7 @@ func CreateDescribeDcdnDomainDetailRequest() (request *DescribeDcdnDomainDetailR
 	request = &DescribeDcdnDomainDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dcdn", "2018-01-15", "DescribeDcdnDomainDetail", "dcdn", "openAPI")
+	request.InitWithApiInfo("dcdn", "2018-01-15", "DescribeDcdnDomainDetail", "", "")
 	return
 }
 

@@ -76,8 +76,8 @@ func (client *Client) FindProjectsNameListWithCallback(request *FindProjectsName
 // FindProjectsNameListRequest is the request struct for api FindProjectsNameList
 type FindProjectsNameListRequest struct {
 	*requests.RpcRequest
-	CsbId         requests.Integer `position:"Query" name:"CsbId"`
 	OperationFlag string           `position:"Query" name:"OperationFlag"`
+	CsbId         requests.Integer `position:"Query" name:"CsbId"`
 }
 
 // FindProjectsNameListResponse is the response struct for api FindProjectsNameList
@@ -94,7 +94,7 @@ func CreateFindProjectsNameListRequest() (request *FindProjectsNameListRequest) 
 	request = &FindProjectsNameListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CSB", "2017-11-18", "FindProjectsNameList", "CSB", "openAPI")
+	request.InitWithApiInfo("CSB", "2017-11-18", "FindProjectsNameList", "", "")
 	return
 }
 

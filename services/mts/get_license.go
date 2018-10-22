@@ -76,13 +76,15 @@ func (client *Client) GetLicenseWithCallback(request *GetLicenseRequest, callbac
 // GetLicenseRequest is the request struct for api GetLicense
 type GetLicenseRequest struct {
 	*requests.RpcRequest
-	OwnerId              string `position:"Query" name:"OwnerId"`
 	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	Data                 string `position:"Query" name:"Data"`
 	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	LicenseUrl           string `position:"Query" name:"LicenseUrl"`
-	Data                 string `position:"Query" name:"Data"`
+	Header               string `position:"Query" name:"Header"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
 	MediaId              string `position:"Query" name:"MediaId"`
+	Type                 string `position:"Query" name:"Type"`
+	LicenseUrl           string `position:"Query" name:"LicenseUrl"`
 }
 
 // GetLicenseResponse is the response struct for api GetLicense

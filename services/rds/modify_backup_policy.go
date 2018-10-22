@@ -76,22 +76,36 @@ func (client *Client) ModifyBackupPolicyWithCallback(request *ModifyBackupPolicy
 // ModifyBackupPolicyRequest is the request struct for api ModifyBackupPolicy
 type ModifyBackupPolicyRequest struct {
 	*requests.RpcRequest
-	OwnerId                  requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount     string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId          requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	DBInstanceId             string           `position:"Query" name:"DBInstanceId"`
-	PreferredBackupTime      string           `position:"Query" name:"PreferredBackupTime"`
 	PreferredBackupPeriod    string           `position:"Query" name:"PreferredBackupPeriod"`
-	BackupRetentionPeriod    string           `position:"Query" name:"BackupRetentionPeriod"`
-	BackupLog                string           `position:"Query" name:"BackupLog"`
-	LogBackupRetentionPeriod string           `position:"Query" name:"LogBackupRetentionPeriod"`
+	ResourceOwnerId          requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount     string           `position:"Query" name:"ResourceOwnerAccount"`
+	LocalLogRetentionHours   string           `position:"Query" name:"LocalLogRetentionHours"`
 	OwnerAccount             string           `position:"Query" name:"OwnerAccount"`
+	LogBackupFrequency       string           `position:"Query" name:"LogBackupFrequency"`
+	BackupLog                string           `position:"Query" name:"BackupLog"`
+	LocalLogRetentionSpace   string           `position:"Query" name:"LocalLogRetentionSpace"`
+	OwnerId                  requests.Integer `position:"Query" name:"OwnerId"`
+	Duplication              string           `position:"Query" name:"Duplication"`
+	PreferredBackupTime      string           `position:"Query" name:"PreferredBackupTime"`
+	BackupRetentionPeriod    string           `position:"Query" name:"BackupRetentionPeriod"`
+	DuplicationContent       string           `position:"Query" name:"DuplicationContent"`
+	HighSpaceUsageProtection string           `position:"Query" name:"HighSpaceUsageProtection"`
+	DBInstanceId             string           `position:"Query" name:"DBInstanceId"`
+	DuplicationLocation      string           `position:"Query" name:"DuplicationLocation"`
+	LogBackupRetentionPeriod string           `position:"Query" name:"LogBackupRetentionPeriod"`
+	EnableBackupLog          string           `position:"Query" name:"EnableBackupLog"`
+	BackupPolicyMode         string           `position:"Query" name:"BackupPolicyMode"`
 }
 
 // ModifyBackupPolicyResponse is the response struct for api ModifyBackupPolicy
 type ModifyBackupPolicyResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	RequestId                string `json:"RequestId" xml:"RequestId"`
+	DBInstanceID             string `json:"DBInstanceID" xml:"DBInstanceID"`
+	EnableBackupLog          string `json:"EnableBackupLog" xml:"EnableBackupLog"`
+	LocalLogRetentionHours   int    `json:"LocalLogRetentionHours" xml:"LocalLogRetentionHours"`
+	LocalLogRetentionSpace   string `json:"LocalLogRetentionSpace" xml:"LocalLogRetentionSpace"`
+	HighSpaceUsageProtection string `json:"HighSpaceUsageProtection" xml:"HighSpaceUsageProtection"`
 }
 
 // CreateModifyBackupPolicyRequest creates a request to invoke ModifyBackupPolicy API

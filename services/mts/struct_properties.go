@@ -17,13 +17,13 @@ package mts
 
 // Properties is a nested struct in mts response
 type Properties struct {
-	Fps         string      `json:"Fps" xml:"Fps"`
 	Height      string      `json:"Height" xml:"Height"`
-	Duration    string      `json:"Duration" xml:"Duration"`
 	Width       string      `json:"Width" xml:"Width"`
 	FileSize    string      `json:"FileSize" xml:"FileSize"`
-	FileFormat  string      `json:"FileFormat" xml:"FileFormat"`
+	Duration    string      `json:"Duration" xml:"Duration"`
+	Fps         string      `json:"Fps" xml:"Fps"`
 	Bitrate     string      `json:"Bitrate" xml:"Bitrate"`
+	FileFormat  string      `json:"FileFormat" xml:"FileFormat"`
 	Streams     Streams     `json:"Streams" xml:"Streams"`
 	Format      Format      `json:"Format" xml:"Format"`
 	SourceLogos SourceLogos `json:"SourceLogos" xml:"SourceLogos"`

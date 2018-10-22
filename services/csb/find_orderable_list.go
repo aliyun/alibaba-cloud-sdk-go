@@ -76,11 +76,11 @@ func (client *Client) FindOrderableListWithCallback(request *FindOrderableListRe
 // FindOrderableListRequest is the request struct for api FindOrderableList
 type FindOrderableListRequest struct {
 	*requests.RpcRequest
-	PageNum     requests.Integer `position:"Query" name:"PageNum"`
-	CsbId       requests.Integer `position:"Query" name:"CsbId"`
-	ServiceName string           `position:"Query" name:"ServiceName"`
-	Alias       string           `position:"Query" name:"Alias"`
 	ProjectName string           `position:"Query" name:"ProjectName"`
+	CsbId       requests.Integer `position:"Query" name:"CsbId"`
+	Alias       string           `position:"Query" name:"Alias"`
+	ServiceName string           `position:"Query" name:"ServiceName"`
+	PageNum     requests.Integer `position:"Query" name:"PageNum"`
 }
 
 // FindOrderableListResponse is the response struct for api FindOrderableList
@@ -97,7 +97,7 @@ func CreateFindOrderableListRequest() (request *FindOrderableListRequest) {
 	request = &FindOrderableListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CSB", "2017-11-18", "FindOrderableList", "CSB", "openAPI")
+	request.InitWithApiInfo("CSB", "2017-11-18", "FindOrderableList", "", "")
 	return
 }
 

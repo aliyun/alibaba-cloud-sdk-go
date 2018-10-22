@@ -17,8 +17,8 @@ package mts
 
 // Gif is a nested struct in mts response
 type Gif struct {
+	FinalDelay      string `json:"FinalDelay" xml:"FinalDelay"`
+	Loop            string `json:"Loop" xml:"Loop"`
 	IsCustomPalette string `json:"IsCustomPalette" xml:"IsCustomPalette"`
 	DitherMode      string `json:"DitherMode" xml:"DitherMode"`
-	Loop            string `json:"Loop" xml:"Loop"`
-	FinalDelay      string `json:"FinalDelay" xml:"FinalDelay"`
 }

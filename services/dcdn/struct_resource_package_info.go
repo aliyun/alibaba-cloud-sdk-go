@@ -23,4 +23,6 @@ type ResourcePackageInfo struct {
 	DisplayName   string `json:"DisplayName" xml:"DisplayName"`
 	InstanceId    string `json:"InstanceId" xml:"InstanceId"`
 	Status        string `json:"Status" xml:"Status"`
+	StartTime     string `json:"StartTime" xml:"StartTime"`
+	EndTime       string `json:"EndTime" xml:"EndTime"`
 }

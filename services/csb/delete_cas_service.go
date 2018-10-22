@@ -76,10 +76,10 @@ func (client *Client) DeleteCasServiceWithCallback(request *DeleteCasServiceRequ
 // DeleteCasServiceRequest is the request struct for api DeleteCasService
 type DeleteCasServiceRequest struct {
 	*requests.RpcRequest
+	LeafOnly     requests.Boolean `position:"Query" name:"LeafOnly"`
+	CasCsbName   string           `position:"Query" name:"CasCsbName"`
 	SrcUserId    string           `position:"Query" name:"SrcUserId"`
 	CasServiceId string           `position:"Query" name:"CasServiceId"`
-	CasCsbName   string           `position:"Query" name:"CasCsbName"`
-	LeafOnly     requests.Boolean `position:"Query" name:"LeafOnly"`
 }
 
 // DeleteCasServiceResponse is the response struct for api DeleteCasService
@@ -95,7 +95,7 @@ func CreateDeleteCasServiceRequest() (request *DeleteCasServiceRequest) {
 	request = &DeleteCasServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CSB", "2017-11-18", "DeleteCasService", "CSB", "openAPI")
+	request.InitWithApiInfo("CSB", "2017-11-18", "DeleteCasService", "", "")
 	return
 }
 

@@ -17,8 +17,8 @@ package mts
 
 // Track is a nested struct in mts response
 type Track struct {
-	Type  string                     `json:"Type" xml:"Type"`
-	Id    string                     `json:"Id" xml:"Id"`
 	Order string                     `json:"Order" xml:"Order"`
-	Clips ClipsInQueryEditingJobList `json:"Clips" xml:"Clips"`
+	Id    string                     `json:"Id" xml:"Id"`
+	Type  string                     `json:"Type" xml:"Type"`
+	Clips ClipsInQueryComplexJobList `json:"Clips" xml:"Clips"`
 }

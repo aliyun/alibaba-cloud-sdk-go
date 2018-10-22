@@ -76,16 +76,16 @@ func (client *Client) StartArchiveSQLLogWithCallback(request *StartArchiveSQLLog
 // StartArchiveSQLLogRequest is the request struct for api StartArchiveSQLLog
 type StartArchiveSQLLogRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	QueryKeywords        string           `position:"Query" name:"QueryKeywords"`
-	StartTime            string           `position:"Query" name:"StartTime"`
 	Database             string           `position:"Query" name:"Database"`
-	User                 string           `position:"Query" name:"User"`
-	EndTime              string           `position:"Query" name:"EndTime"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	EndTime              string           `position:"Query" name:"EndTime"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	StartTime            string           `position:"Query" name:"StartTime"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	User                 string           `position:"Query" name:"User"`
+	QueryKeywords        string           `position:"Query" name:"QueryKeywords"`
 }
 
 // StartArchiveSQLLogResponse is the response struct for api StartArchiveSQLLog

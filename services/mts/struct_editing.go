@@ -18,5 +18,5 @@ package mts
 // Editing is a nested struct in mts response
 type Editing struct {
 	Timeline Timeline                      `json:"Timeline" xml:"Timeline"`
-	ClipList ClipListInQueryEditingJobList `json:"ClipList" xml:"ClipList"`
+	ClipList ClipListInQueryComplexJobList `json:"ClipList" xml:"ClipList"`
 }

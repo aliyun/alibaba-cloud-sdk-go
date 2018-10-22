@@ -17,7 +17,7 @@ package mts
 
 // TimelineConfigAudio is a nested struct in mts response
 type TimelineConfigAudio struct {
-	ChannelLayout string `json:"ChannelLayout" xml:"ChannelLayout"`
 	Samplerate    string `json:"Samplerate" xml:"Samplerate"`
+	ChannelLayout string `json:"ChannelLayout" xml:"ChannelLayout"`
 	Channels      string `json:"Channels" xml:"Channels"`
 }

@@ -17,28 +17,28 @@ package mts
 
 // VideoStream is a nested struct in mts response
 type VideoStream struct {
-	Timebase       string      `json:"Timebase" xml:"Timebase"`
 	Height         string      `json:"Height" xml:"Height"`
-	CodecTimeBase  string      `json:"CodecTimeBase" xml:"CodecTimeBase"`
-	StartTime      string      `json:"StartTime" xml:"StartTime"`
-	CodecLongName  string      `json:"CodecLongName" xml:"CodecLongName"`
-	Width          string      `json:"Width" xml:"Width"`
-	Index          string      `json:"Index" xml:"Index"`
-	NumFrames      string      `json:"NumFrames" xml:"NumFrames"`
-	HasBFrames     string      `json:"HasBFrames" xml:"HasBFrames"`
-	Bitrate        string      `json:"Bitrate" xml:"Bitrate"`
-	Level          string      `json:"Level" xml:"Level"`
-	Fps            string      `json:"Fps" xml:"Fps"`
-	Rotate         string      `json:"Rotate" xml:"Rotate"`
-	CodecName      string      `json:"CodecName" xml:"CodecName"`
 	Dar            string      `json:"Dar" xml:"Dar"`
-	Duration       string      `json:"Duration" xml:"Duration"`
-	CodecTagString string      `json:"CodecTagString" xml:"CodecTagString"`
-	Lang           string      `json:"Lang" xml:"Lang"`
-	PixFmt         string      `json:"PixFmt" xml:"PixFmt"`
+	NumFrames      string      `json:"NumFrames" xml:"NumFrames"`
+	CodecName      string      `json:"CodecName" xml:"CodecName"`
 	Profile        string      `json:"Profile" xml:"Profile"`
-	AvgFPS         string      `json:"AvgFPS" xml:"AvgFPS"`
-	CodecTag       string      `json:"CodecTag" xml:"CodecTag"`
+	Fps            string      `json:"Fps" xml:"Fps"`
+	Timebase       string      `json:"Timebase" xml:"Timebase"`
+	Bitrate        string      `json:"Bitrate" xml:"Bitrate"`
 	Sar            string      `json:"Sar" xml:"Sar"`
+	Level          string      `json:"Level" xml:"Level"`
+	PixFmt         string      `json:"PixFmt" xml:"PixFmt"`
+	CodecTag       string      `json:"CodecTag" xml:"CodecTag"`
+	CodecTagString string      `json:"CodecTagString" xml:"CodecTagString"`
+	Index          string      `json:"Index" xml:"Index"`
+	Lang           string      `json:"Lang" xml:"Lang"`
+	HasBFrames     string      `json:"HasBFrames" xml:"HasBFrames"`
+	Width          string      `json:"Width" xml:"Width"`
+	StartTime      string      `json:"StartTime" xml:"StartTime"`
+	Rotate         string      `json:"Rotate" xml:"Rotate"`
+	Duration       string      `json:"Duration" xml:"Duration"`
+	CodecTimeBase  string      `json:"CodecTimeBase" xml:"CodecTimeBase"`
+	CodecLongName  string      `json:"CodecLongName" xml:"CodecLongName"`
+	AvgFPS         string      `json:"AvgFPS" xml:"AvgFPS"`
 	NetworkCost    NetworkCost `json:"NetworkCost" xml:"NetworkCost"`
 }

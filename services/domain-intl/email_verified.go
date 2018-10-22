@@ -76,8 +76,8 @@ func (client *Client) EmailVerifiedWithCallback(request *EmailVerifiedRequest, c
 // EmailVerifiedRequest is the request struct for api EmailVerified
 type EmailVerifiedRequest struct {
 	*requests.RpcRequest
-	Lang         string `position:"Query" name:"Lang"`
 	UserClientIp string `position:"Query" name:"UserClientIp"`
+	Lang         string `position:"Query" name:"Lang"`
 	Email        string `position:"Query" name:"Email"`
 }
 

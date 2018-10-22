@@ -76,9 +76,8 @@ func (client *Client) DescribeLiveStreamsNotifyUrlConfigWithCallback(request *De
 // DescribeLiveStreamsNotifyUrlConfigRequest is the request struct for api DescribeLiveStreamsNotifyUrlConfig
 type DescribeLiveStreamsNotifyUrlConfigRequest struct {
 	*requests.RpcRequest
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
-	DomainName    string           `position:"Query" name:"DomainName"`
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	DomainName string           `position:"Query" name:"DomainName"`
+	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeLiveStreamsNotifyUrlConfigResponse is the response struct for api DescribeLiveStreamsNotifyUrlConfig

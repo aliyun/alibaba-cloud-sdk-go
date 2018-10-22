@@ -17,12 +17,12 @@ package mts
 
 // Format is a nested struct in mts response
 type Format struct {
-	FormatLongName string `json:"FormatLongName" xml:"FormatLongName"`
-	NumPrograms    string `json:"NumPrograms" xml:"NumPrograms"`
-	NumStreams     string `json:"NumStreams" xml:"NumStreams"`
-	Size           string `json:"Size" xml:"Size"`
-	Duration       string `json:"Duration" xml:"Duration"`
-	StartTime      string `json:"StartTime" xml:"StartTime"`
 	FormatName     string `json:"FormatName" xml:"FormatName"`
+	NumPrograms    string `json:"NumPrograms" xml:"NumPrograms"`
+	StartTime      string `json:"StartTime" xml:"StartTime"`
+	FormatLongName string `json:"FormatLongName" xml:"FormatLongName"`
+	Duration       string `json:"Duration" xml:"Duration"`
+	Size           string `json:"Size" xml:"Size"`
 	Bitrate        string `json:"Bitrate" xml:"Bitrate"`
+	NumStreams     string `json:"NumStreams" xml:"NumStreams"`
 }

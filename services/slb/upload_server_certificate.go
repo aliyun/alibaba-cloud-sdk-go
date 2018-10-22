@@ -76,35 +76,39 @@ func (client *Client) UploadServerCertificateWithCallback(request *UploadServerC
 // UploadServerCertificateRequest is the request struct for api UploadServerCertificate
 type UploadServerCertificateRequest struct {
 	*requests.RpcRequest
-	OwnerId                 requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount    string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId         requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	AliCloudCertificateId   string           `position:"Query" name:"AliCloudCertificateId"`
-	AliCloudCertificateName string           `position:"Query" name:"AliCloudCertificateName"`
-	ServerCertificate       string           `position:"Query" name:"ServerCertificate"`
-	PrivateKey              string           `position:"Query" name:"PrivateKey"`
-	ServerCertificateName   string           `position:"Query" name:"ServerCertificateName"`
-	OwnerAccount            string           `position:"Query" name:"OwnerAccount"`
 	AccessKeyId             string           `position:"Query" name:"access_key_id"`
+	ResourceOwnerId         requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ServerCertificate       string           `position:"Query" name:"ServerCertificate"`
+	ResourceOwnerAccount    string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount            string           `position:"Query" name:"OwnerAccount"`
+	AliCloudCertificateName string           `position:"Query" name:"AliCloudCertificateName"`
+	AliCloudCertificateId   string           `position:"Query" name:"AliCloudCertificateId"`
+	OwnerId                 requests.Integer `position:"Query" name:"OwnerId"`
 	Tags                    string           `position:"Query" name:"Tags"`
+	PrivateKey              string           `position:"Query" name:"PrivateKey"`
 	ResourceGroupId         string           `position:"Query" name:"ResourceGroupId"`
+	ServerCertificateName   string           `position:"Query" name:"ServerCertificateName"`
 }
 
 // UploadServerCertificateResponse is the response struct for api UploadServerCertificate
 type UploadServerCertificateResponse struct {
 	*responses.BaseResponse
-	RequestId               string `json:"RequestId" xml:"RequestId"`
-	ServerCertificateId     string `json:"ServerCertificateId" xml:"ServerCertificateId"`
-	Fingerprint             string `json:"Fingerprint" xml:"Fingerprint"`
-	ServerCertificateName   string `json:"ServerCertificateName" xml:"ServerCertificateName"`
-	RegionId                string `json:"RegionId" xml:"RegionId"`
-	RegionIdAlias           string `json:"RegionIdAlias" xml:"RegionIdAlias"`
-	AliCloudCertificateId   string `json:"AliCloudCertificateId" xml:"AliCloudCertificateId"`
-	AliCloudCertificateName string `json:"AliCloudCertificateName" xml:"AliCloudCertificateName"`
-	IsAliCloudCertificate   int    `json:"IsAliCloudCertificate" xml:"IsAliCloudCertificate"`
-	ResourceGroupId         string `json:"ResourceGroupId" xml:"ResourceGroupId"`
-	CreateTime              string `json:"CreateTime" xml:"CreateTime"`
-	CreateTimeStamp         int    `json:"CreateTimeStamp" xml:"CreateTimeStamp"`
+	RequestId               string                                           `json:"RequestId" xml:"RequestId"`
+	ServerCertificateId     string                                           `json:"ServerCertificateId" xml:"ServerCertificateId"`
+	Fingerprint             string                                           `json:"Fingerprint" xml:"Fingerprint"`
+	ServerCertificateName   string                                           `json:"ServerCertificateName" xml:"ServerCertificateName"`
+	RegionId                string                                           `json:"RegionId" xml:"RegionId"`
+	RegionIdAlias           string                                           `json:"RegionIdAlias" xml:"RegionIdAlias"`
+	AliCloudCertificateId   string                                           `json:"AliCloudCertificateId" xml:"AliCloudCertificateId"`
+	AliCloudCertificateName string                                           `json:"AliCloudCertificateName" xml:"AliCloudCertificateName"`
+	IsAliCloudCertificate   int                                              `json:"IsAliCloudCertificate" xml:"IsAliCloudCertificate"`
+	ResourceGroupId         string                                           `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	CreateTime              string                                           `json:"CreateTime" xml:"CreateTime"`
+	CreateTimeStamp         int                                              `json:"CreateTimeStamp" xml:"CreateTimeStamp"`
+	ExpireTime              string                                           `json:"ExpireTime" xml:"ExpireTime"`
+	ExpireTimeStamp         int                                              `json:"ExpireTimeStamp" xml:"ExpireTimeStamp"`
+	CommonName              string                                           `json:"CommonName" xml:"CommonName"`
+	SubjectAlternativeNames SubjectAlternativeNamesInUploadServerCertificate `json:"SubjectAlternativeNames" xml:"SubjectAlternativeNames"`
 }
 
 // CreateUploadServerCertificateRequest creates a request to invoke UploadServerCertificate API

@@ -21,11 +21,13 @@ type NodeInfo struct {
 	Expired         bool                     `json:"Expired" xml:"Expired"`
 	ExpiredTime     string                   `json:"ExpiredTime" xml:"ExpiredTime"`
 	ImageId         string                   `json:"ImageId" xml:"ImageId"`
+	Version         string                   `json:"Version" xml:"Version"`
 	ImageOwnerAlias string                   `json:"ImageOwnerAlias" xml:"ImageOwnerAlias"`
 	Location        string                   `json:"Location" xml:"Location"`
 	RegionId        string                   `json:"RegionId" xml:"RegionId"`
 	CreatedByEhpc   bool                     `json:"CreatedByEhpc" xml:"CreatedByEhpc"`
 	Id              string                   `json:"Id" xml:"Id"`
+	HostName        string                   `json:"HostName" xml:"HostName"`
 	Status          string                   `json:"Status" xml:"Status"`
 	AddTime         string                   `json:"AddTime" xml:"AddTime"`
 	SpotStrategy    string                   `json:"SpotStrategy" xml:"SpotStrategy"`

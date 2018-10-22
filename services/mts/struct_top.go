@@ -18,8 +18,8 @@ package mts
 // Top is a nested struct in mts response
 type Top struct {
 	Score     string `json:"Score" xml:"Score"`
-	Label     string `json:"Label" xml:"Label"`
-	Index     string `json:"Index" xml:"Index"`
-	Object    string `json:"Object" xml:"Object"`
 	Timestamp string `json:"Timestamp" xml:"Timestamp"`
+	Label     string `json:"Label" xml:"Label"`
+	Object    string `json:"Object" xml:"Object"`
+	Index     string `json:"Index" xml:"Index"`
 }

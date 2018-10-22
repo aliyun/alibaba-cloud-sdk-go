@@ -76,11 +76,11 @@ func (client *Client) DeleteDcdnDomainWithCallback(request *DeleteDcdnDomainRequ
 // DeleteDcdnDomainRequest is the request struct for api DeleteDcdnDomain
 type DeleteDcdnDomainRequest struct {
 	*requests.RpcRequest
-	OwnerId         requests.Integer `position:"Query" name:"OwnerId"`
-	OwnerAccount    string           `position:"Query" name:"OwnerAccount"`
-	SecurityToken   string           `position:"Query" name:"SecurityToken"`
-	DomainName      string           `position:"Query" name:"DomainName"`
 	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
+	SecurityToken   string           `position:"Query" name:"SecurityToken"`
+	OwnerAccount    string           `position:"Query" name:"OwnerAccount"`
+	DomainName      string           `position:"Query" name:"DomainName"`
+	OwnerId         requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DeleteDcdnDomainResponse is the response struct for api DeleteDcdnDomain
@@ -94,7 +94,7 @@ func CreateDeleteDcdnDomainRequest() (request *DeleteDcdnDomainRequest) {
 	request = &DeleteDcdnDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dcdn", "2018-01-15", "DeleteDcdnDomain", "dcdn", "openAPI")
+	request.InitWithApiInfo("dcdn", "2018-01-15", "DeleteDcdnDomain", "", "")
 	return
 }
 

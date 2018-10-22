@@ -17,8 +17,8 @@ package mts
 
 // Merge is a nested struct in mts response
 type Merge struct {
-	Start    string `json:"Start" xml:"Start"`
-	Duration string `json:"Duration" xml:"Duration"`
-	RoleArn  string `json:"RoleArn" xml:"RoleArn"`
 	MergeURL string `json:"MergeURL" xml:"MergeURL"`
+	Duration string `json:"Duration" xml:"Duration"`
+	Start    string `json:"Start" xml:"Start"`
+	RoleArn  string `json:"RoleArn" xml:"RoleArn"`
 }

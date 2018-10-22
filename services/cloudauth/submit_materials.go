@@ -78,8 +78,8 @@ type SubmitMaterialsRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId requests.Integer           `position:"Query" name:"ResourceOwnerId"`
 	SourceIp        string                     `position:"Query" name:"SourceIp"`
-	Material        *[]SubmitMaterialsMaterial `position:"Query" name:"Material"  type:"Repeated"`
-	VerifyToken     string                     `position:"Query" name:"VerifyToken"`
+	Material        *[]SubmitMaterialsMaterial `position:"Body" name:"Material"  type:"Repeated"`
+	VerifyToken     string                     `position:"Body" name:"VerifyToken"`
 }
 
 // SubmitMaterialsMaterial is a repeated param struct in SubmitMaterialsRequest
@@ -103,7 +103,7 @@ func CreateSubmitMaterialsRequest() (request *SubmitMaterialsRequest) {
 	request = &SubmitMaterialsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cloudauth", "2018-07-03", "SubmitMaterials", "cloudauth", "openAPI")
+	request.InitWithApiInfo("Cloudauth", "2018-09-16", "SubmitMaterials", "cloudauth", "openAPI")
 	return
 }
 

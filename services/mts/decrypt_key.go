@@ -76,12 +76,12 @@ func (client *Client) DecryptKeyWithCallback(request *DecryptKeyRequest, callbac
 // DecryptKeyRequest is the request struct for api DecryptKey
 type DecryptKeyRequest struct {
 	*requests.RpcRequest
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	Rand                 string `position:"Query" name:"Rand"`
 	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
 	CiphertextBlob       string `position:"Query" name:"CiphertextBlob"`
-	Rand                 string `position:"Query" name:"Rand"`
 }
 
 // DecryptKeyResponse is the response struct for api DecryptKey

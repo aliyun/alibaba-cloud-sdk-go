@@ -78,6 +78,7 @@ type GetNotifyPolicyRequest struct {
 	*requests.RpcRequest
 	PolicyType string `position:"Query" name:"PolicyType"`
 	AlertName  string `position:"Query" name:"AlertName"`
+	GroupId    string `position:"Query" name:"GroupId"`
 	Id         string `position:"Query" name:"Id"`
 	Dimensions string `position:"Query" name:"Dimensions"`
 }
@@ -85,11 +86,11 @@ type GetNotifyPolicyRequest struct {
 // GetNotifyPolicyResponse is the response struct for api GetNotifyPolicy
 type GetNotifyPolicyResponse struct {
 	*responses.BaseResponse
-	Code    string `json:"code" xml:"code"`
-	Message string `json:"message" xml:"message"`
-	Success string `json:"success" xml:"success"`
-	TraceId string `json:"traceId" xml:"traceId"`
-	Result  Result `json:"Result" xml:"Result"`
+	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
+	Success   string `json:"Success" xml:"Success"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Result    Result `json:"Result" xml:"Result"`
 }
 
 // CreateGetNotifyPolicyRequest creates a request to invoke GetNotifyPolicy API

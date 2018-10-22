@@ -76,14 +76,14 @@ func (client *Client) SubmitVideoSummaryJobWithCallback(request *SubmitVideoSumm
 // SubmitVideoSummaryJobRequest is the request struct for api SubmitVideoSummaryJob
 type SubmitVideoSummaryJobRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	Input                string           `position:"Query" name:"Input"`
-	PipelineId           string           `position:"Query" name:"PipelineId"`
-	VideoSummaryConfig   string           `position:"Query" name:"VideoSummaryConfig"`
 	UserData             string           `position:"Query" name:"UserData"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	VideoSummaryConfig   string           `position:"Query" name:"VideoSummaryConfig"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	PipelineId           string           `position:"Query" name:"PipelineId"`
 }
 
 // SubmitVideoSummaryJobResponse is the response struct for api SubmitVideoSummaryJob

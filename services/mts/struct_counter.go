@@ -17,6 +17,6 @@ package mts
 
 // Counter is a nested struct in mts response
 type Counter struct {
-	Label string `json:"Label" xml:"Label"`
 	Count int    `json:"Count" xml:"Count"`
+	Label string `json:"Label" xml:"Label"`
 }

@@ -76,20 +76,20 @@ func (client *Client) CreateVirtualBorderRouterWithCallback(request *CreateVirtu
 // CreateVirtualBorderRouterRequest is the request struct for api CreateVirtualBorderRouter
 type CreateVirtualBorderRouterRequest struct {
 	*requests.RpcRequest
-	PhysicalConnectionId string           `position:"Query" name:"PhysicalConnectionId"`
-	VbrOwnerId           requests.Integer `position:"Query" name:"VbrOwnerId"`
-	VlanId               requests.Integer `position:"Query" name:"VlanId"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	CircuitCode          string           `position:"Query" name:"CircuitCode"`
-	LocalGatewayIp       string           `position:"Query" name:"LocalGatewayIp"`
+	VlanId               requests.Integer `position:"Query" name:"VlanId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	Description          string           `position:"Query" name:"Description"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	PeerGatewayIp        string           `position:"Query" name:"PeerGatewayIp"`
 	PeeringSubnetMask    string           `position:"Query" name:"PeeringSubnetMask"`
-	Description          string           `position:"Query" name:"Description"`
+	PhysicalConnectionId string           `position:"Query" name:"PhysicalConnectionId"`
 	Name                 string           `position:"Query" name:"Name"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	LocalGatewayIp       string           `position:"Query" name:"LocalGatewayIp"`
+	VbrOwnerId           requests.Integer `position:"Query" name:"VbrOwnerId"`
 }
 
 // CreateVirtualBorderRouterResponse is the response struct for api CreateVirtualBorderRouter

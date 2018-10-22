@@ -76,25 +76,27 @@ func (client *Client) CloneDBInstanceWithCallback(request *CloneDBInstanceReques
 // CloneDBInstanceRequest is the request struct for api CloneDBInstance
 type CloneDBInstanceRequest struct {
 	*requests.RpcRequest
-	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ClientToken           string           `position:"Query" name:"ClientToken"`
-	DBInstanceClass       string           `position:"Query" name:"DBInstanceClass"`
-	DBInstanceStorage     requests.Integer `position:"Query" name:"DBInstanceStorage"`
-	DBInstanceDescription string           `position:"Query" name:"DBInstanceDescription"`
-	PayType               string           `position:"Query" name:"PayType"`
-	InstanceNetworkType   string           `position:"Query" name:"InstanceNetworkType"`
-	DBInstanceId          string           `position:"Query" name:"DBInstanceId"`
-	BackupId              string           `position:"Query" name:"BackupId"`
 	RestoreTime           string           `position:"Query" name:"RestoreTime"`
-	VPCId                 string           `position:"Query" name:"VPCId"`
+	Period                string           `position:"Query" name:"Period"`
+	DBInstanceStorage     requests.Integer `position:"Query" name:"DBInstanceStorage"`
+	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
+	ClientToken           string           `position:"Query" name:"ClientToken"`
+	BackupId              string           `position:"Query" name:"BackupId"`
+	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
+	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
+	UsedTime              string           `position:"Query" name:"UsedTime"`
+	DBInstanceClass       string           `position:"Query" name:"DBInstanceClass"`
+	DbNames               string           `position:"Query" name:"DbNames"`
 	VSwitchId             string           `position:"Query" name:"VSwitchId"`
 	PrivateIpAddress      string           `position:"Query" name:"PrivateIpAddress"`
-	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
-	UsedTime              string           `position:"Query" name:"UsedTime"`
-	Period                string           `position:"Query" name:"Period"`
 	ResourceGroupId       string           `position:"Query" name:"ResourceGroupId"`
+	VPCId                 string           `position:"Query" name:"VPCId"`
+	ZoneId                string           `position:"Query" name:"ZoneId"`
+	DBInstanceDescription string           `position:"Query" name:"DBInstanceDescription"`
+	DBInstanceId          string           `position:"Query" name:"DBInstanceId"`
+	PayType               string           `position:"Query" name:"PayType"`
+	InstanceNetworkType   string           `position:"Query" name:"InstanceNetworkType"`
 }
 
 // CloneDBInstanceResponse is the response struct for api CloneDBInstance

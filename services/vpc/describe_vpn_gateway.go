@@ -76,11 +76,11 @@ func (client *Client) DescribeVpnGatewayWithCallback(request *DescribeVpnGateway
 // DescribeVpnGatewayRequest is the request struct for api DescribeVpnGateway
 type DescribeVpnGatewayRequest struct {
 	*requests.RpcRequest
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	VpnGatewayId         string           `position:"Query" name:"VpnGatewayId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeVpnGatewayResponse is the response struct for api DescribeVpnGateway

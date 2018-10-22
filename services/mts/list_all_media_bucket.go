@@ -76,10 +76,10 @@ func (client *Client) ListAllMediaBucketWithCallback(request *ListAllMediaBucket
 // ListAllMediaBucketRequest is the request struct for api ListAllMediaBucket
 type ListAllMediaBucketRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // ListAllMediaBucketResponse is the response struct for api ListAllMediaBucket

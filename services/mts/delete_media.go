@@ -76,11 +76,11 @@ func (client *Client) DeleteMediaWithCallback(request *DeleteMediaRequest, callb
 // DeleteMediaRequest is the request struct for api DeleteMedia
 type DeleteMediaRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	MediaIds             string           `position:"Query" name:"MediaIds"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	MediaIds             string           `position:"Query" name:"MediaIds"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DeleteMediaResponse is the response struct for api DeleteMedia

@@ -76,20 +76,22 @@ func (client *Client) CreateBackupWithCallback(request *CreateBackupRequest, cal
 // CreateBackupRequest is the request struct for api CreateBackup
 type CreateBackupRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	DBName               string           `position:"Query" name:"DBName"`
 	BackupMethod         string           `position:"Query" name:"BackupMethod"`
-	BackupType           string           `position:"Query" name:"BackupType"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	BackupStrategy       string           `position:"Query" name:"BackupStrategy"`
+	DBName               string           `position:"Query" name:"DBName"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	BackupType           string           `position:"Query" name:"BackupType"`
 }
 
 // CreateBackupResponse is the response struct for api CreateBackup
 type CreateBackupResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	RequestId   string `json:"RequestId" xml:"RequestId"`
+	BackupJobId string `json:"BackupJobId" xml:"BackupJobId"`
 }
 
 // CreateCreateBackupRequest creates a request to invoke CreateBackup API

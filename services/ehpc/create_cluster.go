@@ -86,6 +86,7 @@ type CreateClusterRequest struct {
 	KeyPairName                 string                            `position:"Query" name:"KeyPairName"`
 	SecurityGroupName           string                            `position:"Query" name:"SecurityGroupName"`
 	EcsOrderComputeInstanceType string                            `position:"Query" name:"EcsOrder.Compute.InstanceType"`
+	JobQueue                    string                            `position:"Query" name:"JobQueue"`
 	ImageOwnerAlias             string                            `position:"Query" name:"ImageOwnerAlias"`
 	VolumeType                  string                            `position:"Query" name:"VolumeType"`
 	DeployMode                  string                            `position:"Query" name:"DeployMode"`
@@ -96,6 +97,7 @@ type CreateClusterRequest struct {
 	AutoRenewPeriod             requests.Integer                  `position:"Query" name:"AutoRenewPeriod"`
 	Period                      requests.Integer                  `position:"Query" name:"Period"`
 	VolumeProtocol              string                            `position:"Query" name:"VolumeProtocol"`
+	ClientVersion               string                            `position:"Query" name:"ClientVersion"`
 	OsTag                       string                            `position:"Query" name:"OsTag"`
 	RemoteDirectory             string                            `position:"Query" name:"RemoteDirectory"`
 	EcsOrderComputeCount        requests.Integer                  `position:"Query" name:"EcsOrder.Compute.Count"`
@@ -106,6 +108,7 @@ type CreateClusterRequest struct {
 	Application                 *[]CreateClusterApplication       `position:"Query" name:"Application"  type:"Repeated"`
 	AutoRenew                   string                            `position:"Query" name:"AutoRenew"`
 	EcsChargeType               string                            `position:"Query" name:"EcsChargeType"`
+	InputFileUrl                string                            `position:"Query" name:"InputFileUrl"`
 	VpcId                       string                            `position:"Query" name:"VpcId"`
 	HaEnable                    requests.Boolean                  `position:"Query" name:"HaEnable"`
 	Name                        string                            `position:"Query" name:"Name"`
@@ -118,8 +121,8 @@ type CreateClusterRequest struct {
 
 // CreateClusterPostInstallScript is a repeated param struct in CreateClusterRequest
 type CreateClusterPostInstallScript struct {
-	Url  string `name:"Url"`
 	Args string `name:"Args"`
+	Url  string `name:"Url"`
 }
 
 // CreateClusterApplication is a repeated param struct in CreateClusterRequest

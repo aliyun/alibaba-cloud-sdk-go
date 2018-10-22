@@ -76,7 +76,8 @@ func (client *Client) ResetAppSecretWithCallback(request *ResetAppSecretRequest,
 // ResetAppSecretRequest is the request struct for api ResetAppSecret
 type ResetAppSecretRequest struct {
 	*requests.RpcRequest
-	AppKey string `position:"Query" name:"AppKey"`
+	SecurityToken string `position:"Query" name:"SecurityToken"`
+	AppKey        string `position:"Query" name:"AppKey"`
 }
 
 // ResetAppSecretResponse is the response struct for api ResetAppSecret

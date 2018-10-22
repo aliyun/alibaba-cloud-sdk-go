@@ -76,12 +76,12 @@ func (client *Client) AddGlobalAccelerationInstanceIpWithCallback(request *AddGl
 // AddGlobalAccelerationInstanceIpRequest is the request struct for api AddGlobalAccelerationInstanceIp
 type AddGlobalAccelerationInstanceIpRequest struct {
 	*requests.RpcRequest
-	OwnerId                      requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount         string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId              requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount         string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount                 string           `position:"Query" name:"OwnerAccount"`
-	GlobalAccelerationInstanceId string           `position:"Query" name:"GlobalAccelerationInstanceId"`
 	IpInstanceId                 string           `position:"Query" name:"IpInstanceId"`
+	OwnerId                      requests.Integer `position:"Query" name:"OwnerId"`
+	GlobalAccelerationInstanceId string           `position:"Query" name:"GlobalAccelerationInstanceId"`
 }
 
 // AddGlobalAccelerationInstanceIpResponse is the response struct for api AddGlobalAccelerationInstanceIp

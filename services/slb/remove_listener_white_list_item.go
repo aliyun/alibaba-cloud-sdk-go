@@ -76,14 +76,14 @@ func (client *Client) RemoveListenerWhiteListItemWithCallback(request *RemoveLis
 // RemoveListenerWhiteListItemRequest is the request struct for api RemoveListenerWhiteListItem
 type RemoveListenerWhiteListItemRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	LoadBalancerId       string           `position:"Query" name:"LoadBalancerId"`
-	ListenerPort         requests.Integer `position:"Query" name:"ListenerPort"`
-	SourceItems          string           `position:"Query" name:"SourceItems"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	AccessKeyId          string           `position:"Query" name:"access_key_id"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ListenerPort         requests.Integer `position:"Query" name:"ListenerPort"`
+	LoadBalancerId       string           `position:"Query" name:"LoadBalancerId"`
+	SourceItems          string           `position:"Query" name:"SourceItems"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	Tags                 string           `position:"Query" name:"Tags"`
 }
 

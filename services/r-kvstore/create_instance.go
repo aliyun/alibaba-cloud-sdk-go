@@ -95,6 +95,7 @@ type CreateInstanceRequest struct {
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	Token                string           `position:"Query" name:"Token"`
 	VSwitchId            string           `position:"Query" name:"VSwitchId"`
+	PrivateIpAddress     string           `position:"Query" name:"PrivateIpAddress"`
 	InstanceName         string           `position:"Query" name:"InstanceName"`
 	VpcId                string           `position:"Query" name:"VpcId"`
 	ZoneId               string           `position:"Query" name:"ZoneId"`

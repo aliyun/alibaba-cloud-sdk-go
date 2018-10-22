@@ -20,6 +20,7 @@ type JobInfo struct {
 	Id             string    `json:"Id" xml:"Id"`
 	Name           string    `json:"Name" xml:"Name"`
 	Owner          string    `json:"Owner" xml:"Owner"`
+	NodeList       string    `json:"NodeList" xml:"NodeList"`
 	Priority       int       `json:"Priority" xml:"Priority"`
 	State          string    `json:"State" xml:"State"`
 	SubmitTime     string    `json:"SubmitTime" xml:"SubmitTime"`

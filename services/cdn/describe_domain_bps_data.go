@@ -76,16 +76,12 @@ func (client *Client) DescribeDomainBpsDataWithCallback(request *DescribeDomainB
 // DescribeDomainBpsDataRequest is the request struct for api DescribeDomainBpsData
 type DescribeDomainBpsDataRequest struct {
 	*requests.RpcRequest
-	FixTimeGap     string           `position:"Query" name:"FixTimeGap"`
-	TimeMerge      string           `position:"Query" name:"TimeMerge"`
-	DomainName     string           `position:"Query" name:"DomainName"`
-	EndTime        string           `position:"Query" name:"EndTime"`
 	LocationNameEn string           `position:"Query" name:"LocationNameEn"`
 	StartTime      string           `position:"Query" name:"StartTime"`
 	IspNameEn      string           `position:"Query" name:"IspNameEn"`
+	DomainName     string           `position:"Query" name:"DomainName"`
+	EndTime        string           `position:"Query" name:"EndTime"`
 	OwnerId        requests.Integer `position:"Query" name:"OwnerId"`
-	DomainType     string           `position:"Query" name:"DomainType"`
-	SecurityToken  string           `position:"Query" name:"SecurityToken"`
 	Interval       string           `position:"Query" name:"Interval"`
 }
 
@@ -94,15 +90,12 @@ type DescribeDomainBpsDataResponse struct {
 	*responses.BaseResponse
 	RequestId          string             `json:"RequestId" xml:"RequestId"`
 	DomainName         string             `json:"DomainName" xml:"DomainName"`
-	DataInterval       string             `json:"DataInterval" xml:"DataInterval"`
 	StartTime          string             `json:"StartTime" xml:"StartTime"`
 	EndTime            string             `json:"EndTime" xml:"EndTime"`
 	LocationNameEn     string             `json:"LocationNameEn" xml:"LocationNameEn"`
 	IspNameEn          string             `json:"IspNameEn" xml:"IspNameEn"`
-	LocationName       string             `json:"LocationName" xml:"LocationName"`
-	IspName            string             `json:"IspName" xml:"IspName"`
+	DataInterval       string             `json:"DataInterval" xml:"DataInterval"`
 	BpsDataPerInterval BpsDataPerInterval `json:"BpsDataPerInterval" xml:"BpsDataPerInterval"`
-	SupplyBpsDatas     SupplyBpsDatas     `json:"SupplyBpsDatas" xml:"SupplyBpsDatas"`
 }
 
 // CreateDescribeDomainBpsDataRequest creates a request to invoke DescribeDomainBpsData API
@@ -110,7 +103,7 @@ func CreateDescribeDomainBpsDataRequest() (request *DescribeDomainBpsDataRequest
 	request = &DescribeDomainBpsDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeDomainBpsData", "", "")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeDomainBpsData", "", "")
 	return
 }
 

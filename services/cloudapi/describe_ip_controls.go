@@ -77,10 +77,11 @@ func (client *Client) DescribeIpControlsWithCallback(request *DescribeIpControls
 type DescribeIpControlsRequest struct {
 	*requests.RpcRequest
 	IpControlId   string           `position:"Query" name:"IpControlId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	IpControlName string           `position:"Query" name:"IpControlName"`
 	IpControlType string           `position:"Query" name:"IpControlType"`
-	PageNumber    requests.Integer `position:"Query" name:"PageNumber"`
 	PageSize      requests.Integer `position:"Query" name:"PageSize"`
+	PageNumber    requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 // DescribeIpControlsResponse is the response struct for api DescribeIpControls

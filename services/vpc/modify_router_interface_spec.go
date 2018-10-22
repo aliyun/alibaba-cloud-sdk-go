@@ -76,13 +76,13 @@ func (client *Client) ModifyRouterInterfaceSpecWithCallback(request *ModifyRoute
 // ModifyRouterInterfaceSpecRequest is the request struct for api ModifyRouterInterfaceSpec
 type ModifyRouterInterfaceSpecRequest struct {
 	*requests.RpcRequest
-	RouterInterfaceId    string           `position:"Query" name:"RouterInterfaceId"`
-	Spec                 string           `position:"Query" name:"Spec"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	RouterInterfaceId    string           `position:"Query" name:"RouterInterfaceId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Spec                 string           `position:"Query" name:"Spec"`
 }
 
 // ModifyRouterInterfaceSpecResponse is the response struct for api ModifyRouterInterfaceSpec

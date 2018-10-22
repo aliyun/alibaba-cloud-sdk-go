@@ -76,8 +76,8 @@ func (client *Client) CreateProjectWithCallback(request *CreateProjectRequest, c
 // CreateProjectRequest is the request struct for api CreateProject
 type CreateProjectRequest struct {
 	*requests.RpcRequest
-	CsbId requests.Integer `position:"Query" name:"CsbId"`
 	Data  string           `position:"Body" name:"Data"`
+	CsbId requests.Integer `position:"Query" name:"CsbId"`
 }
 
 // CreateProjectResponse is the response struct for api CreateProject
@@ -94,7 +94,7 @@ func CreateCreateProjectRequest() (request *CreateProjectRequest) {
 	request = &CreateProjectRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CSB", "2017-11-18", "CreateProject", "CSB", "openAPI")
+	request.InitWithApiInfo("CSB", "2017-11-18", "CreateProject", "", "")
 	return
 }
 

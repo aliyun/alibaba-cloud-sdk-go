@@ -76,11 +76,11 @@ func (client *Client) DeleteSslVpnClientCertWithCallback(request *DeleteSslVpnCl
 // DeleteSslVpnClientCertRequest is the request struct for api DeleteSslVpnClientCert
 type DeleteSslVpnClientCertRequest struct {
 	*requests.RpcRequest
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
 	SslVpnClientCertId   string           `position:"Query" name:"SslVpnClientCertId"`
 }
 

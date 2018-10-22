@@ -76,8 +76,9 @@ func (client *Client) DescribeApiStageWithCallback(request *DescribeApiStageRequ
 // DescribeApiStageRequest is the request struct for api DescribeApiStage
 type DescribeApiStageRequest struct {
 	*requests.RpcRequest
-	GroupId string `position:"Query" name:"GroupId"`
-	StageId string `position:"Query" name:"StageId"`
+	SecurityToken string `position:"Query" name:"SecurityToken"`
+	GroupId       string `position:"Query" name:"GroupId"`
+	StageId       string `position:"Query" name:"StageId"`
 }
 
 // DescribeApiStageResponse is the response struct for api DescribeApiStage

@@ -17,5 +17,5 @@ package cms
 
 // DatapointsInListActiveAlertRule is a nested struct in cms response
 type DatapointsInListActiveAlertRule struct {
-	Alarm []Alarm `json:"Alarm" xml:"Alarm"`
+	Alarm []AlarmInListActiveAlertRule `json:"Alarm" xml:"Alarm"`
 }

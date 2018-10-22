@@ -76,12 +76,12 @@ func (client *Client) DeleteNqaWithCallback(request *DeleteNqaRequest, callback 
 // DeleteNqaRequest is the request struct for api DeleteNqa
 type DeleteNqaRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	NqaId                string           `position:"Query" name:"NqaId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	NqaId                string           `position:"Query" name:"NqaId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DeleteNqaResponse is the response struct for api DeleteNqa

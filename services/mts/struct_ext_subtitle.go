@@ -17,7 +17,7 @@ package mts
 
 // ExtSubtitle is a nested struct in mts response
 type ExtSubtitle struct {
-	FontName string `json:"FontName" xml:"FontName"`
 	CharEnc  string `json:"CharEnc" xml:"CharEnc"`
+	FontName string `json:"FontName" xml:"FontName"`
 	Input    Input  `json:"Input" xml:"Input"`
 }

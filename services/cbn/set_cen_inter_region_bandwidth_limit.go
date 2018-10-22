@@ -76,14 +76,14 @@ func (client *Client) SetCenInterRegionBandwidthLimitWithCallback(request *SetCe
 // SetCenInterRegionBandwidthLimitRequest is the request struct for api SetCenInterRegionBandwidthLimit
 type SetCenInterRegionBandwidthLimitRequest struct {
 	*requests.RpcRequest
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	CenId                string           `position:"Query" name:"CenId"`
 	LocalRegionId        string           `position:"Query" name:"LocalRegionId"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	CenId                string           `position:"Query" name:"CenId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OppositeRegionId     string           `position:"Query" name:"OppositeRegionId"`
 	BandwidthLimit       requests.Integer `position:"Query" name:"BandwidthLimit"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // SetCenInterRegionBandwidthLimitResponse is the response struct for api SetCenInterRegionBandwidthLimit

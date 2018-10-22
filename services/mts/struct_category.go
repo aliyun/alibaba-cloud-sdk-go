@@ -17,8 +17,8 @@ package mts
 
 // Category is a nested struct in mts response
 type Category struct {
-	Level    string `json:"Level" xml:"Level"`
 	CateId   string `json:"CateId" xml:"CateId"`
-	CateName string `json:"CateName" xml:"CateName"`
 	ParentId string `json:"ParentId" xml:"ParentId"`
+	Level    string `json:"Level" xml:"Level"`
+	CateName string `json:"CateName" xml:"CateName"`
 }

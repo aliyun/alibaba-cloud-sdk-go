@@ -24,5 +24,6 @@ type RouteEntry struct {
 	InstanceId           string   `json:"InstanceId" xml:"InstanceId"`
 	NextHopType          string   `json:"NextHopType" xml:"NextHopType"`
 	NextHopRegionId      string   `json:"NextHopRegionId" xml:"NextHopRegionId"`
+	PrivateIpAddress     string   `json:"PrivateIpAddress" xml:"PrivateIpAddress"`
 	NextHops             NextHops `json:"NextHops" xml:"NextHops"`
 }

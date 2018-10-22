@@ -76,12 +76,13 @@ func (client *Client) CreateApiStageVariableWithCallback(request *CreateApiStage
 // CreateApiStageVariableRequest is the request struct for api CreateApiStageVariable
 type CreateApiStageVariableRequest struct {
 	*requests.RpcRequest
-	GroupId         string           `position:"Query" name:"GroupId"`
-	StageId         string           `position:"Query" name:"StageId"`
-	VariableName    string           `position:"Query" name:"VariableName"`
 	SupportRoute    requests.Boolean `position:"Query" name:"SupportRoute"`
+	SecurityToken   string           `position:"Query" name:"SecurityToken"`
+	VariableName    string           `position:"Query" name:"VariableName"`
 	VariableValue   string           `position:"Query" name:"VariableValue"`
+	GroupId         string           `position:"Query" name:"GroupId"`
 	StageRouteModel string           `position:"Query" name:"StageRouteModel"`
+	StageId         string           `position:"Query" name:"StageId"`
 }
 
 // CreateApiStageVariableResponse is the response struct for api CreateApiStageVariable

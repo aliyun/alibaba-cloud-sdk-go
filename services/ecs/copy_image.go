@@ -76,25 +76,22 @@ func (client *Client) CopyImageWithCallback(request *CopyImageRequest, callback 
 // CopyImageRequest is the request struct for api CopyImage
 type CopyImageRequest struct {
 	*requests.RpcRequest
-	Tag4Value              string           `position:"Query" name:"Tag.4.Value"`
 	ResourceOwnerId        requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ImageId                string           `position:"Query" name:"ImageId"`
-	Tag2Key                string           `position:"Query" name:"Tag.2.Key"`
-	Tag5Key                string           `position:"Query" name:"Tag.5.Key"`
+	Encrypted              requests.Boolean `position:"Query" name:"Encrypted"`
 	ResourceOwnerAccount   string           `position:"Query" name:"ResourceOwnerAccount"`
 	DestinationImageName   string           `position:"Query" name:"DestinationImageName"`
 	DestinationRegionId    string           `position:"Query" name:"DestinationRegionId"`
 	OwnerAccount           string           `position:"Query" name:"OwnerAccount"`
-	Tag3Key                string           `position:"Query" name:"Tag.3.Key"`
+	Tag                    *[]CopyImageTag  `position:"Query" name:"Tag"  type:"Repeated"`
 	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
-	Tag5Value              string           `position:"Query" name:"Tag.5.Value"`
-	Tag1Key                string           `position:"Query" name:"Tag.1.Key"`
-	Tag1Value              string           `position:"Query" name:"Tag.1.Value"`
-	Encrypted              requests.Boolean `position:"Query" name:"Encrypted"`
-	Tag2Value              string           `position:"Query" name:"Tag.2.Value"`
-	Tag4Key                string           `position:"Query" name:"Tag.4.Key"`
 	DestinationDescription string           `position:"Query" name:"DestinationDescription"`
-	Tag3Value              string           `position:"Query" name:"Tag.3.Value"`
+}
+
+// CopyImageTag is a repeated param struct in CopyImageRequest
+type CopyImageTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // CopyImageResponse is the response struct for api CopyImage

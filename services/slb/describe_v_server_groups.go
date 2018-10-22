@@ -76,13 +76,15 @@ func (client *Client) DescribeVServerGroupsWithCallback(request *DescribeVServer
 // DescribeVServerGroupsRequest is the request struct for api DescribeVServerGroups
 type DescribeVServerGroupsRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	AccessKeyId          string           `position:"Query" name:"access_key_id"`
-	Tags                 string           `position:"Query" name:"Tags"`
+	IncludeRule          requests.Boolean `position:"Query" name:"IncludeRule"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	LoadBalancerId       string           `position:"Query" name:"LoadBalancerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	IncludeListener      requests.Boolean `position:"Query" name:"IncludeListener"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Tags                 string           `position:"Query" name:"Tags"`
 }
 
 // DescribeVServerGroupsResponse is the response struct for api DescribeVServerGroups

@@ -76,7 +76,8 @@ func (client *Client) DescribeApiGroupWithCallback(request *DescribeApiGroupRequ
 // DescribeApiGroupRequest is the request struct for api DescribeApiGroup
 type DescribeApiGroupRequest struct {
 	*requests.RpcRequest
-	GroupId string `position:"Query" name:"GroupId"`
+	SecurityToken string `position:"Query" name:"SecurityToken"`
+	GroupId       string `position:"Query" name:"GroupId"`
 }
 
 // DescribeApiGroupResponse is the response struct for api DescribeApiGroup
@@ -94,6 +95,7 @@ type DescribeApiGroupResponse struct {
 	BillingStatus string        `json:"BillingStatus" xml:"BillingStatus"`
 	IllegalStatus string        `json:"IllegalStatus" xml:"IllegalStatus"`
 	TrafficLimit  int           `json:"TrafficLimit" xml:"TrafficLimit"`
+	VpcDomain     string        `json:"VpcDomain" xml:"VpcDomain"`
 	CustomDomains CustomDomains `json:"CustomDomains" xml:"CustomDomains"`
 	StageItems    StageItems    `json:"StageItems" xml:"StageItems"`
 }

@@ -76,14 +76,30 @@ func (client *Client) SetRuleWithCallback(request *SetRuleRequest, callback func
 // SetRuleRequest is the request struct for api SetRule
 type SetRuleRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	AccessKeyId          string           `position:"Query" name:"access_key_id"`
-	Tags                 string           `position:"Query" name:"Tags"`
-	RuleId               string           `position:"Query" name:"RuleId"`
-	VServerGroupId       string           `position:"Query" name:"VServerGroupId"`
+	AccessKeyId            string           `position:"Query" name:"access_key_id"`
+	ResourceOwnerId        requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	HealthCheckTimeout     requests.Integer `position:"Query" name:"HealthCheckTimeout"`
+	HealthCheckURI         string           `position:"Query" name:"HealthCheckURI"`
+	RuleName               string           `position:"Query" name:"RuleName"`
+	UnhealthyThreshold     requests.Integer `position:"Query" name:"UnhealthyThreshold"`
+	HealthyThreshold       requests.Integer `position:"Query" name:"HealthyThreshold"`
+	Scheduler              string           `position:"Query" name:"Scheduler"`
+	HealthCheck            string           `position:"Query" name:"HealthCheck"`
+	ListenerSync           string           `position:"Query" name:"ListenerSync"`
+	CookieTimeout          requests.Integer `position:"Query" name:"CookieTimeout"`
+	StickySessionType      string           `position:"Query" name:"StickySessionType"`
+	VServerGroupId         string           `position:"Query" name:"VServerGroupId"`
+	Cookie                 string           `position:"Query" name:"Cookie"`
+	ResourceOwnerAccount   string           `position:"Query" name:"ResourceOwnerAccount"`
+	StickySession          string           `position:"Query" name:"StickySession"`
+	HealthCheckDomain      string           `position:"Query" name:"HealthCheckDomain"`
+	OwnerAccount           string           `position:"Query" name:"OwnerAccount"`
+	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
+	Tags                   string           `position:"Query" name:"Tags"`
+	HealthCheckInterval    requests.Integer `position:"Query" name:"HealthCheckInterval"`
+	RuleId                 string           `position:"Query" name:"RuleId"`
+	HealthCheckConnectPort requests.Integer `position:"Query" name:"HealthCheckConnectPort"`
+	HealthCheckHttpCode    string           `position:"Query" name:"HealthCheckHttpCode"`
 }
 
 // SetRuleResponse is the response struct for api SetRule

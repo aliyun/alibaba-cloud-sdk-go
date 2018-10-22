@@ -17,6 +17,8 @@ package ecs
 
 // KeyPair is a nested struct in ecs response
 type KeyPair struct {
-	KeyPairName        string `json:"KeyPairName" xml:"KeyPairName"`
-	KeyPairFingerPrint string `json:"KeyPairFingerPrint" xml:"KeyPairFingerPrint"`
+	KeyPairName        string                 `json:"KeyPairName" xml:"KeyPairName"`
+	KeyPairFingerPrint string                 `json:"KeyPairFingerPrint" xml:"KeyPairFingerPrint"`
+	ResourceGroupId    string                 `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	Tags               TagsInDescribeKeyPairs `json:"Tags" xml:"Tags"`
 }

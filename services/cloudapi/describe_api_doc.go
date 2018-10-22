@@ -76,9 +76,10 @@ func (client *Client) DescribeApiDocWithCallback(request *DescribeApiDocRequest,
 // DescribeApiDocRequest is the request struct for api DescribeApiDoc
 type DescribeApiDocRequest struct {
 	*requests.RpcRequest
-	GroupId   string `position:"Query" name:"GroupId"`
-	StageName string `position:"Query" name:"StageName"`
-	ApiId     string `position:"Query" name:"ApiId"`
+	StageName     string `position:"Query" name:"StageName"`
+	SecurityToken string `position:"Query" name:"SecurityToken"`
+	GroupId       string `position:"Query" name:"GroupId"`
+	ApiId         string `position:"Query" name:"ApiId"`
 }
 
 // DescribeApiDocResponse is the response struct for api DescribeApiDoc

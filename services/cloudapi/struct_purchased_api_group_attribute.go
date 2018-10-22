@@ -26,4 +26,5 @@ type PurchasedApiGroupAttribute struct {
 	BillingType    string `json:"BillingType" xml:"BillingType"`
 	InvokeTimesMax int    `json:"InvokeTimesMax" xml:"InvokeTimesMax"`
 	InvokeTimesNow int    `json:"InvokeTimesNow" xml:"InvokeTimesNow"`
+	Status         string `json:"Status" xml:"Status"`
 }

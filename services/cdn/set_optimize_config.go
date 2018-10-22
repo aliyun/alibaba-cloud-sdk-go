@@ -76,10 +76,10 @@ func (client *Client) SetOptimizeConfigWithCallback(request *SetOptimizeConfigRe
 // SetOptimizeConfigRequest is the request struct for api SetOptimizeConfig
 type SetOptimizeConfigRequest struct {
 	*requests.RpcRequest
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
-	Enable        string           `position:"Query" name:"Enable"`
-	DomainName    string           `position:"Query" name:"DomainName"`
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	Enable     string           `position:"Query" name:"Enable"`
+	DomainName string           `position:"Query" name:"DomainName"`
+	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
+	ConfigId   requests.Integer `position:"Query" name:"ConfigId"`
 }
 
 // SetOptimizeConfigResponse is the response struct for api SetOptimizeConfig
@@ -93,7 +93,7 @@ func CreateSetOptimizeConfigRequest() (request *SetOptimizeConfigRequest) {
 	request = &SetOptimizeConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "SetOptimizeConfig", "", "")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "SetOptimizeConfig", "", "")
 	return
 }
 

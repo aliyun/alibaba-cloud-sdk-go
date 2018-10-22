@@ -17,7 +17,7 @@ package mts
 
 // DigiWaterMark is a nested struct in mts response
 type DigiWaterMark struct {
-	Type      string    `json:"Type" xml:"Type"`
 	Alpha     string    `json:"Alpha" xml:"Alpha"`
+	Type      string    `json:"Type" xml:"Type"`
 	InputFile InputFile `json:"InputFile" xml:"InputFile"`
 }

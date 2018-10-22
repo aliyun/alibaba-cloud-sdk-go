@@ -19,6 +19,7 @@ package ecs
 type Permission struct {
 	IpProtocol              string `json:"IpProtocol" xml:"IpProtocol"`
 	PortRange               string `json:"PortRange" xml:"PortRange"`
+	SourcePortRange         string `json:"SourcePortRange" xml:"SourcePortRange"`
 	SourceGroupId           string `json:"SourceGroupId" xml:"SourceGroupId"`
 	SourceGroupName         string `json:"SourceGroupName" xml:"SourceGroupName"`
 	SourceCidrIp            string `json:"SourceCidrIp" xml:"SourceCidrIp"`

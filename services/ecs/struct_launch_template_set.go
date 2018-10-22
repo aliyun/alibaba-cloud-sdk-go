@@ -17,11 +17,13 @@ package ecs
 
 // LaunchTemplateSet is a nested struct in ecs response
 type LaunchTemplateSet struct {
-	CreateTime           string `json:"CreateTime" xml:"CreateTime"`
-	ModifiedTime         string `json:"ModifiedTime" xml:"ModifiedTime"`
-	LaunchTemplateId     string `json:"LaunchTemplateId" xml:"LaunchTemplateId"`
-	LaunchTemplateName   string `json:"LaunchTemplateName" xml:"LaunchTemplateName"`
-	DefaultVersionNumber int    `json:"DefaultVersionNumber" xml:"DefaultVersionNumber"`
-	LatestVersionNumber  int    `json:"LatestVersionNumber" xml:"LatestVersionNumber"`
-	CreatedBy            string `json:"CreatedBy" xml:"CreatedBy"`
+	CreateTime           string                        `json:"CreateTime" xml:"CreateTime"`
+	ModifiedTime         string                        `json:"ModifiedTime" xml:"ModifiedTime"`
+	LaunchTemplateId     string                        `json:"LaunchTemplateId" xml:"LaunchTemplateId"`
+	LaunchTemplateName   string                        `json:"LaunchTemplateName" xml:"LaunchTemplateName"`
+	DefaultVersionNumber int                           `json:"DefaultVersionNumber" xml:"DefaultVersionNumber"`
+	LatestVersionNumber  int                           `json:"LatestVersionNumber" xml:"LatestVersionNumber"`
+	CreatedBy            string                        `json:"CreatedBy" xml:"CreatedBy"`
+	ResourceGroupId      string                        `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	Tags                 TagsInDescribeLaunchTemplates `json:"Tags" xml:"Tags"`
 }

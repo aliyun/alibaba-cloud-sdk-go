@@ -76,28 +76,31 @@ func (client *Client) DescribeLoadBalancersWithCallback(request *DescribeLoadBal
 // DescribeLoadBalancersRequest is the request struct for api DescribeLoadBalancers
 type DescribeLoadBalancersRequest struct {
 	*requests.RpcRequest
-	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
+	AccessKeyId           string           `position:"Query" name:"access_key_id"`
 	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ServerId              string           `position:"Query" name:"ServerId"`
-	LoadBalancerId        string           `position:"Query" name:"LoadBalancerId"`
+	NetworkType           string           `position:"Query" name:"NetworkType"`
+	AddressIPVersion      string           `position:"Query" name:"AddressIPVersion"`
+	MasterZoneId          string           `position:"Query" name:"MasterZoneId"`
+	PageNumber            requests.Integer `position:"Query" name:"PageNumber"`
+	ResourceGroupId       string           `position:"Query" name:"ResourceGroupId"`
 	LoadBalancerName      string           `position:"Query" name:"LoadBalancerName"`
-	ServerIntranetAddress string           `position:"Query" name:"ServerIntranetAddress"`
+	PageSize              requests.Integer `position:"Query" name:"PageSize"`
 	AddressType           string           `position:"Query" name:"AddressType"`
+	SlaveZoneId           string           `position:"Query" name:"SlaveZoneId"`
+	Fuzzy                 string           `position:"Query" name:"Fuzzy"`
+	Address               string           `position:"Query" name:"Address"`
+	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
+	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
+	ServerId              string           `position:"Query" name:"ServerId"`
+	LoadBalancerStatus    string           `position:"Query" name:"LoadBalancerStatus"`
+	Tags                  string           `position:"Query" name:"Tags"`
+	ServerIntranetAddress string           `position:"Query" name:"ServerIntranetAddress"`
+	VSwitchId             string           `position:"Query" name:"VSwitchId"`
+	LoadBalancerId        string           `position:"Query" name:"LoadBalancerId"`
 	InternetChargeType    string           `position:"Query" name:"InternetChargeType"`
 	VpcId                 string           `position:"Query" name:"VpcId"`
-	VSwitchId             string           `position:"Query" name:"VSwitchId"`
-	NetworkType           string           `position:"Query" name:"NetworkType"`
-	Address               string           `position:"Query" name:"Address"`
-	MasterZoneId          string           `position:"Query" name:"MasterZoneId"`
-	SlaveZoneId           string           `position:"Query" name:"SlaveZoneId"`
-	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
-	AccessKeyId           string           `position:"Query" name:"access_key_id"`
-	Tags                  string           `position:"Query" name:"Tags"`
 	PayType               string           `position:"Query" name:"PayType"`
-	ResourceGroupId       string           `position:"Query" name:"ResourceGroupId"`
-	PageNumber            requests.Integer `position:"Query" name:"PageNumber"`
-	PageSize              requests.Integer `position:"Query" name:"PageSize"`
 }
 
 // DescribeLoadBalancersResponse is the response struct for api DescribeLoadBalancers

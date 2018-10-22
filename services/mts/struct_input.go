@@ -17,12 +17,13 @@ package mts
 
 // Input is a nested struct in mts response
 type Input struct {
-	Start     string    `json:"Start" xml:"Start"`
-	Location  string    `json:"Location" xml:"Location"`
-	Duration  string    `json:"Duration" xml:"Duration"`
-	RoleArn   string    `json:"RoleArn" xml:"RoleArn"`
 	Bucket    string    `json:"Bucket" xml:"Bucket"`
+	Duration  string    `json:"Duration" xml:"Duration"`
+	Start     string    `json:"Start" xml:"Start"`
 	UserData  string    `json:"UserData" xml:"UserData"`
 	Object    string    `json:"Object" xml:"Object"`
+	Location  string    `json:"Location" xml:"Location"`
+	RoleArn   string    `json:"RoleArn" xml:"RoleArn"`
+	Url       string    `json:"Url" xml:"Url"`
 	InputFile InputFile `json:"InputFile" xml:"InputFile"`
 }

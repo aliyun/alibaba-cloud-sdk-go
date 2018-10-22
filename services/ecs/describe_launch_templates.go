@@ -76,25 +76,22 @@ func (client *Client) DescribeLaunchTemplatesWithCallback(request *DescribeLaunc
 // DescribeLaunchTemplatesRequest is the request struct for api DescribeLaunchTemplates
 type DescribeLaunchTemplatesRequest struct {
 	*requests.RpcRequest
-	TemplateTag1Value       string           `position:"Query" name:"TemplateTag.1.Value"`
-	LaunchTemplateName      *[]string        `position:"Query" name:"LaunchTemplateName"  type:"Repeated"`
-	ResourceOwnerId         requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	TemplateTag4Key         string           `position:"Query" name:"TemplateTag.4.Key"`
-	PageNumber              requests.Integer `position:"Query" name:"PageNumber"`
-	TemplateTag3Key         string           `position:"Query" name:"TemplateTag.3.Key"`
-	TemplateTag5Value       string           `position:"Query" name:"TemplateTag.5.Value"`
-	PageSize                requests.Integer `position:"Query" name:"PageSize"`
-	TemplateTag3Value       string           `position:"Query" name:"TemplateTag.3.Value"`
-	TemplateTag2Key         string           `position:"Query" name:"TemplateTag.2.Key"`
-	LaunchTemplateId        *[]string        `position:"Query" name:"LaunchTemplateId"  type:"Repeated"`
-	ResourceOwnerAccount    string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount            string           `position:"Query" name:"OwnerAccount"`
-	TemplateResourceGroupId string           `position:"Query" name:"TemplateResourceGroupId"`
-	TemplateTag2Value       string           `position:"Query" name:"TemplateTag.2.Value"`
-	OwnerId                 requests.Integer `position:"Query" name:"OwnerId"`
-	TemplateTag4Value       string           `position:"Query" name:"TemplateTag.4.Value"`
-	TemplateTag5Key         string           `position:"Query" name:"TemplateTag.5.Key"`
-	TemplateTag1Key         string           `position:"Query" name:"TemplateTag.1.Key"`
+	LaunchTemplateName      *[]string                             `position:"Query" name:"LaunchTemplateName"  type:"Repeated"`
+	ResourceOwnerId         requests.Integer                      `position:"Query" name:"ResourceOwnerId"`
+	PageNumber              requests.Integer                      `position:"Query" name:"PageNumber"`
+	PageSize                requests.Integer                      `position:"Query" name:"PageSize"`
+	TemplateTag             *[]DescribeLaunchTemplatesTemplateTag `position:"Query" name:"TemplateTag"  type:"Repeated"`
+	LaunchTemplateId        *[]string                             `position:"Query" name:"LaunchTemplateId"  type:"Repeated"`
+	ResourceOwnerAccount    string                                `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount            string                                `position:"Query" name:"OwnerAccount"`
+	TemplateResourceGroupId string                                `position:"Query" name:"TemplateResourceGroupId"`
+	OwnerId                 requests.Integer                      `position:"Query" name:"OwnerId"`
+}
+
+// DescribeLaunchTemplatesTemplateTag is a repeated param struct in DescribeLaunchTemplatesRequest
+type DescribeLaunchTemplatesTemplateTag struct {
+	Key   string `name:"Key"`
+	Value string `name:"Value"`
 }
 
 // DescribeLaunchTemplatesResponse is the response struct for api DescribeLaunchTemplates

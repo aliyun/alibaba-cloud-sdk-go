@@ -84,9 +84,9 @@ type DescribeL2VipsByDomainRequest struct {
 // DescribeL2VipsByDomainResponse is the response struct for api DescribeL2VipsByDomain
 type DescribeL2VipsByDomainResponse struct {
 	*responses.BaseResponse
-	RequestId  string                       `json:"RequestId" xml:"RequestId"`
-	DomainName string                       `json:"DomainName" xml:"DomainName"`
-	Vips       VipsInDescribeL2VipsByDomain `json:"Vips" xml:"Vips"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
+	DomainName string `json:"DomainName" xml:"DomainName"`
+	Vips       Vips   `json:"Vips" xml:"Vips"`
 }
 
 // CreateDescribeL2VipsByDomainRequest creates a request to invoke DescribeL2VipsByDomain API
@@ -94,7 +94,7 @@ func CreateDescribeL2VipsByDomainRequest() (request *DescribeL2VipsByDomainReque
 	request = &DescribeL2VipsByDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeL2VipsByDomain", "", "")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeL2VipsByDomain", "", "")
 	return
 }
 

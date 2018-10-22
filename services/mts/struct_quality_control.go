@@ -17,6 +17,6 @@ package mts
 
 // QualityControl is a nested struct in mts response
 type QualityControl struct {
-	RateQuality     string `json:"RateQuality" xml:"RateQuality"`
 	MethodStreaming string `json:"MethodStreaming" xml:"MethodStreaming"`
+	RateQuality     string `json:"RateQuality" xml:"RateQuality"`
 }

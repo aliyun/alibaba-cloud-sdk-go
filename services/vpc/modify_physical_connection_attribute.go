@@ -76,20 +76,20 @@ func (client *Client) ModifyPhysicalConnectionAttributeWithCallback(request *Mod
 // ModifyPhysicalConnectionAttributeRequest is the request struct for api ModifyPhysicalConnectionAttribute
 type ModifyPhysicalConnectionAttributeRequest struct {
 	*requests.RpcRequest
-	PhysicalConnectionId          string           `position:"Query" name:"PhysicalConnectionId"`
-	LineOperator                  string           `position:"Query" name:"LineOperator"`
-	Bandwidth                     requests.Integer `position:"Query" name:"bandwidth"`
-	PeerLocation                  string           `position:"Query" name:"PeerLocation"`
-	PortType                      string           `position:"Query" name:"PortType"`
 	RedundantPhysicalConnectionId string           `position:"Query" name:"RedundantPhysicalConnectionId"`
-	Description                   string           `position:"Query" name:"Description"`
-	Name                          string           `position:"Query" name:"Name"`
-	ClientToken                   string           `position:"Query" name:"ClientToken"`
-	OwnerId                       requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount          string           `position:"Query" name:"ResourceOwnerAccount"`
+	PeerLocation                  string           `position:"Query" name:"PeerLocation"`
 	ResourceOwnerId               requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount                  string           `position:"Query" name:"OwnerAccount"`
+	PortType                      string           `position:"Query" name:"PortType"`
 	CircuitCode                   string           `position:"Query" name:"CircuitCode"`
+	Bandwidth                     requests.Integer `position:"Query" name:"bandwidth"`
+	ClientToken                   string           `position:"Query" name:"ClientToken"`
+	ResourceOwnerAccount          string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount                  string           `position:"Query" name:"OwnerAccount"`
+	Description                   string           `position:"Query" name:"Description"`
+	OwnerId                       requests.Integer `position:"Query" name:"OwnerId"`
+	LineOperator                  string           `position:"Query" name:"LineOperator"`
+	PhysicalConnectionId          string           `position:"Query" name:"PhysicalConnectionId"`
+	Name                          string           `position:"Query" name:"Name"`
 }
 
 // ModifyPhysicalConnectionAttributeResponse is the response struct for api ModifyPhysicalConnectionAttribute

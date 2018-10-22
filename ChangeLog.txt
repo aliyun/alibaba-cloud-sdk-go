@@ -1,3 +1,264 @@
+2018-10-16 Version: 1.32.3
+1, This version add MetricQuery interface to support retcode and apm metric query.
+
+2018-10-16 Version: 1.32.2
+1, This version add MetricQuery interface to support retcode and apm metric query.
+
+2018-10-16 Version: 1.32.1
+1, This version add MetricQuery interface to support retcode and apm metric query.
+
+2018-10-16 Version: 1.32.0
+1, Delete deprecated and unusable apis : AddIpRange, UnbindIpRange, BindIpRange, DescribeIntranetAttributeKb, DescribeIpRanges, ModifyIntranetBandwidthKb, DescribeEventDetail, CheckAutoSnapshotPolicy, CheckDiskEnableAutoSnapshotValidation, DescribeAutoSnapshotPolicy
+2, Add instance topology api DescribeInstanceTopology
+3, Add mount point in DescribeDisksFullStatus
+
+
+2018-10-12 Version: 1.31.8
+1, ModifyCenAttribute supports ProtectionLevel.
+2, New APIs: PublishRouteEntries/WithdrawPublishedRouteEntries/DescribePublishedRouteEntries
+
+2018-10-11 Version: 1.31.7
+1, Add a new api called DeleteMezzanines to clear mezzanine infos and storages.
+2, Add the field called PlayConfig to GetVideoPlayAuth and GetPlayInfo api request.
+3, Add a new api called UpdateImageInfos to update image information.
+
+2018-10-10 Version: 1.31.6
+1, add UpdateProject api, support update CU, ServiceRole
+2, PutProject not support edit
+3, CreateOfficeConversionTask api now supports FitToPagesTall, FitToPagesWide
+4, Remove paramater Engines, Indexers from project apis
+
+2018-10-09 Version: 1.31.5
+1, v1.0.0-->v1.0.1
+2, provider new region:beijing/shenzhen/zhangjiakou
+3, provider service for VPC user;
+
+2018-09-30 Version: 1.31.4
+1, This is an example of release-log.
+2, Please strictly follow this format to edit in English.
+3, Format：Number + , + Space + Description
+
+2018-09-29 Version: 1.31.3
+1, Sync cdn api.
+
+2018-09-29 Version: 1.31.2
+1, This is an example of release-log.
+2, Please strictly follow this format to edit in English.
+3, Format：Number + , + Space + Description
+
+2018-09-29 Version: 1.31.1
+1, This is an example of release-log.
+2, Please strictly follow this format to edit in English.
+3, Format：Number + , + Space + Description
+
+2018-09-27 Version: 1.31.0
+1, Add new API ListQueues, modify API SetAutoScaleConfig to support queue related features.
+
+2018-09-27 Version: 1.30.8
+1, modify getFaces Api
+
+2018-09-27 Version: 1.30.7
+1, modify getFaces Api
+
+2018-09-25 Version: 1.30.6
+1, Add GetHotlineRecord and QueryHotlineRecord interface, version 1.0.0
+
+2018-09-25 Version: 1.30.5
+1, Fix bug in GetVerifyToken and SubmitMaterials API.
+
+2018-09-22 Version: 1.30.4
+1, update
+
+2018-09-20 Version: 1.30.3
+1, Fix publish failure for Java, Python and C# SDK.
+
+2018-09-20 Version: 1.30.2
+1, BssOpenApi first deploy.
+
+2018-09-20 Version: 1.30.1
+1, BssOpenApi first deploy.
+
+2018-09-19 Version: 1.30.0
+1, Add ens api, include SaveSingleTaskForDisassociatingEns, SaveSingleTaskForAssociatingEns, QueryLocalEnsAssociation and QueryEnsAssociation.
+
+2018-09-17 Version: 1.29.10
+1, Add field for AddCasterVideoResource, DescribeCasterVideoResources, ModifyCasterVideoResource.
+
+
+2018-09-17 Version: 1.29.9
+1, describeRegions modify.
+
+2018-09-17 Version: 1.29.8
+1, ModifySecurityIps support WhitelistNetworkType 
+
+2018-09-16 Version: 1.29.7
+1, add CheckInstanceExist OpenApi.
+
+2018-09-14 Version: 1.29.6
+1, Add DedicatedHost Feature
+
+2018-09-13 Version: 1.29.5
+1, modify CheckDBInstance OpenApi
+
+2018-09-13 Version: 1.29.4
+1, Add CreateChannelToken.
+
+
+2018-09-11 Version: 1.29.3
+1, add CheckDBInstance OpenApi.
+
+2018-09-06 Version: 1.29.2
+1, fixed DescirbeRegions zoneId date type.
+
+2018-09-06 Version: 1.29.1
+1, AutoScaling support launchTemplate.
+
+2018-09-05 Version: 1.29.0
+1, Add new APIs with control policy for querying price
+
+2018-09-03 Version: 1.28.3
+1, voice identify interface
+2, client upload credentials interface
+
+2018-09-03 Version: 1.28.2
+1, Add new service API：FindServiceStatisticalData, which can support query service statistical data.
+
+2018-08-31 Version: 1.28.1
+1, The CreateInstance supported VPC IpAddress.
+
+2018-08-28 Version: 1.28.0
+1, Add new APIs for profiling application performance: GetCloudMetricProfiling, etc.
+2, Add new APIs to support Shifter container applications: AddContainerApp, etc.
+
+2018-08-28 Version: 1.27.6
+1, Add param for DescribeRegions,support AcceptLanguage,RegionEndpoint.
+
+2018-08-27 Version: 1.27.5
+1, add Ess alarm task api, CreateAlarm, DeleteAlarm, DescribeAlarms, DeleteAlarm, EnableAlarm, DisableAlarm
+
+
+2018-08-27 Version: 1.27.4
+1, createInstance supported IpAddress param.
+
+2018-08-24 Version: 1.27.3
+1, Add api: DetectQRCode
+
+2018-08-23 Version: 1.27.2
+1, RunInstance add privateIpAddress.
+
+2018-08-23 Version: 1.27.1
+1, This is an example of release-log.
+2, Please strictly follow this format to edit in English.
+3, Format：Number + , + Space + Description
+
+2018-08-23 Version: 1.27.0
+1, Add CreateVpnGateway API.
+2, Add product Ipv6Translator.
+
+
+2018-08-22 Version: 1.26.2
+1, upgrade mongodb sdk.
+
+2018-08-22 Version: 1.26.0
+1, Add api CreateSimulatedSystemEvents, support creating one or more simulated system events.
+2, Add api CancelSimulatedSystemEvents, support cancelling one or more simulated system events.
+
+2018-08-21 Version: 1.25.8
+1, DeleteFaceSearchImageByIdRequest add field: srcUri(String).
+2, CreateFaceSetResponse  add field: faces(Long).
+3, GetFaceSetResponse add field: faces(Long).
+4, Fix class Blurness in IndexFaceResponse.
+
+2018-08-21 Version: 1.25.7
+1, Repair describeLaunchTemplateVersions securityEnhancementStrategy type
+
+2018-08-17 Version: 1.25.6
+1, Add a new api called DeleteImage to clear the image resource.
+2, Add the field called AdditionType and OutputType to GetMezzanineInfo api request.
+3, Add the field called OutputType to GetMezzanineInfo api response.
+4, Add the field called CreationTime and ModificationTime to GetPlayInfo api response.
+
+2018-08-17 Version: 1.25.5
+1, New apkpubkey fields for queryauthentication output parameter.
+2, New packagename fields for queryauthentication output parameter.
+3, New clientId fields for queryauthentication output parameter.
+
+2018-08-16 Version: 1.25.4
+1, ModifyScalingConfiguration add imageName.
+2, CreateScalingConfiguration add imageName.
+
+2018-08-15 Version: 1.25.3
+1, Fix bug in GetMaterials API.
+2, GetVerifyToken added a new param VerifyConfigs
+
+2018-08-15 Version: 1.25.2
+1, Add domain operation api AddLiveDomain,DeleteLiveDomain,DescribeLiveDomainDetail,StartLiveDomain,StopLiveDomain.
+2, Add certificate operation api DescribeLiveCertificateDetail,DescribeLiveCertificateList,SetLiveDomainCertificate.
+3, Add domain config api BatchSetLiveDomainConfigs,BatchDeleteLiveDomainConfigs,DeleteLiveSpecificConfig,DescribeLiveDomainConfigs.
+
+2018-08-15 Version: 1.25.1
+1, Update ecs tag to 20 maximum
+
+
+2018-08-13 Version: 1.25.0
+1, New userinfo fields for registerface input parameter.
+2, New userinfo fields for updateface input parameter.
+3, New userinfo fields for queryface output parameter.
+
+2018-08-13 Version: 1.24.7
+1, Add cross domain support.
+2, Add parameter SerialNumber to interface RebootSmartAccessGateway.
+
+2018-08-08 Version: 1.24.6
+1, The official release 4.0.0
+
+2018-08-08 Version: 1.24.5
+1, Update FC apis.
+
+2018-08-08 Version: 1.24.4
+1, First release.
+
+2018-08-05 Version: 1.24.3
+1, Add Interface SubmitSubtitleJob
+2, Support convert ttml、stl subtitle to vtt
+
+2018-08-04 Version: 1.24.2
+1, Add a new api called SetAuditSecurityIp to set audit security ip.
+2, Add a new api called ListAuditSecurityIp to query audit security ip list.
+3, Add a new api called UploadMediaByURL to bulk upload media based on urls.
+4, Add the field called StorageLocation and TemplateGroupId to GetVideoInfo api response.
+5, Add the field called StorageLocation and TemplateGroupId to GetVideoInfos api response.
+6, Add the field called OutputType and Status to GetPlayInfo api response.
+
+2018-08-04 Version: 1.24.1
+1, CreateOfficeConversionTask add TgtFilePages field to specify the final uploaded page
+
+2018-08-03 Version: 1.24.0
+1, Add new API AddLocalNodes, for adding local machine to a hybrid cluster
+
+2018-08-02 Version: 1.23.7
+1, Add parameter(GroupId) for CreateNotifyPolicy,GetNotifyPolicy,DeleteNotifyPolicy,ListNotifyPolicy.
+
+2018-08-01 Version: 1.23.6
+1, Add parameter(DryRun) for CreateAlarm and UpdateAlarm.
+
+2018-08-01 Version: 1.23.5
+1, Add api: MoPenQueryCanvas, MoPenDoRecognize, MoPenSendMqttMessage, MoPenFindGroup
+
+2018-08-01 Version: 1.23.4
+1, Support describePrice for market image, add return detailInfo in interface describePrice
+
+2018-07-26 Version: 1.23.3
+1, Add RemoveTerminals API.
+
+2018-07-26 Version: 1.23.2
+1, Add new API: SendDryRunSystemEvent,PutMetricAlarm,DescribeAlarmsForDimensions,DescribeAlarms.
+
+2018-07-26 Version: 1.23.1
+1, Add BatchGetJobMetricInfo API.
+2, Add BatchGetPluginConfigInfo API.
+3, Add GetJobTopology API.
+
 2018-07-13 Version: 1.23.0
 1, New APIs for batch executing commands in cluster: InvokeShellCommand, ListCommands, etc.
 2, New APIs for HybridCluster (link E-HPC with cluster in local IDC): CreateHybridCluster, etc.

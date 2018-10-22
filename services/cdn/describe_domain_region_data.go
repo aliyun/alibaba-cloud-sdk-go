@@ -76,11 +76,10 @@ func (client *Client) DescribeDomainRegionDataWithCallback(request *DescribeDoma
 // DescribeDomainRegionDataRequest is the request struct for api DescribeDomainRegionData
 type DescribeDomainRegionDataRequest struct {
 	*requests.RpcRequest
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
-	DomainName    string           `position:"Query" name:"DomainName"`
-	EndTime       string           `position:"Query" name:"EndTime"`
-	StartTime     string           `position:"Query" name:"StartTime"`
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	StartTime  string           `position:"Query" name:"StartTime"`
+	DomainName string           `position:"Query" name:"DomainName"`
+	EndTime    string           `position:"Query" name:"EndTime"`
+	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeDomainRegionDataResponse is the response struct for api DescribeDomainRegionData
@@ -99,7 +98,7 @@ func CreateDescribeDomainRegionDataRequest() (request *DescribeDomainRegionDataR
 	request = &DescribeDomainRegionDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeDomainRegionData", "", "")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeDomainRegionData", "", "")
 	return
 }
 

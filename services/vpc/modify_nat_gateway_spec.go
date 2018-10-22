@@ -76,13 +76,13 @@ func (client *Client) ModifyNatGatewaySpecWithCallback(request *ModifyNatGateway
 // ModifyNatGatewaySpecRequest is the request struct for api ModifyNatGatewaySpec
 type ModifyNatGatewaySpecRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	NatGatewayId         string           `position:"Query" name:"NatGatewayId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	Spec                 string           `position:"Query" name:"Spec"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
 }
 
 // ModifyNatGatewaySpecResponse is the response struct for api ModifyNatGatewaySpec

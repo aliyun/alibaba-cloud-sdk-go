@@ -17,12 +17,12 @@ package mts
 
 // Audio is a nested struct in mts response
 type Audio struct {
-	Remove     string `json:"Remove" xml:"Remove"`
-	Samplerate string `json:"Samplerate" xml:"Samplerate"`
-	Channels   string `json:"Channels" xml:"Channels"`
 	Qscale     string `json:"Qscale" xml:"Qscale"`
+	Samplerate string `json:"Samplerate" xml:"Samplerate"`
 	Profile    string `json:"Profile" xml:"Profile"`
-	Codec      string `json:"Codec" xml:"Codec"`
 	Bitrate    string `json:"Bitrate" xml:"Bitrate"`
+	Remove     string `json:"Remove" xml:"Remove"`
+	Codec      string `json:"Codec" xml:"Codec"`
+	Channels   string `json:"Channels" xml:"Channels"`
 	Volume     Volume `json:"Volume" xml:"Volume"`
 }

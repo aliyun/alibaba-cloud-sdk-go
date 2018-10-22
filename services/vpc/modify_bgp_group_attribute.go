@@ -76,17 +76,17 @@ func (client *Client) ModifyBgpGroupAttributeWithCallback(request *ModifyBgpGrou
 // ModifyBgpGroupAttributeRequest is the request struct for api ModifyBgpGroupAttribute
 type ModifyBgpGroupAttributeRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	BgpGroupId           string           `position:"Query" name:"BgpGroupId"`
-	Name                 string           `position:"Query" name:"Name"`
-	Description          string           `position:"Query" name:"Description"`
-	PeerAsn              requests.Integer `position:"Query" name:"PeerAsn"`
 	AuthKey              string           `position:"Query" name:"AuthKey"`
-	IsFakeAsn            requests.Boolean `position:"Query" name:"IsFakeAsn"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	BgpGroupId           string           `position:"Query" name:"BgpGroupId"`
+	Description          string           `position:"Query" name:"Description"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	PeerAsn              requests.Integer `position:"Query" name:"PeerAsn"`
+	IsFakeAsn            requests.Boolean `position:"Query" name:"IsFakeAsn"`
+	Name                 string           `position:"Query" name:"Name"`
 }
 
 // ModifyBgpGroupAttributeResponse is the response struct for api ModifyBgpGroupAttribute

@@ -76,8 +76,9 @@ func (client *Client) ReactivateDomainWithCallback(request *ReactivateDomainRequ
 // ReactivateDomainRequest is the request struct for api ReactivateDomain
 type ReactivateDomainRequest struct {
 	*requests.RpcRequest
-	GroupId    string `position:"Query" name:"GroupId"`
-	DomainName string `position:"Query" name:"DomainName"`
+	SecurityToken string `position:"Query" name:"SecurityToken"`
+	GroupId       string `position:"Query" name:"GroupId"`
+	DomainName    string `position:"Query" name:"DomainName"`
 }
 
 // ReactivateDomainResponse is the response struct for api ReactivateDomain

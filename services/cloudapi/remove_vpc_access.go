@@ -76,9 +76,10 @@ func (client *Client) RemoveVpcAccessWithCallback(request *RemoveVpcAccessReques
 // RemoveVpcAccessRequest is the request struct for api RemoveVpcAccess
 type RemoveVpcAccessRequest struct {
 	*requests.RpcRequest
-	VpcId      string           `position:"Query" name:"VpcId"`
-	InstanceId string           `position:"Query" name:"InstanceId"`
-	Port       requests.Integer `position:"Query" name:"Port"`
+	InstanceId    string           `position:"Query" name:"InstanceId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	Port          requests.Integer `position:"Query" name:"Port"`
+	VpcId         string           `position:"Query" name:"VpcId"`
 }
 
 // RemoveVpcAccessResponse is the response struct for api RemoveVpcAccess

@@ -76,9 +76,9 @@ func (client *Client) QueryDomainByInstanceIdWithCallback(request *QueryDomainBy
 // QueryDomainByInstanceIdRequest is the request struct for api QueryDomainByInstanceId
 type QueryDomainByInstanceIdRequest struct {
 	*requests.RpcRequest
+	InstanceId   string `position:"Query" name:"InstanceId"`
 	UserClientIp string `position:"Query" name:"UserClientIp"`
 	Lang         string `position:"Query" name:"Lang"`
-	InstanceId   string `position:"Query" name:"InstanceId"`
 }
 
 // QueryDomainByInstanceIdResponse is the response struct for api QueryDomainByInstanceId

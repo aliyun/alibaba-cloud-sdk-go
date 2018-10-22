@@ -17,8 +17,8 @@ package mts
 
 // Opening is a nested struct in mts response
 type Opening struct {
-	Start   string `json:"Start" xml:"Start"`
 	Height  string `json:"Height" xml:"Height"`
 	Width   string `json:"Width" xml:"Width"`
 	OpenUrl string `json:"openUrl" xml:"openUrl"`
+	Start   string `json:"Start" xml:"Start"`
 }

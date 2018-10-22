@@ -76,12 +76,11 @@ func (client *Client) DescribeDomainReqHitRateDataWithCallback(request *Describe
 // DescribeDomainReqHitRateDataRequest is the request struct for api DescribeDomainReqHitRateData
 type DescribeDomainReqHitRateDataRequest struct {
 	*requests.RpcRequest
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
-	DomainName    string           `position:"Query" name:"DomainName"`
-	EndTime       string           `position:"Query" name:"EndTime"`
-	Interval      string           `position:"Query" name:"Interval"`
-	StartTime     string           `position:"Query" name:"StartTime"`
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	StartTime  string           `position:"Query" name:"StartTime"`
+	DomainName string           `position:"Query" name:"DomainName"`
+	EndTime    string           `position:"Query" name:"EndTime"`
+	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
+	Interval   string           `position:"Query" name:"Interval"`
 }
 
 // DescribeDomainReqHitRateDataResponse is the response struct for api DescribeDomainReqHitRateData
@@ -100,7 +99,7 @@ func CreateDescribeDomainReqHitRateDataRequest() (request *DescribeDomainReqHitR
 	request = &DescribeDomainReqHitRateDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeDomainReqHitRateData", "", "")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeDomainReqHitRateData", "", "")
 	return
 }
 

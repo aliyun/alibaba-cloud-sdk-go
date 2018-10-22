@@ -76,15 +76,15 @@ func (client *Client) SaveBatchTaskForCreatingOrderRedeemWithCallback(request *S
 // SaveBatchTaskForCreatingOrderRedeemRequest is the request struct for api SaveBatchTaskForCreatingOrderRedeem
 type SaveBatchTaskForCreatingOrderRedeemRequest struct {
 	*requests.RpcRequest
+	OrderRedeemParam *[]SaveBatchTaskForCreatingOrderRedeemOrderRedeemParam `position:"Query" name:"OrderRedeemParam"  type:"Repeated"`
 	UserClientIp     string                                                 `position:"Query" name:"UserClientIp"`
 	Lang             string                                                 `position:"Query" name:"Lang"`
-	OrderRedeemParam *[]SaveBatchTaskForCreatingOrderRedeemOrderRedeemParam `position:"Query" name:"OrderRedeemParam"  type:"Repeated"`
 }
 
 // SaveBatchTaskForCreatingOrderRedeemOrderRedeemParam is a repeated param struct in SaveBatchTaskForCreatingOrderRedeemRequest
 type SaveBatchTaskForCreatingOrderRedeemOrderRedeemParam struct {
-	DomainName            string `name:"DomainName"`
 	CurrentExpirationDate string `name:"CurrentExpirationDate"`
+	DomainName            string `name:"DomainName"`
 }
 
 // SaveBatchTaskForCreatingOrderRedeemResponse is the response struct for api SaveBatchTaskForCreatingOrderRedeem

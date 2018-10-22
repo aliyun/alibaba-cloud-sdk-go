@@ -77,7 +77,6 @@ func (client *Client) DescribeUserDomainsWithCallback(request *DescribeUserDomai
 type DescribeUserDomainsRequest struct {
 	*requests.RpcRequest
 	FuncFilter       string           `position:"Query" name:"FuncFilter"`
-	Sources          string           `position:"Query" name:"Sources"`
 	DomainName       string           `position:"Query" name:"DomainName"`
 	OwnerId          requests.Integer `position:"Query" name:"OwnerId"`
 	FuncId           string           `position:"Query" name:"FuncId"`
@@ -106,7 +105,7 @@ func CreateDescribeUserDomainsRequest() (request *DescribeUserDomainsRequest) {
 	request = &DescribeUserDomainsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "DescribeUserDomains", "", "")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeUserDomains", "", "")
 	return
 }
 

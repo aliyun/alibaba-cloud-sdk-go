@@ -76,9 +76,10 @@ func (client *Client) AbolishApiWithCallback(request *AbolishApiRequest, callbac
 // AbolishApiRequest is the request struct for api AbolishApi
 type AbolishApiRequest struct {
 	*requests.RpcRequest
-	GroupId   string `position:"Query" name:"GroupId"`
-	ApiId     string `position:"Query" name:"ApiId"`
-	StageName string `position:"Query" name:"StageName"`
+	StageName     string `position:"Query" name:"StageName"`
+	SecurityToken string `position:"Query" name:"SecurityToken"`
+	GroupId       string `position:"Query" name:"GroupId"`
+	ApiId         string `position:"Query" name:"ApiId"`
 }
 
 // AbolishApiResponse is the response struct for api AbolishApi

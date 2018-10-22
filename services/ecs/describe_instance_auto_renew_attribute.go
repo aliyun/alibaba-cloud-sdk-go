@@ -80,13 +80,19 @@ type DescribeInstanceAutoRenewAttributeRequest struct {
 	InstanceId           string           `position:"Query" name:"InstanceId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	RenewalStatus        string           `position:"Query" name:"RenewalStatus"`
+	PageSize             string           `position:"Query" name:"PageSize"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	PageNumber           string           `position:"Query" name:"PageNumber"`
 }
 
 // DescribeInstanceAutoRenewAttributeResponse is the response struct for api DescribeInstanceAutoRenewAttribute
 type DescribeInstanceAutoRenewAttributeResponse struct {
 	*responses.BaseResponse
 	RequestId               string                  `json:"RequestId" xml:"RequestId"`
+	PageNumber              int                     `json:"PageNumber" xml:"PageNumber"`
+	PageSize                int                     `json:"PageSize" xml:"PageSize"`
+	TotalCount              int                     `json:"TotalCount" xml:"TotalCount"`
 	InstanceRenewAttributes InstanceRenewAttributes `json:"InstanceRenewAttributes" xml:"InstanceRenewAttributes"`
 }
 

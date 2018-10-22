@@ -76,9 +76,10 @@ func (client *Client) ModifyLogConfigWithCallback(request *ModifyLogConfigReques
 // ModifyLogConfigRequest is the request struct for api ModifyLogConfig
 type ModifyLogConfigRequest struct {
 	*requests.RpcRequest
-	SlsProject  string `position:"Query" name:"SlsProject"`
-	SlsLogStore string `position:"Query" name:"SlsLogStore"`
-	LogType     string `position:"Query" name:"LogType"`
+	SlsLogStore   string `position:"Query" name:"SlsLogStore"`
+	LogType       string `position:"Query" name:"LogType"`
+	SecurityToken string `position:"Query" name:"SecurityToken"`
+	SlsProject    string `position:"Query" name:"SlsProject"`
 }
 
 // ModifyLogConfigResponse is the response struct for api ModifyLogConfig

@@ -17,13 +17,13 @@ package mts
 
 // Activity is a nested struct in mts response
 type Activity struct {
-	Type             string           `json:"Type" xml:"Type"`
-	Message          string           `json:"Message" xml:"Message"`
 	Name             string           `json:"Name" xml:"Name"`
-	StartTime        string           `json:"StartTime" xml:"StartTime"`
-	State            string           `json:"State" xml:"State"`
-	Code             string           `json:"Code" xml:"Code"`
 	JobId            string           `json:"JobId" xml:"JobId"`
+	Message          string           `json:"Message" xml:"Message"`
+	State            string           `json:"State" xml:"State"`
+	StartTime        string           `json:"StartTime" xml:"StartTime"`
+	Code             string           `json:"Code" xml:"Code"`
 	EndTime          string           `json:"EndTime" xml:"EndTime"`
+	Type             string           `json:"Type" xml:"Type"`
 	MNSMessageResult MNSMessageResult `json:"MNSMessageResult" xml:"MNSMessageResult"`
 }

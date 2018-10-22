@@ -76,8 +76,8 @@ func (client *Client) CreateServiceWithCallback(request *CreateServiceRequest, c
 // CreateServiceRequest is the request struct for api CreateService
 type CreateServiceRequest struct {
 	*requests.RpcRequest
-	CsbId requests.Integer `position:"Query" name:"CsbId"`
 	Data  string           `position:"Body" name:"Data"`
+	CsbId requests.Integer `position:"Query" name:"CsbId"`
 }
 
 // CreateServiceResponse is the response struct for api CreateService
@@ -94,7 +94,7 @@ func CreateCreateServiceRequest() (request *CreateServiceRequest) {
 	request = &CreateServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CSB", "2017-11-18", "CreateService", "CSB", "openAPI")
+	request.InitWithApiInfo("CSB", "2017-11-18", "CreateService", "", "")
 	return
 }
 

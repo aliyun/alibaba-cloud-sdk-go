@@ -17,29 +17,29 @@ package mts
 
 // EditingConfig is a nested struct in mts response
 type EditingConfig struct {
-	UserData               string                             `json:"UserData" xml:"UserData"`
-	Priority               string                             `json:"Priority" xml:"Priority"`
 	TemplateId             string                             `json:"TemplateId" xml:"TemplateId"`
-	MergeConfigUrl         string                             `json:"MergeConfigUrl" xml:"MergeConfigUrl"`
-	Rotate                 string                             `json:"Rotate" xml:"Rotate"`
 	DeWatermark            string                             `json:"DeWatermark" xml:"DeWatermark"`
-	WaterMarkConfigUrl     string                             `json:"WaterMarkConfigUrl" xml:"WaterMarkConfigUrl"`
-	VideoStreamMap         string                             `json:"VideoStreamMap" xml:"VideoStreamMap"`
+	MergeConfigUrl         string                             `json:"MergeConfigUrl" xml:"MergeConfigUrl"`
+	UserData               string                             `json:"UserData" xml:"UserData"`
+	Rotate                 string                             `json:"Rotate" xml:"Rotate"`
 	AudioStreamMap         string                             `json:"AudioStreamMap" xml:"AudioStreamMap"`
-	Editing                Editing                            `json:"Editing" xml:"Editing"`
-	Encryption             Encryption                         `json:"Encryption" xml:"Encryption"`
-	MuxConfig              MuxConfig                          `json:"MuxConfig" xml:"MuxConfig"`
-	OutputFile             OutputFile                         `json:"OutputFile" xml:"OutputFile"`
-	Container              Container                          `json:"Container" xml:"Container"`
+	VideoStreamMap         string                             `json:"VideoStreamMap" xml:"VideoStreamMap"`
+	Priority               string                             `json:"Priority" xml:"Priority"`
+	WaterMarkConfigUrl     string                             `json:"WaterMarkConfigUrl" xml:"WaterMarkConfigUrl"`
 	Properties             Properties                         `json:"Properties" xml:"Properties"`
-	Clip                   Clip                               `json:"Clip" xml:"Clip"`
-	SuperReso              SuperReso                          `json:"SuperReso" xml:"SuperReso"`
-	Audio                  Audio                              `json:"Audio" xml:"Audio"`
-	SubtitleConfig         SubtitleConfig                     `json:"SubtitleConfig" xml:"SubtitleConfig"`
-	TransConfig            TransConfig                        `json:"TransConfig" xml:"TransConfig"`
 	DigiWaterMark          DigiWaterMark                      `json:"DigiWaterMark" xml:"DigiWaterMark"`
 	Video                  Video                              `json:"Video" xml:"Video"`
+	Clip                   Clip                               `json:"Clip" xml:"Clip"`
+	MuxConfig              MuxConfig                          `json:"MuxConfig" xml:"MuxConfig"`
+	OutputFile             OutputFile                         `json:"OutputFile" xml:"OutputFile"`
 	M3U8NonStandardSupport M3U8NonStandardSupport             `json:"M3U8NonStandardSupport" xml:"M3U8NonStandardSupport"`
-	MergeList              MergeListInQueryEditingJobList     `json:"MergeList" xml:"MergeList"`
+	Audio                  Audio                              `json:"Audio" xml:"Audio"`
+	SubtitleConfig         SubtitleConfig                     `json:"SubtitleConfig" xml:"SubtitleConfig"`
+	Editing                Editing                            `json:"Editing" xml:"Editing"`
+	Container              Container                          `json:"Container" xml:"Container"`
+	TransConfig            TransConfig                        `json:"TransConfig" xml:"TransConfig"`
+	Encryption             Encryption                         `json:"Encryption" xml:"Encryption"`
+	SuperReso              SuperReso                          `json:"SuperReso" xml:"SuperReso"`
 	WaterMarkList          WaterMarkListInQueryEditingJobList `json:"WaterMarkList" xml:"WaterMarkList"`
+	MergeList              MergeListInQueryEditingJobList     `json:"MergeList" xml:"MergeList"`
 }

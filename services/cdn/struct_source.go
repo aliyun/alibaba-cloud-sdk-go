@@ -17,14 +17,9 @@ package cdn
 
 // Source is a nested struct in cdn response
 type Source struct {
-	DomainSource   string `json:"DomainSource" xml:"DomainSource"`
-	CreateTime     string `json:"CreateTime" xml:"CreateTime"`
-	DomainSourceId int    `json:"DomainSourceId" xml:"DomainSourceId"`
-	Enabled        string `json:"Enabled" xml:"Enabled"`
-	Port           int    `json:"Port" xml:"Port"`
-	Priority       int    `json:"Priority" xml:"Priority"`
-	RouteStatus    string `json:"RouteStatus" xml:"RouteStatus"`
-	Status         string `json:"Status" xml:"Status"`
-	SourceType     string `json:"SourceType" xml:"SourceType"`
-	Weight         int    `json:"Weight" xml:"Weight"`
+	Type     string `json:"Type" xml:"Type"`
+	Content  string `json:"Content" xml:"Content"`
+	Port     int    `json:"Port" xml:"Port"`
+	Priority string `json:"Priority" xml:"Priority"`
+	Weight   string `json:"Weight" xml:"Weight"`
 }

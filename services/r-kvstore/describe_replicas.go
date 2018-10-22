@@ -79,6 +79,7 @@ type DescribeReplicasRequest struct {
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	AttachDbInstanceData requests.Boolean `position:"Query" name:"AttachDbInstanceData"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	ReplicaId            string           `position:"Query" name:"ReplicaId"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`

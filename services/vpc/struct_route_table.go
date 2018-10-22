@@ -17,9 +17,10 @@ package vpc
 
 // RouteTable is a nested struct in vpc response
 type RouteTable struct {
-	VRouterId      string      `json:"VRouterId" xml:"VRouterId"`
-	RouteTableId   string      `json:"RouteTableId" xml:"RouteTableId"`
-	RouteTableType string      `json:"RouteTableType" xml:"RouteTableType"`
-	CreationTime   string      `json:"CreationTime" xml:"CreationTime"`
-	RouteEntrys    RouteEntrys `json:"RouteEntrys" xml:"RouteEntrys"`
+	CreationTime   string                          `json:"CreationTime" xml:"CreationTime"`
+	RouteTableType string                          `json:"RouteTableType" xml:"RouteTableType"`
+	RouteTableId   string                          `json:"RouteTableId" xml:"RouteTableId"`
+	VRouterId      string                          `json:"VRouterId" xml:"VRouterId"`
+	VSwitchIds     VSwitchIdsInDescribeRouteTables `json:"VSwitchIds" xml:"VSwitchIds"`
+	RouteEntrys    RouteEntrys                     `json:"RouteEntrys" xml:"RouteEntrys"`
 }

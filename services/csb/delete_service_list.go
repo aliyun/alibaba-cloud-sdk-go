@@ -76,8 +76,8 @@ func (client *Client) DeleteServiceListWithCallback(request *DeleteServiceListRe
 // DeleteServiceListRequest is the request struct for api DeleteServiceList
 type DeleteServiceListRequest struct {
 	*requests.RpcRequest
-	CsbId requests.Integer `position:"Query" name:"CsbId"`
 	Data  string           `position:"Body" name:"Data"`
+	CsbId requests.Integer `position:"Query" name:"CsbId"`
 }
 
 // DeleteServiceListResponse is the response struct for api DeleteServiceList
@@ -93,7 +93,7 @@ func CreateDeleteServiceListRequest() (request *DeleteServiceListRequest) {
 	request = &DeleteServiceListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CSB", "2017-11-18", "DeleteServiceList", "CSB", "openAPI")
+	request.InitWithApiInfo("CSB", "2017-11-18", "DeleteServiceList", "", "")
 	return
 }
 

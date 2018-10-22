@@ -76,11 +76,11 @@ func (client *Client) QueryPornPipelineListWithCallback(request *QueryPornPipeli
 // QueryPornPipelineListRequest is the request struct for api QueryPornPipelineList
 type QueryPornPipelineListRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	PipelineIds          string           `position:"Query" name:"PipelineIds"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // QueryPornPipelineListResponse is the response struct for api QueryPornPipelineList

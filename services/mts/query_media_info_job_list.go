@@ -76,11 +76,11 @@ func (client *Client) QueryMediaInfoJobListWithCallback(request *QueryMediaInfoJ
 // QueryMediaInfoJobListRequest is the request struct for api QueryMediaInfoJobList
 type QueryMediaInfoJobListRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	MediaInfoJobIds      string           `position:"Query" name:"MediaInfoJobIds"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // QueryMediaInfoJobListResponse is the response struct for api QueryMediaInfoJobList

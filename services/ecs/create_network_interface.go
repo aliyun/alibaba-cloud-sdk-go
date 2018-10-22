@@ -76,27 +76,24 @@ func (client *Client) CreateNetworkInterfaceWithCallback(request *CreateNetworkI
 // CreateNetworkInterfaceRequest is the request struct for api CreateNetworkInterface
 type CreateNetworkInterfaceRequest struct {
 	*requests.RpcRequest
-	Tag4Value            string           `position:"Query" name:"Tag.4.Value"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Tag2Key              string           `position:"Query" name:"Tag.2.Key"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	SecurityGroupId      string           `position:"Query" name:"SecurityGroupId"`
-	Description          string           `position:"Query" name:"Description"`
-	Tag3Key              string           `position:"Query" name:"Tag.3.Key"`
-	Tag1Value            string           `position:"Query" name:"Tag.1.Value"`
-	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
-	Tag3Value            string           `position:"Query" name:"Tag.3.Value"`
-	NetworkInterfaceName string           `position:"Query" name:"NetworkInterfaceName"`
-	Tag5Key              string           `position:"Query" name:"Tag.5.Key"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	Tag5Value            string           `position:"Query" name:"Tag.5.Value"`
-	Tag1Key              string           `position:"Query" name:"Tag.1.Key"`
-	VSwitchId            string           `position:"Query" name:"VSwitchId"`
-	Tag2Value            string           `position:"Query" name:"Tag.2.Value"`
-	Tag4Key              string           `position:"Query" name:"Tag.4.Key"`
-	PrimaryIpAddress     string           `position:"Query" name:"PrimaryIpAddress"`
+	ResourceOwnerId      requests.Integer             `position:"Query" name:"ResourceOwnerId"`
+	ClientToken          string                       `position:"Query" name:"ClientToken"`
+	SecurityGroupId      string                       `position:"Query" name:"SecurityGroupId"`
+	Description          string                       `position:"Query" name:"Description"`
+	ResourceGroupId      string                       `position:"Query" name:"ResourceGroupId"`
+	Tag                  *[]CreateNetworkInterfaceTag `position:"Query" name:"Tag"  type:"Repeated"`
+	NetworkInterfaceName string                       `position:"Query" name:"NetworkInterfaceName"`
+	ResourceOwnerAccount string                       `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string                       `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer             `position:"Query" name:"OwnerId"`
+	VSwitchId            string                       `position:"Query" name:"VSwitchId"`
+	PrimaryIpAddress     string                       `position:"Query" name:"PrimaryIpAddress"`
+}
+
+// CreateNetworkInterfaceTag is a repeated param struct in CreateNetworkInterfaceRequest
+type CreateNetworkInterfaceTag struct {
+	Key   string `name:"Key"`
+	Value string `name:"Value"`
 }
 
 // CreateNetworkInterfaceResponse is the response struct for api CreateNetworkInterface

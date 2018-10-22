@@ -76,9 +76,9 @@ func (client *Client) RefreshDcdnObjectCachesWithCallback(request *RefreshDcdnOb
 // RefreshDcdnObjectCachesRequest is the request struct for api RefreshDcdnObjectCaches
 type RefreshDcdnObjectCachesRequest struct {
 	*requests.RpcRequest
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	ObjectPath    string           `position:"Query" name:"ObjectPath"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	ObjectType    string           `position:"Query" name:"ObjectType"`
 }
 
@@ -94,7 +94,7 @@ func CreateRefreshDcdnObjectCachesRequest() (request *RefreshDcdnObjectCachesReq
 	request = &RefreshDcdnObjectCachesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dcdn", "2018-01-15", "RefreshDcdnObjectCaches", "dcdn", "openAPI")
+	request.InitWithApiInfo("dcdn", "2018-01-15", "RefreshDcdnObjectCaches", "", "")
 	return
 }
 

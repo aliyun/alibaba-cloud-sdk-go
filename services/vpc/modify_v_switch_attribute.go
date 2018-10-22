@@ -76,13 +76,13 @@ func (client *Client) ModifyVSwitchAttributeWithCallback(request *ModifyVSwitchA
 // ModifyVSwitchAttributeRequest is the request struct for api ModifyVSwitchAttribute
 type ModifyVSwitchAttributeRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	VSwitchId            string           `position:"Query" name:"VSwitchId"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	VSwitchName          string           `position:"Query" name:"VSwitchName"`
-	Description          string           `position:"Query" name:"Description"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	Description          string           `position:"Query" name:"Description"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // ModifyVSwitchAttributeResponse is the response struct for api ModifyVSwitchAttribute

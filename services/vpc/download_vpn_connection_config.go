@@ -76,11 +76,11 @@ func (client *Client) DownloadVpnConnectionConfigWithCallback(request *DownloadV
 // DownloadVpnConnectionConfigRequest is the request struct for api DownloadVpnConnectionConfig
 type DownloadVpnConnectionConfigRequest struct {
 	*requests.RpcRequest
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	VpnConnectionId      string           `position:"Query" name:"VpnConnectionId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	VpnConnectionId      string           `position:"Query" name:"VpnConnectionId"`
 }
 
 // DownloadVpnConnectionConfigResponse is the response struct for api DownloadVpnConnectionConfig

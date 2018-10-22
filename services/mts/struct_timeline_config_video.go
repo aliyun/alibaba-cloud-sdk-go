@@ -17,9 +17,12 @@ package mts
 
 // TimelineConfigVideo is a nested struct in mts response
 type TimelineConfigVideo struct {
-	Fps         string `json:"Fps" xml:"Fps"`
-	Height      string `json:"Height" xml:"Height"`
-	Width       string `json:"Width" xml:"Width"`
-	BgColor     string `json:"BgColor" xml:"BgColor"`
-	RenderRatio string `json:"RenderRatio" xml:"RenderRatio"`
+	Height         string `json:"Height" xml:"Height"`
+	Width          string `json:"Width" xml:"Width"`
+	ReclosePrec    string `json:"ReclosePrec" xml:"ReclosePrec"`
+	Fps            string `json:"Fps" xml:"Fps"`
+	IsOneTrackData string `json:"IsOneTrackData" xml:"IsOneTrackData"`
+	RenderRatio    string `json:"RenderRatio" xml:"RenderRatio"`
+	BgColor        string `json:"BgColor" xml:"BgColor"`
+	IsGpuData      string `json:"IsGpuData" xml:"IsGpuData"`
 }

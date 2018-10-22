@@ -17,7 +17,7 @@ package live
 
 // AudioLayer is a nested struct in live response
 type AudioLayer struct {
-	VolumeRate         float64 `json:"VolumeRate" xml:"VolumeRate"`
 	ValidChannel       string  `json:"ValidChannel" xml:"ValidChannel"`
 	FixedDelayDuration int     `json:"FixedDelayDuration" xml:"FixedDelayDuration"`
+	VolumeRate         float64 `json:"VolumeRate" xml:"VolumeRate"`
 }

@@ -76,8 +76,8 @@ func (client *Client) DeleteServiceWithCallback(request *DeleteServiceRequest, c
 // DeleteServiceRequest is the request struct for api DeleteService
 type DeleteServiceRequest struct {
 	*requests.RpcRequest
-	ServiceId   requests.Integer `position:"Query" name:"ServiceId"`
 	ServiceName string           `position:"Query" name:"ServiceName"`
+	ServiceId   requests.Integer `position:"Query" name:"ServiceId"`
 }
 
 // DeleteServiceResponse is the response struct for api DeleteService
@@ -93,7 +93,7 @@ func CreateDeleteServiceRequest() (request *DeleteServiceRequest) {
 	request = &DeleteServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CSB", "2017-11-18", "DeleteService", "CSB", "openAPI")
+	request.InitWithApiInfo("CSB", "2017-11-18", "DeleteService", "", "")
 	return
 }
 

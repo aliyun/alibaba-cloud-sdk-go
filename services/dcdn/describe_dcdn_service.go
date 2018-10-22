@@ -76,20 +76,23 @@ func (client *Client) DescribeDcdnServiceWithCallback(request *DescribeDcdnServi
 // DescribeDcdnServiceRequest is the request struct for api DescribeDcdnService
 type DescribeDcdnServiceRequest struct {
 	*requests.RpcRequest
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeDcdnServiceResponse is the response struct for api DescribeDcdnService
 type DescribeDcdnServiceResponse struct {
 	*responses.BaseResponse
-	RequestId          string         `json:"RequestId" xml:"RequestId"`
-	InstanceId         string         `json:"InstanceId" xml:"InstanceId"`
-	InternetChargeType string         `json:"InternetChargeType" xml:"InternetChargeType"`
-	OpeningTime        string         `json:"OpeningTime" xml:"OpeningTime"`
-	ChangingChargeType string         `json:"ChangingChargeType" xml:"ChangingChargeType"`
-	ChangingAffectTime string         `json:"ChangingAffectTime" xml:"ChangingAffectTime"`
-	OperationLocks     OperationLocks `json:"OperationLocks" xml:"OperationLocks"`
+	RequestId             string         `json:"RequestId" xml:"RequestId"`
+	InstanceId            string         `json:"InstanceId" xml:"InstanceId"`
+	InternetChargeType    string         `json:"InternetChargeType" xml:"InternetChargeType"`
+	OpeningTime           string         `json:"OpeningTime" xml:"OpeningTime"`
+	ChangingChargeType    string         `json:"ChangingChargeType" xml:"ChangingChargeType"`
+	ChangingAffectTime    string         `json:"ChangingAffectTime" xml:"ChangingAffectTime"`
+	WebsocketChangingType string         `json:"WebsocketChangingType" xml:"WebsocketChangingType"`
+	WebsocketType         string         `json:"WebsocketType" xml:"WebsocketType"`
+	WebsocketChangingTime string         `json:"WebsocketChangingTime" xml:"WebsocketChangingTime"`
+	OperationLocks        OperationLocks `json:"OperationLocks" xml:"OperationLocks"`
 }
 
 // CreateDescribeDcdnServiceRequest creates a request to invoke DescribeDcdnService API
@@ -97,7 +100,7 @@ func CreateDescribeDcdnServiceRequest() (request *DescribeDcdnServiceRequest) {
 	request = &DescribeDcdnServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dcdn", "2018-01-15", "DescribeDcdnService", "dcdn", "openAPI")
+	request.InitWithApiInfo("dcdn", "2018-01-15", "DescribeDcdnService", "", "")
 	return
 }
 

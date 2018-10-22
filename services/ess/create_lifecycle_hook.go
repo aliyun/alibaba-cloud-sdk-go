@@ -91,12 +91,12 @@ type CreateLifecycleHookRequest struct {
 
 // CreateLifecycleHookLifecycleHook is a repeated param struct in CreateLifecycleHookRequest
 type CreateLifecycleHookLifecycleHook struct {
-	LifecycleHookName    string `name:"LifecycleHookName"`
-	LifecycleTransition  string `name:"LifecycleTransition"`
 	DefaultResult        string `name:"DefaultResult"`
+	LifecycleHookName    string `name:"LifecycleHookName"`
 	HeartbeatTimeout     string `name:"HeartbeatTimeout"`
-	NotificationMetadata string `name:"NotificationMetadata"`
 	NotificationArn      string `name:"NotificationArn"`
+	NotificationMetadata string `name:"NotificationMetadata"`
+	LifecycleTransition  string `name:"LifecycleTransition"`
 }
 
 // CreateLifecycleHookResponse is the response struct for api CreateLifecycleHook

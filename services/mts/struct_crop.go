@@ -19,7 +19,7 @@ package mts
 type Crop struct {
 	Height string `json:"Height" xml:"Height"`
 	Width  string `json:"Width" xml:"Width"`
-	Left   string `json:"Left" xml:"Left"`
 	Top    string `json:"Top" xml:"Top"`
+	Left   string `json:"Left" xml:"Left"`
 	Mode   string `json:"Mode" xml:"Mode"`
 }

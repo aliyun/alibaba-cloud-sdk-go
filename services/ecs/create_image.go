@@ -77,37 +77,34 @@ func (client *Client) CreateImageWithCallback(request *CreateImageRequest, callb
 type CreateImageRequest struct {
 	*requests.RpcRequest
 	DiskDeviceMapping    *[]CreateImageDiskDeviceMapping `position:"Query" name:"DiskDeviceMapping"  type:"Repeated"`
-	Tag4Value            string                          `position:"Query" name:"Tag.4.Value"`
 	ResourceOwnerId      requests.Integer                `position:"Query" name:"ResourceOwnerId"`
 	SnapshotId           string                          `position:"Query" name:"SnapshotId"`
-	Tag2Key              string                          `position:"Query" name:"Tag.2.Key"`
-	ClientToken          string                          `position:"Query" name:"ClientToken"`
-	Description          string                          `position:"Query" name:"Description"`
-	Tag3Key              string                          `position:"Query" name:"Tag.3.Key"`
-	Platform             string                          `position:"Query" name:"Platform"`
-	Tag1Value            string                          `position:"Query" name:"Tag.1.Value"`
-	ResourceGroupId      string                          `position:"Query" name:"ResourceGroupId"`
-	ImageName            string                          `position:"Query" name:"ImageName"`
-	Tag3Value            string                          `position:"Query" name:"Tag.3.Value"`
-	Architecture         string                          `position:"Query" name:"Architecture"`
-	Tag5Key              string                          `position:"Query" name:"Tag.5.Key"`
 	ResourceOwnerAccount string                          `position:"Query" name:"ResourceOwnerAccount"`
+	ClientToken          string                          `position:"Query" name:"ClientToken"`
 	OwnerAccount         string                          `position:"Query" name:"OwnerAccount"`
+	Description          string                          `position:"Query" name:"Description"`
 	OwnerId              requests.Integer                `position:"Query" name:"OwnerId"`
-	Tag5Value            string                          `position:"Query" name:"Tag.5.Value"`
-	Tag1Key              string                          `position:"Query" name:"Tag.1.Key"`
+	Platform             string                          `position:"Query" name:"Platform"`
+	ResourceGroupId      string                          `position:"Query" name:"ResourceGroupId"`
 	InstanceId           string                          `position:"Query" name:"InstanceId"`
-	Tag2Value            string                          `position:"Query" name:"Tag.2.Value"`
+	ImageName            string                          `position:"Query" name:"ImageName"`
 	ImageVersion         string                          `position:"Query" name:"ImageVersion"`
-	Tag4Key              string                          `position:"Query" name:"Tag.4.Key"`
+	Tag                  *[]CreateImageTag               `position:"Query" name:"Tag"  type:"Repeated"`
+	Architecture         string                          `position:"Query" name:"Architecture"`
 }
 
 // CreateImageDiskDeviceMapping is a repeated param struct in CreateImageRequest
 type CreateImageDiskDeviceMapping struct {
-	Size       string `name:"Size"`
 	SnapshotId string `name:"SnapshotId"`
-	Device     string `name:"Device"`
+	Size       string `name:"Size"`
 	DiskType   string `name:"DiskType"`
+	Device     string `name:"Device"`
+}
+
+// CreateImageTag is a repeated param struct in CreateImageRequest
+type CreateImageTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // CreateImageResponse is the response struct for api CreateImage

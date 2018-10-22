@@ -76,9 +76,9 @@ func (client *Client) TransferInCheckMailTokenWithCallback(request *TransferInCh
 // TransferInCheckMailTokenRequest is the request struct for api TransferInCheckMailToken
 type TransferInCheckMailTokenRequest struct {
 	*requests.RpcRequest
-	Token        string `position:"Query" name:"Token"`
-	Lang         string `position:"Query" name:"Lang"`
 	UserClientIp string `position:"Query" name:"UserClientIp"`
+	Lang         string `position:"Query" name:"Lang"`
+	Token        string `position:"Query" name:"Token"`
 }
 
 // TransferInCheckMailTokenResponse is the response struct for api TransferInCheckMailToken

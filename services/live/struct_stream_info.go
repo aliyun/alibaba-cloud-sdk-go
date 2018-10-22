@@ -20,4 +20,6 @@ type StreamInfo struct {
 	VideoFormat     string `json:"VideoFormat" xml:"VideoFormat"`
 	TranscodeConfig string `json:"TranscodeConfig" xml:"TranscodeConfig"`
 	OutputStreamUrl string `json:"OutputStreamUrl" xml:"OutputStreamUrl"`
+	StreamName      string `json:"StreamName" xml:"StreamName"`
+	Infos           Infos  `json:"Infos" xml:"Infos"`
 }

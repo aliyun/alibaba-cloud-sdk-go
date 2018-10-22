@@ -23,4 +23,5 @@ type NotifyPolicy struct {
 	Id         string `json:"Id" xml:"Id"`
 	StartTime  int    `json:"StartTime" xml:"StartTime"`
 	EndTime    int    `json:"EndTime" xml:"EndTime"`
+	GroupId    string `json:"GroupId" xml:"GroupId"`
 }

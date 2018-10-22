@@ -76,16 +76,17 @@ func (client *Client) DescribeReplicaPerformanceWithCallback(request *DescribeRe
 // DescribeReplicaPerformanceRequest is the request struct for api DescribeReplicaPerformance
 type DescribeReplicaPerformanceRequest struct {
 	*requests.RpcRequest
-	SecurityToken        string           `position:"Query" name:"SecurityToken"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	ReplicaId            string           `position:"Query" name:"ReplicaId"`
-	SourceDBInstanceId   string           `position:"Query" name:"SourceDBInstanceId"`
-	Key                  string           `position:"Query" name:"Key"`
-	StartTime            string           `position:"Query" name:"StartTime"`
-	EndTime              string           `position:"Query" name:"EndTime"`
+	ResourceOwnerId         requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DestinationDBInstanceId string           `position:"Query" name:"DestinationDBInstanceId"`
+	ResourceOwnerAccount    string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount            string           `position:"Query" name:"OwnerAccount"`
+	EndTime                 string           `position:"Query" name:"EndTime"`
+	StartTime               string           `position:"Query" name:"StartTime"`
+	OwnerId                 requests.Integer `position:"Query" name:"OwnerId"`
+	SourceDBInstanceId      string           `position:"Query" name:"SourceDBInstanceId"`
+	SecurityToken           string           `position:"Query" name:"SecurityToken"`
+	ReplicaId               string           `position:"Query" name:"ReplicaId"`
+	Key                     string           `position:"Query" name:"Key"`
 }
 
 // DescribeReplicaPerformanceResponse is the response struct for api DescribeReplicaPerformance

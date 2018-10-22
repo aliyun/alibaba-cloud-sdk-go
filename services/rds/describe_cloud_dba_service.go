@@ -76,9 +76,9 @@ func (client *Client) DescribeCloudDBAServiceWithCallback(request *DescribeCloud
 // DescribeCloudDBAServiceRequest is the request struct for api DescribeCloudDBAService
 type DescribeCloudDBAServiceRequest struct {
 	*requests.RpcRequest
+	ServiceRequestParam string `position:"Query" name:"ServiceRequestParam"`
 	DBInstanceId        string `position:"Query" name:"DBInstanceId"`
 	ServiceRequestType  string `position:"Query" name:"ServiceRequestType"`
-	ServiceRequestParam string `position:"Query" name:"ServiceRequestParam"`
 }
 
 // DescribeCloudDBAServiceResponse is the response struct for api DescribeCloudDBAService

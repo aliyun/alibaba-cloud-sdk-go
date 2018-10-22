@@ -76,16 +76,17 @@ func (client *Client) DescribeLiveStreamsOnlineListWithCallback(request *Describ
 // DescribeLiveStreamsOnlineListRequest is the request struct for api DescribeLiveStreamsOnlineList
 type DescribeLiveStreamsOnlineListRequest struct {
 	*requests.RpcRequest
-	StreamType    string           `position:"Query" name:"StreamType"`
-	AppName       string           `position:"Query" name:"AppName"`
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
-	DomainName    string           `position:"Query" name:"DomainName"`
-	PageSize      requests.Integer `position:"Query" name:"PageSize"`
-	EndTime       string           `position:"Query" name:"EndTime"`
-	StartTime     string           `position:"Query" name:"StartTime"`
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
-	PageNum       requests.Integer `position:"Query" name:"PageNum"`
-	QueryType     string           `position:"Query" name:"QueryType"`
+	StreamType string           `position:"Query" name:"StreamType"`
+	DomainName string           `position:"Query" name:"DomainName"`
+	EndTime    string           `position:"Query" name:"EndTime"`
+	OrderBy    string           `position:"Query" name:"OrderBy"`
+	StartTime  string           `position:"Query" name:"StartTime"`
+	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
+	PageNum    requests.Integer `position:"Query" name:"PageNum"`
+	AppName    string           `position:"Query" name:"AppName"`
+	PageSize   requests.Integer `position:"Query" name:"PageSize"`
+	StreamName string           `position:"Query" name:"StreamName"`
+	QueryType  string           `position:"Query" name:"QueryType"`
 }
 
 // DescribeLiveStreamsOnlineListResponse is the response struct for api DescribeLiveStreamsOnlineList

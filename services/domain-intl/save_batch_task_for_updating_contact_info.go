@@ -76,12 +76,12 @@ func (client *Client) SaveBatchTaskForUpdatingContactInfoWithCallback(request *S
 // SaveBatchTaskForUpdatingContactInfoRequest is the request struct for api SaveBatchTaskForUpdatingContactInfo
 type SaveBatchTaskForUpdatingContactInfoRequest struct {
 	*requests.RpcRequest
-	UserClientIp        string           `position:"Query" name:"UserClientIp"`
-	Lang                string           `position:"Query" name:"Lang"`
-	RegistrantProfileId requests.Integer `position:"Query" name:"RegistrantProfileId"`
 	ContactType         string           `position:"Query" name:"ContactType"`
-	AddTransferLock     requests.Boolean `position:"Query" name:"AddTransferLock"`
+	UserClientIp        string           `position:"Query" name:"UserClientIp"`
+	RegistrantProfileId requests.Integer `position:"Query" name:"RegistrantProfileId"`
 	DomainName          *[]string        `position:"Query" name:"DomainName"  type:"Repeated"`
+	AddTransferLock     requests.Boolean `position:"Query" name:"AddTransferLock"`
+	Lang                string           `position:"Query" name:"Lang"`
 }
 
 // SaveBatchTaskForUpdatingContactInfoResponse is the response struct for api SaveBatchTaskForUpdatingContactInfo

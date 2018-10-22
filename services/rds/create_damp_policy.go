@@ -76,18 +76,18 @@ func (client *Client) CreateDampPolicyWithCallback(request *CreateDampPolicyRequ
 // CreateDampPolicyRequest is the request struct for api CreateDampPolicy
 type CreateDampPolicyRequest struct {
 	*requests.RpcRequest
-	SecurityToken        string           `position:"Query" name:"SecurityToken"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	PolicyName           string           `position:"Query" name:"PolicyName"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	Priority             requests.Integer `position:"Query" name:"Priority"`
-	Handlers             string           `position:"Query" name:"Handlers"`
-	SourceRules          string           `position:"Query" name:"SourceRules"`
 	TimeRules            string           `position:"Query" name:"TimeRules"`
 	ActionRules          string           `position:"Query" name:"ActionRules"`
+	SecurityToken        string           `position:"Query" name:"SecurityToken"`
+	Handlers             string           `position:"Query" name:"Handlers"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	PolicyName           string           `position:"Query" name:"PolicyName"`
+	SourceRules          string           `position:"Query" name:"SourceRules"`
 }
 
 // CreateDampPolicyResponse is the response struct for api CreateDampPolicy

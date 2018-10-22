@@ -76,15 +76,15 @@ func (client *Client) SubmitJobsWithCallback(request *SubmitJobsRequest, callbac
 // SubmitJobsRequest is the request struct for api SubmitJobs
 type SubmitJobsRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Input                string           `position:"Query" name:"Input"`
 	Outputs              string           `position:"Query" name:"Outputs"`
+	Input                string           `position:"Query" name:"Input"`
 	OutputBucket         string           `position:"Query" name:"OutputBucket"`
-	OutputLocation       string           `position:"Query" name:"OutputLocation"`
-	PipelineId           string           `position:"Query" name:"PipelineId"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OutputLocation       string           `position:"Query" name:"OutputLocation"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	PipelineId           string           `position:"Query" name:"PipelineId"`
 }
 
 // SubmitJobsResponse is the response struct for api SubmitJobs

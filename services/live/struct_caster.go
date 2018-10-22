@@ -27,4 +27,5 @@ type Caster struct {
 	ExpireTime     string `json:"ExpireTime" xml:"ExpireTime"`
 	ChargeType     string `json:"ChargeType" xml:"ChargeType"`
 	CasterTemplate string `json:"CasterTemplate" xml:"CasterTemplate"`
+	ChannelEnable  int    `json:"ChannelEnable" xml:"ChannelEnable"`
 }

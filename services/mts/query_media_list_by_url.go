@@ -76,15 +76,15 @@ func (client *Client) QueryMediaListByURLWithCallback(request *QueryMediaListByU
 // QueryMediaListByURLRequest is the request struct for api QueryMediaListByURL
 type QueryMediaListByURLRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	FileURLs             string           `position:"Query" name:"FileURLs"`
-	IncludePlayList      requests.Boolean `position:"Query" name:"IncludePlayList"`
-	IncludeSnapshotList  requests.Boolean `position:"Query" name:"IncludeSnapshotList"`
-	IncludeMediaInfo     requests.Boolean `position:"Query" name:"IncludeMediaInfo"`
 	IncludeSummaryList   requests.Boolean `position:"Query" name:"IncludeSummaryList"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	IncludeSnapshotList  requests.Boolean `position:"Query" name:"IncludeSnapshotList"`
+	FileURLs             string           `position:"Query" name:"FileURLs"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	IncludePlayList      requests.Boolean `position:"Query" name:"IncludePlayList"`
+	IncludeMediaInfo     requests.Boolean `position:"Query" name:"IncludeMediaInfo"`
 }
 
 // QueryMediaListByURLResponse is the response struct for api QueryMediaListByURL

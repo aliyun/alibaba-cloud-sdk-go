@@ -17,12 +17,15 @@ package vpc
 
 // VirtualBorderRouterForPhysicalConnectionType is a nested struct in vpc response
 type VirtualBorderRouterForPhysicalConnectionType struct {
-	VbrId           string `json:"VbrId" xml:"VbrId"`
-	VbrOwnerUid     int    `json:"VbrOwnerUid" xml:"VbrOwnerUid"`
-	CreationTime    string `json:"CreationTime" xml:"CreationTime"`
-	ActivationTime  string `json:"ActivationTime" xml:"ActivationTime"`
-	TerminationTime string `json:"TerminationTime" xml:"TerminationTime"`
-	RecoveryTime    string `json:"RecoveryTime" xml:"RecoveryTime"`
-	VlanId          int    `json:"VlanId" xml:"VlanId"`
-	CircuitCode     string `json:"CircuitCode" xml:"CircuitCode"`
+	VbrId             string `json:"VbrId" xml:"VbrId"`
+	VbrOwnerUid       int    `json:"VbrOwnerUid" xml:"VbrOwnerUid"`
+	CreationTime      string `json:"CreationTime" xml:"CreationTime"`
+	ActivationTime    string `json:"ActivationTime" xml:"ActivationTime"`
+	TerminationTime   string `json:"TerminationTime" xml:"TerminationTime"`
+	RecoveryTime      string `json:"RecoveryTime" xml:"RecoveryTime"`
+	VlanId            int    `json:"VlanId" xml:"VlanId"`
+	CircuitCode       string `json:"CircuitCode" xml:"CircuitCode"`
+	LocalGatewayIp    string `json:"LocalGatewayIp" xml:"LocalGatewayIp"`
+	PeerGatewayIp     string `json:"PeerGatewayIp" xml:"PeerGatewayIp"`
+	PeeringSubnetMask string `json:"PeeringSubnetMask" xml:"PeeringSubnetMask"`
 }

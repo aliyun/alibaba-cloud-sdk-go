@@ -76,13 +76,13 @@ func (client *Client) SearchMediaWorkflowWithCallback(request *SearchMediaWorkfl
 // SearchMediaWorkflowRequest is the request struct for api SearchMediaWorkflow
 type SearchMediaWorkflowRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	StateList            string           `position:"Query" name:"StateList"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	StateList            string           `position:"Query" name:"StateList"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 // SearchMediaWorkflowResponse is the response struct for api SearchMediaWorkflow

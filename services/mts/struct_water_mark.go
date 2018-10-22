@@ -17,12 +17,12 @@ package mts
 
 // WaterMark is a nested struct in mts response
 type WaterMark struct {
-	Dy                  string    `json:"Dy" xml:"Dy"`
 	Height              string    `json:"Height" xml:"Height"`
-	Type                string    `json:"Type" xml:"Type"`
-	WaterMarkTemplateId string    `json:"WaterMarkTemplateId" xml:"WaterMarkTemplateId"`
 	Width               string    `json:"Width" xml:"Width"`
 	Dx                  string    `json:"Dx" xml:"Dx"`
+	Dy                  string    `json:"Dy" xml:"Dy"`
+	WaterMarkTemplateId string    `json:"WaterMarkTemplateId" xml:"WaterMarkTemplateId"`
 	ReferPos            string    `json:"ReferPos" xml:"ReferPos"`
+	Type                string    `json:"Type" xml:"Type"`
 	InputFile           InputFile `json:"InputFile" xml:"InputFile"`
 }

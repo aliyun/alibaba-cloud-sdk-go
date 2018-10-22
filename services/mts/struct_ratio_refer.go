@@ -18,7 +18,7 @@ package mts
 // RatioRefer is a nested struct in mts response
 type RatioRefer struct {
 	Height string `json:"Height" xml:"Height"`
-	Dy     string `json:"Dy" xml:"Dy"`
 	Width  string `json:"Width" xml:"Width"`
 	Dx     string `json:"Dx" xml:"Dx"`
+	Dy     string `json:"Dy" xml:"Dy"`
 }

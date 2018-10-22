@@ -76,12 +76,12 @@ func (client *Client) SetAuthConfigWithCallback(request *SetAuthConfigRequest, c
 // SetAuthConfigRequest is the request struct for api SetAuthConfig
 type SetAuthConfigRequest struct {
 	*requests.RpcRequest
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	Key1                 string `position:"Query" name:"Key1"`
+	Key2                 string `position:"Query" name:"Key2"`
 	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	Key1                 string `position:"Query" name:"Key1"`
-	Key2                 string `position:"Query" name:"Key2"`
+	OwnerId              string `position:"Query" name:"OwnerId"`
 }
 
 // SetAuthConfigResponse is the response struct for api SetAuthConfig

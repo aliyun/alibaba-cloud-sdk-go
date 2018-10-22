@@ -76,19 +76,19 @@ func (client *Client) CreateSslVpnServerWithCallback(request *CreateSslVpnServer
 // CreateSslVpnServerRequest is the request struct for api CreateSslVpnServer
 type CreateSslVpnServerRequest struct {
 	*requests.RpcRequest
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	VpnGatewayId         string           `position:"Query" name:"VpnGatewayId"`
-	Name                 string           `position:"Query" name:"Name"`
-	ClientIpPool         string           `position:"Query" name:"ClientIpPool"`
-	LocalSubnet          string           `position:"Query" name:"LocalSubnet"`
-	Proto                string           `position:"Query" name:"Proto"`
 	Cipher               string           `position:"Query" name:"Cipher"`
-	Port                 requests.Integer `position:"Query" name:"Port"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientIpPool         string           `position:"Query" name:"ClientIpPool"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
 	Compress             requests.Boolean `position:"Query" name:"Compress"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	VpnGatewayId         string           `position:"Query" name:"VpnGatewayId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	LocalSubnet          string           `position:"Query" name:"LocalSubnet"`
+	Port                 requests.Integer `position:"Query" name:"Port"`
+	Proto                string           `position:"Query" name:"Proto"`
+	Name                 string           `position:"Query" name:"Name"`
 }
 
 // CreateSslVpnServerResponse is the response struct for api CreateSslVpnServer

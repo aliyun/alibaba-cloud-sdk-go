@@ -76,12 +76,12 @@ func (client *Client) ReportCoverJobResultWithCallback(request *ReportCoverJobRe
 // ReportCoverJobResultRequest is the request struct for api ReportCoverJobResult
 type ReportCoverJobResultRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	JobId                string           `position:"Query" name:"JobId"`
 	Result               string           `position:"Query" name:"Result"`
+	JobId                string           `position:"Query" name:"JobId"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // ReportCoverJobResultResponse is the response struct for api ReportCoverJobResult

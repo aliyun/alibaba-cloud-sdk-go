@@ -76,12 +76,12 @@ func (client *Client) CreateSessionWithCallback(request *CreateSessionRequest, c
 // CreateSessionRequest is the request struct for api CreateSession
 type CreateSessionRequest struct {
 	*requests.RpcRequest
-	OwnerId              string           `position:"Query" name:"OwnerId"`
 	ResourceOwnerId      string           `position:"Query" name:"ResourceOwnerId"`
+	SessionTime          requests.Integer `position:"Query" name:"SessionTime"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	EndUserId            string           `position:"Query" name:"EndUserId"`
-	SessionTime          requests.Integer `position:"Query" name:"SessionTime"`
+	OwnerId              string           `position:"Query" name:"OwnerId"`
 	MediaId              string           `position:"Query" name:"MediaId"`
 }
 

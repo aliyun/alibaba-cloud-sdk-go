@@ -76,13 +76,13 @@ func (client *Client) DescribeVpcZoneNosWithCallback(request *DescribeVpcZoneNos
 // DescribeVpcZoneNosRequest is the request struct for api DescribeVpcZoneNos
 type DescribeVpcZoneNosRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	Region               string           `position:"Query" name:"Region"`
 	ZoneId               string           `position:"Query" name:"ZoneId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Region               string           `position:"Query" name:"Region"`
 }
 
 // DescribeVpcZoneNosResponse is the response struct for api DescribeVpcZoneNos

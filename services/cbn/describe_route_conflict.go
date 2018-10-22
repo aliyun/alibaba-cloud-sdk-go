@@ -76,27 +76,27 @@ func (client *Client) DescribeRouteConflictWithCallback(request *DescribeRouteCo
 // DescribeRouteConflictRequest is the request struct for api DescribeRouteConflict
 type DescribeRouteConflictRequest struct {
 	*requests.RpcRequest
-	OwnerAccount              string           `position:"Query" name:"OwnerAccount"`
-	OwnerId                   requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount      string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId           requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	PageNumber                requests.Integer `position:"Query" name:"PageNumber"`
-	PageSize                  requests.Integer `position:"Query" name:"PageSize"`
 	ChildInstanceId           string           `position:"Query" name:"ChildInstanceId"`
-	ChildInstanceType         string           `position:"Query" name:"ChildInstanceType"`
-	ChildInstanceRegionId     string           `position:"Query" name:"ChildInstanceRegionId"`
-	ChildInstanceRouteTableId string           `position:"Query" name:"ChildInstanceRouteTableId"`
+	ResourceOwnerId           requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount      string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount              string           `position:"Query" name:"OwnerAccount"`
 	DestinationCidrBlock      string           `position:"Query" name:"DestinationCidrBlock"`
+	PageSize                  requests.Integer `position:"Query" name:"PageSize"`
+	OwnerId                   requests.Integer `position:"Query" name:"OwnerId"`
+	ChildInstanceType         string           `position:"Query" name:"ChildInstanceType"`
+	ChildInstanceRouteTableId string           `position:"Query" name:"ChildInstanceRouteTableId"`
+	PageNumber                requests.Integer `position:"Query" name:"PageNumber"`
+	ChildInstanceRegionId     string           `position:"Query" name:"ChildInstanceRegionId"`
 }
 
 // DescribeRouteConflictResponse is the response struct for api DescribeRouteConflict
 type DescribeRouteConflictResponse struct {
 	*responses.BaseResponse
-	RequestId      string         `json:"RequestId" xml:"RequestId"`
-	PageNumber     int            `json:"PageNumber" xml:"PageNumber"`
-	TotalCount     int            `json:"TotalCount" xml:"TotalCount"`
-	PageSize       int            `json:"PageSize" xml:"PageSize"`
-	RouteConflicts RouteConflicts `json:"RouteConflicts" xml:"RouteConflicts"`
+	RequestId      string                                `json:"RequestId" xml:"RequestId"`
+	PageNumber     int                                   `json:"PageNumber" xml:"PageNumber"`
+	TotalCount     int                                   `json:"TotalCount" xml:"TotalCount"`
+	PageSize       int                                   `json:"PageSize" xml:"PageSize"`
+	RouteConflicts RouteConflictsInDescribeRouteConflict `json:"RouteConflicts" xml:"RouteConflicts"`
 }
 
 // CreateDescribeRouteConflictRequest creates a request to invoke DescribeRouteConflict API

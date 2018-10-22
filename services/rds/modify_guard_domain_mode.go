@@ -76,13 +76,13 @@ func (client *Client) ModifyGuardDomainModeWithCallback(request *ModifyGuardDoma
 // ModifyGuardDomainModeRequest is the request struct for api ModifyGuardDomainMode
 type ModifyGuardDomainModeRequest struct {
 	*requests.RpcRequest
-	SecurityToken        string           `position:"Query" name:"SecurityToken"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	DomainMode           string           `position:"Query" name:"DomainMode"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	SecurityToken        string           `position:"Query" name:"SecurityToken"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	ReplicaId            string           `position:"Query" name:"ReplicaId"`
-	DomainMode           string           `position:"Query" name:"DomainMode"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // ModifyGuardDomainModeResponse is the response struct for api ModifyGuardDomainMode

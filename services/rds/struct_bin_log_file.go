@@ -17,12 +17,12 @@ package rds
 
 // BinLogFile is a nested struct in rds response
 type BinLogFile struct {
-	FileSize             int    `json:"FileSize" xml:"FileSize"`
-	LogBeginTime         string `json:"LogBeginTime" xml:"LogBeginTime"`
-	LogEndTime           string `json:"LogEndTime" xml:"LogEndTime"`
-	DownloadLink         string `json:"DownloadLink" xml:"DownloadLink"`
-	IntranetDownloadLink string `json:"IntranetDownloadLink" xml:"IntranetDownloadLink"`
-	LinkExpiredTime      string `json:"LinkExpiredTime" xml:"LinkExpiredTime"`
-	Checksum             string `json:"Checksum" xml:"Checksum"`
 	HostInstanceID       string `json:"HostInstanceID" xml:"HostInstanceID"`
+	LogEndTime           string `json:"LogEndTime" xml:"LogEndTime"`
+	IntranetDownloadLink string `json:"IntranetDownloadLink" xml:"IntranetDownloadLink"`
+	FileSize             int    `json:"FileSize" xml:"FileSize"`
+	Checksum             string `json:"Checksum" xml:"Checksum"`
+	LinkExpiredTime      string `json:"LinkExpiredTime" xml:"LinkExpiredTime"`
+	DownloadLink         string `json:"DownloadLink" xml:"DownloadLink"`
+	LogBeginTime         string `json:"LogBeginTime" xml:"LogBeginTime"`
 }

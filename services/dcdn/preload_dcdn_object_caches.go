@@ -76,9 +76,10 @@ func (client *Client) PreloadDcdnObjectCachesWithCallback(request *PreloadDcdnOb
 // PreloadDcdnObjectCachesRequest is the request struct for api PreloadDcdnObjectCaches
 type PreloadDcdnObjectCachesRequest struct {
 	*requests.RpcRequest
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	Area          string           `position:"Query" name:"Area"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	ObjectPath    string           `position:"Query" name:"ObjectPath"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // PreloadDcdnObjectCachesResponse is the response struct for api PreloadDcdnObjectCaches
@@ -93,7 +94,7 @@ func CreatePreloadDcdnObjectCachesRequest() (request *PreloadDcdnObjectCachesReq
 	request = &PreloadDcdnObjectCachesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dcdn", "2018-01-15", "PreloadDcdnObjectCaches", "dcdn", "openAPI")
+	request.InitWithApiInfo("dcdn", "2018-01-15", "PreloadDcdnObjectCaches", "", "")
 	return
 }
 

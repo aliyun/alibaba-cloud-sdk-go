@@ -76,19 +76,19 @@ func (client *Client) DescribeCensWithCallback(request *DescribeCensRequest, cal
 // DescribeCensRequest is the request struct for api DescribeCens
 type DescribeCensRequest struct {
 	*requests.RpcRequest
-	OwnerAccount         string                `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer      `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string                `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      requests.Integer      `position:"Query" name:"ResourceOwnerId"`
-	PageNumber           requests.Integer      `position:"Query" name:"PageNumber"`
-	PageSize             requests.Integer      `position:"Query" name:"PageSize"`
 	Filter               *[]DescribeCensFilter `position:"Query" name:"Filter"  type:"Repeated"`
+	ResourceOwnerId      requests.Integer      `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string                `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string                `position:"Query" name:"OwnerAccount"`
+	PageSize             requests.Integer      `position:"Query" name:"PageSize"`
+	OwnerId              requests.Integer      `position:"Query" name:"OwnerId"`
+	PageNumber           requests.Integer      `position:"Query" name:"PageNumber"`
 }
 
 // DescribeCensFilter is a repeated param struct in DescribeCensRequest
 type DescribeCensFilter struct {
-	Key   string    `name:"Key"`
 	Value *[]string `name:"Value" type:"Repeated"`
+	Key   string    `name:"Key"`
 }
 
 // DescribeCensResponse is the response struct for api DescribeCens

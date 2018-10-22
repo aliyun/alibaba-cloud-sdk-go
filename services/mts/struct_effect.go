@@ -17,6 +17,6 @@ package mts
 
 // Effect is a nested struct in mts response
 type Effect struct {
-	EffectConfig string `json:"EffectConfig" xml:"EffectConfig"`
 	Effect       string `json:"Effect" xml:"Effect"`
+	EffectConfig string `json:"EffectConfig" xml:"EffectConfig"`
 }

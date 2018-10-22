@@ -7,8 +7,8 @@ import (
 
 func TestNewInteger(t *testing.T) {
 	integer := NewInteger(123123)
-	assert.True(t, integer.hasValue())
-	value, err := integer.getValue()
+	assert.True(t, integer.HasValue())
+	value, err := integer.GetValue()
 	assert.Nil(t, err)
 	assert.Equal(t, 123123, value)
 	var expected Integer
@@ -18,8 +18,8 @@ func TestNewInteger(t *testing.T) {
 
 func TestNewInteger64(t *testing.T) {
 	long := NewInteger64(123123123123123123)
-	assert.True(t, long.hasValue())
-	value, err := long.getValue64()
+	assert.True(t, long.HasValue())
+	value, err := long.GetValue64()
 	assert.Nil(t, err)
 	assert.Equal(t, int64(123123123123123123), value)
 	var expected Integer
@@ -29,8 +29,8 @@ func TestNewInteger64(t *testing.T) {
 
 func TestNewBoolean(t *testing.T) {
 	boolean := NewBoolean(false)
-	assert.True(t, boolean.hasValue())
-	value, err := boolean.getValue()
+	assert.True(t, boolean.HasValue())
+	value, err := boolean.GetValue()
 	assert.Nil(t, err)
 	assert.Equal(t, false, value)
 	var expected Boolean
@@ -40,8 +40,8 @@ func TestNewBoolean(t *testing.T) {
 
 func TestNewFloat(t *testing.T) {
 	float := NewFloat(123123.123123)
-	assert.True(t, float.hasValue())
-	value, err := float.getValue()
+	assert.True(t, float.HasValue())
+	value, err := float.GetValue()
 	assert.Nil(t, err)
 	assert.Equal(t, 123123.123123, value)
 	var expected Float

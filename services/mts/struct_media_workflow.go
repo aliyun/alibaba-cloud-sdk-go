@@ -17,10 +17,10 @@ package mts
 
 // MediaWorkflow is a nested struct in mts response
 type MediaWorkflow struct {
-	CreationTime    string `json:"CreationTime" xml:"CreationTime"`
-	TriggerMode     string `json:"TriggerMode" xml:"TriggerMode"`
 	Name            string `json:"Name" xml:"Name"`
+	Topology        string `json:"Topology" xml:"Topology"`
 	State           string `json:"State" xml:"State"`
 	MediaWorkflowId string `json:"MediaWorkflowId" xml:"MediaWorkflowId"`
-	Topology        string `json:"Topology" xml:"Topology"`
+	CreationTime    string `json:"CreationTime" xml:"CreationTime"`
+	TriggerMode     string `json:"TriggerMode" xml:"TriggerMode"`
 }

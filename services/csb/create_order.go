@@ -76,8 +76,8 @@ func (client *Client) CreateOrderWithCallback(request *CreateOrderRequest, callb
 // CreateOrderRequest is the request struct for api CreateOrder
 type CreateOrderRequest struct {
 	*requests.RpcRequest
-	CsbId requests.Integer `position:"Query" name:"CsbId"`
 	Data  string           `position:"Body" name:"Data"`
+	CsbId requests.Integer `position:"Query" name:"CsbId"`
 }
 
 // CreateOrderResponse is the response struct for api CreateOrder
@@ -94,7 +94,7 @@ func CreateCreateOrderRequest() (request *CreateOrderRequest) {
 	request = &CreateOrderRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CSB", "2017-11-18", "CreateOrder", "CSB", "openAPI")
+	request.InitWithApiInfo("CSB", "2017-11-18", "CreateOrder", "", "")
 	return
 }
 

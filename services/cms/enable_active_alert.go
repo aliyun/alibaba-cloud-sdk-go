@@ -83,9 +83,10 @@ type EnableActiveAlertRequest struct {
 // EnableActiveAlertResponse is the response struct for api EnableActiveAlert
 type EnableActiveAlertResponse struct {
 	*responses.BaseResponse
-	Success bool   `json:"Success" xml:"Success"`
-	Code    string `json:"Code" xml:"Code"`
-	Message string `json:"Message" xml:"Message"`
+	Success   bool   `json:"Success" xml:"Success"`
+	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateEnableActiveAlertRequest creates a request to invoke EnableActiveAlert API

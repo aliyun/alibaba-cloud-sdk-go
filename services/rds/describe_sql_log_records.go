@@ -76,21 +76,21 @@ func (client *Client) DescribeSQLLogRecordsWithCallback(request *DescribeSQLLogR
 // DescribeSQLLogRecordsRequest is the request struct for api DescribeSQLLogRecords
 type DescribeSQLLogRecordsRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	SQLId                requests.Integer `position:"Query" name:"SQLId"`
-	QueryKeywords        string           `position:"Query" name:"QueryKeywords"`
-	StartTime            string           `position:"Query" name:"StartTime"`
-	Database             string           `position:"Query" name:"Database"`
-	User                 string           `position:"Query" name:"User"`
-	Form                 string           `position:"Query" name:"Form"`
-	EndTime              string           `position:"Query" name:"EndTime"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	EndTime              string           `position:"Query" name:"EndTime"`
+	StartTime            string           `position:"Query" name:"StartTime"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	QueryKeywords        string           `position:"Query" name:"QueryKeywords"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	Database             string           `position:"Query" name:"Database"`
+	Form                 string           `position:"Query" name:"Form"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	User                 string           `position:"Query" name:"User"`
 }
 
 // DescribeSQLLogRecordsResponse is the response struct for api DescribeSQLLogRecords

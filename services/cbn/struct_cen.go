@@ -22,5 +22,6 @@ type Cen struct {
 	Description            string                 `json:"Description" xml:"Description"`
 	Status                 string                 `json:"Status" xml:"Status"`
 	CreationTime           string                 `json:"CreationTime" xml:"CreationTime"`
+	ProtectionLevel        string                 `json:"ProtectionLevel" xml:"ProtectionLevel"`
 	CenBandwidthPackageIds CenBandwidthPackageIds `json:"CenBandwidthPackageIds" xml:"CenBandwidthPackageIds"`
 }

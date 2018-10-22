@@ -79,8 +79,8 @@ type ListMyGroupsRequest struct {
 	SelectContactGroups requests.Boolean `position:"Query" name:"SelectContactGroups"`
 	InstanceId          string           `position:"Query" name:"InstanceId"`
 	PageSize            requests.Integer `position:"Query" name:"PageSize"`
-	Type                string           `position:"Query" name:"Type"`
 	Keyword             string           `position:"Query" name:"Keyword"`
+	Type                string           `position:"Query" name:"Type"`
 	GroupName           string           `position:"Query" name:"GroupName"`
 	PageNumber          requests.Integer `position:"Query" name:"PageNumber"`
 	BindUrls            string           `position:"Query" name:"BindUrls"`

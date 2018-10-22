@@ -77,12 +77,13 @@ func (client *Client) ModifyTrafficControlWithCallback(request *ModifyTrafficCon
 type ModifyTrafficControlRequest struct {
 	*requests.RpcRequest
 	TrafficControlId   string           `position:"Query" name:"TrafficControlId"`
+	ApiDefault         requests.Integer `position:"Query" name:"ApiDefault"`
+	SecurityToken      string           `position:"Query" name:"SecurityToken"`
 	TrafficControlName string           `position:"Query" name:"TrafficControlName"`
 	TrafficControlUnit string           `position:"Query" name:"TrafficControlUnit"`
-	ApiDefault         requests.Integer `position:"Query" name:"ApiDefault"`
+	Description        string           `position:"Query" name:"Description"`
 	UserDefault        requests.Integer `position:"Query" name:"UserDefault"`
 	AppDefault         requests.Integer `position:"Query" name:"AppDefault"`
-	Description        string           `position:"Query" name:"Description"`
 }
 
 // ModifyTrafficControlResponse is the response struct for api ModifyTrafficControl

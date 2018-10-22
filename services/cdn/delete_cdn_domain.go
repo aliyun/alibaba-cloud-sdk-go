@@ -78,6 +78,7 @@ type DeleteCdnDomainRequest struct {
 	*requests.RpcRequest
 	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
 	SecurityToken   string           `position:"Query" name:"SecurityToken"`
+	OwnerAccount    string           `position:"Query" name:"OwnerAccount"`
 	DomainName      string           `position:"Query" name:"DomainName"`
 	OwnerId         requests.Integer `position:"Query" name:"OwnerId"`
 }
@@ -93,7 +94,7 @@ func CreateDeleteCdnDomainRequest() (request *DeleteCdnDomainRequest) {
 	request = &DeleteCdnDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "DeleteCdnDomain", "", "")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "DeleteCdnDomain", "", "")
 	return
 }
 

@@ -76,14 +76,14 @@ func (client *Client) ModifyEipAddressAttributeWithCallback(request *ModifyEipAd
 // ModifyEipAddressAttributeRequest is the request struct for api ModifyEipAddressAttribute
 type ModifyEipAddressAttributeRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	AllocationId         string           `position:"Query" name:"AllocationId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	Bandwidth            string           `position:"Query" name:"Bandwidth"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	Name                 string           `position:"Query" name:"Name"`
 	Description          string           `position:"Query" name:"Description"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	AllocationId         string           `position:"Query" name:"AllocationId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // ModifyEipAddressAttributeResponse is the response struct for api ModifyEipAddressAttribute

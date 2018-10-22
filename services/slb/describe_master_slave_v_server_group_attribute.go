@@ -76,13 +76,13 @@ func (client *Client) DescribeMasterSlaveVServerGroupAttributeWithCallback(reque
 // DescribeMasterSlaveVServerGroupAttributeRequest is the request struct for api DescribeMasterSlaveVServerGroupAttribute
 type DescribeMasterSlaveVServerGroupAttributeRequest struct {
 	*requests.RpcRequest
-	OwnerId                   requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount      string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId           requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount              string           `position:"Query" name:"OwnerAccount"`
 	AccessKeyId               string           `position:"Query" name:"access_key_id"`
-	Tags                      string           `position:"Query" name:"Tags"`
+	ResourceOwnerId           requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	MasterSlaveVServerGroupId string           `position:"Query" name:"MasterSlaveVServerGroupId"`
+	ResourceOwnerAccount      string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount              string           `position:"Query" name:"OwnerAccount"`
+	OwnerId                   requests.Integer `position:"Query" name:"OwnerId"`
+	Tags                      string           `position:"Query" name:"Tags"`
 }
 
 // DescribeMasterSlaveVServerGroupAttributeResponse is the response struct for api DescribeMasterSlaveVServerGroupAttribute

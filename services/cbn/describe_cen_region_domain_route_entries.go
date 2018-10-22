@@ -76,14 +76,14 @@ func (client *Client) DescribeCenRegionDomainRouteEntriesWithCallback(request *D
 // DescribeCenRegionDomainRouteEntriesRequest is the request struct for api DescribeCenRegionDomainRouteEntries
 type DescribeCenRegionDomainRouteEntriesRequest struct {
 	*requests.RpcRequest
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	CenId                string           `position:"Query" name:"CenId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	CenRegionId          string           `position:"Query" name:"CenRegionId"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 // DescribeCenRegionDomainRouteEntriesResponse is the response struct for api DescribeCenRegionDomainRouteEntries

@@ -17,9 +17,9 @@ package mts
 
 // Summary is a nested struct in mts response
 type Summary struct {
-	Type              string `json:"Type" xml:"Type"`
-	MediaWorkflowName string `json:"MediaWorkflowName" xml:"MediaWorkflowName"`
 	MediaWorkflowId   string `json:"MediaWorkflowId" xml:"MediaWorkflowId"`
+	MediaWorkflowName string `json:"MediaWorkflowName" xml:"MediaWorkflowName"`
+	Type              string `json:"Type" xml:"Type"`
 	ActivityName      string `json:"ActivityName" xml:"ActivityName"`
 	File              File   `json:"File" xml:"File"`
 }

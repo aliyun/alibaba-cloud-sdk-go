@@ -76,37 +76,35 @@ func (client *Client) DescribeSnapshotsWithCallback(request *DescribeSnapshotsRe
 // DescribeSnapshotsRequest is the request struct for api DescribeSnapshots
 type DescribeSnapshotsRequest struct {
 	*requests.RpcRequest
-	Tag4Value            string           `position:"Query" name:"Tag.4.Value"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Tag2Key              string           `position:"Query" name:"Tag.2.Key"`
-	Filter2Value         string           `position:"Query" name:"Filter.2.Value"`
-	SnapshotIds          string           `position:"Query" name:"SnapshotIds"`
-	Usage                string           `position:"Query" name:"Usage"`
-	SnapshotLinkId       string           `position:"Query" name:"SnapshotLinkId"`
-	SnapshotName         string           `position:"Query" name:"SnapshotName"`
-	Tag3Key              string           `position:"Query" name:"Tag.3.Key"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	Tag1Value            string           `position:"Query" name:"Tag.1.Value"`
-	Filter1Key           string           `position:"Query" name:"Filter.1.Key"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	DiskId               string           `position:"Query" name:"DiskId"`
-	Tag3Value            string           `position:"Query" name:"Tag.3.Value"`
-	DryRun               requests.Boolean `position:"Query" name:"DryRun"`
-	Tag5Key              string           `position:"Query" name:"Tag.5.Key"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	SourceDiskType       string           `position:"Query" name:"SourceDiskType"`
-	Filter1Value         string           `position:"Query" name:"Filter.1.Value"`
-	Filter2Key           string           `position:"Query" name:"Filter.2.Key"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	Tag5Value            string           `position:"Query" name:"Tag.5.Value"`
-	Tag1Key              string           `position:"Query" name:"Tag.1.Key"`
-	InstanceId           string           `position:"Query" name:"InstanceId"`
-	Encrypted            requests.Boolean `position:"Query" name:"Encrypted"`
-	SnapshotType         string           `position:"Query" name:"SnapshotType"`
-	Tag2Value            string           `position:"Query" name:"Tag.2.Value"`
-	Tag4Key              string           `position:"Query" name:"Tag.4.Key"`
-	Status               string           `position:"Query" name:"Status"`
+	ResourceOwnerId      requests.Integer        `position:"Query" name:"ResourceOwnerId"`
+	Filter2Value         string                  `position:"Query" name:"Filter.2.Value"`
+	SnapshotIds          string                  `position:"Query" name:"SnapshotIds"`
+	Usage                string                  `position:"Query" name:"Usage"`
+	SnapshotLinkId       string                  `position:"Query" name:"SnapshotLinkId"`
+	SnapshotName         string                  `position:"Query" name:"SnapshotName"`
+	PageNumber           requests.Integer        `position:"Query" name:"PageNumber"`
+	ResourceGroupId      string                  `position:"Query" name:"ResourceGroupId"`
+	Filter1Key           string                  `position:"Query" name:"Filter.1.Key"`
+	PageSize             requests.Integer        `position:"Query" name:"PageSize"`
+	DiskId               string                  `position:"Query" name:"DiskId"`
+	Tag                  *[]DescribeSnapshotsTag `position:"Query" name:"Tag"  type:"Repeated"`
+	DryRun               requests.Boolean        `position:"Query" name:"DryRun"`
+	ResourceOwnerAccount string                  `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string                  `position:"Query" name:"OwnerAccount"`
+	SourceDiskType       string                  `position:"Query" name:"SourceDiskType"`
+	Filter1Value         string                  `position:"Query" name:"Filter.1.Value"`
+	Filter2Key           string                  `position:"Query" name:"Filter.2.Key"`
+	OwnerId              requests.Integer        `position:"Query" name:"OwnerId"`
+	InstanceId           string                  `position:"Query" name:"InstanceId"`
+	Encrypted            requests.Boolean        `position:"Query" name:"Encrypted"`
+	SnapshotType         string                  `position:"Query" name:"SnapshotType"`
+	Status               string                  `position:"Query" name:"Status"`
+}
+
+// DescribeSnapshotsTag is a repeated param struct in DescribeSnapshotsRequest
+type DescribeSnapshotsTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // DescribeSnapshotsResponse is the response struct for api DescribeSnapshots

@@ -93,7 +93,7 @@ func CreatePublishUnionCasServiceRequest() (request *PublishUnionCasServiceReque
 	request = &PublishUnionCasServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CSB", "2017-11-18", "PublishUnionCasService", "CSB", "openAPI")
+	request.InitWithApiInfo("CSB", "2017-11-18", "PublishUnionCasService", "", "")
 	return
 }
 

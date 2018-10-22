@@ -76,13 +76,13 @@ func (client *Client) QueryTaskInfoHistoryWithCallback(request *QueryTaskInfoHis
 // QueryTaskInfoHistoryRequest is the request struct for api QueryTaskInfoHistory
 type QueryTaskInfoHistoryRequest struct {
 	*requests.RpcRequest
-	UserClientIp     string           `position:"Query" name:"UserClientIp"`
-	Lang             string           `position:"Query" name:"Lang"`
 	BeginCreateTime  requests.Integer `position:"Query" name:"BeginCreateTime"`
 	EndCreateTime    requests.Integer `position:"Query" name:"EndCreateTime"`
-	PageSize         requests.Integer `position:"Query" name:"PageSize"`
-	CreateTimeCursor requests.Integer `position:"Query" name:"CreateTimeCursor"`
 	TaskNoCursor     string           `position:"Query" name:"TaskNoCursor"`
+	UserClientIp     string           `position:"Query" name:"UserClientIp"`
+	PageSize         requests.Integer `position:"Query" name:"PageSize"`
+	Lang             string           `position:"Query" name:"Lang"`
+	CreateTimeCursor requests.Integer `position:"Query" name:"CreateTimeCursor"`
 }
 
 // QueryTaskInfoHistoryResponse is the response struct for api QueryTaskInfoHistory

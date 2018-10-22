@@ -19,4 +19,6 @@ package live
 type LiveStreamsNotifyConfig struct {
 	DomainName string `json:"DomainName" xml:"DomainName"`
 	NotifyUrl  string `json:"NotifyUrl" xml:"NotifyUrl"`
+	AuthType   string `json:"AuthType" xml:"AuthType"`
+	AuthKey    string `json:"AuthKey" xml:"AuthKey"`
 }

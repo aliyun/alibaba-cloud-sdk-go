@@ -76,13 +76,13 @@ func (client *Client) ReportFpShotJobResultWithCallback(request *ReportFpShotJob
 // ReportFpShotJobResultRequest is the request struct for api ReportFpShotJobResult
 type ReportFpShotJobResultRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	JobId                string           `position:"Query" name:"JobId"`
 	Result               string           `position:"Query" name:"Result"`
-	Details              string           `position:"Query" name:"Details"`
+	JobId                string           `position:"Query" name:"JobId"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	Details              string           `position:"Query" name:"Details"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // ReportFpShotJobResultResponse is the response struct for api ReportFpShotJobResult

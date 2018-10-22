@@ -76,11 +76,9 @@ func (client *Client) ModifyDomainCustomLogConfigWithCallback(request *ModifyDom
 // ModifyDomainCustomLogConfigRequest is the request struct for api ModifyDomainCustomLogConfig
 type ModifyDomainCustomLogConfigRequest struct {
 	*requests.RpcRequest
-	DomainName    string           `position:"Query" name:"DomainName"`
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
-	Version       string           `position:"Query" name:"Version"`
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
-	ConfigId      string           `position:"Query" name:"ConfigId"`
+	DomainName string           `position:"Query" name:"DomainName"`
+	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
+	ConfigId   string           `position:"Query" name:"ConfigId"`
 }
 
 // ModifyDomainCustomLogConfigResponse is the response struct for api ModifyDomainCustomLogConfig
@@ -94,7 +92,7 @@ func CreateModifyDomainCustomLogConfigRequest() (request *ModifyDomainCustomLogC
 	request = &ModifyDomainCustomLogConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2014-11-11", "ModifyDomainCustomLogConfig", "", "")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "ModifyDomainCustomLogConfig", "", "")
 	return
 }
 

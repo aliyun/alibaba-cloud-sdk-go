@@ -76,10 +76,11 @@ func (client *Client) SetVpcAccessWithCallback(request *SetVpcAccessRequest, cal
 // SetVpcAccessRequest is the request struct for api SetVpcAccess
 type SetVpcAccessRequest struct {
 	*requests.RpcRequest
-	Name       string           `position:"Query" name:"Name"`
-	VpcId      string           `position:"Query" name:"VpcId"`
-	InstanceId string           `position:"Query" name:"InstanceId"`
-	Port       requests.Integer `position:"Query" name:"Port"`
+	InstanceId    string           `position:"Query" name:"InstanceId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	Port          requests.Integer `position:"Query" name:"Port"`
+	VpcId         string           `position:"Query" name:"VpcId"`
+	Name          string           `position:"Query" name:"Name"`
 }
 
 // SetVpcAccessResponse is the response struct for api SetVpcAccess

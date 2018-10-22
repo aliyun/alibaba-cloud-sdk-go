@@ -76,6 +76,11 @@ func (client *Client) DescribeDcdnDomainHitRateDataWithCallback(request *Describ
 // DescribeDcdnDomainHitRateDataRequest is the request struct for api DescribeDcdnDomainHitRateData
 type DescribeDcdnDomainHitRateDataRequest struct {
 	*requests.RpcRequest
+	StartTime  string           `position:"Query" name:"StartTime"`
+	DomainName string           `position:"Query" name:"DomainName"`
+	EndTime    string           `position:"Query" name:"EndTime"`
+	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
+	Interval   string           `position:"Query" name:"Interval"`
 }
 
 // DescribeDcdnDomainHitRateDataResponse is the response struct for api DescribeDcdnDomainHitRateData
@@ -94,7 +99,7 @@ func CreateDescribeDcdnDomainHitRateDataRequest() (request *DescribeDcdnDomainHi
 	request = &DescribeDcdnDomainHitRateDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dcdn", "2018-01-15", "DescribeDcdnDomainHitRateData", "dcdn", "openAPI")
+	request.InitWithApiInfo("dcdn", "2018-01-15", "DescribeDcdnDomainHitRateData", "", "")
 	return
 }
 

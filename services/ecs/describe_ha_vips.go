@@ -87,8 +87,8 @@ type DescribeHaVipsRequest struct {
 
 // DescribeHaVipsFilter is a repeated param struct in DescribeHaVipsRequest
 type DescribeHaVipsFilter struct {
-	Key   string    `name:"Key"`
 	Value *[]string `name:"Value" type:"Repeated"`
+	Key   string    `name:"Key"`
 }
 
 // DescribeHaVipsResponse is the response struct for api DescribeHaVips

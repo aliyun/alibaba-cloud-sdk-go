@@ -76,16 +76,16 @@ func (client *Client) DescribeRouteTablesWithCallback(request *DescribeRouteTabl
 // DescribeRouteTablesRequest is the request struct for api DescribeRouteTables
 type DescribeRouteTablesRequest struct {
 	*requests.RpcRequest
-	RouterType           string           `position:"Query" name:"RouterType"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	RouteTableName       string           `position:"Query" name:"RouteTableName"`
 	VRouterId            string           `position:"Query" name:"VRouterId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	RouterId             string           `position:"Query" name:"RouterId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	RouterType           string           `position:"Query" name:"RouterType"`
+	RouteTableName       string           `position:"Query" name:"RouteTableName"`
+	RouterId             string           `position:"Query" name:"RouterId"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	RouteTableId         string           `position:"Query" name:"RouteTableId"`
 }
 
