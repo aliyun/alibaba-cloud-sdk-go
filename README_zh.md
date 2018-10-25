@@ -74,7 +74,7 @@ httpTransport := http.Transport{
 	// set http client options
 }
 config := sdk.NewConfig()
-            .WithHttpTransport(httpTransport)
+            .WithHttpTransport(&httpTransport)
             .WithTimeout(timeout)
 ecsClient, err := ecs.NewClientWithOptions(config)
 
@@ -142,7 +142,7 @@ CommonAPI，需要配合相应的API文档使用，以查询API的相关信息�
 您可以在 [文档中心](https://help.aliyun.com/?spm=5176.8142029.388261.173.23896dfaav2hEF) 查询到所有产品的API文档。
 
 发起一次CommonAPI请求，需要您查询到以下几个参数：
-* 域名(domain)：即该产品的通用访问域名，一版可以在"调用方式"页查看到
+* 域名(domain)：即该产品的通用访问域名，一般可以在"调用方式"页查看到
 * API版本(version)：即该API的版本号，以’YYYY-MM-DD’的形式表现，一般可以在"公共参数"页面查到
 * 接口名称(apiName)：即该API的名称
 
