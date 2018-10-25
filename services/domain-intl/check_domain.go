@@ -76,9 +76,12 @@ func (client *Client) CheckDomainWithCallback(request *CheckDomainRequest, callb
 // CheckDomainRequest is the request struct for api CheckDomain
 type CheckDomainRequest struct {
 	*requests.RpcRequest
-	DomainName   string `position:"Query" name:"DomainName"`
-	UserClientIp string `position:"Query" name:"UserClientIp"`
-	Lang         string `position:"Query" name:"Lang"`
+	FeeCurrency  string           `position:"Query" name:"FeeCurrency"`
+	FeePeriod    requests.Integer `position:"Query" name:"FeePeriod"`
+	DomainName   string           `position:"Query" name:"DomainName"`
+	UserClientIp string           `position:"Query" name:"UserClientIp"`
+	FeeCommand   string           `position:"Query" name:"FeeCommand"`
+	Lang         string           `position:"Query" name:"Lang"`
 }
 
 // CheckDomainResponse is the response struct for api CheckDomain
@@ -88,6 +91,8 @@ type CheckDomainResponse struct {
 	DomainName string `json:"DomainName" xml:"DomainName"`
 	Avail      string `json:"Avail" xml:"Avail"`
 	Premium    string `json:"Premium" xml:"Premium"`
+	Reason     string `json:"Reason" xml:"Reason"`
+	Price      int    `json:"Price" xml:"Price"`
 }
 
 // CreateCheckDomainRequest creates a request to invoke CheckDomain API
