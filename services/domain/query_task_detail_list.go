@@ -78,9 +78,9 @@ type QueryTaskDetailListRequest struct {
 	*requests.RpcRequest
 	TaskStatus   requests.Integer `position:"Query" name:"TaskStatus"`
 	InstanceId   string           `position:"Query" name:"InstanceId"`
-	UserClientIp string           `position:"Query" name:"UserClientIp"`
 	TaskNo       string           `position:"Query" name:"TaskNo"`
 	DomainName   string           `position:"Query" name:"DomainName"`
+	UserClientIp string           `position:"Query" name:"UserClientIp"`
 	PageSize     requests.Integer `position:"Query" name:"PageSize"`
 	Lang         string           `position:"Query" name:"Lang"`
 	PageNum      requests.Integer `position:"Query" name:"PageNum"`

@@ -83,8 +83,8 @@ type SaveBatchTaskForCreatingOrderRedeemRequest struct {
 
 // SaveBatchTaskForCreatingOrderRedeemOrderRedeemParam is a repeated param struct in SaveBatchTaskForCreatingOrderRedeemRequest
 type SaveBatchTaskForCreatingOrderRedeemOrderRedeemParam struct {
-	DomainName            string `name:"DomainName"`
 	CurrentExpirationDate string `name:"CurrentExpirationDate"`
+	DomainName            string `name:"DomainName"`
 }
 
 // SaveBatchTaskForCreatingOrderRedeemResponse is the response struct for api SaveBatchTaskForCreatingOrderRedeem

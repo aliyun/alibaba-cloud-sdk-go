@@ -83,9 +83,9 @@ type SaveBatchTaskForCreatingOrderRenewRequest struct {
 
 // SaveBatchTaskForCreatingOrderRenewOrderRenewParam is a repeated param struct in SaveBatchTaskForCreatingOrderRenewRequest
 type SaveBatchTaskForCreatingOrderRenewOrderRenewParam struct {
-	DomainName            string `name:"DomainName"`
-	CurrentExpirationDate string `name:"CurrentExpirationDate"`
 	SubscriptionDuration  string `name:"SubscriptionDuration"`
+	CurrentExpirationDate string `name:"CurrentExpirationDate"`
+	DomainName            string `name:"DomainName"`
 }
 
 // SaveBatchTaskForCreatingOrderRenewResponse is the response struct for api SaveBatchTaskForCreatingOrderRenew

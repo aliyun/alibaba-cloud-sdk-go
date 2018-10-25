@@ -76,9 +76,10 @@ func (client *Client) SaveBatchDomainRemarkWithCallback(request *SaveBatchDomain
 // SaveBatchDomainRemarkRequest is the request struct for api SaveBatchDomainRemark
 type SaveBatchDomainRemarkRequest struct {
 	*requests.RpcRequest
-	InstanceIds string `position:"Query" name:"InstanceIds"`
-	Remark      string `position:"Query" name:"Remark"`
-	Lang        string `position:"Query" name:"Lang"`
+	InstanceIds  string `position:"Query" name:"InstanceIds"`
+	UserClientIp string `position:"Query" name:"UserClientIp"`
+	Remark       string `position:"Query" name:"Remark"`
+	Lang         string `position:"Query" name:"Lang"`
 }
 
 // SaveBatchDomainRemarkResponse is the response struct for api SaveBatchDomainRemark

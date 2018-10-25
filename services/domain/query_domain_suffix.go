@@ -76,7 +76,8 @@ func (client *Client) QueryDomainSuffixWithCallback(request *QueryDomainSuffixRe
 // QueryDomainSuffixRequest is the request struct for api QueryDomainSuffix
 type QueryDomainSuffixRequest struct {
 	*requests.RpcRequest
-	Lang string `position:"Query" name:"Lang"`
+	UserClientIp string `position:"Query" name:"UserClientIp"`
+	Lang         string `position:"Query" name:"Lang"`
 }
 
 // QueryDomainSuffixResponse is the response struct for api QueryDomainSuffix

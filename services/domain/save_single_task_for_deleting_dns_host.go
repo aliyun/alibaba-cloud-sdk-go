@@ -76,9 +76,10 @@ func (client *Client) SaveSingleTaskForDeletingDnsHostWithCallback(request *Save
 // SaveSingleTaskForDeletingDnsHostRequest is the request struct for api SaveSingleTaskForDeletingDnsHost
 type SaveSingleTaskForDeletingDnsHostRequest struct {
 	*requests.RpcRequest
-	InstanceId string `position:"Query" name:"InstanceId"`
-	DnsName    string `position:"Query" name:"DnsName"`
-	Lang       string `position:"Query" name:"Lang"`
+	InstanceId   string `position:"Query" name:"InstanceId"`
+	DnsName      string `position:"Query" name:"DnsName"`
+	UserClientIp string `position:"Query" name:"UserClientIp"`
+	Lang         string `position:"Query" name:"Lang"`
 }
 
 // SaveSingleTaskForDeletingDnsHostResponse is the response struct for api SaveSingleTaskForDeletingDnsHost

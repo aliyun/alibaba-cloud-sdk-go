@@ -83,10 +83,10 @@ type SaveBatchTaskForCreatingOrderTransferRequest struct {
 
 // SaveBatchTaskForCreatingOrderTransferOrderTransferParam is a repeated param struct in SaveBatchTaskForCreatingOrderTransferRequest
 type SaveBatchTaskForCreatingOrderTransferOrderTransferParam struct {
-	DomainName            string `name:"DomainName"`
-	AuthorizationCode     string `name:"AuthorizationCode"`
-	RegistrantProfileId   string `name:"RegistrantProfileId"`
 	PermitPremiumTransfer string `name:"PermitPremiumTransfer"`
+	AuthorizationCode     string `name:"AuthorizationCode"`
+	DomainName            string `name:"DomainName"`
+	RegistrantProfileId   string `name:"RegistrantProfileId"`
 }
 
 // SaveBatchTaskForCreatingOrderTransferResponse is the response struct for api SaveBatchTaskForCreatingOrderTransfer

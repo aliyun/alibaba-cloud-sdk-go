@@ -1,3 +1,7 @@
+2018-10-25 Version: 1.33.0
+1, Add apis for trademark domains.
+2, Add QueryDomainAdminDivision api.
+
 2018-10-16 Version: 1.32.3
 1, This version add MetricQuery interface to support retcode and apm metric query.
 

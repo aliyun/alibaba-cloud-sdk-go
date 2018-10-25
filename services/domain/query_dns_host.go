@@ -76,8 +76,9 @@ func (client *Client) QueryDnsHostWithCallback(request *QueryDnsHostRequest, cal
 // QueryDnsHostRequest is the request struct for api QueryDnsHost
 type QueryDnsHostRequest struct {
 	*requests.RpcRequest
-	InstanceId string `position:"Query" name:"InstanceId"`
-	Lang       string `position:"Query" name:"Lang"`
+	InstanceId   string `position:"Query" name:"InstanceId"`
+	UserClientIp string `position:"Query" name:"UserClientIp"`
+	Lang         string `position:"Query" name:"Lang"`
 }
 
 // QueryDnsHostResponse is the response struct for api QueryDnsHost

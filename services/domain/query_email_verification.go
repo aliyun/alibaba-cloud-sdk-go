@@ -76,8 +76,9 @@ func (client *Client) QueryEmailVerificationWithCallback(request *QueryEmailVeri
 // QueryEmailVerificationRequest is the request struct for api QueryEmailVerification
 type QueryEmailVerificationRequest struct {
 	*requests.RpcRequest
-	Lang  string `position:"Query" name:"Lang"`
-	Email string `position:"Query" name:"Email"`
+	UserClientIp string `position:"Query" name:"UserClientIp"`
+	Lang         string `position:"Query" name:"Lang"`
+	Email        string `position:"Query" name:"Email"`
 }
 
 // QueryEmailVerificationResponse is the response struct for api QueryEmailVerification

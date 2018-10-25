@@ -79,6 +79,7 @@ type ListEmailVerificationRequest struct {
 	BeginCreateTime    requests.Integer `position:"Query" name:"BeginCreateTime"`
 	EndCreateTime      requests.Integer `position:"Query" name:"EndCreateTime"`
 	PageSize           requests.Integer `position:"Query" name:"PageSize"`
+	UserClientIp       string           `position:"Query" name:"UserClientIp"`
 	Lang               string           `position:"Query" name:"Lang"`
 	PageNum            requests.Integer `position:"Query" name:"PageNum"`
 	Email              string           `position:"Query" name:"Email"`
