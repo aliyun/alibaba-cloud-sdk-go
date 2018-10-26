@@ -1,3 +1,7 @@
+2018-10-26 Version: 1.34.4
+1, Add apis for trademark domains.
+2, Retry publish SDK.
+
 2018-10-26 Version: 1.34.3
 1, Add apis for trademark domains.
 
