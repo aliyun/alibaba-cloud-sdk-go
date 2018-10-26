@@ -17,7 +17,8 @@ package cloudauth
 
 // VerifyStatus is a nested struct in cloudauth response
 type VerifyStatus struct {
-	StatusCode      int     `json:"StatusCode" xml:"StatusCode"`
-	TrustedScore    float64 `json:"TrustedScore" xml:"TrustedScore"`
-	SimilarityScore float64 `json:"SimilarityScore" xml:"SimilarityScore"`
+	StatusCode       int     `json:"StatusCode" xml:"StatusCode"`
+	TrustedScore     float64 `json:"TrustedScore" xml:"TrustedScore"`
+	SimilarityScore  float64 `json:"SimilarityScore" xml:"SimilarityScore"`
+	AuditConclusions string  `json:"AuditConclusions" xml:"AuditConclusions"`
 }

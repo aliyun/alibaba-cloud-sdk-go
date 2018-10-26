@@ -37,7 +37,7 @@ type Data struct {
 	ImgHeight            int          `json:"ImgHeight" xml:"ImgHeight"`
 	ConfidenceThresholds string       `json:"ConfidenceThresholds" xml:"ConfidenceThresholds"`
 	StsToken             StsToken     `json:"StsToken" xml:"StsToken"`
-	VerifyToken          VerifyToken  `json:"VerifyToken" xml:"VerifyToken"`
 	VerifyStatus         VerifyStatus `json:"VerifyStatus" xml:"VerifyStatus"`
+	VerifyToken          VerifyToken  `json:"VerifyToken" xml:"VerifyToken"`
 	FaceInfos            FaceInfos    `json:"FaceInfos" xml:"FaceInfos"`
 }
