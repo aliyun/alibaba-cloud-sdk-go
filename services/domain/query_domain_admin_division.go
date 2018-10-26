@@ -84,12 +84,6 @@ type QueryDomainAdminDivisionRequest struct {
 type QueryDomainAdminDivisionResponse struct {
 	*responses.BaseResponse
 	RequestId      string         `json:"RequestId" xml:"RequestId"`
-	TotalItemNum   int            `json:"TotalItemNum" xml:"TotalItemNum"`
-	CurrentPageNum int            `json:"CurrentPageNum" xml:"CurrentPageNum"`
-	TotalPageNum   int            `json:"TotalPageNum" xml:"TotalPageNum"`
-	PageSize       int            `json:"PageSize" xml:"PageSize"`
-	PrePage        bool           `json:"PrePage" xml:"PrePage"`
-	NextPage       bool           `json:"NextPage" xml:"NextPage"`
 	AdminDivisions AdminDivisions `json:"AdminDivisions" xml:"AdminDivisions"`
 }
 

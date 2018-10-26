@@ -1,3 +1,6 @@
+2018-10-26 Version: 1.34.5
+1, Remove useless parameters QueryDomainAdminDivision api.
+
 2018-10-26 Version: 1.34.4
 1, Add apis for trademark domains.
 2, Retry publish SDK.
