@@ -1,3 +1,6 @@
+2018-10-29 Version: 1.34.7
+1, Add ots trigger api interface.
+
 2018-10-29 Version: 1.34.6
 1, update
 
