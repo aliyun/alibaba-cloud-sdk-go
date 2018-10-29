@@ -27,4 +27,5 @@ type AuthorizedApi struct {
 	AuthorizationSource string `json:"AuthorizationSource" xml:"AuthorizationSource"`
 	Description         string `json:"Description" xml:"Description"`
 	AuthorizedTime      string `json:"AuthorizedTime" xml:"AuthorizedTime"`
+	AuthVaildTime       string `json:"AuthVaildTime" xml:"AuthVaildTime"`
 }

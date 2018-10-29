@@ -18,6 +18,7 @@ package cloudapi
 // ServiceConfig is a nested struct in cloudapi response
 type ServiceConfig struct {
 	ServiceTimeout      int       `json:"ServiceTimeout" xml:"ServiceTimeout"`
+	AoneAppName         string    `json:"AoneAppName" xml:"AoneAppName"`
 	ServiceVpcEnable    string    `json:"ServiceVpcEnable" xml:"ServiceVpcEnable"`
 	ContentTypeCatagory string    `json:"ContentTypeCatagory" xml:"ContentTypeCatagory"`
 	ServiceProtocol     string    `json:"ServiceProtocol" xml:"ServiceProtocol"`

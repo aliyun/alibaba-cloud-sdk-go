@@ -76,6 +76,7 @@ func (client *Client) SetAppsAuthoritiesWithCallback(request *SetAppsAuthorities
 // SetAppsAuthoritiesRequest is the request struct for api SetAppsAuthorities
 type SetAppsAuthoritiesRequest struct {
 	*requests.RpcRequest
+	AuthVaildTime string `position:"Query" name:"AuthVaildTime"`
 	StageName     string `position:"Query" name:"StageName"`
 	AppIds        string `position:"Query" name:"AppIds"`
 	SecurityToken string `position:"Query" name:"SecurityToken"`
