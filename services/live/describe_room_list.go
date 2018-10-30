@@ -76,11 +76,15 @@ func (client *Client) DescribeRoomListWithCallback(request *DescribeRoomListRequ
 // DescribeRoomListRequest is the request struct for api DescribeRoomList
 type DescribeRoomListRequest struct {
 	*requests.RpcRequest
+	StartTime  string           `position:"Query" name:"StartTime"`
+	AnchorId   string           `position:"Query" name:"AnchorId"`
 	PageNum    requests.Integer `position:"Query" name:"PageNum"`
 	RoomStatus requests.Integer `position:"Query" name:"RoomStatus"`
 	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 	Order      string           `position:"Query" name:"Order"`
+	EndTime    string           `position:"Query" name:"EndTime"`
 	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
+	RoomId     string           `position:"Query" name:"RoomId"`
 	AppId      string           `position:"Query" name:"AppId"`
 }
 

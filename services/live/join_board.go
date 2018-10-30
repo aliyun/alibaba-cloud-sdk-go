@@ -85,10 +85,12 @@ type JoinBoardRequest struct {
 // JoinBoardResponse is the response struct for api JoinBoard
 type JoinBoardResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Token     string `json:"Token" xml:"Token"`
-	BoardId   string `json:"BoardId" xml:"BoardId"`
-	TopicId   string `json:"TopicId" xml:"TopicId"`
+	RequestId         string `json:"RequestId" xml:"RequestId"`
+	Token             string `json:"Token" xml:"Token"`
+	BoardId           string `json:"BoardId" xml:"BoardId"`
+	TopicId           string `json:"TopicId" xml:"TopicId"`
+	KeepaliveTopic    string `json:"KeepaliveTopic" xml:"KeepaliveTopic"`
+	KeepaliveInterval int    `json:"KeepaliveInterval" xml:"KeepaliveInterval"`
 }
 
 // CreateJoinBoardRequest creates a request to invoke JoinBoard API
