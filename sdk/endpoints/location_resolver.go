@@ -29,17 +29,17 @@ type Cache struct {
 	cache map[string]interface{}
 }
 
-func (this Cache) Get(k string) (v interface{}) {
-	this.RLock()
-	v = this.cache[k]
-	this.RUnlock()
+func (c Cache) Get(k string) (v interface{}) {
+	c.RLock()
+	v = c.cache[k]
+	c.RUnlock()
 	return
 }
 
-func (this Cache) Set(k string, v interface{}) {
-	this.Lock()
-	this.cache[k] = v
-	this.Unlock()
+func (c Cache) Set(k string, v interface{}) {
+	c.Lock()
+	c.cache[k] = v
+	c.Unlock()
 }
 
 var lastClearTimePerProduct = Cache{cache: make(map[string]interface{})}
