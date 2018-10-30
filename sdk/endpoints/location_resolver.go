@@ -24,15 +24,26 @@ const (
 	EndpointCacheExpireTime = 3600 //Seconds
 )
 
-var lastClearTimePerProduct = struct {
+type Cache struct {
 	sync.RWMutex
-	cache map[string]int64
-}{cache: make(map[string]int64)}
+	cache map[string]interface{}
+}
 
-var endpointCache = struct {
-	sync.RWMutex
-	cache map[string]string
-}{cache: make(map[string]string)}
+func (c Cache) Get(k string) (v interface{}) {
+	c.RLock()
+	v = c.cache[k]
+	c.RUnlock()
+	return
+}
+
+func (c Cache) Set(k string, v interface{}) {
+	c.Lock()
+	c.cache[k] = v
+	c.Unlock()
+}
+
+var lastClearTimePerProduct = Cache{cache: make(map[string]interface{})}
+var endpointCache = Cache{cache: make(map[string]interface{})}
 
 type LocationResolver struct {
 }
@@ -45,8 +56,8 @@ func (resolver *LocationResolver) TryResolve(param *ResolveParam) (endpoint stri
 
 	//get from cache
 	cacheKey := param.Product + "#" + param.RegionId
-	if endpointCache.cache != nil && len(endpointCache.cache[cacheKey]) > 0 && !CheckCacheIsExpire(cacheKey) {
-		endpoint = endpointCache.cache[cacheKey]
+	if endpointCache.cache != nil && len(endpointCache.Get(cacheKey).(string)) > 0 && !CheckCacheIsExpire(cacheKey) {
+		endpoint = endpointCache.Get(cacheKey).(string)
 		support = true
 		return
 	}
@@ -87,12 +98,8 @@ func (resolver *LocationResolver) TryResolve(param *ResolveParam) (endpoint stri
 	}
 	if len(getEndpointResponse.Endpoints.Endpoint[0].Endpoint) > 0 {
 		endpoint = getEndpointResponse.Endpoints.Endpoint[0].Endpoint
-		endpointCache.Lock()
-		endpointCache.cache[cacheKey] = endpoint
-		endpointCache.Unlock()
-		lastClearTimePerProduct.Lock()
-		lastClearTimePerProduct.cache[cacheKey] = time.Now().Unix()
-		lastClearTimePerProduct.Unlock()
+		endpointCache.Set(cacheKey, endpoint)
+		lastClearTimePerProduct.Set(cacheKey, time.Now().Unix())
 		support = true
 		return
 	}
@@ -102,12 +109,10 @@ func (resolver *LocationResolver) TryResolve(param *ResolveParam) (endpoint stri
 }
 
 func CheckCacheIsExpire(cacheKey string) bool {
-	lastClearTime := lastClearTimePerProduct.cache[cacheKey]
+	lastClearTime := lastClearTimePerProduct.Get(cacheKey).(int64)
 	if lastClearTime <= 0 {
 		lastClearTime = time.Now().Unix()
-		lastClearTimePerProduct.Lock()
-		lastClearTimePerProduct.cache[cacheKey] = lastClearTime
-		lastClearTimePerProduct.Unlock()
+		lastClearTimePerProduct.Set(cacheKey, lastClearTime)
 	}
 
 	now := time.Now().Unix()
