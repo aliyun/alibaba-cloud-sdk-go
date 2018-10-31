@@ -56,8 +56,10 @@ func (resolver *LocationResolver) TryResolve(param *ResolveParam) (endpoint stri
 
 	//get from cache
 	cacheKey := param.Product + "#" + param.RegionId
-	if endpointCache.cache != nil && len(endpointCache.Get(cacheKey).(string)) > 0 && !CheckCacheIsExpire(cacheKey) {
-		endpoint = endpointCache.Get(cacheKey).(string)
+	var ok bool
+	endpoint, ok = endpointCache.Get(cacheKey).(string)
+
+	if ok && len(endpoint) > 0 && !CheckCacheIsExpire(cacheKey) {
 		support = true
 		return
 	}
@@ -109,7 +111,11 @@ func (resolver *LocationResolver) TryResolve(param *ResolveParam) (endpoint stri
 }
 
 func CheckCacheIsExpire(cacheKey string) bool {
-	lastClearTime := lastClearTimePerProduct.Get(cacheKey).(int64)
+	lastClearTime, ok := lastClearTimePerProduct.Get(cacheKey).(int64)
+	if !ok {
+		return true
+	}
+
 	if lastClearTime <= 0 {
 		lastClearTime = time.Now().Unix()
 		lastClearTimePerProduct.Set(cacheKey, lastClearTime)
