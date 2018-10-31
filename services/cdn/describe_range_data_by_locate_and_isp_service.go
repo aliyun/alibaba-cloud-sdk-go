@@ -81,7 +81,7 @@ type DescribeRangeDataByLocateAndIspServiceRequest struct {
 	DomainNames   string           `position:"Query" name:"DomainNames"`
 	LocationNames string           `position:"Query" name:"LocationNames"`
 	EndTime       string           `position:"Query" name:"EndTime"`
-	StartTime     string           `position:"Query" name:"startTime"`
+	StartTime     string           `position:"Query" name:"StartTime"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 }
 
