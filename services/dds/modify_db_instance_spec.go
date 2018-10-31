@@ -84,6 +84,7 @@ type ModifyDBInstanceSpecRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	CouponNo             string           `position:"Query" name:"CouponNo"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ReplicationFactor    string           `position:"Query" name:"ReplicationFactor"`
 	DBInstanceClass      string           `position:"Query" name:"DBInstanceClass"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	EffectiveTime        string           `position:"Query" name:"EffectiveTime"`

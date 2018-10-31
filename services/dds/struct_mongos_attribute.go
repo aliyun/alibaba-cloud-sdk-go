@@ -17,11 +17,14 @@ package dds
 
 // MongosAttribute is a nested struct in dds response
 type MongosAttribute struct {
-	MaxIOPS         int    `json:"MaxIOPS" xml:"MaxIOPS"`
-	NodeId          string `json:"NodeId" xml:"NodeId"`
-	NodeDescription string `json:"NodeDescription" xml:"NodeDescription"`
-	Port            int    `json:"Port" xml:"Port"`
-	MaxConnections  int    `json:"MaxConnections" xml:"MaxConnections"`
-	ConnectSting    string `json:"ConnectSting" xml:"ConnectSting"`
-	NodeClass       string `json:"NodeClass" xml:"NodeClass"`
+	MaxIOPS            int    `json:"MaxIOPS" xml:"MaxIOPS"`
+	NodeId             string `json:"NodeId" xml:"NodeId"`
+	NodeDescription    string `json:"NodeDescription" xml:"NodeDescription"`
+	Port               int    `json:"Port" xml:"Port"`
+	MaxConnections     int    `json:"MaxConnections" xml:"MaxConnections"`
+	VPCId              string `json:"VPCId" xml:"VPCId"`
+	ConnectSting       string `json:"ConnectSting" xml:"ConnectSting"`
+	VSwitchId          string `json:"VSwitchId" xml:"VSwitchId"`
+	NodeClass          string `json:"NodeClass" xml:"NodeClass"`
+	VpcCloudInstanceId string `json:"VpcCloudInstanceId" xml:"VpcCloudInstanceId"`
 }

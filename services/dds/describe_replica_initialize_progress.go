@@ -87,8 +87,8 @@ type DescribeReplicaInitializeProgressRequest struct {
 // DescribeReplicaInitializeProgressResponse is the response struct for api DescribeReplicaInitializeProgress
 type DescribeReplicaInitializeProgressResponse struct {
 	*responses.BaseResponse
-	RequestId string      `json:"RequestId" xml:"RequestId"`
-	Items     []ItemsItem `json:"Items" xml:"Items"`
+	RequestId string                                         `json:"RequestId" xml:"RequestId"`
+	Items     []ItemsItemInDescribeReplicaInitializeProgress `json:"Items" xml:"Items"`
 }
 
 // CreateDescribeReplicaInitializeProgressRequest creates a request to invoke DescribeReplicaInitializeProgress API

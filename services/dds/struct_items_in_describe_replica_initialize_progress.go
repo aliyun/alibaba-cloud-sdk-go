@@ -17,5 +17,5 @@ package dds
 
 // ItemsInDescribeReplicaInitializeProgress is a nested struct in dds response
 type ItemsInDescribeReplicaInitializeProgress struct {
-	ItemsItem []ItemsItem `json:"ItemsItem" xml:"ItemsItem"`
+	ItemsItem []ItemsItemInDescribeReplicaInitializeProgress `json:"ItemsItem" xml:"ItemsItem"`
 }

@@ -87,9 +87,9 @@ type DescribeReplicaSetRoleRequest struct {
 // DescribeReplicaSetRoleResponse is the response struct for api DescribeReplicaSetRole
 type DescribeReplicaSetRoleResponse struct {
 	*responses.BaseResponse
-	RequestId    string      `json:"RequestId" xml:"RequestId"`
-	DBInstanceId string      `json:"DBInstanceId" xml:"DBInstanceId"`
-	ReplicaSets  ReplicaSets `json:"ReplicaSets" xml:"ReplicaSets"`
+	RequestId    string                              `json:"RequestId" xml:"RequestId"`
+	DBInstanceId string                              `json:"DBInstanceId" xml:"DBInstanceId"`
+	ReplicaSets  ReplicaSetsInDescribeReplicaSetRole `json:"ReplicaSets" xml:"ReplicaSets"`
 }
 
 // CreateDescribeReplicaSetRoleRequest creates a request to invoke DescribeReplicaSetRole API
