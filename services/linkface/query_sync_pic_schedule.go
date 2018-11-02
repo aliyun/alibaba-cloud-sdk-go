@@ -76,7 +76,9 @@ func (client *Client) QuerySyncPicScheduleWithCallback(request *QuerySyncPicSche
 // QuerySyncPicScheduleRequest is the request struct for api QuerySyncPicSchedule
 type QuerySyncPicScheduleRequest struct {
 	*requests.RpcRequest
-	IotId string `position:"Body" name:"IotId"`
+	IotId      string `position:"Body" name:"IotId"`
+	DeviceName string `position:"Body" name:"DeviceName"`
+	ProductKey string `position:"Body" name:"ProductKey"`
 }
 
 // QuerySyncPicScheduleResponse is the response struct for api QuerySyncPicSchedule

@@ -80,6 +80,8 @@ type QueryAuthenticationRequest struct {
 	IotId       string           `position:"Body" name:"IotId"`
 	PageSize    requests.Integer `position:"Body" name:"PageSize"`
 	CurrentPage requests.Integer `position:"Body" name:"CurrentPage"`
+	DeviceName  string           `position:"Body" name:"DeviceName"`
+	ProductKey  string           `position:"Body" name:"ProductKey"`
 }
 
 // QueryAuthenticationResponse is the response struct for api QueryAuthentication

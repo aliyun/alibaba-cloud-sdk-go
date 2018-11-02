@@ -1,3 +1,8 @@
+2018-11-02 Version: 1.35.1
+1, deviceName and productKey can be used instead of iotId.
+2, New productKey fields for queryauthentication output parameter.
+3, New deviceName fields for queryauthentication output parameter.
+
 2018-11-02 Version: 1.35.0
 1, first version
 

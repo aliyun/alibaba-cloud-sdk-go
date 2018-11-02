@@ -17,6 +17,7 @@ package linkface
 
 // DataItem is a nested struct in linkface response
 type DataItem struct {
+	DeviceName   string `json:"DeviceName" xml:"DeviceName"`
 	ExpiredTime  string `json:"ExpiredTime" xml:"ExpiredTime"`
 	ClientId     string `json:"ClientId" xml:"ClientId"`
 	IotId        string `json:"IotId" xml:"IotId"`
@@ -24,6 +25,7 @@ type DataItem struct {
 	CostQuantity int    `json:"CostQuantity" xml:"CostQuantity"`
 	ApkPubkey    string `json:"ApkPubkey" xml:"ApkPubkey"`
 	UserId       string `json:"UserId" xml:"UserId"`
+	ProductKey   string `json:"ProductKey" xml:"ProductKey"`
 	PackageName  string `json:"PackageName" xml:"PackageName"`
 	Quantity     int    `json:"Quantity" xml:"Quantity"`
 	BeginTime    string `json:"BeginTime" xml:"BeginTime"`
