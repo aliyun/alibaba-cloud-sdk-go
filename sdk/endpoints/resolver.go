@@ -17,11 +17,18 @@ package endpoints
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/utils"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/errors"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 	"sync"
 )
+
+var debug utils.Debug
+
+func init() {
+	debug = utils.Init("sdk")
+}
 
 const (
 	ResolveEndpointUserGuideLink = ""
@@ -32,6 +39,7 @@ var resolvers []Resolver
 
 type Resolver interface {
 	TryResolve(param *ResolveParam) (endpoint string, support bool, err error)
+	GetName() (name string)
 }
 
 func Resolve(param *ResolveParam) (endpoint string, err error) {
@@ -39,6 +47,8 @@ func Resolve(param *ResolveParam) (endpoint string, err error) {
 	for _, resolver := range supportedResolvers {
 		endpoint, supported, err := resolver.TryResolve(param)
 		if supported {
+			debug("resolve endpoint with %s\n", param)
+			debug("\t%s by resolver(%s)\n", endpoint, resolver.GetName())
 			return endpoint, err
 		}
 	}

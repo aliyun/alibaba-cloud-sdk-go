@@ -23,6 +23,11 @@ import (
 type LocalRegionalResolver struct {
 }
 
+func (resolver *LocalRegionalResolver) GetName() (name string) {
+  name = "local regional resolver"
+  return
+}
+
 func (resolver *LocalRegionalResolver) TryResolve(param *ResolveParam) (endpoint string, support bool, err error) {
 	// get the regional endpoints configs
 	regionalExpression := fmt.Sprintf("products[?code=='%s'].regional_endpoints", strings.ToLower(param.Product))

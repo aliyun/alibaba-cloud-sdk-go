@@ -48,6 +48,11 @@ var endpointCache = Cache{cache: make(map[string]interface{})}
 type LocationResolver struct {
 }
 
+func (resolver *LocationResolver) GetName() (name string) {
+  name = "location resolver"
+  return
+}
+
 func (resolver *LocationResolver) TryResolve(param *ResolveParam) (endpoint string, support bool, err error) {
 	if len(param.LocationProduct) <= 0 {
 		support = false
