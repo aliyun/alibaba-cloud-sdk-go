@@ -18,7 +18,7 @@ type SimpleHostResolver struct {
 }
 
 func (resolver *SimpleHostResolver) GetName() (name string) {
-  name = "simple resolver"
+  name = "simple host resolver"
   return
 }
 
