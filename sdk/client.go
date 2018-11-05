@@ -252,9 +252,9 @@ func (client *Client) DoActionWithSigner(request requests.AcsRequest, response r
 		if err != nil {
 			if !client.config.AutoRetry {
 				return
-			//} else if timeout = isTimeout(err); !timeout {
-			//	// if not timeout error, return
-			//	return
+				//} else if timeout = isTimeout(err); !timeout {
+				//	// if not timeout error, return
+				//	return
 			} else if retryTimes >= client.config.MaxRetryTime {
 				// timeout but reached the max retry times, return
 				timeoutErrorMsg := fmt.Sprintf(errors.TimeoutErrorMessage, strconv.Itoa(retryTimes+1), strconv.Itoa(retryTimes+1))
