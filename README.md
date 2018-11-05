@@ -1,6 +1,7 @@
 # Alibaba Cloud Go Software Development Kit
-[![Build Status](https://travis-ci.org/aliyun/alibaba-cloud-sdk-go.svg?branch=master)](https://travis-ci.org/aliyun/alibaba-cloud-sdk-go) 
+[![Build Status](https://travis-ci.org/aliyun/alibaba-cloud-sdk-go.svg?branch=master)](https://travis-ci.org/aliyun/alibaba-cloud-sdk-go)
 [![Go Report Card](https://goreportcard.com/badge/github.com/aliyun/alibaba-cloud-sdk-go)](https://goreportcard.com/report/github.com/aliyun/alibaba-cloud-sdk-go)
+[![codecov](https://codecov.io/gh/aliyun/alibaba-cloud-sdk-go/branch/master/graph/badge.svg)](https://codecov.io/gh/aliyun/alibaba-cloud-sdk-go)
 
 [中文文档](./README_zh.md)
 
@@ -47,7 +48,7 @@ import (
 	"fmt"
 )
 
-func main() { 
+func main() {
     // Create an ECS client
     ecsClient, err := ecs.NewClientWithAccessKey(
         "<your-region-id>", 			// Your Region ID
