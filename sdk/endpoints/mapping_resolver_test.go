@@ -1,9 +1,9 @@
 package endpoints
 
 import (
-	"fmt"
-	"github.com/stretchr/testify/assert"
 	"testing"
+
+	"github.com/stretchr/testify/assert"
 )
 
 func TestMappingResolver_GetName(t *testing.T) {
@@ -28,6 +28,4 @@ func TestMappingResolver_TryResolve(t *testing.T) {
 	assert.Nil(t, err)
 	assert.Equal(t, "unreachable.aliyuncs.com", endpoint)
 	assert.Equal(t, true, support)
-
-	fmt.Println("finished")
 }
