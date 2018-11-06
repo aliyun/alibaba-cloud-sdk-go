@@ -1,16 +1,17 @@
 # 阿里云开发者Go工具套件
-[![Build Status](https://travis-ci.org/aliyun/alibaba-cloud-sdk-go.svg?branch=master)](https://travis-ci.org/aliyun/alibaba-cloud-sdk-go) 
+[![Build Status](https://travis-ci.org/aliyun/alibaba-cloud-sdk-go.svg?branch=master)](https://travis-ci.org/aliyun/alibaba-cloud-sdk-go)
 [![Go Report Card](https://goreportcard.com/badge/github.com/aliyun/alibaba-cloud-sdk-go)](https://goreportcard.com/report/github.com/aliyun/alibaba-cloud-sdk-go)
+[![codecov](https://codecov.io/gh/aliyun/alibaba-cloud-sdk-go/branch/master/graph/badge.svg)](https://codecov.io/gh/aliyun/alibaba-cloud-sdk-go)
 
-欢迎使用阿里云开发者工具套件（SDK）。阿里云Go SDK让您不用复杂编程即可访问云服务器、云监控等多个阿里云服务。这里向您介绍如何获取阿里云Go SDK并开始调用。
+欢迎使用阿里云开发者工具套件（SDK）。阿里云 Go SDK 让您不用复杂编程即可访问云服务器、云监控等多个阿里云服务。这里向您介绍如何获取阿里云 Go SDK 并开始调用。
 
-如果您在使用SDK的过程中遇到任何问题，欢迎前往[阿里云SDK问答社区](https://yq.aliyun.com/tags/type_ask-tagid_23350)提问，提问前请阅读[提问引导](https://help.aliyun.com/document_detail/93957.html)。亦可在当前GitHub提交Issues。
+如果您在使用SDK的过程中遇到任何问题，欢迎前往[阿里云 SDK 问答社区](https://yq.aliyun.com/tags/type_ask-tagid_23350)提问，提问前请阅读[提问引导](https://help.aliyun.com/document_detail/93957.html)。亦可在当前 GitHub 提交 Issues。
 
 ## 环境准备
-1. 要使用阿里云Go SDK，您需要一个云账号以及一对`Access Key ID`和`Access Key Secret`。 请在阿里云控制台中的[AccessKey管理页面](https://usercenter.console.aliyun.com/?spm=5176.doc52740.2.3.QKZk8w#/manage/ak)上创建和查看您的Access Key，或者联系您的系统管理员
-2. 要使用阿里云SDK访问某个产品的API，您需要事先在[阿里云控制台](https://home.console.aliyun.com/?spm=5176.doc52740.2.4.QKZk8w)中开通这个产品。
+1. 要使用阿里云Go SDK，您需要一个云账号以及一对 `Access Key ID` 和 `Access Key Secret`。 请在阿里云控制台中的[ AccessKey 管理页面](https://usercenter.console.aliyun.com/?spm=5176.doc52740.2.3.QKZk8w#/manage/ak)上创建和查看您的 Access Key，或者联系您的系统管理员
+2. 要使用阿里云 SDK 访问某个产品的 API ，您需要事先在[阿里云控制台](https://home.console.aliyun.com/?spm=5176.doc52740.2.4.QKZk8w)中开通这个产品。
 
-## SDK获取和安装
+## SDK 获取和安装
 
 使用`go get`下载安装SDK
 
@@ -18,19 +19,19 @@
 go get -u github.com/aliyun/alibaba-cloud-sdk-go/sdk
 ```
 
-如果您使用了glide管理依赖，您也可以使用glide来安装阿里云GO SDK
+如果您使用了 glide 管理依赖，您也可以使用 glide 来安装阿里云GO SDK
 
 ```
 glide get github.com/aliyun/alibaba-cloud-sdk-go
 ```
 
-另外，阿里云Go SDK也会发布在 https://develop.aliyun.com/tools/sdk#/go 这个地址。
+另外，阿里云 Go SDK 也会发布在 https://develop.aliyun.com/tools/sdk#/go 这个地址。
 
 ## 开始调用
-以下这个代码示例向您展示了调用阿里云GO SDK的3个主要步骤：
+以下这个代码示例向您展示了调用阿里云 GO SDK 的3个主要步骤：
 
-1. 创建Client实例
-2. 创建API请求并设置参数
+1. 创建 Client 实例
+2. 创建 API 请求并设置参数
 3. 发起请求并处理异常
 
 ```go
@@ -41,7 +42,7 @@ import (
 	"fmt"
 )
 
-func main() { 
+func main() {
     // 创建ecsClient实例
     ecsClient, err := ecs.NewClientWithAccessKey(
         "<your-region-id>", 			// 您的可用区ID
@@ -97,7 +98,7 @@ config := sdk.NewConfig()
             .WithEnableAsync(true)
             .WithGoRoutinePoolSize(poolSize)            // 可选，默认5
             .WithMaxTaskQueueSize(maxTaskQueueSize)     // 可选，默认1000
-ecsClient, err := ecs.NewClientWithOptions(config)            
+ecsClient, err := ecs.NewClientWithOptions(config)
 
 // 也可以在client初始化后再开启
 client.EnableAsync(poolSize, maxTaskQueueSize)
@@ -109,24 +110,24 @@ client.EnableAsync(poolSize, maxTaskQueueSize)
 1. 使用channel作为返回值
     ```go
     responseChannel, errChannel := client.FooWithChan(request)
-    
+
     // this will block
     response := <-responseChannel
     err = <-errChannel
     ```
 
 2. 使用callback控制回调
-    
+
     ```go
     blocker := client.FooWithCallback(request, func(response *FooResponse, err error) {
     		// handle the response and err
     	})
- 	
+
     // blocker 为(chan int)，用于控制同步，返回1为成功，0为失败
     // 在<-blocker返回失败时，err依然会被传入的callback处理
     result := <-blocker
     ```
-    
+
 ## 泛化调用接口(CommonApi)
 
 ##### 什么是CommonAPI

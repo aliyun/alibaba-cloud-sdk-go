@@ -17,6 +17,11 @@ package endpoints
 type SimpleHostResolver struct {
 }
 
+func (resolver *SimpleHostResolver) GetName() (name string) {
+  name = "simple host resolver"
+  return
+}
+
 func (resolver *SimpleHostResolver) TryResolve(param *ResolveParam) (endpoint string, support bool, err error) {
 	if support = len(param.Domain) > 0; support {
 		endpoint = param.Domain

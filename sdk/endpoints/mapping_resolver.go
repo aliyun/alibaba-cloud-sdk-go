@@ -32,6 +32,11 @@ func AddEndpointMapping(regionId, productId, endpoint string) (err error) {
 type MappingResolver struct {
 }
 
+func (resolver *MappingResolver) GetName() (name string) {
+  name = "mapping resolver"
+  return
+}
+
 func (resolver *MappingResolver) TryResolve(param *ResolveParam) (endpoint string, support bool, err error) {
 	key := fmt.Sprintf(keyFormatter, strings.ToLower(param.RegionId), strings.ToLower(param.Product))
 	endpoint, contains := endpointMapping[key]
