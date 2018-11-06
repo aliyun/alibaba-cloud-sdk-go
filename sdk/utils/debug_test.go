@@ -5,7 +5,7 @@ import (
   // "fmt"
 )
 
-func TestMain(m *testing.M) {
+func TestMain(t *testing.T) {
   debug := Init("sdk")
   debug("%s", "testing")
 }

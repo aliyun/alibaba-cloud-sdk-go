@@ -29,21 +29,21 @@ type Cache struct {
 	cache map[string]interface{}
 }
 
-func (c Cache) Get(k string) (v interface{}) {
+func (c *Cache) Get(k string) (v interface{}) {
 	c.RLock()
 	v = c.cache[k]
 	c.RUnlock()
 	return
 }
 
-func (c Cache) Set(k string, v interface{}) {
+func (c *Cache) Set(k string, v interface{}) {
 	c.Lock()
 	c.cache[k] = v
 	c.Unlock()
 }
 
-var lastClearTimePerProduct = Cache{cache: make(map[string]interface{})}
-var endpointCache = Cache{cache: make(map[string]interface{})}
+var lastClearTimePerProduct = &Cache{cache: make(map[string]interface{})}
+var endpointCache = &Cache{cache: make(map[string]interface{})}
 
 type LocationResolver struct {
 }

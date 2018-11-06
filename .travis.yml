@@ -1,8 +1,6 @@
 language: go
 
 go:
-  - 1.8.x
-  - 1.9.x
   - 1.10.x
   - 1.11.x
 
@@ -27,8 +25,8 @@ script:
   - go vet ./services/...
   - go build ./sdk
   - go build ./services/...
-  - bash ./test.sh
-  - go test -v -timeout 60m ./integration/...
+  - go test -race -coverprofile=coverage.txt -covermode=atomic ./sdk/...
+  #- go test -v -timeout 60s ./integration/...
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
