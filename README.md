@@ -43,20 +43,20 @@ The following code example shows the three main steps to use Alibaba Cloud Go SD
 package main
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/services/ecs"
+    "github.com/aliyun/alibaba-cloud-sdk-go/services/ecs"
     "github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"fmt"
+    "fmt"
 )
 
 func main() {
     // Create an ECS client
     ecsClient, err := ecs.NewClientWithAccessKey(
-        "<your-region-id>", 			// Your Region ID
-        "<your-access-key-id>", 		// Your AccessKey ID
-        "<your-access-key-secret>")		// Your AccessKey Secret
+        "<your-region-id>",             // Your Region ID
+        "<your-access-key-id>",         // Your AccessKey ID
+        "<your-access-key-secret>")     // Your AccessKey Secret
     if err != nil {
-    	// Handle exceptions
-    	panic(err)
+        // Handle exceptions
+        panic(err)
     }
     // Create an API request and set parameters
     request := ecs.CreateDescribeInstancesRequest()
@@ -65,8 +65,8 @@ func main() {
     // Initiate the request and handle exceptions
     response, err := ecsClient.DescribeInstances(request)
     if err != nil {
-    	// Handle exceptions
-    	panic(err)
+        // Handle exceptions
+        panic(err)
     }
     fmt.Println(response)
 }
