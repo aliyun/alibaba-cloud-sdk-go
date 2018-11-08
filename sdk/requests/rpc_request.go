@@ -15,9 +15,10 @@
 package requests
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/utils"
 	"io"
 	"strings"
+
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/utils"
 )
 
 type RpcRequest struct {
