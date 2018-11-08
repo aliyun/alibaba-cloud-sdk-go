@@ -37,20 +37,3 @@ func TestLocalGlobalResolver_TryResolve(t *testing.T) {
   assert.Equal(t, "", endpoint)
 	assert.Equal(t, false, support)
 }
-
-// func TestLocationResolver_TryResolve_LocationWithError(t *testing.T) {
-//   resolver := &LocationResolver{}
-//   resolveParam := &ResolveParam{
-//     LocationProduct: "ecs",
-//     RegionId: "cn-hangzhou",
-//     Product:  "ecs",
-//     CommonApi: func(request *requests.CommonRequest) (response *responses.CommonResponse, err error) {
-//       err = errors.NewClientError("SDK.MockError", "Mock error", nil)
-//       return
-//     },
-//   }
-//   endpoint, support, err := resolver.TryResolve(resolveParam)
-//   assert.Equal(t, "", endpoint)
-//   assert.Equal(t, false, support)
-//   assert.Equal(t, "[SDK.MockError] Mock error", err.Error())
-// }
