@@ -44,18 +44,20 @@ type Resolver interface {
 
 func Resolve(param *ResolveParam) (endpoint string, err error) {
 	supportedResolvers := getAllResolvers()
+	var lastErr error
+	var supported bool
 	for _, resolver := range supportedResolvers {
-		endpoint, supported, err := resolver.TryResolve(param)
+		endpoint, supported, lastErr = resolver.TryResolve(param)
 		if supported {
 			debug("resolve endpoint with %s\n", param)
 			debug("\t%s by resolver(%s)\n", endpoint, resolver.GetName())
-			return endpoint, err
+			return endpoint, nil
 		}
 	}
 
 	// not support
 	errorMsg := fmt.Sprintf(errors.CanNotResolveEndpointErrorMessage, param, ResolveEndpointUserGuideLink)
-	err = errors.NewClientError(errors.CanNotResolveEndpointErrorCode, errorMsg, nil)
+	err = errors.NewClientError(errors.CanNotResolveEndpointErrorCode, errorMsg, lastErr)
 	return
 }
 

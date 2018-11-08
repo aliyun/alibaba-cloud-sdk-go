@@ -8,7 +8,7 @@ import (
 
 func TestMappingResolver_GetName(t *testing.T) {
 	resolver := &MappingResolver{}
-	assert.Equal(t, resolver.GetName(), "mapping resolver")
+	assert.Equal(t, "mapping resolver", resolver.GetName())
 }
 
 func TestMappingResolver_TryResolve(t *testing.T) {
