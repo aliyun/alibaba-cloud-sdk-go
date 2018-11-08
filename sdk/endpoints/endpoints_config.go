@@ -498,7 +498,7 @@ func getEndpointConfigData() interface{} {
 	initOnce.Do(func() {
 		err := json.Unmarshal([]byte(endpointsJson), &data)
 		if err != nil {
-			fmt.Println("init endpoint config data failed.", err)
+			panic(fmt.Sprintf("init endpoint config data failed. %s", err))
 		}
 	})
 	return data
