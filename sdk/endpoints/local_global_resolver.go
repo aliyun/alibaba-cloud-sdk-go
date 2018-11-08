@@ -35,7 +35,7 @@ func (resolver *LocalGlobalResolver) TryResolve(param *ResolveParam) (endpoint s
 	if err == nil && endpointData != nil && len(endpointData.([]interface{})) > 0 {
 		endpoint = endpointData.([]interface{})[0].(string)
 		support = len(endpoint) > 0
-		return endpoint, support, nil
+		return
 	}
 	support = false
 	return
