@@ -1,3 +1,7 @@
+2018-11-08 Version: 1.35.3
+1, Update Version.
+
+
 2018-11-07 Version: 1.35.2
 1, Add API CreateTemplate,DeleteTemplate,GetAllTemplate,GetTemplateInfo.
 2, Add API  GetTaskStatus,StartTask,StopTask.
