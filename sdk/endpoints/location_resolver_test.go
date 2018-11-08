@@ -12,7 +12,7 @@ import (
 
 func TestLocationResolver_GetName(t *testing.T) {
   resolver := &LocationResolver{}
-  assert.Equal(t, resolver.GetName(), "location resolver")
+  assert.Equal(t, "location resolver", resolver.GetName())
 }
 
 func TestLocationResolver_TryResolve_EmptyLocationProduct(t *testing.T) {

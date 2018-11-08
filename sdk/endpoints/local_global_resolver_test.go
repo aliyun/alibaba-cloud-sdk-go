@@ -8,7 +8,7 @@ import (
 
 func TestLocalGlobalResolver_GetName(t *testing.T) {
   resolver := &LocalGlobalResolver{}
-  assert.Equal(t, resolver.GetName(), "local global resolver")
+  assert.Equal(t, "local global resolver", resolver.GetName())
 }
 
 func TestLocalGlobalResolver_TryResolve(t *testing.T) {

@@ -8,7 +8,7 @@ import (
 
 func TestSimpleHostResolver_GetName(t *testing.T) {
   resolver := &SimpleHostResolver{}
-  assert.Equal(t, resolver.GetName(), "simple host resolver")
+  assert.Equal(t, "simple host resolver", resolver.GetName())
 }
 
 func TestSimpleHostResolver_TryResolve(t *testing.T) {

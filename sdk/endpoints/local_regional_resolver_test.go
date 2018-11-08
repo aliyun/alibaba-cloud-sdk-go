@@ -8,7 +8,7 @@ import (
 
 func TestLocalRegionalResolver_GetName(t *testing.T) {
   resolver := &LocalRegionalResolver{}
-  assert.Equal(t, resolver.GetName(), "local regional resolver")
+  assert.Equal(t, "local regional resolver", resolver.GetName())
 }
 
 func TestLocalRegionalResolver_TryResolve(t *testing.T) {
@@ -30,12 +30,4 @@ func TestLocalRegionalResolver_TryResolve(t *testing.T) {
   assert.Nil(t, err)
   assert.Equal(t, "arms.cn-beijing.aliyuncs.com", endpoint)
 	assert.Equal(t, true, support)
-
-	// resolveParam = &ResolveParam{
-	// 	Product: "inexist",
-	// }
-  // endpoint, support, err = resolver.TryResolve(resolveParam)
-  // assert.Nil(t, err)
-  // assert.Equal(t, "", endpoint)
-	// assert.Equal(t, false, support)
 }
