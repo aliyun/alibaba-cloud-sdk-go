@@ -16,11 +16,12 @@ package requests
 
 import (
 	"bytes"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/utils"
 	"io"
 	"net/url"
 	"sort"
 	"strings"
+
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/utils"
 )
 
 type RoaRequest struct {

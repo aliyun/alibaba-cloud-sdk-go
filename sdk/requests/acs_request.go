@@ -16,10 +16,11 @@ package requests
 
 import (
 	"fmt"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/errors"
 	"io"
 	"reflect"
 	"strconv"
+
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/errors"
 )
 
 const (
@@ -201,7 +202,7 @@ func (request *baseRequest) GetHeaders() map[string]string {
 }
 
 func (request *baseRequest) SetContentType(contentType string) {
-	request.Headers["Content-Type"] = contentType
+	request.addHeaderParam("Content-Type", contentType)
 }
 
 func (request *baseRequest) GetContentType() (contentType string, contains bool) {
@@ -226,7 +227,7 @@ func defaultBaseRequest() (request *baseRequest) {
 		Headers: map[string]string{
 			"x-sdk-client":      "golang/1.0.0",
 			"x-sdk-invoke-type": "normal",
-			"Accept-Encoding": "identity",
+			"Accept-Encoding":   "identity",
 		},
 		FormParams: make(map[string]string),
 	}
