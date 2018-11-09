@@ -16,16 +16,17 @@ package sdk
 
 import (
 	"fmt"
+	"net"
+	"net/http"
+	"strconv"
+	"sync"
+
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/auth"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/auth/credentials"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/endpoints"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/errors"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
-	"net"
-	"net/http"
-	"strconv"
-	"sync"
 )
 
 // this value will be replaced while build: -ldflags="-X sdk.version=x.x.x"
@@ -149,50 +150,6 @@ func (client *Client) InitClientConfig() (config *Config) {
 
 func (client *Client) DoAction(request requests.AcsRequest, response responses.AcsResponse) (err error) {
 	return client.DoActionWithSigner(request, response, nil)
-}
-
-func (client *Client) BuildRequestWithSigner(request requests.AcsRequest, signer auth.Signer) (err error) {
-	// add clientVersion
-	request.GetHeaders()["x-sdk-core-version"] = Version
-
-	regionId := client.regionId
-	if len(request.GetRegionId()) > 0 {
-		regionId = request.GetRegionId()
-	}
-
-	// resolve endpoint
-	resolveParam := &endpoints.ResolveParam{
-		Domain:               request.GetDomain(),
-		Product:              request.GetProduct(),
-		RegionId:             regionId,
-		LocationProduct:      request.GetLocationServiceCode(),
-		LocationEndpointType: request.GetLocationEndpointType(),
-		CommonApi:            client.ProcessCommonRequest,
-	}
-	endpoint, err := endpoints.Resolve(resolveParam)
-	if err != nil {
-		return
-	}
-	request.SetDomain(endpoint)
-
-	// init request params
-	err = requests.InitParams(request)
-	if err != nil {
-		return
-	}
-
-	// signature
-	var finalSigner auth.Signer
-	if signer != nil {
-		finalSigner = signer
-	} else {
-		finalSigner = client.signer
-	}
-	httpRequest, err := buildHttpRequest(request, finalSigner, regionId)
-	if client.config.UserAgent != "" {
-		httpRequest.Header.Set("User-Agent", client.config.UserAgent)
-	}
-	return err
 }
 
 func (client *Client) DoActionWithSigner(request requests.AcsRequest, response responses.AcsResponse, signer auth.Signer) (err error) {
