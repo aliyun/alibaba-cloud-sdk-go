@@ -67,4 +67,5 @@ func Test_CommonRequest_GetBodyReader(t *testing.T) {
 	reader := r.GetBodyReader()
 	b, _ := ioutil.ReadAll(reader)
 	assert.Equal(t, "", string(b))
+	assert.Equal(t, "", r.GetQueries())
 }
