@@ -45,10 +45,6 @@ func (request *RoaRequest) GetBodyReader() io.Reader {
 	}
 }
 
-func (request *RoaRequest) GetQueries() string {
-	return request.queries
-}
-
 // for sign method, need not url encoded
 func (request *RoaRequest) BuildQueries() string {
 	return request.buildQueries(false)
@@ -107,10 +103,6 @@ func popStandardUrlencode(stringToSign string) (result string) {
 	result = strings.Replace(result, "*", "%2A", -1)
 	result = strings.Replace(result, "%7E", "~", -1)
 	return
-}
-
-func (request *RoaRequest) GetUrl() string {
-	return strings.ToLower(request.Scheme) + "://" + request.Domain + ":" + request.Port + request.GetQueries()
 }
 
 func (request *RoaRequest) BuildUrl() string {

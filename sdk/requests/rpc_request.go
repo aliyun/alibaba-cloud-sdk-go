@@ -48,16 +48,8 @@ func (request *RpcRequest) BuildQueries() string {
 	return request.queries
 }
 
-func (request *RpcRequest) GetQueries() string {
-	return request.queries
-}
-
 func (request *RpcRequest) BuildUrl() string {
 	return strings.ToLower(request.Scheme) + "://" + request.Domain + ":" + request.Port + request.BuildQueries()
-}
-
-func (request *RpcRequest) GetUrl() string {
-	return strings.ToLower(request.Scheme) + "://" + request.Domain + request.GetQueries()
 }
 
 func (request *RpcRequest) GetVersion() string {
