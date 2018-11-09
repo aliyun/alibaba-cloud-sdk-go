@@ -59,8 +59,6 @@ type AcsRequest interface {
 	GetDomain() string
 	GetPort() string
 	GetRegionId() string
-	GetUrl() string
-	GetQueries() string
 	GetHeaders() map[string]string
 	GetQueryParams() map[string]string
 	GetFormParams() map[string]string

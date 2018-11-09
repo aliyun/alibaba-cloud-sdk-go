@@ -115,15 +115,7 @@ func (r AcsRequestTest) GetBodyReader() io.Reader {
 	return nil
 }
 
-func (r AcsRequestTest) GetQueries() string {
-	return ""
-}
-
 func (r AcsRequestTest) GetStyle() string {
-	return ""
-}
-
-func (r AcsRequestTest) GetUrl() string {
 	return ""
 }
 

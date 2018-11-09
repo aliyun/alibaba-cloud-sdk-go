@@ -3,9 +3,10 @@ package requests
 import (
 	"bytes"
 	"fmt"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/errors"
 	"io"
 	"strings"
+
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/errors"
 )
 
 type CommonRequest struct {
@@ -33,8 +34,6 @@ func NewCommonRequest() (request *CommonRequest) {
 
 func (request *CommonRequest) String() string {
 	request.TransToAcsRequest()
-	request.BuildQueries()
-	request.BuildUrl()
 
 	resultBuilder := bytes.Buffer{}
 
@@ -48,7 +47,7 @@ func (request *CommonRequest) String() string {
 
 	// Request Line
 	resultBuilder.WriteString("\n")
-	resultBuilder.WriteString(fmt.Sprintf("%s %s %s/1.1\n", request.Method, request.GetQueries(), strings.ToUpper(request.Scheme)))
+	resultBuilder.WriteString(fmt.Sprintf("%s %s %s/1.1\n", request.Method, request.BuildQueries(), strings.ToUpper(request.Scheme)))
 
 	// Headers
 	resultBuilder.WriteString("Host" + ": " + request.Domain + "\n")
@@ -101,18 +100,6 @@ func (request *CommonRequest) BuildUrl() string {
 
 func (request *CommonRequest) BuildQueries() string {
 	return request.Ontology.BuildQueries()
-}
-
-func (request *CommonRequest) GetUrl() string {
-	if len(request.Port) > 0 {
-		return strings.ToLower(request.Scheme) + "://" + request.Domain + ":" + request.Port + request.GetQueries()
-	}
-
-	return strings.ToLower(request.Scheme) + "://" + request.Domain + request.GetQueries()
-}
-
-func (request *CommonRequest) GetQueries() string {
-	return request.Ontology.GetQueries()
 }
 
 func (request *CommonRequest) GetBodyReader() io.Reader {
