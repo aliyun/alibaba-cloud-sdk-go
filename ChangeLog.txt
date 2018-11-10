@@ -1,3 +1,6 @@
+2018-11-10 Version: 1.35.4
+1, Update SetWaitingRoomConfig.
+
 2018-11-08 Version: 1.35.3
 1, Update Version.
 
