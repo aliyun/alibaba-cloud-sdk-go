@@ -59,11 +59,11 @@ func (request *RoaRequest) buildQueries(needParamEncode bool) string {
 
 	queryParams := request.QueryParams
 	// check if path contains params
-	splitArray := strings.Split(path, "?")
-	path = splitArray[0]
-	if len(splitArray) > 1 && len(splitArray[1]) > 0 {
-		queryParams[splitArray[1]] = ""
-	}
+	// splitArray := strings.Split(path, "?")
+	// path = splitArray[0]
+	// if len(splitArray) > 1 && len(splitArray[1]) > 0 {
+	// 	queryParams[splitArray[1]] = ""
+	// }
 	// sort QueryParams by key
 	var queryKeys []string
 	for key := range queryParams {

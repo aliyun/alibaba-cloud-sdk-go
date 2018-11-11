@@ -16,21 +16,23 @@ package sdk
 
 import (
 	"fmt"
+	"net"
+	"net/http"
+	"strconv"
+	"sync"
+
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/auth"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/auth/credentials"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/endpoints"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/errors"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
-	"net"
-	"net/http"
-	"strconv"
-	"sync"
 )
 
-// this value will be replaced while build: -ldflags="-X sdk.version=x.x.x"
+// Version this value will be replaced while build: -ldflags="-X sdk.version=x.x.x"
 var Version = "0.0.1"
 
+// Client the type Client
 type Client struct {
 	regionId       string
 	config         *Config
@@ -75,6 +77,7 @@ func (client *Client) InitWithOptions(regionId string, config *Config, credentia
 	return
 }
 
+// EnableAsync enable the async task queue
 func (client *Client) EnableAsync(routinePoolSize, maxTaskQueueSize int) {
 	client.asyncTaskQueue = make(chan func(), maxTaskQueueSize)
 	for i := 0; i < routinePoolSize; i++ {
@@ -404,9 +407,8 @@ func (client *Client) ProcessCommonRequestWithSigner(request *requests.CommonReq
 		response = responses.NewCommonResponse()
 		err = client.DoActionWithSigner(request, response, signer)
 		return
-	} else {
-		panic("should not be here")
 	}
+	panic("should not be here")
 }
 
 func (client *Client) Shutdown() {
