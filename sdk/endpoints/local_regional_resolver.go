@@ -16,16 +16,17 @@ package endpoints
 
 import (
 	"fmt"
-	"github.com/jmespath/go-jmespath"
 	"strings"
+
+	"github.com/jmespath/go-jmespath"
 )
 
 type LocalRegionalResolver struct {
 }
 
 func (resolver *LocalRegionalResolver) GetName() (name string) {
-  name = "local regional resolver"
-  return
+	name = "local regional resolver"
+	return
 }
 
 func (resolver *LocalRegionalResolver) TryResolve(param *ResolveParam) (endpoint string, support bool, err error) {
