@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"fmt"
 	"io"
+	"sort"
 	"strings"
 )
 
@@ -37,14 +38,21 @@ func (request *CommonRequest) String() string {
 
 	mapOutput := func(m map[string]string) {
 		if len(m) > 0 {
-			for key, value := range m {
-				resultBuilder.WriteString(key + ": " + value + "\n")
+			sortedKeys := make([]string, 0)
+			for k := range m {
+				sortedKeys = append(sortedKeys, k)
+			}
+
+			// sort 'string' key in increasing order
+			sort.Strings(sortedKeys)
+
+			for _, key := range sortedKeys {
+				resultBuilder.WriteString(key + ": " + m[key] + "\n")
 			}
 		}
 	}
 
 	// Request Line
-	resultBuilder.WriteString("\n")
 	resultBuilder.WriteString(fmt.Sprintf("%s %s %s/1.1\n", request.Method, request.BuildQueries(), strings.ToUpper(request.Scheme)))
 
 	// Headers

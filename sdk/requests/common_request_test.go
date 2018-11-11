@@ -36,16 +36,28 @@ func Test_CommonRequest_TransToAcsRequest(t *testing.T) {
 func Test_CommonRequest_String(t *testing.T) {
 	r := NewCommonRequest()
 	assert.NotNil(t, r)
-	r.TransToAcsRequest()
+	r.SetDomain("domain")
 
-	assert.Equal(t, "RPC", r.GetStyle())
+	expected := `GET /? /1.1
+Host: domain
+Accept-Encoding: identity
+x-sdk-client: golang/1.0.0
+x-sdk-invoke-type: common
 
-	r2 := NewCommonRequest()
-	assert.NotNil(t, r2)
-	r2.PathPattern = "/users/[user]"
-	r2.TransToAcsRequest()
+`
+	assert.Equal(t, expected, r.String())
 
-	assert.Equal(t, "ROA", r2.GetStyle())
+	r.SetContent([]byte("content"))
+
+	expected = `GET /? /1.1
+Host: domain
+Accept-Encoding: identity
+x-sdk-client: golang/1.0.0
+x-sdk-invoke-type: common
+
+content
+`
+	assert.Equal(t, expected, r.String())
 }
 
 func Test_CommonRequest_BuildUrl(t *testing.T) {
