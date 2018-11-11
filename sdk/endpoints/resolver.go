@@ -17,11 +17,12 @@ package endpoints
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/utils"
+	"sync"
+
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/errors"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
-	"sync"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/utils"
 )
 
 var debug utils.Debug
@@ -42,6 +43,8 @@ type Resolver interface {
 	GetName() (name string)
 }
 
+// Resolve resolve endpoint with params
+// It will resolve with each supported resolver until anyone resolved
 func Resolve(param *ResolveParam) (endpoint string, err error) {
 	supportedResolvers := getAllResolvers()
 	var lastErr error
