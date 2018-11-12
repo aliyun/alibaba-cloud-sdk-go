@@ -7,7 +7,7 @@ import (
 )
 
 func TestRoleArnCredential(t *testing.T) {
-	c := NewStsRoleArnCredential("accessKeyId", "accessKeySecret", "roleArn", "roleSessionName", 3600)
+	c := NewRamRoleArnCredential("accessKeyId", "accessKeySecret", "roleArn", "roleSessionName", 3600)
 	assert.Equal(t, "accessKeyId", c.AccessKeyId)
 	assert.Equal(t, "accessKeySecret", c.AccessKeySecret)
 	assert.Equal(t, "roleArn", c.RoleArn)
