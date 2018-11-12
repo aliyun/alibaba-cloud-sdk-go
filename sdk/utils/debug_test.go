@@ -1,11 +1,10 @@
 package utils
 
 import (
-  "testing"
-  // "fmt"
+	"testing"
 )
 
 func TestMain(t *testing.T) {
-  debug := Init("sdk")
-  debug("%s", "testing")
+	debug := Init("sdk")
+	debug("%s", "testing")
 }
