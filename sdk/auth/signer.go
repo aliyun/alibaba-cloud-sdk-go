@@ -39,13 +39,12 @@ func NewSignerWithCredential(credential Credential, commonApi func(request *requ
 	switch instance := credential.(type) {
 	case *credentials.AccessKeyCredential:
 		{
-			signer, err = signers.NewAccessKeySigner(instance)
+			signer = signers.NewAccessKeySigner(instance)
 		}
 	case *credentials.StsTokenCredential:
 		{
-			signer, err = signers.NewStsTokenSigner(instance)
+			signer = signers.NewStsTokenSigner(instance)
 		}
-
 	case *credentials.RamRoleArnCredential:
 		{
 			signer, err = signers.NewRamRoleArnSigner(instance, commonApi)
@@ -56,11 +55,11 @@ func NewSignerWithCredential(credential Credential, commonApi func(request *requ
 		}
 	case *credentials.EcsRamRoleCredential:
 		{
-			signer, err = signers.NewEcsRamRoleSigner(instance, commonApi)
+			signer = signers.NewEcsRamRoleSigner(instance, commonApi)
 		}
 	case *credentials.BaseCredential: // deprecated user interface
 		{
-			signer, err = signers.NewAccessKeySigner(instance.ToAccessKeyCredential())
+			signer = signers.NewAccessKeySigner(instance.ToAccessKeyCredential())
 		}
 	case *credentials.StsRoleArnCredential: // deprecated user interface
 		{
@@ -68,7 +67,7 @@ func NewSignerWithCredential(credential Credential, commonApi func(request *requ
 		}
 	case *credentials.StsRoleNameOnEcsCredential: // deprecated user interface
 		{
-			signer, err = signers.NewEcsRamRoleSigner(instance.ToEcsRamRoleCredential(), commonApi)
+			signer = signers.NewEcsRamRoleSigner(instance.ToEcsRamRoleCredential(), commonApi)
 		}
 	default:
 		message := fmt.Sprintf(errors.UnsupportedCredentialErrorMessage, reflect.TypeOf(credential))

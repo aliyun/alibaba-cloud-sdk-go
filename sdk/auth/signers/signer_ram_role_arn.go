@@ -17,14 +17,15 @@ package signers
 import (
 	"encoding/json"
 	"fmt"
+	"net/http"
+	"strconv"
+	"time"
+
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/auth/credentials"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/errors"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 	"github.com/jmespath/go-jmespath"
-	"net/http"
-	"strconv"
-	"time"
 )
 
 const (
@@ -123,7 +124,7 @@ func (signer *RamRoleArnSigner) refreshApi(request *requests.CommonRequest) (res
 		AccessKeyId:     signer.credential.AccessKeyId,
 		AccessKeySecret: signer.credential.AccessKeySecret,
 	}
-	signerV1, err := NewAccessKeySigner(credential)
+	signerV1 := NewAccessKeySigner(credential)
 	return signer.commonApi(request, signerV1)
 }
 
