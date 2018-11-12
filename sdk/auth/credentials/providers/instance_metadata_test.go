@@ -1,11 +1,12 @@
 package providers
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/auth/credentials"
 	"net/http"
 	"net/http/httptest"
 	"strings"
 	"testing"
+
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/auth/credentials"
 )
 
 func TestInstanceMetadataProvider_Retrieve_Success(t *testing.T) {

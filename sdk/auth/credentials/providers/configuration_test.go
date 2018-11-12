@@ -3,6 +3,8 @@ package providers
 import (
 	"testing"
 
+	"github.com/stretchr/testify/assert"
+
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/auth/credentials"
 )
 
@@ -26,13 +28,9 @@ func TestConfigurationProvider_Retrieve_NewRamRoleArnCredential(t *testing.T) {
 		t.Fatal(err)
 	}
 	ramRoleArnCredential, ok := credential.(*credentials.RamRoleArnCredential)
-	if !ok {
-		t.Fatal("expected AccessKeyCredential")
-	}
+	assert.True(t, ok, "expected AccessKeyCredential")
+	assert.Equal(t, expectedAccesKeyId, ramRoleArnCredential.AccessKeyId, "expected AccessKeyId %s but received %s", expectedAccesKeyId, ramRoleArnCredential.AccessKeyId)
 
-	if ramRoleArnCredential.AccessKeyId != expectedAccesKeyId {
-		t.Fatalf("expected AccessKeyId %s but received %s", expectedAccesKeyId, ramRoleArnCredential.AccessKeyId)
-	}
 	if ramRoleArnCredential.AccessKeySecret != expectedAccessKeySecret {
 		t.Fatalf("expected AccessKeySecret %s but received %s", expectedAccessKeySecret, ramRoleArnCredential.AccessKeySecret)
 	}
