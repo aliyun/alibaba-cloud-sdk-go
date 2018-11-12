@@ -26,10 +26,10 @@ func (signer *AccessKeySigner) GetExtraParam() map[string]string {
 	return nil
 }
 
-func NewAccessKeySigner(credential *credentials.AccessKeyCredential) (*AccessKeySigner, error) {
+func NewAccessKeySigner(credential *credentials.AccessKeyCredential) *AccessKeySigner {
 	return &AccessKeySigner{
 		credential: credential,
-	}, nil
+	}
 }
 
 func (*AccessKeySigner) GetName() string {

@@ -34,7 +34,7 @@ type EcsRamRoleSigner struct {
 	commonApi         func(request *requests.CommonRequest, signer interface{}) (response *responses.CommonResponse, err error)
 }
 
-func NewEcsRamRoleSigner(credential *credentials.EcsRamRoleCredential, commonApi func(*requests.CommonRequest, interface{}) (response *responses.CommonResponse, err error)) (signer *EcsRamRoleSigner, err error) {
+func NewEcsRamRoleSigner(credential *credentials.EcsRamRoleCredential, commonApi func(*requests.CommonRequest, interface{}) (response *responses.CommonResponse, err error)) (signer *EcsRamRoleSigner) {
 	signer = &EcsRamRoleSigner{
 		credential: credential,
 		commonApi:  commonApi,
@@ -47,7 +47,7 @@ func NewEcsRamRoleSigner(credential *credentials.EcsRamRoleCredential, commonApi
 		refreshApi:           signer.refreshApi,
 	}
 
-	return
+	return signer
 }
 
 func (*EcsRamRoleSigner) GetName() string {
