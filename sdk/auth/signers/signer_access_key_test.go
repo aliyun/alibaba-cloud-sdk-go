@@ -11,6 +11,7 @@ func TestSignerAccessKey(t *testing.T) {
 	c := credentials.NewAccessKeyCredential("accessKeyId", "accessKeySecret")
 	assert.NotNil(t, c)
 	s := NewAccessKeySigner(c)
+	assert.Nil(t, s.GetExtraParam())
 	assert.Equal(t, "HMAC-SHA1", s.GetName())
 	assert.Equal(t, "", s.GetType())
 	assert.Equal(t, "1.0", s.GetVersion())
