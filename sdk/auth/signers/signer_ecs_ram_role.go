@@ -17,13 +17,14 @@ package signers
 import (
 	"encoding/json"
 	"fmt"
+	"net/http"
+	"strings"
+	"time"
+
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/auth/credentials"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 	"github.com/jmespath/go-jmespath"
-	"net/http"
-	"strings"
-	"time"
 )
 
 type EcsRamRoleSigner struct {
