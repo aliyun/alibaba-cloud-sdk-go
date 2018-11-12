@@ -18,10 +18,11 @@ import (
 	"bytes"
 	"encoding/xml"
 	"fmt"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/errors"
 	"io/ioutil"
 	"net/http"
 	"strings"
+
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/errors"
 )
 
 type AcsResponse interface {
@@ -117,7 +118,7 @@ func (baseResponse *BaseResponse) parseFromHttpResponse(httpResponse *http.Respo
 func (baseResponse *BaseResponse) String() string {
 	resultBuilder := bytes.Buffer{}
 	// statusCode
-	resultBuilder.WriteString("\n")
+	// resultBuilder.WriteString("\n")
 	resultBuilder.WriteString(fmt.Sprintf("%s %s\n", baseResponse.originHttpResponse.Proto, baseResponse.originHttpResponse.Status))
 	// httpHeaders
 	//resultBuilder.WriteString("Headers:\n")
