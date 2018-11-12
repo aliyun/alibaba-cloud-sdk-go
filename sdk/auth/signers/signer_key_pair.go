@@ -17,13 +17,14 @@ package signers
 import (
 	"encoding/json"
 	"fmt"
+	"net/http"
+	"strconv"
+
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/auth/credentials"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/errors"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 	"github.com/jmespath/go-jmespath"
-	"net/http"
-	"strconv"
 )
 
 type SignerKeyPair struct {
@@ -107,7 +108,7 @@ func (signer *SignerKeyPair) buildCommonRequest() (request *requests.CommonReque
 }
 
 func (signerKeyPair *SignerKeyPair) refreshApi(request *requests.CommonRequest) (response *responses.CommonResponse, err error) {
-	signerV2, err := NewSignerV2(signerKeyPair.credential)
+	signerV2 := NewSignerV2(signerKeyPair.credential)
 	return signerKeyPair.commonApi(request, signerV2)
 }
 

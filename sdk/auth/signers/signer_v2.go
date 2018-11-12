@@ -26,10 +26,10 @@ func (signer *SignerV2) GetExtraParam() map[string]string {
 	return nil
 }
 
-func NewSignerV2(credential *credentials.RsaKeyPairCredential) (*SignerV2, error) {
+func NewSignerV2(credential *credentials.RsaKeyPairCredential) *SignerV2 {
 	return &SignerV2{
 		credential: credential,
-	}, nil
+	}
 }
 
 func (*SignerV2) GetName() string {
