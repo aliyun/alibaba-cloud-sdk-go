@@ -2,13 +2,28 @@ package responses
 
 import (
 	"bytes"
-	"io"
 	"io/ioutil"
 	"net/http"
+	"strconv"
 	"testing"
 
 	"github.com/stretchr/testify/assert"
 )
+
+func makeHTTPResponse(statusCode int, content string) (res *http.Response) {
+	header := make(http.Header)
+	status := strconv.Itoa(statusCode)
+	res = &http.Response{
+		Proto:      "HTTP/1.1",
+		ProtoMajor: 1,
+		Header:     header,
+		StatusCode: statusCode,
+		Status:     status + " " + http.StatusText(statusCode),
+	}
+	res.Header = make(http.Header)
+	res.Body = ioutil.NopCloser(bytes.NewReader([]byte(content)))
+	return
+}
 
 func Test_CommonResponse(t *testing.T) {
 	r := NewCommonResponse()
@@ -24,20 +39,8 @@ func Test_CommonResponse(t *testing.T) {
 
 func Test_CommonResponse_parseFromHttpResponse(t *testing.T) {
 	r := NewCommonResponse()
-	header := make(http.Header)
-	status := "200"
-	statusCode := 200
-	res := &http.Response{
-		Proto:      "HTTP/1.1",
-		ProtoMajor: 1,
-		Header:     header,
-		StatusCode: statusCode,
-		Status:     status + " " + http.StatusText(statusCode),
-	}
-	var noBody io.ReadCloser = ioutil.NopCloser(bytes.NewReader(nil))
-	res.Header = make(http.Header)
+	res := makeHTTPResponse(200, "")
 	res.Header.Add("Server", "GitHub.com")
-	res.Body = noBody
 	r.parseFromHttpResponse(res)
 	expected := `HTTP/1.1 200 OK
 Server: GitHub.com
@@ -48,4 +51,54 @@ Server: GitHub.com
 	assert.True(t, r.IsSuccess())
 	assert.Equal(t, "GitHub.com", r.GetHttpHeaders()["Server"][0])
 	assert.Equal(t, expected, r.String())
+}
+
+func Test_CommonResponse_Unmarshal(t *testing.T) {
+	r := NewCommonResponse()
+	res := makeHTTPResponse(400, "")
+	err := Unmarshal(r, res, "JSON")
+	assert.NotNil(t, err)
+	assert.Equal(t, "SDK.ServerError\nErrorCode: \nRecommend: \nRequestId: \nMessage: ", err.Error())
+}
+
+func Test_CommonResponse_Unmarshal_CommonResponse(t *testing.T) {
+	r := NewCommonResponse()
+	res := makeHTTPResponse(200, "")
+	err := Unmarshal(r, res, "JSON")
+	assert.Nil(t, err)
+}
+
+type MyResponse struct {
+	*BaseResponse
+	RequestId string
+}
+
+func Test_CommonResponse_Unmarshal_EmptyContent(t *testing.T) {
+	r := &MyResponse{
+		BaseResponse: &BaseResponse{},
+	}
+	res := makeHTTPResponse(200, "")
+	err := Unmarshal(r, res, "JSON")
+	assert.Nil(t, err)
+	assert.Equal(t, "", r.RequestId)
+}
+
+func Test_CommonResponse_Unmarshal_MyResponse(t *testing.T) {
+	r := &MyResponse{
+		BaseResponse: &BaseResponse{},
+	}
+	res := makeHTTPResponse(200, `{"RequestId": "the request id"}`)
+	err := Unmarshal(r, res, "JSON")
+	assert.Nil(t, err)
+	assert.Equal(t, "the request id", r.RequestId)
+}
+
+func Test_CommonResponse_Unmarshal_Error(t *testing.T) {
+	r := &MyResponse{
+		BaseResponse: &BaseResponse{},
+	}
+	res := makeHTTPResponse(200, `{`)
+	err := Unmarshal(r, res, "JSON")
+	assert.NotNil(t, err)
+	assert.Equal(t, "[SDK.JsonUnmarshalError] Failed to unmarshal response, but you can get the data via response.GetHttpStatusCode() and response.GetHttpContentString()\ncaused by:\nresponses.MyResponse.readFieldHash: expect \", but found \x00, error found in #1 byte of ...|{|..., bigger context ...|{|...", err.Error())
 }

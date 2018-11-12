@@ -35,6 +35,7 @@ type AcsResponse interface {
 	parseFromHttpResponse(httpResponse *http.Response) error
 }
 
+// Unmarshal object from http response body to target Response
 func Unmarshal(response AcsResponse, httpResponse *http.Response, format string) (err error) {
 	err = response.parseFromHttpResponse(httpResponse)
 	if err != nil {
@@ -44,7 +45,8 @@ func Unmarshal(response AcsResponse, httpResponse *http.Response, format string)
 		err = errors.NewServerError(response.GetHttpStatus(), response.GetHttpContentString(), "")
 		return
 	}
-	if _, isCommonResponse := response.(CommonResponse); isCommonResponse {
+
+	if _, isCommonResponse := response.(*CommonResponse); isCommonResponse {
 		// common response need not unmarshal
 		return
 	}
