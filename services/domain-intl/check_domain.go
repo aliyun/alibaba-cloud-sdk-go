@@ -87,12 +87,13 @@ type CheckDomainRequest struct {
 // CheckDomainResponse is the response struct for api CheckDomain
 type CheckDomainResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	DomainName string `json:"DomainName" xml:"DomainName"`
-	Avail      string `json:"Avail" xml:"Avail"`
-	Premium    string `json:"Premium" xml:"Premium"`
-	Reason     string `json:"Reason" xml:"Reason"`
-	Price      int    `json:"Price" xml:"Price"`
+	RequestId    string `json:"RequestId" xml:"RequestId"`
+	DomainName   string `json:"DomainName" xml:"DomainName"`
+	Avail        string `json:"Avail" xml:"Avail"`
+	Premium      string `json:"Premium" xml:"Premium"`
+	Reason       string `json:"Reason" xml:"Reason"`
+	Price        int    `json:"Price" xml:"Price"`
+	DynamicCheck bool   `json:"DynamicCheck" xml:"DynamicCheck"`
 }
 
 // CreateCheckDomainRequest creates a request to invoke CheckDomain API
