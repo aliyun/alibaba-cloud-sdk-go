@@ -7,6 +7,7 @@ import (
 	"testing"
 
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/auth/credentials"
+	"github.com/stretchr/testify/assert"
 )
 
 func TestInstanceMetadataProvider_Retrieve_Success(t *testing.T) {
@@ -32,8 +33,8 @@ func TestInstanceMetadataProvider_Retrieve_Success(t *testing.T) {
 			}`
 			status = 200
 		}
-		w.Write([]byte(body))
 		w.WriteHeader(status)
+		w.Write([]byte(body))
 	}))
 	defer ts.Close()
 
@@ -45,22 +46,200 @@ func TestInstanceMetadataProvider_Retrieve_Success(t *testing.T) {
 	}()
 
 	credential, err := NewInstanceMetadataProvider().Retrieve()
-	if err != nil {
-		t.Fatal(err)
-	}
+	assert.Nil(t, err)
 
 	stsTokenCredential, ok := credential.(*credentials.StsTokenCredential)
-	if !ok {
-		t.Fatal("expected AccessKeyCredential")
-	}
+	assert.True(t, ok)
 
-	if stsTokenCredential.AccessKeyId != "STS.L4aBSCSJVMuKg5U1vFDw" {
-		t.Fatalf("expected AccessKeyId STS.L4aBSCSJVMuKg5U1vFDw but received %s", stsTokenCredential.AccessKeyId)
-	}
-	if stsTokenCredential.AccessKeySecret != "wyLTSmsyPGP1ohvvw8xYgB29dlGI8KMiH2pKCNZ9" {
-		t.Fatalf("expected AccessKeySecret wyLTSmsyPGP1ohvvw8xYgB29dlGI8KMiH2pKCNZ9 but received %s", stsTokenCredential.AccessKeySecret)
-	}
-	if !strings.HasPrefix(stsTokenCredential.AccessKeyStsToken, "CAESrAIIARKAA") {
-		t.Fatalf("expected AccessKeyStsToken starting with CAESrAIIARKAA but received %s", stsTokenCredential.AccessKeyStsToken)
-	}
+	assert.Equal(t, "STS.L4aBSCSJVMuKg5U1vFDw", stsTokenCredential.AccessKeyId)
+	assert.Equal(t, "wyLTSmsyPGP1ohvvw8xYgB29dlGI8KMiH2pKCNZ9", stsTokenCredential.AccessKeySecret)
+	assert.True(t, strings.HasPrefix(stsTokenCredential.AccessKeyStsToken, "CAESrAIIARKAA"))
+}
+
+func TestInstanceMetadataProvider_Retrieve_Fail1(t *testing.T) {
+	// Update our securityCredURL to point at our local test server.
+	originalSecurityCredURL := securityCredURL
+	securityCredURL = strings.Replace(securityCredURL, "http://100.100.100.200", "http://invalid", -1)
+	defer func() {
+		securityCredURL = originalSecurityCredURL
+	}()
+
+	_, err := NewInstanceMetadataProvider().Retrieve()
+	assert.NotNil(t, err)
+	message := err.Error()
+	assert.True(t, strings.HasSuffix(message, "no such host"))
+}
+
+func TestInstanceMetadataProvider_Retrieve_Fail2(t *testing.T) {
+	// Start a test server locally.
+	ts := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+
+		var body string
+		var status int
+
+		switch r.URL.Path {
+		case "/latest/meta-data/ram/security-credentials/":
+			body = "ELK"
+			status = 400
+		}
+		w.WriteHeader(status)
+		w.Write([]byte(body))
+	}))
+	defer ts.Close()
+
+	// Update our securityCredURL to point at our local test server.
+	originalSecurityCredURL := securityCredURL
+	securityCredURL = strings.Replace(securityCredURL, "http://100.100.100.200", ts.URL, -1)
+	defer func() {
+		securityCredURL = originalSecurityCredURL
+	}()
+
+	_, err := NewInstanceMetadataProvider().Retrieve()
+	assert.NotNil(t, err)
+	assert.Equal(t, "received 400 getting role name: ELK", err.Error())
+}
+
+func TestInstanceMetadataProvider_Retrieve_Fail3(t *testing.T) {
+	// Start a test server locally.
+	ts := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+
+		var body string
+		var status int
+
+		switch r.URL.Path {
+		case "/latest/meta-data/ram/security-credentials/":
+			body = ""
+			status = 200
+		}
+		w.WriteHeader(status)
+		w.Write([]byte(body))
+	}))
+	defer ts.Close()
+
+	// Update our securityCredURL to point at our local test server.
+	originalSecurityCredURL := securityCredURL
+	securityCredURL = strings.Replace(securityCredURL, "http://100.100.100.200", ts.URL, -1)
+	defer func() {
+		securityCredURL = originalSecurityCredURL
+	}()
+
+	_, err := NewInstanceMetadataProvider().Retrieve()
+	assert.NotNil(t, err)
+	assert.Equal(t, "unable to retrieve role name, it may be unset", err.Error())
+}
+
+func TestInstanceMetadataProvider_Retrieve_Fail4(t *testing.T) {
+	// Start a test server locally.
+	ts := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+
+		var body string
+		var status int
+
+		switch r.URL.Path {
+		case "/latest/meta-data/ram/security-credentials/":
+			body = "ELK"
+			status = 200
+		case "/latest/meta-data/ram/security-credentials/ELK":
+			body = ``
+			status = 404
+		}
+		w.WriteHeader(status)
+		w.Write([]byte(body))
+	}))
+	defer ts.Close()
+
+	// Update our securityCredURL to point at our local test server.
+	originalSecurityCredURL := securityCredURL
+	securityCredURL = strings.Replace(securityCredURL, "http://100.100.100.200", ts.URL, -1)
+	defer func() {
+		securityCredURL = originalSecurityCredURL
+	}()
+
+	_, err := NewInstanceMetadataProvider().Retrieve()
+	assert.NotNil(t, err)
+	assert.Equal(t, "received 404 getting security credentials for ELK", err.Error())
+}
+
+func TestInstanceMetadataProvider_Retrieve_Fail5(t *testing.T) {
+	// Start a test server locally.
+	ts := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+
+		var body string
+		var status int
+
+		switch r.URL.Path {
+		case "/latest/meta-data/ram/security-credentials/":
+			body = "ELK"
+			status = 200
+		case "/latest/meta-data/ram/security-credentials/ELK":
+			body = `invalid json`
+			status = 200
+		}
+		w.WriteHeader(status)
+		w.Write([]byte(body))
+	}))
+	defer ts.Close()
+
+	// Update our securityCredURL to point at our local test server.
+	originalSecurityCredURL := securityCredURL
+	securityCredURL = strings.Replace(securityCredURL, "http://100.100.100.200", ts.URL, -1)
+	defer func() {
+		securityCredURL = originalSecurityCredURL
+	}()
+
+	_, err := NewInstanceMetadataProvider().Retrieve()
+	assert.NotNil(t, err)
+	assert.Equal(t, "invalid character 'i' looking for beginning of value", err.Error())
+}
+
+func mockServer(json string) (server *httptest.Server) {
+	// Start a test server locally.
+	ts := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+
+		var body string
+		var status int
+
+		switch r.URL.Path {
+		case "/latest/meta-data/ram/security-credentials/":
+			body = "ELK"
+			status = 200
+		case "/latest/meta-data/ram/security-credentials/ELK":
+			body = json
+			status = 200
+		}
+		w.WriteHeader(status)
+		w.Write([]byte(body))
+	}))
+	return ts
+}
+
+func test(t *testing.T, input, expected string) {
+	// Start a test server locally.
+	ts := mockServer(input)
+	defer ts.Close()
+
+	// Update our securityCredURL to point at our local test server.
+	originalSecurityCredURL := securityCredURL
+	securityCredURL = strings.Replace(securityCredURL, "http://100.100.100.200", ts.URL, -1)
+	defer func() {
+		securityCredURL = originalSecurityCredURL
+	}()
+
+	_, err := NewInstanceMetadataProvider().Retrieve()
+	assert.NotNil(t, err)
+	assert.Equal(t, expected, err.Error())
+}
+
+func TestInstanceMetadataProvider_Retrieve_Fail6(t *testing.T) {
+	test(t, `{}`, "AccessKeyId not in map")
+	test(t, `{"AccessKeyId":true}`,
+		"AccessKeyId is not a string in map")
+	test(t, `{"AccessKeyId":"access key id"}`,
+		"AccessKeySecret not in map")
+	test(t, `{"AccessKeyId":"access key id", "AccessKeySecret":true}`,
+		"AccessKeySecret is not a string in map")
+	test(t, `{"AccessKeyId":"access key id", "AccessKeySecret":"secret"}`,
+		"SecurityToken not in map")
+	test(t, `{"AccessKeyId":"access key id", "AccessKeySecret":"secret","SecurityToken":true}`,
+		"SecurityToken is not a string in map")
 }
