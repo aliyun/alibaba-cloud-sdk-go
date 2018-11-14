@@ -488,6 +488,14 @@ const endpointsJson = "{" +
 	"    \"regional_endpoints\": []," +
 	"    \"global_endpoint\": \"\"," +
 	"    \"regional_endpoint_pattern\": \"\"" +
+	"  }," +
+	"  {" +
+	"    \"code\": \"bssopenapi\"," +
+	"    \"document_id\": \"88067\"," +
+	"    \"location_service_code\": \"bssopenapi\"," +
+	"    \"regional_endpoints\": []," +
+	"    \"global_endpoint\": \"business.aliyuncs.com\"," +
+	"    \"regional_endpoint_pattern\": \"\"" +
 	"  }]" +
 	"}"
 
