@@ -37,3 +37,31 @@ func TestServerErrorWithContent(t *testing.T) {
 	assert.Equal(t, "message", serverError.Message())
 	assert.Equal(t, "SDK.ServerError\nErrorCode: InvalidAK\nRecommend: commentrecommend\nRequestId: request id\nMessage: message", serverError.Error())
 }
+
+func TestWrapServerError(t *testing.T) {
+	err := NewServerError(400, `{"Code":"SignatureDoesNotMatch","Message":"Specified signature is not matched with our calculation. server string to sign is:hehe"}`, "comment")
+	se, ok := err.(*ServerError)
+	assert.True(t, ok)
+	assert.Equal(t, "SignatureDoesNotMatch", se.ErrorCode())
+	m := make(map[string]string)
+	m["StringToSign"] = "not match"
+	WrapServerError(se, m)
+	assert.Equal(t, "This may be a bug with the SDK and we hope you can submit this question in the github issue(https://github.com/aliyun/alibaba-cloud-sdk-go/issues), thanks very much", se.Recommend())
+
+	err = NewServerError(400, `{"Code":"SignatureDoesNotMatch","Message":"Specified signature is not matched with our calculation. server string to sign is:match"}`, "comment")
+	se, ok = err.(*ServerError)
+	assert.True(t, ok)
+	assert.Equal(t, "SignatureDoesNotMatch", se.ErrorCode())
+	m = make(map[string]string)
+	m["StringToSign"] = "match"
+	WrapServerError(se, m)
+	assert.Equal(t, "Please check you AccessKeySecret", se.Recommend())
+
+	err = NewServerError(400, `{"Code":"Other"}`, "comment")
+	se, ok = err.(*ServerError)
+	assert.True(t, ok)
+	assert.Equal(t, "Other", se.ErrorCode())
+	m = make(map[string]string)
+	WrapServerError(se, m)
+	assert.Equal(t, "", se.Recommend())
+}

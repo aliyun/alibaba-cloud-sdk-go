@@ -8,7 +8,7 @@ const MessagePrefix = "Specified signature is not matched with our calculation. 
 type SignatureDostNotMatchWrapper struct {
 }
 
-func (*SignatureDostNotMatchWrapper) tryWrap(error *ServerError, wrapInfo map[string]string) (bool, *ServerError) {
+func (*SignatureDostNotMatchWrapper) tryWrap(error *ServerError, wrapInfo map[string]string) (ok bool) {
 	clientStringToSign := wrapInfo["StringToSign"]
 	if error.errorCode == SignatureDostNotMatchErrorCode && clientStringToSign != "" {
 		message := error.message
@@ -22,8 +22,9 @@ func (*SignatureDostNotMatchWrapper) tryWrap(error *ServerError, wrapInfo map[st
 					"github issue(https://github.com/aliyun/alibaba-cloud-sdk-go/issues), thanks very much"
 			}
 		}
-		return true, error
-	} else {
-		return false, nil
+		ok = true
+		return
 	}
+	ok = false
+	return
 }
