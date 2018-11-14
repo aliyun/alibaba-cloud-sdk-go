@@ -87,6 +87,7 @@ type AddNodesRequest struct {
 	PeriodUnit            string           `position:"Query" name:"PeriodUnit"`
 	AutoRenew             string           `position:"Query" name:"AutoRenew"`
 	EcsChargeType         string           `position:"Query" name:"EcsChargeType"`
+	CreateMode            string           `position:"Query" name:"CreateMode"`
 	InstanceType          string           `position:"Query" name:"InstanceType"`
 	ComputeSpotPriceLimit string           `position:"Query" name:"ComputeSpotPriceLimit"`
 }

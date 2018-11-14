@@ -94,10 +94,12 @@ type SetAutoScaleConfigRequest struct {
 
 // SetAutoScaleConfigQueues is a repeated param struct in SetAutoScaleConfigRequest
 type SetAutoScaleConfigQueues struct {
-	SpotStrategy   string `name:"SpotStrategy"`
-	QueueName      string `name:"QueueName"`
-	InstanceType   string `name:"InstanceType"`
-	SpotPriceLimit string `name:"SpotPriceLimit"`
+	SpotStrategy     string `name:"SpotStrategy"`
+	QueueName        string `name:"QueueName"`
+	InstanceType     string `name:"InstanceType"`
+	EnableAutoGrow   string `name:"EnableAutoGrow"`
+	SpotPriceLimit   string `name:"SpotPriceLimit"`
+	EnableAutoShrink string `name:"EnableAutoShrink"`
 }
 
 // SetAutoScaleConfigResponse is the response struct for api SetAutoScaleConfig

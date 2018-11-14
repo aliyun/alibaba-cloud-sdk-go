@@ -23,6 +23,7 @@ type NodeInfo struct {
 	ImageId         string                   `json:"ImageId" xml:"ImageId"`
 	Version         string                   `json:"Version" xml:"Version"`
 	ImageOwnerAlias string                   `json:"ImageOwnerAlias" xml:"ImageOwnerAlias"`
+	CreateMode      string                   `json:"CreateMode" xml:"CreateMode"`
 	Location        string                   `json:"Location" xml:"Location"`
 	RegionId        string                   `json:"RegionId" xml:"RegionId"`
 	CreatedByEhpc   bool                     `json:"CreatedByEhpc" xml:"CreatedByEhpc"`

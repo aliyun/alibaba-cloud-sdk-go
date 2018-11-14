@@ -1,3 +1,6 @@
+2018-11-14 Version: 1.38.0
+1, Better support for hybrid cluster.
+
 2018-11-13 Version: 1.37.0
 1, Add FuzzyMatchDomainSensitiveWord interface，Support fuzzy matching sensitive words.
 2, Add BatchFuzzyMatchDomainSensitiveWord interface，Support batch fuzzy matching sensitive words.

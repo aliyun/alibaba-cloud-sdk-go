@@ -76,32 +76,40 @@ func (client *Client) CreateHybridClusterWithCallback(request *CreateHybridClust
 // CreateHybridClusterRequest is the request struct for api CreateHybridCluster
 type CreateHybridClusterRequest struct {
 	*requests.RpcRequest
-	EhpcVersion                 string                            `position:"Query" name:"EhpcVersion"`
-	SecurityGroupId             string                            `position:"Query" name:"SecurityGroupId"`
-	Description                 string                            `position:"Query" name:"Description"`
-	KeyPairName                 string                            `position:"Query" name:"KeyPairName"`
-	SecurityGroupName           string                            `position:"Query" name:"SecurityGroupName"`
-	EcsOrderComputeInstanceType string                            `position:"Query" name:"EcsOrder.Compute.InstanceType"`
-	OnPremiseVolumeRemotePath   string                            `position:"Query" name:"OnPremiseVolumeRemotePath"`
-	VolumeType                  string                            `position:"Query" name:"VolumeType"`
-	Password                    string                            `position:"Query" name:"Password"`
-	OnPremiseVolumeMountPoint   string                            `position:"Query" name:"OnPremiseVolumeMountPoint"`
-	OnPremiseVolumeProtocol     string                            `position:"Query" name:"OnPremiseVolumeProtocol"`
-	VolumeProtocol              string                            `position:"Query" name:"VolumeProtocol"`
-	OnPremiseVolumeLocalPath    string                            `position:"Query" name:"OnPremiseVolumeLocalPath"`
-	ClientVersion               string                            `position:"Query" name:"ClientVersion"`
-	OsTag                       string                            `position:"Query" name:"OsTag"`
-	RemoteDirectory             string                            `position:"Query" name:"RemoteDirectory"`
-	VSwitchId                   string                            `position:"Query" name:"VSwitchId"`
-	Nodes                       string                            `position:"Query" name:"Nodes"`
-	Application                 *[]CreateHybridClusterApplication `position:"Query" name:"Application"  type:"Repeated"`
-	Domain                      string                            `position:"Query" name:"Domain"`
-	VpcId                       string                            `position:"Query" name:"VpcId"`
-	Name                        string                            `position:"Query" name:"Name"`
-	VolumeId                    string                            `position:"Query" name:"VolumeId"`
-	VolumeMountpoint            string                            `position:"Query" name:"VolumeMountpoint"`
-	ZoneId                      string                            `position:"Query" name:"ZoneId"`
-	Location                    string                            `position:"Query" name:"Location"`
+	EhpcVersion                 string                                  `position:"Query" name:"EhpcVersion"`
+	SecurityGroupId             string                                  `position:"Query" name:"SecurityGroupId"`
+	Description                 string                                  `position:"Query" name:"Description"`
+	KeyPairName                 string                                  `position:"Query" name:"KeyPairName"`
+	SecurityGroupName           string                                  `position:"Query" name:"SecurityGroupName"`
+	EcsOrderComputeInstanceType string                                  `position:"Query" name:"EcsOrder.Compute.InstanceType"`
+	OnPremiseVolumeRemotePath   string                                  `position:"Query" name:"OnPremiseVolumeRemotePath"`
+	JobQueue                    string                                  `position:"Query" name:"JobQueue"`
+	VolumeType                  string                                  `position:"Query" name:"VolumeType"`
+	Password                    string                                  `position:"Query" name:"Password"`
+	OnPremiseVolumeMountPoint   string                                  `position:"Query" name:"OnPremiseVolumeMountPoint"`
+	OnPremiseVolumeProtocol     string                                  `position:"Query" name:"OnPremiseVolumeProtocol"`
+	VolumeProtocol              string                                  `position:"Query" name:"VolumeProtocol"`
+	OnPremiseVolumeLocalPath    string                                  `position:"Query" name:"OnPremiseVolumeLocalPath"`
+	ClientVersion               string                                  `position:"Query" name:"ClientVersion"`
+	OsTag                       string                                  `position:"Query" name:"OsTag"`
+	RemoteDirectory             string                                  `position:"Query" name:"RemoteDirectory"`
+	PostInstallScript           *[]CreateHybridClusterPostInstallScript `position:"Query" name:"PostInstallScript"  type:"Repeated"`
+	VSwitchId                   string                                  `position:"Query" name:"VSwitchId"`
+	Nodes                       string                                  `position:"Query" name:"Nodes"`
+	Application                 *[]CreateHybridClusterApplication       `position:"Query" name:"Application"  type:"Repeated"`
+	Domain                      string                                  `position:"Query" name:"Domain"`
+	VpcId                       string                                  `position:"Query" name:"VpcId"`
+	Name                        string                                  `position:"Query" name:"Name"`
+	VolumeId                    string                                  `position:"Query" name:"VolumeId"`
+	VolumeMountpoint            string                                  `position:"Query" name:"VolumeMountpoint"`
+	ZoneId                      string                                  `position:"Query" name:"ZoneId"`
+	Location                    string                                  `position:"Query" name:"Location"`
+}
+
+// CreateHybridClusterPostInstallScript is a repeated param struct in CreateHybridClusterRequest
+type CreateHybridClusterPostInstallScript struct {
+	Args string `name:"Args"`
+	Url  string `name:"Url"`
 }
 
 // CreateHybridClusterApplication is a repeated param struct in CreateHybridClusterRequest
