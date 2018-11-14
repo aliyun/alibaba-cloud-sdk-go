@@ -36,7 +36,7 @@ type ServerError struct {
 }
 
 type ServerErrorWrapper interface {
-	tryWrap(error *ServerError, wrapInfo map[string]string) (bool, *ServerError)
+	tryWrap(error *ServerError, wrapInfo map[string]string) bool
 }
 
 func (err *ServerError) Error() string {
@@ -82,9 +82,9 @@ func NewServerError(httpStatus int, responseContent, comment string) Error {
 
 func WrapServerError(originError *ServerError, wrapInfo map[string]string) *ServerError {
 	for _, wrapper := range wrapperList {
-		ok, newError := wrapper.tryWrap(originError, wrapInfo)
+		ok := wrapper.tryWrap(originError, wrapInfo)
 		if ok {
-			return newError
+			return originError
 		}
 	}
 	return originError
