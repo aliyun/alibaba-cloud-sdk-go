@@ -482,6 +482,14 @@ const endpointsJson = "{" +
 	"    \"regional_endpoint_pattern\": \"\"" +
 	"  }," +
 	"  {" +
+	"    \"code\": \"obs\"," +
+	"    \"document_id\": \"34962\"," +
+	"    \"location_service_code\": \"obs\"," +
+	"    \"regional_endpoints\": []," +
+	"    \"global_endpoint\": \"billing.aliyuncs.com\"," +
+	"    \"regional_endpoint_pattern\": \"\"" +
+	"  }," +
+	"  {" +
 	"    \"code\": \"waf\"," +
 	"    \"document_id\": \"62847\"," +
 	"    \"location_service_code\": \"waf\"," +
