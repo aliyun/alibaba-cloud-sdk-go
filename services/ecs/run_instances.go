@@ -91,6 +91,7 @@ type RunInstancesRequest struct {
 	Period                      requests.Integer                `position:"Query" name:"Period"`
 	DryRun                      requests.Boolean                `position:"Query" name:"DryRun"`
 	LaunchTemplateId            string                          `position:"Query" name:"LaunchTemplateId"`
+	Ipv6AddressCount            requests.Integer                `position:"Query" name:"Ipv6AddressCount"`
 	OwnerId                     requests.Integer                `position:"Query" name:"OwnerId"`
 	VSwitchId                   string                          `position:"Query" name:"VSwitchId"`
 	SpotStrategy                string                          `position:"Query" name:"SpotStrategy"`
@@ -100,6 +101,7 @@ type RunInstancesRequest struct {
 	AutoRenew                   requests.Boolean                `position:"Query" name:"AutoRenew"`
 	InternetChargeType          string                          `position:"Query" name:"InternetChargeType"`
 	ZoneId                      string                          `position:"Query" name:"ZoneId"`
+	Ipv6Address                 *[]string                       `position:"Query" name:"Ipv6Address"  type:"Repeated"`
 	InternetMaxBandwidthIn      requests.Integer                `position:"Query" name:"InternetMaxBandwidthIn"`
 	ImageId                     string                          `position:"Query" name:"ImageId"`
 	SpotInterruptionBehavior    string                          `position:"Query" name:"SpotInterruptionBehavior"`

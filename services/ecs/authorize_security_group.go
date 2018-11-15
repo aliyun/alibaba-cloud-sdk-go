@@ -84,6 +84,8 @@ type AuthorizeSecurityGroupRequest struct {
 	Description             string           `position:"Query" name:"Description"`
 	SourceGroupOwnerId      requests.Integer `position:"Query" name:"SourceGroupOwnerId"`
 	SourceGroupOwnerAccount string           `position:"Query" name:"SourceGroupOwnerAccount"`
+	Ipv6SourceCidrIp        string           `position:"Query" name:"Ipv6SourceCidrIp"`
+	Ipv6DestCidrIp          string           `position:"Query" name:"Ipv6DestCidrIp"`
 	Policy                  string           `position:"Query" name:"Policy"`
 	PortRange               string           `position:"Query" name:"PortRange"`
 	ResourceOwnerAccount    string           `position:"Query" name:"ResourceOwnerAccount"`

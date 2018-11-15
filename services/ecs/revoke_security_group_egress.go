@@ -82,6 +82,8 @@ type RevokeSecurityGroupEgressRequest struct {
 	ClientToken           string           `position:"Query" name:"ClientToken"`
 	SecurityGroupId       string           `position:"Query" name:"SecurityGroupId"`
 	Description           string           `position:"Query" name:"Description"`
+	Ipv6DestCidrIp        string           `position:"Query" name:"Ipv6DestCidrIp"`
+	Ipv6SourceCidrIp      string           `position:"Query" name:"Ipv6SourceCidrIp"`
 	Policy                string           `position:"Query" name:"Policy"`
 	PortRange             string           `position:"Query" name:"PortRange"`
 	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
