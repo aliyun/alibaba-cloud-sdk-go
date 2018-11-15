@@ -83,6 +83,7 @@ type CreateOfficeConversionTaskRequest struct {
 	MaxSheetRow     requests.Integer `position:"Query" name:"MaxSheetRow"`
 	MaxSheetCount   requests.Integer `position:"Query" name:"MaxSheetCount"`
 	EndPage         requests.Integer `position:"Query" name:"EndPage"`
+	IdempotentToken string           `position:"Query" name:"IdempotentToken"`
 	TgtFileSuffix   string           `position:"Query" name:"TgtFileSuffix"`
 	SheetOnePage    requests.Boolean `position:"Query" name:"SheetOnePage"`
 	Password        string           `position:"Query" name:"Password"`

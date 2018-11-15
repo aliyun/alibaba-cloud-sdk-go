@@ -17,9 +17,14 @@ package imm
 
 // SuccessDetailsItem is a nested struct in imm response
 type SuccessDetailsItem struct {
-	PhotoId string        `json:"PhotoId" xml:"PhotoId"`
-	SrcUri  string        `json:"SrcUri" xml:"SrcUri"`
-	QRCodes []QRCodesItem `json:"QRCodes" xml:"QRCodes"`
-	Faces   []FacesItem   `json:"Faces" xml:"Faces"`
-	Tags    []TagsItem    `json:"Tags" xml:"Tags"`
+	Time             string                 `json:"Time" xml:"Time"`
+	PhotoId          string                 `json:"PhotoId" xml:"PhotoId"`
+	GetImageTime     string                 `json:"GetImageTime" xml:"GetImageTime"`
+	DetectTime       string                 `json:"DetectTime" xml:"DetectTime"`
+	SrcUri           string                 `json:"SrcUri" xml:"SrcUri"`
+	ClothesBoxDetail []ClothesBoxDetailItem `json:"ClothesBoxDetail" xml:"ClothesBoxDetail"`
+	QRCodes          []QRCodesItem          `json:"QRCodes" xml:"QRCodes"`
+	LogoBoxDetail    []LogoBoxDetailItem    `json:"LogoBoxDetail" xml:"LogoBoxDetail"`
+	Faces            []FacesItem            `json:"Faces" xml:"Faces"`
+	Tags             []TagsItem             `json:"Tags" xml:"Tags"`
 }

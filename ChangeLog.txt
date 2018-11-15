@@ -1,3 +1,8 @@
+2018-11-15 Version: 1.38.1
+1, Remove FaceCompare, FaceRegist, FaceSearch api.
+2, Add DetectLogo api.
+3, CreateOfficeConversionTask support IdempotentToken.
+
 2018-11-14 Version: 1.38.0
 1, Better support for hybrid cluster.
 
