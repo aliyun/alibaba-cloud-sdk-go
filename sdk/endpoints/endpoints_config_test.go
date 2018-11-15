@@ -13,5 +13,5 @@ func Test_getEndpointConfigData(t *testing.T) {
 	products := d["products"]
 	p, ok := products.([]interface{})
 	assert.True(t, ok)
-	assert.Equal(t, 47, len(p))
+	assert.Equal(t, 48, len(p))
 }
