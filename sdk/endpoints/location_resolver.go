@@ -15,9 +15,10 @@ package endpoints
 
 import (
 	"encoding/json"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
 	"sync"
 	"time"
+
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
 )
 
 const (
@@ -49,8 +50,8 @@ type LocationResolver struct {
 }
 
 func (resolver *LocationResolver) GetName() (name string) {
-  name = "location resolver"
-  return
+	name = "location resolver"
+	return
 }
 
 func (resolver *LocationResolver) TryResolve(param *ResolveParam) (endpoint string, support bool, err error) {
