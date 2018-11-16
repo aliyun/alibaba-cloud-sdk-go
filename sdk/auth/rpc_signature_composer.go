@@ -22,6 +22,10 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/utils"
 )
 
+var hookGetUUIDV4 = func(fn func() string) string {
+	return fn()
+}
+
 func signRpcRequest(request requests.AcsRequest, signer Signer, regionId string) (err error) {
 	err = completeRpcSignParams(request, signer, regionId)
 	if err != nil {
@@ -44,11 +48,11 @@ func completeRpcSignParams(request requests.AcsRequest, signer Signer, regionId 
 	queryParams["Version"] = request.GetVersion()
 	queryParams["Action"] = request.GetActionName()
 	queryParams["Format"] = request.GetAcceptFormat()
-	queryParams["Timestamp"] = utils.GetTimeInFormatISO8601()
+	queryParams["Timestamp"] = hookGetDate(utils.GetTimeInFormatISO8601)
 	queryParams["SignatureMethod"] = signer.GetName()
 	queryParams["SignatureType"] = signer.GetType()
 	queryParams["SignatureVersion"] = signer.GetVersion()
-	queryParams["SignatureNonce"] = utils.GetUUIDV4()
+	queryParams["SignatureNonce"] = hookGetUUIDV4(utils.GetUUIDV4)
 	queryParams["AccessKeyId"], err = signer.GetAccessKeyId()
 
 	if err != nil {
