@@ -27,6 +27,8 @@ import (
 	"github.com/jmespath/go-jmespath"
 )
 
+var securityCredURL = "http://100.100.100.200/latest/meta-data/ram/security-credentials/"
+
 type EcsRamRoleSigner struct {
 	*credentialUpdater
 	sessionCredential *SessionCredential
@@ -65,9 +67,12 @@ func (*EcsRamRoleSigner) GetVersion() string {
 func (signer *EcsRamRoleSigner) GetAccessKeyId() (accessKeyId string, err error) {
 	if signer.sessionCredential == nil || signer.needUpdateCredential() {
 		err = signer.updateCredential()
+		if err != nil {
+			return
+		}
 	}
-	if err != nil && (signer.sessionCredential == nil || len(signer.sessionCredential.AccessKeyId) <= 0) {
-		return "", err
+	if signer.sessionCredential == nil || len(signer.sessionCredential.AccessKeyId) <= 0 {
+		return "", nil
 	}
 	return signer.sessionCredential.AccessKeyId, nil
 }
@@ -88,71 +93,61 @@ func (signer *EcsRamRoleSigner) Sign(stringToSign, secretSuffix string) string {
 }
 
 func (signer *EcsRamRoleSigner) buildCommonRequest() (request *requests.CommonRequest, err error) {
-	request = requests.NewCommonRequest()
 	return
 }
 
 func (signer *EcsRamRoleSigner) refreshApi(request *requests.CommonRequest) (response *responses.CommonResponse, err error) {
-	requestUrl := "http://100.100.100.200/latest/meta-data/ram/security-credentials/" + signer.credential.RoleName
+	requestUrl := securityCredURL + signer.credential.RoleName
 	httpRequest, err := http.NewRequest(requests.GET, requestUrl, strings.NewReader(""))
 	if err != nil {
-		fmt.Println("refresh Ecs sts token err", err)
+		err = fmt.Errorf("refresh Ecs sts token err: %s", err.Error())
 		return
 	}
 	httpClient := &http.Client{}
 	httpResponse, err := httpClient.Do(httpRequest)
 	if err != nil {
-		fmt.Println("refresh Ecs sts token err", err)
+		err = fmt.Errorf("refresh Ecs sts token err: %s", err.Error())
 		return
 	}
 
 	response = responses.NewCommonResponse()
 	err = responses.Unmarshal(response, httpResponse, "")
-
 	return
 }
 
 func (signer *EcsRamRoleSigner) refreshCredential(response *responses.CommonResponse) (err error) {
 	if response.GetHttpStatus() != http.StatusOK {
-		fmt.Println("refresh Ecs sts token err, httpStatus: " + string(response.GetHttpStatus()) + ", message = " + response.GetHttpContentString())
-		return
+		return fmt.Errorf("refresh Ecs sts token err, httpStatus: %d, message = %s", response.GetHttpStatus(), response.GetHttpContentString())
 	}
 	var data interface{}
 	err = json.Unmarshal(response.GetHttpContentBytes(), &data)
 	if err != nil {
-		fmt.Println("refresh Ecs sts token err, json.Unmarshal fail", err)
-		return
+		return fmt.Errorf("refresh Ecs sts token err, json.Unmarshal fail: %s", err.Error())
 	}
 	code, err := jmespath.Search("Code", data)
 	if err != nil {
-		fmt.Println("refresh Ecs sts token err, fail to get Code", err)
-		return
+		return fmt.Errorf("refresh Ecs sts token err, fail to get Code: %s", err.Error())
 	}
 	if code.(string) != "Success" {
-		fmt.Println("refresh Ecs sts token err, Code is not Success", err)
-		return
+		return fmt.Errorf("refresh Ecs sts token err, Code is not Success")
 	}
 	accessKeyId, err := jmespath.Search("AccessKeyId", data)
 	if err != nil {
-		fmt.Println("refresh Ecs sts token err, fail to get AccessKeyId", err)
-		return
+		return fmt.Errorf("refresh Ecs sts token err, fail to get AccessKeyId: %s", err.Error())
 	}
 	accessKeySecret, err := jmespath.Search("AccessKeySecret", data)
 	if err != nil {
-		fmt.Println("refresh Ecs sts token err, fail to get AccessKeySecret", err)
-		return
+		return fmt.Errorf("refresh Ecs sts token err, fail to get AccessKeySecret: %s", err.Error())
 	}
 	securityToken, err := jmespath.Search("SecurityToken", data)
 	if err != nil {
-		fmt.Println("refresh Ecs sts token err, fail to get SecurityToken", err)
-		return
+		return fmt.Errorf("refresh Ecs sts token err, fail to get SecurityToken: %s", err.Error())
 	}
 	expiration, err := jmespath.Search("Expiration", data)
 	if err != nil {
-		fmt.Println("refresh Ecs sts token err, fail to get Expiration", err)
-		return
+		return fmt.Errorf("refresh Ecs sts token err, fail to get Expiration: %s", err.Error())
 	}
-	if accessKeyId == nil || accessKeySecret == nil || securityToken == nil {
+	if accessKeyId == nil || accessKeySecret == nil || securityToken == nil || expiration == nil {
 		return
 	}
 

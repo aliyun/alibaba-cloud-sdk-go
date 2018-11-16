@@ -707,3 +707,13 @@ func TestUnmarshal_float64(t *testing.T) {
 	assert.NotNil(t, err)
 	assert.Equal(t, "struct { FLOAT64 float64 }.FLOAT64: nullableFuzzyFloat64Decoder: not number or string, error found in #10 byte of ...|\"FLOAT64\":{}}|..., bigger context ...|{\"FLOAT64\":{}}|...", err.Error())
 }
+
+func TestUnmarshalWithArray(t *testing.T) {
+	initJsonParserOnce()
+	from := []byte(`[]`)
+	to := &struct{}{}
+	// TODO: Must support Array
+	// support auto json type trans
+	err := jsonParser.Unmarshal(from, to)
+	assert.NotNil(t, err)
+}
