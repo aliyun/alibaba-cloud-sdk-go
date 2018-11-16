@@ -59,7 +59,7 @@ func TestInstanceMetadataProvider_Retrieve_Success(t *testing.T) {
 func TestInstanceMetadataProvider_Retrieve_Fail1(t *testing.T) {
 	// Update our securityCredURL to point at our local test server.
 	originalSecurityCredURL := securityCredURL
-	securityCredURL = strings.Replace(securityCredURL, "http://100.100.100.200", "http://invalid", -1)
+	securityCredURL = strings.Replace(securityCredURL, "http://100.100.100.200", "http://invalid-domain-xxx", -1)
 	defer func() {
 		securityCredURL = originalSecurityCredURL
 	}()
