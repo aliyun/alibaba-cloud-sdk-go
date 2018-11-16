@@ -25,6 +25,10 @@ import (
 
 var debug utils.Debug
 
+var hookGetDate = func(fn func() string) string {
+	return fn()
+}
+
 func init() {
 	debug = utils.Init("sdk")
 }
@@ -64,7 +68,7 @@ func completeROASignParams(request requests.AcsRequest, signer Signer, regionId 
 	}
 
 	// complete header params
-	headerParams["Date"] = utils.GetTimeInFormatRFC2616()
+	headerParams["Date"] = hookGetDate(utils.GetTimeInFormatRFC2616)
 	headerParams["x-acs-signature-method"] = signer.GetName()
 	headerParams["x-acs-signature-version"] = signer.GetVersion()
 	if request.GetFormParams() != nil && len(request.GetFormParams()) > 0 {
