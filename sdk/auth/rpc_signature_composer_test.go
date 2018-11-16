@@ -5,11 +5,17 @@ import (
 
 	"github.com/stretchr/testify/assert"
 
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/auth/credentials"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/auth/signers"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
 )
 
 func mockRpcDate(fn func() string) string {
 	return "mock date"
+}
+
+func mockRpcGetUUIDV4(fn func() string) string {
+	return "MOCK_UUID"
 }
 
 func TestRpcSignatureComposer_buildRpcStringToSign(t *testing.T) {
@@ -28,19 +34,23 @@ func TestRpcSignatureComposer_buildRpcStringToSign(t *testing.T) {
 	assert.Equal(t, "GET&%2F&key%3Dvalue%26q%3Dhttp%253A%252F%252Fdomain%252F%253Fq%253Dvalue%2526q2%253Dvalue2", stringToSign)
 }
 
-// func TestRpcSignatureComposer(t *testing.T) {
-// 	request := requests.NewCommonRequest()
-// 	request.TransToAcsRequest()
-// 	c := credentials.NewAccessKeyCredential("accessKeyId", "accessKeySecret")
-// 	signer := signers.NewAccessKeySigner(c)
+func TestRpcSignatureComposer(t *testing.T) {
+	request := requests.NewCommonRequest()
+	request.TransToAcsRequest()
+	c := credentials.NewAccessKeyCredential("accessKeyId", "accessKeySecret")
+	signer := signers.NewAccessKeySigner(c)
 
-// 	origTestHookLookupIP := hookGetDate
-// 	defer func() { hookGetDate = origTestHookLookupIP }()
-// 	hookGetDate = mockDate
-// 	signRpcRequest(request, signer, "regionId")
-// 	assert.Equal(t, "mock date", request.GetHeaders()["Date"])
-// 	assert.Equal(t, "acs accessKeyId:degLHXLEN6rMojj+bOlK74U9iic=", request.GetQueryParams()["Signature"])
-// }
+	origTestHookGetDate := hookGetDate
+	defer func() { hookGetDate = origTestHookGetDate }()
+	hookGetDate = mockRpcDate
+	origTestHookGetUUIDV4 := hookGetUUIDV4
+	defer func() { hookGetUUIDV4 = origTestHookGetUUIDV4 }()
+	hookGetUUIDV4 = mockRpcGetUUIDV4
+	signRpcRequest(request, signer, "regionId")
+	assert.Equal(t, "mock date", request.GetQueryParams()["Timestamp"])
+	assert.Equal(t, "MOCK_UUID", request.GetQueryParams()["SignatureNonce"])
+	assert.Equal(t, "7loPmFjvDnzOVnQeQNj85S6nFGY=", request.GetQueryParams()["Signature"])
+}
 
 // func TestRpcSignatureComposer2(t *testing.T) {
 // 	request := requests.NewCommonRequest()
