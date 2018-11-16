@@ -17,16 +17,16 @@ package sdk
 import (
 	"crypto/tls"
 	"encoding/json"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/auth/credentials"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
-	"github.com/stretchr/testify/assert"
 	"io/ioutil"
 	"net/http"
 	"os"
 	"os/user"
 	"testing"
-	// "fmt"
+
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/auth/credentials"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/stretchr/testify/assert"
 )
 
 var client, clientKeyPair, clientEcs, clientRoleArn, clientSts *Client
@@ -170,11 +170,11 @@ func TestRoaGet(t *testing.T) {
 	assert.Nil(t, err)
 	assert.Equal(t, http.StatusOK, response.GetHttpStatus(), response.GetHttpContentString())
 	assert.NotNil(t, response.GetHttpContentString())
-	var responseBean struct{
-		Regions[] struct{
-			LocalName string;
-			RegionId string;
-		};
+	var responseBean struct {
+		Regions []struct {
+			LocalName string
+			RegionId  string
+		}
 	}
 	json.Unmarshal([]byte(response.GetHttpContentString()), &responseBean)
 	assert.NotNil(t, responseBean.Regions)
