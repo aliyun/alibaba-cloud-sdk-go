@@ -89,13 +89,23 @@ func (resolver *LocationResolver) TryResolve(param *ResolveParam) (endpoint stri
 	}
 
 	response, err := param.CommonApi(getEndpointRequest)
-	if err != nil || !response.IsSuccess() {
+	if err != nil {
+		support = false
+		return
+	}
+
+	if !response.IsSuccess() {
 		support = false
 		return
 	}
 
 	var getEndpointResponse GetEndpointResponse
-	json.Unmarshal([]byte(response.GetHttpContentString()), &getEndpointResponse)
+	err = json.Unmarshal([]byte(response.GetHttpContentString()), &getEndpointResponse)
+	if err != nil {
+		support = false
+		return
+	}
+
 	if !getEndpointResponse.Success || getEndpointResponse.Endpoints == nil {
 		support = false
 		return
