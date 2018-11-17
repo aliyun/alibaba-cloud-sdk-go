@@ -16,7 +16,6 @@ package sdk
 
 import (
 	"fmt"
-	"net"
 	"net/http"
 	"strconv"
 	"sync"
@@ -31,6 +30,10 @@ import (
 
 // Version this value will be replaced while build: -ldflags="-X sdk.version=x.x.x"
 var Version = "0.0.1"
+
+var hookDo = func(fn func(req *http.Request) (*http.Response, error)) func(req *http.Request) (*http.Response, error) {
+	return fn
+}
 
 // Client the type Client
 type Client struct {
@@ -55,9 +58,6 @@ func (client *Client) InitWithOptions(regionId string, config *Config, credentia
 	client.asyncChanLock = new(sync.RWMutex)
 	client.regionId = regionId
 	client.config = config
-	if err != nil {
-		return
-	}
 	client.httpClient = &http.Client{}
 
 	if config.HttpTransport != nil {
@@ -248,16 +248,11 @@ func (client *Client) DoActionWithSigner(request requests.AcsRequest, response r
 	}
 	var httpResponse *http.Response
 	for retryTimes := 0; retryTimes <= client.config.MaxRetryTime; retryTimes++ {
-		httpResponse, err = client.httpClient.Do(httpRequest)
-
-		//var timeout bool
+		httpResponse, err = hookDo(client.httpClient.Do)(httpRequest)
 		// receive error
 		if err != nil {
 			if !client.config.AutoRetry {
 				return
-				//} else if timeout = isTimeout(err); !timeout {
-				//	// if not timeout error, return
-				//	return
 			} else if retryTimes >= client.config.MaxRetryTime {
 				// timeout but reached the max retry times, return
 				timeoutErrorMsg := fmt.Sprintf(errors.TimeoutErrorMessage, strconv.Itoa(retryTimes+1), strconv.Itoa(retryTimes+1))
@@ -306,14 +301,6 @@ func buildHttpRequest(request requests.AcsRequest, singer auth.Signer, regionId 
 		httpRequest.Host = host
 	}
 	return
-}
-
-func isTimeout(err error) bool {
-	if err == nil {
-		return false
-	}
-	netErr, isNetError := err.(net.Error)
-	return isNetError && netErr.Timeout()
 }
 
 func isServerError(httpResponse *http.Response) bool {
@@ -416,6 +403,8 @@ func (client *Client) Shutdown() {
 	// lock the addAsync()
 	client.asyncChanLock.Lock()
 	defer client.asyncChanLock.Unlock()
+	if client.asyncTaskQueue != nil {
+		close(client.asyncTaskQueue)
+	}
 	client.isRunning = false
-	close(client.asyncTaskQueue)
 }

@@ -15,572 +15,169 @@
 package sdk
 
 import (
-	"crypto/tls"
-	"encoding/json"
+	"bytes"
 	"io/ioutil"
 	"net/http"
-	"os"
-	"os/user"
+	"strconv"
 	"testing"
+
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/auth/credentials"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+
 	"github.com/stretchr/testify/assert"
 )
 
-var client, clientKeyPair, clientEcs, clientRoleArn, clientSts *Client
-
-type TestConfig struct {
-	AccessKeyId     string
-	AccessKeySecret string
-	PublicKeyId     string
-	PrivateKey      string
-	RoleArn         string
-	StsToken        string
-	StsAk           string
-	StsSecret       string
-	ChildAK         string
-	ChildSecret     string
+func Test_Client(t *testing.T) {
+	defer func() {
+		err := recover()
+		assert.NotNil(t, err)
+		assert.Equal(t, "not support yet", err)
+	}()
+	NewClient()
 }
 
-type MockResponse struct {
-	Headers     map[string]string
-	Body        string
-	Params      map[string]string
-	RemoteAddr  string
-	RemoteHost  string
-	QueryString string
-	RequestURL  string
-}
-
-func TestMain(m *testing.M) {
-	testSetup()
-	result := m.Run()
-	testTearDown()
-	os.Exit(result)
-}
-
-func getConfigFromFile() *TestConfig {
-	usr, err := user.Current()
-	if err != nil {
-		panic(err)
-	}
-	configFilePath := usr.HomeDir + "/aliyun-sdk.json"
-	data, err := ioutil.ReadFile(configFilePath)
-	if err != nil {
-		panic(err)
-	}
-	var config TestConfig
-	json.Unmarshal(data, &config)
-	return &config
-}
-
-func getConfigFromEnv() *TestConfig {
-	config := &TestConfig{
-		AccessKeyId:     os.Getenv("ACCESS_KEY_ID"),
-		AccessKeySecret: os.Getenv("ACCESS_KEY_SECRET"),
-		PublicKeyId:     os.Getenv("PUBLIC_KEY_ID"),
-		PrivateKey:      os.Getenv("PRIVATE_KEY"),
-		RoleArn:         os.Getenv("ROLE_ARN"),
-		ChildAK:         os.Getenv("CHILD_AK"),
-		ChildSecret:     os.Getenv("CHILD_SECRET"),
-		StsToken:        os.Getenv("STS_TOKEN"),
-		StsAk:           os.Getenv("STS_AK"),
-		StsSecret:       os.Getenv("STS_SECRET"),
-	}
-	if config.AccessKeyId == "" {
-		return nil
-	} else {
-		return config
-	}
-}
-
-func testSetup() {
-	testConfig := getConfigFromEnv()
-	if testConfig == nil {
-		testConfig = getConfigFromFile()
-	}
-
-	var err error
-
-	clientConfig := NewConfig().
-		WithEnableAsync(true).
-		WithGoRoutinePoolSize(5).
-		WithMaxTaskQueueSize(1000).
-		WithHttpTransport(&http.Transport{
-			TLSClientConfig: &tls.Config{InsecureSkipVerify: true},
-		})
-		//}).
-		//WithMaxRetryTime(15).
-		//WithTimeout(10)
-
-	credential := &credentials.BaseCredential{
-		AccessKeyId:     testConfig.AccessKeyId,
-		AccessKeySecret: testConfig.AccessKeySecret,
-	}
-	client, err = NewClientWithOptions("cn-hangzhou", clientConfig, credential)
-	if err != nil {
-		panic(err)
-	}
-
-	rsaKeypairCredential := credentials.NewRsaKeyPairCredential(testConfig.PrivateKey, testConfig.PublicKeyId, 3600)
-	clientKeyPair, err = NewClientWithOptions("cn-hangzhou", clientConfig, rsaKeypairCredential)
-	if err != nil {
-		panic(err)
-	}
-
-	roleNameOnEcsCredential := credentials.NewStsRoleNameOnEcsCredential("conan")
-	clientEcs, err = NewClientWithOptions("cn-hangzhou", clientConfig, roleNameOnEcsCredential)
-	if err != nil {
-		panic(err)
-	}
-
-	stsRoleArnCredential := credentials.NewStsRoleArnCredential(testConfig.ChildAK, testConfig.ChildSecret, testConfig.RoleArn, "clientTest", 3600)
-	clientRoleArn, err = NewClientWithOptions("cn-hangzhou", clientConfig, stsRoleArnCredential)
-	if err != nil {
-		panic(err)
-	}
-
-	stsCredential := credentials.NewStsTokenCredential(testConfig.StsAk, testConfig.StsSecret, testConfig.StsToken)
-	clientSts, err = NewClientWithOptions("cn-hangzhou", clientConfig, stsCredential)
-	if err != nil {
-		panic(err)
-	}
-}
-
-func testTearDown() {
-
-}
-
-func TestNewClientWithAccessKey(t *testing.T) {
-	assert.NotNil(t, client, "NewClientWithAccessKey failed")
-}
-
-func TestRoaGet(t *testing.T) {
-	request := &requests.RoaRequest{}
-	request.InitWithApiInfo("Ros", "2015-09-01", "", "/regions", "", "")
-	request.Domain = "ros.aliyuncs.com"
-
-	request.QueryParams["key"] = "value"
-	request.QueryParams["QueryParam"] = "http://domain/?key=value&key2=value2"
-
-	response := &responses.BaseResponse{}
-	err := client.DoAction(request, response)
+func Test_NewClientWithOptions(t *testing.T) {
+	c := NewConfig()
+	credential := credentials.NewAccessKeyCredential("acesskeyid", "accesskeysecret")
+	client, err := NewClientWithOptions("regionid", c, credential)
 	assert.Nil(t, err)
-	assert.Equal(t, http.StatusOK, response.GetHttpStatus(), response.GetHttpContentString())
-	assert.NotNil(t, response.GetHttpContentString())
-	var responseBean struct {
-		Regions []struct {
-			LocalName string
-			RegionId  string
-		}
-	}
-	json.Unmarshal([]byte(response.GetHttpContentString()), &responseBean)
-	assert.NotNil(t, responseBean.Regions)
+	assert.NotNil(t, client)
 }
 
-// func TestRoaPostForm(t *testing.T) {
-// 	request := &requests.RoaRequest{}
-// 	request.InitWithApiInfo("Ros", "2015-09-01", "", "/regions", "", "")
-// 	request.Domain = "ros.aliyuncs.com"
+func Test_NewClientWithAccessKey(t *testing.T) {
+	client, err := NewClientWithAccessKey("regionid", "acesskeyid", "accesskeysecret")
+	assert.Nil(t, err)
+	assert.NotNil(t, client)
+}
 
-// 	request.Headers["Header-Param"] = "HeaderParamValue"
-// 	request.QueryParams["QueryParam"] = "QueryParamValue"
-// 	request.Method = requests.POST
-// 	request.FormParams["BodyParam"] = "BodyParamValue"
+func Test_NewClientWithStsToken(t *testing.T) {
+	client, err := NewClientWithStsToken("regionid", "acesskeyid", "accesskeysecret", "token")
+	assert.Nil(t, err)
+	assert.NotNil(t, client)
+}
 
-// 	response := &responses.BaseResponse{}
-// 	err := client.DoAction(request, response)
-// 	assert.Nil(t, err)
-// 	assert.Equal(t, http.StatusOK, response.GetHttpStatus(), response.GetHttpContentString())
-// 	assert.NotNil(t, response.GetHttpContentString())
+func Test_NewClientWithRamRoleArn(t *testing.T) {
+	client, err := NewClientWithRamRoleArn("regionid", "acesskeyid", "accesskeysecret", "roleArn", "roleSessionName")
+	assert.Nil(t, err)
+	assert.NotNil(t, client)
+}
 
-// 	var responseBean MockResponse
-// 	json.Unmarshal([]byte(response.GetHttpContentString()), &responseBean)
+func Test_NewClientWithEcsRamRole(t *testing.T) {
+	client, err := NewClientWithEcsRamRole("regionid", "roleName")
+	assert.Nil(t, err)
+	assert.NotNil(t, client)
+}
 
-// 	assert.Equal(t, "QueryParamValue", responseBean.Params["QueryParam"])
-// 	assert.Equal(t, "HeaderParamValue", responseBean.Headers["Header-Param"])
-// 	assert.Equal(t, "BodyParamValue", responseBean.Params["BodyParam"])
-// }
+func Test_NewClientWithRsaKeyPair(t *testing.T) {
+	client, err := NewClientWithRsaKeyPair("regionid", "publicKey", "privateKey", 3600)
+	assert.Nil(t, err)
+	assert.NotNil(t, client)
+}
 
-// func TestRoaPostStream(t *testing.T) {
-// 	request := getFtTestRoaRequest()
-// 	request.Method = requests.POST
-// 	request.Content = []byte("TestContent")
-
-// 	response := &responses.BaseResponse{}
-// 	err := client.DoAction(request, response)
-// 	assert.Nil(t, err)
-// 	assert.Equal(t, http.StatusOK, response.GetHttpStatus(), response.GetHttpContentString())
-// 	assert.NotNil(t, response.GetHttpContentString())
-
-// 	var responseBean MockResponse
-// 	json.Unmarshal([]byte(response.GetHttpContentString()), &responseBean)
-
-// 	assert.Equal(t, "QueryParamValue", responseBean.Params["QueryParam"])
-// 	assert.Equal(t, "HeaderParamValue", responseBean.Headers["Header-Param"])
-// 	assert.Equal(t, "TestContent", responseBean.Body)
-// }
-
-// func TestRoaPostJson(t *testing.T) {
-// 	request := getFtTestRoaRequest()
-// 	request.Method = requests.POST
-// 	dataMap := map[string]string{"key": "value"}
-// 	data, err := json.Marshal(dataMap)
-// 	assert.Nil(t, err)
-// 	request.Content = data
-// 	request.SetContentType(requests.Json)
-
-// 	response := &responses.BaseResponse{}
-// 	err = client.DoAction(request, response)
-// 	assert.Nil(t, err)
-// 	assert.Equal(t, http.StatusOK, response.GetHttpStatus(), response.GetHttpContentString())
-// 	assert.NotNil(t, response.GetHttpContentString())
-
-// 	var responseBean MockResponse
-// 	json.Unmarshal([]byte(response.GetHttpContentString()), &responseBean)
-
-// 	assert.Equal(t, "QueryParamValue", responseBean.Params["QueryParam"])
-// 	assert.Equal(t, "HeaderParamValue", responseBean.Headers["Header-Param"])
-// 	assert.Equal(t, requests.Json, responseBean.Headers["Content-Type"])
-// 	assert.Equal(t, string(data), responseBean.Body)
-// }
-
-// func TestRpcGet(t *testing.T) {
-// 	request := getFtTestRpcRequest()
-// 	request.Method = requests.GET
-
-// 	response := &responses.BaseResponse{}
-// 	err := client.DoAction(request, response)
-// 	assert.Nil(t, err)
-// 	assert.Equal(t, http.StatusOK, response.GetHttpStatus(), response.GetHttpContentString())
-// 	assert.NotNil(t, response.GetHttpContentString())
-
-// 	var responseBean MockResponse
-// 	json.Unmarshal([]byte(response.GetHttpContentString()), &responseBean)
-
-// 	assert.Equal(t, "QueryParamValue", responseBean.Params["QueryParam"])
-// }
-
-// func TestRpcGetForHttps(t *testing.T) {
-// 	request := getFtTestRpcRequest()
-// 	request.Method = requests.GET
-// 	request.Scheme = requests.HTTPS
-
-// 	response := &responses.BaseResponse{}
-// 	err := client.DoAction(request, response)
-// 	assert.Nil(t, err)
-// 	assert.Equal(t, http.StatusOK, response.GetHttpStatus(), response.GetHttpContentString())
-// 	assert.NotNil(t, response.GetHttpContentString())
-
-// 	var responseBean MockResponse
-// 	json.Unmarshal([]byte(response.GetHttpContentString()), &responseBean)
-
-// 	assert.Equal(t, "QueryParamValue", responseBean.Params["QueryParam"])
-// }
-
-// func TestRoaGetForHttps(t *testing.T) {
-// 	request := getFtTestRoaRequest()
-// 	request.Scheme = requests.HTTPS
-
-// 	response := &responses.BaseResponse{}
-// 	err := client.DoAction(request, response)
-// 	assert.Nil(t, err)
-// 	assert.Equal(t, http.StatusOK, response.GetHttpStatus(), response.GetHttpContentString())
-// 	assert.NotNil(t, response.GetHttpContentString())
-
-// 	var responseBean MockResponse
-// 	json.Unmarshal([]byte(response.GetHttpContentString()), &responseBean)
-
-// 	assert.Equal(t, "QueryParamValue", responseBean.Params["QueryParam"])
-// 	assert.Equal(t, "HeaderParamValue", responseBean.Headers["Header-Param"])
-// }
-
-// func TestRpcPost(t *testing.T) {
-// 	request := getFtTestRpcRequest()
-// 	request.FormParams["BodyParam"] = "BodyParamValue"
-
-// 	response := &responses.BaseResponse{}
-// 	err := client.DoAction(request, response)
-// 	assert.Nil(t, err)
-// 	assert.Equal(t, http.StatusOK, response.GetHttpStatus(), response.GetHttpContentString())
-// 	assert.NotNil(t, response.GetHttpContentString())
-
-// 	var responseBean MockResponse
-// 	json.Unmarshal([]byte(response.GetHttpContentString()), &responseBean)
-
-// 	assert.Equal(t, "QueryParamValue", responseBean.Params["QueryParam"])
-// 	assert.Equal(t, "BodyParamValue", responseBean.Params["BodyParam"])
-// }
-
-func getFtTestRoaRequest() (request *requests.RoaRequest) {
-	request = &requests.RoaRequest{}
-	request.InitWithApiInfo("Ros", "2015-09-01", "", "/regions", "", "")
-	request.Domain = "ros.aliyuncs.com"
-
-	request.Headers["Header-Param"] = "HeaderParamValue"
-	request.QueryParams["QueryParam"] = "QueryParamValue"
-
+func mockResponse(statusCode int, content string) (res *http.Response, err error) {
+	status := strconv.Itoa(statusCode)
+	res = &http.Response{
+		Proto:      "HTTP/1.1",
+		ProtoMajor: 1,
+		Header:     make(http.Header),
+		StatusCode: statusCode,
+		Status:     status + " " + http.StatusText(statusCode),
+	}
+	res.Body = ioutil.NopCloser(bytes.NewReader([]byte(content)))
 	return
 }
 
-// func getFtTestRpcRequest() (request *requests.RpcRequest) {
-// 	request = &requests.RpcRequest{}
-// 	request.InitWithApiInfo("Ft", "2016-01-01", "TestRpcApi", "", "")
-// 	request.Domain = "ft.aliyuncs.com"
-// 	request.QueryParams["QueryParam"] = "QueryParamValue"
-// 	return
-// }
+func Test_DoAction(t *testing.T) {
+	client, err := NewClientWithAccessKey("regionid", "acesskeyid", "accesskeysecret")
+	assert.Nil(t, err)
+	assert.NotNil(t, client)
+	assert.Equal(t, true, client.isRunning)
+	request := requests.NewCommonRequest()
+	request.Domain = "ecs.aliyuncs.com"
+	request.Version = "2014-05-26"
+	request.ApiName = "DescribeInstanceStatus"
 
-// func getFtTestRpcRequestForEndpointLocation() (request *requests.RpcRequest) {
-// 	request = &requests.RpcRequest{}
-// 	request.InitWithApiInfo("Ft", "2016-01-01", "TestRpcApi", "ft", "openAPI")
-// 	request.RegionId = "ft-cn-hangzhou"
-// 	request.QueryParams["QueryParam"] = "QueryParamValue"
-// 	request.Domain = "ft.aliyuncs.com"
-// 	return
-// }
+	request.QueryParams["PageNumber"] = "1"
+	request.QueryParams["PageSize"] = "30"
+	request.TransToAcsRequest()
+	response := responses.NewCommonResponse()
+	origTestHookDo := hookDo
+	defer func() { hookDo = origTestHookDo }()
+	hookDo = func(fn func(req *http.Request) (*http.Response, error)) func(req *http.Request) (*http.Response, error) {
+		return func(req *http.Request) (*http.Response, error) {
+			return mockResponse(200, "")
+		}
+	}
+	err = client.DoAction(request, response)
+	assert.Nil(t, err)
+	assert.Equal(t, 200, response.GetHttpStatus())
+	assert.Equal(t, "", response.GetHttpContentString())
+	client.Shutdown()
+	assert.Equal(t, false, client.isRunning)
+}
 
-// func getFtTestRpcRequestForEndpointXml() (request *requests.RpcRequest) {
-// 	request = &requests.RpcRequest{}
-// 	request.InitWithApiInfo("Ft", "2016-01-01", "TestRpcApi", "", "")
-// 	request.RegionId = "cn-hangzhou"
-// 	request.QueryParams["QueryParam"] = "QueryParamValue"
-// 	request.Domain = "ft.aliyuncs.com"
-// 	return
-// }
+func Test_ProcessCommonRequest(t *testing.T) {
+	client, err := NewClientWithAccessKey("regionid", "acesskeyid", "accesskeysecret")
+	assert.Nil(t, err)
+	assert.NotNil(t, client)
 
-// func TestCommonRpcRequest(t *testing.T) {
-// 	rpcRequest := requests.NewCommonRequest()
-// 	rpcRequest.Product = "Ft"
-// 	rpcRequest.Version = "2016-01-01"
-// 	rpcRequest.Domain = "ft.aliyuncs.com"
-// 	rpcRequest.ApiName = "TestRpcApi"
-// 	rpcRequest.Method = "POST"
+	request := requests.NewCommonRequest()
+	request.Domain = "ecs.aliyuncs.com"
+	request.Version = "2014-05-26"
+	request.ApiName = "DescribeInstanceStatus"
 
-// 	rpcRequest.QueryParams["QueryParam"] = "QueryParamValue"
-// 	rpcRequest.FormParams["BodyParam"] = "BodyParamValue"
+	request.QueryParams["PageNumber"] = "1"
+	request.QueryParams["PageSize"] = "30"
 
-// 	response, err := client.ProcessCommonRequest(rpcRequest)
+	origTestHookDo := hookDo
+	defer func() { hookDo = origTestHookDo }()
+	hookDo = func(fn func(req *http.Request) (*http.Response, error)) func(req *http.Request) (*http.Response, error) {
+		return func(req *http.Request) (*http.Response, error) {
+			return mockResponse(200, "")
+		}
+	}
+	response, err := client.ProcessCommonRequest(request)
+	assert.Nil(t, err)
+	assert.Equal(t, 200, response.GetHttpStatus())
+	assert.Equal(t, "", response.GetHttpContentString())
+}
 
+func Test_DoAction_With500(t *testing.T) {
+	client, err := NewClientWithAccessKey("regionid", "acesskeyid", "accesskeysecret")
+	assert.Nil(t, err)
+	assert.NotNil(t, client)
+	assert.Equal(t, true, client.isRunning)
+	request := requests.NewCommonRequest()
+	request.Domain = "ecs.aliyuncs.com"
+	request.Version = "2014-05-26"
+	request.ApiName = "DescribeInstanceStatus"
+
+	request.QueryParams["PageNumber"] = "1"
+	request.QueryParams["PageSize"] = "30"
+	request.TransToAcsRequest()
+	response := responses.NewCommonResponse()
+	origTestHookDo := hookDo
+	defer func() { hookDo = origTestHookDo }()
+	hookDo = func(fn func(req *http.Request) (*http.Response, error)) func(req *http.Request) (*http.Response, error) {
+		return func(req *http.Request) (*http.Response, error) {
+			return mockResponse(500, "Server Internel Error")
+		}
+	}
+	err = client.DoAction(request, response)
+	assert.NotNil(t, err)
+	assert.Equal(t, "SDK.ServerError\nErrorCode: \nRecommend: \nRequestId: \nMessage: Server Internel Error", err.Error())
+	assert.Equal(t, 500, response.GetHttpStatus())
+	assert.Equal(t, "Server Internel Error", response.GetHttpContentString())
+}
+
+// func Test_EnableAsync(t *testing.T) {
+// 	client, err := NewClientWithAccessKey("regionid", "acesskeyid", "accesskeysecret")
 // 	assert.Nil(t, err)
-// 	assert.Equal(t, http.StatusOK, response.GetHttpStatus(), response.GetHttpContentString())
-// 	assert.NotNil(t, response.GetHttpContentString())
-
-// 	var responseBean MockResponse
-// 	json.Unmarshal([]byte(response.GetHttpContentString()), &responseBean)
-
-// 	assert.Equal(t, "QueryParamValue", responseBean.Params["QueryParam"])
-// 	assert.Equal(t, "BodyParamValue", responseBean.Params["BodyParam"])
-// }
-
-// func TestCommonRoaRequest(t *testing.T) {
-// 	roaRequest := requests.NewCommonRequest()
-// 	roaRequest.Product = "Ft"
-// 	roaRequest.Version = "2016-01-02"
-// 	roaRequest.PathPattern = "/web/cloudapi"
-// 	roaRequest.Domain = "ft.aliyuncs.com"
-// 	roaRequest.Method = "POST"
-
-// 	roaRequest.QueryParams["QueryParam"] = "QueryParamValue"
-// 	roaRequest.FormParams["BodyParam"] = "BodyParamValue"
-
-// 	response, err := client.ProcessCommonRequest(roaRequest)
-
-// 	assert.Nil(t, err)
-// 	assert.Equal(t, http.StatusOK, response.GetHttpStatus(), response.GetHttpContentString())
-// 	assert.NotNil(t, response.GetHttpContentString())
-
-// 	var responseBean MockResponse
-// 	json.Unmarshal([]byte(response.GetHttpContentString()), &responseBean)
-
-// 	assert.Equal(t, "QueryParamValue", responseBean.Params["QueryParam"])
-// 	assert.Equal(t, "BodyParamValue", responseBean.Params["BodyParam"])
-// }
-
-// func TestRpcGetForEndpointXml(t *testing.T) {
-// 	request := getFtTestRpcRequestForEndpointXml()
-// 	request.Method = requests.GET
-// 	request.RegionId = "cn-shanghai"
-
-// 	response := &responses.BaseResponse{}
-// 	err := client.DoAction(request, response)
-// 	assert.Nil(t, err)
-// 	assert.Equal(t, http.StatusOK, response.GetHttpStatus(), response.GetHttpContentString())
-// 	assert.NotNil(t, response.GetHttpContentString())
-
-// 	var responseBean MockResponse
-// 	json.Unmarshal([]byte(response.GetHttpContentString()), &responseBean)
-
-// 	assert.Equal(t, "QueryParamValue", responseBean.Params["QueryParam"])
-// }
-
-// func TestRpcGetForLocation(t *testing.T) {
-// 	request := getFtTestRpcRequestForEndpointLocation()
-// 	request.Method = requests.GET
-
-// 	response := &responses.BaseResponse{}
-// 	err := client.DoAction(request, response)
-// 	assert.Nil(t, err)
-// 	assert.Equal(t, http.StatusOK, response.GetHttpStatus(), response.GetHttpContentString())
-// 	assert.NotNil(t, response.GetHttpContentString())
-
-// 	var responseBean MockResponse
-// 	json.Unmarshal([]byte(response.GetHttpContentString()), &responseBean)
-
-// 	assert.Equal(t, "QueryParamValue", responseBean.Params["QueryParam"])
-// }
-
-// func TestRpcGetForLocationCache(t *testing.T) {
-// 	request := getFtTestRpcRequestForEndpointLocation()
-// 	request.Method = requests.GET
-
-// 	response := &responses.BaseResponse{}
-// 	err := client.DoAction(request, response)
-// 	assert.Nil(t, err)
-// 	assert.Equal(t, http.StatusOK, response.GetHttpStatus(), response.GetHttpContentString())
-// 	assert.NotNil(t, response.GetHttpContentString())
-
-// 	var responseBean MockResponse
-// 	json.Unmarshal([]byte(response.GetHttpContentString()), &responseBean)
-
-// 	assert.Equal(t, "QueryParamValue", responseBean.Params["QueryParam"])
-
-// 	request2 := getFtTestRpcRequestForEndpointLocation()
-// 	request2.Method = requests.GET
-// 	err = client.DoAction(request2, response)
-// 	assert.Nil(t, err)
-// 	assert.Equal(t, http.StatusOK, response.GetHttpStatus(), response.GetHttpContentString())
-// 	assert.NotNil(t, response.GetHttpContentString())
-
-// 	json.Unmarshal([]byte(response.GetHttpContentString()), &responseBean)
-
-// 	assert.Equal(t, "QueryParamValue", responseBean.Params["QueryParam"])
-// }
-
-// func TestRpcGetForKeyPair(t *testing.T) {
-// 	request := getFtTestRpcRequest()
-// 	request.Method = requests.GET
-
-// 	response := &responses.BaseResponse{}
-// 	err := clientKeyPair.DoAction(request, response)
-// 	assert.Nil(t, err)
-// 	assert.Equal(t, http.StatusOK, response.GetHttpStatus(), response.GetHttpContentString())
-// 	assert.NotNil(t, response.GetHttpContentString())
-
-// 	var responseBean MockResponse
-// 	json.Unmarshal([]byte(response.GetHttpContentString()), &responseBean)
-
-// 	assert.Equal(t, "QueryParamValue", responseBean.Params["QueryParam"])
-// }
-
-// /*func TestRpcGetForEcs(t *testing.T) {
-// 	//测试接口，想测试的时候，要替换掉singer_ecs_instance中对应的变量，并且还要提供一个mock服务
-// 	//requestUrl := "http://localhost:3500/latest/meta-data/ram/security-credentials/roleNameTest.json"
-// 	request := getFtTestRpcRequest()
-// 	request.Method = requests.GET
-
-// 	response := &responses.BaseResponse{}
-// 	err := clientEcs.DoAction(request, response)
-// 	assert.Nil(t, err)
-// 	assert.Equal(t, http.StatusOK, response.GetHttpStatus(), response.GetHttpContentString())
-// 	assert.NotNil(t, response.GetHttpContentString())
-
-// 	var responseBean MockResponse
-// 	json.Unmarshal([]byte(response.GetHttpContentString()), &responseBean)
-
-// 	assert.Equal(t, "QueryParamValue", responseBean.Params["QueryParam"])
-
-// 	err = clientEcs.DoAction(request, response)
-// 	assert.Nil(t, err)
-// 	assert.Equal(t, http.StatusOK, response.GetHttpStatus(), response.GetHttpContentString())
-// 	assert.NotNil(t, response.GetHttpContentString())
-
-// 	json.Unmarshal([]byte(response.GetHttpContentString()), &responseBean)
-
-// 	assert.Equal(t, "QueryParamValue", responseBean.Params["QueryParam"])
-// }*/
-
-// func TestRpcGetForRoleArn(t *testing.T) {
-// 	request := getFtTestRpcRequest()
-// 	request.Method = requests.GET
-
-// 	response := &responses.BaseResponse{}
-// 	err := clientRoleArn.DoAction(request, response)
-// 	assert.Nil(t, err)
-// 	assert.Equal(t, http.StatusOK, response.GetHttpStatus(), response.GetHttpContentString())
-// 	assert.NotNil(t, response.GetHttpContentString())
-
-// 	var responseBean MockResponse
-// 	json.Unmarshal([]byte(response.GetHttpContentString()), &responseBean)
-
-// 	assert.Equal(t, "QueryParamValue", responseBean.Params["QueryParam"])
-
-// 	err = clientRoleArn.DoAction(request, response)
-// 	assert.Nil(t, err)
-// 	assert.Equal(t, http.StatusOK, response.GetHttpStatus(), response.GetHttpContentString())
-// 	assert.NotNil(t, response.GetHttpContentString())
-
-// 	json.Unmarshal([]byte(response.GetHttpContentString()), &responseBean)
-
-// 	assert.Equal(t, "QueryParamValue", responseBean.Params["QueryParam"])
-// }
-
-// func TestRoaGetForRoleArn(t *testing.T) {
-// 	request := getFtTestRoaRequest()
-// 	request.Method = requests.GET
-
-// 	response := &responses.BaseResponse{}
-// 	err := clientRoleArn.DoAction(request, response)
-// 	assert.Nil(t, err)
-// 	assert.Equal(t, http.StatusOK, response.GetHttpStatus(), response.GetHttpContentString())
-// 	assert.NotNil(t, response.GetHttpContentString())
-
-// 	var responseBean MockResponse
-// 	json.Unmarshal([]byte(response.GetHttpContentString()), &responseBean)
-
-// 	assert.Equal(t, "QueryParamValue", responseBean.Params["QueryParam"])
-
-// 	err = clientRoleArn.DoAction(request, response)
-// 	assert.Nil(t, err)
-// 	assert.Equal(t, http.StatusOK, response.GetHttpStatus(), response.GetHttpContentString())
-// 	assert.NotNil(t, response.GetHttpContentString())
-
-// 	json.Unmarshal([]byte(response.GetHttpContentString()), &responseBean)
-
-// 	assert.Equal(t, "QueryParamValue", responseBean.Params["QueryParam"])
-// }
-
-// //测试Sts的时候要先获取一套stsToken和ak，由于有时效性，所以先把代码注释掉，测试的时候先获取stsToken完成后再调用
-// //func TestRpcGetForSts(t *testing.T) {
-// //	request := getFtTestRpcRequest()
-// //	request.Method = requests.GET
-// //
-// //	response := &responses.BaseResponse{}
-// //	err := clientSts.DoAction(request, response)
-// //	assert.Nil(t, err)
-// //	assert.Equal(t, http.StatusOK, response.GetHttpStatus(), response.GetHttpContentString())
-// //	assert.NotNil(t, response.GetHttpContentString())
-// //
-// //	var responseBean MockResponse
-// //	json.Unmarshal([]byte(response.GetHttpContentString()), &responseBean)
-// //
-// //	assert.Equal(t, "QueryParamValue", responseBean.Params["QueryParam"])
-// //}
-
-// func TestCommonRoaRequestForAcceptXML(t *testing.T) {
-// 	roaRequest := requests.NewCommonRequest()
-// 	roaRequest.Product = "Acs"
-// 	roaRequest.Version = "2015-01-01"
-// 	roaRequest.ApiName = "GetGlobal"
-// 	roaRequest.PathPattern = "/"
-// 	roaRequest.Domain = "acs.aliyuncs.com"
-// 	roaRequest.AcceptFormat = "XML"
-
-// 	response, err := client.ProcessCommonRequest(roaRequest)
-
-// 	assert.Nil(t, err)
-// 	assert.Equal(t, http.StatusOK, response.GetHttpStatus(), response.GetHttpContentString())
-// 	assert.NotNil(t, response.GetHttpContentString())
+// 	assert.NotNil(t, client)
+// 	assert.Equal(t, true, client.isRunning)
+// 	client.EnableAsync(2, 8)
+// 	client.Shutdown()
+// 	assert.Equal(t, false, client.isRunning)
 // }

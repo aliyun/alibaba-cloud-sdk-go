@@ -91,16 +91,14 @@ func Test_RamRoleArn_GetAccessKeyId3(t *testing.T) {
 	s, err := NewRamRoleArnSigner(c, func(*requests.CommonRequest, interface{}) (response *responses.CommonResponse, err error) {
 		res := responses.NewCommonResponse()
 		statusCode := 200
-		header := make(http.Header)
 		status := strconv.Itoa(statusCode)
 		httpresp := &http.Response{
 			Proto:      "HTTP/1.1",
 			ProtoMajor: 1,
-			Header:     header,
+			Header:     make(http.Header),
 			StatusCode: statusCode,
 			Status:     status + " " + http.StatusText(statusCode),
 		}
-		httpresp.Header = make(http.Header)
 		httpresp.Body = ioutil.NopCloser(bytes.NewReader([]byte("invalid json")))
 		responses.Unmarshal(res, httpresp, "JSON")
 		return res, nil

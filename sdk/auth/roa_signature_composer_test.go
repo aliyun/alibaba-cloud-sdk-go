@@ -43,8 +43,8 @@ func TestRoaSignatureComposer(t *testing.T) {
 	c := credentials.NewAccessKeyCredential("accessKeyId", "accessKeySecret")
 	signer := signers.NewAccessKeySigner(c)
 
-	origTestHookLookupIP := hookGetDate
-	defer func() { hookGetDate = origTestHookLookupIP }()
+	origTestHookGetDate := hookGetDate
+	defer func() { hookGetDate = origTestHookGetDate }()
 	hookGetDate = mockDate
 	signRoaRequest(request, signer, "regionId")
 	assert.Equal(t, "mock date", request.GetHeaders()["Date"])
