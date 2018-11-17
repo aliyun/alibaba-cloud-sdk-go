@@ -156,31 +156,33 @@ CommonAPI，需要配合相应的 API 文档使用，以查询 API 的相关信�
 package main
 
 import (
-    "github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-    "github.com/aliyun/alibaba-cloud-sdk-go/sdk"
-    "fmt"
+	"fmt"
+	"os"
+
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
 )
 
 func main() {
 
-    client, err := sdk.NewClientWithAccessKey("cn-hangzhou", "{your_access_key_id}", "{your_access_key_id}")
-    if err != nil {
-        panic(err)
-    }
+	client, err := sdk.NewClientWithAccessKey("cn-hangzhou", os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
+	if err != nil {
+		panic(err)
+	}
 
-    request := requests.NewCommonRequest()
-    request.Domain = "ecs.aliyuncs.com"
-    request.Version = "2014-05-26"
-    request.ApiName = "DescribeInstanceStatus"
+	request := requests.NewCommonRequest()
+	request.Domain = "ecs.aliyuncs.com"
+	request.Version = "2014-05-26"
+	request.ApiName = "DescribeInstanceStatus"
 
-    request.QueryParams["PageNumber"] = "1"
-    request.QueryParams["PageSize"] = "30"
+	request.QueryParams["PageNumber"] = "1"
+	request.QueryParams["PageSize"] = "30"
 
-    response, err := client.ProcessCommonRequest(request)
-    if err != nil {
-        panic(err)
-    }
+	response, err := client.ProcessCommonRequest(request)
+	if err != nil {
+		panic(err)
+	}
 
-    fmt.Print(response.GetHttpContentString())
+	fmt.Print(response.GetHttpContentString())
 }
 ```
