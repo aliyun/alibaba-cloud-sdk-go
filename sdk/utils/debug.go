@@ -8,10 +8,18 @@ import (
 
 type Debug func(format string, v ...interface{})
 
+var hookGetEnv = func() string {
+	return os.Getenv("DEBUG")
+}
+
+var hookPrint = func(input string) {
+	fmt.Println(input)
+}
+
 func Init(flag string) Debug {
 	enable := false
 
-	env := os.Getenv("DEBUG")
+	env := hookGetEnv()
 	parts := strings.Split(env, ",")
 	for _, part := range parts {
 		if part == flag {
@@ -22,7 +30,7 @@ func Init(flag string) Debug {
 
 	return func(format string, v ...interface{}) {
 		if enable {
-			fmt.Println(fmt.Sprintf(format, v...))
+			hookPrint(fmt.Sprintf(format, v...))
 		}
 	}
 }
