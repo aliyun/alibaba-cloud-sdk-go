@@ -2,11 +2,12 @@ package integration
 
 import (
 	"fmt"
-	"github.com/aliyun/alibaba-cloud-sdk-go/services/vpc"
-	"github.com/stretchr/testify/assert"
 	"strconv"
 	"testing"
 	"time"
+
+	"github.com/aliyun/alibaba-cloud-sdk-go/services/vpc"
+	"github.com/stretchr/testify/assert"
 )
 
 func TestVpcInstance(t *testing.T) {

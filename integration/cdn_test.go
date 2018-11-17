@@ -2,9 +2,10 @@ package integration
 
 import (
 	"fmt"
+	"testing"
+
 	"github.com/aliyun/alibaba-cloud-sdk-go/services/cdn"
 	"github.com/stretchr/testify/assert"
-	"testing"
 )
 
 func TestCdnInstance(t *testing.T) {
