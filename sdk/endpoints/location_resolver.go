@@ -157,7 +157,7 @@ type EndpointsObj struct {
 }
 
 type EndpointObj struct {
-	Protocols   map[string]string
+	// Protocols   map[string]string
 	Type        string
 	Namespace   string
 	Id          string
