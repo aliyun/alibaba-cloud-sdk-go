@@ -156,6 +156,46 @@ func TestLocationResolver_TryResolve_Location_With_Endpoint(t *testing.T) {
 	assert.Nil(t, err)
 }
 
+func TestLocationResolver_TryResolve_Location_With_Endpoint2(t *testing.T) {
+	resolver := &LocationResolver{}
+	resolveParam := &ResolveParam{
+		LocationProduct: "ecs3",
+		RegionId:        "cn-hangzhou",
+		Product:         "ecs3",
+		CommonApi: func(request *requests.CommonRequest) (response *responses.CommonResponse, err error) {
+			response = responses.NewCommonResponse()
+			responses.Unmarshal(response, makeHTTPResponse(200, `{
+  "Endpoints":{
+    "Endpoint":[
+      {
+        "Protocols":{
+          "Protocols":["HTTP","HTTPS"]
+        },
+        "Type":"openAPI",
+        "Namespace":"26842",
+        "Id":"cn-beijing",
+        "SerivceCode":"ecs",
+        "Endpoint":"ecs-cn-hangzhou.aliyuncs.com"
+      }
+    ]
+  },
+  "RequestId":"B3B36D8E-5029-42E3-B1FB-9B687F7591DA",
+  "Success":true
+}`), "JSON")
+			return
+		},
+	}
+	endpoint, support, err := resolver.TryResolve(resolveParam)
+	assert.Equal(t, "ecs-cn-hangzhou.aliyuncs.com", endpoint)
+	assert.Equal(t, true, support)
+	assert.Nil(t, err)
+	// hit the cache
+	endpoint, support, err = resolver.TryResolve(resolveParam)
+	assert.Equal(t, "ecs-cn-hangzhou.aliyuncs.com", endpoint)
+	assert.Equal(t, true, support)
+	assert.Nil(t, err)
+}
+
 func TestLocationResolver_TryResolve_Location_With_EmptyEndpoint(t *testing.T) {
 	resolver := &LocationResolver{}
 	resolveParam := &ResolveParam{
