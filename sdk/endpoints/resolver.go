@@ -48,9 +48,12 @@ type Resolver interface {
 func Resolve(param *ResolveParam) (endpoint string, err error) {
 	supportedResolvers := getAllResolvers()
 	var lastErr error
-	var supported bool
 	for _, resolver := range supportedResolvers {
-		endpoint, supported, lastErr = resolver.TryResolve(param)
+		endpoint, supported, resolveErr := resolver.TryResolve(param)
+		if resolveErr != nil {
+			lastErr = resolveErr
+		}
+
 		if supported {
 			debug("resolve endpoint with %s\n", param)
 			debug("\t%s by resolver(%s)\n", endpoint, resolver.GetName())
