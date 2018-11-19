@@ -17,15 +17,17 @@ package domain
 
 // Demand is a nested struct in domain response
 type Demand struct {
-	BizId        string  `json:"BizId" xml:"BizId"`
-	Status       string  `json:"Status" xml:"Status"`
-	DemandDomain string  `json:"DemandDomain" xml:"DemandDomain"`
-	DemandPrice  float64 `json:"DemandPrice" xml:"DemandPrice"`
-	Mobile       string  `json:"Mobile" xml:"Mobile"`
-	Description  string  `json:"Description" xml:"Description"`
-	PublishTime  int     `json:"PublishTime" xml:"PublishTime"`
-	PayDomain    string  `json:"PayDomain" xml:"PayDomain"`
-	PayPrice     float64 `json:"PayPrice" xml:"PayPrice"`
-	PayTime      int     `json:"PayTime" xml:"PayTime"`
-	ProduceType  int     `json:"ProduceType" xml:"ProduceType"`
+	BizId               string  `json:"BizId" xml:"BizId"`
+	Status              string  `json:"Status" xml:"Status"`
+	DemandDomain        string  `json:"DemandDomain" xml:"DemandDomain"`
+	DemandPrice         float64 `json:"DemandPrice" xml:"DemandPrice"`
+	Mobile              string  `json:"Mobile" xml:"Mobile"`
+	Description         string  `json:"Description" xml:"Description"`
+	PublishTime         int     `json:"PublishTime" xml:"PublishTime"`
+	PayDomain           string  `json:"PayDomain" xml:"PayDomain"`
+	PayPrice            float64 `json:"PayPrice" xml:"PayPrice"`
+	PayTime             int     `json:"PayTime" xml:"PayTime"`
+	ProduceType         int     `json:"ProduceType" xml:"ProduceType"`
+	BargainSellerPrice  float64 `json:"BargainSellerPrice" xml:"BargainSellerPrice"`
+	BargainSellerMobile string  `json:"BargainSellerMobile" xml:"BargainSellerMobile"`
 }
