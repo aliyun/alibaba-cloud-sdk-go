@@ -22,14 +22,17 @@ import (
 )
 
 const (
+	// EndpointCacheExpireTime ...
 	EndpointCacheExpireTime = 3600 //Seconds
 )
 
+// Cache caches endpoint for specific product and region
 type Cache struct {
 	sync.RWMutex
 	cache map[string]interface{}
 }
 
+// Get ...
 func (c *Cache) Get(k string) (v interface{}) {
 	c.RLock()
 	v = c.cache[k]
@@ -37,6 +40,7 @@ func (c *Cache) Get(k string) (v interface{}) {
 	return
 }
 
+// Set ...
 func (c *Cache) Set(k string, v interface{}) {
 	c.Lock()
 	c.cache[k] = v
@@ -46,6 +50,7 @@ func (c *Cache) Set(k string, v interface{}) {
 var lastClearTimePerProduct = &Cache{cache: make(map[string]interface{})}
 var endpointCache = &Cache{cache: make(map[string]interface{})}
 
+// LocationResolver ...
 type LocationResolver struct {
 }
 
@@ -54,6 +59,7 @@ func (resolver *LocationResolver) GetName() (name string) {
 	return
 }
 
+// TryResolve resolves endpoint giving product and region
 func (resolver *LocationResolver) TryResolve(param *ResolveParam) (endpoint string, support bool, err error) {
 	if len(param.LocationProduct) <= 0 {
 		support = false
@@ -126,6 +132,7 @@ func (resolver *LocationResolver) TryResolve(param *ResolveParam) (endpoint stri
 	return
 }
 
+// CheckCacheIsExpire ...
 func CheckCacheIsExpire(cacheKey string) bool {
 	lastClearTime, ok := lastClearTimePerProduct.Get(cacheKey).(int64)
 	if !ok {
@@ -146,16 +153,19 @@ func CheckCacheIsExpire(cacheKey string) bool {
 	return false
 }
 
+// GetEndpointResponse ...
 type GetEndpointResponse struct {
 	Endpoints *EndpointsObj
 	RequestId string
 	Success   bool
 }
 
+// EndpointsObj ...
 type EndpointsObj struct {
 	Endpoint []EndpointObj
 }
 
+// EndpointObj ...
 type EndpointObj struct {
 	// Protocols   map[string]string
 	Type        string
