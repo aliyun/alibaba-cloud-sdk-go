@@ -19,8 +19,6 @@ func Test_ECSRamRole(t *testing.T) {
 	assert.Equal(t, "HMAC-SHA1", singer.GetName())
 	assert.Equal(t, "", singer.GetType())
 	assert.Equal(t, "1.0", singer.GetVersion())
-	// nothing
-	singer.Shutdown()
 }
 
 func Test_EcsRamRoleSigner_buildCommonRequest(t *testing.T) {

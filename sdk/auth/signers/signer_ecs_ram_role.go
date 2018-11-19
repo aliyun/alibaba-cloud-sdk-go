@@ -165,7 +165,3 @@ func (signer *EcsRamRoleSigner) refreshCredential(response *responses.CommonResp
 func (signer *EcsRamRoleSigner) GetSessionCredential() *SessionCredential {
 	return signer.sessionCredential
 }
-
-func (signer *EcsRamRoleSigner) Shutdown() {
-
-}

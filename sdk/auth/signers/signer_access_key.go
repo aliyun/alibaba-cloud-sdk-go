@@ -52,7 +52,3 @@ func (signer *AccessKeySigner) Sign(stringToSign, secretSuffix string) string {
 	secret := signer.credential.AccessKeySecret + secretSuffix
 	return ShaHmac1(stringToSign, secret)
 }
-
-func (signer *AccessKeySigner) Shutdown() {
-
-}

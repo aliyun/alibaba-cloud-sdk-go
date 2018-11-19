@@ -170,7 +170,3 @@ func (signer *RamRoleArnSigner) refreshCredential(response *responses.CommonResp
 func (signer *RamRoleArnSigner) GetSessionCredential() *SessionCredential {
 	return signer.sessionCredential
 }
-
-func (signer *RamRoleArnSigner) Shutdown() {
-
-}
