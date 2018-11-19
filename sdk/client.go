@@ -372,7 +372,6 @@ func (client *Client) ProcessCommonRequestWithSigner(request *requests.CommonReq
 }
 
 func (client *Client) Shutdown() {
-	client.signer.Shutdown()
 	// lock the addAsync()
 	client.asyncChanLock.Lock()
 	defer client.asyncChanLock.Unlock()

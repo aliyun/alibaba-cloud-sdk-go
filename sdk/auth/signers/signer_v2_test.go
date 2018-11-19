@@ -33,6 +33,4 @@ vftlY0Hs1vNXcaBgEA==`
 	assert.Nil(t, err)
 	assert.Equal(t, "publicKeyId", accesskeyId)
 	assert.Equal(t, "KoQz1EdAD5jsmYuvaDZTQLQo4bP2ex6zR0dJcsNTjVE/MgGP8emz0rhiwSDmffEsbGPrRN8qPWGltEleH7xbLuBtviBbW5M7Ga7cuYQaxATDbwsPVNGgr3QPWY+nEjX3lBwGAeebf5H9WidI1cbTB+uYh0XB4o/sL34npE6qOxk=", s.Sign("string to sign", "suffix"))
-	// nothing
-	s.Shutdown()
 }

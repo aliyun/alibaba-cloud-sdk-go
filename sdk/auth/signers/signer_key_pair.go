@@ -145,7 +145,3 @@ func (signer *SignerKeyPair) refreshCredential(response *responses.CommonRespons
 	}
 	return
 }
-
-func (signer *SignerKeyPair) Shutdown() {
-
-}

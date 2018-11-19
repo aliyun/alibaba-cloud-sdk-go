@@ -32,7 +32,6 @@ type Signer interface {
 	GetAccessKeyId() (string, error)
 	GetExtraParam() map[string]string
 	Sign(stringToSign, secretSuffix string) string
-	Shutdown()
 }
 
 func NewSignerWithCredential(credential Credential, commonApi func(request *requests.CommonRequest, signer interface{}) (response *responses.CommonResponse, err error)) (signer Signer, err error) {

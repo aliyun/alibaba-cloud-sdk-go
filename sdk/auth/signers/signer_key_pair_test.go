@@ -37,8 +37,6 @@ func TestKeyPairOk(t *testing.T) {
 	assert.Equal(t, "1.0", s.GetVersion())
 	assert.Equal(t, "", s.GetType())
 	assert.Len(t, s.GetExtraParam(), 0)
-	// nothing
-	s.Shutdown()
 }
 
 func Test_buildCommonRequest(t *testing.T) {

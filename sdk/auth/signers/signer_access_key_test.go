@@ -19,6 +19,4 @@ func TestSignerAccessKey(t *testing.T) {
 	assert.Nil(t, err)
 	assert.Equal(t, "accessKeyId", accessKeyId)
 	assert.Equal(t, "Dqy7QZhP4TyQUDa3SBSFXopJaIo=", s.Sign("string to sign", "suffix"))
-	// nothing
-	s.Shutdown()
 }

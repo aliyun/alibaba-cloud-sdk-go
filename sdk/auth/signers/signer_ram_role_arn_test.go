@@ -36,8 +36,6 @@ func Test_NewRamRoleArnSigner(t *testing.T) {
 	signer, err = NewRamRoleArnSigner(c, nil)
 	assert.NotNil(t, err)
 	assert.Equal(t, "[SDK.InvalidParam] Assume Role session duration should be in the range of 15min - 1Hr", err.Error())
-	// nothing
-	signer.Shutdown()
 }
 
 func Test_RamRoleArn_buildCommonRequest(t *testing.T) {

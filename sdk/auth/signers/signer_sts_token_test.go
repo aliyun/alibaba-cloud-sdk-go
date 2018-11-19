@@ -23,6 +23,4 @@ func TestSignerSTSToken(t *testing.T) {
 	assert.Len(t, params, 1)
 	assert.Equal(t, "token", params["SecurityToken"])
 	assert.Equal(t, "Dqy7QZhP4TyQUDa3SBSFXopJaIo=", s.Sign("string to sign", "suffix"))
-	// nothing
-	s.Shutdown()
 }

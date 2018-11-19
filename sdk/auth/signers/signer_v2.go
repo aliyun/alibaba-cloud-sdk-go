@@ -52,7 +52,3 @@ func (signer *SignerV2) Sign(stringToSign, secretSuffix string) string {
 	secret := signer.credential.PrivateKey
 	return Sha256WithRsa(stringToSign, secret)
 }
-
-func (signer *SignerV2) Shutdown() {
-
-}
