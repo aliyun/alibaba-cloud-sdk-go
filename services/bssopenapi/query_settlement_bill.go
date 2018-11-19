@@ -77,6 +77,7 @@ func (client *Client) QuerySettlementBillWithCallback(request *QuerySettlementBi
 type QuerySettlementBillRequest struct {
 	*requests.RpcRequest
 	ProductCode      string           `position:"Query" name:"ProductCode"`
+	IsHideZeroCharge requests.Boolean `position:"Query" name:"IsHideZeroCharge"`
 	SubscriptionType string           `position:"Query" name:"SubscriptionType"`
 	PageSize         requests.Integer `position:"Query" name:"PageSize"`
 	EndTime          string           `position:"Query" name:"EndTime"`
@@ -91,11 +92,11 @@ type QuerySettlementBillRequest struct {
 // QuerySettlementBillResponse is the response struct for api QuerySettlementBill
 type QuerySettlementBillResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	Data      Data   `json:"Data" xml:"Data"`
+	RequestId string                    `json:"RequestId" xml:"RequestId"`
+	Success   bool                      `json:"Success" xml:"Success"`
+	Code      string                    `json:"Code" xml:"Code"`
+	Message   string                    `json:"Message" xml:"Message"`
+	Data      DataInQuerySettlementBill `json:"Data" xml:"Data"`
 }
 
 // CreateQuerySettlementBillRequest creates a request to invoke QuerySettlementBill API

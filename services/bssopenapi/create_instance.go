@@ -80,8 +80,8 @@ type CreateInstanceRequest struct {
 	Period           requests.Integer           `position:"Query" name:"Period"`
 	SubscriptionType string                     `position:"Query" name:"SubscriptionType"`
 	RenewPeriod      requests.Integer           `position:"Query" name:"RenewPeriod"`
-	RenewalStatus    string                     `position:"Query" name:"RenewalStatus"`
 	Parameter        *[]CreateInstanceParameter `position:"Query" name:"Parameter"  type:"Repeated"`
+	RenewalStatus    string                     `position:"Query" name:"RenewalStatus"`
 	OwnerId          requests.Integer           `position:"Query" name:"OwnerId"`
 	ProductType      string                     `position:"Query" name:"ProductType"`
 }

@@ -83,19 +83,19 @@ type QueryOrdersRequest struct {
 	CreateTimeStart  string           `position:"Query" name:"CreateTimeStart"`
 	PageNum          requests.Integer `position:"Query" name:"PageNum"`
 	OwnerId          requests.Integer `position:"Query" name:"OwnerId"`
+	CreateTimeEnd    string           `position:"Query" name:"CreateTimeEnd"`
 	ProductType      string           `position:"Query" name:"ProductType"`
 	OrderType        string           `position:"Query" name:"OrderType"`
-	CreateTimeEnd    string           `position:"Query" name:"CreateTimeEnd"`
 }
 
 // QueryOrdersResponse is the response struct for api QueryOrders
 type QueryOrdersResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	Data      Data   `json:"Data" xml:"Data"`
+	RequestId string            `json:"RequestId" xml:"RequestId"`
+	Success   bool              `json:"Success" xml:"Success"`
+	Code      string            `json:"Code" xml:"Code"`
+	Message   string            `json:"Message" xml:"Message"`
+	Data      DataInQueryOrders `json:"Data" xml:"Data"`
 }
 
 // CreateQueryOrdersRequest creates a request to invoke QueryOrders API

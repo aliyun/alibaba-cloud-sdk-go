@@ -85,8 +85,8 @@ type GetSubscriptionPriceRequest struct {
 	ModuleList            *[]GetSubscriptionPriceModuleList `position:"Query" name:"ModuleList"  type:"Repeated"`
 	OwnerId               requests.Integer                  `position:"Query" name:"OwnerId"`
 	Region                string                            `position:"Query" name:"Region"`
-	ProductType           string                            `position:"Query" name:"ProductType"`
 	OrderType             string                            `position:"Query" name:"OrderType"`
+	ProductType           string                            `position:"Query" name:"ProductType"`
 }
 
 // GetSubscriptionPriceModuleList is a repeated param struct in GetSubscriptionPriceRequest

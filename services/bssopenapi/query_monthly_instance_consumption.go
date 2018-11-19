@@ -80,19 +80,19 @@ type QueryMonthlyInstanceConsumptionRequest struct {
 	SubscriptionType string           `position:"Query" name:"SubscriptionType"`
 	PageSize         requests.Integer `position:"Query" name:"PageSize"`
 	BillingCycle     string           `position:"Query" name:"BillingCycle"`
-	PageNum          requests.Integer `position:"Query" name:"PageNum"`
 	OwnerId          requests.Integer `position:"Query" name:"OwnerId"`
+	PageNum          requests.Integer `position:"Query" name:"PageNum"`
 	ProductType      string           `position:"Query" name:"ProductType"`
 }
 
 // QueryMonthlyInstanceConsumptionResponse is the response struct for api QueryMonthlyInstanceConsumption
 type QueryMonthlyInstanceConsumptionResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	Data      Data   `json:"Data" xml:"Data"`
+	RequestId string                                `json:"RequestId" xml:"RequestId"`
+	Success   bool                                  `json:"Success" xml:"Success"`
+	Code      string                                `json:"Code" xml:"Code"`
+	Message   string                                `json:"Message" xml:"Message"`
+	Data      DataInQueryMonthlyInstanceConsumption `json:"Data" xml:"Data"`
 }
 
 // CreateQueryMonthlyInstanceConsumptionRequest creates a request to invoke QueryMonthlyInstanceConsumption API
