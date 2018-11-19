@@ -16,6 +16,7 @@ package requests
 
 import (
 	"bytes"
+	"fmt"
 	"io"
 	"net/url"
 	"sort"
@@ -47,23 +48,21 @@ func (request *RoaRequest) GetBodyReader() io.Reader {
 
 // for sign method, need not url encoded
 func (request *RoaRequest) BuildQueries() string {
-	return request.buildQueries(false)
+	return request.buildQueries()
 }
 
-func (request *RoaRequest) buildQueries(needParamEncode bool) string {
-	// replace path params with value
+func (request *RoaRequest) buildPath() string {
 	path := request.pathPattern
 	for key, value := range request.PathParams {
 		path = strings.Replace(path, "["+key+"]", value, 1)
 	}
+	return path
+}
 
+func (request *RoaRequest) buildQueries() string {
+	// replace path params with value
+	path := request.buildPath()
 	queryParams := request.QueryParams
-	// check if path contains params
-	// splitArray := strings.Split(path, "?")
-	// path = splitArray[0]
-	// if len(splitArray) > 1 && len(splitArray[1]) > 0 {
-	// 	queryParams[splitArray[1]] = ""
-	// }
 	// sort QueryParams by key
 	var queryKeys []string
 	for key := range queryParams {
@@ -82,11 +81,7 @@ func (request *RoaRequest) buildQueries(needParamEncode bool) string {
 		urlBuilder.WriteString(queryKey)
 		if value := queryParams[queryKey]; len(value) > 0 {
 			urlBuilder.WriteString("=")
-			if needParamEncode {
-				urlBuilder.WriteString(url.QueryEscape(value))
-			} else {
-				urlBuilder.WriteString(value)
-			}
+			urlBuilder.WriteString(value)
 		}
 		if i < len(queryKeys)-1 {
 			urlBuilder.WriteString("&")
@@ -94,8 +89,17 @@ func (request *RoaRequest) buildQueries(needParamEncode bool) string {
 	}
 	result := urlBuilder.String()
 	result = popStandardUrlencode(result)
-	request.queries = result
-	return request.queries
+	return result
+}
+
+func (request *RoaRequest) buildQueryString() string {
+	queryParams := request.QueryParams
+	// sort QueryParams by key
+	q := url.Values{}
+	for key, value := range queryParams {
+		q.Add(key, value)
+	}
+	return q.Encode()
 }
 
 func popStandardUrlencode(stringToSign string) (result string) {
@@ -107,7 +111,16 @@ func popStandardUrlencode(stringToSign string) (result string) {
 
 func (request *RoaRequest) BuildUrl() string {
 	// for network trans, need url encoded
-	return strings.ToLower(request.Scheme) + "://" + request.Domain + ":" + request.Port + request.buildQueries(true)
+	scheme := strings.ToLower(request.Scheme)
+	domain := request.Domain
+	port := request.Port
+	path := request.buildPath()
+	url := fmt.Sprintf("%s://%s:%s%s", scheme, domain, port, path)
+	querystring := request.buildQueryString()
+	if len(querystring) > 0 {
+		url = fmt.Sprintf("%s?%s", url, querystring)
+	}
+	return url
 }
 
 func (request *RoaRequest) addPathParam(key, value string) {

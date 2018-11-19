@@ -56,6 +56,8 @@ func Test_RoaRequest_BuildUrl(t *testing.T) {
 	assert.Equal(t, "http://domain.com:80/?key=value", r.BuildUrl())
 	r.addQueryParam("key", "https://domain/?q=v")
 	assert.Equal(t, "http://domain.com:80/?key=https%3A%2F%2Fdomain%2F%3Fq%3Dv", r.BuildUrl())
+	r.addQueryParam("url", "https://domain/?q1=v1&q2=v2")
+	assert.Equal(t, "http://domain.com:80/?key=https%3A%2F%2Fdomain%2F%3Fq%3Dv&url=https%3A%2F%2Fdomain%2F%3Fq1%3Dv1%26q2%3Dv2", r.BuildUrl())
 }
 
 func Test_RoaRequest_BuildUrl2(t *testing.T) {
@@ -75,6 +77,8 @@ func Test_RoaRequest_BuildUrl2(t *testing.T) {
 	r.Port = "80"
 	r.addPathParam("user", "name")
 	assert.Equal(t, "http://domain.com:80/users/name", r.BuildUrl())
+	r.addQueryParam("key", "value")
+	assert.Equal(t, "http://domain.com:80/users/name?key=value", r.BuildUrl())
 }
 
 func Test_RoaRequest_GetBodyReader_Nil(t *testing.T) {
