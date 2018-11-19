@@ -86,11 +86,7 @@ func (request *CommonRequest) TransToAcsRequest() {
 }
 
 func (request *CommonRequest) BuildUrl() string {
-	if len(request.Port) > 0 {
-		return strings.ToLower(request.Scheme) + "://" + request.Domain + ":" + request.Port + request.BuildQueries()
-	}
-
-	return strings.ToLower(request.Scheme) + "://" + request.Domain + request.BuildQueries()
+	return request.Ontology.BuildUrl()
 }
 
 func (request *CommonRequest) BuildQueries() string {

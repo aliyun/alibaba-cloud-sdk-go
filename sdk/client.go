@@ -26,7 +26,14 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/errors"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/utils"
 )
+
+var debug utils.Debug
+
+func init() {
+	debug = utils.Init("sdk")
+}
 
 // Version this value will be replaced while build: -ldflags="-X sdk.version=x.x.x"
 var Version = "0.0.1"
@@ -288,6 +295,7 @@ func buildHttpRequest(request requests.AcsRequest, singer auth.Signer, regionId 
 	}
 	requestMethod := request.GetMethod()
 	requestUrl := request.BuildUrl()
+	debug("request URL: %s", requestUrl)
 	body := request.GetBodyReader()
 	httpRequest, err = http.NewRequest(requestMethod, requestUrl, body)
 	if err != nil {

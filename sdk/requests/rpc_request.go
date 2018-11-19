@@ -15,6 +15,7 @@
 package requests
 
 import (
+	"fmt"
 	"io"
 	"strings"
 
@@ -49,7 +50,11 @@ func (request *RpcRequest) BuildQueries() string {
 }
 
 func (request *RpcRequest) BuildUrl() string {
-	return strings.ToLower(request.Scheme) + "://" + request.Domain + ":" + request.Port + request.BuildQueries()
+	url := fmt.Sprintf("%s://%s", strings.ToLower(request.Scheme), request.Domain)
+	if len(request.Port) > 0 {
+		url = fmt.Sprintf("%s:%s", url, request.Port)
+	}
+	return url + request.BuildQueries()
 }
 
 func (request *RpcRequest) GetVersion() string {
