@@ -1,3 +1,7 @@
+2018-11-20 Version: 1.40.1
+1, Add MNS STS Token Query API
+2, Add MNS Minimal Package
+
 2018-11-19 Version: 1.40.0
 1, Add field BargainSellerPrice and BargainSellerMobile
 
