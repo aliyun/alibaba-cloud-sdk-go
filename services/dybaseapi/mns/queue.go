@@ -160,6 +160,5 @@ func buildHttpRequest(request requests.AcsRequest, singer auth.Signer) (httpRequ
 }
 
 func (queue *Queue) Shutdown() {
-	queue.signer.Shutdown()
 	queue.isRunning = false
 }

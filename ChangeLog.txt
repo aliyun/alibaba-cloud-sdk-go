@@ -1,3 +1,6 @@
+2018-11-20 Version: 1.40.2
+1, Fix Compatibility Problems
+
 2018-11-20 Version: 1.40.1
 1, Add MNS STS Token Query API
 2, Add MNS Minimal Package
