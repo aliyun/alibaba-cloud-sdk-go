@@ -86,6 +86,7 @@ type GetVideoListRequest struct {
 	StartTime            string           `position:"Query" name:"StartTime"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	Status               string           `position:"Query" name:"Status"`
+	StorageLocation      string           `position:"Query" name:"StorageLocation"`
 }
 
 // GetVideoListResponse is the response struct for api GetVideoList

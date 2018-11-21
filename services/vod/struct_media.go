@@ -22,4 +22,5 @@ type Media struct {
 	MediaId      string `json:"MediaId" xml:"MediaId"`
 	Video        Video  `json:"Video" xml:"Video"`
 	Audio        Audio  `json:"Audio" xml:"Audio"`
+	Image        Image  `json:"Image" xml:"Image"`
 }

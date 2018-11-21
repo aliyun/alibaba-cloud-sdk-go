@@ -90,8 +90,8 @@ type UploadMediaByURLRequest struct {
 // UploadMediaByURLResponse is the response struct for api UploadMediaByURL
 type UploadMediaByURLResponse struct {
 	*responses.BaseResponse
-	RequestId  string     `json:"RequestId" xml:"RequestId"`
-	UploadJobs UploadJobs `json:"UploadJobs" xml:"UploadJobs"`
+	RequestId  string      `json:"RequestId" xml:"RequestId"`
+	UploadJobs []UploadJob `json:"UploadJobs" xml:"UploadJobs"`
 }
 
 // CreateUploadMediaByURLRequest creates a request to invoke UploadMediaByURL API
