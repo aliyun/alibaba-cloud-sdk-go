@@ -80,6 +80,7 @@ type TranslateGeneralRequest struct {
 	SourceText     string `position:"Body" name:"SourceText"`
 	FormatType     string `position:"Body" name:"FormatType"`
 	TargetLanguage string `position:"Body" name:"TargetLanguage"`
+	Scene          string `position:"Body" name:"Scene"`
 }
 
 // TranslateGeneralResponse is the response struct for api TranslateGeneral

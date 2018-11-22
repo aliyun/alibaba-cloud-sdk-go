@@ -80,6 +80,7 @@ type TranslateECommerceRequest struct {
 	SourceText     string `position:"Body" name:"SourceText"`
 	FormatType     string `position:"Body" name:"FormatType"`
 	TargetLanguage string `position:"Body" name:"TargetLanguage"`
+	Scene          string `position:"Body" name:"Scene"`
 }
 
 // TranslateECommerceResponse is the response struct for api TranslateECommerce
