@@ -83,6 +83,7 @@ type ModifyInstanceAttributeRequest struct {
 	Description          string           `position:"Query" name:"Description"`
 	CreditSpecification  string           `position:"Query" name:"CreditSpecification"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	DeletionProtection   requests.Boolean `position:"Query" name:"DeletionProtection"`
 	UserData             string           `position:"Query" name:"UserData"`
 	Password             string           `position:"Query" name:"Password"`
 	HostName             string           `position:"Query" name:"HostName"`

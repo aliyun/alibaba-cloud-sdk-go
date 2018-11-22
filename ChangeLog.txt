@@ -1,3 +1,7 @@
+2018-11-22 Version: 1.40.4
+1, Add parameter DeletionProtection when creating instance and modifying instance attribute
+
+
 2018-11-21 Version: 1.40.3
 1, Add new apis called AddWatermark, UpdateWatermark, DeleteWatermark, ListWatermarks, GetWatermark and SetDefaultWatermark which support watermark feature.
 2, Add a new api called RegisterMedia which supports registration of audio and video media files that already exist in the OSS bucket.

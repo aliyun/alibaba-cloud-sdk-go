@@ -81,6 +81,7 @@ type CreateInstanceRequest struct {
 	SecurityEnhancementStrategy string                    `position:"Query" name:"SecurityEnhancementStrategy"`
 	KeyPairName                 string                    `position:"Query" name:"KeyPairName"`
 	SpotPriceLimit              requests.Float            `position:"Query" name:"SpotPriceLimit"`
+	DeletionProtection          requests.Boolean          `position:"Query" name:"DeletionProtection"`
 	ResourceGroupId             string                    `position:"Query" name:"ResourceGroupId"`
 	HostName                    string                    `position:"Query" name:"HostName"`
 	Password                    string                    `position:"Query" name:"Password"`
