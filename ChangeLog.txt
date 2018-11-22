@@ -1,3 +1,7 @@
+2018-11-22 Version: 1.41.0
+1, Add ScrollDomainList api.
+2, Add email filter for QueryRegistrantProfile.
+
 2018-11-22 Version: 1.40.4
 1, Add parameter DeletionProtection when creating instance and modifying instance attribute
 

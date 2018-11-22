@@ -85,6 +85,7 @@ type QueryRegistrantProfilesRequest struct {
 	Lang                     string           `position:"Query" name:"Lang"`
 	PageNum                  requests.Integer `position:"Query" name:"PageNum"`
 	DefaultRegistrantProfile requests.Boolean `position:"Query" name:"DefaultRegistrantProfile"`
+	Email                    string           `position:"Query" name:"Email"`
 	ZhRegistrantOrganization string           `position:"Query" name:"ZhRegistrantOrganization"`
 }
 
