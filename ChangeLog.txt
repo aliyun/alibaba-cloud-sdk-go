@@ -1,3 +1,6 @@
+2018-11-22 Version: 1.41.1
+1, Provide attribute info for DescribePricingModule api.
+
 2018-11-22 Version: 1.41.0
 1, Add ScrollDomainList api.
 2, Add email filter for QueryRegistrantProfile.
