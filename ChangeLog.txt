@@ -1,3 +1,8 @@
+2018-11-26 Version: 1.42.0
+1, Add RegisterInstance interface, Support admin or DBA user to register new db instance.
+2, Add RegisterUser Interface, Support admin user to register new user.
+3, Add GetOpLog Interface, Support admin user to get operation log.
+
 2018-11-22 Version: 1.41.2
 1, Increase the scene field
 
