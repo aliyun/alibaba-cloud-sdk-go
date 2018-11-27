@@ -76,21 +76,24 @@ func (client *Client) ConvertOfficeFormatWithCallback(request *ConvertOfficeForm
 // ConvertOfficeFormatRequest is the request struct for api ConvertOfficeFormat
 type ConvertOfficeFormatRequest struct {
 	*requests.RpcRequest
-	ImageSpec     string           `position:"Query" name:"ImageSpec"`
-	SrcType       string           `position:"Query" name:"SrcType"`
-	ModelId       string           `position:"Query" name:"ModelId"`
-	Project       string           `position:"Query" name:"Project"`
-	ExternalID    string           `position:"Query" name:"ExternalID"`
-	MaxSheetRow   requests.Integer `position:"Query" name:"MaxSheetRow"`
-	MaxSheetCount requests.Integer `position:"Query" name:"MaxSheetCount"`
-	EndPage       requests.Integer `position:"Query" name:"EndPage"`
-	SheetOnePage  requests.Boolean `position:"Query" name:"SheetOnePage"`
-	Password      string           `position:"Query" name:"Password"`
-	StartPage     requests.Integer `position:"Query" name:"StartPage"`
-	MaxSheetCol   requests.Integer `position:"Query" name:"MaxSheetCol"`
-	TgtType       string           `position:"Query" name:"TgtType"`
-	SrcUri        string           `position:"Query" name:"SrcUri"`
-	TgtUri        string           `position:"Query" name:"TgtUri"`
+	SrcType        string           `position:"Query" name:"SrcType"`
+	ModelId        string           `position:"Query" name:"ModelId"`
+	Project        string           `position:"Query" name:"Project"`
+	MaxSheetRow    requests.Integer `position:"Query" name:"MaxSheetRow"`
+	MaxSheetCount  requests.Integer `position:"Query" name:"MaxSheetCount"`
+	EndPage        requests.Integer `position:"Query" name:"EndPage"`
+	TgtFileSuffix  string           `position:"Query" name:"TgtFileSuffix"`
+	SheetOnePage   requests.Boolean `position:"Query" name:"SheetOnePage"`
+	Password       string           `position:"Query" name:"Password"`
+	StartPage      requests.Integer `position:"Query" name:"StartPage"`
+	MaxSheetCol    requests.Integer `position:"Query" name:"MaxSheetCol"`
+	TgtType        string           `position:"Query" name:"TgtType"`
+	FitToPagesWide requests.Boolean `position:"Query" name:"FitToPagesWide"`
+	TgtFilePrefix  string           `position:"Query" name:"TgtFilePrefix"`
+	FitToPagesTall requests.Boolean `position:"Query" name:"FitToPagesTall"`
+	SrcUri         string           `position:"Query" name:"SrcUri"`
+	TgtFilePages   string           `position:"Query" name:"TgtFilePages"`
+	TgtUri         string           `position:"Query" name:"TgtUri"`
 }
 
 // ConvertOfficeFormatResponse is the response struct for api ConvertOfficeFormat
