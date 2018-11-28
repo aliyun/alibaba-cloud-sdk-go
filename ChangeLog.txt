@@ -1,3 +1,6 @@
+2018-11-28 Version: 1.42.4
+1, Add RedeployInstance interface, and support to migrate ecs instance with specified maintenance events actively
+
 2018-11-27 Version: 1.42.3
 1, ConvertOfficeFormat support TgtFilePrefix, TgtFileSuffix, TgtFilePages, FitToPagesTall, FitToPagesWide
 
