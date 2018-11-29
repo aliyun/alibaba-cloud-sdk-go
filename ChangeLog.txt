@@ -1,3 +1,6 @@
+2018-11-29 Version: 1.42.5
+1, This is the first version of Uis service.
+
 2018-11-28 Version: 1.42.4
 1, Add RedeployInstance interface, and support to migrate ecs instance with specified maintenance events actively
 
