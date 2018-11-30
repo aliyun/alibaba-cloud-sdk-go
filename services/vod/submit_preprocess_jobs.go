@@ -95,7 +95,7 @@ func CreateSubmitPreprocessJobsRequest() (request *SubmitPreprocessJobsRequest) 
 	request = &SubmitPreprocessJobsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "SubmitPreprocessJobs", "vod", "openAPI")
+	request.InitWithApiInfo("vod", "2017-03-21", "SubmitPreprocessJobs", "", "")
 	return
 }
 

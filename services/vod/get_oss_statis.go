@@ -98,7 +98,7 @@ func CreateGetOSSStatisRequest() (request *GetOSSStatisRequest) {
 	request = &GetOSSStatisRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "GetOSSStatis", "vod", "openAPI")
+	request.InitWithApiInfo("vod", "2017-03-21", "GetOSSStatis", "", "")
 	return
 }
 

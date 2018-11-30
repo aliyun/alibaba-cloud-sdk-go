@@ -17,6 +17,6 @@ package vod
 
 // Input is a nested struct in vod response
 type Input struct {
-	Duration string `json:"Duration" xml:"Duration"`
 	Start    string `json:"Start" xml:"Start"`
+	Duration string `json:"Duration" xml:"Duration"`
 }

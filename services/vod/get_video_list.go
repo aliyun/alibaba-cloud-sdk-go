@@ -102,7 +102,7 @@ func CreateGetVideoListRequest() (request *GetVideoListRequest) {
 	request = &GetVideoListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "GetVideoList", "vod", "openAPI")
+	request.InitWithApiInfo("vod", "2017-03-21", "GetVideoList", "", "")
 	return
 }
 

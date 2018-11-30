@@ -95,7 +95,7 @@ func CreateAddCategoryRequest() (request *AddCategoryRequest) {
 	request = &AddCategoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "AddCategory", "vod", "openAPI")
+	request.InitWithApiInfo("vod", "2017-03-21", "AddCategory", "", "")
 	return
 }
 

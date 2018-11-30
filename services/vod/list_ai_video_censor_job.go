@@ -96,7 +96,7 @@ func CreateListAIVideoCensorJobRequest() (request *ListAIVideoCensorJobRequest) 
 	request = &ListAIVideoCensorJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "ListAIVideoCensorJob", "vod", "openAPI")
+	request.InitWithApiInfo("vod", "2017-03-21", "ListAIVideoCensorJob", "", "")
 	return
 }
 

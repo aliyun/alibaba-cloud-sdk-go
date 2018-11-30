@@ -77,14 +77,15 @@ func (client *Client) SubmitSnapshotJobWithCallback(request *SubmitSnapshotJobRe
 type SubmitSnapshotJobRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	SpecifiedOffsetTime  requests.Integer `position:"Query" name:"SpecifiedOffsetTime"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	Width                string           `position:"Query" name:"Width"`
 	Count                requests.Integer `position:"Query" name:"Count"`
 	VideoId              string           `position:"Query" name:"VideoId"`
-	Interval             requests.Integer `position:"Query" name:"Interval"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	SpecifiedOffsetTime  requests.Integer `position:"Query" name:"SpecifiedOffsetTime"`
+	Width                string           `position:"Query" name:"Width"`
+	Interval             requests.Integer `position:"Query" name:"Interval"`
 	SpriteSnapshotConfig string           `position:"Query" name:"SpriteSnapshotConfig"`
+	SnapshotTemplateId   string           `position:"Query" name:"SnapshotTemplateId"`
 	Height               string           `position:"Query" name:"Height"`
 }
 
@@ -100,7 +101,7 @@ func CreateSubmitSnapshotJobRequest() (request *SubmitSnapshotJobRequest) {
 	request = &SubmitSnapshotJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "SubmitSnapshotJob", "vod", "openAPI")
+	request.InitWithApiInfo("vod", "2017-03-21", "SubmitSnapshotJob", "", "")
 	return
 }
 

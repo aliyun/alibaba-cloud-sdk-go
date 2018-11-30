@@ -103,7 +103,7 @@ func CreateDescribeCdnDomainLogsRequest() (request *DescribeCdnDomainLogsRequest
 	request = &DescribeCdnDomainLogsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "DescribeCdnDomainLogs", "vod", "openAPI")
+	request.InitWithApiInfo("vod", "2017-03-21", "DescribeCdnDomainLogs", "", "")
 	return
 }
 

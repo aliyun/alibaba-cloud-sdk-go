@@ -97,7 +97,7 @@ func CreateSubmitAIVideoTerrorismRecogJobRequest() (request *SubmitAIVideoTerror
 	request = &SubmitAIVideoTerrorismRecogJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "SubmitAIVideoTerrorismRecogJob", "vod", "openAPI")
+	request.InitWithApiInfo("vod", "2017-03-21", "SubmitAIVideoTerrorismRecogJob", "", "")
 	return
 }
 

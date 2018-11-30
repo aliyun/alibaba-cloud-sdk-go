@@ -91,7 +91,7 @@ func CreateListAuditSecurityIpRequest() (request *ListAuditSecurityIpRequest) {
 	request = &ListAuditSecurityIpRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "ListAuditSecurityIp", "vod", "openAPI")
+	request.InitWithApiInfo("vod", "2017-03-21", "ListAuditSecurityIp", "", "")
 	return
 }
 

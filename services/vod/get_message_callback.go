@@ -94,7 +94,7 @@ func CreateGetMessageCallbackRequest() (request *GetMessageCallbackRequest) {
 	request = &GetMessageCallbackRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "GetMessageCallback", "vod", "openAPI")
+	request.InitWithApiInfo("vod", "2017-03-21", "GetMessageCallback", "", "")
 	return
 }
 

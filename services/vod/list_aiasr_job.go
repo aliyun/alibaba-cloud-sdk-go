@@ -96,7 +96,7 @@ func CreateListAIASRJobRequest() (request *ListAIASRJobRequest) {
 	request = &ListAIASRJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "ListAIASRJob", "vod", "openAPI")
+	request.InitWithApiInfo("vod", "2017-03-21", "ListAIASRJob", "", "")
 	return
 }
 

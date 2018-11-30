@@ -97,7 +97,7 @@ func CreateSubmitAIVideoCategoryJobRequest() (request *SubmitAIVideoCategoryJobR
 	request = &SubmitAIVideoCategoryJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "SubmitAIVideoCategoryJob", "vod", "openAPI")
+	request.InitWithApiInfo("vod", "2017-03-21", "SubmitAIVideoCategoryJob", "", "")
 	return
 }
 

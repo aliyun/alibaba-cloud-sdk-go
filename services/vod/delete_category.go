@@ -93,7 +93,7 @@ func CreateDeleteCategoryRequest() (request *DeleteCategoryRequest) {
 	request = &DeleteCategoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "DeleteCategory", "vod", "openAPI")
+	request.InitWithApiInfo("vod", "2017-03-21", "DeleteCategory", "", "")
 	return
 }
 

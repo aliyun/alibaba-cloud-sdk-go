@@ -17,21 +17,9 @@ package vod
 
 // Mezzanine is a nested struct in vod response
 type Mezzanine struct {
-	OutputType       string        `json:"OutputType" xml:"OutputType"`
-	PreprocessStatus string        `json:"PreprocessStatus" xml:"PreprocessStatus"`
-	Fps              string        `json:"Fps" xml:"Fps"`
-	Bitrate          string        `json:"Bitrate" xml:"Bitrate"`
-	CreationTime     string        `json:"CreationTime" xml:"CreationTime"`
-	CRC64            string        `json:"CRC64" xml:"CRC64"`
-	OriginalFileName string        `json:"OriginalFileName" xml:"OriginalFileName"`
-	Height           int           `json:"Height" xml:"Height"`
-	FileURL          string        `json:"FileURL" xml:"FileURL"`
-	Duration         string        `json:"Duration" xml:"Duration"`
-	Width            int           `json:"Width" xml:"Width"`
-	Size             int           `json:"Size" xml:"Size"`
-	Status           string        `json:"Status" xml:"Status"`
-	FileName         string        `json:"FileName" xml:"FileName"`
-	VideoId          string        `json:"VideoId" xml:"VideoId"`
-	VideoStreamList  []VideoStream `json:"VideoStreamList" xml:"VideoStreamList"`
-	AudioStreamList  []AudioStream `json:"AudioStreamList" xml:"AudioStreamList"`
+	FileSize         string `json:"FileSize" xml:"FileSize"`
+	FileURL          string `json:"FileURL" xml:"FileURL"`
+	Width            int    `json:"Width" xml:"Width"`
+	Height           int    `json:"Height" xml:"Height"`
+	OriginalFileName string `json:"OriginalFileName" xml:"OriginalFileName"`
 }

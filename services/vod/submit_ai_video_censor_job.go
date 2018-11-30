@@ -97,7 +97,7 @@ func CreateSubmitAIVideoCensorJobRequest() (request *SubmitAIVideoCensorJobReque
 	request = &SubmitAIVideoCensorJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "SubmitAIVideoCensorJob", "vod", "openAPI")
+	request.InitWithApiInfo("vod", "2017-03-21", "SubmitAIVideoCensorJob", "", "")
 	return
 }
 

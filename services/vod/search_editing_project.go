@@ -102,7 +102,7 @@ func CreateSearchEditingProjectRequest() (request *SearchEditingProjectRequest) 
 	request = &SearchEditingProjectRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "SearchEditingProject", "vod", "openAPI")
+	request.InitWithApiInfo("vod", "2017-03-21", "SearchEditingProject", "", "")
 	return
 }
 

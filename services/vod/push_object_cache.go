@@ -95,7 +95,7 @@ func CreatePushObjectCacheRequest() (request *PushObjectCacheRequest) {
 	request = &PushObjectCacheRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "PushObjectCache", "vod", "openAPI")
+	request.InitWithApiInfo("vod", "2017-03-21", "PushObjectCache", "", "")
 	return
 }
 

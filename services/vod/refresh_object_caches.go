@@ -96,7 +96,7 @@ func CreateRefreshObjectCachesRequest() (request *RefreshObjectCachesRequest) {
 	request = &RefreshObjectCachesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "RefreshObjectCaches", "vod", "openAPI")
+	request.InitWithApiInfo("vod", "2017-03-21", "RefreshObjectCaches", "", "")
 	return
 }
 

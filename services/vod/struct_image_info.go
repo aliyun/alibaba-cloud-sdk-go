@@ -17,11 +17,15 @@ package vod
 
 // ImageInfo is a nested struct in vod response
 type ImageInfo struct {
-	ImageId      string    `json:"ImageId" xml:"ImageId"`
-	Title        string    `json:"Title" xml:"Title"`
-	CreationTime string    `json:"CreationTime" xml:"CreationTime"`
-	ImageType    string    `json:"ImageType" xml:"ImageType"`
-	Tags         string    `json:"Tags" xml:"Tags"`
-	URL          string    `json:"URL" xml:"URL"`
-	Mezzanine    Mezzanine `json:"Mezzanine" xml:"Mezzanine"`
+	ImageId         string    `json:"ImageId" xml:"ImageId"`
+	Title           string    `json:"Title" xml:"Title"`
+	CreationTime    string    `json:"CreationTime" xml:"CreationTime"`
+	ImageType       string    `json:"ImageType" xml:"ImageType"`
+	Tags            string    `json:"Tags" xml:"Tags"`
+	URL             string    `json:"URL" xml:"URL"`
+	CateId          int       `json:"CateId" xml:"CateId"`
+	CateName        string    `json:"CateName" xml:"CateName"`
+	Description     string    `json:"Description" xml:"Description"`
+	StorageLocation string    `json:"StorageLocation" xml:"StorageLocation"`
+	Mezzanine       Mezzanine `json:"Mezzanine" xml:"Mezzanine"`
 }

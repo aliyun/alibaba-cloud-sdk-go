@@ -81,6 +81,7 @@ type CreateUploadImageRequest struct {
 	OriginalFileName     string           `position:"Query" name:"OriginalFileName"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ImageExt             string           `position:"Query" name:"ImageExt"`
+	CateId               requests.Integer `position:"Query" name:"CateId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	Title                string           `position:"Query" name:"Title"`
 	Tags                 string           `position:"Query" name:"Tags"`
@@ -102,7 +103,7 @@ func CreateCreateUploadImageRequest() (request *CreateUploadImageRequest) {
 	request = &CreateUploadImageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "CreateUploadImage", "vod", "openAPI")
+	request.InitWithApiInfo("vod", "2017-03-21", "CreateUploadImage", "", "")
 	return
 }
 

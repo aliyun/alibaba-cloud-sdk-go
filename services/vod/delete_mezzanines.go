@@ -96,7 +96,7 @@ func CreateDeleteMezzaninesRequest() (request *DeleteMezzaninesRequest) {
 	request = &DeleteMezzaninesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "DeleteMezzanines", "vod", "openAPI")
+	request.InitWithApiInfo("vod", "2017-03-21", "DeleteMezzanines", "", "")
 	return
 }
 

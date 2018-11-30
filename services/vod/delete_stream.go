@@ -94,7 +94,7 @@ func CreateDeleteStreamRequest() (request *DeleteStreamRequest) {
 	request = &DeleteStreamRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "DeleteStream", "vod", "openAPI")
+	request.InitWithApiInfo("vod", "2017-03-21", "DeleteStream", "", "")
 	return
 }
 
