@@ -85,12 +85,12 @@ type DescribeScdnDomainIspDataRequest struct {
 // DescribeScdnDomainIspDataResponse is the response struct for api DescribeScdnDomainIspData
 type DescribeScdnDomainIspDataResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
-	DomainName   string `json:"DomainName" xml:"DomainName"`
-	DataInterval string `json:"DataInterval" xml:"DataInterval"`
-	StartTime    string `json:"StartTime" xml:"StartTime"`
-	EndTime      string `json:"EndTime" xml:"EndTime"`
-	Value        Value  `json:"Value" xml:"Value"`
+	RequestId    string                           `json:"RequestId" xml:"RequestId"`
+	DomainName   string                           `json:"DomainName" xml:"DomainName"`
+	DataInterval string                           `json:"DataInterval" xml:"DataInterval"`
+	StartTime    string                           `json:"StartTime" xml:"StartTime"`
+	EndTime      string                           `json:"EndTime" xml:"EndTime"`
+	Value        ValueInDescribeScdnDomainIspData `json:"Value" xml:"Value"`
 }
 
 // CreateDescribeScdnDomainIspDataRequest creates a request to invoke DescribeScdnDomainIspData API

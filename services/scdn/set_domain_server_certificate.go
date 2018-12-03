@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// SetScdnDomainCertificate invokes the scdn.SetScdnDomainCertificate API synchronously
-// api document: https://help.aliyun.com/api/scdn/setscdndomaincertificate.html
-func (client *Client) SetScdnDomainCertificate(request *SetScdnDomainCertificateRequest) (response *SetScdnDomainCertificateResponse, err error) {
-	response = CreateSetScdnDomainCertificateResponse()
+// SetDomainServerCertificate invokes the scdn.SetDomainServerCertificate API synchronously
+// api document: https://help.aliyun.com/api/scdn/setdomainservercertificate.html
+func (client *Client) SetDomainServerCertificate(request *SetDomainServerCertificateRequest) (response *SetDomainServerCertificateResponse, err error) {
+	response = CreateSetDomainServerCertificateResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// SetScdnDomainCertificateWithChan invokes the scdn.SetScdnDomainCertificate API asynchronously
-// api document: https://help.aliyun.com/api/scdn/setscdndomaincertificate.html
+// SetDomainServerCertificateWithChan invokes the scdn.SetDomainServerCertificate API asynchronously
+// api document: https://help.aliyun.com/api/scdn/setdomainservercertificate.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) SetScdnDomainCertificateWithChan(request *SetScdnDomainCertificateRequest) (<-chan *SetScdnDomainCertificateResponse, <-chan error) {
-	responseChan := make(chan *SetScdnDomainCertificateResponse, 1)
+func (client *Client) SetDomainServerCertificateWithChan(request *SetDomainServerCertificateRequest) (<-chan *SetDomainServerCertificateResponse, <-chan error) {
+	responseChan := make(chan *SetDomainServerCertificateResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.SetScdnDomainCertificate(request)
+		response, err := client.SetDomainServerCertificate(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) SetScdnDomainCertificateWithChan(request *SetScdnDomainCer
 	return responseChan, errChan
 }
 
-// SetScdnDomainCertificateWithCallback invokes the scdn.SetScdnDomainCertificate API asynchronously
-// api document: https://help.aliyun.com/api/scdn/setscdndomaincertificate.html
+// SetDomainServerCertificateWithCallback invokes the scdn.SetDomainServerCertificate API asynchronously
+// api document: https://help.aliyun.com/api/scdn/setdomainservercertificate.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) SetScdnDomainCertificateWithCallback(request *SetScdnDomainCertificateRequest, callback func(response *SetScdnDomainCertificateResponse, err error)) <-chan int {
+func (client *Client) SetDomainServerCertificateWithCallback(request *SetDomainServerCertificateRequest, callback func(response *SetDomainServerCertificateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *SetScdnDomainCertificateResponse
+		var response *SetDomainServerCertificateResponse
 		var err error
 		defer close(result)
-		response, err = client.SetScdnDomainCertificate(request)
+		response, err = client.SetDomainServerCertificate(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,12 +73,10 @@ func (client *Client) SetScdnDomainCertificateWithCallback(request *SetScdnDomai
 	return result
 }
 
-// SetScdnDomainCertificateRequest is the request struct for api SetScdnDomainCertificate
-type SetScdnDomainCertificateRequest struct {
+// SetDomainServerCertificateRequest is the request struct for api SetDomainServerCertificate
+type SetDomainServerCertificateRequest struct {
 	*requests.RpcRequest
-	ForceSet      string           `position:"Query" name:"ForceSet"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
-	CertType      string           `position:"Query" name:"CertType"`
 	SSLPub        string           `position:"Query" name:"SSLPub"`
 	CertName      string           `position:"Query" name:"CertName"`
 	SSLProtocol   string           `position:"Query" name:"SSLProtocol"`
@@ -88,24 +86,24 @@ type SetScdnDomainCertificateRequest struct {
 	SSLPri        string           `position:"Query" name:"SSLPri"`
 }
 
-// SetScdnDomainCertificateResponse is the response struct for api SetScdnDomainCertificate
-type SetScdnDomainCertificateResponse struct {
+// SetDomainServerCertificateResponse is the response struct for api SetDomainServerCertificate
+type SetDomainServerCertificateResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateSetScdnDomainCertificateRequest creates a request to invoke SetScdnDomainCertificate API
-func CreateSetScdnDomainCertificateRequest() (request *SetScdnDomainCertificateRequest) {
-	request = &SetScdnDomainCertificateRequest{
+// CreateSetDomainServerCertificateRequest creates a request to invoke SetDomainServerCertificate API
+func CreateSetDomainServerCertificateRequest() (request *SetDomainServerCertificateRequest) {
+	request = &SetDomainServerCertificateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("scdn", "2017-11-15", "SetScdnDomainCertificate", "", "")
+	request.InitWithApiInfo("scdn", "2017-11-15", "SetDomainServerCertificate", "", "")
 	return
 }
 
-// CreateSetScdnDomainCertificateResponse creates a response to parse from SetScdnDomainCertificate response
-func CreateSetScdnDomainCertificateResponse() (response *SetScdnDomainCertificateResponse) {
-	response = &SetScdnDomainCertificateResponse{
+// CreateSetDomainServerCertificateResponse creates a response to parse from SetDomainServerCertificate response
+func CreateSetDomainServerCertificateResponse() (response *SetDomainServerCertificateResponse) {
+	response = &SetDomainServerCertificateResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

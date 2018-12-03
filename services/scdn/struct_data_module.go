@@ -23,6 +23,7 @@ type DataModule struct {
 	ByteHitRate             string                  `json:"ByteHitRate" xml:"ByteHitRate"`
 	HttpsTrafficValue       string                  `json:"HttpsTrafficValue" xml:"HttpsTrafficValue"`
 	AccValue                string                  `json:"AccValue" xml:"AccValue"`
+	Value                   string                  `json:"Value" xml:"Value"`
 	TrafficValue            string                  `json:"TrafficValue" xml:"TrafficValue"`
 	TimeStamp               string                  `json:"TimeStamp" xml:"TimeStamp"`
 	QpsValue                string                  `json:"QpsValue" xml:"QpsValue"`
