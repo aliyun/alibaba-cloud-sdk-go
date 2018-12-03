@@ -76,13 +76,11 @@ func (client *Client) DescribeDomainHitRateDataWithCallback(request *DescribeDom
 // DescribeDomainHitRateDataRequest is the request struct for api DescribeDomainHitRateData
 type DescribeDomainHitRateDataRequest struct {
 	*requests.RpcRequest
-	LocationNameEn string           `position:"Query" name:"LocationNameEn"`
-	StartTime      string           `position:"Query" name:"StartTime"`
-	IspNameEn      string           `position:"Query" name:"IspNameEn"`
-	DomainName     string           `position:"Query" name:"DomainName"`
-	EndTime        string           `position:"Query" name:"EndTime"`
-	OwnerId        requests.Integer `position:"Query" name:"OwnerId"`
-	Interval       string           `position:"Query" name:"Interval"`
+	StartTime  string           `position:"Query" name:"StartTime"`
+	DomainName string           `position:"Query" name:"DomainName"`
+	EndTime    string           `position:"Query" name:"EndTime"`
+	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
+	Interval   string           `position:"Query" name:"Interval"`
 }
 
 // DescribeDomainHitRateDataResponse is the response struct for api DescribeDomainHitRateData

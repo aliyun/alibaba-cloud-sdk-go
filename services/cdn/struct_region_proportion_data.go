@@ -25,6 +25,7 @@ type RegionProportionData struct {
 	Bps             string `json:"Bps" xml:"Bps"`
 	Qps             string `json:"Qps" xml:"Qps"`
 	AvgResponseRate string `json:"AvgResponseRate" xml:"AvgResponseRate"`
+	ReqErrRate      string `json:"ReqErrRate" xml:"ReqErrRate"`
 	TotalBytes      string `json:"TotalBytes" xml:"TotalBytes"`
 	BytesProportion string `json:"BytesProportion" xml:"BytesProportion"`
 	TotalQuery      string `json:"TotalQuery" xml:"TotalQuery"`

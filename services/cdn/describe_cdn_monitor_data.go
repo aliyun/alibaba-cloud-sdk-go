@@ -76,12 +76,11 @@ func (client *Client) DescribeCdnMonitorDataWithCallback(request *DescribeCdnMon
 // DescribeCdnMonitorDataRequest is the request struct for api DescribeCdnMonitorData
 type DescribeCdnMonitorDataRequest struct {
 	*requests.RpcRequest
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
-	DomainName    string           `position:"Query" name:"DomainName"`
-	EndTime       string           `position:"Query" name:"EndTime"`
-	Interval      string           `position:"Query" name:"Interval"`
-	StartTime     string           `position:"Query" name:"StartTime"`
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	StartTime  string           `position:"Query" name:"StartTime"`
+	DomainName string           `position:"Query" name:"DomainName"`
+	EndTime    string           `position:"Query" name:"EndTime"`
+	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
+	Interval   string           `position:"Query" name:"Interval"`
 }
 
 // DescribeCdnMonitorDataResponse is the response struct for api DescribeCdnMonitorData
@@ -89,9 +88,9 @@ type DescribeCdnMonitorDataResponse struct {
 	*responses.BaseResponse
 	RequestId       string       `json:"RequestId" xml:"RequestId"`
 	DomainName      string       `json:"DomainName" xml:"DomainName"`
-	MonitorInterval int          `json:"MonitorInterval" xml:"MonitorInterval"`
 	StartTime       string       `json:"StartTime" xml:"StartTime"`
 	EndTime         string       `json:"EndTime" xml:"EndTime"`
+	MonitorInterval string       `json:"MonitorInterval" xml:"MonitorInterval"`
 	MonitorDatas    MonitorDatas `json:"MonitorDatas" xml:"MonitorDatas"`
 }
 

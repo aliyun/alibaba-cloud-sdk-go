@@ -23,11 +23,9 @@ type ISPProportionData struct {
 	AvgObjectSize   string `json:"AvgObjectSize" xml:"AvgObjectSize"`
 	AvgResponseTime string `json:"AvgResponseTime" xml:"AvgResponseTime"`
 	Bps             string `json:"Bps" xml:"Bps"`
-	ByteHitRate     string `json:"ByteHitRate" xml:"ByteHitRate"`
 	Qps             string `json:"Qps" xml:"Qps"`
-	ReqErrRate      string `json:"ReqErrRate" xml:"ReqErrRate"`
-	ReqHitRate      string `json:"ReqHitRate" xml:"ReqHitRate"`
 	AvgResponseRate string `json:"AvgResponseRate" xml:"AvgResponseRate"`
+	ReqErrRate      string `json:"ReqErrRate" xml:"ReqErrRate"`
 	TotalBytes      string `json:"TotalBytes" xml:"TotalBytes"`
 	BytesProportion string `json:"BytesProportion" xml:"BytesProportion"`
 	TotalQuery      string `json:"TotalQuery" xml:"TotalQuery"`

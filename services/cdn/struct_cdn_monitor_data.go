@@ -18,9 +18,9 @@ package cdn
 // CDNMonitorData is a nested struct in cdn response
 type CDNMonitorData struct {
 	TimeStamp         string `json:"TimeStamp" xml:"TimeStamp"`
-	QueryPerSecond    string `json:"QueryPerSecond" xml:"QueryPerSecond"`
 	BytesPerSecond    string `json:"BytesPerSecond" xml:"BytesPerSecond"`
-	BytesHitRate      string `json:"BytesHitRate" xml:"BytesHitRate"`
+	QueryPerSecond    string `json:"QueryPerSecond" xml:"QueryPerSecond"`
 	RequestHitRate    string `json:"RequestHitRate" xml:"RequestHitRate"`
+	BytesHitRate      string `json:"BytesHitRate" xml:"BytesHitRate"`
 	AverageObjectSize string `json:"AverageObjectSize" xml:"AverageObjectSize"`
 }

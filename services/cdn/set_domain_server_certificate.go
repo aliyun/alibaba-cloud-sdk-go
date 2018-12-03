@@ -77,6 +77,7 @@ func (client *Client) SetDomainServerCertificateWithCallback(request *SetDomainS
 type SetDomainServerCertificateRequest struct {
 	*requests.RpcRequest
 	PrivateKey              string           `position:"Query" name:"PrivateKey"`
+	ForceSet                string           `position:"Query" name:"ForceSet"`
 	ServerCertificateStatus string           `position:"Query" name:"ServerCertificateStatus"`
 	ServerCertificate       string           `position:"Query" name:"ServerCertificate"`
 	SecurityToken           string           `position:"Query" name:"SecurityToken"`

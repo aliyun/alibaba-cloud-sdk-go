@@ -76,13 +76,15 @@ func (client *Client) DescribeDomainAverageResponseTimeWithCallback(request *Des
 // DescribeDomainAverageResponseTimeRequest is the request struct for api DescribeDomainAverageResponseTime
 type DescribeDomainAverageResponseTimeRequest struct {
 	*requests.RpcRequest
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
-	TimeMerge     string           `position:"Query" name:"TimeMerge"`
-	DomainName    string           `position:"Query" name:"DomainName"`
-	EndTime       string           `position:"Query" name:"EndTime"`
-	Interval      string           `position:"Query" name:"Interval"`
-	StartTime     string           `position:"Query" name:"StartTime"`
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	LocationNameEn string           `position:"Query" name:"LocationNameEn"`
+	StartTime      string           `position:"Query" name:"StartTime"`
+	IspNameEn      string           `position:"Query" name:"IspNameEn"`
+	DomainType     string           `position:"Query" name:"DomainType"`
+	TimeMerge      string           `position:"Query" name:"TimeMerge"`
+	DomainName     string           `position:"Query" name:"DomainName"`
+	EndTime        string           `position:"Query" name:"EndTime"`
+	OwnerId        requests.Integer `position:"Query" name:"OwnerId"`
+	Interval       string           `position:"Query" name:"Interval"`
 }
 
 // DescribeDomainAverageResponseTimeResponse is the response struct for api DescribeDomainAverageResponseTime
@@ -90,9 +92,13 @@ type DescribeDomainAverageResponseTimeResponse struct {
 	*responses.BaseResponse
 	RequestId        string           `json:"RequestId" xml:"RequestId"`
 	DomainName       string           `json:"DomainName" xml:"DomainName"`
-	DataInterval     string           `json:"DataInterval" xml:"DataInterval"`
 	StartTime        string           `json:"StartTime" xml:"StartTime"`
 	EndTime          string           `json:"EndTime" xml:"EndTime"`
+	LocationNameEn   string           `json:"LocationNameEn" xml:"LocationNameEn"`
+	IspNameEn        string           `json:"IspNameEn" xml:"IspNameEn"`
+	LocationName     string           `json:"LocationName" xml:"LocationName"`
+	IspName          string           `json:"IspName" xml:"IspName"`
+	DataInterval     string           `json:"DataInterval" xml:"DataInterval"`
 	AvgRTPerInterval AvgRTPerInterval `json:"AvgRTPerInterval" xml:"AvgRTPerInterval"`
 }
 
