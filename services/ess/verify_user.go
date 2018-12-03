@@ -91,7 +91,7 @@ func CreateVerifyUserRequest() (request *VerifyUserRequest) {
 	request = &VerifyUserRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ess", "2014-08-28", "VerifyUser", "ess", "openAPI")
+	request.InitWithApiInfo("Ess", "2014-08-28", "VerifyUser", "", "")
 	return
 }
 

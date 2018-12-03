@@ -77,6 +77,7 @@ func (client *Client) CreateScalingConfigurationWithCallback(request *CreateScal
 type CreateScalingConfigurationRequest struct {
 	*requests.RpcRequest
 	ImageId                     string                                      `position:"Query" name:"ImageId"`
+	Memory                      requests.Integer                            `position:"Query" name:"Memory"`
 	ScalingGroupId              string                                      `position:"Query" name:"ScalingGroupId"`
 	InstanceTypes               *[]string                                   `position:"Query" name:"InstanceTypes"  type:"Repeated"`
 	IoOptimized                 string                                      `position:"Query" name:"IoOptimized"`
@@ -88,11 +89,14 @@ type CreateScalingConfigurationRequest struct {
 	SystemDiskCategory          string                                      `position:"Query" name:"SystemDisk.Category"`
 	UserData                    string                                      `position:"Query" name:"UserData"`
 	HostName                    string                                      `position:"Query" name:"HostName"`
+	Password                    string                                      `position:"Query" name:"Password"`
 	PasswordInherit             requests.Boolean                            `position:"Query" name:"PasswordInherit"`
 	ImageName                   string                                      `position:"Query" name:"ImageName"`
 	InstanceType                string                                      `position:"Query" name:"InstanceType"`
+	DeploymentSetId             string                                      `position:"Query" name:"DeploymentSetId"`
 	ResourceOwnerAccount        string                                      `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount                string                                      `position:"Query" name:"OwnerAccount"`
+	Cpu                         requests.Integer                            `position:"Query" name:"Cpu"`
 	RamRoleName                 string                                      `position:"Query" name:"RamRoleName"`
 	OwnerId                     requests.Integer                            `position:"Query" name:"OwnerId"`
 	DataDisk                    *[]CreateScalingConfigurationDataDisk       `position:"Query" name:"DataDisk"  type:"Repeated"`
@@ -133,7 +137,7 @@ func CreateCreateScalingConfigurationRequest() (request *CreateScalingConfigurat
 	request = &CreateScalingConfigurationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ess", "2014-08-28", "CreateScalingConfiguration", "ess", "openAPI")
+	request.InitWithApiInfo("Ess", "2014-08-28", "CreateScalingConfiguration", "", "")
 	return
 }
 

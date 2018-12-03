@@ -88,6 +88,7 @@ type CreateScalingGroupRequest struct {
 	MinSize               requests.Integer                   `position:"Query" name:"MinSize"`
 	OwnerId               requests.Integer                   `position:"Query" name:"OwnerId"`
 	LaunchTemplateVersion string                             `position:"Query" name:"LaunchTemplateVersion"`
+	ScalingPolicy         string                             `position:"Query" name:"ScalingPolicy"`
 	VSwitchId             string                             `position:"Query" name:"VSwitchId"`
 	MaxSize               requests.Integer                   `position:"Query" name:"MaxSize"`
 	LifecycleHook         *[]CreateScalingGroupLifecycleHook `position:"Query" name:"LifecycleHook"  type:"Repeated"`
@@ -118,7 +119,7 @@ func CreateCreateScalingGroupRequest() (request *CreateScalingGroupRequest) {
 	request = &CreateScalingGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ess", "2014-08-28", "CreateScalingGroup", "ess", "openAPI")
+	request.InitWithApiInfo("Ess", "2014-08-28", "CreateScalingGroup", "", "")
 	return
 }
 

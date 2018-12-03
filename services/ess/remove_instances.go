@@ -83,6 +83,7 @@ type RemoveInstancesRequest struct {
 	ScalingGroupId       string           `position:"Query" name:"ScalingGroupId"`
 	InstanceId20         string           `position:"Query" name:"InstanceId.20"`
 	InstanceId1          string           `position:"Query" name:"InstanceId.1"`
+	RemovePolicy         string           `position:"Query" name:"RemovePolicy"`
 	InstanceId3          string           `position:"Query" name:"InstanceId.3"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	InstanceId2          string           `position:"Query" name:"InstanceId.2"`
@@ -115,7 +116,7 @@ func CreateRemoveInstancesRequest() (request *RemoveInstancesRequest) {
 	request = &RemoveInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ess", "2014-08-28", "RemoveInstances", "ess", "openAPI")
+	request.InitWithApiInfo("Ess", "2014-08-28", "RemoveInstances", "", "")
 	return
 }
 

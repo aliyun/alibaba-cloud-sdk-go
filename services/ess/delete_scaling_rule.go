@@ -93,7 +93,7 @@ func CreateDeleteScalingRuleRequest() (request *DeleteScalingRuleRequest) {
 	request = &DeleteScalingRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ess", "2014-08-28", "DeleteScalingRule", "ess", "openAPI")
+	request.InitWithApiInfo("Ess", "2014-08-28", "DeleteScalingRule", "", "")
 	return
 }
 

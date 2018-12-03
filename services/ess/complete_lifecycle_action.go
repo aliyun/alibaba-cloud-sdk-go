@@ -95,7 +95,7 @@ func CreateCompleteLifecycleActionRequest() (request *CompleteLifecycleActionReq
 	request = &CompleteLifecycleActionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ess", "2014-08-28", "CompleteLifecycleAction", "ess", "openAPI")
+	request.InitWithApiInfo("Ess", "2014-08-28", "CompleteLifecycleAction", "", "")
 	return
 }
 

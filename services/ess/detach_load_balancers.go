@@ -94,7 +94,7 @@ func CreateDetachLoadBalancersRequest() (request *DetachLoadBalancersRequest) {
 	request = &DetachLoadBalancersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ess", "2014-08-28", "DetachLoadBalancers", "ess", "openAPI")
+	request.InitWithApiInfo("Ess", "2014-08-28", "DetachLoadBalancers", "", "")
 	return
 }
 

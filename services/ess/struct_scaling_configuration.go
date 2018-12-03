@@ -25,6 +25,8 @@ type ScalingConfiguration struct {
 	ImageName                   string         `json:"ImageName" xml:"ImageName"`
 	HostName                    string         `json:"HostName" xml:"HostName"`
 	InstanceType                string         `json:"InstanceType" xml:"InstanceType"`
+	Cpu                         int            `json:"Cpu" xml:"Cpu"`
+	Memory                      int            `json:"Memory" xml:"Memory"`
 	InstanceGeneration          string         `json:"InstanceGeneration" xml:"InstanceGeneration"`
 	SecurityGroupId             string         `json:"SecurityGroupId" xml:"SecurityGroupId"`
 	IoOptimized                 string         `json:"IoOptimized" xml:"IoOptimized"`

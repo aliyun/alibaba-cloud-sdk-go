@@ -102,7 +102,7 @@ func CreateDescribeAlarmsRequest() (request *DescribeAlarmsRequest) {
 	request = &DescribeAlarmsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ess", "2014-08-28", "DescribeAlarms", "ess", "openAPI")
+	request.InitWithApiInfo("Ess", "2014-08-28", "DescribeAlarms", "", "")
 	return
 }
 

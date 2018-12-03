@@ -93,7 +93,7 @@ func CreateDeleteAlarmRequest() (request *DeleteAlarmRequest) {
 	request = &DeleteAlarmRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ess", "2014-08-28", "DeleteAlarm", "ess", "openAPI")
+	request.InitWithApiInfo("Ess", "2014-08-28", "DeleteAlarm", "", "")
 	return
 }
 

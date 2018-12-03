@@ -96,7 +96,7 @@ func CreateExecuteScalingRuleRequest() (request *ExecuteScalingRuleRequest) {
 	request = &ExecuteScalingRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ess", "2014-08-28", "ExecuteScalingRule", "ess", "openAPI")
+	request.InitWithApiInfo("Ess", "2014-08-28", "ExecuteScalingRule", "", "")
 	return
 }
 
