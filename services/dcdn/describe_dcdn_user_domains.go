@@ -92,12 +92,11 @@ type DescribeDcdnUserDomainsRequest struct {
 // DescribeDcdnUserDomainsResponse is the response struct for api DescribeDcdnUserDomains
 type DescribeDcdnUserDomainsResponse struct {
 	*responses.BaseResponse
-	RequestId   string  `json:"RequestId" xml:"RequestId"`
-	PageNumber  int     `json:"PageNumber" xml:"PageNumber"`
-	PageSize    int     `json:"PageSize" xml:"PageSize"`
-	TotalCount  int     `json:"TotalCount" xml:"TotalCount"`
-	OnlineCount int     `json:"OnlineCount" xml:"OnlineCount"`
-	Domains     Domains `json:"Domains" xml:"Domains"`
+	RequestId  string  `json:"RequestId" xml:"RequestId"`
+	PageNumber int     `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int     `json:"PageSize" xml:"PageSize"`
+	TotalCount int     `json:"TotalCount" xml:"TotalCount"`
+	Domains    Domains `json:"Domains" xml:"Domains"`
 }
 
 // CreateDescribeDcdnUserDomainsRequest creates a request to invoke DescribeDcdnUserDomains API

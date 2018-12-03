@@ -90,12 +90,12 @@ type DescribeDcdnDomainTrafficDataRequest struct {
 // DescribeDcdnDomainTrafficDataResponse is the response struct for api DescribeDcdnDomainTrafficData
 type DescribeDcdnDomainTrafficDataResponse struct {
 	*responses.BaseResponse
-	RequestId              string                 `json:"RequestId" xml:"RequestId"`
-	DomainName             string                 `json:"DomainName" xml:"DomainName"`
-	StartTime              string                 `json:"StartTime" xml:"StartTime"`
-	EndTime                string                 `json:"EndTime" xml:"EndTime"`
-	DataInterval           string                 `json:"DataInterval" xml:"DataInterval"`
-	TrafficDataPerInterval TrafficDataPerInterval `json:"TrafficDataPerInterval" xml:"TrafficDataPerInterval"`
+	RequestId              string                                                `json:"RequestId" xml:"RequestId"`
+	DomainName             string                                                `json:"DomainName" xml:"DomainName"`
+	StartTime              string                                                `json:"StartTime" xml:"StartTime"`
+	EndTime                string                                                `json:"EndTime" xml:"EndTime"`
+	DataInterval           string                                                `json:"DataInterval" xml:"DataInterval"`
+	TrafficDataPerInterval TrafficDataPerIntervalInDescribeDcdnDomainTrafficData `json:"TrafficDataPerInterval" xml:"TrafficDataPerInterval"`
 }
 
 // CreateDescribeDcdnDomainTrafficDataRequest creates a request to invoke DescribeDcdnDomainTrafficData API

@@ -76,6 +76,7 @@ func (client *Client) SetDcdnDomainCertificateWithCallback(request *SetDcdnDomai
 // SetDcdnDomainCertificateRequest is the request struct for api SetDcdnDomainCertificate
 type SetDcdnDomainCertificateRequest struct {
 	*requests.RpcRequest
+	ForceSet      string           `position:"Query" name:"ForceSet"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	CertType      string           `position:"Query" name:"CertType"`
 	SSLPub        string           `position:"Query" name:"SSLPub"`
