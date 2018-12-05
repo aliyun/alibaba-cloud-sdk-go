@@ -94,7 +94,7 @@ func CreateSetInstancesProtectionRequest() (request *SetInstancesProtectionReque
 	request = &SetInstancesProtectionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ess", "2014-08-28", "SetInstancesProtection", "", "")
+	request.InitWithApiInfo("Ess", "2014-08-28", "SetInstancesProtection", "ess", "openAPI")
 	return
 }
 

@@ -96,7 +96,7 @@ func CreateModifyAlarmRequest() (request *ModifyAlarmRequest) {
 	request = &ModifyAlarmRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ess", "2014-08-28", "ModifyAlarm", "", "")
+	request.InitWithApiInfo("Ess", "2014-08-28", "ModifyAlarm", "ess", "openAPI")
 	return
 }
 

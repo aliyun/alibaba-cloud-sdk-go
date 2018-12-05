@@ -94,6 +94,7 @@ type CreateScalingGroupRequest struct {
 	LifecycleHook         *[]CreateScalingGroupLifecycleHook `position:"Query" name:"LifecycleHook"  type:"Repeated"`
 	DefaultCooldown       requests.Integer                   `position:"Query" name:"DefaultCooldown"`
 	RemovalPolicy1        string                             `position:"Query" name:"RemovalPolicy.1"`
+	VServerGroup          *[]CreateScalingGroupVServerGroup  `position:"Query" name:"VServerGroup"  type:"Repeated"`
 	RemovalPolicy2        string                             `position:"Query" name:"RemovalPolicy.2"`
 }
 
@@ -105,6 +106,12 @@ type CreateScalingGroupLifecycleHook struct {
 	NotificationArn      string `name:"NotificationArn"`
 	NotificationMetadata string `name:"NotificationMetadata"`
 	LifecycleTransition  string `name:"LifecycleTransition"`
+}
+
+// CreateScalingGroupVServerGroup is a repeated param struct in CreateScalingGroupRequest
+type CreateScalingGroupVServerGroup struct {
+	LoadBalancerId        string    `name:"LoadBalancerId"`
+	VServerGroupAttribute *[]string `name:"VServerGroupAttribute" type:"Repeated"`
 }
 
 // CreateScalingGroupResponse is the response struct for api CreateScalingGroup
@@ -119,7 +126,7 @@ func CreateCreateScalingGroupRequest() (request *CreateScalingGroupRequest) {
 	request = &CreateScalingGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ess", "2014-08-28", "CreateScalingGroup", "", "")
+	request.InitWithApiInfo("Ess", "2014-08-28", "CreateScalingGroup", "ess", "openAPI")
 	return
 }
 

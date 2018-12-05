@@ -47,4 +47,5 @@ type ScalingGroup struct {
 	RemovalPolicies              RemovalPolicies `json:"RemovalPolicies" xml:"RemovalPolicies"`
 	DBInstanceIds                DBInstanceIds   `json:"DBInstanceIds" xml:"DBInstanceIds"`
 	LoadBalancerIds              LoadBalancerIds `json:"LoadBalancerIds" xml:"LoadBalancerIds"`
+	VServerGroups                VServerGroups   `json:"VServerGroups" xml:"VServerGroups"`
 }

@@ -94,7 +94,7 @@ func CreateAttachLoadBalancersRequest() (request *AttachLoadBalancersRequest) {
 	request = &AttachLoadBalancersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ess", "2014-08-28", "AttachLoadBalancers", "", "")
+	request.InitWithApiInfo("Ess", "2014-08-28", "AttachLoadBalancers", "ess", "openAPI")
 	return
 }
 

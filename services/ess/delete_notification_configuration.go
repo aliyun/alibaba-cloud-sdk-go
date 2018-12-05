@@ -93,7 +93,7 @@ func CreateDeleteNotificationConfigurationRequest() (request *DeleteNotification
 	request = &DeleteNotificationConfigurationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ess", "2014-08-28", "DeleteNotificationConfiguration", "", "")
+	request.InitWithApiInfo("Ess", "2014-08-28", "DeleteNotificationConfiguration", "ess", "openAPI")
 	return
 }
 
