@@ -84,9 +84,9 @@ type ListPornBatchDetectJobsRequest struct {
 // ListPornBatchDetectJobsResponse is the response struct for api ListPornBatchDetectJobs
 type ListPornBatchDetectJobsResponse struct {
 	*responses.BaseResponse
-	RequestId  string     `json:"RequestId" xml:"RequestId"`
-	NextMarker string     `json:"NextMarker" xml:"NextMarker"`
-	Jobs       []JobsItem `json:"Jobs" xml:"Jobs"`
+	RequestId  string                              `json:"RequestId" xml:"RequestId"`
+	NextMarker string                              `json:"NextMarker" xml:"NextMarker"`
+	Jobs       []JobsItemInListPornBatchDetectJobs `json:"Jobs" xml:"Jobs"`
 }
 
 // CreateListPornBatchDetectJobsRequest creates a request to invoke ListPornBatchDetectJobs API

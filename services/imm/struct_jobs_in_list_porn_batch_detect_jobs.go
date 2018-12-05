@@ -17,5 +17,5 @@ package imm
 
 // JobsInListPornBatchDetectJobs is a nested struct in imm response
 type JobsInListPornBatchDetectJobs struct {
-	JobsItem []JobsItem `json:"JobsItem" xml:"JobsItem"`
+	JobsItem []JobsItemInListPornBatchDetectJobs `json:"JobsItem" xml:"JobsItem"`
 }

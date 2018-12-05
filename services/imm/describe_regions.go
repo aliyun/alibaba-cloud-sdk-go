@@ -81,8 +81,8 @@ type DescribeRegionsRequest struct {
 // DescribeRegionsResponse is the response struct for api DescribeRegions
 type DescribeRegionsResponse struct {
 	*responses.BaseResponse
-	RequestId string        `json:"RequestId" xml:"RequestId"`
-	Regions   []RegionsItem `json:"Regions" xml:"Regions"`
+	RequestId string  `json:"RequestId" xml:"RequestId"`
+	Regions   Regions `json:"Regions" xml:"Regions"`
 }
 
 // CreateDescribeRegionsRequest creates a request to invoke DescribeRegions API

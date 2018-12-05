@@ -77,22 +77,23 @@ func (client *Client) CreateOfficeConversionTaskWithCallback(request *CreateOffi
 type CreateOfficeConversionTaskRequest struct {
 	*requests.RpcRequest
 	SrcType         string           `position:"Query" name:"SrcType"`
-	NotifyTopicName string           `position:"Query" name:"NotifyTopicName"`
-	ModelId         string           `position:"Query" name:"ModelId"`
 	Project         string           `position:"Query" name:"Project"`
-	MaxSheetRow     requests.Integer `position:"Query" name:"MaxSheetRow"`
-	MaxSheetCount   requests.Integer `position:"Query" name:"MaxSheetCount"`
-	EndPage         requests.Integer `position:"Query" name:"EndPage"`
 	IdempotentToken string           `position:"Query" name:"IdempotentToken"`
-	TgtFileSuffix   string           `position:"Query" name:"TgtFileSuffix"`
-	SheetOnePage    requests.Boolean `position:"Query" name:"SheetOnePage"`
+	PdfVector       requests.Boolean `position:"Query" name:"PdfVector"`
 	Password        string           `position:"Query" name:"Password"`
 	StartPage       requests.Integer `position:"Query" name:"StartPage"`
-	MaxSheetCol     requests.Integer `position:"Query" name:"MaxSheetCol"`
-	TgtType         string           `position:"Query" name:"TgtType"`
 	NotifyEndpoint  string           `position:"Query" name:"NotifyEndpoint"`
 	FitToPagesWide  requests.Boolean `position:"Query" name:"FitToPagesWide"`
 	TgtFilePrefix   string           `position:"Query" name:"TgtFilePrefix"`
+	NotifyTopicName string           `position:"Query" name:"NotifyTopicName"`
+	ModelId         string           `position:"Query" name:"ModelId"`
+	MaxSheetRow     requests.Integer `position:"Query" name:"MaxSheetRow"`
+	MaxSheetCount   requests.Integer `position:"Query" name:"MaxSheetCount"`
+	EndPage         requests.Integer `position:"Query" name:"EndPage"`
+	TgtFileSuffix   string           `position:"Query" name:"TgtFileSuffix"`
+	SheetOnePage    requests.Boolean `position:"Query" name:"SheetOnePage"`
+	MaxSheetCol     requests.Integer `position:"Query" name:"MaxSheetCol"`
+	TgtType         string           `position:"Query" name:"TgtType"`
 	FitToPagesTall  requests.Boolean `position:"Query" name:"FitToPagesTall"`
 	SrcUri          string           `position:"Query" name:"SrcUri"`
 	TgtFilePages    string           `position:"Query" name:"TgtFilePages"`

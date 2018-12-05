@@ -83,6 +83,7 @@ type ConvertOfficeFormatRequest struct {
 	MaxSheetCount  requests.Integer `position:"Query" name:"MaxSheetCount"`
 	EndPage        requests.Integer `position:"Query" name:"EndPage"`
 	TgtFileSuffix  string           `position:"Query" name:"TgtFileSuffix"`
+	PdfVector      requests.Boolean `position:"Query" name:"PdfVector"`
 	SheetOnePage   requests.Boolean `position:"Query" name:"SheetOnePage"`
 	Password       string           `position:"Query" name:"Password"`
 	StartPage      requests.Integer `position:"Query" name:"StartPage"`
