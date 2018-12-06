@@ -19,6 +19,7 @@ package live
 type CasterStream struct {
 	SceneId     string                               `json:"SceneId" xml:"SceneId"`
 	StreamUrl   string                               `json:"StreamUrl" xml:"StreamUrl"`
+	RtmpUrl     string                               `json:"RtmpUrl" xml:"RtmpUrl"`
 	OutputType  int                                  `json:"OutputType" xml:"OutputType"`
 	StreamInfos StreamInfosInDescribeCasterStreamUrl `json:"StreamInfos" xml:"StreamInfos"`
 }
