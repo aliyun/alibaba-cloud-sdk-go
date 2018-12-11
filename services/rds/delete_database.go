@@ -95,7 +95,7 @@ func CreateDeleteDatabaseRequest() (request *DeleteDatabaseRequest) {
 	request = &DeleteDatabaseRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DeleteDatabase", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DeleteDatabase", "Rds", "openAPI")
 	return
 }
 

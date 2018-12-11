@@ -98,7 +98,7 @@ func CreateSwitchDBInstanceNetTypeRequest() (request *SwitchDBInstanceNetTypeReq
 	request = &SwitchDBInstanceNetTypeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "SwitchDBInstanceNetType", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "SwitchDBInstanceNetType", "Rds", "openAPI")
 	return
 }
 

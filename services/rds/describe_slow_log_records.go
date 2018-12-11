@@ -79,7 +79,6 @@ type DescribeSlowLogRecordsRequest struct {
 	SQLId                requests.Integer `position:"Query" name:"SQLId"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	QueryTimeFormat      string           `position:"Query" name:"QueryTimeFormat"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	EndTime              string           `position:"Query" name:"EndTime"`
 	StartTime            string           `position:"Query" name:"StartTime"`
@@ -94,6 +93,7 @@ type DescribeSlowLogRecordsRequest struct {
 type DescribeSlowLogRecordsResponse struct {
 	*responses.BaseResponse
 	RequestId        string                        `json:"RequestId" xml:"RequestId"`
+	DBInstanceId     string                        `json:"DBInstanceId" xml:"DBInstanceId"`
 	Engine           string                        `json:"Engine" xml:"Engine"`
 	TotalRecordCount int                           `json:"TotalRecordCount" xml:"TotalRecordCount"`
 	PageNumber       int                           `json:"PageNumber" xml:"PageNumber"`
@@ -106,7 +106,7 @@ func CreateDescribeSlowLogRecordsRequest() (request *DescribeSlowLogRecordsReque
 	request = &DescribeSlowLogRecordsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeSlowLogRecords", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeSlowLogRecords", "Rds", "openAPI")
 	return
 }
 

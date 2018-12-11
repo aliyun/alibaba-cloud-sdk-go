@@ -83,6 +83,7 @@ type DescribeParameterTemplatesRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	EngineVersion        string           `position:"Query" name:"EngineVersion"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Category             string           `position:"Query" name:"Category"`
 }
 
 // DescribeParameterTemplatesResponse is the response struct for api DescribeParameterTemplates
@@ -100,7 +101,7 @@ func CreateDescribeParameterTemplatesRequest() (request *DescribeParameterTempla
 	request = &DescribeParameterTemplatesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeParameterTemplates", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeParameterTemplates", "Rds", "openAPI")
 	return
 }
 

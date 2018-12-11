@@ -80,12 +80,13 @@ type ModifyDBInstanceSpecRequest struct {
 	DBInstanceStorage    requests.Integer `position:"Query" name:"DBInstanceStorage"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
-	EffectiveTime        string           `position:"Query" name:"EffectiveTime"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	EngineVersion        string           `position:"Query" name:"EngineVersion"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	PayType              string           `position:"Query" name:"PayType"`
 	DBInstanceClass      string           `position:"Query" name:"DBInstanceClass"`
+	EffectiveTime        string           `position:"Query" name:"EffectiveTime"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	PayType              string           `position:"Query" name:"PayType"`
 }
 
 // ModifyDBInstanceSpecResponse is the response struct for api ModifyDBInstanceSpec
@@ -99,7 +100,7 @@ func CreateModifyDBInstanceSpecRequest() (request *ModifyDBInstanceSpecRequest) 
 	request = &ModifyDBInstanceSpecRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDBInstanceSpec", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDBInstanceSpec", "Rds", "openAPI")
 	return
 }
 

@@ -17,6 +17,7 @@ package rds
 
 // DBInstanceAttribute is a nested struct in rds response
 type DBInstanceAttribute struct {
+	TimeZone                          string                                             `json:"TimeZone" xml:"TimeZone"`
 	Engine                            string                                             `json:"Engine" xml:"Engine"`
 	TempUpgradeTimeStart              string                                             `json:"TempUpgradeTimeStart" xml:"TempUpgradeTimeStart"`
 	TempUpgradeRecoveryTime           string                                             `json:"TempUpgradeRecoveryTime" xml:"TempUpgradeRecoveryTime"`
@@ -54,7 +55,9 @@ type DBInstanceAttribute struct {
 	IPType                            string                                             `json:"IPType" xml:"IPType"`
 	ReadonlyInstanceSQLDelayedTime    string                                             `json:"ReadonlyInstanceSQLDelayedTime" xml:"ReadonlyInstanceSQLDelayedTime"`
 	LockMode                          string                                             `json:"LockMode" xml:"LockMode"`
+	MasterRegion                      string                                             `json:"MasterRegion" xml:"MasterRegion"`
 	CanTempUpgrade                    bool                                               `json:"CanTempUpgrade" xml:"CanTempUpgrade"`
+	Collation                         string                                             `json:"Collation" xml:"Collation"`
 	LockReason                        string                                             `json:"LockReason" xml:"LockReason"`
 	Category                          string                                             `json:"Category" xml:"Category"`
 	GuardDBInstanceId                 string                                             `json:"GuardDBInstanceId" xml:"GuardDBInstanceId"`
@@ -67,6 +70,7 @@ type DBInstanceAttribute struct {
 	TempUpgradeTimeEnd                string                                             `json:"TempUpgradeTimeEnd" xml:"TempUpgradeTimeEnd"`
 	ExpireTime                        string                                             `json:"ExpireTime" xml:"ExpireTime"`
 	TempUpgradeRecoveryMemory         int                                                `json:"TempUpgradeRecoveryMemory" xml:"TempUpgradeRecoveryMemory"`
+	DispenseMode                      string                                             `json:"DispenseMode" xml:"DispenseMode"`
 	AccountMaxQuantity                int                                                `json:"AccountMaxQuantity" xml:"AccountMaxQuantity"`
 	TempUpgradeRecoveryMaxConnections string                                             `json:"TempUpgradeRecoveryMaxConnections" xml:"TempUpgradeRecoveryMaxConnections"`
 	Port                              string                                             `json:"Port" xml:"Port"`
@@ -81,5 +85,7 @@ type DBInstanceAttribute struct {
 	ConnectionString                  string                                             `json:"ConnectionString" xml:"ConnectionString"`
 	TempUpgradeRecoveryCpu            int                                                `json:"TempUpgradeRecoveryCpu" xml:"TempUpgradeRecoveryCpu"`
 	AvailabilityValue                 string                                             `json:"AvailabilityValue" xml:"AvailabilityValue"`
+	Extra                             Extra                                              `json:"Extra" xml:"Extra"`
 	ReadOnlyDBInstanceIds             ReadOnlyDBInstanceIdsInDescribeDBInstanceAttribute `json:"ReadOnlyDBInstanceIds" xml:"ReadOnlyDBInstanceIds"`
+	SlaveRegions                      SlaveRegionsInDescribeDBInstanceAttribute          `json:"SlaveRegions" xml:"SlaveRegions"`
 }

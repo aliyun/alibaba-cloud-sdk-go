@@ -96,6 +96,7 @@ type DescribeSlowLogsResponse struct {
 	Engine           string                  `json:"Engine" xml:"Engine"`
 	StartTime        string                  `json:"StartTime" xml:"StartTime"`
 	EndTime          string                  `json:"EndTime" xml:"EndTime"`
+	DBInstanceId     string                  `json:"DBInstanceId" xml:"DBInstanceId"`
 	TotalRecordCount int                     `json:"TotalRecordCount" xml:"TotalRecordCount"`
 	PageNumber       int                     `json:"PageNumber" xml:"PageNumber"`
 	PageRecordCount  int                     `json:"PageRecordCount" xml:"PageRecordCount"`
@@ -107,7 +108,7 @@ func CreateDescribeSlowLogsRequest() (request *DescribeSlowLogsRequest) {
 	request = &DescribeSlowLogsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeSlowLogs", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeSlowLogs", "Rds", "openAPI")
 	return
 }
 

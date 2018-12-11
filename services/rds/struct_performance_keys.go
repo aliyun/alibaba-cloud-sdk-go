@@ -17,5 +17,5 @@ package rds
 
 // PerformanceKeys is a nested struct in rds response
 type PerformanceKeys struct {
-	PerformanceKey []PerformanceKeyItem `json:"PerformanceKey" xml:"PerformanceKey"`
+	PerformanceKey []PerformanceKey `json:"PerformanceKey" xml:"PerformanceKey"`
 }
