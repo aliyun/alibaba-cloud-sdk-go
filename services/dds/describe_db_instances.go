@@ -80,18 +80,23 @@ type DescribeDBInstancesRequest struct {
 	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
+	EngineVersion         string           `position:"Query" name:"EngineVersion"`
+	NetworkType           string           `position:"Query" name:"NetworkType"`
 	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
 	PageNumber            requests.Integer `position:"Query" name:"PageNumber"`
 	ReplicationFactor     string           `position:"Query" name:"ReplicationFactor"`
 	DBInstanceType        string           `position:"Query" name:"DBInstanceType"`
 	DBInstanceClass       string           `position:"Query" name:"DBInstanceClass"`
-	Expired               string           `position:"Query" name:"Expired"`
+	VSwitchId             string           `position:"Query" name:"VSwitchId"`
 	SecurityToken         string           `position:"Query" name:"SecurityToken"`
+	Engine                string           `position:"Query" name:"Engine"`
+	VpcId                 string           `position:"Query" name:"VpcId"`
 	PageSize              requests.Integer `position:"Query" name:"PageSize"`
 	ZoneId                string           `position:"Query" name:"ZoneId"`
 	DBInstanceId          string           `position:"Query" name:"DBInstanceId"`
 	DBInstanceDescription string           `position:"Query" name:"DBInstanceDescription"`
 	DBInstanceStatus      string           `position:"Query" name:"DBInstanceStatus"`
+	ChargeType            string           `position:"Query" name:"ChargeType"`
 }
 
 // DescribeDBInstancesResponse is the response struct for api DescribeDBInstances

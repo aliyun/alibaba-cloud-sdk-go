@@ -22,7 +22,6 @@ type DBInstance struct {
 	Engine                string                                   `json:"Engine" xml:"Engine"`
 	ChargeType            string                                   `json:"ChargeType" xml:"ChargeType"`
 	DBInstanceClass       string                                   `json:"DBInstanceClass" xml:"DBInstanceClass"`
-	DestroyTime           string                                   `json:"DestroyTime" xml:"DestroyTime"`
 	RegionId              string                                   `json:"RegionId" xml:"RegionId"`
 	MaxConnections        int                                      `json:"MaxConnections" xml:"MaxConnections"`
 	DBInstanceType        string                                   `json:"DBInstanceType" xml:"DBInstanceType"`
@@ -47,6 +46,6 @@ type DBInstance struct {
 	LastDowngradeTime     int                                      `json:"LastDowngradeTime" xml:"LastDowngradeTime"`
 	LockMode              string                                   `json:"LockMode" xml:"LockMode"`
 	ReplicaSets           ReplicaSetsInDescribeDBInstanceAttribute `json:"ReplicaSets" xml:"ReplicaSets"`
-	ShardList             ShardListInDescribeDBInstances           `json:"ShardList" xml:"ShardList"`
 	MongosList            MongosListInDescribeDBInstanceAttribute  `json:"MongosList" xml:"MongosList"`
+	ShardList             ShardListInDescribeDBInstanceAttribute   `json:"ShardList" xml:"ShardList"`
 }
