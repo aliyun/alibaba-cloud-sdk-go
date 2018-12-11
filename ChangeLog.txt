@@ -1,3 +1,6 @@
+2018-12-11 Version: 1.43.9
+1, Release Location Go SDK
+
 2018-12-11 Version: 1.43.8
 1, DescribeAccount support OwnerAccount params.
 2, Upgrade Rds SDK Version to 2.3.0
