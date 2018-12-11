@@ -21,6 +21,7 @@ type KVStoreInstance struct {
 	PackageType         string `json:"PackageType" xml:"PackageType"`
 	ChargeType          string `json:"ChargeType" xml:"ChargeType"`
 	ConnectionDomain    string `json:"ConnectionDomain" xml:"ConnectionDomain"`
+	SearchKey           string `json:"SearchKey" xml:"SearchKey"`
 	CreateTime          string `json:"CreateTime" xml:"CreateTime"`
 	HasRenewChangeOrder string `json:"HasRenewChangeOrder" xml:"HasRenewChangeOrder"`
 	InstanceType        string `json:"InstanceType" xml:"InstanceType"`
@@ -47,4 +48,5 @@ type KVStoreInstance struct {
 	UserName            string `json:"UserName" xml:"UserName"`
 	Config              string `json:"Config" xml:"Config"`
 	IsRds               bool   `json:"IsRds" xml:"IsRds"`
+	ConnectionMode      string `json:"ConnectionMode" xml:"ConnectionMode"`
 }

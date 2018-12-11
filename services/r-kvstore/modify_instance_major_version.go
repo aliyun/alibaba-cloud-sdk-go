@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// ModifyInstanceMinorVersion invokes the r_kvstore.ModifyInstanceMinorVersion API synchronously
-// api document: https://help.aliyun.com/api/r-kvstore/modifyinstanceminorversion.html
-func (client *Client) ModifyInstanceMinorVersion(request *ModifyInstanceMinorVersionRequest) (response *ModifyInstanceMinorVersionResponse, err error) {
-	response = CreateModifyInstanceMinorVersionResponse()
+// ModifyInstanceMajorVersion invokes the r_kvstore.ModifyInstanceMajorVersion API synchronously
+// api document: https://help.aliyun.com/api/r-kvstore/modifyinstancemajorversion.html
+func (client *Client) ModifyInstanceMajorVersion(request *ModifyInstanceMajorVersionRequest) (response *ModifyInstanceMajorVersionResponse, err error) {
+	response = CreateModifyInstanceMajorVersionResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// ModifyInstanceMinorVersionWithChan invokes the r_kvstore.ModifyInstanceMinorVersion API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/modifyinstanceminorversion.html
+// ModifyInstanceMajorVersionWithChan invokes the r_kvstore.ModifyInstanceMajorVersion API asynchronously
+// api document: https://help.aliyun.com/api/r-kvstore/modifyinstancemajorversion.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) ModifyInstanceMinorVersionWithChan(request *ModifyInstanceMinorVersionRequest) (<-chan *ModifyInstanceMinorVersionResponse, <-chan error) {
-	responseChan := make(chan *ModifyInstanceMinorVersionResponse, 1)
+func (client *Client) ModifyInstanceMajorVersionWithChan(request *ModifyInstanceMajorVersionRequest) (<-chan *ModifyInstanceMajorVersionResponse, <-chan error) {
+	responseChan := make(chan *ModifyInstanceMajorVersionResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.ModifyInstanceMinorVersion(request)
+		response, err := client.ModifyInstanceMajorVersion(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) ModifyInstanceMinorVersionWithChan(request *ModifyInstance
 	return responseChan, errChan
 }
 
-// ModifyInstanceMinorVersionWithCallback invokes the r_kvstore.ModifyInstanceMinorVersion API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/modifyinstanceminorversion.html
+// ModifyInstanceMajorVersionWithCallback invokes the r_kvstore.ModifyInstanceMajorVersion API asynchronously
+// api document: https://help.aliyun.com/api/r-kvstore/modifyinstancemajorversion.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) ModifyInstanceMinorVersionWithCallback(request *ModifyInstanceMinorVersionRequest, callback func(response *ModifyInstanceMinorVersionResponse, err error)) <-chan int {
+func (client *Client) ModifyInstanceMajorVersionWithCallback(request *ModifyInstanceMajorVersionRequest, callback func(response *ModifyInstanceMajorVersionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *ModifyInstanceMinorVersionResponse
+		var response *ModifyInstanceMajorVersionResponse
 		var err error
 		defer close(result)
-		response, err = client.ModifyInstanceMinorVersion(request)
+		response, err = client.ModifyInstanceMajorVersion(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,37 +73,37 @@ func (client *Client) ModifyInstanceMinorVersionWithCallback(request *ModifyInst
 	return result
 }
 
-// ModifyInstanceMinorVersionRequest is the request struct for api ModifyInstanceMinorVersion
-type ModifyInstanceMinorVersionRequest struct {
+// ModifyInstanceMajorVersionRequest is the request struct for api ModifyInstanceMajorVersion
+type ModifyInstanceMajorVersionRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
+	MajorVersion         string           `position:"Query" name:"MajorVersion"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	Minorversion         string           `position:"Query" name:"Minorversion"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	EffectTime           string           `position:"Query" name:"EffectTime"`
 }
 
-// ModifyInstanceMinorVersionResponse is the response struct for api ModifyInstanceMinorVersion
-type ModifyInstanceMinorVersionResponse struct {
+// ModifyInstanceMajorVersionResponse is the response struct for api ModifyInstanceMajorVersion
+type ModifyInstanceMajorVersionResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateModifyInstanceMinorVersionRequest creates a request to invoke ModifyInstanceMinorVersion API
-func CreateModifyInstanceMinorVersionRequest() (request *ModifyInstanceMinorVersionRequest) {
-	request = &ModifyInstanceMinorVersionRequest{
+// CreateModifyInstanceMajorVersionRequest creates a request to invoke ModifyInstanceMajorVersion API
+func CreateModifyInstanceMajorVersionRequest() (request *ModifyInstanceMajorVersionRequest) {
+	request = &ModifyInstanceMajorVersionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ModifyInstanceMinorVersion", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ModifyInstanceMajorVersion", "redisa", "openAPI")
 	return
 }
 
-// CreateModifyInstanceMinorVersionResponse creates a response to parse from ModifyInstanceMinorVersion response
-func CreateModifyInstanceMinorVersionResponse() (response *ModifyInstanceMinorVersionResponse) {
-	response = &ModifyInstanceMinorVersionResponse{
+// CreateModifyInstanceMajorVersionResponse creates a response to parse from ModifyInstanceMajorVersion response
+func CreateModifyInstanceMajorVersionResponse() (response *ModifyInstanceMajorVersionResponse) {
+	response = &ModifyInstanceMajorVersionResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

@@ -82,15 +82,19 @@ type DescribeInstancesRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	SearchKey            string           `position:"Query" name:"SearchKey"`
 	NetworkType          string           `position:"Query" name:"NetworkType"`
+	EngineVersion        string           `position:"Query" name:"EngineVersion"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	InstanceClass        string           `position:"Query" name:"InstanceClass"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	VSwitchId            string           `position:"Query" name:"VSwitchId"`
 	Expired              string           `position:"Query" name:"Expired"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	InstanceIds          string           `position:"Query" name:"InstanceIds"`
+	ArchitectureType     string           `position:"Query" name:"ArchitectureType"`
 	VpcId                string           `position:"Query" name:"VpcId"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	InstanceType         string           `position:"Query" name:"InstanceType"`
+	ZoneId               string           `position:"Query" name:"ZoneId"`
 	ChargeType           string           `position:"Query" name:"ChargeType"`
 }
 

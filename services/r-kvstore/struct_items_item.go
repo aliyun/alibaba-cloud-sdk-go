@@ -17,36 +17,44 @@ package r_kvstore
 
 // ItemsItem is a nested struct in r_kvstore response
 type ItemsItem struct {
+	ResultInfo            string         `json:"ResultInfo" xml:"ResultInfo"`
+	InsName               string         `json:"InsName" xml:"InsName"`
 	InternetIP            string         `json:"InternetIP" xml:"InternetIP"`
 	ConfictReason         string         `json:"ConfictReason" xml:"ConfictReason"`
 	SourceDetail          string         `json:"SourceDetail" xml:"SourceDetail"`
+	TaskParams            string         `json:"TaskParams" xml:"TaskParams"`
 	InconsistentFields    string         `json:"InconsistentFields" xml:"InconsistentFields"`
 	InstanceIdA           string         `json:"InstanceIdA" xml:"InstanceIdA"`
+	Deadline              string         `json:"Deadline" xml:"Deadline"`
 	ConflictGtid          string         `json:"ConflictGtid" xml:"ConflictGtid"`
 	DestinationDetail     string         `json:"DestinationDetail" xml:"DestinationDetail"`
+	DbType                string         `json:"DbType" xml:"DbType"`
 	Key                   string         `json:"Key" xml:"Key"`
+	ModifiedTime          string         `json:"ModifiedTime" xml:"ModifiedTime"`
+	CreatedTime           string         `json:"CreatedTime" xml:"CreatedTime"`
 	RegionId              string         `json:"RegionId" xml:"RegionId"`
 	InstanceNetworkType   string         `json:"InstanceNetworkType" xml:"InstanceNetworkType"`
 	RecoveryMode          string         `json:"RecoveryMode" xml:"RecoveryMode"`
 	AbnormalType          string         `json:"AbnormalType" xml:"AbnormalType"`
+	SwitchTime            string         `json:"SwitchTime" xml:"SwitchTime"`
 	DBInstanceId          string         `json:"DBInstanceId" xml:"DBInstanceId"`
 	DatabaseName          string         `json:"DatabaseName" xml:"DatabaseName"`
 	SecurityIPList        string         `json:"SecurityIPList" xml:"SecurityIPList"`
 	DetailInfo            string         `json:"DetailInfo" xml:"DetailInfo"`
+	Id                    int            `json:"Id" xml:"Id"`
+	Status                int            `json:"Status" xml:"Status"`
 	Schema                string         `json:"Schema" xml:"Schema"`
 	ReadWriteType         string         `json:"ReadWriteType" xml:"ReadWriteType"`
 	HasInternetIP         bool           `json:"HasInternetIP" xml:"HasInternetIP"`
 	DestinationInstanceId string         `json:"DestinationInstanceId" xml:"DestinationInstanceId"`
-	FinishTime            string         `json:"FinishTime" xml:"FinishTime"`
+	PrepareInterval       string         `json:"PrepareInterval" xml:"PrepareInterval"`
 	OccurTime             string         `json:"OccurTime" xml:"OccurTime"`
-	Progress              string         `json:"Progress" xml:"Progress"`
 	InstanceIdB           string         `json:"InstanceIdB" xml:"InstanceIdB"`
-	CurrentStep           string         `json:"CurrentStep" xml:"CurrentStep"`
+	StartTime             string         `json:"StartTime" xml:"StartTime"`
 	SourceInstanceId      string         `json:"SourceInstanceId" xml:"SourceInstanceId"`
 	InconsistentType      string         `json:"InconsistentType" xml:"InconsistentType"`
 	ConfictKey            string         `json:"ConfictKey" xml:"ConfictKey"`
 	KeyType               string         `json:"KeyType" xml:"KeyType"`
-	Status                string         `json:"Status" xml:"Status"`
-	ReplicaId             string         `json:"ReplicaId" xml:"ReplicaId"`
+	TaskType              string         `json:"TaskType" xml:"TaskType"`
 	Accounts              []AccountsItem `json:"Accounts" xml:"Accounts"`
 }

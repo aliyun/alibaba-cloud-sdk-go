@@ -88,9 +88,10 @@ type ModifyInstanceSpecPreCheckRequest struct {
 // ModifyInstanceSpecPreCheckResponse is the response struct for api ModifyInstanceSpecPreCheck
 type ModifyInstanceSpecPreCheckResponse struct {
 	*responses.BaseResponse
-	RequestId       string `json:"RequestId" xml:"RequestId"`
-	IsAllowModify   bool   `json:"IsAllowModify" xml:"IsAllowModify"`
-	DisableCommands string `json:"DisableCommands" xml:"DisableCommands"`
+	RequestId       string         `json:"RequestId" xml:"RequestId"`
+	IsAllowModify   bool           `json:"IsAllowModify" xml:"IsAllowModify"`
+	DisableCommands string         `json:"DisableCommands" xml:"DisableCommands"`
+	PreCheckResult  PreCheckResult `json:"PreCheckResult" xml:"PreCheckResult"`
 }
 
 // CreateModifyInstanceSpecPreCheckRequest creates a request to invoke ModifyInstanceSpecPreCheck API

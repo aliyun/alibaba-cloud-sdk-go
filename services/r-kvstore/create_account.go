@@ -82,6 +82,7 @@ type CreateAccountRequest struct {
 	AccountType          string           `position:"Query" name:"AccountType"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	AccountDescription   string           `position:"Query" name:"AccountDescription"`
+	AccountPrivilege     string           `position:"Query" name:"AccountPrivilege"`
 	AccountPassword      string           `position:"Query" name:"AccountPassword"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
 	AccountName          string           `position:"Query" name:"AccountName"`

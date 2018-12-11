@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DeleteAccount invokes the r_kvstore.DeleteAccount API synchronously
-// api document: https://help.aliyun.com/api/r-kvstore/deleteaccount.html
-func (client *Client) DeleteAccount(request *DeleteAccountRequest) (response *DeleteAccountResponse, err error) {
-	response = CreateDeleteAccountResponse()
+// RestartInstance invokes the r_kvstore.RestartInstance API synchronously
+// api document: https://help.aliyun.com/api/r-kvstore/restartinstance.html
+func (client *Client) RestartInstance(request *RestartInstanceRequest) (response *RestartInstanceResponse, err error) {
+	response = CreateRestartInstanceResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DeleteAccountWithChan invokes the r_kvstore.DeleteAccount API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/deleteaccount.html
+// RestartInstanceWithChan invokes the r_kvstore.RestartInstance API asynchronously
+// api document: https://help.aliyun.com/api/r-kvstore/restartinstance.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DeleteAccountWithChan(request *DeleteAccountRequest) (<-chan *DeleteAccountResponse, <-chan error) {
-	responseChan := make(chan *DeleteAccountResponse, 1)
+func (client *Client) RestartInstanceWithChan(request *RestartInstanceRequest) (<-chan *RestartInstanceResponse, <-chan error) {
+	responseChan := make(chan *RestartInstanceResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DeleteAccount(request)
+		response, err := client.RestartInstance(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) DeleteAccountWithChan(request *DeleteAccountRequest) (<-ch
 	return responseChan, errChan
 }
 
-// DeleteAccountWithCallback invokes the r_kvstore.DeleteAccount API asynchronously
-// api document: https://help.aliyun.com/api/r-kvstore/deleteaccount.html
+// RestartInstanceWithCallback invokes the r_kvstore.RestartInstance API asynchronously
+// api document: https://help.aliyun.com/api/r-kvstore/restartinstance.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DeleteAccountWithCallback(request *DeleteAccountRequest, callback func(response *DeleteAccountResponse, err error)) <-chan int {
+func (client *Client) RestartInstanceWithCallback(request *RestartInstanceRequest, callback func(response *RestartInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DeleteAccountResponse
+		var response *RestartInstanceResponse
 		var err error
 		defer close(result)
-		response, err = client.DeleteAccount(request)
+		response, err = client.RestartInstance(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,36 +73,38 @@ func (client *Client) DeleteAccountWithCallback(request *DeleteAccountRequest, c
 	return result
 }
 
-// DeleteAccountRequest is the request struct for api DeleteAccount
-type DeleteAccountRequest struct {
+// RestartInstanceRequest is the request struct for api RestartInstance
+type RestartInstanceRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
-	AccountName          string           `position:"Query" name:"AccountName"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	EffectiveTime        string           `position:"Query" name:"EffectiveTime"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
-// DeleteAccountResponse is the response struct for api DeleteAccount
-type DeleteAccountResponse struct {
+// RestartInstanceResponse is the response struct for api RestartInstance
+type RestartInstanceResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
+	InstanceId string `json:"InstanceId" xml:"InstanceId"`
+	TaskId     string `json:"TaskId" xml:"TaskId"`
 }
 
-// CreateDeleteAccountRequest creates a request to invoke DeleteAccount API
-func CreateDeleteAccountRequest() (request *DeleteAccountRequest) {
-	request = &DeleteAccountRequest{
+// CreateRestartInstanceRequest creates a request to invoke RestartInstance API
+func CreateRestartInstanceRequest() (request *RestartInstanceRequest) {
+	request = &RestartInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DeleteAccount", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "RestartInstance", "redisa", "openAPI")
 	return
 }
 
-// CreateDeleteAccountResponse creates a response to parse from DeleteAccount response
-func CreateDeleteAccountResponse() (response *DeleteAccountResponse) {
-	response = &DeleteAccountResponse{
+// CreateRestartInstanceResponse creates a response to parse from RestartInstance response
+func CreateRestartInstanceResponse() (response *RestartInstanceResponse) {
+	response = &RestartInstanceResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return
