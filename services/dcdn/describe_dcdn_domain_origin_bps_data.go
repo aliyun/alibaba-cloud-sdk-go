@@ -101,7 +101,7 @@ func CreateDescribeDcdnDomainOriginBpsDataRequest() (request *DescribeDcdnDomain
 	request = &DescribeDcdnDomainOriginBpsDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dcdn", "2018-01-15", "DescribeDcdnDomainOriginBpsData", "", "")
+	request.InitWithApiInfo("dcdn", "2018-01-15", "DescribeDcdnDomainOriginBpsData", "dcdn", "openAPI")
 	return
 }
 

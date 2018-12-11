@@ -1,3 +1,6 @@
+2018-12-11 Version: 1.43.10
+1, Sync CDN API.
+
 2018-12-11 Version: 1.43.9
 1, Release Location Go SDK
 

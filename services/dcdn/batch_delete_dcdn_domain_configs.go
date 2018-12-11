@@ -94,7 +94,7 @@ func CreateBatchDeleteDcdnDomainConfigsRequest() (request *BatchDeleteDcdnDomain
 	request = &BatchDeleteDcdnDomainConfigsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dcdn", "2018-01-15", "BatchDeleteDcdnDomainConfigs", "", "")
+	request.InitWithApiInfo("dcdn", "2018-01-15", "BatchDeleteDcdnDomainConfigs", "dcdn", "openAPI")
 	return
 }
 

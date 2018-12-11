@@ -94,7 +94,7 @@ func CreatePreloadDcdnObjectCachesRequest() (request *PreloadDcdnObjectCachesReq
 	request = &PreloadDcdnObjectCachesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dcdn", "2018-01-15", "PreloadDcdnObjectCaches", "", "")
+	request.InitWithApiInfo("dcdn", "2018-01-15", "PreloadDcdnObjectCaches", "dcdn", "openAPI")
 	return
 }
 

@@ -93,7 +93,7 @@ func CreateDescribeDcdnCertificateListRequest() (request *DescribeDcdnCertificat
 	request = &DescribeDcdnCertificateListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dcdn", "2018-01-15", "DescribeDcdnCertificateList", "", "")
+	request.InitWithApiInfo("dcdn", "2018-01-15", "DescribeDcdnCertificateList", "dcdn", "openAPI")
 	return
 }
 

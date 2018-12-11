@@ -99,7 +99,7 @@ func CreateSetDcdnDomainCertificateRequest() (request *SetDcdnDomainCertificateR
 	request = &SetDcdnDomainCertificateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dcdn", "2018-01-15", "SetDcdnDomainCertificate", "", "")
+	request.InitWithApiInfo("dcdn", "2018-01-15", "SetDcdnDomainCertificate", "dcdn", "openAPI")
 	return
 }
 

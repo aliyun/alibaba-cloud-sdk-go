@@ -94,7 +94,7 @@ func CreateRefreshDcdnObjectCachesRequest() (request *RefreshDcdnObjectCachesReq
 	request = &RefreshDcdnObjectCachesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dcdn", "2018-01-15", "RefreshDcdnObjectCaches", "", "")
+	request.InitWithApiInfo("dcdn", "2018-01-15", "RefreshDcdnObjectCaches", "dcdn", "openAPI")
 	return
 }
 
