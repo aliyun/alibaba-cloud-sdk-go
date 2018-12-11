@@ -99,7 +99,7 @@ func CreateOpenScdnServiceRequest() (request *OpenScdnServiceRequest) {
 	request = &OpenScdnServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("scdn", "2017-11-15", "OpenScdnService", "", "")
+	request.InitWithApiInfo("scdn", "2017-11-15", "OpenScdnService", "scdn", "openAPI")
 	return
 }
 

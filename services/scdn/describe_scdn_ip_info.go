@@ -97,7 +97,7 @@ func CreateDescribeScdnIpInfoRequest() (request *DescribeScdnIpInfoRequest) {
 	request = &DescribeScdnIpInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("scdn", "2017-11-15", "DescribeScdnIpInfo", "", "")
+	request.InitWithApiInfo("scdn", "2017-11-15", "DescribeScdnIpInfo", "scdn", "openAPI")
 	return
 }
 

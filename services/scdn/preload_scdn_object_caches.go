@@ -94,7 +94,7 @@ func CreatePreloadScdnObjectCachesRequest() (request *PreloadScdnObjectCachesReq
 	request = &PreloadScdnObjectCachesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("scdn", "2017-11-15", "PreloadScdnObjectCaches", "", "")
+	request.InitWithApiInfo("scdn", "2017-11-15", "PreloadScdnObjectCaches", "scdn", "openAPI")
 	return
 }
 

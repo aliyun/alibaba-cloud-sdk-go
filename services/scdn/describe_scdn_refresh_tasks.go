@@ -105,7 +105,7 @@ func CreateDescribeScdnRefreshTasksRequest() (request *DescribeScdnRefreshTasksR
 	request = &DescribeScdnRefreshTasksRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("scdn", "2017-11-15", "DescribeScdnRefreshTasks", "", "")
+	request.InitWithApiInfo("scdn", "2017-11-15", "DescribeScdnRefreshTasks", "scdn", "openAPI")
 	return
 }
 

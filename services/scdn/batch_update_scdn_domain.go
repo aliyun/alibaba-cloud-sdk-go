@@ -95,7 +95,7 @@ func CreateBatchUpdateScdnDomainRequest() (request *BatchUpdateScdnDomainRequest
 	request = &BatchUpdateScdnDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("scdn", "2017-11-15", "BatchUpdateScdnDomain", "", "")
+	request.InitWithApiInfo("scdn", "2017-11-15", "BatchUpdateScdnDomain", "scdn", "openAPI")
 	return
 }
 

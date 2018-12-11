@@ -100,7 +100,7 @@ func CreateDescribeScdnUserQuotaRequest() (request *DescribeScdnUserQuotaRequest
 	request = &DescribeScdnUserQuotaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("scdn", "2017-11-15", "DescribeScdnUserQuota", "", "")
+	request.InitWithApiInfo("scdn", "2017-11-15", "DescribeScdnUserQuota", "scdn", "openAPI")
 	return
 }
 

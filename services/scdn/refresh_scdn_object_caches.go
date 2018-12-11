@@ -94,7 +94,7 @@ func CreateRefreshScdnObjectCachesRequest() (request *RefreshScdnObjectCachesReq
 	request = &RefreshScdnObjectCachesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("scdn", "2017-11-15", "RefreshScdnObjectCaches", "", "")
+	request.InitWithApiInfo("scdn", "2017-11-15", "RefreshScdnObjectCaches", "scdn", "openAPI")
 	return
 }
 

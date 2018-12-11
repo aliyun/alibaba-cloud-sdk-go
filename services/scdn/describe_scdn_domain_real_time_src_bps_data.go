@@ -98,7 +98,7 @@ func CreateDescribeScdnDomainRealTimeSrcBpsDataRequest() (request *DescribeScdnD
 	request = &DescribeScdnDomainRealTimeSrcBpsDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("scdn", "2017-11-15", "DescribeScdnDomainRealTimeSrcBpsData", "", "")
+	request.InitWithApiInfo("scdn", "2017-11-15", "DescribeScdnDomainRealTimeSrcBpsData", "scdn", "openAPI")
 	return
 }
 

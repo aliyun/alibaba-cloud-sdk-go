@@ -101,7 +101,7 @@ func CreateDescribeScdnDomainQpsDataRequest() (request *DescribeScdnDomainQpsDat
 	request = &DescribeScdnDomainQpsDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("scdn", "2017-11-15", "DescribeScdnDomainQpsData", "", "")
+	request.InitWithApiInfo("scdn", "2017-11-15", "DescribeScdnDomainQpsData", "scdn", "openAPI")
 	return
 }
 

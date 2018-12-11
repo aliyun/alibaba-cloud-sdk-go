@@ -94,7 +94,7 @@ func CreateDescribeScdnDomainConfigsRequest() (request *DescribeScdnDomainConfig
 	request = &DescribeScdnDomainConfigsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("scdn", "2017-11-15", "DescribeScdnDomainConfigs", "", "")
+	request.InitWithApiInfo("scdn", "2017-11-15", "DescribeScdnDomainConfigs", "scdn", "openAPI")
 	return
 }
 

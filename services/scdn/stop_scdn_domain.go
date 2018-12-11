@@ -92,7 +92,7 @@ func CreateStopScdnDomainRequest() (request *StopScdnDomainRequest) {
 	request = &StopScdnDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("scdn", "2017-11-15", "StopScdnDomain", "", "")
+	request.InitWithApiInfo("scdn", "2017-11-15", "StopScdnDomain", "scdn", "openAPI")
 	return
 }
 

@@ -99,7 +99,7 @@ func CreateDescribeScdnTopDomainsByFlowRequest() (request *DescribeScdnTopDomain
 	request = &DescribeScdnTopDomainsByFlowRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("scdn", "2017-11-15", "DescribeScdnTopDomainsByFlow", "", "")
+	request.InitWithApiInfo("scdn", "2017-11-15", "DescribeScdnTopDomainsByFlow", "scdn", "openAPI")
 	return
 }
 
