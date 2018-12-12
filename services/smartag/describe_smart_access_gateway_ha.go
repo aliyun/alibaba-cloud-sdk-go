@@ -96,6 +96,8 @@ type DescribeSmartAccessGatewayHaResponse struct {
 	MainLinkId             string `json:"MainLinkId" xml:"MainLinkId"`
 	BackupLinkId           string `json:"BackupLinkId" xml:"BackupLinkId"`
 	SmartAGId              string `json:"SmartAGId" xml:"SmartAGId"`
+	MainLinkState          string `json:"MainLinkState" xml:"MainLinkState"`
+	BackupLinkState        string `json:"BackupLinkState" xml:"BackupLinkState"`
 }
 
 // CreateDescribeSmartAccessGatewayHaRequest creates a request to invoke DescribeSmartAccessGatewayHa API
