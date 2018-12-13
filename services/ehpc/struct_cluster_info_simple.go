@@ -34,6 +34,7 @@ type ClusterInfoSimple struct {
 	ImageOwnerAlias string         `json:"ImageOwnerAlias" xml:"ImageOwnerAlias"`
 	ImageId         string         `json:"ImageId" xml:"ImageId"`
 	Location        string         `json:"Location" xml:"Location"`
+	EhpcVersion     string         `json:"EhpcVersion" xml:"EhpcVersion"`
 	Managers        Managers       `json:"Managers" xml:"Managers"`
 	Computes        Computes       `json:"Computes" xml:"Computes"`
 	TotalResources  TotalResources `json:"TotalResources" xml:"TotalResources"`

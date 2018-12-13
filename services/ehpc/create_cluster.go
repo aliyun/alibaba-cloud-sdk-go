@@ -93,6 +93,7 @@ type CreateClusterRequest struct {
 	EcsOrderManagerCount        requests.Integer                  `position:"Query" name:"EcsOrder.Manager.Count"`
 	Password                    string                            `position:"Query" name:"Password"`
 	EcsOrderLoginCount          requests.Integer                  `position:"Query" name:"EcsOrder.Login.Count"`
+	SystemDiskSize              requests.Integer                  `position:"Query" name:"SystemDiskSize"`
 	ComputeSpotPriceLimit       string                            `position:"Query" name:"ComputeSpotPriceLimit"`
 	AutoRenewPeriod             requests.Integer                  `position:"Query" name:"AutoRenewPeriod"`
 	Period                      requests.Integer                  `position:"Query" name:"Period"`

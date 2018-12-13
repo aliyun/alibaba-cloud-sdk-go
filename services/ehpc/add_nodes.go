@@ -88,6 +88,7 @@ type AddNodesRequest struct {
 	AutoRenew             string           `position:"Query" name:"AutoRenew"`
 	EcsChargeType         string           `position:"Query" name:"EcsChargeType"`
 	CreateMode            string           `position:"Query" name:"CreateMode"`
+	SystemDiskSize        requests.Integer `position:"Query" name:"SystemDiskSize"`
 	InstanceType          string           `position:"Query" name:"InstanceType"`
 	ComputeSpotPriceLimit string           `position:"Query" name:"ComputeSpotPriceLimit"`
 }

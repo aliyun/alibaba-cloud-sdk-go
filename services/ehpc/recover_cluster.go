@@ -76,7 +76,12 @@ func (client *Client) RecoverClusterWithCallback(request *RecoverClusterRequest,
 // RecoverClusterRequest is the request struct for api RecoverCluster
 type RecoverClusterRequest struct {
 	*requests.RpcRequest
-	ClusterId string `position:"Query" name:"ClusterId"`
+	ImageId         string `position:"Query" name:"ImageId"`
+	OsTag           string `position:"Query" name:"OsTag"`
+	AccountType     string `position:"Query" name:"AccountType"`
+	SchedulerType   string `position:"Query" name:"SchedulerType"`
+	ClusterId       string `position:"Query" name:"ClusterId"`
+	ImageOwnerAlias string `position:"Query" name:"ImageOwnerAlias"`
 }
 
 // RecoverClusterResponse is the response struct for api RecoverCluster
