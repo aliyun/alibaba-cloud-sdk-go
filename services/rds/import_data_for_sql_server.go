@@ -96,7 +96,7 @@ func CreateImportDataForSQLServerRequest() (request *ImportDataForSQLServerReque
 	request = &ImportDataForSQLServerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ImportDataForSQLServer", "Rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "ImportDataForSQLServer", "rds", "openAPI")
 	return
 }
 

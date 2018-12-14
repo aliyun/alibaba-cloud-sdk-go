@@ -1,3 +1,6 @@
+2018-12-14 Version: 1.44.1
+1, fix service code to rds
+
 2018-12-13 Version: 1.44.0
 1, Add SystemDiskSize in CreateCluster and AddNodes, add more parameters in RecoverCluster
 

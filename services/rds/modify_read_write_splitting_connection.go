@@ -99,7 +99,7 @@ func CreateModifyReadWriteSplittingConnectionRequest() (request *ModifyReadWrite
 	request = &ModifyReadWriteSplittingConnectionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyReadWriteSplittingConnection", "Rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyReadWriteSplittingConnection", "rds", "openAPI")
 	return
 }
 
