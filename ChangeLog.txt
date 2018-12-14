@@ -1,3 +1,7 @@
+2018-12-14 Version: 1.44.2
+1, fixed sdk unit loute .
+2, upgrade rds sdk version 2.2.0.
+
 2018-12-14 Version: 1.44.1
 1, fix service code to rds
 
