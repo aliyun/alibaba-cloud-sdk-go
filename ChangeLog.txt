@@ -1,3 +1,7 @@
+2018-12-15 Version: 1.45.0
+1, first release
+2, this SDK is for control purposes, programmatic interface of HTTPDNS console: https://httpdns.console.aliyun.com
+
 2018-12-14 Version: 1.44.2
 1, fixed sdk unit loute .
 2, upgrade rds sdk version 2.2.0.
