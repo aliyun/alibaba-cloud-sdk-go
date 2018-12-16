@@ -99,7 +99,7 @@ func CreateGetCDNStatisSumRequest() (request *GetCDNStatisSumRequest) {
 	request = &GetCDNStatisSumRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "GetCDNStatisSum", "", "")
+	request.InitWithApiInfo("vod", "2017-03-21", "GetCDNStatisSum", "vod", "openAPI")
 	return
 }
 

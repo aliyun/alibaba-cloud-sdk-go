@@ -83,6 +83,7 @@ type SearchMediaRequest struct {
 	Match                string           `position:"Query" name:"Match"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	SortBy               string           `position:"Query" name:"SortBy"`
+	SessionId            string           `position:"Query" name:"SessionId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	Fields               string           `position:"Query" name:"Fields"`
 	ScrollToken          string           `position:"Query" name:"ScrollToken"`
@@ -102,7 +103,7 @@ func CreateSearchMediaRequest() (request *SearchMediaRequest) {
 	request = &SearchMediaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "SearchMedia", "", "")
+	request.InitWithApiInfo("vod", "2017-03-21", "SearchMedia", "vod", "openAPI")
 	return
 }
 

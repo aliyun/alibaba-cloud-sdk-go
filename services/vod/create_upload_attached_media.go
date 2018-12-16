@@ -106,7 +106,7 @@ func CreateCreateUploadAttachedMediaRequest() (request *CreateUploadAttachedMedi
 	request = &CreateUploadAttachedMediaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "CreateUploadAttachedMedia", "", "")
+	request.InitWithApiInfo("vod", "2017-03-21", "CreateUploadAttachedMedia", "vod", "openAPI")
 	return
 }
 

@@ -96,7 +96,7 @@ func CreateListAIVideoSummaryJobRequest() (request *ListAIVideoSummaryJobRequest
 	request = &ListAIVideoSummaryJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "ListAIVideoSummaryJob", "", "")
+	request.InitWithApiInfo("vod", "2017-03-21", "ListAIVideoSummaryJob", "vod", "openAPI")
 	return
 }
 

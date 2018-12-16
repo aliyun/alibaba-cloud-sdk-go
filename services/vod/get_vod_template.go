@@ -94,7 +94,7 @@ func CreateGetVodTemplateRequest() (request *GetVodTemplateRequest) {
 	request = &GetVodTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "GetVodTemplate", "", "")
+	request.InitWithApiInfo("vod", "2017-03-21", "GetVodTemplate", "vod", "openAPI")
 	return
 }
 

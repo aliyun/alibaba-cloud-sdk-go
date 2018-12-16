@@ -94,7 +94,7 @@ func CreateDeleteVodTemplateRequest() (request *DeleteVodTemplateRequest) {
 	request = &DeleteVodTemplateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "DeleteVodTemplate", "", "")
+	request.InitWithApiInfo("vod", "2017-03-21", "DeleteVodTemplate", "vod", "openAPI")
 	return
 }
 

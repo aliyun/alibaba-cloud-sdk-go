@@ -94,7 +94,7 @@ func CreateGetWorkFlowRequest() (request *GetWorkFlowRequest) {
 	request = &GetWorkFlowRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "GetWorkFlow", "", "")
+	request.InitWithApiInfo("vod", "2017-03-21", "GetWorkFlow", "vod", "openAPI")
 	return
 }
 

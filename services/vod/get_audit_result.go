@@ -96,7 +96,7 @@ func CreateGetAuditResultRequest() (request *GetAuditResultRequest) {
 	request = &GetAuditResultRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "GetAuditResult", "", "")
+	request.InitWithApiInfo("vod", "2017-03-21", "GetAuditResult", "vod", "openAPI")
 	return
 }
 

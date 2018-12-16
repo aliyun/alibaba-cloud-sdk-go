@@ -103,7 +103,7 @@ func CreateCreateUploadImageRequest() (request *CreateUploadImageRequest) {
 	request = &CreateUploadImageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "CreateUploadImage", "", "")
+	request.InitWithApiInfo("vod", "2017-03-21", "CreateUploadImage", "vod", "openAPI")
 	return
 }
 

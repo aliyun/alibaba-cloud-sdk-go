@@ -97,7 +97,7 @@ func CreateDescribePlayTopVideosRequest() (request *DescribePlayTopVideosRequest
 	request = &DescribePlayTopVideosRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "DescribePlayTopVideos", "", "")
+	request.InitWithApiInfo("vod", "2017-03-21", "DescribePlayTopVideos", "vod", "openAPI")
 	return
 }
 

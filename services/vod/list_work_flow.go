@@ -93,7 +93,7 @@ func CreateListWorkFlowRequest() (request *ListWorkFlowRequest) {
 	request = &ListWorkFlowRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "ListWorkFlow", "", "")
+	request.InitWithApiInfo("vod", "2017-03-21", "ListWorkFlow", "vod", "openAPI")
 	return
 }
 

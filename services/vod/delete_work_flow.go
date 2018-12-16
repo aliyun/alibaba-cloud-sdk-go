@@ -94,7 +94,7 @@ func CreateDeleteWorkFlowRequest() (request *DeleteWorkFlowRequest) {
 	request = &DeleteWorkFlowRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "DeleteWorkFlow", "", "")
+	request.InitWithApiInfo("vod", "2017-03-21", "DeleteWorkFlow", "vod", "openAPI")
 	return
 }
 

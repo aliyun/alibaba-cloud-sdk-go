@@ -96,7 +96,7 @@ func CreateUpdateWorkFlowRequest() (request *UpdateWorkFlowRequest) {
 	request = &UpdateWorkFlowRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "UpdateWorkFlow", "", "")
+	request.InitWithApiInfo("vod", "2017-03-21", "UpdateWorkFlow", "vod", "openAPI")
 	return
 }
 

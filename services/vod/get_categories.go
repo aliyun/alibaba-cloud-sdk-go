@@ -99,7 +99,7 @@ func CreateGetCategoriesRequest() (request *GetCategoriesRequest) {
 	request = &GetCategoriesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "GetCategories", "", "")
+	request.InitWithApiInfo("vod", "2017-03-21", "GetCategories", "vod", "openAPI")
 	return
 }
 

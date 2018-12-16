@@ -98,7 +98,7 @@ func CreateGetMezzanineInfoRequest() (request *GetMezzanineInfoRequest) {
 	request = &GetMezzanineInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "GetMezzanineInfo", "", "")
+	request.InitWithApiInfo("vod", "2017-03-21", "GetMezzanineInfo", "vod", "openAPI")
 	return
 }
 

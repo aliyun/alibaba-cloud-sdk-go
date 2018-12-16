@@ -93,7 +93,7 @@ func CreateListWatermarkRequest() (request *ListWatermarkRequest) {
 	request = &ListWatermarkRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "ListWatermark", "", "")
+	request.InitWithApiInfo("vod", "2017-03-21", "ListWatermark", "vod", "openAPI")
 	return
 }
 

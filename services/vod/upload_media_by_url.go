@@ -99,7 +99,7 @@ func CreateUploadMediaByURLRequest() (request *UploadMediaByURLRequest) {
 	request = &UploadMediaByURLRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "UploadMediaByURL", "", "")
+	request.InitWithApiInfo("vod", "2017-03-21", "UploadMediaByURL", "vod", "openAPI")
 	return
 }
 

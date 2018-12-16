@@ -93,7 +93,7 @@ func CreateDescribePlayUserAvgRequest() (request *DescribePlayUserAvgRequest) {
 	request = &DescribePlayUserAvgRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "DescribePlayUserAvg", "", "")
+	request.InitWithApiInfo("vod", "2017-03-21", "DescribePlayUserAvg", "vod", "openAPI")
 	return
 }
 

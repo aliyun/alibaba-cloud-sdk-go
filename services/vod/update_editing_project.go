@@ -98,7 +98,7 @@ func CreateUpdateEditingProjectRequest() (request *UpdateEditingProjectRequest) 
 	request = &UpdateEditingProjectRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "UpdateEditingProject", "", "")
+	request.InitWithApiInfo("vod", "2017-03-21", "UpdateEditingProject", "vod", "openAPI")
 	return
 }
 
