@@ -1,3 +1,6 @@
+2018-12-17 Version: 1.45.2
+1, First Release
+
 2018-12-16 Version: 1.45.1
 1, Add a new api called AddMediaSequences to add media sequences of vod videos with in/out or live streams with start time/end time.
 
