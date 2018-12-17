@@ -33,6 +33,7 @@ type Data struct {
 	ItemCode               string                                 `json:"ItemCode" xml:"ItemCode"`
 	ThresholdAmount        string                                 `json:"ThresholdAmount" xml:"ThresholdAmount"`
 	BillingCycle           string                                 `json:"BillingCycle" xml:"BillingCycle"`
+	Boolean                bool                                   `json:"Boolean" xml:"Boolean"`
 	Uid                    int                                    `json:"Uid" xml:"Uid"`
 	TotalCount             int                                    `json:"TotalCount" xml:"TotalCount"`
 	OutstandingAmount      float64                                `json:"OutstandingAmount" xml:"OutstandingAmount"`

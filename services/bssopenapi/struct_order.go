@@ -25,6 +25,7 @@ type Order struct {
 	ProductType       string `json:"ProductType" xml:"ProductType"`
 	PaymentStatus     string `json:"PaymentStatus" xml:"PaymentStatus"`
 	Currency          string `json:"Currency" xml:"Currency"`
+	Operator          string `json:"Operator" xml:"Operator"`
 	SubOrderId        string `json:"SubOrderId" xml:"SubOrderId"`
 	ProductCode       string `json:"ProductCode" xml:"ProductCode"`
 	InstanceIDs       string `json:"InstanceIDs" xml:"InstanceIDs"`
