@@ -10,7 +10,9 @@ import (
 
 func Test_DescribeDBInstances(t *testing.T) {
 	client, err := rds.NewClientWithAccessKey(
-		"cn-hangzhou", os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"),
+		os.Getenv("REGION_ID"),
+		os.Getenv("ACCESS_KEY_ID"),
+		os.Getenv("ACCESS_KEY_SECRET"),
 	)
 	assert.Nil(t, err)
 	assert.NotNil(t, client)

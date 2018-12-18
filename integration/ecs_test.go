@@ -11,7 +11,11 @@ import (
 
 func Test_DescribeRegions(t *testing.T) {
 	request := ecs.CreateDescribeRegionsRequest()
-	client, err := ecs.NewClientWithAccessKey("cn-hangzhou", os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
+	client, err := ecs.NewClientWithAccessKey(
+		os.Getenv("REGION_ID"),
+		os.Getenv("ACCESS_KEY_ID"),
+		os.Getenv("ACCESS_KEY_SECRET"),
+	)
 	assert.Nil(t, err)
 	response, err := client.DescribeRegions(request)
 	assert.Nil(t, err)
