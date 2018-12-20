@@ -77,11 +77,15 @@ func (client *Client) SaveSingleTaskForCreatingOrderTransferWithCallback(request
 type SaveSingleTaskForCreatingOrderTransferRequest struct {
 	*requests.RpcRequest
 	PermitPremiumTransfer requests.Boolean `position:"Query" name:"PermitPremiumTransfer"`
+	PromotionNo           string           `position:"Query" name:"PromotionNo"`
 	AuthorizationCode     string           `position:"Query" name:"AuthorizationCode"`
 	UserClientIp          string           `position:"Query" name:"UserClientIp"`
 	DomainName            string           `position:"Query" name:"DomainName"`
 	RegistrantProfileId   requests.Integer `position:"Query" name:"RegistrantProfileId"`
+	CouponNo              string           `position:"Query" name:"CouponNo"`
+	UseCoupon             requests.Boolean `position:"Query" name:"UseCoupon"`
 	Lang                  string           `position:"Query" name:"Lang"`
+	UsePromotion          requests.Boolean `position:"Query" name:"UsePromotion"`
 }
 
 // SaveSingleTaskForCreatingOrderTransferResponse is the response struct for api SaveSingleTaskForCreatingOrderTransfer

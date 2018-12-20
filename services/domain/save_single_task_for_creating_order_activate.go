@@ -83,6 +83,7 @@ type SaveSingleTaskForCreatingOrderActivateRequest struct {
 	Dns2                      string           `position:"Query" name:"Dns2"`
 	Dns1                      string           `position:"Query" name:"Dns1"`
 	RegistrantProfileId       requests.Integer `position:"Query" name:"RegistrantProfileId"`
+	CouponNo                  string           `position:"Query" name:"CouponNo"`
 	AliyunDns                 requests.Boolean `position:"Query" name:"AliyunDns"`
 	ZhCity                    string           `position:"Query" name:"ZhCity"`
 	TelExt                    string           `position:"Query" name:"TelExt"`
@@ -99,11 +100,14 @@ type SaveSingleTaskForCreatingOrderActivateRequest struct {
 	RegistrantType            string           `position:"Query" name:"RegistrantType"`
 	Telephone                 string           `position:"Query" name:"Telephone"`
 	TrademarkDomainActivation requests.Boolean `position:"Query" name:"TrademarkDomainActivation"`
+	UseCoupon                 requests.Boolean `position:"Query" name:"UseCoupon"`
 	ZhProvince                string           `position:"Query" name:"ZhProvince"`
 	RegistrantOrganization    string           `position:"Query" name:"RegistrantOrganization"`
+	PromotionNo               string           `position:"Query" name:"PromotionNo"`
 	EnableDomainProxy         requests.Boolean `position:"Query" name:"EnableDomainProxy"`
 	UserClientIp              string           `position:"Query" name:"UserClientIp"`
 	RegistrantName            string           `position:"Query" name:"RegistrantName"`
+	UsePromotion              requests.Boolean `position:"Query" name:"UsePromotion"`
 }
 
 // SaveSingleTaskForCreatingOrderActivateResponse is the response struct for api SaveSingleTaskForCreatingOrderActivate

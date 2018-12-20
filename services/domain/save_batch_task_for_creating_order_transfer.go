@@ -76,9 +76,13 @@ func (client *Client) SaveBatchTaskForCreatingOrderTransferWithCallback(request 
 // SaveBatchTaskForCreatingOrderTransferRequest is the request struct for api SaveBatchTaskForCreatingOrderTransfer
 type SaveBatchTaskForCreatingOrderTransferRequest struct {
 	*requests.RpcRequest
+	PromotionNo        string                                                     `position:"Query" name:"PromotionNo"`
 	OrderTransferParam *[]SaveBatchTaskForCreatingOrderTransferOrderTransferParam `position:"Query" name:"OrderTransferParam"  type:"Repeated"`
 	UserClientIp       string                                                     `position:"Query" name:"UserClientIp"`
+	CouponNo           string                                                     `position:"Query" name:"CouponNo"`
+	UseCoupon          requests.Boolean                                           `position:"Query" name:"UseCoupon"`
 	Lang               string                                                     `position:"Query" name:"Lang"`
+	UsePromotion       requests.Boolean                                           `position:"Query" name:"UsePromotion"`
 }
 
 // SaveBatchTaskForCreatingOrderTransferOrderTransferParam is a repeated param struct in SaveBatchTaskForCreatingOrderTransferRequest

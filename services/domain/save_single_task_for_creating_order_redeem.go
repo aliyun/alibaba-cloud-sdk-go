@@ -76,10 +76,14 @@ func (client *Client) SaveSingleTaskForCreatingOrderRedeemWithCallback(request *
 // SaveSingleTaskForCreatingOrderRedeemRequest is the request struct for api SaveSingleTaskForCreatingOrderRedeem
 type SaveSingleTaskForCreatingOrderRedeemRequest struct {
 	*requests.RpcRequest
+	PromotionNo           string           `position:"Query" name:"PromotionNo"`
 	CurrentExpirationDate requests.Integer `position:"Query" name:"CurrentExpirationDate"`
 	UserClientIp          string           `position:"Query" name:"UserClientIp"`
 	DomainName            string           `position:"Query" name:"DomainName"`
+	CouponNo              string           `position:"Query" name:"CouponNo"`
+	UseCoupon             requests.Boolean `position:"Query" name:"UseCoupon"`
 	Lang                  string           `position:"Query" name:"Lang"`
+	UsePromotion          requests.Boolean `position:"Query" name:"UsePromotion"`
 }
 
 // SaveSingleTaskForCreatingOrderRedeemResponse is the response struct for api SaveSingleTaskForCreatingOrderRedeem
