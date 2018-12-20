@@ -78,26 +78,30 @@ type SaveSingleTaskForCreatingOrderActivateRequest struct {
 	*requests.RpcRequest
 	Country                   string           `position:"Query" name:"Country"`
 	SubscriptionDuration      requests.Integer `position:"Query" name:"SubscriptionDuration"`
-	Address                   string           `position:"Query" name:"Address"`
 	PermitPremiumActivation   requests.Boolean `position:"Query" name:"PermitPremiumActivation"`
-	TelArea                   string           `position:"Query" name:"TelArea"`
 	City                      string           `position:"Query" name:"City"`
 	Dns2                      string           `position:"Query" name:"Dns2"`
 	Dns1                      string           `position:"Query" name:"Dns1"`
-	DomainName                string           `position:"Query" name:"DomainName"`
 	RegistrantProfileId       requests.Integer `position:"Query" name:"RegistrantProfileId"`
-	Telephone                 string           `position:"Query" name:"Telephone"`
-	TrademarkDomainActivation requests.Boolean `position:"Query" name:"TrademarkDomainActivation"`
+	CouponNo                  string           `position:"Query" name:"CouponNo"`
 	AliyunDns                 requests.Boolean `position:"Query" name:"AliyunDns"`
-	RegistrantOrganization    string           `position:"Query" name:"RegistrantOrganization"`
 	TelExt                    string           `position:"Query" name:"TelExt"`
 	Province                  string           `position:"Query" name:"Province"`
 	PostalCode                string           `position:"Query" name:"PostalCode"`
-	UserClientIp              string           `position:"Query" name:"UserClientIp"`
-	EnableDomainProxy         requests.Boolean `position:"Query" name:"EnableDomainProxy"`
 	Lang                      string           `position:"Query" name:"Lang"`
 	Email                     string           `position:"Query" name:"Email"`
+	Address                   string           `position:"Query" name:"Address"`
+	TelArea                   string           `position:"Query" name:"TelArea"`
+	DomainName                string           `position:"Query" name:"DomainName"`
+	Telephone                 string           `position:"Query" name:"Telephone"`
+	TrademarkDomainActivation requests.Boolean `position:"Query" name:"TrademarkDomainActivation"`
+	UseCoupon                 requests.Boolean `position:"Query" name:"UseCoupon"`
+	RegistrantOrganization    string           `position:"Query" name:"RegistrantOrganization"`
+	PromotionNo               string           `position:"Query" name:"PromotionNo"`
+	UserClientIp              string           `position:"Query" name:"UserClientIp"`
+	EnableDomainProxy         requests.Boolean `position:"Query" name:"EnableDomainProxy"`
 	RegistrantName            string           `position:"Query" name:"RegistrantName"`
+	UsePromotion              requests.Boolean `position:"Query" name:"UsePromotion"`
 }
 
 // SaveSingleTaskForCreatingOrderActivateResponse is the response struct for api SaveSingleTaskForCreatingOrderActivate

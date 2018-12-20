@@ -77,8 +77,12 @@ func (client *Client) SaveBatchTaskForCreatingOrderActivateWithCallback(request 
 type SaveBatchTaskForCreatingOrderActivateRequest struct {
 	*requests.RpcRequest
 	OrderActivateParam *[]SaveBatchTaskForCreatingOrderActivateOrderActivateParam `position:"Query" name:"OrderActivateParam"  type:"Repeated"`
+	PromotionNo        string                                                     `position:"Query" name:"PromotionNo"`
 	UserClientIp       string                                                     `position:"Query" name:"UserClientIp"`
+	CouponNo           string                                                     `position:"Query" name:"CouponNo"`
+	UseCoupon          requests.Boolean                                           `position:"Query" name:"UseCoupon"`
 	Lang               string                                                     `position:"Query" name:"Lang"`
+	UsePromotion       requests.Boolean                                           `position:"Query" name:"UsePromotion"`
 }
 
 // SaveBatchTaskForCreatingOrderActivateOrderActivateParam is a repeated param struct in SaveBatchTaskForCreatingOrderActivateRequest
