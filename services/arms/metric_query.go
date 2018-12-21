@@ -76,15 +76,15 @@ func (client *Client) MetricQueryWithCallback(request *MetricQueryRequest, callb
 // MetricQueryRequest is the request struct for api MetricQuery
 type MetricQueryRequest struct {
 	*requests.RpcRequest
+	EndTime        requests.Integer      `position:"Query" name:"EndTime"`
+	OrderBy        string                `position:"Query" name:"OrderBy"`
+	Filters        *[]MetricQueryFilters `position:"Query" name:"Filters"  type:"Repeated"`
+	StartTime      requests.Integer      `position:"Query" name:"StartTime"`
 	IintervalInSec requests.Integer      `position:"Query" name:"IintervalInSec"`
 	Measures       *[]string             `position:"Query" name:"Measures"  type:"Repeated"`
 	Metric         string                `position:"Query" name:"Metric"`
 	SecurityToken  string                `position:"Query" name:"SecurityToken"`
 	Limit          requests.Integer      `position:"Query" name:"Limit"`
-	EndTime        requests.Integer      `position:"Query" name:"EndTime"`
-	OrderBy        string                `position:"Query" name:"OrderBy"`
-	StartTime      requests.Integer      `position:"Query" name:"StartTime"`
-	Filters        *[]MetricQueryFilters `position:"Query" name:"Filters"  type:"Repeated"`
 	Dimensions     *[]string             `position:"Query" name:"Dimensions"  type:"Repeated"`
 	Order          string                `position:"Query" name:"Order"`
 }
@@ -107,7 +107,7 @@ func CreateMetricQueryRequest() (request *MetricQueryRequest) {
 	request = &MetricQueryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2018-10-15", "MetricQuery", "", "")
+	request.InitWithApiInfo("ARMS", "2018-12-19", "MetricQuery", "arms", "openAPI")
 	return
 }
 
