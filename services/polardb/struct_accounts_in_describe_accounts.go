@@ -17,5 +17,5 @@ package polardb
 
 // AccountsInDescribeAccounts is a nested struct in polardb response
 type AccountsInDescribeAccounts struct {
-	DBInstanceAccount []DBInstanceAccount `json:"DBInstanceAccount" xml:"DBInstanceAccount"`
+	DBAccount []DBAccount `json:"DBAccount" xml:"DBAccount"`
 }

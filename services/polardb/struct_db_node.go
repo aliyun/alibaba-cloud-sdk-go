@@ -17,6 +17,12 @@ package polardb
 
 // DBNode is a nested struct in polardb response
 type DBNode struct {
-	DBNodeId    string `json:"DBNodeId" xml:"DBNodeId"`
-	DBNodeClass string `json:"DBNodeClass" xml:"DBNodeClass"`
+	DBNodeClass    string `json:"DBNodeClass" xml:"DBNodeClass"`
+	MaxIOPS        int    `json:"MaxIOPS" xml:"MaxIOPS"`
+	DBNodeRole     string `json:"DBNodeRole" xml:"DBNodeRole"`
+	MaxConnections int    `json:"MaxConnections" xml:"MaxConnections"`
+	ZoneId         string `json:"ZoneId" xml:"ZoneId"`
+	DBNodeStatus   string `json:"DBNodeStatus" xml:"DBNodeStatus"`
+	DBNodeId       string `json:"DBNodeId" xml:"DBNodeId"`
+	CreationTime   string `json:"CreationTime" xml:"CreationTime"`
 }

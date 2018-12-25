@@ -87,8 +87,8 @@ type DescribeAccountsRequest struct {
 // DescribeAccountsResponse is the response struct for api DescribeAccounts
 type DescribeAccountsResponse struct {
 	*responses.BaseResponse
-	RequestId string                     `json:"RequestId" xml:"RequestId"`
-	Accounts  AccountsInDescribeAccounts `json:"Accounts" xml:"Accounts"`
+	RequestId string      `json:"RequestId" xml:"RequestId"`
+	Accounts  []DBAccount `json:"Accounts" xml:"Accounts"`
 }
 
 // CreateDescribeAccountsRequest creates a request to invoke DescribeAccounts API

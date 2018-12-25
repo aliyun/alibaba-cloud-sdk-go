@@ -17,7 +17,6 @@ package polardb
 
 // DatabasePrivilege is a nested struct in polardb response
 type DatabasePrivilege struct {
-	DBName                 string `json:"DBName" xml:"DBName"`
-	AccountPrivilege       string `json:"AccountPrivilege" xml:"AccountPrivilege"`
-	AccountPrivilegeDetail string `json:"AccountPrivilegeDetail" xml:"AccountPrivilegeDetail"`
+	DBName           string `json:"DBName" xml:"DBName"`
+	AccountPrivilege string `json:"AccountPrivilege" xml:"AccountPrivilege"`
 }

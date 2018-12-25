@@ -1,3 +1,7 @@
+2018-12-25 Version: 1.47.3
+1, Add interface of endpoint.
+2, Add interface of cluster parameter.
+
 2018-12-21 Version: 1.47.2
 1, ARMS SDK 2018-12-19 go sdk upload
 

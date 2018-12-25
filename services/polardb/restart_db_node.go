@@ -79,7 +79,6 @@ type RestartDBNodeRequest struct {
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	DBNodeId             string           `position:"Query" name:"DBNodeId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }

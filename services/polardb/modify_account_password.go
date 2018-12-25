@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// ResetAccountPassword invokes the polardb.ResetAccountPassword API synchronously
-// api document: https://help.aliyun.com/api/polardb/resetaccountpassword.html
-func (client *Client) ResetAccountPassword(request *ResetAccountPasswordRequest) (response *ResetAccountPasswordResponse, err error) {
-	response = CreateResetAccountPasswordResponse()
+// ModifyAccountPassword invokes the polardb.ModifyAccountPassword API synchronously
+// api document: https://help.aliyun.com/api/polardb/modifyaccountpassword.html
+func (client *Client) ModifyAccountPassword(request *ModifyAccountPasswordRequest) (response *ModifyAccountPasswordResponse, err error) {
+	response = CreateModifyAccountPasswordResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// ResetAccountPasswordWithChan invokes the polardb.ResetAccountPassword API asynchronously
-// api document: https://help.aliyun.com/api/polardb/resetaccountpassword.html
+// ModifyAccountPasswordWithChan invokes the polardb.ModifyAccountPassword API asynchronously
+// api document: https://help.aliyun.com/api/polardb/modifyaccountpassword.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) ResetAccountPasswordWithChan(request *ResetAccountPasswordRequest) (<-chan *ResetAccountPasswordResponse, <-chan error) {
-	responseChan := make(chan *ResetAccountPasswordResponse, 1)
+func (client *Client) ModifyAccountPasswordWithChan(request *ModifyAccountPasswordRequest) (<-chan *ModifyAccountPasswordResponse, <-chan error) {
+	responseChan := make(chan *ModifyAccountPasswordResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.ResetAccountPassword(request)
+		response, err := client.ModifyAccountPassword(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) ResetAccountPasswordWithChan(request *ResetAccountPassword
 	return responseChan, errChan
 }
 
-// ResetAccountPasswordWithCallback invokes the polardb.ResetAccountPassword API asynchronously
-// api document: https://help.aliyun.com/api/polardb/resetaccountpassword.html
+// ModifyAccountPasswordWithCallback invokes the polardb.ModifyAccountPassword API asynchronously
+// api document: https://help.aliyun.com/api/polardb/modifyaccountpassword.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) ResetAccountPasswordWithCallback(request *ResetAccountPasswordRequest, callback func(response *ResetAccountPasswordResponse, err error)) <-chan int {
+func (client *Client) ModifyAccountPasswordWithCallback(request *ModifyAccountPasswordRequest, callback func(response *ModifyAccountPasswordResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *ResetAccountPasswordResponse
+		var response *ModifyAccountPasswordResponse
 		var err error
 		defer close(result)
-		response, err = client.ResetAccountPassword(request)
+		response, err = client.ModifyAccountPassword(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,36 +73,36 @@ func (client *Client) ResetAccountPasswordWithCallback(request *ResetAccountPass
 	return result
 }
 
-// ResetAccountPasswordRequest is the request struct for api ResetAccountPassword
-type ResetAccountPasswordRequest struct {
+// ModifyAccountPasswordRequest is the request struct for api ModifyAccountPassword
+type ModifyAccountPasswordRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	AccountPassword      string           `position:"Query" name:"AccountPassword"`
 	AccountName          string           `position:"Query" name:"AccountName"`
+	NewAccountPassword   string           `position:"Query" name:"NewAccountPassword"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	DBClusterId          string           `position:"Query" name:"DBClusterId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
-// ResetAccountPasswordResponse is the response struct for api ResetAccountPassword
-type ResetAccountPasswordResponse struct {
+// ModifyAccountPasswordResponse is the response struct for api ModifyAccountPassword
+type ModifyAccountPasswordResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateResetAccountPasswordRequest creates a request to invoke ResetAccountPassword API
-func CreateResetAccountPasswordRequest() (request *ResetAccountPasswordRequest) {
-	request = &ResetAccountPasswordRequest{
+// CreateModifyAccountPasswordRequest creates a request to invoke ModifyAccountPassword API
+func CreateModifyAccountPasswordRequest() (request *ModifyAccountPasswordRequest) {
+	request = &ModifyAccountPasswordRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "ResetAccountPassword", "polardb", "openAPI")
+	request.InitWithApiInfo("polardb", "2017-08-01", "ModifyAccountPassword", "polardb", "openAPI")
 	return
 }
 
-// CreateResetAccountPasswordResponse creates a response to parse from ResetAccountPassword response
-func CreateResetAccountPasswordResponse() (response *ResetAccountPasswordResponse) {
-	response = &ResetAccountPasswordResponse{
+// CreateModifyAccountPasswordResponse creates a response to parse from ModifyAccountPassword response
+func CreateModifyAccountPasswordResponse() (response *ModifyAccountPasswordResponse) {
+	response = &ModifyAccountPasswordResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

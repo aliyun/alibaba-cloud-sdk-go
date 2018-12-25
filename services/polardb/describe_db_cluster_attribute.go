@@ -86,8 +86,26 @@ type DescribeDBClusterAttributeRequest struct {
 // DescribeDBClusterAttributeResponse is the response struct for api DescribeDBClusterAttribute
 type DescribeDBClusterAttributeResponse struct {
 	*responses.BaseResponse
-	RequestId string                            `json:"RequestId" xml:"RequestId"`
-	Items     ItemsInDescribeDBClusterAttribute `json:"Items" xml:"Items"`
+	RequestId            string   `json:"RequestId" xml:"RequestId"`
+	RegionId             string   `json:"RegionId" xml:"RegionId"`
+	DBClusterNetworkType string   `json:"DBClusterNetworkType" xml:"DBClusterNetworkType"`
+	VPCId                string   `json:"VPCId" xml:"VPCId"`
+	VSwitchId            string   `json:"VSwitchId" xml:"VSwitchId"`
+	PayType              string   `json:"PayType" xml:"PayType"`
+	DBClusterId          string   `json:"DBClusterId" xml:"DBClusterId"`
+	DBClusterStatus      string   `json:"DBClusterStatus" xml:"DBClusterStatus"`
+	DBClusterDescription string   `json:"DBClusterDescription" xml:"DBClusterDescription"`
+	Engine               string   `json:"Engine" xml:"Engine"`
+	DBType               string   `json:"DBType" xml:"DBType"`
+	DBVersion            string   `json:"DBVersion" xml:"DBVersion"`
+	LockMode             string   `json:"LockMode" xml:"LockMode"`
+	CreationTime         string   `json:"CreationTime" xml:"CreationTime"`
+	ExpireTime           string   `json:"ExpireTime" xml:"ExpireTime"`
+	Expired              string   `json:"Expired" xml:"Expired"`
+	MaintainTime         string   `json:"MaintainTime" xml:"MaintainTime"`
+	StorageUsed          int      `json:"StorageUsed" xml:"StorageUsed"`
+	SQLSize              int      `json:"SQLSize" xml:"SQLSize"`
+	DBNodes              []DBNode `json:"DBNodes" xml:"DBNodes"`
 }
 
 // CreateDescribeDBClusterAttributeRequest creates a request to invoke DescribeDBClusterAttribute API

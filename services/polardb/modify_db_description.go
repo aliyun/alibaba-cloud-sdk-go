@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DeleteDBCluster invokes the polardb.DeleteDBCluster API synchronously
-// api document: https://help.aliyun.com/api/polardb/deletedbcluster.html
-func (client *Client) DeleteDBCluster(request *DeleteDBClusterRequest) (response *DeleteDBClusterResponse, err error) {
-	response = CreateDeleteDBClusterResponse()
+// ModifyDBDescription invokes the polardb.ModifyDBDescription API synchronously
+// api document: https://help.aliyun.com/api/polardb/modifydbdescription.html
+func (client *Client) ModifyDBDescription(request *ModifyDBDescriptionRequest) (response *ModifyDBDescriptionResponse, err error) {
+	response = CreateModifyDBDescriptionResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DeleteDBClusterWithChan invokes the polardb.DeleteDBCluster API asynchronously
-// api document: https://help.aliyun.com/api/polardb/deletedbcluster.html
+// ModifyDBDescriptionWithChan invokes the polardb.ModifyDBDescription API asynchronously
+// api document: https://help.aliyun.com/api/polardb/modifydbdescription.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DeleteDBClusterWithChan(request *DeleteDBClusterRequest) (<-chan *DeleteDBClusterResponse, <-chan error) {
-	responseChan := make(chan *DeleteDBClusterResponse, 1)
+func (client *Client) ModifyDBDescriptionWithChan(request *ModifyDBDescriptionRequest) (<-chan *ModifyDBDescriptionResponse, <-chan error) {
+	responseChan := make(chan *ModifyDBDescriptionResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DeleteDBCluster(request)
+		response, err := client.ModifyDBDescription(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) DeleteDBClusterWithChan(request *DeleteDBClusterRequest) (
 	return responseChan, errChan
 }
 
-// DeleteDBClusterWithCallback invokes the polardb.DeleteDBCluster API asynchronously
-// api document: https://help.aliyun.com/api/polardb/deletedbcluster.html
+// ModifyDBDescriptionWithCallback invokes the polardb.ModifyDBDescription API asynchronously
+// api document: https://help.aliyun.com/api/polardb/modifydbdescription.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DeleteDBClusterWithCallback(request *DeleteDBClusterRequest, callback func(response *DeleteDBClusterResponse, err error)) <-chan int {
+func (client *Client) ModifyDBDescriptionWithCallback(request *ModifyDBDescriptionRequest, callback func(response *ModifyDBDescriptionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DeleteDBClusterResponse
+		var response *ModifyDBDescriptionResponse
 		var err error
 		defer close(result)
-		response, err = client.DeleteDBCluster(request)
+		response, err = client.ModifyDBDescription(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,34 +73,36 @@ func (client *Client) DeleteDBClusterWithCallback(request *DeleteDBClusterReques
 	return result
 }
 
-// DeleteDBClusterRequest is the request struct for api DeleteDBCluster
-type DeleteDBClusterRequest struct {
+// ModifyDBDescriptionRequest is the request struct for api ModifyDBDescription
+type ModifyDBDescriptionRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DBName               string           `position:"Query" name:"DBName"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	DBClusterId          string           `position:"Query" name:"DBClusterId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	DBDescription        string           `position:"Query" name:"DBDescription"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
-// DeleteDBClusterResponse is the response struct for api DeleteDBCluster
-type DeleteDBClusterResponse struct {
+// ModifyDBDescriptionResponse is the response struct for api ModifyDBDescription
+type ModifyDBDescriptionResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateDeleteDBClusterRequest creates a request to invoke DeleteDBCluster API
-func CreateDeleteDBClusterRequest() (request *DeleteDBClusterRequest) {
-	request = &DeleteDBClusterRequest{
+// CreateModifyDBDescriptionRequest creates a request to invoke ModifyDBDescription API
+func CreateModifyDBDescriptionRequest() (request *ModifyDBDescriptionRequest) {
+	request = &ModifyDBDescriptionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("polardb", "2017-08-01", "DeleteDBCluster", "polardb", "openAPI")
+	request.InitWithApiInfo("polardb", "2017-08-01", "ModifyDBDescription", "polardb", "openAPI")
 	return
 }
 
-// CreateDeleteDBClusterResponse creates a response to parse from DeleteDBCluster response
-func CreateDeleteDBClusterResponse() (response *DeleteDBClusterResponse) {
-	response = &DeleteDBClusterResponse{
+// CreateModifyDBDescriptionResponse creates a response to parse from ModifyDBDescription response
+func CreateModifyDBDescriptionResponse() (response *ModifyDBDescriptionResponse) {
+	response = &ModifyDBDescriptionResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return
