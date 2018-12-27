@@ -79,8 +79,8 @@ type ModifyInstanceAutoRenewalAttributeRequest struct {
 	Duration             string           `position:"Query" name:"Duration"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	AutoRenew            string           `position:"Query" name:"AutoRenew"`
+	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`

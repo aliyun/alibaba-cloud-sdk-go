@@ -100,6 +100,7 @@ type DescribeSlowLogRecordsResponse struct {
 	Engine           string                        `json:"Engine" xml:"Engine"`
 	TotalRecordCount int                           `json:"TotalRecordCount" xml:"TotalRecordCount"`
 	PageNumber       int                           `json:"PageNumber" xml:"PageNumber"`
+	PageSize         int                           `json:"PageSize" xml:"PageSize"`
 	PageRecordCount  int                           `json:"PageRecordCount" xml:"PageRecordCount"`
 	Items            ItemsInDescribeSlowLogRecords `json:"Items" xml:"Items"`
 }

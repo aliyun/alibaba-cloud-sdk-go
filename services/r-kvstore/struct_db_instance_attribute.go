@@ -51,6 +51,6 @@ type DBInstanceAttribute struct {
 	PackageType         string `json:"PackageType" xml:"PackageType"`
 	ReplicaId           string `json:"ReplicaId" xml:"ReplicaId"`
 	VpcAuthMode         string `json:"VpcAuthMode" xml:"VpcAuthMode"`
+	AuditLogRetention   string `json:"AuditLogRetention" xml:"AuditLogRetention"`
 	ReplicationMode     string `json:"ReplicationMode" xml:"ReplicationMode"`
-	LuaStatus           string `json:"LuaStatus" xml:"LuaStatus"`
 }
