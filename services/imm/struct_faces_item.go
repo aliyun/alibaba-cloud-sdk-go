@@ -17,9 +17,20 @@ package imm
 
 // FacesItem is a nested struct in imm response
 type FacesItem struct {
-	UnGroupReason string                   `json:"UnGroupReason" xml:"UnGroupReason"`
-	FaceId        string                   `json:"FaceId" xml:"FaceId"`
-	GroupId       string                   `json:"GroupId" xml:"GroupId"`
-	FaceAttribute FaceAttribute            `json:"FaceAttribute" xml:"FaceAttribute"`
-	FaceRectangle FaceRectangleInIndexFace `json:"FaceRectangle" xml:"FaceRectangle"`
+	FaceConfidence       float64                  `json:"FaceConfidence" xml:"FaceConfidence"`
+	EmotionConfidence    float64                  `json:"EmotionConfidence" xml:"EmotionConfidence"`
+	Age                  string                   `json:"Age" xml:"Age"`
+	Attractive           float64                  `json:"Attractive" xml:"Attractive"`
+	AttractiveConfidence float64                  `json:"AttractiveConfidence" xml:"AttractiveConfidence"`
+	UnGroupReason        string                   `json:"UnGroupReason" xml:"UnGroupReason"`
+	AgeConfidence        float64                  `json:"AgeConfidence" xml:"AgeConfidence"`
+	Gender               string                   `json:"Gender" xml:"Gender"`
+	Emotion              string                   `json:"Emotion" xml:"Emotion"`
+	GenderConfidence     float64                  `json:"GenderConfidence" xml:"GenderConfidence"`
+	FaceId               string                   `json:"FaceId" xml:"FaceId"`
+	GroupId              string                   `json:"GroupId" xml:"GroupId"`
+	FaceAttributes       FaceAttributes           `json:"FaceAttributes" xml:"FaceAttributes"`
+	FaceRectangle        FaceRectangleInIndexFace `json:"FaceRectangle" xml:"FaceRectangle"`
+	EmotionDetails       EmotionDetails           `json:"EmotionDetails" xml:"EmotionDetails"`
+	FaceAttribute        FaceAttribute            `json:"FaceAttribute" xml:"FaceAttribute"`
 }

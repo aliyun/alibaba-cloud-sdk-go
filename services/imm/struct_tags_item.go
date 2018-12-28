@@ -17,11 +17,12 @@ package imm
 
 // TagsItem is a nested struct in imm response
 type TagsItem struct {
-	ParentTagId   string `json:"ParentTagId" xml:"ParentTagId"`
-	TagName       string `json:"TagName" xml:"TagName"`
-	TagLevel      string `json:"TagLevel" xml:"TagLevel"`
-	TagId         string `json:"TagId" xml:"TagId"`
-	TagScore      string `json:"TagScore" xml:"TagScore"`
-	Num           int    `json:"Num" xml:"Num"`
-	ParentTagName string `json:"ParentTagName" xml:"ParentTagName"`
+	TagEnName       string  `json:"TagEnName" xml:"TagEnName"`
+	TagName         string  `json:"TagName" xml:"TagName"`
+	TagCount        int     `json:"TagCount" xml:"TagCount"`
+	TagConfidence   float64 `json:"TagConfidence" xml:"TagConfidence"`
+	ParentTagEnName string  `json:"ParentTagEnName" xml:"ParentTagEnName"`
+	TagLevel        int     `json:"TagLevel" xml:"TagLevel"`
+	ParentTagName   string  `json:"ParentTagName" xml:"ParentTagName"`
+	Num             int     `json:"Num" xml:"Num"`
 }

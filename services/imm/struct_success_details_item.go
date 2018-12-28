@@ -26,5 +26,5 @@ type SuccessDetailsItem struct {
 	QRCodes          []QRCodesItem          `json:"QRCodes" xml:"QRCodes"`
 	LogoBoxDetail    []LogoBoxDetailItem    `json:"LogoBoxDetail" xml:"LogoBoxDetail"`
 	Faces            []FacesItem            `json:"Faces" xml:"Faces"`
-	Tags             []TagsItem             `json:"Tags" xml:"Tags"`
+	Tags             []TagsItemInIndexTag   `json:"Tags" xml:"Tags"`
 }

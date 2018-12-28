@@ -76,6 +76,7 @@ func (client *Client) ListTagNamesWithCallback(request *ListTagNamesRequest, cal
 // ListTagNamesRequest is the request struct for api ListTagNames
 type ListTagNamesRequest struct {
 	*requests.RpcRequest
+	Marker  string `position:"Query" name:"Marker"`
 	Project string `position:"Query" name:"Project"`
 	SetId   string `position:"Query" name:"SetId"`
 }
@@ -83,8 +84,9 @@ type ListTagNamesRequest struct {
 // ListTagNamesResponse is the response struct for api ListTagNames
 type ListTagNamesResponse struct {
 	*responses.BaseResponse
-	RequestId string     `json:"RequestId" xml:"RequestId"`
-	Tags      []TagsItem `json:"Tags" xml:"Tags"`
+	RequestId  string     `json:"RequestId" xml:"RequestId"`
+	NextMarker string     `json:"NextMarker" xml:"NextMarker"`
+	Tags       []TagsItem `json:"Tags" xml:"Tags"`
 }
 
 // CreateListTagNamesRequest creates a request to invoke ListTagNames API
