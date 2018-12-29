@@ -1,3 +1,6 @@
+2018-12-29 Version: 1.49.2
+1, re-generate go sdk for sts.
+
 2018-12-29 Version: 1.49.1
 1, re-generate Go SDK for RAM
 
