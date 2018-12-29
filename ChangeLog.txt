@@ -1,3 +1,6 @@
+2018-12-29 Version: 1.49.1
+1, re-generate Go SDK for RAM
+
 2018-12-29 Version: 1.49.0
 1, Add EnableUser interface, Support admin user to enable another user.
 2, Add DisableUser Interface, Support admin user to disable another user.
