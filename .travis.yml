@@ -24,7 +24,7 @@ script:
   - go build ./sdk
   - go build ./services/...
   - go test -race -coverprofile=coverage.txt -covermode=atomic ./sdk/...
-  - if [ "$TRAVIS_BRANCH" == "master" ]; then go test -v -timeout 60s ./integration/... ; fi
+  - if [ "$TRAVIS_PULL_REQUEST" = "false" ]; then go test -v -timeout 60s ./integration/... ; fi
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
