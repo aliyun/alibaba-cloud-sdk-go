@@ -69,3 +69,18 @@ func TestRoaSignatureComposer2(t *testing.T) {
 	assert.Equal(t, "application/xml", request.GetHeaders()["Accept"])
 	assert.Equal(t, "acs accessKeyId:U9uA3ftRZKixHPB08Z7Z4GOlpTY=", request.GetHeaders()["Authorization"])
 }
+
+func TestRoaSignatureComposer3(t *testing.T) {
+	request := requests.NewCommonRequest()
+	request.PathPattern = "/users/:user"
+	request.AcceptFormat = "RAW"
+	request.TransToAcsRequest()
+	c := credentials.NewAccessKeyCredential("accessKeyId", "accessKeySecret")
+	signer := signers.NewAccessKeySigner(c)
+
+	origTestHookGetDate := hookGetDate
+	defer func() { hookGetDate = origTestHookGetDate }()
+	hookGetDate = mockDate
+	signRoaRequest(request, signer, "regionId")
+	assert.Equal(t, "mock date", request.GetHeaders()["Date"])
+}

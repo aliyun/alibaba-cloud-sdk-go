@@ -97,10 +97,11 @@ func Test_AcsRequest(t *testing.T) {
 type AcsRequestTest struct {
 	*baseRequest
 	Ontology AcsRequest
-	Query    string `position:"Query" name:"Query"`
-	Header   string `position:"Header" name:"Header"`
-	Path     string `position:"Path" name:"Path"`
-	Body     string `position:"Body" name:"Body"`
+	Query    string      `position:"Query" name:"Query"`
+	Header   string      `position:"Header" name:"Header"`
+	Path     string      `position:"Path" name:"Path"`
+	Body     string      `position:"Body" name:"Body"`
+	TypeAcs  *[]string   `position:"type" name:"type" type:"Repeated"`
 }
 
 func (r AcsRequestTest) BuildQueries() string {
@@ -131,6 +132,8 @@ func Test_AcsRequest_InitParams(t *testing.T) {
 		Path:        "path value",
 		Body:        "body value",
 	}
+	tmp := []string{r.Query, r.Header}
+	r.TypeAcs = &tmp
 	r.addQueryParam("qkey", "qvalue")
 	InitParams(r)
 
