@@ -50,6 +50,10 @@ func TestRpcSignatureComposer(t *testing.T) {
 	assert.Equal(t, "mock date", request.GetQueryParams()["Timestamp"])
 	assert.Equal(t, "MOCK_UUID", request.GetQueryParams()["SignatureNonce"])
 	assert.Equal(t, "7loPmFjvDnzOVnQeQNj85S6nFGY=", request.GetQueryParams()["Signature"])
+	signRpcRequest(request, signer, "regionId")
+	assert.Equal(t, "mock date", request.GetQueryParams()["Timestamp"])
+	assert.Equal(t, "MOCK_UUID", request.GetQueryParams()["SignatureNonce"])
+	assert.Equal(t, "7loPmFjvDnzOVnQeQNj85S6nFGY=", request.GetQueryParams()["Signature"])
 }
 
 // func TestRpcSignatureComposer2(t *testing.T) {
