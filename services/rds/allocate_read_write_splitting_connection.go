@@ -82,9 +82,9 @@ type AllocateReadWriteSplittingConnectionRequest struct {
 	OwnerAccount           string           `position:"Query" name:"OwnerAccount"`
 	Weight                 string           `position:"Query" name:"Weight"`
 	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
-	IPType                 string           `position:"Query" name:"IPType"`
 	Port                   string           `position:"Query" name:"Port"`
 	DistributionType       string           `position:"Query" name:"DistributionType"`
+	NetType                string           `position:"Query" name:"NetType"`
 	DBInstanceId           string           `position:"Query" name:"DBInstanceId"`
 	MaxDelayTime           string           `position:"Query" name:"MaxDelayTime"`
 }

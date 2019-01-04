@@ -1,3 +1,8 @@
+2019-01-04 Version: 1.49.4
+1, modify DescribeSlowLogs, support query param SQLHASH, remove SQLID query param.
+2, modify DescribeSlowLogRecords, response values add SQLHASH, remove SQLID.
+3, upgrade rds sdk version 2.3.1.
+
 2019-01-04 Version: 1.49.3
 1, Change the DescribeInstance response esConfig List => Map
 

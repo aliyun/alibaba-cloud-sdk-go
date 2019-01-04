@@ -87,6 +87,7 @@ type DescribeSlowLogRecordsRequest struct {
 	DBName               string           `position:"Query" name:"DBName"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	SQLHASH              string           `position:"Query" name:"SQLHASH"`
 }
 
 // DescribeSlowLogRecordsResponse is the response struct for api DescribeSlowLogRecords

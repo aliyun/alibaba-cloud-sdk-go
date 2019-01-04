@@ -84,9 +84,10 @@ type RequestServiceOfCloudDBExpertRequest struct {
 // RequestServiceOfCloudDBExpertResponse is the response struct for api RequestServiceOfCloudDBExpert
 type RequestServiceOfCloudDBExpertResponse struct {
 	*responses.BaseResponse
-	Message string `json:"Message" xml:"Message"`
-	Data    string `json:"Data" xml:"Data"`
-	Code    string `json:"Code" xml:"Code"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Message   string `json:"Message" xml:"Message"`
+	Data      string `json:"Data" xml:"Data"`
+	Code      string `json:"Code" xml:"Code"`
 }
 
 // CreateRequestServiceOfCloudDBExpertRequest creates a request to invoke RequestServiceOfCloudDBExpert API

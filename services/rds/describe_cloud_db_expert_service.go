@@ -89,9 +89,10 @@ type DescribeCloudDbExpertServiceRequest struct {
 // DescribeCloudDbExpertServiceResponse is the response struct for api DescribeCloudDbExpertService
 type DescribeCloudDbExpertServiceResponse struct {
 	*responses.BaseResponse
-	Message string `json:"Message" xml:"Message"`
-	Data    string `json:"Data" xml:"Data"`
-	Code    string `json:"Code" xml:"Code"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Message   string `json:"Message" xml:"Message"`
+	Data      string `json:"Data" xml:"Data"`
+	Code      string `json:"Code" xml:"Code"`
 }
 
 // CreateDescribeCloudDbExpertServiceRequest creates a request to invoke DescribeCloudDbExpertService API

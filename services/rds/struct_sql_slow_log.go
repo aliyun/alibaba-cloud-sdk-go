@@ -19,6 +19,7 @@ package rds
 type SQLSlowLog struct {
 	SlowLogId                     int    `json:"SlowLogId" xml:"SlowLogId"`
 	SQLId                         int    `json:"SQLId" xml:"SQLId"`
+	SQLHASH                       int    `json:"SQLHASH" xml:"SQLHASH"`
 	SQLIdStr                      string `json:"SQLIdStr" xml:"SQLIdStr"`
 	DBName                        string `json:"DBName" xml:"DBName"`
 	SQLText                       string `json:"SQLText" xml:"SQLText"`

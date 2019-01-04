@@ -93,10 +93,10 @@ type DescribeSlowLogsRequest struct {
 type DescribeSlowLogsResponse struct {
 	*responses.BaseResponse
 	RequestId        string                  `json:"RequestId" xml:"RequestId"`
+	DBInstanceId     string                  `json:"DBInstanceId" xml:"DBInstanceId"`
 	Engine           string                  `json:"Engine" xml:"Engine"`
 	StartTime        string                  `json:"StartTime" xml:"StartTime"`
 	EndTime          string                  `json:"EndTime" xml:"EndTime"`
-	DBInstanceId     string                  `json:"DBInstanceId" xml:"DBInstanceId"`
 	TotalRecordCount int                     `json:"TotalRecordCount" xml:"TotalRecordCount"`
 	PageNumber       int                     `json:"PageNumber" xml:"PageNumber"`
 	PageRecordCount  int                     `json:"PageRecordCount" xml:"PageRecordCount"`
