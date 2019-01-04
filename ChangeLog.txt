@@ -1,3 +1,6 @@
+2019-01-04 Version: 1.49.3
+1, Change the DescribeInstance response esConfig List => Map
+
 2018-12-29 Version: 1.49.2
 1, re-generate go sdk for sts.
 
