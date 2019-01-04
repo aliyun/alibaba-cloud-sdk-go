@@ -68,6 +68,15 @@ func Test_CommonResponse_Unmarshal_CommonResponse(t *testing.T) {
 	assert.Nil(t, err)
 }
 
+func Test_CommonResponse_Unmarshal_XML(t *testing.T) {
+	r := &MyResponse{
+		BaseResponse: &BaseResponse{},
+	}
+	res := makeHTTPResponse(200, `{"RequestId": "the request id"}`)
+	err := Unmarshal(r, res, "XML")
+	assert.NotNil(t, err)
+}
+
 type MyResponse struct {
 	*BaseResponse
 	RequestId string
