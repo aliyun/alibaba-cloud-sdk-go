@@ -125,6 +125,23 @@ func Test_EcsRamRoleSigner_GetAccessKeyId5(t *testing.T) {
 	assert.Equal(t, "", accessKeyId)
 }
 
+func Test_EcsRamRoleSigner_GetAccessKeyId6(t *testing.T) {
+	c := credentials.NewEcsRamRoleCredential("roleName")
+	s := NewEcsRamRoleSigner(c, nil)
+	assert.NotNil(t, s)
+	// Start a test server locally.
+	ts := mockServer(201, `{"Code":"Success"}`)
+	defer ts.Close()
+	originalSecurityCredURL := securityCredURL
+	securityCredURL = strings.Replace(securityCredURL, "http://100.100.100.200", ts.URL, -1)
+	defer func() {
+		securityCredURL = originalSecurityCredURL
+	}()
+	accessKeyId, err := s.GetAccessKeyId()
+	assert.Equal(t, "refresh Ecs sts token err, httpStatus: 201, message = {\"Code\":\"Success\"}", err.Error())
+	assert.Equal(t, "", accessKeyId)
+}
+
 func Test_EcsRamRoleSigner_GetAccessKeyId_Success(t *testing.T) {
 	c := credentials.NewEcsRamRoleCredential("roleName")
 	s := NewEcsRamRoleSigner(c, nil)
@@ -161,4 +178,6 @@ func Test_EcsRamRoleSigner_GetAccessKeyId_Success(t *testing.T) {
 	assert.Equal(t, expiration, s.credentialExpiration)
 
 	assert.Equal(t, "1cZAkOls5YUecgvzbeEbfGy1wFw=", s.Sign("string to sign", "/"))
+	s.sessionCredential.StsToken = ""
+	assert.Len(t, s.GetExtraParam(), 0)
 }

@@ -174,3 +174,31 @@ func Test_RamRoleArn_GetAccessKeyIdAndSign(t *testing.T) {
 	signature := s.Sign("string to sign", "/")
 	assert.Equal(t, "dcM4bWGEoD5QUp9xhLW3SfcWfgs=", signature)
 }
+
+func Test_RamRoleArn_GetExtraParam_Fail(t *testing.T) {
+	c := credentials.NewRamRoleArnCredential("accessKeyId", "accessKeySecret", "roleArn", "roleSessionName", 3600)
+	// mock 200 response and valid json and valid result
+	s, err := NewRamRoleArnSigner(c, func(*requests.CommonRequest, interface{}) (response *responses.CommonResponse, err error) {
+		res := responses.NewCommonResponse()
+		statusCode := 200
+		header := make(http.Header)
+		status := strconv.Itoa(statusCode)
+		httpresp := &http.Response{
+			Proto:      "HTTP/1.1",
+			ProtoMajor: 1,
+			Header:     header,
+			StatusCode: statusCode,
+			Status:     status + " " + http.StatusText(statusCode),
+		}
+
+		json := `{"Credentials":{"AccessKeyId":"access key id","AccessKeySecret": "access key secret","SecurityToken":""}}`
+		httpresp.Body = ioutil.NopCloser(bytes.NewReader([]byte(json)))
+		responses.Unmarshal(res, httpresp, "JSON")
+		return res, nil
+	})
+	assert.Nil(t, err)
+	assert.NotNil(t, s)
+
+	params := s.GetExtraParam()
+	assert.Len(t, params, 0)
+}

@@ -16,6 +16,31 @@ func TestSigner_AccessKeySigner(t *testing.T) {
 	_, ok := signer.(*signers.AccessKeySigner)
 	assert.True(t, ok)
 }
+
+func TestSigner_BaseSigner(t *testing.T) {
+	c := credentials.NewBaseCredential("accessKeyId", "accessKeySecret")
+	signer, err := NewSignerWithCredential(c, nil)
+	assert.Nil(t, err)
+	_, ok := signer.(*signers.AccessKeySigner)
+	assert.True(t, ok)
+}
+
+func TestSigner_StsRoleArnSigner(t *testing.T) {
+	c := credentials.NewStsRoleArnCredential("accessKeyId", "accessKeySecret", "roleArn", "roleSessionName", 3600)
+	signer, err := NewSignerWithCredential(c, nil)
+	assert.Nil(t, err)
+	_, ok := signer.(*signers.RamRoleArnSigner)
+	assert.True(t, ok)
+}
+
+func TestSigner_StsRoleNameOnEcsSigner(t *testing.T) {
+	c := credentials.NewStsRoleNameOnEcsCredential("roleName")
+	signer, err := NewSignerWithCredential(c, nil)
+	assert.Nil(t, err)
+	_, ok := signer.(*signers.EcsRamRoleSigner)
+	assert.True(t, ok)
+}
+
 func TestSigner_StsTokenSigner(t *testing.T) {
 	c := credentials.NewStsTokenCredential("accessKeyId", "accessKeySecret", "token")
 	signer, err := NewSignerWithCredential(c, nil)

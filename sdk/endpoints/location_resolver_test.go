@@ -95,6 +95,13 @@ func TestLocationResolver_TryResolve_Location_With_Endpoint2(t *testing.T) {
 	assert.Equal(t, true, support)
 	assert.Nil(t, err)
 	// hit the cache
+	lastClearTimePerProduct.Set(resolveParam.Product+"#"+resolveParam.RegionId, int64(0))
+	endpoint, support, err = resolver.TryResolve(resolveParam)
+	assert.Equal(t, "ecs-cn-hangzhou.aliyuncs.com", endpoint)
+	assert.Equal(t, true, support)
+	assert.Nil(t, err)
+	resolveParam.LocationEndpointType = "openAPI"
+	lastClearTimePerProduct.Set(resolveParam.Product+"#"+resolveParam.RegionId, 0)
 	endpoint, support, err = resolver.TryResolve(resolveParam)
 	assert.Equal(t, "ecs-cn-hangzhou.aliyuncs.com", endpoint)
 	assert.Equal(t, true, support)
