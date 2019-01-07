@@ -1,3 +1,6 @@
+2019-01-07 Version: 1.50.0
+1, Airec SDK Release Version 1.0.0.
+
 2019-01-04 Version: 1.49.4
 1, modify DescribeSlowLogs, support query param SQLHASH, remove SQLID query param.
 2, modify DescribeSlowLogRecords, response values add SQLHASH, remove SQLID.
