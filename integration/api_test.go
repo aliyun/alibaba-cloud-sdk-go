@@ -14,7 +14,135 @@ import (
 	"testing"
 )
 
-func Test_ECS_DescribeRegionsWithRPCrequest(t *testing.T) {
+var (
+	securityGroupId = ""
+	flag            = false
+)
+
+func Test_ECS_CreateSecurityGroupWithRPCrequestWithXMLWithNestingparameters(t *testing.T) {
+	request := ecs.CreateCreateSecurityGroupRequest()
+	request.SetContentType("XML")
+	tag := ecs.CreateSecurityGroupTag{
+		Key:   "test",
+		Value: "test",
+	}
+	request.Tag = &[]ecs.CreateSecurityGroupTag{tag}
+	client, err := ecs.NewClientWithAccessKey("cn-hangzhou", os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
+	assert.Nil(t, err)
+	response, err := client.CreateSecurityGroup(request)
+	assert.Nil(t, err)
+	assert.True(t, response.IsSuccess())
+	assert.Equal(t, 36, len(response.RequestId))
+	assert.True(t, len(response.SecurityGroupId) > 0)
+	securityGroupId = response.SecurityGroupId
+}
+
+func Test_ECS_DescribeSecurityGroupsWithRPCrequestWithXMLWithNestingparameters(t *testing.T) {
+	request := ecs.CreateDescribeSecurityGroupsRequest()
+	request.SetContentType("XML")
+	client, err := ecs.NewClientWithAccessKey("cn-hangzhou", os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
+	assert.Nil(t, err)
+	response, err := client.DescribeSecurityGroups(request)
+	assert.Nil(t, err)
+	assert.True(t, response.IsSuccess())
+	for _, securitygroup := range response.SecurityGroups.SecurityGroup {
+		if securitygroup.SecurityGroupId == securityGroupId {
+			flag = true
+			break
+		}
+	}
+	assert.Equal(t, 36, len(response.RequestId))
+	assert.True(t, flag)
+	flag = false
+
+}
+
+func Test_ECS_ModifyImageAttributeWithRPCrequestWithXML(t *testing.T) {
+	request := ecs.CreateModifySecurityGroupAttributeRequest()
+	request.SetContentType("XML")
+	request.SecurityGroupName = "testintegration"
+	request.SecurityGroupId = securityGroupId
+	client, err := ecs.NewClientWithAccessKey("cn-hangzhou", os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
+	assert.Nil(t, err)
+	response, err := client.ModifySecurityGroupAttribute(request)
+	assert.Nil(t, err)
+	assert.True(t, response.IsSuccess())
+	assert.Equal(t, 36, len(response.RequestId))
+}
+
+func Test_ECS_DeleteImageWithRPCrequestWithXMLWithNestingparameters(t *testing.T) {
+	request := ecs.CreateDeleteSecurityGroupRequest()
+	request.SetContentType("XML")
+	request.SecurityGroupId = securityGroupId
+	client, err := ecs.NewClientWithAccessKey("cn-hangzhou", os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
+	assert.Nil(t, err)
+	response, err := client.DeleteSecurityGroup(request)
+	assert.Nil(t, err)
+	assert.True(t, response.IsSuccess())
+	assert.Equal(t, 36, len(response.RequestId))
+	securityGroupId = ""
+}
+
+func Test_ECS_CreateSecurityGroupWithRPCrequestWithJSONWithNestingparameters(t *testing.T) {
+	request := ecs.CreateCreateSecurityGroupRequest()
+	request.SetContentType("JSON")
+	client, err := ecs.NewClientWithAccessKey("cn-hangzhou", os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
+	assert.Nil(t, err)
+	response, err := client.CreateSecurityGroup(request)
+	assert.Nil(t, err)
+	assert.True(t, response.IsSuccess())
+	assert.Equal(t, 36, len(response.RequestId))
+	assert.True(t, len(response.SecurityGroupId) > 0)
+	securityGroupId = response.SecurityGroupId
+}
+
+func Test_ECS_DescribeSecurityGroupsWithRPCrequestWithJSONWithNestingparameters(t *testing.T) {
+	request := ecs.CreateDescribeSecurityGroupsRequest()
+	request.SetContentType("JSON")
+	client, err := ecs.NewClientWithAccessKey("cn-hangzhou", os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
+	assert.Nil(t, err)
+	response, err := client.DescribeSecurityGroups(request)
+	assert.Nil(t, err)
+	assert.True(t, response.IsSuccess())
+	for _, securitygroup := range response.SecurityGroups.SecurityGroup {
+		if securitygroup.SecurityGroupId == securityGroupId {
+			flag = true
+			break
+		}
+	}
+	assert.Equal(t, 36, len(response.RequestId))
+	assert.True(t, flag)
+	flag = false
+
+}
+
+func Test_ECS_ModifyImageAttributeWithRPCrequestWithJSON(t *testing.T) {
+	request := ecs.CreateModifySecurityGroupAttributeRequest()
+	request.SetContentType("JSON")
+	request.SecurityGroupName = "testintegration"
+	request.SecurityGroupId = securityGroupId
+	client, err := ecs.NewClientWithAccessKey("cn-hangzhou", os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
+	assert.Nil(t, err)
+	response, err := client.ModifySecurityGroupAttribute(request)
+	assert.Nil(t, err)
+	assert.True(t, response.IsSuccess())
+	assert.Equal(t, 36, len(response.RequestId))
+}
+
+func Test_ECS_DeleteImageWithRPCrequestWithJSONWithNestingparameters(t *testing.T) {
+	request := ecs.CreateDeleteSecurityGroupRequest()
+	request.SetContentType("JSON")
+	request.SecurityGroupId = securityGroupId
+	client, err := ecs.NewClientWithAccessKey("cn-hangzhou", os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
+	assert.Nil(t, err)
+	response, err := client.DeleteSecurityGroup(request)
+	assert.Nil(t, err)
+	assert.True(t, response.IsSuccess())
+	assert.Equal(t, 36, len(response.RequestId))
+	securityGroupId = ""
+}
+
+func Test_ECS_DescribeRegionsWithRPCrequestWith(t *testing.T) {
 	request := ecs.CreateDescribeRegionsRequest()
 	client, err := ecs.NewClientWithAccessKey("cn-hangzhou", os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
 	assert.Nil(t, err)
@@ -26,7 +154,7 @@ func Test_ECS_DescribeRegionsWithRPCrequest(t *testing.T) {
 }
 
 func Test_RDS_DescribeDBInstancesWithRPCrequest(t *testing.T) {
-	client, err := rds.NewClientWithAccessKey("cn-hangzhou", os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"), )
+	client, err := rds.NewClientWithAccessKey("cn-hangzhou", os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
 	assert.Nil(t, err)
 	assert.NotNil(t, client)
 	request := rds.CreateDescribeDBInstancesRequest()
@@ -37,12 +165,11 @@ func Test_RDS_DescribeDBInstancesWithRPCrequest(t *testing.T) {
 }
 
 func Test_CDN_DescribeCdnDomainDetailWithRPCrequest(t *testing.T) {
-	client, err := cdn.NewClientWithAccessKey("cn-hangzhou", os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"), )
+	client, err := cdn.NewClientWithAccessKey("cn-hangzhou", os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
 	assert.Nil(t, err)
 	assert.NotNil(t, client)
-	request := cdn.CreateDescribeCdnCertificateDetailRequest()
-	request.CertName = "sdk-test"
-	response, err := client.DescribeCdnCertificateDetail(request)
+	request := cdn.CreateDescribeRefreshTasksRequest()
+	response, err := client.DescribeRefreshTasks(request)
 	assert.Nil(t, err)
 	assert.NotNil(t, response)
 	assert.Equal(t, 36, len(response.RequestId))
@@ -81,26 +208,43 @@ func Test_VPC_DescribeRegionsWithUnicodeSpecificParams(t *testing.T) {
 	assert.True(t, len(response.Regions.Region) > 0)
 }
 
-//func Test_DescribeRegionsWithHTTPS(t *testing.T) {
-//	request := ecs.CreateDescribeRegionsRequest()
+//
+//func mockServer(status int, json string) (server *httptest.Server) {
+//	// Start a test server locally.
+//	ts := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+//		w.WriteHeader(status)
+//		w.Write([]byte(json))
+//	}))
+//	return ts
+//}
+
+//func Test_ListRolesWithRPCrequestWithoutRedirecting(t *testing.T) {
 //	client, err := ecs.NewClientWithAccessKey("cn-hangzhou", os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
 //	assert.Nil(t, err)
-//	response, err := client.DescribeRegions(request)
-//	assert.Nil(t, err)
-//	assert.True(t, response.IsSuccess())
-//	assert.Equal(t, 36, len(response.RequestId))
-//	assert.True(t, len(response.Regions.Region) > 0)
-//}
-//
-//func Test_DescribeRegionsWithSTStoken(t *testing.T) {
-//	assumeresponse, err := createAssumeRole()
-//	assert.Nil(t, err)
-//	credential := assumeresponse.Credentials
 //	request := ecs.CreateDescribeRegionsRequest()
-//	client, err := ecs.NewClientWithStsToken("cn-hangzhou", credential.AccessKeyId, credential.AccessKeySecret, credential.SecurityToken)
+//	request.Scheme = "HTTP"
+//	ts := mockServer(303, "{}")
+//
+//	defer ts.Close()
+//	domain := strings.Replace(ts.URL, "http://", "",1)
+//	request.Domain = domain
+//	assert.Nil(t, ts.URL)
+//	assert.Nil(t, request.BuildUrl())
 //	response, err := client.DescribeRegions(request)
 //	assert.Nil(t, err)
+//	assert.Equal(t, 303, response.GetHttpStatus())
+//	assert.Equal(t, "", response.GetHttpContentString())
+//}
+
+//func Test_DescribeClusterDetailWithROArequest(t *testing.T) {
+//	client, err := cs.NewClientWithAccessKey("default", os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
+//	assert.Nil(t, err)
+//	request := cs.CreateDescribeClusterDetailRequest()
+//	request.SetDomain("cs.aliyuncs.com")
+//	request.QueryParams["RegionId"] = "default"
+//	request.Method = "GET"
+//	response, err := client.DescribeClusterDetail(request)
+//	assert.Nil(t, err)
 //	assert.True(t, response.IsSuccess())
-//	assert.Equal(t, 36, len(response.RequestId))
-//	assert.True(t, len(response.Regions.Region) > 0)
+//	assert.Nil(t, response.GetHttpHeaders())
 //}

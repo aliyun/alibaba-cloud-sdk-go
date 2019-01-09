@@ -1,13 +1,14 @@
 package integration
 
 import (
-	"fmt"
 	"github.com/aliyun/alibaba-cloud-sdk-go/services/ram"
 	"github.com/aliyun/alibaba-cloud-sdk-go/services/sts"
-	"strings"
 
+	"fmt"
 	"os"
+	"strings"
 )
+
 var role_doc = `{
 		"Statement": [{
 		    "Action": "sts:AssumeRole",
@@ -21,34 +22,35 @@ var role_doc = `{
 	   "Version": "1"
 	}`
 
-func createRole(userid string) error{
-	listRequest :=ram.CreateListRolesRequest()
+func createRole(userid string) (string, string, error) {
+	ram.CreateGetRoleRequest()
+	listRequest := ram.CreateListRolesRequest()
 	listRequest.Scheme = "HTTPS"
 	client, err := ram.NewClientWithAccessKey("cn-hangzhou", os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
 	if err != nil {
-		return err
+		return "", "", err
 	}
-	listResponse, err :=client.ListRoles(listRequest)
+	listResponse, err := client.ListRoles(listRequest)
 	if err != nil {
-		return err
+		return "", "", err
 	}
 	for _, role := range listResponse.Roles.Role {
 		if strings.ToLower(role.RoleName) == "testrole" {
-			return nil
+			return role.RoleName, role.Arn, nil
 		}
 	}
 	createRequest := ram.CreateCreateRoleRequest()
 	createRequest.Scheme = "HTTPS"
 	createRequest.RoleName = "testrole"
 	createRequest.AssumeRolePolicyDocument = fmt.Sprintf(role_doc, userid)
-	_, err = client.CreateRole(createRequest)
+	res, err := client.CreateRole(createRequest)
 	if err != nil {
-		return err
+		return "", "", err
 	}
-	return nil
+	return res.Role.RoleName, res.Role.Arn, nil
 }
 
-func createUser()(error){
+func createUser() error {
 	listRequest := ram.CreateListUsersRequest()
 	listRequest.Scheme = "HTTPS"
 	client, err := ram.NewClientWithAccessKey("cn-hangzhou", os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
@@ -74,9 +76,9 @@ func createUser()(error){
 	return nil
 }
 
-func createAttachPolicyToUser()error{
+func createAttachPolicyToUser() error {
 	listRequest := ram.CreateListPoliciesForUserRequest()
-	listRequest.UserName ="alice"
+	listRequest.UserName = "alice"
 	listRequest.Scheme = "HTTPS"
 	client, err := ram.NewClientWithAccessKey("cn-hangzhou", os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
 	if err != nil {
@@ -103,69 +105,67 @@ func createAttachPolicyToUser()error{
 	return nil
 }
 
-//func createAccessKey()(string, string, error){
-//	client, err := ram.NewClientWithAccessKey("cn-hangzhou", os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
-//	if err != nil {
-//		return "", "", err
-//	}
-//	listrequest := ram.CreateListAccessKeysRequest()
-//	listrequest.UserName = "alice"
-//	listrequest.Scheme = "HTTPS"
-//	listresponse, err := client.ListAccessKeys(listrequest)
-//	if err != nil {
-//		return "", "", err
-//	}
-//	if listresponse.AccessKeys.AccessKey != nil {
-//		accesskey := listresponse.AccessKeys.AccessKey[0]
-//		if accesskey.AccessKeySecret != "" && accesskey.AccessKeySecret != "---" {
-//			return accesskey.AccessKeyId, accesskey.AccessKeySecret, err
-//		} else {
-//			deleterequest := ram.CreateDeleteAccessKeyRequest()
-//			deleterequest.UserAccessKeyId = accesskey.AccessKeyId
-//			deleterequest.UserName = "alice"
-//			_, err := client.DeleteAccessKey(deleterequest)
-//			if err != nil {
-//				return "", "", err
-//			}
-//		}
-//	}
-//	request := ram.CreateCreateAccessKeyRequest()
-//	request.Scheme = "HTTPS"
-//	request.UserName = "alice"
-//	response, err := client.CreateAccessKey(request)
-//	if err != nil {
-//		return "", "",err
-//	}
-//
-//	return response.AccessKey.AccessKeyId, response.AccessKey.AccessKeySecret, nil
-//}
+func createAccessKey() (string, string, error) {
+	client, err := ram.NewClientWithAccessKey("cn-hangzhou", os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
+	if err != nil {
+		return "", "", err
+	}
+	listrequest := ram.CreateListAccessKeysRequest()
+	listrequest.UserName = "alice"
+	listrequest.Scheme = "HTTPS"
+	listresponse, err := client.ListAccessKeys(listrequest)
+	if err != nil {
+		return "", "", err
+	}
+	if listresponse.AccessKeys.AccessKey != nil {
+		if len(listresponse.AccessKeys.AccessKey) >= 2 {
+			accesskey := listresponse.AccessKeys.AccessKey[0]
+			deleterequest := ram.CreateDeleteAccessKeyRequest()
+			deleterequest.UserAccessKeyId = accesskey.AccessKeyId
+			deleterequest.UserName = "alice"
+			deleterequest.Scheme = "HTTPS"
+			_, err := client.DeleteAccessKey(deleterequest)
+			if err != nil {
+				return "", "", err
+			}
+		}
+	}
+	request := ram.CreateCreateAccessKeyRequest()
+	request.Scheme = "HTTPS"
+	request.UserName = "alice"
+	response, err := client.CreateAccessKey(request)
+	if err != nil {
+		return "", "", err
+	}
 
-func createAssumeRole()(*sts.AssumeRoleResponse, error){
+	return response.AccessKey.AccessKeyId, response.AccessKey.AccessKeySecret, nil
+}
+
+func createAssumeRole() (*sts.AssumeRoleResponse, error) {
 	err := createUser()
 	if err != nil {
-		return nil,err
+		return nil, err
 	}
-	err = createRole(os.Getenv("USER_ID"))
+	_, _, err = createRole(os.Getenv("USER_ID"))
 	if err != nil {
-		return nil,err
+		return nil, err
 	}
 	err = createAttachPolicyToUser()
 	if err != nil {
-		return nil,err
+		return nil, err
 	}
-	//subaccesskeyid, subaccesskeysecret, err := createAccessKey()
-	//if err != nil {
-	//	return "","","",err
-	//}
+	subaccesskeyid, subaccesskeysecret, err := createAccessKey()
+	if err != nil {
+		return nil, err
+	}
 	request := sts.CreateAssumeRoleRequest()
 	request.RoleArn = fmt.Sprintf("acs:ram::%s:role/testrole", os.Getenv("USER_ID"))
 	request.RoleSessionName = "alice_test"
 	request.Scheme = "HTTPS"
-	client, err := sts.NewClientWithAccessKey("cn-hangzhou", os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
+	client, err := sts.NewClientWithAccessKey("cn-hangzhou", subaccesskeyid, subaccesskeysecret)
 	response, err := client.AssumeRole(request)
 	if err != nil {
-		return nil,err
+		return nil, err
 	}
 	return response, nil
 }
-
