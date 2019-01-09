@@ -99,7 +99,7 @@ func CreateGetFaceSearchUserRequest() (request *GetFaceSearchUserRequest) {
 	request = &GetFaceSearchUserRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "GetFaceSearchUser", "imm", "openAPI")
+	request.InitWithApiInfo("imm", "2017-09-06", "GetFaceSearchUser", "2017-09-06", "openAPI")
 	return
 }
 

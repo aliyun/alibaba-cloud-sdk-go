@@ -92,7 +92,7 @@ func CreateDeleteFaceByUrlRequest() (request *DeleteFaceByUrlRequest) {
 	request = &DeleteFaceByUrlRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "DeleteFaceByUrl", "imm", "openAPI")
+	request.InitWithApiInfo("imm", "2017-09-06", "DeleteFaceByUrl", "2017-09-06", "openAPI")
 	return
 }
 

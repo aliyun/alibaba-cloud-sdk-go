@@ -103,7 +103,7 @@ func CreateIndexImageRequest() (request *IndexImageRequest) {
 	request = &IndexImageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "IndexImage", "imm", "openAPI")
+	request.InitWithApiInfo("imm", "2017-09-06", "IndexImage", "2017-09-06", "openAPI")
 	return
 }
 

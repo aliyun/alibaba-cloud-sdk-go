@@ -98,7 +98,7 @@ func CreateUpdateProjectRequest() (request *UpdateProjectRequest) {
 	request = &UpdateProjectRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "UpdateProject", "imm", "openAPI")
+	request.InitWithApiInfo("imm", "2017-09-06", "UpdateProject", "2017-09-06", "openAPI")
 	return
 }
 

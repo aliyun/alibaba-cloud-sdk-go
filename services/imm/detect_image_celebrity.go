@@ -94,7 +94,7 @@ func CreateDetectImageCelebrityRequest() (request *DetectImageCelebrityRequest) 
 	request = &DetectImageCelebrityRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "DetectImageCelebrity", "imm", "openAPI")
+	request.InitWithApiInfo("imm", "2017-09-06", "DetectImageCelebrity", "2017-09-06", "openAPI")
 	return
 }
 

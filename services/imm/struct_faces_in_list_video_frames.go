@@ -17,5 +17,5 @@ package imm
 
 // FacesInListVideoFrames is a nested struct in imm response
 type FacesInListVideoFrames struct {
-	FacesItem []FacesItemInListVideoFrames `json:"FacesItem" xml:"FacesItem"`
+	FacesItem []FacesItem `json:"FacesItem" xml:"FacesItem"`
 }

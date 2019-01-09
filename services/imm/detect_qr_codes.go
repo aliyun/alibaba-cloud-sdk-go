@@ -93,7 +93,7 @@ func CreateDetectQRCodesRequest() (request *DetectQRCodesRequest) {
 	request = &DetectQRCodesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "DetectQRCodes", "imm", "openAPI")
+	request.InitWithApiInfo("imm", "2017-09-06", "DetectQRCodes", "2017-09-06", "openAPI")
 	return
 }
 

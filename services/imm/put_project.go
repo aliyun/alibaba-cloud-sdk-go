@@ -102,7 +102,7 @@ func CreatePutProjectRequest() (request *PutProjectRequest) {
 	request = &PutProjectRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "PutProject", "imm", "openAPI")
+	request.InitWithApiInfo("imm", "2017-09-06", "PutProject", "2017-09-06", "openAPI")
 	return
 }
 

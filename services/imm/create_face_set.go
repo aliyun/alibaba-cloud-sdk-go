@@ -96,7 +96,7 @@ func CreateCreateFaceSetRequest() (request *CreateFaceSetRequest) {
 	request = &CreateFaceSetRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "CreateFaceSet", "imm", "openAPI")
+	request.InitWithApiInfo("imm", "2017-09-06", "CreateFaceSet", "2017-09-06", "openAPI")
 	return
 }
 

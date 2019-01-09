@@ -92,7 +92,7 @@ func CreateDeleteTagJobRequest() (request *DeleteTagJobRequest) {
 	request = &DeleteTagJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "DeleteTagJob", "imm", "openAPI")
+	request.InitWithApiInfo("imm", "2017-09-06", "DeleteTagJob", "2017-09-06", "openAPI")
 	return
 }
 

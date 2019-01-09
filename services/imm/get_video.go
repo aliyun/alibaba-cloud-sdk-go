@@ -119,7 +119,7 @@ func CreateGetVideoRequest() (request *GetVideoRequest) {
 	request = &GetVideoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "GetVideo", "imm", "openAPI")
+	request.InitWithApiInfo("imm", "2017-09-06", "GetVideo", "2017-09-06", "openAPI")
 	return
 }
 

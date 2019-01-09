@@ -112,7 +112,7 @@ func CreateRegistFaceRequest() (request *RegistFaceRequest) {
 	request = &RegistFaceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "RegistFace", "imm", "openAPI")
+	request.InitWithApiInfo("imm", "2017-09-06", "RegistFace", "2017-09-06", "openAPI")
 	return
 }
 

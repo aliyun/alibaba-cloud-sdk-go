@@ -94,7 +94,7 @@ func CreateDetectLogoRequest() (request *DetectLogoRequest) {
 	request = &DetectLogoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "DetectLogo", "imm", "openAPI")
+	request.InitWithApiInfo("imm", "2017-09-06", "DetectLogo", "2017-09-06", "openAPI")
 	return
 }
 

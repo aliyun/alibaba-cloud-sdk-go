@@ -84,40 +84,40 @@ type GetImageRequest struct {
 // GetImageResponse is the response struct for api GetImage
 type GetImageResponse struct {
 	*responses.BaseResponse
-	RequestId           string          `json:"RequestId" xml:"RequestId"`
-	SetId               string          `json:"SetId" xml:"SetId"`
-	ImageUri            string          `json:"ImageUri" xml:"ImageUri"`
-	RemarksA            string          `json:"RemarksA" xml:"RemarksA"`
-	RemarksB            string          `json:"RemarksB" xml:"RemarksB"`
-	CreateTime          string          `json:"CreateTime" xml:"CreateTime"`
-	ModifyTime          string          `json:"ModifyTime" xml:"ModifyTime"`
-	ImageWidth          int             `json:"ImageWidth" xml:"ImageWidth"`
-	ImageHeight         int             `json:"ImageHeight" xml:"ImageHeight"`
-	ImageFormat         string          `json:"ImageFormat" xml:"ImageFormat"`
-	Exif                string          `json:"Exif" xml:"Exif"`
-	FileSize            int             `json:"FileSize" xml:"FileSize"`
-	ImageTime           string          `json:"ImageTime" xml:"ImageTime"`
-	Orientation         string          `json:"Orientation" xml:"Orientation"`
-	SourceType          string          `json:"SourceType" xml:"SourceType"`
-	SourceUri           string          `json:"SourceUri" xml:"SourceUri"`
-	SourcePosition      string          `json:"SourcePosition" xml:"SourcePosition"`
-	FacesStatus         string          `json:"FacesStatus" xml:"FacesStatus"`
-	FacesModifyTime     string          `json:"FacesModifyTime" xml:"FacesModifyTime"`
-	Location            string          `json:"Location" xml:"Location"`
-	OCRStatus           string          `json:"OCRStatus" xml:"OCRStatus"`
-	OCRModifyTime       string          `json:"OCRModifyTime" xml:"OCRModifyTime"`
-	OCRFailReason       string          `json:"OCRFailReason" xml:"OCRFailReason"`
-	FacesFailReason     string          `json:"FacesFailReason" xml:"FacesFailReason"`
-	TagsFailReason      string          `json:"TagsFailReason" xml:"TagsFailReason"`
-	TagsModifyTime      string          `json:"TagsModifyTime" xml:"TagsModifyTime"`
-	CelebrityStatus     string          `json:"CelebrityStatus" xml:"CelebrityStatus"`
-	CelebrityModifyTime string          `json:"CelebrityModifyTime" xml:"CelebrityModifyTime"`
-	CelebrityFailReason string          `json:"CelebrityFailReason" xml:"CelebrityFailReason"`
-	TagsStatus          string          `json:"TagsStatus" xml:"TagsStatus"`
-	Faces               []FacesItem     `json:"Faces" xml:"Faces"`
-	OCR                 []OCRItem       `json:"OCR" xml:"OCR"`
-	Tags                []TagsItem      `json:"Tags" xml:"Tags"`
-	Celebrity           []CelebrityItem `json:"Celebrity" xml:"Celebrity"`
+	RequestId           string                `json:"RequestId" xml:"RequestId"`
+	SetId               string                `json:"SetId" xml:"SetId"`
+	ImageUri            string                `json:"ImageUri" xml:"ImageUri"`
+	RemarksA            string                `json:"RemarksA" xml:"RemarksA"`
+	RemarksB            string                `json:"RemarksB" xml:"RemarksB"`
+	CreateTime          string                `json:"CreateTime" xml:"CreateTime"`
+	ModifyTime          string                `json:"ModifyTime" xml:"ModifyTime"`
+	ImageWidth          int                   `json:"ImageWidth" xml:"ImageWidth"`
+	ImageHeight         int                   `json:"ImageHeight" xml:"ImageHeight"`
+	ImageFormat         string                `json:"ImageFormat" xml:"ImageFormat"`
+	Exif                string                `json:"Exif" xml:"Exif"`
+	FileSize            int                   `json:"FileSize" xml:"FileSize"`
+	ImageTime           string                `json:"ImageTime" xml:"ImageTime"`
+	Orientation         string                `json:"Orientation" xml:"Orientation"`
+	SourceType          string                `json:"SourceType" xml:"SourceType"`
+	SourceUri           string                `json:"SourceUri" xml:"SourceUri"`
+	SourcePosition      string                `json:"SourcePosition" xml:"SourcePosition"`
+	FacesStatus         string                `json:"FacesStatus" xml:"FacesStatus"`
+	FacesModifyTime     string                `json:"FacesModifyTime" xml:"FacesModifyTime"`
+	Location            string                `json:"Location" xml:"Location"`
+	OCRStatus           string                `json:"OCRStatus" xml:"OCRStatus"`
+	OCRModifyTime       string                `json:"OCRModifyTime" xml:"OCRModifyTime"`
+	OCRFailReason       string                `json:"OCRFailReason" xml:"OCRFailReason"`
+	FacesFailReason     string                `json:"FacesFailReason" xml:"FacesFailReason"`
+	TagsFailReason      string                `json:"TagsFailReason" xml:"TagsFailReason"`
+	TagsModifyTime      string                `json:"TagsModifyTime" xml:"TagsModifyTime"`
+	CelebrityStatus     string                `json:"CelebrityStatus" xml:"CelebrityStatus"`
+	CelebrityModifyTime string                `json:"CelebrityModifyTime" xml:"CelebrityModifyTime"`
+	CelebrityFailReason string                `json:"CelebrityFailReason" xml:"CelebrityFailReason"`
+	TagsStatus          string                `json:"TagsStatus" xml:"TagsStatus"`
+	Faces               []FacesItemInGetImage `json:"Faces" xml:"Faces"`
+	OCR                 []OCRItem             `json:"OCR" xml:"OCR"`
+	Tags                []TagsItem            `json:"Tags" xml:"Tags"`
+	Celebrity           []CelebrityItem       `json:"Celebrity" xml:"Celebrity"`
 }
 
 // CreateGetImageRequest creates a request to invoke GetImage API
@@ -125,7 +125,7 @@ func CreateGetImageRequest() (request *GetImageRequest) {
 	request = &GetImageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "GetImage", "imm", "openAPI")
+	request.InitWithApiInfo("imm", "2017-09-06", "GetImage", "2017-09-06", "openAPI")
 	return
 }
 

@@ -96,7 +96,7 @@ func CreateSearchImagesByTagNamesRequest() (request *SearchImagesByTagNamesReque
 	request = &SearchImagesByTagNamesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "SearchImagesByTagNames", "imm", "openAPI")
+	request.InitWithApiInfo("imm", "2017-09-06", "SearchImagesByTagNames", "2017-09-06", "openAPI")
 	return
 }
 

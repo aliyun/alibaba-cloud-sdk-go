@@ -91,7 +91,7 @@ func CreateDeleteFaceSearchGroupRequest() (request *DeleteFaceSearchGroupRequest
 	request = &DeleteFaceSearchGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "DeleteFaceSearchGroup", "imm", "openAPI")
+	request.InitWithApiInfo("imm", "2017-09-06", "DeleteFaceSearchGroup", "2017-09-06", "openAPI")
 	return
 }
 

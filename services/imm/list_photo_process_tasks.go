@@ -94,7 +94,7 @@ func CreateListPhotoProcessTasksRequest() (request *ListPhotoProcessTasksRequest
 	request = &ListPhotoProcessTasksRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "ListPhotoProcessTasks", "imm", "openAPI")
+	request.InitWithApiInfo("imm", "2017-09-06", "ListPhotoProcessTasks", "2017-09-06", "openAPI")
 	return
 }
 

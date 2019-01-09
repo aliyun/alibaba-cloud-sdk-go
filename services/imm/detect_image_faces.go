@@ -83,9 +83,9 @@ type DetectImageFacesRequest struct {
 // DetectImageFacesResponse is the response struct for api DetectImageFaces
 type DetectImageFacesResponse struct {
 	*responses.BaseResponse
-	RequestId string                        `json:"RequestId" xml:"RequestId"`
-	ImageUri  string                        `json:"ImageUri" xml:"ImageUri"`
-	Faces     []FacesItemInDetectImageFaces `json:"Faces" xml:"Faces"`
+	RequestId string      `json:"RequestId" xml:"RequestId"`
+	ImageUri  string      `json:"ImageUri" xml:"ImageUri"`
+	Faces     []FacesItem `json:"Faces" xml:"Faces"`
 }
 
 // CreateDetectImageFacesRequest creates a request to invoke DetectImageFaces API
@@ -93,7 +93,7 @@ func CreateDetectImageFacesRequest() (request *DetectImageFacesRequest) {
 	request = &DetectImageFacesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "DetectImageFaces", "imm", "openAPI")
+	request.InitWithApiInfo("imm", "2017-09-06", "DetectImageFaces", "2017-09-06", "openAPI")
 	return
 }
 

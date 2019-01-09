@@ -93,7 +93,7 @@ func CreateDetectImageTagsRequest() (request *DetectImageTagsRequest) {
 	request = &DetectImageTagsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "DetectImageTags", "imm", "openAPI")
+	request.InitWithApiInfo("imm", "2017-09-06", "DetectImageTags", "2017-09-06", "openAPI")
 	return
 }
 

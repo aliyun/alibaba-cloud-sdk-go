@@ -93,7 +93,7 @@ func CreateListSetsRequest() (request *ListSetsRequest) {
 	request = &ListSetsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "ListSets", "imm", "openAPI")
+	request.InitWithApiInfo("imm", "2017-09-06", "ListSets", "2017-09-06", "openAPI")
 	return
 }
 

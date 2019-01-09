@@ -99,7 +99,7 @@ func CreateGetFaceDetailRequest() (request *GetFaceDetailRequest) {
 	request = &GetFaceDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "GetFaceDetail", "imm", "openAPI")
+	request.InitWithApiInfo("imm", "2017-09-06", "GetFaceDetail", "2017-09-06", "openAPI")
 	return
 }
 

@@ -98,7 +98,7 @@ func CreateGetProjectRequest() (request *GetProjectRequest) {
 	request = &GetProjectRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "GetProject", "imm", "openAPI")
+	request.InitWithApiInfo("imm", "2017-09-06", "GetProject", "2017-09-06", "openAPI")
 	return
 }
 

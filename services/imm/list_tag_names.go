@@ -94,7 +94,7 @@ func CreateListTagNamesRequest() (request *ListTagNamesRequest) {
 	request = &ListTagNamesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "ListTagNames", "imm", "openAPI")
+	request.InitWithApiInfo("imm", "2017-09-06", "ListTagNames", "2017-09-06", "openAPI")
 	return
 }
 

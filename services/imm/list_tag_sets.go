@@ -94,7 +94,7 @@ func CreateListTagSetsRequest() (request *ListTagSetsRequest) {
 	request = &ListTagSetsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "ListTagSets", "imm", "openAPI")
+	request.InitWithApiInfo("imm", "2017-09-06", "ListTagSets", "2017-09-06", "openAPI")
 	return
 }
 

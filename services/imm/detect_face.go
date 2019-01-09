@@ -94,7 +94,7 @@ func CreateDetectFaceRequest() (request *DetectFaceRequest) {
 	request = &DetectFaceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "DetectFace", "imm", "openAPI")
+	request.InitWithApiInfo("imm", "2017-09-06", "DetectFace", "2017-09-06", "openAPI")
 	return
 }
 

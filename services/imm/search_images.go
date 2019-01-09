@@ -111,7 +111,7 @@ func CreateSearchImagesRequest() (request *SearchImagesRequest) {
 	request = &SearchImagesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "SearchImages", "imm", "openAPI")
+	request.InitWithApiInfo("imm", "2017-09-06", "SearchImages", "2017-09-06", "openAPI")
 	return
 }
 

@@ -93,7 +93,7 @@ func CreateCompareFaceRequest() (request *CompareFaceRequest) {
 	request = &CompareFaceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "CompareFace", "imm", "openAPI")
+	request.InitWithApiInfo("imm", "2017-09-06", "CompareFace", "2017-09-06", "openAPI")
 	return
 }
 
