@@ -109,7 +109,7 @@ func CreateSearchDocIndexRequest() (request *SearchDocIndexRequest) {
 	request = &SearchDocIndexRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "SearchDocIndex", "2017-09-06", "openAPI")
+	request.InitWithApiInfo("imm", "2017-09-06", "SearchDocIndex", "imm", "openAPI")
 	return
 }
 

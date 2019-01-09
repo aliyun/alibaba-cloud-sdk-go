@@ -95,7 +95,7 @@ func CreateListVideoTasksRequest() (request *ListVideoTasksRequest) {
 	request = &ListVideoTasksRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "ListVideoTasks", "2017-09-06", "openAPI")
+	request.InitWithApiInfo("imm", "2017-09-06", "ListVideoTasks", "imm", "openAPI")
 	return
 }
 

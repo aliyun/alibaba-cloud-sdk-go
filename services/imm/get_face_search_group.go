@@ -97,7 +97,7 @@ func CreateGetFaceSearchGroupRequest() (request *GetFaceSearchGroupRequest) {
 	request = &GetFaceSearchGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "GetFaceSearchGroup", "2017-09-06", "openAPI")
+	request.InitWithApiInfo("imm", "2017-09-06", "GetFaceSearchGroup", "imm", "openAPI")
 	return
 }
 

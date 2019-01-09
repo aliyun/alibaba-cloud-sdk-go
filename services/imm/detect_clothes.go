@@ -94,7 +94,7 @@ func CreateDetectClothesRequest() (request *DetectClothesRequest) {
 	request = &DetectClothesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "DetectClothes", "2017-09-06", "openAPI")
+	request.InitWithApiInfo("imm", "2017-09-06", "DetectClothes", "imm", "openAPI")
 	return
 }
 

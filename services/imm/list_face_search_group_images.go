@@ -98,7 +98,7 @@ func CreateListFaceSearchGroupImagesRequest() (request *ListFaceSearchGroupImage
 	request = &ListFaceSearchGroupImagesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "ListFaceSearchGroupImages", "2017-09-06", "openAPI")
+	request.InitWithApiInfo("imm", "2017-09-06", "ListFaceSearchGroupImages", "imm", "openAPI")
 	return
 }
 

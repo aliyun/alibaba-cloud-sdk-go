@@ -92,7 +92,7 @@ func CreateDeleteFaceSearchUserRequest() (request *DeleteFaceSearchUserRequest) 
 	request = &DeleteFaceSearchUserRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "DeleteFaceSearchUser", "2017-09-06", "openAPI")
+	request.InitWithApiInfo("imm", "2017-09-06", "DeleteFaceSearchUser", "imm", "openAPI")
 	return
 }
 

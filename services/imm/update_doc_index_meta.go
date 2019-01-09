@@ -101,7 +101,7 @@ func CreateUpdateDocIndexMetaRequest() (request *UpdateDocIndexMetaRequest) {
 	request = &UpdateDocIndexMetaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "UpdateDocIndexMeta", "2017-09-06", "openAPI")
+	request.InitWithApiInfo("imm", "2017-09-06", "UpdateDocIndexMeta", "imm", "openAPI")
 	return
 }
 

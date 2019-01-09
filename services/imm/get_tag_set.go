@@ -96,7 +96,7 @@ func CreateGetTagSetRequest() (request *GetTagSetRequest) {
 	request = &GetTagSetRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "GetTagSet", "2017-09-06", "openAPI")
+	request.InitWithApiInfo("imm", "2017-09-06", "GetTagSet", "imm", "openAPI")
 	return
 }
 

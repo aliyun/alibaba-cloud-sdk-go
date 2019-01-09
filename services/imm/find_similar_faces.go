@@ -95,7 +95,7 @@ func CreateFindSimilarFacesRequest() (request *FindSimilarFacesRequest) {
 	request = &FindSimilarFacesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "FindSimilarFaces", "2017-09-06", "openAPI")
+	request.InitWithApiInfo("imm", "2017-09-06", "FindSimilarFaces", "imm", "openAPI")
 	return
 }
 

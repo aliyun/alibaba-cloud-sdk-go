@@ -94,7 +94,7 @@ func CreateDeleteFaceSearchImageByIdRequest() (request *DeleteFaceSearchImageByI
 	request = &DeleteFaceSearchImageByIdRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "DeleteFaceSearchImageById", "2017-09-06", "openAPI")
+	request.InitWithApiInfo("imm", "2017-09-06", "DeleteFaceSearchImageById", "imm", "openAPI")
 	return
 }
 

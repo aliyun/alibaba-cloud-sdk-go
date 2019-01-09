@@ -100,7 +100,7 @@ func CreateCreateSetRequest() (request *CreateSetRequest) {
 	request = &CreateSetRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "CreateSet", "2017-09-06", "openAPI")
+	request.InitWithApiInfo("imm", "2017-09-06", "CreateSet", "imm", "openAPI")
 	return
 }
 

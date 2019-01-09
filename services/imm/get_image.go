@@ -125,7 +125,7 @@ func CreateGetImageRequest() (request *GetImageRequest) {
 	request = &GetImageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "GetImage", "2017-09-06", "openAPI")
+	request.InitWithApiInfo("imm", "2017-09-06", "GetImage", "imm", "openAPI")
 	return
 }
 

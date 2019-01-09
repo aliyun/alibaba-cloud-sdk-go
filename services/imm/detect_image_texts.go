@@ -93,7 +93,7 @@ func CreateDetectImageTextsRequest() (request *DetectImageTextsRequest) {
 	request = &DetectImageTextsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "DetectImageTexts", "2017-09-06", "openAPI")
+	request.InitWithApiInfo("imm", "2017-09-06", "DetectImageTexts", "imm", "openAPI")
 	return
 }
 

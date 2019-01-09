@@ -96,7 +96,7 @@ func CreateListFaceGroupPhotosRequest() (request *ListFaceGroupPhotosRequest) {
 	request = &ListFaceGroupPhotosRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "ListFaceGroupPhotos", "2017-09-06", "openAPI")
+	request.InitWithApiInfo("imm", "2017-09-06", "ListFaceGroupPhotos", "imm", "openAPI")
 	return
 }
 

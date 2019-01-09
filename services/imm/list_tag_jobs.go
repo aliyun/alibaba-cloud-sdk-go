@@ -95,7 +95,7 @@ func CreateListTagJobsRequest() (request *ListTagJobsRequest) {
 	request = &ListTagJobsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "ListTagJobs", "2017-09-06", "openAPI")
+	request.InitWithApiInfo("imm", "2017-09-06", "ListTagJobs", "imm", "openAPI")
 	return
 }
 

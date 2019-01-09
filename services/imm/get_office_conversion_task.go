@@ -105,7 +105,7 @@ func CreateGetOfficeConversionTaskRequest() (request *GetOfficeConversionTaskReq
 	request = &GetOfficeConversionTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "GetOfficeConversionTask", "2017-09-06", "openAPI")
+	request.InitWithApiInfo("imm", "2017-09-06", "GetOfficeConversionTask", "imm", "openAPI")
 	return
 }
 

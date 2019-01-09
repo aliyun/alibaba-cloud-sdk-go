@@ -103,7 +103,7 @@ func CreateUpdateImageRequest() (request *UpdateImageRequest) {
 	request = &UpdateImageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "UpdateImage", "2017-09-06", "openAPI")
+	request.InitWithApiInfo("imm", "2017-09-06", "UpdateImage", "imm", "openAPI")
 	return
 }
 

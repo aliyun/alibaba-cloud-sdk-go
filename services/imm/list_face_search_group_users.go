@@ -97,7 +97,7 @@ func CreateListFaceSearchGroupUsersRequest() (request *ListFaceSearchGroupUsersR
 	request = &ListFaceSearchGroupUsersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "ListFaceSearchGroupUsers", "2017-09-06", "openAPI")
+	request.InitWithApiInfo("imm", "2017-09-06", "ListFaceSearchGroupUsers", "imm", "openAPI")
 	return
 }
 

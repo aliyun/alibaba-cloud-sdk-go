@@ -98,7 +98,7 @@ func CreateGetTagJobRequest() (request *GetTagJobRequest) {
 	request = &GetTagJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "GetTagJob", "2017-09-06", "openAPI")
+	request.InitWithApiInfo("imm", "2017-09-06", "GetTagJob", "imm", "openAPI")
 	return
 }
 

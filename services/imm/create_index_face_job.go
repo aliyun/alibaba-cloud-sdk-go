@@ -98,7 +98,7 @@ func CreateCreateIndexFaceJobRequest() (request *CreateIndexFaceJobRequest) {
 	request = &CreateIndexFaceJobRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "CreateIndexFaceJob", "2017-09-06", "openAPI")
+	request.InitWithApiInfo("imm", "2017-09-06", "CreateIndexFaceJob", "imm", "openAPI")
 	return
 }
 

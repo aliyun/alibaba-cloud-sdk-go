@@ -103,7 +103,7 @@ func CreateGetVideoTaskRequest() (request *GetVideoTaskRequest) {
 	request = &GetVideoTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "GetVideoTask", "2017-09-06", "openAPI")
+	request.InitWithApiInfo("imm", "2017-09-06", "GetVideoTask", "imm", "openAPI")
 	return
 }
 

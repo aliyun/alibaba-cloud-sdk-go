@@ -94,7 +94,7 @@ func CreateListPornBatchDetectJobsRequest() (request *ListPornBatchDetectJobsReq
 	request = &ListPornBatchDetectJobsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "ListPornBatchDetectJobs", "2017-09-06", "openAPI")
+	request.InitWithApiInfo("imm", "2017-09-06", "ListPornBatchDetectJobs", "imm", "openAPI")
 	return
 }
 

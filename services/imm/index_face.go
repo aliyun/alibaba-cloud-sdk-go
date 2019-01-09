@@ -98,7 +98,7 @@ func CreateIndexFaceRequest() (request *IndexFaceRequest) {
 	request = &IndexFaceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "IndexFace", "2017-09-06", "openAPI")
+	request.InitWithApiInfo("imm", "2017-09-06", "IndexFace", "imm", "openAPI")
 	return
 }
 

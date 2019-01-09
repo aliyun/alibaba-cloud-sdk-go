@@ -98,7 +98,7 @@ func CreateIndexTagRequest() (request *IndexTagRequest) {
 	request = &IndexTagRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "IndexTag", "2017-09-06", "openAPI")
+	request.InitWithApiInfo("imm", "2017-09-06", "IndexTag", "imm", "openAPI")
 	return
 }
 
