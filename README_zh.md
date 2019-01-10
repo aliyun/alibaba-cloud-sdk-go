@@ -8,6 +8,16 @@
 
 如果您在使用 SDK 的过程中遇到任何问题，欢迎前往[阿里云 SDK 问答社区](https://yq.aliyun.com/tags/type_ask-tagid_23350)提问，提问前请阅读[提问引导](https://help.aliyun.com/document_detail/93957.html)。亦可在当前 GitHub 提交 Issues。
 
+
+## 在线示例
+
+**[API Explorer](https://api.aliyun.com)** 提供在线调用云产品 OpenAPI、并动态生成 SDK Example 代码和快速检索接口等能力，能显著降低使用云 API 的难度，强烈推荐使用
+
+<a href="https://api.aliyun.com" target="api_explorer">
+  <img src="https://img.alicdn.com/tfs/TB12GX6zW6qK1RjSZFmXXX0PFXa-744-122.png" width="180" />
+</a>
+
+
 ## 环境准备
 1. 要使用阿里云 Go SDK，您需要一个云账号以及一对 `Access Key ID` 和 `Access Key Secret`。 请在阿里云控制台中的 [AccessKey 管理页面](https://usercenter.console.aliyun.com/?spm=5176.doc52740.2.3.QKZk8w#/manage/ak) 上创建和查看您的 AccessKey，或者联系您的系统管理员
 2. 要使用阿里云 SDK 访问某个产品的 API ，您需要事先在[阿里云控制台](https://home.console.aliyun.com/?spm=5176.doc52740.2.4.QKZk8w)中开通这个产品。
