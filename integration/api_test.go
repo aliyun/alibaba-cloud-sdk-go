@@ -7,10 +7,12 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/services/rds"
 	"github.com/aliyun/alibaba-cloud-sdk-go/services/slb"
 	"github.com/aliyun/alibaba-cloud-sdk-go/services/vpc"
-
 	"github.com/stretchr/testify/assert"
 
+	"net/http"
+	"net/http/httptest"
 	"os"
+	"strings"
 	"testing"
 )
 
@@ -60,7 +62,7 @@ func Test_ECS_DescribeSecurityGroupsWithRPCrequestWithXMLWithNestingparameters(t
 func Test_ECS_ModifyImageAttributeWithRPCrequestWithXML(t *testing.T) {
 	request := ecs.CreateModifySecurityGroupAttributeRequest()
 	request.SetContentType("XML")
-	request.SecurityGroupName = "testintegration"
+	request.SecurityGroupName = "testintegration" + strings.Split(os.Getenv("TRAVIS_JOB_NUMBER"), ".")[0]
 	request.SecurityGroupId = securityGroupId
 	client, err := ecs.NewClientWithAccessKey("cn-hangzhou", os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
 	assert.Nil(t, err)
@@ -119,7 +121,7 @@ func Test_ECS_DescribeSecurityGroupsWithRPCrequestWithJSONWithNestingparameters(
 func Test_ECS_ModifyImageAttributeWithRPCrequestWithJSON(t *testing.T) {
 	request := ecs.CreateModifySecurityGroupAttributeRequest()
 	request.SetContentType("JSON")
-	request.SecurityGroupName = "testintegration"
+	request.SecurityGroupName = "testintegration" + strings.Split(os.Getenv("TRAVIS_JOB_NUMBER"), ".")[0]
 	request.SecurityGroupId = securityGroupId
 	client, err := ecs.NewClientWithAccessKey("cn-hangzhou", os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
 	assert.Nil(t, err)
@@ -208,33 +210,31 @@ func Test_VPC_DescribeRegionsWithUnicodeSpecificParams(t *testing.T) {
 	assert.True(t, len(response.Regions.Region) > 0)
 }
 
-//
-//func mockServer(status int, json string) (server *httptest.Server) {
-//	// Start a test server locally.
-//	ts := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-//		w.WriteHeader(status)
-//		w.Write([]byte(json))
-//	}))
-//	return ts
-//}
 
-//func Test_ListRolesWithRPCrequestWithoutRedirecting(t *testing.T) {
-//	client, err := ecs.NewClientWithAccessKey("cn-hangzhou", os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
-//	assert.Nil(t, err)
-//	request := ecs.CreateDescribeRegionsRequest()
-//	request.Scheme = "HTTP"
-//	ts := mockServer(303, "{}")
-//
-//	defer ts.Close()
-//	domain := strings.Replace(ts.URL, "http://", "",1)
-//	request.Domain = domain
-//	assert.Nil(t, ts.URL)
-//	assert.Nil(t, request.BuildUrl())
-//	response, err := client.DescribeRegions(request)
-//	assert.Nil(t, err)
-//	assert.Equal(t, 303, response.GetHttpStatus())
-//	assert.Equal(t, "", response.GetHttpContentString())
-//}
+func mockServer(status int, json string) (server *httptest.Server) {
+	// Start a test server locally.
+	ts := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		w.WriteHeader(status)
+		w.Write([]byte(json))
+		return
+	}))
+	return ts
+}
+
+func Test_ListRolesWithRPCrequestWithoutRedirecting(t *testing.T) {
+	client, err := ecs.NewClientWithAccessKey("cn-hangzhou", os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
+	assert.Nil(t, err)
+	request := ecs.CreateDescribeRegionsRequest()
+	request.Scheme = "HTTP"
+	ts := mockServer(404, `{"Code": "YouMessedSomethingUp"}`)
+	defer ts.Close()
+	domain := strings.Replace(ts.URL, "http://", "",1)
+	request.Domain = domain
+	response, err := client.DescribeRegions(request)
+	assert.NotNil(t, err)
+	assert.Equal(t, 404, response.GetHttpStatus())
+	assert.Equal(t, "{\"Code\": \"YouMessedSomethingUp\"}", response.GetHttpContentString())
+}
 
 //func Test_DescribeClusterDetailWithROArequest(t *testing.T) {
 //	client, err := cs.NewClientWithAccessKey("default", os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
