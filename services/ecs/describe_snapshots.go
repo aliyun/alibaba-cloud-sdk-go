@@ -98,6 +98,7 @@ type DescribeSnapshotsRequest struct {
 	InstanceId           string                  `position:"Query" name:"InstanceId"`
 	Encrypted            requests.Boolean        `position:"Query" name:"Encrypted"`
 	SnapshotType         string                  `position:"Query" name:"SnapshotType"`
+	KMSKeyId             string                  `position:"Query" name:"KMSKeyId"`
 	Status               string                  `position:"Query" name:"Status"`
 }
 

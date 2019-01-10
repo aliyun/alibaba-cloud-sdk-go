@@ -90,6 +90,7 @@ type CreateDiskRequest struct {
 	DiskCategory         string           `position:"Query" name:"DiskCategory"`
 	ZoneId               string           `position:"Query" name:"ZoneId"`
 	Tag                  *[]CreateDiskTag `position:"Query" name:"Tag"  type:"Repeated"`
+	KMSKeyId             string           `position:"Query" name:"KMSKeyId"`
 }
 
 // CreateDiskTag is a repeated param struct in CreateDiskRequest

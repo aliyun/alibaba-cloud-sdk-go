@@ -82,6 +82,7 @@ type DescribeAvailableResourceRequest struct {
 	DataDiskCategory     string           `position:"Query" name:"DataDiskCategory"`
 	Cores                requests.Integer `position:"Query" name:"Cores"`
 	SystemDiskCategory   string           `position:"Query" name:"SystemDiskCategory"`
+	Scope                string           `position:"Query" name:"Scope"`
 	InstanceType         string           `position:"Query" name:"InstanceType"`
 	NetworkCategory      string           `position:"Query" name:"NetworkCategory"`
 	InstanceChargeType   string           `position:"Query" name:"InstanceChargeType"`

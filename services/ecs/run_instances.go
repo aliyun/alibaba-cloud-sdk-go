@@ -82,6 +82,7 @@ type RunInstancesRequest struct {
 	HpcClusterId                string                          `position:"Query" name:"HpcClusterId"`
 	SecurityEnhancementStrategy string                          `position:"Query" name:"SecurityEnhancementStrategy"`
 	KeyPairName                 string                          `position:"Query" name:"KeyPairName"`
+	MinAmount                   requests.Integer                `position:"Query" name:"MinAmount"`
 	SpotPriceLimit              requests.Float                  `position:"Query" name:"SpotPriceLimit"`
 	DeletionProtection          requests.Boolean                `position:"Query" name:"DeletionProtection"`
 	ResourceGroupId             string                          `position:"Query" name:"ResourceGroupId"`
@@ -153,6 +154,7 @@ type RunInstancesDataDisk struct {
 	SnapshotId         string `name:"SnapshotId"`
 	Category           string `name:"Category"`
 	Encrypted          string `name:"Encrypted"`
+	KMSKeyId           string `name:"KMSKeyId"`
 	DiskName           string `name:"DiskName"`
 	Description        string `name:"Description"`
 	Device             string `name:"Device"`

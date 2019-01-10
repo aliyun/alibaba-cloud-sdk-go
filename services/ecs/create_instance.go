@@ -142,6 +142,7 @@ type CreateInstanceDataDisk struct {
 	Encrypted          string `name:"Encrypted"`
 	Description        string `name:"Description"`
 	Category           string `name:"Category"`
+	KMSKeyId           string `name:"KMSKeyId"`
 	Device             string `name:"Device"`
 	DeleteWithInstance string `name:"DeleteWithInstance"`
 }
