@@ -22,6 +22,11 @@ var role_doc = `{
 	   "Version": "1"
 	}`
 
+var (
+	username = "testuser" + strings.Split(os.Getenv("TRAVIS_JOB_NUMBER"), ".")[0]
+	rolename = "testrole" + strings.Split(os.Getenv("TRAVIS_JOB_NUMBER"), ".")[0]
+)
+
 func createRole(userid string) (string, string, error) {
 	ram.CreateGetRoleRequest()
 	listRequest := ram.CreateListRolesRequest()
@@ -35,13 +40,13 @@ func createRole(userid string) (string, string, error) {
 		return "", "", err
 	}
 	for _, role := range listResponse.Roles.Role {
-		if strings.ToLower(role.RoleName) == "testrole" {
+		if strings.ToLower(role.RoleName) == rolename {
 			return role.RoleName, role.Arn, nil
 		}
 	}
 	createRequest := ram.CreateCreateRoleRequest()
 	createRequest.Scheme = "HTTPS"
-	createRequest.RoleName = "testrole"
+	createRequest.RoleName = rolename
 	createRequest.AssumeRolePolicyDocument = fmt.Sprintf(role_doc, userid)
 	res, err := client.CreateRole(createRequest)
 	if err != nil {
@@ -62,13 +67,13 @@ func createUser() error {
 		return err
 	}
 	for _, user := range listResponse.Users.User {
-		if user.UserName == "alice" {
+		if user.UserName == username {
 			return nil
 		}
 	}
 	createRequest := ram.CreateCreateUserRequest()
 	createRequest.Scheme = "HTTPS"
-	createRequest.UserName = "alice"
+	createRequest.UserName = username
 	_, err = client.CreateUser(createRequest)
 	if err != nil {
 		return err
@@ -78,7 +83,7 @@ func createUser() error {
 
 func createAttachPolicyToUser() error {
 	listRequest := ram.CreateListPoliciesForUserRequest()
-	listRequest.UserName = "alice"
+	listRequest.UserName = username
 	listRequest.Scheme = "HTTPS"
 	client, err := ram.NewClientWithAccessKey("cn-hangzhou", os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
 	if err != nil {
@@ -96,7 +101,7 @@ func createAttachPolicyToUser() error {
 	createRequest := ram.CreateAttachPolicyToUserRequest()
 	createRequest.Scheme = "HTTPS"
 	createRequest.PolicyName = "AliyunSTSAssumeRoleAccess"
-	createRequest.UserName = "alice"
+	createRequest.UserName = username
 	createRequest.PolicyType = "System"
 	_, err = client.AttachPolicyToUser(createRequest)
 	if err != nil {
@@ -111,7 +116,7 @@ func createAccessKey() (string, string, error) {
 		return "", "", err
 	}
 	listrequest := ram.CreateListAccessKeysRequest()
-	listrequest.UserName = "alice"
+	listrequest.UserName = username
 	listrequest.Scheme = "HTTPS"
 	listresponse, err := client.ListAccessKeys(listrequest)
 	if err != nil {
@@ -122,7 +127,7 @@ func createAccessKey() (string, string, error) {
 			accesskey := listresponse.AccessKeys.AccessKey[0]
 			deleterequest := ram.CreateDeleteAccessKeyRequest()
 			deleterequest.UserAccessKeyId = accesskey.AccessKeyId
-			deleterequest.UserName = "alice"
+			deleterequest.UserName = username
 			deleterequest.Scheme = "HTTPS"
 			_, err := client.DeleteAccessKey(deleterequest)
 			if err != nil {
@@ -132,7 +137,7 @@ func createAccessKey() (string, string, error) {
 	}
 	request := ram.CreateCreateAccessKeyRequest()
 	request.Scheme = "HTTPS"
-	request.UserName = "alice"
+	request.UserName = username
 	response, err := client.CreateAccessKey(request)
 	if err != nil {
 		return "", "", err
