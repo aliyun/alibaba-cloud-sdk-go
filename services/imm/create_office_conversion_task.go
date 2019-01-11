@@ -94,6 +94,7 @@ type CreateOfficeConversionTaskRequest struct {
 	SheetOnePage    requests.Boolean `position:"Query" name:"SheetOnePage"`
 	MaxSheetCol     requests.Integer `position:"Query" name:"MaxSheetCol"`
 	TgtType         string           `position:"Query" name:"TgtType"`
+	Hidecomments    requests.Boolean `position:"Query" name:"Hidecomments"`
 	FitToPagesTall  requests.Boolean `position:"Query" name:"FitToPagesTall"`
 	SrcUri          string           `position:"Query" name:"SrcUri"`
 	TgtFilePages    string           `position:"Query" name:"TgtFilePages"`

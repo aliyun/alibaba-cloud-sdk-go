@@ -90,6 +90,7 @@ type ConvertOfficeFormatRequest struct {
 	MaxSheetCol    requests.Integer `position:"Query" name:"MaxSheetCol"`
 	TgtType        string           `position:"Query" name:"TgtType"`
 	FitToPagesWide requests.Boolean `position:"Query" name:"FitToPagesWide"`
+	Hidecomments   requests.Boolean `position:"Query" name:"Hidecomments"`
 	TgtFilePrefix  string           `position:"Query" name:"TgtFilePrefix"`
 	FitToPagesTall requests.Boolean `position:"Query" name:"FitToPagesTall"`
 	SrcUri         string           `position:"Query" name:"SrcUri"`
