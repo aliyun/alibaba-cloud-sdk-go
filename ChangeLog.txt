@@ -1,3 +1,6 @@
+2019-01-14 Version: 1.50.6
+1, Release Go SDK for CR
+
 2019-01-11 Version: 1.50.5
 1, CreateOfficeConversionTask, ConvertOfficeFormat support Hidecomments
 
