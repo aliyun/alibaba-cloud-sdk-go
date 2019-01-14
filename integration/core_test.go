@@ -1,15 +1,18 @@
 package integration
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/errors"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/stretchr/testify/assert"
 	"os"
 	"testing"
+
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk"
+
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/errors"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+
+	"github.com/stretchr/testify/assert"
 )
 
-func Test_DescribeRegionsWithCommonRequestWithRPCrequest(t *testing.T) {
+func Test_DescribeRegionsWithCommonRequestWithRPC(t *testing.T) {
 	request := requests.NewCommonRequest()
 	request.Version = "2014-05-26"
 	request.Product = "Ecs"
@@ -23,22 +26,22 @@ func Test_DescribeRegionsWithCommonRequestWithRPCrequest(t *testing.T) {
 	assert.True(t, response.IsSuccess())
 }
 
-//func Test_DescribeRegionsWithCommonRequestWithSTStoken(t *testing.T) {
-//	assumeresponse, err := createAssumeRole()
-//	assert.Nil(t, err)
-//	credential := assumeresponse.Credentials
-//	request := requests.NewCommonRequest()
-//	request.Version = "2014-05-26"
-//	request.Product = "Ecs"
-//	request.ApiName = "DescribeRegions"
-//	request.SetDomain("ecs.aliyuncs.com")
-//	request.TransToAcsRequest()
-//	client, err := sdk.NewClientWithStsToken("cn-hangzhou", credential.AccessKeyId, credential.AccessKeySecret, credential.SecurityToken)
-//	assert.Nil(t, err)
-//	response, err := client.ProcessCommonRequest(request)
-//	assert.Nil(t, err)
-//	assert.True(t, response.IsSuccess())
-//}
+func Test_DescribeRegionsWithCommonRequestWithSTStoken(t *testing.T) {
+	assumeresponse, err := createAssumeRole()
+	assert.Nil(t, err)
+	credential := assumeresponse.Credentials
+	request := requests.NewCommonRequest()
+	request.Version = "2014-05-26"
+	request.Product = "Ecs"
+	request.ApiName = "DescribeRegions"
+	request.SetDomain("ecs.aliyuncs.com")
+	request.TransToAcsRequest()
+	client, err := sdk.NewClientWithStsToken("cn-hangzhou", credential.AccessKeyId, credential.AccessKeySecret, credential.SecurityToken)
+	assert.Nil(t, err)
+	response, err := client.ProcessCommonRequest(request)
+	assert.Nil(t, err)
+	assert.True(t, response.IsSuccess())
+}
 
 func Test_DescribeRegionsWithCommonRequestWithHTTPS(t *testing.T) {
 	request := requests.NewCommonRequest()
@@ -85,34 +88,52 @@ func Test_DescribeRegionsWithCommonRequestWithError(t *testing.T) {
 	assert.Equal(t, "The specified parameter \"Action or Version\" is not valid.", realerr.Message())
 }
 
-//func Test_DescribeClusterDetailWithCommonRequestWithROArequest(t *testing.T) {
-//	client, err := sdk.NewClientWithAccessKey("default", os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
-//	assert.Nil(t, err)
-//	request := requests.NewCommonRequest()
-//	request.Method = "GET"
-//	request.Domain = "cs.aliyuncs.com"
-//	request.Version = "2015-12-15"
-//	request.PathPattern = "/clusters/[ClusterId]"
-//	request.QueryParams["RegionId"] = "default"
-//	request.TransToAcsRequest()
-//	response, err := client.ProcessCommonRequest(request)
-//	assert.Nil(t, err)
-//	assert.True(t, response.IsSuccess())
-//}
+func Test_DescribeClustersWithCommonRequestWithROA(t *testing.T) {
+	client, err := sdk.NewClientWithAccessKey("default", os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
+	assert.Nil(t, err)
+	request := requests.NewCommonRequest()
+	request.Method = "GET"
+	request.Domain = "cs.aliyuncs.com"
+	request.Version = "2015-12-15"
+	request.PathPattern = "/clusters/[ClusterId]"
+	request.QueryParams["RegionId"] = "default"
+	request.TransToAcsRequest()
+	_, err = client.ProcessCommonRequest(request)
+	assert.NotNil(t, err)
+	assert.Contains(t, err.Error(), "Request url is invalid")
+}
 
-//func Test_DescribeClusterDetailWithCommonRequestWithROArequestWithHTTPS(t *testing.T) {
-//	request := requests.NewCommonRequest()
-//	request.Version =  "2015-12-15"
-//	request.Product = "CS"
-//	request.Method = requests.GET
-//	request.ApiName = "DescribeClusterDetail"
-//	request.PathPattern = "/clusters/[ClusterId]"
-//	request.SetDomain("cs.aliyuncs.com")
-//	request.Scheme = "HTTPS"
-//	request.TransToAcsRequest()
-//	client, err := sdk.NewClientWithAccessKey("cn-hangzhou", os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
-//	assert.Nil(t, err)
-//	response, err := client.ProcessCommonRequest(request)
-//	assert.Nil(t, err)
-//	assert.True(t, response.IsSuccess())
-//}
+func Test_DescribeClustersWithCommonRequestWithROAWithSTStoken(t *testing.T) {
+	assumeresponse, err := createAssumeRole()
+	assert.Nil(t, err)
+	credential := assumeresponse.Credentials
+	client, err := sdk.NewClientWithStsToken("default", credential.AccessKeyId, credential.AccessKeySecret, credential.SecurityToken)
+	assert.Nil(t, err)
+	assert.Nil(t, err)
+	request := requests.NewCommonRequest()
+	request.Method = "GET"
+	request.Domain = "cs.aliyuncs.com"
+	request.Version = "2015-12-15"
+	request.PathPattern = "/clusters/[ClusterId]"
+	request.QueryParams["RegionId"] = "default"
+	request.TransToAcsRequest()
+	_, err = client.ProcessCommonRequest(request)
+	assert.NotNil(t, err)
+	assert.Contains(t, err.Error(), "Request url is invalid")
+}
+
+func Test_DescribeClusterDetailWithCommonRequestWithROAWithHTTPS(t *testing.T) {
+	client, err := sdk.NewClientWithAccessKey("default", os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
+	assert.Nil(t, err)
+	request := requests.NewCommonRequest()
+	request.Method = "GET"
+	request.Domain = "cs.aliyuncs.com"
+	request.Version = "2015-12-15"
+	request.SetScheme("HTTPS")
+	request.PathPattern = "/clusters/[ClusterId]"
+	request.QueryParams["RegionId"] = "default"
+	request.TransToAcsRequest()
+	_, err = client.ProcessCommonRequest(request)
+	assert.NotNil(t, err)
+	assert.Contains(t, err.Error(), "Request url is invalid")
+}
