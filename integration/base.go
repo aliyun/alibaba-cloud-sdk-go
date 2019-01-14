@@ -28,7 +28,6 @@ var (
 )
 
 func createRole(userid string) (string, string, error) {
-	ram.CreateGetRoleRequest()
 	listRequest := ram.CreateListRolesRequest()
 	listRequest.Scheme = "HTTPS"
 	client, err := ram.NewClientWithAccessKey("cn-hangzhou", os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
