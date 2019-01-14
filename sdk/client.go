@@ -226,9 +226,11 @@ func (client *Client) DoActionWithSigner(request requests.AcsRequest, response r
 		}
 		debug(">")
 		httpResponse, err = hookDo(client.httpClient.Do)(httpRequest)
-		debug("< %s %s", httpResponse.Proto, httpResponse.Status)
-		for key, value := range httpResponse.Header {
-			debug("< %s: %v", key, strings.Join(value, ""))
+		if err == nil {
+			debug("< %s %s", httpResponse.Proto, httpResponse.Status)
+			for key, value := range httpResponse.Header {
+				debug("< %s: %v", key, strings.Join(value, ""))
+			}
 		}
 		// receive error
 		if err != nil {
