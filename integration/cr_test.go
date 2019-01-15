@@ -48,6 +48,7 @@ func Test_CR_CreateNamespace(t *testing.T) {
 	response, err := client.CreateNamespace(request)
 	assert.Nil(t, err)
 	assert.True(t, response.IsSuccess())
+	t.Log(content)
 }
 
 func Test_CR_UpdateNamespace(t *testing.T) {
