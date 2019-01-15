@@ -76,16 +76,19 @@ func (client *Client) SetMessageCallbackWithCallback(request *SetMessageCallback
 // SetMessageCallbackRequest is the request struct for api SetMessageCallback
 type SetMessageCallbackRequest struct {
 	*requests.RpcRequest
-	CallbackType         string `position:"Query" name:"CallbackType"`
-	AuthKey              string `position:"Query" name:"AuthKey"`
-	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
-	CallbackSwitch       string `position:"Query" name:"CallbackSwitch"`
-	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
-	EventTypeList        string `position:"Query" name:"EventTypeList"`
-	AuthSwitch           string `position:"Query" name:"AuthSwitch"`
-	CallbackURL          string `position:"Query" name:"CallbackURL"`
-	OwnerId              string `position:"Query" name:"OwnerId"`
+	AuthKey              string           `position:"Query" name:"AuthKey"`
+	ResourceOwnerId      string           `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	EventTypeList        string           `position:"Query" name:"EventTypeList"`
+	MnsQueueName         string           `position:"Query" name:"MnsQueueName"`
+	ResourceRealOwnerId  requests.Integer `position:"Query" name:"ResourceRealOwnerId"`
+	OwnerId              string           `position:"Query" name:"OwnerId"`
+	CallbackType         string           `position:"Query" name:"CallbackType"`
+	CallbackSwitch       string           `position:"Query" name:"CallbackSwitch"`
+	MnsEndpoint          string           `position:"Query" name:"MnsEndpoint"`
+	AuthSwitch           string           `position:"Query" name:"AuthSwitch"`
+	CallbackURL          string           `position:"Query" name:"CallbackURL"`
 }
 
 // SetMessageCallbackResponse is the response struct for api SetMessageCallback

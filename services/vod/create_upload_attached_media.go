@@ -85,6 +85,7 @@ type CreateUploadAttachedMediaRequest struct {
 	BusinessType         string           `position:"Query" name:"BusinessType"`
 	Tags                 string           `position:"Query" name:"Tags"`
 	StorageLocation      string           `position:"Query" name:"StorageLocation"`
+	UserData             string           `position:"Query" name:"UserData"`
 	MediaExt             string           `position:"Query" name:"MediaExt"`
 	FileName             string           `position:"Query" name:"FileName"`
 	CateId               requests.Integer `position:"Query" name:"CateId"`

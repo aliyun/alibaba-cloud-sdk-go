@@ -78,14 +78,16 @@ type CreateUploadImageRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ImageType            string           `position:"Query" name:"ImageType"`
-	OriginalFileName     string           `position:"Query" name:"OriginalFileName"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ImageExt             string           `position:"Query" name:"ImageExt"`
-	CateId               requests.Integer `position:"Query" name:"CateId"`
+	Description          string           `position:"Query" name:"Description"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	Title                string           `position:"Query" name:"Title"`
 	Tags                 string           `position:"Query" name:"Tags"`
 	StorageLocation      string           `position:"Query" name:"StorageLocation"`
+	UserData             string           `position:"Query" name:"UserData"`
+	OriginalFileName     string           `position:"Query" name:"OriginalFileName"`
+	CateId               requests.Integer `position:"Query" name:"CateId"`
 }
 
 // CreateUploadImageResponse is the response struct for api CreateUploadImage

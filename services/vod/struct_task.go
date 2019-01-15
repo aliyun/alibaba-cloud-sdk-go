@@ -17,11 +17,11 @@ package vod
 
 // Task is a nested struct in vod response
 type Task struct {
-	TaskId       string `json:"TaskId" xml:"TaskId"`
 	ObjectPath   string `json:"ObjectPath" xml:"ObjectPath"`
-	Status       string `json:"Status" xml:"Status"`
-	Process      string `json:"Process" xml:"Process"`
+	TaskId       string `json:"TaskId" xml:"TaskId"`
 	ObjectType   string `json:"ObjectType" xml:"ObjectType"`
 	CreationTime string `json:"CreationTime" xml:"CreationTime"`
+	Process      string `json:"Process" xml:"Process"`
+	Status       string `json:"Status" xml:"Status"`
 	Description  string `json:"Description" xml:"Description"`
 }

@@ -23,4 +23,6 @@ type MessageCallback struct {
 	EventTypeList  string `json:"EventTypeList" xml:"EventTypeList"`
 	AuthSwitch     string `json:"AuthSwitch" xml:"AuthSwitch"`
 	AuthKey        string `json:"AuthKey" xml:"AuthKey"`
+	MnsEndpoint    string `json:"MnsEndpoint" xml:"MnsEndpoint"`
+	MnsQueueName   string `json:"MnsQueueName" xml:"MnsQueueName"`
 }
