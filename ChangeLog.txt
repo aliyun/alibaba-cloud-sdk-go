@@ -1,3 +1,7 @@
+2019-01-15 Version: 1.50.9
+1, Add SubmitVerification API for RPMin solution.
+2, Return authority comparison score in GetStatus, SubmitMaterials and SubmitVerification.
+
 2019-01-15 Version: 1.50.8
 1, Go Lang API release
 2, Support UploadCertificate,CertficateList function;
