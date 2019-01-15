@@ -23,8 +23,9 @@ var role_doc = `{
 	}`
 
 var (
-	username = "testuser" + strings.Split(os.Getenv("TRAVIS_JOB_NUMBER"), ".")[0]
-	rolename = "testrole" + strings.Split(os.Getenv("TRAVIS_JOB_NUMBER"), ".")[0]
+	travisValue = strings.Split(os.Getenv("TRAVIS_JOB_NUMBER"), ".")
+	username    = "testuser" + travisValue[len(travisValue)-1]
+	rolename    = "testrole" + travisValue[len(travisValue)-1]
 )
 
 func createRole(userid string) (string, string, error) {
