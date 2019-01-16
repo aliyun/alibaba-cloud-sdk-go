@@ -93,111 +93,147 @@ type CreateContainerGroupRequest struct {
 	Volume                  *[]CreateContainerGroup_Volume                  `position:"Query" name:"Volume"`
 	EipInstanceId           string                                          `position:"Query" name:"EipInstanceId"`
 	InitContainer           *[]CreateContainerGroup_InitContainer           `position:"Query" name:"InitContainer"`
-	DnsConfig_NameServer    []string                                        `position:"Query" name:"DnsConfig.NameServer"`
-	DnsConfig_Search        []string                                        `position:"Query" name:"DnsConfig.Search"`
-	DnsConfig_Option        *[]CreateContainerGroup_DnsConfig_Option        `position:"Query" name:"DnsConfig.Option"`
 	Cpu                     requests.Float                                  `position:"Query" name:"Cpu"`
 	Memory                  requests.Float                                  `position:"Query" name:"Memory"`
+	DnsConfig               CreateContainerGroup_DnsConfig                  `position:"Query" name:"DnsConfig"`
 }
 
 type CreateContainerGroup_Tag struct {
-	Key   string `json:"Key" xml:"Key"`
-	Value string `json:"Value" xml:"Value"`
+	Key   string `name:"Key"`
+	Value string `name:"Value"`
 }
 
 type CreateContainerGroup_ImageRegistryCredential struct {
-	Server   string `json:"Server" xml:"Server"`
-	UserName string `json:"UserName" xml:"UserName"`
-	Password string `json:"Password" xml:"Password"`
+	Server   string `name:"Server"`
+	UserName string `name:"UserName"`
+	Password string `name:"Password"`
 }
 
 type CreateContainerGroup_Container struct {
-	Image                                  string                                 `json:"Image" xml:"Image"`
-	Name                                   string                                 `json:"Name" xml:"Name"`
-	Cpu                                    requests.Float                         `json:"Cpu" xml:"Cpu"`
-	Memory                                 requests.Float                         `json:"Memory" xml:"Memory"`
-	WorkingDir                             string                                 `json:"WorkingDir" xml:"WorkingDir"`
-	ImagePullPolicy                        string                                 `json:"ImagePullPolicy" xml:"ImagePullPolicy"`
-	Command                                []string                               `json:"Command" xml:"Command"`
-	Arg                                    []string                               `json:"Arg" xml:"Arg"`
-	VolumeMount                            *[]CreateContainerGroup_VolumeMount    `json:"VolumeMount" xml:"VolumeMount"`
-	Port                                   *[]CreateContainerGroup_Port           `json:"Port" xml:"Port"`
-	EnvironmentVar                         *[]CreateContainerGroup_EnvironmentVar `json:"EnvironmentVar" xml:"EnvironmentVar"`
-	ReadinessProbe_HttpGet_Path            string                                 `json:"ReadinessProbe.HttpGet.Path" xml:"ReadinessProbe.HttpGet.Path"`
-	ReadinessProbe_HttpGet_Port            requests.Integer                       `json:"ReadinessProbe.HttpGet.Port" xml:"ReadinessProbe.HttpGet.Port"`
-	ReadinessProbe_HttpGet_Scheme          string                                 `json:"ReadinessProbe.HttpGet.Scheme" xml:"ReadinessProbe.HttpGet.Scheme"`
-	ReadinessProbe_InitialDelaySeconds     requests.Integer                       `json:"ReadinessProbe.InitialDelaySeconds" xml:"ReadinessProbe.InitialDelaySeconds"`
-	ReadinessProbe_PeriodSeconds           requests.Integer                       `json:"ReadinessProbe.PeriodSeconds" xml:"ReadinessProbe.PeriodSeconds"`
-	ReadinessProbe_SuccessThreshold        requests.Integer                       `json:"ReadinessProbe.SuccessThreshold" xml:"ReadinessProbe.SuccessThreshold"`
-	ReadinessProbe_FailureThreshold        requests.Integer                       `json:"ReadinessProbe.FailureThreshold" xml:"ReadinessProbe.FailureThreshold"`
-	ReadinessProbe_TimeoutSeconds          requests.Integer                       `json:"ReadinessProbe.TimeoutSeconds" xml:"ReadinessProbe.TimeoutSeconds"`
-	ReadinessProbe_Exec_Command            []string                               `json:"ReadinessProbe.Exec.Command" xml:"ReadinessProbe.Exec.Command"`
-	LivenessProbe_HttpGet_Path             string                                 `json:"LivenessProbe.HttpGet.Path" xml:"LivenessProbe.HttpGet.Path"`
-	LivenessProbe_HttpGet_Port             requests.Integer                       `json:"LivenessProbe.HttpGet.Port" xml:"LivenessProbe.HttpGet.Port"`
-	LivenessProbe_HttpGet_Scheme           string                                 `json:"LivenessProbe.HttpGet.Scheme" xml:"LivenessProbe.HttpGet.Scheme"`
-	LivenessProbe_InitialDelaySeconds      requests.Integer                       `json:"LivenessProbe.InitialDelaySeconds" xml:"LivenessProbe.InitialDelaySeconds"`
-	LivenessProbe_PeriodSeconds            requests.Integer                       `json:"LivenessProbe.PeriodSeconds" xml:"LivenessProbe.PeriodSeconds"`
-	LivenessProbe_SuccessThreshold         requests.Integer                       `json:"LivenessProbe.SuccessThreshold" xml:"LivenessProbe.SuccessThreshold"`
-	LivenessProbe_FailureThreshold         requests.Integer                       `json:"LivenessProbe.FailureThreshold" xml:"LivenessProbe.FailureThreshold"`
-	LivenessProbe_TimeoutSeconds           requests.Integer                       `json:"LivenessProbe.TimeoutSeconds" xml:"LivenessProbe.TimeoutSeconds"`
-	LivenessProbe_Exec_Command             []string                               `json:"LivenessProbe.Exec.Command" xml:"LivenessProbe.Exec.Command"`
-	SecurityContext_Capability_Add         []string                               `json:"SecurityContext.Capability.Add" xml:"SecurityContext.Capability.Add"`
-	SecurityContext_ReadOnlyRootFilesystem requests.Boolean                       `json:"SecurityContext.ReadOnlyRootFilesystem" xml:"SecurityContext.ReadOnlyRootFilesystem"`
-	SecurityContext_RunAsUser              requests.Integer                       `json:"SecurityContext.RunAsUser" xml:"SecurityContext.RunAsUser"`
-	ReadinessProbe_TcpSocket_Port          requests.Integer                       `json:"ReadinessProbe.TcpSocket.Port" xml:"ReadinessProbe.TcpSocket.Port"`
-	LivenessProbe_TcpSocket_Port           requests.Integer                       `json:"LivenessProbe.TcpSocket.Port" xml:"LivenessProbe.TcpSocket.Port"`
+	Image           string                                 `name:"Image"`
+	Name            string                                 `name:"Name"`
+	Cpu             requests.Float                         `name:"Cpu"`
+	Memory          requests.Float                         `name:"Memory"`
+	WorkingDir      string                                 `name:"WorkingDir"`
+	ImagePullPolicy string                                 `name:"ImagePullPolicy"`
+	Command         []string                               `name:"Command"`
+	Arg             []string                               `name:"Arg"`
+	VolumeMount     *[]CreateContainerGroup_VolumeMount    `name:"VolumeMount"`
+	Port            *[]CreateContainerGroup_Port           `name:"Port"`
+	EnvironmentVar  *[]CreateContainerGroup_EnvironmentVar `name:"EnvironmentVar"`
+	ReadinessProbe  CreateContainerGroup_ReadinessProbe    `name:"ReadinessProbe"`
+	LivenessProbe   CreateContainerGroup_LivenessProbe     `name:"LivenessProbe"`
+	SecurityContext CreateContainerGroup_SecurityContext   `name:"SecurityContext"`
 }
 
 type CreateContainerGroup_Volume struct {
-	Name                              string                                                    `json:"Name" xml:"Name"`
-	NFSVolume_Server                  string                                                    `json:"NFSVolume.Server" xml:"NFSVolume.Server"`
-	NFSVolume_Path                    string                                                    `json:"NFSVolume.Path" xml:"NFSVolume.Path"`
-	NFSVolume_ReadOnly                requests.Boolean                                          `json:"NFSVolume.ReadOnly" xml:"NFSVolume.ReadOnly"`
-	ConfigFileVolume_ConfigFileToPath *[]CreateContainerGroup_ConfigFileVolume_ConfigFileToPath `json:"ConfigFileVolume.ConfigFileToPath" xml:"ConfigFileVolume.ConfigFileToPath"`
-	Type                              string                                                    `json:"Type" xml:"Type"`
+	Name             string                                `name:"Name"`
+	Type             string                                `name:"Type"`
+	NFSVolume        CreateContainerGroup_NFSVolume        `name:"NFSVolume"`
+	ConfigFileVolume CreateContainerGroup_ConfigFileVolume `name:"ConfigFileVolume"`
 }
 
 type CreateContainerGroup_InitContainer struct {
-	Name                                   string                                 `json:"Name" xml:"Name"`
-	Image                                  string                                 `json:"Image" xml:"Image"`
-	Cpu                                    requests.Float                         `json:"Cpu" xml:"Cpu"`
-	Memory                                 requests.Float                         `json:"Memory" xml:"Memory"`
-	WorkingDir                             string                                 `json:"WorkingDir" xml:"WorkingDir"`
-	ImagePullPolicy                        string                                 `json:"ImagePullPolicy" xml:"ImagePullPolicy"`
-	Command                                []string                               `json:"Command" xml:"Command"`
-	Arg                                    []string                               `json:"Arg" xml:"Arg"`
-	VolumeMount                            *[]CreateContainerGroup_VolumeMount    `json:"VolumeMount" xml:"VolumeMount"`
-	Port                                   *[]CreateContainerGroup_Port           `json:"Port" xml:"Port"`
-	EnvironmentVar                         *[]CreateContainerGroup_EnvironmentVar `json:"EnvironmentVar" xml:"EnvironmentVar"`
-	SecurityContext_Capability_Add         []string                               `json:"SecurityContext.Capability.Add" xml:"SecurityContext.Capability.Add"`
-	SecurityContext_ReadOnlyRootFilesystem requests.Boolean                       `json:"SecurityContext.ReadOnlyRootFilesystem" xml:"SecurityContext.ReadOnlyRootFilesystem"`
-	SecurityContext_RunAsUser              requests.Integer                       `json:"SecurityContext.RunAsUser" xml:"SecurityContext.RunAsUser"`
+	Name            string                                 `name:"Name"`
+	Image           string                                 `name:"Image"`
+	Cpu             requests.Float                         `name:"Cpu"`
+	Memory          requests.Float                         `name:"Memory"`
+	WorkingDir      string                                 `name:"WorkingDir"`
+	ImagePullPolicy string                                 `name:"ImagePullPolicy"`
+	Command         []string                               `name:"Command"`
+	Arg             []string                               `name:"Arg"`
+	VolumeMount     *[]CreateContainerGroup_VolumeMount    `name:"VolumeMount"`
+	Port            *[]CreateContainerGroup_Port           `name:"Port"`
+	EnvironmentVar  *[]CreateContainerGroup_EnvironmentVar `name:"EnvironmentVar"`
+	SecurityContext CreateContainerGroup_SecurityContext   `name:"SecurityContext"`
 }
 
-type CreateContainerGroup_DnsConfig_Option struct {
-	Name  string `json:"Name" xml:"Name"`
-	Value string `json:"Value" xml:"Value"`
+type CreateContainerGroup_DnsConfig struct {
+	NameServer []string                       `name:"NameServer"`
+	Search     []string                       `name:"Search"`
+	Option     *[]CreateContainerGroup_Option `name:"Option"`
 }
 
 type CreateContainerGroup_VolumeMount struct {
-	MountPath string           `json:"MountPath" xml:"MountPath"`
-	ReadOnly  requests.Boolean `json:"ReadOnly" xml:"ReadOnly"`
-	Name      string           `json:"Name" xml:"Name"`
+	MountPath string           `name:"MountPath"`
+	ReadOnly  requests.Boolean `name:"ReadOnly"`
+	Name      string           `name:"Name"`
 }
 
 type CreateContainerGroup_Port struct {
-	Protocol string           `json:"Protocol" xml:"Protocol"`
-	Port     requests.Integer `json:"Port" xml:"Port"`
+	Protocol string           `name:"Protocol"`
+	Port     requests.Integer `name:"Port"`
 }
 
 type CreateContainerGroup_EnvironmentVar struct {
-	Key   string `json:"Key" xml:"Key"`
-	Value string `json:"Value" xml:"Value"`
+	Key   string `name:"Key"`
+	Value string `name:"Value"`
 }
 
-type CreateContainerGroup_ConfigFileVolume_ConfigFileToPath struct {
-	Content string `json:"Content" xml:"Content"`
-	Path    string `json:"Path" xml:"Path"`
+type CreateContainerGroup_ReadinessProbe struct {
+	InitialDelaySeconds requests.Integer               `name:"InitialDelaySeconds"`
+	PeriodSeconds       requests.Integer               `name:"PeriodSeconds"`
+	SuccessThreshold    requests.Integer               `name:"SuccessThreshold"`
+	FailureThreshold    requests.Integer               `name:"FailureThreshold"`
+	TimeoutSeconds      requests.Integer               `name:"TimeoutSeconds"`
+	HttpGet             CreateContainerGroup_HttpGet   `name:"HttpGet"`
+	Exec                CreateContainerGroup_Exec      `name:"Exec"`
+	TcpSocket           CreateContainerGroup_TcpSocket `name:"TcpSocket"`
+}
+
+type CreateContainerGroup_HttpGet struct {
+	Path   string           `name:"Path"`
+	Port   requests.Integer `name:"Port"`
+	Scheme string           `name:"Scheme"`
+}
+
+type CreateContainerGroup_Exec struct {
+	Command []string `name:"Command"`
+}
+
+type CreateContainerGroup_TcpSocket struct {
+	Port requests.Integer `name:"Port"`
+}
+
+type CreateContainerGroup_LivenessProbe struct {
+	InitialDelaySeconds requests.Integer               `name:"InitialDelaySeconds"`
+	PeriodSeconds       requests.Integer               `name:"PeriodSeconds"`
+	SuccessThreshold    requests.Integer               `name:"SuccessThreshold"`
+	FailureThreshold    requests.Integer               `name:"FailureThreshold"`
+	TimeoutSeconds      requests.Integer               `name:"TimeoutSeconds"`
+	HttpGet             CreateContainerGroup_HttpGet   `name:"HttpGet"`
+	Exec                CreateContainerGroup_Exec      `name:"Exec"`
+	TcpSocket           CreateContainerGroup_TcpSocket `name:"TcpSocket"`
+}
+
+type CreateContainerGroup_SecurityContext struct {
+	ReadOnlyRootFilesystem requests.Boolean                `name:"ReadOnlyRootFilesystem"`
+	RunAsUser              requests.Integer                `name:"RunAsUser"`
+	Capability             CreateContainerGroup_Capability `name:"Capability"`
+}
+
+type CreateContainerGroup_Capability struct {
+	Add []string `name:"Add"`
+}
+
+type CreateContainerGroup_NFSVolume struct {
+	Server   string           `name:"Server"`
+	Path     string           `name:"Path"`
+	ReadOnly requests.Boolean `name:"ReadOnly"`
+}
+
+type CreateContainerGroup_ConfigFileVolume struct {
+	ConfigFileToPath *[]CreateContainerGroup_ConfigFileToPath `name:"ConfigFileToPath"`
+}
+
+type CreateContainerGroup_ConfigFileToPath struct {
+	Content string `name:"Content"`
+	Path    string `name:"Path"`
+}
+
+type CreateContainerGroup_Option struct {
+	Name  string `name:"Name"`
+	Value string `name:"Value"`
 }
 
 // CreateContainerGroupResponse is the response struct for api CreateContainerGroup

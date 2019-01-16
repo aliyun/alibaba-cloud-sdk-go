@@ -93,8 +93,8 @@ type DescribeContainerGroupsRequest struct {
 }
 
 type DescribeContainerGroups_Tag struct {
-	Key   string `json:"Key" xml:"Key"`
-	Value string `json:"Value" xml:"Value"`
+	Key   string `name:"Key"`
+	Value string `name:"Value"`
 }
 
 // DescribeContainerGroupsResponse is the response struct for api DescribeContainerGroups
