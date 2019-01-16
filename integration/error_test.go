@@ -20,7 +20,7 @@ func Test_DescribeRegionsWithParameterError(t *testing.T) {
 	request.ApiName = "Describe"
 	request.SetDomain("ecs.aliyuncs.com")
 	request.TransToAcsRequest()
-	client, err := sdk.NewClientWithAccessKey("cn-hangzhou", os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
+	client, err := sdk.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
 	assert.Nil(t, err)
 	_, err = client.ProcessCommonRequest(request)
 	realerr := err.(errors.Error)
@@ -35,7 +35,7 @@ func Test_DescribeRegionsWithUnreachableError(t *testing.T) {
 	request.ApiName = "DescribeRegions"
 	request.SetDomain("www.aliyun-hangzhou.com")
 	request.TransToAcsRequest()
-	client, err := sdk.NewClientWithAccessKey("cn-hangzhou", os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
+	client, err := sdk.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
 	assert.Nil(t, err)
 	response, err := client.ProcessCommonRequest(request)
 	assert.Equal(t, 0, response.GetHttpStatus())
@@ -50,10 +50,11 @@ func Test_DescribeRegionsWithTimeout(t *testing.T) {
 	}
 	request := ecs.CreateDescribeRegionsRequest()
 	request.Scheme = "https"
-	client, err := ecs.NewClientWithOptions("cn-hangzhou", config, credentail)
+	request.SetDomain("ecs.aliyuncs.com")
+	client, err := ecs.NewClientWithOptions(os.Getenv("REGION_ID"), config, credentail)
 	response, err := client.DescribeRegions(request)
 	assert.Equal(t, 0, response.GetHttpStatus())
-	assert.Contains(t, err.Error(), "https://ecs-cn-hangzhou.aliyuncs.com")
+	assert.Contains(t, err.Error(), "https://ecs.aliyuncs.com")
 	assert.Contains(t, err.Error(), "Client.Timeout exceeded while awaiting headers")
 }
 
@@ -67,7 +68,7 @@ func Test_DescribeRegionsWithNilbody(t *testing.T) {
 	domain := strings.Replace(ts.URL, "http://", "", 1)
 	request.Domain = domain
 	request.TransToAcsRequest()
-	client, err := sdk.NewClientWithAccessKey("cn-hangzhou", os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
+	client, err := sdk.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
 	assert.Nil(t, err)
 	response, err := client.ProcessCommonRequest(request)
 	assert.Equal(t, 400, response.GetHttpStatus())
@@ -84,7 +85,7 @@ func Test_DescribeRegionsWithFormatError(t *testing.T) {
 	domain := strings.Replace(ts.URL, "http://", "", 1)
 	request.Domain = domain
 	request.TransToAcsRequest()
-	client, err := sdk.NewClientWithAccessKey("cn-hangzhou", os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
+	client, err := sdk.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
 	assert.Nil(t, err)
 	response, err := client.ProcessCommonRequest(request)
 	assert.Equal(t, 400, response.GetHttpStatus())

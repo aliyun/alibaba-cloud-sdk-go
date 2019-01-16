@@ -26,12 +26,13 @@ var (
 	travisValue = strings.Split(os.Getenv("TRAVIS_JOB_NUMBER"), ".")
 	username    = "testuser" + travisValue[len(travisValue)-1]
 	rolename    = "testrole" + travisValue[len(travisValue)-1]
+	rolearn     = fmt.Sprintf("acs:ram::%s:role/%s", os.Getenv("USER_ID"), rolename)
 )
 
 func createRole(userid string) (string, string, error) {
 	listRequest := ram.CreateListRolesRequest()
 	listRequest.Scheme = "HTTPS"
-	client, err := ram.NewClientWithAccessKey("cn-hangzhou", os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
+	client, err := ram.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
 	if err != nil {
 		return "", "", err
 	}
@@ -58,7 +59,7 @@ func createRole(userid string) (string, string, error) {
 func createUser() error {
 	listRequest := ram.CreateListUsersRequest()
 	listRequest.Scheme = "HTTPS"
-	client, err := ram.NewClientWithAccessKey("cn-hangzhou", os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
+	client, err := ram.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
 	if err != nil {
 		return err
 	}
@@ -85,7 +86,7 @@ func createAttachPolicyToUser() error {
 	listRequest := ram.CreateListPoliciesForUserRequest()
 	listRequest.UserName = username
 	listRequest.Scheme = "HTTPS"
-	client, err := ram.NewClientWithAccessKey("cn-hangzhou", os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
+	client, err := ram.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
 	if err != nil {
 		return err
 	}
@@ -111,7 +112,7 @@ func createAttachPolicyToUser() error {
 }
 
 func createAccessKey() (string, string, error) {
-	client, err := ram.NewClientWithAccessKey("cn-hangzhou", os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
+	client, err := ram.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
 	if err != nil {
 		return "", "", err
 	}
@@ -164,10 +165,10 @@ func createAssumeRole() (*sts.AssumeRoleResponse, error) {
 		return nil, err
 	}
 	request := sts.CreateAssumeRoleRequest()
-	request.RoleArn = fmt.Sprintf("acs:ram::%s:role/testrole", os.Getenv("USER_ID"))
+	request.RoleArn = rolearn
 	request.RoleSessionName = "alice_test"
 	request.Scheme = "HTTPS"
-	client, err := sts.NewClientWithAccessKey("cn-hangzhou", subaccesskeyid, subaccesskeysecret)
+	client, err := sts.NewClientWithAccessKey(os.Getenv("REGION_ID"), subaccesskeyid, subaccesskeysecret)
 	response, err := client.AssumeRole(request)
 	if err != nil {
 		return nil, err
