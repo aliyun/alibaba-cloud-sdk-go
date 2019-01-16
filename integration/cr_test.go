@@ -30,11 +30,12 @@ func genKeyFunc() func() string {
 }
 
 func Test_CR_CreateNamespace(t *testing.T) {
-	client, err := cr.NewClientWithAccessKey("cn-hangzhou", os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
+	client, err := cr.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
 	assert.Nil(t, err)
 
 	request := cr.CreateCreateNamespaceRequest()
-	request.SetDomain("cr.cn-hangzhou.aliyuncs.com")
+	domain := fmt.Sprintf("cr." + os.Getenv("REGION_ID") + ".aliyuncs.com")
+	request.SetDomain(domain)
 	request.SetContentType("JSON")
 	content := fmt.Sprintf(
 		`{
@@ -52,11 +53,12 @@ func Test_CR_CreateNamespace(t *testing.T) {
 }
 
 func Test_CR_UpdateNamespace(t *testing.T) {
-	client, err := cr.NewClientWithAccessKey("cn-hangzhou", os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
+	client, err := cr.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
 	assert.Nil(t, err)
 
 	request := cr.CreateUpdateNamespaceRequest()
-	request.SetDomain("cr.cn-hangzhou.aliyuncs.com")
+	domain := fmt.Sprintf("cr." + os.Getenv("REGION_ID") + ".aliyuncs.com")
+	request.SetDomain(domain)
 	request.Namespace = genKey()
 	request.SetContentType("JSON")
 	content := fmt.Sprintf(
@@ -75,11 +77,12 @@ func Test_CR_UpdateNamespace(t *testing.T) {
 }
 
 func Test_CR_GetNamespace(t *testing.T) {
-	client, err := cr.NewClientWithAccessKey("cn-hangzhou", os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
+	client, err := cr.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
 	assert.Nil(t, err)
 
 	request := cr.CreateGetNamespaceRequest()
-	request.SetDomain("cr.cn-hangzhou.aliyuncs.com")
+	domain := fmt.Sprintf("cr." + os.Getenv("REGION_ID") + ".aliyuncs.com")
+	request.SetDomain(domain)
 	request.Namespace = genKey()
 
 	response, err := client.GetNamespace(request)
@@ -88,11 +91,12 @@ func Test_CR_GetNamespace(t *testing.T) {
 }
 
 func Test_CR_GetNamespaceList(t *testing.T) {
-	client, err := cr.NewClientWithAccessKey("cn-hangzhou", os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
+	client, err := cr.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
 	assert.Nil(t, err)
 
 	request := cr.CreateGetNamespaceListRequest()
-	request.SetDomain("cr.cn-hangzhou.aliyuncs.com")
+	domain := fmt.Sprintf("cr." + os.Getenv("REGION_ID") + ".aliyuncs.com")
+	request.SetDomain(domain)
 
 	response, err := client.GetNamespaceList(request)
 	assert.Nil(t, err)
@@ -100,11 +104,12 @@ func Test_CR_GetNamespaceList(t *testing.T) {
 }
 
 func Test_CR_DeleteNamespace(t *testing.T) {
-	client, err := cr.NewClientWithAccessKey("cn-hangzhou", os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
+	client, err := cr.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
 	assert.Nil(t, err)
 
 	request := cr.CreateDeleteNamespaceRequest()
-	request.SetDomain("cr.cn-hangzhou.aliyuncs.com")
+	domain := fmt.Sprintf("cr." + os.Getenv("REGION_ID") + ".aliyuncs.com")
+	request.SetDomain(domain)
 	request.Namespace = genKey()
 
 	response, err := client.DeleteNamespace(request)
