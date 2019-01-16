@@ -6,28 +6,11 @@ import (
 	"github.com/stretchr/testify/assert"
 
 	"fmt"
-	"math/rand"
 	"os"
 	"testing"
-	"time"
 )
 
-var genKey func() string
-
-func init() {
-	rand.Seed(time.Now().UnixNano())
-	genKey = genKeyFunc()
-}
-
-func genKeyFunc() func() string {
-	var key int
-	return func() string {
-		if key == 0 {
-			key = rand.Intn(1e8)
-		}
-		return fmt.Sprintf("%08d", key)
-	}
-}
+var crTestKey = "crtestkey"
 
 func Test_CR_CreateNamespace(t *testing.T) {
 	client, err := cr.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
@@ -42,14 +25,13 @@ func Test_CR_CreateNamespace(t *testing.T) {
 			"Namespace":{
 				"Namespace":"%s"
 			}
-		}`, genKey(),
+		}`, crTestKey,
 	)
 	request.SetContent([]byte(content))
 
 	response, err := client.CreateNamespace(request)
 	assert.Nil(t, err)
 	assert.True(t, response.IsSuccess())
-	t.Log(content)
 }
 
 func Test_CR_UpdateNamespace(t *testing.T) {
@@ -59,7 +41,7 @@ func Test_CR_UpdateNamespace(t *testing.T) {
 	request := cr.CreateUpdateNamespaceRequest()
 	domain := fmt.Sprintf("cr." + os.Getenv("REGION_ID") + ".aliyuncs.com")
 	request.SetDomain(domain)
-	request.Namespace = genKey()
+	request.Namespace = crTestKey
 	request.SetContentType("JSON")
 	content := fmt.Sprintf(
 		`{
@@ -83,7 +65,7 @@ func Test_CR_GetNamespace(t *testing.T) {
 	request := cr.CreateGetNamespaceRequest()
 	domain := fmt.Sprintf("cr." + os.Getenv("REGION_ID") + ".aliyuncs.com")
 	request.SetDomain(domain)
-	request.Namespace = genKey()
+	request.Namespace = crTestKey
 
 	response, err := client.GetNamespace(request)
 	assert.Nil(t, err)
@@ -110,7 +92,7 @@ func Test_CR_DeleteNamespace(t *testing.T) {
 	request := cr.CreateDeleteNamespaceRequest()
 	domain := fmt.Sprintf("cr." + os.Getenv("REGION_ID") + ".aliyuncs.com")
 	request.SetDomain(domain)
-	request.Namespace = genKey()
+	request.Namespace = crTestKey
 
 	response, err := client.DeleteNamespace(request)
 	assert.Nil(t, err)
