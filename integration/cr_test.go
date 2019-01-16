@@ -10,7 +10,7 @@ import (
 	"testing"
 )
 
-var crTestKey = "CRTESTKEY"
+var crTestKey = "crtestkey"
 
 func Test_CR_CreateNamespace(t *testing.T) {
 	client, err := cr.NewClientWithAccessKey("cn-hangzhou", os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
