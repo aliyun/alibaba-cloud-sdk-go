@@ -76,77 +76,76 @@ func (client *Client) DescribeContainerGroupsWithCallback(request *DescribeConta
 // DescribeContainerGroupsRequest is the request struct for api DescribeContainerGroups
 type DescribeContainerGroupsRequest struct {
 	*requests.RpcRequest
-	Action               string                         `position:"Query" name:"Action"`
-	OwnerId              requests.Integer               `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string                         `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      requests.Integer               `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string                         `position:"Query" name:"OwnerAccount"`
-	RegionId             string                         `position:"Query" name:"RegionId"`
-	ZoneId               string                         `position:"Query" name:"ZoneId"`
-	VSwitchId            string                         `position:"Query" name:"VSwitchId"`
-	NextToken            string                         `position:"Query" name:"NextToken"`
-	Limit                requests.Integer               `position:"Query" name:"Limit"`
-	Tag                  *[]DescribeContainerGroups_Tag `position:"Query" name:"Tag"`
-	ContainerGroupIds    string                         `position:"Query" name:"ContainerGroupIds"`
-	ContainerGroupName   string                         `position:"Query" name:"ContainerGroupName"`
-	Status               string                         `position:"Query" name:"Status"`
+	OwnerId              requests.Integer              `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string                        `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer              `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string                        `position:"Query" name:"OwnerAccount"`
+	RegionId             string                        `position:"Query" name:"RegionId"`
+	ZoneId               string                        `position:"Query" name:"ZoneId"`
+	VSwitchId            string                        `position:"Query" name:"VSwitchId"`
+	NextToken            string                        `position:"Query" name:"NextToken"`
+	Limit                requests.Integer              `position:"Query" name:"Limit"`
+	Tag                  *[]DescribeContainerGroupsTag `position:"Query" name:"Tag" type:"Repeated"`
+	ContainerGroupIds    string                        `position:"Query" name:"ContainerGroupIds"`
+	ContainerGroupName   string                        `position:"Query" name:"ContainerGroupName"`
+	Status               string                        `position:"Query" name:"Status"`
 }
 
-type DescribeContainerGroups_Tag struct {
-	Key   string `json:"Key" xml:"Key"`
-	Value string `json:"Value" xml:"Value"`
+type DescribeContainerGroupsTag struct {
+	Key   string `name:"Key"`
+	Value string `name:"Value"`
 }
 
 // DescribeContainerGroupsResponse is the response struct for api DescribeContainerGroups
 type DescribeContainerGroupsResponse struct {
 	*responses.BaseResponse
-	RequestId       string                                  `json:"RequestId" xml:"RequestId"`
-	NextToken       string                                  `json:"NextToken" xml:"NextToken"`
-	TotalCount      int                                     `json:"TotalCount" xml:"TotalCount"`
-	ContainerGroups DescribeContainerGroups_ContainerGroups `json:"ContainerGroups" xml:"ContainerGroups"`
+	RequestId       string                                 `json:"RequestId" xml:"RequestId"`
+	NextToken       string                                 `json:"NextToken" xml:"NextToken"`
+	TotalCount      int                                    `json:"TotalCount" xml:"TotalCount"`
+	ContainerGroups DescribeContainerGroupsContainerGroups `json:"ContainerGroups" xml:"ContainerGroups"`
 }
 
-type DescribeContainerGroups_ContainerGroups struct {
-	ContainerGroup []DescribeContainerGroups_ContainerGroup `json:"ContainerGroup" xml:"ContainerGroup"`
+type DescribeContainerGroupsContainerGroups struct {
+	ContainerGroup []DescribeContainerGroupsContainerGroup `json:"ContainerGroup" xml:"ContainerGroup"`
 }
 
-type DescribeContainerGroups_ContainerGroup struct {
-	ContainerGroupId   string                                   `json:"ContainerGroupId" xml:"ContainerGroupId"`
-	ContainerGroupName string                                   `json:"ContainerGroupName" xml:"ContainerGroupName"`
-	RegionId           string                                   `json:"RegionId" xml:"RegionId"`
-	ZoneId             string                                   `json:"ZoneId" xml:"ZoneId"`
-	Memory             float32                                  `json:"Memory" xml:"Memory"`
-	Cpu                float32                                  `json:"Cpu" xml:"Cpu"`
-	VSwitchId          string                                   `json:"VSwitchId" xml:"VSwitchId"`
-	SecurityGroupId    string                                   `json:"SecurityGroupId" xml:"SecurityGroupId"`
-	RestartPolicy      string                                   `json:"RestartPolicy" xml:"RestartPolicy"`
-	IntranetIp         string                                   `json:"IntranetIp" xml:"IntranetIp"`
-	Status             string                                   `json:"Status" xml:"Status"`
-	InternetIp         string                                   `json:"InternetIp" xml:"InternetIp"`
-	CreationTime       string                                   `json:"CreationTime" xml:"CreationTime"`
-	SucceededTime      string                                   `json:"SucceededTime" xml:"SucceededTime"`
-	EniInstanceId      string                                   `json:"EniInstanceId" xml:"EniInstanceId"`
-	Tags               []DescribeContainerGroups_Tags           `json:"Tags" xml:"Tags"`
-	Events             []DescribeContainerGroups_Events         `json:"Events" xml:"Events"`
-	Containers         []DescribeContainerGroups_Containers     `json:"Containers" xml:"Containers"`
-	Volumes            []DescribeContainerGroups_Volumes        `json:"Volumes" xml:"Volumes"`
-	InitContainers     []DescribeContainerGroups_InitContainers `json:"InitContainers" xml:"InitContainers"`
+type DescribeContainerGroupsContainerGroup struct {
+	ContainerGroupId   string                                  `json:"ContainerGroupId" xml:"ContainerGroupId"`
+	ContainerGroupName string                                  `json:"ContainerGroupName" xml:"ContainerGroupName"`
+	RegionId           string                                  `json:"RegionId" xml:"RegionId"`
+	ZoneId             string                                  `json:"ZoneId" xml:"ZoneId"`
+	Memory             float32                                 `json:"Memory" xml:"Memory"`
+	Cpu                float32                                 `json:"Cpu" xml:"Cpu"`
+	VSwitchId          string                                  `json:"VSwitchId" xml:"VSwitchId"`
+	SecurityGroupId    string                                  `json:"SecurityGroupId" xml:"SecurityGroupId"`
+	RestartPolicy      string                                  `json:"RestartPolicy" xml:"RestartPolicy"`
+	IntranetIp         string                                  `json:"IntranetIp" xml:"IntranetIp"`
+	Status             string                                  `json:"Status" xml:"Status"`
+	InternetIp         string                                  `json:"InternetIp" xml:"InternetIp"`
+	CreationTime       string                                  `json:"CreationTime" xml:"CreationTime"`
+	SucceededTime      string                                  `json:"SucceededTime" xml:"SucceededTime"`
+	EniInstanceId      string                                  `json:"EniInstanceId" xml:"EniInstanceId"`
+	Tags               []DescribeContainerGroupsTags           `json:"Tags" xml:"Tags"`
+	Events             []DescribeContainerGroupsEvents         `json:"Events" xml:"Events"`
+	Containers         []DescribeContainerGroupsContainers     `json:"Containers" xml:"Containers"`
+	Volumes            []DescribeContainerGroupsVolumes        `json:"Volumes" xml:"Volumes"`
+	InitContainers     []DescribeContainerGroupsInitContainers `json:"InitContainers" xml:"InitContainers"`
 }
 
-type DescribeContainerGroups_Tags struct {
-	Label []DescribeContainerGroups_Label `json:"Label" xml:"Label"`
+type DescribeContainerGroupsTags struct {
+	Label []DescribeContainerGroupsLabel `json:"Label" xml:"Label"`
 }
 
-type DescribeContainerGroups_Label struct {
+type DescribeContainerGroupsLabel struct {
 	Key   string `json:"Key" xml:"Key"`
 	Value string `json:"Value" xml:"Value"`
 }
 
-type DescribeContainerGroups_Events struct {
-	Event []DescribeContainerGroups_Event `json:"Event" xml:"Event"`
+type DescribeContainerGroupsEvents struct {
+	Event []DescribeContainerGroupsEvent `json:"Event" xml:"Event"`
 }
 
-type DescribeContainerGroups_Event struct {
+type DescribeContainerGroupsEvent struct {
 	Count          int    `json:"Count" xml:"Count"`
 	Type           string `json:"Type" xml:"Type"`
 	Name           string `json:"Name" xml:"Name"`
@@ -156,75 +155,75 @@ type DescribeContainerGroups_Event struct {
 	Reason         string `json:"Reason" xml:"Reason"`
 }
 
-type DescribeContainerGroups_Containers struct {
-	Container []DescribeContainerGroups_Container `json:"Container" xml:"Container"`
+type DescribeContainerGroupsContainers struct {
+	Container []DescribeContainerGroupsContainer `json:"Container" xml:"Container"`
 }
 
-type DescribeContainerGroups_Container struct {
-	Name            string                                    `json:"Name" xml:"Name"`
-	Image           string                                    `json:"Image" xml:"Image"`
-	Memory          float32                                   `json:"Memory" xml:"Memory"`
-	Cpu             float32                                   `json:"Cpu" xml:"Cpu"`
-	RestartCount    int                                       `json:"RestartCount" xml:"RestartCount"`
-	WorkingDir      string                                    `json:"WorkingDir" xml:"WorkingDir"`
-	ImagePullPolicy string                                    `json:"ImagePullPolicy" xml:"ImagePullPolicy"`
-	VolumeMounts    []DescribeContainerGroups_VolumeMounts    `json:"VolumeMounts" xml:"VolumeMounts"`
-	Ports           []DescribeContainerGroups_Ports           `json:"Ports" xml:"Ports"`
-	EnvironmentVars []DescribeContainerGroups_EnvironmentVars `json:"EnvironmentVars" xml:"EnvironmentVars"`
+type DescribeContainerGroupsContainer struct {
+	Name            string                                   `json:"Name" xml:"Name"`
+	Image           string                                   `json:"Image" xml:"Image"`
+	Memory          float32                                  `json:"Memory" xml:"Memory"`
+	Cpu             float32                                  `json:"Cpu" xml:"Cpu"`
+	RestartCount    int                                      `json:"RestartCount" xml:"RestartCount"`
+	WorkingDir      string                                   `json:"WorkingDir" xml:"WorkingDir"`
+	ImagePullPolicy string                                   `json:"ImagePullPolicy" xml:"ImagePullPolicy"`
+	VolumeMounts    []DescribeContainerGroupsVolumeMounts    `json:"VolumeMounts" xml:"VolumeMounts"`
+	Ports           []DescribeContainerGroupsPorts           `json:"Ports" xml:"Ports"`
+	EnvironmentVars []DescribeContainerGroupsEnvironmentVars `json:"EnvironmentVars" xml:"EnvironmentVars"`
 }
 
-type DescribeContainerGroups_VolumeMounts struct {
-	VolumeMount []DescribeContainerGroups_VolumeMount `json:"VolumeMount" xml:"VolumeMount"`
+type DescribeContainerGroupsVolumeMounts struct {
+	VolumeMount []DescribeContainerGroupsVolumeMount `json:"VolumeMount" xml:"VolumeMount"`
 }
 
-type DescribeContainerGroups_VolumeMount struct {
+type DescribeContainerGroupsVolumeMount struct {
 	Name      string `json:"Name" xml:"Name"`
 	MountPath string `json:"MountPath" xml:"MountPath"`
 	ReadOnly  bool   `json:"ReadOnly" xml:"ReadOnly"`
 }
 
-type DescribeContainerGroups_Ports struct {
-	Port []DescribeContainerGroups_Port `json:"Port" xml:"Port"`
+type DescribeContainerGroupsPorts struct {
+	Port []DescribeContainerGroupsPort `json:"Port" xml:"Port"`
 }
 
-type DescribeContainerGroups_Port struct {
+type DescribeContainerGroupsPort struct {
 	Port     int    `json:"Port" xml:"Port"`
 	Protocol string `json:"Protocol" xml:"Protocol"`
 }
 
-type DescribeContainerGroups_EnvironmentVars struct {
-	EnvironmentVar []DescribeContainerGroups_EnvironmentVar `json:"EnvironmentVar" xml:"EnvironmentVar"`
+type DescribeContainerGroupsEnvironmentVars struct {
+	EnvironmentVar []DescribeContainerGroupsEnvironmentVar `json:"EnvironmentVar" xml:"EnvironmentVar"`
 }
 
-type DescribeContainerGroups_EnvironmentVar struct {
+type DescribeContainerGroupsEnvironmentVar struct {
 	Key   string `json:"Key" xml:"Key"`
 	Value string `json:"Value" xml:"Value"`
 }
 
-type DescribeContainerGroups_Volumes struct {
-	Volume []DescribeContainerGroups_Volume `json:"Volume" xml:"Volume"`
+type DescribeContainerGroupsVolumes struct {
+	Volume []DescribeContainerGroupsVolume `json:"Volume" xml:"Volume"`
 }
 
-type DescribeContainerGroups_Volume struct {
-	Type                              string                                                      `json:"Type" xml:"Type"`
-	Name                              string                                                      `json:"Name" xml:"Name"`
-	NFSVolumePath                     string                                                      `json:"NFSVolumePath" xml:"NFSVolumePath"`
-	NFSVolumeServer                   string                                                      `json:"NFSVolumeServer" xml:"NFSVolumeServer"`
-	NFSVolumeReadOnly                 bool                                                        `json:"NFSVolumeReadOnly" xml:"NFSVolumeReadOnly"`
-	ConfigFileVolumeConfigFileToPaths []DescribeContainerGroups_ConfigFileVolumeConfigFileToPaths `json:"ConfigFileVolumeConfigFileToPaths" xml:"ConfigFileVolumeConfigFileToPaths"`
+type DescribeContainerGroupsVolume struct {
+	Type                              string                                                     `json:"Type" xml:"Type"`
+	Name                              string                                                     `json:"Name" xml:"Name"`
+	NFSVolumePath                     string                                                     `json:"NFSVolumePath" xml:"NFSVolumePath"`
+	NFSVolumeServer                   string                                                     `json:"NFSVolumeServer" xml:"NFSVolumeServer"`
+	NFSVolumeReadOnly                 bool                                                       `json:"NFSVolumeReadOnly" xml:"NFSVolumeReadOnly"`
+	ConfigFileVolumeConfigFileToPaths []DescribeContainerGroupsConfigFileVolumeConfigFileToPaths `json:"ConfigFileVolumeConfigFileToPaths" xml:"ConfigFileVolumeConfigFileToPaths"`
 }
 
-type DescribeContainerGroups_ConfigFileVolumeConfigFileToPaths struct {
-	ConfigFileVolumeConfigFileToPath []DescribeContainerGroups_ConfigFileVolumeConfigFileToPath `json:"ConfigFileVolumeConfigFileToPath" xml:"ConfigFileVolumeConfigFileToPath"`
+type DescribeContainerGroupsConfigFileVolumeConfigFileToPaths struct {
+	ConfigFileVolumeConfigFileToPath []DescribeContainerGroupsConfigFileVolumeConfigFileToPath `json:"ConfigFileVolumeConfigFileToPath" xml:"ConfigFileVolumeConfigFileToPath"`
 }
 
-type DescribeContainerGroups_ConfigFileVolumeConfigFileToPath struct {
+type DescribeContainerGroupsConfigFileVolumeConfigFileToPath struct {
 	Content string `json:"Content" xml:"Content"`
 	Path    string `json:"Path" xml:"Path"`
 }
 
-type DescribeContainerGroups_InitContainers struct {
-	Container []DescribeContainerGroups_Container `json:"Container" xml:"Container"`
+type DescribeContainerGroupsInitContainers struct {
+	Container []DescribeContainerGroupsContainer `json:"Container" xml:"Container"`
 }
 
 // CreateDescribeContainerGroupsRequest creates a request to invoke DescribeContainerGroups API

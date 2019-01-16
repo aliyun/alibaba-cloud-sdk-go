@@ -76,7 +76,6 @@ func (client *Client) DeleteContainerGroupWithCallback(request *DeleteContainerG
 // DeleteContainerGroupRequest is the request struct for api DeleteContainerGroup
 type DeleteContainerGroupRequest struct {
 	*requests.RpcRequest
-	Action               string           `position:"Query" name:"Action"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
