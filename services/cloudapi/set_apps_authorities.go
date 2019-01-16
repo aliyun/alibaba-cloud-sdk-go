@@ -83,6 +83,7 @@ type SetAppsAuthoritiesRequest struct {
 	GroupId       string `position:"Query" name:"GroupId"`
 	Description   string `position:"Query" name:"Description"`
 	ApiId         string `position:"Query" name:"ApiId"`
+	AuthValidTime string `position:"Query" name:"AuthValidTime"`
 }
 
 // SetAppsAuthoritiesResponse is the response struct for api SetAppsAuthorities

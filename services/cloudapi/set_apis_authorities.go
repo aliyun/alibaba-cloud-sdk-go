@@ -82,6 +82,7 @@ type SetApisAuthoritiesRequest struct {
 	GroupId       string           `position:"Query" name:"GroupId"`
 	AppId         requests.Integer `position:"Query" name:"AppId"`
 	Description   string           `position:"Query" name:"Description"`
+	AuthValidTime string           `position:"Query" name:"AuthValidTime"`
 	ApiIds        string           `position:"Query" name:"ApiIds"`
 }
 
