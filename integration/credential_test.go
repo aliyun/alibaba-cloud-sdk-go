@@ -10,7 +10,7 @@ import (
 )
 
 func Test_DescribeRegionsWithRPCrequestWithAK(t *testing.T) {
-	client, err := ecs.NewClientWithAccessKey("cn-hangzhou", os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
+	client, err := ecs.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
 	assert.Nil(t, err)
 	assert.NotNil(t, client)
 	request := ecs.CreateDescribeRegionsRequest()
@@ -26,7 +26,7 @@ func Test_DescribeRegionsWithRPCrequestWithSTStoken(t *testing.T) {
 	assumeresponse, err := createAssumeRole()
 	assert.Nil(t, err)
 	credential := assumeresponse.Credentials
-	client, err := ecs.NewClientWithStsToken("cn-hangzhou", credential.AccessKeyId, credential.AccessKeySecret, credential.SecurityToken)
+	client, err := ecs.NewClientWithStsToken(os.Getenv("REGION_ID"), credential.AccessKeyId, credential.AccessKeySecret, credential.SecurityToken)
 	assert.Nil(t, err)
 	assert.NotNil(t, client)
 	request := ecs.CreateDescribeRegionsRequest()
@@ -39,11 +39,11 @@ func Test_DescribeRegionsWithRPCrequestWithSTStoken(t *testing.T) {
 }
 
 func Test_DescribeClusterDetailWithROArequestWithAK(t *testing.T) {
-	client, err := cs.NewClientWithAccessKey("default", os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
+	client, err := cs.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
 	assert.Nil(t, err)
 	request := cs.CreateDescribeClusterDetailRequest()
 	request.SetDomain("cs.aliyuncs.com")
-	request.QueryParams["RegionId"] = "default"
+	request.QueryParams["RegionId"] = os.Getenv("REGION_ID")
 	request.Method = "GET"
 	response, err := client.DescribeClusterDetail(request)
 	assert.NotNil(t, err)
@@ -51,18 +51,16 @@ func Test_DescribeClusterDetailWithROArequestWithAK(t *testing.T) {
 	assert.Contains(t, err.Error(), "Request url is invalid")
 }
 
-//func Test_DescribeRegionsWithRPCrequestWithArn(t *testing.T) {
-//	assumeresponse, err := createAssumeRole()
-//	assert.Nil(t, assumeresponse)
-//	credential := assumeresponse.Credentials
-//	assert.Nil(t, err)
-//	client, err := ecs.NewClientWithRamRoleArn("cn-hangzhou", credential.AccessKeyId, credential.AccessKeySecret, assumeresponse.AssumedRoleUser.Arn,"testrole")
-//	assert.Nil(t, err)
-//	request := ecs.CreateDescribeRegionsRequest()
-//	request.Scheme = "https"
-//	response, err := client.DescribeRegions(request)
-//	assert.Nil(t, err)
-//	realerr := err.(errors.Error)
-//	assert.Nil(t, realerr.OriginError().Error())
-//	assert.Equal(t, 36, len(response.RequestId))
-//}
+func Test_DescribeRegionsWithRPCrequestWithArn(t *testing.T) {
+	subaccesskeyid, subaccesskeysecret, err := createAccessKey()
+	assert.Nil(t, err)
+	client, err := ecs.NewClientWithRamRoleArn(os.Getenv("REGION_ID"), subaccesskeyid, subaccesskeysecret, rolearn, "alice_test")
+	assert.Nil(t, err)
+
+	request := ecs.CreateDescribeRegionsRequest()
+	request.Scheme = "https"
+	request.Domain = "ecs.aliyuncs.com"
+	response, err := client.DescribeRegions(request)
+	assert.Nil(t, err)
+	assert.Equal(t, 36, len(response.RequestId))
+}
