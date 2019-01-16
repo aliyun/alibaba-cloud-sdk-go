@@ -82,6 +82,7 @@ type SubmitTranscodeJobsRequest struct {
 	VideoId              string           `position:"Query" name:"VideoId"`
 	OverrideParams       string           `position:"Query" name:"OverrideParams"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Priority             string           `position:"Query" name:"Priority"`
 	EncryptConfig        string           `position:"Query" name:"EncryptConfig"`
 	PipelineId           string           `position:"Query" name:"PipelineId"`
 }

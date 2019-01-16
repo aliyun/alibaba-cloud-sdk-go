@@ -94,11 +94,11 @@ type DescribeRefreshTasksRequest struct {
 // DescribeRefreshTasksResponse is the response struct for api DescribeRefreshTasks
 type DescribeRefreshTasksResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	PageSize   int    `json:"PageSize" xml:"PageSize"`
-	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
-	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
-	Tasks      Tasks  `json:"Tasks" xml:"Tasks"`
+	RequestId  string                      `json:"RequestId" xml:"RequestId"`
+	PageSize   int                         `json:"PageSize" xml:"PageSize"`
+	PageNumber int                         `json:"PageNumber" xml:"PageNumber"`
+	TotalCount int                         `json:"TotalCount" xml:"TotalCount"`
+	Tasks      TasksInDescribeRefreshTasks `json:"Tasks" xml:"Tasks"`
 }
 
 // CreateDescribeRefreshTasksRequest creates a request to invoke DescribeRefreshTasks API

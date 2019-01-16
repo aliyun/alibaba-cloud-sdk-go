@@ -1,3 +1,23 @@
+2019-01-16 Version: 1.50.10
+1, The plugin feature is released and supports a variety of plugins, as follows:trafficControl、backendSignature、ipControl、jwtAuth、cors、caching
+
+2019-01-15 Version: 1.50.9
+1, Add SubmitVerification API for RPMin solution.
+2, Return authority comparison score in GetStatus, SubmitMaterials and SubmitVerification.
+
+2019-01-15 Version: 1.50.8
+1, Go Lang API release
+2, Support UploadCertificate,CertficateList function;
+
+2019-01-15 Version: 1.50.7
+1, Add new apis called AddTranscodeTemplateGroup, UpdateTranscodeTemplateGroup, ListTranscodeTemplateGroup, GetTranscodeTemplateGroup, SetDefaultTranscodeTemplateGroup ,DeleteTranscodeTemplateGroup and DeleteTranscodeTemplates which support transcode template feature.
+2, Add new apis called AddAITemplate, DeleteAITemplate, UpdateAITemplate, GetAITemplate, ListAITemplate, GetDefaultAITemplate and SetDefaultAITemplate which support AI template feature.
+3, Add new apis called SubmitAIMediaAuditJob, GetAIMediaAuditJob, GetMediaAuditResult, GetMediaAuditResultTimeline which support AIMediaAudit feature.
+4, Add the field named Priority to SubmitTranscodeJobs api request.
+5, Add the field named UserData to UploadMediaByURL api request.
+6, Add the field named UserData to CreateUploadImage api request.
+7, Add the field named UserData to CreateUploadAttachedMedia api request.
+
 2019-01-14 Version: 1.50.6
 1, Release Go SDK for CR
 

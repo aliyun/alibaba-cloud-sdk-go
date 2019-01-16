@@ -92,13 +92,13 @@ type DescribeDomainBpsDataRequest struct {
 // DescribeDomainBpsDataResponse is the response struct for api DescribeDomainBpsData
 type DescribeDomainBpsDataResponse struct {
 	*responses.BaseResponse
-	RequestId          string             `json:"RequestId" xml:"RequestId"`
-	DomainName         string             `json:"DomainName" xml:"DomainName"`
-	DataInterval       string             `json:"DataInterval" xml:"DataInterval"`
-	StartTime          string             `json:"StartTime" xml:"StartTime"`
-	EndTime            string             `json:"EndTime" xml:"EndTime"`
-	BpsDataPerInterval BpsDataPerInterval `json:"BpsDataPerInterval" xml:"BpsDataPerInterval"`
-	SupplyBpsDatas     SupplyBpsDatas     `json:"SupplyBpsDatas" xml:"SupplyBpsDatas"`
+	RequestId          string                                    `json:"RequestId" xml:"RequestId"`
+	DomainName         string                                    `json:"DomainName" xml:"DomainName"`
+	DataInterval       string                                    `json:"DataInterval" xml:"DataInterval"`
+	StartTime          string                                    `json:"StartTime" xml:"StartTime"`
+	EndTime            string                                    `json:"EndTime" xml:"EndTime"`
+	BpsDataPerInterval BpsDataPerIntervalInDescribeDomainBpsData `json:"BpsDataPerInterval" xml:"BpsDataPerInterval"`
+	SupplyBpsDatas     SupplyBpsDatas                            `json:"SupplyBpsDatas" xml:"SupplyBpsDatas"`
 }
 
 // CreateDescribeDomainBpsDataRequest creates a request to invoke DescribeDomainBpsData API

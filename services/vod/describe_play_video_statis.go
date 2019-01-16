@@ -76,9 +76,9 @@ func (client *Client) DescribePlayVideoStatisWithCallback(request *DescribePlayV
 // DescribePlayVideoStatisRequest is the request struct for api DescribePlayVideoStatis
 type DescribePlayVideoStatisRequest struct {
 	*requests.RpcRequest
+	StartTime string           `position:"Query" name:"StartTime"`
 	EndTime   string           `position:"Query" name:"EndTime"`
 	VideoId   string           `position:"Query" name:"VideoId"`
-	StartTime string           `position:"Query" name:"StartTime"`
 	OwnerId   requests.Integer `position:"Query" name:"OwnerId"`
 }
 

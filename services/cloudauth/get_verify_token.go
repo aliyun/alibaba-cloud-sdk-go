@@ -100,7 +100,7 @@ func CreateGetVerifyTokenRequest() (request *GetVerifyTokenRequest) {
 	request = &GetVerifyTokenRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cloudauth", "2018-09-16", "GetVerifyToken", "cloudauth", "openAPI")
+	request.InitWithApiInfo("Cloudauth", "2018-09-16", "GetVerifyToken", "CloudAuth", "openAPI")
 	return
 }
 

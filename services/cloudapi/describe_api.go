@@ -102,6 +102,7 @@ type DescribeApiResponse struct {
 	MockResult             string                              `json:"MockResult" xml:"MockResult"`
 	AllowSignatureMethod   string                              `json:"AllowSignatureMethod" xml:"AllowSignatureMethod"`
 	WebSocketApiType       string                              `json:"WebSocketApiType" xml:"WebSocketApiType"`
+	ResultBodyModel        string                              `json:"ResultBodyModel" xml:"ResultBodyModel"`
 	RequestConfig          RequestConfig                       `json:"RequestConfig" xml:"RequestConfig"`
 	ServiceConfig          ServiceConfig                       `json:"ServiceConfig" xml:"ServiceConfig"`
 	OpenIdConnectConfig    OpenIdConnectConfig                 `json:"OpenIdConnectConfig" xml:"OpenIdConnectConfig"`

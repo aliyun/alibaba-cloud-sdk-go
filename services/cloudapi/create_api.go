@@ -97,6 +97,7 @@ type CreateApiRequest struct {
 	OpenIdConnectConfig  string `position:"Query" name:"OpenIdConnectConfig"`
 	RequestParameters    string `position:"Query" name:"RequestParameters"`
 	RequestConfig        string `position:"Query" name:"RequestConfig"`
+	ResultBodyModel      string `position:"Query" name:"ResultBodyModel"`
 }
 
 // CreateApiResponse is the response struct for api CreateApi

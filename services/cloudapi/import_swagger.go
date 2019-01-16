@@ -77,7 +77,7 @@ func (client *Client) ImportSwaggerWithCallback(request *ImportSwaggerRequest, c
 type ImportSwaggerRequest struct {
 	*requests.RpcRequest
 	DataFormat string           `position:"Query" name:"DataFormat"`
-	Data       string           `position:"Query" name:"Data"`
+	Data       string           `position:"Body" name:"Data"`
 	GroupId    string           `position:"Query" name:"GroupId"`
 	Overwrite  requests.Boolean `position:"Query" name:"Overwrite"`
 }

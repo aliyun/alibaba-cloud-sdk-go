@@ -88,6 +88,7 @@ type DescribeAppSecurityResponse struct {
 	AppSecret    string `json:"AppSecret" xml:"AppSecret"`
 	CreatedTime  string `json:"CreatedTime" xml:"CreatedTime"`
 	ModifiedTime string `json:"ModifiedTime" xml:"ModifiedTime"`
+	AppCode      string `json:"AppCode" xml:"AppCode"`
 }
 
 // CreateDescribeAppSecurityRequest creates a request to invoke DescribeAppSecurity API

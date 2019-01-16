@@ -76,6 +76,7 @@ func (client *Client) UploadMediaByURLWithCallback(request *UploadMediaByURLRequ
 // UploadMediaByURLRequest is the request struct for api UploadMediaByURL
 type UploadMediaByURLRequest struct {
 	*requests.RpcRequest
+	UserData             string           `position:"Query" name:"UserData"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	TemplateGroupId      string           `position:"Query" name:"TemplateGroupId"`
 	UploadMetadatas      string           `position:"Query" name:"UploadMetadatas"`

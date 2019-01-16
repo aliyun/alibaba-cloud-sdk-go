@@ -17,6 +17,6 @@ package vod
 
 // DomainLogModel is a nested struct in vod response
 type DomainLogModel struct {
-	DomainName       string           `json:"DomainName" xml:"DomainName"`
-	DomainLogDetails DomainLogDetails `json:"DomainLogDetails" xml:"DomainLogDetails"`
+	DomainName       string                                  `json:"DomainName" xml:"DomainName"`
+	DomainLogDetails DomainLogDetailsInDescribeCdnDomainLogs `json:"DomainLogDetails" xml:"DomainLogDetails"`
 }
