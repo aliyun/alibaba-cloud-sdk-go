@@ -33,14 +33,14 @@ func Test_DescribeRegionsWithUnreachableError(t *testing.T) {
 	request.Version = "2014-05-26"
 	request.Product = "Ecs"
 	request.ApiName = "DescribeRegions"
-	request.SetDomain("www.ecs.ali.com")
+	request.SetDomain("www.aliyun-hangzhou.com")
 	request.TransToAcsRequest()
 	client, err := sdk.NewClientWithAccessKey("cn-hangzhou", os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
 	assert.Nil(t, err)
 	response, err := client.ProcessCommonRequest(request)
 	assert.Equal(t, 0, response.GetHttpStatus())
 	realerr := err.(errors.Error)
-	assert.True(t, strings.Contains(realerr.OriginError().Error(), "dial tcp: lookup www.ecs.ali.com: no such host"))
+	assert.True(t, strings.Contains(realerr.OriginError().Error(), "www.aliyun-hangzhou.com"))
 }
 
 func Test_DescribeRegionsWithTimeout(t *testing.T) {
