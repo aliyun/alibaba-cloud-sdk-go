@@ -104,6 +104,7 @@ type CreateLaunchTemplateVersionRequest struct {
 	Description                 string                                         `position:"Query" name:"Description"`
 	SystemDiskCategory          string                                         `position:"Query" name:"SystemDisk.Category"`
 	UserData                    string                                         `position:"Query" name:"UserData"`
+	PasswordInherit             requests.Boolean                               `position:"Query" name:"PasswordInherit"`
 	InstanceType                string                                         `position:"Query" name:"InstanceType"`
 	InstanceChargeType          string                                         `position:"Query" name:"InstanceChargeType"`
 	EnableVmOsConfig            requests.Boolean                               `position:"Query" name:"EnableVmOsConfig"`
@@ -144,6 +145,7 @@ type CreateLaunchTemplateVersionDataDisk struct {
 	DiskName           string `name:"DiskName"`
 	Description        string `name:"Description"`
 	DeleteWithInstance string `name:"DeleteWithInstance"`
+	Device             string `name:"Device"`
 }
 
 // CreateLaunchTemplateVersionResponse is the response struct for api CreateLaunchTemplateVersion

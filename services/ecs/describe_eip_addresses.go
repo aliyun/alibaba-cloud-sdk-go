@@ -79,6 +79,7 @@ type DescribeEipAddressesRequest struct {
 	ResourceOwnerId        requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount   string           `position:"Query" name:"ResourceOwnerAccount"`
 	Filter2Value           string           `position:"Query" name:"Filter.2.Value"`
+	ISP                    string           `position:"Query" name:"ISP"`
 	OwnerAccount           string           `position:"Query" name:"OwnerAccount"`
 	AllocationId           string           `position:"Query" name:"AllocationId"`
 	Filter1Value           string           `position:"Query" name:"Filter.1.Value"`

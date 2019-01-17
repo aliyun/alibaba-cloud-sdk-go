@@ -81,6 +81,7 @@ type AllocateEipAddressRequest struct {
 	Bandwidth            string           `position:"Query" name:"Bandwidth"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
 	InternetChargeType   string           `position:"Query" name:"InternetChargeType"`
+	ISP                  string           `position:"Query" name:"ISP"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
