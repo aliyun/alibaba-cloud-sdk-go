@@ -115,7 +115,7 @@ func (baseResponse *BaseResponse) parseFromHttpResponse(httpResponse *http.Respo
 	if err != nil {
 		return
 	}
-	debug("< %s", string(body))
+	debug("%s", string(body))
 	baseResponse.httpStatus = httpResponse.StatusCode
 	baseResponse.httpHeaders = httpResponse.Header
 	baseResponse.httpContentBytes = body
