@@ -1,3 +1,7 @@
+2019-01-21 Version: 1.51.1
+1, Interface DescribePluginApis returns the modification
+
+
 2019-01-17 Version: 1.51.0
 1, Add api AcceptInquiredSystemEvent.
 2, Add ExtendedAttribute to response of api DescribeInstanceHistoryEvents.
