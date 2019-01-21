@@ -4,17 +4,15 @@ import (
 	"crypto/md5"
 	"fmt"
 	"net/url"
-	"strings"
 	"time"
-
-	"github.com/docker/distribution/uuid"
 )
 
 // sign by A type authentication method.
+
 func aTypeSign(r *url.URL, path string, privateKey string, expires time.Time) string {
-	//random uuid
-	rand := strings.Replace(uuid.Generate().String(), "-", "", -1)
-	// "0" by default, other value is ok
+	//rand is a random uuid without "-"
+	rand := GenerateUUID().String()
+	// not use, "0" by default
 	uid := "0"
 	secret := fmt.Sprintf("%s-%d-%s-%s-%s", path, expires.Unix(), rand, uid, privateKey)
 	hashValue := md5.Sum([]byte(secret))
