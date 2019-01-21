@@ -1,8 +1,12 @@
 # 阿里云开发者 Go 工具套件
 
-[![Build Status](https://travis-ci.org/aliyun/alibaba-cloud-sdk-go.svg?branch=master)](https://travis-ci.org/aliyun/alibaba-cloud-sdk-go)
+[![Travis Build Status](https://travis-ci.org/aliyun/alibaba-cloud-sdk-go.svg?branch=master)](https://travis-ci.org/aliyun/alibaba-cloud-sdk-go)
+[![Appveyor Build status](https://ci.appveyor.com/api/projects/status/hmhx3lawe4v2ii5c?svg=true)](https://ci.appveyor.com/project/wenzuochao/alibaba-cloud-sdk-go)
 [![Go Report Card](https://goreportcard.com/badge/github.com/aliyun/alibaba-cloud-sdk-go)](https://goreportcard.com/report/github.com/aliyun/alibaba-cloud-sdk-go)
 [![codecov](https://codecov.io/gh/aliyun/alibaba-cloud-sdk-go/branch/master/graph/badge.svg)](https://codecov.io/gh/aliyun/alibaba-cloud-sdk-go)
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Faliyun%2Falibaba-cloud-sdk-go.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Faliyun%2Falibaba-cloud-sdk-go?ref=badge_shield)
+
+See [英文文档](./README.md)
 
 欢迎使用阿里云开发者工具套件（SDK）。阿里云 Go SDK 让您不用复杂编程即可访问云服务器、云监控等多个阿里云服务。这里向您介绍如何获取阿里云 Go SDK 并开始调用。
 
@@ -197,3 +201,7 @@ func main() {
 	fmt.Print(response.GetHttpContentString())
 }
 ```
+
+## 许可证
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Faliyun%2Falibaba-cloud-sdk-go.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Faliyun%2Falibaba-cloud-sdk-go?ref=badge_large)
+
