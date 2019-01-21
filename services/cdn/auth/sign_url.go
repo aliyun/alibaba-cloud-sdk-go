@@ -7,6 +7,42 @@ import (
 	"time"
 )
 
+// An URLSigner provides URL signing utilities to sign URLs for Aliyun CDN
+// resources.
+//
+// The signer is safe to use concurrently.
+type URLSigner struct {
+	authType string
+	privKey  string
+}
+
+// newURLSigner returns a new signer object.
+func newURLSigner(authType string, privKey string) *URLSigner {
+	return &URLSigner{
+		authType: authType,
+		privKey:  privKey,
+	}
+}
+
+// Sign returns a signed aliyuncdn url based on authentication type
+func (s URLSigner) Sign(baseURL string, path string, expires time.Time) (string, error) {
+	r, err := url.Parse(baseURL)
+	if err != nil {
+		return "", fmt.Errorf("unable to parse baseurl: %s", r)
+	}
+
+	switch s.authType {
+	case "a":
+		return aTypeSign(r, path, s.privKey, expires), nil
+	case "b":
+		return bTypeSign(r, path, s.privKey, expires), nil
+	case "c":
+		return cTypeSign(r, path, s.privKey, expires), nil
+	default:
+		return "", fmt.Errorf("invalid authentication type")
+	}
+}
+
 // sign by A type authentication method.
 func aTypeSign(r *url.URL, path string, privateKey string, expires time.Time) string {
 	//rand is a random uuid without "-"
