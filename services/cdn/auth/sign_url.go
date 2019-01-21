@@ -8,7 +8,6 @@ import (
 )
 
 // sign by A type authentication method.
-
 func aTypeSign(r *url.URL, path string, privateKey string, expires time.Time) string {
 	//rand is a random uuid without "-"
 	rand := GenerateUUID().String()
