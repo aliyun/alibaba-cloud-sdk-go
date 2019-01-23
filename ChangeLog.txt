@@ -1,3 +1,6 @@
+2019-01-23 Version: 1.51.6
+1, Add model relevant parameter
+
 2019-01-23 Version: 1.51.5
 1, support plugin
 2, support model
