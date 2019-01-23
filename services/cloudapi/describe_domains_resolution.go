@@ -94,7 +94,7 @@ func CreateDescribeDomainsResolutionRequest() (request *DescribeDomainsResolutio
 	request = &DescribeDomainsResolutionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudAPI", "2016-07-14", "DescribeDomainsResolution", "", "")
+	request.InitWithApiInfo("CloudAPI", "2016-07-14", "DescribeDomainsResolution", "apigateway", "openAPI")
 	return
 }
 

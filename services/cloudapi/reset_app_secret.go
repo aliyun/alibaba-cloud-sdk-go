@@ -91,7 +91,7 @@ func CreateResetAppSecretRequest() (request *ResetAppSecretRequest) {
 	request = &ResetAppSecretRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudAPI", "2016-07-14", "ResetAppSecret", "", "")
+	request.InitWithApiInfo("CloudAPI", "2016-07-14", "ResetAppSecret", "apigateway", "openAPI")
 	return
 }
 

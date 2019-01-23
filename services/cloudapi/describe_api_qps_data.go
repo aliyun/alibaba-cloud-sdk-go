@@ -96,7 +96,7 @@ func CreateDescribeApiQpsDataRequest() (request *DescribeApiQpsDataRequest) {
 	request = &DescribeApiQpsDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudAPI", "2016-07-14", "DescribeApiQpsData", "", "")
+	request.InitWithApiInfo("CloudAPI", "2016-07-14", "DescribeApiQpsData", "apigateway", "openAPI")
 	return
 }
 

@@ -93,7 +93,7 @@ func CreateAbolishApiRequest() (request *AbolishApiRequest) {
 	request = &AbolishApiRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudAPI", "2016-07-14", "AbolishApi", "", "")
+	request.InitWithApiInfo("CloudAPI", "2016-07-14", "AbolishApi", "apigateway", "openAPI")
 	return
 }
 

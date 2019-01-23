@@ -95,7 +95,7 @@ func CreateSwitchApiRequest() (request *SwitchApiRequest) {
 	request = &SwitchApiRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudAPI", "2016-07-14", "SwitchApi", "", "")
+	request.InitWithApiInfo("CloudAPI", "2016-07-14", "SwitchApi", "apigateway", "openAPI")
 	return
 }
 

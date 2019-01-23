@@ -98,7 +98,7 @@ func CreateDescribeAppsRequest() (request *DescribeAppsRequest) {
 	request = &DescribeAppsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudAPI", "2016-07-14", "DescribeApps", "", "")
+	request.InitWithApiInfo("CloudAPI", "2016-07-14", "DescribeApps", "apigateway", "openAPI")
 	return
 }
 

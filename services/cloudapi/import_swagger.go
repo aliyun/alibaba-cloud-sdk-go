@@ -95,7 +95,7 @@ func CreateImportSwaggerRequest() (request *ImportSwaggerRequest) {
 	request = &ImportSwaggerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudAPI", "2016-07-14", "ImportSwagger", "", "")
+	request.InitWithApiInfo("CloudAPI", "2016-07-14", "ImportSwagger", "apigateway", "openAPI")
 	return
 }
 

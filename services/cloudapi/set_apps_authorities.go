@@ -97,7 +97,7 @@ func CreateSetAppsAuthoritiesRequest() (request *SetAppsAuthoritiesRequest) {
 	request = &SetAppsAuthoritiesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudAPI", "2016-07-14", "SetAppsAuthorities", "", "")
+	request.InitWithApiInfo("CloudAPI", "2016-07-14", "SetAppsAuthorities", "apigateway", "openAPI")
 	return
 }
 

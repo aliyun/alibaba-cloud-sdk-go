@@ -96,7 +96,7 @@ func CreateModifySignatureRequest() (request *ModifySignatureRequest) {
 	request = &ModifySignatureRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudAPI", "2016-07-14", "ModifySignature", "", "")
+	request.InitWithApiInfo("CloudAPI", "2016-07-14", "ModifySignature", "apigateway", "openAPI")
 	return
 }
 

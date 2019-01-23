@@ -93,7 +93,7 @@ func CreateRemoveVpcAccessRequest() (request *RemoveVpcAccessRequest) {
 	request = &RemoveVpcAccessRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudAPI", "2016-07-14", "RemoveVpcAccess", "", "")
+	request.InitWithApiInfo("CloudAPI", "2016-07-14", "RemoveVpcAccess", "apigateway", "openAPI")
 	return
 }
 

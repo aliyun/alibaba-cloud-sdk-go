@@ -94,7 +94,7 @@ func CreateSetIpControlApisRequest() (request *SetIpControlApisRequest) {
 	request = &SetIpControlApisRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudAPI", "2016-07-14", "SetIpControlApis", "", "")
+	request.InitWithApiInfo("CloudAPI", "2016-07-14", "SetIpControlApis", "apigateway", "openAPI")
 	return
 }
 

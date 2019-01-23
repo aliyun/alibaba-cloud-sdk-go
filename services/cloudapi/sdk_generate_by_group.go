@@ -93,7 +93,7 @@ func CreateSdkGenerateByGroupRequest() (request *SdkGenerateByGroupRequest) {
 	request = &SdkGenerateByGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudAPI", "2016-07-14", "SdkGenerateByGroup", "", "")
+	request.InitWithApiInfo("CloudAPI", "2016-07-14", "SdkGenerateByGroup", "apigateway", "openAPI")
 	return
 }
 

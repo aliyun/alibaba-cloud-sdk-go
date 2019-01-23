@@ -102,7 +102,7 @@ func CreateSetDomainRequest() (request *SetDomainRequest) {
 	request = &SetDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudAPI", "2016-07-14", "SetDomain", "", "")
+	request.InitWithApiInfo("CloudAPI", "2016-07-14", "SetDomain", "apigateway", "openAPI")
 	return
 }
 

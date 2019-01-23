@@ -94,7 +94,7 @@ func CreateAddIpControlPolicyItemRequest() (request *AddIpControlPolicyItemReque
 	request = &AddIpControlPolicyItemRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudAPI", "2016-07-14", "AddIpControlPolicyItem", "", "")
+	request.InitWithApiInfo("CloudAPI", "2016-07-14", "AddIpControlPolicyItem", "apigateway", "openAPI")
 	return
 }
 

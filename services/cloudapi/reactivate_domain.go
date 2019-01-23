@@ -92,7 +92,7 @@ func CreateReactivateDomainRequest() (request *ReactivateDomainRequest) {
 	request = &ReactivateDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudAPI", "2016-07-14", "ReactivateDomain", "", "")
+	request.InitWithApiInfo("CloudAPI", "2016-07-14", "ReactivateDomain", "apigateway", "openAPI")
 	return
 }
 

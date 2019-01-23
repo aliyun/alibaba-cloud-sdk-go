@@ -119,7 +119,7 @@ func CreateDescribeDeployedApiRequest() (request *DescribeDeployedApiRequest) {
 	request = &DescribeDeployedApiRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudAPI", "2016-07-14", "DescribeDeployedApi", "", "")
+	request.InitWithApiInfo("CloudAPI", "2016-07-14", "DescribeDeployedApi", "apigateway", "openAPI")
 	return
 }
 

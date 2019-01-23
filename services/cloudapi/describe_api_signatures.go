@@ -99,7 +99,7 @@ func CreateDescribeApiSignaturesRequest() (request *DescribeApiSignaturesRequest
 	request = &DescribeApiSignaturesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudAPI", "2016-07-14", "DescribeApiSignatures", "", "")
+	request.InitWithApiInfo("CloudAPI", "2016-07-14", "DescribeApiSignatures", "apigateway", "openAPI")
 	return
 }
 
