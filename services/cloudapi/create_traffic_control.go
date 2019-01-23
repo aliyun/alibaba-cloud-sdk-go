@@ -97,7 +97,7 @@ func CreateCreateTrafficControlRequest() (request *CreateTrafficControlRequest) 
 	request = &CreateTrafficControlRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudAPI", "2016-07-14", "CreateTrafficControl", "apigateway", "openAPI")
+	request.InitWithApiInfo("CloudAPI", "2016-07-14", "CreateTrafficControl", "", "")
 	return
 }
 

@@ -96,7 +96,7 @@ func CreateDescribeVpcAccessesRequest() (request *DescribeVpcAccessesRequest) {
 	request = &DescribeVpcAccessesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudAPI", "2016-07-14", "DescribeVpcAccesses", "apigateway", "openAPI")
+	request.InitWithApiInfo("CloudAPI", "2016-07-14", "DescribeVpcAccesses", "", "")
 	return
 }
 

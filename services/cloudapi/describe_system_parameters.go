@@ -91,7 +91,7 @@ func CreateDescribeSystemParametersRequest() (request *DescribeSystemParametersR
 	request = &DescribeSystemParametersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudAPI", "2016-07-14", "DescribeSystemParameters", "apigateway", "openAPI")
+	request.InitWithApiInfo("CloudAPI", "2016-07-14", "DescribeSystemParameters", "", "")
 	return
 }
 

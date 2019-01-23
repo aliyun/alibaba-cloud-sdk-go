@@ -93,7 +93,7 @@ func CreateCreateLogConfigRequest() (request *CreateLogConfigRequest) {
 	request = &CreateLogConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudAPI", "2016-07-14", "CreateLogConfig", "apigateway", "openAPI")
+	request.InitWithApiInfo("CloudAPI", "2016-07-14", "CreateLogConfig", "", "")
 	return
 }
 

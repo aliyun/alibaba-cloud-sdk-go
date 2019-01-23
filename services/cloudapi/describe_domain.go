@@ -104,7 +104,7 @@ func CreateDescribeDomainRequest() (request *DescribeDomainRequest) {
 	request = &DescribeDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudAPI", "2016-07-14", "DescribeDomain", "apigateway", "openAPI")
+	request.InitWithApiInfo("CloudAPI", "2016-07-14", "DescribeDomain", "", "")
 	return
 }
 

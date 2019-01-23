@@ -93,7 +93,7 @@ func CreateSdkGenerateByAppRequest() (request *SdkGenerateByAppRequest) {
 	request = &SdkGenerateByAppRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudAPI", "2016-07-14", "SdkGenerateByApp", "apigateway", "openAPI")
+	request.InitWithApiInfo("CloudAPI", "2016-07-14", "SdkGenerateByApp", "", "")
 	return
 }
 

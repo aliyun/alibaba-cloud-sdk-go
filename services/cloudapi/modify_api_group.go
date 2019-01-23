@@ -97,7 +97,7 @@ func CreateModifyApiGroupRequest() (request *ModifyApiGroupRequest) {
 	request = &ModifyApiGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudAPI", "2016-07-14", "ModifyApiGroup", "apigateway", "openAPI")
+	request.InitWithApiInfo("CloudAPI", "2016-07-14", "ModifyApiGroup", "", "")
 	return
 }
 

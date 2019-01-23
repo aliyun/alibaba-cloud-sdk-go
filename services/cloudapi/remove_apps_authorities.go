@@ -94,7 +94,7 @@ func CreateRemoveAppsAuthoritiesRequest() (request *RemoveAppsAuthoritiesRequest
 	request = &RemoveAppsAuthoritiesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudAPI", "2016-07-14", "RemoveAppsAuthorities", "apigateway", "openAPI")
+	request.InitWithApiInfo("CloudAPI", "2016-07-14", "RemoveAppsAuthorities", "", "")
 	return
 }
 

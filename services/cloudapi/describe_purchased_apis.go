@@ -101,7 +101,7 @@ func CreateDescribePurchasedApisRequest() (request *DescribePurchasedApisRequest
 	request = &DescribePurchasedApisRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudAPI", "2016-07-14", "DescribePurchasedApis", "apigateway", "openAPI")
+	request.InitWithApiInfo("CloudAPI", "2016-07-14", "DescribePurchasedApis", "", "")
 	return
 }
 

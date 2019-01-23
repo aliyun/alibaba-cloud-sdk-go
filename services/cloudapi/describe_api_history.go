@@ -103,6 +103,7 @@ type DescribeApiHistoryResponse struct {
 	FailResultSample       string                                     `json:"FailResultSample" xml:"FailResultSample"`
 	DeployedTime           string                                     `json:"DeployedTime" xml:"DeployedTime"`
 	AllowSignatureMethod   string                                     `json:"AllowSignatureMethod" xml:"AllowSignatureMethod"`
+	ResultBodyModel        string                                     `json:"ResultBodyModel" xml:"ResultBodyModel"`
 	RequestConfig          RequestConfig                              `json:"RequestConfig" xml:"RequestConfig"`
 	ServiceConfig          ServiceConfig                              `json:"ServiceConfig" xml:"ServiceConfig"`
 	OpenIdConnectConfig    OpenIdConnectConfig                        `json:"OpenIdConnectConfig" xml:"OpenIdConnectConfig"`
@@ -121,7 +122,7 @@ func CreateDescribeApiHistoryRequest() (request *DescribeApiHistoryRequest) {
 	request = &DescribeApiHistoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudAPI", "2016-07-14", "DescribeApiHistory", "apigateway", "openAPI")
+	request.InitWithApiInfo("CloudAPI", "2016-07-14", "DescribeApiHistory", "", "")
 	return
 }
 

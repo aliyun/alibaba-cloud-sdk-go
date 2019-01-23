@@ -98,7 +98,7 @@ func CreateDescribeApiGroupsRequest() (request *DescribeApiGroupsRequest) {
 	request = &DescribeApiGroupsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudAPI", "2016-07-14", "DescribeApiGroups", "apigateway", "openAPI")
+	request.InitWithApiInfo("CloudAPI", "2016-07-14", "DescribeApiGroups", "", "")
 	return
 }
 

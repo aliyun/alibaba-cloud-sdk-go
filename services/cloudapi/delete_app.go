@@ -91,7 +91,7 @@ func CreateDeleteAppRequest() (request *DeleteAppRequest) {
 	request = &DeleteAppRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudAPI", "2016-07-14", "DeleteApp", "apigateway", "openAPI")
+	request.InitWithApiInfo("CloudAPI", "2016-07-14", "DeleteApp", "", "")
 	return
 }
 

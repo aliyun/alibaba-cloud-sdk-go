@@ -112,7 +112,7 @@ func CreateModifyApiRequest() (request *ModifyApiRequest) {
 	request = &ModifyApiRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudAPI", "2016-07-14", "ModifyApi", "apigateway", "openAPI")
+	request.InitWithApiInfo("CloudAPI", "2016-07-14", "ModifyApi", "", "")
 	return
 }
 

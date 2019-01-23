@@ -94,7 +94,7 @@ func CreateSetVpcAccessRequest() (request *SetVpcAccessRequest) {
 	request = &SetVpcAccessRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudAPI", "2016-07-14", "SetVpcAccess", "apigateway", "openAPI")
+	request.InitWithApiInfo("CloudAPI", "2016-07-14", "SetVpcAccess", "", "")
 	return
 }
 
