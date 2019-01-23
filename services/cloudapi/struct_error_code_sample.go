@@ -19,5 +19,6 @@ package cloudapi
 type ErrorCodeSample struct {
 	Message     string `json:"Message" xml:"Message"`
 	Code        string `json:"Code" xml:"Code"`
+	Model       string `json:"Model" xml:"Model"`
 	Description string `json:"Description" xml:"Description"`
 }
