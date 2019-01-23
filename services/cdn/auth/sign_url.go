@@ -15,8 +15,8 @@ type URLSigner struct {
 	privKey  string
 }
 
-// newURLSigner returns a new signer object.
-func newURLSigner(authType string, privKey string) *URLSigner {
+// NewURLSigner returns a new signer object.
+func NewURLSigner(authType string, privKey string) *URLSigner {
 	return &URLSigner{
 		authType: authType,
 		privKey:  privKey,
