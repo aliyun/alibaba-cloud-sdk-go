@@ -177,7 +177,7 @@ func Test_EcsRamRoleSigner_GetAccessKeyId_Success(t *testing.T) {
 	// the expiration should not changed. hit cache
 	assert.Equal(t, expiration, s.credentialExpiration)
 
-	assert.Equal(t, "1cZAkOls5YUecgvzbeEbfGy1wFw=", s.Sign("string to sign", "/"))
+	assert.Equal(t, "dcM4bWGEoD5QUp9xhLW3SfcWfgs=", s.Sign("string to sign", "/"))
 	s.sessionCredential.StsToken = ""
 	assert.Len(t, s.GetExtraParam(), 0)
 }
