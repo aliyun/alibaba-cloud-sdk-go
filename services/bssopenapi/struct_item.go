@@ -23,6 +23,7 @@ type Item struct {
 	UsageStartTime              string  `json:"UsageStartTime" xml:"UsageStartTime"`
 	SuborderID                  string  `json:"SuborderID" xml:"SuborderID"`
 	SolutionCode                string  `json:"SolutionCode" xml:"SolutionCode"`
+	ProductDetail               string  `json:"ProductDetail" xml:"ProductDetail"`
 	Promotion                   string  `json:"Promotion" xml:"Promotion"`
 	Seller                      string  `json:"Seller" xml:"Seller"`
 	PretaxAmountLocal           float64 `json:"PretaxAmountLocal" xml:"PretaxAmountLocal"`
@@ -31,12 +32,13 @@ type Item struct {
 	Quantity                    string  `json:"Quantity" xml:"Quantity"`
 	InvoiceDiscount             float64 `json:"InvoiceDiscount" xml:"InvoiceDiscount"`
 	MybankPaymentAmount         float64 `json:"MybankPaymentAmount" xml:"MybankPaymentAmount"`
-	InstanceID                  string  `json:"InstanceID" xml:"InstanceID"`
 	PretaxGrossAmount           float64 `json:"PretaxGrossAmount" xml:"PretaxGrossAmount"`
+	InstanceID                  string  `json:"InstanceID" xml:"InstanceID"`
 	RecordID                    string  `json:"RecordID" xml:"RecordID"`
 	Config                      string  `json:"Config" xml:"Config"`
 	Status                      string  `json:"Status" xml:"Status"`
 	Item                        string  `json:"Item" xml:"Item"`
+	ProductName                 string  `json:"ProductName" xml:"ProductName"`
 	Region                      string  `json:"Region" xml:"Region"`
 	PaymentAmount               float64 `json:"PaymentAmount" xml:"PaymentAmount"`
 	UsageEndTime                string  `json:"UsageEndTime" xml:"UsageEndTime"`
@@ -59,8 +61,9 @@ type Item struct {
 	ProductType                 string  `json:"ProductType" xml:"ProductType"`
 	AccountDiscount             float64 `json:"AccountDiscount" xml:"AccountDiscount"`
 	Currency                    string  `json:"Currency" xml:"Currency"`
-	OriginalOrderID             string  `json:"OriginalOrderID" xml:"OriginalOrderID"`
 	DeductedByPrepaidCard       float64 `json:"DeductedByPrepaidCard" xml:"DeductedByPrepaidCard"`
+	OriginalOrderID             string  `json:"OriginalOrderID" xml:"OriginalOrderID"`
+	PaymentTransactionID        string  `json:"PaymentTransactionID" xml:"PaymentTransactionID"`
 	OrderID                     string  `json:"OrderID" xml:"OrderID"`
 	OrderType                   string  `json:"OrderType" xml:"OrderType"`
 	DeductedByCoupons           float64 `json:"DeductedByCoupons" xml:"DeductedByCoupons"`
