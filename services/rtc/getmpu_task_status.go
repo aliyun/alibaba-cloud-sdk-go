@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// StopTask invokes the rtc.StopTask API synchronously
-// api document: https://help.aliyun.com/api/rtc/stoptask.html
-func (client *Client) StopTask(request *StopTaskRequest) (response *StopTaskResponse, err error) {
-	response = CreateStopTaskResponse()
+// GetMPUTaskStatus invokes the rtc.GetMPUTaskStatus API synchronously
+// api document: https://help.aliyun.com/api/rtc/getmputaskstatus.html
+func (client *Client) GetMPUTaskStatus(request *GetMPUTaskStatusRequest) (response *GetMPUTaskStatusResponse, err error) {
+	response = CreateGetMPUTaskStatusResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// StopTaskWithChan invokes the rtc.StopTask API asynchronously
-// api document: https://help.aliyun.com/api/rtc/stoptask.html
+// GetMPUTaskStatusWithChan invokes the rtc.GetMPUTaskStatus API asynchronously
+// api document: https://help.aliyun.com/api/rtc/getmputaskstatus.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) StopTaskWithChan(request *StopTaskRequest) (<-chan *StopTaskResponse, <-chan error) {
-	responseChan := make(chan *StopTaskResponse, 1)
+func (client *Client) GetMPUTaskStatusWithChan(request *GetMPUTaskStatusRequest) (<-chan *GetMPUTaskStatusResponse, <-chan error) {
+	responseChan := make(chan *GetMPUTaskStatusResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.StopTask(request)
+		response, err := client.GetMPUTaskStatus(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) StopTaskWithChan(request *StopTaskRequest) (<-chan *StopTa
 	return responseChan, errChan
 }
 
-// StopTaskWithCallback invokes the rtc.StopTask API asynchronously
-// api document: https://help.aliyun.com/api/rtc/stoptask.html
+// GetMPUTaskStatusWithCallback invokes the rtc.GetMPUTaskStatus API asynchronously
+// api document: https://help.aliyun.com/api/rtc/getmputaskstatus.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) StopTaskWithCallback(request *StopTaskRequest, callback func(response *StopTaskResponse, err error)) <-chan int {
+func (client *Client) GetMPUTaskStatusWithCallback(request *GetMPUTaskStatusRequest, callback func(response *GetMPUTaskStatusResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *StopTaskResponse
+		var response *GetMPUTaskStatusResponse
 		var err error
 		defer close(result)
-		response, err = client.StopTask(request)
+		response, err = client.GetMPUTaskStatus(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,32 +73,33 @@ func (client *Client) StopTaskWithCallback(request *StopTaskRequest, callback fu
 	return result
 }
 
-// StopTaskRequest is the request struct for api StopTask
-type StopTaskRequest struct {
+// GetMPUTaskStatusRequest is the request struct for api GetMPUTaskStatus
+type GetMPUTaskStatusRequest struct {
 	*requests.RpcRequest
 	OwnerId requests.Integer `position:"Query" name:"OwnerId"`
 	AppId   string           `position:"Query" name:"AppId"`
 	TaskId  string           `position:"Query" name:"TaskId"`
 }
 
-// StopTaskResponse is the response struct for api StopTask
-type StopTaskResponse struct {
+// GetMPUTaskStatusResponse is the response struct for api GetMPUTaskStatus
+type GetMPUTaskStatusResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Status    int    `json:"Status" xml:"Status"`
 }
 
-// CreateStopTaskRequest creates a request to invoke StopTask API
-func CreateStopTaskRequest() (request *StopTaskRequest) {
-	request = &StopTaskRequest{
+// CreateGetMPUTaskStatusRequest creates a request to invoke GetMPUTaskStatus API
+func CreateGetMPUTaskStatusRequest() (request *GetMPUTaskStatusRequest) {
+	request = &GetMPUTaskStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("rtc", "2018-01-11", "StopTask", "rtc", "openAPI")
+	request.InitWithApiInfo("rtc", "2018-01-11", "GetMPUTaskStatus", "rtc", "openAPI")
 	return
 }
 
-// CreateStopTaskResponse creates a response to parse from StopTask response
-func CreateStopTaskResponse() (response *StopTaskResponse) {
-	response = &StopTaskResponse{
+// CreateGetMPUTaskStatusResponse creates a response to parse from GetMPUTaskStatus response
+func CreateGetMPUTaskStatusResponse() (response *GetMPUTaskStatusResponse) {
+	response = &GetMPUTaskStatusResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return
