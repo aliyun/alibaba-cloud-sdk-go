@@ -88,13 +88,13 @@ type DescribeProxyFunctionSupportRequest struct {
 type DescribeProxyFunctionSupportResponse struct {
 	*responses.BaseResponse
 	RequestId                       string `json:"RequestId" xml:"RequestId"`
-	IsProxyEnable                   int    `json:"IsProxyEnable" xml:"IsProxyEnable"`
-	IsRwsplitEnable                 int    `json:"IsRwsplitEnable" xml:"IsRwsplitEnable"`
-	IsRwsplitSupportReplicationLag  int    `json:"IsRwsplitSupportReplicationLag" xml:"IsRwsplitSupportReplicationLag"`
-	IsRwsplitSupportWeight          int    `json:"IsRwsplitSupportWeight" xml:"IsRwsplitSupportWeight"`
-	IsTransparentSwitchEnable       int    `json:"IsTransparentSwitchEnable" xml:"IsTransparentSwitchEnable"`
-	IsShortConnectionOptimizeEnable int    `json:"IsShortConnectionOptimizeEnable" xml:"IsShortConnectionOptimizeEnable"`
-	IsAntiBruteFroceEnable          int    `json:"IsAntiBruteFroceEnable" xml:"IsAntiBruteFroceEnable"`
+	IsProxySwitchEnable             bool   `json:"IsProxySwitchEnable" xml:"IsProxySwitchEnable"`
+	IsRwsplitEnable                 bool   `json:"IsRwsplitEnable" xml:"IsRwsplitEnable"`
+	IsRwsplitSupportReplicationLag  bool   `json:"IsRwsplitSupportReplicationLag" xml:"IsRwsplitSupportReplicationLag"`
+	IsRwsplitSupportWeight          bool   `json:"IsRwsplitSupportWeight" xml:"IsRwsplitSupportWeight"`
+	IsTransparentSwitchEnable       bool   `json:"IsTransparentSwitchEnable" xml:"IsTransparentSwitchEnable"`
+	IsShortConnectionOptimizeEnable bool   `json:"IsShortConnectionOptimizeEnable" xml:"IsShortConnectionOptimizeEnable"`
+	IsAntiBruteFroceEnable          bool   `json:"IsAntiBruteFroceEnable" xml:"IsAntiBruteFroceEnable"`
 }
 
 // CreateDescribeProxyFunctionSupportRequest creates a request to invoke DescribeProxyFunctionSupport API
