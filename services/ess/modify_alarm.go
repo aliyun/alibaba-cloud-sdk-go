@@ -76,12 +76,27 @@ func (client *Client) ModifyAlarmWithCallback(request *ModifyAlarmRequest, callb
 // ModifyAlarmRequest is the request struct for api ModifyAlarm
 type ModifyAlarmRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	Name                 string           `position:"Query" name:"Name"`
-	Description          string           `position:"Query" name:"Description"`
-	AlarmAction          *[]string        `position:"Query" name:"AlarmAction"  type:"Repeated"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	AlarmTaskId          string           `position:"Query" name:"AlarmTaskId"`
+	MetricType           string                  `position:"Query" name:"MetricType"`
+	Period               requests.Integer        `position:"Query" name:"Period"`
+	ResourceOwnerAccount string                  `position:"Query" name:"ResourceOwnerAccount"`
+	GroupId              requests.Integer        `position:"Query" name:"GroupId"`
+	Description          string                  `position:"Query" name:"Description"`
+	AlarmAction          *[]string               `position:"Query" name:"AlarmAction"  type:"Repeated"`
+	Threshold            requests.Float          `position:"Query" name:"Threshold"`
+	OwnerId              requests.Integer        `position:"Query" name:"OwnerId"`
+	AlarmTaskId          string                  `position:"Query" name:"AlarmTaskId"`
+	Name                 string                  `position:"Query" name:"Name"`
+	EvaluationCount      requests.Integer        `position:"Query" name:"EvaluationCount"`
+	MetricName           string                  `position:"Query" name:"MetricName"`
+	ComparisonOperator   string                  `position:"Query" name:"ComparisonOperator"`
+	Dimension            *[]ModifyAlarmDimension `position:"Query" name:"Dimension"  type:"Repeated"`
+	Statistics           string                  `position:"Query" name:"Statistics"`
+}
+
+// ModifyAlarmDimension is a repeated param struct in ModifyAlarmRequest
+type ModifyAlarmDimension struct {
+	DimensionValue string `name:"DimensionValue"`
+	DimensionKey   string `name:"DimensionKey"`
 }
 
 // ModifyAlarmResponse is the response struct for api ModifyAlarm

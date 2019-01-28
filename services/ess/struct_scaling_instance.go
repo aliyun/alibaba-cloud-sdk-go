@@ -27,4 +27,5 @@ type ScalingInstance struct {
 	CreationType           string `json:"CreationType" xml:"CreationType"`
 	LaunchTemplateId       string `json:"LaunchTemplateId" xml:"LaunchTemplateId"`
 	LaunchTemplateVersion  string `json:"LaunchTemplateVersion" xml:"LaunchTemplateVersion"`
+	WarmupState            string `json:"WarmupState" xml:"WarmupState"`
 }

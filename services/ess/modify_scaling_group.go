@@ -82,6 +82,7 @@ type ModifyScalingGroupRequest struct {
 	ResourceOwnerAccount         string           `position:"Query" name:"ResourceOwnerAccount"`
 	ScalingGroupName             string           `position:"Query" name:"ScalingGroupName"`
 	ScalingGroupId               string           `position:"Query" name:"ScalingGroupId"`
+	VSwitchIds                   *[]string        `position:"Query" name:"VSwitchIds"  type:"Repeated"`
 	OwnerAccount                 string           `position:"Query" name:"OwnerAccount"`
 	ActiveScalingConfigurationId string           `position:"Query" name:"ActiveScalingConfigurationId"`
 	MinSize                      requests.Integer `position:"Query" name:"MinSize"`

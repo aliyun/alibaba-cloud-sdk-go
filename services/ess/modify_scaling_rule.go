@@ -76,15 +76,19 @@ func (client *Client) ModifyScalingRuleWithCallback(request *ModifyScalingRuleRe
 // ModifyScalingRuleRequest is the request struct for api ModifyScalingRule
 type ModifyScalingRuleRequest struct {
 	*requests.RpcRequest
-	ScalingRuleName      string           `position:"Query" name:"ScalingRuleName"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	AdjustmentValue      requests.Integer `position:"Query" name:"AdjustmentValue"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	Cooldown             requests.Integer `position:"Query" name:"Cooldown"`
-	AdjustmentType       string           `position:"Query" name:"AdjustmentType"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ScalingRuleId        string           `position:"Query" name:"ScalingRuleId"`
+	ResourceOwnerId         requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount    string           `position:"Query" name:"ResourceOwnerAccount"`
+	AdjustmentValue         requests.Integer `position:"Query" name:"AdjustmentValue"`
+	EstimatedInstanceWarmup requests.Integer `position:"Query" name:"EstimatedInstanceWarmup"`
+	OwnerAccount            string           `position:"Query" name:"OwnerAccount"`
+	AdjustmentType          string           `position:"Query" name:"AdjustmentType"`
+	DisableScaleIn          requests.Boolean `position:"Query" name:"DisableScaleIn"`
+	OwnerId                 requests.Integer `position:"Query" name:"OwnerId"`
+	ScalingRuleId           string           `position:"Query" name:"ScalingRuleId"`
+	ScalingRuleName         string           `position:"Query" name:"ScalingRuleName"`
+	Cooldown                requests.Integer `position:"Query" name:"Cooldown"`
+	TargetValue             requests.Float   `position:"Query" name:"TargetValue"`
+	MetricName              string           `position:"Query" name:"MetricName"`
 }
 
 // ModifyScalingRuleResponse is the response struct for api ModifyScalingRule

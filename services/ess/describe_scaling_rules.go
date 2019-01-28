@@ -90,6 +90,7 @@ type DescribeScalingRulesRequest struct {
 	ScalingRuleName9     string           `position:"Query" name:"ScalingRuleName.9"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	ScalingRuleType      string           `position:"Query" name:"ScalingRuleType"`
 	ScalingRuleId10      string           `position:"Query" name:"ScalingRuleId.10"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
