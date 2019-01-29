@@ -114,6 +114,9 @@ type GetImageResponse struct {
 	CelebrityModifyTime string                `json:"CelebrityModifyTime" xml:"CelebrityModifyTime"`
 	CelebrityFailReason string                `json:"CelebrityFailReason" xml:"CelebrityFailReason"`
 	TagsStatus          string                `json:"TagsStatus" xml:"TagsStatus"`
+	RemarksC            string                `json:"RemarksC" xml:"RemarksC"`
+	RemarksD            string                `json:"RemarksD" xml:"RemarksD"`
+	ExternalId          string                `json:"ExternalId" xml:"ExternalId"`
 	Faces               []FacesItemInGetImage `json:"Faces" xml:"Faces"`
 	OCR                 []OCRItem             `json:"OCR" xml:"OCR"`
 	Tags                []TagsItem            `json:"Tags" xml:"Tags"`

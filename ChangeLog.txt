@@ -1,3 +1,8 @@
+2019-01-29 Version: 1.51.14
+1, Make obsolete api offline.
+2, Fix some bug.
+
+
 2019-01-28 Version: 1.51.13
 1, Release 3 new Alibaba Cloud Bill API(QueryBillOverview、QueryBill、QueryInstanceBill). 
 2, Kindly suggest replace to new APIs who is using the old ones(QueryMonthlyBill、QuerySettlementBill、QueryMonthlyInstanceConsumption).

@@ -33,16 +33,19 @@ type Frames struct {
 	TagsStatus          string          `json:"TagsStatus" xml:"TagsStatus"`
 	FacesModifyTime     string          `json:"FacesModifyTime" xml:"FacesModifyTime"`
 	CelebrityModifyTime string          `json:"CelebrityModifyTime" xml:"CelebrityModifyTime"`
+	RemarksD            string          `json:"RemarksD" xml:"RemarksD"`
 	TagsFailReason      string          `json:"TagsFailReason" xml:"TagsFailReason"`
 	CelebrityStatus     string          `json:"CelebrityStatus" xml:"CelebrityStatus"`
 	OCRStatus           string          `json:"OCRStatus" xml:"OCRStatus"`
 	ImageUri            string          `json:"ImageUri" xml:"ImageUri"`
+	ExternalId          string          `json:"ExternalId" xml:"ExternalId"`
 	ImageTime           string          `json:"ImageTime" xml:"ImageTime"`
 	Location            string          `json:"Location" xml:"Location"`
 	TagsModifyTime      string          `json:"TagsModifyTime" xml:"TagsModifyTime"`
 	RemarksA            string          `json:"RemarksA" xml:"RemarksA"`
 	SourcePosition      string          `json:"SourcePosition" xml:"SourcePosition"`
 	OCRFailReason       string          `json:"OCRFailReason" xml:"OCRFailReason"`
+	RemarksC            string          `json:"RemarksC" xml:"RemarksC"`
 	SourceUri           string          `json:"SourceUri" xml:"SourceUri"`
 	ImageWidth          int             `json:"ImageWidth" xml:"ImageWidth"`
 	Faces               []FacesItem     `json:"Faces" xml:"Faces"`

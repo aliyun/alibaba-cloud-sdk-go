@@ -40,6 +40,9 @@ type VideosItem struct {
 	CelebrityFailReason string          `json:"CelebrityFailReason" xml:"CelebrityFailReason"`
 	VideoTagsFailReason string          `json:"VideoTagsFailReason" xml:"VideoTagsFailReason"`
 	ProcessFailReason   string          `json:"ProcessFailReason" xml:"ProcessFailReason"`
+	RemarksC            string          `json:"RemarksC" xml:"RemarksC"`
+	RemarksD            string          `json:"RemarksD" xml:"RemarksD"`
+	ExternalId          string          `json:"ExternalId" xml:"ExternalId"`
 	VideoTags           []VideoTagsItem `json:"VideoTags" xml:"VideoTags"`
 	Celebrity           []CelebrityItem `json:"Celebrity" xml:"Celebrity"`
 	Persons             []PersonsItem   `json:"Persons" xml:"Persons"`

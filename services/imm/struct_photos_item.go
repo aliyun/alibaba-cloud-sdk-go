@@ -17,8 +17,6 @@ package imm
 
 // PhotosItem is a nested struct in imm response
 type PhotosItem struct {
-	TagScore float64 `json:"TagScore" xml:"TagScore"`
-	PhotoUri string  `json:"PhotoUri" xml:"PhotoUri"`
-	FaceId   string  `json:"FaceId" xml:"FaceId"`
 	SrcUri   string  `json:"SrcUri" xml:"SrcUri"`
+	TagScore float64 `json:"TagScore" xml:"TagScore"`
 }

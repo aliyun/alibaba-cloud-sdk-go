@@ -35,5 +35,8 @@ type AudiosItem struct {
 	AudioFormat          string           `json:"AudioFormat" xml:"AudioFormat"`
 	AudioTextsFailReason string           `json:"AudioTextsFailReason" xml:"AudioTextsFailReason"`
 	ProcessFailReason    string           `json:"ProcessFailReason" xml:"ProcessFailReason"`
+	RemarksC             string           `json:"RemarksC" xml:"RemarksC"`
+	RemarksD             string           `json:"RemarksD" xml:"RemarksD"`
+	ExternalId           string           `json:"ExternalId" xml:"ExternalId"`
 	AudioTexts           []AudioTextsItem `json:"AudioTexts" xml:"AudioTexts"`
 }
