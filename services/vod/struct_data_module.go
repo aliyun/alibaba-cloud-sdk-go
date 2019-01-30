@@ -17,23 +17,11 @@ package vod
 
 // DataModule is a nested struct in vod response
 type DataModule struct {
-	OverseasValue         string `json:"OverseasValue" xml:"OverseasValue"`
-	DynamicValue          string `json:"DynamicValue" xml:"DynamicValue"`
-	HttpsAccOverseasValue string `json:"HttpsAccOverseasValue" xml:"HttpsAccOverseasValue"`
-	StaticOverseasValue   string `json:"StaticOverseasValue" xml:"StaticOverseasValue"`
-	DynamicOverseasValue  string `json:"DynamicOverseasValue" xml:"DynamicOverseasValue"`
-	HttpsOverseasValue    string `json:"HttpsOverseasValue" xml:"HttpsOverseasValue"`
-	DomesticValue         string `json:"DomesticValue" xml:"DomesticValue"`
-	AccValue              string `json:"AccValue" xml:"AccValue"`
-	Value                 string `json:"Value" xml:"Value"`
-	AccDomesticValue      string `json:"AccDomesticValue" xml:"AccDomesticValue"`
-	StaticValue           string `json:"StaticValue" xml:"StaticValue"`
-	TimeStamp             string `json:"TimeStamp" xml:"TimeStamp"`
-	DynamicDomesticValue  string `json:"DynamicDomesticValue" xml:"DynamicDomesticValue"`
-	StaticDomesticValue   string `json:"StaticDomesticValue" xml:"StaticDomesticValue"`
-	HttpsDomesticValue    string `json:"HttpsDomesticValue" xml:"HttpsDomesticValue"`
-	HttpsValue            string `json:"HttpsValue" xml:"HttpsValue"`
-	HttpsAccValue         string `json:"HttpsAccValue" xml:"HttpsAccValue"`
-	AccOverseasValue      string `json:"AccOverseasValue" xml:"AccOverseasValue"`
-	HttpsAccDomesticValue string `json:"HttpsAccDomesticValue" xml:"HttpsAccDomesticValue"`
+	DomesticValue      string `json:"DomesticValue" xml:"DomesticValue"`
+	Value              string `json:"Value" xml:"Value"`
+	OverseasValue      string `json:"OverseasValue" xml:"OverseasValue"`
+	TimeStamp          string `json:"TimeStamp" xml:"TimeStamp"`
+	HttpsOverseasValue string `json:"HttpsOverseasValue" xml:"HttpsOverseasValue"`
+	HttpsDomesticValue string `json:"HttpsDomesticValue" xml:"HttpsDomesticValue"`
+	HttpsValue         string `json:"HttpsValue" xml:"HttpsValue"`
 }

@@ -78,7 +78,6 @@ type DeleteTranscodeTemplatesRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId          requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount     string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceRealOwnerId      requests.Integer `position:"Query" name:"ResourceRealOwnerId"`
 	OwnerId                  requests.Integer `position:"Query" name:"OwnerId"`
 	TranscodeTemplateGroupId string           `position:"Query" name:"TranscodeTemplateGroupId"`
 	TranscodeTemplateIdList  string           `position:"Query" name:"TranscodeTemplateIdList"`
@@ -87,7 +86,8 @@ type DeleteTranscodeTemplatesRequest struct {
 // DeleteTranscodeTemplatesResponse is the response struct for api DeleteTranscodeTemplates
 type DeleteTranscodeTemplatesResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	RequestId                    string   `json:"RequestId" xml:"RequestId"`
+	NonExistTranscodeTemplateIds []string `json:"NonExistTranscodeTemplateIds" xml:"NonExistTranscodeTemplateIds"`
 }
 
 // CreateDeleteTranscodeTemplatesRequest creates a request to invoke DeleteTranscodeTemplates API

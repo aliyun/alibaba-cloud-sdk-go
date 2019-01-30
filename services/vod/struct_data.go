@@ -17,13 +17,10 @@ package vod
 
 // Data is a nested struct in vod response
 type Data struct {
-	Domain          string            `json:"Domain" xml:"Domain"`
-	Cname           string            `json:"Cname" xml:"Cname"`
-	Status          int               `json:"Status" xml:"Status"`
 	Suggestion      string            `json:"Suggestion" xml:"Suggestion"`
-	Label           string            `json:"Label" xml:"Label"`
 	AbnormalModules string            `json:"AbnormalModules" xml:"AbnormalModules"`
+	Label           string            `json:"Label" xml:"Label"`
 	VideoResult     VideoResult       `json:"VideoResult" xml:"VideoResult"`
-	TextResult      []TextResultItem  `json:"TextResult" xml:"TextResult"`
 	ImageResult     []ImageResultItem `json:"ImageResult" xml:"ImageResult"`
+	TextResult      []TextResultItem  `json:"TextResult" xml:"TextResult"`
 }

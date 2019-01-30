@@ -17,31 +17,25 @@ package vod
 
 // PlayInfo is a nested struct in vod response
 type PlayInfo struct {
-	Region           string `json:"Region" xml:"Region"`
-	Format           string `json:"Format" xml:"Format"`
-	Fps              string `json:"Fps" xml:"Fps"`
-	Encrypt          int    `json:"Encrypt" xml:"Encrypt"`
-	Rand             string `json:"Rand" xml:"Rand"`
-	StreamType       string `json:"StreamType" xml:"StreamType"`
-	PlayDomain       string `json:"PlayDomain" xml:"PlayDomain"`
-	WatermarkId      string `json:"WatermarkId" xml:"WatermarkId"`
-	Size             int    `json:"Size" xml:"Size"`
-	Definition       string `json:"Definition" xml:"Definition"`
-	Plaintext        string `json:"Plaintext" xml:"Plaintext"`
-	SecurityToken    string `json:"SecurityToken" xml:"SecurityToken"`
 	JobId            string `json:"JobId" xml:"JobId"`
+	Format           string `json:"Format" xml:"Format"`
 	PreprocessStatus string `json:"PreprocessStatus" xml:"PreprocessStatus"`
 	EncryptType      string `json:"EncryptType" xml:"EncryptType"`
+	Fps              string `json:"Fps" xml:"Fps"`
 	ModificationTime string `json:"ModificationTime" xml:"ModificationTime"`
 	Bitrate          string `json:"Bitrate" xml:"Bitrate"`
+	Encrypt          int    `json:"Encrypt" xml:"Encrypt"`
+	Rand             string `json:"Rand" xml:"Rand"`
 	CreationTime     string `json:"CreationTime" xml:"CreationTime"`
-	AccessKeyId      string `json:"AccessKeyId" xml:"AccessKeyId"`
+	StreamType       string `json:"StreamType" xml:"StreamType"`
 	Height           int    `json:"Height" xml:"Height"`
-	AccessKeySecret  string `json:"AccessKeySecret" xml:"AccessKeySecret"`
+	WatermarkId      string `json:"WatermarkId" xml:"WatermarkId"`
 	Duration         string `json:"Duration" xml:"Duration"`
 	Complexity       string `json:"Complexity" xml:"Complexity"`
 	Width            int    `json:"Width" xml:"Width"`
-	AuthInfo         string `json:"AuthInfo" xml:"AuthInfo"`
+	Size             int    `json:"Size" xml:"Size"`
 	Status           string `json:"Status" xml:"Status"`
+	Definition       string `json:"Definition" xml:"Definition"`
+	Plaintext        string `json:"Plaintext" xml:"Plaintext"`
 	PlayURL          string `json:"PlayURL" xml:"PlayURL"`
 }

@@ -87,8 +87,8 @@ type DescribeVodDomainLogRequest struct {
 // DescribeVodDomainLogResponse is the response struct for api DescribeVodDomainLog
 type DescribeVodDomainLogResponse struct {
 	*responses.BaseResponse
-	RequestId        string                                 `json:"RequestId" xml:"RequestId"`
-	DomainLogDetails DomainLogDetailsInDescribeVodDomainLog `json:"DomainLogDetails" xml:"DomainLogDetails"`
+	RequestId        string           `json:"RequestId" xml:"RequestId"`
+	DomainLogDetails DomainLogDetails `json:"DomainLogDetails" xml:"DomainLogDetails"`
 }
 
 // CreateDescribeVodDomainLogRequest creates a request to invoke DescribeVodDomainLog API

@@ -80,7 +80,6 @@ type AddTranscodeTemplateGroupRequest struct {
 	ResourceOwnerId          requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount     string           `position:"Query" name:"ResourceOwnerAccount"`
 	Name                     string           `position:"Query" name:"Name"`
-	ResourceRealOwnerId      requests.Integer `position:"Query" name:"ResourceRealOwnerId"`
 	OwnerId                  requests.Integer `position:"Query" name:"OwnerId"`
 	TranscodeTemplateGroupId string           `position:"Query" name:"TranscodeTemplateGroupId"`
 }

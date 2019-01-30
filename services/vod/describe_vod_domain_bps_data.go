@@ -88,14 +88,14 @@ type DescribeVodDomainBpsDataRequest struct {
 // DescribeVodDomainBpsDataResponse is the response struct for api DescribeVodDomainBpsData
 type DescribeVodDomainBpsDataResponse struct {
 	*responses.BaseResponse
-	RequestId          string                                       `json:"RequestId" xml:"RequestId"`
-	DomainName         string                                       `json:"DomainName" xml:"DomainName"`
-	StartTime          string                                       `json:"StartTime" xml:"StartTime"`
-	EndTime            string                                       `json:"EndTime" xml:"EndTime"`
-	LocationNameEn     string                                       `json:"LocationNameEn" xml:"LocationNameEn"`
-	IspNameEn          string                                       `json:"IspNameEn" xml:"IspNameEn"`
-	DataInterval       string                                       `json:"DataInterval" xml:"DataInterval"`
-	BpsDataPerInterval BpsDataPerIntervalInDescribeVodDomainBpsData `json:"BpsDataPerInterval" xml:"BpsDataPerInterval"`
+	RequestId          string             `json:"RequestId" xml:"RequestId"`
+	DomainName         string             `json:"DomainName" xml:"DomainName"`
+	StartTime          string             `json:"StartTime" xml:"StartTime"`
+	EndTime            string             `json:"EndTime" xml:"EndTime"`
+	LocationNameEn     string             `json:"LocationNameEn" xml:"LocationNameEn"`
+	IspNameEn          string             `json:"IspNameEn" xml:"IspNameEn"`
+	DataInterval       string             `json:"DataInterval" xml:"DataInterval"`
+	BpsDataPerInterval BpsDataPerInterval `json:"BpsDataPerInterval" xml:"BpsDataPerInterval"`
 }
 
 // CreateDescribeVodDomainBpsDataRequest creates a request to invoke DescribeVodDomainBpsData API

@@ -93,11 +93,11 @@ type DescribeVodRefreshTasksRequest struct {
 // DescribeVodRefreshTasksResponse is the response struct for api DescribeVodRefreshTasks
 type DescribeVodRefreshTasksResponse struct {
 	*responses.BaseResponse
-	RequestId  string                         `json:"RequestId" xml:"RequestId"`
-	PageNumber int                            `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int                            `json:"PageSize" xml:"PageSize"`
-	TotalCount int                            `json:"TotalCount" xml:"TotalCount"`
-	Tasks      TasksInDescribeVodRefreshTasks `json:"Tasks" xml:"Tasks"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
+	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int    `json:"PageSize" xml:"PageSize"`
+	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
+	Tasks      Tasks  `json:"Tasks" xml:"Tasks"`
 }
 
 // CreateDescribeVodRefreshTasksRequest creates a request to invoke DescribeVodRefreshTasks API
