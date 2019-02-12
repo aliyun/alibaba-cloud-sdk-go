@@ -274,7 +274,6 @@ func TestClient_BuildRequestWithSigner1(t *testing.T) {
 	signer := &signertest{
 		name: "signer",
 	}
-	client.config.UserAgent = "user_agent"
 	err = client.BuildRequestWithSigner(request, signer)
 	assert.Nil(t, err)
 }
@@ -297,6 +296,61 @@ func TestClient_ProcessCommonRequestWithSigner(t *testing.T) {
 	}
 	_, err = client.ProcessCommonRequestWithSigner(request, signer)
 	assert.NotNil(t, err)
+}
+
+func TestClient_AppendUserAgent(t *testing.T) {
+	client, err := NewClientWithAccessKey("regionid", "acesskeyid", "accesskeysecret")
+	assert.Nil(t, err)
+	assert.NotNil(t, client)
+	assert.Equal(t, true, client.isRunning)
+	request := requests.NewCommonRequest()
+	request.Domain = "ecs.aliyuncs.com"
+	request.Version = "2014-05-26"
+	request.ApiName = "DescribeInstanceStatus"
+
+	request.RegionId = "regionid"
+	signer := &signertest{
+		name: "signer",
+	}
+	request.TransToAcsRequest()
+	httpRequest, err := client.buildRequestWithSigner(request, signer)
+	assert.Nil(t, err)
+	assert.Equal(t, DefaultUserAgent, httpRequest.Header.Get("User-Agent"))
+
+	client.AppendUserAgent("test", "1.01")
+	httpRequest, err = client.buildRequestWithSigner(request, signer)
+	assert.Equal(t, DefaultUserAgent+" test/1.01", httpRequest.Header.Get("User-Agent"))
+
+	request.AppendUserAgent("test", "2.01")
+	httpRequest, err = client.buildRequestWithSigner(request, signer)
+	assert.Equal(t, DefaultUserAgent+" test/2.01", httpRequest.Header.Get("User-Agent"))
+
+	request.AppendUserAgent("test", "2.02")
+	httpRequest, err = client.buildRequestWithSigner(request, signer)
+	assert.Equal(t, DefaultUserAgent+" test/2.02", httpRequest.Header.Get("User-Agent"))
+
+	client.AppendUserAgent("test", "2.01")
+	httpRequest, err = client.buildRequestWithSigner(request, signer)
+	assert.Equal(t, DefaultUserAgent+" test/2.02", httpRequest.Header.Get("User-Agent"))
+
+	client.AppendUserAgent("core", "1.01")
+	httpRequest, err = client.buildRequestWithSigner(request, signer)
+	assert.Equal(t, DefaultUserAgent+" test/2.02", httpRequest.Header.Get("User-Agent"))
+
+	request.AppendUserAgent("core", "1.01")
+	httpRequest, err = client.buildRequestWithSigner(request, signer)
+	assert.Equal(t, DefaultUserAgent+" test/2.02", httpRequest.Header.Get("User-Agent"))
+
+	request1 := requests.NewCommonRequest()
+	request1.Domain = "ecs.aliyuncs.com"
+	request1.Version = "2014-05-26"
+	request1.ApiName = "DescribeRegions"
+	request1.RegionId = "regionid"
+	request1.AppendUserAgent("sys", "1.01")
+	request1.TransToAcsRequest()
+	httpRequest, err = client.buildRequestWithSigner(request1, signer)
+	assert.Nil(t, err)
+	assert.Equal(t, DefaultUserAgent+" test/2.01 sys/1.01", httpRequest.Header.Get("User-Agent"))
 }
 
 func TestClient_ProcessCommonRequestWithSigner_Error(t *testing.T) {

@@ -88,6 +88,9 @@ func Test_AcsRequest(t *testing.T) {
 	// GetPort
 	assert.Equal(t, "", r.GetPort())
 
+	// GetUserAgent
+	r.AppendUserAgent("cli", "1.01")
+	assert.Equal(t, "1.01", r.GetUserAgent()["cli"])
 	// Content
 	assert.Equal(t, []byte(nil), r.GetContent())
 	r.SetContent([]byte("The Content"))
