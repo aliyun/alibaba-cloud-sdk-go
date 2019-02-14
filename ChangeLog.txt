@@ -1,3 +1,6 @@
+2019-02-14 Version: 1.51.23
+1, Update DescribeTopDomainsByFlow.
+
 2019-01-30 Version: 1.51.22
 1, Add a new api called GetURLUploadInfos to query the upload task of UploadMediaByURL.
 2, Clean up the old api related to the CDN of VoD that is going offline, such as DescribeDomainBpsData, is replaced with the new CDN api.

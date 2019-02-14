@@ -76,17 +76,17 @@ func (client *Client) DescribeDomainFlowDataWithCallback(request *DescribeDomain
 // DescribeDomainFlowDataRequest is the request struct for api DescribeDomainFlowData
 type DescribeDomainFlowDataRequest struct {
 	*requests.RpcRequest
+	DomainType     string           `position:"Query" name:"DomainType"`
 	FixTimeGap     string           `position:"Query" name:"FixTimeGap"`
+	SecurityToken  string           `position:"Query" name:"SecurityToken"`
 	TimeMerge      string           `position:"Query" name:"TimeMerge"`
 	DomainName     string           `position:"Query" name:"DomainName"`
 	EndTime        string           `position:"Query" name:"EndTime"`
 	LocationNameEn string           `position:"Query" name:"LocationNameEn"`
+	Interval       string           `position:"Query" name:"Interval"`
 	StartTime      string           `position:"Query" name:"StartTime"`
 	IspNameEn      string           `position:"Query" name:"IspNameEn"`
 	OwnerId        requests.Integer `position:"Query" name:"OwnerId"`
-	DomainType     string           `position:"Query" name:"DomainType"`
-	SecurityToken  string           `position:"Query" name:"SecurityToken"`
-	Interval       string           `position:"Query" name:"Interval"`
 }
 
 // DescribeDomainFlowDataResponse is the response struct for api DescribeDomainFlowData
