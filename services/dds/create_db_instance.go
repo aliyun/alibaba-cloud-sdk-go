@@ -84,6 +84,7 @@ type CreateDBInstanceRequest struct {
 	NetworkType           string           `position:"Query" name:"NetworkType"`
 	ReplicationFactor     string           `position:"Query" name:"ReplicationFactor"`
 	StorageEngine         string           `position:"Query" name:"StorageEngine"`
+	ResourceGroupId       string           `position:"Query" name:"ResourceGroupId"`
 	SecurityToken         string           `position:"Query" name:"SecurityToken"`
 	Engine                string           `position:"Query" name:"Engine"`
 	DBInstanceDescription string           `position:"Query" name:"DBInstanceDescription"`

@@ -77,6 +77,8 @@ func (client *Client) ModifyNodeSpecWithCallback(request *ModifyNodeSpecRequest,
 type ModifyNodeSpecRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`
+	FromApp              string           `position:"Query" name:"FromApp"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
 	NodeStorage          requests.Integer `position:"Query" name:"NodeStorage"`

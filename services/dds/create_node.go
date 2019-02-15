@@ -78,6 +78,8 @@ type CreateNodeRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	NodeType             string           `position:"Query" name:"NodeType"`
+	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`
+	FromApp              string           `position:"Query" name:"FromApp"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
 	NodeStorage          requests.Integer `position:"Query" name:"NodeStorage"`
