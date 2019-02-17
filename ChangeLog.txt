@@ -1,3 +1,7 @@
+2019-02-17 Version: 1.51.26
+1,  API definition support 'ForceNonceCheck', 'DisableInternet' parameter settings
+
+
 2019-02-15 Version: 1.51.25
 1, Modify DescribeDBInstances LastDowngradeTime DataType
 

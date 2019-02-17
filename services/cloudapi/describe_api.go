@@ -103,6 +103,8 @@ type DescribeApiResponse struct {
 	AllowSignatureMethod   string                              `json:"AllowSignatureMethod" xml:"AllowSignatureMethod"`
 	WebSocketApiType       string                              `json:"WebSocketApiType" xml:"WebSocketApiType"`
 	ResultBodyModel        string                              `json:"ResultBodyModel" xml:"ResultBodyModel"`
+	ForceNonceCheck        bool                                `json:"ForceNonceCheck" xml:"ForceNonceCheck"`
+	DisableInternet        bool                                `json:"DisableInternet" xml:"DisableInternet"`
 	RequestConfig          RequestConfig                       `json:"RequestConfig" xml:"RequestConfig"`
 	ServiceConfig          ServiceConfig                       `json:"ServiceConfig" xml:"ServiceConfig"`
 	OpenIdConnectConfig    OpenIdConnectConfig                 `json:"OpenIdConnectConfig" xml:"OpenIdConnectConfig"`

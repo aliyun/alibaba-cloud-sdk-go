@@ -89,11 +89,11 @@ type DescribeApisRequest struct {
 // DescribeApisResponse is the response struct for api DescribeApis
 type DescribeApisResponse struct {
 	*responses.BaseResponse
-	RequestId   string                    `json:"RequestId" xml:"RequestId"`
-	TotalCount  int                       `json:"TotalCount" xml:"TotalCount"`
-	PageSize    int                       `json:"PageSize" xml:"PageSize"`
-	PageNumber  int                       `json:"PageNumber" xml:"PageNumber"`
-	ApiSummarys ApiSummarysInDescribeApis `json:"ApiSummarys" xml:"ApiSummarys"`
+	RequestId   string      `json:"RequestId" xml:"RequestId"`
+	TotalCount  int         `json:"TotalCount" xml:"TotalCount"`
+	PageSize    int         `json:"PageSize" xml:"PageSize"`
+	PageNumber  int         `json:"PageNumber" xml:"PageNumber"`
+	ApiSummarys ApiSummarys `json:"ApiSummarys" xml:"ApiSummarys"`
 }
 
 // CreateDescribeApisRequest creates a request to invoke DescribeApis API
