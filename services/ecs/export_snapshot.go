@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// StartInstance invokes the ecs.StartInstance API synchronously
-// api document: https://help.aliyun.com/api/ecs/startinstance.html
-func (client *Client) StartInstance(request *StartInstanceRequest) (response *StartInstanceResponse, err error) {
-	response = CreateStartInstanceResponse()
+// ExportSnapshot invokes the ecs.ExportSnapshot API synchronously
+// api document: https://help.aliyun.com/api/ecs/exportsnapshot.html
+func (client *Client) ExportSnapshot(request *ExportSnapshotRequest) (response *ExportSnapshotResponse, err error) {
+	response = CreateExportSnapshotResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// StartInstanceWithChan invokes the ecs.StartInstance API asynchronously
-// api document: https://help.aliyun.com/api/ecs/startinstance.html
+// ExportSnapshotWithChan invokes the ecs.ExportSnapshot API asynchronously
+// api document: https://help.aliyun.com/api/ecs/exportsnapshot.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) StartInstanceWithChan(request *StartInstanceRequest) (<-chan *StartInstanceResponse, <-chan error) {
-	responseChan := make(chan *StartInstanceResponse, 1)
+func (client *Client) ExportSnapshotWithChan(request *ExportSnapshotRequest) (<-chan *ExportSnapshotResponse, <-chan error) {
+	responseChan := make(chan *ExportSnapshotResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.StartInstance(request)
+		response, err := client.ExportSnapshot(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) StartInstanceWithChan(request *StartInstanceRequest) (<-ch
 	return responseChan, errChan
 }
 
-// StartInstanceWithCallback invokes the ecs.StartInstance API asynchronously
-// api document: https://help.aliyun.com/api/ecs/startinstance.html
+// ExportSnapshotWithCallback invokes the ecs.ExportSnapshot API asynchronously
+// api document: https://help.aliyun.com/api/ecs/exportsnapshot.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) StartInstanceWithCallback(request *StartInstanceRequest, callback func(response *StartInstanceResponse, err error)) <-chan int {
+func (client *Client) ExportSnapshotWithCallback(request *ExportSnapshotRequest, callback func(response *ExportSnapshotResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *StartInstanceResponse
+		var response *ExportSnapshotResponse
 		var err error
 		defer close(result)
-		response, err = client.StartInstance(request)
+		response, err = client.ExportSnapshot(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,36 +73,36 @@ func (client *Client) StartInstanceWithCallback(request *StartInstanceRequest, c
 	return result
 }
 
-// StartInstanceRequest is the request struct for api StartInstance
-type StartInstanceRequest struct {
+// ExportSnapshotRequest is the request struct for api ExportSnapshot
+type ExportSnapshotRequest struct {
 	*requests.RpcRequest
-	InitLocalDisk        requests.Boolean `position:"Query" name:"InitLocalDisk"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	InstanceId           string           `position:"Query" name:"InstanceId"`
-	DryRun               requests.Boolean `position:"Query" name:"DryRun"`
+	SnapshotId           string           `position:"Query" name:"SnapshotId"`
+	OssBucket            string           `position:"Query" name:"OssBucket"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	RoleName             string           `position:"Query" name:"RoleName"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
-// StartInstanceResponse is the response struct for api StartInstance
-type StartInstanceResponse struct {
+// ExportSnapshotResponse is the response struct for api ExportSnapshot
+type ExportSnapshotResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	TaskId    string `json:"TaskId" xml:"TaskId"`
 }
 
-// CreateStartInstanceRequest creates a request to invoke StartInstance API
-func CreateStartInstanceRequest() (request *StartInstanceRequest) {
-	request = &StartInstanceRequest{
+// CreateExportSnapshotRequest creates a request to invoke ExportSnapshot API
+func CreateExportSnapshotRequest() (request *ExportSnapshotRequest) {
+	request = &ExportSnapshotRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "StartInstance", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "ExportSnapshot", "ecs", "openAPI")
 	return
 }
 
-// CreateStartInstanceResponse creates a response to parse from StartInstance response
-func CreateStartInstanceResponse() (response *StartInstanceResponse) {
-	response = &StartInstanceResponse{
+// CreateExportSnapshotResponse creates a response to parse from ExportSnapshot response
+func CreateExportSnapshotResponse() (response *ExportSnapshotResponse) {
+	response = &ExportSnapshotResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

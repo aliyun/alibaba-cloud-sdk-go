@@ -1,3 +1,7 @@
+2019-02-18 Version: 1.51.27
+1, Add DryRun into StartInstance, StopInstance and RebootInstance.
+2, Add snapshot operations: ExportSnapshot and ImportSnapshot
+
 2019-02-17 Version: 1.51.26
 1,  API definition support 'ForceNonceCheck', 'DisableInternet' parameter settings
 
