@@ -1,3 +1,8 @@
+2019-02-18 Version: 1.51.28
+1, industrial-brain release.
+2, publish SDK to public package stores.
+3, 1.0.0 including all APIs in doc.
+
 2019-02-18 Version: 1.51.27
 1, Add DryRun into StartInstance, StopInstance and RebootInstance.
 2, Add snapshot operations: ExportSnapshot and ImportSnapshot
