@@ -93,6 +93,10 @@ func main() {
 
 When you create an instance of client, you need to fill out three parameters: `Region ID`、`Access Key ID` and `Access Key Secret`. You can get `Access Key ID` and `Access Key Secret` from console, and get `Region ID` from [region list](https://help.aliyun.com/document_detail/40654.html?spm=5176.doc52740.2.8.FogWrd)
 
+## Dubug
+
+If the request has occured an error, you can view the HTTP request process by adding the environment variable `DEBUG=sdk`.
+
 ## Keepalive
 Alibaba Cloud Go SDK uses primordial `net/http` of Go language to send and accept requests，so it's  configuration is the same as `net/http`'s，you can use config to deliver configuration to the bottomed httpClient.
 
@@ -191,6 +195,7 @@ func main() {
 
 	client, err := sdk.NewClientWithAccessKey("cn-hangzhou", os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
 	if err != nil {
+		// Handle exceptions
 		panic(err)
 	}
 
@@ -204,6 +209,7 @@ func main() {
 
 	response, err := client.ProcessCommonRequest(request)
 	if err != nil {
+		// Handle exceptions
 		panic(err)
 	}
 
