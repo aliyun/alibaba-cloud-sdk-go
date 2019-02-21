@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// QuerySyncPicSchedule invokes the linkface.QuerySyncPicSchedule API synchronously
-// api document: https://help.aliyun.com/api/linkface/querysyncpicschedule.html
-func (client *Client) QuerySyncPicSchedule(request *QuerySyncPicScheduleRequest) (response *QuerySyncPicScheduleResponse, err error) {
-	response = CreateQuerySyncPicScheduleResponse()
+// DeleteDeviceAllGroup invokes the linkface.DeleteDeviceAllGroup API synchronously
+// api document: https://help.aliyun.com/api/linkface/deletedeviceallgroup.html
+func (client *Client) DeleteDeviceAllGroup(request *DeleteDeviceAllGroupRequest) (response *DeleteDeviceAllGroupResponse, err error) {
+	response = CreateDeleteDeviceAllGroupResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// QuerySyncPicScheduleWithChan invokes the linkface.QuerySyncPicSchedule API asynchronously
-// api document: https://help.aliyun.com/api/linkface/querysyncpicschedule.html
+// DeleteDeviceAllGroupWithChan invokes the linkface.DeleteDeviceAllGroup API asynchronously
+// api document: https://help.aliyun.com/api/linkface/deletedeviceallgroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) QuerySyncPicScheduleWithChan(request *QuerySyncPicScheduleRequest) (<-chan *QuerySyncPicScheduleResponse, <-chan error) {
-	responseChan := make(chan *QuerySyncPicScheduleResponse, 1)
+func (client *Client) DeleteDeviceAllGroupWithChan(request *DeleteDeviceAllGroupRequest) (<-chan *DeleteDeviceAllGroupResponse, <-chan error) {
+	responseChan := make(chan *DeleteDeviceAllGroupResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.QuerySyncPicSchedule(request)
+		response, err := client.DeleteDeviceAllGroup(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) QuerySyncPicScheduleWithChan(request *QuerySyncPicSchedule
 	return responseChan, errChan
 }
 
-// QuerySyncPicScheduleWithCallback invokes the linkface.QuerySyncPicSchedule API asynchronously
-// api document: https://help.aliyun.com/api/linkface/querysyncpicschedule.html
+// DeleteDeviceAllGroupWithCallback invokes the linkface.DeleteDeviceAllGroup API asynchronously
+// api document: https://help.aliyun.com/api/linkface/deletedeviceallgroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) QuerySyncPicScheduleWithCallback(request *QuerySyncPicScheduleRequest, callback func(response *QuerySyncPicScheduleResponse, err error)) <-chan int {
+func (client *Client) DeleteDeviceAllGroupWithCallback(request *DeleteDeviceAllGroupRequest, callback func(response *DeleteDeviceAllGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *QuerySyncPicScheduleResponse
+		var response *DeleteDeviceAllGroupResponse
 		var err error
 		defer close(result)
-		response, err = client.QuerySyncPicSchedule(request)
+		response, err = client.DeleteDeviceAllGroup(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,37 +73,35 @@ func (client *Client) QuerySyncPicScheduleWithCallback(request *QuerySyncPicSche
 	return result
 }
 
-// QuerySyncPicScheduleRequest is the request struct for api QuerySyncPicSchedule
-type QuerySyncPicScheduleRequest struct {
+// DeleteDeviceAllGroupRequest is the request struct for api DeleteDeviceAllGroup
+type DeleteDeviceAllGroupRequest struct {
 	*requests.RpcRequest
 	IotId      string `position:"Body" name:"IotId"`
-	GroupId    string `position:"Body" name:"GroupId"`
 	DeviceName string `position:"Body" name:"DeviceName"`
 	ProductKey string `position:"Body" name:"ProductKey"`
 }
 
-// QuerySyncPicScheduleResponse is the response struct for api QuerySyncPicSchedule
-type QuerySyncPicScheduleResponse struct {
+// DeleteDeviceAllGroupResponse is the response struct for api DeleteDeviceAllGroup
+type DeleteDeviceAllGroupResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      int    `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
 	Success   bool   `json:"Success" xml:"Success"`
-	Data      Data   `json:"Data" xml:"Data"`
 }
 
-// CreateQuerySyncPicScheduleRequest creates a request to invoke QuerySyncPicSchedule API
-func CreateQuerySyncPicScheduleRequest() (request *QuerySyncPicScheduleRequest) {
-	request = &QuerySyncPicScheduleRequest{
+// CreateDeleteDeviceAllGroupRequest creates a request to invoke DeleteDeviceAllGroup API
+func CreateDeleteDeviceAllGroupRequest() (request *DeleteDeviceAllGroupRequest) {
+	request = &DeleteDeviceAllGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("LinkFace", "2018-07-20", "QuerySyncPicSchedule", "", "")
+	request.InitWithApiInfo("LinkFace", "2018-07-20", "DeleteDeviceAllGroup", "", "")
 	return
 }
 
-// CreateQuerySyncPicScheduleResponse creates a response to parse from QuerySyncPicSchedule response
-func CreateQuerySyncPicScheduleResponse() (response *QuerySyncPicScheduleResponse) {
-	response = &QuerySyncPicScheduleResponse{
+// CreateDeleteDeviceAllGroupResponse creates a response to parse from DeleteDeviceAllGroup response
+func CreateDeleteDeviceAllGroupResponse() (response *DeleteDeviceAllGroupResponse) {
+	response = &DeleteDeviceAllGroupResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

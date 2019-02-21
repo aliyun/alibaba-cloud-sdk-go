@@ -1,3 +1,9 @@
+2019-02-21 Version: 1.53.0
+1, New DeleteDeviceGroup interface.
+2, New DeleteDeviceAllGroup interface.
+3, New GroupId fields for QuerySyncPicSchedule input parameter.
+4, New GroupId fields for QueryAddUserInfo input parameter.
+
 2019-02-20 Version: 1.52.2
 1, Add code and message to inovkeService API
 2, User could check code and message to get more specific information
