@@ -1,9 +1,7 @@
 package utils
 
 import (
-	"fmt"
 	"regexp"
-	"strings"
 	"testing"
 	"time"
 
@@ -63,35 +61,4 @@ func TestGetUrlFormedMap(t *testing.T) {
 	m["key2"] = "http://domain/?key=value&key2=value2"
 	s2 := GetUrlFormedMap(m)
 	assert.Equal(t, "key=value&key2=http%3A%2F%2Fdomain%2F%3Fkey%3Dvalue%26key2%3Dvalue2", s2)
-}
-
-func TestGetTimeInFormatISO8601WithTZData(t *testing.T) {
-	TZData = []byte(`"GMT"`)
-	LoadLocationFromTZData = func(name string, data []byte) (location *time.Location, e error) {
-		if strings.Contains(string(data), name) {
-			location, _ = time.LoadLocation(name)
-		}
-		e = fmt.Errorf("There is a error in test.")
-		return location, e
-	}
-	defer func() {
-		err := recover()
-		assert.NotNil(t, err)
-	}()
-	s := GetTimeInFormatISO8601()
-	assert.Equal(t, 20, len(s))
-	// 2006-01-02T15:04:05Z
-	re := regexp.MustCompile(`^[0-9]{4}-[0-9]{2}-[0-9]{2}T[0-9]{2}:[0-9]{2}:[0-9]{2}Z$`)
-	assert.True(t, re.MatchString(s))
-}
-
-func TestGetTimeInFormatRFC2616WithTZData(t *testing.T) {
-	defer func() {
-		err := recover()
-		assert.NotNil(t, err)
-	}()
-	s := GetTimeInFormatRFC2616()
-	assert.Equal(t, 29, len(s))
-	re := regexp.MustCompile(`^[A-Z][a-z]{2}, [0-9]{2} [A-Z][a-z]{2} [0-9]{4} [0-9]{2}:[0-9]{2}:[0-9]{2} GMT$`)
-	assert.True(t, re.MatchString(s))
 }
