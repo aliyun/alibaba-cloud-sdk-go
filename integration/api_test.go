@@ -2,6 +2,7 @@ package integration
 
 import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/services/bssopenapi"
 	"github.com/aliyun/alibaba-cloud-sdk-go/services/cdn"
 	"github.com/aliyun/alibaba-cloud-sdk-go/services/cs"
 	"github.com/aliyun/alibaba-cloud-sdk-go/services/ecs"
@@ -9,7 +10,6 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/services/rds"
 	"github.com/aliyun/alibaba-cloud-sdk-go/services/slb"
 	"github.com/aliyun/alibaba-cloud-sdk-go/services/vpc"
-
 	"github.com/stretchr/testify/assert"
 
 	"net/http"
@@ -263,4 +263,15 @@ func Test_DescribeRegionsWithRPCrequestWith3XX(t *testing.T) {
 	assert.NotNil(t, err)
 	assert.Equal(t, 307, response.GetHttpStatus())
 	assert.Equal(t, "{\"error\"}", response.GetHttpContentString())
+}
+
+func Test_QueryAvaliableInstances(t *testing.T) {
+	client, err := bssopenapi.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
+	assert.Nil(t, err)
+	request := bssopenapi.CreateQueryAvailableInstancesRequest()
+	request.Domain = "business.aliyuncs.com"
+	response, err := client.QueryAvailableInstances(request)
+	assert.Nil(t, err)
+	assert.True(t, response.IsSuccess())
+	assert.Equal(t, 36, len(response.RequestId))
 }
