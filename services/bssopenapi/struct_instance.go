@@ -19,6 +19,7 @@ package bssopenapi
 type Instance struct {
 	Region              string `json:"Region" xml:"Region"`
 	ExpectedReleaseTime string `json:"ExpectedReleaseTime" xml:"ExpectedReleaseTime"`
+	PackageType         string `json:"PackageType" xml:"PackageType"`
 	CreateTime          string `json:"CreateTime" xml:"CreateTime"`
 	OwnerId             int    `json:"OwnerId" xml:"OwnerId"`
 	TotalAmount         string `json:"TotalAmount" xml:"TotalAmount"`

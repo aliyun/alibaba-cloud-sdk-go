@@ -1,3 +1,6 @@
+2019-02-22 Version: 1.53.1
+1, Fixed QueryAvailableInstances response unmarshal problem
+
 2019-02-21 Version: 1.53.0
 1, New DeleteDeviceGroup interface.
 2, New DeleteDeviceAllGroup interface.

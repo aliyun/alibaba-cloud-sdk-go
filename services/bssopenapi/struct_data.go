@@ -42,7 +42,7 @@ type Data struct {
 	NewInvoiceAmount       float64                                `json:"NewInvoiceAmount" xml:"NewInvoiceAmount"`
 	Items                  ItemsInQueryBillOverview               `json:"Items" xml:"Items"`
 	ModuleList             ModuleList                             `json:"ModuleList" xml:"ModuleList"`
-	InstanceList           InstanceList                           `json:"InstanceList" xml:"InstanceList"`
+	InstanceList           []Instance                             `json:"InstanceList" xml:"InstanceList"`
 	OrderList              OrderListInQueryOrders                 `json:"OrderList" xml:"OrderList"`
 	Modules                Modules                                `json:"Modules" xml:"Modules"`
 	Promotions             Promotions                             `json:"Promotions" xml:"Promotions"`
