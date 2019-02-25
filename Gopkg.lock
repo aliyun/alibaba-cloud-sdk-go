@@ -2,14 +2,6 @@
 
 
 [[projects]]
-  digest = "1:1807f6db80c7a81b599bf1a7dc5c4c417ed68a73952e71681abd954dfbb14c58"
-  name = "github.com/aliyun/aliyun-oss-go-sdk"
-  packages = ["oss"]
-  pruneopts = "UT"
-  revision = "2b29687e15f2cc71fb3a50f28be1d6d30c40c86a"
-  version = "1.9.4"
-
-[[projects]]
   digest = "1:ffe9824d294da03b391f44e1ae8281281b4afc1bdaa9588c9097785e3af10cec"
   name = "github.com/davecgh/go-spew"
   packages = ["spew"]
@@ -77,7 +69,6 @@
   analyzer-name = "dep"
   analyzer-version = 1
   input-imports = [
-    "github.com/aliyun/aliyun-oss-go-sdk/oss",
     "github.com/jmespath/go-jmespath",
     "github.com/json-iterator/go",
     "github.com/satori/go.uuid",
