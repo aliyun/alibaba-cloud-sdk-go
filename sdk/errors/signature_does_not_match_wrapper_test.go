@@ -39,5 +39,5 @@ func TestWrapMatch(t *testing.T) {
 	m["StringToSign"] = "match"
 	wrapped := wrapper.tryWrap(se, m)
 	assert.True(t, wrapped)
-	assert.Equal(t, "Please check you AccessKeySecret", se.Recommend())
+	assert.Equal(t, "InvalidAccessKeySecret: Please check you AccessKeySecret", se.Recommend())
 }
