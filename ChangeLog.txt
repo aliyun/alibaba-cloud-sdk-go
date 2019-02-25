@@ -1,3 +1,6 @@
+2019-02-25 Version: 1.53.2
+1, add opensearch to GO sdk
+
 2019-02-22 Version: 1.53.1
 1, Fixed QueryAvailableInstances response unmarshal problem
 
