@@ -40,7 +40,7 @@ func init() {
 // Version this value will be replaced while build: -ldflags="-X sdk.version=x.x.x"
 var Version = "0.0.1"
 
-var DefaultUserAgent = fmt.Sprintf("AlibabaCloud (%s; %s) GO/%s Core/%s", runtime.GOOS, runtime.GOARCH, strings.Trim(runtime.Version(), "go"), Version)
+var DefaultUserAgent = fmt.Sprintf("AlibabaCloud (%s; %s) Golang/%s Core/%s", runtime.GOOS, runtime.GOARCH, strings.Trim(runtime.Version(), "go"), Version)
 
 var hookDo = func(fn func(req *http.Request) (*http.Response, error)) func(req *http.Request) (*http.Response, error) {
 	return fn
