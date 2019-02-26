@@ -76,8 +76,10 @@ func (client *Client) InvokeServiceAsyncWithCallback(request *InvokeServiceAsync
 // InvokeServiceAsyncRequest is the request struct for api InvokeServiceAsync
 type InvokeServiceAsyncRequest struct {
 	*requests.RpcRequest
-	ServiceId string `position:"Query" name:"ServiceId"`
-	Params    string `position:"Body" name:"Params"`
+	IsShowInput requests.Boolean `position:"Query" name:"IsShowInput"`
+	ServiceId   string           `position:"Query" name:"ServiceId"`
+	Params      string           `position:"Query" name:"Params"`
+	RequestData string           `position:"Query" name:"RequestData"`
 }
 
 // InvokeServiceAsyncResponse is the response struct for api InvokeServiceAsync
@@ -85,6 +87,8 @@ type InvokeServiceAsyncResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Data      string `json:"Data" xml:"Data"`
+	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
 }
 
 // CreateInvokeServiceAsyncRequest creates a request to invoke InvokeServiceAsync API

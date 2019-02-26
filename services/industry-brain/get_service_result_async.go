@@ -76,7 +76,7 @@ func (client *Client) GetServiceResultAsyncWithCallback(request *GetServiceResul
 // GetServiceResultAsyncRequest is the request struct for api GetServiceResultAsync
 type GetServiceResultAsyncRequest struct {
 	*requests.RpcRequest
-	ServiceId string `position:"Query" name:"ServiceId"`
+	TaskId string `position:"Query" name:"TaskId"`
 }
 
 // GetServiceResultAsyncResponse is the response struct for api GetServiceResultAsync
@@ -84,6 +84,8 @@ type GetServiceResultAsyncResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Data      string `json:"Data" xml:"Data"`
+	Code      string `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
 }
 
 // CreateGetServiceResultAsyncRequest creates a request to invoke GetServiceResultAsync API
