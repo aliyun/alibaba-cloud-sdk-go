@@ -105,6 +105,7 @@ type DescribeDBClusterAttributeResponse struct {
 	MaintainTime         string   `json:"MaintainTime" xml:"MaintainTime"`
 	StorageUsed          int      `json:"StorageUsed" xml:"StorageUsed"`
 	SQLSize              int      `json:"SQLSize" xml:"SQLSize"`
+	Tags                 []Tag    `json:"Tags" xml:"Tags"`
 	DBNodes              []DBNode `json:"DBNodes" xml:"DBNodes"`
 }
 

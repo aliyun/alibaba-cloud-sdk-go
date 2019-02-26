@@ -1,3 +1,7 @@
+2019-02-26 Version: 1.53.3
+1, Add interface of tag.
+2, Add tag info in DescribeDBClusters and DescribeDBClusterAttribute.
+
 2019-02-25 Version: 1.53.2
 1, add opensearch to GO sdk
 
