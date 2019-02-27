@@ -32,7 +32,7 @@
 
 [[constraint]]
   name = "github.com/jmespath/go-jmespath"
-  version = "0.2.2"
+  #version = "0.2.2"
 
 [[constraint]]
   name = "github.com/json-iterator/go"
