@@ -1,3 +1,6 @@
+2019-02-27 Version: 1.53.5
+1, Update Config API.
+
 2019-02-26 Version: 1.53.4
 1, Industry brain v1.3.7 release
 2, Add asynchronous APIs
