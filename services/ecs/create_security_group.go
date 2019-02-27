@@ -76,16 +76,16 @@ func (client *Client) CreateSecurityGroupWithCallback(request *CreateSecurityGro
 // CreateSecurityGroupRequest is the request struct for api CreateSecurityGroup
 type CreateSecurityGroupRequest struct {
 	*requests.RpcRequest
-	ResourceGroupId      string                    `position:"Query" name:"ResourceGroupId"`
 	ResourceOwnerId      requests.Integer          `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string                    `position:"Query" name:"ResourceOwnerAccount"`
 	ClientToken          string                    `position:"Query" name:"ClientToken"`
-	VpcId                string                    `position:"Query" name:"VpcId"`
 	OwnerAccount         string                    `position:"Query" name:"OwnerAccount"`
 	Description          string                    `position:"Query" name:"Description"`
-	Tag                  *[]CreateSecurityGroupTag `position:"Query" name:"Tag"  type:"Repeated"`
 	OwnerId              requests.Integer          `position:"Query" name:"OwnerId"`
 	SecurityGroupName    string                    `position:"Query" name:"SecurityGroupName"`
+	ResourceGroupId      string                    `position:"Query" name:"ResourceGroupId"`
+	VpcId                string                    `position:"Query" name:"VpcId"`
+	Tag                  *[]CreateSecurityGroupTag `position:"Query" name:"Tag"  type:"Repeated"`
 }
 
 // CreateSecurityGroupTag is a repeated param struct in CreateSecurityGroupRequest

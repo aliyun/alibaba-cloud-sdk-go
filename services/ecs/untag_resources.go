@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// StartInstance invokes the ecs.StartInstance API synchronously
-// api document: https://help.aliyun.com/api/ecs/startinstance.html
-func (client *Client) StartInstance(request *StartInstanceRequest) (response *StartInstanceResponse, err error) {
-	response = CreateStartInstanceResponse()
+// UntagResources invokes the ecs.UntagResources API synchronously
+// api document: https://help.aliyun.com/api/ecs/untagresources.html
+func (client *Client) UntagResources(request *UntagResourcesRequest) (response *UntagResourcesResponse, err error) {
+	response = CreateUntagResourcesResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// StartInstanceWithChan invokes the ecs.StartInstance API asynchronously
-// api document: https://help.aliyun.com/api/ecs/startinstance.html
+// UntagResourcesWithChan invokes the ecs.UntagResources API asynchronously
+// api document: https://help.aliyun.com/api/ecs/untagresources.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) StartInstanceWithChan(request *StartInstanceRequest) (<-chan *StartInstanceResponse, <-chan error) {
-	responseChan := make(chan *StartInstanceResponse, 1)
+func (client *Client) UntagResourcesWithChan(request *UntagResourcesRequest) (<-chan *UntagResourcesResponse, <-chan error) {
+	responseChan := make(chan *UntagResourcesResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.StartInstance(request)
+		response, err := client.UntagResources(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) StartInstanceWithChan(request *StartInstanceRequest) (<-ch
 	return responseChan, errChan
 }
 
-// StartInstanceWithCallback invokes the ecs.StartInstance API asynchronously
-// api document: https://help.aliyun.com/api/ecs/startinstance.html
+// UntagResourcesWithCallback invokes the ecs.UntagResources API asynchronously
+// api document: https://help.aliyun.com/api/ecs/untagresources.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) StartInstanceWithCallback(request *StartInstanceRequest, callback func(response *StartInstanceResponse, err error)) <-chan int {
+func (client *Client) UntagResourcesWithCallback(request *UntagResourcesRequest, callback func(response *UntagResourcesResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *StartInstanceResponse
+		var response *UntagResourcesResponse
 		var err error
 		defer close(result)
-		response, err = client.StartInstance(request)
+		response, err = client.UntagResources(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,37 +73,37 @@ func (client *Client) StartInstanceWithCallback(request *StartInstanceRequest, c
 	return result
 }
 
-// StartInstanceRequest is the request struct for api StartInstance
-type StartInstanceRequest struct {
+// UntagResourcesRequest is the request struct for api UntagResources
+type UntagResourcesRequest struct {
 	*requests.RpcRequest
-	SourceRegionId       string           `position:"Query" name:"SourceRegionId"`
-	InitLocalDisk        requests.Boolean `position:"Query" name:"InitLocalDisk"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	InstanceId           string           `position:"Query" name:"InstanceId"`
-	DryRun               requests.Boolean `position:"Query" name:"DryRun"`
+	All                  requests.Boolean `position:"Query" name:"All"`
+	ResourceId           *[]string        `position:"Query" name:"ResourceId"  type:"Repeated"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceType         string           `position:"Query" name:"ResourceType"`
+	TagKey               *[]string        `position:"Query" name:"TagKey"  type:"Repeated"`
 }
 
-// StartInstanceResponse is the response struct for api StartInstance
-type StartInstanceResponse struct {
+// UntagResourcesResponse is the response struct for api UntagResources
+type UntagResourcesResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateStartInstanceRequest creates a request to invoke StartInstance API
-func CreateStartInstanceRequest() (request *StartInstanceRequest) {
-	request = &StartInstanceRequest{
+// CreateUntagResourcesRequest creates a request to invoke UntagResources API
+func CreateUntagResourcesRequest() (request *UntagResourcesRequest) {
+	request = &UntagResourcesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ecs", "2014-05-26", "StartInstance", "ecs", "openAPI")
+	request.InitWithApiInfo("Ecs", "2014-05-26", "UntagResources", "ecs", "openAPI")
 	return
 }
 
-// CreateStartInstanceResponse creates a response to parse from StartInstance response
-func CreateStartInstanceResponse() (response *StartInstanceResponse) {
-	response = &StartInstanceResponse{
+// CreateUntagResourcesResponse creates a response to parse from UntagResources response
+func CreateUntagResourcesResponse() (response *UntagResourcesResponse) {
+	response = &UntagResourcesResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return
