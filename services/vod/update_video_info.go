@@ -76,15 +76,18 @@ func (client *Client) UpdateVideoInfoWithCallback(request *UpdateVideoInfoReques
 // UpdateVideoInfoRequest is the request struct for api UpdateVideoInfo
 type UpdateVideoInfoRequest struct {
 	*requests.RpcRequest
-	CoverURL             string           `position:"Query" name:"CoverURL"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	CateId               requests.Integer `position:"Query" name:"CateId"`
 	Description          string           `position:"Query" name:"Description"`
 	VideoId              string           `position:"Query" name:"VideoId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	Title                string           `position:"Query" name:"Title"`
 	Tags                 string           `position:"Query" name:"Tags"`
+	CoverURL             string           `position:"Query" name:"CoverURL"`
+	DownloadSwitch       string           `position:"Query" name:"DownloadSwitch"`
+	CateId               requests.Integer `position:"Query" name:"CateId"`
+	CustomMediaInfo      string           `position:"Query" name:"CustomMediaInfo"`
+	Status               string           `position:"Query" name:"Status"`
 }
 
 // UpdateVideoInfoResponse is the response struct for api UpdateVideoInfo

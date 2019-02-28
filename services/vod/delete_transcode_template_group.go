@@ -78,14 +78,17 @@ type DeleteTranscodeTemplateGroupRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId          requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount     string           `position:"Query" name:"ResourceOwnerAccount"`
+	TranscodeTemplateIds     string           `position:"Query" name:"TranscodeTemplateIds"`
 	OwnerId                  requests.Integer `position:"Query" name:"OwnerId"`
 	TranscodeTemplateGroupId string           `position:"Query" name:"TranscodeTemplateGroupId"`
+	ForceDelGroup            string           `position:"Query" name:"ForceDelGroup"`
 }
 
 // DeleteTranscodeTemplateGroupResponse is the response struct for api DeleteTranscodeTemplateGroup
 type DeleteTranscodeTemplateGroupResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	RequestId                    string   `json:"RequestId" xml:"RequestId"`
+	NonExistTranscodeTemplateIds []string `json:"NonExistTranscodeTemplateIds" xml:"NonExistTranscodeTemplateIds"`
 }
 
 // CreateDeleteTranscodeTemplateGroupRequest creates a request to invoke DeleteTranscodeTemplateGroup API

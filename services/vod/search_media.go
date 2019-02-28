@@ -78,15 +78,16 @@ type SearchMediaRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	PageNo               requests.Integer `position:"Query" name:"PageNo"`
-	SearchType           string           `position:"Query" name:"SearchType"`
 	Match                string           `position:"Query" name:"Match"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	SortBy               string           `position:"Query" name:"SortBy"`
 	SessionId            string           `position:"Query" name:"SessionId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	Fields               string           `position:"Query" name:"Fields"`
 	ScrollToken          string           `position:"Query" name:"ScrollToken"`
+	PageNo               requests.Integer `position:"Query" name:"PageNo"`
+	SearchType           string           `position:"Query" name:"SearchType"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	SortBy               string           `position:"Query" name:"SortBy"`
+	ResultTypes          string           `position:"Query" name:"ResultTypes"`
+	Fields               string           `position:"Query" name:"Fields"`
 }
 
 // SearchMediaResponse is the response struct for api SearchMedia

@@ -17,24 +17,31 @@ package vod
 
 // Audio is a nested struct in vod response
 type Audio struct {
-	AudioId          string   `json:"AudioId" xml:"AudioId"`
-	MediaSource      string   `json:"MediaSource" xml:"MediaSource"`
-	Title            string   `json:"Title" xml:"Title"`
-	Tags             string   `json:"Tags" xml:"Tags"`
-	Status           string   `json:"Status" xml:"Status"`
-	Size             int      `json:"Size" xml:"Size"`
-	Duration         float64  `json:"Duration" xml:"Duration"`
-	Description      string   `json:"Description" xml:"Description"`
-	ModificationTime string   `json:"ModificationTime" xml:"ModificationTime"`
-	CreationTime     string   `json:"CreationTime" xml:"CreationTime"`
-	CoverURL         string   `json:"CoverURL" xml:"CoverURL"`
-	CateId           int      `json:"CateId" xml:"CateId"`
-	CateName         string   `json:"CateName" xml:"CateName"`
-	DownloadSwitch   string   `json:"DownloadSwitch" xml:"DownloadSwitch"`
-	PreprocessStatus string   `json:"PreprocessStatus" xml:"PreprocessStatus"`
-	StorageLocation  string   `json:"StorageLocation" xml:"StorageLocation"`
-	RegionId         string   `json:"RegionId" xml:"RegionId"`
-	TranscodeMode    string   `json:"TranscodeMode" xml:"TranscodeMode"`
-	Snapshots        []string `json:"Snapshots" xml:"Snapshots"`
-	SpriteSnapshots  []string `json:"SpriteSnapshots" xml:"SpriteSnapshots"`
+	AudioId           string     `json:"AudioId" xml:"AudioId"`
+	MediaSource       string     `json:"MediaSource" xml:"MediaSource"`
+	Title             string     `json:"Title" xml:"Title"`
+	Tags              string     `json:"Tags" xml:"Tags"`
+	Status            string     `json:"Status" xml:"Status"`
+	Size              int        `json:"Size" xml:"Size"`
+	Duration          float64    `json:"Duration" xml:"Duration"`
+	Description       string     `json:"Description" xml:"Description"`
+	ModificationTime  string     `json:"ModificationTime" xml:"ModificationTime"`
+	CreationTime      string     `json:"CreationTime" xml:"CreationTime"`
+	CoverURL          string     `json:"CoverURL" xml:"CoverURL"`
+	CateId            int        `json:"CateId" xml:"CateId"`
+	CateName          string     `json:"CateName" xml:"CateName"`
+	DownloadSwitch    string     `json:"DownloadSwitch" xml:"DownloadSwitch"`
+	PreprocessStatus  string     `json:"PreprocessStatus" xml:"PreprocessStatus"`
+	StorageLocation   string     `json:"StorageLocation" xml:"StorageLocation"`
+	RegionId          string     `json:"RegionId" xml:"RegionId"`
+	TranscodeMode     string     `json:"TranscodeMode" xml:"TranscodeMode"`
+	AuditStatus       string     `json:"AuditStatus" xml:"AuditStatus"`
+	AuditAIStatus     string     `json:"AuditAIStatus" xml:"AuditAIStatus"`
+	AuditManualStatus string     `json:"AuditManualStatus" xml:"AuditManualStatus"`
+	AuditAIResult     string     `json:"AuditAIResult" xml:"AuditAIResult"`
+	AuditTemplateId   string     `json:"AuditTemplateId" xml:"AuditTemplateId"`
+	CustomMediaInfo   string     `json:"CustomMediaInfo" xml:"CustomMediaInfo"`
+	Snapshots         []string   `json:"Snapshots" xml:"Snapshots"`
+	SpriteSnapshots   []string   `json:"SpriteSnapshots" xml:"SpriteSnapshots"`
+	PlayInfoList      []PlayInfo `json:"PlayInfoList" xml:"PlayInfoList"`
 }
