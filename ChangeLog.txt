@@ -1,3 +1,6 @@
+2019-03-01 Version: 1.53.9
+1, Support Build Function Compute Backend By SDK
+
 2019-03-01 Version: 1.53.8
 1, Add API QueryRegionConfig
 2, Add API SynchronizeResource
