@@ -76,16 +76,20 @@ func (client *Client) CreateDrdsInstanceWithCallback(request *CreateDrdsInstance
 // CreateDrdsInstanceRequest is the request struct for api CreateDrdsInstance
 type CreateDrdsInstanceRequest struct {
 	*requests.RpcRequest
+	IsAutoRenew    requests.Boolean `position:"Query" name:"IsAutoRenew"`
 	Quantity       requests.Integer `position:"Query" name:"Quantity"`
+	ClientToken    string           `position:"Query" name:"ClientToken"`
 	Description    string           `position:"Query" name:"Description"`
 	Specification  string           `position:"Query" name:"Specification"`
 	Type           string           `position:"Query" name:"Type"`
 	VswitchId      string           `position:"Query" name:"VswitchId"`
-	IsHa           requests.Boolean `position:"Query" name:"isHa"`
-	InstanceSeries string           `position:"Query" name:"instanceSeries"`
+	Duration       requests.Integer `position:"Query" name:"Duration"`
+	IsHa           requests.Boolean `position:"Query" name:"IsHa"`
+	InstanceSeries string           `position:"Query" name:"InstanceSeries"`
 	VpcId          string           `position:"Query" name:"VpcId"`
 	ZoneId         string           `position:"Query" name:"ZoneId"`
 	PayType        string           `position:"Query" name:"PayType"`
+	PricingCycle   string           `position:"Query" name:"PricingCycle"`
 }
 
 // CreateDrdsInstanceResponse is the response struct for api CreateDrdsInstance
