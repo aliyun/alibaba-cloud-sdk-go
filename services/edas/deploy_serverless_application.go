@@ -107,7 +107,7 @@ func CreateDeployServerlessApplicationRequest() (request *DeployServerlessApplic
 	request = &DeployServerlessApplicationRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "DeployServerlessApplication", "/pop/v5/k8s/pop/pop_serverless_app_deploy", "", "")
+	request.InitWithApiInfo("Edas", "2017-08-01", "DeployServerlessApplication", "/pop/v5/k8s/pop/pop_serverless_app_deploy", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -95,7 +95,7 @@ func CreateUpdateApplicationBaseInfoRequest() (request *UpdateApplicationBaseInf
 	request = &UpdateApplicationBaseInfoRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "UpdateApplicationBaseInfo", "/pop/v5/app/update_app_info", "", "")
+	request.InitWithApiInfo("Edas", "2017-08-01", "UpdateApplicationBaseInfo", "/pop/v5/app/update_app_info", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

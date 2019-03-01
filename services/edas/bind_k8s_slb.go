@@ -99,7 +99,7 @@ func CreateBindK8sSlbRequest() (request *BindK8sSlbRequest) {
 	request = &BindK8sSlbRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "BindK8sSlb", "/pop/v5/k8s/acs/k8s_slb_binding", "", "")
+	request.InitWithApiInfo("Edas", "2017-08-01", "BindK8sSlb", "/pop/v5/k8s/acs/k8s_slb_binding", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }

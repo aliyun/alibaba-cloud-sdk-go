@@ -1,3 +1,7 @@
+2019-03-01 Version: 1.53.8
+1, Add API QueryRegionConfig
+2, Add API SynchronizeResource
+
 2019-02-28 Version: 1.53.7
 1, Add new apis named ListTranscodeTask, GetTranscodeTask, GetTranscodeSummary.
 2, Add the new field named TranscodeTemplateIds and ForceDelGroup to DeleteTranscodeTemplateGroup api request, and add a new field named NonExistTranscodeTemplateIds to the api response.

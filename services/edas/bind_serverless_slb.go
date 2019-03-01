@@ -94,7 +94,7 @@ func CreateBindServerlessSlbRequest() (request *BindServerlessSlbRequest) {
 	request = &BindServerlessSlbRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "BindServerlessSlb", "/pop/v5/k8s/acs/serverless_slb_binding", "", "")
+	request.InitWithApiInfo("Edas", "2017-08-01", "BindServerlessSlb", "/pop/v5/k8s/acs/serverless_slb_binding", "edas", "openAPI")
 	request.Method = requests.POST
 	return
 }
