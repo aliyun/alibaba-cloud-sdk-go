@@ -81,6 +81,12 @@ func Test_NewClientWithOptions(t *testing.T) {
 	assert.NotNil(t, client)
 }
 
+func Test_NewClientWithPolicy(t *testing.T) {
+	client, err := NewClientWithRamRoleArnAndPolicy("regionid", "acesskeyid", "accesskeysecret", "roleArn", "sessionName", "policy")
+	assert.Nil(t, err)
+	assert.NotNil(t, client)
+}
+
 func Test_NewClientWithAccessKey(t *testing.T) {
 	client, err := NewClientWithAccessKey("regionid", "acesskeyid", "accesskeysecret")
 	assert.Nil(t, err)
