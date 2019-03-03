@@ -136,6 +136,18 @@ func (client *Client) InitWithRamRoleArn(regionId, accessKeyId, accessKeySecret,
 	return client.InitWithOptions(regionId, config, credential)
 }
 
+func (client *Client) InitWithRamRoleArnAndPolicy(regionId, accessKeyId, accessKeySecret, roleArn, roleSessionName, policy string) (err error) {
+	config := client.InitClientConfig()
+	credential := &credentials.RamRoleArnCredential{
+		AccessKeyId:     accessKeyId,
+		AccessKeySecret: accessKeySecret,
+		RoleArn:         roleArn,
+		RoleSessionName: roleSessionName,
+		Policy:          policy,
+	}
+	return client.InitWithOptions(regionId, config, credential)
+}
+
 func (client *Client) InitWithRsaKeyPair(regionId, publicKeyId, privateKey string, sessionExpiration int) (err error) {
 	config := client.InitClientConfig()
 	credential := &credentials.RsaKeyPairCredential{
@@ -389,6 +401,12 @@ func NewClientWithStsToken(regionId, stsAccessKeyId, stsAccessKeySecret, stsToke
 func NewClientWithRamRoleArn(regionId string, accessKeyId, accessKeySecret, roleArn, roleSessionName string) (client *Client, err error) {
 	client = &Client{}
 	err = client.InitWithRamRoleArn(regionId, accessKeyId, accessKeySecret, roleArn, roleSessionName)
+	return
+}
+
+func NewClientWithRamRoleArnAndPolicy(regionId string, accessKeyId, accessKeySecret, roleArn, roleSessionName, policy string) (client *Client, err error) {
+	client = &Client{}
+	err = client.InitWithRamRoleArnAndPolicy(regionId, accessKeyId, accessKeySecret, roleArn, roleSessionName, policy)
 	return
 }
 

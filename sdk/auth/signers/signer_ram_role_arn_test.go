@@ -176,7 +176,7 @@ func Test_RamRoleArn_GetAccessKeyIdAndSign(t *testing.T) {
 }
 
 func Test_RamRoleArn_GetExtraParam_Fail(t *testing.T) {
-	c := credentials.NewRamRoleArnCredential("accessKeyId", "accessKeySecret", "roleArn", "roleSessionName", 3600)
+	c := credentials.NewRamRoleArnWithPolicyCredential("accessKeyId", "accessKeySecret", "roleArn", "roleSessionName", "policy", 3600)
 	// mock 200 response and valid json and valid result
 	s, err := NewRamRoleArnSigner(c, func(*requests.CommonRequest, interface{}) (response *responses.CommonResponse, err error) {
 		res := responses.NewCommonResponse()

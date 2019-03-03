@@ -111,6 +111,35 @@ func createAttachPolicyToUser() error {
 	return nil
 }
 
+func createAttachPolicyToRole() error {
+	listRequest := ram.CreateListPoliciesForRoleRequest()
+	listRequest.RoleName = rolename
+	listRequest.Scheme = "HTTPS"
+	client, err := ram.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
+	if err != nil {
+		return err
+	}
+	listResponse, err := client.ListPoliciesForRole(listRequest)
+	if err != nil {
+		return err
+	}
+	for _, policy := range listResponse.Policies.Policy {
+		if policy.PolicyName == "AdministratorAccess" {
+			return nil
+		}
+	}
+	createRequest := ram.CreateAttachPolicyToRoleRequest()
+	createRequest.Scheme = "HTTPS"
+	createRequest.PolicyName = "AdministratorAccess"
+	createRequest.RoleName = rolename
+	createRequest.PolicyType = "System"
+	_, err = client.AttachPolicyToRole(createRequest)
+	if err != nil {
+		return err
+	}
+	return nil
+}
+
 func createAccessKey() (string, string, error) {
 	client, err := ram.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
 	if err != nil {
