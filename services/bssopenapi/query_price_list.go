@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// QueryInstanceBill invokes the bssopenapi.QueryInstanceBill API synchronously
-// api document: https://help.aliyun.com/api/bssopenapi/queryinstancebill.html
-func (client *Client) QueryInstanceBill(request *QueryInstanceBillRequest) (response *QueryInstanceBillResponse, err error) {
-	response = CreateQueryInstanceBillResponse()
+// QueryPriceList invokes the bssopenapi.QueryPriceList API synchronously
+// api document: https://help.aliyun.com/api/bssopenapi/querypricelist.html
+func (client *Client) QueryPriceList(request *QueryPriceListRequest) (response *QueryPriceListResponse, err error) {
+	response = CreateQueryPriceListResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// QueryInstanceBillWithChan invokes the bssopenapi.QueryInstanceBill API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/queryinstancebill.html
+// QueryPriceListWithChan invokes the bssopenapi.QueryPriceList API asynchronously
+// api document: https://help.aliyun.com/api/bssopenapi/querypricelist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) QueryInstanceBillWithChan(request *QueryInstanceBillRequest) (<-chan *QueryInstanceBillResponse, <-chan error) {
-	responseChan := make(chan *QueryInstanceBillResponse, 1)
+func (client *Client) QueryPriceListWithChan(request *QueryPriceListRequest) (<-chan *QueryPriceListResponse, <-chan error) {
+	responseChan := make(chan *QueryPriceListResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.QueryInstanceBill(request)
+		response, err := client.QueryPriceList(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) QueryInstanceBillWithChan(request *QueryInstanceBillReques
 	return responseChan, errChan
 }
 
-// QueryInstanceBillWithCallback invokes the bssopenapi.QueryInstanceBill API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/queryinstancebill.html
+// QueryPriceListWithCallback invokes the bssopenapi.QueryPriceList API asynchronously
+// api document: https://help.aliyun.com/api/bssopenapi/querypricelist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) QueryInstanceBillWithCallback(request *QueryInstanceBillRequest, callback func(response *QueryInstanceBillResponse, err error)) <-chan int {
+func (client *Client) QueryPriceListWithCallback(request *QueryPriceListRequest, callback func(response *QueryPriceListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *QueryInstanceBillResponse
+		var response *QueryPriceListResponse
 		var err error
 		defer close(result)
-		response, err = client.QueryInstanceBill(request)
+		response, err = client.QueryPriceList(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,22 +73,18 @@ func (client *Client) QueryInstanceBillWithCallback(request *QueryInstanceBillRe
 	return result
 }
 
-// QueryInstanceBillRequest is the request struct for api QueryInstanceBill
-type QueryInstanceBillRequest struct {
+// QueryPriceListRequest is the request struct for api QueryPriceList
+type QueryPriceListRequest struct {
 	*requests.RpcRequest
-	IsBillingItem    requests.Boolean `position:"Query" name:"IsBillingItem"`
+	ModuleCode       string           `position:"Query" name:"ModuleCode"`
 	ProductCode      string           `position:"Query" name:"ProductCode"`
-	IsHideZeroCharge requests.Boolean `position:"Query" name:"IsHideZeroCharge"`
 	SubscriptionType string           `position:"Query" name:"SubscriptionType"`
-	PageSize         requests.Integer `position:"Query" name:"PageSize"`
-	BillingCycle     string           `position:"Query" name:"BillingCycle"`
 	OwnerId          requests.Integer `position:"Query" name:"OwnerId"`
-	PageNum          requests.Integer `position:"Query" name:"PageNum"`
 	ProductType      string           `position:"Query" name:"ProductType"`
 }
 
-// QueryInstanceBillResponse is the response struct for api QueryInstanceBill
-type QueryInstanceBillResponse struct {
+// QueryPriceListResponse is the response struct for api QueryPriceList
+type QueryPriceListResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
@@ -97,18 +93,18 @@ type QueryInstanceBillResponse struct {
 	Data      Data   `json:"Data" xml:"Data"`
 }
 
-// CreateQueryInstanceBillRequest creates a request to invoke QueryInstanceBill API
-func CreateQueryInstanceBillRequest() (request *QueryInstanceBillRequest) {
-	request = &QueryInstanceBillRequest{
+// CreateQueryPriceListRequest creates a request to invoke QueryPriceList API
+func CreateQueryPriceListRequest() (request *QueryPriceListRequest) {
+	request = &QueryPriceListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "QueryInstanceBill", "", "")
+	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "QueryPriceList", "", "")
 	return
 }
 
-// CreateQueryInstanceBillResponse creates a response to parse from QueryInstanceBill response
-func CreateQueryInstanceBillResponse() (response *QueryInstanceBillResponse) {
-	response = &QueryInstanceBillResponse{
+// CreateQueryPriceListResponse creates a response to parse from QueryPriceList response
+func CreateQueryPriceListResponse() (response *QueryPriceListResponse) {
+	response = &QueryPriceListResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

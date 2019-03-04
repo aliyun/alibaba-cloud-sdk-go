@@ -18,21 +18,15 @@ package bssopenapi
 // ItemInQueryInstanceBill is a nested struct in bssopenapi response
 type ItemInQueryInstanceBill struct {
 	InstanceID                string  `json:"InstanceID" xml:"InstanceID"`
-	NickName                  string  `json:"NickName" xml:"NickName"`
 	ServicePeriod             float64 `json:"ServicePeriod" xml:"ServicePeriod"`
 	BillingType               string  `json:"BillingType" xml:"BillingType"`
-	InstanceConfig            string  `json:"InstanceConfig" xml:"InstanceConfig"`
-	InstanceSpec              string  `json:"InstanceSpec" xml:"InstanceSpec"`
 	CostUnit                  string  `json:"CostUnit" xml:"CostUnit"`
 	ProductCode               string  `json:"ProductCode" xml:"ProductCode"`
 	ProductType               string  `json:"ProductType" xml:"ProductType"`
 	SubscriptionType          string  `json:"SubscriptionType" xml:"SubscriptionType"`
 	ProductName               string  `json:"ProductName" xml:"ProductName"`
 	ProductDetail             string  `json:"ProductDetail" xml:"ProductDetail"`
-	Tag                       string  `json:"Tag" xml:"Tag"`
-	ResourceGroup             string  `json:"ResourceGroup" xml:"ResourceGroup"`
 	OwnerID                   int     `json:"OwnerID" xml:"OwnerID"`
-	Region                    string  `json:"Region" xml:"Region"`
 	BillingItem               string  `json:"BillingItem" xml:"BillingItem"`
 	ListPrice                 float64 `json:"ListPrice" xml:"ListPrice"`
 	ListPriceUnit             string  `json:"ListPriceUnit" xml:"ListPriceUnit"`
