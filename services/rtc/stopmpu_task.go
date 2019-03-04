@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// GetAllTemplate invokes the rtc.GetAllTemplate API synchronously
-// api document: https://help.aliyun.com/api/rtc/getalltemplate.html
-func (client *Client) GetAllTemplate(request *GetAllTemplateRequest) (response *GetAllTemplateResponse, err error) {
-	response = CreateGetAllTemplateResponse()
+// StopMPUTask invokes the rtc.StopMPUTask API synchronously
+// api document: https://help.aliyun.com/api/rtc/stopmputask.html
+func (client *Client) StopMPUTask(request *StopMPUTaskRequest) (response *StopMPUTaskResponse, err error) {
+	response = CreateStopMPUTaskResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// GetAllTemplateWithChan invokes the rtc.GetAllTemplate API asynchronously
-// api document: https://help.aliyun.com/api/rtc/getalltemplate.html
+// StopMPUTaskWithChan invokes the rtc.StopMPUTask API asynchronously
+// api document: https://help.aliyun.com/api/rtc/stopmputask.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) GetAllTemplateWithChan(request *GetAllTemplateRequest) (<-chan *GetAllTemplateResponse, <-chan error) {
-	responseChan := make(chan *GetAllTemplateResponse, 1)
+func (client *Client) StopMPUTaskWithChan(request *StopMPUTaskRequest) (<-chan *StopMPUTaskResponse, <-chan error) {
+	responseChan := make(chan *StopMPUTaskResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.GetAllTemplate(request)
+		response, err := client.StopMPUTask(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) GetAllTemplateWithChan(request *GetAllTemplateRequest) (<-
 	return responseChan, errChan
 }
 
-// GetAllTemplateWithCallback invokes the rtc.GetAllTemplate API asynchronously
-// api document: https://help.aliyun.com/api/rtc/getalltemplate.html
+// StopMPUTaskWithCallback invokes the rtc.StopMPUTask API asynchronously
+// api document: https://help.aliyun.com/api/rtc/stopmputask.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) GetAllTemplateWithCallback(request *GetAllTemplateRequest, callback func(response *GetAllTemplateResponse, err error)) <-chan int {
+func (client *Client) StopMPUTaskWithCallback(request *StopMPUTaskRequest, callback func(response *StopMPUTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *GetAllTemplateResponse
+		var response *StopMPUTaskResponse
 		var err error
 		defer close(result)
-		response, err = client.GetAllTemplate(request)
+		response, err = client.StopMPUTask(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,32 +73,32 @@ func (client *Client) GetAllTemplateWithCallback(request *GetAllTemplateRequest,
 	return result
 }
 
-// GetAllTemplateRequest is the request struct for api GetAllTemplate
-type GetAllTemplateRequest struct {
+// StopMPUTaskRequest is the request struct for api StopMPUTask
+type StopMPUTaskRequest struct {
 	*requests.RpcRequest
 	OwnerId requests.Integer `position:"Query" name:"OwnerId"`
 	AppId   string           `position:"Query" name:"AppId"`
+	TaskId  string           `position:"Query" name:"TaskId"`
 }
 
-// GetAllTemplateResponse is the response struct for api GetAllTemplate
-type GetAllTemplateResponse struct {
+// StopMPUTaskResponse is the response struct for api StopMPUTask
+type StopMPUTaskResponse struct {
 	*responses.BaseResponse
-	RequestId   string   `json:"RequestId" xml:"RequestId"`
-	TemplateIds []string `json:"TemplateIds" xml:"TemplateIds"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateGetAllTemplateRequest creates a request to invoke GetAllTemplate API
-func CreateGetAllTemplateRequest() (request *GetAllTemplateRequest) {
-	request = &GetAllTemplateRequest{
+// CreateStopMPUTaskRequest creates a request to invoke StopMPUTask API
+func CreateStopMPUTaskRequest() (request *StopMPUTaskRequest) {
+	request = &StopMPUTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("rtc", "2018-01-11", "GetAllTemplate", "rtc", "openAPI")
+	request.InitWithApiInfo("rtc", "2018-01-11", "StopMPUTask", "rtc", "openAPI")
 	return
 }
 
-// CreateGetAllTemplateResponse creates a response to parse from GetAllTemplate response
-func CreateGetAllTemplateResponse() (response *GetAllTemplateResponse) {
-	response = &GetAllTemplateResponse{
+// CreateStopMPUTaskResponse creates a response to parse from StopMPUTask response
+func CreateStopMPUTaskResponse() (response *StopMPUTaskResponse) {
+	response = &StopMPUTaskResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return
