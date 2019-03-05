@@ -92,7 +92,7 @@ func CreateDescribeDcdnUserResourcePackageRequest() (request *DescribeDcdnUserRe
 	request = &DescribeDcdnUserResourcePackageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dcdn", "2018-01-15", "DescribeDcdnUserResourcePackage", "dcdn", "openAPI")
+	request.InitWithApiInfo("dcdn", "2018-01-15", "DescribeDcdnUserResourcePackage", "", "")
 	return
 }
 

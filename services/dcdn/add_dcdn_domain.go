@@ -98,7 +98,7 @@ func CreateAddDcdnDomainRequest() (request *AddDcdnDomainRequest) {
 	request = &AddDcdnDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dcdn", "2018-01-15", "AddDcdnDomain", "dcdn", "openAPI")
+	request.InitWithApiInfo("dcdn", "2018-01-15", "AddDcdnDomain", "", "")
 	return
 }
 

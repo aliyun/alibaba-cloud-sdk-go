@@ -103,7 +103,7 @@ func CreateDescribeDcdnDomainWebsocketTrafficDataRequest() (request *DescribeDcd
 	request = &DescribeDcdnDomainWebsocketTrafficDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dcdn", "2018-01-15", "DescribeDcdnDomainWebsocketTrafficData", "dcdn", "openAPI")
+	request.InitWithApiInfo("dcdn", "2018-01-15", "DescribeDcdnDomainWebsocketTrafficData", "", "")
 	return
 }
 

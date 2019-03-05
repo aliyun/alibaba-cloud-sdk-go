@@ -77,16 +77,16 @@ func (client *Client) DescribeDcdnUserDomainsWithCallback(request *DescribeDcdnU
 type DescribeDcdnUserDomainsRequest struct {
 	*requests.RpcRequest
 	FuncFilter       string           `position:"Query" name:"FuncFilter"`
+	CheckDomainShow  requests.Boolean `position:"Query" name:"CheckDomainShow"`
+	ResourceGroupId  string           `position:"Query" name:"ResourceGroupId"`
+	SecurityToken    string           `position:"Query" name:"SecurityToken"`
+	PageSize         requests.Integer `position:"Query" name:"PageSize"`
 	DomainName       string           `position:"Query" name:"DomainName"`
 	OwnerId          requests.Integer `position:"Query" name:"OwnerId"`
 	FuncId           string           `position:"Query" name:"FuncId"`
 	PageNumber       requests.Integer `position:"Query" name:"PageNumber"`
 	DomainStatus     string           `position:"Query" name:"DomainStatus"`
 	DomainSearchType string           `position:"Query" name:"DomainSearchType"`
-	CheckDomainShow  requests.Boolean `position:"Query" name:"CheckDomainShow"`
-	ResourceGroupId  string           `position:"Query" name:"ResourceGroupId"`
-	SecurityToken    string           `position:"Query" name:"SecurityToken"`
-	PageSize         requests.Integer `position:"Query" name:"PageSize"`
 }
 
 // DescribeDcdnUserDomainsResponse is the response struct for api DescribeDcdnUserDomains
@@ -104,7 +104,7 @@ func CreateDescribeDcdnUserDomainsRequest() (request *DescribeDcdnUserDomainsReq
 	request = &DescribeDcdnUserDomainsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dcdn", "2018-01-15", "DescribeDcdnUserDomains", "dcdn", "openAPI")
+	request.InitWithApiInfo("dcdn", "2018-01-15", "DescribeDcdnUserDomains", "", "")
 	return
 }
 
