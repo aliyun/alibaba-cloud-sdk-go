@@ -89,7 +89,7 @@ func CreateDeleteUserSourceAccountRequest() (request *DeleteUserSourceAccountReq
 	request = &DeleteUserSourceAccountRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("cr", "2016-06-07", "DeleteUserSourceAccount", "/users/sourceAccount/[SourceAccountId]", "", "")
+	request.InitWithApiInfo("cr", "2016-06-07", "DeleteUserSourceAccount", "/users/sourceAccount/[SourceAccountId]", "cr", "openAPI")
 	request.Method = requests.DELETE
 	return
 }

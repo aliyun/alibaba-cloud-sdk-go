@@ -1,3 +1,6 @@
+2019-03-06 Version: 1.53.13
+1, Update Service Code.
+
 2019-03-05 Version: 1.53.12
 1, Update the SDK version to 1.2.4
 

@@ -88,7 +88,7 @@ func CreateGetSubUserListRequest() (request *GetSubUserListRequest) {
 	request = &GetSubUserListRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("cr", "2016-06-07", "GetSubUserList", "/users/subAccount", "", "")
+	request.InitWithApiInfo("cr", "2016-06-07", "GetSubUserList", "/users/subAccount", "cr", "openAPI")
 	request.Method = requests.GET
 	return
 }

@@ -89,7 +89,7 @@ func CreateDeleteCollectionRequest() (request *DeleteCollectionRequest) {
 	request = &DeleteCollectionRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("cr", "2016-06-07", "DeleteCollection", "/collections/[CollectionId]", "", "")
+	request.InitWithApiInfo("cr", "2016-06-07", "DeleteCollection", "/collections/[CollectionId]", "cr", "openAPI")
 	request.Method = requests.DELETE
 	return
 }
