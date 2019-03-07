@@ -15,12 +15,15 @@
 package sdk
 
 import (
+	"context"
 	"fmt"
+	"net"
 	"net/http"
 	"runtime"
 	"strconv"
 	"strings"
 	"sync"
+	"time"
 
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/auth"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/auth/credentials"
@@ -39,6 +42,8 @@ func init() {
 
 // Version this value will be replaced while build: -ldflags="-X sdk.version=x.x.x"
 var Version = "0.0.1"
+var defaultConnectTimeout = 10 * time.Second
+var defaultReadTimeout = 5 * time.Second
 
 var DefaultUserAgent = fmt.Sprintf("AlibabaCloud (%s; %s) Golang/%s Core/%s", runtime.GOOS, runtime.GOARCH, strings.Trim(runtime.Version(), "go"), Version)
 
@@ -54,6 +59,8 @@ type Client struct {
 	signer         auth.Signer
 	httpClient     *http.Client
 	asyncTaskQueue chan func()
+	readTimeout    time.Duration
+	connectTimeout time.Duration
 
 	debug     bool
 	isRunning bool
@@ -87,6 +94,22 @@ func (client *Client) InitWithOptions(regionId string, config *Config, credentia
 	client.signer, err = auth.NewSignerWithCredential(credential, client.ProcessCommonRequestWithSigner)
 
 	return
+}
+
+func (client *Client) SetReadTimeout(readTimeout time.Duration) {
+	client.readTimeout = readTimeout
+}
+
+func (client *Client) SetConnectTimeout(connectTimeout time.Duration) {
+	client.connectTimeout = connectTimeout
+}
+
+func (client *Client) GetReadTimeout() time.Duration {
+	return client.readTimeout
+}
+
+func (client *Client) GetConnectTimeout() time.Duration {
+	return client.connectTimeout
 }
 
 // EnableAsync enable the async task queue
@@ -272,11 +295,59 @@ func (client *Client) BuildRequestWithSigner(request requests.AcsRequest, signer
 	return
 }
 
+func (client *Client) getTimeout(request requests.AcsRequest) (time.Duration, time.Duration) {
+	readTimeout := defaultReadTimeout
+	connectTimeout := defaultConnectTimeout
+
+	reqReadTimeout := request.GetReadTimeout()
+	reqConnectTimeout := request.GetConnectTimeout()
+	if reqReadTimeout != 0*time.Millisecond {
+		readTimeout = reqReadTimeout
+	} else if client.readTimeout != 0*time.Millisecond {
+		readTimeout = client.readTimeout
+	}
+
+	if reqConnectTimeout != 0*time.Millisecond {
+		connectTimeout = reqConnectTimeout
+	} else if client.connectTimeout != 0*time.Millisecond {
+		connectTimeout = client.connectTimeout
+	}
+	return readTimeout, connectTimeout
+}
+
+func Timeout(connectTimeout, readTimeout time.Duration) func(cxt context.Context, net, addr string) (c net.Conn, err error) {
+	return func(ctx context.Context, network, address string) (net.Conn, error) {
+		conn, err := (&net.Dialer{
+			Timeout:   connectTimeout,
+			KeepAlive: 0 * time.Second,
+			DualStack: true,
+		}).DialContext(ctx, network, address)
+
+		if err == nil {
+			conn.SetDeadline(time.Now().Add(readTimeout))
+		}
+
+		return conn, err
+	}
+}
+func (client *Client) setTimeout(request requests.AcsRequest) {
+	readTimeout, connectTimeout := client.getTimeout(request)
+	if trans, ok := client.httpClient.Transport.(*http.Transport); ok && trans != nil {
+		trans.DialContext = Timeout(connectTimeout, readTimeout)
+		client.httpClient.Transport = trans
+	} else {
+		client.httpClient.Transport = &http.Transport{
+			DialContext: Timeout(connectTimeout, readTimeout),
+		}
+	}
+}
 func (client *Client) DoActionWithSigner(request requests.AcsRequest, response responses.AcsResponse, signer auth.Signer) (err error) {
 	httpRequest, err := client.buildRequestWithSigner(request, signer)
 	if err != nil {
 		return
 	}
+	client.setTimeout(request)
+
 	var httpResponse *http.Response
 	for retryTimes := 0; retryTimes <= client.config.MaxRetryTime; retryTimes++ {
 		debug("> %s %s %s", httpRequest.Method, httpRequest.URL.RequestURI(), httpRequest.Proto)
@@ -299,13 +370,19 @@ func (client *Client) DoActionWithSigner(request requests.AcsRequest, response r
 				return
 			} else if retryTimes >= client.config.MaxRetryTime {
 				// timeout but reached the max retry times, return
-				timeoutErrorMsg := fmt.Sprintf(errors.TimeoutErrorMessage, strconv.Itoa(retryTimes+1), strconv.Itoa(retryTimes+1))
+				var timeoutErrorMsg string
+				if strings.Contains(err.Error(), "read tcp") {
+					timeoutErrorMsg = fmt.Sprintf(errors.TimeoutErrorMessage, strconv.Itoa(retryTimes+1), strconv.Itoa(retryTimes+1)) + " Read timeout. Please set a valid ReadTimeout."
+				} else {
+					timeoutErrorMsg = fmt.Sprintf(errors.TimeoutErrorMessage, strconv.Itoa(retryTimes+1), strconv.Itoa(retryTimes+1)) + " Connect timeout. Please set a valid ConnectTimeout."
+				}
 				err = errors.NewClientError(errors.TimeoutErrorCode, timeoutErrorMsg, err)
 				return
 			}
 		}
 		//  if status code >= 500 or timeout, will trigger retry
 		if client.config.AutoRetry && (err != nil || isServerError(httpResponse)) {
+			client.setTimeout(request)
 			// rewrite signatureNonce and signature
 			httpRequest, err = client.buildRequestWithSigner(request, signer)
 			// buildHttpRequest(request, finalSigner, regionId)
@@ -316,6 +393,7 @@ func (client *Client) DoActionWithSigner(request requests.AcsRequest, response r
 		}
 		break
 	}
+
 	err = responses.Unmarshal(response, httpResponse, request.GetAcceptFormat())
 	// wrap server errors
 	if serverErr, ok := err.(*errors.ServerError); ok {

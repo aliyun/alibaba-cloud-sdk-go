@@ -175,17 +175,38 @@ func Test_DoAction_Timeout(t *testing.T) {
 	request.QueryParams["PageSize"] = "30"
 	request.TransToAcsRequest()
 	response := responses.NewCommonResponse()
-	origTestHookDo := hookDo
-	defer func() { hookDo = origTestHookDo }()
-	hookDo = func(fn func(req *http.Request) (*http.Response, error)) func(req *http.Request) (*http.Response, error) {
-		return func(req *http.Request) (*http.Response, error) {
-			return mockResponse(200, "")
-		}
-	}
 	err = client.DoAction(request, response)
-	assert.Nil(t, err)
-	assert.Equal(t, 200, response.GetHttpStatus())
-	assert.Equal(t, "", response.GetHttpContentString())
+	assert.NotNil(t, err)
+	assert.Contains(t, err.Error(), "Specified access key is not found.")
+
+	client.SetReadTimeout(1 * time.Millisecond)
+	assert.Equal(t, 1*time.Millisecond, client.GetReadTimeout())
+	err = client.DoAction(request, response)
+	assert.NotNil(t, err)
+	assert.Contains(t, err.Error(), "Read timeout. Please set a valid ReadTimeout.")
+
+	client.SetConnectTimeout(1 * time.Millisecond)
+	assert.Equal(t, 1*time.Millisecond, client.GetConnectTimeout())
+	err = client.DoAction(request, response)
+	assert.NotNil(t, err)
+	assert.Contains(t, err.Error(), "Connect timeout. Please set a valid ConnectTimeout.")
+
+	client.SetReadTimeout(10 * time.Second)
+	client.SetConnectTimeout(10 * time.Second)
+	err = client.DoAction(request, response)
+	assert.NotNil(t, err)
+	assert.Contains(t, err.Error(), "Specified access key is not found.")
+
+	request.SetReadTimeout(1 * time.Millisecond)
+	err = client.DoAction(request, response)
+	assert.NotNil(t, err)
+	assert.Contains(t, err.Error(), "Read timeout. Please set a valid ReadTimeout.")
+
+	request.SetConnectTimeout(1 * time.Millisecond)
+	err = client.DoAction(request, response)
+	assert.NotNil(t, err)
+	assert.Contains(t, err.Error(), "Connect timeout. Please set a valid ConnectTimeout.")
+
 	client.Shutdown()
 	assert.Equal(t, false, client.isRunning)
 }

@@ -20,6 +20,7 @@ import (
 	"reflect"
 	"strconv"
 	"strings"
+	"time"
 
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/errors"
 )
@@ -72,6 +73,10 @@ type AcsRequest interface {
 	GetAcceptFormat() string
 	GetLocationServiceCode() string
 	GetLocationEndpointType() string
+	GetReadTimeout() time.Duration
+	GetConnectTimeout() time.Duration
+	SetReadTimeout(readTimeout time.Duration)
+	SetConnectTimeout(connectTimeout time.Duration)
 
 	GetUserAgent() map[string]string
 
@@ -92,11 +97,13 @@ type AcsRequest interface {
 
 // base class
 type baseRequest struct {
-	Scheme   string
-	Method   string
-	Domain   string
-	Port     string
-	RegionId string
+	Scheme         string
+	Method         string
+	Domain         string
+	Port           string
+	RegionId       string
+	ReadTimeout    time.Duration
+	ConnectTimeout time.Duration
 
 	userAgent map[string]string
 	product   string
@@ -125,6 +132,22 @@ func (request *baseRequest) GetQueryParams() map[string]string {
 
 func (request *baseRequest) GetFormParams() map[string]string {
 	return request.FormParams
+}
+
+func (request *baseRequest) GetReadTimeout() time.Duration {
+	return request.ReadTimeout
+}
+
+func (request *baseRequest) GetConnectTimeout() time.Duration {
+	return request.ConnectTimeout
+}
+
+func (request *baseRequest) SetReadTimeout(readTimeout time.Duration) {
+	request.ReadTimeout = readTimeout
+}
+
+func (request *baseRequest) SetConnectTimeout(connectTimeout time.Duration) {
+	request.ConnectTimeout = connectTimeout
 }
 
 func (request *baseRequest) GetContent() []byte {

@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"io"
 	"testing"
+	"time"
 
 	"github.com/stretchr/testify/assert"
 )
@@ -85,12 +86,25 @@ func Test_AcsRequest(t *testing.T) {
 	r.SetScheme("HTTPS")
 	assert.Equal(t, "HTTPS", r.GetScheme())
 
+	// GetReadTimeout
+	assert.Equal(t, 0*time.Second, r.GetReadTimeout())
+	r.SetReadTimeout(5 * time.Second)
+	assert.Equal(t, 5*time.Second, r.GetReadTimeout())
+
+	// GetConnectTimeout
+	assert.Equal(t, 0*time.Second, r.GetConnectTimeout())
+	r.SetConnectTimeout(5 * time.Second)
+	assert.Equal(t, 5*time.Second, r.GetConnectTimeout())
+
 	// GetPort
 	assert.Equal(t, "", r.GetPort())
 
 	// GetUserAgent
 	r.AppendUserAgent("cli", "1.01")
 	assert.Equal(t, "1.01", r.GetUserAgent()["cli"])
+	// GetUserAgent
+	r.AppendUserAgent("cli", "2.02")
+	assert.Equal(t, "2.02", r.GetUserAgent()["cli"])
 	// Content
 	assert.Equal(t, []byte(nil), r.GetContent())
 	r.SetContent([]byte("The Content"))
@@ -100,11 +114,11 @@ func Test_AcsRequest(t *testing.T) {
 type AcsRequestTest struct {
 	*baseRequest
 	Ontology AcsRequest
-	Query    string      `position:"Query" name:"Query"`
-	Header   string      `position:"Header" name:"Header"`
-	Path     string      `position:"Path" name:"Path"`
-	Body     string      `position:"Body" name:"Body"`
-	TypeAcs  *[]string   `position:"type" name:"type" type:"Repeated"`
+	Query    string    `position:"Query" name:"Query"`
+	Header   string    `position:"Header" name:"Header"`
+	Path     string    `position:"Path" name:"Path"`
+	Body     string    `position:"Body" name:"Body"`
+	TypeAcs  *[]string `position:"type" name:"type" type:"Repeated"`
 }
 
 func (r AcsRequestTest) BuildQueries() string {
