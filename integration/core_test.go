@@ -3,6 +3,7 @@ package integration
 import (
 	"os"
 	"testing"
+	"time"
 
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk"
 
@@ -136,6 +137,28 @@ func Test_DescribeClusterDetailWithCommonRequestWithROAWithHTTPS(t *testing.T) {
 	_, err = client.ProcessCommonRequest(request)
 	assert.NotNil(t, err)
 	assert.Contains(t, err.Error(), "Request url is invalid")
+}
+
+func Test_DescribeClusterDetailWithCommonRequestWithTimeout(t *testing.T) {
+	client, err := sdk.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
+	assert.Nil(t, err)
+	request := requests.NewCommonRequest()
+	request.Domain = "cs.aliyuncs.com"
+	request.Version = "2015-12-15"
+	request.SetScheme("HTTPS")
+	request.PathPattern = "/clusters/[ClusterId]"
+	request.QueryParams["RegionId"] = os.Getenv("REGION_ID")
+	request.ReadTimeout = 1 * time.Millisecond
+	request.ConnectTimeout = 1 * time.Millisecond
+	request.TransToAcsRequest()
+	_, err = client.ProcessCommonRequest(request)
+	assert.NotNil(t, err)
+	assert.Contains(t, err.Error(), "Connect timeout. Please set a valid ConnectTimeout.")
+
+	request.ConnectTimeout = 1 * time.Second
+	_, err = client.ProcessCommonRequest(request)
+	assert.NotNil(t, err)
+	assert.Contains(t, err.Error(), "Read timeout. Please set a valid ReadTimeout.")
 }
 
 func Test_CreateInstanceWithCommonRequestWithPolicy(t *testing.T) {
