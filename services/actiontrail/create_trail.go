@@ -104,7 +104,7 @@ func CreateCreateTrailRequest() (request *CreateTrailRequest) {
 	request = &CreateTrailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Actiontrail", "2017-12-04", "CreateTrail", "", "")
+	request.InitWithApiInfo("Actiontrail", "2017-12-04", "CreateTrail", "actiontrail", "openAPI")
 	return
 }
 

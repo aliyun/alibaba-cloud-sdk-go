@@ -107,7 +107,7 @@ func CreateLookupEventsRequest() (request *LookupEventsRequest) {
 	request = &LookupEventsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Actiontrail", "2017-12-04", "LookupEvents", "", "")
+	request.InitWithApiInfo("Actiontrail", "2017-12-04", "LookupEvents", "actiontrail", "openAPI")
 	return
 }
 

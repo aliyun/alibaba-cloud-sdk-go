@@ -1,3 +1,6 @@
+2019-03-07 Version: 1.53.17
+1, Fix go api miss service_code problem
+
 2019-03-07 Version: 1.53.16
 1, Change service code to acr
 

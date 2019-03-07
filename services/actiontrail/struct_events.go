@@ -17,5 +17,5 @@ package actiontrail
 
 // Events is a nested struct in actiontrail response
 type Events struct {
-	Events []string `json:"Events" xml:"Events"`
+	Events []map[string]interface{} `json:"Events" xml:"Events"`
 }
