@@ -1,3 +1,6 @@
+2019-03-07 Version: 1.53.15
+1, Publish instance describe and release apis.
+
 2019-03-06 Version: 1.53.14
 1, Release ActionTrail Go API.
 
