@@ -90,7 +90,7 @@ func CreateGetNamespaceListRequest() (request *GetNamespaceListRequest) {
 	request = &GetNamespaceListRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("cr", "2016-06-07", "GetNamespaceList", "/namespace", "cr", "openAPI")
+	request.InitWithApiInfo("cr", "2016-06-07", "GetNamespaceList", "/namespace", "acr", "openAPI")
 	request.Method = requests.GET
 	return
 }

@@ -88,7 +88,7 @@ func CreateCreateRepoRequest() (request *CreateRepoRequest) {
 	request = &CreateRepoRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("cr", "2016-06-07", "CreateRepo", "/repos", "cr", "openAPI")
+	request.InitWithApiInfo("cr", "2016-06-07", "CreateRepo", "/repos", "acr", "openAPI")
 	request.Method = requests.PUT
 	return
 }

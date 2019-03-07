@@ -90,7 +90,7 @@ func CreateUpdateRepoSourceRepoRequest() (request *UpdateRepoSourceRepoRequest) 
 	request = &UpdateRepoSourceRepoRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("cr", "2016-06-07", "UpdateRepoSourceRepo", "/repos/[RepoNamespace]/[RepoName]/sourceRepo", "cr", "openAPI")
+	request.InitWithApiInfo("cr", "2016-06-07", "UpdateRepoSourceRepo", "/repos/[RepoNamespace]/[RepoName]/sourceRepo", "acr", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -90,7 +90,7 @@ func CreateStartRepoBuildRequest() (request *StartRepoBuildRequest) {
 	request = &StartRepoBuildRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("cr", "2016-06-07", "StartRepoBuild", "/repos/[RepoNamespace]/[RepoName]/build", "cr", "openAPI")
+	request.InitWithApiInfo("cr", "2016-06-07", "StartRepoBuild", "/repos/[RepoNamespace]/[RepoName]/build", "acr", "openAPI")
 	request.Method = requests.PUT
 	return
 }

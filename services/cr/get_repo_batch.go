@@ -89,7 +89,7 @@ func CreateGetRepoBatchRequest() (request *GetRepoBatchRequest) {
 	request = &GetRepoBatchRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("cr", "2016-06-07", "GetRepoBatch", "/batchsearch", "cr", "openAPI")
+	request.InitWithApiInfo("cr", "2016-06-07", "GetRepoBatch", "/batchsearch", "acr", "openAPI")
 	request.Method = requests.GET
 	return
 }

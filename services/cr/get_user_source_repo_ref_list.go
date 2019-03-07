@@ -91,7 +91,7 @@ func CreateGetUserSourceRepoRefListRequest() (request *GetUserSourceRepoRefListR
 	request = &GetUserSourceRepoRefListRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("cr", "2016-06-07", "GetUserSourceRepoRefList", "/users/sourceAccount/[SourceAccountId]/repos/[SourceRepoNamespace]/[SourceRepoName]/refs", "cr", "openAPI")
+	request.InitWithApiInfo("cr", "2016-06-07", "GetUserSourceRepoRefList", "/users/sourceAccount/[SourceAccountId]/repos/[SourceRepoNamespace]/[SourceRepoName]/refs", "acr", "openAPI")
 	request.Method = requests.GET
 	return
 }

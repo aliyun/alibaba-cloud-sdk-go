@@ -91,7 +91,7 @@ func CreateUpdateRepoWebhookRequest() (request *UpdateRepoWebhookRequest) {
 	request = &UpdateRepoWebhookRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("cr", "2016-06-07", "UpdateRepoWebhook", "/repos/[RepoNamespace]/[RepoName]/webhooks/[WebhookId]", "cr", "openAPI")
+	request.InitWithApiInfo("cr", "2016-06-07", "UpdateRepoWebhook", "/repos/[RepoNamespace]/[RepoName]/webhooks/[WebhookId]", "acr", "openAPI")
 	request.Method = requests.POST
 	return
 }

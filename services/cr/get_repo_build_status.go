@@ -91,7 +91,7 @@ func CreateGetRepoBuildStatusRequest() (request *GetRepoBuildStatusRequest) {
 	request = &GetRepoBuildStatusRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("cr", "2016-06-07", "GetRepoBuildStatus", "/repos/[RepoNamespace]/[RepoName]/build/[BuildId]/status", "cr", "openAPI")
+	request.InitWithApiInfo("cr", "2016-06-07", "GetRepoBuildStatus", "/repos/[RepoNamespace]/[RepoName]/build/[BuildId]/status", "acr", "openAPI")
 	request.Method = requests.GET
 	return
 }

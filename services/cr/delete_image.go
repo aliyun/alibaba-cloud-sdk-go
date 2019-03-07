@@ -91,7 +91,7 @@ func CreateDeleteImageRequest() (request *DeleteImageRequest) {
 	request = &DeleteImageRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("cr", "2016-06-07", "DeleteImage", "/repos/[RepoNamespace]/[RepoName]/tags/[Tag]", "cr", "openAPI")
+	request.InitWithApiInfo("cr", "2016-06-07", "DeleteImage", "/repos/[RepoNamespace]/[RepoName]/tags/[Tag]", "acr", "openAPI")
 	request.Method = requests.DELETE
 	return
 }

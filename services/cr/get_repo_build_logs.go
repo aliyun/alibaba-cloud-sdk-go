@@ -91,7 +91,7 @@ func CreateGetRepoBuildLogsRequest() (request *GetRepoBuildLogsRequest) {
 	request = &GetRepoBuildLogsRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("cr", "2016-06-07", "GetRepoBuildLogs", "/repos/[RepoNamespace]/[RepoName]/build/[BuildId]/logs", "cr", "openAPI")
+	request.InitWithApiInfo("cr", "2016-06-07", "GetRepoBuildLogs", "/repos/[RepoNamespace]/[RepoName]/build/[BuildId]/logs", "acr", "openAPI")
 	request.Method = requests.GET
 	return
 }

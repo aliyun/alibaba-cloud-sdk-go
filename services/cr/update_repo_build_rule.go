@@ -91,7 +91,7 @@ func CreateUpdateRepoBuildRuleRequest() (request *UpdateRepoBuildRuleRequest) {
 	request = &UpdateRepoBuildRuleRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("cr", "2016-06-07", "UpdateRepoBuildRule", "/repos/[RepoNamespace]/[RepoName]/rules/[BuildRuleId]", "cr", "openAPI")
+	request.InitWithApiInfo("cr", "2016-06-07", "UpdateRepoBuildRule", "/repos/[RepoNamespace]/[RepoName]/rules/[BuildRuleId]", "acr", "openAPI")
 	request.Method = requests.POST
 	return
 }

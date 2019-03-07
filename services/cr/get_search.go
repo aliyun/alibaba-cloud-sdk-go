@@ -92,7 +92,7 @@ func CreateGetSearchRequest() (request *GetSearchRequest) {
 	request = &GetSearchRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("cr", "2016-06-07", "GetSearch", "/search-delete", "cr", "openAPI")
+	request.InitWithApiInfo("cr", "2016-06-07", "GetSearch", "/search-delete", "acr", "openAPI")
 	request.Method = requests.GET
 	return
 }

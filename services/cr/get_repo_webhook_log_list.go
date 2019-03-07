@@ -91,7 +91,7 @@ func CreateGetRepoWebhookLogListRequest() (request *GetRepoWebhookLogListRequest
 	request = &GetRepoWebhookLogListRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("cr", "2016-06-07", "GetRepoWebhookLogList", "/repos/[RepoNamespace]/[RepoName]/webhooks/[WebhookId]/logs", "cr", "openAPI")
+	request.InitWithApiInfo("cr", "2016-06-07", "GetRepoWebhookLogList", "/repos/[RepoNamespace]/[RepoName]/webhooks/[WebhookId]/logs", "acr", "openAPI")
 	request.Method = requests.GET
 	return
 }

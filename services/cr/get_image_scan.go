@@ -91,7 +91,7 @@ func CreateGetImageScanRequest() (request *GetImageScanRequest) {
 	request = &GetImageScanRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("cr", "2016-06-07", "GetImageScan", "/repos/[RepoNamespace]/[RepoName]/tags/[Tag]/scan", "cr", "openAPI")
+	request.InitWithApiInfo("cr", "2016-06-07", "GetImageScan", "/repos/[RepoNamespace]/[RepoName]/tags/[Tag]/scan", "acr", "openAPI")
 	request.Method = requests.GET
 	return
 }

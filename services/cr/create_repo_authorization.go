@@ -90,7 +90,7 @@ func CreateCreateRepoAuthorizationRequest() (request *CreateRepoAuthorizationReq
 	request = &CreateRepoAuthorizationRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("cr", "2016-06-07", "CreateRepoAuthorization", "/repos/[RepoNamespace]/[RepoName]/authorizations", "cr", "openAPI")
+	request.InitWithApiInfo("cr", "2016-06-07", "CreateRepoAuthorization", "/repos/[RepoNamespace]/[RepoName]/authorizations", "acr", "openAPI")
 	request.Method = requests.PUT
 	return
 }

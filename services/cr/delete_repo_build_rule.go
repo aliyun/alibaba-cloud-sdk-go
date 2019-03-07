@@ -91,7 +91,7 @@ func CreateDeleteRepoBuildRuleRequest() (request *DeleteRepoBuildRuleRequest) {
 	request = &DeleteRepoBuildRuleRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("cr", "2016-06-07", "DeleteRepoBuildRule", "/repos/[RepoNamespace]/[RepoName]/rules/[BuildRuleId]", "cr", "openAPI")
+	request.InitWithApiInfo("cr", "2016-06-07", "DeleteRepoBuildRule", "/repos/[RepoNamespace]/[RepoName]/rules/[BuildRuleId]", "acr", "openAPI")
 	request.Method = requests.DELETE
 	return
 }
