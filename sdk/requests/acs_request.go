@@ -315,12 +315,16 @@ func flatRepeatedList(dataValue reflect.Value, request AcsRequest, position, pre
 }
 
 func addParam(request AcsRequest, position, name, value string) (err error) {
+	if position == Query {
+		if value != "" || (strings.Contains(name, "Tag") && strings.Contains(name, "Value")){
+			request.addQueryParam(name, value)
+		}
+		return
+	}
 	if len(value) > 0 {
 		switch position {
 		case Header:
 			request.addHeaderParam(name, value)
-		case Query:
-			request.addQueryParam(name, value)
 		case Path:
 			request.addPathParam(name, value)
 		case Body:

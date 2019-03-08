@@ -275,3 +275,22 @@ func Test_QueryAvaliableInstances(t *testing.T) {
 	assert.True(t, response.IsSuccess())
 	assert.Equal(t, 36, len(response.RequestId))
 }
+
+func Test_TagResources(t *testing.T) {
+	client, err := ecs.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
+	assert.Nil(t, err)
+
+	request := ecs.CreateTagResourcesRequest()
+	request.ResourceId = &[]string{"i-bp16rdks1akg7tz321d3"}
+	request.ResourceType = "instance"
+	request.Tag = &[]ecs.TagResourcesTag{
+		{
+			Key: "foo",
+			Value: "",
+		},
+	}
+	resp, err := client.TagResources(request)
+	assert.NotNil(t, err)
+	assert.Equal(t, 404, resp.GetHttpStatus())
+	assert.Contains(t, resp.GetHttpContentString(), "The specified ResourceIds are not found in our records")
+}
