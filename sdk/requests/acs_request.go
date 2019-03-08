@@ -317,7 +317,7 @@ func flatRepeatedList(dataValue reflect.Value, request AcsRequest, position, pre
 					for m := 0; m < repeatedFieldValue.Len(); m++ {
 						elementValue := repeatedFieldValue.Index(m)
 						key := prefix + name + "." + strconv.Itoa(m+1)
-						if elementValue.Type().String() == "string" {
+						if elementValue.Type().Kind().String() == "string" {
 							value := elementValue.String()
 							err = addParam(request, fieldPosition, key, value)
 							if err != nil {

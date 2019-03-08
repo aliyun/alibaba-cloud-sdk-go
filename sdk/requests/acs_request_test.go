@@ -2,6 +2,7 @@ package requests
 
 import (
 	"bytes"
+	"fmt"
 	"io"
 	"testing"
 	"time"
@@ -159,4 +160,41 @@ func Test_AcsRequest_InitParams(t *testing.T) {
 	headers := r.GetHeaders()
 	assert.Equal(t, "header value", headers["Header"])
 	// TODO: check the body & path
+}
+
+type StartMPUTaskRequest struct {
+	*RpcRequest
+	OwnerId         Integer   `position:"Query" name:"OwnerId"`
+	AppId           string    `position:"Query" name:"AppId"`
+	ChannelId       string    `position:"Query" name:"ChannelId"`
+	TaskId          string    `position:"Query" name:"TaskId"`
+	MediaEncode     Integer   `position:"Query" name:"MediaEncode"`
+	BackgroundColor Integer   `position:"Query" name:"BackgroundColor"`
+	LayoutIds       []Integer `position:"Query" name:"LayoutIds" type:"Repeated"`
+	StreamURL       string    `position:"Query" name:"StreamURL"`
+}
+
+func Test_RPCRequest_InitParams(t *testing.T) {
+	channelID := "id"
+	r := &StartMPUTaskRequest{
+		RpcRequest: &RpcRequest{},
+	}
+	r.init()
+	r.Domain = "rtc.aliyuncs.com"
+	r.AppId = "app ID"
+	r.ChannelId = channelID
+	r.TaskId = channelID
+	r.MediaEncode = NewInteger(2)
+	r.BackgroundColor = NewInteger(0)
+	r.StreamURL = fmt.Sprintf("rtmp://video-center.alivecdn.com/galaxy/%s_%s?vhost=fast-live.chinalivestream.top", channelID, channelID)
+	var out []Integer
+	out = append(out, NewInteger(2))
+	r.LayoutIds = out
+
+	InitParams(r)
+
+	queries := r.GetQueryParams()
+
+	assert.Equal(t, "2", queries["LayoutIds.1"])
+	assert.Len(t, queries, 7)
 }
