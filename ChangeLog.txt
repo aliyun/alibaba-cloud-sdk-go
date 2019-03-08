@@ -1,3 +1,8 @@
+2019-03-08 Version: 1.53.18
+1, This is an example of release-log.
+2, Please strictly follow this format to edit in English.
+3, Format：Number + , + Space + Description
+
 2019-03-07 Version: 1.53.17
 1, Fix go api miss service_code problem
 
