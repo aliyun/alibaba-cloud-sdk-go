@@ -1,3 +1,8 @@
+2019-03-11 Version: 1.53.21
+1, Add face grouping feature .
+2, Add head pose and face quality.
+
+
 2019-03-11 Version: 1.53.20
 1, Update aliyun-java-sdk-core version.
 

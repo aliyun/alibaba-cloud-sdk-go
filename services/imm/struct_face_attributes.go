@@ -26,4 +26,5 @@ type FaceAttributes struct {
 	Race              string       `json:"Race" xml:"Race"`
 	BeardConfidence   float64      `json:"BeardConfidence" xml:"BeardConfidence"`
 	FaceBoundary      FaceBoundary `json:"FaceBoundary" xml:"FaceBoundary"`
+	HeadPose          HeadPose     `json:"HeadPose" xml:"HeadPose"`
 }

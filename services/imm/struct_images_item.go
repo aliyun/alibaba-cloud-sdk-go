@@ -61,8 +61,8 @@ type ImagesItem struct {
 	SourceUri           string          `json:"SourceUri" xml:"SourceUri"`
 	ImageWidth          int             `json:"ImageWidth" xml:"ImageWidth"`
 	Axis                []string        `json:"Axis" xml:"Axis"`
-	Faces               []FacesItem     `json:"Faces" xml:"Faces"`
 	OCR                 []OCRItem       `json:"OCR" xml:"OCR"`
+	Faces               []FacesItem     `json:"Faces" xml:"Faces"`
 	Celebrity           []CelebrityItem `json:"Celebrity" xml:"Celebrity"`
 	Tags                []TagsItem      `json:"Tags" xml:"Tags"`
 }

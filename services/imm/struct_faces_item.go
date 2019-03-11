@@ -21,6 +21,7 @@ type FacesItem struct {
 	EmotionConfidence    float64        `json:"EmotionConfidence" xml:"EmotionConfidence"`
 	ImageUri             string         `json:"ImageUri" xml:"ImageUri"`
 	Similarity           float64        `json:"Similarity" xml:"Similarity"`
+	FaceQuality          float64        `json:"FaceQuality" xml:"FaceQuality"`
 	Attractive           float64        `json:"Attractive" xml:"Attractive"`
 	AttractiveConfidence float64        `json:"AttractiveConfidence" xml:"AttractiveConfidence"`
 	Age                  int            `json:"Age" xml:"Age"`
@@ -29,6 +30,7 @@ type FacesItem struct {
 	GenderConfidence     float64        `json:"GenderConfidence" xml:"GenderConfidence"`
 	Emotion              string         `json:"Emotion" xml:"Emotion"`
 	FaceId               string         `json:"FaceId" xml:"FaceId"`
+	GroupId              string         `json:"GroupId" xml:"GroupId"`
 	FaceAttributes       FaceAttributes `json:"FaceAttributes" xml:"FaceAttributes"`
 	EmotionDetails       EmotionDetails `json:"EmotionDetails" xml:"EmotionDetails"`
 }

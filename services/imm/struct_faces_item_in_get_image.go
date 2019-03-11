@@ -24,6 +24,8 @@ type FacesItemInGetImage struct {
 	Emotion          string         `json:"Emotion" xml:"Emotion"`
 	Attractive       float64        `json:"Attractive" xml:"Attractive"`
 	GenderConfidence float64        `json:"GenderConfidence" xml:"GenderConfidence"`
+	GroupId          string         `json:"GroupId" xml:"GroupId"`
+	FaceQuality      float64        `json:"FaceQuality" xml:"FaceQuality"`
 	FaceAttributes   FaceAttributes `json:"FaceAttributes" xml:"FaceAttributes"`
 	EmotionDetails   EmotionDetails `json:"EmotionDetails" xml:"EmotionDetails"`
 }
