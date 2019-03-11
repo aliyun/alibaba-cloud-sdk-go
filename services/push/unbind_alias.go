@@ -76,9 +76,9 @@ func (client *Client) UnbindAliasWithCallback(request *UnbindAliasRequest, callb
 // UnbindAliasRequest is the request struct for api UnbindAlias
 type UnbindAliasRequest struct {
 	*requests.RpcRequest
+	AliasName string           `position:"Query" name:"AliasName"`
 	AppKey    requests.Integer `position:"Query" name:"AppKey"`
 	DeviceId  string           `position:"Query" name:"DeviceId"`
-	AliasName string           `position:"Query" name:"AliasName"`
 	UnbindAll requests.Boolean `position:"Query" name:"UnbindAll"`
 }
 

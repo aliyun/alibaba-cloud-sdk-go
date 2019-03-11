@@ -1,3 +1,6 @@
+2019-03-11 Version: 1.53.20
+1, Update aliyun-java-sdk-core version.
+
 2019-03-08 Version: 1.53.19
 1, Publish instance spec describe api.
 
