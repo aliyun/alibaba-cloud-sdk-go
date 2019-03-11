@@ -1,3 +1,7 @@
+2019-03-11 Version: 1.53.22
+1,  add agency infomation
+2,  update sdk core resources
+
 2019-03-11 Version: 1.53.21
 1, Add face grouping feature .
 2, Add head pose and face quality.
