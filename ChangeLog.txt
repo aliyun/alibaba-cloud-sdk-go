@@ -1,3 +1,8 @@
+2019-03-12 Version: 1.53.24
+1, Add Vpc openapi interface，Support for new fields.
+2, Support for ipv6 gateway openapi.
+3, Fixed some problems of the vpc openapi.
+
 2019-03-12 Version: 1.53.23
 1,  add agency infomation
 2,  update sdk core resources
