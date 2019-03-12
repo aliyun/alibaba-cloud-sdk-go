@@ -88,6 +88,7 @@ type CreateScalingConfigurationRequest struct {
 	SpotPriceLimit              *[]CreateScalingConfigurationSpotPriceLimit `position:"Query" name:"SpotPriceLimit"  type:"Repeated"`
 	SystemDiskCategory          string                                      `position:"Query" name:"SystemDisk.Category"`
 	UserData                    string                                      `position:"Query" name:"UserData"`
+	ResourceGroupId             string                                      `position:"Query" name:"ResourceGroupId"`
 	HostName                    string                                      `position:"Query" name:"HostName"`
 	Password                    string                                      `position:"Query" name:"Password"`
 	PasswordInherit             requests.Boolean                            `position:"Query" name:"PasswordInherit"`

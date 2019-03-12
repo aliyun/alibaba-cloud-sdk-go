@@ -98,7 +98,7 @@ func CreateDescribeDcdnDomainIspDataRequest() (request *DescribeDcdnDomainIspDat
 	request = &DescribeDcdnDomainIspDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dcdn", "2018-01-15", "DescribeDcdnDomainIspData", "dcdn", "openAPI")
+	request.InitWithApiInfo("dcdn", "2018-01-15", "DescribeDcdnDomainIspData", "", "")
 	return
 }
 

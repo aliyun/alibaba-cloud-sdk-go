@@ -19,4 +19,5 @@ package cdn
 type Configs struct {
 	OssLogConfig       OssLogConfig       `json:"OssLogConfig" xml:"OssLogConfig"`
 	GreenManagerConfig GreenManagerConfig `json:"GreenManagerConfig" xml:"GreenManagerConfig"`
+	WafConfig          WafConfig          `json:"WafConfig" xml:"WafConfig"`
 }

@@ -76,11 +76,12 @@ func (client *Client) FindSimilarFacesWithCallback(request *FindSimilarFacesRequ
 // FindSimilarFacesRequest is the request struct for api FindSimilarFaces
 type FindSimilarFacesRequest struct {
 	*requests.RpcRequest
-	ImageUri string           `position:"Query" name:"ImageUri"`
-	Limit    requests.Integer `position:"Query" name:"Limit"`
-	Project  string           `position:"Query" name:"Project"`
-	SetId    string           `position:"Query" name:"SetId"`
-	FaceId   string           `position:"Query" name:"FaceId"`
+	ImageUri      string           `position:"Query" name:"ImageUri"`
+	MinSimilarity requests.Float   `position:"Query" name:"MinSimilarity"`
+	Limit         requests.Integer `position:"Query" name:"Limit"`
+	Project       string           `position:"Query" name:"Project"`
+	SetId         string           `position:"Query" name:"SetId"`
+	FaceId        string           `position:"Query" name:"FaceId"`
 }
 
 // FindSimilarFacesResponse is the response struct for api FindSimilarFaces

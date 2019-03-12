@@ -43,6 +43,7 @@ type DataModule struct {
 	DynamicHttpBps                   float64                          `json:"DynamicHttpBps" xml:"DynamicHttpBps"`
 	StaticHttpOriginTraffic          float64                          `json:"StaticHttpOriginTraffic" xml:"StaticHttpOriginTraffic"`
 	StaticHttpOriginBps              float64                          `json:"StaticHttpOriginBps" xml:"StaticHttpOriginBps"`
+	Value                            string                           `json:"Value" xml:"Value"`
 	Qps                              float64                          `json:"Qps" xml:"Qps"`
 	DynamicHttpsTraffic              float64                          `json:"DynamicHttpsTraffic" xml:"DynamicHttpsTraffic"`
 	StaticHttpsQps                   float64                          `json:"StaticHttpsQps" xml:"StaticHttpsQps"`

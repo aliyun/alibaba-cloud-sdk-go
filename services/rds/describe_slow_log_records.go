@@ -76,7 +76,6 @@ func (client *Client) DescribeSlowLogRecordsWithCallback(request *DescribeSlowLo
 // DescribeSlowLogRecordsRequest is the request struct for api DescribeSlowLogRecords
 type DescribeSlowLogRecordsRequest struct {
 	*requests.RpcRequest
-	SQLId                requests.Integer `position:"Query" name:"SQLId"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`

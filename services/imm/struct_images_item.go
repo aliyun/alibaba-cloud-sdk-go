@@ -40,11 +40,13 @@ type ImagesItem struct {
 	TagsStatus          string          `json:"TagsStatus" xml:"TagsStatus"`
 	FacesModifyTime     string          `json:"FacesModifyTime" xml:"FacesModifyTime"`
 	CelebrityModifyTime string          `json:"CelebrityModifyTime" xml:"CelebrityModifyTime"`
+	RemarksD            string          `json:"RemarksD" xml:"RemarksD"`
 	TagsFailReason      string          `json:"TagsFailReason" xml:"TagsFailReason"`
 	CelebrityStatus     string          `json:"CelebrityStatus" xml:"CelebrityStatus"`
 	OCRStatus           string          `json:"OCRStatus" xml:"OCRStatus"`
 	Pitch               float64         `json:"Pitch" xml:"Pitch"`
 	ImageUri            string          `json:"ImageUri" xml:"ImageUri"`
+	ExternalId          string          `json:"ExternalId" xml:"ExternalId"`
 	ImageTime           string          `json:"ImageTime" xml:"ImageTime"`
 	Location            string          `json:"Location" xml:"Location"`
 	TagsModifyTime      string          `json:"TagsModifyTime" xml:"TagsModifyTime"`
@@ -55,11 +57,12 @@ type ImagesItem struct {
 	OCRFailReason       string          `json:"OCRFailReason" xml:"OCRFailReason"`
 	Roll                float64         `json:"Roll" xml:"Roll"`
 	Glasses             int             `json:"Glasses" xml:"Glasses"`
+	RemarksC            string          `json:"RemarksC" xml:"RemarksC"`
 	SourceUri           string          `json:"SourceUri" xml:"SourceUri"`
 	ImageWidth          int             `json:"ImageWidth" xml:"ImageWidth"`
 	Axis                []string        `json:"Axis" xml:"Axis"`
-	Faces               []FacesItem     `json:"Faces" xml:"Faces"`
 	OCR                 []OCRItem       `json:"OCR" xml:"OCR"`
+	Faces               []FacesItem     `json:"Faces" xml:"Faces"`
 	Celebrity           []CelebrityItem `json:"Celebrity" xml:"Celebrity"`
 	Tags                []TagsItem      `json:"Tags" xml:"Tags"`
 }

@@ -83,6 +83,9 @@ func main() {
 
 在创建Client实例时，您需要填写3个参数：`Region ID`、`Access Key ID`和`Access Key Secret`。`Access Key ID`和`Access Key Secret`可以从控制台获得；而`Region ID`可以从[地域列表](https://help.aliyun.com/document_detail/40654.html?spm=5176.doc52740.2.8.FogWrd)中获得
 
+## Debug
+
+如果您发送的请求出错，您可以通过添加环境变量 `DEBUG=sdk` 来查看 HTTP 请求过程。
 
 ## Keepalive
 阿里云 Go SDK 底层使用 Go 语言原生的 `net/http` 收发请求，因此配置方式与 `net/http`相同，您可以通过 config 直接将配置传递给底层的 httpClient
@@ -182,6 +185,7 @@ func main() {
 
 	client, err := sdk.NewClientWithAccessKey("cn-hangzhou", os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
 	if err != nil {
+		// 异常处理
 		panic(err)
 	}
 
@@ -195,6 +199,7 @@ func main() {
 
 	response, err := client.ProcessCommonRequest(request)
 	if err != nil {
+		// 异常处理
 		panic(err)
 	}
 

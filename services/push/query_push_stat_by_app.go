@@ -76,10 +76,10 @@ func (client *Client) QueryPushStatByAppWithCallback(request *QueryPushStatByApp
 // QueryPushStatByAppRequest is the request struct for api QueryPushStatByApp
 type QueryPushStatByAppRequest struct {
 	*requests.RpcRequest
+	Granularity string           `position:"Query" name:"Granularity"`
+	EndTime     string           `position:"Query" name:"EndTime"`
 	AppKey      requests.Integer `position:"Query" name:"AppKey"`
 	StartTime   string           `position:"Query" name:"StartTime"`
-	EndTime     string           `position:"Query" name:"EndTime"`
-	Granularity string           `position:"Query" name:"Granularity"`
 }
 
 // QueryPushStatByAppResponse is the response struct for api QueryPushStatByApp

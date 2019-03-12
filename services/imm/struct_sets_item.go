@@ -26,6 +26,5 @@ type SetsItem struct {
 	Status      string `json:"Status" xml:"Status"`
 	FaceCount   int    `json:"FaceCount" xml:"FaceCount"`
 	VideoCount  int    `json:"VideoCount" xml:"VideoCount"`
-	Faces       int    `json:"Faces" xml:"Faces"`
 	ImageCount  int    `json:"ImageCount" xml:"ImageCount"`
 }

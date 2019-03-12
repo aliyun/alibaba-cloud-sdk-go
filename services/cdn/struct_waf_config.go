@@ -17,7 +17,5 @@ package cdn
 
 // WafConfig is a nested struct in cdn response
 type WafConfig struct {
-	ConfigId string `json:"ConfigId" xml:"ConfigId"`
-	Enable   string `json:"Enable" xml:"Enable"`
-	Status   string `json:"Status" xml:"Status"`
+	Enable string `json:"Enable" xml:"Enable"`
 }

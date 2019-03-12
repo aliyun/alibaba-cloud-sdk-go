@@ -76,25 +76,30 @@ func (client *Client) FindImagesWithCallback(request *FindImagesRequest, callbac
 // FindImagesRequest is the request struct for api FindImages
 type FindImagesRequest struct {
 	*requests.RpcRequest
-	Gender           string `position:"Query" name:"Gender"`
-	RemarksAPrefix   string `position:"Query" name:"RemarksAPrefix"`
-	Project          string `position:"Query" name:"Project"`
-	OrderBy          string `position:"Query" name:"OrderBy"`
-	ImageSizeRange   string `position:"Query" name:"ImageSizeRange"`
-	RemarksBPrefix   string `position:"Query" name:"RemarksBPrefix"`
-	TagNames         string `position:"Query" name:"TagNames"`
-	SourceUriPrefix  string `position:"Query" name:"SourceUriPrefix"`
-	LocationBoundary string `position:"Query" name:"LocationBoundary"`
-	Emotion          string `position:"Query" name:"Emotion"`
-	ImageTimeRange   string `position:"Query" name:"ImageTimeRange"`
-	Marker           string `position:"Query" name:"Marker"`
-	OCRContentsMatch string `position:"Query" name:"OCRContentsMatch"`
-	CreateTimeRange  string `position:"Query" name:"CreateTimeRange"`
-	SetId            string `position:"Query" name:"SetId"`
-	SourceType       string `position:"Query" name:"SourceType"`
-	UpdateTimeRange  string `position:"Query" name:"UpdateTimeRange"`
-	AgeRange         string `position:"Query" name:"AgeRange"`
-	Order            string `position:"Query" name:"Order"`
+	Gender           string           `position:"Query" name:"Gender"`
+	Project          string           `position:"Query" name:"Project"`
+	ExternalId       string           `position:"Query" name:"ExternalId"`
+	ImageSizeRange   string           `position:"Query" name:"ImageSizeRange"`
+	RemarksBPrefix   string           `position:"Query" name:"RemarksBPrefix"`
+	LocationBoundary string           `position:"Query" name:"LocationBoundary"`
+	ImageTimeRange   string           `position:"Query" name:"ImageTimeRange"`
+	OCRContentsMatch string           `position:"Query" name:"OCRContentsMatch"`
+	Limit            requests.Integer `position:"Query" name:"Limit"`
+	RemarksDPrefix   string           `position:"Query" name:"RemarksDPrefix"`
+	SourceType       string           `position:"Query" name:"SourceType"`
+	AgeRange         string           `position:"Query" name:"AgeRange"`
+	Order            string           `position:"Query" name:"Order"`
+	RemarksAPrefix   string           `position:"Query" name:"RemarksAPrefix"`
+	GroupId          string           `position:"Query" name:"GroupId"`
+	OrderBy          string           `position:"Query" name:"OrderBy"`
+	TagNames         string           `position:"Query" name:"TagNames"`
+	SourceUriPrefix  string           `position:"Query" name:"SourceUriPrefix"`
+	Emotion          string           `position:"Query" name:"Emotion"`
+	Marker           string           `position:"Query" name:"Marker"`
+	RemarksCPrefix   string           `position:"Query" name:"RemarksCPrefix"`
+	CreateTimeRange  string           `position:"Query" name:"CreateTimeRange"`
+	SetId            string           `position:"Query" name:"SetId"`
+	ModifyTimeRange  string           `position:"Query" name:"ModifyTimeRange"`
 }
 
 // FindImagesResponse is the response struct for api FindImages

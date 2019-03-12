@@ -45,6 +45,9 @@ type FramesItem struct {
 	CelebrityModifyTime string          `json:"CelebrityModifyTime" xml:"CelebrityModifyTime"`
 	CelebrityFailReason string          `json:"CelebrityFailReason" xml:"CelebrityFailReason"`
 	TagsStatus          string          `json:"TagsStatus" xml:"TagsStatus"`
+	RemarksC            string          `json:"RemarksC" xml:"RemarksC"`
+	RemarksD            string          `json:"RemarksD" xml:"RemarksD"`
+	ExternalId          string          `json:"ExternalId" xml:"ExternalId"`
 	Faces               []FacesItem     `json:"Faces" xml:"Faces"`
 	Tags                []TagsItem      `json:"Tags" xml:"Tags"`
 	OCR                 []OCRItem       `json:"OCR" xml:"OCR"`

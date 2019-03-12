@@ -76,10 +76,11 @@ func (client *Client) ListImagesWithCallback(request *ListImagesRequest, callbac
 // ListImagesRequest is the request struct for api ListImages
 type ListImagesRequest struct {
 	*requests.RpcRequest
-	Marker          string `position:"Query" name:"Marker"`
-	Project         string `position:"Query" name:"Project"`
-	SetId           string `position:"Query" name:"SetId"`
-	CreateTimeStart string `position:"Query" name:"CreateTimeStart"`
+	Marker          string           `position:"Query" name:"Marker"`
+	Limit           requests.Integer `position:"Query" name:"Limit"`
+	Project         string           `position:"Query" name:"Project"`
+	SetId           string           `position:"Query" name:"SetId"`
+	CreateTimeStart string           `position:"Query" name:"CreateTimeStart"`
 }
 
 // ListImagesResponse is the response struct for api ListImages

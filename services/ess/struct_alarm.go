@@ -17,19 +17,20 @@ package ess
 
 // Alarm is a nested struct in ess response
 type Alarm struct {
-	AlarmTaskId        string       `json:"AlarmTaskId" xml:"AlarmTaskId"`
 	Name               string       `json:"Name" xml:"Name"`
-	Description        string       `json:"Description" xml:"Description"`
 	MetricType         string       `json:"MetricType" xml:"MetricType"`
-	MetricName         string       `json:"MetricName" xml:"MetricName"`
 	Period             int          `json:"Period" xml:"Period"`
-	Statistics         string       `json:"Statistics" xml:"Statistics"`
-	ComparisonOperator string       `json:"ComparisonOperator" xml:"ComparisonOperator"`
 	Threshold          float64      `json:"Threshold" xml:"Threshold"`
-	EvaluationCount    int          `json:"EvaluationCount" xml:"EvaluationCount"`
+	AlarmTaskId        string       `json:"AlarmTaskId" xml:"AlarmTaskId"`
+	ComparisonOperator string       `json:"ComparisonOperator" xml:"ComparisonOperator"`
 	State              string       `json:"State" xml:"State"`
-	ScalingGroupId     string       `json:"ScalingGroupId" xml:"ScalingGroupId"`
 	Enable             bool         `json:"Enable" xml:"Enable"`
+	MetricName         string       `json:"MetricName" xml:"MetricName"`
+	Statistics         string       `json:"Statistics" xml:"Statistics"`
+	ScalingGroupId     string       `json:"ScalingGroupId" xml:"ScalingGroupId"`
+	Description        string       `json:"Description" xml:"Description"`
+	AlarmTaskName      string       `json:"AlarmTaskName" xml:"AlarmTaskName"`
+	EvaluationCount    int          `json:"EvaluationCount" xml:"EvaluationCount"`
 	AlarmActions       AlarmActions `json:"AlarmActions" xml:"AlarmActions"`
 	Dimensions         Dimensions   `json:"Dimensions" xml:"Dimensions"`
 }

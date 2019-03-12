@@ -17,7 +17,7 @@ package imm
 
 // HeadPose is a nested struct in imm response
 type HeadPose struct {
-	YawAngle   float64 `json:"YawAngle" xml:"YawAngle"`
-	RollAngle  float64 `json:"RollAngle" xml:"RollAngle"`
-	PitchAngle float64 `json:"PitchAngle" xml:"PitchAngle"`
+	Pitch float64 `json:"Pitch" xml:"Pitch"`
+	Roll  float64 `json:"Roll" xml:"Roll"`
+	Yaw   float64 `json:"Yaw" xml:"Yaw"`
 }

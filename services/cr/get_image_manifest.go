@@ -92,7 +92,7 @@ func CreateGetImageManifestRequest() (request *GetImageManifestRequest) {
 	request = &GetImageManifestRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("cr", "2016-06-07", "GetImageManifest", "/repos/[RepoNamespace]/[RepoName]/tags/[Tag]/manifest", "", "")
+	request.InitWithApiInfo("cr", "2016-06-07", "GetImageManifest", "/repos/[RepoNamespace]/[RepoName]/tags/[Tag]/manifest", "acr", "openAPI")
 	request.Method = requests.GET
 	return
 }

@@ -76,10 +76,10 @@ func (client *Client) UnbindTagWithCallback(request *UnbindTagRequest, callback 
 // UnbindTagRequest is the request struct for api UnbindTag
 type UnbindTagRequest struct {
 	*requests.RpcRequest
-	AppKey    requests.Integer `position:"Query" name:"AppKey"`
-	ClientKey string           `position:"Query" name:"ClientKey"`
-	KeyType   string           `position:"Query" name:"KeyType"`
 	TagName   string           `position:"Query" name:"TagName"`
+	ClientKey string           `position:"Query" name:"ClientKey"`
+	AppKey    requests.Integer `position:"Query" name:"AppKey"`
+	KeyType   string           `position:"Query" name:"KeyType"`
 }
 
 // UnbindTagResponse is the response struct for api UnbindTag

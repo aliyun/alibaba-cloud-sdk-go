@@ -76,10 +76,10 @@ func (client *Client) BindTagWithCallback(request *BindTagRequest, callback func
 // BindTagRequest is the request struct for api BindTag
 type BindTagRequest struct {
 	*requests.RpcRequest
-	AppKey    requests.Integer `position:"Query" name:"AppKey"`
-	ClientKey string           `position:"Query" name:"ClientKey"`
-	KeyType   string           `position:"Query" name:"KeyType"`
 	TagName   string           `position:"Query" name:"TagName"`
+	ClientKey string           `position:"Query" name:"ClientKey"`
+	AppKey    requests.Integer `position:"Query" name:"AppKey"`
+	KeyType   string           `position:"Query" name:"KeyType"`
 }
 
 // BindTagResponse is the response struct for api BindTag

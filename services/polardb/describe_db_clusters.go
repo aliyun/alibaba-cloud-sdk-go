@@ -76,16 +76,23 @@ func (client *Client) DescribeDBClustersWithCallback(request *DescribeDBClusters
 // DescribeDBClustersRequest is the request struct for api DescribeDBClusters
 type DescribeDBClustersRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	DBClusterDescription string           `position:"Query" name:"DBClusterDescription"`
-	DBClusterStatus      string           `position:"Query" name:"DBClusterStatus"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	DBType               string           `position:"Query" name:"DBType"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	DBClusterIds         string           `position:"Query" name:"DBClusterIds"`
+	ResourceOwnerId      requests.Integer         `position:"Query" name:"ResourceOwnerId"`
+	DBClusterDescription string                   `position:"Query" name:"DBClusterDescription"`
+	DBClusterStatus      string                   `position:"Query" name:"DBClusterStatus"`
+	ResourceOwnerAccount string                   `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string                   `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer         `position:"Query" name:"OwnerId"`
+	PageNumber           requests.Integer         `position:"Query" name:"PageNumber"`
+	DBType               string                   `position:"Query" name:"DBType"`
+	PageSize             requests.Integer         `position:"Query" name:"PageSize"`
+	Tag                  *[]DescribeDBClustersTag `position:"Query" name:"Tag"  type:"Repeated"`
+	DBClusterIds         string                   `position:"Query" name:"DBClusterIds"`
+}
+
+// DescribeDBClustersTag is a repeated param struct in DescribeDBClustersRequest
+type DescribeDBClustersTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // DescribeDBClustersResponse is the response struct for api DescribeDBClusters

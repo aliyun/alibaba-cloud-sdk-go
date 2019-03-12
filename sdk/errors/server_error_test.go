@@ -55,7 +55,7 @@ func TestWrapServerError(t *testing.T) {
 	m = make(map[string]string)
 	m["StringToSign"] = "match"
 	WrapServerError(se, m)
-	assert.Equal(t, "Please check you AccessKeySecret", se.Recommend())
+	assert.Equal(t, "InvalidAccessKeySecret: Please check you AccessKeySecret", se.Recommend())
 
 	err = NewServerError(400, `{"Code":"Other"}`, "comment")
 	se, ok = err.(*ServerError)

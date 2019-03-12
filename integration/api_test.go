@@ -2,6 +2,7 @@ package integration
 
 import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/services/bssopenapi"
 	"github.com/aliyun/alibaba-cloud-sdk-go/services/cdn"
 	"github.com/aliyun/alibaba-cloud-sdk-go/services/cs"
 	"github.com/aliyun/alibaba-cloud-sdk-go/services/ecs"
@@ -9,7 +10,6 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/services/rds"
 	"github.com/aliyun/alibaba-cloud-sdk-go/services/slb"
 	"github.com/aliyun/alibaba-cloud-sdk-go/services/vpc"
-
 	"github.com/stretchr/testify/assert"
 
 	"net/http"
@@ -30,7 +30,6 @@ func Test_DescribeClusteWithROArequestWithXMLWithGet(t *testing.T) {
 	request := cs.CreateDescribeClusterDetailRequest()
 	request.SetContentType("XML")
 	request.SetScheme("HTTPS")
-	request.SetDomain("cs.aliyuncs.com")
 	response, err := client.DescribeClusterDetail(request)
 	assert.NotNil(t, err)
 	assert.Equal(t, 400, response.GetHttpStatus())
@@ -43,7 +42,6 @@ func Test_ScaleClusterWithROArequestWithXMLWithPUT(t *testing.T) {
 	request := cs.CreateScaleClusterRequest()
 	request.SetContentType("XML")
 	request.SetScheme("HTTPS")
-	request.SetDomain("cs.aliyuncs.com")
 	response, err := client.ScaleCluster(request)
 	assert.NotNil(t, err)
 	assert.Equal(t, 400, response.GetHttpStatus())
@@ -56,7 +54,6 @@ func Test_CreateClusterTokenWithROArequestWithXMLWithPOST(t *testing.T) {
 	request := cs.CreateCreateClusterTokenRequest()
 	request.SetContentType("XML")
 	request.SetScheme("HTTPS")
-	request.SetDomain("cs.aliyuncs.com")
 	response, err := client.CreateClusterToken(request)
 	assert.NotNil(t, err)
 	assert.Equal(t, 400, response.GetHttpStatus())
@@ -69,7 +66,6 @@ func Test_DeleteClusterWithROArequestWithXMLWithDelete(t *testing.T) {
 	request := cs.CreateDeleteClusterRequest()
 	request.SetContentType("XML")
 	request.SetScheme("HTTPS")
-	request.SetDomain("cs.aliyuncs.com")
 	response, err := client.DeleteCluster(request)
 	assert.NotNil(t, err)
 	assert.Equal(t, 400, response.GetHttpStatus())
@@ -82,7 +78,6 @@ func Test_DeleteClusterWithROArequestWithJSONWithDelete(t *testing.T) {
 	request := cs.CreateDeleteClusterRequest()
 	request.SetContentType("JSON")
 	request.SetScheme("HTTPS")
-	request.SetDomain("cs.aliyuncs.com")
 	response, err := client.DeleteCluster(request)
 	assert.NotNil(t, err)
 	assert.Equal(t, 400, response.GetHttpStatus())
@@ -95,7 +90,6 @@ func Test_ScaleClusterWithROArequestWithJSONWithPUT(t *testing.T) {
 	request := cs.CreateScaleClusterRequest()
 	request.SetContentType("JSON")
 	request.SetScheme("HTTPS")
-	request.SetDomain("cs.aliyuncs.com")
 	response, err := client.ScaleCluster(request)
 	assert.NotNil(t, err)
 	assert.Equal(t, 400, response.GetHttpStatus())
@@ -263,4 +257,15 @@ func Test_DescribeRegionsWithRPCrequestWith3XX(t *testing.T) {
 	assert.NotNil(t, err)
 	assert.Equal(t, 307, response.GetHttpStatus())
 	assert.Equal(t, "{\"error\"}", response.GetHttpContentString())
+}
+
+func Test_QueryAvaliableInstances(t *testing.T) {
+	client, err := bssopenapi.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
+	assert.Nil(t, err)
+	request := bssopenapi.CreateQueryAvailableInstancesRequest()
+	request.Domain = "business.aliyuncs.com"
+	response, err := client.QueryAvailableInstances(request)
+	assert.Nil(t, err)
+	assert.True(t, response.IsSuccess())
+	assert.Equal(t, 36, len(response.RequestId))
 }

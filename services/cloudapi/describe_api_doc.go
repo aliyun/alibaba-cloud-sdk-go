@@ -99,6 +99,8 @@ type DescribeApiDocResponse struct {
 	ResultSample       string                             `json:"ResultSample" xml:"ResultSample"`
 	FailResultSample   string                             `json:"FailResultSample" xml:"FailResultSample"`
 	DeployedTime       string                             `json:"DeployedTime" xml:"DeployedTime"`
+	ForceNonceCheck    bool                               `json:"ForceNonceCheck" xml:"ForceNonceCheck"`
+	DisableInternet    bool                               `json:"DisableInternet" xml:"DisableInternet"`
 	RequestConfig      RequestConfig                      `json:"RequestConfig" xml:"RequestConfig"`
 	ErrorCodeSamples   ErrorCodeSamplesInDescribeApiDoc   `json:"ErrorCodeSamples" xml:"ErrorCodeSamples"`
 	ResultDescriptions ResultDescriptionsInDescribeApiDoc `json:"ResultDescriptions" xml:"ResultDescriptions"`

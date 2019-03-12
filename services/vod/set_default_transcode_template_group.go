@@ -78,7 +78,6 @@ type SetDefaultTranscodeTemplateGroupRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId          requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount     string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceRealOwnerId      requests.Integer `position:"Query" name:"ResourceRealOwnerId"`
 	OwnerId                  requests.Integer `position:"Query" name:"OwnerId"`
 	TranscodeTemplateGroupId string           `position:"Query" name:"TranscodeTemplateGroupId"`
 }

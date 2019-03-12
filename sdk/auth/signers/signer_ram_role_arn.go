@@ -119,6 +119,9 @@ func (signer *RamRoleArnSigner) buildCommonRequest() (request *requests.CommonRe
 	request.ApiName = "AssumeRole"
 	request.Scheme = requests.HTTPS
 	request.QueryParams["RoleArn"] = signer.credential.RoleArn
+	if signer.credential.Policy != "" {
+		request.QueryParams["Policy"] = signer.credential.Policy
+	}
 	request.QueryParams["RoleSessionName"] = signer.credential.RoleSessionName
 	request.QueryParams["DurationSeconds"] = strconv.Itoa(signer.credentialExpiration)
 	return

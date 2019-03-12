@@ -101,7 +101,7 @@ func CreateDescribeDcdnDomainWebsocketHttpCodeDataRequest() (request *DescribeDc
 	request = &DescribeDcdnDomainWebsocketHttpCodeDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("dcdn", "2018-01-15", "DescribeDcdnDomainWebsocketHttpCodeData", "dcdn", "openAPI")
+	request.InitWithApiInfo("dcdn", "2018-01-15", "DescribeDcdnDomainWebsocketHttpCodeData", "", "")
 	return
 }
 

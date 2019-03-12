@@ -3,6 +3,7 @@ package integration
 import (
 	"os"
 	"testing"
+	"time"
 
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk"
 
@@ -136,4 +137,70 @@ func Test_DescribeClusterDetailWithCommonRequestWithROAWithHTTPS(t *testing.T) {
 	_, err = client.ProcessCommonRequest(request)
 	assert.NotNil(t, err)
 	assert.Contains(t, err.Error(), "Request url is invalid")
+}
+
+func Test_DescribeClusterDetailWithCommonRequestWithTimeout(t *testing.T) {
+	client, err := sdk.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
+	assert.Nil(t, err)
+	request := requests.NewCommonRequest()
+	request.Domain = "cs.aliyuncs.com"
+	request.Version = "2015-12-15"
+	request.SetScheme("HTTPS")
+	request.PathPattern = "/clusters/[ClusterId]"
+	request.QueryParams["RegionId"] = os.Getenv("REGION_ID")
+	request.ReadTimeout = 1 * time.Millisecond
+	request.ConnectTimeout = 1 * time.Millisecond
+	request.TransToAcsRequest()
+	_, err = client.ProcessCommonRequest(request)
+	assert.NotNil(t, err)
+	assert.Contains(t, err.Error(), "Connect timeout. Please set a valid ConnectTimeout.")
+
+	request.ConnectTimeout = 1 * time.Second
+	_, err = client.ProcessCommonRequest(request)
+	assert.NotNil(t, err)
+	assert.Contains(t, err.Error(), "Read timeout. Please set a valid ReadTimeout.")
+}
+
+func Test_CreateInstanceWithCommonRequestWithPolicy(t *testing.T) {
+	err := createAttachPolicyToRole()
+	assert.Nil(t, err)
+
+	subaccesskeyid, subaccesskeysecret, err := createAccessKey()
+	assert.Nil(t, err)
+	client, err := sdk.NewClientWithRamRoleArnAndPolicy(os.Getenv("REGION_ID"), subaccesskeyid, subaccesskeysecret, rolearn, "alice_test", "")
+	assert.Nil(t, err)
+	request := requests.NewCommonRequest()
+	request.Method = "POST"
+	request.Product = "Ecs"
+	request.Domain = "ecs.aliyuncs.com"
+	request.Version = "2014-05-26"
+	request.SetScheme("HTTPS")
+	request.ApiName = "CreateInstance"
+	request.QueryParams["ImageId"] = "win2008r2_64_ent_sp1_en-us_40G_alibase_20170915.vhd"
+	request.QueryParams["InstanceType"] = "ecs.g5.large"
+	request.TransToAcsRequest()
+	_, err = client.ProcessCommonRequest(request)
+	assert.NotNil(t, err)
+	assert.Contains(t, err.Error(), "This resource type is not supported; please try other resource types.")
+
+	policy := `{
+    "Version": "1",
+    "Statement": [
+        {
+            "Action": "rds:*",
+            "Resource": "*",
+            "Effect": "Allow"
+        },
+        {
+            "Action": "dms:LoginDatabase",
+            "Resource": "acs:rds:*:*:*",
+            "Effect": "Allow"
+        }
+    ]
+}`
+	client, err = sdk.NewClientWithRamRoleArnAndPolicy(os.Getenv("REGION_ID"), subaccesskeyid, subaccesskeysecret, rolearn, "alice_test", policy)
+	assert.Nil(t, err)
+	_, err = client.ProcessCommonRequest(request)
+	assert.NotNil(t, err)
+	assert.Contains(t, err.Error(), "User not authorized to operate on the specified resource, or this API doesn't support RAM.")
 }

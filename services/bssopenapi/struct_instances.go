@@ -17,5 +17,5 @@ package bssopenapi
 
 // Instances is a nested struct in bssopenapi response
 type Instances struct {
-	Instance []Instance `json:"Instance" xml:"Instance"`
+	Instance []InstanceInQueryResourcePackageInstances `json:"Instance" xml:"Instance"`
 }

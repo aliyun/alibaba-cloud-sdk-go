@@ -76,26 +76,27 @@ func (client *Client) DescribeDBInstancesWithCallback(request *DescribeDBInstanc
 // DescribeDBInstancesRequest is the request struct for api DescribeDBInstances
 type DescribeDBInstancesRequest struct {
 	*requests.RpcRequest
-	ExpireTime            string           `position:"Query" name:"ExpireTime"`
 	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
 	EngineVersion         string           `position:"Query" name:"EngineVersion"`
 	NetworkType           string           `position:"Query" name:"NetworkType"`
-	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
 	PageNumber            requests.Integer `position:"Query" name:"PageNumber"`
 	ReplicationFactor     string           `position:"Query" name:"ReplicationFactor"`
-	DBInstanceType        string           `position:"Query" name:"DBInstanceType"`
-	DBInstanceClass       string           `position:"Query" name:"DBInstanceClass"`
-	VSwitchId             string           `position:"Query" name:"VSwitchId"`
+	Expired               string           `position:"Query" name:"Expired"`
 	SecurityToken         string           `position:"Query" name:"SecurityToken"`
 	Engine                string           `position:"Query" name:"Engine"`
-	VpcId                 string           `position:"Query" name:"VpcId"`
 	PageSize              requests.Integer `position:"Query" name:"PageSize"`
-	ZoneId                string           `position:"Query" name:"ZoneId"`
 	DBInstanceId          string           `position:"Query" name:"DBInstanceId"`
 	DBInstanceDescription string           `position:"Query" name:"DBInstanceDescription"`
 	DBInstanceStatus      string           `position:"Query" name:"DBInstanceStatus"`
+	ExpireTime            string           `position:"Query" name:"ExpireTime"`
+	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
+	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
+	DBInstanceType        string           `position:"Query" name:"DBInstanceType"`
+	DBInstanceClass       string           `position:"Query" name:"DBInstanceClass"`
+	VSwitchId             string           `position:"Query" name:"VSwitchId"`
+	VpcId                 string           `position:"Query" name:"VpcId"`
+	ZoneId                string           `position:"Query" name:"ZoneId"`
 	ChargeType            string           `position:"Query" name:"ChargeType"`
 }
 

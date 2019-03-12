@@ -36,6 +36,7 @@ type VideoInGetVideoInfo struct {
 	PreprocessStatus string                      `json:"PreprocessStatus" xml:"PreprocessStatus"`
 	StorageLocation  string                      `json:"StorageLocation" xml:"StorageLocation"`
 	RegionId         string                      `json:"RegionId" xml:"RegionId"`
+	CustomMediaInfo  string                      `json:"CustomMediaInfo" xml:"CustomMediaInfo"`
 	Snapshots        SnapshotsInGetVideoInfo     `json:"Snapshots" xml:"Snapshots"`
 	ThumbnailList    ThumbnailListInGetVideoInfo `json:"ThumbnailList" xml:"ThumbnailList"`
 }

@@ -17,12 +17,10 @@ package imm
 
 // GroupsItem is a nested struct in imm response
 type GroupsItem struct {
-	UnGroupReason string `json:"UnGroupReason" xml:"UnGroupReason"`
-	ModifyTime    string `json:"ModifyTime" xml:"ModifyTime"`
-	CreateTime    string `json:"CreateTime" xml:"CreateTime"`
-	GroupName     string `json:"GroupName" xml:"GroupName"`
-	Count         string `json:"Count" xml:"Count"`
-	FaceId        string `json:"FaceId" xml:"FaceId"`
-	GroupId       string `json:"GroupId" xml:"GroupId"`
-	Status        string `json:"Status" xml:"Status"`
+	GroupName  string `json:"GroupName" xml:"GroupName"`
+	Count      string `json:"Count" xml:"Count"`
+	Status     string `json:"Status" xml:"Status"`
+	CreateTime string `json:"CreateTime" xml:"CreateTime"`
+	ModifyTime string `json:"ModifyTime" xml:"ModifyTime"`
+	GroupId    string `json:"GroupId" xml:"GroupId"`
 }

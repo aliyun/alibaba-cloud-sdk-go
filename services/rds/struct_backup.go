@@ -35,5 +35,5 @@ type Backup struct {
 	BackupSize                int    `json:"BackupSize" xml:"BackupSize"`
 	HostInstanceID            string `json:"HostInstanceID" xml:"HostInstanceID"`
 	StoreStatus               string `json:"StoreStatus" xml:"StoreStatus"`
-	ConsistentTime            string `json:"ConsistentTime" xml:"ConsistentTime"`
+	MetaStatus                string `json:"MetaStatus" xml:"MetaStatus"`
 }

@@ -29,3 +29,4 @@ environment:
   matrix:
     - go: 1.10.x
     - go: 1.11.x
+    - go: 1.12.x

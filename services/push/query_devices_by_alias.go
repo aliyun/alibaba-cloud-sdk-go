@@ -76,8 +76,8 @@ func (client *Client) QueryDevicesByAliasWithCallback(request *QueryDevicesByAli
 // QueryDevicesByAliasRequest is the request struct for api QueryDevicesByAlias
 type QueryDevicesByAliasRequest struct {
 	*requests.RpcRequest
-	AppKey requests.Integer `position:"Query" name:"AppKey"`
 	Alias  string           `position:"Query" name:"Alias"`
+	AppKey requests.Integer `position:"Query" name:"AppKey"`
 }
 
 // QueryDevicesByAliasResponse is the response struct for api QueryDevicesByAlias

@@ -80,7 +80,6 @@ type CreateGroupFacesJobRequest struct {
 	NotifyEndpoint  string `position:"Query" name:"NotifyEndpoint"`
 	Project         string `position:"Query" name:"Project"`
 	SetId           string `position:"Query" name:"SetId"`
-	Operation       string `position:"Query" name:"Operation"`
 }
 
 // CreateGroupFacesJobResponse is the response struct for api CreateGroupFacesJob
@@ -88,6 +87,7 @@ type CreateGroupFacesJobResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	JobId     string `json:"JobId" xml:"JobId"`
+	SetId     string `json:"SetId" xml:"SetId"`
 	JobType   string `json:"JobType" xml:"JobType"`
 }
 

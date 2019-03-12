@@ -2,9 +2,11 @@ package requests
 
 import (
 	"bytes"
+	"fmt"
 	"io"
 	"sort"
 	"testing"
+	"time"
 
 	"github.com/stretchr/testify/assert"
 )
@@ -86,9 +88,25 @@ func Test_AcsRequest(t *testing.T) {
 	r.SetScheme("HTTPS")
 	assert.Equal(t, "HTTPS", r.GetScheme())
 
+	// GetReadTimeout
+	assert.Equal(t, 0*time.Second, r.GetReadTimeout())
+	r.SetReadTimeout(5 * time.Second)
+	assert.Equal(t, 5*time.Second, r.GetReadTimeout())
+
+	// GetConnectTimeout
+	assert.Equal(t, 0*time.Second, r.GetConnectTimeout())
+	r.SetConnectTimeout(5 * time.Second)
+	assert.Equal(t, 5*time.Second, r.GetConnectTimeout())
+
 	// GetPort
 	assert.Equal(t, "", r.GetPort())
 
+	// GetUserAgent
+	r.AppendUserAgent("cli", "1.01")
+	assert.Equal(t, "1.01", r.GetUserAgent()["cli"])
+	// GetUserAgent
+	r.AppendUserAgent("cli", "2.02")
+	assert.Equal(t, "2.02", r.GetUserAgent()["cli"])
 	// Content
 	assert.Equal(t, []byte(nil), r.GetContent())
 	r.SetContent([]byte("The Content"))
@@ -373,3 +391,40 @@ func Test_AcsRequest_InitParams5(t *testing.T) {
 }
 
 // > POST /?AccessKeyId=LTAIgTHQxl9boZTV&Action=CreateContainerGroup&Container.1.Arg=%3C%5B%5Dstring+Value%3E&Container.1.Command=%3C%5B%5Dstring+Value%3E&Container.1.Cpu=1&Container.1.EnvironmentVar=%3C%2A%5B%5Deci.CreateContainerGroup_EnvironmentVar+Value%3E&Container.1.Image=nginx&Container.1.LivenessProbe=%3Ceci.CreateContainerGroup_LivenessProbe+Value%3E&Container.1.Memory=2&Container.1.Name=nginx&Container.1.Port=%3C%2A%5B%5Deci.CreateContainerGroup_Port+Value%3E&Container.1.ReadinessProbe=%3Ceci.CreateContainerGroup_ReadinessProbe+Value%3E&Container.1.SecurityContext=%3Ceci.CreateContainerGroup_SecurityContext+Value%3E&Container.1.VolumeMount=%3C%2A%5B%5Deci.CreateContainerGroup_VolumeMount+Value%3E&Container.1.WorkingDir=ddd&ContainerGroupName=123&Format=JSON&RegionId=cn-shanghai&SecurityGroupId=sg-uf63nb42ltsf0gyadb8s&Signature=wH8RagWmLuOZfQ94khrEZ5yYA9M%3D&SignatureMethod=HMAC-SHA1&SignatureNonce=ec3eca4382884dbbb98c3bd7277e25c5&SignatureType=&SignatureVersion=1.0&Timestamp=2019-01-28T08%3A00%3A04Z&VSwitchId=vsw-uf6ck0dbgl3rg6i0xq8i0&Version=2018-08-08 HTTP/1.1
+
+type StartMPUTaskRequest struct {
+	*RpcRequest
+	OwnerId         Integer   `position:"Query" name:"OwnerId"`
+	AppId           string    `position:"Query" name:"AppId"`
+	ChannelId       string    `position:"Query" name:"ChannelId"`
+	TaskId          string    `position:"Query" name:"TaskId"`
+	MediaEncode     Integer   `position:"Query" name:"MediaEncode"`
+	BackgroundColor Integer   `position:"Query" name:"BackgroundColor"`
+	LayoutIds       []Integer `position:"Query" name:"LayoutIds" type:"Repeated"`
+	StreamURL       string    `position:"Query" name:"StreamURL"`
+}
+
+func Test_RPCRequest_InitParams(t *testing.T) {
+	channelID := "id"
+	r := &StartMPUTaskRequest{
+		RpcRequest: &RpcRequest{},
+	}
+	r.init()
+	r.Domain = "rtc.aliyuncs.com"
+	r.AppId = "app ID"
+	r.ChannelId = channelID
+	r.TaskId = channelID
+	r.MediaEncode = NewInteger(2)
+	r.BackgroundColor = NewInteger(0)
+	r.StreamURL = fmt.Sprintf("rtmp://video-center.alivecdn.com/galaxy/%s_%s?vhost=fast-live.chinalivestream.top", channelID, channelID)
+	var out []Integer
+	out = append(out, NewInteger(2))
+	r.LayoutIds = out
+
+	InitParams(r)
+
+	queries := r.GetQueryParams()
+
+	assert.Equal(t, "2", queries["LayoutIds.1"])
+	assert.Len(t, queries, 7)
+}

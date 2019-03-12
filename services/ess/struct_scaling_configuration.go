@@ -45,6 +45,7 @@ type ScalingConfiguration struct {
 	SecurityEnhancementStrategy string         `json:"SecurityEnhancementStrategy" xml:"SecurityEnhancementStrategy"`
 	SpotStrategy                string         `json:"SpotStrategy" xml:"SpotStrategy"`
 	PasswordInherit             bool           `json:"PasswordInherit" xml:"PasswordInherit"`
+	ResourceGroupId             string         `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	InstanceTypes               InstanceTypes  `json:"InstanceTypes" xml:"InstanceTypes"`
 	DataDisks                   DataDisks      `json:"DataDisks" xml:"DataDisks"`
 	Tags                        Tags           `json:"Tags" xml:"Tags"`

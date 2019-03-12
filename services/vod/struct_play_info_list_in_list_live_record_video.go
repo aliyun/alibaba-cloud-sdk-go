@@ -17,5 +17,5 @@ package vod
 
 // PlayInfoListInListLiveRecordVideo is a nested struct in vod response
 type PlayInfoListInListLiveRecordVideo struct {
-	PlayInfo []PlayInfo `json:"PlayInfo" xml:"PlayInfo"`
+	PlayInfo []PlayInfoInListLiveRecordVideo `json:"PlayInfo" xml:"PlayInfo"`
 }

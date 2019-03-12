@@ -19,6 +19,8 @@ import (
 	"io"
 	"reflect"
 	"strconv"
+	"strings"
+	"time"
 
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/errors"
 )
@@ -71,6 +73,12 @@ type AcsRequest interface {
 	GetAcceptFormat() string
 	GetLocationServiceCode() string
 	GetLocationEndpointType() string
+	GetReadTimeout() time.Duration
+	GetConnectTimeout() time.Duration
+	SetReadTimeout(readTimeout time.Duration)
+	SetConnectTimeout(connectTimeout time.Duration)
+
+	GetUserAgent() map[string]string
 
 	SetStringToSign(stringToSign string)
 	GetStringToSign() string
@@ -89,14 +97,17 @@ type AcsRequest interface {
 
 // base class
 type baseRequest struct {
-	Scheme   string
-	Method   string
-	Domain   string
-	Port     string
-	RegionId string
+	Scheme         string
+	Method         string
+	Domain         string
+	Port           string
+	RegionId       string
+	ReadTimeout    time.Duration
+	ConnectTimeout time.Duration
 
-	product string
-	version string
+	userAgent map[string]string
+	product   string
+	version   string
 
 	actionName string
 
@@ -123,6 +134,22 @@ func (request *baseRequest) GetFormParams() map[string]string {
 	return request.FormParams
 }
 
+func (request *baseRequest) GetReadTimeout() time.Duration {
+	return request.ReadTimeout
+}
+
+func (request *baseRequest) GetConnectTimeout() time.Duration {
+	return request.ConnectTimeout
+}
+
+func (request *baseRequest) SetReadTimeout(readTimeout time.Duration) {
+	request.ReadTimeout = readTimeout
+}
+
+func (request *baseRequest) SetConnectTimeout(connectTimeout time.Duration) {
+	request.ConnectTimeout = connectTimeout
+}
+
 func (request *baseRequest) GetContent() []byte {
 	return request.Content
 }
@@ -137,6 +164,28 @@ func (request *baseRequest) GetActionName() string {
 
 func (request *baseRequest) SetContent(content []byte) {
 	request.Content = content
+}
+
+func (request *baseRequest) GetUserAgent() map[string]string {
+	return request.userAgent
+}
+
+func (request *baseRequest) AppendUserAgent(key, value string) {
+	newkey := true
+	if request.userAgent == nil {
+		request.userAgent = make(map[string]string)
+	}
+	if strings.ToLower(key) != "core" && strings.ToLower(key) != "go" {
+		for tag, _ := range request.userAgent {
+			if tag == key {
+				request.userAgent[tag] = value
+				newkey = false
+			}
+		}
+		if newkey {
+			request.userAgent[key] = value
+		}
+	}
 }
 
 func (request *baseRequest) addHeaderParam(key, value string) {
@@ -268,7 +317,7 @@ func flatRepeatedList(dataValue reflect.Value, request AcsRequest, position, pre
 					for m := 0; m < repeatedFieldValue.Len(); m++ {
 						elementValue := repeatedFieldValue.Index(m)
 						key := prefix + name + "." + strconv.Itoa(m+1)
-						if elementValue.Type().String() == "string" {
+						if elementValue.Type().Kind().String() == "string" {
 							value := elementValue.String()
 							err = addParam(request, fieldPosition, key, value)
 							if err != nil {

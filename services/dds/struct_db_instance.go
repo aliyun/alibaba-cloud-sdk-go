@@ -22,8 +22,11 @@ type DBInstance struct {
 	Engine                string                                   `json:"Engine" xml:"Engine"`
 	ChargeType            string                                   `json:"ChargeType" xml:"ChargeType"`
 	DBInstanceClass       string                                   `json:"DBInstanceClass" xml:"DBInstanceClass"`
+	DestroyTime           string                                   `json:"DestroyTime" xml:"DestroyTime"`
 	RegionId              string                                   `json:"RegionId" xml:"RegionId"`
+	LastDowngradeTime     string                                   `json:"LastDowngradeTime" xml:"LastDowngradeTime"`
 	MaxConnections        int                                      `json:"MaxConnections" xml:"MaxConnections"`
+	ResourceGroupId       string                                   `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	DBInstanceType        string                                   `json:"DBInstanceType" xml:"DBInstanceType"`
 	MaintainEndTime       string                                   `json:"MaintainEndTime" xml:"MaintainEndTime"`
 	ExpireTime            string                                   `json:"ExpireTime" xml:"ExpireTime"`
@@ -43,9 +46,8 @@ type DBInstance struct {
 	DBInstanceStatus      string                                   `json:"DBInstanceStatus" xml:"DBInstanceStatus"`
 	CurrentKernelVersion  string                                   `json:"CurrentKernelVersion" xml:"CurrentKernelVersion"`
 	ZoneId                string                                   `json:"ZoneId" xml:"ZoneId"`
-	LastDowngradeTime     int                                      `json:"LastDowngradeTime" xml:"LastDowngradeTime"`
 	LockMode              string                                   `json:"LockMode" xml:"LockMode"`
 	ReplicaSets           ReplicaSetsInDescribeDBInstanceAttribute `json:"ReplicaSets" xml:"ReplicaSets"`
+	ShardList             ShardListInDescribeDBInstances           `json:"ShardList" xml:"ShardList"`
 	MongosList            MongosListInDescribeDBInstanceAttribute  `json:"MongosList" xml:"MongosList"`
-	ShardList             ShardListInDescribeDBInstanceAttribute   `json:"ShardList" xml:"ShardList"`
 }

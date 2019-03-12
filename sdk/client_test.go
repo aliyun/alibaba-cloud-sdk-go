@@ -81,6 +81,12 @@ func Test_NewClientWithOptions(t *testing.T) {
 	assert.NotNil(t, client)
 }
 
+func Test_NewClientWithPolicy(t *testing.T) {
+	client, err := NewClientWithRamRoleArnAndPolicy("regionid", "acesskeyid", "accesskeysecret", "roleArn", "sessionName", "policy")
+	assert.Nil(t, err)
+	assert.NotNil(t, client)
+}
+
 func Test_NewClientWithAccessKey(t *testing.T) {
 	client, err := NewClientWithAccessKey("regionid", "acesskeyid", "accesskeysecret")
 	assert.Nil(t, err)
@@ -169,17 +175,38 @@ func Test_DoAction_Timeout(t *testing.T) {
 	request.QueryParams["PageSize"] = "30"
 	request.TransToAcsRequest()
 	response := responses.NewCommonResponse()
-	origTestHookDo := hookDo
-	defer func() { hookDo = origTestHookDo }()
-	hookDo = func(fn func(req *http.Request) (*http.Response, error)) func(req *http.Request) (*http.Response, error) {
-		return func(req *http.Request) (*http.Response, error) {
-			return mockResponse(200, "")
-		}
-	}
 	err = client.DoAction(request, response)
-	assert.Nil(t, err)
-	assert.Equal(t, 200, response.GetHttpStatus())
-	assert.Equal(t, "", response.GetHttpContentString())
+	assert.NotNil(t, err)
+	assert.Contains(t, err.Error(), "Specified access key is not found.")
+
+	client.SetReadTimeout(1 * time.Millisecond)
+	assert.Equal(t, 1*time.Millisecond, client.GetReadTimeout())
+	err = client.DoAction(request, response)
+	assert.NotNil(t, err)
+	assert.Contains(t, err.Error(), "Read timeout. Please set a valid ReadTimeout.")
+
+	client.SetConnectTimeout(1 * time.Millisecond)
+	assert.Equal(t, 1*time.Millisecond, client.GetConnectTimeout())
+	err = client.DoAction(request, response)
+	assert.NotNil(t, err)
+	assert.Contains(t, err.Error(), "Connect timeout. Please set a valid ConnectTimeout.")
+
+	client.SetReadTimeout(10 * time.Second)
+	client.SetConnectTimeout(10 * time.Second)
+	err = client.DoAction(request, response)
+	assert.NotNil(t, err)
+	assert.Contains(t, err.Error(), "Specified access key is not found.")
+
+	request.SetReadTimeout(1 * time.Millisecond)
+	err = client.DoAction(request, response)
+	assert.NotNil(t, err)
+	assert.Contains(t, err.Error(), "Read timeout. Please set a valid ReadTimeout.")
+
+	request.SetConnectTimeout(1 * time.Millisecond)
+	err = client.DoAction(request, response)
+	assert.NotNil(t, err)
+	assert.Contains(t, err.Error(), "Connect timeout. Please set a valid ConnectTimeout.")
+
 	client.Shutdown()
 	assert.Equal(t, false, client.isRunning)
 }
@@ -274,7 +301,6 @@ func TestClient_BuildRequestWithSigner1(t *testing.T) {
 	signer := &signertest{
 		name: "signer",
 	}
-	client.config.UserAgent = "user_agent"
 	err = client.BuildRequestWithSigner(request, signer)
 	assert.Nil(t, err)
 }
@@ -297,6 +323,61 @@ func TestClient_ProcessCommonRequestWithSigner(t *testing.T) {
 	}
 	_, err = client.ProcessCommonRequestWithSigner(request, signer)
 	assert.NotNil(t, err)
+}
+
+func TestClient_AppendUserAgent(t *testing.T) {
+	client, err := NewClientWithAccessKey("regionid", "acesskeyid", "accesskeysecret")
+	assert.Nil(t, err)
+	assert.NotNil(t, client)
+	assert.Equal(t, true, client.isRunning)
+	request := requests.NewCommonRequest()
+	request.Domain = "ecs.aliyuncs.com"
+	request.Version = "2014-05-26"
+	request.ApiName = "DescribeInstanceStatus"
+
+	request.RegionId = "regionid"
+	signer := &signertest{
+		name: "signer",
+	}
+	request.TransToAcsRequest()
+	httpRequest, err := client.buildRequestWithSigner(request, signer)
+	assert.Nil(t, err)
+	assert.Equal(t, DefaultUserAgent, httpRequest.Header.Get("User-Agent"))
+
+	client.AppendUserAgent("test", "1.01")
+	httpRequest, err = client.buildRequestWithSigner(request, signer)
+	assert.Equal(t, DefaultUserAgent+" test/1.01", httpRequest.Header.Get("User-Agent"))
+
+	request.AppendUserAgent("test", "2.01")
+	httpRequest, err = client.buildRequestWithSigner(request, signer)
+	assert.Equal(t, DefaultUserAgent+" test/2.01", httpRequest.Header.Get("User-Agent"))
+
+	request.AppendUserAgent("test", "2.02")
+	httpRequest, err = client.buildRequestWithSigner(request, signer)
+	assert.Equal(t, DefaultUserAgent+" test/2.02", httpRequest.Header.Get("User-Agent"))
+
+	client.AppendUserAgent("test", "2.01")
+	httpRequest, err = client.buildRequestWithSigner(request, signer)
+	assert.Equal(t, DefaultUserAgent+" test/2.02", httpRequest.Header.Get("User-Agent"))
+
+	client.AppendUserAgent("core", "1.01")
+	httpRequest, err = client.buildRequestWithSigner(request, signer)
+	assert.Equal(t, DefaultUserAgent+" test/2.02", httpRequest.Header.Get("User-Agent"))
+
+	request.AppendUserAgent("core", "1.01")
+	httpRequest, err = client.buildRequestWithSigner(request, signer)
+	assert.Equal(t, DefaultUserAgent+" test/2.02", httpRequest.Header.Get("User-Agent"))
+
+	request1 := requests.NewCommonRequest()
+	request1.Domain = "ecs.aliyuncs.com"
+	request1.Version = "2014-05-26"
+	request1.ApiName = "DescribeRegions"
+	request1.RegionId = "regionid"
+	request1.AppendUserAgent("sys", "1.01")
+	request1.TransToAcsRequest()
+	httpRequest, err = client.buildRequestWithSigner(request1, signer)
+	assert.Nil(t, err)
+	assert.Equal(t, DefaultUserAgent+" test/2.01 sys/1.01", httpRequest.Header.Get("User-Agent"))
 }
 
 func TestClient_ProcessCommonRequestWithSigner_Error(t *testing.T) {

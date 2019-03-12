@@ -85,8 +85,8 @@ type PushObjectCacheRequest struct {
 // PushObjectCacheResponse is the response struct for api PushObjectCache
 type PushObjectCacheResponse struct {
 	*responses.BaseResponse
-	RequestId     string `json:"RequestId" xml:"RequestId"`
-	PreloadTaskId string `json:"PreloadTaskId" xml:"PreloadTaskId"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
+	PushTaskId string `json:"PushTaskId" xml:"PushTaskId"`
 }
 
 // CreatePushObjectCacheRequest creates a request to invoke PushObjectCache API

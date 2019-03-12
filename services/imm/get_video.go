@@ -109,6 +109,9 @@ type GetVideoResponse struct {
 	ProcessFailReason   string          `json:"ProcessFailReason" xml:"ProcessFailReason"`
 	VideoTagsFailReason string          `json:"VideoTagsFailReason" xml:"VideoTagsFailReason"`
 	CelebrityFailReason string          `json:"CelebrityFailReason" xml:"CelebrityFailReason"`
+	RemarksC            string          `json:"RemarksC" xml:"RemarksC"`
+	RemarksD            string          `json:"RemarksD" xml:"RemarksD"`
+	ExternalId          string          `json:"ExternalId" xml:"ExternalId"`
 	Celebrity           []CelebrityItem `json:"Celebrity" xml:"Celebrity"`
 	VideoTags           []VideoTagsItem `json:"VideoTags" xml:"VideoTags"`
 	Persons             []PersonsItem   `json:"Persons" xml:"Persons"`

@@ -21,6 +21,7 @@ type ResourcePackageInfo struct {
 	InitCapacity  string `json:"InitCapacity" xml:"InitCapacity"`
 	CommodityCode string `json:"CommodityCode" xml:"CommodityCode"`
 	DisplayName   string `json:"DisplayName" xml:"DisplayName"`
+	TemplateName  string `json:"TemplateName" xml:"TemplateName"`
 	InstanceId    string `json:"InstanceId" xml:"InstanceId"`
 	Status        string `json:"Status" xml:"Status"`
 	StartTime     string `json:"StartTime" xml:"StartTime"`

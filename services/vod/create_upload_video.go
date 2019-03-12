@@ -92,6 +92,7 @@ type CreateUploadVideoRequest struct {
 	TemplateGroupId      string           `position:"Query" name:"TemplateGroupId"`
 	CateId               requests.Integer `position:"Query" name:"CateId"`
 	WorkflowId           string           `position:"Query" name:"WorkflowId"`
+	CustomMediaInfo      string           `position:"Query" name:"CustomMediaInfo"`
 }
 
 // CreateUploadVideoResponse is the response struct for api CreateUploadVideo

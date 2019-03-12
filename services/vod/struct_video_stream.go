@@ -38,4 +38,5 @@ type VideoStream struct {
 	Duration       string `json:"Duration" xml:"Duration"`
 	NumFrames      string `json:"NumFrames" xml:"NumFrames"`
 	Lang           string `json:"Lang" xml:"Lang"`
+	Rotate         string `json:"Rotate" xml:"Rotate"`
 }
