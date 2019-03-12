@@ -2,6 +2,7 @@ package integration
 
 import (
 	"os"
+	"strings"
 	"testing"
 	"time"
 
@@ -89,6 +90,23 @@ func Test_DescribeRegionsWithCommonRequestWithError(t *testing.T) {
 	assert.Equal(t, "The specified parameter \"Action or Version\" is not valid.", realerr.Message())
 }
 
+func Test_DescribeRegionsWithCommonRequestWithIncompleteSignature(t *testing.T) {
+	request := requests.NewCommonRequest()
+	request.Version = "2014-05-26"
+	request.AcceptFormat = "json"
+	request.SetScheme("https")
+	request.Method = "POST"
+	request.ApiName = "DescribeRegions"
+	request.SetDomain("ecs.aliyuncs.com")
+	request.TransToAcsRequest()
+	client, err := sdk.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), strings.ToUpper(os.Getenv("ACCESS_KEY_SECRET")))
+	assert.Nil(t, err)
+	_, err = client.ProcessCommonRequest(request)
+	realerr := err.(*errors.ServerError)
+	assert.Equal(t, "IncompleteSignature", realerr.ErrorCode())
+	assert.Equal(t, "InvalidAccessKeySecret: Please check you AccessKeySecret", realerr.Recommend())
+}
+
 func Test_DescribeClustersWithCommonRequestWithROA(t *testing.T) {
 	client, err := sdk.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
 	assert.Nil(t, err)
@@ -102,6 +120,23 @@ func Test_DescribeClustersWithCommonRequestWithROA(t *testing.T) {
 	_, err = client.ProcessCommonRequest(request)
 	assert.NotNil(t, err)
 	assert.Contains(t, err.Error(), "Request url is invalid")
+}
+
+func Test_DescribeClustersWithCommonRequestWithSignatureDostNotMatch(t *testing.T) {
+	client, err := sdk.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), strings.ToUpper(os.Getenv("ACCESS_KEY_SECRET")))
+	assert.Nil(t, err)
+	request := requests.NewCommonRequest()
+	request.Method = "GET"
+	request.Domain = "cs.aliyuncs.com"
+	request.Version = "2015-12-15"
+	request.PathPattern = "/clusters/[ClusterId]"
+	request.QueryParams["RegionId"] = os.Getenv("REGION_ID")
+	request.TransToAcsRequest()
+	_, err = client.ProcessCommonRequest(request)
+	assert.NotNil(t, err)
+	real, _ := err.(*errors.ServerError)
+	assert.Contains(t, real.Recommend(), "InvalidAccessKeySecret: Please check you AccessKeySecret")
+	assert.Equal(t, real.ErrorCode(), "SignatureDoesNotMatch")
 }
 
 func Test_DescribeClustersWithCommonRequestWithROAWithSTStoken(t *testing.T) {
