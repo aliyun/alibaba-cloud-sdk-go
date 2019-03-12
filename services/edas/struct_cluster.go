@@ -27,8 +27,8 @@ type Cluster struct {
 	NetworkMode    int    `json:"NetworkMode" xml:"NetworkMode"`
 	RegionId       string `json:"RegionId" xml:"RegionId"`
 	ClusterName    string `json:"ClusterName" xml:"ClusterName"`
-	IaasProvider   string `json:"IaasProvider" xml:"IaasProvider"`
 	CpuUsed        int    `json:"CpuUsed" xml:"CpuUsed"`
+	IaasProvider   string `json:"IaasProvider" xml:"IaasProvider"`
 	ClusterType    int    `json:"ClusterType" xml:"ClusterType"`
 	VpcId          string `json:"VpcId" xml:"VpcId"`
 	Cpu            int    `json:"Cpu" xml:"Cpu"`

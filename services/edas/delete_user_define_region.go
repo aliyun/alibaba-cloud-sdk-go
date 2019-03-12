@@ -76,7 +76,8 @@ func (client *Client) DeleteUserDefineRegionWithCallback(request *DeleteUserDefi
 // DeleteUserDefineRegionRequest is the request struct for api DeleteUserDefineRegion
 type DeleteUserDefineRegionRequest struct {
 	*requests.RoaRequest
-	Id requests.Integer `position:"Query" name:"Id"`
+	RegionTag string           `position:"Query" name:"RegionTag"`
+	Id        requests.Integer `position:"Query" name:"Id"`
 }
 
 // DeleteUserDefineRegionResponse is the response struct for api DeleteUserDefineRegion

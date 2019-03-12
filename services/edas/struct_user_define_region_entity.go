@@ -17,12 +17,11 @@ package edas
 
 // UserDefineRegionEntity is a nested struct in edas response
 type UserDefineRegionEntity struct {
-	HybridCloudEnable bool   `json:"HybridCloudEnable" xml:"HybridCloudEnable"`
-	RegionId          string `json:"RegionId" xml:"RegionId"`
-	BelongRegion      string `json:"BelongRegion" xml:"BelongRegion"`
-	UserId            string `json:"UserId" xml:"UserId"`
-	Id                int    `json:"Id" xml:"Id"`
-	VpcId             string `json:"VpcId" xml:"VpcId"`
-	RegionName        string `json:"RegionName" xml:"RegionName"`
-	Description       string `json:"Description" xml:"Description"`
+	RegionId     string `json:"RegionId" xml:"RegionId"`
+	BelongRegion string `json:"BelongRegion" xml:"BelongRegion"`
+	DebugEnable  bool   `json:"DebugEnable" xml:"DebugEnable"`
+	UserId       string `json:"UserId" xml:"UserId"`
+	Id           int    `json:"Id" xml:"Id"`
+	RegionName   string `json:"RegionName" xml:"RegionName"`
+	Description  string `json:"Description" xml:"Description"`
 }

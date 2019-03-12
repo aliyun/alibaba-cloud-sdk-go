@@ -1,3 +1,8 @@
+2019-03-12 Version: 1.53.25
+1, Add application name support for config center APIs.
+2, Add GetCluster API.
+3, Support debug switch in user region APIs.
+
 2019-03-12 Version: 1.53.24
 1, Add Vpc openapi interface，Support for new fields.
 2, Support for ipv6 gateway openapi.

@@ -76,6 +76,7 @@ func (client *Client) ListConfigCentersWithCallback(request *ListConfigCentersRe
 // ListConfigCentersRequest is the request struct for api ListConfigCenters
 type ListConfigCentersRequest struct {
 	*requests.RoaRequest
+	AppName         string `position:"Query" name:"AppName"`
 	LogicalRegionId string `position:"Query" name:"LogicalRegionId"`
 	DataIdPattern   string `position:"Query" name:"DataIdPattern"`
 	Group           string `position:"Query" name:"Group"`

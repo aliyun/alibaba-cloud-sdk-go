@@ -78,6 +78,7 @@ type InsertConfigCenterRequest struct {
 	*requests.RoaRequest
 	DataId          string `position:"Query" name:"DataId"`
 	Data            string `position:"Query" name:"Data"`
+	AppName         string `position:"Query" name:"AppName"`
 	LogicalRegionId string `position:"Query" name:"LogicalRegionId"`
 	Group           string `position:"Query" name:"Group"`
 }
