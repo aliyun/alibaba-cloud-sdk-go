@@ -42,8 +42,8 @@ func init() {
 
 // Version this value will be replaced while build: -ldflags="-X sdk.version=x.x.x"
 var Version = "0.0.1"
-var defaultConnectTimeout = 10 * time.Second
-var defaultReadTimeout = 5 * time.Second
+var defaultConnectTimeout = 5 * time.Second
+var defaultReadTimeout = 10 * time.Second
 
 var DefaultUserAgent = fmt.Sprintf("AlibabaCloud (%s; %s) Golang/%s Core/%s", runtime.GOOS, runtime.GOARCH, strings.Trim(runtime.Version(), "go"), Version)
 

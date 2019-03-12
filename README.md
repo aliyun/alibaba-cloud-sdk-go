@@ -97,7 +97,7 @@ When you create an instance of client, you need to fill out three parameters: `R
 
 If the request has occured an error, you can view the HTTP request process by adding the environment variable `DEBUG=sdk`.
 
-## Keepalive
+## Keep-alive
 Alibaba Cloud Go SDK uses primordial `net/http` of Go language to send and accept requests，so it's  configuration is the same as `net/http`'s，you can use config to deliver configuration to the bottomed httpClient.
 
 ```go
@@ -114,6 +114,25 @@ ecsClient, err := ecs.NewClientWithOptions(config)
 
 * Due to the concurrency nature of the Go language, we recommend that you control the concurrent requests for the SDK at the application level.
 * In order to facilitate your use, we also provide a direct use of concurrent invocation mode, the relevant concurrency control by the SDK internal implementation.
+
+### Timeout
+
+```go
+// Request Timeout has a higher priority than client Timeout.
+// If you don't set any timeout, the default ReadTimeout is 10 second, and the default ConnectTimeout is 5 second.
+
+// Set request Timeout(Only the request is effected.)
+request.SetReadTimeout(10 * time.Second)              // Set request ReadTimeout to 10 second.
+readTimeout := request.GetReadTimeout()              // Get request ReadTimeout.
+request.SetConnectTimeout(5 * time.Second)           // Set request ConnectTimeout to 5 second.
+connectTimeout := request.GetConnectTimeout()        // Get request ConnectTimeout.
+
+// Set client Timeout(For all requests which is sent by the client.)
+client.SetReadTimeout(10 * time.Second)              // Set client ReadTimeout to 10 second.
+readTimeout := client.GetReadTimeout()              // Get client ReadTimeout.
+client.SetConnectTimeout(5 * time.Second)           // Set client ConnectTimeout to 5 second.
+connectTimeout := client.GetConnectTimeout()        // Get client ConnectTimeout.
+```
 
 ### Open SDK Client's concurrent function.
 
