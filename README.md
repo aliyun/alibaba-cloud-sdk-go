@@ -94,11 +94,30 @@ func main() {
 
 When you create an instance of client, you need to fill out three parameters: `Region ID`、`Access Key ID` and `Access Key Secret`. You can get `Access Key ID` and `Access Key Secret` from console, and get `Region ID` from [region list](https://help.aliyun.com/document_detail/40654.html?spm=5176.doc52740.2.8.FogWrd)
 
-## Dubug
+## Debug
 
 If the request has occured an error, you can view the HTTP request process by adding the environment variable `DEBUG=sdk`.
 
+## Ignore certificate validation
+
+When you send a https request, it may be fail due to certificate validation. At this moment, you can use the way below to ignore certificate validation.
+
+```go
+// You can set HTTPSInsecure as true to ignore certificate validation.
+// Request HTTPSInsecure has a higher priority than client HTTPSInsecure.
+// If you don't set any HTTPSInsecure, the default HTTPSInsecure is false.
+
+// Set request HTTPSInsecure(Only the request is effected.)
+request.SetHTTPSInsecure(true)                           // Set request HTTPSInsecure to true.
+isInsecure := request.GetHTTPSInsecure()                 // Get request HTTPSInsecure.
+
+// Set client HTTPSInsecure(For all requests which is sent by the client.)
+client.SetHTTPSInsecure(true)                         // Set client HTTPSInsecure to true .
+isInsecure := client.GetHTTPSInsecure()               // Get client HTTPSInsecure.
+```
+
 ## Keep-alive
+
 Alibaba Cloud Go SDK uses primordial `net/http` of Go language to send and accept requests，so it's  configuration is the same as `net/http`'s，you can use config to deliver configuration to the bottomed httpClient.
 
 ```go
@@ -123,16 +142,16 @@ ecsClient, err := ecs.NewClientWithOptions(config)
 // If you don't set any timeout, the default ReadTimeout is 10 second, and the default ConnectTimeout is 5 second.
 
 // Set request Timeout(Only the request is effected.)
-request.SetReadTimeout(10 * time.Second)              // Set request ReadTimeout to 10 second.
+request.SetReadTimeout(10 * time.Second)             // Set request ReadTimeout to 10 second.
 readTimeout := request.GetReadTimeout()              // Get request ReadTimeout.
 request.SetConnectTimeout(5 * time.Second)           // Set request ConnectTimeout to 5 second.
 connectTimeout := request.GetConnectTimeout()        // Get request ConnectTimeout.
 
 // Set client Timeout(For all requests which is sent by the client.)
 client.SetReadTimeout(10 * time.Second)              // Set client ReadTimeout to 10 second.
-readTimeout := client.GetReadTimeout()              // Get client ReadTimeout.
-client.SetConnectTimeout(5 * time.Second)           // Set client ConnectTimeout to 5 second.
-connectTimeout := client.GetConnectTimeout()        // Get client ConnectTimeout.
+readTimeout := client.GetReadTimeout()               // Get client ReadTimeout.
+client.SetConnectTimeout(5 * time.Second)            // Set client ConnectTimeout to 5 second.
+connectTimeout := client.GetConnectTimeout()         // Get client ConnectTimeout.
 ```
 
 ### Open SDK Client's concurrent function.

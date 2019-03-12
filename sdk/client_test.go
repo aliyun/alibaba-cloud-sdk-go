@@ -18,6 +18,7 @@ import (
 	"bytes"
 	"io/ioutil"
 	"net/http"
+	"os"
 	"strconv"
 	"testing"
 	"time"
@@ -159,6 +160,33 @@ func Test_DoAction(t *testing.T) {
 	assert.Equal(t, "", response.GetHttpContentString())
 	client.Shutdown()
 	assert.Equal(t, false, client.isRunning)
+}
+
+func Test_DoAction_HTTPSInsecure(t *testing.T) {
+	client, err := NewClientWithAccessKey("regionid", "acesskeyid", "accesskeysecret")
+	assert.Nil(t, err)
+	assert.NotNil(t, client)
+
+	client.SetHTTPSInsecure(true)
+	request := requests.NewCommonRequest()
+	request.Product = "Ram"
+	request.Version = "2015-05-01"
+	request.SetScheme("HTTPS")
+	request.ApiName = "CreateRole"
+	request.QueryParams["RegionId"] = os.Getenv("REGION_ID")
+	request.TransToAcsRequest()
+	response := responses.NewCommonResponse()
+	err = client.DoAction(request, response)
+	assert.NotNil(t, err)
+	assert.Contains(t, err.Error(), "Specified access key is not found.")
+	trans := client.httpClient.Transport.(*http.Transport)
+	assert.Equal(t, true, trans.TLSClientConfig.InsecureSkipVerify)
+
+	request.SetHTTPSInsecure(false)
+	err = client.DoAction(request, response)
+	assert.NotNil(t, err)
+	trans = client.httpClient.Transport.(*http.Transport)
+	assert.Equal(t, false, trans.TLSClientConfig.InsecureSkipVerify)
 }
 
 func Test_DoAction_Timeout(t *testing.T) {

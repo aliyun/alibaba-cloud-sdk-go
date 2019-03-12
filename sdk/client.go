@@ -16,6 +16,7 @@ package sdk
 
 import (
 	"context"
+	"crypto/tls"
 	"fmt"
 	"net"
 	"net/http"
@@ -53,6 +54,7 @@ var hookDo = func(fn func(req *http.Request) (*http.Response, error)) func(req *
 
 // Client the type Client
 type Client struct {
+	isInsecure     bool
 	regionId       string
 	config         *Config
 	userAgent      map[string]string
@@ -70,6 +72,14 @@ type Client struct {
 
 func (client *Client) Init() (err error) {
 	panic("not support yet")
+}
+
+func (client *Client) SetHTTPSInsecure(isInsecure bool) {
+	client.isInsecure = isInsecure
+}
+
+func (client *Client) GetHTTPSInsecure() bool {
+	return client.isInsecure
 }
 
 func (client *Client) InitWithOptions(regionId string, config *Config, credential auth.Credential) (err error) {
@@ -330,6 +340,7 @@ func Timeout(connectTimeout, readTimeout time.Duration) func(cxt context.Context
 		return conn, err
 	}
 }
+
 func (client *Client) setTimeout(request requests.AcsRequest) {
 	readTimeout, connectTimeout := client.getTimeout(request)
 	if trans, ok := client.httpClient.Transport.(*http.Transport); ok && trans != nil {
@@ -341,12 +352,31 @@ func (client *Client) setTimeout(request requests.AcsRequest) {
 		}
 	}
 }
+
+func (client *Client) getHTTPSInsecure(request requests.AcsRequest) (insecure bool) {
+	if request.GetHTTPSInsecure() != nil {
+		insecure = *request.GetHTTPSInsecure()
+	} else {
+		insecure = client.GetHTTPSInsecure()
+	}
+	return insecure
+}
+
 func (client *Client) DoActionWithSigner(request requests.AcsRequest, response responses.AcsResponse, signer auth.Signer) (err error) {
 	httpRequest, err := client.buildRequestWithSigner(request, signer)
 	if err != nil {
 		return
 	}
 	client.setTimeout(request)
+
+	// Set whether to ignore certificate validation.
+	// Default InsecureSkipVerify is false.
+	if trans, ok := client.httpClient.Transport.(*http.Transport); ok && trans != nil {
+		trans.TLSClientConfig = &tls.Config{
+			InsecureSkipVerify: client.getHTTPSInsecure(request),
+		}
+		client.httpClient.Transport = trans
+	}
 
 	var httpResponse *http.Response
 	for retryTimes := 0; retryTimes <= client.config.MaxRetryTime; retryTimes++ {
