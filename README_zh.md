@@ -87,7 +87,7 @@ func main() {
 
 如果您发送的请求出错，您可以通过添加环境变量 `DEBUG=sdk` 来查看 HTTP 请求过程。
 
-## Keepalive
+## Keep-alive
 阿里云 Go SDK 底层使用 Go 语言原生的 `net/http` 收发请求，因此配置方式与 `net/http`相同，您可以通过 config 直接将配置传递给底层的 httpClient
 
 ```go
@@ -104,6 +104,25 @@ ecsClient, err := ecs.NewClientWithOptions(config)
 
 * 因 Go 语言的并发特性，我们建议您在应用层面控制 SDK 的并发请求。
 * 为了方便您的使用，我们也提供了可直接使用的并发调用方式，相关的并发控制由 SDK 内部实现。
+
+### 超时机制
+
+```go
+// 请求设置的超时优先级高于客户端设置的超时.
+// 当您未设置任何超时时，则默认读超时为10秒，连接超时为5秒
+
+// 设置请求超时（仅对当前请求有效）
+request.SetReadTimeout(10 * time.Second)              // 设置请求读超时为10秒
+readTimeout := request.GetReadTimeout()              // 获取请求读超时
+request.SetConnectTimeout(5 * time.Second)           // 设置请求连接超时为5秒
+connectTimeout := request.GetConnectTimeout()        // 获取请求连接超时
+
+// 设置客户端超时（对所有通过该客户端发送的请求生效）
+client.SetReadTimeout(10 * time.Second)              // 设置客户端读超时为10秒
+readTimeout := client.GetReadTimeout()              // 获取客户端读超时
+client.SetConnectTimeout(5 * time.Second)           // 设置客户端连接超时为5秒
+connectTimeout := client.GetConnectTimeout()        // 获取客户端连接超时
+```
 
 ### 开启 SDK Client 的并发功能
 
