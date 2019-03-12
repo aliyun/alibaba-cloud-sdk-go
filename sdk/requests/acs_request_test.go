@@ -97,6 +97,11 @@ func Test_AcsRequest(t *testing.T) {
 	r.SetConnectTimeout(5 * time.Second)
 	assert.Equal(t, 5*time.Second, r.GetConnectTimeout())
 
+	// GetHTTPSInsecure
+	assert.True(t, r.GetHTTPSInsecure() == nil)
+	r.SetHTTPSInsecure(true)
+	assert.Equal(t, true, *r.GetHTTPSInsecure())
+
 	// GetPort
 	assert.Equal(t, "", r.GetPort())
 

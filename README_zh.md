@@ -85,12 +85,30 @@ func main() {
 
 在创建Client实例时，您需要填写3个参数：`Region ID`、`Access Key ID`和`Access Key Secret`。`Access Key ID`和`Access Key Secret`可以从控制台获得；而`Region ID`可以从[地域列表](https://help.aliyun.com/document_detail/40654.html?spm=5176.doc52740.2.8.FogWrd)中获得
 
-## Debug
+## 调试
 
 如果您发送的请求出错，您可以通过添加环境变量 `DEBUG=sdk` 来查看 HTTP 请求过程。
 
+## 忽略安全证书校验
+
+当您发送 https 请求时，它可能由于证书校验而失败。此时，可以使用下面的方法来忽略证书校验。
+
+```go
+// 您可以将 HTTPSInsecure 设置为 true 以忽略证书验证
+// 请求 HTTPSInsecure 具有比客户端 HTTPSInsecure 更高的优先级
+// 如果不设置任何 HTTPSInsecure，则默认 HTTPSInsecure 为 false
+
+// 设置请求 HTTPSInsecure (只影响当前)
+request.SetHTTPSInsecure(true)                           // 设置请求 HTTPSInsecure 为 true
+isInsecure := request.GetHTTPSInsecure()                 // 获取请求 HTTPSInsecure
+
+// 设置客户端 HTTPSInsecure (用于客户端发送的所有请求)。
+client.SetHTTPSInsecure(true)                         // 设置客户端 HTTPSInsecure 为 true
+isInsecure := client.GetHTTPSInsecure()               // 获取客户端 HTTPSInsecure
+```
+
 ## Keep-alive
-阿里云 Go SDK 底层使用 Go 语言原生的 `net/http` 收发请求，因此配置方式与 `net/http`相同，您可以通过 config 直接将配置传递给底层的 httpClient
+阿里云 Go SDK 底层使用 Go 语言原生的 `net/http` 收发请求，因此配置方式与 `net/http` 相同，您可以通过 config 直接将配置传递给底层的 httpClient
 
 ```go
 httpTransport := http.Transport{
