@@ -41,3 +41,16 @@ func TestWrapMatch(t *testing.T) {
 	assert.True(t, wrapped)
 	assert.Equal(t, "InvalidAccessKeySecret: Please check you AccessKeySecret", se.Recommend())
 }
+
+func TestWrapMatchWhenCodeIsIncompleteSignature(t *testing.T) {
+	wrapper := &SignatureDostNotMatchWrapper{}
+	err := NewServerError(400, `{"Code":"IncompleteSignature","Message":"Specified signature is not matched with our calculation. server string to sign is:match"}`, "comment")
+	se, ok := err.(*ServerError)
+	assert.True(t, ok)
+	assert.Equal(t, "IncompleteSignature", se.ErrorCode())
+	m := make(map[string]string)
+	m["StringToSign"] = "match"
+	wrapped := wrapper.tryWrap(se, m)
+	assert.True(t, wrapped)
+	assert.Equal(t, "InvalidAccessKeySecret: Please check you AccessKeySecret", se.Recommend())
+}
