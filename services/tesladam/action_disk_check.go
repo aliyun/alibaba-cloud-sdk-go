@@ -76,8 +76,8 @@ func (client *Client) ActionDiskCheckWithCallback(request *ActionDiskCheckReques
 // ActionDiskCheckRequest is the request struct for api ActionDiskCheck
 type ActionDiskCheckRequest struct {
 	*requests.RpcRequest
-	Ip        string `position:"Query" name:"Ip"`
 	DiskMount string `position:"Query" name:"DiskMount"`
+	Ip        string `position:"Query" name:"Ip"`
 }
 
 // ActionDiskCheckResponse is the response struct for api ActionDiskCheck
@@ -93,7 +93,7 @@ func CreateActionDiskCheckRequest() (request *ActionDiskCheckRequest) {
 	request = &ActionDiskCheckRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("TeslaDam", "2018-01-18", "ActionDiskCheck", "", "")
+	request.InitWithApiInfo("TeslaDam", "2018-01-18", "ActionDiskCheck", "tesladam", "openAPI")
 	return
 }
 

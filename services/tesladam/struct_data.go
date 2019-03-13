@@ -17,12 +17,12 @@ package tesladam
 
 // Data is a nested struct in tesladam response
 type Data struct {
+	Hostname         string `json:"Hostname" xml:"Hostname"`
 	ClusterCode      string `json:"ClusterCode" xml:"ClusterCode"`
 	Ip               string `json:"Ip" xml:"Ip"`
-	Hostname         string `json:"Hostname" xml:"Hostname"`
-	SshStatus        int    `json:"SshStatus" xml:"SshStatus"`
 	HealthScoreLast  int    `json:"HealthScoreLast" xml:"HealthScoreLast"`
 	HealthReasonLast string `json:"HealthReasonLast" xml:"HealthReasonLast"`
 	AppCode          string `json:"AppCode" xml:"AppCode"`
 	HeartStatus      int    `json:"heartStatus" xml:"heartStatus"`
+	SshStatus        int    `json:"SshStatus" xml:"SshStatus"`
 }

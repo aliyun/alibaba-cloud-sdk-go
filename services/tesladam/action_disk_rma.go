@@ -76,13 +76,13 @@ func (client *Client) ActionDiskRmaWithCallback(request *ActionDiskRmaRequest, c
 // ActionDiskRmaRequest is the request struct for api ActionDiskRma
 type ActionDiskRmaRequest struct {
 	*requests.RpcRequest
-	Hostname    string `position:"Query" name:"Hostname"`
-	DiskMount   string `position:"Query" name:"DiskMount"`
+	DiskName    string `position:"Query" name:"DiskName"`
 	ExecutionId string `position:"Query" name:"ExecutionId"`
 	DiskSlot    string `position:"Query" name:"DiskSlot"`
-	DiskName    string `position:"Query" name:"DiskName"`
-	DiskSn      string `position:"Query" name:"DiskSn"`
+	Hostname    string `position:"Query" name:"Hostname"`
+	DiskMount   string `position:"Query" name:"DiskMount"`
 	DiskReason  string `position:"Query" name:"DiskReason"`
+	DiskSn      string `position:"Query" name:"DiskSn"`
 }
 
 // ActionDiskRmaResponse is the response struct for api ActionDiskRma
@@ -98,7 +98,7 @@ func CreateActionDiskRmaRequest() (request *ActionDiskRmaRequest) {
 	request = &ActionDiskRmaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("TeslaDam", "2018-01-18", "ActionDiskRma", "", "")
+	request.InitWithApiInfo("TeslaDam", "2018-01-18", "ActionDiskRma", "tesladam", "openAPI")
 	return
 }
 

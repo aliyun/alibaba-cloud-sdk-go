@@ -93,7 +93,7 @@ func CreateActionRequest() (request *ActionRequest) {
 	request = &ActionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("TeslaDam", "2018-01-18", "Action", "", "")
+	request.InitWithApiInfo("TeslaDam", "2018-01-18", "Action", "tesladam", "openAPI")
 	return
 }
 

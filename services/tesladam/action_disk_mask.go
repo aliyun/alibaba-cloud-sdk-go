@@ -76,9 +76,9 @@ func (client *Client) ActionDiskMaskWithCallback(request *ActionDiskMaskRequest,
 // ActionDiskMaskRequest is the request struct for api ActionDiskMask
 type ActionDiskMaskRequest struct {
 	*requests.RpcRequest
-	Ip        string `position:"Query" name:"Ip"`
-	DiskMount string `position:"Query" name:"DiskMount"`
 	Op        string `position:"Query" name:"Op"`
+	DiskMount string `position:"Query" name:"DiskMount"`
+	Ip        string `position:"Query" name:"Ip"`
 }
 
 // ActionDiskMaskResponse is the response struct for api ActionDiskMask
@@ -94,7 +94,7 @@ func CreateActionDiskMaskRequest() (request *ActionDiskMaskRequest) {
 	request = &ActionDiskMaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("TeslaDam", "2018-01-18", "ActionDiskMask", "", "")
+	request.InitWithApiInfo("TeslaDam", "2018-01-18", "ActionDiskMask", "tesladam", "openAPI")
 	return
 }
 

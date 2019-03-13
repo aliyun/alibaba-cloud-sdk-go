@@ -76,10 +76,10 @@ func (client *Client) HostGetsWithCallback(request *HostGetsRequest, callback fu
 // HostGetsRequest is the request struct for api HostGets
 type HostGetsRequest struct {
 	*requests.RpcRequest
-	QueryType string           `position:"Query" name:"QueryType"`
 	Query     string           `position:"Query" name:"Query"`
 	EndTime   requests.Integer `position:"Query" name:"EndTime"`
 	StartTime requests.Integer `position:"Query" name:"StartTime"`
+	QueryType string           `position:"Query" name:"QueryType"`
 }
 
 // HostGetsResponse is the response struct for api HostGets
@@ -95,7 +95,7 @@ func CreateHostGetsRequest() (request *HostGetsRequest) {
 	request = &HostGetsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("TeslaDam", "2018-01-18", "HostGets", "", "")
+	request.InitWithApiInfo("TeslaDam", "2018-01-18", "HostGets", "tesladam", "openAPI")
 	return
 }
 
