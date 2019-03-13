@@ -93,7 +93,7 @@ func CreateGetJobTopologyRequest() (request *GetJobTopologyRequest) {
 	request = &GetJobTopologyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("TeslaStream", "2018-01-15", "GetJobTopology", "", "")
+	request.InitWithApiInfo("TeslaStream", "2018-01-15", "GetJobTopology", "teslastream", "openAPI")
 	return
 }
 

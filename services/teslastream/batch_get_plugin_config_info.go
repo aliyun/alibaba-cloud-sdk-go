@@ -93,7 +93,7 @@ func CreateBatchGetPluginConfigInfoRequest() (request *BatchGetPluginConfigInfoR
 	request = &BatchGetPluginConfigInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("TeslaStream", "2018-01-15", "BatchGetPluginConfigInfo", "", "")
+	request.InitWithApiInfo("TeslaStream", "2018-01-15", "BatchGetPluginConfigInfo", "teslastream", "openAPI")
 	return
 }
 

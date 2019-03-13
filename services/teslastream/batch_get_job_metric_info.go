@@ -93,7 +93,7 @@ func CreateBatchGetJobMetricInfoRequest() (request *BatchGetJobMetricInfoRequest
 	request = &BatchGetJobMetricInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("TeslaStream", "2018-01-15", "BatchGetJobMetricInfo", "", "")
+	request.InitWithApiInfo("TeslaStream", "2018-01-15", "BatchGetJobMetricInfo", "teslastream", "openAPI")
 	return
 }
 
