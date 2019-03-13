@@ -97,7 +97,7 @@ func CreateDescribePhoneInfoRequest() (request *DescribePhoneInfoRequest) {
 	request = &DescribePhoneInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("jarvis-public", "2018-06-21", "DescribePhoneInfo", "", "")
+	request.InitWithApiInfo("jarvis-public", "2018-06-21", "DescribePhoneInfo", "jarvis-public", "openAPI")
 	return
 }
 
