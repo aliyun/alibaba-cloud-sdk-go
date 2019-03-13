@@ -76,20 +76,20 @@ func (client *Client) GetUserInstanceWithCallback(request *GetUserInstanceReques
 // GetUserInstanceRequest is the request struct for api GetUserInstance
 type GetUserInstanceRequest struct {
 	*requests.RpcRequest
-	User     string           `position:"Query" name:"User"`
-	PageNum  requests.Integer `position:"Query" name:"PageNum"`
 	PageSize requests.Integer `position:"Query" name:"PageSize"`
-	Status   string           `position:"Query" name:"Status"`
+	PageNum  requests.Integer `position:"Query" name:"PageNum"`
 	Region   string           `position:"Query" name:"Region"`
+	User     string           `position:"Query" name:"User"`
+	Status   string           `position:"Query" name:"Status"`
 }
 
 // GetUserInstanceResponse is the response struct for api GetUserInstance
 type GetUserInstanceResponse struct {
 	*responses.BaseResponse
-	Code      int    `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Data      Data   `json:"Data" xml:"Data"`
+	Code      int                   `json:"Code" xml:"Code"`
+	Message   string                `json:"Message" xml:"Message"`
+	RequestId string                `json:"RequestId" xml:"RequestId"`
+	Data      DataInGetUserInstance `json:"Data" xml:"Data"`
 }
 
 // CreateGetUserInstanceRequest creates a request to invoke GetUserInstance API
@@ -97,7 +97,7 @@ func CreateGetUserInstanceRequest() (request *GetUserInstanceRequest) {
 	request = &GetUserInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("TeslaMaxCompute", "2018-01-04", "GetUserInstance", "", "")
+	request.InitWithApiInfo("TeslaMaxCompute", "2018-01-04", "GetUserInstance", "teslamaxcompute", "openAPI")
 	return
 }
 

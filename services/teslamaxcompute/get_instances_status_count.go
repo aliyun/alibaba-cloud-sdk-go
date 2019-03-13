@@ -76,10 +76,10 @@ func (client *Client) GetInstancesStatusCountWithCallback(request *GetInstancesS
 // GetInstancesStatusCountRequest is the request struct for api GetInstancesStatusCount
 type GetInstancesStatusCountRequest struct {
 	*requests.RpcRequest
-	Region    string `position:"Query" name:"Region"`
 	Cluster   string `position:"Query" name:"Cluster"`
-	QuotaName string `position:"Query" name:"QuotaName"`
 	QuotaId   string `position:"Query" name:"QuotaId"`
+	Region    string `position:"Query" name:"Region"`
+	QuotaName string `position:"Query" name:"QuotaName"`
 }
 
 // GetInstancesStatusCountResponse is the response struct for api GetInstancesStatusCount
@@ -96,7 +96,7 @@ func CreateGetInstancesStatusCountRequest() (request *GetInstancesStatusCountReq
 	request = &GetInstancesStatusCountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("TeslaMaxCompute", "2018-01-04", "GetInstancesStatusCount", "", "")
+	request.InitWithApiInfo("TeslaMaxCompute", "2018-01-04", "GetInstancesStatusCount", "teslamaxcompute", "openAPI")
 	return
 }
 

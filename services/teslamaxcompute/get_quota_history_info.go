@@ -78,9 +78,9 @@ type GetQuotaHistoryInfoRequest struct {
 	*requests.RpcRequest
 	Cluster   string           `position:"Query" name:"Cluster"`
 	EndTime   requests.Integer `position:"Query" name:"EndTime"`
-	QuotaName string           `position:"Query" name:"QuotaName"`
-	Region    string           `position:"Query" name:"Region"`
 	StartTime requests.Integer `position:"Query" name:"StartTime"`
+	Region    string           `position:"Query" name:"Region"`
+	QuotaName string           `position:"Query" name:"QuotaName"`
 }
 
 // GetQuotaHistoryInfoResponse is the response struct for api GetQuotaHistoryInfo
@@ -97,7 +97,7 @@ func CreateGetQuotaHistoryInfoRequest() (request *GetQuotaHistoryInfoRequest) {
 	request = &GetQuotaHistoryInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("TeslaMaxCompute", "2018-01-04", "GetQuotaHistoryInfo", "", "")
+	request.InitWithApiInfo("TeslaMaxCompute", "2018-01-04", "GetQuotaHistoryInfo", "teslamaxcompute", "openAPI")
 	return
 }
 

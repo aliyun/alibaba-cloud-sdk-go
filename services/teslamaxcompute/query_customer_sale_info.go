@@ -93,7 +93,7 @@ func CreateQueryCustomerSaleInfoRequest() (request *QueryCustomerSaleInfoRequest
 	request = &QueryCustomerSaleInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("TeslaMaxCompute", "2018-01-04", "QueryCustomerSaleInfo", "", "")
+	request.InitWithApiInfo("TeslaMaxCompute", "2018-01-04", "QueryCustomerSaleInfo", "teslamaxcompute", "openAPI")
 	return
 }
 

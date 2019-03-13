@@ -92,7 +92,7 @@ func CreateQueryTopologyRequest() (request *QueryTopologyRequest) {
 	request = &QueryTopologyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("TeslaMaxCompute", "2018-01-04", "QueryTopology", "", "")
+	request.InitWithApiInfo("TeslaMaxCompute", "2018-01-04", "QueryTopology", "teslamaxcompute", "openAPI")
 	return
 }
 

@@ -76,20 +76,20 @@ func (client *Client) GetProjectInstanceWithCallback(request *GetProjectInstance
 // GetProjectInstanceRequest is the request struct for api GetProjectInstance
 type GetProjectInstanceRequest struct {
 	*requests.RpcRequest
+	PageSize requests.Integer `position:"Query" name:"PageSize"`
 	Project  string           `position:"Query" name:"Project"`
 	PageNum  requests.Integer `position:"Query" name:"PageNum"`
-	PageSize requests.Integer `position:"Query" name:"PageSize"`
-	Status   string           `position:"Query" name:"Status"`
 	Region   string           `position:"Query" name:"Region"`
+	Status   string           `position:"Query" name:"Status"`
 }
 
 // GetProjectInstanceResponse is the response struct for api GetProjectInstance
 type GetProjectInstanceResponse struct {
 	*responses.BaseResponse
-	Code      int    `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Data      Data   `json:"Data" xml:"Data"`
+	Code      int                      `json:"Code" xml:"Code"`
+	Message   string                   `json:"Message" xml:"Message"`
+	RequestId string                   `json:"RequestId" xml:"RequestId"`
+	Data      DataInGetProjectInstance `json:"Data" xml:"Data"`
 }
 
 // CreateGetProjectInstanceRequest creates a request to invoke GetProjectInstance API
@@ -97,7 +97,7 @@ func CreateGetProjectInstanceRequest() (request *GetProjectInstanceRequest) {
 	request = &GetProjectInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("TeslaMaxCompute", "2018-01-04", "GetProjectInstance", "", "")
+	request.InitWithApiInfo("TeslaMaxCompute", "2018-01-04", "GetProjectInstance", "teslamaxcompute", "openAPI")
 	return
 }
 

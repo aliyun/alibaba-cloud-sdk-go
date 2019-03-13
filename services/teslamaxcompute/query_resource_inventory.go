@@ -92,7 +92,7 @@ func CreateQueryResourceInventoryRequest() (request *QueryResourceInventoryReque
 	request = &QueryResourceInventoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("TeslaMaxCompute", "2018-01-04", "QueryResourceInventory", "", "")
+	request.InitWithApiInfo("TeslaMaxCompute", "2018-01-04", "QueryResourceInventory", "teslamaxcompute", "openAPI")
 	return
 }
 

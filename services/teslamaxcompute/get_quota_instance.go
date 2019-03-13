@@ -77,12 +77,12 @@ func (client *Client) GetQuotaInstanceWithCallback(request *GetQuotaInstanceRequ
 type GetQuotaInstanceRequest struct {
 	*requests.RpcRequest
 	Cluster   string           `position:"Query" name:"Cluster"`
+	PageSize  requests.Integer `position:"Query" name:"PageSize"`
 	QuotaId   string           `position:"Query" name:"QuotaId"`
 	PageNum   requests.Integer `position:"Query" name:"PageNum"`
-	PageSize  requests.Integer `position:"Query" name:"PageSize"`
-	Status    string           `position:"Query" name:"Status"`
 	Region    string           `position:"Query" name:"Region"`
 	QuotaName string           `position:"Query" name:"QuotaName"`
+	Status    string           `position:"Query" name:"Status"`
 }
 
 // GetQuotaInstanceResponse is the response struct for api GetQuotaInstance
@@ -99,7 +99,7 @@ func CreateGetQuotaInstanceRequest() (request *GetQuotaInstanceRequest) {
 	request = &GetQuotaInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("TeslaMaxCompute", "2018-01-04", "GetQuotaInstance", "", "")
+	request.InitWithApiInfo("TeslaMaxCompute", "2018-01-04", "GetQuotaInstance", "teslamaxcompute", "openAPI")
 	return
 }
 

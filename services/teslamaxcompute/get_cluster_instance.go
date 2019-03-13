@@ -77,19 +77,19 @@ func (client *Client) GetClusterInstanceWithCallback(request *GetClusterInstance
 type GetClusterInstanceRequest struct {
 	*requests.RpcRequest
 	Cluster  string           `position:"Query" name:"Cluster"`
-	PageNum  requests.Integer `position:"Query" name:"PageNum"`
 	PageSize requests.Integer `position:"Query" name:"PageSize"`
-	Status   string           `position:"Query" name:"Status"`
+	PageNum  requests.Integer `position:"Query" name:"PageNum"`
 	Region   string           `position:"Query" name:"Region"`
+	Status   string           `position:"Query" name:"Status"`
 }
 
 // GetClusterInstanceResponse is the response struct for api GetClusterInstance
 type GetClusterInstanceResponse struct {
 	*responses.BaseResponse
-	Code      int    `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Data      Data   `json:"Data" xml:"Data"`
+	Code      int                      `json:"Code" xml:"Code"`
+	Message   string                   `json:"Message" xml:"Message"`
+	RequestId string                   `json:"RequestId" xml:"RequestId"`
+	Data      DataInGetClusterInstance `json:"Data" xml:"Data"`
 }
 
 // CreateGetClusterInstanceRequest creates a request to invoke GetClusterInstance API
@@ -97,7 +97,7 @@ func CreateGetClusterInstanceRequest() (request *GetClusterInstanceRequest) {
 	request = &GetClusterInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("TeslaMaxCompute", "2018-01-04", "GetClusterInstance", "", "")
+	request.InitWithApiInfo("TeslaMaxCompute", "2018-01-04", "GetClusterInstance", "teslamaxcompute", "openAPI")
 	return
 }
 
