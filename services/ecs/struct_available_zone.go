@@ -19,6 +19,7 @@ package ecs
 type AvailableZone struct {
 	RegionId           string                                            `json:"RegionId" xml:"RegionId"`
 	ZoneId             string                                            `json:"ZoneId" xml:"ZoneId"`
+	StatusCategory     string                                            `json:"StatusCategory" xml:"StatusCategory"`
 	Status             string                                            `json:"Status" xml:"Status"`
 	AvailableResources AvailableResourcesInDescribeResourcesModification `json:"AvailableResources" xml:"AvailableResources"`
 }

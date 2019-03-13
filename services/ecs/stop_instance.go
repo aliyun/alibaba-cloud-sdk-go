@@ -84,6 +84,7 @@ type StopInstanceRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	StoppedMode          string           `position:"Query" name:"StoppedMode"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Hibernate            requests.Boolean `position:"Query" name:"Hibernate"`
 	ForceStop            requests.Boolean `position:"Query" name:"ForceStop"`
 }
 
