@@ -94,7 +94,7 @@ func CreateDescribeUidGcLevelRequest() (request *DescribeUidGcLevelRequest) {
 	request = &DescribeUidGcLevelRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("jarvis", "2018-02-06", "DescribeUidGcLevel", "", "")
+	request.InitWithApiInfo("jarvis", "2018-02-06", "DescribeUidGcLevel", "jarvis", "openAPI")
 	return
 }
 

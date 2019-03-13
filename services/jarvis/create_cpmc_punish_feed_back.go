@@ -101,7 +101,7 @@ func CreateCreateCpmcPunishFeedBackRequest() (request *CreateCpmcPunishFeedBackR
 	request = &CreateCpmcPunishFeedBackRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("jarvis", "2018-02-06", "CreateCpmcPunishFeedBack", "", "")
+	request.InitWithApiInfo("jarvis", "2018-02-06", "CreateCpmcPunishFeedBack", "jarvis", "openAPI")
 	return
 }
 

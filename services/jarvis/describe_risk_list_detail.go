@@ -103,7 +103,7 @@ func CreateDescribeRiskListDetailRequest() (request *DescribeRiskListDetailReque
 	request = &DescribeRiskListDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("jarvis", "2018-02-06", "DescribeRiskListDetail", "", "")
+	request.InitWithApiInfo("jarvis", "2018-02-06", "DescribeRiskListDetail", "jarvis", "openAPI")
 	return
 }
 

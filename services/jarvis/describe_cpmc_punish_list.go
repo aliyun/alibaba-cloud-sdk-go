@@ -99,7 +99,7 @@ func CreateDescribeCpmcPunishListRequest() (request *DescribeCpmcPunishListReque
 	request = &DescribeCpmcPunishListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("jarvis", "2018-02-06", "DescribeCpmcPunishList", "", "")
+	request.InitWithApiInfo("jarvis", "2018-02-06", "DescribeCpmcPunishList", "jarvis", "openAPI")
 	return
 }
 

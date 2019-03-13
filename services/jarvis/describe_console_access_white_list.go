@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DescribeAccessWhiteListGroup invokes the jarvis.DescribeAccessWhiteListGroup API synchronously
-// api document: https://help.aliyun.com/api/jarvis/describeaccesswhitelistgroup.html
-func (client *Client) DescribeAccessWhiteListGroup(request *DescribeAccessWhiteListGroupRequest) (response *DescribeAccessWhiteListGroupResponse, err error) {
-	response = CreateDescribeAccessWhiteListGroupResponse()
+// DescribeConsoleAccessWhiteList invokes the jarvis.DescribeConsoleAccessWhiteList API synchronously
+// api document: https://help.aliyun.com/api/jarvis/describeconsoleaccesswhitelist.html
+func (client *Client) DescribeConsoleAccessWhiteList(request *DescribeConsoleAccessWhiteListRequest) (response *DescribeConsoleAccessWhiteListResponse, err error) {
+	response = CreateDescribeConsoleAccessWhiteListResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DescribeAccessWhiteListGroupWithChan invokes the jarvis.DescribeAccessWhiteListGroup API asynchronously
-// api document: https://help.aliyun.com/api/jarvis/describeaccesswhitelistgroup.html
+// DescribeConsoleAccessWhiteListWithChan invokes the jarvis.DescribeConsoleAccessWhiteList API asynchronously
+// api document: https://help.aliyun.com/api/jarvis/describeconsoleaccesswhitelist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DescribeAccessWhiteListGroupWithChan(request *DescribeAccessWhiteListGroupRequest) (<-chan *DescribeAccessWhiteListGroupResponse, <-chan error) {
-	responseChan := make(chan *DescribeAccessWhiteListGroupResponse, 1)
+func (client *Client) DescribeConsoleAccessWhiteListWithChan(request *DescribeConsoleAccessWhiteListRequest) (<-chan *DescribeConsoleAccessWhiteListResponse, <-chan error) {
+	responseChan := make(chan *DescribeConsoleAccessWhiteListResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DescribeAccessWhiteListGroup(request)
+		response, err := client.DescribeConsoleAccessWhiteList(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) DescribeAccessWhiteListGroupWithChan(request *DescribeAcce
 	return responseChan, errChan
 }
 
-// DescribeAccessWhiteListGroupWithCallback invokes the jarvis.DescribeAccessWhiteListGroup API asynchronously
-// api document: https://help.aliyun.com/api/jarvis/describeaccesswhitelistgroup.html
+// DescribeConsoleAccessWhiteListWithCallback invokes the jarvis.DescribeConsoleAccessWhiteList API asynchronously
+// api document: https://help.aliyun.com/api/jarvis/describeconsoleaccesswhitelist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DescribeAccessWhiteListGroupWithCallback(request *DescribeAccessWhiteListGroupRequest, callback func(response *DescribeAccessWhiteListGroupResponse, err error)) <-chan int {
+func (client *Client) DescribeConsoleAccessWhiteListWithCallback(request *DescribeConsoleAccessWhiteListRequest, callback func(response *DescribeConsoleAccessWhiteListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DescribeAccessWhiteListGroupResponse
+		var response *DescribeConsoleAccessWhiteListResponse
 		var err error
 		defer close(result)
-		response, err = client.DescribeAccessWhiteListGroup(request)
+		response, err = client.DescribeConsoleAccessWhiteList(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,8 +73,8 @@ func (client *Client) DescribeAccessWhiteListGroupWithCallback(request *Describe
 	return result
 }
 
-// DescribeAccessWhiteListGroupRequest is the request struct for api DescribeAccessWhiteListGroup
-type DescribeAccessWhiteListGroupRequest struct {
+// DescribeConsoleAccessWhiteListRequest is the request struct for api DescribeConsoleAccessWhiteList
+type DescribeConsoleAccessWhiteListRequest struct {
 	*requests.RpcRequest
 	SrcIP         string           `position:"Query" name:"SrcIP"`
 	SourceIp      string           `position:"Query" name:"SourceIp"`
@@ -88,8 +88,8 @@ type DescribeAccessWhiteListGroupRequest struct {
 	SourceCode    string           `position:"Query" name:"SourceCode"`
 }
 
-// DescribeAccessWhiteListGroupResponse is the response struct for api DescribeAccessWhiteListGroup
-type DescribeAccessWhiteListGroupResponse struct {
+// DescribeConsoleAccessWhiteListResponse is the response struct for api DescribeConsoleAccessWhiteList
+type DescribeConsoleAccessWhiteListResponse struct {
 	*responses.BaseResponse
 	RequestId string   `json:"RequestId" xml:"RequestId"`
 	Module    string   `json:"module" xml:"module"`
@@ -97,18 +97,18 @@ type DescribeAccessWhiteListGroupResponse struct {
 	DataList  []Data   `json:"DataList" xml:"DataList"`
 }
 
-// CreateDescribeAccessWhiteListGroupRequest creates a request to invoke DescribeAccessWhiteListGroup API
-func CreateDescribeAccessWhiteListGroupRequest() (request *DescribeAccessWhiteListGroupRequest) {
-	request = &DescribeAccessWhiteListGroupRequest{
+// CreateDescribeConsoleAccessWhiteListRequest creates a request to invoke DescribeConsoleAccessWhiteList API
+func CreateDescribeConsoleAccessWhiteListRequest() (request *DescribeConsoleAccessWhiteListRequest) {
+	request = &DescribeConsoleAccessWhiteListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("jarvis", "2018-02-06", "DescribeAccessWhiteListGroup", "jarvis", "openAPI")
+	request.InitWithApiInfo("jarvis", "2018-02-06", "DescribeConsoleAccessWhiteList", "jarvis", "openAPI")
 	return
 }
 
-// CreateDescribeAccessWhiteListGroupResponse creates a response to parse from DescribeAccessWhiteListGroup response
-func CreateDescribeAccessWhiteListGroupResponse() (response *DescribeAccessWhiteListGroupResponse) {
-	response = &DescribeAccessWhiteListGroupResponse{
+// CreateDescribeConsoleAccessWhiteListResponse creates a response to parse from DescribeConsoleAccessWhiteList response
+func CreateDescribeConsoleAccessWhiteListResponse() (response *DescribeConsoleAccessWhiteListResponse) {
+	response = &DescribeConsoleAccessWhiteListResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

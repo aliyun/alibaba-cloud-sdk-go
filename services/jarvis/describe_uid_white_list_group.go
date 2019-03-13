@@ -102,7 +102,7 @@ func CreateDescribeUidWhiteListGroupRequest() (request *DescribeUidWhiteListGrou
 	request = &DescribeUidWhiteListGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("jarvis", "2018-02-06", "DescribeUidWhiteListGroup", "", "")
+	request.InitWithApiInfo("jarvis", "2018-02-06", "DescribeUidWhiteListGroup", "jarvis", "openAPI")
 	return
 }
 

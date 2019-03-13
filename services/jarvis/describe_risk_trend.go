@@ -98,7 +98,7 @@ func CreateDescribeRiskTrendRequest() (request *DescribeRiskTrendRequest) {
 	request = &DescribeRiskTrendRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("jarvis", "2018-02-06", "DescribeRiskTrend", "", "")
+	request.InitWithApiInfo("jarvis", "2018-02-06", "DescribeRiskTrend", "jarvis", "openAPI")
 	return
 }
 

@@ -94,7 +94,7 @@ func CreateDeleteUidWhiteListGroupRequest() (request *DeleteUidWhiteListGroupReq
 	request = &DeleteUidWhiteListGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("jarvis", "2018-02-06", "DeleteUidWhiteListGroup", "", "")
+	request.InitWithApiInfo("jarvis", "2018-02-06", "DeleteUidWhiteListGroup", "jarvis", "openAPI")
 	return
 }
 

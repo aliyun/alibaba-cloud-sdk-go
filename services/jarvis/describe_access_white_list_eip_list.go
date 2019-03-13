@@ -87,7 +87,7 @@ type DescribeAccessWhiteListEipListResponse struct {
 	RequestId  string `json:"RequestId" xml:"RequestId"`
 	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
 	Module     string `json:"module" xml:"module"`
-	EcsList    []Ecs  `json:"EcsList" xml:"EcsList"`
+	EipList    []Ecs  `json:"EipList" xml:"EipList"`
 }
 
 // CreateDescribeAccessWhiteListEipListRequest creates a request to invoke DescribeAccessWhiteListEipList API
@@ -95,7 +95,7 @@ func CreateDescribeAccessWhiteListEipListRequest() (request *DescribeAccessWhite
 	request = &DescribeAccessWhiteListEipListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("jarvis", "2018-02-06", "DescribeAccessWhiteListEipList", "", "")
+	request.InitWithApiInfo("jarvis", "2018-02-06", "DescribeAccessWhiteListEipList", "jarvis", "openAPI")
 	return
 }
 

@@ -97,7 +97,7 @@ func CreateModifyUidWhiteListAutoShareRequest() (request *ModifyUidWhiteListAuto
 	request = &ModifyUidWhiteListAutoShareRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("jarvis", "2018-02-06", "ModifyUidWhiteListAutoShare", "", "")
+	request.InitWithApiInfo("jarvis", "2018-02-06", "ModifyUidWhiteListAutoShare", "jarvis", "openAPI")
 	return
 }
 

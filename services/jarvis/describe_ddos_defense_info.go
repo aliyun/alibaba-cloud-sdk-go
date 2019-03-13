@@ -98,7 +98,7 @@ func CreateDescribeDdosDefenseInfoRequest() (request *DescribeDdosDefenseInfoReq
 	request = &DescribeDdosDefenseInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("jarvis", "2018-02-06", "DescribeDdosDefenseInfo", "", "")
+	request.InitWithApiInfo("jarvis", "2018-02-06", "DescribeDdosDefenseInfo", "jarvis", "openAPI")
 	return
 }
 

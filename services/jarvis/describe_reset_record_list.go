@@ -101,7 +101,7 @@ func CreateDescribeResetRecordListRequest() (request *DescribeResetRecordListReq
 	request = &DescribeResetRecordListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("jarvis", "2018-02-06", "DescribeResetRecordList", "", "")
+	request.InitWithApiInfo("jarvis", "2018-02-06", "DescribeResetRecordList", "jarvis", "openAPI")
 	return
 }
 

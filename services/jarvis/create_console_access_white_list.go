@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// CreateAccessWhiteListGroup invokes the jarvis.CreateAccessWhiteListGroup API synchronously
-// api document: https://help.aliyun.com/api/jarvis/createaccesswhitelistgroup.html
-func (client *Client) CreateAccessWhiteListGroup(request *CreateAccessWhiteListGroupRequest) (response *CreateAccessWhiteListGroupResponse, err error) {
-	response = CreateCreateAccessWhiteListGroupResponse()
+// CreateConsoleAccessWhiteList invokes the jarvis.CreateConsoleAccessWhiteList API synchronously
+// api document: https://help.aliyun.com/api/jarvis/createconsoleaccesswhitelist.html
+func (client *Client) CreateConsoleAccessWhiteList(request *CreateConsoleAccessWhiteListRequest) (response *CreateConsoleAccessWhiteListResponse, err error) {
+	response = CreateCreateConsoleAccessWhiteListResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// CreateAccessWhiteListGroupWithChan invokes the jarvis.CreateAccessWhiteListGroup API asynchronously
-// api document: https://help.aliyun.com/api/jarvis/createaccesswhitelistgroup.html
+// CreateConsoleAccessWhiteListWithChan invokes the jarvis.CreateConsoleAccessWhiteList API asynchronously
+// api document: https://help.aliyun.com/api/jarvis/createconsoleaccesswhitelist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) CreateAccessWhiteListGroupWithChan(request *CreateAccessWhiteListGroupRequest) (<-chan *CreateAccessWhiteListGroupResponse, <-chan error) {
-	responseChan := make(chan *CreateAccessWhiteListGroupResponse, 1)
+func (client *Client) CreateConsoleAccessWhiteListWithChan(request *CreateConsoleAccessWhiteListRequest) (<-chan *CreateConsoleAccessWhiteListResponse, <-chan error) {
+	responseChan := make(chan *CreateConsoleAccessWhiteListResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.CreateAccessWhiteListGroup(request)
+		response, err := client.CreateConsoleAccessWhiteList(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) CreateAccessWhiteListGroupWithChan(request *CreateAccessWh
 	return responseChan, errChan
 }
 
-// CreateAccessWhiteListGroupWithCallback invokes the jarvis.CreateAccessWhiteListGroup API asynchronously
-// api document: https://help.aliyun.com/api/jarvis/createaccesswhitelistgroup.html
+// CreateConsoleAccessWhiteListWithCallback invokes the jarvis.CreateConsoleAccessWhiteList API asynchronously
+// api document: https://help.aliyun.com/api/jarvis/createconsoleaccesswhitelist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) CreateAccessWhiteListGroupWithCallback(request *CreateAccessWhiteListGroupRequest, callback func(response *CreateAccessWhiteListGroupResponse, err error)) <-chan int {
+func (client *Client) CreateConsoleAccessWhiteListWithCallback(request *CreateConsoleAccessWhiteListRequest, callback func(response *CreateConsoleAccessWhiteListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *CreateAccessWhiteListGroupResponse
+		var response *CreateConsoleAccessWhiteListResponse
 		var err error
 		defer close(result)
-		response, err = client.CreateAccessWhiteListGroup(request)
+		response, err = client.CreateConsoleAccessWhiteList(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,8 +73,8 @@ func (client *Client) CreateAccessWhiteListGroupWithCallback(request *CreateAcce
 	return result
 }
 
-// CreateAccessWhiteListGroupRequest is the request struct for api CreateAccessWhiteListGroup
-type CreateAccessWhiteListGroupRequest struct {
+// CreateConsoleAccessWhiteListRequest is the request struct for api CreateConsoleAccessWhiteList
+type CreateConsoleAccessWhiteListRequest struct {
 	*requests.RpcRequest
 	Note             string           `position:"Query" name:"Note"`
 	ResourceOwnerId  requests.Integer `position:"Query" name:"ResourceOwnerId"`
@@ -90,25 +90,25 @@ type CreateAccessWhiteListGroupRequest struct {
 	SourceCode       string           `position:"Query" name:"SourceCode"`
 }
 
-// CreateAccessWhiteListGroupResponse is the response struct for api CreateAccessWhiteListGroup
-type CreateAccessWhiteListGroupResponse struct {
+// CreateConsoleAccessWhiteListResponse is the response struct for api CreateConsoleAccessWhiteList
+type CreateConsoleAccessWhiteListResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Module    string `json:"Module" xml:"Module"`
 }
 
-// CreateCreateAccessWhiteListGroupRequest creates a request to invoke CreateAccessWhiteListGroup API
-func CreateCreateAccessWhiteListGroupRequest() (request *CreateAccessWhiteListGroupRequest) {
-	request = &CreateAccessWhiteListGroupRequest{
+// CreateCreateConsoleAccessWhiteListRequest creates a request to invoke CreateConsoleAccessWhiteList API
+func CreateCreateConsoleAccessWhiteListRequest() (request *CreateConsoleAccessWhiteListRequest) {
+	request = &CreateConsoleAccessWhiteListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("jarvis", "2018-02-06", "CreateAccessWhiteListGroup", "jarvis", "openAPI")
+	request.InitWithApiInfo("jarvis", "2018-02-06", "CreateConsoleAccessWhiteList", "jarvis", "openAPI")
 	return
 }
 
-// CreateCreateAccessWhiteListGroupResponse creates a response to parse from CreateAccessWhiteListGroup response
-func CreateCreateAccessWhiteListGroupResponse() (response *CreateAccessWhiteListGroupResponse) {
-	response = &CreateAccessWhiteListGroupResponse{
+// CreateCreateConsoleAccessWhiteListResponse creates a response to parse from CreateConsoleAccessWhiteList response
+func CreateCreateConsoleAccessWhiteListResponse() (response *CreateConsoleAccessWhiteListResponse) {
+	response = &CreateConsoleAccessWhiteListResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

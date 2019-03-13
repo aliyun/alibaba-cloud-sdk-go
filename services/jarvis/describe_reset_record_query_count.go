@@ -95,7 +95,7 @@ func CreateDescribeResetRecordQueryCountRequest() (request *DescribeResetRecordQ
 	request = &DescribeResetRecordQueryCountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("jarvis", "2018-02-06", "DescribeResetRecordQueryCount", "", "")
+	request.InitWithApiInfo("jarvis", "2018-02-06", "DescribeResetRecordQueryCount", "jarvis", "openAPI")
 	return
 }
 

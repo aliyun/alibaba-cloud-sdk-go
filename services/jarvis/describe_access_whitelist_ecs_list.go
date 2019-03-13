@@ -95,7 +95,7 @@ func CreateDescribeAccessWhitelistEcsListRequest() (request *DescribeAccessWhite
 	request = &DescribeAccessWhitelistEcsListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("jarvis", "2018-02-06", "DescribeAccessWhitelistEcsList", "", "")
+	request.InitWithApiInfo("jarvis", "2018-02-06", "DescribeAccessWhitelistEcsList", "jarvis", "openAPI")
 	return
 }
 

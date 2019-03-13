@@ -87,7 +87,7 @@ type DescribeAccessWhiteListSlbListResponse struct {
 	RequestId  string `json:"RequestId" xml:"RequestId"`
 	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
 	Module     string `json:"module" xml:"module"`
-	EcsList    []Ecs  `json:"EcsList" xml:"EcsList"`
+	SlbList    []Ecs  `json:"SlbList" xml:"SlbList"`
 }
 
 // CreateDescribeAccessWhiteListSlbListRequest creates a request to invoke DescribeAccessWhiteListSlbList API
@@ -95,7 +95,7 @@ func CreateDescribeAccessWhiteListSlbListRequest() (request *DescribeAccessWhite
 	request = &DescribeAccessWhiteListSlbListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("jarvis", "2018-02-06", "DescribeAccessWhiteListSlbList", "", "")
+	request.InitWithApiInfo("jarvis", "2018-02-06", "DescribeAccessWhiteListSlbList", "jarvis", "openAPI")
 	return
 }
 
