@@ -95,7 +95,7 @@ func CreateListUsersForGroupRequest() (request *ListUsersForGroupRequest) {
 	request = &ListUsersForGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ram", "2015-05-01", "ListUsersForGroup", "", "")
+	request.InitWithApiInfo("Ram", "2015-05-01", "ListUsersForGroup", "ram", "openAPI")
 	return
 }
 

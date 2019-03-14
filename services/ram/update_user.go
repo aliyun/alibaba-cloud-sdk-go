@@ -96,7 +96,7 @@ func CreateUpdateUserRequest() (request *UpdateUserRequest) {
 	request = &UpdateUserRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ram", "2015-05-01", "UpdateUser", "", "")
+	request.InitWithApiInfo("Ram", "2015-05-01", "UpdateUser", "ram", "openAPI")
 	return
 }
 
