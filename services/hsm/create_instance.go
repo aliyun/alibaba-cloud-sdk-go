@@ -76,14 +76,14 @@ func (client *Client) CreateInstanceWithCallback(request *CreateInstanceRequest,
 // CreateInstanceRequest is the request struct for api CreateInstance
 type CreateInstanceRequest struct {
 	*requests.RpcRequest
-	ClientToken     string           `position:"Query" name:"ClientToken"`
 	Period          requests.Integer `position:"Query" name:"Period"`
 	PeriodUnit      string           `position:"Query" name:"PeriodUnit"`
-	HsmDeviceType   string           `position:"Query" name:"HsmDeviceType"`
-	HsmOem          string           `position:"Query" name:"HsmOem"`
-	ZoneId          string           `position:"Query" name:"ZoneId"`
-	Quantity        requests.Integer `position:"Query" name:"Quantity"`
 	ResourceOwnerId string           `position:"Query" name:"ResourceOwnerId"`
+	Quantity        requests.Integer `position:"Query" name:"Quantity"`
+	HsmDeviceType   string           `position:"Query" name:"HsmDeviceType"`
+	ClientToken     string           `position:"Query" name:"ClientToken"`
+	ZoneId          string           `position:"Query" name:"ZoneId"`
+	HsmOem          string           `position:"Query" name:"HsmOem"`
 }
 
 // CreateInstanceResponse is the response struct for api CreateInstance

@@ -76,12 +76,12 @@ func (client *Client) DescribeInstancesWithCallback(request *DescribeInstancesRe
 // DescribeInstancesRequest is the request struct for api DescribeInstances
 type DescribeInstancesRequest struct {
 	*requests.RpcRequest
-	SourceIp        string           `position:"Query" name:"SourceIp"`
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	InstanceId      string           `position:"Query" name:"InstanceId"`
+	SourceIp        string           `position:"Query" name:"SourceIp"`
 	PageSize        requests.Integer `position:"Query" name:"PageSize"`
 	CurrentPage     requests.Integer `position:"Query" name:"CurrentPage"`
 	HsmStatus       requests.Integer `position:"Query" name:"HsmStatus"`
-	InstanceId      string           `position:"Query" name:"InstanceId"`
 }
 
 // DescribeInstancesResponse is the response struct for api DescribeInstances

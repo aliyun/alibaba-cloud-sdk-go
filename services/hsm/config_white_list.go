@@ -76,9 +76,9 @@ func (client *Client) ConfigWhiteListWithCallback(request *ConfigWhiteListReques
 // ConfigWhiteListRequest is the request struct for api ConfigWhiteList
 type ConfigWhiteListRequest struct {
 	*requests.RpcRequest
-	SourceIp        string           `position:"Query" name:"SourceIp"`
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	InstanceId      string           `position:"Query" name:"InstanceId"`
+	SourceIp        string           `position:"Query" name:"SourceIp"`
 	WhiteList       string           `position:"Query" name:"WhiteList"`
 }
 

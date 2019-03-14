@@ -76,9 +76,9 @@ func (client *Client) ModifyInstanceWithCallback(request *ModifyInstanceRequest,
 // ModifyInstanceRequest is the request struct for api ModifyInstance
 type ModifyInstanceRequest struct {
 	*requests.RpcRequest
-	SourceIp        string           `position:"Query" name:"SourceIp"`
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	InstanceId      string           `position:"Query" name:"InstanceId"`
+	SourceIp        string           `position:"Query" name:"SourceIp"`
 	Remark          string           `position:"Query" name:"Remark"`
 }
 

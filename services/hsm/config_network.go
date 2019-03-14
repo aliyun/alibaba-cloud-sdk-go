@@ -76,11 +76,11 @@ func (client *Client) ConfigNetworkWithCallback(request *ConfigNetworkRequest, c
 // ConfigNetworkRequest is the request struct for api ConfigNetwork
 type ConfigNetworkRequest struct {
 	*requests.RpcRequest
-	SourceIp        string           `position:"Query" name:"SourceIp"`
+	VSwitchId       string           `position:"Query" name:"VSwitchId"`
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	InstanceId      string           `position:"Query" name:"InstanceId"`
+	SourceIp        string           `position:"Query" name:"SourceIp"`
 	VpcId           string           `position:"Query" name:"VpcId"`
-	VSwitchId       string           `position:"Query" name:"VSwitchId"`
 	Ip              string           `position:"Query" name:"Ip"`
 }
 
