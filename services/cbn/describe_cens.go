@@ -81,6 +81,7 @@ type DescribeCensRequest struct {
 	ResourceOwnerAccount string                `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string                `position:"Query" name:"OwnerAccount"`
 	PageSize             requests.Integer      `position:"Query" name:"PageSize"`
+	Tag                  *[]DescribeCensTag    `position:"Query" name:"Tag"  type:"Repeated"`
 	OwnerId              requests.Integer      `position:"Query" name:"OwnerId"`
 	PageNumber           requests.Integer      `position:"Query" name:"PageNumber"`
 }
@@ -89,6 +90,12 @@ type DescribeCensRequest struct {
 type DescribeCensFilter struct {
 	Value *[]string `name:"Value" type:"Repeated"`
 	Key   string    `name:"Key"`
+}
+
+// DescribeCensTag is a repeated param struct in DescribeCensRequest
+type DescribeCensTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // DescribeCensResponse is the response struct for api DescribeCens

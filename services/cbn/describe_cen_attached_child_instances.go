@@ -76,14 +76,15 @@ func (client *Client) DescribeCenAttachedChildInstancesWithCallback(request *Des
 // DescribeCenAttachedChildInstancesRequest is the request struct for api DescribeCenAttachedChildInstances
 type DescribeCenAttachedChildInstancesRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	CenId                string           `position:"Query" name:"CenId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ChildInstanceType    string           `position:"Query" name:"ChildInstanceType"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
+	CenId                 string           `position:"Query" name:"CenId"`
+	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
+	PageSize              requests.Integer `position:"Query" name:"PageSize"`
+	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
+	ChildInstanceType     string           `position:"Query" name:"ChildInstanceType"`
+	PageNumber            requests.Integer `position:"Query" name:"PageNumber"`
+	ChildInstanceRegionId string           `position:"Query" name:"ChildInstanceRegionId"`
 }
 
 // DescribeCenAttachedChildInstancesResponse is the response struct for api DescribeCenAttachedChildInstances

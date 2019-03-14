@@ -76,6 +76,7 @@ func (client *Client) CreateCenWithCallback(request *CreateCenRequest, callback 
 // CreateCenRequest is the request struct for api CreateCen
 type CreateCenRequest struct {
 	*requests.RpcRequest
+	ProtectionLevel      string           `position:"Query" name:"ProtectionLevel"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`

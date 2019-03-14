@@ -29,5 +29,6 @@ type CenBandwidthPackage struct {
 	CreationTime               string `json:"CreationTime" xml:"CreationTime"`
 	ExpiredTime                string `json:"ExpiredTime" xml:"ExpiredTime"`
 	Status                     string `json:"Status" xml:"Status"`
+	IsCrossBorder              bool   `json:"IsCrossBorder" xml:"IsCrossBorder"`
 	CenIds                     CenIds `json:"CenIds" xml:"CenIds"`
 }

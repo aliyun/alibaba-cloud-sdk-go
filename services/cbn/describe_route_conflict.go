@@ -92,11 +92,11 @@ type DescribeRouteConflictRequest struct {
 // DescribeRouteConflictResponse is the response struct for api DescribeRouteConflict
 type DescribeRouteConflictResponse struct {
 	*responses.BaseResponse
-	RequestId      string                                `json:"RequestId" xml:"RequestId"`
-	PageNumber     int                                   `json:"PageNumber" xml:"PageNumber"`
-	TotalCount     int                                   `json:"TotalCount" xml:"TotalCount"`
-	PageSize       int                                   `json:"PageSize" xml:"PageSize"`
-	RouteConflicts RouteConflictsInDescribeRouteConflict `json:"RouteConflicts" xml:"RouteConflicts"`
+	RequestId      string         `json:"RequestId" xml:"RequestId"`
+	PageNumber     int            `json:"PageNumber" xml:"PageNumber"`
+	TotalCount     int            `json:"TotalCount" xml:"TotalCount"`
+	PageSize       int            `json:"PageSize" xml:"PageSize"`
+	RouteConflicts RouteConflicts `json:"RouteConflicts" xml:"RouteConflicts"`
 }
 
 // CreateDescribeRouteConflictRequest creates a request to invoke DescribeRouteConflict API
