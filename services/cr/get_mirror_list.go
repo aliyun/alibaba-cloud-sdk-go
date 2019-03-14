@@ -88,7 +88,7 @@ func CreateGetMirrorListRequest() (request *GetMirrorListRequest) {
 	request = &GetMirrorListRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("cr", "2016-06-07", "GetMirrorList", "/mirrors", "acr", "openAPI")
+	request.InitWithApiInfo("cr", "2016-06-07", "GetMirrorList", "/mirrors", "cr", "openAPI")
 	request.Method = requests.GET
 	return
 }

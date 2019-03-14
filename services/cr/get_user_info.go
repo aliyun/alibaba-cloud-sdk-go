@@ -88,7 +88,7 @@ func CreateGetUserInfoRequest() (request *GetUserInfoRequest) {
 	request = &GetUserInfoRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("cr", "2016-06-07", "GetUserInfo", "/users", "acr", "openAPI")
+	request.InitWithApiInfo("cr", "2016-06-07", "GetUserInfo", "/users", "cr", "openAPI")
 	request.Method = requests.GET
 	return
 }

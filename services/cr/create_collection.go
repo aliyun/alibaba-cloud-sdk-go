@@ -88,7 +88,7 @@ func CreateCreateCollectionRequest() (request *CreateCollectionRequest) {
 	request = &CreateCollectionRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("cr", "2016-06-07", "CreateCollection", "/collections", "acr", "openAPI")
+	request.InitWithApiInfo("cr", "2016-06-07", "CreateCollection", "/collections", "cr", "openAPI")
 	request.Method = requests.PUT
 	return
 }

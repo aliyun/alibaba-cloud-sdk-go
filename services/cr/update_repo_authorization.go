@@ -91,7 +91,7 @@ func CreateUpdateRepoAuthorizationRequest() (request *UpdateRepoAuthorizationReq
 	request = &UpdateRepoAuthorizationRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("cr", "2016-06-07", "UpdateRepoAuthorization", "/repos/[RepoNamespace]/[RepoName]/authorizations/[AuthorizeId]", "acr", "openAPI")
+	request.InitWithApiInfo("cr", "2016-06-07", "UpdateRepoAuthorization", "/repos/[RepoNamespace]/[RepoName]/authorizations/[AuthorizeId]", "cr", "openAPI")
 	request.Method = requests.POST
 	return
 }

@@ -88,7 +88,7 @@ func CreateCreateNamespaceRequest() (request *CreateNamespaceRequest) {
 	request = &CreateNamespaceRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("cr", "2016-06-07", "CreateNamespace", "/namespace", "acr", "openAPI")
+	request.InitWithApiInfo("cr", "2016-06-07", "CreateNamespace", "/namespace", "cr", "openAPI")
 	request.Method = requests.PUT
 	return
 }

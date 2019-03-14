@@ -91,7 +91,7 @@ func CreateCancelRepoBuildRequest() (request *CancelRepoBuildRequest) {
 	request = &CancelRepoBuildRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("cr", "2016-06-07", "CancelRepoBuild", "/repos/[RepoNamespace]/[RepoName]/build/[BuildId]/cancel", "acr", "openAPI")
+	request.InitWithApiInfo("cr", "2016-06-07", "CancelRepoBuild", "/repos/[RepoNamespace]/[RepoName]/build/[BuildId]/cancel", "cr", "openAPI")
 	request.Method = requests.POST
 	return
 }

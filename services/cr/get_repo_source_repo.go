@@ -90,7 +90,7 @@ func CreateGetRepoSourceRepoRequest() (request *GetRepoSourceRepoRequest) {
 	request = &GetRepoSourceRepoRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("cr", "2016-06-07", "GetRepoSourceRepo", "/repos/[RepoNamespace]/[RepoName]/sourceRepo", "acr", "openAPI")
+	request.InitWithApiInfo("cr", "2016-06-07", "GetRepoSourceRepo", "/repos/[RepoNamespace]/[RepoName]/sourceRepo", "cr", "openAPI")
 	request.Method = requests.GET
 	return
 }

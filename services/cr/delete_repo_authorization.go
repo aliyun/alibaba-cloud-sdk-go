@@ -91,7 +91,7 @@ func CreateDeleteRepoAuthorizationRequest() (request *DeleteRepoAuthorizationReq
 	request = &DeleteRepoAuthorizationRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("cr", "2016-06-07", "DeleteRepoAuthorization", "/repos/[RepoNamespace]/[RepoName]/authorizations/[AuthorizeId]", "acr", "openAPI")
+	request.InitWithApiInfo("cr", "2016-06-07", "DeleteRepoAuthorization", "/repos/[RepoNamespace]/[RepoName]/authorizations/[AuthorizeId]", "cr", "openAPI")
 	request.Method = requests.DELETE
 	return
 }

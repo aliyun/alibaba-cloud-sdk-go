@@ -88,7 +88,7 @@ func CreateGetAuthorizationTokenRequest() (request *GetAuthorizationTokenRequest
 	request = &GetAuthorizationTokenRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("cr", "2016-06-07", "GetAuthorizationToken", "/tokens", "acr", "openAPI")
+	request.InitWithApiInfo("cr", "2016-06-07", "GetAuthorizationToken", "/tokens", "cr", "openAPI")
 	request.Method = requests.GET
 	return
 }

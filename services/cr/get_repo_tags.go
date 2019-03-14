@@ -92,7 +92,7 @@ func CreateGetRepoTagsRequest() (request *GetRepoTagsRequest) {
 	request = &GetRepoTagsRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("cr", "2016-06-07", "GetRepoTags", "/repos/[RepoNamespace]/[RepoName]/tags", "acr", "openAPI")
+	request.InitWithApiInfo("cr", "2016-06-07", "GetRepoTags", "/repos/[RepoNamespace]/[RepoName]/tags", "cr", "openAPI")
 	request.Method = requests.GET
 	return
 }

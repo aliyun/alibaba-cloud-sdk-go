@@ -91,7 +91,7 @@ func CreateGetRepoAuthorizationListRequest() (request *GetRepoAuthorizationListR
 	request = &GetRepoAuthorizationListRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("cr", "2016-06-07", "GetRepoAuthorizationList", "/repos/[RepoNamespace]/[RepoName]/authorizations", "acr", "openAPI")
+	request.InitWithApiInfo("cr", "2016-06-07", "GetRepoAuthorizationList", "/repos/[RepoNamespace]/[RepoName]/authorizations", "cr", "openAPI")
 	request.Method = requests.GET
 	return
 }

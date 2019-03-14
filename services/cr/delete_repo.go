@@ -90,7 +90,7 @@ func CreateDeleteRepoRequest() (request *DeleteRepoRequest) {
 	request = &DeleteRepoRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("cr", "2016-06-07", "DeleteRepo", "/repos/[RepoNamespace]/[RepoName]", "acr", "openAPI")
+	request.InitWithApiInfo("cr", "2016-06-07", "DeleteRepo", "/repos/[RepoNamespace]/[RepoName]", "cr", "openAPI")
 	request.Method = requests.DELETE
 	return
 }

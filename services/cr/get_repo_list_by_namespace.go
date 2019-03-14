@@ -92,7 +92,7 @@ func CreateGetRepoListByNamespaceRequest() (request *GetRepoListByNamespaceReque
 	request = &GetRepoListByNamespaceRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("cr", "2016-06-07", "GetRepoListByNamespace", "/repos/[RepoNamespace]", "acr", "openAPI")
+	request.InitWithApiInfo("cr", "2016-06-07", "GetRepoListByNamespace", "/repos/[RepoNamespace]", "cr", "openAPI")
 	request.Method = requests.GET
 	return
 }

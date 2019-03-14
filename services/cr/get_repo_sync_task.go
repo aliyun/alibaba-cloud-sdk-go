@@ -91,7 +91,7 @@ func CreateGetRepoSyncTaskRequest() (request *GetRepoSyncTaskRequest) {
 	request = &GetRepoSyncTaskRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("cr", "2016-06-07", "GetRepoSyncTask", "/repos/[RepoNamespace]/[RepoName]/syncTasks/[SyncTaskId]", "acr", "openAPI")
+	request.InitWithApiInfo("cr", "2016-06-07", "GetRepoSyncTask", "/repos/[RepoNamespace]/[RepoName]/syncTasks/[SyncTaskId]", "cr", "openAPI")
 	request.Method = requests.GET
 	return
 }

@@ -91,7 +91,7 @@ func CreateGetImageLayerRequest() (request *GetImageLayerRequest) {
 	request = &GetImageLayerRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("cr", "2016-06-07", "GetImageLayer", "/repos/[RepoNamespace]/[RepoName]/tags/[Tag]/layers", "acr", "openAPI")
+	request.InitWithApiInfo("cr", "2016-06-07", "GetImageLayer", "/repos/[RepoNamespace]/[RepoName]/tags/[Tag]/layers", "cr", "openAPI")
 	request.Method = requests.GET
 	return
 }

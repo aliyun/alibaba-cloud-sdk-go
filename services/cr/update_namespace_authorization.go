@@ -90,7 +90,7 @@ func CreateUpdateNamespaceAuthorizationRequest() (request *UpdateNamespaceAuthor
 	request = &UpdateNamespaceAuthorizationRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("cr", "2016-06-07", "UpdateNamespaceAuthorization", "/namespace/[Namespace]/authorizations/[AuthorizeId]", "acr", "openAPI")
+	request.InitWithApiInfo("cr", "2016-06-07", "UpdateNamespaceAuthorization", "/namespace/[Namespace]/authorizations/[AuthorizeId]", "cr", "openAPI")
 	request.Method = requests.POST
 	return
 }

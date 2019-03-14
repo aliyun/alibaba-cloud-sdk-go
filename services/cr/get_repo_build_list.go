@@ -92,7 +92,7 @@ func CreateGetRepoBuildListRequest() (request *GetRepoBuildListRequest) {
 	request = &GetRepoBuildListRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("cr", "2016-06-07", "GetRepoBuildList", "/repos/[RepoNamespace]/[RepoName]/build", "acr", "openAPI")
+	request.InitWithApiInfo("cr", "2016-06-07", "GetRepoBuildList", "/repos/[RepoNamespace]/[RepoName]/build", "cr", "openAPI")
 	request.Method = requests.GET
 	return
 }

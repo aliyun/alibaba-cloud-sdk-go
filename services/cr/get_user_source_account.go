@@ -89,7 +89,7 @@ func CreateGetUserSourceAccountRequest() (request *GetUserSourceAccountRequest) 
 	request = &GetUserSourceAccountRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("cr", "2016-06-07", "GetUserSourceAccount", "/users/sourceAccount", "acr", "openAPI")
+	request.InitWithApiInfo("cr", "2016-06-07", "GetUserSourceAccount", "/users/sourceAccount", "cr", "openAPI")
 	request.Method = requests.GET
 	return
 }

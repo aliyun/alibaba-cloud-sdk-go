@@ -90,7 +90,7 @@ func CreateGetRepoWebhookRequest() (request *GetRepoWebhookRequest) {
 	request = &GetRepoWebhookRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("cr", "2016-06-07", "GetRepoWebhook", "/repos/[RepoNamespace]/[RepoName]/webhooks", "acr", "openAPI")
+	request.InitWithApiInfo("cr", "2016-06-07", "GetRepoWebhook", "/repos/[RepoNamespace]/[RepoName]/webhooks", "cr", "openAPI")
 	request.Method = requests.GET
 	return
 }
