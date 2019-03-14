@@ -16,6 +16,7 @@ package sdk
 
 import (
 	"bytes"
+	"fmt"
 	"io/ioutil"
 	"net/http"
 	"os"
@@ -120,7 +121,7 @@ func Test_NewClientWithRsaKeyPair(t *testing.T) {
 	assert.NotNil(t, client)
 }
 
-func mockResponse(statusCode int, content string) (res *http.Response, err error) {
+func mockResponse(statusCode int, content string, mockerr error) (res *http.Response, err error) {
 	status := strconv.Itoa(statusCode)
 	res = &http.Response{
 		Proto:      "HTTP/1.1",
@@ -130,6 +131,7 @@ func mockResponse(statusCode int, content string) (res *http.Response, err error
 		Status:     status + " " + http.StatusText(statusCode),
 	}
 	res.Body = ioutil.NopCloser(bytes.NewReader([]byte(content)))
+	err = mockerr
 	return
 }
 
@@ -151,7 +153,7 @@ func Test_DoAction(t *testing.T) {
 	defer func() { hookDo = origTestHookDo }()
 	hookDo = func(fn func(req *http.Request) (*http.Response, error)) func(req *http.Request) (*http.Response, error) {
 		return func(req *http.Request) (*http.Response, error) {
-			return mockResponse(200, "")
+			return mockResponse(200, "", nil)
 		}
 	}
 	err = client.DoAction(request, response)
@@ -176,15 +178,23 @@ func Test_DoAction_HTTPSInsecure(t *testing.T) {
 	request.QueryParams["RegionId"] = os.Getenv("REGION_ID")
 	request.TransToAcsRequest()
 	response := responses.NewCommonResponse()
+	origTestHookDo := hookDo
+	defer func() { hookDo = origTestHookDo }()
+	hookDo = func(fn func(req *http.Request) (*http.Response, error)) func(req *http.Request) (*http.Response, error) {
+		return func(req *http.Request) (*http.Response, error) {
+			return mockResponse(200, "", nil)
+		}
+	}
 	err = client.DoAction(request, response)
-	assert.NotNil(t, err)
-	assert.Contains(t, err.Error(), "Specified access key is not found.")
+	assert.Nil(t, err)
+	assert.Equal(t, 200, response.GetHttpStatus())
+	assert.Equal(t, "", response.GetHttpContentString())
 	trans := client.httpClient.Transport.(*http.Transport)
 	assert.Equal(t, true, trans.TLSClientConfig.InsecureSkipVerify)
 
 	request.SetHTTPSInsecure(false)
 	err = client.DoAction(request, response)
-	assert.NotNil(t, err)
+	assert.Nil(t, err)
 	trans = client.httpClient.Transport.(*http.Transport)
 	assert.Equal(t, false, trans.TLSClientConfig.InsecureSkipVerify)
 }
@@ -203,37 +213,36 @@ func Test_DoAction_Timeout(t *testing.T) {
 	request.QueryParams["PageSize"] = "30"
 	request.TransToAcsRequest()
 	response := responses.NewCommonResponse()
+	origTestHookDo := hookDo
+	defer func() { hookDo = origTestHookDo }()
+	hookDo = func(fn func(req *http.Request) (*http.Response, error)) func(req *http.Request) (*http.Response, error) {
+		return func(req *http.Request) (*http.Response, error) {
+			return mockResponse(400, "Server Internel Error", fmt.Errorf("read tcp"))
+		}
+	}
 	err = client.DoAction(request, response)
 	assert.NotNil(t, err)
-	assert.Contains(t, err.Error(), "Specified access key is not found.")
+	assert.Equal(t, 0, response.GetHttpStatus())
+	assert.Equal(t, "", response.GetHttpContentString())
 
+	// Test set client timeout
 	client.SetReadTimeout(1 * time.Millisecond)
-	assert.Equal(t, 1*time.Millisecond, client.GetReadTimeout())
-	err = client.DoAction(request, response)
-	assert.NotNil(t, err)
-	assert.Contains(t, err.Error(), "Read timeout. Please set a valid ReadTimeout.")
-
 	client.SetConnectTimeout(1 * time.Millisecond)
 	assert.Equal(t, 1*time.Millisecond, client.GetConnectTimeout())
+	assert.Equal(t, 1*time.Millisecond, client.GetReadTimeout())
+	client.config.AutoRetry = false
 	err = client.DoAction(request, response)
 	assert.NotNil(t, err)
-	assert.Contains(t, err.Error(), "Connect timeout. Please set a valid ConnectTimeout.")
+	assert.Equal(t, 0, response.GetHttpStatus())
+	assert.Equal(t, "", response.GetHttpContentString())
 
-	client.SetReadTimeout(10 * time.Second)
-	client.SetConnectTimeout(10 * time.Second)
-	err = client.DoAction(request, response)
-	assert.NotNil(t, err)
-	assert.Contains(t, err.Error(), "Specified access key is not found.")
-
+	// Test set request timeout
 	request.SetReadTimeout(1 * time.Millisecond)
-	err = client.DoAction(request, response)
-	assert.NotNil(t, err)
-	assert.Contains(t, err.Error(), "Read timeout. Please set a valid ReadTimeout.")
-
 	request.SetConnectTimeout(1 * time.Millisecond)
 	err = client.DoAction(request, response)
 	assert.NotNil(t, err)
-	assert.Contains(t, err.Error(), "Connect timeout. Please set a valid ConnectTimeout.")
+	assert.Equal(t, 0, response.GetHttpStatus())
+	assert.Equal(t, "", response.GetHttpContentString())
 
 	client.Shutdown()
 	assert.Equal(t, false, client.isRunning)
@@ -256,13 +265,14 @@ func Test_ProcessCommonRequest(t *testing.T) {
 	defer func() { hookDo = origTestHookDo }()
 	hookDo = func(fn func(req *http.Request) (*http.Response, error)) func(req *http.Request) (*http.Response, error) {
 		return func(req *http.Request) (*http.Response, error) {
-			return mockResponse(200, "")
+			return mockResponse(400, "", fmt.Errorf("test error"))
 		}
 	}
-	response, err := client.ProcessCommonRequest(request)
-	assert.Nil(t, err)
-	assert.Equal(t, 200, response.GetHttpStatus())
-	assert.Equal(t, "", response.GetHttpContentString())
+	resp, err := client.ProcessCommonRequest(request)
+	assert.NotNil(t, err)
+	assert.Contains(t, err.Error(), "test error")
+	assert.Equal(t, 0, resp.GetHttpStatus())
+	assert.Equal(t, "", resp.GetHttpContentString())
 }
 
 func Test_DoAction_With500(t *testing.T) {
@@ -283,7 +293,7 @@ func Test_DoAction_With500(t *testing.T) {
 	defer func() { hookDo = origTestHookDo }()
 	hookDo = func(fn func(req *http.Request) (*http.Response, error)) func(req *http.Request) (*http.Response, error) {
 		return func(req *http.Request) (*http.Response, error) {
-			return mockResponse(500, "Server Internel Error")
+			return mockResponse(500, "Server Internel Error", nil)
 		}
 	}
 	err = client.DoAction(request, response)
@@ -349,8 +359,17 @@ func TestClient_ProcessCommonRequestWithSigner(t *testing.T) {
 	signer := &signertest{
 		name: "signer",
 	}
-	_, err = client.ProcessCommonRequestWithSigner(request, signer)
+	origTestHookDo := hookDo
+	defer func() { hookDo = origTestHookDo }()
+	hookDo = func(fn func(req *http.Request) (*http.Response, error)) func(req *http.Request) (*http.Response, error) {
+		return func(req *http.Request) (*http.Response, error) {
+			return mockResponse(500, "Server Internel Error", fmt.Errorf("test error"))
+		}
+	}
+	resp, err := client.ProcessCommonRequestWithSigner(request, signer)
 	assert.NotNil(t, err)
+	assert.Contains(t, err.Error(), "test error")
+	assert.Equal(t, resp.GetHttpContentString(), "")
 }
 
 func TestClient_AppendUserAgent(t *testing.T) {
@@ -372,26 +391,31 @@ func TestClient_AppendUserAgent(t *testing.T) {
 	assert.Nil(t, err)
 	assert.Equal(t, DefaultUserAgent, httpRequest.Header.Get("User-Agent"))
 
+	// Test set client useragent.
 	client.AppendUserAgent("test", "1.01")
 	httpRequest, err = client.buildRequestWithSigner(request, signer)
 	assert.Equal(t, DefaultUserAgent+" test/1.01", httpRequest.Header.Get("User-Agent"))
 
+	// Test set request useragent. And request useragent has a higner priority than client's.
 	request.AppendUserAgent("test", "2.01")
 	httpRequest, err = client.buildRequestWithSigner(request, signer)
 	assert.Equal(t, DefaultUserAgent+" test/2.01", httpRequest.Header.Get("User-Agent"))
 
+	client.AppendUserAgent("test", "2.02")
+	httpRequest, err = client.buildRequestWithSigner(request, signer)
+	assert.Equal(t, DefaultUserAgent+" test/2.01", httpRequest.Header.Get("User-Agent"))
+
+	// Test update request useragent.
 	request.AppendUserAgent("test", "2.02")
 	httpRequest, err = client.buildRequestWithSigner(request, signer)
 	assert.Equal(t, DefaultUserAgent+" test/2.02", httpRequest.Header.Get("User-Agent"))
 
-	client.AppendUserAgent("test", "2.01")
-	httpRequest, err = client.buildRequestWithSigner(request, signer)
-	assert.Equal(t, DefaultUserAgent+" test/2.02", httpRequest.Header.Get("User-Agent"))
-
+	// Test client can't modify DefaultUserAgent.
 	client.AppendUserAgent("core", "1.01")
 	httpRequest, err = client.buildRequestWithSigner(request, signer)
 	assert.Equal(t, DefaultUserAgent+" test/2.02", httpRequest.Header.Get("User-Agent"))
 
+	// Test request can't modify DefaultUserAgent.
 	request.AppendUserAgent("core", "1.01")
 	httpRequest, err = client.buildRequestWithSigner(request, signer)
 	assert.Equal(t, DefaultUserAgent+" test/2.02", httpRequest.Header.Get("User-Agent"))
@@ -405,7 +429,7 @@ func TestClient_AppendUserAgent(t *testing.T) {
 	request1.TransToAcsRequest()
 	httpRequest, err = client.buildRequestWithSigner(request1, signer)
 	assert.Nil(t, err)
-	assert.Equal(t, DefaultUserAgent+" test/2.01 sys/1.01", httpRequest.Header.Get("User-Agent"))
+	assert.Equal(t, DefaultUserAgent+" test/2.02 sys/1.01", httpRequest.Header.Get("User-Agent"))
 }
 
 func TestClient_ProcessCommonRequestWithSigner_Error(t *testing.T) {
@@ -421,12 +445,21 @@ func TestClient_ProcessCommonRequestWithSigner_Error(t *testing.T) {
 	request.QueryParams["PageNumber"] = "1"
 	request.QueryParams["PageSize"] = "30"
 	request.RegionId = "regionid"
+	origTestHookDo := hookDo
 	defer func() {
+		hookDo = origTestHookDo
 		err := recover()
 		assert.NotNil(t, err)
 	}()
-	_, err = client.ProcessCommonRequestWithSigner(request, nil)
+	hookDo = func(fn func(req *http.Request) (*http.Response, error)) func(req *http.Request) (*http.Response, error) {
+		return func(req *http.Request) (*http.Response, error) {
+			return mockResponse(500, "Server Internel Error", fmt.Errorf("test error"))
+		}
+	}
+	resp, err := client.ProcessCommonRequestWithSigner(request, nil)
 	assert.NotNil(t, err)
+	assert.Contains(t, err.Error(), "test error")
+	assert.Equal(t, resp.GetHttpContentString(), "Server Internel Error")
 }
 
 func TestClient_NewClientWithStsRoleNameOnEcs(t *testing.T) {
