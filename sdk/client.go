@@ -26,6 +26,8 @@ import (
 	"sync"
 	"time"
 
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/auth/credentials/provider"
+
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/auth"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/auth/credentials"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/endpoints"
@@ -80,6 +82,19 @@ func (client *Client) SetHTTPSInsecure(isInsecure bool) {
 
 func (client *Client) GetHTTPSInsecure() bool {
 	return client.isInsecure
+}
+
+// InitWithProviderChain will get credential from the providerChain,
+// the RsaKeyPairCredential Only applicable to regionID `ap-northeast-1`,
+// if your providerChain may return a credential type with RsaKeyPairCredential,
+// please ensure your regionID is `ap-northeast-1`.
+func (client *Client) InitWithProviderChain(regionId string, provider provider.Provider) (err error) {
+	config := client.InitClientConfig()
+	credential, err := provider.Resolve()
+	if err != nil {
+		return
+	}
+	return client.InitWithOptions(regionId, config, credential)
 }
 
 func (client *Client) InitWithOptions(regionId string, config *Config, credential auth.Credential) (err error) {
@@ -488,6 +503,18 @@ func NewClient() (client *Client, err error) {
 	return
 }
 
+func NewClientWithProvider(regionId string, providers ...provider.Provider) (client *Client, err error) {
+	client = &Client{}
+	var pc provider.Provider
+	if len(providers) == 0 {
+		pc = provider.DefaultChain
+	} else {
+		pc = provider.NewProviderChain(providers)
+	}
+	err = client.InitWithProviderChain(regionId, pc)
+	return
+}
+
 func NewClientWithOptions(regionId string, config *Config, credential auth.Credential) (client *Client, err error) {
 	client = &Client{}
 	err = client.InitWithOptions(regionId, config, credential)
@@ -530,16 +557,6 @@ func NewClientWithRsaKeyPair(regionId string, publicKeyId, privateKey string, se
 	return
 }
 
-// Deprecated: Use NewClientWithRamRoleArn in this package instead.
-func NewClientWithStsRoleArn(regionId string, accessKeyId, accessKeySecret, roleArn, roleSessionName string) (client *Client, err error) {
-	return NewClientWithRamRoleArn(regionId, accessKeyId, accessKeySecret, roleArn, roleSessionName)
-}
-
-// Deprecated: Use NewClientWithEcsRamRole in this package instead.
-func NewClientWithStsRoleNameOnEcs(regionId string, roleName string) (client *Client, err error) {
-	return NewClientWithEcsRamRole(regionId, roleName)
-}
-
 func (client *Client) ProcessCommonRequest(request *requests.CommonRequest) (response *responses.CommonResponse, err error) {
 	request.TransToAcsRequest()
 	response = responses.NewCommonResponse()
@@ -565,4 +582,14 @@ func (client *Client) Shutdown() {
 		close(client.asyncTaskQueue)
 	}
 	client.isRunning = false
+}
+
+// Deprecated: Use NewClientWithRamRoleArn in this package instead.
+func NewClientWithStsRoleArn(regionId string, accessKeyId, accessKeySecret, roleArn, roleSessionName string) (client *Client, err error) {
+	return NewClientWithRamRoleArn(regionId, accessKeyId, accessKeySecret, roleArn, roleSessionName)
+}
+
+// Deprecated: Use NewClientWithEcsRamRole in this package instead.
+func NewClientWithStsRoleNameOnEcs(regionId string, roleName string) (client *Client, err error) {
+	return NewClientWithEcsRamRole(regionId, roleName)
 }

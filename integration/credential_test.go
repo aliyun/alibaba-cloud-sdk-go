@@ -1,6 +1,15 @@
 package integration
 
 import (
+	"bufio"
+	"bytes"
+	"crypto/aes"
+	"crypto/cipher"
+	"strings"
+
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/auth/credentials/provider"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
 	"github.com/aliyun/alibaba-cloud-sdk-go/services/cs"
 	"github.com/aliyun/alibaba-cloud-sdk-go/services/ecs"
 	"github.com/stretchr/testify/assert"
@@ -63,4 +72,71 @@ func Test_DescribeRegionsWithRPCrequestWithArn(t *testing.T) {
 	response, err := client.DescribeRegions(request)
 	assert.Nil(t, err)
 	assert.Equal(t, 36, len(response.RequestId))
+}
+
+func TestDescribeRegionsWithProviderAndAk(t *testing.T) {
+	os.Setenv(provider.ENVAccessKeyID, os.Getenv("ACCESS_KEY_ID"))
+	os.Setenv(provider.ENVAccessKeySecret, os.Getenv("ACCESS_KEY_SECRET"))
+	request := requests.NewCommonRequest()
+	request.Version = "2014-05-26"
+	request.Product = "Ecs"
+	request.ApiName = "DescribeRegions"
+	request.SetDomain("ecs.aliyuncs.com")
+	request.TransToAcsRequest()
+	client, err := sdk.NewClientWithProvider(os.Getenv("REGION_ID"))
+	assert.Nil(t, err)
+	response, err := client.ProcessCommonRequest(request)
+	assert.Nil(t, err)
+	assert.True(t, response.IsSuccess())
+}
+
+func TestDescribeRegionsWithProviderAndRsaKeyPair(t *testing.T) {
+	request := requests.NewCommonRequest()
+	request.Version = "2014-05-26"
+	request.Product = "Ecs"
+	request.ApiName = "DescribeRegions"
+	request.SetDomain("ecs.ap-northeast-1.aliyuncs.com")
+	request.TransToAcsRequest()
+
+	key := os.Getenv("RSA_FILE_AES_KEY")
+
+	srcfile, err := os.Open("./encyptfile")
+	assert.Nil(t, err)
+	defer srcfile.Close()
+
+	buf := new(bytes.Buffer)
+	read := bufio.NewReader(srcfile)
+	read.WriteTo(buf)
+
+	block, err := aes.NewCipher([]byte(key))
+	assert.Nil(t, err)
+
+	origData := buf.Bytes()
+	blockdec := cipher.NewCBCDecrypter(block, []byte(key)[:block.BlockSize()])
+	orig := make([]byte, len(origData))
+	blockdec.CryptBlocks(orig, origData)
+	orig = PKCS7UnPadding(orig)
+
+	cyphbuf := bytes.NewBuffer(orig)
+	scan := bufio.NewScanner(cyphbuf)
+	var data string
+	for scan.Scan() {
+		if strings.HasPrefix(scan.Text(), "----") {
+			continue
+		}
+		data += scan.Text() + "\n"
+	}
+
+	client, err := sdk.NewClientWithRsaKeyPair("ap-northeast-1", os.Getenv("PUBLIC_KEY_ID"), data, 3600)
+	assert.Nil(t, err)
+
+	response, err := client.ProcessCommonRequest(request)
+	assert.Nil(t, err)
+	assert.True(t, response.IsSuccess())
+}
+
+func PKCS7UnPadding(origData []byte) []byte {
+	length := len(origData)
+	unpadding := int(origData[length-1])
+	return origData[:(length - unpadding)]
 }

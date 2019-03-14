@@ -24,6 +24,8 @@ import (
 	"testing"
 	"time"
 
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/auth/credentials/provider"
+
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/auth/credentials"
@@ -495,3 +497,54 @@ func TestClient_NewClientWithStsRoleArn(t *testing.T) {
 //	client.Shutdown()
 //	assert.Equal(t, false, client.isRunning)
 //}
+
+func TestInitWithProviderChain(t *testing.T) {
+
+	//testcase1: No any environment variable
+	c, err := NewClientWithProvider("cn-hangzhou")
+	assert.Empty(t, c)
+	assert.EqualError(t, err, "No credential found")
+
+	//testcase2: AK
+	os.Setenv(provider.ENVAccessKeyID, "AccessKeyId")
+	os.Setenv(provider.ENVAccessKeySecret, "AccessKeySecret")
+
+	c, err = NewClientWithProvider("cn-hangzhou")
+	assert.Nil(t, err)
+	expC, err := NewClientWithAccessKey("cn-hangzhou", "AccessKeyId", "AccessKeySecret")
+	assert.Nil(t, err)
+	assert.Equal(t, expC, c)
+
+	//testcase3:AK value is ""
+	os.Setenv(provider.ENVAccessKeyID, "")
+	os.Setenv(provider.ENVAccessKeySecret, "bbbb")
+	c, err = NewClientWithProvider("cn-hangzhou")
+	assert.EqualError(t, err, "Environmental variable (ALIBABACLOUD_ACCESS_KEY_ID or ALIBABACLOUD_ACCESS_KEY_SECRET) is empty")
+	assert.Empty(t, c)
+
+	//testcase4: Profile value is ""
+	os.Unsetenv(provider.ENVAccessKeyID)
+	os.Unsetenv(provider.ENVAccessKeySecret)
+	os.Setenv(provider.ENVCredentialFile, "")
+	c, err = NewClientWithProvider("cn-hangzhou")
+	assert.Empty(t, c)
+	assert.EqualError(t, err, "Environment variable 'ALIBABA_CLOUD_CREDENTIALS_FILE' cannot be empty")
+
+	//testcase5: Profile
+	os.Setenv(provider.ENVCredentialFile, "./profile")
+	c, err = NewClientWithProvider("cn-hangzhou")
+	assert.Empty(t, c)
+	assert.NotNil(t, err)
+	//testcase6:Instances
+	os.Unsetenv(provider.ENVCredentialFile)
+	os.Setenv(provider.ENVEcsMetadata, "")
+	c, err = NewClientWithProvider("cn-hangzhou")
+	assert.Empty(t, c)
+	assert.EqualError(t, err, "Environmental variable 'ALIBABA_CLOUD_ECS_METADATA' are empty")
+
+	//testcase7: Custom Providers
+	c, err = NewClientWithProvider("cn-hangzhou", provider.ProviderProfile, provider.ProviderEnv)
+	assert.Empty(t, c)
+	assert.EqualError(t, err, "No credential found")
+
+}
