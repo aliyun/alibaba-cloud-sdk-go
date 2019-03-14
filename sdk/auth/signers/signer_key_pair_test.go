@@ -170,5 +170,5 @@ func TestGetAccessKeyIdAndSign(t *testing.T) {
 	err = s.ensureCredential()
 	assert.Nil(t, err)
 	signature := s.Sign("string to sign", "/")
-	assert.Equal(t, "a3pLxd685VW4u078cdBKVh/Qf/A=", signature)
+	assert.Equal(t, "cgoenM6nl61t2wFdlaHVySuGAgY=", signature)
 }
