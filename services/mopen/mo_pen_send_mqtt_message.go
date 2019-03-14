@@ -95,7 +95,7 @@ func CreateMoPenSendMqttMessageRequest() (request *MoPenSendMqttMessageRequest) 
 	request = &MoPenSendMqttMessageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("MoPen", "2018-02-11", "MoPenSendMqttMessage", "", "")
+	request.InitWithApiInfo("MoPen", "2018-02-11", "MoPenSendMqttMessage", "mopen", "openAPI")
 	return
 }
 

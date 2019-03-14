@@ -95,7 +95,7 @@ func CreateMoPenCreateDeviceRequest() (request *MoPenCreateDeviceRequest) {
 	request = &MoPenCreateDeviceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("MoPen", "2018-02-11", "MoPenCreateDevice", "", "")
+	request.InitWithApiInfo("MoPen", "2018-02-11", "MoPenCreateDevice", "mopen", "openAPI")
 	return
 }
 

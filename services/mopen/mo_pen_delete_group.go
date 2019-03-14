@@ -93,7 +93,7 @@ func CreateMoPenDeleteGroupRequest() (request *MoPenDeleteGroupRequest) {
 	request = &MoPenDeleteGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("MoPen", "2018-02-11", "MoPenDeleteGroup", "", "")
+	request.InitWithApiInfo("MoPen", "2018-02-11", "MoPenDeleteGroup", "mopen", "openAPI")
 	return
 }
 

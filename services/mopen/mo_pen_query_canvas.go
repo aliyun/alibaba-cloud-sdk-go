@@ -98,7 +98,7 @@ func CreateMoPenQueryCanvasRequest() (request *MoPenQueryCanvasRequest) {
 	request = &MoPenQueryCanvasRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("MoPen", "2018-02-11", "MoPenQueryCanvas", "", "")
+	request.InitWithApiInfo("MoPen", "2018-02-11", "MoPenQueryCanvas", "mopen", "openAPI")
 	return
 }
 

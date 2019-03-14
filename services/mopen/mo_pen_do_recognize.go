@@ -101,7 +101,7 @@ func CreateMoPenDoRecognizeRequest() (request *MoPenDoRecognizeRequest) {
 	request = &MoPenDoRecognizeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("MoPen", "2018-02-11", "MoPenDoRecognize", "", "")
+	request.InitWithApiInfo("MoPen", "2018-02-11", "MoPenDoRecognize", "mopen", "openAPI")
 	return
 }
 

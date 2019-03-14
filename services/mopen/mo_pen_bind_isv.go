@@ -94,7 +94,7 @@ func CreateMoPenBindIsvRequest() (request *MoPenBindIsvRequest) {
 	request = &MoPenBindIsvRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("MoPen", "2018-02-11", "MoPenBindIsv", "", "")
+	request.InitWithApiInfo("MoPen", "2018-02-11", "MoPenBindIsv", "mopen", "openAPI")
 	return
 }
 

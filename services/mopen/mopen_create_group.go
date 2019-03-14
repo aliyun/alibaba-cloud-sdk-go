@@ -95,7 +95,7 @@ func CreateMopenCreateGroupRequest() (request *MopenCreateGroupRequest) {
 	request = &MopenCreateGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("MoPen", "2018-02-11", "MopenCreateGroup", "", "")
+	request.InitWithApiInfo("MoPen", "2018-02-11", "MopenCreateGroup", "mopen", "openAPI")
 	return
 }
 
