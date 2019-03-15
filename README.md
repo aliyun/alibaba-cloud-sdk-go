@@ -1,9 +1,9 @@
 # Alibaba Cloud Go Software Development Kit
 
 [![Version Badge](https://badge.fury.io/gh/aliyun%2Falibaba-cloud-sdk-go.svg)](https://badge.fury.io/gh/aliyun%2Falibaba-cloud-sdk-go)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/291a39e242364b04ad442f0cce0e30d5)](https://app.codacy.com/app/aliyun/alibaba-cloud-sdk-go?utm_source=github.com&utm_medium=referral&utm_content=aliyun/alibaba-cloud-sdk-go&utm_campaign=Badge_Grade_Dashboard)
 [![Travis Build Status](https://travis-ci.org/aliyun/alibaba-cloud-sdk-go.svg?branch=master)](https://travis-ci.org/aliyun/alibaba-cloud-sdk-go)
-[![Appveyor Build status](https://ci.appveyor.com/api/projects/status/hmhx3lawe4v2ii5c?svg=true)](https://ci.appveyor.com/project/wenzuochao/alibaba-cloud-sdk-go)
+[![Appveyor Build status](https://ci.appveyor.com/api/projects/status/1hiuo3ppx5j49psv/branch/master?svg=true)](https://ci.appveyor.com/project/aliyun/alibaba-cloud-sdk-go/branch/master)
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/291a39e242364b04ad442f0cce0e30d5)](https://app.codacy.com/app/aliyun/alibaba-cloud-sdk-go?utm_source=github.com&utm_medium=referral&utm_content=aliyun/alibaba-cloud-sdk-go&utm_campaign=Badge_Grade_Dashboard)
 [![Go Report Card](https://goreportcard.com/badge/github.com/aliyun/alibaba-cloud-sdk-go)](https://goreportcard.com/report/github.com/aliyun/alibaba-cloud-sdk-go)
 [![codecov](https://codecov.io/gh/aliyun/alibaba-cloud-sdk-go/branch/master/graph/badge.svg)](https://codecov.io/gh/aliyun/alibaba-cloud-sdk-go)
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Faliyun%2Falibaba-cloud-sdk-go.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Faliyun%2Falibaba-cloud-sdk-go?ref=badge_shield)
