@@ -2,6 +2,14 @@
 
 
 [[projects]]
+  digest = "1:a9a98adb2a4181b9e4622eff8b6070646971a18427c265852f3686dbc7112ab1"
+  name = "github.com/aliyun/aliyun-oss-go-sdk"
+  packages = ["oss"]
+  pruneopts = "UT"
+  revision = "86c17b95fcd5db33628a61e492fb4a1a937d5906"
+  version = "1.9.5"
+
+[[projects]]
   digest = "1:ffe9824d294da03b391f44e1ae8281281b4afc1bdaa9588c9097785e3af10cec"
   name = "github.com/davecgh/go-spew"
   packages = ["spew"]
@@ -65,14 +73,32 @@
   revision = "ffdc059bfe9ce6a4e144ba849dbedead332c6053"
   version = "v1.3.0"
 
+[[projects]]
+  branch = "master"
+  digest = "1:9fdc2b55e8e0fafe4b41884091e51e77344f7dc511c5acedcfd98200003bff90"
+  name = "golang.org/x/time"
+  packages = ["rate"]
+  pruneopts = "UT"
+  revision = "9d24e82272b4f38b78bc8cff74fa936d31ccd8ef"
+
+[[projects]]
+  digest = "1:d37c61a335d13bc49b3f90e9e13c8686e4548839b69c58549e727afb2245c454"
+  name = "gopkg.in/ini.v1"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "c85607071cf08ca1adaf48319cd1aa322e81d8c1"
+  version = "v1.42.0"
+
 [solve-meta]
   analyzer-name = "dep"
   analyzer-version = 1
   input-imports = [
+    "github.com/aliyun/aliyun-oss-go-sdk/oss",
     "github.com/jmespath/go-jmespath",
     "github.com/json-iterator/go",
     "github.com/satori/go.uuid",
     "github.com/stretchr/testify/assert",
+    "gopkg.in/ini.v1",
   ]
   solver-name = "gps-cdcl"
   solver-version = 1
