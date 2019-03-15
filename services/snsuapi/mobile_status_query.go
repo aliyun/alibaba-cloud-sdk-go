@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// BandStopSpeedUp invokes the snsuapi.BandStopSpeedUp API synchronously
-// api document: https://help.aliyun.com/api/snsuapi/bandstopspeedup.html
-func (client *Client) BandStopSpeedUp(request *BandStopSpeedUpRequest) (response *BandStopSpeedUpResponse, err error) {
-	response = CreateBandStopSpeedUpResponse()
+// MobileStatusQuery invokes the snsuapi.MobileStatusQuery API synchronously
+// api document: https://help.aliyun.com/api/snsuapi/mobilestatusquery.html
+func (client *Client) MobileStatusQuery(request *MobileStatusQueryRequest) (response *MobileStatusQueryResponse, err error) {
+	response = CreateMobileStatusQueryResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// BandStopSpeedUpWithChan invokes the snsuapi.BandStopSpeedUp API asynchronously
-// api document: https://help.aliyun.com/api/snsuapi/bandstopspeedup.html
+// MobileStatusQueryWithChan invokes the snsuapi.MobileStatusQuery API asynchronously
+// api document: https://help.aliyun.com/api/snsuapi/mobilestatusquery.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) BandStopSpeedUpWithChan(request *BandStopSpeedUpRequest) (<-chan *BandStopSpeedUpResponse, <-chan error) {
-	responseChan := make(chan *BandStopSpeedUpResponse, 1)
+func (client *Client) MobileStatusQueryWithChan(request *MobileStatusQueryRequest) (<-chan *MobileStatusQueryResponse, <-chan error) {
+	responseChan := make(chan *MobileStatusQueryResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.BandStopSpeedUp(request)
+		response, err := client.MobileStatusQuery(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) BandStopSpeedUpWithChan(request *BandStopSpeedUpRequest) (
 	return responseChan, errChan
 }
 
-// BandStopSpeedUpWithCallback invokes the snsuapi.BandStopSpeedUp API asynchronously
-// api document: https://help.aliyun.com/api/snsuapi/bandstopspeedup.html
+// MobileStatusQueryWithCallback invokes the snsuapi.MobileStatusQuery API asynchronously
+// api document: https://help.aliyun.com/api/snsuapi/mobilestatusquery.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) BandStopSpeedUpWithCallback(request *BandStopSpeedUpRequest, callback func(response *BandStopSpeedUpResponse, err error)) <-chan int {
+func (client *Client) MobileStatusQueryWithCallback(request *MobileStatusQueryRequest, callback func(response *MobileStatusQueryResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *BandStopSpeedUpResponse
+		var response *MobileStatusQueryResponse
 		var err error
 		defer close(result)
-		response, err = client.BandStopSpeedUp(request)
+		response, err = client.MobileStatusQuery(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,20 +73,17 @@ func (client *Client) BandStopSpeedUpWithCallback(request *BandStopSpeedUpReques
 	return result
 }
 
-// BandStopSpeedUpRequest is the request struct for api BandStopSpeedUp
-type BandStopSpeedUpRequest struct {
+// MobileStatusQueryRequest is the request struct for api MobileStatusQuery
+type MobileStatusQueryRequest struct {
 	*requests.RpcRequest
-	IpAddress            string           `position:"Query" name:"IpAddress"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	Port                 requests.Integer `position:"Query" name:"Port"`
-	BandId               requests.Integer `position:"Query" name:"BandId"`
+	CorrelationId        string           `position:"Query" name:"CorrelationId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	Direction            string           `position:"Query" name:"Direction"`
 }
 
-// BandStopSpeedUpResponse is the response struct for api BandStopSpeedUp
-type BandStopSpeedUpResponse struct {
+// MobileStatusQueryResponse is the response struct for api MobileStatusQuery
+type MobileStatusQueryResponse struct {
 	*responses.BaseResponse
 	RequestId     string `json:"RequestId" xml:"RequestId"`
 	ResultCode    string `json:"ResultCode" xml:"ResultCode"`
@@ -94,18 +91,18 @@ type BandStopSpeedUpResponse struct {
 	ResultModule  bool   `json:"ResultModule" xml:"ResultModule"`
 }
 
-// CreateBandStopSpeedUpRequest creates a request to invoke BandStopSpeedUp API
-func CreateBandStopSpeedUpRequest() (request *BandStopSpeedUpRequest) {
-	request = &BandStopSpeedUpRequest{
+// CreateMobileStatusQueryRequest creates a request to invoke MobileStatusQuery API
+func CreateMobileStatusQueryRequest() (request *MobileStatusQueryRequest) {
+	request = &MobileStatusQueryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Snsuapi", "2018-07-09", "BandStopSpeedUp", "snsuapi", "openAPI")
+	request.InitWithApiInfo("Snsuapi", "2018-07-09", "MobileStatusQuery", "snsuapi", "openAPI")
 	return
 }
 
-// CreateBandStopSpeedUpResponse creates a response to parse from BandStopSpeedUp response
-func CreateBandStopSpeedUpResponse() (response *BandStopSpeedUpResponse) {
-	response = &BandStopSpeedUpResponse{
+// CreateMobileStatusQueryResponse creates a response to parse from MobileStatusQuery response
+func CreateMobileStatusQueryResponse() (response *MobileStatusQueryResponse) {
+	response = &MobileStatusQueryResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

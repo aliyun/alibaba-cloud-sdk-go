@@ -86,10 +86,10 @@ type BandOfferOrderRequest struct {
 // BandOfferOrderResponse is the response struct for api BandOfferOrder
 type BandOfferOrderResponse struct {
 	*responses.BaseResponse
-	RequestId     string `json:"RequestId" xml:"RequestId"`
-	ResultCode    string `json:"ResultCode" xml:"ResultCode"`
-	ResultMessage string `json:"ResultMessage" xml:"ResultMessage"`
-	ResultModule  string `json:"ResultModule" xml:"ResultModule"`
+	RequestId     string       `json:"RequestId" xml:"RequestId"`
+	ResultCode    string       `json:"ResultCode" xml:"ResultCode"`
+	ResultMessage string       `json:"ResultMessage" xml:"ResultMessage"`
+	ResultModule  ResultModule `json:"ResultModule" xml:"ResultModule"`
 }
 
 // CreateBandOfferOrderRequest creates a request to invoke BandOfferOrder API
@@ -97,7 +97,7 @@ func CreateBandOfferOrderRequest() (request *BandOfferOrderRequest) {
 	request = &BandOfferOrderRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Snsuapi", "2018-07-09", "BandOfferOrder", "", "")
+	request.InitWithApiInfo("Snsuapi", "2018-07-09", "BandOfferOrder", "snsuapi", "openAPI")
 	return
 }
 

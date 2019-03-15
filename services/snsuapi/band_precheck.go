@@ -97,7 +97,7 @@ func CreateBandPrecheckRequest() (request *BandPrecheckRequest) {
 	request = &BandPrecheckRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Snsuapi", "2018-07-09", "BandPrecheck", "", "")
+	request.InitWithApiInfo("Snsuapi", "2018-07-09", "BandPrecheck", "snsuapi", "openAPI")
 	return
 }
 

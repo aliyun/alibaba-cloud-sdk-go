@@ -101,7 +101,7 @@ func CreateBandStartSpeedUpRequest() (request *BandStartSpeedUpRequest) {
 	request = &BandStartSpeedUpRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Snsuapi", "2018-07-09", "BandStartSpeedUp", "", "")
+	request.InitWithApiInfo("Snsuapi", "2018-07-09", "BandStartSpeedUp", "snsuapi", "openAPI")
 	return
 }
 

@@ -96,7 +96,7 @@ func CreateBandStatusQueryRequest() (request *BandStatusQueryRequest) {
 	request = &BandStatusQueryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Snsuapi", "2018-07-09", "BandStatusQuery", "", "")
+	request.InitWithApiInfo("Snsuapi", "2018-07-09", "BandStatusQuery", "snsuapi", "openAPI")
 	return
 }
 

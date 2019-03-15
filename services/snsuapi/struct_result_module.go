@@ -18,6 +18,7 @@ package snsuapi
 // ResultModule is a nested struct in snsuapi response
 type ResultModule struct {
 	DownloadTarget    int           `json:"DownloadTarget" xml:"DownloadTarget"`
+	LxOrderId         int           `json:"LxOrderId" xml:"LxOrderId"`
 	DownloadBandwidth int           `json:"DownloadBandwidth" xml:"DownloadBandwidth"`
 	BandId            int           `json:"BandId" xml:"BandId"`
 	UploadBandwidth   int           `json:"UploadBandwidth" xml:"UploadBandwidth"`
