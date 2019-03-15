@@ -20,6 +20,8 @@ import (
 	"fmt"
 	"net"
 	"net/http"
+	"net/url"
+	"os"
 	"runtime"
 	"strconv"
 	"strings"
@@ -120,6 +122,27 @@ func (client *Client) GetReadTimeout() time.Duration {
 
 func (client *Client) GetConnectTimeout() time.Duration {
 	return client.connectTimeout
+}
+
+func getHttpProxy(scheme string) *url.URL {
+	var proxy *url.URL
+	if scheme == "https" {
+		if rawurl := os.Getenv("HTTPS_PROXY"); rawurl != "" {
+			proxy, _ = url.Parse(rawurl)
+		}
+		if rawurl := os.Getenv("https_proxy"); rawurl != "" && proxy == nil {
+			proxy, _ = url.Parse(rawurl)
+		}
+	} else {
+		if rawurl := os.Getenv("HTTP_PROXY"); rawurl != "" {
+			proxy, _ = url.Parse(rawurl)
+		}
+		if rawurl := os.Getenv("http_proxy"); rawurl != "" && proxy == nil {
+			proxy, _ = url.Parse(rawurl)
+		}
+	}
+
+	return proxy
 }
 
 // EnableAsync enable the async task queue
@@ -368,12 +391,16 @@ func (client *Client) DoActionWithSigner(request requests.AcsRequest, response r
 		return
 	}
 	client.setTimeout(request)
+	proxy := getHttpProxy(httpRequest.URL.Scheme)
 
 	// Set whether to ignore certificate validation.
 	// Default InsecureSkipVerify is false.
 	if trans, ok := client.httpClient.Transport.(*http.Transport); ok && trans != nil {
 		trans.TLSClientConfig = &tls.Config{
 			InsecureSkipVerify: client.getHTTPSInsecure(request),
+		}
+		if proxy != nil {
+			trans.Proxy = http.ProxyURL(proxy)
 		}
 		client.httpClient.Transport = trans
 	}

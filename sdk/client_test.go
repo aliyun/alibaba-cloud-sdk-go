@@ -19,8 +19,10 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
+	"net/http/httptest"
 	"os"
 	"strconv"
+	"strings"
 	"testing"
 	"time"
 
@@ -160,7 +162,33 @@ func Test_DoAction(t *testing.T) {
 	assert.Nil(t, err)
 	assert.Equal(t, 200, response.GetHttpStatus())
 	assert.Equal(t, "", response.GetHttpContentString())
+
+	originEnv := os.Getenv("https_proxy")
+	os.Setenv("https_proxy", "https://127.0.0.1:9000")
+	err = client.DoAction(request, response)
+	assert.Nil(t, err)
+	assert.Nil(t, client.config.HttpTransport)
+
+	originEnv1 := os.Getenv("http_proxy")
+	os.Setenv("http_proxy", "http://127.0.0.1:8888")
+	err = client.DoAction(request, response)
+	assert.Nil(t, err)
+	trans, _ := client.httpClient.Transport.(*http.Transport)
+	url, _ := trans.Proxy(nil)
+	assert.Equal(t, url.Scheme, "http")
+	assert.Equal(t, url.Host, "127.0.0.1:8888")
+
+	request.Scheme = "https"
+	err = client.DoAction(request, response)
+	assert.Nil(t, err)
+	trans, _ = client.httpClient.Transport.(*http.Transport)
+	url, _ = trans.Proxy(nil)
+	assert.Equal(t, url.Scheme, "https")
+	assert.Equal(t, url.Host, "127.0.0.1:9000")
+
 	client.Shutdown()
+	os.Setenv("https_proxy", originEnv)
+	os.Setenv("http_proxy", originEnv1)
 	assert.Equal(t, false, client.isRunning)
 }
 
@@ -197,6 +225,33 @@ func Test_DoAction_HTTPSInsecure(t *testing.T) {
 	assert.Nil(t, err)
 	trans = client.httpClient.Transport.(*http.Transport)
 	assert.Equal(t, false, trans.TLSClientConfig.InsecureSkipVerify)
+
+	originEnv := os.Getenv("HTTP_PROXY")
+	os.Setenv("HTTP_PROXY", "http://127.0.0.1:9000")
+	err = client.DoAction(request, response)
+	assert.Nil(t, err)
+	assert.Nil(t, client.config.HttpTransport)
+
+	originEnv1 := os.Getenv("HTTPS_PROXY")
+	os.Setenv("HTTPS_PROXY", "https://127.0.0.1:8888")
+	err = client.DoAction(request, response)
+	assert.Nil(t, err)
+	trans = client.httpClient.Transport.(*http.Transport)
+	url, _ := trans.Proxy(nil)
+	assert.Equal(t, url.Scheme, "https")
+	assert.Equal(t, url.Host, "127.0.0.1:8888")
+
+	request.Scheme = "http"
+	err = client.DoAction(request, response)
+	assert.Nil(t, err)
+	trans = client.httpClient.Transport.(*http.Transport)
+	url, _ = trans.Proxy(nil)
+	assert.Equal(t, url.Scheme, "http")
+	assert.Equal(t, url.Host, "127.0.0.1:9000")
+
+	client.Shutdown()
+	os.Setenv("HTTP_PROXY", originEnv)
+	os.Setenv("HTTPS_PROXY", originEnv1)
 }
 
 func Test_DoAction_Timeout(t *testing.T) {
@@ -275,13 +330,22 @@ func Test_ProcessCommonRequest(t *testing.T) {
 	assert.Equal(t, "", resp.GetHttpContentString())
 }
 
+func mockServer(status int, json string) (server *httptest.Server) {
+	// Start a test server locally.
+	ts := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		w.WriteHeader(status)
+		w.Write([]byte(json))
+		return
+	}))
+	return ts
+}
+
 func Test_DoAction_With500(t *testing.T) {
 	client, err := NewClientWithAccessKey("regionid", "acesskeyid", "accesskeysecret")
 	assert.Nil(t, err)
 	assert.NotNil(t, client)
 	assert.Equal(t, true, client.isRunning)
 	request := requests.NewCommonRequest()
-	request.Domain = "ecs.aliyuncs.com"
 	request.Version = "2014-05-26"
 	request.ApiName = "DescribeInstanceStatus"
 
@@ -289,16 +353,12 @@ func Test_DoAction_With500(t *testing.T) {
 	request.QueryParams["PageSize"] = "30"
 	request.TransToAcsRequest()
 	response := responses.NewCommonResponse()
-	origTestHookDo := hookDo
-	defer func() { hookDo = origTestHookDo }()
-	hookDo = func(fn func(req *http.Request) (*http.Response, error)) func(req *http.Request) (*http.Response, error) {
-		return func(req *http.Request) (*http.Response, error) {
-			return mockResponse(500, "Server Internel Error", nil)
-		}
-	}
+	ts := mockServer(500, "Server Internel Error")
+	defer ts.Close()
+	domain := strings.Replace(ts.URL, "http://", "", 1)
+	request.Domain = domain
 	err = client.DoAction(request, response)
 	assert.NotNil(t, err)
-	assert.Equal(t, "SDK.ServerError\nErrorCode: \nRecommend: \nRequestId: \nMessage: Server Internel Error", err.Error())
 	assert.Equal(t, 500, response.GetHttpStatus())
 	assert.Equal(t, "Server Internel Error", response.GetHttpContentString())
 }

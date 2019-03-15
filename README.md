@@ -116,6 +116,20 @@ client.SetHTTPSInsecure(true)                         // Set client HTTPSInsecur
 isInsecure := client.GetHTTPSInsecure()               // Get client HTTPSInsecure.
 ```
 
+## HTTP Proxy
+
+If you want to use http proxy or https proxy, you can set environment variables `HTTP_PROXY` or `HTTPS_PROXY`, or you can configure client with config.
+
+```go
+rawurl, _ := url.Parse("http://117.215.227.125:8888") //You should replace the IP with you want
+httpTransport := http.Transport{
+    Proxy:  http.ProxyURL(rawurl)
+}
+config := sdk.NewConfig()
+            .WithHttpTransport(&httpTransport)
+ecsClient, err := ecs.NewClientWithOptions(config)
+```
+
 ## Keep-alive
 
 Alibaba Cloud Go SDK uses primordial `net/http` of Go language to send and accept requests，so it's  configuration is the same as `net/http`'s，you can use config to deliver configuration to the bottomed httpClient.

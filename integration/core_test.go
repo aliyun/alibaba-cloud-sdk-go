@@ -1,6 +1,10 @@
 package integration
 
 import (
+	"net/http"
+	"net/http/httptest"
+	"net/http/httputil"
+	"net/url"
 	"os"
 	"strings"
 	"testing"
@@ -145,7 +149,6 @@ func Test_DescribeClustersWithCommonRequestWithROAWithSTStoken(t *testing.T) {
 	credential := assumeresponse.Credentials
 	client, err := sdk.NewClientWithStsToken(os.Getenv("REGION_ID"), credential.AccessKeyId, credential.AccessKeySecret, credential.SecurityToken)
 	assert.Nil(t, err)
-	assert.Nil(t, err)
 	request := requests.NewCommonRequest()
 	request.Method = "GET"
 	request.Domain = "cs.aliyuncs.com"
@@ -238,4 +241,65 @@ func Test_CreateInstanceWithCommonRequestWithPolicy(t *testing.T) {
 	_, err = client.ProcessCommonRequest(request)
 	assert.NotNil(t, err)
 	assert.Contains(t, err.Error(), "User not authorized to operate on the specified resource, or this API doesn't support RAM.")
+}
+
+func handlerTrue(w http.ResponseWriter, r *http.Request) {
+	w.WriteHeader(200)
+	w.Write([]byte("test"))
+	return
+}
+
+func handlerFake(w http.ResponseWriter, r *http.Request) {
+	trueserver := handlerTrueServer()
+	url, err := url.Parse(trueserver.URL)
+	if err != nil {
+		return
+	}
+	proxy := httputil.NewSingleHostReverseProxy(url)
+	w.Write([]byte("sdk"))
+	proxy.ServeHTTP(w, r)
+
+	return
+}
+
+func handlerFakeServer() (server *httptest.Server){
+	server = httptest.NewServer(http.HandlerFunc(handlerFake))
+
+	return server
+}
+
+func handlerTrueServer() (server *httptest.Server){
+	server = httptest.NewServer(http.HandlerFunc(handlerTrue))
+
+	return server
+}
+
+func Test_HTTPProxy(t *testing.T) {
+
+	ts := handlerFakeServer()
+	ts1 := handlerTrueServer()
+	defer func() {
+		ts.Close()
+		ts1.Close()
+	}()
+	client, err := sdk.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
+	assert.Nil(t, err)
+	request := requests.NewCommonRequest()
+	domain := strings.Replace(ts1.URL, "http://", "", 1)
+	request.Domain = domain
+	request.Version = "2015-12-15"
+	request.TransToAcsRequest()
+	resp, err := client.ProcessCommonRequest(request)
+	assert.Nil(t, err)
+	assert.Equal(t, 200, resp.GetHttpStatus())
+	assert.Equal(t, "test", resp.GetHttpContentString())
+
+	originEnv := os.Getenv("HTTP_PROXY")
+	os.Setenv("HTTP_PROXY", ts.URL)
+	resp, err = client.ProcessCommonRequest(request)
+	assert.Nil(t, err)
+	assert.Equal(t, 200, resp.GetHttpStatus())
+	assert.Equal(t, "sdktest", resp.GetHttpContentString())
+
+	os.Setenv("HTTP_PROXY", originEnv)
 }
