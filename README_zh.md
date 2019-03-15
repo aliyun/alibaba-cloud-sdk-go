@@ -1,5 +1,6 @@
 # 阿里云开发者 Go 工具套件
 
+[![Version Badge](https://badge.fury.io/gh/aliyun%2Falibaba-cloud-sdk-go.svg)](https://badge.fury.io/gh/aliyun%2Falibaba-cloud-sdk-go)
 [![Travis Build Status](https://travis-ci.org/aliyun/alibaba-cloud-sdk-go.svg?branch=master)](https://travis-ci.org/aliyun/alibaba-cloud-sdk-go)
 [![Appveyor Build status](https://ci.appveyor.com/api/projects/status/1hiuo3ppx5j49psv/branch/master?svg=true)](https://ci.appveyor.com/project/aliyun/alibaba-cloud-sdk-go/branch/master)
 [![codecov](https://codecov.io/gh/aliyun/alibaba-cloud-sdk-go/branch/master/graph/badge.svg)](https://codecov.io/gh/aliyun/alibaba-cloud-sdk-go)
