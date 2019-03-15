@@ -77,13 +77,13 @@ func (client *Client) UpdateZoneRecordWithCallback(request *UpdateZoneRecordRequ
 type UpdateZoneRecordRequest struct {
 	*requests.RpcRequest
 	Rr           string           `position:"Query" name:"Rr"`
-	Lang         string           `position:"Query" name:"Lang"`
 	RecordId     requests.Integer `position:"Query" name:"RecordId"`
-	Type         string           `position:"Query" name:"Type"`
-	Ttl          requests.Integer `position:"Query" name:"Ttl"`
-	Priority     requests.Integer `position:"Query" name:"Priority"`
-	Value        string           `position:"Query" name:"Value"`
 	UserClientIp string           `position:"Query" name:"UserClientIp"`
+	Lang         string           `position:"Query" name:"Lang"`
+	Type         string           `position:"Query" name:"Type"`
+	Priority     requests.Integer `position:"Query" name:"Priority"`
+	Ttl          requests.Integer `position:"Query" name:"Ttl"`
+	Value        string           `position:"Query" name:"Value"`
 }
 
 // UpdateZoneRecordResponse is the response struct for api UpdateZoneRecord

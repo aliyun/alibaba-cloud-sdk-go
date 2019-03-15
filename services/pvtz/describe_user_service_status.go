@@ -76,8 +76,8 @@ func (client *Client) DescribeUserServiceStatusWithCallback(request *DescribeUse
 // DescribeUserServiceStatusRequest is the request struct for api DescribeUserServiceStatus
 type DescribeUserServiceStatusRequest struct {
 	*requests.RpcRequest
-	Lang         string `position:"Query" name:"Lang"`
 	UserClientIp string `position:"Query" name:"UserClientIp"`
+	Lang         string `position:"Query" name:"Lang"`
 }
 
 // DescribeUserServiceStatusResponse is the response struct for api DescribeUserServiceStatus

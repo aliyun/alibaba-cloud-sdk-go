@@ -76,8 +76,8 @@ func (client *Client) DescribeZoneVpcTreeWithCallback(request *DescribeZoneVpcTr
 // DescribeZoneVpcTreeRequest is the request struct for api DescribeZoneVpcTree
 type DescribeZoneVpcTreeRequest struct {
 	*requests.RpcRequest
-	Lang         string `position:"Query" name:"Lang"`
 	UserClientIp string `position:"Query" name:"UserClientIp"`
+	Lang         string `position:"Query" name:"Lang"`
 }
 
 // DescribeZoneVpcTreeResponse is the response struct for api DescribeZoneVpcTree

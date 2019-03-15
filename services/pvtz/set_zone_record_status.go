@@ -76,10 +76,10 @@ func (client *Client) SetZoneRecordStatusWithCallback(request *SetZoneRecordStat
 // SetZoneRecordStatusRequest is the request struct for api SetZoneRecordStatus
 type SetZoneRecordStatusRequest struct {
 	*requests.RpcRequest
-	Lang         string           `position:"Query" name:"Lang"`
 	RecordId     requests.Integer `position:"Query" name:"RecordId"`
-	Status       string           `position:"Query" name:"Status"`
 	UserClientIp string           `position:"Query" name:"UserClientIp"`
+	Lang         string           `position:"Query" name:"Lang"`
+	Status       string           `position:"Query" name:"Status"`
 }
 
 // SetZoneRecordStatusResponse is the response struct for api SetZoneRecordStatus

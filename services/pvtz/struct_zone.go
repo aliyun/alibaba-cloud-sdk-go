@@ -19,6 +19,7 @@ package pvtz
 type Zone struct {
 	ZoneId          string `json:"ZoneId" xml:"ZoneId"`
 	UpdateTime      string `json:"UpdateTime" xml:"UpdateTime"`
+	ProxyPattern    string `json:"ProxyPattern" xml:"ProxyPattern"`
 	Remark          string `json:"Remark" xml:"Remark"`
 	CreateTimestamp int    `json:"CreateTimestamp" xml:"CreateTimestamp"`
 	RecordCount     int    `json:"RecordCount" xml:"RecordCount"`

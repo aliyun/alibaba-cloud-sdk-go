@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// AddZone invokes the pvtz.AddZone API synchronously
-// api document: https://help.aliyun.com/api/pvtz/addzone.html
-func (client *Client) AddZone(request *AddZoneRequest) (response *AddZoneResponse, err error) {
-	response = CreateAddZoneResponse()
+// SetProxyPattern invokes the pvtz.SetProxyPattern API synchronously
+// api document: https://help.aliyun.com/api/pvtz/setproxypattern.html
+func (client *Client) SetProxyPattern(request *SetProxyPatternRequest) (response *SetProxyPatternResponse, err error) {
+	response = CreateSetProxyPatternResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// AddZoneWithChan invokes the pvtz.AddZone API asynchronously
-// api document: https://help.aliyun.com/api/pvtz/addzone.html
+// SetProxyPatternWithChan invokes the pvtz.SetProxyPattern API asynchronously
+// api document: https://help.aliyun.com/api/pvtz/setproxypattern.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) AddZoneWithChan(request *AddZoneRequest) (<-chan *AddZoneResponse, <-chan error) {
-	responseChan := make(chan *AddZoneResponse, 1)
+func (client *Client) SetProxyPatternWithChan(request *SetProxyPatternRequest) (<-chan *SetProxyPatternResponse, <-chan error) {
+	responseChan := make(chan *SetProxyPatternResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.AddZone(request)
+		response, err := client.SetProxyPattern(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) AddZoneWithChan(request *AddZoneRequest) (<-chan *AddZoneR
 	return responseChan, errChan
 }
 
-// AddZoneWithCallback invokes the pvtz.AddZone API asynchronously
-// api document: https://help.aliyun.com/api/pvtz/addzone.html
+// SetProxyPatternWithCallback invokes the pvtz.SetProxyPattern API asynchronously
+// api document: https://help.aliyun.com/api/pvtz/setproxypattern.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) AddZoneWithCallback(request *AddZoneRequest, callback func(response *AddZoneResponse, err error)) <-chan int {
+func (client *Client) SetProxyPatternWithCallback(request *SetProxyPatternRequest, callback func(response *SetProxyPatternResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *AddZoneResponse
+		var response *SetProxyPatternResponse
 		var err error
 		defer close(result)
-		response, err = client.AddZone(request)
+		response, err = client.SetProxyPattern(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,36 +73,34 @@ func (client *Client) AddZoneWithCallback(request *AddZoneRequest, callback func
 	return result
 }
 
-// AddZoneRequest is the request struct for api AddZone
-type AddZoneRequest struct {
+// SetProxyPatternRequest is the request struct for api SetProxyPattern
+type SetProxyPatternRequest struct {
 	*requests.RpcRequest
 	ProxyPattern string `position:"Query" name:"ProxyPattern"`
 	UserClientIp string `position:"Query" name:"UserClientIp"`
+	ZoneId       string `position:"Query" name:"ZoneId"`
 	Lang         string `position:"Query" name:"Lang"`
-	ZoneName     string `position:"Query" name:"ZoneName"`
 }
 
-// AddZoneResponse is the response struct for api AddZone
-type AddZoneResponse struct {
+// SetProxyPatternResponse is the response struct for api SetProxyPattern
+type SetProxyPatternResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
 	ZoneId    string `json:"ZoneId" xml:"ZoneId"`
-	ZoneName  string `json:"ZoneName" xml:"ZoneName"`
 }
 
-// CreateAddZoneRequest creates a request to invoke AddZone API
-func CreateAddZoneRequest() (request *AddZoneRequest) {
-	request = &AddZoneRequest{
+// CreateSetProxyPatternRequest creates a request to invoke SetProxyPattern API
+func CreateSetProxyPatternRequest() (request *SetProxyPatternRequest) {
+	request = &SetProxyPatternRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("pvtz", "2018-01-01", "AddZone", "pvtz", "openAPI")
+	request.InitWithApiInfo("pvtz", "2018-01-01", "SetProxyPattern", "pvtz", "openAPI")
 	return
 }
 
-// CreateAddZoneResponse creates a response to parse from AddZone response
-func CreateAddZoneResponse() (response *AddZoneResponse) {
-	response = &AddZoneResponse{
+// CreateSetProxyPatternResponse creates a response to parse from SetProxyPattern response
+func CreateSetProxyPatternResponse() (response *SetProxyPatternResponse) {
+	response = &SetProxyPatternResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

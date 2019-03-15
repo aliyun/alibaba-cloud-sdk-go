@@ -76,8 +76,8 @@ func (client *Client) DescribeStatisticSummaryWithCallback(request *DescribeStat
 // DescribeStatisticSummaryRequest is the request struct for api DescribeStatisticSummary
 type DescribeStatisticSummaryRequest struct {
 	*requests.RpcRequest
-	Lang         string `position:"Query" name:"Lang"`
 	UserClientIp string `position:"Query" name:"UserClientIp"`
+	Lang         string `position:"Query" name:"Lang"`
 }
 
 // DescribeStatisticSummaryResponse is the response struct for api DescribeStatisticSummary

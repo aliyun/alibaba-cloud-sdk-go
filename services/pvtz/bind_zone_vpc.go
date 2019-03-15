@@ -76,10 +76,10 @@ func (client *Client) BindZoneVpcWithCallback(request *BindZoneVpcRequest, callb
 // BindZoneVpcRequest is the request struct for api BindZoneVpc
 type BindZoneVpcRequest struct {
 	*requests.RpcRequest
-	Lang         string             `position:"Query" name:"Lang"`
-	ZoneId       string             `position:"Query" name:"ZoneId"`
-	Vpcs         *[]BindZoneVpcVpcs `position:"Query" name:"Vpcs"  type:"Repeated"`
 	UserClientIp string             `position:"Query" name:"UserClientIp"`
+	ZoneId       string             `position:"Query" name:"ZoneId"`
+	Lang         string             `position:"Query" name:"Lang"`
+	Vpcs         *[]BindZoneVpcVpcs `position:"Query" name:"Vpcs"  type:"Repeated"`
 }
 
 // BindZoneVpcVpcs is a repeated param struct in BindZoneVpcRequest

@@ -76,11 +76,14 @@ func (client *Client) DescribeZonesWithCallback(request *DescribeZonesRequest, c
 // DescribeZonesRequest is the request struct for api DescribeZones
 type DescribeZonesRequest struct {
 	*requests.RpcRequest
-	Lang         string           `position:"Query" name:"Lang"`
-	PageNumber   requests.Integer `position:"Query" name:"PageNumber"`
-	PageSize     requests.Integer `position:"Query" name:"PageSize"`
-	Keyword      string           `position:"Query" name:"Keyword"`
-	UserClientIp string           `position:"Query" name:"UserClientIp"`
+	QueryVpcId    string           `position:"Query" name:"QueryVpcId"`
+	PageSize      requests.Integer `position:"Query" name:"PageSize"`
+	UserClientIp  string           `position:"Query" name:"UserClientIp"`
+	SearchMode    string           `position:"Query" name:"SearchMode"`
+	Lang          string           `position:"Query" name:"Lang"`
+	Keyword       string           `position:"Query" name:"Keyword"`
+	PageNumber    requests.Integer `position:"Query" name:"PageNumber"`
+	QueryRegionId string           `position:"Query" name:"QueryRegionId"`
 }
 
 // DescribeZonesResponse is the response struct for api DescribeZones

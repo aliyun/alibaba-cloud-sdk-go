@@ -76,10 +76,10 @@ func (client *Client) UpdateZoneRemarkWithCallback(request *UpdateZoneRemarkRequ
 // UpdateZoneRemarkRequest is the request struct for api UpdateZoneRemark
 type UpdateZoneRemarkRequest struct {
 	*requests.RpcRequest
-	Lang         string `position:"Query" name:"Lang"`
+	UserClientIp string `position:"Query" name:"UserClientIp"`
 	ZoneId       string `position:"Query" name:"ZoneId"`
 	Remark       string `position:"Query" name:"Remark"`
-	UserClientIp string `position:"Query" name:"UserClientIp"`
+	Lang         string `position:"Query" name:"Lang"`
 }
 
 // UpdateZoneRemarkResponse is the response struct for api UpdateZoneRemark

@@ -76,9 +76,9 @@ func (client *Client) CheckZoneNameWithCallback(request *CheckZoneNameRequest, c
 // CheckZoneNameRequest is the request struct for api CheckZoneName
 type CheckZoneNameRequest struct {
 	*requests.RpcRequest
+	UserClientIp string `position:"Query" name:"UserClientIp"`
 	Lang         string `position:"Query" name:"Lang"`
 	ZoneName     string `position:"Query" name:"ZoneName"`
-	UserClientIp string `position:"Query" name:"UserClientIp"`
 }
 
 // CheckZoneNameResponse is the response struct for api CheckZoneName

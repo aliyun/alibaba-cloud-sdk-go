@@ -17,6 +17,8 @@ package pvtz
 
 // Region is a nested struct in pvtz response
 type Region struct {
-	RegionId   string `json:"RegionId" xml:"RegionId"`
-	RegionName string `json:"RegionName" xml:"RegionName"`
+	RegionId       string `json:"RegionId" xml:"RegionId"`
+	RegionName     string `json:"RegionName" xml:"RegionName"`
+	LocalName      string `json:"LocalName" xml:"LocalName"`
+	RegionEndpoint string `json:"RegionEndpoint" xml:"RegionEndpoint"`
 }

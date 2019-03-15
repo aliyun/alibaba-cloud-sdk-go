@@ -76,9 +76,9 @@ func (client *Client) DescribeZoneInfoWithCallback(request *DescribeZoneInfoRequ
 // DescribeZoneInfoRequest is the request struct for api DescribeZoneInfo
 type DescribeZoneInfoRequest struct {
 	*requests.RpcRequest
-	Lang         string `position:"Query" name:"Lang"`
-	ZoneId       string `position:"Query" name:"ZoneId"`
 	UserClientIp string `position:"Query" name:"UserClientIp"`
+	ZoneId       string `position:"Query" name:"ZoneId"`
+	Lang         string `position:"Query" name:"Lang"`
 }
 
 // DescribeZoneInfoResponse is the response struct for api DescribeZoneInfo
@@ -94,6 +94,7 @@ type DescribeZoneInfoResponse struct {
 	UpdateTime      string   `json:"UpdateTime" xml:"UpdateTime"`
 	UpdateTimestamp int      `json:"UpdateTimestamp" xml:"UpdateTimestamp"`
 	IsPtr           bool     `json:"IsPtr" xml:"IsPtr"`
+	ProxyPattern    string   `json:"ProxyPattern" xml:"ProxyPattern"`
 	BindVpcs        BindVpcs `json:"BindVpcs" xml:"BindVpcs"`
 }
 
