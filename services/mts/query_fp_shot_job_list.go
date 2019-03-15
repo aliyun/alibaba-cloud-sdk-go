@@ -76,19 +76,28 @@ func (client *Client) QueryFpShotJobListWithCallback(request *QueryFpShotJobList
 // QueryFpShotJobListRequest is the request struct for api QueryFpShotJobList
 type QueryFpShotJobListRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	JobIds               string           `position:"Query" name:"JobIds"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerId            requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount       string           `position:"Query" name:"ResourceOwnerAccount"`
+	NextPageToken              string           `position:"Query" name:"NextPageToken"`
+	StartOfJobCreatedTimeRange string           `position:"Query" name:"StartOfJobCreatedTimeRange"`
+	OwnerAccount               string           `position:"Query" name:"OwnerAccount"`
+	MaximumPageSize            requests.Integer `position:"Query" name:"MaximumPageSize"`
+	OwnerId                    requests.Integer `position:"Query" name:"OwnerId"`
+	PipelineId                 string           `position:"Query" name:"PipelineId"`
+	PrimaryKeyList             string           `position:"Query" name:"PrimaryKeyList"`
+	JobIds                     string           `position:"Query" name:"JobIds"`
+	State                      string           `position:"Query" name:"State"`
+	EndOfJobCreatedTimeRange   string           `position:"Query" name:"EndOfJobCreatedTimeRange"`
 }
 
 // QueryFpShotJobListResponse is the response struct for api QueryFpShotJobList
 type QueryFpShotJobListResponse struct {
 	*responses.BaseResponse
-	RequestId     string                          `json:"RequestId" xml:"RequestId"`
-	NonExistIds   NonExistIdsInQueryFpShotJobList `json:"NonExistIds" xml:"NonExistIds"`
-	FpShotJobList FpShotJobList                   `json:"FpShotJobList" xml:"FpShotJobList"`
+	RequestId           string                          `json:"RequestId" xml:"RequestId"`
+	NextPageToken       string                          `json:"NextPageToken" xml:"NextPageToken"`
+	NonExistIds         NonExistIdsInQueryFpShotJobList `json:"NonExistIds" xml:"NonExistIds"`
+	NonExistPrimaryKeys NonExistPrimaryKeys             `json:"NonExistPrimaryKeys" xml:"NonExistPrimaryKeys"`
+	FpShotJobList       FpShotJobList                   `json:"FpShotJobList" xml:"FpShotJobList"`
 }
 
 // CreateQueryFpShotJobListRequest creates a request to invoke QueryFpShotJobList API

@@ -78,7 +78,9 @@ type ListAllMediaBucketRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	NextPageToken        string           `position:"Query" name:"NextPageToken"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	MaximumPageSize      requests.Integer `position:"Query" name:"MaximumPageSize"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
@@ -86,6 +88,7 @@ type ListAllMediaBucketRequest struct {
 type ListAllMediaBucketResponse struct {
 	*responses.BaseResponse
 	RequestId       string          `json:"RequestId" xml:"RequestId"`
+	NextPageToken   string          `json:"NextPageToken" xml:"NextPageToken"`
 	MediaBucketList MediaBucketList `json:"MediaBucketList" xml:"MediaBucketList"`
 }
 

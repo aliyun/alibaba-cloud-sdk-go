@@ -17,6 +17,6 @@ package mts
 
 // AsrResult is a nested struct in mts response
 type AsrResult struct {
-	Duration    string      `json:"Duration" xml:"Duration"`
-	AsrTextList AsrTextList `json:"AsrTextList" xml:"AsrTextList"`
+	Duration    string                   `json:"Duration" xml:"Duration"`
+	AsrTextList AsrTextListInQueryMcuJob `json:"AsrTextList" xml:"AsrTextList"`
 }

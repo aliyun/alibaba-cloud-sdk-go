@@ -17,7 +17,7 @@ package mts
 
 // FpShot is a nested struct in mts response
 type FpShot struct {
-	PrimaryKey   string       `json:"PrimaryKey" xml:"PrimaryKey"`
-	Similarity   string       `json:"Similarity" xml:"Similarity"`
-	FpShotSlices FpShotSlices `json:"FpShotSlices" xml:"FpShotSlices"`
+	Similarity   string                           `json:"Similarity" xml:"Similarity"`
+	PrimaryKey   string                           `json:"PrimaryKey" xml:"PrimaryKey"`
+	FpShotSlices FpShotSlicesInQueryFpShotJobList `json:"FpShotSlices" xml:"FpShotSlices"`
 }

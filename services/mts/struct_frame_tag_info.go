@@ -17,7 +17,7 @@ package mts
 
 // FrameTagInfo is a nested struct in mts response
 type FrameTagInfo struct {
-	Tag      string `json:"Tag" xml:"Tag"`
-	Score    string `json:"Score" xml:"Score"`
 	Category string `json:"Category" xml:"Category"`
+	Score    string `json:"Score" xml:"Score"`
+	Tag      string `json:"Tag" xml:"Tag"`
 }

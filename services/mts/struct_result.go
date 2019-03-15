@@ -17,7 +17,22 @@ package mts
 
 // Result is a nested struct in mts response
 type Result struct {
-	Code    string `json:"Code" xml:"Code"`
-	Message string `json:"Message" xml:"Message"`
-	Score   string `json:"Score" xml:"Score"`
+	Message          string           `json:"Message" xml:"Message"`
+	Code             string           `json:"Code" xml:"Code"`
+	Label            string           `json:"Label" xml:"Label"`
+	Rate             string           `json:"Rate" xml:"Rate"`
+	Score            string           `json:"Score" xml:"Score"`
+	Suggestion       string           `json:"Suggestion" xml:"Suggestion"`
+	Scene            string           `json:"Scene" xml:"Scene"`
+	PornResult       PornResult       `json:"PornResult" xml:"PornResult"`
+	PoliticsResult   PoliticsResult   `json:"PoliticsResult" xml:"PoliticsResult"`
+	QrcodeResult     QrcodeResult     `json:"QrcodeResult" xml:"QrcodeResult"`
+	ContrabandResult ContrabandResult `json:"ContrabandResult" xml:"ContrabandResult"`
+	AbuseResult      AbuseResult      `json:"AbuseResult" xml:"AbuseResult"`
+	AdResult         AdResult         `json:"AdResult" xml:"AdResult"`
+	TerrorismResult  TerrorismResult  `json:"TerrorismResult" xml:"TerrorismResult"`
+	LiveResult       LiveResult       `json:"LiveResult" xml:"LiveResult"`
+	LogoResult       LogoResult       `json:"LogoResult" xml:"LogoResult"`
+	SpamResult       SpamResult       `json:"SpamResult" xml:"SpamResult"`
+	ImageSearchShots ImageSearchShots `json:"ImageSearchShots" xml:"ImageSearchShots"`
 }

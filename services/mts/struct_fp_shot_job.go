@@ -20,11 +20,13 @@ type FpShotJob struct {
 	Id           string       `json:"Id" xml:"Id"`
 	UserData     string       `json:"UserData" xml:"UserData"`
 	PipelineId   string       `json:"PipelineId" xml:"PipelineId"`
+	FileId       string       `json:"FileId" xml:"FileId"`
 	State        string       `json:"State" xml:"State"`
 	Code         string       `json:"Code" xml:"Code"`
 	Message      string       `json:"Message" xml:"Message"`
 	CreationTime string       `json:"CreationTime" xml:"CreationTime"`
 	FinishTime   string       `json:"FinishTime" xml:"FinishTime"`
 	InputFile    InputFile    `json:"InputFile" xml:"InputFile"`
+	FpShotConfig FpShotConfig `json:"FpShotConfig" xml:"FpShotConfig"`
 	FpShotResult FpShotResult `json:"FpShotResult" xml:"FpShotResult"`
 }

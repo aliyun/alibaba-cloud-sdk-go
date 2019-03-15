@@ -17,31 +17,39 @@ package mts
 
 // Job is a nested struct in mts response
 type Job struct {
+	TemplateId            string                                     `json:"TemplateId" xml:"TemplateId"`
+	ResultOutputFile      string                                     `json:"ResultOutputFile" xml:"ResultOutputFile"`
 	UserData              string                                     `json:"UserData" xml:"UserData"`
 	PipelineId            string                                     `json:"PipelineId" xml:"PipelineId"`
+	Template              string                                     `json:"Template" xml:"Template"`
 	Percent               int                                        `json:"Percent" xml:"Percent"`
 	Id                    string                                     `json:"Id" xml:"Id"`
-	InputConfig           string                                     `json:"InputConfig" xml:"InputConfig"`
 	JobId                 string                                     `json:"JobId" xml:"JobId"`
 	Message               string                                     `json:"Message" xml:"Message"`
 	Code                  string                                     `json:"Code" xml:"Code"`
 	CreationTime          string                                     `json:"CreationTime" xml:"CreationTime"`
 	FinishTime            string                                     `json:"FinishTime" xml:"FinishTime"`
 	State                 string                                     `json:"State" xml:"State"`
-	OutputConfig          string                                     `json:"OutputConfig" xml:"OutputConfig"`
 	Output                Output                                     `json:"Output" xml:"Output"`
+	OutputConfig          OutputConfig                               `json:"OutputConfig" xml:"OutputConfig"`
 	EditingConfig         EditingConfig                              `json:"EditingConfig" xml:"EditingConfig"`
-	MNSMessageResult      MNSMessageResult                           `json:"MNSMessageResult" xml:"MNSMessageResult"`
 	Input                 Input                                      `json:"Input" xml:"Input"`
+	Result                Result                                     `json:"Result" xml:"Result"`
+	CategoryResult        CategoryResult                             `json:"CategoryResult" xml:"CategoryResult"`
+	Properties            Properties                                 `json:"Properties" xml:"Properties"`
+	MNSMessageResult      MNSMessageResult                           `json:"MNSMessageResult" xml:"MNSMessageResult"`
 	VideoSplitResult      VideoSplitResult                           `json:"VideoSplitResult" xml:"VideoSplitResult"`
 	MediaDetailConfig     MediaDetailConfig                          `json:"MediaDetailConfig" xml:"MediaDetailConfig"`
 	VideoGifResult        VideoGifResult                             `json:"VideoGifResult" xml:"VideoGifResult"`
 	AsrConfig             AsrConfig                                  `json:"AsrConfig" xml:"AsrConfig"`
 	MediaDetailResult     MediaDetailResult                          `json:"MediaDetailResult" xml:"MediaDetailResult"`
-	TranscodeOutput       TranscodeOutput                            `json:"transcodeOutput" xml:"transcodeOutput"`
 	AsrResult             AsrResult                                  `json:"AsrResult" xml:"AsrResult"`
+	TranscodeOutput       TranscodeOutput                            `json:"transcodeOutput" xml:"transcodeOutput"`
 	VideoSummaryResult    VideoSummaryResult                         `json:"VideoSummaryResult" xml:"VideoSummaryResult"`
 	Inputs                InputsInQueryComplexJobList                `json:"Inputs" xml:"Inputs"`
 	EditingInputs         EditingInputsInQueryEditingJobList         `json:"EditingInputs" xml:"EditingInputs"`
+	TagResult             TagResult                                  `json:"TagResult" xml:"TagResult"`
+	OcrResult             OcrResult                                  `json:"OcrResult" xml:"OcrResult"`
 	ComplexEditingConfigs ComplexEditingConfigsInQueryComplexJobList `json:"ComplexEditingConfigs" xml:"ComplexEditingConfigs"`
+	FaceResult            FaceResult                                 `json:"FaceResult" xml:"FaceResult"`
 }

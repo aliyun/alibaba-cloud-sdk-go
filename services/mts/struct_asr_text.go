@@ -17,9 +17,9 @@ package mts
 
 // AsrText is a nested struct in mts response
 type AsrText struct {
-	StartTime  int    `json:"StartTime" xml:"StartTime"`
-	EndTime    string `json:"EndTime" xml:"EndTime"`
-	ChannelId  string `json:"ChannelId" xml:"ChannelId"`
 	SpeechRate string `json:"SpeechRate" xml:"SpeechRate"`
 	Text       string `json:"Text" xml:"Text"`
+	EndTime    string `json:"EndTime" xml:"EndTime"`
+	ChannelId  string `json:"ChannelId" xml:"ChannelId"`
+	StartTime  int    `json:"StartTime" xml:"StartTime"`
 }

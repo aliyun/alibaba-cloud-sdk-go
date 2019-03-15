@@ -18,6 +18,8 @@ package mts
 // NotifyConfig is a nested struct in mts response
 type NotifyConfig struct {
 	QueueName string `json:"QueueName" xml:"QueueName"`
+	MqTag     string `json:"MqTag" xml:"MqTag"`
 	Queue     string `json:"Queue" xml:"Queue"`
+	MqTopic   string `json:"MqTopic" xml:"MqTopic"`
 	Topic     string `json:"Topic" xml:"Topic"`
 }

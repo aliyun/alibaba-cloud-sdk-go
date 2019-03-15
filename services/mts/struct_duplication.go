@@ -17,6 +17,6 @@ package mts
 
 // Duplication is a nested struct in mts response
 type Duplication struct {
-	Start    string `json:"Start" xml:"Start"`
 	Duration string `json:"Duration" xml:"Duration"`
+	Start    string `json:"Start" xml:"Start"`
 }

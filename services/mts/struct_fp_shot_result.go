@@ -17,5 +17,6 @@ package mts
 
 // FpShotResult is a nested struct in mts response
 type FpShotResult struct {
-	FpShots FpShots `json:"FpShots" xml:"FpShots"`
+	FpShots      FpShots      `json:"FpShots" xml:"FpShots"`
+	AudioFpShots AudioFpShots `json:"AudioFpShots" xml:"AudioFpShots"`
 }

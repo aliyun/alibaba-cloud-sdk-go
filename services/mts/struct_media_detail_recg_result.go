@@ -17,13 +17,13 @@ package mts
 
 // MediaDetailRecgResult is a nested struct in mts response
 type MediaDetailRecgResult struct {
-	ImageUrl      string        `json:"ImageUrl" xml:"ImageUrl"`
-	Time          string        `json:"Time" xml:"Time"`
-	OcrText       string        `json:"OcrText" xml:"OcrText"`
-	FrameTags     FrameTags     `json:"FrameTags" xml:"FrameTags"`
-	Celebrities   Celebrities   `json:"Celebrities" xml:"Celebrities"`
-	Sensitives    Sensitives    `json:"Sensitives" xml:"Sensitives"`
-	Politicians   Politicians   `json:"Politicians" xml:"Politicians"`
-	FrameTagInfos FrameTagInfos `json:"FrameTagInfos" xml:"FrameTagInfos"`
-	Customs       Customs       `json:"Customs" xml:"Customs"`
+	ImageUrl      string                                 `json:"ImageUrl" xml:"ImageUrl"`
+	Time          string                                 `json:"Time" xml:"Time"`
+	OcrText       string                                 `json:"OcrText" xml:"OcrText"`
+	FrameTags     FrameTags                              `json:"FrameTags" xml:"FrameTags"`
+	Celebrities   CelebritiesInQueryMediaDetailJobList   `json:"Celebrities" xml:"Celebrities"`
+	Sensitives    Sensitives                             `json:"Sensitives" xml:"Sensitives"`
+	Politicians   Politicians                            `json:"Politicians" xml:"Politicians"`
+	FrameTagInfos FrameTagInfosInQueryMediaDetailJobList `json:"FrameTagInfos" xml:"FrameTagInfos"`
+	Customs       Customs                                `json:"Customs" xml:"Customs"`
 }

@@ -17,25 +17,26 @@ package mts
 
 // Video is a nested struct in mts response
 type Video struct {
-	Height       string     `json:"Height" xml:"Height"`
-	Preset       string     `json:"Preset" xml:"Preset"`
-	MaxFps       string     `json:"MaxFps" xml:"MaxFps"`
-	Gop          string     `json:"Gop" xml:"Gop"`
-	Qscale       string     `json:"Qscale" xml:"Qscale"`
-	Profile      string     `json:"Profile" xml:"Profile"`
-	Fps          string     `json:"Fps" xml:"Fps"`
-	Bitrate      string     `json:"Bitrate" xml:"Bitrate"`
-	Bufsize      string     `json:"Bufsize" xml:"Bufsize"`
-	PixFmt       string     `json:"PixFmt" xml:"PixFmt"`
-	Remove       string     `json:"Remove" xml:"Remove"`
-	Crop         string     `json:"Crop" xml:"Crop"`
-	Crf          string     `json:"Crf" xml:"Crf"`
-	ScanMode     string     `json:"ScanMode" xml:"ScanMode"`
-	Width        string     `json:"Width" xml:"Width"`
-	ResoPriority string     `json:"ResoPriority" xml:"ResoPriority"`
-	Codec        string     `json:"Codec" xml:"Codec"`
-	Maxrate      string     `json:"Maxrate" xml:"Maxrate"`
-	Degrain      string     `json:"Degrain" xml:"Degrain"`
-	Pad          string     `json:"Pad" xml:"Pad"`
-	BitrateBnd   BitrateBnd `json:"BitrateBnd" xml:"BitrateBnd"`
+	Height        string     `json:"Height" xml:"Height"`
+	Preset        string     `json:"Preset" xml:"Preset"`
+	MaxFps        string     `json:"MaxFps" xml:"MaxFps"`
+	Gop           string     `json:"Gop" xml:"Gop"`
+	Qscale        string     `json:"Qscale" xml:"Qscale"`
+	LongShortMode string     `json:"LongShortMode" xml:"LongShortMode"`
+	Profile       string     `json:"Profile" xml:"Profile"`
+	Fps           string     `json:"Fps" xml:"Fps"`
+	Bitrate       string     `json:"Bitrate" xml:"Bitrate"`
+	Bufsize       string     `json:"Bufsize" xml:"Bufsize"`
+	PixFmt        string     `json:"PixFmt" xml:"PixFmt"`
+	Remove        string     `json:"Remove" xml:"Remove"`
+	Crop          string     `json:"Crop" xml:"Crop"`
+	Crf           string     `json:"Crf" xml:"Crf"`
+	ScanMode      string     `json:"ScanMode" xml:"ScanMode"`
+	Width         string     `json:"Width" xml:"Width"`
+	ResoPriority  string     `json:"ResoPriority" xml:"ResoPriority"`
+	Codec         string     `json:"Codec" xml:"Codec"`
+	Maxrate       string     `json:"Maxrate" xml:"Maxrate"`
+	Degrain       string     `json:"Degrain" xml:"Degrain"`
+	Pad           string     `json:"Pad" xml:"Pad"`
+	BitrateBnd    BitrateBnd `json:"BitrateBnd" xml:"BitrateBnd"`
 }

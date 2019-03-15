@@ -17,5 +17,5 @@ package mts
 
 // JobListInQuerySubtitleJobList is a nested struct in mts response
 type JobListInQuerySubtitleJobList struct {
-	Job []Job `json:"Job" xml:"Job"`
+	Job []JobInQuerySubtitleJobList `json:"Job" xml:"Job"`
 }

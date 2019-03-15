@@ -17,12 +17,13 @@ package mts
 
 // Pipeline is a nested struct in mts response
 type Pipeline struct {
-	Name         string       `json:"Name" xml:"Name"`
-	SpeedLevel   int          `json:"SpeedLevel" xml:"SpeedLevel"`
-	State        string       `json:"State" xml:"State"`
-	Priority     int          `json:"Priority" xml:"Priority"`
-	Role         string       `json:"Role" xml:"Role"`
-	Speed        string       `json:"Speed" xml:"Speed"`
-	Id           string       `json:"Id" xml:"Id"`
-	NotifyConfig NotifyConfig `json:"NotifyConfig" xml:"NotifyConfig"`
+	Name          string       `json:"Name" xml:"Name"`
+	SpeedLevel    int          `json:"SpeedLevel" xml:"SpeedLevel"`
+	State         string       `json:"State" xml:"State"`
+	Priority      int          `json:"Priority" xml:"Priority"`
+	Role          string       `json:"Role" xml:"Role"`
+	Speed         string       `json:"Speed" xml:"Speed"`
+	QuotaAllocate int          `json:"QuotaAllocate" xml:"QuotaAllocate"`
+	Id            string       `json:"Id" xml:"Id"`
+	NotifyConfig  NotifyConfig `json:"NotifyConfig" xml:"NotifyConfig"`
 }

@@ -44,4 +44,5 @@ type Output struct {
 	MergeList              MergeListInListJob       `json:"MergeList" xml:"MergeList"`
 	OutSubtitleList        OutSubtitleListInListJob `json:"OutSubtitleList" xml:"OutSubtitleList"`
 	OpeningList            OpeningListInListJob     `json:"OpeningList" xml:"OpeningList"`
+	AmixList               AmixList                 `json:"AmixList" xml:"AmixList"`
 }
