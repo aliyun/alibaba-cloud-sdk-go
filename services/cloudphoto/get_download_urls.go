@@ -76,9 +76,9 @@ func (client *Client) GetDownloadUrlsWithCallback(request *GetDownloadUrlsReques
 // GetDownloadUrlsRequest is the request struct for api GetDownloadUrls
 type GetDownloadUrlsRequest struct {
 	*requests.RpcRequest
+	LibraryId string    `position:"Query" name:"LibraryId"`
 	PhotoId   *[]string `position:"Query" name:"PhotoId"  type:"Repeated"`
 	StoreName string    `position:"Query" name:"StoreName"`
-	LibraryId string    `position:"Query" name:"LibraryId"`
 }
 
 // GetDownloadUrlsResponse is the response struct for api GetDownloadUrls

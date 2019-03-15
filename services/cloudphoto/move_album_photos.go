@@ -77,10 +77,10 @@ func (client *Client) MoveAlbumPhotosWithCallback(request *MoveAlbumPhotosReques
 type MoveAlbumPhotosRequest struct {
 	*requests.RpcRequest
 	SourceAlbumId requests.Integer `position:"Query" name:"SourceAlbumId"`
-	PhotoId       *[]string        `position:"Query" name:"PhotoId"  type:"Repeated"`
 	TargetAlbumId requests.Integer `position:"Query" name:"TargetAlbumId"`
-	StoreName     string           `position:"Query" name:"StoreName"`
 	LibraryId     string           `position:"Query" name:"LibraryId"`
+	PhotoId       *[]string        `position:"Query" name:"PhotoId"  type:"Repeated"`
+	StoreName     string           `position:"Query" name:"StoreName"`
 }
 
 // MoveAlbumPhotosResponse is the response struct for api MoveAlbumPhotos

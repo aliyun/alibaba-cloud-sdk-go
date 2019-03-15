@@ -76,10 +76,10 @@ func (client *Client) GetThumbnailWithCallback(request *GetThumbnailRequest, cal
 // GetThumbnailRequest is the request struct for api GetThumbnail
 type GetThumbnailRequest struct {
 	*requests.RpcRequest
-	PhotoId   requests.Integer `position:"Query" name:"PhotoId"`
-	ZoomType  string           `position:"Query" name:"ZoomType"`
-	StoreName string           `position:"Query" name:"StoreName"`
 	LibraryId string           `position:"Query" name:"LibraryId"`
+	PhotoId   requests.Integer `position:"Query" name:"PhotoId"`
+	StoreName string           `position:"Query" name:"StoreName"`
+	ZoomType  string           `position:"Query" name:"ZoomType"`
 }
 
 // GetThumbnailResponse is the response struct for api GetThumbnail

@@ -76,8 +76,8 @@ func (client *Client) GetQuotaWithCallback(request *GetQuotaRequest, callback fu
 // GetQuotaRequest is the request struct for api GetQuota
 type GetQuotaRequest struct {
 	*requests.RpcRequest
-	StoreName string `position:"Query" name:"StoreName"`
 	LibraryId string `position:"Query" name:"LibraryId"`
+	StoreName string `position:"Query" name:"StoreName"`
 }
 
 // GetQuotaResponse is the response struct for api GetQuota

@@ -76,13 +76,13 @@ func (client *Client) ListMomentPhotosWithCallback(request *ListMomentPhotosRequ
 // ListMomentPhotosRequest is the request struct for api ListMomentPhotos
 type ListMomentPhotosRequest struct {
 	*requests.RpcRequest
+	Cursor    string           `position:"Query" name:"Cursor"`
+	Size      requests.Integer `position:"Query" name:"Size"`
+	LibraryId string           `position:"Query" name:"LibraryId"`
+	StoreName string           `position:"Query" name:"StoreName"`
+	State     string           `position:"Query" name:"State"`
 	MomentId  requests.Integer `position:"Query" name:"MomentId"`
 	Direction string           `position:"Query" name:"Direction"`
-	Size      requests.Integer `position:"Query" name:"Size"`
-	Cursor    string           `position:"Query" name:"Cursor"`
-	State     string           `position:"Query" name:"State"`
-	StoreName string           `position:"Query" name:"StoreName"`
-	LibraryId string           `position:"Query" name:"LibraryId"`
 }
 
 // ListMomentPhotosResponse is the response struct for api ListMomentPhotos

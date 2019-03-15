@@ -76,9 +76,9 @@ func (client *Client) GetAlbumsByNamesWithCallback(request *GetAlbumsByNamesRequ
 // GetAlbumsByNamesRequest is the request struct for api GetAlbumsByNames
 type GetAlbumsByNamesRequest struct {
 	*requests.RpcRequest
+	LibraryId string    `position:"Query" name:"LibraryId"`
 	Name      *[]string `position:"Query" name:"Name"  type:"Repeated"`
 	StoreName string    `position:"Query" name:"StoreName"`
-	LibraryId string    `position:"Query" name:"LibraryId"`
 }
 
 // GetAlbumsByNamesResponse is the response struct for api GetAlbumsByNames

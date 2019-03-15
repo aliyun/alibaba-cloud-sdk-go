@@ -76,13 +76,13 @@ func (client *Client) ListTagPhotosWithCallback(request *ListTagPhotosRequest, c
 // ListTagPhotosRequest is the request struct for api ListTagPhotos
 type ListTagPhotosRequest struct {
 	*requests.RpcRequest
-	TagId     requests.Integer `position:"Query" name:"TagId"`
-	Direction string           `position:"Query" name:"Direction"`
-	Size      requests.Integer `position:"Query" name:"Size"`
 	Cursor    string           `position:"Query" name:"Cursor"`
-	State     string           `position:"Query" name:"State"`
-	StoreName string           `position:"Query" name:"StoreName"`
+	Size      requests.Integer `position:"Query" name:"Size"`
+	TagId     requests.Integer `position:"Query" name:"TagId"`
 	LibraryId string           `position:"Query" name:"LibraryId"`
+	StoreName string           `position:"Query" name:"StoreName"`
+	State     string           `position:"Query" name:"State"`
+	Direction string           `position:"Query" name:"Direction"`
 }
 
 // ListTagPhotosResponse is the response struct for api ListTagPhotos

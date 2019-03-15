@@ -76,11 +76,11 @@ func (client *Client) TagPhotoWithCallback(request *TagPhotoRequest, callback fu
 // TagPhotoRequest is the request struct for api TagPhoto
 type TagPhotoRequest struct {
 	*requests.RpcRequest
-	StoreName  string           `position:"Query" name:"StoreName"`
 	LibraryId  string           `position:"Query" name:"LibraryId"`
-	TagKey     *[]string        `position:"Query" name:"TagKey"  type:"Repeated"`
 	Confidence *[]string        `position:"Query" name:"Confidence"  type:"Repeated"`
+	StoreName  string           `position:"Query" name:"StoreName"`
 	PhotoId    requests.Integer `position:"Query" name:"PhotoId"`
+	TagKey     *[]string        `position:"Query" name:"TagKey"  type:"Repeated"`
 }
 
 // TagPhotoResponse is the response struct for api TagPhoto

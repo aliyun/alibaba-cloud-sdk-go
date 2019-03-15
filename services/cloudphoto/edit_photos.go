@@ -76,13 +76,13 @@ func (client *Client) EditPhotosWithCallback(request *EditPhotosRequest, callbac
 // EditPhotosRequest is the request struct for api EditPhotos
 type EditPhotosRequest struct {
 	*requests.RpcRequest
-	PhotoId         *[]string        `position:"Query" name:"PhotoId"  type:"Repeated"`
-	ShareExpireTime requests.Integer `position:"Query" name:"ShareExpireTime"`
 	TakenAt         requests.Integer `position:"Query" name:"TakenAt"`
-	Title           string           `position:"Query" name:"Title"`
-	Remark          string           `position:"Query" name:"Remark"`
-	StoreName       string           `position:"Query" name:"StoreName"`
 	LibraryId       string           `position:"Query" name:"LibraryId"`
+	ShareExpireTime requests.Integer `position:"Query" name:"ShareExpireTime"`
+	PhotoId         *[]string        `position:"Query" name:"PhotoId"  type:"Repeated"`
+	StoreName       string           `position:"Query" name:"StoreName"`
+	Remark          string           `position:"Query" name:"Remark"`
+	Title           string           `position:"Query" name:"Title"`
 }
 
 // EditPhotosResponse is the response struct for api EditPhotos

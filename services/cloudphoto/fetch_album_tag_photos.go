@@ -76,12 +76,12 @@ func (client *Client) FetchAlbumTagPhotosWithCallback(request *FetchAlbumTagPhot
 // FetchAlbumTagPhotosRequest is the request struct for api FetchAlbumTagPhotos
 type FetchAlbumTagPhotosRequest struct {
 	*requests.RpcRequest
-	AlbumId   requests.Integer `position:"Query" name:"AlbumId"`
-	TagId     requests.Integer `position:"Query" name:"TagId"`
 	Size      requests.Integer `position:"Query" name:"Size"`
-	Page      requests.Integer `position:"Query" name:"Page"`
-	StoreName string           `position:"Query" name:"StoreName"`
+	TagId     requests.Integer `position:"Query" name:"TagId"`
 	LibraryId string           `position:"Query" name:"LibraryId"`
+	AlbumId   requests.Integer `position:"Query" name:"AlbumId"`
+	StoreName string           `position:"Query" name:"StoreName"`
+	Page      requests.Integer `position:"Query" name:"Page"`
 }
 
 // FetchAlbumTagPhotosResponse is the response struct for api FetchAlbumTagPhotos

@@ -76,11 +76,11 @@ func (client *Client) GetPublicAccessUrlsWithCallback(request *GetPublicAccessUr
 // GetPublicAccessUrlsRequest is the request struct for api GetPublicAccessUrls
 type GetPublicAccessUrlsRequest struct {
 	*requests.RpcRequest
-	PhotoId    *[]string `position:"Query" name:"PhotoId"  type:"Repeated"`
-	ZoomType   string    `position:"Query" name:"ZoomType"`
 	DomainType string    `position:"Query" name:"DomainType"`
-	StoreName  string    `position:"Query" name:"StoreName"`
 	LibraryId  string    `position:"Query" name:"LibraryId"`
+	PhotoId    *[]string `position:"Query" name:"PhotoId"  type:"Repeated"`
+	StoreName  string    `position:"Query" name:"StoreName"`
+	ZoomType   string    `position:"Query" name:"ZoomType"`
 }
 
 // GetPublicAccessUrlsResponse is the response struct for api GetPublicAccessUrls

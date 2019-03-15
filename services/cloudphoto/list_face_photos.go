@@ -76,13 +76,13 @@ func (client *Client) ListFacePhotosWithCallback(request *ListFacePhotosRequest,
 // ListFacePhotosRequest is the request struct for api ListFacePhotos
 type ListFacePhotosRequest struct {
 	*requests.RpcRequest
-	FaceId    requests.Integer `position:"Query" name:"FaceId"`
-	Direction string           `position:"Query" name:"Direction"`
-	Size      requests.Integer `position:"Query" name:"Size"`
 	Cursor    string           `position:"Query" name:"Cursor"`
-	State     string           `position:"Query" name:"State"`
-	StoreName string           `position:"Query" name:"StoreName"`
+	Size      requests.Integer `position:"Query" name:"Size"`
 	LibraryId string           `position:"Query" name:"LibraryId"`
+	StoreName string           `position:"Query" name:"StoreName"`
+	FaceId    requests.Integer `position:"Query" name:"FaceId"`
+	State     string           `position:"Query" name:"State"`
+	Direction string           `position:"Query" name:"Direction"`
 }
 
 // ListFacePhotosResponse is the response struct for api ListFacePhotos

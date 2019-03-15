@@ -76,10 +76,10 @@ func (client *Client) RemoveFacePhotosWithCallback(request *RemoveFacePhotosRequ
 // RemoveFacePhotosRequest is the request struct for api RemoveFacePhotos
 type RemoveFacePhotosRequest struct {
 	*requests.RpcRequest
-	FaceId    requests.Integer `position:"Query" name:"FaceId"`
+	LibraryId string           `position:"Query" name:"LibraryId"`
 	PhotoId   *[]string        `position:"Query" name:"PhotoId"  type:"Repeated"`
 	StoreName string           `position:"Query" name:"StoreName"`
-	LibraryId string           `position:"Query" name:"LibraryId"`
+	FaceId    requests.Integer `position:"Query" name:"FaceId"`
 }
 
 // RemoveFacePhotosResponse is the response struct for api RemoveFacePhotos

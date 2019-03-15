@@ -77,8 +77,8 @@ func (client *Client) DeleteEventWithCallback(request *DeleteEventRequest, callb
 type DeleteEventRequest struct {
 	*requests.RpcRequest
 	EventId   requests.Integer `position:"Query" name:"EventId"`
-	StoreName string           `position:"Query" name:"StoreName"`
 	LibraryId string           `position:"Query" name:"LibraryId"`
+	StoreName string           `position:"Query" name:"StoreName"`
 }
 
 // DeleteEventResponse is the response struct for api DeleteEvent

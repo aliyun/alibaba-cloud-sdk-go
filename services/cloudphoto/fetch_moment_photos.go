@@ -76,13 +76,13 @@ func (client *Client) FetchMomentPhotosWithCallback(request *FetchMomentPhotosRe
 // FetchMomentPhotosRequest is the request struct for api FetchMomentPhotos
 type FetchMomentPhotosRequest struct {
 	*requests.RpcRequest
-	MomentId  requests.Integer `position:"Query" name:"MomentId"`
-	OrderBy   string           `position:"Query" name:"OrderBy"`
-	Order     string           `position:"Query" name:"Order"`
 	Size      requests.Integer `position:"Query" name:"Size"`
-	Page      requests.Integer `position:"Query" name:"Page"`
-	StoreName string           `position:"Query" name:"StoreName"`
 	LibraryId string           `position:"Query" name:"LibraryId"`
+	OrderBy   string           `position:"Query" name:"OrderBy"`
+	StoreName string           `position:"Query" name:"StoreName"`
+	Page      requests.Integer `position:"Query" name:"Page"`
+	MomentId  requests.Integer `position:"Query" name:"MomentId"`
+	Order     string           `position:"Query" name:"Order"`
 }
 
 // FetchMomentPhotosResponse is the response struct for api FetchMomentPhotos

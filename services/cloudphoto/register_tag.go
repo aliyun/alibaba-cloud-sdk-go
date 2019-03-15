@@ -77,9 +77,9 @@ func (client *Client) RegisterTagWithCallback(request *RegisterTagRequest, callb
 type RegisterTagRequest struct {
 	*requests.RpcRequest
 	StoreName string `position:"Query" name:"StoreName"`
+	Text      string `position:"Query" name:"Text"`
 	TagKey    string `position:"Query" name:"TagKey"`
 	Lang      string `position:"Query" name:"Lang"`
-	Text      string `position:"Query" name:"Text"`
 }
 
 // RegisterTagResponse is the response struct for api RegisterTag

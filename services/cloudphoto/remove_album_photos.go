@@ -76,10 +76,10 @@ func (client *Client) RemoveAlbumPhotosWithCallback(request *RemoveAlbumPhotosRe
 // RemoveAlbumPhotosRequest is the request struct for api RemoveAlbumPhotos
 type RemoveAlbumPhotosRequest struct {
 	*requests.RpcRequest
+	LibraryId string           `position:"Query" name:"LibraryId"`
 	AlbumId   requests.Integer `position:"Query" name:"AlbumId"`
 	PhotoId   *[]string        `position:"Query" name:"PhotoId"  type:"Repeated"`
 	StoreName string           `position:"Query" name:"StoreName"`
-	LibraryId string           `position:"Query" name:"LibraryId"`
 }
 
 // RemoveAlbumPhotosResponse is the response struct for api RemoveAlbumPhotos

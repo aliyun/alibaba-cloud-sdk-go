@@ -76,9 +76,9 @@ func (client *Client) ToggleFeaturesWithCallback(request *ToggleFeaturesRequest,
 // ToggleFeaturesRequest is the request struct for api ToggleFeatures
 type ToggleFeaturesRequest struct {
 	*requests.RpcRequest
+	DisabledFeatures *[]string `position:"Query" name:"DisabledFeatures"  type:"Repeated"`
 	StoreName        string    `position:"Query" name:"StoreName"`
 	EnabledFeatures  *[]string `position:"Query" name:"EnabledFeatures"  type:"Repeated"`
-	DisabledFeatures *[]string `position:"Query" name:"DisabledFeatures"  type:"Repeated"`
 }
 
 // ToggleFeaturesResponse is the response struct for api ToggleFeatures

@@ -76,9 +76,9 @@ func (client *Client) FetchLibrariesWithCallback(request *FetchLibrariesRequest,
 // FetchLibrariesRequest is the request struct for api FetchLibraries
 type FetchLibrariesRequest struct {
 	*requests.RpcRequest
+	Size      requests.Integer `position:"Query" name:"Size"`
 	StoreName string           `position:"Query" name:"StoreName"`
 	Page      requests.Integer `position:"Query" name:"Page"`
-	Size      requests.Integer `position:"Query" name:"Size"`
 }
 
 // FetchLibrariesResponse is the response struct for api FetchLibraries

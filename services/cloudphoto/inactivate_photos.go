@@ -76,9 +76,9 @@ func (client *Client) InactivatePhotosWithCallback(request *InactivatePhotosRequ
 // InactivatePhotosRequest is the request struct for api InactivatePhotos
 type InactivatePhotosRequest struct {
 	*requests.RpcRequest
+	LibraryId    string           `position:"Query" name:"LibraryId"`
 	PhotoId      *[]string        `position:"Query" name:"PhotoId"  type:"Repeated"`
 	StoreName    string           `position:"Query" name:"StoreName"`
-	LibraryId    string           `position:"Query" name:"LibraryId"`
 	InactiveTime requests.Integer `position:"Query" name:"InactiveTime"`
 }
 

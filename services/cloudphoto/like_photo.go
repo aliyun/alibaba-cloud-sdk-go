@@ -76,9 +76,9 @@ func (client *Client) LikePhotoWithCallback(request *LikePhotoRequest, callback 
 // LikePhotoRequest is the request struct for api LikePhoto
 type LikePhotoRequest struct {
 	*requests.RpcRequest
+	LibraryId string           `position:"Query" name:"LibraryId"`
 	PhotoId   requests.Integer `position:"Query" name:"PhotoId"`
 	StoreName string           `position:"Query" name:"StoreName"`
-	LibraryId string           `position:"Query" name:"LibraryId"`
 }
 
 // LikePhotoResponse is the response struct for api LikePhoto

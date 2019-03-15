@@ -76,10 +76,10 @@ func (client *Client) MergeFacesWithCallback(request *MergeFacesRequest, callbac
 // MergeFacesRequest is the request struct for api MergeFaces
 type MergeFacesRequest struct {
 	*requests.RpcRequest
-	FaceId       *[]string        `position:"Query" name:"FaceId"  type:"Repeated"`
+	LibraryId    string           `position:"Query" name:"LibraryId"`
 	TargetFaceId requests.Integer `position:"Query" name:"TargetFaceId"`
 	StoreName    string           `position:"Query" name:"StoreName"`
-	LibraryId    string           `position:"Query" name:"LibraryId"`
+	FaceId       *[]string        `position:"Query" name:"FaceId"  type:"Repeated"`
 }
 
 // MergeFacesResponse is the response struct for api MergeFaces

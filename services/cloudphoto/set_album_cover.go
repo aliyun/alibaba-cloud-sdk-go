@@ -76,10 +76,10 @@ func (client *Client) SetAlbumCoverWithCallback(request *SetAlbumCoverRequest, c
 // SetAlbumCoverRequest is the request struct for api SetAlbumCover
 type SetAlbumCoverRequest struct {
 	*requests.RpcRequest
+	LibraryId string           `position:"Query" name:"LibraryId"`
 	AlbumId   requests.Integer `position:"Query" name:"AlbumId"`
 	PhotoId   requests.Integer `position:"Query" name:"PhotoId"`
 	StoreName string           `position:"Query" name:"StoreName"`
-	LibraryId string           `position:"Query" name:"LibraryId"`
 }
 
 // SetAlbumCoverResponse is the response struct for api SetAlbumCover

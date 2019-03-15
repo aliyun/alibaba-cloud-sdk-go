@@ -76,13 +76,13 @@ func (client *Client) ListAlbumPhotosWithCallback(request *ListAlbumPhotosReques
 // ListAlbumPhotosRequest is the request struct for api ListAlbumPhotos
 type ListAlbumPhotosRequest struct {
 	*requests.RpcRequest
-	AlbumId   requests.Integer `position:"Query" name:"AlbumId"`
-	Direction string           `position:"Query" name:"Direction"`
-	Size      requests.Integer `position:"Query" name:"Size"`
 	Cursor    string           `position:"Query" name:"Cursor"`
-	State     string           `position:"Query" name:"State"`
-	StoreName string           `position:"Query" name:"StoreName"`
+	Size      requests.Integer `position:"Query" name:"Size"`
 	LibraryId string           `position:"Query" name:"LibraryId"`
+	AlbumId   requests.Integer `position:"Query" name:"AlbumId"`
+	StoreName string           `position:"Query" name:"StoreName"`
+	State     string           `position:"Query" name:"State"`
+	Direction string           `position:"Query" name:"Direction"`
 }
 
 // ListAlbumPhotosResponse is the response struct for api ListAlbumPhotos

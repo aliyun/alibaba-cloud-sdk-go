@@ -76,9 +76,9 @@ func (client *Client) DeleteFacesWithCallback(request *DeleteFacesRequest, callb
 // DeleteFacesRequest is the request struct for api DeleteFaces
 type DeleteFacesRequest struct {
 	*requests.RpcRequest
-	FaceId    *[]string `position:"Query" name:"FaceId"  type:"Repeated"`
-	StoreName string    `position:"Query" name:"StoreName"`
 	LibraryId string    `position:"Query" name:"LibraryId"`
+	StoreName string    `position:"Query" name:"StoreName"`
+	FaceId    *[]string `position:"Query" name:"FaceId"  type:"Repeated"`
 }
 
 // DeleteFacesResponse is the response struct for api DeleteFaces

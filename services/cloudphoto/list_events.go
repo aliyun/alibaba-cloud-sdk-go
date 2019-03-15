@@ -76,11 +76,11 @@ func (client *Client) ListEventsWithCallback(request *ListEventsRequest, callbac
 // ListEventsRequest is the request struct for api ListEvents
 type ListEventsRequest struct {
 	*requests.RpcRequest
-	Direction string           `position:"Query" name:"Direction"`
-	Size      requests.Integer `position:"Query" name:"Size"`
 	Cursor    string           `position:"Query" name:"Cursor"`
-	State     string           `position:"Query" name:"State"`
+	Size      requests.Integer `position:"Query" name:"Size"`
 	StoreName string           `position:"Query" name:"StoreName"`
+	State     string           `position:"Query" name:"State"`
+	Direction string           `position:"Query" name:"Direction"`
 }
 
 // ListEventsResponse is the response struct for api ListEvents

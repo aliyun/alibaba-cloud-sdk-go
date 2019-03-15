@@ -76,10 +76,10 @@ func (client *Client) CreatePhotoStoreWithCallback(request *CreatePhotoStoreRequ
 // CreatePhotoStoreRequest is the request struct for api CreatePhotoStore
 type CreatePhotoStoreRequest struct {
 	*requests.RpcRequest
-	StoreName    string           `position:"Query" name:"StoreName"`
-	DefaultQuota requests.Integer `position:"Query" name:"DefaultQuota"`
 	BucketName   string           `position:"Query" name:"BucketName"`
+	StoreName    string           `position:"Query" name:"StoreName"`
 	Remark       string           `position:"Query" name:"Remark"`
+	DefaultQuota requests.Integer `position:"Query" name:"DefaultQuota"`
 }
 
 // CreatePhotoStoreResponse is the response struct for api CreatePhotoStore

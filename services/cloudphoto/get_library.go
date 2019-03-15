@@ -76,8 +76,8 @@ func (client *Client) GetLibraryWithCallback(request *GetLibraryRequest, callbac
 // GetLibraryRequest is the request struct for api GetLibrary
 type GetLibraryRequest struct {
 	*requests.RpcRequest
-	StoreName string `position:"Query" name:"StoreName"`
 	LibraryId string `position:"Query" name:"LibraryId"`
+	StoreName string `position:"Query" name:"StoreName"`
 }
 
 // GetLibraryResponse is the response struct for api GetLibrary

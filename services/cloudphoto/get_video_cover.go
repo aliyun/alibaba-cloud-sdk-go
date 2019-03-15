@@ -76,10 +76,10 @@ func (client *Client) GetVideoCoverWithCallback(request *GetVideoCoverRequest, c
 // GetVideoCoverRequest is the request struct for api GetVideoCover
 type GetVideoCoverRequest struct {
 	*requests.RpcRequest
-	PhotoId   requests.Integer `position:"Query" name:"PhotoId"`
-	ZoomType  string           `position:"Query" name:"ZoomType"`
-	StoreName string           `position:"Query" name:"StoreName"`
 	LibraryId string           `position:"Query" name:"LibraryId"`
+	PhotoId   requests.Integer `position:"Query" name:"PhotoId"`
+	StoreName string           `position:"Query" name:"StoreName"`
+	ZoomType  string           `position:"Query" name:"ZoomType"`
 }
 
 // GetVideoCoverResponse is the response struct for api GetVideoCover

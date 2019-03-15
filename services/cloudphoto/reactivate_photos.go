@@ -76,9 +76,9 @@ func (client *Client) ReactivatePhotosWithCallback(request *ReactivatePhotosRequ
 // ReactivatePhotosRequest is the request struct for api ReactivatePhotos
 type ReactivatePhotosRequest struct {
 	*requests.RpcRequest
+	LibraryId string    `position:"Query" name:"LibraryId"`
 	PhotoId   *[]string `position:"Query" name:"PhotoId"  type:"Repeated"`
 	StoreName string    `position:"Query" name:"StoreName"`
-	LibraryId string    `position:"Query" name:"LibraryId"`
 }
 
 // ReactivatePhotosResponse is the response struct for api ReactivatePhotos

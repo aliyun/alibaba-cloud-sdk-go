@@ -76,13 +76,13 @@ func (client *Client) FetchPhotosWithCallback(request *FetchPhotosRequest, callb
 // FetchPhotosRequest is the request struct for api FetchPhotos
 type FetchPhotosRequest struct {
 	*requests.RpcRequest
-	State     string           `position:"Query" name:"State"`
-	OrderBy   string           `position:"Query" name:"OrderBy"`
-	Order     string           `position:"Query" name:"Order"`
 	Size      requests.Integer `position:"Query" name:"Size"`
-	Page      requests.Integer `position:"Query" name:"Page"`
-	StoreName string           `position:"Query" name:"StoreName"`
 	LibraryId string           `position:"Query" name:"LibraryId"`
+	OrderBy   string           `position:"Query" name:"OrderBy"`
+	StoreName string           `position:"Query" name:"StoreName"`
+	State     string           `position:"Query" name:"State"`
+	Page      requests.Integer `position:"Query" name:"Page"`
+	Order     string           `position:"Query" name:"Order"`
 }
 
 // FetchPhotosResponse is the response struct for api FetchPhotos

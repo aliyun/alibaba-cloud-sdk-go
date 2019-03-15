@@ -76,19 +76,19 @@ func (client *Client) RegisterPhotoWithCallback(request *RegisterPhotoRequest, c
 // RegisterPhotoRequest is the request struct for api RegisterPhoto
 type RegisterPhotoRequest struct {
 	*requests.RpcRequest
-	TakenAt    requests.Integer `position:"Query" name:"TakenAt"`
-	Location   string           `position:"Query" name:"Location"`
-	StoreName  string           `position:"Query" name:"StoreName"`
 	LibraryId  string           `position:"Query" name:"LibraryId"`
 	Latitude   requests.Float   `position:"Query" name:"Latitude"`
-	Longitude  requests.Float   `position:"Query" name:"Longitude"`
-	Width      requests.Integer `position:"Query" name:"Width"`
-	Height     requests.Integer `position:"Query" name:"Height"`
-	IsVideo    string           `position:"Query" name:"IsVideo"`
-	Md5        string           `position:"Query" name:"Md5"`
-	Size       requests.Integer `position:"Query" name:"Size"`
 	PhotoTitle string           `position:"Query" name:"PhotoTitle"`
+	StoreName  string           `position:"Query" name:"StoreName"`
+	IsVideo    string           `position:"Query" name:"IsVideo"`
 	Remark     string           `position:"Query" name:"Remark"`
+	Size       requests.Integer `position:"Query" name:"Size"`
+	TakenAt    requests.Integer `position:"Query" name:"TakenAt"`
+	Width      requests.Integer `position:"Query" name:"Width"`
+	Location   string           `position:"Query" name:"Location"`
+	Longitude  requests.Float   `position:"Query" name:"Longitude"`
+	Height     requests.Integer `position:"Query" name:"Height"`
+	Md5        string           `position:"Query" name:"Md5"`
 }
 
 // RegisterPhotoResponse is the response struct for api RegisterPhoto

@@ -76,12 +76,12 @@ func (client *Client) ListMomentsWithCallback(request *ListMomentsRequest, callb
 // ListMomentsRequest is the request struct for api ListMoments
 type ListMomentsRequest struct {
 	*requests.RpcRequest
-	Direction string           `position:"Query" name:"Direction"`
-	Size      requests.Integer `position:"Query" name:"Size"`
 	Cursor    string           `position:"Query" name:"Cursor"`
-	State     string           `position:"Query" name:"State"`
-	StoreName string           `position:"Query" name:"StoreName"`
+	Size      requests.Integer `position:"Query" name:"Size"`
 	LibraryId string           `position:"Query" name:"LibraryId"`
+	StoreName string           `position:"Query" name:"StoreName"`
+	State     string           `position:"Query" name:"State"`
+	Direction string           `position:"Query" name:"Direction"`
 }
 
 // ListMomentsResponse is the response struct for api ListMoments

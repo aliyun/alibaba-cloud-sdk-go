@@ -76,10 +76,10 @@ func (client *Client) RenameFaceWithCallback(request *RenameFaceRequest, callbac
 // RenameFaceRequest is the request struct for api RenameFace
 type RenameFaceRequest struct {
 	*requests.RpcRequest
+	LibraryId string           `position:"Query" name:"LibraryId"`
+	StoreName string           `position:"Query" name:"StoreName"`
 	FaceId    requests.Integer `position:"Query" name:"FaceId"`
 	FaceName  string           `position:"Query" name:"FaceName"`
-	StoreName string           `position:"Query" name:"StoreName"`
-	LibraryId string           `position:"Query" name:"LibraryId"`
 }
 
 // RenameFaceResponse is the response struct for api RenameFace

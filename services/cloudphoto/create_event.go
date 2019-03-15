@@ -76,17 +76,17 @@ func (client *Client) CreateEventWithCallback(request *CreateEventRequest, callb
 // CreateEventRequest is the request struct for api CreateEvent
 type CreateEventRequest struct {
 	*requests.RpcRequest
-	StoreName        string           `position:"Query" name:"StoreName"`
-	LibraryId        string           `position:"Query" name:"LibraryId"`
-	Title            string           `position:"Query" name:"Title"`
-	StartAt          requests.Integer `position:"Query" name:"StartAt"`
-	EndAt            requests.Integer `position:"Query" name:"EndAt"`
-	Identity         string           `position:"Query" name:"Identity"`
-	WeixinTitle      string           `position:"Query" name:"WeixinTitle"`
-	SplashPhotoId    string           `position:"Query" name:"SplashPhotoId"`
 	BannerPhotoId    string           `position:"Query" name:"BannerPhotoId"`
 	WatermarkPhotoId string           `position:"Query" name:"WatermarkPhotoId"`
+	Identity         string           `position:"Query" name:"Identity"`
+	SplashPhotoId    string           `position:"Query" name:"SplashPhotoId"`
+	LibraryId        string           `position:"Query" name:"LibraryId"`
+	WeixinTitle      string           `position:"Query" name:"WeixinTitle"`
+	StoreName        string           `position:"Query" name:"StoreName"`
 	Remark           string           `position:"Query" name:"Remark"`
+	Title            string           `position:"Query" name:"Title"`
+	EndAt            requests.Integer `position:"Query" name:"EndAt"`
+	StartAt          requests.Integer `position:"Query" name:"StartAt"`
 }
 
 // CreateEventResponse is the response struct for api CreateEvent

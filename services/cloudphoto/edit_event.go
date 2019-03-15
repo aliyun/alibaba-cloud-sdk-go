@@ -76,18 +76,18 @@ func (client *Client) EditEventWithCallback(request *EditEventRequest, callback 
 // EditEventRequest is the request struct for api EditEvent
 type EditEventRequest struct {
 	*requests.RpcRequest
-	StoreName        string           `position:"Query" name:"StoreName"`
-	LibraryId        string           `position:"Query" name:"LibraryId"`
 	EventId          string           `position:"Query" name:"EventId"`
-	Identity         string           `position:"Query" name:"Identity"`
-	Title            string           `position:"Query" name:"Title"`
-	StartAt          requests.Integer `position:"Query" name:"StartAt"`
-	EndAt            requests.Integer `position:"Query" name:"EndAt"`
-	WeixinTitle      string           `position:"Query" name:"WeixinTitle"`
-	SplashPhotoId    string           `position:"Query" name:"SplashPhotoId"`
 	BannerPhotoId    string           `position:"Query" name:"BannerPhotoId"`
 	WatermarkPhotoId string           `position:"Query" name:"WatermarkPhotoId"`
+	Identity         string           `position:"Query" name:"Identity"`
+	SplashPhotoId    string           `position:"Query" name:"SplashPhotoId"`
+	LibraryId        string           `position:"Query" name:"LibraryId"`
+	WeixinTitle      string           `position:"Query" name:"WeixinTitle"`
+	StoreName        string           `position:"Query" name:"StoreName"`
 	Remark           string           `position:"Query" name:"Remark"`
+	Title            string           `position:"Query" name:"Title"`
+	EndAt            requests.Integer `position:"Query" name:"EndAt"`
+	StartAt          requests.Integer `position:"Query" name:"StartAt"`
 }
 
 // EditEventResponse is the response struct for api EditEvent

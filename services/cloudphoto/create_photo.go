@@ -76,16 +76,16 @@ func (client *Client) CreatePhotoWithCallback(request *CreatePhotoRequest, callb
 // CreatePhotoRequest is the request struct for api CreatePhoto
 type CreatePhotoRequest struct {
 	*requests.RpcRequest
-	FileId          string           `position:"Query" name:"FileId"`
-	SessionId       string           `position:"Query" name:"SessionId"`
-	UploadType      string           `position:"Query" name:"UploadType"`
-	PhotoTitle      string           `position:"Query" name:"PhotoTitle"`
-	StoreName       string           `position:"Query" name:"StoreName"`
-	Remark          string           `position:"Query" name:"Remark"`
-	LibraryId       string           `position:"Query" name:"LibraryId"`
-	Staging         string           `position:"Query" name:"Staging"`
-	ShareExpireTime requests.Integer `position:"Query" name:"ShareExpireTime"`
 	TakenAt         requests.Integer `position:"Query" name:"TakenAt"`
+	PhotoTitle      string           `position:"Query" name:"PhotoTitle"`
+	LibraryId       string           `position:"Query" name:"LibraryId"`
+	ShareExpireTime requests.Integer `position:"Query" name:"ShareExpireTime"`
+	StoreName       string           `position:"Query" name:"StoreName"`
+	UploadType      string           `position:"Query" name:"UploadType"`
+	Remark          string           `position:"Query" name:"Remark"`
+	SessionId       string           `position:"Query" name:"SessionId"`
+	Staging         string           `position:"Query" name:"Staging"`
+	FileId          string           `position:"Query" name:"FileId"`
 }
 
 // CreatePhotoResponse is the response struct for api CreatePhoto

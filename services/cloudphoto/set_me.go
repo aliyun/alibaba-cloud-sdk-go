@@ -76,9 +76,9 @@ func (client *Client) SetMeWithCallback(request *SetMeRequest, callback func(res
 // SetMeRequest is the request struct for api SetMe
 type SetMeRequest struct {
 	*requests.RpcRequest
-	FaceId    requests.Integer `position:"Query" name:"FaceId"`
-	StoreName string           `position:"Query" name:"StoreName"`
 	LibraryId string           `position:"Query" name:"LibraryId"`
+	StoreName string           `position:"Query" name:"StoreName"`
+	FaceId    requests.Integer `position:"Query" name:"FaceId"`
 }
 
 // SetMeResponse is the response struct for api SetMe

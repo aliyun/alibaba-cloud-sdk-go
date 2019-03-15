@@ -76,10 +76,10 @@ func (client *Client) GetPhotosByMd5sWithCallback(request *GetPhotosByMd5sReques
 // GetPhotosByMd5sRequest is the request struct for api GetPhotosByMd5s
 type GetPhotosByMd5sRequest struct {
 	*requests.RpcRequest
-	Md5       *[]string `position:"Query" name:"Md5"  type:"Repeated"`
-	State     string    `position:"Query" name:"State"`
-	StoreName string    `position:"Query" name:"StoreName"`
 	LibraryId string    `position:"Query" name:"LibraryId"`
+	StoreName string    `position:"Query" name:"StoreName"`
+	State     string    `position:"Query" name:"State"`
+	Md5       *[]string `position:"Query" name:"Md5"  type:"Repeated"`
 }
 
 // GetPhotosByMd5sResponse is the response struct for api GetPhotosByMd5s

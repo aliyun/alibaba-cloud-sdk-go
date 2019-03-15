@@ -76,8 +76,8 @@ func (client *Client) DeletePhotosWithCallback(request *DeletePhotosRequest, cal
 // DeletePhotosRequest is the request struct for api DeletePhotos
 type DeletePhotosRequest struct {
 	*requests.RpcRequest
-	StoreName string    `position:"Query" name:"StoreName"`
 	LibraryId string    `position:"Query" name:"LibraryId"`
+	StoreName string    `position:"Query" name:"StoreName"`
 	PhotoId   *[]string `position:"Query" name:"PhotoId"  type:"Repeated"`
 }
 

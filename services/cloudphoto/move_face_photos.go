@@ -76,11 +76,11 @@ func (client *Client) MoveFacePhotosWithCallback(request *MoveFacePhotosRequest,
 // MoveFacePhotosRequest is the request struct for api MoveFacePhotos
 type MoveFacePhotosRequest struct {
 	*requests.RpcRequest
-	SourceFaceId requests.Integer `position:"Query" name:"SourceFaceId"`
-	PhotoId      *[]string        `position:"Query" name:"PhotoId"  type:"Repeated"`
-	TargetFaceId requests.Integer `position:"Query" name:"TargetFaceId"`
-	StoreName    string           `position:"Query" name:"StoreName"`
 	LibraryId    string           `position:"Query" name:"LibraryId"`
+	TargetFaceId requests.Integer `position:"Query" name:"TargetFaceId"`
+	PhotoId      *[]string        `position:"Query" name:"PhotoId"  type:"Repeated"`
+	StoreName    string           `position:"Query" name:"StoreName"`
+	SourceFaceId requests.Integer `position:"Query" name:"SourceFaceId"`
 }
 
 // MoveFacePhotosResponse is the response struct for api MoveFacePhotos

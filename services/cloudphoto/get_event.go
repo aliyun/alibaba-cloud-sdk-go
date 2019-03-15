@@ -77,8 +77,8 @@ func (client *Client) GetEventWithCallback(request *GetEventRequest, callback fu
 type GetEventRequest struct {
 	*requests.RpcRequest
 	EventId   requests.Integer `position:"Query" name:"EventId"`
-	StoreName string           `position:"Query" name:"StoreName"`
 	LibraryId string           `position:"Query" name:"LibraryId"`
+	StoreName string           `position:"Query" name:"StoreName"`
 }
 
 // GetEventResponse is the response struct for api GetEvent

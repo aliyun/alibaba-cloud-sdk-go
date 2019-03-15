@@ -76,10 +76,10 @@ func (client *Client) GetPrivateAccessUrlsWithCallback(request *GetPrivateAccess
 // GetPrivateAccessUrlsRequest is the request struct for api GetPrivateAccessUrls
 type GetPrivateAccessUrlsRequest struct {
 	*requests.RpcRequest
-	PhotoId   *[]string `position:"Query" name:"PhotoId"  type:"Repeated"`
-	ZoomType  string    `position:"Query" name:"ZoomType"`
-	StoreName string    `position:"Query" name:"StoreName"`
 	LibraryId string    `position:"Query" name:"LibraryId"`
+	PhotoId   *[]string `position:"Query" name:"PhotoId"  type:"Repeated"`
+	StoreName string    `position:"Query" name:"StoreName"`
+	ZoomType  string    `position:"Query" name:"ZoomType"`
 }
 
 // GetPrivateAccessUrlsResponse is the response struct for api GetPrivateAccessUrls

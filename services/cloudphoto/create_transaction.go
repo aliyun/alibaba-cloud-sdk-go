@@ -76,12 +76,12 @@ func (client *Client) CreateTransactionWithCallback(request *CreateTransactionRe
 // CreateTransactionRequest is the request struct for api CreateTransaction
 type CreateTransactionRequest struct {
 	*requests.RpcRequest
-	Size      requests.Integer `position:"Query" name:"Size"`
 	Ext       string           `position:"Query" name:"Ext"`
+	Size      requests.Integer `position:"Query" name:"Size"`
+	LibraryId string           `position:"Query" name:"LibraryId"`
+	StoreName string           `position:"Query" name:"StoreName"`
 	Force     string           `position:"Query" name:"Force"`
 	Md5       string           `position:"Query" name:"Md5"`
-	StoreName string           `position:"Query" name:"StoreName"`
-	LibraryId string           `position:"Query" name:"LibraryId"`
 }
 
 // CreateTransactionResponse is the response struct for api CreateTransaction

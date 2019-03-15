@@ -77,9 +77,9 @@ func (client *Client) CreateAlbumWithCallback(request *CreateAlbumRequest, callb
 type CreateAlbumRequest struct {
 	*requests.RpcRequest
 	AlbumName string `position:"Query" name:"AlbumName"`
+	LibraryId string `position:"Query" name:"LibraryId"`
 	StoreName string `position:"Query" name:"StoreName"`
 	Remark    string `position:"Query" name:"Remark"`
-	LibraryId string `position:"Query" name:"LibraryId"`
 }
 
 // CreateAlbumResponse is the response struct for api CreateAlbum

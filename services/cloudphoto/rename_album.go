@@ -76,10 +76,10 @@ func (client *Client) RenameAlbumWithCallback(request *RenameAlbumRequest, callb
 // RenameAlbumRequest is the request struct for api RenameAlbum
 type RenameAlbumRequest struct {
 	*requests.RpcRequest
-	AlbumId   requests.Integer `position:"Query" name:"AlbumId"`
 	AlbumName string           `position:"Query" name:"AlbumName"`
-	StoreName string           `position:"Query" name:"StoreName"`
 	LibraryId string           `position:"Query" name:"LibraryId"`
+	AlbumId   requests.Integer `position:"Query" name:"AlbumId"`
+	StoreName string           `position:"Query" name:"StoreName"`
 }
 
 // RenameAlbumResponse is the response struct for api RenameAlbum

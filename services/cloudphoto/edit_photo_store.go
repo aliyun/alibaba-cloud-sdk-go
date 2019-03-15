@@ -77,11 +77,11 @@ func (client *Client) EditPhotoStoreWithCallback(request *EditPhotoStoreRequest,
 type EditPhotoStoreRequest struct {
 	*requests.RpcRequest
 	AutoCleanEnabled  string           `position:"Query" name:"AutoCleanEnabled"`
-	AutoCleanDays     requests.Integer `position:"Query" name:"AutoCleanDays"`
-	DefaultQuota      requests.Integer `position:"Query" name:"DefaultQuota"`
 	DefaultTrashQuota requests.Integer `position:"Query" name:"DefaultTrashQuota"`
-	Remark            string           `position:"Query" name:"Remark"`
 	StoreName         string           `position:"Query" name:"StoreName"`
+	Remark            string           `position:"Query" name:"Remark"`
+	DefaultQuota      requests.Integer `position:"Query" name:"DefaultQuota"`
+	AutoCleanDays     requests.Integer `position:"Query" name:"AutoCleanDays"`
 }
 
 // EditPhotoStoreResponse is the response struct for api EditPhotoStore

@@ -76,9 +76,9 @@ func (client *Client) ListPhotoFacesWithCallback(request *ListPhotoFacesRequest,
 // ListPhotoFacesRequest is the request struct for api ListPhotoFaces
 type ListPhotoFacesRequest struct {
 	*requests.RpcRequest
+	LibraryId string           `position:"Query" name:"LibraryId"`
 	PhotoId   requests.Integer `position:"Query" name:"PhotoId"`
 	StoreName string           `position:"Query" name:"StoreName"`
-	LibraryId string           `position:"Query" name:"LibraryId"`
 }
 
 // ListPhotoFacesResponse is the response struct for api ListPhotoFaces

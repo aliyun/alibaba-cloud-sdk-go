@@ -76,9 +76,9 @@ func (client *Client) ListPhotoTagsWithCallback(request *ListPhotoTagsRequest, c
 // ListPhotoTagsRequest is the request struct for api ListPhotoTags
 type ListPhotoTagsRequest struct {
 	*requests.RpcRequest
+	LibraryId string           `position:"Query" name:"LibraryId"`
 	PhotoId   requests.Integer `position:"Query" name:"PhotoId"`
 	StoreName string           `position:"Query" name:"StoreName"`
-	LibraryId string           `position:"Query" name:"LibraryId"`
 	Lang      string           `position:"Query" name:"Lang"`
 }
 

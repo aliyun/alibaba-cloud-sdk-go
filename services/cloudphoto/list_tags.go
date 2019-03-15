@@ -76,9 +76,9 @@ func (client *Client) ListTagsWithCallback(request *ListTagsRequest, callback fu
 // ListTagsRequest is the request struct for api ListTags
 type ListTagsRequest struct {
 	*requests.RpcRequest
-	Lang      string `position:"Query" name:"Lang"`
-	StoreName string `position:"Query" name:"StoreName"`
 	LibraryId string `position:"Query" name:"LibraryId"`
+	StoreName string `position:"Query" name:"StoreName"`
+	Lang      string `position:"Query" name:"Lang"`
 }
 
 // ListTagsResponse is the response struct for api ListTags

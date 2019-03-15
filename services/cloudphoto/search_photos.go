@@ -76,11 +76,11 @@ func (client *Client) SearchPhotosWithCallback(request *SearchPhotosRequest, cal
 // SearchPhotosRequest is the request struct for api SearchPhotos
 type SearchPhotosRequest struct {
 	*requests.RpcRequest
-	Page      requests.Integer `position:"Query" name:"Page"`
 	Size      requests.Integer `position:"Query" name:"Size"`
-	Keyword   string           `position:"Query" name:"Keyword"`
-	StoreName string           `position:"Query" name:"StoreName"`
 	LibraryId string           `position:"Query" name:"LibraryId"`
+	StoreName string           `position:"Query" name:"StoreName"`
+	Page      requests.Integer `position:"Query" name:"Page"`
+	Keyword   string           `position:"Query" name:"Keyword"`
 }
 
 // SearchPhotosResponse is the response struct for api SearchPhotos
