@@ -102,7 +102,7 @@ func CreateDescribeLimitationRequest() (request *DescribeLimitationRequest) {
 	request = &DescribeLimitationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ess", "2014-08-28", "DescribeLimitation", "", "")
+	request.InitWithApiInfo("Ess", "2014-08-28", "DescribeLimitation", "ess", "openAPI")
 	return
 }
 

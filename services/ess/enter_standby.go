@@ -93,7 +93,7 @@ func CreateEnterStandbyRequest() (request *EnterStandbyRequest) {
 	request = &EnterStandbyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ess", "2014-08-28", "EnterStandby", "", "")
+	request.InitWithApiInfo("Ess", "2014-08-28", "EnterStandby", "ess", "openAPI")
 	return
 }
 

@@ -100,7 +100,7 @@ func CreateDetachVServerGroupsRequest() (request *DetachVServerGroupsRequest) {
 	request = &DetachVServerGroupsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ess", "2014-08-28", "DetachVServerGroups", "", "")
+	request.InitWithApiInfo("Ess", "2014-08-28", "DetachVServerGroups", "ess", "openAPI")
 	return
 }
 
