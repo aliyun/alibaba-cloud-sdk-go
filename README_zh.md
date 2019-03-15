@@ -107,6 +107,20 @@ client.SetHTTPSInsecure(true)                         // 设置客户端 HTTPSIn
 isInsecure := client.GetHTTPSInsecure()               // 获取客户端 HTTPSInsecure
 ```
 
+## HTTP 代理
+
+如果您想使用 http 代理或 https 代理，您可以设置环境变量 `HTTP_PROXY` 或者 `HTTPS_PROXY`，您也可以使用 config 配置客户端。
+
+```go
+rawurl, _ := url.Parse("http://117.215.227.125:8888") //You should replace the IP with you want
+httpTransport := http.Transport{
+    Proxy:  http.ProxyURL(rawurl)
+}
+config := sdk.NewConfig()
+            .WithHttpTransport(&httpTransport)
+ecsClient, err := ecs.NewClientWithOptions(config)
+```
+
 ## Keep-alive
 阿里云 Go SDK 底层使用 Go 语言原生的 `net/http` 收发请求，因此配置方式与 `net/http` 相同，您可以通过 config 直接将配置传递给底层的 httpClient
 
