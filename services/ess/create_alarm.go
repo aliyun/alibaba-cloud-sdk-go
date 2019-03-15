@@ -111,7 +111,7 @@ func CreateCreateAlarmRequest() (request *CreateAlarmRequest) {
 	request = &CreateAlarmRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ess", "2014-08-28", "CreateAlarm", "ess", "openAPI")
+	request.InitWithApiInfo("Ess", "2014-08-28", "CreateAlarm", "", "")
 	return
 }
 

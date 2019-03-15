@@ -83,6 +83,7 @@ type CreateScalingGroupRequest struct {
 	HealthCheckType       string                             `position:"Query" name:"HealthCheckType"`
 	ResourceOwnerAccount  string                             `position:"Query" name:"ResourceOwnerAccount"`
 	ScalingGroupName      string                             `position:"Query" name:"ScalingGroupName"`
+	ClientToken           string                             `position:"Query" name:"ClientToken"`
 	VSwitchIds            *[]string                          `position:"Query" name:"VSwitchIds"  type:"Repeated"`
 	OwnerAccount          string                             `position:"Query" name:"OwnerAccount"`
 	MinSize               requests.Integer                   `position:"Query" name:"MinSize"`
@@ -126,7 +127,7 @@ func CreateCreateScalingGroupRequest() (request *CreateScalingGroupRequest) {
 	request = &CreateScalingGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ess", "2014-08-28", "CreateScalingGroup", "ess", "openAPI")
+	request.InitWithApiInfo("Ess", "2014-08-28", "CreateScalingGroup", "", "")
 	return
 }
 

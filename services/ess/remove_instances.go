@@ -76,32 +76,13 @@ func (client *Client) RemoveInstancesWithCallback(request *RemoveInstancesReques
 // RemoveInstancesRequest is the request struct for api RemoveInstances
 type RemoveInstancesRequest struct {
 	*requests.RpcRequest
-	InstanceId10         string           `position:"Query" name:"InstanceId.10"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	InstanceId12         string           `position:"Query" name:"InstanceId.12"`
-	InstanceId11         string           `position:"Query" name:"InstanceId.11"`
-	ScalingGroupId       string           `position:"Query" name:"ScalingGroupId"`
-	InstanceId20         string           `position:"Query" name:"InstanceId.20"`
-	InstanceId1          string           `position:"Query" name:"InstanceId.1"`
+	InstanceId           *[]string        `position:"Query" name:"InstanceId"  type:"Repeated"`
 	RemovePolicy         string           `position:"Query" name:"RemovePolicy"`
-	InstanceId3          string           `position:"Query" name:"InstanceId.3"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	InstanceId2          string           `position:"Query" name:"InstanceId.2"`
-	InstanceId5          string           `position:"Query" name:"InstanceId.5"`
-	InstanceId4          string           `position:"Query" name:"InstanceId.4"`
+	ScalingGroupId       string           `position:"Query" name:"ScalingGroupId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	InstanceId7          string           `position:"Query" name:"InstanceId.7"`
-	InstanceId6          string           `position:"Query" name:"InstanceId.6"`
-	InstanceId9          string           `position:"Query" name:"InstanceId.9"`
-	InstanceId8          string           `position:"Query" name:"InstanceId.8"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	InstanceId18         string           `position:"Query" name:"InstanceId.18"`
-	InstanceId17         string           `position:"Query" name:"InstanceId.17"`
-	InstanceId19         string           `position:"Query" name:"InstanceId.19"`
-	InstanceId14         string           `position:"Query" name:"InstanceId.14"`
-	InstanceId13         string           `position:"Query" name:"InstanceId.13"`
-	InstanceId16         string           `position:"Query" name:"InstanceId.16"`
-	InstanceId15         string           `position:"Query" name:"InstanceId.15"`
 }
 
 // RemoveInstancesResponse is the response struct for api RemoveInstances
@@ -116,7 +97,7 @@ func CreateRemoveInstancesRequest() (request *RemoveInstancesRequest) {
 	request = &RemoveInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ess", "2014-08-28", "RemoveInstances", "ess", "openAPI")
+	request.InitWithApiInfo("Ess", "2014-08-28", "RemoveInstances", "", "")
 	return
 }
 

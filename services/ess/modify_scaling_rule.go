@@ -87,6 +87,7 @@ type ModifyScalingRuleRequest struct {
 	ScalingRuleId           string           `position:"Query" name:"ScalingRuleId"`
 	ScalingRuleName         string           `position:"Query" name:"ScalingRuleName"`
 	Cooldown                requests.Integer `position:"Query" name:"Cooldown"`
+	MinAdjustmentMagnitude  requests.Integer `position:"Query" name:"MinAdjustmentMagnitude"`
 	TargetValue             requests.Float   `position:"Query" name:"TargetValue"`
 	MetricName              string           `position:"Query" name:"MetricName"`
 }
@@ -102,7 +103,7 @@ func CreateModifyScalingRuleRequest() (request *ModifyScalingRuleRequest) {
 	request = &ModifyScalingRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ess", "2014-08-28", "ModifyScalingRule", "ess", "openAPI")
+	request.InitWithApiInfo("Ess", "2014-08-28", "ModifyScalingRule", "", "")
 	return
 }
 

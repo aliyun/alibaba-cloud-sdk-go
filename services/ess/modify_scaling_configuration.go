@@ -134,7 +134,7 @@ func CreateModifyScalingConfigurationRequest() (request *ModifyScalingConfigurat
 	request = &ModifyScalingConfigurationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ess", "2014-08-28", "ModifyScalingConfiguration", "ess", "openAPI")
+	request.InitWithApiInfo("Ess", "2014-08-28", "ModifyScalingConfiguration", "", "")
 	return
 }
 

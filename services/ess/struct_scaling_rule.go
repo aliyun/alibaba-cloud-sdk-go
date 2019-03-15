@@ -21,6 +21,7 @@ type ScalingRule struct {
 	ScalingGroupId          string  `json:"ScalingGroupId" xml:"ScalingGroupId"`
 	ScalingRuleName         string  `json:"ScalingRuleName" xml:"ScalingRuleName"`
 	Cooldown                int     `json:"Cooldown" xml:"Cooldown"`
+	MinAdjustmentMagnitude  int     `json:"MinAdjustmentMagnitude" xml:"MinAdjustmentMagnitude"`
 	AdjustmentType          string  `json:"AdjustmentType" xml:"AdjustmentType"`
 	AdjustmentValue         int     `json:"AdjustmentValue" xml:"AdjustmentValue"`
 	MinSize                 int     `json:"MinSize" xml:"MinSize"`

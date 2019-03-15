@@ -100,7 +100,7 @@ func CreateAttachVServerGroupsRequest() (request *AttachVServerGroupsRequest) {
 	request = &AttachVServerGroupsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ess", "2014-08-28", "AttachVServerGroups", "ess", "openAPI")
+	request.InitWithApiInfo("Ess", "2014-08-28", "AttachVServerGroups", "", "")
 	return
 }
 

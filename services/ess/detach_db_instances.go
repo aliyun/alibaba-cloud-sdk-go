@@ -94,7 +94,7 @@ func CreateDetachDBInstancesRequest() (request *DetachDBInstancesRequest) {
 	request = &DetachDBInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ess", "2014-08-28", "DetachDBInstances", "ess", "openAPI")
+	request.InitWithApiInfo("Ess", "2014-08-28", "DetachDBInstances", "", "")
 	return
 }
 

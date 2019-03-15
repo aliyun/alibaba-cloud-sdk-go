@@ -1,3 +1,6 @@
+2019-03-15 Version: 1.53.46
+1, update RemoveInstances, support  to delete 50 instances at a time. 
+
 2019-03-15 Version: 1.53.45
 1, Update Dependency
 

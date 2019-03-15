@@ -80,8 +80,10 @@ type ExecuteScalingRuleRequest struct {
 	ScalingRuleAri       string           `position:"Query" name:"ScalingRuleAri"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
+	BreachThreshold      requests.Float   `position:"Query" name:"BreachThreshold"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	MetricValue          requests.Float   `position:"Query" name:"MetricValue"`
 }
 
 // ExecuteScalingRuleResponse is the response struct for api ExecuteScalingRule
@@ -96,7 +98,7 @@ func CreateExecuteScalingRuleRequest() (request *ExecuteScalingRuleRequest) {
 	request = &ExecuteScalingRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Ess", "2014-08-28", "ExecuteScalingRule", "ess", "openAPI")
+	request.InitWithApiInfo("Ess", "2014-08-28", "ExecuteScalingRule", "", "")
 	return
 }
 
