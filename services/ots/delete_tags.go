@@ -84,8 +84,8 @@ type DeleteTagsRequest struct {
 
 // DeleteTagsTagInfo is a repeated param struct in DeleteTagsRequest
 type DeleteTagsTagInfo struct {
-	TagKey   string `name:"TagKey"`
 	TagValue string `name:"TagValue"`
+	TagKey   string `name:"TagKey"`
 }
 
 // DeleteTagsResponse is the response struct for api DeleteTags

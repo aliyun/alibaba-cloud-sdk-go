@@ -86,8 +86,8 @@ type ListVpcInfoByVpcRequest struct {
 
 // ListVpcInfoByVpcTagInfo is a repeated param struct in ListVpcInfoByVpcRequest
 type ListVpcInfoByVpcTagInfo struct {
-	TagKey   string `name:"TagKey"`
 	TagValue string `name:"TagValue"`
+	TagKey   string `name:"TagKey"`
 }
 
 // ListVpcInfoByVpcResponse is the response struct for api ListVpcInfoByVpc

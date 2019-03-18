@@ -86,8 +86,8 @@ type ListTagsRequest struct {
 
 // ListTagsTagInfo is a repeated param struct in ListTagsRequest
 type ListTagsTagInfo struct {
-	TagKey   string `name:"TagKey"`
 	TagValue string `name:"TagValue"`
+	TagKey   string `name:"TagKey"`
 }
 
 // ListTagsResponse is the response struct for api ListTags

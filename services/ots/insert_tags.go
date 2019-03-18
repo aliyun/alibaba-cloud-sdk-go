@@ -84,8 +84,8 @@ type InsertTagsRequest struct {
 
 // InsertTagsTagInfo is a repeated param struct in InsertTagsRequest
 type InsertTagsTagInfo struct {
-	TagKey   string `name:"TagKey"`
 	TagValue string `name:"TagValue"`
+	TagKey   string `name:"TagKey"`
 }
 
 // InsertTagsResponse is the response struct for api InsertTags
