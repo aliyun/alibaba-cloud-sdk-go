@@ -1,17 +1,22 @@
+
+    
 build: off
 
-shallow_clone: false
+clone_folder: c:\gopath\src\github.com\aliyun\alibaba-cloud-sdk-go
+
+environment:
+  GOPATH: c:\gopath
+  matrix:
+    - go: 1.10.x
+    - go: 1.11.x
+    - go: 1.12.x
 
 platform:
   - x64
 
-# Install GO
-
 install:
+  - set PATH=%GOPATH%\bin;c:\go\bin;%PATH%
   - go get -u github.com/golang/dep/cmd/dep
-  - SET PATH=C:\Users\appveyor\go\bin;%PATH%
-  - cp -rf C:\projects\alibaba-cloud-sdk-go C:\Users\appveyor\go\src
-  - cd C:\Users\appveyor\go\src\alibaba-cloud-sdk-go
   - dep ensure
 
 test_script:
@@ -24,9 +29,3 @@ test_script:
 
 after_test:
   - bash <(curl -s https://codecov.io/bash)
-
-environment:
-  matrix:
-    - go: 1.10.x
-    - go: 1.11.x
-    - go: 1.12.x
