@@ -1,3 +1,7 @@
+2019-03-18 Version: 1.53.58
+1, move AssociatePerson\Tag field
+2, Optimize RealName field
+
 2019-03-18 Version: 1.53.57
 1, Update Dependency
 
