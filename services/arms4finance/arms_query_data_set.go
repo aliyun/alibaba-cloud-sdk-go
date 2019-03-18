@@ -76,20 +76,20 @@ func (client *Client) ARMSQueryDataSetWithCallback(request *ARMSQueryDataSetRequ
 // ARMSQueryDataSetRequest is the request struct for api ARMSQueryDataSet
 type ARMSQueryDataSetRequest struct {
 	*requests.RpcRequest
-	DatasetId     requests.Integer              `position:"Query" name:"DatasetId"`
+	Measures      *[]string                     `position:"Query" name:"Measures"  type:"Repeated"`
 	IntervalInSec requests.Integer              `position:"Query" name:"IntervalInSec"`
 	DateStr       string                        `position:"Query" name:"DateStr"`
+	IsDrillDown   requests.Boolean              `position:"Query" name:"IsDrillDown"`
 	MinTime       requests.Integer              `position:"Query" name:"MinTime"`
+	DatasetId     requests.Integer              `position:"Query" name:"DatasetId"`
 	MaxTime       requests.Integer              `position:"Query" name:"MaxTime"`
 	Dimensions    *[]ARMSQueryDataSetDimensions `position:"Query" name:"Dimensions"  type:"Repeated"`
-	Measures      *[]string                     `position:"Query" name:"Measures"  type:"Repeated"`
-	IsDrillDown   requests.Boolean              `position:"Query" name:"IsDrillDown"`
 }
 
 // ARMSQueryDataSetDimensions is a repeated param struct in ARMSQueryDataSetRequest
 type ARMSQueryDataSetDimensions struct {
-	Key   string `name:"Key"`
 	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // ARMSQueryDataSetResponse is the response struct for api ARMSQueryDataSet
@@ -103,7 +103,7 @@ func CreateARMSQueryDataSetRequest() (request *ARMSQueryDataSetRequest) {
 	request = &ARMSQueryDataSetRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS4FINANCE", "2017-11-30", "ARMSQueryDataSet", "", "")
+	request.InitWithApiInfo("ARMS4FINANCE", "2017-11-30", "ARMSQueryDataSet", "arms4finance", "openAPI")
 	return
 }
 

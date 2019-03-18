@@ -76,22 +76,22 @@ func (client *Client) WhereInDimQueryWithCallback(request *WhereInDimQueryReques
 // WhereInDimQueryRequest is the request struct for api WhereInDimQuery
 type WhereInDimQueryRequest struct {
 	*requests.RpcRequest
-	DatasetId     requests.Integer             `position:"Query" name:"DatasetId"`
+	WhereInKey    string                       `position:"Query" name:"WhereInKey"`
+	Measures      *[]string                    `position:"Query" name:"Measures"  type:"Repeated"`
 	IntervalInSec requests.Integer             `position:"Query" name:"IntervalInSec"`
 	DateStr       string                       `position:"Query" name:"DateStr"`
+	IsDrillDown   requests.Boolean             `position:"Query" name:"IsDrillDown"`
 	MinTime       requests.Integer             `position:"Query" name:"MinTime"`
+	DatasetId     requests.Integer             `position:"Query" name:"DatasetId"`
+	WhereInValues *[]string                    `position:"Query" name:"WhereInValues"  type:"Repeated"`
 	MaxTime       requests.Integer             `position:"Query" name:"MaxTime"`
 	Dimensions    *[]WhereInDimQueryDimensions `position:"Query" name:"Dimensions"  type:"Repeated"`
-	WhereInKey    string                       `position:"Query" name:"WhereInKey"`
-	WhereInValues *[]string                    `position:"Query" name:"WhereInValues"  type:"Repeated"`
-	Measures      *[]string                    `position:"Query" name:"Measures"  type:"Repeated"`
-	IsDrillDown   requests.Boolean             `position:"Query" name:"IsDrillDown"`
 }
 
 // WhereInDimQueryDimensions is a repeated param struct in WhereInDimQueryRequest
 type WhereInDimQueryDimensions struct {
-	Key   string `name:"Key"`
 	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // WhereInDimQueryResponse is the response struct for api WhereInDimQuery
@@ -105,7 +105,7 @@ func CreateWhereInDimQueryRequest() (request *WhereInDimQueryRequest) {
 	request = &WhereInDimQueryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS4FINANCE", "2017-11-30", "WhereInDimQuery", "", "")
+	request.InitWithApiInfo("ARMS4FINANCE", "2017-11-30", "WhereInDimQuery", "arms4finance", "openAPI")
 	return
 }
 
