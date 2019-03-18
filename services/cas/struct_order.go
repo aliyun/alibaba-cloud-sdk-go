@@ -17,9 +17,23 @@ package cas
 
 // Order is a nested struct in cas response
 type Order struct {
-	Id         int    `json:"Id" xml:"Id"`
-	InstanceId string `json:"InstanceId" xml:"InstanceId"`
-	Source     string `json:"Source" xml:"Source"`
-	Status     string `json:"Status" xml:"Status"`
-	CertType   string `json:"CertType" xml:"CertType"`
+	Id               int    `json:"Id" xml:"Id"`
+	SourceType       string `json:"SourceType" xml:"SourceType"`
+	CertType         string `json:"CertType" xml:"CertType"`
+	InstanceId       string `json:"InstanceId" xml:"InstanceId"`
+	Year             int    `json:"Year" xml:"Year"`
+	OrderId          int    `json:"OrderId" xml:"OrderId"`
+	OrderType        string `json:"OrderType" xml:"OrderType"`
+	BrandName        string `json:"BrandName" xml:"BrandName"`
+	BuyDate          int    `json:"BuyDate" xml:"BuyDate"`
+	StatusCode       string `json:"StatusCode" xml:"StatusCode"`
+	Domain           string `json:"Domain" xml:"Domain"`
+	ProductAliasName string `json:"ProductAliasName" xml:"ProductAliasName"`
+	DomainCount      int    `json:"DomainCount" xml:"DomainCount"`
+	WildDomainCount  int    `json:"WildDomainCount" xml:"WildDomainCount"`
+	VerifyStatus     int    `json:"VerifyStatus" xml:"VerifyStatus"`
+	MaybeIssueDate   int    `json:"MaybeIssueDate" xml:"MaybeIssueDate"`
+	BeforeDate       int    `json:"BeforeDate" xml:"BeforeDate"`
+	AfterDate        int    `json:"AfterDate" xml:"AfterDate"`
+	ShowCancel       bool   `json:"ShowCancel" xml:"ShowCancel"`
 }

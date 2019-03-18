@@ -17,5 +17,5 @@ package cas
 
 // OrderList is a nested struct in cas response
 type OrderList struct {
-	Order []Order `json:"order" xml:"order"`
+	Order []Order `json:"Order" xml:"Order"`
 }
