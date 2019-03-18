@@ -22,6 +22,7 @@ func Test_DescribeRegionsWithRPCrequestWithAK(t *testing.T) {
 	client, err := ecs.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
 	assert.Nil(t, err)
 	assert.NotNil(t, client)
+	defer client.Shutdown()
 	request := ecs.CreateDescribeRegionsRequest()
 	request.Scheme = "https"
 	response, err := client.DescribeRegions(request)
@@ -38,6 +39,7 @@ func Test_DescribeRegionsWithRPCrequestWithSTStoken(t *testing.T) {
 	client, err := ecs.NewClientWithStsToken(os.Getenv("REGION_ID"), credential.AccessKeyId, credential.AccessKeySecret, credential.SecurityToken)
 	assert.Nil(t, err)
 	assert.NotNil(t, client)
+	defer client.Shutdown()
 	request := ecs.CreateDescribeRegionsRequest()
 	request.Scheme = "https"
 	response, err := client.DescribeRegions(request)
@@ -50,6 +52,7 @@ func Test_DescribeRegionsWithRPCrequestWithSTStoken(t *testing.T) {
 func Test_DescribeClusterDetailWithROArequestWithAK(t *testing.T) {
 	client, err := cs.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
 	assert.Nil(t, err)
+	defer client.Shutdown()
 	request := cs.CreateDescribeClusterDetailRequest()
 	request.SetDomain("cs.aliyuncs.com")
 	request.QueryParams["RegionId"] = os.Getenv("REGION_ID")
@@ -65,6 +68,7 @@ func Test_DescribeRegionsWithRPCrequestWithArn(t *testing.T) {
 	assert.Nil(t, err)
 	client, err := ecs.NewClientWithRamRoleArn(os.Getenv("REGION_ID"), subaccesskeyid, subaccesskeysecret, rolearn, "alice_test")
 	assert.Nil(t, err)
+	defer client.Shutdown()
 
 	request := ecs.CreateDescribeRegionsRequest()
 	request.Scheme = "https"
@@ -85,6 +89,7 @@ func TestDescribeRegionsWithProviderAndAk(t *testing.T) {
 	request.TransToAcsRequest()
 	client, err := sdk.NewClientWithProvider(os.Getenv("REGION_ID"))
 	assert.Nil(t, err)
+	defer client.Shutdown()
 	response, err := client.ProcessCommonRequest(request)
 	assert.Nil(t, err)
 	assert.True(t, response.IsSuccess())
@@ -129,6 +134,7 @@ func TestDescribeRegionsWithProviderAndRsaKeyPair(t *testing.T) {
 
 	client, err := sdk.NewClientWithRsaKeyPair("ap-northeast-1", os.Getenv("PUBLIC_KEY_ID"), data, 3600)
 	assert.Nil(t, err)
+	defer client.Shutdown()
 
 	response, err := client.ProcessCommonRequest(request)
 	assert.Nil(t, err)

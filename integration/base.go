@@ -36,6 +36,7 @@ func createRole(userid string) (string, string, error) {
 	if err != nil {
 		return "", "", err
 	}
+	defer client.Shutdown()
 	listResponse, err := client.ListRoles(listRequest)
 	if err != nil {
 		return "", "", err
@@ -63,6 +64,7 @@ func createUser() error {
 	if err != nil {
 		return err
 	}
+	defer client.Shutdown()
 	listResponse, err := client.ListUsers(listRequest)
 	if err != nil {
 		return err
@@ -90,6 +92,7 @@ func createAttachPolicyToUser() error {
 	if err != nil {
 		return err
 	}
+	defer client.Shutdown()
 	listResponse, err := client.ListPoliciesForUser(listRequest)
 	if err != nil {
 		return err
@@ -119,6 +122,7 @@ func createAttachPolicyToRole() error {
 	if err != nil {
 		return err
 	}
+	defer client.Shutdown()
 	listResponse, err := client.ListPoliciesForRole(listRequest)
 	if err != nil {
 		return err
@@ -145,6 +149,7 @@ func createAccessKey() (string, string, error) {
 	if err != nil {
 		return "", "", err
 	}
+	defer client.Shutdown()
 	listrequest := ram.CreateListAccessKeysRequest()
 	listrequest.UserName = username
 	listrequest.Scheme = "HTTPS"
@@ -198,6 +203,7 @@ func createAssumeRole() (*sts.AssumeRoleResponse, error) {
 	request.RoleSessionName = "alice_test"
 	request.Scheme = "HTTPS"
 	client, err := sts.NewClientWithAccessKey(os.Getenv("REGION_ID"), subaccesskeyid, subaccesskeysecret)
+	defer client.Shutdown()
 	response, err := client.AssumeRole(request)
 	if err != nil {
 		return nil, err

@@ -26,6 +26,7 @@ var (
 func Test_DescribeClusteWithROArequestWithXMLWithGet(t *testing.T) {
 	client, err := cs.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
 	assert.Nil(t, err)
+	defer client.Shutdown()
 	request := cs.CreateDescribeClusterDetailRequest()
 	request.SetContentType("XML")
 	request.SetScheme("HTTPS")
@@ -38,6 +39,7 @@ func Test_DescribeClusteWithROArequestWithXMLWithGet(t *testing.T) {
 func Test_ScaleClusterWithROArequestWithXMLWithPUT(t *testing.T) {
 	client, err := cs.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
 	assert.Nil(t, err)
+	defer client.Shutdown()
 	request := cs.CreateScaleClusterRequest()
 	request.SetContentType("XML")
 	request.SetScheme("HTTPS")
@@ -50,6 +52,7 @@ func Test_ScaleClusterWithROArequestWithXMLWithPUT(t *testing.T) {
 func Test_CreateClusterTokenWithROArequestWithXMLWithPOST(t *testing.T) {
 	client, err := cs.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
 	assert.Nil(t, err)
+	defer client.Shutdown()
 	request := cs.CreateCreateClusterTokenRequest()
 	request.SetContentType("XML")
 	request.SetScheme("HTTPS")
@@ -62,6 +65,7 @@ func Test_CreateClusterTokenWithROArequestWithXMLWithPOST(t *testing.T) {
 func Test_DeleteClusterWithROArequestWithXMLWithDelete(t *testing.T) {
 	client, err := cs.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
 	assert.Nil(t, err)
+	defer client.Shutdown()
 	request := cs.CreateDeleteClusterRequest()
 	request.SetContentType("XML")
 	request.SetScheme("HTTPS")
@@ -74,6 +78,7 @@ func Test_DeleteClusterWithROArequestWithXMLWithDelete(t *testing.T) {
 func Test_DeleteClusterWithROArequestWithJSONWithDelete(t *testing.T) {
 	client, err := cs.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
 	assert.Nil(t, err)
+	defer client.Shutdown()
 	request := cs.CreateDeleteClusterRequest()
 	request.SetContentType("JSON")
 	request.SetScheme("HTTPS")
@@ -86,6 +91,7 @@ func Test_DeleteClusterWithROArequestWithJSONWithDelete(t *testing.T) {
 func Test_ScaleClusterWithROArequestWithJSONWithPUT(t *testing.T) {
 	client, err := cs.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
 	assert.Nil(t, err)
+	defer client.Shutdown()
 	request := cs.CreateScaleClusterRequest()
 	request.SetContentType("JSON")
 	request.SetScheme("HTTPS")
@@ -98,6 +104,7 @@ func Test_ScaleClusterWithROArequestWithJSONWithPUT(t *testing.T) {
 func Test_CreateSecurityGroupWithRPCrequestWithJSONWithNestingparametersWithPOST(t *testing.T) {
 	client, err := ecs.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
 	assert.Nil(t, err)
+	defer client.Shutdown()
 	request := ecs.CreateCreateSecurityGroupRequest()
 	request.SetContentType("JSON")
 	tag := ecs.CreateSecurityGroupTag{
@@ -116,6 +123,7 @@ func Test_CreateSecurityGroupWithRPCrequestWithJSONWithNestingparametersWithPOST
 func Test_ECS_DescribeSecurityGroupsWithRPCrequestWithJSONWithNestingparametersWithGET(t *testing.T) {
 	client, err := ecs.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
 	assert.Nil(t, err)
+	defer client.Shutdown()
 	request := ecs.CreateDescribeSecurityGroupsRequest()
 	request.SetContentType("JSON")
 	request.Method = requests.GET
@@ -131,12 +139,12 @@ func Test_ECS_DescribeSecurityGroupsWithRPCrequestWithJSONWithNestingparametersW
 	assert.Equal(t, 36, len(response.RequestId))
 	assert.True(t, flag)
 	flag = false
-
 }
 
 func Test_ECS_DeleteSecurityGroupWithRPCrequestWithJSONWithPOST(t *testing.T) {
 	client, err := ecs.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
 	assert.Nil(t, err)
+	defer client.Shutdown()
 	request := ecs.CreateDeleteSecurityGroupRequest()
 	request.SetContentType("JSON")
 	request.SecurityGroupId = securityGroupId
@@ -151,6 +159,7 @@ func Test_RDS_DescribeDBInstancesWithRPCrequest(t *testing.T) {
 	client, err := rds.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
 	assert.Nil(t, err)
 	assert.NotNil(t, client)
+	defer client.Shutdown()
 	request := rds.CreateDescribeDBInstancesRequest()
 	request.SetContentType("JSON")
 	response, err := client.DescribeDBInstances(request)
@@ -163,6 +172,7 @@ func Test_CDN_DescribeCdnDomainDetailWithRPCrequest(t *testing.T) {
 	client, err := cdn.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
 	assert.Nil(t, err)
 	assert.NotNil(t, client)
+	defer client.Shutdown()
 	request := cdn.CreateDescribeRefreshTasksRequest()
 	response, err := client.DescribeRefreshTasks(request)
 	assert.Nil(t, err)
@@ -173,6 +183,7 @@ func Test_CDN_DescribeCdnDomainDetailWithRPCrequest(t *testing.T) {
 func Test_RAM_ListRolesWithRPCrequest(t *testing.T) {
 	client, err := ram.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
 	assert.Nil(t, err)
+	defer client.Shutdown()
 	request := ram.CreateListRolesRequest()
 	request.Scheme = "HTTPS"
 	response, err := client.ListRoles(request)
@@ -184,6 +195,7 @@ func Test_RAM_ListRolesWithRPCrequest(t *testing.T) {
 func Test_SLB_DescribeRegionsWithRPCrequest(t *testing.T) {
 	client, err := slb.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
 	assert.Nil(t, err)
+	defer client.Shutdown()
 	request := slb.CreateDescribeRegionsRequest()
 	response, err := client.DescribeRegions(request)
 	assert.Nil(t, err)
@@ -195,6 +207,7 @@ func Test_SLB_DescribeRegionsWithRPCrequest(t *testing.T) {
 func Test_VPC_DescribeRegionsWithRPCrequest(t *testing.T) {
 	client, err := vpc.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
 	assert.Nil(t, err)
+	defer client.Shutdown()
 	request := vpc.CreateDescribeRegionsRequest()
 	response, err := client.DescribeRegions(request)
 	assert.Nil(t, err)
@@ -216,6 +229,7 @@ func mockServer(status int, json string) (server *httptest.Server) {
 func Test_DescribeRegionsWithRPCrequestWithunicode(t *testing.T) {
 	client, err := ecs.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
 	assert.Nil(t, err)
+	defer client.Shutdown()
 	request := ecs.CreateDescribeRegionsRequest()
 	request.Scheme = "HTTP"
 	ts := mockServer(400, `{"Code": "&&&&杭州&&&"}`)
@@ -231,6 +245,7 @@ func Test_DescribeRegionsWithRPCrequestWithunicode(t *testing.T) {
 func Test_DescribeRegionsWithRPCrequestWithescape(t *testing.T) {
 	client, err := ecs.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
 	assert.Nil(t, err)
+	defer client.Shutdown()
 	request := ecs.CreateDescribeRegionsRequest()
 	request.Scheme = "HTTP"
 	ts := mockServer(400, `{"Code": "\t"}`)
@@ -246,6 +261,7 @@ func Test_DescribeRegionsWithRPCrequestWithescape(t *testing.T) {
 func Test_DescribeRegionsWithRPCrequestWith3XX(t *testing.T) {
 	client, err := ecs.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
 	assert.Nil(t, err)
+	defer client.Shutdown()
 	request := ecs.CreateDescribeRegionsRequest()
 	request.Scheme = "HTTP"
 	ts := mockServer(307, `{"error"}`)
@@ -261,6 +277,7 @@ func Test_DescribeRegionsWithRPCrequestWith3XX(t *testing.T) {
 func Test_QueryAvaliableInstances(t *testing.T) {
 	client, err := bssopenapi.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
 	assert.Nil(t, err)
+	defer client.Shutdown()
 	request := bssopenapi.CreateQueryAvailableInstancesRequest()
 	request.Domain = "business.aliyuncs.com"
 	response, err := client.QueryAvailableInstances(request)
