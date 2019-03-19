@@ -118,16 +118,18 @@ isInsecure := client.GetHTTPSInsecure()               // Get client HTTPSInsecur
 
 ## HTTP Proxy
 
-If you want to use http proxy or https proxy, you can set environment variables `HTTP_PROXY` or `HTTPS_PROXY`, or you can configure client with config.
+If you want to use http proxy,  https proxy or no proxy, you can set environment variables `HTTP_PROXY`, `HTTPS_PROXY` or `NO_PROXY`, or you can set them by client.
 
 ```go
-rawurl, _ := url.Parse("http://117.215.227.125:8888") //You should replace the IP with you want
-httpTransport := http.Transport{
-    Proxy:  http.ProxyURL(rawurl)
-}
-config := sdk.NewConfig()
-            .WithHttpTransport(&httpTransport)
-ecsClient, err := ecs.NewClientWithOptions(config)
+// client proxy has a high priority than environment variables.
+client.SetHttpProxy("http://127.0.0.1:8080")   // Set Http Proxy.
+client.GetHttpProxy()                          // Get Http Proxy.
+
+client.SetHttpsProxy("https://127.0.0.1:8080")   // Set Https Proxy.
+client.GetHttpsProxy()                           // Get Https Proxy.
+
+client.SetNoProxy("127.0.0.1,localhost")     // Set No Proxy.
+client.GetNoProxy()                          // Get No Proxy.
 ```
 
 ## Keep-alive

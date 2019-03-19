@@ -61,6 +61,9 @@ type Client struct {
 	isInsecure     bool
 	regionId       string
 	config         *Config
+	httpProxy      *string
+	httpsProxy     *string
+	noProxy        *string
 	userAgent      map[string]string
 	signer         auth.Signer
 	httpClient     *http.Client
@@ -84,6 +87,30 @@ func (client *Client) SetHTTPSInsecure(isInsecure bool) {
 
 func (client *Client) GetHTTPSInsecure() bool {
 	return client.isInsecure
+}
+
+func (client *Client) SetHttpsProxy(httpsProxy string) {
+	client.httpsProxy = &httpsProxy
+}
+
+func (client *Client) GetHttpsProxy() *string {
+	return client.httpsProxy
+}
+
+func (client *Client) SetHttpProxy(httpProxy string) {
+	client.httpProxy = &httpProxy
+}
+
+func (client *Client) GetHttpProxy() *string {
+	return client.httpProxy
+}
+
+func (client *Client) SetNoProxy(noProxy string) {
+	client.noProxy = &noProxy
+}
+
+func (client *Client) GetNoProxy() *string {
+	return client.noProxy
 }
 
 // InitWithProviderChain will get credential from the providerChain,
@@ -139,25 +166,43 @@ func (client *Client) GetConnectTimeout() time.Duration {
 	return client.connectTimeout
 }
 
-func getHttpProxy(scheme string) *url.URL {
+func (client *Client) getHttpProxy(scheme string) (*url.URL, error) {
 	var proxy *url.URL
+	var err error
 	if scheme == "https" {
-		if rawurl := os.Getenv("HTTPS_PROXY"); rawurl != "" {
-			proxy, _ = url.Parse(rawurl)
-		}
-		if rawurl := os.Getenv("https_proxy"); rawurl != "" && proxy == nil {
-			proxy, _ = url.Parse(rawurl)
+		if client.GetHttpsProxy() != nil {
+			proxy, err = url.Parse(*client.httpsProxy)
+		} else if rawurl := os.Getenv("HTTPS_PROXY"); rawurl != "" {
+			proxy, err = url.Parse(rawurl)
+		} else if rawurl := os.Getenv("https_proxy"); rawurl != "" {
+			proxy, err = url.Parse(rawurl)
 		}
 	} else {
-		if rawurl := os.Getenv("HTTP_PROXY"); rawurl != "" {
-			proxy, _ = url.Parse(rawurl)
+		if client.GetHttpProxy() != nil {
+			proxy, err = url.Parse(*client.httpProxy)
+		}
+		if rawurl := os.Getenv("HTTP_PROXY"); rawurl != "" && proxy == nil {
+			proxy, err = url.Parse(rawurl)
 		}
 		if rawurl := os.Getenv("http_proxy"); rawurl != "" && proxy == nil {
-			proxy, _ = url.Parse(rawurl)
+			proxy, err = url.Parse(rawurl)
 		}
 	}
 
-	return proxy
+	return proxy, err
+}
+
+func (client *Client) getNoProxy(scheme string) []string {
+	var urls []string
+	if client.GetNoProxy() != nil {
+		urls = strings.Split(*client.noProxy, ",")
+	} else if rawurl := os.Getenv("NO_PROXY"); rawurl != "" {
+		urls = strings.Split(rawurl, ",")
+	} else if rawurl := os.Getenv("no_proxy"); rawurl != "" {
+		urls = strings.Split(rawurl, ",")
+	}
+
+	return urls
 }
 
 // EnableAsync enable the async task queue
@@ -406,7 +451,19 @@ func (client *Client) DoActionWithSigner(request requests.AcsRequest, response r
 		return
 	}
 	client.setTimeout(request)
-	proxy := getHttpProxy(httpRequest.URL.Scheme)
+	proxy, err := client.getHttpProxy(httpRequest.URL.Scheme)
+	if err != nil {
+		return err
+	}
+	noProxy := client.getNoProxy(httpRequest.URL.Scheme)
+
+	var flag bool
+	for _, value := range noProxy {
+		if value == httpRequest.Host {
+			flag = true
+			break
+		}
+	}
 
 	// Set whether to ignore certificate validation.
 	// Default InsecureSkipVerify is false.
@@ -414,7 +471,7 @@ func (client *Client) DoActionWithSigner(request requests.AcsRequest, response r
 		trans.TLSClientConfig = &tls.Config{
 			InsecureSkipVerify: client.getHTTPSInsecure(request),
 		}
-		if proxy != nil {
+		if proxy != nil && !flag {
 			trans.Proxy = http.ProxyURL(proxy)
 		}
 		client.httpClient.Transport = trans

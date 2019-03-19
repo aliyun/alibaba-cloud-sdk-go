@@ -109,16 +109,18 @@ isInsecure := client.GetHTTPSInsecure()               // 获取客户端 HTTPSIn
 
 ## HTTP 代理
 
-如果您想使用 http 代理或 https 代理，您可以设置环境变量 `HTTP_PROXY` 或者 `HTTPS_PROXY`，您也可以使用 config 配置客户端。
+如果您想使用 http 代理, https 代理或者代理白名单，您可以设置环境变量 `HTTP_PROXY` 或者 `HTTPS_PROXY`或者 `NO_PROXY`，您也可以通过客户端来配置。
 
 ```go
-rawurl, _ := url.Parse("http://117.215.227.125:8888") //You should replace the IP with you want
-httpTransport := http.Transport{
-    Proxy:  http.ProxyURL(rawurl)
-}
-config := sdk.NewConfig()
-            .WithHttpTransport(&httpTransport)
-ecsClient, err := ecs.NewClientWithOptions(config)
+// 客户端设置代理优先级比环境变量高
+client.SetHttpProxy("http://127.0.0.1:8080")   // 设置 Http 代理
+client.GetHttpProxy()                          // 获取 Http 代理.
+
+client.SetHttpsProxy("https://127.0.0.1:8080")   // 设置 Https 代理.
+client.GetHttpsProxy()                           // 获取 Https 代理.
+
+client.SetNoProxy("127.0.0.1,localhost")     // 设置代理白名单.
+client.GetNoProxy()                          // 获取代理白名单
 ```
 
 ## Keep-alive
