@@ -19,7 +19,9 @@ package xspace
 type CustomizeFields struct {
 	Cid                 string                                 `json:"Cid" xml:"Cid"`
 	AbcUrl              string                                 `json:"AbcUrl" xml:"AbcUrl"`
+	Tag                 string                                 `json:"Tag" xml:"Tag"`
 	DistributionLevel   string                                 `json:"DistributionLevel" xml:"DistributionLevel"`
+	AssociatePerson     string                                 `json:"AssociatePerson" xml:"AssociatePerson"`
 	MainAccountUid      string                                 `json:"MainAccountUid" xml:"MainAccountUid"`
 	AssociatePersonList AssociatePersonListInQueryCustomerById `json:"AssociatePersonList" xml:"AssociatePersonList"`
 }
