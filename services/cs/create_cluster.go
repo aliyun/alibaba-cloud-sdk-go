@@ -88,7 +88,7 @@ func CreateCreateClusterRequest() (request *CreateClusterRequest) {
 	request = &CreateClusterRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("CS", "2015-12-15", "CreateCluster", "/clusters", "", "")
+	request.InitWithApiInfo("CS", "2015-12-15", "CreateCluster", "/clusters", "cs", "openAPI")
 	request.Method = requests.POST
 	return
 }

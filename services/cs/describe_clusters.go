@@ -76,8 +76,8 @@ func (client *Client) DescribeClustersWithCallback(request *DescribeClustersRequ
 // DescribeClustersRequest is the request struct for api DescribeClusters
 type DescribeClustersRequest struct {
 	*requests.RoaRequest
-	Name        string `position:"Query" name:"Name"`
 	ClusterType string `position:"Query" name:"clusterType"`
+	Name        string `position:"Query" name:"Name"`
 }
 
 // DescribeClustersResponse is the response struct for api DescribeClusters
@@ -90,7 +90,7 @@ func CreateDescribeClustersRequest() (request *DescribeClustersRequest) {
 	request = &DescribeClustersRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("CS", "2015-12-15", "DescribeClusters", "/clusters", "", "")
+	request.InitWithApiInfo("CS", "2015-12-15", "DescribeClusters", "/clusters", "cs", "openAPI")
 	request.Method = requests.GET
 	return
 }

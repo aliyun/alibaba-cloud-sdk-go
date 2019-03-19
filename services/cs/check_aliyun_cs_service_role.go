@@ -88,7 +88,7 @@ func CreateCheckAliyunCSServiceRoleRequest() (request *CheckAliyunCSServiceRoleR
 	request = &CheckAliyunCSServiceRoleRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("CS", "2015-12-15", "CheckAliyunCSServiceRole", "/aliyuncsrole/status", "", "")
+	request.InitWithApiInfo("CS", "2015-12-15", "CheckAliyunCSServiceRole", "/aliyuncsrole/status", "cs", "openAPI")
 	request.Method = requests.GET
 	return
 }

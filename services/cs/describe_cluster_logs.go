@@ -89,7 +89,7 @@ func CreateDescribeClusterLogsRequest() (request *DescribeClusterLogsRequest) {
 	request = &DescribeClusterLogsRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("CS", "2015-12-15", "DescribeClusterLogs", "/clusters/[ClusterId]/logs", "", "")
+	request.InitWithApiInfo("CS", "2015-12-15", "DescribeClusterLogs", "/clusters/[ClusterId]/logs", "cs", "openAPI")
 	request.Method = requests.GET
 	return
 }

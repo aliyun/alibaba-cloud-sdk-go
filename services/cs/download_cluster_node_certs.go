@@ -76,8 +76,8 @@ func (client *Client) DownloadClusterNodeCertsWithCallback(request *DownloadClus
 // DownloadClusterNodeCertsRequest is the request struct for api DownloadClusterNodeCerts
 type DownloadClusterNodeCertsRequest struct {
 	*requests.RoaRequest
-	Token  string `position:"Path" name:"Token"`
 	NodeId string `position:"Path" name:"NodeId"`
+	Token  string `position:"Path" name:"Token"`
 }
 
 // DownloadClusterNodeCertsResponse is the response struct for api DownloadClusterNodeCerts
@@ -90,7 +90,7 @@ func CreateDownloadClusterNodeCertsRequest() (request *DownloadClusterNodeCertsR
 	request = &DownloadClusterNodeCertsRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("CS", "2015-12-15", "DownloadClusterNodeCerts", "/token/[Token]/nodes/[NodeId]/certs", "", "")
+	request.InitWithApiInfo("CS", "2015-12-15", "DownloadClusterNodeCerts", "/token/[Token]/nodes/[NodeId]/certs", "cs", "openAPI")
 	request.Method = requests.GET
 	return
 }

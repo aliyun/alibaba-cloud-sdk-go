@@ -76,8 +76,8 @@ func (client *Client) ResetClusterNodeWithCallback(request *ResetClusterNodeRequ
 // ResetClusterNodeRequest is the request struct for api ResetClusterNode
 type ResetClusterNodeRequest struct {
 	*requests.RoaRequest
-	ClusterId  string `position:"Path" name:"ClusterId"`
 	InstanceId string `position:"Path" name:"InstanceId"`
+	ClusterId  string `position:"Path" name:"ClusterId"`
 }
 
 // ResetClusterNodeResponse is the response struct for api ResetClusterNode
@@ -90,7 +90,7 @@ func CreateResetClusterNodeRequest() (request *ResetClusterNodeRequest) {
 	request = &ResetClusterNodeRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("CS", "2015-12-15", "ResetClusterNode", "/clusters/[ClusterId]/instances/[InstanceId]/reset", "", "")
+	request.InitWithApiInfo("CS", "2015-12-15", "ResetClusterNode", "/clusters/[ClusterId]/instances/[InstanceId]/reset", "cs", "openAPI")
 	request.Method = requests.POST
 	return
 }
