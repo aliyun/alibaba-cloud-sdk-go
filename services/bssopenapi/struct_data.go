@@ -36,6 +36,7 @@ type Data struct {
 	Status                     string                                 `json:"Status" xml:"Status"`
 	UserId                     int                                    `json:"UserId" xml:"UserId"`
 	NewInvoiceAmount           float64                                `json:"NewInvoiceAmount" xml:"NewInvoiceAmount"`
+	Marker                     string                                 `json:"Marker" xml:"Marker"`
 	Numerator                  int                                    `json:"Numerator" xml:"Numerator"`
 	AvailableAmount            string                                 `json:"AvailableAmount" xml:"AvailableAmount"`
 	PageSize                   int                                    `json:"PageSize" xml:"PageSize"`
@@ -55,6 +56,7 @@ type Data struct {
 	DiscountPrice              float64                                `json:"DiscountPrice" xml:"DiscountPrice"`
 	AccountName                string                                 `json:"AccountName" xml:"AccountName"`
 	Denominator                int                                    `json:"Denominator" xml:"Denominator"`
+	OmsData                    OmsData                                `json:"OmsData" xml:"OmsData"`
 	ModuleList                 ModuleList                             `json:"ModuleList" xml:"ModuleList"`
 	InstanceList               []Instance                             `json:"InstanceList" xml:"InstanceList"`
 	OrderList                  OrderListInQueryOrders                 `json:"OrderList" xml:"OrderList"`
