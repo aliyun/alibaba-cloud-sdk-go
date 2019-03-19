@@ -76,17 +76,15 @@ func (client *Client) DescribeDomainFlowDataWithCallback(request *DescribeDomain
 // DescribeDomainFlowDataRequest is the request struct for api DescribeDomainFlowData
 type DescribeDomainFlowDataRequest struct {
 	*requests.RpcRequest
+	LocationNameEn string           `position:"Query" name:"LocationNameEn"`
+	StartTime      string           `position:"Query" name:"StartTime"`
+	IspNameEn      string           `position:"Query" name:"IspNameEn"`
 	DomainType     string           `position:"Query" name:"DomainType"`
-	FixTimeGap     string           `position:"Query" name:"FixTimeGap"`
-	SecurityToken  string           `position:"Query" name:"SecurityToken"`
 	TimeMerge      string           `position:"Query" name:"TimeMerge"`
 	DomainName     string           `position:"Query" name:"DomainName"`
 	EndTime        string           `position:"Query" name:"EndTime"`
-	LocationNameEn string           `position:"Query" name:"LocationNameEn"`
-	Interval       string           `position:"Query" name:"Interval"`
-	StartTime      string           `position:"Query" name:"StartTime"`
-	IspNameEn      string           `position:"Query" name:"IspNameEn"`
 	OwnerId        requests.Integer `position:"Query" name:"OwnerId"`
+	Interval       string           `position:"Query" name:"Interval"`
 }
 
 // DescribeDomainFlowDataResponse is the response struct for api DescribeDomainFlowData
@@ -94,9 +92,9 @@ type DescribeDomainFlowDataResponse struct {
 	*responses.BaseResponse
 	RequestId           string              `json:"RequestId" xml:"RequestId"`
 	DomainName          string              `json:"DomainName" xml:"DomainName"`
-	DataInterval        string              `json:"DataInterval" xml:"DataInterval"`
 	StartTime           string              `json:"StartTime" xml:"StartTime"`
 	EndTime             string              `json:"EndTime" xml:"EndTime"`
+	DataInterval        string              `json:"DataInterval" xml:"DataInterval"`
 	FlowDataPerInterval FlowDataPerInterval `json:"FlowDataPerInterval" xml:"FlowDataPerInterval"`
 }
 

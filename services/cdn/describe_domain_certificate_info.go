@@ -83,8 +83,8 @@ type DescribeDomainCertificateInfoRequest struct {
 // DescribeDomainCertificateInfoResponse is the response struct for api DescribeDomainCertificateInfo
 type DescribeDomainCertificateInfoResponse struct {
 	*responses.BaseResponse
-	RequestId string    `json:"RequestId" xml:"RequestId"`
-	CertInfos CertInfos `json:"CertInfos" xml:"CertInfos"`
+	RequestId string                                   `json:"RequestId" xml:"RequestId"`
+	CertInfos CertInfosInDescribeDomainCertificateInfo `json:"CertInfos" xml:"CertInfos"`
 }
 
 // CreateDescribeDomainCertificateInfoRequest creates a request to invoke DescribeDomainCertificateInfo API
