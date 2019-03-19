@@ -262,13 +262,13 @@ func handlerFake(w http.ResponseWriter, r *http.Request) {
 	return
 }
 
-func handlerFakeServer() (server *httptest.Server){
+func handlerFakeServer() (server *httptest.Server) {
 	server = httptest.NewServer(http.HandlerFunc(handlerFake))
 
 	return server
 }
 
-func handlerTrueServer() (server *httptest.Server){
+func handlerTrueServer() (server *httptest.Server) {
 	server = httptest.NewServer(http.HandlerFunc(handlerTrue))
 
 	return server

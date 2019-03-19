@@ -139,7 +139,7 @@ func mockResponse(statusCode int, content string, mockerr error) (res *http.Resp
 	return
 }
 
-func Test_DoAction(t *testing.T) {
+func Test_DoActionWithProxy(t *testing.T) {
 	client, err := NewClientWithAccessKey("regionid", "acesskeyid", "accesskeysecret")
 	assert.Nil(t, err)
 	assert.NotNil(t, client)
@@ -165,21 +165,42 @@ func Test_DoAction(t *testing.T) {
 	assert.Equal(t, 200, response.GetHttpStatus())
 	assert.Equal(t, "", response.GetHttpContentString())
 
-	originEnv := os.Getenv("https_proxy")
+	// Test when scheme is http, only http proxy is valid.
+	envHttpsProxy := os.Getenv("https_proxy")
 	os.Setenv("https_proxy", "https://127.0.0.1:9000")
 	err = client.DoAction(request, response)
 	assert.Nil(t, err)
-	assert.Nil(t, client.config.HttpTransport)
+	trans, _ := client.httpClient.Transport.(*http.Transport)
+	assert.Nil(t, trans.Proxy)
 
-	originEnv1 := os.Getenv("http_proxy")
+	// Test when host is in no_proxy, proxy is invalid
+	envNoProxy := os.Getenv("no_proxy")
+	os.Setenv("no_proxy", "ecs.aliyuncs.com")
+	envHttpProxy := os.Getenv("http_proxy")
 	os.Setenv("http_proxy", "http://127.0.0.1:8888")
 	err = client.DoAction(request, response)
 	assert.Nil(t, err)
-	trans, _ := client.httpClient.Transport.(*http.Transport)
+	trans, _ = client.httpClient.Transport.(*http.Transport)
+	assert.Nil(t, trans.Proxy)
+
+	client.SetNoProxy("ecs.testaliyuncs.com")
+	err = client.DoAction(request, response)
+	assert.Nil(t, err)
+	trans, _ = client.httpClient.Transport.(*http.Transport)
 	url, _ := trans.Proxy(nil)
 	assert.Equal(t, url.Scheme, "http")
 	assert.Equal(t, url.Host, "127.0.0.1:8888")
 
+	// Test when setting http proxy, client has a high priority than environment variable
+	client.SetHttpProxy("http://127.0.0.1:8080")
+	err = client.DoAction(request, response)
+	assert.Nil(t, err)
+	trans, _ = client.httpClient.Transport.(*http.Transport)
+	url, _ = trans.Proxy(nil)
+	assert.Equal(t, url.Scheme, "http")
+	assert.Equal(t, url.Host, "127.0.0.1:8080")
+
+	// Test when scheme is https, only https proxy is valid
 	request.Scheme = "https"
 	err = client.DoAction(request, response)
 	assert.Nil(t, err)
@@ -188,9 +209,19 @@ func Test_DoAction(t *testing.T) {
 	assert.Equal(t, url.Scheme, "https")
 	assert.Equal(t, url.Host, "127.0.0.1:9000")
 
+	// Test when setting https proxy, client has a high priority than environment variable
+	client.SetHttpsProxy("https://127.0.0.1:6666")
+	err = client.DoAction(request, response)
+	assert.Nil(t, err)
+	trans, _ = client.httpClient.Transport.(*http.Transport)
+	url, _ = trans.Proxy(nil)
+	assert.Equal(t, url.Scheme, "https")
+	assert.Equal(t, url.Host, "127.0.0.1:6666")
+
 	client.Shutdown()
-	os.Setenv("https_proxy", originEnv)
-	os.Setenv("http_proxy", originEnv1)
+	os.Setenv("https_proxy", envHttpsProxy)
+	os.Setenv("http_proxy", envHttpProxy)
+	os.Setenv("no_proxy", envNoProxy)
 	assert.Equal(t, false, client.isRunning)
 }
 
@@ -203,8 +234,8 @@ func Test_DoAction_HTTPSInsecure(t *testing.T) {
 	request := requests.NewCommonRequest()
 	request.Product = "Ram"
 	request.Version = "2015-05-01"
-	request.SetScheme("HTTPS")
 	request.ApiName = "CreateRole"
+	request.Domain = "ecs.aliyuncs.com"
 	request.QueryParams["RegionId"] = os.Getenv("REGION_ID")
 	request.TransToAcsRequest()
 	response := responses.NewCommonResponse()
@@ -228,32 +259,64 @@ func Test_DoAction_HTTPSInsecure(t *testing.T) {
 	trans = client.httpClient.Transport.(*http.Transport)
 	assert.Equal(t, false, trans.TLSClientConfig.InsecureSkipVerify)
 
-	originEnv := os.Getenv("HTTP_PROXY")
-	os.Setenv("HTTP_PROXY", "http://127.0.0.1:9000")
+	// Test when scheme is http, only http proxy is valid.
+	envHttpsProxy := os.Getenv("HTTPS_PROXY")
+	os.Setenv("HTTPS_PROXY", "https://127.0.0.1:9000")
 	err = client.DoAction(request, response)
 	assert.Nil(t, err)
-	assert.Nil(t, client.config.HttpTransport)
+	trans, _ = client.httpClient.Transport.(*http.Transport)
+	assert.Nil(t, trans.Proxy)
 
-	originEnv1 := os.Getenv("HTTPS_PROXY")
-	os.Setenv("HTTPS_PROXY", "https://127.0.0.1:8888")
+	// Test when host is in no_proxy, proxy is invalid
+	envNoProxy := os.Getenv("NO_PROXY")
+	os.Setenv("NO_PROXY", "ecs.aliyuncs.com")
+	envHttpProxy := os.Getenv("HTTP_PROXY")
+	os.Setenv("HTTP_PROXY", "http://127.0.0.1:8888")
 	err = client.DoAction(request, response)
 	assert.Nil(t, err)
-	trans = client.httpClient.Transport.(*http.Transport)
+	trans, _ = client.httpClient.Transport.(*http.Transport)
+	assert.Nil(t, trans.Proxy)
+
+	client.SetNoProxy("ecs.testaliyuncs.com")
+	err = client.DoAction(request, response)
+	assert.Nil(t, err)
+	trans, _ = client.httpClient.Transport.(*http.Transport)
 	url, _ := trans.Proxy(nil)
-	assert.Equal(t, url.Scheme, "https")
+	assert.Equal(t, url.Scheme, "http")
 	assert.Equal(t, url.Host, "127.0.0.1:8888")
 
-	request.Scheme = "http"
+	// Test when setting http proxy, client has a high priority than environment variable
+	client.SetHttpProxy("http://127.0.0.1:8080")
 	err = client.DoAction(request, response)
 	assert.Nil(t, err)
-	trans = client.httpClient.Transport.(*http.Transport)
+	trans, _ = client.httpClient.Transport.(*http.Transport)
 	url, _ = trans.Proxy(nil)
 	assert.Equal(t, url.Scheme, "http")
+	assert.Equal(t, url.Host, "127.0.0.1:8080")
+
+	// Test when scheme is https, only https proxy is valid
+	request.Scheme = "https"
+	err = client.DoAction(request, response)
+	assert.Nil(t, err)
+	trans, _ = client.httpClient.Transport.(*http.Transport)
+	url, _ = trans.Proxy(nil)
+	assert.Equal(t, url.Scheme, "https")
 	assert.Equal(t, url.Host, "127.0.0.1:9000")
 
+	// Test when setting https proxy, client has a high priority than environment variable
+	client.SetHttpsProxy("https://127.0.0.1:6666")
+	err = client.DoAction(request, response)
+	assert.Nil(t, err)
+	trans, _ = client.httpClient.Transport.(*http.Transport)
+	url, _ = trans.Proxy(nil)
+	assert.Equal(t, url.Scheme, "https")
+	assert.Equal(t, url.Host, "127.0.0.1:6666")
+
 	client.Shutdown()
-	os.Setenv("HTTP_PROXY", originEnv)
-	os.Setenv("HTTPS_PROXY", originEnv1)
+	os.Setenv("HTTPS_PROXY", envHttpsProxy)
+	os.Setenv("HTTP_PROXY", envHttpProxy)
+	os.Setenv("NO_PROXY", envNoProxy)
+	assert.Equal(t, false, client.isRunning)
 }
 
 func Test_DoAction_Timeout(t *testing.T) {
