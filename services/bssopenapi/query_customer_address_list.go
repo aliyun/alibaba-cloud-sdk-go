@@ -76,7 +76,9 @@ func (client *Client) QueryCustomerAddressListWithCallback(request *QueryCustome
 // QueryCustomerAddressListRequest is the request struct for api QueryCustomerAddressList
 type QueryCustomerAddressListRequest struct {
 	*requests.RpcRequest
-	OwnerId requests.Integer `position:"Query" name:"OwnerId"`
+	CallerBid requests.Integer `position:"Query" name:"callerBid"`
+	OwnerId   requests.Integer `position:"Query" name:"OwnerId"`
+	CallerUid requests.Integer `position:"Query" name:"callerUid"`
 }
 
 // QueryCustomerAddressListResponse is the response struct for api QueryCustomerAddressList

@@ -1,3 +1,8 @@
+2019-03-19 Version: 1.53.61
+1, This is an example of release-log.
+2, Please strictly follow this format to edit in English.
+3, Format：Number + , + Space + Description
+
 2019-03-18 Version: 1.53.60
 1, Signature Document SDK.
 2, First version publish.

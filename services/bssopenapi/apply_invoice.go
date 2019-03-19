@@ -82,9 +82,11 @@ type ApplyInvoiceRequest struct {
 	CustomerId      requests.Integer `position:"Query" name:"CustomerId"`
 	SelectedIds     *[]string        `position:"Query" name:"SelectedIds"  type:"Repeated"`
 	ProcessWay      requests.Integer `position:"Query" name:"ProcessWay"`
+	CallerBid       requests.Integer `position:"Query" name:"callerBid"`
 	OwnerId         requests.Integer `position:"Query" name:"OwnerId"`
 	InvoiceAmount   requests.Integer `position:"Query" name:"InvoiceAmount"`
 	AddressId       requests.Integer `position:"Query" name:"AddressId"`
+	CallerUid       requests.Integer `position:"Query" name:"callerUid"`
 }
 
 // ApplyInvoiceResponse is the response struct for api ApplyInvoice
