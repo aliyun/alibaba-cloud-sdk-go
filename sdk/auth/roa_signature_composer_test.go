@@ -84,3 +84,11 @@ func TestRoaSignatureComposer3(t *testing.T) {
 	signRoaRequest(request, signer, "regionId")
 	assert.Equal(t, "mock date", request.GetHeaders()["Date"])
 }
+func TestCompleteROASignParams(t *testing.T) {
+	req := requests.NewCommonRequest()
+	req.TransToAcsRequest()
+	sign := signers.NewBearerTokenSigner(credentials.NewBearerTokenCredential("Bearer.Token"))
+	completeROASignParams(req, sign, "cn-hangzhou")
+	head := req.GetHeaders()
+	assert.Equal(t, "Bearer.Token", head["x-acs-bearer-token"])
+}

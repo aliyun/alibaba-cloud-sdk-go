@@ -282,6 +282,14 @@ func (client *Client) InitWithEcsRamRole(regionId, roleName string) (err error) 
 	return client.InitWithOptions(regionId, config, credential)
 }
 
+func (client *Client) InitWithBearerToken(regionId, bearerToken string) (err error) {
+	config := client.InitClientConfig()
+	credential := &credentials.BearerTokenCredential{
+		BearerToken: bearerToken,
+	}
+	return client.InitWithOptions(regionId, config, credential)
+}
+
 func (client *Client) InitClientConfig() (config *Config) {
 	if client.config != nil {
 		return client.config
@@ -638,6 +646,12 @@ func NewClientWithEcsRamRole(regionId string, roleName string) (client *Client, 
 func NewClientWithRsaKeyPair(regionId string, publicKeyId, privateKey string, sessionExpiration int) (client *Client, err error) {
 	client = &Client{}
 	err = client.InitWithRsaKeyPair(regionId, publicKeyId, privateKey, sessionExpiration)
+	return
+}
+
+func NewClientWithBearerToken(regionId, bearerToken string) (client *Client, err error) {
+	client = &Client{}
+	err = client.InitWithBearerToken(regionId, bearerToken)
 	return
 }
 

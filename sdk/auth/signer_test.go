@@ -73,6 +73,14 @@ func TestSigner_EcsRamRoleSigner(t *testing.T) {
 	assert.True(t, ok)
 }
 
+func TestSigner_BearerTokenSigner(t *testing.T) {
+	c := credentials.NewBearerTokenCredential("Bearer.Token")
+	signer, err := NewSignerWithCredential(c, nil)
+	assert.Nil(t, err)
+	_, ok := signer.(*signers.BearerTokenSigner)
+	assert.True(t, ok)
+}
+
 type OtherCredential struct {
 }
 
