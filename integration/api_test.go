@@ -50,13 +50,13 @@ func Test_ScaleClusterWithROArequestWithXMLWithPUT(t *testing.T) {
 func Test_CreateClusterTokenWithROArequestWithXMLWithPOST(t *testing.T) {
 	client, err := cs.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
 	assert.Nil(t, err)
-	request := cs.CreateCreateClusterTokenRequest()
+	request := cs.CreateCreateClusterRequest()
 	request.SetContentType("XML")
 	request.SetScheme("HTTPS")
-	response, err := client.CreateClusterToken(request)
+	response, err := client.CreateCluster(request)
 	assert.NotNil(t, err)
 	assert.Equal(t, 400, response.GetHttpStatus())
-	assert.Contains(t, err.Error(), "Request url is invalid")
+	assert.Contains(t, err.Error(), "Request body can't be empty")
 }
 
 func Test_DeleteClusterWithROArequestWithXMLWithDelete(t *testing.T) {
