@@ -611,16 +611,6 @@ func TestClient_NewClientWithStsRoleArn(t *testing.T) {
 	assert.Equal(t, false, client.isRunning)
 }
 
-//func Test_EnableAsync(t *testing.T) {
-//	client, err := NewClientWithAccessKey("regionid", "acesskeyid", "accesskeysecret")
-//	assert.Nil(t, err)
-//	assert.NotNil(t, client)
-//	assert.Equal(t, true, client.isRunning)
-//	client.EnableAsync(2, 8)
-//	client.Shutdown()
-//	assert.Equal(t, false, client.isRunning)
-//}
-
 func TestInitWithProviderChain(t *testing.T) {
 
 	//testcase1: No any environment variable
@@ -670,4 +660,10 @@ func TestInitWithProviderChain(t *testing.T) {
 	assert.Empty(t, c)
 	assert.EqualError(t, err, "No credential found")
 
+}
+
+func TestNewClientWithBearerToken(t *testing.T) {
+	client, err := NewClientWithBearerToken("cn-hangzhou", "Bearer.Token")
+	assert.Nil(t, err)
+	assert.NotNil(t, client)
 }
