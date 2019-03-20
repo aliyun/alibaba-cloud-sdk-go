@@ -61,9 +61,9 @@ type Client struct {
 	isInsecure     bool
 	regionId       string
 	config         *Config
-	httpProxy      *string
-	httpsProxy     *string
-	noProxy        *string
+	httpProxy      string
+	httpsProxy     string
+	noProxy        string
 	userAgent      map[string]string
 	signer         auth.Signer
 	httpClient     *http.Client
@@ -90,26 +90,26 @@ func (client *Client) GetHTTPSInsecure() bool {
 }
 
 func (client *Client) SetHttpsProxy(httpsProxy string) {
-	client.httpsProxy = &httpsProxy
+	client.httpsProxy = httpsProxy
 }
 
-func (client *Client) GetHttpsProxy() *string {
+func (client *Client) GetHttpsProxy() string {
 	return client.httpsProxy
 }
 
 func (client *Client) SetHttpProxy(httpProxy string) {
-	client.httpProxy = &httpProxy
+	client.httpProxy = httpProxy
 }
 
-func (client *Client) GetHttpProxy() *string {
+func (client *Client) GetHttpProxy() string {
 	return client.httpProxy
 }
 
 func (client *Client) SetNoProxy(noProxy string) {
-	client.noProxy = &noProxy
+	client.noProxy = noProxy
 }
 
-func (client *Client) GetNoProxy() *string {
+func (client *Client) GetNoProxy() string {
 	return client.noProxy
 }
 
@@ -170,21 +170,19 @@ func (client *Client) getHttpProxy(scheme string) (*url.URL, error) {
 	var proxy *url.URL
 	var err error
 	if scheme == "https" {
-		if client.GetHttpsProxy() != nil {
-			proxy, err = url.Parse(*client.httpsProxy)
+		if client.GetHttpsProxy() != "" {
+			proxy, err = url.Parse(client.httpsProxy)
 		} else if rawurl := os.Getenv("HTTPS_PROXY"); rawurl != "" {
 			proxy, err = url.Parse(rawurl)
 		} else if rawurl := os.Getenv("https_proxy"); rawurl != "" {
 			proxy, err = url.Parse(rawurl)
 		}
 	} else {
-		if client.GetHttpProxy() != nil {
-			proxy, err = url.Parse(*client.httpProxy)
-		}
-		if rawurl := os.Getenv("HTTP_PROXY"); rawurl != "" && proxy == nil {
+		if client.GetHttpProxy() != "" {
+			proxy, err = url.Parse(client.httpProxy)
+		} else if rawurl := os.Getenv("HTTP_PROXY"); rawurl != "" {
 			proxy, err = url.Parse(rawurl)
-		}
-		if rawurl := os.Getenv("http_proxy"); rawurl != "" && proxy == nil {
+		} else if rawurl := os.Getenv("http_proxy"); rawurl != "" {
 			proxy, err = url.Parse(rawurl)
 		}
 	}
@@ -194,8 +192,8 @@ func (client *Client) getHttpProxy(scheme string) (*url.URL, error) {
 
 func (client *Client) getNoProxy(scheme string) []string {
 	var urls []string
-	if client.GetNoProxy() != nil {
-		urls = strings.Split(*client.noProxy, ",")
+	if client.GetNoProxy() != "" {
+		urls = strings.Split(client.noProxy, ",")
 	} else if rawurl := os.Getenv("NO_PROXY"); rawurl != "" {
 		urls = strings.Split(rawurl, ",")
 	} else if rawurl := os.Getenv("no_proxy"); rawurl != "" {
