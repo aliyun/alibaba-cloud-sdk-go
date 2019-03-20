@@ -94,7 +94,7 @@ func CreateGetResolveStatisticsRequest() (request *GetResolveStatisticsRequest) 
 	request = &GetResolveStatisticsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Httpdns", "2016-02-01", "GetResolveStatistics", "", "")
+	request.InitWithApiInfo("Httpdns", "2016-02-01", "GetResolveStatistics", "httpdns", "openAPI")
 	return
 }
 

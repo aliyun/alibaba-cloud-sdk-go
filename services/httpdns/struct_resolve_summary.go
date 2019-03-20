@@ -17,6 +17,8 @@ package httpdns
 
 // ResolveSummary is a nested struct in httpdns response
 type ResolveSummary struct {
-	Http  int `json:"Http" xml:"Http"`
-	Https int `json:"Https" xml:"Https"`
+	Http   int `json:"Http" xml:"Http"`
+	Https  int `json:"Https" xml:"Https"`
+	Http6  int `json:"Http6" xml:"Http6"`
+	Https6 int `json:"Https6" xml:"Https6"`
 }

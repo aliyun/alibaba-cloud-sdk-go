@@ -92,7 +92,7 @@ func CreateGetResolveCountSummaryRequest() (request *GetResolveCountSummaryReque
 	request = &GetResolveCountSummaryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Httpdns", "2016-02-01", "GetResolveCountSummary", "", "")
+	request.InitWithApiInfo("Httpdns", "2016-02-01", "GetResolveCountSummary", "httpdns", "openAPI")
 	return
 }
 

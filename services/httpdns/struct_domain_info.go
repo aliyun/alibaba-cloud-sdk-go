@@ -17,7 +17,9 @@ package httpdns
 
 // DomainInfo is a nested struct in httpdns response
 type DomainInfo struct {
-	DomainName    string `json:"DomainName" xml:"DomainName"`
-	Resolved      int    `json:"Resolved" xml:"Resolved"`
-	ResolvedHttps int    `json:"ResolvedHttps" xml:"ResolvedHttps"`
+	DomainName     string `json:"DomainName" xml:"DomainName"`
+	Resolved       int    `json:"Resolved" xml:"Resolved"`
+	ResolvedHttps  int    `json:"ResolvedHttps" xml:"ResolvedHttps"`
+	Resolved6      int    `json:"Resolved6" xml:"Resolved6"`
+	ResolvedHttps6 int    `json:"ResolvedHttps6" xml:"ResolvedHttps6"`
 }

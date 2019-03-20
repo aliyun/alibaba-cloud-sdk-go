@@ -90,7 +90,7 @@ func CreateGetAccountInfoRequest() (request *GetAccountInfoRequest) {
 	request = &GetAccountInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Httpdns", "2016-02-01", "GetAccountInfo", "", "")
+	request.InitWithApiInfo("Httpdns", "2016-02-01", "GetAccountInfo", "httpdns", "openAPI")
 	return
 }
 

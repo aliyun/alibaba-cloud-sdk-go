@@ -96,7 +96,7 @@ func CreateDescribeDomainsRequest() (request *DescribeDomainsRequest) {
 	request = &DescribeDomainsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Httpdns", "2016-02-01", "DescribeDomains", "", "")
+	request.InitWithApiInfo("Httpdns", "2016-02-01", "DescribeDomains", "httpdns", "openAPI")
 	return
 }
 

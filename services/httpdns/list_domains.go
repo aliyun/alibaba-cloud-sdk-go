@@ -95,7 +95,7 @@ func CreateListDomainsRequest() (request *ListDomainsRequest) {
 	request = &ListDomainsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Httpdns", "2016-02-01", "ListDomains", "", "")
+	request.InitWithApiInfo("Httpdns", "2016-02-01", "ListDomains", "httpdns", "openAPI")
 	return
 }
 
