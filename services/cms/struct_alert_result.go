@@ -17,10 +17,12 @@ package cms
 
 // AlertResult is a nested struct in cms response
 type AlertResult struct {
-	Name            string `json:"Name" xml:"Name"`
-	DisplayName     string `json:"DisplayName" xml:"DisplayName"`
 	MetricNamespace string `json:"MetricNamespace" xml:"MetricNamespace"`
-	MetricName      string `json:"MetricName" xml:"MetricName"`
 	Message         string `json:"Message" xml:"Message"`
-	Success         string `json:"Success" xml:"Success"`
+	Success         bool   `json:"Success" xml:"Success"`
+	GroupId         int    `json:"GroupId" xml:"GroupId"`
+	MetricName      string `json:"MetricName" xml:"MetricName"`
+	Code            int    `json:"Code" xml:"Code"`
+	DisplayName     string `json:"DisplayName" xml:"DisplayName"`
+	AlertName       string `json:"AlertName" xml:"AlertName"`
 }

@@ -86,11 +86,11 @@ type GetNotifyPolicyRequest struct {
 // GetNotifyPolicyResponse is the response struct for api GetNotifyPolicy
 type GetNotifyPolicyResponse struct {
 	*responses.BaseResponse
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	Success   string `json:"Success" xml:"Success"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Result    Result `json:"Result" xml:"Result"`
+	Code      string                  `json:"Code" xml:"Code"`
+	Message   string                  `json:"Message" xml:"Message"`
+	Success   string                  `json:"Success" xml:"Success"`
+	RequestId string                  `json:"RequestId" xml:"RequestId"`
+	Result    ResultInGetNotifyPolicy `json:"Result" xml:"Result"`
 }
 
 // CreateGetNotifyPolicyRequest creates a request to invoke GetNotifyPolicy API

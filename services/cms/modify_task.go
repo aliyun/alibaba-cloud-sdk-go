@@ -76,6 +76,7 @@ func (client *Client) ModifyTaskWithCallback(request *ModifyTaskRequest, callbac
 // ModifyTaskRequest is the request struct for api ModifyTask
 type ModifyTaskRequest struct {
 	*requests.RpcRequest
+	Caller    string `position:"Query" name:"caller"`
 	Address   string `position:"Query" name:"Address"`
 	IspCity   string `position:"Query" name:"IspCity"`
 	AlertIds  string `position:"Query" name:"AlertIds"`

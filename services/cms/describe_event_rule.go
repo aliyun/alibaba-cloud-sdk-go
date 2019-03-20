@@ -82,11 +82,11 @@ type DescribeEventRuleRequest struct {
 // DescribeEventRuleResponse is the response struct for api DescribeEventRule
 type DescribeEventRuleResponse struct {
 	*responses.BaseResponse
-	Success   bool   `json:"Success" xml:"Success"`
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Result    Result `json:"Result" xml:"Result"`
+	Success   bool                      `json:"Success" xml:"Success"`
+	Code      string                    `json:"Code" xml:"Code"`
+	Message   string                    `json:"Message" xml:"Message"`
+	RequestId string                    `json:"RequestId" xml:"RequestId"`
+	Result    ResultInDescribeEventRule `json:"Result" xml:"Result"`
 }
 
 // CreateDescribeEventRuleRequest creates a request to invoke DescribeEventRule API

@@ -79,6 +79,7 @@ type DeleteMyGroupInstancesRequest struct {
 	InstanceIds    string           `position:"Query" name:"InstanceIds"`
 	InstanceIdList string           `position:"Query" name:"InstanceIdList"`
 	GroupId        requests.Integer `position:"Query" name:"GroupId"`
+	Category       string           `position:"Query" name:"Category"`
 }
 
 // DeleteMyGroupInstancesResponse is the response struct for api DeleteMyGroupInstances

@@ -97,6 +97,7 @@ type QueryMetricListResponse struct {
 	Cursor     string `json:"Cursor" xml:"Cursor"`
 	Datapoints string `json:"Datapoints" xml:"Datapoints"`
 	Period     string `json:"Period" xml:"Period"`
+	Success    string `json:"Success" xml:"Success"`
 }
 
 // CreateQueryMetricListRequest creates a request to invoke QueryMetricList API

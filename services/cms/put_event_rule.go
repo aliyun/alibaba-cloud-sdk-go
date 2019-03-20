@@ -86,10 +86,11 @@ type PutEventRuleRequest struct {
 
 // PutEventRuleEventPattern is a repeated param struct in PutEventRuleRequest
 type PutEventRuleEventPattern struct {
-	Product    string    `name:"Product"`
-	NameList   *[]string `name:"NameList" type:"Repeated"`
-	StatusList *[]string `name:"StatusList" type:"Repeated"`
-	LevelList  *[]string `name:"LevelList" type:"Repeated"`
+	LevelList     *[]string `name:"LevelList" type:"Repeated"`
+	Product       string    `name:"Product"`
+	StatusList    *[]string `name:"StatusList" type:"Repeated"`
+	NameList      *[]string `name:"NameList" type:"Repeated"`
+	EventTypeList *[]string `name:"EventTypeList" type:"Repeated"`
 }
 
 // PutEventRuleResponse is the response struct for api PutEventRule

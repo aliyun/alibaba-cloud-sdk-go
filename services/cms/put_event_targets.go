@@ -78,6 +78,7 @@ type PutEventTargetsRequest struct {
 	*requests.RpcRequest
 	WebhookParameters *[]PutEventTargetsWebhookParameters `position:"Query" name:"WebhookParameters"  type:"Repeated"`
 	ContactParameters *[]PutEventTargetsContactParameters `position:"Query" name:"ContactParameters"  type:"Repeated"`
+	SlsParameters     *[]PutEventTargetsSlsParameters     `position:"Query" name:"SlsParameters"  type:"Repeated"`
 	FcParameters      *[]PutEventTargetsFcParameters      `position:"Query" name:"FcParameters"  type:"Repeated"`
 	RuleName          string                              `position:"Query" name:"RuleName"`
 	MnsParameters     *[]PutEventTargetsMnsParameters     `position:"Query" name:"MnsParameters"  type:"Repeated"`
@@ -85,25 +86,33 @@ type PutEventTargetsRequest struct {
 
 // PutEventTargetsWebhookParameters is a repeated param struct in PutEventTargetsRequest
 type PutEventTargetsWebhookParameters struct {
-	Id       string `name:"Id"`
 	Protocol string `name:"Protocol"`
-	Url      string `name:"Url"`
 	Method   string `name:"Method"`
+	Id       string `name:"Id"`
+	Url      string `name:"Url"`
 }
 
 // PutEventTargetsContactParameters is a repeated param struct in PutEventTargetsRequest
 type PutEventTargetsContactParameters struct {
+	Level            string `name:"Level"`
 	Id               string `name:"Id"`
 	ContactGroupName string `name:"ContactGroupName"`
-	Level            string `name:"Level"`
+}
+
+// PutEventTargetsSlsParameters is a repeated param struct in PutEventTargetsRequest
+type PutEventTargetsSlsParameters struct {
+	Project  string `name:"Project"`
+	Id       string `name:"Id"`
+	Region   string `name:"Region"`
+	LogStore string `name:"LogStore"`
 }
 
 // PutEventTargetsFcParameters is a repeated param struct in PutEventTargetsRequest
 type PutEventTargetsFcParameters struct {
+	FunctionName string `name:"FunctionName"`
+	ServiceName  string `name:"ServiceName"`
 	Id           string `name:"Id"`
 	Region       string `name:"Region"`
-	ServiceName  string `name:"ServiceName"`
-	FunctionName string `name:"FunctionName"`
 }
 
 // PutEventTargetsMnsParameters is a repeated param struct in PutEventTargetsRequest
@@ -128,6 +137,7 @@ type PutEventTargetsResponse struct {
 	FailedContactParameters FailedContactParameters            `json:"FailedContactParameters" xml:"FailedContactParameters"`
 	FailedMnsParameters     FailedMnsParameters                `json:"FailedMnsParameters" xml:"FailedMnsParameters"`
 	FailedFcParameters      FailedFcParameters                 `json:"FailedFcParameters" xml:"FailedFcParameters"`
+	FailedSlsParameters     FailedSlsParameters                `json:"FailedSlsParameters" xml:"FailedSlsParameters"`
 }
 
 // CreatePutEventTargetsRequest creates a request to invoke PutEventTargets API

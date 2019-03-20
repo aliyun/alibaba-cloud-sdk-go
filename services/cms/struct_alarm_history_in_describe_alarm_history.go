@@ -30,7 +30,7 @@ type AlarmHistoryInDescribeAlarmHistory struct {
 	LastTime        int                                 `json:"LastTime" xml:"LastTime"`
 	Level           string                              `json:"Level" xml:"Level"`
 	PreLevel        string                              `json:"PreLevel" xml:"PreLevel"`
-	RuleName        string                              `json:"ruleName" xml:"ruleName"`
+	RuleName        string                              `json:"RuleName" xml:"RuleName"`
 	State           string                              `json:"State" xml:"State"`
 	Status          int                                 `json:"Status" xml:"Status"`
 	UserId          string                              `json:"UserId" xml:"UserId"`

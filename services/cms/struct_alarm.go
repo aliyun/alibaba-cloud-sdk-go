@@ -17,28 +17,29 @@ package cms
 
 // Alarm is a nested struct in cms response
 type Alarm struct {
-	Name                string `json:"Name" xml:"Name"`
-	Resources           string `json:"Resources" xml:"Resources"`
-	RuleName            string `json:"RuleName" xml:"RuleName"`
-	Level               string `json:"Level" xml:"Level"`
-	EffectiveInterval   string `json:"EffectiveInterval" xml:"EffectiveInterval"`
-	ContactGroups       string `json:"ContactGroups" xml:"ContactGroups"`
-	GroupName           string `json:"GroupName" xml:"GroupName"`
-	Dimensions          string `json:"Dimensions" xml:"Dimensions"`
-	SilenceTime         string `json:"SilenceTime" xml:"SilenceTime"`
-	DisplayName         string `json:"DisplayName" xml:"DisplayName"`
-	Threshold           string `json:"Threshold" xml:"Threshold"`
-	Period              string `json:"Period" xml:"Period"`
-	Uuid                string `json:"Uuid" xml:"Uuid"`
-	Subject             string `json:"Subject" xml:"Subject"`
-	ComparisonOperator  string `json:"ComparisonOperator" xml:"ComparisonOperator"`
-	State               string `json:"State" xml:"State"`
-	Namespace           string `json:"Namespace" xml:"Namespace"`
-	Enable              bool   `json:"Enable" xml:"Enable"`
-	MetricName          string `json:"MetricName" xml:"MetricName"`
-	GroupId             string `json:"GroupId" xml:"GroupId"`
-	Statistics          string `json:"Statistics" xml:"Statistics"`
-	EvaluationCount     string `json:"EvaluationCount" xml:"EvaluationCount"`
-	Webhook             string `json:"Webhook" xml:"Webhook"`
-	NoEffectiveInterval string `json:"NoEffectiveInterval" xml:"NoEffectiveInterval"`
+	Name                string      `json:"Name" xml:"Name"`
+	Resources           string      `json:"Resources" xml:"Resources"`
+	RuleName            string      `json:"RuleName" xml:"RuleName"`
+	EffectiveInterval   string      `json:"EffectiveInterval" xml:"EffectiveInterval"`
+	ContactGroups       string      `json:"ContactGroups" xml:"ContactGroups"`
+	GroupName           string      `json:"GroupName" xml:"GroupName"`
+	Dimensions          string      `json:"Dimensions" xml:"Dimensions"`
+	Uuid                string      `json:"Uuid" xml:"Uuid"`
+	Subject             string      `json:"Subject" xml:"Subject"`
+	ComparisonOperator  string      `json:"ComparisonOperator" xml:"ComparisonOperator"`
+	GroupId             string      `json:"GroupId" xml:"GroupId"`
+	EvaluationCount     string      `json:"EvaluationCount" xml:"EvaluationCount"`
+	Level               string      `json:"Level" xml:"Level"`
+	SilenceTime         string      `json:"SilenceTime" xml:"SilenceTime"`
+	DisplayName         string      `json:"DisplayName" xml:"DisplayName"`
+	Threshold           string      `json:"Threshold" xml:"Threshold"`
+	Period              string      `json:"Period" xml:"Period"`
+	State               string      `json:"State" xml:"State"`
+	Namespace           string      `json:"Namespace" xml:"Namespace"`
+	Enable              bool        `json:"Enable" xml:"Enable"`
+	MetricName          string      `json:"MetricName" xml:"MetricName"`
+	Statistics          string      `json:"Statistics" xml:"Statistics"`
+	Webhook             string      `json:"Webhook" xml:"Webhook"`
+	NoEffectiveInterval string      `json:"NoEffectiveInterval" xml:"NoEffectiveInterval"`
+	Escalations         Escalations `json:"Escalations" xml:"Escalations"`
 }

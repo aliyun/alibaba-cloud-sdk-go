@@ -89,6 +89,8 @@ type ListEventTargetsByRuleResponse struct {
 	ContactParameters ContactParametersInListEventTargetsByRule `json:"ContactParameters" xml:"ContactParameters"`
 	FcParameters      FcParametersInListEventTargetsByRule      `json:"FcParameters" xml:"FcParameters"`
 	MnsParameters     MnsParametersInListEventTargetsByRule     `json:"MnsParameters" xml:"MnsParameters"`
+	WebhookParameters WebhookParameters                         `json:"WebhookParameters" xml:"WebhookParameters"`
+	SlsParameters     SlsParameters                             `json:"SlsParameters" xml:"SlsParameters"`
 }
 
 // CreateListEventTargetsByRuleRequest creates a request to invoke ListEventTargetsByRule API

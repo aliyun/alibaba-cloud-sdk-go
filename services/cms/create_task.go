@@ -76,6 +76,7 @@ func (client *Client) CreateTaskWithCallback(request *CreateTaskRequest, callbac
 // CreateTaskRequest is the request struct for api CreateTask
 type CreateTaskRequest struct {
 	*requests.RpcRequest
+	Caller    string `position:"Query" name:"caller"`
 	Address   string `position:"Query" name:"Address"`
 	TaskType  string `position:"Query" name:"TaskType"`
 	IspCity   string `position:"Query" name:"IspCity"`

@@ -79,12 +79,12 @@ type QueryMetricLastRequest struct {
 	Cursor          string           `position:"Query" name:"Cursor"`
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	Period          string           `position:"Query" name:"Period"`
-	Metric          string           `position:"Query" name:"Metric"`
 	Length          string           `position:"Query" name:"Length"`
 	Project         string           `position:"Query" name:"Project"`
 	EndTime         string           `position:"Query" name:"EndTime"`
 	Express         string           `position:"Query" name:"Express"`
 	StartTime       string           `position:"Query" name:"StartTime"`
+	Metric          string           `position:"Query" name:"Metric"`
 	Page            string           `position:"Query" name:"Page"`
 	Dimensions      string           `position:"Query" name:"Dimensions"`
 }
@@ -98,6 +98,7 @@ type QueryMetricLastResponse struct {
 	Cursor     string `json:"Cursor" xml:"Cursor"`
 	Datapoints string `json:"Datapoints" xml:"Datapoints"`
 	Period     string `json:"Period" xml:"Period"`
+	Success    string `json:"Success" xml:"Success"`
 }
 
 // CreateQueryMetricLastRequest creates a request to invoke QueryMetricLast API
