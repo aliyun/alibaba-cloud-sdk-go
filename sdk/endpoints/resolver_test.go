@@ -13,7 +13,7 @@ func TestResolver_ResolveParam_String(t *testing.T) {
 
 func TestResolve(t *testing.T) {
 	param := &ResolveParam{
-		Product: "Ecs",
+		Product:  "Ecs",
 		RegionId: "cn-hangzhou",
 	}
 	AddEndpointMapping("cn-hangzhou", "Ecs", "unreachable.aliyuncs.com")
@@ -25,7 +25,7 @@ func TestResolve(t *testing.T) {
 
 func TestResolve_WithInvalidProduct(t *testing.T) {
 	param := &ResolveParam{
-		Product: "Invalid",
+		Product:  "Invalid",
 		RegionId: "cn-hangzhou",
 	}
 	endpoint, err := Resolve(param)

@@ -14,7 +14,7 @@ func TestLocalRegionalResolver_GetName(t *testing.T) {
 func TestLocalRegionalResolver_TryResolve(t *testing.T) {
 	resolver := &LocalRegionalResolver{}
 	resolveParam := &ResolveParam{
-		Product:  "ecs",
+		Product:  "push",
 		RegionId: "cn-beijing",
 	}
 	endpoint, support, err := resolver.TryResolve(resolveParam)
