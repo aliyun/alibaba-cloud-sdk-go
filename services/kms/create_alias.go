@@ -76,8 +76,8 @@ func (client *Client) CreateAliasWithCallback(request *CreateAliasRequest, callb
 // CreateAliasRequest is the request struct for api CreateAlias
 type CreateAliasRequest struct {
 	*requests.RpcRequest
-	KeyId     string `position:"Query" name:"KeyId"`
 	AliasName string `position:"Query" name:"AliasName"`
+	KeyId     string `position:"Query" name:"KeyId"`
 	STSToken  string `position:"Query" name:"STSToken"`
 }
 

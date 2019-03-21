@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DisableKey invokes the kms.DisableKey API synchronously
-// api document: https://help.aliyun.com/api/kms/disablekey.html
-func (client *Client) DisableKey(request *DisableKeyRequest) (response *DisableKeyResponse, err error) {
-	response = CreateDisableKeyResponse()
+// UntagResource invokes the kms.UntagResource API synchronously
+// api document: https://help.aliyun.com/api/kms/untagresource.html
+func (client *Client) UntagResource(request *UntagResourceRequest) (response *UntagResourceResponse, err error) {
+	response = CreateUntagResourceResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DisableKeyWithChan invokes the kms.DisableKey API asynchronously
-// api document: https://help.aliyun.com/api/kms/disablekey.html
+// UntagResourceWithChan invokes the kms.UntagResource API asynchronously
+// api document: https://help.aliyun.com/api/kms/untagresource.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DisableKeyWithChan(request *DisableKeyRequest) (<-chan *DisableKeyResponse, <-chan error) {
-	responseChan := make(chan *DisableKeyResponse, 1)
+func (client *Client) UntagResourceWithChan(request *UntagResourceRequest) (<-chan *UntagResourceResponse, <-chan error) {
+	responseChan := make(chan *UntagResourceResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DisableKey(request)
+		response, err := client.UntagResource(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) DisableKeyWithChan(request *DisableKeyRequest) (<-chan *Di
 	return responseChan, errChan
 }
 
-// DisableKeyWithCallback invokes the kms.DisableKey API asynchronously
-// api document: https://help.aliyun.com/api/kms/disablekey.html
+// UntagResourceWithCallback invokes the kms.UntagResource API asynchronously
+// api document: https://help.aliyun.com/api/kms/untagresource.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DisableKeyWithCallback(request *DisableKeyRequest, callback func(response *DisableKeyResponse, err error)) <-chan int {
+func (client *Client) UntagResourceWithCallback(request *UntagResourceRequest, callback func(response *UntagResourceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DisableKeyResponse
+		var response *UntagResourceResponse
 		var err error
 		defer close(result)
-		response, err = client.DisableKey(request)
+		response, err = client.UntagResource(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,31 +73,32 @@ func (client *Client) DisableKeyWithCallback(request *DisableKeyRequest, callbac
 	return result
 }
 
-// DisableKeyRequest is the request struct for api DisableKey
-type DisableKeyRequest struct {
+// UntagResourceRequest is the request struct for api UntagResource
+type UntagResourceRequest struct {
 	*requests.RpcRequest
+	TagKeys  string `position:"Query" name:"TagKeys"`
 	KeyId    string `position:"Query" name:"KeyId"`
 	STSToken string `position:"Query" name:"STSToken"`
 }
 
-// DisableKeyResponse is the response struct for api DisableKey
-type DisableKeyResponse struct {
+// UntagResourceResponse is the response struct for api UntagResource
+type UntagResourceResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	KeyId string `json:"KeyId" xml:"KeyId"`
 }
 
-// CreateDisableKeyRequest creates a request to invoke DisableKey API
-func CreateDisableKeyRequest() (request *DisableKeyRequest) {
-	request = &DisableKeyRequest{
+// CreateUntagResourceRequest creates a request to invoke UntagResource API
+func CreateUntagResourceRequest() (request *UntagResourceRequest) {
+	request = &UntagResourceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Kms", "2016-01-20", "DisableKey", "kms", "openAPI")
+	request.InitWithApiInfo("Kms", "2016-01-20", "UntagResource", "kms", "openAPI")
 	return
 }
 
-// CreateDisableKeyResponse creates a response to parse from DisableKey response
-func CreateDisableKeyResponse() (response *DisableKeyResponse) {
-	response = &DisableKeyResponse{
+// CreateUntagResourceResponse creates a response to parse from UntagResource response
+func CreateUntagResourceResponse() (response *UntagResourceResponse) {
+	response = &UntagResourceResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

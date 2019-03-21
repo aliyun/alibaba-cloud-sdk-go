@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// UpdateAlias invokes the kms.UpdateAlias API synchronously
-// api document: https://help.aliyun.com/api/kms/updatealias.html
-func (client *Client) UpdateAlias(request *UpdateAliasRequest) (response *UpdateAliasResponse, err error) {
-	response = CreateUpdateAliasResponse()
+// TagResource invokes the kms.TagResource API synchronously
+// api document: https://help.aliyun.com/api/kms/tagresource.html
+func (client *Client) TagResource(request *TagResourceRequest) (response *TagResourceResponse, err error) {
+	response = CreateTagResourceResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// UpdateAliasWithChan invokes the kms.UpdateAlias API asynchronously
-// api document: https://help.aliyun.com/api/kms/updatealias.html
+// TagResourceWithChan invokes the kms.TagResource API asynchronously
+// api document: https://help.aliyun.com/api/kms/tagresource.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) UpdateAliasWithChan(request *UpdateAliasRequest) (<-chan *UpdateAliasResponse, <-chan error) {
-	responseChan := make(chan *UpdateAliasResponse, 1)
+func (client *Client) TagResourceWithChan(request *TagResourceRequest) (<-chan *TagResourceResponse, <-chan error) {
+	responseChan := make(chan *TagResourceResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.UpdateAlias(request)
+		response, err := client.TagResource(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) UpdateAliasWithChan(request *UpdateAliasRequest) (<-chan *
 	return responseChan, errChan
 }
 
-// UpdateAliasWithCallback invokes the kms.UpdateAlias API asynchronously
-// api document: https://help.aliyun.com/api/kms/updatealias.html
+// TagResourceWithCallback invokes the kms.TagResource API asynchronously
+// api document: https://help.aliyun.com/api/kms/tagresource.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) UpdateAliasWithCallback(request *UpdateAliasRequest, callback func(response *UpdateAliasResponse, err error)) <-chan int {
+func (client *Client) TagResourceWithCallback(request *TagResourceRequest, callback func(response *TagResourceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *UpdateAliasResponse
+		var response *TagResourceResponse
 		var err error
 		defer close(result)
-		response, err = client.UpdateAlias(request)
+		response, err = client.TagResource(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,32 +73,32 @@ func (client *Client) UpdateAliasWithCallback(request *UpdateAliasRequest, callb
 	return result
 }
 
-// UpdateAliasRequest is the request struct for api UpdateAlias
-type UpdateAliasRequest struct {
+// TagResourceRequest is the request struct for api TagResource
+type TagResourceRequest struct {
 	*requests.RpcRequest
-	AliasName string `position:"Query" name:"AliasName"`
-	KeyId     string `position:"Query" name:"KeyId"`
-	STSToken  string `position:"Query" name:"STSToken"`
+	KeyId    string `position:"Query" name:"KeyId"`
+	STSToken string `position:"Query" name:"STSToken"`
+	Tags     string `position:"Query" name:"Tags"`
 }
 
-// UpdateAliasResponse is the response struct for api UpdateAlias
-type UpdateAliasResponse struct {
+// TagResourceResponse is the response struct for api TagResource
+type TagResourceResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateUpdateAliasRequest creates a request to invoke UpdateAlias API
-func CreateUpdateAliasRequest() (request *UpdateAliasRequest) {
-	request = &UpdateAliasRequest{
+// CreateTagResourceRequest creates a request to invoke TagResource API
+func CreateTagResourceRequest() (request *TagResourceRequest) {
+	request = &TagResourceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Kms", "2016-01-20", "UpdateAlias", "kms", "openAPI")
+	request.InitWithApiInfo("Kms", "2016-01-20", "TagResource", "kms", "openAPI")
 	return
 }
 
-// CreateUpdateAliasResponse creates a response to parse from UpdateAlias response
-func CreateUpdateAliasResponse() (response *UpdateAliasResponse) {
-	response = &UpdateAliasResponse{
+// CreateTagResourceResponse creates a response to parse from TagResource response
+func CreateTagResourceResponse() (response *TagResourceResponse) {
+	response = &TagResourceResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

@@ -76,11 +76,11 @@ func (client *Client) ImportKeyMaterialWithCallback(request *ImportKeyMaterialRe
 // ImportKeyMaterialRequest is the request struct for api ImportKeyMaterial
 type ImportKeyMaterialRequest struct {
 	*requests.RpcRequest
+	ImportToken           string           `position:"Query" name:"ImportToken"`
+	EncryptedKeyMaterial  string           `position:"Query" name:"EncryptedKeyMaterial"`
+	KeyMaterialExpireUnix requests.Integer `position:"Query" name:"KeyMaterialExpireUnix"`
 	KeyId                 string           `position:"Query" name:"KeyId"`
 	STSToken              string           `position:"Query" name:"STSToken"`
-	EncryptedKeyMaterial  string           `position:"Query" name:"EncryptedKeyMaterial"`
-	ImportToken           string           `position:"Query" name:"ImportToken"`
-	KeyMaterialExpireUnix requests.Integer `position:"Query" name:"KeyMaterialExpireUnix"`
 }
 
 // ImportKeyMaterialResponse is the response struct for api ImportKeyMaterial

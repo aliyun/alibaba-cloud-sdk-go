@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DeleteKeyMaterial invokes the kms.DeleteKeyMaterial API synchronously
-// api document: https://help.aliyun.com/api/kms/deletekeymaterial.html
-func (client *Client) DeleteKeyMaterial(request *DeleteKeyMaterialRequest) (response *DeleteKeyMaterialResponse, err error) {
-	response = CreateDeleteKeyMaterialResponse()
+// ListResourceTags invokes the kms.ListResourceTags API synchronously
+// api document: https://help.aliyun.com/api/kms/listresourcetags.html
+func (client *Client) ListResourceTags(request *ListResourceTagsRequest) (response *ListResourceTagsResponse, err error) {
+	response = CreateListResourceTagsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DeleteKeyMaterialWithChan invokes the kms.DeleteKeyMaterial API asynchronously
-// api document: https://help.aliyun.com/api/kms/deletekeymaterial.html
+// ListResourceTagsWithChan invokes the kms.ListResourceTags API asynchronously
+// api document: https://help.aliyun.com/api/kms/listresourcetags.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DeleteKeyMaterialWithChan(request *DeleteKeyMaterialRequest) (<-chan *DeleteKeyMaterialResponse, <-chan error) {
-	responseChan := make(chan *DeleteKeyMaterialResponse, 1)
+func (client *Client) ListResourceTagsWithChan(request *ListResourceTagsRequest) (<-chan *ListResourceTagsResponse, <-chan error) {
+	responseChan := make(chan *ListResourceTagsResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DeleteKeyMaterial(request)
+		response, err := client.ListResourceTags(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) DeleteKeyMaterialWithChan(request *DeleteKeyMaterialReques
 	return responseChan, errChan
 }
 
-// DeleteKeyMaterialWithCallback invokes the kms.DeleteKeyMaterial API asynchronously
-// api document: https://help.aliyun.com/api/kms/deletekeymaterial.html
+// ListResourceTagsWithCallback invokes the kms.ListResourceTags API asynchronously
+// api document: https://help.aliyun.com/api/kms/listresourcetags.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DeleteKeyMaterialWithCallback(request *DeleteKeyMaterialRequest, callback func(response *DeleteKeyMaterialResponse, err error)) <-chan int {
+func (client *Client) ListResourceTagsWithCallback(request *ListResourceTagsRequest, callback func(response *ListResourceTagsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DeleteKeyMaterialResponse
+		var response *ListResourceTagsResponse
 		var err error
 		defer close(result)
-		response, err = client.DeleteKeyMaterial(request)
+		response, err = client.ListResourceTags(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,31 +73,32 @@ func (client *Client) DeleteKeyMaterialWithCallback(request *DeleteKeyMaterialRe
 	return result
 }
 
-// DeleteKeyMaterialRequest is the request struct for api DeleteKeyMaterial
-type DeleteKeyMaterialRequest struct {
+// ListResourceTagsRequest is the request struct for api ListResourceTags
+type ListResourceTagsRequest struct {
 	*requests.RpcRequest
 	KeyId    string `position:"Query" name:"KeyId"`
 	STSToken string `position:"Query" name:"STSToken"`
 }
 
-// DeleteKeyMaterialResponse is the response struct for api DeleteKeyMaterial
-type DeleteKeyMaterialResponse struct {
+// ListResourceTagsResponse is the response struct for api ListResourceTags
+type ListResourceTagsResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Tags      Tags   `json:"Tags" xml:"Tags"`
 }
 
-// CreateDeleteKeyMaterialRequest creates a request to invoke DeleteKeyMaterial API
-func CreateDeleteKeyMaterialRequest() (request *DeleteKeyMaterialRequest) {
-	request = &DeleteKeyMaterialRequest{
+// CreateListResourceTagsRequest creates a request to invoke ListResourceTags API
+func CreateListResourceTagsRequest() (request *ListResourceTagsRequest) {
+	request = &ListResourceTagsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Kms", "2016-01-20", "DeleteKeyMaterial", "kms", "openAPI")
+	request.InitWithApiInfo("Kms", "2016-01-20", "ListResourceTags", "kms", "openAPI")
 	return
 }
 
-// CreateDeleteKeyMaterialResponse creates a response to parse from DeleteKeyMaterial response
-func CreateDeleteKeyMaterialResponse() (response *DeleteKeyMaterialResponse) {
-	response = &DeleteKeyMaterialResponse{
+// CreateListResourceTagsResponse creates a response to parse from ListResourceTags response
+func CreateListResourceTagsResponse() (response *ListResourceTagsResponse) {
+	response = &ListResourceTagsResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return
