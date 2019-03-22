@@ -24,8 +24,8 @@ var role_doc = `{
 
 var (
 	travisValue = strings.Split(os.Getenv("TRAVIS_JOB_NUMBER"), ".")
-	username    = "testuser" + travisValue[len(travisValue)-1]
-	rolename    = "testrole" + travisValue[len(travisValue)-1]
+	username    = "test-go-user" + travisValue[len(travisValue)-1]
+	rolename    = "test-go-role" + travisValue[len(travisValue)-1]
 	rolearn     = fmt.Sprintf("acs:ram::%s:role/%s", os.Getenv("USER_ID"), rolename)
 )
 
