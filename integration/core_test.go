@@ -1,6 +1,8 @@
 package integration
 
 import (
+	"fmt"
+	"github.com/goji/httpauth"
 	"net/http"
 	"net/http/httptest"
 	"net/http/httputil"
@@ -263,7 +265,8 @@ func handlerFake(w http.ResponseWriter, r *http.Request) {
 }
 
 func handlerFakeServer() (server *httptest.Server) {
-	server = httptest.NewServer(http.HandlerFunc(handlerFake))
+	handleFunc := httpauth.SimpleBasicAuth("someuser", "somepassword")(http.HandlerFunc(handlerFake))
+	server = httptest.NewServer(handleFunc)
 
 	return server
 }
@@ -295,7 +298,8 @@ func Test_HTTPProxy(t *testing.T) {
 	assert.Equal(t, "test", resp.GetHttpContentString())
 
 	originEnv := os.Getenv("HTTP_PROXY")
-	os.Setenv("HTTP_PROXY", ts.URL)
+	domain = strings.Replace(ts.URL, "http://", "", 1)
+	os.Setenv("HTTP_PROXY", fmt.Sprintf("http://someuser:somepassword@%s", domain))
 	resp, err = client.ProcessCommonRequest(request)
 	assert.Nil(t, err)
 	assert.Equal(t, 200, resp.GetHttpStatus())

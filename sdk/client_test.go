@@ -210,13 +210,14 @@ func Test_DoActionWithProxy(t *testing.T) {
 	assert.Equal(t, url.Host, "127.0.0.1:9000")
 
 	// Test when setting https proxy, client has a high priority than environment variable
-	client.SetHttpsProxy("https://127.0.0.1:6666")
+	client.SetHttpsProxy("https://username:password@127.0.0.1:6666")
 	err = client.DoAction(request, response)
 	assert.Nil(t, err)
 	trans, _ = client.httpClient.Transport.(*http.Transport)
 	url, _ = trans.Proxy(nil)
 	assert.Equal(t, url.Scheme, "https")
 	assert.Equal(t, url.Host, "127.0.0.1:6666")
+	assert.Equal(t, url.User.Username(), "username")
 
 	client.Shutdown()
 	os.Setenv("https_proxy", envHttpsProxy)
