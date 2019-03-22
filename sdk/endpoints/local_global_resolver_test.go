@@ -18,8 +18,8 @@ func TestLocalGlobalResolver_TryResolve(t *testing.T) {
 	}
 	endpoint, support, err := resolver.TryResolve(resolveParam)
 	assert.Nil(t, err)
-	assert.Equal(t, "", endpoint)
-	assert.Equal(t, false, support)
+	assert.Equal(t, "ecs-cn-hangzhou.aliyuncs.com", endpoint)
+	assert.Equal(t, true, support)
 
 	resolveParam = &ResolveParam{
 		Product: "drds",
