@@ -1,35 +1,34 @@
-# 阿里云开发者 Go 工具套件
+[English](./README.md) | 简体中文
 
-[![Version Badge](https://badge.fury.io/gh/aliyun%2Falibaba-cloud-sdk-go.svg)](https://badge.fury.io/gh/aliyun%2Falibaba-cloud-sdk-go)
-[![Travis Build Status](https://travis-ci.org/aliyun/alibaba-cloud-sdk-go.svg?branch=master)](https://travis-ci.org/aliyun/alibaba-cloud-sdk-go)
-[![Appveyor Build status](https://ci.appveyor.com/api/projects/status/1hiuo3ppx5j49psv/branch/master?svg=true)](https://ci.appveyor.com/project/aliyun/alibaba-cloud-sdk-go/branch/master)
-[![codecov](https://codecov.io/gh/aliyun/alibaba-cloud-sdk-go/branch/master/graph/badge.svg)](https://codecov.io/gh/aliyun/alibaba-cloud-sdk-go)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/291a39e242364b04ad442f0cce0e30d5)](https://app.codacy.com/app/aliyun/alibaba-cloud-sdk-go?utm_source=github.com&utm_medium=referral&utm_content=aliyun/alibaba-cloud-sdk-go&utm_campaign=Badge_Grade_Dashboard)
-[![Go Report Card](https://goreportcard.com/badge/github.com/aliyun/alibaba-cloud-sdk-go)](https://goreportcard.com/report/github.com/aliyun/alibaba-cloud-sdk-go)
-[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Faliyun%2Falibaba-cloud-sdk-go.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2Faliyun%2Falibaba-cloud-sdk-go?ref=badge_shield)
+<p align="center">
+<a href=" https://www.alibabacloud.com"><img src="https://aliyunsdk-pages.alicdn.com/icons/Aliyun.svg"></a>
+</p>
 
-See [英文文档](./README.md)
+<h1 align="center">Alibaba Cloud Client for Go</h1>
 
-欢迎使用阿里云开发者工具套件（SDK）。阿里云 Go SDK 让您不用复杂编程即可访问云服务器、云监控等多个阿里云服务。这里向您介绍如何获取阿里云 Go SDK 并开始调用。
+<p align="center">
+<a href="https://badge.fury.io/gh/aliyun%2Falibaba-cloud-sdk-go"><img src="https://badge.fury.io/gh/aliyun%2Falibaba-cloud-sdk-go.svg" alt="Latest Stable Version"></a>
+<a href="https://app.fossa.io/projects/git%2Bgithub.com%2Faliyun%2Falibaba-cloud-sdk-go?ref=badge_shield"><img src="https://app.fossa.io/api/projects/git%2Bgithub.com%2Faliyun%2Falibaba-cloud-sdk-go.svg?type=shield" alt="License"></a>
+<br/>
+<a href="https://codecov.io/gh/aliyun/alibaba-cloud-sdk-go"><img src="https://codecov.io/gh/aliyun/alibaba-cloud-sdk-go/branch/master/graph/badge.svg" alt="codecov"></a>
+<a href="https://travis-ci.org/aliyun/alibaba-cloud-sdk-go"><img src="https://travis-ci.org/aliyun/alibaba-cloud-sdk-go.svg?branch=master" alt="Travis Build Status"></a>
+<a href="https://ci.appveyor.com/project/aliyun/alibaba-cloud-sdk-go/branch/master"><img src="https://ci.appveyor.com/api/projects/status/1hiuo3ppx5j49psv/branch/master?svg=true" alt="Appveyor Build Status"></a>
+<a href="https://app.codacy.com/app/aliyun/alibaba-cloud-sdk-go?utm_source=github.com&utm_medium=referral&utm_content=aliyun/alibaba-cloud-sdk-go&utm_campaign=Badge_Grade_Dashboard"><img src="https://api.codacy.com/project/badge/Grade/291a39e242364b04ad442f0cce0e30d5" alt="Codacy Badge"></a>
+<a href="https://goreportcard.com/report/github.com/aliyun/alibaba-cloud-sdk-go"><img src="https://goreportcard.com/badge/github.com/aliyun/alibaba-cloud-sdk-go" alt="Go Report Card"></a>
+</p>
 
-如果您在使用 SDK 的过程中遇到任何问题，欢迎前往[阿里云 SDK 问答社区](https://yq.aliyun.com/tags/type_ask-tagid_23350)提问，提问前请阅读[提问引导](https://help.aliyun.com/document_detail/93957.html)。亦可在当前 GitHub 提交 Issues。
+
+Alibaba Cloud Client for Go 是帮助 Go 开发者管理凭据、发送请求的客户端工具, [Alibaba Cloud SDK for Go][SDK] 由本工具提供底层支持。
 
 
 ## 在线示例
-
-**[API Explorer](https://api.aliyun.com)** 提供在线调用云产品 OpenAPI、并动态生成 SDK Example 代码和快速检索接口等能力，能显著降低使用云 API 的难度，强烈推荐使用
-
-<a href="https://api.aliyun.com" target="api_explorer">
-  <img src="https://img.alicdn.com/tfs/TB12GX6zW6qK1RjSZFmXXX0PFXa-744-122.png" width="180" />
-</a>
+[API Explorer][open-api] 提供在线调用阿里云产品，并动态生成 SDK 代码和快速检索接口等能力，能显著降低使用云 API 的难度。
 
 
-## 环境准备
-1. 要使用阿里云 Go SDK，您需要一个云账号以及一对 `Access Key ID` 和 `Access Key Secret`。 请在阿里云控制台中的 [AccessKey 管理页面](https://usercenter.console.aliyun.com/?spm=5176.doc52740.2.3.QKZk8w#/manage/ak) 上创建和查看您的 AccessKey，或者联系您的系统管理员
-2. 要使用阿里云 SDK 访问某个产品的 API ，您需要事先在[阿里云控制台](https://home.console.aliyun.com/?spm=5176.doc52740.2.4.QKZk8w)中开通这个产品。
+## 环境要求
+- 您的系统需要达到 [环境要求][Requirements], 例如，安装了不低于 1.10.x 版本的 Go 环境。
 
-## SDK 获取和安装
-
+## Installation
 使用 `go get` 下载安装 SDK
 
 ```sh
@@ -44,223 +43,98 @@ $ glide get github.com/aliyun/alibaba-cloud-sdk-go
 
 另外，阿里云 Go SDK 也会发布在 https://develop.aliyun.com/tools/sdk#/go 这个地址。
 
-## 开始调用
+## 快速使用
+在您开始之前，您需要注册阿里云帐户并获取您的[凭证](https://usercenter.console.aliyun.com/#/manage/ak)。
 
-以下这个代码示例向您展示了调用阿里云 GO SDK 的 3 个主要步骤：
-
-1. 创建 Client 实例
-2. 创建 API 请求并设置参数
-3. 发起请求并处理异常
-
+### 创建客户端
 ```go
 package main
 
-import (
-    "github.com/aliyun/alibaba-cloud-sdk-go/services/ecs"
-    "fmt"
-)
+import "github.com/aliyun/alibaba-cloud-sdk-go/sdk"
 
 func main() {
-    // 创建ecsClient实例
-    ecsClient, err := ecs.NewClientWithAccessKey(
-        "<your-region-id>",             // 您的可用区ID
-        "<your-access-key-id>",         // 您的Access Key ID
-        "<your-access-key-secret>")     // 您的Access Key Secret
-    if err != nil {
-        // 异常处理
-        panic(err)
-    }
-    // 创建API请求并设置参数
-    request := ecs.CreateDescribeInstancesRequest()
-    request.PageSize = "10"
-    // 发起请求并处理异常
-    response, err := ecsClient.DescribeInstances(request)
-    if err != nil {
-        // 异常处理
-        panic(err)
-    }
-    fmt.Println(response)
+
+	client, err := sdk.NewClientWithAccessKey("REGION_ID", "ACCESS_KEY_ID", "ACCESS_KEY_SECRET")
+	if err != nil {
+		// Handle exceptions
+		panic(err)
+	}
 }
 ```
 
-在创建Client实例时，您需要填写3个参数：`Region ID`、`Access Key ID`和`Access Key Secret`。`Access Key ID`和`Access Key Secret`可以从控制台获得；而`Region ID`可以从[地域列表](https://help.aliyun.com/document_detail/40654.html?spm=5176.doc52740.2.8.FogWrd)中获得
-
-## 调试
-
-如果您发送的请求出错，您可以通过添加环境变量 `DEBUG=sdk` 来查看 HTTP 请求过程。
-
-## 忽略安全证书校验
-
-当您发送 https 请求时，它可能由于证书校验而失败。此时，可以使用下面的方法来忽略证书校验。
-
-```go
-// 您可以将 HTTPSInsecure 设置为 true 以忽略证书验证
-// 请求 HTTPSInsecure 具有比客户端 HTTPSInsecure 更高的优先级
-// 如果不设置任何 HTTPSInsecure，则默认 HTTPSInsecure 为 false
-
-// 设置请求 HTTPSInsecure (只影响当前)
-request.SetHTTPSInsecure(true)                           // 设置请求 HTTPSInsecure 为 true
-isInsecure := request.GetHTTPSInsecure()                 // 获取请求 HTTPSInsecure
-
-// 设置客户端 HTTPSInsecure (用于客户端发送的所有请求)。
-client.SetHTTPSInsecure(true)                         // 设置客户端 HTTPSInsecure 为 true
-isInsecure := client.GetHTTPSInsecure()               // 获取客户端 HTTPSInsecure
-```
-
-## HTTP 代理
-
-如果您想使用 http 代理, https 代理或者代理白名单，您可以设置环境变量 `HTTP_PROXY` 或者 `HTTPS_PROXY`或者 `NO_PROXY`，您也可以通过客户端来配置。
-
-```go
-// 客户端设置代理优先级比环境变量高
-client.SetHttpProxy("http://127.0.0.1:8080")   // 设置 Http 代理
-client.GetHttpProxy()                          // 获取 Http 代理.
-
-client.SetHttpsProxy("https://127.0.0.1:8080")   // 设置 Https 代理.
-client.GetHttpsProxy()                           // 获取 Https 代理.
-
-client.SetNoProxy("127.0.0.1,localhost")     // 设置代理白名单.
-client.GetNoProxy()                          // 获取代理白名单
-```
-
-## Keep-alive
-阿里云 Go SDK 底层使用 Go 语言原生的 `net/http` 收发请求，因此配置方式与 `net/http` 相同，您可以通过 config 直接将配置传递给底层的 httpClient
-
-```go
-httpTransport := http.Transport{
-    // set http client options
-}
-config := sdk.NewConfig()
-            .WithHttpTransport(&httpTransport)
-            .WithTimeout(timeout)
-ecsClient, err := ecs.NewClientWithOptions(config)
-```
-
-## 并发请求
-
-* 因 Go 语言的并发特性，我们建议您在应用层面控制 SDK 的并发请求。
-* 为了方便您的使用，我们也提供了可直接使用的并发调用方式，相关的并发控制由 SDK 内部实现。
-
-### 超时机制
-
-```go
-// 请求设置的超时优先级高于客户端设置的超时.
-// 当您未设置任何超时时，则默认读超时为10秒，连接超时为5秒
-
-// 设置请求超时（仅对当前请求有效）
-request.SetReadTimeout(10 * time.Second)              // 设置请求读超时为10秒
-readTimeout := request.GetReadTimeout()              // 获取请求读超时
-request.SetConnectTimeout(5 * time.Second)           // 设置请求连接超时为5秒
-connectTimeout := request.GetConnectTimeout()        // 获取请求连接超时
-
-// 设置客户端超时（对所有通过该客户端发送的请求生效）
-client.SetReadTimeout(10 * time.Second)              // 设置客户端读超时为10秒
-readTimeout := client.GetReadTimeout()              // 获取客户端读超时
-client.SetConnectTimeout(5 * time.Second)           // 设置客户端连接超时为5秒
-connectTimeout := client.GetConnectTimeout()        // 获取客户端连接超时
-```
-
-### 开启 SDK Client 的并发功能
-
-```go
-// 最大并发数
-poolSize := 2
-// 可缓存的最大请求数
-maxTaskQueueSize := 5
-
-// 在创建时开启异步功能
-config := sdk.NewConfig()
-            .WithEnableAsync(true)
-            .WithGoRoutinePoolSize(poolSize)            // 可选，默认5
-            .WithMaxTaskQueueSize(maxTaskQueueSize)     // 可选，默认1000
-ecsClient, err := ecs.NewClientWithOptions(config)
-
-// 也可以在client初始化后再开启
-client.EnableAsync(poolSize, maxTaskQueueSize)
-```
-
-##### 发起异步调用
-阿里云Go SDK支持两种方式的异步调用：
-
-1. 使用channel作为返回值
-    ```go
-    responseChannel, errChannel := client.FooWithChan(request)
-
-    // this will block
-    response := <-responseChannel
-    err = <-errChannel
-    ```
-
-2. 使用 callback 控制回调
-
-    ```go
-    blocker := client.FooWithCallback(request, func(response *FooResponse, err error) {
-        // handle the response and err
-    })
-
-    // blocker 为(chan int)，用于控制同步，返回1为成功，0为失败
-    // 在<-blocker返回失败时，err依然会被传入的callback处理
-    result := <-blocker
-    ```
-
-## 泛化调用接口(CommonAPI)
-
-### 什么是 CommonAPI
-
-CommonAPI 是阿里云 SDK 推出的，泛用型的 API 调用方式。CommonAPI 具有以下几个特点：
-1. 轻量：只需 Core 包即可发起调用，无需下载安装各产品线 SDK。
-2. 简便：无需更新 SDK 即可调用最新发布的 API。
-3. 快速迭代
-
-### 开始使用
-
-CommonAPI，需要配合相应的 API 文档使用，以查询 API 的相关信息。
-
-您可以在 [文档中心](https://help.aliyun.com/?spm=5176.8142029.388261.173.23896dfaav2hEF) 查询到所有产品的 API 文档。
-
-发起一次 CommonAPI 请求，需要您查询到以下几个参数：
-* 域名(domain)：即该产品的通用访问域名，一般可以在"调用方式"页查看到
-* API 版本(version)：即该 API 的版本号，以’YYYY-MM-DD’的形式表现，一般可以在"公共参数"页面查到
-* 接口名称(apiName)：即该 API 的名称
-
-我们以 ECS 产品的 [DescribeInstanceStatus API](https://help.aliyun.com/document_detail/25505.html?spm=5176.doc25506.6.820.VbHnW6) 为例
-
+### ROA 请求
 ```go
 package main
 
-import (
-	"fmt"
-	"os"
-
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-)
+import "github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
 
 func main() {
-
-	client, err := sdk.NewClientWithAccessKey("cn-hangzhou", os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
-	if err != nil {
-		// 异常处理
-		panic(err)
-	}
-
-	request := requests.NewCommonRequest()
-	request.Domain = "ecs.aliyuncs.com"
-	request.Version = "2014-05-26"
-	request.ApiName = "DescribeInstanceStatus"
-
-	request.QueryParams["PageNumber"] = "1"
-	request.QueryParams["PageSize"] = "30"
-
-	response, err := client.ProcessCommonRequest(request)
-	if err != nil {
-		// 异常处理
-		panic(err)
-	}
-
-	fmt.Print(response.GetHttpContentString())
+	request := requests.NewCommonRequest()        // 构造一个公共请求
+	request.Method = "GET"                        // 设置请求方式
+	request.Product = "CS"                        // 指定产品
+	request.Domain = "cs.aliyuncs.com"            // 指定域名则不会寻址，如认证方式为 Bearer Token 的服务则需要指定
+	request.Version = "2015-12-15"                // 指定产品版本
+	request.PathPattern = "/clusters/[ClusterId]" // 指定ROA风格路径规则
+	request.ApiName = "DescribeCluster"           // 指定接口名
+	request.QueryParams["ClusterId"] = "123456"   // 设置参数值
+	request.QueryParams["RegionId"] = "region_id" // 指定请求的区域，不指定则使用客户端区域、默认区域
+	request.TransToAcsRequest()                   // 把公共请求转化为acs请求
 }
 ```
+
+### RPC 请求
+```go
+package main
+
+import "github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+
+func main() {
+	request := requests.NewCommonRequest()                // 构造一个公共请求
+	request.Method = "POST"                               // 设置请求方式
+	request.Product = "Ecs"                               // 指定产品
+	request.Domain = "ecs.aliyuncs.com"                   // 指定域名则不会寻址，如认证方式为 Bearer Token 的服务则需要指定
+	request.Version = "2014-05-26"                        // 指定产品版本
+	request.ApiName = "CreateInstance"                    // 指定接口名
+	request.QueryParams["InstanceType"] = "ecs.g5.large"  // 设置参数值
+	request.QueryParams["RegionId"] = "region_id"         // 指定请求的区域，不指定则使用客户端区域、默认区域
+	request.TransToAcsRequest()                           // 把公共请求转化为acs请求
+}
+```
+
+
+## 文档
+* [Requirements](docs/0-Requirements-CN.md)
+* [Installation](docs/1-Installation-CN.md)
+* [Client](docs/2-Client-CN.md)
+* [SSL Verify](docs/3-Verify-CN.md)
+* [Proxy](docs/4-Proxy-CN.md)
+* [Timeout](docs/5-Timeout-CN.md)
+* [Debug](docs/6-Debug-CN.md)
+* [Concurrent](docs/7-Concurrent-CN.md)
+* [Asynchronous Call](docs/8-Asynchronous-CN.md)
+
+
+## 问题
+[提交 Issue][issue] 不符合指南的问题可能会立即关闭。
+
+
+## 贡献
+提交 Pull Request 之前请阅读[贡献指南](CONTRIBUTING.md)。
+
+## 相关
+* [阿里云服务 Regions & Endpoints][endpoints]
+* [OpenAPI Explorer][open-api]
+* [Go][go]
+* [最新发行版本][latest-release]
+
 
 ## 许可证
 [![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2Faliyun%2Falibaba-cloud-sdk-go.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2Faliyun%2Falibaba-cloud-sdk-go?ref=badge_large)
+
+[SDK]: https://github.com/aliyun/alibaba-cloud-sdk-go
+[apache]: http://www.apache.org/licenses/LICENSE-2.0
+[issue]: https://github.com/aliyun/alibaba-cloud-sdk-go/issues/new
+[open-api]: https://api.aliyun.com/
+[latest-release]: https://github.com/aliyun/alibaba-cloud-sdk-go/releases
+[go]: https://golang.org/dl/
+[endpoints]: https://developer.aliyun.com/endpoints
