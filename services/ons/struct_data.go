@@ -30,15 +30,17 @@ type Data struct {
 	MaxTimeStamp               int                                      `json:"MaxTimeStamp" xml:"MaxTimeStamp"`
 	InstanceId                 string                                   `json:"InstanceId" xml:"InstanceId"`
 	ConsumeTps                 float64                                  `json:"ConsumeTps" xml:"ConsumeTps"`
+	GroupId                    string                                   `json:"GroupId" xml:"GroupId"`
 	Topic                      string                                   `json:"Topic" xml:"Topic"`
 	ConsumeTimeStamp           int                                      `json:"ConsumeTimeStamp" xml:"ConsumeTimeStamp"`
 	TotalCount                 int                                      `json:"TotalCount" xml:"TotalCount"`
-	TotalDiff                  int                                      `json:"TotalDiff" xml:"TotalDiff"`
 	ReconsumeTimes             int                                      `json:"ReconsumeTimes" xml:"ReconsumeTimes"`
+	TotalDiff                  int                                      `json:"TotalDiff" xml:"TotalDiff"`
 	Body                       string                                   `json:"Body" xml:"Body"`
 	BornHost                   string                                   `json:"BornHost" xml:"BornHost"`
 	MinTimeStamp               int                                      `json:"MinTimeStamp" xml:"MinTimeStamp"`
 	LastTimeStamp              int                                      `json:"LastTimeStamp" xml:"LastTimeStamp"`
+	MessageModel               string                                   `json:"MessageModel" xml:"MessageModel"`
 	InstanceType               int                                      `json:"InstanceType" xml:"InstanceType"`
 	BodyCRC                    int                                      `json:"BodyCRC" xml:"BodyCRC"`
 	MsgId                      string                                   `json:"MsgId" xml:"MsgId"`
@@ -47,10 +49,12 @@ type Data struct {
 	StoreHost                  string                                   `json:"StoreHost" xml:"StoreHost"`
 	YUnit                      string                                   `json:"YUnit" xml:"YUnit"`
 	LastTimestamp              int                                      `json:"LastTimestamp" xml:"LastTimestamp"`
+	Perm                       int                                      `json:"Perm" xml:"Perm"`
 	ConnectionSet              ConnectionSet                            `json:"ConnectionSet" xml:"ConnectionSet"`
-	PropertyList               PropertyListInOnsMessageGetByMsgId       `json:"PropertyList" xml:"PropertyList"`
+	PropertyList               PropertyListInOnsDLQMessageGetById       `json:"PropertyList" xml:"PropertyList"`
 	Records                    RecordsInOnsMqttQueryHistoryOnline       `json:"Records" xml:"Records"`
 	ConsumerConnectionInfoList ConsumerConnectionInfoList               `json:"ConsumerConnectionInfoList" xml:"ConsumerConnectionInfoList"`
 	DetailInTopicList          DetailInTopicListInOnsConsumerAccumulate `json:"DetailInTopicList" xml:"DetailInTopicList"`
+	SubscriptionDataList       SubscriptionDataListInOnsGroupSubDetail  `json:"SubscriptionDataList" xml:"SubscriptionDataList"`
 	ConnectionList             ConnectionList                           `json:"ConnectionList" xml:"ConnectionList"`
 }

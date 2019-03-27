@@ -17,18 +17,18 @@ package ons
 
 // OnsRestMessageDo is a nested struct in ons response
 type OnsRestMessageDo struct {
-	ReconsumeTimes int                              `json:"ReconsumeTimes" xml:"ReconsumeTimes"`
-	Flag           int                              `json:"Flag" xml:"Flag"`
-	BornTimestamp  int                              `json:"BornTimestamp" xml:"BornTimestamp"`
-	Body           string                           `json:"Body" xml:"Body"`
-	BornHost       string                           `json:"BornHost" xml:"BornHost"`
-	OffsetId       string                           `json:"OffsetId" xml:"OffsetId"`
-	BodyCRC        int                              `json:"BodyCRC" xml:"BodyCRC"`
-	MsgId          string                           `json:"MsgId" xml:"MsgId"`
-	StoreTimestamp int                              `json:"StoreTimestamp" xml:"StoreTimestamp"`
-	InstanceId     string                           `json:"InstanceId" xml:"InstanceId"`
-	StoreSize      int                              `json:"StoreSize" xml:"StoreSize"`
-	StoreHost      string                           `json:"StoreHost" xml:"StoreHost"`
-	Topic          string                           `json:"Topic" xml:"Topic"`
-	PropertyList   PropertyListInOnsMessageGetByKey `json:"PropertyList" xml:"PropertyList"`
+	ReconsumeTimes int                                           `json:"ReconsumeTimes" xml:"ReconsumeTimes"`
+	Flag           int                                           `json:"Flag" xml:"Flag"`
+	BornTimestamp  int                                           `json:"BornTimestamp" xml:"BornTimestamp"`
+	Body           string                                        `json:"Body" xml:"Body"`
+	BornHost       string                                        `json:"BornHost" xml:"BornHost"`
+	OffsetId       string                                        `json:"OffsetId" xml:"OffsetId"`
+	BodyCRC        int                                           `json:"BodyCRC" xml:"BodyCRC"`
+	MsgId          string                                        `json:"MsgId" xml:"MsgId"`
+	StoreTimestamp int                                           `json:"StoreTimestamp" xml:"StoreTimestamp"`
+	InstanceId     string                                        `json:"InstanceId" xml:"InstanceId"`
+	StoreSize      int                                           `json:"StoreSize" xml:"StoreSize"`
+	StoreHost      string                                        `json:"StoreHost" xml:"StoreHost"`
+	Topic          string                                        `json:"Topic" xml:"Topic"`
+	PropertyList   PropertyListInOnsDLQMessagePageQueryByGroupId `json:"PropertyList" xml:"PropertyList"`
 }

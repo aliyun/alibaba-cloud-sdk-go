@@ -21,7 +21,7 @@ type PublishInfoDo struct {
 	Owner             string `json:"Owner" xml:"Owner"`
 	Relation          int    `json:"Relation" xml:"Relation"`
 	RelationName      string `json:"RelationName" xml:"RelationName"`
-	UpdateTime        int    `json:"UpdateTime" xml:"UpdateTime"`
+	CreateTime        int    `json:"CreateTime" xml:"CreateTime"`
 	Remark            string `json:"Remark" xml:"Remark"`
 	MessageType       int    `json:"MessageType" xml:"MessageType"`
 	InstanceId        string `json:"InstanceId" xml:"InstanceId"`
