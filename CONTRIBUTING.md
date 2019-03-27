@@ -6,7 +6,7 @@ We work hard to provide a high-quality and useful SDK for Alibaba Cloud, and we 
 
 - The SDK is released under the [Apache license][license]. Any code you submit will be released under that license. For substantial contributions, we may ask you to sign a [Alibaba Documentation Corporate Contributor License Agreement (CLA)][cla].
 - We maintain a high percentage of code coverage in our unit tests. If you make changes to the code, please add, update, and/or remove tests as appropriate.
-- If your code does not conform to the PSR standards, does not include adequate tests, we may ask you to update your pull requests before we accept them. We also reserve the right to deny any pull requests that do not align with our standards or goals.
+- If your code does not conform to the standards, does not include adequate tests, we may ask you to update your pull requests before we accept them. We also reserve the right to deny any pull requests that do not align with our standards or goals.
 
 
 [issues]: https://github.com/aliyun/alibaba-cloud-sdk-go/issues
