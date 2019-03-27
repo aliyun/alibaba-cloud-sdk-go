@@ -5,7 +5,7 @@ English | [简体中文](./README_zh.md)
 <a href=" https://www.alibabacloud.com"><img src="https://aliyunsdk-pages.alicdn.com/icons/AlibabaCloud.svg"></a>
 </p>
 
-<h1 align="center">Alibaba Cloud Client for Go</h1>
+<h1 align="center">Alibaba Cloud Go SDK</h1>
 
 <p align="center">
 <a href="https://badge.fury.io/gh/aliyun%2Falibaba-cloud-sdk-go"><img src="https://badge.fury.io/gh/aliyun%2Falibaba-cloud-sdk-go.svg" alt="Latest Stable Version"></a>
@@ -19,7 +19,7 @@ English | [简体中文](./README_zh.md)
 </p>
 
 
-Alibaba Cloud Client for Go is a client tool that helps Go developers manage credentials and send requests, [Alibaba Cloud SDK for Go][SDK] dependency on this tool.
+Alibaba Cloud Go SDK is a client tool that helps Go developers manage credentials and send requests, [Alibaba Cloud Go SDK][SDK] dependency on this tool.
 
 
 ## Online Demo

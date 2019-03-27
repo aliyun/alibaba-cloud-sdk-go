@@ -4,7 +4,7 @@
 <a href=" https://www.alibabacloud.com"><img src="https://aliyunsdk-pages.alicdn.com/icons/Aliyun.svg"></a>
 </p>
 
-<h1 align="center">Alibaba Cloud Client for Go</h1>
+<h1 align="center">Alibaba Cloud Go SDK</h1>
 
 <p align="center">
 <a href="https://badge.fury.io/gh/aliyun%2Falibaba-cloud-sdk-go"><img src="https://badge.fury.io/gh/aliyun%2Falibaba-cloud-sdk-go.svg" alt="Latest Stable Version"></a>
@@ -18,7 +18,7 @@
 </p>
 
 
-Alibaba Cloud Client for Go 是帮助 Go 开发者管理凭据、发送请求的客户端工具, [Alibaba Cloud SDK for Go][SDK] 由本工具提供底层支持。
+Alibaba Cloud Go SDK 是帮助 Go 开发者管理凭据、发送请求的客户端工具, [Alibaba Cloud Go SDK][SDK] 由本工具提供底层支持。
 
 
 ## 在线示例
@@ -35,7 +35,7 @@ Alibaba Cloud Client for Go 是帮助 Go 开发者管理凭据、发送请求的
 $ go get -u github.com/aliyun/alibaba-cloud-sdk-go/sdk
 ```
 
-如果您使用了 glide 管理依赖，您也可以使用 glide 来安装阿里云GO SDK
+如果您使用了 glide 管理依赖，您也可以使用 glide 来安装阿里云 GO SDK
 
 ```sh
 $ glide get github.com/aliyun/alibaba-cloud-sdk-go

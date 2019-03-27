@@ -15,7 +15,7 @@ $ glide get github.com/aliyun/alibaba-cloud-sdk-go
 ```
 
 ## 通过压缩文件安装
-Alibaba Cloud SDK for Go 中的一个 ZIP 文件包含运行开发工具包所需的所有类和依赖项。
+Alibaba Cloud Go SDK 中的一个 ZIP 文件包含运行开发工具包所需的所有类和依赖项。
 下载这个 [文件][Go-release], 然后在项目中的选定位置进行解压缩。
 
 ***
