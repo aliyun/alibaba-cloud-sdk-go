@@ -1,4 +1,4 @@
-# Contributing to the Alibaba Cloud SDK for Go
+# Contributing to the Alibaba Cloud Go SDK
 
 We work hard to provide a high-quality and useful SDK for Alibaba Cloud, and we greatly value feedback and contributions from our community. Please submit your [issues][issues] or [pull requests][pull-requests] through GitHub.
 

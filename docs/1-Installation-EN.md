@@ -15,7 +15,7 @@ $ glide get github.com/aliyun/alibaba-cloud-sdk-go
 ```
 
 ## Installing by Using the ZIP file
-The Alibaba Cloud SDK for Go includes a ZIP file containing all the classes and dependencies you need to run.
+The Alibaba Cloud Go SDK includes a ZIP file containing all the classes and dependencies you need to run.
 
 Download the [file][Go-release], and then extract it into your project at a location you choose.
 
