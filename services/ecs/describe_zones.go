@@ -80,6 +80,7 @@ type DescribeZonesRequest struct {
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	AcceptLanguage       string           `position:"Query" name:"AcceptLanguage"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	InstanceChargeType   string           `position:"Query" name:"InstanceChargeType"`
 	Verbose              requests.Boolean `position:"Query" name:"Verbose"`

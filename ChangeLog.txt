@@ -1,3 +1,7 @@
+2019-03-28 Version: 1.53.81
+1, Add multiple language support in DescribeZones
+2, Add gray parameter in CreateDisk
+
 2019-03-28 Version: 1.53.80
 1, Add instance remark modify api.
 
