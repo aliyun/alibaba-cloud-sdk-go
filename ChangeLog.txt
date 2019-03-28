@@ -1,3 +1,6 @@
+2019-03-28 Version: 1.53.80
+1, Add instance remark modify api.
+
 2019-03-28 Version: 1.53.79
 1, Add logo detect.
 
