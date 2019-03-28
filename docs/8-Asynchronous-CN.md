@@ -3,7 +3,7 @@
 ## 异步调用
 
 ### 发起异步调用
-阿里云Go SDK支持两种方式的异步调用：
+Alibaba Cloud SDK for Go 支持两种方式的异步调用：
 
 1. 使用channel作为返回值
     ```go

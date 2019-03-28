@@ -4,7 +4,7 @@
 <a href=" https://www.alibabacloud.com"><img src="https://aliyunsdk-pages.alicdn.com/icons/Aliyun.svg"></a>
 </p>
 
-<h1 align="center">Alibaba Cloud Go SDK</h1>
+<h1 align="center">Alibaba Cloud SDK for Go</h1>
 
 <p align="center">
 <a href="https://badge.fury.io/gh/aliyun%2Falibaba-cloud-sdk-go"><img src="https://badge.fury.io/gh/aliyun%2Falibaba-cloud-sdk-go.svg" alt="Latest Stable Version"></a>
@@ -17,9 +17,8 @@
 <a href="https://goreportcard.com/report/github.com/aliyun/alibaba-cloud-sdk-go"><img src="https://goreportcard.com/badge/github.com/aliyun/alibaba-cloud-sdk-go" alt="Go Report Card"></a>
 </p>
 
-
-Alibaba Cloud Go SDK 是帮助 Go 开发者管理凭据、发送请求的客户端工具, [Alibaba Cloud Go SDK][SDK] 由本工具提供底层支持。
-
+欢迎使用 Alibaba Cloud SDK for Go。Alibaba Cloud SDK for Go 让您不用复杂编程即可访问云服务器、云监控等多个阿里云服务。
+这里向您介绍如何获取 [Alibaba Cloud SDK for Go][SDK] 并开始调用。
 
 ## 在线示例
 [API Explorer][open-api] 提供在线调用阿里云产品，并动态生成 SDK 代码和快速检索接口等能力，能显著降低使用云 API 的难度。
@@ -28,20 +27,20 @@ Alibaba Cloud Go SDK 是帮助 Go 开发者管理凭据、发送请求的客户�
 ## 环境要求
 - 您的系统需要达到 [环境要求][Requirements], 例如，安装了不低于 1.10.x 版本的 Go 环境。
 
-## Installation
+## 安装
 使用 `go get` 下载安装 SDK
 
 ```sh
 $ go get -u github.com/aliyun/alibaba-cloud-sdk-go/sdk
 ```
 
-如果您使用了 glide 管理依赖，您也可以使用 glide 来安装阿里云 GO SDK
+如果您使用了 glide 管理依赖，您也可以使用 glide 来安装 Alibaba Cloud SDK for Go
 
 ```sh
 $ glide get github.com/aliyun/alibaba-cloud-sdk-go
 ```
 
-另外，阿里云 Go SDK 也会发布在 https://develop.aliyun.com/tools/sdk#/go 这个地址。
+另外，Alibaba Cloud SDK for Go 也会发布在 https://develop.aliyun.com/tools/sdk#/go 这个地址。
 
 ## 快速使用
 在您开始之前，您需要注册阿里云帐户并获取您的[凭证](https://usercenter.console.aliyun.com/#/manage/ak)。

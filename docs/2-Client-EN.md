@@ -33,6 +33,10 @@ By specifying [RAM Role][RAM Role], the client will be able to automatically req
 client, err := sdk.NewClientWithRamRoleArn("regionId", "subaccessKeyId", "subaccessKeySecret", "roleArn", "roleSession")
 ```
 
+If you want to limit the policy([How to make a policy][policy]) of STS Token, you can create a client as following:
+```go
+client, err := sdk.NewClientWithRamRoleArnAndPolicy("regionId", "subaccessKeyId", "subaccessKeySecret", "roleArn", "roleSession", "policy")
+```
 
 ### EcsRamRole Client
 By specifying the role name, the client will be able to automatically request maintenance of STS Token before making a request, and be automatically converted to a time-limited STS client. You may also apply for Token maintenance by yourself before creating `STS Client`.  
@@ -111,5 +115,6 @@ client, err := sdk.NewClientWithProvider("regionId", ProviderInstance, ProviderP
 
 [ak]: https://usercenter.console.aliyun.com/#/manage/ak
 [ram]: https://ram.console.aliyun.com/users
+[policy]: https://www.alibabacloud.com/help/doc-detail/28664.htm?spm=a2c63.p38356.a3.3.27a63b01khWgdh
 [permissions]: https://ram.console.aliyun.com/permissions
 [RAM Role]: https://ram.console.aliyun.com/#/role/list
