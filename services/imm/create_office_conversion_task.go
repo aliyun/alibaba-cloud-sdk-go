@@ -87,6 +87,7 @@ type CreateOfficeConversionTaskRequest struct {
 	TgtFilePrefix   string           `position:"Query" name:"TgtFilePrefix"`
 	NotifyTopicName string           `position:"Query" name:"NotifyTopicName"`
 	ModelId         string           `position:"Query" name:"ModelId"`
+	DisplayDpi      requests.Integer `position:"Query" name:"DisplayDpi"`
 	MaxSheetRow     requests.Integer `position:"Query" name:"MaxSheetRow"`
 	MaxSheetCount   requests.Integer `position:"Query" name:"MaxSheetCount"`
 	EndPage         requests.Integer `position:"Query" name:"EndPage"`

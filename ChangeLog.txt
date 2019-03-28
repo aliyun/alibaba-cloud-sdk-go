@@ -1,3 +1,6 @@
+2019-03-28 Version: 1.53.79
+1, Add logo detect.
+
 2019-03-27 Version: 1.53.78
 1, Add Project interface.
 2, Add Tag interface.
