@@ -92,7 +92,7 @@ func CreateListVpcRequest() (request *ListVpcRequest) {
 	request = &ListVpcRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ListVpc", "/pop/v5/vpc_list", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ListVpc", "/pop/v5/vpc_list", "", "")
 	request.Method = requests.GET
 	return
 }

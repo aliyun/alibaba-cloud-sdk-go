@@ -92,7 +92,7 @@ func CreateGetServerlessAppConfigDetailRequest() (request *GetServerlessAppConfi
 	request = &GetServerlessAppConfigDetailRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "GetServerlessAppConfigDetail", "/pop/v5/k8s/pop/pop_serverless_app_config_detail", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "GetServerlessAppConfigDetail", "/pop/v5/k8s/pop/pop_serverless_app_config_detail", "", "")
 	request.Method = requests.GET
 	return
 }

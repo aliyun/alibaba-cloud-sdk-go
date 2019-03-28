@@ -94,7 +94,7 @@ func CreateUnbindServerlessSlbRequest() (request *UnbindServerlessSlbRequest) {
 	request = &UnbindServerlessSlbRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "UnbindServerlessSlb", "/pop/v5/k8s/acs/serverless_slb_binding", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "UnbindServerlessSlb", "/pop/v5/k8s/acs/serverless_slb_binding", "", "")
 	request.Method = requests.DELETE
 	return
 }

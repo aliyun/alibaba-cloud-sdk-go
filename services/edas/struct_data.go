@@ -51,5 +51,6 @@ type Data struct {
 	SlbId             string `json:"SlbId" xml:"SlbId"`
 	AppName           string `json:"AppName" xml:"AppName"`
 	PackageUrl        string `json:"PackageUrl" xml:"PackageUrl"`
+	BuildPackId       int    `json:"BuildPackId" xml:"BuildPackId"`
 	SlbIp             string `json:"SlbIp" xml:"SlbIp"`
 }

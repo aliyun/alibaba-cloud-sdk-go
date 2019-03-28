@@ -93,7 +93,7 @@ func CreateScaleServerlessApplicationRequest() (request *ScaleServerlessApplicat
 	request = &ScaleServerlessApplicationRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "ScaleServerlessApplication", "/pop/v5/k8s/pop/pop_serverless_app_rescale", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "ScaleServerlessApplication", "/pop/v5/k8s/pop/pop_serverless_app_rescale", "", "")
 	request.Method = requests.PUT
 	return
 }

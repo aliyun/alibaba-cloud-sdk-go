@@ -79,6 +79,7 @@ type CreateServerlessApplicationRequest struct {
 	WebContainer    string           `position:"Query" name:"WebContainer"`
 	JarStartArgs    string           `position:"Query" name:"JarStartArgs"`
 	Memory          requests.Integer `position:"Query" name:"Memory"`
+	BuildPackId     requests.Integer `position:"Query" name:"BuildPackId"`
 	CommandArgs     string           `position:"Query" name:"CommandArgs"`
 	Replicas        requests.Integer `position:"Query" name:"Replicas"`
 	Readiness       string           `position:"Query" name:"Readiness"`
@@ -114,7 +115,7 @@ func CreateCreateServerlessApplicationRequest() (request *CreateServerlessApplic
 	request = &CreateServerlessApplicationRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "CreateServerlessApplication", "/pop/v5/k8s/pop/pop_serverless_app_create_without_deploy", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "CreateServerlessApplication", "/pop/v5/k8s/pop/pop_serverless_app_create_without_deploy", "", "")
 	request.Method = requests.POST
 	return
 }

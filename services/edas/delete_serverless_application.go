@@ -93,7 +93,7 @@ func CreateDeleteServerlessApplicationRequest() (request *DeleteServerlessApplic
 	request = &DeleteServerlessApplicationRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "DeleteServerlessApplication", "/pop/v5/k8s/pop/pop_serverless_app_delete", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "DeleteServerlessApplication", "/pop/v5/k8s/pop/pop_serverless_app_delete", "", "")
 	request.Method = requests.DELETE
 	return
 }

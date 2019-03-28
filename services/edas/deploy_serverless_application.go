@@ -78,6 +78,7 @@ type DeployServerlessApplicationRequest struct {
 	*requests.RoaRequest
 	WebContainer      string           `position:"Query" name:"WebContainer"`
 	JarStartArgs      string           `position:"Query" name:"JarStartArgs"`
+	BuildPackId       requests.Integer `position:"Query" name:"BuildPackId"`
 	CommandArgs       string           `position:"Query" name:"CommandArgs"`
 	Readiness         string           `position:"Query" name:"Readiness"`
 	BatchWaitTime     requests.Integer `position:"Query" name:"BatchWaitTime"`
@@ -107,7 +108,7 @@ func CreateDeployServerlessApplicationRequest() (request *DeployServerlessApplic
 	request = &DeployServerlessApplicationRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "DeployServerlessApplication", "/pop/v5/k8s/pop/pop_serverless_app_deploy", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "DeployServerlessApplication", "/pop/v5/k8s/pop/pop_serverless_app_deploy", "", "")
 	request.Method = requests.POST
 	return
 }

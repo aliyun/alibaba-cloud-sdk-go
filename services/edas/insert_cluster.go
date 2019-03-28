@@ -99,7 +99,7 @@ func CreateInsertClusterRequest() (request *InsertClusterRequest) {
 	request = &InsertClusterRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Edas", "2017-08-01", "InsertCluster", "/pop/v5/resource/cluster", "edas", "openAPI")
+	request.InitWithApiInfo("Edas", "2017-08-01", "InsertCluster", "/pop/v5/resource/cluster", "", "")
 	request.Method = requests.POST
 	return
 }
