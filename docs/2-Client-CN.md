@@ -13,7 +13,6 @@ client, err := sdk.NewClientWithAccessKey("regionId", "accessKeyId", "accessKeyS
 
 ```
 
-
 ### STS 客户端
 通过安全令牌服务（Security Token Service，简称 STS），申请临时安全凭证（Temporary Security Credentials，简称 TSC），创建临时安全客户端。
 
@@ -28,6 +27,11 @@ client, err := sdk.NewClientWithStsToken("regionId", "subaccessKeyId", "subacces
 
 ```go
 client, err := sdk.NewClientWithRamRoleArn("regionId", "subaccessKeyId", "subaccessKeySecret", "roleArn", "roleSession")
+```
+
+如果你想限制生成的 STS Token 的权限([构建Policy][policy]), 你可以使用如下方式创建客户端:
+```go
+client, err := sdk.NewClientWithRamRoleArnAndPolicy("regionId", "subaccessKeyId", "subaccessKeySecret", "roleArn", "roleSession", "policy")
 ```
 
 

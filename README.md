@@ -5,7 +5,7 @@ English | [简体中文](./README_zh.md)
 <a href=" https://www.alibabacloud.com"><img src="https://aliyunsdk-pages.alicdn.com/icons/AlibabaCloud.svg"></a>
 </p>
 
-<h1 align="center">Alibaba Cloud Go SDK</h1>
+<h1 align="center">Alibaba Cloud SDK for Go</h1>
 
 <p align="center">
 <a href="https://badge.fury.io/gh/aliyun%2Falibaba-cloud-sdk-go"><img src="https://badge.fury.io/gh/aliyun%2Falibaba-cloud-sdk-go.svg" alt="Latest Stable Version"></a>
@@ -19,8 +19,9 @@ English | [简体中文](./README_zh.md)
 </p>
 
 
-Alibaba Cloud Go SDK is a client tool that helps Go developers manage credentials and send requests, [Alibaba Cloud Go SDK][SDK] dependency on this tool.
-
+Alibaba Cloud SDK for Go allows you to access Alibaba Cloud services such as Elastic Compute Service (ECS), Server Load Balancer (SLB), and CloudMonitor. You can access Alibaba Cloud services without the need to handle API related tasks, such as signing and constructing your requests.
+                         
+This document introduces how to obtain and call [Alibaba Cloud SDK for Go][SDK].
 
 ## Online Demo
 [API Explorer][open-api] provides the ability to call the cloud product OpenAPI online, and dynamically generate SDK Example code and quick retrieval interface, which can significantly reduce the difficulty of using the cloud API.
@@ -36,7 +37,7 @@ Use `go get` to install SDK：
 $ go get -u github.com/aliyun/alibaba-cloud-sdk-go/sdk
 ```
 
-If you have used glide to manage dependence，you can also use glide to install Alibaba Cloud Go SDK：
+If you have used glide to manage dependence，you can also use glide to install Alibaba Cloud SDK for Go：
 
 ```sh
 $ glide get github.com/aliyun/alibaba-cloud-sdk-go
