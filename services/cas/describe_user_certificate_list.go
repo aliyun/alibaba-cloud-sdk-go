@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DescribeCertificateList invokes the cas.DescribeCertificateList API synchronously
-// api document: https://help.aliyun.com/api/cas/describecertificatelist.html
-func (client *Client) DescribeCertificateList(request *DescribeCertificateListRequest) (response *DescribeCertificateListResponse, err error) {
-	response = CreateDescribeCertificateListResponse()
+// DescribeUserCertificateList invokes the cas.DescribeUserCertificateList API synchronously
+// api document: https://help.aliyun.com/api/cas/describeusercertificatelist.html
+func (client *Client) DescribeUserCertificateList(request *DescribeUserCertificateListRequest) (response *DescribeUserCertificateListResponse, err error) {
+	response = CreateDescribeUserCertificateListResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DescribeCertificateListWithChan invokes the cas.DescribeCertificateList API asynchronously
-// api document: https://help.aliyun.com/api/cas/describecertificatelist.html
+// DescribeUserCertificateListWithChan invokes the cas.DescribeUserCertificateList API asynchronously
+// api document: https://help.aliyun.com/api/cas/describeusercertificatelist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DescribeCertificateListWithChan(request *DescribeCertificateListRequest) (<-chan *DescribeCertificateListResponse, <-chan error) {
-	responseChan := make(chan *DescribeCertificateListResponse, 1)
+func (client *Client) DescribeUserCertificateListWithChan(request *DescribeUserCertificateListRequest) (<-chan *DescribeUserCertificateListResponse, <-chan error) {
+	responseChan := make(chan *DescribeUserCertificateListResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DescribeCertificateList(request)
+		response, err := client.DescribeUserCertificateList(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) DescribeCertificateListWithChan(request *DescribeCertifica
 	return responseChan, errChan
 }
 
-// DescribeCertificateListWithCallback invokes the cas.DescribeCertificateList API asynchronously
-// api document: https://help.aliyun.com/api/cas/describecertificatelist.html
+// DescribeUserCertificateListWithCallback invokes the cas.DescribeUserCertificateList API asynchronously
+// api document: https://help.aliyun.com/api/cas/describeusercertificatelist.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DescribeCertificateListWithCallback(request *DescribeCertificateListRequest, callback func(response *DescribeCertificateListResponse, err error)) <-chan int {
+func (client *Client) DescribeUserCertificateListWithCallback(request *DescribeUserCertificateListRequest, callback func(response *DescribeUserCertificateListResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DescribeCertificateListResponse
+		var response *DescribeUserCertificateListResponse
 		var err error
 		defer close(result)
-		response, err = client.DescribeCertificateList(request)
+		response, err = client.DescribeUserCertificateList(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,19 +73,17 @@ func (client *Client) DescribeCertificateListWithCallback(request *DescribeCerti
 	return result
 }
 
-// DescribeCertificateListRequest is the request struct for api DescribeCertificateList
-type DescribeCertificateListRequest struct {
+// DescribeUserCertificateListRequest is the request struct for api DescribeUserCertificateList
+type DescribeUserCertificateListRequest struct {
 	*requests.RpcRequest
 	SourceIp    string           `position:"Query" name:"SourceIp"`
 	ShowSize    requests.Integer `position:"Query" name:"ShowSize"`
 	CurrentPage requests.Integer `position:"Query" name:"CurrentPage"`
-	Keyword     string           `position:"Query" name:"Keyword"`
 	Lang        string           `position:"Query" name:"Lang"`
-	Status      string           `position:"Query" name:"Status"`
 }
 
-// DescribeCertificateListResponse is the response struct for api DescribeCertificateList
-type DescribeCertificateListResponse struct {
+// DescribeUserCertificateListResponse is the response struct for api DescribeUserCertificateList
+type DescribeUserCertificateListResponse struct {
 	*responses.BaseResponse
 	RequestId       string        `json:"RequestId" xml:"RequestId"`
 	TotalCount      int           `json:"TotalCount" xml:"TotalCount"`
@@ -94,18 +92,18 @@ type DescribeCertificateListResponse struct {
 	CertificateList []Certificate `json:"CertificateList" xml:"CertificateList"`
 }
 
-// CreateDescribeCertificateListRequest creates a request to invoke DescribeCertificateList API
-func CreateDescribeCertificateListRequest() (request *DescribeCertificateListRequest) {
-	request = &DescribeCertificateListRequest{
+// CreateDescribeUserCertificateListRequest creates a request to invoke DescribeUserCertificateList API
+func CreateDescribeUserCertificateListRequest() (request *DescribeUserCertificateListRequest) {
+	request = &DescribeUserCertificateListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("cas", "2018-08-13", "DescribeCertificateList", "cas_esign_fdd", "openAPI")
+	request.InitWithApiInfo("cas", "2018-07-13", "DescribeUserCertificateList", "cas", "openAPI")
 	return
 }
 
-// CreateDescribeCertificateListResponse creates a response to parse from DescribeCertificateList response
-func CreateDescribeCertificateListResponse() (response *DescribeCertificateListResponse) {
-	response = &DescribeCertificateListResponse{
+// CreateDescribeUserCertificateListResponse creates a response to parse from DescribeUserCertificateList response
+func CreateDescribeUserCertificateListResponse() (response *DescribeUserCertificateListResponse) {
+	response = &DescribeUserCertificateListResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

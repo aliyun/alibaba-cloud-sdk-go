@@ -17,23 +17,18 @@ package cas
 
 // Certificate is a nested struct in cas response
 type Certificate struct {
-	Id                     int    `json:"Id" xml:"Id"`
-	Name                   string `json:"Name" xml:"Name"`
-	SourceType             string `json:"SourceType" xml:"SourceType"`
-	CertType               string `json:"CertType" xml:"CertType"`
-	InstanceId             string `json:"InstanceId" xml:"InstanceId"`
-	OrderId                int    `json:"OrderId" xml:"OrderId"`
-	OrderType              string `json:"OrderType" xml:"OrderType"`
-	BrandName              string `json:"BrandName" xml:"BrandName"`
-	BeforeDate             int    `json:"BeforeDate" xml:"BeforeDate"`
-	AfterDate              int    `json:"AfterDate" xml:"AfterDate"`
-	Year                   int    `json:"Year" xml:"Year"`
-	Domain                 string `json:"Domain" xml:"Domain"`
-	RemainingDays          int    `json:"RemainingDays" xml:"RemainingDays"`
-	DeploymentCloudProduct string `json:"DeploymentCloudProduct" xml:"DeploymentCloudProduct"`
-	StatusCode             string `json:"StatusCode" xml:"StatusCode"`
-	NewBuyCertType         string `json:"NewBuyCertType" xml:"NewBuyCertType"`
-	NewBuyDomainType       string `json:"NewBuyDomainType" xml:"NewBuyDomainType"`
-	NewBuyBrand            string `json:"NewBuyBrand" xml:"NewBuyBrand"`
-	ShowDeployment         int    `json:"ShowDeployment" xml:"ShowDeployment"`
+	Id          int    `json:"id" xml:"id"`
+	Name        string `json:"name" xml:"name"`
+	Common      string `json:"common" xml:"common"`
+	Fingerprint string `json:"fingerprint" xml:"fingerprint"`
+	Issuer      string `json:"issuer" xml:"issuer"`
+	OrgName     string `json:"orgName" xml:"orgName"`
+	Province    string `json:"province" xml:"province"`
+	City        string `json:"city" xml:"city"`
+	Country     string `json:"country" xml:"country"`
+	StartDate   string `json:"startDate" xml:"startDate"`
+	EndDate     string `json:"endDate" xml:"endDate"`
+	Sans        string `json:"sans" xml:"sans"`
+	Expired     bool   `json:"expired" xml:"expired"`
+	BuyInAliyun bool   `json:"buyInAliyun" xml:"buyInAliyun"`
 }
