@@ -27,8 +27,8 @@ func (client *Queue) BatchReceiveMessage(request *BatchReceiveMessageRequest) (r
 type BatchReceiveMessageRequest struct {
 	*requests.RoaRequest
 	QueueName			string 			 `position:"Path" name:"QueueName"`
-	NumOfMessages		requests.Integer `position:"Query" name:"NumOfMessages"`
-	WaitSeconds			requests.Integer `position:"Query" name:"WaitSeconds"`
+	NumOfMessages		requests.Integer `position:"Query" name:"numOfMessages"`
+	WaitSeconds			requests.Integer `position:"Query" name:"waitseconds"`
 }
 
 type BatchReceiveMessageResponse struct {
