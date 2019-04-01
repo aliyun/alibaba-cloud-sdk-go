@@ -1,4 +1,4 @@
-[← 首页](../README_zh.md) | 环境要求[(English)](0-Requirements-EN.md) | [安装 →](1-Installation-CN.md)
+[← 首页](../README-CN.md) | 环境要求[(English)](0-Requirements-EN.md) | [安装 →](1-Installation-CN.md)
 ***
 
 ## 要求
@@ -8,4 +8,4 @@
 - 请确保您的项目中没有其他依赖跟 Alibaba Cloud SDK for Go 存在冲突。你可以在[Gopkg.toml](../Gopkg.toml)查看相关的约束。
 
 ***
-[← 首页](../README_zh.md) | 环境要求[(English)](0-Requirements-EN.md) | [安装 →](1-Installation-CN.md)
+[← 首页](../README-CN.md) | 环境要求[(English)](0-Requirements-EN.md) | [安装 →](1-Installation-CN.md)
