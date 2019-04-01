@@ -137,3 +137,4 @@ func main() {
 [latest-release]: https://github.com/aliyun/alibaba-cloud-sdk-go/releases
 [go]: https://golang.org/dl/
 [endpoints]: https://developer.aliyun.com/endpoints
+[Requirements]: docs/0-Requirements-CN.md
