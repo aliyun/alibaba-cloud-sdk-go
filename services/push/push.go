@@ -89,17 +89,17 @@ type PushRequest struct {
 	StoreOffline                   requests.Boolean `position:"Query" name:"StoreOffline"`
 	PushTime                       string           `position:"Query" name:"PushTime"`
 	ExpireTime                     string           `position:"Query" name:"ExpireTime"`
-	iOSApnsEnv                     string           `position:"Query" name:"iOSApnsEnv"`
-	iOSRemind                      requests.Boolean `position:"Query" name:"iOSRemind"`
-	iOSRemindBody                  string           `position:"Query" name:"iOSRemindBody"`
-	iOSBadge                       requests.Integer `position:"Query" name:"iOSBadge"`
-	iOSBadgeAutoIncrement          requests.Boolean `position:"Query" name:"iOSBadgeAutoIncrement"`
-	iOSSilentNotification          requests.Boolean `position:"Query" name:"iOSSilentNotification"`
-	iOSMusic                       string           `position:"Query" name:"iOSMusic"`
-	iOSSubtitle                    string           `position:"Query" name:"iOSSubtitle"`
-	iOSNotificationCategory        string           `position:"Query" name:"iOSNotificationCategory"`
-	iOSMutableContent              requests.Boolean `position:"Query" name:"iOSMutableContent"`
-	iOSExtParameters               string           `position:"Query" name:"iOSExtParameters"`
+	IOSApnsEnv                     string           `position:"Query" name:"IOSApnsEnv"`
+	IOSRemind                      requests.Boolean `position:"Query" name:"IOSRemind"`
+	IOSRemindBody                  string           `position:"Query" name:"IOSRemindBody"`
+	IOSBadge                       requests.Integer `position:"Query" name:"IOSBadge"`
+	IOSBadgeAutoIncrement          requests.Boolean `position:"Query" name:"IOSBadgeAutoIncrement"`
+	IOSSilentNotification          requests.Boolean `position:"Query" name:"IOSSilentNotification"`
+	IOSMusic                       string           `position:"Query" name:"IOSMusic"`
+	IOSSubtitle                    string           `position:"Query" name:"IOSSubtitle"`
+	IOSNotificationCategory        string           `position:"Query" name:"IOSNotificationCategory"`
+	IOSMutableContent              requests.Boolean `position:"Query" name:"IOSMutableContent"`
+	IOSExtParameters               string           `position:"Query" name:"IOSExtParameters"`
 	AndroidNotifyType              string           `position:"Query" name:"AndroidNotifyType"`
 	AndroidOpenType                string           `position:"Query" name:"AndroidOpenType"`
 	AndroidActivity                string           `position:"Query" name:"AndroidActivity"`
