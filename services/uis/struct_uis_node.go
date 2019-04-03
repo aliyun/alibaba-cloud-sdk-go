@@ -28,4 +28,5 @@ type UisNode struct {
 	UisNodeIps       string `json:"UisNodeIps" xml:"UisNodeIps"`
 	UisNodeActiveIp  string `json:"UisNodeActiveIp" xml:"UisNodeActiveIp"`
 	CreateTime       int    `json:"CreateTime" xml:"CreateTime"`
+	UisEniIps        string `json:"UisEniIps" xml:"UisEniIps"`
 }

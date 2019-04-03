@@ -1,3 +1,7 @@
+2019-04-03 Version: 1.53.87
+1, Support DNAT/ENI/Online user count features.
+
+
 2019-04-03 Version: 1.53.86
 1, Add interfaces related to vulnerability whitelist
 2, Add interfaces related to vulnerability auto-del configuration
