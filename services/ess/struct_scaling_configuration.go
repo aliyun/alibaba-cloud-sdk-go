@@ -35,6 +35,8 @@ type ScalingConfiguration struct {
 	InternetMaxBandwidthOut     int            `json:"InternetMaxBandwidthOut" xml:"InternetMaxBandwidthOut"`
 	SystemDiskCategory          string         `json:"SystemDiskCategory" xml:"SystemDiskCategory"`
 	SystemDiskSize              int            `json:"SystemDiskSize" xml:"SystemDiskSize"`
+	SystemDiskName              string         `json:"SystemDiskName" xml:"SystemDiskName"`
+	SystemDiskDescription       string         `json:"SystemDiskDescription" xml:"SystemDiskDescription"`
 	LifecycleState              string         `json:"LifecycleState" xml:"LifecycleState"`
 	CreationTime                string         `json:"CreationTime" xml:"CreationTime"`
 	LoadBalancerWeight          int            `json:"LoadBalancerWeight" xml:"LoadBalancerWeight"`

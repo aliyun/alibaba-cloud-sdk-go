@@ -22,4 +22,8 @@ type DataDisk struct {
 	SnapshotId         string `json:"SnapshotId" xml:"SnapshotId"`
 	Device             string `json:"Device" xml:"Device"`
 	DeleteWithInstance bool   `json:"DeleteWithInstance" xml:"DeleteWithInstance"`
+	Encrypted          string `json:"Encrypted" xml:"Encrypted"`
+	KMSKeyId           string `json:"KMSKeyId" xml:"KMSKeyId"`
+	DiskName           string `json:"DiskName" xml:"DiskName"`
+	Description        string `json:"Description" xml:"Description"`
 }

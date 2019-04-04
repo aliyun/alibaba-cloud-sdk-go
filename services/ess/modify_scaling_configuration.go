@@ -95,6 +95,7 @@ type ModifyScalingConfigurationRequest struct {
 	ResourceOwnerAccount     string                                      `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount             string                                      `position:"Query" name:"OwnerAccount"`
 	Cpu                      requests.Integer                            `position:"Query" name:"Cpu"`
+	SystemDiskDiskName       string                                      `position:"Query" name:"SystemDisk.DiskName"`
 	RamRoleName              string                                      `position:"Query" name:"RamRoleName"`
 	OwnerId                  requests.Integer                            `position:"Query" name:"OwnerId"`
 	DataDisk                 *[]ModifyScalingConfigurationDataDisk       `position:"Query" name:"DataDisk"  type:"Repeated"`
@@ -106,6 +107,7 @@ type ModifyScalingConfigurationRequest struct {
 	LoadBalancerWeight       requests.Integer                            `position:"Query" name:"LoadBalancerWeight"`
 	SystemDiskSize           requests.Integer                            `position:"Query" name:"SystemDisk.Size"`
 	InternetChargeType       string                                      `position:"Query" name:"InternetChargeType"`
+	SystemDiskDescription    string                                      `position:"Query" name:"SystemDisk.Description"`
 }
 
 // ModifyScalingConfigurationSpotPriceLimit is a repeated param struct in ModifyScalingConfigurationRequest
@@ -116,9 +118,13 @@ type ModifyScalingConfigurationSpotPriceLimit struct {
 
 // ModifyScalingConfigurationDataDisk is a repeated param struct in ModifyScalingConfigurationRequest
 type ModifyScalingConfigurationDataDisk struct {
+	DiskName           string `name:"DiskName"`
 	SnapshotId         string `name:"SnapshotId"`
 	Size               string `name:"Size"`
+	Encrypted          string `name:"Encrypted"`
+	Description        string `name:"Description"`
 	Category           string `name:"Category"`
+	KMSKeyId           string `name:"KMSKeyId"`
 	Device             string `name:"Device"`
 	DeleteWithInstance string `name:"DeleteWithInstance"`
 }
