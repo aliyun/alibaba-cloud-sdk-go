@@ -33,6 +33,8 @@ func NewClient() (client *Client, err error) {
 	return
 }
 
+// NewClientWithProvider creates a sdk client with providers
+// usage: https://github.com/aliyun/alibaba-cloud-sdk-go/blob/master/docs/2-Client-EN.md
 func NewClientWithProvider(regionId string, providers ...provider.Provider) (client *Client, err error) {
 	client = &Client{}
 	var pc provider.Provider
@@ -54,7 +56,7 @@ func NewClientWithOptions(regionId string, config *sdk.Config, credential auth.C
 }
 
 // NewClientWithAccessKey is a shortcut to create sdk client with accesskey
-// usage: https://help.aliyun.com/document_detail/66217.html
+// usage: https://github.com/aliyun/alibaba-cloud-sdk-go/blob/master/docs/2-Client-EN.md
 func NewClientWithAccessKey(regionId, accessKeyId, accessKeySecret string) (client *Client, err error) {
 	client = &Client{}
 	err = client.InitWithAccessKey(regionId, accessKeyId, accessKeySecret)
@@ -62,7 +64,7 @@ func NewClientWithAccessKey(regionId, accessKeyId, accessKeySecret string) (clie
 }
 
 // NewClientWithStsToken is a shortcut to create sdk client with sts token
-// usage: https://help.aliyun.com/document_detail/66222.html
+// usage: https://github.com/aliyun/alibaba-cloud-sdk-go/blob/master/docs/2-Client-EN.md
 func NewClientWithStsToken(regionId, stsAccessKeyId, stsAccessKeySecret, stsToken string) (client *Client, err error) {
 	client = &Client{}
 	err = client.InitWithStsToken(regionId, stsAccessKeyId, stsAccessKeySecret, stsToken)
@@ -70,7 +72,7 @@ func NewClientWithStsToken(regionId, stsAccessKeyId, stsAccessKeySecret, stsToke
 }
 
 // NewClientWithRamRoleArn is a shortcut to create sdk client with ram roleArn
-// usage: https://help.aliyun.com/document_detail/66222.html
+// usage: https://github.com/aliyun/alibaba-cloud-sdk-go/blob/master/docs/2-Client-EN.md
 func NewClientWithRamRoleArn(regionId string, accessKeyId, accessKeySecret, roleArn, roleSessionName string) (client *Client, err error) {
 	client = &Client{}
 	err = client.InitWithRamRoleArn(regionId, accessKeyId, accessKeySecret, roleArn, roleSessionName)
@@ -78,7 +80,7 @@ func NewClientWithRamRoleArn(regionId string, accessKeyId, accessKeySecret, role
 }
 
 // NewClientWithRamRoleArn is a shortcut to create sdk client with ram roleArn and policy
-// usage: https://help.aliyun.com/document_detail/28763.html
+// usage: https://github.com/aliyun/alibaba-cloud-sdk-go/blob/master/docs/2-Client-EN.md
 func NewClientWithRamRoleArnAndPolicy(regionId string, accessKeyId, accessKeySecret, roleArn, roleSessionName, policy string) (client *Client, err error) {
 	client = &Client{}
 	err = client.InitWithRamRoleArnAndPolicy(regionId, accessKeyId, accessKeySecret, roleArn, roleSessionName, policy)
@@ -86,7 +88,7 @@ func NewClientWithRamRoleArnAndPolicy(regionId string, accessKeyId, accessKeySec
 }
 
 // NewClientWithEcsRamRole is a shortcut to create sdk client with ecs ram role
-// usage: https://help.aliyun.com/document_detail/66223.html
+// usage: https://github.com/aliyun/alibaba-cloud-sdk-go/blob/master/docs/2-Client-EN.md
 func NewClientWithEcsRamRole(regionId string, roleName string) (client *Client, err error) {
 	client = &Client{}
 	err = client.InitWithEcsRamRole(regionId, roleName)
@@ -94,7 +96,7 @@ func NewClientWithEcsRamRole(regionId string, roleName string) (client *Client, 
 }
 
 // NewClientWithRsaKeyPair is a shortcut to create sdk client with rsa key pair
-// attention: rsa key pair auth is only Japan regions available
+// usage: https://github.com/aliyun/alibaba-cloud-sdk-go/blob/master/docs/2-Client-EN.md
 func NewClientWithRsaKeyPair(regionId string, publicKeyId, privateKey string, sessionExpiration int) (client *Client, err error) {
 	client = &Client{}
 	err = client.InitWithRsaKeyPair(regionId, publicKeyId, privateKey, sessionExpiration)

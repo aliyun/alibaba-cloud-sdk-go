@@ -96,15 +96,15 @@ type DescribeFileSystemsFileSystems0 struct {
 }
 
 type DescribeFileSystemsFileSystem1 struct {
-	FileSystemId string                             `json:"FileSystemId" xml:"FileSystemId"`
-	Destription  string                             `json:"Destription" xml:"Destription"`
-	CreateTime   string                             `json:"CreateTime" xml:"CreateTime"`
-	RegionId     string                             `json:"RegionId" xml:"RegionId"`
-	ProtocolType string                             `json:"ProtocolType" xml:"ProtocolType"`
-	StorageType  string                             `json:"StorageType" xml:"StorageType"`
-	MeteredSize  int64                              `json:"MeteredSize" xml:"MeteredSize"`
-	MountTargets []DescribeFileSystemsMountTargets1 `json:"MountTargets" xml:"MountTargets"`
-	Packages     []DescribeFileSystemsPackages1     `json:"Packages" xml:"Packages"`
+	FileSystemId string                           `json:"FileSystemId" xml:"FileSystemId"`
+	Destription  string                           `json:"Destription" xml:"Destription"`
+	CreateTime   string                           `json:"CreateTime" xml:"CreateTime"`
+	RegionId     string                           `json:"RegionId" xml:"RegionId"`
+	ProtocolType string                           `json:"ProtocolType" xml:"ProtocolType"`
+	StorageType  string                           `json:"StorageType" xml:"StorageType"`
+	MeteredSize  int64                            `json:"MeteredSize" xml:"MeteredSize"`
+	MountTargets DescribeFileSystemsMountTargets1 `json:"MountTargets" xml:"MountTargets"`
+	Packages     DescribeFileSystemsPackages1     `json:"Packages" xml:"Packages"`
 }
 
 type DescribeFileSystemsMountTargets1 struct {
