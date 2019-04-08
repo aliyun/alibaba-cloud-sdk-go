@@ -17,5 +17,5 @@ package dbs
 
 // ItemsInDescribeIncrementBackupList is a nested struct in dbs response
 type ItemsInDescribeIncrementBackupList struct {
-	IncrementBackupFile []string `json:"IncrementBackupFile" xml:"IncrementBackupFile"`
+	IncrementBackupFile []IncrementBackupFile `json:"IncrementBackupFile" xml:"IncrementBackupFile"`
 }

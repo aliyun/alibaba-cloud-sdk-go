@@ -17,5 +17,5 @@ package dbs
 
 // ItemsInDescribeBackupGatewayList is a nested struct in dbs response
 type ItemsInDescribeBackupGatewayList struct {
-	BackupGateway []string `json:"BackupGateway" xml:"BackupGateway"`
+	BackupGateway []BackupGateway `json:"BackupGateway" xml:"BackupGateway"`
 }
