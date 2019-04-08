@@ -1,3 +1,10 @@
+2019-04-08 Version: 1.53.89
+1, Add StopBackupPlan DBS interface.
+2, Add DescribeBackupPlanList DBS interface.
+3, Add DescribeFullBackupList DBS interface.
+4, Add DescribeIncrementBackupList DBS interface.
+5, Add DescribeBackupGatewayList DBS interface.
+
 2019-04-04 Version: 1.53.88
 1, ScalingConf systemDisk add DiskName and Description  parameters.
 2, ScalingConf dataDisk add DiskName & Description & Encrypted & KMSKeyId  parameters.
