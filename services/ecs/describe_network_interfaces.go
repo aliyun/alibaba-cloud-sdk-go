@@ -77,6 +77,7 @@ func (client *Client) DescribeNetworkInterfacesWithCallback(request *DescribeNet
 type DescribeNetworkInterfacesRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer                `position:"Query" name:"ResourceOwnerId"`
+	ServiceManaged       requests.Boolean                `position:"Query" name:"ServiceManaged"`
 	SecurityGroupId      string                          `position:"Query" name:"SecurityGroupId"`
 	Type                 string                          `position:"Query" name:"Type"`
 	PageNumber           requests.Integer                `position:"Query" name:"PageNumber"`

@@ -1,3 +1,6 @@
+2019-04-09 Version: 1.53.92
+1, support service account management networkInterface function.
+
 2019-04-09 Version: 1.53.91
 1, Add Apis for offline VerifySDK.
 

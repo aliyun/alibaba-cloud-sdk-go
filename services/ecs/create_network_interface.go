@@ -80,9 +80,11 @@ type CreateNetworkInterfaceRequest struct {
 	ClientToken          string                       `position:"Query" name:"ClientToken"`
 	SecurityGroupId      string                       `position:"Query" name:"SecurityGroupId"`
 	Description          string                       `position:"Query" name:"Description"`
+	BusinessType         string                       `position:"Query" name:"BusinessType"`
 	ResourceGroupId      string                       `position:"Query" name:"ResourceGroupId"`
 	Tag                  *[]CreateNetworkInterfaceTag `position:"Query" name:"Tag"  type:"Repeated"`
 	NetworkInterfaceName string                       `position:"Query" name:"NetworkInterfaceName"`
+	Visible              requests.Boolean             `position:"Query" name:"Visible"`
 	ResourceOwnerAccount string                       `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string                       `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer             `position:"Query" name:"OwnerId"`
