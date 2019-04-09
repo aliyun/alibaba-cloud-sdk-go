@@ -50,6 +50,7 @@ var Version = "0.0.1"
 var defaultConnectTimeout = 5 * time.Second
 var defaultReadTimeout = 10 * time.Second
 
+var fieldMap = make(map[string]string)
 var DefaultUserAgent = fmt.Sprintf("AlibabaCloud (%s; %s) Golang/%s Core/%s", runtime.GOOS, runtime.GOARCH, strings.Trim(runtime.Version(), "go"), Version)
 
 var hookDo = func(fn func(req *http.Request) (*http.Response, error)) func(req *http.Request) (*http.Response, error) {
@@ -64,6 +65,7 @@ type Client struct {
 	httpProxy      string
 	httpsProxy     string
 	noProxy        string
+	logger         *Logger
 	userAgent      map[string]string
 	signer         auth.Signer
 	httpClient     *http.Client
@@ -450,10 +452,16 @@ func (client *Client) getHTTPSInsecure(request requests.AcsRequest) (insecure bo
 }
 
 func (client *Client) DoActionWithSigner(request requests.AcsRequest, response responses.AcsResponse, signer auth.Signer) (err error) {
+
+	defer func() {
+		client.printLog(err)
+	}()
+	initLogMsg()
 	httpRequest, err := client.buildRequestWithSigner(request, signer)
 	if err != nil {
 		return
 	}
+
 	client.setTimeout(request)
 	proxy, err := client.getHttpProxy(httpRequest.URL.Scheme)
 	if err != nil {
@@ -484,19 +492,36 @@ func (client *Client) DoActionWithSigner(request requests.AcsRequest, response r
 
 	var httpResponse *http.Response
 	for retryTimes := 0; retryTimes <= client.config.MaxRetryTime; retryTimes++ {
-		if proxy != nil && proxy.User != nil{
+		if proxy != nil && proxy.User != nil {
 			if password, passwordSet := proxy.User.Password(); passwordSet {
 				httpRequest.SetBasicAuth(proxy.User.Username(), password)
 			}
 		}
+		if retryTimes > 0 {
+			client.printLog(err)
+		}
 		debug("> %s %s %s", httpRequest.Method, httpRequest.URL.RequestURI(), httpRequest.Proto)
 		debug("> Host: %s", httpRequest.Host)
+		fieldMap["{host}"] = httpRequest.Host
+		fieldMap["{method}"] = httpRequest.Method
+		fieldMap["{uri}"] = httpRequest.URL.RequestURI()
+		fieldMap["{pid}"] = strconv.Itoa(os.Getpid())
+		fieldMap["{version}"] = strings.Split(httpRequest.Proto, "/")[1]
+		hostname, _ := os.Hostname()
+		fieldMap["{hostname}"] = hostname
+		fieldMap["{req_headers}"] = TransToString(httpRequest.Header)
+		fieldMap["{target}"] = httpRequest.URL.Path + httpRequest.URL.RawQuery
 		for key, value := range httpRequest.Header {
 			debug("> %s: %v", key, strings.Join(value, ""))
 		}
 		debug(">")
+		startTime := time.Now()
+		fieldMap["{start_time}"] = startTime.Format("2006-01-02 15:04:05")
 		httpResponse, err = hookDo(client.httpClient.Do)(httpRequest)
+		fieldMap["{cost}"] = time.Now().Sub(startTime).String()
 		if err == nil {
+			fieldMap["{code}"] = strconv.Itoa(httpResponse.StatusCode)
+			fieldMap["{res_headers}"] = TransToString(httpResponse.Header)
 			debug("< %s %s", httpResponse.Proto, httpResponse.Status)
 			for key, value := range httpResponse.Header {
 				debug("< %s: %v", key, strings.Join(value, ""))

@@ -112,8 +112,9 @@ func main() {
 * [Proxy](docs/4-Proxy-EN.md)
 * [Timeout](docs/5-Timeout-EN.md)
 * [Debug](docs/6-Debug-EN.md)
-* [Concurrent](docs/7-Concurrent-EN.md)
-* [Asynchronous Call](docs/8-Asynchronous-EN.md)
+* [Logger](docs/7-Logger-EN.md)
+* [Concurrent](docs/8-Concurrent-EN.md)
+* [Asynchronous Call](docs/9-Asynchronous-EN.md)
 
 
 ## Issues
