@@ -79,7 +79,6 @@ type GenerateDataKeyRequest struct {
 	EncryptionContext string           `position:"Query" name:"EncryptionContext"`
 	KeyId             string           `position:"Query" name:"KeyId"`
 	KeySpec           string           `position:"Query" name:"KeySpec"`
-	STSToken          string           `position:"Query" name:"STSToken"`
 	NumberOfBytes     requests.Integer `position:"Query" name:"NumberOfBytes"`
 }
 

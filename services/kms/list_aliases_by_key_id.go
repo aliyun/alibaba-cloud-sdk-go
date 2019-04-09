@@ -78,7 +78,6 @@ type ListAliasesByKeyIdRequest struct {
 	*requests.RpcRequest
 	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 	KeyId      string           `position:"Query" name:"KeyId"`
-	STSToken   string           `position:"Query" name:"STSToken"`
 	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
 }
 

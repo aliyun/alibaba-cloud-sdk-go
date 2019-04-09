@@ -79,7 +79,6 @@ type CreateKeyRequest struct {
 	KeyUsage    string `position:"Query" name:"KeyUsage"`
 	Origin      string `position:"Query" name:"Origin"`
 	Description string `position:"Query" name:"Description"`
-	STSToken    string `position:"Query" name:"STSToken"`
 }
 
 // CreateKeyResponse is the response struct for api CreateKey

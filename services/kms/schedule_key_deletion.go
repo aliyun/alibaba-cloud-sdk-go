@@ -78,7 +78,6 @@ type ScheduleKeyDeletionRequest struct {
 	*requests.RpcRequest
 	PendingWindowInDays requests.Integer `position:"Query" name:"PendingWindowInDays"`
 	KeyId               string           `position:"Query" name:"KeyId"`
-	STSToken            string           `position:"Query" name:"STSToken"`
 }
 
 // ScheduleKeyDeletionResponse is the response struct for api ScheduleKeyDeletion

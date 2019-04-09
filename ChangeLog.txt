@@ -1,3 +1,7 @@
+2019-04-09 Version: 1.53.93
+1, Add APIs: TagResource, UntagResource, ListResourceTags.
+2, Remove the optional parameter 'STSToken'  and replace it with 'SecurityToken'.
+
 2019-04-09 Version: 1.53.92
 1, support service account management networkInterface function.
 

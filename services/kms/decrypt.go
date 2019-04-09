@@ -77,7 +77,6 @@ func (client *Client) DecryptWithCallback(request *DecryptRequest, callback func
 type DecryptRequest struct {
 	*requests.RpcRequest
 	EncryptionContext string `position:"Query" name:"EncryptionContext"`
-	STSToken          string `position:"Query" name:"STSToken"`
 	CiphertextBlob    string `position:"Query" name:"CiphertextBlob"`
 }
 

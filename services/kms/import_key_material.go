@@ -80,7 +80,6 @@ type ImportKeyMaterialRequest struct {
 	EncryptedKeyMaterial  string           `position:"Query" name:"EncryptedKeyMaterial"`
 	KeyMaterialExpireUnix requests.Integer `position:"Query" name:"KeyMaterialExpireUnix"`
 	KeyId                 string           `position:"Query" name:"KeyId"`
-	STSToken              string           `position:"Query" name:"STSToken"`
 }
 
 // ImportKeyMaterialResponse is the response struct for api ImportKeyMaterial

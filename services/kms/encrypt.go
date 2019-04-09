@@ -78,7 +78,6 @@ type EncryptRequest struct {
 	*requests.RpcRequest
 	EncryptionContext string `position:"Query" name:"EncryptionContext"`
 	KeyId             string `position:"Query" name:"KeyId"`
-	STSToken          string `position:"Query" name:"STSToken"`
 	Plaintext         string `position:"Query" name:"Plaintext"`
 }
 

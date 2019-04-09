@@ -77,7 +77,6 @@ func (client *Client) ListAliasesWithCallback(request *ListAliasesRequest, callb
 type ListAliasesRequest struct {
 	*requests.RpcRequest
 	PageSize   requests.Integer `position:"Query" name:"PageSize"`
-	STSToken   string           `position:"Query" name:"STSToken"`
 	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
 }
 

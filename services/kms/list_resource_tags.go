@@ -76,8 +76,7 @@ func (client *Client) ListResourceTagsWithCallback(request *ListResourceTagsRequ
 // ListResourceTagsRequest is the request struct for api ListResourceTags
 type ListResourceTagsRequest struct {
 	*requests.RpcRequest
-	KeyId    string `position:"Query" name:"KeyId"`
-	STSToken string `position:"Query" name:"STSToken"`
+	KeyId string `position:"Query" name:"KeyId"`
 }
 
 // ListResourceTagsResponse is the response struct for api ListResourceTags

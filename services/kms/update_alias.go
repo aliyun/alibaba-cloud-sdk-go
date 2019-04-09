@@ -78,7 +78,6 @@ type UpdateAliasRequest struct {
 	*requests.RpcRequest
 	AliasName string `position:"Query" name:"AliasName"`
 	KeyId     string `position:"Query" name:"KeyId"`
-	STSToken  string `position:"Query" name:"STSToken"`
 }
 
 // UpdateAliasResponse is the response struct for api UpdateAlias

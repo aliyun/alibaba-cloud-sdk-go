@@ -77,7 +77,6 @@ func (client *Client) ListKeysWithCallback(request *ListKeysRequest, callback fu
 type ListKeysRequest struct {
 	*requests.RpcRequest
 	PageSize   requests.Integer `position:"Query" name:"PageSize"`
-	STSToken   string           `position:"Query" name:"STSToken"`
 	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
 }
 
