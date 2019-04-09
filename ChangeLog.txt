@@ -1,3 +1,6 @@
+2019-04-09 Version: 1.53.91
+1, Add Apis for offline VerifySDK.
+
 2019-04-08 Version: 1.53.90
 1, Modify DescribeBackupPlanList DBS interface.
 2, Modify DescribeFullBackupList DBS interface.

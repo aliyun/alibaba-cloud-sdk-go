@@ -97,7 +97,7 @@ func CreateGetStatusRequest() (request *GetStatusRequest) {
 	request = &GetStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cloudauth", "2018-09-16", "GetStatus", "CloudAuth", "openAPI")
+	request.InitWithApiInfo("Cloudauth", "2018-09-16", "GetStatus", "cloudauth", "openAPI")
 	return
 }
 

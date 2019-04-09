@@ -104,7 +104,7 @@ func CreateSubmitVerificationRequest() (request *SubmitVerificationRequest) {
 	request = &SubmitVerificationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cloudauth", "2018-09-16", "SubmitVerification", "CloudAuth", "openAPI")
+	request.InitWithApiInfo("Cloudauth", "2018-09-16", "SubmitVerification", "cloudauth", "openAPI")
 	return
 }
 

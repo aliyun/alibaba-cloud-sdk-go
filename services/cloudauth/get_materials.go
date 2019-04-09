@@ -97,7 +97,7 @@ func CreateGetMaterialsRequest() (request *GetMaterialsRequest) {
 	request = &GetMaterialsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cloudauth", "2018-09-16", "GetMaterials", "CloudAuth", "openAPI")
+	request.InitWithApiInfo("Cloudauth", "2018-09-16", "GetMaterials", "cloudauth", "openAPI")
 	return
 }
 
