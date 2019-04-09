@@ -429,6 +429,59 @@ func Test_DoAction_With500(t *testing.T) {
 	assert.Equal(t, "Server Internel Error", response.GetHttpContentString())
 }
 
+func Test_DoAction_WithLogger(t *testing.T) {
+	client, err := NewClientWithAccessKey("regionid", "acesskeyid", "accesskeysecret")
+	assert.Nil(t, err)
+	assert.NotNil(t, client)
+	assert.Equal(t, true, client.isRunning)
+	request := requests.NewCommonRequest()
+	request.Version = "2014-05-26"
+	request.ApiName = "DescribeInstanceStatus"
+	request.TransToAcsRequest()
+	response := responses.NewCommonResponse()
+	ts := mockServer(500, "Server Internel Error")
+	defer ts.Close()
+	domain := strings.Replace(ts.URL, "http://", "", 1)
+	request.Domain = domain
+	f1, err := os.Create("test.txt")
+	defer os.Remove("test.txt")
+	assert.Nil(t, err)
+
+	// Test when set logger, it will create a new client logger.
+	client.SetLogger("error", "Alibaba", f1, "")
+	err = client.DoAction(request, response)
+	assert.NotNil(t, err)
+	log := client.GetLogger()
+	assert.Contains(t, client.GetLoggerMsg(), "Alibaba: \"GET /?AccessKeyId=acesskeyid&Action=DescribeInstanceStatus&Format=JSON&RegionId=regionid")
+	assert.Equal(t, 500, response.GetHttpStatus())
+	assert.Equal(t, true, log.isOpen)
+	assert.Equal(t, "Server Internel Error", response.GetHttpContentString())
+
+	// Test when close logger, it will not print log.
+	client.CloseLogger()
+	err = client.DoAction(request, response)
+	assert.NotNil(t, err)
+	log = client.GetLogger()
+	assert.Equal(t, 500, response.GetHttpStatus())
+	assert.Equal(t, false, log.isOpen)
+	assert.Equal(t, "{time} {channel}: \"{method} {uri} HTTP/{version}\" {code} {cost} {hostname}", client.GetTemplate())
+	assert.Contains(t, client.GetLoggerMsg(), `GET /?AccessKeyId=acesskeyid&Action=DescribeInstanceStatus&Format=JSON&RegionId=regionid`)
+	assert.Equal(t, "Server Internel Error", response.GetHttpContentString())
+
+	// Test when open logger, it will print log.
+	client.OpenLogger()
+	template := "{channel}: \"{method} {code}"
+	client.SetTemplate(template)
+	err = client.DoAction(request, response)
+	assert.NotNil(t, err)
+	log = client.GetLogger()
+	assert.Equal(t, 500, response.GetHttpStatus())
+	assert.Equal(t, true, log.isOpen)
+	assert.Equal(t, "{channel}: \"{method} {code}", client.GetTemplate())
+	assert.Contains(t, client.GetLoggerMsg(), `Alibaba: "GET 500`)
+	assert.Equal(t, "Server Internel Error", response.GetHttpContentString())
+}
+
 func TestClient_BuildRequestWithSigner(t *testing.T) {
 	client, err := NewClientWithAccessKey("regionid", "acesskeyid", "accesskeysecret")
 	assert.Nil(t, err)

@@ -158,8 +158,14 @@ func Test_DescribeClustersWithCommonRequestWithROAWithSTStoken(t *testing.T) {
 	request.PathPattern = "/clusters/[ClusterId]"
 	request.QueryParams["RegionId"] = os.Getenv("REGION_ID")
 	request.TransToAcsRequest()
+	f1, err := os.Create("test.txt")
+	defer os.Remove("test.txt")
+	assert.Nil(t, err)
+	templete := `{version}, {host}`
+	client.NewLogger("error", "Alibaba", f1, templete)
 	_, err = client.ProcessCommonRequest(request)
 	assert.NotNil(t, err)
+	assert.Contains(t, client.GetLoggerMsg(), `1.1, cs.aliyuncs.com`)
 	assert.Contains(t, err.Error(), "Request url is invalid")
 }
 
@@ -174,6 +180,7 @@ func Test_DescribeClusterDetailWithCommonRequestWithROAWithHTTPS(t *testing.T) {
 	request.PathPattern = "/clusters/[ClusterId]"
 	request.QueryParams["RegionId"] = os.Getenv("REGION_ID")
 	request.TransToAcsRequest()
+
 	_, err = client.ProcessCommonRequest(request)
 	assert.NotNil(t, err)
 	assert.Contains(t, err.Error(), "Request url is invalid")

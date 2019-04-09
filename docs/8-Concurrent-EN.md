@@ -1,4 +1,4 @@
-[← Debug](6-Debug-EN.md) | Concurrent[(中文)](7-Concurrent-CN.md) | [Asynchronous Call →](8-Asynchronous-EN.md)
+[← Logger](7-Logger-EN.md) | Concurrent[(中文)](8-Concurrent-CN.md) | [Asynchronous Call →](9-Asynchronous-EN.md)
 ***
 
 ## Concurrent Request
@@ -26,4 +26,4 @@ client.EnableAsync(poolSize, maxTaskQueueSize)
 ```
 
 ***
-[← Debug](6-Debug-EN.md) | Concurrent[(中文)](7-Concurrent-CN.md) | [Asynchronous Call →](8-Asynchronous-EN.md)
+[← Logger](7-Logger-EN.md) | Concurrent[(中文)](8-Concurrent-CN.md) | [Asynchronous Call →](9-Asynchronous-EN.md)

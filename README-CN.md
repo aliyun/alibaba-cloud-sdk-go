@@ -109,8 +109,9 @@ func main() {
 * [Proxy](docs/4-Proxy-CN.md)
 * [Timeout](docs/5-Timeout-CN.md)
 * [Debug](docs/6-Debug-CN.md)
-* [Concurrent](docs/7-Concurrent-CN.md)
-* [Asynchronous Call](docs/8-Asynchronous-CN.md)
+* [Logger](docs/7-Logger-CN.md)
+* [Concurrent](docs/8-Concurrent-CN.md)
+* [Asynchronous Call](docs/9-Asynchronous-CN.md)
 
 
 ## 问题

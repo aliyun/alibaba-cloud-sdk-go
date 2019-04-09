@@ -1,4 +1,4 @@
-[← 调试](6-Debug-CN.md) | 并发[(English)](7-Concurrent-EN.md) | [异步调用 →](8-Asynchronous-CN.md)
+[← 日志](7-Logger-CN.md) | 并发[(English)](8-Concurrent-EN.md) | [异步调用 →](9-Asynchronous-CN.md)
 ***
 
 ## 并发请求
@@ -26,4 +26,4 @@ client.EnableAsync(poolSize, maxTaskQueueSize)
 ```
 
 ***
-[← 调试](6-Debug-CN.md) | 并发[(English)](7-Concurrent-EN.md) | [异步调用 →](8-Asynchronous-CN.md)
+[← 日志](7-Logger-CN.md) | 并发[(English)](8-Concurrent-EN.md) | [异步调用 →](9-Asynchronous-CN.md)
