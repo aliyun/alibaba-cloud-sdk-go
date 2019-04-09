@@ -307,3 +307,18 @@ func Test_HTTPProxy(t *testing.T) {
 
 	os.Setenv("HTTP_PROXY", originEnv)
 }
+
+
+func Test_DdoscooWithServiceCode(t *testing.T) {
+	client, err := sdk.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
+	assert.Nil(t, err)
+	request := requests.NewCommonRequest()
+	request.Version = "2017-12-28"
+	request.Product = "ddoscoo"
+	request.ServiceCode = "ddoscoo"
+	request.ApiName = "DescribeInstanceSpecs"
+	request.RegionId = os.Getenv("REGION_ID")
+	_, err = client.ProcessCommonRequest(request)
+	assert.NotNil(t, err)
+	assert.Contains(t, err.Error(), "InstanceIds is mandatory for this action.")
+}
