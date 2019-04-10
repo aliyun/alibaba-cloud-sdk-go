@@ -76,6 +76,7 @@ func (client *Client) DescribeBackupGatewayListWithCallback(request *DescribeBac
 // DescribeBackupGatewayListRequest is the request struct for api DescribeBackupGatewayList
 type DescribeBackupGatewayListRequest struct {
 	*requests.RpcRequest
+	Identifier  string           `position:"Query" name:"Identifier"`
 	ClientToken string           `position:"Query" name:"ClientToken"`
 	PageSize    requests.Integer `position:"Query" name:"PageSize"`
 	Region      string           `position:"Query" name:"Region"`

@@ -1,3 +1,6 @@
+2019-04-10 Version: 1.54.1
+1, Modify DescribeBackupGatewayList DBS interface.
+
 2019-04-10 Version: 1.54.0
 1, New APIs for visual service (VNC).
 2, New APIs for software management.
