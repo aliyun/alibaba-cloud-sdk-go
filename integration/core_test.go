@@ -324,7 +324,7 @@ func Test_DdoscooWithServiceCode(t *testing.T) {
 	request.Product = "ddoscoo"
 	request.ServiceCode = "ddoscoo"
 	request.ApiName = "DescribeInstanceSpecs"
-	request.RegionId = os.Getenv("REGION_ID")
+	request.RegionId = "cn-hangzhou"
 	_, err = client.ProcessCommonRequest(request)
 	assert.NotNil(t, err)
 	assert.Contains(t, err.Error(), "InstanceIds is mandatory for this action.")
