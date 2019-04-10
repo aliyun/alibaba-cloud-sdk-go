@@ -85,6 +85,7 @@ type CreateHybridClusterRequest struct {
 	OnPremiseVolumeRemotePath   string                                  `position:"Query" name:"OnPremiseVolumeRemotePath"`
 	JobQueue                    string                                  `position:"Query" name:"JobQueue"`
 	VolumeType                  string                                  `position:"Query" name:"VolumeType"`
+	ResourceGroupId             string                                  `position:"Query" name:"ResourceGroupId"`
 	Password                    string                                  `position:"Query" name:"Password"`
 	OnPremiseVolumeMountPoint   string                                  `position:"Query" name:"OnPremiseVolumeMountPoint"`
 	OnPremiseVolumeProtocol     string                                  `position:"Query" name:"OnPremiseVolumeProtocol"`

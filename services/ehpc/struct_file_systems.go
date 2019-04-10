@@ -17,13 +17,15 @@ package ehpc
 
 // FileSystems is a nested struct in ehpc response
 type FileSystems struct {
-	RegionId        string          `json:"RegionId" xml:"RegionId"`
-	FileSystemId    string          `json:"FileSystemId" xml:"FileSystemId"`
-	ProtocolType    string          `json:"ProtocolType" xml:"ProtocolType"`
-	CreateTime      string          `json:"CreateTime" xml:"CreateTime"`
-	Destription     string          `json:"Destription" xml:"Destription"`
-	StorageType     string          `json:"StorageType" xml:"StorageType"`
-	MeteredSize     string          `json:"MeteredSize" xml:"MeteredSize"`
-	PackageList     PackageList     `json:"PackageList" xml:"PackageList"`
-	MountTargetList MountTargetList `json:"MountTargetList" xml:"MountTargetList"`
+	FileSystemId    string                               `json:"FileSystemId" xml:"FileSystemId"`
+	RegionId        string                               `json:"RegionId" xml:"RegionId"`
+	StorageType     string                               `json:"StorageType" xml:"StorageType"`
+	ZoneId          string                               `json:"ZoneId" xml:"ZoneId"`
+	CreateTime      string                               `json:"CreateTime" xml:"CreateTime"`
+	ProtocolType    string                               `json:"ProtocolType" xml:"ProtocolType"`
+	Capacity        string                               `json:"Capacity" xml:"Capacity"`
+	MeteredSize     string                               `json:"MeteredSize" xml:"MeteredSize"`
+	Destription     string                               `json:"Destription" xml:"Destription"`
+	PackageList     PackageList                          `json:"PackageList" xml:"PackageList"`
+	MountTargetList MountTargetListInListCpfsFileSystems `json:"MountTargetList" xml:"MountTargetList"`
 }

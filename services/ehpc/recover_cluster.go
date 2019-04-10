@@ -78,6 +78,7 @@ type RecoverClusterRequest struct {
 	*requests.RpcRequest
 	ImageId         string `position:"Query" name:"ImageId"`
 	OsTag           string `position:"Query" name:"OsTag"`
+	ClientVersion   string `position:"Query" name:"ClientVersion"`
 	AccountType     string `position:"Query" name:"AccountType"`
 	SchedulerType   string `position:"Query" name:"SchedulerType"`
 	ClusterId       string `position:"Query" name:"ClusterId"`

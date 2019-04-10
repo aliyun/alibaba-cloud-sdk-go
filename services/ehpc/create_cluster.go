@@ -78,6 +78,7 @@ type CreateClusterRequest struct {
 	*requests.RpcRequest
 	SccClusterId                string                            `position:"Query" name:"SccClusterId"`
 	ImageId                     string                            `position:"Query" name:"ImageId"`
+	AdditionalVolumes           *[]CreateClusterAdditionalVolumes `position:"Query" name:"AdditionalVolumes"  type:"Repeated"`
 	EcsOrderManagerInstanceType string                            `position:"Query" name:"EcsOrder.Manager.InstanceType"`
 	EhpcVersion                 string                            `position:"Query" name:"EhpcVersion"`
 	AccountType                 string                            `position:"Query" name:"AccountType"`
@@ -91,8 +92,10 @@ type CreateClusterRequest struct {
 	VolumeType                  string                            `position:"Query" name:"VolumeType"`
 	DeployMode                  string                            `position:"Query" name:"DeployMode"`
 	EcsOrderManagerCount        requests.Integer                  `position:"Query" name:"EcsOrder.Manager.Count"`
+	ResourceGroupId             string                            `position:"Query" name:"ResourceGroupId"`
 	Password                    string                            `position:"Query" name:"Password"`
 	EcsOrderLoginCount          requests.Integer                  `position:"Query" name:"EcsOrder.Login.Count"`
+	RemoteVisEnable             string                            `position:"Query" name:"RemoteVisEnable"`
 	SystemDiskSize              requests.Integer                  `position:"Query" name:"SystemDiskSize"`
 	ComputeSpotPriceLimit       string                            `position:"Query" name:"ComputeSpotPriceLimit"`
 	AutoRenewPeriod             requests.Integer                  `position:"Query" name:"AutoRenewPeriod"`
@@ -118,6 +121,19 @@ type CreateClusterRequest struct {
 	VolumeMountpoint            string                            `position:"Query" name:"VolumeMountpoint"`
 	EcsOrderLoginInstanceType   string                            `position:"Query" name:"EcsOrder.Login.InstanceType"`
 	ZoneId                      string                            `position:"Query" name:"ZoneId"`
+}
+
+// CreateClusterAdditionalVolumes is a repeated param struct in CreateClusterRequest
+type CreateClusterAdditionalVolumes struct {
+	VolumeType       string    `name:"VolumeType"`
+	VolumeProtocol   string    `name:"VolumeProtocol"`
+	LocalDirectory   string    `name:"LocalDirectory"`
+	RemoteDirectory  string    `name:"RemoteDirectory"`
+	Roles            *[]string `name:"Roles" type:"Repeated"`
+	VolumeId         string    `name:"VolumeId"`
+	VolumeMountpoint string    `name:"VolumeMountpoint"`
+	Location         string    `name:"Location"`
+	JobQueue         string    `name:"JobQueue"`
 }
 
 // CreateClusterPostInstallScript is a repeated param struct in CreateClusterRequest

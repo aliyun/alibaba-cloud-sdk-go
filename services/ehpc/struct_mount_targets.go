@@ -17,10 +17,10 @@ package ehpc
 
 // MountTargets is a nested struct in ehpc response
 type MountTargets struct {
+	VswId             string `json:"VswId" xml:"VswId"`
 	MountTargetDomain string `json:"MountTargetDomain" xml:"MountTargetDomain"`
+	AccessGroup       string `json:"AccessGroup" xml:"AccessGroup"`
 	Status            string `json:"Status" xml:"Status"`
 	NetworkType       string `json:"NetworkType" xml:"NetworkType"`
-	VswId             string `json:"VswId" xml:"VswId"`
 	VpcId             string `json:"VpcId" xml:"VpcId"`
-	AccessGroup       string `json:"AccessGroup" xml:"AccessGroup"`
 }

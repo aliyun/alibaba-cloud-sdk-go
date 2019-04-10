@@ -83,11 +83,11 @@ type ListClustersRequest struct {
 // ListClustersResponse is the response struct for api ListClusters
 type ListClustersResponse struct {
 	*responses.BaseResponse
-	RequestId  string   `json:"RequestId" xml:"RequestId"`
-	TotalCount int      `json:"TotalCount" xml:"TotalCount"`
-	PageNumber int      `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int      `json:"PageSize" xml:"PageSize"`
-	Clusters   Clusters `json:"Clusters" xml:"Clusters"`
+	RequestId  string                 `json:"RequestId" xml:"RequestId"`
+	TotalCount int                    `json:"TotalCount" xml:"TotalCount"`
+	PageNumber int                    `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int                    `json:"PageSize" xml:"PageSize"`
+	Clusters   ClustersInListClusters `json:"Clusters" xml:"Clusters"`
 }
 
 // CreateListClustersRequest creates a request to invoke ListClusters API

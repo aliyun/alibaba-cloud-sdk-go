@@ -25,6 +25,7 @@ type ImageInfo struct {
 	System            string    `json:"System" xml:"System"`
 	PostInstallScript string    `json:"PostInstallScript" xml:"PostInstallScript"`
 	ProductCode       string    `json:"ProductCode" xml:"ProductCode"`
+	Size              int       `json:"Size" xml:"Size"`
 	Tag               string    `json:"Tag" xml:"Tag"`
 	PricingCycle      string    `json:"PricingCycle" xml:"PricingCycle"`
 	ImageName         string    `json:"ImageName" xml:"ImageName"`
