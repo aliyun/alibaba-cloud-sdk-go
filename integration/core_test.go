@@ -162,7 +162,7 @@ func Test_DescribeClustersWithCommonRequestWithROAWithSTStoken(t *testing.T) {
 	defer os.Remove("test.txt")
 	assert.Nil(t, err)
 	templete := `{version}, {host}`
-	client.NewLogger("error", "Alibaba", f1, templete)
+	client.SetLogger("error", "Alibaba", f1, templete)
 	_, err = client.ProcessCommonRequest(request)
 	assert.NotNil(t, err)
 	assert.Contains(t, client.GetLoggerMsg(), `1.1, cs.aliyuncs.com`)
