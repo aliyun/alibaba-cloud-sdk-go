@@ -478,7 +478,7 @@ func Test_DoAction_WithLogger(t *testing.T) {
 	assert.Equal(t, 500, response.GetHttpStatus())
 	assert.Equal(t, true, log.isOpen)
 	assert.Equal(t, "{channel}: \"{method} {code}", client.GetTemplate())
-	assert.Contains(t, client.GetLoggerMsg(), `Alibaba: "GET 500`)
+	assert.Equal(t, client.GetLoggerMsg(), `Alibaba: "GET 500`)
 	assert.Equal(t, "Server Internel Error", response.GetHttpContentString())
 }
 

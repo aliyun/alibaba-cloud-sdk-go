@@ -23,7 +23,7 @@ type Logger struct {
 var defaultLoggerTemplate = `{time} {channel}: "{method} {uri} HTTP/{version}" {code} {cost} {hostname}`
 var loggerParam = []string{"{time}", "{start_time}", "{ts}", "{channel}", "{pid}", "{host}", "{method}", "{uri}", "{version}", "{target}", "{hostname}", "{code}", "{error}", "{req_headers}", "{res_headers}", "{cost}"}
 
-func initLogMsg() {
+func initLogMsg(fieldMap map[string]string) {
 	for _, value := range loggerParam {
 		fieldMap[value] = ""
 	}
@@ -96,7 +96,7 @@ func TransToString(object interface{}) string {
 	return string(byt)
 }
 
-func (client *Client) printLog(err error) {
+func (client *Client) printLog(fieldMap map[string]string, err error) {
 	if err != nil {
 		fieldMap["{error}"] = err.Error()
 	}
