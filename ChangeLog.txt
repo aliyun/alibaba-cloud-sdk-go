@@ -1,3 +1,6 @@
+2019-04-11 Version: 1.55.2
+1, The ‘CreateProject’ interface adds the ‘ModelId’ parameter
+
 2019-04-11 Version: 1.55.1
 1, Add some new apis to manage VoD's App, such as CreateAppInfo, GetAppInfos, ListAppInfos, UpdateAppInfo, DeleteAppInfo, AttachAppPolicyToIdentity, DetachAppPolicyFromIdentity, ListAppPoliciesForIdentity and MoveAppResource.
 2, Add new apis SetMessageCallback, GetMessageCallback and DeleteMessageCallback to manage message callback configuration.
