@@ -17,9 +17,11 @@ package imagesearch
 
 // Auction is a nested struct in imagesearch response
 type Auction struct {
-	CustContent    string `json:"CustContent" xml:"CustContent"`
-	ItemId         string `json:"ItemId" xml:"ItemId"`
-	SortExprValues string `json:"SortExprValues" xml:"SortExprValues"`
-	CatId          string `json:"CatId" xml:"CatId"`
+	CategoryId     int    `json:"CategoryId" xml:"CategoryId"`
+	ProductId      string `json:"ProductId" xml:"ProductId"`
 	PicName        string `json:"PicName" xml:"PicName"`
+	CustomContent  string `json:"CustomContent" xml:"CustomContent"`
+	SortExprValues string `json:"SortExprValues" xml:"SortExprValues"`
+	IntAttr        int    `json:"IntAttr" xml:"IntAttr"`
+	StrAttr        string `json:"StrAttr" xml:"StrAttr"`
 }

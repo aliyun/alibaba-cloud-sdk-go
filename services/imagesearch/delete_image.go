@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DeleteItem invokes the imagesearch.DeleteItem API synchronously
-// api document: https://help.aliyun.com/api/imagesearch/deleteitem.html
-func (client *Client) DeleteItem(request *DeleteItemRequest) (response *DeleteItemResponse, err error) {
-	response = CreateDeleteItemResponse()
+// DeleteImage invokes the imagesearch.DeleteImage API synchronously
+// api document: https://help.aliyun.com/api/imagesearch/deleteimage.html
+func (client *Client) DeleteImage(request *DeleteImageRequest) (response *DeleteImageResponse, err error) {
+	response = CreateDeleteImageResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DeleteItemWithChan invokes the imagesearch.DeleteItem API asynchronously
-// api document: https://help.aliyun.com/api/imagesearch/deleteitem.html
+// DeleteImageWithChan invokes the imagesearch.DeleteImage API asynchronously
+// api document: https://help.aliyun.com/api/imagesearch/deleteimage.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DeleteItemWithChan(request *DeleteItemRequest) (<-chan *DeleteItemResponse, <-chan error) {
-	responseChan := make(chan *DeleteItemResponse, 1)
+func (client *Client) DeleteImageWithChan(request *DeleteImageRequest) (<-chan *DeleteImageResponse, <-chan error) {
+	responseChan := make(chan *DeleteImageResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DeleteItem(request)
+		response, err := client.DeleteImage(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) DeleteItemWithChan(request *DeleteItemRequest) (<-chan *De
 	return responseChan, errChan
 }
 
-// DeleteItemWithCallback invokes the imagesearch.DeleteItem API asynchronously
-// api document: https://help.aliyun.com/api/imagesearch/deleteitem.html
+// DeleteImageWithCallback invokes the imagesearch.DeleteImage API asynchronously
+// api document: https://help.aliyun.com/api/imagesearch/deleteimage.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DeleteItemWithCallback(request *DeleteItemRequest, callback func(response *DeleteItemResponse, err error)) <-chan int {
+func (client *Client) DeleteImageWithCallback(request *DeleteImageRequest, callback func(response *DeleteImageResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DeleteItemResponse
+		var response *DeleteImageResponse
 		var err error
 		defer close(result)
-		response, err = client.DeleteItem(request)
+		response, err = client.DeleteImage(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,14 +73,16 @@ func (client *Client) DeleteItemWithCallback(request *DeleteItemRequest, callbac
 	return result
 }
 
-// DeleteItemRequest is the request struct for api DeleteItem
-type DeleteItemRequest struct {
+// DeleteImageRequest is the request struct for api DeleteImage
+type DeleteImageRequest struct {
 	*requests.RoaRequest
-	InstanceName string `position:"Query" name:"instanceName"`
+	InstanceName string `position:"Body" name:"InstanceName"`
+	ProductId    string `position:"Body" name:"ProductId"`
+	PicName      string `position:"Body" name:"PicName"`
 }
 
-// DeleteItemResponse is the response struct for api DeleteItem
-type DeleteItemResponse struct {
+// DeleteImageResponse is the response struct for api DeleteImage
+type DeleteImageResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   bool   `json:"Success" xml:"Success"`
@@ -88,19 +90,19 @@ type DeleteItemResponse struct {
 	Code      int    `json:"Code" xml:"Code"`
 }
 
-// CreateDeleteItemRequest creates a request to invoke DeleteItem API
-func CreateDeleteItemRequest() (request *DeleteItemRequest) {
-	request = &DeleteItemRequest{
+// CreateDeleteImageRequest creates a request to invoke DeleteImage API
+func CreateDeleteImageRequest() (request *DeleteImageRequest) {
+	request = &DeleteImageRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("ImageSearch", "2018-01-20", "DeleteItem", "/item/delete", "imagesearch", "openAPI")
+	request.InitWithApiInfo("ImageSearch", "2019-03-25", "DeleteImage", "/v2/image/delete", "imagesearch", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreateDeleteItemResponse creates a response to parse from DeleteItem response
-func CreateDeleteItemResponse() (response *DeleteItemResponse) {
-	response = &DeleteItemResponse{
+// CreateDeleteImageResponse creates a response to parse from DeleteImage response
+func CreateDeleteImageResponse() (response *DeleteImageResponse) {
+	response = &DeleteImageResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

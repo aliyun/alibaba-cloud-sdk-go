@@ -17,7 +17,7 @@ package imagesearch
 
 // Head is a nested struct in imagesearch response
 type Head struct {
-	SearchTime int `json:"SearchTime" xml:"SearchTime"`
-	DocsFound  int `json:"DocsFound" xml:"DocsFound"`
 	DocsReturn int `json:"DocsReturn" xml:"DocsReturn"`
+	DocsFound  int `json:"DocsFound" xml:"DocsFound"`
+	SearchTime int `json:"SearchTime" xml:"SearchTime"`
 }

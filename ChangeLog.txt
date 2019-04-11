@@ -1,3 +1,7 @@
+2019-04-11 Version: 1.55.0
+1, Release AddImage/SearchImage/DeleteImage OpenApi.
+2, Add 'SearchByName' feature to SearchImage
+
 2019-04-10 Version: 1.54.1
 1, Modify DescribeBackupGatewayList DBS interface.
 

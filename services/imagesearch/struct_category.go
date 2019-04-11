@@ -17,6 +17,6 @@ package imagesearch
 
 // Category is a nested struct in imagesearch response
 type Category struct {
+	Id   int    `json:"Id" xml:"Id"`
 	Name string `json:"Name" xml:"Name"`
-	Id   string `json:"Id" xml:"Id"`
 }

@@ -17,7 +17,7 @@ package imagesearch
 
 // PicInfo is a nested struct in imagesearch response
 type PicInfo struct {
-	Category    string      `json:"Category" xml:"Category"`
-	Region      string      `json:"Region" xml:"Region"`
-	AllCategory AllCategory `json:"AllCategory" xml:"AllCategory"`
+	Region        string     `json:"Region" xml:"Region"`
+	CategoryId    int        `json:"CategoryId" xml:"CategoryId"`
+	AllCategories []Category `json:"AllCategories" xml:"AllCategories"`
 }
