@@ -85,8 +85,9 @@ type UpdateVideoInfosRequest struct {
 // UpdateVideoInfosResponse is the response struct for api UpdateVideoInfos
 type UpdateVideoInfosResponse struct {
 	*responses.BaseResponse
-	RequestId        string   `json:"RequestId" xml:"RequestId"`
-	NonExistVideoIds []string `json:"NonExistVideoIds" xml:"NonExistVideoIds"`
+	RequestId         string   `json:"RequestId" xml:"RequestId"`
+	NonExistVideoIds  []string `json:"NonExistVideoIds" xml:"NonExistVideoIds"`
+	ForbiddenVideoIds []string `json:"ForbiddenVideoIds" xml:"ForbiddenVideoIds"`
 }
 
 // CreateUpdateVideoInfosRequest creates a request to invoke UpdateVideoInfos API

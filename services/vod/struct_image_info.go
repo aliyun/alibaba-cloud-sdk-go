@@ -28,5 +28,6 @@ type ImageInfo struct {
 	Description     string    `json:"Description" xml:"Description"`
 	StorageLocation string    `json:"StorageLocation" xml:"StorageLocation"`
 	Status          string    `json:"Status" xml:"Status"`
+	AppId           string    `json:"AppId" xml:"AppId"`
 	Mezzanine       Mezzanine `json:"Mezzanine" xml:"Mezzanine"`
 }

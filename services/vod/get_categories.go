@@ -83,6 +83,7 @@ type GetCategoriesRequest struct {
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	SortBy               string           `position:"Query" name:"SortBy"`
 	OwnerId              string           `position:"Query" name:"OwnerId"`
+	Type                 string           `position:"Query" name:"Type"`
 }
 
 // GetCategoriesResponse is the response struct for api GetCategories

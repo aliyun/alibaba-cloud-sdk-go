@@ -17,18 +17,21 @@ package vod
 
 // TranscodeTemplate is a nested struct in vod response
 type TranscodeTemplate struct {
-	TranscodeTemplateId string   `json:"TranscodeTemplateId" xml:"TranscodeTemplateId"`
-	Video               string   `json:"Video" xml:"Video"`
-	Audio               string   `json:"Audio" xml:"Audio"`
-	Container           string   `json:"Container" xml:"Container"`
-	MuxConfig           string   `json:"MuxConfig" xml:"MuxConfig"`
-	TransConfig         string   `json:"TransConfig" xml:"TransConfig"`
-	Definition          string   `json:"Definition" xml:"Definition"`
-	EncryptSetting      string   `json:"EncryptSetting" xml:"EncryptSetting"`
-	PackageSetting      string   `json:"PackageSetting" xml:"PackageSetting"`
-	SubtitleList        string   `json:"SubtitleList" xml:"SubtitleList"`
-	OpeningList         string   `json:"OpeningList" xml:"OpeningList"`
-	TailSlateList       string   `json:"TailSlateList" xml:"TailSlateList"`
-	TemplateName        string   `json:"TemplateName" xml:"TemplateName"`
-	WatermarkIds        []string `json:"WatermarkIds" xml:"WatermarkIds"`
+	TranscodeTemplateId  string   `json:"TranscodeTemplateId" xml:"TranscodeTemplateId"`
+	Video                string   `json:"Video" xml:"Video"`
+	Audio                string   `json:"Audio" xml:"Audio"`
+	Container            string   `json:"Container" xml:"Container"`
+	MuxConfig            string   `json:"MuxConfig" xml:"MuxConfig"`
+	TransConfig          string   `json:"TransConfig" xml:"TransConfig"`
+	Definition           string   `json:"Definition" xml:"Definition"`
+	EncryptSetting       string   `json:"EncryptSetting" xml:"EncryptSetting"`
+	PackageSetting       string   `json:"PackageSetting" xml:"PackageSetting"`
+	SubtitleList         string   `json:"SubtitleList" xml:"SubtitleList"`
+	OpeningList          string   `json:"OpeningList" xml:"OpeningList"`
+	TailSlateList        string   `json:"TailSlateList" xml:"TailSlateList"`
+	TemplateName         string   `json:"TemplateName" xml:"TemplateName"`
+	TranscodeFileRegular string   `json:"TranscodeFileRegular" xml:"TranscodeFileRegular"`
+	Clip                 string   `json:"Clip" xml:"Clip"`
+	Rotate               string   `json:"Rotate" xml:"Rotate"`
+	WatermarkIds         []string `json:"WatermarkIds" xml:"WatermarkIds"`
 }

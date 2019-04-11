@@ -79,6 +79,7 @@ type AddCategoryRequest struct {
 	ResourceOwnerId      string           `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerId              string           `position:"Query" name:"OwnerId"`
+	Type                 string           `position:"Query" name:"Type"`
 	ParentId             requests.Integer `position:"Query" name:"ParentId"`
 	CateName             string           `position:"Query" name:"CateName"`
 }

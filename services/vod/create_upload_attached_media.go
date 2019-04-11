@@ -78,6 +78,8 @@ type CreateUploadAttachedMediaRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	CateIds              string           `position:"Query" name:"CateIds"`
+	Icon                 string           `position:"Query" name:"Icon"`
 	Description          string           `position:"Query" name:"Description"`
 	FileSize             string           `position:"Query" name:"FileSize"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -89,6 +91,7 @@ type CreateUploadAttachedMediaRequest struct {
 	MediaExt             string           `position:"Query" name:"MediaExt"`
 	FileName             string           `position:"Query" name:"FileName"`
 	CateId               requests.Integer `position:"Query" name:"CateId"`
+	AppId                string           `position:"Query" name:"AppId"`
 }
 
 // CreateUploadAttachedMediaResponse is the response struct for api CreateUploadAttachedMedia

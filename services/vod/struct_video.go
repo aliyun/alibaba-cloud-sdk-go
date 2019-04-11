@@ -40,6 +40,7 @@ type Video struct {
 	CreationTime      string      `json:"CreationTime" xml:"CreationTime"`
 	AuditAIResult     string      `json:"AuditAIResult" xml:"AuditAIResult"`
 	CoverURL          string      `json:"CoverURL" xml:"CoverURL"`
+	AppId             string      `json:"AppId" xml:"AppId"`
 	AuditTemplateId   string      `json:"AuditTemplateId" xml:"AuditTemplateId"`
 	Status            string      `json:"Status" xml:"Status"`
 	AuditStatus       string      `json:"AuditStatus" xml:"AuditStatus"`

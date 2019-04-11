@@ -77,6 +77,7 @@ func (client *Client) GetEditingProjectMaterialsWithCallback(request *GetEditing
 type GetEditingProjectMaterialsRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
+	MaterialType         string `position:"Query" name:"MaterialType"`
 	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string `position:"Query" name:"OwnerAccount"`
 	OwnerId              string `position:"Query" name:"OwnerId"`

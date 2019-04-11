@@ -41,6 +41,7 @@ type Audio struct {
 	AuditAIResult     string     `json:"AuditAIResult" xml:"AuditAIResult"`
 	AuditTemplateId   string     `json:"AuditTemplateId" xml:"AuditTemplateId"`
 	CustomMediaInfo   string     `json:"CustomMediaInfo" xml:"CustomMediaInfo"`
+	AppId             string     `json:"AppId" xml:"AppId"`
 	Snapshots         []string   `json:"Snapshots" xml:"Snapshots"`
 	SpriteSnapshots   []string   `json:"SpriteSnapshots" xml:"SpriteSnapshots"`
 	PlayInfoList      []PlayInfo `json:"PlayInfoList" xml:"PlayInfoList"`

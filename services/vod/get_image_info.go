@@ -79,6 +79,7 @@ type GetImageInfoRequest struct {
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ImageId              string           `position:"Query" name:"ImageId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OutputType           string           `position:"Query" name:"OutputType"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	AuthTimeout          requests.Integer `position:"Query" name:"AuthTimeout"`
 }

@@ -17,12 +17,15 @@ package vod
 
 // Project is a nested struct in vod response
 type Project struct {
-	ModifiedTime string `json:"ModifiedTime" xml:"ModifiedTime"`
-	Title        string `json:"Title" xml:"Title"`
-	ProjectId    string `json:"ProjectId" xml:"ProjectId"`
-	CreationTime string `json:"CreationTime" xml:"CreationTime"`
-	Status       string `json:"Status" xml:"Status"`
-	Description  string `json:"Description" xml:"Description"`
-	Timeline     string `json:"Timeline" xml:"Timeline"`
-	CoverURL     string `json:"CoverURL" xml:"CoverURL"`
+	ModifiedTime    string  `json:"ModifiedTime" xml:"ModifiedTime"`
+	RegionId        string  `json:"RegionId" xml:"RegionId"`
+	Title           string  `json:"Title" xml:"Title"`
+	Duration        float64 `json:"Duration" xml:"Duration"`
+	ProjectId       string  `json:"ProjectId" xml:"ProjectId"`
+	StorageLocation string  `json:"StorageLocation" xml:"StorageLocation"`
+	CreationTime    string  `json:"CreationTime" xml:"CreationTime"`
+	Status          string  `json:"Status" xml:"Status"`
+	Description     string  `json:"Description" xml:"Description"`
+	Timeline        string  `json:"Timeline" xml:"Timeline"`
+	CoverURL        string  `json:"CoverURL" xml:"CoverURL"`
 }

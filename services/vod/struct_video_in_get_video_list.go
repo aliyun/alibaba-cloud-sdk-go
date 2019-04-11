@@ -32,5 +32,6 @@ type VideoInGetVideoList struct {
 	CateId           int                     `json:"CateId" xml:"CateId"`
 	CateName         string                  `json:"CateName" xml:"CateName"`
 	StorageLocation  string                  `json:"StorageLocation" xml:"StorageLocation"`
+	AppId            string                  `json:"AppId" xml:"AppId"`
 	Snapshots        SnapshotsInGetVideoList `json:"Snapshots" xml:"Snapshots"`
 }

@@ -37,6 +37,8 @@ type VideoInGetVideoInfo struct {
 	StorageLocation  string                      `json:"StorageLocation" xml:"StorageLocation"`
 	RegionId         string                      `json:"RegionId" xml:"RegionId"`
 	CustomMediaInfo  string                      `json:"CustomMediaInfo" xml:"CustomMediaInfo"`
+	AuditStatus      string                      `json:"AuditStatus" xml:"AuditStatus"`
+	AppId            string                      `json:"AppId" xml:"AppId"`
 	Snapshots        SnapshotsInGetVideoInfo     `json:"Snapshots" xml:"Snapshots"`
 	ThumbnailList    ThumbnailListInGetVideoInfo `json:"ThumbnailList" xml:"ThumbnailList"`
 }

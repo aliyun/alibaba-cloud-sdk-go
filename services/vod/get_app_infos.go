@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DeleteVideo invokes the vod.DeleteVideo API synchronously
-// api document: https://help.aliyun.com/api/vod/deletevideo.html
-func (client *Client) DeleteVideo(request *DeleteVideoRequest) (response *DeleteVideoResponse, err error) {
-	response = CreateDeleteVideoResponse()
+// GetAppInfos invokes the vod.GetAppInfos API synchronously
+// api document: https://help.aliyun.com/api/vod/getappinfos.html
+func (client *Client) GetAppInfos(request *GetAppInfosRequest) (response *GetAppInfosResponse, err error) {
+	response = CreateGetAppInfosResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DeleteVideoWithChan invokes the vod.DeleteVideo API asynchronously
-// api document: https://help.aliyun.com/api/vod/deletevideo.html
+// GetAppInfosWithChan invokes the vod.GetAppInfos API asynchronously
+// api document: https://help.aliyun.com/api/vod/getappinfos.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DeleteVideoWithChan(request *DeleteVideoRequest) (<-chan *DeleteVideoResponse, <-chan error) {
-	responseChan := make(chan *DeleteVideoResponse, 1)
+func (client *Client) GetAppInfosWithChan(request *GetAppInfosRequest) (<-chan *GetAppInfosResponse, <-chan error) {
+	responseChan := make(chan *GetAppInfosResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DeleteVideo(request)
+		response, err := client.GetAppInfos(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) DeleteVideoWithChan(request *DeleteVideoRequest) (<-chan *
 	return responseChan, errChan
 }
 
-// DeleteVideoWithCallback invokes the vod.DeleteVideo API asynchronously
-// api document: https://help.aliyun.com/api/vod/deletevideo.html
+// GetAppInfosWithCallback invokes the vod.GetAppInfos API asynchronously
+// api document: https://help.aliyun.com/api/vod/getappinfos.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DeleteVideoWithCallback(request *DeleteVideoRequest, callback func(response *DeleteVideoResponse, err error)) <-chan int {
+func (client *Client) GetAppInfosWithCallback(request *GetAppInfosRequest, callback func(response *GetAppInfosResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DeleteVideoResponse
+		var response *GetAppInfosResponse
 		var err error
 		defer close(result)
-		response, err = client.DeleteVideo(request)
+		response, err = client.GetAppInfos(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,35 +73,36 @@ func (client *Client) DeleteVideoWithCallback(request *DeleteVideoRequest, callb
 	return result
 }
 
-// DeleteVideoRequest is the request struct for api DeleteVideo
-type DeleteVideoRequest struct {
+// GetAppInfosRequest is the request struct for api GetAppInfos
+type GetAppInfosRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	AppIds               string           `position:"Query" name:"AppIds"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceRealOwnerId  requests.Integer `position:"Query" name:"ResourceRealOwnerId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	VideoIds             string           `position:"Query" name:"VideoIds"`
 }
 
-// DeleteVideoResponse is the response struct for api DeleteVideo
-type DeleteVideoResponse struct {
+// GetAppInfosResponse is the response struct for api GetAppInfos
+type GetAppInfosResponse struct {
 	*responses.BaseResponse
-	RequestId         string   `json:"RequestId" xml:"RequestId"`
-	NonExistVideoIds  []string `json:"NonExistVideoIds" xml:"NonExistVideoIds"`
-	ForbiddenVideoIds []string `json:"ForbiddenVideoIds" xml:"ForbiddenVideoIds"`
+	RequestId      string    `json:"RequestId" xml:"RequestId"`
+	NonExistAppIds []string  `json:"NonExistAppIds" xml:"NonExistAppIds"`
+	AppInfoList    []AppInfo `json:"AppInfoList" xml:"AppInfoList"`
 }
 
-// CreateDeleteVideoRequest creates a request to invoke DeleteVideo API
-func CreateDeleteVideoRequest() (request *DeleteVideoRequest) {
-	request = &DeleteVideoRequest{
+// CreateGetAppInfosRequest creates a request to invoke GetAppInfos API
+func CreateGetAppInfosRequest() (request *GetAppInfosRequest) {
+	request = &GetAppInfosRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("vod", "2017-03-21", "DeleteVideo", "vod", "openAPI")
+	request.InitWithApiInfo("vod", "2017-03-21", "GetAppInfos", "vod", "openAPI")
 	return
 }
 
-// CreateDeleteVideoResponse creates a response to parse from DeleteVideo response
-func CreateDeleteVideoResponse() (response *DeleteVideoResponse) {
-	response = &DeleteVideoResponse{
+// CreateGetAppInfosResponse creates a response to parse from GetAppInfos response
+func CreateGetAppInfosResponse() (response *GetAppInfosResponse) {
+	response = &GetAppInfosResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

@@ -88,6 +88,7 @@ type CreateUploadImageRequest struct {
 	UserData             string           `position:"Query" name:"UserData"`
 	OriginalFileName     string           `position:"Query" name:"OriginalFileName"`
 	CateId               requests.Integer `position:"Query" name:"CateId"`
+	AppId                string           `position:"Query" name:"AppId"`
 }
 
 // CreateUploadImageResponse is the response struct for api CreateUploadImage

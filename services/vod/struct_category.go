@@ -19,6 +19,8 @@ package vod
 type Category struct {
 	CateName string `json:"CateName" xml:"CateName"`
 	Level    int    `json:"Level" xml:"Level"`
+	SubTotal int    `json:"SubTotal" xml:"SubTotal"`
 	ParentId int    `json:"ParentId" xml:"ParentId"`
 	CateId   int    `json:"CateId" xml:"CateId"`
+	Type     string `json:"Type" xml:"Type"`
 }

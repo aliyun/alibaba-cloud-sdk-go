@@ -77,6 +77,7 @@ func (client *Client) AddEditingProjectWithCallback(request *AddEditingProjectRe
 type AddEditingProjectRequest struct {
 	*requests.RpcRequest
 	CoverURL             string `position:"Query" name:"CoverURL"`
+	Division             string `position:"Query" name:"Division"`
 	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string `position:"Query" name:"OwnerAccount"`

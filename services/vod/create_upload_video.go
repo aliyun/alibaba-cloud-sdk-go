@@ -91,6 +91,7 @@ type CreateUploadVideoRequest struct {
 	FileName             string           `position:"Query" name:"FileName"`
 	TemplateGroupId      string           `position:"Query" name:"TemplateGroupId"`
 	CateId               requests.Integer `position:"Query" name:"CateId"`
+	AppId                string           `position:"Query" name:"AppId"`
 	WorkflowId           string           `position:"Query" name:"WorkflowId"`
 	CustomMediaInfo      string           `position:"Query" name:"CustomMediaInfo"`
 }
