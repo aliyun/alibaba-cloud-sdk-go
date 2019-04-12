@@ -50,7 +50,6 @@ var Version = "0.0.1"
 var defaultConnectTimeout = 5 * time.Second
 var defaultReadTimeout = 10 * time.Second
 
-var fieldMap = make(map[string]string)
 var DefaultUserAgent = fmt.Sprintf("AlibabaCloud (%s; %s) Golang/%s Core/%s", runtime.GOOS, runtime.GOARCH, strings.Trim(runtime.Version(), "go"), Version)
 
 var hookDo = func(fn func(req *http.Request) (*http.Response, error)) func(req *http.Request) (*http.Response, error) {
@@ -453,10 +452,11 @@ func (client *Client) getHTTPSInsecure(request requests.AcsRequest) (insecure bo
 
 func (client *Client) DoActionWithSigner(request requests.AcsRequest, response responses.AcsResponse, signer auth.Signer) (err error) {
 
+	fieldMap := make(map[string]string)
+	initLogMsg(fieldMap)
 	defer func() {
-		client.printLog(err)
+		client.printLog(fieldMap, err)
 	}()
-	initLogMsg()
 	httpRequest, err := client.buildRequestWithSigner(request, signer)
 	if err != nil {
 		return
@@ -498,7 +498,8 @@ func (client *Client) DoActionWithSigner(request requests.AcsRequest, response r
 			}
 		}
 		if retryTimes > 0 {
-			client.printLog(err)
+			client.printLog(fieldMap, err)
+			initLogMsg(fieldMap)
 		}
 		debug("> %s %s %s", httpRequest.Method, httpRequest.URL.RequestURI(), httpRequest.Proto)
 		debug("> Host: %s", httpRequest.Host)
