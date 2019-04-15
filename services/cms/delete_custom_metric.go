@@ -88,7 +88,6 @@ type DeleteCustomMetricResponse struct {
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Result    string `json:"Result" xml:"Result"`
 }
 
 // CreateDeleteCustomMetricRequest creates a request to invoke DeleteCustomMetric API
@@ -96,7 +95,7 @@ func CreateDeleteCustomMetricRequest() (request *DeleteCustomMetricRequest) {
 	request = &DeleteCustomMetricRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2018-03-08", "DeleteCustomMetric", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "DeleteCustomMetric", "cms", "openAPI")
 	return
 }
 

@@ -17,5 +17,5 @@ package cms
 
 // FailedContactParameters is a nested struct in cms response
 type FailedContactParameters struct {
-	ContactParameter []ContactParameterInPutEventTargets `json:"ContactParameter" xml:"ContactParameter"`
+	ContactParameter []ContactParameter `json:"ContactParameter" xml:"ContactParameter"`
 }

@@ -87,7 +87,6 @@ type SendDryRunSystemEventResponse struct {
 	*responses.BaseResponse
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
-	Data      string `json:"Data" xml:"Data"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Success   string `json:"Success" xml:"Success"`
 }
@@ -97,7 +96,7 @@ func CreateSendDryRunSystemEventRequest() (request *SendDryRunSystemEventRequest
 	request = &SendDryRunSystemEventRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2018-03-08", "SendDryRunSystemEvent", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "SendDryRunSystemEvent", "cms", "openAPI")
 	return
 }
 

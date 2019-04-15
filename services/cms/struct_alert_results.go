@@ -17,5 +17,5 @@ package cms
 
 // AlertResults is a nested struct in cms response
 type AlertResults struct {
-	Result []ResultInApplyMonitoringTemplate `json:"Result" xml:"Result"`
+	Result []Result `json:"Result" xml:"Result"`
 }

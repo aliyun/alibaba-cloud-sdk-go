@@ -78,8 +78,8 @@ type PutEventRuleRequest struct {
 	*requests.RpcRequest
 	EventPattern *[]PutEventRuleEventPattern `position:"Query" name:"EventPattern"  type:"Repeated"`
 	GroupId      string                      `position:"Query" name:"GroupId"`
-	Name         string                      `position:"Query" name:"Name"`
 	Description  string                      `position:"Query" name:"Description"`
+	RuleName     string                      `position:"Query" name:"RuleName"`
 	EventType    string                      `position:"Query" name:"EventType"`
 	State        string                      `position:"Query" name:"State"`
 }
@@ -108,7 +108,7 @@ func CreatePutEventRuleRequest() (request *PutEventRuleRequest) {
 	request = &PutEventRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2018-03-08", "PutEventRule", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "PutEventRule", "cms", "openAPI")
 	return
 }
 

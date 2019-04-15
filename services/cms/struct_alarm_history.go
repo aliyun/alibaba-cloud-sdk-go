@@ -17,17 +17,26 @@ package cms
 
 // AlarmHistory is a nested struct in cms response
 type AlarmHistory struct {
-	Name            string `json:"Name" xml:"Name"`
-	AlarmTime       int    `json:"AlarmTime" xml:"AlarmTime"`
-	Status          int    `json:"Status" xml:"Status"`
-	InstanceName    string `json:"InstanceName" xml:"InstanceName"`
-	Dimension       string `json:"Dimension" xml:"Dimension"`
-	ContactGroups   string `json:"ContactGroups" xml:"ContactGroups"`
-	Value           string `json:"Value" xml:"Value"`
-	State           string `json:"State" xml:"State"`
-	Namespace       string `json:"Namespace" xml:"Namespace"`
-	Id              string `json:"Id" xml:"Id"`
-	MetricName      string `json:"MetricName" xml:"MetricName"`
-	LastTime        int    `json:"LastTime" xml:"LastTime"`
-	EvaluationCount int    `json:"EvaluationCount" xml:"EvaluationCount"`
+	RuleId          string                                  `json:"RuleId" xml:"RuleId"`
+	AlertName       string                                  `json:"AlertName" xml:"AlertName"`
+	GroupId         string                                  `json:"GroupId" xml:"GroupId"`
+	Namespace       string                                  `json:"Namespace" xml:"Namespace"`
+	MetricName      string                                  `json:"MetricName" xml:"MetricName"`
+	Dimensions      string                                  `json:"Dimensions" xml:"Dimensions"`
+	Expression      string                                  `json:"Expression" xml:"Expression"`
+	EvaluationCount int                                     `json:"EvaluationCount" xml:"EvaluationCount"`
+	Value           string                                  `json:"Value" xml:"Value"`
+	AlertTime       int                                     `json:"AlertTime" xml:"AlertTime"`
+	LastTime        int                                     `json:"LastTime" xml:"LastTime"`
+	Level           string                                  `json:"Level" xml:"Level"`
+	RuleName        string                                  `json:"RuleName" xml:"RuleName"`
+	AlertState      string                                  `json:"AlertState" xml:"AlertState"`
+	Status          int                                     `json:"Status" xml:"Status"`
+	Webhooks        string                                  `json:"Webhooks" xml:"Webhooks"`
+	InstanceName    string                                  `json:"InstanceName" xml:"InstanceName"`
+	ContactGroups   ContactGroupsInDescribeAlertHistoryList `json:"ContactGroups" xml:"ContactGroups"`
+	Contacts        ContactsInDescribeAlertHistoryList      `json:"Contacts" xml:"Contacts"`
+	ContactALIIMs   ContactALIIMs                           `json:"ContactALIIMs" xml:"ContactALIIMs"`
+	ContactSmses    ContactSmses                            `json:"ContactSmses" xml:"ContactSmses"`
+	ContactMails    ContactMails                            `json:"ContactMails" xml:"ContactMails"`
 }

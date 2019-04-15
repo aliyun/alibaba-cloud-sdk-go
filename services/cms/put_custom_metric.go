@@ -76,7 +76,18 @@ func (client *Client) PutCustomMetricWithCallback(request *PutCustomMetricReques
 // PutCustomMetricRequest is the request struct for api PutCustomMetric
 type PutCustomMetricRequest struct {
 	*requests.RpcRequest
-	MetricList string `position:"Query" name:"MetricList"`
+	MetricList *[]PutCustomMetricMetricList `position:"Query" name:"MetricList"  type:"Repeated"`
+}
+
+// PutCustomMetricMetricList is a repeated param struct in PutCustomMetricRequest
+type PutCustomMetricMetricList struct {
+	Period     string `name:"Period"`
+	GroupId    string `name:"GroupId"`
+	Values     string `name:"Values"`
+	Time       string `name:"Time"`
+	MetricName string `name:"MetricName"`
+	Type       string `name:"Type"`
+	Dimensions string `name:"Dimensions"`
 }
 
 // PutCustomMetricResponse is the response struct for api PutCustomMetric
@@ -85,7 +96,6 @@ type PutCustomMetricResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
-	Data      string `json:"Data" xml:"Data"`
 }
 
 // CreatePutCustomMetricRequest creates a request to invoke PutCustomMetric API
@@ -93,7 +103,7 @@ func CreatePutCustomMetricRequest() (request *PutCustomMetricRequest) {
 	request = &PutCustomMetricRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cms", "2018-03-08", "PutCustomMetric", "cms", "openAPI")
+	request.InitWithApiInfo("Cms", "2019-01-01", "PutCustomMetric", "cms", "openAPI")
 	return
 }
 

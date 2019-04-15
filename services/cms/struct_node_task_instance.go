@@ -17,6 +17,6 @@ package cms
 
 // NodeTaskInstance is a nested struct in cms response
 type NodeTaskInstance struct {
-	TaskId       int                               `json:"TaskId" xml:"TaskId"`
-	InstanceList InstanceListInTaskConfigUnhealthy `json:"InstanceList" xml:"InstanceList"`
+	Id           int          `json:"Id" xml:"Id"`
+	InstanceList InstanceList `json:"InstanceList" xml:"InstanceList"`
 }

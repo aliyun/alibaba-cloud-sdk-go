@@ -1,3 +1,6 @@
+2019-04-15 Version: 1.55.7
+1, Add SDK for goLang version.
+
 2019-04-15 Version: 1.55.6
 1, Add CreateRestoreTask DBS interface.
 2, Add StartRestoreTask DBS interface.

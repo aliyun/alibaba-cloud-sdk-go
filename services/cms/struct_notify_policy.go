@@ -17,11 +17,9 @@ package cms
 
 // NotifyPolicy is a nested struct in cms response
 type NotifyPolicy struct {
-	AlertName  string `json:"AlertName" xml:"AlertName"`
-	Dimensions string `json:"Dimensions" xml:"Dimensions"`
-	Type       string `json:"Type" xml:"Type"`
-	Id         string `json:"Id" xml:"Id"`
-	StartTime  int    `json:"StartTime" xml:"StartTime"`
-	EndTime    int    `json:"EndTime" xml:"EndTime"`
-	GroupId    string `json:"GroupId" xml:"GroupId"`
+	Type      string `json:"Type" xml:"Type"`
+	Id        string `json:"Id" xml:"Id"`
+	StartTime int    `json:"StartTime" xml:"StartTime"`
+	EndTime   int    `json:"EndTime" xml:"EndTime"`
+	GroupId   string `json:"GroupId" xml:"GroupId"`
 }

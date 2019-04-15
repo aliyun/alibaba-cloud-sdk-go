@@ -17,10 +17,10 @@ package cms
 
 // EventRule is a nested struct in cms response
 type EventRule struct {
-	Name         string                       `json:"Name" xml:"Name"`
-	GroupId      string                       `json:"GroupId" xml:"GroupId"`
-	EventType    string                       `json:"EventType" xml:"EventType"`
-	State        string                       `json:"State" xml:"State"`
-	Description  string                       `json:"Description" xml:"Description"`
-	EventPattern EventPatternInListEventRules `json:"EventPattern" xml:"EventPattern"`
+	Name         string                              `json:"Name" xml:"Name"`
+	GroupId      string                              `json:"GroupId" xml:"GroupId"`
+	EventType    string                              `json:"EventType" xml:"EventType"`
+	State        string                              `json:"State" xml:"State"`
+	Description  string                              `json:"Description" xml:"Description"`
+	EventPattern EventPatternInDescribeEventRuleList `json:"EventPattern" xml:"EventPattern"`
 }

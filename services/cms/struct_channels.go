@@ -17,5 +17,8 @@ package cms
 
 // Channels is a nested struct in cms response
 type Channels struct {
-	Channel []Channel `json:"Channel" xml:"Channel"`
+	AliIM       string `json:"AliIM" xml:"AliIM"`
+	Mail        string `json:"Mail" xml:"Mail"`
+	SMS         string `json:"SMS" xml:"SMS"`
+	DingWebHook string `json:"DingWebHook" xml:"DingWebHook"`
 }

@@ -17,27 +17,28 @@ package cms
 
 // Alarm is a nested struct in cms response
 type Alarm struct {
-	Name                string      `json:"Name" xml:"Name"`
 	Resources           string      `json:"Resources" xml:"Resources"`
 	RuleName            string      `json:"RuleName" xml:"RuleName"`
-	EffectiveInterval   string      `json:"EffectiveInterval" xml:"EffectiveInterval"`
 	ContactGroups       string      `json:"ContactGroups" xml:"ContactGroups"`
+	EffectiveInterval   string      `json:"EffectiveInterval" xml:"EffectiveInterval"`
 	GroupName           string      `json:"GroupName" xml:"GroupName"`
 	Dimensions          string      `json:"Dimensions" xml:"Dimensions"`
-	Uuid                string      `json:"Uuid" xml:"Uuid"`
-	Subject             string      `json:"Subject" xml:"Subject"`
+	RuleId              string      `json:"RuleId" xml:"RuleId"`
 	ComparisonOperator  string      `json:"ComparisonOperator" xml:"ComparisonOperator"`
+	MailSubject         string      `json:"MailSubject" xml:"MailSubject"`
+	EnableState         bool        `json:"EnableState" xml:"EnableState"`
 	GroupId             string      `json:"GroupId" xml:"GroupId"`
 	EvaluationCount     string      `json:"EvaluationCount" xml:"EvaluationCount"`
-	Level               string      `json:"Level" xml:"Level"`
 	SilenceTime         string      `json:"SilenceTime" xml:"SilenceTime"`
-	DisplayName         string      `json:"DisplayName" xml:"DisplayName"`
 	Threshold           string      `json:"Threshold" xml:"Threshold"`
 	Period              string      `json:"Period" xml:"Period"`
+	StartTime           string      `json:"StartTime" xml:"StartTime"`
 	State               string      `json:"State" xml:"State"`
+	EndTime             string      `json:"EndTime" xml:"EndTime"`
 	Namespace           string      `json:"Namespace" xml:"Namespace"`
-	Enable              bool        `json:"Enable" xml:"Enable"`
+	Enable              string      `json:"Enable" xml:"Enable"`
 	MetricName          string      `json:"MetricName" xml:"MetricName"`
+	AlertState          string      `json:"AlertState" xml:"AlertState"`
 	Statistics          string      `json:"Statistics" xml:"Statistics"`
 	Webhook             string      `json:"Webhook" xml:"Webhook"`
 	NoEffectiveInterval string      `json:"NoEffectiveInterval" xml:"NoEffectiveInterval"`
