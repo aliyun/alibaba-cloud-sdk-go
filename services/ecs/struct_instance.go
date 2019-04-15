@@ -37,6 +37,7 @@ type Instance struct {
 	Status                     string                               `json:"Status" xml:"Status"`
 	SpotPriceLimit             float64                              `json:"SpotPriceLimit" xml:"SpotPriceLimit"`
 	OSName                     string                               `json:"OSName" xml:"OSName"`
+	OSNameEn                   string                               `json:"OSNameEn" xml:"OSNameEn"`
 	SerialNumber               string                               `json:"SerialNumber" xml:"SerialNumber"`
 	RegionId                   string                               `json:"RegionId" xml:"RegionId"`
 	InternetMaxBandwidthOut    int                                  `json:"InternetMaxBandwidthOut" xml:"InternetMaxBandwidthOut"`

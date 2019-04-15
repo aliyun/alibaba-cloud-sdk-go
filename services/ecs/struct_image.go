@@ -27,6 +27,7 @@ type Image struct {
 	IsSupportIoOptimized bool                 `json:"IsSupportIoOptimized" xml:"IsSupportIoOptimized"`
 	IsSupportCloudinit   bool                 `json:"IsSupportCloudinit" xml:"IsSupportCloudinit"`
 	OSName               string               `json:"OSName" xml:"OSName"`
+	OSNameEn             string               `json:"OSNameEn" xml:"OSNameEn"`
 	Architecture         string               `json:"Architecture" xml:"Architecture"`
 	Status               string               `json:"Status" xml:"Status"`
 	ProductCode          string               `json:"ProductCode" xml:"ProductCode"`

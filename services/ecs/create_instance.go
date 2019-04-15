@@ -115,6 +115,7 @@ type CreateInstanceRequest struct {
 	UserData                      string                    `position:"Query" name:"UserData"`
 	PasswordInherit               requests.Boolean          `position:"Query" name:"PasswordInherit"`
 	InstanceType                  string                    `position:"Query" name:"InstanceType"`
+	Arn                           *[]CreateInstanceArn      `position:"Query" name:"Arn"  type:"Repeated"`
 	InstanceChargeType            string                    `position:"Query" name:"InstanceChargeType"`
 	DeploymentSetId               string                    `position:"Query" name:"DeploymentSetId"`
 	InnerIpAddress                string                    `position:"Query" name:"InnerIpAddress"`
@@ -134,6 +135,13 @@ type CreateInstanceRequest struct {
 type CreateInstanceTag struct {
 	Value string `name:"Value"`
 	Key   string `name:"Key"`
+}
+
+// CreateInstanceArn is a repeated param struct in CreateInstanceRequest
+type CreateInstanceArn struct {
+	Rolearn       string `name:"Rolearn"`
+	RoleType      string `name:"RoleType"`
+	AssumeRoleFor string `name:"AssumeRoleFor"`
 }
 
 // CreateInstanceDataDisk is a repeated param struct in CreateInstanceRequest

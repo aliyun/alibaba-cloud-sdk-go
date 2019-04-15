@@ -90,6 +90,7 @@ type CreateDiskRequest struct {
 	DiskCategory         string           `position:"Query" name:"DiskCategory"`
 	ZoneId               string           `position:"Query" name:"ZoneId"`
 	Tag                  *[]CreateDiskTag `position:"Query" name:"Tag"  type:"Repeated"`
+	Arn                  *[]CreateDiskArn `position:"Query" name:"Arn"  type:"Repeated"`
 	KMSKeyId             string           `position:"Query" name:"KMSKeyId"`
 	AdvancedFeatures     string           `position:"Query" name:"AdvancedFeatures"`
 }
@@ -98,6 +99,13 @@ type CreateDiskRequest struct {
 type CreateDiskTag struct {
 	Value string `name:"Value"`
 	Key   string `name:"Key"`
+}
+
+// CreateDiskArn is a repeated param struct in CreateDiskRequest
+type CreateDiskArn struct {
+	Rolearn       string `name:"Rolearn"`
+	RoleType      string `name:"RoleType"`
+	AssumeRoleFor string `name:"AssumeRoleFor"`
 }
 
 // CreateDiskResponse is the response struct for api CreateDisk
