@@ -17,30 +17,32 @@ package aegis
 
 // Entity is a nested struct in aegis response
 type Entity struct {
-	AttackType     int    `json:"AttackType" xml:"AttackType"`
-	Ip             string `json:"Ip" xml:"Ip"`
-	LoginType      int    `json:"LoginType" xml:"LoginType"`
-	CrackTimes     int    `json:"CrackTimes" xml:"CrackTimes"`
+	Region         string `json:"Region" xml:"Region"`
+	InWhite        int    `json:"InWhite" xml:"InWhite"`
+	LoginTypeName  string `json:"LoginTypeName" xml:"LoginTypeName"`
+	Online         bool   `json:"Online" xml:"Online"`
 	Account        int    `json:"Account" xml:"Account"`
+	CrackTimes     int    `json:"CrackTimes" xml:"CrackTimes"`
+	Uuid           string `json:"Uuid" xml:"Uuid"`
+	LoginSourceIp  string `json:"LoginSourceIp" xml:"LoginSourceIp"`
+	AttackType     int    `json:"AttackType" xml:"AttackType"`
+	InstanceId     string `json:"InstanceId" xml:"InstanceId"`
+	Vul            int    `json:"Vul" xml:"Vul"`
+	LoginType      int    `json:"LoginType" xml:"LoginType"`
+	Health         int    `json:"Health" xml:"Health"`
+	Status         int    `json:"Status" xml:"Status"`
+	Ip             string `json:"Ip" xml:"Ip"`
+	InstanceName   string `json:"InstanceName" xml:"InstanceName"`
+	AttackTime     string `json:"AttackTime" xml:"AttackTime"`
+	Suspicious     int    `json:"Suspicious" xml:"Suspicious"`
 	CrackSourceIp  string `json:"CrackSourceIp" xml:"CrackSourceIp"`
+	Location       string `json:"Location" xml:"Location"`
+	Patch          int    `json:"Patch" xml:"Patch"`
 	StatusName     string `json:"StatusName" xml:"StatusName"`
 	GroupId        int    `json:"GroupId" xml:"GroupId"`
-	InstanceName   string `json:"InstanceName" xml:"InstanceName"`
-	Location       string `json:"Location" xml:"Location"`
-	Trojan         int    `json:"Trojan" xml:"Trojan"`
-	Status         int    `json:"Status" xml:"Status"`
-	AttackTime     string `json:"AttackTime" xml:"AttackTime"`
-	LoginSourceIp  string `json:"LoginSourceIp" xml:"LoginSourceIp"`
-	BuyVersion     string `json:"BuyVersion" xml:"BuyVersion"`
-	Region         string `json:"Region" xml:"Region"`
 	AttackTypeName string `json:"AttackTypeName" xml:"AttackTypeName"`
-	Health         int    `json:"Health" xml:"Health"`
-	Uuid           string `json:"Uuid" xml:"Uuid"`
-	InWhite        int    `json:"InWhite" xml:"InWhite"`
-	Patch          int    `json:"Patch" xml:"Patch"`
 	LoginTime      string `json:"LoginTime" xml:"LoginTime"`
+	BuyVersion     string `json:"BuyVersion" xml:"BuyVersion"`
 	UserName       string `json:"UserName" xml:"UserName"`
-	InstanceId     string `json:"InstanceId" xml:"InstanceId"`
-	Online         bool   `json:"Online" xml:"Online"`
-	LoginTypeName  string `json:"LoginTypeName" xml:"LoginTypeName"`
+	Trojan         int    `json:"Trojan" xml:"Trojan"`
 }

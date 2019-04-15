@@ -76,13 +76,12 @@ func (client *Client) ModifyStrategyWithCallback(request *ModifyStrategyRequest,
 // ModifyStrategyRequest is the request struct for api ModifyStrategy
 type ModifyStrategyRequest struct {
 	*requests.RpcRequest
-	SourceIp        string           `position:"Query" name:"SourceIp"`
-	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	CycleDays       string           `position:"Query" name:"CycleDays"`
-	Name            string           `position:"Query" name:"Name"`
-	CycleStartTime  string           `position:"Query" name:"CycleStartTime"`
-	RiskSubTypeName string           `position:"Query" name:"RiskSubTypeName"`
-	Id              string           `position:"Query" name:"Id"`
+	RiskSubTypeName string `position:"Query" name:"RiskSubTypeName"`
+	SourceIp        string `position:"Query" name:"SourceIp"`
+	CycleStartTime  string `position:"Query" name:"CycleStartTime"`
+	Name            string `position:"Query" name:"Name"`
+	CycleDays       string `position:"Query" name:"CycleDays"`
+	Id              string `position:"Query" name:"Id"`
 }
 
 // ModifyStrategyResponse is the response struct for api ModifyStrategy

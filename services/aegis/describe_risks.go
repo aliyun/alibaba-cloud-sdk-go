@@ -76,11 +76,11 @@ func (client *Client) DescribeRisksWithCallback(request *DescribeRisksRequest, c
 // DescribeRisksRequest is the request struct for api DescribeRisks
 type DescribeRisksRequest struct {
 	*requests.RpcRequest
-	SourceIp        string           `position:"Query" name:"SourceIp"`
-	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	RiskId          requests.Integer `position:"Query" name:"RiskId"`
-	RiskName        string           `position:"Query" name:"RiskName"`
-	Limit           requests.Integer `position:"Query" name:"Limit"`
+	RiskName string           `position:"Query" name:"RiskName"`
+	SourceIp string           `position:"Query" name:"SourceIp"`
+	Limit    requests.Integer `position:"Query" name:"Limit"`
+	Lang     string           `position:"Query" name:"Lang"`
+	RiskId   requests.Integer `position:"Query" name:"RiskId"`
 }
 
 // DescribeRisksResponse is the response struct for api DescribeRisks

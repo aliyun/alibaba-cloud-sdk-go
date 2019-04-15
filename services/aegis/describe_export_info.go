@@ -76,9 +76,8 @@ func (client *Client) DescribeExportInfoWithCallback(request *DescribeExportInfo
 // DescribeExportInfoRequest is the request struct for api DescribeExportInfo
 type DescribeExportInfoRequest struct {
 	*requests.RpcRequest
-	SourceIp        string           `position:"Query" name:"SourceIp"`
-	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ExportId        requests.Integer `position:"Query" name:"ExportId"`
+	SourceIp string           `position:"Query" name:"SourceIp"`
+	ExportId requests.Integer `position:"Query" name:"ExportId"`
 }
 
 // DescribeExportInfoResponse is the response struct for api DescribeExportInfo
@@ -93,7 +92,7 @@ type DescribeExportInfoResponse struct {
 	Message      string `json:"Message" xml:"Message"`
 	TotalCount   int    `json:"TotalCount" xml:"TotalCount"`
 	GmtCreate    int    `json:"GmtCreate" xml:"GmtCreate"`
-	Status       string `json:"Status" xml:"Status"`
+	ResultStatus string `json:"ResultStatus" xml:"ResultStatus"`
 }
 
 // CreateDescribeExportInfoRequest creates a request to invoke DescribeExportInfo API

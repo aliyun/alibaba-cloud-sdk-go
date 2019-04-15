@@ -76,11 +76,10 @@ func (client *Client) ModifyStrategyTargetWithCallback(request *ModifyStrategyTa
 // ModifyStrategyTargetRequest is the request struct for api ModifyStrategyTarget
 type ModifyStrategyTargetRequest struct {
 	*requests.RpcRequest
-	SourceIp        string           `position:"Query" name:"SourceIp"`
-	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Type            string           `position:"Query" name:"Type"`
-	Config          string           `position:"Query" name:"Config"`
-	Target          string           `position:"Query" name:"Target"`
+	SourceIp string `position:"Query" name:"SourceIp"`
+	Type     string `position:"Query" name:"Type"`
+	Config   string `position:"Query" name:"Config"`
+	Target   string `position:"Query" name:"Target"`
 }
 
 // ModifyStrategyTargetResponse is the response struct for api ModifyStrategyTarget

@@ -76,9 +76,9 @@ func (client *Client) CreateUserSettingWithCallback(request *CreateUserSettingRe
 // CreateUserSettingRequest is the request struct for api CreateUserSetting
 type CreateUserSettingRequest struct {
 	*requests.RpcRequest
-	SourceIp        string           `position:"Query" name:"SourceIp"`
-	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	FrequencyByDays requests.Integer `position:"Query" name:"FrequencyByDays"`
+	SourceIp               string           `position:"Query" name:"SourceIp"`
+	AlertLevels            string           `position:"Query" name:"AlertLevels"`
+	InvalidWarningKeepDays requests.Integer `position:"Query" name:"InvalidWarningKeepDays"`
 }
 
 // CreateUserSettingResponse is the response struct for api CreateUserSetting

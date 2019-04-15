@@ -17,13 +17,36 @@ package aegis
 
 // WarningSummary is a nested struct in aegis response
 type WarningSummary struct {
-	RiskId        int    `json:"RiskId" xml:"RiskId"`
-	RiskName      string `json:"RiskName" xml:"RiskName"`
-	Level         string `json:"Level" xml:"Level"`
-	TypeAlias     string `json:"TypeAlias" xml:"TypeAlias"`
-	SubTypeAlias  string `json:"SubTypeAlias" xml:"SubTypeAlias"`
-	LastFoundTime string `json:"LastFoundTime" xml:"LastFoundTime"`
-	PendingCount  int    `json:"PendingCount" xml:"PendingCount"`
-	TotalCount    int    `json:"TotalCount" xml:"TotalCount"`
-	RiskDetail    string `json:"RiskDetail" xml:"RiskDetail"`
+	Name                string `json:"Name" xml:"Name"`
+	SaleVersion         string `json:"SaleVersion" xml:"SaleVersion"`
+	Desc                string `json:"Desc" xml:"Desc"`
+	RiskDetail          string `json:"RiskDetail" xml:"RiskDetail"`
+	DataSource          string `json:"DataSource" xml:"DataSource"`
+	AlarmUniqueInfo     string `json:"AlarmUniqueInfo" xml:"AlarmUniqueInfo"`
+	RiskId              int    `json:"RiskId" xml:"RiskId"`
+	AlarmEventType      string `json:"AlarmEventType" xml:"AlarmEventType"`
+	Uuid                string `json:"Uuid" xml:"Uuid"`
+	TotalCount          int    `json:"TotalCount" xml:"TotalCount"`
+	LastTime            string `json:"LastTime" xml:"LastTime"`
+	OccurrenceTime      string `json:"OccurrenceTime" xml:"OccurrenceTime"`
+	IntranetIp          string `json:"IntranetIp" xml:"IntranetIp"`
+	LastFoundTime       string `json:"LastFoundTime" xml:"LastFoundTime"`
+	CheckCount          int    `json:"CheckCount" xml:"CheckCount"`
+	OperateMsg          string `json:"OperateMsg" xml:"OperateMsg"`
+	LowWarningCount     int    `json:"LowWarningCount" xml:"LowWarningCount"`
+	PendingCount        int    `json:"PendingCount" xml:"PendingCount"`
+	InternetIp          string `json:"InternetIp" xml:"InternetIp"`
+	EventStatus         int    `json:"EventStatus" xml:"EventStatus"`
+	RiskName            string `json:"RiskName" xml:"RiskName"`
+	Level               string `json:"Level" xml:"Level"`
+	InstanceName        string `json:"InstanceName" xml:"InstanceName"`
+	Id                  int    `json:"Id" xml:"Id"`
+	AlarmEventName      string `json:"AlarmEventName" xml:"AlarmEventName"`
+	WarningMachineCount int    `json:"WarningMachineCount" xml:"WarningMachineCount"`
+	HighWarningCount    int    `json:"HighWarningCount" xml:"HighWarningCount"`
+	SubTypeAlias        string `json:"SubTypeAlias" xml:"SubTypeAlias"`
+	TypeAlias           string `json:"TypeAlias" xml:"TypeAlias"`
+	EventSubType        string `json:"EventSubType" xml:"EventSubType"`
+	CanBeDealOnLine     bool   `json:"CanBeDealOnLine" xml:"CanBeDealOnLine"`
+	MediumWarningCount  int    `json:"MediumWarningCount" xml:"MediumWarningCount"`
 }

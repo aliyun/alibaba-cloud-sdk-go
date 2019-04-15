@@ -25,6 +25,10 @@ type ExtendContentJson struct {
 	Tag           string              `json:"Tag" xml:"Tag"`
 	PrimaryId     int                 `json:"PrimaryId" xml:"PrimaryId"`
 	Level         string              `json:"Level" xml:"Level"`
+	AbsolutePath  string              `json:"AbsolutePath" xml:"AbsolutePath"`
+	Target        string              `json:"Target" xml:"Target"`
+	Proof         string              `json:"Proof" xml:"Proof"`
+	Reason        string              `json:"Reason" xml:"Reason"`
 	CveList       []string            `json:"cveList" xml:"cveList"`
 	Necessity     Necessity           `json:"Necessity" xml:"Necessity"`
 	RpmEntityList []RpmEntityListItem `json:"RpmEntityList" xml:"RpmEntityList"`

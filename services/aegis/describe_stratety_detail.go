@@ -76,9 +76,9 @@ func (client *Client) DescribeStratetyDetailWithCallback(request *DescribeStrate
 // DescribeStratetyDetailRequest is the request struct for api DescribeStratetyDetail
 type DescribeStratetyDetailRequest struct {
 	*requests.RpcRequest
-	SourceIp        string           `position:"Query" name:"SourceIp"`
-	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Id              string           `position:"Query" name:"Id"`
+	SourceIp string `position:"Query" name:"SourceIp"`
+	Id       string `position:"Query" name:"Id"`
+	Lang     string `position:"Query" name:"Lang"`
 }
 
 // DescribeStratetyDetailResponse is the response struct for api DescribeStratetyDetail

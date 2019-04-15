@@ -76,14 +76,9 @@ func (client *Client) ModifyMachineConfigWithCallback(request *ModifyMachineConf
 // ModifyMachineConfigRequest is the request struct for api ModifyMachineConfig
 type ModifyMachineConfigRequest struct {
 	*requests.RpcRequest
-	SourceIp        string           `position:"Query" name:"SourceIp"`
-	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Config          string           `position:"Query" name:"Config"`
-	Type            string           `position:"Query" name:"Type"`
-	Target          string           `position:"Query" name:"Target"`
-	Lang            string           `position:"Query" name:"Lang"`
-	CurrentPage     requests.Integer `position:"Query" name:"CurrentPage"`
-	PageSize        requests.Integer `position:"Query" name:"PageSize"`
+	SourceIp string `position:"Query" name:"SourceIp"`
+	Type     string `position:"Query" name:"Type"`
+	Target   string `position:"Query" name:"Target"`
 }
 
 // ModifyMachineConfigResponse is the response struct for api ModifyMachineConfig

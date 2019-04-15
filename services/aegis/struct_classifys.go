@@ -17,5 +17,5 @@ package aegis
 
 // Classifys is a nested struct in aegis response
 type Classifys struct {
-	ClassifysItem []ClassifysItem `json:"ClassifysItem" xml:"ClassifysItem"`
+	Classify []Classify `json:"Classify" xml:"Classify"`
 }

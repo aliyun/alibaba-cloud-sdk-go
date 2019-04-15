@@ -17,8 +17,8 @@ package aegis
 
 // PageInfo is a nested struct in aegis response
 type PageInfo struct {
-	PageSize    int `json:"PageSize" xml:"PageSize"`
+	CurrentPage int `json:"CurrentPage" xml:"CurrentPage"`
 	Count       int `json:"Count" xml:"Count"`
 	TotalCount  int `json:"TotalCount" xml:"TotalCount"`
-	CurrentPage int `json:"CurrentPage" xml:"CurrentPage"`
+	PageSize    int `json:"PageSize" xml:"PageSize"`
 }

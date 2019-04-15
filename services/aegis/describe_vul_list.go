@@ -76,26 +76,33 @@ func (client *Client) DescribeVulListWithCallback(request *DescribeVulListReques
 // DescribeVulListRequest is the request struct for api DescribeVulList
 type DescribeVulListRequest struct {
 	*requests.RpcRequest
-	SourceIp    string           `position:"Query" name:"SourceIp"`
-	Type        string           `position:"Query" name:"Type"`
-	Uuids       string           `position:"Query" name:"Uuids"`
-	Name        string           `position:"Query" name:"Name"`
-	Level       string           `position:"Query" name:"Level"`
-	StatusList  string           `position:"Query" name:"StatusList"`
-	Necessity   string           `position:"Query" name:"Necessity"`
-	Dealed      string           `position:"Query" name:"Dealed"`
-	CurrentPage requests.Integer `position:"Query" name:"CurrentPage"`
-	PageSize    requests.Integer `position:"Query" name:"PageSize"`
+	StatusList    string           `position:"Query" name:"StatusList"`
+	Level         string           `position:"Query" name:"Level"`
+	Resource      string           `position:"Query" name:"Resource"`
+	Remark        string           `position:"Query" name:"Remark"`
+	Dealed        string           `position:"Query" name:"Dealed"`
+	CurrentPage   requests.Integer `position:"Query" name:"CurrentPage"`
+	Type          string           `position:"Query" name:"Type"`
+	CreateTsStart requests.Integer `position:"Query" name:"CreateTsStart"`
+	BatchName     string           `position:"Query" name:"BatchName"`
+	AliasName     string           `position:"Query" name:"AliasName"`
+	SourceIp      string           `position:"Query" name:"SourceIp"`
+	Name          string           `position:"Query" name:"Name"`
+	PageSize      requests.Integer `position:"Query" name:"PageSize"`
+	Lang          string           `position:"Query" name:"Lang"`
+	CreateTsEnd   requests.Integer `position:"Query" name:"CreateTsEnd"`
+	Necessity     string           `position:"Query" name:"Necessity"`
+	Uuids         string           `position:"Query" name:"Uuids"`
 }
 
 // DescribeVulListResponse is the response struct for api DescribeVulList
 type DescribeVulListResponse struct {
 	*responses.BaseResponse
-	RequestId   string           `json:"RequestId" xml:"RequestId"`
-	PageSize    int              `json:"PageSize" xml:"PageSize"`
-	CurrentPage int              `json:"CurrentPage" xml:"CurrentPage"`
-	TotalCount  int              `json:"TotalCount" xml:"TotalCount"`
-	VulRecords  []VulRecordsItem `json:"VulRecords" xml:"VulRecords"`
+	RequestId   string      `json:"RequestId" xml:"RequestId"`
+	PageSize    int         `json:"PageSize" xml:"PageSize"`
+	CurrentPage int         `json:"CurrentPage" xml:"CurrentPage"`
+	TotalCount  int         `json:"TotalCount" xml:"TotalCount"`
+	VulRecords  []VulRecord `json:"VulRecords" xml:"VulRecords"`
 }
 
 // CreateDescribeVulListRequest creates a request to invoke DescribeVulList API

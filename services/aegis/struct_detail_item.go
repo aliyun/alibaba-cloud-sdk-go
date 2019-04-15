@@ -17,7 +17,10 @@ package aegis
 
 // DetailItem is a nested struct in aegis response
 type DetailItem struct {
-	Name  string `json:"name" xml:"name"`
-	Value string `json:"value" xml:"value"`
-	Type  string `json:"type" xml:"type"`
+	Type        string `json:"type" xml:"type"`
+	SubType     string `json:"SubType" xml:"SubType"`
+	Title       string `json:"Title" xml:"Title"`
+	Value       string `json:"value" xml:"value"`
+	Name        string `json:"name" xml:"name"`
+	Description string `json:"Description" xml:"Description"`
 }

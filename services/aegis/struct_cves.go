@@ -17,5 +17,5 @@ package aegis
 
 // Cves is a nested struct in aegis response
 type Cves struct {
-	CvesItem []CvesItem `json:"CvesItem" xml:"CvesItem"`
+	Cve []Cve `json:"Cve" xml:"Cve"`
 }

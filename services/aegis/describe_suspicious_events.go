@@ -76,15 +76,14 @@ func (client *Client) DescribeSuspiciousEventsWithCallback(request *DescribeSusp
 // DescribeSuspiciousEventsRequest is the request struct for api DescribeSuspiciousEvents
 type DescribeSuspiciousEventsRequest struct {
 	*requests.RpcRequest
-	SourceIp        string           `position:"Query" name:"SourceIp"`
-	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	PageSize        requests.Integer `position:"Query" name:"PageSize"`
-	CurrentPage     requests.Integer `position:"Query" name:"CurrentPage"`
-	Uuid            string           `position:"Query" name:"Uuid"`
-	Dealed          string           `position:"Query" name:"Dealed"`
-	Remark          string           `position:"Query" name:"Remark"`
-	Level           string           `position:"Query" name:"Level"`
-	EventType       string           `position:"Query" name:"EventType"`
+	SourceIp    string           `position:"Query" name:"SourceIp"`
+	Level       string           `position:"Query" name:"Level"`
+	PageSize    requests.Integer `position:"Query" name:"PageSize"`
+	CurrentPage requests.Integer `position:"Query" name:"CurrentPage"`
+	Dealed      string           `position:"Query" name:"Dealed"`
+	Remark      string           `position:"Query" name:"Remark"`
+	EventType   string           `position:"Query" name:"EventType"`
+	Uuid        string           `position:"Query" name:"Uuid"`
 }
 
 // DescribeSuspiciousEventsResponse is the response struct for api DescribeSuspiciousEvents

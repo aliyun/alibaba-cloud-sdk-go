@@ -76,17 +76,15 @@ func (client *Client) CreateSuspiciousExportWithCallback(request *CreateSuspicio
 // CreateSuspiciousExportRequest is the request struct for api CreateSuspiciousExport
 type CreateSuspiciousExportRequest struct {
 	*requests.RpcRequest
-	SourceIp        string           `position:"Query" name:"SourceIp"`
-	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	EventNameRemark string           `position:"Query" name:"EventNameRemark"`
-	StatusList      string           `position:"Query" name:"StatusList"`
-	Level           string           `position:"Query" name:"Level"`
-	Dealed          string           `position:"Query" name:"Dealed"`
-	EventType       string           `position:"Query" name:"EventType"`
-	Uuids           string           `position:"Query" name:"Uuids"`
-	GroupId         string           `position:"Query" name:"GroupId"`
-	Remark          string           `position:"Query" name:"Remark"`
-	Tag             string           `position:"Query" name:"Tag"`
+	StatusList      string `position:"Query" name:"StatusList"`
+	SourceIp        string `position:"Query" name:"SourceIp"`
+	EventNameRemark string `position:"Query" name:"EventNameRemark"`
+	Level           string `position:"Query" name:"Level"`
+	GroupId         string `position:"Query" name:"GroupId"`
+	Dealed          string `position:"Query" name:"Dealed"`
+	EventType       string `position:"Query" name:"EventType"`
+	Remark          string `position:"Query" name:"Remark"`
+	Tag             string `position:"Query" name:"Tag"`
 }
 
 // CreateSuspiciousExportResponse is the response struct for api CreateSuspiciousExport

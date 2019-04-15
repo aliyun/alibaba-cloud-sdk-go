@@ -76,17 +76,20 @@ func (client *Client) ExportWarningWithCallback(request *ExportWarningRequest, c
 // ExportWarningRequest is the request struct for api ExportWarning
 type ExportWarningRequest struct {
 	*requests.RpcRequest
-	SourceIp        string           `position:"Query" name:"SourceIp"`
-	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Uuids           string           `position:"Query" name:"Uuids"`
-	TypeNames       string           `position:"Query" name:"TypeNames"`
-	SubTypeNames    string           `position:"Query" name:"SubTypeNames"`
-	RiskLevels      string           `position:"Query" name:"RiskLevels"`
 	StatusList      string           `position:"Query" name:"StatusList"`
-	RiskName        string           `position:"Query" name:"RiskName"`
+	RiskLevels      string           `position:"Query" name:"RiskLevels"`
+	ExportType      string           `position:"Query" name:"ExportType"`
 	Dealed          string           `position:"Query" name:"Dealed"`
+	TypeNames       string           `position:"Query" name:"TypeNames"`
 	IsSummaryExport requests.Integer `position:"Query" name:"IsSummaryExport"`
+	RiskName        string           `position:"Query" name:"RiskName"`
+	RiskIds         string           `position:"Query" name:"RiskIds"`
+	SourceIp        string           `position:"Query" name:"SourceIp"`
 	StrategyId      requests.Integer `position:"Query" name:"StrategyId"`
+	Lang            string           `position:"Query" name:"Lang"`
+	TypeName        string           `position:"Query" name:"TypeName"`
+	SubTypeNames    string           `position:"Query" name:"SubTypeNames"`
+	Uuids           string           `position:"Query" name:"Uuids"`
 }
 
 // ExportWarningResponse is the response struct for api ExportWarning

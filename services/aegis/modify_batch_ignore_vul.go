@@ -76,18 +76,15 @@ func (client *Client) ModifyBatchIgnoreVulWithCallback(request *ModifyBatchIgnor
 // ModifyBatchIgnoreVulRequest is the request struct for api ModifyBatchIgnoreVul
 type ModifyBatchIgnoreVulRequest struct {
 	*requests.RpcRequest
-	SourceIp        string           `position:"Query" name:"SourceIp"`
-	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Reason          string           `position:"Query" name:"Reason"`
-	Info            string           `position:"Query" name:"Info"`
+	Reason   string `position:"Query" name:"Reason"`
+	SourceIp string `position:"Query" name:"SourceIp"`
+	Info     string `position:"Query" name:"Info"`
 }
 
 // ModifyBatchIgnoreVulResponse is the response struct for api ModifyBatchIgnoreVul
 type ModifyBatchIgnoreVulResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	Success        bool   `json:"Success" xml:"Success"`
-	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateModifyBatchIgnoreVulRequest creates a request to invoke ModifyBatchIgnoreVul API

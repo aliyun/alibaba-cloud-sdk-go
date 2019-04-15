@@ -76,16 +76,15 @@ func (client *Client) CreateUserWhiteListWithCallback(request *CreateUserWhiteLi
 // CreateUserWhiteListRequest is the request struct for api CreateUserWhiteList
 type CreateUserWhiteListRequest struct {
 	*requests.RpcRequest
-	SourceIp        string           `position:"Query" name:"SourceIp"`
-	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	RiskIdList      string           `position:"Query" name:"RiskIdList"`
+	RiskIdList string `position:"Query" name:"RiskIdList"`
+	Reason     string `position:"Query" name:"Reason"`
+	SourceIp   string `position:"Query" name:"SourceIp"`
 }
 
 // CreateUserWhiteListResponse is the response struct for api CreateUserWhiteList
 type CreateUserWhiteListResponse struct {
 	*responses.BaseResponse
-	RequestId      string `json:"RequestId" xml:"RequestId"`
-	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCreateUserWhiteListRequest creates a request to invoke CreateUserWhiteList API

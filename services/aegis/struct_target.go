@@ -18,6 +18,6 @@ package aegis
 // Target is a nested struct in aegis response
 type Target struct {
 	Flag       string `json:"Flag" xml:"Flag"`
-	TargetType string `json:"TargetType" xml:"TargetType"`
 	Target     string `json:"Target" xml:"Target"`
+	TargetType string `json:"TargetType" xml:"TargetType"`
 }

@@ -76,9 +76,8 @@ func (client *Client) DeleteStrategyWithCallback(request *DeleteStrategyRequest,
 // DeleteStrategyRequest is the request struct for api DeleteStrategy
 type DeleteStrategyRequest struct {
 	*requests.RpcRequest
-	SourceIp        string           `position:"Query" name:"SourceIp"`
-	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Id              string           `position:"Query" name:"Id"`
+	SourceIp string `position:"Query" name:"SourceIp"`
+	Id       string `position:"Query" name:"Id"`
 }
 
 // DeleteStrategyResponse is the response struct for api DeleteStrategy

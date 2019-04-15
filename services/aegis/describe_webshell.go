@@ -76,12 +76,11 @@ func (client *Client) DescribeWebshellWithCallback(request *DescribeWebshellRequ
 // DescribeWebshellRequest is the request struct for api DescribeWebshell
 type DescribeWebshellRequest struct {
 	*requests.RpcRequest
-	SourceIp        string           `position:"Query" name:"SourceIp"`
-	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	GroupId         requests.Integer `position:"Query" name:"GroupId"`
-	Remark          string           `position:"Query" name:"Remark"`
-	Tag             requests.Integer `position:"Query" name:"Tag"`
-	Dealed          string           `position:"Query" name:"Dealed"`
+	SourceIp string           `position:"Query" name:"SourceIp"`
+	GroupId  requests.Integer `position:"Query" name:"GroupId"`
+	Remark   string           `position:"Query" name:"Remark"`
+	Dealed   string           `position:"Query" name:"Dealed"`
+	Tag      requests.Integer `position:"Query" name:"Tag"`
 }
 
 // DescribeWebshellResponse is the response struct for api DescribeWebshell

@@ -76,13 +76,13 @@ func (client *Client) CreateInstanceWithCallback(request *CreateInstanceRequest,
 // CreateInstanceRequest is the request struct for api CreateInstance
 type CreateInstanceRequest struct {
 	*requests.RpcRequest
-	OwnerId           requests.Integer `position:"Query" name:"OwnerId"`
-	ClientToken       string           `position:"Query" name:"ClientToken"`
 	Duration          requests.Integer `position:"Query" name:"Duration"`
-	PricingCycle      string           `position:"Query" name:"PricingCycle"`
-	VersionCode       requests.Integer `position:"Query" name:"VersionCode"`
-	VmNumber          requests.Integer `position:"Query" name:"VmNumber"`
 	IsAutoRenew       requests.Boolean `position:"Query" name:"IsAutoRenew"`
+	ClientToken       string           `position:"Query" name:"ClientToken"`
+	VmNumber          requests.Integer `position:"Query" name:"VmNumber"`
+	OwnerId           requests.Integer `position:"Query" name:"OwnerId"`
+	VersionCode       requests.Integer `position:"Query" name:"VersionCode"`
+	PricingCycle      string           `position:"Query" name:"PricingCycle"`
 	AutoRenewDuration requests.Integer `position:"Query" name:"AutoRenewDuration"`
 }
 

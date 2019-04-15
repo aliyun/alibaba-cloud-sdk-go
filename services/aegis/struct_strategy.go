@@ -17,10 +17,25 @@ package aegis
 
 // Strategy is a nested struct in aegis response
 type Strategy struct {
-	CycleDays                        int                            `json:"CycleDays" xml:"CycleDays"`
+	StrategyName                     string                         `json:"StrategyName" xml:"StrategyName"`
 	Name                             string                         `json:"Name" xml:"Name"`
 	Id                               int                            `json:"Id" xml:"Id"`
+	RiskCount                        int                            `json:"RiskCount" xml:"RiskCount"`
+	Status                           int                            `json:"Status" xml:"Status"`
+	CycleDays                        int                            `json:"CycleDays" xml:"CycleDays"`
+	EcsCount                         int                            `json:"EcsCount" xml:"EcsCount"`
+	VirusProcCount                   int                            `json:"VirusProcCount" xml:"VirusProcCount"`
+	PassRate                         int                            `json:"PassRate" xml:"PassRate"`
+	ExecStatus                       int                            `json:"ExecStatus" xml:"ExecStatus"`
+	AssetCount                       int                            `json:"AssetCount" xml:"AssetCount"`
+	Progress                         int                            `json:"Progress" xml:"Progress"`
+	SuspiciousProcCount              int                            `json:"SuspiciousProcCount" xml:"SuspiciousProcCount"`
+	StrategyId                       int                            `json:"StrategyId" xml:"StrategyId"`
+	StudyTime                        int                            `json:"StudyTime" xml:"StudyTime"`
 	CycleStartTime                   int                            `json:"CycleStartTime" xml:"CycleStartTime"`
+	ProcessRate                      int                            `json:"ProcessRate" xml:"ProcessRate"`
+	TrustProcCount                   int                            `json:"TrustProcCount" xml:"TrustProcCount"`
 	Type                             int                            `json:"Type" xml:"Type"`
 	RiskTypeWhiteListQueryResultList []RiskTypeWhiteListQueryResult `json:"RiskTypeWhiteListQueryResultList" xml:"RiskTypeWhiteListQueryResultList"`
+	ConfigTargets                    []ConfigTarget                 `json:"ConfigTargets" xml:"ConfigTargets"`
 }

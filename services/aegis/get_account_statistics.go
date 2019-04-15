@@ -76,8 +76,8 @@ func (client *Client) GetAccountStatisticsWithCallback(request *GetAccountStatis
 // GetAccountStatisticsRequest is the request struct for api GetAccountStatistics
 type GetAccountStatisticsRequest struct {
 	*requests.RpcRequest
-	StartTime string `position:"Query" name:"StartTime"`
 	EndTime   string `position:"Query" name:"EndTime"`
+	StartTime string `position:"Query" name:"StartTime"`
 }
 
 // GetAccountStatisticsResponse is the response struct for api GetAccountStatistics

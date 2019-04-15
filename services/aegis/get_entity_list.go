@@ -77,11 +77,11 @@ func (client *Client) GetEntityListWithCallback(request *GetEntityListRequest, c
 type GetEntityListRequest struct {
 	*requests.RpcRequest
 	GroupId     requests.Integer `position:"Query" name:"GroupId"`
+	PageSize    requests.Integer `position:"Query" name:"PageSize"`
 	Remark      string           `position:"Query" name:"Remark"`
 	EventType   string           `position:"Query" name:"EventType"`
-	RegionNo    string           `position:"Query" name:"RegionNo"`
 	CurrentPage requests.Integer `position:"Query" name:"CurrentPage"`
-	PageSize    requests.Integer `position:"Query" name:"PageSize"`
+	RegionNo    string           `position:"Query" name:"RegionNo"`
 }
 
 // GetEntityListResponse is the response struct for api GetEntityList

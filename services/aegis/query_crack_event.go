@@ -76,11 +76,11 @@ func (client *Client) QueryCrackEventWithCallback(request *QueryCrackEventReques
 // QueryCrackEventRequest is the request struct for api QueryCrackEvent
 type QueryCrackEventRequest struct {
 	*requests.RpcRequest
-	Uuid        string           `position:"Query" name:"Uuid"`
-	Status      requests.Integer `position:"Query" name:"Status"`
+	EndTime     string           `position:"Query" name:"EndTime"`
 	CurrentPage requests.Integer `position:"Query" name:"CurrentPage"`
 	StartTime   string           `position:"Query" name:"StartTime"`
-	EndTime     string           `position:"Query" name:"EndTime"`
+	Uuid        string           `position:"Query" name:"Uuid"`
+	Status      requests.Integer `position:"Query" name:"Status"`
 }
 
 // QueryCrackEventResponse is the response struct for api QueryCrackEvent

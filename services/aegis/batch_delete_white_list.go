@@ -76,9 +76,8 @@ func (client *Client) BatchDeleteWhiteListWithCallback(request *BatchDeleteWhite
 // BatchDeleteWhiteListRequest is the request struct for api BatchDeleteWhiteList
 type BatchDeleteWhiteListRequest struct {
 	*requests.RpcRequest
-	SourceIp        string           `position:"Query" name:"SourceIp"`
-	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	RiskIdList      string           `position:"Query" name:"RiskIdList"`
+	RiskIdList string `position:"Query" name:"RiskIdList"`
+	SourceIp   string `position:"Query" name:"SourceIp"`
 }
 
 // BatchDeleteWhiteListResponse is the response struct for api BatchDeleteWhiteList

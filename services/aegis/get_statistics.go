@@ -76,8 +76,8 @@ func (client *Client) GetStatisticsWithCallback(request *GetStatisticsRequest, c
 // GetStatisticsRequest is the request struct for api GetStatistics
 type GetStatisticsRequest struct {
 	*requests.RpcRequest
-	StartTime string `position:"Query" name:"StartTime"`
 	EndTime   string `position:"Query" name:"EndTime"`
+	StartTime string `position:"Query" name:"StartTime"`
 }
 
 // GetStatisticsResponse is the response struct for api GetStatistics

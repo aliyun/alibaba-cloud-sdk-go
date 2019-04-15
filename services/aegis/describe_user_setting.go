@@ -76,8 +76,7 @@ func (client *Client) DescribeUserSettingWithCallback(request *DescribeUserSetti
 // DescribeUserSettingRequest is the request struct for api DescribeUserSetting
 type DescribeUserSettingRequest struct {
 	*requests.RpcRequest
-	SourceIp        string           `position:"Query" name:"SourceIp"`
-	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	SourceIp string `position:"Query" name:"SourceIp"`
 }
 
 // DescribeUserSettingResponse is the response struct for api DescribeUserSetting
@@ -85,6 +84,7 @@ type DescribeUserSettingResponse struct {
 	*responses.BaseResponse
 	RequestId              string `json:"RequestId" xml:"RequestId"`
 	InvalidWarningKeepDays int    `json:"InvalidWarningKeepDays" xml:"InvalidWarningKeepDays"`
+	AlertLevels            string `json:"AlertLevels" xml:"AlertLevels"`
 }
 
 // CreateDescribeUserSettingRequest creates a request to invoke DescribeUserSetting API

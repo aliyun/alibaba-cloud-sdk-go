@@ -76,13 +76,13 @@ func (client *Client) DescribeMacConfigWithCallback(request *DescribeMacConfigRe
 // DescribeMacConfigRequest is the request struct for api DescribeMacConfig
 type DescribeMacConfigRequest struct {
 	*requests.RpcRequest
-	SourceIp        string           `position:"Query" name:"SourceIp"`
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Target          string           `position:"Query" name:"Target"`
 	Types           string           `position:"Query" name:"Types"`
+	SourceIp        string           `position:"Query" name:"SourceIp"`
+	Extern          string           `position:"Query" name:"Extern"`
 	Type            string           `position:"Query" name:"Type"`
 	Config          string           `position:"Query" name:"Config"`
-	Extern          string           `position:"Query" name:"Extern"`
+	Target          string           `position:"Query" name:"Target"`
 }
 
 // DescribeMacConfigResponse is the response struct for api DescribeMacConfig

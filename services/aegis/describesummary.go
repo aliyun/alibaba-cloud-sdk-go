@@ -76,18 +76,17 @@ func (client *Client) DescribesummaryWithCallback(request *DescribesummaryReques
 // DescribesummaryRequest is the request struct for api Describesummary
 type DescribesummaryRequest struct {
 	*requests.RpcRequest
-	SourceIp        string           `position:"Query" name:"SourceIp"`
-	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Uuids           string           `position:"Query" name:"Uuids"`
-	TypeNames       string           `position:"Query" name:"TypeNames"`
-	SubTypeNames    string           `position:"Query" name:"SubTypeNames"`
-	RiskLevels      string           `position:"Query" name:"RiskLevels"`
-	StatusList      string           `position:"Query" name:"StatusList"`
-	RiskName        string           `position:"Query" name:"RiskName"`
-	Dealed          string           `position:"Query" name:"Dealed"`
-	StrategyId      requests.Integer `position:"Query" name:"StrategyId"`
-	PageSize        requests.Integer `position:"Query" name:"PageSize"`
-	CurrentPage     requests.Integer `position:"Query" name:"CurrentPage"`
+	TypeNames    string           `position:"Query" name:"TypeNames"`
+	RiskName     string           `position:"Query" name:"RiskName"`
+	StatusList   string           `position:"Query" name:"StatusList"`
+	SourceIp     string           `position:"Query" name:"SourceIp"`
+	RiskLevels   string           `position:"Query" name:"RiskLevels"`
+	PageSize     requests.Integer `position:"Query" name:"PageSize"`
+	Dealed       string           `position:"Query" name:"Dealed"`
+	StrategyId   requests.Integer `position:"Query" name:"StrategyId"`
+	CurrentPage  requests.Integer `position:"Query" name:"CurrentPage"`
+	SubTypeNames string           `position:"Query" name:"SubTypeNames"`
+	Uuids        string           `position:"Query" name:"Uuids"`
 }
 
 // DescribesummaryResponse is the response struct for api Describesummary

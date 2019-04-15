@@ -76,18 +76,17 @@ func (client *Client) DescribeWarningWithCallback(request *DescribeWarningReques
 // DescribeWarningRequest is the request struct for api DescribeWarning
 type DescribeWarningRequest struct {
 	*requests.RpcRequest
-	SourceIp        string           `position:"Query" name:"SourceIp"`
-	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	TypeNames       string           `position:"Query" name:"TypeNames"`
-	SubTypeNames    string           `position:"Query" name:"SubTypeNames"`
-	RiskLevels      string           `position:"Query" name:"RiskLevels"`
-	StatusList      string           `position:"Query" name:"StatusList"`
-	RiskName        string           `position:"Query" name:"RiskName"`
-	StrategyId      requests.Integer `position:"Query" name:"StrategyId"`
-	PageSize        requests.Integer `position:"Query" name:"PageSize"`
-	CurrentPage     requests.Integer `position:"Query" name:"CurrentPage"`
-	Uuids           string           `position:"Query" name:"Uuids"`
-	Dealed          string           `position:"Query" name:"Dealed"`
+	TypeNames    string           `position:"Query" name:"TypeNames"`
+	RiskName     string           `position:"Query" name:"RiskName"`
+	StatusList   string           `position:"Query" name:"StatusList"`
+	SourceIp     string           `position:"Query" name:"SourceIp"`
+	RiskLevels   string           `position:"Query" name:"RiskLevels"`
+	PageSize     requests.Integer `position:"Query" name:"PageSize"`
+	StrategyId   requests.Integer `position:"Query" name:"StrategyId"`
+	CurrentPage  requests.Integer `position:"Query" name:"CurrentPage"`
+	Dealed       string           `position:"Query" name:"Dealed"`
+	SubTypeNames string           `position:"Query" name:"SubTypeNames"`
+	Uuids        string           `position:"Query" name:"Uuids"`
 }
 
 // DescribeWarningResponse is the response struct for api DescribeWarning

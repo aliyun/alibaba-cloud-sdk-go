@@ -76,11 +76,11 @@ func (client *Client) UpgradeInstanceWithCallback(request *UpgradeInstanceReques
 // UpgradeInstanceRequest is the request struct for api UpgradeInstance
 type UpgradeInstanceRequest struct {
 	*requests.RpcRequest
-	OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
-	ClientToken string           `position:"Query" name:"ClientToken"`
 	InstanceId  string           `position:"Query" name:"InstanceId"`
-	VersionCode requests.Integer `position:"Query" name:"VersionCode"`
+	ClientToken string           `position:"Query" name:"ClientToken"`
 	VmNumber    requests.Integer `position:"Query" name:"VmNumber"`
+	OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
+	VersionCode requests.Integer `position:"Query" name:"VersionCode"`
 }
 
 // UpgradeInstanceResponse is the response struct for api UpgradeInstance

@@ -76,16 +76,16 @@ func (client *Client) DescribeStratetyWithCallback(request *DescribeStratetyRequ
 // DescribeStratetyRequest is the request struct for api DescribeStratety
 type DescribeStratetyRequest struct {
 	*requests.RpcRequest
-	SourceIp        string           `position:"Query" name:"SourceIp"`
-	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	SourceIp    string `position:"Query" name:"SourceIp"`
+	StrategyIds string `position:"Query" name:"StrategyIds"`
+	Lang        string `position:"Query" name:"Lang"`
 }
 
 // DescribeStratetyResponse is the response struct for api DescribeStratety
 type DescribeStratetyResponse struct {
 	*responses.BaseResponse
-	RequestId  string      `json:"RequestId" xml:"RequestId"`
-	Count      int         `json:"Count" xml:"Count"`
-	Strategies []Strategie `json:"Strategies" xml:"Strategies"`
+	RequestId  string     `json:"RequestId" xml:"RequestId"`
+	Strategies []Strategy `json:"Strategies" xml:"Strategies"`
 }
 
 // CreateDescribeStratetyRequest creates a request to invoke DescribeStratety API

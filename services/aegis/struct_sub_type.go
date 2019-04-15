@@ -17,8 +17,8 @@ package aegis
 
 // SubType is a nested struct in aegis response
 type SubType struct {
-	On        bool   `json:"On" xml:"On"`
-	Alias     string `json:"Alias" xml:"Alias"`
 	TypeName  string `json:"TypeName" xml:"TypeName"`
 	WarnCount string `json:"WarnCount" xml:"WarnCount"`
+	On        bool   `json:"On" xml:"On"`
+	Alias     string `json:"Alias" xml:"Alias"`
 }

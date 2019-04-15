@@ -76,17 +76,18 @@ func (client *Client) DescribeVulDetailsWithCallback(request *DescribeVulDetails
 // DescribeVulDetailsRequest is the request struct for api DescribeVulDetails
 type DescribeVulDetailsRequest struct {
 	*requests.RpcRequest
-	SourceIp        string           `position:"Query" name:"SourceIp"`
-	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Type            string           `position:"Query" name:"Type"`
-	Name            string           `position:"Query" name:"Name"`
+	AliasName string `position:"Query" name:"AliasName"`
+	SourceIp  string `position:"Query" name:"SourceIp"`
+	Name      string `position:"Query" name:"Name"`
+	Lang      string `position:"Query" name:"Lang"`
+	Type      string `position:"Query" name:"Type"`
 }
 
 // DescribeVulDetailsResponse is the response struct for api DescribeVulDetails
 type DescribeVulDetailsResponse struct {
 	*responses.BaseResponse
-	RequestId string     `json:"RequestId" xml:"RequestId"`
-	Cves      []CvesItem `json:"Cves" xml:"Cves"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Cves      []Cve  `json:"Cves" xml:"Cves"`
 }
 
 // CreateDescribeVulDetailsRequest creates a request to invoke DescribeVulDetails API

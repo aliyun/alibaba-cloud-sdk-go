@@ -76,12 +76,10 @@ func (client *Client) OperateWarningWithCallback(request *OperateWarningRequest,
 // OperateWarningRequest is the request struct for api OperateWarning
 type OperateWarningRequest struct {
 	*requests.RpcRequest
-	SourceIp        string           `position:"Query" name:"SourceIp"`
-	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	RiskIds         string           `position:"Query" name:"RiskIds"`
-	OperateType     string           `position:"Query" name:"OperateType"`
-	RiskWarningIds  string           `position:"Query" name:"RiskWarningIds"`
-	Reason          string           `position:"Query" name:"Reason"`
+	Reason         string `position:"Query" name:"Reason"`
+	SourceIp       string `position:"Query" name:"SourceIp"`
+	OperateType    string `position:"Query" name:"OperateType"`
+	RiskWarningIds string `position:"Query" name:"RiskWarningIds"`
 }
 
 // OperateWarningResponse is the response struct for api OperateWarning

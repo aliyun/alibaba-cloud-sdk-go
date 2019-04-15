@@ -76,13 +76,13 @@ func (client *Client) DescribeLoginLogsWithCallback(request *DescribeLoginLogsRe
 // DescribeLoginLogsRequest is the request struct for api DescribeLoginLogs
 type DescribeLoginLogsRequest struct {
 	*requests.RpcRequest
+	Types       string           `position:"Query" name:"Types"`
 	SourceIp    string           `position:"Query" name:"SourceIp"`
 	PageSize    requests.Integer `position:"Query" name:"PageSize"`
-	CurrentPage requests.Integer `position:"Query" name:"CurrentPage"`
 	Statuses    string           `position:"Query" name:"Statuses"`
-	Types       string           `position:"Query" name:"Types"`
-	Tag         string           `position:"Query" name:"Tag"`
+	CurrentPage requests.Integer `position:"Query" name:"CurrentPage"`
 	Remark      string           `position:"Query" name:"Remark"`
+	Tag         string           `position:"Query" name:"Tag"`
 }
 
 // DescribeLoginLogsResponse is the response struct for api DescribeLoginLogs

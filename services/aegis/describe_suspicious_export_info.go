@@ -76,9 +76,8 @@ func (client *Client) DescribeSuspiciousExportInfoWithCallback(request *Describe
 // DescribeSuspiciousExportInfoRequest is the request struct for api DescribeSuspiciousExportInfo
 type DescribeSuspiciousExportInfoRequest struct {
 	*requests.RpcRequest
-	SourceIp        string           `position:"Query" name:"SourceIp"`
-	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ExportId        requests.Integer `position:"Query" name:"ExportId"`
+	SourceIp string           `position:"Query" name:"SourceIp"`
+	ExportId requests.Integer `position:"Query" name:"ExportId"`
 }
 
 // DescribeSuspiciousExportInfoResponse is the response struct for api DescribeSuspiciousExportInfo
@@ -91,7 +90,7 @@ type DescribeSuspiciousExportInfoResponse struct {
 	CurrentCount int    `json:"CurrentCount" xml:"CurrentCount"`
 	TotalCount   int    `json:"TotalCount" xml:"TotalCount"`
 	Progress     int    `json:"Progress" xml:"Progress"`
-	Status       string `json:"Status" xml:"Status"`
+	ExportStatus string `json:"ExportStatus" xml:"ExportStatus"`
 	Message      string `json:"Message" xml:"Message"`
 	Link         string `json:"Link" xml:"Link"`
 }

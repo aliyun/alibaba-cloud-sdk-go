@@ -76,11 +76,10 @@ func (client *Client) DescribeRiskWhiteListWithCallback(request *DescribeRiskWhi
 // DescribeRiskWhiteListRequest is the request struct for api DescribeRiskWhiteList
 type DescribeRiskWhiteListRequest struct {
 	*requests.RpcRequest
-	SourceIp        string           `position:"Query" name:"SourceIp"`
-	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	RiskName        string           `position:"Query" name:"RiskName"`
-	PageSize        requests.Integer `position:"Query" name:"PageSize"`
-	CurrentPage     requests.Integer `position:"Query" name:"CurrentPage"`
+	RiskName    string           `position:"Query" name:"RiskName"`
+	SourceIp    string           `position:"Query" name:"SourceIp"`
+	PageSize    requests.Integer `position:"Query" name:"PageSize"`
+	CurrentPage requests.Integer `position:"Query" name:"CurrentPage"`
 }
 
 // DescribeRiskWhiteListResponse is the response struct for api DescribeRiskWhiteList

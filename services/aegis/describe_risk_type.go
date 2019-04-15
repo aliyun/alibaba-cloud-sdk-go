@@ -76,10 +76,10 @@ func (client *Client) DescribeRiskTypeWithCallback(request *DescribeRiskTypeRequ
 // DescribeRiskTypeRequest is the request struct for api DescribeRiskType
 type DescribeRiskTypeRequest struct {
 	*requests.RpcRequest
-	SourceIp        string           `position:"Query" name:"SourceIp"`
-	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Uuids           string           `position:"Query" name:"Uuids"`
-	StrategyId      requests.Integer `position:"Query" name:"StrategyId"`
+	SourceIp   string           `position:"Query" name:"SourceIp"`
+	StrategyId requests.Integer `position:"Query" name:"StrategyId"`
+	Lang       string           `position:"Query" name:"Lang"`
+	Uuids      string           `position:"Query" name:"Uuids"`
 }
 
 // DescribeRiskTypeResponse is the response struct for api DescribeRiskType

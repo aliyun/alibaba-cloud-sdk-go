@@ -76,15 +76,15 @@ func (client *Client) DescribeMachineConfigWithCallback(request *DescribeMachine
 // DescribeMachineConfigRequest is the request struct for api DescribeMachineConfig
 type DescribeMachineConfigRequest struct {
 	*requests.RpcRequest
-	SourceIp        string           `position:"Query" name:"SourceIp"`
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Target          string           `position:"Query" name:"Target"`
 	Types           string           `position:"Query" name:"Types"`
-	Type            string           `position:"Query" name:"Type"`
-	Config          string           `position:"Query" name:"Config"`
-	Lang            string           `position:"Query" name:"Lang"`
-	CurrentPage     requests.Integer `position:"Query" name:"CurrentPage"`
+	SourceIp        string           `position:"Query" name:"SourceIp"`
 	PageSize        requests.Integer `position:"Query" name:"PageSize"`
+	CurrentPage     requests.Integer `position:"Query" name:"CurrentPage"`
+	Type            string           `position:"Query" name:"Type"`
+	Lang            string           `position:"Query" name:"Lang"`
+	Config          string           `position:"Query" name:"Config"`
+	Target          string           `position:"Query" name:"Target"`
 }
 
 // DescribeMachineConfigResponse is the response struct for api DescribeMachineConfig

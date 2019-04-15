@@ -17,5 +17,5 @@ package aegis
 
 // VulRecords is a nested struct in aegis response
 type VulRecords struct {
-	VulRecordsItem []VulRecordsItem `json:"VulRecordsItem" xml:"VulRecordsItem"`
+	VulRecord []VulRecord `json:"VulRecord" xml:"VulRecord"`
 }

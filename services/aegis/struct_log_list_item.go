@@ -17,30 +17,31 @@ package aegis
 
 // LogListItem is a nested struct in aegis response
 type LogListItem struct {
-	LastTime       int              `json:"LastTime" xml:"LastTime"`
-	Ip             string           `json:"Ip" xml:"Ip"`
-	FirstTime      int              `json:"FirstTime" xml:"FirstTime"`
-	InstanceName   string           `json:"InstanceName" xml:"InstanceName"`
-	AliasEventName string           `json:"AliasEventName" xml:"AliasEventName"`
-	Location       string           `json:"Location" xml:"Location"`
-	Protocol       int              `json:"Protocol" xml:"Protocol"`
 	OsVersion      string           `json:"OsVersion" xml:"OsVersion"`
+	Region         string           `json:"Region" xml:"Region"`
+	AliasEventName string           `json:"AliasEventName" xml:"AliasEventName"`
+	Online         string           `json:"Online" xml:"Online"`
+	Id             int              `json:"id" xml:"id"`
+	Uuid           string           `json:"Uuid" xml:"Uuid"`
+	LoginSourceIp  string           `json:"LoginSourceIp" xml:"LoginSourceIp"`
+	Tag            string           `json:"Tag" xml:"Tag"`
+	FirstTime      int              `json:"FirstTime" xml:"FirstTime"`
+	InstanceId     string           `json:"InstanceId" xml:"InstanceId"`
+	Protocol       int              `json:"Protocol" xml:"Protocol"`
+	Type           string           `json:"Type" xml:"Type"`
+	Status         int              `json:"Status" xml:"Status"`
+	Ip             string           `json:"Ip" xml:"Ip"`
+	Level          string           `json:"Level" xml:"Level"`
+	InstanceName   string           `json:"InstanceName" xml:"InstanceName"`
+	LoginTime      int              `json:"LoginTime" xml:"LoginTime"`
+	EventName      string           `json:"EventName" xml:"EventName"`
+	Location       string           `json:"Location" xml:"Location"`
 	EventType      string           `json:"EventType" xml:"EventType"`
 	ProtocolName   string           `json:"ProtocolName" xml:"ProtocolName"`
-	Status         int              `json:"Status" xml:"Status"`
-	ClientIp       string           `json:"ClientIp" xml:"ClientIp"`
-	LoginSourceIp  string           `json:"LoginSourceIp" xml:"LoginSourceIp"`
-	Region         string           `json:"Region" xml:"Region"`
-	Uuid           string           `json:"Uuid" xml:"Uuid"`
-	EventName      string           `json:"EventName" xml:"EventName"`
-	Level          string           `json:"Level" xml:"Level"`
-	Type           string           `json:"Type" xml:"Type"`
-	AliasEventType string           `json:"AliasEventType" xml:"AliasEventType"`
-	UserName       string           `json:"UserName" xml:"UserName"`
-	Id             int              `json:"id" xml:"id"`
-	LoginTime      int              `json:"LoginTime" xml:"LoginTime"`
-	InstanceId     string           `json:"InstanceId" xml:"InstanceId"`
 	GroupId        int              `json:"GroupId" xml:"GroupId"`
-	Online         string           `json:"Online" xml:"Online"`
+	UserName       string           `json:"UserName" xml:"UserName"`
+	AliasEventType string           `json:"AliasEventType" xml:"AliasEventType"`
+	LastTime       int              `json:"LastTime" xml:"LastTime"`
+	ClientIp       string           `json:"ClientIp" xml:"ClientIp"`
 	DetailList     []DetailListItem `json:"DetailList" xml:"DetailList"`
 }

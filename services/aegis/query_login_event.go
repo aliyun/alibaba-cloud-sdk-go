@@ -76,11 +76,11 @@ func (client *Client) QueryLoginEventWithCallback(request *QueryLoginEventReques
 // QueryLoginEventRequest is the request struct for api QueryLoginEvent
 type QueryLoginEventRequest struct {
 	*requests.RpcRequest
-	Uuid        string           `position:"Query" name:"Uuid"`
-	Status      requests.Integer `position:"Query" name:"Status"`
+	EndTime     string           `position:"Query" name:"EndTime"`
 	CurrentPage requests.Integer `position:"Query" name:"CurrentPage"`
 	StartTime   string           `position:"Query" name:"StartTime"`
-	EndTime     string           `position:"Query" name:"EndTime"`
+	Uuid        string           `position:"Query" name:"Uuid"`
+	Status      requests.Integer `position:"Query" name:"Status"`
 }
 
 // QueryLoginEventResponse is the response struct for api QueryLoginEvent

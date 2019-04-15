@@ -17,13 +17,47 @@ package aegis
 
 // Data is a nested struct in aegis response
 type Data struct {
-	Intercepted  int                   `json:"Intercepted" xml:"Intercepted"`
-	Patch        int                   `json:"Patch" xml:"Patch"`
-	RemoteLogin  int                   `json:"RemoteLogin" xml:"RemoteLogin"`
-	CrackSuccess int                   `json:"CrackSuccess" xml:"CrackSuccess"`
-	Account      int                   `json:"Account" xml:"Account"`
-	Health       int                   `json:"Health" xml:"Health"`
-	Trojan       int                   `json:"Trojan" xml:"Trojan"`
-	PageInfo     PageInfo              `json:"PageInfo" xml:"PageInfo"`
-	List         ListInQueryCrackEvent `json:"List" xml:"List"`
+	Name                  string                `json:"Name" xml:"Name"`
+	CrackSuccess          int                   `json:"CrackSuccess" xml:"CrackSuccess"`
+	Flag                  string                `json:"Flag" xml:"Flag"`
+	DataSource            string                `json:"DataSource" xml:"DataSource"`
+	Account               int                   `json:"Account" xml:"Account"`
+	EndTime               int                   `json:"EndTime" xml:"EndTime"`
+	AlarmUniqueInfo       string                `json:"AlarmUniqueInfo" xml:"AlarmUniqueInfo"`
+	Uuid                  string                `json:"Uuid" xml:"Uuid"`
+	StartTime             int                   `json:"StartTime" xml:"StartTime"`
+	Intercepted           int                   `json:"Intercepted" xml:"Intercepted"`
+	Vul                   int                   `json:"Vul" xml:"Vul"`
+	HasTraceInfo          bool                  `json:"HasTraceInfo" xml:"HasTraceInfo"`
+	IntranetIp            string                `json:"IntranetIp" xml:"IntranetIp"`
+	Description           string                `json:"Description" xml:"Description"`
+	CanCancelFault        bool                  `json:"CanCancelFault" xml:"CanCancelFault"`
+	Health                int                   `json:"Health" xml:"Health"`
+	Type                  string                `json:"Type" xml:"Type"`
+	Solution              string                `json:"Solution" xml:"Solution"`
+	SuspEventCount        int                   `json:"SuspEventCount" xml:"SuspEventCount"`
+	InternetIp            string                `json:"InternetIp" xml:"InternetIp"`
+	DateSourceName        string                `json:"DateSourceName" xml:"DateSourceName"`
+	Level                 string                `json:"Level" xml:"Level"`
+	InstanceName          string                `json:"InstanceName" xml:"InstanceName"`
+	DataSourceId          int                   `json:"DataSourceId" xml:"DataSourceId"`
+	Suspicious            int                   `json:"Suspicious" xml:"Suspicious"`
+	RemoteLogin           int                   `json:"RemoteLogin" xml:"RemoteLogin"`
+	Patch                 int                   `json:"Patch" xml:"Patch"`
+	AlarmEventDesc        string                `json:"AlarmEventDesc" xml:"AlarmEventDesc"`
+	EventType             string                `json:"EventType" xml:"EventType"`
+	AlarmEventAliasName   string                `json:"AlarmEventAliasName" xml:"AlarmEventAliasName"`
+	CanBeDealOnLine       bool                  `json:"CanBeDealOnLine" xml:"CanBeDealOnLine"`
+	Trojan                int                   `json:"Trojan" xml:"Trojan"`
+	AliseEventType        string                `json:"AliseEventType" xml:"AliseEventType"`
+	SuspEventMachineNames []string              `json:"SuspEventMachineNames" xml:"SuspEventMachineNames"`
+	SocreThreadDate       []string              `json:"SocreThreadDate" xml:"SocreThreadDate"`
+	WeaknessUuids         []string              `json:"WeaknessUuids" xml:"WeaknessUuids"`
+	WeaknessMachineNames  []string              `json:"WeaknessMachineNames" xml:"WeaknessMachineNames"`
+	SocreThread           []string              `json:"SocreThread" xml:"SocreThread"`
+	SuspEventUuids        []string              `json:"SuspEventUuids" xml:"SuspEventUuids"`
+	PageInfo              PageInfo              `json:"PageInfo" xml:"PageInfo"`
+	MetaDataFields        []MetaDataField       `json:"MetaDataFields" xml:"MetaDataFields"`
+	List                  ListInQueryCrackEvent `json:"List" xml:"List"`
+	CauseDetails          []CauseDetail         `json:"CauseDetails" xml:"CauseDetails"`
 }
