@@ -87,6 +87,7 @@ type IndexImageRequest struct {
 	RemarksC       string `position:"Query" name:"RemarksC"`
 	SetId          string `position:"Query" name:"SetId"`
 	SourceType     string `position:"Query" name:"SourceType"`
+	RealUid        string `position:"Query" name:"RealUid"`
 }
 
 // IndexImageResponse is the response struct for api IndexImage

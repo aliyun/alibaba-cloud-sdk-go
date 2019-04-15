@@ -78,6 +78,7 @@ type DetectImageFacesRequest struct {
 	*requests.RpcRequest
 	ImageUri string `position:"Query" name:"ImageUri"`
 	Project  string `position:"Query" name:"Project"`
+	RealUid  string `position:"Query" name:"RealUid"`
 }
 
 // DetectImageFacesResponse is the response struct for api DetectImageFaces

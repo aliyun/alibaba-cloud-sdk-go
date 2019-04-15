@@ -79,6 +79,7 @@ type DetectImageCelebrityRequest struct {
 	ImageUri string `position:"Query" name:"ImageUri"`
 	Library  string `position:"Query" name:"Library"`
 	Project  string `position:"Query" name:"Project"`
+	RealUid  string `position:"Query" name:"RealUid"`
 }
 
 // DetectImageCelebrityResponse is the response struct for api DetectImageCelebrity

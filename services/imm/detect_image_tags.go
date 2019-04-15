@@ -78,6 +78,7 @@ type DetectImageTagsRequest struct {
 	*requests.RpcRequest
 	ImageUri string `position:"Query" name:"ImageUri"`
 	Project  string `position:"Query" name:"Project"`
+	RealUid  string `position:"Query" name:"RealUid"`
 }
 
 // DetectImageTagsResponse is the response struct for api DetectImageTags
