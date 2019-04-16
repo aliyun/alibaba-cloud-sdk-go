@@ -17,5 +17,5 @@ package sas
 
 // CveList is a nested struct in sas response
 type CveList struct {
-	CveList []string `json:"CveList" xml:"CveList"`
+	Cve []string `json:"Cve" xml:"Cve"`
 }

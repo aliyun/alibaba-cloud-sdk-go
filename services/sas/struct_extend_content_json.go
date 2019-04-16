@@ -17,15 +17,15 @@ package sas
 
 // ExtendContentJson is a nested struct in sas response
 type ExtendContentJson struct {
-	Os            string              `json:"Os" xml:"Os"`
-	OsRelease     string              `json:"OsRelease" xml:"OsRelease"`
-	Status        int                 `json:"Status" xml:"Status"`
-	LastTs        int                 `json:"LastTs" xml:"LastTs"`
-	AliasName     string              `json:"AliasName" xml:"AliasName"`
-	Tag           string              `json:"Tag" xml:"Tag"`
-	PrimaryId     int                 `json:"PrimaryId" xml:"PrimaryId"`
-	AbsolutePath  string              `json:"AbsolutePath" xml:"AbsolutePath"`
-	CveList       []string            `json:"cveList" xml:"cveList"`
-	Necessity     Necessity           `json:"Necessity" xml:"Necessity"`
-	RpmEntityList []RpmEntityListItem `json:"RpmEntityList" xml:"RpmEntityList"`
+	Os            string      `json:"Os" xml:"Os"`
+	OsRelease     string      `json:"OsRelease" xml:"OsRelease"`
+	Status        int         `json:"Status" xml:"Status"`
+	LastTs        int         `json:"LastTs" xml:"LastTs"`
+	AliasName     string      `json:"AliasName" xml:"AliasName"`
+	Tag           string      `json:"Tag" xml:"Tag"`
+	PrimaryId     int         `json:"PrimaryId" xml:"PrimaryId"`
+	AbsolutePath  string      `json:"AbsolutePath" xml:"AbsolutePath"`
+	CveList       []string    `json:"cveList" xml:"cveList"`
+	Necessity     Necessity   `json:"Necessity" xml:"Necessity"`
+	RpmEntityList []RpmEntity `json:"RpmEntityList" xml:"RpmEntityList"`
 }
