@@ -1,3 +1,6 @@
+2019-04-16 Version: 1.56.0
+1, Add the go version of sdk.
+
 2019-04-15 Version: 1.55.7
 1, Add SDK for goLang version.
 
