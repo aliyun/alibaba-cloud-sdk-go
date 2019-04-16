@@ -96,7 +96,7 @@ func CreateRevokeAccountPrivilegeRequest() (request *RevokeAccountPrivilegeReque
 	request = &RevokeAccountPrivilegeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "RevokeAccountPrivilege", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "RevokeAccountPrivilege", "R-kvstore", "openAPI")
 	return
 }
 

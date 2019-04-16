@@ -103,7 +103,7 @@ func CreateDescribeInstancesByExpireTimeRequest() (request *DescribeInstancesByE
 	request = &DescribeInstancesByExpireTimeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeInstancesByExpireTime", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeInstancesByExpireTime", "R-kvstore", "openAPI")
 	return
 }
 

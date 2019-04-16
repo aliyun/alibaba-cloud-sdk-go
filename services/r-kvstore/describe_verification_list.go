@@ -104,7 +104,7 @@ func CreateDescribeVerificationListRequest() (request *DescribeVerificationListR
 	request = &DescribeVerificationListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeVerificationList", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeVerificationList", "R-kvstore", "openAPI")
 	return
 }
 

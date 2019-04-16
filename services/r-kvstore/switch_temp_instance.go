@@ -93,7 +93,7 @@ func CreateSwitchTempInstanceRequest() (request *SwitchTempInstanceRequest) {
 	request = &SwitchTempInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "SwitchTempInstance", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "SwitchTempInstance", "R-kvstore", "openAPI")
 	return
 }
 

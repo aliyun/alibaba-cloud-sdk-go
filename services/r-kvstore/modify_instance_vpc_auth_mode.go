@@ -96,7 +96,7 @@ func CreateModifyInstanceVpcAuthModeRequest() (request *ModifyInstanceVpcAuthMod
 	request = &ModifyInstanceVpcAuthModeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ModifyInstanceVpcAuthMode", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ModifyInstanceVpcAuthMode", "R-kvstore", "openAPI")
 	return
 }
 

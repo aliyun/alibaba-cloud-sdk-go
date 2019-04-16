@@ -93,7 +93,7 @@ func CreateRestoreSnapshotRequest() (request *RestoreSnapshotRequest) {
 	request = &RestoreSnapshotRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "RestoreSnapshot", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "RestoreSnapshot", "R-kvstore", "openAPI")
 	return
 }
 

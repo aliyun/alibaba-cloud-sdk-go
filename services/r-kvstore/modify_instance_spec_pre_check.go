@@ -99,7 +99,7 @@ func CreateModifyInstanceSpecPreCheckRequest() (request *ModifyInstanceSpecPreCh
 	request = &ModifyInstanceSpecPreCheckRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ModifyInstanceSpecPreCheck", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ModifyInstanceSpecPreCheck", "R-kvstore", "openAPI")
 	return
 }
 

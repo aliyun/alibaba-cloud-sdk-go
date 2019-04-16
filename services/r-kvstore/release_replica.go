@@ -95,7 +95,7 @@ func CreateReleaseReplicaRequest() (request *ReleaseReplicaRequest) {
 	request = &ReleaseReplicaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ReleaseReplica", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ReleaseReplica", "R-kvstore", "openAPI")
 	return
 }
 

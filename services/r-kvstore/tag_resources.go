@@ -76,103 +76,19 @@ func (client *Client) TagResourcesWithCallback(request *TagResourcesRequest, cal
 // TagResourcesRequest is the request struct for api TagResources
 type TagResourcesRequest struct {
 	*requests.RpcRequest
-	ResourceId47         string           `position:"Query" name:"ResourceId.47"`
-	ResourceId48         string           `position:"Query" name:"ResourceId.48"`
-	ResourceId49         string           `position:"Query" name:"ResourceId.49"`
-	Tag2Key              string           `position:"Query" name:"Tag.2.Key"`
-	Tag12Value           string           `position:"Query" name:"Tag.12.Value"`
-	ResourceId40         string           `position:"Query" name:"ResourceId.40"`
-	ResourceId41         string           `position:"Query" name:"ResourceId.41"`
-	ResourceId42         string           `position:"Query" name:"ResourceId.42"`
-	ResourceId1          string           `position:"Query" name:"ResourceId.1"`
-	ResourceId43         string           `position:"Query" name:"ResourceId.43"`
-	ResourceId2          string           `position:"Query" name:"ResourceId.2"`
-	ResourceId44         string           `position:"Query" name:"ResourceId.44"`
-	ResourceId3          string           `position:"Query" name:"ResourceId.3"`
-	ResourceId45         string           `position:"Query" name:"ResourceId.45"`
-	ResourceId4          string           `position:"Query" name:"ResourceId.4"`
-	ResourceId46         string           `position:"Query" name:"ResourceId.46"`
-	ResourceId5          string           `position:"Query" name:"ResourceId.5"`
-	ResourceId6          string           `position:"Query" name:"ResourceId.6"`
-	ResourceId7          string           `position:"Query" name:"ResourceId.7"`
-	ResourceId8          string           `position:"Query" name:"ResourceId.8"`
-	ResourceId9          string           `position:"Query" name:"ResourceId.9"`
-	Tag15Value           string           `position:"Query" name:"Tag.15.Value"`
-	Tag18Key             string           `position:"Query" name:"Tag.18.Key"`
-	Tag8Value            string           `position:"Query" name:"Tag.8.Value"`
-	Tag18Value           string           `position:"Query" name:"Tag.18.Value"`
-	ResourceId36         string           `position:"Query" name:"ResourceId.36"`
-	ResourceId37         string           `position:"Query" name:"ResourceId.37"`
-	ResourceId38         string           `position:"Query" name:"ResourceId.38"`
-	ResourceId39         string           `position:"Query" name:"ResourceId.39"`
-	ResourceId30         string           `position:"Query" name:"ResourceId.30"`
-	ResourceId31         string           `position:"Query" name:"ResourceId.31"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceId32         string           `position:"Query" name:"ResourceId.32"`
-	ResourceId33         string           `position:"Query" name:"ResourceId.33"`
-	ResourceId34         string           `position:"Query" name:"ResourceId.34"`
-	ResourceId35         string           `position:"Query" name:"ResourceId.35"`
-	Tag16Key             string           `position:"Query" name:"Tag.16.Key"`
-	Tag4Key              string           `position:"Query" name:"Tag.4.Key"`
-	ResourceId25         string           `position:"Query" name:"ResourceId.25"`
-	ResourceId26         string           `position:"Query" name:"ResourceId.26"`
-	ResourceId27         string           `position:"Query" name:"ResourceId.27"`
-	ResourceId28         string           `position:"Query" name:"ResourceId.28"`
-	ResourceId29         string           `position:"Query" name:"ResourceId.29"`
-	Tag7Key              string           `position:"Query" name:"Tag.7.Key"`
-	Tag12Key             string           `position:"Query" name:"Tag.12.Key"`
-	Tag6Value            string           `position:"Query" name:"Tag.6.Value"`
-	ResourceId20         string           `position:"Query" name:"ResourceId.20"`
-	ResourceId21         string           `position:"Query" name:"ResourceId.21"`
-	ResourceId22         string           `position:"Query" name:"ResourceId.22"`
-	ResourceId23         string           `position:"Query" name:"ResourceId.23"`
-	ResourceId24         string           `position:"Query" name:"ResourceId.24"`
-	Tag14Key             string           `position:"Query" name:"Tag.14.Key"`
-	Tag13Value           string           `position:"Query" name:"Tag.13.Value"`
-	ResourceId14         string           `position:"Query" name:"ResourceId.14"`
-	ResourceId15         string           `position:"Query" name:"ResourceId.15"`
-	Tag10Key             string           `position:"Query" name:"Tag.10.Key"`
-	ResourceId16         string           `position:"Query" name:"ResourceId.16"`
-	ResourceId17         string           `position:"Query" name:"ResourceId.17"`
-	ResourceId18         string           `position:"Query" name:"ResourceId.18"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceId19         string           `position:"Query" name:"ResourceId.19"`
-	Tag19Key             string           `position:"Query" name:"Tag.19.Key"`
-	ResourceId10         string           `position:"Query" name:"ResourceId.10"`
-	ResourceType         string           `position:"Query" name:"ResourceType"`
-	ResourceId11         string           `position:"Query" name:"ResourceId.11"`
-	Tag5Value            string           `position:"Query" name:"Tag.5.Value"`
-	ResourceId12         string           `position:"Query" name:"ResourceId.12"`
-	ResourceId13         string           `position:"Query" name:"ResourceId.13"`
-	Tag9Key              string           `position:"Query" name:"Tag.9.Key"`
-	Tag19Value           string           `position:"Query" name:"Tag.19.Value"`
-	Tag4Value            string           `position:"Query" name:"Tag.4.Value"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Tag17Key             string           `position:"Query" name:"Tag.17.Key"`
-	Tag3Key              string           `position:"Query" name:"Tag.3.Key"`
-	Tag1Value            string           `position:"Query" name:"Tag.1.Value"`
-	SecurityToken        string           `position:"Query" name:"SecurityToken"`
-	Tag15Key             string           `position:"Query" name:"Tag.15.Key"`
-	Tag11Value           string           `position:"Query" name:"Tag.11.Value"`
-	Tag5Key              string           `position:"Query" name:"Tag.5.Key"`
-	Tag14Value           string           `position:"Query" name:"Tag.14.Value"`
-	Tag7Value            string           `position:"Query" name:"Tag.7.Value"`
-	Tag20Key             string           `position:"Query" name:"Tag.20.Key"`
-	Tag20Value           string           `position:"Query" name:"Tag.20.Value"`
-	Tag17Value           string           `position:"Query" name:"Tag.17.Value"`
-	Tag13Key             string           `position:"Query" name:"Tag.13.Key"`
-	Tag9Value            string           `position:"Query" name:"Tag.9.Value"`
-	Tag6Key              string           `position:"Query" name:"Tag.6.Key"`
-	Scope                string           `position:"Query" name:"Scope"`
-	Tag10Value           string           `position:"Query" name:"Tag.10.Value"`
-	Tag3Value            string           `position:"Query" name:"Tag.3.Value"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	ResourceId50         string           `position:"Query" name:"ResourceId.50"`
-	Tag16Value           string           `position:"Query" name:"Tag.16.Value"`
-	Tag1Key              string           `position:"Query" name:"Tag.1.Key"`
-	Tag8Key              string           `position:"Query" name:"Tag.8.Key"`
-	Tag11Key             string           `position:"Query" name:"Tag.11.Key"`
-	Tag2Value            string           `position:"Query" name:"Tag.2.Value"`
+	ResourceOwnerId      requests.Integer   `position:"Query" name:"ResourceOwnerId"`
+	ResourceId           *[]string          `position:"Query" name:"ResourceId"  type:"Repeated"`
+	ResourceOwnerAccount string             `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string             `position:"Query" name:"OwnerAccount"`
+	Tag                  *[]TagResourcesTag `position:"Query" name:"Tag"  type:"Repeated"`
+	OwnerId              requests.Integer   `position:"Query" name:"OwnerId"`
+	ResourceType         string             `position:"Query" name:"ResourceType"`
+}
+
+// TagResourcesTag is a repeated param struct in TagResourcesRequest
+type TagResourcesTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // TagResourcesResponse is the response struct for api TagResources
@@ -186,7 +102,7 @@ func CreateTagResourcesRequest() (request *TagResourcesRequest) {
 	request = &TagResourcesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "TagResources", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "TagResources", "R-kvstore", "openAPI")
 	return
 }
 

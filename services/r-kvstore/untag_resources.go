@@ -76,83 +76,14 @@ func (client *Client) UntagResourcesWithCallback(request *UntagResourcesRequest,
 // UntagResourcesRequest is the request struct for api UntagResources
 type UntagResourcesRequest struct {
 	*requests.RpcRequest
-	ResourceId47         string           `position:"Query" name:"ResourceId.47"`
-	ResourceId48         string           `position:"Query" name:"ResourceId.48"`
+	All                  requests.Boolean `position:"Query" name:"All"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceId49         string           `position:"Query" name:"ResourceId.49"`
-	ResourceId40         string           `position:"Query" name:"ResourceId.40"`
-	ResourceId41         string           `position:"Query" name:"ResourceId.41"`
-	ResourceId42         string           `position:"Query" name:"ResourceId.42"`
-	TagKey9              string           `position:"Query" name:"TagKey.9"`
-	ResourceId1          string           `position:"Query" name:"ResourceId.1"`
-	ResourceId43         string           `position:"Query" name:"ResourceId.43"`
-	ResourceId2          string           `position:"Query" name:"ResourceId.2"`
-	ResourceId44         string           `position:"Query" name:"ResourceId.44"`
-	ResourceId3          string           `position:"Query" name:"ResourceId.3"`
-	ResourceId45         string           `position:"Query" name:"ResourceId.45"`
-	ResourceId4          string           `position:"Query" name:"ResourceId.4"`
-	ResourceId46         string           `position:"Query" name:"ResourceId.46"`
-	ResourceId5          string           `position:"Query" name:"ResourceId.5"`
-	TagKey4              string           `position:"Query" name:"TagKey.4"`
-	ResourceId6          string           `position:"Query" name:"ResourceId.6"`
-	TagKey3              string           `position:"Query" name:"TagKey.3"`
-	ResourceId7          string           `position:"Query" name:"ResourceId.7"`
-	TagKey2              string           `position:"Query" name:"TagKey.2"`
-	ResourceId8          string           `position:"Query" name:"ResourceId.8"`
-	TagKey1              string           `position:"Query" name:"TagKey.1"`
-	ResourceId9          string           `position:"Query" name:"ResourceId.9"`
-	TagKey8              string           `position:"Query" name:"TagKey.8"`
-	TagKey20             string           `position:"Query" name:"TagKey.20"`
-	SecurityToken        string           `position:"Query" name:"SecurityToken"`
-	TagKey7              string           `position:"Query" name:"TagKey.7"`
-	TagKey6              string           `position:"Query" name:"TagKey.6"`
-	TagKey5              string           `position:"Query" name:"TagKey.5"`
-	ResourceId36         string           `position:"Query" name:"ResourceId.36"`
-	ResourceId37         string           `position:"Query" name:"ResourceId.37"`
-	ResourceId38         string           `position:"Query" name:"ResourceId.38"`
-	ResourceId39         string           `position:"Query" name:"ResourceId.39"`
-	ResourceId30         string           `position:"Query" name:"ResourceId.30"`
-	ResourceId31         string           `position:"Query" name:"ResourceId.31"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceId32         string           `position:"Query" name:"ResourceId.32"`
-	ResourceId33         string           `position:"Query" name:"ResourceId.33"`
-	ResourceId34         string           `position:"Query" name:"ResourceId.34"`
-	ResourceId35         string           `position:"Query" name:"ResourceId.35"`
-	ResourceId25         string           `position:"Query" name:"ResourceId.25"`
-	ResourceId26         string           `position:"Query" name:"ResourceId.26"`
-	ResourceId27         string           `position:"Query" name:"ResourceId.27"`
-	ResourceId28         string           `position:"Query" name:"ResourceId.28"`
-	ResourceId29         string           `position:"Query" name:"ResourceId.29"`
-	ResourceId20         string           `position:"Query" name:"ResourceId.20"`
-	ResourceId21         string           `position:"Query" name:"ResourceId.21"`
-	ResourceId22         string           `position:"Query" name:"ResourceId.22"`
-	ResourceId23         string           `position:"Query" name:"ResourceId.23"`
-	ResourceId24         string           `position:"Query" name:"ResourceId.24"`
-	Scope                string           `position:"Query" name:"Scope"`
-	ResourceId14         string           `position:"Query" name:"ResourceId.14"`
-	ResourceId15         string           `position:"Query" name:"ResourceId.15"`
-	ResourceId16         string           `position:"Query" name:"ResourceId.16"`
-	TagKey19             string           `position:"Query" name:"TagKey.19"`
-	ResourceId17         string           `position:"Query" name:"ResourceId.17"`
-	TagKey18             string           `position:"Query" name:"TagKey.18"`
-	ResourceId18         string           `position:"Query" name:"ResourceId.18"`
+	ResourceId           *[]string        `position:"Query" name:"ResourceId"  type:"Repeated"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceId19         string           `position:"Query" name:"ResourceId.19"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	ResourceId50         string           `position:"Query" name:"ResourceId.50"`
-	ResourceId10         string           `position:"Query" name:"ResourceId.10"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	TagKey               *[]string        `position:"Query" name:"TagKey"  type:"Repeated"`
 	ResourceType         string           `position:"Query" name:"ResourceType"`
-	ResourceId11         string           `position:"Query" name:"ResourceId.11"`
-	ResourceId12         string           `position:"Query" name:"ResourceId.12"`
-	ResourceId13         string           `position:"Query" name:"ResourceId.13"`
-	TagKey13             string           `position:"Query" name:"TagKey.13"`
-	TagKey12             string           `position:"Query" name:"TagKey.12"`
-	TagKey11             string           `position:"Query" name:"TagKey.11"`
-	TagKey10             string           `position:"Query" name:"TagKey.10"`
-	TagKey17             string           `position:"Query" name:"TagKey.17"`
-	TagKey16             string           `position:"Query" name:"TagKey.16"`
-	TagKey15             string           `position:"Query" name:"TagKey.15"`
-	TagKey14             string           `position:"Query" name:"TagKey.14"`
 }
 
 // UntagResourcesResponse is the response struct for api UntagResources
@@ -166,7 +97,7 @@ func CreateUntagResourcesRequest() (request *UntagResourcesRequest) {
 	request = &UntagResourcesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "UntagResources", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "UntagResources", "R-kvstore", "openAPI")
 	return
 }
 

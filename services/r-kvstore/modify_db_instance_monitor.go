@@ -96,7 +96,7 @@ func CreateModifyDBInstanceMonitorRequest() (request *ModifyDBInstanceMonitorReq
 	request = &ModifyDBInstanceMonitorRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ModifyDBInstanceMonitor", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ModifyDBInstanceMonitor", "R-kvstore", "openAPI")
 	return
 }
 

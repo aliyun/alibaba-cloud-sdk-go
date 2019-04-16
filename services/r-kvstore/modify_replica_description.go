@@ -96,7 +96,7 @@ func CreateModifyReplicaDescriptionRequest() (request *ModifyReplicaDescriptionR
 	request = &ModifyReplicaDescriptionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ModifyReplicaDescription", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ModifyReplicaDescription", "R-kvstore", "openAPI")
 	return
 }
 

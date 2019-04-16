@@ -97,7 +97,7 @@ func CreateDescribeIntranetAttributeRequest() (request *DescribeIntranetAttribut
 	request = &DescribeIntranetAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeIntranetAttribute", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeIntranetAttribute", "R-kvstore", "openAPI")
 	return
 }
 

@@ -93,7 +93,7 @@ func CreateDeleteSnapshotSettingsRequest() (request *DeleteSnapshotSettingsReque
 	request = &DeleteSnapshotSettingsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DeleteSnapshotSettings", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DeleteSnapshotSettings", "R-kvstore", "openAPI")
 	return
 }
 

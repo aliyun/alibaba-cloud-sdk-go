@@ -17,7 +17,7 @@ package r_kvstore
 
 // Account is a nested struct in r_kvstore response
 type Account struct {
-	InstanceId         int                `json:"InstanceId" xml:"InstanceId"`
+	InstanceId         string             `json:"InstanceId" xml:"InstanceId"`
 	AccountName        string             `json:"AccountName" xml:"AccountName"`
 	AccountStatus      string             `json:"AccountStatus" xml:"AccountStatus"`
 	AccountType        string             `json:"AccountType" xml:"AccountType"`

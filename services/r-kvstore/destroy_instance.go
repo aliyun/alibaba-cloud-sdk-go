@@ -95,7 +95,7 @@ func CreateDestroyInstanceRequest() (request *DestroyInstanceRequest) {
 	request = &DestroyInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DestroyInstance", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DestroyInstance", "R-kvstore", "openAPI")
 	return
 }
 

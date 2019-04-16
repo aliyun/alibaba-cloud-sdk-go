@@ -97,7 +97,7 @@ func CreateModifyActiveOperationTaskRequest() (request *ModifyActiveOperationTas
 	request = &ModifyActiveOperationTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ModifyActiveOperationTask", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ModifyActiveOperationTask", "R-kvstore", "openAPI")
 	return
 }
 

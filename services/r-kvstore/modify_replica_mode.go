@@ -98,7 +98,7 @@ func CreateModifyReplicaModeRequest() (request *ModifyReplicaModeRequest) {
 	request = &ModifyReplicaModeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ModifyReplicaMode", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ModifyReplicaMode", "R-kvstore", "openAPI")
 	return
 }
 

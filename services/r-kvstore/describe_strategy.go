@@ -98,7 +98,7 @@ func CreateDescribeStrategyRequest() (request *DescribeStrategyRequest) {
 	request = &DescribeStrategyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeStrategy", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeStrategy", "R-kvstore", "openAPI")
 	return
 }
 

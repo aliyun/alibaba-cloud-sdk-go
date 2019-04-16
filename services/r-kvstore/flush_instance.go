@@ -95,7 +95,7 @@ func CreateFlushInstanceRequest() (request *FlushInstanceRequest) {
 	request = &FlushInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "FlushInstance", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "FlushInstance", "R-kvstore", "openAPI")
 	return
 }
 

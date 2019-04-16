@@ -97,7 +97,7 @@ func CreateResetAccountRequest() (request *ResetAccountRequest) {
 	request = &ResetAccountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ResetAccount", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ResetAccount", "R-kvstore", "openAPI")
 	return
 }
 

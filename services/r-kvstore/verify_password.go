@@ -96,7 +96,7 @@ func CreateVerifyPasswordRequest() (request *VerifyPasswordRequest) {
 	request = &VerifyPasswordRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "VerifyPassword", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "VerifyPassword", "R-kvstore", "openAPI")
 	return
 }
 

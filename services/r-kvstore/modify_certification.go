@@ -96,7 +96,7 @@ func CreateModifyCertificationRequest() (request *ModifyCertificationRequest) {
 	request = &ModifyCertificationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ModifyCertification", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ModifyCertification", "R-kvstore", "openAPI")
 	return
 }
 

@@ -76,26 +76,33 @@ func (client *Client) DescribeInstancesWithCallback(request *DescribeInstancesRe
 // DescribeInstancesRequest is the request struct for api DescribeInstances
 type DescribeInstancesRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	InstanceStatus       string           `position:"Query" name:"InstanceStatus"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	SearchKey            string           `position:"Query" name:"SearchKey"`
-	NetworkType          string           `position:"Query" name:"NetworkType"`
-	EngineVersion        string           `position:"Query" name:"EngineVersion"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	InstanceClass        string           `position:"Query" name:"InstanceClass"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	VSwitchId            string           `position:"Query" name:"VSwitchId"`
-	Expired              string           `position:"Query" name:"Expired"`
-	SecurityToken        string           `position:"Query" name:"SecurityToken"`
-	InstanceIds          string           `position:"Query" name:"InstanceIds"`
-	ArchitectureType     string           `position:"Query" name:"ArchitectureType"`
-	VpcId                string           `position:"Query" name:"VpcId"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	InstanceType         string           `position:"Query" name:"InstanceType"`
-	ZoneId               string           `position:"Query" name:"ZoneId"`
-	ChargeType           string           `position:"Query" name:"ChargeType"`
+	ResourceOwnerId      requests.Integer        `position:"Query" name:"ResourceOwnerId"`
+	InstanceStatus       string                  `position:"Query" name:"InstanceStatus"`
+	ResourceOwnerAccount string                  `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string                  `position:"Query" name:"OwnerAccount"`
+	SearchKey            string                  `position:"Query" name:"SearchKey"`
+	NetworkType          string                  `position:"Query" name:"NetworkType"`
+	EngineVersion        string                  `position:"Query" name:"EngineVersion"`
+	OwnerId              requests.Integer        `position:"Query" name:"OwnerId"`
+	InstanceClass        string                  `position:"Query" name:"InstanceClass"`
+	PageNumber           requests.Integer        `position:"Query" name:"PageNumber"`
+	VSwitchId            string                  `position:"Query" name:"VSwitchId"`
+	Expired              string                  `position:"Query" name:"Expired"`
+	SecurityToken        string                  `position:"Query" name:"SecurityToken"`
+	InstanceIds          string                  `position:"Query" name:"InstanceIds"`
+	ArchitectureType     string                  `position:"Query" name:"ArchitectureType"`
+	VpcId                string                  `position:"Query" name:"VpcId"`
+	PageSize             requests.Integer        `position:"Query" name:"PageSize"`
+	InstanceType         string                  `position:"Query" name:"InstanceType"`
+	ZoneId               string                  `position:"Query" name:"ZoneId"`
+	ChargeType           string                  `position:"Query" name:"ChargeType"`
+	Tag                  *[]DescribeInstancesTag `position:"Query" name:"Tag"  type:"Repeated"`
+}
+
+// DescribeInstancesTag is a repeated param struct in DescribeInstancesRequest
+type DescribeInstancesTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // DescribeInstancesResponse is the response struct for api DescribeInstances
@@ -113,7 +120,7 @@ func CreateDescribeInstancesRequest() (request *DescribeInstancesRequest) {
 	request = &DescribeInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeInstances", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeInstances", "R-kvstore", "openAPI")
 	return
 }
 

@@ -99,7 +99,7 @@ func CreateUnlinkReplicaInstanceRequest() (request *UnlinkReplicaInstanceRequest
 	request = &UnlinkReplicaInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "UnlinkReplicaInstance", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "UnlinkReplicaInstance", "R-kvstore", "openAPI")
 	return
 }
 

@@ -94,7 +94,7 @@ func CreateDescribeTempInstanceRequest() (request *DescribeTempInstanceRequest) 
 	request = &DescribeTempInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeTempInstance", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeTempInstance", "R-kvstore", "openAPI")
 	return
 }
 

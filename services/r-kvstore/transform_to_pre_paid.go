@@ -100,7 +100,7 @@ func CreateTransformToPrePaidRequest() (request *TransformToPrePaidRequest) {
 	request = &TransformToPrePaidRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "TransformToPrePaid", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "TransformToPrePaid", "R-kvstore", "openAPI")
 	return
 }
 

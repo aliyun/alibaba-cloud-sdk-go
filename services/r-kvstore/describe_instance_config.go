@@ -96,7 +96,7 @@ func CreateDescribeInstanceConfigRequest() (request *DescribeInstanceConfigReque
 	request = &DescribeInstanceConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeInstanceConfig", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeInstanceConfig", "R-kvstore", "openAPI")
 	return
 }
 

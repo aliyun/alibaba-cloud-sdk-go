@@ -96,7 +96,7 @@ func CreateDescribeReplicaInitializeProgressRequest() (request *DescribeReplicaI
 	request = &DescribeReplicaInitializeProgressRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeReplicaInitializeProgress", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeReplicaInitializeProgress", "R-kvstore", "openAPI")
 	return
 }
 

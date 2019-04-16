@@ -23,6 +23,7 @@ type InstanceNetInfo struct {
 	VPCId             string `json:"VPCId" xml:"VPCId"`
 	VSwitchId         string `json:"VSwitchId" xml:"VSwitchId"`
 	DBInstanceNetType string `json:"DBInstanceNetType" xml:"DBInstanceNetType"`
+	VPCInstanceId     string `json:"VPCInstanceId" xml:"VPCInstanceId"`
 	IPType            string `json:"IPType" xml:"IPType"`
 	ExpiredTime       string `json:"ExpiredTime" xml:"ExpiredTime"`
 	Upgradeable       string `json:"Upgradeable" xml:"Upgradeable"`

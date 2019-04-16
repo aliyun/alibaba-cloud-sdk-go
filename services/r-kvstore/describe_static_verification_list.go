@@ -110,7 +110,7 @@ func CreateDescribeStaticVerificationListRequest() (request *DescribeStaticVerif
 	request = &DescribeStaticVerificationListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeStaticVerificationList", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeStaticVerificationList", "R-kvstore", "openAPI")
 	return
 }
 

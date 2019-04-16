@@ -103,7 +103,7 @@ func CreateDescribeActiveOperationTaskRequest() (request *DescribeActiveOperatio
 	request = &DescribeActiveOperationTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeActiveOperationTask", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeActiveOperationTask", "R-kvstore", "openAPI")
 	return
 }
 

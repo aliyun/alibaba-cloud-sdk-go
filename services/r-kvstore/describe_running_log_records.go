@@ -111,7 +111,7 @@ func CreateDescribeRunningLogRecordsRequest() (request *DescribeRunningLogRecord
 	request = &DescribeRunningLogRecordsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeRunningLogRecords", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeRunningLogRecords", "R-kvstore", "openAPI")
 	return
 }
 

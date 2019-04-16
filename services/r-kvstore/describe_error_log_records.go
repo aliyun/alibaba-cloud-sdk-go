@@ -108,7 +108,7 @@ func CreateDescribeErrorLogRecordsRequest() (request *DescribeErrorLogRecordsReq
 	request = &DescribeErrorLogRecordsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeErrorLogRecords", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeErrorLogRecords", "R-kvstore", "openAPI")
 	return
 }
 

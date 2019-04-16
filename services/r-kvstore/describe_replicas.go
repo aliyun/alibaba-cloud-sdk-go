@@ -102,7 +102,7 @@ func CreateDescribeReplicasRequest() (request *DescribeReplicasRequest) {
 	request = &DescribeReplicasRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeReplicas", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeReplicas", "R-kvstore", "openAPI")
 	return
 }
 

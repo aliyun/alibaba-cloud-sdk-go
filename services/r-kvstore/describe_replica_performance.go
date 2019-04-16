@@ -104,7 +104,7 @@ func CreateDescribeReplicaPerformanceRequest() (request *DescribeReplicaPerforma
 	request = &DescribeReplicaPerformanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeReplicaPerformance", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeReplicaPerformance", "R-kvstore", "openAPI")
 	return
 }
 
