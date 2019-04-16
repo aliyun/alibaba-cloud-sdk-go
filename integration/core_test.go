@@ -196,7 +196,7 @@ func Test_DescribeClusterDetailWithCommonRequestWithTimeout(t *testing.T) {
 	request.PathPattern = "/clusters/[ClusterId]"
 	request.QueryParams["RegionId"] = os.Getenv("REGION_ID")
 	request.ReadTimeout = 1 * time.Millisecond
-	request.ConnectTimeout = 1 * time.Millisecond
+	request.ConnectTimeout = 1 * time.Nanosecond
 	request.TransToAcsRequest()
 	_, err = client.ProcessCommonRequest(request)
 	assert.NotNil(t, err)
@@ -314,7 +314,6 @@ func Test_HTTPProxy(t *testing.T) {
 
 	os.Setenv("HTTP_PROXY", originEnv)
 }
-
 
 func Test_DdoscooWithServiceCode(t *testing.T) {
 	client, err := sdk.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))

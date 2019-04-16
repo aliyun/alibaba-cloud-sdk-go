@@ -4,7 +4,7 @@
 # 超时
 
 ## 描述
-如果你想限制请求花费的时间，你可以通过请求或者客户端设置 `ReadTimeout` 和 `ConnectTimeout`。
+如果你想限制请求花费的时间，你可以通过请求或者客户端设置 `ConnectTimeout` 和 `ReadTimeout`。
 
 ## 默认值
 - `defaultConnectTimeout`: 5 秒
