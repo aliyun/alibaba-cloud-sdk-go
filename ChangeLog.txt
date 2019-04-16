@@ -1,3 +1,7 @@
+2019-04-17 Version: 1.56.9
+1, Add DescribeRestoreTaskList DBS interface.
+2, Add DescribeNodeCidrList DBS interface.
+
 2019-04-16 Version: 1.56.8
 1, Fixed DescribeAccounts response type error.
 
