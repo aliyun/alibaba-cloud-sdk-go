@@ -98,7 +98,7 @@ func CreateDescribeTagsRequest() (request *DescribeTagsRequest) {
 	request = &DescribeTagsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeTags", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeTags", "Rds", "openAPI")
 	return
 }
 

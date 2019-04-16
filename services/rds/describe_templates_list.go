@@ -117,7 +117,7 @@ func CreateDescribeTemplatesListRequest() (request *DescribeTemplatesListRequest
 	request = &DescribeTemplatesListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeTemplatesList", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeTemplatesList", "Rds", "openAPI")
 	return
 }
 

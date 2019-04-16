@@ -36,4 +36,5 @@ type Backup struct {
 	HostInstanceID            string `json:"HostInstanceID" xml:"HostInstanceID"`
 	StoreStatus               string `json:"StoreStatus" xml:"StoreStatus"`
 	MetaStatus                string `json:"MetaStatus" xml:"MetaStatus"`
+	SlaveStatus               string `json:"SlaveStatus" xml:"SlaveStatus"`
 }

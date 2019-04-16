@@ -23,4 +23,5 @@ type BackupJob struct {
 	Process              string `json:"Process" xml:"Process"`
 	TaskAction           string `json:"TaskAction" xml:"TaskAction"`
 	BackupJobId          string `json:"BackupJobId" xml:"BackupJobId"`
+	BackupId             string `json:"BackupId" xml:"BackupId"`
 }

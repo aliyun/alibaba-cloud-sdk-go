@@ -47,8 +47,5 @@ type DBInstance struct {
 	VSwitchId             string                                     `json:"VSwitchId" xml:"VSwitchId"`
 	ReplicateId           string                                     `json:"ReplicateId" xml:"ReplicateId"`
 	ResourceGroupId       string                                     `json:"ResourceGroupId" xml:"ResourceGroupId"`
-	DispenseMode          string                                     `json:"DispenseMode" xml:"DispenseMode"`
-	MasterRegion          string                                     `json:"MasterRegion" xml:"MasterRegion"`
 	ReadOnlyDBInstanceIds ReadOnlyDBInstanceIdsInDescribeDBInstances `json:"ReadOnlyDBInstanceIds" xml:"ReadOnlyDBInstanceIds"`
-	SlaveRegions          SlaveRegionsInDescribeDBInstances          `json:"SlaveRegions" xml:"SlaveRegions"`
 }

@@ -82,6 +82,7 @@ type ModifyBackupPolicyRequest struct {
 	LocalLogRetentionHours   string           `position:"Query" name:"LocalLogRetentionHours"`
 	OwnerAccount             string           `position:"Query" name:"OwnerAccount"`
 	LogBackupFrequency       string           `position:"Query" name:"LogBackupFrequency"`
+	CompressType             string           `position:"Query" name:"CompressType"`
 	BackupLog                string           `position:"Query" name:"BackupLog"`
 	LocalLogRetentionSpace   string           `position:"Query" name:"LocalLogRetentionSpace"`
 	OwnerId                  requests.Integer `position:"Query" name:"OwnerId"`
@@ -106,6 +107,7 @@ type ModifyBackupPolicyResponse struct {
 	LocalLogRetentionHours   int    `json:"LocalLogRetentionHours" xml:"LocalLogRetentionHours"`
 	LocalLogRetentionSpace   string `json:"LocalLogRetentionSpace" xml:"LocalLogRetentionSpace"`
 	HighSpaceUsageProtection string `json:"HighSpaceUsageProtection" xml:"HighSpaceUsageProtection"`
+	CompressType             string `json:"CompressType" xml:"CompressType"`
 }
 
 // CreateModifyBackupPolicyRequest creates a request to invoke ModifyBackupPolicy API
@@ -113,7 +115,7 @@ func CreateModifyBackupPolicyRequest() (request *ModifyBackupPolicyRequest) {
 	request = &ModifyBackupPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyBackupPolicy", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyBackupPolicy", "Rds", "openAPI")
 	return
 }
 

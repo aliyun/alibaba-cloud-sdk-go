@@ -107,7 +107,7 @@ func CreateDescribeMetaListRequest() (request *DescribeMetaListRequest) {
 	request = &DescribeMetaListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeMetaList", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeMetaList", "Rds", "openAPI")
 	return
 }
 

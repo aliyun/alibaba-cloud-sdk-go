@@ -55,7 +55,7 @@ type DBInstanceAttribute struct {
 	IPType                            string                                             `json:"IPType" xml:"IPType"`
 	ReadonlyInstanceSQLDelayedTime    string                                             `json:"ReadonlyInstanceSQLDelayedTime" xml:"ReadonlyInstanceSQLDelayedTime"`
 	LockMode                          string                                             `json:"LockMode" xml:"LockMode"`
-	MasterRegion                      string                                             `json:"MasterRegion" xml:"MasterRegion"`
+	MasterZone                        string                                             `json:"MasterZone" xml:"MasterZone"`
 	CanTempUpgrade                    bool                                               `json:"CanTempUpgrade" xml:"CanTempUpgrade"`
 	Collation                         string                                             `json:"Collation" xml:"Collation"`
 	LockReason                        string                                             `json:"LockReason" xml:"LockReason"`
@@ -87,5 +87,5 @@ type DBInstanceAttribute struct {
 	AvailabilityValue                 string                                             `json:"AvailabilityValue" xml:"AvailabilityValue"`
 	Extra                             Extra                                              `json:"Extra" xml:"Extra"`
 	ReadOnlyDBInstanceIds             ReadOnlyDBInstanceIdsInDescribeDBInstanceAttribute `json:"ReadOnlyDBInstanceIds" xml:"ReadOnlyDBInstanceIds"`
-	SlaveRegions                      SlaveRegionsInDescribeDBInstanceAttribute          `json:"SlaveRegions" xml:"SlaveRegions"`
+	SlaveZones                        SlaveZones                                         `json:"SlaveZones" xml:"SlaveZones"`
 }

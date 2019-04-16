@@ -94,7 +94,7 @@ func CreateReleaseReadWriteSplittingConnectionRequest() (request *ReleaseReadWri
 	request = &ReleaseReadWriteSplittingConnectionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ReleaseReadWriteSplittingConnection", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "ReleaseReadWriteSplittingConnection", "Rds", "openAPI")
 	return
 }
 

@@ -91,6 +91,8 @@ type CreateReadOnlyDBInstanceRequest struct {
 	ZoneId                string           `position:"Query" name:"ZoneId"`
 	DBInstanceId          string           `position:"Query" name:"DBInstanceId"`
 	DBInstanceDescription string           `position:"Query" name:"DBInstanceDescription"`
+	DBInstanceStorageType string           `position:"Query" name:"DBInstanceStorageType"`
+	Category              string           `position:"Query" name:"Category"`
 	PayType               string           `position:"Query" name:"PayType"`
 	InstanceNetworkType   string           `position:"Query" name:"InstanceNetworkType"`
 }
@@ -110,7 +112,7 @@ func CreateCreateReadOnlyDBInstanceRequest() (request *CreateReadOnlyDBInstanceR
 	request = &CreateReadOnlyDBInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "CreateReadOnlyDBInstance", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "CreateReadOnlyDBInstance", "Rds", "openAPI")
 	return
 }
 

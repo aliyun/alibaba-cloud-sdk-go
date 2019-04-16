@@ -17,14 +17,18 @@ package rds
 
 // ItemsItem is a nested struct in rds response
 type ItemsItem struct {
-	Template        string  `json:"Template" xml:"Template"`
-	TotalConsume    int     `json:"TotalConsume" xml:"TotalConsume"`
-	AvgConsume      float64 `json:"AvgConsume" xml:"AvgConsume"`
-	TotalCounts     int     `json:"TotalCounts" xml:"TotalCounts"`
-	AvgScanRows     float64 `json:"AvgScanRows" xml:"AvgScanRows"`
-	TotalScanRows   int     `json:"TotalScanRows" xml:"TotalScanRows"`
-	TotalUpdateRows int     `json:"TotalUpdateRows" xml:"TotalUpdateRows"`
-	AvgUpdateRows   float64 `json:"AvgUpdateRows" xml:"AvgUpdateRows"`
-	SqlType         string  `json:"SqlType" xml:"SqlType"`
-	TemplateHash    string  `json:"TemplateHash" xml:"TemplateHash"`
+	TotalUpdateRows       int                   `json:"TotalUpdateRows" xml:"TotalUpdateRows"`
+	TemplateHash          string                `json:"TemplateHash" xml:"TemplateHash"`
+	AvgConsume            float64               `json:"AvgConsume" xml:"AvgConsume"`
+	AvgScanRows           float64               `json:"AvgScanRows" xml:"AvgScanRows"`
+	TotalConsume          int                   `json:"TotalConsume" xml:"TotalConsume"`
+	SqlType               string                `json:"SqlType" xml:"SqlType"`
+	Template              string                `json:"Template" xml:"Template"`
+	TotalCounts           int                   `json:"TotalCounts" xml:"TotalCounts"`
+	TotalScanRows         int                   `json:"TotalScanRows" xml:"TotalScanRows"`
+	AvgUpdateRows         float64               `json:"AvgUpdateRows" xml:"AvgUpdateRows"`
+	DBInstanceId          string                `json:"DBInstanceId" xml:"DBInstanceId"`
+	ReadDBInstanceNames   ReadDBInstanceNames   `json:"ReadDBInstanceNames" xml:"ReadDBInstanceNames"`
+	ReadDelayTimes        ReadDelayTimes        `json:"ReadDelayTimes" xml:"ReadDelayTimes"`
+	ReadonlyInstanceDelay ReadonlyInstanceDelay `json:"ReadonlyInstanceDelay" xml:"ReadonlyInstanceDelay"`
 }
