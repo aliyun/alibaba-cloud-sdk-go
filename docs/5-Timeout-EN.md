@@ -4,7 +4,7 @@
 # Timeout
 
 ## Description
-When you want to limit the time of request costing, you can set `ReadTimeout` and `ConnectTimeout` by request or client:
+When you want to limit the time of request costing, you can set `ConnectTimeout` and `ReadTimeout` by request or client:
 
 ## Default
 - `defaultConnectTimeout`: 5 * time.Second
