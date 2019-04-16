@@ -415,17 +415,12 @@ func (client *Client) getTimeout(request requests.AcsRequest) (time.Duration, ti
 
 func Timeout(connectTimeout, readTimeout time.Duration) func(cxt context.Context, net, addr string) (c net.Conn, err error) {
 	return func(ctx context.Context, network, address string) (net.Conn, error) {
-		conn, err := (&net.Dialer{
+		return (&net.Dialer{
 			Timeout:   connectTimeout,
+			Deadline:  time.Now().Add(readTimeout),
 			KeepAlive: 0 * time.Second,
 			DualStack: true,
 		}).DialContext(ctx, network, address)
-
-		if err == nil {
-			conn.SetDeadline(time.Now().Add(readTimeout))
-		}
-
-		return conn, err
 	}
 }
 
@@ -516,6 +511,8 @@ func (client *Client) DoActionWithSigner(request requests.AcsRequest, response r
 			debug("> %s: %v", key, strings.Join(value, ""))
 		}
 		debug(">")
+		debug("> Retry Times: %d.", retryTimes)
+
 		startTime := time.Now()
 		fieldMap["{start_time}"] = startTime.Format("2006-01-02 15:04:05")
 		httpResponse, err = hookDo(client.httpClient.Do)(httpRequest)
@@ -531,6 +528,7 @@ func (client *Client) DoActionWithSigner(request requests.AcsRequest, response r
 		debug("<")
 		// receive error
 		if err != nil {
+			debug("< Error %s.", err.Error())
 			if !client.config.AutoRetry {
 				return
 			} else if retryTimes >= client.config.MaxRetryTime {
