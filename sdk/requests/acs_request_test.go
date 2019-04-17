@@ -120,11 +120,12 @@ func Test_AcsRequest(t *testing.T) {
 type AcsRequestTest struct {
 	*baseRequest
 	Ontology AcsRequest
-	Query    string    `position:"Query" name:"Query"`
-	Header   string    `position:"Header" name:"Header"`
-	Path     string    `position:"Path" name:"Path"`
-	Body     string    `position:"Body" name:"Body"`
-	TypeAcs  *[]string `position:"type" name:"type" type:"Repeated"`
+	Query    string                 `position:"Query" name:"Query"`
+	Header   string                 `position:"Header" name:"Header"`
+	Path     string                 `position:"Path" name:"Path"`
+	Body     string                 `position:"Body" name:"Body"`
+	Target   map[string]interface{} `position:"Query" name:"Target"`
+	TypeAcs  *[]string              `position:"type" name:"type" type:"Repeated"`
 }
 
 func (r AcsRequestTest) BuildQueries() string {
@@ -154,6 +155,10 @@ func Test_AcsRequest_InitParams(t *testing.T) {
 		Header:      "header value",
 		Path:        "path value",
 		Body:        "body value",
+		Target: map[string]interface{}{
+			"key":   "test",
+			"value": 1234,
+		},
 	}
 	tmp := []string{r.Query, r.Header}
 	r.TypeAcs = &tmp
@@ -162,6 +167,7 @@ func Test_AcsRequest_InitParams(t *testing.T) {
 
 	queries := r.GetQueryParams()
 	assert.Equal(t, "query value", queries["Query"])
+	assert.Equal(t, "{\"key\":\"test\",\"value\":1234}", queries["Target"])
 	headers := r.GetHeaders()
 	assert.Equal(t, "header value", headers["Header"])
 	// TODO: check the body & path
