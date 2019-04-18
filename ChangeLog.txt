@@ -1,3 +1,6 @@
+2019-04-18 Version: 1.56.10
+1, add ReservedInstance API.
+
 2019-04-17 Version: 1.56.9
 1, Add DescribeRestoreTaskList DBS interface.
 2, Add DescribeNodeCidrList DBS interface.
