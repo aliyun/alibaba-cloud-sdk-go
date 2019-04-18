@@ -104,7 +104,7 @@ func CreateDescribeReplicaConflictInfoRequest() (request *DescribeReplicaConflic
 	request = &DescribeReplicaConflictInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeReplicaConflictInfo", "R-kvstore", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeReplicaConflictInfo", "redisa", "openAPI")
 	return
 }
 

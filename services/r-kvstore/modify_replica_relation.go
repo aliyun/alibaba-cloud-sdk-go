@@ -95,7 +95,7 @@ func CreateModifyReplicaRelationRequest() (request *ModifyReplicaRelationRequest
 	request = &ModifyReplicaRelationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ModifyReplicaRelation", "R-kvstore", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ModifyReplicaRelation", "redisa", "openAPI")
 	return
 }
 

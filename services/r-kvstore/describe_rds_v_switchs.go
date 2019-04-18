@@ -97,7 +97,7 @@ func CreateDescribeRdsVSwitchsRequest() (request *DescribeRdsVSwitchsRequest) {
 	request = &DescribeRdsVSwitchsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeRdsVSwitchs", "R-kvstore", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeRdsVSwitchs", "redisa", "openAPI")
 	return
 }
 

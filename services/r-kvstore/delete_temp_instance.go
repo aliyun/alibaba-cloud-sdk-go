@@ -93,7 +93,7 @@ func CreateDeleteTempInstanceRequest() (request *DeleteTempInstanceRequest) {
 	request = &DeleteTempInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DeleteTempInstance", "R-kvstore", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DeleteTempInstance", "redisa", "openAPI")
 	return
 }
 

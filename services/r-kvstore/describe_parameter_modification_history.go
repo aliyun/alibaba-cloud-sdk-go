@@ -99,7 +99,7 @@ func CreateDescribeParameterModificationHistoryRequest() (request *DescribeParam
 	request = &DescribeParameterModificationHistoryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeParameterModificationHistory", "R-kvstore", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeParameterModificationHistory", "redisa", "openAPI")
 	return
 }
 

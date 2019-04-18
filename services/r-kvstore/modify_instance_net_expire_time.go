@@ -99,7 +99,7 @@ func CreateModifyInstanceNetExpireTimeRequest() (request *ModifyInstanceNetExpir
 	request = &ModifyInstanceNetExpireTimeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ModifyInstanceNetExpireTime", "R-kvstore", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ModifyInstanceNetExpireTime", "redisa", "openAPI")
 	return
 }
 

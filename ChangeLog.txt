@@ -1,3 +1,6 @@
+2019-04-18 Version: 1.56.11
+1, CreateCacheAnalysisTask prop modify
+
 2019-04-18 Version: 1.56.10
 1, add ReservedInstance API.
 

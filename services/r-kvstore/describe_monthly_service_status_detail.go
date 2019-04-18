@@ -99,7 +99,7 @@ func CreateDescribeMonthlyServiceStatusDetailRequest() (request *DescribeMonthly
 	request = &DescribeMonthlyServiceStatusDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeMonthlyServiceStatusDetail", "R-kvstore", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeMonthlyServiceStatusDetail", "redisa", "openAPI")
 	return
 }
 

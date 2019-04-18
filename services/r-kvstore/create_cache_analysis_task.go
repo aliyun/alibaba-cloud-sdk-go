@@ -77,6 +77,7 @@ func (client *Client) CreateCacheAnalysisTaskWithCallback(request *CreateCacheAn
 type CreateCacheAnalysisTaskRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
@@ -94,7 +95,7 @@ func CreateCreateCacheAnalysisTaskRequest() (request *CreateCacheAnalysisTaskReq
 	request = &CreateCacheAnalysisTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "CreateCacheAnalysisTask", "R-kvstore", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "CreateCacheAnalysisTask", "redisa", "openAPI")
 	return
 }
 

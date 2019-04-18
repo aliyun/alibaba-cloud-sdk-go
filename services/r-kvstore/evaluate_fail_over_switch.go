@@ -99,7 +99,7 @@ func CreateEvaluateFailOverSwitchRequest() (request *EvaluateFailOverSwitchReque
 	request = &EvaluateFailOverSwitchRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "EvaluateFailOverSwitch", "R-kvstore", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "EvaluateFailOverSwitch", "redisa", "openAPI")
 	return
 }
 

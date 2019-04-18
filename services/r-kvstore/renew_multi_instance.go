@@ -101,7 +101,7 @@ func CreateRenewMultiInstanceRequest() (request *RenewMultiInstanceRequest) {
 	request = &RenewMultiInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "RenewMultiInstance", "R-kvstore", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "RenewMultiInstance", "redisa", "openAPI")
 	return
 }
 

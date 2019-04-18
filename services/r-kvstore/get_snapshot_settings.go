@@ -102,7 +102,7 @@ func CreateGetSnapshotSettingsRequest() (request *GetSnapshotSettingsRequest) {
 	request = &GetSnapshotSettingsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "GetSnapshotSettings", "R-kvstore", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "GetSnapshotSettings", "redisa", "openAPI")
 	return
 }
 

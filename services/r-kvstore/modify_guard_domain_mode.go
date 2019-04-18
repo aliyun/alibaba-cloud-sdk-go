@@ -96,7 +96,7 @@ func CreateModifyGuardDomainModeRequest() (request *ModifyGuardDomainModeRequest
 	request = &ModifyGuardDomainModeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ModifyGuardDomainMode", "R-kvstore", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ModifyGuardDomainMode", "redisa", "openAPI")
 	return
 }
 
