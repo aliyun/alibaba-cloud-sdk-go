@@ -1,3 +1,6 @@
+2019-04-18 Version: 1.56.12
+1, New service
+
 2019-04-18 Version: 1.56.11
 1, CreateCacheAnalysisTask prop modify
 
