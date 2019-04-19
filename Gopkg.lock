@@ -2,12 +2,12 @@
 
 
 [[projects]]
-  digest = "1:a9a98adb2a4181b9e4622eff8b6070646971a18427c265852f3686dbc7112ab1"
+  digest = "1:c5c73365822fb6a7bbe288316868057ae58447ddd95ecef466b6dbe93c37670e"
   name = "github.com/aliyun/aliyun-oss-go-sdk"
   packages = ["oss"]
   pruneopts = "UT"
-  revision = "86c17b95fcd5db33628a61e492fb4a1a937d5906"
-  version = "1.9.5"
+  revision = "08079eb9f6aaa13ee00b8fade6ceeffa138bf877"
+  version = "v1.9.6"
 
 [[projects]]
   digest = "1:ffe9824d294da03b391f44e1ae8281281b4afc1bdaa9588c9097785e3af10cec"
@@ -18,6 +18,14 @@
   version = "v1.1.1"
 
 [[projects]]
+  branch = "master"
+  digest = "1:205b3c069003f9d1458e4304427ab3652d8d7bac3bde1568a2d5486451e453bd"
+  name = "github.com/goji/httpauth"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "2da839ab0f4df05a6db5eb277995589dadbd4fb9"
+
+[[projects]]
   digest = "1:b87714e57a511d88f307aba7d5b63522da12bed0a050889c81272fc50f71100e"
   name = "github.com/jmespath/go-jmespath"
   packages = ["."]
@@ -26,12 +34,12 @@
   version = "0.2.2"
 
 [[projects]]
-  digest = "1:3e551bbb3a7c0ab2a2bf4660e7fcad16db089fdcfbb44b0199e62838038623ea"
+  digest = "1:f5a2051c55d05548d2d4fd23d244027b59fbd943217df8aa3b5e170ac2fd6e1b"
   name = "github.com/json-iterator/go"
   packages = ["."]
   pruneopts = "UT"
-  revision = "1624edc4454b8682399def8740d46db5e4362ba4"
-  version = "v1.1.5"
+  revision = "0ff49de124c6f76f8494e194af75bde0f1a49a29"
+  version = "v1.1.6"
 
 [[projects]]
   digest = "1:33422d238f147d247752996a26574ac48dcf472976eda7f5134015f06bf16563"
@@ -56,14 +64,6 @@
   pruneopts = "UT"
   revision = "792786c7400a136282c1664665ae0a8db921c6c2"
   version = "v1.0.0"
-
-[[projects]]
-  digest = "1:274f67cb6fed9588ea2521ecdac05a6d62a8c51c074c1fccc6a49a40ba80e925"
-  name = "github.com/satori/go.uuid"
-  packages = ["."]
-  pruneopts = "UT"
-  revision = "f58768cc1a7a7e77a3bd49e98cdd21419399b6a3"
-  version = "v1.2.0"
 
 [[projects]]
   digest = "1:972c2427413d41a1e06ca4897e8528e5a1622894050e2f527b38ddf0f343f759"
@@ -94,9 +94,9 @@
   analyzer-version = 1
   input-imports = [
     "github.com/aliyun/aliyun-oss-go-sdk/oss",
+    "github.com/goji/httpauth",
     "github.com/jmespath/go-jmespath",
     "github.com/json-iterator/go",
-    "github.com/satori/go.uuid",
     "github.com/stretchr/testify/assert",
     "gopkg.in/ini.v1",
   ]

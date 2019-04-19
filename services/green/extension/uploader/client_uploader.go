@@ -1,58 +1,55 @@
 package green_extension_uploader
 
 import (
-	"fmt"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/utils"
 	"github.com/aliyun/alibaba-cloud-sdk-go/services/green"
 	"github.com/aliyun/aliyun-oss-go-sdk/oss"
-	"github.com/satori/go.uuid"
-	"os"
+
 	"bytes"
-	"time"
 	"encoding/json"
+	"fmt"
+	"os"
+	"time"
 )
 
 type uploadCredentials struct {
-	AccessKeyId string `json:"accessKeyId"`
+	AccessKeyId     string `json:"accessKeyId"`
 	AccessKeySecret string `json:"accessKeySecret"`
-	SecurityToken string `json:"securityToken"`
-	ExpiredTime int64 `json:"expiredTime"`
-	OssEndpoint string `json:"ossEndpoint"`
-	UploadBucket string `json:"uploadBucket"`
-	UploadFolder string `json:"uploadFolder"`
+	SecurityToken   string `json:"securityToken"`
+	ExpiredTime     int64  `json:"expiredTime"`
+	OssEndpoint     string `json:"ossEndpoint"`
+	UploadBucket    string `json:"uploadBucket"`
+	UploadFolder    string `json:"uploadFolder"`
 }
-
 
 type ClientUploader struct {
-	GreenClient *green.Client
+	GreenClient       *green.Client
 	UploadCredentials *uploadCredentials
-	Headers map[string]string
-	Prefix string
+	Headers           map[string]string
+	Prefix            string
 }
 
-
-
-func GetImageUploaderClient(client *green.Client)(clientUploader *ClientUploader)  {
+func GetImageUploaderClient(client *green.Client) (clientUploader *ClientUploader) {
 	clientUploader = &ClientUploader{client, nil, make(map[string]string), "images"}
 	return
 }
 
-func GetVideoUploaderClient(client *green.Client)(clientUploader *ClientUploader)  {
+func GetVideoUploaderClient(client *green.Client) (clientUploader *ClientUploader) {
 	clientUploader = &ClientUploader{client, nil, make(map[string]string), "videos"}
 	return
 }
 
-func GetVoiceUploaderClient(client *green.Client)(clientUploader *ClientUploader)  {
+func GetVoiceUploaderClient(client *green.Client) (clientUploader *ClientUploader) {
 	clientUploader = &ClientUploader{client, nil, make(map[string]string), "voices"}
 	return
 }
 
-func GetFileUploaderClient(client *green.Client)(clientUploader *ClientUploader)  {
+func GetFileUploaderClient(client *green.Client) (clientUploader *ClientUploader) {
 	clientUploader = &ClientUploader{client, nil, make(map[string]string), "files"}
 	return
 }
 
-
-func (clientUploader *ClientUploader)UploadFile(filepath string)(*string, error)  {
+func (clientUploader *ClientUploader) UploadFile(filepath string) (*string, error) {
 	uploadCredentials, err := clientUploader.getUploadCredentials()
 	fmt.Println(uploadCredentials.OssEndpoint)
 	if uploadCredentials == nil {
@@ -79,7 +76,7 @@ func (clientUploader *ClientUploader)UploadFile(filepath string)(*string, error)
 	}
 	defer fd.Close()
 
-	uuid := uuid.NewV4()
+	uuid := utils.NewUUID()
 	object := uploadCredentials.UploadFolder + "/" + clientUploader.Prefix + "/" + uuid.String()
 	// 上传文件流。
 	err = bucket.PutObject(object, fd)
@@ -88,12 +85,11 @@ func (clientUploader *ClientUploader)UploadFile(filepath string)(*string, error)
 		return nil, err
 	}
 
-	uploadedUrl :="oss://" + uploadCredentials.UploadBucket + "/" + object
+	uploadedUrl := "oss://" + uploadCredentials.UploadBucket + "/" + object
 	return &uploadedUrl, nil
 }
 
-
-func (clientUploader *ClientUploader)UploadBytes(dataBytes []byte)(*string, error)  {
+func (clientUploader *ClientUploader) UploadBytes(dataBytes []byte) (*string, error) {
 	uploadCredentials, err := clientUploader.getUploadCredentials()
 
 	if uploadCredentials == nil {
@@ -112,7 +108,7 @@ func (clientUploader *ClientUploader)UploadBytes(dataBytes []byte)(*string, erro
 		return nil, err
 	}
 
-	uuid := uuid.NewV4()
+	uuid := utils.NewUUID()
 	object := uploadCredentials.UploadFolder + "/" + clientUploader.Prefix + "/" + uuid.String()
 	// 上传文件流。
 	err = bucket.PutObject(object, bytes.NewReader(dataBytes))
@@ -121,35 +117,33 @@ func (clientUploader *ClientUploader)UploadBytes(dataBytes []byte)(*string, erro
 		return nil, err
 	}
 
-	uploadedUrl :="oss://" + uploadCredentials.UploadBucket + "/" + object
+	uploadedUrl := "oss://" + uploadCredentials.UploadBucket + "/" + object
 	return &uploadedUrl, nil
 }
 
-func (clientUploader *ClientUploader)getUploadCredentials()(*uploadCredentials,  error)  {
-	if clientUploader.UploadCredentials == nil || clientUploader.UploadCredentials.ExpiredTime < (time.Now().UnixNano() / 1e6) {
-		 uploadCredentials, err := clientUploader.getUploadCredentialsFromServer()
-         if err == nil {
-			 clientUploader.UploadCredentials = uploadCredentials
-		 }
+func (clientUploader *ClientUploader) getUploadCredentials() (*uploadCredentials, error) {
+	if clientUploader.UploadCredentials == nil || clientUploader.UploadCredentials.ExpiredTime < (time.Now().UnixNano()/1e6) {
+		uploadCredentials, err := clientUploader.getUploadCredentialsFromServer()
+		if err == nil {
+			clientUploader.UploadCredentials = uploadCredentials
+		}
 
-		 return clientUploader.UploadCredentials, err
+		return clientUploader.UploadCredentials, err
 	}
 
 	return clientUploader.UploadCredentials, nil
 }
 
 type uploadCredentialsResponse struct {
-	Code int16 `json:"code"`
-	Data uploadCredentials `json:"data"`
-	Msg string `json:"msg"`
-	RequestId string `json:"requestId"`
-
+	Code      int16             `json:"code"`
+	Data      uploadCredentials `json:"data"`
+	Msg       string            `json:"msg"`
+	RequestId string            `json:"requestId"`
 }
 
-
-func (clientUploader *ClientUploader)getUploadCredentialsFromServer()(*uploadCredentials, error)  {
-	uploadCredentialsRequest := green.CreateUploadCredentialsRequest();
-	dataJson, _:= json.Marshal(make(map[string]string))
+func (clientUploader *ClientUploader) getUploadCredentialsFromServer() (*uploadCredentials, error) {
+	uploadCredentialsRequest := green.CreateUploadCredentialsRequest()
+	dataJson, _ := json.Marshal(make(map[string]string))
 	uploadCredentialsRequest.SetContent(dataJson)
 	var uploadCredentials *uploadCredentials
 	// 发起请求并处理异常
@@ -165,8 +159,5 @@ func (clientUploader *ClientUploader)getUploadCredentialsFromServer()(*uploadCre
 		uploadCredentials = &uploadCredentialsResponse.Data
 	}
 
-	return  uploadCredentials, err
+	return uploadCredentials, err
 }
-
-
-

@@ -16,19 +16,21 @@ package utils
 
 import (
 	"crypto/md5"
+	"crypto/rand"
 	"encoding/base64"
 	"encoding/hex"
+	"hash"
 	"net/url"
 	"reflect"
 	"strconv"
 	"time"
-
-	"github.com/satori/go.uuid"
 )
 
-func GetUUIDV4() (uuidHex string) {
-	uuidV4 := uuid.NewV4()
-	uuidHex = hex.EncodeToString(uuidV4.Bytes())
+type UUID [16]byte
+
+func GetUUID() (uuidHex string) {
+	uuid := NewUUID()
+	uuidHex = hex.EncodeToString(uuid[:])
 	return
 }
 
@@ -84,4 +86,48 @@ func InitStructWithDefaultTag(bean interface{}) {
 			setter.SetBool(boolValue)
 		}
 	}
+}
+
+func NewUUID() UUID {
+	ns := UUID{}
+	safeRandom(ns[:])
+	na := UUID{}
+	safeRandom(na[:])
+	name := hex.EncodeToString(na[:])
+	u := newFromHash(md5.New(), ns, name)
+	u[6] = (u[6] & 0x0f) | (byte(2) << 4)
+	u[8] = (u[8]&(0xff>>2) | (0x02 << 6))
+
+	return u
+}
+
+func newFromHash(h hash.Hash, ns UUID, name string) UUID {
+	u := UUID{}
+	h.Write(ns[:])
+	h.Write([]byte(name))
+	copy(u[:], h.Sum(nil))
+
+	return u
+}
+
+func safeRandom(dest []byte) {
+	if _, err := rand.Read(dest); err != nil {
+		panic(err)
+	}
+}
+
+func (u UUID) String() string {
+	buf := make([]byte, 36)
+
+	hex.Encode(buf[0:8], u[0:4])
+	buf[8] = '-'
+	hex.Encode(buf[9:13], u[4:6])
+	buf[13] = '-'
+	hex.Encode(buf[14:18], u[6:8])
+	buf[18] = '-'
+	hex.Encode(buf[19:23], u[8:10])
+	buf[23] = '-'
+	hex.Encode(buf[24:], u[10:])
+
+	return string(buf)
 }
