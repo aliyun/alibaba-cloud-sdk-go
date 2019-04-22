@@ -87,6 +87,7 @@ type CreateDBClusterRequest struct {
 	ClusterNetworkType   string           `position:"Query" name:"ClusterNetworkType"`
 	VSwitchId            string           `position:"Query" name:"VSwitchId"`
 	DBNodeClass          string           `position:"Query" name:"DBNodeClass"`
+	AutoRenew            requests.Boolean `position:"Query" name:"AutoRenew"`
 	Engine               string           `position:"Query" name:"Engine"`
 	VPCId                string           `position:"Query" name:"VPCId"`
 	DBType               string           `position:"Query" name:"DBType"`
