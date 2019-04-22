@@ -82,6 +82,7 @@ type VerifyContactFieldRequest struct {
 	City                     string `position:"Query" name:"City"`
 	ZhAddress                string `position:"Query" name:"ZhAddress"`
 	RegistrantType           string `position:"Query" name:"RegistrantType"`
+	DomainName               string `position:"Query" name:"DomainName"`
 	Telephone                string `position:"Query" name:"Telephone"`
 	ZhCity                   string `position:"Query" name:"ZhCity"`
 	ZhProvince               string `position:"Query" name:"ZhProvince"`

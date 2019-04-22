@@ -83,6 +83,7 @@ type SaveRegistrantProfileRequest struct {
 	RegistrantProfileId      requests.Integer `position:"Query" name:"RegistrantProfileId"`
 	ZhAddress                string           `position:"Query" name:"ZhAddress"`
 	RegistrantType           string           `position:"Query" name:"RegistrantType"`
+	RegistrantProfileType    string           `position:"Query" name:"RegistrantProfileType"`
 	Telephone                string           `position:"Query" name:"Telephone"`
 	DefaultRegistrantProfile requests.Boolean `position:"Query" name:"DefaultRegistrantProfile"`
 	ZhCity                   string           `position:"Query" name:"ZhCity"`

@@ -40,4 +40,5 @@ type RegistrantProfile struct {
 	ZhAddress                string `json:"ZhAddress" xml:"ZhAddress"`
 	RegistrantType           string `json:"RegistrantType" xml:"RegistrantType"`
 	RealNameStatus           string `json:"RealNameStatus" xml:"RealNameStatus"`
+	RegistrantProfileType    string `json:"RegistrantProfileType" xml:"RegistrantProfileType"`
 }

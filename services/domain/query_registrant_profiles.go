@@ -81,6 +81,7 @@ type QueryRegistrantProfilesRequest struct {
 	RegistrantProfileId      requests.Integer `position:"Query" name:"RegistrantProfileId"`
 	PageSize                 requests.Integer `position:"Query" name:"PageSize"`
 	RegistrantType           string           `position:"Query" name:"RegistrantType"`
+	RegistrantProfileType    string           `position:"Query" name:"RegistrantProfileType"`
 	RealNameStatus           string           `position:"Query" name:"RealNameStatus"`
 	Lang                     string           `position:"Query" name:"Lang"`
 	PageNum                  requests.Integer `position:"Query" name:"PageNum"`
