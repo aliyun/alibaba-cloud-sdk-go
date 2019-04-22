@@ -37,4 +37,5 @@ type CustomerInvoice struct {
 	TitleChangeInstructions string `json:"TitleChangeInstructions" xml:"TitleChangeInstructions"`
 	IssueType               int    `json:"IssueType" xml:"IssueType"`
 	Type                    int    `json:"Type" xml:"Type"`
+	DefaultRemark           string `json:"DefaultRemark" xml:"DefaultRemark"`
 }

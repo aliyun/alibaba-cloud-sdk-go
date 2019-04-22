@@ -80,7 +80,6 @@ type QueryEvaluateListRequest struct {
 	OutBizId        string           `position:"Query" name:"OutBizId"`
 	SortType        requests.Integer `position:"Query" name:"SortType"`
 	BizTypeList     *[]string        `position:"Query" name:"BizTypeList"  type:"Repeated"`
-	CallerBid       requests.Integer `position:"Query" name:"callerBid"`
 	Type            requests.Integer `position:"Query" name:"Type"`
 	OwnerId         requests.Integer `position:"Query" name:"OwnerId"`
 	PageNum         requests.Integer `position:"Query" name:"PageNum"`
@@ -91,7 +90,6 @@ type QueryEvaluateListRequest struct {
 	BillCycle       string           `position:"Query" name:"BillCycle"`
 	StartAmount     requests.Integer `position:"Query" name:"StartAmount"`
 	StartBizTime    string           `position:"Query" name:"StartBizTime"`
-	CallerUid       requests.Integer `position:"Query" name:"callerUid"`
 }
 
 // QueryEvaluateListResponse is the response struct for api QueryEvaluateList

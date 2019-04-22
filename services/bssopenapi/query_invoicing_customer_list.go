@@ -76,9 +76,7 @@ func (client *Client) QueryInvoicingCustomerListWithCallback(request *QueryInvoi
 // QueryInvoicingCustomerListRequest is the request struct for api QueryInvoicingCustomerList
 type QueryInvoicingCustomerListRequest struct {
 	*requests.RpcRequest
-	CallerBid requests.Integer `position:"Query" name:"callerBid"`
-	OwnerId   requests.Integer `position:"Query" name:"OwnerId"`
-	CallerUid requests.Integer `position:"Query" name:"callerUid"`
+	OwnerId requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // QueryInvoicingCustomerListResponse is the response struct for api QueryInvoicingCustomerList
