@@ -90,9 +90,13 @@ type DescribeZonesZones0 struct {
 }
 
 type DescribeZonesZone1 struct {
-	ZoneId      string   `json:"ZoneId" xml:"ZoneId"`
-	Capacity    []string `json:"Capacity" xml:"Capacity"`
-	Performance []string `json:"Performance" xml:"Performance"`
+	ZoneId      string                `json:"ZoneId" xml:"ZoneId"`
+	Capacity    DescribeZonesProtocol `json:"Capacity" xml:"Capacity"`
+	Performance DescribeZonesProtocol `json:"Performance" xml:"Performance"`
+}
+
+type DescribeZonesProtocol struct {
+	Protocol []string `json:"Protocol" xml:"Protocol"`
 }
 
 // CreateDescribeZonesRequest creates a request to invoke DescribeZones API
