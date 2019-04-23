@@ -33,4 +33,7 @@ type RegistrantProfile struct {
 	Telephone                string `json:"Telephone" xml:"Telephone"`
 	TelExt                   string `json:"TelExt" xml:"TelExt"`
 	EmailVerificationStatus  int    `json:"EmailVerificationStatus" xml:"EmailVerificationStatus"`
+	RegistrantType           string `json:"RegistrantType" xml:"RegistrantType"`
+	RealNameStatus           string `json:"RealNameStatus" xml:"RealNameStatus"`
+	RegistrantProfileType    string `json:"RegistrantProfileType" xml:"RegistrantProfileType"`
 }

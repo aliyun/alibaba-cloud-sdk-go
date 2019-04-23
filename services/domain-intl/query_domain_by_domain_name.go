@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// QueryDomainByInstanceId invokes the domain_intl.QueryDomainByInstanceId API synchronously
-// api document: https://help.aliyun.com/api/domain-intl/querydomainbyinstanceid.html
-func (client *Client) QueryDomainByInstanceId(request *QueryDomainByInstanceIdRequest) (response *QueryDomainByInstanceIdResponse, err error) {
-	response = CreateQueryDomainByInstanceIdResponse()
+// QueryDomainByDomainName invokes the domain_intl.QueryDomainByDomainName API synchronously
+// api document: https://help.aliyun.com/api/domain-intl/querydomainbydomainname.html
+func (client *Client) QueryDomainByDomainName(request *QueryDomainByDomainNameRequest) (response *QueryDomainByDomainNameResponse, err error) {
+	response = CreateQueryDomainByDomainNameResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// QueryDomainByInstanceIdWithChan invokes the domain_intl.QueryDomainByInstanceId API asynchronously
-// api document: https://help.aliyun.com/api/domain-intl/querydomainbyinstanceid.html
+// QueryDomainByDomainNameWithChan invokes the domain_intl.QueryDomainByDomainName API asynchronously
+// api document: https://help.aliyun.com/api/domain-intl/querydomainbydomainname.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) QueryDomainByInstanceIdWithChan(request *QueryDomainByInstanceIdRequest) (<-chan *QueryDomainByInstanceIdResponse, <-chan error) {
-	responseChan := make(chan *QueryDomainByInstanceIdResponse, 1)
+func (client *Client) QueryDomainByDomainNameWithChan(request *QueryDomainByDomainNameRequest) (<-chan *QueryDomainByDomainNameResponse, <-chan error) {
+	responseChan := make(chan *QueryDomainByDomainNameResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.QueryDomainByInstanceId(request)
+		response, err := client.QueryDomainByDomainName(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) QueryDomainByInstanceIdWithChan(request *QueryDomainByInst
 	return responseChan, errChan
 }
 
-// QueryDomainByInstanceIdWithCallback invokes the domain_intl.QueryDomainByInstanceId API asynchronously
-// api document: https://help.aliyun.com/api/domain-intl/querydomainbyinstanceid.html
+// QueryDomainByDomainNameWithCallback invokes the domain_intl.QueryDomainByDomainName API asynchronously
+// api document: https://help.aliyun.com/api/domain-intl/querydomainbydomainname.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) QueryDomainByInstanceIdWithCallback(request *QueryDomainByInstanceIdRequest, callback func(response *QueryDomainByInstanceIdResponse, err error)) <-chan int {
+func (client *Client) QueryDomainByDomainNameWithCallback(request *QueryDomainByDomainNameRequest, callback func(response *QueryDomainByDomainNameResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *QueryDomainByInstanceIdResponse
+		var response *QueryDomainByDomainNameResponse
 		var err error
 		defer close(result)
-		response, err = client.QueryDomainByInstanceId(request)
+		response, err = client.QueryDomainByDomainName(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,16 +73,16 @@ func (client *Client) QueryDomainByInstanceIdWithCallback(request *QueryDomainBy
 	return result
 }
 
-// QueryDomainByInstanceIdRequest is the request struct for api QueryDomainByInstanceId
-type QueryDomainByInstanceIdRequest struct {
+// QueryDomainByDomainNameRequest is the request struct for api QueryDomainByDomainName
+type QueryDomainByDomainNameRequest struct {
 	*requests.RpcRequest
-	InstanceId   string `position:"Query" name:"InstanceId"`
 	UserClientIp string `position:"Query" name:"UserClientIp"`
+	DomainName   string `position:"Query" name:"DomainName"`
 	Lang         string `position:"Query" name:"Lang"`
 }
 
-// QueryDomainByInstanceIdResponse is the response struct for api QueryDomainByInstanceId
-type QueryDomainByInstanceIdResponse struct {
+// QueryDomainByDomainNameResponse is the response struct for api QueryDomainByDomainName
+type QueryDomainByDomainNameResponse struct {
 	*responses.BaseResponse
 	UserId                       string                           `json:"UserId" xml:"UserId"`
 	DomainName                   string                           `json:"DomainName" xml:"DomainName"`
@@ -106,21 +106,21 @@ type QueryDomainByInstanceIdResponse struct {
 	RequestId                    string                           `json:"RequestId" xml:"RequestId"`
 	RegistrationDateLong         int                              `json:"RegistrationDateLong" xml:"RegistrationDateLong"`
 	ExpirationDateLong           int                              `json:"ExpirationDateLong" xml:"ExpirationDateLong"`
-	DnsList                      DnsListInQueryDomainByInstanceId `json:"DnsList" xml:"DnsList"`
+	DnsList                      DnsListInQueryDomainByDomainName `json:"DnsList" xml:"DnsList"`
 }
 
-// CreateQueryDomainByInstanceIdRequest creates a request to invoke QueryDomainByInstanceId API
-func CreateQueryDomainByInstanceIdRequest() (request *QueryDomainByInstanceIdRequest) {
-	request = &QueryDomainByInstanceIdRequest{
+// CreateQueryDomainByDomainNameRequest creates a request to invoke QueryDomainByDomainName API
+func CreateQueryDomainByDomainNameRequest() (request *QueryDomainByDomainNameRequest) {
+	request = &QueryDomainByDomainNameRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Domain-intl", "2017-12-18", "QueryDomainByInstanceId", "domain", "openAPI")
+	request.InitWithApiInfo("Domain-intl", "2017-12-18", "QueryDomainByDomainName", "domain", "openAPI")
 	return
 }
 
-// CreateQueryDomainByInstanceIdResponse creates a response to parse from QueryDomainByInstanceId response
-func CreateQueryDomainByInstanceIdResponse() (response *QueryDomainByInstanceIdResponse) {
-	response = &QueryDomainByInstanceIdResponse{
+// CreateQueryDomainByDomainNameResponse creates a response to parse from QueryDomainByDomainName response
+func CreateQueryDomainByDomainNameResponse() (response *QueryDomainByDomainNameResponse) {
+	response = &QueryDomainByDomainNameResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

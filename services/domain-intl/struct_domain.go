@@ -17,14 +17,19 @@ package domain_intl
 
 // Domain is a nested struct in domain_intl response
 type Domain struct {
-	DomainName           string `json:"DomainName" xml:"DomainName"`
-	InstanceId           string `json:"InstanceId" xml:"InstanceId"`
-	ExpirationDate       string `json:"ExpirationDate" xml:"ExpirationDate"`
-	RegistrationDate     string `json:"RegistrationDate" xml:"RegistrationDate"`
-	DomainType           string `json:"DomainType" xml:"DomainType"`
-	DomainStatus         string `json:"DomainStatus" xml:"DomainStatus"`
-	ProductId            string `json:"ProductId" xml:"ProductId"`
-	ExpirationDateLong   int    `json:"ExpirationDateLong" xml:"ExpirationDateLong"`
-	RegistrationDateLong int    `json:"RegistrationDateLong" xml:"RegistrationDateLong"`
-	Premium              bool   `json:"Premium" xml:"Premium"`
+	DomainName             string `json:"DomainName" xml:"DomainName"`
+	InstanceId             string `json:"InstanceId" xml:"InstanceId"`
+	ExpirationDate         string `json:"ExpirationDate" xml:"ExpirationDate"`
+	RegistrationDate       string `json:"RegistrationDate" xml:"RegistrationDate"`
+	DomainType             string `json:"DomainType" xml:"DomainType"`
+	DomainStatus           string `json:"DomainStatus" xml:"DomainStatus"`
+	ProductId              string `json:"ProductId" xml:"ProductId"`
+	ExpirationDateLong     int    `json:"ExpirationDateLong" xml:"ExpirationDateLong"`
+	RegistrationDateLong   int    `json:"RegistrationDateLong" xml:"RegistrationDateLong"`
+	Premium                bool   `json:"Premium" xml:"Premium"`
+	DomainAuditStatus      string `json:"DomainAuditStatus" xml:"DomainAuditStatus"`
+	ExpirationDateStatus   string `json:"ExpirationDateStatus" xml:"ExpirationDateStatus"`
+	RegistrantType         string `json:"RegistrantType" xml:"RegistrantType"`
+	Remark                 string `json:"Remark" xml:"Remark"`
+	ExpirationCurrDateDiff int    `json:"ExpirationCurrDateDiff" xml:"ExpirationCurrDateDiff"`
 }

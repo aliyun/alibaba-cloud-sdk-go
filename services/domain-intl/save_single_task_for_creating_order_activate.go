@@ -93,6 +93,7 @@ type SaveSingleTaskForCreatingOrderActivateRequest struct {
 	Address                   string           `position:"Query" name:"Address"`
 	TelArea                   string           `position:"Query" name:"TelArea"`
 	DomainName                string           `position:"Query" name:"DomainName"`
+	RegistrantType            string           `position:"Query" name:"RegistrantType"`
 	Telephone                 string           `position:"Query" name:"Telephone"`
 	TrademarkDomainActivation requests.Boolean `position:"Query" name:"TrademarkDomainActivation"`
 	UseCoupon                 requests.Boolean `position:"Query" name:"UseCoupon"`

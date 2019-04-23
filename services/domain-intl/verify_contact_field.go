@@ -80,6 +80,8 @@ type VerifyContactFieldRequest struct {
 	Address                string `position:"Query" name:"Address"`
 	TelArea                string `position:"Query" name:"TelArea"`
 	City                   string `position:"Query" name:"City"`
+	DomainName             string `position:"Query" name:"DomainName"`
+	RegistrantType         string `position:"Query" name:"RegistrantType"`
 	Telephone              string `position:"Query" name:"Telephone"`
 	RegistrantOrganization string `position:"Query" name:"RegistrantOrganization"`
 	TelExt                 string `position:"Query" name:"TelExt"`

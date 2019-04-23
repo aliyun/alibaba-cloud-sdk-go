@@ -97,6 +97,7 @@ type SaveBatchTaskForCreatingOrderActivateOrderActivateParam struct {
 	Dns1                      string `name:"Dns1"`
 	DomainName                string `name:"DomainName"`
 	RegistrantProfileId       string `name:"RegistrantProfileId"`
+	RegistrantType            string `name:"RegistrantType"`
 	Telephone                 string `name:"Telephone"`
 	TrademarkDomainActivation string `name:"TrademarkDomainActivation"`
 	AliyunDns                 string `name:"AliyunDns"`
