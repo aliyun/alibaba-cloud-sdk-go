@@ -21,17 +21,20 @@ type NodeInfo struct {
 	Expired         bool                     `json:"Expired" xml:"Expired"`
 	ExpiredTime     string                   `json:"ExpiredTime" xml:"ExpiredTime"`
 	ImageId         string                   `json:"ImageId" xml:"ImageId"`
+	VSwitchId       string                   `json:"VSwitchId" xml:"VSwitchId"`
 	Version         string                   `json:"Version" xml:"Version"`
 	ImageOwnerAlias string                   `json:"ImageOwnerAlias" xml:"ImageOwnerAlias"`
 	CreateMode      string                   `json:"CreateMode" xml:"CreateMode"`
 	Location        string                   `json:"Location" xml:"Location"`
 	RegionId        string                   `json:"RegionId" xml:"RegionId"`
+	ZoneId          string                   `json:"ZoneId" xml:"ZoneId"`
 	CreatedByEhpc   bool                     `json:"CreatedByEhpc" xml:"CreatedByEhpc"`
 	Id              string                   `json:"Id" xml:"Id"`
 	HostName        string                   `json:"HostName" xml:"HostName"`
 	Status          string                   `json:"Status" xml:"Status"`
 	AddTime         string                   `json:"AddTime" xml:"AddTime"`
 	SpotStrategy    string                   `json:"SpotStrategy" xml:"SpotStrategy"`
+	VpcId           string                   `json:"VpcId" xml:"VpcId"`
 	Roles           RolesInListNodesNoPaging `json:"Roles" xml:"Roles"`
 	TotalResources  TotalResources           `json:"TotalResources" xml:"TotalResources"`
 	UsedResources   UsedResources            `json:"UsedResources" xml:"UsedResources"`

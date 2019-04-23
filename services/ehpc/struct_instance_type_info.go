@@ -20,4 +20,6 @@ type InstanceTypeInfo struct {
 	InstanceType   string  `json:"InstanceType" xml:"InstanceType"`
 	SpotStrategy   string  `json:"SpotStrategy" xml:"SpotStrategy"`
 	SpotPriceLimit float64 `json:"SpotPriceLimit" xml:"SpotPriceLimit"`
+	ZoneId         string  `json:"ZoneId" xml:"ZoneId"`
+	VSwitchId      string  `json:"VSwitchId" xml:"VSwitchId"`
 }
