@@ -96,7 +96,7 @@ type DescribeMetricLastResponse struct {
 	NextToken  string `json:"NextToken" xml:"NextToken"`
 	Datapoints string `json:"Datapoints" xml:"Datapoints"`
 	Period     string `json:"Period" xml:"Period"`
-	Success    string `json:"Success" xml:"Success"`
+	Success    bool   `json:"Success" xml:"Success"`
 }
 
 // CreateDescribeMetricLastRequest creates a request to invoke DescribeMetricLast API

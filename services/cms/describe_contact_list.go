@@ -78,6 +78,7 @@ type DescribeContactListRequest struct {
 	*requests.RpcRequest
 	ContactName string           `position:"Query" name:"ContactName"`
 	PageSize    requests.Integer `position:"Query" name:"PageSize"`
+	PageNumber  requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 // DescribeContactListResponse is the response struct for api DescribeContactList

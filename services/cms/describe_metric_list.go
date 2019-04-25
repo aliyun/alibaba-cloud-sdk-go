@@ -96,7 +96,7 @@ type DescribeMetricListResponse struct {
 	NextToken  string `json:"NextToken" xml:"NextToken"`
 	Datapoints string `json:"Datapoints" xml:"Datapoints"`
 	Period     string `json:"Period" xml:"Period"`
-	Success    string `json:"Success" xml:"Success"`
+	Success    bool   `json:"Success" xml:"Success"`
 }
 
 // CreateDescribeMetricListRequest creates a request to invoke DescribeMetricList API

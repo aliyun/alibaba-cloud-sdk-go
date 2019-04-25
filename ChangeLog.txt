@@ -1,3 +1,6 @@
+2019-04-25 Version: 1.58.3
+1, The alarm contact interface increases paging parameters
+
 2019-04-25 Version: 1.58.2
 1, upgrade sdk version.
 
