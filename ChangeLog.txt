@@ -1,3 +1,6 @@
+2019-04-26 Version: 1.58.4
+1, add new openapi.
+
 2019-04-25 Version: 1.58.3
 1, The alarm contact interface increases paging parameters
 
