@@ -17,14 +17,15 @@ package slb
 
 // CACertificate is a nested struct in slb response
 type CACertificate struct {
-	RegionId          string `json:"RegionId" xml:"RegionId"`
-	CACertificateId   string `json:"CACertificateId" xml:"CACertificateId"`
-	CACertificateName string `json:"CACertificateName" xml:"CACertificateName"`
-	Fingerprint       string `json:"Fingerprint" xml:"Fingerprint"`
-	ResourceGroupId   string `json:"ResourceGroupId" xml:"ResourceGroupId"`
-	CreateTime        string `json:"CreateTime" xml:"CreateTime"`
-	CreateTimeStamp   int    `json:"CreateTimeStamp" xml:"CreateTimeStamp"`
-	ExpireTime        string `json:"ExpireTime" xml:"ExpireTime"`
-	ExpireTimeStamp   int    `json:"ExpireTimeStamp" xml:"ExpireTimeStamp"`
-	CommonName        string `json:"CommonName" xml:"CommonName"`
+	RegionId          string                       `json:"RegionId" xml:"RegionId"`
+	CACertificateId   string                       `json:"CACertificateId" xml:"CACertificateId"`
+	CACertificateName string                       `json:"CACertificateName" xml:"CACertificateName"`
+	Fingerprint       string                       `json:"Fingerprint" xml:"Fingerprint"`
+	ResourceGroupId   string                       `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	CreateTime        string                       `json:"CreateTime" xml:"CreateTime"`
+	CreateTimeStamp   int                          `json:"CreateTimeStamp" xml:"CreateTimeStamp"`
+	ExpireTime        string                       `json:"ExpireTime" xml:"ExpireTime"`
+	ExpireTimeStamp   int                          `json:"ExpireTimeStamp" xml:"ExpireTimeStamp"`
+	CommonName        string                       `json:"CommonName" xml:"CommonName"`
+	Tags              TagsInDescribeCACertificates `json:"Tags" xml:"Tags"`
 }

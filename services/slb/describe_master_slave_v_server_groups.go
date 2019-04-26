@@ -88,8 +88,8 @@ type DescribeMasterSlaveVServerGroupsRequest struct {
 // DescribeMasterSlaveVServerGroupsResponse is the response struct for api DescribeMasterSlaveVServerGroups
 type DescribeMasterSlaveVServerGroupsResponse struct {
 	*responses.BaseResponse
-	RequestId                string                                                     `json:"RequestId" xml:"RequestId"`
-	MasterSlaveVServerGroups MasterSlaveVServerGroupsInDescribeMasterSlaveVServerGroups `json:"MasterSlaveVServerGroups" xml:"MasterSlaveVServerGroups"`
+	RequestId                string                   `json:"RequestId" xml:"RequestId"`
+	MasterSlaveVServerGroups MasterSlaveVServerGroups `json:"MasterSlaveVServerGroups" xml:"MasterSlaveVServerGroups"`
 }
 
 // CreateDescribeMasterSlaveVServerGroupsRequest creates a request to invoke DescribeMasterSlaveVServerGroups API

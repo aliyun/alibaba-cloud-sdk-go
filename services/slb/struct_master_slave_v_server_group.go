@@ -17,9 +17,6 @@ package slb
 
 // MasterSlaveVServerGroup is a nested struct in slb response
 type MasterSlaveVServerGroup struct {
-	MasterSlaveVServerGroupId   string                                          `json:"MasterSlaveVServerGroupId" xml:"MasterSlaveVServerGroupId"`
-	MasterSlaveVServerGroupName string                                          `json:"MasterSlaveVServerGroupName" xml:"MasterSlaveVServerGroupName"`
-	GroupName                   string                                          `json:"GroupName" xml:"GroupName"`
-	GroupId                     string                                          `json:"GroupId" xml:"GroupId"`
-	BackendServers              BackendServersInDescribeLoadBalancersRelatedEcs `json:"BackendServers" xml:"BackendServers"`
+	MasterSlaveVServerGroupId   string `json:"MasterSlaveVServerGroupId" xml:"MasterSlaveVServerGroupId"`
+	MasterSlaveVServerGroupName string `json:"MasterSlaveVServerGroupName" xml:"MasterSlaveVServerGroupName"`
 }

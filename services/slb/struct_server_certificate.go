@@ -32,4 +32,5 @@ type ServerCertificate struct {
 	ExpireTimeStamp         int                                                 `json:"ExpireTimeStamp" xml:"ExpireTimeStamp"`
 	CommonName              string                                              `json:"CommonName" xml:"CommonName"`
 	SubjectAlternativeNames SubjectAlternativeNamesInDescribeServerCertificates `json:"SubjectAlternativeNames" xml:"SubjectAlternativeNames"`
+	Tags                    TagsInDescribeServerCertificates                    `json:"Tags" xml:"Tags"`
 }

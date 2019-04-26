@@ -84,6 +84,7 @@ type CreateRulesRequest struct {
 	RuleList             string           `position:"Query" name:"RuleList"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ListenerProtocol     string           `position:"Query" name:"ListenerProtocol"`
 	Tags                 string           `position:"Query" name:"Tags"`
 }
 

@@ -88,6 +88,7 @@ type CreateLoadBalancerRequest struct {
 	SlaveZoneId          string           `position:"Query" name:"SlaveZoneId"`
 	LoadBalancerSpec     string           `position:"Query" name:"LoadBalancerSpec"`
 	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`
+	Address              string           `position:"Query" name:"Address"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	Bandwidth            requests.Integer `position:"Query" name:"Bandwidth"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
@@ -99,6 +100,7 @@ type CreateLoadBalancerRequest struct {
 	VpcId                string           `position:"Query" name:"VpcId"`
 	PayType              string           `position:"Query" name:"PayType"`
 	PricingCycle         string           `position:"Query" name:"PricingCycle"`
+	Ratio                requests.Integer `position:"Query" name:"Ratio"`
 }
 
 // CreateLoadBalancerResponse is the response struct for api CreateLoadBalancer

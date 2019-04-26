@@ -76,16 +76,24 @@ func (client *Client) DescribeAccessControlListsWithCallback(request *DescribeAc
 // DescribeAccessControlListsRequest is the request struct for api DescribeAccessControlLists
 type DescribeAccessControlListsRequest struct {
 	*requests.RpcRequest
-	AccessKeyId          string           `position:"Query" name:"access_key_id"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	AclName              string           `position:"Query" name:"AclName"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	AddressIPVersion     string           `position:"Query" name:"AddressIPVersion"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	Tags                 string           `position:"Query" name:"Tags"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	AccessKeyId          string                           `position:"Query" name:"access_key_id"`
+	ResourceOwnerId      requests.Integer                 `position:"Query" name:"ResourceOwnerId"`
+	AclName              string                           `position:"Query" name:"AclName"`
+	ResourceOwnerAccount string                           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string                           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer                 `position:"Query" name:"OwnerId"`
+	AddressIPVersion     string                           `position:"Query" name:"AddressIPVersion"`
+	PageNumber           requests.Integer                 `position:"Query" name:"PageNumber"`
+	Tags                 string                           `position:"Query" name:"Tags"`
+	ResourceGroupId      string                           `position:"Query" name:"ResourceGroupId"`
+	PageSize             requests.Integer                 `position:"Query" name:"PageSize"`
+	Tag                  *[]DescribeAccessControlListsTag `position:"Query" name:"Tag"  type:"Repeated"`
+}
+
+// DescribeAccessControlListsTag is a repeated param struct in DescribeAccessControlListsRequest
+type DescribeAccessControlListsTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // DescribeAccessControlListsResponse is the response struct for api DescribeAccessControlLists

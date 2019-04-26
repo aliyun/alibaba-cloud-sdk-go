@@ -17,10 +17,10 @@ package slb
 
 // BackendServerInAddBackendServers is a nested struct in slb response
 type BackendServerInAddBackendServers struct {
-	ServerId string `json:"ServerId" xml:"ServerId"`
-	Weight   string `json:"Weight" xml:"Weight"`
-	ServerIp string `json:"ServerIp" xml:"ServerIp"`
-	VpcId    string `json:"VpcId" xml:"VpcId"`
-	EniHost  string `json:"EniHost" xml:"EniHost"`
-	Type     string `json:"Type" xml:"Type"`
+	ServerId    string `json:"ServerId" xml:"ServerId"`
+	Weight      string `json:"Weight" xml:"Weight"`
+	ServerIp    string `json:"ServerIp" xml:"ServerIp"`
+	VpcId       string `json:"VpcId" xml:"VpcId"`
+	Type        string `json:"Type" xml:"Type"`
+	Description string `json:"Description" xml:"Description"`
 }

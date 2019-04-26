@@ -76,13 +76,20 @@ func (client *Client) DescribeCACertificatesWithCallback(request *DescribeCACert
 // DescribeCACertificatesRequest is the request struct for api DescribeCACertificates
 type DescribeCACertificatesRequest struct {
 	*requests.RpcRequest
-	AccessKeyId          string           `position:"Query" name:"access_key_id"`
-	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	CACertificateId      string           `position:"Query" name:"CACertificateId"`
+	AccessKeyId          string                       `position:"Query" name:"access_key_id"`
+	ResourceGroupId      string                       `position:"Query" name:"ResourceGroupId"`
+	ResourceOwnerId      requests.Integer             `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string                       `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string                       `position:"Query" name:"OwnerAccount"`
+	Tag                  *[]DescribeCACertificatesTag `position:"Query" name:"Tag"  type:"Repeated"`
+	OwnerId              requests.Integer             `position:"Query" name:"OwnerId"`
+	CACertificateId      string                       `position:"Query" name:"CACertificateId"`
+}
+
+// DescribeCACertificatesTag is a repeated param struct in DescribeCACertificatesRequest
+type DescribeCACertificatesTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // DescribeCACertificatesResponse is the response struct for api DescribeCACertificates

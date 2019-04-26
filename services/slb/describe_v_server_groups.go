@@ -90,8 +90,8 @@ type DescribeVServerGroupsRequest struct {
 // DescribeVServerGroupsResponse is the response struct for api DescribeVServerGroups
 type DescribeVServerGroupsResponse struct {
 	*responses.BaseResponse
-	RequestId     string                               `json:"RequestId" xml:"RequestId"`
-	VServerGroups VServerGroupsInDescribeVServerGroups `json:"VServerGroups" xml:"VServerGroups"`
+	RequestId     string        `json:"RequestId" xml:"RequestId"`
+	VServerGroups VServerGroups `json:"VServerGroups" xml:"VServerGroups"`
 }
 
 // CreateDescribeVServerGroupsRequest creates a request to invoke DescribeVServerGroups API

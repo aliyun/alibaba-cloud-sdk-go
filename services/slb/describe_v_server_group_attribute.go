@@ -91,6 +91,7 @@ type DescribeVServerGroupAttributeResponse struct {
 	RequestId        string                                        `json:"RequestId" xml:"RequestId"`
 	VServerGroupId   string                                        `json:"VServerGroupId" xml:"VServerGroupId"`
 	VServerGroupName string                                        `json:"VServerGroupName" xml:"VServerGroupName"`
+	LoadBalancerId   string                                        `json:"LoadBalancerId" xml:"LoadBalancerId"`
 	BackendServers   BackendServersInDescribeVServerGroupAttribute `json:"BackendServers" xml:"BackendServers"`
 }
 

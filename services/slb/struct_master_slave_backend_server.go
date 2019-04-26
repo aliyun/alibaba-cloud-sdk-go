@@ -17,13 +17,14 @@ package slb
 
 // MasterSlaveBackendServer is a nested struct in slb response
 type MasterSlaveBackendServer struct {
-	Port       int    `json:"Port" xml:"Port"`
-	ServerIp   string `json:"ServerIp" xml:"ServerIp"`
-	ServerId   string `json:"ServerId" xml:"ServerId"`
-	ServerType string `json:"ServerType" xml:"ServerType"`
-	VpcId      string `json:"VpcId" xml:"VpcId"`
-	Weight     int    `json:"Weight" xml:"Weight"`
-	EniHost    string `json:"EniHost" xml:"EniHost"`
-	IsBackup   int    `json:"IsBackup" xml:"IsBackup"`
-	Type       string `json:"Type" xml:"Type"`
+	Port        int    `json:"Port" xml:"Port"`
+	ServerIp    string `json:"ServerIp" xml:"ServerIp"`
+	ServerId    string `json:"ServerId" xml:"ServerId"`
+	ServerType  string `json:"ServerType" xml:"ServerType"`
+	VpcId       string `json:"VpcId" xml:"VpcId"`
+	Weight      int    `json:"Weight" xml:"Weight"`
+	Description string `json:"Description" xml:"Description"`
+	IsBackup    int    `json:"IsBackup" xml:"IsBackup"`
+	EniHost     string `json:"EniHost" xml:"EniHost"`
+	Type        string `json:"Type" xml:"Type"`
 }
