@@ -1,3 +1,6 @@
+2019-04-28 Version: 1.58.6
+1, Publish DescribeAvailableResource.
+
 2019-04-26 Version: 1.58.5
 1, Add resource describe api.
 
