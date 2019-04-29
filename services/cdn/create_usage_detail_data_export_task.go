@@ -78,6 +78,7 @@ type CreateUsageDetailDataExportTaskRequest struct {
 	*requests.RpcRequest
 	DomainNames string           `position:"Query" name:"DomainNames"`
 	TaskName    string           `position:"Query" name:"TaskName"`
+	Language    string           `position:"Query" name:"Language"`
 	StartTime   string           `position:"Query" name:"StartTime"`
 	Type        string           `position:"Query" name:"Type"`
 	Group       string           `position:"Query" name:"Group"`

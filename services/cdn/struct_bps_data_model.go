@@ -17,6 +17,7 @@ package cdn
 
 // BpsDataModel is a nested struct in cdn response
 type BpsDataModel struct {
+	TimeStamp    string `json:"TimeStamp" xml:"TimeStamp"`
 	LocationName string `json:"LocationName" xml:"LocationName"`
 	IspName      string `json:"IspName" xml:"IspName"`
 	Bps          int    `json:"Bps" xml:"Bps"`
