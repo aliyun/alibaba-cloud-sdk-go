@@ -5,8 +5,6 @@ import (
 	"github.com/goji/httpauth"
 	"net/http"
 	"net/http/httptest"
-	"net/http/httputil"
-	"net/url"
 	"os"
 	"strings"
 	"testing"
@@ -259,14 +257,8 @@ func handlerTrue(w http.ResponseWriter, r *http.Request) {
 }
 
 func handlerFake(w http.ResponseWriter, r *http.Request) {
-	trueserver := handlerTrueServer()
-	url, err := url.Parse(trueserver.URL)
-	if err != nil {
-		return
-	}
-	proxy := httputil.NewSingleHostReverseProxy(url)
 	w.Write([]byte("sdk"))
-	proxy.ServeHTTP(w, r)
+	handlerTrue(w, r)
 
 	return
 }
@@ -285,17 +277,16 @@ func handlerTrueServer() (server *httptest.Server) {
 }
 
 func Test_HTTPProxy(t *testing.T) {
-
-	ts := handlerFakeServer()
-	ts1 := handlerTrueServer()
+	tsReal := handlerTrueServer()
+	tsFake := handlerFakeServer()
 	defer func() {
-		ts.Close()
-		ts1.Close()
+		tsReal.Close()
+		tsFake.Close()
 	}()
 	client, err := sdk.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
 	assert.Nil(t, err)
 	request := requests.NewCommonRequest()
-	domain := strings.Replace(ts1.URL, "http://", "", 1)
+	domain := strings.Replace(tsReal.URL, "http://", "", 1)
 	request.Domain = domain
 	request.Version = "2015-12-15"
 	request.TransToAcsRequest()
@@ -305,7 +296,7 @@ func Test_HTTPProxy(t *testing.T) {
 	assert.Equal(t, "test", resp.GetHttpContentString())
 
 	originEnv := os.Getenv("HTTP_PROXY")
-	domain = strings.Replace(ts.URL, "http://", "", 1)
+	domain = strings.Replace(tsFake.URL, "http://", "", 1)
 	os.Setenv("HTTP_PROXY", fmt.Sprintf("http://someuser:somepassword@%s", domain))
 	resp, err = client.ProcessCommonRequest(request)
 	assert.Nil(t, err)

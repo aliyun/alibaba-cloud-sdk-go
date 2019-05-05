@@ -2,6 +2,14 @@
 
 
 [[projects]]
+  branch = "master"
+  digest = "1:a416172d1bd832468bc864e5aaaac19e9b618d03dddcf51ca66f30fdf88500ff"
+  name = "github.com/alibabacloud-go/tea"
+  packages = ["tea"]
+  pruneopts = "UT"
+  revision = "26346206aa7dcba00aed7df812fd34bb60d2ea1b"
+
+[[projects]]
   digest = "1:a9a98adb2a4181b9e4622eff8b6070646971a18427c265852f3686dbc7112ab1"
   name = "github.com/aliyun/aliyun-oss-go-sdk"
   packages = ["oss"]
@@ -16,6 +24,14 @@
   pruneopts = "UT"
   revision = "8991bc29aa16c548c550c7ff78260e27b9ab7c73"
   version = "v1.1.1"
+
+[[projects]]
+  branch = "master"
+  digest = "1:205b3c069003f9d1458e4304427ab3652d8d7bac3bde1568a2d5486451e453bd"
+  name = "github.com/goji/httpauth"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "2da839ab0f4df05a6db5eb277995589dadbd4fb9"
 
 [[projects]]
   digest = "1:b87714e57a511d88f307aba7d5b63522da12bed0a050889c81272fc50f71100e"
@@ -93,7 +109,9 @@
   analyzer-name = "dep"
   analyzer-version = 1
   input-imports = [
+    "github.com/alibabacloud-go/tea/tea",
     "github.com/aliyun/aliyun-oss-go-sdk/oss",
+    "github.com/goji/httpauth",
     "github.com/jmespath/go-jmespath",
     "github.com/json-iterator/go",
     "github.com/satori/go.uuid",
