@@ -78,6 +78,7 @@ type ModifyInstanceRequest struct {
 	*requests.RpcRequest
 	ProductCode      string                     `position:"Query" name:"ProductCode"`
 	InstanceId       string                     `position:"Query" name:"InstanceId"`
+	ClientToken      string                     `position:"Query" name:"ClientToken"`
 	SubscriptionType string                     `position:"Query" name:"SubscriptionType"`
 	ModifyType       string                     `position:"Query" name:"ModifyType"`
 	Parameter        *[]ModifyInstanceParameter `position:"Query" name:"Parameter"  type:"Repeated"`

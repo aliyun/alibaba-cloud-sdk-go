@@ -1,3 +1,6 @@
+2019-05-05 Version: 1.58.8
+1, CreateInstance add ClientToken parameter.
+
 2019-04-29 Version: 1.58.7
 1, add new api
 

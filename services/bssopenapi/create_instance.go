@@ -78,6 +78,7 @@ type CreateInstanceRequest struct {
 	*requests.RpcRequest
 	ProductCode      string                     `position:"Query" name:"ProductCode"`
 	Period           requests.Integer           `position:"Query" name:"Period"`
+	ClientToken      string                     `position:"Query" name:"ClientToken"`
 	SubscriptionType string                     `position:"Query" name:"SubscriptionType"`
 	RenewPeriod      requests.Integer           `position:"Query" name:"RenewPeriod"`
 	Parameter        *[]CreateInstanceParameter `position:"Query" name:"Parameter"  type:"Repeated"`
