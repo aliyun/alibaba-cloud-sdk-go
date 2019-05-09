@@ -328,3 +328,19 @@ func Test_DdoscooWithServiceCode(t *testing.T) {
 	assert.NotNil(t, err)
 	assert.Contains(t, err.Error(), "InstanceIds is mandatory for this action.")
 }
+
+func Test_RoaRequestWithEcsRole(t *testing.T) {
+	client, err := sdk.NewClientWithEcsRamRole("cn-shenzhen", "test-go-role")
+	assert.Nil(t, err)
+	request := requests.NewCommonRequest()
+	request.Method = "POST"
+	request.Scheme = "https" // https | http
+	request.Domain = "edas.cn-hangzhou.aliyuncs.com"
+	request.Version = "2017-08-01"
+	request.PathPattern = "/pop/v5/resource/region_list"
+
+	request.QueryParams["RegionId"] = "cn-shenzhen"
+	_, err = client.ProcessCommonRequest(request)
+	assert.NotNil(t, err)
+	assert.Contains(t, err.Error(), "refresh Ecs sts token err")
+}
