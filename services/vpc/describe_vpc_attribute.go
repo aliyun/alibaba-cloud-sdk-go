@@ -100,6 +100,7 @@ type DescribeVpcAttributeResponse struct {
 	IsDefault          bool                                 `json:"IsDefault" xml:"IsDefault"`
 	ClassicLinkEnabled bool                                 `json:"ClassicLinkEnabled" xml:"ClassicLinkEnabled"`
 	ResourceGroupId    string                               `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	NetworkAclNum      string                               `json:"NetworkAclNum" xml:"NetworkAclNum"`
 	VSwitchIds         VSwitchIdsInDescribeVpcAttribute     `json:"VSwitchIds" xml:"VSwitchIds"`
 	UserCidrs          UserCidrsInDescribeVpcAttribute      `json:"UserCidrs" xml:"UserCidrs"`
 	AssociatedCens     AssociatedCensInDescribeVpcAttribute `json:"AssociatedCens" xml:"AssociatedCens"`

@@ -80,12 +80,14 @@ type CreateVpnConnectionRequest struct {
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	RemoteSubnet         string           `position:"Query" name:"RemoteSubnet"`
 	EffectImmediately    requests.Boolean `position:"Query" name:"EffectImmediately"`
+	AutoConfigRoute      requests.Boolean `position:"Query" name:"AutoConfigRoute"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	IpsecConfig          string           `position:"Query" name:"IpsecConfig"`
 	VpnGatewayId         string           `position:"Query" name:"VpnGatewayId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	HealthCheckConfig    string           `position:"Query" name:"HealthCheckConfig"`
 	CustomerGatewayId    string           `position:"Query" name:"CustomerGatewayId"`
 	LocalSubnet          string           `position:"Query" name:"LocalSubnet"`
 	Name                 string           `position:"Query" name:"Name"`

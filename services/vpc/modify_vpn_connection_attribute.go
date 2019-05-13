@@ -80,11 +80,13 @@ type ModifyVpnConnectionAttributeRequest struct {
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	RemoteSubnet         string           `position:"Query" name:"RemoteSubnet"`
 	EffectImmediately    requests.Boolean `position:"Query" name:"EffectImmediately"`
+	AutoConfigRoute      requests.Boolean `position:"Query" name:"AutoConfigRoute"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	IpsecConfig          string           `position:"Query" name:"IpsecConfig"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	HealthCheckConfig    string           `position:"Query" name:"HealthCheckConfig"`
 	LocalSubnet          string           `position:"Query" name:"LocalSubnet"`
 	VpnConnectionId      string           `position:"Query" name:"VpnConnectionId"`
 	Name                 string           `position:"Query" name:"Name"`
@@ -93,18 +95,19 @@ type ModifyVpnConnectionAttributeRequest struct {
 // ModifyVpnConnectionAttributeResponse is the response struct for api ModifyVpnConnectionAttribute
 type ModifyVpnConnectionAttributeResponse struct {
 	*responses.BaseResponse
-	RequestId         string      `json:"RequestId" xml:"RequestId"`
-	VpnConnectionId   string      `json:"VpnConnectionId" xml:"VpnConnectionId"`
-	CustomerGatewayId string      `json:"CustomerGatewayId" xml:"CustomerGatewayId"`
-	VpnGatewayId      string      `json:"VpnGatewayId" xml:"VpnGatewayId"`
-	Name              string      `json:"Name" xml:"Name"`
-	Description       string      `json:"Description" xml:"Description"`
-	LocalSubnet       string      `json:"LocalSubnet" xml:"LocalSubnet"`
-	RemoteSubnet      string      `json:"RemoteSubnet" xml:"RemoteSubnet"`
-	CreateTime        int         `json:"CreateTime" xml:"CreateTime"`
-	EffectImmediately bool        `json:"EffectImmediately" xml:"EffectImmediately"`
-	IkeConfig         IkeConfig   `json:"IkeConfig" xml:"IkeConfig"`
-	IpsecConfig       IpsecConfig `json:"IpsecConfig" xml:"IpsecConfig"`
+	RequestId         string         `json:"RequestId" xml:"RequestId"`
+	VpnConnectionId   string         `json:"VpnConnectionId" xml:"VpnConnectionId"`
+	CustomerGatewayId string         `json:"CustomerGatewayId" xml:"CustomerGatewayId"`
+	VpnGatewayId      string         `json:"VpnGatewayId" xml:"VpnGatewayId"`
+	Name              string         `json:"Name" xml:"Name"`
+	Description       string         `json:"Description" xml:"Description"`
+	LocalSubnet       string         `json:"LocalSubnet" xml:"LocalSubnet"`
+	RemoteSubnet      string         `json:"RemoteSubnet" xml:"RemoteSubnet"`
+	CreateTime        int            `json:"CreateTime" xml:"CreateTime"`
+	EffectImmediately bool           `json:"EffectImmediately" xml:"EffectImmediately"`
+	IkeConfig         IkeConfig      `json:"IkeConfig" xml:"IkeConfig"`
+	IpsecConfig       IpsecConfig    `json:"IpsecConfig" xml:"IpsecConfig"`
+	VcoHealthCheck    VcoHealthCheck `json:"VcoHealthCheck" xml:"VcoHealthCheck"`
 }
 
 // CreateModifyVpnConnectionAttributeRequest creates a request to invoke ModifyVpnConnectionAttribute API

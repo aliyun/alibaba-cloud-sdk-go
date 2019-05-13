@@ -32,4 +32,5 @@ type VpnGateway struct {
 	IpsecVpn          string `json:"IpsecVpn" xml:"IpsecVpn"`
 	SslVpn            string `json:"SslVpn" xml:"SslVpn"`
 	SslMaxConnections int    `json:"SslMaxConnections" xml:"SslMaxConnections"`
+	Tag               string `json:"Tag" xml:"Tag"`
 }

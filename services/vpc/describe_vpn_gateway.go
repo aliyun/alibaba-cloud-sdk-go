@@ -102,6 +102,7 @@ type DescribeVpnGatewayResponse struct {
 	IpsecVpn          string `json:"IpsecVpn" xml:"IpsecVpn"`
 	SslVpn            string `json:"SslVpn" xml:"SslVpn"`
 	SslMaxConnections int    `json:"SslMaxConnections" xml:"SslMaxConnections"`
+	Tag               string `json:"Tag" xml:"Tag"`
 }
 
 // CreateDescribeVpnGatewayRequest creates a request to invoke DescribeVpnGateway API

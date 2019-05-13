@@ -77,6 +77,7 @@ func (client *Client) AssociateEipAddressWithCallback(request *AssociateEipAddre
 type AssociateEipAddressRequest struct {
 	*requests.RpcRequest
 	PrivateIpAddress     string           `position:"Query" name:"PrivateIpAddress"`
+	Mode                 string           `position:"Query" name:"Mode"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`

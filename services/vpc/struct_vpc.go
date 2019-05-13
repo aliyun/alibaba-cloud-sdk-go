@@ -27,6 +27,7 @@ type Vpc struct {
 	VRouterId       string                   `json:"VRouterId" xml:"VRouterId"`
 	Description     string                   `json:"Description" xml:"Description"`
 	IsDefault       bool                     `json:"IsDefault" xml:"IsDefault"`
+	NetworkAclNum   string                   `json:"NetworkAclNum" xml:"NetworkAclNum"`
 	ResourceGroupId string                   `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	VSwitchIds      VSwitchIdsInDescribeVpcs `json:"VSwitchIds" xml:"VSwitchIds"`
 	UserCidrs       UserCidrsInDescribeVpcs  `json:"UserCidrs" xml:"UserCidrs"`
