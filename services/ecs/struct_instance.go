@@ -68,6 +68,7 @@ type Instance struct {
 	EipAddress                 EipAddress                           `json:"EipAddress" xml:"EipAddress"`
 	EcsCapacityReservationAttr EcsCapacityReservationAttr           `json:"EcsCapacityReservationAttr" xml:"EcsCapacityReservationAttr"`
 	DedicatedHostAttribute     DedicatedHostAttribute               `json:"DedicatedHostAttribute" xml:"DedicatedHostAttribute"`
+	DedicatedInstanceAttribute DedicatedInstanceAttribute           `json:"DedicatedInstanceAttribute" xml:"DedicatedInstanceAttribute"`
 	VpcAttributes              VpcAttributes                        `json:"VpcAttributes" xml:"VpcAttributes"`
 	NetworkInterfaces          NetworkInterfacesInDescribeInstances `json:"NetworkInterfaces" xml:"NetworkInterfaces"`
 	OperationLocks             OperationLocksInDescribeInstances    `json:"OperationLocks" xml:"OperationLocks"`

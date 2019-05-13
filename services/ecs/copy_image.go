@@ -85,6 +85,7 @@ type CopyImageRequest struct {
 	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
 	Encrypted              requests.Boolean `position:"Query" name:"Encrypted"`
 	Tag                    *[]CopyImageTag  `position:"Query" name:"Tag"  type:"Repeated"`
+	KMSKeyId               string           `position:"Query" name:"KMSKeyId"`
 	DestinationDescription string           `position:"Query" name:"DestinationDescription"`
 }
 

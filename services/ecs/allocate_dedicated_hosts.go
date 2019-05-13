@@ -95,6 +95,7 @@ type AllocateDedicatedHostsRequest struct {
 	AutoRenew                      requests.Boolean             `position:"Query" name:"AutoRenew"`
 	NetworkAttributesSlbUdpTimeout requests.Integer             `position:"Query" name:"NetworkAttributes.SlbUdpTimeout"`
 	ZoneId                         string                       `position:"Query" name:"ZoneId"`
+	AutoPlacement                  string                       `position:"Query" name:"AutoPlacement"`
 	ChargeType                     string                       `position:"Query" name:"ChargeType"`
 	NetworkAttributesUdpTimeout    requests.Integer             `position:"Query" name:"NetworkAttributes.UdpTimeout"`
 }

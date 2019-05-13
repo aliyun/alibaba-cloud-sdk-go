@@ -130,6 +130,7 @@ type RunInstancesRequest struct {
 	AutoReleaseTime               string                          `position:"Query" name:"AutoReleaseTime"`
 	DedicatedHostId               string                          `position:"Query" name:"DedicatedHostId"`
 	CreditSpecification           string                          `position:"Query" name:"CreditSpecification"`
+	SecurityGroupIds              *[]string                       `position:"Query" name:"SecurityGroupIds"  type:"Repeated"`
 	DataDisk                      *[]RunInstancesDataDisk         `position:"Query" name:"DataDisk"  type:"Repeated"`
 	LaunchTemplateVersion         requests.Integer                `position:"Query" name:"LaunchTemplateVersion"`
 	SystemDiskSize                string                          `position:"Query" name:"SystemDisk.Size"`

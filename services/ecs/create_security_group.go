@@ -83,6 +83,7 @@ type CreateSecurityGroupRequest struct {
 	Description          string                    `position:"Query" name:"Description"`
 	OwnerId              requests.Integer          `position:"Query" name:"OwnerId"`
 	SecurityGroupName    string                    `position:"Query" name:"SecurityGroupName"`
+	SecurityGroupType    string                    `position:"Query" name:"SecurityGroupType"`
 	ResourceGroupId      string                    `position:"Query" name:"ResourceGroupId"`
 	VpcId                string                    `position:"Query" name:"VpcId"`
 	Tag                  *[]CreateSecurityGroupTag `position:"Query" name:"Tag"  type:"Repeated"`

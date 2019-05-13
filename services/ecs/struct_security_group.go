@@ -22,6 +22,7 @@ type SecurityGroup struct {
 	SecurityGroupName       string                       `json:"SecurityGroupName" xml:"SecurityGroupName"`
 	VpcId                   string                       `json:"VpcId" xml:"VpcId"`
 	CreationTime            string                       `json:"CreationTime" xml:"CreationTime"`
+	SecurityGroupType       string                       `json:"SecurityGroupType" xml:"SecurityGroupType"`
 	AvailableInstanceAmount int                          `json:"AvailableInstanceAmount" xml:"AvailableInstanceAmount"`
 	EcsCount                int                          `json:"EcsCount" xml:"EcsCount"`
 	ResourceGroupId         string                       `json:"ResourceGroupId" xml:"ResourceGroupId"`

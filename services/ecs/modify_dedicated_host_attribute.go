@@ -85,6 +85,7 @@ type ModifyDedicatedHostAttributeRequest struct {
 	DedicatedHostId                string           `position:"Query" name:"DedicatedHostId"`
 	OwnerId                        requests.Integer `position:"Query" name:"OwnerId"`
 	NetworkAttributesSlbUdpTimeout requests.Integer `position:"Query" name:"NetworkAttributes.SlbUdpTimeout"`
+	AutoPlacement                  string           `position:"Query" name:"AutoPlacement"`
 	NetworkAttributesUdpTimeout    requests.Integer `position:"Query" name:"NetworkAttributes.UdpTimeout"`
 }
 

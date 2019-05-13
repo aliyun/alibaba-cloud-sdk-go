@@ -18,6 +18,7 @@ package ecs
 // DedicatedHost is a nested struct in ecs response
 type DedicatedHost struct {
 	DedicatedHostId               string                                                `json:"DedicatedHostId" xml:"DedicatedHostId"`
+	AutoPlacement                 string                                                `json:"AutoPlacement" xml:"AutoPlacement"`
 	RegionId                      string                                                `json:"RegionId" xml:"RegionId"`
 	ZoneId                        string                                                `json:"ZoneId" xml:"ZoneId"`
 	DedicatedHostName             string                                                `json:"DedicatedHostName" xml:"DedicatedHostName"`

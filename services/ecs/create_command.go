@@ -86,6 +86,7 @@ type CreateCommandRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	Name                 string           `position:"Query" name:"Name"`
+	EnableParameter      requests.Boolean `position:"Query" name:"EnableParameter"`
 }
 
 // CreateCommandResponse is the response struct for api CreateCommand

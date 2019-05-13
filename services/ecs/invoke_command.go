@@ -76,14 +76,15 @@ func (client *Client) InvokeCommandWithCallback(request *InvokeCommandRequest, c
 // InvokeCommandRequest is the request struct for api InvokeCommand
 type InvokeCommandRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	CommandId            string           `position:"Query" name:"CommandId"`
-	Frequency            string           `position:"Query" name:"Frequency"`
-	Timed                requests.Boolean `position:"Query" name:"Timed"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	InstanceId           *[]string        `position:"Query" name:"InstanceId"  type:"Repeated"`
+	ResourceOwnerId      requests.Integer       `position:"Query" name:"ResourceOwnerId"`
+	CommandId            string                 `position:"Query" name:"CommandId"`
+	Frequency            string                 `position:"Query" name:"Frequency"`
+	Timed                requests.Boolean       `position:"Query" name:"Timed"`
+	ResourceOwnerAccount string                 `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string                 `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer       `position:"Query" name:"OwnerId"`
+	InstanceId           *[]string              `position:"Query" name:"InstanceId"  type:"Repeated"`
+	Parameters           map[string]interface{} `position:"Query" name:"Parameters"`
 }
 
 // InvokeCommandResponse is the response struct for api InvokeCommand
