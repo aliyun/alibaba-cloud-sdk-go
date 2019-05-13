@@ -93,6 +93,7 @@ type CreateRestoreTaskRequest struct {
 	DestinationEndpointUserName     string           `position:"Query" name:"DestinationEndpointUserName"`
 	RestoreObjects                  string           `position:"Query" name:"RestoreObjects"`
 	RestoreTaskName                 string           `position:"Query" name:"RestoreTaskName"`
+	DuplicateConflict               string           `position:"Query" name:"DuplicateConflict"`
 	DestinationEndpointPassword     string           `position:"Query" name:"DestinationEndpointPassword"`
 }
 
