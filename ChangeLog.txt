@@ -1,3 +1,6 @@
+2019-05-14 Version: 1.60.6
+1, Support body detect.
+
 2019-05-14 Version: 1.60.5
 1, support body detect
 
