@@ -106,6 +106,7 @@ type RunInstancesRequest struct {
 	ZoneId                        string                          `position:"Query" name:"ZoneId"`
 	Ipv6Address                   *[]string                       `position:"Query" name:"Ipv6Address"  type:"Repeated"`
 	InternetMaxBandwidthIn        requests.Integer                `position:"Query" name:"InternetMaxBandwidthIn"`
+	Affinity                      string                          `position:"Query" name:"Affinity"`
 	ImageId                       string                          `position:"Query" name:"ImageId"`
 	SpotInterruptionBehavior      string                          `position:"Query" name:"SpotInterruptionBehavior"`
 	ClientToken                   string                          `position:"Query" name:"ClientToken"`
@@ -125,6 +126,7 @@ type RunInstancesRequest struct {
 	Amount                        requests.Integer                `position:"Query" name:"Amount"`
 	ResourceOwnerAccount          string                          `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount                  string                          `position:"Query" name:"OwnerAccount"`
+	Tenancy                       string                          `position:"Query" name:"Tenancy"`
 	SystemDiskDiskName            string                          `position:"Query" name:"SystemDisk.DiskName"`
 	RamRoleName                   string                          `position:"Query" name:"RamRoleName"`
 	AutoReleaseTime               string                          `position:"Query" name:"AutoReleaseTime"`

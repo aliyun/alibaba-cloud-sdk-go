@@ -87,7 +87,7 @@ type DescribeSnapshotsUsageResponse struct {
 	*responses.BaseResponse
 	RequestId     string `json:"RequestId" xml:"RequestId"`
 	SnapshotCount int    `json:"SnapshotCount" xml:"SnapshotCount"`
-	SnapshotSize  int    `json:"SnapshotSize" xml:"SnapshotSize"`
+	SnapshotSize  int64  `json:"SnapshotSize" xml:"SnapshotSize"`
 }
 
 // CreateDescribeSnapshotsUsageRequest creates a request to invoke DescribeSnapshotsUsage API

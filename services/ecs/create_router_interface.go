@@ -108,7 +108,7 @@ type CreateRouterInterfaceResponse struct {
 	*responses.BaseResponse
 	RequestId         string `json:"RequestId" xml:"RequestId"`
 	RouterInterfaceId string `json:"RouterInterfaceId" xml:"RouterInterfaceId"`
-	OrderId           int    `json:"OrderId" xml:"OrderId"`
+	OrderId           int64  `json:"OrderId" xml:"OrderId"`
 }
 
 // CreateCreateRouterInterfaceRequest creates a request to invoke CreateRouterInterface API

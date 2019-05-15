@@ -152,7 +152,7 @@ type CreateLaunchTemplateVersionDataDisk struct {
 type CreateLaunchTemplateVersionResponse struct {
 	*responses.BaseResponse
 	RequestId                   string `json:"RequestId" xml:"RequestId"`
-	LaunchTemplateVersionNumber int    `json:"LaunchTemplateVersionNumber" xml:"LaunchTemplateVersionNumber"`
+	LaunchTemplateVersionNumber int64  `json:"LaunchTemplateVersionNumber" xml:"LaunchTemplateVersionNumber"`
 }
 
 // CreateCreateLaunchTemplateVersionRequest creates a request to invoke CreateLaunchTemplateVersion API

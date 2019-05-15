@@ -102,6 +102,7 @@ type CreateInstanceRequest struct {
 	ZoneId                        string                    `position:"Query" name:"ZoneId"`
 	InternetMaxBandwidthIn        requests.Integer          `position:"Query" name:"InternetMaxBandwidthIn"`
 	UseAdditionalService          requests.Boolean          `position:"Query" name:"UseAdditionalService"`
+	Affinity                      string                    `position:"Query" name:"Affinity"`
 	ImageId                       string                    `position:"Query" name:"ImageId"`
 	ClientToken                   string                    `position:"Query" name:"ClientToken"`
 	VlanId                        string                    `position:"Query" name:"VlanId"`
@@ -121,6 +122,7 @@ type CreateInstanceRequest struct {
 	InnerIpAddress                string                    `position:"Query" name:"InnerIpAddress"`
 	ResourceOwnerAccount          string                    `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount                  string                    `position:"Query" name:"OwnerAccount"`
+	Tenancy                       string                    `position:"Query" name:"Tenancy"`
 	SystemDiskDiskName            string                    `position:"Query" name:"SystemDisk.DiskName"`
 	RamRoleName                   string                    `position:"Query" name:"RamRoleName"`
 	DedicatedHostId               string                    `position:"Query" name:"DedicatedHostId"`

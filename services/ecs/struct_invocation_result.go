@@ -23,5 +23,5 @@ type InvocationResult struct {
 	FinishedTime       string `json:"FinishedTime" xml:"FinishedTime"`
 	Output             string `json:"Output" xml:"Output"`
 	InvokeRecordStatus string `json:"InvokeRecordStatus" xml:"InvokeRecordStatus"`
-	ExitCode           int    `json:"ExitCode" xml:"ExitCode"`
+	ExitCode           int64  `json:"ExitCode" xml:"ExitCode"`
 }

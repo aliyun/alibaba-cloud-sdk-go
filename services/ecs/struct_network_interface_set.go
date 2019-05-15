@@ -30,7 +30,7 @@ type NetworkInterfaceSet struct {
 	InstanceId           string                                      `json:"InstanceId" xml:"InstanceId"`
 	CreationTime         string                                      `json:"CreationTime" xml:"CreationTime"`
 	ResourceGroupId      string                                      `json:"ResourceGroupId" xml:"ResourceGroupId"`
-	ServiceID            int                                         `json:"ServiceID" xml:"ServiceID"`
+	ServiceID            int64                                       `json:"ServiceID" xml:"ServiceID"`
 	ServiceManaged       bool                                        `json:"ServiceManaged" xml:"ServiceManaged"`
 	SecurityGroupIds     SecurityGroupIdsInDescribeNetworkInterfaces `json:"SecurityGroupIds" xml:"SecurityGroupIds"`
 	AssociatedPublicIp   AssociatedPublicIp                          `json:"AssociatedPublicIp" xml:"AssociatedPublicIp"`

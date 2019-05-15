@@ -92,9 +92,9 @@ type DescribeCommandsRequest struct {
 type DescribeCommandsResponse struct {
 	*responses.BaseResponse
 	RequestId  string   `json:"RequestId" xml:"RequestId"`
-	TotalCount int      `json:"TotalCount" xml:"TotalCount"`
-	PageNumber int      `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int      `json:"PageSize" xml:"PageSize"`
+	TotalCount int64    `json:"TotalCount" xml:"TotalCount"`
+	PageNumber int64    `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int64    `json:"PageSize" xml:"PageSize"`
 	Commands   Commands `json:"Commands" xml:"Commands"`
 }
 

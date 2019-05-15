@@ -56,7 +56,7 @@ type Instance struct {
 	CreationTime               string                               `json:"CreationTime" xml:"CreationTime"`
 	KeyPairName                string                               `json:"KeyPairName" xml:"KeyPairName"`
 	HpcClusterId               string                               `json:"HpcClusterId" xml:"HpcClusterId"`
-	LocalStorageCapacity       int                                  `json:"LocalStorageCapacity" xml:"LocalStorageCapacity"`
+	LocalStorageCapacity       int64                                `json:"LocalStorageCapacity" xml:"LocalStorageCapacity"`
 	VlanId                     string                               `json:"VlanId" xml:"VlanId"`
 	StoppedMode                string                               `json:"StoppedMode" xml:"StoppedMode"`
 	SpotStrategy               string                               `json:"SpotStrategy" xml:"SpotStrategy"`
