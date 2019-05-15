@@ -1,4 +1,4 @@
-[← 并发](8-Concurrent-CN.md) | 异步调用[(English)](9-Asynchronous-EN.md) | [包管理 →](10-Package-Management-CN.md)
+[← 并发](8-Concurrent-CN.md) | 异步调用[(English)](9-Asynchronous-EN.md) | [首页 →](../README-CN.md)
 ***
 ## 异步调用
 
@@ -27,4 +27,4 @@ Alibaba Cloud SDK for Go 支持两种方式的异步调用：
     ```
 
 ***
-[← 并发](8-Concurrent-CN.md) | 异步调用[(English)](9-Asynchronous-EN.md) | [包管理 →](10-Package-Management-CN.md)
+[← 并发](8-Concurrent-CN.md) | 异步调用[(English)](9-Asynchronous-EN.md) | [首页 →](../README-CN.md)

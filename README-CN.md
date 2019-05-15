@@ -112,7 +112,6 @@ func main() {
 * [Logger](docs/7-Logger-CN.md)
 * [Concurrent](docs/8-Concurrent-CN.md)
 * [Asynchronous Call](docs/9-Asynchronous-CN.md)
-* [Package Management](docs/10-Package-Management-CN.md)
 
 
 ## 问题
