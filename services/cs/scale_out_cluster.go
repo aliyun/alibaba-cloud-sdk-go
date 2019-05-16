@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// ScaleCluster invokes the cs.ScaleCluster API synchronously
-// api document: https://help.aliyun.com/api/cs/scalecluster.html
-func (client *Client) ScaleCluster(request *ScaleClusterRequest) (response *ScaleClusterResponse, err error) {
-	response = CreateScaleClusterResponse()
+// ScaleOutCluster invokes the cs.ScaleOutCluster API synchronously
+// api document: https://help.aliyun.com/api/cs/scaleoutcluster.html
+func (client *Client) ScaleOutCluster(request *ScaleOutClusterRequest) (response *ScaleOutClusterResponse, err error) {
+	response = CreateScaleOutClusterResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// ScaleClusterWithChan invokes the cs.ScaleCluster API asynchronously
-// api document: https://help.aliyun.com/api/cs/scalecluster.html
+// ScaleOutClusterWithChan invokes the cs.ScaleOutCluster API asynchronously
+// api document: https://help.aliyun.com/api/cs/scaleoutcluster.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) ScaleClusterWithChan(request *ScaleClusterRequest) (<-chan *ScaleClusterResponse, <-chan error) {
-	responseChan := make(chan *ScaleClusterResponse, 1)
+func (client *Client) ScaleOutClusterWithChan(request *ScaleOutClusterRequest) (<-chan *ScaleOutClusterResponse, <-chan error) {
+	responseChan := make(chan *ScaleOutClusterResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.ScaleCluster(request)
+		response, err := client.ScaleOutCluster(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) ScaleClusterWithChan(request *ScaleClusterRequest) (<-chan
 	return responseChan, errChan
 }
 
-// ScaleClusterWithCallback invokes the cs.ScaleCluster API asynchronously
-// api document: https://help.aliyun.com/api/cs/scalecluster.html
+// ScaleOutClusterWithCallback invokes the cs.ScaleOutCluster API asynchronously
+// api document: https://help.aliyun.com/api/cs/scaleoutcluster.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) ScaleClusterWithCallback(request *ScaleClusterRequest, callback func(response *ScaleClusterResponse, err error)) <-chan int {
+func (client *Client) ScaleOutClusterWithCallback(request *ScaleOutClusterRequest, callback func(response *ScaleOutClusterResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *ScaleClusterResponse
+		var response *ScaleOutClusterResponse
 		var err error
 		defer close(result)
-		response, err = client.ScaleCluster(request)
+		response, err = client.ScaleOutCluster(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,31 +73,31 @@ func (client *Client) ScaleClusterWithCallback(request *ScaleClusterRequest, cal
 	return result
 }
 
-// ScaleClusterRequest is the request struct for api ScaleCluster
-type ScaleClusterRequest struct {
+// ScaleOutClusterRequest is the request struct for api ScaleOutCluster
+type ScaleOutClusterRequest struct {
 	*requests.RoaRequest
 	ClusterId string `position:"Path" name:"ClusterId"`
 }
 
-// ScaleClusterResponse is the response struct for api ScaleCluster
-type ScaleClusterResponse struct {
+// ScaleOutClusterResponse is the response struct for api ScaleOutCluster
+type ScaleOutClusterResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateScaleClusterRequest creates a request to invoke ScaleCluster API
-func CreateScaleClusterRequest() (request *ScaleClusterRequest) {
-	request = &ScaleClusterRequest{
+// CreateScaleOutClusterRequest creates a request to invoke ScaleOutCluster API
+func CreateScaleOutClusterRequest() (request *ScaleOutClusterRequest) {
+	request = &ScaleOutClusterRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("CS", "2015-12-15", "ScaleCluster", "/clusters/[ClusterId]", "", "")
-	request.Method = requests.PUT
+	request.InitWithApiInfo("CS", "2015-12-15", "ScaleOutCluster", "/api/v2/clusters/[ClusterId]", "", "")
+	request.Method = requests.POST
 	return
 }
 
-// CreateScaleClusterResponse creates a response to parse from ScaleCluster response
-func CreateScaleClusterResponse() (response *ScaleClusterResponse) {
-	response = &ScaleClusterResponse{
+// CreateScaleOutClusterResponse creates a response to parse from ScaleOutCluster response
+func CreateScaleOutClusterResponse() (response *ScaleOutClusterResponse) {
+	response = &ScaleOutClusterResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

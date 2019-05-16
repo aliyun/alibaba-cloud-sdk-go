@@ -76,12 +76,14 @@ func (client *Client) DescribeClusterUserKubeconfigWithCallback(request *Describ
 // DescribeClusterUserKubeconfigRequest is the request struct for api DescribeClusterUserKubeconfig
 type DescribeClusterUserKubeconfigRequest struct {
 	*requests.RoaRequest
-	ClusterId string `position:"Path" name:"ClusterId"`
+	PrivateIpAddress requests.Boolean `position:"Query" name:"PrivateIpAddress"`
+	ClusterId        string           `position:"Path" name:"ClusterId"`
 }
 
 // DescribeClusterUserKubeconfigResponse is the response struct for api DescribeClusterUserKubeconfig
 type DescribeClusterUserKubeconfigResponse struct {
 	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDescribeClusterUserKubeconfigRequest creates a request to invoke DescribeClusterUserKubeconfig API
@@ -89,7 +91,7 @@ func CreateDescribeClusterUserKubeconfigRequest() (request *DescribeClusterUserK
 	request = &DescribeClusterUserKubeconfigRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("CS", "2015-12-15", "DescribeClusterUserKubeconfig", "/k8s/[ClusterId]/user_config", "cs", "openAPI")
+	request.InitWithApiInfo("CS", "2015-12-15", "DescribeClusterUserKubeconfig", "/k8s/[ClusterId]/user_config", "", "")
 	request.Method = requests.GET
 	return
 }
