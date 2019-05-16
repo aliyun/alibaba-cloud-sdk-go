@@ -18,9 +18,9 @@ package vod
 // Data is a nested struct in vod response
 type Data struct {
 	Suggestion      string            `json:"Suggestion" xml:"Suggestion"`
-	AbnormalModules string            `json:"AbnormalModules" xml:"AbnormalModules"`
 	Label           string            `json:"Label" xml:"Label"`
+	AbnormalModules string            `json:"AbnormalModules" xml:"AbnormalModules"`
 	VideoResult     VideoResult       `json:"VideoResult" xml:"VideoResult"`
-	ImageResult     []ImageResultItem `json:"ImageResult" xml:"ImageResult"`
 	TextResult      []TextResultItem  `json:"TextResult" xml:"TextResult"`
+	ImageResult     []ImageResultItem `json:"ImageResult" xml:"ImageResult"`
 }

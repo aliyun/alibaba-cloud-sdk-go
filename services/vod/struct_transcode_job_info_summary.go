@@ -21,7 +21,7 @@ type TranscodeJobInfoSummary struct {
 	TranscodeJobStatus  string   `json:"TranscodeJobStatus" xml:"TranscodeJobStatus"`
 	CreationTime        string   `json:"CreationTime" xml:"CreationTime"`
 	CompleteTime        string   `json:"CompleteTime" xml:"CompleteTime"`
-	TranscodeProgress   int      `json:"TranscodeProgress" xml:"TranscodeProgress"`
+	TranscodeProgress   int64    `json:"TranscodeProgress" xml:"TranscodeProgress"`
 	ErrorCode           string   `json:"ErrorCode" xml:"ErrorCode"`
 	ErrorMessage        string   `json:"ErrorMessage" xml:"ErrorMessage"`
 	Definition          string   `json:"Definition" xml:"Definition"`
@@ -32,6 +32,6 @@ type TranscodeJobInfoSummary struct {
 	Fps                 string   `json:"Fps" xml:"Fps"`
 	Format              string   `json:"Format" xml:"Format"`
 	Duration            string   `json:"Duration" xml:"Duration"`
-	Filesize            int      `json:"Filesize" xml:"Filesize"`
+	Filesize            int64    `json:"Filesize" xml:"Filesize"`
 	WatermarkIdList     []string `json:"WatermarkIdList" xml:"WatermarkIdList"`
 }

@@ -87,7 +87,7 @@ type GetAuditHistoryResponse struct {
 	*responses.BaseResponse
 	RequestId string    `json:"RequestId" xml:"RequestId"`
 	Status    string    `json:"Status" xml:"Status"`
-	Total     int       `json:"Total" xml:"Total"`
+	Total     int64     `json:"Total" xml:"Total"`
 	Histories []History `json:"Histories" xml:"Histories"`
 }
 

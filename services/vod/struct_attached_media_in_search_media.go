@@ -30,5 +30,7 @@ type AttachedMediaInSearchMedia struct {
 	StorageLocation  string     `json:"StorageLocation" xml:"StorageLocation"`
 	RegionId         string     `json:"RegionId" xml:"RegionId"`
 	AppId            string     `json:"AppId" xml:"AppId"`
+	Icon             string     `json:"Icon" xml:"Icon"`
+	OnlineStatus     string     `json:"OnlineStatus" xml:"OnlineStatus"`
 	Categories       []Category `json:"Categories" xml:"Categories"`
 }

@@ -99,6 +99,7 @@ type CreateUploadImageResponse struct {
 	ImageURL      string `json:"ImageURL" xml:"ImageURL"`
 	UploadAddress string `json:"UploadAddress" xml:"UploadAddress"`
 	UploadAuth    string `json:"UploadAuth" xml:"UploadAuth"`
+	FileURL       string `json:"FileURL" xml:"FileURL"`
 }
 
 // CreateCreateUploadImageRequest creates a request to invoke CreateUploadImage API

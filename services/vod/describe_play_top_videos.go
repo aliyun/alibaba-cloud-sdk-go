@@ -86,9 +86,9 @@ type DescribePlayTopVideosRequest struct {
 type DescribePlayTopVideosResponse struct {
 	*responses.BaseResponse
 	RequestId     string        `json:"RequestId" xml:"RequestId"`
-	PageNo        int           `json:"PageNo" xml:"PageNo"`
-	PageSize      int           `json:"PageSize" xml:"PageSize"`
-	TotalNum      int           `json:"TotalNum" xml:"TotalNum"`
+	PageNo        int64         `json:"PageNo" xml:"PageNo"`
+	PageSize      int64         `json:"PageSize" xml:"PageSize"`
+	TotalNum      int64         `json:"TotalNum" xml:"TotalNum"`
 	TopPlayVideos TopPlayVideos `json:"TopPlayVideos" xml:"TopPlayVideos"`
 }
 

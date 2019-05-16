@@ -29,9 +29,9 @@ type Video struct {
 	RegionId          string      `json:"RegionId" xml:"RegionId"`
 	Duration          float64     `json:"Duration" xml:"Duration"`
 	CateName          string      `json:"CateName" xml:"CateName"`
-	Size              int         `json:"Size" xml:"Size"`
+	Size              int64       `json:"Size" xml:"Size"`
 	Description       string      `json:"Description" xml:"Description"`
-	CateId            int         `json:"CateId" xml:"CateId"`
+	CateId            int64       `json:"CateId" xml:"CateId"`
 	Tags              string      `json:"Tags" xml:"Tags"`
 	PreprocessStatus  string      `json:"PreprocessStatus" xml:"PreprocessStatus"`
 	TranscodeMode     string      `json:"TranscodeMode" xml:"TranscodeMode"`

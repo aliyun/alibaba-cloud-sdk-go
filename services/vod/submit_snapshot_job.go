@@ -81,6 +81,7 @@ type SubmitSnapshotJobRequest struct {
 	Count                requests.Integer `position:"Query" name:"Count"`
 	VideoId              string           `position:"Query" name:"VideoId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	UserData             string           `position:"Query" name:"UserData"`
 	SpecifiedOffsetTime  requests.Integer `position:"Query" name:"SpecifiedOffsetTime"`
 	Width                string           `position:"Query" name:"Width"`
 	Interval             requests.Integer `position:"Query" name:"Interval"`

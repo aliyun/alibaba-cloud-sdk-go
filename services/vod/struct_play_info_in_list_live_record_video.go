@@ -17,16 +17,16 @@ package vod
 
 // PlayInfoInListLiveRecordVideo is a nested struct in vod response
 type PlayInfoInListLiveRecordVideo struct {
-	Width      int    `json:"Width" xml:"Width"`
-	Height     int    `json:"Height" xml:"Height"`
-	Size       int    `json:"Size" xml:"Size"`
+	Width      int64  `json:"Width" xml:"Width"`
+	Height     int64  `json:"Height" xml:"Height"`
+	Size       int64  `json:"Size" xml:"Size"`
 	PlayURL    string `json:"PlayURL" xml:"PlayURL"`
 	Bitrate    string `json:"Bitrate" xml:"Bitrate"`
 	Definition string `json:"Definition" xml:"Definition"`
 	Duration   string `json:"Duration" xml:"Duration"`
 	Format     string `json:"Format" xml:"Format"`
 	Fps        string `json:"Fps" xml:"Fps"`
-	Encrypt    int    `json:"Encrypt" xml:"Encrypt"`
+	Encrypt    int64  `json:"Encrypt" xml:"Encrypt"`
 	Plaintext  string `json:"Plaintext" xml:"Plaintext"`
 	Complexity string `json:"Complexity" xml:"Complexity"`
 	StreamType string `json:"StreamType" xml:"StreamType"`

@@ -21,11 +21,11 @@ type VideoInListLiveRecordVideo struct {
 	Title           string                         `json:"Title" xml:"Title"`
 	Tags            string                         `json:"Tags" xml:"Tags"`
 	Status          string                         `json:"Status" xml:"Status"`
-	Size            int                            `json:"Size" xml:"Size"`
+	Size            int64                          `json:"Size" xml:"Size"`
 	Privilege       int                            `json:"Privilege" xml:"Privilege"`
 	Duration        float64                        `json:"Duration" xml:"Duration"`
 	Description     string                         `json:"Description" xml:"Description"`
-	CustomerId      int                            `json:"CustomerId" xml:"CustomerId"`
+	CustomerId      int64                          `json:"CustomerId" xml:"CustomerId"`
 	CreateTime      string                         `json:"CreateTime" xml:"CreateTime"`
 	CreationTime    string                         `json:"CreationTime" xml:"CreationTime"`
 	ModifyTime      string                         `json:"ModifyTime" xml:"ModifyTime"`

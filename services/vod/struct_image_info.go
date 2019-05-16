@@ -23,11 +23,12 @@ type ImageInfo struct {
 	ImageType       string    `json:"ImageType" xml:"ImageType"`
 	Tags            string    `json:"Tags" xml:"Tags"`
 	URL             string    `json:"URL" xml:"URL"`
-	CateId          int       `json:"CateId" xml:"CateId"`
+	CateId          int64     `json:"CateId" xml:"CateId"`
 	CateName        string    `json:"CateName" xml:"CateName"`
 	Description     string    `json:"Description" xml:"Description"`
 	StorageLocation string    `json:"StorageLocation" xml:"StorageLocation"`
 	Status          string    `json:"Status" xml:"Status"`
 	AppId           string    `json:"AppId" xml:"AppId"`
+	RegionId        string    `json:"RegionId" xml:"RegionId"`
 	Mezzanine       Mezzanine `json:"Mezzanine" xml:"Mezzanine"`
 }

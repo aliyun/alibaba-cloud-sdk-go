@@ -90,7 +90,7 @@ type GetCategoriesRequest struct {
 type GetCategoriesResponse struct {
 	*responses.BaseResponse
 	RequestId     string        `json:"RequestId" xml:"RequestId"`
-	SubTotal      int           `json:"SubTotal" xml:"SubTotal"`
+	SubTotal      int64         `json:"SubTotal" xml:"SubTotal"`
 	Category      Category      `json:"Category" xml:"Category"`
 	SubCategories SubCategories `json:"SubCategories" xml:"SubCategories"`
 }

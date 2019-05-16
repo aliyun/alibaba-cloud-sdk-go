@@ -18,9 +18,9 @@ package vod
 // Category is a nested struct in vod response
 type Category struct {
 	CateName string `json:"CateName" xml:"CateName"`
-	Level    int    `json:"Level" xml:"Level"`
-	SubTotal int    `json:"SubTotal" xml:"SubTotal"`
-	ParentId int    `json:"ParentId" xml:"ParentId"`
-	CateId   int    `json:"CateId" xml:"CateId"`
+	Level    int64  `json:"Level" xml:"Level"`
+	SubTotal int64  `json:"SubTotal" xml:"SubTotal"`
+	ParentId int64  `json:"ParentId" xml:"ParentId"`
+	CateId   int64  `json:"CateId" xml:"CateId"`
 	Type     string `json:"Type" xml:"Type"`
 }

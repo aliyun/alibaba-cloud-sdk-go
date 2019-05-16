@@ -82,6 +82,7 @@ type AttachAppPolicyToIdentityRequest struct {
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	AppId                string           `position:"Query" name:"AppId"`
 	PolicyNames          string           `position:"Query" name:"PolicyNames"`
+	ResourceRealOwnerId  string           `position:"Query" name:"ResourceRealOwnerId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 

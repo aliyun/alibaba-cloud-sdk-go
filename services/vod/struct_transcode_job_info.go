@@ -22,7 +22,7 @@ type TranscodeJobInfo struct {
 	TranscodeJobStatus  string     `json:"TranscodeJobStatus" xml:"TranscodeJobStatus"`
 	CreationTime        string     `json:"CreationTime" xml:"CreationTime"`
 	CompleteTime        string     `json:"CompleteTime" xml:"CompleteTime"`
-	TranscodeProgress   int        `json:"TranscodeProgress" xml:"TranscodeProgress"`
+	TranscodeProgress   int64      `json:"TranscodeProgress" xml:"TranscodeProgress"`
 	InputFileUrl        string     `json:"InputFileUrl" xml:"InputFileUrl"`
 	Priority            string     `json:"Priority" xml:"Priority"`
 	ErrorCode           string     `json:"ErrorCode" xml:"ErrorCode"`

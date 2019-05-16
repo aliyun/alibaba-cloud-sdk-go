@@ -22,9 +22,9 @@ type MezzanineInGetMezzanineInfo struct {
 	CreationTime     string        `json:"CreationTime" xml:"CreationTime"`
 	Duration         string        `json:"Duration" xml:"Duration"`
 	Fps              string        `json:"Fps" xml:"Fps"`
-	Height           int           `json:"Height" xml:"Height"`
-	Width            int           `json:"Width" xml:"Width"`
-	Size             int           `json:"Size" xml:"Size"`
+	Height           int64         `json:"Height" xml:"Height"`
+	Width            int64         `json:"Width" xml:"Width"`
+	Size             int64         `json:"Size" xml:"Size"`
 	Status           string        `json:"Status" xml:"Status"`
 	FileURL          string        `json:"FileURL" xml:"FileURL"`
 	FileName         string        `json:"FileName" xml:"FileName"`

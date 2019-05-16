@@ -23,7 +23,7 @@ type OutputFile struct {
 	Fps                string   `json:"Fps" xml:"Fps"`
 	Format             string   `json:"Format" xml:"Format"`
 	Duration           string   `json:"Duration" xml:"Duration"`
-	Filesize           int      `json:"Filesize" xml:"Filesize"`
+	Filesize           int64    `json:"Filesize" xml:"Filesize"`
 	Encryption         string   `json:"Encryption" xml:"Encryption"`
 	AudioStreamList    string   `json:"AudioStreamList" xml:"AudioStreamList"`
 	VideoStreamList    string   `json:"VideoStreamList" xml:"VideoStreamList"`

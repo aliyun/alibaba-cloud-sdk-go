@@ -17,6 +17,6 @@ package vod
 
 // Snapshot is a nested struct in vod response
 type Snapshot struct {
-	Index int    `json:"Index" xml:"Index"`
+	Index int64  `json:"Index" xml:"Index"`
 	Url   string `json:"Url" xml:"Url"`
 }

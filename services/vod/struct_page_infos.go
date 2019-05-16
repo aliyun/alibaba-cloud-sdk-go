@@ -17,7 +17,7 @@ package vod
 
 // PageInfos is a nested struct in vod response
 type PageInfos struct {
-	PageNumber int `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int `json:"PageSize" xml:"PageSize"`
-	Total      int `json:"Total" xml:"Total"`
+	PageNumber int64 `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int64 `json:"PageSize" xml:"PageSize"`
+	Total      int64 `json:"Total" xml:"Total"`
 }

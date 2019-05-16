@@ -17,7 +17,7 @@ package vod
 
 // MediaSnapshot is a nested struct in vod response
 type MediaSnapshot struct {
-	Total        int                      `json:"Total" xml:"Total"`
+	Total        int64                    `json:"Total" xml:"Total"`
 	Regular      string                   `json:"Regular" xml:"Regular"`
 	CreationTime string                   `json:"CreationTime" xml:"CreationTime"`
 	JobId        string                   `json:"JobId" xml:"JobId"`

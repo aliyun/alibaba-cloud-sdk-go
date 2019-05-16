@@ -22,7 +22,7 @@ type PlayInfo struct {
 	Format     string `json:"Format" xml:"Format"`
 	Fps        string `json:"Fps" xml:"Fps"`
 	Bitrate    string `json:"Bitrate" xml:"Bitrate"`
-	Encrypt    int    `json:"Encrypt" xml:"Encrypt"`
+	Encrypt    int64  `json:"Encrypt" xml:"Encrypt"`
 	Rand       string `json:"Rand" xml:"Rand"`
 	StreamType string `json:"StreamType" xml:"StreamType"`
 	Width      string `json:"Width" xml:"Width"`

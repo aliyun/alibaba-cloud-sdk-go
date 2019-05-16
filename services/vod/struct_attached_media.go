@@ -21,10 +21,12 @@ type AttachedMedia struct {
 	Title            string     `json:"Title" xml:"Title"`
 	ModificationTime string     `json:"ModificationTime" xml:"ModificationTime"`
 	CreationTime     string     `json:"CreationTime" xml:"CreationTime"`
+	Icon             string     `json:"Icon" xml:"Icon"`
 	URL              string     `json:"URL" xml:"URL"`
 	AppId            string     `json:"AppId" xml:"AppId"`
-	FileSize         int        `json:"FileSize" xml:"FileSize"`
-	StorageLocation  int        `json:"StorageLocation" xml:"StorageLocation"`
+	RegionId         string     `json:"RegionId" xml:"RegionId"`
+	FileSize         int64      `json:"FileSize" xml:"FileSize"`
+	StorageLocation  int64      `json:"StorageLocation" xml:"StorageLocation"`
 	Status           string     `json:"Status" xml:"Status"`
 	MediaId          string     `json:"MediaId" xml:"MediaId"`
 	Description      string     `json:"Description" xml:"Description"`
