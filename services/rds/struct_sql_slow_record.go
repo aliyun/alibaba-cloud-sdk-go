@@ -20,9 +20,9 @@ type SQLSlowRecord struct {
 	HostAddress        string `json:"HostAddress" xml:"HostAddress"`
 	DBName             string `json:"DBName" xml:"DBName"`
 	SQLText            string `json:"SQLText" xml:"SQLText"`
-	QueryTimes         int    `json:"QueryTimes" xml:"QueryTimes"`
-	LockTimes          int    `json:"LockTimes" xml:"LockTimes"`
-	ParseRowCounts     int    `json:"ParseRowCounts" xml:"ParseRowCounts"`
-	ReturnRowCounts    int    `json:"ReturnRowCounts" xml:"ReturnRowCounts"`
+	QueryTimes         int64  `json:"QueryTimes" xml:"QueryTimes"`
+	LockTimes          int64  `json:"LockTimes" xml:"LockTimes"`
+	ParseRowCounts     int64  `json:"ParseRowCounts" xml:"ParseRowCounts"`
+	ReturnRowCounts    int64  `json:"ReturnRowCounts" xml:"ReturnRowCounts"`
 	ExecutionStartTime string `json:"ExecutionStartTime" xml:"ExecutionStartTime"`
 }

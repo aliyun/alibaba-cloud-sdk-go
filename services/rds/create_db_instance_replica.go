@@ -109,7 +109,7 @@ type CreateDBInstanceReplicaResponse struct {
 	*responses.BaseResponse
 	RequestId    string `json:"RequestId" xml:"RequestId"`
 	DBInstanceId string `json:"DBInstanceId" xml:"DBInstanceId"`
-	OrderId      int    `json:"OrderId" xml:"OrderId"`
+	OrderId      int64  `json:"OrderId" xml:"OrderId"`
 	ReplicaId    string `json:"ReplicaId" xml:"ReplicaId"`
 	WorkflowId   string `json:"WorkflowId" xml:"WorkflowId"`
 }

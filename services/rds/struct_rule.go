@@ -18,6 +18,6 @@ package rds
 // Rule is a nested struct in rds response
 type Rule struct {
 	Name        string `json:"Name" xml:"Name"`
-	RuleId      int    `json:"RuleId" xml:"RuleId"`
+	RuleId      int64  `json:"RuleId" xml:"RuleId"`
 	Description string `json:"Description" xml:"Description"`
 }

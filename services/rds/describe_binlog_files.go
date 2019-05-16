@@ -94,7 +94,7 @@ type DescribeBinlogFilesResponse struct {
 	TotalRecordCount int                        `json:"TotalRecordCount" xml:"TotalRecordCount"`
 	PageNumber       int                        `json:"PageNumber" xml:"PageNumber"`
 	PageRecordCount  int                        `json:"PageRecordCount" xml:"PageRecordCount"`
-	TotalFileSize    int                        `json:"TotalFileSize" xml:"TotalFileSize"`
+	TotalFileSize    int64                      `json:"TotalFileSize" xml:"TotalFileSize"`
 	Items            ItemsInDescribeBinlogFiles `json:"Items" xml:"Items"`
 }
 

@@ -98,7 +98,7 @@ type DescribeBackupsResponse struct {
 	TotalRecordCount string                 `json:"TotalRecordCount" xml:"TotalRecordCount"`
 	PageNumber       string                 `json:"PageNumber" xml:"PageNumber"`
 	PageRecordCount  string                 `json:"PageRecordCount" xml:"PageRecordCount"`
-	TotalBackupSize  int                    `json:"TotalBackupSize" xml:"TotalBackupSize"`
+	TotalBackupSize  int64                  `json:"TotalBackupSize" xml:"TotalBackupSize"`
 	Items            ItemsInDescribeBackups `json:"Items" xml:"Items"`
 }
 
