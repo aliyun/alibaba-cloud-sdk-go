@@ -20,4 +20,6 @@ type Region struct {
 	RegionId           string `json:"RegionId" xml:"RegionId"`
 	ClassicUnavailable bool   `json:"ClassicUnavailable" xml:"ClassicUnavailable"`
 	VpcUnavailable     bool   `json:"VpcUnavailable" xml:"VpcUnavailable"`
+	RegionEndpoint     string `json:"RegionEndpoint" xml:"RegionEndpoint"`
+	LocalName          string `json:"LocalName" xml:"LocalName"`
 }

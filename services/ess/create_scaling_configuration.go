@@ -101,6 +101,7 @@ type CreateScalingConfigurationRequest struct {
 	SystemDiskDiskName          string                                      `position:"Query" name:"SystemDisk.DiskName"`
 	RamRoleName                 string                                      `position:"Query" name:"RamRoleName"`
 	OwnerId                     requests.Integer                            `position:"Query" name:"OwnerId"`
+	SecurityGroupIds            *[]string                                   `position:"Query" name:"SecurityGroupIds"  type:"Repeated"`
 	DataDisk                    *[]CreateScalingConfigurationDataDisk       `position:"Query" name:"DataDisk"  type:"Repeated"`
 	ScalingConfigurationName    string                                      `position:"Query" name:"ScalingConfigurationName"`
 	Tags                        string                                      `position:"Query" name:"Tags"`

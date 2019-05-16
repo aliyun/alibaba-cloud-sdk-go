@@ -79,6 +79,7 @@ type ModifyScheduledTaskRequest struct {
 	LaunchTime           string           `position:"Query" name:"LaunchTime"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ScheduledAction      string           `position:"Query" name:"ScheduledAction"`
+	MaxValue             requests.Integer `position:"Query" name:"MaxValue"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	Description          string           `position:"Query" name:"Description"`
@@ -86,6 +87,7 @@ type ModifyScheduledTaskRequest struct {
 	RecurrenceValue      string           `position:"Query" name:"RecurrenceValue"`
 	LaunchExpirationTime requests.Integer `position:"Query" name:"LaunchExpirationTime"`
 	RecurrenceEndTime    string           `position:"Query" name:"RecurrenceEndTime"`
+	MinValue             requests.Integer `position:"Query" name:"MinValue"`
 	ScheduledTaskName    string           `position:"Query" name:"ScheduledTaskName"`
 	TaskEnabled          requests.Boolean `position:"Query" name:"TaskEnabled"`
 	ScheduledTaskId      string           `position:"Query" name:"ScheduledTaskId"`

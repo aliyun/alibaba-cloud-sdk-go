@@ -17,21 +17,26 @@ package ess
 
 // ScalingRule is a nested struct in ess response
 type ScalingRule struct {
-	ScalingRuleId           string          `json:"ScalingRuleId" xml:"ScalingRuleId"`
-	ScalingGroupId          string          `json:"ScalingGroupId" xml:"ScalingGroupId"`
-	ScalingRuleName         string          `json:"ScalingRuleName" xml:"ScalingRuleName"`
-	Cooldown                int             `json:"Cooldown" xml:"Cooldown"`
-	MinAdjustmentMagnitude  int             `json:"MinAdjustmentMagnitude" xml:"MinAdjustmentMagnitude"`
-	AdjustmentType          string          `json:"AdjustmentType" xml:"AdjustmentType"`
-	AdjustmentValue         int             `json:"AdjustmentValue" xml:"AdjustmentValue"`
-	MinSize                 int             `json:"MinSize" xml:"MinSize"`
-	MaxSize                 int             `json:"MaxSize" xml:"MaxSize"`
-	ScalingRuleAri          string          `json:"ScalingRuleAri" xml:"ScalingRuleAri"`
-	ScalingRuleType         string          `json:"ScalingRuleType" xml:"ScalingRuleType"`
-	EstimatedInstanceWarmup int             `json:"EstimatedInstanceWarmup" xml:"EstimatedInstanceWarmup"`
-	MetricName              string          `json:"MetricName" xml:"MetricName"`
-	TargetValue             float64         `json:"TargetValue" xml:"TargetValue"`
-	DisableScaleIn          bool            `json:"DisableScaleIn" xml:"DisableScaleIn"`
-	Alarms                  Alarms          `json:"Alarms" xml:"Alarms"`
-	StepAdjustments         StepAdjustments `json:"StepAdjustments" xml:"StepAdjustments"`
+	ScalingRuleId            string          `json:"ScalingRuleId" xml:"ScalingRuleId"`
+	ScalingGroupId           string          `json:"ScalingGroupId" xml:"ScalingGroupId"`
+	ScalingRuleName          string          `json:"ScalingRuleName" xml:"ScalingRuleName"`
+	Cooldown                 int             `json:"Cooldown" xml:"Cooldown"`
+	MinAdjustmentMagnitude   int             `json:"MinAdjustmentMagnitude" xml:"MinAdjustmentMagnitude"`
+	AdjustmentType           string          `json:"AdjustmentType" xml:"AdjustmentType"`
+	AdjustmentValue          int             `json:"AdjustmentValue" xml:"AdjustmentValue"`
+	MinSize                  int             `json:"MinSize" xml:"MinSize"`
+	MaxSize                  int             `json:"MaxSize" xml:"MaxSize"`
+	ScalingRuleAri           string          `json:"ScalingRuleAri" xml:"ScalingRuleAri"`
+	ScalingRuleType          string          `json:"ScalingRuleType" xml:"ScalingRuleType"`
+	EstimatedInstanceWarmup  int             `json:"EstimatedInstanceWarmup" xml:"EstimatedInstanceWarmup"`
+	MetricName               string          `json:"MetricName" xml:"MetricName"`
+	TargetValue              float64         `json:"TargetValue" xml:"TargetValue"`
+	DisableScaleIn           bool            `json:"DisableScaleIn" xml:"DisableScaleIn"`
+	PredictiveScalingMode    string          `json:"PredictiveScalingMode" xml:"PredictiveScalingMode"`
+	PredictiveValueBehavior  string          `json:"PredictiveValueBehavior" xml:"PredictiveValueBehavior"`
+	PredictiveValueBuffer    int             `json:"PredictiveValueBuffer" xml:"PredictiveValueBuffer"`
+	PredictiveTaskBufferTime int             `json:"PredictiveTaskBufferTime" xml:"PredictiveTaskBufferTime"`
+	InitialMaxSize           int             `json:"InitialMaxSize" xml:"InitialMaxSize"`
+	Alarms                   Alarms          `json:"Alarms" xml:"Alarms"`
+	StepAdjustments          StepAdjustments `json:"StepAdjustments" xml:"StepAdjustments"`
 }

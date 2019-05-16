@@ -27,4 +27,6 @@ type ScheduledTask struct {
 	RecurrenceValue      string `json:"RecurrenceValue" xml:"RecurrenceValue"`
 	LaunchExpirationTime int    `json:"LaunchExpirationTime" xml:"LaunchExpirationTime"`
 	TaskEnabled          bool   `json:"TaskEnabled" xml:"TaskEnabled"`
+	MaxValue             int    `json:"MaxValue" xml:"MaxValue"`
+	MinValue             int    `json:"MinValue" xml:"MinValue"`
 }
