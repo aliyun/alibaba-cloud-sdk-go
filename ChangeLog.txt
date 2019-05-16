@@ -1,3 +1,8 @@
+2019-05-16 Version: 1.60.13
+1, Update SDK Version
+2, Change api UpgradeClusterAddons, UpgradeClusterComponents, DescribeClusterAddonsVersion to public
+
+
 2019-05-16 Version: 1.60.12
 1, Add some new apis to fetch the usage data from VoD, such as DescribeVodDomainUsageData, DescribeVodStorageData, DescribeVodTranscodeData, DescribeVodAIData.
 2, Add a new api named GetUploadDetails to describe the upload detail, such as uploading time and uploading source.
