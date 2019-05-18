@@ -19,10 +19,10 @@ package dbs
 type FullBackupFile struct {
 	BackupSetId          string `json:"BackupSetId" xml:"BackupSetId"`
 	SourceEndpointIpPort string `json:"SourceEndpointIpPort" xml:"SourceEndpointIpPort"`
-	StartTime            int    `json:"StartTime" xml:"StartTime"`
-	EndTime              int    `json:"EndTime" xml:"EndTime"`
+	StartTime            int64  `json:"StartTime" xml:"StartTime"`
+	EndTime              int64  `json:"EndTime" xml:"EndTime"`
 	BackupStatus         string `json:"BackupStatus" xml:"BackupStatus"`
-	BackupSetExpiredTime int    `json:"BackupSetExpiredTime" xml:"BackupSetExpiredTime"`
-	BackupSize           int    `json:"BackupSize" xml:"BackupSize"`
+	BackupSetExpiredTime int64  `json:"BackupSetExpiredTime" xml:"BackupSetExpiredTime"`
+	BackupSize           int64  `json:"BackupSize" xml:"BackupSize"`
 	StorageMethod        string `json:"StorageMethod" xml:"StorageMethod"`
 }

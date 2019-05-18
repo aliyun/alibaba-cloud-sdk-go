@@ -25,7 +25,7 @@ type BackupPlanDetail struct {
 	SourceEndpointDatabaseName        string `json:"SourceEndpointDatabaseName" xml:"SourceEndpointDatabaseName"`
 	SourceEndpointUserName            string `json:"SourceEndpointUserName" xml:"SourceEndpointUserName"`
 	BackupObjects                     string `json:"BackupObjects" xml:"BackupObjects"`
-	BackupGatewayId                   int    `json:"BackupGatewayId" xml:"BackupGatewayId"`
+	BackupGatewayId                   int64  `json:"BackupGatewayId" xml:"BackupGatewayId"`
 	OSSBucketRegion                   string `json:"OSSBucketRegion" xml:"OSSBucketRegion"`
 	OSSBucketName                     string `json:"OSSBucketName" xml:"OSSBucketName"`
 	BackupPeriod                      string `json:"BackupPeriod" xml:"BackupPeriod"`
@@ -38,6 +38,6 @@ type BackupPlanDetail struct {
 	SourceEndpointOracleSID           string `json:"SourceEndpointOracleSID" xml:"SourceEndpointOracleSID"`
 	InstanceClass                     string `json:"InstanceClass" xml:"InstanceClass"`
 	BackupMethod                      string `json:"BackupMethod" xml:"BackupMethod"`
-	BackupPlanCreateTime              int    `json:"BackupPlanCreateTime" xml:"BackupPlanCreateTime"`
+	BackupPlanCreateTime              int64  `json:"BackupPlanCreateTime" xml:"BackupPlanCreateTime"`
 	BackupPlanStatus                  string `json:"BackupPlanStatus" xml:"BackupPlanStatus"`
 }
