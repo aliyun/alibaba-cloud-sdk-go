@@ -17,16 +17,18 @@ package elasticsearch
 
 // Instance is a nested struct in elasticsearch response
 type Instance struct {
-	InstanceId    string        `json:"instanceId" xml:"instanceId"`
-	Domain        string        `json:"domain" xml:"domain"`
-	Description   string        `json:"description" xml:"description"`
-	NodeAmount    int           `json:"nodeAmount" xml:"nodeAmount"`
-	PaymentType   string        `json:"paymentType" xml:"paymentType"`
-	Status        string        `json:"status" xml:"status"`
-	Port          int           `json:"port" xml:"port"`
-	EsVersion     string        `json:"esVersion" xml:"esVersion"`
-	CreatedAt     string        `json:"createdAt" xml:"createdAt"`
-	UpdatedAt     string        `json:"updatedAt" xml:"updatedAt"`
-	NodeSpec      NodeSpec      `json:"nodeSpec" xml:"nodeSpec"`
-	NetworkConfig NetworkConfig `json:"networkConfig" xml:"networkConfig"`
+	InstanceId             string              `json:"instanceId" xml:"instanceId"`
+	Description            string              `json:"description" xml:"description"`
+	NodeAmount             int                 `json:"nodeAmount" xml:"nodeAmount"`
+	PaymentType            string              `json:"paymentType" xml:"paymentType"`
+	Status                 string              `json:"status" xml:"status"`
+	EsVersion              string              `json:"esVersion" xml:"esVersion"`
+	CreatedAt              string              `json:"createdAt" xml:"createdAt"`
+	UpdatedAt              string              `json:"updatedAt" xml:"updatedAt"`
+	AdvancedDedicateMaster bool                `json:"advancedDedicateMaster" xml:"advancedDedicateMaster"`
+	DedicateMaster         bool                `json:"dedicateMaster" xml:"dedicateMaster"`
+	NodeSpec               NodeSpec            `json:"nodeSpec" xml:"nodeSpec"`
+	NetworkConfig          NetworkConfig       `json:"networkConfig" xml:"networkConfig"`
+	MasterConfiguration    MasterConfiguration `json:"masterConfiguration" xml:"masterConfiguration"`
+	KibanaConfiguration    KibanaConfiguration `json:"kibanaConfiguration" xml:"kibanaConfiguration"`
 }

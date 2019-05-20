@@ -17,8 +17,8 @@ package elasticsearch
 
 // MasterConfiguration is a nested struct in elasticsearch response
 type MasterConfiguration struct {
-	Spec     string `json:"spec" xml:"spec"`
 	Amount   int    `json:"amount" xml:"amount"`
-	DiskType string `json:"diskType" xml:"diskType"`
 	Disk     int    `json:"disk" xml:"disk"`
+	Spec     string `json:"spec" xml:"spec"`
+	DiskType string `json:"diskType" xml:"diskType"`
 }
