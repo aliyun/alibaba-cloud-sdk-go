@@ -91,8 +91,8 @@ type DescribeVpnGatewayResponse struct {
 	VpcId             string `json:"VpcId" xml:"VpcId"`
 	VSwitchId         string `json:"VSwitchId" xml:"VSwitchId"`
 	InternetIp        string `json:"InternetIp" xml:"InternetIp"`
-	CreateTime        int    `json:"CreateTime" xml:"CreateTime"`
-	EndTime           int    `json:"EndTime" xml:"EndTime"`
+	CreateTime        int64  `json:"CreateTime" xml:"CreateTime"`
+	EndTime           int64  `json:"EndTime" xml:"EndTime"`
 	Spec              string `json:"Spec" xml:"Spec"`
 	Name              string `json:"Name" xml:"Name"`
 	Description       string `json:"Description" xml:"Description"`
@@ -101,7 +101,7 @@ type DescribeVpnGatewayResponse struct {
 	ChargeType        string `json:"ChargeType" xml:"ChargeType"`
 	IpsecVpn          string `json:"IpsecVpn" xml:"IpsecVpn"`
 	SslVpn            string `json:"SslVpn" xml:"SslVpn"`
-	SslMaxConnections int    `json:"SslMaxConnections" xml:"SslMaxConnections"`
+	SslMaxConnections int64  `json:"SslMaxConnections" xml:"SslMaxConnections"`
 	Tag               string `json:"Tag" xml:"Tag"`
 }
 

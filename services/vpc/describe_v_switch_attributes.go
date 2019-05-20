@@ -93,7 +93,7 @@ type DescribeVSwitchAttributesResponse struct {
 	CidrBlock               string                                    `json:"CidrBlock" xml:"CidrBlock"`
 	Ipv6CidrBlock           string                                    `json:"Ipv6CidrBlock" xml:"Ipv6CidrBlock"`
 	ZoneId                  string                                    `json:"ZoneId" xml:"ZoneId"`
-	AvailableIpAddressCount int                                       `json:"AvailableIpAddressCount" xml:"AvailableIpAddressCount"`
+	AvailableIpAddressCount int64                                     `json:"AvailableIpAddressCount" xml:"AvailableIpAddressCount"`
 	Description             string                                    `json:"Description" xml:"Description"`
 	VSwitchName             string                                    `json:"VSwitchName" xml:"VSwitchName"`
 	CreationTime            string                                    `json:"CreationTime" xml:"CreationTime"`

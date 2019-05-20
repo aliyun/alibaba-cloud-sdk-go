@@ -98,7 +98,7 @@ type AllocateEipAddressResponse struct {
 	RequestId       string `json:"RequestId" xml:"RequestId"`
 	AllocationId    string `json:"AllocationId" xml:"AllocationId"`
 	EipAddress      string `json:"EipAddress" xml:"EipAddress"`
-	OrderId         int    `json:"OrderId" xml:"OrderId"`
+	OrderId         int64  `json:"OrderId" xml:"OrderId"`
 	ResourceGroupId string `json:"ResourceGroupId" xml:"ResourceGroupId"`
 }
 

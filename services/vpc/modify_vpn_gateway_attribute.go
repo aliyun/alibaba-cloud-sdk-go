@@ -95,8 +95,8 @@ type ModifyVpnGatewayAttributeResponse struct {
 	VSwitchId      string `json:"VSwitchId" xml:"VSwitchId"`
 	InternetIp     string `json:"InternetIp" xml:"InternetIp"`
 	IntranetIp     string `json:"IntranetIp" xml:"IntranetIp"`
-	CreateTime     int    `json:"CreateTime" xml:"CreateTime"`
-	EndTime        int    `json:"EndTime" xml:"EndTime"`
+	CreateTime     int64  `json:"CreateTime" xml:"CreateTime"`
+	EndTime        int64  `json:"EndTime" xml:"EndTime"`
 	Spec           string `json:"Spec" xml:"Spec"`
 	Name           string `json:"Name" xml:"Name"`
 	Description    string `json:"Description" xml:"Description"`

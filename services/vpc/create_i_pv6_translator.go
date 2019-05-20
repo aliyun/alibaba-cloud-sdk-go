@@ -97,7 +97,7 @@ type CreateIPv6TranslatorResponse struct {
 	Ipv6TranslatorId string `json:"Ipv6TranslatorId" xml:"Ipv6TranslatorId"`
 	Name             string `json:"Name" xml:"Name"`
 	Spec             string `json:"Spec" xml:"Spec"`
-	OrderId          int    `json:"OrderId" xml:"OrderId"`
+	OrderId          int64  `json:"OrderId" xml:"OrderId"`
 }
 
 // CreateCreateIPv6TranslatorRequest creates a request to invoke CreateIPv6Translator API

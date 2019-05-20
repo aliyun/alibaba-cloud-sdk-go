@@ -26,6 +26,7 @@ type RouterTableListType struct {
 	Description     string                             `json:"Description" xml:"Description"`
 	ResourceGroupId string                             `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	CreationTime    string                             `json:"CreationTime" xml:"CreationTime"`
+	Status          string                             `json:"Status" xml:"Status"`
 	VSwitchIds      VSwitchIdsInDescribeRouteTableList `json:"VSwitchIds" xml:"VSwitchIds"`
 	Tags            TagsInDescribeRouteTableList       `json:"Tags" xml:"Tags"`
 }

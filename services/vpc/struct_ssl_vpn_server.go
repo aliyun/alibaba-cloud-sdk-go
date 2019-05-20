@@ -23,7 +23,7 @@ type SslVpnServer struct {
 	Name           string `json:"Name" xml:"Name"`
 	LocalSubnet    string `json:"LocalSubnet" xml:"LocalSubnet"`
 	ClientIpPool   string `json:"ClientIpPool" xml:"ClientIpPool"`
-	CreateTime     int    `json:"CreateTime" xml:"CreateTime"`
+	CreateTime     int64  `json:"CreateTime" xml:"CreateTime"`
 	Cipher         string `json:"Cipher" xml:"Cipher"`
 	Proto          string `json:"Proto" xml:"Proto"`
 	Port           int    `json:"Port" xml:"Port"`

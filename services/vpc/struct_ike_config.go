@@ -25,5 +25,5 @@ type IkeConfig struct {
 	Psk         string `json:"Psk" xml:"Psk"`
 	RemoteId    string `json:"RemoteId" xml:"RemoteId"`
 	IkeVersion  string `json:"IkeVersion" xml:"IkeVersion"`
-	IkeLifetime int    `json:"IkeLifetime" xml:"IkeLifetime"`
+	IkeLifetime int64  `json:"IkeLifetime" xml:"IkeLifetime"`
 }

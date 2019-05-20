@@ -1,3 +1,7 @@
+2019-05-20 Version: 1.60.15
+1,  DescribeRouteTableList add route table status
+2,  DescribeRouteTables add route table  status
+
 2019-05-18 Version: 1.60.14
 1, Add ModifyBackupObjects DBS interface.
 

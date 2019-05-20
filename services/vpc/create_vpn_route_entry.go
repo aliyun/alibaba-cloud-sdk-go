@@ -100,7 +100,7 @@ type CreateVpnRouteEntryResponse struct {
 	OverlayMode   string `json:"OverlayMode" xml:"OverlayMode"`
 	Description   string `json:"Description" xml:"Description"`
 	State         string `json:"State" xml:"State"`
-	CreateTime    int    `json:"CreateTime" xml:"CreateTime"`
+	CreateTime    int64  `json:"CreateTime" xml:"CreateTime"`
 }
 
 // CreateCreateVpnRouteEntryRequest creates a request to invoke CreateVpnRouteEntry API

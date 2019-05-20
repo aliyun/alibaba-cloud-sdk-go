@@ -18,8 +18,8 @@ package vpc
 // Ipv6Translator is a nested struct in vpc response
 type Ipv6Translator struct {
 	Ipv6TranslatorId       string                 `json:"Ipv6TranslatorId" xml:"Ipv6TranslatorId"`
-	CreateTime             int                    `json:"CreateTime" xml:"CreateTime"`
-	EndTime                int                    `json:"EndTime" xml:"EndTime"`
+	CreateTime             int64                  `json:"CreateTime" xml:"CreateTime"`
+	EndTime                int64                  `json:"EndTime" xml:"EndTime"`
 	Spec                   string                 `json:"Spec" xml:"Spec"`
 	Name                   string                 `json:"Name" xml:"Name"`
 	Description            string                 `json:"Description" xml:"Description"`

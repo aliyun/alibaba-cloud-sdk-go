@@ -21,7 +21,7 @@ type SslVpnClientCertKey struct {
 	SslVpnClientCertId string `json:"SslVpnClientCertId" xml:"SslVpnClientCertId"`
 	Name               string `json:"Name" xml:"Name"`
 	SslVpnServerId     string `json:"SslVpnServerId" xml:"SslVpnServerId"`
-	CreateTime         int    `json:"CreateTime" xml:"CreateTime"`
-	EndTime            int    `json:"EndTime" xml:"EndTime"`
+	CreateTime         int64  `json:"CreateTime" xml:"CreateTime"`
+	EndTime            int64  `json:"EndTime" xml:"EndTime"`
 	Status             string `json:"Status" xml:"Status"`
 }

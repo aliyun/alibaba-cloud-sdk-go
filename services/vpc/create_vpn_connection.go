@@ -99,7 +99,7 @@ type CreateVpnConnectionResponse struct {
 	RequestId       string `json:"RequestId" xml:"RequestId"`
 	VpnConnectionId string `json:"VpnConnectionId" xml:"VpnConnectionId"`
 	Name            string `json:"Name" xml:"Name"`
-	CreateTime      int    `json:"CreateTime" xml:"CreateTime"`
+	CreateTime      int64  `json:"CreateTime" xml:"CreateTime"`
 }
 
 // CreateCreateVpnConnectionRequest creates a request to invoke CreateVpnConnection API

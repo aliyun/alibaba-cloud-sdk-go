@@ -20,5 +20,5 @@ type IpsecConfig struct {
 	IpsecAuthAlg  string `json:"IpsecAuthAlg" xml:"IpsecAuthAlg"`
 	IpsecPfs      string `json:"IpsecPfs" xml:"IpsecPfs"`
 	IpsecEncAlg   string `json:"IpsecEncAlg" xml:"IpsecEncAlg"`
-	IpsecLifetime int    `json:"IpsecLifetime" xml:"IpsecLifetime"`
+	IpsecLifetime int64  `json:"IpsecLifetime" xml:"IpsecLifetime"`
 }

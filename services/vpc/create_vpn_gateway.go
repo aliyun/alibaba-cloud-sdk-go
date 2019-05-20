@@ -97,7 +97,7 @@ type CreateVpnGatewayResponse struct {
 	RequestId    string `json:"RequestId" xml:"RequestId"`
 	VpnGatewayId string `json:"VpnGatewayId" xml:"VpnGatewayId"`
 	Name         string `json:"Name" xml:"Name"`
-	OrderId      int    `json:"OrderId" xml:"OrderId"`
+	OrderId      int64  `json:"OrderId" xml:"OrderId"`
 }
 
 // CreateCreateVpnGatewayRequest creates a request to invoke CreateVpnGateway API

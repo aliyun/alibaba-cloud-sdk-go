@@ -95,8 +95,8 @@ type DescribeSslVpnClientCertResponse struct {
 	ClientCert         string `json:"ClientCert" xml:"ClientCert"`
 	ClientKey          string `json:"ClientKey" xml:"ClientKey"`
 	ClientConfig       string `json:"ClientConfig" xml:"ClientConfig"`
-	CreateTime         int    `json:"CreateTime" xml:"CreateTime"`
-	EndTime            int    `json:"EndTime" xml:"EndTime"`
+	CreateTime         int64  `json:"CreateTime" xml:"CreateTime"`
+	EndTime            int64  `json:"EndTime" xml:"EndTime"`
 	Status             string `json:"Status" xml:"Status"`
 }
 

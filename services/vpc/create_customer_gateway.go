@@ -94,7 +94,7 @@ type CreateCustomerGatewayResponse struct {
 	IpAddress         string `json:"IpAddress" xml:"IpAddress"`
 	Name              string `json:"Name" xml:"Name"`
 	Description       string `json:"Description" xml:"Description"`
-	CreateTime        int    `json:"CreateTime" xml:"CreateTime"`
+	CreateTime        int64  `json:"CreateTime" xml:"CreateTime"`
 }
 
 // CreateCreateCustomerGatewayRequest creates a request to invoke CreateCustomerGateway API

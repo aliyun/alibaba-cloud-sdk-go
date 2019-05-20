@@ -23,7 +23,7 @@ type VpnConnection struct {
 	Name              string         `json:"Name" xml:"Name"`
 	LocalSubnet       string         `json:"LocalSubnet" xml:"LocalSubnet"`
 	RemoteSubnet      string         `json:"RemoteSubnet" xml:"RemoteSubnet"`
-	CreateTime        int            `json:"CreateTime" xml:"CreateTime"`
+	CreateTime        int64          `json:"CreateTime" xml:"CreateTime"`
 	EffectImmediately bool           `json:"EffectImmediately" xml:"EffectImmediately"`
 	Status            string         `json:"Status" xml:"Status"`
 	IkeConfig         IkeConfig      `json:"IkeConfig" xml:"IkeConfig"`

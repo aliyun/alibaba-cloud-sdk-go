@@ -22,6 +22,6 @@ type VpnPbrRouteEntry struct {
 	RouteDest     string `json:"RouteDest" xml:"RouteDest"`
 	NextHop       string `json:"NextHop" xml:"NextHop"`
 	Weight        int    `json:"Weight" xml:"Weight"`
-	CreateTime    int    `json:"CreateTime" xml:"CreateTime"`
+	CreateTime    int64  `json:"CreateTime" xml:"CreateTime"`
 	State         string `json:"State" xml:"State"`
 }

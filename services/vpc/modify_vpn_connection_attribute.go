@@ -103,7 +103,7 @@ type ModifyVpnConnectionAttributeResponse struct {
 	Description       string         `json:"Description" xml:"Description"`
 	LocalSubnet       string         `json:"LocalSubnet" xml:"LocalSubnet"`
 	RemoteSubnet      string         `json:"RemoteSubnet" xml:"RemoteSubnet"`
-	CreateTime        int            `json:"CreateTime" xml:"CreateTime"`
+	CreateTime        int64          `json:"CreateTime" xml:"CreateTime"`
 	EffectImmediately bool           `json:"EffectImmediately" xml:"EffectImmediately"`
 	IkeConfig         IkeConfig      `json:"IkeConfig" xml:"IkeConfig"`
 	IpsecConfig       IpsecConfig    `json:"IpsecConfig" xml:"IpsecConfig"`

@@ -18,6 +18,6 @@ package vpc
 // CbnGrantRule is a nested struct in vpc response
 type CbnGrantRule struct {
 	CenInstanceId string `json:"CenInstanceId" xml:"CenInstanceId"`
-	CenOwnerId    int    `json:"CenOwnerId" xml:"CenOwnerId"`
+	CenOwnerId    int64  `json:"CenOwnerId" xml:"CenOwnerId"`
 	CreationTime  string `json:"CreationTime" xml:"CreationTime"`
 }
