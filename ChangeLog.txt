@@ -1,3 +1,6 @@
+2019-05-20 Version: 1.60.17
+1, Add both api, ListNotaryInfos
+
 2019-05-20 Version: 1.60.16
 1, Initial release of api, including data management api, rule configuration api and system configuration api.
 
