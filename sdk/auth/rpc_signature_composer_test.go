@@ -14,7 +14,7 @@ func mockRpcDate(fn func() string) string {
 	return "mock date"
 }
 
-func mockRpcGetUUIDV4(fn func() string) string {
+func mockRpcGetNonce(fn func() string) string {
 	return "MOCK_UUID"
 }
 
@@ -43,9 +43,9 @@ func TestRpcSignatureComposer(t *testing.T) {
 	origTestHookGetDate := hookGetDate
 	defer func() { hookGetDate = origTestHookGetDate }()
 	hookGetDate = mockRpcDate
-	origTestHookGetUUIDV4 := hookGetUUIDV4
-	defer func() { hookGetUUIDV4 = origTestHookGetUUIDV4 }()
-	hookGetUUIDV4 = mockRpcGetUUIDV4
+	origTestHookGetNonce := hookGetNonce
+	defer func() { hookGetNonce = origTestHookGetNonce }()
+	hookGetNonce = mockRpcGetNonce
 	signRpcRequest(request, signer, "regionId")
 	assert.Equal(t, "mock date", request.GetQueryParams()["Timestamp"])
 	assert.Equal(t, "MOCK_UUID", request.GetQueryParams()["SignatureNonce"])
