@@ -171,6 +171,7 @@ type RunInstancesDataDisk struct {
 type RunInstancesResponse struct {
 	*responses.BaseResponse
 	RequestId      string         `json:"RequestId" xml:"RequestId"`
+	TradePrice     float64        `json:"TradePrice" xml:"TradePrice"`
 	InstanceIdSets InstanceIdSets `json:"InstanceIdSets" xml:"InstanceIdSets"`
 }
 

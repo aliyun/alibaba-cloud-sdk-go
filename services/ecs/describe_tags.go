@@ -82,6 +82,7 @@ type DescribeTagsRequest struct {
 	PageSize             requests.Integer   `position:"Query" name:"PageSize"`
 	Tag                  *[]DescribeTagsTag `position:"Query" name:"Tag"  type:"Repeated"`
 	OwnerId              requests.Integer   `position:"Query" name:"OwnerId"`
+	Category             string             `position:"Query" name:"Category"`
 	ResourceType         string             `position:"Query" name:"ResourceType"`
 	PageNumber           requests.Integer   `position:"Query" name:"PageNumber"`
 }

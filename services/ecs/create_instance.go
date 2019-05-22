@@ -162,8 +162,9 @@ type CreateInstanceDataDisk struct {
 // CreateInstanceResponse is the response struct for api CreateInstance
 type CreateInstanceResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	InstanceId string `json:"InstanceId" xml:"InstanceId"`
+	RequestId  string  `json:"RequestId" xml:"RequestId"`
+	InstanceId string  `json:"InstanceId" xml:"InstanceId"`
+	TradePrice float64 `json:"TradePrice" xml:"TradePrice"`
 }
 
 // CreateCreateInstanceRequest creates a request to invoke CreateInstance API

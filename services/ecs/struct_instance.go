@@ -17,49 +17,55 @@ package ecs
 
 // Instance is a nested struct in ecs response
 type Instance struct {
+	Cores                      int                                  `json:"Cores" xml:"Cores"`
 	ImageId                    string                               `json:"ImageId" xml:"ImageId"`
 	InstanceType               string                               `json:"InstanceType" xml:"InstanceType"`
 	AutoReleaseTime            string                               `json:"AutoReleaseTime" xml:"AutoReleaseTime"`
 	DeviceAvailable            bool                                 `json:"DeviceAvailable" xml:"DeviceAvailable"`
 	InstanceNetworkType        string                               `json:"InstanceNetworkType" xml:"InstanceNetworkType"`
 	LocalStorageAmount         int                                  `json:"LocalStorageAmount" xml:"LocalStorageAmount"`
+	IsSpot                     bool                                 `json:"IsSpot" xml:"IsSpot"`
 	InstanceChargeType         string                               `json:"InstanceChargeType" xml:"InstanceChargeType"`
 	ClusterId                  string                               `json:"ClusterId" xml:"ClusterId"`
 	InstanceName               string                               `json:"InstanceName" xml:"InstanceName"`
 	CreditSpecification        string                               `json:"CreditSpecification" xml:"CreditSpecification"`
 	GPUAmount                  int                                  `json:"GPUAmount" xml:"GPUAmount"`
+	ZoneNo                     string                               `json:"ZoneNo" xml:"ZoneNo"`
 	StartTime                  string                               `json:"StartTime" xml:"StartTime"`
 	ZoneId                     string                               `json:"ZoneId" xml:"ZoneId"`
 	InternetChargeType         string                               `json:"InternetChargeType" xml:"InternetChargeType"`
 	InternetMaxBandwidthIn     int                                  `json:"InternetMaxBandwidthIn" xml:"InternetMaxBandwidthIn"`
 	HostName                   string                               `json:"HostName" xml:"HostName"`
-	Cpu                        int                                  `json:"Cpu" xml:"Cpu"`
 	Status                     string                               `json:"Status" xml:"Status"`
+	Cpu                        int                                  `json:"Cpu" xml:"Cpu"`
 	SpotPriceLimit             float64                              `json:"SpotPriceLimit" xml:"SpotPriceLimit"`
 	OSName                     string                               `json:"OSName" xml:"OSName"`
 	OSNameEn                   string                               `json:"OSNameEn" xml:"OSNameEn"`
 	SerialNumber               string                               `json:"SerialNumber" xml:"SerialNumber"`
 	RegionId                   string                               `json:"RegionId" xml:"RegionId"`
-	InternetMaxBandwidthOut    int                                  `json:"InternetMaxBandwidthOut" xml:"InternetMaxBandwidthOut"`
 	IoOptimized                bool                                 `json:"IoOptimized" xml:"IoOptimized"`
+	InternetMaxBandwidthOut    int                                  `json:"InternetMaxBandwidthOut" xml:"InternetMaxBandwidthOut"`
 	ResourceGroupId            string                               `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	InstanceTypeFamily         string                               `json:"InstanceTypeFamily" xml:"InstanceTypeFamily"`
 	InstanceId                 string                               `json:"InstanceId" xml:"InstanceId"`
 	DeploymentSetId            string                               `json:"DeploymentSetId" xml:"DeploymentSetId"`
 	GPUSpec                    string                               `json:"GPUSpec" xml:"GPUSpec"`
 	Description                string                               `json:"Description" xml:"Description"`
+	IzNo                       string                               `json:"IzNo" xml:"IzNo"`
 	Recyclable                 bool                                 `json:"Recyclable" xml:"Recyclable"`
 	SaleCycle                  string                               `json:"SaleCycle" xml:"SaleCycle"`
 	ExpiredTime                string                               `json:"ExpiredTime" xml:"ExpiredTime"`
 	OSType                     string                               `json:"OSType" xml:"OSType"`
 	Memory                     int                                  `json:"Memory" xml:"Memory"`
 	CreationTime               string                               `json:"CreationTime" xml:"CreationTime"`
+	NetworkType                bool                                 `json:"NetworkType" xml:"NetworkType"`
 	KeyPairName                string                               `json:"KeyPairName" xml:"KeyPairName"`
 	HpcClusterId               string                               `json:"HpcClusterId" xml:"HpcClusterId"`
 	LocalStorageCapacity       int64                                `json:"LocalStorageCapacity" xml:"LocalStorageCapacity"`
 	VlanId                     string                               `json:"VlanId" xml:"VlanId"`
 	StoppedMode                string                               `json:"StoppedMode" xml:"StoppedMode"`
 	SpotStrategy               string                               `json:"SpotStrategy" xml:"SpotStrategy"`
+	OsType                     bool                                 `json:"OsType" xml:"OsType"`
 	DeletionProtection         bool                                 `json:"DeletionProtection" xml:"DeletionProtection"`
 	SecurityGroupIds           SecurityGroupIdsInDescribeInstances  `json:"SecurityGroupIds" xml:"SecurityGroupIds"`
 	InnerIpAddress             InnerIpAddressInDescribeInstances    `json:"InnerIpAddress" xml:"InnerIpAddress"`
