@@ -52,6 +52,6 @@ type Result struct {
 	DataDiskList              []DataDiskListItem         `json:"dataDiskList" xml:"dataDiskList"`
 	EsVersionsLatestList      []EsVersionsLatestListItem `json:"esVersionsLatestList" xml:"esVersionsLatestList"`
 	NodeSpecList              []NodeSpecListItem         `json:"nodeSpecList" xml:"nodeSpecList"`
-	SynonymsDicts             []SynonymsDicts            `json:"synonymsDicts" xml:"synonymsDicts"`
-	DictList                  []DictList                 `json:"dictList" xml:"dictList"`
+	SynonymsDicts             []SynonymsDictsItem        `json:"synonymsDicts" xml:"synonymsDicts"`
+	DictList                  []DictListItem             `json:"dictList" xml:"dictList"`
 }

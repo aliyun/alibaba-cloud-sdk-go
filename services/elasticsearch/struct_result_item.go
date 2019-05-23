@@ -20,7 +20,7 @@ type ResultItem struct {
 	Description string `json:"description" xml:"description"`
 	Content     string `json:"content" xml:"content"`
 	Port        int    `json:"port" xml:"port"`
-	Timestamp   int64  `json:"timestamp" xml:"timestamp"`
+	Timestamp   int    `json:"timestamp" xml:"timestamp"`
 	State       string `json:"state" xml:"state"`
 	Source      string `json:"source" xml:"source"`
 	Level       string `json:"level" xml:"level"`

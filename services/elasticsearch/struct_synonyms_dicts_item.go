@@ -18,7 +18,7 @@ package elasticsearch
 // SynonymsDictsItem is a nested struct in elasticsearch response
 type SynonymsDictsItem struct {
 	Name       string `json:"name" xml:"name"`
-	FileSize   int64  `json:"fileSize" xml:"fileSize"`
+	FileSize   int    `json:"fileSize" xml:"fileSize"`
 	Type       string `json:"type" xml:"type"`
 	SourceType string `json:"sourceType" xml:"sourceType"`
 }
