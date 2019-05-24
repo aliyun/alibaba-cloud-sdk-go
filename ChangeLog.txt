@@ -1,3 +1,7 @@
+2019-05-24 Version: 1.60.21
+1, The list of site monitoring probes adds ISP and city fields in English.
+2, Fixed the capitalization problem of Describe MetricData and Describe Site Monitor Statistics API metricName.
+
 2019-05-23 Version: 1.60.20
 1, Fixed bug of the JSON list in GO sdk.
 

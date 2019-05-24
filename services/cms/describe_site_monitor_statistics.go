@@ -77,6 +77,7 @@ func (client *Client) DescribeSiteMonitorStatisticsWithCallback(request *Describ
 type DescribeSiteMonitorStatisticsRequest struct {
 	*requests.RpcRequest
 	TimeRange  string `position:"Query" name:"TimeRange"`
+	StartTime  string `position:"Query" name:"StartTime"`
 	MetricName string `position:"Query" name:"MetricName"`
 	TaskId     string `position:"Query" name:"TaskId"`
 }

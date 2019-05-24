@@ -21,8 +21,12 @@ type IspCity struct {
 	CityNameZhCN string `json:"CityName.zh_CN" xml:"CityName.zh_CN"`
 	IspName      string `json:"IspName" xml:"IspName"`
 	RegionZhCN   string `json:"Region.zh_CN" xml:"Region.zh_CN"`
+	IspNameEn    string `json:"IspName.en" xml:"IspName.en"`
+	CountryEn    string `json:"Country.en" xml:"Country.en"`
 	CountryZhCN  string `json:"Country.zh_CN" xml:"Country.zh_CN"`
+	CityNameEn   string `json:"CityName.en" xml:"CityName.en"`
 	Isp          string `json:"Isp" xml:"Isp"`
+	RegionEn     string `json:"Region.en" xml:"Region.en"`
 	CityName     string `json:"CityName" xml:"CityName"`
 	City         string `json:"City" xml:"City"`
 }

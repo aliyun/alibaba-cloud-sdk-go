@@ -82,7 +82,7 @@ type DescribeSiteMonitorDataRequest struct {
 	EndTime    string           `position:"Query" name:"EndTime"`
 	StartTime  string           `position:"Query" name:"StartTime"`
 	Type       string           `position:"Query" name:"Type"`
-	MetricName string           `position:"Query" name:"metricName"`
+	MetricName string           `position:"Query" name:"MetricName"`
 	TaskId     string           `position:"Query" name:"TaskId"`
 }
 

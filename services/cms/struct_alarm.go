@@ -26,6 +26,7 @@ type Alarm struct {
 	RuleId              string      `json:"RuleId" xml:"RuleId"`
 	ComparisonOperator  string      `json:"ComparisonOperator" xml:"ComparisonOperator"`
 	MailSubject         string      `json:"MailSubject" xml:"MailSubject"`
+	SourceType          string      `json:"SourceType" xml:"SourceType"`
 	EnableState         bool        `json:"EnableState" xml:"EnableState"`
 	GroupId             string      `json:"GroupId" xml:"GroupId"`
 	EvaluationCount     string      `json:"EvaluationCount" xml:"EvaluationCount"`
