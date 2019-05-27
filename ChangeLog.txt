@@ -1,3 +1,6 @@
+2019-05-27 Version: 1.60.22
+1, Initial release of api, including data management api, rule configuration api and system configuration api.
+
 2019-05-24 Version: 1.60.21
 1, The list of site monitoring probes adds ISP and city fields in English.
 2, Fixed the capitalization problem of Describe MetricData and Describe Site Monitor Statistics API metricName.
