@@ -26,16 +26,17 @@ type RestoreTaskDetail struct {
 	DestinationEndpointUserName     string `json:"DestinationEndpointUserName" xml:"DestinationEndpointUserName"`
 	DestinationEndpointOracleSID    string `json:"DestinationEndpointOracleSID" xml:"DestinationEndpointOracleSID"`
 	RestoreObjects                  string `json:"RestoreObjects" xml:"RestoreObjects"`
-	BackupGatewayId                 int64  `json:"BackupGatewayId" xml:"BackupGatewayId"`
+	BackupGatewayId                 int    `json:"BackupGatewayId" xml:"BackupGatewayId"`
 	RestoreDir                      string `json:"RestoreDir" xml:"RestoreDir"`
 	RestoreTaskName                 string `json:"RestoreTaskName" xml:"RestoreTaskName"`
 	BackupSetId                     string `json:"BackupSetId" xml:"BackupSetId"`
-	RestoreTime                     int64  `json:"RestoreTime" xml:"RestoreTime"`
-	RestoreTaskCreateTime           int64  `json:"RestoreTaskCreateTime" xml:"RestoreTaskCreateTime"`
+	RestoreTime                     int    `json:"RestoreTime" xml:"RestoreTime"`
+	RestoreTaskCreateTime           int    `json:"RestoreTaskCreateTime" xml:"RestoreTaskCreateTime"`
 	RestoreStatus                   string `json:"RestoreStatus" xml:"RestoreStatus"`
 	RestoreTaskId                   string `json:"RestoreTaskId" xml:"RestoreTaskId"`
 	FullStruforeRestoreProgress     int    `json:"FullStruforeRestoreProgress" xml:"FullStruforeRestoreProgress"`
 	FullDataRestoreProgress         int    `json:"FullDataRestoreProgress" xml:"FullDataRestoreProgress"`
 	ContinuousRestoreProgress       int    `json:"ContinuousRestoreProgress" xml:"ContinuousRestoreProgress"`
 	FullStruAfterRestoreProgress    int    `json:"FullStruAfterRestoreProgress" xml:"FullStruAfterRestoreProgress"`
+	ErrMessage                      string `json:"ErrMessage" xml:"ErrMessage"`
 }

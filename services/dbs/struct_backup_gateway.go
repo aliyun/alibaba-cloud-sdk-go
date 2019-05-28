@@ -22,8 +22,8 @@ type BackupGateway struct {
 	SourceEndpointIntranetIP string `json:"SourceEndpointIntranetIP" xml:"SourceEndpointIntranetIP"`
 	SourceEndpointHostname   string `json:"SourceEndpointHostname" xml:"SourceEndpointHostname"`
 	BackupGatewayStatus      string `json:"BackupGatewayStatus" xml:"BackupGatewayStatus"`
-	LastHeartbeatTime        int64  `json:"LastHeartbeatTime" xml:"LastHeartbeatTime"`
-	BackupGatewayCreateTime  int64  `json:"BackupGatewayCreateTime" xml:"BackupGatewayCreateTime"`
+	LastHeartbeatTime        int    `json:"LastHeartbeatTime" xml:"LastHeartbeatTime"`
+	BackupGatewayCreateTime  int    `json:"BackupGatewayCreateTime" xml:"BackupGatewayCreateTime"`
 	Region                   string `json:"Region" xml:"Region"`
 	DisplayName              string `json:"DisplayName" xml:"DisplayName"`
 	Identifier               string `json:"Identifier" xml:"Identifier"`
