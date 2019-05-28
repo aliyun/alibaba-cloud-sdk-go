@@ -98,7 +98,7 @@ func CreateModifyDBInstanceTDERequest() (request *ModifyDBInstanceTDERequest) {
 	request = &ModifyDBInstanceTDERequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDBInstanceTDE", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyDBInstanceTDE", "Rds", "openAPI")
 	return
 }
 

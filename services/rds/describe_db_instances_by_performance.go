@@ -79,25 +79,25 @@ type DescribeDBInstancesByPerformanceRequest struct {
 	Tag4Value            string           `position:"Query" name:"Tag.4.value"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	Tag2Key              string           `position:"Query" name:"Tag.2.key"`
-	Tag5Key              string           `position:"Query" name:"Tag.5.key"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	Tag3Key              string           `position:"Query" name:"Tag.3.key"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	Tag5Value            string           `position:"Query" name:"Tag.5.value"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	Tags                 string           `position:"Query" name:"Tags"`
-	Tag1Key              string           `position:"Query" name:"Tag.1.key"`
 	Tag1Value            string           `position:"Query" name:"Tag.1.value"`
 	SortKey              string           `position:"Query" name:"SortKey"`
-	SortMethod           string           `position:"Query" name:"SortMethod"`
-	Tag2Value            string           `position:"Query" name:"Tag.2.value"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	Tag4Key              string           `position:"Query" name:"Tag.4.key"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	Tag3Value            string           `position:"Query" name:"Tag.3.value"`
 	ProxyId              string           `position:"Query" name:"proxyId"`
+	Tag5Key              string           `position:"Query" name:"Tag.5.key"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Tag5Value            string           `position:"Query" name:"Tag.5.value"`
+	Tags                 string           `position:"Query" name:"Tags"`
+	Tag1Key              string           `position:"Query" name:"Tag.1.key"`
+	SortMethod           string           `position:"Query" name:"SortMethod"`
+	Tag2Value            string           `position:"Query" name:"Tag.2.value"`
+	Tag4Key              string           `position:"Query" name:"Tag.4.key"`
 }
 
 // DescribeDBInstancesByPerformanceResponse is the response struct for api DescribeDBInstancesByPerformance
@@ -115,7 +115,7 @@ func CreateDescribeDBInstancesByPerformanceRequest() (request *DescribeDBInstanc
 	request = &DescribeDBInstancesByPerformanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstancesByPerformance", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeDBInstancesByPerformance", "Rds", "openAPI")
 	return
 }
 

@@ -100,7 +100,7 @@ func CreateAllocateReadWriteSplittingConnectionRequest() (request *AllocateReadW
 	request = &AllocateReadWriteSplittingConnectionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "AllocateReadWriteSplittingConnection", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "AllocateReadWriteSplittingConnection", "Rds", "openAPI")
 	return
 }
 

@@ -1,3 +1,6 @@
+2019-05-28 Version: 1.60.24
+1, CreateDBInstance now support autoRenew
+
 2019-05-27 Version: 1.60.23
 1, Support video transcode.
 

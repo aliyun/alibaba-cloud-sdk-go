@@ -94,7 +94,7 @@ type DescribeLogBackupFilesResponse struct {
 	TotalRecordCount int                           `json:"TotalRecordCount" xml:"TotalRecordCount"`
 	PageNumber       int                           `json:"PageNumber" xml:"PageNumber"`
 	PageRecordCount  int                           `json:"PageRecordCount" xml:"PageRecordCount"`
-	TotalFileSize    int64                         `json:"TotalFileSize" xml:"TotalFileSize"`
+	TotalFileSize    int                           `json:"TotalFileSize" xml:"TotalFileSize"`
 	Items            ItemsInDescribeLogBackupFiles `json:"Items" xml:"Items"`
 }
 
@@ -103,7 +103,7 @@ func CreateDescribeLogBackupFilesRequest() (request *DescribeLogBackupFilesReque
 	request = &DescribeLogBackupFilesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeLogBackupFiles", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeLogBackupFiles", "Rds", "openAPI")
 	return
 }
 

@@ -97,7 +97,7 @@ type DescribeSQLLogRecordsRequest struct {
 type DescribeSQLLogRecordsResponse struct {
 	*responses.BaseResponse
 	RequestId        string                       `json:"RequestId" xml:"RequestId"`
-	TotalRecordCount int64                        `json:"TotalRecordCount" xml:"TotalRecordCount"`
+	TotalRecordCount int                          `json:"TotalRecordCount" xml:"TotalRecordCount"`
 	PageNumber       int                          `json:"PageNumber" xml:"PageNumber"`
 	PageRecordCount  int                          `json:"PageRecordCount" xml:"PageRecordCount"`
 	Items            ItemsInDescribeSQLLogRecords `json:"Items" xml:"Items"`
@@ -108,7 +108,7 @@ func CreateDescribeSQLLogRecordsRequest() (request *DescribeSQLLogRecordsRequest
 	request = &DescribeSQLLogRecordsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeSQLLogRecords", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeSQLLogRecords", "Rds", "openAPI")
 	return
 }
 
