@@ -97,7 +97,7 @@ func CreateModifyMySQLDBInstanceDelayRequest() (request *ModifyMySQLDBInstanceDe
 	request = &ModifyMySQLDBInstanceDelayRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyMySQLDBInstanceDelay", "Rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "ModifyMySQLDBInstanceDelay", "rds", "openAPI")
 	return
 }
 

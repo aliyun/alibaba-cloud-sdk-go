@@ -101,7 +101,7 @@ func CreateEvaluateSupportByokShowRequest() (request *EvaluateSupportByokShowReq
 	request = &EvaluateSupportByokShowRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "EvaluateSupportByokShow", "Rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "EvaluateSupportByokShow", "rds", "openAPI")
 	return
 }
 

@@ -100,7 +100,7 @@ func CreateDescribeCloudDbExpertServiceRequest() (request *DescribeCloudDbExpert
 	request = &DescribeCloudDbExpertServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeCloudDbExpertService", "Rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "DescribeCloudDbExpertService", "rds", "openAPI")
 	return
 }
 

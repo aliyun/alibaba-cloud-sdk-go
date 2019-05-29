@@ -1,3 +1,6 @@
+2019-05-29 Version: 1.60.26
+1, Fix ServiceCode typo in request
+
 2019-05-29 Version: 1.60.25
 1, Modify DescribeRestoreTaskList DBS interface.
 2, Modify DescribeFullBackupList DBS interface.
