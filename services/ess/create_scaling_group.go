@@ -111,8 +111,15 @@ type CreateScalingGroupLifecycleHook struct {
 
 // CreateScalingGroupVServerGroup is a repeated param struct in CreateScalingGroupRequest
 type CreateScalingGroupVServerGroup struct {
-	LoadBalancerId        string    `name:"LoadBalancerId"`
-	VServerGroupAttribute *[]string `name:"VServerGroupAttribute" type:"Repeated"`
+	LoadBalancerId        string                                     `name:"LoadBalancerId"`
+	VServerGroupAttribute *[]CreateScalingGroupVServerGroupAttribute `name:"VServerGroupAttribute" type:"Repeated"`
+}
+
+// CreateScalingGroupVServerGroupAttribute is a repeated param struct in CreateScalingGroupRequest
+type CreateScalingGroupVServerGroupAttribute struct {
+	VServerGroupId string `name:"VServerGroupId"`
+	Port           string `name:"Port"`
+	Weight         string `name:"Weight"`
 }
 
 // CreateScalingGroupResponse is the response struct for api CreateScalingGroup

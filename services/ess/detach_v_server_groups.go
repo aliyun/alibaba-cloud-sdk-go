@@ -85,8 +85,14 @@ type DetachVServerGroupsRequest struct {
 
 // DetachVServerGroupsVServerGroup is a repeated param struct in DetachVServerGroupsRequest
 type DetachVServerGroupsVServerGroup struct {
-	LoadBalancerId        string    `name:"LoadBalancerId"`
-	VServerGroupAttribute *[]string `name:"VServerGroupAttribute" type:"Repeated"`
+	LoadBalancerId        string                                      `name:"LoadBalancerId"`
+	VServerGroupAttribute *[]DetachVServerGroupsVServerGroupAttribute `name:"VServerGroupAttribute" type:"Repeated"`
+}
+
+// DetachVServerGroupsVServerGroupAttribute is a repeated param struct in DetachVServerGroupsRequest
+type DetachVServerGroupsVServerGroupAttribute struct {
+	VServerGroupId string `name:"VServerGroupId"`
+	Port           string `name:"Port"`
 }
 
 // DetachVServerGroupsResponse is the response struct for api DetachVServerGroups

@@ -1,3 +1,6 @@
+2019-05-30 Version: 1.60.30
+Fix: Handle the repeatlist parameter correctly
+
 2019-05-30 Version: 1.60.29
 1.Fix: Handle the repeatlist parameter correctly
 
