@@ -76,6 +76,20 @@ func (client *Client) CreateScalingConfigurationWithCallback(request *CreateScal
 // CreateScalingConfigurationRequest is the request struct for api CreateScalingConfiguration
 type CreateScalingConfigurationRequest struct {
 	*requests.RpcRequest
+	SecurityEnhancementStrategy string                                      `position:"Query" name:"SecurityEnhancementStrategy"`
+	KeyPairName                 string                                      `position:"Query" name:"KeyPairName"`
+	SpotPriceLimit              *[]CreateScalingConfigurationSpotPriceLimit `position:"Query" name:"SpotPriceLimit"  type:"Repeated"`
+	ResourceGroupId             string                                      `position:"Query" name:"ResourceGroupId"`
+	HostName                    string                                      `position:"Query" name:"HostName"`
+	Password                    string                                      `position:"Query" name:"Password"`
+	Cpu                         requests.Integer                            `position:"Query" name:"Cpu"`
+	OwnerId                     requests.Integer                            `position:"Query" name:"OwnerId"`
+	ScalingConfigurationName    string                                      `position:"Query" name:"ScalingConfigurationName"`
+	Tags                        string                                      `position:"Query" name:"Tags"`
+	SpotStrategy                string                                      `position:"Query" name:"SpotStrategy"`
+	InstanceName                string                                      `position:"Query" name:"InstanceName"`
+	InternetChargeType          string                                      `position:"Query" name:"InternetChargeType"`
+	InternetMaxBandwidthIn      requests.Integer                            `position:"Query" name:"InternetMaxBandwidthIn"`
 	ImageId                     string                                      `position:"Query" name:"ImageId"`
 	Memory                      requests.Integer                            `position:"Query" name:"Memory"`
 	ScalingGroupId              string                                      `position:"Query" name:"ScalingGroupId"`
@@ -83,34 +97,20 @@ type CreateScalingConfigurationRequest struct {
 	IoOptimized                 string                                      `position:"Query" name:"IoOptimized"`
 	SecurityGroupId             string                                      `position:"Query" name:"SecurityGroupId"`
 	InternetMaxBandwidthOut     requests.Integer                            `position:"Query" name:"InternetMaxBandwidthOut"`
-	SecurityEnhancementStrategy string                                      `position:"Query" name:"SecurityEnhancementStrategy"`
-	KeyPairName                 string                                      `position:"Query" name:"KeyPairName"`
-	SpotPriceLimit              *[]CreateScalingConfigurationSpotPriceLimit `position:"Query" name:"SpotPriceLimit"  type:"Repeated"`
 	SystemDiskCategory          string                                      `position:"Query" name:"SystemDisk.Category"`
 	UserData                    string                                      `position:"Query" name:"UserData"`
-	ResourceGroupId             string                                      `position:"Query" name:"ResourceGroupId"`
-	HostName                    string                                      `position:"Query" name:"HostName"`
-	Password                    string                                      `position:"Query" name:"Password"`
 	PasswordInherit             requests.Boolean                            `position:"Query" name:"PasswordInherit"`
 	ImageName                   string                                      `position:"Query" name:"ImageName"`
 	InstanceType                string                                      `position:"Query" name:"InstanceType"`
 	DeploymentSetId             string                                      `position:"Query" name:"DeploymentSetId"`
 	ResourceOwnerAccount        string                                      `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount                string                                      `position:"Query" name:"OwnerAccount"`
-	Cpu                         requests.Integer                            `position:"Query" name:"Cpu"`
 	SystemDiskDiskName          string                                      `position:"Query" name:"SystemDisk.DiskName"`
 	RamRoleName                 string                                      `position:"Query" name:"RamRoleName"`
-	OwnerId                     requests.Integer                            `position:"Query" name:"OwnerId"`
 	SecurityGroupIds            *[]string                                   `position:"Query" name:"SecurityGroupIds"  type:"Repeated"`
 	DataDisk                    *[]CreateScalingConfigurationDataDisk       `position:"Query" name:"DataDisk"  type:"Repeated"`
-	ScalingConfigurationName    string                                      `position:"Query" name:"ScalingConfigurationName"`
-	Tags                        string                                      `position:"Query" name:"Tags"`
-	SpotStrategy                string                                      `position:"Query" name:"SpotStrategy"`
 	LoadBalancerWeight          requests.Integer                            `position:"Query" name:"LoadBalancerWeight"`
-	InstanceName                string                                      `position:"Query" name:"InstanceName"`
 	SystemDiskSize              requests.Integer                            `position:"Query" name:"SystemDisk.Size"`
-	InternetChargeType          string                                      `position:"Query" name:"InternetChargeType"`
-	InternetMaxBandwidthIn      requests.Integer                            `position:"Query" name:"InternetMaxBandwidthIn"`
 	SystemDiskDescription       string                                      `position:"Query" name:"SystemDisk.Description"`
 }
 

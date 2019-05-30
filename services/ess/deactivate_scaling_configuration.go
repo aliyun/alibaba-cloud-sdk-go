@@ -76,10 +76,10 @@ func (client *Client) DeactivateScalingConfigurationWithCallback(request *Deacti
 // DeactivateScalingConfigurationRequest is the request struct for api DeactivateScalingConfiguration
 type DeactivateScalingConfigurationRequest struct {
 	*requests.RpcRequest
-	ScalingConfigurationId string           `position:"Query" name:"ScalingConfigurationId"`
 	ResourceOwnerAccount   string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount           string           `position:"Query" name:"OwnerAccount"`
 	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
+	ScalingConfigurationId string           `position:"Query" name:"ScalingConfigurationId"`
 }
 
 // DeactivateScalingConfigurationResponse is the response struct for api DeactivateScalingConfiguration

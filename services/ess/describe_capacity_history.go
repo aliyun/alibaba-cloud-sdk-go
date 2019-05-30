@@ -76,13 +76,13 @@ func (client *Client) DescribeCapacityHistoryWithCallback(request *DescribeCapac
 // DescribeCapacityHistoryRequest is the request struct for api DescribeCapacityHistory
 type DescribeCapacityHistoryRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ScalingGroupId       string           `position:"Query" name:"ScalingGroupId"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	EndTime              string           `position:"Query" name:"EndTime"`
 	StartTime            string           `position:"Query" name:"StartTime"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	EndTime              string           `position:"Query" name:"EndTime"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeCapacityHistoryResponse is the response struct for api DescribeCapacityHistory

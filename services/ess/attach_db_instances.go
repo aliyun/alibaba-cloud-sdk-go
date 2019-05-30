@@ -76,9 +76,9 @@ func (client *Client) AttachDBInstancesWithCallback(request *AttachDBInstancesRe
 // AttachDBInstancesRequest is the request struct for api AttachDBInstances
 type AttachDBInstancesRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ScalingGroupId       string           `position:"Query" name:"ScalingGroupId"`
 	ForceAttach          requests.Boolean `position:"Query" name:"ForceAttach"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	DBInstance           *[]string        `position:"Query" name:"DBInstance"  type:"Repeated"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }

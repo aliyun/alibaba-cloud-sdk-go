@@ -76,10 +76,10 @@ func (client *Client) ExitStandbyWithCallback(request *ExitStandbyRequest, callb
 // ExitStandbyRequest is the request struct for api ExitStandby
 type ExitStandbyRequest struct {
 	*requests.RpcRequest
-	InstanceId           *[]string        `position:"Query" name:"InstanceId"  type:"Repeated"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ScalingGroupId       string           `position:"Query" name:"ScalingGroupId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	InstanceId           *[]string        `position:"Query" name:"InstanceId"  type:"Repeated"`
 }
 
 // ExitStandbyResponse is the response struct for api ExitStandby

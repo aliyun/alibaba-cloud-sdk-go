@@ -77,15 +77,15 @@ func (client *Client) CreateLifecycleHookWithCallback(request *CreateLifecycleHo
 type CreateLifecycleHookRequest struct {
 	*requests.RpcRequest
 	DefaultResult        string                              `position:"Query" name:"DefaultResult"`
-	ResourceOwnerAccount string                              `position:"Query" name:"ResourceOwnerAccount"`
 	HeartbeatTimeout     requests.Integer                    `position:"Query" name:"HeartbeatTimeout"`
 	ScalingGroupId       string                              `position:"Query" name:"ScalingGroupId"`
-	OwnerAccount         string                              `position:"Query" name:"OwnerAccount"`
-	NotificationMetadata string                              `position:"Query" name:"NotificationMetadata"`
-	OwnerId              requests.Integer                    `position:"Query" name:"OwnerId"`
 	LifecycleTransition  string                              `position:"Query" name:"LifecycleTransition"`
 	LifecycleHookName    string                              `position:"Query" name:"LifecycleHookName"`
 	NotificationArn      string                              `position:"Query" name:"NotificationArn"`
+	ResourceOwnerAccount string                              `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string                              `position:"Query" name:"OwnerAccount"`
+	NotificationMetadata string                              `position:"Query" name:"NotificationMetadata"`
+	OwnerId              requests.Integer                    `position:"Query" name:"OwnerId"`
 	LifecycleHook        *[]CreateLifecycleHookLifecycleHook `position:"Query" name:"LifecycleHook"  type:"Repeated"`
 }
 

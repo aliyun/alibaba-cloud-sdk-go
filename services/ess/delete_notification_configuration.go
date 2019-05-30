@@ -78,8 +78,8 @@ type DeleteNotificationConfigurationRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ScalingGroupId       string           `position:"Query" name:"ScalingGroupId"`
-	NotificationArn      string           `position:"Query" name:"NotificationArn"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	NotificationArn      string           `position:"Query" name:"NotificationArn"`
 }
 
 // DeleteNotificationConfigurationResponse is the response struct for api DeleteNotificationConfiguration

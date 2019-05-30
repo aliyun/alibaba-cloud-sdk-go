@@ -17,20 +17,20 @@ package ess
 
 // Alarm is a nested struct in ess response
 type Alarm struct {
-	Name               string       `json:"Name" xml:"Name"`
-	MetricType         string       `json:"MetricType" xml:"MetricType"`
-	Period             int          `json:"Period" xml:"Period"`
-	Threshold          float64      `json:"Threshold" xml:"Threshold"`
-	AlarmTaskId        string       `json:"AlarmTaskId" xml:"AlarmTaskId"`
-	ComparisonOperator string       `json:"ComparisonOperator" xml:"ComparisonOperator"`
-	State              string       `json:"State" xml:"State"`
-	Enable             bool         `json:"Enable" xml:"Enable"`
-	MetricName         string       `json:"MetricName" xml:"MetricName"`
-	Statistics         string       `json:"Statistics" xml:"Statistics"`
-	ScalingGroupId     string       `json:"ScalingGroupId" xml:"ScalingGroupId"`
-	Description        string       `json:"Description" xml:"Description"`
-	AlarmTaskName      string       `json:"AlarmTaskName" xml:"AlarmTaskName"`
-	EvaluationCount    int          `json:"EvaluationCount" xml:"EvaluationCount"`
-	AlarmActions       AlarmActions `json:"AlarmActions" xml:"AlarmActions"`
-	Dimensions         Dimensions   `json:"Dimensions" xml:"Dimensions"`
+	Name               string                           `json:"Name" xml:"Name"`
+	MetricType         string                           `json:"MetricType" xml:"MetricType"`
+	Period             int                              `json:"Period" xml:"Period"`
+	Threshold          float64                          `json:"Threshold" xml:"Threshold"`
+	AlarmTaskId        string                           `json:"AlarmTaskId" xml:"AlarmTaskId"`
+	ComparisonOperator string                           `json:"ComparisonOperator" xml:"ComparisonOperator"`
+	State              string                           `json:"State" xml:"State"`
+	Enable             bool                             `json:"Enable" xml:"Enable"`
+	MetricName         string                           `json:"MetricName" xml:"MetricName"`
+	Statistics         string                           `json:"Statistics" xml:"Statistics"`
+	ScalingGroupId     string                           `json:"ScalingGroupId" xml:"ScalingGroupId"`
+	AlarmTaskName      string                           `json:"AlarmTaskName" xml:"AlarmTaskName"`
+	Description        string                           `json:"Description" xml:"Description"`
+	EvaluationCount    int                              `json:"EvaluationCount" xml:"EvaluationCount"`
+	AlarmActions       AlarmActions                     `json:"AlarmActions" xml:"AlarmActions"`
+	Dimensions         DimensionsInDescribeScalingRules `json:"Dimensions" xml:"Dimensions"`
 }

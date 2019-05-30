@@ -77,8 +77,8 @@ func (client *Client) RecordLifecycleActionHeartbeatWithCallback(request *Record
 type RecordLifecycleActionHeartbeatRequest struct {
 	*requests.RpcRequest
 	LifecycleActionToken string           `position:"Query" name:"lifecycleActionToken"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	HeartbeatTimeout     requests.Integer `position:"Query" name:"heartbeatTimeout"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	LifecycleHookId      string           `position:"Query" name:"lifecycleHookId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
