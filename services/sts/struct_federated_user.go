@@ -1,4 +1,3 @@
-
 package sts
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,6 +17,6 @@ package sts
 
 // FederatedUser is a nested struct in sts response
 type FederatedUser struct {
-            Arn     string `json:"Arn" xml:"Arn"`
-            FederatedUserId     string `json:"FederatedUserId" xml:"FederatedUserId"`
+	Arn             string `json:"Arn" xml:"Arn"`
+	FederatedUserId string `json:"FederatedUserId" xml:"FederatedUserId"`
 }

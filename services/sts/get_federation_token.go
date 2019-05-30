@@ -1,4 +1,3 @@
-
 package sts
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,95 +16,92 @@ package sts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // GetFederationToken invokes the sts.GetFederationToken API synchronously
 // api document: https://help.aliyun.com/api/sts/getfederationtoken.html
 func (client *Client) GetFederationToken(request *GetFederationTokenRequest) (response *GetFederationTokenResponse, err error) {
-response = CreateGetFederationTokenResponse()
-err = client.DoAction(request, response)
-return
+	response = CreateGetFederationTokenResponse()
+	err = client.DoAction(request, response)
+	return
 }
 
 // GetFederationTokenWithChan invokes the sts.GetFederationToken API asynchronously
 // api document: https://help.aliyun.com/api/sts/getfederationtoken.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetFederationTokenWithChan(request *GetFederationTokenRequest) (<-chan *GetFederationTokenResponse, <-chan error) {
-responseChan := make(chan *GetFederationTokenResponse, 1)
-errChan := make(chan error, 1)
-err := client.AddAsyncTask(func() {
-defer close(responseChan)
-defer close(errChan)
-response, err :=  client.GetFederationToken(request)
-if err != nil {
-errChan <- err
-} else {
-responseChan <- response
-}
-})
-if err != nil {
-errChan <- err
-close(responseChan)
-close(errChan)
-}
-return responseChan, errChan
+	responseChan := make(chan *GetFederationTokenResponse, 1)
+	errChan := make(chan error, 1)
+	err := client.AddAsyncTask(func() {
+		defer close(responseChan)
+		defer close(errChan)
+		response, err := client.GetFederationToken(request)
+		if err != nil {
+			errChan <- err
+		} else {
+			responseChan <- response
+		}
+	})
+	if err != nil {
+		errChan <- err
+		close(responseChan)
+		close(errChan)
+	}
+	return responseChan, errChan
 }
 
 // GetFederationTokenWithCallback invokes the sts.GetFederationToken API asynchronously
 // api document: https://help.aliyun.com/api/sts/getfederationtoken.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) GetFederationTokenWithCallback(request *GetFederationTokenRequest, callback func(response *GetFederationTokenResponse, err error)) (<-chan int) {
-result := make(chan int, 1)
-err := client.AddAsyncTask(func() {
-var response *GetFederationTokenResponse
-var err error
-defer close(result)
-response, err = client.GetFederationToken(request)
-callback(response, err)
-result <- 1
-})
-if err != nil {
-defer close(result)
-callback(nil, err)
-result <- 0
-}
-return result
+func (client *Client) GetFederationTokenWithCallback(request *GetFederationTokenRequest, callback func(response *GetFederationTokenResponse, err error)) <-chan int {
+	result := make(chan int, 1)
+	err := client.AddAsyncTask(func() {
+		var response *GetFederationTokenResponse
+		var err error
+		defer close(result)
+		response, err = client.GetFederationToken(request)
+		callback(response, err)
+		result <- 1
+	})
+	if err != nil {
+		defer close(result)
+		callback(nil, err)
+		result <- 0
+	}
+	return result
 }
 
 // GetFederationTokenRequest is the request struct for api GetFederationToken
 type GetFederationTokenRequest struct {
-*requests.RpcRequest
-                    Name     string `position:"Query" name:"Name"`
-                    DurationSeconds     requests.Integer `position:"Query" name:"DurationSeconds"`
-                    Policy     string `position:"Query" name:"Policy"`
+	*requests.RpcRequest
+	Name            string           `position:"Query" name:"Name"`
+	DurationSeconds requests.Integer `position:"Query" name:"DurationSeconds"`
+	Policy          string           `position:"Query" name:"Policy"`
 }
-
 
 // GetFederationTokenResponse is the response struct for api GetFederationToken
 type GetFederationTokenResponse struct {
-*responses.BaseResponse
-            RequestId     string `json:"RequestId" xml:"RequestId"`
-            Credentials Credentials  `json:"Credentials" xml:"Credentials"`
-            FederatedUser FederatedUser  `json:"FederatedUser" xml:"FederatedUser"`
+	*responses.BaseResponse
+	RequestId     string        `json:"RequestId" xml:"RequestId"`
+	Credentials   Credentials   `json:"Credentials" xml:"Credentials"`
+	FederatedUser FederatedUser `json:"FederatedUser" xml:"FederatedUser"`
 }
 
 // CreateGetFederationTokenRequest creates a request to invoke GetFederationToken API
 func CreateGetFederationTokenRequest() (request *GetFederationTokenRequest) {
-request = &GetFederationTokenRequest{
-RpcRequest: &requests.RpcRequest{},
-}
-request.InitWithApiInfo("Sts", "2015-04-01", "GetFederationToken", "sts", "openAPI")
-return
+	request = &GetFederationTokenRequest{
+		RpcRequest: &requests.RpcRequest{},
+	}
+	request.InitWithApiInfo("Sts", "2015-04-01", "GetFederationToken", "sts", "openAPI")
+	return
 }
 
 // CreateGetFederationTokenResponse creates a response to parse from GetFederationToken response
 func CreateGetFederationTokenResponse() (response *GetFederationTokenResponse) {
-response = &GetFederationTokenResponse{
-BaseResponse: &responses.BaseResponse{},
+	response = &GetFederationTokenResponse{
+		BaseResponse: &responses.BaseResponse{},
+	}
+	return
 }
-return
-}
-
-

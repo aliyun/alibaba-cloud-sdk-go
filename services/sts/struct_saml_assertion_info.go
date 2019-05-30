@@ -1,4 +1,3 @@
-
 package sts
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -18,8 +17,8 @@ package sts
 
 // SAMLAssertionInfo is a nested struct in sts response
 type SAMLAssertionInfo struct {
-            SubjectType     string `json:"SubjectType" xml:"SubjectType"`
-            Subject     string `json:"Subject" xml:"Subject"`
-            Recipient     string `json:"Recipient" xml:"Recipient"`
-            Issuer     string `json:"Issuer" xml:"Issuer"`
+	SubjectType string `json:"SubjectType" xml:"SubjectType"`
+	Subject     string `json:"Subject" xml:"Subject"`
+	Recipient   string `json:"Recipient" xml:"Recipient"`
+	Issuer      string `json:"Issuer" xml:"Issuer"`
 }
