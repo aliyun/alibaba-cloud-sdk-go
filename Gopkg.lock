@@ -18,12 +18,19 @@
   version = "v1.1.1"
 
 [[projects]]
-  digest = "1:b87714e57a511d88f307aba7d5b63522da12bed0a050889c81272fc50f71100e"
+  branch = "master"
+  digest = "1:205b3c069003f9d1458e4304427ab3652d8d7bac3bde1568a2d5486451e453bd"
+  name = "github.com/goji/httpauth"
+  packages = ["."]
+  pruneopts = "UT"
+  revision = "2da839ab0f4df05a6db5eb277995589dadbd4fb9"
+
+[[projects]]
+  digest = "1:bb81097a5b62634f3e9fec1014657855610c82d19b9a40c17612e32651e35dca"
   name = "github.com/jmespath/go-jmespath"
   packages = ["."]
   pruneopts = "UT"
-  revision = "3433f3ea46d9f8019119e7dd41274e112a2359a9"
-  version = "0.2.2"
+  revision = "c2b33e84"
 
 [[projects]]
   digest = "1:3e551bbb3a7c0ab2a2bf4660e7fcad16db089fdcfbb44b0199e62838038623ea"
@@ -94,6 +101,7 @@
   analyzer-version = 1
   input-imports = [
     "github.com/aliyun/aliyun-oss-go-sdk/oss",
+    "github.com/goji/httpauth",
     "github.com/jmespath/go-jmespath",
     "github.com/json-iterator/go",
     "github.com/satori/go.uuid",
