@@ -1,3 +1,4 @@
+
 package sts
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,89 +17,92 @@ package sts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // GenerateSessionAccessKey invokes the sts.GenerateSessionAccessKey API synchronously
 // api document: https://help.aliyun.com/api/sts/generatesessionaccesskey.html
 func (client *Client) GenerateSessionAccessKey(request *GenerateSessionAccessKeyRequest) (response *GenerateSessionAccessKeyResponse, err error) {
-	response = CreateGenerateSessionAccessKeyResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateGenerateSessionAccessKeyResponse()
+err = client.DoAction(request, response)
+return
 }
 
 // GenerateSessionAccessKeyWithChan invokes the sts.GenerateSessionAccessKey API asynchronously
 // api document: https://help.aliyun.com/api/sts/generatesessionaccesskey.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GenerateSessionAccessKeyWithChan(request *GenerateSessionAccessKeyRequest) (<-chan *GenerateSessionAccessKeyResponse, <-chan error) {
-	responseChan := make(chan *GenerateSessionAccessKeyResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.GenerateSessionAccessKey(request)
-		if err != nil {
-			errChan <- err
-		} else {
-			responseChan <- response
-		}
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *GenerateSessionAccessKeyResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.GenerateSessionAccessKey(request)
+if err != nil {
+errChan <- err
+} else {
+responseChan <- response
+}
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
 // GenerateSessionAccessKeyWithCallback invokes the sts.GenerateSessionAccessKey API asynchronously
 // api document: https://help.aliyun.com/api/sts/generatesessionaccesskey.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) GenerateSessionAccessKeyWithCallback(request *GenerateSessionAccessKeyRequest, callback func(response *GenerateSessionAccessKeyResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *GenerateSessionAccessKeyResponse
-		var err error
-		defer close(result)
-		response, err = client.GenerateSessionAccessKey(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) GenerateSessionAccessKeyWithCallback(request *GenerateSessionAccessKeyRequest, callback func(response *GenerateSessionAccessKeyResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *GenerateSessionAccessKeyResponse
+var err error
+defer close(result)
+response, err = client.GenerateSessionAccessKey(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 // GenerateSessionAccessKeyRequest is the request struct for api GenerateSessionAccessKey
 type GenerateSessionAccessKeyRequest struct {
-	*requests.RpcRequest
-	DurationSeconds requests.Integer `position:"Query" name:"DurationSeconds"`
+*requests.RpcRequest
+                    DurationSeconds     requests.Integer `position:"Query" name:"DurationSeconds"`
 }
+
 
 // GenerateSessionAccessKeyResponse is the response struct for api GenerateSessionAccessKey
 type GenerateSessionAccessKeyResponse struct {
-	*responses.BaseResponse
-	RequestId        string           `json:"RequestId" xml:"RequestId"`
-	SessionAccessKey SessionAccessKey `json:"SessionAccessKey" xml:"SessionAccessKey"`
+*responses.BaseResponse
+            RequestId     string `json:"RequestId" xml:"RequestId"`
+            SessionAccessKey SessionAccessKey  `json:"SessionAccessKey" xml:"SessionAccessKey"`
 }
 
 // CreateGenerateSessionAccessKeyRequest creates a request to invoke GenerateSessionAccessKey API
 func CreateGenerateSessionAccessKeyRequest() (request *GenerateSessionAccessKeyRequest) {
-	request = &GenerateSessionAccessKeyRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Sts", "2015-04-01", "GenerateSessionAccessKey", "sts", "openAPI")
-	return
+request = &GenerateSessionAccessKeyRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Sts", "2015-04-01", "GenerateSessionAccessKey", "sts", "openAPI")
+return
 }
 
 // CreateGenerateSessionAccessKeyResponse creates a response to parse from GenerateSessionAccessKey response
 func CreateGenerateSessionAccessKeyResponse() (response *GenerateSessionAccessKeyResponse) {
-	response = &GenerateSessionAccessKeyResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &GenerateSessionAccessKeyResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+
+

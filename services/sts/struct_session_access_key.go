@@ -1,3 +1,4 @@
+
 package sts
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -17,7 +18,7 @@ package sts
 
 // SessionAccessKey is a nested struct in sts response
 type SessionAccessKey struct {
-	SessionAccessKeyId     string `json:"SessionAccessKeyId" xml:"SessionAccessKeyId"`
-	SessionAccessKeySecret string `json:"SessionAccessKeySecret" xml:"SessionAccessKeySecret"`
-	Expiration             string `json:"Expiration" xml:"Expiration"`
+            SessionAccessKeyId     string `json:"SessionAccessKeyId" xml:"SessionAccessKeyId"`
+            SessionAccessKeySecret     string `json:"SessionAccessKeySecret" xml:"SessionAccessKeySecret"`
+            Expiration     string `json:"Expiration" xml:"Expiration"`
 }

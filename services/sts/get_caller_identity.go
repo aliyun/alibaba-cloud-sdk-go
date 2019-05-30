@@ -1,3 +1,4 @@
+
 package sts
 
 //Licensed under the Apache License, Version 2.0 (the "License");
@@ -16,93 +17,96 @@ package sts
 // Changes may cause incorrect behavior and will be lost if the code is regenerated.
 
 import (
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
-	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
+"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
 // GetCallerIdentity invokes the sts.GetCallerIdentity API synchronously
 // api document: https://help.aliyun.com/api/sts/getcalleridentity.html
 func (client *Client) GetCallerIdentity(request *GetCallerIdentityRequest) (response *GetCallerIdentityResponse, err error) {
-	response = CreateGetCallerIdentityResponse()
-	err = client.DoAction(request, response)
-	return
+response = CreateGetCallerIdentityResponse()
+err = client.DoAction(request, response)
+return
 }
 
 // GetCallerIdentityWithChan invokes the sts.GetCallerIdentity API asynchronously
 // api document: https://help.aliyun.com/api/sts/getcalleridentity.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
 func (client *Client) GetCallerIdentityWithChan(request *GetCallerIdentityRequest) (<-chan *GetCallerIdentityResponse, <-chan error) {
-	responseChan := make(chan *GetCallerIdentityResponse, 1)
-	errChan := make(chan error, 1)
-	err := client.AddAsyncTask(func() {
-		defer close(responseChan)
-		defer close(errChan)
-		response, err := client.GetCallerIdentity(request)
-		if err != nil {
-			errChan <- err
-		} else {
-			responseChan <- response
-		}
-	})
-	if err != nil {
-		errChan <- err
-		close(responseChan)
-		close(errChan)
-	}
-	return responseChan, errChan
+responseChan := make(chan *GetCallerIdentityResponse, 1)
+errChan := make(chan error, 1)
+err := client.AddAsyncTask(func() {
+defer close(responseChan)
+defer close(errChan)
+response, err :=  client.GetCallerIdentity(request)
+if err != nil {
+errChan <- err
+} else {
+responseChan <- response
+}
+})
+if err != nil {
+errChan <- err
+close(responseChan)
+close(errChan)
+}
+return responseChan, errChan
 }
 
 // GetCallerIdentityWithCallback invokes the sts.GetCallerIdentity API asynchronously
 // api document: https://help.aliyun.com/api/sts/getcalleridentity.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) GetCallerIdentityWithCallback(request *GetCallerIdentityRequest, callback func(response *GetCallerIdentityResponse, err error)) <-chan int {
-	result := make(chan int, 1)
-	err := client.AddAsyncTask(func() {
-		var response *GetCallerIdentityResponse
-		var err error
-		defer close(result)
-		response, err = client.GetCallerIdentity(request)
-		callback(response, err)
-		result <- 1
-	})
-	if err != nil {
-		defer close(result)
-		callback(nil, err)
-		result <- 0
-	}
-	return result
+func (client *Client) GetCallerIdentityWithCallback(request *GetCallerIdentityRequest, callback func(response *GetCallerIdentityResponse, err error)) (<-chan int) {
+result := make(chan int, 1)
+err := client.AddAsyncTask(func() {
+var response *GetCallerIdentityResponse
+var err error
+defer close(result)
+response, err = client.GetCallerIdentity(request)
+callback(response, err)
+result <- 1
+})
+if err != nil {
+defer close(result)
+callback(nil, err)
+result <- 0
+}
+return result
 }
 
 // GetCallerIdentityRequest is the request struct for api GetCallerIdentity
 type GetCallerIdentityRequest struct {
-	*requests.RpcRequest
+*requests.RpcRequest
 }
+
 
 // GetCallerIdentityResponse is the response struct for api GetCallerIdentity
 type GetCallerIdentityResponse struct {
-	*responses.BaseResponse
-	AccountId    string `json:"AccountId" xml:"AccountId"`
-	UserId       string `json:"UserId" xml:"UserId"`
-	RoleId       string `json:"RoleId" xml:"RoleId"`
-	Arn          string `json:"Arn" xml:"Arn"`
-	IdentityType string `json:"IdentityType" xml:"IdentityType"`
-	PrincipalId  string `json:"PrincipalId" xml:"PrincipalId"`
-	RequestId    string `json:"RequestId" xml:"RequestId"`
+*responses.BaseResponse
+            AccountId     string `json:"AccountId" xml:"AccountId"`
+            UserId     string `json:"UserId" xml:"UserId"`
+            RoleId     string `json:"RoleId" xml:"RoleId"`
+            Arn     string `json:"Arn" xml:"Arn"`
+            IdentityType     string `json:"IdentityType" xml:"IdentityType"`
+            PrincipalId     string `json:"PrincipalId" xml:"PrincipalId"`
+            RequestId     string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateGetCallerIdentityRequest creates a request to invoke GetCallerIdentity API
 func CreateGetCallerIdentityRequest() (request *GetCallerIdentityRequest) {
-	request = &GetCallerIdentityRequest{
-		RpcRequest: &requests.RpcRequest{},
-	}
-	request.InitWithApiInfo("Sts", "2015-04-01", "GetCallerIdentity", "sts", "openAPI")
-	return
+request = &GetCallerIdentityRequest{
+RpcRequest: &requests.RpcRequest{},
+}
+request.InitWithApiInfo("Sts", "2015-04-01", "GetCallerIdentity", "sts", "openAPI")
+return
 }
 
 // CreateGetCallerIdentityResponse creates a response to parse from GetCallerIdentity response
 func CreateGetCallerIdentityResponse() (response *GetCallerIdentityResponse) {
-	response = &GetCallerIdentityResponse{
-		BaseResponse: &responses.BaseResponse{},
-	}
-	return
+response = &GetCallerIdentityResponse{
+BaseResponse: &responses.BaseResponse{},
 }
+return
+}
+
+
