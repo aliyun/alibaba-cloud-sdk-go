@@ -1,3 +1,6 @@
+2019-05-31 Version: 1.60.31
+1, Add authority in GetMaterials API.
+
 2019-05-30 Version: 1.60.30
 Fix: Handle the repeatlist parameter correctly
 

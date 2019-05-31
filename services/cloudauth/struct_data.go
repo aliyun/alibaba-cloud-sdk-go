@@ -18,27 +18,28 @@ package cloudauth
 // Data is a nested struct in cloudauth response
 type Data struct {
 	Name                     string       `json:"Name" xml:"Name"`
-	IdCardFrontPic           string       `json:"IdCardFrontPic" xml:"IdCardFrontPic"`
 	TrustedScore             float64      `json:"TrustedScore" xml:"TrustedScore"`
+	IdCardType               string       `json:"IdCardType" xml:"IdCardType"`
+	IdentificationNumber     string       `json:"IdentificationNumber" xml:"IdentificationNumber"`
+	Sex                      string       `json:"Sex" xml:"Sex"`
+	IdCardBackPic            string       `json:"IdCardBackPic" xml:"IdCardBackPic"`
+	ImgWidth                 int          `json:"ImgWidth" xml:"ImgWidth"`
+	Authority                string       `json:"Authority" xml:"Authority"`
+	CloudauthPageUrl         string       `json:"CloudauthPageUrl" xml:"CloudauthPageUrl"`
+	StatusCode               int          `json:"StatusCode" xml:"StatusCode"`
+	ImgHeight                int          `json:"ImgHeight" xml:"ImgHeight"`
+	IdCardFrontPic           string       `json:"IdCardFrontPic" xml:"IdCardFrontPic"`
 	FacePic                  string       `json:"FacePic" xml:"FacePic"`
 	IdCardExpiry             string       `json:"IdCardExpiry" xml:"IdCardExpiry"`
 	AuditConclusions         string       `json:"AuditConclusions" xml:"AuditConclusions"`
 	AuthorityComparisonScore float64      `json:"AuthorityComparisonScore" xml:"AuthorityComparisonScore"`
 	IdCardStartDate          string       `json:"IdCardStartDate" xml:"IdCardStartDate"`
-	IdCardType               string       `json:"IdCardType" xml:"IdCardType"`
 	SimilarityScore          float64      `json:"SimilarityScore" xml:"SimilarityScore"`
-	IdentificationNumber     string       `json:"IdentificationNumber" xml:"IdentificationNumber"`
 	Address                  string       `json:"Address" xml:"Address"`
 	EthnicGroup              string       `json:"EthnicGroup" xml:"EthnicGroup"`
-	Sex                      string       `json:"Sex" xml:"Sex"`
-	IdCardBackPic            string       `json:"IdCardBackPic" xml:"IdCardBackPic"`
-	ImgWidth                 int          `json:"ImgWidth" xml:"ImgWidth"`
-	CloudauthPageUrl         string       `json:"CloudauthPageUrl" xml:"CloudauthPageUrl"`
-	StatusCode               int          `json:"StatusCode" xml:"StatusCode"`
-	ImgHeight                int          `json:"ImgHeight" xml:"ImgHeight"`
 	ConfidenceThresholds     string       `json:"ConfidenceThresholds" xml:"ConfidenceThresholds"`
 	StsToken                 StsToken     `json:"StsToken" xml:"StsToken"`
-	VerifyStatus             VerifyStatus `json:"VerifyStatus" xml:"VerifyStatus"`
 	VerifyToken              VerifyToken  `json:"VerifyToken" xml:"VerifyToken"`
+	VerifyStatus             VerifyStatus `json:"VerifyStatus" xml:"VerifyStatus"`
 	FaceInfos                FaceInfos    `json:"FaceInfos" xml:"FaceInfos"`
 }
