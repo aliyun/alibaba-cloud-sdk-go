@@ -1,3 +1,7 @@
+2019-05-31 Version: 1.60.32
+1, add api 'search traces count' 
+2, add page index for api 'searchTraces'
+
 2019-05-31 Version: 1.60.31
 1, Add authority in GetMaterials API.
 

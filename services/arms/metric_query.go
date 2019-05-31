@@ -107,7 +107,7 @@ func CreateMetricQueryRequest() (request *MetricQueryRequest) {
 	request = &MetricQueryRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ARMS", "2018-12-19", "MetricQuery", "arms", "openAPI")
+	request.InitWithApiInfo("ARMS", "2019-02-19", "MetricQuery", "", "")
 	return
 }
 
