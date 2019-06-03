@@ -507,7 +507,6 @@ func TestClient_BuildRequestWithSigner1(t *testing.T) {
 	assert.NotNil(t, client)
 	assert.Equal(t, true, client.isRunning)
 	request := requests.NewCommonRequest()
-	request.Domain = "ecs.aliyuncs.com"
 	request.Version = "2014-05-26"
 	request.ApiName = "DescribeInstanceStatus"
 
@@ -519,7 +518,64 @@ func TestClient_BuildRequestWithSigner1(t *testing.T) {
 		name: "signer",
 	}
 	err = client.BuildRequestWithSigner(request, signer)
+	assert.NotNil(t, err)
+	assert.Contains(t, err.Error(), "SDK.CanNotResolveEndpoint] Can not resolve endpoint")
+}
+
+func TestClient_BuildRequestWithSigner2(t *testing.T) {
+	client, err := NewClientWithAccessKey("regionid", "acesskeyid", "accesskeysecret")
 	assert.Nil(t, err)
+	assert.NotNil(t, client)
+	assert.Equal(t, true, client.isRunning)
+	request := requests.NewCommonRequest()
+	request.Version = "2014-05-26"
+	request.ApiName = "DescribeInstanceStatus"
+
+	request.QueryParams["PageNumber"] = "1"
+	request.QueryParams["PageSize"] = "30"
+	request.RegionId = "regionid"
+	request.Product = "Ecs"
+	request.TransToAcsRequest()
+	signer := &signertest{
+		name: "signer",
+	}
+
+	//Test: regional rule
+	client.EndpointType = "regional"
+	httprequest, err := client.buildRequestWithSigner(request, signer)
+	assert.Nil(t, err)
+	assert.Equal(t, "ecs.regionid.aliyuncs.com", httprequest.URL.Host)
+
+	//Test: exceptional rule
+	request.Domain = ""
+	client.EndpointMap = map[string]string{
+		"regionid": "ecs.test.com",
+	}
+	httprequest, err = client.buildRequestWithSigner(request, signer)
+	assert.Nil(t, err)
+	assert.Equal(t, "ecs.test.com", httprequest.URL.Host)
+
+	//Test: no valid exceptional rule
+	request.Domain = ""
+	client.EndpointMap = map[string]string{
+		"regiontest": "ecs.test.com",
+	}
+	httprequest, err = client.buildRequestWithSigner(request, signer)
+	assert.Nil(t, err)
+	assert.Equal(t, "ecs.regionid.aliyuncs.com", httprequest.URL.Host)
+
+	//Test: center rule
+	request.Domain = ""
+	client.EndpointType = "centeral"
+	client.Network = "share"
+	httprequest, err = client.buildRequestWithSigner(request, signer)
+	assert.Nil(t, err)
+	assert.Equal(t, "ecs-share.aliyuncs.com", httprequest.URL.Host)
+
+	client.SetEndpointRules(client.EndpointMap, "regional", "vpc")
+	assert.Equal(t, "regional", client.EndpointType)
+	assert.Equal(t, "vpc", client.Network)
+	assert.Equal(t, map[string]string{"regiontest": "ecs.test.com"}, client.EndpointMap)
 }
 
 func TestClient_ProcessCommonRequestWithSigner(t *testing.T) {
