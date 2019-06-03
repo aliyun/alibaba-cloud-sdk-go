@@ -76,14 +76,21 @@ func (client *Client) DescribeCloudConnectNetworksWithCallback(request *Describe
 // DescribeCloudConnectNetworksRequest is the request struct for api DescribeCloudConnectNetworks
 type DescribeCloudConnectNetworksRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	Name                 string           `position:"Query" name:"Name"`
-	CcnId                string           `position:"Query" name:"CcnId"`
-	PageSize             string           `position:"Query" name:"PageSize"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	PageNumber           string           `position:"Query" name:"PageNumber"`
+	ResourceOwnerId      requests.Integer                   `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string                             `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string                             `position:"Query" name:"OwnerAccount"`
+	Name                 string                             `position:"Query" name:"Name"`
+	CcnId                string                             `position:"Query" name:"CcnId"`
+	PageSize             string                             `position:"Query" name:"PageSize"`
+	Tag                  *[]DescribeCloudConnectNetworksTag `position:"Query" name:"Tag"  type:"Repeated"`
+	OwnerId              requests.Integer                   `position:"Query" name:"OwnerId"`
+	PageNumber           string                             `position:"Query" name:"PageNumber"`
+}
+
+// DescribeCloudConnectNetworksTag is a repeated param struct in DescribeCloudConnectNetworksRequest
+type DescribeCloudConnectNetworksTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // DescribeCloudConnectNetworksResponse is the response struct for api DescribeCloudConnectNetworks

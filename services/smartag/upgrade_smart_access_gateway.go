@@ -81,8 +81,10 @@ type UpgradeSmartAccessGatewayRequest struct {
 	BandWidthSpec        requests.Integer `position:"Query" name:"BandWidthSpec"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	UserCount            requests.Integer `position:"Query" name:"UserCount"`
 	SmartAGId            string           `position:"Query" name:"SmartAGId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	DataPlan             requests.Integer `position:"Query" name:"DataPlan"`
 }
 
 // UpgradeSmartAccessGatewayResponse is the response struct for api UpgradeSmartAccessGateway

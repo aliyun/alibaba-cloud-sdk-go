@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DeleteSAGLinkLevelHa invokes the smartag.DeleteSAGLinkLevelHa API synchronously
-// api document: https://help.aliyun.com/api/smartag/deletesaglinklevelha.html
-func (client *Client) DeleteSAGLinkLevelHa(request *DeleteSAGLinkLevelHaRequest) (response *DeleteSAGLinkLevelHaResponse, err error) {
-	response = CreateDeleteSAGLinkLevelHaResponse()
+// ModifySerialNumber invokes the smartag.ModifySerialNumber API synchronously
+// api document: https://help.aliyun.com/api/smartag/modifyserialnumber.html
+func (client *Client) ModifySerialNumber(request *ModifySerialNumberRequest) (response *ModifySerialNumberResponse, err error) {
+	response = CreateModifySerialNumberResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DeleteSAGLinkLevelHaWithChan invokes the smartag.DeleteSAGLinkLevelHa API asynchronously
-// api document: https://help.aliyun.com/api/smartag/deletesaglinklevelha.html
+// ModifySerialNumberWithChan invokes the smartag.ModifySerialNumber API asynchronously
+// api document: https://help.aliyun.com/api/smartag/modifyserialnumber.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DeleteSAGLinkLevelHaWithChan(request *DeleteSAGLinkLevelHaRequest) (<-chan *DeleteSAGLinkLevelHaResponse, <-chan error) {
-	responseChan := make(chan *DeleteSAGLinkLevelHaResponse, 1)
+func (client *Client) ModifySerialNumberWithChan(request *ModifySerialNumberRequest) (<-chan *ModifySerialNumberResponse, <-chan error) {
+	responseChan := make(chan *ModifySerialNumberResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DeleteSAGLinkLevelHa(request)
+		response, err := client.ModifySerialNumber(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) DeleteSAGLinkLevelHaWithChan(request *DeleteSAGLinkLevelHa
 	return responseChan, errChan
 }
 
-// DeleteSAGLinkLevelHaWithCallback invokes the smartag.DeleteSAGLinkLevelHa API asynchronously
-// api document: https://help.aliyun.com/api/smartag/deletesaglinklevelha.html
+// ModifySerialNumberWithCallback invokes the smartag.ModifySerialNumber API asynchronously
+// api document: https://help.aliyun.com/api/smartag/modifyserialnumber.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DeleteSAGLinkLevelHaWithCallback(request *DeleteSAGLinkLevelHaRequest, callback func(response *DeleteSAGLinkLevelHaResponse, err error)) <-chan int {
+func (client *Client) ModifySerialNumberWithCallback(request *ModifySerialNumberRequest, callback func(response *ModifySerialNumberResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DeleteSAGLinkLevelHaResponse
+		var response *ModifySerialNumberResponse
 		var err error
 		defer close(result)
-		response, err = client.DeleteSAGLinkLevelHa(request)
+		response, err = client.ModifySerialNumber(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,35 +73,35 @@ func (client *Client) DeleteSAGLinkLevelHaWithCallback(request *DeleteSAGLinkLev
 	return result
 }
 
-// DeleteSAGLinkLevelHaRequest is the request struct for api DeleteSAGLinkLevelHa
-type DeleteSAGLinkLevelHaRequest struct {
+// ModifySerialNumberRequest is the request struct for api ModifySerialNumber
+type ModifySerialNumberRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	SerialNumber         string           `position:"Query" name:"SerialNumber"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	HaType               string           `position:"Query" name:"HaType"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	SmartAGId            string           `position:"Query" name:"SmartAGId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
-// DeleteSAGLinkLevelHaResponse is the response struct for api DeleteSAGLinkLevelHa
-type DeleteSAGLinkLevelHaResponse struct {
+// ModifySerialNumberResponse is the response struct for api ModifySerialNumber
+type ModifySerialNumberResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateDeleteSAGLinkLevelHaRequest creates a request to invoke DeleteSAGLinkLevelHa API
-func CreateDeleteSAGLinkLevelHaRequest() (request *DeleteSAGLinkLevelHaRequest) {
-	request = &DeleteSAGLinkLevelHaRequest{
+// CreateModifySerialNumberRequest creates a request to invoke ModifySerialNumber API
+func CreateModifySerialNumberRequest() (request *ModifySerialNumberRequest) {
+	request = &ModifySerialNumberRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Smartag", "2018-03-13", "DeleteSAGLinkLevelHa", "smartag", "openAPI")
+	request.InitWithApiInfo("Smartag", "2018-03-13", "ModifySerialNumber", "smartag", "openAPI")
 	return
 }
 
-// CreateDeleteSAGLinkLevelHaResponse creates a response to parse from DeleteSAGLinkLevelHa response
-func CreateDeleteSAGLinkLevelHaResponse() (response *DeleteSAGLinkLevelHaResponse) {
-	response = &DeleteSAGLinkLevelHaResponse{
+// CreateModifySerialNumberResponse creates a response to parse from ModifySerialNumber response
+func CreateModifySerialNumberResponse() (response *ModifySerialNumberResponse) {
+	response = &ModifySerialNumberResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

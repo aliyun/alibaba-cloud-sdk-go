@@ -26,4 +26,7 @@ type CloudConnectNetwork struct {
 	Description             string `json:"Description" xml:"Description"`
 	CreateTime              int    `json:"CreateTime" xml:"CreateTime"`
 	IsDefault               bool   `json:"IsDefault" xml:"IsDefault"`
+	CidrBlock               string `json:"CidrBlock" xml:"CidrBlock"`
+	SnatCidrBlock           string `json:"SnatCidrBlock" xml:"SnatCidrBlock"`
+	Tags                    Tags   `json:"Tags" xml:"Tags"`
 }

@@ -81,7 +81,9 @@ type ModifyCloudConnectNetworkRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	CcnId                string           `position:"Query" name:"CcnId"`
 	Name                 string           `position:"Query" name:"Name"`
+	CidrBlock            string           `position:"Query" name:"CidrBlock"`
 	Description          string           `position:"Query" name:"Description"`
+	SnatCidrBlock        string           `position:"Query" name:"SnatCidrBlock"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 

@@ -1,3 +1,6 @@
+2019-06-03 Version: 1.60.34
+1, Add openapi of ACL.
+
 2019-06-03 Version: 1.60.33
 1, Order info add relatedOrderId.
 

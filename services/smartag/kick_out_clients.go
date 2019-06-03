@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DeleteSAGLinkLevelHa invokes the smartag.DeleteSAGLinkLevelHa API synchronously
-// api document: https://help.aliyun.com/api/smartag/deletesaglinklevelha.html
-func (client *Client) DeleteSAGLinkLevelHa(request *DeleteSAGLinkLevelHaRequest) (response *DeleteSAGLinkLevelHaResponse, err error) {
-	response = CreateDeleteSAGLinkLevelHaResponse()
+// KickOutClients invokes the smartag.KickOutClients API synchronously
+// api document: https://help.aliyun.com/api/smartag/kickoutclients.html
+func (client *Client) KickOutClients(request *KickOutClientsRequest) (response *KickOutClientsResponse, err error) {
+	response = CreateKickOutClientsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DeleteSAGLinkLevelHaWithChan invokes the smartag.DeleteSAGLinkLevelHa API asynchronously
-// api document: https://help.aliyun.com/api/smartag/deletesaglinklevelha.html
+// KickOutClientsWithChan invokes the smartag.KickOutClients API asynchronously
+// api document: https://help.aliyun.com/api/smartag/kickoutclients.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DeleteSAGLinkLevelHaWithChan(request *DeleteSAGLinkLevelHaRequest) (<-chan *DeleteSAGLinkLevelHaResponse, <-chan error) {
-	responseChan := make(chan *DeleteSAGLinkLevelHaResponse, 1)
+func (client *Client) KickOutClientsWithChan(request *KickOutClientsRequest) (<-chan *KickOutClientsResponse, <-chan error) {
+	responseChan := make(chan *KickOutClientsResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DeleteSAGLinkLevelHa(request)
+		response, err := client.KickOutClients(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) DeleteSAGLinkLevelHaWithChan(request *DeleteSAGLinkLevelHa
 	return responseChan, errChan
 }
 
-// DeleteSAGLinkLevelHaWithCallback invokes the smartag.DeleteSAGLinkLevelHa API asynchronously
-// api document: https://help.aliyun.com/api/smartag/deletesaglinklevelha.html
+// KickOutClientsWithCallback invokes the smartag.KickOutClients API asynchronously
+// api document: https://help.aliyun.com/api/smartag/kickoutclients.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DeleteSAGLinkLevelHaWithCallback(request *DeleteSAGLinkLevelHaRequest, callback func(response *DeleteSAGLinkLevelHaResponse, err error)) <-chan int {
+func (client *Client) KickOutClientsWithCallback(request *KickOutClientsRequest, callback func(response *KickOutClientsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DeleteSAGLinkLevelHaResponse
+		var response *KickOutClientsResponse
 		var err error
 		defer close(result)
-		response, err = client.DeleteSAGLinkLevelHa(request)
+		response, err = client.KickOutClients(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,35 +73,35 @@ func (client *Client) DeleteSAGLinkLevelHaWithCallback(request *DeleteSAGLinkLev
 	return result
 }
 
-// DeleteSAGLinkLevelHaRequest is the request struct for api DeleteSAGLinkLevelHa
-type DeleteSAGLinkLevelHaRequest struct {
+// KickOutClientsRequest is the request struct for api KickOutClients
+type KickOutClientsRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	HaType               string           `position:"Query" name:"HaType"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	SmartAGId            string           `position:"Query" name:"SmartAGId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Username             string           `position:"Query" name:"Username"`
 }
 
-// DeleteSAGLinkLevelHaResponse is the response struct for api DeleteSAGLinkLevelHa
-type DeleteSAGLinkLevelHaResponse struct {
+// KickOutClientsResponse is the response struct for api KickOutClients
+type KickOutClientsResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateDeleteSAGLinkLevelHaRequest creates a request to invoke DeleteSAGLinkLevelHa API
-func CreateDeleteSAGLinkLevelHaRequest() (request *DeleteSAGLinkLevelHaRequest) {
-	request = &DeleteSAGLinkLevelHaRequest{
+// CreateKickOutClientsRequest creates a request to invoke KickOutClients API
+func CreateKickOutClientsRequest() (request *KickOutClientsRequest) {
+	request = &KickOutClientsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Smartag", "2018-03-13", "DeleteSAGLinkLevelHa", "smartag", "openAPI")
+	request.InitWithApiInfo("Smartag", "2018-03-13", "KickOutClients", "smartag", "openAPI")
 	return
 }
 
-// CreateDeleteSAGLinkLevelHaResponse creates a response to parse from DeleteSAGLinkLevelHa response
-func CreateDeleteSAGLinkLevelHaResponse() (response *DeleteSAGLinkLevelHaResponse) {
-	response = &DeleteSAGLinkLevelHaResponse{
+// CreateKickOutClientsResponse creates a response to parse from KickOutClients response
+func CreateKickOutClientsResponse() (response *KickOutClientsResponse) {
+	response = &KickOutClientsResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

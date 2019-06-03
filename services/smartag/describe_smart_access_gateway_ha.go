@@ -86,18 +86,13 @@ type DescribeSmartAccessGatewayHaRequest struct {
 // DescribeSmartAccessGatewayHaResponse is the response struct for api DescribeSmartAccessGatewayHa
 type DescribeSmartAccessGatewayHaResponse struct {
 	*responses.BaseResponse
-	RequestId              string `json:"RequestId" xml:"RequestId"`
-	DeviceLevelBackupState string `json:"DeviceLevelBackupState" xml:"DeviceLevelBackupState"`
-	DeviceLevelBackupType  string `json:"DeviceLevelBackupType" xml:"DeviceLevelBackupType"`
-	MainDeviceId           string `json:"MainDeviceId" xml:"MainDeviceId"`
-	BackupDeviceId         string `json:"BackupDeviceId" xml:"BackupDeviceId"`
-	LinkLevelBackupState   string `json:"LinkLevelBackupState" xml:"LinkLevelBackupState"`
-	LinkLevelBackupType    string `json:"LinkLevelBackupType" xml:"LinkLevelBackupType"`
-	MainLinkId             string `json:"MainLinkId" xml:"MainLinkId"`
-	BackupLinkId           string `json:"BackupLinkId" xml:"BackupLinkId"`
-	SmartAGId              string `json:"SmartAGId" xml:"SmartAGId"`
-	MainLinkState          string `json:"MainLinkState" xml:"MainLinkState"`
-	BackupLinkState        string `json:"BackupLinkState" xml:"BackupLinkState"`
+	RequestId              string             `json:"RequestId" xml:"RequestId"`
+	DeviceLevelBackupState string             `json:"DeviceLevelBackupState" xml:"DeviceLevelBackupState"`
+	DeviceLevelBackupType  string             `json:"DeviceLevelBackupType" xml:"DeviceLevelBackupType"`
+	MainDeviceId           string             `json:"MainDeviceId" xml:"MainDeviceId"`
+	BackupDeviceId         string             `json:"BackupDeviceId" xml:"BackupDeviceId"`
+	SmartAGId              string             `json:"SmartAGId" xml:"SmartAGId"`
+	LinkBackupInfoList     LinkBackupInfoList `json:"LinkBackupInfoList" xml:"LinkBackupInfoList"`
 }
 
 // CreateDescribeSmartAccessGatewayHaRequest creates a request to invoke DescribeSmartAccessGatewayHa API

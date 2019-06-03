@@ -81,7 +81,9 @@ type CreateSmartAccessGatewayRequest struct {
 	Description          string           `position:"Query" name:"Description"`
 	ReceiverTown         string           `position:"Query" name:"ReceiverTown"`
 	ReceiverDistrict     string           `position:"Query" name:"ReceiverDistrict"`
+	UserCount            requests.Integer `position:"Query" name:"UserCount"`
 	ReceiverAddress      string           `position:"Query" name:"ReceiverAddress"`
+	InstanceType         string           `position:"Query" name:"InstanceType"`
 	BuyerMessage         string           `position:"Query" name:"BuyerMessage"`
 	HardWareSpec         string           `position:"Query" name:"HardWareSpec"`
 	ReceiverEmail        string           `position:"Query" name:"ReceiverEmail"`
@@ -99,6 +101,7 @@ type CreateSmartAccessGatewayRequest struct {
 	Name                 string           `position:"Query" name:"Name"`
 	ReceiverCountry      string           `position:"Query" name:"ReceiverCountry"`
 	ChargeType           string           `position:"Query" name:"ChargeType"`
+	DataPlan             requests.Integer `position:"Query" name:"DataPlan"`
 	ReceiverZip          string           `position:"Query" name:"ReceiverZip"`
 }
 

@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DeleteSAGLinkLevelHa invokes the smartag.DeleteSAGLinkLevelHa API synchronously
-// api document: https://help.aliyun.com/api/smartag/deletesaglinklevelha.html
-func (client *Client) DeleteSAGLinkLevelHa(request *DeleteSAGLinkLevelHaRequest) (response *DeleteSAGLinkLevelHaResponse, err error) {
-	response = CreateDeleteSAGLinkLevelHaResponse()
+// AssociateACL invokes the smartag.AssociateACL API synchronously
+// api document: https://help.aliyun.com/api/smartag/associateacl.html
+func (client *Client) AssociateACL(request *AssociateACLRequest) (response *AssociateACLResponse, err error) {
+	response = CreateAssociateACLResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DeleteSAGLinkLevelHaWithChan invokes the smartag.DeleteSAGLinkLevelHa API asynchronously
-// api document: https://help.aliyun.com/api/smartag/deletesaglinklevelha.html
+// AssociateACLWithChan invokes the smartag.AssociateACL API asynchronously
+// api document: https://help.aliyun.com/api/smartag/associateacl.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DeleteSAGLinkLevelHaWithChan(request *DeleteSAGLinkLevelHaRequest) (<-chan *DeleteSAGLinkLevelHaResponse, <-chan error) {
-	responseChan := make(chan *DeleteSAGLinkLevelHaResponse, 1)
+func (client *Client) AssociateACLWithChan(request *AssociateACLRequest) (<-chan *AssociateACLResponse, <-chan error) {
+	responseChan := make(chan *AssociateACLResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DeleteSAGLinkLevelHa(request)
+		response, err := client.AssociateACL(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) DeleteSAGLinkLevelHaWithChan(request *DeleteSAGLinkLevelHa
 	return responseChan, errChan
 }
 
-// DeleteSAGLinkLevelHaWithCallback invokes the smartag.DeleteSAGLinkLevelHa API asynchronously
-// api document: https://help.aliyun.com/api/smartag/deletesaglinklevelha.html
+// AssociateACLWithCallback invokes the smartag.AssociateACL API asynchronously
+// api document: https://help.aliyun.com/api/smartag/associateacl.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DeleteSAGLinkLevelHaWithCallback(request *DeleteSAGLinkLevelHaRequest, callback func(response *DeleteSAGLinkLevelHaResponse, err error)) <-chan int {
+func (client *Client) AssociateACLWithCallback(request *AssociateACLRequest, callback func(response *AssociateACLResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DeleteSAGLinkLevelHaResponse
+		var response *AssociateACLResponse
 		var err error
 		defer close(result)
-		response, err = client.DeleteSAGLinkLevelHa(request)
+		response, err = client.AssociateACL(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,35 +73,35 @@ func (client *Client) DeleteSAGLinkLevelHaWithCallback(request *DeleteSAGLinkLev
 	return result
 }
 
-// DeleteSAGLinkLevelHaRequest is the request struct for api DeleteSAGLinkLevelHa
-type DeleteSAGLinkLevelHaRequest struct {
+// AssociateACLRequest is the request struct for api AssociateACL
+type AssociateACLRequest struct {
 	*requests.RpcRequest
+	AclId                string           `position:"Query" name:"AclId"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	HaType               string           `position:"Query" name:"HaType"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	SmartAGId            string           `position:"Query" name:"SmartAGId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
-// DeleteSAGLinkLevelHaResponse is the response struct for api DeleteSAGLinkLevelHa
-type DeleteSAGLinkLevelHaResponse struct {
+// AssociateACLResponse is the response struct for api AssociateACL
+type AssociateACLResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateDeleteSAGLinkLevelHaRequest creates a request to invoke DeleteSAGLinkLevelHa API
-func CreateDeleteSAGLinkLevelHaRequest() (request *DeleteSAGLinkLevelHaRequest) {
-	request = &DeleteSAGLinkLevelHaRequest{
+// CreateAssociateACLRequest creates a request to invoke AssociateACL API
+func CreateAssociateACLRequest() (request *AssociateACLRequest) {
+	request = &AssociateACLRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Smartag", "2018-03-13", "DeleteSAGLinkLevelHa", "smartag", "openAPI")
+	request.InitWithApiInfo("Smartag", "2018-03-13", "AssociateACL", "smartag", "openAPI")
 	return
 }
 
-// CreateDeleteSAGLinkLevelHaResponse creates a response to parse from DeleteSAGLinkLevelHa response
-func CreateDeleteSAGLinkLevelHaResponse() (response *DeleteSAGLinkLevelHaResponse) {
-	response = &DeleteSAGLinkLevelHaResponse{
+// CreateAssociateACLResponse creates a response to parse from AssociateACL response
+func CreateAssociateACLResponse() (response *AssociateACLResponse) {
+	response = &AssociateACLResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

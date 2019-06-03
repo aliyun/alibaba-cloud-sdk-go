@@ -79,24 +79,27 @@ type DescribeSmartAccessGatewaysRequest struct {
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	SerialNumber         string           `position:"Query" name:"SerialNumber"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	AclIds               string           `position:"Query" name:"AclIds"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	AssociatedCcnId      string           `position:"Query" name:"AssociatedCcnId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	UnboundAclIds        string           `position:"Query" name:"UnboundAclIds"`
 	PageNumber           string           `position:"Query" name:"PageNumber"`
 	Name                 string           `position:"Query" name:"Name"`
 	PageSize             string           `position:"Query" name:"PageSize"`
 	SmartAGId            string           `position:"Query" name:"SmartAGId"`
+	InstanceType         string           `position:"Query" name:"InstanceType"`
 	Status               string           `position:"Query" name:"Status"`
 }
 
 // DescribeSmartAccessGatewaysResponse is the response struct for api DescribeSmartAccessGateways
 type DescribeSmartAccessGatewaysResponse struct {
 	*responses.BaseResponse
-	RequestId           string              `json:"RequestId" xml:"RequestId"`
-	TotalCount          int                 `json:"TotalCount" xml:"TotalCount"`
-	PageNumber          int                 `json:"PageNumber" xml:"PageNumber"`
-	PageSize            int                 `json:"PageSize" xml:"PageSize"`
-	SmartAccessGateways SmartAccessGateways `json:"SmartAccessGateways" xml:"SmartAccessGateways"`
+	RequestId           string                                           `json:"RequestId" xml:"RequestId"`
+	TotalCount          int                                              `json:"TotalCount" xml:"TotalCount"`
+	PageNumber          int                                              `json:"PageNumber" xml:"PageNumber"`
+	PageSize            int                                              `json:"PageSize" xml:"PageSize"`
+	SmartAccessGateways SmartAccessGatewaysInDescribeSmartAccessGateways `json:"SmartAccessGateways" xml:"SmartAccessGateways"`
 }
 
 // CreateDescribeSmartAccessGatewaysRequest creates a request to invoke DescribeSmartAccessGateways API
