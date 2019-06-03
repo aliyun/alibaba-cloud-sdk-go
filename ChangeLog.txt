@@ -1,3 +1,6 @@
+2019-06-03 Version: 1.60.33
+1, Order info add relatedOrderId.
+
 2019-05-31 Version: 1.60.32
 1, add api 'search traces count' 
 2, add page index for api 'searchTraces'

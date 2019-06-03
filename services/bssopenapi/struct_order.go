@@ -39,5 +39,6 @@ type Order struct {
 	Tax               string `json:"Tax" xml:"Tax"`
 	Config            string `json:"Config" xml:"Config"`
 	UsageStartTime    string `json:"UsageStartTime" xml:"UsageStartTime"`
+	RelatedOrderId    string `json:"RelatedOrderId" xml:"RelatedOrderId"`
 	PretaxAmount      string `json:"PretaxAmount" xml:"PretaxAmount"`
 }
