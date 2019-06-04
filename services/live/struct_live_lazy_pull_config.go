@@ -24,4 +24,5 @@ type LiveLazyPullConfig struct {
 	PullProtocol   string `json:"PullProtocol" xml:"PullProtocol"`
 	PullAuthType   string `json:"PullAuthType" xml:"PullAuthType"`
 	PullAuthKey    string `json:"PullAuthKey" xml:"PullAuthKey"`
+	PullArgs       string `json:"PullArgs" xml:"PullArgs"`
 }

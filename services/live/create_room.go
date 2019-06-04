@@ -76,10 +76,12 @@ func (client *Client) CreateRoomWithCallback(request *CreateRoomRequest, callbac
 // CreateRoomRequest is the request struct for api CreateRoom
 type CreateRoomRequest struct {
 	*requests.RpcRequest
-	AnchorId string           `position:"Query" name:"AnchorId"`
-	OwnerId  requests.Integer `position:"Query" name:"OwnerId"`
-	RoomId   string           `position:"Query" name:"RoomId"`
-	AppId    string           `position:"Query" name:"AppId"`
+	TemplateIds     string           `position:"Query" name:"TemplateIds"`
+	AnchorId        string           `position:"Query" name:"AnchorId"`
+	UseAppTranscode requests.Boolean `position:"Query" name:"UseAppTranscode"`
+	OwnerId         requests.Integer `position:"Query" name:"OwnerId"`
+	RoomId          string           `position:"Query" name:"RoomId"`
+	AppId           string           `position:"Query" name:"AppId"`
 }
 
 // CreateRoomResponse is the response struct for api CreateRoom

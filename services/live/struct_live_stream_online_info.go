@@ -26,4 +26,13 @@ type LiveStreamOnlineInfo struct {
 	PublishType   string `json:"PublishType" xml:"PublishType"`
 	Transcoded    string `json:"Transcoded" xml:"Transcoded"`
 	TranscodeId   string `json:"TranscodeId" xml:"TranscodeId"`
+	ServerIp      string `json:"ServerIp" xml:"ServerIp"`
+	ClientIp      string `json:"ClientIp" xml:"ClientIp"`
+	VideoCodecId  int    `json:"VideoCodecId" xml:"VideoCodecId"`
+	VideoDataRate int    `json:"VideoDataRate" xml:"VideoDataRate"`
+	FrameRate     int    `json:"FrameRate" xml:"FrameRate"`
+	Width         int    `json:"Width" xml:"Width"`
+	Height        int    `json:"Height" xml:"Height"`
+	AudioCodecId  int    `json:"AudioCodecId" xml:"AudioCodecId"`
+	AudioDataRate int    `json:"AudioDataRate" xml:"AudioDataRate"`
 }

@@ -76,6 +76,7 @@ func (client *Client) SetLiveLazyPullStreamInfoConfigWithCallback(request *SetLi
 // SetLiveLazyPullStreamInfoConfigRequest is the request struct for api SetLiveLazyPullStreamInfoConfig
 type SetLiveLazyPullStreamInfoConfigRequest struct {
 	*requests.RpcRequest
+	PullArgs       string           `position:"Query" name:"PullArgs"`
 	AppName        string           `position:"Query" name:"AppName"`
 	PullAuthKey    string           `position:"Query" name:"PullAuthKey"`
 	PullAuthType   string           `position:"Query" name:"PullAuthType"`
