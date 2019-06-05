@@ -20,6 +20,7 @@ type DataLimit struct {
 	GmtCreate       int    `json:"GmtCreate" xml:"GmtCreate"`
 	Connector       string `json:"Connector" xml:"Connector"`
 	CheckStatusName string `json:"CheckStatusName" xml:"CheckStatusName"`
+	Password        string `json:"Password" xml:"Password"`
 	RegionId        string `json:"RegionId" xml:"RegionId"`
 	ParentId        string `json:"ParentId" xml:"ParentId"`
 	LocalName       string `json:"LocalName" xml:"LocalName"`
