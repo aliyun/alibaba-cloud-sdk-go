@@ -48,8 +48,9 @@ func Test_AcsRequest(t *testing.T) {
 	assert.Equal(t, 5, len(headers))
 	assert.Equal(t, "x-key-value", headers["x-key"])
 
-	// GetVersion
-	assert.Equal(t, "", r.GetVersion())
+	// Version
+	r.SetVersion("2017-06-06")
+	assert.Equal(t, "2017-06-06", r.GetVersion())
 	// GetActionName
 	assert.Equal(t, "", r.GetActionName())
 
