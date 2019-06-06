@@ -86,6 +86,7 @@ type CreateLoadBalancerRequest struct {
 	LoadBalancerName     string           `position:"Query" name:"LoadBalancerName"`
 	AddressType          string           `position:"Query" name:"AddressType"`
 	SlaveZoneId          string           `position:"Query" name:"SlaveZoneId"`
+	DeleteProtection     string           `position:"Query" name:"DeleteProtection"`
 	LoadBalancerSpec     string           `position:"Query" name:"LoadBalancerSpec"`
 	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`
 	Address              string           `position:"Query" name:"Address"`

@@ -92,6 +92,7 @@ type DescribeLoadBalancerHTTPSListenerAttributeResponse struct {
 	RequestId              string                                                       `json:"RequestId" xml:"RequestId"`
 	ListenerPort           int                                                          `json:"ListenerPort" xml:"ListenerPort"`
 	BackendServerPort      int                                                          `json:"BackendServerPort" xml:"BackendServerPort"`
+	BackendProtocol        int                                                          `json:"BackendProtocol" xml:"BackendProtocol"`
 	Bandwidth              int                                                          `json:"Bandwidth" xml:"Bandwidth"`
 	Status                 string                                                       `json:"Status" xml:"Status"`
 	SecurityStatus         string                                                       `json:"SecurityStatus" xml:"SecurityStatus"`
@@ -102,6 +103,7 @@ type DescribeLoadBalancerHTTPSListenerAttributeResponse struct {
 	CookieTimeout          int                                                          `json:"CookieTimeout" xml:"CookieTimeout"`
 	Cookie                 string                                                       `json:"Cookie" xml:"Cookie"`
 	HealthCheck            string                                                       `json:"HealthCheck" xml:"HealthCheck"`
+	HealthCheckType        string                                                       `json:"HealthCheckType" xml:"HealthCheckType"`
 	HealthCheckDomain      string                                                       `json:"HealthCheckDomain" xml:"HealthCheckDomain"`
 	HealthCheckURI         string                                                       `json:"HealthCheckURI" xml:"HealthCheckURI"`
 	HealthyThreshold       int                                                          `json:"HealthyThreshold" xml:"HealthyThreshold"`
@@ -112,6 +114,7 @@ type DescribeLoadBalancerHTTPSListenerAttributeResponse struct {
 	HealthCheckHttpCode    string                                                       `json:"HealthCheckHttpCode" xml:"HealthCheckHttpCode"`
 	ServerCertificateId    string                                                       `json:"ServerCertificateId" xml:"ServerCertificateId"`
 	CACertificateId        string                                                       `json:"CACertificateId" xml:"CACertificateId"`
+	HealthCheckMethod      string                                                       `json:"HealthCheckMethod" xml:"HealthCheckMethod"`
 	MaxConnection          int                                                          `json:"MaxConnection" xml:"MaxConnection"`
 	VServerGroupId         string                                                       `json:"VServerGroupId" xml:"VServerGroupId"`
 	Gzip                   string                                                       `json:"Gzip" xml:"Gzip"`

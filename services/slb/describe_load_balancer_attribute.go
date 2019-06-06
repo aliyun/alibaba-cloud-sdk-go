@@ -122,6 +122,7 @@ type DescribeLoadBalancerAttributeResponse struct {
 	ReservedInfoInternetChargeType string                                        `json:"ReservedInfoInternetChargeType" xml:"ReservedInfoInternetChargeType"`
 	ReservedInfoBandwidth          string                                        `json:"ReservedInfoBandwidth" xml:"ReservedInfoBandwidth"`
 	ReservedInfoActiveTime         string                                        `json:"ReservedInfoActiveTime" xml:"ReservedInfoActiveTime"`
+	DeleteProtection               string                                        `json:"DeleteProtection" xml:"DeleteProtection"`
 	ListenerPorts                  ListenerPorts                                 `json:"ListenerPorts" xml:"ListenerPorts"`
 	ListenerPortsAndProtocal       ListenerPortsAndProtocal                      `json:"ListenerPortsAndProtocal" xml:"ListenerPortsAndProtocal"`
 	ListenerPortsAndProtocol       ListenerPortsAndProtocol                      `json:"ListenerPortsAndProtocol" xml:"ListenerPortsAndProtocol"`

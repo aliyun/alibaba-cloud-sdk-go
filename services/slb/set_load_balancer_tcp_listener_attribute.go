@@ -97,6 +97,7 @@ type SetLoadBalancerTCPListenerAttributeRequest struct {
 	HealthCheckType           string           `position:"Query" name:"HealthCheckType"`
 	ResourceOwnerAccount      string           `position:"Query" name:"ResourceOwnerAccount"`
 	Bandwidth                 requests.Integer `position:"Query" name:"Bandwidth"`
+	HealthCheckMethod         string           `position:"Query" name:"HealthCheckMethod"`
 	HealthCheckDomain         string           `position:"Query" name:"HealthCheckDomain"`
 	OwnerAccount              string           `position:"Query" name:"OwnerAccount"`
 	SynProxy                  string           `position:"Query" name:"SynProxy"`

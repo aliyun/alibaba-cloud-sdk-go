@@ -98,9 +98,11 @@ type CreateLoadBalancerHTTPListenerRequest struct {
 	AclId                  string           `position:"Query" name:"AclId"`
 	ListenerPort           requests.Integer `position:"Query" name:"ListenerPort"`
 	Cookie                 string           `position:"Query" name:"Cookie"`
+	HealthCheckType        string           `position:"Query" name:"HealthCheckType"`
 	ResourceOwnerAccount   string           `position:"Query" name:"ResourceOwnerAccount"`
 	Bandwidth              requests.Integer `position:"Query" name:"Bandwidth"`
 	StickySession          string           `position:"Query" name:"StickySession"`
+	HealthCheckMethod      string           `position:"Query" name:"HealthCheckMethod"`
 	HealthCheckDomain      string           `position:"Query" name:"HealthCheckDomain"`
 	RequestTimeout         requests.Integer `position:"Query" name:"RequestTimeout"`
 	OwnerAccount           string           `position:"Query" name:"OwnerAccount"`

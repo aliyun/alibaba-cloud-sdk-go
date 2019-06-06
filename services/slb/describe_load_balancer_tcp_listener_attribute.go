@@ -108,6 +108,7 @@ type DescribeLoadBalancerTCPListenerAttributeResponse struct {
 	HealthCheckDomain         string `json:"HealthCheckDomain" xml:"HealthCheckDomain"`
 	HealthCheckURI            string `json:"HealthCheckURI" xml:"HealthCheckURI"`
 	HealthCheckType           string `json:"HealthCheckType" xml:"HealthCheckType"`
+	HealthCheckMethod         string `json:"HealthCheckMethod" xml:"HealthCheckMethod"`
 	MaxConnection             int    `json:"MaxConnection" xml:"MaxConnection"`
 	VServerGroupId            string `json:"VServerGroupId" xml:"VServerGroupId"`
 	MasterSlaveServerGroupId  string `json:"MasterSlaveServerGroupId" xml:"MasterSlaveServerGroupId"`

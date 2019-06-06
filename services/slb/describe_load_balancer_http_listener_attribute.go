@@ -102,6 +102,7 @@ type DescribeLoadBalancerHTTPListenerAttributeResponse struct {
 	CookieTimeout          int                                              `json:"CookieTimeout" xml:"CookieTimeout"`
 	Cookie                 string                                           `json:"Cookie" xml:"Cookie"`
 	HealthCheck            string                                           `json:"HealthCheck" xml:"HealthCheck"`
+	HealthCheckType        string                                           `json:"HealthCheckType" xml:"HealthCheckType"`
 	HealthCheckDomain      string                                           `json:"HealthCheckDomain" xml:"HealthCheckDomain"`
 	HealthCheckURI         string                                           `json:"HealthCheckURI" xml:"HealthCheckURI"`
 	HealthyThreshold       int                                              `json:"HealthyThreshold" xml:"HealthyThreshold"`
@@ -110,6 +111,7 @@ type DescribeLoadBalancerHTTPListenerAttributeResponse struct {
 	HealthCheckInterval    int                                              `json:"HealthCheckInterval" xml:"HealthCheckInterval"`
 	HealthCheckConnectPort int                                              `json:"HealthCheckConnectPort" xml:"HealthCheckConnectPort"`
 	HealthCheckHttpCode    string                                           `json:"HealthCheckHttpCode" xml:"HealthCheckHttpCode"`
+	HealthCheckMethod      string                                           `json:"HealthCheckMethod" xml:"HealthCheckMethod"`
 	MaxConnection          int                                              `json:"MaxConnection" xml:"MaxConnection"`
 	VServerGroupId         string                                           `json:"VServerGroupId" xml:"VServerGroupId"`
 	Gzip                   string                                           `json:"Gzip" xml:"Gzip"`

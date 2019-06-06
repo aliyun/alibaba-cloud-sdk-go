@@ -1,3 +1,6 @@
+2019-06-06 Version: 1.60.37
+1, Add RuleId in DescribeRuleAttribute.
+
 2019-06-05 Version: 1.60.36
 1, Update DescribeDataLimitDetail interface, add password for response
 

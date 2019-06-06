@@ -88,6 +88,7 @@ type DescribeRuleAttributeRequest struct {
 // DescribeRuleAttributeResponse is the response struct for api DescribeRuleAttribute
 type DescribeRuleAttributeResponse struct {
 	*responses.BaseResponse
+	RuleId                 string `json:"RuleId" xml:"RuleId"`
 	RequestId              string `json:"RequestId" xml:"RequestId"`
 	RuleName               string `json:"RuleName" xml:"RuleName"`
 	LoadBalancerId         string `json:"LoadBalancerId" xml:"LoadBalancerId"`
