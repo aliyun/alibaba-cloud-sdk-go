@@ -70,6 +70,7 @@ type AcsRequest interface {
 	GetStyle() string
 	GetProduct() string
 	GetVersion() string
+	SetVersion(version string)
 	GetActionName() string
 	GetAcceptFormat() string
 	GetLocationServiceCode() string
@@ -164,6 +165,10 @@ func (request *baseRequest) SetHTTPSInsecure(isInsecure bool) {
 
 func (request *baseRequest) GetContent() []byte {
 	return request.Content
+}
+
+func (request *baseRequest) SetVersion(version string) {
+	request.version = version
 }
 
 func (request *baseRequest) GetVersion() string {
