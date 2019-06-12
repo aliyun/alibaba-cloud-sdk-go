@@ -88,7 +88,7 @@ type GetTagSetResponse struct {
 	Status     string `json:"Status" xml:"Status"`
 	CreateTime string `json:"CreateTime" xml:"CreateTime"`
 	ModifyTime string `json:"ModifyTime" xml:"ModifyTime"`
-	Photos     int    `json:"Photos" xml:"Photos"`
+	Photos     int64  `json:"Photos" xml:"Photos"`
 }
 
 // CreateGetTagSetRequest creates a request to invoke GetTagSet API

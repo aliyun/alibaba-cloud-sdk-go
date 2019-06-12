@@ -85,7 +85,7 @@ type CreateTagSetResponse struct {
 	RequestId  string `json:"RequestId" xml:"RequestId"`
 	SetId      string `json:"SetId" xml:"SetId"`
 	Status     string `json:"Status" xml:"Status"`
-	Photos     int    `json:"Photos" xml:"Photos"`
+	Photos     int64  `json:"Photos" xml:"Photos"`
 	CreateTime string `json:"CreateTime" xml:"CreateTime"`
 	ModifyTime string `json:"ModifyTime" xml:"ModifyTime"`
 }

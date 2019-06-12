@@ -92,8 +92,8 @@ type GetDocIndexResponse struct {
 	Name              string `json:"Name" xml:"Name"`
 	ContentType       string `json:"ContentType" xml:"ContentType"`
 	LastModified      string `json:"LastModified" xml:"LastModified"`
-	Size              int    `json:"Size" xml:"Size"`
-	PageNum           int    `json:"PageNum" xml:"PageNum"`
+	Size              int64  `json:"Size" xml:"Size"`
+	PageNum           int64  `json:"PageNum" xml:"PageNum"`
 	CustomKey1        string `json:"CustomKey1" xml:"CustomKey1"`
 	CustomKey2        string `json:"CustomKey2" xml:"CustomKey2"`
 	CustomKey3        string `json:"CustomKey3" xml:"CustomKey3"`

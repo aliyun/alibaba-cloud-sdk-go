@@ -86,8 +86,8 @@ type GetSetResponse struct {
 	RequestId   string `json:"RequestId" xml:"RequestId"`
 	SetId       string `json:"SetId" xml:"SetId"`
 	SetName     string `json:"SetName" xml:"SetName"`
-	CreateTime  int    `json:"CreateTime" xml:"CreateTime"`
-	ModifyTime  int    `json:"ModifyTime" xml:"ModifyTime"`
+	CreateTime  string `json:"CreateTime" xml:"CreateTime"`
+	ModifyTime  string `json:"ModifyTime" xml:"ModifyTime"`
 	FaceCount   int    `json:"FaceCount" xml:"FaceCount"`
 	ImageCount  int    `json:"ImageCount" xml:"ImageCount"`
 	VideoCount  int    `json:"VideoCount" xml:"VideoCount"`
