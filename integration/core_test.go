@@ -120,12 +120,14 @@ func Test_DescribeClustersWithCommonRequestWithROA(t *testing.T) {
 	request.Method = "GET"
 	request.Domain = "cs.aliyuncs.com"
 	request.Version = "2015-12-15"
-	request.PathPattern = "/clusters/[ClusterId]"
+	request.PathPattern = "/clusters"
+	request.ApiName = "DescribeClusters"
 	request.QueryParams["RegionId"] = os.Getenv("REGION_ID")
 	request.TransToAcsRequest()
-	_, err = client.ProcessCommonRequest(request)
-	assert.NotNil(t, err)
-	assert.Contains(t, err.Error(), "Request url is invalid")
+	resp, err := client.ProcessCommonRequest(request)
+	assert.Nil(t, err)
+	assert.Equal(t, 200, resp.GetHttpStatus())
+
 }
 
 func Test_DescribeClustersWithCommonRequestWithSignatureDostNotMatch(t *testing.T) {
