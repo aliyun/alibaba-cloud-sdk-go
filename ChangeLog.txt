@@ -1,3 +1,6 @@
+2019-06-13 Version: 1.60.43
+- Generated 2015-01-01 for `R-kvstore`
+
 2019-06-13 Version: 1.60.42
 Add Network Assistant openapi sdk
 
