@@ -90,14 +90,14 @@ type DescribeResourceUsageResponse struct {
 	RequestId         string `json:"RequestId" xml:"RequestId"`
 	DBInstanceId      string `json:"DBInstanceId" xml:"DBInstanceId"`
 	Engine            string `json:"Engine" xml:"Engine"`
-	DiskUsed          int    `json:"DiskUsed" xml:"DiskUsed"`
-	DataSize          int    `json:"DataSize" xml:"DataSize"`
-	LogSize           int    `json:"LogSize" xml:"LogSize"`
-	BackupSize        int    `json:"BackupSize" xml:"BackupSize"`
-	BackupOssDataSize int    `json:"BackupOssDataSize" xml:"BackupOssDataSize"`
-	BackupOssLogSize  int    `json:"BackupOssLogSize" xml:"BackupOssLogSize"`
-	SQLSize           int    `json:"SQLSize" xml:"SQLSize"`
-	ColdBackupSize    int    `json:"ColdBackupSize" xml:"ColdBackupSize"`
+	DiskUsed          int64  `json:"DiskUsed" xml:"DiskUsed"`
+	DataSize          int64  `json:"DataSize" xml:"DataSize"`
+	LogSize           int64  `json:"LogSize" xml:"LogSize"`
+	BackupSize        int64  `json:"BackupSize" xml:"BackupSize"`
+	BackupOssDataSize int64  `json:"BackupOssDataSize" xml:"BackupOssDataSize"`
+	BackupOssLogSize  int64  `json:"BackupOssLogSize" xml:"BackupOssLogSize"`
+	SQLSize           int64  `json:"SQLSize" xml:"SQLSize"`
+	ColdBackupSize    int64  `json:"ColdBackupSize" xml:"ColdBackupSize"`
 }
 
 // CreateDescribeResourceUsageRequest creates a request to invoke DescribeResourceUsage API

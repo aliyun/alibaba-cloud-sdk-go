@@ -35,7 +35,7 @@ type DBInstanceAttribute struct {
 	DBInstanceType                    string                                             `json:"DBInstanceType" xml:"DBInstanceType"`
 	TempUpgradeRecoveryClass          string                                             `json:"TempUpgradeRecoveryClass" xml:"TempUpgradeRecoveryClass"`
 	DBInstanceId                      string                                             `json:"DBInstanceId" xml:"DBInstanceId"`
-	DBInstanceMemory                  int                                                `json:"DBInstanceMemory" xml:"DBInstanceMemory"`
+	DBInstanceMemory                  int64                                              `json:"DBInstanceMemory" xml:"DBInstanceMemory"`
 	VpcId                             string                                             `json:"VpcId" xml:"VpcId"`
 	DBInstanceStorageType             string                                             `json:"DBInstanceStorageType" xml:"DBInstanceStorageType"`
 	SecurityIPList                    string                                             `json:"SecurityIPList" xml:"SecurityIPList"`

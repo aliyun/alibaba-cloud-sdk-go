@@ -17,25 +17,25 @@ package rds
 
 // SQLSlowLog is a nested struct in rds response
 type SQLSlowLog struct {
-	SlowLogId                     int    `json:"SlowLogId" xml:"SlowLogId"`
+	SlowLogId                     int64  `json:"SlowLogId" xml:"SlowLogId"`
 	SQLHASH                       string `json:"SQLHASH" xml:"SQLHASH"`
 	SQLIdStr                      string `json:"SQLIdStr" xml:"SQLIdStr"`
 	DBName                        string `json:"DBName" xml:"DBName"`
 	SQLText                       string `json:"SQLText" xml:"SQLText"`
-	MySQLTotalExecutionCounts     int    `json:"MySQLTotalExecutionCounts" xml:"MySQLTotalExecutionCounts"`
-	MySQLTotalExecutionTimes      int    `json:"MySQLTotalExecutionTimes" xml:"MySQLTotalExecutionTimes"`
-	TotalLockTimes                int    `json:"TotalLockTimes" xml:"TotalLockTimes"`
-	MaxLockTime                   int    `json:"MaxLockTime" xml:"MaxLockTime"`
-	ParseTotalRowCounts           int    `json:"ParseTotalRowCounts" xml:"ParseTotalRowCounts"`
-	ParseMaxRowCount              int    `json:"ParseMaxRowCount" xml:"ParseMaxRowCount"`
-	ReturnTotalRowCounts          int    `json:"ReturnTotalRowCounts" xml:"ReturnTotalRowCounts"`
-	ReturnMaxRowCount             int    `json:"ReturnMaxRowCount" xml:"ReturnMaxRowCount"`
+	MySQLTotalExecutionCounts     int64  `json:"MySQLTotalExecutionCounts" xml:"MySQLTotalExecutionCounts"`
+	MySQLTotalExecutionTimes      int64  `json:"MySQLTotalExecutionTimes" xml:"MySQLTotalExecutionTimes"`
+	TotalLockTimes                int64  `json:"TotalLockTimes" xml:"TotalLockTimes"`
+	MaxLockTime                   int64  `json:"MaxLockTime" xml:"MaxLockTime"`
+	ParseTotalRowCounts           int64  `json:"ParseTotalRowCounts" xml:"ParseTotalRowCounts"`
+	ParseMaxRowCount              int64  `json:"ParseMaxRowCount" xml:"ParseMaxRowCount"`
+	ReturnTotalRowCounts          int64  `json:"ReturnTotalRowCounts" xml:"ReturnTotalRowCounts"`
+	ReturnMaxRowCount             int64  `json:"ReturnMaxRowCount" xml:"ReturnMaxRowCount"`
 	CreateTime                    string `json:"CreateTime" xml:"CreateTime"`
-	SQLServerTotalExecutionCounts int    `json:"SQLServerTotalExecutionCounts" xml:"SQLServerTotalExecutionCounts"`
-	SQLServerTotalExecutionTimes  int    `json:"SQLServerTotalExecutionTimes" xml:"SQLServerTotalExecutionTimes"`
-	TotalLogicalReadCounts        int    `json:"TotalLogicalReadCounts" xml:"TotalLogicalReadCounts"`
-	TotalPhysicalReadCounts       int    `json:"TotalPhysicalReadCounts" xml:"TotalPhysicalReadCounts"`
+	SQLServerTotalExecutionCounts int64  `json:"SQLServerTotalExecutionCounts" xml:"SQLServerTotalExecutionCounts"`
+	SQLServerTotalExecutionTimes  int64  `json:"SQLServerTotalExecutionTimes" xml:"SQLServerTotalExecutionTimes"`
+	TotalLogicalReadCounts        int64  `json:"TotalLogicalReadCounts" xml:"TotalLogicalReadCounts"`
+	TotalPhysicalReadCounts       int64  `json:"TotalPhysicalReadCounts" xml:"TotalPhysicalReadCounts"`
 	ReportTime                    string `json:"ReportTime" xml:"ReportTime"`
-	MaxExecutionTime              int    `json:"MaxExecutionTime" xml:"MaxExecutionTime"`
-	AvgExecutionTime              int    `json:"AvgExecutionTime" xml:"AvgExecutionTime"`
+	MaxExecutionTime              int64  `json:"MaxExecutionTime" xml:"MaxExecutionTime"`
+	AvgExecutionTime              int64  `json:"AvgExecutionTime" xml:"AvgExecutionTime"`
 }

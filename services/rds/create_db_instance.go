@@ -81,6 +81,8 @@ type CreateDBInstanceRequest struct {
 	DBInstanceStorage     requests.Integer `position:"Query" name:"DBInstanceStorage"`
 	SystemDBCharset       string           `position:"Query" name:"SystemDBCharset"`
 	ClientToken           string           `position:"Query" name:"ClientToken"`
+	ZoneIdSlave1          string           `position:"Query" name:"ZoneIdSlave1"`
+	ZoneIdSlave2          string           `position:"Query" name:"ZoneIdSlave2"`
 	EngineVersion         string           `position:"Query" name:"EngineVersion"`
 	ResourceGroupId       string           `position:"Query" name:"ResourceGroupId"`
 	Engine                string           `position:"Query" name:"Engine"`

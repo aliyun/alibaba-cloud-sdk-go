@@ -17,15 +17,15 @@ package rds
 
 // ItemsItem is a nested struct in rds response
 type ItemsItem struct {
-	TotalUpdateRows       int                   `json:"TotalUpdateRows" xml:"TotalUpdateRows"`
+	TotalUpdateRows       int64                 `json:"TotalUpdateRows" xml:"TotalUpdateRows"`
 	TemplateHash          string                `json:"TemplateHash" xml:"TemplateHash"`
 	AvgConsume            float64               `json:"AvgConsume" xml:"AvgConsume"`
 	AvgScanRows           float64               `json:"AvgScanRows" xml:"AvgScanRows"`
-	TotalConsume          int                   `json:"TotalConsume" xml:"TotalConsume"`
+	TotalConsume          int64                 `json:"TotalConsume" xml:"TotalConsume"`
 	SqlType               string                `json:"SqlType" xml:"SqlType"`
 	Template              string                `json:"Template" xml:"Template"`
-	TotalCounts           int                   `json:"TotalCounts" xml:"TotalCounts"`
-	TotalScanRows         int                   `json:"TotalScanRows" xml:"TotalScanRows"`
+	TotalCounts           int64                 `json:"TotalCounts" xml:"TotalCounts"`
+	TotalScanRows         int64                 `json:"TotalScanRows" xml:"TotalScanRows"`
 	AvgUpdateRows         float64               `json:"AvgUpdateRows" xml:"AvgUpdateRows"`
 	DBInstanceId          string                `json:"DBInstanceId" xml:"DBInstanceId"`
 	ReadDBInstanceNames   ReadDBInstanceNames   `json:"ReadDBInstanceNames" xml:"ReadDBInstanceNames"`

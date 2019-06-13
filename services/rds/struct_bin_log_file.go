@@ -20,7 +20,7 @@ type BinLogFile struct {
 	HostInstanceID       string `json:"HostInstanceID" xml:"HostInstanceID"`
 	LogEndTime           string `json:"LogEndTime" xml:"LogEndTime"`
 	IntranetDownloadLink string `json:"IntranetDownloadLink" xml:"IntranetDownloadLink"`
-	FileSize             int    `json:"FileSize" xml:"FileSize"`
+	FileSize             int64  `json:"FileSize" xml:"FileSize"`
 	Checksum             string `json:"Checksum" xml:"Checksum"`
 	LinkExpiredTime      string `json:"LinkExpiredTime" xml:"LinkExpiredTime"`
 	LogFileName          string `json:"LogFileName" xml:"LogFileName"`

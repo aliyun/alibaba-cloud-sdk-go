@@ -1,3 +1,7 @@
+2019-06-13 Version: 1.60.41
+1, add DescribeAvailableResource OpenApi.
+2, upgrade version to 2.3.8 
+
 2019-06-12 Version: 1.60.40
 1, Add RenewBackupPlan DBS interface.
 

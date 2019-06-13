@@ -81,6 +81,7 @@ type DescribeAvailableResourceRequest struct {
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	EngineVersion        string           `position:"Query" name:"EngineVersion"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	DBInstanceClass      string           `position:"Query" name:"DBInstanceClass"`
 	Engine               string           `position:"Query" name:"Engine"`
 	ZoneId               string           `position:"Query" name:"ZoneId"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`

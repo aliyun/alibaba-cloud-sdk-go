@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// CreateDBInstanceReplica invokes the rds.CreateDBInstanceReplica API synchronously
-// api document: https://help.aliyun.com/api/rds/createdbinstancereplica.html
-func (client *Client) CreateDBInstanceReplica(request *CreateDBInstanceReplicaRequest) (response *CreateDBInstanceReplicaResponse, err error) {
-	response = CreateCreateDBInstanceReplicaResponse()
+// CreateDdrInstance invokes the rds.CreateDdrInstance API synchronously
+// api document: https://help.aliyun.com/api/rds/createddrinstance.html
+func (client *Client) CreateDdrInstance(request *CreateDdrInstanceRequest) (response *CreateDdrInstanceResponse, err error) {
+	response = CreateCreateDdrInstanceResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// CreateDBInstanceReplicaWithChan invokes the rds.CreateDBInstanceReplica API asynchronously
-// api document: https://help.aliyun.com/api/rds/createdbinstancereplica.html
+// CreateDdrInstanceWithChan invokes the rds.CreateDdrInstance API asynchronously
+// api document: https://help.aliyun.com/api/rds/createddrinstance.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) CreateDBInstanceReplicaWithChan(request *CreateDBInstanceReplicaRequest) (<-chan *CreateDBInstanceReplicaResponse, <-chan error) {
-	responseChan := make(chan *CreateDBInstanceReplicaResponse, 1)
+func (client *Client) CreateDdrInstanceWithChan(request *CreateDdrInstanceRequest) (<-chan *CreateDdrInstanceResponse, <-chan error) {
+	responseChan := make(chan *CreateDdrInstanceResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.CreateDBInstanceReplica(request)
+		response, err := client.CreateDdrInstance(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) CreateDBInstanceReplicaWithChan(request *CreateDBInstanceR
 	return responseChan, errChan
 }
 
-// CreateDBInstanceReplicaWithCallback invokes the rds.CreateDBInstanceReplica API asynchronously
-// api document: https://help.aliyun.com/api/rds/createdbinstancereplica.html
+// CreateDdrInstanceWithCallback invokes the rds.CreateDdrInstance API asynchronously
+// api document: https://help.aliyun.com/api/rds/createddrinstance.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) CreateDBInstanceReplicaWithCallback(request *CreateDBInstanceReplicaRequest, callback func(response *CreateDBInstanceReplicaResponse, err error)) <-chan int {
+func (client *Client) CreateDdrInstanceWithCallback(request *CreateDdrInstanceRequest, callback func(response *CreateDdrInstanceResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *CreateDBInstanceReplicaResponse
+		var response *CreateDdrInstanceResponse
 		var err error
 		defer close(result)
-		response, err = client.CreateDBInstanceReplica(request)
+		response, err = client.CreateDdrInstance(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,59 +73,68 @@ func (client *Client) CreateDBInstanceReplicaWithCallback(request *CreateDBInsta
 	return result
 }
 
-// CreateDBInstanceReplicaRequest is the request struct for api CreateDBInstanceReplica
-type CreateDBInstanceReplicaRequest struct {
+// CreateDdrInstanceRequest is the request struct for api CreateDdrInstance
+type CreateDdrInstanceRequest struct {
 	*requests.RpcRequest
 	ConnectionMode        string           `position:"Query" name:"ConnectionMode"`
-	DomainMode            string           `position:"Query" name:"DomainMode"`
-	ReplicaDescription    string           `position:"Query" name:"ReplicaDescription"`
 	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	DBInstanceStorage     requests.Integer `position:"Query" name:"DBInstanceStorage"`
 	SystemDBCharset       string           `position:"Query" name:"SystemDBCharset"`
+	SourceDBInstanceName  string           `position:"Query" name:"SourceDBInstanceName"`
 	ClientToken           string           `position:"Query" name:"ClientToken"`
+	HostType              string           `position:"Query" name:"HostType"`
 	EngineVersion         string           `position:"Query" name:"EngineVersion"`
+	UserBakSetURL         string           `position:"Query" name:"UserBakSetURL"`
+	ResourceGroupId       string           `position:"Query" name:"ResourceGroupId"`
 	Engine                string           `position:"Query" name:"Engine"`
 	DBInstanceDescription string           `position:"Query" name:"DBInstanceDescription"`
+	DBInstanceStorageType string           `position:"Query" name:"DBInstanceStorageType"`
+	BackupSetRegion       string           `position:"Query" name:"BackupSetRegion"`
 	DBInstanceNetType     string           `position:"Query" name:"DBInstanceNetType"`
+	BackupSetType         string           `position:"Query" name:"BackupSetType"`
 	Period                string           `position:"Query" name:"Period"`
+	RestoreTime           string           `position:"Query" name:"RestoreTime"`
+	BakSetName            string           `position:"Query" name:"BakSetName"`
 	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
+	BackupSetId           string           `position:"Query" name:"BackupSetId"`
 	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
 	UsedTime              string           `position:"Query" name:"UsedTime"`
 	DBInstanceClass       string           `position:"Query" name:"DBInstanceClass"`
 	SecurityIPList        string           `position:"Query" name:"SecurityIPList"`
 	VSwitchId             string           `position:"Query" name:"VSwitchId"`
 	PrivateIpAddress      string           `position:"Query" name:"PrivateIpAddress"`
-	SourceDBInstanceId    string           `position:"Query" name:"SourceDBInstanceId"`
-	ReplicaMode           string           `position:"Query" name:"ReplicaMode"`
+	RestoreType           string           `position:"Query" name:"RestoreType"`
 	VPCId                 string           `position:"Query" name:"VPCId"`
+	TunnelId              string           `position:"Query" name:"TunnelId"`
 	ZoneId                string           `position:"Query" name:"ZoneId"`
 	PayType               string           `position:"Query" name:"PayType"`
+	SourceRegion          string           `position:"Query" name:"SourceRegion"`
 	InstanceNetworkType   string           `position:"Query" name:"InstanceNetworkType"`
 }
 
-// CreateDBInstanceReplicaResponse is the response struct for api CreateDBInstanceReplica
-type CreateDBInstanceReplicaResponse struct {
+// CreateDdrInstanceResponse is the response struct for api CreateDdrInstance
+type CreateDdrInstanceResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
-	DBInstanceId string `json:"DBInstanceId" xml:"DBInstanceId"`
-	OrderId      int64  `json:"OrderId" xml:"OrderId"`
-	ReplicaId    string `json:"ReplicaId" xml:"ReplicaId"`
-	WorkflowId   string `json:"WorkflowId" xml:"WorkflowId"`
+	RequestId        string `json:"RequestId" xml:"RequestId"`
+	DBInstanceId     string `json:"DBInstanceId" xml:"DBInstanceId"`
+	OrderId          string `json:"OrderId" xml:"OrderId"`
+	ConnectionString string `json:"ConnectionString" xml:"ConnectionString"`
+	Port             string `json:"Port" xml:"Port"`
 }
 
-// CreateCreateDBInstanceReplicaRequest creates a request to invoke CreateDBInstanceReplica API
-func CreateCreateDBInstanceReplicaRequest() (request *CreateDBInstanceReplicaRequest) {
-	request = &CreateDBInstanceReplicaRequest{
+// CreateCreateDdrInstanceRequest creates a request to invoke CreateDdrInstance API
+func CreateCreateDdrInstanceRequest() (request *CreateDdrInstanceRequest) {
+	request = &CreateDdrInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "CreateDBInstanceReplica", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "CreateDdrInstance", "rds", "openAPI")
 	return
 }
 
-// CreateCreateDBInstanceReplicaResponse creates a response to parse from CreateDBInstanceReplica response
-func CreateCreateDBInstanceReplicaResponse() (response *CreateDBInstanceReplicaResponse) {
-	response = &CreateDBInstanceReplicaResponse{
+// CreateCreateDdrInstanceResponse creates a response to parse from CreateDdrInstance response
+func CreateCreateDdrInstanceResponse() (response *CreateDdrInstanceResponse) {
+	response = &CreateDdrInstanceResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

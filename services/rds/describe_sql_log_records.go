@@ -97,7 +97,7 @@ type DescribeSQLLogRecordsRequest struct {
 type DescribeSQLLogRecordsResponse struct {
 	*responses.BaseResponse
 	RequestId        string                       `json:"RequestId" xml:"RequestId"`
-	TotalRecordCount int                          `json:"TotalRecordCount" xml:"TotalRecordCount"`
+	TotalRecordCount int64                        `json:"TotalRecordCount" xml:"TotalRecordCount"`
 	PageNumber       int                          `json:"PageNumber" xml:"PageNumber"`
 	PageRecordCount  int                          `json:"PageRecordCount" xml:"PageRecordCount"`
 	Items            ItemsInDescribeSQLLogRecords `json:"Items" xml:"Items"`
