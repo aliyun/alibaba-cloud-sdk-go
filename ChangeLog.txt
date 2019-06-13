@@ -1,3 +1,6 @@
+2019-06-13 Version: 1.60.42
+Add Network Assistant openapi sdk
+
 2019-06-13 Version: 1.60.41
 1, add DescribeAvailableResource OpenApi.
 2, upgrade version to 2.3.8 
