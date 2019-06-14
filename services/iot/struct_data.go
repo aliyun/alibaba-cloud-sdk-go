@@ -27,7 +27,6 @@ type Data struct {
 	PageNo                int                              `json:"PageNo" xml:"PageNo"`
 	DevEui                string                           `json:"DevEui" xml:"DevEui"`
 	GroupId               string                           `json:"GroupId" xml:"GroupId"`
-	OnlineCount           int64                            `json:"onlineCount" xml:"onlineCount"`
 	FileId                string                           `json:"FileId" xml:"FileId"`
 	LastUpdateTime        int64                            `json:"LastUpdateTime" xml:"LastUpdateTime"`
 	Versions              string                           `json:"Versions" xml:"Versions"`
@@ -49,8 +48,6 @@ type Data struct {
 	CategoryKey           string                           `json:"CategoryKey" xml:"CategoryKey"`
 	CreateTime            int64                            `json:"CreateTime" xml:"CreateTime"`
 	PageSize              int                              `json:"PageSize" xml:"PageSize"`
-	DeviceCount           int64                            `json:"deviceCount" xml:"deviceCount"`
-	ActiveCount           int64                            `json:"activeCount" xml:"activeCount"`
 	DateFormat            string                           `json:"DateFormat" xml:"DateFormat"`
 	Description           string                           `json:"Description" xml:"Description"`
 	ApiPath               string                           `json:"ApiPath" xml:"ApiPath"`
