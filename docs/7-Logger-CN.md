@@ -50,6 +50,7 @@ client.GetTemplate()           // 获取当前的日志模板，若此时客户�
 | {pid}     | PID |
 | {cost}     | 耗时 |
 | {start_time}  | 开始时间 |
+| {res_body}  | 响应主体 |
 
 ***
 [← 调试](6-Debug-CN.md) | 日志[(English)](7-Logger-EN.md) | [并发 →](8-Concurrent-CN.md)

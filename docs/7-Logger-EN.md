@@ -51,6 +51,7 @@ client.GetTemplate()           // Get client logger template，if clien logger i
 | {pid}     | PID |
 | {cost}     | Cost Time |
 | {start_time}     | start Time |
+| {res_body}  | Response body |
 
 ***
 [← Debug](6-Debug-EN.md) | Logger[(中文)](7-Logger-CN.md) | [Concurrent →](8-Concurrent-EN.md)

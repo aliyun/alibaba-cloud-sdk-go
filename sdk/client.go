@@ -552,6 +552,8 @@ func (client *Client) DoActionWithSigner(request requests.AcsRequest, response r
 	}
 
 	err = responses.Unmarshal(response, httpResponse, request.GetAcceptFormat())
+	fieldMap["{res_body}"] = response.GetHttpContentString()
+	debug("%s", response.GetHttpContentString())
 	// wrap server errors
 	if serverErr, ok := err.(*errors.ServerError); ok {
 		var wrapInfo = map[string]string{}
