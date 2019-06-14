@@ -73,6 +73,23 @@ func endpointParse(srcpath string) (string, error) {
 		return "", err
 	}
 	realEndpoints := &RealEndpoints{}
+	for key := range endponit.GlobalEndpoints {
+		if endponit.DocumentID[key] == "" {
+			endponit.DocumentID[key] = "sdk"
+		}
+	}
+
+	for key := range endponit.RegionalEndpointPattern {
+		if endponit.DocumentID[key] == "" {
+			endponit.DocumentID[key] = "sdk"
+		}
+	}
+
+	for key := range endponit.RegionalEndpoints {
+		if endponit.DocumentID[key] == "" {
+			endponit.DocumentID[key] = "sdk"
+		}
+	}
 	for key, value := range endponit.DocumentID {
 		realEndpoint := Product{
 			Code:                    key,
@@ -80,6 +97,9 @@ func endpointParse(srcpath string) (string, error) {
 			DocumentID:              value,
 			GlobalEndpoint:          endponit.GlobalEndpoints[key],
 			RegionalEndpointPattern: endponit.RegionalEndpointPattern[key],
+		}
+		if realEndpoint.DocumentID == "sdk" {
+			realEndpoint.DocumentID = ""
 		}
 		for key1, value1 := range endponit.LocationCodeMapping {
 			if value1 == key {
