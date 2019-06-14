@@ -1,3 +1,6 @@
+2019-06-14 Version: 1.60.45
+1. govendor rds sdk code problem.
+
 2019-06-13 Version: 1.60.44
 1, fixed DescribeAvailableResource OpenApi AvailableZones value problem.
 
