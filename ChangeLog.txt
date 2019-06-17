@@ -1,3 +1,6 @@
+2019-06-17 Version: 1.60.47
+companyreg release
+
 2019-06-14 Version: 1.60.46
 - Generated 2018-01-20 for `Iot`
 
