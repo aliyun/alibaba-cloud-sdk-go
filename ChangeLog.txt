@@ -1,3 +1,7 @@
+2019-06-18 Version: 1.60.48
+1. Supported the related recommend.
+2. Supported exposure time controll and exposure filter by scene.
+
 2019-06-17 Version: 1.60.47
 companyreg release
 

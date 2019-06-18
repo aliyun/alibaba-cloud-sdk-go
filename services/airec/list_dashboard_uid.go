@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// ModifyDataSource invokes the airec.ModifyDataSource API synchronously
-// api document: https://help.aliyun.com/api/airec/modifydatasource.html
-func (client *Client) ModifyDataSource(request *ModifyDataSourceRequest) (response *ModifyDataSourceResponse, err error) {
-	response = CreateModifyDataSourceResponse()
+// ListDashboardUid invokes the airec.ListDashboardUid API synchronously
+// api document: https://help.aliyun.com/api/airec/listdashboarduid.html
+func (client *Client) ListDashboardUid(request *ListDashboardUidRequest) (response *ListDashboardUidResponse, err error) {
+	response = CreateListDashboardUidResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// ModifyDataSourceWithChan invokes the airec.ModifyDataSource API asynchronously
-// api document: https://help.aliyun.com/api/airec/modifydatasource.html
+// ListDashboardUidWithChan invokes the airec.ListDashboardUid API asynchronously
+// api document: https://help.aliyun.com/api/airec/listdashboarduid.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) ModifyDataSourceWithChan(request *ModifyDataSourceRequest) (<-chan *ModifyDataSourceResponse, <-chan error) {
-	responseChan := make(chan *ModifyDataSourceResponse, 1)
+func (client *Client) ListDashboardUidWithChan(request *ListDashboardUidRequest) (<-chan *ListDashboardUidResponse, <-chan error) {
+	responseChan := make(chan *ListDashboardUidResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.ModifyDataSource(request)
+		response, err := client.ListDashboardUid(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) ModifyDataSourceWithChan(request *ModifyDataSourceRequest)
 	return responseChan, errChan
 }
 
-// ModifyDataSourceWithCallback invokes the airec.ModifyDataSource API asynchronously
-// api document: https://help.aliyun.com/api/airec/modifydatasource.html
+// ListDashboardUidWithCallback invokes the airec.ListDashboardUid API asynchronously
+// api document: https://help.aliyun.com/api/airec/listdashboarduid.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) ModifyDataSourceWithCallback(request *ModifyDataSourceRequest, callback func(response *ModifyDataSourceResponse, err error)) <-chan int {
+func (client *Client) ListDashboardUidWithCallback(request *ListDashboardUidRequest, callback func(response *ListDashboardUidResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *ModifyDataSourceResponse
+		var response *ListDashboardUidResponse
 		var err error
 		defer close(result)
-		response, err = client.ModifyDataSource(request)
+		response, err = client.ListDashboardUid(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,15 +73,14 @@ func (client *Client) ModifyDataSourceWithCallback(request *ModifyDataSourceRequ
 	return result
 }
 
-// ModifyDataSourceRequest is the request struct for api ModifyDataSource
-type ModifyDataSourceRequest struct {
+// ListDashboardUidRequest is the request struct for api ListDashboardUid
+type ListDashboardUidRequest struct {
 	*requests.RoaRequest
 	InstanceId string `position:"Path" name:"InstanceId"`
-	TableName  string `position:"Path" name:"TableName"`
 }
 
-// ModifyDataSourceResponse is the response struct for api ModifyDataSource
-type ModifyDataSourceResponse struct {
+// ListDashboardUidResponse is the response struct for api ListDashboardUid
+type ListDashboardUidResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Code      string `json:"Code" xml:"Code"`
@@ -89,19 +88,19 @@ type ModifyDataSourceResponse struct {
 	Result    Result `json:"Result" xml:"Result"`
 }
 
-// CreateModifyDataSourceRequest creates a request to invoke ModifyDataSource API
-func CreateModifyDataSourceRequest() (request *ModifyDataSourceRequest) {
-	request = &ModifyDataSourceRequest{
+// CreateListDashboardUidRequest creates a request to invoke ListDashboardUid API
+func CreateListDashboardUidRequest() (request *ListDashboardUidRequest) {
+	request = &ListDashboardUidRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("Airec", "2018-10-12", "ModifyDataSource", "/openapi/instances/[InstanceId]/dataSources/[TableName]", "airec", "openAPI")
-	request.Method = requests.PUT
+	request.InitWithApiInfo("Airec", "2018-10-12", "ListDashboardUid", "/openapi/instances/[InstanceId]/dashboard/uid", "airec", "openAPI")
+	request.Method = requests.GET
 	return
 }
 
-// CreateModifyDataSourceResponse creates a response to parse from ModifyDataSource response
-func CreateModifyDataSourceResponse() (response *ModifyDataSourceResponse) {
-	response = &ModifyDataSourceResponse{
+// CreateListDashboardUidResponse creates a response to parse from ListDashboardUid response
+func CreateListDashboardUidResponse() (response *ListDashboardUidResponse) {
+	response = &ListDashboardUidResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return
