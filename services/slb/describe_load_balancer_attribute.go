@@ -102,13 +102,13 @@ type DescribeLoadBalancerAttributeResponse struct {
 	VSwitchId                      string                                        `json:"VSwitchId" xml:"VSwitchId"`
 	NetworkType                    string                                        `json:"NetworkType" xml:"NetworkType"`
 	InternetChargeType             string                                        `json:"InternetChargeType" xml:"InternetChargeType"`
-	AutoReleaseTime                int                                           `json:"AutoReleaseTime" xml:"AutoReleaseTime"`
+	AutoReleaseTime                int64                                         `json:"AutoReleaseTime" xml:"AutoReleaseTime"`
 	Bandwidth                      int                                           `json:"Bandwidth" xml:"Bandwidth"`
 	LoadBalancerSpec               string                                        `json:"LoadBalancerSpec" xml:"LoadBalancerSpec"`
 	CreateTime                     string                                        `json:"CreateTime" xml:"CreateTime"`
-	CreateTimeStamp                int                                           `json:"CreateTimeStamp" xml:"CreateTimeStamp"`
+	CreateTimeStamp                int64                                         `json:"CreateTimeStamp" xml:"CreateTimeStamp"`
 	EndTime                        string                                        `json:"EndTime" xml:"EndTime"`
-	EndTimeStamp                   int                                           `json:"EndTimeStamp" xml:"EndTimeStamp"`
+	EndTimeStamp                   int64                                         `json:"EndTimeStamp" xml:"EndTimeStamp"`
 	PayType                        string                                        `json:"PayType" xml:"PayType"`
 	MasterZoneId                   string                                        `json:"MasterZoneId" xml:"MasterZoneId"`
 	SlaveZoneId                    string                                        `json:"SlaveZoneId" xml:"SlaveZoneId"`

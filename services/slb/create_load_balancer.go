@@ -115,7 +115,7 @@ type CreateLoadBalancerResponse struct {
 	VpcId            string `json:"VpcId" xml:"VpcId"`
 	VSwitchId        string `json:"VSwitchId" xml:"VSwitchId"`
 	NetworkType      string `json:"NetworkType" xml:"NetworkType"`
-	OrderId          int    `json:"OrderId" xml:"OrderId"`
+	OrderId          int64  `json:"OrderId" xml:"OrderId"`
 	AddressIPVersion string `json:"AddressIPVersion" xml:"AddressIPVersion"`
 }
 

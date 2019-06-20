@@ -31,7 +31,7 @@ type LoadBalancer struct {
 	SlaveZoneId        string                      `json:"SlaveZoneId" xml:"SlaveZoneId"`
 	InternetChargeType string                      `json:"InternetChargeType" xml:"InternetChargeType"`
 	CreateTime         string                      `json:"CreateTime" xml:"CreateTime"`
-	CreateTimeStamp    int                         `json:"CreateTimeStamp" xml:"CreateTimeStamp"`
+	CreateTimeStamp    int64                       `json:"CreateTimeStamp" xml:"CreateTimeStamp"`
 	PayType            string                      `json:"PayType" xml:"PayType"`
 	ResourceGroupId    string                      `json:"ResourceGroupId" xml:"ResourceGroupId"`
 	AddressIPVersion   string                      `json:"AddressIPVersion" xml:"AddressIPVersion"`

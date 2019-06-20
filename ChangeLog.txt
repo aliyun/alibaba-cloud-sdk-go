@@ -1,3 +1,6 @@
+2019-06-21 Version: 1.60.51
+- Support DeleteProtection api.
+
 2019-06-20 Version: 1.60.50
 - OOS SDK first release for managing of templates, executions and actions.
 
