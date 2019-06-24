@@ -78,6 +78,9 @@ type ListTranscodeTemplateGroupRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	PageNo               requests.Integer `position:"Query" name:"PageNo"`
+	AppId                string           `position:"Query" name:"AppId"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 

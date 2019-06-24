@@ -79,6 +79,7 @@ type ListVodTemplateRequest struct {
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	TemplateType         string           `position:"Query" name:"TemplateType"`
+	AppId                string           `position:"Query" name:"AppId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 

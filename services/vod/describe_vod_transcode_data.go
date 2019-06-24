@@ -76,10 +76,12 @@ func (client *Client) DescribeVodTranscodeDataWithCallback(request *DescribeVodT
 // DescribeVodTranscodeDataRequest is the request struct for api DescribeVodTranscodeData
 type DescribeVodTranscodeDataRequest struct {
 	*requests.RpcRequest
-	StartTime string           `position:"Query" name:"StartTime"`
-	EndTime   string           `position:"Query" name:"EndTime"`
-	OwnerId   requests.Integer `position:"Query" name:"OwnerId"`
-	Region    string           `position:"Query" name:"Region"`
+	StartTime     string           `position:"Query" name:"StartTime"`
+	Storage       string           `position:"Query" name:"Storage"`
+	EndTime       string           `position:"Query" name:"EndTime"`
+	Specification string           `position:"Query" name:"Specification"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	Region        string           `position:"Query" name:"Region"`
 }
 
 // DescribeVodTranscodeDataResponse is the response struct for api DescribeVodTranscodeData

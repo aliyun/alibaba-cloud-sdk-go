@@ -77,6 +77,7 @@ func (client *Client) DescribeVodAIDataWithCallback(request *DescribeVodAIDataRe
 type DescribeVodAIDataRequest struct {
 	*requests.RpcRequest
 	StartTime string           `position:"Query" name:"StartTime"`
+	AIType    string           `position:"Query" name:"AIType"`
 	EndTime   string           `position:"Query" name:"EndTime"`
 	OwnerId   requests.Integer `position:"Query" name:"OwnerId"`
 	Region    string           `position:"Query" name:"Region"`

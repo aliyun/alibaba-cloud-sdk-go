@@ -18,6 +18,7 @@ package vod
 // VodTemplateInfo is a nested struct in vod response
 type VodTemplateInfo struct {
 	Name            string `json:"Name" xml:"Name"`
+	AppId           string `json:"AppId" xml:"AppId"`
 	ModifyTime      string `json:"ModifyTime" xml:"ModifyTime"`
 	VodTemplateId   string `json:"VodTemplateId" xml:"VodTemplateId"`
 	CreationTime    string `json:"CreationTime" xml:"CreationTime"`

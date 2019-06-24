@@ -80,6 +80,7 @@ type AddVodTemplateRequest struct {
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	TemplateConfig       string           `position:"Query" name:"TemplateConfig"`
 	TemplateType         string           `position:"Query" name:"TemplateType"`
+	AppId                string           `position:"Query" name:"AppId"`
 	Name                 string           `position:"Query" name:"Name"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	SubTemplateType      string           `position:"Query" name:"SubTemplateType"`
