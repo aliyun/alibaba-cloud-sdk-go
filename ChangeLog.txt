@@ -1,3 +1,6 @@
+2019-06-25 Version: 1.60.54
+- Enhencement for CostOptimized scaling group.
+
 2019-06-24 Version: 1.60.53
 - Add some new apis to manage VoD domain, such as AddVodDomain, UpdateVodDomain, DeleteVodDomain, BatchStartVodDomain, BatchStopVodDomain, DescribeVodUserDomains, DescribeVodDomainDetail.
 - Add some new apis to manage VoD domain config, such as BatchSetVodDomainConfigs, DescribeVodDomainConfigs, DeleteVodSpecificConfig, SetVodDomainCertificate, DescribeVodCertificateList, DescribeVodDomainCertificateInfo.

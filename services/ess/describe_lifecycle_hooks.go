@@ -76,14 +76,14 @@ func (client *Client) DescribeLifecycleHooksWithCallback(request *DescribeLifecy
 // DescribeLifecycleHooksRequest is the request struct for api DescribeLifecycleHooks
 type DescribeLifecycleHooksRequest struct {
 	*requests.RpcRequest
-	ScalingGroupId       string           `position:"Query" name:"ScalingGroupId"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	LifecycleHookName    string           `position:"Query" name:"LifecycleHookName"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ScalingGroupId       string           `position:"Query" name:"ScalingGroupId"`
 	LifecycleHookId      *[]string        `position:"Query" name:"LifecycleHookId"  type:"Repeated"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 // DescribeLifecycleHooksResponse is the response struct for api DescribeLifecycleHooks

@@ -76,12 +76,12 @@ func (client *Client) ModifyAlertConfigWithCallback(request *ModifyAlertConfigRe
 // ModifyAlertConfigRequest is the request struct for api ModifyAlertConfig
 type ModifyAlertConfigRequest struct {
 	*requests.RpcRequest
-	RejectConfig         requests.Integer `position:"Query" name:"RejectConfig"`
-	ScalingGroupId       string           `position:"Query" name:"ScalingGroupId"`
-	FailConfig           requests.Integer `position:"Query" name:"FailConfig"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	SuccessConfig        requests.Integer `position:"Query" name:"SuccessConfig"`
+	RejectConfig         requests.Integer `position:"Query" name:"RejectConfig"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ScalingGroupId       string           `position:"Query" name:"ScalingGroupId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	FailConfig           requests.Integer `position:"Query" name:"FailConfig"`
 }
 
 // ModifyAlertConfigResponse is the response struct for api ModifyAlertConfig

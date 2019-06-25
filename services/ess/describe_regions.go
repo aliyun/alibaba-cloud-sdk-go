@@ -78,8 +78,8 @@ type DescribeRegionsRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	AcceptLanguage       string           `position:"Query" name:"AcceptLanguage"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeRegionsResponse is the response struct for api DescribeRegions
