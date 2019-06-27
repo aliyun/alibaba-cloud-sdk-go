@@ -21,8 +21,8 @@ type CommunicationRecordInfo struct {
 	StartTime     string                        `json:"StartTime" xml:"StartTime"`
 	EndTime       string                        `json:"EndTime" xml:"EndTime"`
 	ChannelId     string                        `json:"ChannelId" xml:"ChannelId"`
-	TotalUserCnt  int                           `json:"TotalUserCnt" xml:"TotalUserCnt"`
+	TotalUserCnt  int64                         `json:"TotalUserCnt" xml:"TotalUserCnt"`
 	RecordId      string                        `json:"RecordId" xml:"RecordId"`
-	OnlineUserCnt int                           `json:"OnlineUserCnt" xml:"OnlineUserCnt"`
+	OnlineUserCnt int64                         `json:"OnlineUserCnt" xml:"OnlineUserCnt"`
 	CallAreas     CallAreasInDescribeRecordList `json:"CallAreas" xml:"CallAreas"`
 }

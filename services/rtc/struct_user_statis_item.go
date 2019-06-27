@@ -17,7 +17,7 @@ package rtc
 
 // UserStatisItem is a nested struct in rtc response
 type UserStatisItem struct {
-	ActiveUserCnt      int    `json:"ActiveUserCnt" xml:"ActiveUserCnt"`
-	ConSessionPeak     int    `json:"ConSessionPeak" xml:"ConSessionPeak"`
+	ActiveUserCnt      int64  `json:"ActiveUserCnt" xml:"ActiveUserCnt"`
+	ConSessionPeak     int64  `json:"ConSessionPeak" xml:"ConSessionPeak"`
 	ConSessionPeakTime string `json:"ConSessionPeakTime" xml:"ConSessionPeakTime"`
 }

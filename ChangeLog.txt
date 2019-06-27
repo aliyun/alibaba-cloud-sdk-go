@@ -1,3 +1,6 @@
+2019-06-27 Version: 1.60.55
+- Added setting of crop_mode parameter.
+
 2019-06-25 Version: 1.60.54
 - Enhencement for CostOptimized scaling group.
 
