@@ -7,7 +7,6 @@ import (
 )
 
 func TestUnmarshal(t *testing.T) {
-	initJsonParserOnce()
 	from := []byte(`{}`)
 	to := &struct{}{}
 	// support auto json type trans
@@ -20,7 +19,6 @@ func TestUnmarshal(t *testing.T) {
 }
 
 func TestUnmarshal_int(t *testing.T) {
-	initJsonParserOnce()
 	to := &struct {
 		INT int
 	}{}
@@ -105,7 +103,6 @@ func TestUnmarshal_int(t *testing.T) {
 }
 
 func TestUnmarshal_uint(t *testing.T) {
-	initJsonParserOnce()
 	to := &struct {
 		UINT uint
 	}{}
@@ -136,7 +133,6 @@ func TestUnmarshal_uint(t *testing.T) {
 }
 
 func TestUnmarshal_int8(t *testing.T) {
-	initJsonParserOnce()
 	to := &struct {
 		INT8 int8
 	}{}
@@ -167,7 +163,6 @@ func TestUnmarshal_int8(t *testing.T) {
 }
 
 func TestUnmarshal_uint8(t *testing.T) {
-	initJsonParserOnce()
 	to := &struct {
 		UINT8 uint8
 	}{}
@@ -198,7 +193,6 @@ func TestUnmarshal_uint8(t *testing.T) {
 }
 
 func TestUnmarshal_int16(t *testing.T) {
-	initJsonParserOnce()
 	to := &struct {
 		INT16 int16
 	}{}
@@ -229,7 +223,6 @@ func TestUnmarshal_int16(t *testing.T) {
 }
 
 func TestUnmarshal_uint16(t *testing.T) {
-	initJsonParserOnce()
 	to := &struct {
 		UINT16 uint16
 	}{}
@@ -260,7 +253,6 @@ func TestUnmarshal_uint16(t *testing.T) {
 }
 
 func TestUnmarshal_int32(t *testing.T) {
-	initJsonParserOnce()
 	to := &struct {
 		INT32 int32
 	}{}
@@ -291,7 +283,6 @@ func TestUnmarshal_int32(t *testing.T) {
 }
 
 func TestUnmarshal_uint32(t *testing.T) {
-	initJsonParserOnce()
 	to := &struct {
 		UINT32 uint32
 	}{}
@@ -322,7 +313,6 @@ func TestUnmarshal_uint32(t *testing.T) {
 }
 
 func TestUnmarshal_int64(t *testing.T) {
-	initJsonParserOnce()
 	to := &struct {
 		INT64 int64
 	}{}
@@ -353,7 +343,6 @@ func TestUnmarshal_int64(t *testing.T) {
 }
 
 func TestUnmarshal_uint64(t *testing.T) {
-	initJsonParserOnce()
 	to := &struct {
 		UINT64 uint64
 	}{}
@@ -384,7 +373,6 @@ func TestUnmarshal_uint64(t *testing.T) {
 }
 
 func TestUnmarshal_string(t *testing.T) {
-	initJsonParserOnce()
 	to := &struct {
 		STRING string
 	}{}
@@ -437,7 +425,6 @@ func TestUnmarshal_string(t *testing.T) {
 }
 
 func TestUnmarshal_bool(t *testing.T) {
-	initJsonParserOnce()
 	to := &struct {
 		BOOL bool
 	}{}
@@ -521,7 +508,6 @@ func TestUnmarshal_bool(t *testing.T) {
 }
 
 func TestUnmarshal_array(t *testing.T) {
-	initJsonParserOnce()
 	to := &struct {
 		Array []string
 	}{}
@@ -537,7 +523,6 @@ func TestUnmarshal_array(t *testing.T) {
 }
 
 func TestUnmarshal_float32(t *testing.T) {
-	initJsonParserOnce()
 	to := &struct {
 		FLOAT32 float32
 	}{}
@@ -623,7 +608,6 @@ func TestUnmarshal_float32(t *testing.T) {
 }
 
 func TestUnmarshal_float64(t *testing.T) {
-	initJsonParserOnce()
 	to := &struct {
 		FLOAT64 float64
 	}{}
@@ -709,7 +693,6 @@ func TestUnmarshal_float64(t *testing.T) {
 }
 
 func TestUnmarshalWithArray(t *testing.T) {
-	initJsonParserOnce()
 	from := []byte(`[]`)
 	to := &struct{}{}
 	// TODO: Must support Array
