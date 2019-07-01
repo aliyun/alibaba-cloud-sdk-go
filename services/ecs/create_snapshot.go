@@ -83,6 +83,7 @@ type CreateSnapshotRequest struct {
 	Description          string               `position:"Query" name:"Description"`
 	DiskId               string               `position:"Query" name:"DiskId"`
 	SnapshotName         string               `position:"Query" name:"SnapshotName"`
+	RetentionDays        requests.Integer     `position:"Query" name:"RetentionDays"`
 	Tag                  *[]CreateSnapshotTag `position:"Query" name:"Tag"  type:"Repeated"`
 	OwnerId              requests.Integer     `position:"Query" name:"OwnerId"`
 }

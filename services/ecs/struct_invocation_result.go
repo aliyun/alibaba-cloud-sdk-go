@@ -20,6 +20,7 @@ type InvocationResult struct {
 	CommandId          string `json:"CommandId" xml:"CommandId"`
 	InvokeId           string `json:"InvokeId" xml:"InvokeId"`
 	InstanceId         string `json:"InstanceId" xml:"InstanceId"`
+	StartTime          string `json:"StartTime" xml:"StartTime"`
 	FinishedTime       string `json:"FinishedTime" xml:"FinishedTime"`
 	Output             string `json:"Output" xml:"Output"`
 	InvokeRecordStatus string `json:"InvokeRecordStatus" xml:"InvokeRecordStatus"`

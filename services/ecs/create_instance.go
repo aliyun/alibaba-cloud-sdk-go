@@ -113,6 +113,7 @@ type CreateInstanceRequest struct {
 	Description                   string                    `position:"Query" name:"Description"`
 	SystemDiskCategory            string                    `position:"Query" name:"SystemDisk.Category"`
 	CapacityReservationId         string                    `position:"Query" name:"CapacityReservationId"`
+	SystemDiskPerformanceLevel    string                    `position:"Query" name:"SystemDisk.PerformanceLevel"`
 	UserData                      string                    `position:"Query" name:"UserData"`
 	PasswordInherit               requests.Boolean          `position:"Query" name:"PasswordInherit"`
 	InstanceType                  string                    `position:"Query" name:"InstanceType"`
@@ -152,6 +153,7 @@ type CreateInstanceDataDisk struct {
 	SnapshotId         string `name:"SnapshotId"`
 	Size               string `name:"Size"`
 	Encrypted          string `name:"Encrypted"`
+	PerformanceLevel   string `name:"PerformanceLevel"`
 	Description        string `name:"Description"`
 	Category           string `name:"Category"`
 	KMSKeyId           string `name:"KMSKeyId"`

@@ -116,6 +116,7 @@ type RunInstancesRequest struct {
 	Description                   string                          `position:"Query" name:"Description"`
 	SystemDiskCategory            string                          `position:"Query" name:"SystemDisk.Category"`
 	CapacityReservationId         string                          `position:"Query" name:"CapacityReservationId"`
+	SystemDiskPerformanceLevel    string                          `position:"Query" name:"SystemDisk.PerformanceLevel"`
 	UserData                      string                          `position:"Query" name:"UserData"`
 	PasswordInherit               requests.Boolean                `position:"Query" name:"PasswordInherit"`
 	InstanceType                  string                          `position:"Query" name:"InstanceType"`
@@ -165,6 +166,7 @@ type RunInstancesDataDisk struct {
 	Description        string `name:"Description"`
 	Device             string `name:"Device"`
 	DeleteWithInstance string `name:"DeleteWithInstance"`
+	PerformanceLevel   string `name:"PerformanceLevel"`
 }
 
 // RunInstancesResponse is the response struct for api RunInstances

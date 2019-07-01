@@ -28,6 +28,7 @@ type Snapshot struct {
 	SourceDiskSize    string                  `json:"SourceDiskSize" xml:"SourceDiskSize"`
 	Description       string                  `json:"Description" xml:"Description"`
 	CreationTime      string                  `json:"CreationTime" xml:"CreationTime"`
+	LastModifiedTime  string                  `json:"LastModifiedTime" xml:"LastModifiedTime"`
 	Status            string                  `json:"Status" xml:"Status"`
 	Usage             string                  `json:"Usage" xml:"Usage"`
 	SourceStorageType string                  `json:"SourceStorageType" xml:"SourceStorageType"`
