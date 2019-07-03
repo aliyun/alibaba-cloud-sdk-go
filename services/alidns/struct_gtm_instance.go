@@ -25,8 +25,9 @@ type GtmInstance struct {
 	Ttl             int    `json:"Ttl" xml:"Ttl"`
 	LbaStrategy     string `json:"LbaStrategy" xml:"LbaStrategy"`
 	CreateTime      string `json:"CreateTime" xml:"CreateTime"`
-	CreateTimestamp int    `json:"CreateTimestamp" xml:"CreateTimestamp"`
+	CreateTimestamp int64  `json:"CreateTimestamp" xml:"CreateTimestamp"`
 	ExpireTime      string `json:"ExpireTime" xml:"ExpireTime"`
-	ExpireTimestamp int    `json:"ExpireTimestamp" xml:"ExpireTimestamp"`
+	ExpireTimestamp int64  `json:"ExpireTimestamp" xml:"ExpireTimestamp"`
 	AlertGroup      string `json:"AlertGroup" xml:"AlertGroup"`
+	CnameMode       string `json:"CnameMode" xml:"CnameMode"`
 }

@@ -1,3 +1,9 @@
+2019-07-03 Version: 1.60.58
+- Supported API DescribeRecordStatisticsSummary for Query Volume.
+- Supported API DescribeDomainStatisticsSummary for Query Volume.
+- Supported API DescribeRecordStatisticsHistory for Query Volume.
+- Supported API DescribeDomainDnsStatistics for Query Volume.
+
 2019-07-02 Version: 1.60.57
 - FnF public version.
 

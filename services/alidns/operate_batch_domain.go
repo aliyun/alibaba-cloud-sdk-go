@@ -85,19 +85,22 @@ type OperateBatchDomainRequest struct {
 // OperateBatchDomainDomainRecordInfo is a repeated param struct in OperateBatchDomainRequest
 type OperateBatchDomainDomainRecordInfo struct {
 	Rr       string `name:"Rr"`
+	NewType  string `name:"NewType"`
+	NewValue string `name:"NewValue"`
 	Line     string `name:"Line"`
 	Domain   string `name:"Domain"`
 	Type     string `name:"Type"`
 	Priority string `name:"Priority"`
 	Value    string `name:"Value"`
 	Ttl      string `name:"Ttl"`
+	NewRr    string `name:"NewRr"`
 }
 
 // OperateBatchDomainResponse is the response struct for api OperateBatchDomain
 type OperateBatchDomainResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	TaskId    int    `json:"TaskId" xml:"TaskId"`
+	TaskId    int64  `json:"TaskId" xml:"TaskId"`
 }
 
 // CreateOperateBatchDomainRequest creates a request to invoke OperateBatchDomain API
@@ -105,7 +108,7 @@ func CreateOperateBatchDomainRequest() (request *OperateBatchDomainRequest) {
 	request = &OperateBatchDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Alidns", "2015-01-09", "OperateBatchDomain", "alidns", "openAPI")
+	request.InitWithApiInfo("Alidns", "2015-01-09", "OperateBatchDomain", "Alidns", "openAPI")
 	return
 }
 

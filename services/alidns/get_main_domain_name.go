@@ -87,7 +87,7 @@ type GetMainDomainNameResponse struct {
 	RequestId   string `json:"RequestId" xml:"RequestId"`
 	DomainName  string `json:"DomainName" xml:"DomainName"`
 	RR          string `json:"RR" xml:"RR"`
-	DomainLevel int    `json:"DomainLevel" xml:"DomainLevel"`
+	DomainLevel int64  `json:"DomainLevel" xml:"DomainLevel"`
 }
 
 // CreateGetMainDomainNameRequest creates a request to invoke GetMainDomainName API
@@ -95,7 +95,7 @@ func CreateGetMainDomainNameRequest() (request *GetMainDomainNameRequest) {
 	request = &GetMainDomainNameRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Alidns", "2015-01-09", "GetMainDomainName", "alidns", "openAPI")
+	request.InitWithApiInfo("Alidns", "2015-01-09", "GetMainDomainName", "Alidns", "openAPI")
 	return
 }
 

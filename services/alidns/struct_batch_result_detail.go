@@ -28,8 +28,8 @@ type BatchResultDetail struct {
 	BatchType      string `json:"BatchType" xml:"BatchType"`
 	OperateDateStr string `json:"OperateDateStr" xml:"OperateDateStr"`
 	Line           string `json:"Line" xml:"Line"`
-	Priority       int    `json:"Priority" xml:"Priority"`
-	Ttl            int    `json:"Ttl" xml:"Ttl"`
+	Priority       string `json:"Priority" xml:"Priority"`
+	Ttl            string `json:"Ttl" xml:"Ttl"`
 	RecordId       string `json:"RecordId" xml:"RecordId"`
 	Remark         string `json:"Remark" xml:"Remark"`
 	RrStatus       string `json:"RrStatus" xml:"RrStatus"`

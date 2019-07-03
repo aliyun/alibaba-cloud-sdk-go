@@ -99,7 +99,7 @@ func CreateDescribeGtmInstanceAddressPoolsRequest() (request *DescribeGtmInstanc
 	request = &DescribeGtmInstanceAddressPoolsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Alidns", "2015-01-09", "DescribeGtmInstanceAddressPools", "alidns", "openAPI")
+	request.InitWithApiInfo("Alidns", "2015-01-09", "DescribeGtmInstanceAddressPools", "Alidns", "openAPI")
 	return
 }
 

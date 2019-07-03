@@ -92,7 +92,7 @@ func CreateDeleteGtmAddressPoolRequest() (request *DeleteGtmAddressPoolRequest) 
 	request = &DeleteGtmAddressPoolRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Alidns", "2015-01-09", "DeleteGtmAddressPool", "alidns", "openAPI")
+	request.InitWithApiInfo("Alidns", "2015-01-09", "DeleteGtmAddressPool", "Alidns", "openAPI")
 	return
 }
 

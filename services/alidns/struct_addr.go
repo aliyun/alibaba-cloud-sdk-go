@@ -17,11 +17,11 @@ package alidns
 
 // Addr is a nested struct in alidns response
 type Addr struct {
-	AddrId          int    `json:"AddrId" xml:"AddrId"`
+	AddrId          int64  `json:"AddrId" xml:"AddrId"`
 	CreateTime      string `json:"CreateTime" xml:"CreateTime"`
-	CreateTimestamp int    `json:"CreateTimestamp" xml:"CreateTimestamp"`
+	CreateTimestamp int64  `json:"CreateTimestamp" xml:"CreateTimestamp"`
 	UpdateTime      string `json:"UpdateTime" xml:"UpdateTime"`
-	UpdateTimestamp int    `json:"UpdateTimestamp" xml:"UpdateTimestamp"`
+	UpdateTimestamp int64  `json:"UpdateTimestamp" xml:"UpdateTimestamp"`
 	Value           string `json:"Value" xml:"Value"`
 	LbaWeight       int    `json:"LbaWeight" xml:"LbaWeight"`
 	Mode            string `json:"Mode" xml:"Mode"`

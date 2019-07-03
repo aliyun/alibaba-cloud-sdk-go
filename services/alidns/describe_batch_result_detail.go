@@ -88,9 +88,9 @@ type DescribeBatchResultDetailRequest struct {
 type DescribeBatchResultDetailResponse struct {
 	*responses.BaseResponse
 	RequestId          string             `json:"RequestId" xml:"RequestId"`
-	TotalCount         int                `json:"TotalCount" xml:"TotalCount"`
-	PageNumber         int                `json:"PageNumber" xml:"PageNumber"`
-	PageSize           int                `json:"PageSize" xml:"PageSize"`
+	TotalCount         int64              `json:"TotalCount" xml:"TotalCount"`
+	PageNumber         int64              `json:"PageNumber" xml:"PageNumber"`
+	PageSize           int64              `json:"PageSize" xml:"PageSize"`
 	BatchResultDetails BatchResultDetails `json:"BatchResultDetails" xml:"BatchResultDetails"`
 }
 
@@ -99,7 +99,7 @@ func CreateDescribeBatchResultDetailRequest() (request *DescribeBatchResultDetai
 	request = &DescribeBatchResultDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Alidns", "2015-01-09", "DescribeBatchResultDetail", "alidns", "openAPI")
+	request.InitWithApiInfo("Alidns", "2015-01-09", "DescribeBatchResultDetail", "Alidns", "openAPI")
 	return
 }
 

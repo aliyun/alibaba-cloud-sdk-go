@@ -98,7 +98,7 @@ func CreateCreateInstanceRequest() (request *CreateInstanceRequest) {
 	request = &CreateInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Alidns", "2015-01-09", "CreateInstance", "alidns", "openAPI")
+	request.InitWithApiInfo("Alidns", "2015-01-09", "CreateInstance", "Alidns", "openAPI")
 	return
 }
 

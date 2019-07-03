@@ -20,7 +20,7 @@ type Strategy struct {
 	StrategyId           string                             `json:"StrategyId" xml:"StrategyId"`
 	StrategyName         string                             `json:"StrategyName" xml:"StrategyName"`
 	CreateTime           string                             `json:"CreateTime" xml:"CreateTime"`
-	CreateTimestamp      int                                `json:"CreateTimestamp" xml:"CreateTimestamp"`
+	CreateTimestamp      int64                              `json:"CreateTimestamp" xml:"CreateTimestamp"`
 	DefaultAddrPoolId    string                             `json:"DefaultAddrPoolId" xml:"DefaultAddrPoolId"`
 	DefaultAddrPoolName  string                             `json:"DefaultAddrPoolName" xml:"DefaultAddrPoolName"`
 	FailoverAddrPoolId   string                             `json:"FailoverAddrPoolId" xml:"FailoverAddrPoolId"`

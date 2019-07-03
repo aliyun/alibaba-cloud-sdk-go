@@ -99,7 +99,7 @@ func CreateQueryCreateInstancePriceRequest() (request *QueryCreateInstancePriceR
 	request = &QueryCreateInstancePriceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Alidns", "2015-01-09", "QueryCreateInstancePrice", "alidns", "openAPI")
+	request.InitWithApiInfo("Alidns", "2015-01-09", "QueryCreateInstancePrice", "Alidns", "openAPI")
 	return
 }
 

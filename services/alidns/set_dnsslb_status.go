@@ -86,7 +86,7 @@ type SetDNSSLBStatusRequest struct {
 type SetDNSSLBStatusResponse struct {
 	*responses.BaseResponse
 	RequestId   string `json:"RequestId" xml:"RequestId"`
-	RecordCount int    `json:"RecordCount" xml:"RecordCount"`
+	RecordCount int64  `json:"RecordCount" xml:"RecordCount"`
 	Open        bool   `json:"Open" xml:"Open"`
 }
 
@@ -95,7 +95,7 @@ func CreateSetDNSSLBStatusRequest() (request *SetDNSSLBStatusRequest) {
 	request = &SetDNSSLBStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Alidns", "2015-01-09", "SetDNSSLBStatus", "alidns", "openAPI")
+	request.InitWithApiInfo("Alidns", "2015-01-09", "SetDNSSLBStatus", "Alidns", "openAPI")
 	return
 }
 

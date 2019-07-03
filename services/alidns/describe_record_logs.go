@@ -90,9 +90,9 @@ type DescribeRecordLogsRequest struct {
 type DescribeRecordLogsResponse struct {
 	*responses.BaseResponse
 	RequestId  string     `json:"RequestId" xml:"RequestId"`
-	TotalCount int        `json:"TotalCount" xml:"TotalCount"`
-	PageNumber int        `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int        `json:"PageSize" xml:"PageSize"`
+	TotalCount int64      `json:"TotalCount" xml:"TotalCount"`
+	PageNumber int64      `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int64      `json:"PageSize" xml:"PageSize"`
 	RecordLogs RecordLogs `json:"RecordLogs" xml:"RecordLogs"`
 }
 
@@ -101,7 +101,7 @@ func CreateDescribeRecordLogsRequest() (request *DescribeRecordLogsRequest) {
 	request = &DescribeRecordLogsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Alidns", "2015-01-09", "DescribeRecordLogs", "alidns", "openAPI")
+	request.InitWithApiInfo("Alidns", "2015-01-09", "DescribeRecordLogs", "Alidns", "openAPI")
 	return
 }
 

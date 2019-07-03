@@ -93,7 +93,7 @@ func CreateDescribeSupportLinesRequest() (request *DescribeSupportLinesRequest) 
 	request = &DescribeSupportLinesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Alidns", "2015-01-09", "DescribeSupportLines", "alidns", "openAPI")
+	request.InitWithApiInfo("Alidns", "2015-01-09", "DescribeSupportLines", "Alidns", "openAPI")
 	return
 }
 
