@@ -12,4 +12,4 @@
 ### endpoint
 
 1. Convert endpoints from java json to golang file  
-`go run endpoint parse <javaJsonFilepath> <golangFilePath>`
+`go run ./... endpoint parse <javaJsonFilepath> <golangFilePath>`
