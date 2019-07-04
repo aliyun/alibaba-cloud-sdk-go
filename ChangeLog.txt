@@ -1,3 +1,7 @@
+2019-07-04 Version: 1.60.59
+- Supported API DescribeRecordStatisticsy for Query Volume.
+- Supported API DescribeDomainStatistics for Query Volume.
+
 2019-07-03 Version: 1.60.58
 - Supported API DescribeRecordStatisticsSummary for Query Volume.
 - Supported API DescribeDomainStatisticsSummary for Query Volume.
