@@ -29,6 +29,9 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/utils"
 )
 
+// HTTPDoHook ...
+type HTTPDoHook func(fn func(req *http.Request) (*http.Response, error)) func(req *http.Request) (*http.Response, error)
+
 var debug utils.Debug
 
 func init() {
@@ -38,7 +41,7 @@ func init() {
 // Version this value will be replaced while build: -ldflags="-X sdk.version=x.x.x"
 var Version = "0.0.1"
 
-var hookDo = func(fn func(req *http.Request) (*http.Response, error)) func(req *http.Request) (*http.Response, error) {
+var defaultHTTPDoHook HTTPDoHook = func(fn func(req *http.Request) (*http.Response, error)) func(req *http.Request) (*http.Response, error) {
 	return fn
 }
 
@@ -54,13 +57,20 @@ type Client struct {
 	isRunning bool
 	// void "panic(write to close channel)" cause of addAsync() after Shutdown()
 	asyncChanLock *sync.RWMutex
+	httpDoHook    HTTPDoHook
 }
 
 func (client *Client) Init() (err error) {
 	panic("not support yet")
 }
 
+// SetHTTPDoHook ...
+func (client *Client) SetHTTPDoHook(hook HTTPDoHook) {
+	client.httpDoHook = hook
+}
+
 func (client *Client) InitWithOptions(regionId string, config *Config, credential auth.Credential) (err error) {
+	client.httpDoHook = defaultHTTPDoHook
 	client.isRunning = true
 	client.asyncChanLock = new(sync.RWMutex)
 	client.regionId = regionId
@@ -219,7 +229,7 @@ func (client *Client) DoActionWithSigner(request requests.AcsRequest, response r
 	}
 	var httpResponse *http.Response
 	for retryTimes := 0; retryTimes <= client.config.MaxRetryTime; retryTimes++ {
-		httpResponse, err = hookDo(client.httpClient.Do)(httpRequest)
+		httpResponse, err = client.httpDoHook(client.httpClient.Do)(httpRequest)
 		// receive error
 		if err != nil {
 			if !client.config.AutoRetry {

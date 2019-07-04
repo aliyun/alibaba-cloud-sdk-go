@@ -103,13 +103,11 @@ func Test_DoAction(t *testing.T) {
 	request.QueryParams["PageSize"] = "30"
 	request.TransToAcsRequest()
 	response := responses.NewCommonResponse()
-	origTestHookDo := hookDo
-	defer func() { hookDo = origTestHookDo }()
-	hookDo = func(fn func(req *http.Request) (*http.Response, error)) func(req *http.Request) (*http.Response, error) {
+	client.SetHTTPDoHook(func(fn func(req *http.Request) (*http.Response, error)) func(req *http.Request) (*http.Response, error) {
 		return func(req *http.Request) (*http.Response, error) {
 			return mockResponse(200, "")
 		}
-	}
+	})
 	err = client.DoAction(request, response)
 	assert.Nil(t, err)
 	assert.Equal(t, 200, response.GetHttpStatus())
@@ -131,13 +129,11 @@ func Test_ProcessCommonRequest(t *testing.T) {
 	request.QueryParams["PageNumber"] = "1"
 	request.QueryParams["PageSize"] = "30"
 
-	origTestHookDo := hookDo
-	defer func() { hookDo = origTestHookDo }()
-	hookDo = func(fn func(req *http.Request) (*http.Response, error)) func(req *http.Request) (*http.Response, error) {
+	client.SetHTTPDoHook(func(fn func(req *http.Request) (*http.Response, error)) func(req *http.Request) (*http.Response, error) {
 		return func(req *http.Request) (*http.Response, error) {
 			return mockResponse(200, "")
 		}
-	}
+	})
 	response, err := client.ProcessCommonRequest(request)
 	assert.Nil(t, err)
 	assert.Equal(t, 200, response.GetHttpStatus())
@@ -158,13 +154,11 @@ func Test_DoAction_With500(t *testing.T) {
 	request.QueryParams["PageSize"] = "30"
 	request.TransToAcsRequest()
 	response := responses.NewCommonResponse()
-	origTestHookDo := hookDo
-	defer func() { hookDo = origTestHookDo }()
-	hookDo = func(fn func(req *http.Request) (*http.Response, error)) func(req *http.Request) (*http.Response, error) {
+	client.SetHTTPDoHook(func(fn func(req *http.Request) (*http.Response, error)) func(req *http.Request) (*http.Response, error) {
 		return func(req *http.Request) (*http.Response, error) {
 			return mockResponse(500, "Server Internel Error")
 		}
-	}
+	})
 	err = client.DoAction(request, response)
 	assert.NotNil(t, err)
 	assert.Equal(t, "SDK.ServerError\nErrorCode: \nRecommend: \nRequestId: \nMessage: Server Internel Error", err.Error())
