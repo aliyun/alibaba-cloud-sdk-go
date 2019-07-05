@@ -1,3 +1,6 @@
+2019-07-05 Version: 1.60.60
+- Generated 2015-04-01 for `Sts`.
+
 2019-07-04 Version: 1.60.59
 - Supported API DescribeRecordStatisticsy for Query Volume.
 - Supported API DescribeDomainStatistics for Query Volume.
