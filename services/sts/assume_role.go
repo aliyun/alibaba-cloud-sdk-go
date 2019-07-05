@@ -95,7 +95,7 @@ func CreateAssumeRoleRequest() (request *AssumeRoleRequest) {
 	request = &AssumeRoleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sts", "2015-04-01", "AssumeRole", "", "")
+	request.InitWithApiInfo("Sts", "2015-04-01", "AssumeRole", "sts", "openAPI")
 	return
 }
 

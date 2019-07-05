@@ -97,7 +97,7 @@ func CreateAssumeRoleWithSAMLRequest() (request *AssumeRoleWithSAMLRequest) {
 	request = &AssumeRoleWithSAMLRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Sts", "2015-04-01", "AssumeRoleWithSAML", "", "")
+	request.InitWithApiInfo("Sts", "2015-04-01", "AssumeRoleWithSAML", "sts", "openAPI")
 	return
 }
 
