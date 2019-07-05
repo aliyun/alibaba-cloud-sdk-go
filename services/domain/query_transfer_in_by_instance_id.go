@@ -101,11 +101,11 @@ type QueryTransferInByInstanceIdResponse struct {
 	WhoisMailStatus                             bool   `json:"WhoisMailStatus" xml:"WhoisMailStatus"`
 	ExpirationDate                              string `json:"ExpirationDate" xml:"ExpirationDate"`
 	ProgressBarType                             int    `json:"ProgressBarType" xml:"ProgressBarType"`
-	SubmissionDateLong                          int    `json:"SubmissionDateLong" xml:"SubmissionDateLong"`
-	ModificationDateLong                        int    `json:"ModificationDateLong" xml:"ModificationDateLong"`
-	ResultDateLong                              int    `json:"ResultDateLong" xml:"ResultDateLong"`
-	ExpirationDateLong                          int    `json:"ExpirationDateLong" xml:"ExpirationDateLong"`
-	TransferAuthorizationCodeSubmissionDateLong int    `json:"TransferAuthorizationCodeSubmissionDateLong" xml:"TransferAuthorizationCodeSubmissionDateLong"`
+	SubmissionDateLong                          int64  `json:"SubmissionDateLong" xml:"SubmissionDateLong"`
+	ModificationDateLong                        int64  `json:"ModificationDateLong" xml:"ModificationDateLong"`
+	ResultDateLong                              int64  `json:"ResultDateLong" xml:"ResultDateLong"`
+	ExpirationDateLong                          int64  `json:"ExpirationDateLong" xml:"ExpirationDateLong"`
+	TransferAuthorizationCodeSubmissionDateLong int64  `json:"TransferAuthorizationCodeSubmissionDateLong" xml:"TransferAuthorizationCodeSubmissionDateLong"`
 }
 
 // CreateQueryTransferInByInstanceIdRequest creates a request to invoke QueryTransferInByInstanceId API

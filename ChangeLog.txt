@@ -1,3 +1,6 @@
+2019-07-05 Version: 1.60.62
+- Add TaskCancelStatus for QueryTaskList api.
+
 2019-07-05 Version: 1.60.61
 - Generated 2015-04-01 for `Sts`.
 

@@ -85,7 +85,7 @@ type LookupTmchNoticeRequest struct {
 type LookupTmchNoticeResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Id        int    `json:"Id" xml:"Id"`
+	Id        int64  `json:"Id" xml:"Id"`
 	NotBefore string `json:"NotBefore" xml:"NotBefore"`
 	NotAfter  string `json:"NotAfter" xml:"NotAfter"`
 	Label     string `json:"Label" xml:"Label"`

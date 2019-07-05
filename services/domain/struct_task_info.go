@@ -17,12 +17,14 @@ package domain
 
 // TaskInfo is a nested struct in domain response
 type TaskInfo struct {
-	TaskType            string `json:"TaskType" xml:"TaskType"`
-	TaskNum             int    `json:"TaskNum" xml:"TaskNum"`
-	TaskStatus          string `json:"TaskStatus" xml:"TaskStatus"`
-	CreateTime          string `json:"CreateTime" xml:"CreateTime"`
-	Clientip            string `json:"Clientip" xml:"Clientip"`
-	TaskNo              string `json:"TaskNo" xml:"TaskNo"`
-	TaskStatusCode      int    `json:"TaskStatusCode" xml:"TaskStatusCode"`
-	TaskTypeDescription string `json:"TaskTypeDescription" xml:"TaskTypeDescription"`
+	TaskType             string `json:"TaskType" xml:"TaskType"`
+	TaskNum              int    `json:"TaskNum" xml:"TaskNum"`
+	TaskStatus           string `json:"TaskStatus" xml:"TaskStatus"`
+	CreateTime           string `json:"CreateTime" xml:"CreateTime"`
+	Clientip             string `json:"Clientip" xml:"Clientip"`
+	TaskNo               string `json:"TaskNo" xml:"TaskNo"`
+	TaskStatusCode       int    `json:"TaskStatusCode" xml:"TaskStatusCode"`
+	TaskTypeDescription  string `json:"TaskTypeDescription" xml:"TaskTypeDescription"`
+	TaskCancelStatus     string `json:"TaskCancelStatus" xml:"TaskCancelStatus"`
+	TaskCancelStatusCode int    `json:"TaskCancelStatusCode" xml:"TaskCancelStatusCode"`
 }

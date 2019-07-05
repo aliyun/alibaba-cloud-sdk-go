@@ -23,7 +23,7 @@ type TaskInfoHistory struct {
 	CreateTime          string `json:"CreateTime" xml:"CreateTime"`
 	Clientip            string `json:"Clientip" xml:"Clientip"`
 	TaskNo              string `json:"TaskNo" xml:"TaskNo"`
-	CreateTimeLong      int    `json:"CreateTimeLong" xml:"CreateTimeLong"`
+	CreateTimeLong      int64  `json:"CreateTimeLong" xml:"CreateTimeLong"`
 	TaskStatusCode      int    `json:"TaskStatusCode" xml:"TaskStatusCode"`
 	TaskTypeDescription string `json:"TaskTypeDescription" xml:"TaskTypeDescription"`
 }

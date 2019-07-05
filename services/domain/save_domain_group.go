@@ -86,7 +86,7 @@ type SaveDomainGroupRequest struct {
 type SaveDomainGroupResponse struct {
 	*responses.BaseResponse
 	RequestId         string `json:"RequestId" xml:"RequestId"`
-	DomainGroupId     int    `json:"DomainGroupId" xml:"DomainGroupId"`
+	DomainGroupId     int64  `json:"DomainGroupId" xml:"DomainGroupId"`
 	DomainGroupName   string `json:"DomainGroupName" xml:"DomainGroupName"`
 	TotalNumber       int    `json:"TotalNumber" xml:"TotalNumber"`
 	CreationDate      string `json:"CreationDate" xml:"CreationDate"`

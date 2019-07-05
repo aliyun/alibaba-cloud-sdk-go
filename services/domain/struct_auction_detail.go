@@ -34,9 +34,9 @@ type AuctionDetail struct {
 	Status          string  `json:"Status" xml:"Status"`
 	PayStatus       string  `json:"PayStatus" xml:"PayStatus"`
 	ProduceStatus   string  `json:"ProduceStatus" xml:"ProduceStatus"`
-	AuctionEndTime  int     `json:"AuctionEndTime" xml:"AuctionEndTime"`
-	BookEndTime     int     `json:"BookEndTime" xml:"BookEndTime"`
-	PayEndTime      int     `json:"PayEndTime" xml:"PayEndTime"`
-	DeliveryTime    int     `json:"DeliveryTime" xml:"DeliveryTime"`
+	AuctionEndTime  int64   `json:"AuctionEndTime" xml:"AuctionEndTime"`
+	BookEndTime     int64   `json:"BookEndTime" xml:"BookEndTime"`
+	PayEndTime      int64   `json:"PayEndTime" xml:"PayEndTime"`
+	DeliveryTime    int64   `json:"DeliveryTime" xml:"DeliveryTime"`
 	FailCode        string  `json:"FailCode" xml:"FailCode"`
 }

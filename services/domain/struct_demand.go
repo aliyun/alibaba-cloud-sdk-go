@@ -23,10 +23,10 @@ type Demand struct {
 	DemandPrice         float64 `json:"DemandPrice" xml:"DemandPrice"`
 	Mobile              string  `json:"Mobile" xml:"Mobile"`
 	Description         string  `json:"Description" xml:"Description"`
-	PublishTime         int     `json:"PublishTime" xml:"PublishTime"`
+	PublishTime         int64   `json:"PublishTime" xml:"PublishTime"`
 	PayDomain           string  `json:"PayDomain" xml:"PayDomain"`
 	PayPrice            float64 `json:"PayPrice" xml:"PayPrice"`
-	PayTime             int     `json:"PayTime" xml:"PayTime"`
+	PayTime             int64   `json:"PayTime" xml:"PayTime"`
 	ProduceType         int     `json:"ProduceType" xml:"ProduceType"`
 	BargainSellerPrice  float64 `json:"BargainSellerPrice" xml:"BargainSellerPrice"`
 	BargainSellerMobile string  `json:"BargainSellerMobile" xml:"BargainSellerMobile"`

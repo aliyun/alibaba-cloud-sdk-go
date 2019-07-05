@@ -18,7 +18,7 @@ package domain
 // Domain is a nested struct in domain response
 type Domain struct {
 	RegistrationDate         string                    `json:"RegistrationDate" xml:"RegistrationDate"`
-	RegistrationDateLong     int                       `json:"RegistrationDateLong" xml:"RegistrationDateLong"`
+	RegistrationDateLong     int64                     `json:"RegistrationDateLong" xml:"RegistrationDateLong"`
 	ZhRegistrantOrganization string                    `json:"ZhRegistrantOrganization" xml:"ZhRegistrantOrganization"`
 	DomainStatus             string                    `json:"DomainStatus" xml:"DomainStatus"`
 	Email                    string                    `json:"Email" xml:"Email"`
@@ -27,7 +27,7 @@ type Domain struct {
 	DomainName               string                    `json:"DomainName" xml:"DomainName"`
 	ProductId                string                    `json:"ProductId" xml:"ProductId"`
 	ExpirationDateStatus     string                    `json:"ExpirationDateStatus" xml:"ExpirationDateStatus"`
-	ExpirationDateLong       int                       `json:"ExpirationDateLong" xml:"ExpirationDateLong"`
+	ExpirationDateLong       int64                     `json:"ExpirationDateLong" xml:"ExpirationDateLong"`
 	RegistrantType           string                    `json:"RegistrantType" xml:"RegistrantType"`
 	ExpirationDate           string                    `json:"ExpirationDate" xml:"ExpirationDate"`
 	Premium                  bool                      `json:"Premium" xml:"Premium"`

@@ -89,7 +89,7 @@ type QueryRegistrantProfileRealNameVerificationInfoResponse struct {
 	SubmissionDate         string `json:"SubmissionDate" xml:"SubmissionDate"`
 	ModificationDate       string `json:"ModificationDate" xml:"ModificationDate"`
 	IdentityCredential     string `json:"IdentityCredential" xml:"IdentityCredential"`
-	RegistrantProfileId    int    `json:"RegistrantProfileId" xml:"RegistrantProfileId"`
+	RegistrantProfileId    int64  `json:"RegistrantProfileId" xml:"RegistrantProfileId"`
 	IdentityCredentialNo   string `json:"IdentityCredentialNo" xml:"IdentityCredentialNo"`
 	IdentityCredentialType string `json:"IdentityCredentialType" xml:"IdentityCredentialType"`
 	IdentityCredentialUrl  string `json:"IdentityCredentialUrl" xml:"IdentityCredentialUrl"`
