@@ -442,6 +442,8 @@ func (client *Client) getTimeout(request requests.AcsRequest) (time.Duration, ti
 		readTimeout = client.readTimeout
 	} else if client.httpClient.Timeout != 0 && client.httpClient.Timeout != 10000000000 {
 		readTimeout = client.httpClient.Timeout
+	} else if timeout, ok := getAPIMaxTimeout(request.GetProduct(), request.GetActionName()); ok {
+		readTimeout = timeout
 	}
 
 	if reqConnectTimeout != 0*time.Millisecond {

@@ -328,6 +328,7 @@ func Test_DoAction_Timeout(t *testing.T) {
 	request := requests.NewCommonRequest()
 	request.Domain = "ecs.aliyuncs.com"
 	request.Version = "2014-05-26"
+	request.Product = "ecs"
 	request.ApiName = "DescribeInstanceStatus"
 
 	request.QueryParams["PageNumber"] = "1"
@@ -341,6 +342,12 @@ func Test_DoAction_Timeout(t *testing.T) {
 			return mockResponse(400, "Server Internel Error", fmt.Errorf("read tcp"))
 		}
 	}
+	err = client.DoAction(request, response)
+	assert.NotNil(t, err)
+	assert.Equal(t, 0, response.GetHttpStatus())
+	assert.Equal(t, "", response.GetHttpContentString())
+
+	client.httpClient.Timeout = 15 * time.Second
 	err = client.DoAction(request, response)
 	assert.NotNil(t, err)
 	assert.Equal(t, 0, response.GetHttpStatus())
