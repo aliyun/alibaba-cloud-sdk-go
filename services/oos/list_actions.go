@@ -76,9 +76,9 @@ func (client *Client) ListActionsWithCallback(request *ListActionsRequest, callb
 // ListActionsRequest is the request struct for api ListActions
 type ListActionsRequest struct {
 	*requests.RpcRequest
-	NextToken  string           `position:"Query" name:"NextToken"`
-	MaxResults requests.Integer `position:"Query" name:"MaxResults"`
-	ActionName string           `position:"Query" name:"ActionName"`
+	NextToken     string           `position:"Query" name:"NextToken"`
+	MaxResults    requests.Integer `position:"Query" name:"MaxResults"`
+	OOSActionName string           `position:"Query" name:"OOSActionName"`
 }
 
 // ListActionsResponse is the response struct for api ListActions
