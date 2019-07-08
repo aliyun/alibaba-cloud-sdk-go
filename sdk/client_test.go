@@ -470,16 +470,15 @@ func Test_DoAction_WithLogger(t *testing.T) {
 
 	// Test when open logger, it will print log.
 	client.OpenLogger()
-	template := "{channel}: \"{method} {code}"
+	template := "{channel}: \"{method} {code} {res_body}"
 	client.SetTemplate(template)
 	err = client.DoAction(request, response)
 	assert.NotNil(t, err)
 	log = client.GetLogger()
 	assert.Equal(t, 500, response.GetHttpStatus())
 	assert.Equal(t, true, log.isOpen)
-	assert.Equal(t, "{channel}: \"{method} {code}", client.GetTemplate())
-	assert.Equal(t, client.GetLoggerMsg(), `Alibaba: "GET 500`)
-	assert.Equal(t, "Server Internel Error", response.GetHttpContentString())
+	assert.Equal(t, "{channel}: \"{method} {code} {res_body}", client.GetTemplate())
+	assert.Equal(t, client.GetLoggerMsg(), `Alibaba: "GET 500 Server Internel Error`)
 }
 
 func TestClient_BuildRequestWithSigner(t *testing.T) {
