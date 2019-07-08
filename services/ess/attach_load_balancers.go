@@ -76,10 +76,10 @@ func (client *Client) AttachLoadBalancersWithCallback(request *AttachLoadBalance
 // AttachLoadBalancersRequest is the request struct for api AttachLoadBalancers
 type AttachLoadBalancersRequest struct {
 	*requests.RpcRequest
-	ScalingGroupId       string           `position:"Query" name:"ScalingGroupId"`
-	ForceAttach          requests.Boolean `position:"Query" name:"ForceAttach"`
 	LoadBalancer         *[]string        `position:"Query" name:"LoadBalancer"  type:"Repeated"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ScalingGroupId       string           `position:"Query" name:"ScalingGroupId"`
+	ForceAttach          requests.Boolean `position:"Query" name:"ForceAttach"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 

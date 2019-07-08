@@ -19,7 +19,7 @@ package airec
 type Meta struct {
 	Path        string `json:"Path" xml:"Path"`
 	Partition   string `json:"Partition" xml:"Partition"`
-	Timestamp   int    `json:"Timestamp" xml:"Timestamp"`
+	Timestamp   int64  `json:"Timestamp" xml:"Timestamp"`
 	ProjectName string `json:"ProjectName" xml:"ProjectName"`
 	BucketName  string `json:"BucketName" xml:"BucketName"`
 	TableName   string `json:"TableName" xml:"TableName"`

@@ -48,6 +48,8 @@ type ScalingConfiguration struct {
 	SpotStrategy                string           `json:"SpotStrategy" xml:"SpotStrategy"`
 	PasswordInherit             bool             `json:"PasswordInherit" xml:"PasswordInherit"`
 	ResourceGroupId             string           `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	HpcClusterId                string           `json:"HpcClusterId" xml:"HpcClusterId"`
+	InstanceDescription         string           `json:"InstanceDescription" xml:"InstanceDescription"`
 	InstanceTypes               InstanceTypes    `json:"InstanceTypes" xml:"InstanceTypes"`
 	SecurityGroupIds            SecurityGroupIds `json:"SecurityGroupIds" xml:"SecurityGroupIds"`
 	DataDisks                   DataDisks        `json:"DataDisks" xml:"DataDisks"`

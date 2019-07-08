@@ -18,7 +18,9 @@ package vod
 // TranscodeTemplateGroup is a nested struct in vod response
 type TranscodeTemplateGroup struct {
 	Name                     string              `json:"Name" xml:"Name"`
+	AppId                    string              `json:"AppId" xml:"AppId"`
 	ModifyTime               string              `json:"ModifyTime" xml:"ModifyTime"`
+	TranscodeMode            string              `json:"TranscodeMode" xml:"TranscodeMode"`
 	CreationTime             string              `json:"CreationTime" xml:"CreationTime"`
 	Locked                   string              `json:"Locked" xml:"Locked"`
 	IsDefault                string              `json:"IsDefault" xml:"IsDefault"`

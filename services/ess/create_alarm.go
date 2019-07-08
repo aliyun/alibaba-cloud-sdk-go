@@ -77,19 +77,19 @@ func (client *Client) CreateAlarmWithCallback(request *CreateAlarmRequest, callb
 type CreateAlarmRequest struct {
 	*requests.RpcRequest
 	MetricType           string                  `position:"Query" name:"MetricType"`
+	Period               requests.Integer        `position:"Query" name:"Period"`
+	ResourceOwnerAccount string                  `position:"Query" name:"ResourceOwnerAccount"`
 	ScalingGroupId       string                  `position:"Query" name:"ScalingGroupId"`
+	GroupId              requests.Integer        `position:"Query" name:"GroupId"`
 	Description          string                  `position:"Query" name:"Description"`
 	AlarmAction          *[]string               `position:"Query" name:"AlarmAction"  type:"Repeated"`
 	Threshold            requests.Float          `position:"Query" name:"Threshold"`
-	EvaluationCount      requests.Integer        `position:"Query" name:"EvaluationCount"`
-	MetricName           string                  `position:"Query" name:"MetricName"`
-	Dimension            *[]CreateAlarmDimension `position:"Query" name:"Dimension"  type:"Repeated"`
-	Period               requests.Integer        `position:"Query" name:"Period"`
-	ResourceOwnerAccount string                  `position:"Query" name:"ResourceOwnerAccount"`
-	GroupId              requests.Integer        `position:"Query" name:"GroupId"`
 	OwnerId              requests.Integer        `position:"Query" name:"OwnerId"`
 	Name                 string                  `position:"Query" name:"Name"`
+	EvaluationCount      requests.Integer        `position:"Query" name:"EvaluationCount"`
+	MetricName           string                  `position:"Query" name:"MetricName"`
 	ComparisonOperator   string                  `position:"Query" name:"ComparisonOperator"`
+	Dimension            *[]CreateAlarmDimension `position:"Query" name:"Dimension"  type:"Repeated"`
 	Statistics           string                  `position:"Query" name:"Statistics"`
 }
 

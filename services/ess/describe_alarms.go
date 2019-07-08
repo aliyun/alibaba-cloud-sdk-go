@@ -76,15 +76,15 @@ func (client *Client) DescribeAlarmsWithCallback(request *DescribeAlarmsRequest,
 // DescribeAlarmsRequest is the request struct for api DescribeAlarms
 type DescribeAlarmsRequest struct {
 	*requests.RpcRequest
+	IsEnable             requests.Boolean `position:"Query" name:"IsEnable"`
 	MetricType           string           `position:"Query" name:"MetricType"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ScalingGroupId       string           `position:"Query" name:"ScalingGroupId"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	State                string           `position:"Query" name:"State"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	AlarmTaskId          string           `position:"Query" name:"AlarmTaskId"`
-	IsEnable             requests.Boolean `position:"Query" name:"IsEnable"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 // DescribeAlarmsResponse is the response struct for api DescribeAlarms

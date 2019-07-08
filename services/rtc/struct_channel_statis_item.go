@@ -17,7 +17,7 @@ package rtc
 
 // ChannelStatisItem is a nested struct in rtc response
 type ChannelStatisItem struct {
-	AccChannelCnt      int    `json:"AccChannelCnt" xml:"AccChannelCnt"`
-	ConChannelPeak     int    `json:"ConChannelPeak" xml:"ConChannelPeak"`
+	AccChannelCnt      int64  `json:"AccChannelCnt" xml:"AccChannelCnt"`
+	ConChannelPeak     int64  `json:"ConChannelPeak" xml:"ConChannelPeak"`
 	ConChannelPeakTime string `json:"ConChannelPeakTime" xml:"ConChannelPeakTime"`
 }

@@ -22,11 +22,11 @@ type AddrPool struct {
 	MinAvailableAddrNum int    `json:"MinAvailableAddrNum" xml:"MinAvailableAddrNum"`
 	UpdateTime          string `json:"UpdateTime" xml:"UpdateTime"`
 	MonitorConfigId     string `json:"MonitorConfigId" xml:"MonitorConfigId"`
-	CreateTimestamp     int    `json:"CreateTimestamp" xml:"CreateTimestamp"`
+	CreateTimestamp     int64  `json:"CreateTimestamp" xml:"CreateTimestamp"`
 	CreateTime          string `json:"CreateTime" xml:"CreateTime"`
 	AddrPoolName        string `json:"AddrPoolName" xml:"AddrPoolName"`
 	AddrPoolId          string `json:"AddrPoolId" xml:"AddrPoolId"`
-	UpdateTimestamp     int    `json:"UpdateTimestamp" xml:"UpdateTimestamp"`
+	UpdateTimestamp     int64  `json:"UpdateTimestamp" xml:"UpdateTimestamp"`
 	Status              string `json:"Status" xml:"Status"`
 	MonitorStatus       string `json:"MonitorStatus" xml:"MonitorStatus"`
 	Type                string `json:"Type" xml:"Type"`

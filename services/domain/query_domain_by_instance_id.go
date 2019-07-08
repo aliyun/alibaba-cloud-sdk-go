@@ -106,8 +106,8 @@ type QueryDomainByInstanceIdResponse struct {
 	RequestId                    string                           `json:"RequestId" xml:"RequestId"`
 	ZhRegistrantOrganization     string                           `json:"ZhRegistrantOrganization" xml:"ZhRegistrantOrganization"`
 	ZhRegistrantName             string                           `json:"ZhRegistrantName" xml:"ZhRegistrantName"`
-	RegistrationDateLong         int                              `json:"RegistrationDateLong" xml:"RegistrationDateLong"`
-	ExpirationDateLong           int                              `json:"ExpirationDateLong" xml:"ExpirationDateLong"`
+	RegistrationDateLong         int64                            `json:"RegistrationDateLong" xml:"RegistrationDateLong"`
+	ExpirationDateLong           int64                            `json:"ExpirationDateLong" xml:"ExpirationDateLong"`
 	DnsList                      DnsListInQueryDomainByInstanceId `json:"DnsList" xml:"DnsList"`
 }
 

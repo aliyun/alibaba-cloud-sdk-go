@@ -20,6 +20,6 @@ type BidRecord struct {
 	DomainName string  `json:"DomainName" xml:"DomainName"`
 	Currency   string  `json:"Currency" xml:"Currency"`
 	Bid        float64 `json:"Bid" xml:"Bid"`
-	BidTime    int     `json:"BidTime" xml:"BidTime"`
+	BidTime    int64   `json:"BidTime" xml:"BidTime"`
 	Bidder     string  `json:"Bidder" xml:"Bidder"`
 }

@@ -87,9 +87,9 @@ type DescribeGtmInstanceAddressPoolResponse struct {
 	RequestId           string `json:"RequestId" xml:"RequestId"`
 	AddrPoolId          string `json:"AddrPoolId" xml:"AddrPoolId"`
 	CreateTime          string `json:"CreateTime" xml:"CreateTime"`
-	CreateTimestamp     int    `json:"CreateTimestamp" xml:"CreateTimestamp"`
+	CreateTimestamp     int64  `json:"CreateTimestamp" xml:"CreateTimestamp"`
 	UpdateTime          string `json:"UpdateTime" xml:"UpdateTime"`
-	UpdateTimestamp     int    `json:"UpdateTimestamp" xml:"UpdateTimestamp"`
+	UpdateTimestamp     int64  `json:"UpdateTimestamp" xml:"UpdateTimestamp"`
 	AddrCount           int    `json:"AddrCount" xml:"AddrCount"`
 	MinAvailableAddrNum int    `json:"MinAvailableAddrNum" xml:"MinAvailableAddrNum"`
 	MonitorConfigId     string `json:"MonitorConfigId" xml:"MonitorConfigId"`
@@ -105,7 +105,7 @@ func CreateDescribeGtmInstanceAddressPoolRequest() (request *DescribeGtmInstance
 	request = &DescribeGtmInstanceAddressPoolRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Alidns", "2015-01-09", "DescribeGtmInstanceAddressPool", "alidns", "openAPI")
+	request.InitWithApiInfo("Alidns", "2015-01-09", "DescribeGtmInstanceAddressPool", "Alidns", "openAPI")
 	return
 }
 

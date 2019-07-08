@@ -99,7 +99,7 @@ func CreateUpdateDomainRecordRequest() (request *UpdateDomainRecordRequest) {
 	request = &UpdateDomainRecordRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Alidns", "2015-01-09", "UpdateDomainRecord", "alidns", "openAPI")
+	request.InitWithApiInfo("Alidns", "2015-01-09", "UpdateDomainRecord", "Alidns", "openAPI")
 	return
 }
 

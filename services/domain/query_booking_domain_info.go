@@ -88,7 +88,7 @@ type QueryBookingDomainInfoResponse struct {
 	MaxBid          float64 `json:"MaxBid" xml:"MaxBid"`
 	TransferInPrice float64 `json:"TransferInPrice" xml:"TransferInPrice"`
 	Currency        string  `json:"Currency" xml:"Currency"`
-	BookEndTime     int     `json:"BookEndTime" xml:"BookEndTime"`
+	BookEndTime     int64   `json:"BookEndTime" xml:"BookEndTime"`
 }
 
 // CreateQueryBookingDomainInfoRequest creates a request to invoke QueryBookingDomainInfo API

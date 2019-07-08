@@ -82,6 +82,7 @@ type UploadMediaByURLRequest struct {
 	UploadMetadatas      string           `position:"Query" name:"UploadMetadatas"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	UploadURLs           string           `position:"Query" name:"UploadURLs"`
+	AppId                string           `position:"Query" name:"AppId"`
 	MessageCallback      string           `position:"Query" name:"MessageCallback"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	Priority             string           `position:"Query" name:"Priority"`

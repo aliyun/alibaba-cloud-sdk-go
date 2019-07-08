@@ -23,7 +23,7 @@ type Log struct {
 	EntityId      string `json:"EntityId" xml:"EntityId"`
 	EntityName    string `json:"EntityName" xml:"EntityName"`
 	OperIp        string `json:"OperIp" xml:"OperIp"`
-	OperTimestamp int    `json:"OperTimestamp" xml:"OperTimestamp"`
-	Id            int    `json:"Id" xml:"Id"`
+	OperTimestamp int64  `json:"OperTimestamp" xml:"OperTimestamp"`
+	Id            int64  `json:"Id" xml:"Id"`
 	Content       string `json:"Content" xml:"Content"`
 }

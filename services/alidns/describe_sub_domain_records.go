@@ -89,9 +89,9 @@ type DescribeSubDomainRecordsRequest struct {
 type DescribeSubDomainRecordsResponse struct {
 	*responses.BaseResponse
 	RequestId     string                                  `json:"RequestId" xml:"RequestId"`
-	TotalCount    int                                     `json:"TotalCount" xml:"TotalCount"`
-	PageNumber    int                                     `json:"PageNumber" xml:"PageNumber"`
-	PageSize      int                                     `json:"PageSize" xml:"PageSize"`
+	TotalCount    int64                                   `json:"TotalCount" xml:"TotalCount"`
+	PageNumber    int64                                   `json:"PageNumber" xml:"PageNumber"`
+	PageSize      int64                                   `json:"PageSize" xml:"PageSize"`
 	DomainRecords DomainRecordsInDescribeSubDomainRecords `json:"DomainRecords" xml:"DomainRecords"`
 }
 
@@ -100,7 +100,7 @@ func CreateDescribeSubDomainRecordsRequest() (request *DescribeSubDomainRecordsR
 	request = &DescribeSubDomainRecordsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Alidns", "2015-01-09", "DescribeSubDomainRecords", "alidns", "openAPI")
+	request.InitWithApiInfo("Alidns", "2015-01-09", "DescribeSubDomainRecords", "Alidns", "openAPI")
 	return
 }
 

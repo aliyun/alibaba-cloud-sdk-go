@@ -1,3 +1,69 @@
+2019-07-08 Version: 1.60.63
+- ActionName change to OOSActionName from ListActions API param and response.
+
+2019-07-05 Version: 1.60.62
+- Add TaskCancelStatus for QueryTaskList api.
+
+2019-07-05 Version: 1.60.61
+- Generated 2015-04-01 for `Sts`.
+
+2019-07-05 Version: 1.60.60
+- Generated 2015-04-01 for `Sts`.
+
+2019-07-04 Version: 1.60.59
+- Supported API DescribeRecordStatisticsy for Query Volume.
+- Supported API DescribeDomainStatistics for Query Volume.
+
+2019-07-03 Version: 1.60.58
+- Supported API DescribeRecordStatisticsSummary for Query Volume.
+- Supported API DescribeDomainStatisticsSummary for Query Volume.
+- Supported API DescribeRecordStatisticsHistory for Query Volume.
+- Supported API DescribeDomainDnsStatistics for Query Volume.
+
+2019-07-02 Version: 1.60.57
+- FnF public version.
+
+2019-07-01 Version: 1.60.56
+- Support cloud_essd disk category for API CreateDisk, CreateInstance and RunInstances, and support configurating PerformanceLevel when choose cloud_essd.
+- Add ModifyDiskSpec API to support cloud_essd PerformanceLevel modification.
+- Add AutoProvisioningGroup interfaces, provide AutoProvisioningGroup function.
+- Add RetentionDays to snapshot creating.
+
+2019-06-27 Version: 1.60.55
+- Added setting of crop_mode parameter.
+
+2019-06-25 Version: 1.60.54
+- Enhencement for CostOptimized scaling group.
+
+2019-06-24 Version: 1.60.53
+- Add some new apis to manage VoD domain, such as AddVodDomain, UpdateVodDomain, DeleteVodDomain, BatchStartVodDomain, BatchStopVodDomain, DescribeVodUserDomains, DescribeVodDomainDetail.
+- Add some new apis to manage VoD domain config, such as BatchSetVodDomainConfigs, DescribeVodDomainConfigs, DeleteVodSpecificConfig, SetVodDomainCertificate, DescribeVodCertificateList, DescribeVodDomainCertificateInfo.
+- Add a new field named AppId to some apis supporting the VoD App feature, such as AddWorkFlow, GetWorkFlow, ListWorkFlow, AddVodTemplate, GetVodTemplate, ListVodTemplate, AddTranscodeTemplateGroup, GetTranscodeTemplateGroup, ListTranscodeTemplateGroup, AddWatermark, GetWatermark, ListWatermark, UploadMediaByURL.
+- Add a new field named UserData to SubmitTranscodeJobs api request to support user-defined extension fields, which can be used for transparent return when callbacks.
+
+2019-06-24 Version: 1.60.52
+- Add some new apis to manage VoD domain, such as AddVodDomain, UpdateVodDomain, DeleteVodDomain, BatchStartVodDomain, BatchStopVodDomain, DescribeVodUserDomains, DescribeVodDomainDetail.
+- Add some new apis to manage VoD domain config, such as BatchSetVodDomainConfigs, DescribeVodDomainConfigs, DeleteVodSpecificConfig, SetVodDomainCertificate, DescribeVodCertificateList, DescribeVodDomainCertificateInfo.
+- Add a new field named AppId to some apis supporting the VoD App feature, such as AddWorkFlow, GetWorkFlow, ListWorkFlow, AddVodTemplate, GetVodTemplate, ListVodTemplate, AddTranscodeTemplateGroup, GetTranscodeTemplateGroup, ListTranscodeTemplateGroup, AddWatermark, GetWatermark, ListWatermark, UploadMediaByURL.
+- Add a new field named UserData to SubmitTranscodeJobs api request to support user-defined extension fields, which can be used for transparent return when callbacks.
+
+2019-06-21 Version: 1.60.51
+- Support DeleteProtection api.
+
+2019-06-20 Version: 1.60.50
+- OOS SDK first release for managing of templates, executions and actions.
+
+2019-06-19 Version: 1.60.49
+1, Add DefaultPolicyVersion as return field to GetPolicy interface, Facilitating to get policy document from this interface.
+2, Add RotateStrategy as input field to CreatePolicyVersion interface for rotating policy version when reaching policy version limit.
+
+2019-06-18 Version: 1.60.48
+1. Supported the related recommend.
+2. Supported exposure time controll and exposure filter by scene.
+
+2019-06-17 Version: 1.60.47
+companyreg release
+
 2019-06-14 Version: 1.60.46
 - Generated 2018-01-20 for `Iot`
 

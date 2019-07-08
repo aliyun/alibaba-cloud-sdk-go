@@ -56,7 +56,6 @@ func Unmarshal(response AcsResponse, httpResponse *http.Response, format string)
 	}
 
 	if strings.ToUpper(format) == "JSON" {
-		initJsonParserOnce()
 		err = jsonParser.Unmarshal(response.GetHttpContentBytes(), response)
 		if err != nil {
 			err = errors.NewClientError(errors.JsonUnmarshalErrorCode, errors.JsonUnmarshalErrorMessage, err)

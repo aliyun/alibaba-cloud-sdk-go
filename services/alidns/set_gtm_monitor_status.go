@@ -93,7 +93,7 @@ func CreateSetGtmMonitorStatusRequest() (request *SetGtmMonitorStatusRequest) {
 	request = &SetGtmMonitorStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Alidns", "2015-01-09", "SetGtmMonitorStatus", "alidns", "openAPI")
+	request.InitWithApiInfo("Alidns", "2015-01-09", "SetGtmMonitorStatus", "Alidns", "openAPI")
 	return
 }
 

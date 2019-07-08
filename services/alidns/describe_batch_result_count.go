@@ -92,7 +92,7 @@ type DescribeBatchResultCountResponse struct {
 	FailedCount  int    `json:"FailedCount" xml:"FailedCount"`
 	Reason       string `json:"Reason" xml:"Reason"`
 	BatchType    string `json:"BatchType" xml:"BatchType"`
-	TaskId       int    `json:"TaskId" xml:"TaskId"`
+	TaskId       int64  `json:"TaskId" xml:"TaskId"`
 }
 
 // CreateDescribeBatchResultCountRequest creates a request to invoke DescribeBatchResultCount API
@@ -100,7 +100,7 @@ func CreateDescribeBatchResultCountRequest() (request *DescribeBatchResultCountR
 	request = &DescribeBatchResultCountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Alidns", "2015-01-09", "DescribeBatchResultCount", "alidns", "openAPI")
+	request.InitWithApiInfo("Alidns", "2015-01-09", "DescribeBatchResultCount", "Alidns", "openAPI")
 	return
 }
 

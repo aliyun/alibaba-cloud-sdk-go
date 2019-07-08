@@ -20,7 +20,7 @@ type NextPageCursor struct {
 	ErrorMsg            string `json:"ErrorMsg" xml:"ErrorMsg"`
 	TaskDetailNo        string `json:"TaskDetailNo" xml:"TaskDetailNo"`
 	UpdateTime          string `json:"UpdateTime" xml:"UpdateTime"`
-	CreateTimeLong      int    `json:"CreateTimeLong" xml:"CreateTimeLong"`
+	CreateTimeLong      int64  `json:"CreateTimeLong" xml:"CreateTimeLong"`
 	TaskStatusCode      int    `json:"TaskStatusCode" xml:"TaskStatusCode"`
 	DomainName          string `json:"DomainName" xml:"DomainName"`
 	CreateTime          string `json:"CreateTime" xml:"CreateTime"`

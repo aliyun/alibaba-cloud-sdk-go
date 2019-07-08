@@ -76,9 +76,9 @@ func (client *Client) DeleteScalingGroupWithCallback(request *DeleteScalingGroup
 // DeleteScalingGroupRequest is the request struct for api DeleteScalingGroup
 type DeleteScalingGroupRequest struct {
 	*requests.RpcRequest
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ScalingGroupId       string           `position:"Query" name:"ScalingGroupId"`
 	ForceDelete          requests.Boolean `position:"Query" name:"ForceDelete"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }

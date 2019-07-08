@@ -20,6 +20,6 @@ type ResultInAttachDataset struct {
 	InstanceId  string `json:"InstanceId" xml:"InstanceId"`
 	VersionId   string `json:"VersionId" xml:"VersionId"`
 	State       string `json:"State" xml:"State"`
-	GmtCreate   int    `json:"GmtCreate" xml:"GmtCreate"`
-	GmtModified int    `json:"GmtModified" xml:"GmtModified"`
+	GmtCreate   int64  `json:"GmtCreate" xml:"GmtCreate"`
+	GmtModified int64  `json:"GmtModified" xml:"GmtModified"`
 }

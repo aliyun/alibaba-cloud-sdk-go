@@ -96,7 +96,7 @@ func CreateCheckDomainRecordRequest() (request *CheckDomainRecordRequest) {
 	request = &CheckDomainRecordRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Alidns", "2015-01-09", "CheckDomainRecord", "alidns", "openAPI")
+	request.InitWithApiInfo("Alidns", "2015-01-09", "CheckDomainRecord", "Alidns", "openAPI")
 	return
 }
 

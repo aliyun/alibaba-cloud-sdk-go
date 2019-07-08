@@ -94,7 +94,7 @@ func CreateDescribeGtmInstanceStatusRequest() (request *DescribeGtmInstanceStatu
 	request = &DescribeGtmInstanceStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Alidns", "2015-01-09", "DescribeGtmInstanceStatus", "alidns", "openAPI")
+	request.InitWithApiInfo("Alidns", "2015-01-09", "DescribeGtmInstanceStatus", "Alidns", "openAPI")
 	return
 }
 

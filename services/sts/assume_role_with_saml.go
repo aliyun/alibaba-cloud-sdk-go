@@ -76,9 +76,9 @@ func (client *Client) AssumeRoleWithSAMLWithCallback(request *AssumeRoleWithSAML
 // AssumeRoleWithSAMLRequest is the request struct for api AssumeRoleWithSAML
 type AssumeRoleWithSAMLRequest struct {
 	*requests.RpcRequest
-	SAMLAssertion   string           `position:"Query" name:"SAMLAssertion"`
 	RoleArn         string           `position:"Query" name:"RoleArn"`
 	SAMLProviderArn string           `position:"Query" name:"SAMLProviderArn"`
+	SAMLAssertion   string           `position:"Query" name:"SAMLAssertion"`
 	DurationSeconds requests.Integer `position:"Query" name:"DurationSeconds"`
 	Policy          string           `position:"Query" name:"Policy"`
 }

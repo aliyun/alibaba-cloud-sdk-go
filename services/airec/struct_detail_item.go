@@ -17,14 +17,14 @@ package airec
 
 // DetailItem is a nested struct in airec response
 type DetailItem struct {
-	BizDate    int     `json:"BizDate" xml:"BizDate"`
-	Pv         int     `json:"Pv" xml:"Pv"`
-	Uv         int     `json:"Uv" xml:"Uv"`
-	Click      int     `json:"Click" xml:"Click"`
+	BizDate    int64   `json:"BizDate" xml:"BizDate"`
+	Pv         int64   `json:"Pv" xml:"Pv"`
+	Uv         int64   `json:"Uv" xml:"Uv"`
+	Click      int64   `json:"Click" xml:"Click"`
 	Ctr        float64 `json:"Ctr" xml:"Ctr"`
 	UvCtr      float64 `json:"UvCtr" xml:"UvCtr"`
 	PerUvBhv   float64 `json:"PerUvBhv" xml:"PerUvBhv"`
 	PerUvClick float64 `json:"PerUvClick" xml:"PerUvClick"`
-	ClickUser  int     `json:"ClickUser" xml:"ClickUser"`
-	ActiveItem int     `json:"ActiveItem" xml:"ActiveItem"`
+	ClickUser  int64   `json:"ClickUser" xml:"ClickUser"`
+	ActiveItem int64   `json:"ActiveItem" xml:"ActiveItem"`
 }

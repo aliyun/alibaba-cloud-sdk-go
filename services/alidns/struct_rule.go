@@ -17,7 +17,7 @@ package alidns
 
 // Rule is a nested struct in alidns response
 type Rule struct {
-	RuleId int    `json:"RuleId" xml:"RuleId"`
+	RuleId int64  `json:"RuleId" xml:"RuleId"`
 	Name   string `json:"Name" xml:"Name"`
 	Title  string `json:"Title" xml:"Title"`
 }

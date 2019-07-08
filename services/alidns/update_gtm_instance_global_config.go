@@ -76,14 +76,16 @@ func (client *Client) UpdateGtmInstanceGlobalConfigWithCallback(request *UpdateG
 // UpdateGtmInstanceGlobalConfigRequest is the request struct for api UpdateGtmInstanceGlobalConfig
 type UpdateGtmInstanceGlobalConfigRequest struct {
 	*requests.RpcRequest
-	AlertGroup     string           `position:"Query" name:"AlertGroup"`
-	InstanceId     string           `position:"Query" name:"InstanceId"`
-	InstanceName   string           `position:"Query" name:"InstanceName"`
-	UserDomainName string           `position:"Query" name:"UserDomainName"`
-	UserClientIp   string           `position:"Query" name:"UserClientIp"`
-	LbaStrategy    string           `position:"Query" name:"LbaStrategy"`
-	Lang           string           `position:"Query" name:"Lang"`
-	Ttl            requests.Integer `position:"Query" name:"Ttl"`
+	AlertGroup            string           `position:"Query" name:"AlertGroup"`
+	InstanceId            string           `position:"Query" name:"InstanceId"`
+	InstanceName          string           `position:"Query" name:"InstanceName"`
+	UserDomainName        string           `position:"Query" name:"UserDomainName"`
+	CnameMode             string           `position:"Query" name:"CnameMode"`
+	UserClientIp          string           `position:"Query" name:"UserClientIp"`
+	LbaStrategy           string           `position:"Query" name:"LbaStrategy"`
+	Lang                  string           `position:"Query" name:"Lang"`
+	Ttl                   requests.Integer `position:"Query" name:"Ttl"`
+	CnameCustomDomainName string           `position:"Query" name:"CnameCustomDomainName"`
 }
 
 // UpdateGtmInstanceGlobalConfigResponse is the response struct for api UpdateGtmInstanceGlobalConfig
@@ -97,7 +99,7 @@ func CreateUpdateGtmInstanceGlobalConfigRequest() (request *UpdateGtmInstanceGlo
 	request = &UpdateGtmInstanceGlobalConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Alidns", "2015-01-09", "UpdateGtmInstanceGlobalConfig", "alidns", "openAPI")
+	request.InitWithApiInfo("Alidns", "2015-01-09", "UpdateGtmInstanceGlobalConfig", "Alidns", "openAPI")
 	return
 }
 

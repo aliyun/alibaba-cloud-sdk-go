@@ -82,6 +82,7 @@ type RecommendRequest struct {
 	SceneId     string           `position:"Query" name:"SceneId"`
 	Imei        string           `position:"Query" name:"Imei"`
 	UserId      string           `position:"Query" name:"UserId"`
+	Items       string           `position:"Query" name:"Items"`
 }
 
 // RecommendResponse is the response struct for api Recommend

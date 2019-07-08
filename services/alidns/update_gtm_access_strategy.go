@@ -96,7 +96,7 @@ func CreateUpdateGtmAccessStrategyRequest() (request *UpdateGtmAccessStrategyReq
 	request = &UpdateGtmAccessStrategyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Alidns", "2015-01-09", "UpdateGtmAccessStrategy", "alidns", "openAPI")
+	request.InitWithApiInfo("Alidns", "2015-01-09", "UpdateGtmAccessStrategy", "Alidns", "openAPI")
 	return
 }
 

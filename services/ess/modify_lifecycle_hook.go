@@ -77,16 +77,16 @@ func (client *Client) ModifyLifecycleHookWithCallback(request *ModifyLifecycleHo
 type ModifyLifecycleHookRequest struct {
 	*requests.RpcRequest
 	DefaultResult        string           `position:"Query" name:"DefaultResult"`
-	HeartbeatTimeout     requests.Integer `position:"Query" name:"HeartbeatTimeout"`
-	ScalingGroupId       string           `position:"Query" name:"ScalingGroupId"`
-	LifecycleTransition  string           `position:"Query" name:"LifecycleTransition"`
-	LifecycleHookName    string           `position:"Query" name:"LifecycleHookName"`
-	NotificationArn      string           `position:"Query" name:"NotificationArn"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	HeartbeatTimeout     requests.Integer `position:"Query" name:"HeartbeatTimeout"`
 	LifecycleHookId      string           `position:"Query" name:"LifecycleHookId"`
+	ScalingGroupId       string           `position:"Query" name:"ScalingGroupId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	NotificationMetadata string           `position:"Query" name:"NotificationMetadata"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	LifecycleTransition  string           `position:"Query" name:"LifecycleTransition"`
+	LifecycleHookName    string           `position:"Query" name:"LifecycleHookName"`
+	NotificationArn      string           `position:"Query" name:"NotificationArn"`
 }
 
 // ModifyLifecycleHookResponse is the response struct for api ModifyLifecycleHook

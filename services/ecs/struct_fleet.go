@@ -17,23 +17,23 @@ package ecs
 
 // Fleet is a nested struct in ecs response
 type Fleet struct {
-	FleetId                          string                      `json:"FleetId" xml:"FleetId"`
-	FleetName                        string                      `json:"FleetName" xml:"FleetName"`
-	FleetType                        string                      `json:"FleetType" xml:"FleetType"`
-	Status                           string                      `json:"Status" xml:"Status"`
-	State                            string                      `json:"State" xml:"State"`
-	RegionId                         string                      `json:"RegionId" xml:"RegionId"`
-	ValidFrom                        string                      `json:"ValidFrom" xml:"ValidFrom"`
-	ValidUntil                       string                      `json:"ValidUntil" xml:"ValidUntil"`
-	ExcessCapacityTerminationPolicy  string                      `json:"ExcessCapacityTerminationPolicy" xml:"ExcessCapacityTerminationPolicy"`
-	MaxSpotPrice                     float64                     `json:"MaxSpotPrice" xml:"MaxSpotPrice"`
-	LaunchTemplateId                 string                      `json:"LaunchTemplateId" xml:"LaunchTemplateId"`
-	LaunchTemplateVersion            string                      `json:"LaunchTemplateVersion" xml:"LaunchTemplateVersion"`
-	TerminateInstances               bool                        `json:"TerminateInstances" xml:"TerminateInstances"`
-	TerminateInstancesWithExpiration bool                        `json:"TerminateInstancesWithExpiration" xml:"TerminateInstancesWithExpiration"`
-	CreationTime                     string                      `json:"CreationTime" xml:"CreationTime"`
-	SpotOptions                      SpotOptions                 `json:"SpotOptions" xml:"SpotOptions"`
-	OnDemandOptions                  OnDemandOptions             `json:"OnDemandOptions" xml:"OnDemandOptions"`
-	TargetCapacitySpecification      TargetCapacitySpecification `json:"TargetCapacitySpecification" xml:"TargetCapacitySpecification"`
-	LaunchTemplateConfigs            LaunchTemplateConfigs       `json:"launchTemplateConfigs" xml:"launchTemplateConfigs"`
+	FleetId                          string                                `json:"FleetId" xml:"FleetId"`
+	FleetName                        string                                `json:"FleetName" xml:"FleetName"`
+	FleetType                        string                                `json:"FleetType" xml:"FleetType"`
+	Status                           string                                `json:"Status" xml:"Status"`
+	State                            string                                `json:"State" xml:"State"`
+	RegionId                         string                                `json:"RegionId" xml:"RegionId"`
+	ValidFrom                        string                                `json:"ValidFrom" xml:"ValidFrom"`
+	ValidUntil                       string                                `json:"ValidUntil" xml:"ValidUntil"`
+	ExcessCapacityTerminationPolicy  string                                `json:"ExcessCapacityTerminationPolicy" xml:"ExcessCapacityTerminationPolicy"`
+	MaxSpotPrice                     float64                               `json:"MaxSpotPrice" xml:"MaxSpotPrice"`
+	LaunchTemplateId                 string                                `json:"LaunchTemplateId" xml:"LaunchTemplateId"`
+	LaunchTemplateVersion            string                                `json:"LaunchTemplateVersion" xml:"LaunchTemplateVersion"`
+	TerminateInstances               bool                                  `json:"TerminateInstances" xml:"TerminateInstances"`
+	TerminateInstancesWithExpiration bool                                  `json:"TerminateInstancesWithExpiration" xml:"TerminateInstancesWithExpiration"`
+	CreationTime                     string                                `json:"CreationTime" xml:"CreationTime"`
+	SpotOptions                      SpotOptions                           `json:"SpotOptions" xml:"SpotOptions"`
+	OnDemandOptions                  OnDemandOptions                       `json:"OnDemandOptions" xml:"OnDemandOptions"`
+	TargetCapacitySpecification      TargetCapacitySpecification           `json:"TargetCapacitySpecification" xml:"TargetCapacitySpecification"`
+	LaunchTemplateConfigs            LaunchTemplateConfigsInDescribeFleets `json:"launchTemplateConfigs" xml:"launchTemplateConfigs"`
 }

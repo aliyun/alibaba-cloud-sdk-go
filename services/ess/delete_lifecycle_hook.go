@@ -76,10 +76,10 @@ func (client *Client) DeleteLifecycleHookWithCallback(request *DeleteLifecycleHo
 // DeleteLifecycleHookRequest is the request struct for api DeleteLifecycleHook
 type DeleteLifecycleHookRequest struct {
 	*requests.RpcRequest
-	ScalingGroupId       string           `position:"Query" name:"ScalingGroupId"`
 	LifecycleHookName    string           `position:"Query" name:"LifecycleHookName"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	LifecycleHookId      string           `position:"Query" name:"LifecycleHookId"`
+	ScalingGroupId       string           `position:"Query" name:"ScalingGroupId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }

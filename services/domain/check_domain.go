@@ -91,7 +91,7 @@ type CheckDomainResponse struct {
 	Avail        string `json:"Avail" xml:"Avail"`
 	Premium      string `json:"Premium" xml:"Premium"`
 	Reason       string `json:"Reason" xml:"Reason"`
-	Price        int    `json:"Price" xml:"Price"`
+	Price        int64  `json:"Price" xml:"Price"`
 	DynamicCheck bool   `json:"DynamicCheck" xml:"DynamicCheck"`
 }
 

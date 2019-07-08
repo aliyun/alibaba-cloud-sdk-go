@@ -87,9 +87,9 @@ type DescribeGtmMonitorConfigResponse struct {
 	RequestId         string                                 `json:"RequestId" xml:"RequestId"`
 	MonitorConfigId   string                                 `json:"MonitorConfigId" xml:"MonitorConfigId"`
 	CreateTime        string                                 `json:"CreateTime" xml:"CreateTime"`
-	CreateTimestamp   int                                    `json:"CreateTimestamp" xml:"CreateTimestamp"`
+	CreateTimestamp   int64                                  `json:"CreateTimestamp" xml:"CreateTimestamp"`
 	UpdateTime        string                                 `json:"UpdateTime" xml:"UpdateTime"`
-	UpdateTimestamp   int                                    `json:"UpdateTimestamp" xml:"UpdateTimestamp"`
+	UpdateTimestamp   int64                                  `json:"UpdateTimestamp" xml:"UpdateTimestamp"`
 	Name              string                                 `json:"Name" xml:"Name"`
 	ProtocolType      string                                 `json:"ProtocolType" xml:"ProtocolType"`
 	Interval          int                                    `json:"Interval" xml:"Interval"`
@@ -104,7 +104,7 @@ func CreateDescribeGtmMonitorConfigRequest() (request *DescribeGtmMonitorConfigR
 	request = &DescribeGtmMonitorConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Alidns", "2015-01-09", "DescribeGtmMonitorConfig", "alidns", "openAPI")
+	request.InitWithApiInfo("Alidns", "2015-01-09", "DescribeGtmMonitorConfig", "Alidns", "openAPI")
 	return
 }
 

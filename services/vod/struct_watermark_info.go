@@ -18,6 +18,7 @@ package vod
 // WatermarkInfo is a nested struct in vod response
 type WatermarkInfo struct {
 	Name            string `json:"Name" xml:"Name"`
+	AppId           string `json:"AppId" xml:"AppId"`
 	WatermarkId     string `json:"WatermarkId" xml:"WatermarkId"`
 	FileUrl         string `json:"FileUrl" xml:"FileUrl"`
 	WatermarkConfig string `json:"WatermarkConfig" xml:"WatermarkConfig"`

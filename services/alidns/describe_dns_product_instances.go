@@ -87,9 +87,9 @@ type DescribeDnsProductInstancesRequest struct {
 type DescribeDnsProductInstancesResponse struct {
 	*responses.BaseResponse
 	RequestId   string      `json:"RequestId" xml:"RequestId"`
-	TotalCount  int         `json:"TotalCount" xml:"TotalCount"`
-	PageNumber  int         `json:"PageNumber" xml:"PageNumber"`
-	PageSize    int         `json:"PageSize" xml:"PageSize"`
+	TotalCount  int64       `json:"TotalCount" xml:"TotalCount"`
+	PageNumber  int64       `json:"PageNumber" xml:"PageNumber"`
+	PageSize    int64       `json:"PageSize" xml:"PageSize"`
 	DnsProducts DnsProducts `json:"DnsProducts" xml:"DnsProducts"`
 }
 
@@ -98,7 +98,7 @@ func CreateDescribeDnsProductInstancesRequest() (request *DescribeDnsProductInst
 	request = &DescribeDnsProductInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Alidns", "2015-01-09", "DescribeDnsProductInstances", "alidns", "openAPI")
+	request.InitWithApiInfo("Alidns", "2015-01-09", "DescribeDnsProductInstances", "Alidns", "openAPI")
 	return
 }
 

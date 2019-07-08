@@ -76,11 +76,11 @@ func (client *Client) DetachLoadBalancersWithCallback(request *DetachLoadBalance
 // DetachLoadBalancersRequest is the request struct for api DetachLoadBalancers
 type DetachLoadBalancersRequest struct {
 	*requests.RpcRequest
-	ScalingGroupId       string           `position:"Query" name:"ScalingGroupId"`
 	LoadBalancer         *[]string        `position:"Query" name:"LoadBalancer"  type:"Repeated"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ScalingGroupId       string           `position:"Query" name:"ScalingGroupId"`
 	ForceDetach          requests.Boolean `position:"Query" name:"ForceDetach"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DetachLoadBalancersResponse is the response struct for api DetachLoadBalancers

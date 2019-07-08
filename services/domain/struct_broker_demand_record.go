@@ -19,5 +19,5 @@ package domain
 type BrokerDemandRecord struct {
 	BizId       string `json:"BizId" xml:"BizId"`
 	Description string `json:"Description" xml:"Description"`
-	CreateTime  int    `json:"CreateTime" xml:"CreateTime"`
+	CreateTime  int64  `json:"CreateTime" xml:"CreateTime"`
 }

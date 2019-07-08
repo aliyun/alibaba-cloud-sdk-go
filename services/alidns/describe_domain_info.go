@@ -96,7 +96,7 @@ type DescribeDomainInfoResponse struct {
 	InstanceId         string                          `json:"InstanceId" xml:"InstanceId"`
 	VersionCode        string                          `json:"VersionCode" xml:"VersionCode"`
 	VersionName        string                          `json:"VersionName" xml:"VersionName"`
-	MinTtl             int                             `json:"MinTtl" xml:"MinTtl"`
+	MinTtl             int64                           `json:"MinTtl" xml:"MinTtl"`
 	RecordLineTreeJson string                          `json:"RecordLineTreeJson" xml:"RecordLineTreeJson"`
 	LineType           string                          `json:"LineType" xml:"LineType"`
 	RegionLines        bool                            `json:"RegionLines" xml:"RegionLines"`
@@ -113,7 +113,7 @@ func CreateDescribeDomainInfoRequest() (request *DescribeDomainInfoRequest) {
 	request = &DescribeDomainInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Alidns", "2015-01-09", "DescribeDomainInfo", "alidns", "openAPI")
+	request.InitWithApiInfo("Alidns", "2015-01-09", "DescribeDomainInfo", "Alidns", "openAPI")
 	return
 }
 

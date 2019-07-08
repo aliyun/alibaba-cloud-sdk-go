@@ -77,6 +77,7 @@ func (client *Client) DescribeVodStorageDataWithCallback(request *DescribeVodSto
 type DescribeVodStorageDataRequest struct {
 	*requests.RpcRequest
 	StartTime   string           `position:"Query" name:"StartTime"`
+	Storage     string           `position:"Query" name:"Storage"`
 	StorageType string           `position:"Query" name:"StorageType"`
 	EndTime     string           `position:"Query" name:"EndTime"`
 	OwnerId     requests.Integer `position:"Query" name:"OwnerId"`

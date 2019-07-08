@@ -89,14 +89,15 @@ type DescribeGtmInstanceResponse struct {
 	InstanceName    string `json:"InstanceName" xml:"InstanceName"`
 	VersionCode     string `json:"VersionCode" xml:"VersionCode"`
 	ExpireTime      string `json:"ExpireTime" xml:"ExpireTime"`
-	ExpireTimestamp int    `json:"ExpireTimestamp" xml:"ExpireTimestamp"`
+	ExpireTimestamp int64  `json:"ExpireTimestamp" xml:"ExpireTimestamp"`
 	Cname           string `json:"Cname" xml:"Cname"`
 	UserDomainName  string `json:"UserDomainName" xml:"UserDomainName"`
 	Ttl             int    `json:"Ttl" xml:"Ttl"`
 	LbaStrategy     string `json:"LbaStrategy" xml:"LbaStrategy"`
 	CreateTime      string `json:"CreateTime" xml:"CreateTime"`
-	CreateTimestamp int    `json:"CreateTimestamp" xml:"CreateTimestamp"`
+	CreateTimestamp int64  `json:"CreateTimestamp" xml:"CreateTimestamp"`
 	AlertGroup      string `json:"AlertGroup" xml:"AlertGroup"`
+	CnameMode       string `json:"CnameMode" xml:"CnameMode"`
 }
 
 // CreateDescribeGtmInstanceRequest creates a request to invoke DescribeGtmInstance API
@@ -104,7 +105,7 @@ func CreateDescribeGtmInstanceRequest() (request *DescribeGtmInstanceRequest) {
 	request = &DescribeGtmInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Alidns", "2015-01-09", "DescribeGtmInstance", "alidns", "openAPI")
+	request.InitWithApiInfo("Alidns", "2015-01-09", "DescribeGtmInstance", "Alidns", "openAPI")
 	return
 }
 
