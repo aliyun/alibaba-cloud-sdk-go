@@ -81,6 +81,7 @@ func Test_NewClientWithOptions(t *testing.T) {
 	c.EnableAsync = true
 	c.GoRoutinePoolSize = 1
 	c.MaxTaskQueueSize = 1
+	c.Timeout = 10 * time.Second
 	credential := credentials.NewAccessKeyCredential("acesskeyid", "accesskeysecret")
 	client, err := NewClientWithOptions("regionid", c, credential)
 	assert.Nil(t, err)
