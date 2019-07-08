@@ -15,7 +15,7 @@ func Test_Config(t *testing.T) {
 	assert.Equal(t, 3, config.MaxRetryTime, "Default MaxRetryTime should be 3")
 	assert.Equal(t, "", config.UserAgent, "Default UserAgent should be empty")
 	assert.Equal(t, false, config.Debug, "Default AutoRetry should be false")
-	assert.Equal(t, time.Duration(10000000000), config.Timeout, "Default Timeout should be 10000000000")
+	assert.Equal(t, time.Duration(0), config.Timeout, "Default Timeout should be 10000000000")
 	assert.Equal(t, (*http.Transport)(nil), config.HttpTransport, "Default HttpTransport should be nil")
 	assert.Equal(t, false, config.EnableAsync, "Default EnableAsync should be false")
 	assert.Equal(t, 1000, config.MaxTaskQueueSize, "Default MaxTaskQueueSize should be 1000")
