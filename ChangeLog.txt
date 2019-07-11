@@ -1,3 +1,12 @@
+2019-07-11 Version: 1.60.64
+- Modify CreateBackupPlan.
+- Modify ConfigureBackupPlan.
+- Modify DescribeFullBackupList.
+- Modify DescribeRestoreTaskList.
+- Add ModifyBackupSourceEndpoint.
+- Add ModifyBackupStrategy.
+- Add ModifyBackupPlanName.
+
 2019-07-08 Version: 1.60.63
 - ActionName change to OOSActionName from ListActions API param and response.
 

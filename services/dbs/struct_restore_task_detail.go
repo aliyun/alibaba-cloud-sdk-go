@@ -32,6 +32,7 @@ type RestoreTaskDetail struct {
 	BackupSetId                     string `json:"BackupSetId" xml:"BackupSetId"`
 	RestoreTime                     int64  `json:"RestoreTime" xml:"RestoreTime"`
 	RestoreTaskCreateTime           int64  `json:"RestoreTaskCreateTime" xml:"RestoreTaskCreateTime"`
+	RestoreTaskFinishTime           int64  `json:"RestoreTaskFinishTime" xml:"RestoreTaskFinishTime"`
 	RestoreStatus                   string `json:"RestoreStatus" xml:"RestoreStatus"`
 	RestoreTaskId                   string `json:"RestoreTaskId" xml:"RestoreTaskId"`
 	FullStruforeRestoreProgress     int    `json:"FullStruforeRestoreProgress" xml:"FullStruforeRestoreProgress"`

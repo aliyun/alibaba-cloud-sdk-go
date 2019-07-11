@@ -26,4 +26,5 @@ type FullBackupFile struct {
 	BackupSize           int64  `json:"BackupSize" xml:"BackupSize"`
 	StorageMethod        string `json:"StorageMethod" xml:"StorageMethod"`
 	ErrMessage           string `json:"ErrMessage" xml:"ErrMessage"`
+	BackupObjects        string `json:"BackupObjects" xml:"BackupObjects"`
 }
