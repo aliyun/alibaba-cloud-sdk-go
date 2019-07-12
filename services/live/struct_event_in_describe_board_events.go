@@ -17,9 +17,9 @@ package live
 
 // EventInDescribeBoardEvents is a nested struct in live response
 type EventInDescribeBoardEvents struct {
-	EventId   int    `json:"EventId" xml:"EventId"`
+	EventId   int64  `json:"EventId" xml:"EventId"`
 	EventType int    `json:"EventType" xml:"EventType"`
 	UserId    int    `json:"UserId" xml:"UserId"`
 	Data      string `json:"Data" xml:"Data"`
-	Timestamp int    `json:"Timestamp" xml:"Timestamp"`
+	Timestamp int64  `json:"Timestamp" xml:"Timestamp"`
 }

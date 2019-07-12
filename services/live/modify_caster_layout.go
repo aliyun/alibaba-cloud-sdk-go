@@ -94,12 +94,12 @@ type ModifyCasterLayoutAudioLayer struct {
 
 // ModifyCasterLayoutVideoLayer is a repeated param struct in ModifyCasterLayoutRequest
 type ModifyCasterLayoutVideoLayer struct {
-	FillMode           string            `name:"FillMode"`
-	WidthNormalized    string            `name:"WidthNormalized"`
-	FixedDelayDuration string            `name:"FixedDelayDuration"`
-	PositionRefer      string            `name:"PositionRefer"`
-	PositionNormalized *[]requests.Float `name:"PositionNormalized" type:"Repeated"`
-	HeightNormalized   string            `name:"HeightNormalized"`
+	FillMode           string    `name:"FillMode"`
+	WidthNormalized    string    `name:"WidthNormalized"`
+	FixedDelayDuration string    `name:"FixedDelayDuration"`
+	PositionRefer      string    `name:"PositionRefer"`
+	PositionNormalized *[]string `name:"PositionNormalized" type:"Repeated"`
+	HeightNormalized   string    `name:"HeightNormalized"`
 }
 
 // ModifyCasterLayoutResponse is the response struct for api ModifyCasterLayout

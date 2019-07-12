@@ -76,9 +76,10 @@ func (client *Client) DescribeLiveLazyPullStreamConfigWithCallback(request *Desc
 // DescribeLiveLazyPullStreamConfigRequest is the request struct for api DescribeLiveLazyPullStreamConfig
 type DescribeLiveLazyPullStreamConfigRequest struct {
 	*requests.RpcRequest
-	AppName    string           `position:"Query" name:"AppName"`
-	DomainName string           `position:"Query" name:"DomainName"`
-	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
+	AppName            string           `position:"Query" name:"AppName"`
+	LiveapiRequestFrom string           `position:"Query" name:"LiveapiRequestFrom"`
+	DomainName         string           `position:"Query" name:"DomainName"`
+	OwnerId            requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeLiveLazyPullStreamConfigResponse is the response struct for api DescribeLiveLazyPullStreamConfig

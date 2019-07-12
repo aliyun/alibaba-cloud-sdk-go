@@ -19,9 +19,9 @@ package live
 type Board struct {
 	BoardId         string   `json:"BoardId" xml:"BoardId"`
 	AppUid          string   `json:"AppUid" xml:"AppUid"`
-	EventTimestamp  int      `json:"EventTimestamp" xml:"EventTimestamp"`
-	CreateTimestamp int      `json:"CreateTimestamp" xml:"CreateTimestamp"`
-	UpdateTimestamp int      `json:"UpdateTimestamp" xml:"UpdateTimestamp"`
+	EventTimestamp  int64    `json:"EventTimestamp" xml:"EventTimestamp"`
+	CreateTimestamp int64    `json:"CreateTimestamp" xml:"CreateTimestamp"`
+	UpdateTimestamp int64    `json:"UpdateTimestamp" xml:"UpdateTimestamp"`
 	Pages           []Page   `json:"Pages" xml:"Pages"`
 	Configs         []Config `json:"Configs" xml:"Configs"`
 }

@@ -20,9 +20,9 @@ type Record struct {
 	RecordId        string `json:"RecordId" xml:"RecordId"`
 	AppId           string `json:"AppId" xml:"AppId"`
 	BoardId         int    `json:"BoardId" xml:"BoardId"`
-	RecordStartTime int    `json:"RecordStartTime" xml:"RecordStartTime"`
-	StartTime       int    `json:"StartTime" xml:"StartTime"`
-	EndTime         int    `json:"EndTime" xml:"EndTime"`
+	RecordStartTime int64  `json:"RecordStartTime" xml:"RecordStartTime"`
+	StartTime       int64  `json:"StartTime" xml:"StartTime"`
+	EndTime         int64  `json:"EndTime" xml:"EndTime"`
 	State           int    `json:"State" xml:"State"`
 	OssPath         string `json:"OssPath" xml:"OssPath"`
 	OssBucket       string `json:"OssBucket" xml:"OssBucket"`

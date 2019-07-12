@@ -18,6 +18,6 @@ package live
 // StreamCountDetail is a nested struct in live response
 type StreamCountDetail struct {
 	Format        string `json:"Format" xml:"Format"`
-	VideoDataRate int    `json:"VideoDataRate" xml:"VideoDataRate"`
-	Count         int    `json:"Count" xml:"Count"`
+	VideoDataRate int64  `json:"VideoDataRate" xml:"VideoDataRate"`
+	Count         int64  `json:"Count" xml:"Count"`
 }

@@ -17,9 +17,16 @@ package live
 
 // CustomTranscodeParameters is a nested struct in live response
 type CustomTranscodeParameters struct {
-	VideoBitrate int    `json:"VideoBitrate" xml:"VideoBitrate"`
-	FPS          int    `json:"FPS" xml:"FPS"`
-	Height       int    `json:"Height" xml:"Height"`
-	Width        int    `json:"Width" xml:"Width"`
-	TemplateType string `json:"TemplateType" xml:"TemplateType"`
+	VideoBitrate    int    `json:"VideoBitrate" xml:"VideoBitrate"`
+	FPS             int    `json:"FPS" xml:"FPS"`
+	Height          int    `json:"Height" xml:"Height"`
+	Width           int    `json:"Width" xml:"Width"`
+	TemplateType    string `json:"TemplateType" xml:"TemplateType"`
+	VideoProfile    string `json:"VideoProfile" xml:"VideoProfile"`
+	Gop             string `json:"Gop" xml:"Gop"`
+	AudioBitrate    int    `json:"AudioBitrate" xml:"AudioBitrate"`
+	AudioProfile    string `json:"AudioProfile" xml:"AudioProfile"`
+	AudioCodec      string `json:"AudioCodec" xml:"AudioCodec"`
+	AudioRate       int    `json:"AudioRate" xml:"AudioRate"`
+	AudioChannelNum int    `json:"AudioChannelNum" xml:"AudioChannelNum"`
 }

@@ -20,6 +20,6 @@ type Element struct {
 	ElementIndex    string `json:"ElementIndex" xml:"ElementIndex"`
 	OwnerId         string `json:"OwnerId" xml:"OwnerId"`
 	ElementType     int    `json:"ElementType" xml:"ElementType"`
-	UpdateTimestamp int    `json:"UpdateTimestamp" xml:"UpdateTimestamp"`
+	UpdateTimestamp int64  `json:"UpdateTimestamp" xml:"UpdateTimestamp"`
 	Data            string `json:"Data" xml:"Data"`
 }

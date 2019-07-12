@@ -76,15 +76,16 @@ func (client *Client) SetLiveLazyPullStreamInfoConfigWithCallback(request *SetLi
 // SetLiveLazyPullStreamInfoConfigRequest is the request struct for api SetLiveLazyPullStreamInfoConfig
 type SetLiveLazyPullStreamInfoConfigRequest struct {
 	*requests.RpcRequest
-	PullArgs       string           `position:"Query" name:"PullArgs"`
-	AppName        string           `position:"Query" name:"AppName"`
-	PullAuthKey    string           `position:"Query" name:"PullAuthKey"`
-	PullAuthType   string           `position:"Query" name:"PullAuthType"`
-	DomainName     string           `position:"Query" name:"DomainName"`
-	PullDomainName string           `position:"Query" name:"PullDomainName"`
-	OwnerId        requests.Integer `position:"Query" name:"OwnerId"`
-	PullAppName    string           `position:"Query" name:"PullAppName"`
-	PullProtocol   string           `position:"Query" name:"PullProtocol"`
+	PullArgs           string           `position:"Query" name:"PullArgs"`
+	AppName            string           `position:"Query" name:"AppName"`
+	LiveapiRequestFrom string           `position:"Query" name:"LiveapiRequestFrom"`
+	PullAuthKey        string           `position:"Query" name:"PullAuthKey"`
+	PullAuthType       string           `position:"Query" name:"PullAuthType"`
+	DomainName         string           `position:"Query" name:"DomainName"`
+	PullDomainName     string           `position:"Query" name:"PullDomainName"`
+	OwnerId            requests.Integer `position:"Query" name:"OwnerId"`
+	PullAppName        string           `position:"Query" name:"PullAppName"`
+	PullProtocol       string           `position:"Query" name:"PullProtocol"`
 }
 
 // SetLiveLazyPullStreamInfoConfigResponse is the response struct for api SetLiveLazyPullStreamInfoConfig
