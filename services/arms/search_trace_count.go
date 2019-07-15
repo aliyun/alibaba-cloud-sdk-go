@@ -76,7 +76,7 @@ func (client *Client) SearchTraceCountWithCallback(request *SearchTraceCountRequ
 // SearchTraceCountRequest is the request struct for api SearchTraceCount
 type SearchTraceCountRequest struct {
 	*requests.RpcRequest
-	InstanceId    string                 `position:"Query" name:"InstanceId"`
+	ServiceIp     string                 `position:"Query" name:"ServiceIp"`
 	OperationName string                 `position:"Query" name:"OperationName"`
 	AppType       string                 `position:"Query" name:"AppType"`
 	EndTime       requests.Integer       `position:"Query" name:"EndTime"`

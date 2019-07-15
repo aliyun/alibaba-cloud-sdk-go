@@ -19,10 +19,10 @@ package arms
 type CallChainInfo struct {
 	TraceID       string                 `json:"TraceID" xml:"TraceID"`
 	OperationName string                 `json:"OperationName" xml:"OperationName"`
-	Duration      int                    `json:"Duration" xml:"Duration"`
+	Duration      int64                  `json:"Duration" xml:"Duration"`
 	ServiceName   string                 `json:"ServiceName" xml:"ServiceName"`
 	ServiceIp     string                 `json:"ServiceIp" xml:"ServiceIp"`
-	Timestamp     int                    `json:"Timestamp" xml:"Timestamp"`
+	Timestamp     int64                  `json:"Timestamp" xml:"Timestamp"`
 	RpcId         string                 `json:"RpcId" xml:"RpcId"`
 	ResultCode    string                 `json:"ResultCode" xml:"ResultCode"`
 	HaveStack     bool                   `json:"HaveStack" xml:"HaveStack"`

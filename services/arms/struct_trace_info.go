@@ -22,5 +22,5 @@ type TraceInfo struct {
 	Duration      int    `json:"Duration" xml:"Duration"`
 	ServiceName   string `json:"ServiceName" xml:"ServiceName"`
 	ServiceIp     string `json:"ServiceIp" xml:"ServiceIp"`
-	Timestamp     int    `json:"Timestamp" xml:"Timestamp"`
+	Timestamp     int64  `json:"Timestamp" xml:"Timestamp"`
 }

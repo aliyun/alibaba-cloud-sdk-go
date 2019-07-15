@@ -17,7 +17,11 @@ package arms
 
 // Data is a nested struct in arms response
 type Data struct {
-	Count    int      `json:"Count" xml:"Count"`
-	Services Services `json:"Services" xml:"Services"`
-	Details  Details  `json:"Details" xml:"Details"`
+	Domain         string   `json:"Domain" xml:"Domain"`
+	LicenseKey     string   `json:"LicenseKey" xml:"LicenseKey"`
+	InternalDomain string   `json:"InternalDomain" xml:"InternalDomain"`
+	Pid            string   `json:"Pid" xml:"Pid"`
+	Count          int64    `json:"Count" xml:"Count"`
+	Services       Services `json:"Services" xml:"Services"`
+	Details        Details  `json:"Details" xml:"Details"`
 }
