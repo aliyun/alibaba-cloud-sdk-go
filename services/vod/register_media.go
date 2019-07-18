@@ -82,7 +82,7 @@ type RegisterMediaRequest struct {
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	RegisterMetadatas    string           `position:"Query" name:"RegisterMetadatas"`
-	WorkFlowId           string           `position:"Query" name:"WorkFlowId"`
+	WorkflowId           string           `position:"Query" name:"WorkflowId"`
 }
 
 // RegisterMediaResponse is the response struct for api RegisterMedia

@@ -77,6 +77,7 @@ func (client *Client) SubmitAIJobWithCallback(request *SubmitAIJobRequest, callb
 type SubmitAIJobRequest struct {
 	*requests.RpcRequest
 	UserData             string `position:"Query" name:"UserData"`
+	Input                string `position:"Query" name:"Input"`
 	ResourceOwnerId      string `position:"Query" name:"ResourceOwnerId"`
 	Types                string `position:"Query" name:"Types"`
 	ResourceOwnerAccount string `position:"Query" name:"ResourceOwnerAccount"`
