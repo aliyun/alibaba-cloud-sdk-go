@@ -1,3 +1,6 @@
+2019-07-18 Version: 1.60.69
+- Fix resolve wrong tagname IOS to iOS.
+
 2019-07-18 Version: 1.60.68
 - Add a new field named Input to SubmitAIJob api request to set the input file of AI job.
 - Change the field MediaId of SubmitAIJob api to non-mandatory.
