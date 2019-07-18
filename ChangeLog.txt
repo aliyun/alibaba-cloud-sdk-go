@@ -1,3 +1,6 @@
+2019-07-18 Version: 1.60.67
+- Supported open api for dbaudit management.
+
 2019-07-15 Version: 1.60.66
 - Add filed `internalDomain` for api `get token`.
 
