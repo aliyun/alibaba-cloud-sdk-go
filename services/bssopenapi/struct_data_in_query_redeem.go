@@ -17,8 +17,8 @@ package bssopenapi
 
 // DataInQueryRedeem is a nested struct in bssopenapi response
 type DataInQueryRedeem struct {
-	PageNum    int    `json:"PageNum" xml:"PageNum"`
-	PageSize   int    `json:"PageSize" xml:"PageSize"`
-	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
+	PageNum    int64  `json:"PageNum" xml:"PageNum"`
+	PageSize   int64  `json:"PageSize" xml:"PageSize"`
+	TotalCount int64  `json:"TotalCount" xml:"TotalCount"`
 	Redeem     Redeem `json:"Redeem" xml:"Redeem"`
 }

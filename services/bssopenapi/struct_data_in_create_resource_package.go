@@ -17,6 +17,6 @@ package bssopenapi
 
 // DataInCreateResourcePackage is a nested struct in bssopenapi response
 type DataInCreateResourcePackage struct {
-	OrderId    int    `json:"OrderId" xml:"OrderId"`
+	OrderId    int64  `json:"OrderId" xml:"OrderId"`
 	InstanceId string `json:"InstanceId" xml:"InstanceId"`
 }

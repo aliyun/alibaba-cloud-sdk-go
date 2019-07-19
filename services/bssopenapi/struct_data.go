@@ -17,63 +17,49 @@ package bssopenapi
 
 // Data is a nested struct in bssopenapi response
 type Data struct {
-	BusinessType                string                                 `json:"BusinessType" xml:"BusinessType"`
 	TradePrice                  float64                                `json:"TradePrice" xml:"TradePrice"`
 	HostId                      string                                 `json:"HostId" xml:"HostId"`
-	TotalUnAppliedInvoiceAmount int                                    `json:"TotalUnAppliedInvoiceAmount" xml:"TotalUnAppliedInvoiceAmount"`
+	TotalUnAppliedInvoiceAmount int64                                  `json:"TotalUnAppliedInvoiceAmount" xml:"TotalUnAppliedInvoiceAmount"`
 	OriginalPrice               float64                                `json:"OriginalPrice" xml:"OriginalPrice"`
 	OrderId                     string                                 `json:"OrderId" xml:"OrderId"`
 	HostingStatus               string                                 `json:"HostingStatus" xml:"HostingStatus"`
 	TotalCount                  int                                    `json:"TotalCount" xml:"TotalCount"`
 	CreditLimitStatus           string                                 `json:"CreditLimitStatus" xml:"CreditLimitStatus"`
 	BillingCycle                string                                 `json:"BillingCycle" xml:"BillingCycle"`
-	Uid                         int                                    `json:"Uid" xml:"Uid"`
 	OutstandingAmount           float64                                `json:"OutstandingAmount" xml:"OutstandingAmount"`
-	InvalidTimeStamp            int                                    `json:"InvalidTimeStamp" xml:"InvalidTimeStamp"`
 	Quantity                    int                                    `json:"Quantity" xml:"Quantity"`
 	AvailableCashAmount         string                                 `json:"AvailableCashAmount" xml:"AvailableCashAmount"`
-	EffectTimeStamp             int                                    `json:"EffectTimeStamp" xml:"EffectTimeStamp"`
-	PrimaryAccount              string                                 `json:"PrimaryAccount" xml:"PrimaryAccount"`
 	HostName                    string                                 `json:"HostName" xml:"HostName"`
 	TotalOutstandingAmount      float64                                `json:"TotalOutstandingAmount" xml:"TotalOutstandingAmount"`
-	Status                      string                                 `json:"Status" xml:"Status"`
-	UserId                      int                                    `json:"UserId" xml:"UserId"`
 	NewInvoiceAmount            float64                                `json:"NewInvoiceAmount" xml:"NewInvoiceAmount"`
 	Marker                      string                                 `json:"Marker" xml:"Marker"`
 	AccountType                 string                                 `json:"AccountType" xml:"AccountType"`
-	Numerator                   int                                    `json:"Numerator" xml:"Numerator"`
 	AvailableAmount             string                                 `json:"AvailableAmount" xml:"AvailableAmount"`
 	PageSize                    int                                    `json:"PageSize" xml:"PageSize"`
-	Amount                      string                                 `json:"Amount" xml:"Amount"`
 	MybankCreditAmount          string                                 `json:"MybankCreditAmount" xml:"MybankCreditAmount"`
 	CreditAmount                string                                 `json:"CreditAmount" xml:"CreditAmount"`
-	ThresholdType               int                                    `json:"ThresholdType" xml:"ThresholdType"`
 	AccountID                   string                                 `json:"AccountID" xml:"AccountID"`
 	InstanceId                  string                                 `json:"InstanceId" xml:"InstanceId"`
-	ItemCode                    string                                 `json:"ItemCode" xml:"ItemCode"`
-	ThresholdAmount             string                                 `json:"ThresholdAmount" xml:"ThresholdAmount"`
-	InvoiceApplyId              int                                    `json:"InvoiceApplyId" xml:"InvoiceApplyId"`
+	InvoiceApplyId              int64                                  `json:"InvoiceApplyId" xml:"InvoiceApplyId"`
 	Boolean                     bool                                   `json:"Boolean" xml:"Boolean"`
 	IsCertified                 bool                                   `json:"IsCertified" xml:"IsCertified"`
-	TotalInvoiceAmount          int                                    `json:"TotalInvoiceAmount" xml:"TotalInvoiceAmount"`
+	TotalInvoiceAmount          int64                                  `json:"TotalInvoiceAmount" xml:"TotalInvoiceAmount"`
 	PageNum                     int                                    `json:"PageNum" xml:"PageNum"`
-	Bid                         string                                 `json:"Bid" xml:"Bid"`
 	Currency                    string                                 `json:"Currency" xml:"Currency"`
 	LoginEmail                  string                                 `json:"LoginEmail" xml:"LoginEmail"`
 	DiscountPrice               float64                                `json:"DiscountPrice" xml:"DiscountPrice"`
 	AccountName                 string                                 `json:"AccountName" xml:"AccountName"`
-	Mpk                         int                                    `json:"Mpk" xml:"Mpk"`
-	Denominator                 int                                    `json:"Denominator" xml:"Denominator"`
+	Mpk                         int64                                  `json:"Mpk" xml:"Mpk"`
 	UidList                     UidList                                `json:"UidList" xml:"UidList"`
 	OmsData                     OmsData                                `json:"OmsData" xml:"OmsData"`
 	ModuleList                  ModuleList                             `json:"ModuleList" xml:"ModuleList"`
 	InstanceList                []Instance                             `json:"InstanceList" xml:"InstanceList"`
 	OrderList                   OrderListInQueryOrders                 `json:"OrderList" xml:"OrderList"`
-	Modules                     ModulesInQueryInstanceGaapCost         `json:"Modules" xml:"Modules"`
+	Modules                     Modules                                `json:"Modules" xml:"Modules"`
 	ResourcePackages            ResourcePackages                       `json:"ResourcePackages" xml:"ResourcePackages"`
-	Items                       ItemsInQueryBill                       `json:"Items" xml:"Items"`
 	ProductList                 ProductList                            `json:"ProductList" xml:"ProductList"`
 	ModuleDetails               ModuleDetailsInGetSubscriptionPrice    `json:"ModuleDetails" xml:"ModuleDetails"`
+	Items                       ItemsInQueryBillOverview               `json:"Items" xml:"Items"`
 	PromotionDetails            PromotionDetailsInGetSubscriptionPrice `json:"PromotionDetails" xml:"PromotionDetails"`
 	AccountTransactionsList     AccountTransactionsList                `json:"AccountTransactionsList" xml:"AccountTransactionsList"`
 	EvaluateList                EvaluateList                           `json:"EvaluateList" xml:"EvaluateList"`

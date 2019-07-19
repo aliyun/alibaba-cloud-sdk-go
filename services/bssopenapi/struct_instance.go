@@ -22,7 +22,7 @@ type Instance struct {
 	PackageType         string   `json:"PackageType" xml:"PackageType"`
 	DeductType          string   `json:"DeductType" xml:"DeductType"`
 	CreateTime          string   `json:"CreateTime" xml:"CreateTime"`
-	OwnerId             int      `json:"OwnerId" xml:"OwnerId"`
+	OwnerId             int64    `json:"OwnerId" xml:"OwnerId"`
 	TotalAmount         string   `json:"TotalAmount" xml:"TotalAmount"`
 	RenewStatus         string   `json:"RenewStatus" xml:"RenewStatus"`
 	SubStatus           string   `json:"SubStatus" xml:"SubStatus"`
@@ -41,7 +41,7 @@ type Instance struct {
 	EffectiveTime       string   `json:"EffectiveTime" xml:"EffectiveTime"`
 	ExpiryTime          string   `json:"ExpiryTime" xml:"ExpiryTime"`
 	EndTime             string   `json:"EndTime" xml:"EndTime"`
-	SellerId            int      `json:"SellerId" xml:"SellerId"`
+	SellerId            int64    `json:"SellerId" xml:"SellerId"`
 	InstanceID          string   `json:"InstanceID" xml:"InstanceID"`
 	ReleaseTime         string   `json:"ReleaseTime" xml:"ReleaseTime"`
 	Status              string   `json:"Status" xml:"Status"`

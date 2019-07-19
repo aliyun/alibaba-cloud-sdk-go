@@ -25,7 +25,7 @@ type ItemInQueryInstanceBill struct {
 	SubscriptionType          string  `json:"SubscriptionType" xml:"SubscriptionType"`
 	ProductName               string  `json:"ProductName" xml:"ProductName"`
 	ProductDetail             string  `json:"ProductDetail" xml:"ProductDetail"`
-	OwnerID                   int     `json:"OwnerID" xml:"OwnerID"`
+	OwnerID                   int64   `json:"OwnerID" xml:"OwnerID"`
 	BillingItem               string  `json:"BillingItem" xml:"BillingItem"`
 	ListPrice                 float64 `json:"ListPrice" xml:"ListPrice"`
 	ListPriceUnit             string  `json:"ListPriceUnit" xml:"ListPriceUnit"`
@@ -50,4 +50,5 @@ type ItemInQueryInstanceBill struct {
 	IntranetIP                string  `json:"IntranetIP" xml:"IntranetIP"`
 	Region                    string  `json:"Region" xml:"Region"`
 	Zone                      string  `json:"Zone" xml:"Zone"`
+	Item                      string  `json:"Item" xml:"Item"`
 }

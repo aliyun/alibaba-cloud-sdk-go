@@ -17,7 +17,7 @@ package bssopenapi
 
 // CashCoupon is a nested struct in bssopenapi response
 type CashCoupon struct {
-	CashCouponId        int    `json:"CashCouponId" xml:"CashCouponId"`
+	CashCouponId        int64  `json:"CashCouponId" xml:"CashCouponId"`
 	CashCouponNo        string `json:"CashCouponNo" xml:"CashCouponNo"`
 	GrantedTime         string `json:"GrantedTime" xml:"GrantedTime"`
 	EffectiveTime       string `json:"EffectiveTime" xml:"EffectiveTime"`

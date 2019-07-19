@@ -17,7 +17,7 @@ package bssopenapi
 
 // PromotionDetail is a nested struct in bssopenapi response
 type PromotionDetail struct {
-	PromotionId   int    `json:"PromotionId" xml:"PromotionId"`
+	PromotionId   int64  `json:"PromotionId" xml:"PromotionId"`
 	PromotionName string `json:"PromotionName" xml:"PromotionName"`
 	PromotionDesc string `json:"PromotionDesc" xml:"PromotionDesc"`
 }

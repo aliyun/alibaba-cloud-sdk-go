@@ -17,8 +17,8 @@ package bssopenapi
 
 // CustomerInvoiceAddress is a nested struct in bssopenapi response
 type CustomerInvoiceAddress struct {
-	Id              int    `json:"Id" xml:"Id"`
-	UserId          int    `json:"UserId" xml:"UserId"`
+	Id              int64  `json:"Id" xml:"Id"`
+	UserId          int64  `json:"UserId" xml:"UserId"`
 	UserNick        string `json:"UserNick" xml:"UserNick"`
 	Addressee       string `json:"Addressee" xml:"Addressee"`
 	Province        string `json:"Province" xml:"Province"`

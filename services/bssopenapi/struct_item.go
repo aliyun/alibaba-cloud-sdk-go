@@ -42,6 +42,7 @@ type Item struct {
 	Region                      string  `json:"Region" xml:"Region"`
 	PaymentAmount               float64 `json:"PaymentAmount" xml:"PaymentAmount"`
 	UsageEndTime                string  `json:"UsageEndTime" xml:"UsageEndTime"`
+	RoundDownDiscount           string  `json:"RoundDownDiscount" xml:"RoundDownDiscount"`
 	SolutionID                  string  `json:"SolutionID" xml:"SolutionID"`
 	ClearedTime                 string  `json:"ClearedTime" xml:"ClearedTime"`
 	PaymentTime                 string  `json:"PaymentTime" xml:"PaymentTime"`

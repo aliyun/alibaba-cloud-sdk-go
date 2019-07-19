@@ -1,3 +1,8 @@
+2019-07-19 Version: 1.60.70
+- QueryMonthlyBillResponse add roundDownDiscount.
+- QueryBillResponse add roundDownDiscount.
+- QueryInstanceBillResponse add item.
+
 2019-07-18 Version: 1.60.69
 - Fix resolve wrong tagname IOS to iOS.
 

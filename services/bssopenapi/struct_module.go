@@ -20,7 +20,6 @@ type Module struct {
 	MonthGaapDeductedByPrepaidCard   string     `json:"MonthGaapDeductedByPrepaidCard" xml:"MonthGaapDeductedByPrepaidCard"`
 	DeductedByCashCoupons            string     `json:"DeductedByCashCoupons" xml:"DeductedByCashCoupons"`
 	PayerAccount                     string     `json:"PayerAccount" xml:"PayerAccount"`
-	PriceUnit                        string     `json:"PriceUnit" xml:"PriceUnit"`
 	GaapPretaxAmountLocal            string     `json:"GaapPretaxAmountLocal" xml:"GaapPretaxAmountLocal"`
 	UsageStartDate                   string     `json:"UsageStartDate" xml:"UsageStartDate"`
 	MonthGaapPaymentAmount           string     `json:"MonthGaapPaymentAmount" xml:"MonthGaapPaymentAmount"`
@@ -38,7 +37,6 @@ type Module struct {
 	InstanceID                       string     `json:"InstanceID" xml:"InstanceID"`
 	UnallocatedPretaxAmount          string     `json:"UnallocatedPretaxAmount" xml:"UnallocatedPretaxAmount"`
 	PriceType                        string     `json:"PriceType" xml:"PriceType"`
-	Config                           string     `json:"Config" xml:"Config"`
 	GaapPricingDiscount              string     `json:"GaapPricingDiscount" xml:"GaapPricingDiscount"`
 	AccountingUnit                   string     `json:"AccountingUnit" xml:"AccountingUnit"`
 	MonthGaapPretaxAmount            string     `json:"MonthGaapPretaxAmount" xml:"MonthGaapPretaxAmount"`
@@ -70,11 +68,9 @@ type Module struct {
 	OrderType                        string     `json:"OrderType" xml:"OrderType"`
 	GaapPaymentAmount                string     `json:"GaapPaymentAmount" xml:"GaapPaymentAmount"`
 	MonthGaapDeductedByCoupons       string     `json:"MonthGaapDeductedByCoupons" xml:"MonthGaapDeductedByCoupons"`
-	PriceUnitQuantity                string     `json:"PriceUnitQuantity" xml:"PriceUnitQuantity"`
 	PretaxAmountLocal                string     `json:"PretaxAmountLocal" xml:"PretaxAmountLocal"`
 	BillType                         string     `json:"BillType" xml:"BillType"`
 	UnallocatedPaymentAmount         string     `json:"UnallocatedPaymentAmount" xml:"UnallocatedPaymentAmount"`
 	MonthGaapDeductedByCashCoupons   string     `json:"MonthGaapDeductedByCashCoupons" xml:"MonthGaapDeductedByCashCoupons"`
 	ConfigList                       ConfigList `json:"ConfigList" xml:"ConfigList"`
-	TierPrices                       TierPrices `json:"TierPrices" xml:"TierPrices"`
 }

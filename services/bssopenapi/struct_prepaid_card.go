@@ -17,7 +17,7 @@ package bssopenapi
 
 // PrepaidCard is a nested struct in bssopenapi response
 type PrepaidCard struct {
-	PrepaidCardId       int    `json:"PrepaidCardId" xml:"PrepaidCardId"`
+	PrepaidCardId       int64  `json:"PrepaidCardId" xml:"PrepaidCardId"`
 	PrepaidCardNo       string `json:"PrepaidCardNo" xml:"PrepaidCardNo"`
 	GrantedTime         string `json:"GrantedTime" xml:"GrantedTime"`
 	EffectiveTime       string `json:"EffectiveTime" xml:"EffectiveTime"`
