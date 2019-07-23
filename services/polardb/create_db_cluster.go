@@ -93,6 +93,9 @@ type CreateDBClusterRequest struct {
 	DBType               string           `position:"Query" name:"DBType"`
 	ZoneId               string           `position:"Query" name:"ZoneId"`
 	DBVersion            string           `position:"Query" name:"DBVersion"`
+	CreationOption       string           `position:"Query" name:"CreationOption"`
+	SourceResourceId     string           `position:"Query" name:"SourceResourceId"`
+	CloneDataPoint       string           `position:"Query" name:"CloneDataPoint"`
 	PayType              string           `position:"Query" name:"PayType"`
 }
 

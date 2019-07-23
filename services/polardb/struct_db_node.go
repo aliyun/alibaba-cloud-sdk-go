@@ -20,6 +20,7 @@ type DBNode struct {
 	DBNodeClass    string `json:"DBNodeClass" xml:"DBNodeClass"`
 	MaxIOPS        int    `json:"MaxIOPS" xml:"MaxIOPS"`
 	DBNodeRole     string `json:"DBNodeRole" xml:"DBNodeRole"`
+	RegionId       string `json:"RegionId" xml:"RegionId"`
 	MaxConnections int    `json:"MaxConnections" xml:"MaxConnections"`
 	ZoneId         string `json:"ZoneId" xml:"ZoneId"`
 	DBNodeStatus   string `json:"DBNodeStatus" xml:"DBNodeStatus"`

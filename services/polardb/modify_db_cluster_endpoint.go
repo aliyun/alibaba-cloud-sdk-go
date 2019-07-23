@@ -76,8 +76,10 @@ func (client *Client) ModifyDBClusterEndpointWithCallback(request *ModifyDBClust
 // ModifyDBClusterEndpointRequest is the request struct for api ModifyDBClusterEndpoint
 type ModifyDBClusterEndpointRequest struct {
 	*requests.RpcRequest
+	AutoAddNewNodes      string           `position:"Query" name:"AutoAddNewNodes"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	Nodes                string           `position:"Query" name:"Nodes"`
+	ReadWriteMode        string           `position:"Query" name:"ReadWriteMode"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	DBClusterId          string           `position:"Query" name:"DBClusterId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`

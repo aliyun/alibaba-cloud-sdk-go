@@ -76,14 +76,17 @@ func (client *Client) CreateDBClusterEndpointWithCallback(request *CreateDBClust
 // CreateDBClusterEndpointRequest is the request struct for api CreateDBClusterEndpoint
 type CreateDBClusterEndpointRequest struct {
 	*requests.RpcRequest
+	AutoAddNewNodes      string           `position:"Query" name:"AutoAddNewNodes"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Nodes                string           `position:"Query" name:"Nodes"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	EndpointType         string           `position:"Query" name:"EndpointType"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
 	DBClusterId          string           `position:"Query" name:"DBClusterId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	EndpointConfig       string           `position:"Query" name:"EndpointConfig"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Nodes                string           `position:"Query" name:"Nodes"`
+	ReadWriteMode        string           `position:"Query" name:"ReadWriteMode"`
+	EndpointType         string           `position:"Query" name:"EndpointType"`
 }
 
 // CreateDBClusterEndpointResponse is the response struct for api CreateDBClusterEndpoint

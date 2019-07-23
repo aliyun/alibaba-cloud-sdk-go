@@ -99,12 +99,16 @@ type DescribeDBClusterAttributeResponse struct {
 	DBType               string   `json:"DBType" xml:"DBType"`
 	DBVersion            string   `json:"DBVersion" xml:"DBVersion"`
 	LockMode             string   `json:"LockMode" xml:"LockMode"`
+	DeletionLock         int      `json:"DeletionLock" xml:"DeletionLock"`
 	CreationTime         string   `json:"CreationTime" xml:"CreationTime"`
 	ExpireTime           string   `json:"ExpireTime" xml:"ExpireTime"`
 	Expired              string   `json:"Expired" xml:"Expired"`
 	MaintainTime         string   `json:"MaintainTime" xml:"MaintainTime"`
-	StorageUsed          int      `json:"StorageUsed" xml:"StorageUsed"`
-	SQLSize              int      `json:"SQLSize" xml:"SQLSize"`
+	StorageUsed          int64    `json:"StorageUsed" xml:"StorageUsed"`
+	StorageMax           int      `json:"StorageMax" xml:"StorageMax"`
+	ZoneIds              string   `json:"ZoneIds" xml:"ZoneIds"`
+	SQLSize              int64    `json:"SQLSize" xml:"SQLSize"`
+	IsLatestVersion      bool     `json:"IsLatestVersion" xml:"IsLatestVersion"`
 	Tags                 []Tag    `json:"Tags" xml:"Tags"`
 	DBNodes              []DBNode `json:"DBNodes" xml:"DBNodes"`
 }

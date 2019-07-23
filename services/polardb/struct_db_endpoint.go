@@ -17,9 +17,11 @@ package polardb
 
 // DBEndpoint is a nested struct in polardb response
 type DBEndpoint struct {
-	DBEndpointId   string    `json:"DBEndpointId" xml:"DBEndpointId"`
-	EndpointType   string    `json:"EndpointType" xml:"EndpointType"`
-	Nodes          string    `json:"Nodes" xml:"Nodes"`
-	EndpointConfig string    `json:"EndpointConfig" xml:"EndpointConfig"`
-	AddressItems   []Address `json:"AddressItems" xml:"AddressItems"`
+	DBEndpointId    string    `json:"DBEndpointId" xml:"DBEndpointId"`
+	EndpointType    string    `json:"EndpointType" xml:"EndpointType"`
+	Nodes           string    `json:"Nodes" xml:"Nodes"`
+	ReadWriteMode   string    `json:"ReadWriteMode" xml:"ReadWriteMode"`
+	AutoAddNewNodes string    `json:"AutoAddNewNodes" xml:"AutoAddNewNodes"`
+	EndpointConfig  string    `json:"EndpointConfig" xml:"EndpointConfig"`
+	AddressItems    []Address `json:"AddressItems" xml:"AddressItems"`
 }

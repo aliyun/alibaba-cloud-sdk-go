@@ -22,6 +22,7 @@ type DBCluster struct {
 	PayType              string                      `json:"PayType" xml:"PayType"`
 	DBClusterNetworkType string                      `json:"DBClusterNetworkType" xml:"DBClusterNetworkType"`
 	RegionId             string                      `json:"RegionId" xml:"RegionId"`
+	ZoneId               string                      `json:"ZoneId" xml:"ZoneId"`
 	ExpireTime           string                      `json:"ExpireTime" xml:"ExpireTime"`
 	Expired              string                      `json:"Expired" xml:"Expired"`
 	DBClusterStatus      string                      `json:"DBClusterStatus" xml:"DBClusterStatus"`
@@ -29,11 +30,12 @@ type DBCluster struct {
 	DBType               string                      `json:"DBType" xml:"DBType"`
 	DBVersion            string                      `json:"DBVersion" xml:"DBVersion"`
 	LockMode             string                      `json:"LockMode" xml:"LockMode"`
+	DeletionLock         int                         `json:"DeletionLock" xml:"DeletionLock"`
 	CreateTime           string                      `json:"CreateTime" xml:"CreateTime"`
 	VpcId                string                      `json:"VpcId" xml:"VpcId"`
 	DBNodeNumber         int                         `json:"DBNodeNumber" xml:"DBNodeNumber"`
 	DBNodeClass          string                      `json:"DBNodeClass" xml:"DBNodeClass"`
-	StorageUsed          int                         `json:"StorageUsed" xml:"StorageUsed"`
+	StorageUsed          int64                       `json:"StorageUsed" xml:"StorageUsed"`
 	DBNodes              DBNodesInDescribeDBClusters `json:"DBNodes" xml:"DBNodes"`
 	Tags                 TagsInDescribeDBClusters    `json:"Tags" xml:"Tags"`
 }
