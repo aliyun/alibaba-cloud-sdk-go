@@ -78,6 +78,7 @@ type CreateApiRequest struct {
 	*requests.RpcRequest
 	WebSocketApiType     string           `position:"Query" name:"WebSocketApiType"`
 	ErrorCodeSamples     string           `position:"Query" name:"ErrorCodeSamples"`
+	AppCodeAuthType      string           `position:"Query" name:"AppCodeAuthType"`
 	Description          string           `position:"Query" name:"Description"`
 	DisableInternet      requests.Boolean `position:"Query" name:"DisableInternet"`
 	ConstantParameters   string           `position:"Query" name:"ConstantParameters"`

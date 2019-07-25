@@ -96,6 +96,9 @@ type DescribeApiGroupResponse struct {
 	IllegalStatus string        `json:"IllegalStatus" xml:"IllegalStatus"`
 	TrafficLimit  int           `json:"TrafficLimit" xml:"TrafficLimit"`
 	VpcDomain     string        `json:"VpcDomain" xml:"VpcDomain"`
+	InstanceType  string        `json:"InstanceType" xml:"InstanceType"`
+	InstanceId    string        `json:"InstanceId" xml:"InstanceId"`
+	HttpsPolicy   string        `json:"HttpsPolicy" xml:"HttpsPolicy"`
 	CustomDomains CustomDomains `json:"CustomDomains" xml:"CustomDomains"`
 	StageItems    StageItems    `json:"StageItems" xml:"StageItems"`
 }

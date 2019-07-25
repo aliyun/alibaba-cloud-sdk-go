@@ -17,8 +17,8 @@ package cloudapi
 
 // RouteRuleItem is a nested struct in cloudapi response
 type RouteRuleItem struct {
-	MaxValue       int    `json:"MaxValue" xml:"MaxValue"`
-	MinValue       int    `json:"MinValue" xml:"MinValue"`
+	MaxValue       int64  `json:"MaxValue" xml:"MaxValue"`
+	MinValue       int64  `json:"MinValue" xml:"MinValue"`
 	ConditionValue string `json:"ConditionValue" xml:"ConditionValue"`
 	ResultValue    string `json:"ResultValue" xml:"ResultValue"`
 }

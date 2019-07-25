@@ -18,7 +18,7 @@ package cloudapi
 // AuthorizedApp is a nested struct in cloudapi response
 type AuthorizedApp struct {
 	StageName           string `json:"StageName" xml:"StageName"`
-	AppId               int    `json:"AppId" xml:"AppId"`
+	AppId               int64  `json:"AppId" xml:"AppId"`
 	AppName             string `json:"AppName" xml:"AppName"`
 	Operator            string `json:"Operator" xml:"Operator"`
 	AuthorizationSource string `json:"AuthorizationSource" xml:"AuthorizationSource"`

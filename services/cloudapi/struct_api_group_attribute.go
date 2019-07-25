@@ -27,4 +27,7 @@ type ApiGroupAttribute struct {
 	TrafficLimit  int    `json:"TrafficLimit" xml:"TrafficLimit"`
 	BillingStatus string `json:"BillingStatus" xml:"BillingStatus"`
 	IllegalStatus string `json:"IllegalStatus" xml:"IllegalStatus"`
+	InstanceId    string `json:"InstanceId" xml:"InstanceId"`
+	InstanceType  string `json:"InstanceType" xml:"InstanceType"`
+	HttpsPolicy   string `json:"HttpsPolicy" xml:"HttpsPolicy"`
 }

@@ -17,7 +17,7 @@ package cloudapi
 
 // RequestParameter is a nested struct in cloudapi response
 type RequestParameter struct {
-	MaxValue          int    `json:"MaxValue" xml:"MaxValue"`
+	MaxValue          int64  `json:"MaxValue" xml:"MaxValue"`
 	ApiParameterName  string `json:"ApiParameterName" xml:"ApiParameterName"`
 	DocOrder          int    `json:"DocOrder" xml:"DocOrder"`
 	EnumValue         string `json:"EnumValue" xml:"EnumValue"`
@@ -27,10 +27,10 @@ type RequestParameter struct {
 	Location          string `json:"Location" xml:"Location"`
 	Required          string `json:"Required" xml:"Required"`
 	DemoValue         string `json:"DemoValue" xml:"DemoValue"`
-	MinLength         int    `json:"MinLength" xml:"MinLength"`
-	MaxLength         int    `json:"MaxLength" xml:"MaxLength"`
+	MinLength         int64  `json:"MinLength" xml:"MinLength"`
+	MaxLength         int64  `json:"MaxLength" xml:"MaxLength"`
 	RegularExpression string `json:"RegularExpression" xml:"RegularExpression"`
-	MinValue          int    `json:"MinValue" xml:"MinValue"`
+	MinValue          int64  `json:"MinValue" xml:"MinValue"`
 	DocShow           string `json:"DocShow" xml:"DocShow"`
 	Description       string `json:"Description" xml:"Description"`
 }

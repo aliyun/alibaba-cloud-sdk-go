@@ -84,7 +84,7 @@ type DescribeAppRequest struct {
 type DescribeAppResponse struct {
 	*responses.BaseResponse
 	RequestId    string `json:"RequestId" xml:"RequestId"`
-	AppId        int    `json:"AppId" xml:"AppId"`
+	AppId        int64  `json:"AppId" xml:"AppId"`
 	AppName      string `json:"AppName" xml:"AppName"`
 	Description  string `json:"Description" xml:"Description"`
 	CreatedTime  string `json:"CreatedTime" xml:"CreatedTime"`

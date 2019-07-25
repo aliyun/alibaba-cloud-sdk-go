@@ -76,8 +76,15 @@ func (client *Client) DescribeAppSecurityWithCallback(request *DescribeAppSecuri
 // DescribeAppSecurityRequest is the request struct for api DescribeAppSecurity
 type DescribeAppSecurityRequest struct {
 	*requests.RpcRequest
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
-	AppId         requests.Integer `position:"Query" name:"AppId"`
+	SecurityToken string                    `position:"Query" name:"SecurityToken"`
+	AppId         requests.Integer          `position:"Query" name:"AppId"`
+	Tag           *[]DescribeAppSecurityTag `position:"Query" name:"Tag"  type:"Repeated"`
+}
+
+// DescribeAppSecurityTag is a repeated param struct in DescribeAppSecurityRequest
+type DescribeAppSecurityTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // DescribeAppSecurityResponse is the response struct for api DescribeAppSecurity

@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// CreateApp invokes the cloudapi.CreateApp API synchronously
-// api document: https://help.aliyun.com/api/cloudapi/createapp.html
-func (client *Client) CreateApp(request *CreateAppRequest) (response *CreateAppResponse, err error) {
-	response = CreateCreateAppResponse()
+// ResetAppCode invokes the cloudapi.ResetAppCode API synchronously
+// api document: https://help.aliyun.com/api/cloudapi/resetappcode.html
+func (client *Client) ResetAppCode(request *ResetAppCodeRequest) (response *ResetAppCodeResponse, err error) {
+	response = CreateResetAppCodeResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// CreateAppWithChan invokes the cloudapi.CreateApp API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/createapp.html
+// ResetAppCodeWithChan invokes the cloudapi.ResetAppCode API asynchronously
+// api document: https://help.aliyun.com/api/cloudapi/resetappcode.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) CreateAppWithChan(request *CreateAppRequest) (<-chan *CreateAppResponse, <-chan error) {
-	responseChan := make(chan *CreateAppResponse, 1)
+func (client *Client) ResetAppCodeWithChan(request *ResetAppCodeRequest) (<-chan *ResetAppCodeResponse, <-chan error) {
+	responseChan := make(chan *ResetAppCodeResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.CreateApp(request)
+		response, err := client.ResetAppCode(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) CreateAppWithChan(request *CreateAppRequest) (<-chan *Crea
 	return responseChan, errChan
 }
 
-// CreateAppWithCallback invokes the cloudapi.CreateApp API asynchronously
-// api document: https://help.aliyun.com/api/cloudapi/createapp.html
+// ResetAppCodeWithCallback invokes the cloudapi.ResetAppCode API asynchronously
+// api document: https://help.aliyun.com/api/cloudapi/resetappcode.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) CreateAppWithCallback(request *CreateAppRequest, callback func(response *CreateAppResponse, err error)) <-chan int {
+func (client *Client) ResetAppCodeWithCallback(request *ResetAppCodeRequest, callback func(response *ResetAppCodeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *CreateAppResponse
+		var response *ResetAppCodeResponse
 		var err error
 		defer close(result)
-		response, err = client.CreateApp(request)
+		response, err = client.ResetAppCode(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,33 +73,31 @@ func (client *Client) CreateAppWithCallback(request *CreateAppRequest, callback 
 	return result
 }
 
-// CreateAppRequest is the request struct for api CreateApp
-type CreateAppRequest struct {
+// ResetAppCodeRequest is the request struct for api ResetAppCode
+type ResetAppCodeRequest struct {
 	*requests.RpcRequest
-	AppName       string `position:"Query" name:"AppName"`
 	SecurityToken string `position:"Query" name:"SecurityToken"`
-	Description   string `position:"Query" name:"Description"`
+	AppCode       string `position:"Query" name:"AppCode"`
 }
 
-// CreateAppResponse is the response struct for api CreateApp
-type CreateAppResponse struct {
+// ResetAppCodeResponse is the response struct for api ResetAppCode
+type ResetAppCodeResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	AppId     int64  `json:"AppId" xml:"AppId"`
 }
 
-// CreateCreateAppRequest creates a request to invoke CreateApp API
-func CreateCreateAppRequest() (request *CreateAppRequest) {
-	request = &CreateAppRequest{
+// CreateResetAppCodeRequest creates a request to invoke ResetAppCode API
+func CreateResetAppCodeRequest() (request *ResetAppCodeRequest) {
+	request = &ResetAppCodeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CloudAPI", "2016-07-14", "CreateApp", "apigateway", "openAPI")
+	request.InitWithApiInfo("CloudAPI", "2016-07-14", "ResetAppCode", "apigateway", "openAPI")
 	return
 }
 
-// CreateCreateAppResponse creates a response to parse from CreateApp response
-func CreateCreateAppResponse() (response *CreateAppResponse) {
-	response = &CreateAppResponse{
+// CreateResetAppCodeResponse creates a response to parse from ResetAppCode response
+func CreateResetAppCodeResponse() (response *ResetAppCodeResponse) {
+	response = &ResetAppCodeResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

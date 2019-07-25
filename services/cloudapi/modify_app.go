@@ -80,6 +80,13 @@ type ModifyAppRequest struct {
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	AppId         requests.Integer `position:"Query" name:"AppId"`
 	Description   string           `position:"Query" name:"Description"`
+	Tag           *[]ModifyAppTag  `position:"Query" name:"Tag"  type:"Repeated"`
+}
+
+// ModifyAppTag is a repeated param struct in ModifyAppRequest
+type ModifyAppTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // ModifyAppResponse is the response struct for api ModifyApp
