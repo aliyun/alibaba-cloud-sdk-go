@@ -1,3 +1,8 @@
+2019-07-25 Version: 1.60.74
+- Api createKey add optional parameter `ProtectionLevel`.
+- Api describeKey add a field `ProtectionLevel` in the response.
+- Add Api `DescribeService`.
+
 2019-07-25 Version: 1.60.73
 - Generated 2016-07-14 for `CloudAPI`.
 

@@ -17,6 +17,7 @@ package kms
 
 // KeyMetadata is a nested struct in kms response
 type KeyMetadata struct {
+	ProtectionLevel    string `json:"ProtectionLevel" xml:"ProtectionLevel"`
 	Arn                string `json:"Arn" xml:"Arn"`
 	KeyState           string `json:"KeyState" xml:"KeyState"`
 	CreationDate       string `json:"CreationDate" xml:"CreationDate"`
