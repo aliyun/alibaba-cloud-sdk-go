@@ -85,7 +85,7 @@ type CreateAppRequest struct {
 type CreateAppResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	AppId     int64  `json:"AppId" xml:"AppId"`
+	AppId     int    `json:"AppId" xml:"AppId"`
 }
 
 // CreateCreateAppRequest creates a request to invoke CreateApp API
