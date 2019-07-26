@@ -1,3 +1,6 @@
+2019-07-26 Version: 1.60.75
+- Generated 2019-05-24 for `cusanalytic_sc_online`.
+
 2019-07-25 Version: 1.60.74
 - Api createKey add optional parameter `ProtectionLevel`.
 - Api describeKey add a field `ProtectionLevel` in the response.
