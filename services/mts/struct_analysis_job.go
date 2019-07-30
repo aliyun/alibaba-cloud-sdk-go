@@ -24,7 +24,7 @@ type AnalysisJob struct {
 	Priority         string                             `json:"Priority" xml:"Priority"`
 	State            string                             `json:"State" xml:"State"`
 	PipelineId       string                             `json:"PipelineId" xml:"PipelineId"`
-	Percent          int                                `json:"Percent" xml:"Percent"`
+	Percent          int64                              `json:"Percent" xml:"Percent"`
 	Id               string                             `json:"Id" xml:"Id"`
 	AnalysisConfig   AnalysisConfig                     `json:"AnalysisConfig" xml:"AnalysisConfig"`
 	InputFile        InputFile                          `json:"InputFile" xml:"InputFile"`

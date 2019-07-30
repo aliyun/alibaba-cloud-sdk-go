@@ -17,7 +17,7 @@ package mts
 
 // PipelineInListCoverPipeline is a nested struct in mts response
 type PipelineInListCoverPipeline struct {
-	UserId       int    `json:"UserId" xml:"UserId"`
+	UserId       int64  `json:"UserId" xml:"UserId"`
 	PipelineId   string `json:"PipelineId" xml:"PipelineId"`
 	Name         string `json:"Name" xml:"Name"`
 	State        string `json:"State" xml:"State"`

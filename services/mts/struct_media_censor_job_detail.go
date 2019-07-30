@@ -17,19 +17,20 @@ package mts
 
 // MediaCensorJobDetail is a nested struct in mts response
 type MediaCensorJobDetail struct {
-	Id                      string                  `json:"Id" xml:"Id"`
-	UserData                string                  `json:"UserData" xml:"UserData"`
-	PipelineId              string                  `json:"PipelineId" xml:"PipelineId"`
-	State                   string                  `json:"State" xml:"State"`
-	Code                    string                  `json:"Code" xml:"Code"`
-	Suggestion              string                  `json:"Suggestion" xml:"Suggestion"`
-	Message                 string                  `json:"Message" xml:"Message"`
-	CreationTime            string                  `json:"CreationTime" xml:"CreationTime"`
-	TitleCensorResult       TitleCensorResult       `json:"TitleCensorResult" xml:"TitleCensorResult"`
-	DescCensorResult        DescCensorResult        `json:"DescCensorResult" xml:"DescCensorResult"`
-	BarrageCensorResult     BarrageCensorResult     `json:"BarrageCensorResult" xml:"BarrageCensorResult"`
-	Input                   Input                   `json:"Input" xml:"Input"`
-	VideoCensorConfig       VideoCensorConfig       `json:"VideoCensorConfig" xml:"VideoCensorConfig"`
-	VensorCensorResult      VensorCensorResult      `json:"VensorCensorResult" xml:"VensorCensorResult"`
-	CoverImageCensorResults CoverImageCensorResults `json:"CoverImageCensorResults" xml:"CoverImageCensorResults"`
+	JobId                   string                                             `json:"JobId" xml:"JobId"`
+	UserData                string                                             `json:"UserData" xml:"UserData"`
+	PipelineId              string                                             `json:"PipelineId" xml:"PipelineId"`
+	State                   string                                             `json:"State" xml:"State"`
+	Code                    string                                             `json:"Code" xml:"Code"`
+	Suggestion              string                                             `json:"Suggestion" xml:"Suggestion"`
+	Message                 string                                             `json:"Message" xml:"Message"`
+	CreationTime            string                                             `json:"CreationTime" xml:"CreationTime"`
+	FinishTime              string                                             `json:"FinishTime" xml:"FinishTime"`
+	TitleCensorResult       TitleCensorResult                                  `json:"TitleCensorResult" xml:"TitleCensorResult"`
+	DescCensorResult        DescCensorResult                                   `json:"DescCensorResult" xml:"DescCensorResult"`
+	BarrageCensorResult     BarrageCensorResult                                `json:"BarrageCensorResult" xml:"BarrageCensorResult"`
+	Input                   Input                                              `json:"Input" xml:"Input"`
+	VideoCensorConfig       VideoCensorConfig                                  `json:"VideoCensorConfig" xml:"VideoCensorConfig"`
+	VensorCensorResult      VensorCensorResult                                 `json:"VensorCensorResult" xml:"VensorCensorResult"`
+	CoverImageCensorResults CoverImageCensorResultsInQueryMediaCensorJobDetail `json:"CoverImageCensorResults" xml:"CoverImageCensorResults"`
 }

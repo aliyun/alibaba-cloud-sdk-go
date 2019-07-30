@@ -17,7 +17,7 @@ package mts
 
 // PageInfo is a nested struct in mts response
 type PageInfo struct {
-	PageIndex int `json:"PageIndex" xml:"PageIndex"`
-	PageSize  int `json:"PageSize" xml:"PageSize"`
-	Total     int `json:"Total" xml:"Total"`
+	PageIndex int64 `json:"PageIndex" xml:"PageIndex"`
+	PageSize  int64 `json:"PageSize" xml:"PageSize"`
+	Total     int64 `json:"Total" xml:"Total"`
 }

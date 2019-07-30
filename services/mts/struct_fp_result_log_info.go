@@ -19,8 +19,8 @@ package mts
 type FpResultLogInfo struct {
 	LogPath      string `json:"LogPath" xml:"LogPath"`
 	LogName      string `json:"LogName" xml:"LogName"`
-	LogStartTime int    `json:"LogStartTime" xml:"LogStartTime"`
-	LogEndTime   int    `json:"LogEndTime" xml:"LogEndTime"`
-	LogSize      int    `json:"LogSize" xml:"LogSize"`
-	CreateTime   int    `json:"CreateTime" xml:"CreateTime"`
+	LogStartTime int64  `json:"LogStartTime" xml:"LogStartTime"`
+	LogEndTime   int64  `json:"LogEndTime" xml:"LogEndTime"`
+	LogSize      int64  `json:"LogSize" xml:"LogSize"`
+	CreateTime   int64  `json:"CreateTime" xml:"CreateTime"`
 }

@@ -99,14 +99,14 @@ type CheckResourceResponse struct {
 	Invoker        string `json:"Invoker" xml:"Invoker"`
 	Pk             string `json:"Pk" xml:"Pk"`
 	Bid            string `json:"Bid" xml:"Bid"`
-	Hid            int    `json:"Hid" xml:"Hid"`
+	Hid            int64  `json:"Hid" xml:"Hid"`
 	Country        string `json:"Country" xml:"Country"`
 	TaskIdentifier string `json:"TaskIdentifier" xml:"TaskIdentifier"`
 	TaskExtraData  string `json:"TaskExtraData" xml:"TaskExtraData"`
 	GmtWakeup      string `json:"GmtWakeup" xml:"GmtWakeup"`
 	Success        bool   `json:"Success" xml:"Success"`
 	Message        string `json:"Message" xml:"Message"`
-	Level          int    `json:"Level" xml:"Level"`
+	Level          int64  `json:"Level" xml:"Level"`
 	Url            string `json:"Url" xml:"Url"`
 	Prompt         string `json:"Prompt" xml:"Prompt"`
 }

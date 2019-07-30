@@ -21,7 +21,7 @@ type ComplexJob struct {
 	State                 string                                  `json:"State" xml:"State"`
 	Code                  string                                  `json:"Code" xml:"Code"`
 	Message               string                                  `json:"Message" xml:"Message"`
-	Percent               int                                     `json:"Percent" xml:"Percent"`
+	Percent               int64                                   `json:"Percent" xml:"Percent"`
 	PipelineId            string                                  `json:"PipelineId" xml:"PipelineId"`
 	CreationTime          string                                  `json:"CreationTime" xml:"CreationTime"`
 	FinishTime            string                                  `json:"FinishTime" xml:"FinishTime"`

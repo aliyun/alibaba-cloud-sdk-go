@@ -96,9 +96,9 @@ type SearchMediaRequest struct {
 type SearchMediaResponse struct {
 	*responses.BaseResponse
 	RequestId  string                 `json:"RequestId" xml:"RequestId"`
-	TotalNum   int                    `json:"TotalNum" xml:"TotalNum"`
-	PageNumber int                    `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int                    `json:"PageSize" xml:"PageSize"`
+	TotalNum   int64                  `json:"TotalNum" xml:"TotalNum"`
+	PageNumber int64                  `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int64                  `json:"PageSize" xml:"PageSize"`
 	MediaList  MediaListInSearchMedia `json:"MediaList" xml:"MediaList"`
 }
 

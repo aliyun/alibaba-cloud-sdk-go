@@ -90,7 +90,7 @@ type QueryFpImportResultRequest struct {
 type QueryFpImportResultResponse struct {
 	*responses.BaseResponse
 	RequestId           string              `json:"RequestId" xml:"RequestId"`
-	LogCount            int                 `json:"LogCount" xml:"LogCount"`
+	LogCount            int64               `json:"LogCount" xml:"LogCount"`
 	PageInfo            PageInfo            `json:"PageInfo" xml:"PageInfo"`
 	FpResultLogInfoList FpResultLogInfoList `json:"FpResultLogInfoList" xml:"FpResultLogInfoList"`
 }

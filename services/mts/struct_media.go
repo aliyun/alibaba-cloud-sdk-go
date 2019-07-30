@@ -31,7 +31,7 @@ type Media struct {
 	CensorState  string                            `json:"CensorState" xml:"CensorState"`
 	MediaId      string                            `json:"MediaId" xml:"MediaId"`
 	Description  string                            `json:"Description" xml:"Description"`
-	CateId       int                               `json:"CateId" xml:"CateId"`
+	CateId       int64                             `json:"CateId" xml:"CateId"`
 	RunIdList    RunIdListInListMedia              `json:"RunIdList" xml:"RunIdList"`
 	Tags         TagsInListMedia                   `json:"Tags" xml:"Tags"`
 	MediaInfo    MediaInfo                         `json:"MediaInfo" xml:"MediaInfo"`

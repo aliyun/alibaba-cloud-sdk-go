@@ -76,17 +76,24 @@ func (client *Client) QuerySnapshotJobListWithCallback(request *QuerySnapshotJob
 // QuerySnapshotJobListRequest is the request struct for api QuerySnapshotJobList
 type QuerySnapshotJobListRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	SnapshotJobIds       string           `position:"Query" name:"SnapshotJobIds"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerId            requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount       string           `position:"Query" name:"ResourceOwnerAccount"`
+	NextPageToken              string           `position:"Query" name:"NextPageToken"`
+	SnapshotJobIds             string           `position:"Query" name:"SnapshotJobIds"`
+	StartOfJobCreatedTimeRange string           `position:"Query" name:"StartOfJobCreatedTimeRange"`
+	OwnerAccount               string           `position:"Query" name:"OwnerAccount"`
+	MaximumPageSize            requests.Integer `position:"Query" name:"MaximumPageSize"`
+	OwnerId                    requests.Integer `position:"Query" name:"OwnerId"`
+	PipelineId                 string           `position:"Query" name:"PipelineId"`
+	State                      string           `position:"Query" name:"State"`
+	EndOfJobCreatedTimeRange   string           `position:"Query" name:"EndOfJobCreatedTimeRange"`
 }
 
 // QuerySnapshotJobListResponse is the response struct for api QuerySnapshotJobList
 type QuerySnapshotJobListResponse struct {
 	*responses.BaseResponse
 	RequestId              string                 `json:"RequestId" xml:"RequestId"`
+	NextPageToken          string                 `json:"NextPageToken" xml:"NextPageToken"`
 	NonExistSnapshotJobIds NonExistSnapshotJobIds `json:"NonExistSnapshotJobIds" xml:"NonExistSnapshotJobIds"`
 	SnapshotJobList        SnapshotJobList        `json:"SnapshotJobList" xml:"SnapshotJobList"`
 }

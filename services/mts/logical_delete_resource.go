@@ -96,7 +96,7 @@ type LogicalDeleteResourceResponse struct {
 	Invoker        string `json:"Invoker" xml:"Invoker"`
 	Pk             string `json:"Pk" xml:"Pk"`
 	Bid            string `json:"Bid" xml:"Bid"`
-	Hid            int    `json:"Hid" xml:"Hid"`
+	Hid            int64  `json:"Hid" xml:"Hid"`
 	Country        string `json:"Country" xml:"Country"`
 	TaskIdentifier string `json:"TaskIdentifier" xml:"TaskIdentifier"`
 	TaskExtraData  string `json:"TaskExtraData" xml:"TaskExtraData"`

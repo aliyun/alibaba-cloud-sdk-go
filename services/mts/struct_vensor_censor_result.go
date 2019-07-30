@@ -17,7 +17,7 @@ package mts
 
 // VensorCensorResult is a nested struct in mts response
 type VensorCensorResult struct {
-	NextPageToken  string                                   `json:"NextPageToken" xml:"NextPageToken"`
-	CensorResults  CensorResultsInQueryMediaCensorJobDetail `json:"CensorResults" xml:"CensorResults"`
-	VideoTimelines VideoTimelines                           `json:"VideoTimelines" xml:"VideoTimelines"`
+	NextPageToken  string                                  `json:"NextPageToken" xml:"NextPageToken"`
+	VideoTimelines VideoTimelinesInQueryMediaCensorJobList `json:"VideoTimelines" xml:"VideoTimelines"`
+	CensorResults  CensorResultsInQueryMediaCensorJobList  `json:"CensorResults" xml:"CensorResults"`
 }

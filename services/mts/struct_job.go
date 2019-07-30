@@ -22,7 +22,7 @@ type Job struct {
 	UserData              string                                     `json:"UserData" xml:"UserData"`
 	PipelineId            string                                     `json:"PipelineId" xml:"PipelineId"`
 	Template              string                                     `json:"Template" xml:"Template"`
-	Percent               int                                        `json:"Percent" xml:"Percent"`
+	Percent               int64                                      `json:"Percent" xml:"Percent"`
 	Id                    string                                     `json:"Id" xml:"Id"`
 	JobId                 string                                     `json:"JobId" xml:"JobId"`
 	Message               string                                     `json:"Message" xml:"Message"`
@@ -32,6 +32,7 @@ type Job struct {
 	State                 string                                     `json:"State" xml:"State"`
 	Output                Output                                     `json:"Output" xml:"Output"`
 	OutputConfig          OutputConfig                               `json:"OutputConfig" xml:"OutputConfig"`
+	BeautifyConfig        BeautifyConfig                             `json:"BeautifyConfig" xml:"BeautifyConfig"`
 	EditingConfig         EditingConfig                              `json:"EditingConfig" xml:"EditingConfig"`
 	Input                 Input                                      `json:"Input" xml:"Input"`
 	Result                Result                                     `json:"Result" xml:"Result"`

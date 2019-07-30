@@ -17,8 +17,8 @@ package mts
 
 // BarrageCensorResult is a nested struct in mts response
 type BarrageCensorResult struct {
-	Rate       string `json:"Rate" xml:"Rate"`
-	Scene      string `json:"Scene" xml:"Scene"`
 	Label      string `json:"Label" xml:"Label"`
 	Suggestion string `json:"Suggestion" xml:"Suggestion"`
+	Scene      string `json:"Scene" xml:"Scene"`
+	Rate       string `json:"Rate" xml:"Rate"`
 }

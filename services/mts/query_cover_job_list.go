@@ -76,19 +76,26 @@ func (client *Client) QueryCoverJobListWithCallback(request *QueryCoverJobListRe
 // QueryCoverJobListRequest is the request struct for api QueryCoverJobList
 type QueryCoverJobListRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	CoverJobIds          string           `position:"Query" name:"CoverJobIds"`
+	ResourceOwnerId            requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount       string           `position:"Query" name:"ResourceOwnerAccount"`
+	NextPageToken              string           `position:"Query" name:"NextPageToken"`
+	StartOfJobCreatedTimeRange string           `position:"Query" name:"StartOfJobCreatedTimeRange"`
+	OwnerAccount               string           `position:"Query" name:"OwnerAccount"`
+	MaximumPageSize            requests.Integer `position:"Query" name:"MaximumPageSize"`
+	OwnerId                    requests.Integer `position:"Query" name:"OwnerId"`
+	CoverJobIds                string           `position:"Query" name:"CoverJobIds"`
+	PipelineId                 string           `position:"Query" name:"PipelineId"`
+	State                      string           `position:"Query" name:"State"`
+	EndOfJobCreatedTimeRange   string           `position:"Query" name:"EndOfJobCreatedTimeRange"`
 }
 
 // QueryCoverJobListResponse is the response struct for api QueryCoverJobList
 type QueryCoverJobListResponse struct {
 	*responses.BaseResponse
-	RequestId    string                         `json:"RequestId" xml:"RequestId"`
-	NonExistIds  NonExistIdsInQueryCoverJobList `json:"NonExistIds" xml:"NonExistIds"`
-	CoverJobList CoverJobList                   `json:"CoverJobList" xml:"CoverJobList"`
+	RequestId     string                         `json:"RequestId" xml:"RequestId"`
+	NextPageToken string                         `json:"NextPageToken" xml:"NextPageToken"`
+	NonExistIds   NonExistIdsInQueryCoverJobList `json:"NonExistIds" xml:"NonExistIds"`
+	CoverJobList  CoverJobList                   `json:"CoverJobList" xml:"CoverJobList"`
 }
 
 // CreateQueryCoverJobListRequest creates a request to invoke QueryCoverJobList API
