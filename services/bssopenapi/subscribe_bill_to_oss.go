@@ -76,8 +76,10 @@ func (client *Client) SubscribeBillToOSSWithCallback(request *SubscribeBillToOSS
 // SubscribeBillToOSSRequest is the request struct for api SubscribeBillToOSS
 type SubscribeBillToOSSRequest struct {
 	*requests.RpcRequest
-	SubscribeType   string `position:"Query" name:"SubscribeType"`
-	SubscribeBucket string `position:"Query" name:"SubscribeBucket"`
+	BucketOwnerId           requests.Integer `position:"Query" name:"BucketOwnerId"`
+	SubscribeType           string           `position:"Query" name:"SubscribeType"`
+	SubscribeBucket         string           `position:"Query" name:"SubscribeBucket"`
+	MultAccountRelSubscribe string           `position:"Query" name:"MultAccountRelSubscribe"`
 }
 
 // SubscribeBillToOSSResponse is the response struct for api SubscribeBillToOSS
@@ -94,7 +96,7 @@ func CreateSubscribeBillToOSSRequest() (request *SubscribeBillToOSSRequest) {
 	request = &SubscribeBillToOSSRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "SubscribeBillToOSS", "bssopenapi", "openAPI")
+	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "SubscribeBillToOSS", "", "")
 	return
 }
 

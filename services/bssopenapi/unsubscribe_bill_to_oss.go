@@ -76,7 +76,8 @@ func (client *Client) UnsubscribeBillToOSSWithCallback(request *UnsubscribeBillT
 // UnsubscribeBillToOSSRequest is the request struct for api UnsubscribeBillToOSS
 type UnsubscribeBillToOSSRequest struct {
 	*requests.RpcRequest
-	SubscribeType string `position:"Query" name:"SubscribeType"`
+	SubscribeType           string `position:"Query" name:"SubscribeType"`
+	MultAccountRelSubscribe string `position:"Query" name:"MultAccountRelSubscribe"`
 }
 
 // UnsubscribeBillToOSSResponse is the response struct for api UnsubscribeBillToOSS
@@ -93,7 +94,7 @@ func CreateUnsubscribeBillToOSSRequest() (request *UnsubscribeBillToOSSRequest) 
 	request = &UnsubscribeBillToOSSRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "UnsubscribeBillToOSS", "bssopenapi", "openAPI")
+	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "UnsubscribeBillToOSS", "", "")
 	return
 }
 
