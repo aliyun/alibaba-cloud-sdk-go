@@ -78,8 +78,8 @@ type ListUsersOfSkillGroupRequest struct {
 	*requests.RpcRequest
 	InstanceId   string           `position:"Query" name:"InstanceId"`
 	SkillGroupId string           `position:"Query" name:"SkillGroupId"`
-	PageNumber   requests.Integer `position:"Query" name:"PageNumber"`
 	PageSize     requests.Integer `position:"Query" name:"PageSize"`
+	PageNumber   requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 // ListUsersOfSkillGroupResponse is the response struct for api ListUsersOfSkillGroup

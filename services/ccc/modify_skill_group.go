@@ -76,13 +76,15 @@ func (client *Client) ModifySkillGroupWithCallback(request *ModifySkillGroupRequ
 // ModifySkillGroupRequest is the request struct for api ModifySkillGroup
 type ModifySkillGroupRequest struct {
 	*requests.RpcRequest
-	InstanceId            string    `position:"Query" name:"InstanceId"`
-	SkillGroupId          string    `position:"Query" name:"SkillGroupId"`
-	Name                  string    `position:"Query" name:"Name"`
-	Description           string    `position:"Query" name:"Description"`
-	OutboundPhoneNumberId *[]string `position:"Query" name:"OutboundPhoneNumberId"  type:"Repeated"`
-	UserId                *[]string `position:"Query" name:"UserId"  type:"Repeated"`
-	SkillLevel            *[]string `position:"Query" name:"SkillLevel"  type:"Repeated"`
+	SkillLevel                 *[]string        `position:"Query" name:"SkillLevel"  type:"Repeated"`
+	InstanceId                 string           `position:"Query" name:"InstanceId"`
+	AllowPrivateOutboundNumber requests.Boolean `position:"Query" name:"AllowPrivateOutboundNumber"`
+	OutboundPhoneNumberId      *[]string        `position:"Query" name:"OutboundPhoneNumberId"  type:"Repeated"`
+	SkillGroupId               string           `position:"Query" name:"SkillGroupId"`
+	Name                       string           `position:"Query" name:"Name"`
+	Description                string           `position:"Query" name:"Description"`
+	RoutingStrategy            string           `position:"Query" name:"RoutingStrategy"`
+	UserId                     *[]string        `position:"Query" name:"UserId"  type:"Repeated"`
 }
 
 // ModifySkillGroupResponse is the response struct for api ModifySkillGroup

@@ -17,17 +17,19 @@ package ccc
 
 // Recording is a nested struct in ccc response
 type Recording struct {
-	AgentId         string `json:"AgentId" xml:"AgentId"`
-	Duration        int    `json:"Duration" xml:"Duration"`
-	CallingNumber   string `json:"CallingNumber" xml:"CallingNumber"`
-	ContactType     string `json:"ContactType" xml:"ContactType"`
-	FilePath        string `json:"FilePath" xml:"FilePath"`
-	FileDescription string `json:"FileDescription" xml:"FileDescription"`
-	Channel         string `json:"Channel" xml:"Channel"`
-	StartTime       int    `json:"StartTime" xml:"StartTime"`
-	CalledNumber    string `json:"CalledNumber" xml:"CalledNumber"`
-	ContactId       string `json:"ContactId" xml:"ContactId"`
-	FileName        string `json:"FileName" xml:"FileName"`
-	InstanceId      string `json:"InstanceId" xml:"InstanceId"`
-	AgentName       string `json:"AgentName" xml:"AgentName"`
+	ContactId          string `json:"ContactId" xml:"ContactId"`
+	FileDescription    string `json:"FileDescription" xml:"FileDescription"`
+	CalledNumber       string `json:"CalledNumber" xml:"CalledNumber"`
+	QualityCheckTid    string `json:"QualityCheckTid" xml:"QualityCheckTid"`
+	ContactType        string `json:"ContactType" xml:"ContactType"`
+	CallingNumber      string `json:"CallingNumber" xml:"CallingNumber"`
+	StartTime          int64  `json:"StartTime" xml:"StartTime"`
+	AgentName          string `json:"AgentName" xml:"AgentName"`
+	AgentId            string `json:"AgentId" xml:"AgentId"`
+	Duration           int    `json:"Duration" xml:"Duration"`
+	InstanceId         string `json:"InstanceId" xml:"InstanceId"`
+	Channel            string `json:"Channel" xml:"Channel"`
+	QualityCheckTaskId string `json:"QualityCheckTaskId" xml:"QualityCheckTaskId"`
+	FileName           string `json:"FileName" xml:"FileName"`
+	FilePath           string `json:"FilePath" xml:"FilePath"`
 }

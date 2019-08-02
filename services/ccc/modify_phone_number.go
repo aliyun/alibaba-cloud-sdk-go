@@ -76,10 +76,11 @@ func (client *Client) ModifyPhoneNumberWithCallback(request *ModifyPhoneNumberRe
 // ModifyPhoneNumberRequest is the request struct for api ModifyPhoneNumber
 type ModifyPhoneNumberRequest struct {
 	*requests.RpcRequest
-	InstanceId    string `position:"Query" name:"InstanceId"`
-	PhoneNumberId string `position:"Query" name:"PhoneNumberId"`
-	Usage         string `position:"Query" name:"Usage"`
-	ContactFlowId string `position:"Query" name:"ContactFlowId"`
+	ContactFlowId string    `position:"Query" name:"ContactFlowId"`
+	InstanceId    string    `position:"Query" name:"InstanceId"`
+	PhoneNumberId string    `position:"Query" name:"PhoneNumberId"`
+	Usage         string    `position:"Query" name:"Usage"`
+	SkillGroupId  *[]string `position:"Query" name:"SkillGroupId"  type:"Repeated"`
 }
 
 // ModifyPhoneNumberResponse is the response struct for api ModifyPhoneNumber

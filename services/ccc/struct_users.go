@@ -17,8 +17,8 @@ package ccc
 
 // Users is a nested struct in ccc response
 type Users struct {
-	PageNumber int                         `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int                         `json:"PageSize" xml:"PageSize"`
-	TotalCount int                         `json:"TotalCount" xml:"TotalCount"`
-	List       ListInListUsersOfSkillGroup `json:"List" xml:"List"`
+	TotalCount int             `json:"TotalCount" xml:"TotalCount"`
+	PageNumber int             `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int             `json:"PageSize" xml:"PageSize"`
+	List       ListInListUsers `json:"List" xml:"List"`
 }

@@ -82,12 +82,12 @@ type ListSkillGroupsRequest struct {
 // ListSkillGroupsResponse is the response struct for api ListSkillGroups
 type ListSkillGroupsResponse struct {
 	*responses.BaseResponse
-	RequestId      string      `json:"RequestId" xml:"RequestId"`
-	Success        bool        `json:"Success" xml:"Success"`
-	Code           string      `json:"Code" xml:"Code"`
-	Message        string      `json:"Message" xml:"Message"`
-	HttpStatusCode int         `json:"HttpStatusCode" xml:"HttpStatusCode"`
-	SkillGroups    SkillGroups `json:"SkillGroups" xml:"SkillGroups"`
+	RequestId      string                       `json:"RequestId" xml:"RequestId"`
+	Success        bool                         `json:"Success" xml:"Success"`
+	Code           string                       `json:"Code" xml:"Code"`
+	Message        string                       `json:"Message" xml:"Message"`
+	HttpStatusCode int                          `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	SkillGroups    SkillGroupsInListSkillGroups `json:"SkillGroups" xml:"SkillGroups"`
 }
 
 // CreateListSkillGroupsRequest creates a request to invoke ListSkillGroups API

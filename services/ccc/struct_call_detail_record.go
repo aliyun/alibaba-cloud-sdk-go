@@ -17,18 +17,20 @@ package ccc
 
 // CallDetailRecord is a nested struct in ccc response
 type CallDetailRecord struct {
-	ContactId          string                            `json:"ContactId" xml:"ContactId"`
-	StartTime          int                               `json:"StartTime" xml:"StartTime"`
-	Duration           int                               `json:"Duration" xml:"Duration"`
-	Satisfaction       int                               `json:"Satisfaction" xml:"Satisfaction"`
-	ContactType        string                            `json:"ContactType" xml:"ContactType"`
-	ContactDisposition string                            `json:"ContactDisposition" xml:"ContactDisposition"`
-	CallingNumber      string                            `json:"CallingNumber" xml:"CallingNumber"`
-	CalledNumber       string                            `json:"CalledNumber" xml:"CalledNumber"`
-	AgentNames         string                            `json:"AgentNames" xml:"AgentNames"`
-	SkillGroupNames    string                            `json:"SkillGroupNames" xml:"SkillGroupNames"`
-	InstanceId         string                            `json:"InstanceId" xml:"InstanceId"`
 	ExtraAttr          string                            `json:"ExtraAttr" xml:"ExtraAttr"`
-	Agents             Agents                            `json:"Agents" xml:"Agents"`
-	Recordings         RecordingsInListCallDetailRecords `json:"Recordings" xml:"Recordings"`
+	Feedback           string                            `json:"Feedback" xml:"Feedback"`
+	ContactId          string                            `json:"ContactId" xml:"ContactId"`
+	AgentNames         string                            `json:"AgentNames" xml:"AgentNames"`
+	CalledNumber       string                            `json:"CalledNumber" xml:"CalledNumber"`
+	SatisfactionDesc   string                            `json:"SatisfactionDesc" xml:"SatisfactionDesc"`
+	ContactType        string                            `json:"ContactType" xml:"ContactType"`
+	StartTime          int64                             `json:"StartTime" xml:"StartTime"`
+	CallingNumber      string                            `json:"CallingNumber" xml:"CallingNumber"`
+	SkillGroupNames    string                            `json:"SkillGroupNames" xml:"SkillGroupNames"`
+	Duration           int                               `json:"Duration" xml:"Duration"`
+	ContactDisposition string                            `json:"ContactDisposition" xml:"ContactDisposition"`
+	InstanceId         string                            `json:"InstanceId" xml:"InstanceId"`
+	Satisfaction       int                               `json:"Satisfaction" xml:"Satisfaction"`
+	Agents             AgentsInListRecentCallRecords     `json:"Agents" xml:"Agents"`
+	Recordings         RecordingsInListRecentCallRecords `json:"Recordings" xml:"Recordings"`
 }

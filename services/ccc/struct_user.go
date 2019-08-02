@@ -17,11 +17,17 @@ package ccc
 
 // User is a nested struct in ccc response
 type User struct {
-	UserId      string                       `json:"UserId" xml:"UserId"`
-	RamId       string                       `json:"RamId" xml:"RamId"`
-	Primary     bool                         `json:"Primary" xml:"Primary"`
-	InstanceId  string                       `json:"InstanceId" xml:"InstanceId"`
-	Detail      Detail                       `json:"Detail" xml:"Detail"`
-	SkillLevels SkillLevelsInGetUser         `json:"SkillLevels" xml:"SkillLevels"`
-	Roles       RolesInListUsersOfSkillGroup `json:"Roles" xml:"Roles"`
+	StateDesc               string                 `json:"StateDesc" xml:"StateDesc"`
+	RamId                   string                 `json:"RamId" xml:"RamId"`
+	DisplayName             string                 `json:"DisplayName" xml:"DisplayName"`
+	Primary                 bool                   `json:"Primary" xml:"Primary"`
+	State                   string                 `json:"State" xml:"State"`
+	PrivateOutboundNumberId string                 `json:"PrivateOutboundNumberId" xml:"PrivateOutboundNumberId"`
+	UserId                  string                 `json:"UserId" xml:"UserId"`
+	InstanceId              string                 `json:"InstanceId" xml:"InstanceId"`
+	Dn                      string                 `json:"Dn" xml:"Dn"`
+	Phone                   string                 `json:"Phone" xml:"Phone"`
+	Detail                  Detail                 `json:"Detail" xml:"Detail"`
+	SkillLevels             SkillLevelsInFindUsers `json:"SkillLevels" xml:"SkillLevels"`
+	Roles                   RolesInFindUsers       `json:"Roles" xml:"Roles"`
 }

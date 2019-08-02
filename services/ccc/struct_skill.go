@@ -18,8 +18,9 @@ package ccc
 // Skill is a nested struct in ccc response
 type Skill struct {
 	SkillGroupName        string                                      `json:"SkillGroupName" xml:"SkillGroupName"`
-	InstanceId            string                                      `json:"InstanceId" xml:"InstanceId"`
-	SkillGroupDescription string                                      `json:"SkillGroupDescription" xml:"SkillGroupDescription"`
 	SkillGroupId          string                                      `json:"SkillGroupId" xml:"SkillGroupId"`
+	SkillGroupDescription string                                      `json:"SkillGroupDescription" xml:"SkillGroupDescription"`
+	RoutingStrategy       string                                      `json:"RoutingStrategy" xml:"RoutingStrategy"`
+	InstanceId            string                                      `json:"InstanceId" xml:"InstanceId"`
 	OutboundPhoneNumbers  OutboundPhoneNumbersInListSkillGroupsOfUser `json:"OutboundPhoneNumbers" xml:"OutboundPhoneNumbers"`
 }

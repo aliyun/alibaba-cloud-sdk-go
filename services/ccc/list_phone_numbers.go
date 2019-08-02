@@ -76,8 +76,8 @@ func (client *Client) ListPhoneNumbersWithCallback(request *ListPhoneNumbersRequ
 // ListPhoneNumbersRequest is the request struct for api ListPhoneNumbers
 type ListPhoneNumbersRequest struct {
 	*requests.RpcRequest
-	InstanceId   string           `position:"Query" name:"InstanceId"`
 	OutboundOnly requests.Boolean `position:"Query" name:"OutboundOnly"`
+	InstanceId   string           `position:"Query" name:"InstanceId"`
 }
 
 // ListPhoneNumbersResponse is the response struct for api ListPhoneNumbers

@@ -20,5 +20,5 @@ type CallDetailRecords struct {
 	TotalCount int                         `json:"TotalCount" xml:"TotalCount"`
 	PageNumber int                         `json:"PageNumber" xml:"PageNumber"`
 	PageSize   int                         `json:"PageSize" xml:"PageSize"`
-	List       ListInListCallDetailRecords `json:"List" xml:"List"`
+	List       ListInListRecentCallRecords `json:"List" xml:"List"`
 }

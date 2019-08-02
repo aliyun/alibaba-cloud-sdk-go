@@ -17,7 +17,7 @@ package ccc
 
 // SkillLevel is a nested struct in ccc response
 type SkillLevel struct {
-	SkillLevelId string `json:"SkillLevelId" xml:"SkillLevelId"`
 	Level        int    `json:"Level" xml:"Level"`
+	SkillLevelId string `json:"SkillLevelId" xml:"SkillLevelId"`
 	Skill        Skill  `json:"Skill" xml:"Skill"`
 }

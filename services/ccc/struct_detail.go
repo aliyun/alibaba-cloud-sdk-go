@@ -18,8 +18,8 @@ package ccc
 // Detail is a nested struct in ccc response
 type Detail struct {
 	Email       string `json:"Email" xml:"Email"`
-	DisplayName string `json:"DisplayName" xml:"DisplayName"`
+	LoginName   string `json:"LoginName" xml:"LoginName"`
 	Department  string `json:"Department" xml:"Department"`
 	Phone       string `json:"Phone" xml:"Phone"`
-	LoginName   string `json:"LoginName" xml:"LoginName"`
+	DisplayName string `json:"DisplayName" xml:"DisplayName"`
 }

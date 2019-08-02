@@ -78,8 +78,8 @@ type GetConfigRequest struct {
 	*requests.RpcRequest
 	InstanceId string `position:"Query" name:"InstanceId"`
 	Name       string `position:"Query" name:"Name"`
-	ObjectId   string `position:"Query" name:"ObjectId"`
 	ObjectType string `position:"Query" name:"ObjectType"`
+	ObjectId   string `position:"Query" name:"ObjectId"`
 }
 
 // GetConfigResponse is the response struct for api GetConfig

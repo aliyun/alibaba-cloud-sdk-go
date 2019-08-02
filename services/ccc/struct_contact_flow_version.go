@@ -17,11 +17,13 @@ package ccc
 
 // ContactFlowVersion is a nested struct in ccc response
 type ContactFlowVersion struct {
-	ContactFlowVersionId          string `json:"ContactFlowVersionId" xml:"ContactFlowVersionId"`
-	Version                       string `json:"Version" xml:"Version"`
+	Canvas                        string `json:"Canvas" xml:"Canvas"`
+	Content                       string `json:"Content" xml:"Content"`
+	LockedBy                      string `json:"LockedBy" xml:"LockedBy"`
 	ContactFlowVersionDescription string `json:"ContactFlowVersionDescription" xml:"ContactFlowVersionDescription"`
+	Version                       string `json:"Version" xml:"Version"`
 	LastModified                  string `json:"LastModified" xml:"LastModified"`
 	LastModifiedBy                string `json:"LastModifiedBy" xml:"LastModifiedBy"`
-	LockedBy                      string `json:"LockedBy" xml:"LockedBy"`
 	Status                        string `json:"Status" xml:"Status"`
+	ContactFlowVersionId          string `json:"ContactFlowVersionId" xml:"ContactFlowVersionId"`
 }

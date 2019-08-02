@@ -76,12 +76,14 @@ func (client *Client) CreateSkillGroupWithCallback(request *CreateSkillGroupRequ
 // CreateSkillGroupRequest is the request struct for api CreateSkillGroup
 type CreateSkillGroupRequest struct {
 	*requests.RpcRequest
-	InstanceId            string    `position:"Query" name:"InstanceId"`
-	Name                  string    `position:"Query" name:"Name"`
-	Description           string    `position:"Query" name:"Description"`
-	OutboundPhoneNumberId *[]string `position:"Query" name:"OutboundPhoneNumberId"  type:"Repeated"`
-	UserId                *[]string `position:"Query" name:"UserId"  type:"Repeated"`
-	SkillLevel            *[]string `position:"Query" name:"SkillLevel"  type:"Repeated"`
+	SkillLevel                 *[]string        `position:"Query" name:"SkillLevel"  type:"Repeated"`
+	InstanceId                 string           `position:"Query" name:"InstanceId"`
+	AllowPrivateOutboundNumber requests.Boolean `position:"Query" name:"AllowPrivateOutboundNumber"`
+	OutboundPhoneNumberId      *[]string        `position:"Query" name:"OutboundPhoneNumberId"  type:"Repeated"`
+	Name                       string           `position:"Query" name:"Name"`
+	Description                string           `position:"Query" name:"Description"`
+	RoutingStrategy            string           `position:"Query" name:"RoutingStrategy"`
+	UserId                     *[]string        `position:"Query" name:"UserId"  type:"Repeated"`
 }
 
 // CreateSkillGroupResponse is the response struct for api CreateSkillGroup

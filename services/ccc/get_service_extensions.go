@@ -76,8 +76,8 @@ func (client *Client) GetServiceExtensionsWithCallback(request *GetServiceExtens
 // GetServiceExtensionsRequest is the request struct for api GetServiceExtensions
 type GetServiceExtensionsRequest struct {
 	*requests.RpcRequest
-	InstanceId  string `position:"Query" name:"InstanceId"`
 	ServiceType string `position:"Query" name:"ServiceType"`
+	InstanceId  string `position:"Query" name:"InstanceId"`
 }
 
 // GetServiceExtensionsResponse is the response struct for api GetServiceExtensions

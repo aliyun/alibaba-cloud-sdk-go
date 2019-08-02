@@ -17,14 +17,22 @@ package ccc
 
 // PhoneNumber is a nested struct in ccc response
 type PhoneNumber struct {
-	PhoneNumberId          string      `json:"PhoneNumberId" xml:"PhoneNumberId"`
-	RemainingTime          int         `json:"RemainingTime" xml:"RemainingTime"`
-	Trunks                 int         `json:"Trunks" xml:"Trunks"`
-	AllowOutbound          bool        `json:"AllowOutbound" xml:"AllowOutbound"`
-	TestOnly               bool        `json:"TestOnly" xml:"TestOnly"`
-	PhoneNumberDescription string      `json:"PhoneNumberDescription" xml:"PhoneNumberDescription"`
-	Usage                  string      `json:"Usage" xml:"Usage"`
-	InstanceId             string      `json:"InstanceId" xml:"InstanceId"`
-	Number                 string      `json:"Number" xml:"Number"`
-	ContactFlow            ContactFlow `json:"ContactFlow" xml:"ContactFlow"`
+	Usage                  string                           `json:"Usage" xml:"Usage"`
+	Trunks                 int                              `json:"Trunks" xml:"Trunks"`
+	PrivateFlag            bool                             `json:"PrivateFlag" xml:"PrivateFlag"`
+	City                   string                           `json:"City" xml:"City"`
+	Number                 string                           `json:"Number" xml:"Number"`
+	Province               string                           `json:"Province" xml:"Province"`
+	Assignee               string                           `json:"Assignee" xml:"Assignee"`
+	InstanceId             string                           `json:"InstanceId" xml:"InstanceId"`
+	RemainingTime          int                              `json:"RemainingTime" xml:"RemainingTime"`
+	NumberCommodityStatus  int                              `json:"NumberCommodityStatus" xml:"NumberCommodityStatus"`
+	TestOnly               bool                             `json:"TestOnly" xml:"TestOnly"`
+	PhoneNumberDescription string                           `json:"PhoneNumberDescription" xml:"PhoneNumberDescription"`
+	AllowOutbound          bool                             `json:"AllowOutbound" xml:"AllowOutbound"`
+	SipTelX                string                           `json:"SipTelX" xml:"SipTelX"`
+	PhoneNumberId          string                           `json:"PhoneNumberId" xml:"PhoneNumberId"`
+	ContactFlow            ContactFlow                      `json:"ContactFlow" xml:"ContactFlow"`
+	PrivacyNumber          PrivacyNumber                    `json:"PrivacyNumber" xml:"PrivacyNumber"`
+	SkillGroups            SkillGroupsInAddBulkPhoneNumbers `json:"SkillGroups" xml:"SkillGroups"`
 }

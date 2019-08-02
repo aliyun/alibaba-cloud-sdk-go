@@ -76,16 +76,18 @@ func (client *Client) ListCallDetailRecordsWithCallback(request *ListCallDetailR
 // ListCallDetailRecordsRequest is the request struct for api ListCallDetailRecords
 type ListCallDetailRecordsRequest struct {
 	*requests.RpcRequest
-	InstanceId         string           `position:"Query" name:"InstanceId"`
+	ContactType        string           `position:"Query" name:"ContactType"`
+	ContactId          string           `position:"Query" name:"ContactId"`
+	Criteria           string           `position:"Query" name:"Criteria"`
 	PhoneNumber        string           `position:"Query" name:"PhoneNumber"`
+	OrderBy            string           `position:"Query" name:"OrderBy"`
 	StartTime          requests.Integer `position:"Query" name:"StartTime"`
 	StopTime           requests.Integer `position:"Query" name:"StopTime"`
-	Criteria           string           `position:"Query" name:"Criteria"`
-	ContactType        string           `position:"Query" name:"ContactType"`
-	ContactDisposition string           `position:"Query" name:"ContactDisposition"`
-	WithRecording      requests.Boolean `position:"Query" name:"WithRecording"`
 	PageNumber         requests.Integer `position:"Query" name:"PageNumber"`
+	InstanceId         string           `position:"Query" name:"InstanceId"`
+	ContactDisposition string           `position:"Query" name:"ContactDisposition"`
 	PageSize           requests.Integer `position:"Query" name:"PageSize"`
+	WithRecording      requests.Boolean `position:"Query" name:"WithRecording"`
 }
 
 // ListCallDetailRecordsResponse is the response struct for api ListCallDetailRecords

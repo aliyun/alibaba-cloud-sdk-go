@@ -17,8 +17,8 @@ package ccc
 
 // Recordings is a nested struct in ccc response
 type Recordings struct {
-	PageNumber int                  `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int                  `json:"PageSize" xml:"PageSize"`
-	TotalCount int                  `json:"TotalCount" xml:"TotalCount"`
-	List       ListInListRecordings `json:"List" xml:"List"`
+	TotalCount int                            `json:"TotalCount" xml:"TotalCount"`
+	PageNumber int                            `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int                            `json:"PageSize" xml:"PageSize"`
+	List       ListInListRecordingOfDualTrack `json:"List" xml:"List"`
 }

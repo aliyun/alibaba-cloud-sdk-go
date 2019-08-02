@@ -17,7 +17,7 @@ package ccc
 
 // Privilege is a nested struct in ccc response
 type Privilege struct {
-	PrivilegeId          string `json:"PrivilegeId" xml:"PrivilegeId"`
 	PrivilegeName        string `json:"PrivilegeName" xml:"PrivilegeName"`
 	PrivilegeDescription string `json:"PrivilegeDescription" xml:"PrivilegeDescription"`
+	PrivilegeId          string `json:"PrivilegeId" xml:"PrivilegeId"`
 }

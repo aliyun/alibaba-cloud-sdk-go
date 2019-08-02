@@ -1,3 +1,6 @@
+2019-08-02 Version: 1.60.81
+- Add a lot of new API.
+
 2019-08-02 Version: 1.60.80
 - SubscribeBillToOSSRequest add multAccountRelSubscribe, bucketOwnerId.
 - UnsubscribeBillToOSSRequest add multAccountRelSubscribe.

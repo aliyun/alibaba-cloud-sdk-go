@@ -17,14 +17,16 @@ package ccc
 
 // CallDetailAgent is a nested struct in ccc response
 type CallDetailAgent struct {
-	ContactId      string `json:"ContactId" xml:"ContactId"`
-	AgentId        string `json:"AgentId" xml:"AgentId"`
-	AgentName      string `json:"AgentName" xml:"AgentName"`
 	SkillGroupName string `json:"SkillGroupName" xml:"SkillGroupName"`
+	StartTime      int64  `json:"StartTime" xml:"StartTime"`
+	AgentName      string `json:"AgentName" xml:"AgentName"`
+	HoldTime       int    `json:"HoldTime" xml:"HoldTime"`
+	AgentId        string `json:"AgentId" xml:"AgentId"`
+	Feedback       string `json:"Feedback" xml:"Feedback"`
+	ContactId      string `json:"ContactId" xml:"ContactId"`
+	TalkTime       int    `json:"TalkTime" xml:"TalkTime"`
+	Satisfaction   string `json:"Satisfaction" xml:"Satisfaction"`
 	QueueTime      int    `json:"QueueTime" xml:"QueueTime"`
 	RingTime       int    `json:"RingTime" xml:"RingTime"`
-	StartTime      int    `json:"StartTime" xml:"StartTime"`
-	TalkTime       int    `json:"TalkTime" xml:"TalkTime"`
-	HoldTime       int    `json:"HoldTime" xml:"HoldTime"`
 	WorkTime       int    `json:"WorkTime" xml:"WorkTime"`
 }

@@ -17,14 +17,15 @@ package ccc
 
 // LoginInfo is a nested struct in ccc response
 type LoginInfo struct {
-	UserName       string `json:"UserName" xml:"UserName"`
-	DisplayName    string `json:"DisplayName" xml:"DisplayName"`
-	PhoneNumber    string `json:"PhoneNumber" xml:"PhoneNumber"`
-	Region         string `json:"Region" xml:"Region"`
-	WebRtcUrl      string `json:"WebRtcUrl" xml:"WebRtcUrl"`
-	AgentServerUrl string `json:"AgentServerUrl" xml:"AgentServerUrl"`
-	Extension      string `json:"Extension" xml:"Extension"`
-	TenantId       string `json:"TenantId" xml:"TenantId"`
-	Signature      string `json:"Signature" xml:"Signature"`
-	SignData       string `json:"SignData" xml:"SignData"`
+	UserName       string                  `json:"UserName" xml:"UserName"`
+	DisplayName    string                  `json:"DisplayName" xml:"DisplayName"`
+	PhoneNumber    string                  `json:"PhoneNumber" xml:"PhoneNumber"`
+	Region         string                  `json:"Region" xml:"Region"`
+	WebRtcUrl      string                  `json:"WebRtcUrl" xml:"WebRtcUrl"`
+	AgentServerUrl string                  `json:"AgentServerUrl" xml:"AgentServerUrl"`
+	Extension      string                  `json:"Extension" xml:"Extension"`
+	TenantId       string                  `json:"TenantId" xml:"TenantId"`
+	Signature      string                  `json:"Signature" xml:"Signature"`
+	SignData       string                  `json:"SignData" xml:"SignData"`
+	Roles          RolesInRequestLoginInfo `json:"Roles" xml:"Roles"`
 }

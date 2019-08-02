@@ -76,10 +76,10 @@ func (client *Client) AddPhoneNumberWithCallback(request *AddPhoneNumberRequest,
 // AddPhoneNumberRequest is the request struct for api AddPhoneNumber
 type AddPhoneNumberRequest struct {
 	*requests.RpcRequest
-	InstanceId    string `position:"Query" name:"InstanceId"`
-	PhoneNumber   string `position:"Query" name:"PhoneNumber"`
-	Usage         string `position:"Query" name:"Usage"`
 	ContactFlowId string `position:"Query" name:"ContactFlowId"`
+	InstanceId    string `position:"Query" name:"InstanceId"`
+	Usage         string `position:"Query" name:"Usage"`
+	PhoneNumber   string `position:"Query" name:"PhoneNumber"`
 }
 
 // AddPhoneNumberResponse is the response struct for api AddPhoneNumber
