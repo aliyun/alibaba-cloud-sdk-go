@@ -40,4 +40,6 @@ type BackupPlanDetail struct {
 	BackupMethod                      string `json:"BackupMethod" xml:"BackupMethod"`
 	BackupPlanCreateTime              int64  `json:"BackupPlanCreateTime" xml:"BackupPlanCreateTime"`
 	BackupPlanStatus                  string `json:"BackupPlanStatus" xml:"BackupPlanStatus"`
+	BeginTimestampForRestore          int64  `json:"BeginTimestampForRestore" xml:"BeginTimestampForRestore"`
+	EndTimestampForRestore            int64  `json:"EndTimestampForRestore" xml:"EndTimestampForRestore"`
 }

@@ -1,3 +1,6 @@
+2019-08-05 Version: 1.60.82
+- Modify DBS API DescribeFullBackupList.
+
 2019-08-02 Version: 1.60.81
 - Add a lot of new API.
 
