@@ -20,25 +20,27 @@ type Order struct {
 	Region            string `json:"Region" xml:"Region"`
 	UsageEndTime      string `json:"UsageEndTime" xml:"UsageEndTime"`
 	PaymentTime       string `json:"PaymentTime" xml:"PaymentTime"`
-	PaymentCurrency   string `json:"PaymentCurrency" xml:"PaymentCurrency"`
 	CreateTime        string `json:"CreateTime" xml:"CreateTime"`
-	ProductType       string `json:"ProductType" xml:"ProductType"`
 	PaymentStatus     string `json:"PaymentStatus" xml:"PaymentStatus"`
-	Currency          string `json:"Currency" xml:"Currency"`
 	Operator          string `json:"Operator" xml:"Operator"`
 	SubOrderId        string `json:"SubOrderId" xml:"SubOrderId"`
-	ProductCode       string `json:"ProductCode" xml:"ProductCode"`
-	InstanceIDs       string `json:"InstanceIDs" xml:"InstanceIDs"`
 	AfterTaxAmount    string `json:"AfterTaxAmount" xml:"AfterTaxAmount"`
 	OrderId           string `json:"OrderId" xml:"OrderId"`
-	OrderType         string `json:"OrderType" xml:"OrderType"`
-	Quantity          string `json:"Quantity" xml:"Quantity"`
+	OriginalConfig    string `json:"OriginalConfig" xml:"OriginalConfig"`
 	PretaxGrossAmount string `json:"PretaxGrossAmount" xml:"PretaxGrossAmount"`
-	PretaxAmountLocal string `json:"PretaxAmountLocal" xml:"PretaxAmountLocal"`
 	SubscriptionType  string `json:"SubscriptionType" xml:"SubscriptionType"`
 	Tax               string `json:"Tax" xml:"Tax"`
-	Config            string `json:"Config" xml:"Config"`
 	UsageStartTime    string `json:"UsageStartTime" xml:"UsageStartTime"`
-	RelatedOrderId    string `json:"RelatedOrderId" xml:"RelatedOrderId"`
 	PretaxAmount      string `json:"PretaxAmount" xml:"PretaxAmount"`
+	PaymentCurrency   string `json:"PaymentCurrency" xml:"PaymentCurrency"`
+	OrderSubType      string `json:"OrderSubType" xml:"OrderSubType"`
+	ProductType       string `json:"ProductType" xml:"ProductType"`
+	Currency          string `json:"Currency" xml:"Currency"`
+	ProductCode       string `json:"ProductCode" xml:"ProductCode"`
+	InstanceIDs       string `json:"InstanceIDs" xml:"InstanceIDs"`
+	OrderType         string `json:"OrderType" xml:"OrderType"`
+	Quantity          string `json:"Quantity" xml:"Quantity"`
+	PretaxAmountLocal string `json:"PretaxAmountLocal" xml:"PretaxAmountLocal"`
+	Config            string `json:"Config" xml:"Config"`
+	RelatedOrderId    string `json:"RelatedOrderId" xml:"RelatedOrderId"`
 }

@@ -99,7 +99,7 @@ func CreateQueryInstanceGaapCostRequest() (request *QueryInstanceGaapCostRequest
 	request = &QueryInstanceGaapCostRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "QueryInstanceGaapCost", "", "")
+	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "QueryInstanceGaapCost", "bssopenapi", "openAPI")
 	return
 }
 
