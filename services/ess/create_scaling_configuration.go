@@ -79,6 +79,7 @@ type CreateScalingConfigurationRequest struct {
 	ImageId                     string                                      `position:"Query" name:"ImageId"`
 	Memory                      requests.Integer                            `position:"Query" name:"Memory"`
 	HpcClusterId                string                                      `position:"Query" name:"HpcClusterId"`
+	ClientToken                 string                                      `position:"Query" name:"ClientToken"`
 	ScalingGroupId              string                                      `position:"Query" name:"ScalingGroupId"`
 	InstanceTypes               *[]string                                   `position:"Query" name:"InstanceTypes"  type:"Repeated"`
 	IoOptimized                 string                                      `position:"Query" name:"IoOptimized"`

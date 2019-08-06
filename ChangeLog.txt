@@ -1,3 +1,6 @@
+2019-08-06 Version: 1.60.86
+- Enhencement for CostOptimized scaling group.
+
 2019-08-05 Version: 1.60.85
 - Add response parameter LoadBalancerId for DescribeMasterSlaveServerGroupAttribute interface.
 
