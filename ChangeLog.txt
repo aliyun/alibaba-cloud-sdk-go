@@ -1,3 +1,6 @@
+2019-08-08 Version: 1.60.93
+- Group, Plugin support tag authentication.
+
 2019-08-07 Version: 1.60.92
 - Generated 2019-03-20 for `WebPlus`.
 

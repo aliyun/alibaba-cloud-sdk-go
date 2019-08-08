@@ -76,13 +76,21 @@ func (client *Client) DescribeDeployedApisWithCallback(request *DescribeDeployed
 // DescribeDeployedApisRequest is the request struct for api DescribeDeployedApis
 type DescribeDeployedApisRequest struct {
 	*requests.RpcRequest
-	StageName     string           `position:"Query" name:"StageName"`
-	ApiName       string           `position:"Query" name:"ApiName"`
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
-	GroupId       string           `position:"Query" name:"GroupId"`
-	PageSize      requests.Integer `position:"Query" name:"PageSize"`
-	ApiId         string           `position:"Query" name:"ApiId"`
-	PageNumber    requests.Integer `position:"Query" name:"PageNumber"`
+	StageName     string                     `position:"Query" name:"StageName"`
+	ApiName       string                     `position:"Query" name:"ApiName"`
+	SecurityToken string                     `position:"Query" name:"SecurityToken"`
+	GroupId       string                     `position:"Query" name:"GroupId"`
+	PageSize      requests.Integer           `position:"Query" name:"PageSize"`
+	Tag           *[]DescribeDeployedApisTag `position:"Query" name:"Tag"  type:"Repeated"`
+	EnableTagAuth requests.Boolean           `position:"Query" name:"EnableTagAuth"`
+	ApiId         string                     `position:"Query" name:"ApiId"`
+	PageNumber    requests.Integer           `position:"Query" name:"PageNumber"`
+}
+
+// DescribeDeployedApisTag is a repeated param struct in DescribeDeployedApisRequest
+type DescribeDeployedApisTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // DescribeDeployedApisResponse is the response struct for api DescribeDeployedApis

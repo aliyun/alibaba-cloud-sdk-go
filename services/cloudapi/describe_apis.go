@@ -76,14 +76,22 @@ func (client *Client) DescribeApisWithCallback(request *DescribeApisRequest, cal
 // DescribeApisRequest is the request struct for api DescribeApis
 type DescribeApisRequest struct {
 	*requests.RpcRequest
-	ApiName       string           `position:"Query" name:"ApiName"`
-	CatalogId     string           `position:"Query" name:"CatalogId"`
-	Visibility    string           `position:"Query" name:"Visibility"`
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
-	GroupId       string           `position:"Query" name:"GroupId"`
-	PageSize      requests.Integer `position:"Query" name:"PageSize"`
-	ApiId         string           `position:"Query" name:"ApiId"`
-	PageNumber    requests.Integer `position:"Query" name:"PageNumber"`
+	ApiName       string             `position:"Query" name:"ApiName"`
+	CatalogId     string             `position:"Query" name:"CatalogId"`
+	Visibility    string             `position:"Query" name:"Visibility"`
+	SecurityToken string             `position:"Query" name:"SecurityToken"`
+	GroupId       string             `position:"Query" name:"GroupId"`
+	PageSize      requests.Integer   `position:"Query" name:"PageSize"`
+	Tag           *[]DescribeApisTag `position:"Query" name:"Tag"  type:"Repeated"`
+	EnableTagAuth requests.Boolean   `position:"Query" name:"EnableTagAuth"`
+	ApiId         string             `position:"Query" name:"ApiId"`
+	PageNumber    requests.Integer   `position:"Query" name:"PageNumber"`
+}
+
+// DescribeApisTag is a repeated param struct in DescribeApisRequest
+type DescribeApisTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // DescribeApisResponse is the response struct for api DescribeApis

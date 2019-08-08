@@ -81,6 +81,7 @@ type DescribeAppAttributesRequest struct {
 	AppId         requests.Integer            `position:"Query" name:"AppId"`
 	PageSize      requests.Integer            `position:"Query" name:"PageSize"`
 	Tag           *[]DescribeAppAttributesTag `position:"Query" name:"Tag"  type:"Repeated"`
+	EnableTagAuth requests.Boolean            `position:"Query" name:"EnableTagAuth"`
 	PageNumber    requests.Integer            `position:"Query" name:"PageNumber"`
 }
 
