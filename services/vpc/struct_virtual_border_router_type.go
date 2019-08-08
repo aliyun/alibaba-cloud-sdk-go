@@ -37,6 +37,11 @@ type VirtualBorderRouterType struct {
 	AccessPointId                    string                                       `json:"AccessPointId" xml:"AccessPointId"`
 	Name                             string                                       `json:"Name" xml:"Name"`
 	Description                      string                                       `json:"Description" xml:"Description"`
+	EccId                            string                                       `json:"EccId" xml:"EccId"`
+	Type                             string                                       `json:"Type" xml:"Type"`
+	MinTxInterval                    int64                                        `json:"MinTxInterval" xml:"MinTxInterval"`
+	MinRxInterval                    int64                                        `json:"MinRxInterval" xml:"MinRxInterval"`
+	DetectMultiplier                 int64                                        `json:"DetectMultiplier" xml:"DetectMultiplier"`
 	AssociatedPhysicalConnections    AssociatedPhysicalConnections                `json:"AssociatedPhysicalConnections" xml:"AssociatedPhysicalConnections"`
 	AssociatedCens                   AssociatedCensInDescribeVirtualBorderRouters `json:"AssociatedCens" xml:"AssociatedCens"`
 }

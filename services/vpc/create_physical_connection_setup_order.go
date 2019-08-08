@@ -91,8 +91,9 @@ type CreatePhysicalConnectionSetupOrderRequest struct {
 // CreatePhysicalConnectionSetupOrderResponse is the response struct for api CreatePhysicalConnectionSetupOrder
 type CreatePhysicalConnectionSetupOrderResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	OrderId   string `json:"OrderId" xml:"OrderId"`
+	RequestId            string `json:"RequestId" xml:"RequestId"`
+	OrderId              string `json:"OrderId" xml:"OrderId"`
+	PhysicalConnectionId string `json:"PhysicalConnectionId" xml:"PhysicalConnectionId"`
 }
 
 // CreateCreatePhysicalConnectionSetupOrderRequest creates a request to invoke CreatePhysicalConnectionSetupOrder API

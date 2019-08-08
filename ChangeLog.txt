@@ -1,3 +1,6 @@
+2019-08-08 Version: 1.60.95
+- Supported DryRun for Vpc and VSwitch.
+
 2019-08-08 Version: 1.60.94
 - Add CreateStorageSet api to support storageSet.
 - Add DeleteStorageSet api to support storageSet.

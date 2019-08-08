@@ -86,6 +86,7 @@ type ModifyVpnRouteEntryWeightRequest struct {
 	NewWeight            requests.Integer `position:"Query" name:"NewWeight"`
 	RouteDest            string           `position:"Query" name:"RouteDest"`
 	NextHop              string           `position:"Query" name:"NextHop"`
+	OverlayMode          string           `position:"Query" name:"OverlayMode"`
 }
 
 // ModifyVpnRouteEntryWeightResponse is the response struct for api ModifyVpnRouteEntryWeight

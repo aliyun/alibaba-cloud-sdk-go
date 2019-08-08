@@ -86,10 +86,13 @@ type ModifyVirtualBorderRouterAttributeRequest struct {
 	Description                   string           `position:"Query" name:"Description"`
 	VbrId                         string           `position:"Query" name:"VbrId"`
 	OwnerId                       requests.Integer `position:"Query" name:"OwnerId"`
+	MinRxInterval                 requests.Integer `position:"Query" name:"MinRxInterval"`
 	PeerGatewayIp                 string           `position:"Query" name:"PeerGatewayIp"`
+	DetectMultiplier              requests.Integer `position:"Query" name:"DetectMultiplier"`
 	PeeringSubnetMask             string           `position:"Query" name:"PeeringSubnetMask"`
 	Name                          string           `position:"Query" name:"Name"`
 	LocalGatewayIp                string           `position:"Query" name:"LocalGatewayIp"`
+	MinTxInterval                 requests.Integer `position:"Query" name:"MinTxInterval"`
 }
 
 // ModifyVirtualBorderRouterAttributeResponse is the response struct for api ModifyVirtualBorderRouterAttribute

@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// CreateBgpPeer invokes the vpc.CreateBgpPeer API synchronously
-// api document: https://help.aliyun.com/api/vpc/createbgppeer.html
-func (client *Client) CreateBgpPeer(request *CreateBgpPeerRequest) (response *CreateBgpPeerResponse, err error) {
-	response = CreateCreateBgpPeerResponse()
+// ModifyBgpPeerAttribute invokes the vpc.ModifyBgpPeerAttribute API synchronously
+// api document: https://help.aliyun.com/api/vpc/modifybgppeerattribute.html
+func (client *Client) ModifyBgpPeerAttribute(request *ModifyBgpPeerAttributeRequest) (response *ModifyBgpPeerAttributeResponse, err error) {
+	response = CreateModifyBgpPeerAttributeResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// CreateBgpPeerWithChan invokes the vpc.CreateBgpPeer API asynchronously
-// api document: https://help.aliyun.com/api/vpc/createbgppeer.html
+// ModifyBgpPeerAttributeWithChan invokes the vpc.ModifyBgpPeerAttribute API asynchronously
+// api document: https://help.aliyun.com/api/vpc/modifybgppeerattribute.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) CreateBgpPeerWithChan(request *CreateBgpPeerRequest) (<-chan *CreateBgpPeerResponse, <-chan error) {
-	responseChan := make(chan *CreateBgpPeerResponse, 1)
+func (client *Client) ModifyBgpPeerAttributeWithChan(request *ModifyBgpPeerAttributeRequest) (<-chan *ModifyBgpPeerAttributeResponse, <-chan error) {
+	responseChan := make(chan *ModifyBgpPeerAttributeResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.CreateBgpPeer(request)
+		response, err := client.ModifyBgpPeerAttribute(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) CreateBgpPeerWithChan(request *CreateBgpPeerRequest) (<-ch
 	return responseChan, errChan
 }
 
-// CreateBgpPeerWithCallback invokes the vpc.CreateBgpPeer API asynchronously
-// api document: https://help.aliyun.com/api/vpc/createbgppeer.html
+// ModifyBgpPeerAttributeWithCallback invokes the vpc.ModifyBgpPeerAttribute API asynchronously
+// api document: https://help.aliyun.com/api/vpc/modifybgppeerattribute.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) CreateBgpPeerWithCallback(request *CreateBgpPeerRequest, callback func(response *CreateBgpPeerResponse, err error)) <-chan int {
+func (client *Client) ModifyBgpPeerAttributeWithCallback(request *ModifyBgpPeerAttributeRequest, callback func(response *ModifyBgpPeerAttributeResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *CreateBgpPeerResponse
+		var response *ModifyBgpPeerAttributeResponse
 		var err error
 		defer close(result)
-		response, err = client.CreateBgpPeer(request)
+		response, err = client.ModifyBgpPeerAttribute(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,8 +73,8 @@ func (client *Client) CreateBgpPeerWithCallback(request *CreateBgpPeerRequest, c
 	return result
 }
 
-// CreateBgpPeerRequest is the request struct for api CreateBgpPeer
-type CreateBgpPeerRequest struct {
+// ModifyBgpPeerAttributeRequest is the request struct for api ModifyBgpPeerAttribute
+type ModifyBgpPeerAttributeRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	EnableBfd            requests.Boolean `position:"Query" name:"EnableBfd"`
@@ -82,29 +82,29 @@ type CreateBgpPeerRequest struct {
 	ClientToken          string           `position:"Query" name:"ClientToken"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	BgpGroupId           string           `position:"Query" name:"BgpGroupId"`
+	BgpPeerId            string           `position:"Query" name:"BgpPeerId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	PeerIpAddress        string           `position:"Query" name:"PeerIpAddress"`
 }
 
-// CreateBgpPeerResponse is the response struct for api CreateBgpPeer
-type CreateBgpPeerResponse struct {
+// ModifyBgpPeerAttributeResponse is the response struct for api ModifyBgpPeerAttribute
+type ModifyBgpPeerAttributeResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	BgpPeerId string `json:"BgpPeerId" xml:"BgpPeerId"`
 }
 
-// CreateCreateBgpPeerRequest creates a request to invoke CreateBgpPeer API
-func CreateCreateBgpPeerRequest() (request *CreateBgpPeerRequest) {
-	request = &CreateBgpPeerRequest{
+// CreateModifyBgpPeerAttributeRequest creates a request to invoke ModifyBgpPeerAttribute API
+func CreateModifyBgpPeerAttributeRequest() (request *ModifyBgpPeerAttributeRequest) {
+	request = &ModifyBgpPeerAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "CreateBgpPeer", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "ModifyBgpPeerAttribute", "vpc", "openAPI")
 	return
 }
 
-// CreateCreateBgpPeerResponse creates a response to parse from CreateBgpPeer response
-func CreateCreateBgpPeerResponse() (response *CreateBgpPeerResponse) {
-	response = &CreateBgpPeerResponse{
+// CreateModifyBgpPeerAttributeResponse creates a response to parse from ModifyBgpPeerAttribute response
+func CreateModifyBgpPeerAttributeResponse() (response *ModifyBgpPeerAttributeResponse) {
+	response = &ModifyBgpPeerAttributeResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

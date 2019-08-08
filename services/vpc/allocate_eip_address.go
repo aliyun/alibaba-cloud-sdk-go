@@ -85,6 +85,7 @@ type AllocateEipAddressRequest struct {
 	ISP                  string           `position:"Query" name:"ISP"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ActivityId           requests.Integer `position:"Query" name:"ActivityId"`
 	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	InternetChargeType   string           `position:"Query" name:"InternetChargeType"`
 	Netmode              string           `position:"Query" name:"Netmode"`

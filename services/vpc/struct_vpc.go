@@ -29,6 +29,7 @@ type Vpc struct {
 	IsDefault       bool                     `json:"IsDefault" xml:"IsDefault"`
 	NetworkAclNum   string                   `json:"NetworkAclNum" xml:"NetworkAclNum"`
 	ResourceGroupId string                   `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	CenStatus       string                   `json:"CenStatus" xml:"CenStatus"`
 	VSwitchIds      VSwitchIdsInDescribeVpcs `json:"VSwitchIds" xml:"VSwitchIds"`
 	UserCidrs       UserCidrsInDescribeVpcs  `json:"UserCidrs" xml:"UserCidrs"`
 	NatGatewayIds   NatGatewayIds            `json:"NatGatewayIds" xml:"NatGatewayIds"`

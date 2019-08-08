@@ -77,6 +77,7 @@ func (client *Client) DescribeVpcsWithCallback(request *DescribeVpcsRequest, cal
 type DescribeVpcsRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer   `position:"Query" name:"ResourceOwnerId"`
+	DryRun               requests.Boolean   `position:"Query" name:"DryRun"`
 	ResourceOwnerAccount string             `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string             `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer   `position:"Query" name:"OwnerId"`
