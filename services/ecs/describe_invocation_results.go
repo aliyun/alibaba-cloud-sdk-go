@@ -86,6 +86,7 @@ type DescribeInvocationResultsRequest struct {
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
 	InvokeRecordStatus   string           `position:"Query" name:"InvokeRecordStatus"`
+	IncludeHistory       requests.Boolean `position:"Query" name:"IncludeHistory"`
 }
 
 // DescribeInvocationResultsResponse is the response struct for api DescribeInvocationResults

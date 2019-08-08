@@ -120,11 +120,11 @@ type DescribeDisksTag struct {
 // DescribeDisksResponse is the response struct for api DescribeDisks
 type DescribeDisksResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
-	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int    `json:"PageSize" xml:"PageSize"`
-	Disks      Disks  `json:"Disks" xml:"Disks"`
+	RequestId  string               `json:"RequestId" xml:"RequestId"`
+	TotalCount int                  `json:"TotalCount" xml:"TotalCount"`
+	PageNumber int                  `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int                  `json:"PageSize" xml:"PageSize"`
+	Disks      DisksInDescribeDisks `json:"Disks" xml:"Disks"`
 }
 
 // CreateDescribeDisksRequest creates a request to invoke DescribeDisks API

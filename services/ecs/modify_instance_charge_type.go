@@ -87,14 +87,16 @@ type ModifyInstanceChargeTypeRequest struct {
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	PeriodUnit           string           `position:"Query" name:"PeriodUnit"`
 	InstanceIds          string           `position:"Query" name:"InstanceIds"`
+	IsDetailFee          requests.Boolean `position:"Query" name:"IsDetailFee"`
 	InstanceChargeType   string           `position:"Query" name:"InstanceChargeType"`
 }
 
 // ModifyInstanceChargeTypeResponse is the response struct for api ModifyInstanceChargeType
 type ModifyInstanceChargeTypeResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	OrderId   string `json:"OrderId" xml:"OrderId"`
+	RequestId      string         `json:"RequestId" xml:"RequestId"`
+	OrderId        string         `json:"OrderId" xml:"OrderId"`
+	FeeOfInstances FeeOfInstances `json:"FeeOfInstances" xml:"FeeOfInstances"`
 }
 
 // CreateModifyInstanceChargeTypeRequest creates a request to invoke ModifyInstanceChargeType API

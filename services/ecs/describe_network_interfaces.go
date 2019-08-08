@@ -89,6 +89,7 @@ type DescribeNetworkInterfacesRequest struct {
 	OwnerAccount         string                          `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer                `position:"Query" name:"OwnerId"`
 	VSwitchId            string                          `position:"Query" name:"VSwitchId"`
+	PrivateIpAddress     *[]string                       `position:"Query" name:"PrivateIpAddress"  type:"Repeated"`
 	InstanceId           string                          `position:"Query" name:"InstanceId"`
 	VpcId                string                          `position:"Query" name:"VpcId"`
 	PrimaryIpAddress     string                          `position:"Query" name:"PrimaryIpAddress"`

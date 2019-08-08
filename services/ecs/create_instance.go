@@ -85,6 +85,7 @@ type CreateInstanceRequest struct {
 	ResourceGroupId               string                    `position:"Query" name:"ResourceGroupId"`
 	HostName                      string                    `position:"Query" name:"HostName"`
 	Password                      string                    `position:"Query" name:"Password"`
+	StorageSetPartitionNumber     requests.Integer          `position:"Query" name:"StorageSetPartitionNumber"`
 	Tag                           *[]CreateInstanceTag      `position:"Query" name:"Tag"  type:"Repeated"`
 	AutoRenewPeriod               requests.Integer          `position:"Query" name:"AutoRenewPeriod"`
 	NodeControllerId              string                    `position:"Query" name:"NodeControllerId"`
@@ -130,6 +131,7 @@ type CreateInstanceRequest struct {
 	ClusterId                     string                    `position:"Query" name:"ClusterId"`
 	CreditSpecification           string                    `position:"Query" name:"CreditSpecification"`
 	DataDisk                      *[]CreateInstanceDataDisk `position:"Query" name:"DataDisk"  type:"Repeated"`
+	StorageSetId                  string                    `position:"Query" name:"StorageSetId"`
 	SystemDiskSize                requests.Integer          `position:"Query" name:"SystemDisk.Size"`
 	SystemDiskDescription         string                    `position:"Query" name:"SystemDisk.Description"`
 }

@@ -81,11 +81,14 @@ type CreateSnapshotRequest struct {
 	ClientToken          string               `position:"Query" name:"ClientToken"`
 	OwnerAccount         string               `position:"Query" name:"OwnerAccount"`
 	Description          string               `position:"Query" name:"Description"`
-	DiskId               string               `position:"Query" name:"DiskId"`
 	SnapshotName         string               `position:"Query" name:"SnapshotName"`
+	OwnerId              requests.Integer     `position:"Query" name:"OwnerId"`
+	SourceSnapshotId     string               `position:"Query" name:"SourceSnapshotId"`
+	RemoveSourceSnapshot requests.Boolean     `position:"Query" name:"RemoveSourceSnapshot"`
+	DiskId               string               `position:"Query" name:"DiskId"`
 	RetentionDays        requests.Integer     `position:"Query" name:"RetentionDays"`
 	Tag                  *[]CreateSnapshotTag `position:"Query" name:"Tag"  type:"Repeated"`
-	OwnerId              requests.Integer     `position:"Query" name:"OwnerId"`
+	Category             string               `position:"Query" name:"Category"`
 }
 
 // CreateSnapshotTag is a repeated param struct in CreateSnapshotRequest

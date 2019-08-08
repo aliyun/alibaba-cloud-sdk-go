@@ -82,18 +82,20 @@ type RunInstancesRequest struct {
 	HpcClusterId                  string                          `position:"Query" name:"HpcClusterId"`
 	SecurityEnhancementStrategy   string                          `position:"Query" name:"SecurityEnhancementStrategy"`
 	KeyPairName                   string                          `position:"Query" name:"KeyPairName"`
-	MinAmount                     requests.Integer                `position:"Query" name:"MinAmount"`
 	SpotPriceLimit                requests.Float                  `position:"Query" name:"SpotPriceLimit"`
 	DeletionProtection            requests.Boolean                `position:"Query" name:"DeletionProtection"`
 	ResourceGroupId               string                          `position:"Query" name:"ResourceGroupId"`
 	HostName                      string                          `position:"Query" name:"HostName"`
 	Password                      string                          `position:"Query" name:"Password"`
+	StorageSetPartitionNumber     requests.Integer                `position:"Query" name:"StorageSetPartitionNumber"`
 	Tag                           *[]RunInstancesTag              `position:"Query" name:"Tag"  type:"Repeated"`
 	AutoRenewPeriod               requests.Integer                `position:"Query" name:"AutoRenewPeriod"`
+	CpuOptionsCore                requests.Integer                `position:"Query" name:"CpuOptions.Core"`
 	Period                        requests.Integer                `position:"Query" name:"Period"`
 	DryRun                        requests.Boolean                `position:"Query" name:"DryRun"`
 	LaunchTemplateId              string                          `position:"Query" name:"LaunchTemplateId"`
 	Ipv6AddressCount              requests.Integer                `position:"Query" name:"Ipv6AddressCount"`
+	CpuOptionsNuma                string                          `position:"Query" name:"CpuOptions.Numa"`
 	OwnerId                       requests.Integer                `position:"Query" name:"OwnerId"`
 	CapacityReservationPreference string                          `position:"Query" name:"CapacityReservationPreference"`
 	VSwitchId                     string                          `position:"Query" name:"VSwitchId"`
@@ -114,6 +116,7 @@ type RunInstancesRequest struct {
 	SecurityGroupId               string                          `position:"Query" name:"SecurityGroupId"`
 	InternetMaxBandwidthOut       requests.Integer                `position:"Query" name:"InternetMaxBandwidthOut"`
 	Description                   string                          `position:"Query" name:"Description"`
+	CpuOptionsThreadsPerCore      requests.Integer                `position:"Query" name:"CpuOptions.ThreadsPerCore"`
 	SystemDiskCategory            string                          `position:"Query" name:"SystemDisk.Category"`
 	CapacityReservationId         string                          `position:"Query" name:"CapacityReservationId"`
 	SystemDiskPerformanceLevel    string                          `position:"Query" name:"SystemDisk.PerformanceLevel"`
@@ -134,8 +137,10 @@ type RunInstancesRequest struct {
 	DedicatedHostId               string                          `position:"Query" name:"DedicatedHostId"`
 	CreditSpecification           string                          `position:"Query" name:"CreditSpecification"`
 	SecurityGroupIds              *[]string                       `position:"Query" name:"SecurityGroupIds"  type:"Repeated"`
+	SpotDuration                  requests.Integer                `position:"Query" name:"SpotDuration"`
 	DataDisk                      *[]RunInstancesDataDisk         `position:"Query" name:"DataDisk"  type:"Repeated"`
 	LaunchTemplateVersion         requests.Integer                `position:"Query" name:"LaunchTemplateVersion"`
+	StorageSetId                  string                          `position:"Query" name:"StorageSetId"`
 	SystemDiskSize                string                          `position:"Query" name:"SystemDisk.Size"`
 	SystemDiskDescription         string                          `position:"Query" name:"SystemDisk.Description"`
 }
