@@ -1,3 +1,6 @@
+2019-08-12 Version: 1.60.97
+- Supported create routeEntry with routeEntryName.
+
 2019-08-12 Version: 1.60.96
 - Support Defect Face API.
 

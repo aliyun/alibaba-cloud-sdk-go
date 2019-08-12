@@ -17,12 +17,13 @@ package vpc
 
 // NextHop is a nested struct in vpc response
 type NextHop struct {
-	NextHopType              string `json:"NextHopType" xml:"NextHopType"`
-	NextHopId                string `json:"NextHopId" xml:"NextHopId"`
-	Enabled                  int    `json:"Enabled" xml:"Enabled"`
-	Weight                   int    `json:"Weight" xml:"Weight"`
-	NextHopRegionId          string `json:"NextHopRegionId" xml:"NextHopRegionId"`
-	NextHopOppsiteType       string `json:"NextHopOppsiteType" xml:"NextHopOppsiteType"`
-	NextHopOppsiteInstanceId string `json:"NextHopOppsiteInstanceId" xml:"NextHopOppsiteInstanceId"`
-	NextHopOppsiteRegionId   string `json:"NextHopOppsiteRegionId" xml:"NextHopOppsiteRegionId"`
+	NextHopId                string             `json:"NextHopId" xml:"NextHopId"`
+	NextHopOppsiteInstanceId string             `json:"NextHopOppsiteInstanceId" xml:"NextHopOppsiteInstanceId"`
+	NextHopType              string             `json:"NextHopType" xml:"NextHopType"`
+	Enabled                  int                `json:"Enabled" xml:"Enabled"`
+	Weight                   int                `json:"Weight" xml:"Weight"`
+	NextHopRegionId          string             `json:"NextHopRegionId" xml:"NextHopRegionId"`
+	NextHopOppsiteType       string             `json:"NextHopOppsiteType" xml:"NextHopOppsiteType"`
+	NextHopOppsiteRegionId   string             `json:"NextHopOppsiteRegionId" xml:"NextHopOppsiteRegionId"`
+	NextHopRelatedInfo       NextHopRelatedInfo `json:"NextHopRelatedInfo" xml:"NextHopRelatedInfo"`
 }

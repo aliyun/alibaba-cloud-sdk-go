@@ -17,18 +17,19 @@ package vpc
 
 // RouteEntry is a nested struct in vpc response
 type RouteEntry struct {
-	RouteTableId             string   `json:"RouteTableId" xml:"RouteTableId"`
-	DestinationCidrBlock     string   `json:"DestinationCidrBlock" xml:"DestinationCidrBlock"`
-	Type                     string   `json:"Type" xml:"Type"`
-	Status                   string   `json:"Status" xml:"Status"`
-	InstanceId               string   `json:"InstanceId" xml:"InstanceId"`
-	NextHopType              string   `json:"NextHopType" xml:"NextHopType"`
-	RouteEntryName           string   `json:"RouteEntryName" xml:"RouteEntryName"`
-	RouteEntryId             string   `json:"RouteEntryId" xml:"RouteEntryId"`
-	NextHopRegionId          string   `json:"NextHopRegionId" xml:"NextHopRegionId"`
-	NextHopOppsiteType       string   `json:"NextHopOppsiteType" xml:"NextHopOppsiteType"`
-	NextHopOppsiteInstanceId string   `json:"NextHopOppsiteInstanceId" xml:"NextHopOppsiteInstanceId"`
-	NextHopOppsiteRegionId   string   `json:"NextHopOppsiteRegionId" xml:"NextHopOppsiteRegionId"`
-	PrivateIpAddress         string   `json:"PrivateIpAddress" xml:"PrivateIpAddress"`
-	NextHops                 NextHops `json:"NextHops" xml:"NextHops"`
+	PrivateIpAddress         string                        `json:"PrivateIpAddress" xml:"PrivateIpAddress"`
+	NextHopOppsiteInstanceId string                        `json:"NextHopOppsiteInstanceId" xml:"NextHopOppsiteInstanceId"`
+	NextHopType              string                        `json:"NextHopType" xml:"NextHopType"`
+	IpVersion                string                        `json:"IpVersion" xml:"IpVersion"`
+	RouteTableId             string                        `json:"RouteTableId" xml:"RouteTableId"`
+	RouteEntryName           string                        `json:"RouteEntryName" xml:"RouteEntryName"`
+	InstanceId               string                        `json:"InstanceId" xml:"InstanceId"`
+	RouteEntryId             string                        `json:"RouteEntryId" xml:"RouteEntryId"`
+	Status                   string                        `json:"Status" xml:"Status"`
+	DestinationCidrBlock     string                        `json:"DestinationCidrBlock" xml:"DestinationCidrBlock"`
+	NextHopRegionId          string                        `json:"NextHopRegionId" xml:"NextHopRegionId"`
+	NextHopOppsiteType       string                        `json:"NextHopOppsiteType" xml:"NextHopOppsiteType"`
+	NextHopOppsiteRegionId   string                        `json:"NextHopOppsiteRegionId" xml:"NextHopOppsiteRegionId"`
+	Type                     string                        `json:"Type" xml:"Type"`
+	NextHops                 NextHopsInDescribeRouteTables `json:"NextHops" xml:"NextHops"`
 }
