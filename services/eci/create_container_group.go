@@ -101,6 +101,7 @@ type CreateContainerGroupRequest struct {
 	Arn                     *[]CreateContainerGroupArn                     `position:"Query" name:"Arn" type:"Repeated"`
 	InstanceType            string                                         `position:"Query" name:"InstanceType"`
 	SlsEnable               requests.Boolean                               `position:"Query" name:"SlsEnable"`
+	ImageSnapshotId         string                                         `position:"Query" name:"ImageSnapshotId"`
 	DnsConfig               CreateContainerGroupDnsConfig                  `position:"Query" name:"DnsConfig" type:"Struct"`
 	SecurityContext         CreateContainerGroupSecurityContext            `position:"Query" name:"SecurityContext" type:"Struct"`
 }
