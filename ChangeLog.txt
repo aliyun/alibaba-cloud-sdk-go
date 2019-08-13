@@ -1,3 +1,6 @@
+2019-08-13 Version: 1.60.98
+- Generated 2018-07-20 for `ddosbgp`.
+
 2019-08-12 Version: 1.60.97
 - Supported create routeEntry with routeEntryName.
 
