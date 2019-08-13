@@ -1,3 +1,7 @@
+2019-08-13 Version: 1.60.101
+- Optimize return code.
+- Edit QueryDataset.
+
 2019-08-13 Version: 1.60.100
 - Supported for openapi new version.
 
