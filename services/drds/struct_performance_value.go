@@ -18,5 +18,5 @@ package drds
 // PerformanceValue is a nested struct in drds response
 type PerformanceValue struct {
 	Value string `json:"Value" xml:"Value"`
-	Date  int    `json:"Date" xml:"Date"`
+	Date  int64  `json:"Date" xml:"Date"`
 }

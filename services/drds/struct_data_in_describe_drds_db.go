@@ -18,8 +18,10 @@ package drds
 // DataInDescribeDrdsDB is a nested struct in drds response
 type DataInDescribeDrdsDB struct {
 	DbName     string `json:"DbName" xml:"DbName"`
-	Status     int    `json:"Status" xml:"Status"`
+	Status     string `json:"Status" xml:"Status"`
 	CreateTime string `json:"CreateTime" xml:"CreateTime"`
-	Msg        string `json:"Msg" xml:"Msg"`
 	Mode       string `json:"Mode" xml:"Mode"`
+	Schema     string `json:"Schema" xml:"Schema"`
+	DbInstType string `json:"DbInstType" xml:"DbInstType"`
+	InstRole   string `json:"InstRole" xml:"InstRole"`
 }

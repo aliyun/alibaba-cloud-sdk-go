@@ -76,15 +76,28 @@ func (client *Client) DescribeDrdsInstancesWithCallback(request *DescribeDrdsIns
 // DescribeDrdsInstancesRequest is the request struct for api DescribeDrdsInstances
 type DescribeDrdsInstancesRequest struct {
 	*requests.RpcRequest
-	Type string `position:"Query" name:"Type"`
+	Expired     requests.Boolean            `position:"Query" name:"Expired"`
+	PageSize    requests.Integer            `position:"Query" name:"PageSize"`
+	Description string                      `position:"Query" name:"Description"`
+	Tag         *[]DescribeDrdsInstancesTag `position:"Query" name:"Tag"  type:"Repeated"`
+	Type        string                      `position:"Query" name:"Type"`
+	PageNumber  requests.Integer            `position:"Query" name:"PageNumber"`
+}
+
+// DescribeDrdsInstancesTag is a repeated param struct in DescribeDrdsInstancesRequest
+type DescribeDrdsInstancesTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // DescribeDrdsInstancesResponse is the response struct for api DescribeDrdsInstances
 type DescribeDrdsInstancesResponse struct {
 	*responses.BaseResponse
-	RequestId string                      `json:"RequestId" xml:"RequestId"`
-	Success   bool                        `json:"Success" xml:"Success"`
-	Data      DataInDescribeDrdsInstances `json:"Data" xml:"Data"`
+	RequestId  string    `json:"RequestId" xml:"RequestId"`
+	PageNumber int       `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int       `json:"PageSize" xml:"PageSize"`
+	Total      int       `json:"Total" xml:"Total"`
+	Instances  Instances `json:"Instances" xml:"Instances"`
 }
 
 // CreateDescribeDrdsInstancesRequest creates a request to invoke DescribeDrdsInstances API
@@ -92,7 +105,7 @@ func CreateDescribeDrdsInstancesRequest() (request *DescribeDrdsInstancesRequest
 	request = &DescribeDrdsInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2017-10-16", "DescribeDrdsInstances", "", "")
+	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeDrdsInstances", "drds", "openAPI")
 	return
 }
 

@@ -93,7 +93,7 @@ func CreateDescribeDrdsDBRequest() (request *DescribeDrdsDBRequest) {
 	request = &DescribeDrdsDBRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2017-10-16", "DescribeDrdsDB", "", "")
+	request.InitWithApiInfo("Drds", "2019-01-23", "DescribeDrdsDB", "drds", "openAPI")
 	return
 }
 

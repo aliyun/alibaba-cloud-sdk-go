@@ -1,3 +1,6 @@
+2019-08-13 Version: 1.60.99
+- Support latest DRDS Open API for version 2019-01-23.
+
 2019-08-13 Version: 1.60.98
 - Generated 2018-07-20 for `ddosbgp`.
 

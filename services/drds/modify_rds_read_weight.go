@@ -94,7 +94,7 @@ func CreateModifyRdsReadWeightRequest() (request *ModifyRdsReadWeightRequest) {
 	request = &ModifyRdsReadWeightRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2017-10-16", "ModifyRdsReadWeight", "", "")
+	request.InitWithApiInfo("Drds", "2019-01-23", "ModifyRdsReadWeight", "drds", "openAPI")
 	return
 }
 
