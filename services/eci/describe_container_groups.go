@@ -99,17 +99,13 @@ type DescribeContainerGroupsTag struct {
 // DescribeContainerGroupsResponse is the response struct for api DescribeContainerGroups
 type DescribeContainerGroupsResponse struct {
 	*responses.BaseResponse
-	RequestId       string                                    `json:"RequestId" xml:"RequestId"`
-	NextToken       string                                    `json:"NextToken" xml:"NextToken"`
-	TotalCount      int                                       `json:"TotalCount" xml:"TotalCount"`
-	ContainerGroups []DescribeContainerGroupsContainerGroups0 `json:"ContainerGroups" xml:"ContainerGroups"`
+	RequestId       string                                   `json:"RequestId" xml:"RequestId"`
+	NextToken       string                                   `json:"NextToken" xml:"NextToken"`
+	TotalCount      int                                      `json:"TotalCount" xml:"TotalCount"`
+	ContainerGroups []DescribeContainerGroupsContainerGroup0 `json:"ContainerGroups" xml:"ContainerGroups"`
 }
 
-type DescribeContainerGroupsContainerGroups0 struct {
-	ContainerGroup []DescribeContainerGroupsContainerGroup1 `json:"ContainerGroup" xml:"ContainerGroup"`
-}
-
-type DescribeContainerGroupsContainerGroup1 struct {
+type DescribeContainerGroupsContainerGroup0 struct {
 	ContainerGroupId   string                                     `json:"ContainerGroupId" xml:"ContainerGroupId"`
 	ContainerGroupName string                                     `json:"ContainerGroupName" xml:"ContainerGroupName"`
 	RegionId           string                                     `json:"RegionId" xml:"RegionId"`
@@ -128,30 +124,22 @@ type DescribeContainerGroupsContainerGroup1 struct {
 	InstanceType       string                                     `json:"InstanceType" xml:"InstanceType"`
 	ExpiredTime        string                                     `json:"ExpiredTime" xml:"ExpiredTime"`
 	FailedTime         string                                     `json:"FailedTime" xml:"FailedTime"`
-	Tags               []DescribeContainerGroupsTags1             `json:"Tags" xml:"Tags"`
-	Events             []DescribeContainerGroupsEvents1           `json:"Events" xml:"Events"`
-	Containers         []DescribeContainerGroupsContainers1       `json:"Containers" xml:"Containers"`
-	Volumes            []DescribeContainerGroupsVolumes1          `json:"Volumes" xml:"Volumes"`
-	InitContainers     []DescribeContainerGroupsInitContainers1   `json:"InitContainers" xml:"InitContainers"`
-	HostAliases        []DescribeContainerGroupsHostAliases1      `json:"HostAliases" xml:"HostAliases"`
+	Tags               []DescribeContainerGroupsLabel1            `json:"Tags" xml:"Tags"`
+	Events             []DescribeContainerGroupsEvent1            `json:"Events" xml:"Events"`
+	Containers         []DescribeContainerGroupsContainer1        `json:"Containers" xml:"Containers"`
+	Volumes            []DescribeContainerGroupsVolume1           `json:"Volumes" xml:"Volumes"`
+	InitContainers     []DescribeContainerGroupsContainer1        `json:"InitContainers" xml:"InitContainers"`
+	HostAliases        []DescribeContainerGroupsHostAliase1       `json:"HostAliases" xml:"HostAliases"`
 	DnsConfig          DescribeContainerGroupsDnsConfig1          `json:"DnsConfig" xml:"DnsConfig"`
 	EciSecurityContext DescribeContainerGroupsEciSecurityContext1 `json:"EciSecurityContext" xml:"EciSecurityContext"`
 }
 
-type DescribeContainerGroupsTags1 struct {
-	Label []DescribeContainerGroupsLabel2 `json:"Label" xml:"Label"`
-}
-
-type DescribeContainerGroupsLabel2 struct {
+type DescribeContainerGroupsLabel1 struct {
 	Key   string `json:"Key" xml:"Key"`
 	Value string `json:"Value" xml:"Value"`
 }
 
-type DescribeContainerGroupsEvents1 struct {
-	Event []DescribeContainerGroupsEvent2 `json:"Event" xml:"Event"`
-}
-
-type DescribeContainerGroupsEvent2 struct {
+type DescribeContainerGroupsEvent1 struct {
 	Count          int    `json:"Count" xml:"Count"`
 	Type           string `json:"Type" xml:"Type"`
 	Name           string `json:"Name" xml:"Name"`
@@ -161,56 +149,40 @@ type DescribeContainerGroupsEvent2 struct {
 	Reason         string `json:"Reason" xml:"Reason"`
 }
 
-type DescribeContainerGroupsContainers1 struct {
-	Container []DescribeContainerGroupsContainer2 `json:"Container" xml:"Container"`
+type DescribeContainerGroupsContainer1 struct {
+	Name            string                                   `json:"Name" xml:"Name"`
+	Image           string                                   `json:"Image" xml:"Image"`
+	Memory          float32                                  `json:"Memory" xml:"Memory"`
+	Cpu             float32                                  `json:"Cpu" xml:"Cpu"`
+	RestartCount    int                                      `json:"RestartCount" xml:"RestartCount"`
+	WorkingDir      string                                   `json:"WorkingDir" xml:"WorkingDir"`
+	ImagePullPolicy string                                   `json:"ImagePullPolicy" xml:"ImagePullPolicy"`
+	Ready           bool                                     `json:"Ready" xml:"Ready"`
+	Gpu             int                                      `json:"Gpu" xml:"Gpu"`
+	VolumeMounts    []DescribeContainerGroupsVolumeMount2    `json:"VolumeMounts" xml:"VolumeMounts"`
+	Ports           []DescribeContainerGroupsPort2           `json:"Ports" xml:"Ports"`
+	EnvironmentVars []DescribeContainerGroupsEnvironmentVar2 `json:"EnvironmentVars" xml:"EnvironmentVars"`
+	Commands        []string                                 `json:"Commands" xml:"Commands"`
+	Args            []string                                 `json:"Args" xml:"Args"`
+	PreviousState   DescribeContainerGroupsPreviousState2    `json:"PreviousState" xml:"PreviousState"`
+	CurrentState    DescribeContainerGroupsCurrentState2     `json:"CurrentState" xml:"CurrentState"`
+	ReadinessProbe  DescribeContainerGroupsReadinessProbe2   `json:"ReadinessProbe" xml:"ReadinessProbe"`
+	LivenessProbe   DescribeContainerGroupsLivenessProbe2    `json:"LivenessProbe" xml:"LivenessProbe"`
+	SecurityContext DescribeContainerGroupsSecurityContext2  `json:"SecurityContext" xml:"SecurityContext"`
 }
 
-type DescribeContainerGroupsContainer2 struct {
-	Name            string                                    `json:"Name" xml:"Name"`
-	Image           string                                    `json:"Image" xml:"Image"`
-	Memory          float32                                   `json:"Memory" xml:"Memory"`
-	Cpu             float32                                   `json:"Cpu" xml:"Cpu"`
-	RestartCount    int                                       `json:"RestartCount" xml:"RestartCount"`
-	WorkingDir      string                                    `json:"WorkingDir" xml:"WorkingDir"`
-	ImagePullPolicy string                                    `json:"ImagePullPolicy" xml:"ImagePullPolicy"`
-	Ready           bool                                      `json:"Ready" xml:"Ready"`
-	Gpu             int                                       `json:"Gpu" xml:"Gpu"`
-	VolumeMounts    []DescribeContainerGroupsVolumeMounts2    `json:"VolumeMounts" xml:"VolumeMounts"`
-	Ports           []DescribeContainerGroupsPorts2           `json:"Ports" xml:"Ports"`
-	EnvironmentVars []DescribeContainerGroupsEnvironmentVars2 `json:"EnvironmentVars" xml:"EnvironmentVars"`
-	Commands        []string                                  `json:"Commands" xml:"Commands"`
-	Args            []string                                  `json:"Args" xml:"Args"`
-	PreviousState   DescribeContainerGroupsPreviousState2     `json:"PreviousState" xml:"PreviousState"`
-	CurrentState    DescribeContainerGroupsCurrentState2      `json:"CurrentState" xml:"CurrentState"`
-	ReadinessProbe  DescribeContainerGroupsReadinessProbe2    `json:"ReadinessProbe" xml:"ReadinessProbe"`
-	LivenessProbe   DescribeContainerGroupsLivenessProbe2     `json:"LivenessProbe" xml:"LivenessProbe"`
-	SecurityContext DescribeContainerGroupsSecurityContext2   `json:"SecurityContext" xml:"SecurityContext"`
-}
-
-type DescribeContainerGroupsVolumeMounts2 struct {
-	VolumeMount []DescribeContainerGroupsVolumeMount3 `json:"VolumeMount" xml:"VolumeMount"`
-}
-
-type DescribeContainerGroupsVolumeMount3 struct {
+type DescribeContainerGroupsVolumeMount2 struct {
 	Name      string `json:"Name" xml:"Name"`
 	MountPath string `json:"MountPath" xml:"MountPath"`
 	ReadOnly  bool   `json:"ReadOnly" xml:"ReadOnly"`
 }
 
-type DescribeContainerGroupsPorts2 struct {
-	Port []DescribeContainerGroupsPort3 `json:"Port" xml:"Port"`
-}
-
-type DescribeContainerGroupsPort3 struct {
+type DescribeContainerGroupsPort2 struct {
 	Port     int    `json:"Port" xml:"Port"`
 	Protocol string `json:"Protocol" xml:"Protocol"`
 }
 
-type DescribeContainerGroupsEnvironmentVars2 struct {
-	EnvironmentVar []DescribeContainerGroupsEnvironmentVar3 `json:"EnvironmentVar" xml:"EnvironmentVar"`
-}
-
-type DescribeContainerGroupsEnvironmentVar3 struct {
+type DescribeContainerGroupsEnvironmentVar2 struct {
 	Key       string                            `json:"Key" xml:"Key"`
 	Value     string                            `json:"Value" xml:"Value"`
 	ValueFrom DescribeContainerGroupsValueFrom3 `json:"ValueFrom" xml:"ValueFrom"`
@@ -289,65 +261,41 @@ type DescribeContainerGroupsCapability3 struct {
 	Adds []string `json:"Adds" xml:"Adds"`
 }
 
-type DescribeContainerGroupsVolumes1 struct {
-	Volume []DescribeContainerGroupsVolume2 `json:"Volume" xml:"Volume"`
+type DescribeContainerGroupsVolume1 struct {
+	Type                              string                                                     `json:"Type" xml:"Type"`
+	Name                              string                                                     `json:"Name" xml:"Name"`
+	NFSVolumePath                     string                                                     `json:"NFSVolumePath" xml:"NFSVolumePath"`
+	NFSVolumeServer                   string                                                     `json:"NFSVolumeServer" xml:"NFSVolumeServer"`
+	NFSVolumeReadOnly                 bool                                                       `json:"NFSVolumeReadOnly" xml:"NFSVolumeReadOnly"`
+	ConfigFileVolumeConfigFileToPaths []DescribeContainerGroupsConfigFileVolumeConfigFileToPath2 `json:"ConfigFileVolumeConfigFileToPaths" xml:"ConfigFileVolumeConfigFileToPaths"`
 }
 
-type DescribeContainerGroupsVolume2 struct {
-	Type                              string                                                      `json:"Type" xml:"Type"`
-	Name                              string                                                      `json:"Name" xml:"Name"`
-	NFSVolumePath                     string                                                      `json:"NFSVolumePath" xml:"NFSVolumePath"`
-	NFSVolumeServer                   string                                                      `json:"NFSVolumeServer" xml:"NFSVolumeServer"`
-	NFSVolumeReadOnly                 bool                                                        `json:"NFSVolumeReadOnly" xml:"NFSVolumeReadOnly"`
-	ConfigFileVolumeConfigFileToPaths []DescribeContainerGroupsConfigFileVolumeConfigFileToPaths2 `json:"ConfigFileVolumeConfigFileToPaths" xml:"ConfigFileVolumeConfigFileToPaths"`
-}
-
-type DescribeContainerGroupsConfigFileVolumeConfigFileToPaths2 struct {
-	ConfigFileVolumeConfigFileToPath []DescribeContainerGroupsConfigFileVolumeConfigFileToPath3 `json:"ConfigFileVolumeConfigFileToPath" xml:"ConfigFileVolumeConfigFileToPath"`
-}
-
-type DescribeContainerGroupsConfigFileVolumeConfigFileToPath3 struct {
+type DescribeContainerGroupsConfigFileVolumeConfigFileToPath2 struct {
 	Content string `json:"Content" xml:"Content"`
 	Path    string `json:"Path" xml:"Path"`
 }
 
-type DescribeContainerGroupsInitContainers1 struct {
-	Container []DescribeContainerGroupsContainer2 `json:"Container" xml:"Container"`
-}
-
-type DescribeContainerGroupsHostAliases1 struct {
-	HostAliase []DescribeContainerGroupsHostAliase2 `json:"HostAliase" xml:"HostAliase"`
-}
-
-type DescribeContainerGroupsHostAliase2 struct {
+type DescribeContainerGroupsHostAliase1 struct {
 	Ip        string   `json:"Ip" xml:"Ip"`
 	Hostnames []string `json:"Hostnames" xml:"Hostnames"`
 }
 
 type DescribeContainerGroupsDnsConfig1 struct {
-	Options     []DescribeContainerGroupsOptions2 `json:"Options" xml:"Options"`
-	NameServers []string                          `json:"NameServers" xml:"NameServers"`
-	Searches    []string                          `json:"Searches" xml:"Searches"`
+	Options     []DescribeContainerGroupsOption2 `json:"Options" xml:"Options"`
+	NameServers []string                         `json:"NameServers" xml:"NameServers"`
+	Searches    []string                         `json:"Searches" xml:"Searches"`
 }
 
-type DescribeContainerGroupsOptions2 struct {
-	Option []DescribeContainerGroupsOption3 `json:"Option" xml:"Option"`
-}
-
-type DescribeContainerGroupsOption3 struct {
+type DescribeContainerGroupsOption2 struct {
 	Name  string `json:"Name" xml:"Name"`
 	Value string `json:"Value" xml:"Value"`
 }
 
 type DescribeContainerGroupsEciSecurityContext1 struct {
-	Sysctls []DescribeContainerGroupsSysctls2 `json:"Sysctls" xml:"Sysctls"`
+	Sysctls []DescribeContainerGroupsSysctl2 `json:"Sysctls" xml:"Sysctls"`
 }
 
-type DescribeContainerGroupsSysctls2 struct {
-	Sysctl []DescribeContainerGroupsSysctl3 `json:"Sysctl" xml:"Sysctl"`
-}
-
-type DescribeContainerGroupsSysctl3 struct {
+type DescribeContainerGroupsSysctl2 struct {
 	Name  string `json:"Name" xml:"Name"`
 	Value string `json:"Value" xml:"Value"`
 }

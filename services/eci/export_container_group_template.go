@@ -100,16 +100,12 @@ type ExportContainerGroupTemplateTemplate0 struct {
 	EipInstanceId      string                                 `json:"EipInstanceId" xml:"EipInstanceId"`
 	ContainerGroupName string                                 `json:"ContainerGroupName" xml:"ContainerGroupName"`
 	InstanceType       string                                 `json:"InstanceType" xml:"InstanceType"`
-	Tags               []ExportContainerGroupTemplateTags1    `json:"Tags" xml:"Tags"`
+	Tags               []ExportContainerGroupTemplateTag1     `json:"Tags" xml:"Tags"`
 	Resources          ExportContainerGroupTemplateResources1 `json:"Resources" xml:"Resources"`
 	Spec               ExportContainerGroupTemplateSpec1      `json:"Spec" xml:"Spec"`
 }
 
-type ExportContainerGroupTemplateTags1 struct {
-	Tag []ExportContainerGroupTemplateTag2 `json:"Tag" xml:"Tag"`
-}
-
-type ExportContainerGroupTemplateTag2 struct {
+type ExportContainerGroupTemplateTag1 struct {
 	Key   string `json:"Key" xml:"Key"`
 	Value string `json:"Value" xml:"Value"`
 }
@@ -120,20 +116,16 @@ type ExportContainerGroupTemplateResources1 struct {
 }
 
 type ExportContainerGroupTemplateSpec1 struct {
-	RestartPolicy   string                                        `json:"RestartPolicy" xml:"RestartPolicy"`
-	DnsPolicy       string                                        `json:"DnsPolicy" xml:"DnsPolicy"`
-	Volumes         []ExportContainerGroupTemplateVolumes2        `json:"Volumes" xml:"Volumes"`
-	InitContainers  []ExportContainerGroupTemplateInitContainers2 `json:"InitContainers" xml:"InitContainers"`
-	Containers      []ExportContainerGroupTemplateContainers2     `json:"Containers" xml:"Containers"`
-	DnsConfig       ExportContainerGroupTemplateDnsConfig2        `json:"DnsConfig" xml:"DnsConfig"`
-	SecurityContext ExportContainerGroupTemplateSecurityContext2  `json:"SecurityContext" xml:"SecurityContext"`
+	RestartPolicy   string                                       `json:"RestartPolicy" xml:"RestartPolicy"`
+	DnsPolicy       string                                       `json:"DnsPolicy" xml:"DnsPolicy"`
+	Volumes         []ExportContainerGroupTemplateVolume2        `json:"Volumes" xml:"Volumes"`
+	InitContainers  []ExportContainerGroupTemplateInitContainer2 `json:"InitContainers" xml:"InitContainers"`
+	Containers      []ExportContainerGroupTemplateContainers2    `json:"Containers" xml:"Containers"`
+	DnsConfig       ExportContainerGroupTemplateDnsConfig2       `json:"DnsConfig" xml:"DnsConfig"`
+	SecurityContext ExportContainerGroupTemplateSecurityContext2 `json:"SecurityContext" xml:"SecurityContext"`
 }
 
-type ExportContainerGroupTemplateVolumes2 struct {
-	Volume []ExportContainerGroupTemplateVolume3 `json:"Volume" xml:"Volume"`
-}
-
-type ExportContainerGroupTemplateVolume3 struct {
+type ExportContainerGroupTemplateVolume2 struct {
 	Name       string                                  `json:"Name" xml:"Name"`
 	ConfigFile ExportContainerGroupTemplateConfigFile3 `json:"ConfigFile" xml:"ConfigFile"`
 	EmptyDir   ExportContainerGroupTemplateEmptyDir3   `json:"EmptyDir" xml:"EmptyDir"`
@@ -141,15 +133,11 @@ type ExportContainerGroupTemplateVolume3 struct {
 }
 
 type ExportContainerGroupTemplateConfigFile3 struct {
-	DefaultMode int                                  `json:"DefaultMode" xml:"DefaultMode"`
-	Items       []ExportContainerGroupTemplateItems4 `json:"Items" xml:"Items"`
+	DefaultMode int                                 `json:"DefaultMode" xml:"DefaultMode"`
+	Items       []ExportContainerGroupTemplateItem4 `json:"Items" xml:"Items"`
 }
 
-type ExportContainerGroupTemplateItems4 struct {
-	Item []ExportContainerGroupTemplateItem5 `json:"Item" xml:"Item"`
-}
-
-type ExportContainerGroupTemplateItem5 struct {
+type ExportContainerGroupTemplateItem4 struct {
 	Mode    int    `json:"Mode" xml:"Mode"`
 	Path    string `json:"Path" xml:"Path"`
 	Content string `json:"Content" xml:"Content"`
@@ -165,11 +153,7 @@ type ExportContainerGroupTemplateNfs3 struct {
 	ReadOnly bool   `json:"ReadOnly" xml:"ReadOnly"`
 }
 
-type ExportContainerGroupTemplateInitContainers2 struct {
-	InitContainer []ExportContainerGroupTemplateInitContainer3 `json:"InitContainer" xml:"InitContainer"`
-}
-
-type ExportContainerGroupTemplateInitContainer3 struct {
+type ExportContainerGroupTemplateInitContainer2 struct {
 	Name            string                                       `json:"Name" xml:"Name"`
 	Image           string                                       `json:"Image" xml:"Image"`
 	ImagePullPolicy string                                       `json:"ImagePullPolicy" xml:"ImagePullPolicy"`
@@ -178,8 +162,8 @@ type ExportContainerGroupTemplateInitContainer3 struct {
 	Tty             bool                                         `json:"Tty" xml:"Tty"`
 	WorkingDir      string                                       `json:"WorkingDir" xml:"WorkingDir"`
 	Env             []ExportContainerGroupTemplateEnv3           `json:"Env" xml:"Env"`
-	Ports           []ExportContainerGroupTemplatePorts3         `json:"Ports" xml:"Ports"`
-	VolumeMounts    []ExportContainerGroupTemplateVolumeMounts3  `json:"VolumeMounts" xml:"VolumeMounts"`
+	Ports           []ExportContainerGroupTemplatePort3          `json:"Ports" xml:"Ports"`
+	VolumeMounts    []ExportContainerGroupTemplateVolumeMount3   `json:"VolumeMounts" xml:"VolumeMounts"`
 	Command         []string                                     `json:"Command" xml:"Command"`
 	Args            []string                                     `json:"Args" xml:"Args"`
 	SecurityContext ExportContainerGroupTemplateSecurityContext3 `json:"SecurityContext" xml:"SecurityContext"`
@@ -187,10 +171,6 @@ type ExportContainerGroupTemplateInitContainer3 struct {
 }
 
 type ExportContainerGroupTemplateEnv3 struct {
-	Env []ExportContainerGroupTemplateEnv4 `json:"Env" xml:"Env"`
-}
-
-type ExportContainerGroupTemplateEnv4 struct {
 	Name      string                                 `json:"Name" xml:"Name"`
 	Value     string                                 `json:"Value" xml:"Value"`
 	ValueFrom ExportContainerGroupTemplateValueFrom4 `json:"ValueFrom" xml:"ValueFrom"`
@@ -204,21 +184,13 @@ type ExportContainerGroupTemplateFieldRef5 struct {
 	FieldPath string `json:"FieldPath" xml:"FieldPath"`
 }
 
-type ExportContainerGroupTemplatePorts3 struct {
-	Port []ExportContainerGroupTemplatePort4 `json:"Port" xml:"Port"`
-}
-
-type ExportContainerGroupTemplatePort4 struct {
+type ExportContainerGroupTemplatePort3 struct {
 	Name          string `json:"Name" xml:"Name"`
 	Protocol      string `json:"Protocol" xml:"Protocol"`
 	ContainerPort int    `json:"ContainerPort" xml:"ContainerPort"`
 }
 
-type ExportContainerGroupTemplateVolumeMounts3 struct {
-	VolumeMount []ExportContainerGroupTemplateVolumeMount4 `json:"VolumeMount" xml:"VolumeMount"`
-}
-
-type ExportContainerGroupTemplateVolumeMount4 struct {
+type ExportContainerGroupTemplateVolumeMount3 struct {
 	Name      string `json:"Name" xml:"Name"`
 	SubPath   string `json:"SubPath" xml:"SubPath"`
 	MountPath string `json:"MountPath" xml:"MountPath"`
@@ -226,14 +198,10 @@ type ExportContainerGroupTemplateVolumeMount4 struct {
 }
 
 type ExportContainerGroupTemplateSecurityContext3 struct {
-	Sysctls []ExportContainerGroupTemplateSysctls4 `json:"Sysctls" xml:"Sysctls"`
+	Sysctls []ExportContainerGroupTemplateSysctl4 `json:"Sysctls" xml:"Sysctls"`
 }
 
-type ExportContainerGroupTemplateSysctls4 struct {
-	Sysctl []ExportContainerGroupTemplateSysctl5 `json:"Sysctl" xml:"Sysctl"`
-}
-
-type ExportContainerGroupTemplateSysctl5 struct {
+type ExportContainerGroupTemplateSysctl4 struct {
 	Name  string `json:"Name" xml:"Name"`
 	Value string `json:"Value" xml:"Value"`
 }
@@ -244,10 +212,6 @@ type ExportContainerGroupTemplateResources3 struct {
 }
 
 type ExportContainerGroupTemplateContainers2 struct {
-	Containers []ExportContainerGroupTemplateContainers3 `json:"Containers" xml:"Containers"`
-}
-
-type ExportContainerGroupTemplateContainers3 struct {
 	Name            string                                       `json:"Name" xml:"Name"`
 	Image           string                                       `json:"Image" xml:"Image"`
 	ImagePullPolicy string                                       `json:"ImagePullPolicy" xml:"ImagePullPolicy"`
@@ -256,8 +220,8 @@ type ExportContainerGroupTemplateContainers3 struct {
 	Tty             bool                                         `json:"Tty" xml:"Tty"`
 	WorkingDir      string                                       `json:"WorkingDir" xml:"WorkingDir"`
 	Env             []ExportContainerGroupTemplateEnv3           `json:"Env" xml:"Env"`
-	Ports           []ExportContainerGroupTemplatePorts3         `json:"Ports" xml:"Ports"`
-	VolumeMounts    []ExportContainerGroupTemplateVolumeMounts3  `json:"VolumeMounts" xml:"VolumeMounts"`
+	Ports           []ExportContainerGroupTemplatePort3          `json:"Ports" xml:"Ports"`
+	VolumeMounts    []ExportContainerGroupTemplateVolumeMount3   `json:"VolumeMounts" xml:"VolumeMounts"`
 	Command         []string                                     `json:"Command" xml:"Command"`
 	Args            []string                                     `json:"Args" xml:"Args"`
 	SecurityContext ExportContainerGroupTemplateSecurityContext3 `json:"SecurityContext" xml:"SecurityContext"`
@@ -303,29 +267,21 @@ type ExportContainerGroupTemplateLivenessProbe3 struct {
 }
 
 type ExportContainerGroupTemplateDnsConfig2 struct {
-	Options     []ExportContainerGroupTemplateOptions3 `json:"Options" xml:"Options"`
-	NameServers []string                               `json:"NameServers" xml:"NameServers"`
-	Searches    []string                               `json:"Searches" xml:"Searches"`
+	Options     []ExportContainerGroupTemplateOption3 `json:"Options" xml:"Options"`
+	NameServers []string                              `json:"NameServers" xml:"NameServers"`
+	Searches    []string                              `json:"Searches" xml:"Searches"`
 }
 
-type ExportContainerGroupTemplateOptions3 struct {
-	Option []ExportContainerGroupTemplateOption4 `json:"Option" xml:"Option"`
-}
-
-type ExportContainerGroupTemplateOption4 struct {
+type ExportContainerGroupTemplateOption3 struct {
 	Name  string `json:"Name" xml:"Name"`
 	Value string `json:"Value" xml:"Value"`
 }
 
 type ExportContainerGroupTemplateSecurityContext2 struct {
-	Sysctls []ExportContainerGroupTemplateSysctls3 `json:"Sysctls" xml:"Sysctls"`
+	Sysctls []ExportContainerGroupTemplateSysctl3 `json:"Sysctls" xml:"Sysctls"`
 }
 
-type ExportContainerGroupTemplateSysctls3 struct {
-	Sysctl []ExportContainerGroupTemplateSysctl4 `json:"Sysctl" xml:"Sysctl"`
-}
-
-type ExportContainerGroupTemplateSysctl4 struct {
+type ExportContainerGroupTemplateSysctl3 struct {
 	Name  string `json:"Name" xml:"Name"`
 	Value string `json:"Value" xml:"Value"`
 }

@@ -88,36 +88,24 @@ type DescribeMultiContainerGroupMetricRequest struct {
 // DescribeMultiContainerGroupMetricResponse is the response struct for api DescribeMultiContainerGroupMetric
 type DescribeMultiContainerGroupMetricResponse struct {
 	*responses.BaseResponse
-	RequestId    string                                           `json:"RequestId" xml:"RequestId"`
-	MonitorDatas []DescribeMultiContainerGroupMetricMonitorDatas0 `json:"MonitorDatas" xml:"MonitorDatas"`
+	RequestId    string                                     `json:"RequestId" xml:"RequestId"`
+	MonitorDatas []DescribeMultiContainerGroupMetricRecord0 `json:"MonitorDatas" xml:"MonitorDatas"`
 }
 
-type DescribeMultiContainerGroupMetricMonitorDatas0 struct {
-	Record []DescribeMultiContainerGroupMetricRecord1 `json:"Record" xml:"Record"`
-}
-
-type DescribeMultiContainerGroupMetricRecord1 struct {
+type DescribeMultiContainerGroupMetricRecord0 struct {
 	ContainerGroupId string                                      `json:"ContainerGroupId" xml:"ContainerGroupId"`
-	Records          []DescribeMultiContainerGroupMetricRecords1 `json:"Records" xml:"Records"`
+	Records          []DescribeMultiContainerGroupMetricPodStat1 `json:"Records" xml:"Records"`
 }
 
-type DescribeMultiContainerGroupMetricRecords1 struct {
-	PodStat []DescribeMultiContainerGroupMetricPodStat2 `json:"PodStat" xml:"PodStat"`
+type DescribeMultiContainerGroupMetricPodStat1 struct {
+	Timestamp  string                                        `json:"Timestamp" xml:"Timestamp"`
+	Containers []DescribeMultiContainerGroupMetricContainer2 `json:"Containers" xml:"Containers"`
+	CPU        DescribeMultiContainerGroupMetricCPU2         `json:"CPU" xml:"CPU"`
+	Memory     DescribeMultiContainerGroupMetricMemory2      `json:"Memory" xml:"Memory"`
+	Network    DescribeMultiContainerGroupMetricNetwork2     `json:"Network" xml:"Network"`
 }
 
-type DescribeMultiContainerGroupMetricPodStat2 struct {
-	Timestamp  string                                         `json:"Timestamp" xml:"Timestamp"`
-	Containers []DescribeMultiContainerGroupMetricContainers2 `json:"Containers" xml:"Containers"`
-	CPU        DescribeMultiContainerGroupMetricCPU2          `json:"CPU" xml:"CPU"`
-	Memory     DescribeMultiContainerGroupMetricMemory2       `json:"Memory" xml:"Memory"`
-	Network    DescribeMultiContainerGroupMetricNetwork2      `json:"Network" xml:"Network"`
-}
-
-type DescribeMultiContainerGroupMetricContainers2 struct {
-	Container []DescribeMultiContainerGroupMetricContainer3 `json:"Container" xml:"Container"`
-}
-
-type DescribeMultiContainerGroupMetricContainer3 struct {
+type DescribeMultiContainerGroupMetricContainer2 struct {
 	Name   string                                   `json:"Name" xml:"Name"`
 	CPU    DescribeMultiContainerGroupMetricCPU3    `json:"CPU" xml:"CPU"`
 	Memory DescribeMultiContainerGroupMetricMemory3 `json:"Memory" xml:"Memory"`
@@ -154,14 +142,10 @@ type DescribeMultiContainerGroupMetricMemory2 struct {
 }
 
 type DescribeMultiContainerGroupMetricNetwork2 struct {
-	Interfaces []DescribeMultiContainerGroupMetricInterfaces3 `json:"Interfaces" xml:"Interfaces"`
+	Interfaces []DescribeMultiContainerGroupMetricInterface3 `json:"Interfaces" xml:"Interfaces"`
 }
 
-type DescribeMultiContainerGroupMetricInterfaces3 struct {
-	Interface []DescribeMultiContainerGroupMetricInterface4 `json:"Interface" xml:"Interface"`
-}
-
-type DescribeMultiContainerGroupMetricInterface4 struct {
+type DescribeMultiContainerGroupMetricInterface3 struct {
 	TxBytes  int64  `json:"TxBytes" xml:"TxBytes"`
 	RxBytes  int64  `json:"RxBytes" xml:"RxBytes"`
 	TxErrors int64  `json:"TxErrors" xml:"TxErrors"`
