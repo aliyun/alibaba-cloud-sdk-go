@@ -1,3 +1,7 @@
+2019-08-14 Version: 1.60.102
+- Expose the interface to the yundun-console.
+- Update interface definitions of the cloudauth.
+
 2019-08-13 Version: 1.60.101
 - Optimize return code.
 - Edit QueryDataset.

@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// CreateVerifySDK invokes the cloudauth.CreateVerifySDK API synchronously
-// api document: https://help.aliyun.com/api/cloudauth/createverifysdk.html
-func (client *Client) CreateVerifySDK(request *CreateVerifySDKRequest) (response *CreateVerifySDKResponse, err error) {
-	response = CreateCreateVerifySDKResponse()
+// CreateRPSDK invokes the cloudauth.CreateRPSDK API synchronously
+// api document: https://help.aliyun.com/api/cloudauth/createrpsdk.html
+func (client *Client) CreateRPSDK(request *CreateRPSDKRequest) (response *CreateRPSDKResponse, err error) {
+	response = CreateCreateRPSDKResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// CreateVerifySDKWithChan invokes the cloudauth.CreateVerifySDK API asynchronously
-// api document: https://help.aliyun.com/api/cloudauth/createverifysdk.html
+// CreateRPSDKWithChan invokes the cloudauth.CreateRPSDK API asynchronously
+// api document: https://help.aliyun.com/api/cloudauth/createrpsdk.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) CreateVerifySDKWithChan(request *CreateVerifySDKRequest) (<-chan *CreateVerifySDKResponse, <-chan error) {
-	responseChan := make(chan *CreateVerifySDKResponse, 1)
+func (client *Client) CreateRPSDKWithChan(request *CreateRPSDKRequest) (<-chan *CreateRPSDKResponse, <-chan error) {
+	responseChan := make(chan *CreateRPSDKResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.CreateVerifySDK(request)
+		response, err := client.CreateRPSDK(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) CreateVerifySDKWithChan(request *CreateVerifySDKRequest) (
 	return responseChan, errChan
 }
 
-// CreateVerifySDKWithCallback invokes the cloudauth.CreateVerifySDK API asynchronously
-// api document: https://help.aliyun.com/api/cloudauth/createverifysdk.html
+// CreateRPSDKWithCallback invokes the cloudauth.CreateRPSDK API asynchronously
+// api document: https://help.aliyun.com/api/cloudauth/createrpsdk.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) CreateVerifySDKWithCallback(request *CreateVerifySDKRequest, callback func(response *CreateVerifySDKResponse, err error)) <-chan int {
+func (client *Client) CreateRPSDKWithCallback(request *CreateRPSDKRequest, callback func(response *CreateRPSDKResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *CreateVerifySDKResponse
+		var response *CreateRPSDKResponse
 		var err error
 		defer close(result)
-		response, err = client.CreateVerifySDK(request)
+		response, err = client.CreateRPSDK(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,8 +73,8 @@ func (client *Client) CreateVerifySDKWithCallback(request *CreateVerifySDKReques
 	return result
 }
 
-// CreateVerifySDKRequest is the request struct for api CreateVerifySDK
-type CreateVerifySDKRequest struct {
+// CreateRPSDKRequest is the request struct for api CreateRPSDK
+type CreateRPSDKRequest struct {
 	*requests.RpcRequest
 	SourceIp string `position:"Query" name:"SourceIp"`
 	AppUrl   string `position:"Query" name:"AppUrl"`
@@ -82,25 +82,25 @@ type CreateVerifySDKRequest struct {
 	Platform string `position:"Query" name:"Platform"`
 }
 
-// CreateVerifySDKResponse is the response struct for api CreateVerifySDK
-type CreateVerifySDKResponse struct {
+// CreateRPSDKResponse is the response struct for api CreateRPSDK
+type CreateRPSDKResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	TaskId    string `json:"TaskId" xml:"TaskId"`
 }
 
-// CreateCreateVerifySDKRequest creates a request to invoke CreateVerifySDK API
-func CreateCreateVerifySDKRequest() (request *CreateVerifySDKRequest) {
-	request = &CreateVerifySDKRequest{
+// CreateCreateRPSDKRequest creates a request to invoke CreateRPSDK API
+func CreateCreateRPSDKRequest() (request *CreateRPSDKRequest) {
+	request = &CreateRPSDKRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cloudauth", "2019-03-07", "CreateVerifySDK", "cloudauth", "openAPI")
+	request.InitWithApiInfo("Cloudauth", "2019-03-07", "CreateRPSDK", "cloudauth", "openAPI")
 	return
 }
 
-// CreateCreateVerifySDKResponse creates a response to parse from CreateVerifySDK response
-func CreateCreateVerifySDKResponse() (response *CreateVerifySDKResponse) {
-	response = &CreateVerifySDKResponse{
+// CreateCreateRPSDKResponse creates a response to parse from CreateRPSDK response
+func CreateCreateRPSDKResponse() (response *CreateRPSDKResponse) {
+	response = &CreateRPSDKResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return
