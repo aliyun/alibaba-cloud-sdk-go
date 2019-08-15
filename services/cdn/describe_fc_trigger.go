@@ -92,7 +92,7 @@ func CreateDescribeFCTriggerRequest() (request *DescribeFCTriggerRequest) {
 	request = &DescribeFCTriggerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeFCTrigger", "", "")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeFCTrigger", "cdn", "openAPI")
 	return
 }
 

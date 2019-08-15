@@ -99,7 +99,7 @@ func CreateBatchSetCdnDomainServerCertificateRequest() (request *BatchSetCdnDoma
 	request = &BatchSetCdnDomainServerCertificateRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "BatchSetCdnDomainServerCertificate", "", "")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "BatchSetCdnDomainServerCertificate", "cdn", "openAPI")
 	return
 }
 

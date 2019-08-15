@@ -94,7 +94,7 @@ func CreateRefreshObjectCachesRequest() (request *RefreshObjectCachesRequest) {
 	request = &RefreshObjectCachesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "RefreshObjectCaches", "", "")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "RefreshObjectCaches", "cdn", "openAPI")
 	return
 }
 

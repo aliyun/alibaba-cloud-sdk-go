@@ -93,7 +93,7 @@ func CreateSetIpAllowListConfigRequest() (request *SetIpAllowListConfigRequest) 
 	request = &SetIpAllowListConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "SetIpAllowListConfig", "", "")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "SetIpAllowListConfig", "cdn", "openAPI")
 	return
 }
 

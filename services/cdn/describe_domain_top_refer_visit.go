@@ -97,7 +97,7 @@ func CreateDescribeDomainTopReferVisitRequest() (request *DescribeDomainTopRefer
 	request = &DescribeDomainTopReferVisitRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeDomainTopReferVisit", "", "")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeDomainTopReferVisit", "cdn", "openAPI")
 	return
 }
 

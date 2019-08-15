@@ -94,7 +94,7 @@ func CreateDeleteCdnDomainRequest() (request *DeleteCdnDomainRequest) {
 	request = &DeleteCdnDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "DeleteCdnDomain", "", "")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "DeleteCdnDomain", "cdn", "openAPI")
 	return
 }
 

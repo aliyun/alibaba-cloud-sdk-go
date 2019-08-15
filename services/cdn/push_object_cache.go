@@ -94,7 +94,7 @@ func CreatePushObjectCacheRequest() (request *PushObjectCacheRequest) {
 	request = &PushObjectCacheRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "PushObjectCache", "", "")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "PushObjectCache", "cdn", "openAPI")
 	return
 }
 

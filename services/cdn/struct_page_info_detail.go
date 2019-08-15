@@ -17,7 +17,7 @@ package cdn
 
 // PageInfoDetail is a nested struct in cdn response
 type PageInfoDetail struct {
-	PageIndex int `json:"PageIndex" xml:"PageIndex"`
-	PageSize  int `json:"PageSize" xml:"PageSize"`
-	Total     int `json:"Total" xml:"Total"`
+	PageIndex int64 `json:"PageIndex" xml:"PageIndex"`
+	PageSize  int64 `json:"PageSize" xml:"PageSize"`
+	Total     int64 `json:"Total" xml:"Total"`
 }

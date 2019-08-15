@@ -87,7 +87,7 @@ type DescribeCdnCertificateDetailResponse struct {
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Cert      string `json:"Cert" xml:"Cert"`
 	Key       string `json:"Key" xml:"Key"`
-	CertId    int    `json:"CertId" xml:"CertId"`
+	CertId    int64  `json:"CertId" xml:"CertId"`
 	CertName  string `json:"CertName" xml:"CertName"`
 }
 
@@ -96,7 +96,7 @@ func CreateDescribeCdnCertificateDetailRequest() (request *DescribeCdnCertificat
 	request = &DescribeCdnCertificateDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeCdnCertificateDetail", "", "")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeCdnCertificateDetail", "cdn", "openAPI")
 	return
 }
 

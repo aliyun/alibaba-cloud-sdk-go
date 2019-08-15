@@ -92,7 +92,7 @@ func CreateSetDomainGreenManagerConfigRequest() (request *SetDomainGreenManagerC
 	request = &SetDomainGreenManagerConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "SetDomainGreenManagerConfig", "", "")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "SetDomainGreenManagerConfig", "cdn", "openAPI")
 	return
 }
 

@@ -98,7 +98,7 @@ func CreateDescribeDomainRealTimeSrcTrafficDataRequest() (request *DescribeDomai
 	request = &DescribeDomainRealTimeSrcTrafficDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeDomainRealTimeSrcTrafficData", "", "")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeDomainRealTimeSrcTrafficData", "cdn", "openAPI")
 	return
 }
 

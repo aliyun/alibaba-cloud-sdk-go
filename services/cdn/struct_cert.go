@@ -18,9 +18,9 @@ package cdn
 // Cert is a nested struct in cdn response
 type Cert struct {
 	CertName    string `json:"CertName" xml:"CertName"`
-	CertId      int    `json:"CertId" xml:"CertId"`
+	CertId      int64  `json:"CertId" xml:"CertId"`
 	Fingerprint string `json:"Fingerprint" xml:"Fingerprint"`
 	Common      string `json:"Common" xml:"Common"`
 	Issuer      string `json:"Issuer" xml:"Issuer"`
-	LastTime    int    `json:"LastTime" xml:"LastTime"`
+	LastTime    int64  `json:"LastTime" xml:"LastTime"`
 }

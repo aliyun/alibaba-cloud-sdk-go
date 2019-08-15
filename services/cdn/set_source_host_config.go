@@ -94,7 +94,7 @@ func CreateSetSourceHostConfigRequest() (request *SetSourceHostConfigRequest) {
 	request = &SetSourceHostConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "SetSourceHostConfig", "", "")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "SetSourceHostConfig", "cdn", "openAPI")
 	return
 }
 

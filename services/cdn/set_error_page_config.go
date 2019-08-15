@@ -94,7 +94,7 @@ func CreateSetErrorPageConfigRequest() (request *SetErrorPageConfigRequest) {
 	request = &SetErrorPageConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "SetErrorPageConfig", "", "")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "SetErrorPageConfig", "cdn", "openAPI")
 	return
 }
 

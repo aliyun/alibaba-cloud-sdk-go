@@ -92,7 +92,7 @@ func CreateModifyUserCustomLogConfigRequest() (request *ModifyUserCustomLogConfi
 	request = &ModifyUserCustomLogConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "ModifyUserCustomLogConfig", "", "")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "ModifyUserCustomLogConfig", "cdn", "openAPI")
 	return
 }
 

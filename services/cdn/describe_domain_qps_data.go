@@ -88,12 +88,12 @@ type DescribeDomainQpsDataRequest struct {
 // DescribeDomainQpsDataResponse is the response struct for api DescribeDomainQpsData
 type DescribeDomainQpsDataResponse struct {
 	*responses.BaseResponse
-	RequestId       string          `json:"RequestId" xml:"RequestId"`
-	DomainName      string          `json:"DomainName" xml:"DomainName"`
-	StartTime       string          `json:"StartTime" xml:"StartTime"`
-	EndTime         string          `json:"EndTime" xml:"EndTime"`
-	DataInterval    string          `json:"DataInterval" xml:"DataInterval"`
-	QpsDataInterval QpsDataInterval `json:"QpsDataInterval" xml:"QpsDataInterval"`
+	RequestId       string                                 `json:"RequestId" xml:"RequestId"`
+	DomainName      string                                 `json:"DomainName" xml:"DomainName"`
+	StartTime       string                                 `json:"StartTime" xml:"StartTime"`
+	EndTime         string                                 `json:"EndTime" xml:"EndTime"`
+	DataInterval    string                                 `json:"DataInterval" xml:"DataInterval"`
+	QpsDataInterval QpsDataIntervalInDescribeDomainQpsData `json:"QpsDataInterval" xml:"QpsDataInterval"`
 }
 
 // CreateDescribeDomainQpsDataRequest creates a request to invoke DescribeDomainQpsData API
@@ -101,7 +101,7 @@ func CreateDescribeDomainQpsDataRequest() (request *DescribeDomainQpsDataRequest
 	request = &DescribeDomainQpsDataRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeDomainQpsData", "", "")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeDomainQpsData", "cdn", "openAPI")
 	return
 }
 

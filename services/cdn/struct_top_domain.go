@@ -18,10 +18,10 @@ package cdn
 // TopDomain is a nested struct in cdn response
 type TopDomain struct {
 	DomainName     string  `json:"DomainName" xml:"DomainName"`
-	Rank           int     `json:"Rank" xml:"Rank"`
+	Rank           int64   `json:"Rank" xml:"Rank"`
 	TotalTraffic   string  `json:"TotalTraffic" xml:"TotalTraffic"`
 	TrafficPercent string  `json:"TrafficPercent" xml:"TrafficPercent"`
 	MaxBps         float64 `json:"MaxBps" xml:"MaxBps"`
 	MaxBpsTime     string  `json:"MaxBpsTime" xml:"MaxBpsTime"`
-	TotalAccess    int     `json:"TotalAccess" xml:"TotalAccess"`
+	TotalAccess    int64   `json:"TotalAccess" xml:"TotalAccess"`
 }

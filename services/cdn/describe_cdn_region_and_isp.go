@@ -93,7 +93,7 @@ func CreateDescribeCdnRegionAndIspRequest() (request *DescribeCdnRegionAndIspReq
 	request = &DescribeCdnRegionAndIspRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeCdnRegionAndIsp", "", "")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeCdnRegionAndIsp", "cdn", "openAPI")
 	return
 }
 

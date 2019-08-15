@@ -107,7 +107,7 @@ func CreateDescribeDomainAverageResponseTimeRequest() (request *DescribeDomainAv
 	request = &DescribeDomainAverageResponseTimeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeDomainAverageResponseTime", "", "")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeDomainAverageResponseTime", "cdn", "openAPI")
 	return
 }
 

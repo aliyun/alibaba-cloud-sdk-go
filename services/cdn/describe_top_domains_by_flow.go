@@ -89,8 +89,8 @@ type DescribeTopDomainsByFlowResponse struct {
 	RequestId         string     `json:"RequestId" xml:"RequestId"`
 	StartTime         string     `json:"StartTime" xml:"StartTime"`
 	EndTime           string     `json:"EndTime" xml:"EndTime"`
-	DomainCount       int        `json:"DomainCount" xml:"DomainCount"`
-	DomainOnlineCount int        `json:"DomainOnlineCount" xml:"DomainOnlineCount"`
+	DomainCount       int64      `json:"DomainCount" xml:"DomainCount"`
+	DomainOnlineCount int64      `json:"DomainOnlineCount" xml:"DomainOnlineCount"`
 	TopDomains        TopDomains `json:"TopDomains" xml:"TopDomains"`
 }
 
@@ -99,7 +99,7 @@ func CreateDescribeTopDomainsByFlowRequest() (request *DescribeTopDomainsByFlowR
 	request = &DescribeTopDomainsByFlowRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeTopDomainsByFlow", "", "")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeTopDomainsByFlow", "cdn", "openAPI")
 	return
 }
 

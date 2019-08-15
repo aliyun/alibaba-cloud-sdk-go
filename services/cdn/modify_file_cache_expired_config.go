@@ -96,7 +96,7 @@ func CreateModifyFileCacheExpiredConfigRequest() (request *ModifyFileCacheExpire
 	request = &ModifyFileCacheExpiredConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "ModifyFileCacheExpiredConfig", "", "")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "ModifyFileCacheExpiredConfig", "cdn", "openAPI")
 	return
 }
 

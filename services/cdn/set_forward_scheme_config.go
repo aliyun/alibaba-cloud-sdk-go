@@ -95,7 +95,7 @@ func CreateSetForwardSchemeConfigRequest() (request *SetForwardSchemeConfigReque
 	request = &SetForwardSchemeConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "SetForwardSchemeConfig", "", "")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "SetForwardSchemeConfig", "cdn", "openAPI")
 	return
 }
 

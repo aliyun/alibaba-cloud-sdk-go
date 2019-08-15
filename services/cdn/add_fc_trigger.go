@@ -83,6 +83,7 @@ type AddFCTriggerRequest struct {
 	OwnerId          requests.Integer `position:"Query" name:"OwnerId"`
 	RoleARN          string           `position:"Body" name:"RoleARN"`
 	EventMetaName    string           `position:"Body" name:"EventMetaName"`
+	FunctionARN      string           `position:"Body" name:"FunctionARN"`
 }
 
 // AddFCTriggerResponse is the response struct for api AddFCTrigger
@@ -96,7 +97,7 @@ func CreateAddFCTriggerRequest() (request *AddFCTriggerRequest) {
 	request = &AddFCTriggerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "AddFCTrigger", "", "")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "AddFCTrigger", "cdn", "openAPI")
 	return
 }
 

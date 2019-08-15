@@ -93,7 +93,7 @@ func CreateSetForceRedirectConfigRequest() (request *SetForceRedirectConfigReque
 	request = &SetForceRedirectConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "SetForceRedirectConfig", "", "")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "SetForceRedirectConfig", "cdn", "openAPI")
 	return
 }
 

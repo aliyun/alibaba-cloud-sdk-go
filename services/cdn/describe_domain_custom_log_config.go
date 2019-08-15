@@ -95,7 +95,7 @@ func CreateDescribeDomainCustomLogConfigRequest() (request *DescribeDomainCustom
 	request = &DescribeDomainCustomLogConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeDomainCustomLogConfig", "", "")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeDomainCustomLogConfig", "cdn", "openAPI")
 	return
 }
 

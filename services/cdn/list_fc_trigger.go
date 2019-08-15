@@ -93,7 +93,7 @@ func CreateListFCTriggerRequest() (request *ListFCTriggerRequest) {
 	request = &ListFCTriggerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "ListFCTrigger", "", "")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "ListFCTrigger", "cdn", "openAPI")
 	return
 }
 

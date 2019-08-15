@@ -99,7 +99,7 @@ func CreateAddCdnDomainRequest() (request *AddCdnDomainRequest) {
 	request = &AddCdnDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "AddCdnDomain", "", "")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "AddCdnDomain", "cdn", "openAPI")
 	return
 }
 

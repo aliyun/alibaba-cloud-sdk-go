@@ -92,7 +92,7 @@ func CreateModifyCdnServiceRequest() (request *ModifyCdnServiceRequest) {
 	request = &ModifyCdnServiceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "ModifyCdnService", "", "")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "ModifyCdnService", "cdn", "openAPI")
 	return
 }
 

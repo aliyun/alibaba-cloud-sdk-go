@@ -19,6 +19,7 @@ package cdn
 type DataModule struct {
 	PeakTime              string `json:"PeakTime" xml:"PeakTime"`
 	OverseasValue         string `json:"OverseasValue" xml:"OverseasValue"`
+	SpecialValue          string `json:"SpecialValue" xml:"SpecialValue"`
 	HttpsAccOverseasValue string `json:"HttpsAccOverseasValue" xml:"HttpsAccOverseasValue"`
 	HttpsOverseasValue    string `json:"HttpsOverseasValue" xml:"HttpsOverseasValue"`
 	DomesticValue         string `json:"DomesticValue" xml:"DomesticValue"`

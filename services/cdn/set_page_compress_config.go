@@ -93,7 +93,7 @@ func CreateSetPageCompressConfigRequest() (request *SetPageCompressConfigRequest
 	request = &SetPageCompressConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "SetPageCompressConfig", "", "")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "SetPageCompressConfig", "cdn", "openAPI")
 	return
 }
 

@@ -93,7 +93,7 @@ func CreateDescribeUserConfigsRequest() (request *DescribeUserConfigsRequest) {
 	request = &DescribeUserConfigsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeUserConfigs", "", "")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeUserConfigs", "cdn", "openAPI")
 	return
 }
 

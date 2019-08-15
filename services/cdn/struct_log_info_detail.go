@@ -19,7 +19,7 @@ package cdn
 type LogInfoDetail struct {
 	LogName   string `json:"LogName" xml:"LogName"`
 	LogPath   string `json:"LogPath" xml:"LogPath"`
-	LogSize   int    `json:"LogSize" xml:"LogSize"`
+	LogSize   int64  `json:"LogSize" xml:"LogSize"`
 	StartTime string `json:"StartTime" xml:"StartTime"`
 	EndTime   string `json:"EndTime" xml:"EndTime"`
 }

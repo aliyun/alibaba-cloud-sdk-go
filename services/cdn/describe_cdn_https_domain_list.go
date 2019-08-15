@@ -76,14 +76,18 @@ func (client *Client) DescribeCdnHttpsDomainListWithCallback(request *DescribeCd
 // DescribeCdnHttpsDomainListRequest is the request struct for api DescribeCdnHttpsDomainList
 type DescribeCdnHttpsDomainListRequest struct {
 	*requests.RpcRequest
-	OwnerId requests.Integer `position:"Query" name:"OwnerId"`
+	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize   requests.Integer `position:"Query" name:"PageSize"`
+	Keyword    string           `position:"Query" name:"Keyword"`
+	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeCdnHttpsDomainListResponse is the response struct for api DescribeCdnHttpsDomainList
 type DescribeCdnHttpsDomainListResponse struct {
 	*responses.BaseResponse
-	RequestId string                                `json:"RequestId" xml:"RequestId"`
-	CertInfos CertInfosInDescribeCdnHttpsDomainList `json:"CertInfos" xml:"CertInfos"`
+	RequestId  string                                `json:"RequestId" xml:"RequestId"`
+	TotalCount int                                   `json:"TotalCount" xml:"TotalCount"`
+	CertInfos  CertInfosInDescribeCdnHttpsDomainList `json:"CertInfos" xml:"CertInfos"`
 }
 
 // CreateDescribeCdnHttpsDomainListRequest creates a request to invoke DescribeCdnHttpsDomainList API
@@ -91,7 +95,7 @@ func CreateDescribeCdnHttpsDomainListRequest() (request *DescribeCdnHttpsDomainL
 	request = &DescribeCdnHttpsDomainListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeCdnHttpsDomainList", "", "")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeCdnHttpsDomainList", "cdn", "openAPI")
 	return
 }
 

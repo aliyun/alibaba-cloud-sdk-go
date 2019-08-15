@@ -93,7 +93,7 @@ func CreateSetWafConfigRequest() (request *SetWafConfigRequest) {
 	request = &SetWafConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "SetWafConfig", "", "")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "SetWafConfig", "cdn", "openAPI")
 	return
 }
 

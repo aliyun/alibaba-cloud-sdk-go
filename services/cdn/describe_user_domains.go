@@ -101,9 +101,9 @@ type DescribeUserDomainsTag struct {
 type DescribeUserDomainsResponse struct {
 	*responses.BaseResponse
 	RequestId  string                       `json:"RequestId" xml:"RequestId"`
-	PageNumber int                          `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int                          `json:"PageSize" xml:"PageSize"`
-	TotalCount int                          `json:"TotalCount" xml:"TotalCount"`
+	PageNumber int64                        `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int64                        `json:"PageSize" xml:"PageSize"`
+	TotalCount int64                        `json:"TotalCount" xml:"TotalCount"`
 	Domains    DomainsInDescribeUserDomains `json:"Domains" xml:"Domains"`
 }
 
@@ -112,7 +112,7 @@ func CreateDescribeUserDomainsRequest() (request *DescribeUserDomainsRequest) {
 	request = &DescribeUserDomainsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeUserDomains", "", "")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeUserDomains", "cdn", "openAPI")
 	return
 }
 

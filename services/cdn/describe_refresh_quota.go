@@ -99,7 +99,7 @@ func CreateDescribeRefreshQuotaRequest() (request *DescribeRefreshQuotaRequest) 
 	request = &DescribeRefreshQuotaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeRefreshQuota", "", "")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeRefreshQuota", "cdn", "openAPI")
 	return
 }
 

@@ -94,7 +94,7 @@ func CreateDescribeL2VipsByDomainRequest() (request *DescribeL2VipsByDomainReque
 	request = &DescribeL2VipsByDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeL2VipsByDomain", "", "")
+	request.InitWithApiInfo("Cdn", "2018-05-10", "DescribeL2VipsByDomain", "cdn", "openAPI")
 	return
 }
 

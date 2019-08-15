@@ -1,3 +1,6 @@
+2019-08-15 Version: 1.60.104
+- Add API BatchStartCdnDomain, BatchStopCdnDomain, DescribeTagResources, DescribeUserTags, TagResources, UntagResources.
+
 2019-08-15 Version: 1.60.103
 - QueryInstanceBillResponse add ServicePeriod.
 
