@@ -92,7 +92,7 @@ func CreateDeleteDrdsDBRequest() (request *DeleteDrdsDBRequest) {
 	request = &DeleteDrdsDBRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2017-10-16", "DeleteDrdsDB", "", "")
+	request.InitWithApiInfo("Drds", "2017-10-16", "DeleteDrdsDB", "drds", "openAPI")
 	return
 }
 

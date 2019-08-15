@@ -93,7 +93,7 @@ func CreateDescribeShardDBsRequest() (request *DescribeShardDBsRequest) {
 	request = &DescribeShardDBsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2017-10-16", "DescribeShardDBs", "", "")
+	request.InitWithApiInfo("Drds", "2017-10-16", "DescribeShardDBs", "drds", "openAPI")
 	return
 }
 

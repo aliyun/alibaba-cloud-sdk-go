@@ -94,7 +94,7 @@ func CreateQueryInstanceInfoByConnRequest() (request *QueryInstanceInfoByConnReq
 	request = &QueryInstanceInfoByConnRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2017-10-16", "QueryInstanceInfoByConn", "", "")
+	request.InitWithApiInfo("Drds", "2017-10-16", "QueryInstanceInfoByConn", "drds", "openAPI")
 	return
 }
 

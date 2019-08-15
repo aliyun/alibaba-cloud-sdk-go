@@ -95,7 +95,7 @@ func CreateModifyReadOnlyAccountPasswordRequest() (request *ModifyReadOnlyAccoun
 	request = &ModifyReadOnlyAccountPasswordRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2017-10-16", "ModifyReadOnlyAccountPassword", "", "")
+	request.InitWithApiInfo("Drds", "2017-10-16", "ModifyReadOnlyAccountPassword", "drds", "openAPI")
 	return
 }
 

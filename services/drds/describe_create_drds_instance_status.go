@@ -92,7 +92,7 @@ func CreateDescribeCreateDrdsInstanceStatusRequest() (request *DescribeCreateDrd
 	request = &DescribeCreateDrdsInstanceStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2017-10-16", "DescribeCreateDrdsInstanceStatus", "", "")
+	request.InitWithApiInfo("Drds", "2017-10-16", "DescribeCreateDrdsInstanceStatus", "drds", "openAPI")
 	return
 }
 

@@ -94,7 +94,7 @@ func CreateDescribeDrdsInstanceNetInfoForInnerRequest() (request *DescribeDrdsIn
 	request = &DescribeDrdsInstanceNetInfoForInnerRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2017-10-16", "DescribeDrdsInstanceNetInfoForInner", "", "")
+	request.InitWithApiInfo("Drds", "2017-10-16", "DescribeDrdsInstanceNetInfoForInner", "drds", "openAPI")
 	return
 }
 
