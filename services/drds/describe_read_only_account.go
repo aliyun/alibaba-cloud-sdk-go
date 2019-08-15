@@ -93,7 +93,7 @@ func CreateDescribeReadOnlyAccountRequest() (request *DescribeReadOnlyAccountReq
 	request = &DescribeReadOnlyAccountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2017-10-16", "DescribeReadOnlyAccount", "", "")
+	request.InitWithApiInfo("Drds", "2017-10-16", "DescribeReadOnlyAccount", "drds", "openAPI")
 	return
 }
 

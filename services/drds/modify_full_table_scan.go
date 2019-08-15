@@ -94,7 +94,7 @@ func CreateModifyFullTableScanRequest() (request *ModifyFullTableScanRequest) {
 	request = &ModifyFullTableScanRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2017-10-16", "ModifyFullTableScan", "", "")
+	request.InitWithApiInfo("Drds", "2017-10-16", "ModifyFullTableScan", "drds", "openAPI")
 	return
 }
 

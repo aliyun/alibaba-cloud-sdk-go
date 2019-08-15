@@ -93,7 +93,7 @@ func CreateDescribeRdsListRequest() (request *DescribeRdsListRequest) {
 	request = &DescribeRdsListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2017-10-16", "DescribeRdsList", "", "")
+	request.InitWithApiInfo("Drds", "2017-10-16", "DescribeRdsList", "drds", "openAPI")
 	return
 }
 

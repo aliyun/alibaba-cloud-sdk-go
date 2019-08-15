@@ -94,7 +94,7 @@ func CreateDescribeShardDbConnectionInfoRequest() (request *DescribeShardDbConne
 	request = &DescribeShardDbConnectionInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2017-10-16", "DescribeShardDbConnectionInfo", "", "")
+	request.InitWithApiInfo("Drds", "2017-10-16", "DescribeShardDbConnectionInfo", "drds", "openAPI")
 	return
 }
 

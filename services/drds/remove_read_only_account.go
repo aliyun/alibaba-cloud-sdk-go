@@ -93,7 +93,7 @@ func CreateRemoveReadOnlyAccountRequest() (request *RemoveReadOnlyAccountRequest
 	request = &RemoveReadOnlyAccountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Drds", "2017-10-16", "RemoveReadOnlyAccount", "", "")
+	request.InitWithApiInfo("Drds", "2017-10-16", "RemoveReadOnlyAccount", "drds", "openAPI")
 	return
 }
 
