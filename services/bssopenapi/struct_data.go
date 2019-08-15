@@ -52,6 +52,7 @@ type Data struct {
 	Mpk                         int64                                  `json:"Mpk" xml:"Mpk"`
 	UidList                     UidList                                `json:"UidList" xml:"UidList"`
 	OmsData                     OmsData                                `json:"OmsData" xml:"OmsData"`
+	Items                       ItemsInQueryInstanceBill               `json:"Items" xml:"Items"`
 	ModuleList                  ModuleList                             `json:"ModuleList" xml:"ModuleList"`
 	InstanceList                []Instance                             `json:"InstanceList" xml:"InstanceList"`
 	OrderList                   OrderListInQueryOrders                 `json:"OrderList" xml:"OrderList"`
@@ -59,7 +60,6 @@ type Data struct {
 	ResourcePackages            ResourcePackages                       `json:"ResourcePackages" xml:"ResourcePackages"`
 	ProductList                 ProductList                            `json:"ProductList" xml:"ProductList"`
 	ModuleDetails               ModuleDetailsInGetSubscriptionPrice    `json:"ModuleDetails" xml:"ModuleDetails"`
-	Items                       ItemsInQueryBillOverview               `json:"Items" xml:"Items"`
 	PromotionDetails            PromotionDetailsInGetSubscriptionPrice `json:"PromotionDetails" xml:"PromotionDetails"`
 	AccountTransactionsList     AccountTransactionsList                `json:"AccountTransactionsList" xml:"AccountTransactionsList"`
 	EvaluateList                EvaluateList                           `json:"EvaluateList" xml:"EvaluateList"`

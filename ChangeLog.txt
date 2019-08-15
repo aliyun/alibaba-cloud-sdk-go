@@ -1,3 +1,6 @@
+2019-08-15 Version: 1.60.103
+- QueryInstanceBillResponse add ServicePeriod.
+
 2019-08-14 Version: 1.60.102
 - Expose the interface to the yundun-console.
 - Update interface definitions of the cloudauth.

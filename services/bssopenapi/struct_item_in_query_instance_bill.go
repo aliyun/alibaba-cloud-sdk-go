@@ -51,4 +51,5 @@ type ItemInQueryInstanceBill struct {
 	Region                    string  `json:"Region" xml:"Region"`
 	Zone                      string  `json:"Zone" xml:"Zone"`
 	Item                      string  `json:"Item" xml:"Item"`
+	ServicePeriod             string  `json:"ServicePeriod" xml:"ServicePeriod"`
 }
