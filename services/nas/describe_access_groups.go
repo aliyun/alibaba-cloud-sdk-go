@@ -79,6 +79,7 @@ type DescribeAccessGroupsRequest struct {
 	AccessGroupName string           `position:"Query" name:"AccessGroupName"`
 	PageSize        requests.Integer `position:"Query" name:"PageSize"`
 	PageNumber      requests.Integer `position:"Query" name:"PageNumber"`
+	FileSystemType  string           `position:"Query" name:"FileSystemType"`
 }
 
 // DescribeAccessGroupsResponse is the response struct for api DescribeAccessGroups

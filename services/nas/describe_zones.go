@@ -76,6 +76,7 @@ func (client *Client) DescribeZonesWithCallback(request *DescribeZonesRequest, c
 // DescribeZonesRequest is the request struct for api DescribeZones
 type DescribeZonesRequest struct {
 	*requests.RpcRequest
+	RegionId string `position:"Query" name:"RegionId"`
 }
 
 // DescribeZonesResponse is the response struct for api DescribeZones
@@ -90,13 +91,9 @@ type DescribeZonesZones0 struct {
 }
 
 type DescribeZonesZone1 struct {
-	ZoneId      string                `json:"ZoneId" xml:"ZoneId"`
-	Capacity    DescribeZonesProtocol `json:"Capacity" xml:"Capacity"`
-	Performance DescribeZonesProtocol `json:"Performance" xml:"Performance"`
-}
-
-type DescribeZonesProtocol struct {
-	Protocol []string `json:"Protocol" xml:"Protocol"`
+	ZoneId      string   `json:"ZoneId" xml:"ZoneId"`
+	Capacity    []string `json:"Capacity" xml:"Capacity"`
+	Performance []string `json:"Performance" xml:"Performance"`
 }
 
 // CreateDescribeZonesRequest creates a request to invoke DescribeZones API

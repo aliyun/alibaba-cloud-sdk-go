@@ -77,6 +77,7 @@ func (client *Client) CreateFileSystemWithCallback(request *CreateFileSystemRequ
 type CreateFileSystemRequest struct {
 	*requests.RpcRequest
 	StorageType  string `position:"Query" name:"StorageType"`
+	ZoneId       string `position:"Query" name:"ZoneId"`
 	ProtocolType string `position:"Query" name:"ProtocolType"`
 	Description  string `position:"Query" name:"Description"`
 }

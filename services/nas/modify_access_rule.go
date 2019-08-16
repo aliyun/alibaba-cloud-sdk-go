@@ -82,6 +82,7 @@ type ModifyAccessRuleRequest struct {
 	RWAccessType    string           `position:"Query" name:"RWAccessType"`
 	UserAccessType  string           `position:"Query" name:"UserAccessType"`
 	Priority        requests.Integer `position:"Query" name:"Priority"`
+	FileSystemType  string           `position:"Query" name:"FileSystemType"`
 }
 
 // ModifyAccessRuleResponse is the response struct for api ModifyAccessRule

@@ -78,6 +78,7 @@ type DeleteAccessRuleRequest struct {
 	*requests.RpcRequest
 	AccessGroupName string `position:"Query" name:"AccessGroupName"`
 	AccessRuleId    string `position:"Query" name:"AccessRuleId"`
+	FileSystemType  string `position:"Query" name:"FileSystemType"`
 }
 
 // DeleteAccessRuleResponse is the response struct for api DeleteAccessRule

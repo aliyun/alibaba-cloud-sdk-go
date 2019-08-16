@@ -79,6 +79,7 @@ type CreateAccessGroupRequest struct {
 	AccessGroupName string `position:"Query" name:"AccessGroupName"`
 	AccessGroupType string `position:"Query" name:"AccessGroupType"`
 	Description     string `position:"Query" name:"Description"`
+	FileSystemType  string `position:"Query" name:"FileSystemType"`
 }
 
 // CreateAccessGroupResponse is the response struct for api CreateAccessGroup
