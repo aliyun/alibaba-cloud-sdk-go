@@ -76,9 +76,11 @@ func (client *Client) DescribeFileSystemsWithCallback(request *DescribeFileSyste
 // DescribeFileSystemsRequest is the request struct for api DescribeFileSystems
 type DescribeFileSystemsRequest struct {
 	*requests.RpcRequest
-	FileSystemId string           `position:"Query" name:"FileSystemId"`
-	PageSize     requests.Integer `position:"Query" name:"PageSize"`
-	PageNumber   requests.Integer `position:"Query" name:"PageNumber"`
+	FileSystemId   string           `position:"Query" name:"FileSystemId"`
+	FileSystemType string           `position:"Query" name:"FileSystemType"`
+	VpcId          string           `position:"Query" name:"VpcId"`
+	PageSize       requests.Integer `position:"Query" name:"PageSize"`
+	PageNumber     requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 // DescribeFileSystemsResponse is the response struct for api DescribeFileSystems
@@ -97,30 +99,46 @@ type DescribeFileSystemsFileSystems0 struct {
 
 type DescribeFileSystemsFileSystem1 struct {
 	FileSystemId string                           `json:"FileSystemId" xml:"FileSystemId"`
-	Destription  string                           `json:"Destription" xml:"Destription"`
+	Description  string                           `json:"Description" xml:"Description"`
 	CreateTime   string                           `json:"CreateTime" xml:"CreateTime"`
 	RegionId     string                           `json:"RegionId" xml:"RegionId"`
 	ProtocolType string                           `json:"ProtocolType" xml:"ProtocolType"`
 	StorageType  string                           `json:"StorageType" xml:"StorageType"`
 	MeteredSize  int64                            `json:"MeteredSize" xml:"MeteredSize"`
-	MountTargets DescribeFileSystemsMountTargets1 `json:"MountTargets" xml:"MountTargets"`
-	Packages     DescribeFileSystemsPackages1     `json:"Packages" xml:"Packages"`
+	ZoneId       string                           `json:"ZoneId" xml:"ZoneId"`
+	Bandwidth    int64                            `json:"Bandwidth" xml:"Bandwidth"`
+	Capacity     int64                            `json:"Capacity" xml:"Capacity"`
+	Status       string                           `json:"Status" xml:"Status"`
+	MountTargets DescribeFileSystemsMountTargets2 `json:"MountTargets" xml:"MountTargets"`
+	Packages     DescribeFileSystemsPackages2     `json:"Packages" xml:"Packages"`
+	Ldap         DescribeFileSystemsLdap2         `json:"Ldap" xml:"Ldap"`
 }
 
-type DescribeFileSystemsMountTargets1 struct {
-	MountTarget []DescribeFileSystemsMountTarget2 `json:"MountTarget" xml:"MountTarget"`
+type DescribeFileSystemsMountTargets2 struct {
+	MountTarget []DescribeFileSystemsMountTarget3 `json:"MountTarget" xml:"MountTarget"`
 }
 
-type DescribeFileSystemsMountTarget2 struct {
+type DescribeFileSystemsMountTarget3 struct {
 	MountTargetDomain string `json:"MountTargetDomain" xml:"MountTargetDomain"`
+	NetworkType       string `json:"NetworkType" xml:"NetworkType"`
+	VpcId             string `json:"VpcId" xml:"VpcId"`
+	VswId             string `json:"VswId" xml:"VswId"`
+	AccessGroupName   string `json:"AccessGroupName" xml:"AccessGroupName"`
+	Status            string `json:"Status" xml:"Status"`
 }
 
-type DescribeFileSystemsPackages1 struct {
-	Package []DescribeFileSystemsPackage2 `json:"Package" xml:"Package"`
+type DescribeFileSystemsPackages2 struct {
+	Package []DescribeFileSystemsPackage3 `json:"Package" xml:"Package"`
 }
 
-type DescribeFileSystemsPackage2 struct {
+type DescribeFileSystemsPackage3 struct {
 	PackageId string `json:"PackageId" xml:"PackageId"`
+}
+
+type DescribeFileSystemsLdap2 struct {
+	BindDN     string `json:"BindDN" xml:"BindDN"`
+	URI        string `json:"URI" xml:"URI"`
+	SearchBase string `json:"SearchBase" xml:"SearchBase"`
 }
 
 // CreateDescribeFileSystemsRequest creates a request to invoke DescribeFileSystems API

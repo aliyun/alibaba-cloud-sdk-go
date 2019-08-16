@@ -78,6 +78,7 @@ type ModifyAccessGroupRequest struct {
 	*requests.RpcRequest
 	AccessGroupName string `position:"Query" name:"AccessGroupName"`
 	Description     string `position:"Query" name:"Description"`
+	FileSystemType  string `position:"Query" name:"FileSystemType"`
 }
 
 // ModifyAccessGroupResponse is the response struct for api ModifyAccessGroup

@@ -80,6 +80,7 @@ type DescribeAccessRulesRequest struct {
 	AccessRuleId    string           `position:"Query" name:"AccessRuleId"`
 	PageSize        requests.Integer `position:"Query" name:"PageSize"`
 	PageNumber      requests.Integer `position:"Query" name:"PageNumber"`
+	FileSystemType  string           `position:"Query" name:"FileSystemType"`
 }
 
 // DescribeAccessRulesResponse is the response struct for api DescribeAccessRules

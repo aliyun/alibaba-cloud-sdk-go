@@ -81,6 +81,7 @@ type CreateAccessRuleRequest struct {
 	RWAccessType    string           `position:"Query" name:"RWAccessType"`
 	UserAccessType  string           `position:"Query" name:"UserAccessType"`
 	Priority        requests.Integer `position:"Query" name:"Priority"`
+	FileSystemType  string           `position:"Query" name:"FileSystemType"`
 }
 
 // CreateAccessRuleResponse is the response struct for api CreateAccessRule

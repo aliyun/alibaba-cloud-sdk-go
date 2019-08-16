@@ -76,8 +76,9 @@ func (client *Client) DescribeRegionsWithCallback(request *DescribeRegionsReques
 // DescribeRegionsRequest is the request struct for api DescribeRegions
 type DescribeRegionsRequest struct {
 	*requests.RpcRequest
-	PageSize   requests.Integer `position:"Query" name:"PageSize"`
-	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize       requests.Integer `position:"Query" name:"PageSize"`
+	PageNumber     requests.Integer `position:"Query" name:"PageNumber"`
+	FileSystemType string           `position:"Query" name:"FileSystemType"`
 }
 
 // DescribeRegionsResponse is the response struct for api DescribeRegions

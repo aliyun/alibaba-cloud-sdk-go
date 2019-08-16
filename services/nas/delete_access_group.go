@@ -77,6 +77,7 @@ func (client *Client) DeleteAccessGroupWithCallback(request *DeleteAccessGroupRe
 type DeleteAccessGroupRequest struct {
 	*requests.RpcRequest
 	AccessGroupName string `position:"Query" name:"AccessGroupName"`
+	FileSystemType  string `position:"Query" name:"FileSystemType"`
 }
 
 // DeleteAccessGroupResponse is the response struct for api DeleteAccessGroup
