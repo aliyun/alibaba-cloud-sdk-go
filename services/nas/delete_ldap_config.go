@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DeleteFileSystem invokes the nas.DeleteFileSystem API synchronously
-// api document: https://help.aliyun.com/api/nas/deletefilesystem.html
-func (client *Client) DeleteFileSystem(request *DeleteFileSystemRequest) (response *DeleteFileSystemResponse, err error) {
-	response = CreateDeleteFileSystemResponse()
+// DeleteLDAPConfig invokes the nas.DeleteLDAPConfig API synchronously
+// api document: https://help.aliyun.com/api/nas/deleteldapconfig.html
+func (client *Client) DeleteLDAPConfig(request *DeleteLDAPConfigRequest) (response *DeleteLDAPConfigResponse, err error) {
+	response = CreateDeleteLDAPConfigResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DeleteFileSystemWithChan invokes the nas.DeleteFileSystem API asynchronously
-// api document: https://help.aliyun.com/api/nas/deletefilesystem.html
+// DeleteLDAPConfigWithChan invokes the nas.DeleteLDAPConfig API asynchronously
+// api document: https://help.aliyun.com/api/nas/deleteldapconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DeleteFileSystemWithChan(request *DeleteFileSystemRequest) (<-chan *DeleteFileSystemResponse, <-chan error) {
-	responseChan := make(chan *DeleteFileSystemResponse, 1)
+func (client *Client) DeleteLDAPConfigWithChan(request *DeleteLDAPConfigRequest) (<-chan *DeleteLDAPConfigResponse, <-chan error) {
+	responseChan := make(chan *DeleteLDAPConfigResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DeleteFileSystem(request)
+		response, err := client.DeleteLDAPConfig(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) DeleteFileSystemWithChan(request *DeleteFileSystemRequest)
 	return responseChan, errChan
 }
 
-// DeleteFileSystemWithCallback invokes the nas.DeleteFileSystem API asynchronously
-// api document: https://help.aliyun.com/api/nas/deletefilesystem.html
+// DeleteLDAPConfigWithCallback invokes the nas.DeleteLDAPConfig API asynchronously
+// api document: https://help.aliyun.com/api/nas/deleteldapconfig.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DeleteFileSystemWithCallback(request *DeleteFileSystemRequest, callback func(response *DeleteFileSystemResponse, err error)) <-chan int {
+func (client *Client) DeleteLDAPConfigWithCallback(request *DeleteLDAPConfigRequest, callback func(response *DeleteLDAPConfigResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DeleteFileSystemResponse
+		var response *DeleteLDAPConfigResponse
 		var err error
 		defer close(result)
-		response, err = client.DeleteFileSystem(request)
+		response, err = client.DeleteLDAPConfig(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,30 +73,30 @@ func (client *Client) DeleteFileSystemWithCallback(request *DeleteFileSystemRequ
 	return result
 }
 
-// DeleteFileSystemRequest is the request struct for api DeleteFileSystem
-type DeleteFileSystemRequest struct {
+// DeleteLDAPConfigRequest is the request struct for api DeleteLDAPConfig
+type DeleteLDAPConfigRequest struct {
 	*requests.RpcRequest
 	FileSystemId string `position:"Query" name:"FileSystemId"`
 }
 
-// DeleteFileSystemResponse is the response struct for api DeleteFileSystem
-type DeleteFileSystemResponse struct {
+// DeleteLDAPConfigResponse is the response struct for api DeleteLDAPConfig
+type DeleteLDAPConfigResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateDeleteFileSystemRequest creates a request to invoke DeleteFileSystem API
-func CreateDeleteFileSystemRequest() (request *DeleteFileSystemRequest) {
-	request = &DeleteFileSystemRequest{
+// CreateDeleteLDAPConfigRequest creates a request to invoke DeleteLDAPConfig API
+func CreateDeleteLDAPConfigRequest() (request *DeleteLDAPConfigRequest) {
+	request = &DeleteLDAPConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("NAS", "2017-06-26", "DeleteFileSystem", "nas", "openAPI")
+	request.InitWithApiInfo("NAS", "2017-06-26", "DeleteLDAPConfig", "nas", "openAPI")
 	return
 }
 
-// CreateDeleteFileSystemResponse creates a response to parse from DeleteFileSystem response
-func CreateDeleteFileSystemResponse() (response *DeleteFileSystemResponse) {
-	response = &DeleteFileSystemResponse{
+// CreateDeleteLDAPConfigResponse creates a response to parse from DeleteLDAPConfig response
+func CreateDeleteLDAPConfigResponse() (response *DeleteLDAPConfigResponse) {
+	response = &DeleteLDAPConfigResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

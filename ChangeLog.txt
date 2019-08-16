@@ -1,3 +1,6 @@
+2019-08-16 Version: 1.60.107
+- Fixed bugs for DescribeFileSystems response filed`Destription`.
+
 2019-08-16 Version: 1.60.106
 - Generated 2018-02-01 for `ddosbgp`.
 

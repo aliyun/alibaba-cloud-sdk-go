@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DescribeZones invokes the nas.DescribeZones API synchronously
-// api document: https://help.aliyun.com/api/nas/describezones.html
-func (client *Client) DescribeZones(request *DescribeZonesRequest) (response *DescribeZonesResponse, err error) {
-	response = CreateDescribeZonesResponse()
+// DeleteSnapshot invokes the nas.DeleteSnapshot API synchronously
+// api document: https://help.aliyun.com/api/nas/deletesnapshot.html
+func (client *Client) DeleteSnapshot(request *DeleteSnapshotRequest) (response *DeleteSnapshotResponse, err error) {
+	response = CreateDeleteSnapshotResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DescribeZonesWithChan invokes the nas.DescribeZones API asynchronously
-// api document: https://help.aliyun.com/api/nas/describezones.html
+// DeleteSnapshotWithChan invokes the nas.DeleteSnapshot API asynchronously
+// api document: https://help.aliyun.com/api/nas/deletesnapshot.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DescribeZonesWithChan(request *DescribeZonesRequest) (<-chan *DescribeZonesResponse, <-chan error) {
-	responseChan := make(chan *DescribeZonesResponse, 1)
+func (client *Client) DeleteSnapshotWithChan(request *DeleteSnapshotRequest) (<-chan *DeleteSnapshotResponse, <-chan error) {
+	responseChan := make(chan *DeleteSnapshotResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DescribeZones(request)
+		response, err := client.DeleteSnapshot(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) DescribeZonesWithChan(request *DescribeZonesRequest) (<-ch
 	return responseChan, errChan
 }
 
-// DescribeZonesWithCallback invokes the nas.DescribeZones API asynchronously
-// api document: https://help.aliyun.com/api/nas/describezones.html
+// DeleteSnapshotWithCallback invokes the nas.DeleteSnapshot API asynchronously
+// api document: https://help.aliyun.com/api/nas/deletesnapshot.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DescribeZonesWithCallback(request *DescribeZonesRequest, callback func(response *DescribeZonesResponse, err error)) <-chan int {
+func (client *Client) DeleteSnapshotWithCallback(request *DeleteSnapshotRequest, callback func(response *DeleteSnapshotResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DescribeZonesResponse
+		var response *DeleteSnapshotResponse
 		var err error
 		defer close(result)
-		response, err = client.DescribeZones(request)
+		response, err = client.DeleteSnapshot(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,30 +73,30 @@ func (client *Client) DescribeZonesWithCallback(request *DescribeZonesRequest, c
 	return result
 }
 
-// DescribeZonesRequest is the request struct for api DescribeZones
-type DescribeZonesRequest struct {
+// DeleteSnapshotRequest is the request struct for api DeleteSnapshot
+type DeleteSnapshotRequest struct {
 	*requests.RpcRequest
+	SnapshotId string `position:"Query" name:"SnapshotId"`
 }
 
-// DescribeZonesResponse is the response struct for api DescribeZones
-type DescribeZonesResponse struct {
+// DeleteSnapshotResponse is the response struct for api DeleteSnapshot
+type DeleteSnapshotResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Zones     Zones  `json:"Zones" xml:"Zones"`
 }
 
-// CreateDescribeZonesRequest creates a request to invoke DescribeZones API
-func CreateDescribeZonesRequest() (request *DescribeZonesRequest) {
-	request = &DescribeZonesRequest{
+// CreateDeleteSnapshotRequest creates a request to invoke DeleteSnapshot API
+func CreateDeleteSnapshotRequest() (request *DeleteSnapshotRequest) {
+	request = &DeleteSnapshotRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("NAS", "2017-06-26", "DescribeZones", "nas", "openAPI")
+	request.InitWithApiInfo("NAS", "2017-06-26", "DeleteSnapshot", "nas", "openAPI")
 	return
 }
 
-// CreateDescribeZonesResponse creates a response to parse from DescribeZones response
-func CreateDescribeZonesResponse() (response *DescribeZonesResponse) {
-	response = &DescribeZonesResponse{
+// CreateDeleteSnapshotResponse creates a response to parse from DeleteSnapshot response
+func CreateDeleteSnapshotResponse() (response *DeleteSnapshotResponse) {
+	response = &DeleteSnapshotResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

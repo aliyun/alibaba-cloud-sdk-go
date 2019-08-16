@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DescribeZones invokes the nas.DescribeZones API synchronously
-// api document: https://help.aliyun.com/api/nas/describezones.html
-func (client *Client) DescribeZones(request *DescribeZonesRequest) (response *DescribeZonesResponse, err error) {
-	response = CreateDescribeZonesResponse()
+// AddTags invokes the nas.AddTags API synchronously
+// api document: https://help.aliyun.com/api/nas/addtags.html
+func (client *Client) AddTags(request *AddTagsRequest) (response *AddTagsResponse, err error) {
+	response = CreateAddTagsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DescribeZonesWithChan invokes the nas.DescribeZones API asynchronously
-// api document: https://help.aliyun.com/api/nas/describezones.html
+// AddTagsWithChan invokes the nas.AddTags API asynchronously
+// api document: https://help.aliyun.com/api/nas/addtags.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DescribeZonesWithChan(request *DescribeZonesRequest) (<-chan *DescribeZonesResponse, <-chan error) {
-	responseChan := make(chan *DescribeZonesResponse, 1)
+func (client *Client) AddTagsWithChan(request *AddTagsRequest) (<-chan *AddTagsResponse, <-chan error) {
+	responseChan := make(chan *AddTagsResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DescribeZones(request)
+		response, err := client.AddTags(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) DescribeZonesWithChan(request *DescribeZonesRequest) (<-ch
 	return responseChan, errChan
 }
 
-// DescribeZonesWithCallback invokes the nas.DescribeZones API asynchronously
-// api document: https://help.aliyun.com/api/nas/describezones.html
+// AddTagsWithCallback invokes the nas.AddTags API asynchronously
+// api document: https://help.aliyun.com/api/nas/addtags.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DescribeZonesWithCallback(request *DescribeZonesRequest, callback func(response *DescribeZonesResponse, err error)) <-chan int {
+func (client *Client) AddTagsWithCallback(request *AddTagsRequest, callback func(response *AddTagsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DescribeZonesResponse
+		var response *AddTagsResponse
 		var err error
 		defer close(result)
-		response, err = client.DescribeZones(request)
+		response, err = client.AddTags(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,30 +73,37 @@ func (client *Client) DescribeZonesWithCallback(request *DescribeZonesRequest, c
 	return result
 }
 
-// DescribeZonesRequest is the request struct for api DescribeZones
-type DescribeZonesRequest struct {
+// AddTagsRequest is the request struct for api AddTags
+type AddTagsRequest struct {
 	*requests.RpcRequest
+	Tag          *[]AddTagsTag `position:"Query" name:"Tag"  type:"Repeated"`
+	FileSystemId string        `position:"Query" name:"FileSystemId"`
 }
 
-// DescribeZonesResponse is the response struct for api DescribeZones
-type DescribeZonesResponse struct {
+// AddTagsTag is a repeated param struct in AddTagsRequest
+type AddTagsTag struct {
+	Value string `name:"Value"`
+	Key   string `name:"Key"`
+}
+
+// AddTagsResponse is the response struct for api AddTags
+type AddTagsResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Zones     Zones  `json:"Zones" xml:"Zones"`
 }
 
-// CreateDescribeZonesRequest creates a request to invoke DescribeZones API
-func CreateDescribeZonesRequest() (request *DescribeZonesRequest) {
-	request = &DescribeZonesRequest{
+// CreateAddTagsRequest creates a request to invoke AddTags API
+func CreateAddTagsRequest() (request *AddTagsRequest) {
+	request = &AddTagsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("NAS", "2017-06-26", "DescribeZones", "nas", "openAPI")
+	request.InitWithApiInfo("NAS", "2017-06-26", "AddTags", "nas", "openAPI")
 	return
 }
 
-// CreateDescribeZonesResponse creates a response to parse from DescribeZones response
-func CreateDescribeZonesResponse() (response *DescribeZonesResponse) {
-	response = &DescribeZonesResponse{
+// CreateAddTagsResponse creates a response to parse from AddTags response
+func CreateAddTagsResponse() (response *AddTagsResponse) {
+	response = &AddTagsResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

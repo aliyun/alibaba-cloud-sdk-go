@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DeleteFileSystem invokes the nas.DeleteFileSystem API synchronously
-// api document: https://help.aliyun.com/api/nas/deletefilesystem.html
-func (client *Client) DeleteFileSystem(request *DeleteFileSystemRequest) (response *DeleteFileSystemResponse, err error) {
-	response = CreateDeleteFileSystemResponse()
+// ResetFileSystem invokes the nas.ResetFileSystem API synchronously
+// api document: https://help.aliyun.com/api/nas/resetfilesystem.html
+func (client *Client) ResetFileSystem(request *ResetFileSystemRequest) (response *ResetFileSystemResponse, err error) {
+	response = CreateResetFileSystemResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DeleteFileSystemWithChan invokes the nas.DeleteFileSystem API asynchronously
-// api document: https://help.aliyun.com/api/nas/deletefilesystem.html
+// ResetFileSystemWithChan invokes the nas.ResetFileSystem API asynchronously
+// api document: https://help.aliyun.com/api/nas/resetfilesystem.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DeleteFileSystemWithChan(request *DeleteFileSystemRequest) (<-chan *DeleteFileSystemResponse, <-chan error) {
-	responseChan := make(chan *DeleteFileSystemResponse, 1)
+func (client *Client) ResetFileSystemWithChan(request *ResetFileSystemRequest) (<-chan *ResetFileSystemResponse, <-chan error) {
+	responseChan := make(chan *ResetFileSystemResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DeleteFileSystem(request)
+		response, err := client.ResetFileSystem(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) DeleteFileSystemWithChan(request *DeleteFileSystemRequest)
 	return responseChan, errChan
 }
 
-// DeleteFileSystemWithCallback invokes the nas.DeleteFileSystem API asynchronously
-// api document: https://help.aliyun.com/api/nas/deletefilesystem.html
+// ResetFileSystemWithCallback invokes the nas.ResetFileSystem API asynchronously
+// api document: https://help.aliyun.com/api/nas/resetfilesystem.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DeleteFileSystemWithCallback(request *DeleteFileSystemRequest, callback func(response *DeleteFileSystemResponse, err error)) <-chan int {
+func (client *Client) ResetFileSystemWithCallback(request *ResetFileSystemRequest, callback func(response *ResetFileSystemResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DeleteFileSystemResponse
+		var response *ResetFileSystemResponse
 		var err error
 		defer close(result)
-		response, err = client.DeleteFileSystem(request)
+		response, err = client.ResetFileSystem(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,30 +73,31 @@ func (client *Client) DeleteFileSystemWithCallback(request *DeleteFileSystemRequ
 	return result
 }
 
-// DeleteFileSystemRequest is the request struct for api DeleteFileSystem
-type DeleteFileSystemRequest struct {
+// ResetFileSystemRequest is the request struct for api ResetFileSystem
+type ResetFileSystemRequest struct {
 	*requests.RpcRequest
+	SnapshotId   string `position:"Query" name:"snapshotId"`
 	FileSystemId string `position:"Query" name:"FileSystemId"`
 }
 
-// DeleteFileSystemResponse is the response struct for api DeleteFileSystem
-type DeleteFileSystemResponse struct {
+// ResetFileSystemResponse is the response struct for api ResetFileSystem
+type ResetFileSystemResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateDeleteFileSystemRequest creates a request to invoke DeleteFileSystem API
-func CreateDeleteFileSystemRequest() (request *DeleteFileSystemRequest) {
-	request = &DeleteFileSystemRequest{
+// CreateResetFileSystemRequest creates a request to invoke ResetFileSystem API
+func CreateResetFileSystemRequest() (request *ResetFileSystemRequest) {
+	request = &ResetFileSystemRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("NAS", "2017-06-26", "DeleteFileSystem", "nas", "openAPI")
+	request.InitWithApiInfo("NAS", "2017-06-26", "ResetFileSystem", "nas", "openAPI")
 	return
 }
 
-// CreateDeleteFileSystemResponse creates a response to parse from DeleteFileSystem response
-func CreateDeleteFileSystemResponse() (response *DeleteFileSystemResponse) {
-	response = &DeleteFileSystemResponse{
+// CreateResetFileSystemResponse creates a response to parse from ResetFileSystem response
+func CreateResetFileSystemResponse() (response *ResetFileSystemResponse) {
+	response = &ResetFileSystemResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return
