@@ -1,3 +1,6 @@
+2019-08-19 Version: 1.60.109
+- Optimize topic create parameters.
+
 2019-08-19 Version: 1.60.108
 - Optimize topic create parameters.
 

@@ -82,7 +82,6 @@ type CreateTopicRequest struct {
 	CompactTopic requests.Boolean `position:"Query" name:"CompactTopic"`
 	PartitionNum string           `position:"Query" name:"PartitionNum"`
 	LocalTopic   requests.Boolean `position:"Query" name:"LocalTopic"`
-	OrderType    requests.Integer `position:"Query" name:"OrderType"`
 }
 
 // CreateTopicResponse is the response struct for api CreateTopic
