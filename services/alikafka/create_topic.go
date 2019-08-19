@@ -76,14 +76,13 @@ func (client *Client) CreateTopicWithCallback(request *CreateTopicRequest, callb
 // CreateTopicRequest is the request struct for api CreateTopic
 type CreateTopicRequest struct {
 	*requests.RpcRequest
-	InstanceId        string           `position:"Query" name:"InstanceId"`
-	Topic             string           `position:"Query" name:"Topic"`
-	Remark            string           `position:"Query" name:"Remark"`
-	CompactTopic      string           `position:"Query" name:"CompactTopic"`
-	PartitionNum      string           `position:"Query" name:"PartitionNum"`
-	ReplicationFactor string           `position:"Query" name:"ReplicationFactor"`
-	LocalTopic        string           `position:"Query" name:"LocalTopic"`
-	OrderType         requests.Integer `position:"Query" name:"OrderType"`
+	InstanceId   string           `position:"Query" name:"InstanceId"`
+	Topic        string           `position:"Query" name:"Topic"`
+	Remark       string           `position:"Query" name:"Remark"`
+	CompactTopic requests.Boolean `position:"Query" name:"CompactTopic"`
+	PartitionNum string           `position:"Query" name:"PartitionNum"`
+	LocalTopic   requests.Boolean `position:"Query" name:"LocalTopic"`
+	OrderType    requests.Integer `position:"Query" name:"OrderType"`
 }
 
 // CreateTopicResponse is the response struct for api CreateTopic
