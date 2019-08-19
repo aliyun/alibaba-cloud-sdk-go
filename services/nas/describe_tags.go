@@ -102,9 +102,13 @@ type DescribeTagsTags0 struct {
 }
 
 type DescribeTagsTag1 struct {
-	Key           string   `json:"Key" xml:"Key"`
-	Value         string   `json:"Value" xml:"Value"`
-	FileSystemIds []string `json:"FileSystemIds" xml:"FileSystemIds"`
+	Key           string                     `json:"Key" xml:"Key"`
+	Value         string                     `json:"Value" xml:"Value"`
+	FileSystemIds DescribeTagsFileSystemIds2 `json:"FileSystemIds" xml:"FileSystemIds"`
+}
+
+type DescribeTagsFileSystemIds2 struct {
+	FileSystemId []string `json:"FileSystemId" xml:"FileSystemId"`
 }
 
 // CreateDescribeTagsRequest creates a request to invoke DescribeTags API
