@@ -77,9 +77,9 @@ func (client *Client) StartExecutionWithCallback(request *StartExecutionRequest,
 type StartExecutionRequest struct {
 	*requests.RpcRequest
 	Input         string `position:"Body" name:"Input"`
-	ExecutionName string `position:"Query" name:"ExecutionName"`
+	ExecutionName string `position:"Body" name:"ExecutionName"`
 	RequestId     string `position:"Query" name:"RequestId"`
-	FlowName      string `position:"Query" name:"FlowName"`
+	FlowName      string `position:"Body" name:"FlowName"`
 }
 
 // StartExecutionResponse is the response struct for api StartExecution
