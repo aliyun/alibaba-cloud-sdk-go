@@ -105,7 +105,7 @@ type DescribeDBClusterAttributeResponse struct {
 	Expired              string   `json:"Expired" xml:"Expired"`
 	MaintainTime         string   `json:"MaintainTime" xml:"MaintainTime"`
 	StorageUsed          int64    `json:"StorageUsed" xml:"StorageUsed"`
-	StorageMax           int      `json:"StorageMax" xml:"StorageMax"`
+	StorageMax           int64    `json:"StorageMax" xml:"StorageMax"`
 	ZoneIds              string   `json:"ZoneIds" xml:"ZoneIds"`
 	SQLSize              int64    `json:"SQLSize" xml:"SQLSize"`
 	IsLatestVersion      bool     `json:"IsLatestVersion" xml:"IsLatestVersion"`

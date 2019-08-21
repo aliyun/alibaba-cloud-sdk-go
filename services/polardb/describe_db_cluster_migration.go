@@ -96,6 +96,7 @@ type DescribeDBClusterMigrationResponse struct {
 	ExpiredTime            string `json:"ExpiredTime" xml:"ExpiredTime"`
 	RdsReadWriteMode       string `json:"RdsReadWriteMode" xml:"RdsReadWriteMode"`
 	DBClusterReadWriteMode string `json:"DBClusterReadWriteMode" xml:"DBClusterReadWriteMode"`
+	Comment                string `json:"Comment" xml:"Comment"`
 }
 
 // CreateDescribeDBClusterMigrationRequest creates a request to invoke DescribeDBClusterMigration API
