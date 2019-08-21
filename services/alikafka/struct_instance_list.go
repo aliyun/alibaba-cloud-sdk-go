@@ -17,5 +17,5 @@ package alikafka
 
 // InstanceList is a nested struct in alikafka response
 type InstanceList struct {
-	InstanceListItem []InstanceListItem `json:"InstanceListItem" xml:"InstanceListItem"`
+	InstanceVO []InstanceVO `json:"InstanceVO" xml:"InstanceVO"`
 }
