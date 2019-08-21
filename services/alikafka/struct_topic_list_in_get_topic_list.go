@@ -17,5 +17,5 @@ package alikafka
 
 // TopicListInGetTopicList is a nested struct in alikafka response
 type TopicListInGetTopicList struct {
-	TopicListItem []TopicListItem `json:"TopicListItem" xml:"TopicListItem"`
+	TopicVO []TopicVO `json:"TopicVO" xml:"TopicVO"`
 }
