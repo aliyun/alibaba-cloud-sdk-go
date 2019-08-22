@@ -76,10 +76,11 @@ func (client *Client) ImportAppAlertRulesWithCallback(request *ImportAppAlertRul
 // ImportAppAlertRulesRequest is the request struct for api ImportAppAlertRules
 type ImportAppAlertRulesRequest struct {
 	*requests.RpcRequest
-	IsAutoStart     requests.Boolean `position:"Query" name:"IsAutoStart"`
-	ContactGroupIds string           `position:"Query" name:"ContactGroupIds"`
-	Pids            string           `position:"Query" name:"Pids"`
-	TemplateAlertId string           `position:"Query" name:"TemplateAlertId"`
+	IsAutoStart         requests.Boolean `position:"Query" name:"IsAutoStart"`
+	ContactGroupIds     string           `position:"Query" name:"ContactGroupIds"`
+	Pids                string           `position:"Query" name:"Pids"`
+	TemplageAlertConfig string           `position:"Query" name:"TemplageAlertConfig"`
+	TemplateAlertId     string           `position:"Query" name:"TemplateAlertId"`
 }
 
 // ImportAppAlertRulesResponse is the response struct for api ImportAppAlertRules
