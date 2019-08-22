@@ -17,15 +17,16 @@ package alikafka
 
 // InstanceVO is a nested struct in alikafka response
 type InstanceVO struct {
-	InstanceId    string `json:"InstanceId" xml:"InstanceId"`
-	RegionId      string `json:"RegionId" xml:"RegionId"`
-	ServiceStatus int    `json:"ServiceStatus" xml:"ServiceStatus"`
-	VpcId         string `json:"VpcId" xml:"VpcId"`
-	VSwitchId     string `json:"VSwitchId" xml:"VSwitchId"`
-	EndPoint      string `json:"EndPoint" xml:"EndPoint"`
-	CreateTime    int64  `json:"CreateTime" xml:"CreateTime"`
-	ExpiredTime   int64  `json:"ExpiredTime" xml:"ExpiredTime"`
-	DeployType    int    `json:"DeployType" xml:"DeployType"`
-	SslEndPoint   string `json:"SslEndPoint" xml:"SslEndPoint"`
-	Name          string `json:"Name" xml:"Name"`
+	InstanceId               string                   `json:"InstanceId" xml:"InstanceId"`
+	RegionId                 string                   `json:"RegionId" xml:"RegionId"`
+	ServiceStatus            int                      `json:"ServiceStatus" xml:"ServiceStatus"`
+	VpcId                    string                   `json:"VpcId" xml:"VpcId"`
+	VSwitchId                string                   `json:"VSwitchId" xml:"VSwitchId"`
+	EndPoint                 string                   `json:"EndPoint" xml:"EndPoint"`
+	CreateTime               int64                    `json:"CreateTime" xml:"CreateTime"`
+	ExpiredTime              int64                    `json:"ExpiredTime" xml:"ExpiredTime"`
+	DeployType               int                      `json:"DeployType" xml:"DeployType"`
+	SslEndPoint              string                   `json:"SslEndPoint" xml:"SslEndPoint"`
+	Name                     string                   `json:"Name" xml:"Name"`
+	UpgradeServiceDetailInfo UpgradeServiceDetailInfo `json:"UpgradeServiceDetailInfo" xml:"UpgradeServiceDetailInfo"`
 }
