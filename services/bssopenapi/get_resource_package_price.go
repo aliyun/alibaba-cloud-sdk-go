@@ -78,11 +78,13 @@ type GetResourcePackagePriceRequest struct {
 	*requests.RpcRequest
 	Duration      requests.Integer `position:"Query" name:"Duration"`
 	ProductCode   string           `position:"Query" name:"ProductCode"`
+	InstanceId    string           `position:"Query" name:"InstanceId"`
 	Specification string           `position:"Query" name:"Specification"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	PackageType   string           `position:"Query" name:"PackageType"`
 	EffectiveDate string           `position:"Query" name:"EffectiveDate"`
 	PricingCycle  string           `position:"Query" name:"PricingCycle"`
+	OrderType     string           `position:"Query" name:"OrderType"`
 }
 
 // GetResourcePackagePriceResponse is the response struct for api GetResourcePackagePrice

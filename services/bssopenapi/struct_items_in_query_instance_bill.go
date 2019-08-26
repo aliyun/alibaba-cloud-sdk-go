@@ -17,5 +17,5 @@ package bssopenapi
 
 // ItemsInQueryInstanceBill is a nested struct in bssopenapi response
 type ItemsInQueryInstanceBill struct {
-	Item []ItemInQueryInstanceBill `json:"Item" xml:"Item"`
+	Item []Item `json:"Item" xml:"Item"`
 }

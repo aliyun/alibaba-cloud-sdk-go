@@ -96,11 +96,11 @@ type CreateInstanceParameter struct {
 // CreateInstanceResponse is the response struct for api CreateInstance
 type CreateInstanceResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	Data      Data   `json:"Data" xml:"Data"`
+	RequestId string               `json:"RequestId" xml:"RequestId"`
+	Success   bool                 `json:"Success" xml:"Success"`
+	Code      string               `json:"Code" xml:"Code"`
+	Message   string               `json:"Message" xml:"Message"`
+	Data      DataInCreateInstance `json:"Data" xml:"Data"`
 }
 
 // CreateCreateInstanceRequest creates a request to invoke CreateInstance API

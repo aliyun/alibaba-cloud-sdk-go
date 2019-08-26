@@ -87,11 +87,11 @@ type RenewInstanceRequest struct {
 // RenewInstanceResponse is the response struct for api RenewInstance
 type RenewInstanceResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Success   bool   `json:"Success" xml:"Success"`
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	Data      Data   `json:"Data" xml:"Data"`
+	RequestId string              `json:"RequestId" xml:"RequestId"`
+	Success   bool                `json:"Success" xml:"Success"`
+	Code      string              `json:"Code" xml:"Code"`
+	Message   string              `json:"Message" xml:"Message"`
+	Data      DataInRenewInstance `json:"Data" xml:"Data"`
 }
 
 // CreateRenewInstanceRequest creates a request to invoke RenewInstance API

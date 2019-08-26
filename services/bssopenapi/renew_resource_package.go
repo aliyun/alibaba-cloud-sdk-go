@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// CreateResourcePackage invokes the bssopenapi.CreateResourcePackage API synchronously
-// api document: https://help.aliyun.com/api/bssopenapi/createresourcepackage.html
-func (client *Client) CreateResourcePackage(request *CreateResourcePackageRequest) (response *CreateResourcePackageResponse, err error) {
-	response = CreateCreateResourcePackageResponse()
+// RenewResourcePackage invokes the bssopenapi.RenewResourcePackage API synchronously
+// api document: https://help.aliyun.com/api/bssopenapi/renewresourcepackage.html
+func (client *Client) RenewResourcePackage(request *RenewResourcePackageRequest) (response *RenewResourcePackageResponse, err error) {
+	response = CreateRenewResourcePackageResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// CreateResourcePackageWithChan invokes the bssopenapi.CreateResourcePackage API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/createresourcepackage.html
+// RenewResourcePackageWithChan invokes the bssopenapi.RenewResourcePackage API asynchronously
+// api document: https://help.aliyun.com/api/bssopenapi/renewresourcepackage.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) CreateResourcePackageWithChan(request *CreateResourcePackageRequest) (<-chan *CreateResourcePackageResponse, <-chan error) {
-	responseChan := make(chan *CreateResourcePackageResponse, 1)
+func (client *Client) RenewResourcePackageWithChan(request *RenewResourcePackageRequest) (<-chan *RenewResourcePackageResponse, <-chan error) {
+	responseChan := make(chan *RenewResourcePackageResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.CreateResourcePackage(request)
+		response, err := client.RenewResourcePackage(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) CreateResourcePackageWithChan(request *CreateResourcePacka
 	return responseChan, errChan
 }
 
-// CreateResourcePackageWithCallback invokes the bssopenapi.CreateResourcePackage API asynchronously
-// api document: https://help.aliyun.com/api/bssopenapi/createresourcepackage.html
+// RenewResourcePackageWithCallback invokes the bssopenapi.RenewResourcePackage API asynchronously
+// api document: https://help.aliyun.com/api/bssopenapi/renewresourcepackage.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) CreateResourcePackageWithCallback(request *CreateResourcePackageRequest, callback func(response *CreateResourcePackageResponse, err error)) <-chan int {
+func (client *Client) RenewResourcePackageWithCallback(request *RenewResourcePackageRequest, callback func(response *RenewResourcePackageResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *CreateResourcePackageResponse
+		var response *RenewResourcePackageResponse
 		var err error
 		defer close(result)
-		response, err = client.CreateResourcePackage(request)
+		response, err = client.RenewResourcePackage(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,20 +73,18 @@ func (client *Client) CreateResourcePackageWithCallback(request *CreateResourceP
 	return result
 }
 
-// CreateResourcePackageRequest is the request struct for api CreateResourcePackage
-type CreateResourcePackageRequest struct {
+// RenewResourcePackageRequest is the request struct for api RenewResourcePackage
+type RenewResourcePackageRequest struct {
 	*requests.RpcRequest
 	Duration      requests.Integer `position:"Query" name:"Duration"`
-	ProductCode   string           `position:"Query" name:"ProductCode"`
-	Specification string           `position:"Query" name:"Specification"`
+	InstanceId    string           `position:"Query" name:"InstanceId"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
-	PackageType   string           `position:"Query" name:"PackageType"`
 	EffectiveDate string           `position:"Query" name:"EffectiveDate"`
 	PricingCycle  string           `position:"Query" name:"PricingCycle"`
 }
 
-// CreateResourcePackageResponse is the response struct for api CreateResourcePackage
-type CreateResourcePackageResponse struct {
+// RenewResourcePackageResponse is the response struct for api RenewResourcePackage
+type RenewResourcePackageResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	OrderId   int64  `json:"OrderId" xml:"OrderId"`
@@ -96,18 +94,18 @@ type CreateResourcePackageResponse struct {
 	Data      Data   `json:"Data" xml:"Data"`
 }
 
-// CreateCreateResourcePackageRequest creates a request to invoke CreateResourcePackage API
-func CreateCreateResourcePackageRequest() (request *CreateResourcePackageRequest) {
-	request = &CreateResourcePackageRequest{
+// CreateRenewResourcePackageRequest creates a request to invoke RenewResourcePackage API
+func CreateRenewResourcePackageRequest() (request *RenewResourcePackageRequest) {
+	request = &RenewResourcePackageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "CreateResourcePackage", "", "")
+	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "RenewResourcePackage", "", "")
 	return
 }
 
-// CreateCreateResourcePackageResponse creates a response to parse from CreateResourcePackage response
-func CreateCreateResourcePackageResponse() (response *CreateResourcePackageResponse) {
-	response = &CreateResourcePackageResponse{
+// CreateRenewResourcePackageResponse creates a response to parse from RenewResourcePackage response
+func CreateRenewResourcePackageResponse() (response *RenewResourcePackageResponse) {
+	response = &RenewResourcePackageResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

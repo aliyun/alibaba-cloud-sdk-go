@@ -18,10 +18,10 @@ package bssopenapi
 // Data is a nested struct in bssopenapi response
 type Data struct {
 	TradePrice                  float64                                `json:"TradePrice" xml:"TradePrice"`
+	OrderId                     int64                                  `json:"OrderId" xml:"OrderId"`
 	HostId                      string                                 `json:"HostId" xml:"HostId"`
 	TotalUnAppliedInvoiceAmount int64                                  `json:"TotalUnAppliedInvoiceAmount" xml:"TotalUnAppliedInvoiceAmount"`
 	OriginalPrice               float64                                `json:"OriginalPrice" xml:"OriginalPrice"`
-	OrderId                     string                                 `json:"OrderId" xml:"OrderId"`
 	HostingStatus               string                                 `json:"HostingStatus" xml:"HostingStatus"`
 	TotalCount                  int                                    `json:"TotalCount" xml:"TotalCount"`
 	CreditLimitStatus           string                                 `json:"CreditLimitStatus" xml:"CreditLimitStatus"`
