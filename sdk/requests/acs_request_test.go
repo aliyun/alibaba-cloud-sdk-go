@@ -197,6 +197,7 @@ type CreateContainerGroupRequest struct {
 	Cpu                     Float                                           `position:"Query" name:"Cpu"`
 	Memory                  Float                                           `position:"Query" name:"Memory"`
 	DnsConfig               CreateContainerGroup_DnsConfig                  `position:"Query" name:"DnsConfig" type:"Struct"`
+	OptionJson              map[string]interface{}                          `position:"Query" name:"OptionJson"`
 }
 
 type CreateContainerGroup_Tag struct {
