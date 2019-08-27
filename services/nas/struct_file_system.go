@@ -18,7 +18,7 @@ package nas
 // FileSystem is a nested struct in nas response
 type FileSystem struct {
 	FileSystemId string                            `json:"FileSystemId" xml:"FileSystemId"`
-	Destription  string                            `json:"Destription" xml:"Destription"`
+	Description  string                            `json:"Description" xml:"Description"`
 	CreateTime   string                            `json:"CreateTime" xml:"CreateTime"`
 	RegionId     string                            `json:"RegionId" xml:"RegionId"`
 	ProtocolType string                            `json:"ProtocolType" xml:"ProtocolType"`
