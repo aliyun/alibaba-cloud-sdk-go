@@ -77,24 +77,30 @@ func (client *Client) CloneDBInstanceWithCallback(request *CloneDBInstanceReques
 type CloneDBInstanceRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DBInstanceStorage     requests.Integer `position:"Query" name:"DBInstanceStorage"`
+	ClientToken           string           `position:"Query" name:"ClientToken"`
+	ZoneIdSlave1          string           `position:"Query" name:"ZoneIdSlave1"`
+	ZoneIdSlave2          string           `position:"Query" name:"ZoneIdSlave2"`
+	ResourceGroupId       string           `position:"Query" name:"ResourceGroupId"`
+	TableMeta             string           `position:"Query" name:"TableMeta"`
+	DBInstanceDescription string           `position:"Query" name:"DBInstanceDescription"`
+	DBInstanceId          string           `position:"Query" name:"DBInstanceId"`
+	DBInstanceStorageType string           `position:"Query" name:"DBInstanceStorageType"`
 	RestoreTime           string           `position:"Query" name:"RestoreTime"`
 	Period                string           `position:"Query" name:"Period"`
-	DBInstanceStorage     requests.Integer `position:"Query" name:"DBInstanceStorage"`
 	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
-	ClientToken           string           `position:"Query" name:"ClientToken"`
 	BackupId              string           `position:"Query" name:"BackupId"`
 	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
+	RestoreTable          string           `position:"Query" name:"RestoreTable"`
 	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
 	UsedTime              string           `position:"Query" name:"UsedTime"`
 	DBInstanceClass       string           `position:"Query" name:"DBInstanceClass"`
 	DbNames               string           `position:"Query" name:"DbNames"`
 	VSwitchId             string           `position:"Query" name:"VSwitchId"`
 	PrivateIpAddress      string           `position:"Query" name:"PrivateIpAddress"`
-	ResourceGroupId       string           `position:"Query" name:"ResourceGroupId"`
 	VPCId                 string           `position:"Query" name:"VPCId"`
 	ZoneId                string           `position:"Query" name:"ZoneId"`
-	DBInstanceDescription string           `position:"Query" name:"DBInstanceDescription"`
-	DBInstanceId          string           `position:"Query" name:"DBInstanceId"`
+	Category              string           `position:"Query" name:"Category"`
 	PayType               string           `position:"Query" name:"PayType"`
 	InstanceNetworkType   string           `position:"Query" name:"InstanceNetworkType"`
 }

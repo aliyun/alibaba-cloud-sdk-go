@@ -82,6 +82,7 @@ type ModifyInstanceCrossBackupPolicyRequest struct {
 	CrossBackupType      string           `position:"Query" name:"CrossBackupType"`
 	LogBackupEnabled     string           `position:"Query" name:"LogBackupEnabled"`
 	BackupEnabled        string           `position:"Query" name:"BackupEnabled"`
+	RelService           string           `position:"Query" name:"RelService"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	CrossBackupRegion    string           `position:"Query" name:"CrossBackupRegion"`
 	StorageType          string           `position:"Query" name:"StorageType"`

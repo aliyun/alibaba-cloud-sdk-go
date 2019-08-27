@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// CreateDBInstance invokes the rds.CreateDBInstance API synchronously
-// api document: https://help.aliyun.com/api/rds/createdbinstance.html
-func (client *Client) CreateDBInstance(request *CreateDBInstanceRequest) (response *CreateDBInstanceResponse, err error) {
-	response = CreateCreateDBInstanceResponse()
+// PreCheckCreateOrder invokes the rds.PreCheckCreateOrder API synchronously
+// api document: https://help.aliyun.com/api/rds/precheckcreateorder.html
+func (client *Client) PreCheckCreateOrder(request *PreCheckCreateOrderRequest) (response *PreCheckCreateOrderResponse, err error) {
+	response = CreatePreCheckCreateOrderResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// CreateDBInstanceWithChan invokes the rds.CreateDBInstance API asynchronously
-// api document: https://help.aliyun.com/api/rds/createdbinstance.html
+// PreCheckCreateOrderWithChan invokes the rds.PreCheckCreateOrder API asynchronously
+// api document: https://help.aliyun.com/api/rds/precheckcreateorder.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) CreateDBInstanceWithChan(request *CreateDBInstanceRequest) (<-chan *CreateDBInstanceResponse, <-chan error) {
-	responseChan := make(chan *CreateDBInstanceResponse, 1)
+func (client *Client) PreCheckCreateOrderWithChan(request *PreCheckCreateOrderRequest) (<-chan *PreCheckCreateOrderResponse, <-chan error) {
+	responseChan := make(chan *PreCheckCreateOrderResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.CreateDBInstance(request)
+		response, err := client.PreCheckCreateOrder(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) CreateDBInstanceWithChan(request *CreateDBInstanceRequest)
 	return responseChan, errChan
 }
 
-// CreateDBInstanceWithCallback invokes the rds.CreateDBInstance API asynchronously
-// api document: https://help.aliyun.com/api/rds/createdbinstance.html
+// PreCheckCreateOrderWithCallback invokes the rds.PreCheckCreateOrder API asynchronously
+// api document: https://help.aliyun.com/api/rds/precheckcreateorder.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) CreateDBInstanceWithCallback(request *CreateDBInstanceRequest, callback func(response *CreateDBInstanceResponse, err error)) <-chan int {
+func (client *Client) PreCheckCreateOrderWithCallback(request *PreCheckCreateOrderRequest, callback func(response *PreCheckCreateOrderResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *CreateDBInstanceResponse
+		var response *PreCheckCreateOrderResponse
 		var err error
 		defer close(result)
-		response, err = client.CreateDBInstance(request)
+		response, err = client.PreCheckCreateOrder(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,26 +73,36 @@ func (client *Client) CreateDBInstanceWithCallback(request *CreateDBInstanceRequ
 	return result
 }
 
-// CreateDBInstanceRequest is the request struct for api CreateDBInstance
-type CreateDBInstanceRequest struct {
+// PreCheckCreateOrderRequest is the request struct for api PreCheckCreateOrder
+type PreCheckCreateOrderRequest struct {
 	*requests.RpcRequest
 	ConnectionMode        string           `position:"Query" name:"ConnectionMode"`
 	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	DBInstanceStorage     requests.Integer `position:"Query" name:"DBInstanceStorage"`
+	NodeType              string           `position:"Query" name:"NodeType"`
 	SystemDBCharset       string           `position:"Query" name:"SystemDBCharset"`
 	ClientToken           string           `position:"Query" name:"ClientToken"`
+	CountryCode           string           `position:"Query" name:"CountryCode"`
 	ZoneIdSlave1          string           `position:"Query" name:"ZoneIdSlave1"`
 	ZoneIdSlave2          string           `position:"Query" name:"ZoneIdSlave2"`
 	EngineVersion         string           `position:"Query" name:"EngineVersion"`
+	CurrencyCode          string           `position:"Query" name:"CurrencyCode"`
 	ResourceGroupId       string           `position:"Query" name:"ResourceGroupId"`
 	Engine                string           `position:"Query" name:"Engine"`
+	DBInstanceId          string           `position:"Query" name:"DBInstanceId"`
 	DBInstanceDescription string           `position:"Query" name:"DBInstanceDescription"`
 	DBInstanceStorageType string           `position:"Query" name:"DBInstanceStorageType"`
 	BusinessInfo          string           `position:"Query" name:"BusinessInfo"`
 	DBInstanceNetType     string           `position:"Query" name:"DBInstanceNetType"`
-	Period                string           `position:"Query" name:"Period"`
+	AgentId               string           `position:"Query" name:"AgentId"`
+	RestoreTime           string           `position:"Query" name:"RestoreTime"`
+	Quantity              requests.Integer `position:"Query" name:"Quantity"`
+	AutoPay               requests.Boolean `position:"Query" name:"AutoPay"`
 	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
+	Resource              string           `position:"Query" name:"Resource"`
+	BackupId              string           `position:"Query" name:"BackupId"`
 	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
+	CommodityCode         string           `position:"Query" name:"CommodityCode"`
 	EncryptionKey         string           `position:"Query" name:"EncryptionKey"`
 	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
 	UsedTime              string           `position:"Query" name:"UsedTime"`
@@ -100,38 +110,38 @@ type CreateDBInstanceRequest struct {
 	SecurityIPList        string           `position:"Query" name:"SecurityIPList"`
 	VSwitchId             string           `position:"Query" name:"VSwitchId"`
 	PrivateIpAddress      string           `position:"Query" name:"PrivateIpAddress"`
+	InstanceUsedType      requests.Integer `position:"Query" name:"InstanceUsedType"`
 	AutoRenew             string           `position:"Query" name:"AutoRenew"`
+	PromotionCode         string           `position:"Query" name:"PromotionCode"`
 	RoleARN               string           `position:"Query" name:"RoleARN"`
 	VPCId                 string           `position:"Query" name:"VPCId"`
-	TunnelId              string           `position:"Query" name:"TunnelId"`
 	ZoneId                string           `position:"Query" name:"ZoneId"`
+	TimeType              string           `position:"Query" name:"TimeType"`
 	Category              string           `position:"Query" name:"Category"`
 	PayType               string           `position:"Query" name:"PayType"`
 	InstanceNetworkType   string           `position:"Query" name:"InstanceNetworkType"`
 }
 
-// CreateDBInstanceResponse is the response struct for api CreateDBInstance
-type CreateDBInstanceResponse struct {
+// PreCheckCreateOrderResponse is the response struct for api PreCheckCreateOrder
+type PreCheckCreateOrderResponse struct {
 	*responses.BaseResponse
-	RequestId        string `json:"RequestId" xml:"RequestId"`
-	DBInstanceId     string `json:"DBInstanceId" xml:"DBInstanceId"`
-	OrderId          string `json:"OrderId" xml:"OrderId"`
-	ConnectionString string `json:"ConnectionString" xml:"ConnectionString"`
-	Port             string `json:"Port" xml:"Port"`
+	RequestId      string                        `json:"RequestId" xml:"RequestId"`
+	PreCheckResult bool                          `json:"PreCheckResult" xml:"PreCheckResult"`
+	Failures       FailuresInPreCheckCreateOrder `json:"Failures" xml:"Failures"`
 }
 
-// CreateCreateDBInstanceRequest creates a request to invoke CreateDBInstance API
-func CreateCreateDBInstanceRequest() (request *CreateDBInstanceRequest) {
-	request = &CreateDBInstanceRequest{
+// CreatePreCheckCreateOrderRequest creates a request to invoke PreCheckCreateOrder API
+func CreatePreCheckCreateOrderRequest() (request *PreCheckCreateOrderRequest) {
+	request = &PreCheckCreateOrderRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Rds", "2014-08-15", "CreateDBInstance", "rds", "openAPI")
+	request.InitWithApiInfo("Rds", "2014-08-15", "PreCheckCreateOrder", "rds", "openAPI")
 	return
 }
 
-// CreateCreateDBInstanceResponse creates a response to parse from CreateDBInstance response
-func CreateCreateDBInstanceResponse() (response *CreateDBInstanceResponse) {
-	response = &CreateDBInstanceResponse{
+// CreatePreCheckCreateOrderResponse creates a response to parse from PreCheckCreateOrder response
+func CreatePreCheckCreateOrderResponse() (response *PreCheckCreateOrderResponse) {
+	response = &PreCheckCreateOrderResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

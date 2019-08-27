@@ -50,6 +50,7 @@ type Item struct {
 	BackupEndTime             string                               `json:"BackupEndTime" xml:"BackupEndTime"`
 	BackupMethod              string                               `json:"BackupMethod" xml:"BackupMethod"`
 	LogBeginTime              string                               `json:"LogBeginTime" xml:"LogBeginTime"`
+	RelService                string                               `json:"RelService" xml:"RelService"`
 	BackupType                string                               `json:"BackupType" xml:"BackupType"`
 	Retention                 int                                  `json:"Retention" xml:"Retention"`
 	DBInstanceStatus          string                               `json:"DBInstanceStatus" xml:"DBInstanceStatus"`
@@ -59,6 +60,7 @@ type Item struct {
 	ConsistentTime            string                               `json:"ConsistentTime" xml:"ConsistentTime"`
 	CrossBackupType           string                               `json:"CrossBackupType" xml:"CrossBackupType"`
 	Status                    string                               `json:"Status" xml:"Status"`
+	RelServiceId              string                               `json:"RelServiceId" xml:"RelServiceId"`
 	LockMode                  string                               `json:"LockMode" xml:"LockMode"`
 	RestoreRegions            RestoreRegions                       `json:"RestoreRegions" xml:"RestoreRegions"`
 	LatencyTopNItems          LatencyTopNItemsInDescribeSQLReports `json:"LatencyTopNItems" xml:"LatencyTopNItems"`

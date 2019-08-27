@@ -105,6 +105,8 @@ type DescribeInstanceCrossBackupPolicyResponse struct {
 	RetentType            int    `json:"RetentType" xml:"RetentType"`
 	Retention             int    `json:"Retention" xml:"Retention"`
 	LockMode              string `json:"LockMode" xml:"LockMode"`
+	RelService            string `json:"RelService" xml:"RelService"`
+	RelServiceId          string `json:"RelServiceId" xml:"RelServiceId"`
 }
 
 // CreateDescribeInstanceCrossBackupPolicyRequest creates a request to invoke DescribeInstanceCrossBackupPolicy API

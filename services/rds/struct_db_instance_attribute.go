@@ -85,6 +85,7 @@ type DBInstanceAttribute struct {
 	ConnectionString                  string                                             `json:"ConnectionString" xml:"ConnectionString"`
 	TempUpgradeRecoveryCpu            int                                                `json:"TempUpgradeRecoveryCpu" xml:"TempUpgradeRecoveryCpu"`
 	AvailabilityValue                 string                                             `json:"AvailabilityValue" xml:"AvailabilityValue"`
+	AutoUpgradeMinorVersion           string                                             `json:"AutoUpgradeMinorVersion" xml:"AutoUpgradeMinorVersion"`
 	Extra                             Extra                                              `json:"Extra" xml:"Extra"`
 	ReadOnlyDBInstanceIds             ReadOnlyDBInstanceIdsInDescribeDBInstanceAttribute `json:"ReadOnlyDBInstanceIds" xml:"ReadOnlyDBInstanceIds"`
 	SlaveZones                        SlaveZones                                         `json:"SlaveZones" xml:"SlaveZones"`
