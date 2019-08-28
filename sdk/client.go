@@ -307,8 +307,12 @@ func (client *Client) DoAction(request requests.AcsRequest, response responses.A
 	return client.DoActionWithSigner(request, response, nil)
 }
 
-func (client *Client) GetEndpointRules(regionId string, product string) (endpointRaw string) {
+func (client *Client) GetEndpointRules(regionId string, product string) (endpointRaw string, err error) {
 	if client.EndpointType == "regional" {
+		if regionId == "" {
+			err = fmt.Errorf("RegionId is empty, please set a valid RegionId.")
+			return "", err
+		}
 		endpointRaw = strings.Replace("<product><network>.<region_id>.aliyuncs.com", "<region_id>", regionId, 1)
 	} else {
 		endpointRaw = "<product><network>.aliyuncs.com"
@@ -319,7 +323,7 @@ func (client *Client) GetEndpointRules(regionId string, product string) (endpoin
 	} else {
 		endpointRaw = strings.Replace(endpointRaw, "<network>", "-"+client.Network, 1)
 	}
-	return endpointRaw
+	return endpointRaw, nil
 }
 
 func (client *Client) buildRequestWithSigner(request requests.AcsRequest, signer auth.Signer) (httpRequest *http.Request, err error) {
@@ -339,7 +343,10 @@ func (client *Client) buildRequestWithSigner(request requests.AcsRequest, signer
 		}
 
 		if endpoint == "" {
-			endpoint = client.GetEndpointRules(regionId, request.GetProduct())
+			endpoint, err = client.GetEndpointRules(regionId, request.GetProduct())
+			if err != nil {
+				return
+			}
 		}
 	}
 

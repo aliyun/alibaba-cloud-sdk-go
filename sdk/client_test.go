@@ -540,7 +540,6 @@ func TestClient_BuildRequestWithSigner2(t *testing.T) {
 
 	request.QueryParams["PageNumber"] = "1"
 	request.QueryParams["PageSize"] = "30"
-	request.RegionId = "regionid"
 	request.Product = "Ecs"
 	request.TransToAcsRequest()
 	signer := &signertest{
@@ -553,8 +552,14 @@ func TestClient_BuildRequestWithSigner2(t *testing.T) {
 	assert.Nil(t, err)
 	assert.Equal(t, "ecs.regionid.aliyuncs.com", httprequest.URL.Host)
 
-	//Test: exceptional rule
+	client.regionId = ""
 	request.Domain = ""
+	httprequest, err = client.buildRequestWithSigner(request, signer)
+	assert.Nil(t, httprequest)
+	assert.Equal(t, "RegionId is empty, please set a valid RegionId.", err.Error())
+
+	//Test: exceptional rule
+	client.regionId = "regionid"
 	client.EndpointMap = map[string]string{
 		"regionid": "ecs.test.com",
 	}
