@@ -1,3 +1,7 @@
+2019-08-28 Version: 1.60.122
+- Add DBS API UpgradeBackupPlan.
+- Add DBS API DescribePreCheckProgressList.
+
 2019-08-28 Version: 1.60.121
 - Add NamespaceId for listApplication.
 
