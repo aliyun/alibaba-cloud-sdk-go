@@ -76,9 +76,13 @@ func (client *Client) ListFlowJobHistoryWithCallback(request *ListFlowJobHistory
 // ListFlowJobHistoryRequest is the request struct for api ListFlowJobHistory
 type ListFlowJobHistoryRequest struct {
 	*requests.RpcRequest
+	TimeRange  string           `position:"Query" name:"TimeRange"`
+	StatusList *[]string        `position:"Query" name:"StatusList"  type:"Repeated"`
+	InstanceId string           `position:"Query" name:"InstanceId"`
 	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 	Id         string           `position:"Query" name:"Id"`
 	ProjectId  string           `position:"Query" name:"ProjectId"`
+	JobType    string           `position:"Query" name:"JobType"`
 	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
 }
 

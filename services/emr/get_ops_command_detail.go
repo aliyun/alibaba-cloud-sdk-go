@@ -84,7 +84,7 @@ type GetOpsCommandDetailRequest struct {
 type GetOpsCommandDetailResponse struct {
 	*responses.BaseResponse
 	RequestId   string `json:"RequestId" xml:"RequestId"`
-	Id          int    `json:"Id" xml:"Id"`
+	Id          int64  `json:"Id" xml:"Id"`
 	Name        string `json:"Name" xml:"Name"`
 	Description string `json:"Description" xml:"Description"`
 	TargetType  string `json:"TargetType" xml:"TargetType"`

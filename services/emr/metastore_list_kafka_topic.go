@@ -77,6 +77,7 @@ func (client *Client) MetastoreListKafkaTopicWithCallback(request *MetastoreList
 type MetastoreListKafkaTopicRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ActiveOnly      requests.Boolean `position:"Query" name:"ActiveOnly"`
 	PageSize        requests.Integer `position:"Query" name:"PageSize"`
 	DataSourceId    string           `position:"Query" name:"DataSourceId"`
 	TopicName       string           `position:"Query" name:"TopicName"`
@@ -87,11 +88,11 @@ type MetastoreListKafkaTopicRequest struct {
 // MetastoreListKafkaTopicResponse is the response struct for api MetastoreListKafkaTopic
 type MetastoreListKafkaTopicResponse struct {
 	*responses.BaseResponse
-	RequestId  string    `json:"RequestId" xml:"RequestId"`
-	TotalCount int       `json:"TotalCount" xml:"TotalCount"`
-	PageNumber int       `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int       `json:"PageSize" xml:"PageSize"`
-	TopicList  TopicList `json:"TopicList" xml:"TopicList"`
+	RequestId  string                             `json:"RequestId" xml:"RequestId"`
+	TotalCount int                                `json:"TotalCount" xml:"TotalCount"`
+	PageNumber int                                `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int                                `json:"PageSize" xml:"PageSize"`
+	TopicList  TopicListInMetastoreListKafkaTopic `json:"TopicList" xml:"TopicList"`
 }
 
 // CreateMetastoreListKafkaTopicRequest creates a request to invoke MetastoreListKafkaTopic API

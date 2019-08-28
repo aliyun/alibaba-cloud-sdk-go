@@ -17,21 +17,21 @@ package emr
 
 // Partition is a nested struct in emr response
 type Partition struct {
-	ConsumerOffset        int    `json:"ConsumerOffset" xml:"ConsumerOffset"`
+	ConsumerOffset        int64  `json:"ConsumerOffset" xml:"ConsumerOffset"`
 	ConsumerInstanceOwner string `json:"ConsumerInstanceOwner" xml:"ConsumerInstanceOwner"`
 	ConsumerGroupId       string `json:"ConsumerGroupId" xml:"ConsumerGroupId"`
-	LogEndOffset          int    `json:"LogEndOffset" xml:"LogEndOffset"`
+	LogEndOffset          int64  `json:"LogEndOffset" xml:"LogEndOffset"`
 	DataSourceId          string `json:"DataSourceId" xml:"DataSourceId"`
 	PartitionComment      string `json:"PartitionComment" xml:"PartitionComment"`
 	TableId               string `json:"TableId" xml:"TableId"`
 	PartitionPath         string `json:"PartitionPath" xml:"PartitionPath"`
 	Location              string `json:"Location" xml:"Location"`
 	PartitionName         string `json:"PartitionName" xml:"PartitionName"`
-	Lag                   int    `json:"Lag" xml:"Lag"`
-	GmtCreate             int    `json:"GmtCreate" xml:"GmtCreate"`
+	Lag                   int64  `json:"Lag" xml:"Lag"`
+	GmtCreate             int64  `json:"GmtCreate" xml:"GmtCreate"`
 	PartitionType         string `json:"PartitionType" xml:"PartitionType"`
 	DatabaseId            string `json:"DatabaseId" xml:"DatabaseId"`
 	PartitionId           int    `json:"PartitionId" xml:"PartitionId"`
 	BucketNum             int    `json:"BucketNum" xml:"BucketNum"`
-	GmtModified           int    `json:"GmtModified" xml:"GmtModified"`
+	GmtModified           int64  `json:"GmtModified" xml:"GmtModified"`
 }

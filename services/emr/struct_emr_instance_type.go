@@ -21,7 +21,7 @@ type EmrInstanceType struct {
 	CpuCoreCount         int    `json:"CpuCoreCount" xml:"CpuCoreCount"`
 	MemorySize           int    `json:"MemorySize" xml:"MemorySize"`
 	InstanceTypeFamily   string `json:"InstanceTypeFamily" xml:"InstanceTypeFamily"`
-	LocalStorageCapacity int    `json:"LocalStorageCapacity" xml:"LocalStorageCapacity"`
+	LocalStorageCapacity int64  `json:"LocalStorageCapacity" xml:"LocalStorageCapacity"`
 	LocalStorageAmount   int    `json:"LocalStorageAmount" xml:"LocalStorageAmount"`
 	LocalStorageCategory string `json:"LocalStorageCategory" xml:"LocalStorageCategory"`
 	GPUAmount            int    `json:"GPUAmount" xml:"GPUAmount"`
@@ -31,6 +31,6 @@ type EmrInstanceType struct {
 	EniQuantity          int    `json:"EniQuantity" xml:"EniQuantity"`
 	InstanceBandwidthRx  int    `json:"InstanceBandwidthRx" xml:"InstanceBandwidthRx"`
 	InstanceBandwidthTx  int    `json:"InstanceBandwidthTx" xml:"InstanceBandwidthTx"`
-	InstancePpsRx        int    `json:"InstancePpsRx" xml:"InstancePpsRx"`
-	InstancePpsTx        int    `json:"InstancePpsTx" xml:"InstancePpsTx"`
+	InstancePpsRx        int64  `json:"InstancePpsRx" xml:"InstancePpsRx"`
+	InstancePpsTx        int64  `json:"InstancePpsTx" xml:"InstancePpsTx"`
 }

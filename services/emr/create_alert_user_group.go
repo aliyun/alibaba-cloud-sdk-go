@@ -85,7 +85,7 @@ type CreateAlertUserGroupRequest struct {
 // CreateAlertUserGroupResponse is the response struct for api CreateAlertUserGroup
 type CreateAlertUserGroupResponse struct {
 	*responses.BaseResponse
-	Id int `json:"Id" xml:"Id"`
+	Id int64 `json:"Id" xml:"Id"`
 }
 
 // CreateCreateAlertUserGroupRequest creates a request to invoke CreateAlertUserGroup API

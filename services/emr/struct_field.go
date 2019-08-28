@@ -17,10 +17,12 @@ package emr
 
 // Field is a nested struct in emr response
 type Field struct {
-	Name        string `json:"Name" xml:"Name"`
-	AssignType  string `json:"AssignType" xml:"AssignType"`
-	RawType     string `json:"RawType" xml:"RawType"`
-	AssignValue string `json:"AssignValue" xml:"AssignValue"`
-	Type        string `json:"Type" xml:"Type"`
-	Index       int    `json:"Index" xml:"Index"`
+	Name         string `json:"Name" xml:"Name"`
+	Length       string `json:"Length" xml:"Length"`
+	AssignType   string `json:"AssignType" xml:"AssignType"`
+	RawType      string `json:"RawType" xml:"RawType"`
+	PartitionKey bool   `json:"PartitionKey" xml:"PartitionKey"`
+	AssignValue  string `json:"AssignValue" xml:"AssignValue"`
+	Type         string `json:"Type" xml:"Type"`
+	Index        int    `json:"Index" xml:"Index"`
 }

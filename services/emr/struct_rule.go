@@ -18,8 +18,8 @@ package emr
 // Rule is a nested struct in emr response
 type Rule struct {
 	Id                string            `json:"Id" xml:"Id"`
-	GmtCreate         int               `json:"GmtCreate" xml:"GmtCreate"`
-	GmtModified       int               `json:"GmtModified" xml:"GmtModified"`
+	GmtCreate         int64             `json:"GmtCreate" xml:"GmtCreate"`
+	GmtModified       int64             `json:"GmtModified" xml:"GmtModified"`
 	RuleName          string            `json:"RuleName" xml:"RuleName"`
 	RuleCategory      string            `json:"RuleCategory" xml:"RuleCategory"`
 	AdjustmentType    string            `json:"AdjustmentType" xml:"AdjustmentType"`

@@ -19,5 +19,5 @@ package emr
 type SlsDataPoint struct {
 	Role      string `json:"Role" xml:"Role"`
 	Value     string `json:"Value" xml:"Value"`
-	Timestamp int    `json:"Timestamp" xml:"Timestamp"`
+	Timestamp int64  `json:"Timestamp" xml:"Timestamp"`
 }

@@ -17,13 +17,13 @@ package emr
 
 // ClusterStatHdfsCapacity is a nested struct in emr response
 type ClusterStatHdfsCapacity struct {
-	CapacityTotal       int    `json:"CapacityTotal" xml:"CapacityTotal"`
-	CapacityTotalGB     int    `json:"CapacityTotalGB" xml:"CapacityTotalGB"`
-	CapacityUsed        int    `json:"CapacityUsed" xml:"CapacityUsed"`
-	CapacityUsedGB      int    `json:"CapacityUsedGB" xml:"CapacityUsedGB"`
-	CapacityRemaining   int    `json:"CapacityRemaining" xml:"CapacityRemaining"`
-	CapacityRemainingGB int    `json:"CapacityRemainingGB" xml:"CapacityRemainingGB"`
-	CapacityUsedNonDfs  int    `json:"CapacityUsedNonDfs" xml:"CapacityUsedNonDfs"`
+	CapacityTotal       int64  `json:"CapacityTotal" xml:"CapacityTotal"`
+	CapacityTotalGB     int64  `json:"CapacityTotalGB" xml:"CapacityTotalGB"`
+	CapacityUsed        int64  `json:"CapacityUsed" xml:"CapacityUsed"`
+	CapacityUsedGB      int64  `json:"CapacityUsedGB" xml:"CapacityUsedGB"`
+	CapacityRemaining   int64  `json:"CapacityRemaining" xml:"CapacityRemaining"`
+	CapacityRemainingGB int64  `json:"CapacityRemainingGB" xml:"CapacityRemainingGB"`
+	CapacityUsedNonDfs  int64  `json:"CapacityUsedNonDfs" xml:"CapacityUsedNonDfs"`
 	ClusterBizId        string `json:"ClusterBizId" xml:"ClusterBizId"`
 	DateTime            string `json:"DateTime" xml:"DateTime"`
 }

@@ -19,11 +19,11 @@ package emr
 type ClusterStatJobInput struct {
 	ApplicationId string `json:"ApplicationId" xml:"ApplicationId"`
 	JobId         string `json:"JobId" xml:"JobId"`
-	StartTime     int    `json:"StartTime" xml:"StartTime"`
-	FinishTime    int    `json:"FinishTime" xml:"FinishTime"`
+	StartTime     int64  `json:"StartTime" xml:"StartTime"`
+	FinishTime    int64  `json:"FinishTime" xml:"FinishTime"`
 	Name          string `json:"Name" xml:"Name"`
 	Queue         string `json:"Queue" xml:"Queue"`
 	User          string `json:"User" xml:"User"`
 	State         string `json:"State" xml:"State"`
-	BytesInput    int    `json:"BytesInput" xml:"BytesInput"`
+	BytesInput    int64  `json:"BytesInput" xml:"BytesInput"`
 }

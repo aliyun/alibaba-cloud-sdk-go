@@ -85,8 +85,8 @@ type DescribeFlowCategoryResponse struct {
 	*responses.BaseResponse
 	RequestId    string `json:"RequestId" xml:"RequestId"`
 	Id           string `json:"Id" xml:"Id"`
-	GmtCreate    int    `json:"GmtCreate" xml:"GmtCreate"`
-	GmtModified  int    `json:"GmtModified" xml:"GmtModified"`
+	GmtCreate    int64  `json:"GmtCreate" xml:"GmtCreate"`
+	GmtModified  int64  `json:"GmtModified" xml:"GmtModified"`
 	Name         string `json:"Name" xml:"Name"`
 	ParentId     string `json:"ParentId" xml:"ParentId"`
 	Type         string `json:"Type" xml:"Type"`

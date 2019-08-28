@@ -17,19 +17,19 @@ package emr
 
 // OpsOperationListItem is a nested struct in emr response
 type OpsOperationListItem struct {
-	Id              int    `json:"Id" xml:"Id"`
+	Id              int64  `json:"Id" xml:"Id"`
 	StartTime       string `json:"StartTime" xml:"StartTime"`
 	EndTime         string `json:"EndTime" xml:"EndTime"`
-	OpsCommandId    int    `json:"OpsCommandId" xml:"OpsCommandId"`
+	OpsCommandId    int64  `json:"OpsCommandId" xml:"OpsCommandId"`
 	OpsCommandName  string `json:"OpsCommandName" xml:"OpsCommandName"`
 	Status          string `json:"Status" xml:"Status"`
-	TotalTaskNum    int    `json:"TotalTaskNum" xml:"TotalTaskNum"`
-	FailedTaskNum   int    `json:"FailedTaskNum" xml:"FailedTaskNum"`
-	FinishedTaskNum int    `json:"FinishedTaskNum" xml:"FinishedTaskNum"`
+	TotalTaskNum    int64  `json:"TotalTaskNum" xml:"TotalTaskNum"`
+	FailedTaskNum   int64  `json:"FailedTaskNum" xml:"FailedTaskNum"`
+	FinishedTaskNum int64  `json:"FinishedTaskNum" xml:"FinishedTaskNum"`
 	ClusterId       string `json:"ClusterId" xml:"ClusterId"`
 	RegionId        string `json:"RegionId" xml:"RegionId"`
 	Params          string `json:"Params" xml:"Params"`
 	Remark          string `json:"Remark" xml:"Remark"`
-	RunningTime     int    `json:"RunningTime" xml:"RunningTime"`
+	RunningTime     int64  `json:"RunningTime" xml:"RunningTime"`
 	Category        string `json:"Category" xml:"Category"`
 }

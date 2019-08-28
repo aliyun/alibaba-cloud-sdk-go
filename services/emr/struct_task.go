@@ -20,14 +20,14 @@ type Task struct {
 	DataSourceId     string `json:"DataSourceId" xml:"DataSourceId"`
 	TaskResultDetail string `json:"TaskResultDetail" xml:"TaskResultDetail"`
 	TaskStatus       string `json:"TaskStatus" xml:"TaskStatus"`
-	EndTime          int    `json:"EndTime" xml:"EndTime"`
+	EndTime          int64  `json:"EndTime" xml:"EndTime"`
 	BizId            string `json:"BizId" xml:"BizId"`
-	StartTime        int    `json:"StartTime" xml:"StartTime"`
-	GmtCreate        int    `json:"GmtCreate" xml:"GmtCreate"`
-	ExecuteTime      int    `json:"ExecuteTime" xml:"ExecuteTime"`
+	StartTime        int64  `json:"StartTime" xml:"StartTime"`
+	GmtCreate        int64  `json:"GmtCreate" xml:"GmtCreate"`
+	ExecuteTime      int64  `json:"ExecuteTime" xml:"ExecuteTime"`
 	TaskProcess      int    `json:"TaskProcess" xml:"TaskProcess"`
 	TaskObject       string `json:"TaskObject" xml:"TaskObject"`
-	GmtModified      int    `json:"GmtModified" xml:"GmtModified"`
+	GmtModified      int64  `json:"GmtModified" xml:"GmtModified"`
 	TaskType         string `json:"TaskType" xml:"TaskType"`
 	TriggerUser      string `json:"TriggerUser" xml:"TriggerUser"`
 	TriggerType      string `json:"TriggerType" xml:"TriggerType"`

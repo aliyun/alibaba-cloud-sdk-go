@@ -18,5 +18,5 @@ package emr
 // ClusterStatUserInput is a nested struct in emr response
 type ClusterStatUserInput struct {
 	User       string `json:"User" xml:"User"`
-	BytesInput int    `json:"BytesInput" xml:"BytesInput"`
+	BytesInput int64  `json:"BytesInput" xml:"BytesInput"`
 }

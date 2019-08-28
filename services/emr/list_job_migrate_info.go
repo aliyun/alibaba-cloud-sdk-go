@@ -85,7 +85,7 @@ type ListJobMigrateInfoRequest struct {
 // ListJobMigrateInfoResponse is the response struct for api ListJobMigrateInfo
 type ListJobMigrateInfoResponse struct {
 	*responses.BaseResponse
-	Total              int              `json:"Total" xml:"Total"`
+	Total              int64            `json:"Total" xml:"Total"`
 	JobMigrateInfoList []JobMigrateInfo `json:"JobMigrateInfoList" xml:"JobMigrateInfoList"`
 }
 

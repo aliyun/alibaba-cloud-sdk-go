@@ -19,17 +19,17 @@ package emr
 type DataSource struct {
 	Name           string                                  `json:"Name" xml:"Name"`
 	ClusterId      string                                  `json:"ClusterId" xml:"ClusterId"`
-	Capacity       int                                     `json:"Capacity" xml:"Capacity"`
-	UsedSize       int                                     `json:"UsedSize" xml:"UsedSize"`
+	Capacity       int64                                   `json:"Capacity" xml:"Capacity"`
+	UsedSize       int64                                   `json:"UsedSize" xml:"UsedSize"`
 	CreateFrom     string                                  `json:"CreateFrom" xml:"CreateFrom"`
-	GmtCreate      int                                     `json:"GmtCreate" xml:"GmtCreate"`
+	GmtCreate      int64                                   `json:"GmtCreate" xml:"GmtCreate"`
 	Conf           string                                  `json:"Conf" xml:"Conf"`
 	SourceType     string                                  `json:"SourceType" xml:"SourceType"`
 	Modifier       string                                  `json:"Modifier" xml:"Modifier"`
 	ConnectionInfo string                                  `json:"ConnectionInfo" xml:"ConnectionInfo"`
 	UserId         string                                  `json:"UserId" xml:"UserId"`
 	Creator        string                                  `json:"Creator" xml:"Creator"`
-	GmtModified    int                                     `json:"GmtModified" xml:"GmtModified"`
+	GmtModified    int64                                   `json:"GmtModified" xml:"GmtModified"`
 	ClusterBizId   string                                  `json:"ClusterBizId" xml:"ClusterBizId"`
 	ClusterName    string                                  `json:"ClusterName" xml:"ClusterName"`
 	Id             string                                  `json:"Id" xml:"Id"`

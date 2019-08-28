@@ -18,16 +18,16 @@ package emr
 // FlowInstance is a nested struct in emr response
 type FlowInstance struct {
 	Id            string `json:"Id" xml:"Id"`
-	GmtCreate     int    `json:"GmtCreate" xml:"GmtCreate"`
-	GmtModified   int    `json:"GmtModified" xml:"GmtModified"`
+	GmtCreate     int64  `json:"GmtCreate" xml:"GmtCreate"`
+	GmtModified   int64  `json:"GmtModified" xml:"GmtModified"`
 	FlowId        string `json:"FlowId" xml:"FlowId"`
 	FlowName      string `json:"FlowName" xml:"FlowName"`
 	ProjectId     string `json:"ProjectId" xml:"ProjectId"`
 	Status        string `json:"Status" xml:"Status"`
 	ClusterId     string `json:"ClusterId" xml:"ClusterId"`
 	Owner         string `json:"Owner" xml:"Owner"`
-	StartTime     int    `json:"StartTime" xml:"StartTime"`
-	EndTime       int    `json:"EndTime" xml:"EndTime"`
-	Duration      int    `json:"Duration" xml:"Duration"`
+	StartTime     int64  `json:"StartTime" xml:"StartTime"`
+	EndTime       int64  `json:"EndTime" xml:"EndTime"`
+	Duration      int64  `json:"Duration" xml:"Duration"`
 	HasNodeFailed bool   `json:"HasNodeFailed" xml:"HasNodeFailed"`
 }

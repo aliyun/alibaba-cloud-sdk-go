@@ -27,8 +27,8 @@ type ExecutionPlan struct {
 	ScheduleCycle        string `json:"ScheduleCycle" xml:"ScheduleCycle"`
 	RegionId             string `json:"RegionId" xml:"RegionId"`
 	CronExpr             string `json:"CronExpr" xml:"CronExpr"`
-	UtcCreateTimestamp   int    `json:"UtcCreateTimestamp" xml:"UtcCreateTimestamp"`
-	UtcModifiedTimestamp int    `json:"UtcModifiedTimestamp" xml:"UtcModifiedTimestamp"`
+	UtcCreateTimestamp   int64  `json:"UtcCreateTimestamp" xml:"UtcCreateTimestamp"`
+	UtcModifiedTimestamp int64  `json:"UtcModifiedTimestamp" xml:"UtcModifiedTimestamp"`
 	Version              string `json:"Version" xml:"Version"`
 	ClusterTemplateId    string `json:"ClusterTemplateId" xml:"ClusterTemplateId"`
 }

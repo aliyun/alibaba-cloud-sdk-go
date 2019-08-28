@@ -17,15 +17,15 @@ package emr
 
 // TaskListItem is a nested struct in emr response
 type TaskListItem struct {
-	Id                int    `json:"Id" xml:"Id"`
-	OpsOperationId    int    `json:"OpsOperationId" xml:"OpsOperationId"`
-	TaskId            int    `json:"TaskId" xml:"TaskId"`
+	Id                int64  `json:"Id" xml:"Id"`
+	OpsOperationId    int64  `json:"OpsOperationId" xml:"OpsOperationId"`
+	TaskId            int64  `json:"TaskId" xml:"TaskId"`
 	Status            string `json:"Status" xml:"Status"`
 	RegionId          string `json:"RegionId" xml:"RegionId"`
 	UserId            string `json:"UserId" xml:"UserId"`
-	ClusterId         int    `json:"ClusterId" xml:"ClusterId"`
+	ClusterId         int64  `json:"ClusterId" xml:"ClusterId"`
 	ExternalClusterId string `json:"ExternalClusterId" xml:"ExternalClusterId"`
-	HostId            int    `json:"HostId" xml:"HostId"`
+	HostId            int64  `json:"HostId" xml:"HostId"`
 	StartTime         string `json:"StartTime" xml:"StartTime"`
 	EndTime           string `json:"EndTime" xml:"EndTime"`
 	CommandName       string `json:"CommandName" xml:"CommandName"`

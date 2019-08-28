@@ -19,8 +19,8 @@ package emr
 type ClusterScript struct {
 	Id        string `json:"Id" xml:"Id"`
 	Name      string `json:"Name" xml:"Name"`
-	StartTime int    `json:"StartTime" xml:"StartTime"`
-	EndTime   int    `json:"EndTime" xml:"EndTime"`
+	StartTime int64  `json:"StartTime" xml:"StartTime"`
+	EndTime   int64  `json:"EndTime" xml:"EndTime"`
 	Path      string `json:"Path" xml:"Path"`
 	Args      string `json:"Args" xml:"Args"`
 	Status    string `json:"Status" xml:"Status"`

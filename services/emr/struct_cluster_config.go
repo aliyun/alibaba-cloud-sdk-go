@@ -21,8 +21,8 @@ type ClusterConfig struct {
 	ClusterId        string           `json:"ClusterId" xml:"ClusterId"`
 	Queue            string           `json:"Queue" xml:"Queue"`
 	UserName         string           `json:"UserName" xml:"UserName"`
-	RecordRate       int              `json:"RecordRate" xml:"RecordRate"`
-	SizeRate         int              `json:"SizeRate" xml:"SizeRate"`
+	RecordRate       int64            `json:"RecordRate" xml:"RecordRate"`
+	SizeRate         int64            `json:"SizeRate" xml:"SizeRate"`
 	DriverResource   DriverResource   `json:"DriverResource" xml:"DriverResource"`
 	ExecutorResource ExecutorResource `json:"ExecutorResource" xml:"ExecutorResource"`
 }

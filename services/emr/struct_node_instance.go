@@ -19,8 +19,8 @@ package emr
 type NodeInstance struct {
 	RunConf        string `json:"RunConf" xml:"RunConf"`
 	MaxRetry       int    `json:"MaxRetry" xml:"MaxRetry"`
-	EndTime        int    `json:"EndTime" xml:"EndTime"`
-	StartTime      int    `json:"StartTime" xml:"StartTime"`
+	EndTime        int64  `json:"EndTime" xml:"EndTime"`
+	StartTime      int64  `json:"StartTime" xml:"StartTime"`
 	NodeName       string `json:"NodeName" xml:"NodeName"`
 	ProjectId      string `json:"ProjectId" xml:"ProjectId"`
 	Id             string `json:"Id" xml:"Id"`
@@ -30,14 +30,14 @@ type NodeInstance struct {
 	JobId          string `json:"JobId" xml:"JobId"`
 	FailAct        string `json:"FailAct" xml:"FailAct"`
 	ClusterId      string `json:"ClusterId" xml:"ClusterId"`
-	RetryInterval  int    `json:"RetryInterval" xml:"RetryInterval"`
+	RetryInterval  int64  `json:"RetryInterval" xml:"RetryInterval"`
 	ParamConf      string `json:"ParamConf" xml:"ParamConf"`
 	ExternalId     string `json:"ExternalId" xml:"ExternalId"`
 	EnvConf        string `json:"EnvConf" xml:"EnvConf"`
-	GmtCreate      int    `json:"GmtCreate" xml:"GmtCreate"`
+	GmtCreate      int64  `json:"GmtCreate" xml:"GmtCreate"`
 	ExternalInfo   string `json:"ExternalInfo" xml:"ExternalInfo"`
 	Retries        int    `json:"Retries" xml:"Retries"`
-	GmtModified    int    `json:"GmtModified" xml:"GmtModified"`
+	GmtModified    int64  `json:"GmtModified" xml:"GmtModified"`
 	ExternalStatus string `json:"ExternalStatus" xml:"ExternalStatus"`
 	JobParams      string `json:"JobParams" xml:"JobParams"`
 	HostName       string `json:"HostName" xml:"HostName"`

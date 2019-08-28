@@ -77,10 +77,13 @@ func (client *Client) ListNavSubTreeWithCallback(request *ListNavSubTreeRequest,
 type ListNavSubTreeRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Depth           requests.Integer `position:"Query" name:"Depth"`
 	Name            string           `position:"Query" name:"Name"`
+	PageSize        requests.Integer `position:"Query" name:"PageSize"`
 	Type            string           `position:"Query" name:"Type"`
 	ProjectId       string           `position:"Query" name:"ProjectId"`
 	ParentId        string           `position:"Query" name:"ParentId"`
+	PageNumber      requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 // ListNavSubTreeResponse is the response struct for api ListNavSubTree

@@ -20,7 +20,7 @@ type ExecutionPlanInstance struct {
 	Id                string `json:"Id" xml:"Id"`
 	ExecutionPlanId   string `json:"ExecutionPlanId" xml:"ExecutionPlanId"`
 	ExecutionPlanName string `json:"ExecutionPlanName" xml:"ExecutionPlanName"`
-	StartTime         int    `json:"StartTime" xml:"StartTime"`
+	StartTime         int64  `json:"StartTime" xml:"StartTime"`
 	RunTime           int    `json:"RunTime" xml:"RunTime"`
 	ClusterId         string `json:"ClusterId" xml:"ClusterId"`
 	ClusterName       string `json:"ClusterName" xml:"ClusterName"`

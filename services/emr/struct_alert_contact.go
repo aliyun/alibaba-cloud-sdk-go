@@ -17,7 +17,7 @@ package emr
 
 // AlertContact is a nested struct in emr response
 type AlertContact struct {
-	Id          int    `json:"Id" xml:"Id"`
+	Id          int64  `json:"Id" xml:"Id"`
 	GmtCreate   string `json:"GmtCreate" xml:"GmtCreate"`
 	GmtModified string `json:"GmtModified" xml:"GmtModified"`
 	BizId       string `json:"BizId" xml:"BizId"`

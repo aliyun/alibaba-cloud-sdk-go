@@ -21,8 +21,8 @@ type ConsumerGroup struct {
 	DataSourceId        string `json:"DataSourceId" xml:"DataSourceId"`
 	ConsumerGroup       string `json:"ConsumerGroup" xml:"ConsumerGroup"`
 	ConsumerType        string `json:"ConsumerType" xml:"ConsumerType"`
-	TotalLag            int    `json:"TotalLag" xml:"TotalLag"`
-	GmtCreate           int    `json:"GmtCreate" xml:"GmtCreate"`
-	GmtModified         int    `json:"GmtModified" xml:"GmtModified"`
+	TotalLag            int64  `json:"TotalLag" xml:"TotalLag"`
+	GmtCreate           int64  `json:"GmtCreate" xml:"GmtCreate"`
+	GmtModified         int64  `json:"GmtModified" xml:"GmtModified"`
 	PartitionProportion string `json:"PartitionProportion" xml:"PartitionProportion"`
 }

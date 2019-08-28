@@ -88,8 +88,8 @@ type DescribeETLJobInstanceResponse struct {
 	EtlJobId          string                                    `json:"EtlJobId" xml:"EtlJobId"`
 	InstanceStatus    string                                    `json:"InstanceStatus" xml:"InstanceStatus"`
 	TriggerUser       string                                    `json:"TriggerUser" xml:"TriggerUser"`
-	StartTime         int                                       `json:"StartTime" xml:"StartTime"`
-	EndTime           int                                       `json:"EndTime" xml:"EndTime"`
+	StartTime         int64                                     `json:"StartTime" xml:"StartTime"`
+	EndTime           int64                                     `json:"EndTime" xml:"EndTime"`
 	TriggerHistory    TriggerHistory                            `json:"TriggerHistory" xml:"TriggerHistory"`
 	Arguments         Arguments                                 `json:"Arguments" xml:"Arguments"`
 	Metrics           Metrics                                   `json:"Metrics" xml:"Metrics"`

@@ -77,6 +77,7 @@ func (client *Client) CloneDataSourceWithCallback(request *CloneDataSourceReques
 type CloneDataSourceRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Name            string           `position:"Query" name:"Name"`
 	Id              string           `position:"Query" name:"Id"`
 }
 

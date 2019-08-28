@@ -17,6 +17,11 @@ package emr
 
 // Service is a nested struct in emr response
 type Service struct {
-	ServiceDisplayName string `json:"ServiceDisplayName" xml:"ServiceDisplayName"`
-	ServiceName        string `json:"ServiceName" xml:"ServiceName"`
+	Comment            string                          `json:"Comment" xml:"Comment"`
+	EcmVersion         string                          `json:"EcmVersion" xml:"EcmVersion"`
+	ServiceDisplayName string                          `json:"ServiceDisplayName" xml:"ServiceDisplayName"`
+	Version            string                          `json:"Version" xml:"Version"`
+	ServiceName        string                          `json:"ServiceName" xml:"ServiceName"`
+	DisplayName        string                          `json:"DisplayName" xml:"DisplayName"`
+	ComponentList      ComponentListInListStackService `json:"ComponentList" xml:"ComponentList"`
 }

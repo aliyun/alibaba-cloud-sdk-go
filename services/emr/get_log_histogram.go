@@ -91,7 +91,7 @@ type GetLogHistogramResponse struct {
 	*responses.BaseResponse
 	RequestId           string              `json:"RequestId" xml:"RequestId"`
 	Completed           bool                `json:"Completed" xml:"Completed"`
-	TotalCount          int                 `json:"TotalCount" xml:"TotalCount"`
+	TotalCount          int64               `json:"TotalCount" xml:"TotalCount"`
 	SlsLogHistogramList SlsLogHistogramList `json:"SlsLogHistogramList" xml:"SlsLogHistogramList"`
 }
 

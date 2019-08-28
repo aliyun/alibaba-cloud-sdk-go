@@ -19,7 +19,7 @@ package emr
 type EcmResourcePoolConfig struct {
 	Category    string `json:"Category" xml:"Category"`
 	ConfigType  string `json:"ConfigType" xml:"ConfigType"`
-	Id          int    `json:"Id" xml:"Id"`
+	Id          int64  `json:"Id" xml:"Id"`
 	ConfigKey   string `json:"ConfigKey" xml:"ConfigKey"`
 	ConfigValue string `json:"ConfigValue" xml:"ConfigValue"`
 	Status      string `json:"Status" xml:"Status"`

@@ -17,5 +17,5 @@ package emr
 
 // AccessInfo is a nested struct in emr response
 type AccessInfo struct {
-	ZKLinks ZKLinks `json:"ZKLinks" xml:"ZKLinks"`
+	ZKLinks ZKLinksInDescribeClusterV2 `json:"ZKLinks" xml:"ZKLinks"`
 }

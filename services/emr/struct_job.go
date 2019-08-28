@@ -20,15 +20,15 @@ type Job struct {
 	Name               string                    `json:"Name" xml:"Name"`
 	FailAct            string                    `json:"FailAct" xml:"FailAct"`
 	RunConf            string                    `json:"RunConf" xml:"RunConf"`
-	RetryInterval      int                       `json:"RetryInterval" xml:"RetryInterval"`
+	RetryInterval      int64                     `json:"RetryInterval" xml:"RetryInterval"`
 	ParamConf          string                    `json:"ParamConf" xml:"ParamConf"`
 	Mode               string                    `json:"mode" xml:"mode"`
 	MaxRetry           int                       `json:"MaxRetry" xml:"MaxRetry"`
 	EnvConf            string                    `json:"EnvConf" xml:"EnvConf"`
 	AlertConf          string                    `json:"AlertConf" xml:"AlertConf"`
-	GmtCreate          int                       `json:"GmtCreate" xml:"GmtCreate"`
+	GmtCreate          int64                     `json:"GmtCreate" xml:"GmtCreate"`
 	CategoryId         string                    `json:"CategoryId" xml:"CategoryId"`
-	GmtModified        int                       `json:"GmtModified" xml:"GmtModified"`
+	GmtModified        int64                     `json:"GmtModified" xml:"GmtModified"`
 	Id                 string                    `json:"Id" xml:"Id"`
 	Description        string                    `json:"Description" xml:"Description"`
 	CustomVariables    string                    `json:"CustomVariables" xml:"CustomVariables"`

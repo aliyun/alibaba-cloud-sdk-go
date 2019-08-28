@@ -84,11 +84,14 @@ type ModifyClusterTemplateRequest struct {
 	SecurityGroupId        string                                  `position:"Query" name:"SecurityGroupId"`
 	SshEnable              requests.Boolean                        `position:"Query" name:"SshEnable"`
 	EasEnable              requests.Boolean                        `position:"Query" name:"EasEnable"`
+	KeyPairName            string                                  `position:"Query" name:"KeyPairName"`
+	MetaStoreType          string                                  `position:"Query" name:"MetaStoreType"`
 	SecurityGroupName      string                                  `position:"Query" name:"SecurityGroupName"`
 	DepositType            string                                  `position:"Query" name:"DepositType"`
 	MachineType            string                                  `position:"Query" name:"MachineType"`
 	BootstrapAction        *[]ModifyClusterTemplateBootstrapAction `position:"Query" name:"BootstrapAction"  type:"Repeated"`
 	UseLocalMetaDb         requests.Boolean                        `position:"Query" name:"UseLocalMetaDb"`
+	MetaStoreConf          string                                  `position:"Query" name:"MetaStoreConf"`
 	EmrVer                 string                                  `position:"Query" name:"EmrVer"`
 	TemplateName           string                                  `position:"Query" name:"TemplateName"`
 	UserDefinedEmrEcsRole  string                                  `position:"Query" name:"UserDefinedEmrEcsRole"`

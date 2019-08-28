@@ -84,8 +84,8 @@ type DescribeFlowProjectClusterSettingRequest struct {
 type DescribeFlowProjectClusterSettingResponse struct {
 	*responses.BaseResponse
 	RequestId    string                                       `json:"RequestId" xml:"RequestId"`
-	GmtCreate    int                                          `json:"GmtCreate" xml:"GmtCreate"`
-	GmtModified  int                                          `json:"GmtModified" xml:"GmtModified"`
+	GmtCreate    int64                                        `json:"GmtCreate" xml:"GmtCreate"`
+	GmtModified  int64                                        `json:"GmtModified" xml:"GmtModified"`
 	ProjectId    string                                       `json:"ProjectId" xml:"ProjectId"`
 	ClusterId    string                                       `json:"ClusterId" xml:"ClusterId"`
 	DefaultUser  string                                       `json:"DefaultUser" xml:"DefaultUser"`

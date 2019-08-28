@@ -80,6 +80,7 @@ type CreateETLJobRequest struct {
 	NavParentId     string           `position:"Query" name:"NavParentId"`
 	Name            string           `position:"Query" name:"Name"`
 	Description     string           `position:"Query" name:"Description"`
+	ClusterId       string           `position:"Query" name:"ClusterId"`
 	Type            string           `position:"Query" name:"Type"`
 	ProjectId       string           `position:"Query" name:"ProjectId"`
 }

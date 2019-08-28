@@ -18,8 +18,8 @@ package emr
 // NodeInstanceItem is a nested struct in emr response
 type NodeInstanceItem struct {
 	Id             string `json:"Id" xml:"Id"`
-	GmtCreate      int    `json:"GmtCreate" xml:"GmtCreate"`
-	GmtModified    int    `json:"GmtModified" xml:"GmtModified"`
+	GmtCreate      int64  `json:"GmtCreate" xml:"GmtCreate"`
+	GmtModified    int64  `json:"GmtModified" xml:"GmtModified"`
 	Type           string `json:"Type" xml:"Type"`
 	Status         string `json:"Status" xml:"Status"`
 	JobId          string `json:"JobId" xml:"JobId"`
@@ -33,9 +33,9 @@ type NodeInstanceItem struct {
 	HostName       string `json:"HostName" xml:"HostName"`
 	ProjectId      string `json:"ProjectId" xml:"ProjectId"`
 	Pending        bool   `json:"Pending" xml:"Pending"`
-	StartTime      int    `json:"StartTime" xml:"StartTime"`
-	EndTime        int    `json:"EndTime" xml:"EndTime"`
-	Duration       int    `json:"Duration" xml:"Duration"`
+	StartTime      int64  `json:"StartTime" xml:"StartTime"`
+	EndTime        int64  `json:"EndTime" xml:"EndTime"`
+	Duration       int64  `json:"Duration" xml:"Duration"`
 	Retries        int    `json:"Retries" xml:"Retries"`
 	ExternalId     string `json:"ExternalId" xml:"ExternalId"`
 	ExternalStatus string `json:"ExternalStatus" xml:"ExternalStatus"`

@@ -85,6 +85,7 @@ type ListClustersRequest struct {
 	DepositType     string           `position:"Query" name:"DepositType"`
 	DefaultStatus   requests.Boolean `position:"Query" name:"DefaultStatus"`
 	PageNumber      requests.Integer `position:"Query" name:"PageNumber"`
+	MachineType     string           `position:"Query" name:"MachineType"`
 }
 
 // ListClustersResponse is the response struct for api ListClusters

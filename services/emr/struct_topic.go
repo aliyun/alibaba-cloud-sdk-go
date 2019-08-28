@@ -17,13 +17,25 @@ package emr
 
 // Topic is a nested struct in emr response
 type Topic struct {
-	Id                 string                                      `json:"Id" xml:"Id"`
-	DataSourceId       string                                      `json:"DataSourceId" xml:"DataSourceId"`
-	TopicName          string                                      `json:"TopicName" xml:"TopicName"`
-	NumPartitions      int                                         `json:"NumPartitions" xml:"NumPartitions"`
-	ReplicationFactor  int                                         `json:"ReplicationFactor" xml:"ReplicationFactor"`
-	GmtCreate          int                                         `json:"GmtCreate" xml:"GmtCreate"`
-	GmtModified        int                                         `json:"GmtModified" xml:"GmtModified"`
-	Cluster            Cluster                                     `json:"Cluster" xml:"Cluster"`
-	AdvancedConfigList AdvancedConfigListInMetastoreListKafkaTopic `json:"AdvancedConfigList" xml:"AdvancedConfigList"`
+	TopicName                 string                                      `json:"TopicName" xml:"TopicName"`
+	ReplicationFactor         int                                         `json:"ReplicationFactor" xml:"ReplicationFactor"`
+	DataSourceId              string                                      `json:"DataSourceId" xml:"DataSourceId"`
+	BytesOutPerSecondRate     string                                      `json:"BytesOutPerSecondRate" xml:"BytesOutPerSecondRate"`
+	TopicId                   string                                      `json:"TopicId" xml:"TopicId"`
+	OffsetSum                 int64                                       `json:"OffsetSum" xml:"OffsetSum"`
+	NumPartitions             int                                         `json:"NumPartitions" xml:"NumPartitions"`
+	OffsetRate                string                                      `json:"OffsetRate" xml:"OffsetRate"`
+	MessageRate               string                                      `json:"MessageRate" xml:"MessageRate"`
+	LeaderCount               int                                         `json:"LeaderCount" xml:"LeaderCount"`
+	GmtCreate                 int64                                       `json:"GmtCreate" xml:"GmtCreate"`
+	BytesInPerSecondRate      string                                      `json:"BytesInPerSecondRate" xml:"BytesInPerSecondRate"`
+	ReassignId                string                                      `json:"ReassignId" xml:"ReassignId"`
+	GmtModified               int64                                       `json:"GmtModified" xml:"GmtModified"`
+	Id                        string                                      `json:"Id" xml:"Id"`
+	Status                    string                                      `json:"Status" xml:"Status"`
+	UnderReplicatedPercentage string                                      `json:"UnderReplicatedPercentage" xml:"UnderReplicatedPercentage"`
+	BrokerNumPartitions       int                                         `json:"BrokerNumPartitions" xml:"BrokerNumPartitions"`
+	PartitionList             PartitionListInDescribeKafkaBroker          `json:"partitionList" xml:"partitionList"`
+	Cluster                   Cluster                                     `json:"Cluster" xml:"Cluster"`
+	AdvancedConfigList        AdvancedConfigListInMetastoreListKafkaTopic `json:"AdvancedConfigList" xml:"AdvancedConfigList"`
 }

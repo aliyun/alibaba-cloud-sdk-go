@@ -17,7 +17,7 @@ package emr
 
 // UserStatistics is a nested struct in emr response
 type UserStatistics struct {
-	Id                        int    `json:"Id" xml:"Id"`
+	Id                        int64  `json:"Id" xml:"Id"`
 	UserId                    string `json:"UserId" xml:"UserId"`
 	JobNum                    int    `json:"JobNum" xml:"JobNum"`
 	ExecutePlanNum            int    `json:"ExecutePlanNum" xml:"ExecutePlanNum"`

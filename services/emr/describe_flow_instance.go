@@ -85,17 +85,17 @@ type DescribeFlowInstanceResponse struct {
 	*responses.BaseResponse
 	RequestId          string                             `json:"RequestId" xml:"RequestId"`
 	Id                 string                             `json:"Id" xml:"Id"`
-	GmtCreate          int                                `json:"GmtCreate" xml:"GmtCreate"`
-	GmtModified        int                                `json:"GmtModified" xml:"GmtModified"`
+	GmtCreate          int64                              `json:"GmtCreate" xml:"GmtCreate"`
+	GmtModified        int64                              `json:"GmtModified" xml:"GmtModified"`
 	FlowId             string                             `json:"FlowId" xml:"FlowId"`
 	FlowName           string                             `json:"FlowName" xml:"FlowName"`
 	ProjectId          string                             `json:"ProjectId" xml:"ProjectId"`
 	Status             string                             `json:"Status" xml:"Status"`
 	ClusterId          string                             `json:"ClusterId" xml:"ClusterId"`
-	StartTime          int                                `json:"StartTime" xml:"StartTime"`
-	EndTime            int                                `json:"EndTime" xml:"EndTime"`
-	Duration           int                                `json:"Duration" xml:"Duration"`
-	ScheduleTime       int                                `json:"ScheduleTime" xml:"ScheduleTime"`
+	StartTime          int64                              `json:"StartTime" xml:"StartTime"`
+	EndTime            int64                              `json:"EndTime" xml:"EndTime"`
+	Duration           int64                              `json:"Duration" xml:"Duration"`
+	ScheduleTime       int64                              `json:"ScheduleTime" xml:"ScheduleTime"`
 	Graph              string                             `json:"Graph" xml:"Graph"`
 	CronExpression     string                             `json:"CronExpression" xml:"CronExpression"`
 	HasNodeFailed      bool                               `json:"HasNodeFailed" xml:"HasNodeFailed"`

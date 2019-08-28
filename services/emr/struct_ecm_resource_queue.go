@@ -21,9 +21,9 @@ type EcmResourceQueue struct {
 	QualifiedName  string `json:"QualifiedName" xml:"QualifiedName"`
 	UserId         string `json:"UserId" xml:"UserId"`
 	QueueType      string `json:"QueueType" xml:"QueueType"`
-	Id             int    `json:"Id" xml:"Id"`
-	ParentQueueId  int    `json:"ParentQueueId" xml:"ParentQueueId"`
+	Id             int64  `json:"Id" xml:"Id"`
+	ParentQueueId  int64  `json:"ParentQueueId" xml:"ParentQueueId"`
 	Status         string `json:"Status" xml:"Status"`
 	Leaf           bool   `json:"Leaf" xml:"Leaf"`
-	ResourcePoolId int    `json:"ResourcePoolId" xml:"ResourcePoolId"`
+	ResourcePoolId int64  `json:"ResourcePoolId" xml:"ResourcePoolId"`
 }

@@ -87,11 +87,11 @@ type ListClusterServiceConfigHistoryRequest struct {
 // ListClusterServiceConfigHistoryResponse is the response struct for api ListClusterServiceConfigHistory
 type ListClusterServiceConfigHistoryResponse struct {
 	*responses.BaseResponse
-	RequestId         string            `json:"RequestId" xml:"RequestId"`
-	TotalCount        int               `json:"TotalCount" xml:"TotalCount"`
-	PageNumber        int               `json:"PageNumber" xml:"PageNumber"`
-	PageSize          int               `json:"PageSize" xml:"PageSize"`
-	ConfigHistoryList ConfigHistoryList `json:"ConfigHistoryList" xml:"ConfigHistoryList"`
+	RequestId         string                                             `json:"RequestId" xml:"RequestId"`
+	TotalCount        int                                                `json:"TotalCount" xml:"TotalCount"`
+	PageNumber        int                                                `json:"PageNumber" xml:"PageNumber"`
+	PageSize          int                                                `json:"PageSize" xml:"PageSize"`
+	ConfigHistoryList ConfigHistoryListInListClusterServiceConfigHistory `json:"ConfigHistoryList" xml:"ConfigHistoryList"`
 }
 
 // CreateListClusterServiceConfigHistoryRequest creates a request to invoke ListClusterServiceConfigHistory API

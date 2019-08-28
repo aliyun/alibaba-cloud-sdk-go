@@ -76,15 +76,17 @@ func (client *Client) ModifyClusterServiceConfigWithCallback(request *ModifyClus
 // ModifyClusterServiceConfigRequest is the request struct for api ModifyClusterServiceConfig
 type ModifyClusterServiceConfigRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId    requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	CustomConfigParams string           `position:"Query" name:"CustomConfigParams"`
-	ConfigType         string           `position:"Query" name:"ConfigType"`
-	HostInstanceId     string           `position:"Query" name:"HostInstanceId"`
-	GroupId            string           `position:"Query" name:"GroupId"`
-	ServiceName        string           `position:"Query" name:"ServiceName"`
-	Comment            string           `position:"Query" name:"Comment"`
-	ClusterId          string           `position:"Query" name:"ClusterId"`
-	ConfigParams       string           `position:"Query" name:"ConfigParams"`
+	RefreshHostConfig    requests.Boolean `position:"Query" name:"RefreshHostConfig"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ConfigType           string           `position:"Query" name:"ConfigType"`
+	HostInstanceId       string           `position:"Query" name:"HostInstanceId"`
+	GroupId              string           `position:"Query" name:"GroupId"`
+	ClusterId            string           `position:"Query" name:"ClusterId"`
+	CustomConfigParams   string           `position:"Query" name:"CustomConfigParams"`
+	ServiceName          string           `position:"Query" name:"ServiceName"`
+	Comment              string           `position:"Query" name:"Comment"`
+	GatewayClusterIdList *[]string        `position:"Query" name:"GatewayClusterIdList"  type:"Repeated"`
+	ConfigParams         string           `position:"Query" name:"ConfigParams"`
 }
 
 // ModifyClusterServiceConfigResponse is the response struct for api ModifyClusterServiceConfig

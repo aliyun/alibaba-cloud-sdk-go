@@ -86,7 +86,7 @@ type ListUserStatisticsRequest struct {
 // ListUserStatisticsResponse is the response struct for api ListUserStatistics
 type ListUserStatisticsResponse struct {
 	*responses.BaseResponse
-	Total              int              `json:"Total" xml:"Total"`
+	Total              int64            `json:"Total" xml:"Total"`
 	UserStatisticsList []UserStatistics `json:"UserStatisticsList" xml:"UserStatisticsList"`
 }
 

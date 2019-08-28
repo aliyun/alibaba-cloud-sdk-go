@@ -89,7 +89,7 @@ type DescribeExecutionPlanResponse struct {
 	Status                string      `json:"Status" xml:"Status"`
 	Strategy              string      `json:"Strategy" xml:"Strategy"`
 	TimeInterval          int         `json:"TimeInterval" xml:"TimeInterval"`
-	StartTime             int         `json:"StartTime" xml:"StartTime"`
+	StartTime             int64       `json:"StartTime" xml:"StartTime"`
 	TimeUnit              string      `json:"TimeUnit" xml:"TimeUnit"`
 	DayOfWeek             string      `json:"DayOfWeek" xml:"DayOfWeek"`
 	DayOfMonth            string      `json:"DayOfMonth" xml:"DayOfMonth"`
@@ -97,7 +97,7 @@ type DescribeExecutionPlanResponse struct {
 	ClusterId             string      `json:"ClusterId" xml:"ClusterId"`
 	ClusterName           string      `json:"ClusterName" xml:"ClusterName"`
 	WorkflowApp           string      `json:"WorkflowApp" xml:"WorkflowApp"`
-	ExecutionPlanVersion  int         `json:"ExecutionPlanVersion" xml:"ExecutionPlanVersion"`
+	ExecutionPlanVersion  int64       `json:"ExecutionPlanVersion" xml:"ExecutionPlanVersion"`
 	ClusterInfo           ClusterInfo `json:"ClusterInfo" xml:"ClusterInfo"`
 	JobInfoList           JobInfoList `json:"JobInfoList" xml:"JobInfoList"`
 }

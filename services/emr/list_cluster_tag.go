@@ -83,8 +83,8 @@ type ListClusterTagRequest struct {
 // ListClusterTagResponse is the response struct for api ListClusterTag
 type ListClusterTagResponse struct {
 	*responses.BaseResponse
-	RequestId      string         `json:"RequestId" xml:"RequestId"`
-	ClusterTagList ClusterTagList `json:"ClusterTagList" xml:"ClusterTagList"`
+	RequestId      string                         `json:"RequestId" xml:"RequestId"`
+	ClusterTagList ClusterTagListInListClusterTag `json:"ClusterTagList" xml:"ClusterTagList"`
 }
 
 // CreateListClusterTagRequest creates a request to invoke ListClusterTag API

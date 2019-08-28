@@ -85,7 +85,7 @@ type ListExecutePlanMigrateInfoRequest struct {
 // ListExecutePlanMigrateInfoResponse is the response struct for api ListExecutePlanMigrateInfo
 type ListExecutePlanMigrateInfoResponse struct {
 	*responses.BaseResponse
-	Total                      int                      `json:"Total" xml:"Total"`
+	Total                      int64                    `json:"Total" xml:"Total"`
 	ExecutePlanMigrateInfoList []ExecutePlanMigrateInfo `json:"ExecutePlanMigrateInfoList" xml:"ExecutePlanMigrateInfoList"`
 }
 

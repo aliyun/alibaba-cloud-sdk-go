@@ -18,8 +18,8 @@ package emr
 // ScalingActivity is a nested struct in emr response
 type ScalingActivity struct {
 	BizId         string `json:"BizId" xml:"BizId"`
-	StartTime     int    `json:"StartTime" xml:"StartTime"`
-	EndTime       int    `json:"EndTime" xml:"EndTime"`
+	StartTime     int64  `json:"StartTime" xml:"StartTime"`
+	EndTime       int64  `json:"EndTime" xml:"EndTime"`
 	InstanceIds   string `json:"InstanceIds" xml:"InstanceIds"`
 	TotalCapacity int    `json:"TotalCapacity" xml:"TotalCapacity"`
 	Cause         string `json:"Cause" xml:"Cause"`

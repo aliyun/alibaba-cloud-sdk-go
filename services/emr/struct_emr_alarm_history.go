@@ -22,8 +22,8 @@ type EmrAlarmHistory struct {
 	InstanceId    string `json:"InstanceId" xml:"InstanceId"`
 	Name          string `json:"Name" xml:"Name"`
 	MetricName    string `json:"MetricName" xml:"MetricName"`
-	AlarmTime     int    `json:"AlarmTime" xml:"AlarmTime"`
-	LastTime      int    `json:"LastTime" xml:"LastTime"`
+	AlarmTime     int64  `json:"AlarmTime" xml:"AlarmTime"`
+	LastTime      int64  `json:"LastTime" xml:"LastTime"`
 	State         string `json:"State" xml:"State"`
 	Status        int    `json:"Status" xml:"Status"`
 	ContactGroups string `json:"ContactGroups" xml:"ContactGroups"`

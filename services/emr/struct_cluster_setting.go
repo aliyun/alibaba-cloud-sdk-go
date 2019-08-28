@@ -17,8 +17,8 @@ package emr
 
 // ClusterSetting is a nested struct in emr response
 type ClusterSetting struct {
-	GmtCreate    int                                      `json:"GmtCreate" xml:"GmtCreate"`
-	GmtModified  int                                      `json:"GmtModified" xml:"GmtModified"`
+	GmtCreate    int64                                    `json:"GmtCreate" xml:"GmtCreate"`
+	GmtModified  int64                                    `json:"GmtModified" xml:"GmtModified"`
 	ProjectId    string                                   `json:"ProjectId" xml:"ProjectId"`
 	ClusterId    string                                   `json:"ClusterId" xml:"ClusterId"`
 	ClusterName  string                                   `json:"ClusterName" xml:"ClusterName"`

@@ -87,8 +87,8 @@ type DescribeDataSourceCommandResponse struct {
 	CommandId string                              `json:"CommandId" xml:"CommandId"`
 	HostName  string                              `json:"HostName" xml:"HostName"`
 	State     string                              `json:"State" xml:"State"`
-	StartTime int                                 `json:"StartTime" xml:"StartTime"`
-	EndTime   int                                 `json:"EndTime" xml:"EndTime"`
+	StartTime int64                               `json:"StartTime" xml:"StartTime"`
+	EndTime   int64                               `json:"EndTime" xml:"EndTime"`
 	Message   string                              `json:"Message" xml:"Message"`
 	Data      string                              `json:"Data" xml:"Data"`
 	HostList  HostListInDescribeDataSourceCommand `json:"HostList" xml:"HostList"`

@@ -83,7 +83,7 @@ type DescribeUserStatisticsRequest struct {
 // DescribeUserStatisticsResponse is the response struct for api DescribeUserStatistics
 type DescribeUserStatisticsResponse struct {
 	*responses.BaseResponse
-	Id                        int    `json:"Id" xml:"Id"`
+	Id                        int64  `json:"Id" xml:"Id"`
 	UserId                    string `json:"UserId" xml:"UserId"`
 	JobNum                    int    `json:"JobNum" xml:"JobNum"`
 	ExecutePlanNum            int    `json:"ExecutePlanNum" xml:"ExecutePlanNum"`

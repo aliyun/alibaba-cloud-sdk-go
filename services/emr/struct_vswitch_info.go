@@ -22,7 +22,7 @@ type VswitchInfo struct {
 	VswitchName             string `json:"VswitchName" xml:"VswitchName"`
 	ZoneId                  string `json:"ZoneId" xml:"ZoneId"`
 	CidrBlock               string `json:"CidrBlock" xml:"CidrBlock"`
-	AvailableIpAddressCount int    `json:"AvailableIpAddressCount" xml:"AvailableIpAddressCount"`
+	AvailableIpAddressCount int64  `json:"AvailableIpAddressCount" xml:"AvailableIpAddressCount"`
 	Description             string `json:"Description" xml:"Description"`
 	CreationTime            string `json:"CreationTime" xml:"CreationTime"`
 }

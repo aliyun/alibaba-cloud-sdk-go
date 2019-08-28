@@ -17,15 +17,15 @@ package emr
 
 // HierarchyInfo is a nested struct in emr response
 type HierarchyInfo struct {
-	Id                   int                                `json:"Id" xml:"Id"`
+	Id                   int64                              `json:"Id" xml:"Id"`
 	NodeBizType          string                             `json:"NodeBizType" xml:"NodeBizType"`
 	NodeType             string                             `json:"NodeType" xml:"NodeType"`
 	RelateId             string                             `json:"RelateId" xml:"RelateId"`
 	Name                 string                             `json:"Name" xml:"Name"`
 	ParentId             string                             `json:"ParentId" xml:"ParentId"`
 	ResourceOwnerId      string                             `json:"ResourceOwnerId" xml:"ResourceOwnerId"`
-	UtcCreateTimestamp   int                                `json:"UtcCreateTimestamp" xml:"UtcCreateTimestamp"`
-	UtcModifiedTimestamp int                                `json:"UtcModifiedTimestamp" xml:"UtcModifiedTimestamp"`
+	UtcCreateTimestamp   int64                              `json:"UtcCreateTimestamp" xml:"UtcCreateTimestamp"`
+	UtcModifiedTimestamp int64                              `json:"UtcModifiedTimestamp" xml:"UtcModifiedTimestamp"`
 	NodeStatus           int                                `json:"NodeStatus" xml:"NodeStatus"`
 	ExecutionPlan        ExecutionPlan                      `json:"ExecutionPlan" xml:"ExecutionPlan"`
 	Job                  JobInListJobExecutionPlanHierarchy `json:"Job" xml:"Job"`

@@ -18,11 +18,11 @@ package emr
 // Distribution is a nested struct in emr response
 type Distribution struct {
 	Partition       int         `json:"Partition" xml:"Partition"`
-	Offset          int         `json:"Offset" xml:"Offset"`
+	Offset          int64       `json:"Offset" xml:"Offset"`
 	Leader          int         `json:"Leader" xml:"Leader"`
 	PreferredLeader bool        `json:"PreferredLeader" xml:"PreferredLeader"`
 	UnderReplicated bool        `json:"UnderReplicated" xml:"UnderReplicated"`
-	LogEndOffset    int         `json:"LogEndOffset" xml:"LogEndOffset"`
+	LogEndOffset    int64       `json:"LogEndOffset" xml:"LogEndOffset"`
 	IsrList         IsrList     `json:"IsrList" xml:"IsrList"`
 	ReplicaList     ReplicaList `json:"ReplicaList" xml:"ReplicaList"`
 }

@@ -85,14 +85,14 @@ type DescribeFlowJobResponse struct {
 	*responses.BaseResponse
 	RequestId       string                        `json:"RequestId" xml:"RequestId"`
 	Id              string                        `json:"Id" xml:"Id"`
-	GmtCreate       int                           `json:"GmtCreate" xml:"GmtCreate"`
-	GmtModified     int                           `json:"GmtModified" xml:"GmtModified"`
+	GmtCreate       int64                         `json:"GmtCreate" xml:"GmtCreate"`
+	GmtModified     int64                         `json:"GmtModified" xml:"GmtModified"`
 	Name            string                        `json:"Name" xml:"Name"`
 	Type            string                        `json:"Type" xml:"Type"`
 	Description     string                        `json:"Description" xml:"Description"`
 	FailAct         string                        `json:"FailAct" xml:"FailAct"`
 	MaxRetry        int                           `json:"MaxRetry" xml:"MaxRetry"`
-	RetryInterval   int                           `json:"RetryInterval" xml:"RetryInterval"`
+	RetryInterval   int64                         `json:"RetryInterval" xml:"RetryInterval"`
 	Params          string                        `json:"Params" xml:"Params"`
 	ParamConf       string                        `json:"ParamConf" xml:"ParamConf"`
 	CustomVariables string                        `json:"CustomVariables" xml:"CustomVariables"`

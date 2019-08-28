@@ -23,6 +23,7 @@ type TemplateInfo struct {
 	SecurityGroupId        string                                    `json:"SecurityGroupId" xml:"SecurityGroupId"`
 	MachineType            string                                    `json:"MachineType" xml:"MachineType"`
 	Configurations         string                                    `json:"Configurations" xml:"Configurations"`
+	MetaStoreConf          string                                    `json:"MetaStoreConf" xml:"MetaStoreConf"`
 	IsOpenPublicIp         bool                                      `json:"IsOpenPublicIp" xml:"IsOpenPublicIp"`
 	CreateSource           string                                    `json:"CreateSource" xml:"CreateSource"`
 	UseCustomHiveMetaDb    bool                                      `json:"UseCustomHiveMetaDb" xml:"UseCustomHiveMetaDb"`
@@ -40,14 +41,17 @@ type TemplateInfo struct {
 	VSwitchId              string                                    `json:"VSwitchId" xml:"VSwitchId"`
 	DepositType            string                                    `json:"DepositType" xml:"DepositType"`
 	UseLocalMetaDb         bool                                      `json:"UseLocalMetaDb" xml:"UseLocalMetaDb"`
-	GmtCreate              int                                       `json:"GmtCreate" xml:"GmtCreate"`
+	GmtCreate              int64                                     `json:"GmtCreate" xml:"GmtCreate"`
 	ZoneId                 string                                    `json:"ZoneId" xml:"ZoneId"`
 	SshEnable              bool                                      `json:"SshEnable" xml:"SshEnable"`
+	KeyPairName            string                                    `json:"KeyPairName" xml:"KeyPairName"`
 	InstanceGeneration     string                                    `json:"InstanceGeneration" xml:"InstanceGeneration"`
-	GmtModified            int                                       `json:"GmtModified" xml:"GmtModified"`
+	GmtModified            int64                                     `json:"GmtModified" xml:"GmtModified"`
 	LogPath                string                                    `json:"LogPath" xml:"LogPath"`
+	MetaStoreType          string                                    `json:"MetaStoreType" xml:"MetaStoreType"`
 	HighAvailabilityEnable bool                                      `json:"HighAvailabilityEnable" xml:"HighAvailabilityEnable"`
 	LogEnable              bool                                      `json:"LogEnable" xml:"LogEnable"`
+	MasterPwd              string                                    `json:"MasterPwd" xml:"MasterPwd"`
 	SoftwareInfoList       SoftwareInfoListInListClusterTemplates    `json:"SoftwareInfoList" xml:"SoftwareInfoList"`
 	HostGroupList          HostGroupListInListClusterTemplates       `json:"HostGroupList" xml:"HostGroupList"`
 	BootstrapActionList    BootstrapActionListInListClusterTemplates `json:"BootstrapActionList" xml:"BootstrapActionList"`

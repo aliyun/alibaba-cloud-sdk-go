@@ -84,8 +84,10 @@ type SubmitFlowRequest struct {
 // SubmitFlowResponse is the response struct for api SubmitFlow
 type SubmitFlowResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Id        string `json:"Id" xml:"Id"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
+	InstanceId string `json:"InstanceId" xml:"InstanceId"`
+	Id         string `json:"Id" xml:"Id"`
+	Data       string `json:"Data" xml:"Data"`
 }
 
 // CreateSubmitFlowRequest creates a request to invoke SubmitFlow API

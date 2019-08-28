@@ -78,6 +78,7 @@ type CreateClusterWithTemplateRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	UniqueTag       string           `position:"Query" name:"UniqueTag"`
+	ClusterName     string           `position:"Query" name:"ClusterName"`
 	TemplateBizId   string           `position:"Query" name:"TemplateBizId"`
 }
 

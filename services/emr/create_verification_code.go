@@ -84,7 +84,7 @@ type CreateVerificationCodeRequest struct {
 // CreateVerificationCodeResponse is the response struct for api CreateVerificationCode
 type CreateVerificationCodeResponse struct {
 	*responses.BaseResponse
-	Status int `json:"Status" xml:"Status"`
+	Status int64 `json:"Status" xml:"Status"`
 }
 
 // CreateCreateVerificationCodeRequest creates a request to invoke CreateVerificationCode API

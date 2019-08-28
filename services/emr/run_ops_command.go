@@ -89,7 +89,7 @@ type RunOpsCommandRequest struct {
 type RunOpsCommandResponse struct {
 	*responses.BaseResponse
 	RequestId   string `json:"RequestId" xml:"RequestId"`
-	OperationId int    `json:"OperationId" xml:"OperationId"`
+	OperationId int64  `json:"OperationId" xml:"OperationId"`
 }
 
 // CreateRunOpsCommandRequest creates a request to invoke RunOpsCommand API

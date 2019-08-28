@@ -17,6 +17,7 @@ package emr
 
 // Cluster is a nested struct in emr response
 type Cluster struct {
+	ClusterId     string `json:"ClusterId" xml:"ClusterId"`
 	ClusterBizId  string `json:"ClusterBizId" xml:"ClusterBizId"`
 	ClusterName   string `json:"ClusterName" xml:"ClusterName"`
 	ClusterStatus string `json:"ClusterStatus" xml:"ClusterStatus"`

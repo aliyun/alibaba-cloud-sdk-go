@@ -27,7 +27,7 @@ type Group struct {
 	SysDiskCategory    string                                `json:"SysDiskCategory" xml:"SysDiskCategory"`
 	PayType            string                                `json:"PayType" xml:"PayType"`
 	GmtModified        string                                `json:"GmtModified" xml:"GmtModified"`
-	Id                 int                                   `json:"Id" xml:"Id"`
+	Id                 int64                                 `json:"Id" xml:"Id"`
 	DefaultCooldown    int                                   `json:"DefaultCooldown" xml:"DefaultCooldown"`
 	SysDiskSize        int                                   `json:"SysDiskSize" xml:"SysDiskSize"`
 	ActiveRuleCategory string                                `json:"ActiveRuleCategory" xml:"ActiveRuleCategory"`

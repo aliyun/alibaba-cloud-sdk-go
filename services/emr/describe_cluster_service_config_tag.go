@@ -85,8 +85,8 @@ type DescribeClusterServiceConfigTagRequest struct {
 // DescribeClusterServiceConfigTagResponse is the response struct for api DescribeClusterServiceConfigTag
 type DescribeClusterServiceConfigTagResponse struct {
 	*responses.BaseResponse
-	RequestId     string        `json:"RequestId" xml:"RequestId"`
-	ConfigTagList ConfigTagList `json:"ConfigTagList" xml:"ConfigTagList"`
+	RequestId     string                                         `json:"RequestId" xml:"RequestId"`
+	ConfigTagList ConfigTagListInDescribeClusterServiceConfigTag `json:"ConfigTagList" xml:"ConfigTagList"`
 }
 
 // CreateDescribeClusterServiceConfigTagRequest creates a request to invoke DescribeClusterServiceConfigTag API

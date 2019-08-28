@@ -21,12 +21,12 @@ type Database struct {
 	DataSourceType     string `json:"DataSourceType" xml:"DataSourceType"`
 	Owner              string `json:"Owner" xml:"Owner"`
 	Location           string `json:"Location" xml:"Location"`
-	GmtCreate          int    `json:"GmtCreate" xml:"GmtCreate"`
+	GmtCreate          int64  `json:"GmtCreate" xml:"GmtCreate"`
 	LocationType       string `json:"LocationType" xml:"LocationType"`
 	OwnerType          string `json:"OwnerType" xml:"OwnerType"`
 	DatabaseType       string `json:"DatabaseType" xml:"DatabaseType"`
 	ProjectName        string `json:"ProjectName" xml:"ProjectName"`
-	GmtModified        int    `json:"GmtModified" xml:"GmtModified"`
+	GmtModified        int64  `json:"GmtModified" xml:"GmtModified"`
 	ProjectId          string `json:"ProjectId" xml:"ProjectId"`
 	ClusterBizId       string `json:"ClusterBizId" xml:"ClusterBizId"`
 	ClusterName        string `json:"ClusterName" xml:"ClusterName"`

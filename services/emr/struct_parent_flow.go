@@ -17,7 +17,7 @@ package emr
 
 // ParentFlow is a nested struct in emr response
 type ParentFlow struct {
-	BizDate              int    `json:"BizDate" xml:"BizDate"`
+	BizDate              int64  `json:"BizDate" xml:"BizDate"`
 	FlowId               string `json:"FlowId" xml:"FlowId"`
 	ScheduleKey          string `json:"ScheduleKey" xml:"ScheduleKey"`
 	ParentFlowId         string `json:"ParentFlowId" xml:"ParentFlowId"`

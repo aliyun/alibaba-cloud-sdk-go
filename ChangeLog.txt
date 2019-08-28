@@ -1,3 +1,6 @@
+2019-08-28 Version: 1.60.123
+- Update emr go api.
+
 2019-08-28 Version: 1.60.122
 - Add DBS API UpgradeBackupPlan.
 - Add DBS API DescribePreCheckProgressList.

@@ -19,7 +19,7 @@ package emr
 type ScriptNodeInstance struct {
 	NodeId    string `json:"NodeId" xml:"NodeId"`
 	NodeIp    string `json:"NodeIp" xml:"NodeIp"`
-	StartTime int    `json:"StartTime" xml:"StartTime"`
-	EndTime   int    `json:"EndTime" xml:"EndTime"`
+	StartTime int64  `json:"StartTime" xml:"StartTime"`
+	EndTime   int64  `json:"EndTime" xml:"EndTime"`
 	Status    string `json:"Status" xml:"Status"`
 }

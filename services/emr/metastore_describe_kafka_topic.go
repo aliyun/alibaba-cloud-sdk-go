@@ -89,13 +89,15 @@ type MetastoreDescribeKafkaTopicResponse struct {
 	TopicName                   string                                          `json:"TopicName" xml:"TopicName"`
 	NumPartitions               int                                             `json:"NumPartitions" xml:"NumPartitions"`
 	ReplicationFactor           int                                             `json:"ReplicationFactor" xml:"ReplicationFactor"`
-	GmtCreate                   int                                             `json:"GmtCreate" xml:"GmtCreate"`
-	GmtModified                 int                                             `json:"GmtModified" xml:"GmtModified"`
+	GmtCreate                   int64                                           `json:"GmtCreate" xml:"GmtCreate"`
+	GmtModified                 int64                                           `json:"GmtModified" xml:"GmtModified"`
 	BrokerTotal                 int                                             `json:"BrokerTotal" xml:"BrokerTotal"`
 	NumUsingBrokers             int                                             `json:"NumUsingBrokers" xml:"NumUsingBrokers"`
 	BrokersLeaderSkewPercentage string                                          `json:"BrokersLeaderSkewPercentage" xml:"BrokersLeaderSkewPercentage"`
 	UnderReplicatedPercentage   string                                          `json:"UnderReplicatedPercentage" xml:"UnderReplicatedPercentage"`
 	PreferredReplicasPercentage string                                          `json:"PreferredReplicasPercentage" xml:"PreferredReplicasPercentage"`
+	Status                      string                                          `json:"Status" xml:"Status"`
+	ReassignId                  string                                          `json:"ReassignId" xml:"ReassignId"`
 	Cluster                     Cluster                                         `json:"Cluster" xml:"Cluster"`
 	AdvancedConfigList          AdvancedConfigListInMetastoreDescribeKafkaTopic `json:"AdvancedConfigList" xml:"AdvancedConfigList"`
 	SummaryList                 SummaryList                                     `json:"SummaryList" xml:"SummaryList"`

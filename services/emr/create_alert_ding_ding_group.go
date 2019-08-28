@@ -85,7 +85,7 @@ type CreateAlertDingDingGroupRequest struct {
 // CreateAlertDingDingGroupResponse is the response struct for api CreateAlertDingDingGroup
 type CreateAlertDingDingGroupResponse struct {
 	*responses.BaseResponse
-	Id int `json:"Id" xml:"Id"`
+	Id int64 `json:"Id" xml:"Id"`
 }
 
 // CreateCreateAlertDingDingGroupRequest creates a request to invoke CreateAlertDingDingGroup API

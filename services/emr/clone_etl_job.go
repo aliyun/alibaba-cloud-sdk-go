@@ -77,6 +77,7 @@ func (client *Client) CloneETLJobWithCallback(request *CloneETLJobRequest, callb
 type CloneETLJobRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Name            string           `position:"Query" name:"Name"`
 	Id              string           `position:"Query" name:"Id"`
 }
 

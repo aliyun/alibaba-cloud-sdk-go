@@ -100,18 +100,37 @@ type CreateScalingTaskGroupSpotPriceLimits struct {
 
 // CreateScalingTaskGroupScalingRule is a repeated param struct in CreateScalingTaskGroupRequest
 type CreateScalingTaskGroupScalingRule struct {
-	LaunchTime           string    `name:"LaunchTime"`
-	RuleCategory         string    `name:"RuleCategory"`
-	AdjustmentValue      string    `name:"AdjustmentValue"`
-	SchedulerTrigger     *[]string `name:"SchedulerTrigger" type:"Repeated"`
-	AdjustmentType       string    `name:"AdjustmentType"`
-	Cooldown             string    `name:"Cooldown"`
-	RuleName             string    `name:"RuleName"`
-	LaunchExpirationTime string    `name:"LaunchExpirationTime"`
-	RecurrenceValue      string    `name:"RecurrenceValue"`
-	RecurrenceEndTime    string    `name:"RecurrenceEndTime"`
-	CloudWatchTrigger    *[]string `name:"CloudWatchTrigger" type:"Repeated"`
-	RecurrenceType       string    `name:"RecurrenceType"`
+	LaunchTime           string                                     `name:"LaunchTime"`
+	RuleCategory         string                                     `name:"RuleCategory"`
+	AdjustmentValue      string                                     `name:"AdjustmentValue"`
+	SchedulerTrigger     *[]CreateScalingTaskGroupSchedulerTrigger  `name:"SchedulerTrigger" type:"Repeated"`
+	AdjustmentType       string                                     `name:"AdjustmentType"`
+	Cooldown             string                                     `name:"Cooldown"`
+	RuleName             string                                     `name:"RuleName"`
+	LaunchExpirationTime string                                     `name:"LaunchExpirationTime"`
+	RecurrenceValue      string                                     `name:"RecurrenceValue"`
+	RecurrenceEndTime    string                                     `name:"RecurrenceEndTime"`
+	CloudWatchTrigger    *[]CreateScalingTaskGroupCloudWatchTrigger `name:"CloudWatchTrigger" type:"Repeated"`
+	RecurrenceType       string                                     `name:"RecurrenceType"`
+}
+
+// CreateScalingTaskGroupSchedulerTrigger is a repeated param struct in CreateScalingTaskGroupRequest
+type CreateScalingTaskGroupSchedulerTrigger struct {
+	LaunchTime           string `name:"LaunchTime"`
+	LaunchExpirationTime string `name:"LaunchExpirationTime"`
+	RecurrenceValue      string `name:"RecurrenceValue"`
+	RecurrenceEndTime    string `name:"RecurrenceEndTime"`
+	RecurrenceType       string `name:"RecurrenceType"`
+}
+
+// CreateScalingTaskGroupCloudWatchTrigger is a repeated param struct in CreateScalingTaskGroupRequest
+type CreateScalingTaskGroupCloudWatchTrigger struct {
+	Period             string `name:"Period"`
+	EvaluationCount    string `name:"EvaluationCount"`
+	Threshold          string `name:"Threshold"`
+	MetricName         string `name:"MetricName"`
+	ComparisonOperator string `name:"ComparisonOperator"`
+	Statistics         string `name:"Statistics"`
 }
 
 // CreateScalingTaskGroupResponse is the response struct for api CreateScalingTaskGroup

@@ -89,10 +89,10 @@ type MetastoreDescribeKafkaConsumerGroupResponse struct {
 	DataSourceId        string                                             `json:"DataSourceId" xml:"DataSourceId"`
 	ConsumerGroup       string                                             `json:"ConsumerGroup" xml:"ConsumerGroup"`
 	ConsumerType        string                                             `json:"ConsumerType" xml:"ConsumerType"`
-	TotalLag            int                                                `json:"TotalLag" xml:"TotalLag"`
+	TotalLag            int64                                              `json:"TotalLag" xml:"TotalLag"`
 	PartitionProportion string                                             `json:"PartitionProportion" xml:"PartitionProportion"`
-	GmtCreate           int                                                `json:"GmtCreate" xml:"GmtCreate"`
-	GmtModified         int                                                `json:"GmtModified" xml:"GmtModified"`
+	GmtCreate           int64                                              `json:"GmtCreate" xml:"GmtCreate"`
+	GmtModified         int64                                              `json:"GmtModified" xml:"GmtModified"`
 	PartitionList       PartitionListInMetastoreDescribeKafkaConsumerGroup `json:"PartitionList" xml:"PartitionList"`
 }
 

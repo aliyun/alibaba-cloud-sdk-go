@@ -18,5 +18,5 @@ package emr
 // ClusterStatQueueSubmission is a nested struct in emr response
 type ClusterStatQueueSubmission struct {
 	Queue      string `json:"Queue" xml:"Queue"`
-	Submission int    `json:"Submission" xml:"Submission"`
+	Submission int64  `json:"Submission" xml:"Submission"`
 }

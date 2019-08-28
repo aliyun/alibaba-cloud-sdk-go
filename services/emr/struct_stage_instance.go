@@ -17,9 +17,8 @@ package emr
 
 // StageInstance is a nested struct in emr response
 type StageInstance struct {
-	Name      string  `json:"Name" xml:"Name"`
-	StartTime int     `json:"StartTime" xml:"StartTime"`
-	Id        string  `json:"Id" xml:"Id"`
-	EndTime   int     `json:"EndTime" xml:"EndTime"`
-	Metrics   Metrics `json:"Metrics" xml:"Metrics"`
+	Name           string `json:"Name" xml:"Name"`
+	Id             string `json:"Id" xml:"Id"`
+	StageEndTime   int64  `json:"StageEndTime" xml:"StageEndTime"`
+	StageStartTime int64  `json:"StageStartTime" xml:"StageStartTime"`
 }

@@ -17,14 +17,14 @@ package emr
 
 // ExecutePlanMigrateInfo is a nested struct in emr response
 type ExecutePlanMigrateInfo struct {
-	Id                    int       `json:"Id" xml:"Id"`
+	Id                    int64     `json:"Id" xml:"Id"`
 	BizId                 string    `json:"BizId" xml:"BizId"`
 	CreateTime            string    `json:"CreateTime" xml:"CreateTime"`
 	Name                  string    `json:"Name" xml:"Name"`
-	Status                int       `json:"Status" xml:"Status"`
+	Status                int64     `json:"Status" xml:"Status"`
 	CronExpr              string    `json:"CronExpr" xml:"CronExpr"`
 	StartScheduleTime     string    `json:"StartScheduleTime" xml:"StartScheduleTime"`
-	IsCycle               int       `json:"IsCycle" xml:"IsCycle"`
+	IsCycle               int64     `json:"IsCycle" xml:"IsCycle"`
 	BuildClusterCondition string    `json:"BuildClusterCondition" xml:"BuildClusterCondition"`
 	JobList               []JobInfo `json:"JobList" xml:"JobList"`
 }

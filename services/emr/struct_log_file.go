@@ -18,7 +18,7 @@ package emr
 // LogFile is a nested struct in emr response
 type LogFile struct {
 	FileName     string `json:"FileName" xml:"FileName"`
-	Size         int    `json:"Size" xml:"Size"`
+	Size         int64  `json:"Size" xml:"Size"`
 	HostName     string `json:"HostName" xml:"HostName"`
-	LastModified int    `json:"LastModified" xml:"LastModified"`
+	LastModified int64  `json:"LastModified" xml:"LastModified"`
 }

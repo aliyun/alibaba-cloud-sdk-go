@@ -21,7 +21,7 @@ type DataResourceInfo struct {
 	RegionId    string `json:"RegionId" xml:"RegionId"`
 	Name        string `json:"Name" xml:"Name"`
 	MetaType    string `json:"MetaType" xml:"MetaType"`
-	ClusterId   int    `json:"ClusterId" xml:"ClusterId"`
+	ClusterId   int64  `json:"ClusterId" xml:"ClusterId"`
 	AccessType  string `json:"AccessType" xml:"AccessType"`
 	Default     bool   `json:"Default" xml:"Default"`
 	Description string `json:"Description" xml:"Description"`

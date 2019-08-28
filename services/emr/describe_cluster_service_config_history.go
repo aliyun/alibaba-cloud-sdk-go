@@ -85,8 +85,8 @@ type DescribeClusterServiceConfigHistoryRequest struct {
 // DescribeClusterServiceConfigHistoryResponse is the response struct for api DescribeClusterServiceConfigHistory
 type DescribeClusterServiceConfigHistoryResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Config    Config `json:"Config" xml:"Config"`
+	RequestId string                                      `json:"RequestId" xml:"RequestId"`
+	Config    ConfigInDescribeClusterServiceConfigHistory `json:"Config" xml:"Config"`
 }
 
 // CreateDescribeClusterServiceConfigHistoryRequest creates a request to invoke DescribeClusterServiceConfigHistory API

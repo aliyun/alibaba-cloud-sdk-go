@@ -17,5 +17,5 @@ package emr
 
 // AlertConfig is a nested struct in emr response
 type AlertConfig struct {
-	Items Items `json:"Items" xml:"Items"`
+	Items ItemsInDescribeETLJob `json:"Items" xml:"Items"`
 }

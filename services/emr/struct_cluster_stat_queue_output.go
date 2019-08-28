@@ -18,5 +18,5 @@ package emr
 // ClusterStatQueueOutput is a nested struct in emr response
 type ClusterStatQueueOutput struct {
 	Queue       string `json:"Queue" xml:"Queue"`
-	BytesOutput int    `json:"BytesOutput" xml:"BytesOutput"`
+	BytesOutput int64  `json:"BytesOutput" xml:"BytesOutput"`
 }

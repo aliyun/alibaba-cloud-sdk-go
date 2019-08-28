@@ -21,6 +21,6 @@ type ParamInfo struct {
 	RelateId             string `json:"RelateId" xml:"RelateId"`
 	ParamName            string `json:"ParamName" xml:"ParamName"`
 	ParamValue           string `json:"ParamValue" xml:"ParamValue"`
-	UtcCreateTimestamp   int    `json:"UtcCreateTimestamp" xml:"UtcCreateTimestamp"`
-	UtcModifiedTimestamp int    `json:"UtcModifiedTimestamp" xml:"UtcModifiedTimestamp"`
+	UtcCreateTimestamp   int64  `json:"UtcCreateTimestamp" xml:"UtcCreateTimestamp"`
+	UtcModifiedTimestamp int64  `json:"UtcModifiedTimestamp" xml:"UtcModifiedTimestamp"`
 }

@@ -17,7 +17,7 @@ package emr
 
 // SlsLogstoreInfo is a nested struct in emr response
 type SlsLogstoreInfo struct {
-	Id            int    `json:"Id" xml:"Id"`
+	Id            int64  `json:"Id" xml:"Id"`
 	ServiceName   string `json:"ServiceName" xml:"ServiceName"`
 	ComponentName string `json:"ComponentName" xml:"ComponentName"`
 	LogstoreName  string `json:"LogstoreName" xml:"LogstoreName"`

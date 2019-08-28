@@ -18,8 +18,8 @@ package emr
 // Project is a nested struct in emr response
 type Project struct {
 	Id          string `json:"Id" xml:"Id"`
-	GmtCreate   int    `json:"GmtCreate" xml:"GmtCreate"`
-	GmtModified int    `json:"GmtModified" xml:"GmtModified"`
+	GmtCreate   int64  `json:"GmtCreate" xml:"GmtCreate"`
+	GmtModified int64  `json:"GmtModified" xml:"GmtModified"`
 	UserId      string `json:"UserId" xml:"UserId"`
 	Name        string `json:"Name" xml:"Name"`
 	Description string `json:"Description" xml:"Description"`

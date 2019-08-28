@@ -77,22 +77,15 @@ func (client *Client) UpdateETLJobWithCallback(request *UpdateETLJobRequest, cal
 type UpdateETLJobRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId requests.Integer               `position:"Query" name:"ResourceOwnerId"`
-	StageConnection *[]UpdateETLJobStageConnection `position:"Query" name:"StageConnection"  type:"Repeated"`
 	ClusterConfig   string                         `position:"Query" name:"ClusterConfig"`
 	TriggerRule     *[]UpdateETLJobTriggerRule     `position:"Query" name:"TriggerRule"  type:"Repeated"`
-	Stage           *[]UpdateETLJobStage           `position:"Query" name:"Stage"  type:"Repeated"`
 	AlertConfig     string                         `position:"Query" name:"AlertConfig"`
-	Name            string                         `position:"Query" name:"Name"`
 	Description     string                         `position:"Query" name:"Description"`
-	Id              string                         `position:"Query" name:"Id"`
 	Check           requests.Boolean               `position:"Query" name:"Check"`
-}
-
-// UpdateETLJobStageConnection is a repeated param struct in UpdateETLJobRequest
-type UpdateETLJobStageConnection struct {
-	Port string `name:"Port"`
-	From string `name:"From"`
-	To   string `name:"To"`
+	StageConnection *[]UpdateETLJobStageConnection `position:"Query" name:"StageConnection"  type:"Repeated"`
+	Stage           *[]UpdateETLJobStage           `position:"Query" name:"Stage"  type:"Repeated"`
+	Name            string                         `position:"Query" name:"Name"`
+	Id              string                         `position:"Query" name:"Id"`
 }
 
 // UpdateETLJobTriggerRule is a repeated param struct in UpdateETLJobRequest
@@ -101,6 +94,13 @@ type UpdateETLJobTriggerRule struct {
 	EndTime   string `name:"EndTime"`
 	StartTime string `name:"StartTime"`
 	Enabled   string `name:"Enabled"`
+}
+
+// UpdateETLJobStageConnection is a repeated param struct in UpdateETLJobRequest
+type UpdateETLJobStageConnection struct {
+	Port string `name:"Port"`
+	From string `name:"From"`
+	To   string `name:"To"`
 }
 
 // UpdateETLJobStage is a repeated param struct in UpdateETLJobRequest

@@ -18,15 +18,15 @@ package emr
 // FlowItem is a nested struct in emr response
 type FlowItem struct {
 	Id                      string `json:"Id" xml:"Id"`
-	GmtCreate               int    `json:"GmtCreate" xml:"GmtCreate"`
-	GmtModified             int    `json:"GmtModified" xml:"GmtModified"`
+	GmtCreate               int64  `json:"GmtCreate" xml:"GmtCreate"`
+	GmtModified             int64  `json:"GmtModified" xml:"GmtModified"`
 	Name                    string `json:"Name" xml:"Name"`
 	Description             string `json:"Description" xml:"Description"`
 	Type                    string `json:"Type" xml:"Type"`
 	Status                  string `json:"Status" xml:"Status"`
 	Periodic                bool   `json:"Periodic" xml:"Periodic"`
-	StartSchedule           int    `json:"StartSchedule" xml:"StartSchedule"`
-	EndSchedule             int    `json:"EndSchedule" xml:"EndSchedule"`
+	StartSchedule           int64  `json:"StartSchedule" xml:"StartSchedule"`
+	EndSchedule             int64  `json:"EndSchedule" xml:"EndSchedule"`
 	CronExpr                string `json:"CronExpr" xml:"CronExpr"`
 	CreateCluster           bool   `json:"CreateCluster" xml:"CreateCluster"`
 	ClusterId               string `json:"ClusterId" xml:"ClusterId"`

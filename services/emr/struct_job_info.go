@@ -21,9 +21,9 @@ type JobInfo struct {
 	ClusterId     string `json:"ClusterId" xml:"ClusterId"`
 	JobId         string `json:"JobId" xml:"JobId"`
 	FailAct       string `json:"FailAct" xml:"FailAct"`
-	IndexNO       int    `json:"IndexNO" xml:"IndexNO"`
+	IndexNO       int64  `json:"IndexNO" xml:"IndexNO"`
 	RetryInterval int    `json:"RetryInterval" xml:"RetryInterval"`
-	Status        int    `json:"Status" xml:"Status"`
+	Status        int64  `json:"Status" xml:"Status"`
 	MaxRetry      int    `json:"MaxRetry" xml:"MaxRetry"`
 	Id            string `json:"Id" xml:"Id"`
 	RunParameter  string `json:"RunParameter" xml:"RunParameter"`

@@ -36,8 +36,8 @@ type Table struct {
 	OutputFormat     string `json:"OutputFormat" xml:"OutputFormat"`
 	Location         string `json:"Location" xml:"Location"`
 	IsCompressed     bool   `json:"IsCompressed" xml:"IsCompressed"`
-	LastAccessTime   int    `json:"LastAccessTime" xml:"LastAccessTime"`
-	CreateTime       int    `json:"CreateTime" xml:"CreateTime"`
-	GmtCreate        int    `json:"GmtCreate" xml:"GmtCreate"`
-	GmtModified      int    `json:"GmtModified" xml:"GmtModified"`
+	LastAccessTime   int64  `json:"LastAccessTime" xml:"LastAccessTime"`
+	CreateTime       int64  `json:"CreateTime" xml:"CreateTime"`
+	GmtCreate        int64  `json:"GmtCreate" xml:"GmtCreate"`
+	GmtModified      int64  `json:"GmtModified" xml:"GmtModified"`
 }

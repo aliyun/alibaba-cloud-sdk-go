@@ -17,8 +17,8 @@ package emr
 
 // SlsLogHistogram is a nested struct in emr response
 type SlsLogHistogram struct {
-	FromTime  int  `json:"FromTime" xml:"FromTime"`
-	ToTime    int  `json:"ToTime" xml:"ToTime"`
-	Count     int  `json:"Count" xml:"Count"`
-	Completed bool `json:"Completed" xml:"Completed"`
+	FromTime  int   `json:"FromTime" xml:"FromTime"`
+	ToTime    int   `json:"ToTime" xml:"ToTime"`
+	Count     int64 `json:"Count" xml:"Count"`
+	Completed bool  `json:"Completed" xml:"Completed"`
 }

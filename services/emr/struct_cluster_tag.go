@@ -17,6 +17,6 @@ package emr
 
 // ClusterTag is a nested struct in emr response
 type ClusterTag struct {
-	ClusterId   string      `json:"ClusterId" xml:"ClusterId"`
-	TagInfoList TagInfoList `json:"TagInfoList" xml:"TagInfoList"`
+	ClusterId   string                              `json:"ClusterId" xml:"ClusterId"`
+	TagInfoList TagInfoListInListClusterTagForAdmin `json:"TagInfoList" xml:"TagInfoList"`
 }

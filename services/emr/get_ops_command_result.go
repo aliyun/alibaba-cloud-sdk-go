@@ -88,7 +88,7 @@ type GetOpsCommandResultResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	Content   string `json:"Content" xml:"Content"`
-	Cursor    int    `json:"Cursor" xml:"Cursor"`
+	Cursor    int64  `json:"Cursor" xml:"Cursor"`
 	Finished  bool   `json:"Finished" xml:"Finished"`
 }
 

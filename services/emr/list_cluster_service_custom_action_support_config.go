@@ -85,8 +85,8 @@ type ListClusterServiceCustomActionSupportConfigRequest struct {
 // ListClusterServiceCustomActionSupportConfigResponse is the response struct for api ListClusterServiceCustomActionSupportConfig
 type ListClusterServiceCustomActionSupportConfigResponse struct {
 	*responses.BaseResponse
-	RequestId           string              `json:"RequestId" xml:"RequestId"`
-	SupportedConfigList SupportedConfigList `json:"SupportedConfigList" xml:"SupportedConfigList"`
+	RequestId           string                                                           `json:"RequestId" xml:"RequestId"`
+	SupportedConfigList SupportedConfigListInListClusterServiceCustomActionSupportConfig `json:"SupportedConfigList" xml:"SupportedConfigList"`
 }
 
 // CreateListClusterServiceCustomActionSupportConfigRequest creates a request to invoke ListClusterServiceCustomActionSupportConfig API

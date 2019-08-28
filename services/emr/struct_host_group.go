@@ -29,6 +29,7 @@ type HostGroup struct {
 	SystemDiskSize        int    `json:"SystemDiskSize" xml:"SystemDiskSize"`
 	InstanceType          string `json:"InstanceType" xml:"InstanceType"`
 	DataDiskSize          int    `json:"DataDiskSize" xml:"DataDiskSize"`
+	HostGroupChangeStatus string `json:"HostGroupChangeStatus" xml:"HostGroupChangeStatus"`
 	NodeCount             int    `json:"NodeCount" xml:"NodeCount"`
 	GmtModified           string `json:"gmtModified" xml:"gmtModified"`
 	DiskCount             int    `json:"DiskCount" xml:"DiskCount"`
@@ -49,7 +50,6 @@ type HostGroup struct {
 	Cpu                   int    `json:"Cpu" xml:"Cpu"`
 	Status                string `json:"Status" xml:"Status"`
 	HostGroupChangeType   string `json:"HostGroupChangeType" xml:"HostGroupChangeType"`
-	HostGroupChangeStatus string `json:"hostGroupChangeStatus" xml:"hostGroupChangeStatus"`
 	HostGroupId           string `json:"HostGroupId" xml:"HostGroupId"`
 	DataDiskCount         int    `json:"DataDiskCount" xml:"DataDiskCount"`
 	SystemDiskType        string `json:"SystemDiskType" xml:"SystemDiskType"`

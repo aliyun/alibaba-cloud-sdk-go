@@ -17,11 +17,11 @@ package emr
 
 // Metrics is a nested struct in emr response
 type Metrics struct {
-	RecordsError int    `json:"RecordsError" xml:"RecordsError"`
-	Vcores       int    `json:"Vcores" xml:"Vcores"`
+	RecordsError int64  `json:"RecordsError" xml:"RecordsError"`
+	Vcores       int64  `json:"Vcores" xml:"Vcores"`
 	RecordsRate  string `json:"RecordsRate" xml:"RecordsRate"`
-	MemSize      int    `json:"MemSize" xml:"MemSize"`
-	RecordsIn    int    `json:"RecordsIn" xml:"RecordsIn"`
-	RecordsOut   int    `json:"RecordsOut" xml:"RecordsOut"`
-	TotalTime    int    `json:"TotalTime" xml:"TotalTime"`
+	MemSize      int64  `json:"MemSize" xml:"MemSize"`
+	RecordsIn    int64  `json:"RecordsIn" xml:"RecordsIn"`
+	RecordsOut   int64  `json:"RecordsOut" xml:"RecordsOut"`
+	TotalTime    int64  `json:"TotalTime" xml:"TotalTime"`
 }

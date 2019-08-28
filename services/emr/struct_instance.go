@@ -23,8 +23,8 @@ type Instance struct {
 	InstanceStatus    string                                `json:"InstanceStatus" xml:"InstanceStatus"`
 	TriggerType       string                                `json:"TriggerType" xml:"TriggerType"`
 	TriggerUser       string                                `json:"TriggerUser" xml:"TriggerUser"`
-	StartTime         int                                   `json:"StartTime" xml:"StartTime"`
-	EndTime           int                                   `json:"EndTime" xml:"EndTime"`
+	StartTime         int64                                 `json:"StartTime" xml:"StartTime"`
+	EndTime           int64                                 `json:"EndTime" xml:"EndTime"`
 	Arguments         Arguments                             `json:"Arguments" xml:"Arguments"`
 	Metrics           Metrics                               `json:"Metrics" xml:"Metrics"`
 	FlowRelationList  FlowRelationListInListETLJobInstance  `json:"FlowRelationList" xml:"FlowRelationList"`

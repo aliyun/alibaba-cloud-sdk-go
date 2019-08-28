@@ -95,8 +95,8 @@ type DescribeDataSourceResponse struct {
 	ClusterId   string `json:"ClusterId" xml:"ClusterId"`
 	Creator     string `json:"Creator" xml:"Creator"`
 	Modifier    string `json:"Modifier" xml:"Modifier"`
-	GmtCreate   int    `json:"GmtCreate" xml:"GmtCreate"`
-	GmtModified int    `json:"GmtModified" xml:"GmtModified"`
+	GmtCreate   int64  `json:"GmtCreate" xml:"GmtCreate"`
+	GmtModified int64  `json:"GmtModified" xml:"GmtModified"`
 }
 
 // CreateDescribeDataSourceRequest creates a request to invoke DescribeDataSource API

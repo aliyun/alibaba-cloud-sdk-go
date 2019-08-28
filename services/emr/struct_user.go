@@ -17,11 +17,11 @@ package emr
 
 // User is a nested struct in emr response
 type User struct {
-	GmtCreate      int    `json:"GmtCreate" xml:"GmtCreate"`
+	GmtCreate      int64  `json:"GmtCreate" xml:"GmtCreate"`
 	KnoxStatus     string `json:"KnoxStatus" xml:"KnoxStatus"`
 	UserId         string `json:"UserId" xml:"UserId"`
 	OwnerId        string `json:"OwnerId" xml:"OwnerId"`
-	GmtModified    int    `json:"GmtModified" xml:"GmtModified"`
+	GmtModified    int64  `json:"GmtModified" xml:"GmtModified"`
 	ProjectId      string `json:"ProjectId" xml:"ProjectId"`
 	UserName       string `json:"UserName" xml:"UserName"`
 	GroupName      string `json:"GroupName" xml:"GroupName"`

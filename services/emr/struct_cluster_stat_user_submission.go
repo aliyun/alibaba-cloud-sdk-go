@@ -18,5 +18,5 @@ package emr
 // ClusterStatUserSubmission is a nested struct in emr response
 type ClusterStatUserSubmission struct {
 	User       string `json:"User" xml:"User"`
-	Submission int    `json:"Submission" xml:"Submission"`
+	Submission int64  `json:"Submission" xml:"Submission"`
 }

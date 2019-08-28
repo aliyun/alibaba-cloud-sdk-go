@@ -17,7 +17,7 @@ package emr
 
 // TagInfo is a nested struct in emr response
 type TagInfo struct {
-	TagType  string `json:"TagType" xml:"TagType"`
 	TagValue string `json:"TagValue" xml:"TagValue"`
+	TagType  string `json:"TagType" xml:"TagType"`
 	TagKey   string `json:"TagKey" xml:"TagKey"`
 }

@@ -18,8 +18,8 @@ package emr
 // Category is a nested struct in emr response
 type Category struct {
 	Id           string `json:"Id" xml:"Id"`
-	GmtCreate    int    `json:"GmtCreate" xml:"GmtCreate"`
-	GmtModified  int    `json:"GmtModified" xml:"GmtModified"`
+	GmtCreate    int64  `json:"GmtCreate" xml:"GmtCreate"`
+	GmtModified  int64  `json:"GmtModified" xml:"GmtModified"`
 	Name         string `json:"Name" xml:"Name"`
 	ParentId     string `json:"ParentId" xml:"ParentId"`
 	Type         string `json:"Type" xml:"Type"`

@@ -17,7 +17,7 @@ package emr
 
 // ChangeLog is a nested struct in emr response
 type ChangeLog struct {
-	Id          int    `json:"Id" xml:"Id"`
+	Id          int64  `json:"Id" xml:"Id"`
 	GmtCreate   string `json:"GmtCreate" xml:"GmtCreate"`
 	GmtModified string `json:"GmtModified" xml:"GmtModified"`
 	TargetKey   string `json:"TargetKey" xml:"TargetKey"`

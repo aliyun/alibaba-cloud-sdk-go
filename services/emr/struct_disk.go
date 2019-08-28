@@ -17,8 +17,11 @@ package emr
 
 // Disk is a nested struct in emr response
 type Disk struct {
-	DiskId   string `json:"DiskId" xml:"DiskId"`
-	Type     string `json:"Type" xml:"Type"`
-	DiskType string `json:"DiskType" xml:"DiskType"`
-	DiskSize int    `json:"DiskSize" xml:"DiskSize"`
+	MountPath  string `json:"MountPath" xml:"MountPath"`
+	Device     string `json:"Device" xml:"Device"`
+	DiskType   string `json:"DiskType" xml:"DiskType"`
+	DiskSize   int    `json:"DiskSize" xml:"DiskSize"`
+	DiskId     string `json:"DiskId" xml:"DiskId"`
+	DiskDevice string `json:"DiskDevice" xml:"DiskDevice"`
+	Type       string `json:"Type" xml:"Type"`
 }

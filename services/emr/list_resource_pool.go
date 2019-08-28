@@ -86,11 +86,11 @@ type ListResourcePoolRequest struct {
 // ListResourcePoolResponse is the response struct for api ListResourcePool
 type ListResourcePoolResponse struct {
 	*responses.BaseResponse
-	RequestId    string       `json:"RequestId" xml:"RequestId"`
-	PageNumber   int          `json:"PageNumber" xml:"PageNumber"`
-	PageSize     int          `json:"PageSize" xml:"PageSize"`
-	Total        int          `json:"Total" xml:"Total"`
-	PoolInfoList PoolInfoList `json:"PoolInfoList" xml:"PoolInfoList"`
+	RequestId    string                         `json:"RequestId" xml:"RequestId"`
+	PageNumber   int                            `json:"PageNumber" xml:"PageNumber"`
+	PageSize     int                            `json:"PageSize" xml:"PageSize"`
+	Total        int                            `json:"Total" xml:"Total"`
+	PoolInfoList PoolInfoListInListResourcePool `json:"PoolInfoList" xml:"PoolInfoList"`
 }
 
 // CreateListResourcePoolRequest creates a request to invoke ListResourcePool API

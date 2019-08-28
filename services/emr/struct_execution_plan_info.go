@@ -23,6 +23,6 @@ type ExecutionPlanInfo struct {
 	Stragety              string `json:"Stragety" xml:"Stragety"`
 	Status                string `json:"Status" xml:"Status"`
 	TimeInterval          int    `json:"TimeInterval" xml:"TimeInterval"`
-	StartTime             int    `json:"StartTime" xml:"StartTime"`
+	StartTime             int64  `json:"StartTime" xml:"StartTime"`
 	TimeUnit              string `json:"TimeUnit" xml:"TimeUnit"`
 }

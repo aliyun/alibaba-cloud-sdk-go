@@ -82,8 +82,8 @@ type ListSupportedServiceNameRequest struct {
 // ListSupportedServiceNameResponse is the response struct for api ListSupportedServiceName
 type ListSupportedServiceNameResponse struct {
 	*responses.BaseResponse
-	RequestId                string                   `json:"RequestId" xml:"RequestId"`
-	SupportedServiceNameList SupportedServiceNameList `json:"SupportedServiceNameList" xml:"SupportedServiceNameList"`
+	RequestId                string                                             `json:"RequestId" xml:"RequestId"`
+	SupportedServiceNameList SupportedServiceNameListInListSupportedServiceName `json:"SupportedServiceNameList" xml:"SupportedServiceNameList"`
 }
 
 // CreateListSupportedServiceNameRequest creates a request to invoke ListSupportedServiceName API

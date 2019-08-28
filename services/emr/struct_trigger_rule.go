@@ -18,7 +18,7 @@ package emr
 // TriggerRule is a nested struct in emr response
 type TriggerRule struct {
 	Enabled   bool   `json:"Enabled" xml:"Enabled"`
-	StartTime int    `json:"StartTime" xml:"StartTime"`
-	EndTime   int    `json:"EndTime" xml:"EndTime"`
+	StartTime int64  `json:"StartTime" xml:"StartTime"`
+	EndTime   int64  `json:"EndTime" xml:"EndTime"`
 	CronExpr  string `json:"CronExpr" xml:"CronExpr"`
 }

@@ -17,6 +17,6 @@ package emr
 
 // ZKLink is a nested struct in emr response
 type ZKLink struct {
-	Link string `json:"Link" xml:"Link"`
 	Port string `json:"Port" xml:"Port"`
+	Link string `json:"Link" xml:"Link"`
 }

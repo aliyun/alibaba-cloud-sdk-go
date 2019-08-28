@@ -21,5 +21,5 @@ type TriggerHistory struct {
 	TriggerId   string `json:"TriggerId" xml:"TriggerId"`
 	TriggerType string `json:"TriggerType" xml:"TriggerType"`
 	FireState   string `json:"FireState" xml:"FireState"`
-	FireTime    int    `json:"FireTime" xml:"FireTime"`
+	FireTime    int64  `json:"FireTime" xml:"FireTime"`
 }

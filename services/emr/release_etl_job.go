@@ -77,6 +77,7 @@ func (client *Client) ReleaseETLJobWithCallback(request *ReleaseETLJobRequest, c
 type ReleaseETLJobRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ReleaseId       string           `position:"Query" name:"ReleaseId"`
 	Id              string           `position:"Query" name:"Id"`
 }
 
