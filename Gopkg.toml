@@ -1,6 +1,6 @@
 # Gopkg.toml example
 #
-# Refer to https://github.com/golang/dep/blob/master/docs/Gopkg.toml.md
+# Refer to https://golang.github.io/dep/docs/Gopkg.toml.html
 # for detailed Gopkg.toml documentation.
 #
 # required = ["github.com/user/thing/cmd/thing"]
@@ -24,28 +24,26 @@
 #   go-tests = true
 #   unused-packages = true
 
-#ignored = [
-#  "golang.org/x/sys/unix",
-#  "golang.org/x/sys/windows",
-#  "golang.org/x/crypto/ssh/terminal",
-#]
+
+[[constraint]]
+  branch = "master"
+  name = "github.com/goji/httpauth"
 
 [[constraint]]
   name = "github.com/jmespath/go-jmespath"
-  revision = "c2b33e84"
-  #version = "0.2.2"
+  version = "0.2.2"
 
 [[constraint]]
   name = "github.com/json-iterator/go"
-  version = "v1.1.5"
-
-[[constraint]]
-  name = "github.com/satori/go.uuid"
-  version = "1.1.0"
+  version = "1.1.7"
 
 [[constraint]]
   name = "github.com/stretchr/testify"
-  version = "v1.3.0"
+  version = "1.4.0"
+
+[[constraint]]
+  name = "gopkg.in/ini.v1"
+  version = "1.46.0"
 
 [prune]
   go-tests = true
