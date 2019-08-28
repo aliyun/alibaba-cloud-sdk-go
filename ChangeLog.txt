@@ -1,3 +1,6 @@
+2019-08-28 Version: 1.60.121
+- Add NamespaceId for listApplication.
+
 2019-08-27 Version: 1.60.120
 - Add ModifyDBInstanceAutoUpgradeMinorVersion Openapi.
 
