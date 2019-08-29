@@ -85,7 +85,7 @@ type DescribeWorkspaceRepoSettingResponse struct {
 	*responses.BaseResponse
 	RequestId string    `json:"RequestId" xml:"RequestId"`
 	RepoMaven RepoMaven `json:"RepoMaven" xml:"RepoMaven"`
-	RepoPip   RepoPip   `json:"RepoPip " xml:"RepoPip "`
+	RepoPip   RepoPip   `json:"RepoPip" xml:"RepoPip"`
 }
 
 // CreateDescribeWorkspaceRepoSettingRequest creates a request to invoke DescribeWorkspaceRepoSetting API
