@@ -1,3 +1,6 @@
+2019-08-29 Version: 1.60.124
+- For publish.
+
 2019-08-28 Version: 1.60.123
 - Update emr go api.
 
