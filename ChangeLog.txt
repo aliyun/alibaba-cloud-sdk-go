@@ -1,3 +1,6 @@
+2019-08-29 Version: 1.60.126
+- Move StopExecution params to body.
+
 2019-08-29 Version: 1.60.125
 - Bugfix.
 
