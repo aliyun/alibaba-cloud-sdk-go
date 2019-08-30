@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// GetStackPolicy invokes the ros.GetStackPolicy API synchronously
-// api document: https://help.aliyun.com/api/ros/getstackpolicy.html
-func (client *Client) GetStackPolicy(request *GetStackPolicyRequest) (response *GetStackPolicyResponse, err error) {
-	response = CreateGetStackPolicyResponse()
+// DescribeTemplate invokes the ros.DescribeTemplate API synchronously
+// api document: https://help.aliyun.com/api/ros/describetemplate.html
+func (client *Client) DescribeTemplate(request *DescribeTemplateRequest) (response *DescribeTemplateResponse, err error) {
+	response = CreateDescribeTemplateResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// GetStackPolicyWithChan invokes the ros.GetStackPolicy API asynchronously
-// api document: https://help.aliyun.com/api/ros/getstackpolicy.html
+// DescribeTemplateWithChan invokes the ros.DescribeTemplate API asynchronously
+// api document: https://help.aliyun.com/api/ros/describetemplate.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) GetStackPolicyWithChan(request *GetStackPolicyRequest) (<-chan *GetStackPolicyResponse, <-chan error) {
-	responseChan := make(chan *GetStackPolicyResponse, 1)
+func (client *Client) DescribeTemplateWithChan(request *DescribeTemplateRequest) (<-chan *DescribeTemplateResponse, <-chan error) {
+	responseChan := make(chan *DescribeTemplateResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.GetStackPolicy(request)
+		response, err := client.DescribeTemplate(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) GetStackPolicyWithChan(request *GetStackPolicyRequest) (<-
 	return responseChan, errChan
 }
 
-// GetStackPolicyWithCallback invokes the ros.GetStackPolicy API asynchronously
-// api document: https://help.aliyun.com/api/ros/getstackpolicy.html
+// DescribeTemplateWithCallback invokes the ros.DescribeTemplate API asynchronously
+// api document: https://help.aliyun.com/api/ros/describetemplate.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) GetStackPolicyWithCallback(request *GetStackPolicyRequest, callback func(response *GetStackPolicyResponse, err error)) <-chan int {
+func (client *Client) DescribeTemplateWithCallback(request *DescribeTemplateRequest, callback func(response *DescribeTemplateResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *GetStackPolicyResponse
+		var response *DescribeTemplateResponse
 		var err error
 		defer close(result)
-		response, err = client.GetStackPolicy(request)
+		response, err = client.DescribeTemplate(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,31 +73,31 @@ func (client *Client) GetStackPolicyWithCallback(request *GetStackPolicyRequest,
 	return result
 }
 
-// GetStackPolicyRequest is the request struct for api GetStackPolicy
-type GetStackPolicyRequest struct {
+// DescribeTemplateRequest is the request struct for api DescribeTemplate
+type DescribeTemplateRequest struct {
 	*requests.RoaRequest
 	StackId   string `position:"Path" name:"StackId"`
 	StackName string `position:"Path" name:"StackName"`
 }
 
-// GetStackPolicyResponse is the response struct for api GetStackPolicy
-type GetStackPolicyResponse struct {
+// DescribeTemplateResponse is the response struct for api DescribeTemplate
+type DescribeTemplateResponse struct {
 	*responses.BaseResponse
 }
 
-// CreateGetStackPolicyRequest creates a request to invoke GetStackPolicy API
-func CreateGetStackPolicyRequest() (request *GetStackPolicyRequest) {
-	request = &GetStackPolicyRequest{
+// CreateDescribeTemplateRequest creates a request to invoke DescribeTemplate API
+func CreateDescribeTemplateRequest() (request *DescribeTemplateRequest) {
+	request = &DescribeTemplateRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("ROS", "2015-09-01", "GetStackPolicy", "/stacks/[StackName]/[StackId]/policy", "ROS", "openAPI")
+	request.InitWithApiInfo("ROS", "2015-09-01", "DescribeTemplate", "/stacks/[StackName]/[StackId]/template", "ROS", "openAPI")
 	request.Method = requests.GET
 	return
 }
 
-// CreateGetStackPolicyResponse creates a response to parse from GetStackPolicy response
-func CreateGetStackPolicyResponse() (response *GetStackPolicyResponse) {
-	response = &GetStackPolicyResponse{
+// CreateDescribeTemplateResponse creates a response to parse from DescribeTemplate response
+func CreateDescribeTemplateResponse() (response *DescribeTemplateResponse) {
+	response = &DescribeTemplateResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

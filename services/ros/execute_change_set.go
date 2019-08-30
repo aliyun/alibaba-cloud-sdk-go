@@ -75,22 +75,25 @@ func (client *Client) ExecuteChangeSetWithCallback(request *ExecuteChangeSetRequ
 
 // ExecuteChangeSetRequest is the request struct for api ExecuteChangeSet
 type ExecuteChangeSetRequest struct {
-	*requests.RpcRequest
-	ChangeSetId string `position:"Query" name:"ChangeSetId"`
+	*requests.RoaRequest
+	ChangeSetName string `position:"Path" name:"ChangeSetName"`
+	StackId       string `position:"Path" name:"StackId"`
+	StackName     string `position:"Path" name:"StackName"`
 }
 
 // ExecuteChangeSetResponse is the response struct for api ExecuteChangeSet
 type ExecuteChangeSetResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	Dummy string `json:"Dummy" xml:"Dummy"`
 }
 
 // CreateExecuteChangeSetRequest creates a request to invoke ExecuteChangeSet API
 func CreateExecuteChangeSetRequest() (request *ExecuteChangeSetRequest) {
 	request = &ExecuteChangeSetRequest{
-		RpcRequest: &requests.RpcRequest{},
+		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("ROS", "2019-09-10", "ExecuteChangeSet", "ROS", "openAPI")
+	request.InitWithApiInfo("ROS", "2015-09-01", "ExecuteChangeSet", "/stacks/[StackName]/[StackId]/changeSets/[ChangeSetName]/execute", "ROS", "openAPI")
+	request.Method = requests.PUT
 	return
 }
 

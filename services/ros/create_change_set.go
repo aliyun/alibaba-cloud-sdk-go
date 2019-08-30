@@ -75,50 +75,22 @@ func (client *Client) CreateChangeSetWithCallback(request *CreateChangeSetReques
 
 // CreateChangeSetRequest is the request struct for api CreateChangeSet
 type CreateChangeSetRequest struct {
-	*requests.RpcRequest
-	StackPolicyDuringUpdateURL  string                       `position:"Query" name:"StackPolicyDuringUpdateURL"`
-	ClientToken                 string                       `position:"Query" name:"ClientToken"`
-	TemplateBody                string                       `position:"Query" name:"TemplateBody"`
-	StackId                     string                       `position:"Query" name:"StackId"`
-	ChangeSetType               string                       `position:"Query" name:"ChangeSetType"`
-	Description                 string                       `position:"Query" name:"Description"`
-	DisableRollback             requests.Boolean             `position:"Query" name:"DisableRollback"`
-	UpdateAllowPolicy           string                       `position:"Query" name:"UpdateAllowPolicy"`
-	TimeoutInMinutes            requests.Integer             `position:"Query" name:"TimeoutInMinutes"`
-	UsePreviousParameters       requests.Boolean             `position:"Query" name:"UsePreviousParameters"`
-	TemplateURL                 string                       `position:"Query" name:"TemplateURL"`
-	OrderSource                 string                       `position:"Query" name:"OrderSource"`
-	ActivityId                  string                       `position:"Query" name:"ActivityId"`
-	StackPolicyDuringUpdateBody string                       `position:"Query" name:"StackPolicyDuringUpdateBody"`
-	NotificationURLs            *[]string                    `position:"Query" name:"NotificationURLs"  type:"Repeated"`
-	StackPolicyURL              string                       `position:"Query" name:"StackPolicyURL"`
-	ChangeSetName               string                       `position:"Query" name:"ChangeSetName"`
-	StackName                   string                       `position:"Query" name:"StackName"`
-	Parameters                  *[]CreateChangeSetParameters `position:"Query" name:"Parameters"  type:"Repeated"`
-	StackPolicyBody             string                       `position:"Query" name:"StackPolicyBody"`
-	ChannelId                   string                       `position:"Query" name:"ChannelId"`
-}
-
-// CreateChangeSetParameters is a repeated param struct in CreateChangeSetRequest
-type CreateChangeSetParameters struct {
-	ParameterValue string `name:"ParameterValue"`
-	ParameterKey   string `name:"ParameterKey"`
+	*requests.RoaRequest
 }
 
 // CreateChangeSetResponse is the response struct for api CreateChangeSet
 type CreateChangeSetResponse struct {
 	*responses.BaseResponse
-	ChangeSetId string `json:"ChangeSetId" xml:"ChangeSetId"`
-	RequestId   string `json:"RequestId" xml:"RequestId"`
-	StackId     string `json:"StackId" xml:"StackId"`
+	Dummy string `json:"Dummy" xml:"Dummy"`
 }
 
 // CreateCreateChangeSetRequest creates a request to invoke CreateChangeSet API
 func CreateCreateChangeSetRequest() (request *CreateChangeSetRequest) {
 	request = &CreateChangeSetRequest{
-		RpcRequest: &requests.RpcRequest{},
+		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("ROS", "2019-09-10", "CreateChangeSet", "ROS", "openAPI")
+	request.InitWithApiInfo("ROS", "2015-09-01", "CreateChangeSet", "/changeSets", "ROS", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

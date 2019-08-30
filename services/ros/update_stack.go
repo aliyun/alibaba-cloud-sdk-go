@@ -75,42 +75,23 @@ func (client *Client) UpdateStackWithCallback(request *UpdateStackRequest, callb
 
 // UpdateStackRequest is the request struct for api UpdateStack
 type UpdateStackRequest struct {
-	*requests.RpcRequest
-	StackPolicyDuringUpdateURL  string                   `position:"Query" name:"StackPolicyDuringUpdateURL"`
-	ClientToken                 string                   `position:"Query" name:"ClientToken"`
-	TemplateBody                string                   `position:"Query" name:"TemplateBody"`
-	StackId                     string                   `position:"Query" name:"StackId"`
-	DisableRollback             requests.Boolean         `position:"Query" name:"DisableRollback"`
-	EnableRecover               requests.Boolean         `position:"Query" name:"EnableRecover"`
-	UpdateAllowPolicy           string                   `position:"Query" name:"UpdateAllowPolicy"`
-	TimeoutInMinutes            requests.Integer         `position:"Query" name:"TimeoutInMinutes"`
-	UsePreviousParameters       requests.Boolean         `position:"Query" name:"UsePreviousParameters"`
-	TemplateURL                 string                   `position:"Query" name:"TemplateURL"`
-	StackPolicyDuringUpdateBody string                   `position:"Query" name:"StackPolicyDuringUpdateBody"`
-	StackPolicyURL              string                   `position:"Query" name:"StackPolicyURL"`
-	Parameters                  *[]UpdateStackParameters `position:"Query" name:"Parameters"  type:"Repeated"`
-	StackPolicyBody             string                   `position:"Query" name:"StackPolicyBody"`
-}
-
-// UpdateStackParameters is a repeated param struct in UpdateStackRequest
-type UpdateStackParameters struct {
-	ParameterValue string `name:"ParameterValue"`
-	ParameterKey   string `name:"ParameterKey"`
+	*requests.RoaRequest
+	StackId   string `position:"Path" name:"StackId"`
+	StackName string `position:"Path" name:"StackName"`
 }
 
 // UpdateStackResponse is the response struct for api UpdateStack
 type UpdateStackResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	StackId   string `json:"StackId" xml:"StackId"`
 }
 
 // CreateUpdateStackRequest creates a request to invoke UpdateStack API
 func CreateUpdateStackRequest() (request *UpdateStackRequest) {
 	request = &UpdateStackRequest{
-		RpcRequest: &requests.RpcRequest{},
+		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("ROS", "2019-09-10", "UpdateStack", "ROS", "openAPI")
+	request.InitWithApiInfo("ROS", "2015-09-01", "UpdateStack", "/stacks/[StackName]/[StackId]", "ROS", "openAPI")
+	request.Method = requests.PUT
 	return
 }
 

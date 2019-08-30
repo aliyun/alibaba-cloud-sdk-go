@@ -75,22 +75,25 @@ func (client *Client) DeleteChangeSetWithCallback(request *DeleteChangeSetReques
 
 // DeleteChangeSetRequest is the request struct for api DeleteChangeSet
 type DeleteChangeSetRequest struct {
-	*requests.RpcRequest
-	ChangeSetId string `position:"Query" name:"ChangeSetId"`
+	*requests.RoaRequest
+	ChangeSetName string `position:"Path" name:"ChangeSetName"`
+	StackId       string `position:"Path" name:"StackId"`
+	StackName     string `position:"Path" name:"StackName"`
 }
 
 // DeleteChangeSetResponse is the response struct for api DeleteChangeSet
 type DeleteChangeSetResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
+	Dummy string `json:"Dummy" xml:"Dummy"`
 }
 
 // CreateDeleteChangeSetRequest creates a request to invoke DeleteChangeSet API
 func CreateDeleteChangeSetRequest() (request *DeleteChangeSetRequest) {
 	request = &DeleteChangeSetRequest{
-		RpcRequest: &requests.RpcRequest{},
+		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("ROS", "2019-09-10", "DeleteChangeSet", "ROS", "openAPI")
+	request.InitWithApiInfo("ROS", "2015-09-01", "DeleteChangeSet", "/stacks/[StackName]/[StackId]/changeSets/[ChangeSetName]", "ROS", "openAPI")
+	request.Method = requests.DELETE
 	return
 }
 

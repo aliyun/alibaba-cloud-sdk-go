@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// PreviewStack invokes the ros.PreviewStack API synchronously
-// api document: https://help.aliyun.com/api/ros/previewstack.html
-func (client *Client) PreviewStack(request *PreviewStackRequest) (response *PreviewStackResponse, err error) {
-	response = CreatePreviewStackResponse()
+// InquiryStack invokes the ros.InquiryStack API synchronously
+// api document: https://help.aliyun.com/api/ros/inquirystack.html
+func (client *Client) InquiryStack(request *InquiryStackRequest) (response *InquiryStackResponse, err error) {
+	response = CreateInquiryStackResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// PreviewStackWithChan invokes the ros.PreviewStack API asynchronously
-// api document: https://help.aliyun.com/api/ros/previewstack.html
+// InquiryStackWithChan invokes the ros.InquiryStack API asynchronously
+// api document: https://help.aliyun.com/api/ros/inquirystack.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) PreviewStackWithChan(request *PreviewStackRequest) (<-chan *PreviewStackResponse, <-chan error) {
-	responseChan := make(chan *PreviewStackResponse, 1)
+func (client *Client) InquiryStackWithChan(request *InquiryStackRequest) (<-chan *InquiryStackResponse, <-chan error) {
+	responseChan := make(chan *InquiryStackResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.PreviewStack(request)
+		response, err := client.InquiryStack(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) PreviewStackWithChan(request *PreviewStackRequest) (<-chan
 	return responseChan, errChan
 }
 
-// PreviewStackWithCallback invokes the ros.PreviewStack API asynchronously
-// api document: https://help.aliyun.com/api/ros/previewstack.html
+// InquiryStackWithCallback invokes the ros.InquiryStack API asynchronously
+// api document: https://help.aliyun.com/api/ros/inquirystack.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) PreviewStackWithCallback(request *PreviewStackRequest, callback func(response *PreviewStackResponse, err error)) <-chan int {
+func (client *Client) InquiryStackWithCallback(request *InquiryStackRequest, callback func(response *InquiryStackResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *PreviewStackResponse
+		var response *InquiryStackResponse
 		var err error
 		defer close(result)
-		response, err = client.PreviewStack(request)
+		response, err = client.InquiryStack(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,29 +73,29 @@ func (client *Client) PreviewStackWithCallback(request *PreviewStackRequest, cal
 	return result
 }
 
-// PreviewStackRequest is the request struct for api PreviewStack
-type PreviewStackRequest struct {
+// InquiryStackRequest is the request struct for api InquiryStack
+type InquiryStackRequest struct {
 	*requests.RoaRequest
 }
 
-// PreviewStackResponse is the response struct for api PreviewStack
-type PreviewStackResponse struct {
+// InquiryStackResponse is the response struct for api InquiryStack
+type InquiryStackResponse struct {
 	*responses.BaseResponse
 }
 
-// CreatePreviewStackRequest creates a request to invoke PreviewStack API
-func CreatePreviewStackRequest() (request *PreviewStackRequest) {
-	request = &PreviewStackRequest{
+// CreateInquiryStackRequest creates a request to invoke InquiryStack API
+func CreateInquiryStackRequest() (request *InquiryStackRequest) {
+	request = &InquiryStackRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("ROS", "2015-09-01", "PreviewStack", "/stacks/preview", "ROS", "openAPI")
+	request.InitWithApiInfo("ROS", "2015-09-01", "InquiryStack", "/stacks/inquiry", "ROS", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreatePreviewStackResponse creates a response to parse from PreviewStack response
-func CreatePreviewStackResponse() (response *PreviewStackResponse) {
-	response = &PreviewStackResponse{
+// CreateInquiryStackResponse creates a response to parse from InquiryStack response
+func CreateInquiryStackResponse() (response *InquiryStackResponse) {
+	response = &InquiryStackResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

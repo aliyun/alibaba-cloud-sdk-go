@@ -75,24 +75,23 @@ func (client *Client) SetStackPolicyWithCallback(request *SetStackPolicyRequest,
 
 // SetStackPolicyRequest is the request struct for api SetStackPolicy
 type SetStackPolicyRequest struct {
-	*requests.RpcRequest
-	StackPolicyURL  string `position:"Query" name:"StackPolicyURL"`
-	StackId         string `position:"Query" name:"StackId"`
-	StackPolicyBody string `position:"Query" name:"StackPolicyBody"`
+	*requests.RoaRequest
+	StackId   string `position:"Path" name:"StackId"`
+	StackName string `position:"Path" name:"StackName"`
 }
 
 // SetStackPolicyResponse is the response struct for api SetStackPolicy
 type SetStackPolicyResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateSetStackPolicyRequest creates a request to invoke SetStackPolicy API
 func CreateSetStackPolicyRequest() (request *SetStackPolicyRequest) {
 	request = &SetStackPolicyRequest{
-		RpcRequest: &requests.RpcRequest{},
+		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("ROS", "2019-09-10", "SetStackPolicy", "ROS", "openAPI")
+	request.InitWithApiInfo("ROS", "2015-09-01", "SetStackPolicy", "/stacks/[StackName]/[StackId]/policy", "ROS", "openAPI")
+	request.Method = requests.POST
 	return
 }
 

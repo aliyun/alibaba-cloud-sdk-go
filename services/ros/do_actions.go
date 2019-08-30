@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// PreviewStack invokes the ros.PreviewStack API synchronously
-// api document: https://help.aliyun.com/api/ros/previewstack.html
-func (client *Client) PreviewStack(request *PreviewStackRequest) (response *PreviewStackResponse, err error) {
-	response = CreatePreviewStackResponse()
+// DoActions invokes the ros.DoActions API synchronously
+// api document: https://help.aliyun.com/api/ros/doactions.html
+func (client *Client) DoActions(request *DoActionsRequest) (response *DoActionsResponse, err error) {
+	response = CreateDoActionsResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// PreviewStackWithChan invokes the ros.PreviewStack API asynchronously
-// api document: https://help.aliyun.com/api/ros/previewstack.html
+// DoActionsWithChan invokes the ros.DoActions API asynchronously
+// api document: https://help.aliyun.com/api/ros/doactions.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) PreviewStackWithChan(request *PreviewStackRequest) (<-chan *PreviewStackResponse, <-chan error) {
-	responseChan := make(chan *PreviewStackResponse, 1)
+func (client *Client) DoActionsWithChan(request *DoActionsRequest) (<-chan *DoActionsResponse, <-chan error) {
+	responseChan := make(chan *DoActionsResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.PreviewStack(request)
+		response, err := client.DoActions(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) PreviewStackWithChan(request *PreviewStackRequest) (<-chan
 	return responseChan, errChan
 }
 
-// PreviewStackWithCallback invokes the ros.PreviewStack API asynchronously
-// api document: https://help.aliyun.com/api/ros/previewstack.html
+// DoActionsWithCallback invokes the ros.DoActions API asynchronously
+// api document: https://help.aliyun.com/api/ros/doactions.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) PreviewStackWithCallback(request *PreviewStackRequest, callback func(response *PreviewStackResponse, err error)) <-chan int {
+func (client *Client) DoActionsWithCallback(request *DoActionsRequest, callback func(response *DoActionsResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *PreviewStackResponse
+		var response *DoActionsResponse
 		var err error
 		defer close(result)
-		response, err = client.PreviewStack(request)
+		response, err = client.DoActions(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,29 +73,31 @@ func (client *Client) PreviewStackWithCallback(request *PreviewStackRequest, cal
 	return result
 }
 
-// PreviewStackRequest is the request struct for api PreviewStack
-type PreviewStackRequest struct {
+// DoActionsRequest is the request struct for api DoActions
+type DoActionsRequest struct {
 	*requests.RoaRequest
+	StackId   string `position:"Path" name:"StackId"`
+	StackName string `position:"Path" name:"StackName"`
 }
 
-// PreviewStackResponse is the response struct for api PreviewStack
-type PreviewStackResponse struct {
+// DoActionsResponse is the response struct for api DoActions
+type DoActionsResponse struct {
 	*responses.BaseResponse
 }
 
-// CreatePreviewStackRequest creates a request to invoke PreviewStack API
-func CreatePreviewStackRequest() (request *PreviewStackRequest) {
-	request = &PreviewStackRequest{
+// CreateDoActionsRequest creates a request to invoke DoActions API
+func CreateDoActionsRequest() (request *DoActionsRequest) {
+	request = &DoActionsRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("ROS", "2015-09-01", "PreviewStack", "/stacks/preview", "ROS", "openAPI")
+	request.InitWithApiInfo("ROS", "2015-09-01", "DoActions", "/stacks/[StackName]/[StackId]/actions", "ROS", "openAPI")
 	request.Method = requests.POST
 	return
 }
 
-// CreatePreviewStackResponse creates a response to parse from PreviewStack response
-func CreatePreviewStackResponse() (response *PreviewStackResponse) {
-	response = &PreviewStackResponse{
+// CreateDoActionsResponse creates a response to parse from DoActions response
+func CreateDoActionsResponse() (response *DoActionsResponse) {
+	response = &DoActionsResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

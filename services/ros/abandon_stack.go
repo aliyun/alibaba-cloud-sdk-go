@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DeleteStack invokes the ros.DeleteStack API synchronously
-// api document: https://help.aliyun.com/api/ros/deletestack.html
-func (client *Client) DeleteStack(request *DeleteStackRequest) (response *DeleteStackResponse, err error) {
-	response = CreateDeleteStackResponse()
+// AbandonStack invokes the ros.AbandonStack API synchronously
+// api document: https://help.aliyun.com/api/ros/abandonstack.html
+func (client *Client) AbandonStack(request *AbandonStackRequest) (response *AbandonStackResponse, err error) {
+	response = CreateAbandonStackResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DeleteStackWithChan invokes the ros.DeleteStack API asynchronously
-// api document: https://help.aliyun.com/api/ros/deletestack.html
+// AbandonStackWithChan invokes the ros.AbandonStack API asynchronously
+// api document: https://help.aliyun.com/api/ros/abandonstack.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DeleteStackWithChan(request *DeleteStackRequest) (<-chan *DeleteStackResponse, <-chan error) {
-	responseChan := make(chan *DeleteStackResponse, 1)
+func (client *Client) AbandonStackWithChan(request *AbandonStackRequest) (<-chan *AbandonStackResponse, <-chan error) {
+	responseChan := make(chan *AbandonStackResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DeleteStack(request)
+		response, err := client.AbandonStack(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) DeleteStackWithChan(request *DeleteStackRequest) (<-chan *
 	return responseChan, errChan
 }
 
-// DeleteStackWithCallback invokes the ros.DeleteStack API asynchronously
-// api document: https://help.aliyun.com/api/ros/deletestack.html
+// AbandonStackWithCallback invokes the ros.AbandonStack API asynchronously
+// api document: https://help.aliyun.com/api/ros/abandonstack.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DeleteStackWithCallback(request *DeleteStackRequest, callback func(response *DeleteStackResponse, err error)) <-chan int {
+func (client *Client) AbandonStackWithCallback(request *AbandonStackRequest, callback func(response *AbandonStackResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DeleteStackResponse
+		var response *AbandonStackResponse
 		var err error
 		defer close(result)
-		response, err = client.DeleteStack(request)
+		response, err = client.AbandonStack(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,31 +73,31 @@ func (client *Client) DeleteStackWithCallback(request *DeleteStackRequest, callb
 	return result
 }
 
-// DeleteStackRequest is the request struct for api DeleteStack
-type DeleteStackRequest struct {
+// AbandonStackRequest is the request struct for api AbandonStack
+type AbandonStackRequest struct {
 	*requests.RoaRequest
 	StackId   string `position:"Path" name:"StackId"`
 	StackName string `position:"Path" name:"StackName"`
 }
 
-// DeleteStackResponse is the response struct for api DeleteStack
-type DeleteStackResponse struct {
+// AbandonStackResponse is the response struct for api AbandonStack
+type AbandonStackResponse struct {
 	*responses.BaseResponse
 }
 
-// CreateDeleteStackRequest creates a request to invoke DeleteStack API
-func CreateDeleteStackRequest() (request *DeleteStackRequest) {
-	request = &DeleteStackRequest{
+// CreateAbandonStackRequest creates a request to invoke AbandonStack API
+func CreateAbandonStackRequest() (request *AbandonStackRequest) {
+	request = &AbandonStackRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("ROS", "2015-09-01", "DeleteStack", "/stacks/[StackName]/[StackId]", "ROS", "openAPI")
+	request.InitWithApiInfo("ROS", "2015-09-01", "AbandonStack", "/stacks/[StackName]/[StackId]/abandon", "ROS", "openAPI")
 	request.Method = requests.DELETE
 	return
 }
 
-// CreateDeleteStackResponse creates a response to parse from DeleteStack response
-func CreateDeleteStackResponse() (response *DeleteStackResponse) {
-	response = &DeleteStackResponse{
+// CreateAbandonStackResponse creates a response to parse from AbandonStack response
+func CreateAbandonStackResponse() (response *AbandonStackResponse) {
+	response = &AbandonStackResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

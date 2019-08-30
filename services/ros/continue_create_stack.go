@@ -75,24 +75,23 @@ func (client *Client) ContinueCreateStackWithCallback(request *ContinueCreateSta
 
 // ContinueCreateStackRequest is the request struct for api ContinueCreateStack
 type ContinueCreateStackRequest struct {
-	*requests.RpcRequest
-	StackId             string    `position:"Query" name:"StackId"`
-	RecreatingResources *[]string `position:"Query" name:"RecreatingResources"  type:"Repeated"`
+	*requests.RoaRequest
+	StackId   string `position:"Path" name:"StackId"`
+	StackName string `position:"Path" name:"StackName"`
 }
 
 // ContinueCreateStackResponse is the response struct for api ContinueCreateStack
 type ContinueCreateStackResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	StackId   string `json:"StackId" xml:"StackId"`
 }
 
 // CreateContinueCreateStackRequest creates a request to invoke ContinueCreateStack API
 func CreateContinueCreateStackRequest() (request *ContinueCreateStackRequest) {
 	request = &ContinueCreateStackRequest{
-		RpcRequest: &requests.RpcRequest{},
+		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("ROS", "2019-09-10", "ContinueCreateStack", "ROS", "openAPI")
+	request.InitWithApiInfo("ROS", "2015-09-01", "ContinueCreateStack", "/stacks/[StackName]/[StackId]/continue", "ROS", "openAPI")
+	request.Method = requests.POST
 	return
 }
 
