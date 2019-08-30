@@ -17,20 +17,21 @@ package imm
 
 // FacesItem is a nested struct in imm response
 type FacesItem struct {
-	FaceConfidence       float64        `json:"FaceConfidence" xml:"FaceConfidence"`
-	EmotionConfidence    float64        `json:"EmotionConfidence" xml:"EmotionConfidence"`
-	ImageUri             string         `json:"ImageUri" xml:"ImageUri"`
-	Similarity           float64        `json:"Similarity" xml:"Similarity"`
-	FaceQuality          float64        `json:"FaceQuality" xml:"FaceQuality"`
-	Attractive           float64        `json:"Attractive" xml:"Attractive"`
-	AttractiveConfidence float64        `json:"AttractiveConfidence" xml:"AttractiveConfidence"`
-	Age                  int            `json:"Age" xml:"Age"`
-	AgeConfidence        float64        `json:"AgeConfidence" xml:"AgeConfidence"`
-	Gender               string         `json:"Gender" xml:"Gender"`
-	GenderConfidence     float64        `json:"GenderConfidence" xml:"GenderConfidence"`
-	Emotion              string         `json:"Emotion" xml:"Emotion"`
-	FaceId               string         `json:"FaceId" xml:"FaceId"`
-	GroupId              string         `json:"GroupId" xml:"GroupId"`
-	FaceAttributes       FaceAttributes `json:"FaceAttributes" xml:"FaceAttributes"`
-	EmotionDetails       EmotionDetails `json:"EmotionDetails" xml:"EmotionDetails"`
+	FaceConfidence       float64            `json:"FaceConfidence" xml:"FaceConfidence"`
+	EmotionConfidence    float64            `json:"EmotionConfidence" xml:"EmotionConfidence"`
+	ImageUri             string             `json:"ImageUri" xml:"ImageUri"`
+	Similarity           float64            `json:"Similarity" xml:"Similarity"`
+	FaceQuality          float64            `json:"FaceQuality" xml:"FaceQuality"`
+	Attractive           float64            `json:"Attractive" xml:"Attractive"`
+	AttractiveConfidence float64            `json:"AttractiveConfidence" xml:"AttractiveConfidence"`
+	Age                  int                `json:"Age" xml:"Age"`
+	AgeConfidence        float64            `json:"AgeConfidence" xml:"AgeConfidence"`
+	Gender               string             `json:"Gender" xml:"Gender"`
+	GenderConfidence     float64            `json:"GenderConfidence" xml:"GenderConfidence"`
+	Emotion              string             `json:"Emotion" xml:"Emotion"`
+	FaceId               string             `json:"FaceId" xml:"FaceId"`
+	GroupId              string             `json:"GroupId" xml:"GroupId"`
+	FaceAttributes       FaceAttributes     `json:"FaceAttributes" xml:"FaceAttributes"`
+	EmotionDetails       EmotionDetails     `json:"EmotionDetails" xml:"EmotionDetails"`
+	SimilarFaces         []SimilarFacesItem `json:"SimilarFaces" xml:"SimilarFaces"`
 }
