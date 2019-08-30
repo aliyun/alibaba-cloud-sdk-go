@@ -76,7 +76,8 @@ func (client *Client) InstallSystemPluginWithCallback(request *InstallSystemPlug
 // InstallSystemPluginRequest is the request struct for api InstallSystemPlugin
 type InstallSystemPluginRequest struct {
 	*requests.RoaRequest
-	InstanceId string `position:"Path" name:"InstanceId"`
+	InstanceId  string `position:"Path" name:"InstanceId"`
+	ClientToken string `position:"Query" name:"clientToken"`
 }
 
 // InstallSystemPluginResponse is the response struct for api InstallSystemPlugin

@@ -76,7 +76,8 @@ func (client *Client) UpdateKibanaWhiteIpsWithCallback(request *UpdateKibanaWhit
 // UpdateKibanaWhiteIpsRequest is the request struct for api UpdateKibanaWhiteIps
 type UpdateKibanaWhiteIpsRequest struct {
 	*requests.RoaRequest
-	InstanceId string `position:"Path" name:"InstanceId"`
+	InstanceId  string `position:"Path" name:"InstanceId"`
+	ClientToken string `position:"Query" name:"clientToken"`
 }
 
 // UpdateKibanaWhiteIpsResponse is the response struct for api UpdateKibanaWhiteIps

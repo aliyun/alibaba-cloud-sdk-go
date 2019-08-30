@@ -76,7 +76,8 @@ func (client *Client) UpdateHotIkDictsWithCallback(request *UpdateHotIkDictsRequ
 // UpdateHotIkDictsRequest is the request struct for api UpdateHotIkDicts
 type UpdateHotIkDictsRequest struct {
 	*requests.RoaRequest
-	InstanceId string `position:"Path" name:"InstanceId"`
+	InstanceId  string `position:"Path" name:"InstanceId"`
+	ClientToken string `position:"Query" name:"clientToken"`
 }
 
 // UpdateHotIkDictsResponse is the response struct for api UpdateHotIkDicts

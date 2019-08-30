@@ -76,7 +76,8 @@ func (client *Client) DeleteInstanceWithCallback(request *DeleteInstanceRequest,
 // DeleteInstanceRequest is the request struct for api DeleteInstance
 type DeleteInstanceRequest struct {
 	*requests.RoaRequest
-	InstanceId string `position:"Path" name:"InstanceId"`
+	InstanceId  string `position:"Path" name:"InstanceId"`
+	ClientToken string `position:"Query" name:"clientToken"`
 }
 
 // DeleteInstanceResponse is the response struct for api DeleteInstance

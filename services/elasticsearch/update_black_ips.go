@@ -76,7 +76,8 @@ func (client *Client) UpdateBlackIpsWithCallback(request *UpdateBlackIpsRequest,
 // UpdateBlackIpsRequest is the request struct for api UpdateBlackIps
 type UpdateBlackIpsRequest struct {
 	*requests.RoaRequest
-	InstanceId string `position:"Path" name:"InstanceId"`
+	InstanceId  string `position:"Path" name:"InstanceId"`
+	ClientToken string `position:"Query" name:"clientToken"`
 }
 
 // UpdateBlackIpsResponse is the response struct for api UpdateBlackIps

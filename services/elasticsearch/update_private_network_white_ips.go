@@ -76,7 +76,8 @@ func (client *Client) UpdatePrivateNetworkWhiteIpsWithCallback(request *UpdatePr
 // UpdatePrivateNetworkWhiteIpsRequest is the request struct for api UpdatePrivateNetworkWhiteIps
 type UpdatePrivateNetworkWhiteIpsRequest struct {
 	*requests.RoaRequest
-	InstanceId string `position:"Path" name:"InstanceId"`
+	InstanceId  string `position:"Path" name:"InstanceId"`
+	ClientToken string `position:"Query" name:"clientToken"`
 }
 
 // UpdatePrivateNetworkWhiteIpsResponse is the response struct for api UpdatePrivateNetworkWhiteIps

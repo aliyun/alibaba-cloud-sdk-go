@@ -76,6 +76,7 @@ func (client *Client) CreateProjectWithCallback(request *CreateProjectRequest, c
 // CreateProjectRequest is the request struct for api CreateProject
 type CreateProjectRequest struct {
 	*requests.RoaRequest
+	ClientToken string `position:"Query" name:"clientToken"`
 }
 
 // CreateProjectResponse is the response struct for api CreateProject

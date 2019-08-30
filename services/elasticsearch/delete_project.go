@@ -76,7 +76,8 @@ func (client *Client) DeleteProjectWithCallback(request *DeleteProjectRequest, c
 // DeleteProjectRequest is the request struct for api DeleteProject
 type DeleteProjectRequest struct {
 	*requests.RoaRequest
-	Id string `position:"Path" name:"Id"`
+	ClientToken string `position:"Query" name:"clientToken"`
+	Id          string `position:"Path" name:"Id"`
 }
 
 // DeleteProjectResponse is the response struct for api DeleteProject

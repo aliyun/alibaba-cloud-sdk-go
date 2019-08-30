@@ -76,8 +76,9 @@ func (client *Client) TransferNodeWithCallback(request *TransferNodeRequest, cal
 // TransferNodeRequest is the request struct for api TransferNode
 type TransferNodeRequest struct {
 	*requests.RoaRequest
-	InstanceId string `position:"Path" name:"InstanceId"`
-	NodeType   string `position:"Query" name:"nodeType"`
+	InstanceId  string `position:"Path" name:"InstanceId"`
+	NodeType    string `position:"Query" name:"nodeType"`
+	ClientToken string `position:"Query" name:"clientToken"`
 }
 
 // TransferNodeResponse is the response struct for api TransferNode

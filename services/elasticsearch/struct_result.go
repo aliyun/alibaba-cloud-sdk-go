@@ -41,17 +41,25 @@ type Result struct {
 	KibanaIPWhitelist         []string                   `json:"kibanaIPWhitelist" xml:"kibanaIPWhitelist"`
 	PublicIpWhitelist         []string                   `json:"publicIpWhitelist" xml:"publicIpWhitelist"`
 	EsIPBlacklist             []string                   `json:"esIPBlacklist" xml:"esIPBlacklist"`
+	MasterSpec                []string                   `json:"masterSpec" xml:"masterSpec"`
 	PrivateNetworkIpWhiteList []string                   `json:"privateNetworkIpWhiteList" xml:"privateNetworkIpWhiteList"`
+	ClientNodeSpec            []string                   `json:"clientNodeSpec" xml:"clientNodeSpec"`
 	EsVersions                []string                   `json:"esVersions" xml:"esVersions"`
 	Zones                     []string                   `json:"zones" xml:"zones"`
 	NetworkConfig             NetworkConfig              `json:"networkConfig" xml:"networkConfig"`
 	Node                      Node                       `json:"node" xml:"node"`
-	MasterConfiguration       MasterConfiguration        `json:"masterConfiguration" xml:"masterConfiguration"`
 	NodeSpec                  NodeSpec                   `json:"nodeSpec" xml:"nodeSpec"`
+	MasterConfiguration       MasterConfiguration        `json:"masterConfiguration" xml:"masterConfiguration"`
+	JvmConfine                JvmConfine                 `json:"jvmConfine" xml:"jvmConfine"`
 	KibanaConfiguration       KibanaConfiguration        `json:"kibanaConfiguration" xml:"kibanaConfiguration"`
-	DataDiskList              []DataDiskListItem         `json:"dataDiskList" xml:"dataDiskList"`
+	KibanaNodeProperties      KibanaNodeProperties       `json:"kibanaNodeProperties" xml:"kibanaNodeProperties"`
+	WarmNodeProperties        WarmNodeProperties         `json:"warmNodeProperties" xml:"warmNodeProperties"`
+	ClientNodeAmountRange     ClientNodeAmountRange      `json:"clientNodeAmountRange" xml:"clientNodeAmountRange"`
+	MasterDiskList            []Disk                     `json:"masterDiskList" xml:"masterDiskList"`
 	EsVersionsLatestList      []EsVersionsLatestListItem `json:"esVersionsLatestList" xml:"esVersionsLatestList"`
 	NodeSpecList              []NodeSpecListItem         `json:"nodeSpecList" xml:"nodeSpecList"`
+	ClientNodeDiskList        []Disk                     `json:"clientNodeDiskList" xml:"clientNodeDiskList"`
 	SynonymsDicts             []SynonymsDictsItem        `json:"synonymsDicts" xml:"synonymsDicts"`
+	DataDiskList              []DataDiskListItem         `json:"dataDiskList" xml:"dataDiskList"`
 	DictList                  []DictListItem             `json:"dictList" xml:"dictList"`
 }

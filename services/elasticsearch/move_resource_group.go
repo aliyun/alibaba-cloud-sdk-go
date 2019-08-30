@@ -76,7 +76,8 @@ func (client *Client) MoveResourceGroupWithCallback(request *MoveResourceGroupRe
 // MoveResourceGroupRequest is the request struct for api MoveResourceGroup
 type MoveResourceGroupRequest struct {
 	*requests.RoaRequest
-	InstanceId string `position:"Path" name:"InstanceId"`
+	InstanceId  string `position:"Path" name:"InstanceId"`
+	ClientToken string `position:"Query" name:"clientToken"`
 }
 
 // MoveResourceGroupResponse is the response struct for api MoveResourceGroup

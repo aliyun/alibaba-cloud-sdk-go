@@ -76,7 +76,9 @@ func (client *Client) RestartInstanceWithCallback(request *RestartInstanceReques
 // RestartInstanceRequest is the request struct for api RestartInstance
 type RestartInstanceRequest struct {
 	*requests.RoaRequest
-	InstanceId string `position:"Path" name:"InstanceId"`
+	InstanceId  string           `position:"Path" name:"InstanceId"`
+	ClientToken string           `position:"Query" name:"clientToken"`
+	Force       requests.Boolean `position:"Query" name:"force"`
 }
 
 // RestartInstanceResponse is the response struct for api RestartInstance

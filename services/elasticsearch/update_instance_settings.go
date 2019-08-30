@@ -76,7 +76,8 @@ func (client *Client) UpdateInstanceSettingsWithCallback(request *UpdateInstance
 // UpdateInstanceSettingsRequest is the request struct for api UpdateInstanceSettings
 type UpdateInstanceSettingsRequest struct {
 	*requests.RoaRequest
-	InstanceId string `position:"Path" name:"InstanceId"`
+	InstanceId  string `position:"Path" name:"InstanceId"`
+	ClientToken string `position:"Query" name:"clientToken"`
 }
 
 // UpdateInstanceSettingsResponse is the response struct for api UpdateInstanceSettings

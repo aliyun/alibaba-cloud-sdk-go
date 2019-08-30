@@ -76,7 +76,8 @@ func (client *Client) UpdateDescriptionWithCallback(request *UpdateDescriptionRe
 // UpdateDescriptionRequest is the request struct for api UpdateDescription
 type UpdateDescriptionRequest struct {
 	*requests.RoaRequest
-	InstanceId string `position:"Path" name:"InstanceId"`
+	InstanceId  string `position:"Path" name:"InstanceId"`
+	ClientToken string `position:"Query" name:"clientToken"`
 }
 
 // UpdateDescriptionResponse is the response struct for api UpdateDescription

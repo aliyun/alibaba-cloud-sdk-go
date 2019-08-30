@@ -39,6 +39,9 @@ type ResultInDescribeInstance struct {
 	ZoneCount                 int                     `json:"zoneCount" xml:"zoneCount"`
 	HaveClientNode            bool                    `json:"haveClientNode" xml:"haveClientNode"`
 	WarmNode                  bool                    `json:"warmNode" xml:"warmNode"`
+	Protocol                  string                  `json:"protocol" xml:"protocol"`
+	EnableKibanaPublicNetwork bool                    `json:"enableKibanaPublicNetwork" xml:"enableKibanaPublicNetwork"`
+	HaveKibana                bool                    `json:"haveKibana" xml:"haveKibana"`
 	EsIPWhitelist             []string                `json:"esIPWhitelist" xml:"esIPWhitelist"`
 	EsIPBlacklist             []string                `json:"esIPBlacklist" xml:"esIPBlacklist"`
 	KibanaIPWhitelist         []string                `json:"kibanaIPWhitelist" xml:"kibanaIPWhitelist"`
@@ -52,4 +55,5 @@ type ResultInDescribeInstance struct {
 	WarmNodeConfiguration     WarmNodeConfiguration   `json:"warmNodeConfiguration" xml:"warmNodeConfiguration"`
 	DictList                  []DictList              `json:"dictList" xml:"dictList"`
 	SynonymsDicts             []SynonymsDicts         `json:"synonymsDicts" xml:"synonymsDicts"`
+	ZoneInfos                 []ZoneInfo              `json:"zoneInfos" xml:"zoneInfos"`
 }

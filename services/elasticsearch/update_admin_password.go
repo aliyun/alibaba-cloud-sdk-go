@@ -76,7 +76,8 @@ func (client *Client) UpdateAdminPasswordWithCallback(request *UpdateAdminPasswo
 // UpdateAdminPasswordRequest is the request struct for api UpdateAdminPassword
 type UpdateAdminPasswordRequest struct {
 	*requests.RoaRequest
-	InstanceId string `position:"Path" name:"InstanceId"`
+	InstanceId  string `position:"Path" name:"InstanceId"`
+	ClientToken string `position:"Query" name:"clientToken"`
 }
 
 // UpdateAdminPasswordResponse is the response struct for api UpdateAdminPassword

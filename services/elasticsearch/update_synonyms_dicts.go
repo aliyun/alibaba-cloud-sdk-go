@@ -76,7 +76,8 @@ func (client *Client) UpdateSynonymsDictsWithCallback(request *UpdateSynonymsDic
 // UpdateSynonymsDictsRequest is the request struct for api UpdateSynonymsDicts
 type UpdateSynonymsDictsRequest struct {
 	*requests.RoaRequest
-	InstanceId string `position:"Path" name:"InstanceId"`
+	InstanceId  string `position:"Path" name:"InstanceId"`
+	ClientToken string `position:"Query" name:"clientToken"`
 }
 
 // UpdateSynonymsDictsResponse is the response struct for api UpdateSynonymsDicts

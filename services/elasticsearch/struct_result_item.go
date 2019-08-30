@@ -17,16 +17,20 @@ package elasticsearch
 
 // ResultItem is a nested struct in elasticsearch response
 type ResultItem struct {
-	Description string `json:"description" xml:"description"`
 	Content     string `json:"content" xml:"content"`
 	Port        int    `json:"port" xml:"port"`
-	Timestamp   int    `json:"timestamp" xml:"timestamp"`
+	Timestamp   int64  `json:"timestamp" xml:"timestamp"`
+	Health      string `json:"health" xml:"health"`
 	State       string `json:"state" xml:"state"`
-	Source      string `json:"source" xml:"source"`
-	Level       string `json:"level" xml:"level"`
-	Name        string `json:"name" xml:"name"`
+	LoadFiveM   string `json:"loadFiveM" xml:"loadFiveM"`
 	Host        string `json:"host" xml:"host"`
 	NodeType    string `json:"nodeType" xml:"nodeType"`
 	InstanceId  string `json:"instanceId" xml:"instanceId"`
 	ZoneId      string `json:"zoneId" xml:"zoneId"`
+	Description string `json:"description" xml:"description"`
+	CpuPercent  string `json:"cpuPercent" xml:"cpuPercent"`
+	HeapPercent string `json:"heapPercent" xml:"heapPercent"`
+	Source      string `json:"source" xml:"source"`
+	Level       string `json:"level" xml:"level"`
+	Name        string `json:"name" xml:"name"`
 }

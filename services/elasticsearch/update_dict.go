@@ -76,7 +76,8 @@ func (client *Client) UpdateDictWithCallback(request *UpdateDictRequest, callbac
 // UpdateDictRequest is the request struct for api UpdateDict
 type UpdateDictRequest struct {
 	*requests.RoaRequest
-	InstanceId string `position:"Path" name:"InstanceId"`
+	InstanceId  string `position:"Path" name:"InstanceId"`
+	ClientToken string `position:"Query" name:"clientToken"`
 }
 
 // UpdateDictResponse is the response struct for api UpdateDict
