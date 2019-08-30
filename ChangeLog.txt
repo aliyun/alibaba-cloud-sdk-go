@@ -1,3 +1,6 @@
+2019-08-30 Version: 1.60.130
+- Release Apis of Version 2019-09-10.
+
 2019-08-30 Version: 1.60.129
 - Support latest DRDS Open API for version 2019-01-23.
 

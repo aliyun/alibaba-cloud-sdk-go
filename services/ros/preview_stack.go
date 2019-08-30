@@ -75,21 +75,37 @@ func (client *Client) PreviewStackWithCallback(request *PreviewStackRequest, cal
 
 // PreviewStackRequest is the request struct for api PreviewStack
 type PreviewStackRequest struct {
-	*requests.RoaRequest
+	*requests.RpcRequest
+	StackPolicyURL   string                    `position:"Query" name:"StackPolicyURL"`
+	ClientToken      string                    `position:"Query" name:"ClientToken"`
+	TemplateBody     string                    `position:"Query" name:"TemplateBody"`
+	DisableRollback  requests.Boolean          `position:"Query" name:"DisableRollback"`
+	StackName        string                    `position:"Query" name:"StackName"`
+	Parameters       *[]PreviewStackParameters `position:"Query" name:"Parameters"  type:"Repeated"`
+	StackPolicyBody  string                    `position:"Query" name:"StackPolicyBody"`
+	TimeoutInMinutes requests.Integer          `position:"Query" name:"TimeoutInMinutes"`
+	TemplateURL      string                    `position:"Query" name:"TemplateURL"`
+}
+
+// PreviewStackParameters is a repeated param struct in PreviewStackRequest
+type PreviewStackParameters struct {
+	ParameterValue string `name:"ParameterValue"`
+	ParameterKey   string `name:"ParameterKey"`
 }
 
 // PreviewStackResponse is the response struct for api PreviewStack
 type PreviewStackResponse struct {
 	*responses.BaseResponse
+	RequestId string                 `json:"RequestId" xml:"RequestId"`
+	Stack     map[string]interface{} `json:"Stack" xml:"Stack"`
 }
 
 // CreatePreviewStackRequest creates a request to invoke PreviewStack API
 func CreatePreviewStackRequest() (request *PreviewStackRequest) {
 	request = &PreviewStackRequest{
-		RoaRequest: &requests.RoaRequest{},
+		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ROS", "2015-09-01", "PreviewStack", "/stacks/preview", "", "")
-	request.Method = requests.POST
+	request.InitWithApiInfo("ROS", "2019-09-10", "PreviewStack", "ROS", "openAPI")
 	return
 }
 

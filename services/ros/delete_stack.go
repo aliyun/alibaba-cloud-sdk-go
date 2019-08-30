@@ -75,23 +75,23 @@ func (client *Client) DeleteStackWithCallback(request *DeleteStackRequest, callb
 
 // DeleteStackRequest is the request struct for api DeleteStack
 type DeleteStackRequest struct {
-	*requests.RoaRequest
-	StackId   string `position:"Path" name:"StackId"`
-	StackName string `position:"Path" name:"StackName"`
+	*requests.RpcRequest
+	RetainAllResources requests.Boolean `position:"Query" name:"RetainAllResources"`
+	StackId            string           `position:"Query" name:"StackId"`
 }
 
 // DeleteStackResponse is the response struct for api DeleteStack
 type DeleteStackResponse struct {
 	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDeleteStackRequest creates a request to invoke DeleteStack API
 func CreateDeleteStackRequest() (request *DeleteStackRequest) {
 	request = &DeleteStackRequest{
-		RoaRequest: &requests.RoaRequest{},
+		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ROS", "2015-09-01", "DeleteStack", "/stacks/[StackName]/[StackId]", "", "")
-	request.Method = requests.DELETE
+	request.InitWithApiInfo("ROS", "2019-09-10", "DeleteStack", "ROS", "openAPI")
 	return
 }
 

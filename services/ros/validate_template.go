@@ -75,21 +75,25 @@ func (client *Client) ValidateTemplateWithCallback(request *ValidateTemplateRequ
 
 // ValidateTemplateRequest is the request struct for api ValidateTemplate
 type ValidateTemplateRequest struct {
-	*requests.RoaRequest
+	*requests.RpcRequest
+	TemplateBody string `position:"Query" name:"TemplateBody"`
+	TemplateURL  string `position:"Query" name:"TemplateURL"`
 }
 
 // ValidateTemplateResponse is the response struct for api ValidateTemplate
 type ValidateTemplateResponse struct {
 	*responses.BaseResponse
+	Description string   `json:"Description" xml:"Description"`
+	RequestId   string   `json:"RequestId" xml:"RequestId"`
+	Parameters  []string `json:"Parameters" xml:"Parameters"`
 }
 
 // CreateValidateTemplateRequest creates a request to invoke ValidateTemplate API
 func CreateValidateTemplateRequest() (request *ValidateTemplateRequest) {
 	request = &ValidateTemplateRequest{
-		RoaRequest: &requests.RoaRequest{},
+		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ROS", "2015-09-01", "ValidateTemplate", "/validate", "", "")
-	request.Method = requests.POST
+	request.InitWithApiInfo("ROS", "2019-09-10", "ValidateTemplate", "ROS", "openAPI")
 	return
 }
 

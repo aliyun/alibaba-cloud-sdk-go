@@ -75,23 +75,23 @@ func (client *Client) CancelUpdateStackWithCallback(request *CancelUpdateStackRe
 
 // CancelUpdateStackRequest is the request struct for api CancelUpdateStack
 type CancelUpdateStackRequest struct {
-	*requests.RoaRequest
-	StackId   string `position:"Path" name:"StackId"`
-	StackName string `position:"Path" name:"StackName"`
+	*requests.RpcRequest
+	CancelType string `position:"Query" name:"CancelType"`
+	StackId    string `position:"Query" name:"StackId"`
 }
 
 // CancelUpdateStackResponse is the response struct for api CancelUpdateStack
 type CancelUpdateStackResponse struct {
 	*responses.BaseResponse
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCancelUpdateStackRequest creates a request to invoke CancelUpdateStack API
 func CreateCancelUpdateStackRequest() (request *CancelUpdateStackRequest) {
 	request = &CancelUpdateStackRequest{
-		RoaRequest: &requests.RoaRequest{},
+		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ROS", "2015-09-01", "CancelUpdateStack", "/stacks/[StackName]/[StackId]/cancel", "", "")
-	request.Method = requests.PUT
+	request.InitWithApiInfo("ROS", "2019-09-10", "CancelUpdateStack", "ROS", "openAPI")
 	return
 }
 

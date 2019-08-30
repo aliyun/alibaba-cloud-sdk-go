@@ -75,23 +75,23 @@ func (client *Client) GetStackPolicyWithCallback(request *GetStackPolicyRequest,
 
 // GetStackPolicyRequest is the request struct for api GetStackPolicy
 type GetStackPolicyRequest struct {
-	*requests.RoaRequest
-	StackId   string `position:"Path" name:"StackId"`
-	StackName string `position:"Path" name:"StackName"`
+	*requests.RpcRequest
+	StackId string `position:"Query" name:"StackId"`
 }
 
 // GetStackPolicyResponse is the response struct for api GetStackPolicy
 type GetStackPolicyResponse struct {
 	*responses.BaseResponse
+	RequestId       string                 `json:"RequestId" xml:"RequestId"`
+	StackPolicyBody map[string]interface{} `json:"StackPolicyBody" xml:"StackPolicyBody"`
 }
 
 // CreateGetStackPolicyRequest creates a request to invoke GetStackPolicy API
 func CreateGetStackPolicyRequest() (request *GetStackPolicyRequest) {
 	request = &GetStackPolicyRequest{
-		RoaRequest: &requests.RoaRequest{},
+		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("ROS", "2015-09-01", "GetStackPolicy", "/stacks/[StackName]/[StackId]/policy", "", "")
-	request.Method = requests.GET
+	request.InitWithApiInfo("ROS", "2019-09-10", "GetStackPolicy", "ROS", "openAPI")
 	return
 }
 
