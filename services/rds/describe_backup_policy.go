@@ -76,13 +76,13 @@ func (client *Client) DescribeBackupPolicyWithCallback(request *DescribeBackupPo
 // DescribeBackupPolicyRequest is the request struct for api DescribeBackupPolicy
 type DescribeBackupPolicyRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	BackupPolicyMode     string           `position:"Query" name:"BackupPolicyMode"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	CompressType         string           `position:"Query" name:"CompressType"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	BackupPolicyMode     string           `position:"Query" name:"BackupPolicyMode"`
 }
 
 // DescribeBackupPolicyResponse is the response struct for api DescribeBackupPolicy

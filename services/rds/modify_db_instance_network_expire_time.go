@@ -76,13 +76,13 @@ func (client *Client) ModifyDBInstanceNetworkExpireTimeWithCallback(request *Mod
 // ModifyDBInstanceNetworkExpireTimeRequest is the request struct for api ModifyDBInstanceNetworkExpireTime
 type ModifyDBInstanceNetworkExpireTimeRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	ConnectionString     string           `position:"Query" name:"ConnectionString"`
 	ClassicExpiredDays   requests.Integer `position:"Query" name:"ClassicExpiredDays"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // ModifyDBInstanceNetworkExpireTimeResponse is the response struct for api ModifyDBInstanceNetworkExpireTime

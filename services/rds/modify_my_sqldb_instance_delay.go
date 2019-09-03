@@ -76,11 +76,11 @@ func (client *Client) ModifyMySQLDBInstanceDelayWithCallback(request *ModifyMySQ
 // ModifyMySQLDBInstanceDelayRequest is the request struct for api ModifyMySQLDBInstanceDelay
 type ModifyMySQLDBInstanceDelayRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	SqlDelay             string           `position:"Query" name:"SqlDelay"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	SqlDelay             string           `position:"Query" name:"SqlDelay"`
 }
 
 // ModifyMySQLDBInstanceDelayResponse is the response struct for api ModifyMySQLDBInstanceDelay

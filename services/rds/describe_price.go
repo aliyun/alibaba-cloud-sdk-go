@@ -76,22 +76,22 @@ func (client *Client) DescribePriceWithCallback(request *DescribePriceRequest, c
 // DescribePriceRequest is the request struct for api DescribePrice
 type DescribePriceRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	DBInstanceStorage    requests.Integer `position:"Query" name:"DBInstanceStorage"`
-	Quantity             requests.Integer `position:"Query" name:"Quantity"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	CommodityCode        string           `position:"Query" name:"CommodityCode"`
-	EngineVersion        string           `position:"Query" name:"EngineVersion"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	UsedTime             string           `position:"Query" name:"UsedTime"`
-	DBInstanceClass      string           `position:"Query" name:"DBInstanceClass"`
-	InstanceUsedType     requests.Integer `position:"Query" name:"InstanceUsedType"`
 	Engine               string           `position:"Query" name:"Engine"`
-	ZoneId               string           `position:"Query" name:"ZoneId"`
-	TimeType             string           `position:"Query" name:"TimeType"`
+	EngineVersion        string           `position:"Query" name:"EngineVersion"`
+	DBInstanceClass      string           `position:"Query" name:"DBInstanceClass"`
+	DBInstanceStorage    requests.Integer `position:"Query" name:"DBInstanceStorage"`
 	PayType              string           `position:"Query" name:"PayType"`
+	ZoneId               string           `position:"Query" name:"ZoneId"`
+	UsedTime             string           `position:"Query" name:"UsedTime"`
+	TimeType             string           `position:"Query" name:"TimeType"`
+	Quantity             requests.Integer `position:"Query" name:"Quantity"`
+	InstanceUsedType     requests.Integer `position:"Query" name:"InstanceUsedType"`
 	OrderType            string           `position:"Query" name:"OrderType"`
 }
 

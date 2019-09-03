@@ -76,21 +76,21 @@ func (client *Client) PreCheckCreateOrderForDeferWithCallback(request *PreCheckC
 // PreCheckCreateOrderForDeferRequest is the request struct for api PreCheckCreateOrderForDefer
 type PreCheckCreateOrderForDeferRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	DBInstanceStorage     requests.Integer `position:"Query" name:"DBInstanceStorage"`
-	AutoPay               requests.Boolean `position:"Query" name:"AutoPay"`
-	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
-	ClientToken           string           `position:"Query" name:"ClientToken"`
-	Resource              string           `position:"Query" name:"Resource"`
-	CommodityCode         string           `position:"Query" name:"CommodityCode"`
 	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
-	UsedTime              string           `position:"Query" name:"UsedTime"`
-	DBInstanceClass       string           `position:"Query" name:"DBInstanceClass"`
-	RenewChange           requests.Boolean `position:"Query" name:"RenewChange"`
+	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken           string           `position:"Query" name:"ClientToken"`
+	CommodityCode         string           `position:"Query" name:"CommodityCode"`
 	DBInstanceId          string           `position:"Query" name:"DBInstanceId"`
+	UsedTime              string           `position:"Query" name:"UsedTime"`
 	TimeType              string           `position:"Query" name:"TimeType"`
-	DBInstanceStorageType string           `position:"Query" name:"DBInstanceStorageType"`
+	DBInstanceStorage     requests.Integer `position:"Query" name:"DBInstanceStorage"`
+	Resource              string           `position:"Query" name:"Resource"`
+	AutoPay               requests.Boolean `position:"Query" name:"AutoPay"`
 	PayType               string           `position:"Query" name:"PayType"`
+	RenewChange           requests.Boolean `position:"Query" name:"RenewChange"`
+	DBInstanceStorageType string           `position:"Query" name:"DBInstanceStorageType"`
+	DBInstanceClass       string           `position:"Query" name:"DBInstanceClass"`
 	BusinessInfo          string           `position:"Query" name:"BusinessInfo"`
 }
 

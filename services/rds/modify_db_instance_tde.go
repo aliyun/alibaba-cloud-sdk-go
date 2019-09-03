@@ -76,15 +76,15 @@ func (client *Client) ModifyDBInstanceTDEWithCallback(request *ModifyDBInstanceT
 // ModifyDBInstanceTDERequest is the request struct for api ModifyDBInstanceTDE
 type ModifyDBInstanceTDERequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	DBName               string           `position:"Query" name:"DBName"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	RoleArn              string           `position:"Query" name:"RoleArn"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	EncryptionKey        string           `position:"Query" name:"EncryptionKey"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	TDEStatus            string           `position:"Query" name:"TDEStatus"`
+	DBName               string           `position:"Query" name:"DBName"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	EncryptionKey        string           `position:"Query" name:"EncryptionKey"`
+	RoleArn              string           `position:"Query" name:"RoleArn"`
 }
 
 // ModifyDBInstanceTDEResponse is the response struct for api ModifyDBInstanceTDE

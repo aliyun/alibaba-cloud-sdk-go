@@ -76,20 +76,20 @@ func (client *Client) ModifyInstanceCrossBackupPolicyWithCallback(request *Modif
 // ModifyInstanceCrossBackupPolicyRequest is the request struct for api ModifyInstanceCrossBackupPolicy
 type ModifyInstanceCrossBackupPolicyRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	RetentType           requests.Integer `position:"Query" name:"RetentType"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	CrossBackupType      string           `position:"Query" name:"CrossBackupType"`
 	LogBackupEnabled     string           `position:"Query" name:"LogBackupEnabled"`
 	BackupEnabled        string           `position:"Query" name:"BackupEnabled"`
-	RelService           string           `position:"Query" name:"RelService"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	CrossBackupRegion    string           `position:"Query" name:"CrossBackupRegion"`
+	StorageOwner         string           `position:"Query" name:"StorageOwner"`
 	StorageType          string           `position:"Query" name:"StorageType"`
 	Endpoint             string           `position:"Query" name:"Endpoint"`
-	StorageOwner         string           `position:"Query" name:"StorageOwner"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	RetentType           requests.Integer `position:"Query" name:"RetentType"`
 	Retention            requests.Integer `position:"Query" name:"Retention"`
+	RelService           string           `position:"Query" name:"RelService"`
 }
 
 // ModifyInstanceCrossBackupPolicyResponse is the response struct for api ModifyInstanceCrossBackupPolicy

@@ -76,12 +76,12 @@ func (client *Client) DescribeProxyFunctionSupportWithCallback(request *Describe
 // DescribeProxyFunctionSupportRequest is the request struct for api DescribeProxyFunctionSupport
 type DescribeProxyFunctionSupportRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeProxyFunctionSupportResponse is the response struct for api DescribeProxyFunctionSupport

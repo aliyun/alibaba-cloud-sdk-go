@@ -76,13 +76,13 @@ func (client *Client) DescribeReadDBInstanceDelayWithCallback(request *DescribeR
 // DescribeReadDBInstanceDelayRequest is the request struct for api DescribeReadDBInstanceDelay
 type DescribeReadDBInstanceDelayRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	ReadInstanceId       string           `position:"Query" name:"ReadInstanceId"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	ReadInstanceId       string           `position:"Query" name:"ReadInstanceId"`
 }
 
 // DescribeReadDBInstanceDelayResponse is the response struct for api DescribeReadDBInstanceDelay

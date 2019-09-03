@@ -76,15 +76,15 @@ func (client *Client) DescribeBackupTasksWithCallback(request *DescribeBackupTas
 // DescribeBackupTasksRequest is the request struct for api DescribeBackupTasks
 type DescribeBackupTasksRequest struct {
 	*requests.RpcRequest
-	BackupJobId          string           `position:"Query" name:"BackupJobId"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Flag                 string           `position:"Query" name:"Flag"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
+	Flag                 string           `position:"Query" name:"Flag"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	BackupJobId          string           `position:"Query" name:"BackupJobId"`
 	BackupMode           string           `position:"Query" name:"BackupMode"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	BackupJobStatus      string           `position:"Query" name:"BackupJobStatus"`
 }
 

@@ -76,24 +76,24 @@ func (client *Client) DescribeTemplatesListWithCallback(request *DescribeTemplat
 // DescribeTemplatesListRequest is the request struct for api DescribeTemplatesList
 type DescribeTemplatesListRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	MinAvgConsume        requests.Integer `position:"Query" name:"MinAvgConsume"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	MaxRecordsPerPage    requests.Integer `position:"Query" name:"MaxRecordsPerPage"`
-	EndTime              string           `position:"Query" name:"EndTime"`
-	StartTime            string           `position:"Query" name:"StartTime"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	MaxAvgConsume        requests.Integer `position:"Query" name:"MaxAvgConsume"`
-	SortKey              string           `position:"Query" name:"SortKey"`
-	MinAvgScanRows       requests.Integer `position:"Query" name:"MinAvgScanRows"`
-	SqType               string           `position:"Query" name:"SqType"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
-	SortMethod           string           `position:"Query" name:"SortMethod"`
-	PageNumbers          requests.Integer `position:"Query" name:"PageNumbers"`
-	PagingId             string           `position:"Query" name:"PagingId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	StartTime            string           `position:"Query" name:"StartTime"`
+	EndTime              string           `position:"Query" name:"EndTime"`
+	MaxRecordsPerPage    requests.Integer `position:"Query" name:"MaxRecordsPerPage"`
+	PageNumbers          requests.Integer `position:"Query" name:"PageNumbers"`
+	MinAvgConsume        requests.Integer `position:"Query" name:"MinAvgConsume"`
+	MaxAvgConsume        requests.Integer `position:"Query" name:"MaxAvgConsume"`
+	MinAvgScanRows       requests.Integer `position:"Query" name:"MinAvgScanRows"`
 	MaxAvgScanRows       requests.Integer `position:"Query" name:"MaxAvgScanRows"`
+	PagingId             string           `position:"Query" name:"PagingId"`
+	SortKey              string           `position:"Query" name:"SortKey"`
+	SortMethod           string           `position:"Query" name:"SortMethod"`
+	SqType               string           `position:"Query" name:"SqType"`
 }
 
 // DescribeTemplatesListResponse is the response struct for api DescribeTemplatesList

@@ -76,12 +76,12 @@ func (client *Client) ImportDataForSQLServerWithCallback(request *ImportDataForS
 // ImportDataForSQLServerRequest is the request struct for api ImportDataForSQLServer
 type ImportDataForSQLServerRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	FileName             string           `position:"Query" name:"FileName"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	FileName             string           `position:"Query" name:"FileName"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 // ImportDataForSQLServerResponse is the response struct for api ImportDataForSQLServer

@@ -76,16 +76,16 @@ func (client *Client) DescribeAvailableInstanceClassWithCallback(request *Descri
 // DescribeAvailableInstanceClassRequest is the request struct for api DescribeAvailableInstanceClass
 type DescribeAvailableInstanceClassRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	EngineVersion        string           `position:"Query" name:"EngineVersion"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	Engine               string           `position:"Query" name:"Engine"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ZoneId               string           `position:"Query" name:"ZoneId"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	InstanceChargeType   string           `position:"Query" name:"InstanceChargeType"`
+	Engine               string           `position:"Query" name:"Engine"`
+	EngineVersion        string           `position:"Query" name:"EngineVersion"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	OrderType            string           `position:"Query" name:"OrderType"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 // DescribeAvailableInstanceClassResponse is the response struct for api DescribeAvailableInstanceClass

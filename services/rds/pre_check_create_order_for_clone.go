@@ -76,43 +76,43 @@ func (client *Client) PreCheckCreateOrderForCloneWithCallback(request *PreCheckC
 // PreCheckCreateOrderForCloneRequest is the request struct for api PreCheckCreateOrderForClone
 type PreCheckCreateOrderForCloneRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId           requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	DBInstanceStorage         requests.Integer `position:"Query" name:"DBInstanceStorage"`
-	NodeType                  string           `position:"Query" name:"NodeType"`
-	ClientToken               string           `position:"Query" name:"ClientToken"`
-	CountryCode               string           `position:"Query" name:"CountryCode"`
-	CurrencyCode              string           `position:"Query" name:"CurrencyCode"`
-	ResourceGroupId           string           `position:"Query" name:"ResourceGroupId"`
-	TableMeta                 string           `position:"Query" name:"TableMeta"`
-	DBInstanceId              string           `position:"Query" name:"DBInstanceId"`
-	DBInstanceDescription     string           `position:"Query" name:"DBInstanceDescription"`
-	DBInstanceStorageType     string           `position:"Query" name:"DBInstanceStorageType"`
-	BusinessInfo              string           `position:"Query" name:"BusinessInfo"`
-	AgentId                   string           `position:"Query" name:"AgentId"`
-	RestoreTime               string           `position:"Query" name:"RestoreTime"`
-	Quantity                  requests.Integer `position:"Query" name:"Quantity"`
-	AutoPay                   requests.Boolean `position:"Query" name:"AutoPay"`
-	ResourceOwnerAccount      string           `position:"Query" name:"ResourceOwnerAccount"`
-	Resource                  string           `position:"Query" name:"Resource"`
-	BackupId                  string           `position:"Query" name:"BackupId"`
-	OwnerAccount              string           `position:"Query" name:"OwnerAccount"`
-	RestoreTable              string           `position:"Query" name:"RestoreTable"`
-	CommodityCode             string           `position:"Query" name:"CommodityCode"`
 	OwnerId                   requests.Integer `position:"Query" name:"OwnerId"`
-	UsedTime                  string           `position:"Query" name:"UsedTime"`
+	ResourceOwnerAccount      string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId           requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken               string           `position:"Query" name:"ClientToken"`
+	CommodityCode             string           `position:"Query" name:"CommodityCode"`
+	DBInstanceId              string           `position:"Query" name:"DBInstanceId"`
 	DBInstanceClass           string           `position:"Query" name:"DBInstanceClass"`
-	DBNames                   string           `position:"Query" name:"DBNames"`
-	VSwitchId                 string           `position:"Query" name:"VSwitchId"`
-	PrivateIpAddress          string           `position:"Query" name:"PrivateIpAddress"`
-	InstanceUsedType          requests.Integer `position:"Query" name:"InstanceUsedType"`
-	AutoRenew                 string           `position:"Query" name:"AutoRenew"`
-	PromotionCode             string           `position:"Query" name:"PromotionCode"`
-	VPCId                     string           `position:"Query" name:"VPCId"`
-	ZoneId                    string           `position:"Query" name:"ZoneId"`
-	CloneInstanceDefaultValue string           `position:"Query" name:"CloneInstanceDefaultValue"`
-	TimeType                  string           `position:"Query" name:"TimeType"`
+	DBInstanceStorage         requests.Integer `position:"Query" name:"DBInstanceStorage"`
+	DBInstanceStorageType     string           `position:"Query" name:"DBInstanceStorageType"`
 	PayType                   string           `position:"Query" name:"PayType"`
 	InstanceNetworkType       string           `position:"Query" name:"InstanceNetworkType"`
+	UsedTime                  string           `position:"Query" name:"UsedTime"`
+	TimeType                  string           `position:"Query" name:"TimeType"`
+	Quantity                  requests.Integer `position:"Query" name:"Quantity"`
+	AutoPay                   requests.Boolean `position:"Query" name:"AutoPay"`
+	InstanceUsedType          requests.Integer `position:"Query" name:"InstanceUsedType"`
+	Resource                  string           `position:"Query" name:"Resource"`
+	VPCId                     string           `position:"Query" name:"VPCId"`
+	VSwitchId                 string           `position:"Query" name:"VSwitchId"`
+	PrivateIpAddress          string           `position:"Query" name:"PrivateIpAddress"`
+	CountryCode               string           `position:"Query" name:"CountryCode"`
+	CurrencyCode              string           `position:"Query" name:"CurrencyCode"`
+	AutoRenew                 string           `position:"Query" name:"AutoRenew"`
+	AgentId                   string           `position:"Query" name:"AgentId"`
+	ZoneId                    string           `position:"Query" name:"ZoneId"`
+	PromotionCode             string           `position:"Query" name:"PromotionCode"`
+	BusinessInfo              string           `position:"Query" name:"BusinessInfo"`
+	CloneInstanceDefaultValue string           `position:"Query" name:"CloneInstanceDefaultValue"`
+	DBInstanceDescription     string           `position:"Query" name:"DBInstanceDescription"`
+	DBNames                   string           `position:"Query" name:"DBNames"`
+	BackupId                  string           `position:"Query" name:"BackupId"`
+	RestoreTime               string           `position:"Query" name:"RestoreTime"`
+	OwnerAccount              string           `position:"Query" name:"OwnerAccount"`
+	ResourceGroupId           string           `position:"Query" name:"ResourceGroupId"`
+	TableMeta                 string           `position:"Query" name:"TableMeta"`
+	RestoreTable              string           `position:"Query" name:"RestoreTable"`
+	NodeType                  string           `position:"Query" name:"NodeType"`
 }
 
 // PreCheckCreateOrderForCloneResponse is the response struct for api PreCheckCreateOrderForClone

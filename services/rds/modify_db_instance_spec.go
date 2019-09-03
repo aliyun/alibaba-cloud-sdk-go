@@ -76,17 +76,17 @@ func (client *Client) ModifyDBInstanceSpecWithCallback(request *ModifyDBInstance
 // ModifyDBInstanceSpecRequest is the request struct for api ModifyDBInstanceSpec
 type ModifyDBInstanceSpecRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	DBInstanceStorage    requests.Integer `position:"Query" name:"DBInstanceStorage"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	EngineVersion        string           `position:"Query" name:"EngineVersion"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	DBInstanceClass      string           `position:"Query" name:"DBInstanceClass"`
-	EffectiveTime        string           `position:"Query" name:"EffectiveTime"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	DBInstanceClass      string           `position:"Query" name:"DBInstanceClass"`
+	DBInstanceStorage    requests.Integer `position:"Query" name:"DBInstanceStorage"`
 	PayType              string           `position:"Query" name:"PayType"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	EffectiveTime        string           `position:"Query" name:"EffectiveTime"`
+	EngineVersion        string           `position:"Query" name:"EngineVersion"`
 }
 
 // ModifyDBInstanceSpecResponse is the response struct for api ModifyDBInstanceSpec

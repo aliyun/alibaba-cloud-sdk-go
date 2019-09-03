@@ -76,16 +76,16 @@ func (client *Client) DescribeCrossRegionBackupsWithCallback(request *DescribeCr
 // DescribeCrossRegionBackupsRequest is the request struct for api DescribeCrossRegionBackups
 type DescribeCrossRegionBackupsRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	EndTime              string           `position:"Query" name:"EndTime"`
-	StartTime            string           `position:"Query" name:"StartTime"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	CrossBackupRegion    string           `position:"Query" name:"CrossBackupRegion"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	CrossBackupRegion    string           `position:"Query" name:"CrossBackupRegion"`
 	CrossBackupId        requests.Integer `position:"Query" name:"CrossBackupId"`
+	StartTime            string           `position:"Query" name:"StartTime"`
+	EndTime              string           `position:"Query" name:"EndTime"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 // DescribeCrossRegionBackupsResponse is the response struct for api DescribeCrossRegionBackups

@@ -76,40 +76,40 @@ func (client *Client) DescribeDBInstancesWithCallback(request *DescribeDBInstanc
 // DescribeDBInstancesRequest is the request struct for api DescribeDBInstances
 type DescribeDBInstancesRequest struct {
 	*requests.RpcRequest
-	ConnectionMode       string           `position:"Query" name:"ConnectionMode"`
-	Tag4Value            string           `position:"Query" name:"Tag.4.value"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Tag2Key              string           `position:"Query" name:"Tag.2.key"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	SearchKey            string           `position:"Query" name:"SearchKey"`
-	Tag3Key              string           `position:"Query" name:"Tag.3.key"`
-	EngineVersion        string           `position:"Query" name:"EngineVersion"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	Tag1Value            string           `position:"Query" name:"Tag.1.value"`
-	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
-	Expired              string           `position:"Query" name:"Expired"`
-	Engine               string           `position:"Query" name:"Engine"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	DBInstanceStatus     string           `position:"Query" name:"DBInstanceStatus"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	Tag3Value            string           `position:"Query" name:"Tag.3.value"`
-	ProxyId              string           `position:"Query" name:"proxyId"`
-	Tag5Key              string           `position:"Query" name:"Tag.5.key"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	Tag5Value            string           `position:"Query" name:"Tag.5.value"`
-	DBInstanceType       string           `position:"Query" name:"DBInstanceType"`
-	DBInstanceClass      string           `position:"Query" name:"DBInstanceClass"`
-	Tags                 string           `position:"Query" name:"Tags"`
-	VSwitchId            string           `position:"Query" name:"VSwitchId"`
-	Tag1Key              string           `position:"Query" name:"Tag.1.key"`
-	VpcId                string           `position:"Query" name:"VpcId"`
-	Tag2Value            string           `position:"Query" name:"Tag.2.value"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	ProxyId              string           `position:"Query" name:"proxyId"`
+	Engine               string           `position:"Query" name:"Engine"`
 	ZoneId               string           `position:"Query" name:"ZoneId"`
-	Tag4Key              string           `position:"Query" name:"Tag.4.key"`
-	PayType              string           `position:"Query" name:"PayType"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
+	DBInstanceStatus     string           `position:"Query" name:"DBInstanceStatus"`
+	Expired              string           `position:"Query" name:"Expired"`
+	SearchKey            string           `position:"Query" name:"SearchKey"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	DBInstanceType       string           `position:"Query" name:"DBInstanceType"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	InstanceNetworkType  string           `position:"Query" name:"InstanceNetworkType"`
+	VpcId                string           `position:"Query" name:"VpcId"`
+	VSwitchId            string           `position:"Query" name:"VSwitchId"`
+	DBInstanceClass      string           `position:"Query" name:"DBInstanceClass"`
+	EngineVersion        string           `position:"Query" name:"EngineVersion"`
+	PayType              string           `position:"Query" name:"PayType"`
+	ConnectionMode       string           `position:"Query" name:"ConnectionMode"`
+	Tag1Key              string           `position:"Query" name:"Tag.1.key"`
+	Tag2Key              string           `position:"Query" name:"Tag.2.key"`
+	Tag3Key              string           `position:"Query" name:"Tag.3.key"`
+	Tag4Key              string           `position:"Query" name:"Tag.4.key"`
+	Tag5Key              string           `position:"Query" name:"Tag.5.key"`
+	Tag1Value            string           `position:"Query" name:"Tag.1.value"`
+	Tag2Value            string           `position:"Query" name:"Tag.2.value"`
+	Tag3Value            string           `position:"Query" name:"Tag.3.value"`
+	Tag4Value            string           `position:"Query" name:"Tag.4.value"`
+	Tag5Value            string           `position:"Query" name:"Tag.5.value"`
+	Tags                 string           `position:"Query" name:"Tags"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 // DescribeDBInstancesResponse is the response struct for api DescribeDBInstances

@@ -76,12 +76,12 @@ func (client *Client) CancelImportWithCallback(request *CancelImportRequest, cal
 // CancelImportRequest is the request struct for api CancelImport
 type CancelImportRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ImportId             requests.Integer `position:"Query" name:"ImportId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	ImportId             requests.Integer `position:"Query" name:"ImportId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 // CancelImportResponse is the response struct for api CancelImport

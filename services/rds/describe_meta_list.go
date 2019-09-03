@@ -76,17 +76,17 @@ func (client *Client) DescribeMetaListWithCallback(request *DescribeMetaListRequ
 // DescribeMetaListRequest is the request struct for api DescribeMetaList
 type DescribeMetaListRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	RestoreTime          string           `position:"Query" name:"RestoreTime"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	Pattern              string           `position:"Query" name:"Pattern"`
-	BackupSetID          string           `position:"Query" name:"BackupSetID"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	GetDbName            string           `position:"Query" name:"GetDbName"`
-	RestoreType          string           `position:"Query" name:"RestoreType"`
-	PageSize             string           `position:"Query" name:"PageSize"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	RestoreType          string           `position:"Query" name:"RestoreType"`
+	BackupSetID          string           `position:"Query" name:"BackupSetID"`
+	RestoreTime          string           `position:"Query" name:"RestoreTime"`
+	GetDbName            string           `position:"Query" name:"GetDbName"`
+	Pattern              string           `position:"Query" name:"Pattern"`
+	PageSize             string           `position:"Query" name:"PageSize"`
 	PageIndex            string           `position:"Query" name:"PageIndex"`
 }
 

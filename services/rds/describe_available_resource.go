@@ -76,17 +76,17 @@ func (client *Client) DescribeAvailableResourceWithCallback(request *DescribeAva
 // DescribeAvailableResourceRequest is the request struct for api DescribeAvailableResource
 type DescribeAvailableResourceRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	EngineVersion        string           `position:"Query" name:"EngineVersion"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	DBInstanceClass      string           `position:"Query" name:"DBInstanceClass"`
-	Engine               string           `position:"Query" name:"Engine"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ZoneId               string           `position:"Query" name:"ZoneId"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	InstanceChargeType   string           `position:"Query" name:"InstanceChargeType"`
+	Engine               string           `position:"Query" name:"Engine"`
+	EngineVersion        string           `position:"Query" name:"EngineVersion"`
+	DBInstanceClass      string           `position:"Query" name:"DBInstanceClass"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	OrderType            string           `position:"Query" name:"OrderType"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 // DescribeAvailableResourceResponse is the response struct for api DescribeAvailableResource

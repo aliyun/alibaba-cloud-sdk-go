@@ -76,12 +76,12 @@ func (client *Client) ModifyDBInstanceAutoUpgradeMinorVersionWithCallback(reques
 // ModifyDBInstanceAutoUpgradeMinorVersionRequest is the request struct for api ModifyDBInstanceAutoUpgradeMinorVersion
 type ModifyDBInstanceAutoUpgradeMinorVersionRequest struct {
 	*requests.RpcRequest
-	AutoUpgradeMinorVersion string           `position:"Query" name:"AutoUpgradeMinorVersion"`
-	ResourceOwnerId         requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerId                 requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount    string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId         requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ClientToken             string           `position:"Query" name:"ClientToken"`
 	DBInstanceId            string           `position:"Query" name:"DBInstanceId"`
-	OwnerId                 requests.Integer `position:"Query" name:"OwnerId"`
+	AutoUpgradeMinorVersion string           `position:"Query" name:"AutoUpgradeMinorVersion"`
 }
 
 // ModifyDBInstanceAutoUpgradeMinorVersionResponse is the response struct for api ModifyDBInstanceAutoUpgradeMinorVersion

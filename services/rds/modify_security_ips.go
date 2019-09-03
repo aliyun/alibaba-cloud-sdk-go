@@ -76,19 +76,19 @@ func (client *Client) ModifySecurityIpsWithCallback(request *ModifySecurityIpsRe
 // ModifySecurityIpsRequest is the request struct for api ModifySecurityIps
 type ModifySecurityIpsRequest struct {
 	*requests.RpcRequest
-	DBInstanceIPArrayName      string           `position:"Query" name:"DBInstanceIPArrayName"`
-	ResourceOwnerId            requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ModifyMode                 string           `position:"Query" name:"ModifyMode"`
+	OwnerId                    requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount       string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId            requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ClientToken                string           `position:"Query" name:"ClientToken"`
 	OwnerAccount               string           `position:"Query" name:"OwnerAccount"`
+	DBInstanceId               string           `position:"Query" name:"DBInstanceId"`
 	SecurityIps                string           `position:"Query" name:"SecurityIps"`
-	SecurityGroupId            string           `position:"Query" name:"SecurityGroupId"`
-	OwnerId                    requests.Integer `position:"Query" name:"OwnerId"`
-	WhitelistNetworkType       string           `position:"Query" name:"WhitelistNetworkType"`
+	DBInstanceIPArrayName      string           `position:"Query" name:"DBInstanceIPArrayName"`
 	DBInstanceIPArrayAttribute string           `position:"Query" name:"DBInstanceIPArrayAttribute"`
 	SecurityIPType             string           `position:"Query" name:"SecurityIPType"`
-	DBInstanceId               string           `position:"Query" name:"DBInstanceId"`
+	WhitelistNetworkType       string           `position:"Query" name:"WhitelistNetworkType"`
+	SecurityGroupId            string           `position:"Query" name:"SecurityGroupId"`
+	ModifyMode                 string           `position:"Query" name:"ModifyMode"`
 }
 
 // ModifySecurityIpsResponse is the response struct for api ModifySecurityIps

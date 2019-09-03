@@ -76,13 +76,13 @@ func (client *Client) ModifyResourceGroupWithCallback(request *ModifyResourceGro
 // ModifyResourceGroupRequest is the request struct for api ModifyResourceGroup
 type ModifyResourceGroupRequest struct {
 	*requests.RpcRequest
-	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 }
 
 // ModifyResourceGroupResponse is the response struct for api ModifyResourceGroup

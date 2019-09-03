@@ -76,18 +76,18 @@ func (client *Client) MigrateToOtherZoneWithCallback(request *MigrateToOtherZone
 // MigrateToOtherZoneRequest is the request struct for api MigrateToOtherZone
 type MigrateToOtherZoneRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	ZoneIdSlave1         string           `position:"Query" name:"ZoneIdSlave1"`
-	ZoneIdSlave2         string           `position:"Query" name:"ZoneIdSlave2"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	VSwitchId            string           `position:"Query" name:"VSwitchId"`
-	EffectiveTime        string           `position:"Query" name:"EffectiveTime"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	VPCId                string           `position:"Query" name:"VPCId"`
 	ZoneId               string           `position:"Query" name:"ZoneId"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	EffectiveTime        string           `position:"Query" name:"EffectiveTime"`
+	VSwitchId            string           `position:"Query" name:"VSwitchId"`
 	Category             string           `position:"Query" name:"Category"`
+	ZoneIdSlave1         string           `position:"Query" name:"ZoneIdSlave1"`
+	ZoneIdSlave2         string           `position:"Query" name:"ZoneIdSlave2"`
 }
 
 // MigrateToOtherZoneResponse is the response struct for api MigrateToOtherZone

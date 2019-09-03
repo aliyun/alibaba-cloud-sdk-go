@@ -76,14 +76,14 @@ func (client *Client) GrantAccountPrivilegeWithCallback(request *GrantAccountPri
 // GrantAccountPrivilegeRequest is the request struct for api GrantAccountPrivilege
 type GrantAccountPrivilegeRequest struct {
 	*requests.RpcRequest
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	AccountName          string           `position:"Query" name:"AccountName"`
 	DBName               string           `position:"Query" name:"DBName"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	AccountPrivilege     string           `position:"Query" name:"AccountPrivilege"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 // GrantAccountPrivilegeResponse is the response struct for api GrantAccountPrivilege

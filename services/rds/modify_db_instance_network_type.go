@@ -76,19 +76,19 @@ func (client *Client) ModifyDBInstanceNetworkTypeWithCallback(request *ModifyDBI
 // ModifyDBInstanceNetworkTypeRequest is the request struct for api ModifyDBInstanceNetworkType
 type ModifyDBInstanceNetworkTypeRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId                      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount                 string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount                         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId                              requests.Integer `position:"Query" name:"OwnerId"`
-	VSwitchId                            string           `position:"Query" name:"VSwitchId"`
-	PrivateIpAddress                     string           `position:"Query" name:"PrivateIpAddress"`
+	ResourceOwnerAccount                 string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId                      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DBInstanceId                         string           `position:"Query" name:"DBInstanceId"`
 	RetainClassic                        string           `position:"Query" name:"RetainClassic"`
 	ClassicExpiredDays                   string           `position:"Query" name:"ClassicExpiredDays"`
-	VPCId                                string           `position:"Query" name:"VPCId"`
-	DBInstanceId                         string           `position:"Query" name:"DBInstanceId"`
-	ReadWriteSplittingPrivateIpAddress   string           `position:"Query" name:"ReadWriteSplittingPrivateIpAddress"`
 	InstanceNetworkType                  string           `position:"Query" name:"InstanceNetworkType"`
 	ReadWriteSplittingClassicExpiredDays requests.Integer `position:"Query" name:"ReadWriteSplittingClassicExpiredDays"`
+	VPCId                                string           `position:"Query" name:"VPCId"`
+	VSwitchId                            string           `position:"Query" name:"VSwitchId"`
+	PrivateIpAddress                     string           `position:"Query" name:"PrivateIpAddress"`
+	ReadWriteSplittingPrivateIpAddress   string           `position:"Query" name:"ReadWriteSplittingPrivateIpAddress"`
+	OwnerAccount                         string           `position:"Query" name:"OwnerAccount"`
 }
 
 // ModifyDBInstanceNetworkTypeResponse is the response struct for api ModifyDBInstanceNetworkType

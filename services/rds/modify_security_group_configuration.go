@@ -76,11 +76,11 @@ func (client *Client) ModifySecurityGroupConfigurationWithCallback(request *Modi
 // ModifySecurityGroupConfigurationRequest is the request struct for api ModifySecurityGroupConfiguration
 type ModifySecurityGroupConfigurationRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	SecurityGroupId      string           `position:"Query" name:"SecurityGroupId"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	SecurityGroupId      string           `position:"Query" name:"SecurityGroupId"`
 }
 
 // ModifySecurityGroupConfigurationResponse is the response struct for api ModifySecurityGroupConfiguration

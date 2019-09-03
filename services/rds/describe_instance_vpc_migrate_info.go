@@ -76,13 +76,13 @@ func (client *Client) DescribeInstanceVpcMigrateInfoWithCallback(request *Descri
 // DescribeInstanceVpcMigrateInfoRequest is the request struct for api DescribeInstanceVpcMigrateInfo
 type DescribeInstanceVpcMigrateInfoRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	VpcId                string           `position:"Query" name:"VpcId"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	VpcId                string           `position:"Query" name:"VpcId"`
 }
 
 // DescribeInstanceVpcMigrateInfoResponse is the response struct for api DescribeInstanceVpcMigrateInfo

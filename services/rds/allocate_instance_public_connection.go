@@ -76,13 +76,13 @@ func (client *Client) AllocateInstancePublicConnectionWithCallback(request *Allo
 // AllocateInstancePublicConnectionRequest is the request struct for api AllocateInstancePublicConnection
 type AllocateInstancePublicConnectionRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId        requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ConnectionStringPrefix string           `position:"Query" name:"ConnectionStringPrefix"`
+	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount   string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId        requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DBInstanceId           string           `position:"Query" name:"DBInstanceId"`
+	ConnectionStringPrefix string           `position:"Query" name:"ConnectionStringPrefix"`
 	Port                   string           `position:"Query" name:"Port"`
 	OwnerAccount           string           `position:"Query" name:"OwnerAccount"`
-	DBInstanceId           string           `position:"Query" name:"DBInstanceId"`
-	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // AllocateInstancePublicConnectionResponse is the response struct for api AllocateInstancePublicConnection

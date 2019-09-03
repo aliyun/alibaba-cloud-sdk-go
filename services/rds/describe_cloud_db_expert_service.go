@@ -76,14 +76,14 @@ func (client *Client) DescribeCloudDbExpertServiceWithCallback(request *Describe
 // DescribeCloudDbExpertServiceRequest is the request struct for api DescribeCloudDbExpertService
 type DescribeCloudDbExpertServiceRequest struct {
 	*requests.RpcRequest
-	ServiceRequestParam  string           `position:"Query" name:"ServiceRequestParam"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ServiceRequestType   string           `position:"Query" name:"ServiceRequestType"`
+	ServiceRequestParam  string           `position:"Query" name:"ServiceRequestParam"`
 }
 
 // DescribeCloudDbExpertServiceResponse is the response struct for api DescribeCloudDbExpertService

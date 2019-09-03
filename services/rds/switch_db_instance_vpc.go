@@ -76,14 +76,14 @@ func (client *Client) SwitchDBInstanceVpcWithCallback(request *SwitchDBInstanceV
 // SwitchDBInstanceVpcRequest is the request struct for api SwitchDBInstanceVpc
 type SwitchDBInstanceVpcRequest struct {
 	*requests.RpcRequest
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	VPCId                string           `position:"Query" name:"VPCId"`
 	VSwitchId            string           `position:"Query" name:"VSwitchId"`
 	PrivateIpAddress     string           `position:"Query" name:"PrivateIpAddress"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	VPCId                string           `position:"Query" name:"VPCId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // SwitchDBInstanceVpcResponse is the response struct for api SwitchDBInstanceVpc

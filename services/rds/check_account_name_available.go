@@ -76,13 +76,13 @@ func (client *Client) CheckAccountNameAvailableWithCallback(request *CheckAccoun
 // CheckAccountNameAvailableRequest is the request struct for api CheckAccountNameAvailable
 type CheckAccountNameAvailableRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	AccountName          string           `position:"Query" name:"AccountName"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	AccountName          string           `position:"Query" name:"AccountName"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 // CheckAccountNameAvailableResponse is the response struct for api CheckAccountNameAvailable

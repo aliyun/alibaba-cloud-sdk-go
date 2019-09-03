@@ -76,9 +76,9 @@ func (client *Client) RequestServiceOfCloudDBExpertWithCallback(request *Request
 // RequestServiceOfCloudDBExpertRequest is the request struct for api RequestServiceOfCloudDBExpert
 type RequestServiceOfCloudDBExpertRequest struct {
 	*requests.RpcRequest
-	ServiceRequestParam string `position:"Query" name:"ServiceRequestParam"`
 	DBInstanceId        string `position:"Query" name:"DBInstanceId"`
 	ServiceRequestType  string `position:"Query" name:"ServiceRequestType"`
+	ServiceRequestParam string `position:"Query" name:"ServiceRequestParam"`
 }
 
 // RequestServiceOfCloudDBExpertResponse is the response struct for api RequestServiceOfCloudDBExpert

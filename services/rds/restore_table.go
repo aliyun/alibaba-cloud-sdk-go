@@ -76,15 +76,15 @@ func (client *Client) RestoreTableWithCallback(request *RestoreTableRequest, cal
 // RestoreTableRequest is the request struct for api RestoreTable
 type RestoreTableRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	RestoreTime          string           `position:"Query" name:"RestoreTime"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	BackupId             string           `position:"Query" name:"BackupId"`
+	RestoreTime          string           `position:"Query" name:"RestoreTime"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	TableMeta            string           `position:"Query" name:"TableMeta"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // RestoreTableResponse is the response struct for api RestoreTable

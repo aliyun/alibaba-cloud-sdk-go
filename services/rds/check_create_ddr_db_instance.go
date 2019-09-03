@@ -76,23 +76,23 @@ func (client *Client) CheckCreateDdrDBInstanceWithCallback(request *CheckCreateD
 // CheckCreateDdrDBInstanceRequest is the request struct for api CheckCreateDdrDBInstance
 type CheckCreateDdrDBInstanceRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	RestoreTime          string           `position:"Query" name:"RestoreTime"`
-	DBInstanceStorage    requests.Integer `position:"Query" name:"DBInstanceStorage"`
-	SourceDBInstanceName string           `position:"Query" name:"SourceDBInstanceName"`
-	BakSetName           string           `position:"Query" name:"BakSetName"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	HostType             string           `position:"Query" name:"HostType"`
-	BackupSetId          string           `position:"Query" name:"BackupSetId"`
-	EngineVersion        string           `position:"Query" name:"EngineVersion"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	UserBakSetURL        string           `position:"Query" name:"UserBakSetURL"`
-	DBInstanceClass      string           `position:"Query" name:"DBInstanceClass"`
-	RestoreType          string           `position:"Query" name:"RestoreType"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	Engine               string           `position:"Query" name:"Engine"`
-	SourceRegion         string           `position:"Query" name:"SourceRegion"`
-	BackupSetRegion      string           `position:"Query" name:"BackupSetRegion"`
+	EngineVersion        string           `position:"Query" name:"EngineVersion"`
+	DBInstanceClass      string           `position:"Query" name:"DBInstanceClass"`
+	DBInstanceStorage    requests.Integer `position:"Query" name:"DBInstanceStorage"`
+	RestoreType          string           `position:"Query" name:"RestoreType"`
+	BackupSetId          string           `position:"Query" name:"BackupSetId"`
 	BackupSetType        string           `position:"Query" name:"BackupSetType"`
+	BackupSetRegion      string           `position:"Query" name:"BackupSetRegion"`
+	RestoreTime          string           `position:"Query" name:"RestoreTime"`
+	SourceRegion         string           `position:"Query" name:"SourceRegion"`
+	SourceDBInstanceName string           `position:"Query" name:"SourceDBInstanceName"`
+	UserBakSetURL        string           `position:"Query" name:"UserBakSetURL"`
+	BakSetName           string           `position:"Query" name:"BakSetName"`
+	HostType             string           `position:"Query" name:"HostType"`
 }
 
 // CheckCreateDdrDBInstanceResponse is the response struct for api CheckCreateDdrDBInstance

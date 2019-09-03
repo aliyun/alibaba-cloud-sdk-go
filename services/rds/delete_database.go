@@ -76,12 +76,12 @@ func (client *Client) DeleteDatabaseWithCallback(request *DeleteDatabaseRequest,
 // DeleteDatabaseRequest is the request struct for api DeleteDatabase
 type DeleteDatabaseRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	DBName               string           `position:"Query" name:"DBName"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	DBName               string           `position:"Query" name:"DBName"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 // DeleteDatabaseResponse is the response struct for api DeleteDatabase

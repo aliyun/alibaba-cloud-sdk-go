@@ -76,12 +76,12 @@ func (client *Client) ModifyHASwitchConfigWithCallback(request *ModifyHASwitchCo
 // ModifyHASwitchConfigRequest is the request struct for api ModifyHASwitchConfig
 type ModifyHASwitchConfigRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ManualHATime         string           `position:"Query" name:"ManualHATime"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	HAConfig             string           `position:"Query" name:"HAConfig"`
+	ManualHATime         string           `position:"Query" name:"ManualHATime"`
 }
 
 // ModifyHASwitchConfigResponse is the response struct for api ModifyHASwitchConfig

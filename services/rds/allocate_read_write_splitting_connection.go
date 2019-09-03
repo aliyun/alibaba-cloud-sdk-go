@@ -76,17 +76,17 @@ func (client *Client) AllocateReadWriteSplittingConnectionWithCallback(request *
 // AllocateReadWriteSplittingConnectionRequest is the request struct for api AllocateReadWriteSplittingConnection
 type AllocateReadWriteSplittingConnectionRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId        requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ConnectionStringPrefix string           `position:"Query" name:"ConnectionStringPrefix"`
-	ResourceOwnerAccount   string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount           string           `position:"Query" name:"OwnerAccount"`
-	Weight                 string           `position:"Query" name:"Weight"`
 	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
-	Port                   string           `position:"Query" name:"Port"`
-	DistributionType       string           `position:"Query" name:"DistributionType"`
-	NetType                string           `position:"Query" name:"NetType"`
+	ResourceOwnerAccount   string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId        requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount           string           `position:"Query" name:"OwnerAccount"`
 	DBInstanceId           string           `position:"Query" name:"DBInstanceId"`
+	ConnectionStringPrefix string           `position:"Query" name:"ConnectionStringPrefix"`
+	Port                   string           `position:"Query" name:"Port"`
 	MaxDelayTime           string           `position:"Query" name:"MaxDelayTime"`
+	NetType                string           `position:"Query" name:"NetType"`
+	DistributionType       string           `position:"Query" name:"DistributionType"`
+	Weight                 string           `position:"Query" name:"Weight"`
 }
 
 // AllocateReadWriteSplittingConnectionResponse is the response struct for api AllocateReadWriteSplittingConnection

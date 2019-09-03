@@ -76,27 +76,27 @@ func (client *Client) RecoveryDBInstanceWithCallback(request *RecoveryDBInstance
 // RecoveryDBInstanceRequest is the request struct for api RecoveryDBInstance
 type RecoveryDBInstanceRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	RestoreTime           string           `position:"Query" name:"RestoreTime"`
-	Period                string           `position:"Query" name:"Period"`
-	DBInstanceStorage     requests.Integer `position:"Query" name:"DBInstanceStorage"`
-	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
-	ClientToken           string           `position:"Query" name:"ClientToken"`
-	BackupId              string           `position:"Query" name:"BackupId"`
-	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
 	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
-	UsedTime              string           `position:"Query" name:"UsedTime"`
+	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken           string           `position:"Query" name:"ClientToken"`
 	DBInstanceClass       string           `position:"Query" name:"DBInstanceClass"`
-	DbNames               string           `position:"Query" name:"DbNames"`
-	VSwitchId             string           `position:"Query" name:"VSwitchId"`
-	PrivateIpAddress      string           `position:"Query" name:"PrivateIpAddress"`
-	ResourceGroupId       string           `position:"Query" name:"ResourceGroupId"`
-	TargetDBInstanceId    string           `position:"Query" name:"TargetDBInstanceId"`
-	VPCId                 string           `position:"Query" name:"VPCId"`
+	DBInstanceStorage     requests.Integer `position:"Query" name:"DBInstanceStorage"`
 	DBInstanceDescription string           `position:"Query" name:"DBInstanceDescription"`
-	DBInstanceId          string           `position:"Query" name:"DBInstanceId"`
 	PayType               string           `position:"Query" name:"PayType"`
 	InstanceNetworkType   string           `position:"Query" name:"InstanceNetworkType"`
+	DBInstanceId          string           `position:"Query" name:"DBInstanceId"`
+	TargetDBInstanceId    string           `position:"Query" name:"TargetDBInstanceId"`
+	DbNames               string           `position:"Query" name:"DbNames"`
+	BackupId              string           `position:"Query" name:"BackupId"`
+	RestoreTime           string           `position:"Query" name:"RestoreTime"`
+	VPCId                 string           `position:"Query" name:"VPCId"`
+	VSwitchId             string           `position:"Query" name:"VSwitchId"`
+	PrivateIpAddress      string           `position:"Query" name:"PrivateIpAddress"`
+	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
+	UsedTime              string           `position:"Query" name:"UsedTime"`
+	Period                string           `position:"Query" name:"Period"`
+	ResourceGroupId       string           `position:"Query" name:"ResourceGroupId"`
 }
 
 // RecoveryDBInstanceResponse is the response struct for api RecoveryDBInstance

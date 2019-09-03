@@ -76,10 +76,10 @@ func (client *Client) DescribeHASwitchConfigWithCallback(request *DescribeHASwit
 // DescribeHASwitchConfigRequest is the request struct for api DescribeHASwitchConfig
 type DescribeHASwitchConfigRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 }
 
 // DescribeHASwitchConfigResponse is the response struct for api DescribeHASwitchConfig

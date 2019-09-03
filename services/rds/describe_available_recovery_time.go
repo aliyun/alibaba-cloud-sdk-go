@@ -76,10 +76,10 @@ func (client *Client) DescribeAvailableRecoveryTimeWithCallback(request *Describ
 // DescribeAvailableRecoveryTimeRequest is the request struct for api DescribeAvailableRecoveryTime
 type DescribeAvailableRecoveryTimeRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	CrossBackupId        requests.Integer `position:"Query" name:"CrossBackupId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	CrossBackupId        requests.Integer `position:"Query" name:"CrossBackupId"`
 }
 
 // DescribeAvailableRecoveryTimeResponse is the response struct for api DescribeAvailableRecoveryTime
