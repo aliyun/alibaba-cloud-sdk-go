@@ -365,6 +365,9 @@ func flatRepeatedList(dataValue reflect.Value, request AcsRequest, position, pre
 							elementValue := valueField.FieldByName(fieldName)
 							key := prefix + name + "." + fieldName
 							if elementValue.Type().String() == "[]string" {
+								if elementValue.IsNil() {
+									continue
+								}
 								for j := 0; j < elementValue.Len(); j++ {
 									err = addParam(request, fieldPosition, key+"."+strconv.Itoa(j+1), elementValue.Index(j).String())
 									if err != nil {
@@ -372,17 +375,23 @@ func flatRepeatedList(dataValue reflect.Value, request AcsRequest, position, pre
 									}
 								}
 							} else {
-								// 	value := elementValue.String()
-								// 	err = addParam(request, fieldPosition, key, value)
-								// 	if err != nil {
-								// 		return
-								// 	}
-								// } else {
-								// err = flatRepeatedList(elementValue, request, fieldPosition, key+".")
-								// if err != nil {
-								// 	return
-								// }
-								// }
+								if elementValue.Type().Kind().String() == "string" {
+									value := elementValue.String()
+									err = addParam(request, fieldPosition, key, value)
+									if err != nil {
+										return
+									}
+								} else if elementValue.Type().Kind().String() == "struct" {
+									err = flatRepeatedList(elementValue, request, fieldPosition, key+".")
+									if err != nil {
+										return
+									}
+								} else if !elementValue.IsNil() {
+									err = flatRepeatedList(elementValue.Elem(), request, fieldPosition, key+".")
+									if err != nil {
+										return
+									}
+								}
 							}
 						}
 					}
