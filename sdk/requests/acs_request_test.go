@@ -184,6 +184,7 @@ type CreateContainerGroupRequest struct {
 	Memory               Float                         `position:"Query" name:"Memory"`
 	SlsEnable            Boolean                       `position:"Query" name:"SlsEnable"`
 	DnsConfig            CreateContainerGroupDnsConfig `position:"Query" name:"DnsConfig" type:"Struct"`
+	OptionJson           map[string]interface{}        `position:"Query" name:"OptionJson"`
 }
 
 type CreateContainerGroupVolume struct {
@@ -311,4 +312,49 @@ func Test_RPCRequest_InitParams(t *testing.T) {
 
 	assert.Equal(t, "2", queries["LayoutIds.1"])
 	assert.Len(t, queries, 7)
+}
+
+type TestAcsRequestWithErrorMap struct {
+	*RpcRequest
+	OptionJson  map[string]interface{} `position:"Host" name:"OptionJson"`
+	OptionJsonN map[string]interface{} `position:"Host" name:"OptionJsonN"`
+}
+
+func Test_InitParamsWithErrorMap(t *testing.T) {
+	r := &TestAcsRequestWithErrorMap{
+		RpcRequest: &RpcRequest{},
+	}
+	r.init()
+	r.OptionJsonN = map[string]interface{}{
+		"sdk": "test",
+	}
+
+	err := InitParams(r)
+	assert.Equal(t, "[SDK.UnsupportedParamPosition] Specified param position (Host) is not supported, please upgrade sdk and retry", err.Error())
+}
+
+type TestAcsRequestWithErrorRepeated struct {
+	*RpcRequest
+	OptionJsonN []OptionJson `position:"Host" name:"OptionJsonN" type:"Repeated"`
+}
+
+type OptionJson struct {
+	Option map[string]interface{} `name:"Option"`
+}
+
+func Test_InitParamsWithErrorRepeated(t *testing.T) {
+	r := &TestAcsRequestWithErrorRepeated{
+		RpcRequest: &RpcRequest{},
+	}
+	r.init()
+	r.OptionJsonN = []OptionJson{
+		{
+			map[string]interface{}{
+				"sdk": "test",
+			},
+		},
+	}
+
+	err := InitParams(r)
+	assert.Equal(t, "[SDK.UnsupportedParamPosition] Specified param position (Host) is not supported, please upgrade sdk and retry", err.Error())
 }
