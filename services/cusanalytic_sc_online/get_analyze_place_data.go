@@ -78,12 +78,12 @@ type GetAnalyzePlaceDataRequest struct {
 	*requests.RpcRequest
 	EndUVCount        requests.Integer `position:"Body" name:"EndUVCount"`
 	ParentAmount      requests.Integer `position:"Body" name:"ParentAmount"`
-	EndDate           string           `position:"Body" name:"EndDate"`
-	LocationId        requests.Integer `position:"Body" name:"LocationId"`
-	ParentLocationIds string           `position:"Body" name:"ParentLocationIds"`
 	StartDate         string           `position:"Body" name:"StartDate"`
 	StartUVCount      requests.Integer `position:"Body" name:"StartUVCount"`
 	StoreId           requests.Integer `position:"Body" name:"StoreId"`
+	EndDate           string           `position:"Body" name:"EndDate"`
+	LocationId        requests.Integer `position:"Body" name:"LocationId"`
+	ParentLocationIds string           `position:"Body" name:"ParentLocationIds"`
 }
 
 // GetAnalyzePlaceDataResponse is the response struct for api GetAnalyzePlaceData

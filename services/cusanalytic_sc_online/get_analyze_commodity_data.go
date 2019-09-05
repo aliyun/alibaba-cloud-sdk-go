@@ -76,15 +76,15 @@ func (client *Client) GetAnalyzeCommodityDataWithCallback(request *GetAnalyzeCom
 // GetAnalyzeCommodityDataRequest is the request struct for api GetAnalyzeCommodityData
 type GetAnalyzeCommodityDataRequest struct {
 	*requests.RpcRequest
-	StartUserCount  requests.Integer `position:"Body" name:"StartUserCount"`
-	EndDate         string           `position:"Body" name:"EndDate"`
-	EndUserCount    requests.Integer `position:"Body" name:"EndUserCount"`
-	PageSize        requests.Integer `position:"Body" name:"PageSize"`
-	MinSupportCount requests.Integer `position:"Body" name:"MinSupportCount"`
-	PageIndex       requests.Integer `position:"Body" name:"PageIndex"`
 	StoreId         requests.Integer `position:"Body" name:"StoreId"`
 	StartDate       string           `position:"Body" name:"StartDate"`
+	EndUserCount    requests.Integer `position:"Body" name:"EndUserCount"`
+	PageSize        requests.Integer `position:"Body" name:"PageSize"`
+	PageIndex       requests.Integer `position:"Body" name:"PageIndex"`
 	StayPeriod      requests.Integer `position:"Body" name:"StayPeriod"`
+	StartUserCount  requests.Integer `position:"Body" name:"StartUserCount"`
+	MinSupportCount requests.Integer `position:"Body" name:"MinSupportCount"`
+	EndDate         string           `position:"Body" name:"EndDate"`
 }
 
 // GetAnalyzeCommodityDataResponse is the response struct for api GetAnalyzeCommodityData

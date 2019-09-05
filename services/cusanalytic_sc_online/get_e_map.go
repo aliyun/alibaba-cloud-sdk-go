@@ -76,8 +76,8 @@ func (client *Client) GetEMapWithCallback(request *GetEMapRequest, callback func
 // GetEMapRequest is the request struct for api GetEMap
 type GetEMapRequest struct {
 	*requests.RpcRequest
-	LocationId requests.Integer `position:"Body" name:"LocationId"`
 	StoreId    requests.Integer `position:"Body" name:"StoreId"`
+	LocationId requests.Integer `position:"Body" name:"LocationId"`
 }
 
 // GetEMapResponse is the response struct for api GetEMap

@@ -17,11 +17,11 @@ package cusanalytic_sc_online
 
 // ActionInfosItem is a nested struct in cusanalytic_sc_online response
 type ActionInfosItem struct {
-	Maxts               int64               `json:"Maxts" xml:"Maxts"`
-	StayValid           int64               `json:"StayValid" xml:"StayValid"`
-	StayPeriod          int64               `json:"StayPeriod" xml:"StayPeriod"`
-	RawId               int64               `json:"RawId" xml:"RawId"`
-	Mints               int64               `json:"Mints" xml:"Mints"`
-	Point               Point               `json:"Point" xml:"Point"`
-	SenseRectEntityItem SenseRectEntityItem `json:"SenseRectEntityItem" xml:"SenseRectEntityItem"`
+	Maxts         int64         `json:"Maxts" xml:"Maxts"`
+	StayValid     int64         `json:"StayValid" xml:"StayValid"`
+	StayPeriod    int64         `json:"StayPeriod" xml:"StayPeriod"`
+	RawId         int64         `json:"RawId" xml:"RawId"`
+	Mints         int64         `json:"Mints" xml:"Mints"`
+	MapImagePoint MapImagePoint `json:"MapImagePoint" xml:"MapImagePoint"`
+	FaceImgRect   FaceImgRect   `json:"FaceImgRect" xml:"FaceImgRect"`
 }

@@ -76,17 +76,17 @@ func (client *Client) ListVisitorsWithCallback(request *ListVisitorsRequest, cal
 // ListVisitorsRequest is the request struct for api ListVisitors
 type ListVisitorsRequest struct {
 	*requests.RpcRequest
-	PkId        string           `position:"Body" name:"PkId"`
 	Gender      string           `position:"Body" name:"Gender"`
 	UkId        requests.Integer `position:"Body" name:"UkId"`
-	PageSize    requests.Integer `position:"Body" name:"PageSize"`
 	LocationIds string           `position:"Body" name:"LocationIds"`
-	EndTime     string           `position:"Body" name:"EndTime"`
+	StartTime   string           `position:"Body" name:"StartTime"`
+	PageSize    requests.Integer `position:"Body" name:"PageSize"`
 	EnterCount  requests.Integer `position:"Body" name:"EnterCount"`
 	PageIndex   requests.Integer `position:"Body" name:"PageIndex"`
-	StartTime   string           `position:"Body" name:"StartTime"`
 	AgeStart    requests.Integer `position:"Body" name:"AgeStart"`
 	AgeEnd      requests.Integer `position:"Body" name:"AgeEnd"`
+	PkId        string           `position:"Body" name:"PkId"`
+	EndTime     string           `position:"Body" name:"EndTime"`
 	StoreIds    string           `position:"Body" name:"StoreIds"`
 }
 

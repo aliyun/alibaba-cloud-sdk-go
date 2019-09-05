@@ -77,22 +77,24 @@ func (client *Client) DescribeActionDataWithCallback(request *DescribeActionData
 type DescribeActionDataRequest struct {
 	*requests.RpcRequest
 	TsEnd     requests.Integer `position:"Body" name:"TsEnd"`
-	PageNo    requests.Integer `position:"Body" name:"PageNo"`
-	TsStart   requests.Integer `position:"Body" name:"TsStart"`
 	StoreId   string           `position:"Body" name:"StoreId"`
 	PageLimit requests.Integer `position:"Body" name:"PageLimit"`
+	PageNo    requests.Integer `position:"Body" name:"PageNo"`
+	TsStart   requests.Integer `position:"Body" name:"TsStart"`
 }
 
 // DescribeActionDataResponse is the response struct for api DescribeActionData
 type DescribeActionDataResponse struct {
 	*responses.BaseResponse
-	PageNo          int             `json:"PageNo" xml:"PageNo"`
-	TsStart         int64           `json:"TsStart" xml:"TsStart"`
-	PageLimit       int             `json:"PageLimit" xml:"PageLimit"`
-	PageCount       int             `json:"PageCount" xml:"PageCount"`
-	StoreId         string          `json:"StoreId" xml:"StoreId"`
-	TsEnd           int64           `json:"TsEnd" xml:"TsEnd"`
-	ActionsMsgItems ActionsMsgItems `json:"ActionsMsgItems" xml:"ActionsMsgItems"`
+	PageNo                      int             `json:"PageNo" xml:"PageNo"`
+	TsStart                     int64           `json:"TsStart" xml:"TsStart"`
+	PageLimit                   int             `json:"PageLimit" xml:"PageLimit"`
+	PageCount                   int             `json:"PageCount" xml:"PageCount"`
+	DescribeActionDataIsSuccess bool            `json:"IsSuccess" xml:"IsSuccess"`
+	ErrorMsg                    string          `json:"ErrorMsg" xml:"ErrorMsg"`
+	StoreId                     string          `json:"StoreId" xml:"StoreId"`
+	TsEnd                       int64           `json:"TsEnd" xml:"TsEnd"`
+	ActionsMsgItems             ActionsMsgItems `json:"ActionsMsgItems" xml:"ActionsMsgItems"`
 }
 
 // CreateDescribeActionDataRequest creates a request to invoke DescribeActionData API

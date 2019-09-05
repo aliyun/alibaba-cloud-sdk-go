@@ -17,5 +17,7 @@ package cusanalytic_sc_online
 
 // RectRoi is a nested struct in cusanalytic_sc_online response
 type RectRoi struct {
-	Points Points `json:"Points" xml:"Points"`
+	LeftTop     LeftTop     `json:"LeftTop" xml:"LeftTop"`
+	RightBottom RightBottom `json:"RightBottom" xml:"RightBottom"`
+	Points      Points      `json:"Points" xml:"Points"`
 }

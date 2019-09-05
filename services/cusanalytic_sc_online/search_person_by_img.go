@@ -76,8 +76,8 @@ func (client *Client) SearchPersonByImgWithCallback(request *SearchPersonByImgRe
 // SearchPersonByImgRequest is the request struct for api SearchPersonByImg
 type SearchPersonByImgRequest struct {
 	*requests.RpcRequest
-	ImgUrl  string           `position:"Body" name:"ImgUrl"`
 	StoreId requests.Integer `position:"Body" name:"StoreId"`
+	ImgUrl  string           `position:"Body" name:"ImgUrl"`
 }
 
 // SearchPersonByImgResponse is the response struct for api SearchPersonByImg
