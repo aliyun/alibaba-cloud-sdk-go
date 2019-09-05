@@ -76,6 +76,15 @@ func (client *Client) DescribeFleetsWithCallback(request *DescribeFleetsRequest,
 // DescribeFleetsRequest is the request struct for api DescribeFleets
 type DescribeFleetsRequest struct {
 	*requests.RpcRequest
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	FleetName            string           `position:"Query" name:"FleetName"`
+	FleetStatus          *[]string        `position:"Query" name:"FleetStatus"  type:"Repeated"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	FleetId              *[]string        `position:"Query" name:"FleetId"  type:"Repeated"`
 }
 
 // DescribeFleetsResponse is the response struct for api DescribeFleets

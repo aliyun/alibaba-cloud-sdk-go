@@ -76,6 +76,19 @@ func (client *Client) ModifyAutoProvisioningGroupWithCallback(request *ModifyAut
 // ModifyAutoProvisioningGroupRequest is the request struct for api ModifyAutoProvisioningGroup
 type ModifyAutoProvisioningGroupRequest struct {
 	*requests.RpcRequest
+	ResourceOwnerId                  requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	TerminateInstancesWithExpiration requests.Boolean `position:"Query" name:"TerminateInstancesWithExpiration"`
+	DefaultTargetCapacityType        string           `position:"Query" name:"DefaultTargetCapacityType"`
+	ExcessCapacityTerminationPolicy  string           `position:"Query" name:"ExcessCapacityTerminationPolicy"`
+	ResourceOwnerAccount             string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount                     string           `position:"Query" name:"OwnerAccount"`
+	OwnerId                          requests.Integer `position:"Query" name:"OwnerId"`
+	AutoProvisioningGroupId          string           `position:"Query" name:"AutoProvisioningGroupId"`
+	PayAsYouGoTargetCapacity         string           `position:"Query" name:"PayAsYouGoTargetCapacity"`
+	TotalTargetCapacity              string           `position:"Query" name:"TotalTargetCapacity"`
+	SpotTargetCapacity               string           `position:"Query" name:"SpotTargetCapacity"`
+	MaxSpotPrice                     requests.Float   `position:"Query" name:"MaxSpotPrice"`
+	AutoProvisioningGroupName        string           `position:"Query" name:"AutoProvisioningGroupName"`
 }
 
 // ModifyAutoProvisioningGroupResponse is the response struct for api ModifyAutoProvisioningGroup

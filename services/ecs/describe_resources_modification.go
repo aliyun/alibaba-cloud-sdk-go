@@ -76,6 +76,17 @@ func (client *Client) DescribeResourcesModificationWithCallback(request *Describ
 // DescribeResourcesModificationRequest is the request struct for api DescribeResourcesModification
 type DescribeResourcesModificationRequest struct {
 	*requests.RpcRequest
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Memory               requests.Float   `position:"Query" name:"Memory"`
+	Cores                requests.Integer `position:"Query" name:"Cores"`
+	MigrateAcrossZone    requests.Boolean `position:"Query" name:"MigrateAcrossZone"`
+	InstanceType         string           `position:"Query" name:"InstanceType"`
+	ResourceId           string           `position:"Query" name:"ResourceId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OperationType        string           `position:"Query" name:"OperationType"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	DestinationResource  string           `position:"Query" name:"DestinationResource"`
 }
 
 // DescribeResourcesModificationResponse is the response struct for api DescribeResourcesModification

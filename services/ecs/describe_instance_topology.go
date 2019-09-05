@@ -76,10 +76,10 @@ func (client *Client) DescribeInstanceTopologyWithCallback(request *DescribeInst
 // DescribeInstanceTopologyRequest is the request struct for api DescribeInstanceTopology
 type DescribeInstanceTopologyRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	InstanceIds          string           `position:"Query" name:"InstanceIds"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeInstanceTopologyResponse is the response struct for api DescribeInstanceTopology

@@ -76,6 +76,17 @@ func (client *Client) ReportInstancesStatusWithCallback(request *ReportInstances
 // ReportInstancesStatusRequest is the request struct for api ReportInstancesStatus
 type ReportInstancesStatusRequest struct {
 	*requests.RpcRequest
+	Reason               string           `position:"Query" name:"Reason"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Description          string           `position:"Query" name:"Description"`
+	StartTime            string           `position:"Query" name:"StartTime"`
+	DiskId               *[]string        `position:"Query" name:"DiskId"  type:"Repeated"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	EndTime              string           `position:"Query" name:"EndTime"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	InstanceId           *[]string        `position:"Query" name:"InstanceId"  type:"Repeated"`
+	Device               *[]string        `position:"Query" name:"Device"  type:"Repeated"`
 }
 
 // ReportInstancesStatusResponse is the response struct for api ReportInstancesStatus

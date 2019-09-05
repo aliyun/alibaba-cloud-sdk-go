@@ -76,6 +76,12 @@ func (client *Client) DeleteStorageSetWithCallback(request *DeleteStorageSetRequ
 // DeleteStorageSetRequest is the request struct for api DeleteStorageSet
 type DeleteStorageSetRequest struct {
 	*requests.RpcRequest
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	StorageSetId         string           `position:"Query" name:"StorageSetId"`
 }
 
 // DeleteStorageSetResponse is the response struct for api DeleteStorageSet

@@ -76,14 +76,14 @@ func (client *Client) RenewInstanceWithCallback(request *RenewInstanceRequest, c
 // RenewInstanceRequest is the request struct for api RenewInstance
 type RenewInstanceRequest struct {
 	*requests.RpcRequest
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	InstanceId           string           `position:"Query" name:"InstanceId"`
 	Period               requests.Integer `position:"Query" name:"Period"`
 	PeriodUnit           string           `position:"Query" name:"PeriodUnit"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // RenewInstanceResponse is the response struct for api RenewInstance

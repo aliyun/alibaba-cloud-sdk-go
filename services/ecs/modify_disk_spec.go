@@ -76,6 +76,12 @@ func (client *Client) ModifyDiskSpecWithCallback(request *ModifyDiskSpecRequest,
 // ModifyDiskSpecRequest is the request struct for api ModifyDiskSpec
 type ModifyDiskSpecRequest struct {
 	*requests.RpcRequest
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DiskId               string           `position:"Query" name:"DiskId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	PerformanceLevel     string           `position:"Query" name:"PerformanceLevel"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // ModifyDiskSpecResponse is the response struct for api ModifyDiskSpec

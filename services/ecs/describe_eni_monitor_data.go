@@ -76,6 +76,15 @@ func (client *Client) DescribeEniMonitorDataWithCallback(request *DescribeEniMon
 // DescribeEniMonitorDataRequest is the request struct for api DescribeEniMonitorData
 type DescribeEniMonitorDataRequest struct {
 	*requests.RpcRequest
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	StartTime            string           `position:"Query" name:"StartTime"`
+	Period               requests.Integer `position:"Query" name:"Period"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	EndTime              string           `position:"Query" name:"EndTime"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
+	EniId                string           `position:"Query" name:"EniId"`
 }
 
 // DescribeEniMonitorDataResponse is the response struct for api DescribeEniMonitorData

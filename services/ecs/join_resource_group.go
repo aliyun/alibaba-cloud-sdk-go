@@ -76,13 +76,13 @@ func (client *Client) JoinResourceGroupWithCallback(request *JoinResourceGroupRe
 // JoinResourceGroupRequest is the request struct for api JoinResourceGroup
 type JoinResourceGroupRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	ResourceType         string           `position:"Query" name:"ResourceType"`
-	ResourceId           string           `position:"Query" name:"ResourceId"`
 	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceId           string           `position:"Query" name:"ResourceId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceType         string           `position:"Query" name:"ResourceType"`
 }
 
 // JoinResourceGroupResponse is the response struct for api JoinResourceGroup

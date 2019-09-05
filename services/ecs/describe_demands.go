@@ -76,6 +76,25 @@ func (client *Client) DescribeDemandsWithCallback(request *DescribeDemandsReques
 // DescribeDemandsRequest is the request struct for api DescribeDemands
 type DescribeDemandsRequest struct {
 	*requests.RpcRequest
+	ResourceOwnerId      requests.Integer      `position:"Query" name:"ResourceOwnerId"`
+	PageNumber           requests.Integer      `position:"Query" name:"PageNumber"`
+	PageSize             requests.Integer      `position:"Query" name:"PageSize"`
+	InstanceType         string                `position:"Query" name:"InstanceType"`
+	Tag                  *[]DescribeDemandsTag `position:"Query" name:"Tag"  type:"Repeated"`
+	InstanceChargeType   string                `position:"Query" name:"InstanceChargeType"`
+	DryRun               requests.Boolean      `position:"Query" name:"DryRun"`
+	ResourceOwnerAccount string                `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string                `position:"Query" name:"OwnerAccount"`
+	InstanceTypeFamily   string                `position:"Query" name:"InstanceTypeFamily"`
+	OwnerId              requests.Integer      `position:"Query" name:"OwnerId"`
+	DemandStatus         *[]string             `position:"Query" name:"DemandStatus"  type:"Repeated"`
+	ZoneId               string                `position:"Query" name:"ZoneId"`
+}
+
+// DescribeDemandsTag is a repeated param struct in DescribeDemandsRequest
+type DescribeDemandsTag struct {
+	Key   string `name:"Key"`
+	Value string `name:"Value"`
 }
 
 // DescribeDemandsResponse is the response struct for api DescribeDemands

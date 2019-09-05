@@ -76,6 +76,12 @@ func (client *Client) RedeployInstanceWithCallback(request *RedeployInstanceRequ
 // RedeployInstanceRequest is the request struct for api RedeployInstance
 type RedeployInstanceRequest struct {
 	*requests.RpcRequest
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ForceStop            requests.Boolean `position:"Query" name:"ForceStop"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
 }
 
 // RedeployInstanceResponse is the response struct for api RedeployInstance

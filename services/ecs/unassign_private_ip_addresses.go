@@ -76,6 +76,12 @@ func (client *Client) UnassignPrivateIpAddressesWithCallback(request *UnassignPr
 // UnassignPrivateIpAddressesRequest is the request struct for api UnassignPrivateIpAddresses
 type UnassignPrivateIpAddressesRequest struct {
 	*requests.RpcRequest
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	PrivateIpAddress     *[]string        `position:"Query" name:"PrivateIpAddress"  type:"Repeated"`
+	NetworkInterfaceId   string           `position:"Query" name:"NetworkInterfaceId"`
 }
 
 // UnassignPrivateIpAddressesResponse is the response struct for api UnassignPrivateIpAddresses

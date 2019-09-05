@@ -76,6 +76,12 @@ func (client *Client) DeleteAutoProvisioningGroupWithCallback(request *DeleteAut
 // DeleteAutoProvisioningGroupRequest is the request struct for api DeleteAutoProvisioningGroup
 type DeleteAutoProvisioningGroupRequest struct {
 	*requests.RpcRequest
+	ResourceOwnerId         requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	TerminateInstances      requests.Boolean `position:"Query" name:"TerminateInstances"`
+	ResourceOwnerAccount    string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount            string           `position:"Query" name:"OwnerAccount"`
+	OwnerId                 requests.Integer `position:"Query" name:"OwnerId"`
+	AutoProvisioningGroupId string           `position:"Query" name:"AutoProvisioningGroupId"`
 }
 
 // DeleteAutoProvisioningGroupResponse is the response struct for api DeleteAutoProvisioningGroup

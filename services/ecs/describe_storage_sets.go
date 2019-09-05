@@ -76,6 +76,16 @@ func (client *Client) DescribeStorageSetsWithCallback(request *DescribeStorageSe
 // DescribeStorageSetsRequest is the request struct for api DescribeStorageSets
 type DescribeStorageSetsRequest struct {
 	*requests.RpcRequest
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	StorageSetIds        string           `position:"Query" name:"StorageSetIds"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ZoneId               string           `position:"Query" name:"ZoneId"`
+	StorageSetName       string           `position:"Query" name:"StorageSetName"`
 }
 
 // DescribeStorageSetsResponse is the response struct for api DescribeStorageSets

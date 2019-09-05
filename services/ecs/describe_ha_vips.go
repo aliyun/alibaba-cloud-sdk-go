@@ -76,19 +76,19 @@ func (client *Client) DescribeHaVipsWithCallback(request *DescribeHaVipsRequest,
 // DescribeHaVipsRequest is the request struct for api DescribeHaVips
 type DescribeHaVipsRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer        `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string                  `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      requests.Integer        `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string                  `position:"Query" name:"OwnerAccount"`
-	PageNumber           requests.Integer        `position:"Query" name:"PageNumber"`
-	PageSize             requests.Integer        `position:"Query" name:"PageSize"`
 	Filter               *[]DescribeHaVipsFilter `position:"Query" name:"Filter"  type:"Repeated"`
+	ResourceOwnerId      requests.Integer        `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string                  `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string                  `position:"Query" name:"OwnerAccount"`
+	PageSize             requests.Integer        `position:"Query" name:"PageSize"`
+	OwnerId              requests.Integer        `position:"Query" name:"OwnerId"`
+	PageNumber           requests.Integer        `position:"Query" name:"PageNumber"`
 }
 
 // DescribeHaVipsFilter is a repeated param struct in DescribeHaVipsRequest
 type DescribeHaVipsFilter struct {
-	Key   string    `name:"Key"`
 	Value *[]string `name:"Value" type:"Repeated"`
+	Key   string    `name:"Key"`
 }
 
 // DescribeHaVipsResponse is the response struct for api DescribeHaVips

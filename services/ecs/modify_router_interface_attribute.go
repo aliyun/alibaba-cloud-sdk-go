@@ -76,18 +76,18 @@ func (client *Client) ModifyRouterInterfaceAttributeWithCallback(request *Modify
 // ModifyRouterInterfaceAttributeRequest is the request struct for api ModifyRouterInterfaceAttribute
 type ModifyRouterInterfaceAttributeRequest struct {
 	*requests.RpcRequest
-	OwnerId                  requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount     string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId          requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	RouterInterfaceId        string           `position:"Query" name:"RouterInterfaceId"`
-	Name                     string           `position:"Query" name:"Name"`
-	Description              string           `position:"Query" name:"Description"`
-	OppositeInterfaceId      string           `position:"Query" name:"OppositeInterfaceId"`
 	OppositeRouterId         string           `position:"Query" name:"OppositeRouterId"`
-	OppositeRouterType       string           `position:"Query" name:"OppositeRouterType"`
+	ResourceOwnerId          requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount     string           `position:"Query" name:"ResourceOwnerAccount"`
+	Description              string           `position:"Query" name:"Description"`
+	HealthCheckTargetIp      string           `position:"Query" name:"HealthCheckTargetIp"`
+	OwnerId                  requests.Integer `position:"Query" name:"OwnerId"`
+	RouterInterfaceId        string           `position:"Query" name:"RouterInterfaceId"`
 	OppositeInterfaceOwnerId requests.Integer `position:"Query" name:"OppositeInterfaceOwnerId"`
 	HealthCheckSourceIp      string           `position:"Query" name:"HealthCheckSourceIp"`
-	HealthCheckTargetIp      string           `position:"Query" name:"HealthCheckTargetIp"`
+	Name                     string           `position:"Query" name:"Name"`
+	OppositeRouterType       string           `position:"Query" name:"OppositeRouterType"`
+	OppositeInterfaceId      string           `position:"Query" name:"OppositeInterfaceId"`
 }
 
 // ModifyRouterInterfaceAttributeResponse is the response struct for api ModifyRouterInterfaceAttribute
