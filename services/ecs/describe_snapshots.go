@@ -76,38 +76,36 @@ func (client *Client) DescribeSnapshotsWithCallback(request *DescribeSnapshotsRe
 // DescribeSnapshotsRequest is the request struct for api DescribeSnapshots
 type DescribeSnapshotsRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer        `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string                  `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer        `position:"Query" name:"ResourceOwnerId"`
-	InstanceId           string                  `position:"Query" name:"InstanceId"`
-	DiskId               string                  `position:"Query" name:"DiskId"`
-	SnapshotLinkId       string                  `position:"Query" name:"SnapshotLinkId"`
-	SnapshotIds          string                  `position:"Query" name:"SnapshotIds"`
-	PageNumber           requests.Integer        `position:"Query" name:"PageNumber"`
-	PageSize             requests.Integer        `position:"Query" name:"PageSize"`
-	OwnerAccount         string                  `position:"Query" name:"OwnerAccount"`
-	SnapshotName         string                  `position:"Query" name:"SnapshotName"`
-	Status               string                  `position:"Query" name:"Status"`
-	SnapshotType         string                  `position:"Query" name:"SnapshotType"`
-	Filter1Key           string                  `position:"Query" name:"Filter.1.Key"`
-	Filter2Key           string                  `position:"Query" name:"Filter.2.Key"`
-	Filter1Value         string                  `position:"Query" name:"Filter.1.Value"`
 	Filter2Value         string                  `position:"Query" name:"Filter.2.Value"`
+	SnapshotIds          string                  `position:"Query" name:"SnapshotIds"`
 	Usage                string                  `position:"Query" name:"Usage"`
-	SourceDiskType       string                  `position:"Query" name:"SourceDiskType"`
-	Tag                  *[]DescribeSnapshotsTag `position:"Query" name:"Tag"  type:"Repeated"`
-	Encrypted            requests.Boolean        `position:"Query" name:"Encrypted"`
+	SnapshotLinkId       string                  `position:"Query" name:"SnapshotLinkId"`
+	SnapshotName         string                  `position:"Query" name:"SnapshotName"`
+	PageNumber           requests.Integer        `position:"Query" name:"PageNumber"`
 	ResourceGroupId      string                  `position:"Query" name:"ResourceGroupId"`
+	Filter1Key           string                  `position:"Query" name:"Filter.1.Key"`
+	PageSize             requests.Integer        `position:"Query" name:"PageSize"`
+	DiskId               string                  `position:"Query" name:"DiskId"`
+	Tag                  *[]DescribeSnapshotsTag `position:"Query" name:"Tag"  type:"Repeated"`
 	DryRun               requests.Boolean        `position:"Query" name:"DryRun"`
+	ResourceOwnerAccount string                  `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string                  `position:"Query" name:"OwnerAccount"`
+	SourceDiskType       string                  `position:"Query" name:"SourceDiskType"`
+	Filter1Value         string                  `position:"Query" name:"Filter.1.Value"`
+	Filter2Key           string                  `position:"Query" name:"Filter.2.Key"`
+	OwnerId              requests.Integer        `position:"Query" name:"OwnerId"`
+	InstanceId           string                  `position:"Query" name:"InstanceId"`
+	Encrypted            requests.Boolean        `position:"Query" name:"Encrypted"`
+	SnapshotType         string                  `position:"Query" name:"SnapshotType"`
 	KMSKeyId             string                  `position:"Query" name:"KMSKeyId"`
+	Status               string                  `position:"Query" name:"Status"`
 }
 
 // DescribeSnapshotsTag is a repeated param struct in DescribeSnapshotsRequest
 type DescribeSnapshotsTag struct {
-	Value string `name:"value"`
-	Key   string `name:"key"`
-	Key   string `name:"Key"`
 	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // DescribeSnapshotsResponse is the response struct for api DescribeSnapshots

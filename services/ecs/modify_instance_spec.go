@@ -76,21 +76,21 @@ func (client *Client) ModifyInstanceSpecWithCallback(request *ModifyInstanceSpec
 // ModifyInstanceSpecRequest is the request struct for api ModifyInstanceSpec
 type ModifyInstanceSpecRequest struct {
 	*requests.RpcRequest
-	OwnerId                          requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount             string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId                  requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount             string           `position:"Query" name:"ResourceOwnerAccount"`
+	ClientToken                      string           `position:"Query" name:"ClientToken"`
+	AllowMigrateAcrossZone           requests.Boolean `position:"Query" name:"AllowMigrateAcrossZone"`
+	OwnerAccount                     string           `position:"Query" name:"OwnerAccount"`
+	InternetMaxBandwidthOut          requests.Integer `position:"Query" name:"InternetMaxBandwidthOut"`
+	OwnerId                          requests.Integer `position:"Query" name:"OwnerId"`
+	TemporaryInternetMaxBandwidthOut requests.Integer `position:"Query" name:"Temporary.InternetMaxBandwidthOut"`
+	SystemDiskCategory               string           `position:"Query" name:"SystemDisk.Category"`
+	TemporaryStartTime               string           `position:"Query" name:"Temporary.StartTime"`
+	Async                            requests.Boolean `position:"Query" name:"Async"`
 	InstanceId                       string           `position:"Query" name:"InstanceId"`
 	InstanceType                     string           `position:"Query" name:"InstanceType"`
-	InternetMaxBandwidthOut          requests.Integer `position:"Query" name:"InternetMaxBandwidthOut"`
-	InternetMaxBandwidthIn           requests.Integer `position:"Query" name:"InternetMaxBandwidthIn"`
-	OwnerAccount                     string           `position:"Query" name:"OwnerAccount"`
-	TemporaryStartTime               string           `position:"Query" name:"Temporary.StartTime"`
 	TemporaryEndTime                 string           `position:"Query" name:"Temporary.EndTime"`
-	TemporaryInternetMaxBandwidthOut requests.Integer `position:"Query" name:"Temporary.InternetMaxBandwidthOut"`
-	Async                            requests.Boolean `position:"Query" name:"Async"`
-	AllowMigrateAcrossZone           requests.Boolean `position:"Query" name:"AllowMigrateAcrossZone"`
-	SystemDiskCategory               string           `position:"Query" name:"SystemDisk.Category"`
-	ClientToken                      string           `position:"Query" name:"ClientToken"`
+	InternetMaxBandwidthIn           requests.Integer `position:"Query" name:"InternetMaxBandwidthIn"`
 }
 
 // ModifyInstanceSpecResponse is the response struct for api ModifyInstanceSpec

@@ -76,6 +76,21 @@ func (client *Client) DescribeReservedInstancesWithCallback(request *DescribeRes
 // DescribeReservedInstancesRequest is the request struct for api DescribeReservedInstances
 type DescribeReservedInstancesRequest struct {
 	*requests.RpcRequest
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	LockReason           string           `position:"Query" name:"LockReason"`
+	Scope                string           `position:"Query" name:"Scope"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	InstanceType         string           `position:"Query" name:"InstanceType"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	InstanceTypeFamily   string           `position:"Query" name:"InstanceTypeFamily"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ReservedInstanceId   *[]string        `position:"Query" name:"ReservedInstanceId"  type:"Repeated"`
+	OfferingType         string           `position:"Query" name:"OfferingType"`
+	ZoneId               string           `position:"Query" name:"ZoneId"`
+	ReservedInstanceName string           `position:"Query" name:"ReservedInstanceName"`
+	Status               *[]string        `position:"Query" name:"Status"  type:"Repeated"`
 }
 
 // DescribeReservedInstancesResponse is the response struct for api DescribeReservedInstances

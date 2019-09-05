@@ -76,12 +76,12 @@ func (client *Client) ModifyDedicatedHostAutoReleaseTimeWithCallback(request *Mo
 // ModifyDedicatedHostAutoReleaseTimeRequest is the request struct for api ModifyDedicatedHostAutoReleaseTime
 type ModifyDedicatedHostAutoReleaseTimeRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	DedicatedHostId      string           `position:"Query" name:"DedicatedHostId"`
-	AutoReleaseTime      string           `position:"Query" name:"AutoReleaseTime"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	AutoReleaseTime      string           `position:"Query" name:"AutoReleaseTime"`
+	DedicatedHostId      string           `position:"Query" name:"DedicatedHostId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // ModifyDedicatedHostAutoReleaseTimeResponse is the response struct for api ModifyDedicatedHostAutoReleaseTime

@@ -76,6 +76,83 @@ func (client *Client) CreateLaunchTemplateWithCallback(request *CreateLaunchTemp
 // CreateLaunchTemplateRequest is the request struct for api CreateLaunchTemplate
 type CreateLaunchTemplateRequest struct {
 	*requests.RpcRequest
+	LaunchTemplateName          string                                  `position:"Query" name:"LaunchTemplateName"`
+	ResourceOwnerId             requests.Integer                        `position:"Query" name:"ResourceOwnerId"`
+	SecurityEnhancementStrategy string                                  `position:"Query" name:"SecurityEnhancementStrategy"`
+	NetworkType                 string                                  `position:"Query" name:"NetworkType"`
+	KeyPairName                 string                                  `position:"Query" name:"KeyPairName"`
+	SpotPriceLimit              requests.Float                          `position:"Query" name:"SpotPriceLimit"`
+	ImageOwnerAlias             string                                  `position:"Query" name:"ImageOwnerAlias"`
+	ResourceGroupId             string                                  `position:"Query" name:"ResourceGroupId"`
+	HostName                    string                                  `position:"Query" name:"HostName"`
+	SystemDiskIops              requests.Integer                        `position:"Query" name:"SystemDisk.Iops"`
+	TemplateTag                 *[]CreateLaunchTemplateTemplateTag      `position:"Query" name:"TemplateTag"  type:"Repeated"`
+	Tag                         *[]CreateLaunchTemplateTag              `position:"Query" name:"Tag"  type:"Repeated"`
+	Period                      requests.Integer                        `position:"Query" name:"Period"`
+	TemplateResourceGroupId     string                                  `position:"Query" name:"TemplateResourceGroupId"`
+	OwnerId                     requests.Integer                        `position:"Query" name:"OwnerId"`
+	VSwitchId                   string                                  `position:"Query" name:"VSwitchId"`
+	SpotStrategy                string                                  `position:"Query" name:"SpotStrategy"`
+	InstanceName                string                                  `position:"Query" name:"InstanceName"`
+	InternetChargeType          string                                  `position:"Query" name:"InternetChargeType"`
+	ZoneId                      string                                  `position:"Query" name:"ZoneId"`
+	InternetMaxBandwidthIn      requests.Integer                        `position:"Query" name:"InternetMaxBandwidthIn"`
+	VersionDescription          string                                  `position:"Query" name:"VersionDescription"`
+	ImageId                     string                                  `position:"Query" name:"ImageId"`
+	IoOptimized                 string                                  `position:"Query" name:"IoOptimized"`
+	SecurityGroupId             string                                  `position:"Query" name:"SecurityGroupId"`
+	InternetMaxBandwidthOut     requests.Integer                        `position:"Query" name:"InternetMaxBandwidthOut"`
+	Description                 string                                  `position:"Query" name:"Description"`
+	SystemDiskCategory          string                                  `position:"Query" name:"SystemDisk.Category"`
+	UserData                    string                                  `position:"Query" name:"UserData"`
+	PasswordInherit             requests.Boolean                        `position:"Query" name:"PasswordInherit"`
+	InstanceType                string                                  `position:"Query" name:"InstanceType"`
+	InstanceChargeType          string                                  `position:"Query" name:"InstanceChargeType"`
+	EnableVmOsConfig            requests.Boolean                        `position:"Query" name:"EnableVmOsConfig"`
+	NetworkInterface            *[]CreateLaunchTemplateNetworkInterface `position:"Query" name:"NetworkInterface"  type:"Repeated"`
+	ResourceOwnerAccount        string                                  `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount                string                                  `position:"Query" name:"OwnerAccount"`
+	SystemDiskDiskName          string                                  `position:"Query" name:"SystemDisk.DiskName"`
+	RamRoleName                 string                                  `position:"Query" name:"RamRoleName"`
+	AutoReleaseTime             string                                  `position:"Query" name:"AutoReleaseTime"`
+	SpotDuration                requests.Integer                        `position:"Query" name:"SpotDuration"`
+	DataDisk                    *[]CreateLaunchTemplateDataDisk         `position:"Query" name:"DataDisk"  type:"Repeated"`
+	SystemDiskSize              requests.Integer                        `position:"Query" name:"SystemDisk.Size"`
+	VpcId                       string                                  `position:"Query" name:"VpcId"`
+	SystemDiskDescription       string                                  `position:"Query" name:"SystemDisk.Description"`
+}
+
+// CreateLaunchTemplateTemplateTag is a repeated param struct in CreateLaunchTemplateRequest
+type CreateLaunchTemplateTemplateTag struct {
+	Key   string `name:"Key"`
+	Value string `name:"Value"`
+}
+
+// CreateLaunchTemplateTag is a repeated param struct in CreateLaunchTemplateRequest
+type CreateLaunchTemplateTag struct {
+	Key   string `name:"Key"`
+	Value string `name:"Value"`
+}
+
+// CreateLaunchTemplateNetworkInterface is a repeated param struct in CreateLaunchTemplateRequest
+type CreateLaunchTemplateNetworkInterface struct {
+	PrimaryIpAddress     string `name:"PrimaryIpAddress"`
+	VSwitchId            string `name:"VSwitchId"`
+	SecurityGroupId      string `name:"SecurityGroupId"`
+	NetworkInterfaceName string `name:"NetworkInterfaceName"`
+	Description          string `name:"Description"`
+}
+
+// CreateLaunchTemplateDataDisk is a repeated param struct in CreateLaunchTemplateRequest
+type CreateLaunchTemplateDataDisk struct {
+	Size               string `name:"Size"`
+	SnapshotId         string `name:"SnapshotId"`
+	Category           string `name:"Category"`
+	Encrypted          string `name:"Encrypted"`
+	DiskName           string `name:"DiskName"`
+	Description        string `name:"Description"`
+	DeleteWithInstance string `name:"DeleteWithInstance"`
+	Device             string `name:"Device"`
 }
 
 // CreateLaunchTemplateResponse is the response struct for api CreateLaunchTemplate

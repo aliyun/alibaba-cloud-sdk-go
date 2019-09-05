@@ -76,6 +76,15 @@ func (client *Client) CreateStorageSetWithCallback(request *CreateStorageSetRequ
 // CreateStorageSetRequest is the request struct for api CreateStorageSet
 type CreateStorageSetRequest struct {
 	*requests.RpcRequest
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	MaxPartitionNumber   requests.Integer `position:"Query" name:"MaxPartitionNumber"`
+	Description          string           `position:"Query" name:"Description"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ZoneId               string           `position:"Query" name:"ZoneId"`
+	StorageSetName       string           `position:"Query" name:"StorageSetName"`
 }
 
 // CreateStorageSetResponse is the response struct for api CreateStorageSet

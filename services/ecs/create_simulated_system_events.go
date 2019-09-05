@@ -76,6 +76,13 @@ func (client *Client) CreateSimulatedSystemEventsWithCallback(request *CreateSim
 // CreateSimulatedSystemEventsRequest is the request struct for api CreateSimulatedSystemEvents
 type CreateSimulatedSystemEventsRequest struct {
 	*requests.RpcRequest
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	NotBefore            string           `position:"Query" name:"NotBefore"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	InstanceId           *[]string        `position:"Query" name:"InstanceId"  type:"Repeated"`
+	EventType            string           `position:"Query" name:"EventType"`
 }
 
 // CreateSimulatedSystemEventsResponse is the response struct for api CreateSimulatedSystemEvents

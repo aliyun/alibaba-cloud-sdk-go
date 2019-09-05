@@ -76,12 +76,12 @@ func (client *Client) ModifyInstanceVncPasswdWithCallback(request *ModifyInstanc
 // ModifyInstanceVncPasswdRequest is the request struct for api ModifyInstanceVncPasswd
 type ModifyInstanceVncPasswdRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
-	VncPassword          string           `position:"Query" name:"VncPassword"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	VncPassword          string           `position:"Query" name:"VncPassword"`
 }
 
 // ModifyInstanceVncPasswdResponse is the response struct for api ModifyInstanceVncPasswd

@@ -76,6 +76,18 @@ func (client *Client) ModifyFleetWithCallback(request *ModifyFleetRequest, callb
 // ModifyFleetRequest is the request struct for api ModifyFleet
 type ModifyFleetRequest struct {
 	*requests.RpcRequest
+	ResourceOwnerId                  requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	TerminateInstancesWithExpiration requests.Boolean `position:"Query" name:"TerminateInstancesWithExpiration"`
+	OnDemandTargetCapacity           string           `position:"Query" name:"OnDemandTargetCapacity"`
+	DefaultTargetCapacityType        string           `position:"Query" name:"DefaultTargetCapacityType"`
+	ExcessCapacityTerminationPolicy  string           `position:"Query" name:"ExcessCapacityTerminationPolicy"`
+	ResourceOwnerAccount             string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount                     string           `position:"Query" name:"OwnerAccount"`
+	OwnerId                          requests.Integer `position:"Query" name:"OwnerId"`
+	FleetId                          string           `position:"Query" name:"FleetId"`
+	TotalTargetCapacity              string           `position:"Query" name:"TotalTargetCapacity"`
+	SpotTargetCapacity               string           `position:"Query" name:"SpotTargetCapacity"`
+	MaxSpotPrice                     requests.Float   `position:"Query" name:"MaxSpotPrice"`
 }
 
 // ModifyFleetResponse is the response struct for api ModifyFleet

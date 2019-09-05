@@ -76,12 +76,12 @@ func (client *Client) ReleasePublicIpAddressWithCallback(request *ReleasePublicI
 // ReleasePublicIpAddressRequest is the request struct for api ReleasePublicIpAddress
 type ReleasePublicIpAddressRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	InstanceId           string           `position:"Query" name:"InstanceId"`
 	PublicIpAddress      string           `position:"Query" name:"PublicIpAddress"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // ReleasePublicIpAddressResponse is the response struct for api ReleasePublicIpAddress

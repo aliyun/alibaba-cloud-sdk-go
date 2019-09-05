@@ -76,13 +76,13 @@ func (client *Client) ModifySecurityGroupPolicyWithCallback(request *ModifySecur
 // ModifySecurityGroupPolicyRequest is the request struct for api ModifySecurityGroupPolicy
 type ModifySecurityGroupPolicyRequest struct {
 	*requests.RpcRequest
-	SecurityGroupId      string           `position:"Query" name:"SecurityGroupId"`
-	InnerAccessPolicy    string           `position:"Query" name:"InnerAccessPolicy"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	SecurityGroupId      string           `position:"Query" name:"SecurityGroupId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	InnerAccessPolicy    string           `position:"Query" name:"InnerAccessPolicy"`
 }
 
 // ModifySecurityGroupPolicyResponse is the response struct for api ModifySecurityGroupPolicy

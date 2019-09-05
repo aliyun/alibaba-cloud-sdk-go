@@ -76,6 +76,14 @@ func (client *Client) DescribeHpcClustersWithCallback(request *DescribeHpcCluste
 // DescribeHpcClustersRequest is the request struct for api DescribeHpcClusters
 type DescribeHpcClustersRequest struct {
 	*requests.RpcRequest
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	HpcClusterIds        string           `position:"Query" name:"HpcClusterIds"`
 }
 
 // DescribeHpcClustersResponse is the response struct for api DescribeHpcClusters

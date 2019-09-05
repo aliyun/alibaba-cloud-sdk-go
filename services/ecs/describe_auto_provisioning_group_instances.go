@@ -76,6 +76,13 @@ func (client *Client) DescribeAutoProvisioningGroupInstancesWithCallback(request
 // DescribeAutoProvisioningGroupInstancesRequest is the request struct for api DescribeAutoProvisioningGroupInstances
 type DescribeAutoProvisioningGroupInstancesRequest struct {
 	*requests.RpcRequest
+	ResourceOwnerId         requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	PageNumber              requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize                requests.Integer `position:"Query" name:"PageSize"`
+	ResourceOwnerAccount    string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount            string           `position:"Query" name:"OwnerAccount"`
+	OwnerId                 requests.Integer `position:"Query" name:"OwnerId"`
+	AutoProvisioningGroupId string           `position:"Query" name:"AutoProvisioningGroupId"`
 }
 
 // DescribeAutoProvisioningGroupInstancesResponse is the response struct for api DescribeAutoProvisioningGroupInstances

@@ -76,6 +76,40 @@ func (client *Client) CreateFleetWithCallback(request *CreateFleetRequest, callb
 // CreateFleetRequest is the request struct for api CreateFleet
 type CreateFleetRequest struct {
 	*requests.RpcRequest
+	ResourceOwnerId                  requests.Integer                   `position:"Query" name:"ResourceOwnerId"`
+	FleetType                        string                             `position:"Query" name:"FleetType"`
+	Description                      string                             `position:"Query" name:"Description"`
+	TerminateInstancesWithExpiration requests.Boolean                   `position:"Query" name:"TerminateInstancesWithExpiration"`
+	OnDemandTargetCapacity           string                             `position:"Query" name:"OnDemandTargetCapacity"`
+	FleetName                        string                             `position:"Query" name:"FleetName"`
+	SpotAllocationStrategy           string                             `position:"Query" name:"SpotAllocationStrategy"`
+	TerminateInstances               requests.Boolean                   `position:"Query" name:"TerminateInstances"`
+	DefaultTargetCapacityType        string                             `position:"Query" name:"DefaultTargetCapacityType"`
+	ExcessCapacityTerminationPolicy  string                             `position:"Query" name:"ExcessCapacityTerminationPolicy"`
+	LaunchTemplateConfig             *[]CreateFleetLaunchTemplateConfig `position:"Query" name:"LaunchTemplateConfig"  type:"Repeated"`
+	ValidUntil                       string                             `position:"Query" name:"ValidUntil"`
+	FillGapWithOnDemand              string                             `position:"Query" name:"FillGapWithOnDemand"`
+	SpotInstanceInterruptionBehavior string                             `position:"Query" name:"SpotInstanceInterruptionBehavior"`
+	LaunchTemplateId                 string                             `position:"Query" name:"LaunchTemplateId"`
+	ResourceOwnerAccount             string                             `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount                     string                             `position:"Query" name:"OwnerAccount"`
+	SpotInstancePoolsToUseCount      requests.Integer                   `position:"Query" name:"SpotInstancePoolsToUseCount"`
+	OwnerId                          requests.Integer                   `position:"Query" name:"OwnerId"`
+	LaunchTemplateVersion            string                             `position:"Query" name:"LaunchTemplateVersion"`
+	TotalTargetCapacity              string                             `position:"Query" name:"TotalTargetCapacity"`
+	OnDemandAllocationStrategy       string                             `position:"Query" name:"OnDemandAllocationStrategy"`
+	SpotTargetCapacity               string                             `position:"Query" name:"SpotTargetCapacity"`
+	ValidFrom                        string                             `position:"Query" name:"ValidFrom"`
+	MaxSpotPrice                     requests.Float                     `position:"Query" name:"MaxSpotPrice"`
+}
+
+// CreateFleetLaunchTemplateConfig is a repeated param struct in CreateFleetRequest
+type CreateFleetLaunchTemplateConfig struct {
+	InstanceType     string `name:"InstanceType"`
+	MaxPrice         string `name:"MaxPrice"`
+	VSwitchId        string `name:"VSwitchId"`
+	WeightedCapacity string `name:"WeightedCapacity"`
+	Priority         string `name:"Priority"`
 }
 
 // CreateFleetResponse is the response struct for api CreateFleet

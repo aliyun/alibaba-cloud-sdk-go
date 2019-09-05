@@ -76,6 +76,14 @@ func (client *Client) DescribeNetworkInterfacePermissionsWithCallback(request *D
 // DescribeNetworkInterfacePermissionsRequest is the request struct for api DescribeNetworkInterfacePermissions
 type DescribeNetworkInterfacePermissionsRequest struct {
 	*requests.RpcRequest
+	ResourceOwnerId              requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	PageNumber                   requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize                     requests.Integer `position:"Query" name:"PageSize"`
+	NetworkInterfacePermissionId *[]string        `position:"Query" name:"NetworkInterfacePermissionId"  type:"Repeated"`
+	ResourceOwnerAccount         string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount                 string           `position:"Query" name:"OwnerAccount"`
+	OwnerId                      requests.Integer `position:"Query" name:"OwnerId"`
+	NetworkInterfaceId           string           `position:"Query" name:"NetworkInterfaceId"`
 }
 
 // DescribeNetworkInterfacePermissionsResponse is the response struct for api DescribeNetworkInterfacePermissions

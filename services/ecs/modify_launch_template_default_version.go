@@ -76,6 +76,13 @@ func (client *Client) ModifyLaunchTemplateDefaultVersionWithCallback(request *Mo
 // ModifyLaunchTemplateDefaultVersionRequest is the request struct for api ModifyLaunchTemplateDefaultVersion
 type ModifyLaunchTemplateDefaultVersionRequest struct {
 	*requests.RpcRequest
+	LaunchTemplateName   string           `position:"Query" name:"LaunchTemplateName"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	LaunchTemplateId     string           `position:"Query" name:"LaunchTemplateId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	DefaultVersionNumber requests.Integer `position:"Query" name:"DefaultVersionNumber"`
 }
 
 // ModifyLaunchTemplateDefaultVersionResponse is the response struct for api ModifyLaunchTemplateDefaultVersion

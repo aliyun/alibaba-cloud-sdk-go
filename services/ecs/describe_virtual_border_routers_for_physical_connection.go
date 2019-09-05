@@ -77,18 +77,18 @@ func (client *Client) DescribeVirtualBorderRoutersForPhysicalConnectionWithCallb
 type DescribeVirtualBorderRoutersForPhysicalConnectionRequest struct {
 	*requests.RpcRequest
 	Filter               *[]DescribeVirtualBorderRoutersForPhysicalConnectionFilter `position:"Query" name:"Filter"  type:"Repeated"`
-	OwnerId              requests.Integer                                           `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string                                                     `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer                                           `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string                                                     `position:"Query" name:"ResourceOwnerAccount"`
 	PhysicalConnectionId string                                                     `position:"Query" name:"PhysicalConnectionId"`
-	PageNumber           requests.Integer                                           `position:"Query" name:"PageNumber"`
 	PageSize             requests.Integer                                           `position:"Query" name:"PageSize"`
+	OwnerId              requests.Integer                                           `position:"Query" name:"OwnerId"`
+	PageNumber           requests.Integer                                           `position:"Query" name:"PageNumber"`
 }
 
 // DescribeVirtualBorderRoutersForPhysicalConnectionFilter is a repeated param struct in DescribeVirtualBorderRoutersForPhysicalConnectionRequest
 type DescribeVirtualBorderRoutersForPhysicalConnectionFilter struct {
-	Key   string    `name:"Key"`
 	Value *[]string `name:"Value" type:"Repeated"`
+	Key   string    `name:"Key"`
 }
 
 // DescribeVirtualBorderRoutersForPhysicalConnectionResponse is the response struct for api DescribeVirtualBorderRoutersForPhysicalConnection

@@ -76,27 +76,17 @@ func (client *Client) DescribeRecommendInstanceTypeWithCallback(request *Describ
 // DescribeRecommendInstanceTypeRequest is the request struct for api DescribeRecommendInstanceType
 type DescribeRecommendInstanceTypeRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Cores                requests.Integer `position:"Query" name:"Cores"`
-	Memory               requests.Float   `position:"Query" name:"Memory"`
-	InstanceType         string           `position:"Query" name:"InstanceType"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	Channel              string           `position:"Query" name:"channel"`
 	NetworkType          string           `position:"Query" name:"NetworkType"`
-	InstanceChargeType   string           `position:"Query" name:"InstanceChargeType"`
-	SpotStrategy         string           `position:"Query" name:"SpotStrategy"`
-	IoOptimized          string           `position:"Query" name:"IoOptimized"`
-	InstanceTypeFamily   *[]string        `position:"Query" name:"InstanceTypeFamily"  type:"Repeated"`
-	PriorityStrategy     string           `position:"Query" name:"PriorityStrategy"`
-	MaxPrice             requests.Float   `position:"Query" name:"MaxPrice"`
-	InstanceBandwidthRx  requests.Integer `position:"Query" name:"InstanceBandwidthRx"`
-	InstanceBandwidthTx  requests.Integer `position:"Query" name:"InstanceBandwidthTx"`
-	InstancePpsRx        requests.Integer `position:"Query" name:"InstancePpsRx"`
-	InstancePpsTx        requests.Integer `position:"Query" name:"InstancePpsTx"`
-	ZoneId               string           `position:"Query" name:"ZoneId"`
-	SystemDiskCategory   string           `position:"Query" name:"SystemDiskCategory"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Operator             string           `position:"Query" name:"operator"`
+	Token                string           `position:"Query" name:"token"`
 	Scene                string           `position:"Query" name:"Scene"`
+	InstanceType         string           `position:"Query" name:"InstanceType"`
+	ProxyId              string           `position:"Query" name:"proxyId"`
 }
 
 // DescribeRecommendInstanceTypeResponse is the response struct for api DescribeRecommendInstanceType

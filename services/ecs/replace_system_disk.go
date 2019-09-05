@@ -76,22 +76,22 @@ func (client *Client) ReplaceSystemDiskWithCallback(request *ReplaceSystemDiskRe
 // ReplaceSystemDiskRequest is the request struct for api ReplaceSystemDisk
 type ReplaceSystemDiskRequest struct {
 	*requests.RpcRequest
-	OwnerId                     requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount        string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId             requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	InstanceId                  string           `position:"Query" name:"InstanceId"`
 	ImageId                     string           `position:"Query" name:"ImageId"`
-	SystemDiskSize              requests.Integer `position:"Query" name:"SystemDisk.Size"`
+	ResourceOwnerAccount        string           `position:"Query" name:"ResourceOwnerAccount"`
 	ClientToken                 string           `position:"Query" name:"ClientToken"`
 	OwnerAccount                string           `position:"Query" name:"OwnerAccount"`
-	UseAdditionalService        requests.Boolean `position:"Query" name:"UseAdditionalService"`
-	Password                    string           `position:"Query" name:"Password"`
-	PasswordInherit             requests.Boolean `position:"Query" name:"PasswordInherit"`
-	KeyPairName                 string           `position:"Query" name:"KeyPairName"`
-	DiskId                      string           `position:"Query" name:"DiskId"`
-	Platform                    string           `position:"Query" name:"Platform"`
-	Architecture                string           `position:"Query" name:"Architecture"`
 	SecurityEnhancementStrategy string           `position:"Query" name:"SecurityEnhancementStrategy"`
+	KeyPairName                 string           `position:"Query" name:"KeyPairName"`
+	OwnerId                     requests.Integer `position:"Query" name:"OwnerId"`
+	Platform                    string           `position:"Query" name:"Platform"`
+	Password                    string           `position:"Query" name:"Password"`
+	InstanceId                  string           `position:"Query" name:"InstanceId"`
+	PasswordInherit             requests.Boolean `position:"Query" name:"PasswordInherit"`
+	SystemDiskSize              requests.Integer `position:"Query" name:"SystemDisk.Size"`
+	DiskId                      string           `position:"Query" name:"DiskId"`
+	UseAdditionalService        requests.Boolean `position:"Query" name:"UseAdditionalService"`
+	Architecture                string           `position:"Query" name:"Architecture"`
 }
 
 // ReplaceSystemDiskResponse is the response struct for api ReplaceSystemDisk

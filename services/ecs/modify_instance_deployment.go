@@ -76,6 +76,16 @@ func (client *Client) ModifyInstanceDeploymentWithCallback(request *ModifyInstan
 // ModifyInstanceDeploymentRequest is the request struct for api ModifyInstanceDeployment
 type ModifyInstanceDeploymentRequest struct {
 	*requests.RpcRequest
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DeploymentSetId      string           `position:"Query" name:"DeploymentSetId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	Tenancy              string           `position:"Query" name:"Tenancy"`
+	DedicatedHostId      string           `position:"Query" name:"DedicatedHostId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
+	Force                requests.Boolean `position:"Query" name:"Force"`
+	Affinity             string           `position:"Query" name:"Affinity"`
 }
 
 // ModifyInstanceDeploymentResponse is the response struct for api ModifyInstanceDeployment

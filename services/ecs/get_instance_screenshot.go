@@ -76,6 +76,12 @@ func (client *Client) GetInstanceScreenshotWithCallback(request *GetInstanceScre
 // GetInstanceScreenshotRequest is the request struct for api GetInstanceScreenshot
 type GetInstanceScreenshotRequest struct {
 	*requests.RpcRequest
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	WakeUp               requests.Boolean `position:"Query" name:"WakeUp"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
 }
 
 // GetInstanceScreenshotResponse is the response struct for api GetInstanceScreenshot

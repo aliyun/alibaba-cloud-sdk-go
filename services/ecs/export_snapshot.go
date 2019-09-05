@@ -76,6 +76,12 @@ func (client *Client) ExportSnapshotWithCallback(request *ExportSnapshotRequest,
 // ExportSnapshotRequest is the request struct for api ExportSnapshot
 type ExportSnapshotRequest struct {
 	*requests.RpcRequest
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	SnapshotId           string           `position:"Query" name:"SnapshotId"`
+	OssBucket            string           `position:"Query" name:"OssBucket"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	RoleName             string           `position:"Query" name:"RoleName"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // ExportSnapshotResponse is the response struct for api ExportSnapshot

@@ -76,6 +76,11 @@ func (client *Client) DescribeFleetHistoryWithCallback(request *DescribeFleetHis
 // DescribeFleetHistoryRequest is the request struct for api DescribeFleetHistory
 type DescribeFleetHistoryRequest struct {
 	*requests.RpcRequest
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	FleetId              string           `position:"Query" name:"FleetId"`
 }
 
 // DescribeFleetHistoryResponse is the response struct for api DescribeFleetHistory

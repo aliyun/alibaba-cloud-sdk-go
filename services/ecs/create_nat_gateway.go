@@ -76,22 +76,22 @@ func (client *Client) CreateNatGatewayWithCallback(request *CreateNatGatewayRequ
 // CreateNatGatewayRequest is the request struct for api CreateNatGateway
 type CreateNatGatewayRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer                    `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string                              `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer                    `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string                              `position:"Query" name:"ResourceOwnerAccount"`
+	ClientToken          string                              `position:"Query" name:"ClientToken"`
 	OwnerAccount         string                              `position:"Query" name:"OwnerAccount"`
 	VpcId                string                              `position:"Query" name:"VpcId"`
 	Name                 string                              `position:"Query" name:"Name"`
 	Description          string                              `position:"Query" name:"Description"`
-	ClientToken          string                              `position:"Query" name:"ClientToken"`
+	OwnerId              requests.Integer                    `position:"Query" name:"OwnerId"`
 	BandwidthPackage     *[]CreateNatGatewayBandwidthPackage `position:"Query" name:"BandwidthPackage"  type:"Repeated"`
 }
 
 // CreateNatGatewayBandwidthPackage is a repeated param struct in CreateNatGatewayRequest
 type CreateNatGatewayBandwidthPackage struct {
-	IpCount   string `name:"IpCount"`
 	Bandwidth string `name:"Bandwidth"`
 	Zone      string `name:"Zone"`
+	IpCount   string `name:"IpCount"`
 }
 
 // CreateNatGatewayResponse is the response struct for api CreateNatGateway

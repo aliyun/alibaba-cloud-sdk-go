@@ -76,6 +76,14 @@ func (client *Client) RenewDedicatedHostsWithCallback(request *RenewDedicatedHos
 // RenewDedicatedHostsRequest is the request struct for api RenewDedicatedHosts
 type RenewDedicatedHostsRequest struct {
 	*requests.RpcRequest
+	DedicatedHostIds     string           `position:"Query" name:"DedicatedHostIds"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	Period               requests.Integer `position:"Query" name:"Period"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	PeriodUnit           string           `position:"Query" name:"PeriodUnit"`
 }
 
 // RenewDedicatedHostsResponse is the response struct for api RenewDedicatedHosts
