@@ -76,14 +76,14 @@ func (client *Client) ModifyBackupPolicyWithCallback(request *ModifyBackupPolicy
 // ModifyBackupPolicyRequest is the request struct for api ModifyBackupPolicy
 type ModifyBackupPolicyRequest struct {
 	*requests.RpcRequest
-	PreferredBackupTime   string           `position:"Query" name:"PreferredBackupTime"`
-	PreferredBackupPeriod string           `position:"Query" name:"PreferredBackupPeriod"`
-	BackupRetentionPeriod string           `position:"Query" name:"BackupRetentionPeriod"`
 	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	PreferredBackupPeriod string           `position:"Query" name:"PreferredBackupPeriod"`
 	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
 	DBClusterId           string           `position:"Query" name:"DBClusterId"`
 	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
 	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
+	PreferredBackupTime   string           `position:"Query" name:"PreferredBackupTime"`
+	BackupRetentionPeriod string           `position:"Query" name:"BackupRetentionPeriod"`
 }
 
 // ModifyBackupPolicyResponse is the response struct for api ModifyBackupPolicy

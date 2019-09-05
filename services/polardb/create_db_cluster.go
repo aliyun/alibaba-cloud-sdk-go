@@ -78,23 +78,23 @@ type CreateDBClusterRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	DBClusterDescription string           `position:"Query" name:"DBClusterDescription"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	ClusterNetworkType   string           `position:"Query" name:"ClusterNetworkType"`
+	DBNodeClass          string           `position:"Query" name:"DBNodeClass"`
+	Engine               string           `position:"Query" name:"Engine"`
+	CreationOption       string           `position:"Query" name:"CreationOption"`
+	SourceResourceId     string           `position:"Query" name:"SourceResourceId"`
 	Period               string           `position:"Query" name:"Period"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	UsedTime             string           `position:"Query" name:"UsedTime"`
-	ClusterNetworkType   string           `position:"Query" name:"ClusterNetworkType"`
 	VSwitchId            string           `position:"Query" name:"VSwitchId"`
-	DBNodeClass          string           `position:"Query" name:"DBNodeClass"`
 	AutoRenew            requests.Boolean `position:"Query" name:"AutoRenew"`
-	Engine               string           `position:"Query" name:"Engine"`
 	VPCId                string           `position:"Query" name:"VPCId"`
 	DBType               string           `position:"Query" name:"DBType"`
 	ZoneId               string           `position:"Query" name:"ZoneId"`
 	DBVersion            string           `position:"Query" name:"DBVersion"`
-	CreationOption       string           `position:"Query" name:"CreationOption"`
-	SourceResourceId     string           `position:"Query" name:"SourceResourceId"`
 	CloneDataPoint       string           `position:"Query" name:"CloneDataPoint"`
 	PayType              string           `position:"Query" name:"PayType"`
 }

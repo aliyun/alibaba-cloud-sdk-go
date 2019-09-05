@@ -78,11 +78,11 @@ type RevokeAccountPrivilegeRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	AccountName          string           `position:"Query" name:"AccountName"`
-	DBName               string           `position:"Query" name:"DBName"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	DBClusterId          string           `position:"Query" name:"DBClusterId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	DBName               string           `position:"Query" name:"DBName"`
 }
 
 // RevokeAccountPrivilegeResponse is the response struct for api RevokeAccountPrivilege

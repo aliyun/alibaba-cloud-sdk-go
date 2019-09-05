@@ -77,16 +77,16 @@ func (client *Client) DescribeBackupsWithCallback(request *DescribeBackupsReques
 type DescribeBackupsRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	StartTime            string           `position:"Query" name:"StartTime"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	DBClusterId          string           `position:"Query" name:"DBClusterId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	BackupId             string           `position:"Query" name:"BackupId"`
 	EndTime              string           `position:"Query" name:"EndTime"`
-	StartTime            string           `position:"Query" name:"StartTime"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	BackupStatus         string           `position:"Query" name:"BackupStatus"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	BackupMode           string           `position:"Query" name:"BackupMode"`
 }
 

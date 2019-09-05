@@ -77,13 +77,13 @@ func (client *Client) ModifyDBNodeClassWithCallback(request *ModifyDBNodeClassRe
 type ModifyDBNodeClassRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
+	DBNodeTargetClass    string           `position:"Query" name:"DBNodeTargetClass"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	DBClusterId          string           `position:"Query" name:"DBClusterId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	ModifyType           string           `position:"Query" name:"ModifyType"`
-	DBNodeTargetClass    string           `position:"Query" name:"DBNodeTargetClass"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ModifyType           string           `position:"Query" name:"ModifyType"`
 }
 
 // ModifyDBNodeClassResponse is the response struct for api ModifyDBNodeClass

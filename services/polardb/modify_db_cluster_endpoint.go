@@ -78,14 +78,14 @@ type ModifyDBClusterEndpointRequest struct {
 	*requests.RpcRequest
 	AutoAddNewNodes      string           `position:"Query" name:"AutoAddNewNodes"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Nodes                string           `position:"Query" name:"Nodes"`
+	DBEndpointId         string           `position:"Query" name:"DBEndpointId"`
 	ReadWriteMode        string           `position:"Query" name:"ReadWriteMode"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	DBClusterId          string           `position:"Query" name:"DBClusterId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	DBEndpointId         string           `position:"Query" name:"DBEndpointId"`
 	EndpointConfig       string           `position:"Query" name:"EndpointConfig"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Nodes                string           `position:"Query" name:"Nodes"`
 }
 
 // ModifyDBClusterEndpointResponse is the response struct for api ModifyDBClusterEndpoint

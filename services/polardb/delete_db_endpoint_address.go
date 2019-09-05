@@ -77,12 +77,12 @@ func (client *Client) DeleteDBEndpointAddressWithCallback(request *DeleteDBEndpo
 type DeleteDBEndpointAddressRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DBEndpointId         string           `position:"Query" name:"DBEndpointId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	DBClusterId          string           `position:"Query" name:"DBClusterId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	NetType              string           `position:"Query" name:"NetType"`
-	DBEndpointId         string           `position:"Query" name:"DBEndpointId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	NetType              string           `position:"Query" name:"NetType"`
 }
 
 // DeleteDBEndpointAddressResponse is the response struct for api DeleteDBEndpointAddress

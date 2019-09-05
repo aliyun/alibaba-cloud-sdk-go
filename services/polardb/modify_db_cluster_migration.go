@@ -78,11 +78,11 @@ type ModifyDBClusterMigrationRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	SecurityToken         string           `position:"Query" name:"SecurityToken"`
+	NewMasterInstanceId   string           `position:"Query" name:"NewMasterInstanceId"`
 	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
 	DBClusterId           string           `position:"Query" name:"DBClusterId"`
 	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
 	SourceRDSDBInstanceId string           `position:"Query" name:"SourceRDSDBInstanceId"`
-	NewMasterInstanceId   string           `position:"Query" name:"NewMasterInstanceId"`
 	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
 }
 

@@ -79,13 +79,13 @@ type DescribeDBClustersRequest struct {
 	ResourceOwnerId      requests.Integer         `position:"Query" name:"ResourceOwnerId"`
 	DBClusterDescription string                   `position:"Query" name:"DBClusterDescription"`
 	DBClusterStatus      string                   `position:"Query" name:"DBClusterStatus"`
+	PageNumber           requests.Integer         `position:"Query" name:"PageNumber"`
+	PageSize             requests.Integer         `position:"Query" name:"PageSize"`
+	Tag                  *[]DescribeDBClustersTag `position:"Query" name:"Tag"  type:"Repeated"`
 	ResourceOwnerAccount string                   `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string                   `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer         `position:"Query" name:"OwnerId"`
-	PageNumber           requests.Integer         `position:"Query" name:"PageNumber"`
 	DBType               string                   `position:"Query" name:"DBType"`
-	PageSize             requests.Integer         `position:"Query" name:"PageSize"`
-	Tag                  *[]DescribeDBClustersTag `position:"Query" name:"Tag"  type:"Repeated"`
 	DBClusterIds         string                   `position:"Query" name:"DBClusterIds"`
 }
 

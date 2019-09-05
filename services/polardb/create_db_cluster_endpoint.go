@@ -78,15 +78,15 @@ type CreateDBClusterEndpointRequest struct {
 	*requests.RpcRequest
 	AutoAddNewNodes      string           `position:"Query" name:"AutoAddNewNodes"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
+	ReadWriteMode        string           `position:"Query" name:"ReadWriteMode"`
+	EndpointType         string           `position:"Query" name:"EndpointType"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	DBClusterId          string           `position:"Query" name:"DBClusterId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	EndpointConfig       string           `position:"Query" name:"EndpointConfig"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	Nodes                string           `position:"Query" name:"Nodes"`
-	ReadWriteMode        string           `position:"Query" name:"ReadWriteMode"`
-	EndpointType         string           `position:"Query" name:"EndpointType"`
 }
 
 // CreateDBClusterEndpointResponse is the response struct for api CreateDBClusterEndpoint

@@ -77,12 +77,12 @@ func (client *Client) ResetAccountWithCallback(request *ResetAccountRequest, cal
 type ResetAccountRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	AccountPassword      string           `position:"Query" name:"AccountPassword"`
 	AccountName          string           `position:"Query" name:"AccountName"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	DBClusterId          string           `position:"Query" name:"DBClusterId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	AccountPassword      string           `position:"Query" name:"AccountPassword"`
 }
 
 // ResetAccountResponse is the response struct for api ResetAccount

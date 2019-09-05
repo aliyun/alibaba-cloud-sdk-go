@@ -77,15 +77,15 @@ func (client *Client) CreateDatabaseWithCallback(request *CreateDatabaseRequest,
 type CreateDatabaseRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	DBName               string           `position:"Query" name:"DBName"`
+	AccountPrivilege     string           `position:"Query" name:"AccountPrivilege"`
 	AccountName          string           `position:"Query" name:"AccountName"`
+	DBDescription        string           `position:"Query" name:"DBDescription"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	DBClusterId          string           `position:"Query" name:"DBClusterId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	DBDescription        string           `position:"Query" name:"DBDescription"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	DBName               string           `position:"Query" name:"DBName"`
 	CharacterSetName     string           `position:"Query" name:"CharacterSetName"`
-	AccountPrivilege     string           `position:"Query" name:"AccountPrivilege"`
 }
 
 // CreateDatabaseResponse is the response struct for api CreateDatabase

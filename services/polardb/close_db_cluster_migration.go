@@ -77,12 +77,12 @@ func (client *Client) CloseDBClusterMigrationWithCallback(request *CloseDBCluste
 type CloseDBClusterMigrationRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ContinueEnableBinlog requests.Boolean `position:"Query" name:"ContinueEnableBinlog"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	DBClusterId          string           `position:"Query" name:"DBClusterId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ContinueEnableBinlog requests.Boolean `position:"Query" name:"ContinueEnableBinlog"`
 }
 
 // CloseDBClusterMigrationResponse is the response struct for api CloseDBClusterMigration

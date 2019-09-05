@@ -77,12 +77,12 @@ func (client *Client) ModifyAccountDescriptionWithCallback(request *ModifyAccoun
 type ModifyAccountDescriptionRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	AccountDescription   string           `position:"Query" name:"AccountDescription"`
 	AccountName          string           `position:"Query" name:"AccountName"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	DBClusterId          string           `position:"Query" name:"DBClusterId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	AccountDescription   string           `position:"Query" name:"AccountDescription"`
 }
 
 // ModifyAccountDescriptionResponse is the response struct for api ModifyAccountDescription

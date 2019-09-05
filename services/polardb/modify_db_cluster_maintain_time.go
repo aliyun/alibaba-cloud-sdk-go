@@ -76,8 +76,8 @@ func (client *Client) ModifyDBClusterMaintainTimeWithCallback(request *ModifyDBC
 // ModifyDBClusterMaintainTimeRequest is the request struct for api ModifyDBClusterMaintainTime
 type ModifyDBClusterMaintainTimeRequest struct {
 	*requests.RpcRequest
-	MaintainTime         string           `position:"Query" name:"MaintainTime"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	MaintainTime         string           `position:"Query" name:"MaintainTime"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	DBClusterId          string           `position:"Query" name:"DBClusterId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`

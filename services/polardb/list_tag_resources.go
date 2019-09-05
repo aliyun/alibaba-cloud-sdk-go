@@ -77,11 +77,11 @@ func (client *Client) ListTagResourcesWithCallback(request *ListTagResourcesRequ
 type ListTagResourcesRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer       `position:"Query" name:"ResourceOwnerId"`
+	NextToken            string                 `position:"Query" name:"NextToken"`
+	Tag                  *[]ListTagResourcesTag `position:"Query" name:"Tag"  type:"Repeated"`
 	ResourceId           *[]string              `position:"Query" name:"ResourceId"  type:"Repeated"`
 	ResourceOwnerAccount string                 `position:"Query" name:"ResourceOwnerAccount"`
-	NextToken            string                 `position:"Query" name:"NextToken"`
 	OwnerAccount         string                 `position:"Query" name:"OwnerAccount"`
-	Tag                  *[]ListTagResourcesTag `position:"Query" name:"Tag"  type:"Repeated"`
 	OwnerId              requests.Integer       `position:"Query" name:"OwnerId"`
 	ResourceType         string                 `position:"Query" name:"ResourceType"`
 }

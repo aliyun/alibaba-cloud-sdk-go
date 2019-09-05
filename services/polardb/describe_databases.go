@@ -77,11 +77,11 @@ func (client *Client) DescribeDatabasesWithCallback(request *DescribeDatabasesRe
 type DescribeDatabasesRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	DBName               string           `position:"Query" name:"DBName"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	DBClusterId          string           `position:"Query" name:"DBClusterId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	DBName               string           `position:"Query" name:"DBName"`
 }
 
 // DescribeDatabasesResponse is the response struct for api DescribeDatabases

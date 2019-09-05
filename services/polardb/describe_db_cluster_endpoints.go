@@ -77,10 +77,10 @@ func (client *Client) DescribeDBClusterEndpointsWithCallback(request *DescribeDB
 type DescribeDBClusterEndpointsRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DBEndpointId         string           `position:"Query" name:"DBEndpointId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	DBClusterId          string           `position:"Query" name:"DBClusterId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	DBEndpointId         string           `position:"Query" name:"DBEndpointId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 

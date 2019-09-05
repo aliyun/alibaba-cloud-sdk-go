@@ -77,13 +77,13 @@ func (client *Client) ModifyDBClusterAccessWhitelistWithCallback(request *Modify
 type ModifyDBClusterAccessWhitelistRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId           requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	SecurityIps               string           `position:"Query" name:"SecurityIps"`
+	DBClusterIPArrayAttribute string           `position:"Query" name:"DBClusterIPArrayAttribute"`
 	ResourceOwnerAccount      string           `position:"Query" name:"ResourceOwnerAccount"`
 	DBClusterId               string           `position:"Query" name:"DBClusterId"`
 	OwnerAccount              string           `position:"Query" name:"OwnerAccount"`
-	SecurityIps               string           `position:"Query" name:"SecurityIps"`
-	DBClusterIPArrayName      string           `position:"Query" name:"DBClusterIPArrayName"`
 	OwnerId                   requests.Integer `position:"Query" name:"OwnerId"`
-	DBClusterIPArrayAttribute string           `position:"Query" name:"DBClusterIPArrayAttribute"`
+	DBClusterIPArrayName      string           `position:"Query" name:"DBClusterIPArrayName"`
 }
 
 // ModifyDBClusterAccessWhitelistResponse is the response struct for api ModifyDBClusterAccessWhitelist

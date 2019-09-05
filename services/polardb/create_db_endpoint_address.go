@@ -78,12 +78,12 @@ type CreateDBEndpointAddressRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId        requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ConnectionStringPrefix string           `position:"Query" name:"ConnectionStringPrefix"`
+	DBEndpointId           string           `position:"Query" name:"DBEndpointId"`
 	ResourceOwnerAccount   string           `position:"Query" name:"ResourceOwnerAccount"`
 	DBClusterId            string           `position:"Query" name:"DBClusterId"`
 	OwnerAccount           string           `position:"Query" name:"OwnerAccount"`
-	NetType                string           `position:"Query" name:"NetType"`
-	DBEndpointId           string           `position:"Query" name:"DBEndpointId"`
 	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
+	NetType                string           `position:"Query" name:"NetType"`
 }
 
 // CreateDBEndpointAddressResponse is the response struct for api CreateDBEndpointAddress
