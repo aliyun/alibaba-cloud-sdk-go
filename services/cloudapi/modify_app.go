@@ -76,10 +76,10 @@ func (client *Client) ModifyAppWithCallback(request *ModifyAppRequest, callback 
 // ModifyAppRequest is the request struct for api ModifyApp
 type ModifyAppRequest struct {
 	*requests.RpcRequest
+	Description   string           `position:"Query" name:"Description"`
 	AppName       string           `position:"Query" name:"AppName"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	AppId         requests.Integer `position:"Query" name:"AppId"`
-	Description   string           `position:"Query" name:"Description"`
 	Tag           *[]ModifyAppTag  `position:"Query" name:"Tag"  type:"Repeated"`
 }
 

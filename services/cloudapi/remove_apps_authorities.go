@@ -77,9 +77,9 @@ func (client *Client) RemoveAppsAuthoritiesWithCallback(request *RemoveAppsAutho
 type RemoveAppsAuthoritiesRequest struct {
 	*requests.RpcRequest
 	StageName     string `position:"Query" name:"StageName"`
+	GroupId       string `position:"Query" name:"GroupId"`
 	AppIds        string `position:"Query" name:"AppIds"`
 	SecurityToken string `position:"Query" name:"SecurityToken"`
-	GroupId       string `position:"Query" name:"GroupId"`
 	ApiId         string `position:"Query" name:"ApiId"`
 }
 

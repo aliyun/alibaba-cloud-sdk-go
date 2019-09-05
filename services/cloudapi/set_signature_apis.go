@@ -77,9 +77,9 @@ func (client *Client) SetSignatureApisWithCallback(request *SetSignatureApisRequ
 type SetSignatureApisRequest struct {
 	*requests.RpcRequest
 	StageName     string `position:"Query" name:"StageName"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
 	GroupId       string `position:"Query" name:"GroupId"`
 	SignatureId   string `position:"Query" name:"SignatureId"`
+	SecurityToken string `position:"Query" name:"SecurityToken"`
 	ApiIds        string `position:"Query" name:"ApiIds"`
 }
 

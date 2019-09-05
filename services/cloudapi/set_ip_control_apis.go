@@ -77,9 +77,9 @@ func (client *Client) SetIpControlApisWithCallback(request *SetIpControlApisRequ
 type SetIpControlApisRequest struct {
 	*requests.RpcRequest
 	StageName     string `position:"Query" name:"StageName"`
+	GroupId       string `position:"Query" name:"GroupId"`
 	IpControlId   string `position:"Query" name:"IpControlId"`
 	SecurityToken string `position:"Query" name:"SecurityToken"`
-	GroupId       string `position:"Query" name:"GroupId"`
 	ApiIds        string `position:"Query" name:"ApiIds"`
 }
 

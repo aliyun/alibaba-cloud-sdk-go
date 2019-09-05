@@ -76,8 +76,8 @@ func (client *Client) DescribePurchasedApiGroupWithCallback(request *DescribePur
 // DescribePurchasedApiGroupRequest is the request struct for api DescribePurchasedApiGroup
 type DescribePurchasedApiGroupRequest struct {
 	*requests.RpcRequest
-	SecurityToken string `position:"Query" name:"SecurityToken"`
 	GroupId       string `position:"Query" name:"GroupId"`
+	SecurityToken string `position:"Query" name:"SecurityToken"`
 }
 
 // DescribePurchasedApiGroupResponse is the response struct for api DescribePurchasedApiGroup

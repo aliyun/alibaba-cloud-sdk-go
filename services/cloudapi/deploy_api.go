@@ -77,9 +77,9 @@ func (client *Client) DeployApiWithCallback(request *DeployApiRequest, callback 
 type DeployApiRequest struct {
 	*requests.RpcRequest
 	StageName     string `position:"Query" name:"StageName"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
 	GroupId       string `position:"Query" name:"GroupId"`
 	Description   string `position:"Query" name:"Description"`
+	SecurityToken string `position:"Query" name:"SecurityToken"`
 	ApiId         string `position:"Query" name:"ApiId"`
 }
 

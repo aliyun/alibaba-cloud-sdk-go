@@ -76,10 +76,10 @@ func (client *Client) ModifyIpControlWithCallback(request *ModifyIpControlReques
 // ModifyIpControlRequest is the request struct for api ModifyIpControl
 type ModifyIpControlRequest struct {
 	*requests.RpcRequest
-	IpControlId   string `position:"Query" name:"IpControlId"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
 	IpControlName string `position:"Query" name:"IpControlName"`
 	Description   string `position:"Query" name:"Description"`
+	IpControlId   string `position:"Query" name:"IpControlId"`
+	SecurityToken string `position:"Query" name:"SecurityToken"`
 }
 
 // ModifyIpControlResponse is the response struct for api ModifyIpControl

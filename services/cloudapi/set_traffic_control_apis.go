@@ -78,8 +78,8 @@ type SetTrafficControlApisRequest struct {
 	*requests.RpcRequest
 	TrafficControlId string `position:"Query" name:"TrafficControlId"`
 	StageName        string `position:"Query" name:"StageName"`
-	SecurityToken    string `position:"Query" name:"SecurityToken"`
 	GroupId          string `position:"Query" name:"GroupId"`
+	SecurityToken    string `position:"Query" name:"SecurityToken"`
 	ApiIds           string `position:"Query" name:"ApiIds"`
 }
 

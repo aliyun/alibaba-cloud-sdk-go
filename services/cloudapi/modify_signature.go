@@ -76,11 +76,11 @@ func (client *Client) ModifySignatureWithCallback(request *ModifySignatureReques
 // ModifySignatureRequest is the request struct for api ModifySignature
 type ModifySignatureRequest struct {
 	*requests.RpcRequest
-	SecurityToken   string `position:"Query" name:"SecurityToken"`
 	SignatureName   string `position:"Query" name:"SignatureName"`
-	SignatureKey    string `position:"Query" name:"SignatureKey"`
 	SignatureId     string `position:"Query" name:"SignatureId"`
 	SignatureSecret string `position:"Query" name:"SignatureSecret"`
+	SecurityToken   string `position:"Query" name:"SecurityToken"`
+	SignatureKey    string `position:"Query" name:"SignatureKey"`
 }
 
 // ModifySignatureResponse is the response struct for api ModifySignature

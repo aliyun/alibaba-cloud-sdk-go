@@ -78,9 +78,9 @@ type UntagResourcesRequest struct {
 	*requests.RpcRequest
 	All           requests.Boolean `position:"Query" name:"All"`
 	ResourceId    *[]string        `position:"Query" name:"ResourceId"  type:"Repeated"`
+	ResourceType  string           `position:"Query" name:"ResourceType"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	TagKey        *[]string        `position:"Query" name:"TagKey"  type:"Repeated"`
-	ResourceType  string           `position:"Query" name:"ResourceType"`
 }
 
 // UntagResourcesResponse is the response struct for api UntagResources

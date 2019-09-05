@@ -76,13 +76,13 @@ func (client *Client) DescribeApiGroupsWithCallback(request *DescribeApiGroupsRe
 // DescribeApiGroupsRequest is the request struct for api DescribeApiGroups
 type DescribeApiGroupsRequest struct {
 	*requests.RpcRequest
-	SecurityToken string                  `position:"Query" name:"SecurityToken"`
 	GroupId       string                  `position:"Query" name:"GroupId"`
-	PageSize      requests.Integer        `position:"Query" name:"PageSize"`
-	Tag           *[]DescribeApiGroupsTag `position:"Query" name:"Tag"  type:"Repeated"`
 	EnableTagAuth requests.Boolean        `position:"Query" name:"EnableTagAuth"`
 	GroupName     string                  `position:"Query" name:"GroupName"`
 	PageNumber    requests.Integer        `position:"Query" name:"PageNumber"`
+	SecurityToken string                  `position:"Query" name:"SecurityToken"`
+	PageSize      requests.Integer        `position:"Query" name:"PageSize"`
+	Tag           *[]DescribeApiGroupsTag `position:"Query" name:"Tag"  type:"Repeated"`
 }
 
 // DescribeApiGroupsTag is a repeated param struct in DescribeApiGroupsRequest

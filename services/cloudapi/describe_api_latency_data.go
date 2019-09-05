@@ -76,10 +76,10 @@ func (client *Client) DescribeApiLatencyDataWithCallback(request *DescribeApiLat
 // DescribeApiLatencyDataRequest is the request struct for api DescribeApiLatencyData
 type DescribeApiLatencyDataRequest struct {
 	*requests.RpcRequest
-	SecurityToken string `position:"Query" name:"SecurityToken"`
 	GroupId       string `position:"Query" name:"GroupId"`
 	EndTime       string `position:"Query" name:"EndTime"`
 	StartTime     string `position:"Query" name:"StartTime"`
+	SecurityToken string `position:"Query" name:"SecurityToken"`
 	ApiId         string `position:"Query" name:"ApiId"`
 }
 

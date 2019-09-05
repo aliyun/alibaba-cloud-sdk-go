@@ -76,9 +76,9 @@ func (client *Client) DescribeVpcAccessesWithCallback(request *DescribeVpcAccess
 // DescribeVpcAccessesRequest is the request struct for api DescribeVpcAccesses
 type DescribeVpcAccessesRequest struct {
 	*requests.RpcRequest
+	PageNumber    requests.Integer `position:"Query" name:"PageNumber"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	PageSize      requests.Integer `position:"Query" name:"PageSize"`
-	PageNumber    requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 // DescribeVpcAccessesResponse is the response struct for api DescribeVpcAccesses

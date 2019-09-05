@@ -77,13 +77,13 @@ func (client *Client) DescribePurchasedApisWithCallback(request *DescribePurchas
 type DescribePurchasedApisRequest struct {
 	*requests.RpcRequest
 	StageName     string           `position:"Query" name:"StageName"`
-	ApiName       string           `position:"Query" name:"ApiName"`
 	Visibility    string           `position:"Query" name:"Visibility"`
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	GroupId       string           `position:"Query" name:"GroupId"`
+	PageNumber    requests.Integer `position:"Query" name:"PageNumber"`
+	ApiName       string           `position:"Query" name:"ApiName"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	PageSize      requests.Integer `position:"Query" name:"PageSize"`
 	ApiId         string           `position:"Query" name:"ApiId"`
-	PageNumber    requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 // DescribePurchasedApisResponse is the response struct for api DescribePurchasedApis

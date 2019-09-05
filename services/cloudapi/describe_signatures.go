@@ -76,11 +76,11 @@ func (client *Client) DescribeSignaturesWithCallback(request *DescribeSignatures
 // DescribeSignaturesRequest is the request struct for api DescribeSignatures
 type DescribeSignaturesRequest struct {
 	*requests.RpcRequest
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	SignatureName string           `position:"Query" name:"SignatureName"`
-	PageSize      requests.Integer `position:"Query" name:"PageSize"`
 	SignatureId   string           `position:"Query" name:"SignatureId"`
 	PageNumber    requests.Integer `position:"Query" name:"PageNumber"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	PageSize      requests.Integer `position:"Query" name:"PageSize"`
 }
 
 // DescribeSignaturesResponse is the response struct for api DescribeSignatures

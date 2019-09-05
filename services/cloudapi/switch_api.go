@@ -77,9 +77,9 @@ func (client *Client) SwitchApiWithCallback(request *SwitchApiRequest, callback 
 type SwitchApiRequest struct {
 	*requests.RpcRequest
 	StageName      string `position:"Query" name:"StageName"`
-	SecurityToken  string `position:"Query" name:"SecurityToken"`
 	GroupId        string `position:"Query" name:"GroupId"`
 	Description    string `position:"Query" name:"Description"`
+	SecurityToken  string `position:"Query" name:"SecurityToken"`
 	ApiId          string `position:"Query" name:"ApiId"`
 	HistoryVersion string `position:"Query" name:"HistoryVersion"`
 }

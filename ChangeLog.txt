@@ -1,3 +1,6 @@
+2019-09-05 Version: 1.60.139
+- Generated 2016-07-14 for `CloudAPI`.
+
 2019-09-05 Version: 1.60.138
 - Generated 2017-08-01 for `polardb`.
 

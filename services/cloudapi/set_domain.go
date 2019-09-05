@@ -76,9 +76,9 @@ func (client *Client) SetDomainWithCallback(request *SetDomainRequest, callback 
 // SetDomainRequest is the request struct for api SetDomain
 type SetDomainRequest struct {
 	*requests.RpcRequest
-	SecurityToken string `position:"Query" name:"SecurityToken"`
 	GroupId       string `position:"Query" name:"GroupId"`
 	DomainName    string `position:"Query" name:"DomainName"`
+	SecurityToken string `position:"Query" name:"SecurityToken"`
 }
 
 // SetDomainResponse is the response struct for api SetDomain

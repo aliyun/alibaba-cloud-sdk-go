@@ -76,9 +76,9 @@ func (client *Client) CreateIntranetDomainWithCallback(request *CreateIntranetDo
 // CreateIntranetDomainRequest is the request struct for api CreateIntranetDomain
 type CreateIntranetDomainRequest struct {
 	*requests.RpcRequest
+	GroupId              string           `position:"Query" name:"GroupId"`
 	DeleteInternetDomain requests.Boolean `position:"Query" name:"DeleteInternetDomain"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
-	GroupId              string           `position:"Query" name:"GroupId"`
 }
 
 // CreateIntranetDomainResponse is the response struct for api CreateIntranetDomain

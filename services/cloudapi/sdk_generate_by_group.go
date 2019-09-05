@@ -76,9 +76,9 @@ func (client *Client) SdkGenerateByGroupWithCallback(request *SdkGenerateByGroup
 // SdkGenerateByGroupRequest is the request struct for api SdkGenerateByGroup
 type SdkGenerateByGroupRequest struct {
 	*requests.RpcRequest
-	SecurityToken string `position:"Query" name:"SecurityToken"`
 	GroupId       string `position:"Query" name:"GroupId"`
 	Language      string `position:"Query" name:"Language"`
+	SecurityToken string `position:"Query" name:"SecurityToken"`
 }
 
 // SdkGenerateByGroupResponse is the response struct for api SdkGenerateByGroup

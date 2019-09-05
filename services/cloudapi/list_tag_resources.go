@@ -77,10 +77,10 @@ func (client *Client) ListTagResourcesWithCallback(request *ListTagResourcesRequ
 type ListTagResourcesRequest struct {
 	*requests.RpcRequest
 	ResourceId    *[]string              `position:"Query" name:"ResourceId"  type:"Repeated"`
+	ResourceType  string                 `position:"Query" name:"ResourceType"`
 	SecurityToken string                 `position:"Query" name:"SecurityToken"`
 	NextToken     string                 `position:"Query" name:"NextToken"`
 	Tag           *[]ListTagResourcesTag `position:"Query" name:"Tag"  type:"Repeated"`
-	ResourceType  string                 `position:"Query" name:"ResourceType"`
 }
 
 // ListTagResourcesTag is a repeated param struct in ListTagResourcesRequest

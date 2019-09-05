@@ -76,9 +76,9 @@ func (client *Client) SetDomainWebSocketStatusWithCallback(request *SetDomainWeb
 // SetDomainWebSocketStatusRequest is the request struct for api SetDomainWebSocketStatus
 type SetDomainWebSocketStatusRequest struct {
 	*requests.RpcRequest
-	SecurityToken string `position:"Query" name:"SecurityToken"`
 	GroupId       string `position:"Query" name:"GroupId"`
 	DomainName    string `position:"Query" name:"DomainName"`
+	SecurityToken string `position:"Query" name:"SecurityToken"`
 	ActionValue   string `position:"Query" name:"ActionValue"`
 }
 

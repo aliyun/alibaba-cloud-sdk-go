@@ -77,10 +77,10 @@ func (client *Client) DescribeApiSignaturesWithCallback(request *DescribeApiSign
 type DescribeApiSignaturesRequest struct {
 	*requests.RpcRequest
 	StageName     string           `position:"Query" name:"StageName"`
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	GroupId       string           `position:"Query" name:"GroupId"`
-	PageSize      requests.Integer `position:"Query" name:"PageSize"`
 	PageNumber    requests.Integer `position:"Query" name:"PageNumber"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	PageSize      requests.Integer `position:"Query" name:"PageSize"`
 	ApiIds        string           `position:"Query" name:"ApiIds"`
 }
 

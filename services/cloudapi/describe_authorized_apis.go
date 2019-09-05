@@ -76,10 +76,10 @@ func (client *Client) DescribeAuthorizedApisWithCallback(request *DescribeAuthor
 // DescribeAuthorizedApisRequest is the request struct for api DescribeAuthorizedApis
 type DescribeAuthorizedApisRequest struct {
 	*requests.RpcRequest
+	PageNumber    requests.Integer `position:"Query" name:"PageNumber"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	AppId         requests.Integer `position:"Query" name:"AppId"`
 	PageSize      requests.Integer `position:"Query" name:"PageSize"`
-	PageNumber    requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 // DescribeAuthorizedApisResponse is the response struct for api DescribeAuthorizedApis

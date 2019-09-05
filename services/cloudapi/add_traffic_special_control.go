@@ -78,8 +78,8 @@ type AddTrafficSpecialControlRequest struct {
 	*requests.RpcRequest
 	TrafficControlId string           `position:"Query" name:"TrafficControlId"`
 	SpecialKey       string           `position:"Query" name:"SpecialKey"`
-	SecurityToken    string           `position:"Query" name:"SecurityToken"`
 	TrafficValue     requests.Integer `position:"Query" name:"TrafficValue"`
+	SecurityToken    string           `position:"Query" name:"SecurityToken"`
 	SpecialType      string           `position:"Query" name:"SpecialType"`
 }
 

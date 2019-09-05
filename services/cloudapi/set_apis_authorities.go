@@ -78,11 +78,11 @@ type SetApisAuthoritiesRequest struct {
 	*requests.RpcRequest
 	AuthVaildTime string           `position:"Query" name:"AuthVaildTime"`
 	StageName     string           `position:"Query" name:"StageName"`
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	GroupId       string           `position:"Query" name:"GroupId"`
-	AppId         requests.Integer `position:"Query" name:"AppId"`
 	Description   string           `position:"Query" name:"Description"`
 	AuthValidTime string           `position:"Query" name:"AuthValidTime"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	AppId         requests.Integer `position:"Query" name:"AppId"`
 	ApiIds        string           `position:"Query" name:"ApiIds"`
 }
 

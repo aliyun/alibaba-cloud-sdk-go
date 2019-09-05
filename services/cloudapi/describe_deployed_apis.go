@@ -77,14 +77,14 @@ func (client *Client) DescribeDeployedApisWithCallback(request *DescribeDeployed
 type DescribeDeployedApisRequest struct {
 	*requests.RpcRequest
 	StageName     string                     `position:"Query" name:"StageName"`
+	GroupId       string                     `position:"Query" name:"GroupId"`
+	EnableTagAuth requests.Boolean           `position:"Query" name:"EnableTagAuth"`
+	PageNumber    requests.Integer           `position:"Query" name:"PageNumber"`
 	ApiName       string                     `position:"Query" name:"ApiName"`
 	SecurityToken string                     `position:"Query" name:"SecurityToken"`
-	GroupId       string                     `position:"Query" name:"GroupId"`
 	PageSize      requests.Integer           `position:"Query" name:"PageSize"`
 	Tag           *[]DescribeDeployedApisTag `position:"Query" name:"Tag"  type:"Repeated"`
-	EnableTagAuth requests.Boolean           `position:"Query" name:"EnableTagAuth"`
 	ApiId         string                     `position:"Query" name:"ApiId"`
-	PageNumber    requests.Integer           `position:"Query" name:"PageNumber"`
 }
 
 // DescribeDeployedApisTag is a repeated param struct in DescribeDeployedApisRequest

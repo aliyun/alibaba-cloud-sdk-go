@@ -76,8 +76,8 @@ func (client *Client) DescribeApiGroupWithCallback(request *DescribeApiGroupRequ
 // DescribeApiGroupRequest is the request struct for api DescribeApiGroup
 type DescribeApiGroupRequest struct {
 	*requests.RpcRequest
-	SecurityToken string                 `position:"Query" name:"SecurityToken"`
 	GroupId       string                 `position:"Query" name:"GroupId"`
+	SecurityToken string                 `position:"Query" name:"SecurityToken"`
 	Tag           *[]DescribeApiGroupTag `position:"Query" name:"Tag"  type:"Repeated"`
 }
 

@@ -77,9 +77,9 @@ func (client *Client) DescribeApisByTrafficControlWithCallback(request *Describe
 type DescribeApisByTrafficControlRequest struct {
 	*requests.RpcRequest
 	TrafficControlId string           `position:"Query" name:"TrafficControlId"`
+	PageNumber       requests.Integer `position:"Query" name:"PageNumber"`
 	SecurityToken    string           `position:"Query" name:"SecurityToken"`
 	PageSize         requests.Integer `position:"Query" name:"PageSize"`
-	PageNumber       requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 // DescribeApisByTrafficControlResponse is the response struct for api DescribeApisByTrafficControl

@@ -78,12 +78,12 @@ type SetAppsAuthoritiesRequest struct {
 	*requests.RpcRequest
 	AuthVaildTime string `position:"Query" name:"AuthVaildTime"`
 	StageName     string `position:"Query" name:"StageName"`
-	AppIds        string `position:"Query" name:"AppIds"`
-	SecurityToken string `position:"Query" name:"SecurityToken"`
 	GroupId       string `position:"Query" name:"GroupId"`
 	Description   string `position:"Query" name:"Description"`
-	ApiId         string `position:"Query" name:"ApiId"`
 	AuthValidTime string `position:"Query" name:"AuthValidTime"`
+	AppIds        string `position:"Query" name:"AppIds"`
+	SecurityToken string `position:"Query" name:"SecurityToken"`
+	ApiId         string `position:"Query" name:"ApiId"`
 }
 
 // SetAppsAuthoritiesResponse is the response struct for api SetAppsAuthorities

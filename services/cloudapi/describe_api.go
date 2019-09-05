@@ -76,8 +76,8 @@ func (client *Client) DescribeApiWithCallback(request *DescribeApiRequest, callb
 // DescribeApiRequest is the request struct for api DescribeApi
 type DescribeApiRequest struct {
 	*requests.RpcRequest
-	SecurityToken string `position:"Query" name:"SecurityToken"`
 	GroupId       string `position:"Query" name:"GroupId"`
+	SecurityToken string `position:"Query" name:"SecurityToken"`
 	ApiId         string `position:"Query" name:"ApiId"`
 }
 
