@@ -1,3 +1,8 @@
+2019-09-05 Version: 1.60.142
+- Add DescribeInstanceTypes.
+- Add DescribeReservedResource.
+- Add DescribeInstances.
+
 2019-09-05 Version: 1.60.141
 - Generated 2019-05-24 for `cusanalytic_sc_online`.
 
