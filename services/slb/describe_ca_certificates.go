@@ -77,11 +77,11 @@ func (client *Client) DescribeCACertificatesWithCallback(request *DescribeCACert
 type DescribeCACertificatesRequest struct {
 	*requests.RpcRequest
 	AccessKeyId          string                       `position:"Query" name:"access_key_id"`
-	ResourceGroupId      string                       `position:"Query" name:"ResourceGroupId"`
 	ResourceOwnerId      requests.Integer             `position:"Query" name:"ResourceOwnerId"`
+	ResourceGroupId      string                       `position:"Query" name:"ResourceGroupId"`
+	Tag                  *[]DescribeCACertificatesTag `position:"Query" name:"Tag"  type:"Repeated"`
 	ResourceOwnerAccount string                       `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string                       `position:"Query" name:"OwnerAccount"`
-	Tag                  *[]DescribeCACertificatesTag `position:"Query" name:"Tag"  type:"Repeated"`
 	OwnerId              requests.Integer             `position:"Query" name:"OwnerId"`
 	CACertificateId      string                       `position:"Query" name:"CACertificateId"`
 }

@@ -77,8 +77,8 @@ func (client *Client) DescribeVServerGroupAttributeWithCallback(request *Describ
 type DescribeVServerGroupAttributeRequest struct {
 	*requests.RpcRequest
 	AccessKeyId          string           `position:"Query" name:"access_key_id"`
-	VServerGroupId       string           `position:"Query" name:"VServerGroupId"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	VServerGroupId       string           `position:"Query" name:"VServerGroupId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`

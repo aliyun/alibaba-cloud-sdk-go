@@ -79,14 +79,14 @@ type UploadServerCertificateRequest struct {
 	AccessKeyId             string           `position:"Query" name:"access_key_id"`
 	ResourceOwnerId         requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ServerCertificate       string           `position:"Query" name:"ServerCertificate"`
-	ResourceOwnerAccount    string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount            string           `position:"Query" name:"OwnerAccount"`
 	AliCloudCertificateName string           `position:"Query" name:"AliCloudCertificateName"`
 	AliCloudCertificateId   string           `position:"Query" name:"AliCloudCertificateId"`
-	OwnerId                 requests.Integer `position:"Query" name:"OwnerId"`
-	Tags                    string           `position:"Query" name:"Tags"`
 	PrivateKey              string           `position:"Query" name:"PrivateKey"`
 	ResourceGroupId         string           `position:"Query" name:"ResourceGroupId"`
+	ResourceOwnerAccount    string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount            string           `position:"Query" name:"OwnerAccount"`
+	OwnerId                 requests.Integer `position:"Query" name:"OwnerId"`
+	Tags                    string           `position:"Query" name:"Tags"`
 	ServerCertificateName   string           `position:"Query" name:"ServerCertificateName"`
 }
 

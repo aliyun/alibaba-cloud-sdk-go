@@ -78,12 +78,12 @@ type SetDomainExtensionAttributeRequest struct {
 	*requests.RpcRequest
 	AccessKeyId          string           `position:"Query" name:"access_key_id"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DomainExtensionId    string           `position:"Query" name:"DomainExtensionId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ServerCertificateId  string           `position:"Query" name:"ServerCertificateId"`
 	Tags                 string           `position:"Query" name:"Tags"`
-	DomainExtensionId    string           `position:"Query" name:"DomainExtensionId"`
 }
 
 // SetDomainExtensionAttributeResponse is the response struct for api SetDomainExtensionAttribute

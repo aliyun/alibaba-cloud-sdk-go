@@ -78,12 +78,12 @@ type SetLoadBalancerDeleteProtectionRequest struct {
 	*requests.RpcRequest
 	AccessKeyId          string           `position:"Query" name:"access_key_id"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	LoadBalancerId       string           `position:"Query" name:"LoadBalancerId"`
+	DeleteProtection     string           `position:"Query" name:"DeleteProtection"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	DeleteProtection     string           `position:"Query" name:"DeleteProtection"`
 	Tags                 string           `position:"Query" name:"Tags"`
+	LoadBalancerId       string           `position:"Query" name:"LoadBalancerId"`
 }
 
 // SetLoadBalancerDeleteProtectionResponse is the response struct for api SetLoadBalancerDeleteProtection

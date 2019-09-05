@@ -78,11 +78,11 @@ type DeleteRulesRequest struct {
 	*requests.RpcRequest
 	AccessKeyId          string           `position:"Query" name:"access_key_id"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	RuleIds              string           `position:"Query" name:"RuleIds"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	Tags                 string           `position:"Query" name:"Tags"`
+	RuleIds              string           `position:"Query" name:"RuleIds"`
 }
 
 // DeleteRulesResponse is the response struct for api DeleteRules

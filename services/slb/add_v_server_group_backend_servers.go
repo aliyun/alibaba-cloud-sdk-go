@@ -77,12 +77,12 @@ func (client *Client) AddVServerGroupBackendServersWithCallback(request *AddVSer
 type AddVServerGroupBackendServersRequest struct {
 	*requests.RpcRequest
 	AccessKeyId          string           `position:"Query" name:"access_key_id"`
-	VServerGroupId       string           `position:"Query" name:"VServerGroupId"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	BackendServers       string           `position:"Query" name:"BackendServers"`
+	VServerGroupId       string           `position:"Query" name:"VServerGroupId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	BackendServers       string           `position:"Query" name:"BackendServers"`
 	Tags                 string           `position:"Query" name:"Tags"`
 }
 

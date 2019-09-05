@@ -79,13 +79,13 @@ type CreateDomainExtensionRequest struct {
 	AccessKeyId          string           `position:"Query" name:"access_key_id"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ListenerPort         requests.Integer `position:"Query" name:"ListenerPort"`
-	LoadBalancerId       string           `position:"Query" name:"LoadBalancerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	Domain               string           `position:"Query" name:"Domain"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ServerCertificateId  string           `position:"Query" name:"ServerCertificateId"`
 	Tags                 string           `position:"Query" name:"Tags"`
+	LoadBalancerId       string           `position:"Query" name:"LoadBalancerId"`
+	Domain               string           `position:"Query" name:"Domain"`
 }
 
 // CreateDomainExtensionResponse is the response struct for api CreateDomainExtension

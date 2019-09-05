@@ -78,14 +78,14 @@ type CreateRulesRequest struct {
 	*requests.RpcRequest
 	AccessKeyId          string           `position:"Query" name:"access_key_id"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ListenerPort         requests.Integer `position:"Query" name:"ListenerPort"`
-	LoadBalancerId       string           `position:"Query" name:"LoadBalancerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	RuleList             string           `position:"Query" name:"RuleList"`
+	ListenerPort         requests.Integer `position:"Query" name:"ListenerPort"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ListenerProtocol     string           `position:"Query" name:"ListenerProtocol"`
 	Tags                 string           `position:"Query" name:"Tags"`
+	LoadBalancerId       string           `position:"Query" name:"LoadBalancerId"`
 }
 
 // CreateRulesResponse is the response struct for api CreateRules

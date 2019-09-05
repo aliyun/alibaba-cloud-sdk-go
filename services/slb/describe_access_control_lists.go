@@ -79,15 +79,15 @@ type DescribeAccessControlListsRequest struct {
 	AccessKeyId          string                           `position:"Query" name:"access_key_id"`
 	ResourceOwnerId      requests.Integer                 `position:"Query" name:"ResourceOwnerId"`
 	AclName              string                           `position:"Query" name:"AclName"`
-	ResourceOwnerAccount string                           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string                           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer                 `position:"Query" name:"OwnerId"`
 	AddressIPVersion     string                           `position:"Query" name:"AddressIPVersion"`
 	PageNumber           requests.Integer                 `position:"Query" name:"PageNumber"`
-	Tags                 string                           `position:"Query" name:"Tags"`
 	ResourceGroupId      string                           `position:"Query" name:"ResourceGroupId"`
 	PageSize             requests.Integer                 `position:"Query" name:"PageSize"`
 	Tag                  *[]DescribeAccessControlListsTag `position:"Query" name:"Tag"  type:"Repeated"`
+	ResourceOwnerAccount string                           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string                           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer                 `position:"Query" name:"OwnerId"`
+	Tags                 string                           `position:"Query" name:"Tags"`
 }
 
 // DescribeAccessControlListsTag is a repeated param struct in DescribeAccessControlListsRequest
@@ -99,8 +99,12 @@ type DescribeAccessControlListsTag struct {
 // DescribeAccessControlListsResponse is the response struct for api DescribeAccessControlLists
 type DescribeAccessControlListsResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	Acls      Acls   `json:"Acls" xml:"Acls"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
+	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
+	PageSize   int    `json:"PageSize" xml:"PageSize"`
+	Count      int    `json:"Count" xml:"Count"`
+	PageNumber int    `json:"PageNumber" xml:"PageNumber"`
+	Acls       Acls   `json:"Acls" xml:"Acls"`
 }
 
 // CreateDescribeAccessControlListsRequest creates a request to invoke DescribeAccessControlLists API

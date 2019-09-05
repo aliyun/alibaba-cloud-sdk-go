@@ -78,13 +78,13 @@ type CreateVServerGroupRequest struct {
 	*requests.RpcRequest
 	AccessKeyId          string           `position:"Query" name:"access_key_id"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	LoadBalancerId       string           `position:"Query" name:"LoadBalancerId"`
+	BackendServers       string           `position:"Query" name:"BackendServers"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	BackendServers       string           `position:"Query" name:"BackendServers"`
 	Tags                 string           `position:"Query" name:"Tags"`
 	VServerGroupName     string           `position:"Query" name:"VServerGroupName"`
+	LoadBalancerId       string           `position:"Query" name:"LoadBalancerId"`
 }
 
 // CreateVServerGroupResponse is the response struct for api CreateVServerGroup

@@ -78,13 +78,13 @@ type DescribeDomainExtensionsRequest struct {
 	*requests.RpcRequest
 	AccessKeyId          string           `position:"Query" name:"access_key_id"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DomainExtensionId    string           `position:"Query" name:"DomainExtensionId"`
 	ListenerPort         requests.Integer `position:"Query" name:"ListenerPort"`
-	LoadBalancerId       string           `position:"Query" name:"LoadBalancerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	Tags                 string           `position:"Query" name:"Tags"`
-	DomainExtensionId    string           `position:"Query" name:"DomainExtensionId"`
+	LoadBalancerId       string           `position:"Query" name:"LoadBalancerId"`
 }
 
 // DescribeDomainExtensionsResponse is the response struct for api DescribeDomainExtensions

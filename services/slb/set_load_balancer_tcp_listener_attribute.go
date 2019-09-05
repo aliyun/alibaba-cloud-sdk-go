@@ -76,36 +76,36 @@ func (client *Client) SetLoadBalancerTCPListenerAttributeWithCallback(request *S
 // SetLoadBalancerTCPListenerAttributeRequest is the request struct for api SetLoadBalancerTCPListenerAttribute
 type SetLoadBalancerTCPListenerAttributeRequest struct {
 	*requests.RpcRequest
-	AccessKeyId               string           `position:"Query" name:"access_key_id"`
-	HealthCheckConnectTimeout requests.Integer `position:"Query" name:"HealthCheckConnectTimeout"`
 	ResourceOwnerId           requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	HealthCheckURI            string           `position:"Query" name:"HealthCheckURI"`
-	Description               string           `position:"Query" name:"Description"`
-	UnhealthyThreshold        requests.Integer `position:"Query" name:"UnhealthyThreshold"`
-	HealthyThreshold          requests.Integer `position:"Query" name:"HealthyThreshold"`
 	AclStatus                 string           `position:"Query" name:"AclStatus"`
-	Scheduler                 string           `position:"Query" name:"Scheduler"`
 	AclType                   string           `position:"Query" name:"AclType"`
 	MasterSlaveServerGroup    string           `position:"Query" name:"MasterSlaveServerGroup"`
 	EstablishedTimeout        requests.Integer `position:"Query" name:"EstablishedTimeout"`
-	MaxConnection             requests.Integer `position:"Query" name:"MaxConnection"`
 	PersistenceTimeout        requests.Integer `position:"Query" name:"PersistenceTimeout"`
 	VpcIds                    string           `position:"Query" name:"VpcIds"`
 	VServerGroupId            string           `position:"Query" name:"VServerGroupId"`
 	AclId                     string           `position:"Query" name:"AclId"`
-	ListenerPort              requests.Integer `position:"Query" name:"ListenerPort"`
-	HealthCheckType           string           `position:"Query" name:"HealthCheckType"`
-	ResourceOwnerAccount      string           `position:"Query" name:"ResourceOwnerAccount"`
-	Bandwidth                 requests.Integer `position:"Query" name:"Bandwidth"`
 	HealthCheckMethod         string           `position:"Query" name:"HealthCheckMethod"`
 	HealthCheckDomain         string           `position:"Query" name:"HealthCheckDomain"`
-	OwnerAccount              string           `position:"Query" name:"OwnerAccount"`
 	SynProxy                  string           `position:"Query" name:"SynProxy"`
 	OwnerId                   requests.Integer `position:"Query" name:"OwnerId"`
 	Tags                      string           `position:"Query" name:"Tags"`
 	LoadBalancerId            string           `position:"Query" name:"LoadBalancerId"`
 	MasterSlaveServerGroupId  string           `position:"Query" name:"MasterSlaveServerGroupId"`
 	HealthCheckInterval       requests.Integer `position:"Query" name:"HealthCheckInterval"`
+	AccessKeyId               string           `position:"Query" name:"access_key_id"`
+	HealthCheckConnectTimeout requests.Integer `position:"Query" name:"HealthCheckConnectTimeout"`
+	Description               string           `position:"Query" name:"Description"`
+	UnhealthyThreshold        requests.Integer `position:"Query" name:"UnhealthyThreshold"`
+	HealthyThreshold          requests.Integer `position:"Query" name:"HealthyThreshold"`
+	Scheduler                 string           `position:"Query" name:"Scheduler"`
+	MaxConnection             requests.Integer `position:"Query" name:"MaxConnection"`
+	ListenerPort              requests.Integer `position:"Query" name:"ListenerPort"`
+	HealthCheckType           string           `position:"Query" name:"HealthCheckType"`
+	ResourceOwnerAccount      string           `position:"Query" name:"ResourceOwnerAccount"`
+	Bandwidth                 requests.Integer `position:"Query" name:"Bandwidth"`
+	OwnerAccount              string           `position:"Query" name:"OwnerAccount"`
 	HealthCheckConnectPort    requests.Integer `position:"Query" name:"HealthCheckConnectPort"`
 	HealthCheckHttpCode       string           `position:"Query" name:"HealthCheckHttpCode"`
 	VServerGroup              string           `position:"Query" name:"VServerGroup"`

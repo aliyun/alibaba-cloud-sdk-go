@@ -79,12 +79,12 @@ type CreateMasterSlaveServerGroupRequest struct {
 	AccessKeyId                string           `position:"Query" name:"access_key_id"`
 	ResourceOwnerId            requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	MasterSlaveBackendServers  string           `position:"Query" name:"MasterSlaveBackendServers"`
-	LoadBalancerId             string           `position:"Query" name:"LoadBalancerId"`
 	ResourceOwnerAccount       string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount               string           `position:"Query" name:"OwnerAccount"`
 	MasterSlaveServerGroupName string           `position:"Query" name:"MasterSlaveServerGroupName"`
 	OwnerId                    requests.Integer `position:"Query" name:"OwnerId"`
 	Tags                       string           `position:"Query" name:"Tags"`
+	LoadBalancerId             string           `position:"Query" name:"LoadBalancerId"`
 }
 
 // CreateMasterSlaveServerGroupResponse is the response struct for api CreateMasterSlaveServerGroup

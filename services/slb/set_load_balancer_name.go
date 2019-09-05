@@ -79,11 +79,11 @@ type SetLoadBalancerNameRequest struct {
 	AccessKeyId          string           `position:"Query" name:"access_key_id"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	LoadBalancerName     string           `position:"Query" name:"LoadBalancerName"`
-	LoadBalancerId       string           `position:"Query" name:"LoadBalancerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	Tags                 string           `position:"Query" name:"Tags"`
+	LoadBalancerId       string           `position:"Query" name:"LoadBalancerId"`
 }
 
 // SetLoadBalancerNameResponse is the response struct for api SetLoadBalancerName

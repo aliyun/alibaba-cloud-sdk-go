@@ -78,11 +78,11 @@ type DescribeMasterSlaveServerGroupAttributeRequest struct {
 	*requests.RpcRequest
 	AccessKeyId              string           `position:"Query" name:"access_key_id"`
 	ResourceOwnerId          requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	MasterSlaveServerGroupId string           `position:"Query" name:"MasterSlaveServerGroupId"`
 	ResourceOwnerAccount     string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount             string           `position:"Query" name:"OwnerAccount"`
 	OwnerId                  requests.Integer `position:"Query" name:"OwnerId"`
 	Tags                     string           `position:"Query" name:"Tags"`
+	MasterSlaveServerGroupId string           `position:"Query" name:"MasterSlaveServerGroupId"`
 }
 
 // DescribeMasterSlaveServerGroupAttributeResponse is the response struct for api DescribeMasterSlaveServerGroupAttribute

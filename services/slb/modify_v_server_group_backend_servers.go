@@ -77,14 +77,14 @@ func (client *Client) ModifyVServerGroupBackendServersWithCallback(request *Modi
 type ModifyVServerGroupBackendServersRequest struct {
 	*requests.RpcRequest
 	AccessKeyId          string           `position:"Query" name:"access_key_id"`
-	VServerGroupId       string           `position:"Query" name:"VServerGroupId"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OldBackendServers    string           `position:"Query" name:"OldBackendServers"`
+	VServerGroupId       string           `position:"Query" name:"VServerGroupId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	NewBackendServers    string           `position:"Query" name:"NewBackendServers"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	Tags                 string           `position:"Query" name:"Tags"`
+	OldBackendServers    string           `position:"Query" name:"OldBackendServers"`
 }
 
 // ModifyVServerGroupBackendServersResponse is the response struct for api ModifyVServerGroupBackendServers

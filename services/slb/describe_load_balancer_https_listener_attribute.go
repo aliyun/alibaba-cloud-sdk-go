@@ -79,11 +79,11 @@ type DescribeLoadBalancerHTTPSListenerAttributeRequest struct {
 	AccessKeyId          string           `position:"Query" name:"access_key_id"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ListenerPort         requests.Integer `position:"Query" name:"ListenerPort"`
-	LoadBalancerId       string           `position:"Query" name:"LoadBalancerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	Tags                 string           `position:"Query" name:"Tags"`
+	LoadBalancerId       string           `position:"Query" name:"LoadBalancerId"`
 }
 
 // DescribeLoadBalancerHTTPSListenerAttributeResponse is the response struct for api DescribeLoadBalancerHTTPSListenerAttribute
@@ -115,6 +115,7 @@ type DescribeLoadBalancerHTTPSListenerAttributeResponse struct {
 	ServerCertificateId    string                                                       `json:"ServerCertificateId" xml:"ServerCertificateId"`
 	CACertificateId        string                                                       `json:"CACertificateId" xml:"CACertificateId"`
 	HealthCheckMethod      string                                                       `json:"HealthCheckMethod" xml:"HealthCheckMethod"`
+	HealthCheckHttpVersion string                                                       `json:"HealthCheckHttpVersion" xml:"HealthCheckHttpVersion"`
 	MaxConnection          int                                                          `json:"MaxConnection" xml:"MaxConnection"`
 	VServerGroupId         string                                                       `json:"VServerGroupId" xml:"VServerGroupId"`
 	Gzip                   string                                                       `json:"Gzip" xml:"Gzip"`

@@ -78,11 +78,11 @@ type DescribeAvailableResourceRequest struct {
 	*requests.RpcRequest
 	AccessKeyId          string           `position:"Query" name:"access_key_id"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	AddressIPVersion     string           `position:"Query" name:"AddressIPVersion"`
+	AddressType          string           `position:"Query" name:"AddressType"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	AddressType          string           `position:"Query" name:"AddressType"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	AddressIPVersion     string           `position:"Query" name:"AddressIPVersion"`
 }
 
 // DescribeAvailableResourceResponse is the response struct for api DescribeAvailableResource

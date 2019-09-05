@@ -77,13 +77,13 @@ func (client *Client) CreateAccessControlListWithCallback(request *CreateAccessC
 type CreateAccessControlListRequest struct {
 	*requests.RpcRequest
 	AccessKeyId          string           `position:"Query" name:"access_key_id"`
-	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	AclName              string           `position:"Query" name:"AclName"`
+	AddressIPVersion     string           `position:"Query" name:"AddressIPVersion"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	AddressIPVersion     string           `position:"Query" name:"AddressIPVersion"`
 	Tags                 string           `position:"Query" name:"Tags"`
 }
 

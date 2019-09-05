@@ -77,13 +77,13 @@ func (client *Client) DescribeLoadBalancerAttributeWithCallback(request *Describ
 type DescribeLoadBalancerAttributeRequest struct {
 	*requests.RpcRequest
 	AccessKeyId          string           `position:"Query" name:"access_key_id"`
-	IncludeReservedData  requests.Boolean `position:"Query" name:"IncludeReservedData"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	LoadBalancerId       string           `position:"Query" name:"LoadBalancerId"`
+	IncludeReservedData  requests.Boolean `position:"Query" name:"IncludeReservedData"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	Tags                 string           `position:"Query" name:"Tags"`
+	LoadBalancerId       string           `position:"Query" name:"LoadBalancerId"`
 }
 
 // DescribeLoadBalancerAttributeResponse is the response struct for api DescribeLoadBalancerAttribute
@@ -123,6 +123,10 @@ type DescribeLoadBalancerAttributeResponse struct {
 	ReservedInfoBandwidth          string                                        `json:"ReservedInfoBandwidth" xml:"ReservedInfoBandwidth"`
 	ReservedInfoActiveTime         string                                        `json:"ReservedInfoActiveTime" xml:"ReservedInfoActiveTime"`
 	DeleteProtection               string                                        `json:"DeleteProtection" xml:"DeleteProtection"`
+	CloudInstanceType              string                                        `json:"CloudInstanceType" xml:"CloudInstanceType"`
+	CloudInstanceId                string                                        `json:"CloudInstanceId" xml:"CloudInstanceId"`
+	TunnelType                     string                                        `json:"TunnelType" xml:"TunnelType"`
+	CloudInstanceUid               int64                                         `json:"CloudInstanceUid" xml:"CloudInstanceUid"`
 	ListenerPorts                  ListenerPorts                                 `json:"ListenerPorts" xml:"ListenerPorts"`
 	ListenerPortsAndProtocal       ListenerPortsAndProtocal                      `json:"ListenerPortsAndProtocal" xml:"ListenerPortsAndProtocal"`
 	ListenerPortsAndProtocol       ListenerPortsAndProtocol                      `json:"ListenerPortsAndProtocol" xml:"ListenerPortsAndProtocol"`

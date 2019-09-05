@@ -77,10 +77,10 @@ func (client *Client) UploadCACertificateWithCallback(request *UploadCACertifica
 type UploadCACertificateRequest struct {
 	*requests.RpcRequest
 	AccessKeyId          string           `position:"Query" name:"access_key_id"`
-	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	CACertificate        string           `position:"Query" name:"CACertificate"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	CACertificateName    string           `position:"Query" name:"CACertificateName"`
+	CACertificate        string           `position:"Query" name:"CACertificate"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
