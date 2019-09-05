@@ -10,15 +10,19 @@ var EndpointType = "regional"
 func GetEndpointMap() map[string]string {
 	if EndpointMap == nil {
 		EndpointMap = map[string]string{
-			"cn-shenzhen":    "ecs-cn-hangzhou.aliyuncs.com",
-			"cn-qingdao":     "ecs-cn-hangzhou.aliyuncs.com",
-			"cn-beijing":     "ecs-cn-hangzhou.aliyuncs.com",
-			"cn-shanghai":    "ecs-cn-hangzhou.aliyuncs.com",
-			"cn-hongkong":    "ecs-cn-hangzhou.aliyuncs.com",
-			"ap-southeast-1": "ecs-cn-hangzhou.aliyuncs.com",
-			"us-east-1":      "ecs-cn-hangzhou.aliyuncs.com",
-			"us-west-1":      "ecs-cn-hangzhou.aliyuncs.com",
-			"cn-hangzhou":    "ecs-cn-hangzhou.aliyuncs.com",
+			"cn-shenzhen":           "ecs-cn-hangzhou.aliyuncs.com",
+			"cn-beijing":            "ecs-cn-hangzhou.aliyuncs.com",
+			"cn-shenzhen-finance-1": "ecs-cn-hangzhou.aliyuncs.com",
+			"cn-north-2-gov-1":      "ecs.aliyuncs.com",
+			"cn-qingdao":            "ecs-cn-hangzhou.aliyuncs.com",
+			"cn-shanghai":           "ecs-cn-hangzhou.aliyuncs.com",
+			"cn-shanghai-finance-1": "ecs-cn-hangzhou.aliyuncs.com",
+			"cn-hongkong":           "ecs-cn-hangzhou.aliyuncs.com",
+			"cn-hangzhou-finance":   "ecs.aliyuncs.com",
+			"ap-southeast-1":        "ecs-cn-hangzhou.aliyuncs.com",
+			"us-east-1":             "ecs-cn-hangzhou.aliyuncs.com",
+			"us-west-1":             "ecs-cn-hangzhou.aliyuncs.com",
+			"cn-hangzhou":           "ecs-cn-hangzhou.aliyuncs.com",
 		}
 	}
 	return EndpointMap
