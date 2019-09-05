@@ -76,9 +76,9 @@ func (client *Client) TwoPartiesCallWithCallback(request *TwoPartiesCallRequest,
 // TwoPartiesCallRequest is the request struct for api TwoPartiesCall
 type TwoPartiesCallRequest struct {
 	*requests.RpcRequest
+	CalleeCustomer string `position:"Query" name:"CalleeCustomer"`
 	Caller         string `position:"Query" name:"Caller"`
 	InstanceId     string `position:"Query" name:"InstanceId"`
-	CalleeCustomer string `position:"Query" name:"CalleeCustomer"`
 	CalleeAgent    string `position:"Query" name:"CalleeAgent"`
 }
 

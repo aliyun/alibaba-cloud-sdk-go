@@ -76,12 +76,12 @@ func (client *Client) ListJobsByGroupWithCallback(request *ListJobsByGroupReques
 // ListJobsByGroupRequest is the request struct for api ListJobsByGroup
 type ListJobsByGroupRequest struct {
 	*requests.RpcRequest
+	JobStatus        string           `position:"Query" name:"JobStatus"`
+	PageNumber       requests.Integer `position:"Query" name:"PageNumber"`
 	InstanceId       string           `position:"Query" name:"InstanceId"`
 	JobFailureReason string           `position:"Query" name:"JobFailureReason"`
-	JobStatus        string           `position:"Query" name:"JobStatus"`
 	JobGroupId       string           `position:"Query" name:"JobGroupId"`
 	PageSize         requests.Integer `position:"Query" name:"PageSize"`
-	PageNumber       requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 // ListJobsByGroupResponse is the response struct for api ListJobsByGroup

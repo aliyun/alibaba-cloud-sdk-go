@@ -76,11 +76,11 @@ func (client *Client) ListBasicStatisticsReportSubItemsWithCallback(request *Lis
 // ListBasicStatisticsReportSubItemsRequest is the request struct for api ListBasicStatisticsReportSubItems
 type ListBasicStatisticsReportSubItemsRequest struct {
 	*requests.RpcRequest
+	Title      string           `position:"Query" name:"Title"`
+	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
 	InstanceId string           `position:"Query" name:"InstanceId"`
 	JobGroupId string           `position:"Query" name:"JobGroupId"`
 	PageSize   requests.Integer `position:"Query" name:"PageSize"`
-	Title      string           `position:"Query" name:"Title"`
-	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 // ListBasicStatisticsReportSubItemsResponse is the response struct for api ListBasicStatisticsReportSubItems

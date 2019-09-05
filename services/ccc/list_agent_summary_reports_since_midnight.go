@@ -77,10 +77,10 @@ func (client *Client) ListAgentSummaryReportsSinceMidnightWithCallback(request *
 type ListAgentSummaryReportsSinceMidnightRequest struct {
 	*requests.RpcRequest
 	AgentIds     string           `position:"Query" name:"AgentIds"`
+	PageNumber   requests.Integer `position:"Query" name:"PageNumber"`
 	InstanceId   string           `position:"Query" name:"InstanceId"`
 	SkillGroupId string           `position:"Query" name:"SkillGroupId"`
 	PageSize     requests.Integer `position:"Query" name:"PageSize"`
-	PageNumber   requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 // ListAgentSummaryReportsSinceMidnightResponse is the response struct for api ListAgentSummaryReportsSinceMidnight

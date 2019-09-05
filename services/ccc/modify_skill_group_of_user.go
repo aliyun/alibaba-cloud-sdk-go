@@ -76,11 +76,11 @@ func (client *Client) ModifySkillGroupOfUserWithCallback(request *ModifySkillGro
 // ModifySkillGroupOfUserRequest is the request struct for api ModifySkillGroupOfUser
 type ModifySkillGroupOfUserRequest struct {
 	*requests.RpcRequest
+	RoleId       *[]string `position:"Query" name:"RoleId"  type:"Repeated"`
+	UserId       string    `position:"Query" name:"UserId"`
 	SkillLevel   *[]string `position:"Query" name:"SkillLevel"  type:"Repeated"`
 	InstanceId   string    `position:"Query" name:"InstanceId"`
-	RoleId       *[]string `position:"Query" name:"RoleId"  type:"Repeated"`
 	SkillGroupId *[]string `position:"Query" name:"SkillGroupId"  type:"Repeated"`
-	UserId       string    `position:"Query" name:"UserId"`
 }
 
 // ModifySkillGroupOfUserResponse is the response struct for api ModifySkillGroupOfUser

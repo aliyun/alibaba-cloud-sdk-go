@@ -76,10 +76,10 @@ func (client *Client) ModifySkillGroupOutboundNumbersWithCallback(request *Modif
 // ModifySkillGroupOutboundNumbersRequest is the request struct for api ModifySkillGroupOutboundNumbers
 type ModifySkillGroupOutboundNumbersRequest struct {
 	*requests.RpcRequest
+	OperationType         requests.Integer `position:"Query" name:"OperationType"`
 	InstanceId            string           `position:"Query" name:"InstanceId"`
 	OutboundPhoneNumberId *[]string        `position:"Query" name:"OutboundPhoneNumberId"  type:"Repeated"`
 	SkillGroupId          string           `position:"Query" name:"SkillGroupId"`
-	OperationType         requests.Integer `position:"Query" name:"OperationType"`
 }
 
 // ModifySkillGroupOutboundNumbersResponse is the response struct for api ModifySkillGroupOutboundNumbers

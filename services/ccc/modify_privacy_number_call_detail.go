@@ -77,8 +77,8 @@ func (client *Client) ModifyPrivacyNumberCallDetailWithCallback(request *ModifyP
 type ModifyPrivacyNumberCallDetailRequest struct {
 	*requests.RpcRequest
 	CallId     string `position:"Query" name:"CallId"`
-	InstanceId string `position:"Query" name:"InstanceId"`
 	ContactId  string `position:"Query" name:"ContactId"`
+	InstanceId string `position:"Query" name:"InstanceId"`
 }
 
 // ModifyPrivacyNumberCallDetailResponse is the response struct for api ModifyPrivacyNumberCallDetail

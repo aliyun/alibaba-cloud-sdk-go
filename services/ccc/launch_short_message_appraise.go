@@ -76,10 +76,10 @@ func (client *Client) LaunchShortMessageAppraiseWithCallback(request *LaunchShor
 // LaunchShortMessageAppraiseRequest is the request struct for api LaunchShortMessageAppraise
 type LaunchShortMessageAppraiseRequest struct {
 	*requests.RpcRequest
-	Acid         string           `position:"Query" name:"Acid"`
-	InstanceId   string           `position:"Query" name:"InstanceId"`
 	ContactType  requests.Integer `position:"Query" name:"ContactType"`
 	PhoneNumbers string           `position:"Query" name:"PhoneNumbers"`
+	Acid         string           `position:"Query" name:"Acid"`
+	InstanceId   string           `position:"Query" name:"InstanceId"`
 	SkillGroupId string           `position:"Query" name:"SkillGroupId"`
 }
 

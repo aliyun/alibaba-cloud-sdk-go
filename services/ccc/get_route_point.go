@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// CancelJobs invokes the ccc.CancelJobs API synchronously
-// api document: https://help.aliyun.com/api/ccc/canceljobs.html
-func (client *Client) CancelJobs(request *CancelJobsRequest) (response *CancelJobsResponse, err error) {
-	response = CreateCancelJobsResponse()
+// GetRoutePoint invokes the ccc.GetRoutePoint API synchronously
+// api document: https://help.aliyun.com/api/ccc/getroutepoint.html
+func (client *Client) GetRoutePoint(request *GetRoutePointRequest) (response *GetRoutePointResponse, err error) {
+	response = CreateGetRoutePointResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// CancelJobsWithChan invokes the ccc.CancelJobs API asynchronously
-// api document: https://help.aliyun.com/api/ccc/canceljobs.html
+// GetRoutePointWithChan invokes the ccc.GetRoutePoint API asynchronously
+// api document: https://help.aliyun.com/api/ccc/getroutepoint.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) CancelJobsWithChan(request *CancelJobsRequest) (<-chan *CancelJobsResponse, <-chan error) {
-	responseChan := make(chan *CancelJobsResponse, 1)
+func (client *Client) GetRoutePointWithChan(request *GetRoutePointRequest) (<-chan *GetRoutePointResponse, <-chan error) {
+	responseChan := make(chan *GetRoutePointResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.CancelJobs(request)
+		response, err := client.GetRoutePoint(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) CancelJobsWithChan(request *CancelJobsRequest) (<-chan *Ca
 	return responseChan, errChan
 }
 
-// CancelJobsWithCallback invokes the ccc.CancelJobs API asynchronously
-// api document: https://help.aliyun.com/api/ccc/canceljobs.html
+// GetRoutePointWithCallback invokes the ccc.GetRoutePoint API asynchronously
+// api document: https://help.aliyun.com/api/ccc/getroutepoint.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) CancelJobsWithCallback(request *CancelJobsRequest, callback func(response *CancelJobsResponse, err error)) <-chan int {
+func (client *Client) GetRoutePointWithCallback(request *GetRoutePointRequest, callback func(response *GetRoutePointResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *CancelJobsResponse
+		var response *GetRoutePointResponse
 		var err error
 		defer close(result)
-		response, err = client.CancelJobs(request)
+		response, err = client.GetRoutePoint(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,39 +73,38 @@ func (client *Client) CancelJobsWithCallback(request *CancelJobsRequest, callbac
 	return result
 }
 
-// CancelJobsRequest is the request struct for api CancelJobs
-type CancelJobsRequest struct {
+// GetRoutePointRequest is the request struct for api GetRoutePoint
+type GetRoutePointRequest struct {
 	*requests.RpcRequest
-	All            requests.Boolean `position:"Query" name:"All"`
-	JobReferenceId *[]string        `position:"Query" name:"JobReferenceId"  type:"Repeated"`
-	GroupId        string           `position:"Query" name:"GroupId"`
-	JobId          *[]string        `position:"Query" name:"JobId"  type:"Repeated"`
-	InstanceId     string           `position:"Query" name:"InstanceId"`
-	ScenarioId     string           `position:"Query" name:"ScenarioId"`
+	ContactFlowId string `position:"Query" name:"ContactFlowId"`
+	InstanceId    string `position:"Query" name:"InstanceId"`
 }
 
-// CancelJobsResponse is the response struct for api CancelJobs
-type CancelJobsResponse struct {
+// GetRoutePointResponse is the response struct for api GetRoutePoint
+type GetRoutePointResponse struct {
 	*responses.BaseResponse
 	RequestId      string `json:"RequestId" xml:"RequestId"`
 	Success        bool   `json:"Success" xml:"Success"`
 	Code           string `json:"Code" xml:"Code"`
 	Message        string `json:"Message" xml:"Message"`
 	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
+	StatusCode     string `json:"StatusCode" xml:"StatusCode"`
+	StatusDesc     string `json:"StatusDesc" xml:"StatusDesc"`
+	RoutePoint     string `json:"RoutePoint" xml:"RoutePoint"`
 }
 
-// CreateCancelJobsRequest creates a request to invoke CancelJobs API
-func CreateCancelJobsRequest() (request *CancelJobsRequest) {
-	request = &CancelJobsRequest{
+// CreateGetRoutePointRequest creates a request to invoke GetRoutePoint API
+func CreateGetRoutePointRequest() (request *GetRoutePointRequest) {
+	request = &GetRoutePointRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2017-07-05", "CancelJobs", "", "")
+	request.InitWithApiInfo("CCC", "2017-07-05", "GetRoutePoint", "", "")
 	return
 }
 
-// CreateCancelJobsResponse creates a response to parse from CancelJobs response
-func CreateCancelJobsResponse() (response *CancelJobsResponse) {
-	response = &CancelJobsResponse{
+// CreateGetRoutePointResponse creates a response to parse from GetRoutePoint response
+func CreateGetRoutePointResponse() (response *GetRoutePointResponse) {
+	response = &GetRoutePointResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

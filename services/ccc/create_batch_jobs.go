@@ -76,14 +76,14 @@ func (client *Client) CreateBatchJobsWithCallback(request *CreateBatchJobsReques
 // CreateBatchJobsRequest is the request struct for api CreateBatchJobs
 type CreateBatchJobsRequest struct {
 	*requests.RpcRequest
+	Description   string           `position:"Query" name:"Description"`
+	JobFilePath   string           `position:"Query" name:"JobFilePath"`
 	CallingNumber *[]string        `position:"Query" name:"CallingNumber"  type:"Repeated"`
 	InstanceId    string           `position:"Query" name:"InstanceId"`
 	Submitted     requests.Boolean `position:"Query" name:"Submitted"`
 	StrategyJson  string           `position:"Query" name:"StrategyJson"`
 	Name          string           `position:"Query" name:"Name"`
-	Description   string           `position:"Query" name:"Description"`
 	ScenarioId    string           `position:"Query" name:"ScenarioId"`
-	JobFilePath   string           `position:"Query" name:"JobFilePath"`
 }
 
 // CreateBatchJobsResponse is the response struct for api CreateBatchJobs

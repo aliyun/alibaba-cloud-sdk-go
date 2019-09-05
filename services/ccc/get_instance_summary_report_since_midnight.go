@@ -76,9 +76,9 @@ func (client *Client) GetInstanceSummaryReportSinceMidnightWithCallback(request 
 // GetInstanceSummaryReportSinceMidnightRequest is the request struct for api GetInstanceSummaryReportSinceMidnight
 type GetInstanceSummaryReportSinceMidnightRequest struct {
 	*requests.RpcRequest
+	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
 	InstanceId string           `position:"Query" name:"InstanceId"`
 	PageSize   requests.Integer `position:"Query" name:"PageSize"`
-	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 // GetInstanceSummaryReportSinceMidnightResponse is the response struct for api GetInstanceSummaryReportSinceMidnight

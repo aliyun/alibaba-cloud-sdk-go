@@ -77,9 +77,9 @@ func (client *Client) PickGlobalOutboundNumbersWithCallback(request *PickGlobalO
 type PickGlobalOutboundNumbersRequest struct {
 	*requests.RpcRequest
 	IsVirtual    requests.Boolean `position:"Query" name:"IsVirtual"`
+	Count        requests.Integer `position:"Query" name:"Count"`
 	InstanceId   string           `position:"Query" name:"InstanceId"`
 	SkillGroupId *[]string        `position:"Query" name:"SkillGroupId"  type:"Repeated"`
-	Count        requests.Integer `position:"Query" name:"Count"`
 	CalleeNumber string           `position:"Query" name:"CalleeNumber"`
 }
 

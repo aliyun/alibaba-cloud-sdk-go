@@ -77,8 +77,8 @@ func (client *Client) ModifyNotificationConfigWithCallback(request *ModifyNotifi
 type ModifyNotificationConfigRequest struct {
 	*requests.RpcRequest
 	Subscriptions *[]ModifyNotificationConfigSubscriptions `position:"Query" name:"Subscriptions"  type:"Repeated"`
-	InstanceId    string                                   `position:"Query" name:"InstanceId"`
 	AccessPoint   string                                   `position:"Query" name:"AccessPoint"`
+	InstanceId    string                                   `position:"Query" name:"InstanceId"`
 	Topic         string                                   `position:"Query" name:"Topic"`
 	ProducerId    string                                   `position:"Query" name:"ProducerId"`
 }

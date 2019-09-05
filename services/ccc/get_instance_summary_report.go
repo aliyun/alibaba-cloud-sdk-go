@@ -76,11 +76,11 @@ func (client *Client) GetInstanceSummaryReportWithCallback(request *GetInstanceS
 // GetInstanceSummaryReportRequest is the request struct for api GetInstanceSummaryReport
 type GetInstanceSummaryReportRequest struct {
 	*requests.RpcRequest
-	InstanceId string           `position:"Query" name:"InstanceId"`
-	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 	EndTime    string           `position:"Query" name:"EndTime"`
 	StartTime  string           `position:"Query" name:"StartTime"`
 	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
+	InstanceId string           `position:"Query" name:"InstanceId"`
+	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 }
 
 // GetInstanceSummaryReportResponse is the response struct for api GetInstanceSummaryReport

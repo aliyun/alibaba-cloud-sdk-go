@@ -76,12 +76,12 @@ func (client *Client) ListRecentCallRecordsWithCallback(request *ListRecentCallR
 // ListRecentCallRecordsRequest is the request struct for api ListRecentCallRecords
 type ListRecentCallRecordsRequest struct {
 	*requests.RpcRequest
-	InstanceId string           `position:"Query" name:"InstanceId"`
 	Criteria   string           `position:"Query" name:"Criteria"`
-	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 	StartTime  requests.Integer `position:"Query" name:"StartTime"`
 	StopTime   requests.Integer `position:"Query" name:"StopTime"`
 	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
+	InstanceId string           `position:"Query" name:"InstanceId"`
+	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 }
 
 // ListRecentCallRecordsResponse is the response struct for api ListRecentCallRecords

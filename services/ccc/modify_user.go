@@ -77,13 +77,13 @@ func (client *Client) ModifyUserWithCallback(request *ModifyUserRequest, callbac
 type ModifyUserRequest struct {
 	*requests.RpcRequest
 	PrivateOutboundNumberId string    `position:"Query" name:"PrivateOutboundNumberId"`
+	RoleId                  *[]string `position:"Query" name:"RoleId"  type:"Repeated"`
+	UserId                  string    `position:"Query" name:"UserId"`
 	SkillLevel              *[]string `position:"Query" name:"SkillLevel"  type:"Repeated"`
 	InstanceId              string    `position:"Query" name:"InstanceId"`
 	Phone                   string    `position:"Query" name:"Phone"`
-	RoleId                  *[]string `position:"Query" name:"RoleId"  type:"Repeated"`
 	DisplayName             string    `position:"Query" name:"DisplayName"`
 	SkillGroupId            *[]string `position:"Query" name:"SkillGroupId"  type:"Repeated"`
-	UserId                  string    `position:"Query" name:"UserId"`
 	Email                   string    `position:"Query" name:"Email"`
 }
 

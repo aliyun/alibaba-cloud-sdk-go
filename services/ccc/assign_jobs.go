@@ -76,12 +76,12 @@ func (client *Client) AssignJobsWithCallback(request *AssignJobsRequest, callbac
 // AssignJobsRequest is the request struct for api AssignJobs
 type AssignJobsRequest struct {
 	*requests.RpcRequest
+	GroupId       string    `position:"Query" name:"GroupId"`
+	JobsJson      *[]string `position:"Query" name:"JobsJson"  type:"Repeated"`
 	CallingNumber *[]string `position:"Query" name:"CallingNumber"  type:"Repeated"`
 	InstanceId    string    `position:"Query" name:"InstanceId"`
-	GroupId       string    `position:"Query" name:"GroupId"`
 	StrategyJson  string    `position:"Query" name:"StrategyJson"`
 	ScenarioId    string    `position:"Query" name:"ScenarioId"`
-	JobsJson      *[]string `position:"Query" name:"JobsJson"  type:"Repeated"`
 }
 
 // AssignJobsResponse is the response struct for api AssignJobs

@@ -77,10 +77,10 @@ func (client *Client) CreateScenarioFromTemplateWithCallback(request *CreateScen
 type CreateScenarioFromTemplateRequest struct {
 	*requests.RpcRequest
 	Variables   string `position:"Query" name:"Variables"`
-	InstanceId  string `position:"Query" name:"InstanceId"`
-	Name        string `position:"Query" name:"Name"`
 	Description string `position:"Query" name:"Description"`
 	TemplateId  string `position:"Query" name:"TemplateId"`
+	InstanceId  string `position:"Query" name:"InstanceId"`
+	Name        string `position:"Query" name:"Name"`
 }
 
 // CreateScenarioFromTemplateResponse is the response struct for api CreateScenarioFromTemplate

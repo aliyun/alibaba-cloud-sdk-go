@@ -76,10 +76,10 @@ func (client *Client) ListMediasWithCallback(request *ListMediasRequest, callbac
 // ListMediasRequest is the request struct for api ListMedias
 type ListMediasRequest struct {
 	*requests.RpcRequest
+	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
 	InstanceId string           `position:"Query" name:"InstanceId"`
 	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 	NamePrefix string           `position:"Query" name:"NamePrefix"`
-	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 // ListMediasResponse is the response struct for api ListMedias

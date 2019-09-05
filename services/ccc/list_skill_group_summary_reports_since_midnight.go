@@ -76,10 +76,10 @@ func (client *Client) ListSkillGroupSummaryReportsSinceMidnightWithCallback(requ
 // ListSkillGroupSummaryReportsSinceMidnightRequest is the request struct for api ListSkillGroupSummaryReportsSinceMidnight
 type ListSkillGroupSummaryReportsSinceMidnightRequest struct {
 	*requests.RpcRequest
+	PageNumber  requests.Integer `position:"Query" name:"PageNumber"`
 	InstanceId  string           `position:"Query" name:"InstanceId"`
 	SkillGroups string           `position:"Query" name:"SkillGroups"`
 	PageSize    requests.Integer `position:"Query" name:"PageSize"`
-	PageNumber  requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 // ListSkillGroupSummaryReportsSinceMidnightResponse is the response struct for api ListSkillGroupSummaryReportsSinceMidnight

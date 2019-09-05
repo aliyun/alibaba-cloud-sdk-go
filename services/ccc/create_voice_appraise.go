@@ -76,10 +76,10 @@ func (client *Client) CreateVoiceAppraiseWithCallback(request *CreateVoiceApprai
 // CreateVoiceAppraiseRequest is the request struct for api CreateVoiceAppraise
 type CreateVoiceAppraiseRequest struct {
 	*requests.RpcRequest
-	InstanceId           string           `position:"Query" name:"InstanceId"`
-	ContactFlowVersionId string           `position:"Query" name:"ContactFlowVersionId"`
 	IsAppraise           requests.Boolean `position:"Query" name:"IsAppraise"`
 	Content              string           `position:"Body" name:"Content"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
+	ContactFlowVersionId string           `position:"Query" name:"ContactFlowVersionId"`
 }
 
 // CreateVoiceAppraiseResponse is the response struct for api CreateVoiceAppraise

@@ -77,10 +77,10 @@ func (client *Client) SuspendJobsWithCallback(request *SuspendJobsRequest, callb
 type SuspendJobsRequest struct {
 	*requests.RpcRequest
 	All            requests.Boolean `position:"Query" name:"All"`
-	JobId          *[]string        `position:"Query" name:"JobId"  type:"Repeated"`
-	InstanceId     string           `position:"Query" name:"InstanceId"`
 	JobReferenceId *[]string        `position:"Query" name:"JobReferenceId"  type:"Repeated"`
 	GroupId        string           `position:"Query" name:"GroupId"`
+	JobId          *[]string        `position:"Query" name:"JobId"  type:"Repeated"`
+	InstanceId     string           `position:"Query" name:"InstanceId"`
 	ScenarioId     string           `position:"Query" name:"ScenarioId"`
 }
 

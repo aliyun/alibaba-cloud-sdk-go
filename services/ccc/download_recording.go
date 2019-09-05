@@ -76,9 +76,9 @@ func (client *Client) DownloadRecordingWithCallback(request *DownloadRecordingRe
 // DownloadRecordingRequest is the request struct for api DownloadRecording
 type DownloadRecordingRequest struct {
 	*requests.RpcRequest
+	Channel    string `position:"Query" name:"Channel"`
 	InstanceId string `position:"Query" name:"InstanceId"`
 	FileName   string `position:"Query" name:"FileName"`
-	Channel    string `position:"Query" name:"Channel"`
 }
 
 // DownloadRecordingResponse is the response struct for api DownloadRecording

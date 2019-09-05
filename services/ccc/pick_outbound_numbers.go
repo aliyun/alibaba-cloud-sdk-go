@@ -76,8 +76,8 @@ func (client *Client) PickOutboundNumbersWithCallback(request *PickOutboundNumbe
 // PickOutboundNumbersRequest is the request struct for api PickOutboundNumbers
 type PickOutboundNumbersRequest struct {
 	*requests.RpcRequest
-	InstanceId      string           `position:"Query" name:"InstanceId"`
 	Count           requests.Integer `position:"Query" name:"Count"`
+	InstanceId      string           `position:"Query" name:"InstanceId"`
 	CandidateNumber *[]string        `position:"Query" name:"CandidateNumber"  type:"Repeated"`
 	CalleeNumber    string           `position:"Query" name:"CalleeNumber"`
 }

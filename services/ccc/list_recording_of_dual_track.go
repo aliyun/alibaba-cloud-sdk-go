@@ -76,15 +76,15 @@ func (client *Client) ListRecordingOfDualTrackWithCallback(request *ListRecordin
 // ListRecordingOfDualTrackRequest is the request struct for api ListRecordingOfDualTrack
 type ListRecordingOfDualTrackRequest struct {
 	*requests.RpcRequest
-	CallingNumber string           `position:"Query" name:"CallingNumber"`
 	AgentId       string           `position:"Query" name:"AgentId"`
+	StartTime     requests.Integer `position:"Query" name:"StartTime"`
+	StopTime      requests.Integer `position:"Query" name:"StopTime"`
+	PageNumber    requests.Integer `position:"Query" name:"PageNumber"`
+	CallingNumber string           `position:"Query" name:"CallingNumber"`
 	InstanceId    string           `position:"Query" name:"InstanceId"`
 	CalledNumber  string           `position:"Query" name:"CalledNumber"`
 	PageSize      requests.Integer `position:"Query" name:"PageSize"`
-	StartTime     requests.Integer `position:"Query" name:"StartTime"`
-	StopTime      requests.Integer `position:"Query" name:"StopTime"`
 	ConnectId     string           `position:"Query" name:"ConnectId"`
-	PageNumber    requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 // ListRecordingOfDualTrackResponse is the response struct for api ListRecordingOfDualTrack

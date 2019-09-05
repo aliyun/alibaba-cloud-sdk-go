@@ -77,11 +77,11 @@ func (client *Client) CreateContactFlowWithCallback(request *CreateContactFlowRe
 type CreateContactFlowRequest struct {
 	*requests.RpcRequest
 	Canvas      string `position:"Body" name:"Canvas"`
-	InstanceId  string `position:"Query" name:"InstanceId"`
-	Name        string `position:"Query" name:"Name"`
 	Description string `position:"Query" name:"Description"`
 	Type        string `position:"Query" name:"Type"`
 	Content     string `position:"Body" name:"Content"`
+	InstanceId  string `position:"Query" name:"InstanceId"`
+	Name        string `position:"Query" name:"Name"`
 }
 
 // CreateContactFlowResponse is the response struct for api CreateContactFlow

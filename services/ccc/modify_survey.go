@@ -76,17 +76,17 @@ func (client *Client) ModifySurveyWithCallback(request *ModifySurveyRequest, cal
 // ModifySurveyRequest is the request struct for api ModifySurvey
 type ModifySurveyRequest struct {
 	*requests.RpcRequest
-	SurveyId                string           `position:"Query" name:"SurveyId"`
-	InstanceId              string           `position:"Query" name:"InstanceId"`
 	Role                    string           `position:"Query" name:"Role"`
-	Round                   requests.Integer `position:"Query" name:"Round"`
-	FlowJson                string           `position:"Query" name:"FlowJson"`
-	Name                    string           `position:"Query" name:"Name"`
-	GlobalQuestions         string           `position:"Query" name:"GlobalQuestions"`
 	Description             string           `position:"Query" name:"Description"`
+	FlowJson                string           `position:"Query" name:"FlowJson"`
+	GlobalQuestions         string           `position:"Query" name:"GlobalQuestions"`
 	Corpora                 string           `position:"Query" name:"Corpora"`
-	SpeechOptimizationParam string           `position:"Query" name:"SpeechOptimizationParam"`
 	ScenarioId              string           `position:"Query" name:"ScenarioId"`
+	SurveyId                string           `position:"Query" name:"SurveyId"`
+	SpeechOptimizationParam string           `position:"Query" name:"SpeechOptimizationParam"`
+	InstanceId              string           `position:"Query" name:"InstanceId"`
+	Round                   requests.Integer `position:"Query" name:"Round"`
+	Name                    string           `position:"Query" name:"Name"`
 	FlowId                  string           `position:"Query" name:"FlowId"`
 }
 

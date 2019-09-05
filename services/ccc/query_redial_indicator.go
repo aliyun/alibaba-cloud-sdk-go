@@ -76,9 +76,9 @@ func (client *Client) QueryRedialIndicatorWithCallback(request *QueryRedialIndic
 // QueryRedialIndicatorRequest is the request struct for api QueryRedialIndicator
 type QueryRedialIndicatorRequest struct {
 	*requests.RpcRequest
-	InstanceId   string           `position:"Query" name:"InstanceId"`
 	ContactId    string           `position:"Query" name:"ContactId"`
 	MockResponse requests.Boolean `position:"Query" name:"MockResponse"`
+	InstanceId   string           `position:"Query" name:"InstanceId"`
 }
 
 // QueryRedialIndicatorResponse is the response struct for api QueryRedialIndicator

@@ -77,11 +77,11 @@ func (client *Client) GenerateAgentStatisticReportWithCallback(request *Generate
 type GenerateAgentStatisticReportRequest struct {
 	*requests.RpcRequest
 	AgentId    string           `position:"Query" name:"AgentId"`
+	StartDate  string           `position:"Query" name:"StartDate"`
+	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
 	InstanceId string           `position:"Query" name:"InstanceId"`
 	EndDate    string           `position:"Query" name:"EndDate"`
 	PageSize   requests.Integer `position:"Query" name:"PageSize"`
-	StartDate  string           `position:"Query" name:"StartDate"`
-	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 // GenerateAgentStatisticReportResponse is the response struct for api GenerateAgentStatisticReport

@@ -76,21 +76,21 @@ func (client *Client) CreateFaultWithCallback(request *CreateFaultRequest, callb
 // CreateFaultRequest is the request struct for api CreateFault
 type CreateFaultRequest struct {
 	*requests.RpcRequest
-	SpeakerList            string           `position:"Query" name:"SpeakerList"`
-	AgentId                requests.Integer `position:"Query" name:"AgentId"`
 	AgentOssFileName       string           `position:"Query" name:"AgentOssFileName"`
 	Description            string           `position:"Query" name:"Description"`
-	EndTime                requests.Integer `position:"Query" name:"EndTime"`
 	OperatingSystemVersion string           `position:"Query" name:"OperatingSystemVersion"`
 	StartTime              requests.Integer `position:"Query" name:"StartTime"`
 	MicrophoneList         string           `position:"Query" name:"MicrophoneList"`
-	SpeakerEquipment       string           `position:"Query" name:"SpeakerEquipment"`
-	ServicePort            string           `position:"Query" name:"ServicePort"`
 	ClientPort             string           `position:"Query" name:"ClientPort"`
-	ServiceIp              string           `position:"Query" name:"ServiceIp"`
-	InstanceId             string           `position:"Query" name:"InstanceId"`
 	CustomFilePath         string           `position:"Query" name:"CustomFilePath"`
 	ClientIp               string           `position:"Query" name:"ClientIp"`
+	SpeakerList            string           `position:"Query" name:"SpeakerList"`
+	AgentId                requests.Integer `position:"Query" name:"AgentId"`
+	EndTime                requests.Integer `position:"Query" name:"EndTime"`
+	SpeakerEquipment       string           `position:"Query" name:"SpeakerEquipment"`
+	ServicePort            string           `position:"Query" name:"ServicePort"`
+	ServiceIp              string           `position:"Query" name:"ServiceIp"`
+	InstanceId             string           `position:"Query" name:"InstanceId"`
 	AgentFilePath          string           `position:"Query" name:"AgentFilePath"`
 	ConnectId              string           `position:"Query" name:"ConnectId"`
 	CustomOssFileName      string           `position:"Query" name:"CustomOssFileName"`

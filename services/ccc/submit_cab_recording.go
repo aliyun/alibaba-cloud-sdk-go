@@ -76,11 +76,11 @@ func (client *Client) SubmitCabRecordingWithCallback(request *SubmitCabRecording
 // SubmitCabRecordingRequest is the request struct for api SubmitCabRecording
 type SubmitCabRecordingRequest struct {
 	*requests.RpcRequest
+	MergedRecording   string           `position:"Query" name:"MergedRecording"`
+	ResourceRecording string           `position:"Query" name:"ResourceRecording"`
 	InstanceId        string           `position:"Query" name:"InstanceId"`
 	InstanceOwnerId   requests.Integer `position:"Query" name:"InstanceOwnerId"`
-	MergedRecording   string           `position:"Query" name:"MergedRecording"`
 	TaskId            string           `position:"Query" name:"TaskId"`
-	ResourceRecording string           `position:"Query" name:"ResourceRecording"`
 }
 
 // SubmitCabRecordingResponse is the response struct for api SubmitCabRecording

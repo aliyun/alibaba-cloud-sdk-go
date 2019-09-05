@@ -77,13 +77,13 @@ func (client *Client) ListPrivacyNumberCallDetailsWithCallback(request *ListPriv
 type ListPrivacyNumberCallDetailsRequest struct {
 	*requests.RpcRequest
 	AgentId    string           `position:"Query" name:"AgentId"`
-	InstanceId string           `position:"Query" name:"InstanceId"`
 	ContactId  string           `position:"Query" name:"ContactId"`
-	AgentName  string           `position:"Query" name:"AgentName"`
-	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 	EndTime    requests.Integer `position:"Query" name:"EndTime"`
 	StartTime  requests.Integer `position:"Query" name:"StartTime"`
 	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
+	InstanceId string           `position:"Query" name:"InstanceId"`
+	AgentName  string           `position:"Query" name:"AgentName"`
+	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 }
 
 // ListPrivacyNumberCallDetailsResponse is the response struct for api ListPrivacyNumberCallDetails

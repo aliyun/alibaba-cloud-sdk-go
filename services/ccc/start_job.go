@@ -76,10 +76,10 @@ func (client *Client) StartJobWithCallback(request *StartJobRequest, callback fu
 // StartJobRequest is the request struct for api StartJob
 type StartJobRequest struct {
 	*requests.RpcRequest
+	GroupId              string           `position:"Query" name:"GroupId"`
 	JobJson              string           `position:"Query" name:"JobJson"`
 	CallingNumber        *[]string        `position:"Query" name:"CallingNumber"  type:"Repeated"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
-	GroupId              string           `position:"Query" name:"GroupId"`
 	SelfHostedCallCenter requests.Boolean `position:"Query" name:"SelfHostedCallCenter"`
 	ScenarioId           string           `position:"Query" name:"ScenarioId"`
 }

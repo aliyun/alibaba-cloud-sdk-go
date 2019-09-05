@@ -76,10 +76,10 @@ func (client *Client) GetConversationDetailByContactIdWithCallback(request *GetC
 // GetConversationDetailByContactIdRequest is the request struct for api GetConversationDetailByContactId
 type GetConversationDetailByContactIdRequest struct {
 	*requests.RpcRequest
-	InstanceId string           `position:"Query" name:"InstanceId"`
 	ContactId  string           `position:"Query" name:"ContactId"`
-	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
+	InstanceId string           `position:"Query" name:"InstanceId"`
+	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 }
 
 // GetConversationDetailByContactIdResponse is the response struct for api GetConversationDetailByContactId

@@ -76,10 +76,10 @@ func (client *Client) ListAgentDevicesWithCallback(request *ListAgentDevicesRequ
 // ListAgentDevicesRequest is the request struct for api ListAgentDevices
 type ListAgentDevicesRequest struct {
 	*requests.RpcRequest
-	InstanceId string           `position:"Query" name:"InstanceId"`
 	RamIds     string           `position:"Query" name:"RamIds"`
 	StartTime  requests.Integer `position:"Query" name:"StartTime"`
 	StopTime   requests.Integer `position:"Query" name:"StopTime"`
+	InstanceId string           `position:"Query" name:"InstanceId"`
 }
 
 // ListAgentDevicesResponse is the response struct for api ListAgentDevices

@@ -77,13 +77,13 @@ func (client *Client) ListAgentSummaryReportsByIntervalWithCallback(request *Lis
 type ListAgentSummaryReportsByIntervalRequest struct {
 	*requests.RpcRequest
 	AgentIds     string           `position:"Query" name:"AgentIds"`
+	EndTime      string           `position:"Query" name:"EndTime"`
+	StartTime    string           `position:"Query" name:"StartTime"`
+	PageNumber   requests.Integer `position:"Query" name:"PageNumber"`
 	InstanceId   string           `position:"Query" name:"InstanceId"`
 	SkillGroupId string           `position:"Query" name:"SkillGroupId"`
 	PageSize     requests.Integer `position:"Query" name:"PageSize"`
-	EndTime      string           `position:"Query" name:"EndTime"`
 	Interval     string           `position:"Query" name:"Interval"`
-	StartTime    string           `position:"Query" name:"StartTime"`
-	PageNumber   requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 // ListAgentSummaryReportsByIntervalResponse is the response struct for api ListAgentSummaryReportsByInterval

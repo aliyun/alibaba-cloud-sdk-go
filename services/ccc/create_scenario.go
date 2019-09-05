@@ -76,12 +76,12 @@ func (client *Client) CreateScenarioWithCallback(request *CreateScenarioRequest,
 // CreateScenarioRequest is the request struct for api CreateScenario
 type CreateScenarioRequest struct {
 	*requests.RpcRequest
-	InstanceId   string    `position:"Query" name:"InstanceId"`
 	SurveysJson  *[]string `position:"Query" name:"SurveysJson"  type:"Repeated"`
-	StrategyJson string    `position:"Query" name:"StrategyJson"`
-	Name         string    `position:"Query" name:"Name"`
 	Description  string    `position:"Query" name:"Description"`
 	Type         string    `position:"Query" name:"Type"`
+	InstanceId   string    `position:"Query" name:"InstanceId"`
+	StrategyJson string    `position:"Query" name:"StrategyJson"`
+	Name         string    `position:"Query" name:"Name"`
 }
 
 // CreateScenarioResponse is the response struct for api CreateScenario

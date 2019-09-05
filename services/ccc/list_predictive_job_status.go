@@ -76,15 +76,15 @@ func (client *Client) ListPredictiveJobStatusWithCallback(request *ListPredictiv
 // ListPredictiveJobStatusRequest is the request struct for api ListPredictiveJobStatus
 type ListPredictiveJobStatusRequest struct {
 	*requests.RpcRequest
-	ContactName   string           `position:"Query" name:"ContactName"`
-	InstanceId    string           `position:"Query" name:"InstanceId"`
 	TimeAlignment string           `position:"Query" name:"TimeAlignment"`
-	JobGroupId    string           `position:"Query" name:"JobGroupId"`
 	PhoneNumber   string           `position:"Query" name:"PhoneNumber"`
-	PageSize      requests.Integer `position:"Query" name:"PageSize"`
 	EndTime       requests.Integer `position:"Query" name:"EndTime"`
 	StartTime     requests.Integer `position:"Query" name:"StartTime"`
 	PageNumber    requests.Integer `position:"Query" name:"PageNumber"`
+	ContactName   string           `position:"Query" name:"ContactName"`
+	InstanceId    string           `position:"Query" name:"InstanceId"`
+	JobGroupId    string           `position:"Query" name:"JobGroupId"`
+	PageSize      requests.Integer `position:"Query" name:"PageSize"`
 }
 
 // ListPredictiveJobStatusResponse is the response struct for api ListPredictiveJobStatus

@@ -76,10 +76,10 @@ func (client *Client) ListUnreachableContactsWithCallback(request *ListUnreachab
 // ListUnreachableContactsRequest is the request struct for api ListUnreachableContacts
 type ListUnreachableContactsRequest struct {
 	*requests.RpcRequest
+	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
 	InstanceId string           `position:"Query" name:"InstanceId"`
 	JobGroupId string           `position:"Query" name:"JobGroupId"`
 	PageSize   requests.Integer `position:"Query" name:"PageSize"`
-	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 // ListUnreachableContactsResponse is the response struct for api ListUnreachableContacts

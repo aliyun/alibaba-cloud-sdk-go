@@ -77,11 +77,11 @@ func (client *Client) GetCallMeasureSummaryReportWithCallback(request *GetCallMe
 type GetCallMeasureSummaryReportRequest struct {
 	*requests.RpcRequest
 	IntervalType string           `position:"Query" name:"IntervalType"`
-	Month        requests.Integer `position:"Query" name:"Month"`
 	Year         requests.Integer `position:"Query" name:"Year"`
+	PageNumber   requests.Integer `position:"Query" name:"PageNumber"`
+	Month        requests.Integer `position:"Query" name:"Month"`
 	PageSize     requests.Integer `position:"Query" name:"PageSize"`
 	Day          requests.Integer `position:"Query" name:"Day"`
-	PageNumber   requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 // GetCallMeasureSummaryReportResponse is the response struct for api GetCallMeasureSummaryReport

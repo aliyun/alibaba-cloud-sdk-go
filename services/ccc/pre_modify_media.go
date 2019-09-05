@@ -76,12 +76,12 @@ func (client *Client) PreModifyMediaWithCallback(request *PreModifyMediaRequest,
 // PreModifyMediaRequest is the request struct for api PreModifyMedia
 type PreModifyMediaRequest struct {
 	*requests.RpcRequest
-	InstanceId  string `position:"Query" name:"InstanceId"`
-	FileName    string `position:"Query" name:"FileName"`
-	Name        string `position:"Query" name:"Name"`
 	Description string `position:"Query" name:"Description"`
 	Type        string `position:"Query" name:"Type"`
 	Content     string `position:"Query" name:"Content"`
+	InstanceId  string `position:"Query" name:"InstanceId"`
+	FileName    string `position:"Query" name:"FileName"`
+	Name        string `position:"Query" name:"Name"`
 }
 
 // PreModifyMediaResponse is the response struct for api PreModifyMedia

@@ -77,10 +77,10 @@ func (client *Client) AddBulkPhoneNumbersWithCallback(request *AddBulkPhoneNumbe
 type AddBulkPhoneNumbersRequest struct {
 	*requests.RpcRequest
 	ContactFlowId string    `position:"Query" name:"ContactFlowId"`
-	InstanceId    string    `position:"Query" name:"InstanceId"`
 	Usage         string    `position:"Query" name:"Usage"`
-	SkillGroupId  *[]string `position:"Query" name:"SkillGroupId"  type:"Repeated"`
 	PhoneNumber   *[]string `position:"Query" name:"PhoneNumber"  type:"Repeated"`
+	InstanceId    string    `position:"Query" name:"InstanceId"`
+	SkillGroupId  *[]string `position:"Query" name:"SkillGroupId"  type:"Repeated"`
 }
 
 // AddBulkPhoneNumbersResponse is the response struct for api AddBulkPhoneNumbers

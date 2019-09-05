@@ -76,9 +76,9 @@ func (client *Client) ModifyAgentDeviceWithCallback(request *ModifyAgentDeviceRe
 // ModifyAgentDeviceRequest is the request struct for api ModifyAgentDevice
 type ModifyAgentDeviceRequest struct {
 	*requests.RpcRequest
+	IsLogin       requests.Integer `position:"Query" name:"IsLogin"`
 	AgentDeviceId requests.Integer `position:"Query" name:"AgentDeviceId"`
 	InstanceId    string           `position:"Query" name:"InstanceId"`
-	IsLogin       requests.Integer `position:"Query" name:"IsLogin"`
 }
 
 // ModifyAgentDeviceResponse is the response struct for api ModifyAgentDevice

@@ -76,16 +76,16 @@ func (client *Client) ListJobStatusWithCallback(request *ListJobStatusRequest, c
 // ListJobStatusRequest is the request struct for api ListJobStatus
 type ListJobStatusRequest struct {
 	*requests.RpcRequest
-	ContactName   string           `position:"Query" name:"ContactName"`
-	InstanceId    string           `position:"Query" name:"InstanceId"`
 	TimeAlignment string           `position:"Query" name:"TimeAlignment"`
 	GroupId       string           `position:"Query" name:"GroupId"`
 	PhoneNumber   string           `position:"Query" name:"PhoneNumber"`
-	PageSize      requests.Integer `position:"Query" name:"PageSize"`
 	EndTime       requests.Integer `position:"Query" name:"EndTime"`
 	StartTime     requests.Integer `position:"Query" name:"StartTime"`
-	ScenarioId    string           `position:"Query" name:"ScenarioId"`
 	PageNumber    requests.Integer `position:"Query" name:"PageNumber"`
+	ContactName   string           `position:"Query" name:"ContactName"`
+	InstanceId    string           `position:"Query" name:"InstanceId"`
+	PageSize      requests.Integer `position:"Query" name:"PageSize"`
+	ScenarioId    string           `position:"Query" name:"ScenarioId"`
 }
 
 // ListJobStatusResponse is the response struct for api ListJobStatus

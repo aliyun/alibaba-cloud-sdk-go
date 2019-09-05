@@ -76,11 +76,11 @@ func (client *Client) DialExWithCallback(request *DialExRequest, callback func(r
 // DialExRequest is the request struct for api DialEx
 type DialExRequest struct {
 	*requests.RpcRequest
+	Callee     string           `position:"Query" name:"Callee"`
 	RoutPoint  string           `position:"Query" name:"RoutPoint"`
 	Caller     string           `position:"Query" name:"Caller"`
 	InstanceId string           `position:"Query" name:"InstanceId"`
 	Provider   string           `position:"Query" name:"Provider"`
-	Callee     string           `position:"Query" name:"Callee"`
 	AnswerMode requests.Integer `position:"Query" name:"AnswerMode"`
 }
 

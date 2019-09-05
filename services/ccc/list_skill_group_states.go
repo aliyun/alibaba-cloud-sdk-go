@@ -76,10 +76,10 @@ func (client *Client) ListSkillGroupStatesWithCallback(request *ListSkillGroupSt
 // ListSkillGroupStatesRequest is the request struct for api ListSkillGroupStates
 type ListSkillGroupStatesRequest struct {
 	*requests.RpcRequest
+	PageNumber    requests.Integer `position:"Query" name:"PageNumber"`
 	InstanceId    string           `position:"Query" name:"InstanceId"`
 	SkillGroupIds string           `position:"Query" name:"SkillGroupIds"`
 	PageSize      requests.Integer `position:"Query" name:"PageSize"`
-	PageNumber    requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 // ListSkillGroupStatesResponse is the response struct for api ListSkillGroupStates

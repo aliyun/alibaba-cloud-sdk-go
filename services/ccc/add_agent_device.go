@@ -76,10 +76,10 @@ func (client *Client) AddAgentDeviceWithCallback(request *AddAgentDeviceRequest,
 // AddAgentDeviceRequest is the request struct for api AddAgentDevice
 type AddAgentDeviceRequest struct {
 	*requests.RpcRequest
-	InstanceId     string `position:"Query" name:"InstanceId"`
-	ClientIp       string `position:"Query" name:"ClientIp"`
 	Remark         string `position:"Body" name:"Remark"`
 	ClientPort     string `position:"Query" name:"ClientPort"`
+	InstanceId     string `position:"Query" name:"InstanceId"`
+	ClientIp       string `position:"Query" name:"ClientIp"`
 	BrowserVersion string `position:"Body" name:"BrowserVersion"`
 }
 

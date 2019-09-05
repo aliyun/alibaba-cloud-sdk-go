@@ -76,12 +76,12 @@ func (client *Client) GetInstanceSummaryReportByIntervalWithCallback(request *Ge
 // GetInstanceSummaryReportByIntervalRequest is the request struct for api GetInstanceSummaryReportByInterval
 type GetInstanceSummaryReportByIntervalRequest struct {
 	*requests.RpcRequest
-	InstanceId string           `position:"Query" name:"InstanceId"`
-	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 	EndTime    string           `position:"Query" name:"EndTime"`
-	Interval   string           `position:"Query" name:"Interval"`
 	StartTime  string           `position:"Query" name:"StartTime"`
 	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
+	InstanceId string           `position:"Query" name:"InstanceId"`
+	PageSize   requests.Integer `position:"Query" name:"PageSize"`
+	Interval   string           `position:"Query" name:"Interval"`
 }
 
 // GetInstanceSummaryReportByIntervalResponse is the response struct for api GetInstanceSummaryReportByInterval

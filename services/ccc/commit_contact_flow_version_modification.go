@@ -77,9 +77,9 @@ func (client *Client) CommitContactFlowVersionModificationWithCallback(request *
 type CommitContactFlowVersionModificationRequest struct {
 	*requests.RpcRequest
 	Canvas               string `position:"Body" name:"Canvas"`
+	Content              string `position:"Body" name:"Content"`
 	InstanceId           string `position:"Query" name:"InstanceId"`
 	ContactFlowVersionId string `position:"Query" name:"ContactFlowVersionId"`
-	Content              string `position:"Body" name:"Content"`
 }
 
 // CommitContactFlowVersionModificationResponse is the response struct for api CommitContactFlowVersionModification

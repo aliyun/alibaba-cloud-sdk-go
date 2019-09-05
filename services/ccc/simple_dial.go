@@ -76,10 +76,10 @@ func (client *Client) SimpleDialWithCallback(request *SimpleDialRequest, callbac
 // SimpleDialRequest is the request struct for api SimpleDial
 type SimpleDialRequest struct {
 	*requests.RpcRequest
+	Callee         string `position:"Query" name:"Callee"`
 	Caller         string `position:"Query" name:"Caller"`
 	InstanceId     string `position:"Query" name:"InstanceId"`
 	ContractFlowId string `position:"Query" name:"ContractFlowId"`
-	Callee         string `position:"Query" name:"Callee"`
 }
 
 // SimpleDialResponse is the response struct for api SimpleDial

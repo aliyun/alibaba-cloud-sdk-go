@@ -76,15 +76,15 @@ func (client *Client) ModifyMediaWithCallback(request *ModifyMediaRequest, callb
 // ModifyMediaRequest is the request struct for api ModifyMedia
 type ModifyMediaRequest struct {
 	*requests.RpcRequest
-	InstanceId   string `position:"Query" name:"InstanceId"`
-	FileName     string `position:"Query" name:"FileName"`
-	Name         string `position:"Query" name:"Name"`
 	Description  string `position:"Query" name:"Description"`
 	OssFilePath  string `position:"Query" name:"OssFilePath"`
 	UploadResult string `position:"Query" name:"UploadResult"`
 	Type         string `position:"Query" name:"Type"`
 	Content      string `position:"Query" name:"Content"`
 	OssFileName  string `position:"Query" name:"OssFileName"`
+	InstanceId   string `position:"Query" name:"InstanceId"`
+	FileName     string `position:"Query" name:"FileName"`
+	Name         string `position:"Query" name:"Name"`
 }
 
 // ModifyMediaResponse is the response struct for api ModifyMedia

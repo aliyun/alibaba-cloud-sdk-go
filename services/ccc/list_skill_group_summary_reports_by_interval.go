@@ -76,13 +76,13 @@ func (client *Client) ListSkillGroupSummaryReportsByIntervalWithCallback(request
 // ListSkillGroupSummaryReportsByIntervalRequest is the request struct for api ListSkillGroupSummaryReportsByInterval
 type ListSkillGroupSummaryReportsByIntervalRequest struct {
 	*requests.RpcRequest
+	EndTime       string           `position:"Query" name:"EndTime"`
+	StartTime     string           `position:"Query" name:"StartTime"`
+	PageNumber    requests.Integer `position:"Query" name:"PageNumber"`
 	InstanceId    string           `position:"Query" name:"InstanceId"`
 	SkillGroupIds string           `position:"Query" name:"SkillGroupIds"`
 	PageSize      requests.Integer `position:"Query" name:"PageSize"`
-	EndTime       string           `position:"Query" name:"EndTime"`
 	Interval      string           `position:"Query" name:"Interval"`
-	StartTime     string           `position:"Query" name:"StartTime"`
-	PageNumber    requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 // ListSkillGroupSummaryReportsByIntervalResponse is the response struct for api ListSkillGroupSummaryReportsByInterval

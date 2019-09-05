@@ -77,8 +77,8 @@ func (client *Client) GetAgentStateWithCallback(request *GetAgentStateRequest, c
 type GetAgentStateRequest struct {
 	*requests.RpcRequest
 	AgentId    string `position:"Query" name:"AgentId"`
-	InstanceId string `position:"Query" name:"InstanceId"`
 	Dn         string `position:"Query" name:"Dn"`
+	InstanceId string `position:"Query" name:"InstanceId"`
 }
 
 // GetAgentStateResponse is the response struct for api GetAgentState

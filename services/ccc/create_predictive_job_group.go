@@ -76,15 +76,15 @@ func (client *Client) CreatePredictiveJobGroupWithCallback(request *CreatePredic
 // CreatePredictiveJobGroupRequest is the request struct for api CreatePredictiveJobGroup
 type CreatePredictiveJobGroupRequest struct {
 	*requests.RpcRequest
+	Description    string           `position:"Query" name:"Description"`
+	TimingSchedule requests.Boolean `position:"Query" name:"TimingSchedule"`
+	JobsJson       *[]string        `position:"Body" name:"JobsJson"  type:"Repeated"`
+	JobFilePath    string           `position:"Query" name:"JobFilePath"`
 	InstanceId     string           `position:"Query" name:"InstanceId"`
 	IsDraft        requests.Boolean `position:"Query" name:"IsDraft"`
 	SkillGroupId   string           `position:"Query" name:"SkillGroupId"`
 	StrategyJson   string           `position:"Query" name:"StrategyJson"`
 	Name           string           `position:"Query" name:"Name"`
-	Description    string           `position:"Query" name:"Description"`
-	TimingSchedule requests.Boolean `position:"Query" name:"TimingSchedule"`
-	JobsJson       *[]string        `position:"Body" name:"JobsJson"  type:"Repeated"`
-	JobFilePath    string           `position:"Query" name:"JobFilePath"`
 }
 
 // CreatePredictiveJobGroupResponse is the response struct for api CreatePredictiveJobGroup

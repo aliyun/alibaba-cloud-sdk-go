@@ -76,15 +76,15 @@ func (client *Client) CreateMediaWithCallback(request *CreateMediaRequest, callb
 // CreateMediaRequest is the request struct for api CreateMedia
 type CreateMediaRequest struct {
 	*requests.RpcRequest
-	InstanceId   string `position:"Query" name:"InstanceId"`
-	FileName     string `position:"Query" name:"FileName"`
-	Name         string `position:"Query" name:"Name"`
 	Description  string `position:"Query" name:"Description"`
 	OssFilePath  string `position:"Query" name:"OssFilePath"`
 	UploadResult string `position:"Query" name:"UploadResult"`
 	Type         string `position:"Query" name:"Type"`
 	Content      string `position:"Query" name:"Content"`
 	OssFileName  string `position:"Query" name:"OssFileName"`
+	InstanceId   string `position:"Query" name:"InstanceId"`
+	FileName     string `position:"Query" name:"FileName"`
+	Name         string `position:"Query" name:"Name"`
 }
 
 // CreateMediaResponse is the response struct for api CreateMedia

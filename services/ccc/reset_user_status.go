@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// CancelJobs invokes the ccc.CancelJobs API synchronously
-// api document: https://help.aliyun.com/api/ccc/canceljobs.html
-func (client *Client) CancelJobs(request *CancelJobsRequest) (response *CancelJobsResponse, err error) {
-	response = CreateCancelJobsResponse()
+// ResetUserStatus invokes the ccc.ResetUserStatus API synchronously
+// api document: https://help.aliyun.com/api/ccc/resetuserstatus.html
+func (client *Client) ResetUserStatus(request *ResetUserStatusRequest) (response *ResetUserStatusResponse, err error) {
+	response = CreateResetUserStatusResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// CancelJobsWithChan invokes the ccc.CancelJobs API asynchronously
-// api document: https://help.aliyun.com/api/ccc/canceljobs.html
+// ResetUserStatusWithChan invokes the ccc.ResetUserStatus API asynchronously
+// api document: https://help.aliyun.com/api/ccc/resetuserstatus.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) CancelJobsWithChan(request *CancelJobsRequest) (<-chan *CancelJobsResponse, <-chan error) {
-	responseChan := make(chan *CancelJobsResponse, 1)
+func (client *Client) ResetUserStatusWithChan(request *ResetUserStatusRequest) (<-chan *ResetUserStatusResponse, <-chan error) {
+	responseChan := make(chan *ResetUserStatusResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.CancelJobs(request)
+		response, err := client.ResetUserStatus(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) CancelJobsWithChan(request *CancelJobsRequest) (<-chan *Ca
 	return responseChan, errChan
 }
 
-// CancelJobsWithCallback invokes the ccc.CancelJobs API asynchronously
-// api document: https://help.aliyun.com/api/ccc/canceljobs.html
+// ResetUserStatusWithCallback invokes the ccc.ResetUserStatus API asynchronously
+// api document: https://help.aliyun.com/api/ccc/resetuserstatus.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) CancelJobsWithCallback(request *CancelJobsRequest, callback func(response *CancelJobsResponse, err error)) <-chan int {
+func (client *Client) ResetUserStatusWithCallback(request *ResetUserStatusRequest, callback func(response *ResetUserStatusResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *CancelJobsResponse
+		var response *ResetUserStatusResponse
 		var err error
 		defer close(result)
-		response, err = client.CancelJobs(request)
+		response, err = client.ResetUserStatus(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,19 +73,14 @@ func (client *Client) CancelJobsWithCallback(request *CancelJobsRequest, callbac
 	return result
 }
 
-// CancelJobsRequest is the request struct for api CancelJobs
-type CancelJobsRequest struct {
+// ResetUserStatusRequest is the request struct for api ResetUserStatus
+type ResetUserStatusRequest struct {
 	*requests.RpcRequest
-	All            requests.Boolean `position:"Query" name:"All"`
-	JobReferenceId *[]string        `position:"Query" name:"JobReferenceId"  type:"Repeated"`
-	GroupId        string           `position:"Query" name:"GroupId"`
-	JobId          *[]string        `position:"Query" name:"JobId"  type:"Repeated"`
-	InstanceId     string           `position:"Query" name:"InstanceId"`
-	ScenarioId     string           `position:"Query" name:"ScenarioId"`
+	InstanceId string `position:"Query" name:"InstanceId"`
 }
 
-// CancelJobsResponse is the response struct for api CancelJobs
-type CancelJobsResponse struct {
+// ResetUserStatusResponse is the response struct for api ResetUserStatus
+type ResetUserStatusResponse struct {
 	*responses.BaseResponse
 	RequestId      string `json:"RequestId" xml:"RequestId"`
 	Success        bool   `json:"Success" xml:"Success"`
@@ -94,18 +89,18 @@ type CancelJobsResponse struct {
 	HttpStatusCode int    `json:"HttpStatusCode" xml:"HttpStatusCode"`
 }
 
-// CreateCancelJobsRequest creates a request to invoke CancelJobs API
-func CreateCancelJobsRequest() (request *CancelJobsRequest) {
-	request = &CancelJobsRequest{
+// CreateResetUserStatusRequest creates a request to invoke ResetUserStatus API
+func CreateResetUserStatusRequest() (request *ResetUserStatusRequest) {
+	request = &ResetUserStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("CCC", "2017-07-05", "CancelJobs", "", "")
+	request.InitWithApiInfo("CCC", "2017-07-05", "ResetUserStatus", "", "")
 	return
 }
 
-// CreateCancelJobsResponse creates a response to parse from CancelJobs response
-func CreateCancelJobsResponse() (response *CancelJobsResponse) {
-	response = &CancelJobsResponse{
+// CreateResetUserStatusResponse creates a response to parse from ResetUserStatus response
+func CreateResetUserStatusResponse() (response *ResetUserStatusResponse) {
+	response = &ResetUserStatusResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

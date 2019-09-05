@@ -77,10 +77,10 @@ func (client *Client) PickOutboundNumbersByTagsWithCallback(request *PickOutboun
 type PickOutboundNumbersByTagsRequest struct {
 	*requests.RpcRequest
 	PrioritizedCallerArea *[]string        `position:"Query" name:"PrioritizedCallerArea"  type:"Repeated"`
+	Count                 requests.Integer `position:"Query" name:"Count"`
 	InstanceId            string           `position:"Query" name:"InstanceId"`
 	ServiceTag            *[]string        `position:"Query" name:"ServiceTag"  type:"Repeated"`
 	SkillGroupId          *[]string        `position:"Query" name:"SkillGroupId"  type:"Repeated"`
-	Count                 requests.Integer `position:"Query" name:"Count"`
 	CalleeNumber          string           `position:"Query" name:"CalleeNumber"`
 }
 

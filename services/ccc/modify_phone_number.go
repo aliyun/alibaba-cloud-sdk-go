@@ -77,9 +77,9 @@ func (client *Client) ModifyPhoneNumberWithCallback(request *ModifyPhoneNumberRe
 type ModifyPhoneNumberRequest struct {
 	*requests.RpcRequest
 	ContactFlowId string    `position:"Query" name:"ContactFlowId"`
+	Usage         string    `position:"Query" name:"Usage"`
 	InstanceId    string    `position:"Query" name:"InstanceId"`
 	PhoneNumberId string    `position:"Query" name:"PhoneNumberId"`
-	Usage         string    `position:"Query" name:"Usage"`
 	SkillGroupId  *[]string `position:"Query" name:"SkillGroupId"  type:"Repeated"`
 }
 

@@ -76,11 +76,11 @@ func (client *Client) ListAgentEventsWithCallback(request *ListAgentEventsReques
 // ListAgentEventsRequest is the request struct for api ListAgentEvents
 type ListAgentEventsRequest struct {
 	*requests.RpcRequest
-	InstanceId string           `position:"Query" name:"InstanceId"`
 	StartTime  requests.Integer `position:"Query" name:"StartTime"`
 	StopTime   requests.Integer `position:"Query" name:"StopTime"`
-	Event      *[]string        `position:"Query" name:"Event"  type:"Repeated"`
 	RamId      *[]string        `position:"Query" name:"RamId"  type:"Repeated"`
+	InstanceId string           `position:"Query" name:"InstanceId"`
+	Event      *[]string        `position:"Query" name:"Event"  type:"Repeated"`
 }
 
 // ListAgentEventsResponse is the response struct for api ListAgentEvents

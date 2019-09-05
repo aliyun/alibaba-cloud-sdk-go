@@ -77,9 +77,9 @@ func (client *Client) ModifyScenarioWithCallback(request *ModifyScenarioRequest,
 type ModifyScenarioRequest struct {
 	*requests.RpcRequest
 	Variables   string `position:"Query" name:"Variables"`
+	Description string `position:"Query" name:"Description"`
 	InstanceId  string `position:"Query" name:"InstanceId"`
 	Name        string `position:"Query" name:"Name"`
-	Description string `position:"Query" name:"Description"`
 	ScenarioId  string `position:"Query" name:"ScenarioId"`
 }
 

@@ -76,15 +76,15 @@ func (client *Client) CreateSurveyWithCallback(request *CreateSurveyRequest, cal
 // CreateSurveyRequest is the request struct for api CreateSurvey
 type CreateSurveyRequest struct {
 	*requests.RpcRequest
-	InstanceId              string           `position:"Query" name:"InstanceId"`
 	Role                    string           `position:"Query" name:"Role"`
+	Description             string           `position:"Query" name:"Description"`
+	SpeechOptimizationParam string           `position:"Query" name:"SpeechOptimizationParam"`
+	InstanceId              string           `position:"Query" name:"InstanceId"`
 	Round                   requests.Integer `position:"Query" name:"Round"`
 	FlowJson                string           `position:"Query" name:"FlowJson"`
 	Name                    string           `position:"Query" name:"Name"`
 	GlobalQuestions         string           `position:"Query" name:"GlobalQuestions"`
-	Description             string           `position:"Query" name:"Description"`
 	Corpora                 string           `position:"Query" name:"Corpora"`
-	SpeechOptimizationParam string           `position:"Query" name:"SpeechOptimizationParam"`
 	ScenarioId              string           `position:"Query" name:"ScenarioId"`
 }
 

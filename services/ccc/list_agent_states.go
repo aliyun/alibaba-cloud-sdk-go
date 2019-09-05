@@ -77,11 +77,11 @@ func (client *Client) ListAgentStatesWithCallback(request *ListAgentStatesReques
 type ListAgentStatesRequest struct {
 	*requests.RpcRequest
 	AgentIds     string           `position:"Query" name:"AgentIds"`
+	PageNumber   requests.Integer `position:"Query" name:"PageNumber"`
 	InstanceId   string           `position:"Query" name:"InstanceId"`
 	SkillGroupId string           `position:"Query" name:"SkillGroupId"`
 	PageSize     requests.Integer `position:"Query" name:"PageSize"`
 	State        string           `position:"Query" name:"State"`
-	PageNumber   requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 // ListAgentStatesResponse is the response struct for api ListAgentStates

@@ -76,9 +76,9 @@ func (client *Client) RemoveUsersFromSkillGroupWithCallback(request *RemoveUsers
 // RemoveUsersFromSkillGroupRequest is the request struct for api RemoveUsersFromSkillGroup
 type RemoveUsersFromSkillGroupRequest struct {
 	*requests.RpcRequest
+	UserId       *[]string `position:"Query" name:"UserId"  type:"Repeated"`
 	InstanceId   string    `position:"Query" name:"InstanceId"`
 	SkillGroupId string    `position:"Query" name:"SkillGroupId"`
-	UserId       *[]string `position:"Query" name:"UserId"  type:"Repeated"`
 }
 
 // RemoveUsersFromSkillGroupResponse is the response struct for api RemoveUsersFromSkillGroup

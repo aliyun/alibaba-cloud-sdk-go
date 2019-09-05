@@ -76,10 +76,10 @@ func (client *Client) CreatePredictiveJobsWithCallback(request *CreatePredictive
 // CreatePredictiveJobsRequest is the request struct for api CreatePredictiveJobs
 type CreatePredictiveJobsRequest struct {
 	*requests.RpcRequest
+	JobsJson     *[]string `position:"Query" name:"JobsJson"  type:"Repeated"`
 	InstanceId   string    `position:"Query" name:"InstanceId"`
 	SkillGroupId string    `position:"Query" name:"SkillGroupId"`
 	StrategyJson string    `position:"Query" name:"StrategyJson"`
-	JobsJson     *[]string `position:"Query" name:"JobsJson"  type:"Repeated"`
 }
 
 // CreatePredictiveJobsResponse is the response struct for api CreatePredictiveJobs

@@ -26,6 +26,7 @@ type Data struct {
 	Caller        string                     `json:"Caller" xml:"Caller"`
 	CallType      string                     `json:"CallType" xml:"CallType"`
 	AgentName     string                     `json:"AgentName" xml:"AgentName"`
+	ReleaseReason string                     `json:"ReleaseReason" xml:"ReleaseReason"`
 	StatusCode    string                     `json:"StatusCode" xml:"StatusCode"`
 	StartTime     string                     `json:"StartTime" xml:"StartTime"`
 	AgentId       string                     `json:"AgentId" xml:"AgentId"`
@@ -35,6 +36,7 @@ type Data struct {
 	InstanceId    string                     `json:"InstanceId" xml:"InstanceId"`
 	LoginName     string                     `json:"LoginName" xml:"LoginName"`
 	TotalCount    int                        `json:"TotalCount" xml:"TotalCount"`
+	ReleaseAgent  string                     `json:"ReleaseAgent" xml:"ReleaseAgent"`
 	Dn            string                     `json:"Dn" xml:"Dn"`
 	PageNumber    int                        `json:"PageNumber" xml:"PageNumber"`
 	List          ListInListSkillGroupStates `json:"List" xml:"List"`

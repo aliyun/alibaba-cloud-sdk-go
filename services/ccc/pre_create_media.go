@@ -76,12 +76,12 @@ func (client *Client) PreCreateMediaWithCallback(request *PreCreateMediaRequest,
 // PreCreateMediaRequest is the request struct for api PreCreateMedia
 type PreCreateMediaRequest struct {
 	*requests.RpcRequest
-	InstanceId  string `position:"Query" name:"InstanceId"`
-	FileName    string `position:"Query" name:"FileName"`
-	Name        string `position:"Query" name:"Name"`
 	Description string `position:"Query" name:"Description"`
 	Type        string `position:"Query" name:"Type"`
 	Content     string `position:"Query" name:"Content"`
+	InstanceId  string `position:"Query" name:"InstanceId"`
+	FileName    string `position:"Query" name:"FileName"`
+	Name        string `position:"Query" name:"Name"`
 }
 
 // PreCreateMediaResponse is the response struct for api PreCreateMedia

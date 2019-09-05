@@ -76,10 +76,10 @@ func (client *Client) FindUsersWithCallback(request *FindUsersRequest, callback 
 // FindUsersRequest is the request struct for api FindUsers
 type FindUsersRequest struct {
 	*requests.RpcRequest
-	InstanceId string           `position:"Query" name:"InstanceId"`
 	Criteria   string           `position:"Query" name:"Criteria"`
-	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
+	InstanceId string           `position:"Query" name:"InstanceId"`
+	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 }
 
 // FindUsersResponse is the response struct for api FindUsers

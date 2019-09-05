@@ -76,12 +76,12 @@ func (client *Client) GetAgentDataWithCallback(request *GetAgentDataRequest, cal
 // GetAgentDataRequest is the request struct for api GetAgentData
 type GetAgentDataRequest struct {
 	*requests.RpcRequest
-	InstanceId string           `position:"Query" name:"InstanceId"`
 	StartDay   string           `position:"Query" name:"StartDay"`
-	EndDay     string           `position:"Query" name:"EndDay"`
-	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 	UserId     string           `position:"Query" name:"UserId"`
 	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
+	InstanceId string           `position:"Query" name:"InstanceId"`
+	EndDay     string           `position:"Query" name:"EndDay"`
+	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 }
 
 // GetAgentDataResponse is the response struct for api GetAgentData

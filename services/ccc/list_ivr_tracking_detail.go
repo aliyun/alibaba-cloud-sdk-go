@@ -76,14 +76,14 @@ func (client *Client) ListIvrTrackingDetailWithCallback(request *ListIvrTracking
 // ListIvrTrackingDetailRequest is the request struct for api ListIvrTrackingDetail
 type ListIvrTrackingDetailRequest struct {
 	*requests.RpcRequest
-	CallingNumber string           `position:"Query" name:"CallingNumber"`
-	InstanceId    string           `position:"Query" name:"InstanceId"`
 	ContactId     string           `position:"Query" name:"ContactId"`
-	CalledNumber  string           `position:"Query" name:"CalledNumber"`
-	PageSize      requests.Integer `position:"Query" name:"PageSize"`
 	StartTime     requests.Integer `position:"Query" name:"StartTime"`
 	StopTime      requests.Integer `position:"Query" name:"StopTime"`
 	PageNumber    requests.Integer `position:"Query" name:"PageNumber"`
+	CallingNumber string           `position:"Query" name:"CallingNumber"`
+	InstanceId    string           `position:"Query" name:"InstanceId"`
+	CalledNumber  string           `position:"Query" name:"CalledNumber"`
+	PageSize      requests.Integer `position:"Query" name:"PageSize"`
 }
 
 // ListIvrTrackingDetailResponse is the response struct for api ListIvrTrackingDetail

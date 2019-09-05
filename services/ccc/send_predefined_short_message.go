@@ -76,8 +76,8 @@ func (client *Client) SendPredefinedShortMessageWithCallback(request *SendPredef
 // SendPredefinedShortMessageRequest is the request struct for api SendPredefinedShortMessage
 type SendPredefinedShortMessageRequest struct {
 	*requests.RpcRequest
-	InstanceId    string           `position:"Query" name:"InstanceId"`
 	PhoneNumbers  string           `position:"Query" name:"PhoneNumbers"`
+	InstanceId    string           `position:"Query" name:"InstanceId"`
 	ConfigId      requests.Integer `position:"Query" name:"ConfigId"`
 	TemplateParam string           `position:"Query" name:"TemplateParam"`
 }

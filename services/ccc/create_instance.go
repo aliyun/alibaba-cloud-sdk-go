@@ -78,14 +78,14 @@ type CreateInstanceRequest struct {
 	*requests.RpcRequest
 	PhoneNumbers   *[]string        `position:"Query" name:"PhoneNumbers"  type:"Repeated"`
 	UserObject     *[]string        `position:"Query" name:"UserObject"  type:"Repeated"`
-	Name           string           `position:"Query" name:"Name"`
 	DomainName     string           `position:"Query" name:"DomainName"`
 	PhoneNumber    string           `position:"Query" name:"PhoneNumber"`
 	Description    string           `position:"Query" name:"Description"`
 	StorageMaxDays requests.Integer `position:"Query" name:"StorageMaxDays"`
+	AdminRamId     *[]string        `position:"Query" name:"AdminRamId"  type:"Repeated"`
+	Name           string           `position:"Query" name:"Name"`
 	StorageMaxSize requests.Integer `position:"Query" name:"StorageMaxSize"`
 	DirectoryId    string           `position:"Query" name:"DirectoryId"`
-	AdminRamId     *[]string        `position:"Query" name:"AdminRamId"  type:"Repeated"`
 }
 
 // CreateInstanceResponse is the response struct for api CreateInstance

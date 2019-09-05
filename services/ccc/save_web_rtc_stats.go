@@ -77,11 +77,11 @@ func (client *Client) SaveWebRTCStatsWithCallback(request *SaveWebRTCStatsReques
 type SaveWebRTCStatsRequest struct {
 	*requests.RpcRequest
 	CallId        string           `position:"Query" name:"CallId"`
-	Uid           string           `position:"Query" name:"Uid"`
 	RecordTime    requests.Integer `position:"Query" name:"RecordTime"`
+	CallStartTime requests.Integer `position:"Query" name:"CallStartTime"`
+	Uid           string           `position:"Query" name:"Uid"`
 	InstanceId    string           `position:"Query" name:"InstanceId"`
 	Stats         string           `position:"Query" name:"Stats"`
-	CallStartTime requests.Integer `position:"Query" name:"CallStartTime"`
 	TenantId      string           `position:"Query" name:"TenantId"`
 	CalleeNumber  string           `position:"Query" name:"CalleeNumber"`
 	CallerNumber  string           `position:"Query" name:"CallerNumber"`

@@ -76,12 +76,12 @@ func (client *Client) GetJobListWithCallback(request *GetJobListRequest, callbac
 // GetJobListRequest is the request struct for api GetJobList
 type GetJobListRequest struct {
 	*requests.RpcRequest
+	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
+	QueryAll   requests.Boolean `position:"Query" name:"QueryAll"`
 	InstanceId string           `position:"Query" name:"InstanceId"`
 	JobGroupId string           `position:"Query" name:"JobGroupId"`
 	PageSize   requests.Integer `position:"Query" name:"PageSize"`
-	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
 	Status     requests.Integer `position:"Query" name:"Status"`
-	QueryAll   requests.Boolean `position:"Query" name:"QueryAll"`
 }
 
 // GetJobListResponse is the response struct for api GetJobList

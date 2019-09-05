@@ -77,12 +77,12 @@ func (client *Client) DialogueWithCallback(request *DialogueRequest, callback fu
 type DialogueRequest struct {
 	*requests.RpcRequest
 	CallId          string           `position:"Query" name:"CallId"`
+	ActionParams    string           `position:"Query" name:"ActionParams"`
 	CallingNumber   string           `position:"Query" name:"CallingNumber"`
 	InstanceId      string           `position:"Query" name:"InstanceId"`
 	CalledNumber    string           `position:"Query" name:"CalledNumber"`
 	InstanceOwnerId requests.Integer `position:"Query" name:"InstanceOwnerId"`
 	ActionKey       string           `position:"Query" name:"ActionKey"`
-	ActionParams    string           `position:"Query" name:"ActionParams"`
 	CallType        string           `position:"Query" name:"CallType"`
 	ScenarioId      string           `position:"Query" name:"ScenarioId"`
 	TaskId          string           `position:"Query" name:"TaskId"`

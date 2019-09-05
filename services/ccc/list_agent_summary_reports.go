@@ -77,12 +77,12 @@ func (client *Client) ListAgentSummaryReportsWithCallback(request *ListAgentSumm
 type ListAgentSummaryReportsRequest struct {
 	*requests.RpcRequest
 	AgentIds     string           `position:"Query" name:"AgentIds"`
-	InstanceId   string           `position:"Query" name:"InstanceId"`
-	SkillGroupId string           `position:"Query" name:"SkillGroupId"`
-	PageSize     requests.Integer `position:"Query" name:"PageSize"`
 	EndTime      string           `position:"Query" name:"EndTime"`
 	StartTime    string           `position:"Query" name:"StartTime"`
 	PageNumber   requests.Integer `position:"Query" name:"PageNumber"`
+	InstanceId   string           `position:"Query" name:"InstanceId"`
+	SkillGroupId string           `position:"Query" name:"SkillGroupId"`
+	PageSize     requests.Integer `position:"Query" name:"PageSize"`
 }
 
 // ListAgentSummaryReportsResponse is the response struct for api ListAgentSummaryReports

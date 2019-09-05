@@ -76,10 +76,10 @@ func (client *Client) StartBack2BackCallWithCallback(request *StartBack2BackCall
 // StartBack2BackCallRequest is the request struct for api StartBack2BackCall
 type StartBack2BackCallRequest struct {
 	*requests.RpcRequest
-	Caller           string `position:"Query" name:"Caller"`
-	InstanceId       string `position:"Query" name:"InstanceId"`
 	CallCenterNumber string `position:"Query" name:"CallCenterNumber"`
 	Callee           string `position:"Query" name:"Callee"`
+	Caller           string `position:"Query" name:"Caller"`
+	InstanceId       string `position:"Query" name:"InstanceId"`
 	WorkflowId       string `position:"Query" name:"WorkflowId"`
 }
 
