@@ -77,14 +77,14 @@ func (client *Client) CreateVerifySchemeWithCallback(request *CreateVerifyScheme
 type CreateVerifySchemeRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	PackName             string           `position:"Query" name:"PackName"`
-	AppName              string           `position:"Query" name:"AppName"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	SchemeName           string           `position:"Query" name:"SchemeName"`
 	BundleId             string           `position:"Query" name:"BundleId"`
+	AppName              string           `position:"Query" name:"AppName"`
+	PackSign             string           `position:"Query" name:"PackSign"`
+	PackName             string           `position:"Query" name:"PackName"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OsType               string           `position:"Query" name:"OsType"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	PackSign             string           `position:"Query" name:"PackSign"`
+	SchemeName           string           `position:"Query" name:"SchemeName"`
 }
 
 // CreateVerifySchemeResponse is the response struct for api CreateVerifyScheme

@@ -79,8 +79,8 @@ type GetMobileRequest struct {
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	AccessToken          string           `position:"Query" name:"AccessToken"`
-	OutId                string           `position:"Query" name:"OutId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	OutId                string           `position:"Query" name:"OutId"`
 }
 
 // GetMobileResponse is the response struct for api GetMobile

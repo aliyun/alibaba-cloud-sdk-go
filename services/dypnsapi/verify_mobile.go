@@ -77,11 +77,11 @@ func (client *Client) VerifyMobileWithCallback(request *VerifyMobileRequest, cal
 type VerifyMobileRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	PhoneNumber          string           `position:"Query" name:"PhoneNumber"`
 	AccessCode           string           `position:"Query" name:"AccessCode"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	PhoneNumber          string           `position:"Query" name:"PhoneNumber"`
-	OutId                string           `position:"Query" name:"OutId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	OutId                string           `position:"Query" name:"OutId"`
 }
 
 // VerifyMobileResponse is the response struct for api VerifyMobile
