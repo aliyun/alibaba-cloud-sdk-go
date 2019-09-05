@@ -76,18 +76,18 @@ func (client *Client) CreateKeyPairWithCallback(request *CreateKeyPairRequest, c
 // CreateKeyPairRequest is the request struct for api CreateKeyPair
 type CreateKeyPairRequest struct {
 	*requests.RpcRequest
-	ResourceGroupId      string              `position:"Query" name:"ResourceGroupId"`
-	ResourceOwnerId      requests.Integer    `position:"Query" name:"ResourceOwnerId"`
+	OwnerId              requests.Integer    `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string              `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer    `position:"Query" name:"ResourceOwnerId"`
 	KeyPairName          string              `position:"Query" name:"KeyPairName"`
 	Tag                  *[]CreateKeyPairTag `position:"Query" name:"Tag"  type:"Repeated"`
-	OwnerId              requests.Integer    `position:"Query" name:"OwnerId"`
+	ResourceGroupId      string              `position:"Query" name:"ResourceGroupId"`
 }
 
 // CreateKeyPairTag is a repeated param struct in CreateKeyPairRequest
 type CreateKeyPairTag struct {
-	Value string `name:"Value"`
 	Key   string `name:"Key"`
+	Value string `name:"Value"`
 }
 
 // CreateKeyPairResponse is the response struct for api CreateKeyPair

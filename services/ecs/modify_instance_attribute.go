@@ -76,19 +76,19 @@ func (client *Client) ModifyInstanceAttributeWithCallback(request *ModifyInstanc
 // ModifyInstanceAttributeRequest is the request struct for api ModifyInstanceAttribute
 type ModifyInstanceAttributeRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	Recyclable           requests.Boolean `position:"Query" name:"Recyclable"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	Description          string           `position:"Query" name:"Description"`
-	CreditSpecification  string           `position:"Query" name:"CreditSpecification"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	DeletionProtection   requests.Boolean `position:"Query" name:"DeletionProtection"`
-	UserData             string           `position:"Query" name:"UserData"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
 	Password             string           `position:"Query" name:"Password"`
 	HostName             string           `position:"Query" name:"HostName"`
-	InstanceId           string           `position:"Query" name:"InstanceId"`
 	InstanceName         string           `position:"Query" name:"InstanceName"`
+	Description          string           `position:"Query" name:"Description"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	UserData             string           `position:"Query" name:"UserData"`
+	Recyclable           requests.Boolean `position:"Query" name:"Recyclable"`
+	CreditSpecification  string           `position:"Query" name:"CreditSpecification"`
+	DeletionProtection   requests.Boolean `position:"Query" name:"DeletionProtection"`
 }
 
 // ModifyInstanceAttributeResponse is the response struct for api ModifyInstanceAttribute

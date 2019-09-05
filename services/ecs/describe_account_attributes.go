@@ -76,11 +76,6 @@ func (client *Client) DescribeAccountAttributesWithCallback(request *DescribeAcc
 // DescribeAccountAttributesRequest is the request struct for api DescribeAccountAttributes
 type DescribeAccountAttributesRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	AttributeName        *[]string        `position:"Query" name:"AttributeName"  type:"Repeated"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ZoneId               string           `position:"Query" name:"ZoneId"`
 }
 
 // DescribeAccountAttributesResponse is the response struct for api DescribeAccountAttributes

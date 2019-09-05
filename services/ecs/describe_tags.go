@@ -76,21 +76,23 @@ func (client *Client) DescribeTagsWithCallback(request *DescribeTagsRequest, cal
 // DescribeTagsRequest is the request struct for api DescribeTags
 type DescribeTagsRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer   `position:"Query" name:"ResourceOwnerId"`
-	ResourceId           string             `position:"Query" name:"ResourceId"`
-	ResourceOwnerAccount string             `position:"Query" name:"ResourceOwnerAccount"`
-	PageSize             requests.Integer   `position:"Query" name:"PageSize"`
-	Tag                  *[]DescribeTagsTag `position:"Query" name:"Tag"  type:"Repeated"`
 	OwnerId              requests.Integer   `position:"Query" name:"OwnerId"`
-	Category             string             `position:"Query" name:"Category"`
-	ResourceType         string             `position:"Query" name:"ResourceType"`
+	ResourceOwnerAccount string             `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer   `position:"Query" name:"ResourceOwnerId"`
+	PageSize             requests.Integer   `position:"Query" name:"PageSize"`
 	PageNumber           requests.Integer   `position:"Query" name:"PageNumber"`
+	ResourceType         string             `position:"Query" name:"ResourceType"`
+	ResourceId           string             `position:"Query" name:"ResourceId"`
+	Tag                  *[]DescribeTagsTag `position:"Query" name:"Tag"  type:"Repeated"`
+	Category             string             `position:"Query" name:"Category"`
 }
 
 // DescribeTagsTag is a repeated param struct in DescribeTagsRequest
 type DescribeTagsTag struct {
-	Value string `name:"Value"`
+	Value string `name:"value"`
+	Key   string `name:"key"`
 	Key   string `name:"Key"`
+	Value string `name:"Value"`
 }
 
 // DescribeTagsResponse is the response struct for api DescribeTags

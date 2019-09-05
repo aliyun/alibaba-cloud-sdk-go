@@ -76,12 +76,6 @@ func (client *Client) DescribeDedicatedHostTypesWithCallback(request *DescribeDe
 // DescribeDedicatedHostTypesRequest is the request struct for api DescribeDedicatedHostTypes
 type DescribeDedicatedHostTypesRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId             requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	SupportedInstanceTypeFamily string           `position:"Query" name:"SupportedInstanceTypeFamily"`
-	DedicatedHostType           string           `position:"Query" name:"DedicatedHostType"`
-	ResourceOwnerAccount        string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount                string           `position:"Query" name:"OwnerAccount"`
-	OwnerId                     requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeDedicatedHostTypesResponse is the response struct for api DescribeDedicatedHostTypes

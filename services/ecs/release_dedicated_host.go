@@ -76,11 +76,6 @@ func (client *Client) ReleaseDedicatedHostWithCallback(request *ReleaseDedicated
 // ReleaseDedicatedHostRequest is the request struct for api ReleaseDedicatedHost
 type ReleaseDedicatedHostRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	DedicatedHostId      string           `position:"Query" name:"DedicatedHostId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // ReleaseDedicatedHostResponse is the response struct for api ReleaseDedicatedHost

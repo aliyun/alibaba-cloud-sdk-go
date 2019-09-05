@@ -76,13 +76,6 @@ func (client *Client) ImportSnapshotWithCallback(request *ImportSnapshotRequest,
 // ImportSnapshotRequest is the request struct for api ImportSnapshot
 type ImportSnapshotRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	SnapshotName         string           `position:"Query" name:"SnapshotName"`
-	OssObject            string           `position:"Query" name:"OssObject"`
-	OssBucket            string           `position:"Query" name:"OssBucket"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	RoleName             string           `position:"Query" name:"RoleName"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // ImportSnapshotResponse is the response struct for api ImportSnapshot

@@ -76,17 +76,6 @@ func (client *Client) ModifyDedicatedHostAttributeWithCallback(request *ModifyDe
 // ModifyDedicatedHostAttributeRequest is the request struct for api ModifyDedicatedHostAttribute
 type ModifyDedicatedHostAttributeRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId                requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Description                    string           `position:"Query" name:"Description"`
-	ActionOnMaintenance            string           `position:"Query" name:"ActionOnMaintenance"`
-	DedicatedHostName              string           `position:"Query" name:"DedicatedHostName"`
-	ResourceOwnerAccount           string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount                   string           `position:"Query" name:"OwnerAccount"`
-	DedicatedHostId                string           `position:"Query" name:"DedicatedHostId"`
-	OwnerId                        requests.Integer `position:"Query" name:"OwnerId"`
-	NetworkAttributesSlbUdpTimeout requests.Integer `position:"Query" name:"NetworkAttributes.SlbUdpTimeout"`
-	AutoPlacement                  string           `position:"Query" name:"AutoPlacement"`
-	NetworkAttributesUdpTimeout    requests.Integer `position:"Query" name:"NetworkAttributes.UdpTimeout"`
 }
 
 // ModifyDedicatedHostAttributeResponse is the response struct for api ModifyDedicatedHostAttribute

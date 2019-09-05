@@ -76,22 +76,6 @@ func (client *Client) DescribeLaunchTemplatesWithCallback(request *DescribeLaunc
 // DescribeLaunchTemplatesRequest is the request struct for api DescribeLaunchTemplates
 type DescribeLaunchTemplatesRequest struct {
 	*requests.RpcRequest
-	LaunchTemplateName      *[]string                             `position:"Query" name:"LaunchTemplateName"  type:"Repeated"`
-	ResourceOwnerId         requests.Integer                      `position:"Query" name:"ResourceOwnerId"`
-	PageNumber              requests.Integer                      `position:"Query" name:"PageNumber"`
-	PageSize                requests.Integer                      `position:"Query" name:"PageSize"`
-	TemplateTag             *[]DescribeLaunchTemplatesTemplateTag `position:"Query" name:"TemplateTag"  type:"Repeated"`
-	LaunchTemplateId        *[]string                             `position:"Query" name:"LaunchTemplateId"  type:"Repeated"`
-	ResourceOwnerAccount    string                                `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount            string                                `position:"Query" name:"OwnerAccount"`
-	TemplateResourceGroupId string                                `position:"Query" name:"TemplateResourceGroupId"`
-	OwnerId                 requests.Integer                      `position:"Query" name:"OwnerId"`
-}
-
-// DescribeLaunchTemplatesTemplateTag is a repeated param struct in DescribeLaunchTemplatesRequest
-type DescribeLaunchTemplatesTemplateTag struct {
-	Key   string `name:"Key"`
-	Value string `name:"Value"`
 }
 
 // DescribeLaunchTemplatesResponse is the response struct for api DescribeLaunchTemplates

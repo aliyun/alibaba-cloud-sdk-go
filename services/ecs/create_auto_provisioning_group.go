@@ -76,40 +76,6 @@ func (client *Client) CreateAutoProvisioningGroupWithCallback(request *CreateAut
 // CreateAutoProvisioningGroupRequest is the request struct for api CreateAutoProvisioningGroup
 type CreateAutoProvisioningGroupRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId                  requests.Integer                                   `position:"Query" name:"ResourceOwnerId"`
-	AutoProvisioningGroupType        string                                             `position:"Query" name:"AutoProvisioningGroupType"`
-	Description                      string                                             `position:"Query" name:"Description"`
-	TerminateInstancesWithExpiration requests.Boolean                                   `position:"Query" name:"TerminateInstancesWithExpiration"`
-	ResourceGroupId                  string                                             `position:"Query" name:"ResourceGroupId"`
-	SpotAllocationStrategy           string                                             `position:"Query" name:"SpotAllocationStrategy"`
-	TerminateInstances               requests.Boolean                                   `position:"Query" name:"TerminateInstances"`
-	PayAsYouGoAllocationStrategy     string                                             `position:"Query" name:"PayAsYouGoAllocationStrategy"`
-	DefaultTargetCapacityType        string                                             `position:"Query" name:"DefaultTargetCapacityType"`
-	ExcessCapacityTerminationPolicy  string                                             `position:"Query" name:"ExcessCapacityTerminationPolicy"`
-	LaunchTemplateConfig             *[]CreateAutoProvisioningGroupLaunchTemplateConfig `position:"Query" name:"LaunchTemplateConfig"  type:"Repeated"`
-	ValidUntil                       string                                             `position:"Query" name:"ValidUntil"`
-	SpotInstanceInterruptionBehavior string                                             `position:"Query" name:"SpotInstanceInterruptionBehavior"`
-	LaunchTemplateId                 string                                             `position:"Query" name:"LaunchTemplateId"`
-	ResourceOwnerAccount             string                                             `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount                     string                                             `position:"Query" name:"OwnerAccount"`
-	SpotInstancePoolsToUseCount      requests.Integer                                   `position:"Query" name:"SpotInstancePoolsToUseCount"`
-	OwnerId                          requests.Integer                                   `position:"Query" name:"OwnerId"`
-	LaunchTemplateVersion            string                                             `position:"Query" name:"LaunchTemplateVersion"`
-	PayAsYouGoTargetCapacity         string                                             `position:"Query" name:"PayAsYouGoTargetCapacity"`
-	TotalTargetCapacity              string                                             `position:"Query" name:"TotalTargetCapacity"`
-	SpotTargetCapacity               string                                             `position:"Query" name:"SpotTargetCapacity"`
-	ValidFrom                        string                                             `position:"Query" name:"ValidFrom"`
-	AutoProvisioningGroupName        string                                             `position:"Query" name:"AutoProvisioningGroupName"`
-	MaxSpotPrice                     requests.Float                                     `position:"Query" name:"MaxSpotPrice"`
-}
-
-// CreateAutoProvisioningGroupLaunchTemplateConfig is a repeated param struct in CreateAutoProvisioningGroupRequest
-type CreateAutoProvisioningGroupLaunchTemplateConfig struct {
-	InstanceType     string `name:"InstanceType"`
-	MaxPrice         string `name:"MaxPrice"`
-	VSwitchId        string `name:"VSwitchId"`
-	WeightedCapacity string `name:"WeightedCapacity"`
-	Priority         string `name:"Priority"`
 }
 
 // CreateAutoProvisioningGroupResponse is the response struct for api CreateAutoProvisioningGroup

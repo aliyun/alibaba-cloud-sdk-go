@@ -76,11 +76,6 @@ func (client *Client) CancelSimulatedSystemEventsWithCallback(request *CancelSim
 // CancelSimulatedSystemEventsRequest is the request struct for api CancelSimulatedSystemEvents
 type CancelSimulatedSystemEventsRequest struct {
 	*requests.RpcRequest
-	EventId              *[]string        `position:"Query" name:"EventId"  type:"Repeated"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // CancelSimulatedSystemEventsResponse is the response struct for api CancelSimulatedSystemEvents

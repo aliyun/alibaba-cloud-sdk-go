@@ -76,12 +76,6 @@ func (client *Client) UnassignIpv6AddressesWithCallback(request *UnassignIpv6Add
 // UnassignIpv6AddressesRequest is the request struct for api UnassignIpv6Addresses
 type UnassignIpv6AddressesRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	NetworkInterfaceId   string           `position:"Query" name:"NetworkInterfaceId"`
-	Ipv6Address          *[]string        `position:"Query" name:"Ipv6Address"  type:"Repeated"`
 }
 
 // UnassignIpv6AddressesResponse is the response struct for api UnassignIpv6Addresses

@@ -76,23 +76,23 @@ func (client *Client) CopyImageWithCallback(request *CopyImageRequest, callback 
 // CopyImageRequest is the request struct for api CopyImage
 type CopyImageRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId        requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ImageId                string           `position:"Query" name:"ImageId"`
+	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount   string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId        requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	DestinationImageName   string           `position:"Query" name:"DestinationImageName"`
+	DestinationDescription string           `position:"Query" name:"DestinationDescription"`
+	ImageId                string           `position:"Query" name:"ImageId"`
 	DestinationRegionId    string           `position:"Query" name:"DestinationRegionId"`
 	OwnerAccount           string           `position:"Query" name:"OwnerAccount"`
-	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
-	Encrypted              requests.Boolean `position:"Query" name:"Encrypted"`
 	Tag                    *[]CopyImageTag  `position:"Query" name:"Tag"  type:"Repeated"`
+	Encrypted              requests.Boolean `position:"Query" name:"Encrypted"`
 	KMSKeyId               string           `position:"Query" name:"KMSKeyId"`
-	DestinationDescription string           `position:"Query" name:"DestinationDescription"`
 }
 
 // CopyImageTag is a repeated param struct in CopyImageRequest
 type CopyImageTag struct {
-	Value string `name:"Value"`
 	Key   string `name:"Key"`
+	Value string `name:"Value"`
 }
 
 // CopyImageResponse is the response struct for api CopyImage

@@ -76,13 +76,6 @@ func (client *Client) ModifyReservedInstanceAttributeWithCallback(request *Modif
 // ModifyReservedInstanceAttributeRequest is the request struct for api ModifyReservedInstanceAttribute
 type ModifyReservedInstanceAttributeRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Description          string           `position:"Query" name:"Description"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ReservedInstanceId   string           `position:"Query" name:"ReservedInstanceId"`
-	ReservedInstanceName string           `position:"Query" name:"ReservedInstanceName"`
 }
 
 // ModifyReservedInstanceAttributeResponse is the response struct for api ModifyReservedInstanceAttribute

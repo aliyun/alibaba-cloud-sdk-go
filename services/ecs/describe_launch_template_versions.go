@@ -76,19 +76,6 @@ func (client *Client) DescribeLaunchTemplateVersionsWithCallback(request *Descri
 // DescribeLaunchTemplateVersionsRequest is the request struct for api DescribeLaunchTemplateVersions
 type DescribeLaunchTemplateVersionsRequest struct {
 	*requests.RpcRequest
-	LaunchTemplateName    string           `position:"Query" name:"LaunchTemplateName"`
-	MaxVersion            requests.Integer `position:"Query" name:"MaxVersion"`
-	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	DefaultVersion        requests.Boolean `position:"Query" name:"DefaultVersion"`
-	MinVersion            requests.Integer `position:"Query" name:"MinVersion"`
-	PageNumber            requests.Integer `position:"Query" name:"PageNumber"`
-	PageSize              requests.Integer `position:"Query" name:"PageSize"`
-	LaunchTemplateId      string           `position:"Query" name:"LaunchTemplateId"`
-	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
-	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
-	LaunchTemplateVersion *[]string        `position:"Query" name:"LaunchTemplateVersion"  type:"Repeated"`
-	DetailFlag            requests.Boolean `position:"Query" name:"DetailFlag"`
 }
 
 // DescribeLaunchTemplateVersionsResponse is the response struct for api DescribeLaunchTemplateVersions

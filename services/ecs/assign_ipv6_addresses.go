@@ -76,13 +76,6 @@ func (client *Client) AssignIpv6AddressesWithCallback(request *AssignIpv6Address
 // AssignIpv6AddressesRequest is the request struct for api AssignIpv6Addresses
 type AssignIpv6AddressesRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	Ipv6AddressCount     requests.Integer `position:"Query" name:"Ipv6AddressCount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	NetworkInterfaceId   string           `position:"Query" name:"NetworkInterfaceId"`
-	Ipv6Address          *[]string        `position:"Query" name:"Ipv6Address"  type:"Repeated"`
 }
 
 // AssignIpv6AddressesResponse is the response struct for api AssignIpv6Addresses

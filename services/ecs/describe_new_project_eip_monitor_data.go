@@ -76,14 +76,14 @@ func (client *Client) DescribeNewProjectEipMonitorDataWithCallback(request *Desc
 // DescribeNewProjectEipMonitorDataRequest is the request struct for api DescribeNewProjectEipMonitorData
 type DescribeNewProjectEipMonitorDataRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Period               requests.Integer `position:"Query" name:"Period"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	EndTime              string           `position:"Query" name:"EndTime"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	AllocationId         string           `position:"Query" name:"AllocationId"`
 	StartTime            string           `position:"Query" name:"StartTime"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	EndTime              string           `position:"Query" name:"EndTime"`
+	Period               requests.Integer `position:"Query" name:"Period"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 // DescribeNewProjectEipMonitorDataResponse is the response struct for api DescribeNewProjectEipMonitorData

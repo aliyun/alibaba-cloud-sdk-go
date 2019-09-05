@@ -76,34 +76,6 @@ func (client *Client) AllocateDedicatedHostsWithCallback(request *AllocateDedica
 // AllocateDedicatedHostsRequest is the request struct for api AllocateDedicatedHosts
 type AllocateDedicatedHostsRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId                requests.Integer             `position:"Query" name:"ResourceOwnerId"`
-	ClientToken                    string                       `position:"Query" name:"ClientToken"`
-	Description                    string                       `position:"Query" name:"Description"`
-	ResourceGroupId                string                       `position:"Query" name:"ResourceGroupId"`
-	ActionOnMaintenance            string                       `position:"Query" name:"ActionOnMaintenance"`
-	Tag                            *[]AllocateDedicatedHostsTag `position:"Query" name:"Tag"  type:"Repeated"`
-	DedicatedHostType              string                       `position:"Query" name:"DedicatedHostType"`
-	AutoRenewPeriod                requests.Integer             `position:"Query" name:"AutoRenewPeriod"`
-	Period                         requests.Integer             `position:"Query" name:"Period"`
-	Quantity                       requests.Integer             `position:"Query" name:"Quantity"`
-	DedicatedHostName              string                       `position:"Query" name:"DedicatedHostName"`
-	ResourceOwnerAccount           string                       `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount                   string                       `position:"Query" name:"OwnerAccount"`
-	AutoReleaseTime                string                       `position:"Query" name:"AutoReleaseTime"`
-	OwnerId                        requests.Integer             `position:"Query" name:"OwnerId"`
-	PeriodUnit                     string                       `position:"Query" name:"PeriodUnit"`
-	AutoRenew                      requests.Boolean             `position:"Query" name:"AutoRenew"`
-	NetworkAttributesSlbUdpTimeout requests.Integer             `position:"Query" name:"NetworkAttributes.SlbUdpTimeout"`
-	ZoneId                         string                       `position:"Query" name:"ZoneId"`
-	AutoPlacement                  string                       `position:"Query" name:"AutoPlacement"`
-	ChargeType                     string                       `position:"Query" name:"ChargeType"`
-	NetworkAttributesUdpTimeout    requests.Integer             `position:"Query" name:"NetworkAttributes.UdpTimeout"`
-}
-
-// AllocateDedicatedHostsTag is a repeated param struct in AllocateDedicatedHostsRequest
-type AllocateDedicatedHostsTag struct {
-	Key   string `name:"Key"`
-	Value string `name:"Value"`
 }
 
 // AllocateDedicatedHostsResponse is the response struct for api AllocateDedicatedHosts

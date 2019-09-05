@@ -77,18 +77,18 @@ func (client *Client) DescribeAccessPointsWithCallback(request *DescribeAccessPo
 type DescribeAccessPointsRequest struct {
 	*requests.RpcRequest
 	Filter               *[]DescribeAccessPointsFilter `position:"Query" name:"Filter"  type:"Repeated"`
-	ResourceOwnerId      requests.Integer              `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string                        `position:"Query" name:"ResourceOwnerAccount"`
-	PageSize             requests.Integer              `position:"Query" name:"PageSize"`
 	OwnerId              requests.Integer              `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string                        `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer              `position:"Query" name:"ResourceOwnerId"`
 	Type                 string                        `position:"Query" name:"Type"`
 	PageNumber           requests.Integer              `position:"Query" name:"PageNumber"`
+	PageSize             requests.Integer              `position:"Query" name:"PageSize"`
 }
 
 // DescribeAccessPointsFilter is a repeated param struct in DescribeAccessPointsRequest
 type DescribeAccessPointsFilter struct {
-	Value *[]string `name:"Value" type:"Repeated"`
 	Key   string    `name:"Key"`
+	Value *[]string `name:"Value" type:"Repeated"`
 }
 
 // DescribeAccessPointsResponse is the response struct for api DescribeAccessPoints

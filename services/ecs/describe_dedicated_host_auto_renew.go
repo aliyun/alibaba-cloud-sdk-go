@@ -76,11 +76,11 @@ func (client *Client) DescribeDedicatedHostAutoRenewWithCallback(request *Descri
 // DescribeDedicatedHostAutoRenewRequest is the request struct for api DescribeDedicatedHostAutoRenew
 type DescribeDedicatedHostAutoRenewRequest struct {
 	*requests.RpcRequest
-	DedicatedHostIds     string           `position:"Query" name:"DedicatedHostIds"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	DedicatedHostIds     string           `position:"Query" name:"DedicatedHostIds"`
 }
 
 // DescribeDedicatedHostAutoRenewResponse is the response struct for api DescribeDedicatedHostAutoRenew

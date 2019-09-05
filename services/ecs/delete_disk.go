@@ -76,11 +76,11 @@ func (client *Client) DeleteDiskWithCallback(request *DeleteDiskRequest, callbac
 // DeleteDiskRequest is the request struct for api DeleteDisk
 type DeleteDiskRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	DiskId               string           `position:"Query" name:"DiskId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DiskId               string           `position:"Query" name:"DiskId"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 }
 
 // DeleteDiskResponse is the response struct for api DeleteDisk

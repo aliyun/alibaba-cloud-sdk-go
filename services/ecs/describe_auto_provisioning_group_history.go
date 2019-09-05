@@ -76,15 +76,6 @@ func (client *Client) DescribeAutoProvisioningGroupHistoryWithCallback(request *
 // DescribeAutoProvisioningGroupHistoryRequest is the request struct for api DescribeAutoProvisioningGroupHistory
 type DescribeAutoProvisioningGroupHistoryRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId         requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	StartTime               string           `position:"Query" name:"StartTime"`
-	PageNumber              requests.Integer `position:"Query" name:"PageNumber"`
-	PageSize                requests.Integer `position:"Query" name:"PageSize"`
-	ResourceOwnerAccount    string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount            string           `position:"Query" name:"OwnerAccount"`
-	EndTime                 string           `position:"Query" name:"EndTime"`
-	OwnerId                 requests.Integer `position:"Query" name:"OwnerId"`
-	AutoProvisioningGroupId string           `position:"Query" name:"AutoProvisioningGroupId"`
 }
 
 // DescribeAutoProvisioningGroupHistoryResponse is the response struct for api DescribeAutoProvisioningGroupHistory

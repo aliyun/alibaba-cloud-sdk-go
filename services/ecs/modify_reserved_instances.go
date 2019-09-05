@@ -76,21 +76,6 @@ func (client *Client) ModifyReservedInstancesWithCallback(request *ModifyReserve
 // ModifyReservedInstancesRequest is the request struct for api ModifyReservedInstances
 type ModifyReservedInstancesRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer                        `position:"Query" name:"ResourceOwnerId"`
-	Configuration        *[]ModifyReservedInstancesConfiguration `position:"Query" name:"Configuration"  type:"Repeated"`
-	ResourceOwnerAccount string                                  `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string                                  `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer                        `position:"Query" name:"OwnerId"`
-	ReservedInstanceId   *[]string                               `position:"Query" name:"ReservedInstanceId"  type:"Repeated"`
-}
-
-// ModifyReservedInstancesConfiguration is a repeated param struct in ModifyReservedInstancesRequest
-type ModifyReservedInstancesConfiguration struct {
-	ZoneId               string `name:"ZoneId"`
-	ReservedInstanceName string `name:"ReservedInstanceName"`
-	InstanceType         string `name:"InstanceType"`
-	Scope                string `name:"Scope"`
-	InstanceAmount       string `name:"InstanceAmount"`
 }
 
 // ModifyReservedInstancesResponse is the response struct for api ModifyReservedInstances

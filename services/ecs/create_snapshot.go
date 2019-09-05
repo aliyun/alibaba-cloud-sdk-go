@@ -76,25 +76,24 @@ func (client *Client) CreateSnapshotWithCallback(request *CreateSnapshotRequest,
 // CreateSnapshotRequest is the request struct for api CreateSnapshot
 type CreateSnapshotRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer     `position:"Query" name:"ResourceOwnerId"`
+	OwnerId              requests.Integer     `position:"Query" name:"OwnerId"`
 	ResourceOwnerAccount string               `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer     `position:"Query" name:"ResourceOwnerId"`
+	DiskId               string               `position:"Query" name:"DiskId"`
+	SnapshotName         string               `position:"Query" name:"SnapshotName"`
+	Description          string               `position:"Query" name:"Description"`
+	RetentionDays        requests.Integer     `position:"Query" name:"RetentionDays"`
 	ClientToken          string               `position:"Query" name:"ClientToken"`
 	OwnerAccount         string               `position:"Query" name:"OwnerAccount"`
-	Description          string               `position:"Query" name:"Description"`
-	SnapshotName         string               `position:"Query" name:"SnapshotName"`
-	OwnerId              requests.Integer     `position:"Query" name:"OwnerId"`
-	SourceSnapshotId     string               `position:"Query" name:"SourceSnapshotId"`
-	RemoveSourceSnapshot requests.Boolean     `position:"Query" name:"RemoveSourceSnapshot"`
-	DiskId               string               `position:"Query" name:"DiskId"`
-	RetentionDays        requests.Integer     `position:"Query" name:"RetentionDays"`
 	Tag                  *[]CreateSnapshotTag `position:"Query" name:"Tag"  type:"Repeated"`
-	Category             string               `position:"Query" name:"Category"`
 }
 
 // CreateSnapshotTag is a repeated param struct in CreateSnapshotRequest
 type CreateSnapshotTag struct {
-	Value string `name:"Value"`
+	Value string `name:"value"`
+	Key   string `name:"key"`
 	Key   string `name:"Key"`
+	Value string `name:"Value"`
 }
 
 // CreateSnapshotResponse is the response struct for api CreateSnapshot

@@ -76,23 +76,25 @@ func (client *Client) CreateSecurityGroupWithCallback(request *CreateSecurityGro
 // CreateSecurityGroupRequest is the request struct for api CreateSecurityGroup
 type CreateSecurityGroupRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer          `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string                    `position:"Query" name:"ResourceOwnerAccount"`
-	ClientToken          string                    `position:"Query" name:"ClientToken"`
-	OwnerAccount         string                    `position:"Query" name:"OwnerAccount"`
-	Description          string                    `position:"Query" name:"Description"`
 	OwnerId              requests.Integer          `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string                    `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer          `position:"Query" name:"ResourceOwnerId"`
+	Description          string                    `position:"Query" name:"Description"`
+	ClientToken          string                    `position:"Query" name:"ClientToken"`
 	SecurityGroupName    string                    `position:"Query" name:"SecurityGroupName"`
-	SecurityGroupType    string                    `position:"Query" name:"SecurityGroupType"`
-	ResourceGroupId      string                    `position:"Query" name:"ResourceGroupId"`
 	VpcId                string                    `position:"Query" name:"VpcId"`
+	SecurityGroupType    string                    `position:"Query" name:"SecurityGroupType"`
+	OwnerAccount         string                    `position:"Query" name:"OwnerAccount"`
 	Tag                  *[]CreateSecurityGroupTag `position:"Query" name:"Tag"  type:"Repeated"`
+	ResourceGroupId      string                    `position:"Query" name:"ResourceGroupId"`
 }
 
 // CreateSecurityGroupTag is a repeated param struct in CreateSecurityGroupRequest
 type CreateSecurityGroupTag struct {
-	Value string `name:"Value"`
+	Value string `name:"value"`
+	Key   string `name:"key"`
 	Key   string `name:"Key"`
+	Value string `name:"Value"`
 }
 
 // CreateSecurityGroupResponse is the response struct for api CreateSecurityGroup

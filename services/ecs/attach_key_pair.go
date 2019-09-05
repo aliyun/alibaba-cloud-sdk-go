@@ -76,11 +76,11 @@ func (client *Client) AttachKeyPairWithCallback(request *AttachKeyPairRequest, c
 // AttachKeyPairRequest is the request struct for api AttachKeyPair
 type AttachKeyPairRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	InstanceIds          string           `position:"Query" name:"InstanceIds"`
-	KeyPairName          string           `position:"Query" name:"KeyPairName"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	KeyPairName          string           `position:"Query" name:"KeyPairName"`
+	InstanceIds          string           `position:"Query" name:"InstanceIds"`
 }
 
 // AttachKeyPairResponse is the response struct for api AttachKeyPair

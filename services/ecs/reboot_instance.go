@@ -76,13 +76,13 @@ func (client *Client) RebootInstanceWithCallback(request *RebootInstanceRequest,
 // RebootInstanceRequest is the request struct for api RebootInstance
 type RebootInstanceRequest struct {
 	*requests.RpcRequest
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
-	DryRun               requests.Boolean `position:"Query" name:"DryRun"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ForceStop            requests.Boolean `position:"Query" name:"ForceStop"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	DryRun               requests.Boolean `position:"Query" name:"DryRun"`
 }
 
 // RebootInstanceResponse is the response struct for api RebootInstance

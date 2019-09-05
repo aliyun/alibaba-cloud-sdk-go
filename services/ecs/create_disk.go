@@ -76,40 +76,42 @@ func (client *Client) CreateDiskWithCallback(request *CreateDiskRequest, callbac
 // CreateDiskRequest is the request struct for api CreateDisk
 type CreateDiskRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId           requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	SnapshotId                string           `position:"Query" name:"SnapshotId"`
-	ResourceOwnerAccount      string           `position:"Query" name:"ResourceOwnerAccount"`
-	ClientToken               string           `position:"Query" name:"ClientToken"`
-	PerformanceLevel          string           `position:"Query" name:"PerformanceLevel"`
-	OwnerAccount              string           `position:"Query" name:"OwnerAccount"`
-	Description               string           `position:"Query" name:"Description"`
 	OwnerId                   requests.Integer `position:"Query" name:"OwnerId"`
-	DiskName                  string           `position:"Query" name:"DiskName"`
-	ResourceGroupId           string           `position:"Query" name:"ResourceGroupId"`
-	InstanceId                string           `position:"Query" name:"InstanceId"`
-	StorageSetId              string           `position:"Query" name:"StorageSetId"`
-	Size                      requests.Integer `position:"Query" name:"Size"`
-	Encrypted                 requests.Boolean `position:"Query" name:"Encrypted"`
-	DiskCategory              string           `position:"Query" name:"DiskCategory"`
+	ResourceOwnerAccount      string           `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId           requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ZoneId                    string           `position:"Query" name:"ZoneId"`
-	StorageSetPartitionNumber requests.Integer `position:"Query" name:"StorageSetPartitionNumber"`
+	SnapshotId                string           `position:"Query" name:"SnapshotId"`
+	DiskName                  string           `position:"Query" name:"DiskName"`
+	Size                      requests.Integer `position:"Query" name:"Size"`
+	DiskCategory              string           `position:"Query" name:"DiskCategory"`
+	Description               string           `position:"Query" name:"Description"`
+	Encrypted                 requests.Boolean `position:"Query" name:"Encrypted"`
+	ClientToken               string           `position:"Query" name:"ClientToken"`
+	OwnerAccount              string           `position:"Query" name:"OwnerAccount"`
+	InstanceId                string           `position:"Query" name:"InstanceId"`
 	Tag                       *[]CreateDiskTag `position:"Query" name:"Tag"  type:"Repeated"`
 	Arn                       *[]CreateDiskArn `position:"Query" name:"Arn"  type:"Repeated"`
+	ResourceGroupId           string           `position:"Query" name:"ResourceGroupId"`
 	KMSKeyId                  string           `position:"Query" name:"KMSKeyId"`
+	PerformanceLevel          string           `position:"Query" name:"PerformanceLevel"`
 	AdvancedFeatures          string           `position:"Query" name:"AdvancedFeatures"`
+	StorageSetId              string           `position:"Query" name:"StorageSetId"`
+	StorageSetPartitionNumber requests.Integer `position:"Query" name:"StorageSetPartitionNumber"`
 }
 
 // CreateDiskTag is a repeated param struct in CreateDiskRequest
 type CreateDiskTag struct {
-	Value string `name:"Value"`
+	Value string `name:"value"`
+	Key   string `name:"key"`
 	Key   string `name:"Key"`
+	Value string `name:"Value"`
 }
 
 // CreateDiskArn is a repeated param struct in CreateDiskRequest
 type CreateDiskArn struct {
+	AssumeRoleFor string `name:"AssumeRoleFor"`
 	Rolearn       string `name:"Rolearn"`
 	RoleType      string `name:"RoleType"`
-	AssumeRoleFor string `name:"AssumeRoleFor"`
 }
 
 // CreateDiskResponse is the response struct for api CreateDisk

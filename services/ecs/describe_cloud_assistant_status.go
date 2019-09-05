@@ -76,11 +76,6 @@ func (client *Client) DescribeCloudAssistantStatusWithCallback(request *Describe
 // DescribeCloudAssistantStatusRequest is the request struct for api DescribeCloudAssistantStatus
 type DescribeCloudAssistantStatusRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	InstanceId           *[]string        `position:"Query" name:"InstanceId"  type:"Repeated"`
 }
 
 // DescribeCloudAssistantStatusResponse is the response struct for api DescribeCloudAssistantStatus

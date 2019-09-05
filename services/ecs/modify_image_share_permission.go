@@ -76,13 +76,13 @@ func (client *Client) ModifyImageSharePermissionWithCallback(request *ModifyImag
 // ModifyImageSharePermissionRequest is the request struct for api ModifyImageSharePermission
 type ModifyImageSharePermissionRequest struct {
 	*requests.RpcRequest
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ImageId              string           `position:"Query" name:"ImageId"`
 	AddAccount           *[]string        `position:"Query" name:"AddAccount"  type:"Repeated"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	RemoveAccount        *[]string        `position:"Query" name:"RemoveAccount"  type:"Repeated"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // ModifyImageSharePermissionResponse is the response struct for api ModifyImageSharePermission

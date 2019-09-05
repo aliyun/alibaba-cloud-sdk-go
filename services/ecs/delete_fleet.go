@@ -76,12 +76,6 @@ func (client *Client) DeleteFleetWithCallback(request *DeleteFleetRequest, callb
 // DeleteFleetRequest is the request struct for api DeleteFleet
 type DeleteFleetRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	TerminateInstances   requests.Boolean `position:"Query" name:"TerminateInstances"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	FleetId              string           `position:"Query" name:"FleetId"`
 }
 
 // DeleteFleetResponse is the response struct for api DeleteFleet

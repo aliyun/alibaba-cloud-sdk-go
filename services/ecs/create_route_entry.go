@@ -76,22 +76,22 @@ func (client *Client) CreateRouteEntryWithCallback(request *CreateRouteEntryRequ
 // CreateRouteEntryRequest is the request struct for api CreateRouteEntry
 type CreateRouteEntryRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer               `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string                         `position:"Query" name:"ResourceOwnerAccount"`
-	ClientToken          string                         `position:"Query" name:"ClientToken"`
-	DestinationCidrBlock string                         `position:"Query" name:"DestinationCidrBlock"`
-	OwnerAccount         string                         `position:"Query" name:"OwnerAccount"`
-	NextHopId            string                         `position:"Query" name:"NextHopId"`
 	OwnerId              requests.Integer               `position:"Query" name:"OwnerId"`
-	NextHopType          string                         `position:"Query" name:"NextHopType"`
-	NextHopList          *[]CreateRouteEntryNextHopList `position:"Query" name:"NextHopList"  type:"Repeated"`
+	ResourceOwnerAccount string                         `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer               `position:"Query" name:"ResourceOwnerId"`
 	RouteTableId         string                         `position:"Query" name:"RouteTableId"`
+	DestinationCidrBlock string                         `position:"Query" name:"DestinationCidrBlock"`
+	NextHopId            string                         `position:"Query" name:"NextHopId"`
+	ClientToken          string                         `position:"Query" name:"ClientToken"`
+	NextHopType          string                         `position:"Query" name:"NextHopType"`
+	OwnerAccount         string                         `position:"Query" name:"OwnerAccount"`
+	NextHopList          *[]CreateRouteEntryNextHopList `position:"Query" name:"NextHopList"  type:"Repeated"`
 }
 
 // CreateRouteEntryNextHopList is a repeated param struct in CreateRouteEntryRequest
 type CreateRouteEntryNextHopList struct {
-	NextHopId   string `name:"NextHopId"`
 	NextHopType string `name:"NextHopType"`
+	NextHopId   string `name:"NextHopId"`
 }
 
 // CreateRouteEntryResponse is the response struct for api CreateRouteEntry

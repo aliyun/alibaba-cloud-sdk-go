@@ -76,10 +76,6 @@ func (client *Client) DescribeSnapshotsUsageWithCallback(request *DescribeSnapsh
 // DescribeSnapshotsUsageRequest is the request struct for api DescribeSnapshotsUsage
 type DescribeSnapshotsUsageRequest struct {
 	*requests.RpcRequest
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeSnapshotsUsageResponse is the response struct for api DescribeSnapshotsUsage

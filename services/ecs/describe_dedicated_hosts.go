@@ -76,26 +76,26 @@ func (client *Client) DescribeDedicatedHostsWithCallback(request *DescribeDedica
 // DescribeDedicatedHostsRequest is the request struct for api DescribeDedicatedHosts
 type DescribeDedicatedHostsRequest struct {
 	*requests.RpcRequest
-	DedicatedHostIds     string                       `position:"Query" name:"DedicatedHostIds"`
-	ResourceOwnerId      requests.Integer             `position:"Query" name:"ResourceOwnerId"`
-	DedicatedHostName    string                       `position:"Query" name:"DedicatedHostName"`
-	ResourceOwnerAccount string                       `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string                       `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer             `position:"Query" name:"OwnerId"`
-	PageNumber           requests.Integer             `position:"Query" name:"PageNumber"`
-	ResourceGroupId      string                       `position:"Query" name:"ResourceGroupId"`
-	LockReason           string                       `position:"Query" name:"LockReason"`
-	PageSize             requests.Integer             `position:"Query" name:"PageSize"`
+	ResourceOwnerAccount string                       `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer             `position:"Query" name:"ResourceOwnerId"`
 	ZoneId               string                       `position:"Query" name:"ZoneId"`
-	DedicatedHostType    string                       `position:"Query" name:"DedicatedHostType"`
-	Tag                  *[]DescribeDedicatedHostsTag `position:"Query" name:"Tag"  type:"Repeated"`
+	DedicatedHostIds     string                       `position:"Query" name:"DedicatedHostIds"`
+	DedicatedHostName    string                       `position:"Query" name:"DedicatedHostName"`
 	Status               string                       `position:"Query" name:"Status"`
+	DedicatedHostType    string                       `position:"Query" name:"DedicatedHostType"`
+	LockReason           string                       `position:"Query" name:"LockReason"`
+	PageNumber           requests.Integer             `position:"Query" name:"PageNumber"`
+	PageSize             requests.Integer             `position:"Query" name:"PageSize"`
+	OwnerAccount         string                       `position:"Query" name:"OwnerAccount"`
+	Tag                  *[]DescribeDedicatedHostsTag `position:"Query" name:"Tag"  type:"Repeated"`
+	ResourceGroupId      string                       `position:"Query" name:"ResourceGroupId"`
 }
 
 // DescribeDedicatedHostsTag is a repeated param struct in DescribeDedicatedHostsRequest
 type DescribeDedicatedHostsTag struct {
-	Value string `name:"Value"`
 	Key   string `name:"Key"`
+	Value string `name:"Value"`
 }
 
 // DescribeDedicatedHostsResponse is the response struct for api DescribeDedicatedHosts

@@ -76,12 +76,6 @@ func (client *Client) DeleteLaunchTemplateWithCallback(request *DeleteLaunchTemp
 // DeleteLaunchTemplateRequest is the request struct for api DeleteLaunchTemplate
 type DeleteLaunchTemplateRequest struct {
 	*requests.RpcRequest
-	LaunchTemplateName   string           `position:"Query" name:"LaunchTemplateName"`
-	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	LaunchTemplateId     string           `position:"Query" name:"LaunchTemplateId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DeleteLaunchTemplateResponse is the response struct for api DeleteLaunchTemplate

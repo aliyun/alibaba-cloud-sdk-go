@@ -77,25 +77,26 @@ func (client *Client) ImportImageWithCallback(request *ImportImageRequest, callb
 type ImportImageRequest struct {
 	*requests.RpcRequest
 	DiskDeviceMapping    *[]ImportImageDiskDeviceMapping `position:"Query" name:"DiskDeviceMapping"  type:"Repeated"`
-	ResourceOwnerId      requests.Integer                `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string                          `position:"Query" name:"ResourceOwnerAccount"`
-	RoleName             string                          `position:"Query" name:"RoleName"`
-	Description          string                          `position:"Query" name:"Description"`
-	OSType               string                          `position:"Query" name:"OSType"`
 	OwnerId              requests.Integer                `position:"Query" name:"OwnerId"`
-	Platform             string                          `position:"Query" name:"Platform"`
+	ResourceOwnerAccount string                          `position:"Query" name:"ResourceOwnerAccount"`
+	ResourceOwnerId      requests.Integer                `position:"Query" name:"ResourceOwnerId"`
 	ImageName            string                          `position:"Query" name:"ImageName"`
+	Description          string                          `position:"Query" name:"Description"`
 	Architecture         string                          `position:"Query" name:"Architecture"`
+	OSType               string                          `position:"Query" name:"OSType"`
+	Platform             string                          `position:"Query" name:"Platform"`
+	RoleName             string                          `position:"Query" name:"RoleName"`
+	LicenseType          string                          `position:"Query" name:"LicenseType"`
 }
 
 // ImportImageDiskDeviceMapping is a repeated param struct in ImportImageRequest
 type ImportImageDiskDeviceMapping struct {
-	OSSBucket     string `name:"OSSBucket"`
-	DiskImSize    string `name:"DiskImSize"`
 	Format        string `name:"Format"`
-	Device        string `name:"Device"`
+	OSSBucket     string `name:"OSSBucket"`
 	OSSObject     string `name:"OSSObject"`
+	DiskImSize    string `name:"DiskImSize"`
 	DiskImageSize string `name:"DiskImageSize"`
+	Device        string `name:"Device"`
 }
 
 // ImportImageResponse is the response struct for api ImportImage
