@@ -77,10 +77,10 @@ func (client *Client) QueryRedeemWithCallback(request *QueryRedeemRequest, callb
 type QueryRedeemRequest struct {
 	*requests.RpcRequest
 	ExpiryTimeEnd   string           `position:"Query" name:"ExpiryTimeEnd"`
-	PageSize        requests.Integer `position:"Query" name:"PageSize"`
 	ExpiryTimeStart string           `position:"Query" name:"ExpiryTimeStart"`
 	PageNum         requests.Integer `position:"Query" name:"PageNum"`
 	EffectiveOrNot  requests.Boolean `position:"Query" name:"EffectiveOrNot"`
+	PageSize        requests.Integer `position:"Query" name:"PageSize"`
 }
 
 // QueryRedeemResponse is the response struct for api QueryRedeem
@@ -98,7 +98,7 @@ func CreateQueryRedeemRequest() (request *QueryRedeemRequest) {
 	request = &QueryRedeemRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "QueryRedeem", "", "")
+	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "QueryRedeem", "bssopenapi", "openAPI")
 	return
 }
 

@@ -76,13 +76,13 @@ func (client *Client) QueryAccountTransactionsWithCallback(request *QueryAccount
 // QueryAccountTransactionsRequest is the request struct for api QueryAccountTransactions
 type QueryAccountTransactionsRequest struct {
 	*requests.RpcRequest
+	PageNum              requests.Integer `position:"Query" name:"PageNum"`
+	CreateTimeEnd        string           `position:"Query" name:"CreateTimeEnd"`
 	RecordID             string           `position:"Query" name:"RecordID"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	TransactionChannelSN string           `position:"Query" name:"TransactionChannelSN"`
 	CreateTimeStart      string           `position:"Query" name:"CreateTimeStart"`
 	TransactionNumber    string           `position:"Query" name:"TransactionNumber"`
-	PageNum              requests.Integer `position:"Query" name:"PageNum"`
-	CreateTimeEnd        string           `position:"Query" name:"CreateTimeEnd"`
 }
 
 // QueryAccountTransactionsResponse is the response struct for api QueryAccountTransactions
@@ -100,7 +100,7 @@ func CreateQueryAccountTransactionsRequest() (request *QueryAccountTransactionsR
 	request = &QueryAccountTransactionsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "QueryAccountTransactions", "", "")
+	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "QueryAccountTransactions", "bssopenapi", "openAPI")
 	return
 }
 

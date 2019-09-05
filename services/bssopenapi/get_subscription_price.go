@@ -76,17 +76,17 @@ func (client *Client) GetSubscriptionPriceWithCallback(request *GetSubscriptionP
 // GetSubscriptionPriceRequest is the request struct for api GetSubscriptionPrice
 type GetSubscriptionPriceRequest struct {
 	*requests.RpcRequest
-	ServicePeriodQuantity requests.Integer                  `position:"Query" name:"ServicePeriodQuantity"`
 	ProductCode           string                            `position:"Query" name:"ProductCode"`
-	InstanceId            string                            `position:"Query" name:"InstanceId"`
 	Quantity              requests.Integer                  `position:"Query" name:"Quantity"`
-	ServicePeriodUnit     string                            `position:"Query" name:"ServicePeriodUnit"`
 	SubscriptionType      string                            `position:"Query" name:"SubscriptionType"`
 	ModuleList            *[]GetSubscriptionPriceModuleList `position:"Query" name:"ModuleList"  type:"Repeated"`
 	OwnerId               requests.Integer                  `position:"Query" name:"OwnerId"`
+	ProductType           string                            `position:"Query" name:"ProductType"`
+	ServicePeriodQuantity requests.Integer                  `position:"Query" name:"ServicePeriodQuantity"`
+	InstanceId            string                            `position:"Query" name:"InstanceId"`
+	ServicePeriodUnit     string                            `position:"Query" name:"ServicePeriodUnit"`
 	Region                string                            `position:"Query" name:"Region"`
 	OrderType             string                            `position:"Query" name:"OrderType"`
-	ProductType           string                            `position:"Query" name:"ProductType"`
 }
 
 // GetSubscriptionPriceModuleList is a repeated param struct in GetSubscriptionPriceRequest
@@ -112,7 +112,7 @@ func CreateGetSubscriptionPriceRequest() (request *GetSubscriptionPriceRequest) 
 	request = &GetSubscriptionPriceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "GetSubscriptionPrice", "", "")
+	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "GetSubscriptionPrice", "bssopenapi", "openAPI")
 	return
 }
 

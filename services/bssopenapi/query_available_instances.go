@@ -78,17 +78,17 @@ type QueryAvailableInstancesRequest struct {
 	*requests.RpcRequest
 	ProductCode      string           `position:"Query" name:"ProductCode"`
 	SubscriptionType string           `position:"Query" name:"SubscriptionType"`
-	OwnerId          requests.Integer `position:"Query" name:"OwnerId"`
 	PageNum          requests.Integer `position:"Query" name:"PageNum"`
-	EndTimeStart     string           `position:"Query" name:"EndTimeStart"`
 	ProductType      string           `position:"Query" name:"ProductType"`
+	PageSize         requests.Integer `position:"Query" name:"PageSize"`
+	RenewStatus      string           `position:"Query" name:"RenewStatus"`
+	OwnerId          requests.Integer `position:"Query" name:"OwnerId"`
+	EndTimeStart     string           `position:"Query" name:"EndTimeStart"`
 	CreateTimeEnd    string           `position:"Query" name:"CreateTimeEnd"`
 	InstanceIDs      string           `position:"Query" name:"InstanceIDs"`
 	EndTimeEnd       string           `position:"Query" name:"EndTimeEnd"`
-	PageSize         requests.Integer `position:"Query" name:"PageSize"`
 	CreateTimeStart  string           `position:"Query" name:"CreateTimeStart"`
 	Region           string           `position:"Query" name:"Region"`
-	RenewStatus      string           `position:"Query" name:"RenewStatus"`
 }
 
 // QueryAvailableInstancesResponse is the response struct for api QueryAvailableInstances
@@ -106,7 +106,7 @@ func CreateQueryAvailableInstancesRequest() (request *QueryAvailableInstancesReq
 	request = &QueryAvailableInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "QueryAvailableInstances", "", "")
+	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "QueryAvailableInstances", "bssopenapi", "openAPI")
 	return
 }
 

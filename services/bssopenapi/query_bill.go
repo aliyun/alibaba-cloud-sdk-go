@@ -80,12 +80,12 @@ type QueryBillRequest struct {
 	IsHideZeroCharge       requests.Boolean `position:"Query" name:"IsHideZeroCharge"`
 	IsDisplayLocalCurrency requests.Boolean `position:"Query" name:"IsDisplayLocalCurrency"`
 	SubscriptionType       string           `position:"Query" name:"SubscriptionType"`
-	PageSize               requests.Integer `position:"Query" name:"PageSize"`
 	BillingCycle           string           `position:"Query" name:"BillingCycle"`
 	Type                   string           `position:"Query" name:"Type"`
 	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
 	PageNum                requests.Integer `position:"Query" name:"PageNum"`
 	ProductType            string           `position:"Query" name:"ProductType"`
+	PageSize               requests.Integer `position:"Query" name:"PageSize"`
 }
 
 // QueryBillResponse is the response struct for api QueryBill
@@ -103,7 +103,7 @@ func CreateQueryBillRequest() (request *QueryBillRequest) {
 	request = &QueryBillRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "QueryBill", "", "")
+	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "QueryBill", "bssopenapi", "openAPI")
 	return
 }
 

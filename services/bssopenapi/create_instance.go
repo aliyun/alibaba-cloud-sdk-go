@@ -80,11 +80,11 @@ type CreateInstanceRequest struct {
 	Period           requests.Integer           `position:"Query" name:"Period"`
 	ClientToken      string                     `position:"Query" name:"ClientToken"`
 	SubscriptionType string                     `position:"Query" name:"SubscriptionType"`
+	OwnerId          requests.Integer           `position:"Query" name:"OwnerId"`
+	ProductType      string                     `position:"Query" name:"ProductType"`
 	RenewPeriod      requests.Integer           `position:"Query" name:"RenewPeriod"`
 	Parameter        *[]CreateInstanceParameter `position:"Query" name:"Parameter"  type:"Repeated"`
 	RenewalStatus    string                     `position:"Query" name:"RenewalStatus"`
-	OwnerId          requests.Integer           `position:"Query" name:"OwnerId"`
-	ProductType      string                     `position:"Query" name:"ProductType"`
 }
 
 // CreateInstanceParameter is a repeated param struct in CreateInstanceRequest
@@ -108,7 +108,7 @@ func CreateCreateInstanceRequest() (request *CreateInstanceRequest) {
 	request = &CreateInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "CreateInstance", "", "")
+	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "CreateInstance", "bssopenapi", "openAPI")
 	return
 }
 

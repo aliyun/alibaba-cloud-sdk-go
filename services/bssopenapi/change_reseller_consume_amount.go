@@ -76,14 +76,14 @@ func (client *Client) ChangeResellerConsumeAmountWithCallback(request *ChangeRes
 // ChangeResellerConsumeAmountRequest is the request struct for api ChangeResellerConsumeAmount
 type ChangeResellerConsumeAmountRequest struct {
 	*requests.RpcRequest
-	AdjustType   string           `position:"Query" name:"AdjustType"`
 	Amount       string           `position:"Query" name:"Amount"`
 	OutBizId     string           `position:"Query" name:"OutBizId"`
-	ExtendMap    string           `position:"Query" name:"ExtendMap"`
-	Currency     string           `position:"Query" name:"Currency"`
 	Source       string           `position:"Query" name:"Source"`
 	OwnerId      requests.Integer `position:"Query" name:"OwnerId"`
 	BusinessType string           `position:"Query" name:"BusinessType"`
+	AdjustType   string           `position:"Query" name:"AdjustType"`
+	ExtendMap    string           `position:"Query" name:"ExtendMap"`
+	Currency     string           `position:"Query" name:"Currency"`
 }
 
 // ChangeResellerConsumeAmountResponse is the response struct for api ChangeResellerConsumeAmount
@@ -101,7 +101,7 @@ func CreateChangeResellerConsumeAmountRequest() (request *ChangeResellerConsumeA
 	request = &ChangeResellerConsumeAmountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "ChangeResellerConsumeAmount", "", "")
+	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "ChangeResellerConsumeAmount", "bssopenapi", "openAPI")
 	return
 }
 

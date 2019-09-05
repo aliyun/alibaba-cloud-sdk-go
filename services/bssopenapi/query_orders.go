@@ -78,13 +78,13 @@ type QueryOrdersRequest struct {
 	*requests.RpcRequest
 	ProductCode      string           `position:"Query" name:"ProductCode"`
 	SubscriptionType string           `position:"Query" name:"SubscriptionType"`
-	PageSize         requests.Integer `position:"Query" name:"PageSize"`
-	PaymentStatus    string           `position:"Query" name:"PaymentStatus"`
-	CreateTimeStart  string           `position:"Query" name:"CreateTimeStart"`
 	PageNum          requests.Integer `position:"Query" name:"PageNum"`
 	OwnerId          requests.Integer `position:"Query" name:"OwnerId"`
 	CreateTimeEnd    string           `position:"Query" name:"CreateTimeEnd"`
 	ProductType      string           `position:"Query" name:"ProductType"`
+	PageSize         requests.Integer `position:"Query" name:"PageSize"`
+	PaymentStatus    string           `position:"Query" name:"PaymentStatus"`
+	CreateTimeStart  string           `position:"Query" name:"CreateTimeStart"`
 	OrderType        string           `position:"Query" name:"OrderType"`
 }
 
@@ -103,7 +103,7 @@ func CreateQueryOrdersRequest() (request *QueryOrdersRequest) {
 	request = &QueryOrdersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "QueryOrders", "", "")
+	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "QueryOrders", "bssopenapi", "openAPI")
 	return
 }
 

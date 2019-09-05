@@ -79,7 +79,6 @@ type QuerySettlementBillRequest struct {
 	ProductCode      string           `position:"Query" name:"ProductCode"`
 	IsHideZeroCharge requests.Boolean `position:"Query" name:"IsHideZeroCharge"`
 	SubscriptionType string           `position:"Query" name:"SubscriptionType"`
-	PageSize         requests.Integer `position:"Query" name:"PageSize"`
 	EndTime          string           `position:"Query" name:"EndTime"`
 	BillingCycle     string           `position:"Query" name:"BillingCycle"`
 	StartTime        string           `position:"Query" name:"StartTime"`
@@ -87,6 +86,7 @@ type QuerySettlementBillRequest struct {
 	PageNum          requests.Integer `position:"Query" name:"PageNum"`
 	Type             string           `position:"Query" name:"Type"`
 	ProductType      string           `position:"Query" name:"ProductType"`
+	PageSize         requests.Integer `position:"Query" name:"PageSize"`
 }
 
 // QuerySettlementBillResponse is the response struct for api QuerySettlementBill
@@ -104,7 +104,7 @@ func CreateQuerySettlementBillRequest() (request *QuerySettlementBillRequest) {
 	request = &QuerySettlementBillRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "QuerySettlementBill", "", "")
+	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "QuerySettlementBill", "bssopenapi", "openAPI")
 	return
 }
 

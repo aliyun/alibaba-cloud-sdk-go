@@ -78,8 +78,8 @@ type SetResellerUserQuotaRequest struct {
 	*requests.RpcRequest
 	Amount   string           `position:"Query" name:"Amount"`
 	OutBizId string           `position:"Query" name:"OutBizId"`
-	Currency string           `position:"Query" name:"Currency"`
 	OwnerId  requests.Integer `position:"Query" name:"OwnerId"`
+	Currency string           `position:"Query" name:"Currency"`
 }
 
 // SetResellerUserQuotaResponse is the response struct for api SetResellerUserQuota
@@ -97,7 +97,7 @@ func CreateSetResellerUserQuotaRequest() (request *SetResellerUserQuotaRequest) 
 	request = &SetResellerUserQuotaRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "SetResellerUserQuota", "", "")
+	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "SetResellerUserQuota", "bssopenapi", "openAPI")
 	return
 }
 

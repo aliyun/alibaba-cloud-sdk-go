@@ -77,11 +77,11 @@ func (client *Client) RenewInstanceWithCallback(request *RenewInstanceRequest, c
 type RenewInstanceRequest struct {
 	*requests.RpcRequest
 	ProductCode string           `position:"Query" name:"ProductCode"`
-	InstanceId  string           `position:"Query" name:"InstanceId"`
 	ClientToken string           `position:"Query" name:"ClientToken"`
-	RenewPeriod requests.Integer `position:"Query" name:"RenewPeriod"`
 	OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
 	ProductType string           `position:"Query" name:"ProductType"`
+	InstanceId  string           `position:"Query" name:"InstanceId"`
+	RenewPeriod requests.Integer `position:"Query" name:"RenewPeriod"`
 }
 
 // RenewInstanceResponse is the response struct for api RenewInstance
@@ -99,7 +99,7 @@ func CreateRenewInstanceRequest() (request *RenewInstanceRequest) {
 	request = &RenewInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "RenewInstance", "", "")
+	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "RenewInstance", "bssopenapi", "openAPI")
 	return
 }
 

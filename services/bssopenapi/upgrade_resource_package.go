@@ -76,10 +76,10 @@ func (client *Client) UpgradeResourcePackageWithCallback(request *UpgradeResourc
 // UpgradeResourcePackageRequest is the request struct for api UpgradeResourcePackage
 type UpgradeResourcePackageRequest struct {
 	*requests.RpcRequest
-	InstanceId    string           `position:"Query" name:"InstanceId"`
 	Specification string           `position:"Query" name:"Specification"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	EffectiveDate string           `position:"Query" name:"EffectiveDate"`
+	InstanceId    string           `position:"Query" name:"InstanceId"`
 }
 
 // UpgradeResourcePackageResponse is the response struct for api UpgradeResourcePackage
@@ -98,7 +98,7 @@ func CreateUpgradeResourcePackageRequest() (request *UpgradeResourcePackageReque
 	request = &UpgradeResourcePackageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "UpgradeResourcePackage", "", "")
+	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "UpgradeResourcePackage", "bssopenapi", "openAPI")
 	return
 }
 

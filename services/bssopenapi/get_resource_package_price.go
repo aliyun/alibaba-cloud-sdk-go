@@ -76,13 +76,13 @@ func (client *Client) GetResourcePackagePriceWithCallback(request *GetResourcePa
 // GetResourcePackagePriceRequest is the request struct for api GetResourcePackagePrice
 type GetResourcePackagePriceRequest struct {
 	*requests.RpcRequest
-	Duration      requests.Integer `position:"Query" name:"Duration"`
 	ProductCode   string           `position:"Query" name:"ProductCode"`
-	InstanceId    string           `position:"Query" name:"InstanceId"`
 	Specification string           `position:"Query" name:"Specification"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
-	PackageType   string           `position:"Query" name:"PackageType"`
 	EffectiveDate string           `position:"Query" name:"EffectiveDate"`
+	Duration      requests.Integer `position:"Query" name:"Duration"`
+	InstanceId    string           `position:"Query" name:"InstanceId"`
+	PackageType   string           `position:"Query" name:"PackageType"`
 	PricingCycle  string           `position:"Query" name:"PricingCycle"`
 	OrderType     string           `position:"Query" name:"OrderType"`
 }
@@ -102,7 +102,7 @@ func CreateGetResourcePackagePriceRequest() (request *GetResourcePackagePriceReq
 	request = &GetResourcePackagePriceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "GetResourcePackagePrice", "", "")
+	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "GetResourcePackagePrice", "bssopenapi", "openAPI")
 	return
 }
 

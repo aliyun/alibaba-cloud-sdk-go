@@ -76,10 +76,10 @@ func (client *Client) RenewResourcePackageWithCallback(request *RenewResourcePac
 // RenewResourcePackageRequest is the request struct for api RenewResourcePackage
 type RenewResourcePackageRequest struct {
 	*requests.RpcRequest
-	Duration      requests.Integer `position:"Query" name:"Duration"`
-	InstanceId    string           `position:"Query" name:"InstanceId"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	EffectiveDate string           `position:"Query" name:"EffectiveDate"`
+	Duration      requests.Integer `position:"Query" name:"Duration"`
+	InstanceId    string           `position:"Query" name:"InstanceId"`
 	PricingCycle  string           `position:"Query" name:"PricingCycle"`
 }
 
@@ -99,7 +99,7 @@ func CreateRenewResourcePackageRequest() (request *RenewResourcePackageRequest) 
 	request = &RenewResourcePackageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "RenewResourcePackage", "", "")
+	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "RenewResourcePackage", "bssopenapi", "openAPI")
 	return
 }
 

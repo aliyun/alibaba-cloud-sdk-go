@@ -77,13 +77,13 @@ func (client *Client) SetRenewalWithCallback(request *SetRenewalRequest, callbac
 type SetRenewalRequest struct {
 	*requests.RpcRequest
 	ProductCode       string           `position:"Query" name:"ProductCode"`
-	InstanceIDs       string           `position:"Query" name:"InstanceIDs"`
 	SubscriptionType  string           `position:"Query" name:"SubscriptionType"`
-	RenewalStatus     string           `position:"Query" name:"RenewalStatus"`
-	RenewalPeriodUnit string           `position:"Query" name:"RenewalPeriodUnit"`
 	RenewalPeriod     requests.Integer `position:"Query" name:"RenewalPeriod"`
 	OwnerId           requests.Integer `position:"Query" name:"OwnerId"`
 	ProductType       string           `position:"Query" name:"ProductType"`
+	InstanceIDs       string           `position:"Query" name:"InstanceIDs"`
+	RenewalStatus     string           `position:"Query" name:"RenewalStatus"`
+	RenewalPeriodUnit string           `position:"Query" name:"RenewalPeriodUnit"`
 }
 
 // SetRenewalResponse is the response struct for api SetRenewal
@@ -100,7 +100,7 @@ func CreateSetRenewalRequest() (request *SetRenewalRequest) {
 	request = &SetRenewalRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "SetRenewal", "", "")
+	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "SetRenewal", "bssopenapi", "openAPI")
 	return
 }
 

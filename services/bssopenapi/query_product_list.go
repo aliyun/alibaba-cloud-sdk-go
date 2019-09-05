@@ -76,9 +76,9 @@ func (client *Client) QueryProductListWithCallback(request *QueryProductListRequ
 // QueryProductListRequest is the request struct for api QueryProductList
 type QueryProductListRequest struct {
 	*requests.RpcRequest
+	PageNum         requests.Integer `position:"Query" name:"PageNum"`
 	QueryTotalCount requests.Boolean `position:"Query" name:"QueryTotalCount"`
 	PageSize        requests.Integer `position:"Query" name:"PageSize"`
-	PageNum         requests.Integer `position:"Query" name:"PageNum"`
 }
 
 // QueryProductListResponse is the response struct for api QueryProductList
@@ -96,7 +96,7 @@ func CreateQueryProductListRequest() (request *QueryProductListRequest) {
 	request = &QueryProductListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "QueryProductList", "", "")
+	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "QueryProductList", "bssopenapi", "openAPI")
 	return
 }
 
