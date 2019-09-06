@@ -1,3 +1,6 @@
+2019-09-06 Version: 1.60.151
+- Supported specifying vswitch when creating vpngateway.
+
 2019-09-06 Version: 1.60.150
 - Update endpoint data.
 
