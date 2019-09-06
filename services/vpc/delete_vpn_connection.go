@@ -77,11 +77,11 @@ func (client *Client) DeleteVpnConnectionWithCallback(request *DeleteVpnConnecti
 type DeleteVpnConnectionRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
-	VpnConnectionId      string           `position:"Query" name:"VpnConnectionId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	VpnConnectionId      string           `position:"Query" name:"VpnConnectionId"`
 }
 
 // DeleteVpnConnectionResponse is the response struct for api DeleteVpnConnection

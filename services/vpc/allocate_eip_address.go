@@ -77,20 +77,20 @@ func (client *Client) AllocateEipAddressWithCallback(request *AllocateEipAddress
 type AllocateEipAddressRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	ISP                  string           `position:"Query" name:"ISP"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
+	Netmode              string           `position:"Query" name:"Netmode"`
+	InstanceChargeType   string           `position:"Query" name:"InstanceChargeType"`
 	Period               requests.Integer `position:"Query" name:"Period"`
 	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	Bandwidth            string           `position:"Query" name:"Bandwidth"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	ISP                  string           `position:"Query" name:"ISP"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ActivityId           requests.Integer `position:"Query" name:"ActivityId"`
-	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	InternetChargeType   string           `position:"Query" name:"InternetChargeType"`
-	Netmode              string           `position:"Query" name:"Netmode"`
 	PricingCycle         string           `position:"Query" name:"PricingCycle"`
-	InstanceChargeType   string           `position:"Query" name:"InstanceChargeType"`
 }
 
 // AllocateEipAddressResponse is the response struct for api AllocateEipAddress

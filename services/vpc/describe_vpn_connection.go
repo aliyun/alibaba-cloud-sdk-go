@@ -78,9 +78,9 @@ type DescribeVpnConnectionRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	VpnConnectionId      string           `position:"Query" name:"VpnConnectionId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	VpnConnectionId      string           `position:"Query" name:"VpnConnectionId"`
 }
 
 // DescribeVpnConnectionResponse is the response struct for api DescribeVpnConnection

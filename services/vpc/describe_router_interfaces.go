@@ -76,13 +76,13 @@ func (client *Client) DescribeRouterInterfacesWithCallback(request *DescribeRout
 // DescribeRouterInterfacesRequest is the request struct for api DescribeRouterInterfaces
 type DescribeRouterInterfacesRequest struct {
 	*requests.RpcRequest
-	Filter                 *[]DescribeRouterInterfacesFilter `position:"Query" name:"Filter"  type:"Repeated"`
 	ResourceOwnerId        requests.Integer                  `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount   string                            `position:"Query" name:"ResourceOwnerAccount"`
-	PageSize               requests.Integer                  `position:"Query" name:"PageSize"`
-	OwnerId                requests.Integer                  `position:"Query" name:"OwnerId"`
 	IncludeReservationData requests.Boolean                  `position:"Query" name:"IncludeReservationData"`
 	PageNumber             requests.Integer                  `position:"Query" name:"PageNumber"`
+	PageSize               requests.Integer                  `position:"Query" name:"PageSize"`
+	ResourceOwnerAccount   string                            `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerId                requests.Integer                  `position:"Query" name:"OwnerId"`
+	Filter                 *[]DescribeRouterInterfacesFilter `position:"Query" name:"Filter"  type:"Repeated"`
 }
 
 // DescribeRouterInterfacesFilter is a repeated param struct in DescribeRouterInterfacesRequest

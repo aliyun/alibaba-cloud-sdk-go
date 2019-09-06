@@ -77,15 +77,15 @@ func (client *Client) PublishVpnRouteEntryWithCallback(request *PublishVpnRouteE
 type PublishVpnRouteEntryRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	RouteType            string           `position:"Query" name:"RouteType"`
 	PublishVpc           requests.Boolean `position:"Query" name:"PublishVpc"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	VpnGatewayId         string           `position:"Query" name:"VpnGatewayId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	RouteDest            string           `position:"Query" name:"RouteDest"`
 	NextHop              string           `position:"Query" name:"NextHop"`
-	RouteType            string           `position:"Query" name:"RouteType"`
 }
 
 // PublishVpnRouteEntryResponse is the response struct for api PublishVpnRouteEntry

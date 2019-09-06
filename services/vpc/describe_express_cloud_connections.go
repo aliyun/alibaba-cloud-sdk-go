@@ -76,13 +76,13 @@ func (client *Client) DescribeExpressCloudConnectionsWithCallback(request *Descr
 // DescribeExpressCloudConnectionsRequest is the request struct for api DescribeExpressCloudConnections
 type DescribeExpressCloudConnectionsRequest struct {
 	*requests.RpcRequest
-	Filter               *[]DescribeExpressCloudConnectionsFilter `position:"Query" name:"Filter"  type:"Repeated"`
 	ResourceOwnerId      requests.Integer                         `position:"Query" name:"ResourceOwnerId"`
+	PageNumber           requests.Integer                         `position:"Query" name:"PageNumber"`
+	PageSize             requests.Integer                         `position:"Query" name:"PageSize"`
 	ResourceOwnerAccount string                                   `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string                                   `position:"Query" name:"OwnerAccount"`
-	PageSize             requests.Integer                         `position:"Query" name:"PageSize"`
 	OwnerId              requests.Integer                         `position:"Query" name:"OwnerId"`
-	PageNumber           requests.Integer                         `position:"Query" name:"PageNumber"`
+	Filter               *[]DescribeExpressCloudConnectionsFilter `position:"Query" name:"Filter"  type:"Repeated"`
 }
 
 // DescribeExpressCloudConnectionsFilter is a repeated param struct in DescribeExpressCloudConnectionsRequest

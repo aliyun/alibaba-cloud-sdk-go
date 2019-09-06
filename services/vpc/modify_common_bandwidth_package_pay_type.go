@@ -77,15 +77,15 @@ func (client *Client) ModifyCommonBandwidthPackagePayTypeWithCallback(request *M
 type ModifyCommonBandwidthPackagePayTypeRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Duration             requests.Integer `position:"Query" name:"Duration"`
+	ResourceUid          requests.Integer `position:"Query" name:"ResourceUid"`
 	BandwidthPackageId   string           `position:"Query" name:"BandwidthPackageId"`
 	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	Bandwidth            string           `position:"Query" name:"Bandwidth"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	Duration             requests.Integer `position:"Query" name:"Duration"`
 	KbpsBandwidth        string           `position:"Query" name:"KbpsBandwidth"`
-	ResourceUid          requests.Integer `position:"Query" name:"ResourceUid"`
 	ResourceBid          string           `position:"Query" name:"ResourceBid"`
 	PayType              string           `position:"Query" name:"PayType"`
 	PricingCycle         string           `position:"Query" name:"PricingCycle"`

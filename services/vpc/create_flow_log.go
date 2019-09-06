@@ -77,12 +77,12 @@ func (client *Client) CreateFlowLogWithCallback(request *CreateFlowLogRequest, c
 type CreateFlowLogRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Description          string           `position:"Query" name:"Description"`
 	ResourceId           string           `position:"Query" name:"ResourceId"`
 	ProjectName          string           `position:"Query" name:"ProjectName"`
 	LogStoreName         string           `position:"Query" name:"LogStoreName"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	Description          string           `position:"Query" name:"Description"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ResourceType         string           `position:"Query" name:"ResourceType"`
 	TrafficType          string           `position:"Query" name:"TrafficType"`

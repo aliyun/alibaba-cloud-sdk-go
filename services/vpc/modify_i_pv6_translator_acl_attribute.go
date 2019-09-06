@@ -76,11 +76,11 @@ func (client *Client) ModifyIPv6TranslatorAclAttributeWithCallback(request *Modi
 // ModifyIPv6TranslatorAclAttributeRequest is the request struct for api ModifyIPv6TranslatorAclAttribute
 type ModifyIPv6TranslatorAclAttributeRequest struct {
 	*requests.RpcRequest
-	AclId                string           `position:"Query" name:"AclId"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	AclName              string           `position:"Query" name:"AclName"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
+	AclId                string           `position:"Query" name:"AclId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }

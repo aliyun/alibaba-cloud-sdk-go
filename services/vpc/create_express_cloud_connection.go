@@ -77,15 +77,15 @@ func (client *Client) CreateExpressCloudConnectionWithCallback(request *CreateEx
 type CreateExpressCloudConnectionRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	PeerLocation         string           `position:"Query" name:"PeerLocation"`
 	PortType             string           `position:"Query" name:"PortType"`
+	Description          string           `position:"Query" name:"Description"`
+	RedundantEccId       string           `position:"Query" name:"RedundantEccId"`
+	PeerLocation         string           `position:"Query" name:"PeerLocation"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	Bandwidth            requests.Integer `position:"Query" name:"Bandwidth"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	Description          string           `position:"Query" name:"Description"`
 	PeerCity             string           `position:"Query" name:"PeerCity"`
 	IDCardNo             string           `position:"Query" name:"IDCardNo"`
-	RedundantEccId       string           `position:"Query" name:"RedundantEccId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	ContactMail          string           `position:"Query" name:"ContactMail"`
 	ContactTel           string           `position:"Query" name:"ContactTel"`

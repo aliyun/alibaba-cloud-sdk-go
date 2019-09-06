@@ -77,13 +77,13 @@ func (client *Client) ModifySnatEntryWithCallback(request *ModifySnatEntryReques
 type ModifySnatEntryRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	SnatIp               string           `position:"Query" name:"SnatIp"`
+	SnatEntryId          string           `position:"Query" name:"SnatEntryId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	SnatEntryName        string           `position:"Query" name:"SnatEntryName"`
 	SnatTableId          string           `position:"Query" name:"SnatTableId"`
-	SnatEntryId          string           `position:"Query" name:"SnatEntryId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	SnatIp               string           `position:"Query" name:"SnatIp"`
+	SnatEntryName        string           `position:"Query" name:"SnatEntryName"`
 }
 
 // ModifySnatEntryResponse is the response struct for api ModifySnatEntry

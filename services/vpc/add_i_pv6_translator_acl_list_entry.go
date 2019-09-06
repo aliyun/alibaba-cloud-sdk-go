@@ -76,8 +76,8 @@ func (client *Client) AddIPv6TranslatorAclListEntryWithCallback(request *AddIPv6
 // AddIPv6TranslatorAclListEntryRequest is the request struct for api AddIPv6TranslatorAclListEntry
 type AddIPv6TranslatorAclListEntryRequest struct {
 	*requests.RpcRequest
-	AclId                string           `position:"Query" name:"AclId"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	AclId                string           `position:"Query" name:"AclId"`
 	AclEntryIp           string           `position:"Query" name:"AclEntryIp"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`

@@ -77,10 +77,10 @@ func (client *Client) CreateVSwitchWithCallback(request *CreateVSwitchRequest, c
 type CreateVSwitchRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	Description          string           `position:"Query" name:"Description"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	Ipv6CidrBlock        requests.Integer `position:"Query" name:"Ipv6CidrBlock"`
 	VpcId                string           `position:"Query" name:"VpcId"`

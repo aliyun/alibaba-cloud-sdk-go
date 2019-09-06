@@ -78,16 +78,16 @@ type CreateVpnPbrRouteEntryRequest struct {
 	*requests.RpcRequest
 	RouteSource          string           `position:"Query" name:"RouteSource"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
+	Description          string           `position:"Query" name:"Description"`
+	PublishVpc           requests.Boolean `position:"Query" name:"PublishVpc"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	Weight               requests.Integer `position:"Query" name:"Weight"`
-	Description          string           `position:"Query" name:"Description"`
 	VpnGatewayId         string           `position:"Query" name:"VpnGatewayId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	RouteDest            string           `position:"Query" name:"RouteDest"`
 	NextHop              string           `position:"Query" name:"NextHop"`
-	PublishVpc           requests.Boolean `position:"Query" name:"PublishVpc"`
 	OverlayMode          string           `position:"Query" name:"OverlayMode"`
 }
 

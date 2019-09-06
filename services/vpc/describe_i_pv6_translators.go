@@ -76,17 +76,17 @@ func (client *Client) DescribeIPv6TranslatorsWithCallback(request *DescribeIPv6T
 // DescribeIPv6TranslatorsRequest is the request struct for api DescribeIPv6Translators
 type DescribeIPv6TranslatorsRequest struct {
 	*requests.RpcRequest
-	BusinessStatus       string           `position:"Query" name:"BusinessStatus"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	AllocateIpv4Addr     string           `position:"Query" name:"AllocateIpv4Addr"`
+	Spec                 string           `position:"Query" name:"Spec"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	BusinessStatus       string           `position:"Query" name:"BusinessStatus"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	AllocateIpv6Addr     string           `position:"Query" name:"AllocateIpv6Addr"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	AllocateIpv4Addr     string           `position:"Query" name:"AllocateIpv4Addr"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	Spec                 string           `position:"Query" name:"Spec"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	Name                 string           `position:"Query" name:"Name"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	Ipv6TranslatorId     string           `position:"Query" name:"Ipv6TranslatorId"`
 	PayType              string           `position:"Query" name:"PayType"`
 	Status               string           `position:"Query" name:"Status"`

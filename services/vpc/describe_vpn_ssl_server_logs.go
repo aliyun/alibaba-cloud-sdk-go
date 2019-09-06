@@ -77,15 +77,15 @@ func (client *Client) DescribeVpnSslServerLogsWithCallback(request *DescribeVpnS
 type DescribeVpnSslServerLogsRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	MinutePeriod         requests.Integer `position:"Query" name:"MinutePeriod"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	VpnSslServerId       string           `position:"Query" name:"VpnSslServerId"`
 	From                 requests.Integer `position:"Query" name:"From"`
-	To                   requests.Integer `position:"Query" name:"To"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	To                   requests.Integer `position:"Query" name:"To"`
 }
 
 // DescribeVpnSslServerLogsResponse is the response struct for api DescribeVpnSslServerLogs

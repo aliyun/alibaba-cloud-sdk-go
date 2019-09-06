@@ -77,18 +77,18 @@ func (client *Client) CreateIPv6TranslatorEntryWithCallback(request *CreateIPv6T
 type CreateIPv6TranslatorEntryRequest struct {
 	*requests.RpcRequest
 	BackendIpv4Port      requests.Integer `position:"Query" name:"BackendIpv4Port"`
-	AclId                string           `position:"Query" name:"AclId"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	EntryName            string           `position:"Query" name:"EntryName"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	AclStatus            string           `position:"Query" name:"AclStatus"`
 	EntryBandwidth       requests.Integer `position:"Query" name:"EntryBandwidth"`
 	AclType              string           `position:"Query" name:"AclType"`
 	AllocateIpv6Port     requests.Integer `position:"Query" name:"AllocateIpv6Port"`
 	EntryDescription     string           `position:"Query" name:"EntryDescription"`
 	BackendIpv4Addr      string           `position:"Query" name:"BackendIpv4Addr"`
+	AclId                string           `position:"Query" name:"AclId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	TransProtocol        string           `position:"Query" name:"TransProtocol"`
 	Ipv6TranslatorId     string           `position:"Query" name:"Ipv6TranslatorId"`
 }

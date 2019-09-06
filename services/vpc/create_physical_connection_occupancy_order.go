@@ -76,15 +76,15 @@ func (client *Client) CreatePhysicalConnectionOccupancyOrderWithCallback(request
 // CreatePhysicalConnectionOccupancyOrderRequest is the request struct for api CreatePhysicalConnectionOccupancyOrder
 type CreatePhysicalConnectionOccupancyOrderRequest struct {
 	*requests.RpcRequest
-	Period               requests.Integer `position:"Query" name:"Period"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	InstanceChargeType   string           `position:"Query" name:"InstanceChargeType"`
+	Period               requests.Integer `position:"Query" name:"Period"`
 	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
-	PhysicalConnectionId string           `position:"Query" name:"PhysicalConnectionId"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	InstanceChargeType   string           `position:"Query" name:"InstanceChargeType"`
+	PhysicalConnectionId string           `position:"Query" name:"PhysicalConnectionId"`
 	PricingCycle         string           `position:"Query" name:"PricingCycle"`
 }
 

@@ -77,11 +77,11 @@ func (client *Client) ModifyGlobalAccelerationInstanceSpecWithCallback(request *
 type ModifyGlobalAccelerationInstanceSpecRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId              requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	GlobalAccelerationInstanceId string           `position:"Query" name:"GlobalAccelerationInstanceId"`
 	ResourceOwnerAccount         string           `position:"Query" name:"ResourceOwnerAccount"`
 	Bandwidth                    string           `position:"Query" name:"Bandwidth"`
 	OwnerAccount                 string           `position:"Query" name:"OwnerAccount"`
 	OwnerId                      requests.Integer `position:"Query" name:"OwnerId"`
-	GlobalAccelerationInstanceId string           `position:"Query" name:"GlobalAccelerationInstanceId"`
 }
 
 // ModifyGlobalAccelerationInstanceSpecResponse is the response struct for api ModifyGlobalAccelerationInstanceSpec

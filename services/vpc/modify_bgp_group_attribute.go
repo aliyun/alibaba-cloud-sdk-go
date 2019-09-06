@@ -78,15 +78,16 @@ type ModifyBgpGroupAttributeRequest struct {
 	*requests.RpcRequest
 	AuthKey              string           `position:"Query" name:"AuthKey"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	BgpGroupId           string           `position:"Query" name:"BgpGroupId"`
 	Description          string           `position:"Query" name:"Description"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	PeerAsn              requests.Integer `position:"Query" name:"PeerAsn"`
 	IsFakeAsn            requests.Boolean `position:"Query" name:"IsFakeAsn"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	Name                 string           `position:"Query" name:"Name"`
+	LocalAsn             requests.Integer `position:"Query" name:"LocalAsn"`
 }
 
 // ModifyBgpGroupAttributeResponse is the response struct for api ModifyBgpGroupAttribute

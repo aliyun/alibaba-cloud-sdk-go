@@ -76,14 +76,14 @@ func (client *Client) CompletePhysicalConnectionLOAWithCallback(request *Complet
 // CompletePhysicalConnectionLOARequest is the request struct for api CompletePhysicalConnectionLOA
 type CompletePhysicalConnectionLOARequest struct {
 	*requests.RpcRequest
-	LineLabel            string           `position:"Query" name:"LineLabel"`
 	LineCode             string           `position:"Query" name:"LineCode"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	InstanceId           string           `position:"Query" name:"InstanceId"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
+	LineLabel            string           `position:"Query" name:"LineLabel"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
 }
 
 // CompletePhysicalConnectionLOAResponse is the response struct for api CompletePhysicalConnectionLOA

@@ -80,8 +80,8 @@ type AddCommonBandwidthPackageIpRequest struct {
 	BandwidthPackageId   string           `position:"Query" name:"BandwidthPackageId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	IpInstanceId         string           `position:"Query" name:"IpInstanceId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	IpInstanceId         string           `position:"Query" name:"IpInstanceId"`
 }
 
 // AddCommonBandwidthPackageIpResponse is the response struct for api AddCommonBandwidthPackageIp

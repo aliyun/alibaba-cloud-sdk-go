@@ -29,6 +29,7 @@ type NatGateway struct {
 	BusinessStatus      string                                   `json:"BusinessStatus" xml:"BusinessStatus"`
 	CreationTime        string                                   `json:"CreationTime" xml:"CreationTime"`
 	Status              string                                   `json:"Status" xml:"Status"`
+	DeletionProtection  bool                                     `json:"DeletionProtection" xml:"DeletionProtection"`
 	ForwardTableIds     ForwardTableIdsInDescribeNatGateways     `json:"ForwardTableIds" xml:"ForwardTableIds"`
 	SnatTableIds        SnatTableIdsInDescribeNatGateways        `json:"SnatTableIds" xml:"SnatTableIds"`
 	BandwidthPackageIds BandwidthPackageIdsInDescribeNatGateways `json:"BandwidthPackageIds" xml:"BandwidthPackageIds"`

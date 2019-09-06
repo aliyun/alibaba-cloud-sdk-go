@@ -77,17 +77,17 @@ func (client *Client) ApplyPhysicalConnectionLOAWithCallback(request *ApplyPhysi
 type ApplyPhysicalConnectionLOARequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer                    `position:"Query" name:"ResourceOwnerId"`
-	PeerLocation         string                              `position:"Query" name:"PeerLocation"`
 	ClientToken          string                              `position:"Query" name:"ClientToken"`
+	LineType             string                              `position:"Query" name:"LineType"`
+	Si                   string                              `position:"Query" name:"Si"`
+	PeerLocation         string                              `position:"Query" name:"PeerLocation"`
 	ResourceOwnerAccount string                              `position:"Query" name:"ResourceOwnerAccount"`
 	Bandwidth            requests.Integer                    `position:"Query" name:"Bandwidth"`
-	LineType             string                              `position:"Query" name:"LineType"`
 	OwnerAccount         string                              `position:"Query" name:"OwnerAccount"`
 	ConstructionTime     string                              `position:"Query" name:"ConstructionTime"`
 	OwnerId              requests.Integer                    `position:"Query" name:"OwnerId"`
 	InstanceId           string                              `position:"Query" name:"InstanceId"`
 	CompanyName          string                              `position:"Query" name:"CompanyName"`
-	Si                   string                              `position:"Query" name:"Si"`
 	PMInfo               *[]ApplyPhysicalConnectionLOAPMInfo `position:"Query" name:"PMInfo"  type:"Repeated"`
 }
 

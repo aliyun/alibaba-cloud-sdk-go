@@ -79,16 +79,16 @@ type DescribeGlobalAccelerationInstancesRequest struct {
 	IpAddress                    string           `position:"Query" name:"IpAddress"`
 	ResourceOwnerId              requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	BandwidthType                string           `position:"Query" name:"BandwidthType"`
+	IncludeReservationData       requests.Boolean `position:"Query" name:"IncludeReservationData"`
+	GlobalAccelerationInstanceId string           `position:"Query" name:"GlobalAccelerationInstanceId"`
+	PageNumber                   requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize                     requests.Integer `position:"Query" name:"PageSize"`
 	ResourceOwnerAccount         string           `position:"Query" name:"ResourceOwnerAccount"`
 	ServiceLocation              string           `position:"Query" name:"ServiceLocation"`
 	OwnerAccount                 string           `position:"Query" name:"OwnerAccount"`
 	OwnerId                      requests.Integer `position:"Query" name:"OwnerId"`
-	IncludeReservationData       requests.Boolean `position:"Query" name:"IncludeReservationData"`
-	GlobalAccelerationInstanceId string           `position:"Query" name:"GlobalAccelerationInstanceId"`
 	ServerId                     string           `position:"Query" name:"ServerId"`
-	PageNumber                   requests.Integer `position:"Query" name:"PageNumber"`
 	Name                         string           `position:"Query" name:"Name"`
-	PageSize                     requests.Integer `position:"Query" name:"PageSize"`
 	Status                       string           `position:"Query" name:"Status"`
 }
 

@@ -78,17 +78,17 @@ type DescribeRouteTablesRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	VRouterId            string           `position:"Query" name:"VRouterId"`
+	Type                 string           `position:"Query" name:"Type"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
+	RouteTableName       string           `position:"Query" name:"RouteTableName"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	RouteTableId         string           `position:"Query" name:"RouteTableId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	Type                 string           `position:"Query" name:"Type"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	RouterType           string           `position:"Query" name:"RouterType"`
-	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
-	RouteTableName       string           `position:"Query" name:"RouteTableName"`
 	RouterId             string           `position:"Query" name:"RouterId"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	RouteTableId         string           `position:"Query" name:"RouteTableId"`
 }
 
 // DescribeRouteTablesResponse is the response struct for api DescribeRouteTables

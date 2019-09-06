@@ -76,13 +76,13 @@ func (client *Client) CreateSslVpnClientCertWithCallback(request *CreateSslVpnCl
 // CreateSslVpnClientCertRequest is the request struct for api CreateSslVpnClientCert
 type CreateSslVpnClientCertRequest struct {
 	*requests.RpcRequest
-	SslVpnServerId       string           `position:"Query" name:"SslVpnServerId"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
+	SslVpnServerId       string           `position:"Query" name:"SslVpnServerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	Name                 string           `position:"Query" name:"Name"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Name                 string           `position:"Query" name:"Name"`
 }
 
 // CreateSslVpnClientCertResponse is the response struct for api CreateSslVpnClientCert

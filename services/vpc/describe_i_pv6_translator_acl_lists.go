@@ -76,14 +76,14 @@ func (client *Client) DescribeIPv6TranslatorAclListsWithCallback(request *Descri
 // DescribeIPv6TranslatorAclListsRequest is the request struct for api DescribeIPv6TranslatorAclLists
 type DescribeIPv6TranslatorAclListsRequest struct {
 	*requests.RpcRequest
-	AclId                string           `position:"Query" name:"AclId"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	AclName              string           `position:"Query" name:"AclName"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	AclId                string           `position:"Query" name:"AclId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 // DescribeIPv6TranslatorAclListsResponse is the response struct for api DescribeIPv6TranslatorAclLists

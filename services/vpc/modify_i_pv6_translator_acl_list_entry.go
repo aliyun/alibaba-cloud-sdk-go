@@ -76,8 +76,8 @@ func (client *Client) ModifyIPv6TranslatorAclListEntryWithCallback(request *Modi
 // ModifyIPv6TranslatorAclListEntryRequest is the request struct for api ModifyIPv6TranslatorAclListEntry
 type ModifyIPv6TranslatorAclListEntryRequest struct {
 	*requests.RpcRequest
-	AclId                string           `position:"Query" name:"AclId"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	AclId                string           `position:"Query" name:"AclId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	AclEntryComment      string           `position:"Query" name:"AclEntryComment"`

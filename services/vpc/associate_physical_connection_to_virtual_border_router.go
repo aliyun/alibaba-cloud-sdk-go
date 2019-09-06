@@ -79,15 +79,15 @@ type AssociatePhysicalConnectionToVirtualBorderRouterRequest struct {
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	CircuitCode          string           `position:"Query" name:"CircuitCode"`
 	VlanId               string           `position:"Query" name:"VlanId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	VbrId                string           `position:"Query" name:"VbrId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	PeerGatewayIp        string           `position:"Query" name:"PeerGatewayIp"`
 	PeeringSubnetMask    string           `position:"Query" name:"PeeringSubnetMask"`
-	PhysicalConnectionId string           `position:"Query" name:"PhysicalConnectionId"`
 	LocalGatewayIp       string           `position:"Query" name:"LocalGatewayIp"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	PhysicalConnectionId string           `position:"Query" name:"PhysicalConnectionId"`
 }
 
 // AssociatePhysicalConnectionToVirtualBorderRouterResponse is the response struct for api AssociatePhysicalConnectionToVirtualBorderRouter

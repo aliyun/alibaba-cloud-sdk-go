@@ -77,12 +77,12 @@ func (client *Client) DeleteIPv6TranslatorEntryWithCallback(request *DeleteIPv6T
 type DeleteIPv6TranslatorEntryRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken           string           `position:"Query" name:"ClientToken"`
 	Ipv6TranslatorEntryId string           `position:"Query" name:"Ipv6TranslatorEntryId"`
 	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
-	ClientToken           string           `position:"Query" name:"ClientToken"`
 	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
-	Ipv6TranslatorId      string           `position:"Query" name:"Ipv6TranslatorId"`
 	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
+	Ipv6TranslatorId      string           `position:"Query" name:"Ipv6TranslatorId"`
 }
 
 // DeleteIPv6TranslatorEntryResponse is the response struct for api DeleteIPv6TranslatorEntry

@@ -76,9 +76,13 @@ func (client *Client) TagResourcesWithCallback(request *TagResourcesRequest, cal
 // TagResourcesRequest is the request struct for api TagResources
 type TagResourcesRequest struct {
 	*requests.RpcRequest
-	ResourceId   *[]string          `position:"Query" name:"ResourceId"  type:"Repeated"`
-	Tag          *[]TagResourcesTag `position:"Query" name:"Tag"  type:"Repeated"`
-	ResourceType string             `position:"Query" name:"ResourceType"`
+	ResourceOwnerId      requests.Integer   `position:"Query" name:"ResourceOwnerId"`
+	Tag                  *[]TagResourcesTag `position:"Query" name:"Tag"  type:"Repeated"`
+	ResourceId           *[]string          `position:"Query" name:"ResourceId"  type:"Repeated"`
+	ResourceOwnerAccount string             `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string             `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer   `position:"Query" name:"OwnerId"`
+	ResourceType         string             `position:"Query" name:"ResourceType"`
 }
 
 // TagResourcesTag is a repeated param struct in TagResourcesRequest

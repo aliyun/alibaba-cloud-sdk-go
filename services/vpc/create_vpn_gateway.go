@@ -77,18 +77,19 @@ func (client *Client) CreateVpnGatewayWithCallback(request *CreateVpnGatewayRequ
 type CreateVpnGatewayRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	EnableIpsec          requests.Boolean `position:"Query" name:"EnableIpsec"`
+	InstanceChargeType   string           `position:"Query" name:"InstanceChargeType"`
 	Period               requests.Integer `position:"Query" name:"Period"`
 	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	Bandwidth            requests.Integer `position:"Query" name:"Bandwidth"`
-	EnableIpsec          requests.Boolean `position:"Query" name:"EnableIpsec"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	VSwitchId            string           `position:"Query" name:"VSwitchId"`
 	EnableSsl            requests.Boolean `position:"Query" name:"EnableSsl"`
 	SslConnections       requests.Integer `position:"Query" name:"SslConnections"`
 	VpcId                string           `position:"Query" name:"VpcId"`
 	Name                 string           `position:"Query" name:"Name"`
-	InstanceChargeType   string           `position:"Query" name:"InstanceChargeType"`
 }
 
 // CreateVpnGatewayResponse is the response struct for api CreateVpnGateway

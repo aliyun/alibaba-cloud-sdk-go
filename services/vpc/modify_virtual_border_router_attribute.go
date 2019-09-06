@@ -80,19 +80,19 @@ type ModifyVirtualBorderRouterAttributeRequest struct {
 	CircuitCode                   string           `position:"Query" name:"CircuitCode"`
 	AssociatedPhysicalConnections string           `position:"Query" name:"AssociatedPhysicalConnections"`
 	VlanId                        requests.Integer `position:"Query" name:"VlanId"`
-	ResourceOwnerAccount          string           `position:"Query" name:"ResourceOwnerAccount"`
 	ClientToken                   string           `position:"Query" name:"ClientToken"`
-	OwnerAccount                  string           `position:"Query" name:"OwnerAccount"`
 	Description                   string           `position:"Query" name:"Description"`
 	VbrId                         string           `position:"Query" name:"VbrId"`
-	OwnerId                       requests.Integer `position:"Query" name:"OwnerId"`
-	MinRxInterval                 requests.Integer `position:"Query" name:"MinRxInterval"`
 	PeerGatewayIp                 string           `position:"Query" name:"PeerGatewayIp"`
 	DetectMultiplier              requests.Integer `position:"Query" name:"DetectMultiplier"`
 	PeeringSubnetMask             string           `position:"Query" name:"PeeringSubnetMask"`
-	Name                          string           `position:"Query" name:"Name"`
 	LocalGatewayIp                string           `position:"Query" name:"LocalGatewayIp"`
 	MinTxInterval                 requests.Integer `position:"Query" name:"MinTxInterval"`
+	ResourceOwnerAccount          string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount                  string           `position:"Query" name:"OwnerAccount"`
+	OwnerId                       requests.Integer `position:"Query" name:"OwnerId"`
+	MinRxInterval                 requests.Integer `position:"Query" name:"MinRxInterval"`
+	Name                          string           `position:"Query" name:"Name"`
 }
 
 // ModifyVirtualBorderRouterAttributeResponse is the response struct for api ModifyVirtualBorderRouterAttribute

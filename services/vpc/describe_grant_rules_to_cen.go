@@ -76,14 +76,14 @@ func (client *Client) DescribeGrantRulesToCenWithCallback(request *DescribeGrant
 // DescribeGrantRulesToCenRequest is the request struct for api DescribeGrantRulesToCen
 type DescribeGrantRulesToCenRequest struct {
 	*requests.RpcRequest
-	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	InstanceId           string           `position:"Query" name:"InstanceId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	ResourceGroupId      string           `position:"Query" name:"ResourceGroupId"`
 	InstanceType         string           `position:"Query" name:"InstanceType"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
 }
 
 // DescribeGrantRulesToCenResponse is the response struct for api DescribeGrantRulesToCen

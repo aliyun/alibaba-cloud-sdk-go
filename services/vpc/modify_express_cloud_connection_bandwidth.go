@@ -77,11 +77,11 @@ func (client *Client) ModifyExpressCloudConnectionBandwidthWithCallback(request 
 type ModifyExpressCloudConnectionBandwidthRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	EccId                string           `position:"Query" name:"EccId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	Bandwidth            string           `position:"Query" name:"Bandwidth"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	EccId                string           `position:"Query" name:"EccId"`
 }
 
 // ModifyExpressCloudConnectionBandwidthResponse is the response struct for api ModifyExpressCloudConnectionBandwidth

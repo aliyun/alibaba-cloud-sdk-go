@@ -77,17 +77,17 @@ func (client *Client) DescribeVpcsWithCallback(request *DescribeVpcsRequest, cal
 type DescribeVpcsRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer   `position:"Query" name:"ResourceOwnerId"`
+	PageNumber           requests.Integer   `position:"Query" name:"PageNumber"`
+	VpcName              string             `position:"Query" name:"VpcName"`
+	ResourceGroupId      string             `position:"Query" name:"ResourceGroupId"`
+	PageSize             requests.Integer   `position:"Query" name:"PageSize"`
+	Tag                  *[]DescribeVpcsTag `position:"Query" name:"Tag"  type:"Repeated"`
+	IsDefault            requests.Boolean   `position:"Query" name:"IsDefault"`
 	DryRun               requests.Boolean   `position:"Query" name:"DryRun"`
 	ResourceOwnerAccount string             `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string             `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer   `position:"Query" name:"OwnerId"`
-	PageNumber           requests.Integer   `position:"Query" name:"PageNumber"`
-	VpcName              string             `position:"Query" name:"VpcName"`
-	ResourceGroupId      string             `position:"Query" name:"ResourceGroupId"`
 	VpcId                string             `position:"Query" name:"VpcId"`
-	PageSize             requests.Integer   `position:"Query" name:"PageSize"`
-	Tag                  *[]DescribeVpcsTag `position:"Query" name:"Tag"  type:"Repeated"`
-	IsDefault            requests.Boolean   `position:"Query" name:"IsDefault"`
 }
 
 // DescribeVpcsTag is a repeated param struct in DescribeVpcsRequest

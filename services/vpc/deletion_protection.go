@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// AssociateHaVip invokes the vpc.AssociateHaVip API synchronously
-// api document: https://help.aliyun.com/api/vpc/associatehavip.html
-func (client *Client) AssociateHaVip(request *AssociateHaVipRequest) (response *AssociateHaVipResponse, err error) {
-	response = CreateAssociateHaVipResponse()
+// DeletionProtection invokes the vpc.DeletionProtection API synchronously
+// api document: https://help.aliyun.com/api/vpc/deletionprotection.html
+func (client *Client) DeletionProtection(request *DeletionProtectionRequest) (response *DeletionProtectionResponse, err error) {
+	response = CreateDeletionProtectionResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// AssociateHaVipWithChan invokes the vpc.AssociateHaVip API asynchronously
-// api document: https://help.aliyun.com/api/vpc/associatehavip.html
+// DeletionProtectionWithChan invokes the vpc.DeletionProtection API asynchronously
+// api document: https://help.aliyun.com/api/vpc/deletionprotection.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) AssociateHaVipWithChan(request *AssociateHaVipRequest) (<-chan *AssociateHaVipResponse, <-chan error) {
-	responseChan := make(chan *AssociateHaVipResponse, 1)
+func (client *Client) DeletionProtectionWithChan(request *DeletionProtectionRequest) (<-chan *DeletionProtectionResponse, <-chan error) {
+	responseChan := make(chan *DeletionProtectionResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.AssociateHaVip(request)
+		response, err := client.DeletionProtection(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) AssociateHaVipWithChan(request *AssociateHaVipRequest) (<-
 	return responseChan, errChan
 }
 
-// AssociateHaVipWithCallback invokes the vpc.AssociateHaVip API asynchronously
-// api document: https://help.aliyun.com/api/vpc/associatehavip.html
+// DeletionProtectionWithCallback invokes the vpc.DeletionProtection API asynchronously
+// api document: https://help.aliyun.com/api/vpc/deletionprotection.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) AssociateHaVipWithCallback(request *AssociateHaVipRequest, callback func(response *AssociateHaVipResponse, err error)) <-chan int {
+func (client *Client) DeletionProtectionWithCallback(request *DeletionProtectionRequest, callback func(response *DeletionProtectionResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *AssociateHaVipResponse
+		var response *DeletionProtectionResponse
 		var err error
 		defer close(result)
-		response, err = client.AssociateHaVip(request)
+		response, err = client.DeletionProtection(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,36 +73,36 @@ func (client *Client) AssociateHaVipWithCallback(request *AssociateHaVipRequest,
 	return result
 }
 
-// AssociateHaVipRequest is the request struct for api AssociateHaVip
-type AssociateHaVipRequest struct {
+// DeletionProtectionRequest is the request struct for api DeletionProtection
+type DeletionProtectionRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
-	HaVipId              string           `position:"Query" name:"HaVipId"`
+	ProtectionEnable     requests.Boolean `position:"Query" name:"ProtectionEnable"`
+	Type                 string           `position:"Query" name:"Type"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
 }
 
-// AssociateHaVipResponse is the response struct for api AssociateHaVip
-type AssociateHaVipResponse struct {
+// DeletionProtectionResponse is the response struct for api DeletionProtection
+type DeletionProtectionResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateAssociateHaVipRequest creates a request to invoke AssociateHaVip API
-func CreateAssociateHaVipRequest() (request *AssociateHaVipRequest) {
-	request = &AssociateHaVipRequest{
+// CreateDeletionProtectionRequest creates a request to invoke DeletionProtection API
+func CreateDeletionProtectionRequest() (request *DeletionProtectionRequest) {
+	request = &DeletionProtectionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "AssociateHaVip", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "DeletionProtection", "vpc", "openAPI")
 	return
 }
 
-// CreateAssociateHaVipResponse creates a response to parse from AssociateHaVip response
-func CreateAssociateHaVipResponse() (response *AssociateHaVipResponse) {
-	response = &AssociateHaVipResponse{
+// CreateDeletionProtectionResponse creates a response to parse from DeletionProtection response
+func CreateDeletionProtectionResponse() (response *DeletionProtectionResponse) {
+	response = &DeletionProtectionResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

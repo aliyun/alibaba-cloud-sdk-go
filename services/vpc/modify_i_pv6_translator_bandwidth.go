@@ -77,13 +77,13 @@ func (client *Client) ModifyIPv6TranslatorBandwidthWithCallback(request *ModifyI
 type ModifyIPv6TranslatorBandwidthRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
 	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
 	Bandwidth            requests.Integer `position:"Query" name:"Bandwidth"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	Ipv6TranslatorId     string           `position:"Query" name:"Ipv6TranslatorId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Ipv6TranslatorId     string           `position:"Query" name:"Ipv6TranslatorId"`
 }
 
 // ModifyIPv6TranslatorBandwidthResponse is the response struct for api ModifyIPv6TranslatorBandwidth

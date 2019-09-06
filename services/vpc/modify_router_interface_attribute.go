@@ -78,17 +78,19 @@ type ModifyRouterInterfaceAttributeRequest struct {
 	*requests.RpcRequest
 	OppositeRouterId         string           `position:"Query" name:"OppositeRouterId"`
 	ResourceOwnerId          requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount     string           `position:"Query" name:"ResourceOwnerAccount"`
-	DeleteHealthCheckIp      requests.Boolean `position:"Query" name:"DeleteHealthCheckIp"`
 	Description              string           `position:"Query" name:"Description"`
 	HealthCheckTargetIp      string           `position:"Query" name:"HealthCheckTargetIp"`
+	OppositeInterfaceId      string           `position:"Query" name:"OppositeInterfaceId"`
+	HcThreshold              requests.Integer `position:"Query" name:"HcThreshold"`
+	ResourceOwnerAccount     string           `position:"Query" name:"ResourceOwnerAccount"`
+	DeleteHealthCheckIp      requests.Boolean `position:"Query" name:"DeleteHealthCheckIp"`
 	OwnerId                  requests.Integer `position:"Query" name:"OwnerId"`
 	RouterInterfaceId        string           `position:"Query" name:"RouterInterfaceId"`
 	OppositeInterfaceOwnerId requests.Integer `position:"Query" name:"OppositeInterfaceOwnerId"`
 	HealthCheckSourceIp      string           `position:"Query" name:"HealthCheckSourceIp"`
 	Name                     string           `position:"Query" name:"Name"`
 	OppositeRouterType       string           `position:"Query" name:"OppositeRouterType"`
-	OppositeInterfaceId      string           `position:"Query" name:"OppositeInterfaceId"`
+	HcRate                   requests.Integer `position:"Query" name:"HcRate"`
 }
 
 // ModifyRouterInterfaceAttributeResponse is the response struct for api ModifyRouterInterfaceAttribute

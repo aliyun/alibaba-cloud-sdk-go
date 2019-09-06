@@ -77,18 +77,18 @@ func (client *Client) CreateNatGatewayWithCallback(request *CreateNatGatewayRequ
 type CreateNatGatewayRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer                    `position:"Query" name:"ResourceOwnerId"`
-	AutoPay              requests.Boolean                    `position:"Query" name:"AutoPay"`
-	ResourceOwnerAccount string                              `position:"Query" name:"ResourceOwnerAccount"`
 	ClientToken          string                              `position:"Query" name:"ClientToken"`
-	OwnerAccount         string                              `position:"Query" name:"OwnerAccount"`
 	Description          string                              `position:"Query" name:"Description"`
-	OwnerId              requests.Integer                    `position:"Query" name:"OwnerId"`
 	Spec                 string                              `position:"Query" name:"Spec"`
 	Duration             string                              `position:"Query" name:"Duration"`
-	VpcId                string                              `position:"Query" name:"VpcId"`
-	Name                 string                              `position:"Query" name:"Name"`
 	BandwidthPackage     *[]CreateNatGatewayBandwidthPackage `position:"Query" name:"BandwidthPackage"  type:"Repeated"`
 	InstanceChargeType   string                              `position:"Query" name:"InstanceChargeType"`
+	AutoPay              requests.Boolean                    `position:"Query" name:"AutoPay"`
+	ResourceOwnerAccount string                              `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string                              `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer                    `position:"Query" name:"OwnerId"`
+	VpcId                string                              `position:"Query" name:"VpcId"`
+	Name                 string                              `position:"Query" name:"Name"`
 	PricingCycle         string                              `position:"Query" name:"PricingCycle"`
 }
 

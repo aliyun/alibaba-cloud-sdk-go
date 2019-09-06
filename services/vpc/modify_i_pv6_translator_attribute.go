@@ -77,13 +77,13 @@ func (client *Client) ModifyIPv6TranslatorAttributeWithCallback(request *ModifyI
 type ModifyIPv6TranslatorAttributeRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	Name                 string           `position:"Query" name:"Name"`
 	Description          string           `position:"Query" name:"Description"`
-	Ipv6TranslatorId     string           `position:"Query" name:"Ipv6TranslatorId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Name                 string           `position:"Query" name:"Name"`
+	Ipv6TranslatorId     string           `position:"Query" name:"Ipv6TranslatorId"`
 }
 
 // ModifyIPv6TranslatorAttributeResponse is the response struct for api ModifyIPv6TranslatorAttribute

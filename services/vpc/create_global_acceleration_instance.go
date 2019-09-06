@@ -78,12 +78,12 @@ type CreateGlobalAccelerationInstanceRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	BandwidthType        string           `position:"Query" name:"BandwidthType"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	Description          string           `position:"Query" name:"Description"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ServiceLocation      string           `position:"Query" name:"ServiceLocation"`
 	Bandwidth            string           `position:"Query" name:"Bandwidth"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	Description          string           `position:"Query" name:"Description"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	InternetChargeType   string           `position:"Query" name:"InternetChargeType"`
 	Name                 string           `position:"Query" name:"Name"`

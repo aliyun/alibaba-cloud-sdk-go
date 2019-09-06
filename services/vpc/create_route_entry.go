@@ -78,16 +78,16 @@ type CreateRouteEntryRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer               `position:"Query" name:"ResourceOwnerId"`
 	RouteEntryName       string                         `position:"Query" name:"RouteEntryName"`
-	ResourceOwnerAccount string                         `position:"Query" name:"ResourceOwnerAccount"`
 	ClientToken          string                         `position:"Query" name:"ClientToken"`
+	NextHopId            string                         `position:"Query" name:"NextHopId"`
+	NextHopType          string                         `position:"Query" name:"NextHopType"`
+	RouteTableId         string                         `position:"Query" name:"RouteTableId"`
+	ResourceOwnerAccount string                         `position:"Query" name:"ResourceOwnerAccount"`
 	DestinationCidrBlock string                         `position:"Query" name:"DestinationCidrBlock"`
 	OwnerAccount         string                         `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer               `position:"Query" name:"OwnerId"`
 	PrivateIpAddress     string                         `position:"Query" name:"PrivateIpAddress"`
-	NextHopId            string                         `position:"Query" name:"NextHopId"`
-	NextHopType          string                         `position:"Query" name:"NextHopType"`
 	NextHopList          *[]CreateRouteEntryNextHopList `position:"Query" name:"NextHopList"  type:"Repeated"`
-	RouteTableId         string                         `position:"Query" name:"RouteTableId"`
 }
 
 // CreateRouteEntryNextHopList is a repeated param struct in CreateRouteEntryRequest

@@ -77,12 +77,12 @@ func (client *Client) ModifyExpressCloudConnectionAttributeWithCallback(request 
 type ModifyExpressCloudConnectionAttributeRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	Description          string           `position:"Query" name:"Description"`
+	EccId                string           `position:"Query" name:"EccId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	Name                 string           `position:"Query" name:"Name"`
-	Description          string           `position:"Query" name:"Description"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	EccId                string           `position:"Query" name:"EccId"`
+	Name                 string           `position:"Query" name:"Name"`
 }
 
 // ModifyExpressCloudConnectionAttributeResponse is the response struct for api ModifyExpressCloudConnectionAttribute

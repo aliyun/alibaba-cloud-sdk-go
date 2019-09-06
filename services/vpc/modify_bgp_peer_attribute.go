@@ -77,14 +77,14 @@ func (client *Client) ModifyBgpPeerAttributeWithCallback(request *ModifyBgpPeerA
 type ModifyBgpPeerAttributeRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ClientToken          string           `position:"Query" name:"ClientToken"`
+	BgpGroupId           string           `position:"Query" name:"BgpGroupId"`
+	PeerIpAddress        string           `position:"Query" name:"PeerIpAddress"`
 	EnableBfd            requests.Boolean `position:"Query" name:"EnableBfd"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	BgpGroupId           string           `position:"Query" name:"BgpGroupId"`
 	BgpPeerId            string           `position:"Query" name:"BgpPeerId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	PeerIpAddress        string           `position:"Query" name:"PeerIpAddress"`
 }
 
 // ModifyBgpPeerAttributeResponse is the response struct for api ModifyBgpPeerAttribute

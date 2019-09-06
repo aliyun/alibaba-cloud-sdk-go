@@ -77,11 +77,11 @@ func (client *Client) AssociateGlobalAccelerationInstanceWithCallback(request *A
 type AssociateGlobalAccelerationInstanceRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId              requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	GlobalAccelerationInstanceId string           `position:"Query" name:"GlobalAccelerationInstanceId"`
+	BackendServerId              string           `position:"Query" name:"BackendServerId"`
 	ResourceOwnerAccount         string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount                 string           `position:"Query" name:"OwnerAccount"`
-	BackendServerId              string           `position:"Query" name:"BackendServerId"`
 	OwnerId                      requests.Integer `position:"Query" name:"OwnerId"`
-	GlobalAccelerationInstanceId string           `position:"Query" name:"GlobalAccelerationInstanceId"`
 	BackendServerRegionId        string           `position:"Query" name:"BackendServerRegionId"`
 	BackendServerType            string           `position:"Query" name:"BackendServerType"`
 }

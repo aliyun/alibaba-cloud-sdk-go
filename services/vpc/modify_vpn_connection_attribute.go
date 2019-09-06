@@ -78,16 +78,16 @@ type ModifyVpnConnectionAttributeRequest struct {
 	*requests.RpcRequest
 	IkeConfig            string           `position:"Query" name:"IkeConfig"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	RemoteSubnet         string           `position:"Query" name:"RemoteSubnet"`
-	EffectImmediately    requests.Boolean `position:"Query" name:"EffectImmediately"`
 	AutoConfigRoute      requests.Boolean `position:"Query" name:"AutoConfigRoute"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	IpsecConfig          string           `position:"Query" name:"IpsecConfig"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	HealthCheckConfig    string           `position:"Query" name:"HealthCheckConfig"`
 	LocalSubnet          string           `position:"Query" name:"LocalSubnet"`
+	RemoteSubnet         string           `position:"Query" name:"RemoteSubnet"`
+	EffectImmediately    requests.Boolean `position:"Query" name:"EffectImmediately"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	VpnConnectionId      string           `position:"Query" name:"VpnConnectionId"`
 	Name                 string           `position:"Query" name:"Name"`
 }

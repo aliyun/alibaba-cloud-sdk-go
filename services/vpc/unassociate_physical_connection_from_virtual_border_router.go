@@ -77,12 +77,12 @@ func (client *Client) UnassociatePhysicalConnectionFromVirtualBorderRouterWithCa
 type UnassociatePhysicalConnectionFromVirtualBorderRouterRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
-	PhysicalConnectionId string           `position:"Query" name:"PhysicalConnectionId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	VbrId                string           `position:"Query" name:"VbrId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	PhysicalConnectionId string           `position:"Query" name:"PhysicalConnectionId"`
 }
 
 // UnassociatePhysicalConnectionFromVirtualBorderRouterResponse is the response struct for api UnassociatePhysicalConnectionFromVirtualBorderRouter

@@ -77,18 +77,18 @@ func (client *Client) DescribeForwardTableEntriesWithCallback(request *DescribeF
 type DescribeForwardTableEntriesRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ForwardTableId       string           `position:"Query" name:"ForwardTableId"`
+	InternalIp           string           `position:"Query" name:"InternalIp"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	ForwardEntryId       string           `position:"Query" name:"ForwardEntryId"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	ExternalIp           string           `position:"Query" name:"ExternalIp"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	IpProtocol           string           `position:"Query" name:"IpProtocol"`
 	ForwardEntryName     string           `position:"Query" name:"ForwardEntryName"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	ForwardTableId       string           `position:"Query" name:"ForwardTableId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	InternalIp           string           `position:"Query" name:"InternalIp"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	ForwardEntryId       string           `position:"Query" name:"ForwardEntryId"`
 	InternalPort         string           `position:"Query" name:"InternalPort"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
-	ExternalIp           string           `position:"Query" name:"ExternalIp"`
 	ExternalPort         string           `position:"Query" name:"ExternalPort"`
 }
 

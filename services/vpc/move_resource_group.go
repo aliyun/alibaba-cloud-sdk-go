@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// DeleteNqa invokes the vpc.DeleteNqa API synchronously
-// api document: https://help.aliyun.com/api/vpc/deletenqa.html
-func (client *Client) DeleteNqa(request *DeleteNqaRequest) (response *DeleteNqaResponse, err error) {
-	response = CreateDeleteNqaResponse()
+// MoveResourceGroup invokes the vpc.MoveResourceGroup API synchronously
+// api document: https://help.aliyun.com/api/vpc/moveresourcegroup.html
+func (client *Client) MoveResourceGroup(request *MoveResourceGroupRequest) (response *MoveResourceGroupResponse, err error) {
+	response = CreateMoveResourceGroupResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// DeleteNqaWithChan invokes the vpc.DeleteNqa API asynchronously
-// api document: https://help.aliyun.com/api/vpc/deletenqa.html
+// MoveResourceGroupWithChan invokes the vpc.MoveResourceGroup API asynchronously
+// api document: https://help.aliyun.com/api/vpc/moveresourcegroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DeleteNqaWithChan(request *DeleteNqaRequest) (<-chan *DeleteNqaResponse, <-chan error) {
-	responseChan := make(chan *DeleteNqaResponse, 1)
+func (client *Client) MoveResourceGroupWithChan(request *MoveResourceGroupRequest) (<-chan *MoveResourceGroupResponse, <-chan error) {
+	responseChan := make(chan *MoveResourceGroupResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.DeleteNqa(request)
+		response, err := client.MoveResourceGroup(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) DeleteNqaWithChan(request *DeleteNqaRequest) (<-chan *Dele
 	return responseChan, errChan
 }
 
-// DeleteNqaWithCallback invokes the vpc.DeleteNqa API asynchronously
-// api document: https://help.aliyun.com/api/vpc/deletenqa.html
+// MoveResourceGroupWithCallback invokes the vpc.MoveResourceGroup API asynchronously
+// api document: https://help.aliyun.com/api/vpc/moveresourcegroup.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) DeleteNqaWithCallback(request *DeleteNqaRequest, callback func(response *DeleteNqaResponse, err error)) <-chan int {
+func (client *Client) MoveResourceGroupWithCallback(request *MoveResourceGroupRequest, callback func(response *MoveResourceGroupResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *DeleteNqaResponse
+		var response *MoveResourceGroupResponse
 		var err error
 		defer close(result)
-		response, err = client.DeleteNqa(request)
+		response, err = client.MoveResourceGroup(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,35 +73,36 @@ func (client *Client) DeleteNqaWithCallback(request *DeleteNqaRequest, callback 
 	return result
 }
 
-// DeleteNqaRequest is the request struct for api DeleteNqa
-type DeleteNqaRequest struct {
+// MoveResourceGroupRequest is the request struct for api MoveResourceGroup
+type MoveResourceGroupRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceId           string           `position:"Query" name:"ResourceId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	ClientToken          string           `position:"Query" name:"ClientToken"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	NqaId                string           `position:"Query" name:"NqaId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceType         string           `position:"Query" name:"ResourceType"`
+	NewResourceGroupId   string           `position:"Query" name:"NewResourceGroupId"`
 }
 
-// DeleteNqaResponse is the response struct for api DeleteNqa
-type DeleteNqaResponse struct {
+// MoveResourceGroupResponse is the response struct for api MoveResourceGroup
+type MoveResourceGroupResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
-// CreateDeleteNqaRequest creates a request to invoke DeleteNqa API
-func CreateDeleteNqaRequest() (request *DeleteNqaRequest) {
-	request = &DeleteNqaRequest{
+// CreateMoveResourceGroupRequest creates a request to invoke MoveResourceGroup API
+func CreateMoveResourceGroupRequest() (request *MoveResourceGroupRequest) {
+	request = &MoveResourceGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Vpc", "2016-04-28", "DeleteNqa", "vpc", "openAPI")
+	request.InitWithApiInfo("Vpc", "2016-04-28", "MoveResourceGroup", "vpc", "openAPI")
 	return
 }
 
-// CreateDeleteNqaResponse creates a response to parse from DeleteNqa response
-func CreateDeleteNqaResponse() (response *DeleteNqaResponse) {
-	response = &DeleteNqaResponse{
+// CreateMoveResourceGroupResponse creates a response to parse from MoveResourceGroup response
+func CreateMoveResourceGroupResponse() (response *MoveResourceGroupResponse) {
+	response = &MoveResourceGroupResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

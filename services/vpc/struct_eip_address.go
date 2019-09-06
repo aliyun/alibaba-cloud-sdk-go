@@ -45,6 +45,7 @@ type EipAddress struct {
 	ReservationActiveTime         string                               `json:"ReservationActiveTime" xml:"ReservationActiveTime"`
 	ReservationOrderType          string                               `json:"ReservationOrderType" xml:"ReservationOrderType"`
 	Mode                          string                               `json:"Mode" xml:"Mode"`
+	DeletionProtection            bool                                 `json:"DeletionProtection" xml:"DeletionProtection"`
 	SecondLimited                 bool                                 `json:"SecondLimited" xml:"SecondLimited"`
 	AvailableRegions              AvailableRegions                     `json:"AvailableRegions" xml:"AvailableRegions"`
 	OperationLocks                OperationLocksInDescribeEipAddresses `json:"OperationLocks" xml:"OperationLocks"`

@@ -77,17 +77,17 @@ func (client *Client) CreateBandwidthPackageWithCallback(request *CreateBandwidt
 type CreateBandwidthPackageRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
-	Bandwidth            requests.Integer `position:"Query" name:"Bandwidth"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	ISP                  string           `position:"Query" name:"ISP"`
 	Description          string           `position:"Query" name:"Description"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	Zone                 string           `position:"Query" name:"Zone"`
+	NatGatewayId         string           `position:"Query" name:"NatGatewayId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	Bandwidth            requests.Integer `position:"Query" name:"Bandwidth"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	InternetChargeType   string           `position:"Query" name:"InternetChargeType"`
 	Name                 string           `position:"Query" name:"Name"`
-	NatGatewayId         string           `position:"Query" name:"NatGatewayId"`
 	IpCount              requests.Integer `position:"Query" name:"IpCount"`
 }
 

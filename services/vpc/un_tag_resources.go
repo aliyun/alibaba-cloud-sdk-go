@@ -76,9 +76,13 @@ func (client *Client) UnTagResourcesWithCallback(request *UnTagResourcesRequest,
 // UnTagResourcesRequest is the request struct for api UnTagResources
 type UnTagResourcesRequest struct {
 	*requests.RpcRequest
-	ResourceId   *[]string `position:"Query" name:"ResourceId"  type:"Repeated"`
-	TagKey       *[]string `position:"Query" name:"TagKey"  type:"Repeated"`
-	ResourceType string    `position:"Query" name:"ResourceType"`
+	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceId           *[]string        `position:"Query" name:"ResourceId"  type:"Repeated"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ResourceType         string           `position:"Query" name:"ResourceType"`
+	TagKey               *[]string        `position:"Query" name:"TagKey"  type:"Repeated"`
 }
 
 // UnTagResourcesResponse is the response struct for api UnTagResources

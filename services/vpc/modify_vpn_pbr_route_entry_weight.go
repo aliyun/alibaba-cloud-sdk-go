@@ -78,13 +78,13 @@ type ModifyVpnPbrRouteEntryWeightRequest struct {
 	*requests.RpcRequest
 	RouteSource          string           `position:"Query" name:"RouteSource"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
+	NewWeight            requests.Integer `position:"Query" name:"NewWeight"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	Weight               requests.Integer `position:"Query" name:"Weight"`
 	VpnGatewayId         string           `position:"Query" name:"VpnGatewayId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	NewWeight            requests.Integer `position:"Query" name:"NewWeight"`
 	RouteDest            string           `position:"Query" name:"RouteDest"`
 	NextHop              string           `position:"Query" name:"NextHop"`
 	OverlayMode          string           `position:"Query" name:"OverlayMode"`
