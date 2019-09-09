@@ -76,6 +76,7 @@ func (client *Client) CreateInstanceWithCallback(request *CreateInstanceRequest,
 // CreateInstanceRequest is the request struct for api CreateInstance
 type CreateInstanceRequest struct {
 	*requests.RoaRequest
+	ClientToken string `position:"Query" name:"clientToken"`
 }
 
 // CreateInstanceResponse is the response struct for api CreateInstance
