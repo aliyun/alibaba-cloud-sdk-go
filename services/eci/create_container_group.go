@@ -102,6 +102,7 @@ type CreateContainerGroupRequest struct {
 	InstanceType            string                                         `position:"Query" name:"InstanceType"`
 	SlsEnable               requests.Boolean                               `position:"Query" name:"SlsEnable"`
 	ImageSnapshotId         string                                         `position:"Query" name:"ImageSnapshotId"`
+	RamRoleName             string                                         `position:"Query" name:"RamRoleName"`
 	DnsConfig               CreateContainerGroupDnsConfig                  `position:"Query" name:"DnsConfig" type:"Struct"`
 	SecurityContext         CreateContainerGroupSecurityContext            `position:"Query" name:"SecurityContext" type:"Struct"`
 }
@@ -144,6 +145,7 @@ type CreateContainerGroupVolume struct {
 	NFSVolume        CreateContainerGroupNFSVolume        `name:"NFSVolume" type:"Struct"`
 	ConfigFileVolume CreateContainerGroupConfigFileVolume `name:"ConfigFileVolume" type:"Struct"`
 	EmptyDirVolume   CreateContainerGroupEmptyDirVolume   `name:"EmptyDirVolume" type:"Struct"`
+	DiskVolume       CreateContainerGroupDiskVolume       `name:"DiskVolume" type:"Struct"`
 }
 
 type CreateContainerGroupInitContainer struct {
@@ -174,13 +176,13 @@ type CreateContainerGroupArn struct {
 }
 
 type CreateContainerGroupDnsConfig struct {
-	NameServer []string                      `name:"NameServer"`
-	Search     []string                      `name:"Search"`
-	Option     *[]CreateContainerGroupOption `name:"Option"`
+	NameServer []string                      `name:"NameServer" type:"Repeated"`
+	Search     []string                      `name:"Search" type:"Repeated"`
+	Option     *[]CreateContainerGroupOption `name:"Option" type:"Repeated"`
 }
 
 type CreateContainerGroupSecurityContext struct {
-	Sysctl *[]CreateContainerGroupSysctl `name:"Sysctl"`
+	Sysctl *[]CreateContainerGroupSysctl `name:"Sysctl" type:"Repeated"`
 }
 
 type CreateContainerGroupVolumeMount struct {
@@ -223,7 +225,7 @@ type CreateContainerGroupHttpGet struct {
 }
 
 type CreateContainerGroupExec struct {
-	Command []string `name:"Command"`
+	Command []string `name:"Command" type:"Repeated"`
 }
 
 type CreateContainerGroupTcpSocket struct {
@@ -248,7 +250,7 @@ type CreateContainerGroupNFSVolume struct {
 }
 
 type CreateContainerGroupConfigFileVolume struct {
-	ConfigFileToPath *[]CreateContainerGroupConfigFileToPath `name:"ConfigFileToPath"`
+	ConfigFileToPath *[]CreateContainerGroupConfigFileToPath `name:"ConfigFileToPath" type:"Repeated"`
 	DefaultModel     requests.Integer                        `name:"DefaultModel"`
 }
 
@@ -260,6 +262,11 @@ type CreateContainerGroupConfigFileToPath struct {
 
 type CreateContainerGroupEmptyDirVolume struct {
 	Medium string `name:"Medium"`
+}
+
+type CreateContainerGroupDiskVolume struct {
+	DiskId string `name:"DiskId"`
+	FsType string `name:"FsType"`
 }
 
 type CreateContainerGroupOption struct {

@@ -93,32 +93,44 @@ type DescribeContainerGroupPriceResponse struct {
 }
 
 type DescribeContainerGroupPricePriceInfo0 struct {
-	Rules []DescribeContainerGroupPriceRule1 `json:"Rules" xml:"Rules"`
-	Price DescribeContainerGroupPricePrice1  `json:"Price" xml:"Price"`
+	Rules DescribeContainerGroupPriceRules1 `json:"Rules" xml:"Rules"`
+	Price DescribeContainerGroupPricePrice1 `json:"Price" xml:"Price"`
 }
 
-type DescribeContainerGroupPriceRule1 struct {
+type DescribeContainerGroupPriceRules1 struct {
+	Rule []DescribeContainerGroupPriceRule2 `json:"Rule" xml:"Rule"`
+}
+
+type DescribeContainerGroupPriceRule2 struct {
 	RuleId      int64  `json:"RuleId" xml:"RuleId"`
 	Description string `json:"Description" xml:"Description"`
 }
 
 type DescribeContainerGroupPricePrice1 struct {
-	OriginalPrice float32                                  `json:"OriginalPrice" xml:"OriginalPrice"`
-	DiscountPrice float32                                  `json:"DiscountPrice" xml:"DiscountPrice"`
-	TradePrice    float32                                  `json:"TradePrice" xml:"TradePrice"`
-	Currency      string                                   `json:"Currency" xml:"Currency"`
-	DetailInfos   []DescribeContainerGroupPriceDetailInfo2 `json:"DetailInfos" xml:"DetailInfos"`
+	OriginalPrice float32                                 `json:"OriginalPrice" xml:"OriginalPrice"`
+	DiscountPrice float32                                 `json:"DiscountPrice" xml:"DiscountPrice"`
+	TradePrice    float32                                 `json:"TradePrice" xml:"TradePrice"`
+	Currency      string                                  `json:"Currency" xml:"Currency"`
+	DetailInfos   DescribeContainerGroupPriceDetailInfos2 `json:"DetailInfos" xml:"DetailInfos"`
 }
 
-type DescribeContainerGroupPriceDetailInfo2 struct {
-	Resource      string                             `json:"Resource" xml:"Resource"`
-	OriginalPrice float32                            `json:"OriginalPrice" xml:"OriginalPrice"`
-	DiscountPrice float32                            `json:"DiscountPrice" xml:"DiscountPrice"`
-	TradePrice    float32                            `json:"TradePrice" xml:"TradePrice"`
-	Rules         []DescribeContainerGroupPriceRule3 `json:"Rules" xml:"Rules"`
+type DescribeContainerGroupPriceDetailInfos2 struct {
+	DetailInfo []DescribeContainerGroupPriceDetailInfo3 `json:"DetailInfo" xml:"DetailInfo"`
 }
 
-type DescribeContainerGroupPriceRule3 struct {
+type DescribeContainerGroupPriceDetailInfo3 struct {
+	Resource      string                            `json:"Resource" xml:"Resource"`
+	OriginalPrice float32                           `json:"OriginalPrice" xml:"OriginalPrice"`
+	DiscountPrice float32                           `json:"DiscountPrice" xml:"DiscountPrice"`
+	TradePrice    float32                           `json:"TradePrice" xml:"TradePrice"`
+	Rules         DescribeContainerGroupPriceRules4 `json:"Rules" xml:"Rules"`
+}
+
+type DescribeContainerGroupPriceRules4 struct {
+	Rule []DescribeContainerGroupPriceRule5 `json:"Rule" xml:"Rule"`
+}
+
+type DescribeContainerGroupPriceRule5 struct {
 	RuleId      int64  `json:"RuleId" xml:"RuleId"`
 	Description string `json:"Description" xml:"Description"`
 }
