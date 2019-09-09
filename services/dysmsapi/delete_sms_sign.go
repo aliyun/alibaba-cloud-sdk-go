@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// SendSms invokes the dysmsapi.SendSms API synchronously
-// api document: https://help.aliyun.com/api/dysmsapi/sendsms.html
-func (client *Client) SendSms(request *SendSmsRequest) (response *SendSmsResponse, err error) {
-	response = CreateSendSmsResponse()
+// DeleteSmsSign invokes the dysmsapi.DeleteSmsSign API synchronously
+// api document: https://help.aliyun.com/api/dysmsapi/deletesmssign.html
+func (client *Client) DeleteSmsSign(request *DeleteSmsSignRequest) (response *DeleteSmsSignResponse, err error) {
+	response = CreateDeleteSmsSignResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// SendSmsWithChan invokes the dysmsapi.SendSms API asynchronously
-// api document: https://help.aliyun.com/api/dysmsapi/sendsms.html
+// DeleteSmsSignWithChan invokes the dysmsapi.DeleteSmsSign API asynchronously
+// api document: https://help.aliyun.com/api/dysmsapi/deletesmssign.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) SendSmsWithChan(request *SendSmsRequest) (<-chan *SendSmsResponse, <-chan error) {
-	responseChan := make(chan *SendSmsResponse, 1)
+func (client *Client) DeleteSmsSignWithChan(request *DeleteSmsSignRequest) (<-chan *DeleteSmsSignResponse, <-chan error) {
+	responseChan := make(chan *DeleteSmsSignResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.SendSms(request)
+		response, err := client.DeleteSmsSign(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) SendSmsWithChan(request *SendSmsRequest) (<-chan *SendSmsR
 	return responseChan, errChan
 }
 
-// SendSmsWithCallback invokes the dysmsapi.SendSms API asynchronously
-// api document: https://help.aliyun.com/api/dysmsapi/sendsms.html
+// DeleteSmsSignWithCallback invokes the dysmsapi.DeleteSmsSign API asynchronously
+// api document: https://help.aliyun.com/api/dysmsapi/deletesmssign.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) SendSmsWithCallback(request *SendSmsRequest, callback func(response *SendSmsResponse, err error)) <-chan int {
+func (client *Client) DeleteSmsSignWithCallback(request *DeleteSmsSignRequest, callback func(response *DeleteSmsSignResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *SendSmsResponse
+		var response *DeleteSmsSignResponse
 		var err error
 		defer close(result)
-		response, err = client.SendSms(request)
+		response, err = client.DeleteSmsSign(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,41 +73,36 @@ func (client *Client) SendSmsWithCallback(request *SendSmsRequest, callback func
 	return result
 }
 
-// SendSmsRequest is the request struct for api SendSms
-type SendSmsRequest struct {
+// DeleteSmsSignRequest is the request struct for api DeleteSmsSign
+type DeleteSmsSignRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	SmsUpExtendCode      string           `position:"Query" name:"SmsUpExtendCode"`
-	SignName             string           `position:"Query" name:"SignName"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	PhoneNumbers         string           `position:"Query" name:"PhoneNumbers"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	OutId                string           `position:"Query" name:"OutId"`
-	TemplateCode         string           `position:"Query" name:"TemplateCode"`
-	TemplateParam        string           `position:"Query" name:"TemplateParam"`
+	SignName             string           `position:"Query" name:"SignName"`
 }
 
-// SendSmsResponse is the response struct for api SendSms
-type SendSmsResponse struct {
+// DeleteSmsSignResponse is the response struct for api DeleteSmsSign
+type DeleteSmsSignResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	BizId     string `json:"BizId" xml:"BizId"`
+	SignName  string `json:"SignName" xml:"SignName"`
 	Code      string `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
 }
 
-// CreateSendSmsRequest creates a request to invoke SendSms API
-func CreateSendSmsRequest() (request *SendSmsRequest) {
-	request = &SendSmsRequest{
+// CreateDeleteSmsSignRequest creates a request to invoke DeleteSmsSign API
+func CreateDeleteSmsSignRequest() (request *DeleteSmsSignRequest) {
+	request = &DeleteSmsSignRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Dysmsapi", "2017-05-25", "SendSms", "dysmsapi", "openAPI")
+	request.InitWithApiInfo("Dysmsapi", "2017-05-25", "DeleteSmsSign", "dysmsapi", "openAPI")
 	return
 }
 
-// CreateSendSmsResponse creates a response to parse from SendSms response
-func CreateSendSmsResponse() (response *SendSmsResponse) {
-	response = &SendSmsResponse{
+// CreateDeleteSmsSignResponse creates a response to parse from DeleteSmsSign response
+func CreateDeleteSmsSignResponse() (response *DeleteSmsSignResponse) {
+	response = &DeleteSmsSignResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

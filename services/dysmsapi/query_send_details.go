@@ -77,13 +77,13 @@ func (client *Client) QuerySendDetailsWithCallback(request *QuerySendDetailsRequ
 type QuerySendDetailsRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	SendDate             string           `position:"Query" name:"SendDate"`
 	PhoneNumber          string           `position:"Query" name:"PhoneNumber"`
-	BizId                string           `position:"Query" name:"BizId"`
+	SendDate             string           `position:"Query" name:"SendDate"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	CurrentPage          requests.Integer `position:"Query" name:"CurrentPage"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	BizId                string           `position:"Query" name:"BizId"`
 }
 
 // QuerySendDetailsResponse is the response struct for api QuerySendDetails

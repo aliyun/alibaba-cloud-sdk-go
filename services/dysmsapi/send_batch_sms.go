@@ -76,11 +76,11 @@ func (client *Client) SendBatchSmsWithCallback(request *SendBatchSmsRequest, cal
 // SendBatchSmsRequest is the request struct for api SendBatchSms
 type SendBatchSmsRequest struct {
 	*requests.RpcRequest
-	TemplateParamJson    string           `position:"Query" name:"TemplateParamJson"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	TemplateParamJson    string           `position:"Query" name:"TemplateParamJson"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	SmsUpExtendCodeJson  string           `position:"Query" name:"SmsUpExtendCodeJson"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	SmsUpExtendCodeJson  string           `position:"Query" name:"SmsUpExtendCodeJson"`
 	SignNameJson         string           `position:"Query" name:"SignNameJson"`
 	TemplateCode         string           `position:"Query" name:"TemplateCode"`
 	PhoneNumberJson      string           `position:"Query" name:"PhoneNumberJson"`
