@@ -154,9 +154,9 @@ type UpdateContainerGroupImageRegistryCredential struct {
 }
 
 type UpdateContainerGroupDnsConfig struct {
-	NameServer []string                      `name:"NameServer"`
-	Search     []string                      `name:"Search"`
-	Option     *[]UpdateContainerGroupOption `name:"Option"`
+	NameServer []string                      `name:"NameServer" type:"Repeated"`
+	Search     []string                      `name:"Search" type:"Repeated"`
+	Option     *[]UpdateContainerGroupOption `name:"Option" type:"Repeated"`
 }
 
 type UpdateContainerGroupNFSVolume struct {
@@ -166,7 +166,7 @@ type UpdateContainerGroupNFSVolume struct {
 }
 
 type UpdateContainerGroupConfigFileVolume struct {
-	ConfigFileToPath *[]UpdateContainerGroupConfigFileToPath `name:"ConfigFileToPath"`
+	ConfigFileToPath *[]UpdateContainerGroupConfigFileToPath `name:"ConfigFileToPath" type:"Repeated"`
 }
 
 type UpdateContainerGroupConfigFileToPath struct {
@@ -194,7 +194,7 @@ type UpdateContainerGroupTcpSocket struct {
 }
 
 type UpdateContainerGroupExec struct {
-	Command []string `name:"Command"`
+	Command []string `name:"Command" type:"Repeated"`
 }
 
 type UpdateContainerGroupHttpGet struct {
@@ -221,7 +221,7 @@ type UpdateContainerGroupSecurityContext struct {
 }
 
 type UpdateContainerGroupCapability struct {
-	Add []string `name:"Add"`
+	Add []string `name:"Add" type:"Repeated"`
 }
 
 type UpdateContainerGroupEnvironmentVar struct {

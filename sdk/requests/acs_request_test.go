@@ -196,7 +196,7 @@ type CreateContainerGroupVolume struct {
 type CreateContainerGroupDnsConfig struct {
 	NameServer []string                      `name:"NameServer"`
 	Search     []string                      `name:"Search"`
-	Option     *[]CreateContainerGroupOption `name:"Option"`
+	Option     *[]CreateContainerGroupOption `name:"Option" type:"Repeated"`
 }
 
 type CreateContainerGroupNFSVolume struct {
@@ -260,6 +260,21 @@ func Test_AcsRequest_InitParams4(t *testing.T) {
 }
 
 func Test_AcsRequest_InitParams5(t *testing.T) {
+	r := InitRequest()
+	r.RegionId = "regionid"
+	r.DnsConfig = CreateContainerGroupDnsConfig{
+		Option: &[]CreateContainerGroupOption{
+			{
+				Name:  "sdk",
+				Value: "test",
+			},
+		},
+	}
+	InitParams(r)
+	assert.Equal(t, "DnsConfig.Option.1.Name=sdk&DnsConfig.Option.1.Value=test&", GetQueryString(r))
+}
+
+func Test_AcsRequest_InitParams6(t *testing.T) {
 	r := InitRequest()
 	r.Volume = &[]CreateContainerGroupVolume{
 		{

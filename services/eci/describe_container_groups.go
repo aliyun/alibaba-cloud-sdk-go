@@ -124,6 +124,7 @@ type DescribeContainerGroupsContainerGroup0 struct {
 	InstanceType       string                                     `json:"InstanceType" xml:"InstanceType"`
 	ExpiredTime        string                                     `json:"ExpiredTime" xml:"ExpiredTime"`
 	FailedTime         string                                     `json:"FailedTime" xml:"FailedTime"`
+	RamRoleName        string                                     `json:"RamRoleName" xml:"RamRoleName"`
 	Tags               []DescribeContainerGroupsLabel1            `json:"Tags" xml:"Tags"`
 	Events             []DescribeContainerGroupsEvent1            `json:"Events" xml:"Events"`
 	Containers         []DescribeContainerGroupsContainer1        `json:"Containers" xml:"Containers"`
@@ -267,6 +268,8 @@ type DescribeContainerGroupsVolume1 struct {
 	NFSVolumePath                     string                                                     `json:"NFSVolumePath" xml:"NFSVolumePath"`
 	NFSVolumeServer                   string                                                     `json:"NFSVolumeServer" xml:"NFSVolumeServer"`
 	NFSVolumeReadOnly                 bool                                                       `json:"NFSVolumeReadOnly" xml:"NFSVolumeReadOnly"`
+	DiskVolumeDiskId                  string                                                     `json:"DiskVolumeDiskId" xml:"DiskVolumeDiskId"`
+	DiskVolumeFsType                  string                                                     `json:"DiskVolumeFsType" xml:"DiskVolumeFsType"`
 	ConfigFileVolumeConfigFileToPaths []DescribeContainerGroupsConfigFileVolumeConfigFileToPath2 `json:"ConfigFileVolumeConfigFileToPaths" xml:"ConfigFileVolumeConfigFileToPaths"`
 }
 
