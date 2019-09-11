@@ -16,6 +16,7 @@ package sdk
 
 import (
 	"bytes"
+	"errors"
 	"fmt"
 	"io/ioutil"
 	"net/http"
@@ -313,6 +314,16 @@ func Test_DoAction_HTTPSInsecure(t *testing.T) {
 	url, _ = trans.Proxy(nil)
 	assert.Equal(t, url.Scheme, "https")
 	assert.Equal(t, url.Host, "127.0.0.1:6666")
+
+	hookDo = func(fn func(req *http.Request) (*http.Response, error)) func(req *http.Request) (*http.Response, error) {
+		return func(req *http.Request) (*http.Response, error) {
+			return mockResponse(400, "", errors.New("x509: certificate signed by unknown authority"))
+		}
+	}
+	err = client.DoAction(request, response)
+	assert.NotNil(t, err)
+	assert.Equal(t, 400, response.GetHttpStatus())
+	assert.Equal(t, "", response.GetHttpContentString())
 
 	client.Shutdown()
 	os.Setenv("HTTPS_PROXY", envHttpsProxy)
