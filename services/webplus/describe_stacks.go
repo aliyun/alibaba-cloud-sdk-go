@@ -99,7 +99,7 @@ func CreateDescribeStacksRequest() (request *DescribeStacksRequest) {
 	request = &DescribeStacksRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("WebPlus", "2019-03-20", "DescribeStacks", "/pop/v1/wam/stack", "webx", "openAPI")
+	request.InitWithApiInfo("WebPlus", "2019-03-20", "DescribeStacks", "/pop/v1/wam/stack", "", "")
 	request.Method = requests.GET
 	return
 }

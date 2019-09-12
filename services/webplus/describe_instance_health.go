@@ -93,7 +93,7 @@ func CreateDescribeInstanceHealthRequest() (request *DescribeInstanceHealthReque
 	request = &DescribeInstanceHealthRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("WebPlus", "2019-03-20", "DescribeInstanceHealth", "/pop/v1/wam/instance/health", "webx", "openAPI")
+	request.InitWithApiInfo("WebPlus", "2019-03-20", "DescribeInstanceHealth", "/pop/v1/wam/instance/health", "", "")
 	request.Method = requests.GET
 	return
 }

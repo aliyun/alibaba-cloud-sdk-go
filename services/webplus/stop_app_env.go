@@ -93,7 +93,7 @@ func CreateStopAppEnvRequest() (request *StopAppEnvRequest) {
 	request = &StopAppEnvRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("WebPlus", "2019-03-20", "StopAppEnv", "/pop/v1/wam/appEnv/stop", "webx", "openAPI")
+	request.InitWithApiInfo("WebPlus", "2019-03-20", "StopAppEnv", "/pop/v1/wam/appEnv/stop", "", "")
 	request.Method = requests.POST
 	return
 }

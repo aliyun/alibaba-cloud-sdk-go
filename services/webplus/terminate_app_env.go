@@ -94,7 +94,7 @@ func CreateTerminateAppEnvRequest() (request *TerminateAppEnvRequest) {
 	request = &TerminateAppEnvRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("WebPlus", "2019-03-20", "TerminateAppEnv", "/pop/v1/wam/appEnv/terminate", "webx", "openAPI")
+	request.InitWithApiInfo("WebPlus", "2019-03-20", "TerminateAppEnv", "/pop/v1/wam/appEnv/terminate", "", "")
 	request.Method = requests.POST
 	return
 }

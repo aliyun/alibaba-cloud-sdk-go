@@ -93,7 +93,7 @@ func CreateAbortChangeRequest() (request *AbortChangeRequest) {
 	request = &AbortChangeRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("WebPlus", "2019-03-20", "AbortChange", "/pop/v1/wam/change/abort", "webx", "openAPI")
+	request.InitWithApiInfo("WebPlus", "2019-03-20", "AbortChange", "/pop/v1/wam/change/abort", "", "")
 	request.Method = requests.POST
 	return
 }

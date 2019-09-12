@@ -93,7 +93,7 @@ func CreateDescribeEnvResourceRequest() (request *DescribeEnvResourceRequest) {
 	request = &DescribeEnvResourceRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("WebPlus", "2019-03-20", "DescribeEnvResource", "/pop/v1/wam/envResource", "webx", "openAPI")
+	request.InitWithApiInfo("WebPlus", "2019-03-20", "DescribeEnvResource", "/pop/v1/wam/envResource", "", "")
 	request.Method = requests.GET
 	return
 }

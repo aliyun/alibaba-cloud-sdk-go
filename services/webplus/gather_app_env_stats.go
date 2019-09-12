@@ -94,7 +94,7 @@ func CreateGatherAppEnvStatsRequest() (request *GatherAppEnvStatsRequest) {
 	request = &GatherAppEnvStatsRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("WebPlus", "2019-03-20", "GatherAppEnvStats", "/pop/v1/wam/appEnv/gatherStats", "webx", "openAPI")
+	request.InitWithApiInfo("WebPlus", "2019-03-20", "GatherAppEnvStats", "/pop/v1/wam/appEnv/gatherStats", "", "")
 	request.Method = requests.POST
 	return
 }

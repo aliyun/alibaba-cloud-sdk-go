@@ -94,7 +94,7 @@ func CreateRebuildAppEnvRequest() (request *RebuildAppEnvRequest) {
 	request = &RebuildAppEnvRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("WebPlus", "2019-03-20", "RebuildAppEnv", "/pop/v1/wam/appEnv/rebuild", "webx", "openAPI")
+	request.InitWithApiInfo("WebPlus", "2019-03-20", "RebuildAppEnv", "/pop/v1/wam/appEnv/rebuild", "", "")
 	request.Method = requests.POST
 	return
 }

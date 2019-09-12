@@ -96,7 +96,7 @@ func CreateValidateConfigSettingRequest() (request *ValidateConfigSettingRequest
 	request = &ValidateConfigSettingRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("WebPlus", "2019-03-20", "ValidateConfigSetting", "/pop/v1/wam/config/configSetting/validate", "webx", "openAPI")
+	request.InitWithApiInfo("WebPlus", "2019-03-20", "ValidateConfigSetting", "/pop/v1/wam/config/configSetting/validate", "", "")
 	request.Method = requests.POST
 	return
 }

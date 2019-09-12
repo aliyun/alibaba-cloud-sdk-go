@@ -100,7 +100,7 @@ func CreateDescribeConfigTemplatesRequest() (request *DescribeConfigTemplatesReq
 	request = &DescribeConfigTemplatesRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("WebPlus", "2019-03-20", "DescribeConfigTemplates", "/pop/v1/wam/configTemplate", "webx", "openAPI")
+	request.InitWithApiInfo("WebPlus", "2019-03-20", "DescribeConfigTemplates", "/pop/v1/wam/configTemplate", "", "")
 	request.Method = requests.GET
 	return
 }

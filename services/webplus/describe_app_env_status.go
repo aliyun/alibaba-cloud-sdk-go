@@ -93,7 +93,7 @@ func CreateDescribeAppEnvStatusRequest() (request *DescribeAppEnvStatusRequest) 
 	request = &DescribeAppEnvStatusRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("WebPlus", "2019-03-20", "DescribeAppEnvStatus", "/pop/v1/wam/appEnv/status", "webx", "openAPI")
+	request.InitWithApiInfo("WebPlus", "2019-03-20", "DescribeAppEnvStatus", "/pop/v1/wam/appEnv/status", "", "")
 	request.Method = requests.GET
 	return
 }

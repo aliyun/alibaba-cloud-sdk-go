@@ -93,7 +93,7 @@ func CreatePauseChangeRequest() (request *PauseChangeRequest) {
 	request = &PauseChangeRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("WebPlus", "2019-03-20", "PauseChange", "/pop/v1/wam/change/pause", "webx", "openAPI")
+	request.InitWithApiInfo("WebPlus", "2019-03-20", "PauseChange", "/pop/v1/wam/change/pause", "", "")
 	request.Method = requests.POST
 	return
 }

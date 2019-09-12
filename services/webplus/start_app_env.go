@@ -93,7 +93,7 @@ func CreateStartAppEnvRequest() (request *StartAppEnvRequest) {
 	request = &StartAppEnvRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("WebPlus", "2019-03-20", "StartAppEnv", "/pop/v1/wam/appEnv/start", "webx", "openAPI")
+	request.InitWithApiInfo("WebPlus", "2019-03-20", "StartAppEnv", "/pop/v1/wam/appEnv/start", "", "")
 	request.Method = requests.POST
 	return
 }

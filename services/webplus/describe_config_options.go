@@ -95,7 +95,7 @@ func CreateDescribeConfigOptionsRequest() (request *DescribeConfigOptionsRequest
 	request = &DescribeConfigOptionsRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("WebPlus", "2019-03-20", "DescribeConfigOptions", "/pop/v1/wam/config/configOption", "webx", "openAPI")
+	request.InitWithApiInfo("WebPlus", "2019-03-20", "DescribeConfigOptions", "/pop/v1/wam/config/configOption", "", "")
 	request.Method = requests.GET
 	return
 }

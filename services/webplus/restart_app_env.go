@@ -93,7 +93,7 @@ func CreateRestartAppEnvRequest() (request *RestartAppEnvRequest) {
 	request = &RestartAppEnvRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("WebPlus", "2019-03-20", "RestartAppEnv", "/pop/v1/wam/appEnv/restart", "webx", "openAPI")
+	request.InitWithApiInfo("WebPlus", "2019-03-20", "RestartAppEnv", "/pop/v1/wam/appEnv/restart", "", "")
 	request.Method = requests.POST
 	return
 }

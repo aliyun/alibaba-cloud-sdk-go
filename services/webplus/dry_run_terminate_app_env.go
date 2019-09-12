@@ -93,7 +93,7 @@ func CreateDryRunTerminateAppEnvRequest() (request *DryRunTerminateAppEnvRequest
 	request = &DryRunTerminateAppEnvRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("WebPlus", "2019-03-20", "DryRunTerminateAppEnv", "/pop/v1/wam/appEnv/dryRunTerminate", "webx", "openAPI")
+	request.InitWithApiInfo("WebPlus", "2019-03-20", "DryRunTerminateAppEnv", "/pop/v1/wam/appEnv/dryRunTerminate", "", "")
 	request.Method = requests.POST
 	return
 }

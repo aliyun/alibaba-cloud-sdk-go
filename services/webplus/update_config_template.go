@@ -95,7 +95,7 @@ func CreateUpdateConfigTemplateRequest() (request *UpdateConfigTemplateRequest) 
 	request = &UpdateConfigTemplateRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("WebPlus", "2019-03-20", "UpdateConfigTemplate", "/pop/v1/wam/configTemplate", "webx", "openAPI")
+	request.InitWithApiInfo("WebPlus", "2019-03-20", "UpdateConfigTemplate", "/pop/v1/wam/configTemplate", "", "")
 	request.Method = requests.PUT
 	return
 }

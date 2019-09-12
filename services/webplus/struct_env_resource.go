@@ -17,15 +17,16 @@ package webplus
 
 // EnvResource is a nested struct in webplus response
 type EnvResource struct {
-	EnvId                 string         `json:"EnvId" xml:"EnvId"`
-	EnvName               string         `json:"EnvName" xml:"EnvName"`
-	LaunchConfigurationId string         `json:"LaunchConfigurationId" xml:"LaunchConfigurationId"`
-	LaunchTemplateId      string         `json:"LaunchTemplateId" xml:"LaunchTemplateId"`
-	MonitorGroup          MonitorGroup   `json:"MonitorGroup" xml:"MonitorGroup"`
-	ScalingGroup          ScalingGroup   `json:"ScalingGroup" xml:"ScalingGroup"`
-	Vpc                   Vpc            `json:"Vpc" xml:"Vpc"`
-	Instances             Instances      `json:"Instances" xml:"Instances"`
-	VSwitches             VSwitches      `json:"VSwitches" xml:"VSwitches"`
-	LoadBalancers         LoadBalancers  `json:"LoadBalancers" xml:"LoadBalancers"`
-	SecurityGroups        SecurityGroups `json:"SecurityGroups" xml:"SecurityGroups"`
+	EnvId                 string                `json:"EnvId" xml:"EnvId"`
+	EnvName               string                `json:"EnvName" xml:"EnvName"`
+	LaunchConfigurationId string                `json:"LaunchConfigurationId" xml:"LaunchConfigurationId"`
+	LaunchTemplateId      string                `json:"LaunchTemplateId" xml:"LaunchTemplateId"`
+	MonitorGroup          MonitorGroup          `json:"MonitorGroup" xml:"MonitorGroup"`
+	ScalingGroup          ScalingGroup          `json:"ScalingGroup" xml:"ScalingGroup"`
+	Vpc                   Vpc                   `json:"Vpc" xml:"Vpc"`
+	Instances             Instances             `json:"Instances" xml:"Instances"`
+	VSwitches             VSwitches             `json:"VSwitches" xml:"VSwitches"`
+	LoadBalancers         LoadBalancers         `json:"LoadBalancers" xml:"LoadBalancers"`
+	DefaultSecurityGroups DefaultSecurityGroups `json:"DefaultSecurityGroups" xml:"DefaultSecurityGroups"`
+	RdsInstances          RdsInstances          `json:"RdsInstances" xml:"RdsInstances"`
 }

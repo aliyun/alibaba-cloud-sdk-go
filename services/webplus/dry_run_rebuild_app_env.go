@@ -93,7 +93,7 @@ func CreateDryRunRebuildAppEnvRequest() (request *DryRunRebuildAppEnvRequest) {
 	request = &DryRunRebuildAppEnvRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("WebPlus", "2019-03-20", "DryRunRebuildAppEnv", "/pop/v1/wam/appEnv/dryRunRebuild", "webx", "openAPI")
+	request.InitWithApiInfo("WebPlus", "2019-03-20", "DryRunRebuildAppEnv", "/pop/v1/wam/appEnv/dryRunRebuild", "", "")
 	request.Method = requests.POST
 	return
 }

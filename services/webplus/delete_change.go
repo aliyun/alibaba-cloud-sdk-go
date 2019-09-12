@@ -92,7 +92,7 @@ func CreateDeleteChangeRequest() (request *DeleteChangeRequest) {
 	request = &DeleteChangeRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("WebPlus", "2019-03-20", "DeleteChange", "/pop/v1/wam/change", "webx", "openAPI")
+	request.InitWithApiInfo("WebPlus", "2019-03-20", "DeleteChange", "/pop/v1/wam/change", "", "")
 	request.Method = requests.DELETE
 	return
 }

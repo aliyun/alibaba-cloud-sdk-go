@@ -1,3 +1,6 @@
+2019-09-12 Version: 1.60.155
+- Support RDS.
+
 2019-09-09 Version: 1.60.154
 - CreateInstance add toen.
 - UpdateInstance add toen.

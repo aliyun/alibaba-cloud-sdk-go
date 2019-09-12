@@ -76,11 +76,12 @@ func (client *Client) DryRunCreateAppEnvWithCallback(request *DryRunCreateAppEnv
 // DryRunCreateAppEnvRequest is the request struct for api DryRunCreateAppEnv
 type DryRunCreateAppEnvRequest struct {
 	*requests.RoaRequest
-	OptionSettings string `position:"Body" name:"OptionSettings"`
-	StackId        string `position:"Body" name:"StackId"`
-	ProfileName    string `position:"Body" name:"ProfileName"`
-	SourceEnvId    string `position:"Body" name:"SourceEnvId"`
-	TemplateId     string `position:"Body" name:"TemplateId"`
+	OptionSettings  string `position:"Body" name:"OptionSettings"`
+	ExtraProperties string `position:"Body" name:"ExtraProperties"`
+	StackId         string `position:"Body" name:"StackId"`
+	ProfileName     string `position:"Body" name:"ProfileName"`
+	SourceEnvId     string `position:"Body" name:"SourceEnvId"`
+	TemplateId      string `position:"Body" name:"TemplateId"`
 }
 
 // DryRunCreateAppEnvResponse is the response struct for api DryRunCreateAppEnv
@@ -97,7 +98,7 @@ func CreateDryRunCreateAppEnvRequest() (request *DryRunCreateAppEnvRequest) {
 	request = &DryRunCreateAppEnvRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("WebPlus", "2019-03-20", "DryRunCreateAppEnv", "/pop/v1/wam/appEnv/dryRunCreate", "webx", "openAPI")
+	request.InitWithApiInfo("WebPlus", "2019-03-20", "DryRunCreateAppEnv", "/pop/v1/wam/appEnv/dryRunCreate", "", "")
 	request.Method = requests.POST
 	return
 }

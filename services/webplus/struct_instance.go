@@ -17,5 +17,6 @@ package webplus
 
 // Instance is a nested struct in webplus response
 type Instance struct {
-	Id string `json:"Id" xml:"Id"`
+	Id       string `json:"Id" xml:"Id"`
+	Imported bool   `json:"Imported" xml:"Imported"`
 }

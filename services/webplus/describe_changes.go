@@ -99,7 +99,7 @@ func CreateDescribeChangesRequest() (request *DescribeChangesRequest) {
 	request = &DescribeChangesRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("WebPlus", "2019-03-20", "DescribeChanges", "/pop/v1/wam/change", "webx", "openAPI")
+	request.InitWithApiInfo("WebPlus", "2019-03-20", "DescribeChanges", "/pop/v1/wam/change", "", "")
 	request.Method = requests.GET
 	return
 }

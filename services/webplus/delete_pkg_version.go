@@ -92,7 +92,7 @@ func CreateDeletePkgVersionRequest() (request *DeletePkgVersionRequest) {
 	request = &DeletePkgVersionRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("WebPlus", "2019-03-20", "DeletePkgVersion", "/pop/v1/wam/pkgVersion", "webx", "openAPI")
+	request.InitWithApiInfo("WebPlus", "2019-03-20", "DeletePkgVersion", "/pop/v1/wam/pkgVersion", "", "")
 	request.Method = requests.DELETE
 	return
 }

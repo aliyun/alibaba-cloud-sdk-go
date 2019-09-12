@@ -93,7 +93,7 @@ func CreateDescribeGatherLogResultRequest() (request *DescribeGatherLogResultReq
 	request = &DescribeGatherLogResultRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("WebPlus", "2019-03-20", "DescribeGatherLogResult", "/pop/v1/wam/appEnv/gatherLog", "webx", "openAPI")
+	request.InitWithApiInfo("WebPlus", "2019-03-20", "DescribeGatherLogResult", "/pop/v1/wam/appEnv/gatherLog", "", "")
 	request.Method = requests.GET
 	return
 }

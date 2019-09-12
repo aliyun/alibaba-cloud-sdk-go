@@ -92,7 +92,7 @@ func CreateDeleteAppEnvRequest() (request *DeleteAppEnvRequest) {
 	request = &DeleteAppEnvRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("WebPlus", "2019-03-20", "DeleteAppEnv", "/pop/v1/wam/appEnv", "webx", "openAPI")
+	request.InitWithApiInfo("WebPlus", "2019-03-20", "DeleteAppEnv", "/pop/v1/wam/appEnv", "", "")
 	request.Method = requests.DELETE
 	return
 }

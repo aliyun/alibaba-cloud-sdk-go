@@ -103,7 +103,7 @@ func CreateDescribeApplicationsRequest() (request *DescribeApplicationsRequest) 
 	request = &DescribeApplicationsRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("WebPlus", "2019-03-20", "DescribeApplications", "/pop/v1/wam/application", "webx", "openAPI")
+	request.InitWithApiInfo("WebPlus", "2019-03-20", "DescribeApplications", "/pop/v1/wam/application", "", "")
 	request.Method = requests.GET
 	return
 }

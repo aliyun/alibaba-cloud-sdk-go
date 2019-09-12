@@ -97,7 +97,7 @@ func CreateDescribeConfigIndexRequest() (request *DescribeConfigIndexRequest) {
 	request = &DescribeConfigIndexRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("WebPlus", "2019-03-20", "DescribeConfigIndex", "/pop/v1/wam/config/configIndex", "webx", "openAPI")
+	request.InitWithApiInfo("WebPlus", "2019-03-20", "DescribeConfigIndex", "/pop/v1/wam/config/configIndex", "", "")
 	request.Method = requests.GET
 	return
 }

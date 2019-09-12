@@ -76,8 +76,10 @@ func (client *Client) DescribeConfigSettingsWithCallback(request *DescribeConfig
 // DescribeConfigSettingsRequest is the request struct for api DescribeConfigSettings
 type DescribeConfigSettingsRequest struct {
 	*requests.RoaRequest
+	OptionName string `position:"Query" name:"OptionName"`
 	EnvId      string `position:"Query" name:"EnvId"`
 	TemplateId string `position:"Query" name:"TemplateId"`
+	PathName   string `position:"Query" name:"PathName"`
 }
 
 // DescribeConfigSettingsResponse is the response struct for api DescribeConfigSettings
@@ -94,7 +96,7 @@ func CreateDescribeConfigSettingsRequest() (request *DescribeConfigSettingsReque
 	request = &DescribeConfigSettingsRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("WebPlus", "2019-03-20", "DescribeConfigSettings", "/pop/v1/wam/config/configSetting", "webx", "openAPI")
+	request.InitWithApiInfo("WebPlus", "2019-03-20", "DescribeConfigSettings", "/pop/v1/wam/config/configSetting", "", "")
 	request.Method = requests.GET
 	return
 }

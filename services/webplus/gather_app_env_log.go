@@ -95,7 +95,7 @@ func CreateGatherAppEnvLogRequest() (request *GatherAppEnvLogRequest) {
 	request = &GatherAppEnvLogRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("WebPlus", "2019-03-20", "GatherAppEnvLog", "/pop/v1/wam/appEnv/gatherLog", "webx", "openAPI")
+	request.InitWithApiInfo("WebPlus", "2019-03-20", "GatherAppEnvLog", "/pop/v1/wam/appEnv/gatherLog", "", "")
 	request.Method = requests.POST
 	return
 }

@@ -76,16 +76,17 @@ func (client *Client) CreateAppEnvWithCallback(request *CreateAppEnvRequest, cal
 // CreateAppEnvRequest is the request struct for api CreateAppEnv
 type CreateAppEnvRequest struct {
 	*requests.RoaRequest
-	OptionSettings string           `position:"Body" name:"OptionSettings"`
-	DryRun         requests.Boolean `position:"Body" name:"DryRun"`
-	EnvName        string           `position:"Body" name:"EnvName"`
-	StackId        string           `position:"Body" name:"StackId"`
-	AppId          string           `position:"Body" name:"AppId"`
-	ProfileName    string           `position:"Body" name:"ProfileName"`
-	EnvDescription string           `position:"Body" name:"EnvDescription"`
-	PkgVersionId   string           `position:"Body" name:"PkgVersionId"`
-	SourceEnvId    string           `position:"Body" name:"SourceEnvId"`
-	TemplateId     string           `position:"Body" name:"TemplateId"`
+	OptionSettings  string           `position:"Body" name:"OptionSettings"`
+	DryRun          requests.Boolean `position:"Body" name:"DryRun"`
+	EnvName         string           `position:"Body" name:"EnvName"`
+	ExtraProperties string           `position:"Body" name:"ExtraProperties"`
+	StackId         string           `position:"Body" name:"StackId"`
+	AppId           string           `position:"Body" name:"AppId"`
+	ProfileName     string           `position:"Body" name:"ProfileName"`
+	EnvDescription  string           `position:"Body" name:"EnvDescription"`
+	PkgVersionId    string           `position:"Body" name:"PkgVersionId"`
+	SourceEnvId     string           `position:"Body" name:"SourceEnvId"`
+	TemplateId      string           `position:"Body" name:"TemplateId"`
 }
 
 // CreateAppEnvResponse is the response struct for api CreateAppEnv
@@ -102,7 +103,7 @@ func CreateCreateAppEnvRequest() (request *CreateAppEnvRequest) {
 	request = &CreateAppEnvRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("WebPlus", "2019-03-20", "CreateAppEnv", "/pop/v1/wam/appEnv", "webx", "openAPI")
+	request.InitWithApiInfo("WebPlus", "2019-03-20", "CreateAppEnv", "/pop/v1/wam/appEnv", "", "")
 	request.Method = requests.POST
 	return
 }

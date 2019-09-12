@@ -92,7 +92,7 @@ func CreateDescribeStorageRequest() (request *DescribeStorageRequest) {
 	request = &DescribeStorageRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("WebPlus", "2019-03-20", "DescribeStorage", "/pop/v1/wam/storage", "webx", "openAPI")
+	request.InitWithApiInfo("WebPlus", "2019-03-20", "DescribeStorage", "/pop/v1/wam/storage", "", "")
 	request.Method = requests.GET
 	return
 }

@@ -92,7 +92,7 @@ func CreateDeleteConfigTemplateRequest() (request *DeleteConfigTemplateRequest) 
 	request = &DeleteConfigTemplateRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("WebPlus", "2019-03-20", "DeleteConfigTemplate", "/pop/v1/wam/configTemplate", "webx", "openAPI")
+	request.InitWithApiInfo("WebPlus", "2019-03-20", "DeleteConfigTemplate", "/pop/v1/wam/configTemplate", "", "")
 	request.Method = requests.DELETE
 	return
 }

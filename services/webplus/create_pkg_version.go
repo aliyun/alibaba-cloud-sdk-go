@@ -96,7 +96,7 @@ func CreateCreatePkgVersionRequest() (request *CreatePkgVersionRequest) {
 	request = &CreatePkgVersionRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("WebPlus", "2019-03-20", "CreatePkgVersion", "/pop/v1/wam/pkgVersion", "webx", "openAPI")
+	request.InitWithApiInfo("WebPlus", "2019-03-20", "CreatePkgVersion", "/pop/v1/wam/pkgVersion", "", "")
 	request.Method = requests.POST
 	return
 }

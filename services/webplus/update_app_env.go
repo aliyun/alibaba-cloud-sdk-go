@@ -76,12 +76,13 @@ func (client *Client) UpdateAppEnvWithCallback(request *UpdateAppEnvRequest, cal
 // UpdateAppEnvRequest is the request struct for api UpdateAppEnv
 type UpdateAppEnvRequest struct {
 	*requests.RoaRequest
-	OptionSettings string           `position:"Body" name:"OptionSettings"`
-	DryRun         requests.Boolean `position:"Body" name:"DryRun"`
-	StackId        string           `position:"Body" name:"StackId"`
-	EnvDescription string           `position:"Body" name:"EnvDescription"`
-	EnvId          string           `position:"Body" name:"EnvId"`
-	PkgVersionId   string           `position:"Body" name:"PkgVersionId"`
+	OptionSettings  string           `position:"Body" name:"OptionSettings"`
+	DryRun          requests.Boolean `position:"Body" name:"DryRun"`
+	ExtraProperties string           `position:"Body" name:"ExtraProperties"`
+	StackId         string           `position:"Body" name:"StackId"`
+	EnvDescription  string           `position:"Body" name:"EnvDescription"`
+	EnvId           string           `position:"Body" name:"EnvId"`
+	PkgVersionId    string           `position:"Body" name:"PkgVersionId"`
 }
 
 // UpdateAppEnvResponse is the response struct for api UpdateAppEnv
@@ -98,7 +99,7 @@ func CreateUpdateAppEnvRequest() (request *UpdateAppEnvRequest) {
 	request = &UpdateAppEnvRequest{
 		RoaRequest: &requests.RoaRequest{},
 	}
-	request.InitWithApiInfo("WebPlus", "2019-03-20", "UpdateAppEnv", "/pop/v1/wam/appEnv", "webx", "openAPI")
+	request.InitWithApiInfo("WebPlus", "2019-03-20", "UpdateAppEnv", "/pop/v1/wam/appEnv", "", "")
 	request.Method = requests.PUT
 	return
 }
