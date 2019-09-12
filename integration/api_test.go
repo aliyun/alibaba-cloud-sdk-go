@@ -1,6 +1,7 @@
 package integration
 
 import (
+	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/endpoints"
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/requests"
 	"github.com/aliyun/alibaba-cloud-sdk-go/services/bssopenapi"
 	"github.com/aliyun/alibaba-cloud-sdk-go/services/cdn"
@@ -262,7 +263,7 @@ func Test_QueryAvaliableInstances(t *testing.T) {
 	client, err := bssopenapi.NewClientWithAccessKey(os.Getenv("REGION_ID"), os.Getenv("ACCESS_KEY_ID"), os.Getenv("ACCESS_KEY_SECRET"))
 	assert.Nil(t, err)
 	request := bssopenapi.CreateQueryAvailableInstancesRequest()
-	request.Domain = "business.aliyuncs.com"
+	endpoints.AddEndpointMapping(os.Getenv("REGION_ID"), "BssOpenApi", "business.aliyuncs.com")
 	response, err := client.QueryAvailableInstances(request)
 	assert.Nil(t, err)
 	assert.True(t, response.IsSuccess())
