@@ -1,3 +1,6 @@
+2019-09-12 Version: 1.60.156
+- Add DescribePrePaidInstanceStock.
+
 2019-09-12 Version: 1.60.155
 - Support RDS.
 
