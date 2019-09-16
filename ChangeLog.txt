@@ -1,3 +1,6 @@
+2019-09-16 Version: 1.60.161
+- Generated 2019-09-10 for `waf-openapi`.
+
 2019-09-16 Version: 1.60.160
 - Add Region List.
 
