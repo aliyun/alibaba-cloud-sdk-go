@@ -76,11 +76,11 @@ func (client *Client) DescribeProtectionModuleRulesWithCallback(request *Describ
 // DescribeProtectionModuleRulesRequest is the request struct for api DescribeProtectionModuleRules
 type DescribeProtectionModuleRulesRequest struct {
 	*requests.RpcRequest
+	PageNumber  requests.Integer `position:"Query" name:"PageNumber"`
 	SourceIp    string           `position:"Query" name:"SourceIp"`
-	Defense     string           `position:"Query" name:"Defense"`
 	PageSize    requests.Integer `position:"Query" name:"PageSize"`
 	Lang        string           `position:"Query" name:"Lang"`
-	CurrentPage requests.Integer `position:"Query" name:"CurrentPage"`
+	DefenseType string           `position:"Query" name:"DefenseType"`
 	InstanceId  string           `position:"Query" name:"InstanceId"`
 	Domain      string           `position:"Query" name:"Domain"`
 	Region      string           `position:"Query" name:"Region"`
@@ -89,10 +89,9 @@ type DescribeProtectionModuleRulesRequest struct {
 // DescribeProtectionModuleRulesResponse is the response struct for api DescribeProtectionModuleRules
 type DescribeProtectionModuleRulesResponse struct {
 	*responses.BaseResponse
-	RequestId   string            `json:"RequestId" xml:"RequestId"`
-	TaskStatus  int               `json:"TaskStatus" xml:"TaskStatus"`
-	Total       int               `json:"Total" xml:"Total"`
-	ModuleRules []ModuleRulesItem `json:"ModuleRules" xml:"ModuleRules"`
+	RequestId  string `json:"RequestId" xml:"RequestId"`
+	TotalCount int    `json:"TotalCount" xml:"TotalCount"`
+	Rules      []Rule `json:"Rules" xml:"Rules"`
 }
 
 // CreateDescribeProtectionModuleRulesRequest creates a request to invoke DescribeProtectionModuleRules API
@@ -100,7 +99,7 @@ func CreateDescribeProtectionModuleRulesRequest() (request *DescribeProtectionMo
 	request = &DescribeProtectionModuleRulesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("waf-openapi", "2018-01-17", "DescribeProtectionModuleRules", "waf", "openAPI")
+	request.InitWithApiInfo("waf-openapi", "2019-09-10", "DescribeProtectionModuleRules", "waf", "openAPI")
 	return
 }
 

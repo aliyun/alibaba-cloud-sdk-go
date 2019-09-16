@@ -76,21 +76,19 @@ func (client *Client) CreateProtectionModuleRuleWithCallback(request *CreateProt
 // CreateProtectionModuleRuleRequest is the request struct for api CreateProtectionModuleRule
 type CreateProtectionModuleRuleRequest struct {
 	*requests.RpcRequest
-	Rule       string `position:"Query" name:"Rule"`
-	SourceIp   string `position:"Query" name:"SourceIp"`
-	Defense    string `position:"Query" name:"Defense"`
-	Lang       string `position:"Query" name:"Lang"`
-	InstanceId string `position:"Query" name:"InstanceId"`
-	Domain     string `position:"Query" name:"Domain"`
-	Region     string `position:"Query" name:"Region"`
+	Rule        string `position:"Query" name:"Rule"`
+	SourceIp    string `position:"Query" name:"SourceIp"`
+	Lang        string `position:"Query" name:"Lang"`
+	DefenseType string `position:"Query" name:"DefenseType"`
+	InstanceId  string `position:"Query" name:"InstanceId"`
+	Domain      string `position:"Query" name:"Domain"`
+	Region      string `position:"Query" name:"Region"`
 }
 
 // CreateProtectionModuleRuleResponse is the response struct for api CreateProtectionModuleRule
 type CreateProtectionModuleRuleResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	TaskStatus int    `json:"TaskStatus" xml:"TaskStatus"`
-	WafTaskId  int    `json:"WafTaskId" xml:"WafTaskId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateCreateProtectionModuleRuleRequest creates a request to invoke CreateProtectionModuleRule API
@@ -98,7 +96,7 @@ func CreateCreateProtectionModuleRuleRequest() (request *CreateProtectionModuleR
 	request = &CreateProtectionModuleRuleRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("waf-openapi", "2018-01-17", "CreateProtectionModuleRule", "waf", "openAPI")
+	request.InitWithApiInfo("waf-openapi", "2019-09-10", "CreateProtectionModuleRule", "waf", "openAPI")
 	return
 }
 
