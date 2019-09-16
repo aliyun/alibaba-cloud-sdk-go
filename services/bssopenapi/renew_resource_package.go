@@ -86,12 +86,12 @@ type RenewResourcePackageRequest struct {
 // RenewResourcePackageResponse is the response struct for api RenewResourcePackage
 type RenewResourcePackageResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	OrderId   int64  `json:"OrderId" xml:"OrderId"`
-	Success   bool   `json:"Success" xml:"Success"`
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	Data      Data   `json:"Data" xml:"Data"`
+	RequestId string                     `json:"RequestId" xml:"RequestId"`
+	OrderId   int64                      `json:"OrderId" xml:"OrderId"`
+	Success   bool                       `json:"Success" xml:"Success"`
+	Code      string                     `json:"Code" xml:"Code"`
+	Message   string                     `json:"Message" xml:"Message"`
+	Data      DataInRenewResourcePackage `json:"Data" xml:"Data"`
 }
 
 // CreateRenewResourcePackageRequest creates a request to invoke RenewResourcePackage API
@@ -99,7 +99,7 @@ func CreateRenewResourcePackageRequest() (request *RenewResourcePackageRequest) 
 	request = &RenewResourcePackageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "RenewResourcePackage", "bssopenapi", "openAPI")
+	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "RenewResourcePackage", "", "")
 	return
 }
 

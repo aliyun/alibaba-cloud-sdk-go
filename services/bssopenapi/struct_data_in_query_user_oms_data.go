@@ -17,7 +17,7 @@ package bssopenapi
 
 // DataInQueryUserOmsData is a nested struct in bssopenapi response
 type DataInQueryUserOmsData struct {
-	Marker  string   `json:"Marker" xml:"Marker"`
-	HostId  string   `json:"HostId" xml:"HostId"`
-	OmsData []string `json:"OmsData" xml:"OmsData"`
+	Marker  string                   `json:"Marker" xml:"Marker"`
+	HostId  string                   `json:"HostId" xml:"HostId"`
+	OmsData []map[string]interface{} `json:"OmsData" xml:"OmsData"`
 }

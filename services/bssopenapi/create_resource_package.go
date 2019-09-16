@@ -88,12 +88,12 @@ type CreateResourcePackageRequest struct {
 // CreateResourcePackageResponse is the response struct for api CreateResourcePackage
 type CreateResourcePackageResponse struct {
 	*responses.BaseResponse
-	RequestId string `json:"RequestId" xml:"RequestId"`
-	OrderId   int64  `json:"OrderId" xml:"OrderId"`
-	Success   bool   `json:"Success" xml:"Success"`
-	Code      string `json:"Code" xml:"Code"`
-	Message   string `json:"Message" xml:"Message"`
-	Data      Data   `json:"Data" xml:"Data"`
+	RequestId string                      `json:"RequestId" xml:"RequestId"`
+	OrderId   int64                       `json:"OrderId" xml:"OrderId"`
+	Success   bool                        `json:"Success" xml:"Success"`
+	Code      string                      `json:"Code" xml:"Code"`
+	Message   string                      `json:"Message" xml:"Message"`
+	Data      DataInCreateResourcePackage `json:"Data" xml:"Data"`
 }
 
 // CreateCreateResourcePackageRequest creates a request to invoke CreateResourcePackage API
@@ -101,7 +101,7 @@ func CreateCreateResourcePackageRequest() (request *CreateResourcePackageRequest
 	request = &CreateResourcePackageRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "CreateResourcePackage", "bssopenapi", "openAPI")
+	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "CreateResourcePackage", "", "")
 	return
 }
 

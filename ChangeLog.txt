@@ -1,3 +1,6 @@
+2019-09-16 Version: 1.60.159
+- Fixed go struct file.
+
 2019-09-16 Version: 1.60.158
 - Generated 2019-09-10 for `waf-openapi`.
 
