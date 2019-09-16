@@ -73,6 +73,7 @@ type Client struct {
 	EndpointMap    map[string]string
 	EndpointType   string
 	Network        string
+	Domain         string
 
 	debug     bool
 	isRunning bool
@@ -337,6 +338,11 @@ func (client *Client) buildRequestWithSigner(request requests.AcsRequest, signer
 
 	// resolve endpoint
 	endpoint := request.GetDomain()
+
+	if endpoint == "" && client.Domain != "" {
+		endpoint = client.Domain
+	}
+
 	if endpoint == "" {
 		endpoint = endpoints.GetEndpointFromMap(regionId, request.GetProduct())
 	}
