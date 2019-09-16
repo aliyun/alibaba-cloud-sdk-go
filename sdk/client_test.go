@@ -599,6 +599,17 @@ func TestClient_BuildRequestWithSigner2(t *testing.T) {
 	assert.Equal(t, "regional", client.EndpointType)
 	assert.Equal(t, "vpc", client.Network)
 	assert.Equal(t, map[string]string{"regiontest": "ecs.test.com"}, client.EndpointMap)
+
+	client.Domain = "ecs-client.aliyuncs.com"
+	request.Domain = ""
+	httprequest, err = client.buildRequestWithSigner(request, signer)
+	assert.Nil(t, err)
+	assert.Equal(t, "ecs-client.aliyuncs.com", httprequest.URL.Host)
+
+	request.Domain = "ecs-request.aliyuncs.com"
+	httprequest, err = client.buildRequestWithSigner(request, signer)
+	assert.Nil(t, err)
+	assert.Equal(t, "ecs-request.aliyuncs.com", httprequest.URL.Host)
 }
 
 func TestClient_ProcessCommonRequestWithSigner(t *testing.T) {
