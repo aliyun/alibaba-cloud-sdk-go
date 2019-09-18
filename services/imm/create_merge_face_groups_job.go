@@ -76,11 +76,11 @@ func (client *Client) CreateMergeFaceGroupsJobWithCallback(request *CreateMergeF
 // CreateMergeFaceGroupsJobRequest is the request struct for api CreateMergeFaceGroupsJob
 type CreateMergeFaceGroupsJobRequest struct {
 	*requests.RpcRequest
-	GroupIdFrom     string `position:"Query" name:"GroupIdFrom"`
-	GroupIdTo       string `position:"Query" name:"GroupIdTo"`
-	NotifyTopicName string `position:"Query" name:"NotifyTopicName"`
-	NotifyEndpoint  string `position:"Query" name:"NotifyEndpoint"`
 	Project         string `position:"Query" name:"Project"`
+	NotifyEndpoint  string `position:"Query" name:"NotifyEndpoint"`
+	GroupIdFrom     string `position:"Query" name:"GroupIdFrom"`
+	NotifyTopicName string `position:"Query" name:"NotifyTopicName"`
+	GroupIdTo       string `position:"Query" name:"GroupIdTo"`
 	SetId           string `position:"Query" name:"SetId"`
 }
 

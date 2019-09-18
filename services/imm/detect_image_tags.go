@@ -76,9 +76,9 @@ func (client *Client) DetectImageTagsWithCallback(request *DetectImageTagsReques
 // DetectImageTagsRequest is the request struct for api DetectImageTags
 type DetectImageTagsRequest struct {
 	*requests.RpcRequest
-	ImageUri string `position:"Query" name:"ImageUri"`
 	Project  string `position:"Query" name:"Project"`
 	RealUid  string `position:"Query" name:"RealUid"`
+	ImageUri string `position:"Query" name:"ImageUri"`
 }
 
 // DetectImageTagsResponse is the response struct for api DetectImageTags

@@ -76,8 +76,8 @@ func (client *Client) GetTagJobWithCallback(request *GetTagJobRequest, callback 
 // GetTagJobRequest is the request struct for api GetTagJob
 type GetTagJobRequest struct {
 	*requests.RpcRequest
-	JobId   string `position:"Query" name:"JobId"`
 	Project string `position:"Query" name:"Project"`
+	JobId   string `position:"Query" name:"JobId"`
 }
 
 // GetTagJobResponse is the response struct for api GetTagJob

@@ -76,10 +76,10 @@ func (client *Client) DeleteTagSetWithCallback(request *DeleteTagSetRequest, cal
 // DeleteTagSetRequest is the request struct for api DeleteTagSet
 type DeleteTagSetRequest struct {
 	*requests.RpcRequest
-	LazyMode   string `position:"Query" name:"LazyMode"`
 	Project    string `position:"Query" name:"Project"`
-	SetId      string `position:"Query" name:"SetId"`
+	LazyMode   string `position:"Query" name:"LazyMode"`
 	CheckEmpty string `position:"Query" name:"CheckEmpty"`
+	SetId      string `position:"Query" name:"SetId"`
 }
 
 // DeleteTagSetResponse is the response struct for api DeleteTagSet

@@ -76,10 +76,10 @@ func (client *Client) DetectImageCelebrityWithCallback(request *DetectImageCeleb
 // DetectImageCelebrityRequest is the request struct for api DetectImageCelebrity
 type DetectImageCelebrityRequest struct {
 	*requests.RpcRequest
-	ImageUri string `position:"Query" name:"ImageUri"`
-	Library  string `position:"Query" name:"Library"`
 	Project  string `position:"Query" name:"Project"`
+	Library  string `position:"Query" name:"Library"`
 	RealUid  string `position:"Query" name:"RealUid"`
+	ImageUri string `position:"Query" name:"ImageUri"`
 }
 
 // DetectImageCelebrityResponse is the response struct for api DetectImageCelebrity

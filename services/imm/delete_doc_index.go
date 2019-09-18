@@ -76,9 +76,9 @@ func (client *Client) DeleteDocIndexWithCallback(request *DeleteDocIndexRequest,
 // DeleteDocIndexRequest is the request struct for api DeleteDocIndex
 type DeleteDocIndexRequest struct {
 	*requests.RpcRequest
-	Set      string `position:"Query" name:"Set"`
 	Project  string `position:"Query" name:"Project"`
 	UniqueId string `position:"Query" name:"UniqueId"`
+	Set      string `position:"Query" name:"Set"`
 }
 
 // DeleteDocIndexResponse is the response struct for api DeleteDocIndex

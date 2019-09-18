@@ -76,8 +76,8 @@ func (client *Client) DeleteImageJobWithCallback(request *DeleteImageJobRequest,
 // DeleteImageJobRequest is the request struct for api DeleteImageJob
 type DeleteImageJobRequest struct {
 	*requests.RpcRequest
-	JobId   string `position:"Query" name:"JobId"`
 	Project string `position:"Query" name:"Project"`
+	JobId   string `position:"Query" name:"JobId"`
 	JobType string `position:"Query" name:"JobType"`
 }
 

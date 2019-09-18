@@ -76,10 +76,10 @@ func (client *Client) CreatePornBatchDetectJobWithCallback(request *CreatePornBa
 // CreatePornBatchDetectJobRequest is the request struct for api CreatePornBatchDetectJob
 type CreatePornBatchDetectJobRequest struct {
 	*requests.RpcRequest
-	NotifyTopicName string `position:"Query" name:"NotifyTopicName"`
-	NotifyEndpoint  string `position:"Query" name:"NotifyEndpoint"`
 	Project         string `position:"Query" name:"Project"`
 	ExternalID      string `position:"Query" name:"ExternalID"`
+	NotifyEndpoint  string `position:"Query" name:"NotifyEndpoint"`
+	NotifyTopicName string `position:"Query" name:"NotifyTopicName"`
 	SrcUri          string `position:"Query" name:"SrcUri"`
 	TgtUri          string `position:"Query" name:"TgtUri"`
 }

@@ -76,8 +76,8 @@ func (client *Client) DetectClothesWithCallback(request *DetectClothesRequest, c
 // DetectClothesRequest is the request struct for api DetectClothes
 type DetectClothesRequest struct {
 	*requests.RpcRequest
-	SrcUris string `position:"Query" name:"SrcUris"`
 	Project string `position:"Query" name:"Project"`
+	SrcUris string `position:"Query" name:"SrcUris"`
 }
 
 // DetectClothesResponse is the response struct for api DetectClothes

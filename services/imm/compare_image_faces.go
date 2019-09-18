@@ -76,12 +76,12 @@ func (client *Client) CompareImageFacesWithCallback(request *CompareImageFacesRe
 // CompareImageFacesRequest is the request struct for api CompareImageFaces
 type CompareImageFacesRequest struct {
 	*requests.RpcRequest
-	ImageUriB string `position:"Query" name:"ImageUriB"`
-	ImageUriA string `position:"Query" name:"ImageUriA"`
 	Project   string `position:"Query" name:"Project"`
-	SetId     string `position:"Query" name:"SetId"`
 	FaceIdA   string `position:"Query" name:"FaceIdA"`
 	FaceIdB   string `position:"Query" name:"FaceIdB"`
+	ImageUriB string `position:"Query" name:"ImageUriB"`
+	ImageUriA string `position:"Query" name:"ImageUriA"`
+	SetId     string `position:"Query" name:"SetId"`
 }
 
 // CompareImageFacesResponse is the response struct for api CompareImageFaces

@@ -76,9 +76,9 @@ func (client *Client) DetectTagWithCallback(request *DetectTagRequest, callback 
 // DetectTagRequest is the request struct for api DetectTag
 type DetectTagRequest struct {
 	*requests.RpcRequest
-	SrcUris string `position:"Query" name:"SrcUris"`
-	ModelId string `position:"Query" name:"ModelId"`
 	Project string `position:"Query" name:"Project"`
+	ModelId string `position:"Query" name:"ModelId"`
+	SrcUris string `position:"Query" name:"SrcUris"`
 }
 
 // DetectTagResponse is the response struct for api DetectTag

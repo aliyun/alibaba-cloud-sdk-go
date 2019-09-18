@@ -76,8 +76,8 @@ func (client *Client) GetImageWithCallback(request *GetImageRequest, callback fu
 // GetImageRequest is the request struct for api GetImage
 type GetImageRequest struct {
 	*requests.RpcRequest
-	ImageUri string `position:"Query" name:"ImageUri"`
 	Project  string `position:"Query" name:"Project"`
+	ImageUri string `position:"Query" name:"ImageUri"`
 	SetId    string `position:"Query" name:"SetId"`
 }
 

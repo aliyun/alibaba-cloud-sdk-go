@@ -76,8 +76,8 @@ func (client *Client) DetectImageTextsWithCallback(request *DetectImageTextsRequ
 // DetectImageTextsRequest is the request struct for api DetectImageTexts
 type DetectImageTextsRequest struct {
 	*requests.RpcRequest
-	ImageUri string `position:"Query" name:"ImageUri"`
 	Project  string `position:"Query" name:"Project"`
+	ImageUri string `position:"Query" name:"ImageUri"`
 }
 
 // DetectImageTextsResponse is the response struct for api DetectImageTexts

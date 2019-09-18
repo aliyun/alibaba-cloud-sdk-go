@@ -76,8 +76,8 @@ func (client *Client) DeleteFaceJobWithCallback(request *DeleteFaceJobRequest, c
 // DeleteFaceJobRequest is the request struct for api DeleteFaceJob
 type DeleteFaceJobRequest struct {
 	*requests.RpcRequest
-	JobId          string `position:"Query" name:"JobId"`
 	Project        string `position:"Query" name:"Project"`
+	JobId          string `position:"Query" name:"JobId"`
 	ClearIndexData string `position:"Query" name:"ClearIndexData"`
 }
 

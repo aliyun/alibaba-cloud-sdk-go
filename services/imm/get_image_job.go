@@ -76,8 +76,8 @@ func (client *Client) GetImageJobWithCallback(request *GetImageJobRequest, callb
 // GetImageJobRequest is the request struct for api GetImageJob
 type GetImageJobRequest struct {
 	*requests.RpcRequest
-	JobId   string `position:"Query" name:"JobId"`
 	Project string `position:"Query" name:"Project"`
+	JobId   string `position:"Query" name:"JobId"`
 	JobType string `position:"Query" name:"JobType"`
 }
 

@@ -76,8 +76,8 @@ func (client *Client) GetPornBatchDetectJobWithCallback(request *GetPornBatchDet
 // GetPornBatchDetectJobRequest is the request struct for api GetPornBatchDetectJob
 type GetPornBatchDetectJobRequest struct {
 	*requests.RpcRequest
-	JobId   string `position:"Query" name:"JobId"`
 	Project string `position:"Query" name:"Project"`
+	JobId   string `position:"Query" name:"JobId"`
 }
 
 // GetPornBatchDetectJobResponse is the response struct for api GetPornBatchDetectJob

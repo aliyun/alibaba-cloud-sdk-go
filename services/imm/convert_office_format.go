@@ -77,21 +77,21 @@ func (client *Client) ConvertOfficeFormatWithCallback(request *ConvertOfficeForm
 type ConvertOfficeFormatRequest struct {
 	*requests.RpcRequest
 	SrcType        string           `position:"Query" name:"SrcType"`
-	ModelId        string           `position:"Query" name:"ModelId"`
 	Project        string           `position:"Query" name:"Project"`
+	PdfVector      requests.Boolean `position:"Query" name:"PdfVector"`
+	Password       string           `position:"Query" name:"Password"`
+	StartPage      requests.Integer `position:"Query" name:"StartPage"`
+	FitToPagesWide requests.Boolean `position:"Query" name:"FitToPagesWide"`
+	TgtFilePrefix  string           `position:"Query" name:"TgtFilePrefix"`
+	ModelId        string           `position:"Query" name:"ModelId"`
 	MaxSheetRow    requests.Integer `position:"Query" name:"MaxSheetRow"`
 	MaxSheetCount  requests.Integer `position:"Query" name:"MaxSheetCount"`
 	EndPage        requests.Integer `position:"Query" name:"EndPage"`
 	TgtFileSuffix  string           `position:"Query" name:"TgtFileSuffix"`
-	PdfVector      requests.Boolean `position:"Query" name:"PdfVector"`
 	SheetOnePage   requests.Boolean `position:"Query" name:"SheetOnePage"`
-	Password       string           `position:"Query" name:"Password"`
-	StartPage      requests.Integer `position:"Query" name:"StartPage"`
 	MaxSheetCol    requests.Integer `position:"Query" name:"MaxSheetCol"`
 	TgtType        string           `position:"Query" name:"TgtType"`
-	FitToPagesWide requests.Boolean `position:"Query" name:"FitToPagesWide"`
 	Hidecomments   requests.Boolean `position:"Query" name:"Hidecomments"`
-	TgtFilePrefix  string           `position:"Query" name:"TgtFilePrefix"`
 	FitToPagesTall requests.Boolean `position:"Query" name:"FitToPagesTall"`
 	SrcUri         string           `position:"Query" name:"SrcUri"`
 	TgtFilePages   string           `position:"Query" name:"TgtFilePages"`

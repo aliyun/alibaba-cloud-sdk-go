@@ -76,9 +76,9 @@ func (client *Client) DeleteVideoTaskWithCallback(request *DeleteVideoTaskReques
 // DeleteVideoTaskRequest is the request struct for api DeleteVideoTask
 type DeleteVideoTaskRequest struct {
 	*requests.RpcRequest
-	TaskType string `position:"Query" name:"TaskType"`
 	Project  string `position:"Query" name:"Project"`
 	TaskId   string `position:"Query" name:"TaskId"`
+	TaskType string `position:"Query" name:"TaskType"`
 }
 
 // DeleteVideoTaskResponse is the response struct for api DeleteVideoTask

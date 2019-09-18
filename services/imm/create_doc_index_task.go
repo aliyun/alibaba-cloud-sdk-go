@@ -76,18 +76,18 @@ func (client *Client) CreateDocIndexTaskWithCallback(request *CreateDocIndexTask
 // CreateDocIndexTaskRequest is the request struct for api CreateDocIndexTask
 type CreateDocIndexTaskRequest struct {
 	*requests.RpcRequest
+	Project     string `position:"Query" name:"Project"`
+	UniqueId    string `position:"Query" name:"UniqueId"`
 	CustomKey1  string `position:"Query" name:"CustomKey1"`
 	Set         string `position:"Query" name:"Set"`
 	CustomKey5  string `position:"Query" name:"CustomKey5"`
 	CustomKey4  string `position:"Query" name:"CustomKey4"`
 	CustomKey3  string `position:"Query" name:"CustomKey3"`
 	CustomKey2  string `position:"Query" name:"CustomKey2"`
-	Project     string `position:"Query" name:"Project"`
 	CustomKey6  string `position:"Query" name:"CustomKey6"`
 	ContentType string `position:"Query" name:"ContentType"`
 	Name        string `position:"Query" name:"Name"`
 	SrcUri      string `position:"Query" name:"SrcUri"`
-	UniqueId    string `position:"Query" name:"UniqueId"`
 }
 
 // CreateDocIndexTaskResponse is the response struct for api CreateDocIndexTask

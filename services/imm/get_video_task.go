@@ -76,9 +76,9 @@ func (client *Client) GetVideoTaskWithCallback(request *GetVideoTaskRequest, cal
 // GetVideoTaskRequest is the request struct for api GetVideoTask
 type GetVideoTaskRequest struct {
 	*requests.RpcRequest
-	TaskType string `position:"Query" name:"TaskType"`
 	Project  string `position:"Query" name:"Project"`
 	TaskId   string `position:"Query" name:"TaskId"`
+	TaskType string `position:"Query" name:"TaskType"`
 }
 
 // GetVideoTaskResponse is the response struct for api GetVideoTask

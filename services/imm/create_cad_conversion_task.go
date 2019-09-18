@@ -77,17 +77,17 @@ func (client *Client) CreateCADConversionTaskWithCallback(request *CreateCADConv
 type CreateCADConversionTaskRequest struct {
 	*requests.RpcRequest
 	SrcType         string           `position:"Query" name:"SrcType"`
+	BaseRow         requests.Integer `position:"Query" name:"BaseRow"`
+	Project         string           `position:"Query" name:"Project"`
+	ZoomFactor      requests.Integer `position:"Query" name:"ZoomFactor"`
+	NotifyEndpoint  string           `position:"Query" name:"NotifyEndpoint"`
 	BaseCol         requests.Integer `position:"Query" name:"BaseCol"`
 	NotifyTopicName string           `position:"Query" name:"NotifyTopicName"`
 	UnitWidth       requests.Integer `position:"Query" name:"UnitWidth"`
 	ZoomLevel       requests.Integer `position:"Query" name:"ZoomLevel"`
-	BaseRow         requests.Integer `position:"Query" name:"BaseRow"`
 	ModelId         string           `position:"Query" name:"ModelId"`
-	Project         string           `position:"Query" name:"Project"`
-	ZoomFactor      requests.Integer `position:"Query" name:"ZoomFactor"`
 	TgtType         string           `position:"Query" name:"TgtType"`
 	UnitHeight      requests.Integer `position:"Query" name:"UnitHeight"`
-	NotifyEndpoint  string           `position:"Query" name:"NotifyEndpoint"`
 	SrcUri          string           `position:"Query" name:"SrcUri"`
 	Thumbnails      requests.Boolean `position:"Query" name:"Thumbnails"`
 	TgtUri          string           `position:"Query" name:"TgtUri"`

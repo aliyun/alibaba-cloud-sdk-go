@@ -76,10 +76,10 @@ func (client *Client) ListTagJobsWithCallback(request *ListTagJobsRequest, callb
 // ListTagJobsRequest is the request struct for api ListTagJobs
 type ListTagJobsRequest struct {
 	*requests.RpcRequest
-	Condition string           `position:"Query" name:"Condition"`
 	MaxKeys   requests.Integer `position:"Query" name:"MaxKeys"`
-	Marker    string           `position:"Query" name:"Marker"`
 	Project   string           `position:"Query" name:"Project"`
+	Condition string           `position:"Query" name:"Condition"`
+	Marker    string           `position:"Query" name:"Marker"`
 }
 
 // ListTagJobsResponse is the response struct for api ListTagJobs

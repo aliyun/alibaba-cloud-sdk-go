@@ -79,9 +79,9 @@ type RegistFaceRequest struct {
 	ChooseBiggestFace  requests.Boolean `position:"Query" name:"ChooseBiggestFace"`
 	IsQualityLimit     requests.Boolean `position:"Query" name:"IsQualityLimit"`
 	Project            string           `position:"Query" name:"Project"`
+	GroupName          string           `position:"Query" name:"GroupName"`
 	SrcUri             string           `position:"Query" name:"SrcUri"`
 	RegisterCheckLevel string           `position:"Query" name:"RegisterCheckLevel"`
-	GroupName          string           `position:"Query" name:"GroupName"`
 	User               string           `position:"Query" name:"User"`
 }
 

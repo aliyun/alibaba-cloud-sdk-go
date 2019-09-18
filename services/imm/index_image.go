@@ -76,18 +76,20 @@ func (client *Client) IndexImageWithCallback(request *IndexImageRequest, callbac
 // IndexImageRequest is the request struct for api IndexImage
 type IndexImageRequest struct {
 	*requests.RpcRequest
-	RemarksB       string `position:"Query" name:"RemarksB"`
-	Project        string `position:"Query" name:"Project"`
-	RemarksA       string `position:"Query" name:"RemarksA"`
-	ExternalId     string `position:"Query" name:"ExternalId"`
-	ImageUri       string `position:"Query" name:"ImageUri"`
-	SourceUri      string `position:"Query" name:"SourceUri"`
-	SourcePosition string `position:"Query" name:"SourcePosition"`
-	RemarksD       string `position:"Query" name:"RemarksD"`
-	RemarksC       string `position:"Query" name:"RemarksC"`
-	SetId          string `position:"Query" name:"SetId"`
-	SourceType     string `position:"Query" name:"SourceType"`
-	RealUid        string `position:"Query" name:"RealUid"`
+	Project         string `position:"Query" name:"Project"`
+	ExternalId      string `position:"Query" name:"ExternalId"`
+	NotifyEndpoint  string `position:"Query" name:"NotifyEndpoint"`
+	SourceType      string `position:"Query" name:"SourceType"`
+	RealUid         string `position:"Query" name:"RealUid"`
+	NotifyTopicName string `position:"Query" name:"NotifyTopicName"`
+	RemarksB        string `position:"Query" name:"RemarksB"`
+	RemarksA        string `position:"Query" name:"RemarksA"`
+	ImageUri        string `position:"Query" name:"ImageUri"`
+	SourceUri       string `position:"Query" name:"SourceUri"`
+	SourcePosition  string `position:"Query" name:"SourcePosition"`
+	RemarksD        string `position:"Query" name:"RemarksD"`
+	RemarksC        string `position:"Query" name:"RemarksC"`
+	SetId           string `position:"Query" name:"SetId"`
 }
 
 // IndexImageResponse is the response struct for api IndexImage

@@ -76,8 +76,8 @@ func (client *Client) UpdateProjectWithCallback(request *UpdateProjectRequest, c
 // UpdateProjectRequest is the request struct for api UpdateProject
 type UpdateProjectRequest struct {
 	*requests.RpcRequest
-	NewServiceRole string           `position:"Query" name:"NewServiceRole"`
 	Project        string           `position:"Query" name:"Project"`
+	NewServiceRole string           `position:"Query" name:"NewServiceRole"`
 	NewCU          requests.Integer `position:"Query" name:"NewCU"`
 }
 

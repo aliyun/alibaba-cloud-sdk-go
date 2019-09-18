@@ -77,9 +77,9 @@ func (client *Client) ListImageJobsWithCallback(request *ListImageJobsRequest, c
 type ListImageJobsRequest struct {
 	*requests.RpcRequest
 	MaxKeys requests.Integer `position:"Query" name:"MaxKeys"`
-	Marker  string           `position:"Query" name:"Marker"`
 	Project string           `position:"Query" name:"Project"`
 	JobType string           `position:"Query" name:"JobType"`
+	Marker  string           `position:"Query" name:"Marker"`
 }
 
 // ListImageJobsResponse is the response struct for api ListImageJobs

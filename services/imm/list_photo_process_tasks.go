@@ -77,8 +77,8 @@ func (client *Client) ListPhotoProcessTasksWithCallback(request *ListPhotoProces
 type ListPhotoProcessTasksRequest struct {
 	*requests.RpcRequest
 	MaxKeys requests.Integer `position:"Query" name:"MaxKeys"`
-	Marker  string           `position:"Query" name:"Marker"`
 	Project string           `position:"Query" name:"Project"`
+	Marker  string           `position:"Query" name:"Marker"`
 }
 
 // ListPhotoProcessTasksResponse is the response struct for api ListPhotoProcessTasks

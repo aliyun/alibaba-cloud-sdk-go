@@ -77,9 +77,9 @@ func (client *Client) ListVideoTasksWithCallback(request *ListVideoTasksRequest,
 type ListVideoTasksRequest struct {
 	*requests.RpcRequest
 	MaxKeys  requests.Integer `position:"Query" name:"MaxKeys"`
+	Project  string           `position:"Query" name:"Project"`
 	TaskType string           `position:"Query" name:"TaskType"`
 	Marker   string           `position:"Query" name:"Marker"`
-	Project  string           `position:"Query" name:"Project"`
 }
 
 // ListVideoTasksResponse is the response struct for api ListVideoTasks

@@ -76,10 +76,10 @@ func (client *Client) UpdateFaceGroupWithCallback(request *UpdateFaceGroupReques
 // UpdateFaceGroupRequest is the request struct for api UpdateFaceGroup
 type UpdateFaceGroupRequest struct {
 	*requests.RpcRequest
-	GroupId          string `position:"Query" name:"GroupId"`
 	Project          string `position:"Query" name:"Project"`
-	SetId            string `position:"Query" name:"SetId"`
+	GroupId          string `position:"Query" name:"GroupId"`
 	GroupName        string `position:"Query" name:"GroupName"`
+	SetId            string `position:"Query" name:"SetId"`
 	GroupCoverFaceId string `position:"Query" name:"GroupCoverFaceId"`
 }
 

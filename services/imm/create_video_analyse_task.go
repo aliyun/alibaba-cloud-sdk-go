@@ -76,14 +76,14 @@ func (client *Client) CreateVideoAnalyseTaskWithCallback(request *CreateVideoAna
 // CreateVideoAnalyseTaskRequest is the request struct for api CreateVideoAnalyseTask
 type CreateVideoAnalyseTaskRequest struct {
 	*requests.RpcRequest
-	NotifyTopicName string           `position:"Query" name:"NotifyTopicName"`
 	GrabType        string           `position:"Query" name:"GrabType"`
 	Project         string           `position:"Query" name:"Project"`
-	EndTime         string           `position:"Query" name:"EndTime"`
 	StartTime       string           `position:"Query" name:"StartTime"`
+	NotifyEndpoint  string           `position:"Query" name:"NotifyEndpoint"`
+	NotifyTopicName string           `position:"Query" name:"NotifyTopicName"`
+	EndTime         string           `position:"Query" name:"EndTime"`
 	VideoUri        string           `position:"Query" name:"VideoUri"`
 	SaveType        requests.Boolean `position:"Query" name:"SaveType"`
-	NotifyEndpoint  string           `position:"Query" name:"NotifyEndpoint"`
 	Interval        string           `position:"Query" name:"Interval"`
 	TgtUri          string           `position:"Query" name:"TgtUri"`
 }

@@ -19,23 +19,23 @@ package imm
 type TasksItem struct {
 	TgtType         string `json:"TgtType" xml:"TgtType"`
 	Result          string `json:"Result" xml:"Result"`
-	ErrorMessage    string `json:"ErrorMessage" xml:"ErrorMessage"`
 	Style           string `json:"Style" xml:"Style"`
+	ErrorMessage    string `json:"ErrorMessage" xml:"ErrorMessage"`
 	PageCount       int    `json:"PageCount" xml:"PageCount"`
 	CreateTime      string `json:"CreateTime" xml:"CreateTime"`
 	ExternalID      string `json:"ExternalID" xml:"ExternalID"`
 	FinishTime      string `json:"FinishTime" xml:"FinishTime"`
 	SrcUri          string `json:"SrcUri" xml:"SrcUri"`
-	Parameters      string `json:"Parameters" xml:"Parameters"`
 	Percent         int    `json:"Percent" xml:"Percent"`
+	Parameters      string `json:"Parameters" xml:"Parameters"`
 	TaskId          string `json:"TaskId" xml:"TaskId"`
 	StartTime       string `json:"StartTime" xml:"StartTime"`
 	EndTime         string `json:"EndTime" xml:"EndTime"`
-	Progress        int    `json:"Progress" xml:"Progress"`
 	TgtUri          string `json:"TgtUri" xml:"TgtUri"`
 	ImageSpec       string `json:"ImageSpec" xml:"ImageSpec"`
+	Progress        int    `json:"Progress" xml:"Progress"`
 	NotifyEndpoint  string `json:"NotifyEndpoint" xml:"NotifyEndpoint"`
 	Status          string `json:"Status" xml:"Status"`
-	TaskType        string `json:"TaskType" xml:"TaskType"`
 	NotifyTopicName string `json:"NotifyTopicName" xml:"NotifyTopicName"`
+	TaskType        string `json:"TaskType" xml:"TaskType"`
 }

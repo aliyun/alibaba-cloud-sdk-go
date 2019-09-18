@@ -79,9 +79,9 @@ type SearchFaceRequest struct {
 	ResultNum            requests.Integer `position:"Query" name:"ResultNum"`
 	Project              string           `position:"Query" name:"Project"`
 	SearchThresholdLevel string           `position:"Query" name:"SearchThresholdLevel"`
-	SrcUri               string           `position:"Query" name:"SrcUri"`
 	IsThreshold          requests.Boolean `position:"Query" name:"IsThreshold"`
 	GroupName            string           `position:"Query" name:"GroupName"`
+	SrcUri               string           `position:"Query" name:"SrcUri"`
 }
 
 // SearchFaceResponse is the response struct for api SearchFace

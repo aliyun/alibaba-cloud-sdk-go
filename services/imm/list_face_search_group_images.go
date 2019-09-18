@@ -77,9 +77,9 @@ func (client *Client) ListFaceSearchGroupImagesWithCallback(request *ListFaceSea
 type ListFaceSearchGroupImagesRequest struct {
 	*requests.RpcRequest
 	MaxKeys   requests.Integer `position:"Query" name:"MaxKeys"`
-	Marker    string           `position:"Query" name:"Marker"`
 	Project   string           `position:"Query" name:"Project"`
 	GroupName string           `position:"Query" name:"GroupName"`
+	Marker    string           `position:"Query" name:"Marker"`
 	User      string           `position:"Query" name:"User"`
 }
 

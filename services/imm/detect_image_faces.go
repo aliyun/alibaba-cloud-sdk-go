@@ -76,9 +76,9 @@ func (client *Client) DetectImageFacesWithCallback(request *DetectImageFacesRequ
 // DetectImageFacesRequest is the request struct for api DetectImageFaces
 type DetectImageFacesRequest struct {
 	*requests.RpcRequest
-	ImageUri string `position:"Query" name:"ImageUri"`
 	Project  string `position:"Query" name:"Project"`
 	RealUid  string `position:"Query" name:"RealUid"`
+	ImageUri string `position:"Query" name:"ImageUri"`
 }
 
 // DetectImageFacesResponse is the response struct for api DetectImageFaces

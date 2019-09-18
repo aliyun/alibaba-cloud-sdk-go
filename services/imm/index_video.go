@@ -77,12 +77,12 @@ func (client *Client) IndexVideoWithCallback(request *IndexVideoRequest, callbac
 type IndexVideoRequest struct {
 	*requests.RpcRequest
 	GrabType   string           `position:"Query" name:"GrabType"`
-	RemarksB   string           `position:"Query" name:"RemarksB"`
 	Project    string           `position:"Query" name:"Project"`
-	RemarksA   string           `position:"Query" name:"RemarksA"`
-	EndTime    string           `position:"Query" name:"EndTime"`
 	ExternalId string           `position:"Query" name:"ExternalId"`
 	StartTime  string           `position:"Query" name:"StartTime"`
+	RemarksB   string           `position:"Query" name:"RemarksB"`
+	RemarksA   string           `position:"Query" name:"RemarksA"`
+	EndTime    string           `position:"Query" name:"EndTime"`
 	VideoUri   string           `position:"Query" name:"VideoUri"`
 	SaveType   requests.Boolean `position:"Query" name:"SaveType"`
 	RemarksD   string           `position:"Query" name:"RemarksD"`

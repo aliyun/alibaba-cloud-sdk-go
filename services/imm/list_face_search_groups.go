@@ -77,8 +77,8 @@ func (client *Client) ListFaceSearchGroupsWithCallback(request *ListFaceSearchGr
 type ListFaceSearchGroupsRequest struct {
 	*requests.RpcRequest
 	MaxKeys requests.Integer `position:"Query" name:"MaxKeys"`
-	Marker  string           `position:"Query" name:"Marker"`
 	Project string           `position:"Query" name:"Project"`
+	Marker  string           `position:"Query" name:"Marker"`
 }
 
 // ListFaceSearchGroupsResponse is the response struct for api ListFaceSearchGroups

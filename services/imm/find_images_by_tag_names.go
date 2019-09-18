@@ -76,11 +76,11 @@ func (client *Client) FindImagesByTagNamesWithCallback(request *FindImagesByTagN
 // FindImagesByTagNamesRequest is the request struct for api FindImagesByTagNames
 type FindImagesByTagNamesRequest struct {
 	*requests.RpcRequest
-	Marker   string           `position:"Query" name:"Marker"`
-	Limit    requests.Integer `position:"Query" name:"Limit"`
 	Project  string           `position:"Query" name:"Project"`
-	SetId    string           `position:"Query" name:"SetId"`
+	Limit    requests.Integer `position:"Query" name:"Limit"`
 	TagNames string           `position:"Query" name:"TagNames"`
+	Marker   string           `position:"Query" name:"Marker"`
+	SetId    string           `position:"Query" name:"SetId"`
 }
 
 // FindImagesByTagNamesResponse is the response struct for api FindImagesByTagNames

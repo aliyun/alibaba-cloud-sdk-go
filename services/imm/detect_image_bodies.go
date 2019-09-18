@@ -76,8 +76,8 @@ func (client *Client) DetectImageBodiesWithCallback(request *DetectImageBodiesRe
 // DetectImageBodiesRequest is the request struct for api DetectImageBodies
 type DetectImageBodiesRequest struct {
 	*requests.RpcRequest
-	ImageUri string `position:"Query" name:"ImageUri"`
 	Project  string `position:"Query" name:"Project"`
+	ImageUri string `position:"Query" name:"ImageUri"`
 }
 
 // DetectImageBodiesResponse is the response struct for api DetectImageBodies

@@ -76,8 +76,8 @@ func (client *Client) DetectLogoWithCallback(request *DetectLogoRequest, callbac
 // DetectLogoRequest is the request struct for api DetectLogo
 type DetectLogoRequest struct {
 	*requests.RpcRequest
-	SrcUris string `position:"Query" name:"SrcUris"`
 	Project string `position:"Query" name:"Project"`
+	SrcUris string `position:"Query" name:"SrcUris"`
 }
 
 // DetectLogoResponse is the response struct for api DetectLogo

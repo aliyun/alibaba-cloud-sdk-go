@@ -76,8 +76,8 @@ func (client *Client) DeletePornBatchDetectJobWithCallback(request *DeletePornBa
 // DeletePornBatchDetectJobRequest is the request struct for api DeletePornBatchDetectJob
 type DeletePornBatchDetectJobRequest struct {
 	*requests.RpcRequest
-	JobId   string `position:"Query" name:"JobId"`
 	Project string `position:"Query" name:"Project"`
+	JobId   string `position:"Query" name:"JobId"`
 }
 
 // DeletePornBatchDetectJobResponse is the response struct for api DeletePornBatchDetectJob

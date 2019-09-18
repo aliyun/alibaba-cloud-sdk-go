@@ -76,9 +76,9 @@ func (client *Client) IndexTagWithCallback(request *IndexTagRequest, callback fu
 // IndexTagRequest is the request struct for api IndexTag
 type IndexTagRequest struct {
 	*requests.RpcRequest
-	SrcUris string `position:"Query" name:"SrcUris"`
-	ModelId string `position:"Query" name:"ModelId"`
 	Project string `position:"Query" name:"Project"`
+	ModelId string `position:"Query" name:"ModelId"`
+	SrcUris string `position:"Query" name:"SrcUris"`
 	SetId   string `position:"Query" name:"SetId"`
 	Force   string `position:"Query" name:"Force"`
 }

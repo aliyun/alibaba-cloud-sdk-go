@@ -76,10 +76,10 @@ func (client *Client) PhotoProcessWithCallback(request *PhotoProcessRequest, cal
 // PhotoProcessRequest is the request struct for api PhotoProcess
 type PhotoProcessRequest struct {
 	*requests.RpcRequest
-	NotifyTopicName string `position:"Query" name:"NotifyTopicName"`
-	NotifyEndpoint  string `position:"Query" name:"NotifyEndpoint"`
 	Project         string `position:"Query" name:"Project"`
 	ExternalID      string `position:"Query" name:"ExternalID"`
+	NotifyEndpoint  string `position:"Query" name:"NotifyEndpoint"`
+	NotifyTopicName string `position:"Query" name:"NotifyTopicName"`
 	SrcUri          string `position:"Query" name:"SrcUri"`
 	Style           string `position:"Query" name:"Style"`
 	TgtUri          string `position:"Query" name:"TgtUri"`

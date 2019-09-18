@@ -78,8 +78,8 @@ type GetFaceSearchImageRequest struct {
 	*requests.RpcRequest
 	ImageId   string `position:"Query" name:"ImageId"`
 	Project   string `position:"Query" name:"Project"`
-	SrcUri    string `position:"Query" name:"SrcUri"`
 	GroupName string `position:"Query" name:"GroupName"`
+	SrcUri    string `position:"Query" name:"SrcUri"`
 	User      string `position:"Query" name:"User"`
 }
 

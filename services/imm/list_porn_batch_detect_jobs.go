@@ -77,8 +77,8 @@ func (client *Client) ListPornBatchDetectJobsWithCallback(request *ListPornBatch
 type ListPornBatchDetectJobsRequest struct {
 	*requests.RpcRequest
 	MaxKeys requests.Integer `position:"Query" name:"MaxKeys"`
-	Marker  string           `position:"Query" name:"Marker"`
 	Project string           `position:"Query" name:"Project"`
+	Marker  string           `position:"Query" name:"Marker"`
 }
 
 // ListPornBatchDetectJobsResponse is the response struct for api ListPornBatchDetectJobs

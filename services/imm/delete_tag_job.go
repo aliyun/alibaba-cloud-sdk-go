@@ -76,8 +76,8 @@ func (client *Client) DeleteTagJobWithCallback(request *DeleteTagJobRequest, cal
 // DeleteTagJobRequest is the request struct for api DeleteTagJob
 type DeleteTagJobRequest struct {
 	*requests.RpcRequest
-	JobId          string `position:"Query" name:"JobId"`
 	Project        string `position:"Query" name:"Project"`
+	JobId          string `position:"Query" name:"JobId"`
 	ClearIndexData string `position:"Query" name:"ClearIndexData"`
 }
 

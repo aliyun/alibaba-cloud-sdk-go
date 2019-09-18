@@ -76,9 +76,9 @@ func (client *Client) CreateGroupFacesJobWithCallback(request *CreateGroupFacesJ
 // CreateGroupFacesJobRequest is the request struct for api CreateGroupFacesJob
 type CreateGroupFacesJobRequest struct {
 	*requests.RpcRequest
-	NotifyTopicName string `position:"Query" name:"NotifyTopicName"`
-	NotifyEndpoint  string `position:"Query" name:"NotifyEndpoint"`
 	Project         string `position:"Query" name:"Project"`
+	NotifyEndpoint  string `position:"Query" name:"NotifyEndpoint"`
+	NotifyTopicName string `position:"Query" name:"NotifyTopicName"`
 	SetId           string `position:"Query" name:"SetId"`
 }
 

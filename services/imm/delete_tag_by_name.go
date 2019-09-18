@@ -76,8 +76,8 @@ func (client *Client) DeleteTagByNameWithCallback(request *DeleteTagByNameReques
 // DeleteTagByNameRequest is the request struct for api DeleteTagByName
 type DeleteTagByNameRequest struct {
 	*requests.RpcRequest
-	TagName string `position:"Query" name:"TagName"`
 	Project string `position:"Query" name:"Project"`
+	TagName string `position:"Query" name:"TagName"`
 	SetId   string `position:"Query" name:"SetId"`
 	SrcUri  string `position:"Query" name:"SrcUri"`
 }

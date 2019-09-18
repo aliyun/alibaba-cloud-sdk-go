@@ -77,24 +77,24 @@ func (client *Client) SearchDocIndexWithCallback(request *SearchDocIndexRequest,
 type SearchDocIndexRequest struct {
 	*requests.RpcRequest
 	ModifiedTimeEnd   requests.Integer `position:"Query" name:"ModifiedTimeEnd"`
+	SizeLimitEnd      requests.Integer `position:"Query" name:"SizeLimitEnd"`
+	Project           string           `position:"Query" name:"Project"`
+	ModifiedTimeStart requests.Integer `position:"Query" name:"ModifiedTimeStart"`
+	PageNumLimitStart requests.Integer `position:"Query" name:"PageNumLimitStart"`
+	Content           string           `position:"Query" name:"Content"`
+	SizeLimitStart    requests.Integer `position:"Query" name:"SizeLimitStart"`
+	Limit             requests.Integer `position:"Query" name:"Limit"`
 	CustomKey1        string           `position:"Query" name:"CustomKey1"`
 	Set               string           `position:"Query" name:"Set"`
-	SizeLimitEnd      requests.Integer `position:"Query" name:"SizeLimitEnd"`
 	CustomKey5        string           `position:"Query" name:"CustomKey5"`
 	Offset            requests.Integer `position:"Query" name:"Offset"`
 	CustomKey4        string           `position:"Query" name:"CustomKey4"`
 	CustomKey3        string           `position:"Query" name:"CustomKey3"`
 	CustomKey2        string           `position:"Query" name:"CustomKey2"`
-	Project           string           `position:"Query" name:"Project"`
-	ModifiedTimeStart requests.Integer `position:"Query" name:"ModifiedTimeStart"`
-	PageNumLimitStart requests.Integer `position:"Query" name:"PageNumLimitStart"`
 	CustomKey6        string           `position:"Query" name:"CustomKey6"`
-	Content           string           `position:"Query" name:"Content"`
 	PageNumLimitEnd   requests.Integer `position:"Query" name:"PageNumLimitEnd"`
 	ContentType       string           `position:"Query" name:"ContentType"`
-	SizeLimitStart    requests.Integer `position:"Query" name:"SizeLimitStart"`
 	Name              string           `position:"Query" name:"Name"`
-	Limit             requests.Integer `position:"Query" name:"Limit"`
 }
 
 // SearchDocIndexResponse is the response struct for api SearchDocIndex

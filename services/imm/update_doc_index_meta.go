@@ -76,16 +76,16 @@ func (client *Client) UpdateDocIndexMetaWithCallback(request *UpdateDocIndexMeta
 // UpdateDocIndexMetaRequest is the request struct for api UpdateDocIndexMeta
 type UpdateDocIndexMetaRequest struct {
 	*requests.RpcRequest
+	Project    string `position:"Query" name:"Project"`
+	UniqueId   string `position:"Query" name:"UniqueId"`
 	CustomKey1 string `position:"Query" name:"CustomKey1"`
 	Set        string `position:"Query" name:"Set"`
 	CustomKey5 string `position:"Query" name:"CustomKey5"`
 	CustomKey4 string `position:"Query" name:"CustomKey4"`
 	CustomKey3 string `position:"Query" name:"CustomKey3"`
 	CustomKey2 string `position:"Query" name:"CustomKey2"`
-	Project    string `position:"Query" name:"Project"`
 	CustomKey6 string `position:"Query" name:"CustomKey6"`
 	Name       string `position:"Query" name:"Name"`
-	UniqueId   string `position:"Query" name:"UniqueId"`
 }
 
 // UpdateDocIndexMetaResponse is the response struct for api UpdateDocIndexMeta

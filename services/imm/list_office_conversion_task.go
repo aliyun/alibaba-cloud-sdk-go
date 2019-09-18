@@ -77,8 +77,8 @@ func (client *Client) ListOfficeConversionTaskWithCallback(request *ListOfficeCo
 type ListOfficeConversionTaskRequest struct {
 	*requests.RpcRequest
 	MaxKeys requests.Integer `position:"Query" name:"MaxKeys"`
-	Marker  string           `position:"Query" name:"Marker"`
 	Project string           `position:"Query" name:"Project"`
+	Marker  string           `position:"Query" name:"Marker"`
 }
 
 // ListOfficeConversionTaskResponse is the response struct for api ListOfficeConversionTask

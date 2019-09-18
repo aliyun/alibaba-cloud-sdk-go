@@ -76,17 +76,17 @@ func (client *Client) UpdateImageWithCallback(request *UpdateImageRequest, callb
 // UpdateImageRequest is the request struct for api UpdateImage
 type UpdateImageRequest struct {
 	*requests.RpcRequest
-	RemarksB       string `position:"Query" name:"RemarksB"`
 	Project        string `position:"Query" name:"Project"`
-	RemarksA       string `position:"Query" name:"RemarksA"`
 	ExternalId     string `position:"Query" name:"ExternalId"`
+	SourceType     string `position:"Query" name:"SourceType"`
+	RemarksB       string `position:"Query" name:"RemarksB"`
+	RemarksA       string `position:"Query" name:"RemarksA"`
 	ImageUri       string `position:"Query" name:"ImageUri"`
 	SourceUri      string `position:"Query" name:"SourceUri"`
 	SourcePosition string `position:"Query" name:"SourcePosition"`
 	RemarksD       string `position:"Query" name:"RemarksD"`
 	RemarksC       string `position:"Query" name:"RemarksC"`
 	SetId          string `position:"Query" name:"SetId"`
-	SourceType     string `position:"Query" name:"SourceType"`
 }
 
 // UpdateImageResponse is the response struct for api UpdateImage

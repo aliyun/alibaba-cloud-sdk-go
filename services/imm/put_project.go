@@ -76,11 +76,11 @@ func (client *Client) PutProjectWithCallback(request *PutProjectRequest, callbac
 // PutProjectRequest is the request struct for api PutProject
 type PutProjectRequest struct {
 	*requests.RpcRequest
+	Project     string           `position:"Query" name:"Project"`
+	Type        string           `position:"Query" name:"Type"`
 	CU          requests.Integer `position:"Query" name:"CU"`
 	ServiceRole string           `position:"Query" name:"ServiceRole"`
-	Project     string           `position:"Query" name:"Project"`
 	BillingType string           `position:"Query" name:"BillingType"`
-	Type        string           `position:"Query" name:"Type"`
 }
 
 // PutProjectResponse is the response struct for api PutProject

@@ -76,9 +76,9 @@ func (client *Client) GetDocIndexWithCallback(request *GetDocIndexRequest, callb
 // GetDocIndexRequest is the request struct for api GetDocIndex
 type GetDocIndexRequest struct {
 	*requests.RpcRequest
-	Set      string `position:"Query" name:"Set"`
 	Project  string `position:"Query" name:"Project"`
 	UniqueId string `position:"Query" name:"UniqueId"`
+	Set      string `position:"Query" name:"Set"`
 }
 
 // GetDocIndexResponse is the response struct for api GetDocIndex

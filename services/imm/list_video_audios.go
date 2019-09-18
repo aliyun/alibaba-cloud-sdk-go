@@ -76,9 +76,9 @@ func (client *Client) ListVideoAudiosWithCallback(request *ListVideoAudiosReques
 // ListVideoAudiosRequest is the request struct for api ListVideoAudios
 type ListVideoAudiosRequest struct {
 	*requests.RpcRequest
+	Project  string `position:"Query" name:"Project"`
 	VideoUri string `position:"Query" name:"VideoUri"`
 	Marker   string `position:"Query" name:"Marker"`
-	Project  string `position:"Query" name:"Project"`
 	SetId    string `position:"Query" name:"SetId"`
 }
 

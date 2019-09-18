@@ -76,9 +76,9 @@ func (client *Client) CreateMediaComplexTaskWithCallback(request *CreateMediaCom
 // CreateMediaComplexTaskRequest is the request struct for api CreateMediaComplexTask
 type CreateMediaComplexTaskRequest struct {
 	*requests.RpcRequest
-	NotifyTopicName string `position:"Query" name:"NotifyTopicName"`
-	NotifyEndpoint  string `position:"Query" name:"NotifyEndpoint"`
 	Project         string `position:"Query" name:"Project"`
+	NotifyEndpoint  string `position:"Query" name:"NotifyEndpoint"`
+	NotifyTopicName string `position:"Query" name:"NotifyTopicName"`
 	Parameters      string `position:"Query" name:"Parameters"`
 }
 

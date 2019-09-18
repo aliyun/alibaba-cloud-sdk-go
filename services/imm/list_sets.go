@@ -76,8 +76,8 @@ func (client *Client) ListSetsWithCallback(request *ListSetsRequest, callback fu
 // ListSetsRequest is the request struct for api ListSets
 type ListSetsRequest struct {
 	*requests.RpcRequest
-	Marker  string `position:"Query" name:"Marker"`
 	Project string `position:"Query" name:"Project"`
+	Marker  string `position:"Query" name:"Marker"`
 }
 
 // ListSetsResponse is the response struct for api ListSets

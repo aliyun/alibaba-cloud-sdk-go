@@ -76,8 +76,8 @@ func (client *Client) UpdateSetWithCallback(request *UpdateSetRequest, callback 
 // UpdateSetRequest is the request struct for api UpdateSet
 type UpdateSetRequest struct {
 	*requests.RpcRequest
-	SetName string `position:"Query" name:"SetName"`
 	Project string `position:"Query" name:"Project"`
+	SetName string `position:"Query" name:"SetName"`
 	SetId   string `position:"Query" name:"SetId"`
 }
 

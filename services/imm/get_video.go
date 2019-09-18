@@ -76,8 +76,8 @@ func (client *Client) GetVideoWithCallback(request *GetVideoRequest, callback fu
 // GetVideoRequest is the request struct for api GetVideo
 type GetVideoRequest struct {
 	*requests.RpcRequest
-	VideoUri string `position:"Query" name:"VideoUri"`
 	Project  string `position:"Query" name:"Project"`
+	VideoUri string `position:"Query" name:"VideoUri"`
 	SetId    string `position:"Query" name:"SetId"`
 }
 

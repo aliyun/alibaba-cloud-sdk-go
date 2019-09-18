@@ -76,8 +76,8 @@ func (client *Client) DetectQRCodesWithCallback(request *DetectQRCodesRequest, c
 // DetectQRCodesRequest is the request struct for api DetectQRCodes
 type DetectQRCodesRequest struct {
 	*requests.RpcRequest
-	SrcUris string `position:"Query" name:"SrcUris"`
 	Project string `position:"Query" name:"Project"`
+	SrcUris string `position:"Query" name:"SrcUris"`
 }
 
 // DetectQRCodesResponse is the response struct for api DetectQRCodes
