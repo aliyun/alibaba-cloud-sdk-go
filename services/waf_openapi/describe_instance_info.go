@@ -76,6 +76,7 @@ func (client *Client) DescribeInstanceInfoWithCallback(request *DescribeInstance
 // DescribeInstanceInfoRequest is the request struct for api DescribeInstanceInfo
 type DescribeInstanceInfoRequest struct {
 	*requests.RpcRequest
+	InstanceId     string `position:"Query" name:"InstanceId"`
 	SourceIp       string `position:"Query" name:"SourceIp"`
 	InstanceSource string `position:"Query" name:"InstanceSource"`
 	Lang           string `position:"Query" name:"Lang"`

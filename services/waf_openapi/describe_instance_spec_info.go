@@ -85,11 +85,11 @@ type DescribeInstanceSpecInfoRequest struct {
 // DescribeInstanceSpecInfoResponse is the response struct for api DescribeInstanceSpecInfo
 type DescribeInstanceSpecInfoResponse struct {
 	*responses.BaseResponse
-	RequestId  string `json:"RequestId" xml:"RequestId"`
-	InstanceId string `json:"InstanceId" xml:"InstanceId"`
-	Version    string `json:"Version" xml:"Version"`
-	ExpireTime int64  `json:"ExpireTime" xml:"ExpireTime"`
-	Specs      []Spec `json:"Specs" xml:"Specs"`
+	RequestId        string                 `json:"RequestId" xml:"RequestId"`
+	InstanceId       string                 `json:"InstanceId" xml:"InstanceId"`
+	Version          string                 `json:"Version" xml:"Version"`
+	ExpireTime       int64                  `json:"ExpireTime" xml:"ExpireTime"`
+	InstanceSpecInfo []InstanceSpecInfoItem `json:"InstanceSpecInfo" xml:"InstanceSpecInfo"`
 }
 
 // CreateDescribeInstanceSpecInfoRequest creates a request to invoke DescribeInstanceSpecInfo API
