@@ -77,9 +77,9 @@ func (client *Client) DescribeLiveDomainConfigsWithCallback(request *DescribeLiv
 type DescribeLiveDomainConfigsRequest struct {
 	*requests.RpcRequest
 	FunctionNames string           `position:"Query" name:"FunctionNames"`
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	DomainName    string           `position:"Query" name:"DomainName"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 // DescribeLiveDomainConfigsResponse is the response struct for api DescribeLiveDomainConfigs

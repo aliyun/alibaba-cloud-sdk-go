@@ -76,19 +76,19 @@ func (client *Client) UpdateCasterSceneAudioWithCallback(request *UpdateCasterSc
 // UpdateCasterSceneAudioRequest is the request struct for api UpdateCasterSceneAudio
 type UpdateCasterSceneAudioRequest struct {
 	*requests.RpcRequest
-	AudioLayer   *[]UpdateCasterSceneAudioAudioLayer `position:"Query" name:"AudioLayer"  type:"Repeated"`
 	CasterId     string                              `position:"Query" name:"CasterId"`
+	OwnerId      requests.Integer                    `position:"Query" name:"OwnerId"`
+	AudioLayer   *[]UpdateCasterSceneAudioAudioLayer `position:"Query" name:"AudioLayer"  type:"Repeated"`
 	SceneId      string                              `position:"Query" name:"SceneId"`
 	MixList      *[]string                           `position:"Query" name:"MixList"  type:"Repeated"`
-	OwnerId      requests.Integer                    `position:"Query" name:"OwnerId"`
 	FollowEnable requests.Integer                    `position:"Query" name:"FollowEnable"`
 }
 
 // UpdateCasterSceneAudioAudioLayer is a repeated param struct in UpdateCasterSceneAudioRequest
 type UpdateCasterSceneAudioAudioLayer struct {
-	FixedDelayDuration string `name:"FixedDelayDuration"`
 	VolumeRate         string `name:"VolumeRate"`
 	ValidChannel       string `name:"ValidChannel"`
+	FixedDelayDuration string `name:"FixedDelayDuration"`
 }
 
 // UpdateCasterSceneAudioResponse is the response struct for api UpdateCasterSceneAudio

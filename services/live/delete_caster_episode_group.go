@@ -76,8 +76,8 @@ func (client *Client) DeleteCasterEpisodeGroupWithCallback(request *DeleteCaster
 // DeleteCasterEpisodeGroupRequest is the request struct for api DeleteCasterEpisodeGroup
 type DeleteCasterEpisodeGroupRequest struct {
 	*requests.RpcRequest
-	OwnerId   requests.Integer `position:"Query" name:"OwnerId"`
 	ProgramId string           `position:"Query" name:"ProgramId"`
+	OwnerId   requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DeleteCasterEpisodeGroupResponse is the response struct for api DeleteCasterEpisodeGroup

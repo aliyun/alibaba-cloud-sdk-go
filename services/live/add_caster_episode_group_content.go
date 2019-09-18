@@ -77,8 +77,8 @@ func (client *Client) AddCasterEpisodeGroupContentWithCallback(request *AddCaste
 type AddCasterEpisodeGroupContentRequest struct {
 	*requests.RpcRequest
 	ClientToken string           `position:"Query" name:"ClientToken"`
-	OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
 	Content     string           `position:"Query" name:"Content"`
+	OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // AddCasterEpisodeGroupContentResponse is the response struct for api AddCasterEpisodeGroupContent

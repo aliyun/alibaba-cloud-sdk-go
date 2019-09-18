@@ -76,14 +76,14 @@ func (client *Client) DescribeCasterProgramWithCallback(request *DescribeCasterP
 // DescribeCasterProgramRequest is the request struct for api DescribeCasterProgram
 type DescribeCasterProgramRequest struct {
 	*requests.RpcRequest
+	StartTime   string           `position:"Query" name:"StartTime"`
+	PageNum     requests.Integer `position:"Query" name:"PageNum"`
+	PageSize    requests.Integer `position:"Query" name:"PageSize"`
 	CasterId    string           `position:"Query" name:"CasterId"`
 	EpisodeType string           `position:"Query" name:"EpisodeType"`
-	PageSize    requests.Integer `position:"Query" name:"PageSize"`
 	EndTime     string           `position:"Query" name:"EndTime"`
-	StartTime   string           `position:"Query" name:"StartTime"`
 	OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
 	EpisodeId   string           `position:"Query" name:"EpisodeId"`
-	PageNum     requests.Integer `position:"Query" name:"PageNum"`
 	Status      requests.Integer `position:"Query" name:"Status"`
 }
 

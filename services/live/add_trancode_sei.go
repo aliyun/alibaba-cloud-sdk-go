@@ -76,14 +76,14 @@ func (client *Client) AddTrancodeSEIWithCallback(request *AddTrancodeSEIRequest,
 // AddTrancodeSEIRequest is the request struct for api AddTrancodeSEI
 type AddTrancodeSEIRequest struct {
 	*requests.RpcRequest
-	Delay      requests.Integer `position:"Query" name:"Delay"`
+	Pattern    string           `position:"Query" name:"Pattern"`
 	AppName    string           `position:"Query" name:"AppName"`
 	Repeat     requests.Integer `position:"Query" name:"Repeat"`
-	DomainName string           `position:"Query" name:"DomainName"`
-	Pattern    string           `position:"Query" name:"Pattern"`
 	Text       string           `position:"Query" name:"Text"`
-	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
 	StreamName string           `position:"Query" name:"StreamName"`
+	DomainName string           `position:"Query" name:"DomainName"`
+	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
+	Delay      requests.Integer `position:"Query" name:"Delay"`
 }
 
 // AddTrancodeSEIResponse is the response struct for api AddTrancodeSEI

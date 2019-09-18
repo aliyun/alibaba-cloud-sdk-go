@@ -77,8 +77,8 @@ func (client *Client) StopCasterSceneWithCallback(request *StopCasterSceneReques
 type StopCasterSceneRequest struct {
 	*requests.RpcRequest
 	CasterId string           `position:"Query" name:"CasterId"`
-	SceneId  string           `position:"Query" name:"SceneId"`
 	OwnerId  requests.Integer `position:"Query" name:"OwnerId"`
+	SceneId  string           `position:"Query" name:"SceneId"`
 }
 
 // StopCasterSceneResponse is the response struct for api StopCasterScene

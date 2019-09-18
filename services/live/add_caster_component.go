@@ -76,15 +76,15 @@ func (client *Client) AddCasterComponentWithCallback(request *AddCasterComponent
 // AddCasterComponentRequest is the request struct for api AddCasterComponent
 type AddCasterComponentRequest struct {
 	*requests.RpcRequest
+	ImageLayerContent   string           `position:"Query" name:"ImageLayerContent"`
+	ComponentName       string           `position:"Query" name:"ComponentName"`
+	CasterId            string           `position:"Query" name:"CasterId"`
+	ComponentLayer      string           `position:"Query" name:"ComponentLayer"`
+	OwnerId             requests.Integer `position:"Query" name:"OwnerId"`
 	ComponentType       string           `position:"Query" name:"ComponentType"`
 	LocationId          string           `position:"Query" name:"LocationId"`
-	ImageLayerContent   string           `position:"Query" name:"ImageLayerContent"`
-	CasterId            string           `position:"Query" name:"CasterId"`
 	Effect              string           `position:"Query" name:"Effect"`
-	ComponentLayer      string           `position:"Query" name:"ComponentLayer"`
 	CaptionLayerContent string           `position:"Query" name:"CaptionLayerContent"`
-	ComponentName       string           `position:"Query" name:"ComponentName"`
-	OwnerId             requests.Integer `position:"Query" name:"OwnerId"`
 	TextLayerContent    string           `position:"Query" name:"TextLayerContent"`
 }
 

@@ -85,8 +85,8 @@ type DescribeBoardsRequest struct {
 // DescribeBoardsResponse is the response struct for api DescribeBoards
 type DescribeBoardsResponse struct {
 	*responses.BaseResponse
-	RequestId string  `json:"RequestId" xml:"RequestId"`
-	Boards    []Event `json:"Boards" xml:"Boards"`
+	RequestId string                  `json:"RequestId" xml:"RequestId"`
+	Boards    []EventInDescribeBoards `json:"Boards" xml:"Boards"`
 }
 
 // CreateDescribeBoardsRequest creates a request to invoke DescribeBoards API

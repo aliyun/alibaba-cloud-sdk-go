@@ -76,15 +76,15 @@ func (client *Client) DescribeLiveStreamSnapshotInfoWithCallback(request *Descri
 // DescribeLiveStreamSnapshotInfoRequest is the request struct for api DescribeLiveStreamSnapshotInfo
 type DescribeLiveStreamSnapshotInfoRequest struct {
 	*requests.RpcRequest
+	StartTime     string           `position:"Query" name:"StartTime"`
 	AppName       string           `position:"Query" name:"AppName"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
-	DomainName    string           `position:"Query" name:"DomainName"`
 	Limit         requests.Integer `position:"Query" name:"Limit"`
-	EndTime       string           `position:"Query" name:"EndTime"`
-	StartTime     string           `position:"Query" name:"StartTime"`
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	StreamName    string           `position:"Query" name:"StreamName"`
 	Order         string           `position:"Query" name:"Order"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	EndTime       string           `position:"Query" name:"EndTime"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeLiveStreamSnapshotInfoResponse is the response struct for api DescribeLiveStreamSnapshotInfo

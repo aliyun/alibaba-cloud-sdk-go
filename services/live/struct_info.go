@@ -17,7 +17,9 @@ package live
 
 // Info is a nested struct in live response
 type Info struct {
-	DownFlow float64 `json:"DownFlow" xml:"DownFlow"`
-	Rate     string  `json:"Rate" xml:"Rate"`
-	Online   float64 `json:"Online" xml:"Online"`
+	Online            float64 `json:"Online" xml:"Online"`
+	DownFlow          float64 `json:"DownFlow" xml:"DownFlow"`
+	TranscodeTemplate string  `json:"TranscodeTemplate" xml:"TranscodeTemplate"`
+	Rate              string  `json:"Rate" xml:"Rate"`
+	UserNumber        int64   `json:"UserNumber" xml:"UserNumber"`
 }

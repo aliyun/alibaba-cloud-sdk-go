@@ -76,11 +76,11 @@ func (client *Client) DescribeLiveStreamsBlockListWithCallback(request *Describe
 // DescribeLiveStreamsBlockListRequest is the request struct for api DescribeLiveStreamsBlockList
 type DescribeLiveStreamsBlockListRequest struct {
 	*requests.RpcRequest
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
-	DomainName    string           `position:"Query" name:"DomainName"`
-	PageSize      requests.Integer `position:"Query" name:"PageSize"`
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	PageNum       requests.Integer `position:"Query" name:"PageNum"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	PageSize      requests.Integer `position:"Query" name:"PageSize"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeLiveStreamsBlockListResponse is the response struct for api DescribeLiveStreamsBlockList

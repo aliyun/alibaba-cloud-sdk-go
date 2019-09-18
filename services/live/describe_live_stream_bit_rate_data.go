@@ -76,13 +76,13 @@ func (client *Client) DescribeLiveStreamBitRateDataWithCallback(request *Describ
 // DescribeLiveStreamBitRateDataRequest is the request struct for api DescribeLiveStreamBitRateData
 type DescribeLiveStreamBitRateDataRequest struct {
 	*requests.RpcRequest
+	StartTime     string           `position:"Query" name:"StartTime"`
 	AppName       string           `position:"Query" name:"AppName"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	StreamName    string           `position:"Query" name:"StreamName"`
 	DomainName    string           `position:"Query" name:"DomainName"`
 	EndTime       string           `position:"Query" name:"EndTime"`
-	StartTime     string           `position:"Query" name:"StartTime"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
-	StreamName    string           `position:"Query" name:"StreamName"`
 }
 
 // DescribeLiveStreamBitRateDataResponse is the response struct for api DescribeLiveStreamBitRateData

@@ -76,11 +76,10 @@ func (client *Client) DeleteLiveRecordVodConfigWithCallback(request *DeleteLiveR
 // DeleteLiveRecordVodConfigRequest is the request struct for api DeleteLiveRecordVodConfig
 type DeleteLiveRecordVodConfigRequest struct {
 	*requests.RpcRequest
-	AppName       string           `position:"Query" name:"AppName"`
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
-	DomainName    string           `position:"Query" name:"DomainName"`
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
-	StreamName    string           `position:"Query" name:"StreamName"`
+	AppName    string           `position:"Query" name:"AppName"`
+	StreamName string           `position:"Query" name:"StreamName"`
+	DomainName string           `position:"Query" name:"DomainName"`
+	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DeleteLiveRecordVodConfigResponse is the response struct for api DeleteLiveRecordVodConfig

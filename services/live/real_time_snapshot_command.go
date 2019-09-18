@@ -78,11 +78,11 @@ type RealTimeSnapshotCommandRequest struct {
 	*requests.RpcRequest
 	Mode       requests.Integer `position:"Query" name:"Mode"`
 	AppName    string           `position:"Query" name:"AppName"`
+	StreamName string           `position:"Query" name:"StreamName"`
 	DomainName string           `position:"Query" name:"DomainName"`
-	Interval   requests.Integer `position:"Query" name:"Interval"`
 	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
 	Command    string           `position:"Query" name:"Command"`
-	StreamName string           `position:"Query" name:"StreamName"`
+	Interval   requests.Integer `position:"Query" name:"Interval"`
 }
 
 // RealTimeSnapshotCommandResponse is the response struct for api RealTimeSnapshotCommand

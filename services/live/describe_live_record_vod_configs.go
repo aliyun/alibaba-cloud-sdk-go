@@ -76,12 +76,12 @@ func (client *Client) DescribeLiveRecordVodConfigsWithCallback(request *Describe
 // DescribeLiveRecordVodConfigsRequest is the request struct for api DescribeLiveRecordVodConfigs
 type DescribeLiveRecordVodConfigsRequest struct {
 	*requests.RpcRequest
-	AppName    string           `position:"Query" name:"AppName"`
-	DomainName string           `position:"Query" name:"DomainName"`
-	PageSize   requests.Integer `position:"Query" name:"PageSize"`
-	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
 	PageNum    requests.Integer `position:"Query" name:"PageNum"`
+	AppName    string           `position:"Query" name:"AppName"`
+	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 	StreamName string           `position:"Query" name:"StreamName"`
+	DomainName string           `position:"Query" name:"DomainName"`
+	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeLiveRecordVodConfigsResponse is the response struct for api DescribeLiveRecordVodConfigs

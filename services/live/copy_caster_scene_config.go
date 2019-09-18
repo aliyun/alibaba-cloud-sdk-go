@@ -77,9 +77,9 @@ func (client *Client) CopyCasterSceneConfigWithCallback(request *CopyCasterScene
 type CopyCasterSceneConfigRequest struct {
 	*requests.RpcRequest
 	FromSceneId string           `position:"Query" name:"FromSceneId"`
+	ToSceneId   string           `position:"Query" name:"ToSceneId"`
 	CasterId    string           `position:"Query" name:"CasterId"`
 	OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
-	ToSceneId   string           `position:"Query" name:"ToSceneId"`
 }
 
 // CopyCasterSceneConfigResponse is the response struct for api CopyCasterSceneConfig

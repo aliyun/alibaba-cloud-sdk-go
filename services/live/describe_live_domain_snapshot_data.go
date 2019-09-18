@@ -76,9 +76,9 @@ func (client *Client) DescribeLiveDomainSnapshotDataWithCallback(request *Descri
 // DescribeLiveDomainSnapshotDataRequest is the request struct for api DescribeLiveDomainSnapshotData
 type DescribeLiveDomainSnapshotDataRequest struct {
 	*requests.RpcRequest
+	StartTime  string           `position:"Query" name:"StartTime"`
 	DomainName string           `position:"Query" name:"DomainName"`
 	EndTime    string           `position:"Query" name:"EndTime"`
-	StartTime  string           `position:"Query" name:"StartTime"`
 	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
 }
 

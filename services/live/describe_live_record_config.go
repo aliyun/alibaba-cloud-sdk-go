@@ -76,14 +76,14 @@ func (client *Client) DescribeLiveRecordConfigWithCallback(request *DescribeLive
 // DescribeLiveRecordConfigRequest is the request struct for api DescribeLiveRecordConfig
 type DescribeLiveRecordConfigRequest struct {
 	*requests.RpcRequest
+	PageNum       requests.Integer `position:"Query" name:"PageNum"`
 	AppName       string           `position:"Query" name:"AppName"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
-	DomainName    string           `position:"Query" name:"DomainName"`
 	PageSize      requests.Integer `position:"Query" name:"PageSize"`
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
-	PageNum       requests.Integer `position:"Query" name:"PageNum"`
 	StreamName    string           `position:"Query" name:"StreamName"`
 	Order         string           `position:"Query" name:"Order"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeLiveRecordConfigResponse is the response struct for api DescribeLiveRecordConfig

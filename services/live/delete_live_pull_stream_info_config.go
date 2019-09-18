@@ -78,9 +78,9 @@ type DeleteLivePullStreamInfoConfigRequest struct {
 	*requests.RpcRequest
 	AppName       string           `position:"Query" name:"AppName"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	StreamName    string           `position:"Query" name:"StreamName"`
 	DomainName    string           `position:"Query" name:"DomainName"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
-	StreamName    string           `position:"Query" name:"StreamName"`
 }
 
 // DeleteLivePullStreamInfoConfigResponse is the response struct for api DeleteLivePullStreamInfoConfig

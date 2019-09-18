@@ -76,21 +76,21 @@ func (client *Client) DescribeLiveStreamOnlineUserNumWithCallback(request *Descr
 // DescribeLiveStreamOnlineUserNumRequest is the request struct for api DescribeLiveStreamOnlineUserNum
 type DescribeLiveStreamOnlineUserNumRequest struct {
 	*requests.RpcRequest
+	StartTime     string           `position:"Query" name:"StartTime"`
 	AppName       string           `position:"Query" name:"AppName"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	StreamName    string           `position:"Query" name:"StreamName"`
 	DomainName    string           `position:"Query" name:"DomainName"`
 	EndTime       string           `position:"Query" name:"EndTime"`
-	StartTime     string           `position:"Query" name:"StartTime"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
-	StreamName    string           `position:"Query" name:"StreamName"`
 }
 
 // DescribeLiveStreamOnlineUserNumResponse is the response struct for api DescribeLiveStreamOnlineUserNum
 type DescribeLiveStreamOnlineUserNumResponse struct {
 	*responses.BaseResponse
-	RequestId       string         `json:"RequestId" xml:"RequestId"`
-	TotalUserNumber int64          `json:"TotalUserNumber" xml:"TotalUserNumber"`
-	OnlineUserInfo  OnlineUserInfo `json:"OnlineUserInfo" xml:"OnlineUserInfo"`
+	RequestId       string                                          `json:"RequestId" xml:"RequestId"`
+	TotalUserNumber int64                                           `json:"TotalUserNumber" xml:"TotalUserNumber"`
+	OnlineUserInfo  OnlineUserInfoInDescribeLiveStreamOnlineUserNum `json:"OnlineUserInfo" xml:"OnlineUserInfo"`
 }
 
 // CreateDescribeLiveStreamOnlineUserNumRequest creates a request to invoke DescribeLiveStreamOnlineUserNum API

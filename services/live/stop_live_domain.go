@@ -76,9 +76,9 @@ func (client *Client) StopLiveDomainWithCallback(request *StopLiveDomainRequest,
 // StopLiveDomainRequest is the request struct for api StopLiveDomain
 type StopLiveDomainRequest struct {
 	*requests.RpcRequest
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	DomainName    string           `position:"Query" name:"DomainName"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 // StopLiveDomainResponse is the response struct for api StopLiveDomain

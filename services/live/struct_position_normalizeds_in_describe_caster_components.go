@@ -17,5 +17,5 @@ package live
 
 // PositionNormalizedsInDescribeCasterComponents is a nested struct in live response
 type PositionNormalizedsInDescribeCasterComponents struct {
-	Position []string `json:"Position" xml:"Position"`
+	Position []float64 `json:"Position" xml:"Position"`
 }

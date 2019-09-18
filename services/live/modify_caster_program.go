@@ -76,21 +76,21 @@ func (client *Client) ModifyCasterProgramWithCallback(request *ModifyCasterProgr
 // ModifyCasterProgramRequest is the request struct for api ModifyCasterProgram
 type ModifyCasterProgramRequest struct {
 	*requests.RpcRequest
-	CasterId string                        `position:"Query" name:"CasterId"`
 	Episode  *[]ModifyCasterProgramEpisode `position:"Query" name:"Episode"  type:"Repeated"`
+	CasterId string                        `position:"Query" name:"CasterId"`
 	OwnerId  requests.Integer              `position:"Query" name:"OwnerId"`
 }
 
 // ModifyCasterProgramEpisode is a repeated param struct in ModifyCasterProgramRequest
 type ModifyCasterProgramEpisode struct {
-	ResourceId  string    `name:"ResourceId"`
-	ComponentId *[]string `name:"ComponentId" type:"Repeated"`
-	SwitchType  string    `name:"SwitchType"`
+	EpisodeId   string    `name:"EpisodeId"`
 	EpisodeType string    `name:"EpisodeType"`
 	EpisodeName string    `name:"EpisodeName"`
-	EndTime     string    `name:"EndTime"`
+	ResourceId  string    `name:"ResourceId"`
+	ComponentId *[]string `name:"ComponentId" type:"Repeated"`
 	StartTime   string    `name:"StartTime"`
-	EpisodeId   string    `name:"EpisodeId"`
+	EndTime     string    `name:"EndTime"`
+	SwitchType  string    `name:"SwitchType"`
 }
 
 // ModifyCasterProgramResponse is the response struct for api ModifyCasterProgram

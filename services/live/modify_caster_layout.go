@@ -77,29 +77,29 @@ func (client *Client) ModifyCasterLayoutWithCallback(request *ModifyCasterLayout
 type ModifyCasterLayoutRequest struct {
 	*requests.RpcRequest
 	BlendList  *[]string                       `position:"Query" name:"BlendList"  type:"Repeated"`
+	LayoutId   string                          `position:"Query" name:"LayoutId"`
+	CasterId   string                          `position:"Query" name:"CasterId"`
+	OwnerId    requests.Integer                `position:"Query" name:"OwnerId"`
 	AudioLayer *[]ModifyCasterLayoutAudioLayer `position:"Query" name:"AudioLayer"  type:"Repeated"`
 	VideoLayer *[]ModifyCasterLayoutVideoLayer `position:"Query" name:"VideoLayer"  type:"Repeated"`
-	CasterId   string                          `position:"Query" name:"CasterId"`
 	MixList    *[]string                       `position:"Query" name:"MixList"  type:"Repeated"`
-	OwnerId    requests.Integer                `position:"Query" name:"OwnerId"`
-	LayoutId   string                          `position:"Query" name:"LayoutId"`
 }
 
 // ModifyCasterLayoutAudioLayer is a repeated param struct in ModifyCasterLayoutRequest
 type ModifyCasterLayoutAudioLayer struct {
-	FixedDelayDuration string `name:"FixedDelayDuration"`
 	VolumeRate         string `name:"VolumeRate"`
 	ValidChannel       string `name:"ValidChannel"`
+	FixedDelayDuration string `name:"FixedDelayDuration"`
 }
 
 // ModifyCasterLayoutVideoLayer is a repeated param struct in ModifyCasterLayoutRequest
 type ModifyCasterLayoutVideoLayer struct {
 	FillMode           string    `name:"FillMode"`
+	HeightNormalized   string    `name:"HeightNormalized"`
 	WidthNormalized    string    `name:"WidthNormalized"`
-	FixedDelayDuration string    `name:"FixedDelayDuration"`
 	PositionRefer      string    `name:"PositionRefer"`
 	PositionNormalized *[]string `name:"PositionNormalized" type:"Repeated"`
-	HeightNormalized   string    `name:"HeightNormalized"`
+	FixedDelayDuration string    `name:"FixedDelayDuration"`
 }
 
 // ModifyCasterLayoutResponse is the response struct for api ModifyCasterLayout

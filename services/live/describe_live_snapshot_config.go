@@ -76,13 +76,13 @@ func (client *Client) DescribeLiveSnapshotConfigWithCallback(request *DescribeLi
 // DescribeLiveSnapshotConfigRequest is the request struct for api DescribeLiveSnapshotConfig
 type DescribeLiveSnapshotConfigRequest struct {
 	*requests.RpcRequest
+	PageNum       requests.Integer `position:"Query" name:"PageNum"`
 	AppName       string           `position:"Query" name:"AppName"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
-	DomainName    string           `position:"Query" name:"DomainName"`
 	PageSize      requests.Integer `position:"Query" name:"PageSize"`
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
-	PageNum       requests.Integer `position:"Query" name:"PageNum"`
 	Order         string           `position:"Query" name:"Order"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeLiveSnapshotConfigResponse is the response struct for api DescribeLiveSnapshotConfig

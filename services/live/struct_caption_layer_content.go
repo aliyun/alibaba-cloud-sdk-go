@@ -25,4 +25,7 @@ type CaptionLayerContent struct {
 	SizeNormalized        float64 `json:"SizeNormalized" xml:"SizeNormalized"`
 	BorderWidthNormalized float64 `json:"BorderWidthNormalized" xml:"BorderWidthNormalized"`
 	BorderColor           string  `json:"BorderColor" xml:"BorderColor"`
+	WordCountPerLine      int     `json:"WordCountPerLine" xml:"WordCountPerLine"`
+	WordSpaceNormalized   float64 `json:"WordSpaceNormalized" xml:"WordSpaceNormalized"`
+	LineSpaceNormalized   float64 `json:"LineSpaceNormalized" xml:"LineSpaceNormalized"`
 }

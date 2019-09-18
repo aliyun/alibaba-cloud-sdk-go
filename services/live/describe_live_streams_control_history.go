@@ -76,11 +76,11 @@ func (client *Client) DescribeLiveStreamsControlHistoryWithCallback(request *Des
 // DescribeLiveStreamsControlHistoryRequest is the request struct for api DescribeLiveStreamsControlHistory
 type DescribeLiveStreamsControlHistoryRequest struct {
 	*requests.RpcRequest
+	StartTime     string           `position:"Query" name:"StartTime"`
 	AppName       string           `position:"Query" name:"AppName"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	DomainName    string           `position:"Query" name:"DomainName"`
 	EndTime       string           `position:"Query" name:"EndTime"`
-	StartTime     string           `position:"Query" name:"StartTime"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 }
 

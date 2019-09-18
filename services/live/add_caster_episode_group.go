@@ -76,20 +76,20 @@ func (client *Client) AddCasterEpisodeGroupWithCallback(request *AddCasterEpisod
 // AddCasterEpisodeGroupRequest is the request struct for api AddCasterEpisodeGroup
 type AddCasterEpisodeGroupRequest struct {
 	*requests.RpcRequest
+	ClientToken   string                       `position:"Query" name:"ClientToken"`
+	StartTime     string                       `position:"Query" name:"StartTime"`
 	SideOutputUrl string                       `position:"Query" name:"SideOutputUrl"`
 	Item          *[]AddCasterEpisodeGroupItem `position:"Query" name:"Item"  type:"Repeated"`
-	ClientToken   string                       `position:"Query" name:"ClientToken"`
 	DomainName    string                       `position:"Query" name:"DomainName"`
-	StartTime     string                       `position:"Query" name:"StartTime"`
+	OwnerId       requests.Integer             `position:"Query" name:"OwnerId"`
 	RepeatNum     requests.Integer             `position:"Query" name:"RepeatNum"`
 	CallbackUrl   string                       `position:"Query" name:"CallbackUrl"`
-	OwnerId       requests.Integer             `position:"Query" name:"OwnerId"`
 }
 
 // AddCasterEpisodeGroupItem is a repeated param struct in AddCasterEpisodeGroupRequest
 type AddCasterEpisodeGroupItem struct {
-	VodUrl   string `name:"VodUrl"`
 	ItemName string `name:"ItemName"`
+	VodUrl   string `name:"VodUrl"`
 }
 
 // AddCasterEpisodeGroupResponse is the response struct for api AddCasterEpisodeGroup

@@ -76,20 +76,20 @@ func (client *Client) AddCasterProgramWithCallback(request *AddCasterProgramRequ
 // AddCasterProgramRequest is the request struct for api AddCasterProgram
 type AddCasterProgramRequest struct {
 	*requests.RpcRequest
-	CasterId string                     `position:"Query" name:"CasterId"`
 	Episode  *[]AddCasterProgramEpisode `position:"Query" name:"Episode"  type:"Repeated"`
+	CasterId string                     `position:"Query" name:"CasterId"`
 	OwnerId  requests.Integer           `position:"Query" name:"OwnerId"`
 }
 
 // AddCasterProgramEpisode is a repeated param struct in AddCasterProgramRequest
 type AddCasterProgramEpisode struct {
-	ResourceId  string    `name:"ResourceId"`
-	ComponentId *[]string `name:"ComponentId" type:"Repeated"`
-	SwitchType  string    `name:"SwitchType"`
 	EpisodeType string    `name:"EpisodeType"`
 	EpisodeName string    `name:"EpisodeName"`
-	EndTime     string    `name:"EndTime"`
+	ResourceId  string    `name:"ResourceId"`
+	ComponentId *[]string `name:"ComponentId" type:"Repeated"`
 	StartTime   string    `name:"StartTime"`
+	EndTime     string    `name:"EndTime"`
+	SwitchType  string    `name:"SwitchType"`
 }
 
 // AddCasterProgramResponse is the response struct for api AddCasterProgram

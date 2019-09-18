@@ -77,9 +77,9 @@ func (client *Client) DescribeUpBpsPeakOfLineWithCallback(request *DescribeUpBps
 type DescribeUpBpsPeakOfLineRequest struct {
 	*requests.RpcRequest
 	Line         string           `position:"Query" name:"Line"`
+	StartTime    string           `position:"Query" name:"StartTime"`
 	DomainName   string           `position:"Query" name:"DomainName"`
 	EndTime      string           `position:"Query" name:"EndTime"`
-	StartTime    string           `position:"Query" name:"StartTime"`
 	OwnerId      requests.Integer `position:"Query" name:"OwnerId"`
 	DomainSwitch string           `position:"Query" name:"DomainSwitch"`
 }

@@ -77,10 +77,10 @@ func (client *Client) StopLiveIndexWithCallback(request *StopLiveIndexRequest, c
 type StopLiveIndexRequest struct {
 	*requests.RpcRequest
 	AppName    string           `position:"Query" name:"AppName"`
-	DomainName string           `position:"Query" name:"DomainName"`
-	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
 	StreamName string           `position:"Query" name:"StreamName"`
 	TaskId     string           `position:"Query" name:"TaskId"`
+	DomainName string           `position:"Query" name:"DomainName"`
+	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // StopLiveIndexResponse is the response struct for api StopLiveIndex

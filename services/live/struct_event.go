@@ -17,8 +17,9 @@ package live
 
 // Event is a nested struct in live response
 type Event struct {
-	BoardId string `json:"BoardId" xml:"BoardId"`
-	UserId  string `json:"UserId" xml:"UserId"`
-	Topic   string `json:"Topic" xml:"Topic"`
-	State   int    `json:"State" xml:"State"`
+	EventId   int64  `json:"EventId" xml:"EventId"`
+	EventType int    `json:"EventType" xml:"EventType"`
+	Data      string `json:"Data" xml:"Data"`
+	Timestamp int64  `json:"Timestamp" xml:"Timestamp"`
+	UserId    int    `json:"UserId" xml:"UserId"`
 }

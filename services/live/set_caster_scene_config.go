@@ -76,11 +76,11 @@ func (client *Client) SetCasterSceneConfigWithCallback(request *SetCasterSceneCo
 // SetCasterSceneConfigRequest is the request struct for api SetCasterSceneConfig
 type SetCasterSceneConfigRequest struct {
 	*requests.RpcRequest
+	LayoutId    string           `position:"Query" name:"LayoutId"`
 	ComponentId *[]string        `position:"Query" name:"ComponentId"  type:"Repeated"`
 	CasterId    string           `position:"Query" name:"CasterId"`
-	SceneId     string           `position:"Query" name:"SceneId"`
 	OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
-	LayoutId    string           `position:"Query" name:"LayoutId"`
+	SceneId     string           `position:"Query" name:"SceneId"`
 }
 
 // SetCasterSceneConfigResponse is the response struct for api SetCasterSceneConfig

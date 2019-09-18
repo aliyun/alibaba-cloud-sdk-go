@@ -76,9 +76,9 @@ func (client *Client) DescribeUpBpsPeakDataWithCallback(request *DescribeUpBpsPe
 // DescribeUpBpsPeakDataRequest is the request struct for api DescribeUpBpsPeakData
 type DescribeUpBpsPeakDataRequest struct {
 	*requests.RpcRequest
+	StartTime    string           `position:"Query" name:"StartTime"`
 	DomainName   string           `position:"Query" name:"DomainName"`
 	EndTime      string           `position:"Query" name:"EndTime"`
-	StartTime    string           `position:"Query" name:"StartTime"`
 	OwnerId      requests.Integer `position:"Query" name:"OwnerId"`
 	DomainSwitch string           `position:"Query" name:"DomainSwitch"`
 }

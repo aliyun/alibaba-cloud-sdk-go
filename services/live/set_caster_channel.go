@@ -76,11 +76,11 @@ func (client *Client) SetCasterChannelWithCallback(request *SetCasterChannelRequ
 // SetCasterChannelRequest is the request struct for api SetCasterChannel
 type SetCasterChannelRequest struct {
 	*requests.RpcRequest
-	ResourceId string           `position:"Query" name:"ResourceId"`
+	SeekOffset requests.Integer `position:"Query" name:"SeekOffset"`
 	PlayStatus requests.Integer `position:"Query" name:"PlayStatus"`
+	ResourceId string           `position:"Query" name:"ResourceId"`
 	CasterId   string           `position:"Query" name:"CasterId"`
 	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
-	SeekOffset requests.Integer `position:"Query" name:"SeekOffset"`
 	ChannelId  string           `position:"Query" name:"ChannelId"`
 }
 

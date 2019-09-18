@@ -77,8 +77,8 @@ func (client *Client) DescribeHlsLiveStreamRealTimeBpsDataWithCallback(request *
 type DescribeHlsLiveStreamRealTimeBpsDataRequest struct {
 	*requests.RpcRequest
 	DomainName string           `position:"Query" name:"DomainName"`
-	Time       string           `position:"Query" name:"Time"`
 	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
+	Time       string           `position:"Query" name:"Time"`
 }
 
 // DescribeHlsLiveStreamRealTimeBpsDataResponse is the response struct for api DescribeHlsLiveStreamRealTimeBpsData

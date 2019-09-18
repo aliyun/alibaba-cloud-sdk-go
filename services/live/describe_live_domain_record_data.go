@@ -76,10 +76,10 @@ func (client *Client) DescribeLiveDomainRecordDataWithCallback(request *Describe
 // DescribeLiveDomainRecordDataRequest is the request struct for api DescribeLiveDomainRecordData
 type DescribeLiveDomainRecordDataRequest struct {
 	*requests.RpcRequest
+	StartTime  string           `position:"Query" name:"StartTime"`
 	RecordType string           `position:"Query" name:"RecordType"`
 	DomainName string           `position:"Query" name:"DomainName"`
 	EndTime    string           `position:"Query" name:"EndTime"`
-	StartTime  string           `position:"Query" name:"StartTime"`
 	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
 }
 

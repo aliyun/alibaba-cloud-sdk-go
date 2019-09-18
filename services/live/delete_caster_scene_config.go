@@ -76,10 +76,10 @@ func (client *Client) DeleteCasterSceneConfigWithCallback(request *DeleteCasterS
 // DeleteCasterSceneConfigRequest is the request struct for api DeleteCasterSceneConfig
 type DeleteCasterSceneConfigRequest struct {
 	*requests.RpcRequest
-	CasterId string           `position:"Query" name:"CasterId"`
-	SceneId  string           `position:"Query" name:"SceneId"`
-	OwnerId  requests.Integer `position:"Query" name:"OwnerId"`
 	Type     string           `position:"Query" name:"Type"`
+	CasterId string           `position:"Query" name:"CasterId"`
+	OwnerId  requests.Integer `position:"Query" name:"OwnerId"`
+	SceneId  string           `position:"Query" name:"SceneId"`
 }
 
 // DeleteCasterSceneConfigResponse is the response struct for api DeleteCasterSceneConfig

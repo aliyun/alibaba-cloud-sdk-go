@@ -78,10 +78,10 @@ type AddLiveRecordNotifyConfigRequest struct {
 	*requests.RpcRequest
 	OnDemandUrl      string           `position:"Query" name:"OnDemandUrl"`
 	SecurityToken    string           `position:"Query" name:"SecurityToken"`
-	DomainName       string           `position:"Query" name:"DomainName"`
 	NotifyUrl        string           `position:"Query" name:"NotifyUrl"`
-	OwnerId          requests.Integer `position:"Query" name:"OwnerId"`
 	NeedStatusNotify requests.Boolean `position:"Query" name:"NeedStatusNotify"`
+	DomainName       string           `position:"Query" name:"DomainName"`
+	OwnerId          requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // AddLiveRecordNotifyConfigResponse is the response struct for api AddLiveRecordNotifyConfig

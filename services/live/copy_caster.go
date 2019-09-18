@@ -76,9 +76,9 @@ func (client *Client) CopyCasterWithCallback(request *CopyCasterRequest, callbac
 // CopyCasterRequest is the request struct for api CopyCaster
 type CopyCasterRequest struct {
 	*requests.RpcRequest
-	SrcCasterId string           `position:"Query" name:"SrcCasterId"`
-	CasterName  string           `position:"Query" name:"CasterName"`
 	ClientToken string           `position:"Query" name:"ClientToken"`
+	CasterName  string           `position:"Query" name:"CasterName"`
+	SrcCasterId string           `position:"Query" name:"SrcCasterId"`
 	OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
 }
 

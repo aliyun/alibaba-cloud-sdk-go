@@ -76,10 +76,10 @@ func (client *Client) AddLiveDomainWithCallback(request *AddLiveDomainRequest, c
 // AddLiveDomainRequest is the request struct for api AddLiveDomain
 type AddLiveDomainRequest struct {
 	*requests.RpcRequest
-	TopLevelDomain string           `position:"Query" name:"TopLevelDomain"`
 	SecurityToken  string           `position:"Query" name:"SecurityToken"`
-	OwnerAccount   string           `position:"Query" name:"OwnerAccount"`
 	Scope          string           `position:"Query" name:"Scope"`
+	TopLevelDomain string           `position:"Query" name:"TopLevelDomain"`
+	OwnerAccount   string           `position:"Query" name:"OwnerAccount"`
 	DomainName     string           `position:"Query" name:"DomainName"`
 	OwnerId        requests.Integer `position:"Query" name:"OwnerId"`
 	Region         string           `position:"Query" name:"Region"`

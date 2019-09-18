@@ -76,9 +76,9 @@ func (client *Client) DeleteCasterLayoutWithCallback(request *DeleteCasterLayout
 // DeleteCasterLayoutRequest is the request struct for api DeleteCasterLayout
 type DeleteCasterLayoutRequest struct {
 	*requests.RpcRequest
+	LayoutId string           `position:"Query" name:"LayoutId"`
 	CasterId string           `position:"Query" name:"CasterId"`
 	OwnerId  requests.Integer `position:"Query" name:"OwnerId"`
-	LayoutId string           `position:"Query" name:"LayoutId"`
 }
 
 // DeleteCasterLayoutResponse is the response struct for api DeleteCasterLayout

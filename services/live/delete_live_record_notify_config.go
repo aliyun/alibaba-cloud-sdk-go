@@ -76,9 +76,9 @@ func (client *Client) DeleteLiveRecordNotifyConfigWithCallback(request *DeleteLi
 // DeleteLiveRecordNotifyConfigRequest is the request struct for api DeleteLiveRecordNotifyConfig
 type DeleteLiveRecordNotifyConfigRequest struct {
 	*requests.RpcRequest
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	DomainName    string           `position:"Query" name:"DomainName"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 // DeleteLiveRecordNotifyConfigResponse is the response struct for api DeleteLiveRecordNotifyConfig

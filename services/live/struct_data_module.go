@@ -17,12 +17,19 @@ package live
 
 // DataModule is a nested struct in live response
 type DataModule struct {
+	App               string `json:"App" xml:"App"`
+	Domain            string `json:"Domain" xml:"Domain"`
+	Region            string `json:"Region" xml:"Region"`
+	BpsValue          string `json:"BpsValue" xml:"BpsValue"`
+	HttpsTrafficValue string `json:"HttpsTrafficValue" xml:"HttpsTrafficValue"`
 	Value             string `json:"Value" xml:"Value"`
 	TrafficValue      string `json:"TrafficValue" xml:"TrafficValue"`
-	BpsValue          string `json:"BpsValue" xml:"BpsValue"`
+	Scene             string `json:"Scene" xml:"Scene"`
+	Count             int64  `json:"Count" xml:"Count"`
 	TimeStamp         string `json:"TimeStamp" xml:"TimeStamp"`
 	HttpBpsValue      string `json:"HttpBpsValue" xml:"HttpBpsValue"`
-	HttpsTrafficValue string `json:"HttpsTrafficValue" xml:"HttpsTrafficValue"`
+	Fee               string `json:"Fee" xml:"Fee"`
 	HttpsBpsValue     string `json:"HttpsBpsValue" xml:"HttpsBpsValue"`
 	HttpTrafficValue  string `json:"HttpTrafficValue" xml:"HttpTrafficValue"`
+	Stream            string `json:"Stream" xml:"Stream"`
 }

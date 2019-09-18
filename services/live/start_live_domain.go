@@ -76,9 +76,9 @@ func (client *Client) StartLiveDomainWithCallback(request *StartLiveDomainReques
 // StartLiveDomainRequest is the request struct for api StartLiveDomain
 type StartLiveDomainRequest struct {
 	*requests.RpcRequest
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	DomainName    string           `position:"Query" name:"DomainName"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 // StartLiveDomainResponse is the response struct for api StartLiveDomain

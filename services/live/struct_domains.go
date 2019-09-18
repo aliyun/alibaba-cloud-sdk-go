@@ -17,5 +17,6 @@ package live
 
 // Domains is a nested struct in live response
 type Domains struct {
-	PageData []PageData `json:"PageData" xml:"PageData"`
+	DomainName string `json:"DomainName" xml:"DomainName"`
+	Status     string `json:"Status" xml:"Status"`
 }

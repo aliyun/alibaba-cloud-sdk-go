@@ -77,8 +77,8 @@ func (client *Client) DescribeCasterSceneAudioWithCallback(request *DescribeCast
 type DescribeCasterSceneAudioRequest struct {
 	*requests.RpcRequest
 	CasterId string           `position:"Query" name:"CasterId"`
-	SceneId  string           `position:"Query" name:"SceneId"`
 	OwnerId  requests.Integer `position:"Query" name:"OwnerId"`
+	SceneId  string           `position:"Query" name:"SceneId"`
 }
 
 // DescribeCasterSceneAudioResponse is the response struct for api DescribeCasterSceneAudio

@@ -76,9 +76,9 @@ func (client *Client) DescribeLiveCertificateListWithCallback(request *DescribeL
 // DescribeLiveCertificateListRequest is the request struct for api DescribeLiveCertificateList
 type DescribeLiveCertificateListRequest struct {
 	*requests.RpcRequest
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	DomainName    string           `position:"Query" name:"DomainName"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 // DescribeLiveCertificateListResponse is the response struct for api DescribeLiveCertificateList

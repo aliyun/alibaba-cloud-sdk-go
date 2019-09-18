@@ -76,17 +76,17 @@ func (client *Client) StartLiveIndexWithCallback(request *StartLiveIndexRequest,
 // StartLiveIndexRequest is the request struct for api StartLiveIndex
 type StartLiveIndexRequest struct {
 	*requests.RpcRequest
-	OssBucket   string           `position:"Query" name:"OssBucket"`
 	TokenId     string           `position:"Query" name:"TokenId"`
-	DomainName  string           `position:"Query" name:"DomainName"`
 	OssEndpoint string           `position:"Query" name:"OssEndpoint"`
-	InputUrl    string           `position:"Query" name:"InputUrl"`
-	OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
 	AppName     string           `position:"Query" name:"AppName"`
-	Interval    requests.Integer `position:"Query" name:"Interval"`
 	OssRamRole  string           `position:"Query" name:"OssRamRole"`
 	StreamName  string           `position:"Query" name:"StreamName"`
 	OssUserId   string           `position:"Query" name:"OssUserId"`
+	OssBucket   string           `position:"Query" name:"OssBucket"`
+	DomainName  string           `position:"Query" name:"DomainName"`
+	InputUrl    string           `position:"Query" name:"InputUrl"`
+	OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
+	Interval    requests.Integer `position:"Query" name:"Interval"`
 }
 
 // StartLiveIndexResponse is the response struct for api StartLiveIndex

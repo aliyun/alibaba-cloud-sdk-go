@@ -78,10 +78,10 @@ type ResumeLiveStreamRequest struct {
 	*requests.RpcRequest
 	AppName        string           `position:"Query" name:"AppName"`
 	SecurityToken  string           `position:"Query" name:"SecurityToken"`
+	StreamName     string           `position:"Query" name:"StreamName"`
 	LiveStreamType string           `position:"Query" name:"LiveStreamType"`
 	DomainName     string           `position:"Query" name:"DomainName"`
 	OwnerId        requests.Integer `position:"Query" name:"OwnerId"`
-	StreamName     string           `position:"Query" name:"StreamName"`
 }
 
 // ResumeLiveStreamResponse is the response struct for api ResumeLiveStream

@@ -76,9 +76,9 @@ func (client *Client) DescribeLiveRecordNotifyConfigWithCallback(request *Descri
 // DescribeLiveRecordNotifyConfigRequest is the request struct for api DescribeLiveRecordNotifyConfig
 type DescribeLiveRecordNotifyConfigRequest struct {
 	*requests.RpcRequest
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	DomainName    string           `position:"Query" name:"DomainName"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 // DescribeLiveRecordNotifyConfigResponse is the response struct for api DescribeLiveRecordNotifyConfig

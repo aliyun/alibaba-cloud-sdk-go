@@ -76,14 +76,14 @@ func (client *Client) CreateCasterWithCallback(request *CreateCasterRequest, cal
 // CreateCasterRequest is the request struct for api CreateCaster
 type CreateCasterRequest struct {
 	*requests.RpcRequest
+	ClientToken    string           `position:"Query" name:"ClientToken"`
+	CasterName     string           `position:"Query" name:"CasterName"`
 	CasterTemplate string           `position:"Query" name:"CasterTemplate"`
 	ExpireTime     string           `position:"Query" name:"ExpireTime"`
 	NormType       requests.Integer `position:"Query" name:"NormType"`
-	CasterName     string           `position:"Query" name:"CasterName"`
-	ClientToken    string           `position:"Query" name:"ClientToken"`
-	ChargeType     string           `position:"Query" name:"ChargeType"`
 	OwnerId        requests.Integer `position:"Query" name:"OwnerId"`
 	PurchaseTime   string           `position:"Query" name:"PurchaseTime"`
+	ChargeType     string           `position:"Query" name:"ChargeType"`
 }
 
 // CreateCasterResponse is the response struct for api CreateCaster

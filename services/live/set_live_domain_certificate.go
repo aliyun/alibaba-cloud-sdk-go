@@ -76,15 +76,15 @@ func (client *Client) SetLiveDomainCertificateWithCallback(request *SetLiveDomai
 // SetLiveDomainCertificateRequest is the request struct for api SetLiveDomainCertificate
 type SetLiveDomainCertificateRequest struct {
 	*requests.RpcRequest
-	ForceSet      string           `position:"Query" name:"ForceSet"`
+	SSLProtocol   string           `position:"Query" name:"SSLProtocol"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	CertType      string           `position:"Query" name:"CertType"`
-	SSLPub        string           `position:"Query" name:"SSLPub"`
+	SSLPri        string           `position:"Query" name:"SSLPri"`
+	ForceSet      string           `position:"Query" name:"ForceSet"`
 	CertName      string           `position:"Query" name:"CertName"`
-	SSLProtocol   string           `position:"Query" name:"SSLProtocol"`
 	DomainName    string           `position:"Query" name:"DomainName"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
-	SSLPri        string           `position:"Query" name:"SSLPri"`
+	SSLPub        string           `position:"Query" name:"SSLPub"`
 }
 
 // SetLiveDomainCertificateResponse is the response struct for api SetLiveDomainCertificate

@@ -17,5 +17,5 @@ package live
 
 // Events is a nested struct in live response
 type Events struct {
-	Event []EventInDescribeBoardEvents `json:"Event" xml:"Event"`
+	Event []Event `json:"Event" xml:"Event"`
 }

@@ -76,15 +76,15 @@ func (client *Client) ModifyCasterComponentWithCallback(request *ModifyCasterCom
 // ModifyCasterComponentRequest is the request struct for api ModifyCasterComponent
 type ModifyCasterComponentRequest struct {
 	*requests.RpcRequest
-	ComponentId         string           `position:"Query" name:"ComponentId"`
-	ComponentType       string           `position:"Query" name:"ComponentType"`
 	ImageLayerContent   string           `position:"Query" name:"ImageLayerContent"`
-	CasterId            string           `position:"Query" name:"CasterId"`
-	Effect              string           `position:"Query" name:"Effect"`
-	ComponentLayer      string           `position:"Query" name:"ComponentLayer"`
-	CaptionLayerContent string           `position:"Query" name:"CaptionLayerContent"`
 	ComponentName       string           `position:"Query" name:"ComponentName"`
+	ComponentId         string           `position:"Query" name:"ComponentId"`
+	CasterId            string           `position:"Query" name:"CasterId"`
+	ComponentLayer      string           `position:"Query" name:"ComponentLayer"`
 	OwnerId             requests.Integer `position:"Query" name:"OwnerId"`
+	ComponentType       string           `position:"Query" name:"ComponentType"`
+	Effect              string           `position:"Query" name:"Effect"`
+	CaptionLayerContent string           `position:"Query" name:"CaptionLayerContent"`
 	TextLayerContent    string           `position:"Query" name:"TextLayerContent"`
 }
 

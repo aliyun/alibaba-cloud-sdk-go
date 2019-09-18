@@ -76,17 +76,17 @@ func (client *Client) AddLiveAppRecordConfigWithCallback(request *AddLiveAppReco
 // AddLiveAppRecordConfigRequest is the request struct for api AddLiveAppRecordConfig
 type AddLiveAppRecordConfigRequest struct {
 	*requests.RpcRequest
-	OssBucket     string                                `position:"Query" name:"OssBucket"`
+	OssEndpoint   string                                `position:"Query" name:"OssEndpoint"`
+	StartTime     string                                `position:"Query" name:"StartTime"`
 	AppName       string                                `position:"Query" name:"AppName"`
 	SecurityToken string                                `position:"Query" name:"SecurityToken"`
-	RecordFormat  *[]AddLiveAppRecordConfigRecordFormat `position:"Query" name:"RecordFormat"  type:"Repeated"`
-	DomainName    string                                `position:"Query" name:"DomainName"`
-	OssEndpoint   string                                `position:"Query" name:"OssEndpoint"`
-	EndTime       string                                `position:"Query" name:"EndTime"`
-	StartTime     string                                `position:"Query" name:"StartTime"`
-	OwnerId       requests.Integer                      `position:"Query" name:"OwnerId"`
 	OnDemand      requests.Integer                      `position:"Query" name:"OnDemand"`
 	StreamName    string                                `position:"Query" name:"StreamName"`
+	OssBucket     string                                `position:"Query" name:"OssBucket"`
+	DomainName    string                                `position:"Query" name:"DomainName"`
+	EndTime       string                                `position:"Query" name:"EndTime"`
+	OwnerId       requests.Integer                      `position:"Query" name:"OwnerId"`
+	RecordFormat  *[]AddLiveAppRecordConfigRecordFormat `position:"Query" name:"RecordFormat"  type:"Repeated"`
 }
 
 // AddLiveAppRecordConfigRecordFormat is a repeated param struct in AddLiveAppRecordConfigRequest

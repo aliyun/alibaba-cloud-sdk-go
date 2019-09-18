@@ -78,8 +78,8 @@ type EffectCasterVideoResourceRequest struct {
 	*requests.RpcRequest
 	ResourceId string           `position:"Query" name:"ResourceId"`
 	CasterId   string           `position:"Query" name:"CasterId"`
-	SceneId    string           `position:"Query" name:"SceneId"`
 	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
+	SceneId    string           `position:"Query" name:"SceneId"`
 }
 
 // EffectCasterVideoResourceResponse is the response struct for api EffectCasterVideoResource

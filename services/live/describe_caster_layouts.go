@@ -76,9 +76,9 @@ func (client *Client) DescribeCasterLayoutsWithCallback(request *DescribeCasterL
 // DescribeCasterLayoutsRequest is the request struct for api DescribeCasterLayouts
 type DescribeCasterLayoutsRequest struct {
 	*requests.RpcRequest
+	LayoutId string           `position:"Query" name:"LayoutId"`
 	CasterId string           `position:"Query" name:"CasterId"`
 	OwnerId  requests.Integer `position:"Query" name:"OwnerId"`
-	LayoutId string           `position:"Query" name:"LayoutId"`
 }
 
 // DescribeCasterLayoutsResponse is the response struct for api DescribeCasterLayouts

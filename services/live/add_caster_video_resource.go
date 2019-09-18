@@ -76,11 +76,11 @@ func (client *Client) AddCasterVideoResourceWithCallback(request *AddCasterVideo
 // AddCasterVideoResourceRequest is the request struct for api AddCasterVideoResource
 type AddCasterVideoResourceRequest struct {
 	*requests.RpcRequest
+	EndOffset           requests.Integer `position:"Query" name:"EndOffset"`
+	MaterialId          string           `position:"Query" name:"MaterialId"`
 	VodUrl              string           `position:"Query" name:"VodUrl"`
 	CasterId            string           `position:"Query" name:"CasterId"`
-	EndOffset           requests.Integer `position:"Query" name:"EndOffset"`
 	OwnerId             requests.Integer `position:"Query" name:"OwnerId"`
-	MaterialId          string           `position:"Query" name:"MaterialId"`
 	BeginOffset         requests.Integer `position:"Query" name:"BeginOffset"`
 	LiveStreamUrl       string           `position:"Query" name:"LiveStreamUrl"`
 	LocationId          string           `position:"Query" name:"LocationId"`

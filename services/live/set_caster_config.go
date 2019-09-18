@@ -76,18 +76,18 @@ func (client *Client) SetCasterConfigWithCallback(request *SetCasterConfigReques
 // SetCasterConfigRequest is the request struct for api SetCasterConfig
 type SetCasterConfigRequest struct {
 	*requests.RpcRequest
-	SideOutputUrl    string           `position:"Query" name:"SideOutputUrl"`
-	CasterId         string           `position:"Query" name:"CasterId"`
 	ChannelEnable    requests.Integer `position:"Query" name:"ChannelEnable"`
-	DomainName       string           `position:"Query" name:"DomainName"`
 	ProgramEffect    requests.Integer `position:"Query" name:"ProgramEffect"`
 	ProgramName      string           `position:"Query" name:"ProgramName"`
-	OwnerId          requests.Integer `position:"Query" name:"OwnerId"`
 	RecordConfig     string           `position:"Query" name:"RecordConfig"`
 	UrgentMaterialId string           `position:"Query" name:"UrgentMaterialId"`
 	TranscodeConfig  string           `position:"Query" name:"TranscodeConfig"`
-	Delay            requests.Float   `position:"Query" name:"Delay"`
 	CasterName       string           `position:"Query" name:"CasterName"`
+	SideOutputUrl    string           `position:"Query" name:"SideOutputUrl"`
+	CasterId         string           `position:"Query" name:"CasterId"`
+	DomainName       string           `position:"Query" name:"DomainName"`
+	OwnerId          requests.Integer `position:"Query" name:"OwnerId"`
+	Delay            requests.Float   `position:"Query" name:"Delay"`
 	CallbackUrl      string           `position:"Query" name:"CallbackUrl"`
 }
 

@@ -20,5 +20,6 @@ type ComponentLayer struct {
 	HeightNormalized    float64                                       `json:"HeightNormalized" xml:"HeightNormalized"`
 	WidthNormalized     float64                                       `json:"WidthNormalized" xml:"WidthNormalized"`
 	PositionRefer       string                                        `json:"PositionRefer" xml:"PositionRefer"`
+	Transparency        int                                           `json:"Transparency" xml:"Transparency"`
 	PositionNormalizeds PositionNormalizedsInDescribeCasterComponents `json:"PositionNormalizeds" xml:"PositionNormalizeds"`
 }

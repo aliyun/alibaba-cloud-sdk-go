@@ -76,15 +76,15 @@ func (client *Client) AddCasterEpisodeWithCallback(request *AddCasterEpisodeRequ
 // AddCasterEpisodeRequest is the request struct for api AddCasterEpisode
 type AddCasterEpisodeRequest struct {
 	*requests.RpcRequest
+	EpisodeName string           `position:"Query" name:"EpisodeName"`
+	StartTime   string           `position:"Query" name:"StartTime"`
 	ResourceId  string           `position:"Query" name:"ResourceId"`
 	ComponentId *[]string        `position:"Query" name:"ComponentId"  type:"Repeated"`
-	SwitchType  string           `position:"Query" name:"SwitchType"`
 	CasterId    string           `position:"Query" name:"CasterId"`
 	EpisodeType string           `position:"Query" name:"EpisodeType"`
-	EpisodeName string           `position:"Query" name:"EpisodeName"`
 	EndTime     string           `position:"Query" name:"EndTime"`
-	StartTime   string           `position:"Query" name:"StartTime"`
 	OwnerId     requests.Integer `position:"Query" name:"OwnerId"`
+	SwitchType  string           `position:"Query" name:"SwitchType"`
 }
 
 // AddCasterEpisodeResponse is the response struct for api AddCasterEpisode

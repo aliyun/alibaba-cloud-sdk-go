@@ -76,25 +76,25 @@ func (client *Client) DescribeLiveUserDomainsWithCallback(request *DescribeLiveU
 // DescribeLiveUserDomainsRequest is the request struct for api DescribeLiveUserDomains
 type DescribeLiveUserDomainsRequest struct {
 	*requests.RpcRequest
+	PageNumber       requests.Integer `position:"Query" name:"PageNumber"`
 	SecurityToken    string           `position:"Query" name:"SecurityToken"`
 	PageSize         requests.Integer `position:"Query" name:"PageSize"`
-	DomainName       string           `position:"Query" name:"DomainName"`
 	RegionName       string           `position:"Query" name:"RegionName"`
+	DomainName       string           `position:"Query" name:"DomainName"`
 	OwnerId          requests.Integer `position:"Query" name:"OwnerId"`
-	PageNumber       requests.Integer `position:"Query" name:"PageNumber"`
 	DomainStatus     string           `position:"Query" name:"DomainStatus"`
-	LiveDomainType   string           `position:"Query" name:"LiveDomainType"`
 	DomainSearchType string           `position:"Query" name:"DomainSearchType"`
+	LiveDomainType   string           `position:"Query" name:"LiveDomainType"`
 }
 
 // DescribeLiveUserDomainsResponse is the response struct for api DescribeLiveUserDomains
 type DescribeLiveUserDomainsResponse struct {
 	*responses.BaseResponse
-	RequestId  string  `json:"RequestId" xml:"RequestId"`
-	PageNumber int64   `json:"PageNumber" xml:"PageNumber"`
-	PageSize   int64   `json:"PageSize" xml:"PageSize"`
-	TotalCount int64   `json:"TotalCount" xml:"TotalCount"`
-	Domains    Domains `json:"Domains" xml:"Domains"`
+	RequestId  string                           `json:"RequestId" xml:"RequestId"`
+	PageNumber int64                            `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int64                            `json:"PageSize" xml:"PageSize"`
+	TotalCount int64                            `json:"TotalCount" xml:"TotalCount"`
+	Domains    DomainsInDescribeLiveUserDomains `json:"Domains" xml:"Domains"`
 }
 
 // CreateDescribeLiveUserDomainsRequest creates a request to invoke DescribeLiveUserDomains API

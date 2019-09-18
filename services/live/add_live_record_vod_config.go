@@ -76,14 +76,15 @@ func (client *Client) AddLiveRecordVodConfigWithCallback(request *AddLiveRecordV
 // AddLiveRecordVodConfigRequest is the request struct for api AddLiveRecordVodConfig
 type AddLiveRecordVodConfigRequest struct {
 	*requests.RpcRequest
-	AppName                    string           `position:"Query" name:"AppName"`
 	AutoCompose                string           `position:"Query" name:"AutoCompose"`
+	ComposeVodTranscodeGroupId string           `position:"Query" name:"ComposeVodTranscodeGroupId"`
+	StorageLocation            string           `position:"Query" name:"StorageLocation"`
+	AppName                    string           `position:"Query" name:"AppName"`
+	StreamName                 string           `position:"Query" name:"StreamName"`
+	VodTranscodeGroupId        string           `position:"Query" name:"VodTranscodeGroupId"`
 	DomainName                 string           `position:"Query" name:"DomainName"`
 	CycleDuration              requests.Integer `position:"Query" name:"CycleDuration"`
 	OwnerId                    requests.Integer `position:"Query" name:"OwnerId"`
-	ComposeVodTranscodeGroupId string           `position:"Query" name:"ComposeVodTranscodeGroupId"`
-	StreamName                 string           `position:"Query" name:"StreamName"`
-	VodTranscodeGroupId        string           `position:"Query" name:"VodTranscodeGroupId"`
 }
 
 // AddLiveRecordVodConfigResponse is the response struct for api AddLiveRecordVodConfig

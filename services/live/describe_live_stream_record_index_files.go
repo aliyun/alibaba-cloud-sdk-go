@@ -76,16 +76,16 @@ func (client *Client) DescribeLiveStreamRecordIndexFilesWithCallback(request *De
 // DescribeLiveStreamRecordIndexFilesRequest is the request struct for api DescribeLiveStreamRecordIndexFiles
 type DescribeLiveStreamRecordIndexFilesRequest struct {
 	*requests.RpcRequest
+	StartTime     string           `position:"Query" name:"StartTime"`
+	PageNum       requests.Integer `position:"Query" name:"PageNum"`
 	AppName       string           `position:"Query" name:"AppName"`
 	SecurityToken string           `position:"Query" name:"SecurityToken"`
-	DomainName    string           `position:"Query" name:"DomainName"`
 	PageSize      requests.Integer `position:"Query" name:"PageSize"`
-	EndTime       string           `position:"Query" name:"EndTime"`
-	StartTime     string           `position:"Query" name:"StartTime"`
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
-	PageNum       requests.Integer `position:"Query" name:"PageNum"`
 	StreamName    string           `position:"Query" name:"StreamName"`
 	Order         string           `position:"Query" name:"Order"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	EndTime       string           `position:"Query" name:"EndTime"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeLiveStreamRecordIndexFilesResponse is the response struct for api DescribeLiveStreamRecordIndexFiles

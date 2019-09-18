@@ -76,15 +76,15 @@ func (client *Client) AddLiveSnapshotDetectPornConfigWithCallback(request *AddLi
 // AddLiveSnapshotDetectPornConfigRequest is the request struct for api AddLiveSnapshotDetectPornConfig
 type AddLiveSnapshotDetectPornConfigRequest struct {
 	*requests.RpcRequest
-	OssBucket     string           `position:"Query" name:"OssBucket"`
-	AppName       string           `position:"Query" name:"AppName"`
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
-	DomainName    string           `position:"Query" name:"DomainName"`
 	OssEndpoint   string           `position:"Query" name:"OssEndpoint"`
-	Interval      requests.Integer `position:"Query" name:"Interval"`
-	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	OssObject     string           `position:"Query" name:"OssObject"`
 	Scene         *[]string        `position:"Query" name:"Scene"  type:"Repeated"`
+	AppName       string           `position:"Query" name:"AppName"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
+	OssBucket     string           `position:"Query" name:"OssBucket"`
+	DomainName    string           `position:"Query" name:"DomainName"`
+	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	Interval      requests.Integer `position:"Query" name:"Interval"`
 }
 
 // AddLiveSnapshotDetectPornConfigResponse is the response struct for api AddLiveSnapshotDetectPornConfig

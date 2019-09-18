@@ -77,8 +77,8 @@ func (client *Client) StartCasterSceneWithCallback(request *StartCasterSceneRequ
 type StartCasterSceneRequest struct {
 	*requests.RpcRequest
 	CasterId string           `position:"Query" name:"CasterId"`
-	SceneId  string           `position:"Query" name:"SceneId"`
 	OwnerId  requests.Integer `position:"Query" name:"OwnerId"`
+	SceneId  string           `position:"Query" name:"SceneId"`
 }
 
 // StartCasterSceneResponse is the response struct for api StartCasterScene

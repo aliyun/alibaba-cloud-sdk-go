@@ -77,9 +77,9 @@ func (client *Client) UpdateLiveTopLevelDomainWithCallback(request *UpdateLiveTo
 type UpdateLiveTopLevelDomainRequest struct {
 	*requests.RpcRequest
 	TopLevelDomain string           `position:"Query" name:"TopLevelDomain"`
-	SecurityToken  string           `position:"Query" name:"SecurityToken"`
 	DomainName     string           `position:"Query" name:"DomainName"`
 	OwnerId        requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken  string           `position:"Query" name:"SecurityToken"`
 }
 
 // UpdateLiveTopLevelDomainResponse is the response struct for api UpdateLiveTopLevelDomain

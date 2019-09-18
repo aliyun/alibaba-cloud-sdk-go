@@ -76,10 +76,10 @@ func (client *Client) DeleteLiveDomainWithCallback(request *DeleteLiveDomainRequ
 // DeleteLiveDomainRequest is the request struct for api DeleteLiveDomain
 type DeleteLiveDomainRequest struct {
 	*requests.RpcRequest
-	SecurityToken string           `position:"Query" name:"SecurityToken"`
 	OwnerAccount  string           `position:"Query" name:"OwnerAccount"`
 	DomainName    string           `position:"Query" name:"DomainName"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
+	SecurityToken string           `position:"Query" name:"SecurityToken"`
 }
 
 // DeleteLiveDomainResponse is the response struct for api DeleteLiveDomain

@@ -77,10 +77,10 @@ func (client *Client) RealTimeRecordCommandWithCallback(request *RealTimeRecordC
 type RealTimeRecordCommandRequest struct {
 	*requests.RpcRequest
 	AppName    string           `position:"Query" name:"AppName"`
+	StreamName string           `position:"Query" name:"StreamName"`
 	DomainName string           `position:"Query" name:"DomainName"`
 	OwnerId    requests.Integer `position:"Query" name:"OwnerId"`
 	Command    string           `position:"Query" name:"Command"`
-	StreamName string           `position:"Query" name:"StreamName"`
 }
 
 // RealTimeRecordCommandResponse is the response struct for api RealTimeRecordCommand
