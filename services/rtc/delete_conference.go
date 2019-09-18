@@ -76,16 +76,15 @@ func (client *Client) DeleteConferenceWithCallback(request *DeleteConferenceRequ
 // DeleteConferenceRequest is the request struct for api DeleteConference
 type DeleteConferenceRequest struct {
 	*requests.RpcRequest
-	OwnerId      requests.Integer `position:"Query" name:"OwnerId"`
 	ConferenceId string           `position:"Query" name:"ConferenceId"`
+	OwnerId      requests.Integer `position:"Query" name:"OwnerId"`
 	AppId        string           `position:"Query" name:"AppId"`
 }
 
 // DeleteConferenceResponse is the response struct for api DeleteConference
 type DeleteConferenceResponse struct {
 	*responses.BaseResponse
-	RequestId    string `json:"RequestId" xml:"RequestId"`
-	ConferenceId string `json:"ConferenceId" xml:"ConferenceId"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
 }
 
 // CreateDeleteConferenceRequest creates a request to invoke DeleteConference API

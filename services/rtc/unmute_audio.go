@@ -77,8 +77,8 @@ func (client *Client) UnmuteAudioWithCallback(request *UnmuteAudioRequest, callb
 type UnmuteAudioRequest struct {
 	*requests.RpcRequest
 	ParticipantIds *[]string        `position:"Query" name:"ParticipantIds"  type:"Repeated"`
-	OwnerId        requests.Integer `position:"Query" name:"OwnerId"`
 	ConferenceId   string           `position:"Query" name:"ConferenceId"`
+	OwnerId        requests.Integer `position:"Query" name:"OwnerId"`
 	AppId          string           `position:"Query" name:"AppId"`
 }
 

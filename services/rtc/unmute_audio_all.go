@@ -76,9 +76,9 @@ func (client *Client) UnmuteAudioAllWithCallback(request *UnmuteAudioAllRequest,
 // UnmuteAudioAllRequest is the request struct for api UnmuteAudioAll
 type UnmuteAudioAllRequest struct {
 	*requests.RpcRequest
+	ConferenceId  string           `position:"Query" name:"ConferenceId"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	ParticipantId string           `position:"Query" name:"ParticipantId"`
-	ConferenceId  string           `position:"Query" name:"ConferenceId"`
 	AppId         string           `position:"Query" name:"AppId"`
 }
 

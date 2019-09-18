@@ -87,11 +87,11 @@ type DescribeChannelParticipantsRequest struct {
 // DescribeChannelParticipantsResponse is the response struct for api DescribeChannelParticipants
 type DescribeChannelParticipantsResponse struct {
 	*responses.BaseResponse
-	RequestId string   `json:"RequestId" xml:"RequestId"`
-	Timestamp int      `json:"Timestamp" xml:"Timestamp"`
-	TotalNum  int      `json:"TotalNum" xml:"TotalNum"`
-	TotalPage int      `json:"TotalPage" xml:"TotalPage"`
-	UserList  UserList `json:"UserList" xml:"UserList"`
+	RequestId string                                `json:"RequestId" xml:"RequestId"`
+	Timestamp int                                   `json:"Timestamp" xml:"Timestamp"`
+	TotalNum  int                                   `json:"TotalNum" xml:"TotalNum"`
+	TotalPage int                                   `json:"TotalPage" xml:"TotalPage"`
+	UserList  UserListInDescribeChannelParticipants `json:"UserList" xml:"UserList"`
 }
 
 // CreateDescribeChannelParticipantsRequest creates a request to invoke DescribeChannelParticipants API

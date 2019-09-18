@@ -17,12 +17,12 @@ package rtc
 
 // CommunicationRecordInfo is a nested struct in rtc response
 type CommunicationRecordInfo struct {
-	Status        bool                          `json:"Status" xml:"Status"`
-	StartTime     string                        `json:"StartTime" xml:"StartTime"`
-	EndTime       string                        `json:"EndTime" xml:"EndTime"`
-	ChannelId     string                        `json:"ChannelId" xml:"ChannelId"`
-	TotalUserCnt  int64                         `json:"TotalUserCnt" xml:"TotalUserCnt"`
-	RecordId      string                        `json:"RecordId" xml:"RecordId"`
-	OnlineUserCnt int64                         `json:"OnlineUserCnt" xml:"OnlineUserCnt"`
-	CallAreas     CallAreasInDescribeRecordList `json:"CallAreas" xml:"CallAreas"`
+	Status        bool                                  `json:"Status" xml:"Status"`
+	StartTime     string                                `json:"StartTime" xml:"StartTime"`
+	EndTime       string                                `json:"EndTime" xml:"EndTime"`
+	ChannelId     string                                `json:"ChannelId" xml:"ChannelId"`
+	TotalUserCnt  int64                                 `json:"TotalUserCnt" xml:"TotalUserCnt"`
+	RecordId      string                                `json:"RecordId" xml:"RecordId"`
+	OnlineUserCnt int64                                 `json:"OnlineUserCnt" xml:"OnlineUserCnt"`
+	CallAreas     CallAreasInDescribeRealTimeRecordList `json:"CallAreas" xml:"CallAreas"`
 }

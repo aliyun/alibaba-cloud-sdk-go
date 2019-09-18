@@ -76,9 +76,9 @@ func (client *Client) MuteAudioAllWithCallback(request *MuteAudioAllRequest, cal
 // MuteAudioAllRequest is the request struct for api MuteAudioAll
 type MuteAudioAllRequest struct {
 	*requests.RpcRequest
+	ConferenceId  string           `position:"Query" name:"ConferenceId"`
 	OwnerId       requests.Integer `position:"Query" name:"OwnerId"`
 	ParticipantId string           `position:"Query" name:"ParticipantId"`
-	ConferenceId  string           `position:"Query" name:"ConferenceId"`
 	AppId         string           `position:"Query" name:"AppId"`
 }
 
