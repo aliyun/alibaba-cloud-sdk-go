@@ -76,9 +76,9 @@ func (client *Client) GetConsumerListWithCallback(request *GetConsumerListReques
 // GetConsumerListRequest is the request struct for api GetConsumerList
 type GetConsumerListRequest struct {
 	*requests.RpcRequest
+	CurrentPage string `position:"Query" name:"CurrentPage"`
 	InstanceId  string `position:"Query" name:"InstanceId"`
 	PageSize    string `position:"Query" name:"PageSize"`
-	CurrentPage string `position:"Query" name:"CurrentPage"`
 }
 
 // GetConsumerListResponse is the response struct for api GetConsumerList
@@ -96,7 +96,7 @@ func CreateGetConsumerListRequest() (request *GetConsumerListRequest) {
 	request = &GetConsumerListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alikafka", "2018-10-15", "GetConsumerList", "alikafka", "openAPI")
+	request.InitWithApiInfo("alikafka", "2019-09-16", "GetConsumerList", "alikafka", "openAPI")
 	return
 }
 

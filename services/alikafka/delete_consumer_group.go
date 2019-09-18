@@ -76,8 +76,8 @@ func (client *Client) DeleteConsumerGroupWithCallback(request *DeleteConsumerGro
 // DeleteConsumerGroupRequest is the request struct for api DeleteConsumerGroup
 type DeleteConsumerGroupRequest struct {
 	*requests.RpcRequest
-	InstanceId string `position:"Query" name:"InstanceId"`
 	ConsumerId string `position:"Query" name:"ConsumerId"`
+	InstanceId string `position:"Query" name:"InstanceId"`
 }
 
 // DeleteConsumerGroupResponse is the response struct for api DeleteConsumerGroup
@@ -94,7 +94,7 @@ func CreateDeleteConsumerGroupRequest() (request *DeleteConsumerGroupRequest) {
 	request = &DeleteConsumerGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alikafka", "2018-10-15", "DeleteConsumerGroup", "alikafka", "openAPI")
+	request.InitWithApiInfo("alikafka", "2019-09-16", "DeleteConsumerGroup", "alikafka", "openAPI")
 	return
 }
 

@@ -76,8 +76,8 @@ func (client *Client) GetConsumerProgressWithCallback(request *GetConsumerProgre
 // GetConsumerProgressRequest is the request struct for api GetConsumerProgress
 type GetConsumerProgressRequest struct {
 	*requests.RpcRequest
-	InstanceId string `position:"Query" name:"InstanceId"`
 	ConsumerId string `position:"Query" name:"ConsumerId"`
+	InstanceId string `position:"Query" name:"InstanceId"`
 }
 
 // GetConsumerProgressResponse is the response struct for api GetConsumerProgress
@@ -95,7 +95,7 @@ func CreateGetConsumerProgressRequest() (request *GetConsumerProgressRequest) {
 	request = &GetConsumerProgressRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alikafka", "2018-10-15", "GetConsumerProgress", "alikafka", "openAPI")
+	request.InitWithApiInfo("alikafka", "2019-09-16", "GetConsumerProgress", "alikafka", "openAPI")
 	return
 }
 

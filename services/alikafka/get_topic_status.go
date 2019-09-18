@@ -95,7 +95,7 @@ func CreateGetTopicStatusRequest() (request *GetTopicStatusRequest) {
 	request = &GetTopicStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alikafka", "2018-10-15", "GetTopicStatus", "alikafka", "openAPI")
+	request.InitWithApiInfo("alikafka", "2019-09-16", "GetTopicStatus", "alikafka", "openAPI")
 	return
 }
 

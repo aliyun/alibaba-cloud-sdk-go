@@ -76,9 +76,9 @@ func (client *Client) CreateTopicWithCallback(request *CreateTopicRequest, callb
 // CreateTopicRequest is the request struct for api CreateTopic
 type CreateTopicRequest struct {
 	*requests.RpcRequest
+	Remark       string           `position:"Query" name:"Remark"`
 	InstanceId   string           `position:"Query" name:"InstanceId"`
 	Topic        string           `position:"Query" name:"Topic"`
-	Remark       string           `position:"Query" name:"Remark"`
 	CompactTopic requests.Boolean `position:"Query" name:"CompactTopic"`
 	PartitionNum string           `position:"Query" name:"PartitionNum"`
 	LocalTopic   requests.Boolean `position:"Query" name:"LocalTopic"`
@@ -98,7 +98,7 @@ func CreateCreateTopicRequest() (request *CreateTopicRequest) {
 	request = &CreateTopicRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alikafka", "2018-10-15", "CreateTopic", "alikafka", "openAPI")
+	request.InitWithApiInfo("alikafka", "2019-09-16", "CreateTopic", "alikafka", "openAPI")
 	return
 }
 

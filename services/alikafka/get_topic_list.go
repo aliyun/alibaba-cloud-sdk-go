@@ -76,9 +76,9 @@ func (client *Client) GetTopicListWithCallback(request *GetTopicListRequest, cal
 // GetTopicListRequest is the request struct for api GetTopicList
 type GetTopicListRequest struct {
 	*requests.RpcRequest
+	CurrentPage string `position:"Query" name:"CurrentPage"`
 	InstanceId  string `position:"Query" name:"InstanceId"`
 	PageSize    string `position:"Query" name:"PageSize"`
-	CurrentPage string `position:"Query" name:"CurrentPage"`
 }
 
 // GetTopicListResponse is the response struct for api GetTopicList
@@ -99,7 +99,7 @@ func CreateGetTopicListRequest() (request *GetTopicListRequest) {
 	request = &GetTopicListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alikafka", "2018-10-15", "GetTopicList", "alikafka", "openAPI")
+	request.InitWithApiInfo("alikafka", "2019-09-16", "GetTopicList", "alikafka", "openAPI")
 	return
 }
 

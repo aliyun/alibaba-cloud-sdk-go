@@ -76,8 +76,8 @@ func (client *Client) CreateConsumerGroupWithCallback(request *CreateConsumerGro
 // CreateConsumerGroupRequest is the request struct for api CreateConsumerGroup
 type CreateConsumerGroupRequest struct {
 	*requests.RpcRequest
-	InstanceId string `position:"Query" name:"InstanceId"`
 	ConsumerId string `position:"Query" name:"ConsumerId"`
+	InstanceId string `position:"Query" name:"InstanceId"`
 }
 
 // CreateConsumerGroupResponse is the response struct for api CreateConsumerGroup
@@ -94,7 +94,7 @@ func CreateCreateConsumerGroupRequest() (request *CreateConsumerGroupRequest) {
 	request = &CreateConsumerGroupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alikafka", "2018-10-15", "CreateConsumerGroup", "alikafka", "openAPI")
+	request.InitWithApiInfo("alikafka", "2019-09-16", "CreateConsumerGroup", "alikafka", "openAPI")
 	return
 }
 

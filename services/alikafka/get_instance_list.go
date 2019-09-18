@@ -93,7 +93,7 @@ func CreateGetInstanceListRequest() (request *GetInstanceListRequest) {
 	request = &GetInstanceListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("alikafka", "2018-10-15", "GetInstanceList", "alikafka", "openAPI")
+	request.InitWithApiInfo("alikafka", "2019-09-16", "GetInstanceList", "alikafka", "openAPI")
 	return
 }
 
