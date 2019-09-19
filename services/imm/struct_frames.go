@@ -18,12 +18,15 @@ package imm
 // Frames is a nested struct in imm response
 type Frames struct {
 	FacesStatus         string          `json:"FacesStatus" xml:"FacesStatus"`
+	AddressModifyTime   string          `json:"AddressModifyTime" xml:"AddressModifyTime"`
 	ModifyTime          string          `json:"ModifyTime" xml:"ModifyTime"`
+	AddressFailReason   string          `json:"AddressFailReason" xml:"AddressFailReason"`
 	CreateTime          string          `json:"CreateTime" xml:"CreateTime"`
 	CelebrityFailReason string          `json:"CelebrityFailReason" xml:"CelebrityFailReason"`
 	OCRModifyTime       string          `json:"OCRModifyTime" xml:"OCRModifyTime"`
 	ImageFormat         string          `json:"ImageFormat" xml:"ImageFormat"`
 	FacesFailReason     string          `json:"FacesFailReason" xml:"FacesFailReason"`
+	AddressStatus       string          `json:"AddressStatus" xml:"AddressStatus"`
 	Exif                string          `json:"Exif" xml:"Exif"`
 	ImageHeight         int             `json:"ImageHeight" xml:"ImageHeight"`
 	SourceType          string          `json:"SourceType" xml:"SourceType"`
@@ -48,6 +51,7 @@ type Frames struct {
 	RemarksC            string          `json:"RemarksC" xml:"RemarksC"`
 	SourceUri           string          `json:"SourceUri" xml:"SourceUri"`
 	ImageWidth          int             `json:"ImageWidth" xml:"ImageWidth"`
+	Address             Address         `json:"Address" xml:"Address"`
 	OCR                 []OCRItem       `json:"OCR" xml:"OCR"`
 	Faces               []FacesItem     `json:"Faces" xml:"Faces"`
 	Celebrity           []CelebrityItem `json:"Celebrity" xml:"Celebrity"`

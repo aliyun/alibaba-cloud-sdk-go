@@ -117,6 +117,10 @@ type GetImageResponse struct {
 	RemarksC            string                `json:"RemarksC" xml:"RemarksC"`
 	RemarksD            string                `json:"RemarksD" xml:"RemarksD"`
 	ExternalId          string                `json:"ExternalId" xml:"ExternalId"`
+	AddressModifyTime   string                `json:"AddressModifyTime" xml:"AddressModifyTime"`
+	AddressStatus       string                `json:"AddressStatus" xml:"AddressStatus"`
+	AddressFailReason   string                `json:"AddressFailReason" xml:"AddressFailReason"`
+	Address             Address               `json:"Address" xml:"Address"`
 	Faces               []FacesItemInGetImage `json:"Faces" xml:"Faces"`
 	OCR                 []OCRItem             `json:"OCR" xml:"OCR"`
 	Tags                []TagsItem            `json:"Tags" xml:"Tags"`

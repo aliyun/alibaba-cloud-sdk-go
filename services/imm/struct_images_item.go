@@ -19,48 +19,52 @@ package imm
 type ImagesItem struct {
 	FacesStatus         string          `json:"FacesStatus" xml:"FacesStatus"`
 	User                string          `json:"User" xml:"User"`
-	ModifyTime          string          `json:"ModifyTime" xml:"ModifyTime"`
 	ImageId             string          `json:"ImageId" xml:"ImageId"`
 	Quality             float64         `json:"Quality" xml:"Quality"`
-	CreateTime          string          `json:"CreateTime" xml:"CreateTime"`
 	CelebrityFailReason string          `json:"CelebrityFailReason" xml:"CelebrityFailReason"`
-	OCRModifyTime       string          `json:"OCRModifyTime" xml:"OCRModifyTime"`
-	ImageFormat         string          `json:"ImageFormat" xml:"ImageFormat"`
-	ImageMd5            string          `json:"ImageMd5" xml:"ImageMd5"`
 	FacesFailReason     string          `json:"FacesFailReason" xml:"FacesFailReason"`
+	AddressStatus       string          `json:"AddressStatus" xml:"AddressStatus"`
 	Exif                string          `json:"Exif" xml:"Exif"`
 	ImageHeight         int             `json:"ImageHeight" xml:"ImageHeight"`
-	Age                 int             `json:"Age" xml:"Age"`
-	SourceType          string          `json:"SourceType" xml:"SourceType"`
 	RemarksB            string          `json:"RemarksB" xml:"RemarksB"`
 	FileSize            int             `json:"FileSize" xml:"FileSize"`
-	Orientation         string          `json:"Orientation" xml:"Orientation"`
-	FaceId              string          `json:"FaceId" xml:"FaceId"`
-	Hat                 int             `json:"Hat" xml:"Hat"`
-	TagsStatus          string          `json:"TagsStatus" xml:"TagsStatus"`
 	FacesModifyTime     string          `json:"FacesModifyTime" xml:"FacesModifyTime"`
 	CelebrityModifyTime string          `json:"CelebrityModifyTime" xml:"CelebrityModifyTime"`
-	RemarksD            string          `json:"RemarksD" xml:"RemarksD"`
 	TagsFailReason      string          `json:"TagsFailReason" xml:"TagsFailReason"`
-	CelebrityStatus     string          `json:"CelebrityStatus" xml:"CelebrityStatus"`
-	OCRStatus           string          `json:"OCRStatus" xml:"OCRStatus"`
-	Pitch               float64         `json:"Pitch" xml:"Pitch"`
 	ImageUri            string          `json:"ImageUri" xml:"ImageUri"`
 	ExternalId          string          `json:"ExternalId" xml:"ExternalId"`
-	ImageTime           string          `json:"ImageTime" xml:"ImageTime"`
 	Location            string          `json:"Location" xml:"Location"`
 	TagsModifyTime      string          `json:"TagsModifyTime" xml:"TagsModifyTime"`
 	Yaw                 float64         `json:"Yaw" xml:"Yaw"`
-	RemarksA            string          `json:"RemarksA" xml:"RemarksA"`
 	Gender              string          `json:"Gender" xml:"Gender"`
 	SourcePosition      string          `json:"SourcePosition" xml:"SourcePosition"`
 	OCRFailReason       string          `json:"OCRFailReason" xml:"OCRFailReason"`
-	Roll                float64         `json:"Roll" xml:"Roll"`
 	Glasses             int             `json:"Glasses" xml:"Glasses"`
 	RemarksC            string          `json:"RemarksC" xml:"RemarksC"`
 	SourceUri           string          `json:"SourceUri" xml:"SourceUri"`
 	ImageWidth          int             `json:"ImageWidth" xml:"ImageWidth"`
+	AddressModifyTime   string          `json:"AddressModifyTime" xml:"AddressModifyTime"`
+	ModifyTime          string          `json:"ModifyTime" xml:"ModifyTime"`
+	AddressFailReason   string          `json:"AddressFailReason" xml:"AddressFailReason"`
+	CreateTime          string          `json:"CreateTime" xml:"CreateTime"`
+	OCRModifyTime       string          `json:"OCRModifyTime" xml:"OCRModifyTime"`
+	ImageFormat         string          `json:"ImageFormat" xml:"ImageFormat"`
+	ImageMd5            string          `json:"ImageMd5" xml:"ImageMd5"`
+	Age                 int             `json:"Age" xml:"Age"`
+	SourceType          string          `json:"SourceType" xml:"SourceType"`
+	Orientation         string          `json:"Orientation" xml:"Orientation"`
+	FaceId              string          `json:"FaceId" xml:"FaceId"`
+	Hat                 int             `json:"Hat" xml:"Hat"`
+	TagsStatus          string          `json:"TagsStatus" xml:"TagsStatus"`
+	RemarksD            string          `json:"RemarksD" xml:"RemarksD"`
+	CelebrityStatus     string          `json:"CelebrityStatus" xml:"CelebrityStatus"`
+	OCRStatus           string          `json:"OCRStatus" xml:"OCRStatus"`
+	Pitch               float64         `json:"Pitch" xml:"Pitch"`
+	ImageTime           string          `json:"ImageTime" xml:"ImageTime"`
+	RemarksA            string          `json:"RemarksA" xml:"RemarksA"`
+	Roll                float64         `json:"Roll" xml:"Roll"`
 	Axis                []string        `json:"Axis" xml:"Axis"`
+	Address             Address         `json:"Address" xml:"Address"`
 	OCR                 []OCRItem       `json:"OCR" xml:"OCR"`
 	Faces               []FacesItem     `json:"Faces" xml:"Faces"`
 	Celebrity           []CelebrityItem `json:"Celebrity" xml:"Celebrity"`
