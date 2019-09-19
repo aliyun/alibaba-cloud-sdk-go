@@ -76,8 +76,8 @@ func (client *Client) SendVcodeWithCallback(request *SendVcodeRequest, callback 
 // SendVcodeRequest is the request struct for api SendVcode
 type SendVcodeRequest struct {
 	*requests.RpcRequest
-	BizCode string `position:"Query" name:"BizCode"`
 	Mobile  string `position:"Query" name:"Mobile"`
+	BizCode string `position:"Query" name:"BizCode"`
 }
 
 // SendVcodeResponse is the response struct for api SendVcode

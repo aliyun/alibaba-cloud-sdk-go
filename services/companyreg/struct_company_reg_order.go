@@ -25,4 +25,5 @@ type CompanyRegOrder struct {
 	AliyunOrderId     string `json:"AliyunOrderId" xml:"AliyunOrderId"`
 	GmtModified       int64  `json:"GmtModified" xml:"GmtModified"`
 	Extend            string `json:"Extend" xml:"Extend"`
+	BizSubCode        string `json:"BizSubCode" xml:"BizSubCode"`
 }

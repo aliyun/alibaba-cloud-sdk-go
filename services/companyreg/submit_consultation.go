@@ -77,9 +77,10 @@ func (client *Client) SubmitConsultationWithCallback(request *SubmitConsultation
 type SubmitConsultationRequest struct {
 	*requests.RpcRequest
 	Data             string `position:"Query" name:"Data"`
+	Vcode            string `position:"Query" name:"Vcode"`
 	BizCode          string `position:"Query" name:"BizCode"`
 	ConsultRequestId string `position:"Query" name:"ConsultRequestId"`
-	Vcode            string `position:"Query" name:"Vcode"`
+	BizSubCode       string `position:"Query" name:"BizSubCode"`
 }
 
 // SubmitConsultationResponse is the response struct for api SubmitConsultation

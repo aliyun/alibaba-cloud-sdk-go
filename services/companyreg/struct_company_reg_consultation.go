@@ -17,8 +17,11 @@ package companyreg
 
 // CompanyRegConsultation is a nested struct in companyreg response
 type CompanyRegConsultation struct {
-	BizId       string `json:"BizId" xml:"BizId"`
-	ConsultInfo string `json:"ConsultInfo" xml:"ConsultInfo"`
-	GmtModified int64  `json:"GmtModified" xml:"GmtModified"`
-	City        string `json:"City" xml:"City"`
+	BizId         string `json:"BizId" xml:"BizId"`
+	ConsultInfo   string `json:"ConsultInfo" xml:"ConsultInfo"`
+	GmtModified   int64  `json:"GmtModified" xml:"GmtModified"`
+	City          string `json:"City" xml:"City"`
+	PlatformName  string `json:"PlatformName" xml:"PlatformName"`
+	InboundPhone  string `json:"InboundPhone" xml:"InboundPhone"`
+	OutboundPhone string `json:"OutboundPhone" xml:"OutboundPhone"`
 }

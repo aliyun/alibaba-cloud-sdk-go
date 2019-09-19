@@ -77,12 +77,12 @@ func (client *Client) ListCompanyRegConsultationsWithCallback(request *ListCompa
 type ListCompanyRegConsultationsRequest struct {
 	*requests.RpcRequest
 	EndGmtCreate   requests.Integer `position:"Query" name:"EndGmtCreate"`
-	BizCode        string           `position:"Query" name:"BizCode"`
 	City           string           `position:"Query" name:"City"`
+	PageNum        requests.Integer `position:"Query" name:"PageNum"`
+	BizCode        string           `position:"Query" name:"BizCode"`
 	PageSize       requests.Integer `position:"Query" name:"PageSize"`
 	BizId          string           `position:"Query" name:"BizId"`
 	StartGmtCreate requests.Integer `position:"Query" name:"StartGmtCreate"`
-	PageNum        requests.Integer `position:"Query" name:"PageNum"`
 }
 
 // ListCompanyRegConsultationsResponse is the response struct for api ListCompanyRegConsultations

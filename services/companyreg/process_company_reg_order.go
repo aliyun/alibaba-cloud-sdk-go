@@ -77,11 +77,12 @@ func (client *Client) ProcessCompanyRegOrderWithCallback(request *ProcessCompany
 type ProcessCompanyRegOrderRequest struct {
 	*requests.RpcRequest
 	ActionType      string           `position:"Query" name:"ActionType"`
-	BizCode         string           `position:"Query" name:"BizCode"`
-	BizId           string           `position:"Query" name:"BizId"`
 	ActionRequestId string           `position:"Query" name:"ActionRequestId"`
 	OperatorType    requests.Integer `position:"Query" name:"OperatorType"`
 	ActionInfo      string           `position:"Query" name:"ActionInfo"`
+	BizCode         string           `position:"Query" name:"BizCode"`
+	BizId           string           `position:"Query" name:"BizId"`
+	BizSubCode      string           `position:"Query" name:"BizSubCode"`
 }
 
 // ProcessCompanyRegOrderResponse is the response struct for api ProcessCompanyRegOrder

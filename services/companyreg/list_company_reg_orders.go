@@ -76,12 +76,13 @@ func (client *Client) ListCompanyRegOrdersWithCallback(request *ListCompanyRegOr
 // ListCompanyRegOrdersRequest is the request struct for api ListCompanyRegOrders
 type ListCompanyRegOrdersRequest struct {
 	*requests.RpcRequest
+	PageNum       requests.Integer `position:"Query" name:"PageNum"`
 	BizCode       string           `position:"Query" name:"BizCode"`
 	BizStatus     string           `position:"Query" name:"BizStatus"`
 	CompanyName   string           `position:"Query" name:"CompanyName"`
 	PageSize      requests.Integer `position:"Query" name:"PageSize"`
 	AliyunOrderId string           `position:"Query" name:"AliyunOrderId"`
-	PageNum       requests.Integer `position:"Query" name:"PageNum"`
+	BizSubCode    string           `position:"Query" name:"BizSubCode"`
 }
 
 // ListCompanyRegOrdersResponse is the response struct for api ListCompanyRegOrders

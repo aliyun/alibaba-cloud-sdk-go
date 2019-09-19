@@ -80,6 +80,7 @@ type GetCompanyRegOrderRequest struct {
 	BizCode          string           `position:"Query" name:"BizCode"`
 	BizId            string           `position:"Query" name:"BizId"`
 	MaxOperationSize requests.Integer `position:"Query" name:"MaxOperationSize"`
+	BizSubCode       string           `position:"Query" name:"BizSubCode"`
 }
 
 // GetCompanyRegOrderResponse is the response struct for api GetCompanyRegOrder
@@ -98,6 +99,10 @@ type GetCompanyRegOrderResponse struct {
 	GmtPaid              int64      `json:"GmtPaid" xml:"GmtPaid"`
 	Extend               string     `json:"Extend" xml:"Extend"`
 	BizStatusStage       string     `json:"BizStatusStage" xml:"BizStatusStage"`
+	PlatformName         string     `json:"PlatformName" xml:"PlatformName"`
+	InboundPhone         string     `json:"InboundPhone" xml:"InboundPhone"`
+	OutboundPhone        string     `json:"OutboundPhone" xml:"OutboundPhone"`
+	BizSubCode           string     `json:"BizSubCode" xml:"BizSubCode"`
 	Operations           Operations `json:"Operations" xml:"Operations"`
 }
 
