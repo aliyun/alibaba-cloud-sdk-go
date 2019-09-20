@@ -76,15 +76,15 @@ func (client *Client) DescribeDdosEventWithCallback(request *DescribeDdosEventRe
 // DescribeDdosEventRequest is the request struct for api DescribeDdosEvent
 type DescribeDdosEventRequest struct {
 	*requests.RpcRequest
-	SourceIp         string           `position:"Query" name:"SourceIp"`
 	StartTime        requests.Integer `position:"Query" name:"StartTime"`
-	EndTime          requests.Integer `position:"Query" name:"EndTime"`
-	PageSize         requests.Integer `position:"Query" name:"PageSize"`
-	PageNo           requests.Integer `position:"Query" name:"PageNo"`
-	InstanceId       string           `position:"Query" name:"InstanceId"`
-	Ip               string           `position:"Query" name:"Ip"`
-	ResourceRegionId string           `position:"Query" name:"ResourceRegionId"`
 	ResourceGroupId  string           `position:"Query" name:"ResourceGroupId"`
+	SourceIp         string           `position:"Query" name:"SourceIp"`
+	PageSize         requests.Integer `position:"Query" name:"PageSize"`
+	ResourceRegionId string           `position:"Query" name:"ResourceRegionId"`
+	Ip               string           `position:"Query" name:"Ip"`
+	EndTime          requests.Integer `position:"Query" name:"EndTime"`
+	InstanceId       string           `position:"Query" name:"InstanceId"`
+	PageNo           requests.Integer `position:"Query" name:"PageNo"`
 }
 
 // DescribeDdosEventResponse is the response struct for api DescribeDdosEvent

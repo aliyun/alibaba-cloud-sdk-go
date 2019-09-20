@@ -76,8 +76,8 @@ func (client *Client) DescribeRegionsWithCallback(request *DescribeRegionsReques
 // DescribeRegionsRequest is the request struct for api DescribeRegions
 type DescribeRegionsRequest struct {
 	*requests.RpcRequest
-	SourceIp        string `position:"Query" name:"SourceIp"`
 	ResourceGroupId string `position:"Query" name:"ResourceGroupId"`
+	SourceIp        string `position:"Query" name:"SourceIp"`
 }
 
 // DescribeRegionsResponse is the response struct for api DescribeRegions

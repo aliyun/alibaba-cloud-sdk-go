@@ -76,8 +76,8 @@ func (client *Client) ReleaseInstanceWithCallback(request *ReleaseInstanceReques
 // ReleaseInstanceRequest is the request struct for api ReleaseInstance
 type ReleaseInstanceRequest struct {
 	*requests.RpcRequest
-	SourceIp   string `position:"Query" name:"SourceIp"`
 	InstanceId string `position:"Query" name:"InstanceId"`
+	SourceIp   string `position:"Query" name:"SourceIp"`
 }
 
 // ReleaseInstanceResponse is the response struct for api ReleaseInstance

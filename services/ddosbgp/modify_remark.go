@@ -76,12 +76,12 @@ func (client *Client) ModifyRemarkWithCallback(request *ModifyRemarkRequest, cal
 // ModifyRemarkRequest is the request struct for api ModifyRemark
 type ModifyRemarkRequest struct {
 	*requests.RpcRequest
+	Remark           string `position:"Query" name:"Remark"`
+	ResourceGroupId  string `position:"Query" name:"ResourceGroupId"`
+	InstanceId       string `position:"Query" name:"InstanceId"`
 	SourceIp         string `position:"Query" name:"SourceIp"`
 	Lang             string `position:"Query" name:"Lang"`
-	InstanceId       string `position:"Query" name:"InstanceId"`
-	Remark           string `position:"Query" name:"Remark"`
 	ResourceRegionId string `position:"Query" name:"ResourceRegionId"`
-	ResourceGroupId  string `position:"Query" name:"ResourceGroupId"`
 }
 
 // ModifyRemarkResponse is the response struct for api ModifyRemark

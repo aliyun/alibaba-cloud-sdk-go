@@ -76,13 +76,13 @@ func (client *Client) DescribeTrafficWithCallback(request *DescribeTrafficReques
 // DescribeTrafficRequest is the request struct for api DescribeTraffic
 type DescribeTrafficRequest struct {
 	*requests.RpcRequest
-	SourceIp        string           `position:"Query" name:"SourceIp"`
-	InstanceId      string           `position:"Query" name:"InstanceId"`
-	Ip              string           `position:"Query" name:"Ip"`
 	StartTime       requests.Integer `position:"Query" name:"StartTime"`
-	EndTime         requests.Integer `position:"Query" name:"EndTime"`
-	Interval        requests.Integer `position:"Query" name:"Interval"`
 	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
+	SourceIp        string           `position:"Query" name:"SourceIp"`
+	Ip              string           `position:"Query" name:"Ip"`
+	EndTime         requests.Integer `position:"Query" name:"EndTime"`
+	InstanceId      string           `position:"Query" name:"InstanceId"`
+	Interval        requests.Integer `position:"Query" name:"Interval"`
 }
 
 // DescribeTrafficResponse is the response struct for api DescribeTraffic

@@ -76,8 +76,8 @@ func (client *Client) CheckGrantWithCallback(request *CheckGrantRequest, callbac
 // CheckGrantRequest is the request struct for api CheckGrant
 type CheckGrantRequest struct {
 	*requests.RpcRequest
-	SourceIp        string `position:"Query" name:"SourceIp"`
 	ResourceGroupId string `position:"Query" name:"ResourceGroupId"`
+	SourceIp        string `position:"Query" name:"SourceIp"`
 }
 
 // CheckGrantResponse is the response struct for api CheckGrant

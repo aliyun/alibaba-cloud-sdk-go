@@ -76,17 +76,17 @@ func (client *Client) DescribeOpEntitiesWithCallback(request *DescribeOpEntities
 // DescribeOpEntitiesRequest is the request struct for api DescribeOpEntities
 type DescribeOpEntitiesRequest struct {
 	*requests.RpcRequest
-	SourceIp         string           `position:"Query" name:"SourceIp"`
-	Lang             string           `position:"Query" name:"Lang"`
-	CurrentPage      requests.Integer `position:"Query" name:"CurrentPage"`
-	PageSize         requests.Integer `position:"Query" name:"PageSize"`
 	StartTime        requests.Integer `position:"Query" name:"StartTime"`
+	ResourceGroupId  string           `position:"Query" name:"ResourceGroupId"`
+	SourceIp         string           `position:"Query" name:"SourceIp"`
+	PageSize         requests.Integer `position:"Query" name:"PageSize"`
+	Lang             string           `position:"Query" name:"Lang"`
+	ResourceRegionId string           `position:"Query" name:"ResourceRegionId"`
 	EndTime          requests.Integer `position:"Query" name:"EndTime"`
 	OrderBy          string           `position:"Query" name:"OrderBy"`
+	CurrentPage      requests.Integer `position:"Query" name:"CurrentPage"`
 	OrderDir         string           `position:"Query" name:"OrderDir"`
 	InstanceId       string           `position:"Query" name:"InstanceId"`
-	ResourceRegionId string           `position:"Query" name:"ResourceRegionId"`
-	ResourceGroupId  string           `position:"Query" name:"ResourceGroupId"`
 }
 
 // DescribeOpEntitiesResponse is the response struct for api DescribeOpEntities

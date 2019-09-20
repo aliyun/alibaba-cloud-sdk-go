@@ -76,10 +76,10 @@ func (client *Client) DescribeResourcePackInstancesWithCallback(request *Describ
 // DescribeResourcePackInstancesRequest is the request struct for api DescribeResourcePackInstances
 type DescribeResourcePackInstancesRequest struct {
 	*requests.RpcRequest
-	SourceIp        string           `position:"Query" name:"SourceIp"`
-	PageSize        requests.Integer `position:"Query" name:"PageSize"`
 	CurrentPage     requests.Integer `position:"Query" name:"CurrentPage"`
 	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
+	SourceIp        string           `position:"Query" name:"SourceIp"`
+	PageSize        requests.Integer `position:"Query" name:"PageSize"`
 }
 
 // DescribeResourcePackInstancesResponse is the response struct for api DescribeResourcePackInstances

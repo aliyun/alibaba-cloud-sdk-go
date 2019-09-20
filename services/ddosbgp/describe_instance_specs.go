@@ -76,11 +76,11 @@ func (client *Client) DescribeInstanceSpecsWithCallback(request *DescribeInstanc
 // DescribeInstanceSpecsRequest is the request struct for api DescribeInstanceSpecs
 type DescribeInstanceSpecsRequest struct {
 	*requests.RpcRequest
+	ResourceGroupId string `position:"Query" name:"ResourceGroupId"`
 	SourceIp        string `position:"Query" name:"SourceIp"`
-	Lang            string `position:"Query" name:"Lang"`
 	InstanceIdList  string `position:"Query" name:"InstanceIdList"`
 	DdosRegionId    string `position:"Query" name:"DdosRegionId"`
-	ResourceGroupId string `position:"Query" name:"ResourceGroupId"`
+	Lang            string `position:"Query" name:"Lang"`
 }
 
 // DescribeInstanceSpecsResponse is the response struct for api DescribeInstanceSpecs

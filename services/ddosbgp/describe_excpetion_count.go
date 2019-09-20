@@ -76,9 +76,9 @@ func (client *Client) DescribeExcpetionCountWithCallback(request *DescribeExcpet
 // DescribeExcpetionCountRequest is the request struct for api DescribeExcpetionCount
 type DescribeExcpetionCountRequest struct {
 	*requests.RpcRequest
+	ResourceGroupId string `position:"Query" name:"ResourceGroupId"`
 	SourceIp        string `position:"Query" name:"SourceIp"`
 	DdosRegionId    string `position:"Query" name:"DdosRegionId"`
-	ResourceGroupId string `position:"Query" name:"ResourceGroupId"`
 }
 
 // DescribeExcpetionCountResponse is the response struct for api DescribeExcpetionCount

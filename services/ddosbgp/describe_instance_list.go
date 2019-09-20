@@ -76,25 +76,25 @@ func (client *Client) DescribeInstanceListWithCallback(request *DescribeInstance
 // DescribeInstanceListRequest is the request struct for api DescribeInstanceList
 type DescribeInstanceListRequest struct {
 	*requests.RpcRequest
-	SourceIp        string                     `position:"Query" name:"SourceIp"`
-	ResourceGroupId string                     `position:"Query" name:"ResourceGroupId"`
-	InstanceIdList  string                     `position:"Query" name:"InstanceIdList"`
 	Remark          string                     `position:"Query" name:"Remark"`
-	PageNo          requests.Integer           `position:"Query" name:"PageNo"`
+	ResourceGroupId string                     `position:"Query" name:"ResourceGroupId"`
+	SourceIp        string                     `position:"Query" name:"SourceIp"`
 	PageSize        requests.Integer           `position:"Query" name:"PageSize"`
 	DdosRegionId    string                     `position:"Query" name:"DdosRegionId"`
-	IpVersion       string                     `position:"Query" name:"IpVersion"`
 	InstanceType    string                     `position:"Query" name:"InstanceType"`
+	IpVersion       string                     `position:"Query" name:"IpVersion"`
+	Tag             *[]DescribeInstanceListTag `position:"Query" name:"Tag"  type:"Repeated"`
 	Ip              string                     `position:"Query" name:"Ip"`
 	Orderby         string                     `position:"Query" name:"Orderby"`
+	InstanceIdList  string                     `position:"Query" name:"InstanceIdList"`
+	PageNo          requests.Integer           `position:"Query" name:"PageNo"`
 	Orderdire       string                     `position:"Query" name:"Orderdire"`
-	Tag             *[]DescribeInstanceListTag `position:"Query" name:"Tag"  type:"Repeated"`
 }
 
 // DescribeInstanceListTag is a repeated param struct in DescribeInstanceListRequest
 type DescribeInstanceListTag struct {
-	Key   string `name:"Key"`
 	Value string `name:"Value"`
+	Key   string `name:"Key"`
 }
 
 // DescribeInstanceListResponse is the response struct for api DescribeInstanceList

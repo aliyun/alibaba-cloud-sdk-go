@@ -76,11 +76,11 @@ func (client *Client) DescribeResourcePackUsageWithCallback(request *DescribeRes
 // DescribeResourcePackUsageRequest is the request struct for api DescribeResourcePackUsage
 type DescribeResourcePackUsageRequest struct {
 	*requests.RpcRequest
-	SourceIp        string           `position:"Query" name:"SourceIp"`
 	EndTime         requests.Integer `position:"Query" name:"EndTime"`
 	StartTime       requests.Integer `position:"Query" name:"StartTime"`
-	InstanceId      string           `position:"Query" name:"InstanceId"`
 	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
+	InstanceId      string           `position:"Query" name:"InstanceId"`
+	SourceIp        string           `position:"Query" name:"SourceIp"`
 }
 
 // DescribeResourcePackUsageResponse is the response struct for api DescribeResourcePackUsage

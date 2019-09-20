@@ -26,4 +26,5 @@ type Instance struct {
 	AutoRenewal       bool   `json:"AutoRenewal" xml:"AutoRenewal"`
 	BlackholdingCount string `json:"BlackholdingCount" xml:"BlackholdingCount"`
 	GmtCreate         int64  `json:"GmtCreate" xml:"GmtCreate"`
+	InstanceType      string `json:"InstanceType" xml:"InstanceType"`
 }

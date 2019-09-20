@@ -76,14 +76,14 @@ func (client *Client) DescribePackIpListWithCallback(request *DescribePackIpList
 // DescribePackIpListRequest is the request struct for api DescribePackIpList
 type DescribePackIpListRequest struct {
 	*requests.RpcRequest
+	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
 	SourceIp        string           `position:"Query" name:"SourceIp"`
-	PageNo          requests.Integer `position:"Query" name:"PageNo"`
 	PageSize        requests.Integer `position:"Query" name:"PageSize"`
 	DdosRegionId    string           `position:"Query" name:"DdosRegionId"`
-	InstanceId      string           `position:"Query" name:"InstanceId"`
-	Ip              string           `position:"Query" name:"Ip"`
 	ProductName     string           `position:"Query" name:"ProductName"`
-	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
+	Ip              string           `position:"Query" name:"Ip"`
+	InstanceId      string           `position:"Query" name:"InstanceId"`
+	PageNo          requests.Integer `position:"Query" name:"PageNo"`
 }
 
 // DescribePackIpListResponse is the response struct for api DescribePackIpList

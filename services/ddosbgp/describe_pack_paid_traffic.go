@@ -76,13 +76,13 @@ func (client *Client) DescribePackPaidTrafficWithCallback(request *DescribePackP
 // DescribePackPaidTrafficRequest is the request struct for api DescribePackPaidTraffic
 type DescribePackPaidTrafficRequest struct {
 	*requests.RpcRequest
-	SourceIp        string           `position:"Query" name:"SourceIp"`
-	InstanceId      string           `position:"Query" name:"InstanceId"`
-	CurrentPage     requests.Integer `position:"Query" name:"CurrentPage"`
-	PageSize        requests.Integer `position:"Query" name:"PageSize"`
 	StartTime       requests.Integer `position:"Query" name:"StartTime"`
-	EndTime         requests.Integer `position:"Query" name:"EndTime"`
 	ResourceGroupId string           `position:"Query" name:"ResourceGroupId"`
+	SourceIp        string           `position:"Query" name:"SourceIp"`
+	PageSize        requests.Integer `position:"Query" name:"PageSize"`
+	EndTime         requests.Integer `position:"Query" name:"EndTime"`
+	CurrentPage     requests.Integer `position:"Query" name:"CurrentPage"`
+	InstanceId      string           `position:"Query" name:"InstanceId"`
 }
 
 // DescribePackPaidTrafficResponse is the response struct for api DescribePackPaidTraffic

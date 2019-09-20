@@ -76,11 +76,11 @@ func (client *Client) DeleteIpWithCallback(request *DeleteIpRequest, callback fu
 // DeleteIpRequest is the request struct for api DeleteIp
 type DeleteIpRequest struct {
 	*requests.RpcRequest
-	SourceIp         string `position:"Query" name:"SourceIp"`
 	IpList           string `position:"Query" name:"IpList"`
-	InstanceId       string `position:"Query" name:"InstanceId"`
-	ResourceRegionId string `position:"Query" name:"ResourceRegionId"`
 	ResourceGroupId  string `position:"Query" name:"ResourceGroupId"`
+	InstanceId       string `position:"Query" name:"InstanceId"`
+	SourceIp         string `position:"Query" name:"SourceIp"`
+	ResourceRegionId string `position:"Query" name:"ResourceRegionId"`
 }
 
 // DeleteIpResponse is the response struct for api DeleteIp
