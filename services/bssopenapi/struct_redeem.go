@@ -17,5 +17,5 @@ package bssopenapi
 
 // Redeem is a nested struct in bssopenapi response
 type Redeem struct {
-	RedeemItem []RedeemItem `json:"RedeemItem" xml:"RedeemItem"`
+	RedeemItem []RedeemItem `json:"Redeem" xml:"Redeem"`
 }

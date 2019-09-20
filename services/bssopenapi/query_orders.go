@@ -103,7 +103,7 @@ func CreateQueryOrdersRequest() (request *QueryOrdersRequest) {
 	request = &QueryOrdersRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "QueryOrders", "", "")
+	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "QueryOrders", "bssopenapi", "openAPI")
 	return
 }
 

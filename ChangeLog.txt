@@ -1,3 +1,6 @@
+2019-09-20 Version: 1.60.172
+- Generated 2017-12-14 for `BssOpenApi`.
+
 2019-09-20 Version: 1.60.171
 - Generated 2018-02-01, 2018-07-20 for `ddosbgp`.
 

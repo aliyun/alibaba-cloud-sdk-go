@@ -95,7 +95,7 @@ func CreateGetOrderDetailRequest() (request *GetOrderDetailRequest) {
 	request = &GetOrderDetailRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "GetOrderDetail", "", "")
+	request.InitWithApiInfo("BssOpenApi", "2017-12-14", "GetOrderDetail", "bssopenapi", "openAPI")
 	return
 }
 
