@@ -86,14 +86,17 @@ type DescribePriceRequest struct {
 	OwnerId                    requests.Integer `position:"Query" name:"OwnerId"`
 	InternetChargeType         string           `position:"Query" name:"InternetChargeType"`
 	InstanceNetworkType        string           `position:"Query" name:"InstanceNetworkType"`
+	InstanceAmount             requests.Integer `position:"Query" name:"InstanceAmount"`
 	DataDisk3PerformanceLevel  string           `position:"Query" name:"DataDisk.3.PerformanceLevel"`
 	ImageId                    string           `position:"Query" name:"ImageId"`
 	IoOptimized                string           `position:"Query" name:"IoOptimized"`
 	InternetMaxBandwidthOut    requests.Integer `position:"Query" name:"InternetMaxBandwidthOut"`
 	SystemDiskCategory         string           `position:"Query" name:"SystemDisk.Category"`
+	Platform                   string           `position:"Query" name:"Platform"`
 	SystemDiskPerformanceLevel string           `position:"Query" name:"SystemDisk.PerformanceLevel"`
 	DataDisk4Category          string           `position:"Query" name:"DataDisk.4.Category"`
 	DataDisk4PerformanceLevel  string           `position:"Query" name:"DataDisk.4.PerformanceLevel"`
+	Scope                      string           `position:"Query" name:"Scope"`
 	InstanceType               string           `position:"Query" name:"InstanceType"`
 	DataDisk2Category          string           `position:"Query" name:"DataDisk.2.Category"`
 	DataDisk1Size              requests.Integer `position:"Query" name:"DataDisk.1.Size"`
@@ -105,6 +108,7 @@ type DescribePriceRequest struct {
 	DataDisk1Category          string           `position:"Query" name:"DataDisk.1.Category"`
 	DataDisk2PerformanceLevel  string           `position:"Query" name:"DataDisk.2.PerformanceLevel"`
 	SystemDiskSize             requests.Integer `position:"Query" name:"SystemDisk.Size"`
+	OfferingType               string           `position:"Query" name:"OfferingType"`
 }
 
 // DescribePriceResponse is the response struct for api DescribePrice
