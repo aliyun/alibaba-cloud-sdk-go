@@ -1,3 +1,6 @@
+2019-09-25 Version: 1.60.177
+- Update AHAS GetSentinelAppSumMetric API.
+
 2019-09-25 Version: 1.60.176
 - Fix the capitalization problem of Describe Site Monitor Data.
 
