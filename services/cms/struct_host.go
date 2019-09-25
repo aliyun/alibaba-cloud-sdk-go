@@ -20,7 +20,7 @@ type Host struct {
 	InstanceId         string `json:"InstanceId" xml:"InstanceId"`
 	SerialNumber       string `json:"SerialNumber" xml:"SerialNumber"`
 	HostName           string `json:"HostName" xml:"HostName"`
-	AliUid             int    `json:"AliUid" xml:"AliUid"`
+	AliUid             int64  `json:"AliUid" xml:"AliUid"`
 	OperatingSystem    string `json:"OperatingSystem" xml:"OperatingSystem"`
 	IpGroup            string `json:"IpGroup" xml:"IpGroup"`
 	Region             string `json:"Region" xml:"Region"`

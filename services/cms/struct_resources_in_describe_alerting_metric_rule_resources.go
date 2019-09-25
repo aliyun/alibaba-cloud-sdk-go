@@ -17,5 +17,5 @@ package cms
 
 // ResourcesInDescribeAlertingMetricRuleResources is a nested struct in cms response
 type ResourcesInDescribeAlertingMetricRuleResources struct {
-	Resource []Resource `json:"Resource" xml:"Resource"`
+	Resource []ResourceInDescribeAlertingMetricRuleResources `json:"Resource" xml:"Resource"`
 }

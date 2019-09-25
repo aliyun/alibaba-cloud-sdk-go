@@ -79,10 +79,10 @@ type DescribeCustomEventCountRequest struct {
 	EventId        string `position:"Query" name:"EventId"`
 	Level          string `position:"Query" name:"Level"`
 	GroupId        string `position:"Query" name:"GroupId"`
-	Name           string `position:"Query" name:"Name"`
 	EndTime        string `position:"Query" name:"EndTime"`
 	StartTime      string `position:"Query" name:"StartTime"`
 	SearchKeywords string `position:"Query" name:"SearchKeywords"`
+	Name           string `position:"Query" name:"Name"`
 }
 
 // DescribeCustomEventCountResponse is the response struct for api DescribeCustomEventCount

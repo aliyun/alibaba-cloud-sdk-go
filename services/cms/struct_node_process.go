@@ -17,7 +17,7 @@ package cms
 
 // NodeProcess is a nested struct in cms response
 type NodeProcess struct {
-	ProcessId   int    `json:"ProcessId" xml:"ProcessId"`
+	ProcessId   int64  `json:"ProcessId" xml:"ProcessId"`
 	InstanceId  string `json:"InstanceId" xml:"InstanceId"`
 	ProcessName string `json:"ProcessName" xml:"ProcessName"`
 	ProcessUser string `json:"ProcessUser" xml:"ProcessUser"`

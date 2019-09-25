@@ -19,5 +19,5 @@ package cms
 type CustomEventCount struct {
 	Name string `json:"Name" xml:"Name"`
 	Num  int    `json:"Num" xml:"Num"`
-	Time int    `json:"Time" xml:"Time"`
+	Time int64  `json:"Time" xml:"Time"`
 }

@@ -76,24 +76,24 @@ func (client *Client) ApplyMetricRuleTemplateWithCallback(request *ApplyMetricRu
 // ApplyMetricRuleTemplateRequest is the request struct for api ApplyMetricRuleTemplate
 type ApplyMetricRuleTemplateRequest struct {
 	*requests.RpcRequest
-	EnableStartTime requests.Integer `position:"Query" name:"EnableStartTime"`
 	ApplyMode       string           `position:"Query" name:"ApplyMode"`
 	Webhook         string           `position:"Query" name:"Webhook"`
 	TemplateIds     string           `position:"Query" name:"TemplateIds"`
 	EnableEndTime   requests.Integer `position:"Query" name:"EnableEndTime"`
 	GroupId         requests.Integer `position:"Query" name:"GroupId"`
 	NotifyLevel     requests.Integer `position:"Query" name:"NotifyLevel"`
+	EnableStartTime requests.Integer `position:"Query" name:"EnableStartTime"`
 	SilenceTime     requests.Integer `position:"Query" name:"SilenceTime"`
 }
 
 // ApplyMetricRuleTemplateResponse is the response struct for api ApplyMetricRuleTemplate
 type ApplyMetricRuleTemplateResponse struct {
 	*responses.BaseResponse
-	RequestId string                            `json:"RequestId" xml:"RequestId"`
-	Success   bool                              `json:"Success" xml:"Success"`
-	Code      int                               `json:"Code" xml:"Code"`
-	Message   string                            `json:"Message" xml:"Message"`
-	Resource  ResourceInApplyMetricRuleTemplate `json:"Resource" xml:"Resource"`
+	RequestId string   `json:"RequestId" xml:"RequestId"`
+	Success   bool     `json:"Success" xml:"Success"`
+	Code      int      `json:"Code" xml:"Code"`
+	Message   string   `json:"Message" xml:"Message"`
+	Resource  Resource `json:"Resource" xml:"Resource"`
 }
 
 // CreateApplyMetricRuleTemplateRequest creates a request to invoke ApplyMetricRuleTemplate API

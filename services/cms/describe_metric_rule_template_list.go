@@ -76,12 +76,12 @@ func (client *Client) DescribeMetricRuleTemplateListWithCallback(request *Descri
 // DescribeMetricRuleTemplateListRequest is the request struct for api DescribeMetricRuleTemplateList
 type DescribeMetricRuleTemplateListRequest struct {
 	*requests.RpcRequest
-	Name       string           `position:"Query" name:"Name"`
-	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 	History    requests.Boolean `position:"Query" name:"History"`
-	Keyword    string           `position:"Query" name:"Keyword"`
 	TemplateId requests.Integer `position:"Query" name:"TemplateId"`
 	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
+	Name       string           `position:"Query" name:"Name"`
+	PageSize   requests.Integer `position:"Query" name:"PageSize"`
+	Keyword    string           `position:"Query" name:"Keyword"`
 }
 
 // DescribeMetricRuleTemplateListResponse is the response struct for api DescribeMetricRuleTemplateList
@@ -91,7 +91,7 @@ type DescribeMetricRuleTemplateListResponse struct {
 	Success   bool      `json:"Success" xml:"Success"`
 	Code      int       `json:"Code" xml:"Code"`
 	Message   string    `json:"Message" xml:"Message"`
-	Total     int       `json:"Total" xml:"Total"`
+	Total     int64     `json:"Total" xml:"Total"`
 	Templates Templates `json:"Templates" xml:"Templates"`
 }
 

@@ -76,13 +76,13 @@ func (client *Client) DescribeMonitorGroupInstanceAttributeWithCallback(request 
 // DescribeMonitorGroupInstanceAttributeRequest is the request struct for api DescribeMonitorGroupInstanceAttribute
 type DescribeMonitorGroupInstanceAttributeRequest struct {
 	*requests.RpcRequest
+	GroupId     requests.Integer `position:"Query" name:"GroupId"`
+	PageNumber  requests.Integer `position:"Query" name:"PageNumber"`
 	Total       requests.Boolean `position:"Query" name:"Total"`
 	InstanceIds string           `position:"Query" name:"InstanceIds"`
-	GroupId     requests.Integer `position:"Query" name:"GroupId"`
 	PageSize    requests.Integer `position:"Query" name:"PageSize"`
 	Category    string           `position:"Query" name:"Category"`
 	Keyword     string           `position:"Query" name:"Keyword"`
-	PageNumber  requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 // DescribeMonitorGroupInstanceAttributeResponse is the response struct for api DescribeMonitorGroupInstanceAttribute

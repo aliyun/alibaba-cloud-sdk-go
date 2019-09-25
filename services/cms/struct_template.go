@@ -19,9 +19,9 @@ package cms
 type Template struct {
 	Name           string         `json:"Name" xml:"Name"`
 	Description    string         `json:"Description" xml:"Description"`
-	RestVersion    int            `json:"RestVersion" xml:"RestVersion"`
-	TemplateId     int            `json:"TemplateId" xml:"TemplateId"`
-	GmtCreate      int            `json:"GmtCreate" xml:"GmtCreate"`
-	GmtModified    int            `json:"GmtModified" xml:"GmtModified"`
+	RestVersion    int64          `json:"RestVersion" xml:"RestVersion"`
+	TemplateId     int64          `json:"TemplateId" xml:"TemplateId"`
+	GmtCreate      int64          `json:"GmtCreate" xml:"GmtCreate"`
+	GmtModified    int64          `json:"GmtModified" xml:"GmtModified"`
 	ApplyHistories ApplyHistories `json:"ApplyHistories" xml:"ApplyHistories"`
 }

@@ -76,8 +76,8 @@ func (client *Client) CreateMetricRuleTemplateWithCallback(request *CreateMetric
 // CreateMetricRuleTemplateRequest is the request struct for api CreateMetricRuleTemplate
 type CreateMetricRuleTemplateRequest struct {
 	*requests.RpcRequest
-	Name           string                                    `position:"Query" name:"Name"`
 	Description    string                                    `position:"Query" name:"Description"`
+	Name           string                                    `position:"Query" name:"Name"`
 	AlertTemplates *[]CreateMetricRuleTemplateAlertTemplates `position:"Query" name:"AlertTemplates"  type:"Repeated"`
 }
 
@@ -110,7 +110,7 @@ type CreateMetricRuleTemplateResponse struct {
 	Success   bool   `json:"Success" xml:"Success"`
 	Code      int    `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
-	Id        int    `json:"Id" xml:"Id"`
+	Id        int64  `json:"Id" xml:"Id"`
 }
 
 // CreateCreateMetricRuleTemplateRequest creates a request to invoke CreateMetricRuleTemplate API

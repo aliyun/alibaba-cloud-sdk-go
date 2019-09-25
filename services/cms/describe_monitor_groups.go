@@ -77,11 +77,11 @@ func (client *Client) DescribeMonitorGroupsWithCallback(request *DescribeMonitor
 type DescribeMonitorGroupsRequest struct {
 	*requests.RpcRequest
 	SelectContactGroups requests.Boolean `position:"Query" name:"SelectContactGroups"`
+	GroupName           string           `position:"Query" name:"GroupName"`
+	PageNumber          requests.Integer `position:"Query" name:"PageNumber"`
 	InstanceId          string           `position:"Query" name:"InstanceId"`
 	PageSize            requests.Integer `position:"Query" name:"PageSize"`
 	Keyword             string           `position:"Query" name:"Keyword"`
-	GroupName           string           `position:"Query" name:"GroupName"`
-	PageNumber          requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 // DescribeMonitorGroupsResponse is the response struct for api DescribeMonitorGroups

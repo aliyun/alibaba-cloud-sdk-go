@@ -76,8 +76,8 @@ func (client *Client) PutMonitoringConfigWithCallback(request *PutMonitoringConf
 // PutMonitoringConfigRequest is the request struct for api PutMonitoringConfig
 type PutMonitoringConfigRequest struct {
 	*requests.RpcRequest
-	EnableInstallAgentNewECS requests.Boolean `position:"Query" name:"EnableInstallAgentNewECS"`
 	AutoInstall              requests.Boolean `position:"Query" name:"AutoInstall"`
+	EnableInstallAgentNewECS requests.Boolean `position:"Query" name:"EnableInstallAgentNewECS"`
 }
 
 // PutMonitoringConfigResponse is the response struct for api PutMonitoringConfig

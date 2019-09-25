@@ -76,8 +76,8 @@ func (client *Client) DeleteMonitorGroupInstancesWithCallback(request *DeleteMon
 // DeleteMonitorGroupInstancesRequest is the request struct for api DeleteMonitorGroupInstances
 type DeleteMonitorGroupInstancesRequest struct {
 	*requests.RpcRequest
-	InstanceIdList string           `position:"Query" name:"InstanceIdList"`
 	GroupId        requests.Integer `position:"Query" name:"GroupId"`
+	InstanceIdList string           `position:"Query" name:"InstanceIdList"`
 	Category       string           `position:"Query" name:"Category"`
 }
 

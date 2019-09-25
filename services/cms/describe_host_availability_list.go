@@ -77,10 +77,10 @@ func (client *Client) DescribeHostAvailabilityListWithCallback(request *Describe
 type DescribeHostAvailabilityListRequest struct {
 	*requests.RpcRequest
 	GroupId    requests.Integer `position:"Query" name:"GroupId"`
-	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 	TaskName   string           `position:"Query" name:"TaskName"`
-	Id         requests.Integer `position:"Query" name:"Id"`
 	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize   requests.Integer `position:"Query" name:"PageSize"`
+	Id         requests.Integer `position:"Query" name:"Id"`
 }
 
 // DescribeHostAvailabilityListResponse is the response struct for api DescribeHostAvailabilityList

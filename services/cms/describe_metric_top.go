@@ -76,16 +76,16 @@ func (client *Client) DescribeMetricTopWithCallback(request *DescribeMetricTopRe
 // DescribeMetricTopRequest is the request struct for api DescribeMetricTop
 type DescribeMetricTopRequest struct {
 	*requests.RpcRequest
-	Period     string `position:"Query" name:"Period"`
-	Namespace  string `position:"Query" name:"Namespace"`
-	Length     string `position:"Query" name:"Length"`
-	EndTime    string `position:"Query" name:"EndTime"`
-	Orderby    string `position:"Query" name:"Orderby"`
 	Express    string `position:"Query" name:"Express"`
 	StartTime  string `position:"Query" name:"StartTime"`
 	MetricName string `position:"Query" name:"MetricName"`
-	Dimensions string `position:"Query" name:"Dimensions"`
+	Period     string `position:"Query" name:"Period"`
+	Length     string `position:"Query" name:"Length"`
+	EndTime    string `position:"Query" name:"EndTime"`
+	Orderby    string `position:"Query" name:"Orderby"`
 	OrderDesc  string `position:"Query" name:"OrderDesc"`
+	Namespace  string `position:"Query" name:"Namespace"`
+	Dimensions string `position:"Query" name:"Dimensions"`
 }
 
 // DescribeMetricTopResponse is the response struct for api DescribeMetricTop

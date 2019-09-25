@@ -17,5 +17,5 @@ package cms
 
 // ResourceInDescribeMonitorGroupDynamicRules is a nested struct in cms response
 type ResourceInDescribeMonitorGroupDynamicRules struct {
-	ResourceItem []ResourceItem `json:"ResourceItem" xml:"ResourceItem"`
+	ResourceItem []ResourceItem `json:"Resource" xml:"Resource"`
 }

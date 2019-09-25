@@ -17,6 +17,6 @@ package cms
 
 // MonitorGroupCategories is a nested struct in cms response
 type MonitorGroupCategories struct {
-	GroupId              int                  `json:"GroupId" xml:"GroupId"`
+	GroupId              int64                `json:"GroupId" xml:"GroupId"`
 	MonitorGroupCategory MonitorGroupCategory `json:"MonitorGroupCategory" xml:"MonitorGroupCategory"`
 }

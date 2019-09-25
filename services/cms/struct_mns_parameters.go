@@ -17,5 +17,5 @@ package cms
 
 // MnsParameters is a nested struct in cms response
 type MnsParameters struct {
-	MnsParameter []MnsParameterInDescribeEventRuleTargetList `json:"MnsParameter" xml:"MnsParameter"`
+	MnsParameter []MnsParameter `json:"MnsParameter" xml:"MnsParameter"`
 }

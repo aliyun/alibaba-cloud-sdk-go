@@ -21,4 +21,5 @@ type SlsParameter struct {
 	Region   string `json:"Region" xml:"Region"`
 	Project  string `json:"Project" xml:"Project"`
 	LogStore string `json:"LogStore" xml:"LogStore"`
+	Arn      string `json:"Arn" xml:"Arn"`
 }

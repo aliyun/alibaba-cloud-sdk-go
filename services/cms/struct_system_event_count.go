@@ -21,11 +21,11 @@ type SystemEventCount struct {
 	Product      string `json:"Product" xml:"Product"`
 	Name         string `json:"Name" xml:"Name"`
 	GroupId      string `json:"GroupId" xml:"GroupId"`
-	Num          int    `json:"Num" xml:"Num"`
+	Num          int64  `json:"Num" xml:"Num"`
 	Level        string `json:"Level" xml:"Level"`
 	Status       string `json:"Status" xml:"Status"`
 	ResourceId   string `json:"ResourceId" xml:"ResourceId"`
 	RegionId     string `json:"RegionId" xml:"RegionId"`
 	InstanceName string `json:"InstanceName" xml:"InstanceName"`
-	Time         int    `json:"Time" xml:"Time"`
+	Time         int64  `json:"Time" xml:"Time"`
 }

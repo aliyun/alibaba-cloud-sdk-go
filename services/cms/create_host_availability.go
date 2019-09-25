@@ -76,22 +76,22 @@ func (client *Client) CreateHostAvailabilityWithCallback(request *CreateHostAvai
 // CreateHostAvailabilityRequest is the request struct for api CreateHostAvailability
 type CreateHostAvailabilityRequest struct {
 	*requests.RpcRequest
-	InstanceList                       *[]string                                          `position:"Query" name:"InstanceList"  type:"Repeated"`
-	TaskType                           string                                             `position:"Query" name:"TaskType"`
 	TaskOptionHttpMethod               string                                             `position:"Query" name:"TaskOption.HttpMethod"`
 	AlertConfigEscalationList          *[]CreateHostAvailabilityAlertConfigEscalationList `position:"Query" name:"AlertConfigEscalationList"  type:"Repeated"`
-	GroupId                            requests.Integer                                   `position:"Query" name:"GroupId"`
 	TaskName                           string                                             `position:"Query" name:"TaskName"`
 	AlertConfigSilenceTime             requests.Integer                                   `position:"Query" name:"AlertConfig.SilenceTime"`
 	TaskOptionHttpResponseCharset      string                                             `position:"Query" name:"TaskOption.HttpResponseCharset"`
-	AlertConfigEndTime                 requests.Integer                                   `position:"Query" name:"AlertConfig.EndTime"`
-	TaskOptionHttpURI                  string                                             `position:"Query" name:"TaskOption.HttpURI"`
 	TaskOptionHttpNegative             requests.Boolean                                   `position:"Query" name:"TaskOption.HttpNegative"`
-	TaskScope                          string                                             `position:"Query" name:"TaskScope"`
 	AlertConfigNotifyType              requests.Integer                                   `position:"Query" name:"AlertConfig.NotifyType"`
-	AlertConfigStartTime               requests.Integer                                   `position:"Query" name:"AlertConfig.StartTime"`
 	TaskOptionTelnetOrPingHost         string                                             `position:"Query" name:"TaskOption.TelnetOrPingHost"`
 	TaskOptionHttpResponseMatchContent string                                             `position:"Query" name:"TaskOption.HttpResponseMatchContent"`
+	InstanceList                       *[]string                                          `position:"Query" name:"InstanceList"  type:"Repeated"`
+	TaskType                           string                                             `position:"Query" name:"TaskType"`
+	GroupId                            requests.Integer                                   `position:"Query" name:"GroupId"`
+	AlertConfigEndTime                 requests.Integer                                   `position:"Query" name:"AlertConfig.EndTime"`
+	TaskOptionHttpURI                  string                                             `position:"Query" name:"TaskOption.HttpURI"`
+	TaskScope                          string                                             `position:"Query" name:"TaskScope"`
+	AlertConfigStartTime               requests.Integer                                   `position:"Query" name:"AlertConfig.StartTime"`
 	AlertConfigWebHook                 string                                             `position:"Query" name:"AlertConfig.WebHook"`
 }
 
@@ -111,7 +111,7 @@ type CreateHostAvailabilityResponse struct {
 	Message   string `json:"Message" xml:"Message"`
 	Success   bool   `json:"Success" xml:"Success"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	TaskId    int    `json:"TaskId" xml:"TaskId"`
+	TaskId    int64  `json:"TaskId" xml:"TaskId"`
 }
 
 // CreateCreateHostAvailabilityRequest creates a request to invoke CreateHostAvailability API

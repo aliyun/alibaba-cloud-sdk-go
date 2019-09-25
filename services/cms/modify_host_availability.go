@@ -76,22 +76,22 @@ func (client *Client) ModifyHostAvailabilityWithCallback(request *ModifyHostAvai
 // ModifyHostAvailabilityRequest is the request struct for api ModifyHostAvailability
 type ModifyHostAvailabilityRequest struct {
 	*requests.RpcRequest
-	InstanceList                       *[]string                                          `position:"Query" name:"InstanceList"  type:"Repeated"`
 	TaskOptionHttpMethod               string                                             `position:"Query" name:"TaskOption.HttpMethod"`
 	AlertConfigEscalationList          *[]ModifyHostAvailabilityAlertConfigEscalationList `position:"Query" name:"AlertConfigEscalationList"  type:"Repeated"`
-	GroupId                            requests.Integer                                   `position:"Query" name:"GroupId"`
 	TaskName                           string                                             `position:"Query" name:"TaskName"`
 	AlertConfigSilenceTime             requests.Integer                                   `position:"Query" name:"AlertConfig.SilenceTime"`
 	TaskOptionHttpResponseCharset      string                                             `position:"Query" name:"TaskOption.HttpResponseCharset"`
-	AlertConfigEndTime                 requests.Integer                                   `position:"Query" name:"AlertConfig.EndTime"`
-	TaskOptionHttpURI                  string                                             `position:"Query" name:"TaskOption.HttpURI"`
 	TaskOptionHttpNegative             requests.Boolean                                   `position:"Query" name:"TaskOption.HttpNegative"`
-	TaskScope                          string                                             `position:"Query" name:"TaskScope"`
 	AlertConfigNotifyType              requests.Integer                                   `position:"Query" name:"AlertConfig.NotifyType"`
-	AlertConfigStartTime               requests.Integer                                   `position:"Query" name:"AlertConfig.StartTime"`
 	TaskOptionTelnetOrPingHost         string                                             `position:"Query" name:"TaskOption.TelnetOrPingHost"`
 	TaskOptionHttpResponseMatchContent string                                             `position:"Query" name:"TaskOption.HttpResponseMatchContent"`
 	Id                                 requests.Integer                                   `position:"Query" name:"Id"`
+	InstanceList                       *[]string                                          `position:"Query" name:"InstanceList"  type:"Repeated"`
+	GroupId                            requests.Integer                                   `position:"Query" name:"GroupId"`
+	AlertConfigEndTime                 requests.Integer                                   `position:"Query" name:"AlertConfig.EndTime"`
+	TaskOptionHttpURI                  string                                             `position:"Query" name:"TaskOption.HttpURI"`
+	TaskScope                          string                                             `position:"Query" name:"TaskScope"`
+	AlertConfigStartTime               requests.Integer                                   `position:"Query" name:"AlertConfig.StartTime"`
 	AlertConfigWebHook                 string                                             `position:"Query" name:"AlertConfig.WebHook"`
 }
 

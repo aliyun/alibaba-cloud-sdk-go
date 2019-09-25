@@ -20,11 +20,11 @@ type Contact struct {
 	Name       string   `json:"Name" xml:"Name"`
 	Message    string   `json:"Message" xml:"Message"`
 	Success    string   `json:"Success" xml:"Success"`
-	Desc       string   `json:"Desc" xml:"Desc"`
 	Code       string   `json:"Code" xml:"Code"`
-	UpdateTime int      `json:"UpdateTime" xml:"UpdateTime"`
+	Desc       string   `json:"Desc" xml:"Desc"`
+	UpdateTime int64    `json:"UpdateTime" xml:"UpdateTime"`
 	RequestId  string   `json:"RequestId" xml:"RequestId"`
-	CreateTime int      `json:"CreateTime" xml:"CreateTime"`
 	RuleId     string   `json:"RuleId" xml:"RuleId"`
+	CreateTime int64    `json:"CreateTime" xml:"CreateTime"`
 	Channels   Channels `json:"Channels" xml:"Channels"`
 }

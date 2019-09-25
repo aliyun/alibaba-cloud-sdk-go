@@ -17,5 +17,5 @@ package cms
 
 // ContactParameters is a nested struct in cms response
 type ContactParameters struct {
-	ContactParameter []ContactParameterInDescribeEventRuleTargetList `json:"ContactParameter" xml:"ContactParameter"`
+	ContactParameter []ContactParameter `json:"ContactParameter" xml:"ContactParameter"`
 }

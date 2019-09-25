@@ -17,5 +17,5 @@ package cms
 
 // FailedMnsParameters is a nested struct in cms response
 type FailedMnsParameters struct {
-	MnsParameter []MnsParameter `json:"MnsParameter" xml:"MnsParameter"`
+	MnsParameter []MnsParameterInPutEventRuleTargets `json:"MnsParameter" xml:"MnsParameter"`
 }

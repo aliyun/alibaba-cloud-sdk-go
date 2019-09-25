@@ -18,6 +18,7 @@ package cms
 // MnsParameter is a nested struct in cms response
 type MnsParameter struct {
 	Region string `json:"Region" xml:"Region"`
-	Id     int    `json:"Id" xml:"Id"`
 	Queue  string `json:"Queue" xml:"Queue"`
+	Arn    string `json:"Arn" xml:"Arn"`
+	Id     string `json:"Id" xml:"Id"`
 }

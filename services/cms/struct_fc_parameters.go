@@ -17,5 +17,5 @@ package cms
 
 // FcParameters is a nested struct in cms response
 type FcParameters struct {
-	FCParameter []FCParameterInDescribeEventRuleTargetList `json:"FCParameter" xml:"FCParameter"`
+	FCParameter []FCParameter `json:"FCParameter" xml:"FCParameter"`
 }

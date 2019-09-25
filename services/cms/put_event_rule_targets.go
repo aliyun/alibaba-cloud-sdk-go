@@ -79,9 +79,9 @@ type PutEventRuleTargetsRequest struct {
 	WebhookParameters *[]PutEventRuleTargetsWebhookParameters `position:"Query" name:"WebhookParameters"  type:"Repeated"`
 	ContactParameters *[]PutEventRuleTargetsContactParameters `position:"Query" name:"ContactParameters"  type:"Repeated"`
 	SlsParameters     *[]PutEventRuleTargetsSlsParameters     `position:"Query" name:"SlsParameters"  type:"Repeated"`
-	FcParameters      *[]PutEventRuleTargetsFcParameters      `position:"Query" name:"FcParameters"  type:"Repeated"`
 	RuleName          string                                  `position:"Query" name:"RuleName"`
 	MnsParameters     *[]PutEventRuleTargetsMnsParameters     `position:"Query" name:"MnsParameters"  type:"Repeated"`
+	FcParameters      *[]PutEventRuleTargetsFcParameters      `position:"Query" name:"FcParameters"  type:"Repeated"`
 }
 
 // PutEventRuleTargetsWebhookParameters is a repeated param struct in PutEventRuleTargetsRequest
@@ -107,19 +107,19 @@ type PutEventRuleTargetsSlsParameters struct {
 	LogStore string `name:"LogStore"`
 }
 
+// PutEventRuleTargetsMnsParameters is a repeated param struct in PutEventRuleTargetsRequest
+type PutEventRuleTargetsMnsParameters struct {
+	Id     string `name:"Id"`
+	Region string `name:"Region"`
+	Queue  string `name:"Queue"`
+}
+
 // PutEventRuleTargetsFcParameters is a repeated param struct in PutEventRuleTargetsRequest
 type PutEventRuleTargetsFcParameters struct {
 	FunctionName string `name:"FunctionName"`
 	ServiceName  string `name:"ServiceName"`
 	Id           string `name:"Id"`
 	Region       string `name:"Region"`
-}
-
-// PutEventRuleTargetsMnsParameters is a repeated param struct in PutEventRuleTargetsRequest
-type PutEventRuleTargetsMnsParameters struct {
-	Id     string `name:"Id"`
-	Region string `name:"Region"`
-	Queue  string `name:"Queue"`
 }
 
 // PutEventRuleTargetsResponse is the response struct for api PutEventRuleTargets

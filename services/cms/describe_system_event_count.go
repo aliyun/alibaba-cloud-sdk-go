@@ -76,14 +76,14 @@ func (client *Client) DescribeSystemEventCountWithCallback(request *DescribeSyst
 // DescribeSystemEventCountRequest is the request struct for api DescribeSystemEventCount
 type DescribeSystemEventCountRequest struct {
 	*requests.RpcRequest
+	StartTime      string `position:"Query" name:"StartTime"`
+	SearchKeywords string `position:"Query" name:"SearchKeywords"`
 	Product        string `position:"Query" name:"Product"`
 	Level          string `position:"Query" name:"Level"`
 	GroupId        string `position:"Query" name:"GroupId"`
-	Name           string `position:"Query" name:"Name"`
 	EndTime        string `position:"Query" name:"EndTime"`
+	Name           string `position:"Query" name:"Name"`
 	EventType      string `position:"Query" name:"EventType"`
-	StartTime      string `position:"Query" name:"StartTime"`
-	SearchKeywords string `position:"Query" name:"SearchKeywords"`
 	Status         string `position:"Query" name:"Status"`
 }
 

@@ -76,13 +76,13 @@ func (client *Client) CreateSiteMonitorWithCallback(request *CreateSiteMonitorRe
 // CreateSiteMonitorRequest is the request struct for api CreateSiteMonitor
 type CreateSiteMonitorRequest struct {
 	*requests.RpcRequest
-	OptionsJson string `position:"Query" name:"OptionsJson"`
 	Address     string `position:"Query" name:"Address"`
 	TaskType    string `position:"Query" name:"TaskType"`
-	AlertIds    string `position:"Query" name:"AlertIds"`
 	TaskName    string `position:"Query" name:"TaskName"`
-	Interval    string `position:"Query" name:"Interval"`
 	IspCities   string `position:"Query" name:"IspCities"`
+	OptionsJson string `position:"Query" name:"OptionsJson"`
+	AlertIds    string `position:"Query" name:"AlertIds"`
+	Interval    string `position:"Query" name:"Interval"`
 }
 
 // CreateSiteMonitorResponse is the response struct for api CreateSiteMonitor

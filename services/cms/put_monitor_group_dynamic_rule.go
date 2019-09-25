@@ -82,9 +82,16 @@ type PutMonitorGroupDynamicRuleRequest struct {
 
 // PutMonitorGroupDynamicRuleGroupRules is a repeated param struct in PutMonitorGroupDynamicRuleRequest
 type PutMonitorGroupDynamicRuleGroupRules struct {
-	FilterRelation string    `name:"FilterRelation"`
-	Filters        *[]string `name:"Filters" type:"Repeated"`
-	Category       string    `name:"Category"`
+	FilterRelation string                               `name:"FilterRelation"`
+	Filters        *[]PutMonitorGroupDynamicRuleFilters `name:"Filters" type:"Repeated"`
+	Category       string                               `name:"Category"`
+}
+
+// PutMonitorGroupDynamicRuleFilters is a repeated param struct in PutMonitorGroupDynamicRuleRequest
+type PutMonitorGroupDynamicRuleFilters struct {
+	Function string `name:"Function"`
+	Name     string `name:"Name"`
+	Value    string `name:"Value"`
 }
 
 // PutMonitorGroupDynamicRuleResponse is the response struct for api PutMonitorGroupDynamicRule

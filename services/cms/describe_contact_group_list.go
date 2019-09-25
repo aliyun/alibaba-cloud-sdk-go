@@ -76,8 +76,8 @@ func (client *Client) DescribeContactGroupListWithCallback(request *DescribeCont
 // DescribeContactGroupListRequest is the request struct for api DescribeContactGroupList
 type DescribeContactGroupListRequest struct {
 	*requests.RpcRequest
-	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 }
 
 // DescribeContactGroupListResponse is the response struct for api DescribeContactGroupList

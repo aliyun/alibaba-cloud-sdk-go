@@ -76,9 +76,9 @@ func (client *Client) DescribeContactListWithCallback(request *DescribeContactLi
 // DescribeContactListRequest is the request struct for api DescribeContactList
 type DescribeContactListRequest struct {
 	*requests.RpcRequest
+	PageNumber  requests.Integer `position:"Query" name:"PageNumber"`
 	ContactName string           `position:"Query" name:"ContactName"`
 	PageSize    requests.Integer `position:"Query" name:"PageSize"`
-	PageNumber  requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 // DescribeContactListResponse is the response struct for api DescribeContactList

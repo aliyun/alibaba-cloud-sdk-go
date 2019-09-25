@@ -77,11 +77,11 @@ func (client *Client) DescribeSiteMonitorDataWithCallback(request *DescribeSiteM
 type DescribeSiteMonitorDataRequest struct {
 	*requests.RpcRequest
 	Period     string           `position:"Query" name:"Period"`
-	NextToken  string           `position:"Query" name:"NextToken"`
 	Length     requests.Integer `position:"Query" name:"Length"`
 	EndTime    string           `position:"Query" name:"EndTime"`
 	StartTime  string           `position:"Query" name:"StartTime"`
 	Type       string           `position:"Query" name:"Type"`
+	NextToken  string           `position:"Query" name:"NextToken"`
 	MetricName string           `position:"Query" name:"MetricName"`
 	TaskId     string           `position:"Query" name:"TaskId"`
 }

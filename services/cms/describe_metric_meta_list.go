@@ -76,11 +76,11 @@ func (client *Client) DescribeMetricMetaListWithCallback(request *DescribeMetric
 // DescribeMetricMetaListRequest is the request struct for api DescribeMetricMetaList
 type DescribeMetricMetaListRequest struct {
 	*requests.RpcRequest
+	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
+	Labels     string           `position:"Query" name:"Labels"`
 	Namespace  string           `position:"Query" name:"Namespace"`
 	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 	MetricName string           `position:"Query" name:"MetricName"`
-	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
-	Labels     string           `position:"Query" name:"Labels"`
 }
 
 // DescribeMetricMetaListResponse is the response struct for api DescribeMetricMetaList

@@ -17,7 +17,7 @@ package cms
 
 // ContactParameter is a nested struct in cms response
 type ContactParameter struct {
-	Id               int    `json:"Id" xml:"Id"`
 	Level            string `json:"Level" xml:"Level"`
+	Id               string `json:"Id" xml:"Id"`
 	ContactGroupName string `json:"ContactGroupName" xml:"ContactGroupName"`
 }

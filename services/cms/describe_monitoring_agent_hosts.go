@@ -76,13 +76,13 @@ func (client *Client) DescribeMonitoringAgentHostsWithCallback(request *Describe
 // DescribeMonitoringAgentHostsRequest is the request struct for api DescribeMonitoringAgentHosts
 type DescribeMonitoringAgentHostsRequest struct {
 	*requests.RpcRequest
+	SerialNumbers    string           `position:"Query" name:"SerialNumbers"`
+	PageNumber       requests.Integer `position:"Query" name:"PageNumber"`
 	HostName         string           `position:"Query" name:"HostName"`
 	InstanceIds      string           `position:"Query" name:"InstanceIds"`
 	InstanceRegionId string           `position:"Query" name:"InstanceRegionId"`
 	PageSize         requests.Integer `position:"Query" name:"PageSize"`
 	KeyWord          string           `position:"Query" name:"KeyWord"`
-	SerialNumbers    string           `position:"Query" name:"SerialNumbers"`
-	PageNumber       requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 // DescribeMonitoringAgentHostsResponse is the response struct for api DescribeMonitoringAgentHosts

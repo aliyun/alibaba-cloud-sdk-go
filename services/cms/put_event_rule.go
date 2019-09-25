@@ -76,10 +76,10 @@ func (client *Client) PutEventRuleWithCallback(request *PutEventRuleRequest, cal
 // PutEventRuleRequest is the request struct for api PutEventRule
 type PutEventRuleRequest struct {
 	*requests.RpcRequest
-	EventPattern *[]PutEventRuleEventPattern `position:"Query" name:"EventPattern"  type:"Repeated"`
 	GroupId      string                      `position:"Query" name:"GroupId"`
 	Description  string                      `position:"Query" name:"Description"`
 	RuleName     string                      `position:"Query" name:"RuleName"`
+	EventPattern *[]PutEventRuleEventPattern `position:"Query" name:"EventPattern"  type:"Repeated"`
 	EventType    string                      `position:"Query" name:"EventType"`
 	State        string                      `position:"Query" name:"State"`
 }

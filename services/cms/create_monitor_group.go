@@ -77,10 +77,10 @@ func (client *Client) CreateMonitorGroupWithCallback(request *CreateMonitorGroup
 type CreateMonitorGroupRequest struct {
 	*requests.RpcRequest
 	ContactGroups string           `position:"Query" name:"ContactGroups"`
-	Options       string           `position:"Query" name:"Options"`
 	Type          string           `position:"Query" name:"Type"`
-	ServiceId     requests.Integer `position:"Query" name:"ServiceId"`
 	GroupName     string           `position:"Query" name:"GroupName"`
+	Options       string           `position:"Query" name:"Options"`
+	ServiceId     requests.Integer `position:"Query" name:"ServiceId"`
 	BindUrl       string           `position:"Query" name:"BindUrl"`
 }
 
@@ -91,7 +91,7 @@ type CreateMonitorGroupResponse struct {
 	Success   bool   `json:"Success" xml:"Success"`
 	Code      int    `json:"Code" xml:"Code"`
 	Message   string `json:"Message" xml:"Message"`
-	GroupId   int    `json:"GroupId" xml:"GroupId"`
+	GroupId   int64  `json:"GroupId" xml:"GroupId"`
 }
 
 // CreateCreateMonitorGroupRequest creates a request to invoke CreateMonitorGroup API

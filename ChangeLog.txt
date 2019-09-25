@@ -1,3 +1,6 @@
+2019-09-25 Version: 1.60.176
+- Fix the capitalization problem of Describe Site Monitor Data.
+
 2019-09-24 Version: 1.60.175
 - Generated 2019-08-10 for `multimediaai`.
 

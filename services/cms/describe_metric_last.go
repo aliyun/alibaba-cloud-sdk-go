@@ -76,14 +76,14 @@ func (client *Client) DescribeMetricLastWithCallback(request *DescribeMetricLast
 // DescribeMetricLastRequest is the request struct for api DescribeMetricLast
 type DescribeMetricLastRequest struct {
 	*requests.RpcRequest
-	Period     string `position:"Query" name:"Period"`
-	NextToken  string `position:"Query" name:"NextToken"`
-	Namespace  string `position:"Query" name:"Namespace"`
-	Length     string `position:"Query" name:"Length"`
-	EndTime    string `position:"Query" name:"EndTime"`
 	Express    string `position:"Query" name:"Express"`
 	StartTime  string `position:"Query" name:"StartTime"`
+	NextToken  string `position:"Query" name:"NextToken"`
 	MetricName string `position:"Query" name:"MetricName"`
+	Period     string `position:"Query" name:"Period"`
+	Length     string `position:"Query" name:"Length"`
+	EndTime    string `position:"Query" name:"EndTime"`
+	Namespace  string `position:"Query" name:"Namespace"`
 	Dimensions string `position:"Query" name:"Dimensions"`
 }
 

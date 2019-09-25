@@ -17,7 +17,7 @@ package cms
 
 // ApplyHistory is a nested struct in cms response
 type ApplyHistory struct {
-	GroupId   int    `json:"GroupId" xml:"GroupId"`
+	GroupId   int64  `json:"GroupId" xml:"GroupId"`
 	GroupName string `json:"GroupName" xml:"GroupName"`
-	ApplyTime int    `json:"ApplyTime" xml:"ApplyTime"`
+	ApplyTime int64  `json:"ApplyTime" xml:"ApplyTime"`
 }

@@ -78,9 +78,9 @@ type ModifyMonitorGroupRequest struct {
 	*requests.RpcRequest
 	ContactGroups string           `position:"Query" name:"ContactGroups"`
 	GroupId       string           `position:"Query" name:"GroupId"`
-	ServiceId     requests.Integer `position:"Query" name:"ServiceId"`
 	GroupName     string           `position:"Query" name:"GroupName"`
 	BindUrls      string           `position:"Query" name:"BindUrls"`
+	ServiceId     requests.Integer `position:"Query" name:"ServiceId"`
 }
 
 // ModifyMonitorGroupResponse is the response struct for api ModifyMonitorGroup

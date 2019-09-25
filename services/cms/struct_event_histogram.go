@@ -17,7 +17,7 @@ package cms
 
 // EventHistogram is a nested struct in cms response
 type EventHistogram struct {
-	Count     int `json:"Count" xml:"Count"`
-	StartTime int `json:"StartTime" xml:"StartTime"`
-	EndTime   int `json:"EndTime" xml:"EndTime"`
+	Count     int64 `json:"Count" xml:"Count"`
+	StartTime int64 `json:"StartTime" xml:"StartTime"`
+	EndTime   int64 `json:"EndTime" xml:"EndTime"`
 }

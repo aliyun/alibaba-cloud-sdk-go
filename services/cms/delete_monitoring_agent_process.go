@@ -76,9 +76,9 @@ func (client *Client) DeleteMonitoringAgentProcessWithCallback(request *DeleteMo
 // DeleteMonitoringAgentProcessRequest is the request struct for api DeleteMonitoringAgentProcess
 type DeleteMonitoringAgentProcessRequest struct {
 	*requests.RpcRequest
+	ProcessName string `position:"Query" name:"ProcessName"`
 	InstanceId  string `position:"Query" name:"InstanceId"`
 	ProcessId   string `position:"Query" name:"ProcessId"`
-	ProcessName string `position:"Query" name:"ProcessName"`
 }
 
 // DeleteMonitoringAgentProcessResponse is the response struct for api DeleteMonitoringAgentProcess

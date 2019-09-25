@@ -77,11 +77,11 @@ func (client *Client) DescribeMetricDataWithCallback(request *DescribeMetricData
 type DescribeMetricDataRequest struct {
 	*requests.RpcRequest
 	Period     string `position:"Query" name:"Period"`
-	Namespace  string `position:"Query" name:"Namespace"`
 	Length     string `position:"Query" name:"Length"`
 	EndTime    string `position:"Query" name:"EndTime"`
 	Express    string `position:"Query" name:"Express"`
 	StartTime  string `position:"Query" name:"StartTime"`
+	Namespace  string `position:"Query" name:"Namespace"`
 	MetricName string `position:"Query" name:"MetricName"`
 	Dimensions string `position:"Query" name:"Dimensions"`
 }

@@ -76,18 +76,18 @@ func (client *Client) DescribeAlertHistoryListWithCallback(request *DescribeAler
 // DescribeAlertHistoryListRequest is the request struct for api DescribeAlertHistoryList
 type DescribeAlertHistoryListRequest struct {
 	*requests.RpcRequest
-	GroupId     string           `position:"Query" name:"GroupId"`
 	AlertStatus string           `position:"Query" name:"AlertStatus"`
-	Namespace   string           `position:"Query" name:"Namespace"`
-	PageSize    requests.Integer `position:"Query" name:"PageSize"`
-	EndTime     string           `position:"Query" name:"EndTime"`
 	RuleName    string           `position:"Query" name:"RuleName"`
-	State       string           `position:"Query" name:"State"`
 	StartTime   string           `position:"Query" name:"StartTime"`
+	PageSize    requests.Integer `position:"Query" name:"PageSize"`
+	State       string           `position:"Query" name:"State"`
+	MetricName  string           `position:"Query" name:"MetricName"`
+	GroupId     string           `position:"Query" name:"GroupId"`
+	EndTime     string           `position:"Query" name:"EndTime"`
+	Ascending   requests.Boolean `position:"Query" name:"Ascending"`
+	Namespace   string           `position:"Query" name:"Namespace"`
 	Page        requests.Integer `position:"Query" name:"Page"`
 	RuleId      string           `position:"Query" name:"RuleId"`
-	MetricName  string           `position:"Query" name:"MetricName"`
-	Ascending   requests.Boolean `position:"Query" name:"Ascending"`
 }
 
 // DescribeAlertHistoryListResponse is the response struct for api DescribeAlertHistoryList

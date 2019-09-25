@@ -76,12 +76,12 @@ func (client *Client) DescribeMonitorGroupInstancesWithCallback(request *Describ
 // DescribeMonitorGroupInstancesRequest is the request struct for api DescribeMonitorGroupInstances
 type DescribeMonitorGroupInstancesRequest struct {
 	*requests.RpcRequest
-	InstanceIds string           `position:"Query" name:"InstanceIds"`
 	GroupId     requests.Integer `position:"Query" name:"GroupId"`
+	PageNumber  requests.Integer `position:"Query" name:"PageNumber"`
+	InstanceIds string           `position:"Query" name:"InstanceIds"`
 	PageSize    requests.Integer `position:"Query" name:"PageSize"`
 	Category    string           `position:"Query" name:"Category"`
 	Keyword     string           `position:"Query" name:"Keyword"`
-	PageNumber  requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 // DescribeMonitorGroupInstancesResponse is the response struct for api DescribeMonitorGroupInstances

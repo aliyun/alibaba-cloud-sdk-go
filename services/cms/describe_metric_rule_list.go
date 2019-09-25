@@ -77,14 +77,14 @@ func (client *Client) DescribeMetricRuleListWithCallback(request *DescribeMetric
 type DescribeMetricRuleListRequest struct {
 	*requests.RpcRequest
 	EnableState requests.Boolean `position:"Query" name:"EnableState"`
-	RuleIds     string           `position:"Query" name:"RuleIds"`
-	GroupId     string           `position:"Query" name:"GroupId"`
-	Namespace   string           `position:"Query" name:"Namespace"`
-	PageSize    string           `position:"Query" name:"PageSize"`
-	AlertState  string           `position:"Query" name:"AlertState"`
 	RuleName    string           `position:"Query" name:"RuleName"`
-	Page        string           `position:"Query" name:"Page"`
+	PageSize    string           `position:"Query" name:"PageSize"`
 	MetricName  string           `position:"Query" name:"MetricName"`
+	GroupId     string           `position:"Query" name:"GroupId"`
+	RuleIds     string           `position:"Query" name:"RuleIds"`
+	Namespace   string           `position:"Query" name:"Namespace"`
+	AlertState  string           `position:"Query" name:"AlertState"`
+	Page        string           `position:"Query" name:"Page"`
 	Dimensions  string           `position:"Query" name:"Dimensions"`
 }
 

@@ -26,8 +26,8 @@ type AlarmHistory struct {
 	Expression      string                                  `json:"Expression" xml:"Expression"`
 	EvaluationCount int                                     `json:"EvaluationCount" xml:"EvaluationCount"`
 	Value           string                                  `json:"Value" xml:"Value"`
-	AlertTime       int                                     `json:"AlertTime" xml:"AlertTime"`
-	LastTime        int                                     `json:"LastTime" xml:"LastTime"`
+	AlertTime       int64                                   `json:"AlertTime" xml:"AlertTime"`
+	LastTime        int64                                   `json:"LastTime" xml:"LastTime"`
 	Level           string                                  `json:"Level" xml:"Level"`
 	RuleName        string                                  `json:"RuleName" xml:"RuleName"`
 	AlertState      string                                  `json:"AlertState" xml:"AlertState"`

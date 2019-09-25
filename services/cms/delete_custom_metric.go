@@ -77,8 +77,8 @@ func (client *Client) DeleteCustomMetricWithCallback(request *DeleteCustomMetric
 type DeleteCustomMetricRequest struct {
 	*requests.RpcRequest
 	GroupId    string `position:"Query" name:"GroupId"`
-	MetricName string `position:"Query" name:"MetricName"`
 	UUID       string `position:"Query" name:"UUID"`
+	MetricName string `position:"Query" name:"MetricName"`
 	Md5        string `position:"Query" name:"Md5"`
 }
 

@@ -17,5 +17,5 @@ package cms
 
 // EventPatternInDescribeEventRuleList is a nested struct in cms response
 type EventPatternInDescribeEventRuleList struct {
-	EventPatternItem []EventPatternItem `json:"EventPatternItem" xml:"EventPatternItem"`
+	EventPatternItem []EventPatternItem `json:"EventPattern" xml:"EventPattern"`
 }

@@ -76,10 +76,10 @@ func (client *Client) PutContactWithCallback(request *PutContactRequest, callbac
 // PutContactRequest is the request struct for api PutContact
 type PutContactRequest struct {
 	*requests.RpcRequest
+	ChannelsDingWebHook string `position:"Query" name:"Channels.DingWebHook"`
 	ContactName         string `position:"Query" name:"ContactName"`
 	ChannelsMail        string `position:"Query" name:"Channels.Mail"`
 	ChannelsAliIM       string `position:"Query" name:"Channels.AliIM"`
-	ChannelsDingWebHook string `position:"Query" name:"Channels.DingWebHook"`
 	Describe            string `position:"Query" name:"Describe"`
 	ChannelsSMS         string `position:"Query" name:"Channels.SMS"`
 }

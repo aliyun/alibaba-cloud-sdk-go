@@ -78,8 +78,8 @@ type DescribeMonitorGroupNotifyPolicyListRequest struct {
 	*requests.RpcRequest
 	PolicyType string           `position:"Query" name:"PolicyType"`
 	GroupId    string           `position:"Query" name:"GroupId"`
-	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 	PageNumber requests.Integer `position:"Query" name:"PageNumber"`
+	PageSize   requests.Integer `position:"Query" name:"PageSize"`
 }
 
 // DescribeMonitorGroupNotifyPolicyListResponse is the response struct for api DescribeMonitorGroupNotifyPolicyList

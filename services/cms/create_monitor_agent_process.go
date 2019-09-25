@@ -76,8 +76,8 @@ func (client *Client) CreateMonitorAgentProcessWithCallback(request *CreateMonit
 // CreateMonitorAgentProcessRequest is the request struct for api CreateMonitorAgentProcess
 type CreateMonitorAgentProcessRequest struct {
 	*requests.RpcRequest
-	InstanceId  string `position:"Query" name:"InstanceId"`
 	ProcessName string `position:"Query" name:"ProcessName"`
+	InstanceId  string `position:"Query" name:"InstanceId"`
 	ProcessUser string `position:"Query" name:"ProcessUser"`
 }
 
@@ -88,7 +88,7 @@ type CreateMonitorAgentProcessResponse struct {
 	Message   string `json:"Message" xml:"Message"`
 	Success   bool   `json:"Success" xml:"Success"`
 	RequestId string `json:"RequestId" xml:"RequestId"`
-	Id        int    `json:"Id" xml:"Id"`
+	Id        int64  `json:"Id" xml:"Id"`
 }
 
 // CreateCreateMonitorAgentProcessRequest creates a request to invoke CreateMonitorAgentProcess API

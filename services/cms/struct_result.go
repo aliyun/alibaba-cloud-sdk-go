@@ -21,6 +21,6 @@ type Result struct {
 	RuleName string `json:"RuleName" xml:"RuleName"`
 	Code     string `json:"Code" xml:"Code"`
 	Success  bool   `json:"Success" xml:"Success"`
-	GroupId  int    `json:"GroupId" xml:"GroupId"`
+	GroupId  int64  `json:"GroupId" xml:"GroupId"`
 	RuleId   string `json:"RuleId" xml:"RuleId"`
 }

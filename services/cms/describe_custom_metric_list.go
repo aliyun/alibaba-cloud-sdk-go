@@ -77,10 +77,10 @@ func (client *Client) DescribeCustomMetricListWithCallback(request *DescribeCust
 type DescribeCustomMetricListRequest struct {
 	*requests.RpcRequest
 	GroupId    string `position:"Query" name:"GroupId"`
+	PageNumber string `position:"Query" name:"PageNumber"`
 	PageSize   string `position:"Query" name:"PageSize"`
 	MetricName string `position:"Query" name:"MetricName"`
 	Dimension  string `position:"Query" name:"Dimension"`
-	PageNumber string `position:"Query" name:"PageNumber"`
 	Md5        string `position:"Query" name:"Md5"`
 }
 

@@ -76,8 +76,8 @@ func (client *Client) PutMetricRuleTargetsWithCallback(request *PutMetricRuleTar
 // PutMetricRuleTargetsRequest is the request struct for api PutMetricRuleTargets
 type PutMetricRuleTargetsRequest struct {
 	*requests.RpcRequest
-	RuleId  string                         `position:"Query" name:"RuleId"`
 	Targets *[]PutMetricRuleTargetsTargets `position:"Query" name:"Targets"  type:"Repeated"`
+	RuleId  string                         `position:"Query" name:"RuleId"`
 }
 
 // PutMetricRuleTargetsTargets is a repeated param struct in PutMetricRuleTargetsRequest
