@@ -1,3 +1,6 @@
+2019-09-26 Version: 1.60.180
+- Update AHAS GetSentinelAppSumMetric API.
+
 2019-09-26 Version: 1.60.179
 - Supported RingConfig for BindAxb,BindAxn,BindAxg,BindAxnExtension.
 - Add QuerySubsId.
