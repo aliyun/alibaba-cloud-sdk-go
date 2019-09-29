@@ -1,3 +1,6 @@
+2019-09-29 Version: 1.60.181
+- Add new api.
+
 2019-09-26 Version: 1.60.180
 - Update AHAS GetSentinelAppSumMetric API.
 
