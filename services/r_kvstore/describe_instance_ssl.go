@@ -77,11 +77,11 @@ func (client *Client) DescribeInstanceSSLWithCallback(request *DescribeInstanceS
 type DescribeInstanceSSLRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	InstanceId           string           `position:"Query" name:"InstanceId"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
 }
 
 // DescribeInstanceSSLResponse is the response struct for api DescribeInstanceSSL
@@ -99,7 +99,7 @@ func CreateDescribeInstanceSSLRequest() (request *DescribeInstanceSSLRequest) {
 	request = &DescribeInstanceSSLRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeInstanceSSL", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeInstanceSSL", "", "")
 	return
 }
 

@@ -80,8 +80,8 @@ type DescribeRdsVpcsRequest struct {
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	ZoneId               string           `position:"Query" name:"ZoneId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ZoneId               string           `position:"Query" name:"ZoneId"`
 }
 
 // DescribeRdsVpcsResponse is the response struct for api DescribeRdsVpcs
@@ -96,7 +96,7 @@ func CreateDescribeRdsVpcsRequest() (request *DescribeRdsVpcsRequest) {
 	request = &DescribeRdsVpcsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeRdsVpcs", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeRdsVpcs", "", "")
 	return
 }
 

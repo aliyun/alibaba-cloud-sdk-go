@@ -80,9 +80,9 @@ type DescribeRdsVSwitchsRequest struct {
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	VpcId                string           `position:"Query" name:"VpcId"`
 	ZoneId               string           `position:"Query" name:"ZoneId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeRdsVSwitchsResponse is the response struct for api DescribeRdsVSwitchs
@@ -97,7 +97,7 @@ func CreateDescribeRdsVSwitchsRequest() (request *DescribeRdsVSwitchsRequest) {
 	request = &DescribeRdsVSwitchsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeRdsVSwitchs", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeRdsVSwitchs", "", "")
 	return
 }
 

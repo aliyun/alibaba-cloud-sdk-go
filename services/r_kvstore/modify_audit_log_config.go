@@ -77,13 +77,13 @@ func (client *Client) ModifyAuditLogConfigWithCallback(request *ModifyAuditLogCo
 type ModifyAuditLogConfigRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	InstanceId           string           `position:"Query" name:"InstanceId"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	AuditCommand         string           `position:"Query" name:"AuditCommand"`
+	Retention            string           `position:"Query" name:"Retention"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	Retention            string           `position:"Query" name:"Retention"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
 }
 
 // ModifyAuditLogConfigResponse is the response struct for api ModifyAuditLogConfig
@@ -97,7 +97,7 @@ func CreateModifyAuditLogConfigRequest() (request *ModifyAuditLogConfigRequest) 
 	request = &ModifyAuditLogConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ModifyAuditLogConfig", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ModifyAuditLogConfig", "", "")
 	return
 }
 

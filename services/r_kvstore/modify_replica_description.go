@@ -79,9 +79,9 @@ type ModifyReplicaDescriptionRequest struct {
 	ReplicaDescription   string           `position:"Query" name:"ReplicaDescription"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
+	ReplicaId            string           `position:"Query" name:"ReplicaId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	ReplicaId            string           `position:"Query" name:"ReplicaId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
@@ -96,7 +96,7 @@ func CreateModifyReplicaDescriptionRequest() (request *ModifyReplicaDescriptionR
 	request = &ModifyReplicaDescriptionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ModifyReplicaDescription", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ModifyReplicaDescription", "", "")
 	return
 }
 

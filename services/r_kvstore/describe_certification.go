@@ -77,11 +77,11 @@ func (client *Client) DescribeCertificationWithCallback(request *DescribeCertifi
 type DescribeCertificationRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	InstanceId           string           `position:"Query" name:"InstanceId"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
 	Parameters           string           `position:"Query" name:"Parameters"`
 }
 
@@ -97,7 +97,7 @@ func CreateDescribeCertificationRequest() (request *DescribeCertificationRequest
 	request = &DescribeCertificationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeCertification", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeCertification", "", "")
 	return
 }
 

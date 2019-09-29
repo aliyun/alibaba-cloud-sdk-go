@@ -77,12 +77,12 @@ func (client *Client) DeleteAccountWithCallback(request *DeleteAccountRequest, c
 type DeleteAccountRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	InstanceId           string           `position:"Query" name:"InstanceId"`
 	AccountName          string           `position:"Query" name:"AccountName"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
 }
 
 // DeleteAccountResponse is the response struct for api DeleteAccount
@@ -96,7 +96,7 @@ func CreateDeleteAccountRequest() (request *DeleteAccountRequest) {
 	request = &DeleteAccountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DeleteAccount", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DeleteAccount", "", "")
 	return
 }
 

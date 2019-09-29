@@ -78,11 +78,11 @@ type DescribeAvailableResourceRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
+	InstanceChargeType   string           `position:"Query" name:"InstanceChargeType"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	ZoneId               string           `position:"Query" name:"ZoneId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	InstanceChargeType   string           `position:"Query" name:"InstanceChargeType"`
+	ZoneId               string           `position:"Query" name:"ZoneId"`
 	OrderType            string           `position:"Query" name:"OrderType"`
 }
 
@@ -98,7 +98,7 @@ func CreateDescribeAvailableResourceRequest() (request *DescribeAvailableResourc
 	request = &DescribeAvailableResourceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeAvailableResource", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeAvailableResource", "", "")
 	return
 }
 

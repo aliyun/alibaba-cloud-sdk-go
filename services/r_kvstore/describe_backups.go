@@ -77,16 +77,17 @@ func (client *Client) DescribeBackupsWithCallback(request *DescribeBackupsReques
 type DescribeBackupsRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	StartTime            string           `position:"Query" name:"StartTime"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
+	SecurityToken        string           `position:"Query" name:"SecurityToken"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	BackupId             requests.Integer `position:"Query" name:"BackupId"`
+	NeedAof              string           `position:"Query" name:"NeedAof"`
 	EndTime              string           `position:"Query" name:"EndTime"`
-	StartTime            string           `position:"Query" name:"StartTime"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
-	SecurityToken        string           `position:"Query" name:"SecurityToken"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 }
 
 // DescribeBackupsResponse is the response struct for api DescribeBackups
@@ -104,7 +105,7 @@ func CreateDescribeBackupsRequest() (request *DescribeBackupsRequest) {
 	request = &DescribeBackupsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeBackups", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeBackups", "", "")
 	return
 }
 

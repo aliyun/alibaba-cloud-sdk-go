@@ -78,11 +78,11 @@ type VerifyPasswordRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	Password             string           `position:"Query" name:"Password"`
-	InstanceId           string           `position:"Query" name:"InstanceId"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
 }
 
 // VerifyPasswordResponse is the response struct for api VerifyPassword
@@ -96,7 +96,7 @@ func CreateVerifyPasswordRequest() (request *VerifyPasswordRequest) {
 	request = &VerifyPasswordRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "VerifyPassword", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "VerifyPassword", "", "")
 	return
 }
 

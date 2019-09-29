@@ -78,39 +78,39 @@ type CreateShardingInstanceRequest struct {
 	*requests.RpcRequest
 	ShardStorageQuantity  requests.Integer `position:"Query" name:"ShardStorageQuantity"`
 	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	NodeType              string           `position:"Query" name:"NodeType"`
 	CouponNo              string           `position:"Query" name:"CouponNo"`
 	NetworkType           string           `position:"Query" name:"NetworkType"`
 	EngineVersion         string           `position:"Query" name:"EngineVersion"`
-	InstanceClass         string           `position:"Query" name:"InstanceClass"`
-	Capacity              requests.Integer `position:"Query" name:"Capacity"`
 	Password              string           `position:"Query" name:"Password"`
 	ShardReplicaClass     string           `position:"Query" name:"ShardReplicaClass"`
 	SecurityToken         string           `position:"Query" name:"SecurityToken"`
 	IncrementalBackupMode string           `position:"Query" name:"IncrementalBackupMode"`
-	InstanceType          string           `position:"Query" name:"InstanceType"`
 	BusinessInfo          string           `position:"Query" name:"BusinessInfo"`
 	Period                string           `position:"Query" name:"Period"`
-	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
-	SrcDBInstanceId       string           `position:"Query" name:"SrcDBInstanceId"`
-	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
 	BackupId              string           `position:"Query" name:"BackupId"`
 	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
-	Token                 string           `position:"Query" name:"Token"`
-	ShardQuantity         requests.Integer `position:"Query" name:"ShardQuantity"`
 	VSwitchId             string           `position:"Query" name:"VSwitchId"`
 	PrivateIpAddress      string           `position:"Query" name:"PrivateIpAddress"`
 	SecurityIPList        string           `position:"Query" name:"SecurityIPList"`
 	InstanceName          string           `position:"Query" name:"InstanceName"`
+	ZoneId                string           `position:"Query" name:"ZoneId"`
+	ProxyQuantity         requests.Integer `position:"Query" name:"ProxyQuantity"`
+	ProxyMode             string           `position:"Query" name:"ProxyMode"`
+	NodeType              string           `position:"Query" name:"NodeType"`
+	InstanceClass         string           `position:"Query" name:"InstanceClass"`
+	Capacity              requests.Integer `position:"Query" name:"Capacity"`
+	InstanceType          string           `position:"Query" name:"InstanceType"`
+	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
+	SrcDBInstanceId       string           `position:"Query" name:"SrcDBInstanceId"`
+	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
+	Token                 string           `position:"Query" name:"Token"`
+	ShardQuantity         requests.Integer `position:"Query" name:"ShardQuantity"`
 	ShardReplicaQuantity  requests.Integer `position:"Query" name:"ShardReplicaQuantity"`
 	ArchitectureType      string           `position:"Query" name:"ArchitectureType"`
 	VpcId                 string           `position:"Query" name:"VpcId"`
 	RedisManagerClass     string           `position:"Query" name:"RedisManagerClass"`
-	ZoneId                string           `position:"Query" name:"ZoneId"`
 	ChargeType            string           `position:"Query" name:"ChargeType"`
-	ProxyQuantity         requests.Integer `position:"Query" name:"ProxyQuantity"`
 	Config                string           `position:"Query" name:"Config"`
-	ProxyMode             string           `position:"Query" name:"ProxyMode"`
 }
 
 // CreateShardingInstanceResponse is the response struct for api CreateShardingInstance
@@ -127,7 +127,7 @@ func CreateCreateShardingInstanceRequest() (request *CreateShardingInstanceReque
 	request = &CreateShardingInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "CreateShardingInstance", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "CreateShardingInstance", "", "")
 	return
 }
 

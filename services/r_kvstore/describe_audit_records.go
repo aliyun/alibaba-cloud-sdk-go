@@ -77,20 +77,20 @@ func (client *Client) DescribeAuditRecordsWithCallback(request *DescribeAuditRec
 type DescribeAuditRecordsRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	EndTime              string           `position:"Query" name:"EndTime"`
 	StartTime            string           `position:"Query" name:"StartTime"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	QueryKeywords        string           `position:"Query" name:"QueryKeywords"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	HostAddress          string           `position:"Query" name:"HostAddress"`
-	InstanceId           string           `position:"Query" name:"InstanceId"`
 	AccountName          string           `position:"Query" name:"AccountName"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
-	DatabaseName         string           `position:"Query" name:"DatabaseName"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	NodeId               string           `position:"Query" name:"NodeId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	EndTime              string           `position:"Query" name:"EndTime"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
+	DatabaseName         string           `position:"Query" name:"DatabaseName"`
 }
 
 // DescribeAuditRecordsResponse is the response struct for api DescribeAuditRecords
@@ -111,7 +111,7 @@ func CreateDescribeAuditRecordsRequest() (request *DescribeAuditRecordsRequest) 
 	request = &DescribeAuditRecordsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeAuditRecords", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeAuditRecords", "", "")
 	return
 }
 

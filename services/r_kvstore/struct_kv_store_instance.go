@@ -20,11 +20,12 @@ type KVStoreInstance struct {
 	InstanceClass       string                  `json:"InstanceClass" xml:"InstanceClass"`
 	PackageType         string                  `json:"PackageType" xml:"PackageType"`
 	ChargeType          string                  `json:"ChargeType" xml:"ChargeType"`
-	ConnectionDomain    string                  `json:"ConnectionDomain" xml:"ConnectionDomain"`
 	SearchKey           string                  `json:"SearchKey" xml:"SearchKey"`
+	ConnectionDomain    string                  `json:"ConnectionDomain" xml:"ConnectionDomain"`
 	CreateTime          string                  `json:"CreateTime" xml:"CreateTime"`
 	HasRenewChangeOrder string                  `json:"HasRenewChangeOrder" xml:"HasRenewChangeOrder"`
 	InstanceType        string                  `json:"InstanceType" xml:"InstanceType"`
+	VpcCloudInstanceId  string                  `json:"VpcCloudInstanceId" xml:"VpcCloudInstanceId"`
 	DestroyTime         string                  `json:"DestroyTime" xml:"DestroyTime"`
 	RegionId            string                  `json:"RegionId" xml:"RegionId"`
 	PrivateIp           string                  `json:"PrivateIp" xml:"PrivateIp"`

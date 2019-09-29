@@ -77,11 +77,11 @@ func (client *Client) DescribeParameterTemplatesWithCallback(request *DescribePa
 type DescribeParameterTemplatesRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	SecurityToken        string           `position:"Query" name:"SecurityToken"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	Engine               string           `position:"Query" name:"Engine"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	EngineVersion        string           `position:"Query" name:"EngineVersion"`
+	SecurityToken        string           `position:"Query" name:"SecurityToken"`
+	Engine               string           `position:"Query" name:"Engine"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	CharacterType        string           `position:"Query" name:"CharacterType"`
 }
@@ -101,7 +101,7 @@ func CreateDescribeParameterTemplatesRequest() (request *DescribeParameterTempla
 	request = &DescribeParameterTemplatesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeParameterTemplates", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeParameterTemplates", "", "")
 	return
 }
 

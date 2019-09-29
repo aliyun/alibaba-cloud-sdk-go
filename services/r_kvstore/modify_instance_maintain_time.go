@@ -77,13 +77,13 @@ func (client *Client) ModifyInstanceMaintainTimeWithCallback(request *ModifyInst
 type ModifyInstanceMaintainTimeRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	InstanceId           string           `position:"Query" name:"InstanceId"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	MaintainStartTime    string           `position:"Query" name:"MaintainStartTime"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	MaintainEndTime      string           `position:"Query" name:"MaintainEndTime"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
 }
 
 // ModifyInstanceMaintainTimeResponse is the response struct for api ModifyInstanceMaintainTime
@@ -97,7 +97,7 @@ func CreateModifyInstanceMaintainTimeRequest() (request *ModifyInstanceMaintainT
 	request = &ModifyInstanceMaintainTimeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ModifyInstanceMaintainTime", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ModifyInstanceMaintainTime", "", "")
 	return
 }
 

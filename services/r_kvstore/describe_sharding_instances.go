@@ -79,9 +79,9 @@ type DescribeShardingInstancesRequest struct {
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	InstanceIds          string           `position:"Query" name:"InstanceIds"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	InstanceIds          string           `position:"Query" name:"InstanceIds"`
 }
 
 // DescribeShardingInstancesResponse is the response struct for api DescribeShardingInstances
@@ -97,7 +97,7 @@ func CreateDescribeShardingInstancesRequest() (request *DescribeShardingInstance
 	request = &DescribeShardingInstancesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeShardingInstances", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeShardingInstances", "", "")
 	return
 }
 

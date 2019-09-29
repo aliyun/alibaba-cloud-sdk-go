@@ -19,9 +19,9 @@ package r_kvstore
 type ItemsItem struct {
 	ResultInfo            string         `json:"ResultInfo" xml:"ResultInfo"`
 	InsName               string         `json:"InsName" xml:"InsName"`
-	InternetIP            string         `json:"InternetIP" xml:"InternetIP"`
 	ConfictReason         string         `json:"ConfictReason" xml:"ConfictReason"`
 	SourceDetail          string         `json:"SourceDetail" xml:"SourceDetail"`
+	InternetIP            string         `json:"InternetIP" xml:"InternetIP"`
 	TaskParams            string         `json:"TaskParams" xml:"TaskParams"`
 	InconsistentFields    string         `json:"InconsistentFields" xml:"InconsistentFields"`
 	InstanceIdA           string         `json:"InstanceIdA" xml:"InstanceIdA"`
@@ -39,14 +39,14 @@ type ItemsItem struct {
 	SwitchTime            string         `json:"SwitchTime" xml:"SwitchTime"`
 	DBInstanceId          string         `json:"DBInstanceId" xml:"DBInstanceId"`
 	DatabaseName          string         `json:"DatabaseName" xml:"DatabaseName"`
-	SecurityIPList        string         `json:"SecurityIPList" xml:"SecurityIPList"`
 	DetailInfo            string         `json:"DetailInfo" xml:"DetailInfo"`
+	SecurityIPList        string         `json:"SecurityIPList" xml:"SecurityIPList"`
 	Id                    int            `json:"Id" xml:"Id"`
 	Status                int            `json:"Status" xml:"Status"`
 	Schema                string         `json:"Schema" xml:"Schema"`
 	ReadWriteType         string         `json:"ReadWriteType" xml:"ReadWriteType"`
-	HasInternetIP         bool           `json:"HasInternetIP" xml:"HasInternetIP"`
 	DestinationInstanceId string         `json:"DestinationInstanceId" xml:"DestinationInstanceId"`
+	HasInternetIP         bool           `json:"HasInternetIP" xml:"HasInternetIP"`
 	PrepareInterval       string         `json:"PrepareInterval" xml:"PrepareInterval"`
 	OccurTime             string         `json:"OccurTime" xml:"OccurTime"`
 	InstanceIdB           string         `json:"InstanceIdB" xml:"InstanceIdB"`

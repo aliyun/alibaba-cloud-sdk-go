@@ -17,5 +17,5 @@ package r_kvstore
 
 // Vpc is a nested struct in r_kvstore response
 type Vpc struct {
-	VpcItem []VpcItem `json:"VpcItem" xml:"VpcItem"`
+	VpcItem []VpcItem `json:"Vpc" xml:"Vpc"`
 }

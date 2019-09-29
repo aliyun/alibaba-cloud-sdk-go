@@ -77,12 +77,12 @@ func (client *Client) RestartInstanceWithCallback(request *RestartInstanceReques
 type RestartInstanceRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	InstanceId           string           `position:"Query" name:"InstanceId"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	EffectiveTime        string           `position:"Query" name:"EffectiveTime"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
 }
 
 // RestartInstanceResponse is the response struct for api RestartInstance
@@ -98,7 +98,7 @@ func CreateRestartInstanceRequest() (request *RestartInstanceRequest) {
 	request = &RestartInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "RestartInstance", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "RestartInstance", "", "")
 	return
 }
 

@@ -77,16 +77,16 @@ func (client *Client) CreateAccountWithCallback(request *CreateAccountRequest, c
 type CreateAccountRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	AccountType          string           `position:"Query" name:"AccountType"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	AccountDescription   string           `position:"Query" name:"AccountDescription"`
 	AccountPrivilege     string           `position:"Query" name:"AccountPrivilege"`
-	AccountPassword      string           `position:"Query" name:"AccountPassword"`
-	InstanceId           string           `position:"Query" name:"InstanceId"`
 	AccountName          string           `position:"Query" name:"AccountName"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	AccountPassword      string           `position:"Query" name:"AccountPassword"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
 }
 
 // CreateAccountResponse is the response struct for api CreateAccount
@@ -102,7 +102,7 @@ func CreateCreateAccountRequest() (request *CreateAccountRequest) {
 	request = &CreateAccountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "CreateAccount", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "CreateAccount", "", "")
 	return
 }
 

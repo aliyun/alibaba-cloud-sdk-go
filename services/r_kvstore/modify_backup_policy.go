@@ -76,14 +76,14 @@ func (client *Client) ModifyBackupPolicyWithCallback(request *ModifyBackupPolicy
 // ModifyBackupPolicyRequest is the request struct for api ModifyBackupPolicy
 type ModifyBackupPolicyRequest struct {
 	*requests.RpcRequest
-	PreferredBackupTime   string           `position:"Query" name:"PreferredBackupTime"`
-	PreferredBackupPeriod string           `position:"Query" name:"PreferredBackupPeriod"`
 	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	InstanceId            string           `position:"Query" name:"InstanceId"`
 	SecurityToken         string           `position:"Query" name:"SecurityToken"`
+	PreferredBackupPeriod string           `position:"Query" name:"PreferredBackupPeriod"`
 	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
 	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
+	PreferredBackupTime   string           `position:"Query" name:"PreferredBackupTime"`
+	InstanceId            string           `position:"Query" name:"InstanceId"`
 }
 
 // ModifyBackupPolicyResponse is the response struct for api ModifyBackupPolicy
@@ -97,7 +97,7 @@ func CreateModifyBackupPolicyRequest() (request *ModifyBackupPolicyRequest) {
 	request = &ModifyBackupPolicyRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ModifyBackupPolicy", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ModifyBackupPolicy", "", "")
 	return
 }
 

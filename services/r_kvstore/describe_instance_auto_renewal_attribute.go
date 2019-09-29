@@ -77,14 +77,14 @@ func (client *Client) DescribeInstanceAutoRenewalAttributeWithCallback(request *
 type DescribeInstanceAutoRenewalAttributeRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	ProxyId              string           `position:"Query" name:"proxyId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeInstanceAutoRenewalAttributeResponse is the response struct for api DescribeInstanceAutoRenewalAttribute
@@ -102,7 +102,7 @@ func CreateDescribeInstanceAutoRenewalAttributeRequest() (request *DescribeInsta
 	request = &DescribeInstanceAutoRenewalAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeInstanceAutoRenewalAttribute", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeInstanceAutoRenewalAttribute", "", "")
 	return
 }
 

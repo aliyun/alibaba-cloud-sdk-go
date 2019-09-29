@@ -77,11 +77,11 @@ func (client *Client) DescribeInstanceConfigWithCallback(request *DescribeInstan
 type DescribeInstanceConfigRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	InstanceId           string           `position:"Query" name:"InstanceId"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
 }
 
 // DescribeInstanceConfigResponse is the response struct for api DescribeInstanceConfig
@@ -96,7 +96,7 @@ func CreateDescribeInstanceConfigRequest() (request *DescribeInstanceConfigReque
 	request = &DescribeInstanceConfigRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeInstanceConfig", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeInstanceConfig", "", "")
 	return
 }
 

@@ -53,5 +53,6 @@ type DBInstanceAttribute struct {
 	VpcAuthMode         string                          `json:"VpcAuthMode" xml:"VpcAuthMode"`
 	AuditLogRetention   string                          `json:"AuditLogRetention" xml:"AuditLogRetention"`
 	ReplicationMode     string                          `json:"ReplicationMode" xml:"ReplicationMode"`
+	VpcCloudInstanceId  string                          `json:"VpcCloudInstanceId" xml:"VpcCloudInstanceId"`
 	Tags                TagsInDescribeInstanceAttribute `json:"Tags" xml:"Tags"`
 }

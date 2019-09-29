@@ -76,20 +76,20 @@ func (client *Client) DescribeRunningLogRecordsWithCallback(request *DescribeRun
 // DescribeRunningLogRecordsRequest is the request struct for api DescribeRunningLogRecords
 type DescribeRunningLogRecordsRequest struct {
 	*requests.RpcRequest
-	SQLId                requests.Integer `position:"Query" name:"SQLId"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	EndTime              string           `position:"Query" name:"EndTime"`
 	StartTime            string           `position:"Query" name:"StartTime"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	InstanceId           string           `position:"Query" name:"InstanceId"`
-	DBName               string           `position:"Query" name:"DBName"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	RoleType             string           `position:"Query" name:"RoleType"`
 	NodeId               string           `position:"Query" name:"NodeId"`
+	SQLId                requests.Integer `position:"Query" name:"SQLId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	EndTime              string           `position:"Query" name:"EndTime"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
+	DBName               string           `position:"Query" name:"DBName"`
 }
 
 // DescribeRunningLogRecordsResponse is the response struct for api DescribeRunningLogRecords
@@ -111,7 +111,7 @@ func CreateDescribeRunningLogRecordsRequest() (request *DescribeRunningLogRecord
 	request = &DescribeRunningLogRecordsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeRunningLogRecords", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeRunningLogRecords", "", "")
 	return
 }
 

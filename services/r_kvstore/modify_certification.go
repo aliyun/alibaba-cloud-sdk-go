@@ -77,12 +77,12 @@ func (client *Client) ModifyCertificationWithCallback(request *ModifyCertificati
 type ModifyCertificationRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	InstanceId           string           `position:"Query" name:"InstanceId"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
+	NoCertification      requests.Boolean `position:"Query" name:"NoCertification"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	NoCertification      requests.Boolean `position:"Query" name:"NoCertification"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
 }
 
 // ModifyCertificationResponse is the response struct for api ModifyCertification
@@ -96,7 +96,7 @@ func CreateModifyCertificationRequest() (request *ModifyCertificationRequest) {
 	request = &ModifyCertificationRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ModifyCertification", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ModifyCertification", "", "")
 	return
 }
 

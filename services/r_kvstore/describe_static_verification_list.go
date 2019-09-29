@@ -78,12 +78,12 @@ type DescribeStaticVerificationListRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	SecurityToken         string           `position:"Query" name:"SecurityToken"`
+	ReplicaId             string           `position:"Query" name:"ReplicaId"`
+	SourceInstanceId      string           `position:"Query" name:"SourceInstanceId"`
 	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
-	ReplicaId             string           `position:"Query" name:"ReplicaId"`
-	DestinationInstanceId string           `position:"Query" name:"DestinationInstanceId"`
-	SourceInstanceId      string           `position:"Query" name:"SourceInstanceId"`
 	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
+	DestinationInstanceId string           `position:"Query" name:"DestinationInstanceId"`
 }
 
 // DescribeStaticVerificationListResponse is the response struct for api DescribeStaticVerificationList
@@ -110,7 +110,7 @@ func CreateDescribeStaticVerificationListRequest() (request *DescribeStaticVerif
 	request = &DescribeStaticVerificationListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeStaticVerificationList", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeStaticVerificationList", "", "")
 	return
 }
 

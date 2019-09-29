@@ -17,5 +17,5 @@ package r_kvstore
 
 // Reports is a nested struct in r_kvstore response
 type Reports struct {
-	ReportsItem []ReportsItem `json:"ReportsItem" xml:"ReportsItem"`
+	ReportsItem []ReportsItem `json:"Reports" xml:"Reports"`
 }

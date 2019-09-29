@@ -17,5 +17,5 @@ package r_kvstore
 
 // PerformanceValueInDescribeReplicaPerformance is a nested struct in r_kvstore response
 type PerformanceValueInDescribeReplicaPerformance struct {
-	PerformanceValueItem []PerformanceValueItem `json:"PerformanceValueItem" xml:"PerformanceValueItem"`
+	PerformanceValueItem []PerformanceValueItem `json:"PerformanceValue" xml:"PerformanceValue"`
 }

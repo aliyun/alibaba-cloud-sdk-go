@@ -78,8 +78,8 @@ type DescribeActiveOperationTaskRegionRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	IsHistory            requests.Integer `position:"Query" name:"IsHistory"`
-	TaskType             string           `position:"Query" name:"TaskType"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
+	TaskType             string           `position:"Query" name:"TaskType"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
@@ -97,7 +97,7 @@ func CreateDescribeActiveOperationTaskRegionRequest() (request *DescribeActiveOp
 	request = &DescribeActiveOperationTaskRegionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeActiveOperationTaskRegion", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeActiveOperationTaskRegion", "", "")
 	return
 }
 

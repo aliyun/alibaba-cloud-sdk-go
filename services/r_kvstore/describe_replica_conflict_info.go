@@ -77,15 +77,15 @@ func (client *Client) DescribeReplicaConflictInfoWithCallback(request *DescribeR
 type DescribeReplicaConflictInfoRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	EndTime              string           `position:"Query" name:"EndTime"`
 	StartTime            string           `position:"Query" name:"StartTime"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	ReplicaId            string           `position:"Query" name:"ReplicaId"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	EndTime              string           `position:"Query" name:"EndTime"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
 // DescribeReplicaConflictInfoResponse is the response struct for api DescribeReplicaConflictInfo
@@ -104,7 +104,7 @@ func CreateDescribeReplicaConflictInfoRequest() (request *DescribeReplicaConflic
 	request = &DescribeReplicaConflictInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeReplicaConflictInfo", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeReplicaConflictInfo", "", "")
 	return
 }
 

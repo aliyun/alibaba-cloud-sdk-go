@@ -77,11 +77,11 @@ func (client *Client) CreateBackupWithCallback(request *CreateBackupRequest, cal
 type CreateBackupRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	InstanceId           string           `position:"Query" name:"InstanceId"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
 }
 
 // CreateBackupResponse is the response struct for api CreateBackup
@@ -96,7 +96,7 @@ func CreateCreateBackupRequest() (request *CreateBackupRequest) {
 	request = &CreateBackupRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "CreateBackup", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "CreateBackup", "", "")
 	return
 }
 

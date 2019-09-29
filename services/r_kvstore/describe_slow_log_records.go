@@ -76,19 +76,23 @@ func (client *Client) DescribeSlowLogRecordsWithCallback(request *DescribeSlowLo
 // DescribeSlowLogRecordsRequest is the request struct for api DescribeSlowLogRecords
 type DescribeSlowLogRecordsRequest struct {
 	*requests.RpcRequest
-	SQLId                requests.Integer `position:"Query" name:"SQLId"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	EndTime              string           `position:"Query" name:"EndTime"`
 	StartTime            string           `position:"Query" name:"StartTime"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	InstanceId           string           `position:"Query" name:"InstanceId"`
-	DBName               string           `position:"Query" name:"DBName"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	NodeId               string           `position:"Query" name:"NodeId"`
+	SQLId                requests.Integer `position:"Query" name:"SQLId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	QueryKeyword         string           `position:"Query" name:"QueryKeyword"`
+	EndTime              string           `position:"Query" name:"EndTime"`
+	OrderBy              string           `position:"Query" name:"OrderBy"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	SlowLogRecordType    string           `position:"Query" name:"SlowLogRecordType"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
+	DBName               string           `position:"Query" name:"DBName"`
+	OrderType            string           `position:"Query" name:"OrderType"`
 }
 
 // DescribeSlowLogRecordsResponse is the response struct for api DescribeSlowLogRecords
@@ -110,7 +114,7 @@ func CreateDescribeSlowLogRecordsRequest() (request *DescribeSlowLogRecordsReque
 	request = &DescribeSlowLogRecordsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeSlowLogRecords", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeSlowLogRecords", "", "")
 	return
 }
 

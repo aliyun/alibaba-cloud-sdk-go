@@ -77,14 +77,14 @@ func (client *Client) TransformToPrePaidWithCallback(request *TransformToPrePaid
 type TransformToPrePaidRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	Period               requests.Integer `position:"Query" name:"Period"`
-	InstanceId           string           `position:"Query" name:"InstanceId"`
 	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`
 	FromApp              string           `position:"Query" name:"FromApp"`
-	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
 }
 
 // TransformToPrePaidResponse is the response struct for api TransformToPrePaid
@@ -100,7 +100,7 @@ func CreateTransformToPrePaidRequest() (request *TransformToPrePaidRequest) {
 	request = &TransformToPrePaidRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "TransformToPrePaid", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "TransformToPrePaid", "", "")
 	return
 }
 

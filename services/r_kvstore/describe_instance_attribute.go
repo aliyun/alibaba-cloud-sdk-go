@@ -77,11 +77,11 @@ func (client *Client) DescribeInstanceAttributeWithCallback(request *DescribeIns
 type DescribeInstanceAttributeRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	InstanceId           string           `position:"Query" name:"InstanceId"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
 }
 
 // DescribeInstanceAttributeResponse is the response struct for api DescribeInstanceAttribute
@@ -96,7 +96,7 @@ func CreateDescribeInstanceAttributeRequest() (request *DescribeInstanceAttribut
 	request = &DescribeInstanceAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeInstanceAttribute", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeInstanceAttribute", "", "")
 	return
 }
 

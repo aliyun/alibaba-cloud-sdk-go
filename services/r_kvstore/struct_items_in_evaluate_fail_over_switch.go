@@ -17,5 +17,5 @@ package r_kvstore
 
 // ItemsInEvaluateFailOverSwitch is a nested struct in r_kvstore response
 type ItemsInEvaluateFailOverSwitch struct {
-	ItemsItem []ItemsItem `json:"ItemsItem" xml:"ItemsItem"`
+	ItemsItem []ItemsItem `json:"Items" xml:"Items"`
 }

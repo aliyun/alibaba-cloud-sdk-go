@@ -77,16 +77,16 @@ func (client *Client) DescribeReplicaPerformanceWithCallback(request *DescribeRe
 type DescribeReplicaPerformanceRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId         requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	StartTime               string           `position:"Query" name:"StartTime"`
+	SecurityToken           string           `position:"Query" name:"SecurityToken"`
+	ReplicaId               string           `position:"Query" name:"ReplicaId"`
+	Key                     string           `position:"Query" name:"Key"`
 	DestinationDBInstanceId string           `position:"Query" name:"DestinationDBInstanceId"`
 	ResourceOwnerAccount    string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount            string           `position:"Query" name:"OwnerAccount"`
 	EndTime                 string           `position:"Query" name:"EndTime"`
-	StartTime               string           `position:"Query" name:"StartTime"`
 	OwnerId                 requests.Integer `position:"Query" name:"OwnerId"`
 	SourceDBInstanceId      string           `position:"Query" name:"SourceDBInstanceId"`
-	SecurityToken           string           `position:"Query" name:"SecurityToken"`
-	ReplicaId               string           `position:"Query" name:"ReplicaId"`
-	Key                     string           `position:"Query" name:"Key"`
 }
 
 // DescribeReplicaPerformanceResponse is the response struct for api DescribeReplicaPerformance
@@ -104,7 +104,7 @@ func CreateDescribeReplicaPerformanceRequest() (request *DescribeReplicaPerforma
 	request = &DescribeReplicaPerformanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeReplicaPerformance", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeReplicaPerformance", "", "")
 	return
 }
 

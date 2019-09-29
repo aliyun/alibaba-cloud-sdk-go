@@ -17,8 +17,8 @@ package r_kvstore
 
 // LogRecords is a nested struct in r_kvstore response
 type LogRecords struct {
-	Account      string `json:"Account" xml:"Account"`
 	Category     string `json:"Category" xml:"Category"`
+	Account      string `json:"Account" xml:"Account"`
 	Id           int    `json:"Id" xml:"Id"`
 	Level        string `json:"Level" xml:"Level"`
 	CreateTime   string `json:"CreateTime" xml:"CreateTime"`

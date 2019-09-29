@@ -78,12 +78,12 @@ type AllocateInstancePublicConnectionRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId        requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ConnectionStringPrefix string           `position:"Query" name:"ConnectionStringPrefix"`
-	InstanceId             string           `position:"Query" name:"InstanceId"`
 	SecurityToken          string           `position:"Query" name:"SecurityToken"`
 	ResourceOwnerAccount   string           `position:"Query" name:"ResourceOwnerAccount"`
-	Port                   string           `position:"Query" name:"Port"`
 	OwnerAccount           string           `position:"Query" name:"OwnerAccount"`
 	OwnerId                requests.Integer `position:"Query" name:"OwnerId"`
+	InstanceId             string           `position:"Query" name:"InstanceId"`
+	Port                   string           `position:"Query" name:"Port"`
 }
 
 // AllocateInstancePublicConnectionResponse is the response struct for api AllocateInstancePublicConnection
@@ -97,7 +97,7 @@ func CreateAllocateInstancePublicConnectionRequest() (request *AllocateInstanceP
 	request = &AllocateInstancePublicConnectionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "AllocateInstancePublicConnection", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "AllocateInstancePublicConnection", "", "")
 	return
 }
 

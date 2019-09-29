@@ -77,13 +77,13 @@ func (client *Client) ModifyInstanceNetExpireTimeWithCallback(request *ModifyIns
 type ModifyInstanceNetExpireTimeRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	InstanceId           string           `position:"Query" name:"InstanceId"`
-	SecurityToken        string           `position:"Query" name:"SecurityToken"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ConnectionString     string           `position:"Query" name:"ConnectionString"`
+	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	ClassicExpiredDays   requests.Integer `position:"Query" name:"ClassicExpiredDays"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
 }
 
 // ModifyInstanceNetExpireTimeResponse is the response struct for api ModifyInstanceNetExpireTime
@@ -99,7 +99,7 @@ func CreateModifyInstanceNetExpireTimeRequest() (request *ModifyInstanceNetExpir
 	request = &ModifyInstanceNetExpireTimeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ModifyInstanceNetExpireTime", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ModifyInstanceNetExpireTime", "", "")
 	return
 }
 

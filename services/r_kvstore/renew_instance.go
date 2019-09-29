@@ -77,19 +77,19 @@ func (client *Client) RenewInstanceWithCallback(request *RenewInstanceRequest, c
 type RenewInstanceRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	CouponNo             string           `position:"Query" name:"CouponNo"`
+	InstanceClass        string           `position:"Query" name:"InstanceClass"`
+	Capacity             string           `position:"Query" name:"Capacity"`
+	SecurityToken        string           `position:"Query" name:"SecurityToken"`
+	BusinessInfo         string           `position:"Query" name:"BusinessInfo"`
 	Period               requests.Integer `position:"Query" name:"Period"`
 	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`
 	FromApp              string           `position:"Query" name:"FromApp"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	CouponNo             string           `position:"Query" name:"CouponNo"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	InstanceClass        string           `position:"Query" name:"InstanceClass"`
-	Capacity             string           `position:"Query" name:"Capacity"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
-	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	ForceUpgrade         requests.Boolean `position:"Query" name:"ForceUpgrade"`
-	BusinessInfo         string           `position:"Query" name:"BusinessInfo"`
 }
 
 // RenewInstanceResponse is the response struct for api RenewInstance
@@ -105,7 +105,7 @@ func CreateRenewInstanceRequest() (request *RenewInstanceRequest) {
 	request = &RenewInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "RenewInstance", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "RenewInstance", "", "")
 	return
 }
 

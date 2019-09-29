@@ -77,14 +77,14 @@ func (client *Client) ModifySecurityIpsWithCallback(request *ModifySecurityIpsRe
 type ModifySecurityIpsRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId          requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	SecurityIps              string           `position:"Query" name:"SecurityIps"`
+	SecurityIpGroupName      string           `position:"Query" name:"SecurityIpGroupName"`
+	SecurityToken            string           `position:"Query" name:"SecurityToken"`
 	ModifyMode               string           `position:"Query" name:"ModifyMode"`
 	ResourceOwnerAccount     string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount             string           `position:"Query" name:"OwnerAccount"`
-	SecurityIps              string           `position:"Query" name:"SecurityIps"`
 	OwnerId                  requests.Integer `position:"Query" name:"OwnerId"`
-	SecurityIpGroupName      string           `position:"Query" name:"SecurityIpGroupName"`
 	InstanceId               string           `position:"Query" name:"InstanceId"`
-	SecurityToken            string           `position:"Query" name:"SecurityToken"`
 	SecurityIpGroupAttribute string           `position:"Query" name:"SecurityIpGroupAttribute"`
 }
 
@@ -99,7 +99,7 @@ func CreateModifySecurityIpsRequest() (request *ModifySecurityIpsRequest) {
 	request = &ModifySecurityIpsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ModifySecurityIps", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ModifySecurityIps", "", "")
 	return
 }
 

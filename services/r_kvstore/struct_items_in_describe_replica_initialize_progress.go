@@ -17,5 +17,5 @@ package r_kvstore
 
 // ItemsInDescribeReplicaInitializeProgress is a nested struct in r_kvstore response
 type ItemsInDescribeReplicaInitializeProgress struct {
-	ItemsItem []ItemsItemInDescribeReplicaInitializeProgress `json:"ItemsItem" xml:"ItemsItem"`
+	ItemsItem []ItemsItemInDescribeReplicaInitializeProgress `json:"Items" xml:"Items"`
 }

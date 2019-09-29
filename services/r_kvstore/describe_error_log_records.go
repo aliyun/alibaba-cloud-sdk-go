@@ -76,20 +76,20 @@ func (client *Client) DescribeErrorLogRecordsWithCallback(request *DescribeError
 // DescribeErrorLogRecordsRequest is the request struct for api DescribeErrorLogRecords
 type DescribeErrorLogRecordsRequest struct {
 	*requests.RpcRequest
-	SQLId                requests.Integer `position:"Query" name:"SQLId"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	EndTime              string           `position:"Query" name:"EndTime"`
 	StartTime            string           `position:"Query" name:"StartTime"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
-	InstanceId           string           `position:"Query" name:"InstanceId"`
-	DBName               string           `position:"Query" name:"DBName"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	RoleType             string           `position:"Query" name:"RoleType"`
 	NodeId               string           `position:"Query" name:"NodeId"`
+	SQLId                requests.Integer `position:"Query" name:"SQLId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	EndTime              string           `position:"Query" name:"EndTime"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
+	DBName               string           `position:"Query" name:"DBName"`
 }
 
 // DescribeErrorLogRecordsResponse is the response struct for api DescribeErrorLogRecords
@@ -108,7 +108,7 @@ func CreateDescribeErrorLogRecordsRequest() (request *DescribeErrorLogRecordsReq
 	request = &DescribeErrorLogRecordsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeErrorLogRecords", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeErrorLogRecords", "", "")
 	return
 }
 

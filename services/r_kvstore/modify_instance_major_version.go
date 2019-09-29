@@ -77,13 +77,13 @@ func (client *Client) ModifyInstanceMajorVersionWithCallback(request *ModifyInst
 type ModifyInstanceMajorVersionRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	InstanceId           string           `position:"Query" name:"InstanceId"`
-	MajorVersion         string           `position:"Query" name:"MajorVersion"`
+	EffectTime           string           `position:"Query" name:"EffectTime"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
+	MajorVersion         string           `position:"Query" name:"MajorVersion"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	EffectTime           string           `position:"Query" name:"EffectTime"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
 }
 
 // ModifyInstanceMajorVersionResponse is the response struct for api ModifyInstanceMajorVersion
@@ -97,7 +97,7 @@ func CreateModifyInstanceMajorVersionRequest() (request *ModifyInstanceMajorVers
 	request = &ModifyInstanceMajorVersionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ModifyInstanceMajorVersion", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ModifyInstanceMajorVersion", "", "")
 	return
 }
 

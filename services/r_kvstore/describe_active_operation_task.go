@@ -77,14 +77,14 @@ func (client *Client) DescribeActiveOperationTaskWithCallback(request *DescribeA
 type DescribeActiveOperationTaskRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	TaskType             string           `position:"Query" name:"TaskType"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	IsHistory            requests.Integer `position:"Query" name:"IsHistory"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
+	TaskType             string           `position:"Query" name:"TaskType"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	Region               string           `position:"Query" name:"Region"`
 }
 
@@ -103,7 +103,7 @@ func CreateDescribeActiveOperationTaskRequest() (request *DescribeActiveOperatio
 	request = &DescribeActiveOperationTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeActiveOperationTask", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeActiveOperationTask", "", "")
 	return
 }
 

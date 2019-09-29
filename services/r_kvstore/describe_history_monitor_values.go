@@ -77,15 +77,15 @@ func (client *Client) DescribeHistoryMonitorValuesWithCallback(request *Describe
 type DescribeHistoryMonitorValuesRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	EndTime              string           `position:"Query" name:"EndTime"`
 	StartTime            string           `position:"Query" name:"StartTime"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	InstanceId           string           `position:"Query" name:"InstanceId"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	IntervalForHistory   string           `position:"Query" name:"IntervalForHistory"`
 	NodeId               string           `position:"Query" name:"NodeId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	EndTime              string           `position:"Query" name:"EndTime"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
 	MonitorKeys          string           `position:"Query" name:"MonitorKeys"`
 }
 
@@ -101,7 +101,7 @@ func CreateDescribeHistoryMonitorValuesRequest() (request *DescribeHistoryMonito
 	request = &DescribeHistoryMonitorValuesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeHistoryMonitorValues", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeHistoryMonitorValues", "", "")
 	return
 }
 

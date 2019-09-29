@@ -77,10 +77,10 @@ func (client *Client) GetSnapshotSettingsWithCallback(request *GetSnapshotSettin
 type GetSnapshotSettingsRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	InstanceId           string           `position:"Query" name:"InstanceId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
 }
 
 // GetSnapshotSettingsResponse is the response struct for api GetSnapshotSettings
@@ -102,7 +102,7 @@ func CreateGetSnapshotSettingsRequest() (request *GetSnapshotSettingsRequest) {
 	request = &GetSnapshotSettingsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "GetSnapshotSettings", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "GetSnapshotSettings", "", "")
 	return
 }
 

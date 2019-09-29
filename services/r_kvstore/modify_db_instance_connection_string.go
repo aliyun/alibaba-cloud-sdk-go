@@ -77,15 +77,15 @@ func (client *Client) ModifyDBInstanceConnectionStringWithCallback(request *Modi
 type ModifyDBInstanceConnectionStringRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId         requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	SecurityToken           string           `position:"Query" name:"SecurityToken"`
+	DBInstanceId            string           `position:"Query" name:"DBInstanceId"`
 	ResourceOwnerAccount    string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount            string           `position:"Query" name:"OwnerAccount"`
 	NewConnectionString     string           `position:"Query" name:"NewConnectionString"`
 	OwnerId                 requests.Integer `position:"Query" name:"OwnerId"`
 	IPType                  string           `position:"Query" name:"IPType"`
 	CurrentConnectionString string           `position:"Query" name:"CurrentConnectionString"`
-	SecurityToken           string           `position:"Query" name:"SecurityToken"`
 	Port                    string           `position:"Query" name:"Port"`
-	DBInstanceId            string           `position:"Query" name:"DBInstanceId"`
 }
 
 // ModifyDBInstanceConnectionStringResponse is the response struct for api ModifyDBInstanceConnectionString
@@ -99,7 +99,7 @@ func CreateModifyDBInstanceConnectionStringRequest() (request *ModifyDBInstanceC
 	request = &ModifyDBInstanceConnectionStringRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ModifyDBInstanceConnectionString", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ModifyDBInstanceConnectionString", "", "")
 	return
 }
 

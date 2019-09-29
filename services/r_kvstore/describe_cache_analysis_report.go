@@ -78,15 +78,15 @@ type DescribeCacheAnalysisReportRequest struct {
 	*requests.RpcRequest
 	Date                 string           `position:"Query" name:"Date"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	AnalysisType         string           `position:"Query" name:"AnalysisType"`
-	InstanceId           string           `position:"Query" name:"InstanceId"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	PageNumbers          requests.Integer `position:"Query" name:"PageNumbers"`
 	NodeId               string           `position:"Query" name:"NodeId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
 }
 
 // DescribeCacheAnalysisReportResponse is the response struct for api DescribeCacheAnalysisReport
@@ -106,7 +106,7 @@ func CreateDescribeCacheAnalysisReportRequest() (request *DescribeCacheAnalysisR
 	request = &DescribeCacheAnalysisReportRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeCacheAnalysisReport", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeCacheAnalysisReport", "", "")
 	return
 }
 

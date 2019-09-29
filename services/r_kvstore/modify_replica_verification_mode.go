@@ -77,11 +77,11 @@ func (client *Client) ModifyReplicaVerificationModeWithCallback(request *ModifyR
 type ModifyReplicaVerificationModeRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	VerificationMode     string           `position:"Query" name:"VerificationMode"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
+	ReplicaId            string           `position:"Query" name:"ReplicaId"`
+	VerificationMode     string           `position:"Query" name:"VerificationMode"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	ReplicaId            string           `position:"Query" name:"ReplicaId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
@@ -96,7 +96,7 @@ func CreateModifyReplicaVerificationModeRequest() (request *ModifyReplicaVerific
 	request = &ModifyReplicaVerificationModeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ModifyReplicaVerificationMode", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ModifyReplicaVerificationMode", "", "")
 	return
 }
 

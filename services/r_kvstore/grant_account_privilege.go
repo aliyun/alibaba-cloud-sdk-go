@@ -77,13 +77,13 @@ func (client *Client) GrantAccountPrivilegeWithCallback(request *GrantAccountPri
 type GrantAccountPrivilegeRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	InstanceId           string           `position:"Query" name:"InstanceId"`
+	AccountPrivilege     string           `position:"Query" name:"AccountPrivilege"`
 	AccountName          string           `position:"Query" name:"AccountName"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	AccountPrivilege     string           `position:"Query" name:"AccountPrivilege"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
 }
 
 // GrantAccountPrivilegeResponse is the response struct for api GrantAccountPrivilege
@@ -97,7 +97,7 @@ func CreateGrantAccountPrivilegeRequest() (request *GrantAccountPrivilegeRequest
 	request = &GrantAccountPrivilegeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "GrantAccountPrivilege", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "GrantAccountPrivilege", "", "")
 	return
 }
 

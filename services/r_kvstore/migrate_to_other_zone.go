@@ -76,15 +76,15 @@ func (client *Client) MigrateToOtherZoneWithCallback(request *MigrateToOtherZone
 // MigrateToOtherZoneRequest is the request struct for api MigrateToOtherZone
 type MigrateToOtherZoneRequest struct {
 	*requests.RpcRequest
-	VSwitchId            string           `position:"Query" name:"VSwitchId"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	EffectiveTime        string           `position:"Query" name:"EffectiveTime"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	ZoneId               string           `position:"Query" name:"ZoneId"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	VSwitchId            string           `position:"Query" name:"VSwitchId"`
+	ZoneId               string           `position:"Query" name:"ZoneId"`
 }
 
 // MigrateToOtherZoneResponse is the response struct for api MigrateToOtherZone
@@ -98,7 +98,7 @@ func CreateMigrateToOtherZoneRequest() (request *MigrateToOtherZoneRequest) {
 	request = &MigrateToOtherZoneRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "MigrateToOtherZone", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "MigrateToOtherZone", "", "")
 	return
 }
 

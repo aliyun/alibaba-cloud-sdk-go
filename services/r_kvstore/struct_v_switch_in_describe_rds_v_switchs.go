@@ -17,5 +17,5 @@ package r_kvstore
 
 // VSwitchInDescribeRdsVSwitchs is a nested struct in r_kvstore response
 type VSwitchInDescribeRdsVSwitchs struct {
-	VSwitchItem []VSwitchItem `json:"VSwitchItem" xml:"VSwitchItem"`
+	VSwitchItem []VSwitchItem `json:"VSwitch" xml:"VSwitch"`
 }

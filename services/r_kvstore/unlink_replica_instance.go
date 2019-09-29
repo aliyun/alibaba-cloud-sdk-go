@@ -77,12 +77,12 @@ func (client *Client) UnlinkReplicaInstanceWithCallback(request *UnlinkReplicaIn
 type UnlinkReplicaInstanceRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	InstanceId           string           `position:"Query" name:"InstanceId"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
+	ReplicaId            string           `position:"Query" name:"ReplicaId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	ReplicaId            string           `position:"Query" name:"ReplicaId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
 }
 
 // UnlinkReplicaInstanceResponse is the response struct for api UnlinkReplicaInstance
@@ -99,7 +99,7 @@ func CreateUnlinkReplicaInstanceRequest() (request *UnlinkReplicaInstanceRequest
 	request = &UnlinkReplicaInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "UnlinkReplicaInstance", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "UnlinkReplicaInstance", "", "")
 	return
 }
 

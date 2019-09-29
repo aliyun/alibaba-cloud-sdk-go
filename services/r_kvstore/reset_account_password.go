@@ -77,13 +77,13 @@ func (client *Client) ResetAccountPasswordWithCallback(request *ResetAccountPass
 type ResetAccountPasswordRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	AccountPassword      string           `position:"Query" name:"AccountPassword"`
-	InstanceId           string           `position:"Query" name:"InstanceId"`
 	AccountName          string           `position:"Query" name:"AccountName"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	AccountPassword      string           `position:"Query" name:"AccountPassword"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
 }
 
 // ResetAccountPasswordResponse is the response struct for api ResetAccountPassword
@@ -97,7 +97,7 @@ func CreateResetAccountPasswordRequest() (request *ResetAccountPasswordRequest) 
 	request = &ResetAccountPasswordRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ResetAccountPassword", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ResetAccountPassword", "", "")
 	return
 }
 

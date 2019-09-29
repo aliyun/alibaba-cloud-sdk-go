@@ -77,16 +77,16 @@ func (client *Client) RenewMultiInstanceWithCallback(request *RenewMultiInstance
 type RenewMultiInstanceRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	CouponNo             string           `position:"Query" name:"CouponNo"`
+	SecurityToken        string           `position:"Query" name:"SecurityToken"`
+	BusinessInfo         string           `position:"Query" name:"BusinessInfo"`
 	Period               requests.Integer `position:"Query" name:"Period"`
 	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`
 	FromApp              string           `position:"Query" name:"FromApp"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	CouponNo             string           `position:"Query" name:"CouponNo"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	InstanceIds          string           `position:"Query" name:"InstanceIds"`
-	BusinessInfo         string           `position:"Query" name:"BusinessInfo"`
 }
 
 // RenewMultiInstanceResponse is the response struct for api RenewMultiInstance
@@ -101,7 +101,7 @@ func CreateRenewMultiInstanceRequest() (request *RenewMultiInstanceRequest) {
 	request = &RenewMultiInstanceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "RenewMultiInstance", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "RenewMultiInstance", "", "")
 	return
 }
 

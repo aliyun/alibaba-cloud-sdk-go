@@ -77,12 +77,12 @@ func (client *Client) DescribeMonthlyServiceStatusWithCallback(request *Describe
 type DescribeMonthlyServiceStatusRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	Month                string           `position:"Query" name:"Month"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	InstanceIds          string           `position:"Query" name:"InstanceIds"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Month                string           `position:"Query" name:"Month"`
+	InstanceIds          string           `position:"Query" name:"InstanceIds"`
 }
 
 // DescribeMonthlyServiceStatusResponse is the response struct for api DescribeMonthlyServiceStatus
@@ -98,7 +98,7 @@ func CreateDescribeMonthlyServiceStatusRequest() (request *DescribeMonthlyServic
 	request = &DescribeMonthlyServiceStatusRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeMonthlyServiceStatus", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeMonthlyServiceStatus", "", "")
 	return
 }
 

@@ -77,10 +77,10 @@ func (client *Client) TagResourcesWithCallback(request *TagResourcesRequest, cal
 type TagResourcesRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer   `position:"Query" name:"ResourceOwnerId"`
+	Tag                  *[]TagResourcesTag `position:"Query" name:"Tag"  type:"Repeated"`
 	ResourceId           *[]string          `position:"Query" name:"ResourceId"  type:"Repeated"`
 	ResourceOwnerAccount string             `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string             `position:"Query" name:"OwnerAccount"`
-	Tag                  *[]TagResourcesTag `position:"Query" name:"Tag"  type:"Repeated"`
 	OwnerId              requests.Integer   `position:"Query" name:"OwnerId"`
 	ResourceType         string             `position:"Query" name:"ResourceType"`
 }
@@ -102,7 +102,7 @@ func CreateTagResourcesRequest() (request *TagResourcesRequest) {
 	request = &TagResourcesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "TagResources", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "TagResources", "", "")
 	return
 }
 

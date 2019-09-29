@@ -95,7 +95,7 @@ func CreateQueryTaskRequest() (request *QueryTaskRequest) {
 	request = &QueryTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "QueryTask", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "QueryTask", "", "")
 	return
 }
 

@@ -77,11 +77,11 @@ func (client *Client) DescribeDBInstanceNetInfoWithCallback(request *DescribeDBI
 type DescribeDBInstanceNetInfoRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	InstanceId           string           `position:"Query" name:"InstanceId"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
 }
 
 // DescribeDBInstanceNetInfoResponse is the response struct for api DescribeDBInstanceNetInfo
@@ -97,7 +97,7 @@ func CreateDescribeDBInstanceNetInfoRequest() (request *DescribeDBInstanceNetInf
 	request = &DescribeDBInstanceNetInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeDBInstanceNetInfo", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeDBInstanceNetInfo", "", "")
 	return
 }
 

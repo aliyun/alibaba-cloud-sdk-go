@@ -78,10 +78,10 @@ type ModifyReplicaRecoveryModeRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	RecoveryMode         string           `position:"Query" name:"RecoveryMode"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	ReplicaId            string           `position:"Query" name:"ReplicaId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 }
 
@@ -96,7 +96,7 @@ func CreateModifyReplicaRecoveryModeRequest() (request *ModifyReplicaRecoveryMod
 	request = &ModifyReplicaRecoveryModeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ModifyReplicaRecoveryMode", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ModifyReplicaRecoveryMode", "", "")
 	return
 }
 

@@ -77,12 +77,12 @@ func (client *Client) ReleaseInstancePublicConnectionWithCallback(request *Relea
 type ReleaseInstancePublicConnectionRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId         requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	InstanceId              string           `position:"Query" name:"InstanceId"`
 	SecurityToken           string           `position:"Query" name:"SecurityToken"`
 	ResourceOwnerAccount    string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount            string           `position:"Query" name:"OwnerAccount"`
 	OwnerId                 requests.Integer `position:"Query" name:"OwnerId"`
 	CurrentConnectionString string           `position:"Query" name:"CurrentConnectionString"`
+	InstanceId              string           `position:"Query" name:"InstanceId"`
 }
 
 // ReleaseInstancePublicConnectionResponse is the response struct for api ReleaseInstancePublicConnection
@@ -96,7 +96,7 @@ func CreateReleaseInstancePublicConnectionRequest() (request *ReleaseInstancePub
 	request = &ReleaseInstancePublicConnectionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ReleaseInstancePublicConnection", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ReleaseInstancePublicConnection", "", "")
 	return
 }
 

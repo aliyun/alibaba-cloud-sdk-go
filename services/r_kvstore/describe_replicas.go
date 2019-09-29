@@ -77,14 +77,14 @@ func (client *Client) DescribeReplicasWithCallback(request *DescribeReplicasRequ
 type DescribeReplicasRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
+	ReplicaId            string           `position:"Query" name:"ReplicaId"`
+	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	AttachDbInstanceData requests.Boolean `position:"Query" name:"AttachDbInstanceData"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	ReplicaId            string           `position:"Query" name:"ReplicaId"`
-	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 }
 
 // DescribeReplicasResponse is the response struct for api DescribeReplicas
@@ -102,7 +102,7 @@ func CreateDescribeReplicasRequest() (request *DescribeReplicasRequest) {
 	request = &DescribeReplicasRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeReplicas", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeReplicas", "", "")
 	return
 }
 

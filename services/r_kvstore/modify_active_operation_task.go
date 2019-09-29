@@ -78,11 +78,11 @@ type ModifyActiveOperationTaskRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
+	SwitchTime           string           `position:"Query" name:"SwitchTime"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	Ids                  string           `position:"Query" name:"Ids"`
-	SwitchTime           string           `position:"Query" name:"SwitchTime"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	Ids                  string           `position:"Query" name:"Ids"`
 }
 
 // ModifyActiveOperationTaskResponse is the response struct for api ModifyActiveOperationTask
@@ -97,7 +97,7 @@ func CreateModifyActiveOperationTaskRequest() (request *ModifyActiveOperationTas
 	request = &ModifyActiveOperationTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ModifyActiveOperationTask", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ModifyActiveOperationTask", "", "")
 	return
 }
 

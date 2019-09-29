@@ -17,5 +17,5 @@ package r_kvstore
 
 // ItemsInDescribeReplicaConflictInfo is a nested struct in r_kvstore response
 type ItemsInDescribeReplicaConflictInfo struct {
-	ItemsItem []ItemsItem `json:"ItemsItem" xml:"ItemsItem"`
+	ItemsItem []ItemsItem `json:"Items" xml:"Items"`
 }

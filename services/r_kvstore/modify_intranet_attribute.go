@@ -77,11 +77,11 @@ func (client *Client) ModifyIntranetAttributeWithCallback(request *ModifyIntrane
 type ModifyIntranetAttributeRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	InstanceId           string           `position:"Query" name:"InstanceId"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
 }
 
 // ModifyIntranetAttributeResponse is the response struct for api ModifyIntranetAttribute
@@ -95,7 +95,7 @@ func CreateModifyIntranetAttributeRequest() (request *ModifyIntranetAttributeReq
 	request = &ModifyIntranetAttributeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ModifyIntranetAttribute", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ModifyIntranetAttribute", "", "")
 	return
 }
 

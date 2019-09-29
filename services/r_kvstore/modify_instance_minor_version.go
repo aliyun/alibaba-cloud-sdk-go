@@ -77,13 +77,13 @@ func (client *Client) ModifyInstanceMinorVersionWithCallback(request *ModifyInst
 type ModifyInstanceMinorVersionRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	InstanceId           string           `position:"Query" name:"InstanceId"`
+	EffectTime           string           `position:"Query" name:"EffectTime"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	Minorversion         string           `position:"Query" name:"Minorversion"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	EffectTime           string           `position:"Query" name:"EffectTime"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
 }
 
 // ModifyInstanceMinorVersionResponse is the response struct for api ModifyInstanceMinorVersion
@@ -97,7 +97,7 @@ func CreateModifyInstanceMinorVersionRequest() (request *ModifyInstanceMinorVers
 	request = &ModifyInstanceMinorVersionRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ModifyInstanceMinorVersion", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ModifyInstanceMinorVersion", "", "")
 	return
 }
 

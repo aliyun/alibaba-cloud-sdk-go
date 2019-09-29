@@ -77,11 +77,11 @@ func (client *Client) ModifyInstanceSpecPreCheckWithCallback(request *ModifyInst
 type ModifyInstanceSpecPreCheckRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	InstanceId           string           `position:"Query" name:"InstanceId"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	InstanceId           string           `position:"Query" name:"InstanceId"`
 	TargetInstanceClass  string           `position:"Query" name:"TargetInstanceClass"`
 }
 
@@ -99,7 +99,7 @@ func CreateModifyInstanceSpecPreCheckRequest() (request *ModifyInstanceSpecPreCh
 	request = &ModifyInstanceSpecPreCheckRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ModifyInstanceSpecPreCheck", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ModifyInstanceSpecPreCheck", "", "")
 	return
 }
 

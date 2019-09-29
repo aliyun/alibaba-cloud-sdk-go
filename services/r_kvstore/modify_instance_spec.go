@@ -77,18 +77,18 @@ func (client *Client) ModifyInstanceSpecWithCallback(request *ModifyInstanceSpec
 type ModifyInstanceSpecRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	CouponNo             string           `position:"Query" name:"CouponNo"`
+	InstanceClass        string           `position:"Query" name:"InstanceClass"`
+	SecurityToken        string           `position:"Query" name:"SecurityToken"`
+	EffectiveTime        string           `position:"Query" name:"EffectiveTime"`
+	BusinessInfo         string           `position:"Query" name:"BusinessInfo"`
 	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`
 	FromApp              string           `position:"Query" name:"FromApp"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	CouponNo             string           `position:"Query" name:"CouponNo"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	InstanceClass        string           `position:"Query" name:"InstanceClass"`
 	InstanceId           string           `position:"Query" name:"InstanceId"`
-	SecurityToken        string           `position:"Query" name:"SecurityToken"`
-	EffectiveTime        string           `position:"Query" name:"EffectiveTime"`
 	ForceUpgrade         requests.Boolean `position:"Query" name:"ForceUpgrade"`
-	BusinessInfo         string           `position:"Query" name:"BusinessInfo"`
 }
 
 // ModifyInstanceSpecResponse is the response struct for api ModifyInstanceSpec
@@ -103,7 +103,7 @@ func CreateModifyInstanceSpecRequest() (request *ModifyInstanceSpecRequest) {
 	request = &ModifyInstanceSpecRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ModifyInstanceSpec", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ModifyInstanceSpec", "", "")
 	return
 }
 

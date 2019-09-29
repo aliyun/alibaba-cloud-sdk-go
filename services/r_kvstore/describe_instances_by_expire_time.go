@@ -77,15 +77,15 @@ func (client *Client) DescribeInstancesByExpireTimeWithCallback(request *Describ
 type DescribeInstancesByExpireTimeRequest struct {
 	*requests.RpcRequest
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	PageNumber           requests.Integer `position:"Query" name:"PageNumber"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
-	HasExpiredRes        requests.Boolean `position:"Query" name:"HasExpiredRes"`
 	PageSize             requests.Integer `position:"Query" name:"PageSize"`
 	InstanceType         string           `position:"Query" name:"InstanceType"`
 	ExpirePeriod         requests.Integer `position:"Query" name:"ExpirePeriod"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	HasExpiredRes        requests.Boolean `position:"Query" name:"HasExpiredRes"`
 }
 
 // DescribeInstancesByExpireTimeResponse is the response struct for api DescribeInstancesByExpireTime
@@ -103,7 +103,7 @@ func CreateDescribeInstancesByExpireTimeRequest() (request *DescribeInstancesByE
 	request = &DescribeInstancesByExpireTimeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeInstancesByExpireTime", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeInstancesByExpireTime", "", "")
 	return
 }
 

@@ -80,8 +80,8 @@ type DescribeZonesRequest struct {
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	AcceptLanguage       string           `position:"Query" name:"AcceptLanguage"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	AcceptLanguage       string           `position:"Query" name:"AcceptLanguage"`
 }
 
 // DescribeZonesResponse is the response struct for api DescribeZones
@@ -96,7 +96,7 @@ func CreateDescribeZonesRequest() (request *DescribeZonesRequest) {
 	request = &DescribeZonesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeZones", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "DescribeZones", "", "")
 	return
 }
 

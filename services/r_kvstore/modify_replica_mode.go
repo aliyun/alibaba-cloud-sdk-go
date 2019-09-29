@@ -78,13 +78,13 @@ type ModifyReplicaModeRequest struct {
 	*requests.RpcRequest
 	DomainMode           string           `position:"Query" name:"DomainMode"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	PrimaryInstanceId    string           `position:"Query" name:"PrimaryInstanceId"`
-	ReplicaMode          string           `position:"Query" name:"ReplicaMode"`
 	SecurityToken        string           `position:"Query" name:"SecurityToken"`
+	ReplicaId            string           `position:"Query" name:"ReplicaId"`
+	PrimaryInstanceId    string           `position:"Query" name:"PrimaryInstanceId"`
 	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	ReplicaId            string           `position:"Query" name:"ReplicaId"`
 	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	ReplicaMode          string           `position:"Query" name:"ReplicaMode"`
 }
 
 // ModifyReplicaModeResponse is the response struct for api ModifyReplicaMode
@@ -98,7 +98,7 @@ func CreateModifyReplicaModeRequest() (request *ModifyReplicaModeRequest) {
 	request = &ModifyReplicaModeRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ModifyReplicaMode", "redisa", "openAPI")
+	request.InitWithApiInfo("R-kvstore", "2015-01-01", "ModifyReplicaMode", "", "")
 	return
 }
 
