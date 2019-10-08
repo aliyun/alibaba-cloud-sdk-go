@@ -87,6 +87,7 @@ type EncryptResponse struct {
 	CiphertextBlob string `json:"CiphertextBlob" xml:"CiphertextBlob"`
 	KeyId          string `json:"KeyId" xml:"KeyId"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
+	KeyVersionId   string `json:"KeyVersionId" xml:"KeyVersionId"`
 }
 
 // CreateEncryptRequest creates a request to invoke Encrypt API

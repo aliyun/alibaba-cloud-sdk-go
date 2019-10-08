@@ -89,6 +89,7 @@ type GenerateDataKeyResponse struct {
 	KeyId          string `json:"KeyId" xml:"KeyId"`
 	Plaintext      string `json:"Plaintext" xml:"Plaintext"`
 	RequestId      string `json:"RequestId" xml:"RequestId"`
+	KeyVersionId   string `json:"KeyVersionId" xml:"KeyVersionId"`
 }
 
 // CreateGenerateDataKeyRequest creates a request to invoke GenerateDataKey API
