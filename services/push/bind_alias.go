@@ -76,9 +76,9 @@ func (client *Client) BindAliasWithCallback(request *BindAliasRequest, callback 
 // BindAliasRequest is the request struct for api BindAlias
 type BindAliasRequest struct {
 	*requests.RpcRequest
+	DeviceId  string           `position:"Query" name:"DeviceId"`
 	AliasName string           `position:"Query" name:"AliasName"`
 	AppKey    requests.Integer `position:"Query" name:"AppKey"`
-	DeviceId  string           `position:"Query" name:"DeviceId"`
 }
 
 // BindAliasResponse is the response struct for api BindAlias
@@ -92,7 +92,7 @@ func CreateBindAliasRequest() (request *BindAliasRequest) {
 	request = &BindAliasRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Push", "2016-08-01", "BindAlias", "push", "openAPI")
+	request.InitWithApiInfo("Push", "2016-08-01", "BindAlias", "", "")
 	return
 }
 

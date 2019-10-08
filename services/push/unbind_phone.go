@@ -76,8 +76,8 @@ func (client *Client) UnbindPhoneWithCallback(request *UnbindPhoneRequest, callb
 // UnbindPhoneRequest is the request struct for api UnbindPhone
 type UnbindPhoneRequest struct {
 	*requests.RpcRequest
-	AppKey   requests.Integer `position:"Query" name:"AppKey"`
 	DeviceId string           `position:"Query" name:"DeviceId"`
+	AppKey   requests.Integer `position:"Query" name:"AppKey"`
 }
 
 // UnbindPhoneResponse is the response struct for api UnbindPhone
@@ -91,7 +91,7 @@ func CreateUnbindPhoneRequest() (request *UnbindPhoneRequest) {
 	request = &UnbindPhoneRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Push", "2016-08-01", "UnbindPhone", "push", "openAPI")
+	request.InitWithApiInfo("Push", "2016-08-01", "UnbindPhone", "", "")
 	return
 }
 

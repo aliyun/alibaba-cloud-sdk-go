@@ -76,8 +76,8 @@ func (client *Client) CheckDeviceWithCallback(request *CheckDeviceRequest, callb
 // CheckDeviceRequest is the request struct for api CheckDevice
 type CheckDeviceRequest struct {
 	*requests.RpcRequest
-	AppKey   requests.Integer `position:"Query" name:"AppKey"`
 	DeviceId string           `position:"Query" name:"DeviceId"`
+	AppKey   requests.Integer `position:"Query" name:"AppKey"`
 }
 
 // CheckDeviceResponse is the response struct for api CheckDevice
@@ -92,7 +92,7 @@ func CreateCheckDeviceRequest() (request *CheckDeviceRequest) {
 	request = &CheckDeviceRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Push", "2016-08-01", "CheckDevice", "push", "openAPI")
+	request.InitWithApiInfo("Push", "2016-08-01", "CheckDevice", "", "")
 	return
 }
 

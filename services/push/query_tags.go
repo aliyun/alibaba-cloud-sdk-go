@@ -76,9 +76,9 @@ func (client *Client) QueryTagsWithCallback(request *QueryTagsRequest, callback 
 // QueryTagsRequest is the request struct for api QueryTags
 type QueryTagsRequest struct {
 	*requests.RpcRequest
+	KeyType   string           `position:"Query" name:"KeyType"`
 	ClientKey string           `position:"Query" name:"ClientKey"`
 	AppKey    requests.Integer `position:"Query" name:"AppKey"`
-	KeyType   string           `position:"Query" name:"KeyType"`
 }
 
 // QueryTagsResponse is the response struct for api QueryTags
@@ -93,7 +93,7 @@ func CreateQueryTagsRequest() (request *QueryTagsRequest) {
 	request = &QueryTagsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Push", "2016-08-01", "QueryTags", "push", "openAPI")
+	request.InitWithApiInfo("Push", "2016-08-01", "QueryTags", "", "")
 	return
 }
 

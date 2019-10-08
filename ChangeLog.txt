@@ -1,3 +1,6 @@
+2019-10-08 Version: 1.60.184
+- Supported API MassPush for Push Message or Notice.
+
 2019-10-08 Version: 1.60.183
 - Generated 2016-01-20 for `Kms`.
 

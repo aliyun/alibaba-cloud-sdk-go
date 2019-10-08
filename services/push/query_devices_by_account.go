@@ -92,7 +92,7 @@ func CreateQueryDevicesByAccountRequest() (request *QueryDevicesByAccountRequest
 	request = &QueryDevicesByAccountRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Push", "2016-08-01", "QueryDevicesByAccount", "push", "openAPI")
+	request.InitWithApiInfo("Push", "2016-08-01", "QueryDevicesByAccount", "", "")
 	return
 }
 

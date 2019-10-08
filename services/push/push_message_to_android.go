@@ -76,12 +76,12 @@ func (client *Client) PushMessageToAndroidWithCallback(request *PushMessageToAnd
 // PushMessageToAndroidRequest is the request struct for api PushMessageToAndroid
 type PushMessageToAndroidRequest struct {
 	*requests.RpcRequest
-	AppKey      requests.Integer `position:"Query" name:"AppKey"`
-	TargetValue string           `position:"Query" name:"TargetValue"`
 	Title       string           `position:"Query" name:"Title"`
 	Body        string           `position:"Query" name:"Body"`
 	JobKey      string           `position:"Query" name:"JobKey"`
 	Target      string           `position:"Query" name:"Target"`
+	AppKey      requests.Integer `position:"Query" name:"AppKey"`
+	TargetValue string           `position:"Query" name:"TargetValue"`
 }
 
 // PushMessageToAndroidResponse is the response struct for api PushMessageToAndroid
@@ -96,7 +96,7 @@ func CreatePushMessageToAndroidRequest() (request *PushMessageToAndroidRequest) 
 	request = &PushMessageToAndroidRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Push", "2016-08-01", "PushMessageToAndroid", "push", "openAPI")
+	request.InitWithApiInfo("Push", "2016-08-01", "PushMessageToAndroid", "", "")
 	return
 }
 

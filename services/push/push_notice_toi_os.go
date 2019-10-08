@@ -78,12 +78,12 @@ type PushNoticeToiOSRequest struct {
 	*requests.RpcRequest
 	ExtParameters string           `position:"Query" name:"ExtParameters"`
 	ApnsEnv       string           `position:"Query" name:"ApnsEnv"`
-	AppKey        requests.Integer `position:"Query" name:"AppKey"`
-	TargetValue   string           `position:"Query" name:"TargetValue"`
 	Title         string           `position:"Query" name:"Title"`
 	Body          string           `position:"Query" name:"Body"`
 	JobKey        string           `position:"Query" name:"JobKey"`
 	Target        string           `position:"Query" name:"Target"`
+	AppKey        requests.Integer `position:"Query" name:"AppKey"`
+	TargetValue   string           `position:"Query" name:"TargetValue"`
 }
 
 // PushNoticeToiOSResponse is the response struct for api PushNoticeToiOS
@@ -98,7 +98,7 @@ func CreatePushNoticeToiOSRequest() (request *PushNoticeToiOSRequest) {
 	request = &PushNoticeToiOSRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Push", "2016-08-01", "PushNoticeToiOS", "push", "openAPI")
+	request.InitWithApiInfo("Push", "2016-08-01", "PushNoticeToiOS", "", "")
 	return
 }
 

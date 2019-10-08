@@ -76,8 +76,8 @@ func (client *Client) QueryDeviceInfoWithCallback(request *QueryDeviceInfoReques
 // QueryDeviceInfoRequest is the request struct for api QueryDeviceInfo
 type QueryDeviceInfoRequest struct {
 	*requests.RpcRequest
-	AppKey   requests.Integer `position:"Query" name:"AppKey"`
 	DeviceId string           `position:"Query" name:"DeviceId"`
+	AppKey   requests.Integer `position:"Query" name:"AppKey"`
 }
 
 // QueryDeviceInfoResponse is the response struct for api QueryDeviceInfo
@@ -92,7 +92,7 @@ func CreateQueryDeviceInfoRequest() (request *QueryDeviceInfoRequest) {
 	request = &QueryDeviceInfoRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Push", "2016-08-01", "QueryDeviceInfo", "push", "openAPI")
+	request.InitWithApiInfo("Push", "2016-08-01", "QueryDeviceInfo", "", "")
 	return
 }
 

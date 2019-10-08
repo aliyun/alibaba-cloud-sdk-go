@@ -76,12 +76,12 @@ func (client *Client) PushMessageToiOSWithCallback(request *PushMessageToiOSRequ
 // PushMessageToiOSRequest is the request struct for api PushMessageToiOS
 type PushMessageToiOSRequest struct {
 	*requests.RpcRequest
-	AppKey      requests.Integer `position:"Query" name:"AppKey"`
-	TargetValue string           `position:"Query" name:"TargetValue"`
 	Title       string           `position:"Query" name:"Title"`
 	Body        string           `position:"Query" name:"Body"`
 	JobKey      string           `position:"Query" name:"JobKey"`
 	Target      string           `position:"Query" name:"Target"`
+	AppKey      requests.Integer `position:"Query" name:"AppKey"`
+	TargetValue string           `position:"Query" name:"TargetValue"`
 }
 
 // PushMessageToiOSResponse is the response struct for api PushMessageToiOS
@@ -96,7 +96,7 @@ func CreatePushMessageToiOSRequest() (request *PushMessageToiOSRequest) {
 	request = &PushMessageToiOSRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Push", "2016-08-01", "PushMessageToiOS", "push", "openAPI")
+	request.InitWithApiInfo("Push", "2016-08-01", "PushMessageToiOS", "", "")
 	return
 }
 

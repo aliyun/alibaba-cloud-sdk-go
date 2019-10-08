@@ -77,8 +77,8 @@ func (client *Client) BindPhoneWithCallback(request *BindPhoneRequest, callback 
 type BindPhoneRequest struct {
 	*requests.RpcRequest
 	PhoneNumber string           `position:"Query" name:"PhoneNumber"`
-	AppKey      requests.Integer `position:"Query" name:"AppKey"`
 	DeviceId    string           `position:"Query" name:"DeviceId"`
+	AppKey      requests.Integer `position:"Query" name:"AppKey"`
 }
 
 // BindPhoneResponse is the response struct for api BindPhone
@@ -92,7 +92,7 @@ func CreateBindPhoneRequest() (request *BindPhoneRequest) {
 	request = &BindPhoneRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Push", "2016-08-01", "BindPhone", "push", "openAPI")
+	request.InitWithApiInfo("Push", "2016-08-01", "BindPhone", "", "")
 	return
 }
 

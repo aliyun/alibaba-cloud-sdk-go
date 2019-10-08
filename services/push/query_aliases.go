@@ -76,8 +76,8 @@ func (client *Client) QueryAliasesWithCallback(request *QueryAliasesRequest, cal
 // QueryAliasesRequest is the request struct for api QueryAliases
 type QueryAliasesRequest struct {
 	*requests.RpcRequest
-	AppKey   requests.Integer `position:"Query" name:"AppKey"`
 	DeviceId string           `position:"Query" name:"DeviceId"`
+	AppKey   requests.Integer `position:"Query" name:"AppKey"`
 }
 
 // QueryAliasesResponse is the response struct for api QueryAliases
@@ -92,7 +92,7 @@ func CreateQueryAliasesRequest() (request *QueryAliasesRequest) {
 	request = &QueryAliasesRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Push", "2016-08-01", "QueryAliases", "push", "openAPI")
+	request.InitWithApiInfo("Push", "2016-08-01", "QueryAliases", "", "")
 	return
 }
 

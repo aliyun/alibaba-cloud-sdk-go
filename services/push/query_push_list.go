@@ -76,10 +76,10 @@ func (client *Client) QueryPushListWithCallback(request *QueryPushListRequest, c
 // QueryPushListRequest is the request struct for api QueryPushList
 type QueryPushListRequest struct {
 	*requests.RpcRequest
-	PageSize  requests.Integer `position:"Query" name:"PageSize"`
 	EndTime   string           `position:"Query" name:"EndTime"`
-	AppKey    requests.Integer `position:"Query" name:"AppKey"`
 	StartTime string           `position:"Query" name:"StartTime"`
+	PageSize  requests.Integer `position:"Query" name:"PageSize"`
+	AppKey    requests.Integer `position:"Query" name:"AppKey"`
 	Page      requests.Integer `position:"Query" name:"Page"`
 	PushType  string           `position:"Query" name:"PushType"`
 }
@@ -99,7 +99,7 @@ func CreateQueryPushListRequest() (request *QueryPushListRequest) {
 	request = &QueryPushListRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Push", "2016-08-01", "QueryPushList", "push", "openAPI")
+	request.InitWithApiInfo("Push", "2016-08-01", "QueryPushList", "", "")
 	return
 }
 

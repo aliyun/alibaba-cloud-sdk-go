@@ -76,10 +76,10 @@ func (client *Client) QueryUniqueDeviceStatWithCallback(request *QueryUniqueDevi
 // QueryUniqueDeviceStatRequest is the request struct for api QueryUniqueDeviceStat
 type QueryUniqueDeviceStatRequest struct {
 	*requests.RpcRequest
-	Granularity string           `position:"Query" name:"Granularity"`
 	EndTime     string           `position:"Query" name:"EndTime"`
-	AppKey      requests.Integer `position:"Query" name:"AppKey"`
 	StartTime   string           `position:"Query" name:"StartTime"`
+	Granularity string           `position:"Query" name:"Granularity"`
+	AppKey      requests.Integer `position:"Query" name:"AppKey"`
 }
 
 // QueryUniqueDeviceStatResponse is the response struct for api QueryUniqueDeviceStat
@@ -94,7 +94,7 @@ func CreateQueryUniqueDeviceStatRequest() (request *QueryUniqueDeviceStatRequest
 	request = &QueryUniqueDeviceStatRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Push", "2016-08-01", "QueryUniqueDeviceStat", "push", "openAPI")
+	request.InitWithApiInfo("Push", "2016-08-01", "QueryUniqueDeviceStat", "", "")
 	return
 }
 
