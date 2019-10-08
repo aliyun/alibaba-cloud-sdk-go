@@ -17,5 +17,5 @@ package imm
 
 // Users is a nested struct in imm response
 type Users struct {
-	UsersItem []UsersItem `json:"UsersItem" xml:"UsersItem"`
+	UsersItem []UsersItem `json:"Users" xml:"Users"`
 }

@@ -17,5 +17,5 @@ package imm
 
 // CelebrityInDetectImageCelebrity is a nested struct in imm response
 type CelebrityInDetectImageCelebrity struct {
-	CelebrityItem []CelebrityItem `json:"CelebrityItem" xml:"CelebrityItem"`
+	CelebrityItem []CelebrityItem `json:"Celebrity" xml:"Celebrity"`
 }

@@ -17,5 +17,5 @@ package imm
 
 // TagsInFindImages is a nested struct in imm response
 type TagsInFindImages struct {
-	TagsItem []TagsItem `json:"TagsItem" xml:"TagsItem"`
+	TagsItem []TagsItem `json:"Tags" xml:"Tags"`
 }

@@ -17,5 +17,5 @@ package imm
 
 // OCRInFindImages is a nested struct in imm response
 type OCRInFindImages struct {
-	OCRItem []OCRItem `json:"OCRItem" xml:"OCRItem"`
+	OCRItem []OCRItem `json:"OCR" xml:"OCR"`
 }

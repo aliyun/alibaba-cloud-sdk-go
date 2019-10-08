@@ -17,5 +17,5 @@ package imm
 
 // Photos is a nested struct in imm response
 type Photos struct {
-	PhotosItem []PhotosItem `json:"PhotosItem" xml:"PhotosItem"`
+	PhotosItem []PhotosItem `json:"Photos" xml:"Photos"`
 }

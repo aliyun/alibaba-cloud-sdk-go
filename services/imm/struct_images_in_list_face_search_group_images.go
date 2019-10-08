@@ -17,5 +17,5 @@ package imm
 
 // ImagesInListFaceSearchGroupImages is a nested struct in imm response
 type ImagesInListFaceSearchGroupImages struct {
-	ImagesItem []ImagesItem `json:"ImagesItem" xml:"ImagesItem"`
+	ImagesItem []ImagesItem `json:"Images" xml:"Images"`
 }

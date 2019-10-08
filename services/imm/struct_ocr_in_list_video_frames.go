@@ -17,5 +17,5 @@ package imm
 
 // OCRInListVideoFrames is a nested struct in imm response
 type OCRInListVideoFrames struct {
-	OCRItem []OCRItem `json:"OCRItem" xml:"OCRItem"`
+	OCRItem []OCRItem `json:"OCR" xml:"OCR"`
 }

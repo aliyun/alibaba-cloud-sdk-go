@@ -17,5 +17,5 @@ package imm
 
 // Projects is a nested struct in imm response
 type Projects struct {
-	ProjectsItem []ProjectsItem `json:"ProjectsItem" xml:"ProjectsItem"`
+	ProjectsItem []ProjectsItem `json:"Projects" xml:"Projects"`
 }

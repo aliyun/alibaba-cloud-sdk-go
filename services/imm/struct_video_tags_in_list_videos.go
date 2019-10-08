@@ -17,5 +17,5 @@ package imm
 
 // VideoTagsInListVideos is a nested struct in imm response
 type VideoTagsInListVideos struct {
-	VideoTagsItem []VideoTagsItem `json:"VideoTagsItem" xml:"VideoTagsItem"`
+	VideoTagsItem []VideoTagsItem `json:"VideoTags" xml:"VideoTags"`
 }

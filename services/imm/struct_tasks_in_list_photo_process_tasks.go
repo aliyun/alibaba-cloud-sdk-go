@@ -17,5 +17,5 @@ package imm
 
 // TasksInListPhotoProcessTasks is a nested struct in imm response
 type TasksInListPhotoProcessTasks struct {
-	TasksItem []TasksItem `json:"TasksItem" xml:"TasksItem"`
+	TasksItem []TasksItem `json:"Tasks" xml:"Tasks"`
 }

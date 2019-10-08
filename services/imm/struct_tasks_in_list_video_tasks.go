@@ -17,5 +17,5 @@ package imm
 
 // TasksInListVideoTasks is a nested struct in imm response
 type TasksInListVideoTasks struct {
-	TasksItem []TasksItem `json:"TasksItem" xml:"TasksItem"`
+	TasksItem []TasksItem `json:"Tasks" xml:"Tasks"`
 }

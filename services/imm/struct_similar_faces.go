@@ -17,5 +17,5 @@ package imm
 
 // SimilarFaces is a nested struct in imm response
 type SimilarFaces struct {
-	SimilarFacesItem []SimilarFacesItem `json:"SimilarFacesItem" xml:"SimilarFacesItem"`
+	SimilarFacesItem []SimilarFacesItem `json:"SimilarFaces" xml:"SimilarFaces"`
 }

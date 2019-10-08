@@ -17,5 +17,5 @@ package imm
 
 // FramesInListVideoFrames is a nested struct in imm response
 type FramesInListVideoFrames struct {
-	FramesItem []FramesItem `json:"FramesItem" xml:"FramesItem"`
+	FramesItem []FramesItem `json:"Frames" xml:"Frames"`
 }

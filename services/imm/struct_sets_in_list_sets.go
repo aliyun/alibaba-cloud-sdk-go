@@ -17,5 +17,5 @@ package imm
 
 // SetsInListSets is a nested struct in imm response
 type SetsInListSets struct {
-	SetsItem []SetsItem `json:"SetsItem" xml:"SetsItem"`
+	SetsItem []SetsItem `json:"Sets" xml:"Sets"`
 }

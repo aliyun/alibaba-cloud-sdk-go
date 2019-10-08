@@ -17,5 +17,5 @@ package imm
 
 // FacesInFindImagesByTagNames is a nested struct in imm response
 type FacesInFindImagesByTagNames struct {
-	FacesItem []FacesItem `json:"FacesItem" xml:"FacesItem"`
+	FacesItem []FacesItem `json:"Faces" xml:"Faces"`
 }

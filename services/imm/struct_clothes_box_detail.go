@@ -17,5 +17,5 @@ package imm
 
 // ClothesBoxDetail is a nested struct in imm response
 type ClothesBoxDetail struct {
-	ClothesBoxDetailItem []ClothesBoxDetailItem `json:"ClothesBoxDetailItem" xml:"ClothesBoxDetailItem"`
+	ClothesBoxDetailItem []ClothesBoxDetailItem `json:"ClothesBoxDetail" xml:"ClothesBoxDetail"`
 }

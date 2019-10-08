@@ -20,24 +20,24 @@ import (
 	"github.com/aliyun/alibaba-cloud-sdk-go/sdk/responses"
 )
 
-// CreateVideoCompressTask invokes the imm.CreateVideoCompressTask API synchronously
-// api document: https://help.aliyun.com/api/imm/createvideocompresstask.html
-func (client *Client) CreateVideoCompressTask(request *CreateVideoCompressTaskRequest) (response *CreateVideoCompressTaskResponse, err error) {
-	response = CreateCreateVideoCompressTaskResponse()
+// CreateGrabFrameTask invokes the imm.CreateGrabFrameTask API synchronously
+// api document: https://help.aliyun.com/api/imm/creategrabframetask.html
+func (client *Client) CreateGrabFrameTask(request *CreateGrabFrameTaskRequest) (response *CreateGrabFrameTaskResponse, err error) {
+	response = CreateCreateGrabFrameTaskResponse()
 	err = client.DoAction(request, response)
 	return
 }
 
-// CreateVideoCompressTaskWithChan invokes the imm.CreateVideoCompressTask API asynchronously
-// api document: https://help.aliyun.com/api/imm/createvideocompresstask.html
+// CreateGrabFrameTaskWithChan invokes the imm.CreateGrabFrameTask API asynchronously
+// api document: https://help.aliyun.com/api/imm/creategrabframetask.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) CreateVideoCompressTaskWithChan(request *CreateVideoCompressTaskRequest) (<-chan *CreateVideoCompressTaskResponse, <-chan error) {
-	responseChan := make(chan *CreateVideoCompressTaskResponse, 1)
+func (client *Client) CreateGrabFrameTaskWithChan(request *CreateGrabFrameTaskRequest) (<-chan *CreateGrabFrameTaskResponse, <-chan error) {
+	responseChan := make(chan *CreateGrabFrameTaskResponse, 1)
 	errChan := make(chan error, 1)
 	err := client.AddAsyncTask(func() {
 		defer close(responseChan)
 		defer close(errChan)
-		response, err := client.CreateVideoCompressTask(request)
+		response, err := client.CreateGrabFrameTask(request)
 		if err != nil {
 			errChan <- err
 		} else {
@@ -52,16 +52,16 @@ func (client *Client) CreateVideoCompressTaskWithChan(request *CreateVideoCompre
 	return responseChan, errChan
 }
 
-// CreateVideoCompressTaskWithCallback invokes the imm.CreateVideoCompressTask API asynchronously
-// api document: https://help.aliyun.com/api/imm/createvideocompresstask.html
+// CreateGrabFrameTaskWithCallback invokes the imm.CreateGrabFrameTask API asynchronously
+// api document: https://help.aliyun.com/api/imm/creategrabframetask.html
 // asynchronous document: https://help.aliyun.com/document_detail/66220.html
-func (client *Client) CreateVideoCompressTaskWithCallback(request *CreateVideoCompressTaskRequest, callback func(response *CreateVideoCompressTaskResponse, err error)) <-chan int {
+func (client *Client) CreateGrabFrameTaskWithCallback(request *CreateGrabFrameTaskRequest, callback func(response *CreateGrabFrameTaskResponse, err error)) <-chan int {
 	result := make(chan int, 1)
 	err := client.AddAsyncTask(func() {
-		var response *CreateVideoCompressTaskResponse
+		var response *CreateGrabFrameTaskResponse
 		var err error
 		defer close(result)
-		response, err = client.CreateVideoCompressTask(request)
+		response, err = client.CreateGrabFrameTask(request)
 		callback(response, err)
 		result <- 1
 	})
@@ -73,8 +73,8 @@ func (client *Client) CreateVideoCompressTaskWithCallback(request *CreateVideoCo
 	return result
 }
 
-// CreateVideoCompressTaskRequest is the request struct for api CreateVideoCompressTask
-type CreateVideoCompressTaskRequest struct {
+// CreateGrabFrameTaskRequest is the request struct for api CreateGrabFrameTask
+type CreateGrabFrameTaskRequest struct {
 	*requests.RpcRequest
 	Project         string `position:"Query" name:"Project"`
 	NotifyEndpoint  string `position:"Query" name:"NotifyEndpoint"`
@@ -84,26 +84,26 @@ type CreateVideoCompressTaskRequest struct {
 	VideoUri        string `position:"Query" name:"VideoUri"`
 }
 
-// CreateVideoCompressTaskResponse is the response struct for api CreateVideoCompressTask
-type CreateVideoCompressTaskResponse struct {
+// CreateGrabFrameTaskResponse is the response struct for api CreateGrabFrameTask
+type CreateGrabFrameTaskResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
 	TaskId    string `json:"TaskId" xml:"TaskId"`
 	TaskType  string `json:"TaskType" xml:"TaskType"`
 }
 
-// CreateCreateVideoCompressTaskRequest creates a request to invoke CreateVideoCompressTask API
-func CreateCreateVideoCompressTaskRequest() (request *CreateVideoCompressTaskRequest) {
-	request = &CreateVideoCompressTaskRequest{
+// CreateCreateGrabFrameTaskRequest creates a request to invoke CreateGrabFrameTask API
+func CreateCreateGrabFrameTaskRequest() (request *CreateGrabFrameTaskRequest) {
+	request = &CreateGrabFrameTaskRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("imm", "2017-09-06", "CreateVideoCompressTask", "imm", "openAPI")
+	request.InitWithApiInfo("imm", "2017-09-06", "CreateGrabFrameTask", "imm", "openAPI")
 	return
 }
 
-// CreateCreateVideoCompressTaskResponse creates a response to parse from CreateVideoCompressTask response
-func CreateCreateVideoCompressTaskResponse() (response *CreateVideoCompressTaskResponse) {
-	response = &CreateVideoCompressTaskResponse{
+// CreateCreateGrabFrameTaskResponse creates a response to parse from CreateGrabFrameTask response
+func CreateCreateGrabFrameTaskResponse() (response *CreateGrabFrameTaskResponse) {
+	response = &CreateGrabFrameTaskResponse{
 		BaseResponse: &responses.BaseResponse{},
 	}
 	return

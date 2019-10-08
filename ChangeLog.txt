@@ -1,3 +1,6 @@
+2019-10-08 Version: 1.60.185
+- Supported Grab Frame IMM.
+
 2019-10-08 Version: 1.60.184
 - Supported API MassPush for Push Message or Notice.
 

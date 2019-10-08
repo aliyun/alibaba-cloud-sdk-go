@@ -17,5 +17,5 @@ package imm
 
 // ResultFaces is a nested struct in imm response
 type ResultFaces struct {
-	ResultFacesItem []ResultFacesItem `json:"ResultFacesItem" xml:"ResultFacesItem"`
+	ResultFacesItem []ResultFacesItem `json:"ResultFaces" xml:"ResultFaces"`
 }

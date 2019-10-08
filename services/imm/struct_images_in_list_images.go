@@ -17,5 +17,5 @@ package imm
 
 // ImagesInListImages is a nested struct in imm response
 type ImagesInListImages struct {
-	ImagesItem []ImagesItem `json:"ImagesItem" xml:"ImagesItem"`
+	ImagesItem []ImagesItem `json:"Images" xml:"Images"`
 }

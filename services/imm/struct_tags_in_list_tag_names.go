@@ -17,5 +17,5 @@ package imm
 
 // TagsInListTagNames is a nested struct in imm response
 type TagsInListTagNames struct {
-	TagsItem []TagsItem `json:"TagsItem" xml:"TagsItem"`
+	TagsItem []TagsItem `json:"Tags" xml:"Tags"`
 }

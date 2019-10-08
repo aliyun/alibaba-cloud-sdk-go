@@ -17,5 +17,5 @@ package imm
 
 // Groups is a nested struct in imm response
 type Groups struct {
-	GroupsItem []GroupsItem `json:"GroupsItem" xml:"GroupsItem"`
+	GroupsItem []GroupsItem `json:"Groups" xml:"Groups"`
 }

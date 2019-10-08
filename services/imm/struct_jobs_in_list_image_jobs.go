@@ -17,5 +17,5 @@ package imm
 
 // JobsInListImageJobs is a nested struct in imm response
 type JobsInListImageJobs struct {
-	JobsItem []JobsItem `json:"JobsItem" xml:"JobsItem"`
+	JobsItem []JobsItem `json:"Jobs" xml:"Jobs"`
 }

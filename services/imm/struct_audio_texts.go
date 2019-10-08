@@ -17,5 +17,5 @@ package imm
 
 // AudioTexts is a nested struct in imm response
 type AudioTexts struct {
-	AudioTextsItem []AudioTextsItem `json:"AudioTextsItem" xml:"AudioTextsItem"`
+	AudioTextsItem []AudioTextsItem `json:"AudioTexts" xml:"AudioTexts"`
 }

@@ -17,5 +17,5 @@ package imm
 
 // CelebrityInGetVideo is a nested struct in imm response
 type CelebrityInGetVideo struct {
-	CelebrityItem []CelebrityItem `json:"CelebrityItem" xml:"CelebrityItem"`
+	CelebrityItem []CelebrityItem `json:"Celebrity" xml:"Celebrity"`
 }

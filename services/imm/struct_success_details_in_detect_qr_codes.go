@@ -17,5 +17,5 @@ package imm
 
 // SuccessDetailsInDetectQRCodes is a nested struct in imm response
 type SuccessDetailsInDetectQRCodes struct {
-	SuccessDetailsItem []SuccessDetailsItem `json:"SuccessDetailsItem" xml:"SuccessDetailsItem"`
+	SuccessDetailsItem []SuccessDetailsItem `json:"SuccessDetails" xml:"SuccessDetails"`
 }

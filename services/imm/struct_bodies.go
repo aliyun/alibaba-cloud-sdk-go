@@ -17,5 +17,5 @@ package imm
 
 // Bodies is a nested struct in imm response
 type Bodies struct {
-	BodiesItem []BodiesItem `json:"BodiesItem" xml:"BodiesItem"`
+	BodiesItem []BodiesItem `json:"Bodies" xml:"Bodies"`
 }

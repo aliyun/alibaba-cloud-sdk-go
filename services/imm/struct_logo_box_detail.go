@@ -17,5 +17,5 @@ package imm
 
 // LogoBoxDetail is a nested struct in imm response
 type LogoBoxDetail struct {
-	LogoBoxDetailItem []LogoBoxDetailItem `json:"LogoBoxDetailItem" xml:"LogoBoxDetailItem"`
+	LogoBoxDetailItem []LogoBoxDetailItem `json:"LogoBoxDetail" xml:"LogoBoxDetail"`
 }

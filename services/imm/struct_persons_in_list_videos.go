@@ -17,5 +17,5 @@ package imm
 
 // PersonsInListVideos is a nested struct in imm response
 type PersonsInListVideos struct {
-	PersonsItem []PersonsItem `json:"PersonsItem" xml:"PersonsItem"`
+	PersonsItem []PersonsItem `json:"Persons" xml:"Persons"`
 }

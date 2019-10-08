@@ -17,5 +17,5 @@ package imm
 
 // TasksInListOfficeConversionTask is a nested struct in imm response
 type TasksInListOfficeConversionTask struct {
-	TasksItem []TasksItem `json:"TasksItem" xml:"TasksItem"`
+	TasksItem []TasksItem `json:"Tasks" xml:"Tasks"`
 }

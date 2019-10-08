@@ -17,5 +17,5 @@ package imm
 
 // QRCodes is a nested struct in imm response
 type QRCodes struct {
-	QRCodesItem []QRCodesItem `json:"QRCodesItem" xml:"QRCodesItem"`
+	QRCodesItem []QRCodesItem `json:"QRCodes" xml:"QRCodes"`
 }

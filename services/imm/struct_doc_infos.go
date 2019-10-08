@@ -17,5 +17,5 @@ package imm
 
 // DocInfos is a nested struct in imm response
 type DocInfos struct {
-	DocInfosItem []DocInfosItem `json:"DocInfosItem" xml:"DocInfosItem"`
+	DocInfosItem []DocInfosItem `json:"DocInfos" xml:"DocInfos"`
 }

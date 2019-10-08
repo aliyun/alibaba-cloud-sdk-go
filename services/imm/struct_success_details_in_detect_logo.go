@@ -17,5 +17,5 @@ package imm
 
 // SuccessDetailsInDetectLogo is a nested struct in imm response
 type SuccessDetailsInDetectLogo struct {
-	SuccessDetailsItem []SuccessDetailsItem `json:"SuccessDetailsItem" xml:"SuccessDetailsItem"`
+	SuccessDetailsItem []SuccessDetailsItem `json:"SuccessDetails" xml:"SuccessDetails"`
 }

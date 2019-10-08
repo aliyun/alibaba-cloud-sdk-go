@@ -17,5 +17,5 @@ package imm
 
 // FacesInGetImage is a nested struct in imm response
 type FacesInGetImage struct {
-	FacesItem []FacesItemInGetImage `json:"FacesItem" xml:"FacesItem"`
+	FacesItem []FacesItemInGetImage `json:"Faces" xml:"Faces"`
 }

@@ -17,5 +17,5 @@ package imm
 
 // FailDetailsInDetectTag is a nested struct in imm response
 type FailDetailsInDetectTag struct {
-	FailDetailsItem []FailDetailsItem `json:"FailDetailsItem" xml:"FailDetailsItem"`
+	FailDetailsItem []FailDetailsItem `json:"FailDetails" xml:"FailDetails"`
 }

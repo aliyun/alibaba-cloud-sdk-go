@@ -17,5 +17,5 @@ package imm
 
 // CompareResult is a nested struct in imm response
 type CompareResult struct {
-	CompareResultItem []CompareResultItem `json:"CompareResultItem" xml:"CompareResultItem"`
+	CompareResultItem []CompareResultItem `json:"CompareResult" xml:"CompareResult"`
 }

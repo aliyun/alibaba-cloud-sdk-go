@@ -17,5 +17,5 @@ package imm
 
 // FaceGroups is a nested struct in imm response
 type FaceGroups struct {
-	FaceGroupsItem []FaceGroupsItem `json:"FaceGroupsItem" xml:"FaceGroupsItem"`
+	FaceGroupsItem []FaceGroupsItem `json:"FaceGroups" xml:"FaceGroups"`
 }

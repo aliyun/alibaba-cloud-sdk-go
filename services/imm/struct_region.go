@@ -17,5 +17,5 @@ package imm
 
 // Region is a nested struct in imm response
 type Region struct {
-	RegionItem []RegionItem `json:"RegionItem" xml:"RegionItem"`
+	RegionItem []RegionItem `json:"Region" xml:"Region"`
 }
