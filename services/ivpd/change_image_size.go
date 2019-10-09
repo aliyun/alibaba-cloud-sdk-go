@@ -76,8 +76,8 @@ func (client *Client) ChangeImageSizeWithCallback(request *ChangeImageSizeReques
 // ChangeImageSizeRequest is the request struct for api ChangeImageSize
 type ChangeImageSizeRequest struct {
 	*requests.RpcRequest
-	Width  requests.Integer `position:"Body" name:"Width"`
 	Url    string           `position:"Body" name:"Url"`
+	Width  requests.Integer `position:"Body" name:"Width"`
 	Height requests.Integer `position:"Body" name:"Height"`
 }
 

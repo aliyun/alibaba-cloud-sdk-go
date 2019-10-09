@@ -1,3 +1,13 @@
+2019-10-09 Version: 1.60.188
+- Support API RecognizeImageColor.
+- Support API DetectImageElements.
+- Support API RecolorImage.
+- Support API SegmentImage.
+- Support API ChangeImageSize.
+- Support API ExtendImageStyle.
+- Support API RecognizeImageStyle.
+- Support API MakeSuperResolution.
+
 2019-10-09 Version: 1.60.187
 - Generated 2018-11-11 for `PTS`.
 

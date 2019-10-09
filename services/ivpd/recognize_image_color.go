@@ -76,8 +76,8 @@ func (client *Client) RecognizeImageColorWithCallback(request *RecognizeImageCol
 // RecognizeImageColorRequest is the request struct for api RecognizeImageColor
 type RecognizeImageColorRequest struct {
 	*requests.RpcRequest
-	ColorCount string `position:"Body" name:"ColorCount"`
 	Url        string `position:"Body" name:"Url"`
+	ColorCount string `position:"Body" name:"ColorCount"`
 }
 
 // RecognizeImageColorResponse is the response struct for api RecognizeImageColor
