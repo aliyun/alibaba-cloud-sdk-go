@@ -76,10 +76,11 @@ func (client *Client) ListTagResourcesWithCallback(request *ListTagResourcesRequ
 // ListTagResourcesRequest is the request struct for api ListTagResources
 type ListTagResourcesRequest struct {
 	*requests.RpcRequest
-	ResourceId   *[]string              `position:"Query" name:"ResourceId"  type:"Repeated"`
 	SourceIp     string                 `position:"Query" name:"SourceIp"`
 	NextToken    string                 `position:"Query" name:"NextToken"`
 	Tag          *[]ListTagResourcesTag `position:"Query" name:"Tag"  type:"Repeated"`
+	Lang         string                 `position:"Query" name:"Lang"`
+	ResourceId   *[]string              `position:"Query" name:"ResourceId"  type:"Repeated"`
 	ResourceType string                 `position:"Query" name:"ResourceType"`
 }
 

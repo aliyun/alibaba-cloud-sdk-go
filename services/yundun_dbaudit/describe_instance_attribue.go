@@ -78,6 +78,7 @@ type DescribeInstanceAttribueRequest struct {
 	*requests.RpcRequest
 	InstanceId string `position:"Query" name:"InstanceId"`
 	SourceIp   string `position:"Query" name:"SourceIp"`
+	Lang       string `position:"Query" name:"Lang"`
 }
 
 // DescribeInstanceAttribueResponse is the response struct for api DescribeInstanceAttribue

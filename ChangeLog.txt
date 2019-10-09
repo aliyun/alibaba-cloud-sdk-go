@@ -1,3 +1,6 @@
+2019-10-09 Version: 1.60.186
+- DescribeIntance status type modification.
+
 2019-10-08 Version: 1.60.185
 - Supported Grab Frame IMM.
 

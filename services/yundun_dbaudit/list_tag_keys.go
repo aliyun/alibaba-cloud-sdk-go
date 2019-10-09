@@ -76,10 +76,11 @@ func (client *Client) ListTagKeysWithCallback(request *ListTagKeysRequest, callb
 // ListTagKeysRequest is the request struct for api ListTagKeys
 type ListTagKeysRequest struct {
 	*requests.RpcRequest
-	SourceIp     string           `position:"Query" name:"SourceIp"`
-	PageSize     requests.Integer `position:"Query" name:"PageSize"`
 	CurrentPage  requests.Integer `position:"Query" name:"CurrentPage"`
 	ResourceType string           `position:"Query" name:"ResourceType"`
+	SourceIp     string           `position:"Query" name:"SourceIp"`
+	PageSize     requests.Integer `position:"Query" name:"PageSize"`
+	Lang         string           `position:"Query" name:"Lang"`
 }
 
 // ListTagKeysResponse is the response struct for api ListTagKeys

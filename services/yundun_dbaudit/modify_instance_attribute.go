@@ -76,9 +76,9 @@ func (client *Client) ModifyInstanceAttributeWithCallback(request *ModifyInstanc
 // ModifyInstanceAttributeRequest is the request struct for api ModifyInstanceAttribute
 type ModifyInstanceAttributeRequest struct {
 	*requests.RpcRequest
+	Description string `position:"Query" name:"Description"`
 	InstanceId  string `position:"Query" name:"InstanceId"`
 	SourceIp    string `position:"Query" name:"SourceIp"`
-	Description string `position:"Query" name:"Description"`
 	Lang        string `position:"Query" name:"Lang"`
 }
 
