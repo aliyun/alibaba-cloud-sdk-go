@@ -76,11 +76,14 @@ func (client *Client) DescribeImageFromLibWithCallback(request *DescribeImageFro
 // DescribeImageFromLibRequest is the request struct for api DescribeImageFromLib
 type DescribeImageFromLibRequest struct {
 	*requests.RpcRequest
-	TotalCount  requests.Integer `position:"Query" name:"TotalCount"`
+	StartDate   string           `position:"Query" name:"StartDate"`
 	SourceIp    string           `position:"Query" name:"SourceIp"`
 	ImageLibId  requests.Integer `position:"Query" name:"ImageLibId"`
 	PageSize    requests.Integer `position:"Query" name:"PageSize"`
+	Id          requests.Integer `position:"Query" name:"Id"`
+	TotalCount  requests.Integer `position:"Query" name:"TotalCount"`
 	CurrentPage requests.Integer `position:"Query" name:"CurrentPage"`
+	EndDate     string           `position:"Query" name:"EndDate"`
 }
 
 // DescribeImageFromLibResponse is the response struct for api DescribeImageFromLib

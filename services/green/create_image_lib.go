@@ -76,12 +76,13 @@ func (client *Client) CreateImageLibWithCallback(request *CreateImageLibRequest,
 // CreateImageLibRequest is the request struct for api CreateImageLib
 type CreateImageLibRequest struct {
 	*requests.RpcRequest
-	SourceIp      string `position:"Query" name:"SourceIp"`
-	Name          string `position:"Query" name:"Name"`
-	BizTypes      string `position:"Query" name:"BizTypes"`
-	ServiceModule string `position:"Query" name:"ServiceModule"`
-	Category      string `position:"Query" name:"Category"`
-	Scene         string `position:"Query" name:"Scene"`
+	ServiceModule string           `position:"Query" name:"ServiceModule"`
+	Scene         string           `position:"Query" name:"Scene"`
+	SourceIp      string           `position:"Query" name:"SourceIp"`
+	Enable        requests.Boolean `position:"Query" name:"Enable"`
+	BizTypes      string           `position:"Query" name:"BizTypes"`
+	Name          string           `position:"Query" name:"Name"`
+	Category      string           `position:"Query" name:"Category"`
 }
 
 // CreateImageLibResponse is the response struct for api CreateImageLib

@@ -76,8 +76,8 @@ func (client *Client) DescribeKeywordLibWithCallback(request *DescribeKeywordLib
 // DescribeKeywordLibRequest is the request struct for api DescribeKeywordLib
 type DescribeKeywordLibRequest struct {
 	*requests.RpcRequest
-	SourceIp      string `position:"Query" name:"SourceIp"`
 	ServiceModule string `position:"Query" name:"ServiceModule"`
+	SourceIp      string `position:"Query" name:"SourceIp"`
 	Lang          string `position:"Query" name:"Lang"`
 }
 

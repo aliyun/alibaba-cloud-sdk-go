@@ -76,13 +76,13 @@ func (client *Client) DescribeKeywordWithCallback(request *DescribeKeywordReques
 // DescribeKeywordRequest is the request struct for api DescribeKeyword
 type DescribeKeywordRequest struct {
 	*requests.RpcRequest
-	TotalCount   requests.Integer `position:"Query" name:"TotalCount"`
 	SourceIp     string           `position:"Query" name:"SourceIp"`
-	KeywordLibId requests.Integer `position:"Query" name:"KeywordLibId"`
 	PageSize     requests.Integer `position:"Query" name:"PageSize"`
-	CurrentPage  requests.Integer `position:"Query" name:"CurrentPage"`
 	Lang         string           `position:"Query" name:"Lang"`
 	Keyword      string           `position:"Query" name:"Keyword"`
+	TotalCount   requests.Integer `position:"Query" name:"TotalCount"`
+	KeywordLibId requests.Integer `position:"Query" name:"KeywordLibId"`
+	CurrentPage  requests.Integer `position:"Query" name:"CurrentPage"`
 }
 
 // DescribeKeywordResponse is the response struct for api DescribeKeyword

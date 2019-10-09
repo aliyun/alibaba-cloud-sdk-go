@@ -76,12 +76,13 @@ func (client *Client) UpdateImageLibWithCallback(request *UpdateImageLibRequest,
 // UpdateImageLibRequest is the request struct for api UpdateImageLib
 type UpdateImageLibRequest struct {
 	*requests.RpcRequest
-	SourceIp string           `position:"Query" name:"SourceIp"`
-	Name     string           `position:"Query" name:"Name"`
-	BizTypes string           `position:"Query" name:"BizTypes"`
-	Id       requests.Integer `position:"Query" name:"Id"`
-	Category string           `position:"Query" name:"Category"`
 	Scene    string           `position:"Query" name:"Scene"`
+	SourceIp string           `position:"Query" name:"SourceIp"`
+	Enable   requests.Boolean `position:"Query" name:"Enable"`
+	Id       requests.Integer `position:"Query" name:"Id"`
+	BizTypes string           `position:"Query" name:"BizTypes"`
+	Name     string           `position:"Query" name:"Name"`
+	Category string           `position:"Query" name:"Category"`
 }
 
 // UpdateImageLibResponse is the response struct for api UpdateImageLib

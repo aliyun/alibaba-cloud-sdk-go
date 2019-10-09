@@ -17,7 +17,10 @@ package green
 
 // ImageFromLib is a nested struct in green response
 type ImageFromLib struct {
-	Image     string `json:"Image" xml:"Image"`
-	Thumbnail string `json:"Thumbnail" xml:"Thumbnail"`
-	Id        int    `json:"Id" xml:"Id"`
+	Image         string `json:"Image" xml:"Image"`
+	Thumbnail     string `json:"Thumbnail" xml:"Thumbnail"`
+	Id            int64  `json:"Id" xml:"Id"`
+	ImageHitCount int64  `json:"ImageHitCount" xml:"ImageHitCount"`
+	VideoHitCount int64  `json:"VideoHitCount" xml:"VideoHitCount"`
+	CreateTime    string `json:"CreateTime" xml:"CreateTime"`
 }

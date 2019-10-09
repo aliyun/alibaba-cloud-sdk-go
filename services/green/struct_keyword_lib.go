@@ -27,5 +27,8 @@ type KeywordLib struct {
 	LibType       string   `json:"LibType" xml:"LibType"`
 	Source        string   `json:"Source" xml:"Source"`
 	ServiceModule string   `json:"ServiceModule" xml:"ServiceModule"`
+	Language      string   `json:"Language" xml:"Language"`
+	MatchMode     string   `json:"MatchMode" xml:"MatchMode"`
+	Enable        bool     `json:"Enable" xml:"Enable"`
 	BizTypes      []string `json:"BizTypes" xml:"BizTypes"`
 }

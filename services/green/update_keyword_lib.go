@@ -76,11 +76,13 @@ func (client *Client) UpdateKeywordLibWithCallback(request *UpdateKeywordLibRequ
 // UpdateKeywordLibRequest is the request struct for api UpdateKeywordLib
 type UpdateKeywordLibRequest struct {
 	*requests.RpcRequest
-	SourceIp string           `position:"Query" name:"SourceIp"`
-	Name     string           `position:"Query" name:"Name"`
-	BizTypes string           `position:"Query" name:"BizTypes"`
-	Id       requests.Integer `position:"Query" name:"Id"`
-	Lang     string           `position:"Query" name:"Lang"`
+	MatchMode string           `position:"Query" name:"MatchMode"`
+	SourceIp  string           `position:"Query" name:"SourceIp"`
+	Enable    requests.Boolean `position:"Query" name:"Enable"`
+	Id        requests.Integer `position:"Query" name:"Id"`
+	Lang      string           `position:"Query" name:"Lang"`
+	BizTypes  string           `position:"Query" name:"BizTypes"`
+	Name      string           `position:"Query" name:"Name"`
 }
 
 // UpdateKeywordLibResponse is the response struct for api UpdateKeywordLib

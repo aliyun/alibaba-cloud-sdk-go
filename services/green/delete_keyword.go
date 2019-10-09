@@ -76,8 +76,9 @@ func (client *Client) DeleteKeywordWithCallback(request *DeleteKeywordRequest, c
 // DeleteKeywordRequest is the request struct for api DeleteKeyword
 type DeleteKeywordRequest struct {
 	*requests.RpcRequest
-	SourceIp     string `position:"Query" name:"SourceIp"`
+	Keywords     string `position:"Query" name:"Keywords"`
 	KeywordLibId string `position:"Query" name:"KeywordLibId"`
+	SourceIp     string `position:"Query" name:"SourceIp"`
 	Ids          string `position:"Query" name:"Ids"`
 	Lang         string `position:"Query" name:"Lang"`
 }

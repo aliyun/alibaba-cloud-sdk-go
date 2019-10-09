@@ -26,5 +26,6 @@ type ImageLib struct {
 	Category      string   `json:"Category" xml:"Category"`
 	ServiceModule string   `json:"ServiceModule" xml:"ServiceModule"`
 	Scene         string   `json:"Scene" xml:"Scene"`
+	Enable        string   `json:"Enable" xml:"Enable"`
 	BizTypes      []string `json:"BizTypes" xml:"BizTypes"`
 }

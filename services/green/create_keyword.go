@@ -76,9 +76,9 @@ func (client *Client) CreateKeywordWithCallback(request *CreateKeywordRequest, c
 // CreateKeywordRequest is the request struct for api CreateKeyword
 type CreateKeywordRequest struct {
 	*requests.RpcRequest
-	SourceIp     string           `position:"Query" name:"SourceIp"`
 	Keywords     string           `position:"Query" name:"Keywords"`
 	KeywordLibId requests.Integer `position:"Query" name:"KeywordLibId"`
+	SourceIp     string           `position:"Query" name:"SourceIp"`
 	Lang         string           `position:"Query" name:"Lang"`
 }
 
@@ -88,6 +88,7 @@ type CreateKeywordResponse struct {
 	RequestId          string   `json:"RequestId" xml:"RequestId"`
 	SuccessCount       int      `json:"SuccessCount" xml:"SuccessCount"`
 	InvalidKeywordList []string `json:"InvalidKeywordList" xml:"InvalidKeywordList"`
+	ValidKeywordList   []string `json:"validKeywordList" xml:"validKeywordList"`
 }
 
 // CreateCreateKeywordRequest creates a request to invoke CreateKeyword API

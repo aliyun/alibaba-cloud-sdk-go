@@ -76,8 +76,8 @@ func (client *Client) DescribeImageLibWithCallback(request *DescribeImageLibRequ
 // DescribeImageLibRequest is the request struct for api DescribeImageLib
 type DescribeImageLibRequest struct {
 	*requests.RpcRequest
-	SourceIp      string `position:"Query" name:"SourceIp"`
 	ServiceModule string `position:"Query" name:"ServiceModule"`
+	SourceIp      string `position:"Query" name:"SourceIp"`
 }
 
 // DescribeImageLibResponse is the response struct for api DescribeImageLib

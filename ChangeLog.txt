@@ -1,3 +1,6 @@
+2019-10-09 Version: 1.60.189
+- Add VideoCancelScan Api.
+
 2019-10-09 Version: 1.60.188
 - Support API RecognizeImageColor.
 - Support API DetectImageElements.

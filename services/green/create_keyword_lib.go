@@ -76,20 +76,24 @@ func (client *Client) CreateKeywordLibWithCallback(request *CreateKeywordLibRequ
 // CreateKeywordLibRequest is the request struct for api CreateKeywordLib
 type CreateKeywordLibRequest struct {
 	*requests.RpcRequest
-	SourceIp      string `position:"Query" name:"SourceIp"`
-	LibType       string `position:"Query" name:"LibType"`
-	Name          string `position:"Query" name:"Name"`
-	BizTypes      string `position:"Query" name:"BizTypes"`
-	ServiceModule string `position:"Query" name:"ServiceModule"`
-	Lang          string `position:"Query" name:"Lang"`
-	Category      string `position:"Query" name:"Category"`
-	ResourceType  string `position:"Query" name:"ResourceType"`
+	Language      string           `position:"Query" name:"Language"`
+	ServiceModule string           `position:"Query" name:"ServiceModule"`
+	MatchMode     string           `position:"Query" name:"MatchMode"`
+	SourceIp      string           `position:"Query" name:"SourceIp"`
+	LibType       string           `position:"Query" name:"LibType"`
+	Enable        requests.Boolean `position:"Query" name:"Enable"`
+	Lang          string           `position:"Query" name:"Lang"`
+	BizTypes      string           `position:"Query" name:"BizTypes"`
+	ResourceType  string           `position:"Query" name:"ResourceType"`
+	Name          string           `position:"Query" name:"Name"`
+	Category      string           `position:"Query" name:"Category"`
 }
 
 // CreateKeywordLibResponse is the response struct for api CreateKeywordLib
 type CreateKeywordLibResponse struct {
 	*responses.BaseResponse
 	RequestId string `json:"RequestId" xml:"RequestId"`
+	Id        string `json:"Id" xml:"Id"`
 }
 
 // CreateCreateKeywordLibRequest creates a request to invoke CreateKeywordLib API
