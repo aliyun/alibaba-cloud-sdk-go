@@ -89,29 +89,30 @@ type DescribeLoadBalancerUDPListenerAttributeRequest struct {
 // DescribeLoadBalancerUDPListenerAttributeResponse is the response struct for api DescribeLoadBalancerUDPListenerAttribute
 type DescribeLoadBalancerUDPListenerAttributeResponse struct {
 	*responses.BaseResponse
-	RequestId                 string `json:"RequestId" xml:"RequestId"`
-	ListenerPort              int    `json:"ListenerPort" xml:"ListenerPort"`
-	BackendServerPort         int    `json:"BackendServerPort" xml:"BackendServerPort"`
-	Status                    string `json:"Status" xml:"Status"`
-	Bandwidth                 int    `json:"Bandwidth" xml:"Bandwidth"`
-	Scheduler                 string `json:"Scheduler" xml:"Scheduler"`
-	PersistenceTimeout        int    `json:"PersistenceTimeout" xml:"PersistenceTimeout"`
-	HealthCheck               string `json:"HealthCheck" xml:"HealthCheck"`
-	HealthyThreshold          int    `json:"HealthyThreshold" xml:"HealthyThreshold"`
-	UnhealthyThreshold        int    `json:"UnhealthyThreshold" xml:"UnhealthyThreshold"`
-	HealthCheckConnectTimeout int    `json:"HealthCheckConnectTimeout" xml:"HealthCheckConnectTimeout"`
-	HealthCheckConnectPort    int    `json:"HealthCheckConnectPort" xml:"HealthCheckConnectPort"`
-	HealthCheckInterval       int    `json:"HealthCheckInterval" xml:"HealthCheckInterval"`
-	HealthCheckReq            string `json:"HealthCheckReq" xml:"HealthCheckReq"`
-	HealthCheckExp            string `json:"HealthCheckExp" xml:"HealthCheckExp"`
-	MaxConnection             int    `json:"MaxConnection" xml:"MaxConnection"`
-	VServerGroupId            string `json:"VServerGroupId" xml:"VServerGroupId"`
-	MasterSlaveServerGroupId  string `json:"MasterSlaveServerGroupId" xml:"MasterSlaveServerGroupId"`
-	AclId                     string `json:"AclId" xml:"AclId"`
-	AclType                   string `json:"AclType" xml:"AclType"`
-	AclStatus                 string `json:"AclStatus" xml:"AclStatus"`
-	VpcIds                    string `json:"VpcIds" xml:"VpcIds"`
-	Description               string `json:"Description" xml:"Description"`
+	RequestId                 string                                           `json:"RequestId" xml:"RequestId"`
+	ListenerPort              int                                              `json:"ListenerPort" xml:"ListenerPort"`
+	BackendServerPort         int                                              `json:"BackendServerPort" xml:"BackendServerPort"`
+	Status                    string                                           `json:"Status" xml:"Status"`
+	Bandwidth                 int                                              `json:"Bandwidth" xml:"Bandwidth"`
+	Scheduler                 string                                           `json:"Scheduler" xml:"Scheduler"`
+	PersistenceTimeout        int                                              `json:"PersistenceTimeout" xml:"PersistenceTimeout"`
+	HealthCheck               string                                           `json:"HealthCheck" xml:"HealthCheck"`
+	HealthyThreshold          int                                              `json:"HealthyThreshold" xml:"HealthyThreshold"`
+	UnhealthyThreshold        int                                              `json:"UnhealthyThreshold" xml:"UnhealthyThreshold"`
+	HealthCheckConnectTimeout int                                              `json:"HealthCheckConnectTimeout" xml:"HealthCheckConnectTimeout"`
+	HealthCheckConnectPort    int                                              `json:"HealthCheckConnectPort" xml:"HealthCheckConnectPort"`
+	HealthCheckInterval       int                                              `json:"HealthCheckInterval" xml:"HealthCheckInterval"`
+	HealthCheckReq            string                                           `json:"HealthCheckReq" xml:"HealthCheckReq"`
+	HealthCheckExp            string                                           `json:"HealthCheckExp" xml:"HealthCheckExp"`
+	MaxConnection             int                                              `json:"MaxConnection" xml:"MaxConnection"`
+	VServerGroupId            string                                           `json:"VServerGroupId" xml:"VServerGroupId"`
+	MasterSlaveServerGroupId  string                                           `json:"MasterSlaveServerGroupId" xml:"MasterSlaveServerGroupId"`
+	AclId                     string                                           `json:"AclId" xml:"AclId"`
+	AclType                   string                                           `json:"AclType" xml:"AclType"`
+	AclStatus                 string                                           `json:"AclStatus" xml:"AclStatus"`
+	VpcIds                    string                                           `json:"VpcIds" xml:"VpcIds"`
+	Description               string                                           `json:"Description" xml:"Description"`
+	AclIds                    AclIdsInDescribeLoadBalancerUDPListenerAttribute `json:"AclIds" xml:"AclIds"`
 }
 
 // CreateDescribeLoadBalancerUDPListenerAttributeRequest creates a request to invoke DescribeLoadBalancerUDPListenerAttribute API

@@ -17,5 +17,5 @@ package slb
 
 // BackendServersInCreateVServerGroup is a nested struct in slb response
 type BackendServersInCreateVServerGroup struct {
-	BackendServer []BackendServer `json:"BackendServer" xml:"BackendServer"`
+	BackendServer []BackendServerInCreateVServerGroup `json:"BackendServer" xml:"BackendServer"`
 }

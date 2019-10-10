@@ -17,5 +17,5 @@ package slb
 
 // BackendServersInSetVServerGroupAttribute is a nested struct in slb response
 type BackendServersInSetVServerGroupAttribute struct {
-	BackendServer []BackendServer `json:"BackendServer" xml:"BackendServer"`
+	BackendServer []BackendServerInSetVServerGroupAttribute `json:"BackendServer" xml:"BackendServer"`
 }

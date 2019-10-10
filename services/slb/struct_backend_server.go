@@ -24,7 +24,7 @@ type BackendServer struct {
 	ServerId           string `json:"ServerId" xml:"ServerId"`
 	VpcId              string `json:"VpcId" xml:"VpcId"`
 	ListenerPort       int    `json:"ListenerPort" xml:"ListenerPort"`
-	Weight             int    `json:"Weight" xml:"Weight"`
+	Weight             string `json:"Weight" xml:"Weight"`
 	Description        string `json:"Description" xml:"Description"`
 	EniHost            string `json:"EniHost" xml:"EniHost"`
 	Type               string `json:"Type" xml:"Type"`

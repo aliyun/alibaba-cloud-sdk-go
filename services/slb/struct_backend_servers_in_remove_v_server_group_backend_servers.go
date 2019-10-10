@@ -17,5 +17,5 @@ package slb
 
 // BackendServersInRemoveVServerGroupBackendServers is a nested struct in slb response
 type BackendServersInRemoveVServerGroupBackendServers struct {
-	BackendServer []BackendServer `json:"BackendServer" xml:"BackendServer"`
+	BackendServer []BackendServerInRemoveVServerGroupBackendServers `json:"BackendServer" xml:"BackendServer"`
 }

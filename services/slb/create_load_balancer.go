@@ -79,6 +79,7 @@ type CreateLoadBalancerRequest struct {
 	AccessKeyId          string           `position:"Query" name:"access_key_id"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
+	CloudType            string           `position:"Query" name:"CloudType"`
 	AddressIPVersion     string           `position:"Query" name:"AddressIPVersion"`
 	MasterZoneId         string           `position:"Query" name:"MasterZoneId"`
 	Duration             requests.Integer `position:"Query" name:"Duration"`

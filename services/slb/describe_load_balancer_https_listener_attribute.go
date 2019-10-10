@@ -131,6 +131,7 @@ type DescribeLoadBalancerHTTPSListenerAttributeResponse struct {
 	EnableHttp2            string                                                       `json:"EnableHttp2" xml:"EnableHttp2"`
 	TLSCipherPolicy        string                                                       `json:"TLSCipherPolicy" xml:"TLSCipherPolicy"`
 	Description            string                                                       `json:"Description" xml:"Description"`
+	AclIds                 AclIdsInDescribeLoadBalancerHTTPSListenerAttribute           `json:"AclIds" xml:"AclIds"`
 	Rules                  RulesInDescribeLoadBalancerHTTPSListenerAttribute            `json:"Rules" xml:"Rules"`
 	DomainExtensions       DomainExtensionsInDescribeLoadBalancerHTTPSListenerAttribute `json:"DomainExtensions" xml:"DomainExtensions"`
 }
