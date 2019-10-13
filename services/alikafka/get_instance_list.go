@@ -81,11 +81,12 @@ type GetInstanceListRequest struct {
 // GetInstanceListResponse is the response struct for api GetInstanceList
 type GetInstanceListResponse struct {
 	*responses.BaseResponse
-	Success      bool         `json:"Success" xml:"Success"`
-	RequestId    string       `json:"RequestId" xml:"RequestId"`
-	Code         int          `json:"Code" xml:"Code"`
-	Message      string       `json:"Message" xml:"Message"`
-	InstanceList InstanceList `json:"InstanceList" xml:"InstanceList"`
+	Success       bool         `json:"Success" xml:"Success"`
+	RequestId     string       `json:"RequestId" xml:"RequestId"`
+	Code          int          `json:"Code" xml:"Code"`
+	Message       string       `json:"Message" xml:"Message"`
+	TopicNumLimit int          `json:"TopicNumLimit" xml:"TopicNumLimit"`
+	InstanceList  InstanceList `json:"InstanceList" xml:"InstanceList"`
 }
 
 // CreateGetInstanceListRequest creates a request to invoke GetInstanceList API

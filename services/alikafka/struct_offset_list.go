@@ -17,5 +17,5 @@ package alikafka
 
 // OffsetList is a nested struct in alikafka response
 type OffsetList struct {
-	OffsetListItem []OffsetListItem `json:"OffsetListItem" xml:"OffsetListItem"`
+	OffsetListItem []OffsetListItem `json:"OffsetList" xml:"OffsetList"`
 }

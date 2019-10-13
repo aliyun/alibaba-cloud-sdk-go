@@ -17,5 +17,5 @@ package alikafka
 
 // TopicListInGetConsumerProgress is a nested struct in alikafka response
 type TopicListInGetConsumerProgress struct {
-	TopicListItem []TopicListItem `json:"TopicListItem" xml:"TopicListItem"`
+	TopicListItem []TopicListItem `json:"TopicList" xml:"TopicList"`
 }
