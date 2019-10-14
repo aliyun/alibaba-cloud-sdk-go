@@ -87,11 +87,11 @@ type CreatePostPayOrderRequest struct {
 // CreatePostPayOrderResponse is the response struct for api CreatePostPayOrder
 type CreatePostPayOrderResponse struct {
 	*responses.BaseResponse
-	RequestId string   `json:"RequestId" xml:"RequestId"`
-	Success   bool     `json:"Success" xml:"Success"`
-	Code      int      `json:"Code" xml:"Code"`
-	Message   string   `json:"Message" xml:"Message"`
-	Instance  Instance `json:"Instance" xml:"Instance"`
+	RequestId string `json:"RequestId" xml:"RequestId"`
+	Success   bool   `json:"Success" xml:"Success"`
+	Code      int    `json:"Code" xml:"Code"`
+	Message   string `json:"Message" xml:"Message"`
+	OrderId   string `json:"OrderId" xml:"OrderId"`
 }
 
 // CreateCreatePostPayOrderRequest creates a request to invoke CreatePostPayOrder API

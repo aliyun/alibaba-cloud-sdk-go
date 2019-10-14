@@ -34,5 +34,6 @@ type InstanceVO struct {
 	DiskSize                 int                      `json:"DiskSize" xml:"DiskSize"`
 	MsgRetain                int                      `json:"MsgRetain" xml:"MsgRetain"`
 	TopicNumLimit            int                      `json:"TopicNumLimit" xml:"TopicNumLimit"`
+	ZoneId                   string                   `json:"ZoneId" xml:"ZoneId"`
 	UpgradeServiceDetailInfo UpgradeServiceDetailInfo `json:"UpgradeServiceDetailInfo" xml:"UpgradeServiceDetailInfo"`
 }
