@@ -76,50 +76,50 @@ func (client *Client) PreCheckCreateOrderWithCallback(request *PreCheckCreateOrd
 // PreCheckCreateOrderRequest is the request struct for api PreCheckCreateOrder
 type PreCheckCreateOrderRequest struct {
 	*requests.RpcRequest
-	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ClientToken           string           `position:"Query" name:"ClientToken"`
-	CommodityCode         string           `position:"Query" name:"CommodityCode"`
-	DBInstanceId          string           `position:"Query" name:"DBInstanceId"`
-	Engine                string           `position:"Query" name:"Engine"`
-	EngineVersion         string           `position:"Query" name:"EngineVersion"`
-	DBInstanceClass       string           `position:"Query" name:"DBInstanceClass"`
 	DBInstanceStorage     requests.Integer `position:"Query" name:"DBInstanceStorage"`
 	SystemDBCharset       string           `position:"Query" name:"SystemDBCharset"`
-	DBInstanceNetType     string           `position:"Query" name:"DBInstanceNetType"`
+	CountryCode           string           `position:"Query" name:"CountryCode"`
+	EngineVersion         string           `position:"Query" name:"EngineVersion"`
+	CurrencyCode          string           `position:"Query" name:"CurrencyCode"`
+	ResourceGroupId       string           `position:"Query" name:"ResourceGroupId"`
 	DBInstanceDescription string           `position:"Query" name:"DBInstanceDescription"`
-	SecurityIPList        string           `position:"Query" name:"SecurityIPList"`
-	PayType               string           `position:"Query" name:"PayType"`
-	ZoneId                string           `position:"Query" name:"ZoneId"`
-	InstanceNetworkType   string           `position:"Query" name:"InstanceNetworkType"`
-	UsedTime              string           `position:"Query" name:"UsedTime"`
-	TimeType              string           `position:"Query" name:"TimeType"`
-	Quantity              requests.Integer `position:"Query" name:"Quantity"`
-	AutoPay               requests.Boolean `position:"Query" name:"AutoPay"`
-	InstanceUsedType      requests.Integer `position:"Query" name:"InstanceUsedType"`
+	BusinessInfo          string           `position:"Query" name:"BusinessInfo"`
+	AgentId               string           `position:"Query" name:"AgentId"`
 	Resource              string           `position:"Query" name:"Resource"`
-	ConnectionMode        string           `position:"Query" name:"ConnectionMode"`
-	VPCId                 string           `position:"Query" name:"VPCId"`
+	BackupId              string           `position:"Query" name:"BackupId"`
+	CommodityCode         string           `position:"Query" name:"CommodityCode"`
+	EncryptionKey         string           `position:"Query" name:"EncryptionKey"`
+	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
+	DBInstanceClass       string           `position:"Query" name:"DBInstanceClass"`
+	SecurityIPList        string           `position:"Query" name:"SecurityIPList"`
 	VSwitchId             string           `position:"Query" name:"VSwitchId"`
 	PrivateIpAddress      string           `position:"Query" name:"PrivateIpAddress"`
-	CountryCode           string           `position:"Query" name:"CountryCode"`
-	CurrencyCode          string           `position:"Query" name:"CurrencyCode"`
 	AutoRenew             string           `position:"Query" name:"AutoRenew"`
-	AgentId               string           `position:"Query" name:"AgentId"`
 	PromotionCode         string           `position:"Query" name:"PromotionCode"`
-	BusinessInfo          string           `position:"Query" name:"BusinessInfo"`
-	BackupId              string           `position:"Query" name:"BackupId"`
-	RestoreTime           string           `position:"Query" name:"RestoreTime"`
-	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
-	DBInstanceStorageType string           `position:"Query" name:"DBInstanceStorageType"`
+	RoleARN               string           `position:"Query" name:"RoleARN"`
+	ZoneId                string           `position:"Query" name:"ZoneId"`
+	TimeType              string           `position:"Query" name:"TimeType"`
+	InstanceNetworkType   string           `position:"Query" name:"InstanceNetworkType"`
+	ConnectionMode        string           `position:"Query" name:"ConnectionMode"`
 	NodeType              string           `position:"Query" name:"NodeType"`
-	ResourceGroupId       string           `position:"Query" name:"ResourceGroupId"`
-	Category              string           `position:"Query" name:"Category"`
+	ClientToken           string           `position:"Query" name:"ClientToken"`
 	ZoneIdSlave1          string           `position:"Query" name:"ZoneIdSlave1"`
 	ZoneIdSlave2          string           `position:"Query" name:"ZoneIdSlave2"`
-	EncryptionKey         string           `position:"Query" name:"EncryptionKey"`
-	RoleARN               string           `position:"Query" name:"RoleARN"`
+	Engine                string           `position:"Query" name:"Engine"`
+	DBInstanceId          string           `position:"Query" name:"DBInstanceId"`
+	DBInstanceStorageType string           `position:"Query" name:"DBInstanceStorageType"`
+	DBInstanceNetType     string           `position:"Query" name:"DBInstanceNetType"`
+	RestoreTime           string           `position:"Query" name:"RestoreTime"`
+	Quantity              requests.Integer `position:"Query" name:"Quantity"`
+	AutoPay               requests.Boolean `position:"Query" name:"AutoPay"`
+	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
+	UsedTime              string           `position:"Query" name:"UsedTime"`
+	InstanceUsedType      requests.Integer `position:"Query" name:"InstanceUsedType"`
+	VPCId                 string           `position:"Query" name:"VPCId"`
+	Category              string           `position:"Query" name:"Category"`
+	PayType               string           `position:"Query" name:"PayType"`
 }
 
 // PreCheckCreateOrderResponse is the response struct for api PreCheckCreateOrder

@@ -17,5 +17,5 @@ package rds
 
 // ItemsInDescribeTemplatesList is a nested struct in rds response
 type ItemsInDescribeTemplatesList struct {
-	ItemsItem []ItemsItem `json:"ItemsItem" xml:"ItemsItem"`
+	ItemsItem []ItemsItem `json:"Items" xml:"Items"`
 }

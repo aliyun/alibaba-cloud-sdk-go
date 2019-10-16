@@ -37,4 +37,5 @@ type Backup struct {
 	StoreStatus               string `json:"StoreStatus" xml:"StoreStatus"`
 	MetaStatus                string `json:"MetaStatus" xml:"MetaStatus"`
 	SlaveStatus               string `json:"SlaveStatus" xml:"SlaveStatus"`
+	ConsistentTime            int64  `json:"ConsistentTime" xml:"ConsistentTime"`
 }

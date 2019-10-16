@@ -17,5 +17,5 @@ package rds
 
 // FailuresInPreCheckCreateOrderForClone is a nested struct in rds response
 type FailuresInPreCheckCreateOrderForClone struct {
-	FailuresItem []FailuresItem `json:"FailuresItem" xml:"FailuresItem"`
+	FailuresItem []FailuresItem `json:"Failures" xml:"Failures"`
 }

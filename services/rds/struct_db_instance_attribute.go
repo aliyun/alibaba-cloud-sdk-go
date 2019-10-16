@@ -25,8 +25,8 @@ type DBInstanceAttribute struct {
 	DBInstanceDiskUsed                string                                             `json:"DBInstanceDiskUsed" xml:"DBInstanceDiskUsed"`
 	AdvancedFeatures                  string                                             `json:"AdvancedFeatures" xml:"AdvancedFeatures"`
 	DBInstanceClass                   string                                             `json:"DBInstanceClass" xml:"DBInstanceClass"`
-	DBInstanceNetType                 string                                             `json:"DBInstanceNetType" xml:"DBInstanceNetType"`
 	VpcCloudInstanceId                string                                             `json:"VpcCloudInstanceId" xml:"VpcCloudInstanceId"`
+	DBInstanceNetType                 string                                             `json:"DBInstanceNetType" xml:"DBInstanceNetType"`
 	DBMaxQuantity                     int                                                `json:"DBMaxQuantity" xml:"DBMaxQuantity"`
 	DBInstanceCPU                     string                                             `json:"DBInstanceCPU" xml:"DBInstanceCPU"`
 	MaxConnections                    int                                                `json:"MaxConnections" xml:"MaxConnections"`
@@ -51,8 +51,8 @@ type DBInstanceAttribute struct {
 	TempDBInstanceId                  string                                             `json:"TempDBInstanceId" xml:"TempDBInstanceId"`
 	CurrentKernelVersion              string                                             `json:"CurrentKernelVersion" xml:"CurrentKernelVersion"`
 	ZoneId                            string                                             `json:"ZoneId" xml:"ZoneId"`
-	ConnectionMode                    string                                             `json:"ConnectionMode" xml:"ConnectionMode"`
 	IPType                            string                                             `json:"IPType" xml:"IPType"`
+	ConnectionMode                    string                                             `json:"ConnectionMode" xml:"ConnectionMode"`
 	ReadonlyInstanceSQLDelayedTime    string                                             `json:"ReadonlyInstanceSQLDelayedTime" xml:"ReadonlyInstanceSQLDelayedTime"`
 	LockMode                          string                                             `json:"LockMode" xml:"LockMode"`
 	MasterZone                        string                                             `json:"MasterZone" xml:"MasterZone"`
@@ -60,17 +60,19 @@ type DBInstanceAttribute struct {
 	Collation                         string                                             `json:"Collation" xml:"Collation"`
 	LockReason                        string                                             `json:"LockReason" xml:"LockReason"`
 	Category                          string                                             `json:"Category" xml:"Category"`
-	GuardDBInstanceId                 string                                             `json:"GuardDBInstanceId" xml:"GuardDBInstanceId"`
 	InsId                             int                                                `json:"InsId" xml:"InsId"`
+	GuardDBInstanceId                 string                                             `json:"GuardDBInstanceId" xml:"GuardDBInstanceId"`
 	DBInstanceDescription             string                                             `json:"DBInstanceDescription" xml:"DBInstanceDescription"`
 	AccountType                       string                                             `json:"AccountType" xml:"AccountType"`
 	GuardDBInstanceName               string                                             `json:"GuardDBInstanceName" xml:"GuardDBInstanceName"`
 	RegionId                          string                                             `json:"RegionId" xml:"RegionId"`
 	ResourceGroupId                   string                                             `json:"ResourceGroupId" xml:"ResourceGroupId"`
+	ConsoleVersion                    string                                             `json:"ConsoleVersion" xml:"ConsoleVersion"`
 	TempUpgradeTimeEnd                string                                             `json:"TempUpgradeTimeEnd" xml:"TempUpgradeTimeEnd"`
 	ExpireTime                        string                                             `json:"ExpireTime" xml:"ExpireTime"`
 	TempUpgradeRecoveryMemory         int                                                `json:"TempUpgradeRecoveryMemory" xml:"TempUpgradeRecoveryMemory"`
 	DispenseMode                      string                                             `json:"DispenseMode" xml:"DispenseMode"`
+	ProxyType                         int                                                `json:"ProxyType" xml:"ProxyType"`
 	AccountMaxQuantity                int                                                `json:"AccountMaxQuantity" xml:"AccountMaxQuantity"`
 	TempUpgradeRecoveryMaxConnections string                                             `json:"TempUpgradeRecoveryMaxConnections" xml:"TempUpgradeRecoveryMaxConnections"`
 	Port                              string                                             `json:"Port" xml:"Port"`
@@ -82,8 +84,8 @@ type DBInstanceAttribute struct {
 	ReadDelayTime                     string                                             `json:"ReadDelayTime" xml:"ReadDelayTime"`
 	DBInstanceStatus                  string                                             `json:"DBInstanceStatus" xml:"DBInstanceStatus"`
 	ReplicateId                       string                                             `json:"ReplicateId" xml:"ReplicateId"`
-	ConnectionString                  string                                             `json:"ConnectionString" xml:"ConnectionString"`
 	TempUpgradeRecoveryCpu            int                                                `json:"TempUpgradeRecoveryCpu" xml:"TempUpgradeRecoveryCpu"`
+	ConnectionString                  string                                             `json:"ConnectionString" xml:"ConnectionString"`
 	AvailabilityValue                 string                                             `json:"AvailabilityValue" xml:"AvailabilityValue"`
 	AutoUpgradeMinorVersion           string                                             `json:"AutoUpgradeMinorVersion" xml:"AutoUpgradeMinorVersion"`
 	Extra                             Extra                                              `json:"Extra" xml:"Extra"`

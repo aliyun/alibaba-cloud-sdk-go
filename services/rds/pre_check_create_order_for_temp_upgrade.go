@@ -76,21 +76,21 @@ func (client *Client) PreCheckCreateOrderForTempUpgradeWithCallback(request *Pre
 // PreCheckCreateOrderForTempUpgradeRequest is the request struct for api PreCheckCreateOrderForTempUpgrade
 type PreCheckCreateOrderForTempUpgradeRequest struct {
 	*requests.RpcRequest
-	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ClientToken           string           `position:"Query" name:"ClientToken"`
-	CommodityCode         string           `position:"Query" name:"CommodityCode"`
-	DBInstanceId          string           `position:"Query" name:"DBInstanceId"`
-	UsedTime              string           `position:"Query" name:"UsedTime"`
 	DBInstanceStorage     requests.Integer `position:"Query" name:"DBInstanceStorage"`
-	DBInstanceStorageType string           `position:"Query" name:"DBInstanceStorageType"`
 	NodeType              string           `position:"Query" name:"NodeType"`
-	Resource              string           `position:"Query" name:"Resource"`
-	AutoPay               requests.Boolean `position:"Query" name:"AutoPay"`
-	DBInstanceClass       string           `position:"Query" name:"DBInstanceClass"`
-	BusinessInfo          string           `position:"Query" name:"BusinessInfo"`
+	ClientToken           string           `position:"Query" name:"ClientToken"`
 	EffectiveTime         string           `position:"Query" name:"EffectiveTime"`
+	DBInstanceId          string           `position:"Query" name:"DBInstanceId"`
+	DBInstanceStorageType string           `position:"Query" name:"DBInstanceStorageType"`
+	BusinessInfo          string           `position:"Query" name:"BusinessInfo"`
+	AutoPay               requests.Boolean `position:"Query" name:"AutoPay"`
+	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
+	Resource              string           `position:"Query" name:"Resource"`
+	CommodityCode         string           `position:"Query" name:"CommodityCode"`
+	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
+	UsedTime              string           `position:"Query" name:"UsedTime"`
+	DBInstanceClass       string           `position:"Query" name:"DBInstanceClass"`
 }
 
 // PreCheckCreateOrderForTempUpgradeResponse is the response struct for api PreCheckCreateOrderForTempUpgrade

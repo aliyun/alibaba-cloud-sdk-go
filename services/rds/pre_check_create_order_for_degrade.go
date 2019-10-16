@@ -76,23 +76,23 @@ func (client *Client) PreCheckCreateOrderForDegradeWithCallback(request *PreChec
 // PreCheckCreateOrderForDegradeRequest is the request struct for api PreCheckCreateOrderForDegrade
 type PreCheckCreateOrderForDegradeRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DBInstanceStorage    requests.Integer `position:"Query" name:"DBInstanceStorage"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
-	CommodityCode        string           `position:"Query" name:"CommodityCode"`
+	EffectiveTime        string           `position:"Query" name:"EffectiveTime"`
 	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	ZoneId               string           `position:"Query" name:"ZoneId"`
-	DBInstanceClass      string           `position:"Query" name:"DBInstanceClass"`
+	BusinessInfo         string           `position:"Query" name:"BusinessInfo"`
+	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	Resource             string           `position:"Query" name:"Resource"`
+	CommodityCode        string           `position:"Query" name:"CommodityCode"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
 	UsedTime             string           `position:"Query" name:"UsedTime"`
+	DBInstanceClass      string           `position:"Query" name:"DBInstanceClass"`
+	PromotionCode        string           `position:"Query" name:"PromotionCode"`
+	ZoneId               string           `position:"Query" name:"ZoneId"`
 	TimeType             string           `position:"Query" name:"TimeType"`
 	PayType              string           `position:"Query" name:"PayType"`
-	EffectiveTime        string           `position:"Query" name:"EffectiveTime"`
-	DBInstanceStorage    requests.Integer `position:"Query" name:"DBInstanceStorage"`
-	Resource             string           `position:"Query" name:"Resource"`
-	AutoPay              requests.Boolean `position:"Query" name:"AutoPay"`
-	PromotionCode        string           `position:"Query" name:"PromotionCode"`
-	BusinessInfo         string           `position:"Query" name:"BusinessInfo"`
 }
 
 // PreCheckCreateOrderForDegradeResponse is the response struct for api PreCheckCreateOrderForDegrade

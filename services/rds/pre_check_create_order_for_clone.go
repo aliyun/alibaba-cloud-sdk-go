@@ -76,43 +76,43 @@ func (client *Client) PreCheckCreateOrderForCloneWithCallback(request *PreCheckC
 // PreCheckCreateOrderForCloneRequest is the request struct for api PreCheckCreateOrderForClone
 type PreCheckCreateOrderForCloneRequest struct {
 	*requests.RpcRequest
-	OwnerId                   requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount      string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId           requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	ClientToken               string           `position:"Query" name:"ClientToken"`
-	CommodityCode             string           `position:"Query" name:"CommodityCode"`
-	DBInstanceId              string           `position:"Query" name:"DBInstanceId"`
-	DBInstanceClass           string           `position:"Query" name:"DBInstanceClass"`
 	DBInstanceStorage         requests.Integer `position:"Query" name:"DBInstanceStorage"`
-	DBInstanceStorageType     string           `position:"Query" name:"DBInstanceStorageType"`
-	PayType                   string           `position:"Query" name:"PayType"`
-	InstanceNetworkType       string           `position:"Query" name:"InstanceNetworkType"`
-	UsedTime                  string           `position:"Query" name:"UsedTime"`
-	TimeType                  string           `position:"Query" name:"TimeType"`
-	Quantity                  requests.Integer `position:"Query" name:"Quantity"`
-	AutoPay                   requests.Boolean `position:"Query" name:"AutoPay"`
-	InstanceUsedType          requests.Integer `position:"Query" name:"InstanceUsedType"`
-	Resource                  string           `position:"Query" name:"Resource"`
-	VPCId                     string           `position:"Query" name:"VPCId"`
-	VSwitchId                 string           `position:"Query" name:"VSwitchId"`
-	PrivateIpAddress          string           `position:"Query" name:"PrivateIpAddress"`
 	CountryCode               string           `position:"Query" name:"CountryCode"`
 	CurrencyCode              string           `position:"Query" name:"CurrencyCode"`
-	AutoRenew                 string           `position:"Query" name:"AutoRenew"`
-	AgentId                   string           `position:"Query" name:"AgentId"`
-	ZoneId                    string           `position:"Query" name:"ZoneId"`
-	PromotionCode             string           `position:"Query" name:"PromotionCode"`
-	BusinessInfo              string           `position:"Query" name:"BusinessInfo"`
-	CloneInstanceDefaultValue string           `position:"Query" name:"CloneInstanceDefaultValue"`
-	DBInstanceDescription     string           `position:"Query" name:"DBInstanceDescription"`
-	DBNames                   string           `position:"Query" name:"DBNames"`
-	BackupId                  string           `position:"Query" name:"BackupId"`
-	RestoreTime               string           `position:"Query" name:"RestoreTime"`
-	OwnerAccount              string           `position:"Query" name:"OwnerAccount"`
 	ResourceGroupId           string           `position:"Query" name:"ResourceGroupId"`
-	TableMeta                 string           `position:"Query" name:"TableMeta"`
-	RestoreTable              string           `position:"Query" name:"RestoreTable"`
+	DBInstanceDescription     string           `position:"Query" name:"DBInstanceDescription"`
+	BusinessInfo              string           `position:"Query" name:"BusinessInfo"`
+	AgentId                   string           `position:"Query" name:"AgentId"`
+	Resource                  string           `position:"Query" name:"Resource"`
+	BackupId                  string           `position:"Query" name:"BackupId"`
+	CommodityCode             string           `position:"Query" name:"CommodityCode"`
+	OwnerId                   requests.Integer `position:"Query" name:"OwnerId"`
+	DBInstanceClass           string           `position:"Query" name:"DBInstanceClass"`
+	VSwitchId                 string           `position:"Query" name:"VSwitchId"`
+	PrivateIpAddress          string           `position:"Query" name:"PrivateIpAddress"`
+	AutoRenew                 string           `position:"Query" name:"AutoRenew"`
+	PromotionCode             string           `position:"Query" name:"PromotionCode"`
+	ZoneId                    string           `position:"Query" name:"ZoneId"`
+	TimeType                  string           `position:"Query" name:"TimeType"`
+	InstanceNetworkType       string           `position:"Query" name:"InstanceNetworkType"`
 	NodeType                  string           `position:"Query" name:"NodeType"`
+	ClientToken               string           `position:"Query" name:"ClientToken"`
+	TableMeta                 string           `position:"Query" name:"TableMeta"`
+	DBInstanceId              string           `position:"Query" name:"DBInstanceId"`
+	DBInstanceStorageType     string           `position:"Query" name:"DBInstanceStorageType"`
+	RestoreTime               string           `position:"Query" name:"RestoreTime"`
+	Quantity                  requests.Integer `position:"Query" name:"Quantity"`
+	AutoPay                   requests.Boolean `position:"Query" name:"AutoPay"`
+	ResourceOwnerAccount      string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount              string           `position:"Query" name:"OwnerAccount"`
+	RestoreTable              string           `position:"Query" name:"RestoreTable"`
+	UsedTime                  string           `position:"Query" name:"UsedTime"`
+	DBNames                   string           `position:"Query" name:"DBNames"`
+	InstanceUsedType          requests.Integer `position:"Query" name:"InstanceUsedType"`
+	VPCId                     string           `position:"Query" name:"VPCId"`
+	CloneInstanceDefaultValue string           `position:"Query" name:"CloneInstanceDefaultValue"`
+	PayType                   string           `position:"Query" name:"PayType"`
 }
 
 // PreCheckCreateOrderForCloneResponse is the response struct for api PreCheckCreateOrderForClone

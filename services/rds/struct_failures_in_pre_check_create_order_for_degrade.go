@@ -17,5 +17,5 @@ package rds
 
 // FailuresInPreCheckCreateOrderForDegrade is a nested struct in rds response
 type FailuresInPreCheckCreateOrderForDegrade struct {
-	FailuresItem []FailuresItem `json:"FailuresItem" xml:"FailuresItem"`
+	FailuresItem []FailuresItem `json:"Failures" xml:"Failures"`
 }

@@ -76,17 +76,17 @@ func (client *Client) MigrateToOtherRegionWithCallback(request *MigrateToOtherRe
 // MigrateToOtherRegionRequest is the request struct for api MigrateToOtherRegion
 type MigrateToOtherRegionRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	TargetRegionId       string           `position:"Query" name:"TargetRegionId"`
-	TargetZoneId         string           `position:"Query" name:"TargetZoneId"`
 	TargetVpcId          string           `position:"Query" name:"TargetVpcId"`
-	TargetVSwitchId      string           `position:"Query" name:"TargetVSwitchId"`
-	SwitchTime           string           `position:"Query" name:"SwitchTime"`
+	TargetZoneId         string           `position:"Query" name:"TargetZoneId"`
 	EffectiveTime        string           `position:"Query" name:"EffectiveTime"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	SwitchTime           string           `position:"Query" name:"SwitchTime"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
+	TargetVSwitchId      string           `position:"Query" name:"TargetVSwitchId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	TargetRegionId       string           `position:"Query" name:"TargetRegionId"`
 }
 
 // MigrateToOtherRegionResponse is the response struct for api MigrateToOtherRegion

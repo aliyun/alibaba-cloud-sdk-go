@@ -76,30 +76,30 @@ func (client *Client) PreCheckCreateOrderForRebuildWithCallback(request *PreChec
 // PreCheckCreateOrderForRebuildRequest is the request struct for api PreCheckCreateOrderForRebuild
 type PreCheckCreateOrderForRebuildRequest struct {
 	*requests.RpcRequest
-	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ClientToken           string           `position:"Query" name:"ClientToken"`
-	CommodityCode         string           `position:"Query" name:"CommodityCode"`
+	ResourceGroupId       string           `position:"Query" name:"ResourceGroupId"`
 	DBInstanceId          string           `position:"Query" name:"DBInstanceId"`
-	ZoneId                string           `position:"Query" name:"ZoneId"`
+	DBInstanceDescription string           `position:"Query" name:"DBInstanceDescription"`
+	BusinessInfo          string           `position:"Query" name:"BusinessInfo"`
+	AgentId               string           `position:"Query" name:"AgentId"`
+	AutoPay               requests.Boolean `position:"Query" name:"AutoPay"`
+	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
+	Resource              string           `position:"Query" name:"Resource"`
+	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
+	CommodityCode         string           `position:"Query" name:"CommodityCode"`
+	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
+	UsedTime              string           `position:"Query" name:"UsedTime"`
 	DBInstanceClass       string           `position:"Query" name:"DBInstanceClass"`
+	VSwitchId             string           `position:"Query" name:"VSwitchId"`
+	RebuildInstanceFlag   requests.Boolean `position:"Query" name:"RebuildInstanceFlag"`
+	AutoRenew             string           `position:"Query" name:"AutoRenew"`
+	PromotionCode         string           `position:"Query" name:"PromotionCode"`
+	VPCId                 string           `position:"Query" name:"VPCId"`
+	ZoneId                string           `position:"Query" name:"ZoneId"`
+	TimeType              string           `position:"Query" name:"TimeType"`
 	PayType               string           `position:"Query" name:"PayType"`
 	InstanceNetworkType   string           `position:"Query" name:"InstanceNetworkType"`
-	UsedTime              string           `position:"Query" name:"UsedTime"`
-	TimeType              string           `position:"Query" name:"TimeType"`
-	AutoPay               requests.Boolean `position:"Query" name:"AutoPay"`
-	Resource              string           `position:"Query" name:"Resource"`
-	VPCId                 string           `position:"Query" name:"VPCId"`
-	VSwitchId             string           `position:"Query" name:"VSwitchId"`
-	AutoRenew             string           `position:"Query" name:"AutoRenew"`
-	AgentId               string           `position:"Query" name:"AgentId"`
-	PromotionCode         string           `position:"Query" name:"PromotionCode"`
-	BusinessInfo          string           `position:"Query" name:"BusinessInfo"`
-	DBInstanceDescription string           `position:"Query" name:"DBInstanceDescription"`
-	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
-	ResourceGroupId       string           `position:"Query" name:"ResourceGroupId"`
-	RebuildInstanceFlag   requests.Boolean `position:"Query" name:"RebuildInstanceFlag"`
 }
 
 // PreCheckCreateOrderForRebuildResponse is the response struct for api PreCheckCreateOrderForRebuild

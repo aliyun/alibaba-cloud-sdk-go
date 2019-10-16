@@ -76,15 +76,15 @@ func (client *Client) AllocateInstanceVpcNetworkTypeWithCallback(request *Alloca
 // AllocateInstanceVpcNetworkTypeRequest is the request struct for api AllocateInstanceVpcNetworkType
 type AllocateInstanceVpcNetworkTypeRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	TargetRegionId       string           `position:"Query" name:"TargetRegionId"`
-	TargetZoneId         string           `position:"Query" name:"TargetZoneId"`
 	TargetVpcId          string           `position:"Query" name:"TargetVpcId"`
+	TargetZoneId         string           `position:"Query" name:"TargetZoneId"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount         string           `position:"Query" name:"OwnerAccount"`
 	TargetVSwitchId      string           `position:"Query" name:"TargetVSwitchId"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	TargetRegionId       string           `position:"Query" name:"TargetRegionId"`
 }
 
 // AllocateInstanceVpcNetworkTypeResponse is the response struct for api AllocateInstanceVpcNetworkType

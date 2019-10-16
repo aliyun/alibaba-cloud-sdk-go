@@ -76,11 +76,11 @@ func (client *Client) PreCheckDBInstanceOperationWithCallback(request *PreCheckD
 // PreCheckDBInstanceOperationRequest is the request struct for api PreCheckDBInstanceOperation
 type PreCheckDBInstanceOperationRequest struct {
 	*requests.RpcRequest
-	Operation            string           `position:"Query" name:"Operation"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
+	Operation            string           `position:"Query" name:"Operation"`
 }
 
 // PreCheckDBInstanceOperationResponse is the response struct for api PreCheckDBInstanceOperation

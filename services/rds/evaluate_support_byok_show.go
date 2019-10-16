@@ -76,16 +76,16 @@ func (client *Client) EvaluateSupportByokShowWithCallback(request *EvaluateSuppo
 // EvaluateSupportByokShowRequest is the request struct for api EvaluateSupportByokShow
 type EvaluateSupportByokShowRequest struct {
 	*requests.RpcRequest
-	SecurityToken         string           `position:"Query" name:"SecurityToken"`
-	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
-	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
-	TargetRegionId        string           `position:"Query" name:"TargetRegionId"`
-	Engine                string           `position:"Query" name:"Engine"`
-	EngineVersion         string           `position:"Query" name:"EngineVersion"`
 	NodeType              string           `position:"Query" name:"NodeType"`
+	EngineVersion         string           `position:"Query" name:"EngineVersion"`
+	SecurityToken         string           `position:"Query" name:"SecurityToken"`
+	Engine                string           `position:"Query" name:"Engine"`
 	DbInstanceStorageType string           `position:"Query" name:"DbInstanceStorageType"`
+	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
+	OwnerAccount          string           `position:"Query" name:"OwnerAccount"`
+	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
+	TargetRegionId        string           `position:"Query" name:"TargetRegionId"`
 }
 
 // EvaluateSupportByokShowResponse is the response struct for api EvaluateSupportByokShow

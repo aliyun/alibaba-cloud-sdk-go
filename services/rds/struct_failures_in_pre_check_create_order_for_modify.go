@@ -17,5 +17,5 @@ package rds
 
 // FailuresInPreCheckCreateOrderForModify is a nested struct in rds response
 type FailuresInPreCheckCreateOrderForModify struct {
-	FailuresItem []FailuresItem `json:"FailuresItem" xml:"FailuresItem"`
+	FailuresItem []FailuresItem `json:"Failures" xml:"Failures"`
 }

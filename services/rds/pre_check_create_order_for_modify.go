@@ -76,30 +76,30 @@ func (client *Client) PreCheckCreateOrderForModifyWithCallback(request *PreCheck
 // PreCheckCreateOrderForModifyRequest is the request struct for api PreCheckCreateOrderForModify
 type PreCheckCreateOrderForModifyRequest struct {
 	*requests.RpcRequest
-	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId       requests.Integer `position:"Query" name:"ResourceOwnerId"`
+	DBInstanceStorage     requests.Integer `position:"Query" name:"DBInstanceStorage"`
+	NodeType              string           `position:"Query" name:"NodeType"`
 	ClientToken           string           `position:"Query" name:"ClientToken"`
-	CommodityCode         string           `position:"Query" name:"CommodityCode"`
+	EngineVersion         string           `position:"Query" name:"EngineVersion"`
+	EffectiveTime         string           `position:"Query" name:"EffectiveTime"`
 	DBInstanceId          string           `position:"Query" name:"DBInstanceId"`
-	ZoneId                string           `position:"Query" name:"ZoneId"`
-	DBInstanceClass       string           `position:"Query" name:"DBInstanceClass"`
+	SwitchTime            string           `position:"Query" name:"SwitchTime"`
+	DBInstanceStorageType string           `position:"Query" name:"DBInstanceStorageType"`
+	BusinessInfo          string           `position:"Query" name:"BusinessInfo"`
+	AutoPay               requests.Boolean `position:"Query" name:"AutoPay"`
+	ResourceOwnerAccount  string           `position:"Query" name:"ResourceOwnerAccount"`
+	Resource              string           `position:"Query" name:"Resource"`
+	CommodityCode         string           `position:"Query" name:"CommodityCode"`
+	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
 	UsedTime              string           `position:"Query" name:"UsedTime"`
+	DBInstanceClass       string           `position:"Query" name:"DBInstanceClass"`
+	VSwitchId             string           `position:"Query" name:"VSwitchId"`
+	PromotionCode         string           `position:"Query" name:"PromotionCode"`
+	VpcId                 string           `position:"Query" name:"VpcId"`
+	ZoneId                string           `position:"Query" name:"ZoneId"`
 	TimeType              string           `position:"Query" name:"TimeType"`
 	PayType               string           `position:"Query" name:"PayType"`
-	EffectiveTime         string           `position:"Query" name:"EffectiveTime"`
-	DBInstanceStorage     requests.Integer `position:"Query" name:"DBInstanceStorage"`
-	Resource              string           `position:"Query" name:"Resource"`
-	AutoPay               requests.Boolean `position:"Query" name:"AutoPay"`
-	PromotionCode         string           `position:"Query" name:"PromotionCode"`
-	EngineVersion         string           `position:"Query" name:"EngineVersion"`
 	InstanceNetworkType   string           `position:"Query" name:"InstanceNetworkType"`
-	DBInstanceStorageType string           `position:"Query" name:"DBInstanceStorageType"`
-	NodeType              string           `position:"Query" name:"NodeType"`
-	BusinessInfo          string           `position:"Query" name:"BusinessInfo"`
-	VpcId                 string           `position:"Query" name:"VpcId"`
-	VSwitchId             string           `position:"Query" name:"VSwitchId"`
-	SwitchTime            string           `position:"Query" name:"SwitchTime"`
 }
 
 // PreCheckCreateOrderForModifyResponse is the response struct for api PreCheckCreateOrderForModify

@@ -17,5 +17,5 @@ package rds
 
 // FailuresInPreCheckDBInstanceOperation is a nested struct in rds response
 type FailuresInPreCheckDBInstanceOperation struct {
-	FailuresItem []FailuresItem `json:"FailuresItem" xml:"FailuresItem"`
+	FailuresItem []FailuresItem `json:"Failures" xml:"Failures"`
 }

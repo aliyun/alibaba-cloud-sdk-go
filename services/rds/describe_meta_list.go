@@ -76,18 +76,18 @@ func (client *Client) DescribeMetaListWithCallback(request *DescribeMetaListRequ
 // DescribeMetaListRequest is the request struct for api DescribeMetaList
 type DescribeMetaListRequest struct {
 	*requests.RpcRequest
-	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
-	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
 	ResourceOwnerId      requests.Integer `position:"Query" name:"ResourceOwnerId"`
 	ClientToken          string           `position:"Query" name:"ClientToken"`
-	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
-	RestoreType          string           `position:"Query" name:"RestoreType"`
-	BackupSetID          string           `position:"Query" name:"BackupSetID"`
-	RestoreTime          string           `position:"Query" name:"RestoreTime"`
-	GetDbName            string           `position:"Query" name:"GetDbName"`
 	Pattern              string           `position:"Query" name:"Pattern"`
 	PageSize             string           `position:"Query" name:"PageSize"`
+	DBInstanceId         string           `position:"Query" name:"DBInstanceId"`
 	PageIndex            string           `position:"Query" name:"PageIndex"`
+	RestoreTime          string           `position:"Query" name:"RestoreTime"`
+	ResourceOwnerAccount string           `position:"Query" name:"ResourceOwnerAccount"`
+	BackupSetID          string           `position:"Query" name:"BackupSetID"`
+	OwnerId              requests.Integer `position:"Query" name:"OwnerId"`
+	GetDbName            string           `position:"Query" name:"GetDbName"`
+	RestoreType          string           `position:"Query" name:"RestoreType"`
 }
 
 // DescribeMetaListResponse is the response struct for api DescribeMetaList
