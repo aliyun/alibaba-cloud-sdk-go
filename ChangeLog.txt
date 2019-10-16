@@ -1,3 +1,6 @@
+2019-10-16 Version: 1.60.199
+- Optimize instance relevant interface.
+
 2019-10-16 Version: 1.60.198
 - Add ListTagResources OpenApi.
 - Add TagResources OpenApi.
