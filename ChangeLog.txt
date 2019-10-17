@@ -1,3 +1,10 @@
+2019-10-17 Version: 1.60.200
+- Support instance manage API, includes UpdateInstance and DeleteInstance.
+- Support user manage API, includes ListUsers and UpdateUser.
+- Support meta data information API, includes ListInstances, ListDatabases, ListLogicDatabases, ListTables, ListLogicTables, ListColumns, ListIndexes.
+- Support meta data search API, inclues SearchDatabase, SearcTable.
+- Support RegisterInstance API to set datalinkName and useDsql option.
+
 2019-10-16 Version: 1.60.199
 - Optimize instance relevant interface.
 
