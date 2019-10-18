@@ -1,3 +1,6 @@
+2019-10-18 Version: 1.60.202
+- Generated 2019-09-10 for `DnsKnocker`.
+
 2019-10-18 Version: 1.60.201
 - Modify Yundun-dbaudit DescribeInstanceAttribute InstanceStatus Type.
 
