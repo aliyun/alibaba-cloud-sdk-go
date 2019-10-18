@@ -23,7 +23,7 @@ type InstanceAttribute struct {
 	VswitchId           string   `json:"VswitchId" xml:"VswitchId"`
 	IntranetEndpoint    string   `json:"IntranetEndpoint" xml:"IntranetEndpoint"`
 	InternetEndpoint    string   `json:"InternetEndpoint" xml:"InternetEndpoint"`
-	InstanceStatus      int      `json:"InstanceStatus" xml:"InstanceStatus"`
+	InstanceStatus      string   `json:"InstanceStatus" xml:"InstanceStatus"`
 	StartTime           int64    `json:"StartTime" xml:"StartTime"`
 	ExpireTime          int64    `json:"ExpireTime" xml:"ExpireTime"`
 	Description         string   `json:"Description" xml:"Description"`

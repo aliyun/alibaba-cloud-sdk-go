@@ -1,3 +1,6 @@
+2019-10-18 Version: 1.60.201
+- Modify Yundun-dbaudit DescribeInstanceAttribute InstanceStatus Type.
+
 2019-10-17 Version: 1.60.200
 - Support instance manage API, includes UpdateInstance and DeleteInstance.
 - Support user manage API, includes ListUsers and UpdateUser.
