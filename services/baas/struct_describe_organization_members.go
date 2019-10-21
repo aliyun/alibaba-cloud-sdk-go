@@ -17,12 +17,12 @@ package baas
 
 // DescribeOrganizationMembers is a nested struct in baas response
 type DescribeOrganizationMembers struct {
-	Id             string `json:"Id" xml:"Id"`
-	Name           string `json:"Name" xml:"Name"`
-	ConsortiumId   string `json:"ConsortiumId" xml:"ConsortiumId"`
-	ConsortiumName string `json:"ConsortiumName" xml:"ConsortiumName"`
-	Domain         string `json:"Domain" xml:"Domain"`
-	Description    string `json:"Description" xml:"Description"`
-	JoinedTime     string `json:"JoinedTime" xml:"JoinedTime"`
-	State          string `json:"State" xml:"State"`
+	OrganizationId   string `json:"OrganizationId" xml:"OrganizationId"`
+	OrganizationName string `json:"OrganizationName" xml:"OrganizationName"`
+	ConsortiumId     string `json:"ConsortiumId" xml:"ConsortiumId"`
+	ConsortiumName   string `json:"ConsortiumName" xml:"ConsortiumName"`
+	Domain           string `json:"Domain" xml:"Domain"`
+	Description      string `json:"Description" xml:"Description"`
+	JoinedTime       string `json:"JoinedTime" xml:"JoinedTime"`
+	State            string `json:"State" xml:"State"`
 }

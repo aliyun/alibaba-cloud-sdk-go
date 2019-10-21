@@ -92,7 +92,7 @@ func CreateDescribeRootDomainRequest() (request *DescribeRootDomainRequest) {
 	request = &DescribeRootDomainRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Baas", "2018-07-31", "DescribeRootDomain", "", "")
+	request.InitWithApiInfo("Baas", "2018-12-21", "DescribeRootDomain", "baas", "openAPI")
 	return
 }
 

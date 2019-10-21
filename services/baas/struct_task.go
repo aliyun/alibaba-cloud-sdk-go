@@ -21,7 +21,7 @@ type Task struct {
 	Action        string `json:"Action" xml:"Action"`
 	Target        string `json:"Target" xml:"Target"`
 	Sender        string `json:"Sender" xml:"Sender"`
-	RequestTime   int    `json:"RequestTime" xml:"RequestTime"`
+	RequestTime   int64  `json:"RequestTime" xml:"RequestTime"`
 	ResponseTime  string `json:"ResponseTime" xml:"ResponseTime"`
 	Handled       bool   `json:"Handled" xml:"Handled"`
 	Result        string `json:"Result" xml:"Result"`

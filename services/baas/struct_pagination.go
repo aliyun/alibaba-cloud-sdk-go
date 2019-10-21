@@ -17,7 +17,7 @@ package baas
 
 // Pagination is a nested struct in baas response
 type Pagination struct {
-	Total    int `json:"Total" xml:"Total"`
-	Current  int `json:"Current" xml:"Current"`
-	PageSize int `json:"PageSize" xml:"PageSize"`
+	TotalCount int `json:"TotalCount" xml:"TotalCount"`
+	PageNumber int `json:"PageNumber" xml:"PageNumber"`
+	PageSize   int `json:"PageSize" xml:"PageSize"`
 }

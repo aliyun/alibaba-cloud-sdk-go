@@ -17,21 +17,21 @@ package baas
 
 // ChaincodeVO is a nested struct in baas response
 type ChaincodeVO struct {
-	Name          string `json:"Name" xml:"Name"`
-	Version       string `json:"Version" xml:"Version"`
-	Input         string `json:"Input" xml:"Input"`
-	Type          int    `json:"Type" xml:"Type"`
-	State         string `json:"State" xml:"State"`
-	Path          string `json:"Path" xml:"Path"`
-	ChaincodeId   string `json:"ChaincodeId" xml:"ChaincodeId"`
-	Install       bool   `json:"Install" xml:"Install"`
-	Message       string `json:"Message" xml:"Message"`
-	CreateTime    string `json:"CreateTime" xml:"CreateTime"`
-	DeployTime    string `json:"DeployTime" xml:"DeployTime"`
-	ChannelName   string `json:"ChannelName" xml:"ChannelName"`
-	EndorsePolicy string `json:"EndorsePolicy" xml:"EndorsePolicy"`
-	ConsortiumId  string `json:"ConsortiumId" xml:"ConsortiumId"`
-	ProviderId    string `json:"ProviderId" xml:"ProviderId"`
-	ProviderName  string `json:"ProviderName" xml:"ProviderName"`
-	ChannelId     string `json:"ChannelId" xml:"ChannelId"`
+	ChaincodeName    string `json:"ChaincodeName" xml:"ChaincodeName"`
+	ChaincodeVersion string `json:"ChaincodeVersion" xml:"ChaincodeVersion"`
+	Input            string `json:"Input" xml:"Input"`
+	Type             int    `json:"Type" xml:"Type"`
+	State            string `json:"State" xml:"State"`
+	Path             string `json:"Path" xml:"Path"`
+	ChaincodeId      string `json:"ChaincodeId" xml:"ChaincodeId"`
+	Install          bool   `json:"Install" xml:"Install"`
+	Message          string `json:"Message" xml:"Message"`
+	CreateTime       string `json:"CreateTime" xml:"CreateTime"`
+	DeployTime       string `json:"DeployTime" xml:"DeployTime"`
+	ChannelName      string `json:"ChannelName" xml:"ChannelName"`
+	EndorsePolicy    string `json:"EndorsePolicy" xml:"EndorsePolicy"`
+	ConsortiumId     string `json:"ConsortiumId" xml:"ConsortiumId"`
+	ProviderId       string `json:"ProviderId" xml:"ProviderId"`
+	ProviderName     string `json:"ProviderName" xml:"ProviderName"`
+	ChannelId        string `json:"ChannelId" xml:"ChannelId"`
 }

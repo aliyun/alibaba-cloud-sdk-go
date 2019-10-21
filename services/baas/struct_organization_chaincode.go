@@ -17,17 +17,17 @@ package baas
 
 // OrganizationChaincode is a nested struct in baas response
 type OrganizationChaincode struct {
-	Name          string `json:"Name" xml:"Name"`
-	Message       string `json:"Message" xml:"Message"`
-	Version       string `json:"Version" xml:"Version"`
-	CreateTime    string `json:"CreateTime" xml:"CreateTime"`
-	EndorsePolicy string `json:"EndorsePolicy" xml:"EndorsePolicy"`
-	ChannelName   string `json:"ChannelName" xml:"ChannelName"`
-	ConsortiumId  string `json:"ConsortiumId" xml:"ConsortiumId"`
-	State         string `json:"State" xml:"State"`
-	DeployTime    string `json:"DeployTime" xml:"DeployTime"`
-	Installed     string `json:"Installed" xml:"Installed"`
-	ChannelId     string `json:"ChannelId" xml:"ChannelId"`
-	Creator       string `json:"Creator" xml:"Creator"`
-	ChaincodeId   string `json:"ChaincodeId" xml:"ChaincodeId"`
+	ChaincodeName    string `json:"ChaincodeName" xml:"ChaincodeName"`
+	ChaincodeVersion string `json:"ChaincodeVersion" xml:"ChaincodeVersion"`
+	Creator          string `json:"Creator" xml:"Creator"`
+	ChannelId        string `json:"ChannelId" xml:"ChannelId"`
+	ChannelName      string `json:"ChannelName" xml:"ChannelName"`
+	CreateTime       string `json:"CreateTime" xml:"CreateTime"`
+	DeployTime       string `json:"DeployTime" xml:"DeployTime"`
+	ChaincodeId      string `json:"ChaincodeId" xml:"ChaincodeId"`
+	EndorsePolicy    string `json:"EndorsePolicy" xml:"EndorsePolicy"`
+	State            string `json:"State" xml:"State"`
+	Installed        string `json:"Installed" xml:"Installed"`
+	Message          string `json:"Message" xml:"Message"`
+	ConsortiumId     string `json:"ConsortiumId" xml:"ConsortiumId"`
 }

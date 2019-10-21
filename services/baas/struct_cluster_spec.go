@@ -17,10 +17,9 @@ package baas
 
 // ClusterSpec is a nested struct in baas response
 type ClusterSpec struct {
-	Name              string `json:"Name" xml:"Name"`
-	Title             string `json:"Title" xml:"Title"`
-	WorkerDescription string `json:"WorkerDescription" xml:"WorkerDescription"`
-	Enable            bool   `json:"Enable" xml:"Enable"`
-	NumOfNodes        int    `json:"NumOfNodes" xml:"NumOfNodes"`
-	MasterDescription string `json:"MasterDescription" xml:"MasterDescription"`
+	SpecTitle             string `json:"SpecTitle" xml:"SpecTitle"`
+	OrganizationSpecsName string `json:"OrganizationSpecsName" xml:"OrganizationSpecsName"`
+	SpecName              string `json:"SpecName" xml:"SpecName"`
+	Title                 string `json:"Title" xml:"Title"`
+	Enable                bool   `json:"Enable" xml:"Enable"`
 }

@@ -76,15 +76,16 @@ func (client *Client) DescribeRegionsWithCallback(request *DescribeRegionsReques
 // DescribeRegionsRequest is the request struct for api DescribeRegions
 type DescribeRegionsRequest struct {
 	*requests.RpcRequest
+	AcceptLanguage string `position:"Query" name:"AcceptLanguage"`
 }
 
 // DescribeRegionsResponse is the response struct for api DescribeRegions
 type DescribeRegionsResponse struct {
 	*responses.BaseResponse
-	RequestId string       `json:"RequestId" xml:"RequestId"`
-	Success   bool         `json:"Success" xml:"Success"`
-	ErrorCode int          `json:"ErrorCode" xml:"ErrorCode"`
-	Result    []ResultItem `json:"Result" xml:"Result"`
+	RequestId string   `json:"RequestId" xml:"RequestId"`
+	Success   bool     `json:"Success" xml:"Success"`
+	ErrorCode int      `json:"ErrorCode" xml:"ErrorCode"`
+	Regions   []Result `json:"Regions" xml:"Regions"`
 }
 
 // CreateDescribeRegionsRequest creates a request to invoke DescribeRegions API
@@ -92,7 +93,7 @@ func CreateDescribeRegionsRequest() (request *DescribeRegionsRequest) {
 	request = &DescribeRegionsRequest{
 		RpcRequest: &requests.RpcRequest{},
 	}
-	request.InitWithApiInfo("Baas", "2018-07-31", "DescribeRegions", "", "")
+	request.InitWithApiInfo("Baas", "2018-12-21", "DescribeRegions", "baas", "openAPI")
 	return
 }
 

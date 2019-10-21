@@ -17,10 +17,10 @@ package baas
 
 // DescribeConsortiumMember is a nested struct in baas response
 type DescribeConsortiumMember struct {
-	Name           string `json:"Name" xml:"Name"`
-	Domain         string `json:"Domain" xml:"Domain"`
-	Description    string `json:"Description" xml:"Description"`
-	JoinedTime     string `json:"JoinedTime" xml:"JoinedTime"`
-	ConsortiumId   string `json:"ConsortiumId" xml:"ConsortiumId"`
-	OrganizationId string `json:"OrganizationId" xml:"OrganizationId"`
+	OrganizationName string `json:"OrganizationName" xml:"OrganizationName"`
+	Domain           string `json:"Domain" xml:"Domain"`
+	Description      string `json:"Description" xml:"Description"`
+	JoinedTime       string `json:"JoinedTime" xml:"JoinedTime"`
+	ConsortiumId     string `json:"ConsortiumId" xml:"ConsortiumId"`
+	OrganizationId   string `json:"OrganizationId" xml:"OrganizationId"`
 }

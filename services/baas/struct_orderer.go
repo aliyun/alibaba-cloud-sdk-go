@@ -17,7 +17,7 @@ package baas
 
 // Orderer is a nested struct in baas response
 type Orderer struct {
-	Name         string `json:"Name" xml:"Name"`
+	OrdererName  string `json:"OrdererName" xml:"OrdererName"`
 	Domain       string `json:"Domain" xml:"Domain"`
 	Port         int    `json:"Port" xml:"Port"`
 	InstanceType string `json:"InstanceType" xml:"InstanceType"`
