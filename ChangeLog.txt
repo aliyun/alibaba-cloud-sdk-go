@@ -1,3 +1,6 @@
+2019-10-21 Version: 1.60.204
+- Release first version.
+
 2019-10-21 Version: 1.60.203
 - Init the standard baas sdk.
 
