@@ -1,7 +1,5 @@
 module github.com/aliyun/alibaba-cloud-sdk-go
 
-go 1.12
-
 require (
 	github.com/davecgh/go-spew v1.1.1 // indirect
 	github.com/goji/httpauth v0.0.0-20160601135302-2da839ab0f4d
