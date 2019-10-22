@@ -22,6 +22,7 @@ type FacesItem struct {
 	ImageUri             string             `json:"ImageUri" xml:"ImageUri"`
 	FaceQuality          float64            `json:"FaceQuality" xml:"FaceQuality"`
 	Similarity           float64            `json:"Similarity" xml:"Similarity"`
+	ExternalId           string             `json:"ExternalId" xml:"ExternalId"`
 	Attractive           float64            `json:"Attractive" xml:"Attractive"`
 	AttractiveConfidence float64            `json:"AttractiveConfidence" xml:"AttractiveConfidence"`
 	Age                  int                `json:"Age" xml:"Age"`

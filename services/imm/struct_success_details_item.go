@@ -23,6 +23,4 @@ type SuccessDetailsItem struct {
 	SrcUri           string                 `json:"SrcUri" xml:"SrcUri"`
 	ClothesBoxDetail []ClothesBoxDetailItem `json:"ClothesBoxDetail" xml:"ClothesBoxDetail"`
 	QRCodes          []QRCodesItem          `json:"QRCodes" xml:"QRCodes"`
-	LogoBoxDetail    []LogoBoxDetailItem    `json:"LogoBoxDetail" xml:"LogoBoxDetail"`
-	Tags             []TagsItemInDetectTag  `json:"Tags" xml:"Tags"`
 }

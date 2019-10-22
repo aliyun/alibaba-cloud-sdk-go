@@ -19,7 +19,6 @@ package imm
 type TasksItem struct {
 	TgtType         string `json:"TgtType" xml:"TgtType"`
 	Result          string `json:"Result" xml:"Result"`
-	Style           string `json:"Style" xml:"Style"`
 	ErrorMessage    string `json:"ErrorMessage" xml:"ErrorMessage"`
 	PageCount       int    `json:"PageCount" xml:"PageCount"`
 	CreateTime      string `json:"CreateTime" xml:"CreateTime"`
