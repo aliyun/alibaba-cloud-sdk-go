@@ -87,7 +87,6 @@ type GetLogicDatabaseResponse struct {
 	Success       bool          `json:"Success" xml:"Success"`
 	ErrorMessage  string        `json:"ErrorMessage" xml:"ErrorMessage"`
 	ErrorCode     string        `json:"ErrorCode" xml:"ErrorCode"`
-	TotalCount    int64         `json:"TotalCount" xml:"TotalCount"`
 	LogicDatabase LogicDatabase `json:"LogicDatabase" xml:"LogicDatabase"`
 }
 

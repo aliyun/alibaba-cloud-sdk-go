@@ -21,7 +21,7 @@ type DatabaseInListDatabases struct {
 	DatabaseId    string                       `json:"DatabaseId" xml:"DatabaseId"`
 	EnvType       string                       `json:"EnvType" xml:"EnvType"`
 	SchemaName    string                       `json:"SchemaName" xml:"SchemaName"`
-	CatalogName   int                          `json:"CatalogName" xml:"CatalogName"`
+	CatalogName   string                       `json:"CatalogName" xml:"CatalogName"`
 	Encoding      string                       `json:"Encoding" xml:"Encoding"`
 	SearchName    string                       `json:"SearchName" xml:"SearchName"`
 	State         string                       `json:"State" xml:"State"`

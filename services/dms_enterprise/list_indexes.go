@@ -84,12 +84,11 @@ type ListIndexesRequest struct {
 // ListIndexesResponse is the response struct for api ListIndexes
 type ListIndexesResponse struct {
 	*responses.BaseResponse
-	RequestId    string                  `json:"RequestId" xml:"RequestId"`
-	Success      bool                    `json:"Success" xml:"Success"`
-	ErrorMessage string                  `json:"ErrorMessage" xml:"ErrorMessage"`
-	ErrorCode    string                  `json:"ErrorCode" xml:"ErrorCode"`
-	ColumnList   ColumnListInListIndexes `json:"ColumnList" xml:"ColumnList"`
-	IndexList    IndexList               `json:"IndexList" xml:"IndexList"`
+	RequestId    string    `json:"RequestId" xml:"RequestId"`
+	Success      bool      `json:"Success" xml:"Success"`
+	ErrorMessage string    `json:"ErrorMessage" xml:"ErrorMessage"`
+	ErrorCode    string    `json:"ErrorCode" xml:"ErrorCode"`
+	IndexList    IndexList `json:"IndexList" xml:"IndexList"`
 }
 
 // CreateListIndexesRequest creates a request to invoke ListIndexes API
