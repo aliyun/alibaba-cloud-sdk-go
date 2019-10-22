@@ -91,12 +91,12 @@ type DescribeStreamPredictResultRequest struct {
 // DescribeStreamPredictResultResponse is the response struct for api DescribeStreamPredictResult
 type DescribeStreamPredictResultResponse struct {
 	*responses.BaseResponse
-	RequestId          string             `json:"RequestId" xml:"RequestId"`
-	TotalNum           int                `json:"TotalNum" xml:"TotalNum"`
-	CurrentPage        int                `json:"CurrentPage" xml:"CurrentPage"`
-	PageSize           int                `json:"PageSize" xml:"PageSize"`
-	NextPageToken      string             `json:"NextPageToken" xml:"NextPageToken"`
-	StreamPredictDatas StreamPredictDatas `json:"StreamPredictDatas" xml:"StreamPredictDatas"`
+	RequestId          string              `json:"RequestId" xml:"RequestId"`
+	TotalNum           int64               `json:"TotalNum" xml:"TotalNum"`
+	CurrentPage        int64               `json:"CurrentPage" xml:"CurrentPage"`
+	PageSize           int64               `json:"PageSize" xml:"PageSize"`
+	NextPageToken      string              `json:"NextPageToken" xml:"NextPageToken"`
+	StreamPredictDatas []StreamPredictData `json:"StreamPredictDatas" xml:"StreamPredictDatas"`
 }
 
 // CreateDescribeStreamPredictResultRequest creates a request to invoke DescribeStreamPredictResult API

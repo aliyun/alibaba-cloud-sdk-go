@@ -22,6 +22,7 @@ type StreamPredict struct {
 	StreamId              string `json:"StreamId" xml:"StreamId"`
 	ModelIds              string `json:"ModelIds" xml:"ModelIds"`
 	ProbabilityThresholds string `json:"ProbabilityThresholds" xml:"ProbabilityThresholds"`
+	DetectIntervals       string `json:"DetectIntervals" xml:"DetectIntervals"`
 	Output                string `json:"Output" xml:"Output"`
 	Notify                string `json:"Notify" xml:"Notify"`
 	UserData              string `json:"UserData" xml:"UserData"`

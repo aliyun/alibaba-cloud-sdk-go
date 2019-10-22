@@ -76,16 +76,19 @@ func (client *Client) CreateStreamPredictWithCallback(request *CreateStreamPredi
 // CreateStreamPredictRequest is the request struct for api CreateStreamPredict
 type CreateStreamPredictRequest struct {
 	*requests.RpcRequest
+	ClientToken           string           `position:"Query" name:"ClientToken"`
 	AutoStart             string           `position:"Query" name:"AutoStart"`
 	Notify                string           `position:"Query" name:"Notify"`
 	Output                string           `position:"Query" name:"Output"`
-	UserData              string           `position:"Query" name:"UserData"`
 	ShowLog               string           `position:"Query" name:"ShowLog"`
 	StreamType            string           `position:"Query" name:"StreamType"`
+	FaceGroupId           string           `position:"Query" name:"FaceGroupId"`
 	StreamId              string           `position:"Query" name:"StreamId"`
+	DetectIntervals       string           `position:"Query" name:"DetectIntervals"`
 	OwnerId               requests.Integer `position:"Query" name:"OwnerId"`
 	ProbabilityThresholds string           `position:"Query" name:"ProbabilityThresholds"`
 	ModelIds              string           `position:"Query" name:"ModelIds"`
+	ModelUserData         string           `position:"Query" name:"ModelUserData"`
 }
 
 // CreateStreamPredictResponse is the response struct for api CreateStreamPredict
